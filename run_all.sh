@@ -310,6 +310,14 @@ run "G4b-覆盖度计算" "$WORK_DIR/07_cluster/virus_genes_cov.tsv" \
         --unpredicted "$WORK_DIR/07_cluster/unpredicted_genes_cov.tsv"
 
 # ============================================================
+# 总结报告
+# ============================================================
+log "▶ 生成学术风格总结报告..."
+python "$BIN_DIR/summarize_pipeline.py" --work-dir "$WORK_DIR" \
+    | tee "$LOG_DIR/pipeline_summary.txt"
+log "✓ 总结报告已保存 → $LOG_DIR/pipeline_summary.txt"
+
+# ============================================================
 # 完成
 # ============================================================
 echo ""
@@ -317,9 +325,10 @@ echo "============================================"
 echo "  Pipeline 执行完毕"
 echo "============================================"
 echo "最终产物:"
-echo "  序列:  $WORK_DIR/07_cluster/final.cluster.ref.fasta"
-echo "  信息:  $WORK_DIR/07_cluster/final.cluster.ref_info.tsv"
-echo "  覆盖度: $WORK_DIR/07_cluster/virus_genes_cov.tsv"
+echo "  序列:     $WORK_DIR/07_cluster/final.cluster.ref.fasta"
+echo "  信息:     $WORK_DIR/07_cluster/final.cluster.ref_info.tsv"
+echo "  覆盖度:   $WORK_DIR/07_cluster/virus_genes_cov.tsv"
 echo "  评估报告: $WORK_DIR/07_cluster/derep.summary.tsv"
 echo "  LCA 分布: $WORK_DIR/07_cluster/clusters.LCA_Distribution.png"
+echo "  总结报告: $LOG_DIR/pipeline_summary.txt"
 echo "============================================"
