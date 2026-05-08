@@ -10,6 +10,8 @@ set -euo pipefail
 #   3. bash run_all.sh
 #
 # 断点续跑: 每个阶段会检查产物是否已存在，已存在的步骤自动跳过
+#
+# 日志: 所有 stdout/stderr 同时输出到终端和 00_logs/ 目录
 # ============================================================
 
 # ==================== CONFIG ====================
@@ -24,8 +26,10 @@ MMSEQS_THREADS="${MMSEQS_THREADS:-32}"
 EMAIL="${EMAIL:-your_email@example.com}"
 API_KEY="${API_KEY:-}"
 
-# 阶段产物目录 (按阶段组织输出)
-mkdir -p "$WORK_DIR"/{01_merge,02_ictv,03_host,04_sequences,05_metadata,06_dedup,07_cluster}
+# 阶段产物目录 + 日志目录
+mkdir -p "$WORK_DIR"/{00_logs,01_merge,02_ictv,03_host,04_sequences,05_metadata,06_dedup,07_cluster}
+LOG_DIR="$WORK_DIR/00_logs"
+touch "$LOG_DIR/pipeline.log"
 
 # 原始输入
 ALLNUCL_FA="$RAW_DIR/AllNucleotide.fa.gz"
@@ -37,21 +41,39 @@ TAXID_DB="$TAXONOMY_DIR/nucl_gb.accession2taxid"
 NAMES_DMP="$TAXONOMY_DIR/names.dmp"
 
 # ==================== UTILS ====================
-log()  { echo "[$(date '+%H:%M:%S')] $*"; }
-check(){ if [ ! -e "$1" ]; then log "✗ 缺少: $1"; exit 1; fi; }
+log(){
+    local msg="[$(date '+%H:%M:%S')] $*"
+    echo "$msg" | tee -a "$LOG_DIR/pipeline.log"
+}
+check(){
+    if [ ! -e "$1" ]; then
+        log "✗ 缺少: $1"
+        exit 1
+    fi
+}
 done_or_skip(){
     if [ -f "$1" ]; then
-        log "⊙ 跳过 [$2] — 产物已存在: $1"
+        log "⊙ 跳过 [$2] — 产物已存在"
         return 0
     fi
     return 1
 }
+# run 将脚本 stdout/stderr 同时写入终端和阶段日志
+# 返回码非零时打印 FAILED，但不会中断整个 pipeline (set +e 包裹)
 run(){
     local step="$1" out="$2"; shift 2
+    local stage_log="$LOG_DIR/${step%%-*}.log"
     done_or_skip "$out" "$step" && return 0
     log "▶ 开始 [$step]"
-    "$@"
-    log "✓ [$step] 完成 → $out"
+    set +e
+    "$@" >> >(tee -a "$stage_log") 2>> >(tee -a "$stage_log" >&2)
+    local rc=$?
+    set -e
+    if [ $rc -eq 0 ]; then
+        log "✓ [$step] 完成 → $out"
+    else
+        log "✗ [$step] 失败 (返回码=$rc)，详见 $stage_log"
+    fi
 }
 
 # ==================== 前置检查 ====================

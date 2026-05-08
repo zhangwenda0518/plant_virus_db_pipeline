@@ -48,6 +48,10 @@ bash run_all.sh
 
 ```
 plant_virus_db/
+├── 00_logs/                         # ★ 所有阶段运行日志
+│   ├── pipeline.log                 # 总日志 (时间线)
+│   ├── A.log ~ G.log                # 各阶段详细日志
+│   └── F4a.log / F4b.log            # 子步骤独立日志
 ├── raw_data/                        ← 原始下载数据
 ├── 01_merge/                        ← 阶段 A 产物
 │   ├── summary.csv                  # 数据质检报告
@@ -57,10 +61,13 @@ plant_virus_db/
 │   └── bad_rows_log.tsv             # 脏行记录
 ├── 02_ictv/                         ← 阶段 B 产物
 │   ├── VMR_MSL41.tsv                # ICTV VMR TSV 格式
-│   └── VMR_Split_By_Host/           # 按宿主拆分的 VMR
+│   ├── VMR_Split_By_Host/           # 按宿主拆分的 VMR
+│   └── Rescue_Failed_Details.tsv    # 抢救失败诊断
 ├── 03_host/                         ← 阶段 C 产物
 │   ├── host_extract/                # 宿主信息提取
-│   │   └── Final_Virus_Host_Lineage.tsv
+│   │   ├── Final_Virus_Host_Lineage.tsv
+│   │   ├── Unresolved_AllNucl.tsv   # 无法解决的 AllNucl 记录
+│   │   └── Unresolved_VHost.tsv     # 无法解决的 VHost 记录
 │   └── VHostMetadata/               # 按宿主分类的数据
 │       ├── Summary_Counts.tsv
 │       ├── Plant.tsv                # ★ 植物病毒列表
@@ -68,10 +75,11 @@ plant_virus_db/
 ├── 04_sequences/                    ← 阶段 D 产物
 │   ├── plant.virus.fasta            # ★ 植物病毒合并序列
 │   ├── plant.virus.id               # Accession ID 列表
-│   └── Plant_virus_db/              # 中间文件
+│   └── Plant_virus_db/              # 中间文件(含缺失列表)
 ├── 05_metadata/                     ← 阶段 E 产物
 │   ├── Plant_Virus_Info.tsv         # ★ 完整元数据表
 │   ├── Plant_Virus_Info.summary     # 统计报告
+│   └── consistency_check.log        # Title/Length 一致性比对
 │   └── Plant_Virus_Topology_...tsv  # 拓扑信息
 ├── 06_dedup/                        ← 阶段 F 产物
 │   ├── split_results/               # 节段分类拆分结果
