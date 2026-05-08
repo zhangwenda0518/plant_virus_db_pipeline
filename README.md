@@ -54,6 +54,22 @@
 
 **PhytoPipe.** PhytoPipe [https://github.com/healthyPlant/PhytoPipe] 是基于 ICTV VMR 和 Virus-Host DB 构建的植物病毒分析流程，其内置参考植物病毒列表收录 3,253 种植物病毒 TaxID。通过与 VHostMetadata.lineage.tsv 交叉验证，可利用全量 NCBI 序列数据进行序列提取。
 
+#### 现有植物病毒参考数据库汇总
+
+| 数据库 | 版本/日期 | 物种数 | 序列数 | 去冗余策略 | 宿主信息 | 更新状态 | URL |
+|:--------|:----------|:------:|:------:|:-----------|:---------|:---------|:-----|
+| **NCBI Virus** | 持续更新 | 6,234 | 162,836 | 无 | Viridiplantae 宿主谱系筛选 | 持续 | [ncbi.nlm.nih.gov](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/) |
+| **VirusDetect** | V267 (2025-08) | — | 128,956 (U100) | 100%/97%/95% | 界级别分类 (含非植物) | 定期 | [virusdetect.feilab.net](http://virusdetect.feilab.net/) |
+| **PlantVirusBase** | 2025-05 | 3,353 | — | 无 (未公开) | 9,010 条病毒-植物关联 | 2025-05 | [47.90.94.155](http://47.90.94.155/PlantVirusBase) |
+| **PVirDB** | 2022-06 | 4,463 | 50,611 | 无 | 无 (纯序列) | 2022-06 (已停更) | [zenodo.org](https://zenodo.org/records/6609576) |
+| **Virtool** | v1.5.0 (2025) | 2,084 | 4,783 (组装) | 按 OTU 聚类 | 无 | 定期 | [github.com/virtool](https://github.com/virtool/ref-plant-viruses) |
+| **ViralZone** | 2020-03 | 1,230 | 6,038 | 98% Virosaurus | Swiss-Prot 注释 | 2020-03 (已停更) | [viralzone.expasy.org](https://viralzone.expasy.org/8676) |
+| **DPVweb** | — | — | 37,076 | 无 | 植物/真菌/原生动物分类 | 持续 | [dpvweb.net](https://www.dpvweb.net/) |
+| **PhytoPipe** | — | 3,253 | — | 无 | 基于 ICTV VMR + VHDB | 随 VMR 更新 | [github.com/healthyPlant](https://github.com/healthyPlant/PhytoPipe) |
+| **本研究** | MSL41 (2026) | — | — | 瀑布流 + seqkit + mmseqs (98%) + vclust | NCBI + KEGG + ICTV 三源交叉验证 | — | [github.com/zhangwenda0518](https://github.com/zhangwenda0518/plant_virus_db_pipeline) |
+
+> **注:** "—" 表示数据未明确获取或该数据库未统计该维度。物种数的统计口径各数据库不一致 (部分为 TaxID 数，部分为 ICTV 物种数)。
+
 ### 现有数据库的局限性
 
 尽管上述数据库在一定程度上满足了植物病毒研究的参考需求，但均存在若干共性问题: (1) 多数数据库未提供完整的层次化分类学谱系 (Realm → Species)，限制了系统发育下游分析；(2) 去冗余策略多为单一阈值 (97%/98%)，缺乏多维度的层级瀑布流 (waterfall) 去重机制；(3) 节段病毒 (segmented viruses) 的各节段在去冗余时易被误合并，导致节段信息丢失；(4) 宿主信息与病毒元数据未进行系统性交叉验证；(5) 数据库更新频率不一致，部分数据库 (如 ViralZone 2020、PVirDB 2022) 已长期未更新。
