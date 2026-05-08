@@ -62,7 +62,7 @@ done_or_skip(){
 # 返回码非零时打印 FAILED，但不会中断整个 pipeline (set +e 包裹)
 run(){
     local step="$1" out="$2"; shift 2
-    local stage_log="$LOG_DIR/${step%%-*}.log"
+    local stage_log="$LOG_DIR/${step}.log"
     done_or_skip "$out" "$step" && return 0
     log "▶ 开始 [$step]"
     set +e

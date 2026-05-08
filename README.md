@@ -49,9 +49,28 @@ bash run_all.sh
 ```
 plant_virus_db/
 ├── 00_logs/                         # ★ 所有阶段运行日志
-│   ├── pipeline.log                 # 总日志 (时间线)
-│   ├── A.log ~ G.log                # 各阶段详细日志
-│   └── F4a.log / F4b.log            # 子步骤独立日志
+│   ├── pipeline.log                 # 总时间线 (全部步骤概览)
+│   ├── A1-数据质检.log              # 列名/空值率/唯一值统计
+│   ├── A2-VHDB+NCBI合并.log         # 合并后序列数、TaxID 增量
+│   ├── A3-宿主补全.log              # 补全前后缺失行数、找回率
+│   ├── A4-添加谱系.log              # taxonkit 进度、缓存命中数
+│   ├── B2-VMR宿主拆分.log           # VMR 暗物质抢救记录
+│   ├── C1-宿主信息提取.log          # 交叉填补、Taxid 匹配、联网兜底
+│   ├── C2-宿主分类.log              # 各宿主分类行数 (Human/Animal/Plant/...)
+│   ├── D1-比对提取FASTA.log         # 本地命中数、缺失数
+│   ├── D2-下载缺失序列.log          # 下载成功/失败数
+│   ├── E1-提取元数据.log            # 本地匹配、在线补充数量
+│   ├── E2-获取拓扑结构.log          # NCBI API 批次进度
+│   ├── F1-基础统计.log              # 序列数/TaxID/长度/完整度/分子类型
+│   ├── F2-节段分类拆分.log          # 节段/非节段分类战报、同源兜底挽救
+│   ├── F3-元数据去重.log            # 各优先级保留/丢弃行数
+│   ├── F4a-非节段去冗余.log         # seqkit rescue + mmseqs conflict + RefSeq swap
+│   ├── F4b-节段去冗余.log           # 同上(节段模式)
+│   ├── G1-SeqID→TaxID映射.log       # 查找映射数量、命中率
+│   ├── G2-vclust聚类.log            # ★ 最重要: LCA 混合比例、RefSeq 替换、去冗余率
+│   ├── G3-去冗余评估.log            # 各阶段序列/TaxID 保留率对比
+│   ├── G4a-基因预测.log             # pyrodigal 预测进度
+│   └── G4b-覆盖度计算.log           # 基因覆盖度统计
 ├── raw_data/                        ← 原始下载数据
 ├── 01_merge/                        ← 阶段 A 产物
 │   ├── summary.csv                  # 数据质检报告
