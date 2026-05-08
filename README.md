@@ -1,5 +1,5 @@
 <!-- omit in toc -->
-# 🌿 植物病毒基因组数据库构建流程
+# 植物病毒基因组数据库构建流程
 
 > **Plant Virus Genome Database Construction Pipeline**
 >
@@ -8,6 +8,8 @@
 ---
 
 <!-- toc -->
+- [快速开始](#快速开始)
+- [工作目录结构](#工作目录结构)
 - [执行概览](#执行概览)
 - [数据流图](#数据流图)
 - [A. 元数据整合](#a-元数据整合)
@@ -22,6 +24,68 @@
 <!-- tocstop -->
 
 ---
+
+## 快速开始
+
+```bash
+# 1. 配置环境变量 (按实际情况修改)
+export WORK_DIR="$HOME/plant_virus_db"
+export RAW_DIR="$WORK_DIR/raw_data"
+export DATABASE_DIR="$HOME/database"
+export EMAIL="your_email@example.com"
+
+# 2. 下载原始数据 (见下方「原始数据下载」章节)
+
+# 3. 一键运行全流程
+bash run_all.sh
+
+# 支持断点续跑 — 已完成的步骤会自动跳过
+```
+
+## 工作目录结构
+
+运行 `run_all.sh` 后，输出按阶段组织：
+
+```
+plant_virus_db/
+├── raw_data/                        ← 原始下载数据
+├── 01_merge/                        ← 阶段 A 产物
+│   ├── summary.csv                  # 数据质检报告
+│   ├── Merged.VHostMetadata.tsv     # VHDB+NCBI 合并结果
+│   ├── Merged.VHostMetadata.imputer.tsv  # 宿主补全后
+│   ├── Merged.VHostMetadata.lineage.tsv  # 添加谱系后
+│   └── bad_rows_log.tsv             # 脏行记录
+├── 02_ictv/                         ← 阶段 B 产物
+│   ├── VMR_MSL41.tsv                # ICTV VMR TSV 格式
+│   └── VMR_Split_By_Host/           # 按宿主拆分的 VMR
+├── 03_host/                         ← 阶段 C 产物
+│   ├── host_extract/                # 宿主信息提取
+│   │   └── Final_Virus_Host_Lineage.tsv
+│   └── VHostMetadata/               # 按宿主分类的数据
+│       ├── Summary_Counts.tsv
+│       ├── Plant.tsv                # ★ 植物病毒列表
+│       └── Human/Animal/...tsv
+├── 04_sequences/                    ← 阶段 D 产物
+│   ├── plant.virus.fasta            # ★ 植物病毒合并序列
+│   ├── plant.virus.id               # Accession ID 列表
+│   └── Plant_virus_db/              # 中间文件
+├── 05_metadata/                     ← 阶段 E 产物
+│   ├── Plant_Virus_Info.tsv         # ★ 完整元数据表
+│   ├── Plant_Virus_Info.summary     # 统计报告
+│   └── Plant_Virus_Topology_...tsv  # 拓扑信息
+├── 06_dedup/                        ← 阶段 F 产物
+│   ├── split_results/               # 节段分类拆分结果
+│   ├── virus.dedup/                 # 元数据去重结果
+│   ├── Final_DB_Build/              # ★ seqkit+mmseqs 去冗余产物
+│   └── plant.final.rmdup.fasta      # ★ 合并去冗余序列
+└── 07_cluster/                      ← 阶段 G 最终产物
+    ├── final.cluster.ref.fasta      # ★★★ 最终参考基因组
+    ├── final.cluster.ref_info.tsv   # ★★★ 最终元数据
+    ├── virus_genes_cov.tsv          # 基因覆盖度
+    ├── clusters_with_LCA.tsv        # LCA 诊断报告
+    ├── clusters.LCA_Distribution.png # LCA 分布图
+    └── derep.summary.tsv            # 去冗余全流程评估
+```
 
 ## 执行概览
 
