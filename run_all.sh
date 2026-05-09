@@ -63,10 +63,10 @@ show_help() {
 │   $TAXONOMY_DIR/names.dmp            NCBI 物种名映射          │
 │   $TAXONOMY_DIR/nucl_gb.accession2taxid  Accession→TaxID     │
 ├──────────────────────────────────────────────────────────────┤
-│ 输出产物 (三大阶段目录):                                      │
+│ 输出产物 (四大目录):                                          │
 │                                                              │
-│   $WORK_DIR/0.raw_data/00_logs/    ★ 运行日志                 │
-│   $WORK_DIR/1.virus-host_db/       ★ 病毒-宿主数据库          │
+│   $WORK_DIR/0.raw_data/             ★ 原始输入数据            │
+│   $WORK_DIR/1.virus-host_db/        ★ 病毒-宿主数据库         │
 │     ├── A-merge/                    阶段 A: 元数据整合        │
 │     ├── B-ictv/                     阶段 B: ICTV VMR 拆分     │
 │     └── C-host_classify/            阶段 C: 宿主分类          │
@@ -75,6 +75,7 @@ show_help() {
 │     ├── E-metadata/                 阶段 E: 元数据完善        │
 │     ├── F-dedup/                    阶段 F: 分类去冗余        │
 │     └── G-cluster/                  阶段 G: 聚类评估          │
+│   $WORK_DIR/4.logs/                 ★ 全部运行日志            │
 ├──────────────────────────────────────────────────────────────┤
 │ 运行示例:                                                     │
 │                                                              │
@@ -117,9 +118,14 @@ EMAIL="${EMAIL_ARG:-${EMAIL:-your_email@example.com}}"
 API_KEY="${API_KEY_ARG:-${API_KEY:-}}"
 
 # 三大阶段产物目录 + 日志目录
+# 0.raw_data 原始输入 (用户手动下载)
+# 1.virus-host_db 病毒-宿主数据库构建 (阶段 A+B+C)
+# 2.plant-virus.db 植物病毒参考基因组 (阶段 D+E+F+G)
+# 4.logs 运行日志
 VHOST_DIR="$WORK_DIR/1.virus-host_db"
 PLANT_DIR="$WORK_DIR/2.plant-virus.db"
-LOG_DIR="$WORK_DIR/0.raw_data/00_logs"
+LOG_DIR="$WORK_DIR/4.logs"
+RAW_INPUT_DIR="$WORK_DIR/0.raw_data"
 mkdir -p "$LOG_DIR"
 mkdir -p "$VHOST_DIR"/{A-merge,B-ictv,C-host_classify}
 mkdir -p "$PLANT_DIR"/{D-sequences,E-metadata,F-dedup,G-cluster}
@@ -277,19 +283,19 @@ run "C2-宿主分类" "$VHOST_DIR/C-host_classify/VHostMetadata/Plant.tsv" \
 # ============================================================
 log "========== 阶段 D: 序列获取 =========="
 
-run "D1-比对提取FASTA" "$PLANT_DIR/D-sequences/Plant_virus_db/Plant_Extracted_Sequences.fasta" \
+run "D1-比对提取FASTA" "$PLANT_DIR/D-sequences/Plant_Extracted_Sequences.fasta" \
     python "$BIN_DIR/D1_extract_and_check_fasta.py" \
         --tsv "$VHOST_DIR/C-host_classify/VHostMetadata/Plant.tsv" \
         --fasta "$ALLNUCL_FA" \
         --out_dir "$PLANT_DIR/D-sequences/Plant_virus_db"
 
 # D2: 仅在缺失列表非空时运行
-if [ -f "$PLANT_DIR/D-sequences/Plant_virus_db/Plant_missing_accessions.txt" ] && \
-   [ -s "$PLANT_DIR/D-sequences/Plant_virus_db/Plant_missing_accessions.txt" ]; then
-    run "D2-下载缺失序列" "$PLANT_DIR/D-sequences/Plant_virus_db/Downloaded_Plant_Viruses.fasta" \
+if [ -f "$PLANT_DIR/D-sequences/Plant_missing_accessions.txt" ] && \
+   [ -s "$PLANT_DIR/D-sequences/Plant_missing_accessions.txt" ]; then
+    run "D2-下载缺失序列" "$PLANT_DIR/D-sequences/Downloaded_Plant_Viruses.fasta" \
         python "$BIN_DIR/D2_download_missing.py" \
-            -i "$PLANT_DIR/D-sequences/Plant_virus_db/Plant_missing_accessions.txt" \
-            -o "$PLANT_DIR/D-sequences/Plant_virus_db/Downloaded_Plant_Viruses.fasta" \
+            -i "$PLANT_DIR/D-sequences/Plant_missing_accessions.txt" \
+            -o "$PLANT_DIR/D-sequences/Downloaded_Plant_Viruses.fasta" \
             -k "$API_KEY" --resume
 else
     log "⊙ 跳过 [D2] — 无缺失序列或列表为空"
@@ -298,8 +304,8 @@ fi
 # D3: 合并 (使用绝对路径, 避免 cd 失败)
 MERGED_FASTA="$PLANT_DIR/D-sequences/plant.virus.fasta"
 MERGED_IDS="$PLANT_DIR/D-sequences/plant.virus.id"
-EXTRACTED_FA="$PLANT_DIR/D-sequences/Plant_virus_db/Plant_Extracted_Sequences.fasta"
-DOWNLOADED_FA="$PLANT_DIR/D-sequences/Plant_virus_db/Downloaded_Plant_Viruses.fasta"
+EXTRACTED_FA="$PLANT_DIR/D-sequences/Plant_Extracted_Sequences.fasta"
+DOWNLOADED_FA="$PLANT_DIR/D-sequences/Downloaded_Plant_Viruses.fasta"
 
 if [ ! -f "$MERGED_FASTA" ]; then
     log "▶ 合并序列文件 (提取: $EXTRACTED_FA + 下载: $DOWNLOADED_FA)..."
@@ -309,7 +315,7 @@ if [ ! -f "$MERGED_FASTA" ]; then
     if [ -s "$MERGED_FASTA" ]; then
         sed -i 's/ .*//' "$MERGED_FASTA"
         grep ">" "$MERGED_FASTA" | sed 's/>//' > "$MERGED_IDS"
-        local n=$(grep -c '>' "$MERGED_FASTA" || echo 0)
+        n=$(grep -c '>' "$MERGED_FASTA" || echo 0)
         log "✓ 序列合并完成 → $MERGED_FASTA ($n 条)"
     else
         log "✗ 合并失败: 合并后文件为空"

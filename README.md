@@ -151,15 +151,12 @@ python summarize_pipeline.py --work-dir ~/plant_virus_db
 
 ```
 plant_virus_db/
-├── 0.raw_data/                       ← 原始输入 + 运行日志
+├── 0.raw_data/                       ← 原始输入数据
 │   ├── AllNucleotide.fa.gz           # 全量病毒核酸序列
 │   ├── AllNuclMetadata.csv           # 病毒元数据
 │   ├── VHostMetadata.tsv             # NCBI 宿主关联表
 │   ├── virushostdb.tsv               # KEGG 宿主数据
-│   ├── VMR_MSL41.*.xlsx              # ICTV VMR 表格
-│   └── 00_logs/                      # ★ 全部运行日志
-│       ├── pipeline.log              # 总时间线
-│       └── A1-数据质检.log ~ G4b-...log  # 各步骤详细日志
+│   └── VMR_MSL41.*.xlsx              # ICTV VMR 表格
 │
 ├── 1.virus-host_db/                  ← ★ 病毒-宿主数据库
 │   ├── A-merge/                      # 阶段 A: 元数据整合
@@ -167,17 +164,22 @@ plant_virus_db/
 │   └── C-host_classify/              # 阶段 C: 宿主分类
 │       └── VHostMetadata/Plant.tsv   # 植物病毒 Accession 列表
 │
-└── 2.plant-virus.db/                 ← ★ 植物病毒参考基因组
-    ├── D-sequences/                  # 阶段 D: 序列获取
-    ├── E-metadata/                   # 阶段 E: 元数据完善
-    ├── F-dedup/                      # 阶段 F: 分类去冗余
-    └── G-cluster/                    # ★★★ 阶段 G: 最终产物
-        ├── final.cluster.ref.fasta   # 最终参考基因组序列
-        ├── final.cluster.ref_info.tsv # 最终元数据
-        ├── virus_genes_cov.tsv       # 基因覆盖度
-        ├── clusters_with_LCA.tsv     # LCA 诊断报告
-        ├── clusters.LCA_Distribution.png
-        └── derep.summary.tsv         # 去冗余评估
+├── 2.plant-virus.db/                 ← ★ 植物病毒参考基因组
+│   ├── D-sequences/                  # 阶段 D: 序列获取
+│   │   ├── plant.virus.fasta         # 植物病毒合并序列
+│   │   └── plant.virus.id            # Accession ID 列表
+│   ├── E-metadata/                   # 阶段 E: 元数据完善
+│   ├── F-dedup/                      # 阶段 F: 分类去冗余
+│   └── G-cluster/                    # ★★★ 阶段 G: 最终产物
+│       ├── final.cluster.ref.fasta   # 最终参考基因组序列
+│       ├── final.cluster.ref_info.tsv # 最终元数据
+│       ├── virus_genes_cov.tsv       # 基因覆盖度
+│       ├── clusters_with_LCA.tsv     # LCA 诊断报告
+│       └── derep.summary.tsv         # 去冗余评估
+│
+└── 4.logs/                           ← ★ 全部运行日志
+    ├── pipeline.log                  # 总时间线
+    └── A1-数据质检.log ~ G4b-...log  # 各步骤详细日志
 ```
 
 ## 执行概览
