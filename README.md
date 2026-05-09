@@ -83,19 +83,42 @@
 ## 快速开始
 
 ```bash
-# 1. 配置环境变量 (按实际情况修改)
-export WORK_DIR="$HOME/plant_virus_db"
-export RAW_DIR="$WORK_DIR/raw_data"
-export DATABASE_DIR="$HOME/database"
-export EMAIL="your_email@example.com"
+# 1. 下载原始数据 (详见「原始数据下载」章节)
 
-# 2. 下载原始数据 (见下方「原始数据下载」章节)
+# 2. 仅检查前置条件
+bash run_all.sh --check
 
-# 3. 一键运行全流程
-bash run_all.sh
+# 3. 最小运行（仅邮箱必填）
+bash run_all.sh -e your_email@example.com
 
-# 支持断点续跑 — 已完成的步骤会自动跳过
+# 4. 完整配置运行
+bash run_all.sh \
+  -w ~/plant_virus_db \
+  -r ~/plant_virus_db/raw_data \
+  -d ~/database \
+  -e your_email@example.com \
+  -k your_ncbi_api_key \
+  -p 60 \
+  -m 32
+
+# 5. 中断后断点续跑
+bash run_all.sh -e your_email@example.com   # 已完成步骤自动跳过
+
+# 6. 生成学术总结报告
+python summarize_pipeline.py --work-dir ~/plant_virus_db
 ```
+
+| 参数 | 简写 | 默认值 | 说明 |
+|:-----|:-----|:-----|:-----|
+| `--email` | `-e` | — **(必填)** | NCBI E-utilities 邮箱 |
+| `--work-dir` | `-w` | `$HOME/plant_virus_db` | 工作目录，所有产物输出位置 |
+| `--raw-dir` | `-r` | `<work_dir>/raw_data` | 原始下载数据目录 |
+| `--db-dir` | `-d` | `$HOME/database` | 本地数据库根目录 |
+| `--taxonomy-dir` | `-t` | `<db_dir>/taxonomy` | NCBI Taxonomy 数据目录 |
+| `--api-key` | `-k` | — | NCBI API Key (提升请求频率) |
+| `--ncpu` | `-p` | 60 | 通用并行线程数 |
+| `--mmseqs-threads` | `-m` | 32 | MMseqs2 聚类线程数 |
+| `--taxonkit` | — | `taxonkit` | taxonkit 可执行文件路径 |
 
 ## 工作目录结构
 
