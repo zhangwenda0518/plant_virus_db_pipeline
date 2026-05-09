@@ -34,47 +34,11 @@
 
 构建一个高质量、非冗余、可追溯的植物病毒参考基因组数据库，对于提升植物病毒鉴定精度、促进比较基因组学研究和支撑植物检疫决策具有重要的基础性意义。
 
-本数据库的构建涉及两条并行的信息主线: **(一) 植物病毒序列数据的整理**——从公共数据库中提取、分类、去冗余植物病毒基因组序列；**(二) 植物病毒宿主信息的整理**——从多源宿主标注数据中整合、校验、补全病毒-宿主关联关系。以下分别介绍两条主线所依赖的外部数据资源。
+本数据库的构建涉及两条逻辑主线: **(一) 植物病毒宿主信息的整理**——从多源宿主标注数据中整合、校验、补全病毒-宿主关联关系；**(二) 植物病毒序列数据的整理**——基于宿主信息从公共序列库中提取、分类、去冗余植物病毒基因组序列。先宿主后序列，以下依次介绍。
 
-### 一、植物病毒参考序列数据库
+### 一、植物病毒宿主信息源
 
-高质量植物病毒的参考序列数据库是构建病毒参考基因组的基石。我们对当前国际主流的植物病毒参考序列数据库进行了系统调研。
-
-**NCBI Virus (NCBI 病毒门户).** NCBI Virus 门户 [https://www.ncbi.nlm.nih.gov/labs/virus/vssi/] 通过宿主谱系筛选 (HostLineage_ss: Viridiplantae, taxid:33090) 可获取约 6,234 个植物相关病毒物种、162,836 条核酸序列。NCBI 同时通过 FTP 提供全量病毒核酸数据 (AllNucleotide.fa.gz, ~277 Gb) 和元数据 (AllNuclMetadata.csv)。该数据库的优势在于数据体量最大、更新持续，但宿主标注系自动化流程生成，存在一定比例的错误。
-
-**VirusDetect 植物病毒数据库.** VirusDetect [http://virusdetect.feilab.net/] 由康奈尔大学 Fei 实验室维护，最新版本 V267 (2025-08-06)。通过 100%/97%/95% 三级序列一致性去冗余，为每个宿主界生成独特病毒序列库。以 vrl_Plants_267_U97 为例，经 Viridiplantae 谱系校验后，46,894 条序列中 29,979 条 (63.9%) 确认为植物宿主，其余为非 Viridiplantae 序列，表明基于序列相似性分类存在宿主边界溢出。
-
-**PlantVirusBase (植物病毒基准数据库).** PlantVirusBase [http://47.90.94.155/PlantVirusBase] (2025-05-08) 收录 3,353 种植物病毒和 9,010 个病毒-植物宿主关联。Yang 等 (2025, *Plant Disease*) 的分析表明双链 DNA 病毒宿主范围更广，但包膜类型、基因组大小或传播方式与宿主范围之间仅存弱关联 [https://apsjournals.apsnet.org/doi/epdf/10.1094/PDIS-07-25-1393-SR]。
-
-**PVirDB.** PVirDB [https://zenodo.org/records/6609576] (2022-06-03) 收录 4,463 个植物病毒物种、50,611 条核酸序列，以 FASTA 格式分发 (头部格式: ">accession|taxid|description")。
-
-**Virtool.** Virtool [https://github.com/virtool/ref-plant-viruses] v1.5.0 收录 2,084 种植物病毒、4,783 个组装，以 JSON 格式分发。
-
-**ViralZone Virosaurus.** ViralZone [https://viralzone.expasy.org/8676] 植物病毒子集 (2020-03-30) 收录 1,230 种、6,038 条代表性序列，头部含 Swiss-Prot 注释。
-
-**DPVweb.** DPVweb [https://www.dpvweb.net/] 收录植物病毒/类病毒/卫星序列 37,076 条，感染真菌和原生动物病毒 438 条，动物病毒 1,620 条，噬菌体 123 条。
-
-**PhytoPipe.** PhytoPipe [https://github.com/healthyPlant/PhytoPipe] 基于 ICTV VMR 和 VHDB 的内置参考列表收录 3,253 种植物病毒 TaxID。
-
-#### 参考序列数据库汇总
-
-| 数据库 | 版本/日期 | 物种数 | 序列数 | 去冗余策略 | 更新状态 | URL |
-|:--------|:----------|:------:|:------:|:-----------|:---------|:-----|
-| **NCBI Virus** | 持续更新 | 6,234 | 162,836 | 无 | 持续 | [ncbi.nlm.nih.gov](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/) |
-| **VirusDetect** | V267 (2025-08) | — | 128,956 | 100%/97%/95% | 定期 | [virusdetect.feilab.net](http://virusdetect.feilab.net/) |
-| **PlantVirusBase** | 2025-05 | 3,353 | — | 未公开 | 2025-05 | [47.90.94.155](http://47.90.94.155/PlantVirusBase) |
-| **PVirDB** | 2022-06 | 4,463 | 50,611 | 无 | 已停更 | [zenodo.org](https://zenodo.org/records/6609576) |
-| **Virtool** | v1.5.0 | 2,084 | 4,783 | OTU 聚类 | 定期 | [github.com/virtool](https://github.com/virtool/ref-plant-viruses) |
-| **ViralZone** | 2020-03 | 1,230 | 6,038 | 98% | 已停更 | [viralzone.expasy.org](https://viralzone.expasy.org/8676) |
-| **DPVweb** | — | — | 37,076 | 无 | 持续 | [dpvweb.net](https://www.dpvweb.net/) |
-| **PhytoPipe** | — | 3,253 | — | 无 | 随 VMR 更新 | [github.com/healthyPlant](https://github.com/healthyPlant/PhytoPipe) |
-| **本研究** | MSL41 (2026) | — | — | 瀑布流+seqkit(100%)+mmseqs(98%)+vclust | — | [github.com/zhangwenda0518](https://github.com/zhangwenda0518/plant_virus_db_pipeline) |
-
-> "—" = 未获取或未统计；物种数统计口径各数据库不一致。
-
-### 二、植物病毒宿主信息源
-
-病毒参考序列的准确宿主标注是数据库质量的核心。本研究整合以下四类宿主信息源，以最大化宿主覆盖度与可信度。
+准确界定病毒的植物宿主范围是构建数据库的核心前提。本研究整合以下四类宿主信息源，以最大化宿主覆盖度与可信度。
 
 **NCBI VHostMetadata (自动标注).** NCBI 通过 FTP 提供病毒宿主关联元数据 [https://ftp.ncbi.nlm.nih.gov/genomes/Viruses/AllDataTmp/]，约 1,824 条记录通过宿主谱系 (Host_lineage) 推导 Viridiplantae 关联。优势在于与序列数据库直接关联、持续更新，但自动化标注存在误标风险。
 
@@ -94,6 +58,42 @@
 | **EPPO Global Database** | — | 人工审核 | 高 | 持续 | [gd.eppo.int](https://gd.eppo.int/datasheets/) |
 
 > NCBI 1,824 = 门户 Viridiplantae 严格匹配；KEGG 2,555 = virushostdb.tsv 中 Host 字段含 Viridiplantae。均非唯一物种数，供参考宿主信息覆盖度。
+
+### 二、植物病毒参考序列数据库
+
+基于上述宿主信息确定目标 Accession 后，从公共序列数据库中提取对应的核酸序列。我们对当前国际主流的植物病毒参考序列数据库进行了系统调研。
+
+**NCBI Virus (NCBI 病毒门户).** NCBI Virus 门户 [https://www.ncbi.nlm.nih.gov/labs/virus/vssi/] 通过宿主谱系筛选可获得约 6,234 个植物相关病毒物种、162,836 条核酸序列。NCBI 同时通过 FTP 提供全量病毒核酸数据 (AllNucleotide.fa.gz, ~277 Gb) 和元数据 (AllNuclMetadata.csv)。该数据库数据体量最大、更新持续，是本流程的主要序列来源。
+
+**VirusDetect 植物病毒数据库.** VirusDetect [http://virusdetect.feilab.net/] 由康奈尔大学 Fei 实验室维护，最新版本 V267 (2025-08-06)。通过 100%/97%/95% 三级序列一致性去冗余，为每个宿主界生成独特病毒序列库。以 vrl_Plants_267_U97 为例，经 Viridiplantae 谱系校验后，46,894 条序列中 29,979 条 (63.9%) 确认为植物宿主，表明基于序列相似性分类存在宿主边界溢出。
+
+**PlantVirusBase (植物病毒基准数据库).** PlantVirusBase [http://47.90.94.155/PlantVirusBase] (2025-05-08) 收录 3,353 种植物病毒和 9,010 个病毒-植物宿主关联。Yang 等 (2025, *Plant Disease*) 分析表明双链 DNA 病毒宿主范围更广，但包膜类型、基因组大小或传播方式与宿主范围之间仅存弱关联 [https://apsjournals.apsnet.org/doi/epdf/10.1094/PDIS-07-25-1393-SR]。
+
+**PVirDB.** PVirDB [https://zenodo.org/records/6609576] (2022-06-03) 收录 4,463 个植物病毒物种、50,611 条核酸序列，以 FASTA 格式分发 (头部格式: ">accession|taxid|description")。
+
+**Virtool.** Virtool [https://github.com/virtool/ref-plant-viruses] v1.5.0 收录 2,084 种植物病毒、4,783 个组装，以 JSON 格式分发。
+
+**ViralZone Virosaurus.** ViralZone [https://viralzone.expasy.org/8676] 植物病毒子集 (2020-03-30) 收录 1,230 种、6,038 条代表性序列。
+
+**DPVweb.** DPVweb [https://www.dpvweb.net/] 收录植物病毒/类病毒/卫星序列 37,076 条。
+
+**PhytoPipe.** PhytoPipe [https://github.com/healthyPlant/PhytoPipe] 基于 ICTV VMR 和 VHDB 的内置参考列表收录 3,253 种植物病毒 TaxID。
+
+#### 参考序列数据库汇总
+
+| 数据库 | 版本/日期 | 物种数 | 序列数 | 去冗余策略 | 更新状态 | URL |
+|:--------|:----------|:------:|:------:|:-----------|:---------|:-----|
+| **NCBI Virus** | 持续更新 | 6,234 | 162,836 | 无 | 持续 | [ncbi.nlm.nih.gov](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/) |
+| **VirusDetect** | V267 (2025-08) | — | 128,956 | 100%/97%/95% | 定期 | [virusdetect.feilab.net](http://virusdetect.feilab.net/) |
+| **PlantVirusBase** | 2025-05 | 3,353 | — | 未公开 | 2025-05 | [47.90.94.155](http://47.90.94.155/PlantVirusBase) |
+| **PVirDB** | 2022-06 | 4,463 | 50,611 | 无 | 已停更 | [zenodo.org](https://zenodo.org/records/6609576) |
+| **Virtool** | v1.5.0 | 2,084 | 4,783 | OTU 聚类 | 定期 | [github.com/virtool](https://github.com/virtool/ref-plant-viruses) |
+| **ViralZone** | 2020-03 | 1,230 | 6,038 | 98% | 已停更 | [viralzone.expasy.org](https://viralzone.expasy.org/8676) |
+| **DPVweb** | — | — | 37,076 | 无 | 持续 | [dpvweb.net](https://www.dpvweb.net/) |
+| **PhytoPipe** | — | 3,253 | — | 无 | 随 VMR 更新 | [github.com/healthyPlant](https://github.com/healthyPlant/PhytoPipe) |
+| **本研究** | MSL41 (2026) | — | — | 瀑布流+seqkit(100%)+mmseqs(98%)+vclust | — | [github.com/zhangwenda0518](https://github.com/zhangwenda0518/plant_virus_db_pipeline) |
+
+> "—" = 未获取或未统计；物种数统计口径各数据库不一致。
 
 ### 现有数据库的局限性
 
@@ -345,47 +345,55 @@ VHostMetadata.tsv                                ▼
 
 ## 原始数据下载
 
+### raw_data 目录结构
+
+下载完成后 `raw_data/` 应包含以下文件:
+
+```
+raw_data/
+├── AllNucleotide.fa.gz              NCBI 全量病毒核酸序列          (~277G)
+├── AllNuclMetadata.csv              NCBI 病毒元数据                (~2G)
+├── VHostMetadata.tsv                NCBI 病毒-宿主关联表           (~500M)
+├── virushostdb.tsv                  KEGG Virus-Host DB            (~1.5G)
+└── VMR_MSL41.v1.20260320.xlsx       ICTV 官方 VMR 电子表格        (~4M)
+```
+
+> 另外 `~/database/taxonomy/` 下需放置 `names.dmp`、`nodes.dmp` 和 `nucl_gb.accession2taxid`。
+
+### 下载命令
+
 ```bash
 # === 创建工作目录 ===
 mkdir -p ~/database/taxonomy
 mkdir -p ~/plant_virus_db/raw_data
 cd ~/plant_virus_db/raw_data
 
-# === NCBI 病毒序列 (约 277G) ===
-wget https://ftp.ncbi.nlm.nih.gov/genomes/Viruses/AllNucleotide/AllNucleotide.fa.gz
+# === 宿主信息 ===
+wget https://ftp.ncbi.nlm.nih.gov/genomes/Viruses/AllDataTmp/VHostMetadata.tsv
+wget https://www.genome.jp/ftp/db/virushostdb/virushostdb.tsv
+wget https://ictv.global/sites/default/files/VMR/VMR_MSL41.v1.20260320.xlsx
 
-# === NCBI 病毒元数据 (约 2G) ===
+# === 序列数据 ===
+wget https://ftp.ncbi.nlm.nih.gov/genomes/Viruses/AllNucleotide/AllNucleotide.fa.gz
 wget https://ftp.ncbi.nlm.nih.gov/genomes/Viruses/AllNuclMetadata/AllNuclMetadata.csv.gz
 gunzip AllNuclMetadata.csv.gz
 
-# === NCBI 病毒宿主关联表 (约 500M) ===
-wget https://ftp.ncbi.nlm.nih.gov/genomes/Viruses/AllDataTmp/VHostMetadata.tsv
-
-# === KEGG Virus-Host DB (约 1.5G) ===
-wget https://www.genome.jp/ftp/db/virushostdb/virushostdb.tsv
-
-# === ICTV VMR (定期更新) ===
-# 当前最新: MSL41 (2026-03-20)
-wget https://ictv.global/sites/default/files/VMR/VMR_MSL41.v1.20260320.xlsx
-
-# === NCBI Taxonomy dump (约 71M) ===
+# === NCBI Taxonomy ===
 wget https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz -O ~/database/taxonomy/taxdump.tar.gz
 tar -xzf ~/database/taxonomy/taxdump.tar.gz -C ~/database/taxonomy/
-
-# === NCBI Accession → TaxID 映射 (约 50G) ===
 wget https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/nucl_gb.accession2taxid.gz
 gunzip nucl_gb.accession2taxid.gz -d ~/database/taxonomy/
 ```
 
-| 文件 | 来源 | 大小 | 用途 |
-|:-----|:-----|:-----|:-----|
-| `AllNucleotide.fa.gz` | NCBI FTP | ~277G | 全量病毒 FASTA 序列 |
-| `AllNuclMetadata.csv` | NCBI FTP | ~2G | 病毒元数据 (物种/宿主/长度等) |
-| `VHostMetadata.tsv` | NCBI FTP | ~500M | NCBI 病毒-宿主关联 |
-| `virushostdb.tsv` | KEGG | ~1.5G | VHDB 病毒-宿主数据库 |
-| `VMR_MSL41.v1.20260320.xlsx` | ICTV | ~4M | ICTV 官方病毒分类与宿主 |
-| `taxdump.tar.gz` | NCBI Taxonomy | ~71M | names.dmp / nodes.dmp 等 |
-| `nucl_gb.accession2taxid` | NCBI Taxonomy | ~50G | Accession → TaxID 完整映射 |
+| 文件 | 来源 | 大小 | 类型 | 用途 |
+|:-----|:-----|:-----|:-----|:-----|
+| `VHostMetadata.tsv` | NCBI FTP | ~500M | 宿主信息 | NCBI 病毒-宿主关联 (自动标注) |
+| `virushostdb.tsv` | KEGG | ~1.5G | 宿主信息 | VHDB 病毒-宿主数据库 (文献溯源) |
+| `VMR_MSL41.v1.xlsx` | ICTV | ~4M | 宿主信息 | ICTV 官方分类与宿主源 |
+| `AllNucleotide.fa.gz` | NCBI FTP | ~277G | 序列数据 | 全量病毒 FASTA |
+| `AllNuclMetadata.csv` | NCBI FTP | ~2G | 序列数据 | 病毒元数据 (物种/长度等) |
+| `taxdump.tar.gz` | NCBI Taxonomy | ~71M | 分类数据库 | names.dmp / nodes.dmp |
+| `nucl_gb.accession2taxid` | NCBI Taxonomy | ~50G | 分类数据库 | Accession → TaxID 映射 |
 
 **总下载量约 330G+**，建议在服务器端用 `screen`/`tmux` 后台执行。
 
