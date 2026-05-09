@@ -43,29 +43,35 @@ def load_metadata(info_file: str):
     """加载元数据，建立包含 Segment 的深度查询字典"""
     print(f"⏳ 正在加载并解析物种分类元数据表 ({info_file})...")
     info_df = pl.read_csv(info_file, separator="\t", ignore_errors=True)
-    
+
+    # 统一物种列名: Species_ICTV 或 Species (兼容上游不同列名)
+    if "Species_ICTV" not in info_df.columns and "Species" in info_df.columns:
+        info_df = info_df.rename({"Species": "Species_ICTV"})
+    if "Species_ICTV" not in info_df.columns:
+        info_df = info_df.with_columns(pl.lit("Unknown").alias("Species_ICTV"))
+
     # 确保 Segment 列存在
     if "Segment" not in info_df.columns:
         info_df = info_df.with_columns(pl.lit("UNLABELED").alias("Segment"))
-        
+
     acc_to_meta = {}
     base_accs = []
-    
+
     for row in info_df.iter_rows(named=True):
         raw_acc = str(row.get("Accession", "")).strip()
         if not raw_acc or raw_acc == "None":
             base_accs.append("")
             continue
-            
+
         base_acc = raw_acc.split(".")[0].upper()
         base_accs.append(base_acc)
-        
+
         acc_to_meta[base_acc] = {
             "Taxid": str(row.get("Taxid", "Unknown_TaxID")).strip(),
-            "Species_ICTV": str(row.get("Species_ICTV", "Unknown_Species")).strip(),
+            "Species_ICTV": str(row.get("Species_ICTV", row.get("Species", "Unknown"))).strip(),
             "Segment": clean_segment_name(row.get("Segment", ""))
         }
-        
+
     info_df = info_df.with_columns(pl.Series("Base_Accession", base_accs))
     print(f"   -> 成功装载 {len(acc_to_meta):,} 条物种信息记录。")
     return info_df, acc_to_meta
@@ -75,7 +81,7 @@ def get_rescue_trait(acc: str, acc_to_meta: dict, mode: str):
     meta = acc_to_meta.get(acc, {})
     taxid = meta.get("Taxid", "NA")
     species = meta.get("Species_ICTV", "NA")
-    
+
     if mode == "segmented":
         seg = meta.get("Segment", "UNLABELED")
         return (taxid, species, seg)
@@ -105,13 +111,13 @@ def generate_validation_reports(engine_name, prefix, retained_accs, info_df, out
     filtered_df = info_df.filter(pl.col("Base_Accession").is_in(retained_accs))
     dedup_info_path = os.path.join(out_dir, f"{prefix}_info.tsv")
     filtered_df.drop("Base_Accession").write_csv(dedup_info_path, separator="\t")
-    
+
     count_df = filtered_df.group_by(["Taxid", "Species_ICTV"]).agg(
         pl.len().alias("Retained_Sequences_Count")
     ).sort("Retained_Sequences_Count", descending=True)
     count_path = os.path.join(out_dir, f"{prefix}_taxid_counts.tsv")
     count_df.write_csv(count_path, separator="\t")
-    
+
     unique_taxids = filtered_df.select("Taxid").n_unique()
     print(f"\n   📊 [{engine_name}] 多样性验证与保留报告:")
     print(f"      - 🧬 最终保留序列总数 : {len(retained_accs):,} 条")
