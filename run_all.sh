@@ -295,14 +295,25 @@ else
     log "⊙ 跳过 [D2] — 无缺失序列或列表为空"
 fi
 
-# D3: 合并
-if [ ! -f "$PLANT_DIR/D-sequences/plant.virus.fasta" ]; then
-    log "▶ 合并序列文件..."
-    cd "$PLANT_DIR/D-sequences/Plant_virus_db"
-    cat Plant_Extracted_Sequences.fasta Downloaded_Plant_Viruses.fasta 2>/dev/null > "$PLANT_DIR/D-sequences/plant.virus.fasta"
-    sed -i 's/ .*//' "$PLANT_DIR/D-sequences/plant.virus.fasta"
-    grep ">" "$PLANT_DIR/D-sequences/plant.virus.fasta" | sed 's/>//' > "$PLANT_DIR/D-sequences/plant.virus.id"
-    log "✓ 序列合并完成"
+# D3: 合并 (使用绝对路径, 避免 cd 失败)
+MERGED_FASTA="$PLANT_DIR/D-sequences/plant.virus.fasta"
+MERGED_IDS="$PLANT_DIR/D-sequences/plant.virus.id"
+EXTRACTED_FA="$PLANT_DIR/D-sequences/Plant_virus_db/Plant_Extracted_Sequences.fasta"
+DOWNLOADED_FA="$PLANT_DIR/D-sequences/Plant_virus_db/Downloaded_Plant_Viruses.fasta"
+
+if [ ! -f "$MERGED_FASTA" ]; then
+    log "▶ 合并序列文件 (提取: $EXTRACTED_FA + 下载: $DOWNLOADED_FA)..."
+    > "$MERGED_FASTA"  # 确保输出文件存在(空)
+    [ -f "$EXTRACTED_FA" ] && cat "$EXTRACTED_FA" >> "$MERGED_FASTA" && log "  + 已提取序列"
+    [ -f "$DOWNLOADED_FA" ]  && cat "$DOWNLOADED_FA"  >> "$MERGED_FASTA" && log "  + 已下载序列"
+    if [ -s "$MERGED_FASTA" ]; then
+        sed -i 's/ .*//' "$MERGED_FASTA"
+        grep ">" "$MERGED_FASTA" | sed 's/>//' > "$MERGED_IDS"
+        local n=$(grep -c '>' "$MERGED_FASTA" || echo 0)
+        log "✓ 序列合并完成 → $MERGED_FASTA ($n 条)"
+    else
+        log "✗ 合并失败: 合并后文件为空"
+    fi
 fi
 
 # ============================================================
@@ -373,13 +384,17 @@ run "F4b-节段去冗余" "$PLANT_DIR/F-dedup/Final_DB_Build/segmented_mmseqs_0.
         -m segmented -o "$PLANT_DIR/F-dedup/Final_DB_Build" -t "$MMSEQS_THREADS"
 
 # 合并最终代表性基因组
-if [ ! -f "$PLANT_DIR/F-dedup/plant.final.rmdup.fasta" ]; then
+BUILD_DIR="$PLANT_DIR/F-dedup/Final_DB_Build"
+RMDUP_FA="$PLANT_DIR/F-dedup/plant.final.rmdup.fasta"
+RMDUP_INFO="$PLANT_DIR/F-dedup/plant.final.rmdup_info.tsv"
+RMDUP_IDS="$PLANT_DIR/F-dedup/plant.final.rmdup.id"
+
+if [ ! -f "$RMDUP_FA" ]; then
     log "▶ 合并非节段+节段最终序列..."
-    cd "$PLANT_DIR/F-dedup/Final_DB_Build"
-    cat nonsegmented_mmseqs_0.98.fasta segmented_mmseqs_0.98.fasta > "$PLANT_DIR/F-dedup/plant.final.rmdup.fasta"
-    cat nonsegmented_mmseqs_0.98_info.tsv segmented_mmseqs_0.98_info.tsv | sed '2,${/^Accession/d;}' > "$PLANT_DIR/F-dedup/plant.final.rmdup_info.tsv"
-    grep ">" "$PLANT_DIR/F-dedup/plant.final.rmdup.fasta" | sed 's/>//' > "$PLANT_DIR/F-dedup/plant.final.rmdup.id"
-    log "✓ 合并完成"
+    cat "$BUILD_DIR/nonsegmented_mmseqs_0.98.fasta" "$BUILD_DIR/segmented_mmseqs_0.98.fasta" > "$RMDUP_FA"
+    cat "$BUILD_DIR/nonsegmented_mmseqs_0.98_info.tsv" "$BUILD_DIR/segmented_mmseqs_0.98_info.tsv" | sed '2,${/^Accession/d;}' > "$RMDUP_INFO"
+    grep ">" "$RMDUP_FA" | sed 's/>//' > "$RMDUP_IDS"
+    log "✓ 合并完成 ($(grep -c '>' "$RMDUP_FA" || echo 0) 条序列)"
 fi
 
 # ============================================================
