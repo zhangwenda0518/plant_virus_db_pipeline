@@ -5,15 +5,25 @@ set -euo pipefail
 # 植物病毒基因组数据库构建 Pipeline — 一键执行脚本
 # ============================================================
 # 用法:
-#   bash run_all.sh                        # 使用默认路径运行
-#   bash run_all.sh --help                 # 显示帮助信息
-#   WORK_DIR=/data/virus bash run_all.sh   # 通过环境变量自定义路径
+#   bash run_all.sh -e me@qq.com                           # 最小运行
+#   bash run_all.sh -w /data/virus -e me@qq.com -k KEY     # 完整配置
+#   bash run_all.sh --help                                 # 显示帮助
 #
 # 断点续跑: 每个阶段会检查产物是否已存在，已存在的步骤自动跳过
 # 日志: 所有 stdout/stderr 同时输出到终端和 00_logs/ 目录
 # ============================================================
 
-# ==================== 帮助信息 ====================
+# ==================== 参数解析 ====================
+EMAIL_ARG=""
+API_KEY_ARG=""
+WORK_DIR_ARG=""
+RAW_DIR_ARG=""
+DATABASE_DIR_ARG=""
+TAXONOMY_DIR_ARG=""
+NCPU_ARG=""
+MMSEQS_THREADS_ARG=""
+CHECK_ONLY=""
+
 show_help() {
     cat << 'HELP'
 ┌──────────────────────────────────────────────────────────────┐
@@ -21,85 +31,87 @@ show_help() {
 │         Plant Virus Reference Genome Database Construction    │
 ├──────────────────────────────────────────────────────────────┤
 │ 用法:                                                         │
-│   bash run_all.sh                             直接运行        │
-│   bash run_all.sh --help                      显示此帮助      │
-│   bash run_all.sh --check                     仅检查前置条件  │
+│   bash run_all.sh -e <邮箱>                       最小运行    │
+│   bash run_all.sh --help                          显示帮助    │
+│   bash run_all.sh --check                         检查前置    │
 ├──────────────────────────────────────────────────────────────┤
-│ 环境变量 (运行前按需设置):                                    │
+│ 命令行参数:                                                   │
 │                                                              │
-│   WORK_DIR        工作目录, 所有产物输出位置                   │
-│                   默认: $HOME/plant_virus_db                  │
-│   RAW_DIR         原始下载数据目录                            │
-│                   默认: $WORK_DIR/raw_data                    │
-│   DATABASE_DIR    本地数据库根目录                            │
-│                   默认: $HOME/database                        │
-│   TAXONOMY_DIR    NCBI Taxonomy 数据目录                      │
-│                   默认: $DATABASE_DIR/taxonomy                │
-│   EMAIL           NCBI API 邮箱 (必填)                         │
-│   API_KEY         NCBI API Key (可选, 提升下载速度)            │
-│   NCPU            通用并行线程数 默认: 60                      │
-│   MMSEQS_THREADS  MMseqs2 聚类线程数 默认: 32                  │
+│   -e, --email <EMAIL>          NCBI 邮箱 (必填)               │
+│   -w, --work-dir <DIR>         工作目录                       │
+│                                默认: $HOME/plant_virus_db     │
+│   -r, --raw-dir <DIR>          原始数据目录                   │
+│                                默认: <work_dir>/raw_data      │
+│   -d, --db-dir <DIR>           本地数据库根目录               │
+│                                默认: $HOME/database           │
+│   -t, --taxonomy-dir <DIR>     NCBI Taxonomy 目录            │
+│                                默认: <db_dir>/taxonomy        │
+│   -k, --api-key <KEY>          NCBI API Key (提升频率限制)    │
+│   -p, --ncpu <N>               通用并行数 默认: 60            │
+│   -m, --mmseqs-threads <N>     MMseqs2 线程 默认: 32          │
+│   --check                      仅检查前置条件, 不运行         │
+│   -h, --help                   显示此帮助                     │
 ├──────────────────────────────────────────────────────────────┤
-│ 前置条件 (运行前须就位):                                      │
+│ 前置输入文件 (须预先下载到位):                                │
 │                                                              │
-│   $RAW_DIR/AllNucleotide.fa.gz      NCBI 全量病毒序列         │
-│   $RAW_DIR/AllNuclMetadata.csv      NCBI 病毒元数据           │
-│   $RAW_DIR/VHostMetadata.tsv        NCBI 病毒宿主关联表       │
-│   $RAW_DIR/virushostdb.tsv          KEGG Virus-Host DB        │
-│   $RAW_DIR/VMR_MSL41.*.xlsx         ICTV VMR 电子表格         │
-│   $TAXONOMY_DIR/names.dmp           NCBI 物种名称映射         │
-│   $TAXONOMY_DIR/nucl_gb.accession2taxid   Accession→TaxID 映射│
+│   $RAW_DIR/AllNucleotide.fa.gz       NCBI 全量病毒序列        │
+│   $RAW_DIR/AllNuclMetadata.csv       NCBI 病毒元数据          │
+│   $RAW_DIR/VHostMetadata.tsv         NCBI 病毒宿主关联        │
+│   $RAW_DIR/virushostdb.tsv           KEGG Virus-Host DB       │
+│   $RAW_DIR/VMR_MSL41.*.xlsx          ICTV VMR 电子表格        │
+│   $TAXONOMY_DIR/names.dmp            NCBI 物种名映射          │
+│   $TAXONOMY_DIR/nucl_gb.accession2taxid  Accession→TaxID     │
 ├──────────────────────────────────────────────────────────────┤
 │ 输出产物 (按阶段分目录):                                      │
 │                                                              │
 │   $WORK_DIR/00_logs/               ★ 运行日志                 │
-│   $WORK_DIR/01_merge/              A 元数据整合产物            │
-│   $WORK_DIR/02_ictv/               B ICTV 宿主拆分产物         │
-│   $WORK_DIR/03_host/               C 宿主分类产物              │
-│   $WORK_DIR/04_sequences/          D 植物病毒序列              │
-│   $WORK_DIR/05_metadata/           E 完整元数据                │
-│   $WORK_DIR/06_dedup/              F 去冗余产物                │
-│   $WORK_DIR/07_cluster/            ★ 最终参考基因组            │
+│   $WORK_DIR/01_merge/              A 元数据整合               │
+│   $WORK_DIR/02_ictv/               B ICTV 宿主拆分            │
+│   $WORK_DIR/03_host/               C 宿主分类                 │
+│   $WORK_DIR/04_sequences/          D 植物病毒序列             │
+│   $WORK_DIR/05_metadata/           E 完整元数据               │
+│   $WORK_DIR/06_dedup/              F 去冗余产物               │
+│   $WORK_DIR/07_cluster/            ★ 最终参考基因组           │
 ├──────────────────────────────────────────────────────────────┤
 │ 运行示例:                                                     │
 │                                                              │
-│   # 最小配置                                                   │
-│   EMAIL="me@qq.com" bash run_all.sh                           │
-│                                                              │
-│   # 完整配置                                                   │
-│   WORK_DIR=/data/plant_virus \                               │
-│   RAW_DIR=/data/raw \                                        │
-│   EMAIL="me@qq.com" \                                        │
-│   API_KEY="abc123" \                                         │
-│   NCPU=30 \                                                  │
-│   bash run_all.sh                                             │
-│                                                              │
-│   # 断点续跑 (中断后直接重新执行)                              │
-│   bash run_all.sh    # 已完成步骤自动跳过                      │
+│   bash run_all.sh -e me@qq.com                                │
+│   bash run_all.sh -w /data/virus -e me@qq.com -k mykey -p 30  │
+│   bash run_all.sh --check                                     │
 └──────────────────────────────────────────────────────────────┘
 HELP
     exit 0
 }
 
-# 处理命令行参数
-case "${1:-}" in
-    --help|-h)  show_help ;;
-    --check)    CHECK_ONLY=1 ;;
-    "")         ;;  # 正常运行
-    *)          echo "未知参数: $1 (使用 --help 查看帮助)"; exit 1 ;;
-esac
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --help|-h)       show_help ;;
+        --check)         CHECK_ONLY=1; shift ;;
+        -e|--email)      EMAIL_ARG="$2"; shift 2 ;;
+        -k|--api-key)    API_KEY_ARG="$2"; shift 2 ;;
+        -w|--work-dir)   WORK_DIR_ARG="$2"; shift 2 ;;
+        -r|--raw-dir)    RAW_DIR_ARG="$2"; shift 2 ;;
+        -d|--db-dir)     DATABASE_DIR_ARG="$2"; shift 2 ;;
+        -t|--taxonomy-dir) TAXONOMY_DIR_ARG="$2"; shift 2 ;;
+        --taxonkit)       TAXONKIT_BIN_ARG="$2"; shift 2 ;;
+        -p|--ncpu)       NCPU_ARG="$2"; shift 2 ;;
+        -m|--mmseqs-threads) MMSEQS_THREADS_ARG="$2"; shift 2 ;;
+        *) echo "未知参数: $1 (使用 --help 查看帮助)"; exit 1 ;;
+    esac
+done
 
 # ==================== CONFIG ====================
+# 优先级: 命令行参数 > 环境变量 > 默认值
 BIN_DIR="$(cd "$(dirname "$0")" && pwd)"
-WORK_DIR="${WORK_DIR:-$HOME/plant_virus_db}"
-RAW_DIR="${RAW_DIR:-$WORK_DIR/raw_data}"
-DATABASE_DIR="${DATABASE_DIR:-$HOME/database}"
-TAXONOMY_DIR="${TAXONOMY_DIR:-$DATABASE_DIR/taxonomy}"
-TAXONKIT_BIN="${TAXONKIT_BIN:-taxonkit}"
-NCPU="${NCPU:-60}"
-MMSEQS_THREADS="${MMSEQS_THREADS:-32}"
-EMAIL="${EMAIL:-your_email@example.com}"
-API_KEY="${API_KEY:-}"
+WORK_DIR="${WORK_DIR_ARG:-${WORK_DIR:-$HOME/plant_virus_db}}"
+RAW_DIR="${RAW_DIR_ARG:-${RAW_DIR:-$WORK_DIR/raw_data}}"
+DATABASE_DIR="${DATABASE_DIR_ARG:-${DATABASE_DIR:-$HOME/database}}"
+TAXONOMY_DIR="${TAXONOMY_DIR_ARG:-${TAXONOMY_DIR:-$DATABASE_DIR/taxonomy}}"
+TAXONKIT_BIN="${TAXONKIT_BIN_ARG:-${TAXONKIT_BIN:-taxonkit}}"
+NCPU="${NCPU_ARG:-${NCPU:-60}}"
+MMSEQS_THREADS="${MMSEQS_THREADS_ARG:-${MMSEQS_THREADS:-32}}"
+EMAIL="${EMAIL_ARG:-${EMAIL:-your_email@example.com}}"
+API_KEY="${API_KEY_ARG:-${API_KEY:-}}"
 
 # 阶段产物目录 + 日志目录
 mkdir -p "$WORK_DIR"/{00_logs,01_merge,02_ictv,03_host,04_sequences,05_metadata,06_dedup,07_cluster}
