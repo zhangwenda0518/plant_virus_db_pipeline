@@ -152,9 +152,14 @@ check(){
     fi
 }
 done_or_skip(){
-    if [ -f "$1" ]; then
+    if [ -s "$1" ]; then
         log "⊙ 跳过 [$2] — 产物已存在"
         return 0
+    fi
+    # 空文件视为未完成, 删除后重新执行
+    if [ -f "$1" ]; then
+        log "⊘ 产物为空, 重新执行 [$2]"
+        rm -f "$1"
     fi
     return 1
 }
@@ -410,7 +415,8 @@ RMDUP_FA="$PLANT_DIR/F-dedup/plant.final.rmdup.fasta"
 RMDUP_INFO="$PLANT_DIR/F-dedup/plant.final.rmdup_info.tsv"
 RMDUP_IDS="$PLANT_DIR/F-dedup/plant.final.rmdup.id"
 
-if [ ! -f "$RMDUP_FA" ]; then
+# 文件不存在或为空文件时重新合并
+if [ ! -s "$RMDUP_FA" ]; then
     log "▶ 合并非节段+节段最终序列..."
     cat "$BUILD_DIR/nonsegmented_mmseqs_0.98.fasta" "$BUILD_DIR/segmented_mmseqs_0.98.fasta" > "$RMDUP_FA"
     cat "$BUILD_DIR/nonsegmented_mmseqs_0.98_info.tsv" "$BUILD_DIR/segmented_mmseqs_0.98_info.tsv" | sed '2,${/^Accession/d;}' > "$RMDUP_INFO"
