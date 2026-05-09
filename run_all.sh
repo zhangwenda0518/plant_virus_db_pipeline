@@ -173,17 +173,8 @@ run(){
     local stage_log="$LOG_DIR/${step}.log"
     done_or_skip "$out" "$step" && return 0
     log "▶ 开始 [$step]"
-    set +e
     "$@" >> >(tee -a "$stage_log") 2>> >(tee -a "$stage_log" >&2)
-    local rc=$?
-    set -e
-    if [ $rc -eq 0 ]; then
-        log "✓ [$step] 完成 → $out"
-        return 0
-    else
-        log "✗ [$step] 失败 (返回码=$rc)，详见 $stage_log"
-        return $rc
-    fi
+    log "✓ [$step] 完成 → $out"
 }
 
 # ==================== 前置检查 ====================
