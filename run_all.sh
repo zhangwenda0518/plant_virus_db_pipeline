@@ -158,6 +158,16 @@ done_or_skip(){
     fi
     return 1
 }
+# 检查上游依赖产物, 缺失时跳过当前步骤
+need(){
+    local dep="$1" step="$2"
+    if [ ! -e "$dep" ]; then
+        log "⊙ 跳过 [$step] — 上游产物缺失: $dep"
+        return 1
+    fi
+    return 0
+}
+
 run(){
     local step="$1" out="$2"; shift 2
     local stage_log="$LOG_DIR/${step}.log"
@@ -169,8 +179,10 @@ run(){
     set -e
     if [ $rc -eq 0 ]; then
         log "✓ [$step] 完成 → $out"
+        return 0
     else
         log "✗ [$step] 失败 (返回码=$rc)，详见 $stage_log"
+        return $rc
     fi
 }
 
@@ -369,25 +381,37 @@ run "F2-节段分类拆分" "$PLANT_DIR/F-dedup/split_results/All_Classified_Vir
         -o "$PLANT_DIR/F-dedup/split_results" \
         --taxid-tsv "$TAXID_DB"
 
-run "F3-元数据去重" "$PLANT_DIR/F-dedup/virus.dedup/Final_Deduplicated_Info.tsv" \
-    python "$BIN_DIR/F3_metadata_dedup.py" \
-        --info "$PLANT_DIR/F-dedup/split_results/All_Classified_Virus_Info.tsv" \
-        --fasta_dir "$PLANT_DIR/F-dedup/split_results" \
-        --out_dir "$PLANT_DIR/F-dedup/virus.dedup"
+F2_INFO="$PLANT_DIR/F-dedup/split_results/All_Classified_Virus_Info.tsv"
+F3_INFO="$PLANT_DIR/F-dedup/virus.dedup/Final_Deduplicated_Info.tsv"
+
+if need "$F2_INFO" "F3-元数据去重"; then
+    run "F3-元数据去重" "$F3_INFO" \
+        python "$BIN_DIR/F3_metadata_dedup.py" \
+            --info "$F2_INFO" \
+            --fasta_dir "$PLANT_DIR/F-dedup/split_results" \
+            --out_dir "$PLANT_DIR/F-dedup/virus.dedup"
+fi
+
+F3_NS_FA="$PLANT_DIR/F-dedup/virus.dedup/Final_NonSegmented_Deduplicated.fasta"
 
 # F4: 非节段去冗余
-run "F4a-非节段去冗余" "$PLANT_DIR/F-dedup/Final_DB_Build/nonsegmented_mmseqs_0.98.fasta" \
-    python "$BIN_DIR/F4_seqkit_mmseqs_rescue.py" \
-        -f "$PLANT_DIR/F-dedup/virus.dedup/Final_NonSegmented_Deduplicated.fasta" \
-        -i "$PLANT_DIR/F-dedup/virus.dedup/Final_Deduplicated_Info.tsv" \
-        -m nonsegmented -o "$PLANT_DIR/F-dedup/Final_DB_Build" -t "$MMSEQS_THREADS"
+if need "$F3_INFO" "F4a-非节段去冗余" && need "$F3_NS_FA" "F4a-非节段去冗余"; then
+    run "F4a-非节段去冗余" "$PLANT_DIR/F-dedup/Final_DB_Build/nonsegmented_mmseqs_0.98.fasta" \
+        python "$BIN_DIR/F4_seqkit_mmseqs_rescue.py" \
+            -f "$F3_NS_FA" \
+            -i "$F3_INFO" \
+            -m nonsegmented -o "$PLANT_DIR/F-dedup/Final_DB_Build" -t "$MMSEQS_THREADS"
+fi
 
 # F4: 节段去冗余
-run "F4b-节段去冗余" "$PLANT_DIR/F-dedup/Final_DB_Build/segmented_mmseqs_0.98.fasta" \
-    python "$BIN_DIR/F4_seqkit_mmseqs_rescue.py" \
-        -f "$PLANT_DIR/F-dedup/virus.dedup/Final_Segmented_Deduplicated.fasta" \
-        -i "$PLANT_DIR/F-dedup/virus.dedup/Final_Deduplicated_Info.tsv" \
-        -m segmented -o "$PLANT_DIR/F-dedup/Final_DB_Build" -t "$MMSEQS_THREADS"
+F3_S_FA="$PLANT_DIR/F-dedup/virus.dedup/Final_Segmented_Deduplicated.fasta"
+if need "$F3_INFO" "F4b-节段去冗余" && need "$F3_S_FA" "F4b-节段去冗余"; then
+    run "F4b-节段去冗余" "$PLANT_DIR/F-dedup/Final_DB_Build/segmented_mmseqs_0.98.fasta" \
+        python "$BIN_DIR/F4_seqkit_mmseqs_rescue.py" \
+            -f "$F3_S_FA" \
+            -i "$F3_INFO" \
+            -m segmented -o "$PLANT_DIR/F-dedup/Final_DB_Build" -t "$MMSEQS_THREADS"
+fi
 
 # 合并最终代表性基因组
 BUILD_DIR="$PLANT_DIR/F-dedup/Final_DB_Build"

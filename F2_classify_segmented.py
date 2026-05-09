@@ -89,7 +89,16 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
     )
 
     if "Taxid" not in df.columns and taxid_pq:
-        taxid_lf = pl.scan_parquet(taxid_pq).rename({"accession.version": "Accession"}).select(["Accession", "Taxid"])
+        # Parquet 中列名可能是小写的 accession / taxid, 需要重命名后提取
+        taxid_lf = pl.scan_parquet(taxid_pq)
+        # 兼容两种列名格式: accession.version 或 Accession
+        cols = taxid_lf.collect_schema().names()
+        acc_col = next((c for c in cols if c.lower() == "accession"), cols[0])
+        taxid_col = next((c for c in cols if c.lower() == "taxid"), None)
+        rename_map = {acc_col: "Accession"}
+        if taxid_col:
+            rename_map[taxid_col] = "Taxid"
+        taxid_lf = taxid_lf.rename(rename_map).select(["Accession", "Taxid"])
         acc_list = df.get_column("Accession").to_list()
         df = df.join(taxid_lf.filter(pl.col("Accession").is_in(acc_list)).collect(), on="Accession", how="left")
     
