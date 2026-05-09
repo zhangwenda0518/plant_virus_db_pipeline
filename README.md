@@ -34,62 +34,66 @@
 
 构建一个高质量、非冗余、可追溯的植物病毒参考基因组数据库，对于提升植物病毒鉴定精度、促进比较基因组学研究和支撑植物检疫决策具有重要的基础性意义。
 
-### 植物病毒宿主数据来源
+本数据库的构建涉及两条并行的信息主线: **(一) 植物病毒序列数据的整理**——从公共数据库中提取、分类、去冗余植物病毒基因组序列；**(二) 植物病毒宿主信息的整理**——从多源宿主标注数据中整合、校验、补全病毒-宿主关联关系。以下分别介绍两条主线所依赖的外部数据资源。
 
-准确界定病毒的植物宿主范围是构建植物病毒数据库的核心前提。本研究的主要宿主信息来源包括以下三个层次。
+### 一、植物病毒参考序列数据库
 
-**NCBI Virus 门户与 VHostMetadata.** NCBI Virus 门户 [https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#] 通过宿主谱系筛选 (HostLineage_ss: Viridiplantae, taxid:33090) 可获得约 1,824 个植物相关病毒。NCB I 同时通过 FTP 提供病毒宿主关联元数据表 (VHostMetadata.tsv) [https://ftp.ncbi.nlm.nih.gov/genomes/Viruses/AllDataTmp/]，包含 Accession、Taxid、Host、Host_Taxid 等核心字段。从中提取 Host_lineage 包含 "Viridiplantae" 的记录，可获得绿色植物谱系的病毒宿主关联信息。该来源的优势在于数据体量大、持续更新、与 NCBI 序列数据库直接关联，但宿主标注系自动化流程生成，存在一定比例的标注错误。
+高质量植物病毒的参考序列数据库是构建病毒参考基因组的基石。我们对当前国际主流的植物病毒参考序列数据库进行了系统调研。
 
-**KEGG Virus-Host DB.** KEGG Virus-Host DB [https://www.genome.jp/virushostdb/] 由京都大学化学研究所维护，通过人工整理公开发表的病毒-宿主关联文献构建 [https://www.genome.jp/ftp/db/virushostdb/]。经 Viridiplantae 关键词筛选，获得 2,555 条植物宿主相关记录。相较于 NCBI 的自动标注，KEGG 的文献溯源机制提供了更高的宿主信息可信度，但收录范围受限于已发表文献，更新存在时滞。
+**NCBI Virus (NCBI 病毒门户).** NCBI Virus 门户 [https://www.ncbi.nlm.nih.gov/labs/virus/vssi/] 通过宿主谱系筛选 (HostLineage_ss: Viridiplantae, taxid:33090) 可获取约 6,234 个植物相关病毒物种、162,836 条核酸序列。NCBI 同时通过 FTP 提供全量病毒核酸数据 (AllNucleotide.fa.gz, ~277 Gb) 和元数据 (AllNuclMetadata.csv)。该数据库的优势在于数据体量最大、更新持续，但宿主标注系自动化流程生成，存在一定比例的错误。
 
-**ICTV Virus Metadata Resource (VMR).** 国际病毒分类委员会 (ICTV) 官方发布的 VMR [https://ictv.global/vmr] 以 Excel 格式分发，包含 Host source、Virus GENBANK accession、Genome coverage 等字段。ICTV 的宿主分类具有分类学权威性，但大量记录的 Host source 标注为 "unknown"、"other" 或无标注，需结合 NCBI 谱系进行暗物质抢救。
+**VirusDetect 植物病毒数据库.** VirusDetect [http://virusdetect.feilab.net/] 由康奈尔大学 Fei 实验室维护，最新版本 V267 (2025-08-06)。通过 100%/97%/95% 三级序列一致性去冗余，为每个宿主界生成独特病毒序列库。以 vrl_Plants_267_U97 为例，经 Viridiplantae 谱系校验后，46,894 条序列中 29,979 条 (63.9%) 确认为植物宿主，其余为非 Viridiplantae 序列，表明基于序列相似性分类存在宿主边界溢出。
 
-**EPPO 全球数据库.** 欧洲和地中海植物保护组织 (EPPO) 全球数据库 [https://gd.eppo.int/datasheets/] 收录了植物有害生物 (含病毒) 的分类、分布、宿主植物及检疫状态等权威信息。该数据库的优势在于宿主范围经过人工审核，尤其适用于检疫性植物病毒的宿主界定。
+**PlantVirusBase (植物病毒基准数据库).** PlantVirusBase [http://47.90.94.155/PlantVirusBase] (2025-05-08) 收录 3,353 种植物病毒和 9,010 个病毒-植物宿主关联。Yang 等 (2025, *Plant Disease*) 的分析表明双链 DNA 病毒宿主范围更广，但包膜类型、基因组大小或传播方式与宿主范围之间仅存弱关联 [https://apsjournals.apsnet.org/doi/epdf/10.1094/PDIS-07-25-1393-SR]。
 
-### 现有植物病毒参考数据库概览
+**PVirDB.** PVirDB [https://zenodo.org/records/6609576] (2022-06-03) 收录 4,463 个植物病毒物种、50,611 条核酸序列，以 FASTA 格式分发 (头部格式: ">accession|taxid|description")。
 
-为明确本研究的数据库构建基准，我们对当前国际主流植物病毒参考序列数据库进行了系统调研，各数据库的基本特征汇总如下。
+**Virtool.** Virtool [https://github.com/virtool/ref-plant-viruses] v1.5.0 收录 2,084 种植物病毒、4,783 个组装，以 JSON 格式分发。
 
-**VirusDetect 植物病毒数据库.** VirusDetect [http://virusdetect.feilab.net/] 是由康奈尔大学 Fei 实验室维护的小 RNA 测序病毒检测平台配套数据库，最新版本 V267 (2025-08-06)。该数据库通过分别去除 100% (U100)、97% (U97) 和 95% (U95) 序列一致性冗余，为每个宿主界生成了独特的病毒序列数据库。其 V248 版本包含 128,956 条核酸序列和 209,542 条蛋白序列，V247 版本则分别包含 222,420 和 334,248 条。以 vrl_Plants_267_U97 为例，经 Viridiplantae 谱系校验后，46,894 条序列中有 29,979 条 (63.9%) 确认为植物宿主，其余 16,915 条为非 Viridiplantae 序列，表明基于序列相似性的分类方法存在一定比例的宿主边界溢出现象。
+**ViralZone Virosaurus.** ViralZone [https://viralzone.expasy.org/8676] 植物病毒子集 (2020-03-30) 收录 1,230 种、6,038 条代表性序列，头部含 Swiss-Prot 注释。
 
-**PlantVirusBase (植物病毒基准数据库).** PlantVirusBase [http://47.90.94.155/PlantVirusBase] (2025-05-08) 收录了 3,353 种植物病毒和 9,010 个病毒-植物宿主关联。Yang 等 (2025, *Plant Disease*) 的病毒宿主范围分析表明，与其他病毒类群相比，双链 DNA 病毒的宿主范围更广；然而病毒的包膜类型、基因组大小或传播方式等生物学特征与植物病毒的宿主范围之间仅存在弱关联或无关联 [https://apsjournals.apsnet.org/doi/epdf/10.1094/PDIS-07-25-1393-SR]。其下载接口提供多分类层级 (classify_0 ~ classify_N) 的组织结构，合并后可获得覆盖至少 2,738 个独特物种的序列集合。
+**DPVweb.** DPVweb [https://www.dpvweb.net/] 收录植物病毒/类病毒/卫星序列 37,076 条，感染真菌和原生动物病毒 438 条，动物病毒 1,620 条，噬菌体 123 条。
 
-**PVirDB (植物病毒与类病毒数据库).** PVirDB [https://zenodo.org/records/6609576] (2022-06-03) 收录了 4,463 个植物病毒物种，包含 50,611 条核酸序列。该数据库以 FASTA 格式直接分发，每条序列的头部采用 ">accession|taxid|description" 的管道分隔格式，便于解析和下游分析。
+**PhytoPipe.** PhytoPipe [https://github.com/healthyPlant/PhytoPipe] 基于 ICTV VMR 和 VHDB 的内置参考列表收录 3,253 种植物病毒 TaxID。
 
-**Virtool 植物病毒参考序列.** Virtool [https://github.com/virtool/ref-plant-viruses] 是为 Virtool 病毒检测平台构建的植物病毒参考序列集合，最新版本 v1.5.0 收录 2,084 种植物病毒，共 4,783 个组装。数据以 JSON 格式分发，每个物种目录包含 otu.json 和 isolate.json，解析后获得 4,623 条序列。
+#### 参考序列数据库汇总
 
-**ViralZone Virosaurus.** ViralZone [https://viralzone.expasy.org/8676] 的植物病毒子集 (Virosaurus98, 2020-03-30) 收录 1,230 种植物病毒、6,038 条组装的代表性序列。序列头部包含 Swiss-Prot/TrEMBL 格式的注释信息，包括 usual name 和 taxid，支持重新格式化为 ">accession|species|taxid" 的标准格式。
+| 数据库 | 版本/日期 | 物种数 | 序列数 | 去冗余策略 | 更新状态 | URL |
+|:--------|:----------|:------:|:------:|:-----------|:---------|:-----|
+| **NCBI Virus** | 持续更新 | 6,234 | 162,836 | 无 | 持续 | [ncbi.nlm.nih.gov](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/) |
+| **VirusDetect** | V267 (2025-08) | — | 128,956 | 100%/97%/95% | 定期 | [virusdetect.feilab.net](http://virusdetect.feilab.net/) |
+| **PlantVirusBase** | 2025-05 | 3,353 | — | 未公开 | 2025-05 | [47.90.94.155](http://47.90.94.155/PlantVirusBase) |
+| **PVirDB** | 2022-06 | 4,463 | 50,611 | 无 | 已停更 | [zenodo.org](https://zenodo.org/records/6609576) |
+| **Virtool** | v1.5.0 | 2,084 | 4,783 | OTU 聚类 | 定期 | [github.com/virtool](https://github.com/virtool/ref-plant-viruses) |
+| **ViralZone** | 2020-03 | 1,230 | 6,038 | 98% | 已停更 | [viralzone.expasy.org](https://viralzone.expasy.org/8676) |
+| **DPVweb** | — | — | 37,076 | 无 | 持续 | [dpvweb.net](https://www.dpvweb.net/) |
+| **PhytoPipe** | — | 3,253 | — | 无 | 随 VMR 更新 | [github.com/healthyPlant](https://github.com/healthyPlant/PhytoPipe) |
+| **本研究** | MSL41 (2026) | — | — | 瀑布流+seqkit(100%)+mmseqs(98%)+vclust | — | [github.com/zhangwenda0518](https://github.com/zhangwenda0518/plant_virus_db_pipeline) |
 
-**DPVweb (植物病毒描述数据库).** DPVweb [https://www.dpvweb.net/] 是一个综合性的植物病毒在线信息资源，提供分类学描述和序列数据。收录植物病毒、类病毒和卫星序列 37,076 条，感染真菌和原生动物的病毒 438 条，以及用于比较的动物病毒 1,620 条和噬菌体 123 条 (截至查询日期)。
+> "—" = 未获取或未统计；物种数统计口径各数据库不一致。
 
-**PhytoPipe.** PhytoPipe [https://github.com/healthyPlant/PhytoPipe] 是基于 ICTV VMR 和 Virus-Host DB 构建的植物病毒分析流程，其内置参考植物病毒列表收录 3,253 种植物病毒 TaxID。通过与 VHostMetadata.lineage.tsv 交叉验证，可利用全量 NCBI 序列数据进行序列提取。
+### 二、植物病毒宿主信息源
 
-#### 现有植物病毒参考数据库汇总
+病毒参考序列的准确宿主标注是数据库质量的核心。本研究整合以下四类宿主信息源，以最大化宿主覆盖度与可信度。
 
-| 数据库 | 版本/日期 | 物种数 | 序列数 | 去冗余策略 | 宿主信息 | 更新状态 | URL |
-|:--------|:----------|:------:|:------:|:-----------|:---------|:---------|:-----|
-| **NCBI Virus** | 持续更新 | 6,234 | 162,836 | 无 | Viridiplantae 宿主谱系筛选 | 持续 | [ncbi.nlm.nih.gov](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/) |
-| **VirusDetect** | V267 (2025-08) | — | 128,956 (U100) | 100%/97%/95% | 界级别分类 (含非植物) | 定期 | [virusdetect.feilab.net](http://virusdetect.feilab.net/) |
-| **PlantVirusBase** | 2025-05 | 3,353 | — | 无 (未公开) | 9,010 条病毒-植物关联 | 2025-05 | [47.90.94.155](http://47.90.94.155/PlantVirusBase) |
-| **PVirDB** | 2022-06 | 4,463 | 50,611 | 无 | 无 (纯序列) | 2022-06 (已停更) | [zenodo.org](https://zenodo.org/records/6609576) |
-| **Virtool** | v1.5.0 (2025) | 2,084 | 4,783 (组装) | 按 OTU 聚类 | 无 | 定期 | [github.com/virtool](https://github.com/virtool/ref-plant-viruses) |
-| **ViralZone** | 2020-03 | 1,230 | 6,038 | 98% Virosaurus | Swiss-Prot 注释 | 2020-03 (已停更) | [viralzone.expasy.org](https://viralzone.expasy.org/8676) |
-| **DPVweb** | — | — | 37,076 | 无 | 植物/真菌/原生动物分类 | 持续 | [dpvweb.net](https://www.dpvweb.net/) |
-| **PhytoPipe** | — | 3,253 | — | 无 | 基于 ICTV VMR + VHDB | 随 VMR 更新 | [github.com/healthyPlant](https://github.com/healthyPlant/PhytoPipe) |
-| **本研究** | MSL41 (2026) | — | — | 瀑布流 + seqkit + mmseqs (98%) + vclust | NCBI + KEGG + ICTV 三源交叉验证 | — | [github.com/zhangwenda0518](https://github.com/zhangwenda0518/plant_virus_db_pipeline) |
+**NCBI VHostMetadata (自动标注).** NCBI 通过 FTP 提供病毒宿主关联元数据 [https://ftp.ncbi.nlm.nih.gov/genomes/Viruses/AllDataTmp/]，约 1,824 条记录通过宿主谱系 (Host_lineage) 推导 Viridiplantae 关联。优势在于与序列数据库直接关联、持续更新，但自动化标注存在误标风险。
 
-> **注:** "—" 表示数据未明确获取或该数据库未统计该维度。物种数的统计口径各数据库不一致 (部分为 TaxID 数，部分为 ICTV 物种数)。
+**KEGG Virus-Host DB (文献溯源).** KEGG Virus-Host DB [https://www.genome.jp/virushostdb/] 由京都大学维护，通过人工整理公开发表的病毒-宿主文献关联构建 [https://www.genome.jp/ftp/db/virushostdb/]。经 Viridiplantae 关键词筛选获得 2,555 条记录。相较于 NCBI 自动标注，文献溯源机制可信度更高，但收录范围受限于已发表文献。
 
-#### 植物病毒宿主信息源汇总
+**ICTV VMR Host Source (分类学权威).** ICTV 官方发布的 VMR [https://ictv.global/vmr] 包含 Host source 字段，具有分类学权威性，但大量记录标注为 "unknown"/"other"，需结合 NCBI Host_lineage 进行拉丁文文本抢救 (暗物质抢救)。
 
-| 宿主信息来源 | 植物相关记录 | 宿主标注方式 | 分类学权威性 | 更新频率 | URL |
-|:-------------|:-----------:|:-------------|:------------|:---------|:-----|
-| **NCBI VHostMetadata** | 1,824 | 自动化 NCBI 谱系推导 | 中 (自动标注) | 持续 | [ftp.ncbi.nlm.nih.gov](https://ftp.ncbi.nlm.nih.gov/genomes/Viruses/AllDataTmp/) |
-| **KEGG Virus-Host DB** | 2,555 | 人工文献整理 | 高 (文献溯源) | 周期性 | [genome.jp/virushostdb](https://www.genome.jp/virushostdb/) |
-| **ICTV VMR (MSL41)** | 由 Host source 字段决定 | 人工编审 + 自动标注混合 | 高 (分类学权威) | 按 ICTV 发布周期 | [ictv.global/vmr](https://ictv.global/vmr) |
-| **EPPO Global Database** | — | 人工审核 + 文献支撑 | 高 (检疫认证) | 持续 | [gd.eppo.int](https://gd.eppo.int/datasheets/) |
+**EPPO Global Database (检疫认证).** 欧洲和地中海植物保护组织全球数据库 [https://gd.eppo.int/datasheets/] 收录植物有害生物 (含病毒) 的分类、分布和宿主植物信息，宿主范围经人工审核，尤其适用于检疫性植物病毒的宿主界定。
 
-> **注:** NCBI 1,824 指 NCBI Virus 门户中宿主谱系严格匹配 Viridiplantae 的病毒数；KEGG 2,555 指 virushostdb.tsv 中 Host 字段包含 Viridiplantae 关键词的记录数。两个数字均非唯一植物病毒物种数，仅供参考宿主信息覆盖度。
+#### 宿主信息源汇总
+
+| 宿主信息源 | 植物相关记录 | 标注方式 | 权威性 | 更新 | URL |
+|:-----------|:-----------:|:---------|:------:|:----|:-----|
+| **NCBI VHostMetadata** | 1,824 | 自动 NCBI 谱系推导 | 中 | 持续 | [ftp.ncbi.nlm.nih.gov](https://ftp.ncbi.nlm.nih.gov/genomes/Viruses/AllDataTmp/) |
+| **KEGG Virus-Host DB** | 2,555 | 人工文献整理 | 高 | 周期性 | [genome.jp/virushostdb](https://www.genome.jp/virushostdb/) |
+| **ICTV VMR (MSL41)** | 字段决定 | 编审 + 自动混合 | 高 | 按发布周期 | [ictv.global/vmr](https://ictv.global/vmr) |
+| **EPPO Global Database** | — | 人工审核 | 高 | 持续 | [gd.eppo.int](https://gd.eppo.int/datasheets/) |
+
+> NCBI 1,824 = 门户 Viridiplantae 严格匹配；KEGG 2,555 = virushostdb.tsv 中 Host 字段含 Viridiplantae。均非唯一物种数，供参考宿主信息覆盖度。
 
 ### 现有数据库的局限性
 
