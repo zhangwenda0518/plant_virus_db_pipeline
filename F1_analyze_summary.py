@@ -24,12 +24,16 @@ def main():
     # 确保 Length 列是数值类型
     df = df.with_columns(pl.col("Length").cast(pl.Int64, strict=False))
 
+    # 统一 Taxid 列名
+    taxid_col = "Taxid" if "Taxid" in df.columns else "taxid"
+    species_col = "Species_ICTV" if "Species_ICTV" in df.columns else "Species"
+
     # ==========================================
     # 1. 基础统计：总序列数与 TaxID 物种数
     # ==========================================
     total_seqs = df.height
-    valid_taxid_df = df.filter(pl.col("Taxid").is_not_null())
-    unique_taxids = valid_taxid_df.select("Taxid").n_unique()
+    valid_taxid_df = df.filter(pl.col(taxid_col).is_not_null())
+    unique_taxids = valid_taxid_df.select(taxid_col).n_unique()
 
     # ==========================================
     # 2. Molecule_type 统计
@@ -54,11 +58,9 @@ def main():
     # ==========================================
     # 逻辑：只要该 taxid 下【至少有一条】序列是 complete，我们就认为该物种拥有完整基因组
     taxid_comp_df = (
-        valid_taxid_df.group_by("Taxid")
+        valid_taxid_df.group_by(taxid_col)
         .agg([
-            # 检查是否有任意一条记录为 'complete'
             (pl.col("Nuc_Completeness") == "complete").any().alias("has_complete_genome"),
-            # 统计该物种下共有多少条序列
             pl.col("Accession").count().alias("seq_count")
         ])
     )
