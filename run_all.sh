@@ -436,6 +436,15 @@ run "G1-SeqID→TaxID映射" "$PLANT_DIR/G-cluster/seqid2taxid.map" \
         --map-file "$TAXID_DB" \
         -o "$PLANT_DIR/G-cluster/seqid2taxid.map"
 
+# G1b: 添加序列长度信息 (seqid2taxid.map → seqid2taxid_len.map)
+run "G1b-添加序列长度" "$PLANT_DIR/G-cluster/seqid2taxid_len.map" \
+    python "$BIN_DIR/G1b_add_length.py" \
+        -i "$PLANT_DIR/G-cluster/seqid2taxid.map" \
+        -f "$PLANT_DIR/F-dedup/plant.final.rmdup.fasta" \
+        --type nucleotide \
+        -p "$NCPU" \
+        -o "$PLANT_DIR/G-cluster/seqid2taxid_len.map"
+
 run "G2-vclust聚类" "$PLANT_DIR/G-cluster/final.cluster.ref.fasta" \
     python "$BIN_DIR/G2_vclust_cluster.py" \
         --fasta "$PLANT_DIR/F-dedup/plant.final.rmdup.fasta" \
