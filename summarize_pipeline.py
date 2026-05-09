@@ -138,7 +138,7 @@ class PipelineData:
     # ---- A: 元数据整合 ----
     def _extract_stage_a(self):
         d = self.d
-        base = self.wd / "01_merge"
+        base = self.wd / "1.virus-host_db/A-merge"
 
         # A1 原始质检
         rows = read_tsv(str(base / "summary.csv"))
@@ -176,7 +176,7 @@ class PipelineData:
     # ---- B: ICTV 宿主拆分 ----
     def _extract_stage_b(self):
         d = self.d
-        split_dir = self.wd / "02_ictv/VMR_Split_By_Host"
+        split_dir = self.wd / "1.virus-host_db/B-ictv/VMR_Split_By_Host"
 
         categories = ["Plant", "Animal", "Human", "Bacteria", "Fungi", "Protist",
                        "Archaea", "Environmental", "Unknown"]
@@ -197,7 +197,7 @@ class PipelineData:
         d = self.d
 
         # C1 Final 表
-        final = read_tsv(str(self.wd / "03_host/host_extract/Final_Virus_Host_Lineage.tsv"))
+        final = read_tsv(str(self.wd / "1.virus-host_db/C-host_classify/host_extract/Final_Virus_Host_Lineage.tsv"))
         if final:
             d["C1_final_rows"] = len(final)
             vt = [r.get("Virus_taxid", "") for r in final]
@@ -206,13 +206,13 @@ class PipelineData:
             d["C1_host_taxids"] = n_unique(ht)
 
         # C1 未解决
-        ua = str(self.wd / "03_host/host_extract/Unresolved_AllNucl.tsv")
-        uv = str(self.wd / "03_host/host_extract/Unresolved_VHost.tsv")
+        ua = str(self.wd / "1.virus-host_db/C-host_classify/host_extract/Unresolved_AllNucl.tsv")
+        uv = str(self.wd / "1.virus-host_db/C-host_classify/host_extract/Unresolved_VHost.tsv")
         d["C1_Unresolved_AllNucl"] = count_tsv_rows(ua)
         d["C1_Unresolved_VHost"] = count_tsv_rows(uv)
 
         # C2 Summary
-        summary = read_tsv(str(self.wd / "03_host/VHostMetadata/Summary_Counts.tsv"))
+        summary = read_tsv(str(self.wd / "1.virus-host_db/C-host_classify/VHostMetadata/Summary_Counts.tsv"))
         d["C2_categories"] = {}
         for row in summary:
             cat = row.get("Host_Category", row.get("host_category", ""))
@@ -223,12 +223,12 @@ class PipelineData:
         d["C2_Total"] = sum(d["C2_categories"].values()) if d["C2_categories"] else -1
 
         # Plant.tsv
-        d["C2_Plant_rows"] = count_tsv_rows(str(self.wd / "03_host/VHostMetadata/Plant.tsv"))
+        d["C2_Plant_rows"] = count_tsv_rows(str(self.wd / "1.virus-host_db/C-host_classify/VHostMetadata/Plant.tsv"))
 
     # ---- D: 序列获取 ----
     def _extract_stage_d(self):
         d = self.d
-        db = self.wd / "04_sequences/Plant_virus_db"
+        db = self.wd / "2.plant-virus.db/D-sequences/Plant_virus_db"
 
         d["D1_extracted"] = count_fasta(str(db / "Plant_Extracted_Sequences.fasta"))
         d["D1_existing_meta"] = count_tsv_rows(str(db / "Plant_Existing_Metadata.tsv"))
@@ -237,13 +237,13 @@ class PipelineData:
         d["D2_downloaded"] = count_fasta(str(db / "Downloaded_Plant_Viruses.fasta"))
 
         # 合并产物
-        d["D_merged_fasta"] = count_fasta(str(self.wd / "04_sequences/plant.virus.fasta"))
-        d["D_merged_ids"] = count_lines(str(self.wd / "04_sequences/plant.virus.id"))
+        d["D_merged_fasta"] = count_fasta(str(self.wd / "2.plant-virus.db/D-sequences/plant.virus.fasta"))
+        d["D_merged_ids"] = count_lines(str(self.wd / "2.plant-virus.db/D-sequences/plant.virus.id"))
 
     # ---- E: 元数据完善 ----
     def _extract_stage_e(self):
         d = self.d
-        md = self.wd / "05_metadata"
+        md = self.wd / "2.plant-virus.db/E-metadata"
 
         info = read_tsv(str(md / "Plant_Virus_Info.tsv"))
         if not info:
@@ -331,7 +331,7 @@ class PipelineData:
     # ---- F: 分类与去冗余 ----
     def _extract_stage_f(self):
         d = self.d
-        dedup = self.wd / "06_dedup"
+        dedup = self.wd / "2.plant-virus.db/F-dedup"
 
         # F2 分类结果
         classified = read_tsv(str(dedup / "split_results/All_Classified_Virus_Info.tsv"))
@@ -375,7 +375,7 @@ class PipelineData:
     # ---- G: 最终聚类与评估 ----
     def _extract_stage_g(self):
         d = self.d
-        cl = self.wd / "07_cluster"
+        cl = self.wd / "2.plant-virus.db/G-cluster"
 
         # G1 映射
         d["G1_mapped"] = count_lines(str(cl / "seqid2taxid.map"))

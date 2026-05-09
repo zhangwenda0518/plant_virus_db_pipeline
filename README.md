@@ -137,7 +137,7 @@ python summarize_pipeline.py --work-dir ~/plant_virus_db
 |:-----|:-----|:-----|:-----|
 | `--email` | `-e` | — **(必填)** | NCBI E-utilities 邮箱 |
 | `--work-dir` | `-w` | `$HOME/plant_virus_db` | 工作目录，所有产物输出位置 |
-| `--raw-dir` | `-r` | `<work_dir>/raw_data` | 原始下载数据目录 |
+| `--raw-dir` | `-r` | `<work_dir>/0.raw_data` | 原始下载数据目录 |
 | `--db-dir` | `-d` | `$HOME/database` | 本地数据库根目录 |
 | `--taxonomy-dir` | `-t` | `<db_dir>/taxonomy` | NCBI Taxonomy 数据目录 |
 | `--api-key` | `-k` | — | NCBI API Key (提升请求频率) |
@@ -147,74 +147,37 @@ python summarize_pipeline.py --work-dir ~/plant_virus_db
 
 ## 工作目录结构
 
-运行 `run_all.sh` 后，输出按阶段组织：
+运行 `run_all.sh` 后，产出按三大阶段组织:
 
 ```
 plant_virus_db/
-├── 00_logs/                         # ★ 所有阶段运行日志
-│   ├── pipeline.log                 # 总时间线 (全部步骤概览)
-│   ├── A1-数据质检.log              # 列名/空值率/唯一值统计
-│   ├── A2-VHDB+NCBI合并.log         # 合并后序列数、TaxID 增量
-│   ├── A3-宿主补全.log              # 补全前后缺失行数、找回率
-│   ├── A4-添加谱系.log              # taxonkit 进度、缓存命中数
-│   ├── B2-VMR宿主拆分.log           # VMR 暗物质抢救记录
-│   ├── C1-宿主信息提取.log          # 交叉填补、Taxid 匹配、联网兜底
-│   ├── C2-宿主分类.log              # 各宿主分类行数 (Human/Animal/Plant/...)
-│   ├── D1-比对提取FASTA.log         # 本地命中数、缺失数
-│   ├── D2-下载缺失序列.log          # 下载成功/失败数
-│   ├── E1-提取元数据.log            # 本地匹配、在线补充数量
-│   ├── E2-获取拓扑结构.log          # NCBI API 批次进度
-│   ├── F1-基础统计.log              # 序列数/TaxID/长度/完整度/分子类型
-│   ├── F2-节段分类拆分.log          # 节段/非节段分类战报、同源兜底挽救
-│   ├── F3-元数据去重.log            # 各优先级保留/丢弃行数
-│   ├── F4a-非节段去冗余.log         # seqkit rescue + mmseqs conflict + RefSeq swap
-│   ├── F4b-节段去冗余.log           # 同上(节段模式)
-│   ├── G1-SeqID→TaxID映射.log       # 查找映射数量、命中率
-│   ├── G2-vclust聚类.log            # ★ 最重要: LCA 混合比例、RefSeq 替换、去冗余率
-│   ├── G3-去冗余评估.log            # 各阶段序列/TaxID 保留率对比
-│   ├── G4a-基因预测.log             # pyrodigal 预测进度
-│   └── G4b-覆盖度计算.log           # 基因覆盖度统计
-├── raw_data/                        ← 原始下载数据
-├── 01_merge/                        ← 阶段 A 产物
-│   ├── summary.csv                  # 数据质检报告
-│   ├── Merged.VHostMetadata.tsv     # VHDB+NCBI 合并结果
-│   ├── Merged.VHostMetadata.imputer.tsv  # 宿主补全后
-│   ├── Merged.VHostMetadata.lineage.tsv  # 添加谱系后
-│   └── bad_rows_log.tsv             # 脏行记录
-├── 02_ictv/                         ← 阶段 B 产物
-│   ├── VMR_MSL41.tsv                # ICTV VMR TSV 格式
-│   ├── VMR_Split_By_Host/           # 按宿主拆分的 VMR
-│   └── Rescue_Failed_Details.tsv    # 抢救失败诊断
-├── 03_host/                         ← 阶段 C 产物
-│   ├── host_extract/                # 宿主信息提取
-│   │   ├── Final_Virus_Host_Lineage.tsv
-│   │   ├── Unresolved_AllNucl.tsv   # 无法解决的 AllNucl 记录
-│   │   └── Unresolved_VHost.tsv     # 无法解决的 VHost 记录
-│   └── VHostMetadata/               # 按宿主分类的数据
-│       ├── Summary_Counts.tsv
-│       ├── Plant.tsv                # ★ 植物病毒列表
-│       └── Human/Animal/...tsv
-├── 04_sequences/                    ← 阶段 D 产物
-│   ├── plant.virus.fasta            # ★ 植物病毒合并序列
-│   ├── plant.virus.id               # Accession ID 列表
-│   └── Plant_virus_db/              # 中间文件(含缺失列表)
-├── 05_metadata/                     ← 阶段 E 产物
-│   ├── Plant_Virus_Info.tsv         # ★ 完整元数据表
-│   ├── Plant_Virus_Info.summary     # 统计报告
-│   └── consistency_check.log        # Title/Length 一致性比对
-│   └── Plant_Virus_Topology_...tsv  # 拓扑信息
-├── 06_dedup/                        ← 阶段 F 产物
-│   ├── split_results/               # 节段分类拆分结果
-│   ├── virus.dedup/                 # 元数据去重结果
-│   ├── Final_DB_Build/              # ★ seqkit+mmseqs 去冗余产物
-│   └── plant.final.rmdup.fasta      # ★ 合并去冗余序列
-└── 07_cluster/                      ← 阶段 G 最终产物
-    ├── final.cluster.ref.fasta      # ★★★ 最终参考基因组
-    ├── final.cluster.ref_info.tsv   # ★★★ 最终元数据
-    ├── virus_genes_cov.tsv          # 基因覆盖度
-    ├── clusters_with_LCA.tsv        # LCA 诊断报告
-    ├── clusters.LCA_Distribution.png # LCA 分布图
-    └── derep.summary.tsv            # 去冗余全流程评估
+├── 0.raw_data/                       ← 原始输入 + 运行日志
+│   ├── AllNucleotide.fa.gz           # 全量病毒核酸序列
+│   ├── AllNuclMetadata.csv           # 病毒元数据
+│   ├── VHostMetadata.tsv             # NCBI 宿主关联表
+│   ├── virushostdb.tsv               # KEGG 宿主数据
+│   ├── VMR_MSL41.*.xlsx              # ICTV VMR 表格
+│   └── 00_logs/                      # ★ 全部运行日志
+│       ├── pipeline.log              # 总时间线
+│       └── A1-数据质检.log ~ G4b-...log  # 各步骤详细日志
+│
+├── 1.virus-host_db/                  ← ★ 病毒-宿主数据库
+│   ├── A-merge/                      # 阶段 A: 元数据整合
+│   ├── B-ictv/                       # 阶段 B: ICTV VMR 拆分
+│   └── C-host_classify/              # 阶段 C: 宿主分类
+│       └── VHostMetadata/Plant.tsv   # 植物病毒 Accession 列表
+│
+└── 2.plant-virus.db/                 ← ★ 植物病毒参考基因组
+    ├── D-sequences/                  # 阶段 D: 序列获取
+    ├── E-metadata/                   # 阶段 E: 元数据完善
+    ├── F-dedup/                      # 阶段 F: 分类去冗余
+    └── G-cluster/                    # ★★★ 阶段 G: 最终产物
+        ├── final.cluster.ref.fasta   # 最终参考基因组序列
+        ├── final.cluster.ref_info.tsv # 最终元数据
+        ├── virus_genes_cov.tsv       # 基因覆盖度
+        ├── clusters_with_LCA.tsv     # LCA 诊断报告
+        ├── clusters.LCA_Distribution.png
+        └── derep.summary.tsv         # 去冗余评估
 ```
 
 ## 执行概览
