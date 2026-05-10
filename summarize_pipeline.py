@@ -305,10 +305,12 @@ class PipelineData:
                 d["F1_max_len"] = int(m.group(1).replace(",", ""))
             m = re.search(r"平均长度.*?([\d,.]+)", content)
             if m:
-                d["F1_mean_len"] = float(m.group(1).replace(",", ""))
+                try: d["F1_mean_len"] = float(m.group(1).replace(",", ""))
+                except ValueError: pass
             m = re.search(r"中位数长度.*?([\d,.]+)", content)
             if m:
-                d["F1_median_len"] = float(m.group(1).replace(",", ""))
+                try: d["F1_median_len"] = float(m.group(1).replace(",", ""))
+                except ValueError: pass
             m = re.search(r"拥有至少1条完整基因组\D*([\d,]+)", content)
             if m:
                 d["F1_complete_taxids"] = int(m.group(1).replace(",", ""))
@@ -419,10 +421,22 @@ class PipelineData:
         d["G3_datasets"] = []
         for row in derep:
             ds_name = row.get("Dataset", "")
-            seqs = int(row.get("Sequences_Count", 0))
-            seq_ret = float(row.get("Seq_Retention(%)", 0))
-            taxid_cnt = int(row.get("TaxID_Count", 0))
-            tax_ret = float(row.get("TaxID_Retention(%)", 0))
+            try:
+                seqs = int(row.get("Sequences_Count", 0))
+            except (ValueError, TypeError):
+                seqs = 0
+            try:
+                seq_ret = float(row.get("Seq_Retention(%)", 0) or 0)
+            except (ValueError, TypeError):
+                seq_ret = 0.0
+            try:
+                taxid_cnt = int(row.get("TaxID_Count", 0))
+            except (ValueError, TypeError):
+                taxid_cnt = 0
+            try:
+                tax_ret = float(row.get("TaxID_Retention(%)", 0) or 0)
+            except (ValueError, TypeError):
+                tax_ret = 0.0
             d["G3_datasets"].append({
                 "name": ds_name,
                 "seqs": seqs,
