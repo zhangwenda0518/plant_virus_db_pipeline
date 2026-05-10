@@ -432,21 +432,28 @@ class PipelineData:
             })
 
         # G4 基因覆盖度
-        cov = read_tsv(str(cl / "virus_genes_cov.tsv"))
+        # G4 产物在 H-virus_genes/ 子目录中
+        gene_dir = self.wd / "2.plant-virus.db/H-virus_genes"
+        cov = read_tsv(str(gene_dir / "virus_genes_cov.tsv"))
         if cov:
             d["G4_predicted"] = len(cov)
-            # 提取覆盖度数值
             for col_name in cov[0].keys():
                 if 'avr_cov' in col_name.lower() or 'average_cov' in col_name.lower():
-                    vals = [float(r.get(col_name, 0)) for r in cov]
-                    d["G4_avg_gene_coverage"] = sum(vals) / len(vals) * 100 if vals else -1
+                    try:
+                        vals = [float(r.get(col_name, "0") or "0") for r in cov]
+                        d["G4_avg_gene_coverage"] = sum(vals) / len(vals) * 100 if vals else -1
+                    except Exception:
+                        pass
                     break
             for col_name in cov[0].keys():
                 if 'total_cov' in col_name.lower():
-                    vals = [float(r.get(col_name, 0)) for r in cov]
-                    d["G4_avg_total_coverage"] = sum(vals) / len(vals) * 100 if vals else -1
+                    try:
+                        vals = [float(r.get(col_name, "0") or "0") for r in cov]
+                        d["G4_avg_total_coverage"] = sum(vals) / len(vals) * 100 if vals else -1
+                    except Exception:
+                        pass
                     break
-        unpred = str(cl / "unpredicted_genes_cov.tsv")
+        unpred = str(gene_dir / "unpredicted_genes_cov.tsv")
         d["G4_unpredicted"] = count_tsv_rows(unpred)
 
         # LCA 分布图存在
