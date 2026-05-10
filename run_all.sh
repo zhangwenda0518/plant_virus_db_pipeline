@@ -75,6 +75,7 @@ show_help() {
 │     ├── E-metadata/                 阶段 E: 元数据完善        │
 │     ├── F-dedup/                    阶段 F: 分类去冗余        │
 │     └── G-cluster/                  阶段 G: 聚类评估          │
+│   $WORK_DIR/3.final-ref-virus.db/   ★★★ 最终参考数据库(软链接)│
 │   $WORK_DIR/4.logs/                 ★ 全部运行日志            │
 ├──────────────────────────────────────────────────────────────┤
 │ 运行示例:                                                     │
@@ -491,6 +492,29 @@ run "G4b-覆盖度计算" "$PLANT_DIR/G-cluster/virus_genes_cov.tsv" \
         --map "$PLANT_DIR/G-cluster/seqid2taxid_len.map" \
         --out "$PLANT_DIR/G-cluster/virus_genes_cov.tsv" \
         --unpredicted "$PLANT_DIR/G-cluster/unpredicted_genes_cov.tsv"
+
+# ============================================================
+# 最终产物归档 → 3.final-ref-virus.db/
+# ============================================================
+REF_DIR="$WORK_DIR/3.final-ref-virus.db"
+mkdir -p "$REF_DIR"
+
+if [ -f "$PLANT_DIR/G-cluster/final.cluster.ref.fasta" ]; then
+    ln -sf "$PLANT_DIR/G-cluster/final.cluster.ref.fasta" "$REF_DIR/final.cluster.ref.fasta"
+    log "✓ 软链接: final.cluster.ref.fasta"
+fi
+if [ -f "$PLANT_DIR/G-cluster/final.cluster.ref_info.tsv" ]; then
+    ln -sf "$PLANT_DIR/G-cluster/final.cluster.ref_info.tsv" "$REF_DIR/final.cluster.ref_info.tsv"
+    log "✓ 软链接: final.cluster.ref_info.tsv"
+fi
+if [ -f "$PLANT_DIR/E-metadata/Plant_Virus_Info.full.tsv" ]; then
+    ln -sf "$PLANT_DIR/E-metadata/Plant_Virus_Info.full.tsv" "$REF_DIR/Plant_Virus_Info.full.tsv"
+    log "✓ 软链接: Plant_Virus_Info.full.tsv"
+fi
+if [ -f "$PLANT_DIR/D-sequences/plant.virus.fasta" ]; then
+    ln -sf "$PLANT_DIR/D-sequences/plant.virus.fasta" "$REF_DIR/plant.virus.fasta"
+    log "✓ 软链接: plant.virus.fasta"
+fi
 
 # ============================================================
 # 总结报告

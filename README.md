@@ -177,6 +177,12 @@ plant_virus_db/
 │       ├── clusters_with_LCA.tsv     # LCA 诊断报告
 │       └── derep.summary.tsv         # 去冗余评估
 │
+├── 3.final-ref-virus.db/              ← ★★★ 最终参考数据库(软链接)
+│   ├── final.cluster.ref.fasta        → G-cluster/ 最终序列
+│   ├── final.cluster.ref_info.tsv     → G-cluster/ 最终元数据
+│   ├── Plant_Virus_Info.full.tsv      → E-metadata/ 全量元数据
+│   └── plant.virus.fasta              → D-sequences/ 原始序列
+│
 └── 4.logs/                           ← ★ 全部运行日志
     ├── pipeline.log                  # 总时间线
     └── A1-数据质检.log ~ G4b-...log  # 各步骤详细日志
