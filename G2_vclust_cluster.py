@@ -142,7 +142,7 @@ def main():
     info_df = None
     if os.path.exists(args.info):
         info_df = pd.read_csv(args.info, sep='\t', dtype=str, keep_default_na=False)
-        info_df.columns = info_df.columns.strip()
+        info_df.columns = info_df.columns.str.strip()
 
         if 'Accession' in info_df.columns:
             # 统一物种列名: Species_ICTV 优先, 回退 Species
