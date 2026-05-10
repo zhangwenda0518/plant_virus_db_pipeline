@@ -138,12 +138,16 @@ def main():
     acc2category = {}
     acc2segment = {}
     acc2seqtype = {}
+    acc2species = {}
     info_df = None
     if os.path.exists(args.info):
         info_df = pd.read_csv(args.info, sep='\t', dtype=str, keep_default_na=False)
-        info_df.columns = info_df.columns.str.strip()
-        
+        info_df.columns = info_df.columns.strip()
+
         if 'Accession' in info_df.columns:
+            # 统一物种列名: Species_ICTV 优先, 回退 Species
+            species_col = 'Species_ICTV' if 'Species_ICTV' in info_df.columns else 'Species'
+
             if 'Category' in info_df.columns:
                 for acc, cat in zip(info_df['Accession'], info_df['Category']):
                     acc_str = str(acc).strip()
@@ -151,7 +155,14 @@ def main():
                     if not cat_str: cat_str = "Unassigned"
                     acc2category[acc_str] = cat_str
                     acc2category[acc_str.split('.')[0]] = cat_str
-            
+
+            if species_col in info_df.columns:
+                for acc, sp in zip(info_df['Accession'], info_df[species_col]):
+                    acc_str = str(acc).strip()
+                    sp_str = str(sp).strip()
+                    acc2species[acc_str] = sp_str
+                    acc2species[acc_str.split('.')[0]] = sp_str
+
             if 'Segment' in info_df.columns:
                 for acc, seg in zip(info_df['Accession'], info_df['Segment']):
                     acc_str = str(acc).strip()
@@ -159,7 +170,7 @@ def main():
                     if not seg_str: seg_str = "Unassigned"
                     acc2segment[acc_str] = seg_str
                     acc2segment[acc_str.split('.')[0]] = seg_str
-            
+
             if 'Sequence_Type' in info_df.columns:
                 for acc, st in zip(info_df['Accession'], info_df['Sequence_Type']):
                     acc_str = str(acc).strip()
@@ -200,9 +211,16 @@ def main():
         # 用 set 去重构建完整的序列池
         pool = list(set([raw_rep] + raw_objs))
         
-        # 找出当前 cluster 池子里的所有 RefSeq
-        refseq_candidates = [o for o in pool if safe_lookup(acc2seqtype, o, "Unknown") == "RefSeq"]
-        
+        # 找出当前 cluster 池子里的所有 RefSeq (Species_ICTV 必须非空)
+        refseq_candidates = [
+            o for o in pool
+            if safe_lookup(acc2seqtype, o, "Unknown") == "RefSeq"
+            and safe_lookup(acc2species, o, "") not in ("", "Unassigned", "Unknown", "None")
+        ]
+        # Fallback: 如果所有 RefSeq 的 Species_ICTV 都为空, 退回到不过滤
+        if not refseq_candidates:
+            refseq_candidates = [o for o in pool if safe_lookup(acc2seqtype, o, "Unknown") == "RefSeq"]
+
         is_replaced = False
         if len(refseq_candidates) > 0:
             # 💡 核心改动：无论发现1个还是多个 RefSeq，全部作为该 cluster 的保留代表！
