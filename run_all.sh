@@ -108,10 +108,11 @@ done
 # ==================== CONFIG ====================
 # 优先级: 命令行参数 > 环境变量 > 默认值
 BIN_DIR="$(cd "$(dirname "$0")" && pwd)"
-WORK_DIR="${WORK_DIR_ARG:-${WORK_DIR:-$HOME/plant_virus_db}}"
-RAW_DIR="${RAW_DIR_ARG:-${RAW_DIR:-$WORK_DIR/0.raw_data}}"
-DATABASE_DIR="${DATABASE_DIR_ARG:-${DATABASE_DIR:-$HOME/database}}"
-TAXONOMY_DIR="${TAXONOMY_DIR_ARG:-${TAXONOMY_DIR:-$DATABASE_DIR/taxonomy}}"
+# 确保所有目录为绝对路径, run() 会 cd 到产物目录执行
+WORK_DIR="$(realpath "${WORK_DIR_ARG:-${WORK_DIR:-$HOME/plant_virus_db}}")"
+RAW_DIR="$(realpath "${RAW_DIR_ARG:-${RAW_DIR:-$WORK_DIR/0.raw_data}}")"
+DATABASE_DIR="$(realpath "${DATABASE_DIR_ARG:-${DATABASE_DIR:-$HOME/database}}")"
+TAXONOMY_DIR="$(realpath "${TAXONOMY_DIR_ARG:-${TAXONOMY_DIR:-$DATABASE_DIR/taxonomy}}")"
 TAXONKIT_BIN="${TAXONKIT_BIN_ARG:-${TAXONKIT_BIN:-taxonkit}}"
 NCPU="${NCPU_ARG:-${NCPU:-60}}"
 MMSEQS_THREADS="${MMSEQS_THREADS_ARG:-${MMSEQS_THREADS:-32}}"
