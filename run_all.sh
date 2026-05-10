@@ -518,6 +518,10 @@ if [ -f "$PLANT_DIR/D-sequences/plant.virus.fasta" ]; then
     ln -sf "$PLANT_DIR/D-sequences/plant.virus.fasta" "$REF_DIR/plant.virus.fasta"
     log "✓ 软链接: plant.virus.fasta"
 fi
+if [ -f "$PLANT_DIR/H-virus_genes/virus_genes_cov.tsv" ]; then
+    ln -sf "$PLANT_DIR/H-virus_genes/virus_genes_cov.tsv" "$REF_DIR/virus_genes_cov.tsv"
+    log "✓ 软链接: virus_genes_cov.tsv"
+fi
 
 # ============================================================
 # 总结报告
