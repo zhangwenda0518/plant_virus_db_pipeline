@@ -373,10 +373,17 @@ run "E4-补充NCBI命名" "$INFO_FULL_TSV" \
 # 用全量版本替换原始版本, 后续步骤统一使用 INFO_FULL_TSV
 INFO_TSV="$INFO_FULL_TSV"
 
-run "F1-基础统计" "$PLANT_DIR/E-metadata/Plant_Virus_Info.summary" \
-    python "$BIN_DIR/F1_analyze_summary.py" \
-        --input "$INFO_TSV" \
-        > "$PLANT_DIR/E-metadata/Plant_Virus_Info.summary"
+# F1 需要 shell 重定向, 不用通用的 run()
+F1_SUMMARY="$PLANT_DIR/E-metadata/Plant_Virus_Info.summary"
+if [ -s "$F1_SUMMARY" ]; then
+    log "⊙ 跳过 [F1-基础统计] — 产物已存在"
+else
+    log "▶ 开始 [F1-基础统计]"
+    F1_LOG="$LOG_DIR/F1-基础统计.log"
+    python "$BIN_DIR/F1_analyze_summary.py" --input "$INFO_TSV" \
+        > "$F1_SUMMARY" 2>> "$F1_LOG"
+    log "✓ [F1-基础统计] 完成 → $F1_SUMMARY"
+fi
 
 # ============================================================
 # 阶段 F: 分类与去冗余 → 2.plant-virus.db/F-dedup/
