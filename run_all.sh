@@ -179,7 +179,10 @@ run(){
     local stage_log="$LOG_DIR/${step}.log"
     done_or_skip "$out" "$step" && return 0
     log "▶ 开始 [$step]"
-    "$@" >> >(tee -a "$stage_log") 2>> >(tee -a "$stage_log" >&2)
+    # 在产物所在目录执行, 避免临时文件散落在 CWD
+    local run_dir; run_dir="$(dirname "$out")"
+    mkdir -p "$run_dir"
+    (cd "$run_dir" && "$@") >> >(tee -a "$stage_log") 2>> >(tee -a "$stage_log" >&2)
     log "✓ [$step] 完成 → $out"
 }
 
@@ -456,8 +459,16 @@ run "G1b-添加序列长度" "$PLANT_DIR/G-cluster/seqid2taxid_len.map" \
         -p "$NCPU" \
         -o "$PLANT_DIR/G-cluster/seqid2taxid_len.map"
 
-run "G2-vclust聚类" "$PLANT_DIR/G-cluster/final.cluster.ref.fasta" \
-    python "$BIN_DIR/G2_vclust_cluster.py" \
+# vclust 会在 cwd 产生中间文件, 在 tmp.vclust 里运行并清理
+G2_OUT="$PLANT_DIR/G-cluster/final.cluster.ref.fasta"
+if [ -s "$G2_OUT" ]; then
+    log "⊙ 跳过 [G2-vclust聚类] — 产物已存在"
+else
+    log "▶ 开始 [G2-vclust聚类]"
+    VCLUST_TMP="$PLANT_DIR/G-cluster/tmp.vclust"
+    mkdir -p "$VCLUST_TMP"
+    G2_LOG="$LOG_DIR/G2-vclust聚类.log"
+    (cd "$VCLUST_TMP" && python "$BIN_DIR/G2_vclust_cluster.py" \
         --fasta "$PLANT_DIR/F-dedup/plant.final.rmdup.fasta" \
         --info "$PLANT_DIR/F-dedup/plant.final.rmdup_info.tsv" \
         --map "$PLANT_DIR/G-cluster/seqid2taxid.map" \
@@ -465,7 +476,14 @@ run "G2-vclust聚类" "$PLANT_DIR/G-cluster/final.cluster.ref.fasta" \
         --out_plot "$PLANT_DIR/G-cluster/clusters.LCA_Distribution.png" \
         --out_fasta "$PLANT_DIR/G-cluster/final.cluster.ref.fasta" \
         --out_taxid_clusters "$PLANT_DIR/G-cluster/clusters.taxid.tsv" \
-        --out_info "$PLANT_DIR/G-cluster/final.cluster.ref_info.tsv"
+        --out_info "$PLANT_DIR/G-cluster/final.cluster.ref_info.tsv" \
+        --out_cat_seg_conflict "$PLANT_DIR/G-cluster/category_segment_conflict.tsv" \
+        --out_replacement_log "$PLANT_DIR/G-cluster/refseq_replacement_log.tsv" \
+    ) >> >(tee -a "$G2_LOG") 2>> >(tee -a "$G2_LOG" >&2)
+    # 清理 vclust 中间文件
+    rm -rf "$VCLUST_TMP"
+    log "✓ [G2-vclust聚类] 完成 → $G2_OUT"
+fi
 
 run "G3-去冗余评估" "$PLANT_DIR/G-cluster/derep.summary.tsv" \
     python "$BIN_DIR/G3_derep_evaluate.py" \
