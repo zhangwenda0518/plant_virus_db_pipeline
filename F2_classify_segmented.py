@@ -88,10 +88,13 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
         pl.col("Segment").fill_null("").cast(pl.Utf8).str.strip_chars().alias("Segment_Clean")
     )
 
+    # 统一 Taxid 列名: 优先从小写 taxid 重命名
+    if "taxid" in df.columns and "Taxid" not in df.columns:
+        df = df.rename({"taxid": "Taxid"})
+
     if "Taxid" not in df.columns and taxid_pq:
         # Parquet 中列名可能是小写的 accession / taxid, 需要重命名后提取
         taxid_lf = pl.scan_parquet(taxid_pq)
-        # 兼容两种列名格式: accession.version 或 Accession
         cols = taxid_lf.collect_schema().names()
         acc_col = next((c for c in cols if c.lower() == "accession"), cols[0])
         taxid_col = next((c for c in cols if c.lower() == "taxid"), None)
@@ -146,7 +149,7 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
         .when(pl.col("Completeness_Level") == "Partial_Genome").then(50)
         .when(pl.col("Completeness_Level") == "CDS_Fragment").then(30)
         .otherwise(10).alias("Cat_Weight"),
-        pl.col("Taxid").cast(pl.Utf8).fill_null(pl.col("Base_Accession"))
+        pl.col("Taxid").cast(pl.Utf8)
     )
 
     max_weight_df = df.group_by("Taxid").agg(pl.col("Cat_Weight").max().alias("Max_Taxid_Weight"))

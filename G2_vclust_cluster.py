@@ -289,13 +289,13 @@ def main():
                 "Category_Breakdown": cat_breakdown, "Segment_Breakdown": seg_breakdown
             })
 
-        # 节段挽救触发
-        if has_segmented and (is_tax_conflict or is_category_conflict or is_segment_conflict):
+        # 节段挽救触发: 仅在有 segment 命名冲突时保留全 pool
+        # 普通的跨 TaxID 混合 cluster 只保留代表序列(正常去冗余)
+        if is_segment_conflict:
             final_keep_ids.update(pool)
             clusters_rescued += 1
             seqs_rescued += (len(pool) - len(chosen_reps))
         else:
-            # 💡 核心出口：将筛选出的 1 条或多条代表序列全部加入白名单
             final_keep_ids.update(chosen_reps)
 
     print("[6/10] 输出 LCA 跨物种报告与分布图 ...")

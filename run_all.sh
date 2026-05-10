@@ -348,16 +348,27 @@ run "E2-获取拓扑结构" "$PLANT_DIR/E-metadata/Plant_Virus_Topology_Molecule
         --output "$PLANT_DIR/E-metadata/Plant_Virus_Topology_Molecule_Type.info.tsv" \
         --email "$EMAIL" --batch 200
 
-run "E3-合并拓扑信息" "$PLANT_DIR/E-metadata/Plant_Virus_Info.tsv" \
-    python "$BIN_DIR/E3_merge_topology.py" \
-        --seq "$PLANT_DIR/E-metadata/Plant_Virus_Topology_Molecule_Type.info.tsv" \
-        --plant "$PLANT_DIR/E-metadata/Plant_Virus_Info.tsv"
+# E3/E4 是原地修改脚本, 需检查输出列而非产物文件
+INFO_TSV="$PLANT_DIR/E-metadata/Plant_Virus_Info.tsv"
 
-run "E4-补充NCBI命名" "$PLANT_DIR/E-metadata/Plant_Virus_Info.tsv" \
-    python "$BIN_DIR/E4_add_ncbi_names.py" \
-        --input "$PLANT_DIR/E-metadata/Plant_Virus_Info.tsv" \
-        --email "$EMAIL" \
-        --names_dmp "$NAMES_DMP"
+if head -1 "$INFO_TSV" 2>/dev/null | grep -q "Topology"; then
+    log "⊙ 跳过 [E3-合并拓扑信息] — Topology 列已存在"
+else
+    run "E3-合并拓扑信息" "$INFO_TSV" \
+        python "$BIN_DIR/E3_merge_topology.py" \
+            --seq "$PLANT_DIR/E-metadata/Plant_Virus_Topology_Molecule_Type.info.tsv" \
+            --plant "$INFO_TSV"
+fi
+
+if head -1 "$INFO_TSV" 2>/dev/null | grep -q "Species_NCBI"; then
+    log "⊙ 跳过 [E4-补充NCBI命名] — Species_NCBI 列已存在"
+else
+    run "E4-补充NCBI命名" "$INFO_TSV" \
+        python "$BIN_DIR/E4_add_ncbi_names.py" \
+            --input "$INFO_TSV" \
+            --email "$EMAIL" \
+            --names_dmp "$NAMES_DMP"
+fi
 
 run "F1-基础统计" "$PLANT_DIR/E-metadata/Plant_Virus_Info.summary" \
     python "$BIN_DIR/F1_analyze_summary.py" \
