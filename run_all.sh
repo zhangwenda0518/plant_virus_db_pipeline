@@ -479,19 +479,22 @@ run "G3-去冗余评估" "$PLANT_DIR/G-cluster/derep.summary.tsv" \
         -o "$PLANT_DIR/G-cluster" \
         > "$PLANT_DIR/G-cluster/derep.summary.tsv"
 
-# G4: 基因覆盖度 (需要 pyrodigal-rv)
-run "G4a-基因预测" "$PLANT_DIR/G-cluster/virus.gene.gff3" \
-    pyrodigal-rv -i "$PLANT_DIR/G-cluster/final.cluster.ref.fasta" \
-        -a "$PLANT_DIR/G-cluster/virus.gene_pep.fasta" \
-        -d "$PLANT_DIR/G-cluster/virus.gene_nuc.fasta" \
-        -o "$PLANT_DIR/G-cluster/virus.gene.gff3" -j 120
+# G4: 基因覆盖度 → 2.plant-virus.db/H-virus_genes/
+GENE_DIR="$PLANT_DIR/H-virus_genes"
+mkdir -p "$GENE_DIR"
 
-run "G4b-覆盖度计算" "$PLANT_DIR/G-cluster/virus_genes_cov.tsv" \
+run "G4a-基因预测" "$GENE_DIR/virus.gene.gff3" \
+    pyrodigal-rv -i "$PLANT_DIR/G-cluster/final.cluster.ref.fasta" \
+        -a "$GENE_DIR/virus.gene_pep.fasta" \
+        -d "$GENE_DIR/virus.gene_nuc.fasta" \
+        -o "$GENE_DIR/virus.gene.gff3" -j 120
+
+run "G4b-覆盖度计算" "$GENE_DIR/virus_genes_cov.tsv" \
     python "$BIN_DIR/G4_gene_coverage.py" \
-        --gff "$PLANT_DIR/G-cluster/virus.gene.gff3" \
+        --gff "$GENE_DIR/virus.gene.gff3" \
         --map "$PLANT_DIR/G-cluster/seqid2taxid_len.map" \
-        --out "$PLANT_DIR/G-cluster/virus_genes_cov.tsv" \
-        --unpredicted "$PLANT_DIR/G-cluster/unpredicted_genes_cov.tsv"
+        --out "$GENE_DIR/virus_genes_cov.tsv" \
+        --unpredicted "$GENE_DIR/unpredicted_genes_cov.tsv"
 
 # ============================================================
 # 最终产物归档 → 3.final-ref-virus.db/
