@@ -493,7 +493,7 @@ else
     log "✓ [G2-vclust聚类] 完成 → $G2_OUT"
 fi
 
-run "G3-去冗余评估" "$PLANT_DIR/G-cluster/derep.summary.tsv" \
+run "G3-去冗余评估" "$PLANT_DIR/G-cluster/Dereplication_Global_Summary.tsv" \
     python "$BIN_DIR/G3_derep_evaluate.py" \
         --info "$PLANT_DIR/F-dedup/split_results/All_Classified_Virus_Info.tsv" \
         --fasta_files \
@@ -502,8 +502,7 @@ run "G3-去冗余评估" "$PLANT_DIR/G-cluster/derep.summary.tsv" \
             "$PLANT_DIR/G-cluster/final.cluster.ref.fasta" \
             "$PLANT_DIR/F-dedup/Final_DB_Build/nonsegmented_mmseqs_0.98.fasta" \
             "$PLANT_DIR/F-dedup/Final_DB_Build/segmented_mmseqs_0.98.fasta" \
-        -o "$PLANT_DIR/G-cluster" \
-        > "$PLANT_DIR/G-cluster/derep.summary.tsv"
+        -o "$PLANT_DIR/G-cluster"
 
 # G4: 基因覆盖度 → 2.plant-virus.db/H-virus_genes/
 GENE_DIR="$PLANT_DIR/H-virus_genes"

@@ -417,7 +417,7 @@ class PipelineData:
         d["G2_segment_conflicts"] = len(conf) if conf else 0
 
         # G3 去冗余评估
-        derep = read_tsv(str(cl / "derep.summary.tsv"))
+        derep = read_tsv(str(cl / "Dereplication_Global_Summary.tsv"))
         d["G3_datasets"] = []
         for row in derep:
             ds_name = row.get("Dataset", "")
@@ -905,7 +905,7 @@ def render_report(d, wd):
         "final.cluster.ref.fasta (非冗余参考基因组序列)，"
         "final.cluster.ref_info.tsv (完整元数据，含宿主分类、节段信息、分类学谱系)，"
         "virus_genes_cov.tsv (基因覆盖度统计)，"
-        "以及 derep.summary.tsv (各阶段去冗余效果评估)。"
+        "以及 Dereplication_Global_Summary.tsv (各阶段去冗余效果评估)。"
         "全部 21 个处理脚本、一键执行脚本 (run_all.sh) 及详细使用说明均已开源。"
         "中间产物与阶段级运行日志 (00_logs/) 一并保留，确保全过程可追溯。"
     )
