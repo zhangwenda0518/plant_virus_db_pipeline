@@ -348,31 +348,30 @@ run "E2-获取拓扑结构" "$PLANT_DIR/E-metadata/Plant_Virus_Topology_Molecule
         --output "$PLANT_DIR/E-metadata/Plant_Virus_Topology_Molecule_Type.info.tsv" \
         --email "$EMAIL" --batch 200
 
-# E3/E4 是原地修改脚本, 需检查输出列而非产物文件
+# E3/E4 输出为独立文件, 串联时用临时产物传递
 INFO_TSV="$PLANT_DIR/E-metadata/Plant_Virus_Info.tsv"
+INFO_TOPO_TSV="$PLANT_DIR/E-metadata/Plant_Virus_Info.topo.tsv"
+INFO_FULL_TSV="$PLANT_DIR/E-metadata/Plant_Virus_Info.full.tsv"
 
-if head -1 "$INFO_TSV" 2>/dev/null | grep -q "Topology"; then
-    log "⊙ 跳过 [E3-合并拓扑信息] — Topology 列已存在"
-else
-    run "E3-合并拓扑信息" "$INFO_TSV" \
-        python "$BIN_DIR/E3_merge_topology.py" \
-            --seq "$PLANT_DIR/E-metadata/Plant_Virus_Topology_Molecule_Type.info.tsv" \
-            --plant "$INFO_TSV"
-fi
+run "E3-合并拓扑信息" "$INFO_TOPO_TSV" \
+    python "$BIN_DIR/E3_merge_topology.py" \
+        --seq "$PLANT_DIR/E-metadata/Plant_Virus_Topology_Molecule_Type.info.tsv" \
+        --plant "$INFO_TSV" \
+        --output "$INFO_TOPO_TSV"
 
-if head -1 "$INFO_TSV" 2>/dev/null | grep -q "Species_NCBI"; then
-    log "⊙ 跳过 [E4-补充NCBI命名] — Species_NCBI 列已存在"
-else
-    run "E4-补充NCBI命名" "$INFO_TSV" \
-        python "$BIN_DIR/E4_add_ncbi_names.py" \
-            --input "$INFO_TSV" \
-            --email "$EMAIL" \
-            --names_dmp "$NAMES_DMP"
-fi
+run "E4-补充NCBI命名" "$INFO_FULL_TSV" \
+    python "$BIN_DIR/E4_add_ncbi_names.py" \
+        --input "$INFO_TOPO_TSV" \
+        --output "$INFO_FULL_TSV" \
+        --email "$EMAIL" \
+        --names_dmp "$NAMES_DMP"
+
+# 用全量版本替换原始版本, 后续步骤统一使用 INFO_FULL_TSV
+INFO_TSV="$INFO_FULL_TSV"
 
 run "F1-基础统计" "$PLANT_DIR/E-metadata/Plant_Virus_Info.summary" \
     python "$BIN_DIR/F1_analyze_summary.py" \
-        --input "$PLANT_DIR/E-metadata/Plant_Virus_Info.tsv" \
+        --input "$INFO_TSV" \
         > "$PLANT_DIR/E-metadata/Plant_Virus_Info.summary"
 
 # ============================================================
@@ -382,7 +381,7 @@ log "========== 阶段 F: 分类与去冗余 =========="
 
 run "F2-节段分类拆分" "$PLANT_DIR/F-dedup/split_results/All_Classified_Virus_Info.tsv" \
     python "$BIN_DIR/F2_classify_segmented.py" \
-        -i "$PLANT_DIR/E-metadata/Plant_Virus_Info.tsv" \
+        -i "$INFO_TSV" \
         --vmr "$VHOST_DIR/B-ictv/VMR_MSL41.tsv" \
         -f "$PLANT_DIR/D-sequences/plant.virus.fasta" \
         -o "$PLANT_DIR/F-dedup/split_results" \
