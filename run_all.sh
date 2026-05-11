@@ -521,6 +521,15 @@ run "G4b-覆盖度计算" "$GENE_DIR/virus_genes_cov.tsv" \
         --out "$GENE_DIR/virus_genes_cov.tsv" \
         --unpredicted "$GENE_DIR/unpredicted_genes_cov.tsv"
 
+# G4c: 清理 pyrodigal 序列头部 (NC_116488.1_1 # 77 # ... → NC_116488.1_1)
+for fa in "$GENE_DIR/virus.gene_pep.fasta" "$GENE_DIR/virus.gene_nuc.fasta"; do
+    if [ -f "$fa" ] && grep -qm1 '#' "$fa"; then
+        log "▶ 清理 pyrodigal 序列头部: $(basename "$fa")"
+        sed -i 's/ .*//' "$fa"
+        log "✓ $(basename "$fa") 清理完成 ($(grep -c '>' "$fa") 条)"
+    fi
+done
+
 # ============================================================
 # 最终产物归档 → 3.final-ref-virus.db/
 # ============================================================
