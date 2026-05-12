@@ -106,7 +106,31 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
         df = df.join(taxid_lf.filter(pl.col("Accession").is_in(acc_list)).collect(), on="Accession", how="left")
     
     df = df.join(vmr_exploded, on="Base_Accession", how="left")
-    
+
+    # 二次兜底: Base_Accession 匹配失败时, 用 VMR_Species (即 ICTV 物种名) 回填
+    # 同一物种的不同 Accession 应共享 VMR 分类信息
+    vmr_species_info = vmr_exploded.select([
+        "VMR_Species", "VMR_Family", "VMR_Genus", "Virus name(s)"
+    ]).filter(pl.col("VMR_Species").is_not_null() & (pl.col("VMR_Species") != "")) \
+      .unique(subset=["VMR_Species"], keep="first")
+
+    # 对 Accession join 未命中且 Species_ICTV/ Species 非空的记录, 用物种名二次匹配
+    sp_col = "Species_ICTV" if "Species_ICTV" in df.columns else "Species"
+    mask = pl.col("VMR_Species").is_null() & pl.col(sp_col).is_not_null() & (pl.col(sp_col) != "")
+
+    df = df.join(
+        vmr_species_info.rename({"VMR_Species": sp_col}),
+        on=sp_col, how="left", suffix="_sp"
+    )
+
+    # 合并: 优先用 Accession 匹配的结果, 缺失时用物种名回填的
+    for col_name in ["VMR_Species", "VMR_Family", "VMR_Genus", "Virus name(s)"]:
+        sp_col_name = col_name + "_sp"
+        if sp_col_name in df.columns:
+            df = df.with_columns(
+                pl.coalesce([pl.col(col_name), pl.col(sp_col_name)]).alias(col_name)
+            ).drop(sp_col_name)
+
     df = df.with_columns(
         pl.when(pl.col("Virus name(s)").is_not_null())
         .then(
