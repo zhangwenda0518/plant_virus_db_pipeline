@@ -48,19 +48,40 @@ def main():
     print(f"修复前 VMR_Family 缺失: {null_before} / {df.height} 条")
 
     # 用物种名 join VMR 查找表
-    df = df.join(vmr_info, left_on=sp_col, right_on="VMR_Species", how="left", suffix="_sp")
+    df = df.join(vmr_info, left_on=sp_col, right_on="VMR_Species", how="left", suffix="_vmr")
 
     # 对每个 VMR 列: 原始值为空时用 join 回填的值
     for col_name in cols_to_fix:
-        sp_col_name = col_name + "_sp"
-        if sp_col_name in df.columns:
-            # 如果原始列全 null, 直接用回填值; 否则 coalesce
+        vmr_col_name = col_name + "_vmr"
+        if vmr_col_name in df.columns:
             df = df.with_columns(
                 pl.when(pl.col(col_name).is_null() | (pl.col(col_name) == ""))
-                  .then(pl.col(sp_col_name))
+                  .then(pl.col(vmr_col_name))
                   .otherwise(pl.col(col_name))
                   .alias(col_name)
-            ).drop(sp_col_name)
+            )
+            # VMR_Species 是 join key, 不会产生 _vmr 后缀列, 需要特殊处理
+            # 如果原始 VMR_Species 为空, 用 sp_col (Species_ICTV) 的值填充
+            if col_name == "VMR_Species" and df.filter(
+                pl.col(col_name).is_null() | (pl.col(col_name) == "")
+            ).height > 0:
+                df = df.with_columns(
+                    pl.when(pl.col(col_name).is_null() | (pl.col(col_name) == ""))
+                      .then(pl.col(sp_col))
+                      .otherwise(pl.col(col_name))
+                      .alias(col_name)
+                )
+            df = df.drop(vmr_col_name)
+
+
+        elif col_name == "VMR_Species":
+            # VMR_Species 作为 join key 不产生 _vmr 列, 直接用 sp_col 填充空值
+            df = df.with_columns(
+                pl.when(pl.col(col_name).is_null() | (pl.col(col_name) == ""))
+                  .then(pl.col(sp_col))
+                  .otherwise(pl.col(col_name))
+                  .alias(col_name)
+            )
 
     # 统计修复后
     null_after = df.filter(
