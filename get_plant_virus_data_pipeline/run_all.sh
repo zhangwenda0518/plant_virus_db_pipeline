@@ -69,7 +69,9 @@ show_help() {
 │   $WORK_DIR/1.virus-host_db/        ★ 病毒-宿主数据库         │
 │     ├── A-merge/                    阶段 A: 元数据整合        │
 │     ├── B-ictv/                     阶段 B: ICTV VMR 拆分     │
-│     └── C-host_classify/            阶段 C: 宿主分类          │
+│     └── C-host_classify/            阶段 C: 宿主分类+清洗      │
+│         ├── VHostMetadata/          C2 粗分类                  │
+│         └── classified_clean/       C4 ICTV多层清洗            │
 │   $WORK_DIR/2.plant-virus.db/       ★ 植物病毒参考基因组      │
 │     ├── D-sequences/                阶段 D: 序列获取          │
 │     ├── E-metadata/                 阶段 E: 元数据完善        │
@@ -273,9 +275,9 @@ run "B2-VMR宿主拆分" "$VHOST_DIR/B-ictv/VMR_Split_By_Host/VMR_Plant.tsv" \
         --out_dir "$VHOST_DIR/B-ictv/VMR_Split_By_Host"
 
 # ============================================================
-# 阶段 C: 宿主信息整合 → 1.virus-host_db/C-host_classify/
+# 阶段 C: 宿主信息整合 + 多层清洗 → 1.virus-host_db/C-host_classify/
 # ============================================================
-log "========== 阶段 C: 宿主信息整合 =========="
+log "========== 阶段 C: 宿主分类与清洗 =========="
 
 run "C1-宿主信息提取" "$VHOST_DIR/C-host_classify/host_extract/Final_Virus_Host_Lineage.tsv" \
     python "$BIN_DIR/C1_virus_host_info_extract.py" \
@@ -291,6 +293,21 @@ run "C2-宿主分类" "$VHOST_DIR/C-host_classify/VHostMetadata/Plant.tsv" \
         --allnucl '$ALLNUCL_CSV' \
         --out_dir '$VHOST_DIR/C-host_classify/VHostMetadata'"
 
+run "C3-动物宿主细分" "$VHOST_DIR/C-host_classify/VHostMetadata/Insecta.tsv" \
+    python "$BIN_DIR/C3_animal_subsplit.py" \
+        -i "$VHOST_DIR/C-host_classify/VHostMetadata" \
+        -o "$VHOST_DIR/C-host_classify/VHostMetadata"
+
+VMR_TSV="$VHOST_DIR/B-ictv/VMR_MSL41.tsv"
+VHOSTMETA_DIR="$VHOST_DIR/C-host_classify/VHostMetadata"
+CLASSIFIED_DIR="$VHOST_DIR/C-host_classify/classified_clean"
+
+run "C4-多类别清洗" "$CLASSIFIED_DIR/Plant.tsv" \
+    python "$BIN_DIR/C4_clean_all_tsvs.py" \
+        -i "$VHOSTMETA_DIR" \
+        -o "$CLASSIFIED_DIR" \
+        -v "$VMR_TSV"
+
 # ============================================================
 # 阶段 D: 序列获取 → 2.plant-virus.db/D-sequences/
 # ============================================================
@@ -298,7 +315,7 @@ log "========== 阶段 D: 序列获取 =========="
 
 run "D1-比对提取FASTA" "$PLANT_DIR/D-sequences/Plant_Extracted_Sequences.fasta" \
     python "$BIN_DIR/D1_extract_and_check_fasta.py" \
-        --tsv "$VHOST_DIR/C-host_classify/VHostMetadata/Plant.tsv" \
+        --tsv "$CLASSIFIED_DIR/Plant.tsv" \
         --fasta "$ALLNUCL_FA" \
         --out_dir "$PLANT_DIR/D-sequences/Plant_virus_db"
 
