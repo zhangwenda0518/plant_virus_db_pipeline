@@ -300,8 +300,13 @@ run "C2-宿主分类" "$VHOST_DIR/C-host_classify/VHostMetadata/Plant.tsv" \
         --allnucl '$ALLNUCL_CSV' \
         --out_dir '$VHOST_DIR/C-host_classify/VHostMetadata'"
 
-run "C3-动物宿主细分" "$VHOST_DIR/C-host_classify/VHostMetadata/Insecta.tsv" \
-    python "$BIN_DIR/C3_animal_subsplit.py" \
+run "C3a-藻类拆分" "$VHOST_DIR/C-host_classify/VHostMetadata/Algae.tsv" \
+    python "$BIN_DIR/C3a_algae_split.py" \
+        -i "$VHOST_DIR/C-host_classify/VHostMetadata" \
+        -o "$VHOST_DIR/C-host_classify/VHostMetadata"
+
+run "C3b-动物宿主细分" "$VHOST_DIR/C-host_classify/VHostMetadata/Insecta.tsv" \
+    python "$BIN_DIR/C3b_animal_subsplit.py" \
         -i "$VHOST_DIR/C-host_classify/VHostMetadata" \
         -o "$VHOST_DIR/C-host_classify/VHostMetadata"
 
