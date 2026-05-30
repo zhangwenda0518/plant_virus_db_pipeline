@@ -96,7 +96,7 @@ def summarize(input_dir, output_path):
                 vals = cdf[lvl].fill_null("").cast(pl.Utf8).str.strip_chars()
                 uniqs.append(vals.filter(vals.str.len_chars() > 0).n_unique())
             parts = "".join(f" {u:>10,d}" for u in uniqs)
-            out.write(f"{cat:20s} {cdft.height:>10,d}{parts}\n")
+            out.write(f"{cat:20s} {cdf.height:>10,d}{parts}\n")
 
         # ──────────────────────────────────────────────
         # Table 4: Confidence distribution per level
