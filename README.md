@@ -8,7 +8,7 @@
 |--------|------|------|
 | `get_plant_virus_data_pipeline/` | 建库流水线 (A-G 七阶段) | `bash run_all.sh -e email@example.com` |
 | `host_classify/` | 宿主分类下游分析 (C5-C9) | 见子目录 README |
-| `build_virus_db/` | 辅助建库工具 | — |
+| `build_virus_db/` | 下游数据库构建工具 | 见子目录 README |
 
 ## 数据流
 
@@ -48,3 +48,4 @@ python 5_classify_contigs.py -i contigs.tsv -f contigs.fasta --prob_dir cross_an
 
 - 建库流程：[get_plant_virus_data_pipeline/README.md](get_plant_virus_data_pipeline/README.md)
 - 宿主分析：[host_classify/README.md](host_classify/README.md)
+- 下游工具：[build_virus_db/README.md](build_virus_db/README.md) — 将最终参考基因组构建为 17 种下游软件本地数据库 (metabuli, kraken2, blast, diamond, bowtie2 等)
