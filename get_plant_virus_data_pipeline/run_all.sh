@@ -77,8 +77,10 @@ show_help() {
 │     ├── E-metadata/                 阶段 E: 元数据完善        │
 │     ├── F-dedup/                    阶段 F: 分类去冗余        │
 │     └── G-cluster/                  阶段 G: 聚类评估          │
-│   $WORK_DIR/3.final-ref-virus.db/   ★★★ 最终参考数据库(软链接)│
-│   $WORK_DIR/4.logs/                 ★ 全部运行日志            │
+│   $WORK_DIR/3.final-ref-virus.db/   ★ 最终参考数据库(软链接)    │
+│   $WORK_DIR/4.host_classify/        ★ 宿主分类研究 (C5-C9)       │
+│   $WORK_DIR/5.virus.ref.build.db/   ★ 下游数据库构建             │
+│   $WORK_DIR/6.logs/                 ★ 全部运行日志               │
 ├──────────────────────────────────────────────────────────────┤
 │ 运行示例:                                                     │
 │                                                              │
@@ -121,18 +123,23 @@ MMSEQS_THREADS="${MMSEQS_THREADS_ARG:-${MMSEQS_THREADS:-32}}"
 EMAIL="${EMAIL_ARG:-${EMAIL:-your_email@example.com}}"
 API_KEY="${API_KEY_ARG:-${API_KEY:-}}"
 
-# 三大阶段产物目录 + 日志目录
-# 0.raw_data 原始输入 (用户手动下载)
-# 1.virus-host_db 病毒-宿主数据库构建 (阶段 A+B+C)
-# 2.plant-virus.db 植物病毒参考基因组 (阶段 D+E+F+G)
-# 4.logs 运行日志
+# 产出目录结构
+# 0.raw_data       原始输入 (用户手动下载)
+# 1.virus-host_db  病毒-宿主数据库构建 (阶段 A+B+C)
+# 2.plant-virus.db 植物病毒参考基因组 (阶段 D+E+F+G+H)
+# 3.final-ref-virus.db 最终参考数据库 (软链接)
+# 4.host_classify  宿主分类研究 (C5-C9 下游分析)
+# 5.virus.ref.build.db 下游数据库构建 (build_virus_db)
+# 6.logs           全部运行日志
 VHOST_DIR="$WORK_DIR/1.virus-host_db"
 PLANT_DIR="$WORK_DIR/2.plant-virus.db"
-LOG_DIR="$WORK_DIR/4.logs"
+LOG_DIR="$WORK_DIR/6.logs"
 RAW_INPUT_DIR="$WORK_DIR/0.raw_data"
 mkdir -p "$LOG_DIR"
 mkdir -p "$VHOST_DIR"/{A-merge,B-ictv,C-host_classify}
-mkdir -p "$PLANT_DIR"/{D-sequences,E-metadata,F-dedup,G-cluster}
+mkdir -p "$PLANT_DIR"/{D-sequences,E-metadata,F-dedup,G-cluster,H-virus_genes}
+mkdir -p "$WORK_DIR"/4.host_classify
+mkdir -p "$WORK_DIR"/5.virus.ref.build.db
 touch "$LOG_DIR/pipeline.log"
 
 # 原始输入
@@ -590,12 +597,13 @@ echo "============================================"
 echo "  Pipeline 执行完毕"
 echo "============================================"
 echo "最终产物:"
-echo "  病毒-宿主库: $VHOST_DIR/"
-echo "  参考基因组:  $PLANT_DIR/"
-echo "  序列:        $PLANT_DIR/G-cluster/final.cluster.ref.fasta"
-echo "  信息:        $PLANT_DIR/G-cluster/final.cluster.ref_info.tsv"
-echo "  覆盖度:      $PLANT_DIR/G-cluster/virus_genes_cov.tsv"
-echo "  评估报告:    $PLANT_DIR/G-cluster/derep.summary.tsv"
-echo "  LCA 分布:    $PLANT_DIR/G-cluster/clusters.LCA_Distribution.png"
-echo "  日志目录:    $LOG_DIR/"
+echo "  病毒-宿主库:   $VHOST_DIR/"
+echo "  参考基因组:    $PLANT_DIR/"
+echo "  最终参考库:    $WORK_DIR/3.final-ref-virus.db/"
+echo "  宿主分类研究:  $WORK_DIR/4.host_classify/"
+echo "  下游数据库:    $WORK_DIR/5.virus.ref.build.db/"
+echo "  序列:          $PLANT_DIR/G-cluster/final.cluster.ref.fasta"
+echo "  覆盖度:        $PLANT_DIR/H-virus_genes/virus_genes_cov.tsv"
+echo "  LCA 分布:      $PLANT_DIR/G-cluster/clusters.LCA_Distribution.png"
+echo "  日志目录:      $LOG_DIR/"
 echo "============================================"
