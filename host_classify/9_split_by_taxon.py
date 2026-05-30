@@ -1,14 +1,17 @@
 # -*- coding: utf-8 -*-
 """
-Split classified contigs by Family and Genus within each Predicted_Host.
+Split classified contigs hierarchically: Category → Family → Genus.
 
-Output per-category directory:
-  {category}/
-    by_family/{Family}.fasta         — per-family sequences
-    by_family/{Family}_summary.txt   — per-family stats
-    by_genus/{Genus}.fasta           — per-genus sequences
-    by_genus/{Genus}_summary.txt     — per-genus stats
-    index_summary.txt                — overview with per-taxon counts
+Output structure:
+  {Category}/
+    {Family}/
+      {Family}.fasta                     — all contigs in this family
+      {Family}_summary.txt               — family stats + sub-genera list
+      {Genus}/
+        {Genus}.fasta                    — per-genus sequences
+        {Genus}_summary.txt              — per-genus stats + top species
+      _other_genera/                     — genera < min_contigs merged
+    _other_families/                     — small families merged
 
 Usage:
   python 9_split_by_taxon.py -i host_classify/ -f contigs.fasta -o split_output/
@@ -19,12 +22,10 @@ from collections import defaultdict
 
 
 def load_fasta_dict(fasta_path):
-    """Load FASTA into {id: seq} dict."""
-    if not fasta_path or not os.path.exists(fasta_path):
-        return {}
     seqs = {}
-    cid = None
-    cur = []
+    if not fasta_path or not os.path.exists(fasta_path):
+        return seqs
+    cid, cur = None, []
     with open(fasta_path, 'r') as f:
         for line in f:
             if line.startswith('>'):
@@ -40,7 +41,6 @@ def load_fasta_dict(fasta_path):
 
 
 def write_fasta(seqs, acc_set, out_path):
-    """Write FASTA for given accession set."""
     n = 0
     with open(out_path, 'w') as f:
         for acc in sorted(acc_set):
@@ -50,119 +50,122 @@ def write_fasta(seqs, acc_set, out_path):
     return n
 
 
+def write_genus(cdf, genus, fam_dir, seqs, min_contigs, top_n=10):
+    """Write per-genus FASTA + summary inside the family directory."""
+    gdf = cdf.filter(pl.col("Genus") == genus)
+    n = gdf.height
+    gdir = os.path.join(fam_dir, genus)
+    os.makedirs(gdir, exist_ok=True)
+
+    accs = set(gdf["contig_id"].to_list())
+    nw = write_fasta(seqs, accs, os.path.join(gdir, f"{genus}.fasta"))
+
+    with open(os.path.join(gdir, f"{genus}_summary.txt"), 'w') as sf:
+        sf.write(f"Genus: {genus}\nContigs: {n:,}\nFASTA: {nw:,} sequences\n")
+        sf.write(f"\nTop Species:\n")
+        sp = gdf.group_by("Species").len().sort("len", descending=True).head(top_n)
+        for r in sp.iter_rows(named=True):
+            sf.write(f"  {str(r['Species'])[:60]:62s} {r['len']:>8,d}\n")
+    return n
+
+
 def main():
-    p = argparse.ArgumentParser(description="Split classified contigs by Family/Genus")
-    p.add_argument("-i", "--input_dir", required=True,
-                   help="Directory with *.classified.tsv files (C9 output)")
-    p.add_argument("-f", "--fasta", required=True,
-                   help="FASTA file with contig sequences")
+    p = argparse.ArgumentParser(description="Hierarchical split by Family → Genus")
+    p.add_argument("-i", "--input_dir", required=True)
+    p.add_argument("-f", "--fasta", required=True)
     p.add_argument("-o", "--output_dir", default="split_by_taxon/")
-    p.add_argument("--min_contigs", type=int, default=10,
-                   help="Minimum contigs per taxon to create separate FASTA (smaller grouped)")
+    p.add_argument("--min_genus", type=int, default=10,
+                   help="Minimum contigs per genus to get its own directory")
+    p.add_argument("--min_family", type=int, default=5,
+                   help="Minimum contigs per family to get its own directory")
     args = p.parse_args()
 
     os.makedirs(args.output_dir, exist_ok=True)
     seqs = load_fasta_dict(args.fasta)
-    print(f"Loaded {len(seqs):,} sequences from FASTA")
+    print(f"Loaded {len(seqs):,} sequences")
 
-    # Load all classified TSVs
     dfs = []
     for fname in sorted(os.listdir(args.input_dir)):
         if not fname.endswith('.classified.tsv'):
             continue
-        df = pl.read_csv(os.path.join(args.input_dir, fname), separator='\t', truncate_ragged_lines=True)
-        dfs.append(df)
+        dfs.append(pl.read_csv(os.path.join(args.input_dir, fname), separator='\t', truncate_ragged_lines=True))
     df = pl.concat(dfs, how="diagonal")
-    print(f"Loaded {df.height:,} classified contigs\n")
+    print(f"Loaded {df.height:,} contigs\n")
 
     cats = sorted(df["Predicted_Host"].unique().to_list())
-
-    # Global index
     index_path = os.path.join(args.output_dir, "index_summary.txt")
+
     with open(index_path, 'w', encoding='utf-8') as idx:
-        idx.write(f"Taxon-Split Classification Summary\n{'='*60}\n\n")
+        idx.write(f"Taxon-Split Classification (Family → Genus)\n{'='*55}\n\n")
 
         for cat in cats:
             cdf = df.filter(pl.col("Predicted_Host") == cat)
             if cdf.height == 0:
                 continue
-
             cat_dir = os.path.join(args.output_dir, cat)
-            fam_dir = os.path.join(cat_dir, "by_family")
-            gen_dir = os.path.join(cat_dir, "by_genus")
-            os.makedirs(fam_dir, exist_ok=True)
-            os.makedirs(gen_dir, exist_ok=True)
+            os.makedirs(cat_dir, exist_ok=True)
 
-            idx.write(f"{'─'*50}\n{cat}  —  {cdf.height:,} contigs\n{'─'*50}\n")
+            idx.write(f"{'─'*45}\n{cat}  —  {cdf.height:,} contigs\n{'─'*45}\n")
 
-            # ── By Family ──
-            fam_counts = cdf.group_by("Family").agg(pl.len().alias("N")).sort("N", descending=True)
-            other_fam_accs = set()
+            fam_counts = cdf.group_by("Family").len().sort("len", descending=True)
 
-            fam_idx = []
-            for r in fam_counts.iter_rows(named=True):
-                fam = str(r["Family"]).strip() if r["Family"] else "NA"
-                n = r["N"]
+            for fr in fam_counts.iter_rows(named=True):
+                fam = str(fr["Family"]).strip() if fr["Family"] else "NA"
+                fn = fr["len"]
                 if fam == "NA":
                     continue
-                fam_idx.append((fam, n))
-                if n >= args.min_contigs:
-                    accs = set(cdf.filter(pl.col("Family") == fam)["contig_id"].to_list())
-                    n_written = write_fasta(seqs, accs, os.path.join(fam_dir, f"{fam}.fasta"))
+
+                fcd = cdf.filter(pl.col("Family") == fam)
+
+                if fn >= args.min_family:
+                    fam_dir = os.path.join(cat_dir, fam)
+                    os.makedirs(fam_dir, exist_ok=True)
+
+                    # Family-level FASTA + summary
+                    fam_accs = set(fcd["contig_id"].to_list())
+                    nw = write_fasta(seqs, fam_accs, os.path.join(fam_dir, f"{fam}.fasta"))
+
                     with open(os.path.join(fam_dir, f"{fam}_summary.txt"), 'w') as sf:
-                        sf.write(f"Family: {fam}\nContigs: {n:,}\nFASTA: {n_written:,} sequences\n")
-                        # Top genera in this family
-                        top_gen = cdf.filter(pl.col("Family") == fam).group_by("Genus").agg(pl.len().alias("N")).sort("N", descending=True).head(10)
-                        sf.write(f"\nTop Genera:\n")
-                        for gr in top_gen.iter_rows(named=True):
-                            sf.write(f"  {str(gr['Genus']):40s} {gr['N']:>8,d}\n")
+                        sf.write(f"Family: {fam}\nContigs: {fn:,}\nFASTA: {nw:,} sequences\n")
+                        sf.write(f"\nGenera ({fcd['Genus'].n_unique()}):\n")
+
+                    # Sub-genera
+                    gen_counts = fcd.group_by("Genus").len().sort("len", descending=True)
+                    other_gen = set()
+                    for gr in gen_counts.iter_rows(named=True):
+                        gen = str(gr["Genus"]).strip() if gr["Genus"] else "NA"
+                        gn = gr["len"]
+                        if gen == "NA":
+                            continue
+                        if gn >= args.min_genus:
+                            write_genus(fcd, gen, fam_dir, seqs, args.min_genus)
+                            with open(os.path.join(fam_dir, f"{fam}_summary.txt"), 'a') as sf:
+                                sf.write(f"  {gen:40s} {gn:>8,d}  → {gen}/")
+                                sf.write(f"\n")
+                        else:
+                            other_gen |= set(fcd.filter(pl.col("Genus") == gen)["contig_id"].to_list())
+
+                    # Small genera merged
+                    if other_gen:
+                        odir = os.path.join(fam_dir, "_other_genera")
+                        os.makedirs(odir, exist_ok=True)
+                        write_fasta(seqs, other_gen, os.path.join(odir, "other.fasta"))
+
+                    # Family index line
+                    idx.write(f"  {fam:40s} {fn:>8,d} contigs, {fcd['Genus'].n_unique()} genera\n")
+
                 else:
-                    other_fam_accs |= set(cdf.filter(pl.col("Family") == fam)["contig_id"].to_list())
-
-            # Small families grouped
-            if other_fam_accs:
-                write_fasta(seqs, other_fam_accs, os.path.join(fam_dir, "_other_small_families.fasta"))
-
-            # Family index
-            idx.write(f"\n  Families ({len(fam_idx)}):\n")
-            for fam, n in fam_idx[:20]:
-                idx.write(f"    {fam:40s} {n:>8,d}\n")
-
-            # ── By Genus ──
-            gen_counts = cdf.group_by("Genus").agg(pl.len().alias("N")).sort("N", descending=True)
-            other_gen_accs = set()
-            gen_list = []
-
-            for r in gen_counts.iter_rows(named=True):
-                gen = str(r["Genus"]).strip() if r["Genus"] else "NA"
-                n = r["N"]
-                if gen == "NA":
-                    continue
-                gen_list.append((gen, n))
-                if n >= args.min_contigs:
-                    accs = set(cdf.filter(pl.col("Genus") == gen)["contig_id"].to_list())
-                    n_written = write_fasta(seqs, accs, os.path.join(gen_dir, f"{gen}.fasta"))
-                    with open(os.path.join(gen_dir, f"{gen}_summary.txt"), 'w') as sf:
-                        sf.write(f"Genus: {gen}\nContigs: {n:,}\nFASTA: {n_written:,} sequences\n")
-                        # Top species in this genus
-                        top_sp = cdf.filter(pl.col("Genus") == gen).group_by("Species").agg(pl.len().alias("N")).sort("N", descending=True).head(10)
-                        sf.write(f"\nTop Species:\n")
-                        for sr in top_sp.iter_rows(named=True):
-                            sf.write(f"  {str(sr['Species']):50s} {sr['N']:>8,d}\n")
-                else:
-                    other_gen_accs |= set(cdf.filter(pl.col("Genus") == gen)["contig_id"].to_list())
-
-            if other_gen_accs:
-                write_fasta(seqs, other_gen_accs, os.path.join(gen_dir, "_other_small_genera.fasta"))
-
-            idx.write(f"\n  Genera ({len(gen_list)}):\n")
-            for gen, n in gen_list[:30]:
-                idx.write(f"    {gen:40s} {n:>8,d}\n")
+                    # Small family → merge into _other_families
+                    odir = os.path.join(cat_dir, "_other_families")
+                    os.makedirs(odir, exist_ok=True)
+                    fam_accs = set(fcd["contig_id"].to_list())
+                    write_fasta(seqs, fam_accs, os.path.join(odir, "other.fasta"))
+                    with open(os.path.join(odir, "other_summary.txt"), 'a') as sf:
+                        sf.write(f"  {fam:40s} {fn:>8,d}\n")
 
             idx.write("\n")
 
     print(f"Done → {args.output_dir}/")
-    print(f"  {index_path}")
 
 
 if __name__ == "__main__":
