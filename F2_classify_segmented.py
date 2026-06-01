@@ -76,7 +76,8 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
     ).explode("Acc_List").with_columns(
         pl.col("Acc_List").str.to_uppercase().alias("Base_Accession"),
         pl.col("Genome coverage").fill_null("").str.to_lowercase().alias("vmr_cov_lower"),
-        (pl.col("Num_Segments") > 1).alias("Is_Multipartite_VMR")
+        # Potyviridae: 单组分科, VMR多行=多分离株≠多节段
+        ((pl.col("Num_Segments") > 1) & ~(pl.col("VMR_Family") == "Potyviridae")).alias("Is_Multipartite_VMR")
     ).unique(subset=["Base_Accession"], keep="first")
 
     for col in ["Sequence_Type", "Segment"]:
