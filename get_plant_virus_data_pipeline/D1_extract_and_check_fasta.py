@@ -27,8 +27,12 @@ def build_or_load_index(fasta_path):
     print(f"   🔧 首次构建 FASTA 索引 (zgrep - 请耐心等待)...")
     t0 = time.time()
 
-    # Fast path: use zgrep to extract all headers, parse to Base_Accession \t Fasta_ID
-    cmd = f'zgrep "^>" "{fasta_path}" | awk \'{{id=$1; sub(/^>/,"",id); split(id,a,"."); print a[1]"\t"id}}\' > "{idx_path}"'
+    # Fast path: parallel decompress + grep headers → cached index
+    rgzip = shutil.which("rapidgzip")
+    if rgzip:
+        cmd = f'{rgzip} -d -c -P 0 "{fasta_path}" | grep "^>" | awk \'{{id=$1; sub(/^>/,"",id); split(id,a,"."); print a[1]"\t"id}}\' > "{idx_path}"'
+    else:
+        cmd = f'zgrep "^>" "{fasta_path}" | awk \'{{id=$1; sub(/^>/,"",id); split(id,a,"."); print a[1]"\t"id}}\' > "{idx_path}"'
     ret = os.system(cmd)
     if ret != 0 or not os.path.exists(idx_path):
         print("   ⚠ zgrep 失败, 回退 Python 扫描...")
