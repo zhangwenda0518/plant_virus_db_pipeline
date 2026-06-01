@@ -19,7 +19,7 @@ def build_or_load_index(fasta_path):
     Returns Polars DataFrame with columns: Base_Accession, Fasta_ID.
     """
     idx_path = fasta_path + ".idx.tsv"
-    if os.path.exists(idx_path) and os.path.getsize(idx_path) > 0:
+    if os.path.exists(idx_path) and os.path.getsize(idx_path) > 10_000_000:
         print(f"   📂 加载缓存索引: {idx_path}")
         return pl.read_csv(idx_path, separator='\t',
                           schema={"Base_Accession": pl.Utf8, "Fasta_ID": pl.Utf8})
@@ -61,17 +61,19 @@ def extract_fasta_seqkit(fasta_path, output_path, id_list, n_parallel=8):
         f.write('\n'.join(id_list) + '\n')
 
     seqkit_bin = shutil.which("seqkit")
-    if seqkit_bin:
-        cmd = [seqkit_bin, "grep", "-f", id_file, fasta_path, "-o", output_path, "-j", str(n_parallel)]
-        print(f"   🏃 seqkit grep -j {n_parallel}...")
-        subprocess.run(cmd, check=True, capture_output=True, text=True)
-    else:
-        cmd = ["seqtk", "subseq", fasta_path, id_file]
-        print(f"   🏃 seqtk subseq (fallback)...")
-        with open(output_path, 'w') as out_f:
-            subprocess.run(cmd, check=True, capture_output=False, stdout=out_f)
-
-    os.remove(id_file)
+    try:
+        if seqkit_bin:
+            cmd = [seqkit_bin, "grep", "-f", id_file, fasta_path, "-o", output_path, "-j", str(n_parallel)]
+            print(f"   🏃 seqkit grep -j {n_parallel}...")
+            subprocess.run(cmd, check=True, capture_output=True, text=True)
+        else:
+            cmd = ["seqtk", "subseq", fasta_path, id_file]
+            print(f"   🏃 seqtk subseq (fallback)...")
+            with open(output_path, 'w') as out_f:
+                subprocess.run(cmd, check=True, capture_output=False, stdout=out_f)
+    finally:
+        if os.path.exists(id_file):
+            os.remove(id_file)
 
     result = subprocess.run(["grep", "-c", "^>", output_path], capture_output=True, text=True)
     return int(result.stdout.strip()) if result.returncode == 0 else 0
