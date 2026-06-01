@@ -36,12 +36,15 @@ def build_or_load_index(fasta_path):
     # Fast path: parallel decompress + grep headers → cached index
     rgzip = shutil.which("rapidgzip")
     if rgzip:
-        cmd = f'{rgzip} -d -c -P 0 "{fasta_path}" | grep "^>" | awk \'{{id=$1; sub(/^>/,"",id); split(id,a,"."); print a[1]"\t"id}}\' > "{idx_path}"'
+        cmd = f'set -o pipefail; {rgzip} -d -c -P 0 "{fasta_path}" | grep "^>" | awk \'{{id=$1; sub(/^>/,"",id); split(id,a,"."); print a[1]"\t"id}}\' > "{idx_path}"'
     else:
-        cmd = f'zgrep "^>" "{fasta_path}" | awk \'{{id=$1; sub(/^>/,"",id); split(id,a,"."); print a[1]"\t"id}}\' > "{idx_path}"'
+        cmd = f'set -o pipefail; zgrep "^>" "{fasta_path}" | awk \'{{id=$1; sub(/^>/,"",id); split(id,a,"."); print a[1]"\t"id}}\' > "{idx_path}"'
     ret = os.system(cmd)
-    if ret != 0 or not os.path.exists(idx_path):
-        print("   ⚠ zgrep 失败, 回退 Python 扫描...")
+    # Verify: file must exist AND have reasonable size
+    if ret != 0 or not os.path.exists(idx_path) or os.path.getsize(idx_path) < 1024:
+        if os.path.exists(idx_path):
+            os.remove(idx_path)
+        print("   ⚠ 索引构建失败, 回退 Python 扫描...")
         base_to_raw = {}
         open_func = gzip.open if fasta_path.endswith('.gz') else open
         with open_func(fasta_path, 'rt', encoding='utf-8') as f:
@@ -150,6 +153,8 @@ def main():
         except (subprocess.CalledProcessError, FileNotFoundError):
             n = extract_fasta_python(args.fasta, out_fasta, list(existing_ids))
         print(f"    提取完成: {n:,} 条序列 (耗时 {time.time()-t4:.1f}s)")
+        if n < existing.height * 0.9:
+            print(f"   ⚠ 提取率偏低! 请求 {existing.height:,} 条, 实得 {n:,} 条, 检查索引")
 
     # 5. Save metadata
     print(f"\n[5] 保存元数据...")
