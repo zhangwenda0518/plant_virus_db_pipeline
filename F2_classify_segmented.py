@@ -76,15 +76,7 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
     ).explode("Acc_List").with_columns(
         pl.col("Acc_List").str.to_uppercase().alias("Base_Accession"),
         pl.col("Genome coverage").fill_null("").str.to_lowercase().alias("vmr_cov_lower"),
-        # Not all families with multiple VMR accessions are multipartite.
-        # Monopartite families often have many isolate accessions per species.
-        (pl.col("Num_Segments") > 1).alias("_raw_multipartite"),
-        pl.col("VMR_Family").is_in([
-            "Potyviridae", "Tombusviridae", "Closteroviridae", "Betaflexiviridae",
-            "Alphaflexiviridae", "Tymoviridae", "Solemoviridae", "Endornaviridae",
-        ]).alias("_monopartite_family")
-    ).with_columns(
-        (pl.col("_raw_multipartite") & ~pl.col("_monopartite_family")).alias("Is_Multipartite_VMR")
+        (pl.col("Num_Segments") > 1).alias("Is_Multipartite_VMR")
     ).unique(subset=["Base_Accession"], keep="first")
 
     for col in ["Sequence_Type", "Segment"]:
@@ -93,11 +85,7 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
     df = df.with_columns(
         pl.col("Accession").cast(pl.Utf8).str.split(".").list.first().str.to_uppercase().alias("Base_Accession"),
         pl.col("GenBank_Title").fill_null("").str.to_lowercase().alias("title_lower"),
-        pl.col("Segment").fill_null("").cast(pl.Utf8).str.strip_chars().alias("Segment_Clean"),
-        # Only treat Segment as real if it looks like a segment ID (not "1", "Pathogroup I", etc.)
-        pl.col("Segment").fill_null("").cast(pl.Utf8).str.strip_chars()
-          .str.contains(r"(?i)^(rna\s*\d+|dna[- ]?[a-z]|segment\s*[a-z\d]|s\d+|l\d+|[ivxlcdm]+)$")
-          .fill_null(False).alias("Segment_Is_Real")
+        pl.col("Segment").fill_null("").cast(pl.Utf8).str.strip_chars().alias("Segment_Clean")
     )
 
     # 统一 Taxid 列名: 优先从小写 taxid 重命名
@@ -153,9 +141,9 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
 
     df = df.with_columns(
         pl.when(
-            pl.col("Is_Multipartite_VMR").fill_null(False) | 
-            pl.col("Segment_Is_Real") |
-            pl.col("title_lower").str.contains(r"(?i)\bsegment\b|\bcomponent\s+\d\b|\bgenomic\s+component\b|\brna\s+component\b|\bdna-[a-z]\b|\bdna\s+[a-z]\b|\brna\s*\d\b")
+            pl.col("Is_Multipartite_VMR").fill_null(False) |
+            (pl.col("Segment_Clean").str.len_chars() > 0) |
+            pl.col("title_lower").str.contains(r"(?i)\bsegment\b|\bcomponent\b|\bdna-[a-z]\b|\bdna\s+[a-z]\b|\brna\s*\d\b")
         ).then(pl.lit(True)).otherwise(pl.lit(False)).alias("Is_Segmented")
     )
 
