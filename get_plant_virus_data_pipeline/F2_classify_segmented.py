@@ -129,8 +129,8 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
     )
 
     # 合并: 优先用 Accession 匹配的结果, 缺失时用物种名回填的
-    # 注意: Virus name(s) 不回填，避免物种名匹配导致全部带上 /ICTV
-    for col_name in ["VMR_Species", "VMR_Family", "VMR_Genus"]:
+    # /ICTV 由 _vmr_acc_match 控制, 物种名回填不会触发 /ICTV
+    for col_name in ["VMR_Species", "VMR_Family", "VMR_Genus", "Virus name(s)"]:
         sp_col_name = col_name + "_sp"
         if sp_col_name in df.columns:
             df = df.with_columns(
