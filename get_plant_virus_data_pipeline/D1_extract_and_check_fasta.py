@@ -15,11 +15,11 @@ import os, sys, time, argparse, gzip, shutil, subprocess
 
 
 def build_or_load_index(fasta_path):
-    """Build FASTA index (zgrep headers) or load cached .idx.tsv.
-    Returns Polars DataFrame with columns: Base_Accession, Fasta_ID.
-    """
+    """Build FASTA index or load cached .idx.tsv."""
     idx_path = fasta_path + ".idx.tsv"
-    if os.path.exists(idx_path) and os.path.getsize(idx_path) > 1024:
+
+    # Try loading cached index
+    if os.path.exists(idx_path):
         try:
             df = pl.read_csv(idx_path, separator='\t',
                             schema={"Base_Accession": pl.Utf8, "Fasta_ID": pl.Utf8})
@@ -27,39 +27,44 @@ def build_or_load_index(fasta_path):
                 print(f"   📂 加载缓存索引: {idx_path} ({df.height:,} 条)")
                 return df
         except Exception:
-            print(f"   ⚠ 索引损坏, 重建...")
-            os.remove(idx_path)
+            pass
 
-    print(f"   🔧 首次构建 FASTA 索引 (zgrep - 请耐心等待)...")
+    print(f"   🔧 构建 FASTA 索引...")
     t0 = time.time()
 
-    # Fast path: parallel decompress + grep headers → cached index
+    # Build index: decompress → grep headers → parse
     rgzip = shutil.which("rapidgzip")
     if rgzip:
-        cmd = f'set -o pipefail; {rgzip} -d -c -P 0 "{fasta_path}" | grep "^>" | awk \'{{id=$1; sub(/^>/,"",id); split(id,a,"."); print a[1]"\t"id}}\' > "{idx_path}"'
+        sh_cmd = f'set -o pipefail; {rgzip} -d -c -P 0 "{fasta_path}" | grep "^>"'
     else:
-        cmd = f'set -o pipefail; zgrep "^>" "{fasta_path}" | awk \'{{id=$1; sub(/^>/,"",id); split(id,a,"."); print a[1]"\t"id}}\' > "{idx_path}"'
-    ret = os.system(cmd)
-    # Verify: file must exist AND have reasonable size
-    if ret != 0 or not os.path.exists(idx_path) or os.path.getsize(idx_path) < 1024:
-        if os.path.exists(idx_path):
-            os.remove(idx_path)
-        print("   ⚠ 索引构建失败, 回退 Python 扫描...")
+        sh_cmd = f'set -o pipefail; zgrep "^>" "{fasta_path}"'
+
+    result = subprocess.run(['bash', '-c', sh_cmd], capture_output=True, text=True)
+    if result.returncode == 0 and result.stdout.strip():
         base_to_raw = {}
-        open_func = gzip.open if fasta_path.endswith('.gz') else open
-        with open_func(fasta_path, 'rt', encoding='utf-8') as f:
-            for line in f:
-                if line.startswith('>'):
-                    raw_id = line[1:].split()[0]
-                    base_to_raw[raw_id.split('.')[0]] = raw_id
+        for line in result.stdout.strip().split('\n'):
+            sid = line.strip().lstrip('>')
+            if sid:
+                base_to_raw[sid.split('.')[0]] = sid
         df = pl.DataFrame({"Base_Accession": list(base_to_raw.keys()),
                            "Fasta_ID": list(base_to_raw.values())})
         df.write_csv(idx_path, separator='\t')
-    else:
-        df = pl.read_csv(idx_path, separator='\t',
-                         schema={"Base_Accession": pl.Utf8, "Fasta_ID": pl.Utf8})
+        print(f"   -> 索引: {df.height:,} 条 (耗时 {time.time()-t0:.1f}s)")
+        return df
 
-    print(f"   -> 索引构建完成 (耗时 {time.time()-t0:.1f}s), {df.height:,} 条序列")
+    # Fallback: Python streaming
+    print("   ⚠ 回退 Python 扫描...")
+    base_to_raw = {}
+    open_func = gzip.open if fasta_path.endswith('.gz') else open
+    with open_func(fasta_path, 'rt', encoding='utf-8') as f:
+        for line in f:
+            if line.startswith('>'):
+                raw_id = line[1:].split()[0]
+                base_to_raw[raw_id.split('.')[0]] = raw_id
+    df = pl.DataFrame({"Base_Accession": list(base_to_raw.keys()),
+                       "Fasta_ID": list(base_to_raw.values())})
+    df.write_csv(idx_path, separator='\t')
+    print(f"   -> 索引: {df.height:,} 条 (耗时 {time.time()-t0:.1f}s)")
     return df
 
 
