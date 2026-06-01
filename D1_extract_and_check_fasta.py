@@ -19,10 +19,16 @@ def build_or_load_index(fasta_path):
     Returns Polars DataFrame with columns: Base_Accession, Fasta_ID.
     """
     idx_path = fasta_path + ".idx.tsv"
-    if os.path.exists(idx_path) and os.path.getsize(idx_path) > 10_000_000:
-        print(f"   📂 加载缓存索引: {idx_path}")
-        return pl.read_csv(idx_path, separator='\t',
-                          schema={"Base_Accession": pl.Utf8, "Fasta_ID": pl.Utf8})
+    if os.path.exists(idx_path) and os.path.getsize(idx_path) > 1024:
+        try:
+            df = pl.read_csv(idx_path, separator='\t',
+                            schema={"Base_Accession": pl.Utf8, "Fasta_ID": pl.Utf8})
+            if df.height > 0:
+                print(f"   📂 加载缓存索引: {idx_path} ({df.height:,} 条)")
+                return df
+        except Exception:
+            print(f"   ⚠ 索引损坏, 重建...")
+            os.remove(idx_path)
 
     print(f"   🔧 首次构建 FASTA 索引 (zgrep - 请耐心等待)...")
     t0 = time.time()
