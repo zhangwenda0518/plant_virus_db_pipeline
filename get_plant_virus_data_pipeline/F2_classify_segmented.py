@@ -107,6 +107,11 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
     
     df = df.join(vmr_exploded, on="Base_Accession", how="left")
 
+    # 记录哪些 Accession 直接命中了 VMR（只有这些才加 /ICTV 标记）
+    df = df.with_columns(
+        pl.col("VMR_Species").is_not_null().alias("_vmr_acc_match")
+    )
+
     # 二次兜底: Base_Accession 匹配失败时, 用 VMR_Species (即 ICTV 物种名) 回填
     # 同一物种的不同 Accession 应共享 VMR 分类信息
     vmr_species_info = vmr_exploded.select([
@@ -124,7 +129,8 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
     )
 
     # 合并: 优先用 Accession 匹配的结果, 缺失时用物种名回填的
-    for col_name in ["VMR_Species", "VMR_Family", "VMR_Genus", "Virus name(s)"]:
+    # 注意: Virus name(s) 不回填，避免物种名匹配导致全部带上 /ICTV
+    for col_name in ["VMR_Species", "VMR_Family", "VMR_Genus"]:
         sp_col_name = col_name + "_sp"
         if sp_col_name in df.columns:
             df = df.with_columns(
@@ -132,7 +138,7 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
             ).drop(sp_col_name)
 
     df = df.with_columns(
-        pl.when(pl.col("Virus name(s)").is_not_null())
+        pl.when(pl.col("_vmr_acc_match"))
         .then(
             pl.when(pl.col("Sequence_Type").is_null() | (pl.col("Sequence_Type") == ""))
             .then(pl.lit("/ICTV")).otherwise(pl.col("Sequence_Type") + "/ICTV")
@@ -219,7 +225,7 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
     )
 
     # 仅丢弃算法运行中的临时计算列
-    return df.drop(["title_lower", "Cat_Weight", "Max_Taxid_Weight", "Initial_Category", "Segment_Clean", "Is_Segmented", "Completeness_Level"])
+    return df.drop(["title_lower", "Cat_Weight", "Max_Taxid_Weight", "Initial_Category", "Segment_Clean", "Is_Segmented", "Completeness_Level", "_vmr_acc_match"])
 
 
 def print_waterfall_stats(df: pl.DataFrame):
