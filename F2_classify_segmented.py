@@ -144,7 +144,7 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
         pl.when(
             pl.col("Is_Multipartite_VMR").fill_null(False) |
             (pl.col("Segment_Clean").str.len_chars() > 0) |
-            pl.col("title_lower").str.contains(r"(?i)\bsegment\b|\bcomponent\b|\bdna-[a-z]\b|\bdna\s+[a-z]\b|\brna\s*\d\b")
+            pl.col("title_lower").str.contains(r"(?i)\bsegment\b|\bcomponent\s+\d\b|\bdna-[a-z]\b|\bdna\s+[a-z]\b|\brna\s*\d\b")
         ).then(pl.lit(True)).otherwise(pl.lit(False)).alias("Is_Segmented")
     )
 
