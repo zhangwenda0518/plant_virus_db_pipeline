@@ -329,7 +329,7 @@ run "D1-比对提取FASTA" "$PLANT_DIR/D-sequences/Plant_Extracted_Sequences.fas
     python "$BIN_DIR/D1_extract_and_check_fasta.py" \
         --tsv "$CLASSIFIED_DIR/Plant.tsv" \
         --fasta "$ALLNUCL_FA" \
-        --out_dir "$PLANT_DIR/D-sequences/Plant_virus_db"
+        --out_dir "$PLANT_DIR/D-sequences"
 
 # D2: 仅在缺失列表非空时运行
 if [ -f "$PLANT_DIR/D-sequences/Plant_missing_accessions.txt" ] && \
