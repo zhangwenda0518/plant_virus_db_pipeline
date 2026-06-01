@@ -76,7 +76,15 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
     ).explode("Acc_List").with_columns(
         pl.col("Acc_List").str.to_uppercase().alias("Base_Accession"),
         pl.col("Genome coverage").fill_null("").str.to_lowercase().alias("vmr_cov_lower"),
-        (pl.col("Num_Segments") > 1).alias("Is_Multipartite_VMR")
+        # Not all families with multiple VMR accessions are multipartite.
+        # Monopartite families often have many isolate accessions per species.
+        (pl.col("Num_Segments") > 1).alias("_raw_multipartite"),
+        pl.col("VMR_Family").is_in([
+            "Potyviridae", "Tombusviridae", "Closteroviridae", "Betaflexiviridae",
+            "Alphaflexiviridae", "Tymoviridae", "Solemoviridae", "Endornaviridae",
+        ]).alias("_monopartite_family")
+    ).with_columns(
+        (pl.col("_raw_multipartite") & ~pl.col("_monopartite_family")).alias("Is_Multipartite_VMR")
     ).unique(subset=["Base_Accession"], keep="first")
 
     for col in ["Sequence_Type", "Segment"]:
