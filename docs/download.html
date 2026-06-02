@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download — Plant Virus DB</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
+  nav { background: #1a5276; color: white; padding: 0 24px; display: flex; align-items: center; gap: 4px; height: 52px; }
+  nav a { color: rgba(255,255,255,0.8); text-decoration: none; padding: 14px 18px; font-size: 14px; border-radius: 6px 6px 0 0; transition: all 0.2s; }
+  nav a:hover, nav a.active { background: rgba(255,255,255,0.15); color: white; }
+  nav .brand { font-weight: 700; font-size: 16px; color: white; margin-right: 16px; }
+  .main { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+  h2 { color: #1a5276; margin-bottom: 24px; }
+  .dl-item { background: white; padding: 20px 24px; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: space-between; }
+  .dl-info { flex: 1; }
+  .dl-info .name { font-weight: 600; font-size: 15px; color: #333; margin-bottom: 4px; }
+  .dl-info .desc { font-size: 12px; color: #888; }
+  .dl-info .size { font-size: 12px; color: #999; }
+  .btn-dl { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; background: #2e86c1; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; text-decoration: none; font-weight: 500; }
+  .btn-dl:hover { background: #1a5276; }
+  .footer { text-align: center; padding: 40px; color: #999; font-size: 12px; }
+  .footer a { color: #2e86c1; text-decoration: none; }
+  .search-box { margin-bottom: 20px; }
+  .search-box input { width: 100%; padding: 10px 16px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; outline: none; }
+  .search-box input:focus { border-color: #2e86c1; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">Plant Virus DB</a>
+  <a href="index.html">Dashboard</a>
+  <a href="segmented.html">Segmented</a>
+  <a href="nonsegmented.html">Non‑Segmented</a>
+  <a href="download.html" class="active">Download</a>
+</nav>
+
+<div class="main">
+  <h2>Downloads</h2>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Search files..." oninput="filterFiles()">
+  </div>
+
+  <div id="fileList">
+    <div class="dl-item" data-name="final.cluster.ref.fasta">
+      <div class="dl-info">
+        <div class="name">final.cluster.ref.fasta</div>
+        <div class="desc">Final clustered representative FASTA sequences</div>
+      </div>
+      <a class="btn-dl" href="data/final.cluster.ref.fasta" download>Download</a>
+    </div>
+
+    <div class="dl-item" data-name="final.cluster.ref_info.tsv">
+      <div class="dl-info">
+        <div class="name">final.cluster.ref_info.tsv</div>
+        <div class="desc">Final clustered representative metadata (TSV, 28 columns)</div>
+      </div>
+      <a class="btn-dl" href="data/final.cluster.ref_info.tsv" download>Download</a>
+    </div>
+
+    <div class="dl-item" data-name="plant.virus.fasta">
+      <div class="dl-info">
+        <div class="name">plant.virus.fasta</div>
+        <div class="desc">All plant virus sequences (pre-dedup)</div>
+      </div>
+      <a class="btn-dl" href="data/plant.virus.fasta" download>Download</a>
+    </div>
+
+    <div class="dl-item" data-name="Plant_Virus_Info.full.tsv">
+      <div class="dl-info">
+        <div class="name">Plant_Virus_Info.full.tsv</div>
+        <div class="desc">Full plant virus metadata before deduplication</div>
+      </div>
+      <a class="btn-dl" href="data/Plant_Virus_Info.full.tsv" download>Download</a>
+    </div>
+  </div>
+</div>
+
+<div class="footer">Plant Virus Reference Database &middot; <a href="https://github.com/zhangwenda0518/plant_virus_db_pipeline">GitHub</a></div>
+
+<script>
+  function filterFiles() {
+    const q = document.getElementById('search').value.toLowerCase();
+    document.querySelectorAll('.dl-item').forEach(el => {
+      el.style.display = el.dataset.name.toLowerCase().includes(q) ? '' : 'none';
+    });
+  }
+</script>
+</body>
+</html>

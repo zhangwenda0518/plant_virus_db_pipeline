@@ -4,147 +4,191 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plant Virus Reference Database</title>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <style>
   * { box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
-  .header { background: linear-gradient(135deg, #1a5276, #2e86c1); color: white; padding: 24px 32px; border-radius: 8px; margin-bottom: 20px; }
-  .header h1 { margin: 0 0 8px 0; font-size: 24px; }
-  .header p { margin: 0 0 16px 0; opacity: 0.85; font-size: 14px; }
-  .tabs { display: flex; gap: 4px; margin-bottom: 20px; }
-  .tab { padding: 10px 24px; background: rgba(255,255,255,0.15); color: white; border: none; border-radius: 6px 6px 0 0; cursor: pointer; font-size: 14px; font-weight: 500; transition: background 0.2s; }
-  .tab:hover { background: rgba(255,255,255,0.25); }
-  .tab.active { background: white; color: #1a5276; font-weight: 700; }
-  .stats { display: flex; gap: 24px; flex-wrap: wrap; }
-  .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; opacity: 0.9; }
-  .stat b { font-size: 20px; }
-  .container { background: white; border-radius: 0 8px 8px 8px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-  .loading { text-align: center; padding: 60px; color: #666; }
-  .spinner { width: 40px; height: 40px; border: 3px solid #e0e0e0; border-top: 3px solid #2e86c1; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 16px; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  table.dataTable { font-size: 12px; width: 100% !important; }
-  table.dataTable thead th { white-space: nowrap; background: #f8f9fa; border-bottom: 2px solid #2e86c1; padding: 8px 10px; font-weight: 600; font-size: 12px; }
-  .dataTables_wrapper { font-size: 13px; }
-  .btn-dl { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: #2e86c1; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; margin-left: 12px; text-decoration: none; }
-  .btn-dl:hover { background: #1a5276; }
-  .toolbar { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
+  nav { background: #1a5276; color: white; padding: 0 24px; display: flex; align-items: center; gap: 4px; height: 52px; }
+  nav a { color: rgba(255,255,255,0.8); text-decoration: none; padding: 14px 18px; font-size: 14px; border-radius: 6px 6px 0 0; transition: all 0.2s; }
+  nav a:hover, nav a.active { background: rgba(255,255,255,0.15); color: white; }
+  nav .brand { font-weight: 700; font-size: 16px; color: white; margin-right: 16px; padding: 0; }
+  nav .brand:hover { background: none; }
+  .main { max-width: 1400px; margin: 20px auto; padding: 0 20px; }
+  .kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 20px; }
+  .kpi { background: white; padding: 18px; border-radius: 8px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .kpi .val { font-size: 28px; font-weight: 700; color: #1a5276; }
+  .kpi .lbl { font-size: 11px; color: #888; margin-top: 4px; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .card { background: white; padding: 16px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .card h3 { margin: 0 0 12px 0; font-size: 14px; color: #1a5276; display: flex; justify-content: space-between; align-items: center; }
+  .card h3 small { font-size: 12px; color: #999; font-weight: 400; }
+  canvas { max-height: 300px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .footer { text-align: center; padding: 20px; color: #999; font-size: 12px; }
   .footer a { color: #2e86c1; text-decoration: none; }
+  .loading { text-align: center; padding: 80px; color: #666; font-size: 16px; }
+  .delta { font-size: 12px; font-weight: 400; }
+  .delta.up { color: #e74c3c; }
+  .delta.down { color: #27ae60; }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>Plant Virus Reference Database</h1>
-  <p>ICTV-verified plant virus reference sequences &middot; deduplicated &amp; clustered genomes</p>
-  <div>
-    <button class="tab active" data-tab="all" onclick="switchTab('all')">All Sequences</button>
-    <button class="tab" data-tab="nonsegmented" onclick="switchTab('nonsegmented')">Non‑Segmented</button>
-    <button class="tab" data-tab="segmented" onclick="switchTab('segmented')">Segmented</button>
-  </div>
-  <div class="stats">
-    <div class="stat">Sequences: <b id="statSeqs">-</b></div>
-    <div class="stat">TaxIDs: <b id="statTaxids">-</b></div>
-    <div class="stat">Families: <b id="statFamilies">-</b></div>
-    <div class="stat">Non‑Segmented: <b id="statNS">-</b></div>
-    <div class="stat">Segmented: <b id="statSeg">-</b></div>
+<nav>
+  <a class="brand" href="index.html">Plant Virus DB</a>
+  <a href="index.html" class="active">Dashboard</a>
+  <a href="segmented.html">Segmented</a>
+  <a href="nonsegmented.html">Non‑Segmented</a>
+  <a href="download.html">Download</a>
+</nav>
+
+<div class="main">
+  <div class="loading" id="loading">Loading data...</div>
+  <div id="content" style="display:none">
+
+    <!-- KPIs: Full vs Final comparison -->
+    <div class="kpis" id="kpis" style="grid-template-columns: repeat(6, 1fr)"></div>
+
+    <div class="compare">
+      <div class="card">
+        <h3>Category — Full Database <small>Plant_Virus_Info.full.tsv</small></h3>
+        <canvas id="chartCatFull"></canvas>
+      </div>
+      <div class="card">
+        <h3>Category — Final Reference <small>final.cluster.ref_info.tsv</small></h3>
+        <canvas id="chartCatRef"></canvas>
+      </div>
+    </div>
+
+    <div class="compare">
+      <div class="card">
+        <h3>Top 15 Families — Full</h3>
+        <canvas id="chartFamFull"></canvas>
+      </div>
+      <div class="card">
+        <h3>Top 15 Families — Final</h3>
+        <canvas id="chartFamRef"></canvas>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card"><h3>Genome Type — Final</h3><canvas id="chartMol"></canvas></div>
+      <div class="card"><h3>Length Distribution — Final</h3><canvas id="chartLen"></canvas></div>
+    </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="loading" id="loading"><div class="spinner"></div><p>Loading database...</p></div>
-  <div class="toolbar" id="toolbar" style="display:none">
-    <a class="btn-dl" href="dashboard.html">Dashboard</a>
-    <a class="btn-dl" href="data/final.cluster.ref_info.tsv" download>Download TSV</a>
-    <span style="font-size:13px;color:#888" id="infoText"></span>
-  </div>
-  <table id="virusTable" class="display" style="display:none; width:100%"></table>
-</div>
-
-<div class="footer">
-  Powered by <a href="https://datatables.net">DataTables</a> &middot;
-  Data source: ICTV VMR MSL41 + NCBI GenBank &middot;
-  <a href="https://github.com/zhangwenda0518/plant_virus_db_pipeline">GitHub</a>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<div class="footer">Plant Virus Reference Database &middot; <a href="https://github.com/zhangwenda0518/plant_virus_db_pipeline">GitHub</a></div>
 
 <script>
-let table, fields, catIdx, allRows = [], segRows = [], nsRows = [], currentTab = 'all';
+(async function() {
+  const loadTSV = async (path) => {
+    try {
+      const r = await fetch(path);
+      if (!r.ok) return null;
+      const text = await r.text();
+      return new Promise(resolve => {
+        Papa.parse(text, { header: true, skipEmptyLines: true, delimiter: '\t',
+          complete(r) { resolve(r.data); }
+        });
+      });
+    } catch(e) { return null; }
+  };
 
-async function init() {
-  const resp = await fetch('data/final.cluster.ref_info.tsv');
-  if (!resp.ok) { document.getElementById('loading').innerHTML='<p style="color:red">Failed to load data</p>'; return; }
-  const text = await resp.text();
+  const [refData, fullData] = await Promise.all([
+    loadTSV('data/final.cluster.ref_info.tsv'),
+    loadTSV('data/Plant_Virus_Info.full.tsv')
+  ]);
 
-  Papa.parse(text, {
-    header: true, skipEmptyLines: true, delimiter: '\t',
-    complete(results) {
-      fields = results.meta.fields;
-      catIdx = fields.indexOf('Category');
-      // Convert to array-of-arrays for DataTables
-      for (const row of results.data) {
-        const arr = fields.map(f => row[f] || '');
-        allRows.push(arr);
-        const cat = arr[catIdx] || '';
-        if (cat.startsWith('Segmented')) segRows.push(arr);
-        else nsRows.push(arr);
-      }
+  if (!refData) { document.getElementById('loading').textContent = 'Data not found'; return; }
 
-      // Stats
-      const allTaxids = new Set(allRows.map(r => r[fields.indexOf('Taxid')]));
-      const allFams = new Set(allRows.map(r => r[fields.indexOf('VMR_Family')]).filter(Boolean));
-      document.getElementById('statSeqs').textContent = allRows.length.toLocaleString();
-      document.getElementById('statTaxids').textContent = allTaxids.size.toLocaleString();
-      document.getElementById('statFamilies').textContent = allFams.size.toLocaleString();
-      document.getElementById('statNS').textContent = nsRows.length.toLocaleString();
-      document.getElementById('statSeg').textContent = segRows.length.toLocaleString();
+  const fields = Object.keys(refData[0]);
+  const f = (d, name) => d.map(r => r[name] || '').filter(Boolean);
+  const uniq = arr => new Set(arr);
+  const top = (arr, n) => {
+    const m = {};
+    arr.forEach(v => { m[v] = (m[v]||0) + 1; });
+    return Object.entries(m).sort((a,b) => b[1]-a[1]).slice(0, n);
+  };
+  const colors = ['#2e86c1','#e74c3c','#27ae60','#f39c12','#8e44ad','#1abc9c','#e67e22','#2980b9','#c0392b','#16a085'];
 
-      buildTable(allRows);
-      document.getElementById('loading').style.display = 'none';
-      document.getElementById('virusTable').style.display = '';
-      document.getElementById('toolbar').style.display = '';
-    }
+  const stats = d => ({
+    seqs: d.length,
+    taxids: uniq(f(d, 'Taxid')).size,
+    families: uniq(f(d, 'VMR_Family')).size,
+    genera: uniq(f(d, 'VMR_Genus')).size,
+    seg: d.filter(r => (r.Category||'').startsWith('Segmented')).length,
+    ns: d.filter(r => (r.Category||'').startsWith('NonSegmented')).length,
+    refseq: d.filter(r => (r.Sequence_Type||'').includes('RefSeq')).length
   });
-}
 
-function buildTable(rows) {
-  if (table) table.destroy();
-  table = $('#virusTable').DataTable({
-    data: rows,
-    columns: fields.map(f => ({ title: f })),
-    deferRender: true,
-    pageLength: 50,
-    lengthMenu: [[25, 50, 100, 500, -1], [25, 50, 100, 500, 'All']],
-    order: [[0, 'asc']],
-    scrollX: true,
-    dom: 'Bfrtip',
-    buttons: [
-      { extend: 'colvis', text: 'Columns' },
-      { extend: 'csv', text: 'CSV', exportOptions: { columns: ':visible' } },
-      { extend: 'copy', text: 'Copy' }
-    ],
-    columnDefs: [
-      { targets: [13, 14, 19], visible: false }
-    ]
-  });
-  document.getElementById('infoText').textContent = `Showing ${rows.length.toLocaleString()} records`;
-}
+  const refStats = stats(refData);
+  const fullStats = fullData ? stats(fullData) : null;
 
-window.switchTab = function(tab) {
-  currentTab = tab;
-  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
-  const rows = tab === 'segmented' ? segRows : tab === 'nonsegmented' ? nsRows : allRows;
-  buildTable(rows);
-};
+  // KPIs
+  const kpiRow = (label, key, fmt) => {
+    const v = refStats[key];
+    const delta = fullStats ? fullStats[key] - v : 0;
+    const deltaStr = fullStats ? `<br><span class="delta ${delta>0?'up':'down'}">${delta>0?'-'+delta.toLocaleString():'+'+Math.abs(delta).toLocaleString()} vs full</span>` : '';
+    return `<div class="kpi"><div class="val">${fmt ? fmt(v) : v.toLocaleString()}</div><div class="lbl">${label}${deltaStr}</div></div>`;
+  };
+  document.getElementById('kpis').innerHTML =
+    kpiRow('Sequences', 'seqs') +
+    kpiRow('TaxIDs', 'taxids') +
+    kpiRow('Families', 'families') +
+    kpiRow('Genera', 'genera') +
+    kpiRow('Non‑Segmented', 'ns') +
+    kpiRow('Segmented', 'seg');
 
-init();
+  // Category charts
+  const catSubs = ['Complete','Partial_Genome','CDS_Fragment','Partial_taxid','Other_Partial','unknown'];
+  const catData = d => {
+    const m = {}; d.forEach(r => { m[r.Category||''] = (m[r.Category||'']||0)+1; });
+    return { seg: catSubs.map(s => m['Segmented_'+s]||0), ns: catSubs.map(s => m['NonSegmented_'+s]||0) };
+  };
+  const makeCatChart = (id, d, title) => {
+    const cd = catData(d);
+    new Chart(document.getElementById(id), { type: 'bar', data: {
+      labels: catSubs.map(s => s.replace('_',' ')),
+      datasets: [
+        { label: 'Non‑Segmented', data: cd.ns, backgroundColor: '#2e86c1' },
+        { label: 'Segmented', data: cd.seg, backgroundColor: '#e74c3c' }
+      ]
+    }, options: { responsive: true, scales: { x: { stacked: false } }, plugins: { legend: { position: 'top' } } } });
+  };
+  makeCatChart('chartCatRef', refData);
+  if (fullData) makeCatChart('chartCatFull', fullData);
+
+  // Family charts
+  const makeFamChart = (id, d) => {
+    const tf = top(f(d, 'VMR_Family'), 15);
+    new Chart(document.getElementById(id), { type: 'bar', data: {
+      labels: tf.map(x=>x[0]), datasets: [{ data: tf.map(x=>x[1]), backgroundColor: '#2e86c1' }]
+    }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
+  };
+  makeFamChart('chartFamRef', refData);
+  if (fullData) makeFamChart('chartFamFull', fullData);
+
+  // Molecule type
+  const molData = {};
+  refData.forEach(r => { const v = (r.Molecule_type||'Unknown').replace(/[()]/g,''); molData[v] = (molData[v]||0)+1; });
+  new Chart(document.getElementById('chartMol'), { type: 'doughnut', data: {
+    labels: Object.keys(molData), datasets: [{ data: Object.values(molData), backgroundColor: colors }]
+  } });
+
+  // Length
+  const lens = refData.map(r => parseInt(r.Length)||0).filter(v => v>0 && v<20000);
+  const bins = {}, step = 1000;
+  lens.forEach(v => { const b = Math.floor(v/step)*step; bins[b]=(bins[b]||0)+1; });
+  const bks = Object.keys(bins).map(Number).sort((a,b)=>a-b);
+  new Chart(document.getElementById('chartLen'), { type: 'bar', data: {
+    labels: bks.map(b=>`${b}-${b+step-1}`), datasets: [{ data: bks.map(b=>bins[b]), backgroundColor: '#2e86c1' }]
+  }, options: { plugins: { legend: { display: false } }, scales: { x: { title: { text: 'Length (bp)', display: true } } } } });
+
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('content').style.display = '';
+})();
 </script>
 </body>
 </html>

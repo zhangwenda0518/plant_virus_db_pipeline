@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Segmented — Plant Virus DB</title>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
+  nav { background: #1a5276; color: white; padding: 0 24px; display: flex; align-items: center; gap: 4px; height: 52px; }
+  nav a { color: rgba(255,255,255,0.8); text-decoration: none; padding: 14px 18px; font-size: 14px; border-radius: 6px 6px 0 0; transition: all 0.2s; }
+  nav a:hover, nav a.active { background: rgba(255,255,255,0.15); color: white; }
+  nav .brand { font-weight: 700; font-size: 16px; color: white; margin-right: 16px; }
+  .main { max-width: 100%; margin: 16px 20px; }
+  .topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .topbar h2 { margin: 0; font-size: 18px; color: #1a5276; }
+  .topbar span { font-size: 13px; color: #888; }
+  table.dataTable { font-size: 12px; width: 100% !important; }
+  table.dataTable thead th { white-space: nowrap; background: #f8f9fa; border-bottom: 2px solid #e74c3c; padding: 8px 10px; font-weight: 600; font-size: 12px; }
+  .loading { text-align: center; padding: 60px; color: #666; }
+  .footer { text-align: center; padding: 20px; color: #999; font-size: 12px; }
+  .footer a { color: #2e86c1; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">Plant Virus DB</a>
+  <a href="index.html">Dashboard</a>
+  <a href="segmented.html" class="active">Segmented</a>
+  <a href="nonsegmented.html">Non‑Segmented</a>
+  <a href="download.html">Download</a>
+</nav>
+
+<div class="main">
+  <div class="topbar">
+    <h2 id="tableTitle">Segmented Viruses</h2>
+    <span id="countText"></span>
+  </div>
+  <div class="loading" id="loading">Loading data...</div>
+  <div id="tableWrap" style="display:none">
+    <table id="table" class="display" style="width:100%"></table>
+  </div>
+</div>
+
+<div class="footer">Plant Virus Reference Database &middot; <a href="https://github.com/zhangwenda0518/plant_virus_db_pipeline">GitHub</a></div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="table.js"></script>
+<script>
+  initTable('#table', cat => cat.startsWith('Segmented'), 'Segmented Viruses');
+</script>
+</body>
+</html>
