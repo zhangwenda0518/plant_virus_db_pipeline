@@ -111,11 +111,20 @@ def main():
         ns_stats.append((cat, total_in_cat, kept_in_cat, len(new_taxids)))
 
     # =========================================================
-    # 策略 B：节段病毒 (Segment 级别智能补全)
+    # 策略 B：节段病毒 (Segment 级别智能补全 + 质量替换)
+    # 优先级: RefSeq/ICTV(0) > RefSeq(1) > GenBank/ICTV(2) > GenBank(3)
     # =========================================================
+    def quality_rank(seq_type: str) -> int:
+        has_refseq = "RefSeq" in str(seq_type)
+        has_ictv = "ICTV" in str(seq_type)
+        if has_refseq and has_ictv: return 0
+        if has_refseq: return 1
+        if has_ictv: return 2
+        return 3
+
     seg_keep_accs = set()
-    taxid_segments = collections.defaultdict(set) # {taxid: set(已有的规范化Segment名称)}
-    taxid_unlabeled_tier = {}                     # 记录无标签序列首次出现的优先级层级
+    taxid_segments = collections.defaultdict(dict)   # {taxid: {norm_seg: (acc, rank)}}
+    taxid_unlabeled = {}                              # {taxid: (acc, rank, tier)}
     seg_stats = []
 
     for tier_idx, cat in enumerate(seg_prio):
@@ -123,42 +132,53 @@ def main():
         total_in_cat = cat_df.height
         kept_in_cat = 0
         new_taxids_count = 0
-        
+
         for row in cat_df.iter_rows(named=True):
             tax = str(row["Taxid"])
             acc = row["Base_Accession"]
             norm_seg = clean_segment_name(row["Raw_Segment"])
-            
+            rank = quality_rank(row.get("Sequence_Type", ""))
+
             is_kept = False
-            is_new_tax = (tax not in taxid_segments) and (tax not in taxid_unlabeled_tier)
+            is_new_tax = (tax not in taxid_segments) and (tax not in taxid_unlabeled)
 
             if norm_seg != "":
-                # 如果是有名字的节段
-                if norm_seg not in taxid_segments[tax]:
-                    # 发现该物种缺失的节段！补全提取！
+                current = taxid_segments[tax].get(norm_seg)
+                if current is None:
+                    # 新节段 → 保留
+                    taxid_segments[tax][norm_seg] = (acc, rank)
                     seg_keep_accs.add(acc)
-                    taxid_segments[tax].add(norm_seg)
                     is_kept = True
+                elif rank < current[1]:
+                    # 更高质量 → 替换旧的
+                    seg_keep_accs.discard(current[0])
+                    taxid_segments[tax][norm_seg] = (acc, rank)
+                    seg_keep_accs.add(acc)
+                    is_kept = True
+                # 否则同质量或更低 → 丢弃
             else:
-                # 如果是没有节段名字的散装序列
-                if tax not in taxid_unlabeled_tier:
-                    # 首次发现无名序列，保留并锁定层级
-                    seg_keep_accs.add(acc)
-                    taxid_unlabeled_tier[tax] = tier_idx
-                    is_kept = True
-                elif taxid_unlabeled_tier[tax] == tier_idx:
-                    # 同一高优先级的多个无名序列，全部保留
+                current = taxid_unlabeled.get(tax)
+                if current is None:
+                    taxid_unlabeled[tax] = (acc, rank, tier_idx)
                     seg_keep_accs.add(acc)
                     is_kept = True
-                else:
-                    # 如果低优先级出现无名序列，直接抛弃
-                    pass
-            
+                elif rank < current[1]:
+                    # 更高质量 → 替换
+                    seg_keep_accs.discard(current[0])
+                    taxid_unlabeled[tax] = (acc, rank, tier_idx)
+                    seg_keep_accs.add(acc)
+                    is_kept = True
+                elif tier_idx == current[2] and rank == current[1]:
+                    # 同层级同质量多条 → 保留
+                    seg_keep_accs.add(acc)
+                    is_kept = True
+                # 更低质量或更低层级 → 丢弃
+
             if is_kept:
                 kept_in_cat += 1
                 if is_new_tax:
                     new_taxids_count += 1
-                    
+
         seg_stats.append((cat, total_in_cat, kept_in_cat, new_taxids_count))
 
     # =========================================================
