@@ -91,13 +91,13 @@ def main():
         valid_df = cat_df.filter(~pl.col("Taxid").is_in(list(ns_seen_taxids)))
         
         # Complete 层级: 每 TaxID 只保留一条, 优先级 RefSeq/ICTV > RefSeq > GenBank/ICTV > GenBank
-        if cat == “NonSegmented_Complete”:
+        if cat == "NonSegmented_Complete":
             valid_df = valid_df.with_columns(
-                pl.when(pl.col(“Sequence_Type”).str.contains(“RefSeq”)).then(pl.lit(0)).otherwise(pl.lit(2)).alias(“_refseq_rank”),
-                pl.when(pl.col(“Sequence_Type”).str.contains(“ICTV”)).then(pl.lit(0)).otherwise(pl.lit(1)).alias(“_ictv_rank”),
+                pl.when(pl.col("Sequence_Type").str.contains("RefSeq")).then(pl.lit(0)).otherwise(pl.lit(2)).alias("_refseq_rank"),
+                pl.when(pl.col("Sequence_Type").str.contains("ICTV")).then(pl.lit(0)).otherwise(pl.lit(1)).alias("_ictv_rank"),
             ).with_columns(
-                (pl.col(“_refseq_rank”) + pl.col(“_ictv_rank”)).alias(“_sort_rank”)
-            ).sort(“_sort_rank”).unique(subset=[“Taxid”], keep=”first”).drop([“_sort_rank”, “_refseq_rank”, “_ictv_rank”])
+                (pl.col("_refseq_rank") + pl.col("_ictv_rank")).alias("_sort_rank")
+            ).sort("_sort_rank").unique(subset=["Taxid"], keep="first").drop(["_sort_rank", "_refseq_rank", "_ictv_rank"])
 
         kept_in_cat = valid_df.height
         
