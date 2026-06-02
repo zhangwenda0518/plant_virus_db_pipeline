@@ -89,53 +89,69 @@ canvas{max-height:320px}
 
 <script>
 (async function() {
-  const r = await fetch('data/Plant_Virus_Info.full.tsv');
-  if (!r.ok) { document.getElementById('loading').textContent='Plant_Virus_Info.full.tsv not found in docs/data/'; return; }
-  Papa.parse(await r.text(), { header:true, skipEmptyLines:true, delimiter:'\t', complete(rs) {
-    const d = rs.data;
-    const C = ['#2e86c1','#e74c3c','#27ae60','#f39c12','#8e44ad','#1abc9c','#e67e22','#2980b9','#c0392b','#16a085'];
-    const f=(d,n)=>d.map(r=>r[n]||'').filter(Boolean);
-    const top=(a,n)=>{const m={};a.forEach(v=>{m[v]=(m[v]||0)+1});return Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,n);};
-    const taxCol=d[0]&&d[0].Taxid!=null?'Taxid':'taxid';
-    const taxids=new Set(d.map(r=>r[taxCol]||'').filter(Boolean)).size;
-    const hosts=new Set(f(d,'Host')).size;
+  const load = async p => { try { const r = await fetch(p); if (!r.ok) return null; return (await r.text()).split('\n'); } catch(e) { return null; } };
+  const [fullTxt, refTxt] = await Promise.all([
+    fetch('data/Plant_Virus_Info.full.tsv').then(r => r.ok ? r.text() : null).catch(() => null),
+    fetch('data/final.cluster.ref_info.tsv').then(r => r.ok ? r.text() : null).catch(() => null)
+  ]);
+  if (!fullTxt && !refTxt) { document.getElementById('loading').textContent = 'No data found'; return; }
+  const parseTSV = t => new Promise(resolve => Papa.parse(t, { header: true, skipEmptyLines: true, delimiter: '\t', complete(r) { resolve(r.data); } }));
+  const [fullData, refData] = await Promise.all([
+    fullTxt ? parseTSV(fullTxt) : null,
+    refTxt ? parseTSV(refTxt) : null
+  ]);
+  const fd = fullData || refData; // primary source for charts
+  const rd = refData; // for KPIs
+  const C = ['#2e86c1','#e74c3c','#27ae60','#f39c12','#8e44ad','#1abc9c','#e67e22','#2980b9','#c0392b','#16a085'];
+  const f=(d,n)=>d.map(r=>r[n]||'').filter(Boolean);
+  const top=(a,n)=>{const m={};a.forEach(v=>{m[v]=(m[v]||0)+1});return Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,n);};
+  const taxCol=fd[0]&&fd[0].Taxid!=null?'Taxid':'taxid';
+  const taxids=new Set(fd.map(r=>r[taxCol]||'').filter(Boolean)).size;
 
+    // KPIs: refData has Category/Family/Genus; fullData for seqs/taxids
     const kpi=(l,v)=>`<div class="kpi"><div class="val">${v.toLocaleString()}</div><div class="lbl">${l}</div></div>`;
+    const rf = (fld, fallback) => rd && rd[0] && rd[0][fld] != null ? fld : (fallback || null);
+    const fams = rd ? new Set(f(rd, 'VMR_Family')).size : null;
+    const gens = rd ? new Set(f(rd, 'VMR_Genus')).size : null;
+    const segN = rd ? rd.filter(r => (r.Category||'').startsWith('Segmented')).length : null;
+    const nsN = rd ? rd.filter(r => (r.Category||'').startsWith('NonSegmented')).length : null;
     document.getElementById('kpis').innerHTML =
-      kpi('Sequences',d.length)+kpi('TaxIDs',taxids)+kpi('Unique Hosts',hosts);
+      kpi('Sequences',fd.length) + kpi('TaxIDs',taxids) +
+      (fams ? kpi('Families',fams) : '') + (gens ? kpi('Genera',gens) : '') +
+      (nsN != null ? kpi('Non-Segmented',nsN) : '') + (segN != null ? kpi('Segmented',segN) : '');
 
     // Sequence Types
-    const st={};d.forEach(r=>{const v=(r.Sequence_Type||'Unknown').replace('/ICTV','');st[v]=(st[v]||0)+1;});
+    const st={};fd.forEach(r=>{const v=(r.Sequence_Type||'Unknown').replace('/ICTV','');st[v]=(st[v]||0)+1;});
     new Chart(document.getElementById('chartSeq'),{type:'bar',data:{labels:Object.keys(st),datasets:[{data:Object.values(st),backgroundColor:C}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
 
     // Host
-    const th=top(f(d,'Host'),20);
+    const th=top(f(fd,'Host'),20);
     new Chart(document.getElementById('chartHost'),{type:'bar',data:{labels:th.map(x=>x[0]),datasets:[{data:th.map(x=>x[1]),backgroundColor:'#f39c12'}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
 
     // Molecule
-    const mol={};d.forEach(r=>{const v=(r.Molecule_type||'Unknown').replace(/[()]/g,'');mol[v]=(mol[v]||0)+1;});
+    const mol={};fd.forEach(r=>{const v=(r.Molecule_type||'Unknown').replace(/[()]/g,'');mol[v]=(mol[v]||0)+1;});
     new Chart(document.getElementById('chartMol'),{type:'doughnut',data:{labels:Object.keys(mol),datasets:[{data:Object.values(mol),backgroundColor:C}]}});
 
     // Dates
     const db=arr=>{const m={};arr.forEach(v=>{const y=String(v||'').match(/\b(19|20)\d{2}\b/);if(y)m[y[0]]=(m[y[0]]||0)+1});return m;};
     const mkDate=(id,bins)=>{const keys=Object.keys(bins).sort();new Chart(document.getElementById(id),{type:'bar',data:{labels:keys,datasets:[{data:keys.map(k=>bins[k]),backgroundColor:'#f39c12'}]},options:{plugins:{legend:{display:false}},scales:{x:{title:{display:true,text:'Year'}}}}})};
-    mkDate('chartCollect',db(f(d,'Collection_Date')));
-    mkDate('chartRelease',db(f(d,'Release_Date')));
+    mkDate('chartCollect',db(f(fd,'Collection_Date')));
+    mkDate('chartRelease',db(f(fd,'Release_Date')));
 
     // Topology
-    const topo={};d.forEach(r=>{const v=r.Topology||'Unknown';topo[v]=(topo[v]||0)+1;});
+    const topo={};fd.forEach(r=>{const v=r.Topology||'Unknown';topo[v]=(topo[v]||0)+1;});
     new Chart(document.getElementById('chartTopo'),{type:'doughnut',data:{labels:Object.keys(topo),datasets:[{data:Object.values(topo),backgroundColor:C.slice(0,3)}]}});
 
     // Length
-    const lens=d.map(r=>parseInt(r.Length)||0).filter(v=>v>0&&v<20000);
+    const lens=fd.map(r=>parseInt(r.Length)||0).filter(v=>v>0&&v<20000);
     const bins={},step=1000;lens.forEach(v=>{const b=Math.floor(v/step)*step;bins[b]=(bins[b]||0)+1});
     const bks=Object.keys(bins).map(Number).sort((a,b)=>a-b);
     new Chart(document.getElementById('chartLen'),{type:'bar',data:{labels:bks.map(b=>`${b}-${b+step-1}`),datasets:[{data:bks.map(b=>bins[b]),backgroundColor:'#27ae60'}]},options:{plugins:{legend:{display:false}},scales:{x:{title:{display:true,text:'Length (bp)'}}}}});
 
     document.getElementById('loading').style.display='none';
     document.getElementById('content').style.display='';
-  }});
 })();
+</script>
 </script>
 </body>
 </html>
