@@ -186,7 +186,7 @@ def main():
         print(f" - {cat:<27} | Seq={total:<4} | ➡️ Kept={kept:<4} | TaxID={new_tax:<4}")
     print(f" 🟢 非节段最终保留序列: {len(ns_keep_accs):,} 条 (覆盖 {len(ns_seen_taxids):,} 个独特TaxID)")
 
-    total_seg_taxids = len(set(taxid_segments.keys()).union(set(taxid_unlabeled_tier.keys())))
+    total_seg_taxids = len(taxid_records)
     print("\n【 第一阵营：节段病毒 (按缺失节段 Segment 补全提取) 】")
     print(f"{'分类层级 (Priority Category)':<30} | {'原始序列':<8} | ➡️ {'保留提取':<8} | {'贡献新TaxID':<8}")
     for cat, total, kept, new_tax in seg_stats:
