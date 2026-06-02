@@ -2,268 +2,139 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Plant Virus Reference Database</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <style>
-  * { box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: #f5f5f5; color: #333; }
-  nav { background: #1a5276; color: white; padding: 0 24px; display: flex; align-items: center; gap: 4px; height: 52px; position: sticky; top: 0; z-index: 10; }
-  nav a { color: rgba(255,255,255,0.8); text-decoration: none; padding: 14px 18px; font-size: 14px; border-radius: 6px 6px 0 0; transition: all 0.2s; }
-  nav a:hover, nav a.active { background: rgba(255,255,255,0.15); color: white; }
-  nav .brand { font-weight: 700; font-size: 16px; color: white; margin-right: 16px; padding: 0; }
-  nav .brand:hover { background: none; }
-  .main { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
-  .hero { background: linear-gradient(135deg, #1a5276, #2e86c1); color: white; padding: 40px 32px; border-radius: 0 0 12px 12px; margin-bottom: 24px; }
-  .hero h1 { margin: 0 0 8px 0; font-size: 26px; }
-  .hero p { margin: 0 0 16px 0; opacity: 0.9; font-size: 14px; line-height: 1.6; max-width: 900px; }
-  .intro { background: white; padding: 24px 28px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); line-height: 1.7; }
-  .intro h2 { margin: 0 0 10px 0; font-size: 18px; color: #1a5276; }
-  .intro p { margin: 0 0 8px 0; font-size: 14px; color: #555; }
-  .intro .pipeline { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
-  .pipe-step { background: #eaf2f8; color: #1a5276; padding: 6px 14px; border-radius: 4px; font-size: 13px; font-weight: 600; }
-  .pipe-arrow { color: #2e86c1; font-weight: 700; padding: 6px 2px; }
-  .kpis { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 20px; }
-  .kpi { background: white; padding: 18px 12px; border-radius: 8px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-  .kpi .val { font-size: 26px; font-weight: 700; color: #1a5276; }
-  .kpi .lbl { font-size: 11px; color: #888; margin-top: 4px; }
-  .kpi .sub { font-size: 10px; color: #aaa; }
-  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-  .card { background: white; padding: 16px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-  .card h3 { margin: 0 0 12px 0; font-size: 14px; color: #1a5276; }
-  canvas { max-height: 320px; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-  .wide { grid-column: 1 / -1; }
-  .footer { text-align: center; padding: 20px; color: #999; font-size: 12px; }
-  .footer a { color: #2e86c1; text-decoration: none; }
-  .loading { text-align: center; padding: 80px; color: #666; font-size: 16px; }
-  .delta { font-size: 11px; font-weight: 400; }
-  .delta.up { color: #e74c3c; }
-  .delta.down { color: #27ae60; }
-  .section-title { font-size: 18px; color: #1a5276; margin: 24px 0 12px 0; }
+*{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;padding:0;background:#f5f5f5;color:#333}
+nav{background:#1a5276;color:#fff;padding:0 24px;display:flex;align-items:center;gap:4px;height:52px;position:sticky;top:0;z-index:10}
+nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 18px;font-size:14px;border-radius:6px 6px 0 0}
+nav a:hover,nav a.active{background:rgba(255,255,255,.15);color:#fff}
+nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0}
+.main{max-width:1400px;margin:0 auto;padding:0 20px}
+.hero{background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;padding:40px 32px;border-radius:0 0 12px 12px;margin-bottom:24px}
+.hero h1{margin:0 0 8px;font-size:26px}
+.hero p{margin:0;opacity:.9;font-size:14px;line-height:1.6;max-width:900px}
+.hero p a{color:#fff;text-decoration:underline}
+.intro{background:#fff;padding:24px 28px;border-radius:8px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.06);line-height:1.7}
+.intro h2{margin:0 0 10px;font-size:18px;color:#1a5276}
+.intro p{margin:0 0 8px;font-size:14px;color:#555}
+.pipeline{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}
+.pipe-step{background:#eaf2f8;color:#1a5276;padding:6px 14px;border-radius:4px;font-size:13px;font-weight:600}
+.pipe-arrow{color:#2e86c1;font-weight:700;padding:6px 2px}
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:20px}
+.kpi{background:#fff;padding:18px 12px;border-radius:8px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.kpi .val{font-size:26px;font-weight:700;color:#1a5276}
+.kpi .lbl{font-size:11px;color:#888;margin-top:4px}
+.card{background:#fff;padding:16px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-bottom:16px}
+.card h3{margin:0 0 12px;font-size:14px;color:#1a5276}
+canvas{max-height:320px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.footer{text-align:center;padding:20px;color:#999;font-size:12px}
+.footer a{color:#2e86c1;text-decoration:none}
+.loading{text-align:center;padding:80px;color:#666;font-size:16px}
+.section-title{font-size:18px;color:#1a5276;margin:24px 0 12px}
 </style>
 </head>
 <body>
-
 <nav>
   <a class="brand" href="index.html">Plant Virus DB</a>
   <a href="index.html" class="active">Dashboard</a>
   <a href="segmented.html">Segmented</a>
-  <a href="nonsegmented.html">Non‑Segmented</a>
+  <a href="nonsegmented.html">Non-Segmented</a>
   <a href="download.html">Download</a>
 </nav>
-
 <div class="hero">
   <h1>Plant Virus Reference Database</h1>
-  <p>A comprehensive, ICTV-verified reference database of plant virus genomes. Built from NCBI GenBank sequences cross-referenced with ICTV VMR MSL41 taxonomy, filtered through a multi-stage deduplication and quality-control pipeline to produce a non-redundant set of representative sequences covering 4,200+ viral species across 120+ families.</p>
+  <p>All plant virus sequences retrieved from NCBI GenBank, cross-referenced with ICTV VMR MSL41. Browse the final deduplicated reference set: <a href="segmented.html">Segmented</a> · <a href="nonsegmented.html">Non-Segmented</a> · <a href="download.html">Download</a></p>
 </div>
-
 <div class="main">
-
   <div class="intro">
     <h2>About This Database</h2>
-    <p>This database integrates NCBI nucleotide records with authoritative ICTV taxonomy to create a curated set of plant virus reference sequences. The pipeline performs:</p>
+    <p>Curated plant virus sequences integrating NCBI GenBank records with authoritative ICTV taxonomy. The pipeline performs:</p>
     <div class="pipeline">
-      <span class="pipe-step">Host Classification</span><span class="pipe-arrow">→</span>
-      <span class="pipe-step">ICTV Validation</span><span class="pipe-arrow">→</span>
-      <span class="pipe-step">Segmented Detection</span><span class="pipe-arrow">→</span>
+      <span class="pipe-step">Host Classify</span><span class="pipe-arrow">→</span>
+      <span class="pipe-step">ICTV Validate</span><span class="pipe-arrow">→</span>
+      <span class="pipe-step">Segmented Detect</span><span class="pipe-arrow">→</span>
       <span class="pipe-step">Taxonomy Dedup</span><span class="pipe-arrow">→</span>
-      <span class="pipe-step">Seqkit rmdup</span><span class="pipe-arrow">→</span>
+      <span class="pipe-step">SeqKit rmdup</span><span class="pipe-arrow">→</span>
       <span class="pipe-step">MMseqs2 0.98</span><span class="pipe-arrow">→</span>
-      <span class="pipe-step">vclust Clustering</span>
+      <span class="pipe-step">vclust Cluster</span>
     </div>
-    <p style="font-size:12px; color:#999;">Data sources: NCBI GenBank + ICTV VMR MSL41. Last updated: June 2025.</p>
   </div>
-
   <div class="loading" id="loading">Loading data...</div>
   <div id="content" style="display:none">
-
-    <!-- KPIs -->
     <div class="kpis" id="kpis"></div>
-
-    <!-- Category / Sequence Type comparison -->
-    <h3 class="section-title">Data Composition</h3>
-    <div class="compare">
-      <div class="card"><h3>Full Database — Sequence Types</h3><canvas id="chartCatFull"></canvas></div>
-      <div class="card"><h3>Final Reference — Category</h3><canvas id="chartCatRef"></canvas></div>
-    </div>
-
-    <!-- Host + Family -->
-    <h3 class="section-title">Host &amp; Taxonomy</h3>
+    <h3 class="section-title">Sequence Types</h3>
+    <div class="card"><canvas id="chartSeq"></canvas></div>
+    <h3 class="section-title">Host &amp; Genome</h3>
     <div class="grid">
       <div class="card"><h3>Top 20 Host Plants</h3><canvas id="chartHost"></canvas></div>
-      <div class="card"><h3>Top 20 Virus Families</h3><canvas id="chartFam"></canvas></div>
-    </div>
-
-    <!-- Genera + Genome -->
-    <div class="grid">
-      <div class="card"><h3>Top 20 Virus Genera</h3><canvas id="chartGen"></canvas></div>
       <div class="card"><h3>Genome Type</h3><canvas id="chartMol"></canvas></div>
     </div>
-
-    <!-- Topology + Length -->
-    <div class="grid">
-      <div class="card"><h3>Topology</h3><canvas id="chartTopo"></canvas></div>
-      <div class="card"><h3>Sequence Length Distribution</h3><canvas id="chartLen"></canvas></div>
-    </div>
-
-    <!-- Dates -->
     <h3 class="section-title">Temporal Distribution</h3>
     <div class="grid">
-      <div class="card"><h3>Sequences by Collection Year</h3><canvas id="chartCollect"></canvas></div>
-      <div class="card"><h3>Sequences by Release Year</h3><canvas id="chartRelease"></canvas></div>
+      <div class="card"><h3>Collection Year</h3><canvas id="chartCollect"></canvas></div>
+      <div class="card"><h3>Release Year</h3><canvas id="chartRelease"></canvas></div>
     </div>
-
+    <h3 class="section-title">Sequence Properties</h3>
+    <div class="grid">
+      <div class="card"><h3>Topology</h3><canvas id="chartTopo"></canvas></div>
+      <div class="card"><h3>Length Distribution</h3><canvas id="chartLen"></canvas></div>
+    </div>
   </div>
 </div>
-
-<div class="footer">Plant Virus Reference Database &middot; <a href="https://github.com/zhangwenda0518/plant_virus_db_pipeline">GitHub</a></div>
+<div class="footer">Plant Virus Reference Database · <a href="https://github.com/zhangwenda0518/plant_virus_db_pipeline">GitHub</a></div>
 
 <script>
 (async function() {
-  const loadTSV = async (path) => {
-    try {
-      const r = await fetch(path); if (!r.ok) return null;
-      const text = await r.text();
-      return new Promise(resolve => Papa.parse(text, { header: true, skipEmptyLines: true, delimiter: '\t', complete(r) { resolve(r.data); } }));
-    } catch(e) { return null; }
-  };
+  const r = await fetch('data/Plant_Virus_Info.full.tsv');
+  if (!r.ok) { document.getElementById('loading').textContent='Plant_Virus_Info.full.tsv not found in docs/data/'; return; }
+  Papa.parse(await r.text(), { header:true, skipEmptyLines:true, delimiter:'\t', complete(rs) {
+    const d = rs.data;
+    const C = ['#2e86c1','#e74c3c','#27ae60','#f39c12','#8e44ad','#1abc9c','#e67e22','#2980b9','#c0392b','#16a085'];
+    const f=(d,n)=>d.map(r=>r[n]||'').filter(Boolean);
+    const top=(a,n)=>{const m={};a.forEach(v=>{m[v]=(m[v]||0)+1});return Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,n);};
+    const taxCol=d[0]&&d[0].Taxid!=null?'Taxid':'taxid';
+    const taxids=new Set(d.map(r=>r[taxCol]||'').filter(Boolean)).size;
+    const hosts=new Set(f(d,'Host')).size;
 
-  const [refData, fullData] = await Promise.all([loadTSV('data/final.cluster.ref_info.tsv'), loadTSV('data/Plant_Virus_Info.full.tsv')]);
-  if (!refData) { document.getElementById('loading').textContent = 'Data not found'; return; }
+    const kpi=(l,v)=>`<div class="kpi"><div class="val">${v.toLocaleString()}</div><div class="lbl">${l}</div></div>`;
+    document.getElementById('kpis').innerHTML =
+      kpi('Sequences',d.length)+kpi('TaxIDs',taxids)+kpi('Unique Hosts',hosts);
 
-  const colors = ['#2e86c1','#e74c3c','#27ae60','#f39c12','#8e44ad','#1abc9c','#e67e22','#2980b9','#c0392b','#16a085'];
-  const top = (arr, n) => { const m = {}; arr.forEach(v => { m[v] = (m[v]||0) + 1; }); return Object.entries(m).sort((a,b) => b[1]-a[1]).slice(0, n); };
-  const hasCol = (d, name) => d.length > 0 && name in d[0];
-  const stats = d => {
-    const catCol = hasCol(d, 'Category') ? 'Category' : null;
-    const famCol = hasCol(d, 'VMR_Family') ? 'VMR_Family' : null;
-    const genCol = hasCol(d, 'VMR_Genus') ? 'VMR_Genus' : null;
-    const taxCol = hasCol(d, 'Taxid') ? 'Taxid' : 'taxid';
-    return {
-      seqs: d.length,
-      taxids: new Set(d.map(r => r[taxCol]||'').filter(Boolean)).size,
-      families: famCol ? new Set(d.map(r => r[famCol]||'').filter(Boolean)).size : null,
-      genera: genCol ? new Set(d.map(r => r[genCol]||'').filter(Boolean)).size : null,
-      seg: catCol ? d.filter(r => (r[catCol]||'').startsWith('Segmented')).length : null,
-      ns: catCol ? d.filter(r => (r[catCol]||'').startsWith('NonSegmented')).length : null
-    };
-  };
+    // Sequence Types
+    const st={};d.forEach(r=>{const v=(r.Sequence_Type||'Unknown').replace('/ICTV','');st[v]=(st[v]||0)+1;});
+    new Chart(document.getElementById('chartSeq'),{type:'bar',data:{labels:Object.keys(st),datasets:[{data:Object.values(st),backgroundColor:C}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
 
-  const refStats = stats(refData);
-  const fullStats = fullData ? stats(fullData) : null;
+    // Host
+    const th=top(f(d,'Host'),20);
+    new Chart(document.getElementById('chartHost'),{type:'bar',data:{labels:th.map(x=>x[0]),datasets:[{data:th.map(x=>x[1]),backgroundColor:'#f39c12'}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
 
-  // KPIs comparing full → final
-  const kpiRow = (label, vFull, vRef) => {
-    const d = vFull != null ? vFull - vRef : 0;
-    const ds = vFull != null ? `<span class="delta ${d>0?'down':'up'}">${d>0?'-'+d.toLocaleString():'+'+Math.abs(d).toLocaleString()} vs full</span>` : '';
-    const val = vRef != null ? vRef.toLocaleString() : '—';
-    return `<div class="kpi"><div class="val">${val}</div><div class="lbl">${label}</div><div class="sub">${ds}</div></div>`;
-  };
-  document.getElementById('kpis').innerHTML =
-    kpiRow('Sequences', fullStats?.seqs ?? null, refStats.seqs) +
-    kpiRow('TaxIDs', fullStats?.taxids ?? null, refStats.taxids) +
-    kpiRow('Families', fullStats?.families ?? null, refStats.families) +
-    kpiRow('Genera', fullStats?.genera ?? null, refStats.genera) +
-    kpiRow('Non‑Segmented', fullStats?.ns ?? null, refStats.ns) +
-    kpiRow('Segmented', fullStats?.seg ?? null, refStats.seg);
+    // Molecule
+    const mol={};d.forEach(r=>{const v=(r.Molecule_type||'Unknown').replace(/[()]/g,'');mol[v]=(mol[v]||0)+1;});
+    new Chart(document.getElementById('chartMol'),{type:'doughnut',data:{labels:Object.keys(mol),datasets:[{data:Object.values(mol),backgroundColor:C}]}});
 
-  // Category grouped bar
-  const catSubs = ['Complete','Partial_Genome','CDS_Fragment','Partial_taxid','Other_Partial','unknown'];
-  const catData = d => {
-    const m = {}; d.forEach(r => { m[r.Category||''] = (m[r.Category||'']||0)+1; });
-    return { seg: catSubs.map(s => m['Segmented_'+s]||0), ns: catSubs.map(s => m['NonSegmented_'+s]||0) };
-  };
-  const makeCatChart = (id, d) => {
-    const cd = catData(d);
-    new Chart(document.getElementById(id), { type: 'bar', data: {
-      labels: catSubs.map(s => s.replace('_',' ')),
-      datasets: [
-        { label: 'Non‑Segmented', data: cd.ns, backgroundColor: '#2e86c1' },
-        { label: 'Segmented', data: cd.seg, backgroundColor: '#e74c3c' }
-      ]
-    }, options: { responsive: true, plugins: { legend: { position: 'top' } } } });
-  };
-  makeCatChart('chartCatRef', refData);
-  if (fullData) {
-    if (hasCol(fullData, 'Category')) {
-      makeCatChart('chartCatFull', fullData);
-    } else {
-      // Full TSV lacks Category → show Sequence_Type instead
-      const st = {};
-      fullData.forEach(r => { const v = (r.Sequence_Type||'Unknown').replace('/ICTV',''); st[v] = (st[v]||0)+1; });
-      const stLabels = Object.keys(st), stVals = Object.values(st);
-      new Chart(document.getElementById('chartCatFull'), { type: 'bar', data: {
-        labels: stLabels, datasets: [{ data: stVals, backgroundColor: ['#2e86c1','#27ae60','#e74c3c','#f39c12','#8e44ad','#1abc9c'] }]
-      }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
-    }
-  } else {
-    document.getElementById('chartCatFull').parentElement.innerHTML = '<h3>Full Database</h3><p style="color:#999;text-align:center;padding:60px 0">Plant_Virus_Info.full.tsv not uploaded.</p>';
-  }
+    // Dates
+    const db=arr=>{const m={};arr.forEach(v=>{const y=String(v||'').match(/\b(19|20)\d{2}\b/);if(y)m[y[0]]=(m[y[0]]||0)+1});return m;};
+    const mkDate=(id,bins)=>{const keys=Object.keys(bins).sort();new Chart(document.getElementById(id),{type:'bar',data:{labels:keys,datasets:[{data:keys.map(k=>bins[k]),backgroundColor:'#f39c12'}]},options:{plugins:{legend:{display:false}},scales:{x:{title:{display:true,text:'Year'}}}}})};
+    mkDate('chartCollect',db(f(d,'Collection_Date')));
+    mkDate('chartRelease',db(f(d,'Release_Date')));
 
-  // Host (top 20) — from Host column
-  const f = (d, name) => d.map(r => r[name] || '').filter(Boolean);
-  const th = top(f(refData, 'Host'), 20);
-  new Chart(document.getElementById('chartHost'), { type: 'bar', data: {
-    labels: th.map(x=>x[0]), datasets: [{ data: th.map(x=>x[1]), backgroundColor: '#f39c12' }]
-  }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
+    // Topology
+    const topo={};d.forEach(r=>{const v=r.Topology||'Unknown';topo[v]=(topo[v]||0)+1;});
+    new Chart(document.getElementById('chartTopo'),{type:'doughnut',data:{labels:Object.keys(topo),datasets:[{data:Object.values(topo),backgroundColor:C.slice(0,3)}]}});
 
-  // Family
-  const tf = top(f(refData, 'VMR_Family'), 20);
-  new Chart(document.getElementById('chartFam'), { type: 'bar', data: {
-    labels: tf.map(x=>x[0]), datasets: [{ data: tf.map(x=>x[1]), backgroundColor: '#2e86c1' }]
-  }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
+    // Length
+    const lens=d.map(r=>parseInt(r.Length)||0).filter(v=>v>0&&v<20000);
+    const bins={},step=1000;lens.forEach(v=>{const b=Math.floor(v/step)*step;bins[b]=(bins[b]||0)+1});
+    const bks=Object.keys(bins).map(Number).sort((a,b)=>a-b);
+    new Chart(document.getElementById('chartLen'),{type:'bar',data:{labels:bks.map(b=>`${b}-${b+step-1}`),datasets:[{data:bks.map(b=>bins[b]),backgroundColor:'#27ae60'}]},options:{plugins:{legend:{display:false}},scales:{x:{title:{display:true,text:'Length (bp)'}}}}});
 
-  // Genus
-  const tg = top(f(refData, 'VMR_Genus'), 20);
-  new Chart(document.getElementById('chartGen'), { type: 'bar', data: {
-    labels: tg.map(x=>x[0]), datasets: [{ data: tg.map(x=>x[1]), backgroundColor: '#27ae60' }]
-  }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
-
-  // Molecule type
-  const molData = {};
-  refData.forEach(r => { const v = (r.Molecule_type||'Unknown').replace(/[()]/g,''); molData[v] = (molData[v]||0)+1; });
-  new Chart(document.getElementById('chartMol'), { type: 'doughnut', data: {
-    labels: Object.keys(molData), datasets: [{ data: Object.values(molData), backgroundColor: colors }]
-  } });
-
-  // Topology
-  const topoData = {};
-  refData.forEach(r => { const v = r.Topology || 'Unknown'; topoData[v] = (topoData[v]||0)+1; });
-  new Chart(document.getElementById('chartTopo'), { type: 'doughnut', data: {
-    labels: Object.keys(topoData), datasets: [{ data: Object.values(topoData), backgroundColor: colors.slice(0,3) }]
-  } });
-
-  // Length
-  const lens = refData.map(r => parseInt(r.Length)||0).filter(v => v>0 && v<20000);
-  const bins = {}, step = 1000;
-  lens.forEach(v => { const b = Math.floor(v/step)*step; bins[b]=(bins[b]||0)+1; });
-  const bks = Object.keys(bins).map(Number).sort((a,b)=>a-b);
-  new Chart(document.getElementById('chartLen'), { type: 'bar', data: {
-    labels: bks.map(b=>`${b}-${b+step-1}`), datasets: [{ data: bks.map(b=>bins[b]), backgroundColor: '#2e86c1' }]
-  }, options: { plugins: { legend: { display: false } }, scales: { x: { title: { text: 'Length (bp)', display: true } } } } });
-
-  // Date distributions — extract year from Collection_Date / Release_Date
-  const dateBins = arr => {
-    const m = {};
-    arr.forEach(v => {
-      const y = String(v||'').match(/\b(19|20)\d{2}\b/);
-      if (y) { m[y[0]] = (m[y[0]]||0) + 1; }
-    });
-    return Object.keys(m).sort().map(k => ({ y: k, n: m[k] }));
-  };
-  const collectDates = dateBins(f(refData, 'Collection_Date'));
-  const releaseDates = dateBins(f(refData, 'Release_Date'));
-  new Chart(document.getElementById('chartCollect'), { type: 'bar', data: {
-    labels: collectDates.map(d => d.y), datasets: [{ data: collectDates.map(d => d.n), backgroundColor: '#f39c12' }]
-  }, options: { plugins: { legend: { display: false } }, scales: { x: { title: { text: 'Year', display: true } } } } });
-  new Chart(document.getElementById('chartRelease'), { type: 'bar', data: {
-    labels: releaseDates.map(d => d.y), datasets: [{ data: releaseDates.map(d => d.n), backgroundColor: '#27ae60' }]
-  }, options: { plugins: { legend: { display: false } }, scales: { x: { title: { text: 'Year', display: true } } } } });
-
-  document.getElementById('loading').style.display = 'none';
-  document.getElementById('content').style.display = '';
+    document.getElementById('loading').style.display='none';
+    document.getElementById('content').style.display='';
+  }});
 })();
 </script>
 </body>
