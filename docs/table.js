@@ -47,7 +47,9 @@ async function loadTable(tableId, isSegmented) {
       const cols = [{ title: '<input type="checkbox" id="selectAll" onclick="toggleAll(this)">', orderable: false, width: '30px' },
         ...fields.map(f => ({ title: f }))];
 
-      if (currentTable) currentTable.destroy();
+      if (currentTable) { currentTable.destroy(); currentTable = null; }
+      // Clear old table HTML to avoid column mismatch when switching Full/Ref
+      $(tableId).empty();
 
       const dataWithCheck = rows.map((r, i) => ['<input type="checkbox" class="rowCheck" data-idx="' + i + '">', ...r.map(escapeHtml)]);
 
