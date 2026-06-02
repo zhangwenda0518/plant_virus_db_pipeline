@@ -145,9 +145,15 @@ def main():
     # 第二遍: 应用规则
     for tax, segs in taxid_best.items():
         has_labeled = any(k != "__unlabeled__" for k in segs)
+        # 判断该 TaxID 是否有 RefSeq 或 ICTV (rank <= 2)
+        has_refseq_or_ictv = any(r <= 2 for _, r, _ in segs.values())
+
         for seg_key, (acc, rank, tier_idx) in segs.items():
             if seg_key == "__unlabeled__" and has_labeled:
                 continue  # 有带段名记录时丢弃无段名散装序列
+            # TaxID 有 RefSeq/ICTV 时, GenBank(rank=3) 只保留 Segmented_Complete
+            if has_refseq_or_ictv and rank == 3 and tier_idx != 0:
+                continue
             seg_keep_accs.add(acc)
             cat = seg_prio[tier_idx]
             seg_stats_cat[cat]["kept"] += 1
