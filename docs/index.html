@@ -109,10 +109,10 @@
     </div>
 
     <!-- Dates -->
-    <h3 class="section-title">Temporal Distribution — Full vs Final</h3>
+    <h3 class="section-title">Temporal Distribution</h3>
     <div class="grid">
-      <div class="card"><h3>Collection Year</h3><canvas id="chartCollect"></canvas></div>
-      <div class="card"><h3>Release Year</h3><canvas id="chartRelease"></canvas></div>
+      <div class="card"><h3>Sequences by Collection Year</h3><canvas id="chartCollect"></canvas></div>
+      <div class="card"><h3>Sequences by Release Year</h3><canvas id="chartRelease"></canvas></div>
     </div>
 
   </div>
@@ -202,7 +202,12 @@
     document.getElementById('chartCatFull').parentElement.innerHTML = '<h3>Full Database</h3><p style="color:#999;text-align:center;padding:60px 0">Plant_Virus_Info.full.tsv not uploaded.</p>';
   }
 
+  // Host (top 20) — from Host column
   const f = (d, name) => d.map(r => r[name] || '').filter(Boolean);
+  const th = top(f(refData, 'Host'), 20);
+  new Chart(document.getElementById('chartHost'), { type: 'bar', data: {
+    labels: th.map(x=>x[0]), datasets: [{ data: th.map(x=>x[1]), backgroundColor: '#f39c12' }]
+  }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
 
   // Family
   const tf = top(f(refData, 'VMR_Family'), 20);
@@ -239,52 +244,23 @@
     labels: bks.map(b=>`${b}-${b+step-1}`), datasets: [{ data: bks.map(b=>bins[b]), backgroundColor: '#2e86c1' }]
   }, options: { plugins: { legend: { display: false } }, scales: { x: { title: { text: 'Length (bp)', display: true } } } } });
 
-  // Date distributions — Full vs Ref grouped bar
+  // Date distributions — extract year from Collection_Date / Release_Date
   const dateBins = arr => {
     const m = {};
     arr.forEach(v => {
       const y = String(v||'').match(/\b(19|20)\d{2}\b/);
       if (y) { m[y[0]] = (m[y[0]]||0) + 1; }
     });
-    return m;
+    return Object.keys(m).sort().map(k => ({ y: k, n: m[k] }));
   };
-  const makeDateChart = (id, field) => {
-    const refBins = dateBins(f(refData, field));
-    const fullBins = fullData ? dateBins(f(fullData, field)) : {};
-    const allYears = [...new Set([...Object.keys(refBins), ...Object.keys(fullBins)])].sort();
-    new Chart(document.getElementById(id), { type: 'bar', data: {
-      labels: allYears,
-      datasets: [
-        { label: 'Full', data: allYears.map(y => fullBins[y]||0), backgroundColor: '#3498db' },
-        { label: 'Ref', data: allYears.map(y => refBins[y]||0), backgroundColor: '#e74c3c' }
-      ]
-    }, options: { responsive: true, plugins: { legend: { position: 'top' } }, scales: { x: { title: { text: 'Year', display: true } } } } });
-  };
-  makeDateChart('chartCollect', 'Collection_Date');
-  makeDateChart('chartRelease', 'Release_Date');
-
-  // Host comparison — Full vs Ref
-  if (fullData) {
-    const refHosts = top(f(refData, 'Host'), 20);
-    const fullHosts = top(f(fullData, 'Host'), 20);
-    const hostLabels = [...new Set([...refHosts.map(x=>x[0]), ...fullHosts.map(x=>x[0])])].slice(0, 30);
-    const hostMap = arr => { const m = {}; arr.forEach(([k,v]) => { m[k]=v; }); return m; };
-    const refHM = hostMap(refHosts), fullHM = hostMap(fullHosts);
-    new Chart(document.getElementById('chartHost'), { type: 'bar', data: {
-      labels: hostLabels,
-      datasets: [
-        { label: 'Full', data: hostLabels.map(h => fullHM[h]||0), backgroundColor: '#3498db' },
-        { label: 'Ref', data: hostLabels.map(h => refHM[h]||0), backgroundColor: '#e74c3c' }
-      ]
-    }, options: { indexAxis: 'y', plugins: { legend: { position: 'top' } } } });
-    // Update chart title
-    document.getElementById('chartHost').parentElement.querySelector('h3').textContent = 'Top Host Plants — Full vs Ref';
-  } else {
-    const th = top(f(refData, 'Host'), 20);
-    new Chart(document.getElementById('chartHost'), { type: 'bar', data: {
-      labels: th.map(x=>x[0]), datasets: [{ data: th.map(x=>x[1]), backgroundColor: '#f39c12' }]
-    }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
-  }
+  const collectDates = dateBins(f(refData, 'Collection_Date'));
+  const releaseDates = dateBins(f(refData, 'Release_Date'));
+  new Chart(document.getElementById('chartCollect'), { type: 'bar', data: {
+    labels: collectDates.map(d => d.y), datasets: [{ data: collectDates.map(d => d.n), backgroundColor: '#f39c12' }]
+  }, options: { plugins: { legend: { display: false } }, scales: { x: { title: { text: 'Year', display: true } } } } });
+  new Chart(document.getElementById('chartRelease'), { type: 'bar', data: {
+    labels: releaseDates.map(d => d.y), datasets: [{ data: releaseDates.map(d => d.n), backgroundColor: '#27ae60' }]
+  }, options: { plugins: { legend: { display: false } }, scales: { x: { title: { text: 'Year', display: true } } } } });
 
   document.getElementById('loading').style.display = 'none';
   document.getElementById('content').style.display = '';
