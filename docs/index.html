@@ -68,11 +68,13 @@ canvas{max-height:320px}
     <div class="kpis" id="kpis"></div>
     <h3 class="section-title">Sequence Types</h3>
     <div class="card"><canvas id="chartSeq"></canvas></div>
-    <h3 class="section-title">Host &amp; Genome</h3>
+    <h3 class="section-title">Host &amp; Taxonomy</h3>
     <div class="grid">
       <div class="card"><h3>Top 20 Host Plants</h3><canvas id="chartHost"></canvas></div>
-      <div class="card"><h3>Genome Type</h3><canvas id="chartMol"></canvas></div>
+      <div class="card"><h3>Top 20 Virus Families (Ref)</h3><canvas id="chartFam"></canvas></div>
     </div>
+    <h3 class="section-title">Genome</h3>
+    <div class="card" style="margin-bottom:16px"><canvas id="chartMol"></canvas></div>
     <h3 class="section-title">Temporal Distribution</h3>
     <div class="grid">
       <div class="card"><h3>Collection Year</h3><canvas id="chartCollect"></canvas></div>
@@ -127,6 +129,12 @@ canvas{max-height:320px}
     // Host
     const th=top(f(fd,'Host'),20);
     new Chart(document.getElementById('chartHost'),{type:'bar',data:{labels:th.map(x=>x[0]),datasets:[{data:th.map(x=>x[1]),backgroundColor:'#f39c12'}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
+
+    // Families from ref data
+    if (rd) {
+      const tf = top(f(rd, 'VMR_Family'), 20);
+      new Chart(document.getElementById('chartFam'),{type:'bar',data:{labels:tf.map(x=>x[0]),datasets:[{data:tf.map(x=>x[1]),backgroundColor:'#2e86c1'}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
+    }
 
     // Molecule
     const mol={};fd.forEach(r=>{const v=(r.Molecule_type||'Unknown').replace(/[()]/g,'');mol[v]=(mol[v]||0)+1;});
