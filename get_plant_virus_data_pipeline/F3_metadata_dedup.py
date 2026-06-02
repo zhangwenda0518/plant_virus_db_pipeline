@@ -169,7 +169,7 @@ def main():
         new_taxids_seen.update(t for t in cat_taxids if t in taxid_best)
         seg_stats.append((cat, total_in_cat, kept_in_cat, len(new_in_cat)))
 
-    total_seg_taxids = len(seg_seen_taxids)
+    total_seg_taxids = len(taxid_best)
 
     # =========================================================
     # 生成报告与提取序列
