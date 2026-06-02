@@ -46,7 +46,7 @@ canvas{max-height:320px}
 </nav>
 <div class="hero">
   <h1>Plant Virus Reference Database</h1>
-  <p>A comprehensive, ICTV-verified reference database of plant virus genomes. Built from NCBI GenBank cross-referenced with ICTV VMR MSL41, processed through multi-stage deduplication and quality-control.</p>
+  <p>Overview of all plant virus sequences from NCBI GenBank (pre-deduplication). For the final deduplicated reference set, browse <a href="segmented.html" style="color:#fff;text-decoration:underline">Segmented</a> / <a href="nonsegmented.html" style="color:#fff;text-decoration:underline">Non-Segmented</a> tables or <a href="download.html" style="color:#fff;text-decoration:underline">Download</a>.</p>
 </div>
 <div class="main">
   <div class="intro">
@@ -66,20 +66,22 @@ canvas{max-height:320px}
   <div class="loading" id="loading">Loading data...</div>
   <div id="content" style="display:none">
     <div class="kpis" id="kpis"></div>
-    <h3 class="section-title">Category Distribution</h3>
-    <div class="card"><canvas id="chartCat"></canvas></div>
-    <h3 class="section-title">Host &amp; Taxonomy</h3>
+    <h3 class="section-title">Sequence Types</h3>
+    <div class="card"><canvas id="chartSeq"></canvas></div>
+    <h3 class="section-title">Host &amp; Genome</h3>
     <div class="grid">
       <div class="card"><h3>Top 20 Host Plants</h3><canvas id="chartHost"></canvas></div>
-      <div class="card"><h3>Top 20 Virus Families</h3><canvas id="chartFam"></canvas></div>
-    </div>
-    <div class="grid">
-      <div class="card"><h3>Top 20 Virus Genera</h3><canvas id="chartGen"></canvas></div>
       <div class="card"><h3>Genome Type</h3><canvas id="chartMol"></canvas></div>
     </div>
+    <h3 class="section-title">Temporal Distribution</h3>
+    <div class="grid">
+      <div class="card"><h3>Collection Year</h3><canvas id="chartCollect"></canvas></div>
+      <div class="card"><h3>Release Year</h3><canvas id="chartRelease"></canvas></div>
+    </div>
+    <h3 class="section-title">Sequence Properties</h3>
     <div class="grid">
       <div class="card"><h3>Topology</h3><canvas id="chartTopo"></canvas></div>
-      <div class="card"><h3>Sequence Length Distribution</h3><canvas id="chartLen"></canvas></div>
+      <div class="card"><h3>Length Distribution</h3><canvas id="chartLen"></canvas></div>
     </div>
   </div>
 </div>
@@ -87,35 +89,27 @@ canvas{max-height:320px}
 
 <script>
 (async function() {
-  const r = await fetch('data/final.cluster.ref_info.tsv');
-  if (!r.ok) { document.getElementById('loading').textContent = 'Data not found'; return; }
+  const r = await fetch('data/Plant_Virus_Info.full.tsv');
+  if (!r.ok) { document.getElementById('loading').textContent = 'Plant_Virus_Info.full.tsv not found. Upload it to docs/data/'; return; }
   const text = await r.text();
   Papa.parse(text, { header: true, skipEmptyLines: true, delimiter: '\t', complete(rs) {
     const d = rs.data;
     const C = ['#2e86c1','#e74c3c','#27ae60','#f39c12','#8e44ad','#1abc9c','#e67e22','#2980b9','#c0392b','#16a085'];
     const top = (a,n) => { const m={}; a.forEach(v=>{m[v]=(m[v]||0)+1}); return Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,n); };
     const f = (d,n) => d.map(r => r[n]||'').filter(Boolean);
-    const taxids = new Set(d.map(r => r.Taxid||'').filter(Boolean)).size;
-    const fams = new Set(f(d,'VMR_Family')).size;
-    const gens = new Set(f(d,'VMR_Genus')).size;
-    const seg = d.filter(r => (r.Category||'').startsWith('Segmented')).length;
-    const ns = d.filter(r => (r.Category||'').startsWith('NonSegmented')).length;
+    const taxCol = d[0] && d[0].Taxid != null ? 'Taxid' : 'taxid';
+    const taxids = new Set(d.map(r => r[taxCol]||'').filter(Boolean)).size;
+    const hosts = new Set(f(d,'Host')).size;
 
     const kpi = (l,v) => `<div class="kpi"><div class="val">${v.toLocaleString()}</div><div class="lbl">${l}</div></div>`;
     document.getElementById('kpis').innerHTML =
-      kpi('Sequences',d.length) + kpi('TaxIDs',taxids) + kpi('Families',fams) +
-      kpi('Genera',gens) + kpi('Non-Segmented',ns) + kpi('Segmented',seg);
+      kpi('Sequences',d.length) + kpi('TaxIDs',taxids) + kpi('Unique Hosts',hosts);
 
-    // Category
-    const cats = ['Complete','Partial_Genome','CDS_Fragment','Partial_taxid','Other_Partial','unknown'];
-    const cm = {}; d.forEach(r => { const c = r.Category||''; cm[c] = (cm[c]||0)+1; });
-    new Chart(document.getElementById('chartCat'), { type: 'bar', data: {
-      labels: cats.map(s => s.replace('_',' ')),
-      datasets: [
-        { label: 'Non-Segmented', data: cats.map(s => cm['NonSegmented_'+s]||0), backgroundColor: '#2e86c1' },
-        { label: 'Segmented', data: cats.map(s => cm['Segmented_'+s]||0), backgroundColor: '#e74c3c' }
-      ]
-    }, options: { responsive: true, plugins: { legend: { position: 'top' } } } });
+    // Sequence Types
+    const st = {}; d.forEach(r => { const v = (r.Sequence_Type||'Unknown').replace('/ICTV',''); st[v]=(st[v]||0)+1; });
+    new Chart(document.getElementById('chartSeq'), { type: 'bar', data: {
+      labels: Object.keys(st), datasets: [{ data: Object.values(st), backgroundColor: C }]
+    }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
 
     // Host
     const th = top(f(d,'Host'), 20);
@@ -123,23 +117,22 @@ canvas{max-height:320px}
       labels: th.map(x=>x[0]), datasets: [{ data: th.map(x=>x[1]), backgroundColor: '#f39c12' }]
     }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
 
-    // Family
-    const tf = top(f(d,'VMR_Family'), 20);
-    new Chart(document.getElementById('chartFam'), { type: 'bar', data: {
-      labels: tf.map(x=>x[0]), datasets: [{ data: tf.map(x=>x[1]), backgroundColor: '#2e86c1' }]
-    }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
-
-    // Genus
-    const tg = top(f(d,'VMR_Genus'), 20);
-    new Chart(document.getElementById('chartGen'), { type: 'bar', data: {
-      labels: tg.map(x=>x[0]), datasets: [{ data: tg.map(x=>x[1]), backgroundColor: '#27ae60' }]
-    }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
-
-    // Molecule
+    // Molecule type
     const mol = {}; d.forEach(r => { const v = (r.Molecule_type||'Unknown').replace(/[()]/g,''); mol[v]=(mol[v]||0)+1; });
     new Chart(document.getElementById('chartMol'), { type: 'doughnut', data: {
       labels: Object.keys(mol), datasets: [{ data: Object.values(mol), backgroundColor: C }]
     } });
+
+    // Dates
+    const dateBins = arr => { const m={}; arr.forEach(v=>{const y=String(v||'').match(/\b(19|20)\d{2}\b/);if(y)m[y[0]]=(m[y[0]]||0)+1}); return m; };
+    const makeDate = (id, bins) => {
+      const keys = Object.keys(bins).sort();
+      new Chart(document.getElementById(id), { type: 'bar', data: {
+        labels: keys, datasets: [{ data: keys.map(k=>bins[k]), backgroundColor: '#f39c12' }]
+      }, options: { plugins: { legend: { display: false } }, scales: { x: { title: { display: true, text: 'Year' } } } } });
+    };
+    makeDate('chartCollect', dateBins(f(d,'Collection_Date')));
+    makeDate('chartRelease', dateBins(f(d,'Release_Date')));
 
     // Topology
     const topo = {}; d.forEach(r => { const v = r.Topology||'Unknown'; topo[v]=(topo[v]||0)+1; });
