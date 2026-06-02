@@ -39,19 +39,18 @@
 <div class="main">
   <div class="topbar">
     <h2 id="tableTitle">Segmented Viruses</h2>
-    <div>
+    <div style="display:flex;align-items:center;gap:12px">
       <button class="src-toggle active" data-src="ref" onclick="switchSource('ref')">Final Ref</button>
       <button class="src-toggle" data-src="full" onclick="switchSource('full')">Full DB</button>
-      <span style="margin-left:12px;font-size:12px;color:#888" id="sourceLabel"></span>
+      <span style="font-size:13px;color:#888" id="countText"></span>
     </div>
-    <span id="countText"></span>
+    <div id="toolbar" style="display:none">
+      <span style="font-size:13px;color:#e74c3c;margin-right:12px" id="selectedCount"></span>
+      <button onclick="exportSelected('csv')" style="padding:4px 10px;cursor:pointer">CSV</button>
+      <button onclick="exportSelected('tsv')" style="padding:4px 10px;cursor:pointer">TSV</button>
+    </div>
   </div>
   <div class="loading" id="loading">Loading data...</div>
-  <div id="toolbar" style="display:none;margin-bottom:8px">
-    <span style="font-size:13px;color:#666;margin-right:16px" id="selectedCount"></span>
-    <button onclick="exportSelected('csv')" class="btn-sm" style="padding:6px 14px;margin-right:4px;cursor:pointer">Export Selected CSV</button>
-    <button onclick="exportSelected('tsv')" class="btn-sm" style="padding:6px 14px;cursor:pointer">Export Selected TSV</button>
-  </div>
   <div id="tableWrap" style="display:none">
     <table id="table" class="display" style="width:100%"></table>
   </div>

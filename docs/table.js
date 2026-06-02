@@ -53,16 +53,11 @@ async function loadTable(tableId, isSegmented) {
         data: dataWithCheck, columns: cols, deferRender: true,
         pageLength: 50, lengthMenu: [[25, 50, 100, 500, -1], [25, 50, 100, 500, 'All']],
         order: [[1, 'asc']], scrollX: true, dom: 'Bfrtip',
-        buttons: [
-          { extend: 'colvis', text: 'Columns' },
-          { text: 'CSV Selected', action: function() { exportSelected('csv'); } },
-          { text: 'TSV Selected', action: function() { exportSelected('tsv'); } },
-          { text: 'Copy Selected', action: function() { exportSelected('copy'); } }
-        ],
+        buttons: [{ extend: 'colvis', text: 'Columns' }],
         columnDefs: [{ targets: [0], searchable: false, render: (d) => d }]
       });
 
-      document.getElementById('countText').textContent = rows.length.toLocaleString() + ' records ' + src.label;
+      document.getElementById('countText').textContent = rows.length.toLocaleString() + ' records';
       document.getElementById('selectedCount').textContent = '';
       document.getElementById('loading').style.display = 'none';
       document.getElementById('tableWrap').style.display = '';
