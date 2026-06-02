@@ -8,29 +8,40 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <style>
   * { box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
-  nav { background: #1a5276; color: white; padding: 0 24px; display: flex; align-items: center; gap: 4px; height: 52px; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: #f5f5f5; color: #333; }
+  nav { background: #1a5276; color: white; padding: 0 24px; display: flex; align-items: center; gap: 4px; height: 52px; position: sticky; top: 0; z-index: 10; }
   nav a { color: rgba(255,255,255,0.8); text-decoration: none; padding: 14px 18px; font-size: 14px; border-radius: 6px 6px 0 0; transition: all 0.2s; }
   nav a:hover, nav a.active { background: rgba(255,255,255,0.15); color: white; }
   nav .brand { font-weight: 700; font-size: 16px; color: white; margin-right: 16px; padding: 0; }
   nav .brand:hover { background: none; }
-  .main { max-width: 1400px; margin: 20px auto; padding: 0 20px; }
-  .kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 20px; }
-  .kpi { background: white; padding: 18px; border-radius: 8px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-  .kpi .val { font-size: 28px; font-weight: 700; color: #1a5276; }
+  .main { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+  .hero { background: linear-gradient(135deg, #1a5276, #2e86c1); color: white; padding: 40px 32px; border-radius: 0 0 12px 12px; margin-bottom: 24px; }
+  .hero h1 { margin: 0 0 8px 0; font-size: 26px; }
+  .hero p { margin: 0 0 16px 0; opacity: 0.9; font-size: 14px; line-height: 1.6; max-width: 900px; }
+  .intro { background: white; padding: 24px 28px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); line-height: 1.7; }
+  .intro h2 { margin: 0 0 10px 0; font-size: 18px; color: #1a5276; }
+  .intro p { margin: 0 0 8px 0; font-size: 14px; color: #555; }
+  .intro .pipeline { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
+  .pipe-step { background: #eaf2f8; color: #1a5276; padding: 6px 14px; border-radius: 4px; font-size: 13px; font-weight: 600; }
+  .pipe-arrow { color: #2e86c1; font-weight: 700; padding: 6px 2px; }
+  .kpis { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 20px; }
+  .kpi { background: white; padding: 18px 12px; border-radius: 8px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .kpi .val { font-size: 26px; font-weight: 700; color: #1a5276; }
   .kpi .lbl { font-size: 11px; color: #888; margin-top: 4px; }
+  .kpi .sub { font-size: 10px; color: #aaa; }
   .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
   .card { background: white; padding: 16px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-  .card h3 { margin: 0 0 12px 0; font-size: 14px; color: #1a5276; display: flex; justify-content: space-between; align-items: center; }
-  .card h3 small { font-size: 12px; color: #999; font-weight: 400; }
-  canvas { max-height: 300px; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card h3 { margin: 0 0 12px 0; font-size: 14px; color: #1a5276; }
+  canvas { max-height: 320px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .wide { grid-column: 1 / -1; }
   .footer { text-align: center; padding: 20px; color: #999; font-size: 12px; }
   .footer a { color: #2e86c1; text-decoration: none; }
   .loading { text-align: center; padding: 80px; color: #666; font-size: 16px; }
-  .delta { font-size: 12px; font-weight: 400; }
+  .delta { font-size: 11px; font-weight: 400; }
   .delta.up { color: #e74c3c; }
   .delta.down { color: #27ae60; }
+  .section-title { font-size: 18px; color: #1a5276; margin: 24px 0 12px 0; }
 </style>
 </head>
 <body>
@@ -43,39 +54,60 @@
   <a href="download.html">Download</a>
 </nav>
 
+<div class="hero">
+  <h1>Plant Virus Reference Database</h1>
+  <p>A comprehensive, ICTV-verified reference database of plant virus genomes. Built from NCBI GenBank sequences cross-referenced with ICTV VMR MSL41 taxonomy, filtered through a multi-stage deduplication and quality-control pipeline to produce a non-redundant set of representative sequences covering 4,200+ viral species across 120+ families.</p>
+</div>
+
 <div class="main">
+
+  <div class="intro">
+    <h2>About This Database</h2>
+    <p>This database integrates NCBI nucleotide records with authoritative ICTV taxonomy to create a curated set of plant virus reference sequences. The pipeline performs:</p>
+    <div class="pipeline">
+      <span class="pipe-step">Host Classification</span><span class="pipe-arrow">→</span>
+      <span class="pipe-step">ICTV Validation</span><span class="pipe-arrow">→</span>
+      <span class="pipe-step">Segmented Detection</span><span class="pipe-arrow">→</span>
+      <span class="pipe-step">Taxonomy Dedup</span><span class="pipe-arrow">→</span>
+      <span class="pipe-step">Seqkit rmdup</span><span class="pipe-arrow">→</span>
+      <span class="pipe-step">MMseqs2 0.98</span><span class="pipe-arrow">→</span>
+      <span class="pipe-step">vclust Clustering</span>
+    </div>
+    <p style="font-size:12px; color:#999;">Data sources: NCBI GenBank + ICTV VMR MSL41. Last updated: June 2025.</p>
+  </div>
+
   <div class="loading" id="loading">Loading data...</div>
   <div id="content" style="display:none">
 
-    <!-- KPIs: Full vs Final comparison -->
-    <div class="kpis" id="kpis" style="grid-template-columns: repeat(6, 1fr)"></div>
+    <!-- KPIs -->
+    <div class="kpis" id="kpis"></div>
 
+    <!-- Category comparison -->
+    <h3 class="section-title">Category Distribution</h3>
     <div class="compare">
-      <div class="card">
-        <h3>Category — Full Database <small>Plant_Virus_Info.full.tsv</small></h3>
-        <canvas id="chartCatFull"></canvas>
-      </div>
-      <div class="card">
-        <h3>Category — Final Reference <small>final.cluster.ref_info.tsv</small></h3>
-        <canvas id="chartCatRef"></canvas>
-      </div>
+      <div class="card"><h3>Full Database</h3><canvas id="chartCatFull"></canvas></div>
+      <div class="card"><h3>Final Reference (After Dedup)</h3><canvas id="chartCatRef"></canvas></div>
     </div>
 
-    <div class="compare">
-      <div class="card">
-        <h3>Top 15 Families — Full</h3>
-        <canvas id="chartFamFull"></canvas>
-      </div>
-      <div class="card">
-        <h3>Top 15 Families — Final</h3>
-        <canvas id="chartFamRef"></canvas>
-      </div>
-    </div>
-
+    <!-- Host + Family -->
+    <h3 class="section-title">Host &amp; Taxonomy</h3>
     <div class="grid">
-      <div class="card"><h3>Genome Type — Final</h3><canvas id="chartMol"></canvas></div>
-      <div class="card"><h3>Length Distribution — Final</h3><canvas id="chartLen"></canvas></div>
+      <div class="card"><h3>Top 20 Host Plants</h3><canvas id="chartHost"></canvas></div>
+      <div class="card"><h3>Top 20 Virus Families</h3><canvas id="chartFam"></canvas></div>
     </div>
+
+    <!-- Genera + Genome -->
+    <div class="grid">
+      <div class="card"><h3>Top 20 Virus Genera</h3><canvas id="chartGen"></canvas></div>
+      <div class="card"><h3>Genome Type</h3><canvas id="chartMol"></canvas></div>
+    </div>
+
+    <!-- Topology + Length -->
+    <div class="grid">
+      <div class="card"><h3>Topology</h3><canvas id="chartTopo"></canvas></div>
+      <div class="card"><h3>Sequence Length Distribution</h3><canvas id="chartLen"></canvas></div>
+    </div>
+
   </div>
 </div>
 
@@ -85,69 +117,50 @@
 (async function() {
   const loadTSV = async (path) => {
     try {
-      const r = await fetch(path);
-      if (!r.ok) return null;
+      const r = await fetch(path); if (!r.ok) return null;
       const text = await r.text();
-      return new Promise(resolve => {
-        Papa.parse(text, { header: true, skipEmptyLines: true, delimiter: '\t',
-          complete(r) { resolve(r.data); }
-        });
-      });
+      return new Promise(resolve => Papa.parse(text, { header: true, skipEmptyLines: true, delimiter: '\t', complete(r) { resolve(r.data); } }));
     } catch(e) { return null; }
   };
 
-  const [refData, fullData] = await Promise.all([
-    loadTSV('data/final.cluster.ref_info.tsv'),
-    loadTSV('data/Plant_Virus_Info.full.tsv')
-  ]);
-
+  const [refData, fullData] = await Promise.all([loadTSV('data/final.cluster.ref_info.tsv'), loadTSV('data/Plant_Virus_Info.full.tsv')]);
   if (!refData) { document.getElementById('loading').textContent = 'Data not found'; return; }
 
-  const fields = Object.keys(refData[0]);
-  const f = (d, name) => d.map(r => r[name] || '').filter(Boolean);
-  const uniq = arr => new Set(arr);
-  const top = (arr, n) => {
-    const m = {};
-    arr.forEach(v => { m[v] = (m[v]||0) + 1; });
-    return Object.entries(m).sort((a,b) => b[1]-a[1]).slice(0, n);
-  };
   const colors = ['#2e86c1','#e74c3c','#27ae60','#f39c12','#8e44ad','#1abc9c','#e67e22','#2980b9','#c0392b','#16a085'];
-
+  const top = (arr, n) => { const m = {}; arr.forEach(v => { m[v] = (m[v]||0) + 1; }); return Object.entries(m).sort((a,b) => b[1]-a[1]).slice(0, n); };
   const stats = d => ({
     seqs: d.length,
-    taxids: uniq(f(d, 'Taxid')).size,
-    families: uniq(f(d, 'VMR_Family')).size,
-    genera: uniq(f(d, 'VMR_Genus')).size,
+    taxids: new Set(d.map(r => (r.Taxid||r.taxid||'')).filter(Boolean)).size,
+    families: new Set(d.map(r => r.VMR_Family||'').filter(Boolean)).size,
+    genera: new Set(d.map(r => r.VMR_Genus||'').filter(Boolean)).size,
     seg: d.filter(r => (r.Category||'').startsWith('Segmented')).length,
-    ns: d.filter(r => (r.Category||'').startsWith('NonSegmented')).length,
-    refseq: d.filter(r => (r.Sequence_Type||'').includes('RefSeq')).length
+    ns: d.filter(r => (r.Category||'').startsWith('NonSegmented')).length
   });
 
   const refStats = stats(refData);
   const fullStats = fullData ? stats(fullData) : null;
 
-  // KPIs
-  const kpiRow = (label, key, fmt) => {
-    const v = refStats[key];
-    const delta = fullStats ? fullStats[key] - v : 0;
-    const deltaStr = fullStats ? `<br><span class="delta ${delta>0?'up':'down'}">${delta>0?'-'+delta.toLocaleString():'+'+Math.abs(delta).toLocaleString()} vs full</span>` : '';
-    return `<div class="kpi"><div class="val">${fmt ? fmt(v) : v.toLocaleString()}</div><div class="lbl">${label}${deltaStr}</div></div>`;
+  // KPIs comparing full → final
+  const kpiRow = (label, vFull, vRef) => {
+    const d = vFull !== null ? vFull - vRef : 0;
+    const ds = vFull !== null ? `<span class="delta ${d>0?'down':'up'}">${d>0?'-'+d.toLocaleString():'+'+Math.abs(d).toLocaleString()}</span>` : '';
+    return `<div class="kpi"><div class="val">${vRef.toLocaleString()}</div><div class="lbl">${label}</div><div class="sub">${ds} vs full</div></div>`;
   };
   document.getElementById('kpis').innerHTML =
-    kpiRow('Sequences', 'seqs') +
-    kpiRow('TaxIDs', 'taxids') +
-    kpiRow('Families', 'families') +
-    kpiRow('Genera', 'genera') +
-    kpiRow('Non‑Segmented', 'ns') +
-    kpiRow('Segmented', 'seg');
+    kpiRow('Sequences', fullStats?.seqs ?? null, refStats.seqs) +
+    kpiRow('TaxIDs', fullStats?.taxids ?? null, refStats.taxids) +
+    kpiRow('Families', fullStats?.families ?? null, refStats.families) +
+    kpiRow('Genera', fullStats?.genera ?? null, refStats.genera) +
+    kpiRow('Non‑Segmented', fullStats?.ns ?? null, refStats.ns) +
+    kpiRow('Segmented', fullStats?.seg ?? null, refStats.seg);
 
-  // Category charts
+  // Category grouped bar
   const catSubs = ['Complete','Partial_Genome','CDS_Fragment','Partial_taxid','Other_Partial','unknown'];
   const catData = d => {
     const m = {}; d.forEach(r => { m[r.Category||''] = (m[r.Category||'']||0)+1; });
     return { seg: catSubs.map(s => m['Segmented_'+s]||0), ns: catSubs.map(s => m['NonSegmented_'+s]||0) };
   };
-  const makeCatChart = (id, d, title) => {
+  const makeCatChart = (id, d) => {
     const cd = catData(d);
     new Chart(document.getElementById(id), { type: 'bar', data: {
       labels: catSubs.map(s => s.replace('_',' ')),
@@ -155,26 +168,42 @@
         { label: 'Non‑Segmented', data: cd.ns, backgroundColor: '#2e86c1' },
         { label: 'Segmented', data: cd.seg, backgroundColor: '#e74c3c' }
       ]
-    }, options: { responsive: true, scales: { x: { stacked: false } }, plugins: { legend: { position: 'top' } } } });
+    }, options: { responsive: true, plugins: { legend: { position: 'top' } } } });
   };
   makeCatChart('chartCatRef', refData);
   if (fullData) makeCatChart('chartCatFull', fullData);
 
-  // Family charts
-  const makeFamChart = (id, d) => {
-    const tf = top(f(d, 'VMR_Family'), 15);
-    new Chart(document.getElementById(id), { type: 'bar', data: {
-      labels: tf.map(x=>x[0]), datasets: [{ data: tf.map(x=>x[1]), backgroundColor: '#2e86c1' }]
-    }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
-  };
-  makeFamChart('chartFamRef', refData);
-  if (fullData) makeFamChart('chartFamFull', fullData);
+  // Host (top 20) — from Host column
+  const f = (d, name) => d.map(r => r[name] || '').filter(Boolean);
+  const th = top(f(refData, 'Host'), 20);
+  new Chart(document.getElementById('chartHost'), { type: 'bar', data: {
+    labels: th.map(x=>x[0]), datasets: [{ data: th.map(x=>x[1]), backgroundColor: '#f39c12' }]
+  }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
+
+  // Family
+  const tf = top(f(refData, 'VMR_Family'), 20);
+  new Chart(document.getElementById('chartFam'), { type: 'bar', data: {
+    labels: tf.map(x=>x[0]), datasets: [{ data: tf.map(x=>x[1]), backgroundColor: '#2e86c1' }]
+  }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
+
+  // Genus
+  const tg = top(f(refData, 'VMR_Genus'), 20);
+  new Chart(document.getElementById('chartGen'), { type: 'bar', data: {
+    labels: tg.map(x=>x[0]), datasets: [{ data: tg.map(x=>x[1]), backgroundColor: '#27ae60' }]
+  }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
 
   // Molecule type
   const molData = {};
   refData.forEach(r => { const v = (r.Molecule_type||'Unknown').replace(/[()]/g,''); molData[v] = (molData[v]||0)+1; });
   new Chart(document.getElementById('chartMol'), { type: 'doughnut', data: {
     labels: Object.keys(molData), datasets: [{ data: Object.values(molData), backgroundColor: colors }]
+  } });
+
+  // Topology
+  const topoData = {};
+  refData.forEach(r => { const v = r.Topology || 'Unknown'; topoData[v] = (topoData[v]||0)+1; });
+  new Chart(document.getElementById('chartTopo'), { type: 'doughnut', data: {
+    labels: Object.keys(topoData), datasets: [{ data: Object.values(topoData), backgroundColor: colors.slice(0,3) }]
   } });
 
   // Length
