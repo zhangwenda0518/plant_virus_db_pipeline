@@ -128,23 +128,31 @@
 
   const colors = ['#2e86c1','#e74c3c','#27ae60','#f39c12','#8e44ad','#1abc9c','#e67e22','#2980b9','#c0392b','#16a085'];
   const top = (arr, n) => { const m = {}; arr.forEach(v => { m[v] = (m[v]||0) + 1; }); return Object.entries(m).sort((a,b) => b[1]-a[1]).slice(0, n); };
-  const stats = d => ({
-    seqs: d.length,
-    taxids: new Set(d.map(r => (r.Taxid||r.taxid||'')).filter(Boolean)).size,
-    families: new Set(d.map(r => r.VMR_Family||'').filter(Boolean)).size,
-    genera: new Set(d.map(r => r.VMR_Genus||'').filter(Boolean)).size,
-    seg: d.filter(r => (r.Category||'').startsWith('Segmented')).length,
-    ns: d.filter(r => (r.Category||'').startsWith('NonSegmented')).length
-  });
+  const hasCol = (d, name) => d.length > 0 && name in d[0];
+  const stats = d => {
+    const catCol = hasCol(d, 'Category') ? 'Category' : null;
+    const famCol = hasCol(d, 'VMR_Family') ? 'VMR_Family' : null;
+    const genCol = hasCol(d, 'VMR_Genus') ? 'VMR_Genus' : null;
+    const taxCol = hasCol(d, 'Taxid') ? 'Taxid' : 'taxid';
+    return {
+      seqs: d.length,
+      taxids: new Set(d.map(r => r[taxCol]||'').filter(Boolean)).size,
+      families: famCol ? new Set(d.map(r => r[famCol]||'').filter(Boolean)).size : null,
+      genera: genCol ? new Set(d.map(r => r[genCol]||'').filter(Boolean)).size : null,
+      seg: catCol ? d.filter(r => (r[catCol]||'').startsWith('Segmented')).length : null,
+      ns: catCol ? d.filter(r => (r[catCol]||'').startsWith('NonSegmented')).length : null
+    };
+  };
 
   const refStats = stats(refData);
   const fullStats = fullData ? stats(fullData) : null;
 
   // KPIs comparing full → final
   const kpiRow = (label, vFull, vRef) => {
-    const d = vFull !== null ? vFull - vRef : 0;
-    const ds = vFull !== null ? `<span class="delta ${d>0?'down':'up'}">${d>0?'-'+d.toLocaleString():'+'+Math.abs(d).toLocaleString()} vs full</span>` : '';
-    return `<div class="kpi"><div class="val">${vRef.toLocaleString()}</div><div class="lbl">${label}</div><div class="sub">${ds}</div></div>`;
+    const d = vFull != null ? vFull - vRef : 0;
+    const ds = vFull != null ? `<span class="delta ${d>0?'down':'up'}">${d>0?'-'+d.toLocaleString():'+'+Math.abs(d).toLocaleString()} vs full</span>` : '';
+    const val = vRef != null ? vRef.toLocaleString() : '—';
+    return `<div class="kpi"><div class="val">${val}</div><div class="lbl">${label}</div><div class="sub">${ds}</div></div>`;
   };
   document.getElementById('kpis').innerHTML =
     kpiRow('Sequences', fullStats?.seqs ?? null, refStats.seqs) +
@@ -171,10 +179,11 @@
     }, options: { responsive: true, plugins: { legend: { position: 'top' } } } });
   };
   makeCatChart('chartCatRef', refData);
-  if (fullData) {
+  if (fullData && hasCol(fullData, 'Category')) {
     makeCatChart('chartCatFull', fullData);
   } else {
-    document.getElementById('chartCatFull').parentElement.innerHTML = '<h3>Full Database</h3><p style="color:#999;text-align:center;padding:60px 0">Plant_Virus_Info.full.tsv not uploaded.<br>Run: <code>cp Plant_Virus_Info.full.tsv docs/data/</code></p>';
+    const msg = fullData ? 'Full TSV loaded but missing Category column (pre-F2 data).' : 'Plant_Virus_Info.full.tsv not uploaded.';
+    document.getElementById('chartCatFull').parentElement.innerHTML = '<h3>Full Database</h3><p style="color:#999;text-align:center;padding:60px 0">'+msg+'</p>';
   }
 
   // Host (top 20) — from Host column
