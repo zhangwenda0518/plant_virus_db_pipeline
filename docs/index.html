@@ -108,6 +108,13 @@
       <div class="card"><h3>Sequence Length Distribution</h3><canvas id="chartLen"></canvas></div>
     </div>
 
+    <!-- Dates -->
+    <h3 class="section-title">Temporal Distribution</h3>
+    <div class="grid">
+      <div class="card"><h3>Sequences by Collection Year</h3><canvas id="chartCollect"></canvas></div>
+      <div class="card"><h3>Sequences by Release Year</h3><canvas id="chartRelease"></canvas></div>
+    </div>
+
   </div>
 </div>
 
@@ -236,6 +243,24 @@
   new Chart(document.getElementById('chartLen'), { type: 'bar', data: {
     labels: bks.map(b=>`${b}-${b+step-1}`), datasets: [{ data: bks.map(b=>bins[b]), backgroundColor: '#2e86c1' }]
   }, options: { plugins: { legend: { display: false } }, scales: { x: { title: { text: 'Length (bp)', display: true } } } } });
+
+  // Date distributions — extract year from Collection_Date / Release_Date
+  const dateBins = arr => {
+    const m = {};
+    arr.forEach(v => {
+      const y = String(v||'').match(/\b(19|20)\d{2}\b/);
+      if (y) { m[y[0]] = (m[y[0]]||0) + 1; }
+    });
+    return Object.keys(m).sort().map(k => ({ y: k, n: m[k] }));
+  };
+  const collectDates = dateBins(f(refData, 'Collection_Date'));
+  const releaseDates = dateBins(f(refData, 'Release_Date'));
+  new Chart(document.getElementById('chartCollect'), { type: 'bar', data: {
+    labels: collectDates.map(d => d.y), datasets: [{ data: collectDates.map(d => d.n), backgroundColor: '#f39c12' }]
+  }, options: { plugins: { legend: { display: false } }, scales: { x: { title: { text: 'Year', display: true } } } } });
+  new Chart(document.getElementById('chartRelease'), { type: 'bar', data: {
+    labels: releaseDates.map(d => d.y), datasets: [{ data: releaseDates.map(d => d.n), backgroundColor: '#27ae60' }]
+  }, options: { plugins: { legend: { display: false } }, scales: { x: { title: { text: 'Year', display: true } } } } });
 
   document.getElementById('loading').style.display = 'none';
   document.getElementById('content').style.display = '';
