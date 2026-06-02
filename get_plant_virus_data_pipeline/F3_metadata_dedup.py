@@ -45,17 +45,10 @@ def extract_fasta(input_fasta: str, output_handle, target_accs: set):
     return extracted
 
 def clean_segment_name(seg_str: str) -> str:
-    """提取 Segment 核心标识符，用于跨来源匹配。
-    'RNA 2' → '2', 'DNA-A' → 'A', '2' → '2', 'RNA' → 'RNA'"""
+    """清理 Segment 字符串: 去空白/破折号/下划线, 转大写"""
     if not seg_str:
         return ""
-    seg = seg_str.replace(" ", "").replace("-", "").replace("_", "").upper()
-    # 去除已知前缀 (仅当后面还有内容, 避免把单独的 'RNA' 变成空串)
-    for prefix in ["GENOMICRNA", "GENOMICDNA", "SUBGENOMICRNA", "DEFECTIVERNA", "DIRNA", "PUTATIVERNA", "RNA", "DNA"]:
-        if seg.startswith(prefix) and len(seg) > len(prefix):
-            seg = seg[len(prefix):]
-            break
-    return seg
+    return seg_str.replace(" ", "").replace("-", "").replace("_", "").upper()
 
 def main():
     args = parse_args()
@@ -117,7 +110,7 @@ def main():
         ns_stats.append((cat, total_in_cat, kept_in_cat, len(new_taxids)))
 
     # =========================================================
-    # 策略 B：节段病毒 (Segment 级别智能补全 + 质量替换)
+    # 策略 B：节段病毒 — 每 TaxID 保留最高质量等级的所有记录
     # 优先级: RefSeq/ICTV(0) > RefSeq(1) > GenBank/ICTV(2) > GenBank(3)
     # =========================================================
     def quality_rank(seq_type: str) -> int:
@@ -128,84 +121,57 @@ def main():
         if has_ictv: return 2
         return 3
 
-    seg_keep_accs = set()
-    taxid_segments = collections.defaultdict(dict)   # {taxid: {norm_seg: (acc, rank)}}
-    taxid_unlabeled = {}                              # {taxid: (acc, rank, tier)}
-    taxid_has_refseq = set()                          # TaxID 至少有一条 RefSeq 记录
-    seg_stats = []
-
+    # 第一遍: 按 TaxID 收集所有记录, 确定每 TaxID 的最佳 rank
+    taxid_records = collections.defaultdict(list)  # {taxid: [(acc, norm_seg, rank, tier_idx)]}
     for tier_idx, cat in enumerate(seg_prio):
         cat_df = df.filter(pl.col("Category") == cat)
-        total_in_cat = cat_df.height
-        kept_in_cat = 0
-        new_taxids_count = 0
-
         for row in cat_df.iter_rows(named=True):
             tax = str(row["Taxid"])
             acc = row["Base_Accession"]
             norm_seg = clean_segment_name(row["Raw_Segment"])
             rank = quality_rank(row.get("Sequence_Type", ""))
-            if rank <= 1:
-                taxid_has_refseq.add(tax)
+            taxid_records[tax].append((acc, norm_seg, rank, tier_idx))
 
-            is_kept = False
-            is_new_tax = (tax not in taxid_segments) and (tax not in taxid_unlabeled)
+    # 第二遍: 每 TaxID 找最佳 rank, 保留该 rank 的所有记录
+    seg_keep_accs = set()
+    seg_stats_cat = {cat: {"total": 0, "kept": 0, "new_taxids": 0} for cat in seg_prio}
 
-            if norm_seg != "":
-                current = taxid_segments[tax].get(norm_seg)
-                if current is None:
-                    # 新节段 → 保留
-                    taxid_segments[tax][norm_seg] = (acc, rank)
+    for tax, records in taxid_records.items():
+        best_rank = min(r[2] for r in records)
+        best_records = [r for r in records if r[2] == best_rank]
+
+        # 在同最佳 rank 内, 段名去重 (保留 tier_idx 最小的, 即最高优先级的)
+        seen_segs = {}
+        has_labeled = False
+        for acc, seg, rank, tier_idx in sorted(best_records, key=lambda x: x[3]):
+            if seg != "":
+                has_labeled = True
+                if seg not in seen_segs:
+                    seen_segs[seg] = acc
                     seg_keep_accs.add(acc)
-                    is_kept = True
-                elif rank < current[1]:
-                    # 更高质量 → 替换旧的
-                    seg_keep_accs.discard(current[0])
-                    taxid_segments[tax][norm_seg] = (acc, rank)
+                    cat = seg_prio[tier_idx]
+                    seg_stats_cat[cat]["kept"] += 1
+            elif not has_labeled:
+                # 无段名: 只在没有带段名记录时保留第一条
+                if "unlabeled" not in seen_segs:
+                    seen_segs["unlabeled"] = acc
                     seg_keep_accs.add(acc)
-                    is_kept = True
-                # 否则同质量或更低 → 丢弃
-            else:
-                # 如果已有带 Segment 名的记录, 不再保留无 Segment 名的散装序列
-                if len(taxid_segments.get(tax, {})) > 0:
-                    pass
-                else:
-                    current = taxid_unlabeled.get(tax)
-                    if current is None:
-                        taxid_unlabeled[tax] = (acc, rank, tier_idx)
-                        seg_keep_accs.add(acc)
-                        is_kept = True
-                    elif rank < current[1]:
-                        # 更高质量 → 替换
-                        seg_keep_accs.discard(current[0])
-                        taxid_unlabeled[tax] = (acc, rank, tier_idx)
-                        seg_keep_accs.add(acc)
-                        is_kept = True
-                    elif tier_idx == current[2] and rank == current[1]:
-                        # 同层级同质量多条 → 保留
-                        seg_keep_accs.add(acc)
-                        is_kept = True
-                    # 更低质量或更低层级 → 丢弃
+                    cat = seg_prio[tier_idx]
+                    seg_stats_cat[cat]["kept"] += 1
 
-            if is_kept:
-                kept_in_cat += 1
-                if is_new_tax:
-                    new_taxids_count += 1
-
+    # 统计
+    seg_stats = []
+    for tier_idx, cat in enumerate(seg_prio):
+        cat_df = df.filter(pl.col("Category") == cat)
+        total_in_cat = cat_df.height
+        kept_in_cat = seg_stats_cat[cat]["kept"]
+        # 新 TaxID: 该层级首次出现的 TaxID 数
+        cat_taxids = set(
+            str(r["Taxid"]) for r in cat_df.iter_rows(named=True)
+            if str(r["Taxid"]) in taxid_records
+        )
+        new_taxids_count = len(cat_taxids)
         seg_stats.append((cat, total_in_cat, kept_in_cat, new_taxids_count))
-
-    # RefSeq 兜底: 有 RefSeq 的 TaxID, 剔除非 RefSeq 记录
-    n_refseq_cleanup = 0
-    for tax in taxid_has_refseq:
-        for norm_seg, (acc, rank) in list(taxid_segments.get(tax, {}).items()):
-            if rank > 1:  # GenBank/ICTV 或 GenBank
-                seg_keep_accs.discard(acc)
-                del taxid_segments[tax][norm_seg]
-                n_refseq_cleanup += 1
-        if tax in taxid_unlabeled and taxid_unlabeled[tax][1] > 1:
-            seg_keep_accs.discard(taxid_unlabeled[tax][0])
-            del taxid_unlabeled[tax]
-            n_refseq_cleanup += 1
 
     # =========================================================
     # 生成报告与提取序列
