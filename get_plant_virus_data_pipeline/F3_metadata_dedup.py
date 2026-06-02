@@ -90,22 +90,14 @@ def main():
         # 核心逻辑：剔除已经在高优先级中被收录过的 TaxID
         valid_df = cat_df.filter(~pl.col("Taxid").is_in(list(ns_seen_taxids)))
         
-        # 🚀 新增逻辑：Complete 层级内的 RefSeq 优先去重
-        if cat == "NonSegmented_Complete":
-            # 1. 找出这一批序列中，拥有 RefSeq 序列的独特 TaxID 集合
-            refseq_taxids = valid_df.filter(pl.col("Sequence_Type") == "RefSeq")["Taxid"].unique().to_list()
-            
-            # 2. 智能过滤：
-            # 条件1：如果是 RefSeq 序列，直接保留。
-            # 条件2：如果是 GenBank 序列，但该物种(Taxid)不在上面的 refseq_taxids 列表中，予以放行。
-            valid_df = valid_df.filter(
-                (pl.col("Sequence_Type") == "RefSeq") |
-                (~pl.col("Taxid").is_in(refseq_taxids))
-            )
-            
-            # 🌟 终极去重 (可选)：
-            # 如果你希望达到“每个物种绝对只保留唯一一条序列”，请取消下面这行代码的注释：
-            # valid_df = valid_df.unique(subset=["Taxid"], keep="first")
+        # Complete 层级: 每 TaxID 只保留一条, 优先级 RefSeq/ICTV > RefSeq > GenBank/ICTV > GenBank
+        if cat == “NonSegmented_Complete”:
+            valid_df = valid_df.with_columns(
+                pl.when(pl.col(“Sequence_Type”).str.contains(“RefSeq”)).then(pl.lit(0)).otherwise(pl.lit(2)).alias(“_refseq_rank”),
+                pl.when(pl.col(“Sequence_Type”).str.contains(“ICTV”)).then(pl.lit(0)).otherwise(pl.lit(1)).alias(“_ictv_rank”),
+            ).with_columns(
+                (pl.col(“_refseq_rank”) + pl.col(“_ictv_rank”)).alias(“_sort_rank”)
+            ).sort(“_sort_rank”).unique(subset=[“Taxid”], keep=”first”).drop([“_sort_rank”, “_refseq_rank”, “_ictv_rank”])
 
         kept_in_cat = valid_df.height
         
