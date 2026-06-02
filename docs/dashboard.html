@@ -104,12 +104,21 @@
       };
       const colors = ['#2e86c1','#e74c3c','#27ae60','#f39c12','#8e44ad','#1abc9c','#e67e22','#2980b9','#c0392b','#16a085'];
 
-      // -- Category --
+      // -- Category grouped by Segmented/NonSegmented --
       const catCounts = {};
       data.forEach(r => { const v = r[catIdx] || 'Unknown'; catCounts[v] = (catCounts[v]||0) + 1; });
+      const catSubtypes = ['Complete','Partial_Genome','CDS_Fragment','Partial_taxid','Other_Partial','unknown'];
+      const segCats = catSubtypes.map(s => `Segmented_${s}`);
+      const nsCats = catSubtypes.map(s => `NonSegmented_${s}`);
       new Chart(document.getElementById('chartCategory'), { type: 'bar', data: {
-        labels: Object.keys(catCounts), datasets: [{ data: Object.values(catCounts), backgroundColor: colors }]
-      }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
+        labels: catSubtypes.map(s => s.replace('_',' ')),
+        datasets: [
+          { label: 'Non‑Segmented', data: nsCats.map(k => (catCounts[k]||0)), backgroundColor: '#2e86c1' },
+          { label: 'Segmented', data: segCats.map(k => (catCounts[k]||0)), backgroundColor: '#e74c3c' }
+        ]
+      }, options: { responsive: true, scales: { x: { stacked: false }, y: { title: { display: true, text: 'Sequences' } } },
+        plugins: { legend: { position: 'top' } }
+      } });
 
       // -- Family --
       const topFam = top(data.map(r => r[famIdx] || 'Unknown'));
