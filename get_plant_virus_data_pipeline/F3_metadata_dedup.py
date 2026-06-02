@@ -121,57 +121,56 @@ def main():
         if has_ictv: return 2
         return 3
 
-    # 第一遍: 按 TaxID 收集所有记录, 确定每 TaxID 的最佳 rank
-    taxid_records = collections.defaultdict(list)  # {taxid: [(acc, norm_seg, rank, tier_idx)]}
+    # 跨层级 TaxID 拦截 + 同层级内 Segment 去重 (优先高质量)
+    seg_keep_accs = set()
+    seg_seen_taxids = set()
+    seg_taxid_segs = collections.defaultdict(set)        # {taxid: set(segment_names)}
+    seg_stats = []
+
     for tier_idx, cat in enumerate(seg_prio):
         cat_df = df.filter(pl.col("Category") == cat)
-        for row in cat_df.iter_rows(named=True):
+        total_in_cat = cat_df.height
+
+        # 跨层级: 剔除已在更高层级见过的 TaxID
+        valid_df = cat_df.filter(~pl.col("Taxid").is_in(list(seg_seen_taxids)))
+
+        # 同层级内: 收集各 TaxID 的最佳质量记录 (RefSeq/ICTV 优先)
+        taxid_best = {}  # {taxid: {seg: (acc, rank)}}
+        for row in valid_df.iter_rows(named=True):
             tax = str(row["Taxid"])
             acc = row["Base_Accession"]
             norm_seg = clean_segment_name(row["Raw_Segment"])
             rank = quality_rank(row.get("Sequence_Type", ""))
-            taxid_records[tax].append((acc, norm_seg, rank, tier_idx))
 
-    # 第二遍: 每 TaxID 找最佳 rank, 保留该 rank 的所有记录
-    seg_keep_accs = set()
-    seg_stats_cat = {cat: {"total": 0, "kept": 0, "new_taxids": 0} for cat in seg_prio}
+            if tax not in taxid_best:
+                taxid_best[tax] = {}
+            current = taxid_best[tax].get(norm_seg if norm_seg else "__unlabeled__")
+            if norm_seg:
+                if current is None or rank < current[1]:
+                    taxid_best[tax][norm_seg] = (acc, rank)
+            else:
+                # 无段名: 只在没有带段名记录时保留
+                if not any(k != "__unlabeled__" for k in taxid_best[tax]):
+                    if current is None or rank < current[1]:
+                        taxid_best[tax]["__unlabeled__"] = (acc, rank)
 
-    for tax, records in taxid_records.items():
-        best_rank = min(r[2] for r in records)
-        best_records = [r for r in records if r[2] == best_rank]
+        kept_in_cat = 0
+        new_taxids_in_cat = 0
+        for tax, segs in taxid_best.items():
+            is_new = tax not in seg_seen_taxids
+            for seg_key, (acc, rank) in segs.items():
+                seg_keep_accs.add(acc)
+                kept_in_cat += 1
+            seg_seen_taxids.add(tax)
+            seg_taxid_segs[tax].update(
+                k for k in segs if k != "__unlabeled__"
+            )
+            if is_new:
+                new_taxids_in_cat += 1
 
-        # 在同最佳 rank 内, 段名去重 (保留 tier_idx 最小的, 即最高优先级的)
-        seen_segs = {}
-        has_labeled = False
-        for acc, seg, rank, tier_idx in sorted(best_records, key=lambda x: x[3]):
-            if seg != "":
-                has_labeled = True
-                if seg not in seen_segs:
-                    seen_segs[seg] = acc
-                    seg_keep_accs.add(acc)
-                    cat = seg_prio[tier_idx]
-                    seg_stats_cat[cat]["kept"] += 1
-            elif not has_labeled:
-                # 无段名: 只在没有带段名记录时保留第一条
-                if "unlabeled" not in seen_segs:
-                    seen_segs["unlabeled"] = acc
-                    seg_keep_accs.add(acc)
-                    cat = seg_prio[tier_idx]
-                    seg_stats_cat[cat]["kept"] += 1
+        seg_stats.append((cat, total_in_cat, kept_in_cat, new_taxids_in_cat))
 
-    # 统计
-    seg_stats = []
-    for tier_idx, cat in enumerate(seg_prio):
-        cat_df = df.filter(pl.col("Category") == cat)
-        total_in_cat = cat_df.height
-        kept_in_cat = seg_stats_cat[cat]["kept"]
-        # 新 TaxID: 该层级首次出现的 TaxID 数
-        cat_taxids = set(
-            str(r["Taxid"]) for r in cat_df.iter_rows(named=True)
-            if str(r["Taxid"]) in taxid_records
-        )
-        new_taxids_count = len(cat_taxids)
-        seg_stats.append((cat, total_in_cat, kept_in_cat, new_taxids_count))
+    total_seg_taxids = len(seg_seen_taxids)
 
     # =========================================================
     # 生成报告与提取序列
@@ -186,7 +185,7 @@ def main():
         print(f" - {cat:<27} | Seq={total:<4} | ➡️ Kept={kept:<4} | TaxID={new_tax:<4}")
     print(f" 🟢 非节段最终保留序列: {len(ns_keep_accs):,} 条 (覆盖 {len(ns_seen_taxids):,} 个独特TaxID)")
 
-    total_seg_taxids = len(taxid_records)
+    # (total_seg_taxids defined above)
     print("\n【 第一阵营：节段病毒 (按缺失节段 Segment 补全提取) 】")
     print(f"{'分类层级 (Priority Category)':<30} | {'原始序列':<8} | ➡️ {'保留提取':<8} | {'贡献新TaxID':<8}")
     for cat, total, kept, new_tax in seg_stats:
