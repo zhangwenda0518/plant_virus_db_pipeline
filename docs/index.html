@@ -6,22 +6,29 @@
 <title>Plant Virus Reference Database</title>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/searchpanes/2.2.0/css/searchPanes.dataTables.min.css">
 <style>
+  * { box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
   .header { background: linear-gradient(135deg, #1a5276, #2e86c1); color: white; padding: 24px 32px; border-radius: 8px; margin-bottom: 20px; }
   .header h1 { margin: 0 0 8px 0; font-size: 24px; }
-  .header p { margin: 0; opacity: 0.85; font-size: 14px; }
-  .stats { display: flex; gap: 24px; margin-top: 12px; }
+  .header p { margin: 0 0 16px 0; opacity: 0.85; font-size: 14px; }
+  .tabs { display: flex; gap: 4px; margin-bottom: 20px; }
+  .tab { padding: 10px 24px; background: rgba(255,255,255,0.15); color: white; border: none; border-radius: 6px 6px 0 0; cursor: pointer; font-size: 14px; font-weight: 500; transition: background 0.2s; }
+  .tab:hover { background: rgba(255,255,255,0.25); }
+  .tab.active { background: white; color: #1a5276; font-weight: 700; }
+  .stats { display: flex; gap: 24px; flex-wrap: wrap; }
   .stat { display: flex; align-items: center; gap: 6px; font-size: 13px; opacity: 0.9; }
-  .stat span { font-weight: 700; font-size: 18px; }
-  .container { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .stat b { font-size: 20px; }
+  .container { background: white; border-radius: 0 8px 8px 8px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
   .loading { text-align: center; padding: 60px; color: #666; }
   .spinner { width: 40px; height: 40px; border: 3px solid #e0e0e0; border-top: 3px solid #2e86c1; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 16px; }
   @keyframes spin { to { transform: rotate(360deg); } }
-  table.dataTable { font-size: 13px; width: 100% !important; }
-  table.dataTable thead th { white-space: nowrap; background: #f8f9fa; border-bottom: 2px solid #2e86c1; padding: 10px 12px; font-weight: 600; }
-  .dtsp-panes { max-height: 300px; overflow-y: auto; }
+  table.dataTable { font-size: 12px; width: 100% !important; }
+  table.dataTable thead th { white-space: nowrap; background: #f8f9fa; border-bottom: 2px solid #2e86c1; padding: 8px 10px; font-weight: 600; font-size: 12px; }
+  .dataTables_wrapper { font-size: 13px; }
+  .btn-dl { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: #2e86c1; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; margin-left: 12px; text-decoration: none; }
+  .btn-dl:hover { background: #1a5276; }
+  .toolbar { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
   .footer { text-align: center; padding: 20px; color: #999; font-size: 12px; }
   .footer a { color: #2e86c1; text-decoration: none; }
 </style>
@@ -30,19 +37,26 @@
 
 <div class="header">
   <h1>Plant Virus Reference Database</h1>
-  <p>ICTV-verified plant virus reference sequences with deduplicated &amp; clustered genomes</p>
-  <div class="stats" id="statsBar">
-    <div class="stat">Sequences: <span id="statSeqs">-</span></div>
-    <div class="stat">TaxIDs: <span id="statTaxids">-</span></div>
-    <div class="stat">Families: <span id="statFamilies">-</span></div>
-    <div class="stat">Segmented: <span id="statSeg">-</span></div>
+  <p>ICTV-verified plant virus reference sequences &middot; deduplicated &amp; clustered genomes</p>
+  <div>
+    <button class="tab active" data-tab="all" onclick="switchTab('all')">All Sequences</button>
+    <button class="tab" data-tab="nonsegmented" onclick="switchTab('nonsegmented')">Non‑Segmented</button>
+    <button class="tab" data-tab="segmented" onclick="switchTab('segmented')">Segmented</button>
+  </div>
+  <div class="stats">
+    <div class="stat">Sequences: <b id="statSeqs">-</b></div>
+    <div class="stat">TaxIDs: <b id="statTaxids">-</b></div>
+    <div class="stat">Families: <b id="statFamilies">-</b></div>
+    <div class="stat">Non‑Segmented: <b id="statNS">-</b></div>
+    <div class="stat">Segmented: <b id="statSeg">-</b></div>
   </div>
 </div>
 
 <div class="container">
-  <div class="loading" id="loading">
-    <div class="spinner"></div>
-    <p>Loading database...</p>
+  <div class="loading" id="loading"><div class="spinner"></div><p>Loading database...</p></div>
+  <div class="toolbar" id="toolbar" style="display:none">
+    <a class="btn-dl" href="data/final.cluster.ref_info.tsv" download>Download TSV</a>
+    <span style="font-size:13px;color:#888" id="infoText"></span>
   </div>
   <table id="virusTable" class="display" style="display:none; width:100%"></table>
 </div>
@@ -57,85 +71,79 @@
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
-<script src="https://cdn.datatables.net/searchpanes/2.2.0/js/dataTables.searchPanes.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 
 <script>
-(async function() {
+let table, fields, catIdx, allRows = [], segRows = [], nsRows = [], currentTab = 'all';
+
+async function init() {
   const resp = await fetch('data/final.cluster.ref_info.tsv');
-  if (!resp.ok) { document.getElementById('loading').innerHTML = '<p style="color:red">Failed to load data file</p>'; return; }
+  if (!resp.ok) { document.getElementById('loading').innerHTML='<p style="color:red">Failed to load data</p>'; return; }
   const text = await resp.text();
 
   Papa.parse(text, {
-    header: true,
-    skipEmptyLines: true,
-    delimiter: '\t',
-    complete: function(results) {
-      const data = results.data;
-      const fields = results.meta.fields;
-      if (!data.length) { document.getElementById('loading').innerHTML = '<p>No data found</p>'; return; }
+    header: true, skipEmptyLines: true, delimiter: '\t',
+    complete(results) {
+      fields = results.meta.fields;
+      catIdx = fields.indexOf('Category');
+      // Convert to array-of-arrays for DataTables
+      for (const row of results.data) {
+        const arr = fields.map(f => row[f] || '');
+        allRows.push(arr);
+        const cat = arr[catIdx] || '';
+        if (cat.startsWith('Segmented')) segRows.push(arr);
+        else nsRows.push(arr);
+      }
 
       // Stats
-      const taxids = new Set(data.map(r => r.Taxid).filter(Boolean));
-      const families = new Set(data.map(r => r.VMR_Family).filter(Boolean));
-      const segCount = data.filter(r => (r.Category || '').startsWith('Segmented')).length;
-      document.getElementById('statSeqs').textContent = data.length.toLocaleString();
-      document.getElementById('statTaxids').textContent = taxids.size.toLocaleString();
-      document.getElementById('statFamilies').textContent = families.size.toLocaleString();
-      document.getElementById('statSeg').textContent = segCount.toLocaleString();
+      const allTaxids = new Set(allRows.map(r => r[fields.indexOf('Taxid')]));
+      const allFams = new Set(allRows.map(r => r[fields.indexOf('VMR_Family')]).filter(Boolean));
+      document.getElementById('statSeqs').textContent = allRows.length.toLocaleString();
+      document.getElementById('statTaxids').textContent = allTaxids.size.toLocaleString();
+      document.getElementById('statFamilies').textContent = allFams.size.toLocaleString();
+      document.getElementById('statNS').textContent = nsRows.length.toLocaleString();
+      document.getElementById('statSeg').textContent = segRows.length.toLocaleString();
 
-      // Build table header
-      const thead = '<thead><tr>' + fields.map(f => `<th>${f}</th>`).join('') + '</tr></thead>';
-
-      // Build rows
-      let tbody = '<tbody>';
-      for (const row of data) {
-        tbody += '<tr>' + fields.map(f => {
-          const v = row[f] || '';
-          return `<td>${escapeHtml(v)}</td>`;
-        }).join('') + '</tr>';
-      }
-      tbody += '</tbody>';
-
-      const tableEl = document.getElementById('virusTable');
-      tableEl.innerHTML = thead + tbody;
-      tableEl.style.display = '';
+      buildTable(allRows);
       document.getElementById('loading').style.display = 'none';
-
-      // Init DataTables
-      const table = $('#virusTable').DataTable({
-        pageLength: 50,
-        lengthMenu: [[25, 50, 100, 500, -1], [25, 50, 100, 500, 'All']],
-        order: [[0, 'asc']],
-        scrollX: true,
-        dom: 'PBfrtip',
-        buttons: [
-          { extend: 'colvis', text: 'Columns', className: 'btn-sm' },
-          'copy', 'csv'
-        ],
-        searchPanes: {
-          viewCount: false,
-          columns: [4, 6, 7, 22, 23] // Species_ICTV, Category, Topology, VMR_Family, VMR_Genus
-        },
-        columnDefs: [
-          { searchPanes: { show: true }, targets: [4, 6, 7, 22, 23] },
-          { targets: [13, 14, 19], visible: false }, // hide long text cols by default
-          { targets: '_all', className: 'dt-nowrap' }
-        ]
-      });
-
-      // SearchPanes for key columns
-      table.searchPanes.container().prependTo(table.table().container());
+      document.getElementById('virusTable').style.display = '';
+      document.getElementById('toolbar').style.display = '';
     }
   });
+}
 
-  function escapeHtml(str) {
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
-  }
-})();
+function buildTable(rows) {
+  if (table) table.destroy();
+  table = $('#virusTable').DataTable({
+    data: rows,
+    columns: fields.map(f => ({ title: f })),
+    deferRender: true,
+    pageLength: 50,
+    lengthMenu: [[25, 50, 100, 500, -1], [25, 50, 100, 500, 'All']],
+    order: [[0, 'asc']],
+    scrollX: true,
+    dom: 'Bfrtip',
+    buttons: [
+      { extend: 'colvis', text: 'Columns' },
+      { extend: 'csv', text: 'CSV', exportOptions: { columns: ':visible' } },
+      { extend: 'copy', text: 'Copy' }
+    ],
+    columnDefs: [
+      { targets: [13, 14, 19], visible: false }
+    ]
+  });
+  document.getElementById('infoText').textContent = `Showing ${rows.length.toLocaleString()} records`;
+}
+
+window.switchTab = function(tab) {
+  currentTab = tab;
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+  const rows = tab === 'segmented' ? segRows : tab === 'nonsegmented' ? nsRows : allRows;
+  buildTable(rows);
+};
+
+init();
 </script>
-
 </body>
 </html>
