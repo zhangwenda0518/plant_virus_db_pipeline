@@ -82,11 +82,11 @@
     <!-- KPIs -->
     <div class="kpis" id="kpis"></div>
 
-    <!-- Category comparison -->
-    <h3 class="section-title">Category Distribution</h3>
+    <!-- Category / Sequence Type comparison -->
+    <h3 class="section-title">Data Composition</h3>
     <div class="compare">
-      <div class="card"><h3>Full Database</h3><canvas id="chartCatFull"></canvas></div>
-      <div class="card"><h3>Final Reference (After Dedup)</h3><canvas id="chartCatRef"></canvas></div>
+      <div class="card"><h3>Full Database — Sequence Types</h3><canvas id="chartCatFull"></canvas></div>
+      <div class="card"><h3>Final Reference — Category</h3><canvas id="chartCatRef"></canvas></div>
     </div>
 
     <!-- Host + Family -->
@@ -179,11 +179,20 @@
     }, options: { responsive: true, plugins: { legend: { position: 'top' } } } });
   };
   makeCatChart('chartCatRef', refData);
-  if (fullData && hasCol(fullData, 'Category')) {
-    makeCatChart('chartCatFull', fullData);
+  if (fullData) {
+    if (hasCol(fullData, 'Category')) {
+      makeCatChart('chartCatFull', fullData);
+    } else {
+      // Full TSV lacks Category → show Sequence_Type instead
+      const st = {};
+      fullData.forEach(r => { const v = (r.Sequence_Type||'Unknown').replace('/ICTV',''); st[v] = (st[v]||0)+1; });
+      const stLabels = Object.keys(st), stVals = Object.values(st);
+      new Chart(document.getElementById('chartCatFull'), { type: 'bar', data: {
+        labels: stLabels, datasets: [{ data: stVals, backgroundColor: ['#2e86c1','#27ae60','#e74c3c','#f39c12','#8e44ad','#1abc9c'] }]
+      }, options: { indexAxis: 'y', plugins: { legend: { display: false } } } });
+    }
   } else {
-    const msg = fullData ? 'Full TSV loaded but missing Category column (pre-F2 data).' : 'Plant_Virus_Info.full.tsv not uploaded.';
-    document.getElementById('chartCatFull').parentElement.innerHTML = '<h3>Full Database</h3><p style="color:#999;text-align:center;padding:60px 0">'+msg+'</p>';
+    document.getElementById('chartCatFull').parentElement.innerHTML = '<h3>Full Database</h3><p style="color:#999;text-align:center;padding:60px 0">Plant_Virus_Info.full.tsv not uploaded.</p>';
   }
 
   // Host (top 20) — from Host column
