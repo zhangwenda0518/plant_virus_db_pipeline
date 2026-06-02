@@ -45,11 +45,17 @@ def extract_fasta(input_fasta: str, output_handle, target_accs: set):
     return extracted
 
 def clean_segment_name(seg_str: str) -> str:
-    """清理并标准化 Segment 字符串，便于精准匹配"""
+    """提取 Segment 核心标识符，用于跨来源匹配。
+    'RNA 2' → '2', 'DNA-A' → 'A', '2' → '2', 'RNA' → 'RNA'"""
     if not seg_str:
         return ""
-    # 移除空格、破折号和下划线，转大写
-    return seg_str.replace(" ", "").replace("-", "").replace("_", "").upper()
+    seg = seg_str.replace(" ", "").replace("-", "").replace("_", "").upper()
+    # 去除已知前缀 (仅当后面还有内容, 避免把单独的 'RNA' 变成空串)
+    for prefix in ["GENOMICRNA", "GENOMICDNA", "SUBGENOMICRNA", "DEFECTIVERNA", "DIRNA", "PUTATIVERNA", "RNA", "DNA"]:
+        if seg.startswith(prefix) and len(seg) > len(prefix):
+            seg = seg[len(prefix):]
+            break
+    return seg
 
 def main():
     args = parse_args()
@@ -125,6 +131,7 @@ def main():
     seg_keep_accs = set()
     taxid_segments = collections.defaultdict(dict)   # {taxid: {norm_seg: (acc, rank)}}
     taxid_unlabeled = {}                              # {taxid: (acc, rank, tier)}
+    taxid_has_refseq = set()                          # TaxID 至少有一条 RefSeq 记录
     seg_stats = []
 
     for tier_idx, cat in enumerate(seg_prio):
@@ -138,6 +145,8 @@ def main():
             acc = row["Base_Accession"]
             norm_seg = clean_segment_name(row["Raw_Segment"])
             rank = quality_rank(row.get("Sequence_Type", ""))
+            if rank <= 1:
+                taxid_has_refseq.add(tax)
 
             is_kept = False
             is_new_tax = (tax not in taxid_segments) and (tax not in taxid_unlabeled)
@@ -157,22 +166,26 @@ def main():
                     is_kept = True
                 # 否则同质量或更低 → 丢弃
             else:
-                current = taxid_unlabeled.get(tax)
-                if current is None:
-                    taxid_unlabeled[tax] = (acc, rank, tier_idx)
-                    seg_keep_accs.add(acc)
-                    is_kept = True
-                elif rank < current[1]:
-                    # 更高质量 → 替换
-                    seg_keep_accs.discard(current[0])
-                    taxid_unlabeled[tax] = (acc, rank, tier_idx)
-                    seg_keep_accs.add(acc)
-                    is_kept = True
-                elif tier_idx == current[2] and rank == current[1]:
-                    # 同层级同质量多条 → 保留
-                    seg_keep_accs.add(acc)
-                    is_kept = True
-                # 更低质量或更低层级 → 丢弃
+                # 如果已有带 Segment 名的记录, 不再保留无 Segment 名的散装序列
+                if len(taxid_segments.get(tax, {})) > 0:
+                    pass
+                else:
+                    current = taxid_unlabeled.get(tax)
+                    if current is None:
+                        taxid_unlabeled[tax] = (acc, rank, tier_idx)
+                        seg_keep_accs.add(acc)
+                        is_kept = True
+                    elif rank < current[1]:
+                        # 更高质量 → 替换
+                        seg_keep_accs.discard(current[0])
+                        taxid_unlabeled[tax] = (acc, rank, tier_idx)
+                        seg_keep_accs.add(acc)
+                        is_kept = True
+                    elif tier_idx == current[2] and rank == current[1]:
+                        # 同层级同质量多条 → 保留
+                        seg_keep_accs.add(acc)
+                        is_kept = True
+                    # 更低质量或更低层级 → 丢弃
 
             if is_kept:
                 kept_in_cat += 1
@@ -180,6 +193,19 @@ def main():
                     new_taxids_count += 1
 
         seg_stats.append((cat, total_in_cat, kept_in_cat, new_taxids_count))
+
+    # RefSeq 兜底: 有 RefSeq 的 TaxID, 剔除非 RefSeq 记录
+    n_refseq_cleanup = 0
+    for tax in taxid_has_refseq:
+        for norm_seg, (acc, rank) in list(taxid_segments.get(tax, {}).items()):
+            if rank > 1:  # GenBank/ICTV 或 GenBank
+                seg_keep_accs.discard(acc)
+                del taxid_segments[tax][norm_seg]
+                n_refseq_cleanup += 1
+        if tax in taxid_unlabeled and taxid_unlabeled[tax][1] > 1:
+            seg_keep_accs.discard(taxid_unlabeled[tax][0])
+            del taxid_unlabeled[tax]
+            n_refseq_cleanup += 1
 
     # =========================================================
     # 生成报告与提取序列
