@@ -48,8 +48,9 @@ async function loadTable(tableId, isSegmented) {
         ...fields.map(f => ({ title: f }))];
 
       if (currentTable) { currentTable.destroy(); currentTable = null; }
-      // Clear old table HTML to avoid column mismatch when switching Full/Ref
-      $(tableId).empty();
+      // Fully remove and recreate table element (Ref=28cols, Full=19cols)
+      $(tableId).remove();
+      $('<table id="' + tableId.substring(1) + '" class="display" style="width:100%"></table>').appendTo('#tableWrap');
 
       const dataWithCheck = rows.map((r, i) => ['<input type="checkbox" class="rowCheck" data-idx="' + i + '">', ...r.map(escapeHtml)]);
 
