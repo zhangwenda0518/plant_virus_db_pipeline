@@ -9,9 +9,6 @@ const SOURCES = {
 
 async function loadTable(tableId, isSegmented) {
   const src = SOURCES[currentSource];
-  const pageTitle = (isSegmented ? 'Segmented' : 'Non-Segmented') + ' Viruses';
-  document.title = pageTitle + ' — Plant Virus DB';
-  document.getElementById('sourceLabel').textContent = 'Source: ' + src.label;
   document.getElementById('loading').style.display = '';
   document.getElementById('tableWrap').style.display = 'none';
   document.getElementById('toolbar').style.display = 'none';
@@ -26,57 +23,46 @@ async function loadTable(tableId, isSegmented) {
       const fields = results.meta.fields;
       const hasCategory = fields.includes('Category');
       const rows = [];
-
       for (const row of results.data) {
         const arr = fields.map(f => (row[f] != null ? String(row[f]) : ''));
         const cat = hasCategory ? (row['Category'] || '') : null;
-        const seg = row['Segment'] || '';
         if (hasCategory) {
           if (isSegmented && cat.startsWith('Segmented')) rows.push(arr);
           else if (!isSegmented && cat.startsWith('NonSegmented')) rows.push(arr);
         } else {
-          const hasSegment = seg && seg.trim().length > 0 && !/^\d+$/.test(seg.trim());
-          if ((isSegmented && hasSegment) || (!isSegmented && !hasSegment)) rows.push(arr);
+          const s = (row['Segment'] || '').trim();
+          const hs = s.length > 0 && !/^\d+$/.test(s);
+          if ((isSegmented && hs) || (!isSegmented && !hs)) rows.push(arr);
         }
       }
-
       currentRows = rows;
       currentFields = fields;
 
-      // Build table with checkbox column
+      // Destroy old table and replace DOM
+      if (currentTable) { currentTable.destroy(); currentTable = null; }
+      $('#tableWrap').empty();
+      const tbl = document.createElement('table');
+      tbl.className = 'display'; tbl.style.width = '100%';
+      document.getElementById('tableWrap').appendChild(tbl);
+
       const cols = [{ title: '<input type="checkbox" id="selectAll" onclick="toggleAll(this)">', orderable: false, width: '30px' },
         ...fields.map(f => ({ title: f }))];
-
-      if (currentTable) { currentTable.destroy(); currentTable = null; }
-      // Fully remove and recreate table element (Ref=28cols, Full=19cols)
-      $(tableId).remove();
-      $('<table id="' + tableId.substring(1) + '" class="display" style="width:100%"></table>').appendTo('#tableWrap');
-
       const dataWithCheck = rows.map((r, i) => ['<input type="checkbox" class="rowCheck" data-idx="' + i + '">', ...r.map(escapeHtml)]);
 
-      currentTable = $(tableId).DataTable({
-        data: dataWithCheck,
-        columns: cols,
-        deferRender: true,
-        pageLength: 50,
-        lengthMenu: [[25, 50, 100, 500, -1], [25, 50, 100, 500, 'All']],
-        order: [[1, 'asc']],
-        scrollX: true,
-        dom: 'Bfrtip',
+      currentTable = $(tbl).DataTable({
+        data: dataWithCheck, columns: cols, deferRender: true,
+        pageLength: 50, lengthMenu: [[25, 50, 100, 500, -1], [25, 50, 100, 500, 'All']],
+        order: [[1, 'asc']], scrollX: true, dom: 'Bfrtip',
         buttons: [
           { extend: 'colvis', text: 'Columns' },
-          { extend: 'csv', text: 'CSV All', exportOptions: { columns: ':visible', orthogonal: 'export' },
-            action: function(e, dt, node, config) { exportSelected('csv'); } },
-          { text: 'CSV Selected', action: function() { exportSelected('csv'); },
-            className: 'btn-selected' },
+          { text: 'CSV Selected', action: function() { exportSelected('csv'); } },
           { text: 'TSV Selected', action: function() { exportSelected('tsv'); } },
           { text: 'Copy Selected', action: function() { exportSelected('copy'); } }
         ],
-        columnDefs: [{ targets: [0], searchable: false, render: (d) => d },
-          { targets: [14, 15, 20], visible: false }]
+        columnDefs: [{ targets: [0], searchable: false, render: (d) => d }]
       });
 
-      document.getElementById('countText').textContent = rows.length.toLocaleString() + ' records';
+      document.getElementById('countText').textContent = rows.length.toLocaleString() + ' records ' + src.label;
       document.getElementById('selectedCount').textContent = '';
       document.getElementById('loading').style.display = 'none';
       document.getElementById('tableWrap').style.display = '';
