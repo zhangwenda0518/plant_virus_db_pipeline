@@ -143,8 +143,8 @@
   // KPIs comparing full → final
   const kpiRow = (label, vFull, vRef) => {
     const d = vFull !== null ? vFull - vRef : 0;
-    const ds = vFull !== null ? `<span class="delta ${d>0?'down':'up'}">${d>0?'-'+d.toLocaleString():'+'+Math.abs(d).toLocaleString()}</span>` : '';
-    return `<div class="kpi"><div class="val">${vRef.toLocaleString()}</div><div class="lbl">${label}</div><div class="sub">${ds} vs full</div></div>`;
+    const ds = vFull !== null ? `<span class="delta ${d>0?'down':'up'}">${d>0?'-'+d.toLocaleString():'+'+Math.abs(d).toLocaleString()} vs full</span>` : '';
+    return `<div class="kpi"><div class="val">${vRef.toLocaleString()}</div><div class="lbl">${label}</div><div class="sub">${ds}</div></div>`;
   };
   document.getElementById('kpis').innerHTML =
     kpiRow('Sequences', fullStats?.seqs ?? null, refStats.seqs) +
@@ -171,7 +171,11 @@
     }, options: { responsive: true, plugins: { legend: { position: 'top' } } } });
   };
   makeCatChart('chartCatRef', refData);
-  if (fullData) makeCatChart('chartCatFull', fullData);
+  if (fullData) {
+    makeCatChart('chartCatFull', fullData);
+  } else {
+    document.getElementById('chartCatFull').parentElement.innerHTML = '<h3>Full Database</h3><p style="color:#999;text-align:center;padding:60px 0">Plant_Virus_Info.full.tsv not uploaded.<br>Run: <code>cp Plant_Virus_Info.full.tsv docs/data/</code></p>';
+  }
 
   // Host (top 20) — from Host column
   const f = (d, name) => d.map(r => r[name] || '').filter(Boolean);
