@@ -121,54 +121,47 @@ def main():
         if has_ictv: return 2
         return 3
 
-    # 跨层级 TaxID 拦截 + 同层级内 Segment 去重 (优先高质量)
+    # 全局: 每 TaxID×Segment 保留最佳质量, 不跨层级拦截
     seg_keep_accs = set()
-    seg_seen_taxids = set()
-    seg_taxid_segs = collections.defaultdict(set)        # {taxid: set(segment_names)}
-    seg_stats = []
+    # {taxid: {seg: (acc, rank, tier_idx)}}
+    taxid_best = collections.defaultdict(dict)
+    seg_stats_cat = {cat: {"total": 0, "kept": 0} for cat in seg_prio}
 
     for tier_idx, cat in enumerate(seg_prio):
         cat_df = df.filter(pl.col("Category") == cat)
-        total_in_cat = cat_df.height
+        seg_stats_cat[cat]["total"] = cat_df.height
 
-        # 跨层级: 剔除已在更高层级见过的 TaxID
-        valid_df = cat_df.filter(~pl.col("Taxid").is_in(list(seg_seen_taxids)))
-
-        # 同层级内: 收集各 TaxID 的最佳质量记录 (RefSeq/ICTV 优先)
-        taxid_best = {}  # {taxid: {seg: (acc, rank)}}
-        for row in valid_df.iter_rows(named=True):
+        for row in cat_df.iter_rows(named=True):
             tax = str(row["Taxid"])
             acc = row["Base_Accession"]
             norm_seg = clean_segment_name(row["Raw_Segment"])
             rank = quality_rank(row.get("Sequence_Type", ""))
 
-            if tax not in taxid_best:
-                taxid_best[tax] = {}
-            current = taxid_best[tax].get(norm_seg if norm_seg else "__unlabeled__")
-            if norm_seg:
-                if current is None or rank < current[1]:
-                    taxid_best[tax][norm_seg] = (acc, rank)
-            else:
-                # 无段名: 只在没有带段名记录时保留
-                if not any(k != "__unlabeled__" for k in taxid_best[tax]):
-                    if current is None or rank < current[1]:
-                        taxid_best[tax]["__unlabeled__"] = (acc, rank)
+            key = norm_seg if norm_seg else "__unlabeled__"
+            current = taxid_best[tax].get(key)
+            if current is None or rank < current[1] or (rank == current[1] and tier_idx < current[2]):
+                taxid_best[tax][key] = (acc, rank, tier_idx)
 
-        kept_in_cat = 0
-        new_taxids_in_cat = 0
-        for tax, segs in taxid_best.items():
-            is_new = tax not in seg_seen_taxids
-            for seg_key, (acc, rank) in segs.items():
-                seg_keep_accs.add(acc)
-                kept_in_cat += 1
-            seg_seen_taxids.add(tax)
-            seg_taxid_segs[tax].update(
-                k for k in segs if k != "__unlabeled__"
-            )
-            if is_new:
-                new_taxids_in_cat += 1
+    # 第二遍: 应用规则
+    for tax, segs in taxid_best.items():
+        has_labeled = any(k != "__unlabeled__" for k in segs)
+        for seg_key, (acc, rank, tier_idx) in segs.items():
+            if seg_key == "__unlabeled__" and has_labeled:
+                continue  # 有带段名记录时丢弃无段名散装序列
+            seg_keep_accs.add(acc)
+            cat = seg_prio[tier_idx]
+            seg_stats_cat[cat]["kept"] += 1
 
-        seg_stats.append((cat, total_in_cat, kept_in_cat, new_taxids_in_cat))
+    seg_stats = []
+    new_taxids_seen = set()
+    for tier_idx, cat in enumerate(seg_prio):
+        cat_df = df.filter(pl.col("Category") == cat)
+        total_in_cat = seg_stats_cat[cat]["total"]
+        kept_in_cat = seg_stats_cat[cat]["kept"]
+        cat_taxids = set(str(r["Taxid"]) for r in cat_df.iter_rows(named=True))
+        new_in_cat = [t for t in cat_taxids if t not in new_taxids_seen and t in taxid_best]
+        new_taxids_seen.update(t for t in cat_taxids if t in taxid_best)
+        seg_stats.append((cat, total_in_cat, kept_in_cat, len(new_in_cat)))
 
     total_seg_taxids = len(seg_seen_taxids)
 
