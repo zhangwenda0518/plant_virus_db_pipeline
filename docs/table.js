@@ -45,17 +45,30 @@ async function loadTable(tableId, isSegmented) {
       tbl.className = 'display'; tbl.style.width = '100%';
       document.getElementById('tableWrap').appendChild(tbl);
 
+      // Find Accession column index (column 0 in fields)
+      const accIdx = fields.findIndex(f => f === 'Accession');
+
       const cols = [{ title: '<input type="checkbox" id="selectAll" onclick="toggleAll(this)">', orderable: false, width: '30px' },
-        ...fields.map(f => ({ title: f }))];
-      const dataWithCheck = rows.map((r, i) => ['<input type="checkbox" class="rowCheck" data-idx="' + i + '">', ...r.map(escapeHtml)]);
+        ...fields.map((f, i) => ({ title: f }))];
+
+      const dataWithCheck = rows.map((r, i) => {
+        const row = r.map(escapeHtml);
+        if (accIdx >= 0) {
+          const acc = row[accIdx];
+          row[accIdx] = '<a href="https://www.ncbi.nlm.nih.gov/nuccore/' + acc + '" target="_blank" rel="noopener">' + acc + '</a>';
+        }
+        return ['<input type="checkbox" class="rowCheck" data-idx="' + i + '">', ...row];
+      });
 
       currentTable = $(tbl).DataTable({
         data: dataWithCheck, columns: cols, deferRender: true,
         pageLength: 50, lengthMenu: [[25, 50, 100, 500, -1], [25, 50, 100, 500, 'All']],
-        order: [[1, 'asc']], scrollX: true, dom: 'Bfrtip',
+        order: [[1, 'asc']], scrollX: true, autoWidth: false, dom: 'Bfrtip',
         buttons: [{ extend: 'colvis', text: 'Columns' }],
         columnDefs: [{ targets: [0], searchable: false, render: (d) => d }]
       });
+      // Fix alignment: redraw on window resize
+      $(window).on('resize', function() { if (currentTable) currentTable.columns.adjust().draw(); });
 
       document.getElementById('countText').textContent = rows.length.toLocaleString() + ' records';
       document.getElementById('selectedCount').textContent = '';
