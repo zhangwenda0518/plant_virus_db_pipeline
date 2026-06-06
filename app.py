@@ -120,27 +120,72 @@ def generate_baseline_dataset():
                 
     return pd.DataFrame(records)
 
-# ---- 从真实 TSV 加载数据 ----
-DATA_URL = "https://raw.githubusercontent.com/zhangwenda0518/plant_virus_db_pipeline/main/docs/data/final.cluster.ref_info.tsv"
+# ---- 从 Plant_Virus_Info.full.tsv 加载全量数据 ----
+DATA_URL = "https://raw.githubusercontent.com/zhangwenda0518/plant_virus_db_pipeline/main/docs/data/Plant_Virus_Info.full.tsv"
 
 def load_real_data():
     df = pd.read_csv(DATA_URL, sep='\t', low_memory=False)
-    df['Year'] = df['Release_Date'].astype(str).str.extract(r'(\d{4})')[0]
-    df['Year'] = pd.to_numeric(df['Year'], errors='coerce').fillna(2020).astype(int)
-    df['Organism'] = df['Species_ICTV'].fillna(df['Species_NCBI']).fillna('Unknown')
+    # 年份解析 (优先 Collection_Date，回退 Release_Date)
+    df['Year'] = df['Collection_Date'].fillna(df['Release_Date']).astype(str).str.extract(r'(\d{4})')[0]
+    df['Year'] = pd.to_numeric(df['Year'], errors='coerce')
+    # 核心字段映射
+    df['Organism'] = df['Species_NCBI'].fillna(df['Species_ICTV']).fillna('Unknown')
     df['Country'] = df['Geo_Location'].fillna('Unknown')
     df['Definition'] = df['GenBank_Title'].fillna('')
-    df['FullSequenceLength'] = pd.to_numeric(df['Length'], errors='coerce').fillna(800).astype(int)
-    df['CP_Sequence'] = df['Organism'].apply(lambda v: create_mock_sequence(str(v), length=800))
-    df = df[(df['Year'] >= 1990) & (df['Year'] <= 2026)]
-    return df[['Accession','Definition','Organism','Country','Year','FullSequenceLength','CP_Sequence']]
+    df['FullSequenceLength'] = pd.to_numeric(df['Length'], errors='coerce')
+    df['Host_Name'] = df['Host'].fillna('Unknown')
+    # 分段/非分段：Segment 列非空 = 分段病毒
+    df['Category_Type'] = df['Segment'].notna().map({True: 'Segmented', False: 'NonSegmented'})
+    df['Segment_Info'] = df['Segment'].fillna('N/A')
+    df['Family'] = df['Family'].fillna('Unknown')
+    df['Genus'] = 'Unknown'
+    # CP 序列：按物种去重生成，节省内存
+    unique_orgs = df['Organism'].dropna().unique()
+    seq_map = {org: create_mock_sequence(str(org), length=800) for org in unique_orgs}
+    df['CP_Sequence'] = df['Organism'].map(seq_map)
+    # 过滤无年份 + 裁剪异常值 (1009 等古老年份)
+    df = df[df['Year'].notna()]
+    df['Year'] = df['Year'].astype(int)
+    df = df[df['Year'] >= 1970]
+    return df[
+        ['Accession','Definition','Organism','Country','Year','FullSequenceLength','CP_Sequence',
+         'Category_Type','Segment_Info','Host_Name','Family','Genus','Molecule_type','Topology','Length']
+    ]
 
 try:
     df_global = load_real_data()
-    print(f"Loaded {len(df_global)} records from real database")
+    N_SPECIES = df_global['Organism'].nunique()
+    print(f"Loaded {len(df_global)} accessions ({N_SPECIES} unique species) from database")
 except Exception as e:
-    print(f"Real data load failed ({e}), falling back to mock data")
+    print(f"Data load failed ({e}), falling back to mock data")
     df_global = generate_baseline_dataset()
+    N_SPECIES = df_global['Organism'].nunique()
+
+
+def _build_year_marks(ymin, ymax):
+    """动态生成年份刻度：跨度越大，间隔越宽，字体越小"""
+    span = ymax - ymin
+    if span > 100:
+        step = 50
+    elif span > 50:
+        step = 10
+    elif span > 30:
+        step = 10
+    elif span > 15:
+        step = 5
+    else:
+        step = 2
+    size = "9px" if span > 30 else "11px"
+    marks = {}
+    start = (ymin // step) * step
+    for y in range(start, ymax + 1, step):
+        if y >= ymin:
+            marks[y] = {"label": str(y), "style": {"fontSize": size, "whiteSpace": "nowrap"}}
+    # 始终包含起止端点
+    marks[ymin] = {"label": str(ymin), "style": {"fontSize": size, "whiteSpace": "nowrap"}}
+    marks[ymax] = {"label": str(ymax), "style": {"fontSize": size, "whiteSpace": "nowrap"}}
+    return marks
+
 
 def align_to_reference(sequences, reference_seq):
     """
@@ -226,9 +271,10 @@ def compute_alignment_matrices(sequences):
 # 2. 增强型系统 UI 布局设计
 # -----------------------------------------------------------------------------
 
-app = dash.Dash(__name__, external_stylesheets=[
+app = dash.Dash(__name__, update_title=None, external_stylesheets=[
     "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
 ])
+app._favicon = None
 server = app.server
 app.title = "Plant Virus Spatiotemporal & Mutation Viewer"
 
@@ -266,8 +312,9 @@ app.layout = dmc.MantineProvider(
                         ),
                         dmc.Group(
                             children=[
-                                dmc.Badge("SeqIO & Align Compliant", color="indigo", variant="light"),
-                                dmc.Badge("Version 2.0 (Stable)", color="teal", variant="outline")
+                                dmc.Badge(f"{len(df_global):,} seqs", color="teal", variant="light"),
+                                dmc.Badge(f"{N_SPECIES:,} species", color="indigo", variant="light"),
+                                dmc.Badge("SeqIO & Align Compliant", color="gray", variant="outline")
                             ]
                         )
                     ]
@@ -290,14 +337,21 @@ app.layout = dmc.MantineProvider(
                                 children=[
                                     dmc.Title("检索与多序列比对控制", order=4, mb="md", style={"color": "#2c2e33"}),
                                     
-                                    dmc.TextInput(
-                                        id="host-species",
-                                        label="检索宿主种类",
-                                        placeholder="例如: Capsicum",
-                                        value="Capsicum",
+                                    dmc.MultiSelect(
+                                        id="host-filter",
+                                        label="检索宿主种类 (Top 80)",
+                                        placeholder="全部宿主 → 可搜索",
+                                        data=sorted(
+                                            [{"value": v, "label": v}
+                                             for v in df_global['Host_Name'].value_counts().head(80).index
+                                             if v != 'Unknown'],
+                                            key=lambda x: x['label']
+                                        ),
+                                        searchable=True,
+                                        clearable=True,
                                         mb="md"
                                     ),
-                                    
+
                                     dmc.MultiSelect(
                                         id="country-select",
                                         label="分析目标国家/地区",
@@ -312,27 +366,54 @@ app.layout = dmc.MantineProvider(
                                         value=["China", "South Korea", "Indonesia", "Thailand", "Japan"],
                                         mb="md"
                                     ),
-                                    
+
                                     dmc.MultiSelect(
-                                        id="virus-select",
-                                        label="监控目标病毒类型",
-                                        placeholder="选择监控病毒",
-                                        data=[{"value": v, "label": v} for v in df_global['Organism'].unique()],
-                                        value=list(df_global['Organism'].unique()),
+                                        id="category-filter",
+                                        label="基因组结构 (分段 / 非分段)",
+                                        placeholder="全部类型",
+                                        data=[{"value": "Segmented", "label": "Segmented (分段)"},
+                                              {"value": "NonSegmented", "label": "Non‑Segmented (非分段)"}],
+                                        value=["Segmented", "NonSegmented"],
                                         mb="md"
                                     ),
-                                    
+
+                                    dmc.MultiSelect(
+                                        id="family-filter",
+                                        label="病毒科 (Family)",
+                                        placeholder="全部科 → 可选",
+                                        data=sorted(
+                                            [{"value": v, "label": v}
+                                             for v in df_global['Family'].unique() if v != 'Unknown'],
+                                            key=lambda x: x['label']
+                                        ),
+                                        searchable=True,
+                                        clearable=True,
+                                        mb="md"
+                                    ),
+
+                                    dmc.MultiSelect(
+                                        id="virus-filter",
+                                        label="目标病毒物种",
+                                        placeholder="全部物种 → 可搜索",
+                                        data=[],
+                                        searchable=True,
+                                        clearable=True,
+                                        mb="md"
+                                    ),
+
                                     dmc.Text("数据报告年度跨度", size="sm", style={"fontWeight": 600}, mb="xs"),
                                     dmc.Text("拖动两端滑块选择起止年份", size="xs", c="dimmed", mb="md"),
                                     html.Div(
                                         dcc.RangeSlider(
                                             id="year-slider",
-                                            min=df_global['Year'].min(),
-                                            max=df_global['Year'].max(),
+                                            min=int(df_global['Year'].min()),
+                                            max=int(df_global['Year'].max()),
                                             step=1,
-                                            value=[df_global['Year'].min(), df_global['Year'].max()],
-                                            marks={y: {"label": str(y), "style": {"fontSize": "11px"}}
-                                                   for y in range(int(df_global['Year'].min()), int(df_global['Year'].max())+1, 5)},
+                                            value=[int(df_global['Year'].min()), int(df_global['Year'].max())],
+                                            marks=_build_year_marks(
+                                                int(df_global['Year'].min()),
+                                                int(df_global['Year'].max())
+                                            ),
                                             allowCross=False,
                                             tooltip={"placement": "bottom", "always_visible": True}
                                         ),
@@ -392,33 +473,55 @@ app.layout = dmc.MantineProvider(
                                                         justify="space-between",
                                                         mb="md",
                                                         children=[
-                                                            dmc.Title("分面时空数据报告趋势", order=3),
-                                                            dmc.Badge("Faceted Analysis Available", color="gray")
+                                                            dmc.Title("时空与地理分布分析", order=3),
+                                                            dmc.Badge("Stacked + Map", color="gray")
                                                         ]
                                                     ),
                                                     dcc.Loading(
                                                         type="cube", color="#12b886",
                                                         children=[
-                                                            dcc.Graph(id="spatiotemporal-bar-chart", style={"height": "480px"}),
+                                                            dmc.Title("① 病毒随时间变化 (堆叠条形图)", order=4, mb="xs"),
+                                                            dmc.Text("横轴=年份，纵轴=序列数，颜色=病毒物种", size="xs", c="dimmed", mb="xs"),
+                                                            dcc.Graph(id="chart-time-stacked", style={"height": "350px"}),
+                                                            dmc.Space(h="md"),
+                                                            dmc.Title("② 病毒在不同国家的分布 (堆叠条形图)", order=4, mb="xs"),
+                                                            dmc.Text("横轴=国家，纵轴=序列数，颜色=病毒物种", size="xs", c="dimmed", mb="xs"),
+                                                            dcc.Graph(id="chart-country-stacked", style={"height": "350px"}),
+                                                            dmc.Space(h="md"),
+                                                            dmc.Title("③ 地理映射 (底色=总量 | 圆点颜色/大小=病毒组成与数量)", order=4, mb="xs"),
+                                                            dcc.Graph(id="geo-map", style={"height": "380px"}),
                                                             dmc.Space(h="md"),
                                                             dmc.Grid(
                                                                 gutter="md",
                                                                 children=[
                                                                     dmc.GridCol(
-                                                                        span=4,
+                                                                        span=3,
                                                                         children=dmc.Card(
                                                                             withBorder=True,
                                                                             shadow="xs",
                                                                             p="sm",
                                                                             radius="md",
                                                                             children=[
-                                                                                dmc.Text("当前筛选样本数", size="xs", c="dimmed"),
+                                                                                dmc.Text("筛选序列 (Accession)", size="xs", c="dimmed"),
                                                                                 dmc.Title(id="stat-total-seqs", order=3, c="teal")
                                                                             ]
                                                                         )
                                                                     ),
                                                                     dmc.GridCol(
-                                                                        span=4,
+                                                                        span=3,
+                                                                        children=dmc.Card(
+                                                                            withBorder=True,
+                                                                            shadow="xs",
+                                                                            p="sm",
+                                                                            radius="md",
+                                                                            children=[
+                                                                                dmc.Text("独立物种 (Species)", size="xs", c="dimmed"),
+                                                                                dmc.Title(id="stat-n-species", order=3, c="green")
+                                                                            ]
+                                                                        )
+                                                                    ),
+                                                                    dmc.GridCol(
+                                                                        span=3,
                                                                         children=dmc.Card(
                                                                             withBorder=True,
                                                                             shadow="xs",
@@ -431,7 +534,7 @@ app.layout = dmc.MantineProvider(
                                                                         )
                                                                     ),
                                                                     dmc.GridCol(
-                                                                        span=4,
+                                                                        span=3,
                                                                         children=dmc.Card(
                                                                             withBorder=True,
                                                                             shadow="xs",
@@ -544,95 +647,270 @@ app.layout = dmc.MantineProvider(
 # -----------------------------------------------------------------------------
 
 @callback(
+    [Output("virus-filter", "data"),
+     Output("virus-filter", "value")],
+    [Input("family-filter", "value"),
+     Input("category-filter", "value")]
+)
+def update_virus_options(selected_families, selected_categories):
+    df = df_global.copy()
+    if 'Category_Type' in df.columns and selected_categories:
+        df = df[df['Category_Type'].isin(selected_categories)]
+    if 'Family' in df.columns and selected_families:
+        df = df[df['Family'].isin(selected_families)]
+
+    virus_list = sorted(df['Organism'].unique())
+    options = [{"value": v, "label": v} for v in virus_list]
+    return options, []
+
+
+@callback(
     [Output("records-table", "data"),
      Output("mutation-virus-select", "data"),
      Output("mutation-virus-select", "value"),
      Output("stat-total-seqs", "children"),
+     Output("stat-n-species", "children"),
      Output("stat-common-virus", "children"),
      Output("stat-top-country", "children")],
     [Input("query-btn", "n_clicks")],
-    [State("host-species", "value"),
+    [State("host-filter", "value"),
      State("country-select", "value"),
-     State("virus-select", "value"),
+     State("category-filter", "value"),
+     State("family-filter", "value"),
+     State("virus-filter", "value"),
      State("year-slider", "value"),
      State("ncbi-live-switch", "checked")]
 )
-def update_data_pipeline(n_clicks, host, selected_countries, selected_viruses, year_range, live_search):
+def update_data_pipeline(n_clicks, host, selected_countries, selected_categories, selected_families, selected_viruses, year_range, live_search):
     if live_search:
         try:
             import ncbi_fetcher
-            # 精准外壳蛋白 CDS 匹配词
-            keywords = ["coat protein", "capsid protein", "nucleocapsid", "17 kDa"]
-            id_list = ncbi_fetcher.search_ncbi_sequences(host, selected_countries, year_range[0], year_range[1])
-            # 将数量上限控制在 50 条，避免网络请求导致 UI 堵塞
-            df = ncbi_fetcher.fetch_and_parse_records(id_list[:50], cp_keywords=keywords)
-            
-            # 使用比对模式下的补充机制
-            if not df.empty:
-                df['CP_Sequence'] = df.apply(
-                    lambda r: create_mock_sequence(r['Organism']) if r['CP_Sequence'] == 'Not Extracted' else r['CP_Sequence'], 
-                    axis=1
-                )
+            keywords = ["coat protein", "capsid protein", "nucleocapsid", "17 kDa", "movement protein"]
+            host_str = host[0] if host else "Capsicum"
+            # 搜索 NCBI 并取最多 200 条记录
+            id_list = ncbi_fetcher.search_ncbi_sequences(host_str, selected_countries, year_range[0], year_range[1], retmax=200)
+            if not id_list:
+                raise RuntimeError("NCBI 查询无结果，请检查宿主/国家/年份参数")
+            df_live = ncbi_fetcher.fetch_and_parse_records(id_list[:200], cp_keywords=keywords)
+            if df_live.empty:
+                raise RuntimeError("NCBI 解析返回空数据")
+
+            # 补充 CP 序列
+            df_live['CP_Sequence'] = df_live.apply(
+                lambda r: create_mock_sequence(r['Organism']) if r['CP_Sequence'] == 'Not Extracted' else r['CP_Sequence'],
+                axis=1
+            )
+            # 补充缺失的元数据列 (NCBI 数据没有这些，用默认值填充)
+            for col, default in [
+                ('Category_Type', 'NonSegmented'),
+                ('Host_Name', host_str),
+                ('Family', 'Unknown'),
+                ('Genus', 'Unknown'),
+                ('Segment_Info', 'N/A'),
+                ('Molecule_type', 'ssRNA'),
+                ('Topology', 'linear'),
+                ('Length', 800),
+            ]:
+                if col not in df_live.columns:
+                    df_live[col] = default
+
+            # Year 列统一为 int
+            df_live['Year'] = pd.to_numeric(df_live['Year'], errors='coerce').fillna(2020).astype(int)
+
+            df = df_live
+            print(f"NCBI Live: fetched {len(df)} records ({df['Organism'].nunique()} species)")
         except Exception as e:
-            print(f"NCBI Live 接入失败或超时，降级为内置平铺缓存数据库: {e}")
+            print(f"NCBI Live 失败 ({e})，降级为缓存数据库")
             df = df_global.copy()
+            import traceback; traceback.print_exc()
     else:
         df = df_global.copy()
-        
+
+    # Host 过滤
+    if 'Host_Name' in df.columns and host:
+        df = df[df['Host_Name'].isin(host)]
+    # Category 过滤 (分段/非分段)
+    if 'Category_Type' in df.columns and selected_categories:
+        df = df[df['Category_Type'].isin(selected_categories)]
+    # Family 过滤
+    if 'Family' in df.columns and selected_families:
+        df = df[df['Family'].isin(selected_families)]
+    # Virus 过滤 (空 = 全部)
+    if selected_viruses:
+        df = df[df['Organism'].isin(selected_viruses)]
+
+    # Country 过滤 (空 = 全部)
+    if selected_countries:
+        df = df[df['Country'].isin(selected_countries)]
+
     df_filtered = df[
-        (df['Country'].isin(selected_countries)) &
-        (df['Organism'].isin(selected_viruses)) &
         (df['Year'] >= year_range[0]) &
         (df['Year'] <= year_range[1])
     ]
-    
+
     if df_filtered.empty:
-        return [], [], "", "0", "无有效记录", "无"
-        
+        return [], [], "", "0", "0", "无有效记录", "无"
+
     total_seqs = f"{len(df_filtered):,}"
+    n_species = f"{df_filtered['Organism'].nunique():,}"
     common_virus = df_filtered['Organism'].mode()[0] if not df_filtered.empty else "N/A"
     top_country = df_filtered['Country'].mode()[0] if not df_filtered.empty else "N/A"
-    
+
     virus_options = [{"value": v, "label": v} for v in df_filtered['Organism'].unique()]
     default_virus = df_filtered['Organism'].unique()[0] if len(virus_options) > 0 else ""
-    
+
     table_data = df_filtered.to_dict('records')
-    return table_data, virus_options, default_virus, total_seqs, common_virus, top_country
+    return table_data, virus_options, default_virus, total_seqs, n_species, common_virus, top_country
 
 @callback(
-    Output("spatiotemporal-bar-chart", "figure"),
+    [Output("chart-time-stacked", "figure"),
+     Output("chart-country-stacked", "figure"),
+     Output("geo-map", "figure")],
     [Input("records-table", "data")]
 )
 def render_spatiotemporal_chart(table_data):
     if not table_data:
-        return go.Figure()
-        
+        return go.Figure(), go.Figure(), go.Figure()
+
     df = pd.DataFrame(table_data)
-    df_grouped = df.groupby(['Year', 'Country', 'Organism']).size().reset_index(name='Count')
-    
-    fig = px.bar(
-        df_grouped,
-        x='Year',
-        y='Count',
-        color='Organism',
-        facet_col='Country',
-        facet_col_wrap=3,
-        labels={'Count': '沉积序列数 (n)', 'Year': '采集年份'},
+
+    # =========================================================================
+    # ① 病毒随时间变化 — 堆叠条形图 (x=Year, y=Count, color=Organism)
+    # =========================================================================
+    time_df = df.groupby(['Year', 'Organism']).size().reset_index(name='Count')
+    fig_time = px.bar(
+        time_df, x='Year', y='Count', color='Organism',
+        labels={'Count': '序列数', 'Year': '年份'},
         color_discrete_sequence=px.colors.qualitative.G10,
-        height=450
+        height=330
     )
-    
-    # 学术期刊样式的坐标网格设计 (适配中国、韩国等不同数量量级的对比需求)
-    fig.update_yaxes(matches=None, showgrid=True, gridcolor='#f1f3f5', linecolor='#ced4da')
-    fig.update_xaxes(showgrid=False, linecolor='#ced4da')
-    fig.update_layout(
-        plot_bgcolor='white',
-        paper_bgcolor='white',
-        legend=dict(orientation="h", yanchor="bottom", y=-0.38, xanchor="center", x=0.5, title_text="监控病毒物种"),
-        margin=dict(l=45, r=20, t=40, b=120),
-        font=dict(family="Inter, sans-serif", size=11)
+    fig_time.update_layout(
+        barmode='stack',
+        plot_bgcolor='white', paper_bgcolor='white',
+        legend=dict(orientation="h", yanchor="bottom", y=-0.35, xanchor="center", x=0.5),
+        margin=dict(l=45, r=20, t=20, b=80),
+        font=dict(family="Inter, sans-serif", size=11),
+        xaxis=dict(tickmode='linear', dtick=2)
     )
-    return fig
+    fig_time.update_yaxes(showgrid=True, gridcolor='#f1f3f5')
+
+    # =========================================================================
+    # ② 病毒在不同国家的分布 — 堆叠条形图 (x=Country, y=Count, color=Organism)
+    # =========================================================================
+    country_df = df.groupby(['Country', 'Organism']).size().reset_index(name='Count')
+    # 按总量降序排列国家
+    country_order = country_df.groupby('Country')['Count'].sum().sort_values(ascending=False).index.tolist()
+    fig_country = px.bar(
+        country_df, x='Country', y='Count', color='Organism',
+        category_orders={'Country': country_order},
+        labels={'Count': '序列数', 'Country': '国家'},
+        color_discrete_sequence=px.colors.qualitative.G10,
+        height=330
+    )
+    fig_country.update_layout(
+        barmode='stack',
+        plot_bgcolor='white', paper_bgcolor='white',
+        legend=dict(orientation="h", yanchor="bottom", y=-0.38, xanchor="center", x=0.5),
+        margin=dict(l=45, r=20, t=20, b=100),
+        font=dict(family="Inter, sans-serif", size=11),
+        xaxis=dict(tickangle=-30)
+    )
+    fig_country.update_yaxes(showgrid=True, gridcolor='#f1f3f5')
+
+    # =========================================================================
+    # ③ 地理映射 — choropleth 底色(总数) + 同心散点饼图(病毒组成)
+    # =========================================================================
+    # 国家名映射到 Plotly 标准名
+    country_name_map = {
+        'China': 'China', 'South Korea': 'South Korea',
+        'Indonesia': 'Indonesia', 'Thailand': 'Thailand', 'Japan': 'Japan',
+        'USA': 'United States', 'United States': 'United States',
+        'India': 'India', 'Brazil': 'Brazil', 'Australia': 'Australia',
+        'Germany': 'Germany', 'France': 'France', 'Italy': 'Italy',
+        'Spain': 'Spain', 'United Kingdom': 'United Kingdom',
+        'Netherlands': 'Netherlands', 'Canada': 'Canada', 'Mexico': 'Mexico',
+        'Vietnam': 'Vietnam', 'Taiwan': 'Taiwan', 'Philippines': 'Philippines',
+        'Malaysia': 'Malaysia', 'Pakistan': 'Pakistan', 'Bangladesh': 'Bangladesh',
+        'Turkey': 'Turkey', 'Iran': 'Iran', 'Egypt': 'Egypt',
+        'South Africa': 'South Africa', 'Kenya': 'Kenya', 'Nigeria': 'Nigeria',
+        'Argentina': 'Argentina', 'Colombia': 'Colombia', 'Peru': 'Peru',
+        'New Zealand': 'New Zealand', 'Belgium': 'Belgium',
+        'South Korea:Jeollabuk-do': 'South Korea',
+    }
+
+    geo_detail = df.groupby(['Country', 'Organism']).size().reset_index(name='Count')
+    geo_detail['Country_ISO'] = geo_detail['Country'].map(country_name_map).fillna(geo_detail['Country'])
+    country_total = geo_detail.groupby('Country_ISO')['Count'].sum().reset_index(name='Total')
+
+    # 病毒颜色映射
+    all_viruses = sorted(df['Organism'].unique())
+    color_palette = px.colors.qualitative.G10 + px.colors.qualitative.Set3
+    virus_colors = {v: color_palette[i % len(color_palette)] for i, v in enumerate(all_viruses)}
+
+    # ---- 构建 figure ----
+    fig_map = go.Figure()
+
+    # Layer 1: choropleth — 国家底色 = 序列总量 (颜色表示数量)
+    fig_map.add_trace(go.Choropleth(
+        locations=country_total['Country_ISO'], locationmode='country names',
+        z=country_total['Total'], colorscale='OrRd',
+        colorbar=dict(title='报告总数', thickness=15, len=0.55, x=0.87),
+        marker_line_color='white', marker_line_width=0.5,
+        hovertemplate='%{location}: %{z} 条序列<extra></extra>',
+        name='总量 (底色)'
+    ))
+
+    # Layer 2: 同心散点 = 饼图效果
+    # 每种病毒一条 trace，同一国家的所有病毒用同一 locations，Plotly 自动解析坐标
+    # 大病毒先画→在下层，小病毒后画→在上层，透明度叠加形成饼图视觉效果
+    virus_order = geo_detail.groupby('Organism')['Count'].sum().sort_values(ascending=True).index.tolist()
+
+    for virus_name in virus_order:
+        vdf = geo_detail[geo_detail['Organism'] == virus_name].copy()
+        if vdf.empty:
+            continue
+
+        marker_sizes = vdf['Count'].clip(lower=1).apply(lambda x: max(8, min(55, x ** 0.5 * 4)))
+        hover_texts = []
+        for _, r in vdf.iterrows():
+            ctotal = country_total.set_index('Country_ISO').loc[r['Country_ISO'], 'Total']
+            pct = r['Count'] / ctotal * 100 if ctotal > 0 else 0
+            hover_texts.append(
+                f"<b>{r['Country_ISO']}</b><br>Total: {ctotal}<br>"
+                f"{virus_name[:45]}: {r['Count']} ({pct:.1f}%)"
+            )
+
+        fig_map.add_trace(go.Scattergeo(
+            locations=vdf['Country_ISO'], locationmode='country names',
+            marker=dict(
+                size=marker_sizes,
+                color=virus_colors[virus_name],
+                line=dict(color='white', width=1.5),
+                sizemode='diameter', opacity=0.75
+            ),
+            text=hover_texts, hoverinfo='text',
+            mode='markers', name=virus_name[:48]
+        ))
+
+    fig_map.update_layout(
+        margin=dict(l=5, r=5, t=5, b=5),
+        geo=dict(
+            showframe=False, showcoastlines=True,
+            projection_type='natural earth',
+            showcountries=True, countrycolor='#ccc',
+            showland=True, landcolor='#f8f9fa',
+            showocean=True, oceancolor='#e8f0fe'
+        ),
+        legend=dict(
+            title=dict(text='<b>病毒物种</b>', font=dict(size=11)),
+            orientation='v', yanchor='top', y=0.98, xanchor='left', x=0.01,
+            bgcolor='rgba(255,255,255,0.9)', bordercolor='#ddd', borderwidth=1,
+            font=dict(size=8.5), itemsizing='constant'
+        ),
+        font=dict(family="Inter, sans-serif", size=10)
+    )
+
+    return fig_time, fig_country, fig_map
 
 @callback(
     [Output("alignment-heatmap", "figure"),
@@ -744,5 +1022,4 @@ def export_table_csv(n_clicks, table_data):
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 8050))
-    debug = os.environ.get("DEBUG", "true").lower() == "true"
-    app.run(debug=debug, host="0.0.0.0", port=port)
+    app.run(debug=False, host="0.0.0.0", port=port)
