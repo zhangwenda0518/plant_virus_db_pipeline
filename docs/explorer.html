@@ -121,9 +121,11 @@ function buildSelect(id, items, label) {
     const opt = document.createElement('option');
     opt.value = val;
     opt.textContent = val + ' (' + cnt.toLocaleString() + ')';
+    if (val === 'Unknown' || val === '') opt.style.display = 'none';
+    else opt.selected = true; // non-Unknown options selected by default
     sel.appendChild(opt);
   }
-  document.getElementById(label + 'Cnt').textContent = items.length + ' options';
+  document.getElementById(label + 'Cnt').textContent = items.filter(x => x[0] !== 'Unknown' && x[0] !== '').length + ' options';
 }
 function launch() {
   const params = new URLSearchParams();
