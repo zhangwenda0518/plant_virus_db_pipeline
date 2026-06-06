@@ -276,17 +276,19 @@ app = dash.Dash(__name__, update_title=None, external_stylesheets=[
 ])
 app._favicon = None
 server = app.server
-app.title = "Plant Virus Spatiotemporal & Mutation Viewer"
+app.title = "Plant Virus Explorer"
 
 app.layout = dmc.MantineProvider(
     theme={
         "fontFamily": "Inter, sans-serif",
-        "primaryColor": "teal",
+        "primaryColor": "blue",
     },
     children=dmc.AppShell(
-        header={"height": 70},
+        header={"height": 52},
         padding="md",
         children=[
+            dcc.Location(id="url", refresh=False),
+
             # 顶部学术风格导航栏
             dmc.AppShellHeader(
                 px="md",
@@ -637,6 +639,32 @@ app.layout = dmc.MantineProvider(
 # -----------------------------------------------------------------------------
 # 3. Web 回调管理 (Callbacks)
 # -----------------------------------------------------------------------------
+
+@callback(
+    [Output("host-filter", "value"),
+     Output("country-select", "value"),
+     Output("category-filter", "value"),
+     Output("family-filter", "value"),
+     Output("year-slider", "value")],
+    Input("url", "search")
+)
+def parse_url_params(search):
+    """从 URL 查询参数预填充筛选器"""
+    from urllib.parse import parse_qs
+    defaults = [None, [], ["Segmented", "NonSegmented"], [], [int(df_global["Year"].min()), int(df_global["Year"].max())]]
+    if not search:
+        return defaults
+    params = parse_qs(search.lstrip("?"))
+    host = params.get("host", [None])[0] or None
+    country = params.get("country", [""])[0]
+    country_vals = [c.strip() for c in country.split(",") if c.strip()] if country else []
+    category = params.get("category", [""])[0]
+    cat_vals = [c.strip() for c in category.split(",") if c.strip()] if category else ["Segmented", "NonSegmented"]
+    family = params.get("family", [""])[0]
+    fam_vals = [f.strip() for f in family.split(",") if f.strip()] if family else []
+    ymin = int(params.get("year_min", [str(int(df_global["Year"].min()))])[0])
+    ymax = int(params.get("year_max", [str(int(df_global["Year"].max()))])[0])
+    return host, country_vals or None, cat_vals, fam_vals or None, [ymin, ymax]
 
 @callback(
     [Output("virus-filter", "data"),
