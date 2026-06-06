@@ -29,7 +29,7 @@ def create_mock_sequence(virus_name, length=800):
     elif 'mild mottle' in virus_name.lower() or 'pmmov' in virus_name.lower():
         # PMMoV 突变位点 (来自论文第3图结果)
         var_positions = [57, 81, 99, 168, 117, 213, 276, 474, 165, 357]
-    else:
+    df = df_global.copy()
         var_positions = rng.choice(range(length), size=10, replace=False).tolist()
         
     var_positions = [pos - 1 for pos in var_positions if pos <= length]
@@ -173,7 +173,7 @@ def _build_year_marks(ymin, ymax):
         step = 10
     elif span > 15:
         step = 5
-    else:
+    df = df_global.copy()
         step = 2
     size = "9px" if span > 30 else "11px"
     marks = {}
@@ -276,51 +276,41 @@ app = dash.Dash(__name__, update_title=None, external_stylesheets=[
 ])
 app._favicon = None
 server = app.server
-app.title = "Plant Virus Spatiotemporal & Mutation Viewer"
+app.title = "Plant Virus Explorer"
 
 app.layout = dmc.MantineProvider(
     theme={
         "fontFamily": "Inter, sans-serif",
-        "primaryColor": "teal",
+        "primaryColor": "blue",
     },
     children=dmc.AppShell(
-        header={"height": 70},
+        header={"height": 52},
         padding="md",
         children=[
+            dcc.Location(id="url", refresh=False),
+
             # 顶部学术风格导航栏
             dmc.AppShellHeader(
                 px="md",
+                style={"background": "#1a5276"},
                 children=dmc.Group(
                     justify="space-between",
                     h="100%",
                     children=[
-                        dmc.Group(
-                            children=[
-                                dmc.ThemeIcon(
-                                    size="lg",
-                                    radius="md",
-                                    color="teal",
-                                    variant="filled",
-                                    children="🔬"
-                                ),
-                                dmc.Title(
-                                    "Plant Virus Spatiotemporal & Mutation Viewer",
-                                    order=2,
-                                    style={"fontWeight": 800, "color": "#1a1b1e"}
-                                )
-                            ]
-                        ),
-                        dmc.Group(
-                            children=[
-                                dmc.Badge(f"{len(df_global):,} seqs", color="teal", variant="light"),
-                                dmc.Badge(f"{N_SPECIES:,} species", color="indigo", variant="light"),
-                                dmc.Badge("SeqIO & Align Compliant", color="gray", variant="outline")
-                            ]
-                        )
+                        dmc.Group(gap="xs", children=[
+                            dmc.Text("Plant Virus DB", fw=700, size="md", c="white"),
+                            dmc.Anchor("← Database",
+                                       href="https://zhangwenda0518.github.io/plant_virus_db_pipeline/",
+                                       size="sm", c="rgba(255,255,255,0.8)",
+                                       style={"textDecoration": "none"})
+                        ]),
+                        dmc.Group(gap="xs", children=[
+                            dmc.Badge(str(N_SPECIES) + " species", color="gray", variant="filled"),
+                            dmc.Badge(str(len(df_global)) + " sequences", color="blue", variant="filled")
+                        ])
                     ]
                 )
             ),
-            
             # 看板分析主体
             dmc.AppShellMain(
                 children=dmc.Grid(
@@ -422,15 +412,7 @@ app.layout = dmc.MantineProvider(
                                     dmc.Space(h="md"),
                                     
                                     dmc.Divider(my="md"),
-                                    
-                                    dmc.Switch(
-                                        id="ncbi-live-switch",
-                                        label="启用 NCBI Live API 解析",
-                                        description="若激活，检索时会请求原始 GenBank 数据库并由 SeqIO 提取突变区",
-                                        checked=False,
-                                        mb="lg"
-                                    ),
-                                    
+
                                     dmc.Button(
                                         "重算数据流并生成图表",
                                         id="query-btn",
@@ -647,6 +629,32 @@ app.layout = dmc.MantineProvider(
 # -----------------------------------------------------------------------------
 
 @callback(
+    [Output("host-filter", "value"),
+     Output("country-select", "value"),
+     Output("category-filter", "value"),
+     Output("family-filter", "value"),
+     Output("year-slider", "value")],
+    Input("url", "search")
+)
+def parse_url_params(search):
+    """从 URL 查询参数预填充筛选器"""
+    from urllib.parse import parse_qs
+    defaults = [None, [], ["Segmented", "NonSegmented"], [], [int(df_global["Year"].min()), int(df_global["Year"].max())]]
+    if not search:
+        return defaults
+    params = parse_qs(search.lstrip("?"))
+    host = params.get("host", [None])[0] or None
+    country = params.get("country", [""])[0]
+    country_vals = [c.strip() for c in country.split(",") if c.strip()] if country else []
+    category = params.get("category", [""])[0]
+    cat_vals = [c.strip() for c in category.split(",") if c.strip()] if category else ["Segmented", "NonSegmented"]
+    family = params.get("family", [""])[0]
+    fam_vals = [f.strip() for f in family.split(",") if f.strip()] if family else []
+    ymin = int(params.get("year_min", [str(int(df_global["Year"].min()))])[0])
+    ymax = int(params.get("year_max", [str(int(df_global["Year"].max()))])[0])
+    return host, country_vals or None, cat_vals, fam_vals or None, [ymin, ymax]
+
+@callback(
     [Output("virus-filter", "data"),
      Output("virus-filter", "value")],
     [Input("family-filter", "value"),
@@ -679,52 +687,11 @@ def update_virus_options(selected_families, selected_categories):
      State("family-filter", "value"),
      State("virus-filter", "value"),
      State("year-slider", "value"),
-     State("ncbi-live-switch", "checked")]
+     ]
 )
-def update_data_pipeline(n_clicks, host, selected_countries, selected_categories, selected_families, selected_viruses, year_range, live_search):
-    if live_search:
-        try:
-            import ncbi_fetcher
-            keywords = ["coat protein", "capsid protein", "nucleocapsid", "17 kDa", "movement protein"]
-            host_str = host[0] if host else "Capsicum"
-            # 搜索 NCBI 并取最多 200 条记录
-            id_list = ncbi_fetcher.search_ncbi_sequences(host_str, selected_countries, year_range[0], year_range[1], retmax=200)
-            if not id_list:
-                raise RuntimeError("NCBI 查询无结果，请检查宿主/国家/年份参数")
-            df_live = ncbi_fetcher.fetch_and_parse_records(id_list[:200], cp_keywords=keywords)
-            if df_live.empty:
-                raise RuntimeError("NCBI 解析返回空数据")
+def update_data_pipeline(n_clicks, host, selected_countries, selected_categories, selected_families, selected_viruses, year_range):
+    df = df_global.copy()
 
-            # 补充 CP 序列
-            df_live['CP_Sequence'] = df_live.apply(
-                lambda r: create_mock_sequence(r['Organism']) if r['CP_Sequence'] == 'Not Extracted' else r['CP_Sequence'],
-                axis=1
-            )
-            # 补充缺失的元数据列 (NCBI 数据没有这些，用默认值填充)
-            for col, default in [
-                ('Category_Type', 'NonSegmented'),
-                ('Host_Name', host_str),
-                ('Family', 'Unknown'),
-                ('Genus', 'Unknown'),
-                ('Segment_Info', 'N/A'),
-                ('Molecule_type', 'ssRNA'),
-                ('Topology', 'linear'),
-                ('Length', 800),
-            ]:
-                if col not in df_live.columns:
-                    df_live[col] = default
-
-            # Year 列统一为 int
-            df_live['Year'] = pd.to_numeric(df_live['Year'], errors='coerce').fillna(2020).astype(int)
-
-            df = df_live
-            print(f"NCBI Live: fetched {len(df)} records ({df['Organism'].nunique()} species)")
-        except Exception as e:
-            print(f"NCBI Live 失败 ({e})，降级为缓存数据库")
-            df = df_global.copy()
-            import traceback; traceback.print_exc()
-    else:
-        df = df_global.copy()
 
     # Host 过滤
     if 'Host_Name' in df.columns and host:
