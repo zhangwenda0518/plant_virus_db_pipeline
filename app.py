@@ -1,3 +1,4 @@
+import os
 import dash
 from dash import dcc, html, Input, Output, State, dash_table, callback
 import dash_mantine_components as dmc
@@ -321,16 +322,23 @@ app.layout = dmc.MantineProvider(
                                         mb="md"
                                     ),
                                     
-                                    dmc.Text("数据报告年度跨度", size="sm", style={"fontWeight": 600}, mb=5),
-                                    dmc.RangeSlider(
-                                        id="year-slider",
-                                        min=2015,
-                                        max=2025,
-                                        step=1,
-                                        value=[2015, 2025],
-                                        marks=[{"value": y, "label": str(y)} for y in range(2015, 2026, 2)],
-                                        mb="xl"
+                                    dmc.Text("数据报告年度跨度", size="sm", style={"fontWeight": 600}, mb="xs"),
+                                    dmc.Text("拖动两端滑块选择起止年份", size="xs", c="dimmed", mb="md"),
+                                    html.Div(
+                                        dcc.RangeSlider(
+                                            id="year-slider",
+                                            min=df_global['Year'].min(),
+                                            max=df_global['Year'].max(),
+                                            step=1,
+                                            value=[df_global['Year'].min(), df_global['Year'].max()],
+                                            marks={y: {"label": str(y), "style": {"fontSize": "11px"}}
+                                                   for y in range(int(df_global['Year'].min()), int(df_global['Year'].max())+1, 5)},
+                                            allowCross=False,
+                                            tooltip={"placement": "bottom", "always_visible": True}
+                                        ),
+                                        style={"padding": "0 30px 10px 10px", "marginTop": "4px"}
                                     ),
+                                    dmc.Space(h="md"),
                                     
                                     dmc.Divider(my="md"),
                                     
@@ -735,4 +743,6 @@ def export_table_csv(n_clicks, table_data):
     return dcc.send_data_frame(df.to_csv, "plantvirus_alignment_metadata.csv", index=False)
 
 if __name__ == '__main__':
-    app.run_server(debug=True, port=8050)
+    port = int(os.environ.get("PORT", 8050))
+    debug = os.environ.get("DEBUG", "true").lower() == "true"
+    app.run(debug=debug, host="0.0.0.0", port=port)
