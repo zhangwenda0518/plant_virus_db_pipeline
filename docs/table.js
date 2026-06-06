@@ -67,7 +67,12 @@ async function loadTable(tableId, isSegmented) {
         data: dataWithCheck, columns: cols, deferRender: true,
         pageLength: 50, lengthMenu: [[25, 50, 100, 500, -1], [25, 50, 100, 500, 'All']],
         order: [[1, 'asc']], dom: 'Bfrtip',
-        buttons: [{ extend: 'colvis', text: 'Columns' }],
+        buttons: [
+          { extend: 'colvis', text: 'Columns' },
+          { text: 'CSV Selected', action: function() { exportSelected('csv'); } },
+          { text: 'TSV Selected', action: function() { exportSelected('tsv'); } },
+          { text: 'Copy Selected', action: function() { exportSelected('copy'); } }
+        ],
         columnDefs: [{ targets: [0], searchable: false, render: (d) => d }],
         initComplete: function() { this.columns.adjust().draw(); }
       });
@@ -109,11 +114,21 @@ function exportSelected(fmt) {
     const allData = currentTable.rows({ filter: 'applied' }).data().toArray();
     const header = currentFields.join('\t');
     const body = allData.map(r => r.slice(1).join('\t')).join('\n');
+    if (fmt === 'copy') {
+      navigator.clipboard.writeText(header + '\n' + body);
+      return;
+    }
     downloadBlob(header + '\n' + body, 'export.tsv', 'text/tab-separated-values');
     return;
   }
-  const header = currentFields.join(fmt === 'tsv' ? '\t' : ',');
-  const body = rows.map(r => r.map(v => fmt === 'tsv' ? v : '"' + v.replace(/"/g, '""') + '"').join(fmt === 'tsv' ? '\t' : ',')).join('\n');
+  const sep = fmt === 'tsv' ? '\t' : ',';
+  const header = currentFields.join(sep);
+  const body = rows.map(r => r.map(v => sep !== '\t' ? '"' + v.replace(/"/g, '""') + '"' : v).join(sep)).join('\n');
+  if (fmt === 'copy') {
+    navigator.clipboard.writeText(header + '\n' + body);
+    alert(rows.length + ' rows copied to clipboard');
+    return;
+  }
   const ext = fmt === 'tsv' ? '.tsv' : '.csv';
   const mime = fmt === 'tsv' ? 'text/tab-separated-values' : 'text/csv';
   downloadBlob(header + '\n' + body, 'selected' + ext, mime);
