@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Submit Virus — Plant Virus DB</title>
+<style>
+*{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;padding:0;background:#f5f5f5;color:#333}
+nav{background:#1a5276;color:#fff;padding:0 24px;display:flex;align-items:center;gap:4px;height:52px;position:sticky;top:0;z-index:10}
+nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 18px;font-size:14px;border-radius:6px 6px 0 0}
+nav a:hover,nav a.active{background:rgba(255,255,255,.15);color:#fff}
+nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0}
+.main{max-width:900px;margin:30px auto;padding:0 20px}
+.card{background:#fff;padding:24px 28px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-bottom:20px}
+.card h2{margin:0 0 8px;font-size:20px;color:#1a5276}
+.card .subtitle{font-size:13px;color:#888;margin-bottom:20px}
+.row{display:flex;gap:16px;margin-bottom:14px;flex-wrap:wrap}
+.field{flex:1;min-width:220px}
+.field label{display:block;font-size:13px;font-weight:600;color:#555;margin-bottom:4px}
+.field label .req{color:#e74c3c}
+.field input,.field select,.field textarea{width:100%;padding:8px 12px;border:1px solid #ddd;border-radius:6px;font-size:14px;outline:none;font-family:inherit}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#2e86c1}
+.field textarea{resize:vertical;min-height:60px}
+.hint{font-size:11px;color:#999;margin-top:4px}
+.radio-group{display:flex;gap:16px;margin-top:6px}
+.radio-group label{display:flex;align-items:center;gap:4px;font-weight:400;cursor:pointer}
+.btn-row{display:flex;gap:12px;margin-top:20px}
+.btn{flex:1;padding:14px;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer}
+.btn-primary{background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff}
+.btn-primary:hover{background:linear-gradient(135deg,#154360,#1a5276)}
+.btn-secondary{background:#f1f3f5;color:#555;border:1px solid #ddd}
+.btn-secondary:hover{background:#e9ecef}
+.preview{background:#f8f9fa;border:1px solid #e0e0e0;border-radius:6px;padding:14px;font-family:monospace;font-size:12px;white-space:pre-wrap;max-height:200px;overflow-y:auto;margin-top:12px;display:none}
+.footer{text-align:center;padding:20px;color:#999;font-size:12px}
+.footer a{color:#2e86c1;text-decoration:none}
+.success{background:#d4edda;border:1px solid #c3e6cb;color:#155724;padding:12px 16px;border-radius:6px;margin-bottom:16px;display:none}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">Plant Virus DB</a>
+  <a href="index.html">Dashboard</a>
+  <a href="segmented.html">Segmented</a>
+  <a href="nonsegmented.html">Non‑Segmented</a>
+  <a href="explorer.html">Explorer</a>
+  <a href="submit.html" class="active">Submit</a>
+  <a href="download.html">Download</a>
+</nav>
+<div class="main">
+  <div class="success" id="success">Submitted! Redirecting to GitHub...</div>
+  <div class="card">
+    <h2>Submit Plant Virus Data</h2>
+    <p class="subtitle">New viruses → both <code>Plant_Virus_Info.full.tsv</code> &amp; <code>final.cluster.ref_info.tsv</code>. Known viruses → only <code>Plant_Virus_Info.full.tsv</code>. Submission creates a GitHub Issue for review.</p>
+    <form id="submitForm" onsubmit="return doSubmit()">
+      <div class="row">
+        <div class="field">
+          <label>Submission Type <span class="req">*</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="submitType" value="new" checked> New Virus (→ both files)</label>
+            <label><input type="radio" name="submitType" value="known"> Known Virus (→ full only)</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field"><label>Accession <span class="req">*</span></label><input type="text" id="acc" placeholder="NC_123456" required></div>
+        <div class="field"><label>TaxID</label><input type="text" id="taxid" placeholder="123456"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>Species NCBI</label><input type="text" id="spNCBI" placeholder="Tomato spotted wilt virus"></div>
+        <div class="field"><label>Species ICTV</label><input type="text" id="spICTV" placeholder="Orthotospovirus tomatomaculae"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>Family</label><input type="text" id="family" placeholder="Tospoviridae"></div>
+        <div class="field"><label>Genus</label><input type="text" id="genus" placeholder="Orthotospovirus"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>Segment</label><input type="text" id="segment" placeholder="RNA L / DNA-A / leave empty"></div>
+        <div class="field"><label>Sequence Type <span class="req">*</span></label>
+          <select id="seqType"><option>RefSeq</option><option>GenBank</option><option>GenBank/ICTV</option></select></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>Topology</label><select id="topology"><option>linear</option><option>circular</option></select></div>
+        <div class="field"><label>Molecule Type</label><input type="text" id="molType" placeholder="ssRNA(+) / dsDNA / ssDNA"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>Length (bp) <span class="req">*</span></label><input type="number" id="length" placeholder="8000" required></div>
+        <div class="field"><label>Nuc Completeness</label><select id="completeness"><option>complete</option><option>partial</option></select></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>Host</label><input type="text" id="host" placeholder="Solanum lycopersicum"></div>
+        <div class="field"><label>Geo Location</label><input type="text" id="geo" placeholder="China: Yunnan"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label>Collection Date</label><input type="text" id="collDate" placeholder="2023-05"></div>
+        <div class="field"><label>Release Date</label><input type="text" id="relDate" placeholder="2024-01-15"></div>
+      </div>
+      <div class="row">
+        <div class="field" style="flex:2"><label>GenBank Title</label><textarea id="title" rows="2" placeholder="Virus name isolate X, complete genome"></textarea></div>
+      </div>
+      <div class="row">
+        <div class="field" style="flex:2"><label>Additional Notes</label><textarea id="notes" rows="2" placeholder="Any additional information..."></textarea></div>
+      </div>
+      <div class="btn-row">
+        <button type="button" class="btn btn-secondary" onclick="previewIssue()">Preview</button>
+        <button type="submit" class="btn btn-primary">Submit to GitHub</button>
+      </div>
+      <div class="preview" id="preview"></div>
+    </form>
+  </div>
+</div>
+<div class="footer">Plant Virus Reference Database · <a href="https://github.com/zhangwenda0518/plant_virus_db_pipeline">GitHub</a></div>
+
+<script>
+function getFormData() {
+  const type = document.querySelector('input[name="submitType"]:checked').value;
+  const fields = {
+    'Accession': document.getElementById('acc').value.trim(),
+    'TaxID': document.getElementById('taxid').value.trim(),
+    'Species_NCBI': document.getElementById('spNCBI').value.trim(),
+    'Species_ICTV': document.getElementById('spICTV').value.trim(),
+    'Family': document.getElementById('family').value.trim(),
+    'Genus': document.getElementById('genus').value.trim(),
+    'Segment': document.getElementById('segment').value.trim(),
+    'Sequence_Type': document.getElementById('seqType').value,
+    'Topology': document.getElementById('topology').value,
+    'Molecule_type': document.getElementById('molType').value.trim(),
+    'Length': document.getElementById('length').value,
+    'Nuc_Completeness': document.getElementById('completeness').value,
+    'Host': document.getElementById('host').value.trim(),
+    'Geo_Location': document.getElementById('geo').value.trim(),
+    'Collection_Date': document.getElementById('collDate').value.trim(),
+    'Release_Date': document.getElementById('relDate').value.trim(),
+    'GenBank_Title': document.getElementById('title').value.trim(),
+    'Notes': document.getElementById('notes').value.trim()
+  };
+  return { type, fields };
+}
+
+function buildBody(data) {
+  const target = data.type === 'new' ?
+    '**Target files**: Both `Plant_Virus_Info.full.tsv` and `final.cluster.ref_info.tsv`' :
+    '**Target files**: `Plant_Virus_Info.full.tsv` only';
+  let body = `### Virus Submission\n\n${target}\n\n| Field | Value |\n|-------|-------|\n`;
+  for (const [k, v] of Object.entries(data.fields)) {
+    if (v) body += `| ${k} | ${v} |\n`;
+  }
+  body += '\n---\n_Submitted via Plant Virus DB Submit page_';
+  return body;
+}
+
+function previewIssue() {
+  const data = getFormData();
+  const body = buildBody(data);
+  document.getElementById('preview').textContent = body;
+  document.getElementById('preview').style.display = '';
+}
+
+function doSubmit() {
+  const data = getFormData();
+  if (!data.fields['Accession']) { alert('Accession is required'); return false; }
+  const title = encodeURIComponent('[Virus Submit] ' + (data.fields['Species_ICTV'] || data.fields['Species_NCBI'] || data.fields['Accession']));
+  const body = encodeURIComponent(buildBody(data));
+  const labels = encodeURIComponent(data.type === 'new' ? 'new-virus' : 'known-virus');
+  const url = 'https://github.com/zhangwenda0518/plant_virus_db_pipeline/issues/new?title=' + title + '&body=' + body + '&labels=' + labels;
+  document.getElementById('success').style.display = '';
+  setTimeout(function() { window.open(url, '_blank'); }, 500);
+  return false;
+}
+</script>
+</body>
+</html>
