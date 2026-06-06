@@ -388,8 +388,8 @@ app.layout = dmc.MantineProvider(
                                                             dmc.Badge("Faceted Analysis Available", color="gray")
                                                         ]
                                                     ),
-                                                    dmc.LoadingOverlay(
-                                                        loaderProps={"type": "bars", "color": "teal"},
+                                                    dcc.Loading(
+                                                        type="cube", color="#12b886",
                                                         children=[
                                                             dcc.Graph(id="spatiotemporal-bar-chart", style={"height": "480px"}),
                                                             dmc.Space(h="md"),
@@ -467,8 +467,8 @@ app.layout = dmc.MantineProvider(
                                                         c="dimmed",
                                                         mb="lg"
                                                     ),
-                                                    dmc.LoadingOverlay(
-                                                        loaderProps={"type": "oval", "color": "teal"},
+                                                    dcc.Loading(
+                                                        type="cube", color="#12b886",
                                                         children=[
                                                             dmc.Title("单碱基坐标位点丰度映射 (A/T/G/C 分布热图)", order=5, mb="xs"),
                                                             dcc.Graph(id="alignment-heatmap", style={"height": "320px"}),
