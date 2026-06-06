@@ -119,18 +119,18 @@ app.layout = dmc.MantineProvider(
                 # Right panel: charts + table
                 dmc.GridCol(span={"base": 12, "md": 9}, children=dmc.Paper(
                     withBorder=True, shadow="sm", p="md", radius="md", children=[
-                        dmc.Tabs(value="overview", children=[
+                        dmc.Tabs(value="trends", children=[
                             dmc.TabsList(mb="md", children=[
-                                dmc.TabsTab("Overview", value="overview", leftSection="📊"),
-                                dmc.TabsTab("Taxonomy", value="taxonomy", leftSection="🧬"),
-                                dmc.TabsTab("Host-Virus", value="host", leftSection="🌿"),
+                                dmc.TabsTab("Spatiotemporal", value="trends", leftSection="📊"),
+                                dmc.TabsTab("Mutation/Alignment", value="mutation", leftSection="🧬"),
+                                dmc.TabsTab("Taxonomy", value="taxonomy", leftSection="🦠"),
                                 dmc.TabsTab("Data Table", value="table", leftSection="📋")
                             ]),
 
-                            # Overview tab
-                            dmc.TabsPanel(value="overview", children=[
+                            # Spatiotemporal tab — faceted bar chart by country × year × species
+                            dmc.TabsPanel(value="trends", children=[
                                 dmc.Group(justify="space-between", mb="md", children=[
-                                    dmc.Title("Database Overview", order=3),
+                                    dmc.Title("Spatiotemporal Distribution", order=3),
                                     dmc.Badge(id="stats-badge", color="gray")
                                 ]),
                                 dmc.Grid(gutter="md", children=[
@@ -146,38 +146,56 @@ app.layout = dmc.MantineProvider(
                                     )),
                                     dmc.GridCol(span=4, children=dmc.Card(
                                         withBorder=True, shadow="xs", p="sm", radius="md",
-                                        children=[dmc.Text("Families", size="xs", c="dimmed"),
-                                                  dmc.Title(id="kpi-families", order=3, c="orange")]
+                                        children=[dmc.Text("Regions", size="xs", c="dimmed"),
+                                                  dmc.Title(id="kpi-countries", order=3, c="orange")]
                                     ))
                                 ]),
                                 dmc.Space(h="md"),
-                                dcc.Loading(dcc.Graph(id="chart-category", style={"height": "320px"}), type="cube", color="#12b886"),
+                                dcc.Loading(dcc.Graph(id="spatiotemporal-chart", style={"height": "520px"}), type="cube", color="#12b886"),
                                 dmc.Space(h="md"),
-                                dcc.Loading(dcc.Graph(id="chart-timeline", style={"height": "300px"}), type="cube", color="#12b886")
+                                dmc.Title("Timeline by Category", order=4, mb="xs"),
+                                dcc.Loading(dcc.Graph(id="chart-timeline", style={"height": "280px"}), type="cube", color="#12b886")
+                            ]),
+
+                            # Mutation/Alignment tab
+                            dmc.TabsPanel(value="mutation", children=[
+                                dmc.Group(justify="space-between", mb="md", children=[
+                                    dmc.Title("Category & Genome Distribution", order=3),
+                                    dmc.Select(id="focus-virus-select", label="Focus Species",
+                                               data=[], value="", style={"width": 380})
+                                ]),
+                                dmc.Grid(gutter="md", children=[
+                                    dmc.GridCol(span=7, children=[
+                                        dcc.Loading(dcc.Graph(id="chart-category", style={"height": "340px"}), type="cube", color="#12b886")
+                                    ]),
+                                    dmc.GridCol(span=5, children=[
+                                        dmc.Grid(gutter="md", children=[
+                                            dmc.GridCol(span=12, children=[
+                                                dcc.Loading(dcc.Graph(id="chart-genome", style={"height": "250px"}), type="cube", color="#12b886")
+                                            ]),
+                                            dmc.GridCol(span=12, children=[
+                                                dcc.Loading(dcc.Graph(id="chart-topology", style={"height": "250px"}), type="cube", color="#12b886")
+                                            ])
+                                        ])
+                                    ])
+                                ]),
+                                dmc.Space(h="md"),
+                                dcc.Loading(dcc.Graph(id="chart-family", style={"height": "400px"}), type="cube", color="#12b886")
                             ]),
 
                             # Taxonomy tab
                             dmc.TabsPanel(value="taxonomy", children=[
                                 dmc.Title("Top 15 Virus Families", order=3, mb="md"),
-                                dcc.Loading(dcc.Graph(id="chart-family", style={"height": "420px"}), type="cube", color="#12b886"),
-                                dmc.Space(h="md"),
-                                dmc.Title("Top 15 Virus Genera", order=3, mb="md"),
-                                dcc.Loading(dcc.Graph(id="chart-genus", style={"height": "420px"}), type="cube", color="#12b886")
-                            ]),
-
-                            # Host-Virus tab
-                            dmc.TabsPanel(value="host", children=[
-                                dmc.Title("Top 20 Host Plants", order=3, mb="md"),
-                                dcc.Loading(dcc.Graph(id="chart-host", style={"height": "420px"}), type="cube", color="#12b886"),
+                                dcc.Loading(dcc.Graph(id="chart-family-tax", style={"height": "400px"}), type="cube", color="#12b886"),
                                 dmc.Space(h="md"),
                                 dmc.Grid(gutter="md", children=[
                                     dmc.GridCol(span=6, children=[
-                                        dmc.Title("Genome Type Distribution", order=4, mb="sm"),
-                                        dcc.Loading(dcc.Graph(id="chart-genome", style={"height": "280px"}), type="cube", color="#12b886")
+                                        dmc.Title("Top 15 Virus Genera", order=4, mb="sm"),
+                                        dcc.Loading(dcc.Graph(id="chart-genus", style={"height": "400px"}), type="cube", color="#12b886")
                                     ]),
                                     dmc.GridCol(span=6, children=[
-                                        dmc.Title("Topology", order=4, mb="sm"),
-                                        dcc.Loading(dcc.Graph(id="chart-topology", style={"height": "280px"}), type="cube", color="#12b886")
+                                        dmc.Title("Top 20 Host Plants", order=4, mb="sm"),
+                                        dcc.Loading(dcc.Graph(id="chart-host", style={"height": "400px"}), type="cube", color="#12b886")
                                     ])
                                 ])
                             ]),
@@ -238,10 +256,12 @@ def filter_df(host, families, categories, genomes, years):
 
 @callback(
     [Output("records-table", "data"),
+     Output("focus-virus-select", "data"),
+     Output("focus-virus-select", "value"),
      Output("stats-badge", "children"),
      Output("kpi-seqs", "children"),
      Output("kpi-species", "children"),
-     Output("kpi-families", "children")],
+     Output("kpi-countries", "children")],
     Input("apply-btn", "n_clicks"),
     [State("host-filter", "value"),
      State("family-filter", "value"),
@@ -253,20 +273,24 @@ def update_all(n, host, families, categories, genomes, years):
     df = filter_df(host, families, categories, genomes, years)
     seqs = f"{len(df):,}"
     spp = str(df['Organism'].nunique())
-    fams = str(df['Family'].nunique())
-    badge = f"{seqs} seqs | {spp} spp | {fams} families"
+    regs = str(df['Country'].nunique())
+    badge = f"{seqs} seqs | {spp} spp | {regs} regions"
     table_data = df.head(500).to_dict('records')
-    return table_data, badge, seqs, spp, fams
+    virus_opts = [{"value": v, "label": v} for v in sorted(df['Organism'].unique())[:100]]
+    default_v = virus_opts[0]['value'] if virus_opts else ""
+    return table_data, virus_opts, default_v, badge, seqs, spp, regs
 
 
 @callback(
-    [Output("chart-category", "figure"),
+    [Output("spatiotemporal-chart", "figure"),
      Output("chart-timeline", "figure"),
-     Output("chart-family", "figure"),
-     Output("chart-genus", "figure"),
-     Output("chart-host", "figure"),
+     Output("chart-category", "figure"),
      Output("chart-genome", "figure"),
-     Output("chart-topology", "figure")],
+     Output("chart-topology", "figure"),
+     Output("chart-family", "figure"),
+     Output("chart-family-tax", "figure"),
+     Output("chart-genus", "figure"),
+     Output("chart-host", "figure")],
     Input("apply-btn", "n_clicks"),
     [State("host-filter", "value"),
      State("family-filter", "value"),
@@ -277,41 +301,29 @@ def update_all(n, host, families, categories, genomes, years):
 def update_charts(n, host, families, categories, genomes, years):
     df = filter_df(host, families, categories, genomes, years)
 
-    # Category bar
-    cat_cnt = df['Category'].value_counts().reset_index()
-    cat_cnt.columns = ['Category', 'Count']
-    fig_cat = px.bar(cat_cnt, x='Category', y='Count', color='Category',
-                     color_discrete_sequence=px.colors.qualitative.G10,
-                     labels={'Count': 'Sequences'})
-    fig_cat.update_layout(showlegend=False, plot_bgcolor='white', margin=dict(l=10, r=10, t=10, b=10))
+    # Spatiotemporal: faceted bar by Country × Year × Virus species
+    df_st = df.groupby(['Year', 'Country', 'Category_Type']).size().reset_index(name='Count')
+    fig_st = px.bar(df_st, x='Year', y='Count', color='Category_Type',
+                    facet_col='Country', facet_col_wrap=3,
+                    color_discrete_sequence=['#2e86c1', '#e74c3c'],
+                    labels={'Category_Type': 'Type'}, height=480)
+    fig_st.update_yaxes(matches=None, showgrid=True, gridcolor='#f1f3f5')
+    fig_st.update_layout(plot_bgcolor='white', paper_bgcolor='white',
+                         legend=dict(orientation="h", yanchor="bottom", y=-0.5, xanchor="center", x=0.5),
+                         margin=dict(l=40, r=20, t=30, b=120))
 
     # Timeline
     year_cnt = df.groupby(['Year', 'Category_Type']).size().reset_index(name='Count')
     fig_tl = px.bar(year_cnt, x='Year', y='Count', color='Category_Type',
-                    color_discrete_sequence=['#2e86c1', '#e74c3c'],
-                    labels={'Category_Type': 'Type'})
+                    color_discrete_sequence=['#2e86c1', '#e74c3c'])
     fig_tl.update_layout(plot_bgcolor='white', margin=dict(l=10, r=10, t=10, b=10))
 
-    # Family top 15
-    fam_cnt = df['Family'].value_counts().head(15).reset_index()
-    fam_cnt.columns = ['Family', 'Count']
-    fig_fam = px.bar(fam_cnt, x='Count', y='Family', orientation='h',
-                     color_discrete_sequence=['#2e86c1'])
-    fig_fam.update_layout(showlegend=False, plot_bgcolor='white', margin=dict(l=10, r=10, t=10, b=10))
-
-    # Genus top 15
-    gen_cnt = df['Genus'].value_counts().head(15).reset_index()
-    gen_cnt.columns = ['Genus', 'Count']
-    fig_gen = px.bar(gen_cnt, x='Count', y='Genus', orientation='h',
-                     color_discrete_sequence=['#27ae60'])
-    fig_gen.update_layout(showlegend=False, plot_bgcolor='white', margin=dict(l=10, r=10, t=10, b=10))
-
-    # Host top 20
-    host_cnt = df['Host_Name'].value_counts().head(20).reset_index()
-    host_cnt.columns = ['Host', 'Count']
-    fig_host = px.bar(host_cnt, x='Count', y='Host', orientation='h',
-                      color_discrete_sequence=['#f39c12'])
-    fig_host.update_layout(showlegend=False, plot_bgcolor='white', margin=dict(l=10, r=10, t=10, b=10))
+    # Category bar
+    cat_cnt = df['Category'].value_counts().reset_index()
+    cat_cnt.columns = ['Category', 'Count']
+    fig_cat = px.bar(cat_cnt, x='Category', y='Count', color='Category',
+                     color_discrete_sequence=px.colors.qualitative.G10)
+    fig_cat.update_layout(showlegend=False, plot_bgcolor='white', margin=dict(l=10, r=10, t=10, b=10))
 
     # Genome type
     mol_cnt = df['Molecule_type'].value_counts().reset_index()
@@ -327,7 +339,31 @@ def update_charts(n, host, families, categories, genomes, years):
                       color_discrete_sequence=px.colors.qualitative.Set2)
     fig_topo.update_layout(margin=dict(l=10, r=10, t=10, b=10))
 
-    return fig_cat, fig_tl, fig_fam, fig_gen, fig_host, fig_mol, fig_topo
+    # Family — for Mutation tab
+    fam_cnt = df['Family'].value_counts().head(20).reset_index()
+    fam_cnt.columns = ['Family', 'Count']
+    fig_fam = px.bar(fam_cnt, x='Count', y='Family', orientation='h', color_discrete_sequence=['#2e86c1'])
+    fig_fam.update_layout(showlegend=False, plot_bgcolor='white', margin=dict(l=10, r=10, t=10, b=10))
+
+    # Family — Taxonomy tab
+    fam_cnt2 = df['Family'].value_counts().head(15).reset_index()
+    fam_cnt2.columns = ['Family', 'Count']
+    fig_famt = px.bar(fam_cnt2, x='Count', y='Family', orientation='h', color_discrete_sequence=['#2e86c1'])
+    fig_famt.update_layout(showlegend=False, plot_bgcolor='white', margin=dict(l=10, r=10, t=10, b=10))
+
+    # Genus
+    gen_cnt = df['Genus'].value_counts().head(15).reset_index()
+    gen_cnt.columns = ['Genus', 'Count']
+    fig_gen = px.bar(gen_cnt, x='Count', y='Genus', orientation='h', color_discrete_sequence=['#27ae60'])
+    fig_gen.update_layout(showlegend=False, plot_bgcolor='white', margin=dict(l=10, r=10, t=10, b=10))
+
+    # Host
+    host_cnt = df['Host_Name'].value_counts().head(20).reset_index()
+    host_cnt.columns = ['Host', 'Count']
+    fig_host = px.bar(host_cnt, x='Count', y='Host', orientation='h', color_discrete_sequence=['#f39c12'])
+    fig_host.update_layout(showlegend=False, plot_bgcolor='white', margin=dict(l=10, r=10, t=10, b=10))
+
+    return fig_st, fig_tl, fig_cat, fig_mol, fig_topo, fig_fam, fig_famt, fig_gen, fig_host
 
 
 @callback(
