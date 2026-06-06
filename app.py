@@ -292,37 +292,25 @@ app.layout = dmc.MantineProvider(
             # 顶部学术风格导航栏
             dmc.AppShellHeader(
                 px="md",
+                style={"background": "#1a5276"},
                 children=dmc.Group(
                     justify="space-between",
                     h="100%",
                     children=[
-                        dmc.Group(
-                            children=[
-                                dmc.ThemeIcon(
-                                    size="lg",
-                                    radius="md",
-                                    color="teal",
-                                    variant="filled",
-                                    children="🔬"
-                                ),
-                                dmc.Title(
-                                    "Plant Virus Spatiotemporal & Mutation Viewer",
-                                    order=2,
-                                    style={"fontWeight": 800, "color": "#1a1b1e"}
-                                )
-                            ]
-                        ),
-                        dmc.Group(
-                            children=[
-                                dmc.Badge(f"{len(df_global):,} seqs", color="teal", variant="light"),
-                                dmc.Badge(f"{N_SPECIES:,} species", color="indigo", variant="light"),
-                                dmc.Badge("SeqIO & Align Compliant", color="gray", variant="outline")
-                            ]
-                        )
+                        dmc.Group(gap="xs", children=[
+                            dmc.Text("Plant Virus DB", fw=700, size="md", c="white"),
+                            dmc.Anchor("← Database",
+                                       href="https://zhangwenda0518.github.io/plant_virus_db_pipeline/",
+                                       size="sm", c="rgba(255,255,255,0.8)",
+                                       style={"textDecoration": "none"})
+                        ]),
+                        dmc.Group(gap="xs", children=[
+                            dmc.Badge(str(N_SPECIES) + " species", color="gray", variant="filled"),
+                            dmc.Badge(str(len(df_global)) + " sequences", color="blue", variant="filled")
+                        ])
                     ]
                 )
             ),
-            
             # 看板分析主体
             dmc.AppShellMain(
                 children=dmc.Grid(
