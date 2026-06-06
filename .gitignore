@@ -1,2 +1,9 @@
 __pycache__/
-docs/data/plant.virus.fasta
+*.pyc
+*.pyo
+.env
+*.db
+*.sqlite
+.DS_Store
+app.log
+
