@@ -28,7 +28,11 @@ def load_data():
     return df
 
 
-df_global = load_data()
+try:
+    df_global = load_data()
+except Exception as e:
+    print(f"Data load failed: {e}, using empty dataframe")
+    df_global = pd.DataFrame(columns=['Organism','Family','Genus','Category','Host_Name','Country','Year','Molecule_type','Topology','Length','Category_Type','Accession','GenBank_Title'])
 
 # =============================================================================
 # 2. UI 布局
@@ -37,6 +41,7 @@ df_global = load_data()
 app = dash.Dash(__name__, external_stylesheets=[
     "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
 ])
+server = app.server  # for gunicorn
 app.title = "Plant Virus Reference Database — Interactive Explorer"
 
 app.layout = dmc.MantineProvider(
