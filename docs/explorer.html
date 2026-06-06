@@ -4,29 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Explorer — Plant Virus DB</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 <style>
 *{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;padding:0;background:#f5f5f5;color:#333}
 nav{background:#1a5276;color:#fff;padding:0 24px;display:flex;align-items:center;gap:4px;height:52px;position:sticky;top:0;z-index:10}
 nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 18px;font-size:14px;border-radius:6px 6px 0 0}
 nav a:hover,nav a.active{background:rgba(255,255,255,.15);color:#fff}
 nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0}
-.main{max-width:860px;margin:30px auto;padding:0 20px}
+.main{max-width:900px;margin:30px auto;padding:0 20px}
 .card{background:#fff;padding:24px 28px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-bottom:20px}
 .card h2{margin:0 0 8px;font-size:20px;color:#1a5276}
 .card .subtitle{font-size:13px;color:#888;margin-bottom:20px}
 .row{display:flex;gap:16px;margin-bottom:14px;flex-wrap:wrap}
-.field{flex:1;min-width:220px}
-.field label{display:block;font-size:13px;font-weight:600;color:#555;margin-bottom:4px}
-.field input,.field select{width:100%;padding:8px 12px;border:1px solid #ddd;border-radius:6px;font-size:14px;outline:none}
-.field input:focus,.field select:focus{border-color:#2e86c1}
-.field select[multiple]{height:110px}
-.select-all{font-size:11px;color:#2e86c1;cursor:pointer;margin-top:4px;display:inline-block}
+.field{flex:1;min-width:240px}
+.field label{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;color:#555;margin-bottom:4px}
+.field label .cnt{font-weight:400;font-size:11px;color:#999}
+.field select{width:100%;padding:6px 8px;border:1px solid #ddd;border-radius:6px;font-size:13px;outline:none;font-family:inherit}
+.field select:focus{border-color:#2e86c1}
+.field select[multiple]{height:130px;overflow-y:auto}
+.select-all{font-size:11px;color:#2e86c1;cursor:pointer;display:inline-block;margin-top:3px}
 .select-all:hover{text-decoration:underline}
 .hint{font-size:11px;color:#999;margin-top:4px}
 .slider-row input{width:100%}
 .slider-labels{display:flex;justify-content:space-between;font-size:12px;color:#888;margin-top:4px}
 .btn{display:block;width:100%;padding:14px;background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;margin-top:20px}
 .btn:hover{background:linear-gradient(135deg,#154360,#1a5276)}
+.loading{text-align:center;padding:40px;color:#888;font-size:14px}
 .footer{text-align:center;padding:20px;color:#999;font-size:12px}
 .footer a{color:#2e86c1;text-decoration:none}
 </style>
@@ -44,120 +47,128 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
 <div class="main">
   <div class="card">
     <h2>Interactive Explorer</h2>
-    <p class="subtitle">Select filters below, then click "Launch Explorer" to open the interactive visualization.</p>
-    <div class="row">
-      <div class="field">
-        <label>检索宿主种类 (Host)</label>
-        <input type="text" id="host" placeholder="e.g. Capsicum, Solanum, Oryza">
-        <div class="hint">Partial name match · blank = all hosts</div>
-      </div>
-      <div class="field">
-        <label>分析目标国家/地区 (Country)</label>
-        <input type="text" id="country" placeholder="e.g. China, Brazil, India, USA">
-        <div class="hint">Comma-separated · blank = all regions</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="field">
-        <label>基因组结构 (Category)</label>
-        <select id="category" multiple>
-          <option value="Segmented" selected>Segmented (分段)</option>
-          <option value="NonSegmented" selected>Non-Segmented (非分段)</option>
-        </select>
-        <span class="select-all" onclick="toggleAllSelect('category')">Select All / Deselect All</span>
-      </div>
-      <div class="field">
-        <label>病毒科 (Family) — Top 30</label>
-        <select id="family" multiple>
-          <option value="Geminiviridae">Geminiviridae</option>
-          <option value="Potyviridae">Potyviridae</option>
-          <option value="Betaflexiviridae">Betaflexiviridae</option>
-          <option value="Bromoviridae">Bromoviridae</option>
-          <option value="Tombusviridae">Tombusviridae</option>
-          <option value="Closteroviridae">Closteroviridae</option>
-          <option value="Virgaviridae">Virgaviridae</option>
-          <option value="Secoviridae">Secoviridae</option>
-          <option value="Luteoviridae">Luteoviridae</option>
-          <option value="Partitiviridae">Partitiviridae</option>
-          <option value="Caulimoviridae">Caulimoviridae</option>
-          <option value="Phenuiviridae">Phenuiviridae</option>
-          <option value="Reoviridae">Reoviridae</option>
-          <option value="Solemoviridae">Solemoviridae</option>
-          <option value="Rhabdoviridae">Rhabdoviridae</option>
-          <option value="Tospoviridae">Tospoviridae</option>
-          <option value="Nanoviridae">Nanoviridae</option>
-          <option value="Endornaviridae">Endornaviridae</option>
-          <option value="Alphaflexiviridae">Alphaflexiviridae</option>
-          <option value="Kitaviridae">Kitaviridae</option>
-          <option value="Amalgaviridae">Amalgaviridae</option>
-          <option value="Tymoviridae">Tymoviridae</option>
-          <option value="Botourmiaviridae">Botourmiaviridae</option>
-          <option value="Fimoviridae">Fimoviridae</option>
-          <option value="Mayoviridae">Mayoviridae</option>
-          <option value="Pseudoviridae">Pseudoviridae</option>
-          <option value="Metaviridae">Metaviridae</option>
-          <option value="Aspiviridae">Aspiviridae</option>
-          <option value="Chrysoviridae">Chrysoviridae</option>
-          <option value="Deltaflexiviridae">Deltaflexiviridae</option>
-        </select>
-        <span class="select-all" onclick="toggleAllSelect('family')">Select All / Deselect All</span>
-        <div class="hint">Ctrl/Cmd+Click to select multiple · blank = all</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="field">
-        <label>目标病毒物种 (Virus Species)</label>
-        <input type="text" id="virus" placeholder="e.g. Tomato spotted wilt virus">
-        <div class="hint">Partial name match · blank = all species</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="field" style="flex:2">
-        <label>数据报告年度跨度</label>
-        <div class="slider-row">
-          <input type="range" id="yearMin" min="1970" max="2026" value="1970" oninput="updateYear()">
-          <input type="range" id="yearMax" min="1970" max="2026" value="2026" oninput="updateYear()">
+    <p class="subtitle">Select filters below, then click "Launch Explorer". Options show counts from the reference database.</p>
+    <div class="loading" id="loading">Loading filter options...</div>
+    <div id="filters" style="display:none">
+      <div class="row">
+        <div class="field">
+          <label>基因组结构 (Category) <span class="cnt" id="catCnt"></span></label>
+          <select id="category" multiple></select>
+          <span class="select-all" onclick="toggleAll('category')">Select All / Deselect All</span>
         </div>
-        <div class="slider-labels">
-          <span id="yearMinLabel">1970</span>
-          <span id="yearMaxLabel">2026</span>
+        <div class="field">
+          <label>病毒科 (Family) <span class="cnt" id="famCnt"></span></label>
+          <select id="family" multiple></select>
+          <span class="select-all" onclick="toggleAll('family')">Select All / Deselect All</span>
+          <div class="hint">Ctrl/Cmd+Click to select multiple</div>
         </div>
-        <div class="hint">Drag both sliders to set year range</div>
       </div>
+      <div class="row">
+        <div class="field">
+          <label>检索宿主种类 (Host) <span class="cnt" id="hostCnt"></span></label>
+          <select id="host" multiple></select>
+          <span class="select-all" onclick="toggleAll('host')">Select All / Deselect All</span>
+          <div class="hint">Ctrl/Cmd+Click to select multiple</div>
+        </div>
+        <div class="field">
+          <label>分析目标国家/地区 (Country) <span class="cnt" id="ctryCnt"></span></label>
+          <select id="country" multiple></select>
+          <span class="select-all" onclick="toggleAll('country')">Select All / Deselect All</span>
+          <div class="hint">Blank = all regions</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>目标病毒物种 (Virus Species)</label>
+          <input type="text" id="virus" placeholder="e.g. Tomato spotted wilt virus (partial match)">
+          <div class="hint">Partial name match · blank = all</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field" style="flex:2">
+          <label>数据报告年度跨度</label>
+          <div class="slider-row">
+            <input type="range" id="yearMin" min="1970" max="2026" value="1970" oninput="updateYear()">
+            <input type="range" id="yearMax" min="1970" max="2026" value="2026" oninput="updateYear()">
+          </div>
+          <div class="slider-labels">
+            <span id="yearMinLabel">1970</span>
+            <span id="yearMaxLabel">2026</span>
+          </div>
+        </div>
+      </div>
+      <button class="btn" onclick="launch()">Launch Explorer</button>
     </div>
-    <button class="btn" onclick="launch()">Launch Explorer</button>
   </div>
 </div>
 <div class="footer">Plant Virus Reference Database · <a href="https://github.com/zhangwenda0518/plant_virus_db_pipeline">GitHub</a></div>
 
 <script>
+let distData = {};
 function updateYear() {
   document.getElementById('yearMinLabel').textContent = document.getElementById('yearMin').value;
   document.getElementById('yearMaxLabel').textContent = document.getElementById('yearMax').value;
 }
-function toggleAllSelect(id) {
+function toggleAll(id) {
   const sel = document.getElementById(id);
-  const allSelected = [...sel.options].every(o => o.selected);
-  for (const o of sel.options) o.selected = !allSelected;
+  const all = [...sel.options].every(o => o.selected);
+  for (const o of sel.options) o.selected = !all;
+}
+function buildSelect(id, items, label) {
+  const sel = document.getElementById(id);
+  sel.innerHTML = '';
+  for (const [val, cnt] of items) {
+    const opt = document.createElement('option');
+    opt.value = val;
+    opt.textContent = val + ' (' + cnt.toLocaleString() + ')';
+    sel.appendChild(opt);
+  }
+  document.getElementById(label + 'Cnt').textContent = items.length + ' options';
 }
 function launch() {
   const params = new URLSearchParams();
-  const h = document.getElementById('host').value.trim();
-  const c = document.getElementById('country').value.trim();
-  const cats = [...document.getElementById('category').selectedOptions].map(o=>o.value).join(',');
-  const f = [...document.getElementById('family').selectedOptions].map(o=>o.value).join(',');
+  const getVals = id => [...document.getElementById(id).selectedOptions].map(o=>o.value).join(',');
+  const h = getVals('host'), c = getVals('country'), cats = getVals('category'), f = getVals('family');
   const v = document.getElementById('virus').value.trim();
-  const yMin = document.getElementById('yearMin').value;
-  const yMax = document.getElementById('yearMax').value;
   if (h) params.set('host', h);
   if (c) params.set('country', c);
   if (cats) params.set('category', cats);
   if (f) params.set('family', f);
   if (v) params.set('virus', v);
-  params.set('year_min', yMin);
-  params.set('year_max', yMax);
+  params.set('year_min', document.getElementById('yearMin').value);
+  params.set('year_max', document.getElementById('yearMax').value);
   window.open('https://plant-virus-explorer.onrender.com/?' + params.toString(), '_blank');
 }
+
+(async function init() {
+  const resp = await fetch('data/final.cluster.ref_info.tsv');
+  if (!resp.ok) { document.getElementById('loading').textContent='Data not available'; return; }
+  Papa.parse(await resp.text(), { header:true, skipEmptyLines:true, delimiter:'\t', complete(rs) {
+    const data = rs.data;
+    const cnt = (col, topN) => {
+      const m = {};
+      data.forEach(r => { const v = (r[col] || 'Unknown').trim(); if(v) m[v] = (m[v]||0) + 1; });
+      return Object.entries(m).sort((a,b) => b[1] - a[1]).slice(0, topN || 100);
+    };
+    // Category: 2 options
+    const catMap = {};
+    data.forEach(r => { const v = (r['Category']||'').split('_')[0]; if(v) catMap[v] = (catMap[v]||0) + 1; });
+    const cats = Object.entries(catMap).sort((a,b)=>b[1]-a[1]);
+    buildSelect('category', cats, 'cat');
+
+    // Family: top 50
+    buildSelect('family', cnt('VMR_Family', 50), 'fam');
+
+    // Host: top 80
+    buildSelect('host', cnt('Host', 80), 'host');
+
+    // Country: top 80
+    buildSelect('country', cnt('Geo_Location', 80), 'ctry');
+
+    document.getElementById('loading').style.display='none';
+    document.getElementById('filters').style.display='';
+  }});
+})();
 </script>
 </body>
 </html>
