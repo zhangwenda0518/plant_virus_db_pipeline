@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Explorer — Plant Virus DB</title>
+<style>
+*{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;padding:0;background:#f5f5f5;color:#333}
+nav{background:#1a5276;color:#fff;padding:0 24px;display:flex;align-items:center;gap:4px;height:52px;position:sticky;top:0;z-index:10}
+nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 18px;font-size:14px;border-radius:6px 6px 0 0}
+nav a:hover,nav a.active{background:rgba(255,255,255,.15);color:#fff}
+nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0}
+.main{max-width:800px;margin:30px auto;padding:0 20px}
+.card{background:#fff;padding:24px 28px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-bottom:20px}
+.card h2{margin:0 0 20px;font-size:20px;color:#1a5276}
+.row{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.field{flex:1;min-width:200px}
+.field label{display:block;font-size:13px;font-weight:600;color:#555;margin-bottom:6px}
+.field input,.field select{width:100%;padding:8px 12px;border:1px solid #ddd;border-radius:6px;font-size:14px;outline:none}
+.field input:focus,.field select:focus{border-color:#2e86c1}
+.field select[multiple]{height:100px}
+.hint{font-size:11px;color:#999;margin-top:4px}
+.slider-row{padding:0 10px}
+.slider-row input{width:100%}
+.slider-labels{display:flex;justify-content:space-between;font-size:12px;color:#888;margin-top:4px}
+.switch{display:flex;align-items:center;gap:8px;margin:16px 0}
+.switch label{font-size:13px;color:#555}
+.switch .desc{font-size:11px;color:#999}
+.btn{display:block;width:100%;padding:14px;background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;margin-top:20px}
+.btn:hover{background:linear-gradient(135deg,#154360,#1a5276)}
+.footer{text-align:center;padding:20px;color:#999;font-size:12px}
+.footer a{color:#2e86c1;text-decoration:none}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">Plant Virus DB</a>
+  <a href="index.html">Dashboard</a>
+  <a href="segmented.html">Segmented</a>
+  <a href="nonsegmented.html">Non‑Segmented</a>
+  <a href="explorer.html" class="active">Explorer</a>
+  <a href="download.html">Download</a>
+</nav>
+<div class="main">
+  <div class="card">
+    <h2>Interactive Explorer — Filters</h2>
+    <p style="font-size:13px;color:#888;margin-bottom:20px">Adjust filters, then click "Launch Explorer" to open the interactive visualization with your selections applied.</p>
+    <div class="row">
+      <div class="field">
+        <label>检索宿主种类 (Host)</label>
+        <input type="text" id="host" placeholder="e.g. Capsicum, Solanum, Oryza">
+        <div class="hint">Leave blank for all hosts</div>
+      </div>
+      <div class="field">
+        <label>目标国家/地区 (Country)</label>
+        <input type="text" id="country" placeholder="e.g. China, Brazil, India">
+        <div class="hint">Leave blank for all regions</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label>基因组结构</label>
+        <select id="category" multiple>
+          <option value="Segmented" selected>Segmented (分段)</option>
+          <option value="NonSegmented" selected>Non‑Segmented (非分段)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>病毒科 (Family)</label>
+        <input type="text" id="family" placeholder="e.g. Geminiviridae, Potyviridae">
+        <div class="hint">Comma-separated, leave blank for all</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label>目标病毒物种</label>
+        <input type="text" id="virus" placeholder="e.g. Tomato spotted wilt virus">
+        <div class="hint">Partial name match, leave blank for all</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field" style="flex:2">
+        <label>数据报告年度跨度</label>
+        <div class="slider-row">
+          <input type="range" id="yearMin" min="1970" max="2026" value="1990" oninput="updateYear()">
+          <input type="range" id="yearMax" min="1970" max="2026" value="2026" oninput="updateYear()">
+        </div>
+        <div class="slider-labels">
+          <span id="yearMinLabel">1990</span>
+          <span id="yearMaxLabel">2026</span>
+        </div>
+        <div class="hint">Drag both sliders to set year range</div>
+      </div>
+    </div>
+    <button class="btn" onclick="launch()">重算数据流并生成图表 → Launch Explorer</button>
+  </div>
+</div>
+<div class="footer">Plant Virus Reference Database · <a href="https://github.com/zhangwenda0518/plant_virus_db_pipeline">GitHub</a></div>
+
+<script>
+function updateYear() {
+  document.getElementById('yearMinLabel').textContent = document.getElementById('yearMin').value;
+  document.getElementById('yearMaxLabel').textContent = document.getElementById('yearMax').value;
+}
+function launch() {
+  const params = new URLSearchParams();
+  const h = document.getElementById('host').value.trim();
+  const c = document.getElementById('country').value.trim();
+  const cats = [...document.getElementById('category').selectedOptions].map(o=>o.value).join(',');
+  const f = document.getElementById('family').value.trim();
+  const v = document.getElementById('virus').value.trim();
+  const yMin = document.getElementById('yearMin').value;
+  const yMax = document.getElementById('yearMax').value;
+  if (h) params.set('host', h);
+  if (c) params.set('country', c);
+  if (cats) params.set('category', cats);
+  if (f) params.set('family', f);
+  if (v) params.set('virus', v);
+  params.set('year_min', yMin);
+  params.set('year_max', yMax);
+  window.open('https://plant-virus-explorer.onrender.com/?' + params.toString(), '_blank');
+}
+</script>
+</body>
+</html>
