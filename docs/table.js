@@ -13,7 +13,7 @@ async function loadTable(tableId, isSegmented) {
   document.getElementById('tableWrap').style.display = 'none';
   document.getElementById('toolbar').style.display = 'none';
 
-  const resp = await fetch(src.file);
+  const resp = await fetch(src.file + '?v=2');
   if (!resp.ok) { document.getElementById('loading').innerHTML = '<p style="color:red">' + src.file + ' not found</p>'; return; }
   const text = await resp.text();
 
