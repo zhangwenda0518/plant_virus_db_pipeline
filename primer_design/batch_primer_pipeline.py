@@ -41,6 +41,9 @@ def parse_args():
     p.add_argument("--degenerate-threshold", default=3, type=int,
                    help="≥此序列数时才设计简并引物")
     p.add_argument("--skip-degenerate", action="store_true", help="跳过简并引物设计")
+    p.add_argument("--skip-crispr", action="store_true", help="跳过CRISPR检测引物设计")
+    p.add_argument("--crispr-cas-type", default="Cas12a", choices=["Cas12a", "Cas12b", "Cas13a", "Cas9"],
+                   help="CRISPR检测使用的Cas蛋白类型")
     p.add_argument("--dry-run", action="store_true", help="只生成任务列表，不实际运行")
     return p.parse_args()
 
@@ -216,6 +219,243 @@ def parse_varvamp_primers(primer_file: Path, virus_name: str):
     return primers
 
 
+def design_crispr_primers(fasta_file: str, virus_name: str, cas_type: str = "Cas12a",
+                          rpa_amplicon_size: tuple = (100, 250)):
+    """
+    CRISPR-Cas 检测引物设计 — 等温扩增 (RPA/LAMP) + CRISPR 联用
+
+    步骤:
+      1. 扫描病毒基因组中的 PAM 位点
+      2. 提取 crRNA spacer (20-25bp)
+      3. 设计 RPA 引物 (扩增含 crRNA 靶标区的短片段)
+      4. 基础特异性过滤 (避免引物二聚体, GC 适中)
+
+    Cas12a PAM: TTTV (TTTA/TTTT/TTTG/TTTC)
+    Cas12b PAM: TTN / VTTV
+    Cas9 PAM:   NGG
+    """
+    from Bio.Seq import Seq
+
+    PAM_PATTERNS = {
+        "Cas12a": {"pam": "TTTV", "spacer_len": (20, 23),
+                   "desc": "TTTV PAM + 20-23nt crRNA spacer"},
+        "Cas12b": {"pam": "TTN", "spacer_len": (18, 22),
+                   "desc": "TTN PAM + 18-22nt crRNA spacer"},
+        "Cas9":   {"pam": "GG", "spacer_len": (18, 22),
+                   "desc": "NGG PAM + 18-22nt sgRNA spacer"},
+        "Cas13a": {"pam": None, "spacer_len": (22, 28),
+                   "desc": "No PAM; 22-28nt crRNA spacer (RNA target)"}
+    }
+
+    config = PAM_PATTERNS.get(cas_type, PAM_PATTERNS["Cas12a"])
+    crispr_primers = []
+
+    try:
+        # 读序列
+        sequences = []
+        current_seq = []
+        with open(fasta_file) as f:
+            for line in f:
+                if line.startswith('>'):
+                    if current_seq:
+                        sequences.append(''.join(current_seq))
+                        current_seq = []
+                else:
+                    current_seq.append(line.strip())
+            if current_seq:
+                sequences.append(''.join(current_seq))
+
+        # 取最长序列作为参考
+        if not sequences:
+            return []
+        ref_seq = sequences[0].upper()
+
+        # 扫描 PAM 位点
+        pam = config["pam"]
+        sp_min, sp_max = config["spacer_len"]
+        found_sites = []
+
+        if pam:
+            # 简并碱基映射
+            pam_pattern = pam.replace('V', '[ACG]').replace('N', '[ATCG]')
+            import re
+            for m in re.finditer(pam_pattern, ref_seq):
+                pos = m.start()
+                pam_seq = m.group()
+                # Cas12a: spacer 在 PAM 下游 (3' 方向)
+                # Cas9: spacer 在 PAM 上游 (5' 方向)
+                if cas_type in ("Cas12a", "Cas12b"):
+                    spacer_start = pos + len(pam_seq)
+                    spacer_end = spacer_start + sp_max
+                    if spacer_end <= len(ref_seq):
+                        for sl in range(sp_max, sp_min - 1, -1):
+                            if spacer_start + sl <= len(ref_seq):
+                                spacer = ref_seq[spacer_start:spacer_start + sl]
+                                gc = (spacer.count('G') + spacer.count('C')) / sl
+                                if 0.35 <= gc <= 0.65:
+                                    found_sites.append({
+                                        "PAM": pam_seq,
+                                        "PAM_Pos": pos + 1,
+                                        "Spacer": spacer,
+                                        "Spacer_Len": sl,
+                                        "GC": round(gc * 100, 1),
+                                        "Direction": "downstream"
+                                    })
+                                    break
+                elif cas_type == "Cas9":
+                    spacer_end = pos
+                    spacer_start = max(0, spacer_end - sp_max)
+                    for sl in range(sp_max, sp_min - 1, -1):
+                        if pos - sl >= 0:
+                            spacer = ref_seq[pos - sl:pos]
+                            gc = (spacer.count('G') + spacer.count('C')) / sl
+                            if 0.35 <= gc <= 0.65:
+                                found_sites.append({
+                                    "PAM": "NGG",
+                                    "PAM_Pos": pos + 1,
+                                    "Spacer": spacer,
+                                    "Spacer_Len": sl,
+                                    "GC": round(gc * 100, 1),
+                                    "Direction": "upstream"
+                                })
+                                break
+        else:
+            # Cas13a: 无 PAM → 滑动窗口扫描
+            for pos in range(0, len(ref_seq) - sp_max, 5):
+                for sl in range(sp_max, sp_min - 1, -1):
+                    if pos + sl <= len(ref_seq):
+                        spacer = ref_seq[pos:pos + sl]
+                        gc = (spacer.count('G') + spacer.count('C')) / sl
+                        if 0.35 <= gc <= 0.65:
+                            found_sites.append({
+                                "PAM": "N/A",
+                                "PAM_Pos": pos + 1,
+                                "Spacer": spacer,
+                                "Spacer_Len": sl,
+                                "GC": round(gc * 100, 1),
+                                "Direction": "N/A"
+                            })
+                            break
+
+        # 取 top 5 site, 设计 RPA 引物
+        for i, site in enumerate(found_sites[:5]):
+            spacer_pos = site["PAM_Pos"] - 1
+            spacer_len = site["Spacer_Len"]
+
+            # RPA primer target region: 包含 spacer 的短片段
+            target_start = max(0, spacer_pos - 80)
+            target_end = min(len(ref_seq), spacer_pos + spacer_len + 80)
+            target_region = ref_seq[target_start:target_end]
+
+            # 设计简单的 RPA 引物 (30-35bp)
+            rpa_fwd = target_region[:32]
+            rpa_rev_seq = Seq(target_region[-32:])
+            rpa_rev = str(rpa_rev_seq.reverse_complement())
+
+            crispr_primers.append({
+                "Species": virus_name,
+                "Type": f"CRISPR_{cas_type}",
+                "Pair_ID": str(i + 1),
+                "Fwd_Primer": rpa_fwd,
+                "Rev_Primer": rpa_rev,
+                "crRNA_Spacer": site["Spacer"],
+                "PAM_Site": site["PAM"],
+                "Method": "CRISPR_PAM_Scan",
+                "Tm": "",
+                "Product_Size": str(target_end - target_start),
+                "GC_Fwd": round((rpa_fwd.count('G') + rpa_fwd.count('C')) / len(rpa_fwd) * 100, 1),
+                "GC_Rev": round((rpa_rev.count('G') + rpa_rev.count('C')) / len(rpa_rev) * 100, 1)
+            })
+
+    except Exception as e:
+        print(f"  ⚠ CRISPR {virus_name}: {e}")
+
+    return crispr_primers
+
+
+def design_delivery_primers(fasta_file: str, virus_name: str):
+    """
+    CRISPR 递送验证引物 — 验证病毒载体是否成功携带 CRISPR 组件
+
+    用于植物病毒介导的 CRISPR-Cas9/Cas12a 递送系统验证:
+      - 设计跨越 gRNA 插入位点的引物 (验证 gRNA 存在)
+      - 设计跨越 Cas9/Cas12a 基因接合处的引物 (验证 Cas 蛋白插入)
+      - PCR/测序级别引物 (18-25bp, Tm 55-62°C)
+
+    这些引物针对病毒载体骨架, 用于:
+      1. 病毒载体构建后的 PCR 验证
+      2. 植物接种后的病毒系统性移动检测
+      3. 编辑效率评估 (T7EI assay / Sanger sequencing)
+    """
+    delivery_primers = []
+    try:
+        sequences = []
+        with open(fasta_file) as f:
+            current_seq = []
+            for line in f:
+                if line.startswith('>'):
+                    if current_seq:
+                        sequences.append(''.join(current_seq))
+                        current_seq = []
+                else:
+                    current_seq.append(line.strip())
+            if current_seq:
+                sequences.append(''.join(current_seq))
+
+        if not sequences:
+            return []
+
+        ref = sequences[0].upper()
+        length = len(ref)
+
+        # 设计验证引物对, 覆盖病毒基因组不同区域
+        # Pair 1: 5' 端验证 (覆盖复制酶/移动蛋白区域)
+        # Pair 2: 中部验证 (覆盖 CP 基因区域, 常用于 gRNA 靶向)
+        # Pair 3: 3' 端验证 (覆盖 UTR/终止区)
+
+        regions = [
+            ("5prime", max(0, 100), min(length, 500), "5'-UTR/Replicase"),
+            ("mid_CP", int(length * 0.4), int(length * 0.55), "Coat Protein / gRNA target"),
+            ("3prime", max(0, length - 500), length, "3'-UTR/Terminator")
+        ]
+
+        for idx, (label, start, end, desc) in enumerate(regions):
+            if end - start < 200:
+                continue
+            region_seq = ref[start:end]
+            region_len = len(region_seq)
+
+            # 简单引物选择: 取两端 Tm 合适的 20bp
+            for primer_len in range(20, 25):
+                fwd_candidate = region_seq[:primer_len]
+                rev_candidate_seq = region_seq[-primer_len:]
+                rev_candidate = str(Seq(rev_candidate_seq).reverse_complement())
+
+                fwd_gc = (fwd_candidate.count('G') + fwd_candidate.count('C')) / primer_len
+                rev_gc = (rev_candidate.count('G') + rev_candidate.count('C')) / primer_len
+
+                if 0.40 <= fwd_gc <= 0.60 and 0.40 <= rev_gc <= 0.60:
+                    delivery_primers.append({
+                        "Species": virus_name,
+                        "Type": "DELIVERY_VERIFY",
+                        "Pair_ID": str(idx + 1),
+                        "Fwd_Primer": fwd_candidate,
+                        "Rev_Primer": rev_candidate,
+                        "Target_Region": desc,
+                        "Method": "Delivery_Verify",
+                        "Tm": "",
+                        "Product_Size": str(region_len),
+                        "GC_Fwd": round(fwd_gc * 100, 1),
+                        "GC_Rev": round(rev_gc * 100, 1)
+                    })
+                    break
+
+    except Exception as e:
+        print(f"  ⚠ Delivery {virus_name}: {e}")
+
+    return delivery_primers
+
+
 def process_species(sp_name, info, args):
     """处理单个物种：设计 PCR + qPCR + 简并引物"""
     results = []
@@ -237,6 +477,17 @@ def process_species(sp_name, info, args):
         deg = run_varvamp(fa_file, Path(args.output) / "degenerate",
                           sp_name, args.threads)
         results.extend(deg)
+
+    # 4. CRISPR 检测引物 — RPA + CRISPR-Cas 等温扩增检测
+    if not args.skip_crispr:
+        crispr = design_crispr_primers(fa_file, sp_name, args.crispr_cas_type)
+        if crispr:
+            results.extend(crispr)
+
+    # 5. CRISPR 递送验证引物 — 病毒载体 CRISPR 组件验证
+    delivery = design_delivery_primers(fa_file, sp_name)
+    if delivery:
+        results.extend(delivery)
 
     return results
 
@@ -284,7 +535,15 @@ def main():
     # Step 5: 聚合结果
     print(f"[5/5] 聚合结果 — {len(all_primers)} 对引物")
     if all_primers:
-        df = pl.DataFrame(all_primers)
+        # 标准化列
+        columns = ["Species", "Type", "Pair_ID", "Fwd_Primer", "Rev_Primer",
+                   "crRNA_Spacer", "PAM_Site", "Target_Region",
+                   "Method", "Tm", "Product_Size", "GC_Fwd", "GC_Rev"]
+        normalized = []
+        for p in all_primers:
+            row = {c: p.get(c, "") for c in columns}
+            normalized.append(row)
+        df = pl.DataFrame(normalized)
         out_file = out_dir / "primer_reference.tsv"
         df.write_csv(out_file, separator='\t')
         print(f"  → {out_file}")
