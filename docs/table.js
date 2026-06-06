@@ -60,20 +60,22 @@ async function loadTable(tableId, isSegmented) {
         return ['<input type="checkbox" class="rowCheck" data-idx="' + i + '">', ...row];
       });
 
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('tableWrap').style.display = '';
+
       currentTable = $(tbl).DataTable({
         data: dataWithCheck, columns: cols, deferRender: true,
         pageLength: 50, lengthMenu: [[25, 50, 100, 500, -1], [25, 50, 100, 500, 'All']],
-        order: [[1, 'asc']], scrollX: true, autoWidth: false, dom: 'Bfrtip',
+        order: [[1, 'asc']], dom: 'Bfrtip',
         buttons: [{ extend: 'colvis', text: 'Columns' }],
-        columnDefs: [{ targets: [0], searchable: false, render: (d) => d }]
+        columnDefs: [{ targets: [0], searchable: false, render: (d) => d }],
+        initComplete: function() { this.columns.adjust().draw(); }
       });
-      // Fix alignment: redraw on window resize
+      // Fix alignment after tab switch or resize
       $(window).on('resize', function() { if (currentTable) currentTable.columns.adjust().draw(); });
 
       document.getElementById('countText').textContent = rows.length.toLocaleString() + ' records';
       document.getElementById('selectedCount').textContent = '';
-      document.getElementById('loading').style.display = 'none';
-      document.getElementById('tableWrap').style.display = '';
       document.getElementById('toolbar').style.display = '';
       document.querySelectorAll('.src-toggle').forEach(b => b.classList.toggle('active', b.dataset.src === currentSource));
     }
