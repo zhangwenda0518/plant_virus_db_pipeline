@@ -132,8 +132,8 @@ def main():
     print("\n[阶段 3/4] 在本地底层进行极速跨表映射与数据提取...")
     # 新增：在 meta_cols 中加入 "Segment"
     meta_cols = [
-        "Accession", "Species", "Segment", "Molecule_type", "Sequence_Type", "Length", 
-        "Nuc_Completeness", "GenBank_Title", "Geo_Location", 
+        "Accession", "Species", "Family", "Segment", "Molecule_type", "Sequence_Type", "Length",
+        "Nuc_Completeness", "GenBank_Title", "Geo_Location",
         "USA", "Host", "Isolation_Source", "Collection_Date", "Release_Date"
     ]
     meta_lf = pl.scan_parquet(meta_pq).select(meta_cols).filter(pl.col("Accession").is_in(target_list))
@@ -199,8 +199,8 @@ def main():
     # ==========================================
     # 整理列顺序，将 Segment 放在 Species 后面
     final_cols = [
-        "Accession", "taxid", "Species", "Segment", "Molecule_type", "Sequence_Type", "Length", 
-        "Nuc_Completeness", "GenBank_Title", "Geo_Location", "USA", 
+        "Accession", "taxid", "Species", "Family", "Segment", "Molecule_type", "Sequence_Type", "Length",
+        "Nuc_Completeness", "GenBank_Title", "Geo_Location", "USA",
         "Host", "Isolation_Source", "Collection_Date", "Release_Date", "NCBI_Status"
     ]
     # 确保只输出存在的列（容错处理）
