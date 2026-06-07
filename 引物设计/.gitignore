@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# 临时输出
+designed_primers/
+split_species/
+virus_genomes/
+*.tmp
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 第三方工具 (独立项目, 不跟踪)
+AutoCORDSv2/
+AutoPVPrimer/
+CASPER/
+CRISPRPrimerDesigner/
+Olivar/
+PCR_strainer/
+RPA-Primer-Design/
+VPrimer/
+VPrimer-input-generator/
+pathogd/
+qPrimer/
+qprimer_designer/
+varVAMP/
+
+# 大文件 / 二进制
+*.fasta
+*.fa
+*.pdf
+*.png
+*.html
+*.xlsx
+
+# 系统
+.DS_Store
+Thumbs.db
