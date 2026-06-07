@@ -78,10 +78,11 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
         </div>
       </div>
       <div class="row">
-        <div class="field">
-          <label>目标病毒物种 (Virus Species)</label>
-          <input type="text" id="virus" placeholder="e.g. Tomato spotted wilt virus (partial match)">
-          <div class="hint">Partial name match · blank = all</div>
+        <div class="field" style="flex:2">
+          <label>目标病毒物种 (Virus Species) <span class="cnt" id="spCnt"></span></label>
+          <select id="virus" multiple></select>
+          <span class="select-all" onclick="toggleAll('virus')">Select All / Deselect All</span>
+          <div class="hint">Ctrl/Cmd+Click to select multiple · blank = all</div>
         </div>
       </div>
       <div class="row">
@@ -130,8 +131,7 @@ function buildSelect(id, items, label) {
 function launch() {
   const params = new URLSearchParams();
   const getVals = id => [...document.getElementById(id).selectedOptions].map(o=>o.value).join(',');
-  const h = getVals('host'), c = getVals('country'), cats = getVals('category'), f = getVals('family');
-  const v = document.getElementById('virus').value.trim();
+  const h = getVals('host'), c = getVals('country'), cats = getVals('category'), f = getVals('family'), v = getVals('virus');
   if (h) params.set('host', h);
   if (c) params.set('country', c);
   if (cats) params.set('category', cats);
@@ -166,6 +166,9 @@ function launch() {
 
     // Country: top 80
     buildSelect('country', cnt('Geo_Location', 80), 'ctry');
+
+    // Virus species: top 100
+    buildSelect('virus', cnt('Species_ICTV', 100), 'sp');
 
     document.getElementById('loading').style.display='none';
     document.getElementById('filters').style.display='';
