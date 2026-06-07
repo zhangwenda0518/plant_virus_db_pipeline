@@ -173,7 +173,7 @@ def _build_year_marks(ymin, ymax):
         step = 10
     elif span > 15:
         step = 5
-    df = df_global.copy()
+    else:
         step = 2
     size = "9px" if span > 30 else "11px"
     marks = {}
