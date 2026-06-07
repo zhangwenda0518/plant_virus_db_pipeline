@@ -29,7 +29,7 @@ def create_mock_sequence(virus_name, length=800):
     elif 'mild mottle' in virus_name.lower() or 'pmmov' in virus_name.lower():
         # PMMoV 突变位点 (来自论文第3图结果)
         var_positions = [57, 81, 99, 168, 117, 213, 276, 474, 165, 357]
-    df = df_global.copy()
+    else:
         var_positions = rng.choice(range(length), size=10, replace=False).tolist()
         
     var_positions = [pos - 1 for pos in var_positions if pos <= length]
