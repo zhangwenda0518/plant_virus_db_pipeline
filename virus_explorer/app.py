@@ -121,10 +121,10 @@ def generate_baseline_dataset():
     return pd.DataFrame(records)
 
 # ---- 从 Plant_Virus_Info.full.tsv 加载全量数据 ----
-DATA_URL = "https://raw.githubusercontent.com/zhangwenda0518/plant_virus_db_pipeline/main/docs/data/Plant_Virus_Info.full.tsv"
+DATA_URL = "https://raw.githubusercontent.com/zhangwenda0518/plant_virus_db_pipeline/main/docs/data/final.cluster.ref_info.tsv"
 
 def load_real_data():
-    df = pd.read_csv(DATA_URL, sep='\t', low_memory=False)
+    df = pd.read_csv(DATA_URL, sep='\t', low_memory=True, nrows=5000)
     # 年份解析 (优先 Collection_Date，回退 Release_Date)
     df['Year'] = df['Collection_Date'].fillna(df['Release_Date']).astype(str).str.extract(r'(\d{4})')[0]
     df['Year'] = pd.to_numeric(df['Year'], errors='coerce')
