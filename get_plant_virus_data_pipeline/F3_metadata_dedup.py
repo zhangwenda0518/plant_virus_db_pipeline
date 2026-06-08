@@ -144,25 +144,25 @@ def main():
             rank = quality_rank(row.get("Sequence_Type", ""))
             taxid_records[tax].append((acc, raw_seg, rank, tier_idx))
 
-    # 段名规范化: 以 RefSeq(rank<=1) 的段名为准, 非RefSeq 段名按 core 匹配
+    # 段名规范化: 以 RefSeq(rank<=1) 或 GenBank/ICTV(rank=2) 的段名为准
     for tax, records in taxid_records.items():
-        refseq_segs = {r[1] for r in records if r[2] <= 1 and r[1]}
-        if not refseq_segs:
+        canonical_segs = {r[1] for r in records if r[2] <= 2 and r[1]}
+        if not canonical_segs:
             continue
-        # 建立 core → RefSeq段名 的映射
-        core_to_refseq = {}
-        for rs in refseq_segs:
+        # 建立 core → canonical段名 的映射
+        core_to_canonical = {}
+        for rs in canonical_segs:
             core = segment_core(rs)
             if core:
-                core_to_refseq[core] = rs
-        # 规范化非 RefSeq 段名
+                core_to_canonical[core] = rs
+        # 规范化非 canonical 段名
         normalized = []
         for acc, seg, rank, tier_idx in records:
-            if rank <= 1 or not seg or seg in refseq_segs:
+            if not seg or seg in canonical_segs:
                 normalized.append((acc, seg, rank, tier_idx))
             else:
                 core = segment_core(seg)
-                canonical = core_to_refseq.get(core, seg)  # match by core, fallback to original
+                canonical = core_to_canonical.get(core, seg)  # match by core, fallback to original
                 normalized.append((acc, canonical, rank, tier_idx))
         taxid_records[tax] = normalized
 
