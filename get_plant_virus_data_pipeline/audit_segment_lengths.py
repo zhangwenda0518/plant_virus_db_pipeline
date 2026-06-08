@@ -50,6 +50,8 @@ def main():
         if not seg_val:
             continue
         clean = seg_val.replace(" ", "").replace("-", "").replace("_", "").upper()
+        if clean == "NONE" or not clean:
+            continue  # 跳过空段名，避免 core="" 匹配所有 canonical
         length = int(row.get("Length", 0)) if row.get("Length") else 0
         st = str(row.get("Sequence_Type", ""))
         taxid_data[tax].append({
@@ -150,7 +152,12 @@ def main():
         f.write(f"CONFIRMED — 长度验证通过的段名匹配 (前 {args.top}):\n")
         f.write("-" * 90 + "\n")
         f.write(f"{'TaxID':<10} {'变体段名':<20} {'len':>6} {'→规范段名':<20} {'len':>6} {'差':>6} {'状态'}\n")
-        for entry in confirmed[:args.top]:
+        seen = set()
+        for entry in confirmed:
+            key = (entry["TaxID"], entry["NonCanon_Seg"], entry["Canon_Seg"])
+            if key in seen: continue
+            seen.add(key)
+            if len(seen) > args.top: break
             f.write(f"{entry['TaxID']:<10} {entry['NonCanon_Seg']:<20} {entry['NonCanon_Len']:>6} "
                     f"→{entry['Canon_Seg']:<20} {entry['Canon_Len']:>6} {entry['Len_Diff']:>6} {entry['Status']}\n")
 
@@ -160,7 +167,12 @@ def main():
             f.write(f"SUSPICIOUS — core匹配但长度差>{args.len_tol}bp, 需人工审查:\n")
             f.write(f"{'='*90}\n")
             f.write(f"{'TaxID':<10} {'变体段名':<20} {'len':>6} {'→规范段名':<20} {'len':>6} {'差':>6} {'规范类型'}\n")
-            for entry in suspicious[:args.top]:
+            seen = set()
+            for entry in suspicious:
+                key = (entry["TaxID"], entry["NonCanon_Seg"], entry["Canon_Seg"])
+                if key in seen: continue
+                seen.add(key)
+                if len(seen) > args.top: break
                 f.write(f"{entry['TaxID']:<10} {entry['NonCanon_Seg']:<20} {entry['NonCanon_Len']:>6} "
                         f"→{entry['Canon_Seg']:<20} {entry['Canon_Len']:>6} {entry['Len_Diff']:>6} {entry['Canon_Type']}\n")
 
