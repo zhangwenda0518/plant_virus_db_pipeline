@@ -20,8 +20,8 @@ def main():
     seg = df.filter(pl.col("Category").str.starts_with("Segmented_"))
 
     # 按 TaxID 分组，收集所有 Segment 值
-    taxid_segs = defaultdict(lambda: {"refseq": set(), "other": set(), "refseq_acc": []})
-    is_refseq = lambda st: "RefSeq" in str(st) if st else False
+    taxid_segs = defaultdict(lambda: {"canonical": set(), "other": set(), "canonical_acc": []})
+    is_canonical = lambda st: ("RefSeq" in str(st) or "ICTV" in str(st)) if st else False
 
     for row in seg.iter_rows(named=True):
         tax = str(row["Taxid"])
@@ -30,27 +30,27 @@ def main():
         if not seg_val:
             continue
         clean = seg_val.replace(" ", "").replace("-", "").replace("_", "").upper()
-        if is_refseq(st):
-            taxid_segs[tax]["refseq"].add(clean)
-            taxid_segs[tax]["refseq_acc"].append(row["Accession"])
+        if is_canonical(st):
+            taxid_segs[tax]["canonical"].add(clean)
+            taxid_segs[tax]["canonical_acc"].append(row["Accession"])
         else:
             taxid_segs[tax]["other"].add(clean)
 
-    # 找出有变体的 TaxID: RefSeq 和非 RefSeq 段名不一致
+    # 找出有变体的 TaxID: canonical 和非 canonical 段名不一致
     variants = []
     for tax, data in taxid_segs.items():
-        ref = data["refseq"]
+        ref = data["canonical"]
         other = data["other"]
-        # 其他段名中，哪些不是 RefSeq 的直接匹配
+        # 其他段名中，哪些不是 canonical 的直接匹配
         unmatched = other - ref
         if unmatched and ref:
-            variants.append((tax, ref, unmatched, data["refseq_acc"][:2]))
+            variants.append((tax, ref, unmatched, data["canonical_acc"][:2]))
 
     variants.sort(key=lambda x: len(x[2]), reverse=True)
 
-    print(f"有段名变体的 TaxID: {len(variants)} / {len(taxid_segs)} 个有RefSeq的TaxID\n")
+    print(f"有段名变体的 TaxID: {len(variants)} / {len(taxid_segs)} 个有RefSeq/ICTV的TaxID\n")
 
-    print(f"{'TaxID':<12} {'RefSeq段名':<40} {'其他段名(变体)':<40}")
+    print(f"{'TaxID':<12} {'RefSeq/ICTV段名':<40} {'其他段名(变体)':<40}")
     print("-" * 90)
     for tax, ref, other, accs in variants[:args.top]:
         ref_str = ", ".join(sorted(ref)[:5])
@@ -62,7 +62,7 @@ def main():
     pattern_count = defaultdict(int)
     for tax, ref, other, _ in variants:
         for o in other:
-            # 检查这个 other 是否比 RefSeq 少前缀
+            # 检查这个 other 是否比 canonical 少前缀
             for r in ref:
                 if o in r or r in o:
                     pattern_count[f"{r} ← {o}"] += 1
