@@ -104,6 +104,13 @@ def main():
             matched = core_map.get(core)
             if matched:
                 diff = abs(nr["length"] - matched["length"])
+                is_same_name = (nr["clean"] == matched["clean"])
+                if diff <= args.len_tol:
+                    status = "CONFIRMED"
+                elif is_same_name:
+                    status = "SAME_NAME"     # 同名但长度不同 → 质量/完整性问题, 非段名问题
+                else:
+                    status = "CORE_DIFF"     # 异名 core 匹配 + 长度差大 → 需进一步验证
                 entry = {
                     "TaxID": tax,
                     "NonCanon_Seg": nr["clean"], "NonCanon_Len": nr["length"],
@@ -111,9 +118,9 @@ def main():
                     "Canon_Seg": matched["clean"], "Canon_Len": matched["length"],
                     "Canon_Acc": matched["acc"], "Canon_Type": matched["seq_type"],
                     "Core": core, "Len_Diff": diff,
-                    "Status": "CONFIRMED" if diff <= args.len_tol else "SUSPICIOUS"
+                    "Status": status
                 }
-                if diff <= args.len_tol:
+                if status == "CONFIRMED":
                     confirmed.append(entry)
                 else:
                     suspicious.append(entry)
@@ -142,8 +149,12 @@ def main():
         f.write(f"长度容差: ≤{args.len_tol}bp 视为同一段\n")
         f.write("=" * 90 + "\n\n")
 
+        same_name_n = sum(1 for s in suspicious if s["Status"] == "SAME_NAME")
+        core_diff_n = sum(1 for s in suspicious if s["Status"] == "CORE_DIFF")
         f.write(f"CONFIRMED (core匹配 + 长度差≤{args.len_tol}bp): {len(confirmed)} 个变体\n")
         f.write(f"SUSPICIOUS (core匹配 + 长度差>{args.len_tol}bp): {len(suspicious)} 个\n")
+        f.write(f"  ├─ SAME_NAME (同名, 长度不同): {same_name_n} — 质量/完整性问题, F3 已处理\n")
+        f.write(f"  └─ CORE_DIFF (异名core同, 长度差大): {core_diff_n} — 需序列比对验证\n")
         f.write(f"UNMATCHED (core无法匹配): {len(unmatched)} 个\n")
         f.write(f"Canonical段间长度验证: {len(canonical_diff)} 对\n\n")
 
@@ -161,20 +172,35 @@ def main():
             f.write(f"{entry['TaxID']:<10} {entry['NonCanon_Seg']:<20} {entry['NonCanon_Len']:>6} "
                     f"→{entry['Canon_Seg']:<20} {entry['Canon_Len']:>6} {entry['Len_Diff']:>6} {entry['Status']}\n")
 
-        # SUSPICIOUS
+        # SUSPICIOUS — 分 SAME_NAME 和 CORE_DIFF
         if suspicious:
+            core_diff = [s for s in suspicious if s["Status"] == "CORE_DIFF"]
+            same_name = [s for s in suspicious if s["Status"] == "SAME_NAME"]
+
             f.write(f"\n{'='*90}\n")
-            f.write(f"SUSPICIOUS — core匹配但长度差>{args.len_tol}bp, 需人工审查:\n")
+            f.write(f"SUSPICIOUS — CORE_DIFF (异名core同, 长度差>{args.len_tol}bp, 需序列验证): {len(core_diff)} 个\n")
             f.write(f"{'='*90}\n")
-            f.write(f"{'TaxID':<10} {'变体段名':<20} {'len':>6} {'→规范段名':<20} {'len':>6} {'差':>6} {'规范类型'}\n")
-            seen = set()
-            for entry in suspicious:
-                key = (entry["TaxID"], entry["NonCanon_Seg"], entry["Canon_Seg"])
-                if key in seen: continue
-                seen.add(key)
-                if len(seen) > args.top: break
-                f.write(f"{entry['TaxID']:<10} {entry['NonCanon_Seg']:<20} {entry['NonCanon_Len']:>6} "
-                        f"→{entry['Canon_Seg']:<20} {entry['Canon_Len']:>6} {entry['Len_Diff']:>6} {entry['Canon_Type']}\n")
+            if core_diff:
+                f.write(f"{'TaxID':<10} {'变体段名':<20} {'len':>6} {'→规范段名':<20} {'len':>6} {'差':>6} {'规范类型'}\n")
+                seen = set()
+                for entry in core_diff:
+                    key = (entry["TaxID"], entry["NonCanon_Seg"], entry["Canon_Seg"])
+                    if key in seen: continue; seen.add(key)
+                    if len(seen) > args.top: break
+                    f.write(f"{entry['TaxID']:<10} {entry['NonCanon_Seg']:<20} {entry['NonCanon_Len']:>6} "
+                            f"→{entry['Canon_Seg']:<20} {entry['Canon_Len']:>6} {entry['Len_Diff']:>6} {entry['Canon_Type']}\n")
+
+            f.write(f"\nSUSPICIOUS — SAME_NAME (同名, 长度不同, 质量/完整性问题): {len(same_name)} 个 ")
+            f.write(f"(F3 质量去重已处理, 无需段名规范化)\n")
+            if same_name:
+                f.write(f"{'TaxID':<10} {'段名':<20} {'变体len':>8} {'规范len':>8} {'差':>6}\n")
+                seen = set()
+                for entry in same_name:
+                    key = (entry["TaxID"], entry["NonCanon_Seg"])
+                    if key in seen: continue; seen.add(key)
+                    if len(seen) > 20: break
+                    f.write(f"{entry['TaxID']:<10} {entry['NonCanon_Seg']:<20} {entry['NonCanon_Len']:>8} "
+                            f"{entry['Canon_Len']:>8} {entry['Len_Diff']:>6}\n")
 
         # Canonical 段间验证 — 找出长度太接近的 canonical 段 (可能实际是同一段)
         close_canon = [d for d in canonical_diff if d["Diff"] <= args.len_tol]
