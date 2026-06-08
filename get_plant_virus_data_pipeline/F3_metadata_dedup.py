@@ -121,16 +121,50 @@ def main():
         if has_ictv: return 2
         return 3
 
-    # 第一遍: 按 TaxID 收集所有记录, 确定每 TaxID 的最佳 rank
-    taxid_records = collections.defaultdict(list)  # {taxid: [(acc, norm_seg, rank, tier_idx)]}
+    # 段名核心提取: "RNA1" → "1", "DNA-A" → "A", "dsRNA2" → "2"
+    def segment_core(seg: str) -> str:
+        if not seg: return ""
+        seg = seg.upper()
+        for p in sorted(['GENOMICRNA','GENOMICDNA','SUBGENOMICRNA','DEFECTIVERNA',
+                         'DSRNA','DSDNA','RNA','DNA','SEGMENT','COMPONENT'],
+                        key=len, reverse=True):
+            if seg.startswith(p) and len(seg) > len(p):
+                seg = seg[len(p):]
+                break
+        return seg.strip()
+
+    # 第一遍: 按 TaxID 收集所有记录
+    taxid_records = collections.defaultdict(list)
     for tier_idx, cat in enumerate(seg_prio):
         cat_df = df.filter(pl.col("Category") == cat)
         for row in cat_df.iter_rows(named=True):
             tax = str(row["Taxid"])
             acc = row["Base_Accession"]
-            norm_seg = clean_segment_name(row["Raw_Segment"])
+            raw_seg = clean_segment_name(row["Raw_Segment"])
             rank = quality_rank(row.get("Sequence_Type", ""))
-            taxid_records[tax].append((acc, norm_seg, rank, tier_idx))
+            taxid_records[tax].append((acc, raw_seg, rank, tier_idx))
+
+    # 段名规范化: 以 RefSeq(rank<=1) 的段名为准, 非RefSeq 段名按 core 匹配
+    for tax, records in taxid_records.items():
+        refseq_segs = {r[1] for r in records if r[2] <= 1 and r[1]}
+        if not refseq_segs:
+            continue
+        # 建立 core → RefSeq段名 的映射
+        core_to_refseq = {}
+        for rs in refseq_segs:
+            core = segment_core(rs)
+            if core:
+                core_to_refseq[core] = rs
+        # 规范化非 RefSeq 段名
+        normalized = []
+        for acc, seg, rank, tier_idx in records:
+            if rank <= 1 or not seg or seg in refseq_segs:
+                normalized.append((acc, seg, rank, tier_idx))
+            else:
+                core = segment_core(seg)
+                canonical = core_to_refseq.get(core, seg)  # match by core, fallback to original
+                normalized.append((acc, canonical, rank, tier_idx))
+        taxid_records[tax] = normalized
 
     # 第二遍: 每 TaxID 找最佳 rank, 保留该 rank 的所有记录
     seg_keep_accs = set()
