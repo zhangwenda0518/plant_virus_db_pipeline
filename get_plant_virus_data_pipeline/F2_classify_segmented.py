@@ -56,6 +56,89 @@ def split_fasta_streaming(input_fasta: str, out_dir: str, acc_to_category: dict)
     for fh in file_handles.values(): fh.close()
     return processed_count
 
+def normalize_segment_names(df: pl.DataFrame) -> pl.DataFrame:
+    """段名规范化: 以 RefSeq/ICTV 的段名为 canonical, 其他段名按 core 匹配映射"""
+    import collections
+
+    def seg_core(s: str) -> str:
+        if not s: return ""
+        s = s.upper()
+        for p in sorted(['GENOMICRNA','GENOMICDNA','SUBGENOMICRNA','DEFECTIVERNA',
+                         'DSRNA','DSDNA','RNA','DNA','SEGMENT','COMPONENT'],
+                        key=len, reverse=True):
+            if s.startswith(p) and len(s) > len(p):
+                s = s[len(p):]
+                break
+        return s.strip()
+
+    # 只处理 Segmented 记录
+    is_seg = pl.col("Category").str.starts_with("Segmented_")
+    seg_df = df.filter(is_seg)
+    non_seg_df = df.filter(~is_seg)
+
+    if seg_df.height == 0:
+        return df
+
+    # 确定 canonical: RefSeq 或 ICTV (Sequence_Type 含 RefSeq 或 ICTV)
+    is_canon = pl.col("Sequence_Type").str.contains("RefSeq|ICTV")
+
+    # 按 TaxID 收集 canonical 段名 → core → canonical_seg
+    canon_df = seg_df.filter(is_canon & (pl.col("Segment").is_not_null()) & (pl.col("Segment") != ""))
+    canon_groups = canon_df.group_by("Taxid").agg(
+        pl.col("Segment").alias("canon_segs"),
+        pl.col("Length").alias("canon_lens")
+    )
+
+    # 构建映射表: TaxID → canonical segment details
+    canon_map = {}  # {taxid: {core: (canon_seg, canon_len)}}
+    for row in canon_groups.iter_rows(named=True):
+        tax = str(row["Taxid"])
+        segs = row["canon_segs"]
+        lens = row["canon_lens"]
+        canon_map[tax] = {}
+        for seg, length in zip(segs, lens):
+            clean = str(seg).replace(" ", "").replace("-", "").replace("_", "").upper()
+            core = seg_core(clean)
+            if core:
+                canon_map[tax][core] = (clean, int(length) if length else 0)
+
+    if not canon_map:
+        return df.with_columns(pl.col("Segment").alias("Segment_Normalized"))
+
+    # 对每条 Segmented 记录做段名规范化
+    new_segments = []
+    for row in seg_df.iter_rows(named=True):
+        tax = str(row["Taxid"])
+        seg = str(row.get("Segment", "")).strip()
+        length = int(row.get("Length", 0)) if row.get("Length") else 0
+        stype = str(row.get("Sequence_Type", ""))
+        cat = str(row.get("Category", ""))
+
+        clean = seg.replace(" ", "").replace("-", "").replace("_", "").upper() if seg else ""
+        core = seg_core(clean)
+
+        cmap = canon_map.get(tax, {})
+        is_canonical = ("RefSeq" in stype or "ICTV" in stype)
+
+        if not clean or is_canonical:
+            new_segments.append(clean)
+        elif core and core in cmap:
+            cseg, clen = cmap[core]
+            diff = abs(length - clen) if length and clen else 0
+            if diff <= 100:
+                new_segments.append(cseg)                # CONFIRMED
+            elif "CDS_Fragment" in cat:
+                new_segments.append(clean)                # CDS 片段: 保留原名
+            else:
+                new_segments.append(clean)                # CORE_DIFF: 保留原名
+        else:
+            new_segments.append(clean)                    # UNMATCHED
+
+    seg_df = seg_df.with_columns(pl.Series("Segment_Normalized", new_segments))
+    non_seg_df = non_seg_df.with_columns(pl.col("Segment").alias("Segment_Normalized"))
+    return pl.concat([seg_df, non_seg_df], how="diagonal")
+
+
 def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -> pl.DataFrame:
     print(f"⏳ 正在解析 VMR 表格 ({vmr_path})...")
     vmr_df = pl.read_csv(vmr_path, separator="\t", ignore_errors=True)
@@ -223,6 +306,9 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
         .otherwise(pl.col("Category"))
         .alias("Category")
     )
+
+    # ── 段名规范化: 以 RefSeq/VMR 段名为 canonical 标准 ──
+    df = normalize_segment_names(df)
 
     # 仅丢弃算法运行中的临时计算列
     return df.drop(["title_lower", "Cat_Weight", "Max_Taxid_Weight", "Initial_Category", "Segment_Clean", "Is_Segmented", "Completeness_Level", "_vmr_acc_match"])

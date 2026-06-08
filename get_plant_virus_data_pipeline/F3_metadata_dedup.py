@@ -61,8 +61,12 @@ def main():
     
     # 1. 加载并预处理 Info 表
     df = pl.read_csv(args.info, separator="\t", ignore_errors=True)
+    # 使用 F2 规范化后的段名 (如果有), 否则用原始 Segment
+    seg_col = "Segment_Normalized" if "Segment_Normalized" in df.columns else "Segment"
+    if seg_col not in df.columns:
+        df = df.with_columns(pl.lit("").alias(seg_col))
     df = df.with_columns(
-        pl.col("Segment").fill_null("").cast(pl.Utf8).alias("Raw_Segment")
+        pl.col(seg_col).fill_null("").cast(pl.Utf8).alias("Raw_Segment")
     )
     
     # 优先级定义
@@ -121,19 +125,7 @@ def main():
         if has_ictv: return 2
         return 3
 
-    # 段名核心提取: "RNA1" → "1", "DNA-A" → "A", "dsRNA2" → "2"
-    def segment_core(seg: str) -> str:
-        if not seg: return ""
-        seg = seg.upper()
-        for p in sorted(['GENOMICRNA','GENOMICDNA','SUBGENOMICRNA','DEFECTIVERNA',
-                         'DSRNA','DSDNA','RNA','DNA','SEGMENT','COMPONENT'],
-                        key=len, reverse=True):
-            if seg.startswith(p) and len(seg) > len(p):
-                seg = seg[len(p):]
-                break
-        return seg.strip()
-
-    # 第一遍: 按 TaxID 收集所有记录 (acc, seg, rank, tier_idx, length, is_cds)
+    # 第一遍: 按 TaxID 收集所有记录 (段名已由 F2 规范化)
     taxid_records = collections.defaultdict(list)
     for tier_idx, cat in enumerate(seg_prio):
         cat_df = df.filter(pl.col("Category") == cat)
@@ -142,43 +134,7 @@ def main():
             acc = row["Base_Accession"]
             raw_seg = clean_segment_name(row["Raw_Segment"])
             rank = quality_rank(row.get("Sequence_Type", ""))
-            length = int(row.get("Length", 0)) if row.get("Length") else 0
-            is_cds = "CDS_Fragment" in str(row.get("Category", ""))
-            taxid_records[tax].append((acc, raw_seg, rank, tier_idx, length, is_cds))
-
-    # 段名规范化: canonical(rank<=2) 段名为准 + 长度验证
-    for tax, records in taxid_records.items():
-        canonical = {(r[1], r[4]) for r in records if r[2] <= 2 and r[1]}  # (seg, len)
-        canonical_segs = {s for s, l in canonical}
-        if not canonical_segs:
-            continue
-        # 建立 core → canonical(seg, len) 的映射
-        core_to_canonical = {}
-        for seg, length in canonical:
-            core = segment_core(seg)
-            if core:
-                core_to_canonical[core] = (seg, length)
-        # 规范化非 canonical 段名 (长度验证)
-        normalized = []
-        for acc, seg, rank, tier_idx, length, is_cds in records:
-            if not seg or seg in canonical_segs:
-                normalized.append((acc, seg, rank, tier_idx))
-            else:
-                core = segment_core(seg)
-                cinfo = core_to_canonical.get(core)
-                if cinfo:
-                    cseg, clen = cinfo
-                    diff = abs(length - clen) if length and clen else 0
-                    if diff <= 100:
-                        canonical = cseg  # CONFIRMED: 长度一致 → 映射
-                    elif is_cds:
-                        canonical = seg   # CDS 片段不长段 → 保留原名, 不映射
-                    else:
-                        canonical = seg   # SUSPICIOUS: 长度差异大 → 保留原名
-                else:
-                    canonical = seg       # UNMATCHED: core 无匹配 → 保留原名
-                normalized.append((acc, canonical, rank, tier_idx))
-        taxid_records[tax] = normalized
+            taxid_records[tax].append((acc, raw_seg, rank, tier_idx))
 
     # 第二遍: 每 TaxID 找最佳 rank, 保留该 rank 的所有记录
     seg_keep_accs = set()
