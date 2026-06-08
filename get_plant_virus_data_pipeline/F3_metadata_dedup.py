@@ -133,7 +133,7 @@ def main():
                 break
         return seg.strip()
 
-    # 第一遍: 按 TaxID 收集所有记录
+    # 第一遍: 按 TaxID 收集所有记录 (acc, seg, rank, tier_idx, length, is_cds)
     taxid_records = collections.defaultdict(list)
     for tier_idx, cat in enumerate(seg_prio):
         cat_df = df.filter(pl.col("Category") == cat)
@@ -142,27 +142,41 @@ def main():
             acc = row["Base_Accession"]
             raw_seg = clean_segment_name(row["Raw_Segment"])
             rank = quality_rank(row.get("Sequence_Type", ""))
-            taxid_records[tax].append((acc, raw_seg, rank, tier_idx))
+            length = int(row.get("Length", 0)) if row.get("Length") else 0
+            is_cds = "CDS_Fragment" in str(row.get("Category", ""))
+            taxid_records[tax].append((acc, raw_seg, rank, tier_idx, length, is_cds))
 
-    # 段名规范化: 以 RefSeq(rank<=1) 或 GenBank/ICTV(rank=2) 的段名为准
+    # 段名规范化: canonical(rank<=2) 段名为准 + 长度验证
     for tax, records in taxid_records.items():
-        canonical_segs = {r[1] for r in records if r[2] <= 2 and r[1]}
+        canonical = {(r[1], r[4]) for r in records if r[2] <= 2 and r[1]}  # (seg, len)
+        canonical_segs = {s for s, l in canonical}
         if not canonical_segs:
             continue
-        # 建立 core → canonical段名 的映射
+        # 建立 core → canonical(seg, len) 的映射
         core_to_canonical = {}
-        for rs in canonical_segs:
-            core = segment_core(rs)
+        for seg, length in canonical:
+            core = segment_core(seg)
             if core:
-                core_to_canonical[core] = rs
-        # 规范化非 canonical 段名
+                core_to_canonical[core] = (seg, length)
+        # 规范化非 canonical 段名 (长度验证)
         normalized = []
-        for acc, seg, rank, tier_idx in records:
+        for acc, seg, rank, tier_idx, length, is_cds in records:
             if not seg or seg in canonical_segs:
                 normalized.append((acc, seg, rank, tier_idx))
             else:
                 core = segment_core(seg)
-                canonical = core_to_canonical.get(core, seg)  # match by core, fallback to original
+                cinfo = core_to_canonical.get(core)
+                if cinfo:
+                    cseg, clen = cinfo
+                    diff = abs(length - clen) if length and clen else 0
+                    if diff <= 100:
+                        canonical = cseg  # CONFIRMED: 长度一致 → 映射
+                    elif is_cds:
+                        canonical = seg   # CDS 片段不长段 → 保留原名, 不映射
+                    else:
+                        canonical = seg   # SUSPICIOUS: 长度差异大 → 保留原名
+                else:
+                    canonical = seg       # UNMATCHED: core 无匹配 → 保留原名
                 normalized.append((acc, canonical, rank, tier_idx))
         taxid_records[tax] = normalized
 
