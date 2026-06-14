@@ -34,6 +34,7 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
 .footer{text-align:center;padding:20px;color:#999;font-size:12px}
 .footer a{color:#2e86c1;text-decoration:none}
 .success{background:#d4edda;border:1px solid #c3e6cb;color:#155724;padding:12px 16px;border-radius:6px;margin-bottom:16px;display:none}
+.section-toggle{margin-top:12px;display:flex;gap:0;border:1.5px solid var(--border);border-radius:8px;overflow:hidden}.section-toggle button{flex:1;padding:10px;border:none;background:#fff;font-size:14px;cursor:pointer;transition:all .2s}.section-toggle button.active{background:var(--nav-bg);color:#fff;font-weight:600}.fld-hint{font-size:11px;color:var(--text-light);margin-top:2px}
 </style>
 </head>
 <body>
@@ -41,13 +42,18 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
   <a class="brand" href="index.html">Plant Virus DB</a>
   <a href="index.html">Dashboard</a>
   <a href="segmented.html">Segmented</a>
-  <a href="nonsegmented.html">Non‑Segmented</a>
+  <a href="nonsegmented.html">Non-Segmented</a>
   <a href="explorer.html">Explorer</a>
   <a href="primers.html">Primers</a>
   <a href="submit.html" class="active">Submit</a>
   <a href="download.html">Download</a>
 </nav>
 <div class="main">
+  <div class="section-toggle" id="modeToggle">
+      <button class="active" data-mode="virus" onclick="switchMode(&#39;virus&#39;)">Virus Submit</button>
+      <button data-mode="primer" onclick="switchMode(&#39;primer&#39;)">Primer Submit</button>
+    </div>
+    <div id="virusForm">
   <div class="success" id="success">Submitted! Redirecting to GitHub...</div>
   <div class="card">
     <h2>Submit Plant Virus Data</h2>
@@ -167,6 +173,44 @@ function doSubmit() {
   setTimeout(function() { window.open(url, '_blank'); }, 500);
   return false;
 }
+
+let mode="virus";
+function switchMode(m){mode=m;document.querySelectorAll("#modeToggle button").forEach(b=>b.classList.remove("active"));document.querySelector('#modeToggle button[data-mode="'+m+'"]').classList.add("active");document.getElementById("virusForm").style.display=m==="virus"?"":"none";document.getElementById("primerForm").style.display=m==="primer"?"":"none"}
+pFwd.addEventListener("input",function(){fwdLen.textContent=this.value.trim().length+" bp"});
+pRev.addEventListener("input",function(){revLen.textContent=this.value.trim().length+" bp"});
+const _origGet = getFormData, _origBuild = buildBody;
+getFormData = function(){
+if(mode==="primer"){
+var f=pFwd.value.trim(),r=pRev.value.trim();
+var d={Target_Species:pSpecies.value.trim(),Primer_Type:pType.value,Segment:pSegment.value.trim(),Fwd_Seq:f,Rev_Seq:r,Probe_Seq:pProbe.value.trim(),Product_Size:pProduct.value.trim(),Tm:pTm.value.trim(),Notes:pNotes.value.trim()};
+if(f)d.Fwd_Length=f.length+" bp";if(r)d.Rev_Length=r.length+" bp";
+return {type:"primer",fields:d};
+}
+var d=_origGet();d.type=document.querySelector("input[name=submitType]:checked").value;return d;
+};
+buildBody = function(d){
+if(d.type==="primer"){
+var lines=["### Primer Submission","**Target Species:** "+(d.fields.Target_Species||"N/A")+"\n","| Field | Value |","|-------|-------|"];
+for(var k in d.fields){if(d.fields[k])lines.push("| "+k.replace(/_/g," ")+" | "+d.fields[k]+" |")}
+lines.push("\n*Submitted via Plant Virus DB Submit page*");return lines.join("\n");
+}
+return _origBuild(d);
+};
+const _origDo = doSubmit;
+doSubmit = function(){
+var d=getFormData();
+if(mode==="primer"){
+if(!d.fields.Target_Species){alert("Target Species is required!");return false}
+if(!d.fields.Fwd_Seq&&!d.fields.Rev_Seq){alert("At least one primer sequence is required!");return false}
+}
+if(mode==="virus"&&!acc.value.trim()){alert("Accession is required!");return false}
+var body=buildBody(d),title,label;
+if(d.type==="primer"){title="[Primer Submit] "+(d.fields.Target_Species||"New Primers");label="primer-submit"}
+else{title="[Virus Submit] "+(d.fields.Species_ICTV||d.fields.Species_NCBI||d.fields.Accession);label=d.type==="new"?"new-virus":"known-virus"}
+var url="https://github.com/zhangwenda0518/plant_virus_db_pipeline/issues/new"+"?title="+encodeURIComponent(title)+"&body="+encodeURIComponent(body)+"&labels="+encodeURIComponent(label);
+document.getElementById("success").style.display="block";setTimeout(function(){window.open(url,"_blank")},500);return false;
+};
+
 </script>
 </body>
 </html>
