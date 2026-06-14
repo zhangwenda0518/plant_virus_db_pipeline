@@ -134,8 +134,8 @@
                 <button class="filter-btn on" data-type="all">全部</button>
                 <button class="filter-btn" data-type="PCR">PCR</button>
                 <button class="filter-btn" data-type="qPCR">qPCR</button>
-                <button class="filter-btn" data-type="Degenerate">Degenerate</button>
-                <button class="filter-btn" data-type="Tiled">Tiled</button>
+                <button class="filter-btn" data-type="DEGENERATE">Degenerate</button>
+                <button class="filter-btn" data-type="TILED">Tiled</button>
             </div>
             <div class="sp-list" id="speciesList">
                 <div class="loader"><div class="spinner"></div>加载中...</div>
@@ -221,7 +221,7 @@
         }
         if (type !== 'all') {
             species = species.filter(([_, info]) => {
-                const k = type === 'Degenerate' ? 'degenerate' : type.toLowerCase();
+                const k = type.toLowerCase();
                 return (info[k]||0) > 0;
             });
         }
@@ -279,7 +279,7 @@
         const info = speciesIndex[name] || {};
 
         // Group by type
-        const groups = { PCR: [], qPCR: [], Degenerate: [], Tiled: [] };
+        const groups = { PCR: [], qPCR: [], DEGENERATE: [], TILED: [] };
         primers.forEach(p => {
             const t = p.type;
             if (groups[t]) groups[t].push(p);
@@ -310,8 +310,8 @@
                 <button class="tab-btn active" data-tab="all">All (${primers.length})</button>
                 <button class="tab-btn" data-tab="PCR">PCR (${groups.PCR.length})</button>
                 <button class="tab-btn" data-tab="qPCR">qPCR (${groups.qPCR.length})</button>
-                <button class="tab-btn" data-tab="Degenerate">Degenerate (${groups.Degenerate.length})</button>
-                <button class="tab-btn" data-tab="Tiled">Tiled (${groups.Tiled.length})</button>
+                <button class="tab-btn" data-tab="DEGENERATE">Degenerate (${groups.Degenerate.length})</button>
+                <button class="tab-btn" data-tab="TILED">Tiled (${groups.Tiled.length})</button>
             </div>
             <div style="overflow-x:auto;" id="tableContainer"></div>
         </div>`;
