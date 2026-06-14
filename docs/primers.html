@@ -173,7 +173,12 @@ async function loadSp(name){
 
 function renderSpPage(data, info, name){
   const primers = data.primers || [];
-  const glen = parseInt(data.genome_length) || 0;
+  // 优先用数据库 genome_length，否则从最大引物位置估算
+  let glen = parseInt(data.genome_length) || 0;
+  if(!glen && primers.length>0){
+    glen = primers.reduce((m,p)=>{const r=parseInt(p.rev_start)||0;return r>m?r:m},0);
+    if(glen>0) glen = Math.ceil(glen*1.05); // +5% padding
+  }
   // Group
   const types = ['PCR','qPCR','DEGENERATE','TILED'];
   const groups = {}; types.forEach(t=>{groups[t]=primers.filter(p=>p.type===t)});
@@ -186,7 +191,7 @@ function renderSpPage(data, info, name){
   <div class="card shadow-sm mb-3" style="border-radius:10px">
     <div class="card-body">
       <h5 class="card-title">${esc(name)}</h5>
-      <p class="text-muted mb-1" style="font-size:13px">${tax}</p>
+      <p class="text-muted mb-1" style="font-size:13px">${tax}${glen>0?' | 基因组: '+glen.toLocaleString()+' bp':''}</p>
       <div class="d-flex flex-wrap gap-2 align-items-center mb-2">
         ${types.map(t=>groups[t].length?`<span class="badge rounded-pill type-${t==='PCR'?'pcr':t==='qPCR'?'qpcr':t==='DEGENERATE'?'degen':'tiled'}">${t}: ${groups[t].length}</span>`:'').join('')}
         ${recs['RECOMMENDED']||recs['PASS']?`<span class="rec-badge rec-rec">REC ${recs['RECOMMENDED']+recs['PASS']}</span>`:''}
