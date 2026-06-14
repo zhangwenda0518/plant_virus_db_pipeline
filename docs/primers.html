@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>引物数据库 — Plant Virus Reference Database</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        :root {
+            --nav-bg: #1a5276;
+            --nav-hover: #2471a3;
+            --accent: #2ecc71;
+            --warn: #f39c12;
+            --danger: #e74c3c;
+            --bg: #f5f7fa;
+            --card-bg: #fff;
+            --text: #2c3e50;
+            --text-light: #7f8c8d;
+            --border: #e0e5ec;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); }
+
+        /* Nav */
+        .nav { background: var(--nav-bg); padding: 0 24px; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        .nav a { color: #fff; text-decoration: none; padding: 0 16px; height: 56px; display: flex; align-items: center; font-size: 14px; transition: background 0.2s; }
+        .nav a:hover, .nav a.active { background: var(--nav-hover); }
+        .nav .brand { font-size: 16px; font-weight: 700; margin-right: 24px; }
+
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #1a5276 0%, #2c3e50 100%); color: #fff; padding: 40px 24px; text-align: center; }
+        .hero h1 { font-size: 28px; margin-bottom: 8px; }
+        .hero p { opacity: 0.85; font-size: 15px; }
+
+        /* Stats */
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; padding: 24px; max-width: 1200px; margin: 0 auto; }
+        .stat-card { background: var(--card-bg); border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+        .stat-card .n { font-size: 28px; font-weight: 700; color: var(--nav-bg); }
+        .stat-card .l { font-size: 12px; color: var(--text-light); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Main layout */
+        .container { max-width: 1500px; margin: 0 auto; padding: 24px; display: flex; gap: 24px; flex-wrap: wrap; }
+        .sidebar { flex: 0 0 320px; }
+        .content { flex: 1; min-width: 600px; }
+
+        /* Card */
+        .card { background: var(--card-bg); border-radius: 10px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); margin-bottom: 20px; }
+        .card h3 { font-size: 16px; margin-bottom: 12px; color: var(--nav-bg); border-bottom: 2px solid var(--border); padding-bottom: 8px; }
+
+        /* Search */
+        .search-box { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 8px; font-size: 14px; outline: none; transition: border 0.2s; }
+        .search-box:focus { border-color: var(--nav-hover); }
+
+        /* Species list */
+        .sp-list { max-height: 500px; overflow-y: auto; }
+        .sp-item { padding: 10px 12px; cursor: pointer; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 13px; transition: background 0.15s; }
+        .sp-item:hover { background: #eef5fb; }
+        .sp-item.active { background: #d4e6f9; font-weight: 600; }
+        .sp-item .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .sp-item .badges { display: flex; gap: 4px; flex-shrink: 0; }
+        .badge { font-size: 10px; padding: 2px 6px; border-radius: 4px; color: #fff; font-weight: 600; }
+        .badge-pcr { background: #3498db; }
+        .badge-qpcr { background: #9b59b6; }
+        .badge-degen { background: #e67e22; }
+        .badge-tiled { background: #1abc9c; }
+
+        /* Filter by type */
+        .filter-bar { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+        .filter-btn { padding: 6px 14px; border: 1px solid var(--border); border-radius: 20px; font-size: 12px; cursor: pointer; background: #fff; transition: all 0.2s; }
+        .filter-btn:hover { border-color: var(--nav-hover); }
+        .filter-btn.on { background: var(--nav-bg); color: #fff; border-color: var(--nav-bg); }
+
+        /* Primer table */
+        .primer-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .primer-table th { background: var(--nav-bg); color: #fff; padding: 8px 10px; text-align: left; position: sticky; top: 0; }
+        .primer-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+        .primer-table tr:hover td { background: #f0f7ff; }
+        .seq-mono { font-family: 'Courier New', monospace; font-size: 12px; letter-spacing: 0.5px; word-break: break-all; max-width: 200px; display: inline-block; }
+
+        /* Tabs */
+        .tabs { display: flex; gap: 0; margin-bottom: 16px; border-bottom: 2px solid var(--border); }
+        .tab-btn { padding: 8px 20px; background: none; border: none; font-size: 13px; cursor: pointer; color: var(--text-light); border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.2s; }
+        .tab-btn:hover { color: var(--nav-bg); }
+        .tab-btn.active { color: var(--nav-bg); border-bottom-color: var(--nav-bg); font-weight: 600; }
+
+        /* Recommendation */
+        .rec { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 700; }
+        .rec-recommended { background: #d5f5e3; color: #1e8449; }
+        .rec-usable { background: #fef9e7; color: #b7950b; }
+        .rec-not { background: #fadbd8; color: #c0392b; }
+
+        /* Dimers */
+        .dimer-viz { font-family: 'Courier New', monospace; font-size: 11px; line-height: 1.6; white-space: pre; background: #f8f9fa; padding: 8px; border-radius: 6px; overflow-x: auto; }
+
+        /* Loading */
+        .loader { text-align: center; padding: 40px; color: var(--text-light); }
+        .spinner { width: 40px; height: 40px; border: 3px solid var(--border); border-top-color: var(--nav-bg); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 12px; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Legend */
+        .legend { display: flex; gap: 16px; margin-bottom: 12px; font-size: 12px; }
+        .legend span { display: flex; align-items: center; gap: 4px; }
+
+        @media (max-width: 900px) {
+            .container { flex-direction: column; }
+            .sidebar { flex: 0; }
+            .content { min-width: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <a href="index.html" class="brand">Plant Virus DB</a>
+    <a href="index.html">Dashboard</a>
+    <a href="explorer.html">Explorer</a>
+    <a href="primers.html" class="active">Primers</a>
+    <a href="download.html">Download</a>
+</nav>
+
+<div class="hero">
+    <h1>引物数据库</h1>
+    <p>植物病毒检测引物 — 含 PCR / qPCR / Degenerate / Tiled 四种策略</p>
+</div>
+
+<div class="stats" id="statsContainer"></div>
+
+<div class="container">
+    <div class="sidebar">
+        <div class="card">
+            <h3>物种搜索</h3>
+            <input type="text" class="search-box" id="searchInput" placeholder="输入物种名搜索..." autocomplete="off">
+            <div class="filter-bar" style="margin-top:10px;">
+                <button class="filter-btn on" data-type="all">全部</button>
+                <button class="filter-btn" data-type="PCR">PCR</button>
+                <button class="filter-btn" data-type="qPCR">qPCR</button>
+                <button class="filter-btn" data-type="Degenerate">Degenerate</button>
+                <button class="filter-btn" data-type="Tiled">Tiled</button>
+            </div>
+            <div class="sp-list" id="speciesList">
+                <div class="loader"><div class="spinner"></div>加载中...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="mainContent">
+        <div class="card" style="text-align:center;padding:60px;">
+            <p style="color:var(--text-light);font-size:16px;">← 选择物种查看引物详情</p>
+        </div>
+    </div>
+</div>
+
+<script>
+(async function() {
+    const DATA_BASE = 'primers';
+    let speciesIndex = {};
+    let stats = {};
+    let currentSpecies = null;
+    let currentTab = 'all';
+
+    // === 加载索引 ===
+    try {
+        const r = await fetch(`${DATA_BASE}/index.json`);
+        speciesIndex = await r.json();
+    } catch(e) {
+        document.getElementById('speciesList').innerHTML = '<p style="color:red">加载索引失败</p>';
+        return;
+    }
+
+    // === 加载统计 ===
+    try {
+        const r2 = await fetch(`${DATA_BASE}/stats.json`);
+        stats = await r2.json();
+    } catch(e) {}
+
+    // === 渲染统计卡片 ===
+    renderStats();
+    // === 渲染物种列表 ===
+    renderSpeciesList();
+
+    // === 搜索 ===
+    document.getElementById('searchInput').addEventListener('input', renderSpeciesList);
+    // === 类型过滤 ===
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
+            this.classList.add('on');
+            currentTab = this.dataset.type;
+            renderSpeciesList();
+        });
+    });
+
+    // ================================================================
+    function renderStats() {
+        const s = stats;
+        const cards = [
+            {n: (s.total_pairs||0).toLocaleString(), l: 'Total Primers'},
+            {n: (s.total_species||0).toLocaleString(), l: 'Species'},
+            {n: (s.families||0).toLocaleString(), l: 'Families'},
+            {n: (s.genera||0).toLocaleString(), l: 'Genera'},
+            {n: (s.recommended||0).toLocaleString(), l: 'Recommended', cl: '#27ae60'},
+            {n: (s.not_recommended||0).toLocaleString(), l: 'Not Recommended', cl: '#e74c3c'},
+        ];
+        document.getElementById('statsContainer').innerHTML = cards.map(c =>
+            `<div class="stat-card"><div class="n" style="color:${c.cl||'var(--nav-bg)'}">${c.n}</div><div class="l">${c.l}</div></div>`
+        ).join('');
+    }
+
+    function renderSpeciesList() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const type = currentTab;
+        const list = document.getElementById('speciesList');
+        let species = Object.entries(speciesIndex);
+
+        if (query) {
+            species = species.filter(([name, info]) =>
+                name.toLowerCase().includes(query) ||
+                (info.family||'').toLowerCase().includes(query) ||
+                (info.genus||'').toLowerCase().includes(query)
+            );
+        }
+        if (type !== 'all') {
+            species = species.filter(([_, info]) => {
+                const k = type === 'Degenerate' ? 'degenerate' : type.toLowerCase();
+                return (info[k]||0) > 0;
+            });
+        }
+
+        species.sort((a, b) => (b[1].total||0) - (a[1].total||0));
+        const top = species.slice(0, 500);
+
+        list.innerHTML = top.map(([name, info]) => {
+            const active = currentSpecies === name ? ' active' : '';
+            return `<div class="sp-item${active}" data-sp="${_esc(name)}" title="${_esc(name)}">
+                <span class="name">${_esc(name)}</span>
+                <span class="badges">
+                    ${info.pcr ? `<span class="badge badge-pcr">P${info.pcr}</span>` : ''}
+                    ${info.qpcr ? `<span class="badge badge-qpcr">Q${info.qpcr}</span>` : ''}
+                    ${info.degenerate ? `<span class="badge badge-degen">D${info.degenerate}</span>` : ''}
+                    ${info.tiled ? `<span class="badge badge-tiled">T${info.tiled}</span>` : ''}
+                </span>
+            </div>`;
+        }).join('');
+
+        list.querySelectorAll('.sp-item').forEach(el => {
+            el.addEventListener('click', () => loadSpecies(el.dataset.sp));
+        });
+
+        if (top.length === 0) {
+            list.innerHTML = '<p style="padding:20px;color:var(--text-light);text-align:center;">无匹配物种</p>';
+        }
+    }
+
+    async function loadSpecies(name) {
+        currentSpecies = name;
+        renderSpeciesList();
+        const content = document.getElementById('mainContent');
+        content.innerHTML = '<div class="loader"><div class="spinner"></div>加载引物数据...</div>';
+
+        const info = speciesIndex[name];
+        if (!info) { content.innerHTML = '<p>未找到该物种</p>'; return; }
+
+        const file = info.file || `species/${name.replace(/[\/\\]/g,'_')}.json`;
+        let data;
+        try {
+            const r = await fetch(`${DATA_BASE}/${file}`);
+            data = await r.json();
+        } catch(e) {
+            content.innerHTML = `<p style="color:red">加载失败: ${file}</p>`;
+            return;
+        }
+
+        const primers = data.primers || [];
+        renderPrimerPage(name, data, primers);
+    }
+
+    function renderPrimerPage(name, data, primers) {
+        const content = document.getElementById('mainContent');
+        const info = speciesIndex[name] || {};
+
+        // Group by type
+        const groups = { PCR: [], qPCR: [], Degenerate: [], Tiled: [] };
+        primers.forEach(p => {
+            const t = p.type;
+            if (groups[t]) groups[t].push(p);
+            else if (t in groups) groups[t].push(p);
+            else { if (!groups['PCR']) groups['PCR'] = []; groups['PCR'].push(p); }
+        });
+
+        // Recommendation stats for this species
+        const recCounts = { 'RECOMMENDED': 0, 'USABLE': 0, 'CAUTION': 0, 'NOT_RECOMMENDED': 0, '': 0 };
+        primers.forEach(p => { const r = p.recommendation || ''; recCounts[r] = (recCounts[r]||0)+1; });
+
+        const taxLine = [info.family, info.genus].filter(Boolean).join(' > ') || 'N/A';
+
+        let html = `
+        <div class="card">
+            <h3>${_esc(name)} <span style="font-size:12px;color:var(--text-light);font-weight:400;">${taxLine}</span></h3>
+            <div class="legend">
+                <span><span class="badge badge-pcr">PCR</span> ${groups.PCR.length}</span>
+                <span><span class="badge badge-qpcr">qPCR</span> ${groups.qPCR.length}</span>
+                <span><span class="badge badge-degen">Degen</span> ${groups.Degenerate.length}</span>
+                <span><span class="badge badge-tiled">Tiled</span> ${groups.Tiled.length}</span>
+                <span>|</span>
+                <span class="rec rec-recommended">REC ${recCounts['RECOMMENDED']||0}</span>
+                <span class="rec rec-usable">USABLE ${(recCounts['USABLE']||0)+(recCounts['CAUTION']||0)}</span>
+                <span class="rec rec-not">NOT ${recCounts['NOT_RECOMMENDED']||0}</span>
+            </div>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="all">All (${primers.length})</button>
+                <button class="tab-btn" data-tab="PCR">PCR (${groups.PCR.length})</button>
+                <button class="tab-btn" data-tab="qPCR">qPCR (${groups.qPCR.length})</button>
+                <button class="tab-btn" data-tab="Degenerate">Degenerate (${groups.Degenerate.length})</button>
+                <button class="tab-btn" data-tab="Tiled">Tiled (${groups.Tiled.length})</button>
+            </div>
+            <div style="overflow-x:auto;" id="tableContainer"></div>
+        </div>`;
+
+        content.innerHTML = html;
+
+        function showTable(tab) {
+            const show = tab === 'all' ? primers : (groups[tab] || []);
+            const tbody = show.map(p => `
+                <tr>
+                    <td>${p.type||''}</td>
+                    <td>${p.segment||''}</td>
+                    <td><span class="seq-mono">${_esc(p.fwd_seq||'')}</span></td>
+                    <td><span class="seq-mono">${_esc(p.rev_seq||'')}</span></td>
+                    <td>${p.fwd_tm||'-'}</td>
+                    <td>${p.rev_tm||'-'}</td>
+                    <td>${p.product||'-'}</td>
+                    <td>${p.gc_fwd||'-'}/${p.gc_rev||'-'}</td>
+                    <td>${p.score||'-'}</td>
+                    <td>${renderRec(p.recommendation||'')}</td>
+                    <td>${p.specificity||'-'}%</td>
+                    <td><button class="filter-btn" onclick="toggleDetail(this)" data-fwd="${_esc(p.fwd_seq)}" data-rev="${_esc(p.rev_seq)}" data-fdimer="${_esc(p.dimer_fwd||'')}" data-rdimer="${_esc(p.dimer_rev||'')}" data-cdimer="${_esc(p.dimer_cross||'')}">详情</button></td>
+                </tr>
+            `).join('');
+
+            document.getElementById('tableContainer').innerHTML = `
+            <table class="primer-table">
+                <thead><tr>
+                    <th>类型</th><th>区段</th><th>Fwd (5'→3')</th><th>Rev (5'→3')</th>
+                    <th>Tm F</th><th>Tm R</th><th>产物</th><th>GC%</th><th>评分</th><th>推荐</th><th>特异%</th><th></th>
+                </tr></thead>
+                <tbody>${tbody || '<tr><td colspan="12" style="text-align:center;color:var(--text-light);">无数据</td></tr>'}</tbody>
+            </table>`;
+        }
+
+        showTable('all');
+
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                showTable(this.dataset.tab);
+            });
+        });
+    }
+
+    function renderRec(r) {
+        if (r === 'RECOMMENDED' || r === 'PASS') return '<span class="rec rec-recommended">REC</span>';
+        if (r === 'USABLE' || r === 'CAUTION') return '<span class="rec rec-usable">CAUTION</span>';
+        if (r === 'NOT_RECOMMENDED') return '<span class="rec rec-not">NOT</span>';
+        return r || '-';
+    }
+})();
+
+function toggleDetail(btn) {
+    const next = btn.nextElementSibling;
+    if (next && next.classList.contains('detail-row')) {
+        next.remove();
+        btn.textContent = '详情';
+        return;
+    }
+
+    const fwd = btn.dataset.fwd || '';
+    const rev = btn.dataset.rev || '';
+    const fd = btn.dataset.fdimer || '';
+    const rd = btn.dataset.rdimer || '';
+    const cd = btn.dataset.cdimer || '';
+
+    const hasDimers = fd || rd || cd;
+    let dimerHTML = '';
+    if (hasDimers) {
+        dimerHTML = `
+        <div style="margin-top:8px;">
+            <strong>二聚体分析:</strong>
+            ${fd ? `<div style="margin-top:4px;"><em>Fwd自二聚体:</em><pre class="dimer-viz">${_esc(fd)}</pre></div>` : ''}
+            ${rd ? `<div style="margin-top:4px;"><em>Rev自二聚体:</em><pre class="dimer-viz">${_esc(rd)}</pre></div>` : ''}
+            ${cd ? `<div style="margin-top:4px;"><em>交叉二聚体:</em><pre class="dimer-viz">${_esc(cd)}</pre></div>` : ''}
+        </div>`;
+    }
+
+    const tr = btn.parentElement.parentElement;
+    const detailTr = document.createElement('tr');
+    detailTr.classList.add('detail-row');
+    detailTr.innerHTML = `<td colspan="12" style="background:#f8f9fa;padding:12px 16px;">
+        <div><strong>Fwd:</strong> <span style="font-family:monospace;">${_esc(fwd)}</span> (${fwd.length}bp)</div>
+        <div style="margin-top:4px;"><strong>Rev:</strong> <span style="font-family:monospace;">${_esc(rev)}</span> (${rev.length}bp)</div>
+        ${dimerHTML}
+    </td>`;
+    tr.after(detailTr);
+    btn.textContent = '收起';
+}
+
+function _esc(s) { return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+</script>
+</body>
+</html>
