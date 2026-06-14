@@ -1,413 +1,389 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>引物数据库 — Plant Virus Reference Database</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <style>
-        :root {
-            --nav-bg: #1a5276;
-            --nav-hover: #2471a3;
-            --accent: #2ecc71;
-            --warn: #f39c12;
-            --danger: #e74c3c;
-            --bg: #f5f7fa;
-            --card-bg: #fff;
-            --text: #2c3e50;
-            --text-light: #7f8c8d;
-            --border: #e0e5ec;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); }
-
-        /* Nav */
-        .nav { background: var(--nav-bg); padding: 0 24px; display: flex; align-items: center; height: 56px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-        .nav a { color: #fff; text-decoration: none; padding: 0 16px; height: 56px; display: flex; align-items: center; font-size: 14px; transition: background 0.2s; }
-        .nav a:hover, .nav a.active { background: var(--nav-hover); }
-        .nav .brand { font-size: 16px; font-weight: 700; margin-right: 24px; }
-
-        /* Hero */
-        .hero { background: linear-gradient(135deg, #1a5276 0%, #2c3e50 100%); color: #fff; padding: 40px 24px; text-align: center; }
-        .hero h1 { font-size: 28px; margin-bottom: 8px; }
-        .hero p { opacity: 0.85; font-size: 15px; }
-
-        /* Stats */
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; padding: 24px; max-width: 1200px; margin: 0 auto; }
-        .stat-card { background: var(--card-bg); border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
-        .stat-card .n { font-size: 28px; font-weight: 700; color: var(--nav-bg); }
-        .stat-card .l { font-size: 12px; color: var(--text-light); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
-
-        /* Main layout */
-        .container { max-width: 1500px; margin: 0 auto; padding: 24px; display: flex; gap: 24px; flex-wrap: wrap; }
-        .sidebar { flex: 0 0 320px; }
-        .content { flex: 1; min-width: 600px; }
-
-        /* Card */
-        .card { background: var(--card-bg); border-radius: 10px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); margin-bottom: 20px; }
-        .card h3 { font-size: 16px; margin-bottom: 12px; color: var(--nav-bg); border-bottom: 2px solid var(--border); padding-bottom: 8px; }
-
-        /* Search */
-        .search-box { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 8px; font-size: 14px; outline: none; transition: border 0.2s; }
-        .search-box:focus { border-color: var(--nav-hover); }
-
-        /* Species list */
-        .sp-list { max-height: 500px; overflow-y: auto; }
-        .sp-item { padding: 10px 12px; cursor: pointer; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 13px; transition: background 0.15s; }
-        .sp-item:hover { background: #eef5fb; }
-        .sp-item.active { background: #d4e6f9; font-weight: 600; }
-        .sp-item .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .sp-item .badges { display: flex; gap: 4px; flex-shrink: 0; }
-        .badge { font-size: 10px; padding: 2px 6px; border-radius: 4px; color: #fff; font-weight: 600; }
-        .badge-pcr { background: #3498db; }
-        .badge-qpcr { background: #9b59b6; }
-        .badge-degen { background: #e67e22; }
-        .badge-tiled { background: #1abc9c; }
-
-        /* Filter by type */
-        .filter-bar { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
-        .filter-btn { padding: 6px 14px; border: 1px solid var(--border); border-radius: 20px; font-size: 12px; cursor: pointer; background: #fff; transition: all 0.2s; }
-        .filter-btn:hover { border-color: var(--nav-hover); }
-        .filter-btn.on { background: var(--nav-bg); color: #fff; border-color: var(--nav-bg); }
-
-        /* Primer table */
-        .primer-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-        .primer-table th { background: var(--nav-bg); color: #fff; padding: 8px 10px; text-align: left; position: sticky; top: 0; }
-        .primer-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
-        .primer-table tr:hover td { background: #f0f7ff; }
-        .seq-mono { font-family: 'Courier New', monospace; font-size: 12px; letter-spacing: 0.5px; word-break: break-all; max-width: 200px; display: inline-block; }
-
-        /* Tabs */
-        .tabs { display: flex; gap: 0; margin-bottom: 16px; border-bottom: 2px solid var(--border); }
-        .tab-btn { padding: 8px 20px; background: none; border: none; font-size: 13px; cursor: pointer; color: var(--text-light); border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.2s; }
-        .tab-btn:hover { color: var(--nav-bg); }
-        .tab-btn.active { color: var(--nav-bg); border-bottom-color: var(--nav-bg); font-weight: 600; }
-
-        /* Recommendation */
-        .rec { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 700; }
-        .rec-recommended { background: #d5f5e3; color: #1e8449; }
-        .rec-usable { background: #fef9e7; color: #b7950b; }
-        .rec-not { background: #fadbd8; color: #c0392b; }
-
-        /* Dimers */
-        .dimer-viz { font-family: 'Courier New', monospace; font-size: 11px; line-height: 1.6; white-space: pre; background: #f8f9fa; padding: 8px; border-radius: 6px; overflow-x: auto; }
-
-        /* Loading */
-        .loader { text-align: center; padding: 40px; color: var(--text-light); }
-        .spinner { width: 40px; height: 40px; border: 3px solid var(--border); border-top-color: var(--nav-bg); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 12px; }
-        @keyframes spin { to { transform: rotate(360deg); } }
-
-        /* Legend */
-        .legend { display: flex; gap: 16px; margin-bottom: 12px; font-size: 12px; }
-        .legend span { display: flex; align-items: center; gap: 4px; }
-
-        @media (max-width: 900px) {
-            .container { flex-direction: column; }
-            .sidebar { flex: 0; }
-            .content { min-width: 0; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>引物数据库 — Plant Virus Reference DB</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+:root{--nav-bg:#1a5276;--rec-g:#27ae60;--rec-y:#f39c12;--rec-r:#e74c3c}
+body{padding-top:52px;background:#f8f9fa}
+.navbar{background:var(--nav-bg)!important;z-index:1030}
+.navbar-brand{font-weight:700}
+.nav-link{color:rgba(255,255,255,.85)!important;transition:.15s}
+.nav-link:hover,.nav-link.active{color:#fff!important;background:rgba(255,255,255,.15)}
+.stat-num{font-size:1.8rem;font-weight:700;color:var(--nav-bg)}
+.stat-label{font-size:.75rem;color:#6c757d;text-transform:uppercase;letter-spacing:.5px}
+.sp-item{cursor:pointer;transition:background .12s;border-radius:6px}
+.sp-item:hover{background:#e9ecef}
+.sp-item.active{background:#cfe2ff;font-weight:600}
+.seq-mono{font-family:'Courier New',monospace;font-size:13px;word-break:break-all}
+.primer-table{font-size:13px}
+.primer-table th{position:sticky;top:52px;z-index:1}
+.type-badge{padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;color:#fff}
+.type-pcr{background:#2b8a3e}.type-qpcr{background:#1971c2}
+.type-degen{background:#e8590c}.type-tiled{background:#6741d9}
+.rec-badge{padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700}
+.rec-rec{background:#d5f5e3;color:#1e8449}.rec-usable{background:#fef9e7;color:#b7950b}
+.rec-not{background:#fadbd8;color:#c0392b}
+.dimer-box{font-family:'Consolas','Courier New',monospace;font-size:11px;line-height:1.3;white-space:nowrap;overflow-x:auto;background:#f8f9fa;padding:8px;border-radius:6px}
+.tab-btn{cursor:pointer;padding:6px 16px;border:1px solid #dee2e6;background:#fff;border-radius:4px 4px 0 0;margin-right:2px;font-size:13px;transition:.15s}
+.tab-btn.active{background:#0d6efd;color:#fff;border-color:#0d6efd;font-weight:600}
+.genome-svg{width:100%;border:1px solid #e0e0e0;border-radius:4px;background:#fafafa}
+.genome-label{font-size:10px;fill:#868e96}
+.spinner-border-sm{width:1rem;height:1rem;border-width:.15em}
+.loading-overlay{display:flex;align-items:center;justify-content:center;padding:40px;color:#6c757d}
+.filter-badge{cursor:pointer;user-select:none;transition:.15s}
+.filter-badge:hover{opacity:.8}
+.filter-badge.active{box-shadow:0 0 0 2px #fff,0 0 0 4px currentColor}
+.sidebar{max-height:calc(100vh - 180px);overflow-y:auto;position:sticky;top:68px}
+@media(max-width:768px){.sidebar{position:static;max-height:none}}
+</style>
 </head>
 <body>
 
-<nav class="nav">
-    <a href="index.html" class="brand">Plant Virus DB</a>
-    <a href="index.html">Dashboard</a>
-    <a href="segmented.html">Segmented</a>
-    <a href="nonsegmented.html">Non‑Segmented</a>
-    <a href="explorer.html">Explorer</a>
-    <a href="primers.html" class="active">Primers</a>
-    <a href="submit.html">Submit</a>
-    <a href="download.html">Download</a>
+<nav class="navbar navbar-dark fixed-top">
+<div class="container-fluid px-3">
+<a class="navbar-brand" href="index.html"><i class="bi-virus"></i> Plant Virus DB</a>
+<ul class="nav">
+<li class="nav-item"><a class="nav-link" href="index.html">Dashboard</a></li>
+<li class="nav-item"><a class="nav-link" href="segmented.html">Segmented</a></li>
+<li class="nav-item"><a class="nav-link" href="nonsegmented.html">Non‑Segmented</a></li>
+<li class="nav-item"><a class="nav-link" href="explorer.html">Explorer</a></li>
+<li class="nav-item"><a class="nav-link active" href="primers.html">Primers</a></li>
+<li class="nav-item"><a class="nav-link" href="submit.html">Submit</a></li>
+<li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+</ul>
+</div>
 </nav>
 
-<div class="hero">
-    <h1>引物数据库</h1>
-    <p>植物病毒检测引物 — 含 PCR / qPCR / Degenerate / Tiled 四种策略</p>
-</div>
-
-<div class="stats" id="statsContainer"></div>
-
+<div class="bg-primary bg-gradient text-white py-4">
 <div class="container">
-    <div class="sidebar">
-        <div class="card">
-            <h3>物种搜索</h3>
-            <input type="text" class="search-box" id="searchInput" placeholder="输入物种名搜索..." autocomplete="off">
-            <div class="filter-bar" style="margin-top:10px;">
-                <button class="filter-btn on" data-type="all">全部</button>
-                <button class="filter-btn" data-type="PCR">PCR</button>
-                <button class="filter-btn" data-type="qPCR">qPCR</button>
-                <button class="filter-btn" data-type="DEGENERATE">Degenerate</button>
-                <button class="filter-btn" data-type="TILED">Tiled</button>
-            </div>
-            <div class="sp-list" id="speciesList">
-                <div class="loader"><div class="spinner"></div>加载中...</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="content" id="mainContent">
-        <div class="card" style="text-align:center;padding:60px;">
-            <p style="color:var(--text-light);font-size:16px;">← 选择物种查看引物详情</p>
-        </div>
-    </div>
+<h2 class="mb-1"><i class="bi bi-droplet"></i> 引物数据库</h2>
+<p class="mb-0 opacity-75">植物病毒检测引物 — PCR / qPCR / Degenerate / Tiled 四种策略</p>
 </div>
+</div>
+
+<!-- Stats -->
+<div class="container mt-3"><div class="row g-2" id="statsRow"></div></div>
+
+<!-- Main -->
+<div class="container mt-3"><div class="row g-3">
+<!-- Sidebar -->
+<div class="col-md-3"><div class="card shadow-sm sidebar" style="border-radius:10px">
+<div class="card-body p-3">
+<h6 class="card-title mb-2"><i class="bi-search"></i> 物种搜索</h6>
+<input type="text" class="form-control form-control-sm mb-2" id="searchInp" placeholder="输入物种/科/属..." autocomplete="off">
+<div class="d-flex flex-wrap gap-1 mb-2" id="typeFilter">
+<button class="btn btn-sm btn-outline-secondary active filter-btn" data-type="all">全部</button>
+<button class="btn btn-sm btn-outline-secondary filter-btn" data-type="PCR">PCR</button>
+<button class="btn btn-sm btn-outline-secondary filter-btn" data-type="qPCR">qPCR</button>
+<button class="btn btn-sm btn-outline-secondary filter-btn" data-type="DEGENERATE">Degen</button>
+<button class="btn btn-sm btn-outline-secondary filter-btn" data-type="TILED">Tiled</button>
+</div>
+<small class="text-muted" id="spCount"></small>
+<div id="spList"><div class="loading-overlay"><div class="spinner-border spinner-border-sm me-2"></div>加载中...</div></div>
+</div></div></div>
+
+<!-- Content -->
+<div class="col-md-9" id="mainContent">
+<div class="text-center text-muted py-5">
+<i class="bi bi-arrow-left-circle" style="font-size:2rem"></i>
+<p class="mt-2">← 左侧选择物种查看引物详情</p>
+</div>
+</div>
+</div></div>
 
 <script>
-(async function() {
-    const DATA_BASE = 'primers';
-    let speciesIndex = {};
-    let stats = {};
-    let currentSpecies = null;
-    let currentTab = 'all';
+// ============================ DATA LOADING ============================
+const BASE = 'primers';
+let spIndex = {}, spStats = {};
 
-    // === 加载索引 ===
-    try {
-        const r = await fetch(`${DATA_BASE}/index.json`);
-        speciesIndex = await r.json();
-    } catch(e) {
-        document.getElementById('speciesList').innerHTML = '<p style="color:red">加载索引失败</p>';
-        return;
-    }
-
-    // === 加载统计 ===
-    try {
-        const r2 = await fetch(`${DATA_BASE}/stats.json`);
-        stats = await r2.json();
-    } catch(e) {}
-
-    // === 渲染统计卡片 ===
-    renderStats();
-    // === 渲染物种列表 ===
-    renderSpeciesList();
-
-    // === 搜索 ===
-    document.getElementById('searchInput').addEventListener('input', renderSpeciesList);
-    // === 类型过滤 ===
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
-            this.classList.add('on');
-            currentTab = this.dataset.type;
-            renderSpeciesList();
-        });
-    });
-
-    // ================================================================
-    function renderStats() {
-        const s = stats;
-        const cards = [
-            {n: (s.total_pairs||0).toLocaleString(), l: 'Total Primers'},
-            {n: (s.total_species||0).toLocaleString(), l: 'Species'},
-            {n: (s.families||0).toLocaleString(), l: 'Families'},
-            {n: (s.genera||0).toLocaleString(), l: 'Genera'},
-            {n: (s.recommended||0).toLocaleString(), l: 'Recommended', cl: '#27ae60'},
-            {n: (s.not_recommended||0).toLocaleString(), l: 'Not Recommended', cl: '#e74c3c'},
-        ];
-        document.getElementById('statsContainer').innerHTML = cards.map(c =>
-            `<div class="stat-card"><div class="n" style="color:${c.cl||'var(--nav-bg)'}">${c.n}</div><div class="l">${c.l}</div></div>`
-        ).join('');
-    }
-
-    function renderSpeciesList() {
-        const query = document.getElementById('searchInput').value.toLowerCase();
-        const type = currentTab;
-        const list = document.getElementById('speciesList');
-        let species = Object.entries(speciesIndex);
-
-        if (query) {
-            species = species.filter(([name, info]) =>
-                name.toLowerCase().includes(query) ||
-                (info.family||'').toLowerCase().includes(query) ||
-                (info.genus||'').toLowerCase().includes(query)
-            );
-        }
-        if (type !== 'all') {
-            species = species.filter(([_, info]) => {
-                const k = type.toLowerCase();
-                return (info[k]||0) > 0;
-            });
-        }
-
-        species.sort((a, b) => (b[1].total||0) - (a[1].total||0));
-        const top = species.slice(0, 500);
-
-        list.innerHTML = top.map(([name, info]) => {
-            const active = currentSpecies === name ? ' active' : '';
-            return `<div class="sp-item${active}" data-sp="${_esc(name)}" title="${_esc(name)}">
-                <span class="name">${_esc(name)}</span>
-                <span class="badges">
-                    ${info.pcr ? `<span class="badge badge-pcr">P${info.pcr}</span>` : ''}
-                    ${info.qpcr ? `<span class="badge badge-qpcr">Q${info.qpcr}</span>` : ''}
-                    ${info.degenerate ? `<span class="badge badge-degen">D${info.degenerate}</span>` : ''}
-                    ${info.tiled ? `<span class="badge badge-tiled">T${info.tiled}</span>` : ''}
-                </span>
-            </div>`;
-        }).join('');
-
-        list.querySelectorAll('.sp-item').forEach(el => {
-            el.addEventListener('click', () => loadSpecies(el.dataset.sp));
-        });
-
-        if (top.length === 0) {
-            list.innerHTML = '<p style="padding:20px;color:var(--text-light);text-align:center;">无匹配物种</p>';
-        }
-    }
-
-    async function loadSpecies(name) {
-        currentSpecies = name;
-        renderSpeciesList();
-        const content = document.getElementById('mainContent');
-        content.innerHTML = '<div class="loader"><div class="spinner"></div>加载引物数据...</div>';
-
-        const info = speciesIndex[name];
-        if (!info) { content.innerHTML = '<p>未找到该物种</p>'; return; }
-
-        const file = info.file || `species/${name.replace(/[\/\\]/g,'_')}.json`;
-        let data;
-        try {
-            const r = await fetch(`${DATA_BASE}/${file}`);
-            data = await r.json();
-        } catch(e) {
-            content.innerHTML = `<p style="color:red">加载失败: ${file}</p>`;
-            return;
-        }
-
-        const primers = data.primers || [];
-        renderPrimerPage(name, data, primers);
-    }
-
-    function renderPrimerPage(name, data, primers) {
-        const content = document.getElementById('mainContent');
-        const info = speciesIndex[name] || {};
-
-        // Group by type
-        const groups = { PCR: [], qPCR: [], DEGENERATE: [], TILED: [] };
-        primers.forEach(p => {
-            const t = p.type;
-            if (groups[t]) groups[t].push(p);
-            else if (t in groups) groups[t].push(p);
-            else { if (!groups['PCR']) groups['PCR'] = []; groups['PCR'].push(p); }
-        });
-
-        // Recommendation stats for this species
-        const recCounts = { 'RECOMMENDED': 0, 'USABLE': 0, 'CAUTION': 0, 'NOT_RECOMMENDED': 0, '': 0 };
-        primers.forEach(p => { const r = p.recommendation || ''; recCounts[r] = (recCounts[r]||0)+1; });
-
-        const taxLine = [info.family, info.genus].filter(Boolean).join(' > ') || 'N/A';
-
-        let html = `
-        <div class="card">
-            <h3>${_esc(name)} <span style="font-size:12px;color:var(--text-light);font-weight:400;">${taxLine}</span></h3>
-            <div class="legend">
-                <span><span class="badge badge-pcr">PCR</span> ${groups.PCR.length}</span>
-                <span><span class="badge badge-qpcr">qPCR</span> ${groups.qPCR.length}</span>
-                <span><span class="badge badge-degen">Degen</span> ${groups.Degenerate.length}</span>
-                <span><span class="badge badge-tiled">Tiled</span> ${groups.Tiled.length}</span>
-                <span>|</span>
-                <span class="rec rec-recommended">REC ${recCounts['RECOMMENDED']||0}</span>
-                <span class="rec rec-usable">USABLE ${(recCounts['USABLE']||0)+(recCounts['CAUTION']||0)}</span>
-                <span class="rec rec-not">NOT ${recCounts['NOT_RECOMMENDED']||0}</span>
-            </div>
-            <div class="tabs">
-                <button class="tab-btn active" data-tab="all">All (${primers.length})</button>
-                <button class="tab-btn" data-tab="PCR">PCR (${groups.PCR.length})</button>
-                <button class="tab-btn" data-tab="qPCR">qPCR (${groups.qPCR.length})</button>
-                <button class="tab-btn" data-tab="DEGENERATE">Degenerate (${groups.Degenerate.length})</button>
-                <button class="tab-btn" data-tab="TILED">Tiled (${groups.Tiled.length})</button>
-            </div>
-            <div style="overflow-x:auto;" id="tableContainer"></div>
-        </div>`;
-
-        content.innerHTML = html;
-
-        function showTable(tab) {
-            const show = tab === 'all' ? primers : (groups[tab] || []);
-            const tbody = show.map(p => `
-                <tr>
-                    <td>${p.type||''}</td>
-                    <td>${p.segment||''}</td>
-                    <td><span class="seq-mono">${_esc(p.fwd_seq||'')}</span></td>
-                    <td><span class="seq-mono">${_esc(p.rev_seq||'')}</span></td>
-                    <td>${p.fwd_tm||'-'}</td>
-                    <td>${p.rev_tm||'-'}</td>
-                    <td>${p.product||'-'}</td>
-                    <td>${p.gc_fwd||'-'}/${p.gc_rev||'-'}</td>
-                    <td>${p.score||'-'}</td>
-                    <td>${renderRec(p.recommendation||'')}</td>
-                    <td>${p.specificity||'-'}%</td>
-                    <td><button class="filter-btn" onclick="toggleDetail(this)" data-fwd="${_esc(p.fwd_seq)}" data-rev="${_esc(p.rev_seq)}" data-fdimer="${_esc(p.dimer_fwd||'')}" data-rdimer="${_esc(p.dimer_rev||'')}" data-cdimer="${_esc(p.dimer_cross||'')}">详情</button></td>
-                </tr>
-            `).join('');
-
-            document.getElementById('tableContainer').innerHTML = `
-            <table class="primer-table">
-                <thead><tr>
-                    <th>类型</th><th>区段</th><th>Fwd (5'→3')</th><th>Rev (5'→3')</th>
-                    <th>Tm F</th><th>Tm R</th><th>产物</th><th>GC%</th><th>评分</th><th>推荐</th><th>特异%</th><th></th>
-                </tr></thead>
-                <tbody>${tbody || '<tr><td colspan="12" style="text-align:center;color:var(--text-light);">无数据</td></tr>'}</tbody>
-            </table>`;
-        }
-
-        showTable('all');
-
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                showTable(this.dataset.tab);
-            });
-        });
-    }
-
-    function renderRec(r) {
-        if (r === 'RECOMMENDED' || r === 'PASS') return '<span class="rec rec-recommended">REC</span>';
-        if (r === 'USABLE' || r === 'CAUTION') return '<span class="rec rec-usable">CAUTION</span>';
-        if (r === 'NOT_RECOMMENDED') return '<span class="rec rec-not">NOT</span>';
-        return r || '-';
-    }
+(async function init(){
+  try{
+    const [r1,r2] = await Promise.all([
+      fetch(BASE+'/index.json'), fetch(BASE+'/stats.json')
+    ]);
+    spIndex = await r1.json(); spStats = await r2.json();
+  }catch(e){document.getElementById('spList').innerHTML='<p class="text-danger p-2">数据加载失败: '+BASE+'/index.json</p>';return}
+  renderStats();
+  renderSpList();
 })();
 
-function toggleDetail(btn) {
-    const next = btn.nextElementSibling;
-    if (next && next.classList.contains('detail-row')) {
-        next.remove();
-        btn.textContent = '详情';
-        return;
-    }
-
-    const fwd = btn.dataset.fwd || '';
-    const rev = btn.dataset.rev || '';
-    const fd = btn.dataset.fdimer || '';
-    const rd = btn.dataset.rdimer || '';
-    const cd = btn.dataset.cdimer || '';
-
-    const hasDimers = fd || rd || cd;
-    let dimerHTML = '';
-    if (hasDimers) {
-        dimerHTML = `
-        <div style="margin-top:8px;">
-            <strong>二聚体分析:</strong>
-            ${fd ? `<div style="margin-top:4px;"><em>Fwd自二聚体:</em><pre class="dimer-viz">${_esc(fd)}</pre></div>` : ''}
-            ${rd ? `<div style="margin-top:4px;"><em>Rev自二聚体:</em><pre class="dimer-viz">${_esc(rd)}</pre></div>` : ''}
-            ${cd ? `<div style="margin-top:4px;"><em>交叉二聚体:</em><pre class="dimer-viz">${_esc(cd)}</pre></div>` : ''}
-        </div>`;
-    }
-
-    const tr = btn.parentElement.parentElement;
-    const detailTr = document.createElement('tr');
-    detailTr.classList.add('detail-row');
-    detailTr.innerHTML = `<td colspan="12" style="background:#f8f9fa;padding:12px 16px;">
-        <div><strong>Fwd:</strong> <span style="font-family:monospace;">${_esc(fwd)}</span> (${fwd.length}bp)</div>
-        <div style="margin-top:4px;"><strong>Rev:</strong> <span style="font-family:monospace;">${_esc(rev)}</span> (${rev.length}bp)</div>
-        ${dimerHTML}
-    </td>`;
-    tr.after(detailTr);
-    btn.textContent = '收起';
+function renderStats(){
+  const s = spStats;
+  const cards = [
+    {n:(s.total_pairs||0).toLocaleString(),l:'Total Primers',c:'#1a5276'},
+    {n:(s.total_species||0).toLocaleString(),l:'Species',c:'#1a5276'},
+    {n:(s.recommended||0).toLocaleString(),l:'Recommended',c:'#27ae60'},
+    {n:(s.usable||0).toLocaleString(),l:'Usable',c:'#f39c12'},
+    {n:(s.not_recommended||0).toLocaleString(),l:'Not Recommended',c:'#e74c3c'},
+    {n:(s.families||0).toLocaleString(),l:'Families',c:'#6c757d'},
+  ];
+  document.getElementById('statsRow').innerHTML = cards.map(c=>
+    `<div class="col-6 col-md-2"><div class="card shadow-sm text-center p-2" style="border-radius:10px"><div class="stat-num" style="color:${c.c}">${c.n}</div><div class="stat-label">${c.l}</div></div></div>`
+  ).join('');
 }
 
-function _esc(s) { return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+// ============================ SPECIES LIST ============================
+let curFilter = 'all', curSp = null;
+document.getElementById('searchInp').addEventListener('input', renderSpList);
+document.querySelectorAll('.filter-btn').forEach(b=>b.addEventListener('click',function(){
+  document.querySelectorAll('.filter-btn').forEach(x=>x.classList.remove('active'));this.classList.add('active');
+  curFilter = this.dataset.type; renderSpList();
+}));
+
+function renderSpList(){
+  const q = document.getElementById('searchInp').value.toLowerCase();
+  let species = Object.entries(spIndex).filter(([n,i])=>{
+    if(q && !n.toLowerCase().includes(q) && !(i.family||'').toLowerCase().includes(q) && !(i.genus||'').toLowerCase().includes(q)) return false;
+    if(curFilter!=='all'){const k=curFilter==='DEGENERATE'?'degenerate':curFilter==='TILED'?'tiled':curFilter.toLowerCase();if(!i[k])return false}
+    return true;
+  });
+  species.sort((a,b)=>b[1].total-a[1].total);
+  const top = species.slice(0,600);
+  document.getElementById('spCount').textContent = top.length+' / '+Object.keys(spIndex).length+' 物种';
+  const list = document.getElementById('spList');
+  list.innerHTML = top.map(([n,i])=>
+    `<div class="sp-item p-2 px-2 d-flex justify-content-between align-items-center${curSp===n?' active':''}" data-sp="${esc(n)}" style="font-size:13px">
+      <span class="text-truncate me-1">${esc(n)}</span>
+      <span class="d-flex gap-1 flex-shrink-0">
+        ${i.pcr?`<span class="badge rounded-pill type-pcr">P${i.pcr}</span>`:''}
+        ${i.qpcr?`<span class="badge rounded-pill type-qpcr">Q${i.qpcr}</span>`:''}
+        ${i.degenerate?`<span class="badge rounded-pill type-degen">D${i.degenerate}</span>`:''}
+        ${i.tiled?`<span class="badge rounded-pill type-tiled">T${i.tiled}</span>`:''}
+      </span>
+    </div>`
+  ).join('') || '<p class="text-muted p-2 text-center">无匹配</p>';
+  list.querySelectorAll('.sp-item').forEach(el=>el.addEventListener('click',()=>loadSp(el.dataset.sp)));
+}
+
+// ============================ SPECIES DETAIL ============================
+async function loadSp(name){
+  curSp = name; renderSpList();
+  document.getElementById('mainContent').innerHTML = '<div class="loading-overlay py-5"><div class="spinner-border spinner-border-sm me-2"></div>加载引物数据...</div>';
+  const info = spIndex[name];
+  if(!info){document.getElementById('mainContent').innerHTML='<p class="text-danger">未找到物种数据</p>';return}
+  const file = info.file || 'species/'+name.replace(/[\/\\\[\]:"*?<>|]/g,'_')+'.json';
+  let data;
+  try{data = await (await fetch(BASE+'/'+file)).json()}catch(e){document.getElementById('mainContent').innerHTML='<p class="text-danger">加载失败: '+file+'</p>';return}
+  renderSpPage(data, info, name);
+}
+
+function renderSpPage(data, info, name){
+  const primers = data.primers || [];
+  const glen = parseInt(data.genome_length) || 0;
+  // Group
+  const types = ['PCR','qPCR','DEGENERATE','TILED'];
+  const groups = {}; types.forEach(t=>{groups[t]=primers.filter(p=>p.type===t)});
+  // Stats
+  const recs = {'RECOMMENDED':0,'PASS':0,'USABLE':0,'CAUTION':0,'NOT_RECOMMENDED':0};
+  primers.forEach(p=>{const r=p.recommendation||'';if(r in recs)recs[r]++;else recs[r]=1});
+  const tax = [info.family, info.genus].filter(Boolean).join(' > ') || 'N/A';
+
+  let html = `
+  <div class="card shadow-sm mb-3" style="border-radius:10px">
+    <div class="card-body">
+      <h5 class="card-title">${esc(name)}</h5>
+      <p class="text-muted mb-1" style="font-size:13px">${tax}</p>
+      <div class="d-flex flex-wrap gap-2 align-items-center mb-2">
+        ${types.map(t=>groups[t].length?`<span class="badge rounded-pill type-${t==='PCR'?'pcr':t==='qPCR'?'qpcr':t==='DEGENERATE'?'degen':'tiled'}">${t}: ${groups[t].length}</span>`:'').join('')}
+        ${recs['RECOMMENDED']||recs['PASS']?`<span class="rec-badge rec-rec">REC ${recs['RECOMMENDED']+recs['PASS']}</span>`:''}
+        ${recs['USABLE']||recs['CAUTION']?`<span class="rec-badge rec-usable">CAUTION ${recs['USABLE']+recs['CAUTION']}</span>`:''}
+        ${recs['NOT_RECOMMENDED']?`<span class="rec-badge rec-not">NOT ${recs['NOT_RECOMMENDED']}</span>`:''}
+      </div>
+  `;
+
+  // Genome viz
+  if(glen > 0 && primers.some(p=>p.fwd_start && p.rev_start)){
+    html += renderGenomeViz(primers, glen);
+  }
+
+  // Tabs + Table
+  html += `
+      <div class="d-flex flex-wrap mb-2">
+        <button class="tab-btn active" data-sp-tab="all">All (${primers.length})</button>
+        ${types.map(t=>`<button class="tab-btn" data-sp-tab="${t}">${t==='DEGENERATE'?'Degenerate':t} (${groups[t].length})</button>`).join('')}
+      </div>
+      <div class="table-responsive">
+        <table class="table table-hover primer-table" id="primerTbl">
+          <thead class="table-dark"><tr>
+            <th>类型</th><th>区段</th><th>Fwd (5→3)</th><th>Rev (5→3)</th>
+            <th>Tm F/R</th><th>产物</th><th>GC%</th><th>评分</th><th>推荐</th><th>特异%</th><th>详情</th>
+          </tr></thead>
+          <tbody id="primerTbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>`;
+  document.getElementById('mainContent').innerHTML = html;
+
+  // Tab switching
+  document.querySelectorAll('[data-sp-tab]').forEach(b=>b.addEventListener('click',function(){
+    document.querySelectorAll('[data-sp-tab]').forEach(x=>x.classList.remove('active'));this.classList.add('active');
+    showTable(this.dataset.spTab, primers, groups);
+  }));
+  showTable('all', primers, groups);
+}
+
+function showTable(tab, primers, groups){
+  const show = tab==='all'?primers:(groups[tab]||[]);
+  document.getElementById('primerTbody').innerHTML = show.map((p,i)=>
+    `<tr>
+      <td><span class="type-badge type-${p.type==='PCR'?'pcr':p.type==='qPCR'?'qpcr':p.type==='DEGENERATE'?'degen':'tiled'}">${p.type==='DEGENERATE'?'Degen':p.type}</span></td>
+      <td>${esc(p.segment||'')}</td>
+      <td><span class="seq-mono">${esc((p.fwd_seq||'').substring(0,30))}${(p.fwd_seq||'').length>30?'...':''}</span></td>
+      <td><span class="seq-mono">${esc((p.rev_seq||'').substring(0,30))}${(p.rev_seq||'').length>30?'...':''}</span></td>
+      <td>${p.fwd_tm||'-'}/${p.rev_tm||'-'}</td>
+      <td>${p.product||'-'}</td>
+      <td>${p.gc_fwd||'-'}/${p.gc_rev||'-'}</td>
+      <td>${p.score||'-'}</td>
+      <td>${recHtml(p.recommendation||'')}</td>
+      <td>${p.specificity||'-'}%</td>
+      <td><button class="btn btn-sm btn-outline-primary" onclick="toggleDetail(event,${i})" data-idx="${i}">详情</button></td>
+    </tr>`
+  ).join('')||'<tr><td colspan="11" class="text-center text-muted">无数据</td></tr>';
+}
+
+// ============================ GENOME VIZ (SVG) ============================
+function renderGenomeViz(primers, glen){
+  const cols = {PCR:{f:'#2b8a3e',l:'#d3f9d8'},qPCR:{f:'#1971c2',l:'#d0ebff'},DEGENERATE:{f:'#e8590c',l:'#ffe8cc'},TILED:{f:'#6741d9',l:'#e8d9ff'}};
+  const svgW = 800; const trackH = 16; const padL = 60; const padR = 20;
+  const w = svgW - padL - padR;
+
+  // Filter valid primers with positions
+  const valid = primers.filter(p=>{const fp=parseInt(p.fwd_start)||0;const rp=parseInt(p.rev_start)||0;return fp>0&&rp>fp});
+  const types = ['PCR','qPCR','DEGENERATE','TILED'];
+  const grouped = {}; types.forEach(t=>{grouped[t]=valid.filter(p=>p.type===t)});
+
+  let maxY = 2;
+  types.forEach(t=>{const n=grouped[t].length;if(n>0)maxY+=trackH*n+26});
+  const svgH = maxY + 30;
+
+  let svg = `<svg class="genome-svg mb-2" viewBox="0 0 ${svgW} ${svgH}" style="max-width:100%">`;
+  svg += `<text x="${padL}" y="14" font-size="12" font-weight="700" fill="#1a5276">基因组覆盖度图 (${glen.toLocaleString()} bp)</text>`;
+
+  // Scale bar
+  svg += `<line x1="${padL}" y1="${svgH-8}" x2="${padL+w}" y2="${svgH-8}" stroke="#ccc" stroke-width="1"/>`;
+  svg += `<text x="${padL}" y="${svgH-12}" class="genome-label">1 bp</text>`;
+  svg += `<text x="${padL+w/2-20}" y="${svgH-12}" class="genome-label">${Math.round(glen/2).toLocaleString()} bp</text>`;
+  svg += `<text x="${padL+w-30}" y="${svgH-12}" class="genome-label">${glen.toLocaleString()} bp</text>`;
+
+  let y = 20;
+  for(const t of types){
+    const arr = grouped[t]; if(!arr.length) continue;
+    const c = cols[t];
+    svg += `<text x="5" y="${y+10}" font-size="11" font-weight="700" fill="${c.f}">${t}</text>`;
+    svg += `<text x="5" y="${y+22}" font-size="9" fill="#868e96">${arr.length}</text>`;
+    for(let i=0;i<arr.length;i++){
+      const p = arr[i]; const fp = parseInt(p.fwd_start); const rp = parseInt(p.rev_start);
+      const x1 = padL + (fp/glen)*w; const x2 = padL + (rp/glen)*w;
+      const pw = Math.max(2,(p.fwd_seq||'').length/glen*w); const rw = Math.max(2,(p.rev_seq||'').length/glen*w);
+      const by = y + i*trackH;
+      // Product line
+      svg += `<rect x="${x1}" y="${by+5}" width="${x2-x1}" height="2" fill="${c.l}" rx="1" opacity="0.7"/>`;
+      // Fwd block
+      svg += `<rect x="${x1}" y="${by}" width="${pw}" height="8" fill="${c.f}" rx="2" opacity="0.85"><title>${p.pair_id||''}: Fwd ${fp}-${fp+(p.fwd_seq||'').length}</title></rect>`;
+      // Rev block
+      const revX = x2-rw;
+      svg += `<rect x="${revX>0?revX:1}" y="${by}" width="${rw}" height="8" fill="${c.f}" rx="2" opacity="0.5"><title>${p.pair_id||''}: Rev ${rp-(p.rev_seq||'').length}-${rp}</title></rect>`;
+    }
+    y += arr.length*trackH + 22;
+  }
+  svg += `</svg>`;
+  return `<h6 class="mt-3 mb-2">基因组引物覆盖图 (${glen.toLocaleString()} bp)</h6>${svg}`;
+}
+
+// ============================ RECOMMENDATION ============================
+function recHtml(r){
+  if(r==='RECOMMENDED'||r==='PASS') return '<span class="rec-badge rec-rec">REC</span>';
+  if(r==='USABLE'||r==='CAUTION') return '<span class="rec-badge rec-usable">CAUTION</span>';
+  if(r==='NOT_RECOMMENDED') return '<span class="rec-badge rec-not">NOT</span>';
+  return r||'-';
+}
+
+// ============================ PRIMER DETAIL (dimers) ============================
+function toggleDetail(evt, idx){
+  const btn = evt.target;
+  // Remove existing detail row
+  const tr = btn.closest('tr'); const next = tr.nextElementSibling;
+  if(next && next.classList.contains('detail-row')){next.remove();btn.textContent='详情';return}
+
+  // Get primers data from current species
+  const show = Array.from(document.querySelectorAll('#primerTbody tr')).map(r=>{
+    const tds = r.querySelectorAll('td'); return tds.length>2?tds[2].textContent:null;
+  }).filter(Boolean);
+
+  // Find primer data from stored global
+  if(!_curPrimers || idx >= _curPrimers.length) return;
+  const p = _curPrimers[idx];
+
+  // Compute dimers
+  const fdDimer = dimerViz(p.fwd_seq||'', 'Fwd Self-Dimer');
+  const revDimer = dimerViz(p.rev_seq||'', 'Rev Self-Dimer');
+  const crossDimer = crossDimerViz(p.fwd_seq||'', p.rev_seq||'');
+
+  const row = document.createElement('tr');
+  row.classList.add('detail-row');
+  row.innerHTML = `<td colspan="11" style="background:#f8f9fa;padding:12px 16px">
+    <div><strong>Fwd:</strong> <span style="font-family:monospace;font-size:13px">${esc(p.fwd_seq||'')}</span> (${(p.fwd_seq||'').length}bp)</div>
+    <div class="mt-1"><strong>Rev:</strong> <span style="font-family:monospace;font-size:13px">${esc(p.rev_seq||'')}</span> (${(p.rev_seq||'').length}bp)</div>
+    ${p.probe_seq?`<div class="mt-1"><strong>Probe:</strong> <span style="font-family:monospace;font-size:13px;color:#1971c2">${esc(p.probe_seq)}</span></div>`:''}
+    <div class="mt-2"><strong>位置:</strong> ${p.fwd_start||'-'} - ${p.rev_start||'-'} | <strong>产物:</strong> ${p.product||'-'}bp | <strong>GC:</strong> ${p.gc_fwd||'-'}/${p.gc_rev||'-'}% | <strong>特异:</strong> ${p.specificity||'-'}% | <strong>脱靶风险:</strong> ${p.plant_risk||'NONE'}</div>
+    ${p.degen?`<div class="mt-1"><strong>简并度:</strong> ${p.degen}</div>`:''}
+    ${fdDimer||revDimer||crossDimer?`<div class="mt-2"><strong>二聚体分析:</strong>${fdDimer}${revDimer}${crossDimer}</div>`:''}
+  </td>`;
+  tr.after(row);
+  btn.textContent = '收起';
+}
+
+let _curPrimers = [];
+// Override showTable to store primers
+const origShowTable = showTable;
+showTable = function(tab, primers, groups){
+  _curPrimers = primers;
+  origShowTable(tab, primers, groups);
+};
+
+// ============================ DIMER VIZ (client-side) ============================
+function dimerViz(seq, label, maxLen=12){
+  if(!seq||seq.length<3) return '';
+  // Reverse complement
+  const comp = {A:'T',T:'A',G:'C',C:'G',U:'A',R:'Y',Y:'R',M:'K',K:'M',S:'S',W:'W',B:'V',V:'B',D:'H',H:'D',N:'N'};
+  const rc = seq.split('').reverse().map(c=>comp[c]||c).join('');
+  // Find longest self-complementary
+  let bestLen=0,bestStart=0,bestRc=0;
+  for(let i=0;i<seq.length;i++)for(let j=i+3;j<=Math.min(i+maxLen,seq.length);j++){
+    const sub=seq.substring(i,j);const ri=rc.indexOf(sub);
+    if(ri>=0&&j-i>bestLen){bestLen=j-i;bestStart=i;bestRc=ri}
+  }
+  if(bestLen<3) return '';
+  const conn = ' '.repeat(bestStart)+'|'.repeat(bestLen)+' '.repeat(seq.length-bestStart-bestLen);
+  return `<div class="dimer-box mt-1"><b>${label}</b> (${bestLen}bp)<br>
+5' <span style="color:#e03131">${seq.substring(0,bestStart)}</span><span style="background:#ffe3e3;color:#c92a2a;font-weight:700">${seq.substring(bestStart,bestStart+bestLen)}</span><span style="color:#e03131">${seq.substring(bestStart+bestLen)}</span> 3'<br>
+&nbsp;&nbsp;&nbsp;<span style="color:#2b8a3e;font-weight:700">${conn.substring(0,bestStart)}${'|'.repeat(bestLen)}${conn.substring(bestStart+bestLen)}</span><br>
+3' <span style="color:#1971c2">${rc.substring(0,bestRc)}</span><span style="background:#d0ebff;color:#1864ab;font-weight:700">${rc.substring(bestRc,bestRc+bestLen)}</span><span style="color:#1971c2">${rc.substring(bestRc+bestLen)}</span> 5'</div>`;
+}
+
+function crossDimerViz(fwd, rev, maxLen=12){
+  if(!fwd||!rev||fwd.length<3||rev.length<3) return '';
+  const comp = {A:'T',T:'A',G:'C',C:'G',U:'A',R:'Y',Y:'R',M:'K',K:'M',S:'S',W:'W',B:'V',V:'B',D:'H',H:'D',N:'N'};
+  const rcRev = rev.split('').reverse().map(c=>comp[c]||c).join('');
+  let bestLen=0,bestFwd=0,bestRc=0;
+  for(let i=0;i<fwd.length;i++)for(let j=i+3;j<=Math.min(i+maxLen,fwd.length);j++){
+    const sub=fwd.substring(i,j);const ri=rcRev.indexOf(sub);
+    if(ri>=0&&j-i>bestLen){bestLen=j-i;bestFwd=i;bestRc=ri}
+  }
+  if(bestLen<3) return '';
+  const conn = ' '.repeat(bestFwd)+'|'.repeat(bestLen)+' '.repeat(Math.max(0,fwd.length-bestFwd-bestLen));
+  return `<div class="dimer-box mt-1"><b>Fwd-Rev Cross-Dimer</b> (${bestLen}bp)<br>
+5' <span style="color:#e03131">${fwd.substring(0,bestFwd)}</span><span style="background:#ffe3e3;color:#c92a2a;font-weight:700">${fwd.substring(bestFwd,bestFwd+bestLen)}</span><span style="color:#e03131">${fwd.substring(bestFwd+bestLen)}</span> 3' (Fwd)<br>
+&nbsp;&nbsp;&nbsp;<span style="color:#2b8a3e;font-weight:700">${' '.repeat(bestFwd)}${'|'.repeat(bestLen)}</span><br>
+3' <span style="color:#1971c2">${rcRev.substring(0,bestRc)}</span><span style="background:#d0ebff;color:#1864ab;font-weight:700">${rcRev.substring(bestRc,bestRc+bestLen)}</span><span style="color:#1971c2">${rcRev.substring(bestRc+bestLen)}</span> 5' (Rev rc)</div>`;
+}
+
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 </script>
 </body>
 </html>
