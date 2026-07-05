@@ -1,0 +1,6 @@
+dash>=4.0.0
+dash-mantine-components>=2.0.0
+plotly>=6.0.0
+pandas>=2.0.0
+gunicorn>=22.0.0
+biopython>=1.80

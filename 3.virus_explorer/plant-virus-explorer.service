@@ -1,0 +1,20 @@
+[Unit]
+Description=Plant Virus Explorer (Gunicorn)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/virus_explorer
+Environment="PVDB_FULL_TSV=/opt/virus_explorer/data/Plant_Virus_Info.full.tsv"
+Environment="PVDB_FULL_FASTA=/opt/virus_explorer/data/plant.virus.fasta"
+Environment="PVDB_CLUSTER_FASTA=/opt/virus_explorer/data/final.cluster.ref.fasta"
+Environment="PVDB_CLUSTER_INFO=/opt/virus_explorer/data/final.cluster.ref_info.tsv"
+ExecStart=/usr/bin/python3 -m gunicorn -c gunicorn.conf.py app:server
+Restart=always
+RestartSec=5
+StandardOutput=append:/opt/virus_explorer/logs/stdout.log
+StandardError=append:/opt/virus_explorer/logs/stderr.log
+
+[Install]
+WantedBy=multi-user.target

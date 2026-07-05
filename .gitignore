@@ -7,3 +7,17 @@ __pycache__/
 .DS_Store
 app.log
 
+# Large data files (synced from server, not in git)
+docs/data/plant.virus.fasta
+docs/data/Plant_Virus_Info.full.tsv
+docs/data/final.cluster.ref.fasta
+docs/data/final.cluster.ref_info.tsv
+docs/data/final.complete_ref.fasta
+docs/data/final.complete_ref_info.tsv
+docs/data/virus_genes_cov.tsv
+docs/data/complete_acc.txt
+
+# PowerShell artifacts
+$null
+3.virus_explorer/.cache/
+.cache/
