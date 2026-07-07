@@ -176,47 +176,14 @@ async function renderResult(data) {
     if (!Array.isArray(reportData)) reportData = [];
   } catch(e) { console.log('report fetch error:', e); }
 
-  // Sankey from report — use name indentation (leading spaces) to determine tree depth
-  try {
-    if (reportData.length > 1) {
-      var sankeyDiv = 'sk-' + data.id;
-      h += '<h4 style=\"font-size:14px;color:#1a5276;margin:16px 0 8px\">Taxonomy Sankey</h4><div id=\"' + sankeyDiv + '\" style=\"width:100%;height:500px\"></div>';
-
-      // Parse nodes: trim name, compute depth from leading spaces
-      var nodes = reportData.map(function(r) {
-        var nm = r.name, trimmed = nm.trimStart ? nm.trimStart() : nm.replace(/^\\s+/,'');
-        var depth = nm.length - trimmed.length;
-        return {name: trimmed, rank: r.rank, count: parseFloat(r.count) || 1, depth: depth};
-      }).filter(function(r) {
-        return r.rank !== 'no rank' || r.name === 'root' || r.name === 'unclassified';
-      });
-
-      // Build parent links using depth stack
-      var labels=[], srcs=[], tgts=[], vals=[], n2i={}, stack=[];
-      for (var i=0; i<nodes.length; i++) {
-        var n=nodes[i];
-        while(stack.length>0 && stack[stack.length-1].d >= n.depth) stack.pop();
-        if (!(n.name in n2i)) { n2i[n.name]=labels.length; labels.push(n.name); }
-        var ci=n2i[n.name];
-        if (stack.length>0) {
-          var pi=stack[stack.length-1].i;
-          if (pi!==ci) {
-            var dup=false;
-            for (var k=0;k<srcs.length;k++){ if(srcs[k]===pi && tgts[k]===ci){vals[k]+=n.count;dup=true;break} }
-            if(!dup){srcs.push(pi);tgts.push(ci);vals.push(n.count)}
-          }
-        }
-        stack.push({d:n.depth,i:ci});
-      }
-
-      if (labels.length>1 && srcs.length>0) {
-        var cm={'root':'#d4d4d4','Viruses':'#e41a1c','Riboviria':'#377eb8','Orthornavirae':'#4daf4a','Kitrinoviricota':'#984ea3','Alsuviricetes':'#ff7f00','Martellivirales':'#a65628','Virgaviridae':'#f781bf'};
-        setTimeout(function(){
-          Plotly.newPlot(sankeyDiv,[{type:'sankey',orientation:'h',node:{pad:20,thickness:25,line:{color:'black',width:0.5},label:labels,color:labels.map(function(l){return cm[l]||'#2e86c1'})},link:{source:srcs,target:tgts,value:vals,color:'rgba(46,134,193,0.15)'}}],{margin:{t:10,b:10,l:10,r:10},font:{size:11}},{responsive:true})
-        },100)
-      }
-    }
-  } catch(e) { console.log('Sankey error:', e); }
+  // Taxonomy Sankey — 存数据 + 复选框(默认每属仅前 5 个种)，渲染交给全局 renderSankey
+  if (reportData.length > 1) {
+    SANKEY_DATA[data.id] = reportData;
+    h += '<h4 style="font-size:14px;color:#1a5276;margin:16px 0 8px">Taxonomy Sankey</h4>';
+    h += '<label style="font-size:12px;color:#555;display:inline-block;margin-bottom:6px;cursor:pointer">'
+       + '<input type="checkbox" id="sk-top5-' + data.id + '" checked onchange="toggleSankey(\'' + data.id + '\')"> 每属仅展示前 5 个种（避免种级节点过多）</label>';
+    h += '<div id="sk-' + data.id + '" style="width:100%;height:500px"></div>';
+  }
 
   // Classification Table — full taxonomic hierarchy from report (rank / taxon / taxid / % / reads)
   if (reportData && reportData.length) {
@@ -288,6 +255,82 @@ async function renderResult(data) {
   }
 
   el.innerHTML = h;
+  if (SANKEY_DATA[data.id]) renderSankey(data.id, true);
+}
+
+// ── Taxonomy Sankey：全局渲染 + 每属前 N 个种的开关 ──
+var SANKEY_DATA = {};
+
+function limitSpeciesPerGenus(reportData, topN) {
+  // 保留每个属(genus)下 reads 最多的前 topN 个种(species)，其余种及其子节点剔除
+  var parsed = reportData.map(function(r) {
+    var trimmed = (r.name.trimStart ? r.name.trimStart() : r.name.replace(/^\s+/, ''));
+    return {row: r, name: trimmed, rank: r.rank, count: parseFloat(r.count) || 0, depth: r.name.length - trimmed.length};
+  });
+  var st = [], byGenus = {};
+  parsed.forEach(function(p, idx) {
+    while (st.length > 0 && st[st.length - 1].depth >= p.depth) st.pop();
+    if (p.rank === 'species') {
+      var g = '(no genus)';
+      for (var k = st.length - 1; k >= 0; k--) { if (st[k].rank === 'genus') { g = st[k].name; break; } }
+      (byGenus[g] = byGenus[g] || []).push({idx: idx, count: p.count});
+    }
+    st.push({depth: p.depth, name: p.name, rank: p.rank});
+  });
+  var keep = {};
+  Object.keys(byGenus).forEach(function(g) {
+    byGenus[g].slice().sort(function(a, b) { return b.count - a.count; })
+      .slice(0, topN).forEach(function(x) { keep[x.idx] = true; });
+  });
+  var out = [], dropDepth = null;
+  parsed.forEach(function(p, idx) {
+    if (dropDepth !== null) { if (p.depth > dropDepth) return; else dropDepth = null; }
+    if (p.rank === 'species') {
+      if (keep[idx]) out.push(p.row); else dropDepth = p.depth;  // 丢弃该种及其子树
+    } else out.push(p.row);
+  });
+  return out;
+}
+
+function renderSankey(id, top5) {
+  var reportData = SANKEY_DATA[id];
+  if (!reportData) return;
+  var src_data = top5 ? limitSpeciesPerGenus(reportData, 5) : reportData;
+  var nodes = src_data.map(function(r) {
+    var nm = r.name, trimmed = nm.trimStart ? nm.trimStart() : nm.replace(/^\s+/, '');
+    return {name: trimmed, rank: r.rank, count: parseFloat(r.count) || 1, depth: nm.length - trimmed.length};
+  }).filter(function(r) {
+    return r.rank !== 'no rank' || r.name === 'root' || r.name === 'unclassified';
+  });
+  var labels = [], srcs = [], tgts = [], vals = [], n2i = {}, stack = [];
+  for (var i = 0; i < nodes.length; i++) {
+    var n = nodes[i];
+    while (stack.length > 0 && stack[stack.length - 1].d >= n.depth) stack.pop();
+    if (!(n.name in n2i)) { n2i[n.name] = labels.length; labels.push(n.name); }
+    var ci = n2i[n.name];
+    if (stack.length > 0) {
+      var pi = stack[stack.length - 1].i;
+      if (pi !== ci) {
+        var dup = false;
+        for (var k = 0; k < srcs.length; k++) { if (srcs[k] === pi && tgts[k] === ci) { vals[k] += n.count; dup = true; break; } }
+        if (!dup) { srcs.push(pi); tgts.push(ci); vals.push(n.count); }
+      }
+    }
+    stack.push({d: n.depth, i: ci});
+  }
+  var div = document.getElementById('sk-' + id);
+  if (!div) return;
+  if (labels.length > 1 && srcs.length > 0) {
+    var cm = {'root':'#d4d4d4','Viruses':'#e41a1c','Riboviria':'#377eb8','Orthornavirae':'#4daf4a','Kitrinoviricota':'#984ea3','Alsuviricetes':'#ff7f00','Martellivirales':'#a65628','Virgaviridae':'#f781bf'};
+    Plotly.newPlot('sk-' + id, [{type: 'sankey', orientation: 'h', node: {pad: 20, thickness: 25, line: {color: 'black', width: 0.5}, label: labels, color: labels.map(function(l) { return cm[l] || '#2e86c1'; })}, link: {source: srcs, target: tgts, value: vals, color: 'rgba(46,134,193,0.15)'}}], {margin: {t: 10, b: 10, l: 10, r: 10}, font: {size: 11}}, {responsive: true});
+  } else {
+    div.innerHTML = '<div style="color:#999;padding:20px">层级不足，无法绘制</div>';
+  }
+}
+
+function toggleSankey(id) {
+  var cb = document.getElementById('sk-top5-' + id);
+  renderSankey(id, cb ? cb.checked : true);
 }
 </script>
 </body>
