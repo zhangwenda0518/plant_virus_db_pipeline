@@ -38,6 +38,9 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 .vt-vector{background:#fce4ec;color:#c62828}.vt-host{background:#e8f5e9;color:#2e7d32}
 .vt-trans{background:#fff3e0;color:#e65100}.vt-path{background:#f3e5f5;color:#6a1b9a}
 .vt-source{background:#f5f5f5;color:#666;font-size:9px}
+.vt-vhonly{background:#e0f2f1;color:#00695c}.vt-wuronly{background:#f3e5f5;color:#6a1b9a}
+.vt-conf-high{background:#e8f5e9;color:#2e7d32}.vt-conf-low{background:#fff3e0;color:#e65100}
+.vt-conflict{background:#fdecea;color:#c62828;font-weight:600}
 .vcard .vdetail{font-size:12px;color:#555;margin-top:8px;line-height:1.6}
 .vcard .vdetail b{color:#333}
 .vcard .doi-link{font-size:11px;color:#2e86c1}
@@ -53,7 +56,10 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 </div>
 
 <div id="tab-int" style="display:none">
-<div class="toolbar"><input id="iq" placeholder="Search virus name..." oninput="renderInt()"><select id="ips" onchange="renderInt()"><option value="20">20/page</option><option value="50">50/page</option><option value="100">100/page</option></select></div>
+<div style="background:#fff;border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:12px;color:#555;box-shadow:0 1px 3px rgba(0,0,0,.04)">
+预合并数据库 <b>{{m_total}}</b> 个病毒 &middot; 两源都有 <b style="color:#1565c0">{{m_both}}</b> &middot; 仅 VH <b style="color:#00695c">{{m_vh_only}}</b> &middot; 仅 WUR <b style="color:#6a1b9a">{{m_wur_only}}</b> &middot; family 冲突 <b style="color:#c62828">{{m_conflicts}}</b>
+</div>
+<div class="toolbar"><input id="iq" placeholder="Search virus, vector, host..." oninput="ipage=1;renderInt()"><select id="isrc" onchange="ipage=1;renderInt()"><option value="">All sources</option><option value="both">Both (VH+WUR)</option><option value="vh">VH only</option><option value="wur">WUR only</option><option value="conflict">Has conflict</option></select><select id="ips" onchange="renderInt()"><option value="20">20/page</option><option value="50">50/page</option><option value="100">100/page</option></select></div>
 <div id="int-cards"></div>
 <div class="pagination" id="int-pager"></div>
 </div>
@@ -70,38 +76,7 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 
 </div>
 <script>
-var VH={{json_vh|safe}},WUR={{json_wur|safe}},page=1,wpage=1,ipage=1;
-// Merge VH and WUR by virus name
-var MERGED=[];
-(function mergeData(){
- var wurIdx={};
- WUR.forEach(function(r){if(r.name){wurIdx[r.name.toLowerCase()]=r}});
- VH.forEach(function(r){
-  var name=r['Virus Name'];
-  if(!name)return;
-  var card={name:name, family:r['Virus Family'], genus:r['Virus Genus'],
-   vector:r['Vector'], vectorOrder:r['Vector Order'], vectorFamily:r['Vector Family'],
-   host:r['Virus Host'], transMode:r['Virus Transmission Mode']||'',
-   doiInsect:r['DOI for Validation Virus-Insect Relationships']||'',
-   doiTrans:r['DOI for Validation Virus Transmission Mode']||'',
-   lineage:r['Lineage']||'', sourceVH:true, sourceWUR:false};
-  var w=wurIdx[name.toLowerCase()];
-  if(w){
-   card.sourceWUR=true;
-   card.wurVector=w.vector_org||'';
-   card.wurTrans=w.transmission||'';
-   card.wurRefs=w.refs||'';
-   delete wurIdx[name.toLowerCase()];
-  }
-  MERGED.push(card);
- });
- // Add WUR-only viruses
- Object.values(wurIdx).forEach(function(r){
-  MERGED.push({name:r.name||'', family:r.family||'', genus:r.genus||'',
-   vector:r.vector_org||'', wurVector:r.vector_org||'', wurTrans:r.transmission||'', wurRefs:r.refs||'',
-   sourceVH:false, sourceWUR:true});
- });
-})();
+var VH={{json_vh|safe}},WUR={{json_wur|safe}},MERGED={{json_merged|safe}},page=1,wpage=1,ipage=1;
 
 function esc(t){return String(t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 function showTab(t){
@@ -111,6 +86,7 @@ function showTab(t){
  document.getElementById('tb-vh').className='tab-btn'+(t==='vh'?' active':'');
  document.getElementById('tb-wur').className='tab-btn'+(t==='wur'?' active':'');
  document.getElementById('tb-int').className='tab-btn'+(t==='int'?' active':'');
+ if(t==='int')renderInt();
 }
 function toggleDetail(i){
  var d=document.getElementById('d'+i),t=document.getElementById('t'+i);
@@ -150,28 +126,46 @@ function renderWUR(){
 function goWPage(p){wpage=p;renderWUR()}
 function renderInt(){
  var d=MERGED.slice(),q=document.getElementById('iq').value.toLowerCase();
- if(q)d=d.filter(function(r){return (r.name+' '+r.family+' '+r.genus+' '+r.vector+' '+r.host).toLowerCase().indexOf(q)>=0});
+ var sf=document.getElementById('isrc').value;
+ if(sf==='both')d=d.filter(function(r){return r.sources.length>1});
+ else if(sf==='vh')d=d.filter(function(r){return r.sources.length===1&&r.sources[0]==='VH'});
+ else if(sf==='wur')d=d.filter(function(r){return r.sources.length===1&&r.sources[0]==='WUR'});
+ else if(sf==='conflict')d=d.filter(function(r){return r.conflict_flags&&r.conflict_flags.length});
+ if(q)d=d.filter(function(r){return ((r.canonical_name||'')+' '+(r.family||'')+' '+(r.genus||'')+' '+(r.vectors||[]).join(' ')+' '+(r.hosts||[]).join(' ')).toLowerCase().indexOf(q)>=0});
  var ps=parseInt(document.getElementById('ips').value)||20;
  var pages=Math.ceil(d.length/ps);if(ipage>pages)ipage=Math.max(1,pages);
  var start=(ipage-1)*ps,chunk=d.slice(start,start+ps);
  var h='';chunk.forEach(function(r){
-  var sources=[];
-  if(r.sourceVH)sources.push('<span class=\"vt-source\">Vector-Host</span>');
-  if(r.sourceWUR)sources.push('<span class=\"vt-source\">WUR</span>');
-  h+='<div class=\"vcard\"><div class=\"vname\"><a href=\"/virus/'+encodeURIComponent(r.name)+'\" style=\"color:#1a5276\">'+esc(r.name)+'</a> '+sources.join(' ')+'</div>';
+  var badges=[];
+  r.sources.forEach(function(s){
+   var cls=s==='VH'?'vt-vhonly':'vt-wuronly';
+   badges.push('<span class=\"vtag '+cls+'\">'+esc(s)+'</span>');
+  });
+  if(r.wur&&r.wur.match_confidence)badges.push('<span class=\"vtag vt-conf-'+(r.wur.match_confidence==='low'?'low':'high')+'\">WUR '+esc(r.wur.match_confidence)+'</span>');
+  if(r.conflict_flags&&r.conflict_flags.length)badges.push('<span class=\"vtag vt-conflict\">&#9888; '+r.conflict_flags.map(esc).join(', ')+'</span>');
+  h+='<div class=\"vcard\"><div class=\"vname\"><a href=\"/virus/'+encodeURIComponent(r.canonical_name)+'\" style=\"color:#1a5276\">'+esc(r.canonical_name)+'</a> '+badges.join(' ')+'</div>';
   h+='<div class=\"vrow\">';
   if(r.family)h+='<span class=\"vtag vt-family\">'+esc(r.family)+'</span>';
   if(r.genus)h+='<span class=\"vtag vt-genus\">'+esc(r.genus)+'</span>';
-  if(r.vector||r.wurVector)h+='<span class=\"vtag vt-vector\">&#128027; '+(esc(r.vector||r.wurVector))+'</span>';
-  if(r.host)h+='<span class=\"vtag vt-host\">&#127807; '+esc(r.host)+'</span>';
-  if(r.transMode)h+='<span class=\"vtag vt-trans\">'+esc(r.transMode)+'</span>';
-  if(r.wurTrans)h+='<span class=\"vtag vt-path\">'+esc(r.wurTrans)+'</span>';
+  if(r.taxid)h+='<span class=\"vtag vt-source\">TaxID '+esc(r.taxid)+'</span>';
+  (r.transmission_categories||[]).forEach(function(t){h+='<span class=\"vtag vt-trans\">'+esc(t)+'</span>'});
   h+='</div>';
-  if(r.wurRefs||r.doiInsect){
+  // VH 结构化关系（去重三元组）
+  if(r.relationships&&r.relationships.length){
+   h+='<div class=\"vdetail\"><b>媒介-宿主关系 ('+r.relationships.length+'):</b><br>';
+   r.relationships.slice(0,8).forEach(function(x){
+    h+='&#128027; <b>'+esc(x.vector||'?')+'</b>'+(x.vector_order?' ('+esc(x.vector_order)+')':'')+' &rarr; &#127807; '+esc(x.host||'?')+(x.transmission_category&&x.transmission_category!=='Unknown'?' <span class=\"vtag vt-path\">'+esc(x.transmission_category)+'</span>':'')+'<br>';
+   });
+   if(r.relationships.length>8)h+='<span style=\"color:#888\">… 其余 '+(r.relationships.length-8)+' 条见明细</span><br>';
+   h+='</div>';
+  }
+  // WUR 补充
+  if(r.wur){
    h+='<div class=\"vdetail\">';
-   if(r.wurRefs)h+='<b>Refs:</b> '+esc(r.wurRefs.substring(0,200))+'<br>';
-   if(r.doiInsect)h+='<b>DOI Insect:</b> <a class=\"doi-link\" href=\"'+esc(r.doiInsect)+'\" target=\"_blank\">'+esc(r.doiInsect.substring(0,60))+'</a><br>';
-   if(r.doiTrans)h+='<b>DOI Trans:</b> <a class=\"doi-link\" href=\"'+esc(r.doiTrans)+'\" target=\"_blank\">'+esc(r.doiTrans.substring(0,60))+'</a>';
+   if(r.wur.vector_label)h+='<b>WUR 媒介:</b> '+esc(r.wur.vector_label)+' ';
+   if(r.wur.ref_count)h+='<b>参考文献:</b> '+r.wur.ref_count+' 篇';
+   if(r.wur.transmission_notes)h+='<br><b>WUR 传播说明:</b> '+esc(r.wur.transmission_notes.substring(0,220));
+   if(r.wur.refs&&r.wur.refs.length)h+='<br><b>Refs:</b> '+esc(r.wur.refs.slice(0,2).join(' | ').substring(0,200));
    h+='</div>';
   }
   h+='</div>';

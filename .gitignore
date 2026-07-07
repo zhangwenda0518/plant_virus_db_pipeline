@@ -27,3 +27,8 @@ $null
 
 # Large data files (RAG / synced, not in git)
 6.knowledge_rag/databases/viroiddb.json
+
+# Vector DB: WUR scraped data + build_vector_db.py 产物 (synced from server, not in git)
+8.plant-insect/wur_virus_full.tsv
+8.plant-insect/virus_vector_merged.json
+8.plant-insect/vector_merge_review.tsv

@@ -493,6 +493,38 @@ def _lookup_names(query):
         if v: result.add(v.lower())
     return result
 
+# ── 媒介传播数据 (virus_vector_merged.json，由 8.plant-insect/build_vector_db.py 生成) ──
+import json as _json
+VECTOR_DB = {}      # canonical_name -> merged 病毒记录
+VECTOR_INDEX = {}   # 归一化名 -> canonical_name (join 键)
+
+def _vnorm(s):
+    return " ".join((s or "").strip().lower().split()).strip(".,;")
+
+_vec_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "8.plant-insect", "virus_vector_merged.json")
+if os.path.exists(_vec_path):
+    try:
+        with open(_vec_path, encoding='utf-8') as _vf:
+            _vraw = _json.load(_vf)
+        for _v in _vraw.get("viruses", []):
+            cname = _v["canonical_name"]
+            VECTOR_DB[cname] = _v
+            for _nm in [cname, _v.get("ictv_name", "")] + _v.get("matched_names", []):
+                k = _vnorm(_nm)
+                if k and k not in VECTOR_INDEX:
+                    VECTOR_INDEX[k] = cname
+        print(f"Vector DB: {len(VECTOR_DB)} viruses, {len(VECTOR_INDEX)} name keys")
+    except Exception as _e:
+        print(f"Vector DB load failed: {_e}")
+
+def _vector_lookup(organism):
+    """按 Organism 名及其别名查媒介记录，命中返回 merged 记录，否则 None。"""
+    for name in _lookup_names(organism):
+        cn = VECTOR_INDEX.get(_vnorm(name))
+        if cn:
+            return VECTOR_DB[cn]
+    return None
+
 app.layout = dmc.MantineProvider(
     theme={
         "fontFamily": "Inter, sans-serif",
@@ -690,7 +722,8 @@ app.layout = dmc.MantineProvider(
                                                     dmc.TabsTab("全基因组变异分析", value="mutation", leftSection="🧬"),
                                                     dmc.TabsTab("高稳健序列数据库", value="table", leftSection="📋"),
                                                     dmc.TabsTab("引物数据库", value="primers", leftSection="🧪"),
-                                                    dmc.TabsTab("宿主范围", value="host", leftSection="🌿")
+                                                    dmc.TabsTab("宿主范围", value="host", leftSection="🌿"),
+                                                    dmc.TabsTab("媒介传播", value="vector", leftSection="🦟")
                                                 ]
                                             ),
                                             
@@ -885,6 +918,22 @@ app.layout = dmc.MantineProvider(
                                                     dmc.Title("病毒宿主范围分析", order=3, mb="md"),
                                                     html.Div(id="host-content", children=[
                                                         dmc.Text("加载宿主数据中...", size="sm", c="dimmed")
+                                                    ])
+                                                ]
+                                            ),
+
+                                            # 媒介传播
+                                            dmc.TabsPanel(
+                                                value="vector",
+                                                id="vector-panel",
+                                                children=[
+                                                    dmc.Title("媒介传播关系分析", order=3, mb="xs"),
+                                                    dmc.Text(
+                                                        "基于实验验证的 病毒×媒介×宿主 关系 (VH) 与 WUR 文献补充，跟随左侧筛选器。",
+                                                        size="sm", c="dimmed", mb="md"
+                                                    ),
+                                                    html.Div(id="vector-content", children=[
+                                                        dmc.Text("加载媒介数据中...", size="sm", c="dimmed")
                                                     ])
                                                 ]
                                             )
@@ -1413,6 +1462,170 @@ def load_host_panel(selected_virus):
             ]
     except Exception as e:
         return dmc.Alert(f"宿主数据加载失败: {e}", color="red", variant="light")
+
+
+# ── 媒介传播面板 ────────────────────────────────────────
+@callback(
+    Output("vector-content", "children"),
+    Input("records-table", "data"),
+)
+def load_vector_panel(table_data):
+    if not VECTOR_DB:
+        return dmc.Alert("媒介数据未加载（virus_vector_merged.json 缺失，请先运行 build_vector_db.py）。",
+                         color="yellow", variant="light")
+    if not table_data:
+        return dmc.Text("请在左侧设置筛选并点击『重算数据流并生成图表』。", c="dimmed")
+
+    organisms = sorted({r.get("Organism", "") for r in table_data if r.get("Organism")})
+    matched = {}
+    for org in organisms:
+        rec = _vector_lookup(org)
+        if rec:
+            matched[rec["canonical_name"]] = rec
+
+    n_total, n_matched = len(organisms), len(matched)
+
+    # 覆盖统计（始终展示）
+    coverage = dmc.Group(mb="md", gap="md", children=[
+        _vec_stat("筛选物种", n_total, "gray"),
+        _vec_stat("有媒介记录", n_matched, "teal"),
+        _vec_stat("关系三元组", sum(len(v["relationships"]) for v in matched.values()), "indigo"),
+    ])
+
+    if n_matched == 0:
+        return [coverage, dmc.Alert(
+            "当前筛选范围内的物种均无媒介传播记录（多为类病毒/非虫媒病毒属正常）。"
+            "可在左侧筛选虫媒病毒科（如 Geminiviridae、Luteoviridae、Tospoviridae）后重算。",
+            color="blue", variant="light")]
+
+    # 展开关系
+    rels = []
+    for rec in matched.values():
+        for r in rec["relationships"]:
+            rels.append((rec["canonical_name"], r, rec))
+
+    # ① Sankey：病毒 → 媒介目 → 宿主
+    sankey = dcc.Graph(figure=_build_vector_sankey(rels), config={"displayModeBar": False},
+                       style={"height": "460px"})
+
+    # ② 传播方式分布
+    cat_counts = Counter(r["transmission_category"] for _, r, _ in rels if r["transmission_category"] != "Unknown")
+    if cat_counts:
+        cat_sorted = cat_counts.most_common()
+        fig_cat = px.bar(x=[c[1] for c in cat_sorted], y=[c[0] for c in cat_sorted],
+                         orientation="h", labels={"x": "关系数", "y": "传播方式"},
+                         color=[c[0] for c in cat_sorted],
+                         color_discrete_sequence=px.colors.qualitative.Set2)
+        fig_cat.update_layout(margin=dict(l=10, r=10, t=10, b=10), height=max(180, 40 * len(cat_sorted)),
+                              showlegend=False, font=dict(size=11))
+        cat_block = dcc.Graph(figure=fig_cat, config={"displayModeBar": False})
+    else:
+        cat_block = dmc.Text("无受控传播方式记录。", c="dimmed", size="sm")
+
+    # ③ 关系明细表（含 /virus/ 详情链接与来源）
+    from urllib.parse import quote
+    rows = []
+    for cname, r, rec in rels:
+        src = "＋".join(rec["sources"])
+        rows.append({
+            "virus": f"[{cname}](/virus/{quote(cname)})",
+            "vector_order": r["vector_order"] or "—",
+            "vector": r["vector"] or "—",
+            "host": r["host"] or "—",
+            "transmission": r["transmission_category"] if r["transmission_category"] != "Unknown" else (r["transmission_mode"] or "—"),
+            "source": src,
+        })
+    rows.sort(key=lambda x: (x["virus"].lower(), x["vector_order"]))
+    table = dash_table.DataTable(
+        data=rows,
+        columns=[
+            {"name": "病毒", "id": "virus", "presentation": "markdown"},
+            {"name": "媒介目", "id": "vector_order"},
+            {"name": "媒介", "id": "vector"},
+            {"name": "宿主", "id": "host"},
+            {"name": "传播方式", "id": "transmission"},
+            {"name": "来源", "id": "source"},
+        ],
+        page_size=15, sort_action="native", filter_action="native",
+        style_table={"overflowX": "auto"},
+        style_cell={"fontSize": "12px", "padding": "6px", "textAlign": "left",
+                    "fontFamily": "Inter, sans-serif", "maxWidth": "260px",
+                    "whiteSpace": "normal", "height": "auto"},
+        style_header={"backgroundColor": "#f1f3f5", "fontWeight": "bold"},
+        markdown_options={"link_target": "_blank"},
+    )
+
+    return [
+        coverage,
+        dmc.Title("① 传播网络  病毒 → 媒介目 → 宿主", order=5, mb="xs"),
+        dmc.Text("三层流向图：链接宽度 = 关系记录数。仅展示关系最多的病毒/宿主以保证可读性。",
+                 size="xs", c="dimmed", mb="xs"),
+        sankey,
+        dmc.Space(h="md"),
+        dmc.Title("② 传播方式分布", order=5, mb="xs"),
+        cat_block,
+        dmc.Space(h="md"),
+        dmc.Group(justify="space-between", align="center", mb="xs", children=[
+            dmc.Title("③ 媒介-宿主关系明细", order=5),
+            dmc.Anchor("打开完整媒介数据库 (/vector/) →", href="/vector/", target="_blank", size="sm", c="blue"),
+        ]),
+        table,
+    ]
+
+
+def _vec_stat(label, value, color):
+    return dmc.Card(withBorder=True, shadow="xs", p="sm", radius="md", children=[
+        dmc.Text(label, size="xs", c="dimmed"),
+        dmc.Title(f"{value:,}", order=3, c=color),
+    ])
+
+
+def _build_vector_sankey(rels, max_viruses=20, max_hosts=25):
+    """构建 病毒→媒介目→宿主 三层 Sankey，节点过多时按记录数截断。"""
+    vo = Counter()   # (virus, order)
+    oh = Counter()   # (order, host)
+    virus_tot, host_tot = Counter(), Counter()
+    for cname, r, _ in rels:
+        order = r["vector_order"] or "Unknown"
+        host = r["host"] or "Unknown"
+        vo[(cname, order)] += 1
+        oh[(order, host)] += 1
+        virus_tot[cname] += 1
+        host_tot[host] += 1
+
+    keep_v = {v for v, _ in virus_tot.most_common(max_viruses)}
+    keep_h = {h for h, _ in host_tot.most_common(max_hosts)}
+    vo = {k: c for k, c in vo.items() if k[0] in keep_v}
+    oh = {k: c for k, c in oh.items() if k[1] in keep_h}
+
+    viruses = sorted({k[0] for k in vo})
+    orders = sorted({k[1] for k in vo} | {k[0] for k in oh})
+    hosts = sorted({k[1] for k in oh})
+    labels = viruses + orders + hosts
+    idx = {name: i for i, name in enumerate(labels)}
+    # 分层配色
+    colors = (["#4c6ef5"] * len(viruses) + ["#12b886"] * len(orders) + ["#f59f00"] * len(hosts))
+
+    src, tgt, val = [], [], []
+    for (v, o), c in vo.items():
+        src.append(idx[v]); tgt.append(idx[o]); val.append(c)
+    for (o, h), c in oh.items():
+        if o in idx and h in idx:
+            src.append(idx[o]); tgt.append(idx[h]); val.append(c)
+
+    fig = go.Figure(go.Sankey(
+        arrangement="snap",
+        node=dict(label=labels, color=colors, pad=12, thickness=14,
+                  line=dict(color="rgba(0,0,0,0.15)", width=0.5)),
+        link=dict(source=src, target=tgt, value=val, color="rgba(150,150,150,0.35)"),
+    ))
+    trunc = ""
+    if len(virus_tot) > max_viruses or len(host_tot) > max_hosts:
+        trunc = f"（截断：展示前 {min(len(virus_tot), max_viruses)} 病毒 / 前 {min(len(host_tot), max_hosts)} 宿主）"
+    fig.update_layout(margin=dict(l=6, r=6, t=6, b=6), font=dict(size=10),
+                      title=dict(text=trunc, font=dict(size=10, color="#888")))
+    return fig
+
 
 
 if __name__ == '__main__':
