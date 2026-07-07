@@ -253,6 +253,16 @@ def download(job_id, ftype):
 
 # Separate HTML file for cleaner maintenance
 HTML_FILE = Path(__file__).parent / "metabuli_page.html"
+EXAMPLES_FILE = Path(__file__).parent / "metabuli_examples.json"
+
+
+@app.route("/metabuli/examples")
+def examples():
+    if EXAMPLES_FILE.exists():
+        with open(EXAMPLES_FILE, encoding="utf-8") as f:
+            return jsonify(json.load(f))
+    return jsonify({})
+
 
 @app.route("/metabuli/")
 def index():
