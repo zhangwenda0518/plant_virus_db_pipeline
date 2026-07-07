@@ -52,24 +52,29 @@ def parse_page(html):
                 parts.append(vm2)
         rec["transmission"] = "; ".join(parts)
 
-        # References — 每条参考各自带一个「Vector or means of transmission」，成对提取。
-        # 结构: <b>Vector or means of transmission:</b>TRANS<br><li>...TITLE...AUTHORS...CITATION...</li>
+        # References — 每条参考各自带一个「Vector or means of transmission」，成对结构化提取。
+        # 输出为 JSON 数组: [{title, authors, citation, means, doi}, ...]
         ref_pairs = re.findall(
             r'(?:<b>Vector or means of transmission:\s*</b>\s*([^<]*)\s*<br\s*/?>\s*)?'
             r'<li class="list-group-item">(.*?)</li>',
             chunk, re.DOTALL)
         rec["ref_count"] = str(len(ref_pairs))
-        clean_refs = []
-        for trans, li in ref_pairs[:5]:
+        ref_objs = []
+        for trans, li in ref_pairs[:10]:
+            doi_m = re.search(r'href="([^"]*?(?:doi\.org|/doi/)[^"]*)"', li)
+            doi = doi_m.group(1) if doi_m else ""
             clean = li.replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>')
+            clean = re.sub(r'<p>.*?</p>', '', clean, flags=re.DOTALL)   # 去摘要
             parts = [re.sub(r'<[^>]+>', '', p).strip() for p in clean.split('<br>') if p.strip()]
             parts = [p for p in parts if p]
-            ref_str = " | ".join(parts[:3])       # title | authors | citation
-            t = (trans or "").strip()
-            if t:
-                ref_str += " | means: " + t       # 该参考对应的传播方式
-            clean_refs.append(ref_str)
-        rec["refs"] = " || ".join(clean_refs).replace("\n", " ").replace("\r", "")
+            ref_objs.append({
+                "title": parts[0] if len(parts) > 0 else "",
+                "authors": parts[1] if len(parts) > 1 else "",
+                "citation": parts[2] if len(parts) > 2 else "",
+                "means": (trans or "").strip(),
+                "doi": doi,
+            })
+        rec["refs"] = json.dumps(ref_objs, ensure_ascii=False).replace("\t", " ").replace("\n", " ").replace("\r", "")
 
         records.append(rec)
     return records

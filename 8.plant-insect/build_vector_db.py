@@ -127,15 +127,34 @@ def load_vh(path: Path, canon: dict) -> dict:
 
 
 def parse_refs(refs_blob: str, limit: int = 10) -> list:
-    """把 WUR refs 大文本块拆成精简引用标题列表（丢弃摘要正文）。"""
+    """解析 WUR refs（scrape_wur.py 输出的 JSON 数组），返回结构化参考列表:
+    [{title, authors, citation, means, doi}, ...]。兼容旧的纯字符串格式(退化为仅 title)。"""
+    blob = (refs_blob or "").strip()
+    if not blob:
+        return []
+    if blob.startswith("["):
+        try:
+            arr = json.loads(blob)
+            out = []
+            for r in arr[:limit]:
+                if isinstance(r, dict) and r.get("title"):
+                    out.append({
+                        "title": (r.get("title", "") or "")[:300],
+                        "authors": (r.get("authors", "") or "")[:200],
+                        "citation": (r.get("citation", "") or "")[:200],
+                        "means": (r.get("means", "") or "")[:200],
+                        "doi": (r.get("doi", "") or "")[:200],
+                    })
+            return out
+        except (ValueError, TypeError):
+            pass
+    # 旧格式回退: " || " / " | " 字符串，只保留 title
     out = []
-    for chunk in (refs_blob or "").split(" || "):
+    for chunk in blob.split(" || "):
         chunk = chunk.strip()
-        if not chunk:
-            continue
-        title = chunk.split(" | ", 1)[0].strip()
-        if title:
-            out.append(title[:200])
+        if chunk:
+            out.append({"title": chunk.split(" | ", 1)[0].strip()[:300],
+                        "authors": "", "citation": "", "means": "", "doi": ""})
         if len(out) >= limit:
             break
     return out

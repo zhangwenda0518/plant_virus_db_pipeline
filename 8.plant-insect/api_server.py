@@ -17,6 +17,13 @@ def load_tsv(path):
 
 vh = load_tsv(VH_FILE)
 wur = load_tsv(WUR_FILE) if WUR_FILE.exists() else []
+# refs 列为 scrape_wur.py 输出的 JSON 数组，解析为结构化对象供前端展示
+for _r in wur:
+    _raw = (_r.get("refs", "") or "").strip()
+    try:
+        _r["refs"] = json.loads(_raw) if _raw.startswith("[") else []
+    except (ValueError, TypeError):
+        _r["refs"] = []
 
 # 预合并数据（由 build_vector_db.py 生成），作为「整合视图」的权威来源
 if MERGED_FILE.exists():

@@ -118,7 +118,18 @@ function renderWUR(){
  var ps=parseInt(document.getElementById('wps').value)||50;
  var pages=Math.ceil(d.length/ps);if(wpage>pages)wpage=Math.max(1,pages);
  var start=(wpage-1)*ps,chunk=d.slice(start,start+ps);
- var h='';chunk.forEach(function(r,i){h+='<tr><td>'+(start+i+1)+'</td><td><strong>'+esc(r.name||'')+'</strong></td><td><span class=\"badge b-v\">'+esc(r.family||'')+'</span></td><td>'+esc(r.genus||'')+'</td><td><span class=\"badge b-i\">'+esc(r.vector_org||'')+'</span></td><td style=\"font-size:11px\">'+esc(r.transmission||'')+'</td><td style=\"font-size:11px;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap\" title=\"'+esc(r.refs||'').replace(/\"/g,'&quot;')+'\">'+esc((r.refs||'').substring(0,120))+'</td></tr>'});
+ var h='';chunk.forEach(function(r,i){
+  var refsHtml='';
+  if(Array.isArray(r.refs)){
+   r.refs.slice(0,5).forEach(function(rf){
+    var t=(rf.title||'').substring(0,90);
+    var link=rf.doi?'<a href=\"'+esc(rf.doi)+'\" target=\"_blank\">'+esc(t)+'</a>':esc(t);
+    refsHtml+='<div style=\"margin:2px 0\">'+link+(rf.means?' <span class=\"vtag vt-trans\">&#128027; '+esc(rf.means)+'</span>':'')+'</div>';
+   });
+   if(r.refs.length>5)refsHtml+='<div style=\"color:#888\">… +'+(r.refs.length-5)+' 篇</div>';
+  }
+  h+='<tr><td>'+(start+i+1)+'</td><td><strong>'+esc(r.name||'')+'</strong></td><td><span class=\"badge b-v\">'+esc(r.family||'')+'</span></td><td>'+esc(r.genus||'')+'</td><td><span class=\"badge b-i\">'+esc(r.vector_org||'')+'</span></td><td style=\"font-size:11px\">'+esc(r.transmission||'')+'</td><td style=\"font-size:11px;max-width:440px\">'+refsHtml+'</td></tr>';
+ });
  document.getElementById('wur-tbody').innerHTML=h||'<tr><td colspan=7 style=\"text-align:center;padding:40px;color:#999\">No results</td></tr>';
  var pg='';for(var i=1;i<=pages;i++)pg+='<button class=\"'+(i===wpage?'active':'')+'\" onclick=\"goWPage('+i+')\">'+i+'</button>';
  document.getElementById('wur-pager').innerHTML=pg
@@ -164,8 +175,19 @@ function renderInt(){
    h+='<div class=\"vdetail\">';
    if(r.wur.vector_label)h+='<b>WUR 媒介:</b> '+esc(r.wur.vector_label)+' ';
    if(r.wur.ref_count)h+='<b>参考文献:</b> '+r.wur.ref_count+' 篇';
-   if(r.wur.transmission_notes)h+='<br><b>WUR 传播说明:</b> '+esc(r.wur.transmission_notes.substring(0,220));
-   if(r.wur.refs&&r.wur.refs.length)h+='<br><b>Refs:</b> '+esc(r.wur.refs.slice(0,2).join(' | ').substring(0,200));
+   if(r.wur.refs&&r.wur.refs.length){
+    h+='<div style=\"margin-top:6px\"><b>文献 &amp; 各自传播方式:</b>';
+    r.wur.refs.slice(0,6).forEach(function(rf){
+     var t=rf.title||'';
+     var link=rf.doi?'<a class=\"doi-link\" href=\"'+esc(rf.doi)+'\" target=\"_blank\">'+esc(t)+'</a>':esc(t);
+     h+='<div style=\"margin:4px 0;padding-left:8px;border-left:2px solid #e0e0e0\">'+link;
+     if(rf.means)h+=' <span class=\"vtag vt-trans\">&#128027; '+esc(rf.means)+'</span>';
+     if(rf.citation)h+='<br><span style=\"color:#999;font-size:11px\">'+esc(rf.citation)+'</span>';
+     h+='</div>';
+    });
+    if(r.wur.refs.length>6)h+='<div style=\"color:#888;font-size:11px\">… 其余 '+(r.wur.refs.length-6)+' 篇</div>';
+    h+='</div>';
+   }
    h+='</div>';
   }
   h+='</div>';
