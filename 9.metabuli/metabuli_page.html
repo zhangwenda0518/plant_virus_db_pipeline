@@ -67,6 +67,14 @@ table.tb{font-size:12px;width:100%}table.tb th{background:#f5f5f5;padding:6px}ta
 </div>
 
 <script>
+function escapeHtml(t) {
+  return String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function toggleKrona(id) {
+  var cb = document.getElementById('krona-unc-' + id);
+  var f = document.getElementById('krona-frame-' + id);
+  if (f) f.src = '/metabuli/krona/' + id + (cb && cb.checked ? '?unclassified=1' : '');
+}
 var EXAMPLES = {
   tmv: ">TMV_coat_protein\nATGTCTTACAGTATCACTACTCCATCTCAATTCGTGTTCTTGTCATCAGCGTGGGCCGACCCAATAGAGTTAATTAATTTATGTACTAATGCCTTAGGCAATCAGTTTCAAACACAACAAGCCAGAACAGTCGTTCAAAGACAATTCAGTGAGGTGTGGAAACCATCACCGCAAGTGACTGTAAGGTTCCCTGATAGTGACTTTAAGGTGTACAGGTACAATGCGGTATTAGATCCGCTAGTCACAGCATTGTTAGGAGCATTCGATACTCGGAATAGAATAATAGAAGTTGAAAATCAA",
   pvy: ">PVY_coat_protein\nATGGGAAATGACAATGGAACCAAGAAAGATGCAAAAGTGGAACAAGGAAGCATGGTACCAAATCTCAATAAGAAAAAAGCAAAGGATCTCAACTTGGAACAATTGCTCAAGAAGTATGAACCCGACCGTGATGTAAGCAATAAAACAAGAGCCGAAAGCCAAACACGTAACCAATCCAAGAGAAGACAGACAACAAATAAAGTCAGTAAGGCCACAAGACAAGATAATACTTGGAAA",
@@ -160,10 +168,16 @@ async function renderResult(data) {
   var el = document.getElementById('resultContent');
   var h = '<div class="ok" style="font-weight:600;margin-bottom:12px">Classification complete &middot; Expires in 2 hours</div>';
 
-  // Sankey from report — use name indentation (leading spaces) to determine tree depth
+  // Fetch full report once (Sankey + Classification Table both use it)
+  var reportData = [];
   try {
     var rr = await fetch('/metabuli/report/' + data.id);
-    var reportData = await rr.json();
+    reportData = await rr.json();
+    if (!Array.isArray(reportData)) reportData = [];
+  } catch(e) { console.log('report fetch error:', e); }
+
+  // Sankey from report — use name indentation (leading spaces) to determine tree depth
+  try {
     if (reportData.length > 1) {
       var sankeyDiv = 'sk-' + data.id;
       h += '<h4 style=\"font-size:14px;color:#1a5276;margin:16px 0 8px\">Taxonomy Sankey</h4><div id=\"' + sankeyDiv + '\" style=\"width:100%;height:500px\"></div>';
@@ -172,7 +186,7 @@ async function renderResult(data) {
       var nodes = reportData.map(function(r) {
         var nm = r.name, trimmed = nm.trimStart ? nm.trimStart() : nm.replace(/^\\s+/,'');
         var depth = nm.length - trimmed.length;
-        return {name: trimmed, rank: r.rank, count: parseFloat(r.clade_count) || 1, depth: depth};
+        return {name: trimmed, rank: r.rank, count: parseFloat(r.count) || 1, depth: depth};
       }).filter(function(r) {
         return r.rank !== 'no rank' || r.name === 'root' || r.name === 'unclassified';
       });
@@ -204,20 +218,34 @@ async function renderResult(data) {
     }
   } catch(e) { console.log('Sankey error:', e); }
 
-  // Summary table
-  if (data.summary && data.summary.length) {
-    h += '<h4 style="font-size:14px;color:#1a5276;margin:16px 0 8px">Classification Table</h4>';
-    h += '<table class="tb"><thead><tr><th>%</th><th>Count</th><th>Rank</th><th>Name</th></tr></thead><tbody>';
-    data.summary.forEach(function(r) {
-      h += '<tr><td>' + r.proportion + '</td><td>' + r.count + '</td><td>' + r.rank + '</td><td>' + r.name + '</td></tr>';
+  // Classification Table — full taxonomic hierarchy from report (rank / taxon / taxid / % / reads)
+  if (reportData && reportData.length) {
+    var STD = {'superkingdom':1,'acellular root':1,'realm':1,'subrealm':1,'kingdom':1,'subkingdom':1,'phylum':1,'subphylum':1,'class':1,'subclass':1,'order':1,'suborder':1,'family':1,'subfamily':1,'genus':1,'subgenus':1,'species':1};
+    h += '<h4 style="font-size:14px;color:#1a5276;margin:16px 0 8px">Classification Table <span style="font-size:11px;color:#888;font-weight:400">(完整分类等级)</span></h4>';
+    h += '<div style="max-height:440px;overflow:auto;border:1px solid #eee;border-radius:4px">';
+    h += '<table class="tb"><thead><tr><th>Rank</th><th>Taxon</th><th>TaxID</th><th>%</th><th>Reads</th></tr></thead><tbody>';
+    reportData.forEach(function(r) {
+      var nm = r.name || '', trimmed = (nm.trimStart ? nm.trimStart() : nm.replace(/^\s+/, ''));
+      var depth = nm.length - trimmed.length;
+      var isStd = !!STD[r.rank];
+      var rankColor = r.rank === 'no rank' ? '#aaa' : '#1a5276';
+      h += '<tr>'
+         + '<td style="color:' + rankColor + ';white-space:nowrap">' + escapeHtml(r.rank) + '</td>'
+         + '<td><span style="padding-left:' + (depth * 8) + 'px' + (isStd ? ';font-weight:600' : '') + '">' + escapeHtml(trimmed) + '</span></td>'
+         + '<td style="color:#888">' + escapeHtml(r.taxid) + '</td>'
+         + '<td>' + escapeHtml(r.proportion) + '</td>'
+         + '<td>' + escapeHtml(r.count) + '</td>'
+         + '</tr>';
     });
-    h += '</tbody></table>';
+    h += '</tbody></table></div>';
   }
 
-  // Krona iframe
+  // Krona iframe — 默认隐藏 unclassified，勾选可显示
   if (data.files && data.files.krona) {
     h += '<h4 style="font-size:14px;color:#1a5276;margin:16px 0 8px">Krona Taxonomy Plot</h4>';
-    h += '<iframe src="/metabuli/krona/' + data.id + '" style="width:100%;height:500px;border:1px solid #ddd;border-radius:4px"></iframe>';
+    h += '<label style="font-size:12px;color:#555;display:inline-block;margin-bottom:6px;cursor:pointer">'
+       + '<input type="checkbox" id="krona-unc-' + data.id + '" onchange="toggleKrona(\'' + data.id + '\')"> 显示 unclassified 结果</label>';
+    h += '<iframe id="krona-frame-' + data.id + '" src="/metabuli/krona/' + data.id + '" style="width:100%;height:500px;border:1px solid #ddd;border-radius:4px"></iframe>';
   }
 
   // Download buttons

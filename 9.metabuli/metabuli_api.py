@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Metabuli Contig Classification API."""
 
-import os, json, uuid, time, subprocess, threading, shutil
+import os, json, uuid, time, subprocess, threading, shutil, re
 from pathlib import Path
 from datetime import datetime
-from flask import Flask, request, jsonify, send_file, render_template_string
+from flask import Flask, request, jsonify, send_file, render_template_string, Response
 
 app = Flask(__name__)
 
@@ -115,12 +115,33 @@ def report_json(job_id):
                     "rank":parts[3],"taxid":parts[4],"name":parts[5]})
     return jsonify(data)
 
+def _strip_unclassified(html):
+    """从 Krona HTML 中移除 unclassified 叶节点，并把父节点 'all' 的总量相应减少，
+    使 classified 部分占满 100%。找不到则原样返回（安全回退）。"""
+    m = re.search(r'<node name="unclassified"><magnitude><val>([\d.]+)</val></magnitude></node>', html)
+    if not m:
+        return html
+    u = float(m.group(1))
+    html = html[:m.start()] + html[m.end():]
+    am = re.search(r'(<node name="all"><magnitude><val>)([\d.]+)(</val>)', html)
+    if am:
+        new = float(am.group(2)) - u
+        newstr = str(int(new)) if new == int(new) else ("%g" % new)
+        html = html[:am.start()] + am.group(1) + newstr + am.group(3) + html[am.end():]
+    return html
+
+
 @app.route("/metabuli/krona/<job_id>")
 def krona_view(job_id):
     j = jobs.get(job_id, {})
-    p = j.get("files",{}).get("krona")
-    if not p or not os.path.exists(p): return jsonify({"error":"Not found"}), 404
-    return send_file(p)
+    p = j.get("files", {}).get("krona")
+    if not p or not os.path.exists(p):
+        return jsonify({"error": "Not found"}), 404
+    # 默认隐藏 unclassified；?unclassified=1 时显示原图
+    if request.args.get("unclassified") == "1":
+        return send_file(p)
+    html = Path(p).read_text(encoding="utf-8", errors="replace")
+    return Response(_strip_unclassified(html), mimetype="text/html")
 
 @app.route("/metabuli/download/<job_id>/<ftype>")
 def download(job_id, ftype):
