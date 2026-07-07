@@ -186,14 +186,24 @@ function renderInt(){
    if(r.relationships.length>8)h+='<span style=\"color:#888\">… 其余 '+(r.relationships.length-8)+' 条见明细</span><br>';
    h+='</div>';
   }
-  // WUR 补充: 具体媒介/传播方式 + 来源链接(不列参考文献)
+  // WUR 补充
   if(r.wur){
    h+='<div class=\"vdetail\">';
-   if(r.wur.vector_means&&r.wur.vector_means.length){
-    h+='<b>具体媒介/传播方式 (WUR):</b> ';
-    r.wur.vector_means.forEach(function(m){h+='<span class=\"vtag vt-vcat\">&#128027; '+esc(m)+'</span>'});
+   if(r.wur.vector_label)h+='<b>WUR 媒介:</b> '+esc(r.wur.vector_label)+' ';
+   if(r.wur.ref_count)h+='<b>参考文献:</b> '+r.wur.ref_count+' 篇';
+   if(r.wur.refs&&r.wur.refs.length){
+    h+='<div style=\"margin-top:6px\"><b>文献 &amp; 各自传播方式:</b>';
+    r.wur.refs.slice(0,6).forEach(function(rf){
+     var t=rf.title||'';
+     var link=rf.doi?'<a class=\"doi-link\" href=\"'+esc(rf.doi)+'\" target=\"_blank\">'+esc(t)+'</a>':esc(t);
+     h+='<div style=\"margin:4px 0;padding-left:8px;border-left:2px solid #e0e0e0\">'+link;
+     if(rf.means)h+=' <span class=\"vtag vt-trans\">&#128027; '+esc(rf.means)+'</span>';
+     if(rf.citation)h+='<br><span style=\"color:#999;font-size:11px\">'+esc(rf.citation)+'</span>';
+     h+='</div>';
+    });
+    if(r.wur.refs.length>6)h+='<div style=\"color:#888;font-size:11px\">… 其余 '+(r.wur.refs.length-6)+' 篇</div>';
+    h+='</div>';
    }
-   if(r.wur.source_url)h+='<div style=\"margin-top:5px\"><a class=\"doi-link\" href=\"'+esc(r.wur.source_url)+'\" target=\"_blank\">&#128279; 在 WUR 查看来源</a>'+(r.wur.ref_count?' <span style=\"color:#888;font-size:11px\">('+r.wur.ref_count+' 篇文献)</span>':'')+'</div>';
    h+='</div>';
   }
   h+='</div>';
