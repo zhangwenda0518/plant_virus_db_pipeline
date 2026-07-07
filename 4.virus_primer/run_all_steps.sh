@@ -7,7 +7,7 @@ set -e
 
 BIN=~/bin
 DB_DIR=~/plant_virus_db/2.plant-virus.db
-FULL_INFO=$DB_DIR/E-metadata/Plant_Virus_Info.full.tsv
+FULL_INFO=$DB_DIR/E-metadata/Plant_Virus_Full.Info.tsv
 THREADS=60
 
 SPLIT=~/split_species_new

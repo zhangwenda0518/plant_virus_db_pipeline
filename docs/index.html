@@ -102,8 +102,8 @@ canvas{max-height:320px}
 (async function() {
   const load = async p => { try { const r = await fetch(p); if (!r.ok) return null; return (await r.text()).split('\n'); } catch(e) { return null; } };
   const [fullTxt, refTxt] = await Promise.all([
-    fetch('data/Plant_Virus_Info.full.tsv?v=2').then(r => r.ok ? r.text() : null).catch(() => null),
-    fetch('data/final.cluster.ref_info.tsv?v=2').then(r => r.ok ? r.text() : null).catch(() => null)
+    fetch('data/Plant_Virus_Full.Info.tsv?v=2').then(r => r.ok ? r.text() : null).catch(() => null),
+    fetch('data/Plant_Virus_Ref.Info.tsv?v=2').then(r => r.ok ? r.text() : null).catch(() => null)
   ]);
   if (!fullTxt && !refTxt) { document.getElementById('loading').textContent = 'No data found'; return; }
   const parseTSV = t => new Promise(resolve => Papa.parse(t, { header: true, skipEmptyLines: true, delimiter: '\t', complete(r) { resolve(r.data); } }));

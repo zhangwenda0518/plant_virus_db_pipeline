@@ -269,7 +269,7 @@ def load_real_data():
     print(f"  Full load: {len(result):,} records, {n_species:,} species in {_time.time()-t0:.1f}s. Caching...")
     with open(cache_file, 'wb') as f:
         pickle.dump({'df': result, 'df_len': len(result), 'n_species': n_species,
-                     'country_map': country_map, 'top_country_n': 30}, f, protocol=4)
+                     'country_map': country_map}, f, protocol=4)
     print(f"  Cache saved ({os.path.getsize(cache_file)/1024/1024:.0f}MB)")
 
     return result, n_species, country_map, 30
@@ -283,10 +283,10 @@ try:
     _country_counts = _country_counts[_country_counts.index != 'Unknown']
     DYNAMIC_COUNTRY_OPTIONS = [
         {"value": v, "label": f"{v} ({c})"}
-        for v, c in _country_counts.head(TOP_COUNTRY_N).items()
+        for v, c in _country_counts.items()
     ]
     DYNAMIC_COUNTRY_DEFAULTS = [v for v, _ in _country_counts.head(8).items()]
-    print(f"Country map: {len(COUNTRY_NAME_MAP)} entries, Top-{TOP_COUNTRY_N} dynamic options")
+    print(f"Country map: {len(COUNTRY_NAME_MAP)} entries, all countries loaded")
 except Exception as e:
     print(f"Data load failed ({e}), falling back to mock data")
     df_global = generate_baseline_dataset()
@@ -545,11 +545,11 @@ app.layout = dmc.MantineProvider(
                                     
                                     dmc.MultiSelect(
                                         id="host-filter",
-                                        label="检索宿主种类 (Top 80)",
+                                        label="检索宿主种类",
                                         placeholder="全部宿主 → 可搜索",
                                         data=sorted(
                                             [{"value": v, "label": v}
-                                             for v in df_global['Host_Name'].value_counts().head(80).index
+                                             for v in df_global['Host_Name'].value_counts().index
                                              if v != 'Unknown'],
                                             key=lambda x: x['label']
                                         ),
@@ -560,7 +560,7 @@ app.layout = dmc.MantineProvider(
 
                                     dmc.MultiSelect(
                                         id="country-select",
-                                        label=f"分析目标国家/地区 (Top {TOP_COUNTRY_N})",
+                                        label="分析目标国家/地区",
                                         placeholder="选择目标地区 → 可搜索",
                                         data=DYNAMIC_COUNTRY_OPTIONS,
                                         value=DYNAMIC_COUNTRY_DEFAULTS,
@@ -573,8 +573,8 @@ app.layout = dmc.MantineProvider(
                                         id="category-filter",
                                         label="基因组结构 (分段 / 非分段)",
                                         placeholder="全部类型",
-                                        data=[{"value": "Segmented", "label": "Segmented (分段)"},
-                                              {"value": "NonSegmented", "label": "Non‑Segmented (非分段)"}],
+                                        data=[{"value": "Segmented", "label": f"Segmented (分段) ({int(df_global['Category_Type'].value_counts().get('Segmented', 0)):,})"},
+                                              {"value": "NonSegmented", "label": f"Non‑Segmented (非分段) ({int(df_global['Category_Type'].value_counts().get('NonSegmented', 0)):,})"}],
                                         value=["Segmented", "NonSegmented"],
                                         mb="md"
                                     ),
@@ -584,9 +584,9 @@ app.layout = dmc.MantineProvider(
                                         label="病毒科 (Family)",
                                         placeholder="全部科 → 可选",
                                         data=sorted(
-                                            [{"value": v, "label": v}
-                                             for v in df_global['Family'].unique() if v != 'Unknown'],
-                                            key=lambda x: x['label']
+                                            [{"value": v, "label": f"{v} ({int(c):,})"}
+                                             for v, c in df_global['Family'].value_counts().items() if v != 'Unknown'],
+                                            key=lambda x: x['value']
                                         ),
                                         searchable=True,
                                         clearable=True,
@@ -598,8 +598,8 @@ app.layout = dmc.MantineProvider(
                                         label="序列完整性",
                                         placeholder="全部",
                                         data=[
-                                            {"value": "complete", "label": "Complete (完整)"},
-                                            {"value": "partial", "label": "Partial (部分)"}
+                                            {"value": "complete", "label": f"Complete (完整) ({int(df_global['Completeness'].value_counts().get('complete', 0)):,})"},
+                                            {"value": "partial", "label": f"Partial (部分) ({int(df_global['Completeness'].value_counts().get('partial', 0)):,})"}
                                         ],
                                         value=["complete", "partial"],
                                         mb="md"
@@ -803,7 +803,7 @@ app.layout = dmc.MantineProvider(
                                                     dmc.Text(
                                                         "基于真实 GenBank 全基因组序列，通过全局双序列比对（Global Pairwise Alignment）"
                                                         "将同物种内多条序列映射至参考链坐标系，逐位点计算 A/T/G/C 碱基频率与多态性变异率。"
-                                                        "展示长度上限 5,000 bp，比对序列上限 100 条以保证交互流畅度。",
+                                                        "按参考链全长逐位点展示，可直接在图上拖拽框选放大、双击复位查看细节，比对序列上限 100 条以保证交互流畅度。",
                                                         size="sm",
                                                         c="dimmed",
                                                         mb="lg"
@@ -943,8 +943,9 @@ def update_virus_options(selected_families, selected_categories):
     if 'Family' in df.columns and selected_families:
         df = df[df['Family'].isin(selected_families)]
 
-    virus_list = sorted(df['Organism'].unique())
-    options = [{"value": v, "label": v} for v in virus_list]
+    counts = df['Organism'].value_counts()
+    virus_list = sorted(counts.index)
+    options = [{"value": v, "label": f"{v} ({int(counts[v]):,})"} for v in virus_list]
     # 首次加载时默认选中 PSTVd
     default_val = ["Potato spindle tuber viroid"] if "Potato spindle tuber viroid" in virus_list else []
     return options, default_val
@@ -1163,7 +1164,7 @@ def render_spatiotemporal_chart(table_data):
 
 # 基因组比对可视化参数
 MAX_ALIGN_SEQS = 100       # 最多比对序列数
-MAX_DISPLAY_BP = 5000      # 热图 / 变异曲线最大展示碱基数
+MAX_DISPLAY_BP = 30000     # 安全上限 (防极端超长基因组)，正常按全长展示，靠 Plotly 自带缩放看细节
 
 @callback(
     [Output("alignment-heatmap", "figure"),
@@ -1197,18 +1198,18 @@ def render_genomic_plots(table_data, selected_virus):
     # 频率与变异信息熵计算
     freq_matrix, variation_rates = compute_alignment_matrices(aligned_seqs)
     
-    # 动态坐标范围：展示实际参考链长度，但截断至 MAX_DISPLAY_BP
+    # 动态坐标范围：默认展示完整参考链全长（仅对极端超长基因组做安全截断）
     ref_len = len(reference)
     display_len = min(ref_len, MAX_DISPLAY_BP)
     positions = list(range(1, display_len + 1))
-    
+
     # 截取展示区间的矩阵与变异率
     freq_display = freq_matrix[:, :display_len]
     var_display = variation_rates[:display_len]
-    
+
     # 1. 碱基丰度热图 (Plasma 配色能够准确区分单一基质与杂合位点)
     nucleotides = ['A', 'T', 'G', 'C']
-    x_label = f"对齐参考坐标 (nt, 共 {ref_len} bp)" if ref_len <= MAX_DISPLAY_BP else f"对齐参考坐标 (前 {MAX_DISPLAY_BP} / {ref_len} bp)"
+    x_label = f"对齐参考坐标 (nt, 全长 {ref_len} bp — 拖拽框选可放大)" if ref_len <= MAX_DISPLAY_BP else f"对齐参考坐标 (前 {MAX_DISPLAY_BP} / {ref_len} bp)"
     fig_heatmap = px.imshow(
         freq_display,
         y=nucleotides,

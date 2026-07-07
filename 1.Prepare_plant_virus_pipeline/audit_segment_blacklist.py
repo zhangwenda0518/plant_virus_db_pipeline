@@ -8,7 +8,7 @@
   3. 未被黑名单覆盖的 Segment 值（可能漏网的假阳性）
 
 Usage:
-  python audit_segment_blacklist.py --tsv Plant_Virus_Info.full.tsv -o audit_seg_blacklist/
+  python audit_segment_blacklist.py --tsv Plant_Virus_Full.Info.tsv -o audit_seg_blacklist/
 """
 import polars as pl
 import os, argparse, re
@@ -68,7 +68,7 @@ def classify_segment_value(val: str) -> str:
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--tsv", required=True, help="Plant_Virus_Info.full.tsv 或 All_Classified_Virus_Info.tsv")
+    p.add_argument("--tsv", required=True, help="Plant_Virus_Full.Info.tsv 或 All_Classified_Virus_Info.tsv")
     p.add_argument("-o", "--output_dir", default="audit_seg_blacklist/")
     args = p.parse_args()
     os.makedirs(args.output_dir, exist_ok=True)

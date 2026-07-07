@@ -180,10 +180,10 @@ ICTV 官方 VMR (MSL41, 2026-03-20) 经 Excel 格式转换后，对 'Host source
 >
 > | 阶段 | 序列数 | 序列保留率 | TaxID | TaxID保留率 |
 > |:-----|:------:|:----------|:-----:|:-----------|
-> | plant.virus.fasta (原始) | 218,048 | 100.0% | 7,187 | 100.0% |
+> | Plant_Virus_Full.fasta (原始) | 218,048 | 100.0% | 7,187 | 100.0% |
 > | 元数据去重后 (F3) | 17,998 | 8.3% | 7,187 | 100.0% |
 > | plant.final.rmdup.fasta (F4) | 13,030 | 6.0% | 7,187 | 100.0% |
-> | final.cluster.ref.fasta (G2) | 11,956 | 5.5% | 6,597 | 91.8% |
+> | Plant_Virus_Ref.fasta (G2) | 11,956 | 5.5% | 6,597 | 91.8% |
 
 ### 4.5 泛基因组 ANI 聚类与 LCA 诊断
 
@@ -226,7 +226,7 @@ LCA 诊断发现跨 TaxID 混合聚类簇 **787** 个，占总聚类簇数的比
 
 ### 4.8 数据可用性
 
-本研究所构建的植物病毒参考基因组数据集及其完整元数据可通过 GitHub 开源获取：https://github.com/zhangwenda0518/plant_virus_db_pipeline。最终输出产物位于 `3.final-ref-virus.db/` 目录，包括：(1) `final.cluster.ref.fasta`——非冗余参考基因组序列 (11,956 条)；(2) `final.cluster.ref_info.tsv`——完整元数据表，含宿主分类、节段信息、分类学谱系等核心字段；(3) `virus_genes_cov.tsv`——基因覆盖度统计；(4) `Dereplication_Global_Summary.tsv`——各阶段去冗余效果评估。全套 21 个 Python 处理脚本、一键执行脚本 (run_all.sh)、依赖安装指南及详细使用说明均已随仓库开源。中间产物与阶段级运行日志 (4.logs/) 一并保留，确保全过程可追溯。
+本研究所构建的植物病毒参考基因组数据集及其完整元数据可通过 GitHub 开源获取：https://github.com/zhangwenda0518/plant_virus_db_pipeline。最终输出产物位于 `3.final-ref-virus.db/` 目录，包括：(1) `Plant_Virus_Ref.fasta`——非冗余参考基因组序列 (11,956 条)；(2) `Plant_Virus_Ref.Info.tsv`——完整元数据表，含宿主分类、节段信息、分类学谱系等核心字段；(3) `virus_genes_cov.tsv`——基因覆盖度统计；(4) `Dereplication_Global_Summary.tsv`——各阶段去冗余效果评估。全套 21 个 Python 处理脚本、一键执行脚本 (run_all.sh)、依赖安装指南及详细使用说明均已随仓库开源。中间产物与阶段级运行日志 (4.logs/) 一并保留，确保全过程可追溯。
 
 ---
 
@@ -291,22 +291,22 @@ plant_virus_db/
 │
 ├── 2.plant-virus.db/                 ← ★ 植物病毒参考基因组
 │   ├── D-sequences/                  # 阶段 D: 序列获取
-│   │   ├── plant.virus.fasta         # 植物病毒合并序列
+│   │   ├── Plant_Virus_Full.fasta         # 植物病毒合并序列
 │   │   └── plant.virus.id            # Accession ID 列表
 │   ├── E-metadata/                   # 阶段 E: 元数据完善
 │   ├── F-dedup/                      # 阶段 F: 分类去冗余
 │   └── G-cluster/                    # ★★★ 阶段 G: 最终产物
-│       ├── final.cluster.ref.fasta   # 最终参考基因组序列
-│       ├── final.cluster.ref_info.tsv # 最终元数据
+│       ├── Plant_Virus_Ref.fasta   # 最终参考基因组序列
+│       ├── Plant_Virus_Ref.Info.tsv # 最终元数据
 │       ├── virus_genes_cov.tsv       # 基因覆盖度
 │       ├── clusters_with_LCA.tsv     # LCA 诊断报告
 │       └── derep.summary.tsv         # 去冗余评估
 │
 ├── 3.final-ref-virus.db/              ← ★★★ 最终参考数据库(软链接)
-│   ├── final.cluster.ref.fasta        → G-cluster/ 最终序列
-│   ├── final.cluster.ref_info.tsv     → G-cluster/ 最终元数据
-│   ├── Plant_Virus_Info.full.tsv      → E-metadata/ 全量元数据
-│   └── plant.virus.fasta              → D-sequences/ 原始序列
+│   ├── Plant_Virus_Ref.fasta        → G-cluster/ 最终序列
+│   ├── Plant_Virus_Ref.Info.tsv     → G-cluster/ 最终元数据
+│   ├── Plant_Virus_Full.Info.tsv      → E-metadata/ 全量元数据
+│   └── Plant_Virus_Full.fasta              → D-sequences/ 原始序列
 │
 └── 4.logs/                           ← ★ 全部运行日志
     ├── pipeline.log                  # 总时间线
@@ -354,7 +354,7 @@ VHostMetadata.tsv                                ▼
   [C] Final_Virus_Host_Lineage.tsv ──→ Human/Animal/Plant/...tsv
     │
     ▼
-  [D] plant.virus.fasta + plant.virus.id
+  [D] Plant_Virus_Full.fasta + plant.virus.id
     │
     ▼
   [E] Plant_Virus_Info.tsv (含 topo + name)
@@ -363,7 +363,7 @@ VHostMetadata.tsv                                ▼
   [F] split_results/ → virus.dedup/ → Final_DB_Build/
     │
     ▼
-  [G] final.cluster.ref.fasta + virus_genes_cov.tsv
+  [G] Plant_Virus_Ref.fasta + virus_genes_cov.tsv
 ```
 
 ---
@@ -433,7 +433,7 @@ VHostMetadata.tsv                                ▼
 | 序号 | 脚本 | 输入 | 输出 | 功能 |
 |:-----|:-----|:-----|:-----|:-----|
 | G1 | `G1_seqid_to_taxid.py` | `plant.final.rmdup.id` + 映射表 | `seqid2taxid.map` | 高性能 Accession → TaxID 并行映射 |
-| G2 | `G2_vclust_cluster.py` | FASTA + Info + Map | `final.cluster.ref.fasta` | vclust ANI 聚类 + LCA 诊断 + RefSeq 优先 |
+| G2 | `G2_vclust_cluster.py` | FASTA + Info + Map | `Plant_Virus_Ref.fasta` | vclust ANI 聚类 + LCA 诊断 + RefSeq 优先 |
 | G3 | `G3_derep_evaluate.py` | 各级 FASTA + Info | 多维度评估报告 | 去冗余前后序列/物种保留率比较 |
 | G4 | `G4_gene_coverage.py` | GFF3 + seqid2taxid | `virus_genes_cov.tsv` | 基因长度与覆盖度统计 |
 

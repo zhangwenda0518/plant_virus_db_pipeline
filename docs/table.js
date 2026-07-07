@@ -3,8 +3,8 @@ let currentTable = null, currentRows = [], currentFields = [];
 let currentSource = 'ref';
 
 const SOURCES = {
-  ref: { file: 'data/final.cluster.ref_info.tsv', label: 'Final Reference' },
-  full: { file: 'data/Plant_Virus_Info.full.tsv', label: 'Full Database' }
+  ref: { file: 'data/Plant_Virus_Ref.Info.tsv', label: 'Final Reference' },
+  full: { file: 'data/Plant_Virus_Full.Info.tsv', label: 'Full Database' }
 };
 
 async function loadTable(tableId, isSegmented) {

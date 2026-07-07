@@ -6,7 +6,7 @@ Interactive searchable table for the plant virus reference database.
 
 1. Copy the latest data file:
 ```bash
-cp G-cluster/final.cluster.ref_info.tsv web_db/data/
+cp G-cluster/Plant_Virus_Ref.Info.tsv web_db/data/
 ```
 
 2. Enable GitHub Pages in repo Settings:

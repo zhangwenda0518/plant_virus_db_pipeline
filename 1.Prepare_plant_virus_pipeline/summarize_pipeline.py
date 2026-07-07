@@ -237,7 +237,7 @@ class PipelineData:
         d["D2_downloaded"] = count_fasta(str(db / "Downloaded_Plant_Viruses.fasta"))
 
         # 合并产物
-        d["D_merged_fasta"] = count_fasta(str(self.wd / "2.plant-virus.db/D-sequences/plant.virus.fasta"))
+        d["D_merged_fasta"] = count_fasta(str(self.wd / "2.plant-virus.db/D-sequences/Plant_Virus_Full.fasta"))
         d["D_merged_ids"] = count_lines(str(self.wd / "2.plant-virus.db/D-sequences/plant.virus.id"))
 
     # ---- E: 元数据完善 ----
@@ -384,8 +384,8 @@ class PipelineData:
         d["G1_mapped_pairs"] = d["G1_mapped"]  # 每行一个映射
 
         # G2 最终参考
-        d["G2_final_fasta"] = count_fasta(str(cl / "final.cluster.ref.fasta"))
-        ref_info = read_tsv(str(cl / "final.cluster.ref_info.tsv"))
+        d["G2_final_fasta"] = count_fasta(str(cl / "Plant_Virus_Ref.fasta"))
+        ref_info = read_tsv(str(cl / "Plant_Virus_Ref.Info.tsv"))
         if ref_info:
             d["G2_final_info_rows"] = len(ref_info)
             taxids = [r.get("Taxid", r.get("taxid", "")) for r in ref_info]
@@ -902,8 +902,8 @@ def render_report(d, wd):
         "本研究所构建的植物病毒参考基因组数据集及其完整元数据可在 GitHub 获取: "
         "https://github.com/zhangwenda0518/plant_virus_db_pipeline。"
         "pipeline 输出目录下的最终产物包括: "
-        "final.cluster.ref.fasta (非冗余参考基因组序列)，"
-        "final.cluster.ref_info.tsv (完整元数据，含宿主分类、节段信息、分类学谱系)，"
+        "Plant_Virus_Ref.fasta (非冗余参考基因组序列)，"
+        "Plant_Virus_Ref.Info.tsv (完整元数据，含宿主分类、节段信息、分类学谱系)，"
         "virus_genes_cov.tsv (基因覆盖度统计)，"
         "以及 Dereplication_Global_Summary.tsv (各阶段去冗余效果评估)。"
         "全部 21 个处理脚本、一键执行脚本 (run_all.sh) 及详细使用说明均已开源。"

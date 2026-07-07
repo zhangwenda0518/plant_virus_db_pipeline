@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-修复 final.cluster.ref_info.tsv 中缺失的 VMR 信息
+修复 Plant_Virus_Ref.Info.tsv 中缺失的 VMR 信息
 Base_Accession 匹配失败时, 用 Species_ICTV/Species 做二次兜底
 
 用法:
-  python fix_vmr_species.py --info final.cluster.ref_info.tsv --vmr VMR_MSL41.tsv -o final.cluster.ref_info.fix.tsv
+  python fix_vmr_species.py --info Plant_Virus_Ref.Info.tsv --vmr VMR_MSL41.tsv -o final.cluster.ref_info.fix.tsv
 """
 
 import polars as pl
@@ -13,7 +13,7 @@ import sys
 
 def main():
     parser = argparse.ArgumentParser(description="用 VMR 物种名补全缺失的 Family/Genus/Species 信息")
-    parser.add_argument("--info", required=True, help="输入文件: final.cluster.ref_info.tsv")
+    parser.add_argument("--info", required=True, help="输入文件: Plant_Virus_Ref.Info.tsv")
     parser.add_argument("--vmr", required=True, help="ICTV VMR TSV 文件")
     parser.add_argument("-o", "--output", required=True, help="输出修复后的文件")
     args = parser.parse_args()

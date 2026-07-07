@@ -1,0 +1,51 @@
+## Details of DPV and References
+
+### DPV NO: 298 September 1985
+
+##### Family: Partitiviridae
+
+##### Genus: Alphacryptovirus
+
+##### Species: Radish yellow edge virus | Acronym: RYEV
+
+# Radish yellow edge virus
+
+**T. Natsuaki** *Faculty of Agriculture, Utsunomiya University, Minemachi, Utsunomiya 321, Japan*
+
+## Contents
+
+* [Introduction](#intro)
+* [Main Diseases](#diseases)
+* [Geographical Distribution](#geog)
+* [Host Range and Symptomatology](#host)
+* [Strains](#strains)
+* [Transmission by Vectors](#vectors)
+* [Transmission through Seed](#seed)
+* [Transmission by Grafting](#graft)
+* [Transmission by Dodder](#dodder)
+* [Serology](#serol)
+* [Nucleic Acid Hybridization](#hybrid)
+* [Relationships](#relate)
+* [Stability in Sap](#stab)
+* [Purification](#purif)
+* [Properties of Particles](#prop)
+* [Particle Structure](#struc)
+* [Particle Composition](#compo)
+* [Properties of Infective Nucleic Acid](#propna)
+* [Molecular Structure](#molstruc)
+* [Genome Properties](#genome)
+* [Satellite](#satel)
+* [Relations with Cells and Tissues](#cytopath)
+* [Ecology and Control](#ecol)
+* [Notes](#notes)
+* [Acknowledgements](#acks)
+* [Figures](#figs)
+* [References](#ref)
+
+### Introduction
+
+Described by
+[T. Natsuaki *et al.* 1979](#ref10),
+[1983*a*](#ref11).
+
+A virus with isometric particles *c.* 30 nm in diameter, containing double-stranded RNA. Host range confined to radish (*Raphanus sativus*). Transmitted through seed with high frequency but not by mechanical inoculation of sap. No vector known. ### Main Diseases Most Japanese radish (*Raphanus sativus*) cultivars show no apparent symptoms, but the presence of the virus in some cultivars is associated with yellowing of the leaf edges ([Fig. 1](#fig01); [T. Natsuaki *et al.,* 1979](#ref10)). No other naturally infected host has been reported. ### Geographical Distribution Common in Japan ([T. Natsuaki *et al.,* 1979](#ref10)). Also found in radish seed collected from Australia, China, England, Italy and USA (T. Natsuaki, S. Okuda & M. Teranaka, unpublished data; see Notes). ### Host Range and Symptomatology Host range confined to *R. sativus*. Not transmitted by mechanical inoculation of sap. The only known method of transmission is through seed. The virus was detected in F1 hybrid seedlings from crosses between infected *R. sativus* and virus-free Chinese cabbage (*Brassica campestris* ssp. *pekinensis*) but these seedlings did not show symptoms (T. Natsuaki, S. Okuda & M. Teranaka, unpublished data; see Transmission through Seed). *Diagnostic species*: No diagnostic species are known. *Propagation species: Raphanus sativus* is suitable for maintaining cultures and as a source of virus for purification. *Assay species*: No local lesion host is known. ### Strains No strains reported. ### Transmission by Vectors No vector is known. ### Transmission through Seed Transmitted through 80 to 100% of seed of naturally infected *Raphanus sativus* ([T. Natsuaki *et al.,* 1979](#ref10)). Pollen and ovule transmission occurred to 60-100% of seed in crosses between infected *R. sativus* and healthy Chinese cabbage (*Brassica campestris* ssp. *pekinensis*) (T. Natsuaki, S. Okuda & M. Teranaka, unpublished data). ### Serology The virus is a good immunogen. Antiserum was prepared by injecting a rabbit intramuscularly with purified virus. In double diffusion tests in agar gel, the antiserum (titre 1/128) reacted with purified virus preparations but not with crude sap from infected plants ([T. Natsuaki *et al.,* 1983*a*](#ref11)). Immunosorbent electron microscopy ([Milne & Lesemann, 1984](#ref8)) has been used for diagnosis. ### Relationships No serological relationship to other viruses has been reported. The virus resembles several others that have isometric particles, occur in low concentrations in plants that have few or no symptoms, and are transmitted through seed with high frequency, such as beet cryptic ([Kassanis *et al.,* 1977](#ref2)), vicia cryptic ([Kenten *et al.,* 1979](#ref3)), [carnation cryptic](/dpv/showdpv/?dpvno=315) ([Lisa *et al.,* 1981*a*](#ref5), [1981*b*](#ref6)), alfalfa cryptic, hop trefoil cryptic, [white clover cryptic](/dpv/showdpv/?dpvno=332), red clover cryptic, fescue cryptic, ryegrass cryptic ([Boccardo *et al.,* 1983](#ref1)), spinach temperate, carrot temperate, garland chrysanthemum temperate ([T. Natsuaki *et al.,* 1983*a*](#ref11), [1983*b*](#ref12)), white clover temperate and alfalfa temperate ([K. T. Natsuaki *et al.,* 1984](#ref9)) viruses. Furthermore the particles of some of these agents are known to contain segmented double-stranded RNA. The virus therefore seems to be a member of a new group. ### Stability in Sap Infectivity not investigated because no assay is available. Dry heat treatment of infected seeds for 10 days at 60°C or 3 days at 70°C did not eliminate the virus. ### Purification Homogenize frozen leaves of *Raphanus sativus* in 0.1 M phosphate buffer (2 ml/g tissue) containing 0.1% thioglycollic acid (pH 7.6) and extract through cheesecloth. Clarify with 0.5 vol. of a mixture (1:1) of *n*-butanol and chloroform; concentrate by three cycles of differential centrifugation and subject to sucrose density gradient centrifugation. Further purification is achieved by isopycnic banding in CsCl gradients. The yield is less than 1 mg virus particles per 3 kg leaf tissue ([T. Natsuaki *et al.,* 1983*a*](#ref11)). ### Properties of Particles In sucrose density gradient and analytical ultracentrifugation, purified virus preparations show one component ([T. Natsuaki *et al.,* 1979](#ref10), [1983*a*](#ref11)). Sedimentation coefficient (*s*°20,w): *c.* 118 S. *A*260/*A*280: 1.39 (not corrected for light- scattering). Buoyant density in CsCl (g/cm3): 1.37. ### Particle Structure Particles are isometric, *c.* 30 nm in diameter with a hexagonal profile ([Fig. 2](#fig02)). Detailed structure of the particles is not known. ### Particle Composition *Nucleic acid:* Purified virus particles contain double-stranded RNA, which separates into three species in polyacrylamide gel electrophoresis. Using the rice dwarf virus double-stranded RNA genome segments as standards ([Reddy *et al.,* 1974](#ref13)), the apparent M. Wt (x 106) are 1.30, 1.25 and 1.21 ([Fig. 3](#fig03)) under non-denaturing conditions with [Loening’s (1967)](#ref7) buffer. Some preparations contain minor amounts of segments with M. Wt (x 106) of 1.14 and 1.09. It is not known whether the different double-stranded RNA molecules are encapsidated in one particle or in separate ones. *Protein:* In SDS-polyacrylamide gels ([Laemmli, 1970](#ref4)), the protein from purified virus particles contains approximately equal amounts of two polypeptides of estimated M. Wt *c.* 63,000 and 61,000. ### Relations with Cells and Tissues In infected plants, virus particles are found only in companion cells and sieve tubes ([T. Natsuaki *et al.,* 1979](#ref10)). They are associated with cytoplasmic inclusion bodies (viroplasms; [Fig. 4](#fig04)) and also occur in small aggregates in the cytoplasm of phloem parenchyma cells. Small aggregates of particles are also found in xylem vessels. Vesicles containing fibrillar material resembling nucleic acid are present in the cytoplasm of phloem parenchyma cells ([Fig. 5](#fig05)). ### Notes Radish yellow edge virus is readily distinguished from other viruses infecting crucifers by its possession of double-stranded RNA. The virus cannot be eliminated from radish by meristem tip culture (T. Natsuaki, S. Okuda & M. Teranaka, unpublished data), which suggests that the virus is not a virus of contaminating fungi or mites. Many samples of radish seed carry double-stranded RNA viruses. In addition to radish yellow edge virus, there are several other such viruses that are serologically unrelated to it and differ in the M. Wt distribution of their double-stranded RNA molecules (T. Natsuaki, S. Okuda & M. Teranaka, unpublished data). ### Figures [![dpv figure](../images/Radish_yellow_edge_virus_d298f01.jpg)](/dpvfigs/d298f01.jpg) Naturally infected Japanese radish (*Raphanus sativus*) cv. Minowase showing yellowing of leaf edges. [![dpv figure](../images/Radish_yellow_edge_virus_d298f02.jpg)](/dpvfigs/d298f02.jpg) Virus particles in 2% phosphotungstate, pH 6. Bar represents 100 nm. [![dpv figure](../images/Radish_yellow_edge_virus_d298f03.jpg)](/dpvfigs/d298f03.jpg) Electrophoresis of double-stranded RNA in 5% polyacrylamide gel; rice dwarf virus (*left*), radish yellow edge virus (*right*). Extremities of the gel not shown. Stained with silver. [![dpv figure](../images/Radish_yellow_edge_virus_d298f04.jpg)](/dpvfigs/d298f04.jpg) Inclusion bodies (viroplasms: Vi) in cytoplasm of phloem parenchyma cell. Bar represents 1 µm. [![dpv figure](../images/Radish_yellow_edge_virus_d298f05.jpg)](/dpvfigs/d298f05.jpg) Viroplasm (Vi) and vesicles (Ve) in cytoplasm of phloem parenchyma cell. Bar represents 300 nm. ### References list for DPV: Radish yellow edge virus (298) 1. Boccardo, Lisa & Milne, in *Double-Stranded RNA Viruses,* p. 425, ed. R. W. Compans & D. H. L. Bishop, 750 pp., New York: Elsevier, 1983. 2. Kassanis, White & Woods, *Phytopath. Z.* **90**: 350, 1977. 3. Kenten, Cockbain & Woods, *Rep. Rothamsted Exp. Stn for 1978*: 220, 1979. 4. Laemmli, *Nature, Lond.* **227**: 680, 1970. 5. Lisa, Luisoni & Milne, *Ann. appl. Biol.* **98**: 431, 1981*a*. 6. Lisa, Boccardo & Milne, *Virology* **115**: 410, 1981*b*. 7. Loening, *Biochem. J.* **102**: 251, 1967. 8. Milne & Lesemann, in *Methods in Virology* Vol. 8, p. 85, ed. K.Maramorosch & H. Koprowski, 416 pp., New York: Academic Press, 1984. 9. K. T. Natsuaki, T. Natsuaki, Okuda, Teranaka, Yamashita & Doi, *J. agric. Sci. Tokyo NogyoDaigaku* **29**: 49, 1984. 10. T. Natsuaki, Yamashita, Doi & Yora, *Ann. phytopath. Soc. Japan* **45**: 313, 1979. 11. T. Natsuaki, Yamashita, Doi, Okuda & Teranaka, *Ann. phytopath. Soc. Japan* **49**: 592, 1983*a*. 12. T. Natsuaki, Yamashita, Doi, Okuda & Teranaka, *Ann. phytopath. Soc. Japan* **49**: 709, 1983*b*. 13. Reddy, Kimura & Black, *Virology* **60**: 293, 1974.

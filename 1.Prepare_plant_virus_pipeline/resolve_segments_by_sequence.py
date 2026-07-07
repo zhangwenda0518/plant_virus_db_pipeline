@@ -16,7 +16,7 @@
 Usage:
   python resolve_segments_by_sequence.py \
       --info All_Classified_Virus_Info.tsv \
-      --fasta plant.virus.fasta \
+      --fasta Plant_Virus_Full.fasta \
       --audit_dir segment_audit/ \
       -o segment_resolved/ --threads 20
 """
@@ -28,7 +28,7 @@ import polars as pl
 def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument("--info", required=True)
-    p.add_argument("--fasta", required=True, help="plant.virus.fasta 或 final.cluster.ref.fasta")
+    p.add_argument("--fasta", required=True, help="Plant_Virus_Full.fasta 或 Plant_Virus_Ref.fasta")
     p.add_argument("--audit_dir", default="segment_audit/", help="audit_segment_lengths 输出目录")
     p.add_argument("-o", "--out_dir", default="segment_resolved/")
     p.add_argument("-t", "--threads", type=int, default=10)

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Virus-Vector-Host</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;margin:0}
+nav{background:#1a5276;display:flex;align-items:center;padding:0 24px;height:52px}
+nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 18px;font-size:14px}
+nav a:hover{background:rgba(255,255,255,.15);color:#fff}
+nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:8px;padding:0}
+.hero{background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;padding:24px;margin-bottom:20px}
+.hero h1{margin:0;font-size:20px}.hero p{margin:4px 0 0;opacity:.85;font-size:13px}
+.main{max-width:1400px;margin:0 auto;padding:16px}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:20px}
+.stat{background:#fff;padding:14px;border-radius:8px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.stat .val{font-size:22px;font-weight:700;color:#1a5276}.stat .lbl{font-size:11px;color:#888}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.toolbar input,.toolbar select{padding:8px 14px;border:1px solid #ddd;border-radius:6px;font-size:13px;outline:none}
+.toolbar input{flex:1;min-width:200px}
+table{font-size:13px;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.04);width:100%}
+table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12px;border-bottom:1px solid #f0f0f0}
+.badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:600;margin:1px}
+.b-v{background:#e3f2fd;color:#1565c0}.b-i{background:#fce4ec;color:#c62828}.b-p{background:#e8f5e9;color:#2e7d32}
+.pagination{display:flex;gap:4px;justify-content:center;margin:16px 0}
+.pagination button{padding:5px 12px;border:1px solid #ddd;border-radius:4px;background:#fff;cursor:pointer;font-size:13px}
+.pagination button.active{background:#1a5276;color:#fff;border-color:#1a5276}
+.tab-btn{background:#fff;color:#1a5276;border:1px solid #1a5276;padding:6px 16px;border-radius:6px;font-size:13px;cursor:pointer;margin-right:6px}
+.tab-btn.active{background:#1a5276;color:#fff}
+.doi-link{color:#2e86c1;font-size:11px}
+.detail-row{display:none;background:#f8f9fa;padding:8px 12px;font-size:12px;color:#555}
+.toggle-link{color:#2e86c1;cursor:pointer;font-size:12px}
+.toggle-link:hover{text-decoration:underline}
+.vcard{background:#fff;border-radius:8px;padding:16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,0,0,.04);border-left:3px solid #2e86c1}
+.vcard:hover{box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.vcard .vname{font-size:15px;font-weight:600;color:#1a5276;margin-bottom:8px}
+.vcard .vrow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:4px}
+.vcard .vtag{padding:2px 8px;border-radius:3px;font-size:10px;font-weight:500}
+.vt-family{background:#e3f2fd;color:#1565c0}.vt-genus{background:#e0f2f1;color:#00695c}
+.vt-vector{background:#fce4ec;color:#c62828}.vt-host{background:#e8f5e9;color:#2e7d32}
+.vt-trans{background:#fff3e0;color:#e65100}.vt-path{background:#f3e5f5;color:#6a1b9a}
+.vt-source{background:#f5f5f5;color:#666;font-size:9px}
+.vcard .vdetail{font-size:12px;color:#555;margin-top:8px;line-height:1.6}
+.vcard .vdetail b{color:#333}
+.vcard .doi-link{font-size:11px;color:#2e86c1}
+</style></head><body>
+<nav><a class="brand" href="/vector/">Vectors</a><a href="/reference/">Reference DB</a><a href="/primers/">Primers</a><a href="/explorer/">Explorer</a><a href="/knowledge/">Knowledge</a></nav>
+<div class="hero"><h1>Virus-Vector-Host Database</h1><p>{{total}} records: {{families}} virus families, {{viruses}} viruses, {{vectors}} vectors, {{hosts}} host plants | WUR: {{wur_count}} references</p></div>
+<div class="main">
+
+<div style="margin-bottom:12px">
+<button class="tab-btn active" id="tb-vh" onclick="showTab('vh')">Vector-Host ({{total}})</button>
+<button class="tab-btn" id="tb-wur" onclick="showTab('wur')">WUR Database ({{wur_count}})</button>
+<button class="tab-btn" id="tb-int" onclick="showTab('int')">Integrated Cards</button>
+</div>
+
+<div id="tab-int" style="display:none">
+<div class="toolbar"><input id="iq" placeholder="Search virus name..." oninput="renderInt()"><select id="ips" onchange="renderInt()"><option value="20">20/page</option><option value="50">50/page</option><option value="100">100/page</option></select></div>
+<div id="int-cards"></div>
+<div class="pagination" id="int-pager"></div>
+</div>
+
+<div id="tab-vh">
+<div class="toolbar"><input id="q" placeholder="Search virus, vector, or host..." oninput="renderVH()"><select id="vf" onchange="renderVH()"><option value="">All Virus Families</option></select><select id="vo" onchange="renderVH()"><option value="">All Vector Orders</option></select><select id="ps" onchange="renderVH()"><option value="25">25/page</option><option value="50">50/page</option><option value="100">100/page</option></select></div>
+<table><thead><tr><th>Family</th><th>Genus</th><th>Virus Name</th><th>Vector</th><th>Host</th><th>Transmission</th><th>Detail</th></tr></thead><tbody id="vh-tbody"></tbody></table>
+<div class="pagination" id="vh-pager"></div></div>
+
+<div id="tab-wur" style="display:none">
+<div class="toolbar"><input id="wq" placeholder="Search virus name, family, genus..." oninput="renderWUR()"><select id="wps" onchange="renderWUR()"><option value="50">50/page</option><option value="100">100/page</option><option value="200">200/page</option></select></div>
+<table><thead><tr><th>#</th><th>Virus Name</th><th>Family</th><th>Genus</th><th>Vector</th><th>Transmission</th><th>References</th></tr></thead><tbody id="wur-tbody"></tbody></table>
+<div class="pagination" id="wur-pager"></div></div>
+
+</div>
+<script>
+var VH={{json_vh|safe}},WUR={{json_wur|safe}},page=1,wpage=1,ipage=1;
+// Merge VH and WUR by virus name
+var MERGED=[];
+(function mergeData(){
+ var wurIdx={};
+ WUR.forEach(function(r){if(r.name){wurIdx[r.name.toLowerCase()]=r}});
+ VH.forEach(function(r){
+  var name=r['Virus Name'];
+  if(!name)return;
+  var card={name:name, family:r['Virus Family'], genus:r['Virus Genus'],
+   vector:r['Vector'], vectorOrder:r['Vector Order'], vectorFamily:r['Vector Family'],
+   host:r['Virus Host'], transMode:r['Virus Transmission Mode']||'',
+   doiInsect:r['DOI for Validation Virus-Insect Relationships']||'',
+   doiTrans:r['DOI for Validation Virus Transmission Mode']||'',
+   lineage:r['Lineage']||'', sourceVH:true, sourceWUR:false};
+  var w=wurIdx[name.toLowerCase()];
+  if(w){
+   card.sourceWUR=true;
+   card.wurVector=w.vector_org||'';
+   card.wurTrans=w.transmission||'';
+   card.wurRefs=w.refs||'';
+   delete wurIdx[name.toLowerCase()];
+  }
+  MERGED.push(card);
+ });
+ // Add WUR-only viruses
+ Object.values(wurIdx).forEach(function(r){
+  MERGED.push({name:r.name||'', family:r.family||'', genus:r.genus||'',
+   vector:r.vector_org||'', wurVector:r.vector_org||'', wurTrans:r.transmission||'', wurRefs:r.refs||'',
+   sourceVH:false, sourceWUR:true});
+ });
+})();
+
+function esc(t){return String(t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function showTab(t){
+ document.getElementById('tab-vh').style.display=t==='vh'?'block':'none';
+ document.getElementById('tab-wur').style.display=t==='wur'?'block':'none';
+ document.getElementById('tab-int').style.display=t==='int'?'block':'none';
+ document.getElementById('tb-vh').className='tab-btn'+(t==='vh'?' active':'');
+ document.getElementById('tb-wur').className='tab-btn'+(t==='wur'?' active':'');
+ document.getElementById('tb-int').className='tab-btn'+(t==='int'?' active':'');
+}
+function toggleDetail(i){
+ var d=document.getElementById('d'+i),t=document.getElementById('t'+i);
+ if(d.style.display==='none'||!d.style.display){d.style.display='table-row';t.textContent='Hide'}
+ else{d.style.display='none';t.textContent='Detail'}
+}
+
+function renderVH(){
+ var d=VH.slice(),q=document.getElementById('q').value.toLowerCase();
+ if(q)d=d.filter(function(r){return Object.values(r).join(' ').toLowerCase().indexOf(q)>=0});
+ var vf=document.getElementById('vf').value;if(vf)d=d.filter(function(r){return r['Virus Family']===vf});
+ var vo=document.getElementById('vo').value;if(vo)d=d.filter(function(r){return r['Vector Order']===vo});
+ var ps=parseInt(document.getElementById('ps').value)||25;
+ var pages=Math.ceil(d.length/ps);if(page>pages)page=Math.max(1,pages);
+ var start=(page-1)*ps,chunk=d.slice(start,start+ps);
+ var h='';chunk.forEach(function(r,i){
+  var idx=start+i;
+  h+='<tr><td><span class=\"badge b-v\">'+esc(r['Virus Family'])+'</span></td><td>'+esc(r['Virus Genus'])+'</td><td><strong><a href=\"/virus/'+encodeURIComponent(r['Virus Name'])+'\" style=\"color:#1a5276\">'+esc(r['Virus Name'])+'</a></strong></td><td><span class=\"badge b-i\">'+esc(r['Vector'])+'</span></td><td><span class=\"badge b-p\">'+esc(r['Virus Host'])+'</span></td><td style=\"font-size:12px\">'+esc(r['Virus Transmission Mode']||'')+'</td><td><span class=\"toggle-link\" id=\"t'+idx+'\" onclick=\"toggleDetail('+idx+')\">Detail</span></td></tr>';
+  h+='<tr class=\"detail-row\" id=\"d'+idx+'\"><td colspan=\"7\"><b>Lineage:</b> '+esc(r['Lineage']||'')+'<br><b>DOI (Insect):</b> <a class=\"doi-link\" href=\"'+esc(r['DOI for Validation Virus-Insect Relationships']||'')+'\" target=\"_blank\">'+esc((r['DOI for Validation Virus-Insect Relationships']||'').substring(0,60))+'</a><br><b>DOI (Transmission):</b> <a class=\"doi-link\" href=\"'+esc(r['DOI for Validation Virus Transmission Mode']||'')+'\" target=\"_blank\">'+esc((r['DOI for Validation Virus Transmission Mode']||'').substring(0,60))+'</a><br><b>TaxIDs:</b> Virus='+esc(r['Virus TaxID']||'')+', Vector='+esc(r['Vector TaxID']||'')+', Host='+esc(r['Host TaxID']||'')+'</td></tr>';
+ });
+ document.getElementById('vh-tbody').innerHTML=h||'<tr><td colspan=7 style=\"text-align:center;padding:40px;color:#999\">No results</td></tr>';
+ var pg='';for(var i=1;i<=pages;i++)pg+='<button class=\"'+(i===page?'active':'')+'\" onclick=\"goPage('+i+')\">'+i+'</button>';
+ document.getElementById('vh-pager').innerHTML=pg
+}
+function goPage(p){page=p;renderVH();window.scrollTo(0,0)}
+function renderWUR(){
+ var d=WUR.slice(),q=document.getElementById('wq').value.toLowerCase();
+ if(q)d=d.filter(function(r){return ((r.name||'')+' '+(r.family||'')+' '+(r.genus||'')+' '+(r.vector_org||'')).toLowerCase().indexOf(q)>=0});
+ var ps=parseInt(document.getElementById('wps').value)||50;
+ var pages=Math.ceil(d.length/ps);if(wpage>pages)wpage=Math.max(1,pages);
+ var start=(wpage-1)*ps,chunk=d.slice(start,start+ps);
+ var h='';chunk.forEach(function(r,i){h+='<tr><td>'+(start+i+1)+'</td><td><strong>'+esc(r.name||'')+'</strong></td><td><span class=\"badge b-v\">'+esc(r.family||'')+'</span></td><td>'+esc(r.genus||'')+'</td><td><span class=\"badge b-i\">'+esc(r.vector_org||'')+'</span></td><td style=\"font-size:11px\">'+esc(r.transmission||'')+'</td><td style=\"font-size:11px;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap\" title=\"'+esc(r.refs||'').replace(/\"/g,'&quot;')+'\">'+esc((r.refs||'').substring(0,120))+'</td></tr>'});
+ document.getElementById('wur-tbody').innerHTML=h||'<tr><td colspan=7 style=\"text-align:center;padding:40px;color:#999\">No results</td></tr>';
+ var pg='';for(var i=1;i<=pages;i++)pg+='<button class=\"'+(i===wpage?'active':'')+'\" onclick=\"goWPage('+i+')\">'+i+'</button>';
+ document.getElementById('wur-pager').innerHTML=pg
+}
+function goWPage(p){wpage=p;renderWUR()}
+function renderInt(){
+ var d=MERGED.slice(),q=document.getElementById('iq').value.toLowerCase();
+ if(q)d=d.filter(function(r){return (r.name+' '+r.family+' '+r.genus+' '+r.vector+' '+r.host).toLowerCase().indexOf(q)>=0});
+ var ps=parseInt(document.getElementById('ips').value)||20;
+ var pages=Math.ceil(d.length/ps);if(ipage>pages)ipage=Math.max(1,pages);
+ var start=(ipage-1)*ps,chunk=d.slice(start,start+ps);
+ var h='';chunk.forEach(function(r){
+  var sources=[];
+  if(r.sourceVH)sources.push('<span class=\"vt-source\">Vector-Host</span>');
+  if(r.sourceWUR)sources.push('<span class=\"vt-source\">WUR</span>');
+  h+='<div class=\"vcard\"><div class=\"vname\"><a href=\"/virus/'+encodeURIComponent(r.name)+'\" style=\"color:#1a5276\">'+esc(r.name)+'</a> '+sources.join(' ')+'</div>';
+  h+='<div class=\"vrow\">';
+  if(r.family)h+='<span class=\"vtag vt-family\">'+esc(r.family)+'</span>';
+  if(r.genus)h+='<span class=\"vtag vt-genus\">'+esc(r.genus)+'</span>';
+  if(r.vector||r.wurVector)h+='<span class=\"vtag vt-vector\">&#128027; '+(esc(r.vector||r.wurVector))+'</span>';
+  if(r.host)h+='<span class=\"vtag vt-host\">&#127807; '+esc(r.host)+'</span>';
+  if(r.transMode)h+='<span class=\"vtag vt-trans\">'+esc(r.transMode)+'</span>';
+  if(r.wurTrans)h+='<span class=\"vtag vt-path\">'+esc(r.wurTrans)+'</span>';
+  h+='</div>';
+  if(r.wurRefs||r.doiInsect){
+   h+='<div class=\"vdetail\">';
+   if(r.wurRefs)h+='<b>Refs:</b> '+esc(r.wurRefs.substring(0,200))+'<br>';
+   if(r.doiInsect)h+='<b>DOI Insect:</b> <a class=\"doi-link\" href=\"'+esc(r.doiInsect)+'\" target=\"_blank\">'+esc(r.doiInsect.substring(0,60))+'</a><br>';
+   if(r.doiTrans)h+='<b>DOI Trans:</b> <a class=\"doi-link\" href=\"'+esc(r.doiTrans)+'\" target=\"_blank\">'+esc(r.doiTrans.substring(0,60))+'</a>';
+   h+='</div>';
+  }
+  h+='</div>';
+ });
+ document.getElementById('int-cards').innerHTML=h||'<div style=\"text-align:center;padding:40px;color:#999\">No results</div>';
+ var pg='';for(var i=1;i<=pages;i++)pg+='<button class=\"'+(i===ipage?'active':'')+'\" onclick=\"goIPage('+i+')\">'+i+'</button>';
+ document.getElementById('int-pager').innerHTML=pg
+}
+function goIPage(p){ipage=p;renderInt();window.scrollTo(0,0)}
+(function init(){
+ var vf=document.getElementById('vf'),vo=document.getElementById('vo');
+ var vfs=new Set(),vos=new Set();
+ VH.forEach(function(r){vfs.add(r['Virus Family']);vos.add(r['Vector Order'])});
+ [...vfs].sort().forEach(function(v){var o=document.createElement('option');o.value=v;o.textContent=v;vf.appendChild(o)});
+ [...vos].sort().forEach(function(v){var o=document.createElement('option');o.value=v;o.textContent=v;vo.appendChild(o)});
+ renderVH();renderWUR();
+})();
+</script></body></html>

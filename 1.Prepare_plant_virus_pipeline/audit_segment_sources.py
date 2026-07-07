@@ -4,7 +4,7 @@ Compare segmented virus detection sources: VMR vs TSV Segment column.
 
 Usage:
   python audit_segment_sources.py \
-      --tsv Plant_Virus_Info.full.tsv \
+      --tsv Plant_Virus_Full.Info.tsv \
       --vmr VMR_MSL41.tsv \
       --f2_result All_Classified_Virus_Info.tsv \
       -o audit_segment/
@@ -16,7 +16,7 @@ from collections import defaultdict
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--tsv", required=True, help="Plant_Virus_Info.full.tsv")
+    p.add_argument("--tsv", required=True, help="Plant_Virus_Full.Info.tsv")
     p.add_argument("--vmr", required=True, help="VMR_MSL41.tsv")
     p.add_argument("--f2_result", required=True, help="F2 All_Classified_Virus_Info.tsv")
     p.add_argument("-o", "--output_dir", default="audit_segment/")

@@ -8,7 +8,7 @@
 
 ```bash
 python build_virus_db.py \
-  --nuc-fasta final.cluster.ref.fasta \
+  --nuc-fasta Plant_Virus_Ref.fasta \
   --prot-fasta virus.gene_pep.fasta \
   --db-prefix ref.virus.build \
   --work-dir ./5.virus.ref.build.db \

@@ -20,7 +20,7 @@ Step 1: 解析本地参考基因组数据库，按物种拆分序列
 对接 pipeline 的标准输出格式:
   F-dedup/split_results/NonSegmented_Complete.fasta  + _Info.tsv
   F-dedup/split_results/Segmented_Complete.fasta      + _Info.tsv
-  G-cluster/final.cluster.ref.fasta                   + _Info.tsv
+  G-cluster/Plant_Virus_Ref.fasta                   + _Info.tsv
 """
 
 import argparse
@@ -86,8 +86,8 @@ def discover_local_db(db_root: Path) -> dict:
 
     # 后备: 单序列代表
     for fa_path, info_path, desc in [
-        (db_root / "G-cluster" / "final.cluster.ref.fasta",
-         db_root / "G-cluster" / "final.cluster.ref_info.tsv",
+        (db_root / "G-cluster" / "Plant_Virus_Ref.fasta",
+         db_root / "G-cluster" / "Plant_Virus_Ref.Info.tsv",
          "G-cluster/vclust"),
         (db_root / "F-dedup" / "plant.final.rmdup.fasta",
          db_root / "F-dedup" / "plant.final.rmdup_info.tsv",
@@ -108,8 +108,8 @@ def discover_local_db(db_root: Path) -> dict:
 
     # 全量元数据
     for mp in [
-        db_root / "E-metadata" / "Plant_Virus_Info.full.tsv",
-        db_root / "G-cluster" / "final.cluster.ref_info.tsv",
+        db_root / "E-metadata" / "Plant_Virus_Full.Info.tsv",
+        db_root / "G-cluster" / "Plant_Virus_Ref.Info.tsv",
     ]:
         if mp.exists():
             result["metadata"] = mp

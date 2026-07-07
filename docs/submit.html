@@ -52,7 +52,7 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
   <div class="success" id="success">Submitted! Redirecting to GitHub...</div>
   <div class="card">
     <h2>Submit Plant Virus Data</h2>
-    <p class="subtitle">New viruses → both <code>Plant_Virus_Info.full.tsv</code> &amp; <code>final.cluster.ref_info.tsv</code>. Known viruses → only <code>Plant_Virus_Info.full.tsv</code>. Submission creates a GitHub Issue for review.</p>
+    <p class="subtitle">New viruses → both <code>Plant_Virus_Full.Info.tsv</code> &amp; <code>Plant_Virus_Ref.Info.tsv</code>. Known viruses → only <code>Plant_Virus_Full.Info.tsv</code>. Submission creates a GitHub Issue for review.</p>
     <form id="submitForm" onsubmit="return doSubmit()">
       <div class="row">
         <div class="field">
@@ -140,8 +140,8 @@ function getFormData() {
 
 function buildBody(data) {
   const target = data.type === 'new' ?
-    '**Target files**: Both `Plant_Virus_Info.full.tsv` and `final.cluster.ref_info.tsv`' :
-    '**Target files**: `Plant_Virus_Info.full.tsv` only';
+    '**Target files**: Both `Plant_Virus_Full.Info.tsv` and `Plant_Virus_Ref.Info.tsv`' :
+    '**Target files**: `Plant_Virus_Full.Info.tsv` only';
   let body = `### Virus Submission\n\n${target}\n\n| Field | Value |\n|-------|-------|\n`;
   for (const [k, v] of Object.entries(data.fields)) {
     if (v) body += `| ${k} | ${v} |\n`;

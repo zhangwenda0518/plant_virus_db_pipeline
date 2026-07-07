@@ -145,7 +145,7 @@ function launch() {
 }
 
 (async function init() {
-  const resp = await fetch('data/final.cluster.ref_info.tsv');
+  const resp = await fetch('data/Plant_Virus_Ref.Info.tsv');
   if (!resp.ok) { document.getElementById('loading').textContent='Data not available'; return; }
   Papa.parse(await resp.text(), { header:true, skipEmptyLines:true, delimiter:'\t', complete(rs) {
     const data = rs.data;

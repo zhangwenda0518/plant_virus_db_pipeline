@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-为 Plant_Virus_Info.full.tsv 补充 Family 列。
+为 Plant_Virus_Full.Info.tsv 补充 Family 列。
 从 AllNuclMetadata.csv 按 Accession 匹配提取 Family，直接追加到现有 TSV。
 只读取目标 Accession 的 Family，不会加载全量数据到内存。
 
 用法:
-  python add_family_column.py -i Plant_Virus_Info.full.tsv -m AllNuclMetadata.csv
-  python add_family_column.py -i Plant_Virus_Info.full.tsv -m AllNuclMetadata.csv -o output.tsv
+  python add_family_column.py -i Plant_Virus_Full.Info.tsv -m AllNuclMetadata.csv
+  python add_family_column.py -i Plant_Virus_Full.Info.tsv -m AllNuclMetadata.csv -o output.tsv
 """
 
 import argparse
@@ -16,7 +16,7 @@ import polars as pl
 
 def main():
     parser = argparse.ArgumentParser(description="为 Plant_Virus_Info 补充 Family 列")
-    parser.add_argument("-i", "--input", required=True, help="Plant_Virus_Info.full.tsv")
+    parser.add_argument("-i", "--input", required=True, help="Plant_Virus_Full.Info.tsv")
     parser.add_argument("-m", "--meta_csv", required=True, help="AllNuclMetadata.csv")
     parser.add_argument("-o", "--output", default="", help="输出文件 (默认覆盖原文件)")
     args = parser.parse_args()

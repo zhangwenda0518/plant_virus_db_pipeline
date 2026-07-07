@@ -1,0 +1,47 @@
+## Details of DPV and References
+
+### DPV NO: 264 July 1983
+
+##### Family: Alphaflexiviridae
+
+##### Genus: Potexvirus
+
+##### Species: Foxtail mosaic virus | Acronym: FoMV
+
+# Foxtail mosaic virus
+
+**Margaret N. Short** *John Innes Institute, Colney Lane, Norwich NR4 7UH, England*
+
+## Contents
+
+* [Introduction](#intro)
+* [Main Diseases](#diseases)
+* [Geographical Distribution](#geog)
+* [Host Range and Symptomatology](#host)
+* [Strains](#strains)
+* [Transmission by Vectors](#vectors)
+* [Transmission through Seed](#seed)
+* [Transmission by Grafting](#graft)
+* [Transmission by Dodder](#dodder)
+* [Serology](#serol)
+* [Nucleic Acid Hybridization](#hybrid)
+* [Relationships](#relate)
+* [Stability in Sap](#stab)
+* [Purification](#purif)
+* [Properties of Particles](#prop)
+* [Particle Structure](#struc)
+* [Particle Composition](#compo)
+* [Properties of Infective Nucleic Acid](#propna)
+* [Molecular Structure](#molstruc)
+* [Genome Properties](#genome)
+* [Satellite](#satel)
+* [Relations with Cells and Tissues](#cytopath)
+* [Ecology and Control](#ecol)
+* [Notes](#notes)
+* [Acknowledgements](#acks)
+* [Figures](#figs)
+* [References](#ref)
+
+### Introduction
+
+Described by [Paulsen & Sill (1969)](#ref3) and [Paulsen & Niblett (1977)](#ref2). A virus with slightly flexuous filamentous particles with a modal length of *c.* 500 nm, containing one coat protein species and one molecule of single-stranded RNA. Experimental host range fairly broad, many species being infected symptomlessly. No insect vector known. Reported only from the USA where the diseases caused are of no economic importance. ### Main Diseases Systemic mosaic in *Setaria viridis* and *S. italica* ([Paulsen & Niblett, 1977](#ref2)). ### Geographical Distribution Reported only from USA. ### Host Range and Symptomatology Transmitted by manual inoculation to 56 out of 68 species of Gramineae (Paulsen & Niblett, 1977) and to 41 species in 11 dicotyledonous families ([Paulsen & Niblett, 1977](#ref2); [Short, 1982](#ref6)). In many species infection is symptomless and/or confined to inoculated leaves, but the virus induces systemic mosaic in wheat, oats and barley ([Fig. 1](#fig01)). *Diagnostic species: Chenopodium amaranticolor.* Pin-point necrotic local lesions ([Fig. 2](#fig02)) followed by systemic necrotic etch and then mosaic. : *Gomphrena globosa.* Necrotic local lesions; no systemic infection. : *Nicotiana clevelandii.* Necrotic and chlorotic local lesions followed by systemic mosaic. : *Pisum sativum* cv. Meteor. Necrotic local spots and rings ([Fig. 3](#fig03)); no systemic infection. : *Tetragonia expansa.* Necrotic local lesions followed by systemic mosaic. *Propagation species*: Barley is a long-lived propagation host and a good source of virus for purification. *Assay species: Chenopodium amaranticolor* is a suitable host for local lesion assays. ### Transmission by Vectors No reports. ### Transmission through Seed [Paulsen & Niblett (1977)](#ref2) reported 2% seed transmission in *Briza maxima* and 1% in *Avena sativa*. ### Transmission by Dodder The virus was not transmitted by *Cuscuta campestris* parasitic on *Chenopodium quinoa, Hordeum vulgare* or *Nicotiana clevelandii;* no virus was detected by back-inoculation from the dodder vines ([Short, 1982](#ref6)). ### Serology The virus is strongly immunogenic: positive reactions were observed in ring interface precipitin tests with antiserum diluted to 1/1024 ([Short, 1981](#ref5)). ### Relationships In ring interface precipitin tests, antiserum to foxtail mosaic virus reacted with purified preparations of two [potexviruses](/dpv/showdpv/?dpvno=200), [narcissus mosaic](/dpv/showdpv/?dpvno=045) and [viola mottle](/dpv/showdpv/?dpvno=247) viruses, but not with preparations of five others: [cactus X](/dpv/showdpv/?dpvno=058) (barrel cactus strain), [clover yellow mosaic](/dpv/showdpv/?dpvno=111), [papaya mosaic](/dpv/showdpv/?dpvno=056), [potato X](/dpv/showdpv/?dpvno=354) or [white clover mosaic](/dpv/showdpv/?dpvno=041) viruses ([Short, 1981](#ref5)). ### Stability in Sap Relatively stable in extracted sap, with a dilution end-point of 10-6 to 10-7 and a thermal inactivation point of 68°-70°C when heated for 10 min. Virus remained infective for 46 days in undiluted sap at room temperature, and for 105 days in buffered extract ([Paulsen & Niblett, 1977](#ref2)). ### Purification Purified virus is readily prepared by the method devised by [Bancroft, Abou Haidar & Erickson (1979)](#ref1) for [clover yellow mosaic](/dpv/showdpv/?dpvno=111) virus. Grind fresh or frozen leaves of *Hordeum vulgare* in 0.02 M sodium borate buffer, 0.01 M fresh ascorbic acid, pH 8.2, and clarify the extract with 0.5% Triton X-100. Ultracentrifuge the virus through 5 ml ‘cushions’ of 30% sucrose in 0.01 M Tris-HCl, 0.001 M EDTA, pH 8.0. Resuspend the virus in the same buffer and purify further by differential centrifugation. Yields of 0.5 mg virus per gram leaf tissue were obtained from selected fresh leaves of *Hordeum vulgare.* ### Properties of Particles In linear-log sucrose gradients, purified virus particles sediment as two u.v.-absorbing, infective components ([Paulsen & Niblett, 1977](#ref2)) with sedimentation coefficients of 122 S and 144 S and *A*260/*A*280 = 1.2. Both components contain a single RNA species with a sedimentation coefficient of 32 S which suggests that the 144 S component is a dimer of the 122 S component. ### Particle Structure Slightly flexuous filamentous particles with helical symmetry and a modal length of *c.* 500 nm when negatively stained with potassium phosphotungstate, pH 6.4 ([Fig. 4](#fig04)). From optical diffraction studies, [Richardson, Tollin & Bancroft (1981)](#ref4) calculated a helix pitch of 3.5 nm, with 8.8 subunits per turn; the structural parameters for foxtail mosaic virus were typical of members of the [potexvirus group](/dpv/showdpv/?dpvno=200). ### Particle Composition *Nucleic acid:* Single-stranded RNA with a M. Wt of about 2.03-2.24 x 106 ([Paulsen & Niblett, 1977](#ref2)), estimated by sedimentation with RNA standards in linear-log sucrose density gradients in 0.02 M phosphate buffer, pH 6.25. The RNA comprises about 7% of the particle weight, calculated from the data on particle structure and the RNA and coat protein subunit M. Wts. *Protein:* Coat protein can be prepared by disrupting the virus in 1 M HCl. A subunit of M. Wt 21,171 was calculated from the amino acid composition and two-dimensional peptide map. The subunit polypeptide chain has 192 amino acid residues, comprising 13 lys, 1 his, 9 arg, 2 trp, 25 asp, 16 thr, 9 ser, 20 glu, 14 pro, 7 gly, 27 ala, 2 cys, 11 val, 3 met, 7 ile, 11 leu, 7 tyr, 8 phe ([Short, 1981](#ref5)). ### Relations with Cells and Tissues Large clusters of parallel particles occur in the cytoplasm of infected cells of *Nicotiana clevelandii* ([Fig. 5](#fig05)). No inclusion bodies or other virus-induced structures have been observed (K. A. Plaskitt, unpublished data). ### Notes At least 10 other viruses are readily mechanically transmissible to barley. However, these have either isometric particles (*e.g.* [brome mosaic](/dpv/showdpv/?dpvno=180), [cocksfoot mild mosaic](/dpv/showdpv/?dpvno=107), [cocksfoot mottle](/dpv/showdpv/?dpvno=023) and [panicum mosaic](/dpv/showdpv/?dpvno=177) viruses), flexuous filamentous particles 700 nm or longer (*e.g.* [Guinea grass mosaic](/dpv/showdpv/?dpvno=190), [sugarcane mosaic](/dpv/showdpv/?dpvno=342) and [wheat streak mosaic](/dpv/showdpv/?dpvno=048) viruses), or rigid rod-shaped particles (*e.g.* [barley stripe mosaic](/dpv/showdpv/?dpvno=344), poa semi-latent and [soil-borne wheat mosaic](/dpv/showdpv/?dpvno=077) viruses). Furthermore none of these viruses has been reported to occur naturally in *Setaria* spp., nor to infect *Pisum sativum* or *Nicotiana clevelandii,* and they can therefore easily be distinguished from foxtail mosaic virus by electron microscopy and host range studies. Foxtail mosaic virus has not been reported to occur naturally in barley. ### Figures [![dpv figure](../images/Foxtail_mosaic_virus_d264f01.jpg)](/dpvfigs/d264f01.jpg) Systemically infected leaves of *Hordeum vulgare* cv. Maris Otter. [![dpv figure](../images/Foxtail_mosaic_virus_d264f02.jpg)](/dpvfigs/d264f02.jpg) Necrotic local lesions in *Chenopodium amaranticolor.* [![dpv figure](../images/Foxtail_mosaic_virus_d264f03.jpg)](/dpvfigs/d264f03.jpg) Necrotic local spots and rings in *Pisum sativum* cv. Meteor. [![dpv figure](../images/Foxtail_mosaic_virus_d264f04.jpg)](/dpvfigs/d264f04.jpg) Electron micrograph of virus particles in a leaf-dip of *Nicotiana clevelandii,* negatively stained in potassium phosphotungstate (courtesy G. J. Hills). Bar represents 100 nm. [![dpv figure](../images/Foxtail_mosaic_virus_d264f05.jpg)](/dpvfigs/d264f05.jpg) Electron micrograph of a leaf-section of *Nicotiana clevelandii* containing clusters of virus particles, stained in uranyl acetate (courtesy K. A. Plaskitt). Bar represents 500 nm. ### References list for DPV: Foxtail mosaic virus (264) 1. Bancroft, Abou Haidar & Erickson, *Virology* **98**: 121, 1979. 2. Paulsen & Niblett, *Phytopathology* **67**: 1346, 1977. 3. Paulsen & Sill, *Phytopathology* **59**: 1942, 1969. 4. Richardson, Tollin & Bancroft, *Virology* **112**: 34, 1981. 5. Short, *Rep. John Innes Inst. for 1980*: 126, 1981. 6. Short, *Ph.D. Thesis,* University of East Anglia, 1982.

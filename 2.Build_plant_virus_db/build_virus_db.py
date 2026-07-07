@@ -652,7 +652,7 @@ def parse_args() -> argparse.Namespace:
 【使用示例】
 1. 仅构建核酸数据库 (指定特定库，并使用本地已有的 Taxonomy 目录)：
    python build_virus_db.py \\
-     --nuc-fasta final.cluster.ref.fasta \\
+     --nuc-fasta Plant_Virus_Ref.fasta \\
      --db-prefix virus.ref \\
      --tax-dir ~/database/taxonomy/ \\
      --databases metabuli centrifuger kraken2

@@ -344,7 +344,7 @@ else
 fi
 
 # D3: 合并 (使用绝对路径, 避免 cd 失败)
-MERGED_FASTA="$PLANT_DIR/D-sequences/plant.virus.fasta"
+MERGED_FASTA="$PLANT_DIR/D-sequences/Plant_Virus_Full.fasta"
 MERGED_IDS="$PLANT_DIR/D-sequences/plant.virus.id"
 EXTRACTED_FA="$PLANT_DIR/D-sequences/Plant_Extracted_Sequences.fasta"
 DOWNLOADED_FA="$PLANT_DIR/D-sequences/Downloaded_Plant_Viruses.fasta"
@@ -385,7 +385,7 @@ run "E2-获取拓扑结构" "$PLANT_DIR/E-metadata/Plant_Virus_Topology_Molecule
 # E3/E4 输出为独立文件, 串联时用临时产物传递
 INFO_TSV="$PLANT_DIR/E-metadata/Plant_Virus_Info.tsv"
 INFO_TOPO_TSV="$PLANT_DIR/E-metadata/Plant_Virus_Info.topo.tsv"
-INFO_FULL_TSV="$PLANT_DIR/E-metadata/Plant_Virus_Info.full.tsv"
+INFO_FULL_TSV="$PLANT_DIR/E-metadata/Plant_Virus_Full.Info.tsv"
 
 run "E3-合并拓扑信息" "$INFO_TOPO_TSV" \
     python "$BIN_DIR/E3_merge_topology.py" \
@@ -424,7 +424,7 @@ run "F2-节段分类拆分" "$PLANT_DIR/F-dedup/split_results/All_Classified_Vir
     python "$BIN_DIR/F2_classify_segmented.py" \
         -i "$INFO_TSV" \
         --vmr "$VHOST_DIR/B-ictv/VMR_MSL41.tsv" \
-        -f "$PLANT_DIR/D-sequences/plant.virus.fasta" \
+        -f "$PLANT_DIR/D-sequences/Plant_Virus_Full.fasta" \
         -o "$PLANT_DIR/F-dedup/split_results" \
         --taxid-tsv "$TAXID_DB"
 
@@ -497,7 +497,7 @@ run "G1b-添加序列长度" "$PLANT_DIR/G-cluster/seqid2taxid_len.map" \
         -o "$PLANT_DIR/G-cluster/seqid2taxid_len.map"
 
 # vclust 会在 cwd 产生中间文件, 在 tmp.vclust 里运行并清理
-G2_OUT="$PLANT_DIR/G-cluster/final.cluster.ref.fasta"
+G2_OUT="$PLANT_DIR/G-cluster/Plant_Virus_Ref.fasta"
 if [ -s "$G2_OUT" ]; then
     log "⊙ 跳过 [G2-vclust聚类] — 产物已存在"
 else
@@ -511,9 +511,9 @@ else
         --map "$PLANT_DIR/G-cluster/seqid2taxid.map" \
         --out_tsv "$PLANT_DIR/G-cluster/clusters_with_LCA.tsv" \
         --out_plot "$PLANT_DIR/G-cluster/clusters.LCA_Distribution.png" \
-        --out_fasta "$PLANT_DIR/G-cluster/final.cluster.ref.fasta" \
+        --out_fasta "$PLANT_DIR/G-cluster/Plant_Virus_Ref.fasta" \
         --out_taxid_clusters "$PLANT_DIR/G-cluster/clusters.taxid.tsv" \
-        --out_info "$PLANT_DIR/G-cluster/final.cluster.ref_info.tsv" \
+        --out_info "$PLANT_DIR/G-cluster/Plant_Virus_Ref.Info.tsv" \
         --out_cat_seg_conflict "$PLANT_DIR/G-cluster/category_segment_conflict.tsv" \
         --out_replacement_log "$PLANT_DIR/G-cluster/refseq_replacement_log.tsv" \
     ) >> >(tee -a "$G2_LOG") 2>> >(tee -a "$G2_LOG" >&2)
@@ -526,9 +526,9 @@ run "G3-去冗余评估" "$PLANT_DIR/G-cluster/Dereplication_Global_Summary.tsv"
     python "$BIN_DIR/G3_derep_evaluate.py" \
         --info "$PLANT_DIR/F-dedup/split_results/All_Classified_Virus_Info.tsv" \
         --fasta_files \
-            "$PLANT_DIR/D-sequences/plant.virus.fasta" \
+            "$PLANT_DIR/D-sequences/Plant_Virus_Full.fasta" \
             "$PLANT_DIR/F-dedup/plant.final.rmdup.fasta" \
-            "$PLANT_DIR/G-cluster/final.cluster.ref.fasta" \
+            "$PLANT_DIR/G-cluster/Plant_Virus_Ref.fasta" \
             "$PLANT_DIR/F-dedup/Final_DB_Build/nonsegmented_mmseqs_0.98.fasta" \
             "$PLANT_DIR/F-dedup/Final_DB_Build/segmented_mmseqs_0.98.fasta" \
         -o "$PLANT_DIR/G-cluster"
@@ -538,7 +538,7 @@ GENE_DIR="$PLANT_DIR/H-virus_genes"
 mkdir -p "$GENE_DIR"
 
 run "G4a-基因预测" "$GENE_DIR/virus.gene.gff3" \
-    pyrodigal-rv -i "$PLANT_DIR/G-cluster/final.cluster.ref.fasta" \
+    pyrodigal-rv -i "$PLANT_DIR/G-cluster/Plant_Virus_Ref.fasta" \
         -a "$GENE_DIR/virus.gene_pep.fasta" \
         -d "$GENE_DIR/virus.gene_nuc.fasta" \
         -o "$GENE_DIR/virus.gene.gff3" -j 120
@@ -565,21 +565,21 @@ done
 REF_DIR="$WORK_DIR/3.final-ref-virus.db"
 mkdir -p "$REF_DIR"
 
-if [ -f "$PLANT_DIR/G-cluster/final.cluster.ref.fasta" ]; then
-    ln -sf "$PLANT_DIR/G-cluster/final.cluster.ref.fasta" "$REF_DIR/final.cluster.ref.fasta"
-    log "✓ 软链接: final.cluster.ref.fasta"
+if [ -f "$PLANT_DIR/G-cluster/Plant_Virus_Ref.fasta" ]; then
+    ln -sf "$PLANT_DIR/G-cluster/Plant_Virus_Ref.fasta" "$REF_DIR/Plant_Virus_Ref.fasta"
+    log "✓ 软链接: Plant_Virus_Ref.fasta"
 fi
-if [ -f "$PLANT_DIR/G-cluster/final.cluster.ref_info.tsv" ]; then
-    ln -sf "$PLANT_DIR/G-cluster/final.cluster.ref_info.tsv" "$REF_DIR/final.cluster.ref_info.tsv"
-    log "✓ 软链接: final.cluster.ref_info.tsv"
+if [ -f "$PLANT_DIR/G-cluster/Plant_Virus_Ref.Info.tsv" ]; then
+    ln -sf "$PLANT_DIR/G-cluster/Plant_Virus_Ref.Info.tsv" "$REF_DIR/Plant_Virus_Ref.Info.tsv"
+    log "✓ 软链接: Plant_Virus_Ref.Info.tsv"
 fi
-if [ -f "$PLANT_DIR/E-metadata/Plant_Virus_Info.full.tsv" ]; then
-    ln -sf "$PLANT_DIR/E-metadata/Plant_Virus_Info.full.tsv" "$REF_DIR/Plant_Virus_Info.full.tsv"
-    log "✓ 软链接: Plant_Virus_Info.full.tsv"
+if [ -f "$PLANT_DIR/E-metadata/Plant_Virus_Full.Info.tsv" ]; then
+    ln -sf "$PLANT_DIR/E-metadata/Plant_Virus_Full.Info.tsv" "$REF_DIR/Plant_Virus_Full.Info.tsv"
+    log "✓ 软链接: Plant_Virus_Full.Info.tsv"
 fi
-if [ -f "$PLANT_DIR/D-sequences/plant.virus.fasta" ]; then
-    ln -sf "$PLANT_DIR/D-sequences/plant.virus.fasta" "$REF_DIR/plant.virus.fasta"
-    log "✓ 软链接: plant.virus.fasta"
+if [ -f "$PLANT_DIR/D-sequences/Plant_Virus_Full.fasta" ]; then
+    ln -sf "$PLANT_DIR/D-sequences/Plant_Virus_Full.fasta" "$REF_DIR/Plant_Virus_Full.fasta"
+    log "✓ 软链接: Plant_Virus_Full.fasta"
 fi
 if [ -f "$PLANT_DIR/H-virus_genes/virus_genes_cov.tsv" ]; then
     ln -sf "$PLANT_DIR/H-virus_genes/virus_genes_cov.tsv" "$REF_DIR/virus_genes_cov.tsv"
@@ -607,7 +607,7 @@ echo "  参考基因组:    $PLANT_DIR/"
 echo "  最终参考库:    $WORK_DIR/3.final-ref-virus.db/"
 echo "  宿主分类研究:  $WORK_DIR/4.host_classify/"
 echo "  下游数据库:    $WORK_DIR/5.virus.ref.build.db/"
-echo "  序列:          $PLANT_DIR/G-cluster/final.cluster.ref.fasta"
+echo "  序列:          $PLANT_DIR/G-cluster/Plant_Virus_Ref.fasta"
 echo "  覆盖度:        $PLANT_DIR/H-virus_genes/virus_genes_cov.tsv"
 echo "  LCA 分布:      $PLANT_DIR/G-cluster/clusters.LCA_Distribution.png"
 echo "  日志目录:      $LOG_DIR/"

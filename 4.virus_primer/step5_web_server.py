@@ -1672,7 +1672,7 @@ def create_app():
 - 评分: {rec_stats}
 
 注意：
-- 探索器加载了完整的plant.virus.fasta (377MB)用于序列比对
+- 探索器加载了完整的Plant_Virus_Full.fasta (377MB)用于序列比对
 - 如需要具体引物信息，请引导用户到Primers数据库(/primers/)
 - 如需要查看原始数据表，请引导到Reference DB(/reference/)
 - 保持回复简洁，200字以内"""

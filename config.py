@@ -24,17 +24,17 @@ DATA_DIR = _env_or("DATA_DIR", os.path.join(PROJECT_ROOT, "docs", "data"))
 # ── 流水线产出文件 ──────────────────────────────────────
 PIPELINE_OUTPUTS = {
     # 最终聚类参考序列 (非冗余代表集, ~8,465 条)
-    "cluster_fasta":   _env_or("CLUSTER_FASTA",   os.path.join(DATA_DIR, "final.cluster.ref.fasta")),
+    "cluster_fasta":   _env_or("CLUSTER_FASTA",   os.path.join(DATA_DIR, "Plant_Virus_Ref.fasta")),
     # 最终聚类参考元数据
-    "cluster_info":    _env_or("CLUSTER_INFO",    os.path.join(DATA_DIR, "final.cluster.ref_info.tsv")),
+    "cluster_info":    _env_or("CLUSTER_INFO",    os.path.join(DATA_DIR, "Plant_Virus_Ref.Info.tsv")),
     # 全量植物病毒元数据 (~199k 条)
-    "full_tsv":        _env_or("FULL_TSV",        os.path.join(DATA_DIR, "Plant_Virus_Info.full.tsv")),
+    "full_tsv":        _env_or("FULL_TSV",        os.path.join(DATA_DIR, "Plant_Virus_Full.Info.tsv")),
     # 全量植物病毒序列 (~199k 条, 377MB)
-    "full_fasta":      _env_or("FULL_FASTA",      os.path.join(DATA_DIR, "plant.virus.fasta")),
+    "full_fasta":      _env_or("FULL_FASTA",      os.path.join(DATA_DIR, "Plant_Virus_Full.fasta")),
     # 最终完整参考序列 (较新的完整聚类)
-    "complete_fasta":  _env_or("COMPLETE_FASTA",  os.path.join(DATA_DIR, "final.complete_ref.fasta")),
+    "complete_fasta":  _env_or("COMPLETE_FASTA",  os.path.join(DATA_DIR, "Plant_Virus.complete_ref.fasta")),
     # 最终完整参考元数据
-    "complete_info":   _env_or("COMPLETE_INFO",   os.path.join(DATA_DIR, "final.complete_ref_info.tsv")),
+    "complete_info":   _env_or("COMPLETE_INFO",   os.path.join(DATA_DIR, "Plant_Virus.complete_ref_info.tsv")),
     # 基因覆盖度表
     "gene_cov":        _env_or("GENE_COV",        os.path.join(DATA_DIR, "virus_genes_cov.tsv")),
     # 完整 accession 列表

@@ -2,7 +2,7 @@
 """
 批量引物设计流水线 — PCR + qPCR + 简并引物
 ============================================
-为 final.cluster.ref.fasta 中每个病毒物种设计:
+为 Plant_Virus_Ref.fasta 中每个病毒物种设计:
   - PCR 引物 (AutoPVPrimer) — 覆盖保守区, 3-5 对/病毒
   - 简并引物 (varVAMP qPCR mode) — 高变异病毒，覆盖株系间差异
   - qPCR 引物 (AutoPVPrimer) — 短扩增子 100-250bp
@@ -14,8 +14,8 @@
 
 Usage:
   python batch_primer_pipeline.py \
-      --fasta final.cluster.ref.fasta \
-      --info final.cluster.ref_info.tsv \
+      --fasta Plant_Virus_Ref.fasta \
+      --info Plant_Virus_Ref.Info.tsv \
       -o primers/ --threads 40
 """
 
@@ -32,8 +32,8 @@ import json
 
 def parse_args():
     p = argparse.ArgumentParser(description="批量病毒引物设计流水线")
-    p.add_argument("--fasta", required=True, help="final.cluster.ref.fasta")
-    p.add_argument("--info", required=True, help="final.cluster.ref_info.tsv")
+    p.add_argument("--fasta", required=True, help="Plant_Virus_Ref.fasta")
+    p.add_argument("--info", required=True, help="Plant_Virus_Ref.Info.tsv")
     p.add_argument("-o", "--output", default="primers/", help="输出目录")
     p.add_argument("-t", "--threads", default=10, type=int, help="并行进程数")
     p.add_argument("--num-pcr-primers", default=5, type=int, help="每病毒PCR引物对数")

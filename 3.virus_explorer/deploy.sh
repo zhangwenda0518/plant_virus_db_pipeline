@@ -42,13 +42,13 @@ cd /opt/virus_explorer
 # 检查数据文件
 DATA_DIR=/opt/virus_explorer/data
 mkdir -p "$DATA_DIR"
-if [ ! -f "$DATA_DIR/Plant_Virus_Info.full.tsv" ]; then
-    echo -e "  ${YELLOW}⚠${NC} 数据文件未找到: $DATA_DIR/Plant_Virus_Info.full.tsv"
+if [ ! -f "$DATA_DIR/Plant_Virus_Full.Info.tsv" ]; then
+    echo -e "  ${YELLOW}⚠${NC} 数据文件未找到: $DATA_DIR/Plant_Virus_Full.Info.tsv"
     echo -e "  ${YELLOW}⚠${NC} 请从本地 scp 上传数据文件到 $DATA_DIR/"
     echo ""
     echo "  本地执行:"
-    echo "    scp docs/data/Plant_Virus_Info.full.tsv root@39.106.101.94:$DATA_DIR/"
-    echo "    scp docs/data/plant.virus.fasta root@39.106.101.94:$DATA_DIR/"
+    echo "    scp docs/data/Plant_Virus_Full.Info.tsv root@39.106.101.94:$DATA_DIR/"
+    echo "    scp docs/data/Plant_Virus_Full.fasta root@39.106.101.94:$DATA_DIR/"
     echo ""
     read -p "  数据文件已上传？按 Enter 继续，Ctrl+C 取消..."
 fi
