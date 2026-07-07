@@ -249,19 +249,20 @@ async function renderResult(data) {
     h += '<h4 style="font-size:14px;color:#1a5276;margin:16px 0 8px">病毒序列分类结果 <span style="font-size:11px;color:#888;font-weight:400">(被分类为病毒的 contig)</span></h4>';
     h += '<div style="font-size:12px;color:#555;margin-bottom:8px">共 <b>' + (vs.total_contigs || 0) + '</b> 条 contig，其中 <b style="color:#27ae60">' + (vs.virus_contigs || 0) + '</b> 条被分类为病毒</div>';
     if (vc.length) {
-      h += '<div style="max-height:360px;overflow:auto;border:1px solid #eee;border-radius:4px">';
-      h += '<table class="tb"><thead><tr><th>Contig</th><th>Taxon</th><th>Rank</th><th>TaxID</th><th>Length</th><th>Score</th></tr></thead><tbody>';
+      h += '<div style="max-height:380px;overflow:auto;border:1px solid #eee;border-radius:4px">';
+      h += '<table class="tb"><thead><tr><th>Contig</th><th>域<br><span style="font-weight:400;color:#999">Realm</span></th><th>界<br><span style="font-weight:400;color:#999">Kingdom</span></th><th>门<br><span style="font-weight:400;color:#999">Phylum</span></th><th>纲<br><span style="font-weight:400;color:#999">Class</span></th><th>目<br><span style="font-weight:400;color:#999">Order</span></th><th>科<br><span style="font-weight:400;color:#999">Family</span></th><th>属<br><span style="font-weight:400;color:#999">Genus</span></th><th>种<br><span style="font-weight:400;color:#999">Species</span></th><th>Length</th></tr></thead><tbody>';
+      var RK = ['realm','kingdom','phylum','class','order','family','genus','species'];
       vc.forEach(function(r) {
-        h += '<tr>'
-           + '<td style="font-family:monospace;font-size:11px;word-break:break-all">' + escapeHtml(r.contig) + '</td>'
-           + '<td style="font-weight:600">' + escapeHtml(r.taxon) + '</td>'
-           + '<td style="color:#1a5276">' + escapeHtml(r.rank) + '</td>'
-           + '<td style="color:#888">' + escapeHtml(r.taxid) + '</td>'
-           + '<td>' + escapeHtml(r.length) + '</td>'
-           + '<td>' + escapeHtml(r.score) + '</td>'
-           + '</tr>';
+        h += '<tr><td style="font-family:monospace;font-size:11px;word-break:break-all">' + escapeHtml(r.contig) + '</td>';
+        RK.forEach(function(k) {
+          var v = r[k] || '';
+          var strong = (k === 'genus' || k === 'species') ? ';font-weight:600' : '';
+          h += '<td style="white-space:nowrap' + strong + '">' + (v ? escapeHtml(v) : '<span style="color:#ccc">-</span>') + '</td>';
+        });
+        h += '<td>' + escapeHtml(r.length) + '</td></tr>';
       });
       h += '</tbody></table></div>';
+      h += '<div style="font-size:11px;color:#888;margin-top:4px">完整分类(含 TaxID / rank / lineage / score)见「病毒分类表 (TSV)」下载。</div>';
     } else {
       h += '<div style="font-size:12px;color:#888">无被分类为病毒的 contig。</div>';
     }
