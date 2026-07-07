@@ -25,6 +25,7 @@ Virus Explorer 的「媒介传播」标签页直接读取：
 
 import csv
 import json
+import re
 import argparse
 from pathlib import Path
 from datetime import date
@@ -33,6 +34,33 @@ from difflib import SequenceMatcher
 csv.field_size_limit(10_000_000)  # WUR refs 单元格极大
 
 FUZZY_THRESHOLD = 0.90  # 仅用于生成人工 review 建议，不自动合并
+
+# WUR「Modes of transmission」受控传播途径词表(与 VH 的昆虫传毒机制正交)
+ROUTE_VOCAB = [
+    "sap transmissible", "not sap transmissible",
+    "seed borne", "not seed borne",
+    "soil borne", "water borne", "vegetative propagation",
+]
+
+
+def parse_routes(modes_text: str) -> list:
+    """WUR Modes of transmission 文本 → 受控传播途径列表。"""
+    out = []
+    for term in re.split(r"[;,]", modes_text or ""):
+        t = term.strip().lower()
+        if t in ROUTE_VOCAB and t not in out:
+            out.append(t)
+    return out
+
+
+def parse_vector_categories(vector_org: str) -> list:
+    """WUR Vector organism 文本 → 粗媒介类别列表(含非昆虫: Nematode/Fungus 等)。"""
+    out = []
+    for term in re.split(r"[;,]", vector_org or ""):
+        t = term.strip()
+        if t and t not in out:
+            out.append(t)
+    return out
 
 
 # ── 名称归一化与映射 ────────────────────────────────────────────
@@ -180,6 +208,8 @@ def load_wur(path: Path) -> list:
                 "genus": (row.get("genus", "") or "").strip(),
                 "vector_label": (row.get("vector_org", "") or "").strip(),
                 "transmission_notes": (row.get("transmission", "") or "").strip(),
+                "routes": parse_routes(row.get("modes", "")),
+                "vector_categories": parse_vector_categories(row.get("vector_org", "")),
                 "ref_count": ref_count,
                 "refs": parse_refs(row.get("refs", "")),
             })
@@ -266,6 +296,9 @@ def _attach_wur(v: dict, w: dict, confidence: str):
         "refs": w["refs"],
         "match_confidence": confidence,
     }
+    # WUR 独有的两个正交维度: 传播途径 + 粗媒介类别
+    v["transmission_routes"] = w.get("routes", [])
+    v["vector_categories"] = w.get("vector_categories", [])
     if v.get("family") and w["family"] and norm(v["family"]) != norm(w["family"]):
         flags = set(v.get("conflict_flags", []))
         flags.add("family_mismatch")
@@ -300,6 +333,8 @@ def finalize(v: dict) -> dict:
         "vector_orders": sorted({r["vector_order"] for r in rels if r["vector_order"]}),
         "transmission_modes": sorted({r["transmission_mode"] for r in rels if r["transmission_mode"] and r["transmission_mode"] != "NA"}),
         "transmission_categories": sorted({r["transmission_category"] for r in rels if r["transmission_category"] != "Unknown"}),
+        "transmission_routes": v.get("transmission_routes", []),
+        "vector_categories": v.get("vector_categories", []),
         "wur": v.get("wur"),
         "conflict_flags": v.get("conflict_flags", []),
     }

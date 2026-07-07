@@ -26,7 +26,7 @@ def parse_page(html):
         if not name or len(name) < 5: continue
 
         rec = {"name": name, "family": "", "genus": "", "vector_org": "",
-               "transmission": "", "ref_count": "0", "refs": ""}
+               "modes": "", "transmission": "", "ref_count": "0", "refs": ""}
         pos = m.end()
         # 将 chunk 精确限定到下一条记录起点，避免 findall 越界到相邻记录
         nxt = html.find('id="record_', pos)
@@ -40,11 +40,13 @@ def parse_page(html):
         vm = re.search(r'<b>Vector organisms:\s*</b>\s*([^<]+)', chunk)
         if vm: rec["vector_org"] = vm.group(1).strip()
 
-        # 传播方式：合并「Modes of transmission」摘要 + 每条参考的「Vector or means
-        # of transmission」明细(去重)。WUR 现用 <div> 布局，值以纯文本止于下一个 '<'。
+        # 传播方式:
+        #   modes = WUR「Modes of transmission」受控途径(sap/seed/soil/water/vegetative...)
+        #   transmission = modes 摘要 + 每条参考的「Vector or means」明细(自由文本, 供展示)
         parts = []
         mm = re.search(r'<b>Modes of transmission:\s*</b>\s*([^<]*)', chunk)
         if mm and mm.group(1).strip():
+            rec["modes"] = mm.group(1).strip()
             parts.append(mm.group(1).strip())
         for vm2 in re.findall(r'<b>Vector or means of transmission:\s*</b>\s*([^<]+)', chunk):
             vm2 = vm2.strip()
@@ -103,7 +105,7 @@ def scrape_all():
 if __name__ == "__main__":
     data = scrape_all()
     if data:
-        fields = ["name", "family", "genus", "vector_org", "transmission", "ref_count", "refs"]
+        fields = ["name", "family", "genus", "vector_org", "modes", "transmission", "ref_count", "refs"]
         with open(OUT, "w", encoding="utf-8", newline="") as f:
             w = csv.DictWriter(f, delimiter="\t", fieldnames=fields)
             w.writeheader()
