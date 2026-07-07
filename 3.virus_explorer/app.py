@@ -1511,37 +1511,23 @@ def load_vector_panel(table_data):
 
     focus_names = set(matched.keys())
 
-    # Sankey 上下文扩展：以焦点病毒的媒介目为锚，拉入共享同一媒介目的其它病毒作背景，
+    # Sankey 上下文扩展：以焦点病毒的媒介物种为锚，拉入由相同媒介物种传播的其它病毒作背景，
     # 焦点病毒高亮。避免单个病毒时图形过于稀疏。
-    focus_orders = {r["vector_order"] for _, r, _ in rels if r["vector_order"]}
+    focus_vectors = {r["vector"] for _, r, _ in rels if r["vector"]}
     sankey_rels = list(rels)
-    if focus_orders:
+    if focus_vectors:
         for cn, rec in VECTOR_DB.items():
             if cn in focus_names:
                 continue
             for r in rec["relationships"]:
-                if r["vector_order"] in focus_orders:
+                if r["vector"] in focus_vectors:
                     sankey_rels.append((cn, r, rec))
 
-    # ① Sankey：病毒 → 媒介目 → 宿主（焦点红色高亮，背景蓝色）
+    # ② Sankey：病毒 → 媒介目 → 宿主（焦点红色高亮，背景蓝色）
     sankey = dcc.Graph(figure=_build_vector_sankey(sankey_rels, focus_names),
                        config={"displayModeBar": False}, style={"height": "480px"})
 
-    # ② 传播方式分布
-    cat_counts = Counter(r["transmission_category"] for _, r, _ in rels if r["transmission_category"] != "Unknown")
-    if cat_counts:
-        cat_sorted = cat_counts.most_common()
-        fig_cat = px.bar(x=[c[1] for c in cat_sorted], y=[c[0] for c in cat_sorted],
-                         orientation="h", labels={"x": "关系数", "y": "传播方式"},
-                         color=[c[0] for c in cat_sorted],
-                         color_discrete_sequence=px.colors.qualitative.Set2)
-        fig_cat.update_layout(margin=dict(l=10, r=10, t=10, b=10), height=max(180, 40 * len(cat_sorted)),
-                              showlegend=False, font=dict(size=11))
-        cat_block = dcc.Graph(figure=fig_cat, config={"displayModeBar": False})
-    else:
-        cat_block = dmc.Text("无受控传播方式记录。", c="dimmed", size="sm")
-
-    # ③ 关系明细表（含 /virus/ 详情链接与来源）
+    # ① 关系明细表（含 /virus/ 详情链接与来源）
     from urllib.parse import quote
     rows = []
     for cname, r, rec in rels:
@@ -1576,20 +1562,17 @@ def load_vector_panel(table_data):
 
     return [
         coverage,
-        dmc.Title("① 传播网络  病毒 → 媒介目 → 宿主", order=5, mb="xs"),
-        dmc.Text("焦点病毒（红色）置于其媒介目的生态网络中：同时展示走相同媒介目的其它病毒（蓝色）作背景，"
-                 "链接宽度 = 关系记录数。节点过多时按记录数截断，焦点病毒优先保留。",
-                 size="xs", c="dimmed", mb="xs"),
-        sankey,
-        dmc.Space(h="md"),
-        dmc.Title("② 传播方式分布", order=5, mb="xs"),
-        cat_block,
-        dmc.Space(h="md"),
         dmc.Group(justify="space-between", align="center", mb="xs", children=[
-            dmc.Title("③ 媒介-宿主关系明细", order=5),
+            dmc.Title("① 媒介-宿主关系明细", order=5),
             dmc.Anchor("打开完整媒介数据库 (/vector/) →", href="/vector/", target="_blank", size="sm", c="blue"),
         ]),
         table,
+        dmc.Space(h="lg"),
+        dmc.Title("② 传播网络  病毒 → 媒介物种 → 宿主", order=5, mb="xs"),
+        dmc.Text("焦点病毒（红色）置于其媒介物种的生态网络中：同时展示由相同媒介物种传播的其它病毒（蓝色）作背景，"
+                 "链接宽度 = 关系记录数。节点过多时按记录数截断，焦点病毒优先保留。",
+                 size="xs", c="dimmed", mb="xs"),
+        sankey,
     ]
 
 
@@ -1601,19 +1584,19 @@ def _vec_stat(label, value, color):
 
 
 def _build_vector_sankey(rels, focus_names, max_viruses=22, max_hosts=25):
-    """构建 病毒→媒介目→宿主 三层 Sankey。
+    """构建 病毒→媒介物种→宿主 三层 Sankey。
 
-    focus_names 内的病毒为焦点（红色高亮、优先保留、链接加深）；其余为共享同一
-    媒介目的背景病毒（蓝色）。节点过多时按记录数截断，但焦点病毒始终优先保留。
+    focus_names 内的病毒为焦点（红色高亮、优先保留、链接加深）；其余为由相同媒介
+    物种传播的背景病毒（蓝色）。节点过多时按记录数截断，但焦点病毒始终优先保留。
     """
-    vo = Counter()   # (virus, order)
-    oh = Counter()   # (order, host)
+    vv = Counter()   # (virus, vector_species)
+    vh = Counter()   # (vector_species, host)
     virus_tot, host_tot = Counter(), Counter()
     for cname, r, _ in rels:
-        order = r["vector_order"] or "Unknown"
+        vec = r["vector"] or "Unknown"
         host = r["host"] or "Unknown"
-        vo[(cname, order)] += 1
-        oh[(order, host)] += 1
+        vv[(cname, vec)] += 1
+        vh[(vec, host)] += 1
         virus_tot[cname] += 1
         host_tot[host] += 1
 
@@ -1625,26 +1608,26 @@ def _build_vector_sankey(rels, focus_names, max_viruses=22, max_hosts=25):
             break
         keep_v.add(v)
 
-    vo = {k: c for k, c in vo.items() if k[0] in keep_v}
-    kept_orders = {k[1] for k in vo}                       # 只保留焦点媒介目
+    vv = {k: c for k, c in vv.items() if k[0] in keep_v}
+    kept_vecs = {k[1] for k in vv}                        # 只保留焦点媒介物种
     keep_h = {h for h, _ in host_tot.most_common(max_hosts)}
-    oh = {k: c for k, c in oh.items() if k[0] in kept_orders and k[1] in keep_h}
+    vh = {k: c for k, c in vh.items() if k[0] in kept_vecs and k[1] in keep_h}
 
-    viruses = sorted({k[0] for k in vo})
-    orders = sorted(kept_orders | {k[0] for k in oh})
-    hosts = sorted({k[1] for k in oh})
-    labels = viruses + orders + hosts
+    viruses = sorted({k[0] for k in vv})
+    vectors = sorted(kept_vecs | {k[0] for k in vh})
+    hosts = sorted({k[1] for k in vh})
+    labels = viruses + vectors + hosts
     idx = {name: i for i, name in enumerate(labels)}
     colors = ([("#e03131" if v in focus_names else "#4c6ef5") for v in viruses]
-              + ["#12b886"] * len(orders) + ["#f59f00"] * len(hosts))
+              + ["#12b886"] * len(vectors) + ["#f59f00"] * len(hosts))
 
     src, tgt, val, lcolor = [], [], [], []
-    for (v, o), c in vo.items():
-        src.append(idx[v]); tgt.append(idx[o]); val.append(c)
+    for (v, vec), c in vv.items():
+        src.append(idx[v]); tgt.append(idx[vec]); val.append(c)
         lcolor.append("rgba(224,49,49,0.45)" if v in focus_names else "rgba(150,150,150,0.22)")
-    for (o, h), c in oh.items():
-        if o in idx and h in idx:
-            src.append(idx[o]); tgt.append(idx[h]); val.append(c)
+    for (vec, h), c in vh.items():
+        if vec in idx and h in idx:
+            src.append(idx[vec]); tgt.append(idx[h]); val.append(c)
             lcolor.append("rgba(245,159,0,0.30)")
 
     fig = go.Figure(go.Sankey(
@@ -1655,7 +1638,7 @@ def _build_vector_sankey(rels, focus_names, max_viruses=22, max_hosts=25):
     ))
     n_focus = sum(1 for v in viruses if v in focus_names)
     n_ctx = len(viruses) - n_focus
-    subtitle = f"焦点病毒(红) {n_focus} · 同媒介目关联病毒(蓝) {n_ctx} · 媒介目 {len(orders)} · 宿主 {len(hosts)}"
+    subtitle = f"焦点病毒(红) {n_focus} · 同媒介物种关联病毒(蓝) {n_ctx} · 媒介物种 {len(vectors)} · 宿主 {len(hosts)}"
     if len(virus_tot) > len(viruses) or len(host_tot) > max_hosts:
         subtitle += "（已按记录数截断）"
     fig.update_layout(margin=dict(l=6, r=6, t=6, b=6), font=dict(size=10),
