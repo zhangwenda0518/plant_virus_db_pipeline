@@ -37,6 +37,7 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 .vt-family{background:#e3f2fd;color:#1565c0}.vt-genus{background:#e0f2f1;color:#00695c}
 .vt-vector{background:#fce4ec;color:#c62828}.vt-host{background:#e8f5e9;color:#2e7d32}
 .vt-trans{background:#fff3e0;color:#e65100}.vt-path{background:#f3e5f5;color:#6a1b9a}
+.vt-route{background:#e8f5e9;color:#2e7d32}.vt-vcat{background:#e1f5fe;color:#0277bd}
 .vt-source{background:#f5f5f5;color:#666;font-size:9px}
 .vt-vhonly{background:#e0f2f1;color:#00695c}.vt-wuronly{background:#f3e5f5;color:#6a1b9a}
 .vt-conf-high{background:#e8f5e9;color:#2e7d32}.vt-conf-low{background:#fff3e0;color:#e65100}
@@ -60,6 +61,7 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 预合并数据库 <b>{{m_total}}</b> 个病毒 &middot; 两源都有 <b style="color:#1565c0">{{m_both}}</b> &middot; 仅 VH <b style="color:#00695c">{{m_vh_only}}</b> &middot; 仅 WUR <b style="color:#6a1b9a">{{m_wur_only}}</b> &middot; family 冲突 <b style="color:#c62828">{{m_conflicts}}</b>
 </div>
 <div class="toolbar"><input id="iq" placeholder="Search virus, vector, host..." oninput="ipage=1;renderInt()"><select id="isrc" onchange="ipage=1;renderInt()"><option value="">All sources</option><option value="both">Both (VH+WUR)</option><option value="vh">VH only</option><option value="wur">WUR only</option><option value="conflict">Has conflict</option></select><select id="ips" onchange="renderInt()"><option value="20">20/page</option><option value="50">50/page</option><option value="100">100/page</option></select></div>
+<div class="toolbar" style="margin-top:-8px"><select id="iroute" onchange="ipage=1;renderInt()"><option value="">全部传播途径 (WUR)</option></select><select id="ivcat" onchange="ipage=1;renderInt()"><option value="">全部媒介类别 (WUR)</option></select><select id="imech" onchange="ipage=1;renderInt()"><option value="">全部昆虫机制 (VIP)</option></select></div>
 <div id="int-cards"></div>
 <div class="pagination" id="int-pager"></div>
 </div>
@@ -142,6 +144,12 @@ function renderInt(){
  else if(sf==='vh')d=d.filter(function(r){return r.sources.length===1&&r.sources[0]==='VH'});
  else if(sf==='wur')d=d.filter(function(r){return r.sources.length===1&&r.sources[0]==='WUR'});
  else if(sf==='conflict')d=d.filter(function(r){return r.conflict_flags&&r.conflict_flags.length});
+ var rf=document.getElementById('iroute').value;
+ if(rf)d=d.filter(function(r){return (r.transmission_routes||[]).indexOf(rf)>=0});
+ var cf=document.getElementById('ivcat').value;
+ if(cf)d=d.filter(function(r){return (r.vector_categories||[]).indexOf(cf)>=0});
+ var mf=document.getElementById('imech').value;
+ if(mf)d=d.filter(function(r){return (r.transmission_categories||[]).indexOf(mf)>=0});
  if(q)d=d.filter(function(r){return ((r.canonical_name||'')+' '+(r.family||'')+' '+(r.genus||'')+' '+(r.vectors||[]).join(' ')+' '+(r.hosts||[]).join(' ')).toLowerCase().indexOf(q)>=0});
  var ps=parseInt(document.getElementById('ips').value)||20;
  var pages=Math.ceil(d.length/ps);if(ipage>pages)ipage=Math.max(1,pages);
@@ -159,8 +167,16 @@ function renderInt(){
   if(r.family)h+='<span class=\"vtag vt-family\">'+esc(r.family)+'</span>';
   if(r.genus)h+='<span class=\"vtag vt-genus\">'+esc(r.genus)+'</span>';
   if(r.taxid)h+='<span class=\"vtag vt-source\">TaxID '+esc(r.taxid)+'</span>';
-  (r.transmission_categories||[]).forEach(function(t){h+='<span class=\"vtag vt-trans\">'+esc(t)+'</span>'});
   h+='</div>';
+  // 三维传播: 途径(WUR) · 媒介类别(WUR) · 昆虫机制(VH)
+  function axisRow(label,arr,cls){
+   if(!arr||!arr.length)return '';
+   var s='<div style=\"margin:2px 0\"><span style=\"color:#888;font-size:10px;min-width:60px;display:inline-block\">'+label+'</span>';
+   arr.forEach(function(t){s+='<span class=\"vtag '+cls+'\">'+esc(t)+'</span>'});
+   return s+'</div>';
+  }
+  var axes=axisRow('途径',r.transmission_routes,'vt-route')+axisRow('媒介类别',r.vector_categories,'vt-vcat')+axisRow('昆虫机制',r.transmission_categories,'vt-trans');
+  if(axes)h+=axes;
   // VH 结构化关系（去重三元组）
   if(r.relationships&&r.relationships.length){
    h+='<div class=\"vdetail\"><b>媒介-宿主关系 ('+r.relationships.length+'):</b><br>';
@@ -197,12 +213,28 @@ function renderInt(){
  document.getElementById('int-pager').innerHTML=pg
 }
 function goIPage(p){ipage=p;renderInt();window.scrollTo(0,0)}
+function populateFacets(){
+ var routes={},cats={},mechs={};
+ MERGED.forEach(function(v){
+  (v.transmission_routes||[]).forEach(function(x){routes[x]=(routes[x]||0)+1});
+  (v.vector_categories||[]).forEach(function(x){cats[x]=(cats[x]||0)+1});
+  (v.transmission_categories||[]).forEach(function(x){mechs[x]=(mechs[x]||0)+1});
+ });
+ function fill(id,obj){
+  var sel=document.getElementById(id);
+  Object.keys(obj).sort(function(a,b){return obj[b]-obj[a]}).forEach(function(k){
+   var o=document.createElement('option');o.value=k;o.textContent=k+' ('+obj[k]+')';sel.appendChild(o);
+  });
+ }
+ fill('iroute',routes);fill('ivcat',cats);fill('imech',mechs);
+}
 (function init(){
  var vf=document.getElementById('vf'),vo=document.getElementById('vo');
  var vfs=new Set(),vos=new Set();
  VH.forEach(function(r){vfs.add(r['Virus Family']);vos.add(r['Vector Order'])});
  [...vfs].sort().forEach(function(v){var o=document.createElement('option');o.value=v;o.textContent=v;vf.appendChild(o)});
  [...vos].sort().forEach(function(v){var o=document.createElement('option');o.value=v;o.textContent=v;vo.appendChild(o)});
+ populateFacets();
  renderVH();renderWUR();
 })();
 </script></body></html>
