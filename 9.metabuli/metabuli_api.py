@@ -19,37 +19,26 @@ jobs = {}
 RANKS = ["realm", "kingdom", "phylum", "class", "order", "family", "genus", "species"]
 
 
-def _build_taxmap(report_path):
-    """从 report.tsv 缩进树构建 taxid → {name, rank, lineage, ranks}。
-    ranks 为标准 8 级(realm..species)，直接取自各祖先节点的显式 rank，无需启发式猜测。"""
-    taxmap = {}
-    if not report_path.exists():
-        return taxmap
-    stack = []  # [(depth, name, rank)]
-    with open(report_path, encoding="utf-8", errors="replace") as f:
+def _load_taxlin(path):
+    """加载 build_taxid_lineage.py 生成的权威 taxid → ICTV 8 级分类表。"""
+    tl = {}
+    if not path.exists():
+        return tl
+    with open(path, encoding="utf-8", errors="replace") as f:
+        f.readline()  # header: taxid, sciname, realm..species
         for line in f:
-            if line.startswith("#") or not line.strip():
-                continue
             p = line.rstrip("\n").split("\t")
-            if len(p) < 6:
+            if len(p) < 2:
                 continue
-            rank, taxid, name = p[3], p[4], p[5]
-            trimmed = name.lstrip()
-            depth = len(name) - len(trimmed)
-            while stack and stack[-1][0] >= depth:
-                stack.pop()
-            # 标准 8 级分类：从祖先(+自身)的显式 rank 填充
-            rd = {r: "" for r in RANKS}
-            for _, anc_name, anc_rank in stack:
-                if anc_rank in rd:
-                    rd[anc_rank] = anc_name
-            if rank in rd:
-                rd[rank] = trimmed
-            anc = [n for _, n, _ in stack if n not in ("root", "unclassified")]
-            lineage = ";".join(anc + [trimmed]) if trimmed not in ("root", "unclassified") else trimmed
-            taxmap[taxid] = {"name": trimmed, "rank": rank, "lineage": lineage, "ranks": rd}
-            stack.append((depth, trimmed, rank))
-    return taxmap
+            rec = {"sciname": p[1]}
+            for i, r in enumerate(RANKS):
+                rec[r] = p[2 + i] if 2 + i < len(p) else ""
+            tl[p[0]] = rec
+    return tl
+
+
+TAXLIN = _load_taxlin(Path(__file__).parent / "taxid_lineage.tsv")
+print(f"Taxid lineage: {len(TAXLIN)} entries")
 
 
 def _parse_fasta(path):
@@ -73,8 +62,9 @@ def _wrap(seq, w=70):
     return "\n".join(seq[i:i + w] for i in range(0, len(seq), w))
 
 
-def _extract_virus(job_id, outdir, cls_path, taxmap, fasta_path):
+def _extract_virus(job_id, outdir, cls_path, fasta_path):
     """提取被分类(视为病毒)的 contig：输出分类表 TSV + 序列 FASTA。
+    分类等级取自权威 taxid_lineage 表(NCBI/ICTV 完整谱系)。
     返回 (virus_fasta_path, virus_tsv_path, n_virus, n_total, rows)。"""
     contigs, n_total = [], 0
     with open(cls_path, encoding="utf-8", errors="replace") as f:
@@ -93,21 +83,20 @@ def _extract_virus(job_id, outdir, cls_path, taxmap, fasta_path):
     vfa = outdir / f"{job_id}_virus_sequences.fasta"
     rows = []
     with open(vtsv, "w", encoding="utf-8") as ft, open(vfa, "w", encoding="utf-8") as fa:
-        ft.write("contig\ttaxid\ttaxon\trank\t" + "\t".join(RANKS) + "\tlineage\tlength\tscore\n")
+        ft.write("contig\ttaxid\ttaxon\t" + "\t".join(RANKS) + "\tlength\tscore\n")
         for name, taxid, length, score in contigs:
-            info = taxmap.get(taxid, {})
-            taxon, rank, lineage = info.get("name", ""), info.get("rank", ""), info.get("lineage", "")
-            rd = info.get("ranks", {})
-            rankvals = [rd.get(r, "") for r in RANKS]
-            ft.write("\t".join([name, taxid, taxon, rank] + rankvals + [lineage, length, score]) + "\n")
-            row = {"contig": name, "taxid": taxid, "taxon": taxon, "rank": rank,
-                   "lineage": lineage, "length": length, "score": score}
+            info = TAXLIN.get(taxid, {})
+            taxon = info.get("sciname", "")
+            rankvals = [info.get(r, "") for r in RANKS]
+            ft.write("\t".join([name, taxid, taxon] + rankvals + [length, score]) + "\n")
+            row = {"contig": name, "taxid": taxid, "taxon": taxon, "length": length, "score": score}
             for r in RANKS:
-                row[r] = rd.get(r, "")
+                row[r] = info.get(r, "")
             rows.append(row)
             seq = seqs.get(name)
             if seq:
-                fa.write(f">{name} taxid={taxid} taxon={taxon.replace(' ', '_')} rank={rank} lineage={lineage}\n{_wrap(seq)}\n")
+                lineage = ";".join(v for v in rankvals if v)
+                fa.write(f">{name} taxid={taxid} taxon={taxon.replace(' ', '_')} lineage={lineage}\n{_wrap(seq)}\n")
     return str(vfa), str(vtsv), len(contigs), n_total, rows
 
 def _classify(job_id, fasta_path):
@@ -140,8 +129,7 @@ def _classify(job_id, fasta_path):
         # 病毒序列分类结果 + 序列提取（在删除输入前完成）
         if tsv.exists():
             try:
-                taxmap = _build_taxmap(rept)
-                vfa, vtsv, n_virus, n_total, vrows = _extract_virus(job_id, outdir, tsv, taxmap, fasta_path)
+                vfa, vtsv, n_virus, n_total, vrows = _extract_virus(job_id, outdir, tsv, fasta_path)
                 job["files"]["virus_fasta"] = vfa if n_virus > 0 else None
                 job["files"]["virus_tsv"] = vtsv if n_virus > 0 else None
                 job["virus_summary"] = {"virus_contigs": n_virus, "total_contigs": n_total}
