@@ -73,7 +73,7 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 
 <div id="tab-wur" style="display:none">
 <div class="toolbar"><input id="wq" placeholder="Search virus name, family, genus..." oninput="renderWUR()"><select id="wps" onchange="renderWUR()"><option value="50">50/page</option><option value="100">100/page</option><option value="200">200/page</option></select></div>
-<table><thead><tr><th>#</th><th>Virus Name</th><th>Family</th><th>Genus</th><th>Vector</th><th>Transmission</th><th>References</th></tr></thead><tbody id="wur-tbody"></tbody></table>
+<table><thead><tr><th>#</th><th>Virus Name</th><th>Family</th><th>Genus</th><th>媒介类别</th><th>传播途径</th><th>具体媒介 / 来源</th></tr></thead><tbody id="wur-tbody"></tbody></table>
 <div class="pagination" id="wur-pager"></div></div>
 
 </div>
@@ -121,16 +121,16 @@ function renderWUR(){
  var pages=Math.ceil(d.length/ps);if(wpage>pages)wpage=Math.max(1,pages);
  var start=(wpage-1)*ps,chunk=d.slice(start,start+ps);
  var h='';chunk.forEach(function(r,i){
-  var refsHtml='';
+  // 具体媒介/传播方式(从 refs 的 means 去重)+ WUR 来源链接，不列参考文献标题
+  var meansSet=[];
   if(Array.isArray(r.refs)){
-   r.refs.slice(0,5).forEach(function(rf){
-    var t=(rf.title||'').substring(0,90);
-    var link=rf.doi?'<a href=\"'+esc(rf.doi)+'\" target=\"_blank\">'+esc(t)+'</a>':esc(t);
-    refsHtml+='<div style=\"margin:2px 0\">'+link+(rf.means?' <span class=\"vtag vt-trans\">&#128027; '+esc(rf.means)+'</span>':'')+'</div>';
-   });
-   if(r.refs.length>5)refsHtml+='<div style=\"color:#888\">… +'+(r.refs.length-5)+' 篇</div>';
+   r.refs.forEach(function(rf){var m=(rf.means||'').trim();if(m&&meansSet.indexOf(m)<0)meansSet.push(m)});
   }
-  h+='<tr><td>'+(start+i+1)+'</td><td><strong>'+esc(r.name||'')+'</strong></td><td><span class=\"badge b-v\">'+esc(r.family||'')+'</span></td><td>'+esc(r.genus||'')+'</td><td><span class=\"badge b-i\">'+esc(r.vector_org||'')+'</span></td><td style=\"font-size:11px\">'+esc(r.transmission||'')+'</td><td style=\"font-size:11px;max-width:440px\">'+refsHtml+'</td></tr>';
+  var meansHtml='';
+  meansSet.slice(0,8).forEach(function(m){meansHtml+='<span class=\"vtag vt-vcat\">&#128027; '+esc(m)+'</span>'});
+  var srcUrl='https://library.wur.nl/WebQuery/virus?q='+encodeURIComponent(r.name||'').replace(/%20/g,'+');
+  meansHtml+='<div style=\"margin-top:4px\"><a class=\"doi-link\" href=\"'+esc(srcUrl)+'\" target=\"_blank\">&#128279; WUR 来源</a>'+(r.ref_count&&r.ref_count!=='0'?' <span style=\"color:#888;font-size:10px\">('+esc(r.ref_count)+' 篇)</span>':'')+'</div>';
+  h+='<tr><td>'+(start+i+1)+'</td><td><strong>'+esc(r.name||'')+'</strong></td><td><span class=\"badge b-v\">'+esc(r.family||'')+'</span></td><td>'+esc(r.genus||'')+'</td><td><span class=\"badge b-i\">'+esc(r.vector_org||'')+'</span></td><td style=\"font-size:11px\">'+esc(r.modes||'')+'</td><td style=\"font-size:11px;max-width:440px\">'+meansHtml+'</td></tr>';
  });
  document.getElementById('wur-tbody').innerHTML=h||'<tr><td colspan=7 style=\"text-align:center;padding:40px;color:#999\">No results</td></tr>';
  var pg='';for(var i=1;i<=pages;i++)pg+='<button class=\"'+(i===wpage?'active':'')+'\" onclick=\"goWPage('+i+')\">'+i+'</button>';
@@ -186,24 +186,14 @@ function renderInt(){
    if(r.relationships.length>8)h+='<span style=\"color:#888\">… 其余 '+(r.relationships.length-8)+' 条见明细</span><br>';
    h+='</div>';
   }
-  // WUR 补充
+  // WUR 补充: 具体媒介/传播方式 + 来源链接(不列参考文献)
   if(r.wur){
    h+='<div class=\"vdetail\">';
-   if(r.wur.vector_label)h+='<b>WUR 媒介:</b> '+esc(r.wur.vector_label)+' ';
-   if(r.wur.ref_count)h+='<b>参考文献:</b> '+r.wur.ref_count+' 篇';
-   if(r.wur.refs&&r.wur.refs.length){
-    h+='<div style=\"margin-top:6px\"><b>文献 &amp; 各自传播方式:</b>';
-    r.wur.refs.slice(0,6).forEach(function(rf){
-     var t=rf.title||'';
-     var link=rf.doi?'<a class=\"doi-link\" href=\"'+esc(rf.doi)+'\" target=\"_blank\">'+esc(t)+'</a>':esc(t);
-     h+='<div style=\"margin:4px 0;padding-left:8px;border-left:2px solid #e0e0e0\">'+link;
-     if(rf.means)h+=' <span class=\"vtag vt-trans\">&#128027; '+esc(rf.means)+'</span>';
-     if(rf.citation)h+='<br><span style=\"color:#999;font-size:11px\">'+esc(rf.citation)+'</span>';
-     h+='</div>';
-    });
-    if(r.wur.refs.length>6)h+='<div style=\"color:#888;font-size:11px\">… 其余 '+(r.wur.refs.length-6)+' 篇</div>';
-    h+='</div>';
+   if(r.wur.vector_means&&r.wur.vector_means.length){
+    h+='<b>具体媒介/传播方式 (WUR):</b> ';
+    r.wur.vector_means.forEach(function(m){h+='<span class=\"vtag vt-vcat\">&#128027; '+esc(m)+'</span>'});
    }
+   if(r.wur.source_url)h+='<div style=\"margin-top:5px\"><a class=\"doi-link\" href=\"'+esc(r.wur.source_url)+'\" target=\"_blank\">&#128279; 在 WUR 查看来源</a>'+(r.wur.ref_count?' <span style=\"color:#888;font-size:11px\">('+r.wur.ref_count+' 篇文献)</span>':'')+'</div>';
    h+='</div>';
   }
   h+='</div>';

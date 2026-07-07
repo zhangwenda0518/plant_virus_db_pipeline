@@ -29,6 +29,7 @@ import re
 import argparse
 from pathlib import Path
 from datetime import date
+from urllib.parse import quote_plus
 from difflib import SequenceMatcher
 
 csv.field_size_limit(10_000_000)  # WUR refs 单元格极大
@@ -289,11 +290,17 @@ def match_wur(wur_rows, viruses, vh_index, canon):
 def _attach_wur(v: dict, w: dict, confidence: str):
     """挂 WUR 补充信息，计算 family_mismatch 冲突。"""
     v["matched_names"].add(w["name"])
+    # 具体媒介/传播方式(来自每条文献的 Vector or means of transmission，去重)
+    vector_means = []
+    for rf in w["refs"]:
+        m = (rf.get("means", "") or "").strip()
+        if m and m not in vector_means:
+            vector_means.append(m)
     v["wur"] = {
-        "vector_label": w["vector_label"],
-        "transmission_notes": w["transmission_notes"],
+        "vector_label": w["vector_label"],           # 粗媒介类别(如 Whitefly)
+        "vector_means": vector_means,                 # 具体媒介/方式(如 Bemisia tabaci)
         "ref_count": w["ref_count"],
-        "refs": w["refs"],
+        "source_url": "https://library.wur.nl/WebQuery/virus?q=" + quote_plus(w["name"]),
         "match_confidence": confidence,
     }
     # WUR 独有的两个正交维度: 传播途径 + 粗媒介类别
