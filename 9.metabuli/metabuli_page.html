@@ -240,6 +240,33 @@ async function renderResult(data) {
     h += '</tbody></table></div>';
   }
 
+  // 病毒序列分类结果 + 序列下载
+  try {
+    var vr = await fetch('/metabuli/virus_contigs/' + data.id);
+    var vdata = await vr.json();
+    var vc = (vdata && vdata.contigs) || [];
+    var vs = (vdata && vdata.summary) || {};
+    h += '<h4 style="font-size:14px;color:#1a5276;margin:16px 0 8px">病毒序列分类结果 <span style="font-size:11px;color:#888;font-weight:400">(被分类为病毒的 contig)</span></h4>';
+    h += '<div style="font-size:12px;color:#555;margin-bottom:8px">共 <b>' + (vs.total_contigs || 0) + '</b> 条 contig，其中 <b style="color:#27ae60">' + (vs.virus_contigs || 0) + '</b> 条被分类为病毒</div>';
+    if (vc.length) {
+      h += '<div style="max-height:360px;overflow:auto;border:1px solid #eee;border-radius:4px">';
+      h += '<table class="tb"><thead><tr><th>Contig</th><th>Taxon</th><th>Rank</th><th>TaxID</th><th>Length</th><th>Score</th></tr></thead><tbody>';
+      vc.forEach(function(r) {
+        h += '<tr>'
+           + '<td style="font-family:monospace;font-size:11px;word-break:break-all">' + escapeHtml(r.contig) + '</td>'
+           + '<td style="font-weight:600">' + escapeHtml(r.taxon) + '</td>'
+           + '<td style="color:#1a5276">' + escapeHtml(r.rank) + '</td>'
+           + '<td style="color:#888">' + escapeHtml(r.taxid) + '</td>'
+           + '<td>' + escapeHtml(r.length) + '</td>'
+           + '<td>' + escapeHtml(r.score) + '</td>'
+           + '</tr>';
+      });
+      h += '</tbody></table></div>';
+    } else {
+      h += '<div style="font-size:12px;color:#888">无被分类为病毒的 contig。</div>';
+    }
+  } catch(e) { console.log('virus_contigs error:', e); }
+
   // Krona iframe — 默认隐藏 unclassified，勾选可显示
   if (data.files && data.files.krona) {
     h += '<h4 style="font-size:14px;color:#1a5276;margin:16px 0 8px">Krona Taxonomy Plot</h4>';
@@ -251,6 +278,8 @@ async function renderResult(data) {
   // Download buttons
   if (data.files) {
     h += '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">';
+    if (data.files.virus_fasta) h += '<a href="/metabuli/download/' + data.id + '/virus_fasta" class="btn btn-sm btn-success">病毒序列 (FASTA)</a>';
+    if (data.files.virus_tsv) h += '<a href="/metabuli/download/' + data.id + '/virus_tsv" class="btn btn-sm btn-outline-success">病毒分类表 (TSV)</a>';
     if (data.files.classifications) h += '<a href="/metabuli/download/' + data.id + '/classifications" class="btn btn-sm btn-outline-primary">Classifications (TSV)</a>';
     if (data.files.report) h += '<a href="/metabuli/download/' + data.id + '/report" class="btn btn-sm btn-outline-secondary">Report (TSV)</a>';
     if (data.files.krona) h += '<a href="/metabuli/download/' + data.id + '/krona" class="btn btn-sm btn-outline-success">Download Krona</a>';
