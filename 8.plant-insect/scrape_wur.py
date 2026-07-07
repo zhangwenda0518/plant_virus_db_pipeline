@@ -52,16 +52,24 @@ def parse_page(html):
                 parts.append(vm2)
         rec["transmission"] = "; ".join(parts)
 
-        # References — extract with full structure
-        refs = re.findall(r'<li class="list-group-item">(.*?)</li>', chunk, re.DOTALL)
-        rec["ref_count"] = str(len(refs))
+        # References — 每条参考各自带一个「Vector or means of transmission」，成对提取。
+        # 结构: <b>Vector or means of transmission:</b>TRANS<br><li>...TITLE...AUTHORS...CITATION...</li>
+        ref_pairs = re.findall(
+            r'(?:<b>Vector or means of transmission:\s*</b>\s*([^<]*)\s*<br\s*/?>\s*)?'
+            r'<li class="list-group-item">(.*?)</li>',
+            chunk, re.DOTALL)
+        rec["ref_count"] = str(len(ref_pairs))
         clean_refs = []
-        for r in refs[:5]:
-            clean = r.replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>')
+        for trans, li in ref_pairs[:5]:
+            clean = li.replace('&amp;', '&').replace('&lt;', '<').replace('&gt;', '>')
             parts = [re.sub(r'<[^>]+>', '', p).strip() for p in clean.split('<br>') if p.strip()]
             parts = [p for p in parts if p]
-            clean_refs.append(" | ".join(parts[:4]))  # detail | title | authors | citation
-        rec["refs"] = " || ".join(clean_refs).replace("\n", " ").replace("\r", "") if clean_refs else ""
+            ref_str = " | ".join(parts[:3])       # title | authors | citation
+            t = (trans or "").strip()
+            if t:
+                ref_str += " | means: " + t       # 该参考对应的传播方式
+            clean_refs.append(ref_str)
+        rec["refs"] = " || ".join(clean_refs).replace("\n", " ").replace("\r", "")
 
         records.append(rec)
     return records
