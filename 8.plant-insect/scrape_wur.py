@@ -28,7 +28,9 @@ def parse_page(html):
         rec = {"name": name, "family": "", "genus": "", "vector_org": "",
                "transmission": "", "ref_count": "0", "refs": ""}
         pos = m.end()
-        chunk = html[pos:pos+8000]
+        # 将 chunk 精确限定到下一条记录起点，避免 findall 越界到相邻记录
+        nxt = html.find('id="record_', pos)
+        chunk = html[pos:nxt] if nxt != -1 else html[pos:pos + 8000]
 
         # Family/Genus/Vector from spans
         fm = re.search(r'<b>Family:\s*</b>\s*(\w+viridae)', chunk)
@@ -38,9 +40,17 @@ def parse_page(html):
         vm = re.search(r'<b>Vector organisms:\s*</b>\s*([^<]+)', chunk)
         if vm: rec["vector_org"] = vm.group(1).strip()
 
-        # Modes of transmission (short)
-        tm = re.search(r'<b>Modes of transmission:\s*</b>\s*(.+?)(?:<br|<li)', chunk, re.DOTALL)
-        if tm: rec["transmission"] = tm.group(1).strip()[:200]
+        # 传播方式：合并「Modes of transmission」摘要 + 每条参考的「Vector or means
+        # of transmission」明细(去重)。WUR 现用 <div> 布局，值以纯文本止于下一个 '<'。
+        parts = []
+        mm = re.search(r'<b>Modes of transmission:\s*</b>\s*([^<]*)', chunk)
+        if mm and mm.group(1).strip():
+            parts.append(mm.group(1).strip())
+        for vm2 in re.findall(r'<b>Vector or means of transmission:\s*</b>\s*([^<]+)', chunk):
+            vm2 = vm2.strip()
+            if vm2 and vm2 not in parts:
+                parts.append(vm2)
+        rec["transmission"] = "; ".join(parts)
 
         # References — extract with full structure
         refs = re.findall(r'<li class="list-group-item">(.*?)</li>', chunk, re.DOTALL)
