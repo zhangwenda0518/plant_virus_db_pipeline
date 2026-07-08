@@ -525,6 +525,155 @@ def _vector_lookup(organism):
             return VECTOR_DB[cn]
     return None
 
+# ── 病毒档案 (整合自 8.virus_profile，做成 Explorer 内的 Dash 页面) ──
+import glob, re, json as _pj
+import config as _cfgmod
+_PROFILE_BASE = os.path.dirname(os.path.abspath(_cfgmod.__file__))
+_REF_TSV = _cfg.get("cluster_info", "")
+_GENOME_DIR = os.path.join(_PROFILE_BASE, "genome_annotations")
+_PAPERS_JSON = os.path.join(_PROFILE_BASE, "7.literature_tracker", "papers.json")
+_PRIMER_TSV = getattr(_cfgmod, "PRIMER_OUTPUTS", {}).get("reference_tsv", "")
+
+def _profile_species_list():
+    out, seen = [], set()
+    if os.path.exists(_REF_TSV):
+        with open(_REF_TSV, encoding="utf-8", errors="replace") as f:
+            for row in csv.DictReader(f, delimiter="\t"):
+                sp = (row.get("Species_ICTV", "") or row.get("Species_NCBI", "")).strip()
+                if sp and sp not in seen:
+                    seen.add(sp); out.append(sp)
+    return sorted(out)
+
+PROFILE_SPECIES = _profile_species_list()
+print(f"Profile species: {len(PROFILE_SPECIES)}")
+
+def _profile_info(name):
+    if not os.path.exists(_REF_TSV):
+        return None
+    with open(_REF_TSV, encoding="utf-8", errors="replace") as f:
+        for row in csv.DictReader(f, delimiter="\t"):
+            sp = (row.get("Species_ICTV", "") or row.get("Species_NCBI", "")).strip()
+            if sp.lower() == name.lower():
+                return row
+    return None
+
+def build_profile(name):
+    """构建单病毒详情的 Dash 组件（下载/蛋白/文献/引物）。"""
+    info = _profile_info(name)
+    if not info:
+        return dmc.Alert(f"未在参考库中找到「{name}」。", color="yellow", variant="light")
+    sp_safe = name.replace("/", "_")
+    sp_dir = os.path.join(_GENOME_DIR, sp_safe)
+
+    # 1. 下载链接（本地 genome_annotations，经 /virus/files/ 提供）
+    accs = []
+    if os.path.isdir(sp_dir):
+        for gb in sorted(glob.glob(os.path.join(sp_dir, "*.gb"))):
+            ac = os.path.splitext(os.path.basename(gb))[0]
+            cand = {"genome": ac + "_genome.fasta", "cds": ac + "_cds.fasta",
+                    "protein": ac + "_protein.fasta", "gff3": ac + ".gff3", "gb": ac + ".gb"}
+            files = {k: "/virus/files/%s/%s" % (sp_safe, fn) for k, fn in cand.items()
+                     if os.path.exists(os.path.join(sp_dir, fn))}
+            accs.append({"name": ac, "files": files})
+
+    # 2. 蛋白（解析第一个 GB）
+    proteins = []
+    if accs:
+        gbp = os.path.join(sp_dir, accs[0]["name"] + ".gb")
+        if os.path.exists(gbp):
+            txt = open(gbp, encoding="utf-8", errors="replace").read()
+            for m in re.finditer(r'\n     CDS\s+([^\n]+)', txt):
+                loc = m.group(1).strip()
+                posm = re.search(r'(\d+\.\.\d+)', loc)
+                seg = txt[m.end():m.end() + 1500]
+                nf = re.search(r'\n     [A-Za-z]', seg)
+                if nf:
+                    seg = seg[:nf.start()]
+                prodm = re.search(r'/product="([^"]*)"', seg, re.S)
+                pidm = re.search(r'/protein_id="([^"]*)"', seg)
+                if prodm:
+                    proteins.append({"product": re.sub(r"\s+", " ", prodm.group(1)),
+                                     "position": posm.group(1) if posm else loc,
+                                     "protein_id": pidm.group(1) if pidm else ""})
+
+    # 3. 相关文献
+    papers = []
+    if os.path.exists(_PAPERS_JSON):
+        try:
+            allp = _pj.load(open(_PAPERS_JSON, encoding="utf-8")).get("papers", [])
+            nl, fam = name.lower(), info.get("Family", "")
+            for p in allp:
+                if (fam and fam in p.get("categories", [])) or nl in str(p.get("title", "")).lower():
+                    papers.append(p)
+            papers = papers[:20]
+        except Exception:
+            pass
+
+    # 4. 引物计数
+    pc = 0
+    if os.path.exists(_PRIMER_TSV):
+        try:
+            for row in csv.DictReader(open(_PRIMER_TSV, encoding="utf-8"), delimiter="\t"):
+                if name.lower() in (row.get("Species", "") or "").lower():
+                    pc += 1
+        except Exception:
+            pass
+
+    # ── 组装 Dash 组件 ──
+    disp = info.get("Species_ICTV", "") or info.get("Species_NCBI", "") or name
+    meta = " · ".join([x for x in [info.get("Family", ""), info.get("Molecule_type", ""),
+                                   info.get("Topology", ""),
+                                   (info.get("Length", "") + " bp") if info.get("Length", "") else "",
+                                   "%d accessions" % len(accs)] if x])
+    out = [dmc.Paper(withBorder=True, p="md", radius="md", mb="md", children=[
+        dmc.Title(disp, order=3, c="#1a5276"),
+        dmc.Text(meta, size="sm", c="dimmed", mt=4),
+    ])]
+
+    if accs:
+        rows = []
+        for a in accs:
+            btns = []
+            for typ, url in a.files.items():
+                col = "blue" if typ == "genome" else ("teal" if typ in ("cds", "protein") else "gray")
+                btns.append(dmc.Anchor(dmc.Button("%s %s" % (a["name"], typ), size="xs",
+                                                  variant="light", color=col), href=url, target="_blank"))
+            rows.append(dmc.Group(gap=6, children=btns, mb=4))
+        out.append(dmc.Paper(withBorder=True, p="md", radius="md", mb="md", children=[
+            dmc.Title("基因组注释下载 (%d)" % len(accs), order=5, mb="sm"),
+            *rows]))
+
+    if proteins:
+        out.append(dmc.Paper(withBorder=True, p="md", radius="md", mb="md", children=[
+            dmc.Title("蛋白 (%d)" % len(proteins), order=5, mb="sm"),
+            dash_table.DataTable(
+                data=proteins,
+                columns=[{"name": "Product", "id": "product"}, {"name": "Position", "id": "position"},
+                         {"name": "Protein ID", "id": "protein_id"}],
+                page_size=15, style_table={"overflowX": "auto"},
+                style_cell={"fontSize": "12px", "padding": "6px", "textAlign": "left"},
+                style_header={"backgroundColor": "#f1f3f5", "fontWeight": "bold"})]))
+
+    if papers:
+        items = []
+        for p in papers:
+            items.append(html.Div(style={"padding": "6px 0", "borderBottom": "1px solid #f0f0f0", "fontSize": "13px"}, children=[
+                dmc.Badge(str(p.get("year", "")), color="green", variant="light", size="sm"),
+                dcc.Link(" " + str(p.get("title", "")), href="https://pubmed.ncbi.nlm.nih.gov/%s" % p.get("pmid", ""),
+                         target="_blank", style={"color": "#1a5276", "fontWeight": 600, "textDecoration": "none"}),
+                html.Div("%s · %s" % (p.get("journal", ""), p.get("first_author", "")), style={"color": "#888", "fontSize": "11px"}),
+            ]))
+        out.append(dmc.Paper(withBorder=True, p="md", radius="md", mb="md", children=[
+            dmc.Title("相关文献 (%d)" % len(papers), order=5, mb="sm"), *items]))
+
+    from urllib.parse import quote as _q
+    links = [dmc.Anchor("媒介-宿主关系 (/vector/) →", href="/vector/", target="_blank", size="sm", c="blue")]
+    if pc > 0:
+        links.append(dmc.Anchor("引物数据库 (%d 条) →" % pc, href="/primers/search?q=" + _q(disp), target="_blank", size="sm", c="blue"))
+    out.append(dmc.Paper(withBorder=True, p="md", radius="md", children=[
+        dmc.Title("关联资源", order=5, mb="sm"), dmc.Group(gap="lg", children=links)]))
+    return out
+
 app.layout = dmc.MantineProvider(
     theme={
         "fontFamily": "Inter, sans-serif",
@@ -723,7 +872,8 @@ app.layout = dmc.MantineProvider(
                                                     dmc.TabsTab("高稳健序列数据库", value="table", leftSection="📋"),
                                                     dmc.TabsTab("引物数据库", value="primers", leftSection="🧪"),
                                                     dmc.TabsTab("宿主范围", value="host", leftSection="🌿"),
-                                                    dmc.TabsTab("媒介传播", value="vector", leftSection="🦟")
+                                                    dmc.TabsTab("媒介传播", value="vector", leftSection="🦟"),
+                                                    dmc.TabsTab("病毒档案", value="profile", leftSection="🦠")
                                                 ]
                                             ),
                                             
@@ -934,6 +1084,27 @@ app.layout = dmc.MantineProvider(
                                                     ),
                                                     html.Div(id="vector-content", children=[
                                                         dmc.Text("加载媒介数据中...", size="sm", c="dimmed")
+                                                    ])
+                                                ]
+                                            ),
+
+                                            # 病毒档案
+                                            dmc.TabsPanel(
+                                                value="profile",
+                                                children=[
+                                                    dmc.Title("病毒档案", order=3, mb="xs"),
+                                                    dmc.Text("选择病毒物种，查看基因组注释下载、蛋白、相关文献与引物。",
+                                                             size="sm", c="dimmed", mb="md"),
+                                                    dmc.Select(
+                                                        id="profile-select",
+                                                        label="选择病毒物种",
+                                                        placeholder="搜索物种名…",
+                                                        data=[{"value": s, "label": s} for s in PROFILE_SPECIES],
+                                                        searchable=True, clearable=True, mb="md",
+                                                        style={"maxWidth": 520}
+                                                    ),
+                                                    html.Div(id="profile-content", children=[
+                                                        dmc.Text("请在上方选择一个病毒物种。", size="sm", c="dimmed")
                                                     ])
                                                 ]
                                             )
@@ -1581,6 +1752,20 @@ def _vec_stat(label, value, color):
         dmc.Text(label, size="xs", c="dimmed"),
         dmc.Title(f"{value:,}", order=3, c=color),
     ])
+
+
+# ── 病毒档案面板 ────────────────────────────────────────
+@callback(
+    Output("profile-content", "children"),
+    Input("profile-select", "value"),
+)
+def load_profile_panel(name):
+    if not name:
+        return dmc.Text("请在上方选择一个病毒物种。", size="sm", c="dimmed")
+    try:
+        return build_profile(name)
+    except Exception as e:
+        return dmc.Alert(f"档案加载失败: {e}", color="red", variant="light")
 
 
 def _build_vector_sankey(rels, focus_names, max_viruses=22, max_hosts=25):
