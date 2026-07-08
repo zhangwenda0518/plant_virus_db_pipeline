@@ -739,14 +739,21 @@ def build_profile(name):
                 graphs.append(dcc.Graph(figure=_genome_map_fig(s["feats"], s["glen"]),
                                         config={"displayModeBar": False}, style={"height": "180px"}))
             else:
-                # viroid / non-coding: 仅画基因组线 + "无编码特征"标记
+                # 无 CDS (类病毒等)：环形图谱
+                import math
+                n = min(s["glen"] or 1, 2000)  # sampling for smooth circle
+                r = 1
+                theta = [2 * math.pi * i / n for i in range(n + 1)]
+                cx, cy = [r * math.cos(t) for t in theta], [r * math.sin(t) for t in theta]
                 fig = go.Figure()
-                fig.add_shape(type="line", x0=0, x1=s["glen"] or 1, y0=0, y1=0, line=dict(color="#adb5bd", width=3))
-                fig.add_annotation(x=(s["glen"] or 1)/2, y=0, text="无 CDS (类病毒/非编码)", showarrow=False, font=dict(size=10, color="#888"))
-                fig.update_layout(height=100, margin=dict(l=8, r=8, t=4, b=20), plot_bgcolor="white",
-                    yaxis=dict(visible=False, range=[-0.3, 0.3], fixedrange=True),
-                    xaxis=dict(title="位置 (nt)", rangemode="tozero", tickfont=dict(size=10)))
-                graphs.append(dcc.Graph(figure=fig, config={"displayModeBar": False}, style={"height": "100px"}))
+                fig.add_trace(go.Scatter(x=cx, y=cy, mode="lines", line=dict(color="#adb5bd", width=3),
+                    hovertext="%s bp 环状" % (s["glen"] or "?"), hoverinfo="text", showlegend=False))
+                fig.add_annotation(x=0, y=0, text="环状 · %s bp<br>无 CDS (类病毒/非编码)" % (s["glen"] or "?"),
+                    showarrow=False, font=dict(size=9, color="#888"))
+                fig.update_layout(height=220, margin=dict(l=8, r=8, t=4, b=4), plot_bgcolor="white",
+                    xaxis=dict(visible=False, scaleanchor="y", scaleratio=1, fixedrange=True),
+                    yaxis=dict(visible=False, fixedrange=True))
+                graphs.append(dcc.Graph(figure=fig, config={"displayModeBar": False}, style={"height": "240px"}))
         gtitle = "基因组图谱（%d 个节段/序列）" % len(segments) if len(segments) > 1 else "基因组图谱"
         tip = "彩色箭头 = CDS，上排正链 / 下排负链，hover 看产物与位置。同一节段的多个 isolate 已合并。" if has_any_cds else "类病毒无编码特征(CDS)，仅显示基因组骨架线。"
         out.append(dmc.Paper(withBorder=True, p="md", radius="md", mb="md", children=[
