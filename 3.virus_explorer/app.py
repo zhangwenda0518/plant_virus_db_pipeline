@@ -557,12 +557,41 @@ def _profile_info(name):
                 return row
     return None
 
+def _genome_map_fig(feats, genome_len):
+    """单节段/序列的 CDS 图谱：彩色箭头，上排正链 / 下排负链。"""
+    fig = go.Figure()
+    if not genome_len:
+        genome_len = max((f["end"] for f in feats), default=1)
+    pal = px.colors.qualitative.Set2
+    fig.add_shape(type="line", x0=0, x1=genome_len, y0=0, y1=0, line=dict(color="#adb5bd", width=2))
+    for i, f in enumerate(feats):
+        y = 0.18 if f["strand"] > 0 else -0.18
+        s, e = f["start"], f["end"]
+        aw = min((e - s) * 0.25, genome_len * 0.012)
+        if f["strand"] > 0:
+            xs, ys = [s, e - aw, e, e - aw, s, s], [y - 0.11, y - 0.11, y, y + 0.11, y + 0.11, y - 0.11]
+        else:
+            xs, ys = [e, s + aw, s, s + aw, e, e], [y - 0.11, y - 0.11, y, y + 0.11, y + 0.11, y - 0.11]
+        fig.add_trace(go.Scatter(x=xs, y=ys, fill="toself", mode="lines",
+            line=dict(width=0.5, color="#495057"), fillcolor=pal[i % len(pal)],
+            hovertext="%s<br>%d..%d (%s)" % (f["label"], s, e, "+" if f["strand"] > 0 else "-"),
+            hoverinfo="text", showlegend=False))
+        if (e - s) > genome_len * 0.06:
+            fig.add_annotation(x=(s + e) / 2, y=y, text=f["label"][:22], showarrow=False, font=dict(size=8, color="#212529"))
+    fig.update_layout(height=180, margin=dict(l=8, r=8, t=6, b=26), plot_bgcolor="white",
+        yaxis=dict(visible=False, range=[-0.5, 0.5], fixedrange=True),
+        xaxis=dict(title="位置 (nt)", rangemode="tozero", tickfont=dict(size=10)))
+    return fig
+
+
 def build_profile(name):
-    """构建单病毒详情的 Dash 组件（下载/蛋白/文献/引物）。"""
+    """构建单病毒详情的 Dash 组件（下载/图谱/蛋白/文献/引物）。"""
     info = _profile_info(name)
     if not info:
         return dmc.Alert(f"未在参考库中找到「{name}」。", color="yellow", variant="light")
-    sp_safe = name.replace("/", "_")
+    # genome_annotations 目录用 Species_ICTV 优先命名，与 Explorer 的 Organism(NCBI 优先)可能不同
+    canon = (info.get("Species_ICTV", "") or info.get("Species_NCBI", "") or name).strip()
+    sp_safe = canon.replace("/", "_")
     sp_dir = os.path.join(_GENOME_DIR, sp_safe)
 
     # 1. 下载链接（本地 genome_annotations，经 /virus/files/ 提供）
@@ -576,25 +605,57 @@ def build_profile(name):
                      if os.path.exists(os.path.join(sp_dir, fn))}
             accs.append({"name": ac, "files": files})
 
-    # 2. 蛋白（解析第一个 GB）
+    # 2. 逐个 accession 解析结构；按 (长度//100, CDS产物集) 签名去重——
+    #    同一节段的多个 isolate 合成一张图，不同节段(DNA-A/DNA-B、RNA1/2/3)各一张。
+    acc_seg = {}
+    if os.path.exists(_REF_TSV):
+        with open(_REF_TSV, encoding="utf-8", errors="replace") as f:
+            for row in csv.DictReader(f, delimiter="\t"):
+                sp = (row.get("Species_ICTV", "") or row.get("Species_NCBI", "")).strip()
+                if sp.lower() == name.lower():
+                    acc_seg[row.get("Accession", "").split(".")[0]] = (row.get("Segment", "") or "").strip()
+
     proteins = []
-    if accs:
-        gbp = os.path.join(sp_dir, accs[0]["name"] + ".gb")
-        if os.path.exists(gbp):
-            txt = open(gbp, encoding="utf-8", errors="replace").read()
-            for m in re.finditer(r'\n     CDS\s+([^\n]+)', txt):
-                loc = m.group(1).strip()
-                posm = re.search(r'(\d+\.\.\d+)', loc)
-                seg = txt[m.end():m.end() + 1500]
-                nf = re.search(r'\n     [A-Za-z]', seg)
-                if nf:
-                    seg = seg[:nf.start()]
-                prodm = re.search(r'/product="([^"]*)"', seg, re.S)
-                pidm = re.search(r'/protein_id="([^"]*)"', seg)
-                if prodm:
-                    proteins.append({"product": re.sub(r"\s+", " ", prodm.group(1)),
-                                     "position": posm.group(1) if posm else loc,
-                                     "protein_id": pidm.group(1) if pidm else ""})
+    groups = {}  # group_key -> {rep, seg_label, glen, feats, n}
+    for a in accs[:80]:
+        gbp = os.path.join(sp_dir, a["name"] + ".gb")
+        if not os.path.exists(gbp):
+            continue
+        txt = open(gbp, encoding="utf-8", errors="replace").read()
+        lm = re.search(r'^LOCUS\s+\S+\s+(\d+)\s+bp', txt, re.M)
+        glen = int(lm.group(1)) if lm else 0
+        cds = []
+        for m in re.finditer(r'\n     CDS\s+([^\n]+)', txt):
+            loc = m.group(1).strip()
+            posm = re.search(r'(\d+\.\.\d+)', loc)
+            seg = txt[m.end():m.end() + 1500]
+            nf = re.search(r'\n     [A-Za-z]', seg)
+            if nf:
+                seg = seg[:nf.start()]
+            prodm = re.search(r'/product="([^"]*)"', seg, re.S)
+            pidm = re.search(r'/protein_id="([^"]*)"', seg)
+            prod = re.sub(r"\s+", " ", prodm.group(1)) if prodm else "CDS"
+            nums = re.findall(r'\d+', loc)
+            cds.append({"product": prod, "position": posm.group(1) if posm else loc,
+                        "protein_id": pidm.group(1) if pidm else "",
+                        "start": int(nums[0]) if len(nums) >= 2 else 0,
+                        "end": int(nums[-1]) if len(nums) >= 2 else 0,
+                        "strand": -1 if "complement" in loc else 1})
+        if not glen and cds:
+            glen = max(c["end"] for c in cds)
+        # group key: Segment 名优先(归一化)，否则按结构签名
+        raw_seg = acc_seg.get(a["name"], "").strip().replace(" ", "").replace("-", "")
+        gkey = raw_seg if raw_seg else ("L%d|%s" % (glen // 100, tuple(sorted(c["product"] for c in cds))))
+        if gkey not in groups:
+            feats = [{"start": c["start"], "end": c["end"], "strand": c["strand"], "label": c["product"]}
+                     for c in cds if c["end"]]
+            groups[gkey] = {"rep": a["name"], "seg_label": (acc_seg.get(a["name"], "") or "") if raw_seg else "",
+                            "glen": glen, "feats": feats, "n": 0}
+            for c in cds:
+                proteins.append({"segment": acc_seg.get(a["name"], "") or a["name"], "product": c["product"],
+                                 "position": c["position"], "protein_id": c["protein_id"]})
+        groups[gkey]["n"] += 1
+    segments = sorted(groups.values(), key=lambda g: -g["glen"])
 
     # 3. 相关文献
     papers = []
@@ -643,14 +704,32 @@ def build_profile(name):
             dmc.Title("基因组注释下载 (%d)" % len(accs), order=5, mb="sm"),
             *rows]))
 
+    # 基因组图谱：按 Segment 字段分组，无标记的按结构签名去重
+    seg_with_feats = [s for s in segments if s["feats"]]
+    if seg_with_feats:
+        graphs = []
+        for s in seg_with_feats:
+            seglab = (" · " + s["seg_label"]) if s["seg_label"] else ""
+            iso = (" · %d isolates" % s["n"]) if s["n"] > 1 else ""
+            graphs.append(dmc.Text("%s%s · %s bp · %d CDS%s" % (s["rep"], seglab, s["glen"] or "?", len(s["feats"]), iso),
+                                   size="xs", fw=600, mt="xs"))
+            graphs.append(dcc.Graph(figure=_genome_map_fig(s["feats"], s["glen"]),
+                                    config={"displayModeBar": False}, style={"height": "180px"}))
+        gtitle = "基因组图谱（%d 个节段/结构）" % len(seg_with_feats) if len(seg_with_feats) > 1 else "基因组图谱"
+        out.append(dmc.Paper(withBorder=True, p="md", radius="md", mb="md", children=[
+            dmc.Title(gtitle, order=5, mb="xs"),
+            dmc.Text("彩色箭头 = CDS，上排正链 / 下排负链，hover 看产物与位置。同一节段的多个 isolate 已合并。",
+                     size="xs", c="dimmed", mb="xs"),
+            *graphs]))
+
     if proteins:
         out.append(dmc.Paper(withBorder=True, p="md", radius="md", mb="md", children=[
             dmc.Title("蛋白 (%d)" % len(proteins), order=5, mb="sm"),
             dash_table.DataTable(
                 data=proteins,
-                columns=[{"name": "Product", "id": "product"}, {"name": "Position", "id": "position"},
-                         {"name": "Protein ID", "id": "protein_id"}],
-                page_size=15, style_table={"overflowX": "auto"},
+                columns=[{"name": "Segment/序列", "id": "segment"}, {"name": "Product", "id": "product"},
+                         {"name": "Position", "id": "position"}, {"name": "Protein ID", "id": "protein_id"}],
+                page_size=20, style_table={"overflowX": "auto"},
                 style_cell={"fontSize": "12px", "padding": "6px", "textAlign": "left"},
                 style_header={"backgroundColor": "#f1f3f5", "fontWeight": "bold"})]))
 
@@ -1093,15 +1172,15 @@ app.layout = dmc.MantineProvider(
                                                 value="profile",
                                                 children=[
                                                     dmc.Title("病毒档案", order=3, mb="xs"),
-                                                    dmc.Text("选择病毒物种，查看基因组注释下载、蛋白、相关文献与引物。",
+                                                    dmc.Text("选择病毒物种（下拉跟随左侧筛选结果），查看基因组图谱/注释下载、蛋白、相关文献与引物。",
                                                              size="sm", c="dimmed", mb="md"),
                                                     dmc.Select(
                                                         id="profile-select",
-                                                        label="选择病毒物种",
+                                                        label="选择病毒物种（跟随左侧筛选，先设置筛选并『重算』）",
                                                         placeholder="搜索物种名…",
-                                                        data=[{"value": s, "label": s} for s in PROFILE_SPECIES],
+                                                        data=[],
                                                         searchable=True, clearable=True, mb="md",
-                                                        style={"maxWidth": 520}
+                                                        style={"maxWidth": 560}
                                                     ),
                                                     html.Div(id="profile-content", children=[
                                                         dmc.Text("请在上方选择一个病毒物种。", size="sm", c="dimmed")
@@ -1756,12 +1835,24 @@ def _vec_stat(label, value, color):
 
 # ── 病毒档案面板 ────────────────────────────────────────
 @callback(
+    Output("profile-select", "data"),
+    Input("records-table", "data"),
+)
+def sync_profile_options(table_data):
+    """病毒档案下拉跟随左侧筛选：选项 = 当前筛选结果里的物种。"""
+    if not table_data:
+        return []
+    orgs = sorted({r.get("Organism", "") for r in table_data if r.get("Organism")})
+    return [{"value": o, "label": o} for o in orgs]
+
+
+@callback(
     Output("profile-content", "children"),
     Input("profile-select", "value"),
 )
 def load_profile_panel(name):
     if not name:
-        return dmc.Text("请在上方选择一个病毒物种。", size="sm", c="dimmed")
+        return dmc.Text("请在上方选择一个病毒物种（下拉已跟随左侧筛选结果）。", size="sm", c="dimmed")
     try:
         return build_profile(name)
     except Exception as e:
