@@ -38,6 +38,7 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 .vt-vector{background:#fce4ec;color:#c62828}.vt-host{background:#e8f5e9;color:#2e7d32}
 .vt-trans{background:#fff3e0;color:#e65100}.vt-path{background:#f3e5f5;color:#6a1b9a}
 .vt-route{background:#e8f5e9;color:#2e7d32}.vt-vcat{background:#e1f5fe;color:#0277bd}
+.vt-latin{background:#ede7f6;color:#4527a0;font-style:italic}
 .vt-source{background:#f5f5f5;color:#666;font-size:9px}
 .vt-vhonly{background:#e0f2f1;color:#00695c}.vt-wuronly{background:#f3e5f5;color:#6a1b9a}
 .vt-conf-high{background:#e8f5e9;color:#2e7d32}.vt-conf-low{background:#fff3e0;color:#e65100}
@@ -73,7 +74,7 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 
 <div id="tab-wur" style="display:none">
 <div class="toolbar"><input id="wq" placeholder="Search virus name, family, genus..." oninput="renderWUR()"><select id="wps" onchange="renderWUR()"><option value="50">50/page</option><option value="100">100/page</option><option value="200">200/page</option></select></div>
-<table><thead><tr><th>#</th><th>Virus Name</th><th>Family</th><th>Genus</th><th>媒介类别</th><th>传播途径</th><th>具体媒介 / 来源</th></tr></thead><tbody id="wur-tbody"></tbody></table>
+<table><thead><tr><th>#</th><th>Virus Name</th><th>Family</th><th>Genus</th><th>媒介 (通用+拉丁)</th><th>传播途径 / 方式</th><th>来源</th></tr></thead><tbody id="wur-tbody"></tbody></table>
 <div class="pagination" id="wur-pager"></div></div>
 
 </div>
@@ -114,6 +115,20 @@ function renderVH(){
  document.getElementById('vh-pager').innerHTML=pg
 }
 function goPage(p){page=p;renderVH();window.scrollTo(0,0)}
+function splitMeans(means){
+ // 把 WUR「Vector or means」拆成 媒介拉丁名(二名法) 与 传播方式(其余)
+ var LATIN=/^([A-Z][a-z]+ [a-z]{2,}|[A-Z]\.\s*[a-z]{2,})/;
+ var METHOD=/transmissible|graft|propagation|cutting|sucker|mechanical|division|borne|\bsap\b|\bsoil\b|\bwater\b|biolistic|inoculat|contact|pollen|vegetative|dodder|tuber|spread|unknown|reported|\bseed|clump|not\b|means/i;
+ var vectors=[],methods=[];
+ means.forEach(function(m){
+  m.split(/[;,]/).forEach(function(tok){
+   tok=tok.trim(); if(tok.length<3)return;
+   if(LATIN.test(tok)&&!METHOD.test(tok)){ if(vectors.indexOf(tok)<0)vectors.push(tok); }
+   else { if(methods.indexOf(tok)<0)methods.push(tok); }
+  });
+ });
+ return {vectors:vectors,methods:methods};
+}
 function renderWUR(){
  var d=WUR.slice(),q=document.getElementById('wq').value.toLowerCase();
  if(q)d=d.filter(function(r){return ((r.name||'')+' '+(r.family||'')+' '+(r.genus||'')+' '+(r.vector_org||'')).toLowerCase().indexOf(q)>=0});
@@ -121,16 +136,24 @@ function renderWUR(){
  var pages=Math.ceil(d.length/ps);if(wpage>pages)wpage=Math.max(1,pages);
  var start=(wpage-1)*ps,chunk=d.slice(start,start+ps);
  var h='';chunk.forEach(function(r,i){
-  // 具体媒介/传播方式(从 refs 的 means 去重)+ WUR 来源链接，不列参考文献标题
   var meansSet=[];
   if(Array.isArray(r.refs)){
    r.refs.forEach(function(rf){var m=(rf.means||'').trim();if(m&&meansSet.indexOf(m)<0)meansSet.push(m)});
   }
-  var meansHtml='';
-  meansSet.slice(0,8).forEach(function(m){meansHtml+='<span class=\"vtag vt-vcat\">&#128027; '+esc(m)+'</span>'});
+  var sp=splitMeans(meansSet);
+  // 媒介: 通用名(vector_org, 蓝) + 拉丁名(from means, 斜体紫)
+  var vecHtml='';
+  if(r.vector_org)vecHtml+='<span class=\"vtag vt-vcat\">'+esc(r.vector_org)+'</span>';
+  sp.vectors.forEach(function(v){vecHtml+='<span class=\"vtag vt-latin\">'+esc(v)+'</span>'});
+  if(!vecHtml)vecHtml='<span style=\"color:#bbb\">—</span>';
+  // 传播途径/方式: modes(受控, 绿) + 方式(from means, 橙)
+  var routeHtml='';
+  (r.modes||'').split(';').forEach(function(m){m=m.trim();if(m)routeHtml+='<span class=\"vtag vt-route\">'+esc(m)+'</span>'});
+  sp.methods.forEach(function(m){routeHtml+='<span class=\"vtag vt-trans\">'+esc(m)+'</span>'});
+  if(!routeHtml)routeHtml='<span style=\"color:#bbb\">—</span>';
   var srcUrl='https://library.wur.nl/WebQuery/virus?q='+encodeURIComponent(r.name||'').replace(/%20/g,'+');
-  meansHtml+='<div style=\"margin-top:4px\"><a class=\"doi-link\" href=\"'+esc(srcUrl)+'\" target=\"_blank\">&#128279; WUR 来源</a>'+(r.ref_count&&r.ref_count!=='0'?' <span style=\"color:#888;font-size:10px\">('+esc(r.ref_count)+' 篇)</span>':'')+'</div>';
-  h+='<tr><td>'+(start+i+1)+'</td><td><strong>'+esc(r.name||'')+'</strong></td><td><span class=\"badge b-v\">'+esc(r.family||'')+'</span></td><td>'+esc(r.genus||'')+'</td><td><span class=\"badge b-i\">'+esc(r.vector_org||'')+'</span></td><td style=\"font-size:11px\">'+esc(r.modes||'')+'</td><td style=\"font-size:11px;max-width:440px\">'+meansHtml+'</td></tr>';
+  var srcHtml='<a class=\"doi-link\" href=\"'+esc(srcUrl)+'\" target=\"_blank\">&#128279; WUR</a>'+(r.ref_count&&r.ref_count!=='0'?'<br><span style=\"color:#888;font-size:10px\">'+esc(r.ref_count)+' 篇</span>':'');
+  h+='<tr><td>'+(start+i+1)+'</td><td><strong>'+esc(r.name||'')+'</strong></td><td><span class=\"badge b-v\">'+esc(r.family||'')+'</span></td><td>'+esc(r.genus||'')+'</td><td style=\"max-width:230px\">'+vecHtml+'</td><td style=\"max-width:280px\">'+routeHtml+'</td><td style=\"white-space:nowrap\">'+srcHtml+'</td></tr>';
  });
  document.getElementById('wur-tbody').innerHTML=h||'<tr><td colspan=7 style=\"text-align:center;padding:40px;color:#999\">No results</td></tr>';
  var pg='';for(var i=1;i<=pages;i++)pg+='<button class=\"'+(i===wpage?'active':'')+'\" onclick=\"goWPage('+i+')\">'+i+'</button>';
