@@ -563,7 +563,8 @@ def _profile_info(name):
     if not os.path.exists(_REF_TSV):
         return None
     nl = name.lower().strip()
-    candidates = [nl, _NCBI2ICTV.get(nl, "")]
+    candidates = {nl, (_NCBI2ICTV.get(nl, "") or "").lower()}
+    candidates.discard("")
     with open(_REF_TSV, encoding="utf-8", errors="replace") as f:
         for row in csv.DictReader(f, delimiter="\t"):
             sp = (row.get("Species_ICTV", "") or row.get("Species_NCBI", "")).strip().lower()
