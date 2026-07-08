@@ -634,7 +634,7 @@ def build_profile(name):
         rows = []
         for a in accs:
             btns = []
-            for typ, url in a.files.items():
+            for typ, url in a["files"].items():
                 col = "blue" if typ == "genome" else ("teal" if typ in ("cds", "protein") else "gray")
                 btns.append(dmc.Anchor(dmc.Button("%s %s" % (a["name"], typ), size="xs",
                                                   variant="light", color=col), href=url, target="_blank"))
