@@ -74,7 +74,7 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 
 <div id="tab-wur" style="display:none">
 <div class="toolbar"><input id="wq" placeholder="Search virus name, family, genus..." oninput="renderWUR()"><select id="wps" onchange="renderWUR()"><option value="50">50/page</option><option value="100">100/page</option><option value="200">200/page</option></select></div>
-<table><thead><tr><th>#</th><th>Virus Name</th><th>Family</th><th>Genus</th><th>媒介类别</th><th>传播途径</th><th>Vector or means (逐条 / 来源)</th></tr></thead><tbody id="wur-tbody"></tbody></table>
+<table><thead><tr><th>#</th><th>Virus Name</th><th>Family</th><th>Genus</th><th>Vector organisms</th><th>Modes of transmission</th><th>Vector / Means of transmission</th></tr></thead><tbody id="wur-tbody"></tbody></table>
 <div class="pagination" id="wur-pager"></div></div>
 
 </div>
@@ -115,11 +115,19 @@ function renderVH(){
  document.getElementById('vh-pager').innerHTML=pg
 }
 function goPage(p){page=p;renderVH();window.scrollTo(0,0)}
-function meansKind(val){
- // 按整条「Vector or means」判断: 二名法开头且无方式关键词 → 媒介; 否则 → 传播方式
+function splitMeans(means){
+ // 把每条「Vector or means」按逗号/分号切分, 逐段分到 Vector(媒介昆虫 二名法) 与 Means(传播方式)
  var LATIN=/^([A-Z][a-z]+ [a-z]{2,}|[A-Z]\.\s*[a-z]{2,})/;
- var METHOD=/transmissible|graft|propagation|cutting|sucker|mechanical|division|borne|\bsap\b|\bsoil\b|\bwater\b|biolistic|inoculat|contact|pollen|vegetative|dodder|tuber|spread|unknown|reported|\bseed|clump|means/i;
- return (LATIN.test(val)&&!METHOD.test(val))?'vector':'method';
+ var METHOD=/transmissible|graft|propagation|cutting|sucker|mechanical|division|borne|\bsap\b|\bsoil\b|\bwater\b|biolistic|inoculat|contact|pollen|vegetative|dodder|tuber|spread|unknown|reported|\bseed|clump|not\b|means/i;
+ var vectors=[],methods=[];
+ means.forEach(function(m){
+  m.split(/[;,]/).forEach(function(tok){
+   tok=tok.trim(); if(tok.length<3)return;
+   if(LATIN.test(tok)&&!METHOD.test(tok)){ if(vectors.indexOf(tok)<0)vectors.push(tok); }
+   else { if(methods.indexOf(tok)<0)methods.push(tok); }
+  });
+ });
+ return {vectors:vectors,methods:methods};
 }
 function renderWUR(){
  var d=WUR.slice(),q=document.getElementById('wq').value.toLowerCase();
@@ -128,18 +136,16 @@ function renderWUR(){
  var pages=Math.ceil(d.length/ps);if(wpage>pages)wpage=Math.max(1,pages);
  var start=(wpage-1)*ps,chunk=d.slice(start,start+ps);
  var h='';chunk.forEach(function(r,i){
-  // 逐条展示每条参考的「Vector or means of transmission」(忠实源网页), 按整条判色
+  // 逐条 means 按整条分到 Vector(媒介昆虫) 与 Means(传播方式) 两组
   var meansSet=[];
   if(Array.isArray(r.refs)){
    r.refs.forEach(function(rf){var m=(rf.means||'').trim();if(m&&meansSet.indexOf(m)<0)meansSet.push(m)});
   }
+  var vecs=[],meths=[];
+  (function(){var sp=splitMeans(meansSet);vecs=sp.vectors;meths=sp.methods;})();
   var meansHtml='';
-  meansSet.forEach(function(m){
-   var kind=meansKind(m);
-   var cls=kind==='vector'?'vt-latin':'vt-trans';
-   var icon=kind==='vector'?'&#128027;':'&#129514;';
-   meansHtml+='<div style=\"margin:2px 0\"><span class=\"vtag '+cls+'\">'+icon+' '+esc(m)+'</span></div>';
-  });
+  if(vecs.length){meansHtml+='<div style=\"margin:2px 0\"><span style=\"color:#888;font-size:10px\">&#128027; Vector: </span>';vecs.forEach(function(v){meansHtml+='<span class=\"vtag vt-latin\">'+esc(v)+'</span>'});meansHtml+='</div>';}
+  if(meths.length){meansHtml+='<div style=\"margin:2px 0\"><span style=\"color:#888;font-size:10px\">&#129514; Means: </span>';meths.forEach(function(m){meansHtml+='<span class=\"vtag vt-trans\">'+esc(m)+'</span>'});meansHtml+='</div>';}
   if(!meansHtml)meansHtml='<span style=\"color:#bbb\">—</span>';
   var srcUrl='https://library.wur.nl/WebQuery/virus?q='+encodeURIComponent(r.name||'').replace(/%20/g,'+');
   meansHtml+='<div style=\"margin-top:4px\"><a class=\"doi-link\" href=\"'+esc(srcUrl)+'\" target=\"_blank\">&#128279; WUR 来源</a>'+(r.ref_count&&r.ref_count!=='0'?' <span style=\"color:#888;font-size:10px\">('+esc(r.ref_count)+' 篇)</span>':'')+'</div>';
