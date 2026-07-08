@@ -68,6 +68,7 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 <div class="chart-panel"><button class="chart-toggle" onclick="toggleCharts('int')">&#128202; 图表概览（随筛选联动） ▾</button>
 <div id="charts-int" class="chart-grid">
 <div class="chart-card"><div id="ch-int-source" style="width:100%;height:320px"></div></div>
+<div class="chart-card"><div id="ch-int-vcat" style="width:100%;height:320px"></div></div>
 <div class="chart-card"><div id="ch-int-routes" style="width:100%;height:320px"></div></div>
 <div class="chart-card chart-full"><div id="ch-int-heat" style="width:100%;height:360px"></div></div>
 </div></div>
@@ -86,6 +87,7 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 <div class="chart-card chart-full"><div id="ch-vh-sankey" style="width:100%;height:560px"></div></div>
 <div class="chart-card"><div id="ch-vh-topvec" style="width:100%;height:360px"></div></div>
 <div class="chart-card"><div id="ch-vh-mech" style="width:100%;height:360px"></div></div>
+<div class="chart-card chart-full"><div id="ch-vh-assoc" style="width:100%;height:380px"></div></div>
 </div></div>
 <div class="toolbar"><input id="q" placeholder="Search virus, vector, or host..." oninput="renderVH()"><select id="vf" onchange="renderVH()"><option value="">All Virus Families</option></select><select id="vo" onchange="renderVH()"><option value="">All Vector Orders</option></select><select id="ps" onchange="renderVH()"><option value="25">25/page</option><option value="50">50/page</option><option value="100">100/page</option></select></div>
 <table><thead><tr><th>Family</th><th>Genus</th><th>Virus Name</th><th>Vector</th><th>Host</th><th>Transmission</th><th>Detail</th></tr></thead><tbody id="vh-tbody"></tbody></table>
@@ -96,6 +98,7 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 <div id="charts-wur" class="chart-grid">
 <div class="chart-card"><div id="ch-wur-org" style="width:100%;height:380px"></div></div>
 <div class="chart-card"><div id="ch-wur-modes" style="width:100%;height:380px"></div></div>
+<div class="chart-card"><div id="ch-wur-means" style="width:100%;height:380px"></div></div>
 </div></div>
 <div class="toolbar"><input id="wq" placeholder="Search virus name, family, genus..." oninput="renderWUR()"><select id="wps" onchange="renderWUR()"><option value="50">50/page</option><option value="100">100/page</option><option value="200">200/page</option></select></div>
 <table><thead><tr><th>#</th><th>Virus Name</th><th>Family</th><th>Genus</th><th>Vector organisms</th><th>Vector</th><th>Modes of transmission</th><th>Means</th><th>来源</th></tr></thead><tbody id="wur-tbody"></tbody></table>
@@ -131,7 +134,7 @@ var chartsDrawn={vh:false,wur:false};
 var PCFG={responsive:true,displayModeBar:false};
 function toggleCharts(id){var g=document.getElementById('charts-'+id);var show=g.style.display==='none';g.style.display=show?'grid':'none';if(show)setTimeout(function(){resizeTabCharts(id)},30);}
 function resizeTabCharts(t){
- var ids={vh:['ch-vh-sankey','ch-vh-topvec','ch-vh-mech'],wur:['ch-wur-org','ch-wur-modes'],int:['ch-int-source','ch-int-routes','ch-int-heat']};
+ var ids={vh:['ch-vh-sankey','ch-vh-topvec','ch-vh-mech','ch-vh-assoc'],wur:['ch-wur-org','ch-wur-modes','ch-wur-means'],int:['ch-int-source','ch-int-vcat','ch-int-routes','ch-int-heat']};
  (ids[t]||[]).forEach(function(id){var el=document.getElementById(id);if(el&&el.data)Plotly.Plots.resize(el)});
 }
 function countBy(arr,keyFn){var o={};arr.forEach(function(r){var k=keyFn(r);if(k)o[k]=(o[k]||0)+1});return o}
@@ -176,21 +179,41 @@ function vhSankey(){
  });
  Plotly.react('ch-vh-sankey',[{type:'sankey',orientation:'h',node:{label:labels,color:colors,pad:8,thickness:12,line:{color:'rgba(0,0,0,.15)',width:.5}},link:{source:src,target:tgt,value:vals,color:'rgba(150,150,150,.25)'}}],{margin:{l:6,r:6,t:26,b:6},title:{text:'病毒科 → 病毒属 → 媒介科 → 媒介属 → 宿主植物',font:{size:12},x:0},font:{size:9}},PCFG);
 }
+function vhAssoc(){
+ var cell={},Y={},X={};
+ VH.forEach(function(r){
+  var vf=(r['Vector Family']||'').trim(),m=mechLabel(r['Virus Transmission Mode']);
+  if(vf&&m){X[m]=1;Y[vf]=(Y[vf]||0)+1;cell[vf+'\u0001'+m]=(cell[vf+'\u0001'+m]||0)+1}
+ });
+ var xk=Object.keys(X),yk=topN(Y,14).reverse();
+ var z=yk.map(function(vf){return xk.map(function(m){return cell[vf+'\u0001'+m]||0})});
+ Plotly.react('ch-vh-assoc',[{type:'heatmap',x:xk,y:yk,z:z,colorscale:'YlOrRd',hoverongaps:false}],{margin:{l:10,r:10,t:26,b:90},title:{text:'媒介科 × 传毒机制（记录数）',font:{size:12},x:0},xaxis:{automargin:true,tickangle:-30,tickfont:{size:9}},yaxis:{automargin:true,tickfont:{size:9}}},PCFG);
+}
 function renderVHCharts(){
  vhSankey();
  barH('ch-vh-topvec',countBy(VH,function(r){return (r['Vector']||'').trim()||null}),'Top 15 媒介种','#c62828',15);
  donut('ch-vh-mech',countBy(VH,function(r){return mechLabel(r['Virus Transmission Mode'])}),'昆虫传毒机制');
+ vhAssoc();
 }
 function renderWURCharts(){
  barH('ch-wur-org',countBy(WUR,function(r){return (r.vector_org||'').trim()||null}),'媒介类别 Vector organisms','#0277bd',20);
  var routes={};
  WUR.forEach(function(r){(r.modes||'').split(/[;,]/).forEach(function(m){m=m.trim().toLowerCase();if(m)routes[m]=(routes[m]||0)+1})});
  barH('ch-wur-modes',routes,'传播途径 Modes（多值）','#2e7d32',10);
+ var meth={};
+ WUR.forEach(function(r){
+  if(!Array.isArray(r.refs))return;
+  var means=[];r.refs.forEach(function(rf){var m=(rf.means||'').trim();if(m&&means.indexOf(m)<0)means.push(m)});
+  var uniq={};splitMeans(means).methods.forEach(function(m){var k=m.trim().toLowerCase();if(k)uniq[k]=1});
+  Object.keys(uniq).forEach(function(k){meth[k]=(meth[k]||0)+1});
+ });
+ barH('ch-wur-means',meth,'具体传播方式 Means（top 15）','#e65100',15);
 }
 function renderIntCharts(d){
  var src={'Both':0,'仅 VH':0,'仅 WUR':0};
  d.forEach(function(v){if(v.sources.length>1)src['Both']++;else if(v.sources[0]==='VH')src['仅 VH']++;else src['仅 WUR']++});
  donut('ch-int-source',src,'来源占比（'+d.length+' 病毒）');
+ barH('ch-int-vcat',countMulti(d,function(v){return v.vector_categories||[]}),'媒介类别（WUR, 多值）','#0277bd',15);
  barH('ch-int-routes',countMulti(d,function(v){return v.transmission_routes||[]}),'传播途径（WUR, 多值）','#2e7d32',10);
  var cats={},mechs={},cell={};
  d.forEach(function(v){
