@@ -725,22 +725,33 @@ def build_profile(name):
             dmc.Title("基因组注释下载 (%d)" % len(accs), order=5, mb="sm"),
             *rows]))
 
-    # 基因组图谱：按 Segment 字段分组，无标记的按结构签名去重
-    seg_with_feats = [s for s in segments if s["feats"]]
-    if seg_with_feats:
+    # 基因组图谱：每个不同结构（节段）各一张，isolate 去重。无 CDS 的(viroid)绘制仅基因组线。
+    seg_with_feats = segments
+    has_any_cds = any(s["feats"] for s in segments)
+    if segments:
         graphs = []
-        for s in seg_with_feats:
+        for s in segments:
             seglab = (" · " + s["seg_label"]) if s["seg_label"] else ""
             iso = (" · %d isolates" % s["n"]) if s["n"] > 1 else ""
             graphs.append(dmc.Text("%s%s · %s bp · %d CDS%s" % (s["rep"], seglab, s["glen"] or "?", len(s["feats"]), iso),
                                    size="xs", fw=600, mt="xs"))
-            graphs.append(dcc.Graph(figure=_genome_map_fig(s["feats"], s["glen"]),
-                                    config={"displayModeBar": False}, style={"height": "180px"}))
-        gtitle = "基因组图谱（%d 个节段/结构）" % len(seg_with_feats) if len(seg_with_feats) > 1 else "基因组图谱"
+            if s["feats"]:
+                graphs.append(dcc.Graph(figure=_genome_map_fig(s["feats"], s["glen"]),
+                                        config={"displayModeBar": False}, style={"height": "180px"}))
+            else:
+                # viroid / non-coding: 仅画基因组线 + "无编码特征"标记
+                fig = go.Figure()
+                fig.add_shape(type="line", x0=0, x1=s["glen"] or 1, y0=0, y1=0, line=dict(color="#adb5bd", width=3))
+                fig.add_annotation(x=(s["glen"] or 1)/2, y=0, text="无 CDS (类病毒/非编码)", showarrow=False, font=dict(size=10, color="#888"))
+                fig.update_layout(height=100, margin=dict(l=8, r=8, t=4, b=20), plot_bgcolor="white",
+                    yaxis=dict(visible=False, range=[-0.3, 0.3], fixedrange=True),
+                    xaxis=dict(title="位置 (nt)", rangemode="tozero", tickfont=dict(size=10)))
+                graphs.append(dcc.Graph(figure=fig, config={"displayModeBar": False}, style={"height": "100px"}))
+        gtitle = "基因组图谱（%d 个节段/序列）" % len(segments) if len(segments) > 1 else "基因组图谱"
+        tip = "彩色箭头 = CDS，上排正链 / 下排负链，hover 看产物与位置。同一节段的多个 isolate 已合并。" if has_any_cds else "类病毒无编码特征(CDS)，仅显示基因组骨架线。"
         out.append(dmc.Paper(withBorder=True, p="md", radius="md", mb="md", children=[
             dmc.Title(gtitle, order=5, mb="xs"),
-            dmc.Text("彩色箭头 = CDS，上排正链 / 下排负链，hover 看产物与位置。同一节段的多个 isolate 已合并。",
-                     size="xs", c="dimmed", mb="xs"),
+            dmc.Text(tip, size="xs", c="dimmed", mb="xs"),
             *graphs]))
 
     if proteins:
@@ -1197,9 +1208,9 @@ app.layout = dmc.MantineProvider(
                                                              size="sm", c="dimmed", mb="md"),
                                                     dmc.Select(
                                                         id="profile-select",
-                                                        label="选择病毒物种（跟随左侧筛选，先设置筛选并『重算』）",
+                                                        label="选择病毒物种（初始 = 全量，设置筛选并『重算』后缩小范围）",
                                                         placeholder="搜索物种名…",
-                                                        data=[],
+                                                        data=[{"value": s, "label": s} for s in PROFILE_SPECIES],
                                                         searchable=True, clearable=True, mb="md",
                                                         style={"maxWidth": 560}
                                                     ),
