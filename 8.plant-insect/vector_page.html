@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Virus-Vector-Host</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
 <style>
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;margin:0}
 nav{background:#1a5276;display:flex;align-items:center;padding:0 24px;height:52px}
@@ -46,6 +47,12 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 .vcard .vdetail{font-size:12px;color:#555;margin-top:8px;line-height:1.6}
 .vcard .vdetail b{color:#333}
 .vcard .doi-link{font-size:11px;color:#2e86c1}
+.chart-panel{margin-bottom:16px}
+.chart-toggle{background:#fff;border:1px solid #1a5276;color:#1a5276;border-radius:6px;padding:6px 14px;font-size:13px;cursor:pointer;margin-bottom:10px;font-weight:600}
+.chart-toggle:hover{background:#eef4f8}
+.chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:12px}
+.chart-card{background:#fff;border-radius:8px;padding:6px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.chart-full{grid-column:1/-1}
 </style></head><body>
 <nav><a class="brand" href="/vector/">Vectors</a><a href="/reference/">Reference DB</a><a href="/primers/">Primers</a><a href="/explorer/">Explorer</a><a href="/knowledge/">Knowledge</a></nav>
 <div class="hero"><h1>Virus-Vector-Host Database</h1><p>{{total}} records: {{families}} virus families, {{viruses}} viruses, {{vectors}} vectors, {{hosts}} host plants | WUR: {{wur_count}} references</p></div>
@@ -58,6 +65,12 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 </div>
 
 <div id="tab-int" style="display:none">
+<div class="chart-panel"><button class="chart-toggle" onclick="toggleCharts('int')">&#128202; 图表概览（随筛选联动） ▾</button>
+<div id="charts-int" class="chart-grid">
+<div class="chart-card"><div id="ch-int-source" style="width:100%;height:320px"></div></div>
+<div class="chart-card"><div id="ch-int-routes" style="width:100%;height:320px"></div></div>
+<div class="chart-card chart-full"><div id="ch-int-heat" style="width:100%;height:360px"></div></div>
+</div></div>
 <div style="background:#fff;border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:12px;color:#555;box-shadow:0 1px 3px rgba(0,0,0,.04)">
 预合并数据库 <b>{{m_total}}</b> 个病毒 &middot; 两源都有 <b style="color:#1565c0">{{m_both}}</b> &middot; 仅 VH <b style="color:#00695c">{{m_vh_only}}</b> &middot; 仅 WUR <b style="color:#6a1b9a">{{m_wur_only}}</b> &middot; family 冲突 <b style="color:#c62828">{{m_conflicts}}</b>
 </div>
@@ -68,11 +81,22 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 </div>
 
 <div id="tab-vh">
+<div class="chart-panel"><button class="chart-toggle" onclick="toggleCharts('vh')">&#128202; 图表概览 ▾</button>
+<div id="charts-vh" class="chart-grid">
+<div class="chart-card chart-full"><div id="ch-vh-sankey" style="width:100%;height:420px"></div></div>
+<div class="chart-card"><div id="ch-vh-topvec" style="width:100%;height:360px"></div></div>
+<div class="chart-card"><div id="ch-vh-mech" style="width:100%;height:360px"></div></div>
+</div></div>
 <div class="toolbar"><input id="q" placeholder="Search virus, vector, or host..." oninput="renderVH()"><select id="vf" onchange="renderVH()"><option value="">All Virus Families</option></select><select id="vo" onchange="renderVH()"><option value="">All Vector Orders</option></select><select id="ps" onchange="renderVH()"><option value="25">25/page</option><option value="50">50/page</option><option value="100">100/page</option></select></div>
 <table><thead><tr><th>Family</th><th>Genus</th><th>Virus Name</th><th>Vector</th><th>Host</th><th>Transmission</th><th>Detail</th></tr></thead><tbody id="vh-tbody"></tbody></table>
 <div class="pagination" id="vh-pager"></div></div>
 
 <div id="tab-wur" style="display:none">
+<div class="chart-panel"><button class="chart-toggle" onclick="toggleCharts('wur')">&#128202; 图表概览 ▾</button>
+<div id="charts-wur" class="chart-grid">
+<div class="chart-card"><div id="ch-wur-org" style="width:100%;height:380px"></div></div>
+<div class="chart-card"><div id="ch-wur-modes" style="width:100%;height:380px"></div></div>
+</div></div>
 <div class="toolbar"><input id="wq" placeholder="Search virus name, family, genus..." oninput="renderWUR()"><select id="wps" onchange="renderWUR()"><option value="50">50/page</option><option value="100">100/page</option><option value="200">200/page</option></select></div>
 <table><thead><tr><th>#</th><th>Virus Name</th><th>Family</th><th>Genus</th><th>Vector organisms</th><th>Vector</th><th>Modes of transmission</th><th>Means</th><th>来源</th></tr></thead><tbody id="wur-tbody"></tbody></table>
 <div class="pagination" id="wur-pager"></div></div>
@@ -90,6 +114,11 @@ function showTab(t){
  document.getElementById('tb-wur').className='tab-btn'+(t==='wur'?' active':'');
  document.getElementById('tb-int').className='tab-btn'+(t==='int'?' active':'');
  if(t==='int')renderInt();
+ setTimeout(function(){
+  if(t==='vh'){if(!chartsDrawn.vh){renderVHCharts();chartsDrawn.vh=true}else resizeTabCharts('vh')}
+  else if(t==='wur'){if(!chartsDrawn.wur){renderWURCharts();chartsDrawn.wur=true}else resizeTabCharts('wur')}
+  else if(t==='int'){resizeTabCharts('int')}
+ },50);
 }
 function toggleDetail(i){
  var d=document.getElementById('d'+i),t=document.getElementById('t'+i);
@@ -97,6 +126,81 @@ function toggleDetail(i){
  else{d.style.display='none';t.textContent='Detail'}
 }
 
+// ── 图表 (Plotly) ──────────────────────────────────────────
+var chartsDrawn={vh:false,wur:false};
+var PCFG={responsive:true,displayModeBar:false};
+function toggleCharts(id){var g=document.getElementById('charts-'+id);var show=g.style.display==='none';g.style.display=show?'grid':'none';if(show)setTimeout(function(){resizeTabCharts(id)},30);}
+function resizeTabCharts(t){
+ var ids={vh:['ch-vh-sankey','ch-vh-topvec','ch-vh-mech'],wur:['ch-wur-org','ch-wur-modes'],int:['ch-int-source','ch-int-routes','ch-int-heat']};
+ (ids[t]||[]).forEach(function(id){var el=document.getElementById(id);if(el&&el.data)Plotly.Plots.resize(el)});
+}
+function countBy(arr,keyFn){var o={};arr.forEach(function(r){var k=keyFn(r);if(k)o[k]=(o[k]||0)+1});return o}
+function countMulti(arr,listFn){var o={};arr.forEach(function(r){(listFn(r)||[]).forEach(function(k){if(k)o[k]=(o[k]||0)+1})});return o}
+function topN(o,n){return Object.keys(o).sort(function(a,b){return o[b]-o[a]}).slice(0,n)}
+function barH(div,obj,title,color,n){
+ var keys=topN(obj,n||20).reverse();
+ Plotly.react(div,[{type:'bar',orientation:'h',y:keys,x:keys.map(function(k){return obj[k]}),marker:{color:color||'#2e86c1'},text:keys.map(function(k){return obj[k]}),textposition:'auto',textfont:{size:10}}],{margin:{l:8,r:14,t:30,b:24},title:{text:title,font:{size:12},x:0},yaxis:{automargin:true,tickfont:{size:10}},xaxis:{tickfont:{size:9}},font:{size:11}},PCFG);
+}
+function donut(div,obj,title){
+ var keys=Object.keys(obj);
+ Plotly.react(div,[{type:'pie',hole:.5,labels:keys,values:keys.map(function(k){return obj[k]}),textinfo:'label+value',textfont:{size:10},marker:{colors:['#4c6ef5','#12b886','#f59f00','#e03131','#6a1b9a','#0277bd']}}],{margin:{l:8,r:8,t:30,b:8},title:{text:title,font:{size:12},x:0},showlegend:false,font:{size:10}},PCFG);
+}
+var MECH_MAP={
+ 'Non-Persistent Transmission':'Non-Persistent',
+ 'Non-Circulative, Semi-Persistent Transmission':'Semi-Persistent',
+ 'Persistent, circulative':'Persistent (circulative)',
+ 'Circulative, Persistent-Propagative Transmission':'Persistent-Propagative',
+ 'Circulative, Persistent Non-Propagative Transmission':'Persistent Non-Propagative'
+};
+function mechLabel(m){m=(m||'').trim();return MECH_MAP[m]||(m&&m!=='NA'?m:null)}
+function vhSankey(){
+ var orders=new Set(topN(countBy(VH,function(r){return r['Vector Order']}),12));
+ var vfams=new Set(topN(countBy(VH,function(r){return r['Vector Family']}),15));
+ var vifams=new Set(topN(countBy(VH,function(r){return r['Virus Family']}),15));
+ function fold(v,keep,other){return (v&&keep.has(v))?v:other}
+ var links={};
+ VH.forEach(function(r){
+  var o=fold(r['Vector Order'],orders,'其他媒介目'),f=fold(r['Vector Family'],vfams,'其他媒介科'),vi=fold(r['Virus Family'],vifams,'其他病毒科');
+  links['1|'+o+'\u0001'+f]=(links['1|'+o+'\u0001'+f]||0)+1;
+  links['2|'+f+'\u0001'+vi]=(links['2|'+f+'\u0001'+vi]||0)+1;
+ });
+ var idx={},labels=[],colors=[];
+ function ni(name,col){if(!(name in idx)){idx[name]=labels.length;labels.push(name);colors.push(col)}return idx[name]}
+ var src=[],tgt=[],val=[];
+ Object.keys(links).forEach(function(k){
+  var layer=k.charAt(0),p=k.slice(2).split('\u0001');
+  var ca=layer==='1'?'#4c6ef5':'#12b886',cb=layer==='1'?'#12b886':'#f59f00';
+  src.push(ni(p[0],ca));tgt.push(ni(p[1],cb));val.push(links[k]);
+ });
+ Plotly.react('ch-vh-sankey',[{type:'sankey',orientation:'h',node:{label:labels,color:colors,pad:10,thickness:14,line:{color:'rgba(0,0,0,.15)',width:.5}},link:{source:src,target:tgt,value:val,color:'rgba(150,150,150,.28)'}}],{margin:{l:6,r:6,t:26,b:6},title:{text:'媒介目 → 媒介科 → 病毒科（记录数）',font:{size:12},x:0},font:{size:10}},PCFG);
+}
+function renderVHCharts(){
+ vhSankey();
+ barH('ch-vh-topvec',countBy(VH,function(r){return (r['Vector']||'').trim()||null}),'Top 15 媒介种','#c62828',15);
+ donut('ch-vh-mech',countBy(VH,function(r){return mechLabel(r['Virus Transmission Mode'])}),'昆虫传毒机制');
+}
+function renderWURCharts(){
+ barH('ch-wur-org',countBy(WUR,function(r){return (r.vector_org||'').trim()||null}),'媒介类别 Vector organisms','#0277bd',20);
+ var routes={};
+ WUR.forEach(function(r){(r.modes||'').split(/[;,]/).forEach(function(m){m=m.trim().toLowerCase();if(m)routes[m]=(routes[m]||0)+1})});
+ barH('ch-wur-modes',routes,'传播途径 Modes（多值）','#2e7d32',10);
+}
+function renderIntCharts(d){
+ var src={'Both':0,'仅 VH':0,'仅 WUR':0};
+ d.forEach(function(v){if(v.sources.length>1)src['Both']++;else if(v.sources[0]==='VH')src['仅 VH']++;else src['仅 WUR']++});
+ donut('ch-int-source',src,'来源占比（'+d.length+' 病毒）');
+ barH('ch-int-routes',countMulti(d,function(v){return v.transmission_routes||[]}),'传播途径（WUR, 多值）','#2e7d32',10);
+ var cats={},mechs={},cell={};
+ d.forEach(function(v){
+  var vc=v.vector_categories||[],tc=v.transmission_categories||[];
+  vc.forEach(function(c){cats[c]=(cats[c]||0)+1});
+  vc.forEach(function(c){tc.forEach(function(m){mechs[m]=1;cell[c+'\u0001'+m]=(cell[c+'\u0001'+m]||0)+1})});
+ });
+ var X=topN(cats,12),Y=Object.keys(mechs);
+ var z=Y.map(function(m){return X.map(function(c){return cell[c+'\u0001'+m]||0})});
+ Plotly.react('ch-int-heat',[{type:'heatmap',x:X,y:Y,z:z,colorscale:'Blues',hoverongaps:false,showscale:true}],{margin:{l:10,r:10,t:26,b:90},title:{text:'媒介类别 × 昆虫机制（同时具备的病毒数）',font:{size:12},x:0},xaxis:{automargin:true,tickangle:-40,tickfont:{size:9}},yaxis:{automargin:true,tickfont:{size:9}}},PCFG);
+}
+var _intChartTimer=null;
 function renderVH(){
  var d=VH.slice(),q=document.getElementById('q').value.toLowerCase();
  if(q)d=d.filter(function(r){return Object.values(r).join(' ').toLowerCase().indexOf(q)>=0});
@@ -230,6 +334,7 @@ function renderInt(){
  document.getElementById('int-cards').innerHTML=h||'<div style=\"text-align:center;padding:40px;color:#999\">No results</div>';
  var pg='';for(var i=1;i<=pages;i++)pg+='<button class=\"'+(i===ipage?'active':'')+'\" onclick=\"goIPage('+i+')\">'+i+'</button>';
  document.getElementById('int-pager').innerHTML=pg
+ clearTimeout(_intChartTimer);_intChartTimer=setTimeout(function(){renderIntCharts(d)},120);
 }
 function goIPage(p){ipage=p;renderInt();window.scrollTo(0,0)}
 function populateFacets(){
@@ -255,5 +360,11 @@ function populateFacets(){
  [...vos].sort().forEach(function(v){var o=document.createElement('option');o.value=v;o.textContent=v;vo.appendChild(o)});
  populateFacets();
  renderVH();renderWUR();
+ renderVHCharts();chartsDrawn.vh=true;   // VH 为默认可见 tab, 立即绘制
+ var _rz=null;
+ window.addEventListener('resize',function(){clearTimeout(_rz);_rz=setTimeout(function(){
+  var t=document.getElementById('tab-vh').style.display!=='none'?'vh':(document.getElementById('tab-wur').style.display!=='none'?'wur':'int');
+  resizeTabCharts(t);
+ },200)});
 })();
 </script></body></html>
