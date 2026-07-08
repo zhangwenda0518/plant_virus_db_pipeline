@@ -24,6 +24,8 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 .pagination{display:flex;gap:4px;justify-content:center;margin:16px 0}
 .pagination button{padding:5px 12px;border:1px solid #ddd;border-radius:4px;background:#fff;cursor:pointer;font-size:13px}
 .pagination button.active{background:#1a5276;color:#fff;border-color:#1a5276}
+.pagination button:disabled{opacity:.4;cursor:default}
+.pagination .pinfo{padding:5px 8px;color:#888;font-size:12px}
 .tab-btn{background:#fff;color:#1a5276;border:1px solid #1a5276;padding:6px 16px;border-radius:6px;font-size:13px;cursor:pointer;margin-right:6px}
 .tab-btn.active{background:#1a5276;color:#fff}
 .doi-link{color:#2e86c1;font-size:11px}
@@ -84,10 +86,10 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 <div id="tab-vh">
 <div class="chart-panel"><button class="chart-toggle" onclick="toggleCharts('vh')">&#128202; 图表概览 ▾</button>
 <div id="charts-vh" class="chart-grid">
-<div class="chart-card chart-full"><div id="ch-vh-sankey" style="width:100%;height:560px"></div></div>
+<div class="chart-card chart-full"><div id="ch-vh-sankey" style="width:100%;height:720px"></div></div>
 <div class="chart-card"><div id="ch-vh-topvec" style="width:100%;height:360px"></div></div>
 <div class="chart-card"><div id="ch-vh-mech" style="width:100%;height:360px"></div></div>
-<div class="chart-card chart-full"><div id="ch-vh-assoc" style="width:100%;height:380px"></div></div>
+<div class="chart-card"><div id="ch-vh-assoc" style="width:100%;height:360px"></div></div>
 </div></div>
 <div class="toolbar"><input id="q" placeholder="Search virus, vector, or host..." oninput="renderVH()"><select id="vf" onchange="renderVH()"><option value="">All Virus Families</option></select><select id="vo" onchange="renderVH()"><option value="">All Vector Orders</option></select><select id="ps" onchange="renderVH()"><option value="25">25/page</option><option value="50">50/page</option><option value="100">100/page</option></select></div>
 <table><thead><tr><th>Family</th><th>Genus</th><th>Virus Name</th><th>Vector</th><th>Host</th><th>Transmission</th><th>Detail</th></tr></thead><tbody id="vh-tbody"></tbody></table>
@@ -109,6 +111,20 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 var VH={{json_vh|safe}},WUR={{json_wur|safe}},MERGED={{json_merged|safe}},page=1,wpage=1,ipage=1;
 
 function esc(t){return String(t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function pager(cur,pages,fn){
+ if(pages<=1)return pages===1?'<span class="pinfo">共 1 页</span>':'';
+ var b=[];
+ function mk(p,lab,act,dis){return '<button class="'+(act?'active':'')+'"'+(dis?' disabled':'')+' onclick="'+fn+'('+p+')">'+lab+'</button>'}
+ b.push(mk(1,'«',false,cur<=1));
+ b.push(mk(Math.max(1,cur-1),'‹',false,cur<=1));
+ var set={};set[1]=1;set[pages]=1;for(var i=cur-2;i<=cur+2;i++){if(i>=1&&i<=pages)set[i]=1}
+ var arr=Object.keys(set).map(Number).sort(function(a,b){return a-b}),prev=0;
+ arr.forEach(function(p){if(p-prev>1)b.push('<span class="pinfo">…</span>');b.push(mk(p,p,p===cur,false));prev=p});
+ b.push(mk(Math.min(pages,cur+1),'›',false,cur>=pages));
+ b.push(mk(pages,'»',false,cur>=pages));
+ b.push('<span class="pinfo">'+cur+' / '+pages+'</span>');
+ return b.join('');
+}
 function showTab(t){
  document.getElementById('tab-vh').style.display=t==='vh'?'block':'none';
  document.getElementById('tab-wur').style.display=t==='wur'?'block':'none';
@@ -158,11 +174,14 @@ var MECH_MAP={
 function mechLabel(m){m=(m||'').trim();return MECH_MAP[m]||(m&&m!=='NA'?m:null)}
 function vhSankey(){
  var cols=[
-  {f:function(r){return r['Virus Family']},cap:15,other:'其他病毒科',color:'#e03131'},
-  {f:function(r){return r['Virus Genus']},cap:20,other:'其他病毒属',color:'#f59f00'},
-  {f:function(r){return r['Vector Family']},cap:15,other:'其他媒介科',color:'#12b886'},
-  {f:function(r){return r['Vector Genus']},cap:20,other:'其他媒介属',color:'#4c6ef5'},
-  {f:function(r){return r['Virus Host']},cap:20,other:'其他宿主',color:'#6a1b9a'}
+  {f:function(r){return r['Virus Family']},cap:12,other:'其他病毒科',color:'#e03131'},
+  {f:function(r){return r['Virus Genus']},cap:15,other:'其他病毒属',color:'#fa5252'},
+  {f:function(r){return r['Virus Name']},cap:15,other:'其他病毒种',color:'#f59f00'},
+  {f:function(r){return r['Vector Family']},cap:12,other:'其他媒介科',color:'#12b886'},
+  {f:function(r){return r['Vector Genus']},cap:15,other:'其他媒介属',color:'#15aabf'},
+  {f:function(r){return r['Vector']},cap:15,other:'其他媒介种',color:'#4c6ef5'},
+  {f:function(r){return mechLabel(r['Virus Transmission Mode'])||'未知机制'},cap:8,other:'其他机制',color:'#7048e8'},
+  {f:function(r){return r['Virus Host']},cap:15,other:'其他宿主',color:'#6a1b9a'}
  ];
  var keep=cols.map(function(c){return new Set(topN(countBy(VH,function(r){return (c.f(r)||'').trim()||null}),c.cap))});
  function cellVal(r,i){var v=(cols[i].f(r)||'').trim();return (v&&keep[i].has(v))?v:cols[i].other}
@@ -177,7 +196,7 @@ function vhSankey(){
   var i=parseInt(k.charAt(0),10),p=k.slice(2).split('\u0001');
   src.push(ni(i,p[0],cols[i].color));tgt.push(ni(i+1,p[1],cols[i+1].color));vals.push(links[k]);
  });
- Plotly.react('ch-vh-sankey',[{type:'sankey',orientation:'h',node:{label:labels,color:colors,pad:8,thickness:12,line:{color:'rgba(0,0,0,.15)',width:.5}},link:{source:src,target:tgt,value:vals,color:'rgba(150,150,150,.25)'}}],{margin:{l:6,r:6,t:26,b:6},title:{text:'病毒科 → 病毒属 → 媒介科 → 媒介属 → 宿主植物',font:{size:12},x:0},font:{size:9}},PCFG);
+ Plotly.react('ch-vh-sankey',[{type:'sankey',orientation:'h',node:{label:labels,color:colors,pad:7,thickness:11,line:{color:'rgba(0,0,0,.15)',width:.5}},link:{source:src,target:tgt,value:vals,color:'rgba(150,150,150,.22)'}}],{margin:{l:6,r:6,t:26,b:6},title:{text:'病毒科→属→种 → 媒介科→属→种 → 传毒机制 → 宿主植物',font:{size:12},x:0},font:{size:8}},PCFG);
 }
 function vhAssoc(){
  var cell={},Y={},X={};
@@ -240,7 +259,7 @@ function renderVH(){
   h+='<tr class=\"detail-row\" id=\"d'+idx+'\"><td colspan=\"7\"><b>Lineage:</b> '+esc(r['Lineage']||'')+'<br><b>DOI (Insect):</b> <a class=\"doi-link\" href=\"'+esc(r['DOI for Validation Virus-Insect Relationships']||'')+'\" target=\"_blank\">'+esc((r['DOI for Validation Virus-Insect Relationships']||'').substring(0,60))+'</a><br><b>DOI (Transmission):</b> <a class=\"doi-link\" href=\"'+esc(r['DOI for Validation Virus Transmission Mode']||'')+'\" target=\"_blank\">'+esc((r['DOI for Validation Virus Transmission Mode']||'').substring(0,60))+'</a><br><b>TaxIDs:</b> Virus='+esc(r['Virus TaxID']||'')+', Vector='+esc(r['Vector TaxID']||'')+', Host='+esc(r['Host TaxID']||'')+'</td></tr>';
  });
  document.getElementById('vh-tbody').innerHTML=h||'<tr><td colspan=7 style=\"text-align:center;padding:40px;color:#999\">No results</td></tr>';
- var pg='';for(var i=1;i<=pages;i++)pg+='<button class=\"'+(i===page?'active':'')+'\" onclick=\"goPage('+i+')\">'+i+'</button>';
+ var pg=pager(page,pages,'goPage');
  document.getElementById('vh-pager').innerHTML=pg
 }
 function goPage(p){page=p;renderVH();window.scrollTo(0,0)}
@@ -281,7 +300,7 @@ function renderWUR(){
   h+='<tr><td>'+(start+i+1)+'</td><td><strong>'+esc(r.name||'')+'</strong></td><td><span class=\"badge b-v\">'+esc(r.family||'')+'</span></td><td>'+esc(r.genus||'')+'</td><td><span class=\"vtag vt-vcat\">'+esc(r.vector_org||'—')+'</span></td><td style=\"max-width:200px\">'+vecHtml+'</td><td style=\"font-size:11px;max-width:180px\">'+esc(r.modes||'—')+'</td><td style=\"max-width:280px\">'+meansHtml+'</td><td style=\"white-space:nowrap\">'+srcHtml+'</td></tr>';
  });
  document.getElementById('wur-tbody').innerHTML=h||'<tr><td colspan=9 style=\"text-align:center;padding:40px;color:#999\">No results</td></tr>';
- var pg='';for(var i=1;i<=pages;i++)pg+='<button class=\"'+(i===wpage?'active':'')+'\" onclick=\"goWPage('+i+')\">'+i+'</button>';
+ var pg=pager(wpage,pages,'goWPage');
  document.getElementById('wur-pager').innerHTML=pg
 }
 function goWPage(p){wpage=p;renderWUR()}
@@ -357,7 +376,7 @@ function renderInt(){
   h+='</div>';
  });
  document.getElementById('int-cards').innerHTML=h||'<div style=\"text-align:center;padding:40px;color:#999\">No results</div>';
- var pg='';for(var i=1;i<=pages;i++)pg+='<button class=\"'+(i===ipage?'active':'')+'\" onclick=\"goIPage('+i+')\">'+i+'</button>';
+ var pg=pager(ipage,pages,'goIPage');
  document.getElementById('int-pager').innerHTML=pg
  clearTimeout(_intChartTimer);_intChartTimer=setTimeout(function(){renderIntCharts(d)},120);
 }
