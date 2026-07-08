@@ -518,9 +518,15 @@ if os.path.exists(_vec_path):
         print(f"Vector DB load failed: {_e}")
 
 def _vector_lookup(organism):
-    """按 Organism 名及其别名查媒介记录，命中返回 merged 记录，否则 None。"""
+    """按 Organism 名及其别名(含 NCBI→ICTV 转译)查媒介记录。"""
     for name in _lookup_names(organism):
         cn = VECTOR_INDEX.get(_vnorm(name))
+        if cn:
+            return VECTOR_DB[cn]
+    # 补充 NCBI→ICTV 名转译(解决 Explorer NCBI 名与 VH ICTV 名不匹配)
+    ictv = _NCBI2ICTV.get(organism.strip().lower(), "")
+    if ictv:
+        cn = VECTOR_INDEX.get(_vnorm(ictv))
         if cn:
             return VECTOR_DB[cn]
     return None

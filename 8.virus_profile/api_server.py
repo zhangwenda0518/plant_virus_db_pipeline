@@ -26,27 +26,40 @@ def load_name_map():
 
 
 def get_species_info(name):
-    """Get species metadata from ref TSV."""
+    """Get species metadata from ref TSV (NCBI→ICTV 兼容)。"""
+    # 构建 NCBI→ICTV 映射（与 Explorer profile 相同的逻辑）
+    n2i = {}
+    if os.path.exists(FULL_TSV):
+        for r in csv.DictReader(open(FULL_TSV, encoding="utf-8", errors="replace"), delimiter="\t"):
+            ncbi = (r.get("Species_NCBI", "") or "").strip()
+            ictv = (r.get("Species_ICTV", "") or "").strip()
+            if ncbi and ictv and ncbi.lower() not in n2i:
+                n2i[ncbi.lower()] = ictv
+    nl = name.lower().strip()
+    candidates = {nl, (n2i.get(nl, "") or "").lower()}
+    candidates.discard("")
     results = []
     with open(REF_TSV, encoding="utf-8", errors="replace") as f:
         for row in csv.DictReader(f, delimiter="\t"):
-            sp = (row.get("Species_ICTV", "") or row.get("Species_NCBI", "")).strip()
-            if sp.lower() == name.lower():
+            sp = (row.get("Species_ICTV", "") or row.get("Species_NCBI", "")).strip().lower()
+            if sp in candidates:
                 results.append(row)
     return results[0] if results else None
 
 
 def search_species(query):
-    """Search species by partial name."""
+    """Search species by partial name (兼查 ICTV 和 NCBI 名)。"""
     q = query.lower().strip()
     results = []
     seen = set()
     with open(REF_TSV, encoding="utf-8", errors="replace") as f:
         for row in csv.DictReader(f, delimiter="\t"):
-            sp = (row.get("Species_ICTV", "") or row.get("Species_NCBI", "")).strip()
-            if q in sp.lower() and sp not in seen:
-                seen.add(sp)
-                results.append({"name": sp, "family": row.get("Family", ""), "count": 1})
+            sp_ictv = (row.get("Species_ICTV", "") or "").strip()
+            sp_ncbi = (row.get("Species_NCBI", "") or "").strip()
+            combined = (sp_ictv + " " + sp_ncbi).lower()
+            if q in combined and sp_ictv not in seen:
+                seen.add(sp_ictv)
+                results.append({"name": sp_ictv or sp_ncbi, "family": row.get("Family", ""), "count": 1})
                 if len(results) >= 30:
                     break
     return results
