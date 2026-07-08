@@ -35,3 +35,7 @@ $null
 
 # Metabuli: build_taxid_lineage.py 产物 (由 nodes.dmp/names.dmp 生成，server 侧)
 9.metabuli/taxid_lineage.tsv
+
+# 中间/生成物(勿入库)
+docs/te/
+te_stats.json
