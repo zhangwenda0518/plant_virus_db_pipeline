@@ -83,7 +83,7 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 <div id="tab-vh">
 <div class="chart-panel"><button class="chart-toggle" onclick="toggleCharts('vh')">&#128202; 图表概览 ▾</button>
 <div id="charts-vh" class="chart-grid">
-<div class="chart-card chart-full"><div id="ch-vh-sankey" style="width:100%;height:420px"></div></div>
+<div class="chart-card chart-full"><div id="ch-vh-sankey" style="width:100%;height:560px"></div></div>
 <div class="chart-card"><div id="ch-vh-topvec" style="width:100%;height:360px"></div></div>
 <div class="chart-card"><div id="ch-vh-mech" style="width:100%;height:360px"></div></div>
 </div></div>
@@ -154,25 +154,27 @@ var MECH_MAP={
 };
 function mechLabel(m){m=(m||'').trim();return MECH_MAP[m]||(m&&m!=='NA'?m:null)}
 function vhSankey(){
- var orders=new Set(topN(countBy(VH,function(r){return r['Vector Order']}),12));
- var vfams=new Set(topN(countBy(VH,function(r){return r['Vector Family']}),15));
- var vifams=new Set(topN(countBy(VH,function(r){return r['Virus Family']}),15));
- function fold(v,keep,other){return (v&&keep.has(v))?v:other}
+ var cols=[
+  {f:function(r){return r['Virus Family']},cap:15,other:'其他病毒科',color:'#e03131'},
+  {f:function(r){return r['Virus Genus']},cap:20,other:'其他病毒属',color:'#f59f00'},
+  {f:function(r){return r['Vector Family']},cap:15,other:'其他媒介科',color:'#12b886'},
+  {f:function(r){return r['Vector Genus']},cap:20,other:'其他媒介属',color:'#4c6ef5'},
+  {f:function(r){return r['Virus Host']},cap:20,other:'其他宿主',color:'#6a1b9a'}
+ ];
+ var keep=cols.map(function(c){return new Set(topN(countBy(VH,function(r){return (c.f(r)||'').trim()||null}),c.cap))});
+ function cellVal(r,i){var v=(cols[i].f(r)||'').trim();return (v&&keep[i].has(v))?v:cols[i].other}
  var links={};
  VH.forEach(function(r){
-  var o=fold(r['Vector Order'],orders,'其他媒介目'),f=fold(r['Vector Family'],vfams,'其他媒介科'),vi=fold(r['Virus Family'],vifams,'其他病毒科');
-  links['1|'+o+'\u0001'+f]=(links['1|'+o+'\u0001'+f]||0)+1;
-  links['2|'+f+'\u0001'+vi]=(links['2|'+f+'\u0001'+vi]||0)+1;
+  for(var i=0;i<cols.length-1;i++){var a=cellVal(r,i),b=cellVal(r,i+1);var k=i+'|'+a+'\u0001'+b;links[k]=(links[k]||0)+1}
  });
  var idx={},labels=[],colors=[];
- function ni(name,col){if(!(name in idx)){idx[name]=labels.length;labels.push(name);colors.push(col)}return idx[name]}
- var src=[],tgt=[],val=[];
+ function ni(layer,name,col){var key=layer+':'+name;if(!(key in idx)){idx[key]=labels.length;labels.push(name);colors.push(col)}return idx[key]}
+ var src=[],tgt=[],vals=[];
  Object.keys(links).forEach(function(k){
-  var layer=k.charAt(0),p=k.slice(2).split('\u0001');
-  var ca=layer==='1'?'#4c6ef5':'#12b886',cb=layer==='1'?'#12b886':'#f59f00';
-  src.push(ni(p[0],ca));tgt.push(ni(p[1],cb));val.push(links[k]);
+  var i=parseInt(k.charAt(0),10),p=k.slice(2).split('\u0001');
+  src.push(ni(i,p[0],cols[i].color));tgt.push(ni(i+1,p[1],cols[i+1].color));vals.push(links[k]);
  });
- Plotly.react('ch-vh-sankey',[{type:'sankey',orientation:'h',node:{label:labels,color:colors,pad:10,thickness:14,line:{color:'rgba(0,0,0,.15)',width:.5}},link:{source:src,target:tgt,value:val,color:'rgba(150,150,150,.28)'}}],{margin:{l:6,r:6,t:26,b:6},title:{text:'媒介目 → 媒介科 → 病毒科（记录数）',font:{size:12},x:0},font:{size:10}},PCFG);
+ Plotly.react('ch-vh-sankey',[{type:'sankey',orientation:'h',node:{label:labels,color:colors,pad:8,thickness:12,line:{color:'rgba(0,0,0,.15)',width:.5}},link:{source:src,target:tgt,value:vals,color:'rgba(150,150,150,.25)'}}],{margin:{l:6,r:6,t:26,b:6},title:{text:'病毒科 → 病毒属 → 媒介科 → 媒介属 → 宿主植物',font:{size:12},x:0},font:{size:9}},PCFG);
 }
 function renderVHCharts(){
  vhSankey();
