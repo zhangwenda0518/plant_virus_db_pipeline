@@ -547,13 +547,27 @@ def _profile_species_list():
 PROFILE_SPECIES = _profile_species_list()
 print(f"Profile species: {len(PROFILE_SPECIES)}")
 
+# Full.Info.tsv 有 NCBI→ICTV 映射，用于补全 profile 查找（explorer 用 NCBI，ref 用 ICTV）
+_NCBI2ICTV = {}
+if os.path.exists(DATA_TSV):
+    with open(DATA_TSV, encoding="utf-8", errors="replace") as f:
+        for row in csv.DictReader(f, delimiter="\t"):
+            ncbi = (row.get("Species_NCBI", "") or "").strip()
+            ictv = (row.get("Species_ICTV", "") or "").strip()
+            if ncbi and ictv and ncbi.lower() not in _NCBI2ICTV:
+                _NCBI2ICTV[ncbi.lower()] = ictv
+
+
 def _profile_info(name):
+    """按 NCBI 或 ICTV 名查找 Ref.Info.tsv（通过 NCBI→ICTV 映射兼查）。"""
     if not os.path.exists(_REF_TSV):
         return None
+    nl = name.lower().strip()
+    candidates = [nl, _NCBI2ICTV.get(nl, "")]
     with open(_REF_TSV, encoding="utf-8", errors="replace") as f:
         for row in csv.DictReader(f, delimiter="\t"):
-            sp = (row.get("Species_ICTV", "") or row.get("Species_NCBI", "")).strip()
-            if sp.lower() == name.lower():
+            sp = (row.get("Species_ICTV", "") or row.get("Species_NCBI", "")).strip().lower()
+            if sp in candidates:
                 return row
     return None
 
