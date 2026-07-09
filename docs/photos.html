@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Photo Gallery — Plant Virus DB</title>
+<title>Symptom Gallery — Plant Virus DB</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 *{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;padding:0;background:#f5f5f5;color:#333}
 nav{background:#1a5276;color:#fff;padding:0 24px;display:flex;align-items:center;gap:4px;height:52px;position:sticky;top:0;z-index:100}
@@ -11,14 +12,30 @@ nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 18px;font-siz
 nav a:hover,nav a.active{background:rgba(255,255,255,.15);color:#fff}
 nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0}
 .layout{display:flex;max-width:1600px;margin:0 auto;min-height:calc(100vh - 52px)}
-.sidebar{width:260px;background:#fff;padding:16px;border-right:1px solid #e0e0e0;overflow-y:auto;position:sticky;top:52px;height:calc(100vh - 52px)}
-.sidebar h3{font-size:13px;color:#1a5276;margin:16px 0 6px;text-transform:uppercase;letter-spacing:.5px}
-.sidebar .filter-group{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px}
-.sidebar .filt{padding:3px 10px;font-size:11px;border:1px solid #ddd;border-radius:12px;cursor:pointer;background:#fff;color:#555;white-space:nowrap;transition:all .15s}
-.sidebar .filt:hover{background:#eaf2f8;border-color:#2e86c1}
-.sidebar .filt.active{background:#1a5276;color:#fff;border-color:#1a5276}
-.sidebar .filt .cnt{opacity:.7;font-size:10px;margin-left:2px}
+.sidebar{width:280px;background:#fff;padding:16px;border-right:1px solid #e0e0e0;overflow-y:auto;position:sticky;top:52px;height:calc(100vh - 52px)}
+.sidebar h3{font-size:13px;color:#1a5276;margin:16px 0 6px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #eee;padding-bottom:4px}
+.filter-group{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px}
+.filt{padding:3px 10px;font-size:11px;border:1px solid #ddd;border-radius:12px;cursor:pointer;background:#fff;color:#555;white-space:nowrap;transition:all .15s}
+.filt:hover{background:#eaf2f8;border-color:#2e86c1}
+.filt.active{background:#1a5276;color:#fff;border-color:#1a5276}
+.sidebar label{display:block;font-size:11px;color:#555;font-weight:600;margin:6px 0 2px}
+.sidebar input,.sidebar textarea,.sidebar select{width:100%;padding:6px 8px;border:1px solid #ddd;border-radius:5px;font-size:12px;font-family:inherit;margin-bottom:4px}
+.sidebar textarea{resize:vertical;min-height:50px}
+.sidebar .btn{width:100%;padding:8px;background:#1a5276;color:#fff;border:none;border-radius:6px;font-size:13px;cursor:pointer;margin-top:6px}
+.sidebar .btn:hover{background:#154360}
+.sidebar .msg{font-size:11px;color:green;margin-top:4px;display:none}
 .content{flex:1;padding:16px}
+.tabs{display:flex;gap:8px;margin-bottom:16px}
+.tab{padding:8px 20px;border:none;border-radius:6px 6px 0 0;font-size:14px;cursor:pointer;background:#e9ecef;color:#555}
+.tab.active{background:#fff;color:#1a5276;font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:16px}
+.kpi{background:#fff;padding:16px;border-radius:8px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.kpi .val{font-size:24px;font-weight:700;color:#1a5276}
+.kpi .lbl{font-size:11px;color:#888;margin-top:4px}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.chart-card{background:#fff;padding:14px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.chart-card h4{font-size:13px;color:#1a5276;margin:0 0 10px}
+.chart-card canvas{max-height:280px}
 .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
 .topbar h2{font-size:18px;color:#1a5276;margin:0}
 .topbar .count{font-size:13px;color:#888}
@@ -30,7 +47,7 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
 .card .img-wrap{width:100%;height:170px;overflow:hidden;background:#f0f0f0;display:flex;align-items:center;justify-content:center}
 .card .img-wrap img{width:100%;height:100%;object-fit:cover}
 .card .info{padding:10px 12px}
-.card .info .virus-name{font-weight:600;font-size:13px;color:#1a5276;margin-bottom:2px;line-height:1.3;font-style:italic}
+.card .info .virus-name{font-weight:600;font-size:13px;color:#1a5276;margin-bottom:2px;font-style:italic}
 .card .info .virus-common{font-size:10px;color:#999;margin-bottom:4px}
 .card .info .caption{font-size:11px;color:#666;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:4px}
 .card .info .tags{display:flex;flex-wrap:wrap;gap:3px;margin-top:6px}
@@ -39,110 +56,131 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
 .card .info .tag.symp{background:#fce4ec;color:#c62828}
 .card .info .tag.part{background:#e3f2fd;color:#1565c0}
 .card .info .photographer{font-size:10px;color:#999;margin-top:4px}
-.card .edit-btn{position:absolute;top:8px;right:8px;background:rgba(255,255,255,.9);border:1px solid #ddd;border-radius:4px;padding:2px 8px;font-size:11px;cursor:pointer;opacity:0;transition:opacity .15s}
-.card:hover .edit-btn{opacity:1}
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:200;justify-content:center;align-items:center}
 .modal.active{display:flex}
 .modal img{max-width:90%;max-height:85vh;object-fit:contain}
 .modal .close{position:absolute;top:20px;right:24px;color:#fff;font-size:32px;cursor:pointer}
 .modal .meta{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.7);color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;max-width:800px;text-align:center}
-.correct-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:300;display:none;justify-content:center;align-items:center}
-.correct-modal.active{display:flex}
-.correct-box{background:#fff;border-radius:12px;padding:24px;width:520px;max-width:95vw;box-shadow:0 8px 32px rgba(0,0,0,.2)}
-.correct-box h3{font-size:16px;color:#1a5276;margin:0 0 16px}
-.correct-box label{display:block;font-size:12px;color:#555;font-weight:600;margin:8px 0 3px}
-.correct-box input,.correct-box textarea{width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:13px;font-family:inherit}
-.correct-box input:focus,.correct-box textarea:focus{border-color:#2e86c1;outline:none}
-.correct-box textarea{resize:vertical;min-height:50px}
-.correct-box .btns{display:flex;gap:8px;margin-top:14px;justify-content:flex-end}
-.correct-box .btn{padding:8px 18px;border:none;border-radius:6px;font-size:13px;cursor:pointer}
-.correct-box .btn-primary{background:#1a5276;color:#fff}
-.correct-box .btn-secondary{background:#f1f3f5;color:#555}
 .loading{text-align:center;padding:60px;color:#888}
 .footer{text-align:center;padding:16px;color:#999;font-size:12px}
 .footer a{color:#2e86c1;text-decoration:none}
+#galleryTab{display:none}
 </style>
 </head>
 <body>
 <nav>
   <a class="brand" href="index.html">Plant Virus DB</a>
-  <a href="index.html">Dashboard</a>
-  <a href="segmented.html">Segmented</a>
-  <a href="nonsegmented.html">Non-Segmented</a>
-  <a href="explorer.html">Explorer</a>
-  <a href="submit.html">Submit</a>
-  <a href="photos.html" class="active">Photos</a>
-  <a href="download.html">Download</a>
+  <a href="/">Home</a>
+  <a href="/reference/">Reference</a>
+  <a href="/explorer/">Explorer</a>
+  <a href="/primers/">Primers</a>
+  <a href="/photos/" class="active">Photos</a>
+  <a href="/literature/">Literature</a>
 </nav>
 <div class="layout">
-  <div class="sidebar" id="sidebar">
-    <h3>Host</h3><div class="filter-group" id="filterHosts"></div>
-    <h3>Symptom</h3><div class="filter-group" id="filterSymptoms"></div>
-    <h3>Part</h3><div class="filter-group" id="filterParts"></div>
-    <h3>Virus</h3><div class="filter-group" id="filterViruses"></div>
+  <div class="sidebar">
+    <h3>Filter Gallery</h3>
+    <div class="filter-group" id="filterHosts"></div>
+    <div class="filter-group" id="filterSymptoms"></div>
+    <div class="filter-group" id="filterParts"></div>
+    <div class="filter-group" id="filterViruses"></div>
+
+    <h3>Submit Correction</h3>
+    <label>EPPO Code</label><input type="text" id="subCode" placeholder="e.g. TSWV00">
+    <label>Photo ID</label><input type="text" id="subPhotoId" placeholder="e.g. 2555">
+    <label>Virus (Latin) *</label><input type="text" id="subVirus" placeholder="e.g. Orthotospovirus tomatomaculae">
+    <label>Host (Latin)</label><input type="text" id="subHost" placeholder="e.g. Solanum lycopersicum">
+    <label>Symptoms</label><input type="text" id="subSymptoms" placeholder="e.g. mosaic, ring spot, necrosis">
+    <label>Plant Parts</label><input type="text" id="subParts" placeholder="e.g. leaf, fruit">
+    <label>Notes</label><textarea id="subNotes" placeholder="Additional notes..."></textarea>
+    <button class="btn" onclick="submitCorrection()">Submit Correction</button>
+    <div class="msg" id="subMsg">Submitted!</div>
   </div>
+
   <div class="content">
-    <div class="topbar">
-      <h2>Virus Disease Photo Gallery</h2>
-      <input type="text" class="search-box" id="searchBox" placeholder="Search..." oninput="renderGallery()">
-      <span class="count" id="countText"></span>
+    <div class="loading" id="loading">Loading...</div>
+    <div id="mainContent" style="display:none">
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active" onclick="switchTab('dashboard')">Dashboard</button>
+        <button class="tab" onclick="switchTab('gallery')">Browse Gallery</button>
+      </div>
+
+      <!-- Dashboard -->
+      <div id="dashboardTab">
+        <div class="kpis" id="kpis"></div>
+        <div class="charts">
+          <div class="chart-card"><h4>Top Host Plants</h4><canvas id="chartHosts"></canvas></div>
+          <div class="chart-card"><h4>Top Symptoms</h4><canvas id="chartSymptoms"></canvas></div>
+        </div>
+        <div class="charts">
+          <div class="chart-card"><h4>Plant Parts Distribution</h4><canvas id="chartParts"></canvas></div>
+          <div class="chart-card"><h4>Virus Families (via Ref DB)</h4><canvas id="chartVirus"></canvas></div>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div id="galleryTab">
+        <div class="topbar">
+          <h2>Virus Disease Photo Gallery</h2>
+          <input type="text" class="search-box" id="searchBox" placeholder="Search..." oninput="renderGallery()">
+          <span class="count" id="countText"></span>
+        </div>
+        <div class="grid" id="grid"></div>
+      </div>
     </div>
-    <div class="grid" id="grid"></div>
   </div>
 </div>
-<div class="loading" id="loading">Loading gallery...</div>
 <div class="modal" id="modal" onclick="this.classList.remove('active')">
   <span class="close">&times;</span>
   <img id="modalImg" src="">
   <div class="meta" id="modalMeta"></div>
 </div>
-<div class="correct-modal" id="correctModal">
-  <div class="correct-box">
-    <h3>Correct Metadata</h3>
-    <label>Virus Name (Latin)</label>
-    <input type="text" id="corrVirus" placeholder="e.g. Cucumovirus CMV">
-    <label>Host Plant (Latin)</label>
-    <input type="text" id="corrHost" placeholder="e.g. Solanum lycopersicum">
-    <label>Symptoms</label>
-    <input type="text" id="corrSymptoms" placeholder="e.g. mosaic, leaf curl, yellowing">
-    <label>Plant Parts</label>
-    <input type="text" id="corrParts" placeholder="e.g. leaf, fruit, stem">
-    <label>Notes</label>
-    <textarea id="corrNotes" placeholder="Additional notes..."></textarea>
-    <div class="btns">
-      <button class="btn btn-secondary" onclick="document.getElementById('correctModal').classList.remove('active')">Cancel</button>
-      <button class="btn btn-primary" onclick="submitCorrection()">Submit to GitHub</button>
-    </div>
-  </div>
-</div>
-
 <div class="footer">Plant Virus Reference Database · Data: EPPO Global Database</div>
 
-<link rel="preload" href="data/eppo_gallery.json" as="fetch" crossorigin="anonymous">
 <script>
 let data=[],activeFilters={hosts:new Set(),symptoms:new Set(),parts:new Set(),viruses:new Set()};
-let preloadedImages=new Set();
 
 async function init(){
   const r=await fetch('data/eppo_gallery.json');
   data=await r.json();
   buildFilters();
+  buildDashboard();
   renderGallery();
   document.getElementById('loading').style.display='none';
-  // Preload first 20 full-size images
-  setTimeout(()=>preloadNext(0,20), 500);
+  document.getElementById('mainContent').style.display='';
 }
-function preloadImage(url){
-  if(!url||preloadedImages.has(url))return;
-  preloadedImages.add(url);
-  new Image().src=url;
+
+function buildDashboard(){
+  // KPIs
+  const allHosts=new Set(),allSymps=new Set(),allParts=new Set(),allVirus=new Set();
+  data.forEach(d=>{
+    (d.hosts_latin||d.hosts||[]).forEach(h=>allHosts.add(typeof h==='object'?h.latin:h));
+    (d.symptoms||[]).forEach(s=>allSymps.add(s));
+    (d.parts||[]).forEach(p=>allParts.add(p));
+    allVirus.add(d.virus_latin||d.virus);
+  });
+  document.getElementById('kpis').innerHTML=[
+    ['Total Photos',data.length],['Virus Species',allVirus.size],
+    ['Host Plants',allHosts.size],['Symptom Types',allSymps.size],
+    ['Part Types',allParts.size]
+  ].map(([l,v])=>`<div class="kpi"><div class="val">${v.toLocaleString()}</div><div class="lbl">${l}</div></div>`).join('');
+
+  // Charts
+  const cnt=(key,n)=>{const m={};data.forEach(d=>(d[key]||[]).forEach(v=>{m[v]=(m[v]||0)+1}));return Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,n);};
+  const barH=(id,items,color)=>{
+    new Chart(document.getElementById(id),{type:'bar',data:{labels:items.map(x=>x[0]),datasets:[{data:items.map(x=>x[1]),backgroundColor:color}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
+  };
+  const pie=(id,items,colors)=>{
+    new Chart(document.getElementById(id),{type:'doughnut',data:{labels:items.map(x=>x[0]),datasets:[{data:items.map(x=>x[1]),backgroundColor:colors}]}});
+  };
+  const C=['#2e86c1','#e74c3c','#27ae60','#f39c12','#8e44ad','#1abc9c','#e67e22','#2980b9'];
+  barH('chartHosts',cnt('hosts',15),'#2e86c1');
+  barH('chartSymptoms',cnt('symptoms',15),'#e74c3c');
+  pie('chartParts',cnt('parts',8),C);
+  barH('chartVirus',cnt('viruses',15),'#27ae60');
 }
-function preloadNext(start,n){
-  for(let i=start;i<Math.min(start+n,data.length);i++){
-    preloadImage(data[i].full);
-    preloadImage(data[i].thumb);
-  }
-}
+
 function buildFilters(){
   const cnt=(key,n)=>{const m={};data.forEach(d=>(d[key]||[]).forEach(v=>{m[v]=(m[v]||0)+1}));return Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,n);};
   ['hosts','symptoms','parts','viruses'].forEach(k=>{
@@ -152,92 +190,73 @@ function buildFilters(){
       const btn=document.createElement('span');
       btn.className='filt';btn.innerHTML=v+'<span class="cnt">'+n+'</span>';
       btn.onclick=()=>{
-        const s=activeFilters[k];
-        s.has(v)?s.delete(v):s.add(v);
-        btn.classList.toggle('active',s.has(v));
-        renderGallery();
+        const s=activeFilters[k];s.has(v)?s.delete(v):s.add(v);
+        btn.classList.toggle('active',s.has(v));renderGallery();
       };
       el.appendChild(btn);
     });
   });
 }
+
 function renderGallery(){
   const q=(document.getElementById('searchBox').value||'').toLowerCase();
   const filtered=data.filter(d=>{
     if(q&&!d.virus.toLowerCase().includes(q)&&!(d.caption||'').toLowerCase().includes(q))return false;
     for(const k of['hosts','symptoms','parts','viruses']){
-      if(activeFilters[k].size>0){
-        const vals=k==='viruses'?[d.virus]:(d[k]||[]);
-        if(!vals.some(v=>activeFilters[k].has(v)))return false;
-      }
+      if(activeFilters[k].size>0){const vals=k==='viruses'?[d.virus]:(d[k]||[]);if(!vals.some(v=>activeFilters[k].has(v)))return false;}
     }
     return true;
   });
   document.getElementById('countText').textContent=filtered.length.toLocaleString()+' photos';
-  // Preload next 20 full-res when scrolling near bottom
-  let scrollHandler=()=>{
-    if(window.innerHeight+window.scrollY>=document.body.offsetHeight-800){
-      const loaded=preloadedImages.size;
-      preloadNext(loaded/2,20); // each image has thumb+full=2 urls
-    }
-  };
-  window.removeEventListener('scroll',scrollHandler);
-  window.addEventListener('scroll',scrollHandler,{passive:true});
-  const grid=document.getElementById('grid');
-  grid.innerHTML=filtered.map((d,i)=>`
-    <div class="card">
-      <button class="edit-btn" onclick="event.stopPropagation();openCorrect('${d.code}','${(d.virus_latin||d.virus||'').replace(/'/g,"\\'")}','${(d.hosts_latin||[]).map(h=>typeof h==='object'?h.latin:h).join(', ').replace(/'/g,"\\'")}','${(d.symptoms||[]).join(', ').replace(/'/g,"\\'")}','${(d.parts||[]).join(', ').replace(/'/g,"\\'")}','${d.photo_id}')" title="Correct metadata">+</button>
-      <div class="img-wrap" onclick="openModal('${d.full}','${(d.caption||'').replace(/'/g,"\\'")}','${d.virus.replace(/'/g,"\\'")}','${(d.photographer||'').replace(/'/g,"\\'")}')"><img src="${d.thumb}" ${i<8?'':'loading="lazy"'} alt="${d.virus}"></div>
-      <div class="info" onclick="openModal('${d.full}','${(d.caption||'').replace(/'/g,"\\'")}','${d.virus.replace(/'/g,"\\'")}','${(d.photographer||'').replace(/'/g,"\\'")}')">
+  document.getElementById('grid').innerHTML=filtered.map(d=>`
+    <div class="card" onclick="openModal('${d.full}','${(d.caption||'').replace(/'/g,\"\\\\'\")}','${(d.virus||'').replace(/'/g,\"\\\\'\")}','${(d.photographer||'').replace(/'/g,\"\\\\'\")}')">
+      <div class="img-wrap"><img src="${d.thumb}" loading="lazy" alt=""></div>
       <div class="info">
         <div class="virus-name">${d.virus_latin&&d.virus_latin!==d.virus?d.virus_latin:d.virus}</div>
-        <div class="virus-common">${d.virus_latin&&d.virus_latin!==d.virus?d.virus:''}</div>
+        ${d.virus_latin&&d.virus_latin!==d.virus?`<div class="virus-common">${d.virus}</div>`:''}
         <div class="caption">${d.caption||''}</div>
         <div class="tags">
           ${(d.hosts_latin||d.hosts||[]).slice(0,3).map(h=>`<span class="tag host">${typeof h==='object'?h.latin:h}</span>`).join('')}
           ${(d.symptoms||[]).slice(0,3).map(s=>`<span class="tag symp">${s}</span>`).join('')}
           ${(d.parts||[]).slice(0,2).map(p=>`<span class="tag part">${p}</span>`).join('')}
         </div>
-        <div class="photographer">${d.photographer||''}</div>
       </div>
     </div>
   `).join('');
 }
+
+function switchTab(t){
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.textContent.toLowerCase().includes(t)));
+  document.getElementById('dashboardTab').style.display=t==='dashboard'?'':'none';
+  document.getElementById('galleryTab').style.display=t==='gallery'?'':'none';
+}
+
 function openModal(url,caption,virus,photographer){
   document.getElementById('modalImg').src=url;
   document.getElementById('modalMeta').innerHTML=`<b>${virus}</b><br>${caption}${photographer?'<br>Photo: '+photographer:''}`;
   document.getElementById('modal').classList.add('active');
 }
-let correctCode='',correctId='';
-function openCorrect(code,virus,host,symptoms,parts,pid){
-  correctCode=code;correctId=pid;
-  document.getElementById('corrVirus').value=virus||'';
-  document.getElementById('corrHost').value=host||'';
-  document.getElementById('corrSymptoms').value=symptoms||'';
-  document.getElementById('corrParts').value=parts||'';
-  document.getElementById('corrNotes').value='';
-  document.getElementById('correctModal').classList.add('active');
-}
+
 function submitCorrection(){
-  var v=document.getElementById('corrVirus').value.trim();
-  var h=document.getElementById('corrHost').value.trim();
-  var s=document.getElementById('corrSymptoms').value.trim();
-  var p=document.getElementById('corrParts').value.trim();
-  var n=document.getElementById('corrNotes').value.trim();
-  var body='### Photo Metadata Correction'+'\n\n';
-  body+='| Field | Value |\n|-------|-------|\n';
-  body+='| EPPO Code | '+correctCode+' |\n';
-  body+='| Photo ID | '+correctId+' |\n';
-  if(v)body+='| Virus (Latin) | '+v+' |\n';
-  if(h)body+='| Host (Latin) | '+h+' |\n';
-  if(s)body+='| Symptoms | '+s+' |\n';
-  if(p)body+='| Parts | '+p+' |\n';
-  if(n)body+='| Notes | '+n+' |\n';
-  body+='\n---\n_Submitted via Photos Gallery_';
-  var url='https://github.com/zhangwenda0518/plant_virus_db_pipeline/issues/new?title='+encodeURIComponent('[Photo Fix] '+correctCode+'-'+correctId)+'&body='+encodeURIComponent(body)+'&labels=photo-correction';
-  document.getElementById('correctModal').classList.remove('active');
+  var fields={
+    'eppo_code':document.getElementById('subCode').value.trim(),
+    'photo_id':document.getElementById('subPhotoId').value.trim(),
+    'virus_latin':document.getElementById('subVirus').value.trim(),
+    'host_latin':document.getElementById('subHost').value.trim(),
+    'symptoms':document.getElementById('subSymptoms').value.trim(),
+    'parts':document.getElementById('subParts').value.trim(),
+    'notes':document.getElementById('subNotes').value.trim()
+  };
+  if(!fields.virus_latin){alert('Virus name required');return;}
+  var body='### Photo Metadata Correction\n\n| Field | Value |\n|-------|-------|\n';
+  for(var[k,v] of Object.entries(fields)){if(v)body+='| '+k+' | '+v+' |\n';}
+  body+='\n---\n_Submitted via Photos Dashboard_';
+  var url='https://github.com/zhangwenda0518/plant_virus_db_pipeline/issues/new?title='+encodeURIComponent('[Photo] '+(fields.eppo_code||'')+' '+(fields.virus_latin||''))+'&body='+encodeURIComponent(body)+'&labels=photo-correction';
+  document.getElementById('subMsg').style.display='block';
+  setTimeout(function(){document.getElementById('subMsg').style.display='none'},2000);
   window.open(url,'_blank');
 }
+
 init();
 </script>
 </body>
