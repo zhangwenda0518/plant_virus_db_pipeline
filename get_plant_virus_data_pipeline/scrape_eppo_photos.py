@@ -81,64 +81,67 @@ def scrape_virus_list():
 
 
 def scrape_photos_page(eppo_code, virus_name):
-    """爬取单个病毒的图片页"""
+    """爬取单个病毒的图片页
+
+    HTML structure (from live site):
+      <div class="grid-item">
+        <a href="/media/.../1024x0/NNNN.jpg"><img src="/media/.../220x130/NNNN.jpg"></a>
+        <p>caption text (optional)</p>
+        <p><strong>Courtesy:</strong> Photographer Name</p>
+      </div>
+    """
     url = f"{BASE_URL}/taxon/{eppo_code}/photos"
     soup = get_soup(url)
     if not soup:
         return []
 
     photos = []
-    # 图片在 #portfolio 容器中
-    portfolio = soup.select_one("#portfolio")
-    if not portfolio:
-        return []
+    # Each photo is in a .grid-item div
+    grid_items = soup.select(".grid-item")
+    if not grid_items:
+        # Fallback: find all img tags with taxon path
+        grid_items = soup.find_all('img', src=re.compile(r'/pics/'))
 
-    items = portfolio.select(".item, .photo-item, a[rel^='pp'], figure, .grid-item")
-    if not items:
-        # Fallback: find all img tags with taxon path pattern
-        items = portfolio.find_all('img')
-
-    for item in items:
-        # Find the image
-        img = item.find('img') if item.name != 'img' else item
+    for item in grid_items:
+        # Find the image - either item itself or child
+        if item.name == 'img':
+            img = item
+        else:
+            img = item.find('img')
         if not img:
             continue
+
         img_src = img.get('src', '')
         if '/pics/' not in img_src:
             continue
 
-        # Extract photo ID from filename
+        # Extract photo ID from filename (/NNNN.jpg)
         photo_id = re.search(r'/(\d+)\.jpg', img_src)
         photo_id = photo_id.group(1) if photo_id else ""
 
-        # Thumbnail URL
+        # Thumb URL
         thumb_url = urljoin(BASE_URL, img_src)
 
-        # Full-resolution URL: replace 220x130 with 1024x0
-        full_url = thumb_url.replace("220x130", "1024x0")
-
-        # Caption: text content excluding "Courtesy:"
-        parent = item if item.name != 'img' else item.parent
-        if parent:
-            full_text = parent.get_text(separator=' ', strip=True)
+        # Full-res URL: find parent <a> href, or replace 220x130 with 1024x0
+        parent_a = img.find_parent('a') if item.name != 'img' else None
+        if parent_a and parent_a.get('href'):
+            full_url = urljoin(BASE_URL, parent_a['href'])
         else:
-            full_text = ""
+            full_url = thumb_url.replace("220x130", "1024x0")
 
-        # Extract copyright/photographer
-        courtesy = ""
-        m = re.search(r'Courtesy:\s*(.+?)(?:\.|$)', full_text)
-        if m:
-            courtesy = m.group(1).strip()
-
-        # Extract caption (text before "Courtesy:")
+        # Parse caption and courtesy from <p> elements
         caption = ""
-        if courtesy:
-            caption = full_text.split("Courtesy:")[0].strip()
-        else:
-            caption = full_text
-
-        # Remove HTML tags from caption
-        caption = re.sub(r'<[^>]+>', '', caption).strip()
+        photographer = ""
+        wrapper = item if item.name != 'img' else item.parent
+        if wrapper:
+            for p in wrapper.find_all('p'):
+                text = p.get_text(strip=True)
+                strong = p.find('strong')
+                if strong and 'courtesy' in strong.get_text().lower():
+                    photographer = text.replace(strong.get_text(), '').strip().lstrip(':').strip()
+                else:
+                    if text and 'courtesy' not in text.lower():
+                        caption = text
 
         photos.append({
             "eppo_code": eppo_code,
@@ -147,7 +150,7 @@ def scrape_photos_page(eppo_code, virus_name):
             "thumb_url": thumb_url,
             "full_url": full_url,
             "caption": caption,
-            "photographer": courtesy,
+            "photographer": photographer,
             "photo_page": url
         })
 
