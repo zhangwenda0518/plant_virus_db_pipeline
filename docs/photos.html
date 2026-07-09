@@ -39,11 +39,25 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
 .card .info .tag.symp{background:#fce4ec;color:#c62828}
 .card .info .tag.part{background:#e3f2fd;color:#1565c0}
 .card .info .photographer{font-size:10px;color:#999;margin-top:4px}
+.card .edit-btn{position:absolute;top:8px;right:8px;background:rgba(255,255,255,.9);border:1px solid #ddd;border-radius:4px;padding:2px 8px;font-size:11px;cursor:pointer;opacity:0;transition:opacity .15s}
+.card:hover .edit-btn{opacity:1}
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:200;justify-content:center;align-items:center}
 .modal.active{display:flex}
 .modal img{max-width:90%;max-height:85vh;object-fit:contain}
 .modal .close{position:absolute;top:20px;right:24px;color:#fff;font-size:32px;cursor:pointer}
 .modal .meta{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.7);color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;max-width:800px;text-align:center}
+.correct-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:300;display:none;justify-content:center;align-items:center}
+.correct-modal.active{display:flex}
+.correct-box{background:#fff;border-radius:12px;padding:24px;width:520px;max-width:95vw;box-shadow:0 8px 32px rgba(0,0,0,.2)}
+.correct-box h3{font-size:16px;color:#1a5276;margin:0 0 16px}
+.correct-box label{display:block;font-size:12px;color:#555;font-weight:600;margin:8px 0 3px}
+.correct-box input,.correct-box textarea{width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:13px;font-family:inherit}
+.correct-box input:focus,.correct-box textarea:focus{border-color:#2e86c1;outline:none}
+.correct-box textarea{resize:vertical;min-height:50px}
+.correct-box .btns{display:flex;gap:8px;margin-top:14px;justify-content:flex-end}
+.correct-box .btn{padding:8px 18px;border:none;border-radius:6px;font-size:13px;cursor:pointer}
+.correct-box .btn-primary{background:#1a5276;color:#fff}
+.correct-box .btn-secondary{background:#f1f3f5;color:#555}
 .loading{text-align:center;padding:60px;color:#888}
 .footer{text-align:center;padding:16px;color:#999;font-size:12px}
 .footer a{color:#2e86c1;text-decoration:none}
@@ -82,6 +96,26 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
   <img id="modalImg" src="">
   <div class="meta" id="modalMeta"></div>
 </div>
+<div class="correct-modal" id="correctModal">
+  <div class="correct-box">
+    <h3>Correct Metadata</h3>
+    <label>Virus Name (Latin)</label>
+    <input type="text" id="corrVirus" placeholder="e.g. Cucumovirus CMV">
+    <label>Host Plant (Latin)</label>
+    <input type="text" id="corrHost" placeholder="e.g. Solanum lycopersicum">
+    <label>Symptoms</label>
+    <input type="text" id="corrSymptoms" placeholder="e.g. mosaic, leaf curl, yellowing">
+    <label>Plant Parts</label>
+    <input type="text" id="corrParts" placeholder="e.g. leaf, fruit, stem">
+    <label>Notes</label>
+    <textarea id="corrNotes" placeholder="Additional notes..."></textarea>
+    <div class="btns">
+      <button class="btn btn-secondary" onclick="document.getElementById('correctModal').classList.remove('active')">Cancel</button>
+      <button class="btn btn-primary" onclick="submitCorrection()">Submit to GitHub</button>
+    </div>
+  </div>
+</div>
+
 <div class="footer">Plant Virus Reference Database · Data: EPPO Global Database</div>
 
 <link rel="preload" href="data/eppo_gallery.json" as="fetch" crossorigin="anonymous">
@@ -151,8 +185,10 @@ function renderGallery(){
   window.addEventListener('scroll',scrollHandler,{passive:true});
   const grid=document.getElementById('grid');
   grid.innerHTML=filtered.map((d,i)=>`
-    <div class="card" onclick="openModal('${d.full}','${(d.caption||'').replace(/'/g,"\\'")}','${d.virus.replace(/'/g,"\\'")}','${(d.photographer||'').replace(/'/g,"\\'")}')">
-      <div class="img-wrap"><img src="${d.thumb}" ${i<8?'':'loading="lazy"'} alt="${d.virus}"></div>
+    <div class="card">
+      <button class="edit-btn" onclick="event.stopPropagation();openCorrect('${d.code}','${(d.virus_latin||d.virus||'').replace(/'/g,"\\'")}','${(d.hosts_latin||[]).map(h=>typeof h==='object'?h.latin:h).join(', ').replace(/'/g,"\\'")}','${(d.symptoms||[]).join(', ').replace(/'/g,"\\'")}','${(d.parts||[]).join(', ').replace(/'/g,"\\'")}','${d.photo_id}')" title="Correct metadata">+</button>
+      <div class="img-wrap" onclick="openModal('${d.full}','${(d.caption||'').replace(/'/g,"\\'")}','${d.virus.replace(/'/g,"\\'")}','${(d.photographer||'').replace(/'/g,"\\'")}')"><img src="${d.thumb}" ${i<8?'':'loading="lazy"'} alt="${d.virus}"></div>
+      <div class="info" onclick="openModal('${d.full}','${(d.caption||'').replace(/'/g,"\\'")}','${d.virus.replace(/'/g,"\\'")}','${(d.photographer||'').replace(/'/g,"\\'")}')">
       <div class="info">
         <div class="virus-name">${d.virus_latin&&d.virus_latin!==d.virus?d.virus_latin:d.virus}</div>
         <div class="virus-common">${d.virus_latin&&d.virus_latin!==d.virus?d.virus:''}</div>
@@ -171,6 +207,36 @@ function openModal(url,caption,virus,photographer){
   document.getElementById('modalImg').src=url;
   document.getElementById('modalMeta').innerHTML=`<b>${virus}</b><br>${caption}${photographer?'<br>Photo: '+photographer:''}`;
   document.getElementById('modal').classList.add('active');
+}
+let correctCode='',correctId='';
+function openCorrect(code,virus,host,symptoms,parts,pid){
+  correctCode=code;correctId=pid;
+  document.getElementById('corrVirus').value=virus||'';
+  document.getElementById('corrHost').value=host||'';
+  document.getElementById('corrSymptoms').value=symptoms||'';
+  document.getElementById('corrParts').value=parts||'';
+  document.getElementById('corrNotes').value='';
+  document.getElementById('correctModal').classList.add('active');
+}
+function submitCorrection(){
+  var v=document.getElementById('corrVirus').value.trim();
+  var h=document.getElementById('corrHost').value.trim();
+  var s=document.getElementById('corrSymptoms').value.trim();
+  var p=document.getElementById('corrParts').value.trim();
+  var n=document.getElementById('corrNotes').value.trim();
+  var body='### Photo Metadata Correction'+'\n\n';
+  body+='| Field | Value |\n|-------|-------|\n';
+  body+='| EPPO Code | '+correctCode+' |\n';
+  body+='| Photo ID | '+correctId+' |\n';
+  if(v)body+='| Virus (Latin) | '+v+' |\n';
+  if(h)body+='| Host (Latin) | '+h+' |\n';
+  if(s)body+='| Symptoms | '+s+' |\n';
+  if(p)body+='| Parts | '+p+' |\n';
+  if(n)body+='| Notes | '+n+' |\n';
+  body+='\n---\n_Submitted via Photos Gallery_';
+  var url='https://github.com/zhangwenda0518/plant_virus_db_pipeline/issues/new?title='+encodeURIComponent('[Photo Fix] '+correctCode+'-'+correctId)+'&body='+encodeURIComponent(body)+'&labels=photo-correction';
+  document.getElementById('correctModal').classList.remove('active');
+  window.open(url,'_blank');
 }
 init();
 </script>
