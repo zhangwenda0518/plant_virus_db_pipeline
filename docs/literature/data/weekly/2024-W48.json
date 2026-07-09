@@ -1,0 +1,41 @@
+{
+  "week": "2024-W48",
+  "start": "2024-11-25",
+  "end": "2024-12-01",
+  "generated": "2026-07-09 15:10:05",
+  "total_new": 2,
+  "by_category": {
+    "New_Virus": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "39607585",
+      "doi": "10.1007/s00705-024-06187-0",
+      "title": "Complete genome sequence of a new poacevirus infecting wild oat (Avena fatua L.) in France.",
+      "journal": "Archives of virology",
+      "year": 2024,
+      "categories": [
+        "New_Virus"
+      ],
+      "summary_zh": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39677843",
+      "doi": "10.1007/s13337-024-00898-3",
+      "title": "Identification of nine putative novel members of plant-infecting alphaflexiviruses in public domain plant transcriptomes.",
+      "journal": "Virusdisease",
+      "year": 2024,
+      "categories": [
+        "New_Virus"
+      ],
+      "summary_zh": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

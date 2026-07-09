@@ -1,0 +1,38 @@
+[
+  {
+    "pmid": "38686041",
+    "doi": "10.12688/f1000research.127348.2",
+    "title": "CircSeqAlignTk: An R package for end-to-end analysis of RNA-seq data for circular genomes.",
+    "abstract": "RNA sequencing (RNA-seq) technology has become one of the standard tools for studying biological mechanisms at the transcriptome level. Advances in RNA-seq technology have led to the development of numerous publicly available tools for RNA-seq data analysis. Most of these tools target linear genome sequences despite the necessity of studying organisms with circular genome sequences. For example, studying the infection mechanisms of viroids which comprise 246-401 nucleotides circular RNAs and target plants may prevent tremendous economic and agricultural damage. Unfortunately, using the available tools to construct workflows for the analysis of circular genome sequences is difficult, especially for non-bioinformaticians. To overcome this limitation, we present CircSeqAlignTk, an easy-to-use and richly documented R package. CircSeqAlignTk offers both command line and graphical user interfaces for end-to-end RNA-seq data analysis, spanning alignment to the visualisation of circular genome sequences, via a series of functions. Moreover, it includes a feature to generate synthetic sequencing data that mirrors real RNA-seq data from biological experiments. CircSeqAlignTk not only provides an easy-to-use analysis interface for novice users but also allows developers to evaluate the performance of alignment tools and new workflows.",
+    "journal": "F1000Research",
+    "year": 2022,
+    "pub_date": "2022-01-01",
+    "first_author": "Sun Jianqiang",
+    "authors": "Sun Jianqiang; Fu Xi; Cao Wei",
+    "categories": [
+      "General"
+    ],
+    "source": "",
+    "source_strategy": "",
+    "virus_name": "",
+    "taxonomy": "",
+    "symptoms": "",
+    "host_plant": "",
+    "location": "",
+    "sample_date": "",
+    "vector": "",
+    "transmission": "",
+    "overview": "",
+    "methods": "",
+    "results": "",
+    "discussion": "",
+    "ai_done": "",
+    "relevance_score": 0.0,
+    "relevance_level": "low",
+    "matched_topic": "General",
+    "journal_quality": "",
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": []
+  }
+]

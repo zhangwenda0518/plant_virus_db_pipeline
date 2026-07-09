@@ -1,143 +1,153 @@
 {
-  "total": 40,
+  "total": 3362,
   "by_year": {
-    "2024": 24,
-    "2025": 6,
-    "2026": 10
+    "2022": 1,
+    "2023": 5,
+    "2024": 1242,
+    "2025": 1340,
+    "2026": 774
   },
   "by_category": {
-    "New_Virus": 30,
-    "General": 4,
-    "Rhabdo_Reo_Fiji_Tenu": 2,
-    "Gemini_Begomo": 2,
-    "Seco_Bromo_Tombus": 1,
-    "Clostero_Beta": 1,
-    "Potyviridae": 1,
-    "Tospo_Bunya": 1,
-    "Luteo_Solemo": 1
+    "New_Virus": 1135,
+    "General": 698,
+    "Potyviridae": 398,
+    "Gemini_Begomo": 361,
+    "Tobamo_Virga": 348,
+    "Rhabdo_Reo_Fiji_Tenu": 283,
+    "Seco_Bromo_Tombus": 234,
+    "Tospo_Bunya": 138,
+    "Luteo_Solemo": 126,
+    "Clostero_Beta": 97,
+    "Endorna_Parti_Amalga": 83,
+    "Viroid": 62,
+    "Transmission_Epi": 46,
+    "Caulimo_Badna_Tungro": 39,
+    "Methods_Resistance": 17,
+    "Nanoviridae": 16,
+    "Methods_Omics": 5
   },
   "top_journals": [
     [
-      "Plant disease",
-      3
-    ],
-    [
-      "Archives of virology",
-      3
-    ],
-    [
-      "BMC plant biology",
-      2
-    ],
-    [
-      "Mycology",
-      2
-    ],
-    [
       "Viruses",
-      2
+      169
     ],
     [
       "Zootaxa",
-      2
+      151
     ],
     [
-      "mBio",
-      1
-    ],
-    [
-      "Plant communications",
-      1
-    ],
-    [
-      "Mathematical biosciences",
-      1
-    ],
-    [
-      "PLoS pathogens",
-      1
-    ],
-    [
-      "Molecular plant",
-      1
-    ],
-    [
-      "Studies in mycology",
-      1
-    ],
-    [
-      "Heliyon",
-      1
-    ],
-    [
-      "Water research",
-      1
-    ],
-    [
-      "Virologica Sinica",
-      1
-    ],
-    [
-      "Virology",
-      1
-    ],
-    [
-      "Molecular biology reports",
-      1
-    ],
-    [
-      "Frontiers in veterinary science",
-      1
-    ],
-    [
-      "Molecular plant pathology",
-      1
-    ],
-    [
-      "Journal of fungi (Basel, Switzerland)",
-      1
-    ],
-    [
-      "Environmental monitoring and assessment",
-      1
-    ],
-    [
-      "Molecular genetics and genomics : MGG",
-      1
-    ],
-    [
-      "Frontiers in cellular and infection microbiology",
-      1
-    ],
-    [
-      "Microbiome",
-      1
-    ],
-    [
-      "Harmful algae",
-      1
-    ],
-    [
-      "Briefings in bioinformatics",
-      1
-    ],
-    [
-      "Cells",
-      1
-    ],
-    [
-      "Current microbiology",
-      1
-    ],
-    [
-      "Virus evolution",
-      1
+      "Archives of virology",
+      136
     ],
     [
       "Plants (Basel, Switzerland)",
-      1
+      108
+    ],
+    [
+      "Plant disease",
+      104
+    ],
+    [
+      "MycoKeys",
+      96
+    ],
+    [
+      "Scientific reports",
+      75
+    ],
+    [
+      "PhytoKeys",
+      75
+    ],
+    [
+      "Frontiers in plant science",
+      73
+    ],
+    [
+      "Virology",
+      65
+    ],
+    [
+      "Frontiers in microbiology",
+      65
+    ],
+    [
+      "Pest management science",
+      62
+    ],
+    [
+      "Methods in molecular biology (Clifton, N.J.)",
+      59
+    ],
+    [
+      "Molecular plant pathology",
+      55
+    ],
+    [
+      "Journal of agricultural and food chemistry",
+      46
+    ],
+    [
+      "International journal of molecular sciences",
+      44
+    ],
+    [
+      "Phytopathology",
+      41
+    ],
+    [
+      "PloS one",
+      40
+    ],
+    [
+      "BMC plant biology",
+      38
+    ],
+    [
+      "Journal of fungi (Basel, Switzerland)",
+      36
+    ],
+    [
+      "PLoS pathogens",
+      34
+    ],
+    [
+      "International journal of systematic and evolutionary microbiology",
+      34
+    ],
+    [
+      "The Journal of general virology",
+      32
+    ],
+    [
+      "Insects",
+      31
+    ],
+    [
+      "Plant biotechnology journal",
+      29
+    ],
+    [
+      "The New phytologist",
+      27
+    ],
+    [
+      "Virology journal",
+      27
+    ],
+    [
+      "ZooKeys",
+      27
+    ],
+    [
+      "Pathogens (Basel, Switzerland)",
+      25
+    ],
+    [
+      "Virus research",
+      25
     ]
   ],
-  "ai_summarized": 0,
-  "last_updated": "2026-07-09 14:42:29"
+  "ai_summarized": 50,
+  "last_updated": "2026-07-09 16:46:52"
 }

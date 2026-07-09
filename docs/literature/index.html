@@ -314,7 +314,7 @@ function renderTrack(){
     let aid='abs_'+p.pmid;
     h+='<tr><td style="width:80px"><span class="journal-badge '+jb+'">'+(p.journal||'?').substring(0,25)+'</span><br><span style="font-size:10px;color:var(--ink3)">'+p.year+'</span></td>';
     h+='<td><a class="paper-title" href="https://pubmed.ncbi.nlm.nih.gov/'+(p.pmid||'')+'" target="_blank">'+esc(p.title||'')+'</a><br><span style="font-size:10px;color:var(--ink3)">'+esc((p.first_author||'')+' '+(p.authors||'').substring(0,60))+'</span><br>'+cats;
-    if(p.ai_done&&p.summary_zh&&p.summary_zh!=='未提及')h+='<div class="ai-card"><div class="ai-row"><span class="ai-label">Summary</span><span>'+esc(p.summary_zh)+'</span></div>'+(p.innovation&&p.innovation!=='未提及'?'<div class="ai-row"><span class="ai-label">Innovation</span><span>'+esc(p.innovation)+'</span></div>':'')+(p.disease&&p.disease!=='未提及'?'<div class="ai-row"><span class="ai-label">Disease</span><span>'+esc(p.disease)+'</span></div>':'')+'</div>';
+    if(p.ai_done)h+=aiCard(p);
     if(p.abstract)h+='<div class="abs-pv" id="'+aid+'">'+esc(p.abstract)+'</div><span class="abs-tg" onclick="toggleAbs(\''+aid+'\')">Show abstract</span>';
     h+='</td></tr>';
   });
@@ -449,7 +449,7 @@ function renderSearchTable(results){
 
 // ── Export ──
 function exportExcel(){
-  let data=papers.map(p=>({PMID:p.pmid||'',DOI:p.doi||'',Title:p.title||'',Journal:p.journal||'',Year:p.year||'',Authors:(p.authors||'').substring(0,100),Categories:(p.categories||[]).join('; '),Summary:p.summary_zh||'',Innovation:p.innovation||'',Disease:p.disease||'',Abstract:(p.abstract||'').substring(0,300)}));
+  let data=papers.map(p=>({PMID:p.pmid||'',DOI:p.doi||'',Title:p.title||'',Journal:p.journal||'',Year:p.year||'',Categories:(p.categories||[]).join('; '),Virus:p.virus_name||'',Taxonomy:p.taxonomy||'',Symptoms:p.symptoms||'',Host:p.host_plant||'',Location:p.location||'',SampleDate:p.sample_date||'',Vector:p.vector||'',Transmission:p.transmission||'',Methods:p.methods||'',Results:p.results||'',Discussion:p.discussion||'',Abstract:(p.abstract||'').substring(0,300)}));
   let wb=XLSX.utils.book_new(),ws=XLSX.utils.json_to_sheet(data);
   XLSX.utils.book_append_sheet(wb,ws,'Papers');XLSX.writeFile(wb,'plant_virus_papers.xlsx');
 }
@@ -562,6 +562,18 @@ async function loadHistorical(){
 
 // ── Helpers ──
 function esc(s){if(!s)return'';let d=document.createElement('div');d.textContent=String(s).slice(0,500);return d.innerHTML}
+
+// Structured plant-virus AI extraction card
+const AI_FIELDS=[['virus_name','病毒名称'],['taxonomy','分类地位'],['symptoms','症状'],['host_plant','宿主植物'],['location','采样地点'],['sample_date','采样时间'],['vector','传播媒介'],['transmission','传播方式'],['overview','研究概况'],['methods','研究方法'],['results','研究结果'],['discussion','讨论意义']];
+function aiCard(p){
+  let rows='';
+  for(let [k,label] of AI_FIELDS){
+    let v=p[k];
+    if(v&&v!=='未提及'){rows+='<div class="ai-row"><span class="ai-label">'+label+'</span><span>'+esc(v)+'</span></div>';}
+  }
+  if(!rows)return'';
+  return'<div class="ai-card">'+rows+'</div>';
+}
 
 // Init Excel book
 window.book=XLSX.utils.book_new();
