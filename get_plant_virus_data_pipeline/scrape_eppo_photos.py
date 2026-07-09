@@ -1,197 +1,239 @@
 #!/usr/bin/env python3
 """
-爬取 EPPO Global Database 植物病毒病图片库
+爬取 EPPO Global Database 植物病毒病图片库 (Selenium 版)
 
 数据来源: https://gd.eppo.int/photos/virus
 输出: eppo_virus_photos.tsv
 
-字段:
-  EPPO_Code     EPPO 病毒代码
-  Virus_Name    病毒学名
-  Virus_Name_CN 病毒中文名 (如有)
-  Photo_ID      图片ID
-  Thumb_URL     缩略图 URL
-  Full_URL      全尺寸图 URL
-  Caption       图片说明 (含症状/宿主信息)
-  Photographer  拍摄者
-  Photo_Page    图片页面 URL
+使用 Selenium WebDriver 渲染 JS 页面，获取完整元数据 (caption + photographer)。
+
+Usage:
+  python scrape_eppo_photos.py -o eppo_virus_photos.tsv --delay 2.0
+  python scrape_eppo_photos.py -o eppo_virus_photos.tsv --limit 5 --delay 2.0
 """
 
-import requests
-from bs4 import BeautifulSoup
 import re
 import time
-import os
 import argparse
 from urllib.parse import urljoin
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 import polars as pl
 
 BASE_URL = "https://gd.eppo.int"
 VIRUS_LIST_URL = f"{BASE_URL}/photos/virus"
 
 
-def get_soup(url, retries=3):
-    """获取页面 BeautifulSoup，带重试"""
-    for i in range(retries):
-        try:
-            resp = requests.get(url, timeout=30, headers={
-                "User-Agent": "Mozilla/5.0 (compatible; PlantVirusDB/1.0; research use)"
-            })
-            resp.raise_for_status()
-            return BeautifulSoup(resp.text, "html.parser")
-        except Exception as e:
-            if i == retries - 1:
-                print(f"  ✗ Failed: {url} — {e}")
-                return None
-            time.sleep(2)
-    return None
+def create_driver(headless=True, browser="chrome"):
+    """创建 WebDriver, 优先 Chrome, 回退 Edge"""
+    opts = Options()
+    if headless:
+        opts.add_argument("--headless=new")
+    opts.add_argument("--no-sandbox")
+    opts.add_argument("--disable-dev-shm-usage")
+    opts.add_argument("--disable-gpu")
+    opts.add_argument("--window-size=1920,1080")
+    opts.add_argument("user-agent=Mozilla/5.0 (compatible; PlantVirusDB/1.0; research)")
+
+    if browser == "edge":
+        from selenium.webdriver import Edge, EdgeOptions
+        eopts = EdgeOptions()
+        if headless:
+            eopts.add_argument("--headless=new")
+        eopts.add_argument("--no-sandbox")
+        eopts.add_argument("--disable-gpu")
+        return Edge(options=eopts)
+
+    try:
+        return webdriver.Chrome(options=opts)
+    except Exception:
+        print("  Chrome not found, trying Edge...")
+        from selenium.webdriver import Edge, EdgeOptions
+        eopts = EdgeOptions()
+        if headless:
+            eopts.add_argument("--headless=new")
+        eopts.add_argument("--no-sandbox")
+        return Edge(options=eopts)
 
 
-def scrape_virus_list():
-    """爬取病毒列表页，获取所有 EPPO 代码和病毒名"""
-    print(f"[1] 爬取病毒列表: {VIRUS_LIST_URL}")
-    soup = get_soup(VIRUS_LIST_URL)
-    if not soup:
-        return []
+def wait_for_element(driver, selector, timeout=10):
+    """等待 JS 渲染完成"""
+    try:
+        WebDriverWait(driver, timeout).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, selector))
+        )
+        return True
+    except TimeoutException:
+        return False
+
+
+def scrape_virus_list(driver):
+    """用 Selenium 爬取病毒列表"""
+    print(f"[1] 加载病毒列表: {VIRUS_LIST_URL}")
+    driver.get(VIRUS_LIST_URL)
+
+    # 等待列表渲染
+    if not wait_for_element(driver, "#listg li", timeout=15):
+        print("  ⚠ 列表加载超时，尝试备用选择器")
+        wait_for_element(driver, "a[href*='/taxon/']", timeout=15)
+
+    time.sleep(1)  # extra settle
 
     viruses = []
-    # 列表在 #listg ul li 中
-    list_items = soup.select("#listg li, ul li a[href*='/taxon/']")
+    items = driver.find_elements(By.CSS_SELECTOR, "#listg li a[href*='/taxon/'], ul li a[href*='/taxon/']")
     seen = set()
-    for item in list_items:
-        if item.name == 'a':
-            link = item
-        else:
-            link = item.find('a')
-        if not link:
-            continue
-        href = link.get('href', '')
+    for link in items:
+        href = link.get_attribute('href') or ''
         m = re.search(r'/taxon/(\w+)/photos', href)
         if m:
             code = m.group(1)
-            name = link.get_text(strip=True)
-            # 清理名称: 去掉末尾的 (CODE)
+            name = link.text.strip()
             name = re.sub(r'\s*\([A-Z0-9]+\)\s*$', '', name)
             if code not in seen:
                 seen.add(code)
                 viruses.append({"eppo_code": code, "virus_name": name})
 
-    print(f"  → {len(viruses)} 个病毒条目")
+    print(f"  -> {len(viruses)} viruses found")
     return viruses
 
 
-def scrape_photos_page(eppo_code, virus_name):
-    """爬取单个病毒的图片页
-
-    HTML structure (from live site):
-      <div class="grid-item">
-        <a href="/media/.../1024x0/NNNN.jpg"><img src="/media/.../220x130/NNNN.jpg"></a>
-        <p>caption text (optional)</p>
-        <p><strong>Courtesy:</strong> Photographer Name</p>
-      </div>
-    """
+def scrape_photos_page(driver, eppo_code, virus_name):
+    """用 Selenium 爬取单个病毒的图片页"""
     url = f"{BASE_URL}/taxon/{eppo_code}/photos"
-    soup = get_soup(url)
-    if not soup:
-        return []
+    driver.get(url)
+
+    # 等待图片网格加载 (Isotope)
+    wait_for_element(driver, "#portfolio img[src*='/pics/']", timeout=15)
+    time.sleep(0.5)  # allow Isotope to finish layout
 
     photos = []
-    # Each photo is in a .grid-item div
-    grid_items = soup.select(".grid-item")
-    if not grid_items:
-        # Fallback: find all img tags with taxon path
-        grid_items = soup.find_all('img', src=re.compile(r'/pics/'))
+    # 找所有 grid-item 或直接找 #portfolio 内的 img
+    items = driver.find_elements(By.CSS_SELECTOR, "#portfolio .grid-item, #portfolio a[href*='/pics/']")
 
-    for item in grid_items:
-        # Find the image - either item itself or child
-        if item.name == 'img':
-            img = item
-        else:
-            img = item.find('img')
-        if not img:
+    for item in items:
+        try:
+            # Find image
+            try:
+                img = item.find_element(By.TAG_NAME, "img")
+            except:
+                continue
+
+            img_src = img.get_attribute('src') or ''
+            if '/pics/' not in img_src:
+                continue
+
+            # Photo ID
+            m = re.search(r'/(\d+)\.jpg', img_src)
+            photo_id = m.group(1) if m else ""
+
+            # Thumb + Full URLs
+            thumb_url = img_src
+            parent_a = None
+            try:
+                parent_a = item.find_element(By.TAG_NAME, "a")
+            except:
+                pass
+            if parent_a:
+                full_url = parent_a.get_attribute('href') or thumb_url.replace("220x130", "1024x0")
+            else:
+                full_url = thumb_url.replace("220x130", "1024x0")
+
+            # Caption & Photographer from sibling <p> elements
+            caption = ""
+            photographer = ""
+            # Get wrapper (either .grid-item or the <a> parent)
+            wrapper = item
+            if item.tag_name == 'img':
+                wrapper = item.find_element(By.XPATH, "..")  # parent
+
+            # Find all <p> in the wrapper
+            p_elements = []
+            try:
+                p_elements = wrapper.find_elements(By.TAG_NAME, "p")
+            except:
+                pass
+            # If <a> has no <p>, look at the .grid-item level
+            if not p_elements:
+                try:
+                    grid_wrapper = wrapper.find_element(By.XPATH, "..")
+                    p_elements = grid_wrapper.find_elements(By.TAG_NAME, "p")
+                except:
+                    pass
+
+            for p in p_elements:
+                text = (p.text or '').strip()
+                if 'courtesy' in text.lower():
+                    # Extract photographer name after "Courtesy:"
+                    photographer = re.sub(r'(?i)courtesy\s*:?\s*', '', text).strip()
+                elif text:
+                    caption = text
+
+            photos.append({
+                "eppo_code": eppo_code,
+                "virus_name": virus_name,
+                "photo_id": photo_id,
+                "thumb_url": thumb_url,
+                "full_url": full_url,
+                "caption": caption,
+                "photographer": photographer,
+                "photo_page": url
+            })
+        except Exception as e:
             continue
-
-        img_src = img.get('src', '')
-        if '/pics/' not in img_src:
-            continue
-
-        # Extract photo ID from filename (/NNNN.jpg)
-        photo_id = re.search(r'/(\d+)\.jpg', img_src)
-        photo_id = photo_id.group(1) if photo_id else ""
-
-        # Thumb URL
-        thumb_url = urljoin(BASE_URL, img_src)
-
-        # Full-res URL: find parent <a> href, or replace 220x130 with 1024x0
-        parent_a = img.find_parent('a') if item.name != 'img' else None
-        if parent_a and parent_a.get('href'):
-            full_url = urljoin(BASE_URL, parent_a['href'])
-        else:
-            full_url = thumb_url.replace("220x130", "1024x0")
-
-        # Parse caption and courtesy from <p> elements
-        caption = ""
-        photographer = ""
-        wrapper = item if item.name != 'img' else item.parent
-        if wrapper:
-            for p in wrapper.find_all('p'):
-                text = p.get_text(strip=True)
-                strong = p.find('strong')
-                if strong and 'courtesy' in strong.get_text().lower():
-                    photographer = text.replace(strong.get_text(), '').strip().lstrip(':').strip()
-                else:
-                    if text and 'courtesy' not in text.lower():
-                        caption = text
-
-        photos.append({
-            "eppo_code": eppo_code,
-            "virus_name": virus_name,
-            "photo_id": photo_id,
-            "thumb_url": thumb_url,
-            "full_url": full_url,
-            "caption": caption,
-            "photographer": photographer,
-            "photo_page": url
-        })
 
     return photos
 
 
 def main():
-    parser = argparse.ArgumentParser(description="爬取 EPPO 植物病毒病图片库")
-    parser.add_argument("-o", "--output", default="eppo_virus_photos.tsv", help="输出文件")
-    parser.add_argument("--delay", type=float, default=1.0, help="请求间隔 (秒)")
-    parser.add_argument("--limit", type=int, default=0, help="限制爬取病毒数 (0=全部)")
-    parser.add_argument("--start", type=int, default=0, help="从第几个病毒开始")
+    parser = argparse.ArgumentParser(description="爬取 EPPO 植物病毒病图片库 (Selenium)")
+    parser.add_argument("-o", "--output", default="eppo_virus_photos.tsv")
+    parser.add_argument("--delay", type=float, default=2.0, help="页面间等待 (秒)")
+    parser.add_argument("--limit", type=int, default=0, help="限制病毒数 (0=全部)")
+    parser.add_argument("--start", type=int, default=0)
+    parser.add_argument("--no-headless", action="store_true", help="显示浏览器窗口")
     args = parser.parse_args()
 
-    viruses = scrape_virus_list()
-    if args.limit > 0:
-        viruses = viruses[args.start:args.start + args.limit]
-    elif args.start > 0:
-        viruses = viruses[args.start:]
+    driver = create_driver(headless=not args.no_headless)
 
-    all_photos = []
-    for i, v in enumerate(viruses):
-        code = v["eppo_code"]
-        name = v["virus_name"]
-        print(f"[{i+1}/{len(viruses)}] {code} — {name[:60]}")
-        photos = scrape_photos_page(code, name)
-        all_photos.extend(photos)
-        print(f"  → {len(photos)} photos")
-        if photos:
-            # Show sample
-            for p in photos[:2]:
-                print(f"     [{p['photo_id']}] {p['caption'][:80]}")
-        time.sleep(args.delay)
+    try:
+        viruses = scrape_virus_list(driver)
+        if args.limit > 0:
+            viruses = viruses[args.start:args.start + args.limit]
+        elif args.start > 0:
+            viruses = viruses[args.start:]
 
-    if all_photos:
-        df = pl.DataFrame(all_photos)
-        df.write_csv(args.output, separator='\t')
-        print(f"\nDone: {len(all_photos)} photos -> {args.output}")
-        print(f"  Viruses: {len(set(p['eppo_code'] for p in all_photos))}")
-    else:
-        print("\nNo photos captured")
+        all_photos = []
+        for i, v in enumerate(viruses):
+            code = v["eppo_code"]
+            name = v["virus_name"]
+            print(f"[{i+1}/{len(viruses)}] {code} — {name[:60]}")
+            photos = scrape_photos_page(driver, code, name)
+            all_photos.extend(photos)
+            print(f"  -> {len(photos)} photos")
+            if photos:
+                for p in photos[:2]:
+                    c = p['caption'][:80] if p['caption'] else '(no caption)'
+                    ph = p['photographer'][:40] if p['photographer'] else '(no photographer)'
+                    print(f"     [{p['photo_id']}] caption={c}")
+                    print(f"               photographer={ph}")
+            time.sleep(args.delay)
+
+        if all_photos:
+            df = pl.DataFrame(all_photos)
+            df.write_csv(args.output, separator='\t')
+            n_cap = sum(1 for p in all_photos if p['caption'])
+            n_phot = sum(1 for p in all_photos if p['photographer'])
+            print(f"\nDone: {len(all_photos)} photos -> {args.output}")
+            print(f"  Viruses: {len(set(p['eppo_code'] for p in all_photos))}")
+            print(f"  With caption: {n_cap}, With photographer: {n_phot}")
+        else:
+            print("\nNo photos captured")
+    finally:
+        driver.quit()
 
 
 if __name__ == "__main__":
