@@ -53,6 +53,8 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px}
 .modal img{max-width:90%;max-height:85vh;object-fit:contain}
 .modal .cls{position:absolute;top:20px;right:24px;color:#fff;font-size:32px;cursor:pointer}
 .modal .meta{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.7);color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;max-width:800px;text-align:center}
+.src-btn{padding:4px 12px;font-size:11px;border:1px solid #ddd;border-radius:4px;cursor:pointer;background:#fff;color:#555}
+.src-btn.active{background:#1a5276;color:#fff;border-color:#1a5276}
 .loading{text-align:center;padding:60px;color:#888}
 .footer{text-align:center;padding:16px;color:#999;font-size:12px}
 </style>
@@ -86,6 +88,11 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px}
       <button class="tab active" onclick="showTab('dash')">Dashboard</button>
       <button class="tab" onclick="showTab('gal')">Browse Gallery</button>
       <button class="tab" onclick="showTab('sub')">Submit Correction</button>
+      <span style="margin-left:auto;display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;color:#888">Source:</span>
+        <button class="src-btn active" onclick="switchSrc('eppo')">EPPO (925)</button>
+        <button class="src-btn" onclick="switchSrc('dpv')">DPV (1,287)</button>
+      </span>
     </div>
     <div id="dash">
       <div class="kpis" id="kpis"></div>
@@ -133,7 +140,33 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px}
 <div class="footer">Plant Virus Reference Database &middot; Data: EPPO Global Database</div>
 
 <script>
-var D=[],AF={h:new Set,s:new Set,p:new Set,v:new Set};
+var D=[],AF={h:new Set,s:new Set,p:new Set,v:new Set},currSrc='eppo';
+var SRC={eppo:'data/eppo_gallery.json?v=2',dpv:'data/dpv_gallery.json?v=1'};
+
+async function switchSrc(src){
+  if(src===currSrc)return;currSrc=src;
+  document.querySelectorAll('.src-btn').forEach(function(b,i){b.classList.toggle('active',(src==='eppo'&&i===0)||(src==='dpv'&&i===1))});
+  document.getElementById('load').style.display='';
+  document.getElementById('main').style.display='none';
+  try{
+    var r=await fetch(SRC[src]);if(!r.ok)throw new Error('HTTP '+r.status);
+    D=await r.json();
+    document.getElementById('fHosts').innerHTML='';
+    document.getElementById('fSymptoms').innerHTML='';
+    document.getElementById('fParts').innerHTML='';
+    document.getElementById('fViruses').innerHTML='';
+    AF={h:new Set,s:new Set,p:new Set,v:new Set};
+    var vl={};D.forEach(function(d){var v=d.virus_latin||d.virus;if(v)vl[v]=(vl[v]||0)+1});var vla=Object.entries(vl).sort(function(a,b){return b[1]-a[1]}).slice(0,30);
+    mkFilt('fHosts',cnt('hosts',30),'fHostsCnt');
+    mkFilt('fSymptoms',cnt('symptoms',25),'fSympsCnt');
+    mkFilt('fParts',cnt('parts',20),'fPartsCnt');
+    mkFilt('fViruses',vla,'fVirusCnt');
+    buildDash();
+    renderGal();
+  }catch(e){document.getElementById('load').innerHTML='<p style=color:red>Error: '+e.message+'</p>';return}
+  document.getElementById('load').style.display='none';
+  document.getElementById('main').style.display='';
+}
 
 function cnt(key,n){
   var m={};
@@ -248,7 +281,7 @@ function submit(){
 
 (async function init(){
   try{
-    var r=await fetch('data/eppo_gallery.json?v=2');
+    var r=await fetch(SRC[currSrc]);
     if(!r.ok)throw new Error('HTTP '+r.status);
     D=await r.json();
     if(!D||!D.length)throw new Error('Empty');
