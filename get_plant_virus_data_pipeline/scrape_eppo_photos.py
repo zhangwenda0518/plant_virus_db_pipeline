@@ -185,10 +185,10 @@ def main():
     if all_photos:
         df = pl.DataFrame(all_photos)
         df.write_csv(args.output, separator='\t')
-        print(f"\n✓ 完成: {len(all_photos)} photos → {args.output}")
-        print(f"  病毒数: {len(set(p['eppo_code'] for p in all_photos))}")
+        print(f"\nDone: {len(all_photos)} photos -> {args.output}")
+        print(f"  Viruses: {len(set(p['eppo_code'] for p in all_photos))}")
     else:
-        print("\n✗ 未获取到任何图片")
+        print("\nNo photos captured")
 
 
 if __name__ == "__main__":
