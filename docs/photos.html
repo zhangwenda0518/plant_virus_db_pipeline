@@ -186,7 +186,8 @@ function buildDash(){
     barH('cHosts',cnt('hosts',15),'#2e86c1');
     barH('cSymps',cnt('symptoms',15),'#e74c3c');
     pie('cParts',cnt('parts',8),C);
-    barH('cVirus',cnt('viruses',15),'#27ae60');
+    var vc={};D.forEach(function(d){var v=d.virus_latin||d.virus;if(v)vc[v]=(vc[v]||0)+1});var vt=Object.entries(vc).sort(function(a,b){return b[1]-a[1]}).slice(0,15);
+    barH('cVirus',vt,'#27ae60');
   }catch(e){console.error(e)}
 }
 
@@ -245,7 +246,8 @@ function submit(){
     mkFilt('fHosts',cnt('hosts',30),'fHostsCnt');
     mkFilt('fSymptoms',cnt('symptoms',25),'fSympsCnt');
     mkFilt('fParts',cnt('parts',20),'fPartsCnt');
-    mkFilt('fViruses',cnt('viruses',30),'fVirusCnt');
+    var vl={};D.forEach(function(d){var v=d.virus_latin||d.virus;if(v)vl[v]=(vl[v]||0)+1});var vla=Object.entries(vl).sort(function(a,b){return b[1]-a[1]}).slice(0,30);
+    mkFilt('fViruses',vla,'fVirusCnt');
     buildDash();
     renderGal();
   }catch(e){
