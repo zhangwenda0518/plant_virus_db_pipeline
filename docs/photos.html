@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -8,68 +8,58 @@
 <style>
 *{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;padding:0;background:#f5f5f5;color:#333}
 nav{background:#1a5276;color:#fff;padding:0 24px;display:flex;align-items:center;gap:4px;height:52px;position:sticky;top:0;z-index:100}
-nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 18px;font-size:14px;border-radius:6px 6px 0 0}
+nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 18px;font-size:14px}
 nav a:hover,nav a.active{background:rgba(255,255,255,.15);color:#fff}
-nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0}
-.layout{display:flex;max-width:1600px;margin:0 auto;min-height:calc(100vh - 52px)}
-.sidebar{width:280px;background:#fff;padding:16px;border-right:1px solid #e0e0e0;overflow-y:auto;position:sticky;top:52px;height:calc(100vh - 52px)}
-.sidebar h3{font-size:13px;color:#1a5276;margin:16px 0 6px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid #eee;padding-bottom:4px}
-.filter-group{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px}
-.filt{padding:3px 10px;font-size:11px;border:1px solid #ddd;border-radius:12px;cursor:pointer;background:#fff;color:#555;white-space:nowrap;transition:all .15s}
-.filt:hover{background:#eaf2f8;border-color:#2e86c1}
-.filt.active{background:#1a5276;color:#fff;border-color:#1a5276}
+nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px}
+.layout{display:flex;max-width:1600px;margin:0 auto}
+.sidebar{width:280px;background:#fff;padding:16px;border-right:1px solid #e0e0e0;position:sticky;top:52px;height:calc(100vh - 52px);overflow-y:auto}
+.sidebar h3{font-size:12px;color:#1a5276;margin:16px 0 6px;border-bottom:1px solid #eee;padding-bottom:4px}
+.filt{padding:3px 10px;font-size:11px;border:1px solid #ddd;border-radius:12px;cursor:pointer;background:#fff;color:#555;white-space:nowrap;margin:2px;display:inline-block}
+.filt:hover{background:#eaf2f8}
+.filt.active{background:#1a5276;color:#fff}
 .sidebar label{display:block;font-size:11px;color:#555;font-weight:600;margin:6px 0 2px}
-.sidebar input,.sidebar textarea,.sidebar select{width:100%;padding:6px 8px;border:1px solid #ddd;border-radius:5px;font-size:12px;font-family:inherit;margin-bottom:4px}
+.sidebar input,.sidebar textarea{width:100%;padding:6px 8px;border:1px solid #ddd;border-radius:5px;font-size:12px;font-family:inherit;margin-bottom:4px}
 .sidebar textarea{resize:vertical;min-height:50px}
 .sidebar .btn{width:100%;padding:8px;background:#1a5276;color:#fff;border:none;border-radius:6px;font-size:13px;cursor:pointer;margin-top:6px}
-.sidebar .btn:hover{background:#154360}
-.sidebar .msg{font-size:11px;color:green;margin-top:4px;display:none}
 .content{flex:1;padding:16px}
-.tabs{display:flex;gap:8px;margin-bottom:16px}
-.tab{padding:8px 20px;border:none;border-radius:6px 6px 0 0;font-size:14px;cursor:pointer;background:#e9ecef;color:#555}
+.tabs{margin-bottom:16px}
+.tab{padding:8px 20px;border:none;border-radius:6px 6px 0 0;font-size:14px;cursor:pointer;background:#e9ecef;color:#555;margin-right:4px}
 .tab.active{background:#fff;color:#1a5276;font-weight:600}
 .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:16px}
 .kpi{background:#fff;padding:16px;border-radius:8px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.06)}
 .kpi .val{font-size:24px;font-weight:700;color:#1a5276}
-.kpi .lbl{font-size:11px;color:#888;margin-top:4px}
+.kpi .lbl{font-size:11px;color:#888}
 .charts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
 .chart-card{background:#fff;padding:14px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
 .chart-card h4{font-size:13px;color:#1a5276;margin:0 0 10px}
 .chart-card canvas{max-height:280px}
 .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
 .topbar h2{font-size:18px;color:#1a5276;margin:0}
-.topbar .count{font-size:13px;color:#888}
 .search-box{width:240px;padding:8px 12px;border:1px solid #ddd;border-radius:6px;font-size:13px;outline:none}
-.search-box:focus{border-color:#2e86c1}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
-.card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.08);cursor:pointer;transition:transform .15s,box-shadow .15s}
-.card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.12)}
-.card .img-wrap{width:100%;height:170px;overflow:hidden;background:#f0f0f0;display:flex;align-items:center;justify-content:center}
-.card .img-wrap img{width:100%;height:100%;object-fit:cover}
+.card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.08);cursor:pointer;transition:transform .15s}
+.card:hover{transform:translateY(-2px)}
+.card img{width:100%;height:170px;object-fit:cover;display:block}
 .card .info{padding:10px 12px}
-.card .info .virus-name{font-weight:600;font-size:13px;color:#1a5276;margin-bottom:2px;font-style:italic}
-.card .info .virus-common{font-size:10px;color:#999;margin-bottom:4px}
-.card .info .caption{font-size:11px;color:#666;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:4px}
-.card .info .tags{display:flex;flex-wrap:wrap;gap:3px;margin-top:6px}
-.card .info .tag{font-size:10px;padding:1px 6px;border-radius:8px;background:#eaf2f8;color:#2e86c1}
-.card .info .tag.host{background:#e8f5e9;color:#2e7d32}
-.card .info .tag.symp{background:#fce4ec;color:#c62828}
-.card .info .tag.part{background:#e3f2fd;color:#1565c0}
-.card .info .photographer{font-size:10px;color:#999;margin-top:4px}
+.card .info b{font-size:13px;color:#1a5276;font-style:italic}
+.card .info .cap{font-size:11px;color:#666;line-height:1.4;max-height:2.6em;overflow:hidden;margin:4px 0}
+.card .info .tags{display:flex;flex-wrap:wrap;gap:3px;margin-top:4px}
+.tag{font-size:10px;padding:1px 6px;border-radius:8px;background:#eaf2f8;color:#2e86c1}
+.tag.host{background:#e8f5e9;color:#2e7d32}
+.tag.symp{background:#fce4ec;color:#c62828}
+.tag.part{background:#e3f2fd;color:#1565c0}
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:200;justify-content:center;align-items:center}
-.modal.active{display:flex}
+.modal.on{display:flex}
 .modal img{max-width:90%;max-height:85vh;object-fit:contain}
-.modal .close{position:absolute;top:20px;right:24px;color:#fff;font-size:32px;cursor:pointer}
+.modal .cls{position:absolute;top:20px;right:24px;color:#fff;font-size:32px;cursor:pointer}
 .modal .meta{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.7);color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;max-width:800px;text-align:center}
 .loading{text-align:center;padding:60px;color:#888}
 .footer{text-align:center;padding:16px;color:#999;font-size:12px}
-.footer a{color:#2e86c1;text-decoration:none}
-#galleryTab{display:none}
 </style>
 </head>
 <body>
 <nav>
-  <a class="brand" href="index.html">Plant Virus DB</a>
+  <a class="brand" href="/">Plant Virus DB</a>
   <a href="/">Home</a>
   <a href="/reference/">Reference</a>
   <a href="/explorer/">Explorer</a>
@@ -78,187 +68,188 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
   <a href="/literature/">Literature</a>
 </nav>
 <div class="layout">
-  <div class="sidebar">
-    <h3>Filter Gallery</h3>
-    <div class="filter-group" id="filterHosts"></div>
-    <div class="filter-group" id="filterSymptoms"></div>
-    <div class="filter-group" id="filterParts"></div>
-    <div class="filter-group" id="filterViruses"></div>
-
-    <h3>Submit Correction</h3>
-    <label>EPPO Code</label><input type="text" id="subCode" placeholder="e.g. TSWV00">
-    <label>Photo ID</label><input type="text" id="subPhotoId" placeholder="e.g. 2555">
-    <label>Virus (Latin) *</label><input type="text" id="subVirus" placeholder="e.g. Orthotospovirus tomatomaculae">
-    <label>Host (Latin)</label><input type="text" id="subHost" placeholder="e.g. Solanum lycopersicum">
-    <label>Symptoms</label><input type="text" id="subSymptoms" placeholder="e.g. mosaic, ring spot, necrosis">
-    <label>Plant Parts</label><input type="text" id="subParts" placeholder="e.g. leaf, fruit">
-    <label>Notes</label><textarea id="subNotes" placeholder="Additional notes..."></textarea>
-    <button class="btn" onclick="submitCorrection()">Submit Correction</button>
-    <div class="msg" id="subMsg">Submitted!</div>
-  </div>
-
-  <div class="content">
-    <div class="loading" id="loading">Loading...</div>
-    <div id="mainContent" style="display:none">
-      <!-- Tabs -->
-      <div class="tabs">
-        <button class="tab active" onclick="switchTab('dashboard')">Dashboard</button>
-        <button class="tab" onclick="switchTab('gallery')">Browse Gallery</button>
+<div class="sidebar">
+  <h3>FILTER</h3>
+  <div id="fHosts"></div>
+  <div id="fSymptoms"></div>
+  <div id="fParts"></div>
+  <div id="fViruses"></div>
+  <h3>SUBMIT CORRECTION</h3>
+  <label>EPPO Code</label><input id="subCode" placeholder="e.g. TSWV00">
+  <label>Photo ID</label><input id="subPid" placeholder="e.g. 2555">
+  <label>Virus (Latin)</label><input id="subVirus" placeholder="Orthotospovirus tomatomaculae">
+  <label>Host (Latin)</label><input id="subHost" placeholder="Solanum lycopersicum">
+  <label>Symptoms</label><input id="subSymp" placeholder="mosaic, necrosis">
+  <label>Parts</label><input id="subPart" placeholder="leaf, fruit">
+  <label>Notes</label><textarea id="subNotes"></textarea>
+  <button class="btn" onclick="submit()">Submit</button>
+</div>
+<div class="content">
+  <div class="loading" id="load">Loading...</div>
+  <div id="main" style="display:none">
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('dash')">Dashboard</button>
+      <button class="tab" onclick="showTab('gal')">Browse Gallery</button>
+    </div>
+    <div id="dash">
+      <div class="kpis" id="kpis"></div>
+      <div class="charts">
+        <div class="chart-card"><h4>Top Host Plants</h4><canvas id="cHosts"></canvas></div>
+        <div class="chart-card"><h4>Top Symptoms</h4><canvas id="cSymps"></canvas></div>
       </div>
-
-      <!-- Dashboard -->
-      <div id="dashboardTab">
-        <div class="kpis" id="kpis"></div>
-        <div class="charts">
-          <div class="chart-card"><h4>Top Host Plants</h4><canvas id="chartHosts"></canvas></div>
-          <div class="chart-card"><h4>Top Symptoms</h4><canvas id="chartSymptoms"></canvas></div>
-        </div>
-        <div class="charts">
-          <div class="chart-card"><h4>Plant Parts Distribution</h4><canvas id="chartParts"></canvas></div>
-          <div class="chart-card"><h4>Virus Families (via Ref DB)</h4><canvas id="chartVirus"></canvas></div>
-        </div>
+      <div class="charts">
+        <div class="chart-card"><h4>Plant Parts</h4><canvas id="cParts"></canvas></div>
+        <div class="chart-card"><h4>Top Viruses</h4><canvas id="cVirus"></canvas></div>
       </div>
-
-      <!-- Gallery -->
-      <div id="galleryTab">
-        <div class="topbar">
-          <h2>Virus Disease Photo Gallery</h2>
-          <input type="text" class="search-box" id="searchBox" placeholder="Search..." oninput="renderGallery()">
-          <span class="count" id="countText"></span>
-        </div>
-        <div class="grid" id="grid"></div>
+    </div>
+    <div id="gal" style="display:none">
+      <div class="topbar">
+        <h2>Gallery</h2>
+        <input class="search-box" id="search" placeholder="Search..." oninput="renderGal()">
+        <span id="countTxt" style="font-size:13px;color:#888"></span>
       </div>
+      <div class="grid" id="grid"></div>
     </div>
   </div>
 </div>
-<div class="modal" id="modal" onclick="this.classList.remove('active')">
-  <span class="close">&times;</span>
-  <img id="modalImg" src="">
-  <div class="meta" id="modalMeta"></div>
 </div>
-<div class="footer">Plant Virus Reference Database · Data: EPPO Global Database</div>
+<div class="modal" id="modal" onclick="this.classList.remove('on')">
+  <span class="cls">&times;</span>
+  <img id="mImg" src="">
+  <div class="meta" id="mMeta"></div>
+</div>
+<div class="footer">Plant Virus Reference Database &middot; Data: EPPO Global Database</div>
 
 <script>
-let data=[],activeFilters={hosts:new Set(),symptoms:new Set(),parts:new Set(),viruses:new Set()};
+var D=[],AF={h:new Set,s:new Set,p:new Set,v:new Set};
 
-async function init(){
-  const r=await fetch('data/eppo_gallery.json');
-  data=await r.json();
-  buildFilters();
-  buildDashboard();
-  renderGallery();
-  document.getElementById('loading').style.display='none';
-  document.getElementById('mainContent').style.display='';
-}
-
-function buildDashboard(){
-  // KPIs
-  const arr=(v)=>Array.isArray(v)?v:(v?[v]:[]);
-  const allHosts=new Set(),allSymps=new Set(),allParts=new Set(),allVirus=new Set();
-  data.forEach(d=>{
-    arr(d.hosts_latin||d.hosts).forEach(h=>allHosts.add(typeof h==='object'?h.latin:h));
-    arr(d.symptoms).forEach(s=>allSymps.add(s));
-    arr(d.parts).forEach(p=>allParts.add(p));
-    allVirus.add(d.virus_latin||d.virus);
-  });
-  document.getElementById('kpis').innerHTML=[
-    ['Total Photos',data.length],['Virus Species',allVirus.size],
-    ['Host Plants',allHosts.size],['Symptom Types',allSymps.size],
-    ['Part Types',allParts.size]
-  ].map(([l,v])=>`<div class="kpi"><div class="val">${v.toLocaleString()}</div><div class="lbl">${l}</div></div>`).join('');
-
-  // Charts
-  const cnt=(key,n)=>{const m={};data.forEach(d=>{const vals=Array.isArray(d[key])?d[key]:(d[key]?[d[key]]:[]);vals.forEach(v=>{if(v&&typeof v==='object')v=v.latin||v.common||'';m[v]=(m[v]||0)+1})});return Object.entries(m).filter(x=>x[0]).sort((a,b)=>b[1]-a[1]).slice(0,n);};
-  const barH=(id,items,color)=>{
-    new Chart(document.getElementById(id),{type:'bar',data:{labels:items.map(x=>x[0]),datasets:[{data:items.map(x=>x[1]),backgroundColor:color}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
-  };
-  const pie=(id,items,colors)=>{
-    new Chart(document.getElementById(id),{type:'doughnut',data:{labels:items.map(x=>x[0]),datasets:[{data:items.map(x=>x[1]),backgroundColor:colors}]}});
-  };
-  const C=['#2e86c1','#e74c3c','#27ae60','#f39c12','#8e44ad','#1abc9c','#e67e22','#2980b9'];
-  barH('chartHosts',cnt('hosts',15),'#2e86c1');
-  barH('chartSymptoms',cnt('symptoms',15),'#e74c3c');
-  pie('chartParts',cnt('parts',8),C);
-  barH('chartVirus',cnt('viruses',15),'#27ae60');
-}
-
-function buildFilters(){
-  const cnt=(key,n)=>{const m={};data.forEach(d=>{const vals=Array.isArray(d[key])?d[key]:(d[key]?[d[key]]:[]);vals.forEach(v=>{if(v&&typeof v==='object')v=v.latin||v.common||'';m[v]=(m[v]||0)+1})});return Object.entries(m).filter(x=>x[0]).sort((a,b)=>b[1]-a[1]).slice(0,n);};
-  ['hosts','symptoms','parts','viruses'].forEach(k=>{
-    const el=document.getElementById('filter'+k.charAt(0).toUpperCase()+k.slice(1));
-    const items=k==='viruses'?cnt('virus',30):cnt(k,25);
-    items.forEach(([v,n])=>{
-      const btn=document.createElement('span');
-      btn.className='filt';btn.innerHTML=v+'<span class="cnt">'+n+'</span>';
-      btn.onclick=()=>{
-        const s=activeFilters[k];s.has(v)?s.delete(v):s.add(v);
-        btn.classList.toggle('active',s.has(v));renderGallery();
-      };
-      el.appendChild(btn);
+function cnt(key,n){
+  var m={};
+  D.forEach(function(d){
+    var v=d[key];
+    if(!v)return;
+    if(!Array.isArray(v))v=[v];
+    v.forEach(function(x){
+      if(x&&typeof x==='object')x=x.latin||'';
+      if(x)m[x]=(m[x]||0)+1;
     });
   });
+  return Object.entries(m).sort(function(a,b){return b[1]-a[1]}).slice(0,n||25);
 }
 
-function renderGallery(){
-  const q=(document.getElementById('searchBox').value||'').toLowerCase();
-  const filtered=data.filter(d=>{
-    if(q&&!d.virus.toLowerCase().includes(q)&&!(d.caption||'').toLowerCase().includes(q))return false;
-    for(const k of['hosts','symptoms','parts','viruses']){
-      if(activeFilters[k].size>0){const vals=k==='viruses'?[d.virus]:(d[k]||[]);if(!vals.some(v=>activeFilters[k].has(v)))return false;}
+function mkFilt(id,items){
+  var el=document.getElementById(id);
+  if(!el)return;
+  el.innerHTML='';
+  items.forEach(function(a){
+    var k=a[0],n=a[1];
+    var s=document.createElement('span');
+    s.className='filt';
+    s.textContent=k+' ('+n+')';
+    s.onclick=function(){
+      var set;
+      if(id==='fHosts')set=AF.h;
+      else if(id==='fSymptoms')set=AF.s;
+      else if(id==='fParts')set=AF.p;
+      else set=AF.v;
+      if(set.has(k))set.delete(k);else set.add(k);
+      s.classList.toggle('active',set.has(k));
+      renderGal();
+    };
+    el.appendChild(s);
+  });
+}
+
+function buildDash(){
+  try{
+    document.getElementById('kpis').innerHTML=[
+      ['Photos',D.length],['Virus Species',new Set(D.map(function(d){return d.virus_latin||d.virus})).size],
+      ['Hosts',cnt('hosts',999).length],['Symptoms',cnt('symptoms',999).length],
+      ['Parts',cnt('parts',999).length]
+    ].map(function(a){return'<div class=kpi><div class=val>'+a[1].toLocaleString()+'</div><div class=lbl>'+a[0]+'</div></div>'}).join('');
+
+    var C=['#2e86c1','#e74c3c','#27ae60','#f39c12','#8e44ad','#1abc9c','#e67e22','#2980b9'];
+    function barH(el,items,color){
+      if(!items.length)return;
+      new Chart(document.getElementById(el),{type:'bar',data:{labels:items.map(function(x){return x[0]}),datasets:[{data:items.map(function(x){return x[1]}),backgroundColor:color}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
     }
+    function pie(el,items,colors){
+      if(!items.length)return;
+      new Chart(document.getElementById(el),{type:'doughnut',data:{labels:items.map(function(x){return x[0]}),datasets:[{data:items.map(function(x){return x[1]}),backgroundColor:colors}]}});
+    }
+    barH('cHosts',cnt('hosts',15),'#2e86c1');
+    barH('cSymps',cnt('symptoms',15),'#e74c3c');
+    pie('cParts',cnt('parts',8),C);
+    barH('cVirus',cnt('viruses',15),'#27ae60');
+  }catch(e){console.error(e)}
+}
+
+function renderGal(){
+  var q=(document.getElementById('search').value||'').toLowerCase();
+  var rows=D.filter(function(d){
+    if(q&&d.virus.toLowerCase().indexOf(q)<0&&(d.caption||'').toLowerCase().indexOf(q)<0)return false;
+    if(AF.h.size){var hh=d.hosts_latin||d.hosts||[];if(!hh.some(function(x){return AF.h.has(typeof x==='object'?x.latin:x)}))return false;}
+    if(AF.s.size){var ss=d.symptoms||[];if(!ss.some(function(x){return AF.s.has(x)}))return false;}
+    if(AF.p.size){var pp=d.parts||[];if(!pp.some(function(x){return AF.p.has(x)}))return false;}
+    if(AF.v.size){var vv=d.virus_latin||d.virus;if(!AF.v.has(vv))return false;}
     return true;
   });
-  document.getElementById('countText').textContent=filtered.length.toLocaleString()+' photos';
-  document.getElementById('grid').innerHTML=filtered.map(d=>`
-    <div class="card" onclick="openModal('${d.full}','${(d.caption||'').replace(/'/g,\"\\\\'\")}','${(d.virus||'').replace(/'/g,\"\\\\'\")}','${(d.photographer||'').replace(/'/g,\"\\\\'\")}')">
-      <div class="img-wrap"><img src="${d.thumb}" loading="lazy" alt=""></div>
-      <div class="info">
-        <div class="virus-name">${d.virus_latin&&d.virus_latin!==d.virus?d.virus_latin:d.virus}</div>
-        ${d.virus_latin&&d.virus_latin!==d.virus?`<div class="virus-common">${d.virus}</div>`:''}
-        <div class="caption">${d.caption||''}</div>
-        <div class="tags">
-          ${(d.hosts_latin||d.hosts||[]).slice(0,3).map(h=>`<span class="tag host">${typeof h==='object'?h.latin:h}</span>`).join('')}
-          ${(d.symptoms||[]).slice(0,3).map(s=>`<span class="tag symp">${s}</span>`).join('')}
-          ${(d.parts||[]).slice(0,2).map(p=>`<span class="tag part">${p}</span>`).join('')}
-        </div>
-      </div>
-    </div>
-  `).join('');
+  document.getElementById('countTxt').textContent=rows.length+' photos';
+  document.getElementById('grid').innerHTML=rows.map(function(d){
+    var vl=d.virus_latin&&d.virus_latin!==d.virus?d.virus_latin:d.virus;
+    var vc=d.virus_latin&&d.virus_latin!==d.virus?d.virus:'';
+    var hs=(d.hosts_latin||d.hosts||[]).slice(0,3).map(function(h){var n=typeof h==='object'?h.latin:h;return'<span class=\"tag host\">'+n+'</span>'}).join('');
+    var ss=(d.symptoms||[]).slice(0,3).map(function(s){return'<span class=\"tag symp\">'+s+'</span>'}).join('');
+    var ps=(d.parts||[]).slice(0,2).map(function(p){return'<span class=\"tag part\">'+p+'</span>'}).join('');
+    return'<div class=card onclick=\"openImg(\''+d.full+'\',\''+(d.caption||'').replace(/'/g,'')+'\',\''+(d.virus||'').replace(/'/g,'')+'\')\"><img src=\"'+d.thumb+'\" loading=lazy><div class=info><b>'+vl+'</b>'+(vc?'<div style=font-size:10px;color:#999>'+vc+'</div>':'')+'<div class=cap>'+(d.caption||'')+'</div><div class=tags>'+hs+ss+ps+'</div></div></div>';
+  }).join('');
 }
 
-function switchTab(t){
-  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.textContent.toLowerCase().includes(t)));
-  document.getElementById('dashboardTab').style.display=t==='dashboard'?'':'none';
-  document.getElementById('galleryTab').style.display=t==='gallery'?'':'none';
+function showTab(t){
+  document.querySelectorAll('.tab').forEach(function(x,i){x.classList.toggle('active',(t==='dash'&&i===0)||(t==='gal'&&i===1))});
+  document.getElementById('dash').style.display=t==='dash'?'':'none';
+  document.getElementById('gal').style.display=t==='gal'?'':'none';
 }
 
-function openModal(url,caption,virus,photographer){
-  document.getElementById('modalImg').src=url;
-  document.getElementById('modalMeta').innerHTML=`<b>${virus}</b><br>${caption}${photographer?'<br>Photo: '+photographer:''}`;
-  document.getElementById('modal').classList.add('active');
+function openImg(url,cap,virus){
+  document.getElementById('mImg').src=url;
+  document.getElementById('mMeta').innerHTML='<b>'+virus+'</b><br>'+cap;
+  document.getElementById('modal').classList.add('on');
 }
 
-function submitCorrection(){
-  var fields={
-    'eppo_code':document.getElementById('subCode').value.trim(),
-    'photo_id':document.getElementById('subPhotoId').value.trim(),
-    'virus_latin':document.getElementById('subVirus').value.trim(),
-    'host_latin':document.getElementById('subHost').value.trim(),
-    'symptoms':document.getElementById('subSymptoms').value.trim(),
-    'parts':document.getElementById('subParts').value.trim(),
-    'notes':document.getElementById('subNotes').value.trim()
-  };
-  if(!fields.virus_latin){alert('Virus name required');return;}
-  var body='### Photo Metadata Correction\n\n| Field | Value |\n|-------|-------|\n';
-  for(var[k,v] of Object.entries(fields)){if(v)body+='| '+k+' | '+v+' |\n';}
-  body+='\n---\n_Submitted via Photos Dashboard_';
-  var url='https://github.com/zhangwenda0518/plant_virus_db_pipeline/issues/new?title='+encodeURIComponent('[Photo] '+(fields.eppo_code||'')+' '+(fields.virus_latin||''))+'&body='+encodeURIComponent(body)+'&labels=photo-correction';
-  document.getElementById('subMsg').style.display='block';
-  setTimeout(function(){document.getElementById('subMsg').style.display='none'},2000);
-  window.open(url,'_blank');
+function submit(){
+  var body='### Photo Correction\n\n|Field|Value|\n|---|---|\n';
+  var v=document.getElementById('subCode').value.trim();if(v)body+='|EPPO Code|'+v+'|\n';
+  v=document.getElementById('subPid').value.trim();if(v)body+='|Photo ID|'+v+'|\n';
+  v=document.getElementById('subVirus').value.trim();if(v)body+='|Virus Latin|'+v+'|\n';
+  v=document.getElementById('subHost').value.trim();if(v)body+='|Host Latin|'+v+'|\n';
+  v=document.getElementById('subSymp').value.trim();if(v)body+='|Symptoms|'+v+'|\n';
+  v=document.getElementById('subPart').value.trim();if(v)body+='|Parts|'+v+'|\n';
+  v=document.getElementById('subNotes').value.trim();if(v)body+='|Notes|'+v+'|\n';
+  body+='\n---\n_Submitted via Photos_';
+  window.open('https://github.com/zhangwenda0518/plant_virus_db_pipeline/issues/new?title='+encodeURIComponent('[Photo] Correction')+'&body='+encodeURIComponent(body)+'&labels=photo-correction','_blank');
 }
 
-init();
+(async function init(){
+  try{
+    var r=await fetch('data/eppo_gallery.json');
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    D=await r.json();
+    if(!D||!D.length)throw new Error('Empty');
+    mkFilt('fHosts',cnt('hosts',30));
+    mkFilt('fSymptoms',cnt('symptoms',25));
+    mkFilt('fParts',cnt('parts',20));
+    mkFilt('fViruses',cnt('viruses',30));
+    buildDash();
+    renderGal();
+  }catch(e){
+    document.getElementById('load').innerHTML='<p style=color:red>Error: '+e.message+'</p>';
+    console.error(e);
+    return;
+  }
+  document.getElementById('load').style.display='none';
+  document.getElementById('main').style.display='';
+})();
 </script>
 </body>
 </html>
