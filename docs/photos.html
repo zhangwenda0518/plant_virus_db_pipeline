@@ -30,10 +30,14 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
 .card .img-wrap{width:100%;height:170px;overflow:hidden;background:#f0f0f0;display:flex;align-items:center;justify-content:center}
 .card .img-wrap img{width:100%;height:100%;object-fit:cover}
 .card .info{padding:10px 12px}
-.card .info .virus-name{font-weight:600;font-size:13px;color:#1a5276;margin-bottom:4px;line-height:1.3}
+.card .info .virus-name{font-weight:600;font-size:13px;color:#1a5276;margin-bottom:2px;line-height:1.3;font-style:italic}
+.card .info .virus-common{font-size:10px;color:#999;margin-bottom:4px}
 .card .info .caption{font-size:11px;color:#666;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:4px}
 .card .info .tags{display:flex;flex-wrap:wrap;gap:3px;margin-top:6px}
 .card .info .tag{font-size:10px;padding:1px 6px;border-radius:8px;background:#eaf2f8;color:#2e86c1}
+.card .info .tag.host{background:#e8f5e9;color:#2e7d32}
+.card .info .tag.symp{background:#fce4ec;color:#c62828}
+.card .info .tag.part{background:#e3f2fd;color:#1565c0}
 .card .info .photographer{font-size:10px;color:#999;margin-top:4px}
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:200;justify-content:center;align-items:center}
 .modal.active{display:flex}
@@ -150,12 +154,13 @@ function renderGallery(){
     <div class="card" onclick="openModal('${d.full}','${(d.caption||'').replace(/'/g,"\\'")}','${d.virus.replace(/'/g,"\\'")}','${(d.photographer||'').replace(/'/g,"\\'")}')">
       <div class="img-wrap"><img src="${d.thumb}" ${i<8?'':'loading="lazy"'} alt="${d.virus}"></div>
       <div class="info">
-        <div class="virus-name">${d.virus}</div>
+        <div class="virus-name">${d.virus_latin&&d.virus_latin!==d.virus?d.virus_latin:d.virus}</div>
+        <div class="virus-common">${d.virus_latin&&d.virus_latin!==d.virus?d.virus:''}</div>
         <div class="caption">${d.caption||''}</div>
         <div class="tags">
-          ${(d.hosts||[]).slice(0,3).map(h=>`<span class="tag">${h}</span>`).join('')}
-          ${(d.symptoms||[]).slice(0,3).map(s=>`<span class="tag">${s}</span>`).join('')}
-          ${(d.parts||[]).slice(0,2).map(p=>`<span class="tag">${p}</span>`).join('')}
+          ${(d.hosts_latin||d.hosts||[]).slice(0,3).map(h=>`<span class="tag host">${typeof h==='object'?h.latin:h}</span>`).join('')}
+          ${(d.symptoms||[]).slice(0,3).map(s=>`<span class="tag symp">${s}</span>`).join('')}
+          ${(d.parts||[]).slice(0,2).map(p=>`<span class="tag part">${p}</span>`).join('')}
         </div>
         <div class="photographer">${d.photographer||''}</div>
       </div>
