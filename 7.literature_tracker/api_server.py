@@ -6,8 +6,9 @@ from datetime import datetime
 from pathlib import Path
 from flask import Flask, request, jsonify, render_template_string
 
-app = Flask(__name__)
-DATA_FILE = Path(os.environ.get("PAPERS_JSON", os.path.join(os.path.dirname(os.path.abspath(__file__)), "papers.json")))
+BASE = Path(os.path.dirname(os.path.abspath(__file__)))
+DATA_FILE = Path(os.environ.get("PAPERS_JSON", str(BASE / "data" / "papers.json")))
+app = Flask(__name__, static_folder=str(BASE / "web"), static_url_path="/literature/static")
 
 
 def load_papers():
@@ -149,6 +150,44 @@ def api_stats():
         "years": years,
         "top_journals": sorted(journals.items(), key=lambda x: -x[1])[:20],
     })
+
+
+@app.route("/literature/v2/")
+@app.route("/literature/v2")
+def index_v2():
+    """Serve the new static web app."""
+    return app.send_static_file("index.html")
+
+
+@app.route("/literature/api/papers/filtered")
+def api_papers_filtered():
+    """Return filtered papers by category/year/search."""
+    data = load_papers()
+    papers = data.get("papers", [])
+    category = request.args.get("category", "")
+    year = request.args.get("year", "")
+    search = request.args.get("search", "").lower()
+    limit = int(request.args.get("limit", 100))
+
+    if category:
+        papers = [p for p in papers if category in (p.get("categories") or [])]
+    if year:
+        papers = [p for p in papers if str(p.get("year")) == year]
+    if search:
+        papers = [p for p in papers if search in (p.get("title", "") + p.get("abstract", "")).lower()]
+
+    return jsonify({"papers": papers[:limit], "total": len(papers)})
+
+
+@app.route("/literature/api/categories")
+def api_categories():
+    """Return categories with counts."""
+    data = load_papers()
+    cats = {}
+    for p in data.get("papers", []):
+        for c in (p.get("categories") or []):
+            cats[c] = cats.get(c, 0) + 1
+    return jsonify({"categories": cats, "total": len(data.get("papers", []))})
 
 
 if __name__ == "__main__":

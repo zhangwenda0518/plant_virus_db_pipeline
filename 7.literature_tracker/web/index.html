@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plant Virus Literature Hub · Search &amp; Track</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+:root{
+  --bg:#fdfcfa;--bg2:#f5f2ec;--bg3:#edeae2;
+  --ink:#18181a;--ink2:#46464f;--ink3:#8c8c96;
+  --blue:#1a3a5c;--blue2:#2a5485;--blue3:#c8d8ea;--blue4:#eaf0f7;
+  --gold:#a07828;--gold2:#f8f1df;
+  --rule:#d4d0c8;--good:#2f6848;--good2:#e8f4ec;
+  --serif:'IM Fell English','Palatino Linotype',Palatino,Georgia,serif;
+  --mono:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+  --shadow:0 1px 4px rgba(0,0,0,.07);--shadow2:0 2px 12px rgba(0,0,0,.08);
+  --r:4px;--r2:8px
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:15px;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.7}
+a{color:var(--blue2);text-decoration:none}a:hover{text-decoration:underline}
+
+.band{background:linear-gradient(90deg,var(--blue) 0%,var(--blue2) 50%,var(--gold) 100%);height:4px}
+
+nav{background:var(--blue);padding:0 20px;display:flex;align-items:center;height:46px;gap:2px;position:sticky;top:0;z-index:100}
+nav a{color:rgba(255,255,255,.8);padding:10px 14px;font-size:12px;font-family:var(--mono);letter-spacing:.04em;border-radius:3px 3px 0 0;transition:.15s}
+nav a:hover,nav a.active{background:rgba(255,255,255,.12);color:#fff;text-decoration:none}
+nav .brand{font-weight:700;font-size:14px;color:#fff;padding:0 10px 0 0;font-family:var(--serif);letter-spacing:.02em}
+nav .spacer{flex:1}
+nav .theme-btn{background:none;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.8);padding:4px 10px;border-radius:3px;cursor:pointer;font-size:11px;font-family:var(--mono)}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px 60px}
+
+.hero{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;padding:28px 28px 22px;margin-bottom:20px}
+.hero .eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;opacity:.7;margin-bottom:6px}
+.hero h1{font-size:28px;margin:0 0 4px;letter-spacing:-.01em}
+.hero h1 span.gold{color:#e0c070}
+.hero p{margin:0;opacity:.8;font-size:13px;max-width:800px}
+
+.metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:18px}
+.met{background:var(--blue4);border:1px solid var(--blue3);padding:14px;text-align:center;border-radius:var(--r2);transition:.15s}
+.met:hover{border-color:var(--blue2)}
+.met .val{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--blue)}
+.met .lbl{font-family:var(--mono);font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink3);margin-top:3px}
+
+.tabs{display:flex;gap:0;margin-bottom:18px;border-bottom:2px solid var(--rule)}
+.tab{padding:10px 20px;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);border-bottom:2px solid transparent;margin-bottom:-2px;transition:.15s}
+.tab:hover{color:var(--blue);background:var(--blue4)}
+.tab.active{color:var(--blue);border-bottom-color:var(--blue);font-weight:700}
+
+.card{background:#fff;border:1px solid var(--rule);padding:20px 22px;margin-bottom:16px;box-shadow:var(--shadow);border-radius:var(--r2)}
+.card h3{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-bottom:14px;padding-bottom:10px;border-bottom:1px dashed var(--rule)}
+.section-num{display:inline-flex;width:24px;height:24px;background:var(--blue);color:#fff;font-family:var(--mono);font-size:13px;align-items:center;justify-content:center;border-radius:var(--r);margin-right:8px;flex-shrink:0}
+
+.row{display:grid;gap:14px}.row2{grid-template-columns:1fr 1fr}.row21{grid-template-columns:2fr 1fr}
+.field{margin-bottom:12px}.field label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);margin-bottom:5px}
+input,select,textarea{width:100%;padding:10px 12px;font-family:var(--mono);font-size:13px;border:1px solid var(--rule);background:var(--bg);color:var(--ink);border-radius:var(--r);transition:.15s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue4)}
+textarea{resize:vertical;min-height:80px}
+.btn{display:inline-block;padding:10px 20px;background:var(--ink);color:var(--bg);border:none;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:var(--r);transition:.15s}
+.btn:hover{background:var(--blue);transform:translateY(-1px)}
+.btn:disabled{background:var(--ink3);cursor:not-allowed;transform:none}
+.btn.gold{background:var(--gold);color:#fff}.btn.gold:hover{background:#8c6a1f}
+.btn.green{background:var(--good);color:#fff}
+.btn.outline{background:transparent;color:var(--ink);border:1px solid var(--rule)}.btn.outline:hover{background:var(--ink);color:var(--bg)}
+.btn.sm{padding:6px 14px;font-size:10px}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+.chip{display:inline-block;padding:3px 10px;border:1px solid var(--rule);border-radius:14px;font-size:10px;font-family:var(--mono);cursor:pointer;color:var(--ink2);transition:.15s}.chip:hover,.chip.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.charts canvas{max-height:240px}
+
+table{width:100%;border-collapse:collapse;font-size:12px}
+table th{background:var(--bg3);text-align:left;padding:8px 10px;font-family:var(--mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);border-bottom:2px solid var(--blue)}
+table td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;font-size:12px}
+table tr:hover td{background:var(--bg2)}
+.paper-title{font-weight:600;color:var(--blue);line-height:1.3}
+.paper-title:hover{color:var(--blue2)}
+.journal-badge{font-family:var(--mono);font-size:9px;padding:2px 6px;border-radius:10px;white-space:nowrap}
+.jb-hi{background:var(--good2);color:var(--good)}.jb-md{background:var(--gold2);color:var(--gold)}.jb-lo{background:var(--bg2);color:var(--ink3)}
+.abs-tg{font-size:10px;color:var(--blue2);cursor:pointer;font-family:var(--mono)}.abs-tg:hover{text-decoration:underline}
+.abs-pv{font-size:11px;color:var(--ink2);line-height:1.5;max-height:0;overflow:hidden;transition:max-height .3s}
+.abs-pv.open{max-height:2000px;margin:6px 0}
+.ai-card{background:var(--blue4);border-left:3px solid var(--blue);padding:10px 14px;margin:8px 0;border-radius:0 var(--r) var(--r) 0);font-size:11px}
+.ai-card .ai-row{display:flex;gap:8px;margin:3px 0}.ai-label{font-weight:700;color:var(--blue);white-space:nowrap;min-width:64px;font-size:10px}
+
+.pg{display:flex;justify-content:center;gap:4px;margin:14px 0}
+.pg button{padding:6px 12px;border:1px solid var(--rule);background:var(--bg);color:var(--ink);border-radius:var(--r);cursor:pointer;font-size:11px;font-family:var(--mono)}.pg button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+#log{font-family:var(--mono);font-size:11px;background:#14141a;color:#c8c4b6;padding:14px 16px;max-height:260px;overflow-y:auto;white-space:pre-wrap;line-height:1.5;border-radius:var(--r)}
+.log-ok{color:#85c498}.log-err{color:#e8807e}.log-warn{color:#e0c07a}.log-info{color:#7ab0e8}
+
+.spinner{display:inline-block;width:16px;height:16px;border:2px solid var(--rule);border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite;vertical-align:middle;margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.empty{text-align:center;padding:40px;color:var(--ink3)}
+footer{text-align:center;padding:18px;color:var(--ink3);font-size:11px;border-top:1px solid var(--rule);margin-top:40px}
+
+@media(max-width:768px){.row2,.row21{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(3,1fr)}.charts{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="band"></div>
+<nav>
+  <span class="brand">Plant Virus DB</span>
+  <a href="/">Dashboard</a>
+  <a href="/te/">TE &amp; EVE</a>
+  <a href="/literature/" class="active">Literature</a>
+  <a href="/primers/">Primers</a>
+  <a href="/explorer/">Explorer</a>
+  <span class="spacer"></span>
+  <button class="theme-btn" onclick="document.body.classList.toggle('dark')" title="Toggle theme">&#x1F31B;</button>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow"><span style="display:inline-block;width:6px;height:6px;background:#e0c070;border-radius:50%;margin-right:6px"></span>Literature Mining &amp; Tracking</div>
+  <h1>Plant Virus <span class="gold">Literature</span> Hub</h1>
+  <p>Manual search across PubMed / bioRxiv + automated weekly tracking (14 virus categories) + AI summaries + trend analysis. All in one tool.</p>
+</div>
+
+<div class="wrap">
+
+<div class="metrics" id="metrics">
+  <div class="met"><div class="val" id="mTotal">-</div><div class="lbl">Papers Tracked</div></div>
+  <div class="met"><div class="val" id="mYear">-</div><div class="lbl">Years Covered</div></div>
+  <div class="met"><div class="val" id="mAI">-</div><div class="lbl">AI Summarized</div></div>
+  <div class="met"><div class="val" id="mCats">-</div><div class="lbl">Categories</div></div>
+  <div class="met"><div class="val" id="mUpdate">-</div><div class="lbl">Last Updated</div></div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('track')">Automated Track</div>
+  <div class="tab" onclick="switchTab('search')">Manual Search</div>
+  <div class="tab" onclick="switchTab('analysis')">Trend Analysis</div>
+</div>
+
+<!-- TAB 1: Automated Track -->
+<div id="tab-track">
+  <div class="row row21" style="margin-bottom:16px">
+    <div class="card"><h3><span class="section-num">1</span>Category Filter</h3>
+      <div id="catChips" style="display:flex;flex-wrap:wrap;gap:5px"></div>
+    </div>
+    <div class="card"><h3><span class="section-num">2</span>Quick Filter</h3>
+      <div class="field"><label>Search</label><input type="text" id="sSearch" placeholder="Title, author, keyword..." oninput="renderTrack()"></div>
+      <div class="row row2">
+        <div class="field"><label>Year</label><select id="sYear" onchange="renderTrack()"><option value="">All</option></select></div>
+        <div class="field"><label>Source</label><select id="sSrc" onchange="renderTrack()"><option value="">All</option><option value="pubmed">PubMed</option><option value="arxiv">arXiv</option><option value="biorxiv">bioRxiv</option></select></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="charts" style="margin-bottom:16px">
+    <div class="card"><h3>Papers by Year</h3><canvas id="chartYear"></canvas></div>
+    <div class="card"><h3>Papers by Category</h3><canvas id="chartCat"></canvas></div>
+  </div>
+
+  <div class="card">
+    <h3><span class="section-num">3</span>Paper List <span style="font-weight:400;color:var(--ink3);margin-left:8px;text-transform:none;letter-spacing:0" id="resultCount"></span>
+      <span style="float:right;font-weight:400"><button class="btn outline sm" onclick="exportExcel()">Export XLSX</button></span></h3>
+    <div id="paperList"></div>
+    <div class="pg" id="pagination"></div>
+  </div>
+</div>
+
+<!-- TAB 2: Manual Search -->
+<div id="tab-search" style="display:none">
+  <div class="row row2" style="margin-bottom:16px">
+    <div class="card">
+      <h3><span class="section-num">S</span>Search Query</h3>
+      <div class="field"><label>Keywords (PubMed syntax)</label><textarea id="mq" rows="2" placeholder="e.g. tomato yellow leaf curl virus AND resistance">plant virus[Title/Abstract]</textarea></div>
+      <div class="row row2">
+        <div class="field"><label>Date From</label><input type="date" id="mdFrom"></div>
+        <div class="field"><label>Date To</label><input type="date" id="mdTo"></div>
+      </div>
+      <div class="field"><label>Max Results</label><select id="mMax"><option>25</option><option selected>50</option><option>100</option></select></div>
+      <div class="field"><label>Data Sources</label>
+        <div style="display:flex;gap:8px;flex-wrap:wrap" id="mSources">
+          <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox" value="pubmed" checked onchange="updateSourceChips()"> PubMed</label>
+          <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox" value="biorxiv" onchange="updateSourceChips()"> bioRxiv</label>
+          <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox" value="crossref" onchange="updateSourceChips()"> Crossref</label>
+        </div>
+      </div>
+      <div class="btn-row" style="margin-top:8px">
+        <button class="btn gold" onclick="doSearch()">Search Literature</button>
+        <button class="btn outline sm" onclick="copyPlantVirusQuery()">Quick: Plant Virus</button>
+      </div>
+    </div>
+    <div class="card">
+      <h3><span class="section-num">A</span>AI Processing</h3>
+      <div class="field"><label>AI Provider</label><select id="aiProvider" onchange="updateAIModels()">
+        <option value="deepseek">DeepSeek</option><option value="openai">OpenAI</option>
+        <option value="zhipu">Zhipu AI</option><option value="qwen">Qwen</option>
+      </select></div>
+      <div class="field"><label>Model</label><select id="aiModel">
+        <option>deepseek-chat</option><option>deepseek-reasoner</option>
+      </select></div>
+      <div class="field"><label>API Key</label><input type="password" id="aiKey" placeholder="sk-..."></div>
+      <div class="field"><label>AI Tasks</label>
+        <div style="display:flex;gap:6px;flex-wrap:wrap" id="aiTasks">
+          <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox" checked> Filter &amp; Score</label>
+          <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox"> Chinese Summary</label>
+          <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox"> Trend Tips</label>
+        </div>
+      </div>
+      <button class="btn sm outline" onclick="testAI()">Test Connection</button>
+      <span id="aiStatus" style="font-size:11px;margin-left:8px;font-family:var(--mono)"></span>
+    </div>
+  </div>
+
+  <div class="card"><h3>Search Log</h3><div id="log">Ready to search. Configure query and click "Search Literature".</div></div>
+
+  <div id="searchResults" style="display:none">
+    <div class="card"><h3>Search Results</h3>
+      <div id="searchStats" style="margin-bottom:12px"></div>
+      <div id="searchTable"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 3: Trend Analysis -->
+<div id="tab-analysis" style="display:none">
+  <div class="row row2" style="margin-bottom:16px">
+    <div class="card"><h3><span class="section-num">T</span>Year-over-Year Trends</h3><canvas id="chartTrend" style="max-height:280px"></canvas></div>
+    <div class="card"><h3><span class="section-num">J</span>Top Journals</h3><div id="topJournals"></div></div>
+  </div>
+</div>
+
+</div>
+<footer>Plant Virus Literature Hub &middot; Auto-tracked weekly &middot; Manual search across PubMed/bioRxiv/Crossref &middot; AI-powered summaries</footer>
+
+<script>
+// ── State ──
+let papers=[], stats={}, cat='', page=1, PAGE=25;
+let searchResults=[], searchSummary='';
+
+// ── Init ──
+(async function(){
+  try{
+    let sr=await fetch('data/stats.json');stats=await sr.json();
+    document.getElementById('mTotal').textContent=stats.total?.toLocaleString()||'0';
+    document.getElementById('mAI').textContent=stats.ai_summarized?.toLocaleString()||'0';
+    document.getElementById('mCats').textContent=stats.by_category?Object.keys(stats.by_category).length:'-';
+    document.getElementById('mUpdate').textContent=(stats.last_updated||'').substring(0,10);
+    let yr=await fetch('data/index.json');let yi=await yr.json();
+    document.getElementById('mYear').textContent=yi.length?yi[0].year+'-'+yi[yi.length-1].year:'-';
+    let sf=document.getElementById('sYear');
+    yi.forEach(y=>{let o=document.createElement('option');o.value=y.year;o.textContent=y.year+' ('+y.count+')';sf.appendChild(o)});
+    for(let y of yi.slice(0,5)){
+      try{let r=await fetch('data/'+y.year+'.json');papers=papers.concat(await r.json())}
+      catch(e){console.warn('Year',y.year,'not available')}
+    }
+    let seen=new Set();papers=papers.filter(p=>{let k=p.pmid||p.doi||(p.title||'').substring(0,80);if(seen.has(k))return false;seen.add(k);return true});
+    renderChips();renderTrack();renderCharts();
+  }catch(e){document.getElementById('paperList').innerHTML='<div class=empty>No data. Run <code>python pipeline.py auto --days 7</code> first.</div>'}
+})();
+
+function renderChips(){
+  let cc={};papers.forEach(p=>{(p.categories||[]).forEach(c=>cc[c]=(cc[c]||0)+1)});
+  let h='<span class="chip on" onclick="cat=\'\';renderTrack()">All ('+papers.length+')</span>';
+  for(let c of Object.keys(cc).sort())h+='<span class="chip'+(cat===c?' on':'')+'" onclick="cat=cat===c?\'\':c;renderTrack()">'+c+' ('+cc[c]+')</span>';
+  document.getElementById('catChips').innerHTML=h;
+}
+
+function renderTrack(){
+  let f=[...papers];
+  if(cat)f=f.filter(p=>(p.categories||[]).includes(cat));
+  let s=document.getElementById('sSearch').value.toLowerCase();
+  if(s)f=f.filter(p=>(p.title+' '+p.authors+' '+p.journal+' '+(p.keyword_hits||[]).join(' ')).toLowerCase().includes(s));
+  let y=document.getElementById('sYear').value;if(y)f=f.filter(p=>String(p.year)===y);
+  let src=document.getElementById('sSrc').value;if(src)f=f.filter(p=>p.source===src);
+  document.getElementById('resultCount').textContent=f.length+' papers';
+  document.getElementById('catChips').querySelectorAll('.chip').forEach(el=>{
+    let c=el.textContent.split(' (')[0];el.classList.toggle('on',cat===c||(!cat&&c==='All'));
+  });
+  if(!f.length){document.getElementById('paperList').innerHTML='<div class=empty>No papers match.</div>';document.getElementById('pagination').innerHTML='';return}
+  let tp=Math.ceil(f.length/PAGE),st=(page-1)*PAGE,pg=f.slice(st,st+PAGE);
+  let pgH='';for(let i=1;i<=Math.min(tp,10);i++)pgH+='<button class="'+(i===page?'on':'')+'" onclick="page='+i+';renderTrack();window.scrollTo(0,300)">'+i+'</button>';
+  document.getElementById('pagination').innerHTML=pgH;
+  let h='';
+  pg.forEach(p=>{
+    let cats=(p.categories||[]).slice(0,3).map(c=>'<span style="display:inline-block;padding:1px 6px;border-radius:10px;font-size:9px;background:var(--blue4);color:var(--blue2);margin:2px">'+c+'</span>').join(' ');
+    let jq=p.journal_quality||'lo',jb=jq==='high'?'jb-hi':jq==='medium'?'jb-md':'jb-lo';
+    let aid='abs_'+p.pmid;
+    h+='<tr><td style="width:80px"><span class="journal-badge '+jb+'">'+(p.journal||'?').substring(0,25)+'</span><br><span style="font-size:10px;color:var(--ink3)">'+p.year+'</span></td>';
+    h+='<td><a class="paper-title" href="https://pubmed.ncbi.nlm.nih.gov/'+(p.pmid||'')+'" target="_blank">'+esc(p.title||'')+'</a><br><span style="font-size:10px;color:var(--ink3)">'+esc((p.first_author||'')+' '+(p.authors||'').substring(0,60))+'</span><br>'+cats;
+    if(p.ai_done&&p.summary_zh&&p.summary_zh!=='未提及')h+='<div class="ai-card"><div class="ai-row"><span class="ai-label">Summary</span><span>'+esc(p.summary_zh)+'</span></div>'+(p.innovation&&p.innovation!=='未提及'?'<div class="ai-row"><span class="ai-label">Innovation</span><span>'+esc(p.innovation)+'</span></div>':'')+(p.disease&&p.disease!=='未提及'?'<div class="ai-row"><span class="ai-label">Disease</span><span>'+esc(p.disease)+'</span></div>':'')+'</div>';
+    if(p.abstract)h+='<div class="abs-pv" id="'+aid+'">'+esc(p.abstract)+'</div><span class="abs-tg" onclick="toggleAbs(\''+aid+'\')">Show abstract</span>';
+    h+='</td></tr>';
+  });
+  document.getElementById('paperList').innerHTML='<table><thead><tr><th>Journal / Year</th><th>Title &amp; Info</th></tr></thead><tbody>'+h+'</tbody></table>';
+}
+
+function toggleAbs(id){let el=document.getElementById(id);if(!el)return;el.classList.toggle('open');let tg=el.nextElementSibling;if(tg)tg.textContent=el.classList.contains('open')?'Hide abstract':'Show abstract'}
+
+function renderCharts(){
+  if(!stats.by_year)return;
+  let ys=Object.keys(stats.by_year).sort();
+  new Chart(document.getElementById('chartYear'),{type:'bar',data:{labels:ys,datasets:[{label:'Papers',data:ys.map(y=>stats.by_year[y]),backgroundColor:getComputedStyle(document.body).getPropertyValue('--blue2').trim(),borderRadius:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:10},maxTicksLimit:15}}}}});
+  let ce=Object.entries(stats.by_category||{}).sort((a,b)=>b[1]-a[1]).slice(0,12);
+  let cls=['#1a3a5c','#2f6848','#a07828','#2a5485','#6b4c8c','#c44e52','#5c8a4c','#8c5c22','#2f6848','#1a3a5c','#a07828','#2a5485'];
+  new Chart(document.getElementById('chartCat'),{type:'bar',data:{labels:ce.map(e=>e[0]),datasets:[{label:'Papers',data:ce.map(e=>e[1]),backgroundColor:ce.map((_,i)=>cls[i%cls.length]),borderRadius:3}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:10}}}}}});
+}
+
+// ── Manual Search ──
+function updateSourceChips(){}
+function updateAIModels(){
+  let p=document.getElementById('aiProvider').value, m=document.getElementById('aiModel');
+  let models={deepseek:['deepseek-chat','deepseek-reasoner'],openai:['gpt-4o-mini','gpt-4o','gpt-4-turbo'],zhipu:['glm-4-flash','glm-4'],qwen:['qwen-turbo','qwen-max']};
+  m.innerHTML=models[p].map(v=>'<option>'+v+'</option>').join('');
+}
+function copyPlantVirusQuery(){
+  document.getElementById('mq').value='("plant virus"[Title/Abstract] OR "phytovirus"[Title/Abstract] OR "Geminiviridae"[Title/Abstract] OR "Potyviridae"[Title/Abstract] OR "tospovirus"[Title/Abstract])';
+}
+async function testAI(){
+  let key=document.getElementById('aiKey').value.trim();
+  if(!key){document.getElementById('aiStatus').textContent='Enter API key';return}
+  document.getElementById('aiStatus').innerHTML='<span class=spinner></span>Testing...';
+  try{
+    let r=await fetch('https://api.deepseek.com/v1/models',{headers:{'Authorization':'Bearer '+key}});
+    document.getElementById('aiStatus').innerHTML='<span style=color:var(--good)>OK ('+(r.ok?'connected':'error '+r.status)+')</span>';
+  }catch(e){document.getElementById('aiStatus').innerHTML='<span style=color:#8c3030>Error: '+e.message+'</span>'}
+}
+async function doSearch(){
+  let q=document.getElementById('mq').value.trim(),df=document.getElementById('mdFrom').value,dt=document.getElementById('mdTo').value,mx=parseInt(document.getElementById('mMax').value);
+  let src=[],document.getElementById('mSources').querySelectorAll('input:checked').forEach(c=>src.push(c.value));
+  if(!q){alert('Enter keywords');return}
+  let log=document.getElementById('log');log.innerHTML='<span class=log-info>Searching: '+q+'</span>\n<span class=log-info>Sources: '+src.join(', ')+'</span>\n';
+  searchResults=[];
+  for(let s of src){
+    log.innerHTML+='\n<span class=log-info>  Querying '+s+'...</span>';
+    try{
+      let papers=[];
+      if(s==='pubmed')papers=await searchPubMed(q,df,dt,mx);
+      else if(s==='biorxiv')papers=await searchBioRxiv(q,df,dt,mx);
+      else if(s==='crossref')papers=await searchCrossref(q,df,dt,mx);
+      searchResults=searchResults.concat(papers);
+      log.innerHTML+='<span class=log-ok>  '+s+': '+papers.length+' found</span>\n';
+    }catch(e){log.innerHTML+='<span class=log-err>  '+s+': '+e.message+'</span>\n'}
+  }
+  if(searchResults.length){
+    document.getElementById('searchResults').style.display='block';
+    document.getElementById('searchStats').innerHTML='<span style="font-family:var(--mono);font-size:14px;color:var(--blue)">'+searchResults.length+' papers found</span>';
+    renderSearchTable(searchResults.slice(0,100));
+  }
+}
+async function searchPubMed(q,df,dt,mx){
+  let base='https://eutils.ncbi.nlm.nih.gov/entrez/eutils/',papers=[];
+  let searchUrl=base+'esearch.fcgi?db=pubmed&term='+encodeURIComponent(q)+'&retmax='+mx+'&retmode=json&sort=date';
+  if(df)searchUrl+='&mindate='+df.replace(/-/g,'/');if(dt)searchUrl+='&maxdate='+dt.replace(/-/g,'/');
+  let sr=await fetch(searchUrl);let sd=await sr.json();
+  let ids=sd.esearchresult.idlist||[];if(!ids.length)return[];
+  let fr=await fetch(base+'efetch.fcgi?db=pubmed&id='+ids.join(',')+'&retmode=xml&rettype=abstract');
+  let xml=await fr.text();let parser=new DOMParser();let doc=parser.parseFromString(xml,'text/xml');
+  doc.querySelectorAll('PubmedArticle').forEach(a=>{
+    papers.push({pmid:a.querySelector('PMID')?.textContent||'',title:a.querySelector('ArticleTitle')?.textContent||'',abstract:a.querySelector('AbstractText')?.textContent||'',journal:a.querySelector('Journal>Title')?.textContent||'',year:a.querySelector('PubDate>Year')?.textContent||'',first_author:a.querySelector('Author>LastName')?.textContent||'',source:'pubmed'});
+  });
+  return papers;
+}
+async function searchBioRxiv(q,df,dt,mx){
+  let r=await fetch('https://api.biorxiv.org/details/biorxiv/'+(df||'2020-01-01')+'/'+(dt||new Date().toISOString().slice(0,10))+'/0');
+  let d=await r.json(),papers=[],text=q.toLowerCase().replace(/\band\b/g,' ').split(/\s+/).filter(w=>w.length>2);
+  (d.collection||[]).slice(0,mx).forEach(i=>{
+    let txt=(i.title+' '+i.abstract).toLowerCase();
+    if(text.some(w=>txt.includes(w)))papers.push({biorxiv_doi:i.doi,doi:i.doi,title:i.title,abstract:i.abstract,journal:'bioRxiv preprint',year:i.date?.substring(0,4),source:'biorxiv'});
+  });
+  return papers;
+}
+async function searchCrossref(q,df,dt,mx){
+  let url='https://api.crossref.org/works?query='+encodeURIComponent(q)+'&rows='+mx+'&filter=type:journal-article';
+  if(df)url+='&filter=from-pub-date:'+df;if(dt)url+='&filter=until-pub-date:'+dt;
+  let r=await fetch(url);let d=await r.json();
+  return (d.message?.items||[]).map(i=>({doi:i.DOI,title:(i.title||[])[0]||'',abstract:i.abstract||'',journal:(i['container-title']||[])[0]||'',year:i['published-print']?.['date-parts']?.[0]?.[0]||'',source:'crossref'}));
+}
+function renderSearchTable(results){
+  let h='<table><thead><tr><th>Title</th><th>Source</th><th>Year</th><th>Journal</th></tr></thead><tbody>';
+  results.forEach(p=>{h+='<tr><td><a class="paper-title" href="'+(p.doi?'https://doi.org/'+p.doi:'https://pubmed.ncbi.nlm.nih.gov/'+p.pmid)+'" target="_blank">'+esc(p.title||'').substring(0,120)+'</a></td><td><span style="font-size:10px;font-family:var(--mono);color:var(--blue2)">'+p.source+'</span></td><td>'+p.year+'</td><td><span style="font-size:10px;color:var(--ink3)">'+(p.journal||'').substring(0,40)+'</span></td></tr>'});
+  h+='</tbody></table>';document.getElementById('searchTable').innerHTML=h;
+}
+
+// ── Export ──
+function exportExcel(){
+  let data=papers.map(p=>({PMID:p.pmid||'',DOI:p.doi||'',Title:p.title||'',Journal:p.journal||'',Year:p.year||'',Authors:(p.authors||'').substring(0,100),Categories:(p.categories||[]).join('; '),Summary:p.summary_zh||'',Innovation:p.innovation||'',Disease:p.disease||'',Abstract:(p.abstract||'').substring(0,300)}));
+  let wb=XLSX.utils.book_new(),ws=XLSX.utils.json_to_sheet(data);
+  XLSX.utils.book_append_sheet(wb,ws,'Papers');XLSX.writeFile(wb,'plant_virus_papers.xlsx');
+}
+
+// ── Tabs ──
+function switchTab(t){
+  document.querySelectorAll('.tab').forEach((el,i)=>{el.classList.toggle('active',el.textContent.trim().toLowerCase().includes(t))});
+  ['track','search','analysis'].forEach(n=>{document.getElementById('tab-'+n).style.display=n===t?'block':'none'});
+}
+
+// ── Helpers ──
+function esc(s){if(!s)return'';let d=document.createElement('div');d.textContent=String(s).slice(0,500);return d.innerHTML}
+
+// Init Excel book
+window.book=XLSX.utils.book_new();
+</script>
+</body>
+</html>
