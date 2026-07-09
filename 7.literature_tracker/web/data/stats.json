@@ -1,9 +1,12 @@
 {
-  "total": 10,
+  "total": 40,
   "by_year": {
+    "2024": 24,
+    "2025": 6,
     "2026": 10
   },
   "by_category": {
+    "New_Virus": 30,
     "General": 4,
     "Rhabdo_Reo_Fiji_Tenu": 2,
     "Gemini_Begomo": 2,
@@ -19,7 +22,23 @@
       3
     ],
     [
+      "Archives of virology",
+      3
+    ],
+    [
       "BMC plant biology",
+      2
+    ],
+    [
+      "Mycology",
+      2
+    ],
+    [
+      "Viruses",
+      2
+    ],
+    [
+      "Zootaxa",
       2
     ],
     [
@@ -41,8 +60,84 @@
     [
       "Molecular plant",
       1
+    ],
+    [
+      "Studies in mycology",
+      1
+    ],
+    [
+      "Heliyon",
+      1
+    ],
+    [
+      "Water research",
+      1
+    ],
+    [
+      "Virologica Sinica",
+      1
+    ],
+    [
+      "Virology",
+      1
+    ],
+    [
+      "Molecular biology reports",
+      1
+    ],
+    [
+      "Frontiers in veterinary science",
+      1
+    ],
+    [
+      "Molecular plant pathology",
+      1
+    ],
+    [
+      "Journal of fungi (Basel, Switzerland)",
+      1
+    ],
+    [
+      "Environmental monitoring and assessment",
+      1
+    ],
+    [
+      "Molecular genetics and genomics : MGG",
+      1
+    ],
+    [
+      "Frontiers in cellular and infection microbiology",
+      1
+    ],
+    [
+      "Microbiome",
+      1
+    ],
+    [
+      "Harmful algae",
+      1
+    ],
+    [
+      "Briefings in bioinformatics",
+      1
+    ],
+    [
+      "Cells",
+      1
+    ],
+    [
+      "Current microbiology",
+      1
+    ],
+    [
+      "Virus evolution",
+      1
+    ],
+    [
+      "Plants (Basel, Switzerland)",
+      1
     ]
   ],
   "ai_summarized": 0,
-  "last_updated": "2026-07-09 11:24:47"
+  "last_updated": "2026-07-09 14:42:29"
 }

@@ -115,6 +115,14 @@ QUERY_CATEGORIES = {
     "Transmission_Epi": [
         '"plant virus transmission"[Title/Abstract] OR "plant virus vector"[Title/Abstract] OR "plant virus epidemiology"[Title/Abstract]',
     ],
+    "New_Virus": [
+        '("novel virus"[Title/Abstract] OR "new virus"[Title/Abstract] OR "virus discovery"[Title/Abstract]) AND (plant[Title/Abstract] OR crop[Title/Abstract])',
+        '("first report"[Title] OR "recently identified"[Title/Abstract] OR "newly identified"[Title/Abstract] OR "previously unknown"[Title/Abstract]) AND virus[Title] AND plant[Title/Abstract]',
+        '("uncharacterized virus"[Title/Abstract] OR "unclassified virus"[Title/Abstract] OR "new species"[Title/Abstract]) AND (Viridiplantae[Organism] OR plant[Title/Abstract])',
+        '("viral metagenomics"[Title/Abstract] OR "virome"[Title/Abstract] OR "high-throughput sequencing"[Title/Abstract] OR "small RNA sequencing"[Title/Abstract]) AND (plant virus[Title/Abstract] OR novel virus[Title/Abstract])',
+        '("novel Geminiviridae"[Title/Abstract] OR "new begomovirus"[Title/Abstract] OR "novel Potyviridae"[Title/Abstract] OR "novel tospovirus"[Title/Abstract] OR "novel RNA virus"[Title/Abstract] OR "novel DNA virus"[Title/Abstract]) AND plant[Title/Abstract]',
+        '("complete genome"[Title] AND "novel"[Title]) AND (plant virus[Title/Abstract] OR phytovirus[Title/Abstract])',
+    ],
 }
 
 # ── arXiv/bioRxiv keywords for preprint search ──

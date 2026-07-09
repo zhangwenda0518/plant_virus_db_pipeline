@@ -316,6 +316,20 @@ def cmd_historical(args):
     print(f"\n[OK] Historical processing complete ({month_count} months)")
 
 
+# ── Digests ──
+
+def cmd_digest_weekly(args):
+    """Build weekly digest JSONs."""
+    from digest import build_weekly
+    build_weekly(weeks_back=args.weeks_back, use_ai=not args.no_ai)
+
+
+def cmd_digest_monthly(args):
+    """Build monthly digest JSONs."""
+    from digest import build_monthly
+    build_monthly(start=args.start, end=args.end, use_ai=not args.no_ai)
+
+
 # ── Main CLI ──
 
 def main():
@@ -371,6 +385,19 @@ Examples:
     p_hist.add_argument("--source", default="keyword")
     p_hist.add_argument("--summarize", action="store_true", help="Also generate AI summaries")
     p_hist.set_defaults(func=cmd_historical)
+
+    # digest-weekly
+    p_dw = sub.add_parser("digest-weekly", help="Build weekly digests")
+    p_dw.add_argument("--weeks-back", type=int, default=8)
+    p_dw.add_argument("--no-ai", action="store_true")
+    p_dw.set_defaults(func=cmd_digest_weekly)
+
+    # digest-monthly
+    p_dm = sub.add_parser("digest-monthly", help="Build monthly digests (2020-now)")
+    p_dm.add_argument("--start", default="2020-01", help="Start YYYY-MM")
+    p_dm.add_argument("--end", default=None, help="End YYYY-MM")
+    p_dm.add_argument("--no-ai", action="store_true")
+    p_dm.set_defaults(func=cmd_digest_monthly)
 
     args = parser.parse_args()
     if args.command is None:

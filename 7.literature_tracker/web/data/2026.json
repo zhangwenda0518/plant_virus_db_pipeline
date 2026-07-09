@@ -27,7 +27,9 @@
     "relevance_level": "low",
     "matched_topic": "General",
     "journal_quality": "",
-    "journal_jcr": ""
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": []
   },
   {
     "pmid": "42400157",
@@ -58,7 +60,12 @@
     "relevance_level": "medium",
     "matched_topic": "General",
     "journal_quality": "other",
-    "journal_jcr": ""
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "plant virus",
+      "rice stripe virus"
+    ]
   },
   {
     "pmid": "42410505",
@@ -84,11 +91,16 @@
     "method_zh": "",
     "contributions": "",
     "ai_done": "",
-    "relevance_score": 0.0,
+    "relevance_score": 2.0,
     "relevance_level": "low",
     "matched_topic": "General",
     "journal_quality": "other",
-    "journal_jcr": ""
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "high-throughput sequencing",
+      "virome"
+    ]
   },
   {
     "pmid": "42414904",
@@ -119,7 +131,12 @@
     "relevance_level": "medium",
     "matched_topic": "General",
     "journal_quality": "other",
-    "journal_jcr": ""
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "plant rna virus",
+      "plant virus"
+    ]
   },
   {
     "pmid": "42409263",
@@ -149,7 +166,11 @@
     "relevance_level": "low",
     "matched_topic": "Gemini_Begomo",
     "journal_quality": "",
-    "journal_jcr": ""
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "maize streak virus"
+    ]
   },
   {
     "pmid": "42412743",
@@ -179,7 +200,13 @@
     "relevance_level": "medium",
     "matched_topic": "Gemini_Begomo",
     "journal_quality": "",
-    "journal_jcr": ""
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "begomovirus",
+      "cassava mosaic virus",
+      "plant virus"
+    ]
   },
   {
     "pmid": "42417722",
@@ -210,7 +237,11 @@
     "relevance_level": "low",
     "matched_topic": "Clostero_Beta",
     "journal_quality": "medium",
-    "journal_jcr": ""
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "papaya ringspot virus"
+    ]
   },
   {
     "pmid": "42410685",
@@ -240,7 +271,11 @@
     "relevance_level": "low",
     "matched_topic": "Tospo_Bunya",
     "journal_quality": "medium",
-    "journal_jcr": ""
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "tomato spotted wilt virus"
+    ]
   },
   {
     "pmid": "42410684",
@@ -270,7 +305,11 @@
     "relevance_level": "low",
     "matched_topic": "Luteo_Solemo",
     "journal_quality": "medium",
-    "journal_jcr": ""
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "barley yellow dwarf virus"
+    ]
   },
   {
     "pmid": "42177618",
@@ -300,6 +339,12 @@
     "relevance_level": "medium",
     "matched_topic": "Rhabdo_Reo_Fiji_Tenu",
     "journal_quality": "other",
-    "journal_jcr": ""
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "nucleorhabdovirus",
+      "plant virus",
+      "potyvirus"
+    ]
   }
 ]

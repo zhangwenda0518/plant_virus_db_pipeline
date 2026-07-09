@@ -198,7 +198,7 @@ def build(from_daily: bool = True, journal_filter: bool = False) -> dict:
         "summary_zh", "innovation", "limitation", "study_object", "disease",
         "sample_size", "method_zh", "contributions", "ai_done",
         "relevance_score", "relevance_level", "matched_topic",
-        "journal_quality", "journal_jcr",
+        "journal_quality", "journal_jcr", "added_date", "keyword_hits",
     ]
 
     def trim_for_web(p):
@@ -230,8 +230,33 @@ def build(from_daily: bool = True, journal_filter: bool = False) -> dict:
     with open(WEB_DATA_DIR / "stats.json", "w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
 
+    # Trend milestones — auto-detect New_Virus + first-report + high-relevance papers
+    milestones = []
+    for p in master:
+        cats = p.get("categories", [])
+        title = (p.get("title") or "")
+        is_new = "New_Virus" in cats
+        is_first = "first report" in title.lower() or "novel" in title.lower()
+        is_high = p.get("relevance_level") == "high" and p.get("journal_quality") == "high"
+        if is_new or (is_first and is_high):
+            milestones.append({
+                "date": p.get("pub_date", "") or (str(p.get("year", "")) + "-01-01"),
+                "year": p.get("year", 0),
+                "title": title,
+                "category": cats[0] if cats else "",
+                "pmid": p.get("pmid", ""),
+                "doi": p.get("doi", ""),
+                "journal": p.get("journal", ""),
+                "note": p.get("summary_zh", "") if p.get("ai_done") else "",
+                "type": "new_virus" if is_new else "milestone",
+            })
+    milestones.sort(key=lambda x: x.get("date", ""), reverse=True)
+    with open(WEB_DATA_DIR / "trend_milestones.json", "w", encoding="utf-8") as f:
+        json.dump(milestones[:200], f, ensure_ascii=False, indent=2)
+
     print(f"\n  Master: {len(master)} papers total")
     print(f"  AI summarized: {stats['ai_summarized']}")
+    print(f"  Milestones: {len(milestones)}")
     if years:
         print(f"  Years: {len(years)} ({min(years.keys())}-{max(years.keys())})")
     print(f"  Files written to {WEB_DATA_DIR}")

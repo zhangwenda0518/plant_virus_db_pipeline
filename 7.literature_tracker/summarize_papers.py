@@ -32,6 +32,69 @@ SYSTEM_PROMPT = """你是植物病毒学论文信息抽取助手。
 {"summary_zh":"...","innovation":"...","limitation":"...","study_object":"...","disease":"...","sample_size":"...","method_zh":"...","contributions":["...","..."]}"""
 
 
+DIGEST_PROMPT = """你是植物病毒学领域的文献分析专家。
+
+根据给定的这一{period}内的植物病毒论文标题列表，撰写一段简洁的中文综述性总结（150-250字）。
+要求：
+- 概括本{period}的研究热点和主要发现方向
+- 特别关注新病毒发现、新物种报道、重要抗性/检测方法进展
+- 提炼 2-3 个值得关注的研究趋势
+- 语言专业、客观，不要罗列每篇论文，而是提炼共性和亮点
+- 直接输出总结段落，不要标题、不要 markdown 标记
+
+论文列表："""
+
+
+def _llm_call(messages, model, base_url, api_key, max_tokens=600, timeout=90):
+    """Single OpenAI-compatible chat completion call."""
+    url = f"{base_url.rstrip('/')}/chat/completions"
+    payload = json.dumps({
+        "model": model, "messages": messages,
+        "temperature": 0.3, "max_tokens": max_tokens,
+    }).encode()
+    req = Request(url, data=payload, headers={
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
+    })
+    with urlopen(req, timeout=timeout) as resp:
+        result = json.loads(resp.read())
+        return result["choices"][0]["message"]["content"].strip()
+
+
+def summarize_digest(papers: list, period: str = "周", model: str = None,
+                     base_url: str = None, api_key: str = None) -> str:
+    """Generate a narrative Chinese digest paragraph over a set of papers.
+
+    period: '周' or '月' (used in the prompt). Returns '' if no API key or on error.
+    """
+    model = model or LLM_MODEL
+    base_url = base_url or LLM_BASE_URL
+    api_key = api_key or LLM_API_KEY
+
+    if not api_key or not papers:
+        return ""
+
+    # Build title list (cap at 60 to control token cost)
+    titles = []
+    for p in papers[:60]:
+        t = p.get("title", "").strip()
+        cats = "/".join(p.get("categories", [])[:2])
+        if t:
+            titles.append(f"- [{cats}] {t}")
+    if not titles:
+        return ""
+
+    user_msg = DIGEST_PROMPT.format(period=period) + "\n" + "\n".join(titles)
+    try:
+        return _llm_call(
+            [{"role": "user", "content": user_msg}],
+            model, base_url, api_key, max_tokens=600,
+        )
+    except Exception as e:
+        print(f"  Digest LLM error: {e}")
+        return ""
+
+
 def summarize_papers(papers: list, model: str = None, base_url: str = None,
                      api_key: str = None, delay: float = None, force: bool = False):
     """Generate AI summaries for papers without ai_done=True."""
