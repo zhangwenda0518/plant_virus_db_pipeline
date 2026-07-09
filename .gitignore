@@ -36,6 +36,21 @@ $null
 # Metabuli: build_taxid_lineage.py 产物 (由 nodes.dmp/names.dmp 生成，server 侧)
 9.metabuli/taxid_lineage.tsv
 
+# Literature Tracker: 外部子模块(从 GitHub clone) + 生成数据
+7.literature_tracker/LitSearch/
+7.literature_tracker/auto-paper-collecter/
+7.literature_tracker/paper-daily/
+7.literature_tracker/meta.seubiomed.com/
+7.literature_tracker/literature-daily-report/
+7.literature_tracker/papers.json
+7.literature_tracker/data/
+
+# Photos: 提取产物
+10.virus_photos/extracted/
+
 # 中间/生成物(勿入库)
 te_stats.json
 extracted/images/
+
+# 空目录/废弃
+get_plant_virus_data_pipeline/
