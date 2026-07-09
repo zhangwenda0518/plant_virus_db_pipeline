@@ -1,143 +1,151 @@
 {
-  "total": 40,
+  "total": 549,
   "by_year": {
-    "2024": 24,
-    "2025": 6,
-    "2026": 10
+    "2023": 5,
+    "2024": 388,
+    "2025": 9,
+    "2026": 147
   },
   "by_category": {
-    "New_Virus": 30,
-    "General": 4,
-    "Rhabdo_Reo_Fiji_Tenu": 2,
-    "Gemini_Begomo": 2,
-    "Seco_Bromo_Tombus": 1,
-    "Clostero_Beta": 1,
-    "Potyviridae": 1,
-    "Tospo_Bunya": 1,
-    "Luteo_Solemo": 1
+    "New_Virus": 177,
+    "General": 104,
+    "Potyviridae": 71,
+    "Gemini_Begomo": 63,
+    "Tobamo_Virga": 57,
+    "Rhabdo_Reo_Fiji_Tenu": 46,
+    "Seco_Bromo_Tombus": 41,
+    "Tospo_Bunya": 25,
+    "Clostero_Beta": 16,
+    "Endorna_Parti_Amalga": 16,
+    "Luteo_Solemo": 15,
+    "Viroid": 11,
+    "Transmission_Epi": 8,
+    "Caulimo_Badna_Tungro": 8,
+    "Nanoviridae": 5,
+    "Methods_Resistance": 3
   },
   "top_journals": [
     [
-      "Plant disease",
-      3
+      "Frontiers in plant science",
+      33
+    ],
+    [
+      "MycoKeys",
+      28
+    ],
+    [
+      "Frontiers in microbiology",
+      27
+    ],
+    [
+      "Methods in molecular biology (Clifton, N.J.)",
+      27
     ],
     [
       "Archives of virology",
-      3
+      18
     ],
     [
-      "BMC plant biology",
-      2
-    ],
-    [
-      "Mycology",
-      2
+      "PhytoKeys",
+      18
     ],
     [
       "Viruses",
-      2
-    ],
-    [
-      "Zootaxa",
-      2
-    ],
-    [
-      "mBio",
-      1
-    ],
-    [
-      "Plant communications",
-      1
-    ],
-    [
-      "Mathematical biosciences",
-      1
-    ],
-    [
-      "PLoS pathogens",
-      1
-    ],
-    [
-      "Molecular plant",
-      1
-    ],
-    [
-      "Studies in mycology",
-      1
-    ],
-    [
-      "Heliyon",
-      1
-    ],
-    [
-      "Water research",
-      1
-    ],
-    [
-      "Virologica Sinica",
-      1
+      17
     ],
     [
       "Virology",
-      1
+      17
     ],
     [
-      "Molecular biology reports",
-      1
+      "Plant disease",
+      15
     ],
     [
-      "Frontiers in veterinary science",
-      1
+      "Pest management science",
+      12
     ],
     [
-      "Molecular plant pathology",
-      1
+      "PloS one",
+      12
     ],
     [
-      "Journal of fungi (Basel, Switzerland)",
-      1
-    ],
-    [
-      "Environmental monitoring and assessment",
-      1
-    ],
-    [
-      "Molecular genetics and genomics : MGG",
-      1
-    ],
-    [
-      "Frontiers in cellular and infection microbiology",
-      1
-    ],
-    [
-      "Microbiome",
-      1
-    ],
-    [
-      "Harmful algae",
-      1
-    ],
-    [
-      "Briefings in bioinformatics",
-      1
-    ],
-    [
-      "Cells",
-      1
-    ],
-    [
-      "Current microbiology",
-      1
-    ],
-    [
-      "Virus evolution",
-      1
+      "Zootaxa",
+      11
     ],
     [
       "Plants (Basel, Switzerland)",
-      1
+      9
+    ],
+    [
+      "Virus evolution",
+      9
+    ],
+    [
+      "Molecular plant pathology",
+      8
+    ],
+    [
+      "Virus research",
+      7
+    ],
+    [
+      "Scientific reports",
+      7
+    ],
+    [
+      "PeerJ",
+      7
+    ],
+    [
+      "The New phytologist",
+      6
+    ],
+    [
+      "Current microbiology",
+      6
+    ],
+    [
+      "Annals of botany",
+      6
+    ],
+    [
+      "Phytopathology",
+      5
+    ],
+    [
+      "3 Biotech",
+      5
+    ],
+    [
+      "Insects",
+      5
+    ],
+    [
+      "Journal of agricultural and food chemistry",
+      5
+    ],
+    [
+      "Journal of economic entomology",
+      5
+    ],
+    [
+      "Biodiversity data journal",
+      5
+    ],
+    [
+      "International journal of systematic and evolutionary microbiology",
+      5
+    ],
+    [
+      "Journal of fungi (Basel, Switzerland)",
+      5
+    ],
+    [
+      "International journal of biological macromolecules",
+      5
     ]
   ],
   "ai_summarized": 0,
-  "last_updated": "2026-07-09 14:42:29"
+  "last_updated": "2026-07-09 15:21:00"
 }

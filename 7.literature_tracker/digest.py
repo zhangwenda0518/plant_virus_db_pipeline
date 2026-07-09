@@ -49,39 +49,50 @@ def _top_papers(papers: list, n: int = 10) -> list:
     return [{k: p.get(k, "") for k in fields} for p in ranked]
 
 
-def build_weekly(weeks_back: int = 8, use_ai: bool = True):
-    """Build weekly digests for the last N ISO weeks."""
+def build_weekly(weeks_back: int = 8, use_ai: bool = True, since: str = "2024-01-01"):
+    """Build weekly digests. Only weeks on/after `since` (default 2024-01-01) get weekly digests.
+
+    weeks_back: for incremental runs, limit to recent N weeks (0 = all weeks since `since`).
+    """
     os.makedirs(WEEKLY_DIR, exist_ok=True)
     papers = load_master()
-    print(f"Loaded {len(papers)} papers")
+    print(f"Loaded {len(papers)} papers (weekly cutoff: {since})")
 
-    # Group by ISO week of added_date (fall back to pub_date)
+    since_date = datetime.strptime(since, "%Y-%m-%d").date()
+
+    # Group by ISO week of publication date (fall back to added_date)
     by_week = defaultdict(list)
     for p in papers:
-        ad = p.get("added_date", "") or p.get("pub_date", "")
-        if len(ad) >= 10:
-            try:
-                d = datetime.strptime(ad[:10], "%Y-%m-%d").date()
-                iso = d.isocalendar()
-                wk = f"{iso[0]}-W{iso[1]:02d}"
-                by_week[wk].append(p)
-            except Exception:
-                continue
+        d = _paper_date(p)
+        if not d:
+            ad = p.get("added_date", "")
+            if len(ad) >= 10:
+                try:
+                    d = datetime.strptime(ad[:10], "%Y-%m-%d").date()
+                except Exception:
+                    d = None
+        if d and d >= since_date:
+            iso = d.isocalendar()
+            by_week[f"{iso[0]}-W{iso[1]:02d}"].append(p)
 
-    # Recent N weeks
-    today = date.today()
-    weeks = []
-    for i in range(weeks_back):
-        d = today - timedelta(weeks=i)
-        iso = d.isocalendar()
-        weeks.append(f"{iso[0]}-W{iso[1]:02d}")
+    # Select weeks to process
+    all_weeks = sorted(by_week.keys(), reverse=True)
+    if weeks_back and weeks_back > 0:
+        # Limit to recent N weeks (for incremental weekly runs)
+        today = date.today()
+        recent = set()
+        for i in range(weeks_back):
+            iso = (today - timedelta(weeks=i)).isocalendar()
+            recent.add(f"{iso[0]}-W{iso[1]:02d}")
+        target_weeks = [w for w in all_weeks if w in recent]
+    else:
+        target_weeks = all_weeks  # all weeks since cutoff (historical backfill)
 
     index = []
-    for wk in sorted(set(weeks), reverse=True):
+    for wk in target_weeks:
         wp = by_week.get(wk, [])
         if not wp:
             continue
-        # Compute week start/end
         year, wknum = int(wk[:4]), int(wk[6:])
         wk_start = date.fromisocalendar(year, wknum, 1)
         wk_end = date.fromisocalendar(year, wknum, 7)
@@ -177,14 +188,15 @@ def build_monthly(start: str = "2020-01", end: str = None, use_ai: bool = True):
 def main():
     p = argparse.ArgumentParser(description="Build literature digests")
     p.add_argument("mode", choices=["weekly", "monthly"], help="Digest type")
-    p.add_argument("--weeks-back", type=int, default=8)
+    p.add_argument("--weeks-back", type=int, default=8, help="0 = all weeks since --since (backfill)")
+    p.add_argument("--since", default="2024-01-01", help="Weekly cutoff (no weekly before this)")
     p.add_argument("--start", default="2020-01", help="Monthly start YYYY-MM")
     p.add_argument("--end", default=None, help="Monthly end YYYY-MM")
     p.add_argument("--no-ai", action="store_true", help="Skip AI narrative summary")
     args = p.parse_args()
 
     if args.mode == "weekly":
-        build_weekly(args.weeks_back, use_ai=not args.no_ai)
+        build_weekly(args.weeks_back, use_ai=not args.no_ai, since=args.since)
     else:
         build_monthly(args.start, args.end, use_ai=not args.no_ai)
 

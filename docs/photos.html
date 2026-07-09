@@ -80,8 +80,10 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
 </div>
 <div class="footer">Plant Virus Reference Database · Data: EPPO Global Database</div>
 
+<link rel="preload" href="data/eppo_gallery.json" as="fetch" crossorigin="anonymous">
 <script>
 let data=[],activeFilters={hosts:new Set(),symptoms:new Set(),parts:new Set(),viruses:new Set()};
+let preloadedImages=new Set();
 
 async function init(){
   const r=await fetch('data/eppo_gallery.json');
@@ -89,6 +91,19 @@ async function init(){
   buildFilters();
   renderGallery();
   document.getElementById('loading').style.display='none';
+  // Preload first 20 full-size images
+  setTimeout(()=>preloadNext(0,20), 500);
+}
+function preloadImage(url){
+  if(!url||preloadedImages.has(url))return;
+  preloadedImages.add(url);
+  new Image().src=url;
+}
+function preloadNext(start,n){
+  for(let i=start;i<Math.min(start+n,data.length);i++){
+    preloadImage(data[i].full);
+    preloadImage(data[i].thumb);
+  }
 }
 function buildFilters(){
   const cnt=(key,n)=>{const m={};data.forEach(d=>(d[key]||[]).forEach(v=>{m[v]=(m[v]||0)+1}));return Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,n);};
@@ -121,10 +136,19 @@ function renderGallery(){
     return true;
   });
   document.getElementById('countText').textContent=filtered.length.toLocaleString()+' photos';
+  // Preload next 20 full-res when scrolling near bottom
+  let scrollHandler=()=>{
+    if(window.innerHeight+window.scrollY>=document.body.offsetHeight-800){
+      const loaded=preloadedImages.size;
+      preloadNext(loaded/2,20); // each image has thumb+full=2 urls
+    }
+  };
+  window.removeEventListener('scroll',scrollHandler);
+  window.addEventListener('scroll',scrollHandler,{passive:true});
   const grid=document.getElementById('grid');
-  grid.innerHTML=filtered.map(d=>`
+  grid.innerHTML=filtered.map((d,i)=>`
     <div class="card" onclick="openModal('${d.full}','${(d.caption||'').replace(/'/g,"\\'")}','${d.virus.replace(/'/g,"\\'")}','${(d.photographer||'').replace(/'/g,"\\'")}')">
-      <div class="img-wrap"><img src="${d.thumb}" loading="lazy" alt="${d.virus}"></div>
+      <div class="img-wrap"><img src="${d.thumb}" ${i<8?'':'loading="lazy"'} alt="${d.virus}"></div>
       <div class="info">
         <div class="virus-name">${d.virus}</div>
         <div class="caption">${d.caption||''}</div>

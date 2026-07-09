@@ -1,0 +1,44 @@
+{
+  "week": "2026-W27",
+  "start": "2026-06-29",
+  "end": "2026-07-05",
+  "generated": "2026-07-09 15:10:05",
+  "total_new": 2,
+  "by_category": {
+    "General": 1,
+    "Rhabdo_Reo_Fiji_Tenu": 1,
+    "Gemini_Begomo": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "42400157",
+      "doi": "10.1016/j.xplc.2026.101979",
+      "title": "Multiple-level regulation of a plant sterol methyltransferase during rice stripe virus infection.",
+      "journal": "Plant communications",
+      "year": 2026,
+      "categories": [
+        "General",
+        "Rhabdo_Reo_Fiji_Tenu"
+      ],
+      "summary_zh": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42412743",
+      "doi": "10.1371/journal.ppat.1014354",
+      "title": "Subversion of the salicylic acid signaling pathway by the bipartite begomoviral protein BV1 promotes virus infection and vector preference to virus-infected plants.",
+      "journal": "PLoS pathogens",
+      "year": 2026,
+      "categories": [
+        "Gemini_Begomo"
+      ],
+      "summary_zh": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

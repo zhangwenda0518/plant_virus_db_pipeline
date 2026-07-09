@@ -321,7 +321,8 @@ def cmd_historical(args):
 def cmd_digest_weekly(args):
     """Build weekly digest JSONs."""
     from digest import build_weekly
-    build_weekly(weeks_back=args.weeks_back, use_ai=not args.no_ai)
+    build_weekly(weeks_back=args.weeks_back, use_ai=not args.no_ai,
+                 since=getattr(args, "since", "2024-01-01"))
 
 
 def cmd_digest_monthly(args):
@@ -387,8 +388,9 @@ Examples:
     p_hist.set_defaults(func=cmd_historical)
 
     # digest-weekly
-    p_dw = sub.add_parser("digest-weekly", help="Build weekly digests")
-    p_dw.add_argument("--weeks-back", type=int, default=8)
+    p_dw = sub.add_parser("digest-weekly", help="Build weekly digests (2024+)")
+    p_dw.add_argument("--weeks-back", type=int, default=8, help="0 = all weeks since --since")
+    p_dw.add_argument("--since", default="2024-01-01", help="Weekly cutoff date")
     p_dw.add_argument("--no-ai", action="store_true")
     p_dw.set_defaults(func=cmd_digest_weekly)
 

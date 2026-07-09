@@ -1,0 +1,66 @@
+name: Historical Backfill (2020-2026)
+
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: "Start month YYYY-MM"
+        required: true
+        default: "2020-01"
+      end:
+        description: "End month YYYY-MM"
+        required: true
+        default: "2026-12"
+      summarize:
+        description: "Generate AI summaries (costs LLM tokens)"
+        type: boolean
+        default: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    timeout-minutes: 350
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Historical fetch (month by month)
+        env:
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+        run: |
+          cd 7.literature_tracker
+          python pipeline.py historical --start "${{ inputs.start }}" --end "${{ inputs.end }}" --source keyword
+
+      - name: Build + monthly digests
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+        run: |
+          cd 7.literature_tracker
+          python pipeline.py build
+          if [ "${{ inputs.summarize }}" = "true" ]; then
+            python pipeline.py digest-monthly --start "${{ inputs.start }}" --end "${{ inputs.end }}"
+          else
+            python pipeline.py digest-monthly --start "${{ inputs.start }}" --end "${{ inputs.end }}" --no-ai
+          fi
+
+      - name: Deploy to docs/literature
+        run: |
+          mkdir -p docs/literature
+          cp -r 7.literature_tracker/web/* docs/literature/
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 7.literature_tracker/data/ 7.literature_tracker/web/data/ docs/literature/
+          git diff --staged --quiet || git commit -m "Historical backfill ${{ inputs.start }} to ${{ inputs.end }}"
+          git push

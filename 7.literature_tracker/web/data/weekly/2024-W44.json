@@ -1,0 +1,41 @@
+{
+  "week": "2024-W44",
+  "start": "2024-10-28",
+  "end": "2024-11-03",
+  "generated": "2026-07-09 15:10:05",
+  "total_new": 2,
+  "by_category": {
+    "New_Virus": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "39213990",
+      "doi": "10.1016/j.virol.2024.110210",
+      "title": "Three-fold expansion of the genetic diversity of blunerviruses through plant (meta)transcriptome data-mining.",
+      "journal": "Virology",
+      "year": 2024,
+      "categories": [
+        "New_Virus"
+      ],
+      "summary_zh": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39567073",
+      "doi": "10.1016/j.hal.2024.102737",
+      "title": "Discovery of novel and known viruses associated with toxigenic and non-toxigenic bloom forming diatoms from the Northern Adriatic Sea.",
+      "journal": "Harmful algae",
+      "year": 2024,
+      "categories": [
+        "New_Virus"
+      ],
+      "summary_zh": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

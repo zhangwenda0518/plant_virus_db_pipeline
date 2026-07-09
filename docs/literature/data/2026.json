@@ -1,6 +1,7 @@
 [
   {
     "pmid": "42294678",
+    "doi": "10.1128/mbio.00221-26",
     "title": "A viroid-like RNA can be transmitted among different ",
     "abstract": "Viroids are small, circular non-coding RNAs that autonomously replicate in plants, exploiting host cellular machinery for replication and spread. Recent studies reveal that viroid-like agents can infect filamentous fungi, suggesting cross-kingdom interactions. In this study, we report the discovery and the characterization of TsvlRNA1 in ",
     "journal": "mBio",
@@ -8,14 +9,31 @@
     "pub_date": "2026-07-08",
     "first_author": "Formiglia Cristina",
     "authors": "Formiglia Cristina; Forgia Marco; Navarro Beatriz; Di Serio Francesco; Serale Nadia; ... (+8)",
-    "doi": "10.1128/mbio.00221-26",
     "categories": [
       "General"
     ],
-    "added_date": "2026-07-09"
+    "source": "",
+    "source_strategy": "",
+    "summary_zh": "",
+    "innovation": "",
+    "limitation": "",
+    "study_object": "",
+    "disease": "",
+    "sample_size": "",
+    "method_zh": "",
+    "contributions": "",
+    "ai_done": "",
+    "relevance_score": 0.0,
+    "relevance_level": "low",
+    "matched_topic": "General",
+    "journal_quality": "",
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": []
   },
   {
     "pmid": "42400157",
+    "doi": "10.1016/j.xplc.2026.101979",
     "title": "Multiple-level regulation of a plant sterol methyltransferase during rice stripe virus infection.",
     "abstract": "The plant sterol biosynthesis pathway is essential for the normal growth and development of plants, yet its relationship with plant virus infections remains poorly understood. In this study, we investigated the regulation of sterol methyltransferase 2 (SMT2), a key component of the plant sterol synthesis pathway, during rice stripe virus (RSV) infection. Our findings demonstrate that Nicotiana benthamiana SMT2 (NbSMT2) was regulated transcriptionally during RSV infection. Together with other sterol synthesis pathway proteins, namely sterol 4α-methyl oxidase 2 (SMO2) and sterol Δ(7)-reductase (DWF5), NbSMT2 acted as a positive regulator of RSV intercellular movement protein pc4 and facilitated virus movement. However, in response to RSV infection, NbSMT2 was polyubiquitinated and degraded through the ubiquitin-26S proteasome pathway mediated by the accumulation of reactive oxygen species (ROS), which conferred resistance to RSV. Additionally, NbSMT2 protein formed intercellular disulfide bonds to prevent complete degradation and maintain its protein pool. This study indicates that N. benthamiana appears to balance normal growth and development with antiviral through multiple regulatory mechanisms targeting NbSMT2.",
     "journal": "Plant communications",
@@ -23,15 +41,35 @@
     "pub_date": "2026-07-03",
     "first_author": "Liu Yu",
     "authors": "Liu Yu; Wang Yaqin; Li Chenyang; Yang Xiuling; Wu Jianxiang; ... (+1)",
-    "doi": "10.1016/j.xplc.2026.101979",
     "categories": [
       "General",
       "Rhabdo_Reo_Fiji_Tenu"
     ],
-    "added_date": "2026-07-09"
+    "source": "",
+    "source_strategy": "",
+    "summary_zh": "",
+    "innovation": "",
+    "limitation": "",
+    "study_object": "",
+    "disease": "",
+    "sample_size": "",
+    "method_zh": "",
+    "contributions": "",
+    "ai_done": "",
+    "relevance_score": 4.0,
+    "relevance_level": "medium",
+    "matched_topic": "General",
+    "journal_quality": "other",
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "plant virus",
+      "rice stripe virus"
+    ]
   },
   {
     "pmid": "42410505",
+    "doi": "10.1186/s12870-026-09448-z",
     "title": "Development of RT-RPA assays for rapid detection of mango-infecting viruses using high-throughput sequencing-derived genomic information.",
     "abstract": "Plant viral diseases pose a major threat to perennial fruit crops, where infections often remain latent and persist over long periods, facilitating unnoticed spread through planting material. Recent advances in high-throughput sequencing (HTS) have greatly expanded knowledge of plant viral diversity and plant-virus interactions, including the identification of emerging and re-emerging viruses. However, translating virome-level discoveries into practical disease management tools remains a significant challenge, particularly for field-level surveillance and sustainable crop protection. Mango (Mangifera indica), a globally important fruit crop, exemplifies this gap, as virus infections are poorly correlated with visible symptoms and reliable on-site diagnostic tools are limited. In this study, HTS was employed to reconfirm the presence of mangifera indica latent virus (MiLV) and mangifera virus 1 (MaV-1) in mango plants and to generate validated genomic information for diagnostic assay development. Building on these data, reverse transcription-recombinase polymerase amplification (RT-RPA) assays were developed and optimized for rapid virus detection. The assays operated efficiently under isothermal conditions (40 °C) within 25 min. The MiLV RT-RPA assay enabled direct detection from crude leaf extracts without the need of RNA purification, whereas MaV-1 detection required purified RNA as template. Sensitivity analysis showed that the MiLV RT-RPA assay detected viral RNA up to 0.01 fg µl⁻¹ (equivalent to a 10⁻¹⁰ dilution of 100 ng µl⁻¹ RNA) and MaV-1 up to 0.1 ng µl⁻¹ showed complete concordance with RT-PCR (Cohen's K = 1.00). Validation using field-collected symptomatic and asymptomatic samples demonstrated complete concordance with conventional RT-PCR. The detection of both viruses in young grafted plants showed the potential role of vegetative propagation in virus dissemination and emphasizes the importance of screening both scion and rootstock materials. This study ",
     "journal": "BMC plant biology",
@@ -39,14 +77,34 @@
     "pub_date": "2026-07-06",
     "first_author": "Prajapati Malyaj R",
     "authors": "Prajapati Malyaj R; Bhardwaj Pooja; Gehlot Jayesh; Singhal Pankhuri; Singh Deepak; ... (+3)",
-    "doi": "10.1186/s12870-026-09448-z",
     "categories": [
       "General"
     ],
-    "added_date": "2026-07-09"
+    "source": "",
+    "source_strategy": "",
+    "summary_zh": "",
+    "innovation": "",
+    "limitation": "",
+    "study_object": "",
+    "disease": "",
+    "sample_size": "",
+    "method_zh": "",
+    "contributions": "",
+    "ai_done": "",
+    "relevance_score": 2.0,
+    "relevance_level": "low",
+    "matched_topic": "General",
+    "journal_quality": "other",
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "high-throughput sequencing",
+      "virome"
+    ]
   },
   {
     "pmid": "42414904",
+    "doi": "10.1186/s12870-026-09453-2",
     "title": "SatRNA-mediated exacerbation of disease symptoms in plants reduces virus transmission potential by aphids.",
     "abstract": "Plant viruses have evolved adaptations that enable them to alter host cues, thereby facilitating their replication and efficient transmission by insect vectors. Satellite RNAs (satRNAs), which accompany certain plant RNA viruses and are dependent on them for replication and transmission, can change the progression of pathogenesis and the expression of disease symptoms. This study aimed to analyse how the change in the course of infection by satRNA (exacerbation or mitigation of pathogenesis) impacts the subsequent stages of virus transmission. We hypothesised that satRNAs influence insect behaviour toward infected plants depending on their effect on pathogenesis progress; specifically, a significant disease exacerbation reduces plant attractiveness to aphids, whereas symptom mitigation promotes attraction.",
     "journal": "BMC plant biology",
@@ -54,15 +112,35 @@
     "pub_date": "2026-07-07",
     "first_author": "Wrzesińska-Krupa Barbara",
     "authors": "Wrzesińska-Krupa Barbara; Frąckowiak Patryk; Budziszewska Marta; Strażyński Przemysław; Obrępalska-Stęplowska Aleksandra",
-    "doi": "10.1186/s12870-026-09453-2",
     "categories": [
       "General",
       "Seco_Bromo_Tombus"
     ],
-    "added_date": "2026-07-09"
+    "source": "",
+    "source_strategy": "",
+    "summary_zh": "",
+    "innovation": "",
+    "limitation": "",
+    "study_object": "",
+    "disease": "",
+    "sample_size": "",
+    "method_zh": "",
+    "contributions": "",
+    "ai_done": "",
+    "relevance_score": 4.0,
+    "relevance_level": "medium",
+    "matched_topic": "General",
+    "journal_quality": "other",
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "plant rna virus",
+      "plant virus"
+    ]
   },
   {
     "pmid": "42409263",
+    "doi": "10.1016/j.mbs.2026.109765",
     "title": "Intelligent machine learning solutions with Bayesian regularization backpropagation adaptive networks for differential systems of Maize streak virus diseases.",
     "abstract": "Maize streak virus, a cause of maize streak disease, poses a major threat to food security that significantly reduces yields of maize, a crucial food crop, thereby jeopardizing the volatile social and economic stability of subsistence growers across the planted field. This communication emphasizes the predictive forecasting of epidemic dynamics by including three control interventions: chemical control, quarantine, and preventive, together with the parameter estimations. The study integrates machine predictive neural networks with Bayesian regularization (NNBNRS) backpropagation for an efficient oversight mechanism for predicting the dynamic behavior of maize streak virus disease (MSVD). The four compartments governing the MSVD non-linear differential framework constitute the healthy and infected maize as well as the healthy and infected leafhoppers. Synthetic datasets are generated for the construction of NNBNRS by means of the numerical explicit Runge-Kutta solver by incorporating the adaptation based on the carrying capacity, the impact of control strategies, the half-saturation ratio of healthy leafhoppers with infectious maize, and the infection and predation rate of healthy leafhoppers on infectious maize. The NNBNRS segmented the synthetic datasets into the testing and training samples to determine the machine predictive solutions for non-linear MSVD systems. The efficacy achieved on fitness performance via mean squared errors, exhaustive regression assessments, and error histograms, is utilized to substantiate the convergence, precision, and reliability of the proposed NNBNRS for a non-linear MSVD system.",
     "journal": "Mathematical biosciences",
@@ -70,14 +148,33 @@
     "pub_date": "2026-07-06",
     "first_author": "Anwar Nabeela",
     "authors": "Anwar Nabeela; Ghaffar Aqsa; Raja Muhammad Asif Zahoor; Ahmad Iftikhar; Shoaib Muhammad; ... (+1)",
-    "doi": "10.1016/j.mbs.2026.109765",
     "categories": [
       "Gemini_Begomo"
     ],
-    "added_date": "2026-07-09"
+    "source": "",
+    "source_strategy": "",
+    "summary_zh": "",
+    "innovation": "",
+    "limitation": "",
+    "study_object": "",
+    "disease": "",
+    "sample_size": "",
+    "method_zh": "",
+    "contributions": "",
+    "ai_done": "",
+    "relevance_score": 2.0,
+    "relevance_level": "low",
+    "matched_topic": "Gemini_Begomo",
+    "journal_quality": "",
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "maize streak virus"
+    ]
   },
   {
     "pmid": "42412743",
+    "doi": "10.1371/journal.ppat.1014354",
     "title": "Subversion of the salicylic acid signaling pathway by the bipartite begomoviral protein BV1 promotes virus infection and vector preference to virus-infected plants.",
     "abstract": "The outbreak of vector-borne plant viruses entails both efficient in planta virus infection and productive vector-mediated transmission. Yet, the factors that concurrently regulate these two key viral traits remain understudied. Here we examine the role of viral proteins and the salicylic acid (SA) signaling pathway in modulating virus infection and vector preference to virus-infected plants. Infection of plants by the bipartite begomovirus, Sri Lankan cassava mosaic virus (SLCMV), dramatically induces the accumulation of SA, a positive regulator of antiviral defense. As countermeasures, SLCMV DNA-B and the BV1 protein encoded therein interfere with SA-induced antiviral defenses and SA signal transduction. Furthermore, whilst SA induces plant repellence to whitefly vectors, this repellence is mitigated by SLCMV DNA-B and BV1. Mechanistic explorations in N. benthamiana plants reveal that BV1 downregulates the transcription of BTB/POZ and TAZ domain-containing protein 1 (BT1), a positive regulator of plant SA signal transduction, antiviral defenses and repellence against whitefly. Finally, these principles of plant-bipartite begomovirus interactions are also documented for another bipartite begomovirus. Together, our data highlight the role of virus-SA interplay in enabling competent interactions among plant hosts, bipartite begomoviruses and their whitefly vectors, and advance our understanding of the molecular mechanisms that promote the persistence of vector-borne plant viruses.",
     "journal": "PLoS pathogens",
@@ -85,14 +182,35 @@
     "pub_date": "2026-07-01",
     "first_author": "Chen Guan-Ping",
     "authors": "Chen Guan-Ping; Li Di; Zhang Xing; Yu Ming-Yang; Zhang Jing-Ru; ... (+5)",
-    "doi": "10.1371/journal.ppat.1014354",
     "categories": [
       "Gemini_Begomo"
     ],
-    "added_date": "2026-07-09"
+    "source": "",
+    "source_strategy": "",
+    "summary_zh": "",
+    "innovation": "",
+    "limitation": "",
+    "study_object": "",
+    "disease": "",
+    "sample_size": "",
+    "method_zh": "",
+    "contributions": "",
+    "ai_done": "",
+    "relevance_score": 5.0,
+    "relevance_level": "medium",
+    "matched_topic": "Gemini_Begomo",
+    "journal_quality": "",
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "begomovirus",
+      "cassava mosaic virus",
+      "plant virus"
+    ]
   },
   {
     "pmid": "42417722",
+    "doi": "10.1094/PDIS-04-25-0864-SR",
     "title": "Multiplex RT-PCR for simultaneous detection of seven cucurbit viruses found in Florida cucurbits.",
     "abstract": "Virus detection of phytopathogens has benefited greatly from advancements in diagnostic technologies; however, not all laboratories have access to high-cost platforms. To address this limitation, a single-tube multiplex reverse transcription-polymerase chain reaction (m50RT-PCR) assay was developed for the simultaneous detection of six RNA viruses - cucurbit chlorotic yellows virus (CCYV), squash vein yellowing virus (SqVYV), papaya ringspot virus-W (PRSV-W), watermelon crinkle leaf-associated virus 1 (WCLaV-1) and WCLaV-2, cucurbit yellow stunting disorder virus (CYSDV) and one DNA virus, cucurbit leaf crumple virus (CuLCrV), affecting cucurbits in South Florida. The assay detected all seven viruses with a limit of detection of 10 copies per target (theoretical visualization threshold, as detected by BioRad's ImageLab software), with amplicons consistently visualized on an agarose gel at 100 copies (practical visualization threshold, as seen with the naked eye under UV illumination). Specificity was confirmed through sequencing and ",
     "journal": "Plant disease",
@@ -100,15 +218,34 @@
     "pub_date": "2026-07-08",
     "first_author": "Hendricks Katherine",
     "authors": "Hendricks Katherine; Roberts Pamela",
-    "doi": "10.1094/PDIS-04-25-0864-SR",
     "categories": [
       "Clostero_Beta",
       "Potyviridae"
     ],
-    "added_date": "2026-07-09"
+    "source": "",
+    "source_strategy": "",
+    "summary_zh": "",
+    "innovation": "",
+    "limitation": "",
+    "study_object": "",
+    "disease": "",
+    "sample_size": "",
+    "method_zh": "",
+    "contributions": "",
+    "ai_done": "",
+    "relevance_score": 2.0,
+    "relevance_level": "low",
+    "matched_topic": "Clostero_Beta",
+    "journal_quality": "medium",
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "papaya ringspot virus"
+    ]
   },
   {
     "pmid": "42410685",
+    "doi": "10.1094/PDIS-02-26-0339-RE",
     "title": "Harnessing wild peanut genetic resources for field resistance to tomato spotted wilt and late leaf spot diseases.",
     "abstract": "Tomato spotted wilt virus (TSWV) and late leaf spot (LLS) are among the major constraints to peanut production. Cultivated peanut has narrow genetic bases and lacks strong sources of resistance. Wild species, on the other hand, harbor diverse and strong resistances to multiple pathogens. In this study, we evaluated advanced breeding lines carrying introgressions from multiple wild Arachis species (A. stenosperma, A. batizocoi, A. valida, and A. cardenasii) across three contrasting field environments and experimental designs in Georgia, USA using complementary incidence- and severity-based phenotyping. Genotype effects were highly significant for both diseases. Several wild-derived lines -particularly those from A. stenosperma ancestry- showed strong and stable TSWV resistance across environments. Interestingly, some lines lacking detectable wild segments also showed high resistance to TSWV, suggesting cryptic or undetected introgressions. LLS resistance was primarily associated with the characteristic A. cardenasii segments on A02 and A03, and lines stacking these introgressions consistently outperformed both cultivated parents and Georgia-06G, the most popular cultivar in the USA. Correlations between TSWV and LLS responses were weak, confirming genetic independence and emphasizing the need to screen both traits. A small subset of lines combined resistance to both diseases, and many also retained resistance loci to root-knot nematode (RKN), expanding their value as multi-trait donors. These findings demonstrate the power of wild introgression breeding for enhancing disease resistance and provide a foundation for deploying stacked alleles through marker-assisted and multi-environment selection.",
     "journal": "Plant disease",
@@ -116,14 +253,33 @@
     "pub_date": "2026-07-06",
     "first_author": "Maharjan Namrata",
     "authors": "Maharjan Namrata; Culbreath Albert; Gonzales Maricel; Bertioli David; Leal-Bertioli Soraya",
-    "doi": "10.1094/PDIS-02-26-0339-RE",
     "categories": [
       "Tospo_Bunya"
     ],
-    "added_date": "2026-07-09"
+    "source": "",
+    "source_strategy": "",
+    "summary_zh": "",
+    "innovation": "",
+    "limitation": "",
+    "study_object": "",
+    "disease": "",
+    "sample_size": "",
+    "method_zh": "",
+    "contributions": "",
+    "ai_done": "",
+    "relevance_score": 2.0,
+    "relevance_level": "low",
+    "matched_topic": "Tospo_Bunya",
+    "journal_quality": "medium",
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "tomato spotted wilt virus"
+    ]
   },
   {
     "pmid": "42410684",
+    "doi": "10.1094/PDIS-03-26-0527-RE",
     "title": "Prevalence and diversity of yellow dwarf virus strains in Nebraska cereal crops.",
     "abstract": "Yellow dwarf viruses (YDV), comprising strains of barley yellow dwarf virus (BYDV) and cereal yellow dwarf virus (CYDV), cause economically important diseases in cereal crops in the United States. Although YDV are widespread in Nebraska, information on species distribution and their temporal variability is limited. A statewide survey was conducted during the 2023 and 2024 growing seasons to characterize YDV strain diversity and associated aphid vectors in cereal crops. Total RNA was extracted from symptomatic leaf samples collected from commercial and experimental fields, and viral detection was performed using a multiplex one-step reverse transcription polymerase chain reaction (RT-PCR). Aphid abundance was assessed separately using Berlese funnel from the field-collected plant materials, and species were determined morphologically. In 2023, 68.1% (644/946) of the tested samples were positive for at least one YDV strain, whereas in 2024, only 25.5% (144/564) of the samples tested positive. BYDV-SGV was the predominant strain in 2023, particularly in oats and wheat, whereas SGV+MAV and RPV+SGV strains were the most common coinfections. In contrast, CYDV-RPV and BYDV-MAV predominated in wheat and barley in 2024, whereas PAV was most frequently detected in oats. The bird cherry-oat aphid (",
     "journal": "Plant disease",
@@ -131,14 +287,33 @@
     "pub_date": "2026-07-06",
     "first_author": "Barman Mritunjoy",
     "authors": "Barman Mritunjoy; Mukhopadhyay Indranil; Hein Gary L; Tatineni Satyanarayana; Mondal Shaonpius",
-    "doi": "10.1094/PDIS-03-26-0527-RE",
     "categories": [
       "Luteo_Solemo"
     ],
-    "added_date": "2026-07-09"
+    "source": "",
+    "source_strategy": "",
+    "summary_zh": "",
+    "innovation": "",
+    "limitation": "",
+    "study_object": "",
+    "disease": "",
+    "sample_size": "",
+    "method_zh": "",
+    "contributions": "",
+    "ai_done": "",
+    "relevance_score": 2.0,
+    "relevance_level": "low",
+    "matched_topic": "Luteo_Solemo",
+    "journal_quality": "medium",
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "barley yellow dwarf virus"
+    ]
   },
   {
     "pmid": "42177618",
+    "doi": "10.1016/j.molp.2026.05.012",
     "title": "Plant viruses hijack and stabilize host ubiquitin-specific protease 14 to prevent viral protein degradation for efficient infection.",
     "abstract": "Plant viruses evade host RNA silencing through viral suppressors, but whether they share strategies to prevent viral protein degradation remains unknown. Ubiquitinome profiling of Nicotiana benthamiana infected with three potyviruses revealed extensive reprogramming of host ubiquitination. Crucially, ubiquitin-specific protease 14 (UBP14) exhibited markedly reduced ubiquitination and increased accumulation across infections. We demonstrate that the potyviral cylindrical inclusion (CI) protein binds to UBP14, suppressing its ubiquitination and enhancing its stability. CI recruits UBP14 to viral replication complexes, where it deubiquitinates and stabilizes viral replication components, leading to more effective viral infection. Knocking down UBP14 or disrupting CI-UBP14 interaction severely attenuated infection, demonstrating a proviral function of UBP14. UBP14 is also critical for efficient viral infection across four additional families. Notably, potexvirus TGBp1 and nucleorhabdovirus P proteins stabilize UBP14 by inhibiting its ubiquitination. Thus, UBP14 represents a common proviral host factor. By convergently evolving UBP14-targeting effectors, plant viruses subvert host proteostasis to evade antiviral degradation.",
     "journal": "Molecular plant",
@@ -146,10 +321,30 @@
     "pub_date": "2026-07-06",
     "first_author": "Zhuang Xinjian",
     "authors": "Zhuang Xinjian; Qiu Yanglin; Du Xinying; Zhang Yuanming; Lu Wenlong; ... (+4)",
-    "doi": "10.1016/j.molp.2026.05.012",
     "categories": [
       "Rhabdo_Reo_Fiji_Tenu"
     ],
-    "added_date": "2026-07-09"
+    "source": "",
+    "source_strategy": "",
+    "summary_zh": "",
+    "innovation": "",
+    "limitation": "",
+    "study_object": "",
+    "disease": "",
+    "sample_size": "",
+    "method_zh": "",
+    "contributions": "",
+    "ai_done": "",
+    "relevance_score": 4.0,
+    "relevance_level": "medium",
+    "matched_topic": "Rhabdo_Reo_Fiji_Tenu",
+    "journal_quality": "other",
+    "journal_jcr": "",
+    "added_date": "2026-07-09",
+    "keyword_hits": [
+      "nucleorhabdovirus",
+      "plant virus",
+      "potyvirus"
+    ]
   }
 ]
