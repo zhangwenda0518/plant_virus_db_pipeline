@@ -48,7 +48,7 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:8px;padding:0}
 footer{background:#1a5276;color:rgba(255,255,255,.7);text-align:center;padding:14px;margin-top:40px;font-size:12px}
 footer a{color:rgba(255,255,255,.9)}
 </style></head><body>
-<nav><a class="brand" href="/literature/">Literature</a><a href="/reference/">Reference DB</a><a href="/primers/">Primers</a><a href="/explorer/">Explorer</a><a href="/knowledge/">Knowledge</a></nav>
+<nav><a class="brand" href="/">Plant Virus DB</a><a href="/reference/">参考库</a><a href="/explorer/">浏览器</a><a href="/virus/">病毒详情</a><a href="/primers/">引物</a><a href="/vector/">媒介</a><a href="/te/">TE·EVE</a><a href="/metabuli/">Metabuli</a><a href="/literature/" style="color:#fff;font-weight:600">文献</a><a href="/knowledge/">知识</a></nav>
 <div class="hero"><h1>Plant Virus Literature Tracker</h1><p>Auto-tracking recent plant virus papers from PubMed &middot; Updated daily</p></div>
 <div class="main">
 <div class="stats"><div class="stat"><div class="val" id="stat-total">{{total}}</div><div class="lbl">Papers Indexed</div></div><div class="stat"><div class="val green" id="stat-new">{{new_count}}</div><div class="lbl">New This Update</div></div><div class="stat"><div class="val">{{current_year}}</div><div class="lbl">Current Year</div></div><div class="stat"><div class="val">{{last_update}}</div><div class="lbl">Last Updated</div></div></div>

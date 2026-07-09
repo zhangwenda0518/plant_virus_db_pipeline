@@ -803,7 +803,7 @@ app.layout = dmc.MantineProvider(
         children=[
             dcc.Location(id="url", refresh=False),
 
-            # 顶部学术风格导航栏
+            # 统一导航栏(全平台 9 入口 + 品牌) — Python 3.6 兼容,避免布局内 define
             dmc.AppShellHeader(
                 px="md",
                 style={"background": "#1a5276"},
@@ -811,12 +811,29 @@ app.layout = dmc.MantineProvider(
                     justify="space-between",
                     h="100%",
                     children=[
-                        dmc.Group(gap="xs", children=[
-                            dmc.Text("Plant Virus DB", fw=700, size="md", c="white"),
-                            html.A("Reference DB", href="/reference/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"14px","textDecoration":"none","marginLeft":"8px"}),
-                            html.A("Primers", href="/primers/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"14px","textDecoration":"none","marginLeft":"8px"})
+                        dmc.Group(gap=0, children=[
+                            html.A("Plant Virus DB", href="/",
+                                   style={"color":"#fff","fontWeight":700,"fontSize":"16px","textDecoration":"none","padding":"14px 10px 14px 0"}),
+                            html.A("参考库", href="/reference/",
+                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
+                            html.A("浏览器", href="/explorer/",
+                                   style={"color":"#fff","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"600"}),
+                            html.A("病毒详情", href="/virus/",
+                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
+                            html.A("引物", href="/primers/",
+                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
+                            html.Span("|", style={"color":"rgba(255,255,255,0.25)","padding":"14px 2px"}),
+                            html.A("媒介", href="/vector/",
+                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
+                            html.A("TE·EVE", href="/te/",
+                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
+                            html.A("Metabuli", href="/metabuli/",
+                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
+                            html.Span("|", style={"color":"rgba(255,255,255,0.25)","padding":"14px 2px"}),
+                            html.A("文献", href="/literature/",
+                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
+                            html.A("知识", href="/knowledge/",
+                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
                         ]),
                         dmc.Group(gap="xs", children=[
                             dmc.Badge(str(N_SPECIES) + " species", color="gray", variant="filled"),

@@ -167,7 +167,7 @@ nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 18px;font-siz
 .card{background:#fff;border-radius:8px;padding:16px;margin:8px 0;box-shadow:0 1px 3px rgba(0,0,0,.04);display:flex;justify-content:space-between}
 .card a{color:#1a5276;font-weight:600;text-decoration:none}.card a:hover{text-decoration:underline}
 </style></head><body>
-<nav><a href="/virus/" style="font-weight:700;color:#fff;font-size:16px">Virus Profile</a><a href="/reference/">Reference DB</a><a href="/explorer/">Explorer</a><a href="/vector/">Vectors</a></nav>
+<nav><a href="/" style="font-weight:700;color:#fff;font-size:16px">Plant Virus DB</a><a href="/reference/">参考库</a><a href="/explorer/">浏览器</a><a href="/virus/" style="color:#fff;font-weight:600">病毒详情</a><a href="/primers/">引物</a><a href="/vector/">媒介</a><a href="/te/">TE·EVE</a><a href="/metabuli/">Metabuli</a><a href="/literature/">文献</a><a href="/knowledge/">知识</a></nav>
 <div class="hero"><h1 style="margin:0">Virus Profile</h1><p style="margin:4px 0 0;opacity:.85">Comprehensive plant virus detail pages — GenBank, genome maps, proteins, papers, primers</p></div>
 <div class="main"><form><input name="q" value="{{query}}" placeholder="Search species name..." autofocus style="width:100%;padding:10px;border:2px solid #e0e0e0;border-radius:8px;font-size:15px;outline:none" onchange="this.form.submit()"></form>
 <div style="margin-top:16px">{% if results %}{% for r in results %}<div class="card"><a href="/virus/{{r.name|urlencode}}">{{r.name}}</a><span style="font-size:12px;color:#888">{{r.family}}</span></div>{% endfor %}{% elif query %}<div style="text-align:center;padding:40px;color:#999">No results for "{{query}}"</div>{% else %}<div style="text-align:center;padding:40px;color:#999">Enter a species name above</div>{% endif %}</div></div></body></html>'''
@@ -192,7 +192,7 @@ table{font-size:12px;width:100%}th{background:#f5f5f5;padding:6px}td{padding:6px
 .btn-dl-primary{background:#1a5276;color:#fff}.btn-dl-success{background:#27ae60;color:#fff}
 .btn-dl-secondary{background:#666;color:#fff}
 </style></head><body>
-<nav><a href="/virus/" style="font-weight:700;color:#fff;font-size:16px">Virus Profile</a><a href="/reference/">Reference DB</a><a href="/explorer/">Explorer</a><a href="/vector/">Vectors</a></nav>
+<nav><a href="/" style="font-weight:700;color:#fff;font-size:16px">Plant Virus DB</a><a href="/reference/">参考库</a><a href="/explorer/">浏览器</a><a href="/virus/" style="color:#fff;font-weight:600">病毒详情</a><a href="/primers/">引物</a><a href="/vector/">媒介</a><a href="/te/">TE·EVE</a><a href="/metabuli/">Metabuli</a><a href="/literature/">文献</a><a href="/knowledge/">知识</a></nav>
 <div class="hero"><h1>{{info.get('Species_ICTV', info.get('Species_NCBI',''))}}</h1><p>{{info.get('Family','')}} | {{info.get('Molecule_type','')}} | {{info.get('Topology','')}} | {{info.get('Length','')}}bp | {{accs|length}} accessions</p></div>
 <div class="main">
 

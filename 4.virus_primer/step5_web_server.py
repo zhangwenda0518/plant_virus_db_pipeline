@@ -157,10 +157,14 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
                     <li class="nav-item"><a class="nav-link" href="/"><i class="bi-house"></i> 首页</a></li>
                     <li class="nav-item"><a class="nav-link" href="/search"><i class="bi-search"></i> 搜索</a></li>
                     <li class="nav-item"><a class="nav-link" href="/browse"><i class="bi-list"></i> 浏览</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/api/"><i class="bi-code"></i> API</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/download"><i class="bi-download"></i> 下载</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/reference/" style="color:#81c784"><i class="bi-arrow-left-right"></i> Reference DB</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/explorer/" style="color:#64b5f6"><i class="bi-arrow-left-right"></i> Explorer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/reference/"><i class="bi-database"></i> 参考库</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/explorer/"><i class="bi-graph-up"></i> 浏览器</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/virus/"><i class="bi-bug"></i> 病毒详情</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/vector/"><i class="bi-diagram-3"></i> 媒介</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/te/"><i class="bi-grid"></i> TE·EVE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/metabuli/"><i class="bi-cpu"></i> Metabuli</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/literature/"><i class="bi-journal-text"></i> 文献</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/knowledge/"><i class="bi-chat-dots"></i> 知识</a></li>
                 </ul>
             </div>
         </div>
