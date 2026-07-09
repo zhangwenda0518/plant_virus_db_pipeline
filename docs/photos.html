@@ -153,11 +153,12 @@ async function init(){
 
 function buildDashboard(){
   // KPIs
+  const arr=(v)=>Array.isArray(v)?v:(v?[v]:[]);
   const allHosts=new Set(),allSymps=new Set(),allParts=new Set(),allVirus=new Set();
   data.forEach(d=>{
-    (d.hosts_latin||d.hosts||[]).forEach(h=>allHosts.add(typeof h==='object'?h.latin:h));
-    (d.symptoms||[]).forEach(s=>allSymps.add(s));
-    (d.parts||[]).forEach(p=>allParts.add(p));
+    arr(d.hosts_latin||d.hosts).forEach(h=>allHosts.add(typeof h==='object'?h.latin:h));
+    arr(d.symptoms).forEach(s=>allSymps.add(s));
+    arr(d.parts).forEach(p=>allParts.add(p));
     allVirus.add(d.virus_latin||d.virus);
   });
   document.getElementById('kpis').innerHTML=[
@@ -167,7 +168,7 @@ function buildDashboard(){
   ].map(([l,v])=>`<div class="kpi"><div class="val">${v.toLocaleString()}</div><div class="lbl">${l}</div></div>`).join('');
 
   // Charts
-  const cnt=(key,n)=>{const m={};data.forEach(d=>(d[key]||[]).forEach(v=>{m[v]=(m[v]||0)+1}));return Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,n);};
+  const cnt=(key,n)=>{const m={};data.forEach(d=>{const vals=Array.isArray(d[key])?d[key]:(d[key]?[d[key]]:[]);vals.forEach(v=>{if(v&&typeof v==='object')v=v.latin||v.common||'';m[v]=(m[v]||0)+1})});return Object.entries(m).filter(x=>x[0]).sort((a,b)=>b[1]-a[1]).slice(0,n);};
   const barH=(id,items,color)=>{
     new Chart(document.getElementById(id),{type:'bar',data:{labels:items.map(x=>x[0]),datasets:[{data:items.map(x=>x[1]),backgroundColor:color}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
   };
@@ -182,7 +183,7 @@ function buildDashboard(){
 }
 
 function buildFilters(){
-  const cnt=(key,n)=>{const m={};data.forEach(d=>(d[key]||[]).forEach(v=>{m[v]=(m[v]||0)+1}));return Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,n);};
+  const cnt=(key,n)=>{const m={};data.forEach(d=>{const vals=Array.isArray(d[key])?d[key]:(d[key]?[d[key]]:[]);vals.forEach(v=>{if(v&&typeof v==='object')v=v.latin||v.common||'';m[v]=(m[v]||0)+1})});return Object.entries(m).filter(x=>x[0]).sort((a,b)=>b[1]-a[1]).slice(0,n);};
   ['hosts','symptoms','parts','viruses'].forEach(k=>{
     const el=document.getElementById('filter'+k.charAt(0).toUpperCase()+k.slice(1));
     const items=k==='viruses'?cnt('virus',30):cnt(k,25);
