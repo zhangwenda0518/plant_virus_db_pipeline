@@ -78,15 +78,6 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px}
   <div id="fParts"></div>
   <h3>Virus <span style="font-weight:400;font-size:10px;color:#888" id="fVirusCnt"></span></h3>
   <div id="fViruses"></div>
-  <h3>SUBMIT CORRECTION</h3>
-  <label>EPPO Code</label><input id="subCode" placeholder="e.g. TSWV00">
-  <label>Photo ID</label><input id="subPid" placeholder="e.g. 2555">
-  <label>Virus (Latin)</label><input id="subVirus" placeholder="Orthotospovirus tomatomaculae">
-  <label>Host (Latin)</label><input id="subHost" placeholder="Solanum lycopersicum">
-  <label>Symptoms</label><input id="subSymp" placeholder="mosaic, necrosis">
-  <label>Parts</label><input id="subPart" placeholder="leaf, fruit">
-  <label>Notes</label><textarea id="subNotes"></textarea>
-  <button class="btn" onclick="submit()">Submit</button>
 </div>
 <div class="content">
   <div class="loading" id="load">Loading...</div>
@@ -94,6 +85,7 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px}
     <div class="tabs">
       <button class="tab active" onclick="showTab('dash')">Dashboard</button>
       <button class="tab" onclick="showTab('gal')">Browse Gallery</button>
+      <button class="tab" onclick="showTab('sub')">Submit Correction</button>
     </div>
     <div id="dash">
       <div class="kpis" id="kpis"></div>
@@ -113,6 +105,22 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px}
         <span id="countTxt" style="font-size:13px;color:#888"></span>
       </div>
       <div class="grid" id="grid"></div>
+    </div>
+    <div id="sub" style="display:none">
+      <div style="max-width:600px;background:#fff;padding:24px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06)">
+        <h2 style="margin:0 0 16px;color:#1a5276">Submit Metadata Correction</h2>
+        <p style="font-size:13px;color:#888;margin-bottom:16px">Correct or supplement virus, host, symptom, and plant part information for photos in the gallery.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 16px">
+          <div><label>EPPO Code</label><input id="subCode" placeholder="e.g. TSWV00" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
+          <div><label>Photo ID</label><input id="subPid" placeholder="e.g. 2555" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
+          <div><label>Virus (Latin) *</label><input id="subVirus" placeholder="Orthotospovirus tomatomaculae" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
+          <div><label>Host (Latin)</label><input id="subHost" placeholder="Solanum lycopersicum" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
+          <div><label>Symptoms</label><input id="subSymp" placeholder="mosaic, ring spot, necrosis" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
+          <div><label>Plant Parts</label><input id="subPart" placeholder="leaf, fruit" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
+        </div>
+        <div style="margin-top:12px"><label>Notes</label><textarea id="subNotes" placeholder="Additional information..." style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px;min-height:60px;font-family:inherit"></textarea></div>
+        <button class="btn" onclick="submit()" style="margin-top:12px;padding:10px 32px">Submit to GitHub</button>
+      </div>
     </div>
   </div>
 </div>
@@ -213,9 +221,10 @@ function renderGal(){
 }
 
 function showTab(t){
-  document.querySelectorAll('.tab').forEach(function(x,i){x.classList.toggle('active',(t==='dash'&&i===0)||(t==='gal'&&i===1))});
+  document.querySelectorAll('.tab').forEach(function(x,i){x.classList.toggle('active',(t==='dash'&&i===0)||(t==='gal'&&i===1)||(t==='sub'&&i===2))});
   document.getElementById('dash').style.display=t==='dash'?'':'none';
   document.getElementById('gal').style.display=t==='gal'?'':'none';
+  document.getElementById('sub').style.display=t==='sub'?'':'none';
 }
 
 function openImg(url,cap,virus){
