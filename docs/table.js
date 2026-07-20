@@ -14,7 +14,14 @@ async function loadTable(tableId, isSegmented) {
   document.getElementById('toolbar').style.display = 'none';
 
   const resp = await fetch(src.file + '?v=2');
-  if (!resp.ok) { document.getElementById('loading').innerHTML = '<p style="color:red">' + src.file + ' not found</p>'; return; }
+  if (!resp.ok) {
+    if (currentSource === 'full' && resp.status === 404) {
+      document.getElementById('loading').innerHTML = '<p style="color:#856404;background:#fff3cd;padding:12px;border-radius:6px">Full database (199K rows) only available on <a href="http://39.106.101.94/reference/" target="_blank">production server</a>. Showing Ref database below.</p>';
+      currentSource = 'ref';
+      return loadTable(tableId, isSegmented);
+    }
+    document.getElementById('loading').innerHTML = '<p style="color:red">' + src.file + ' not found</p>'; return;
+  }
   const text = await resp.text();
 
   Papa.parse(text, {

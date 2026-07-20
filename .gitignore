@@ -7,15 +7,11 @@ __pycache__/
 .DS_Store
 app.log
 
-# Large data files (synced from server, not in git)
+# Large data files — FASTA keep gitignored (download links only); small TSV/JSON committed for GitHub Pages
 docs/data/Plant_Virus_Full.fasta
 docs/data/Plant_Virus_Full.Info.tsv
 docs/data/Plant_Virus_Ref.fasta
-docs/data/Plant_Virus_Ref.Info.tsv
 docs/data/Plant_Virus.complete_ref.fasta
-docs/data/Plant_Virus.complete_ref_info.tsv
-docs/data/virus_genes_cov.tsv
-docs/data/complete_acc.txt
 
 # PowerShell artifacts
 $null
@@ -27,16 +23,21 @@ $null
 
 # Large data files (RAG / synced, not in git)
 6.knowledge_rag/databases/viroiddb.json
+6.knowledge_rag/pv_rag/rag-db/
 
 # Vector DB: WUR scraped data + build_vector_db.py 产物 (synced from server, not in git)
 8.plant-insect/wur_virus_full.tsv
 8.plant-insect/virus_vector_merged.json
 8.plant-insect/vector_merge_review.tsv
+8.plant-insect/virus_vector_host.tsv
+8.plant-insect/wur_virus_data.tsv
+8.plant-insect/Supplementary Table 1.xlsx
+8.plant-insect/Fig*.png
 
 # Metabuli: build_taxid_lineage.py 产物 (由 nodes.dmp/names.dmp 生成，server 侧)
 9.metabuli/taxid_lineage.tsv
 
-# Literature Tracker: 外部子模块(从 GitHub clone) + 生成数据
+# Literature Tracker: 外部子模块(从 GitHub clone) + 生成数据 + 超大文件
 7.literature_tracker/LitSearch/
 7.literature_tracker/auto-paper-collecter/
 7.literature_tracker/paper-daily/
@@ -44,9 +45,12 @@ $null
 7.literature_tracker/literature-daily-report/
 7.literature_tracker/papers.json
 7.literature_tracker/data/
+7.literature_tracker/pubmed_records/
 
-# Photos: 提取产物
+# Photos: 提取产物 + 源 PDF/DOCX (超大)
 10.virus_photos/extracted/
+10.virus_photos/15587070.docx
+10.virus_photos/15587070.pdf
 
 # 中间/生成物(勿入库)
 te_stats.json
@@ -54,3 +58,7 @@ extracted/images/
 
 # 空目录/废弃
 get_plant_virus_data_pipeline/
+
+# 备份/归档目录 (勿入库)
+**/archive/
+**/backup/
