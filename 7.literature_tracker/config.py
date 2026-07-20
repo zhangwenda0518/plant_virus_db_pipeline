@@ -23,7 +23,7 @@ LLM_DELAY = float(os.environ.get("LLM_DELAY", "1.5"))
 
 # ── NCBI rate limits ──
 NCBI_EUTILS_DELAY = 0.5  # seconds between requests (0.34 without API key)
-PUBMED_MAX_PER_QUERY = 30
+PUBMED_MAX_PER_QUERY = 200
 PUBMED_DAYS_DEFAULT = 7
 ELINK_BATCH_SIZE = 150
 SPECIES_MAX_PER_SEARCH = 5
@@ -39,89 +39,77 @@ REF_TSV = os.environ.get(
     os.path.join(BASE_DIR, "..", "docs", "data", "Plant_Virus_Ref.Info.tsv"),
 )
 
-# ── 14 Plant Virus Search Categories ──
+# ── 9 Plant Virus Search Categories (theme-based, not family-based) ──
 QUERY_CATEGORIES = {
-    "General": [
-        '"plant virus"[Title/Abstract] OR "plant viroid"[Title/Abstract] OR "phytovirus"[Title/Abstract]',
-        '"plant RNA virus"[Title/Abstract] OR "plant DNA virus"[Title/Abstract]',
-        '"viroid"[Title/Abstract]',
-    ],
-    "Gemini_Begomo": [
-        '"Geminiviridae"[Title/Abstract] OR "begomovirus"[Title/Abstract] OR "mastrevirus"[Title/Abstract] OR "curtovirus"[Title/Abstract] OR "topocuvirus"[Title/Abstract]',
-        '"tomato yellow leaf curl virus"[Title/Abstract] OR "Begomovirus coheni"[Title/Abstract]',
-        '"cassava mosaic virus"[Title/Abstract] OR "maize streak virus"[Title/Abstract] OR "Mastrevirus maydis"[Title/Abstract]',
-        '"cotton leaf curl virus"[Title/Abstract] OR "chilli leaf curl virus"[Title/Abstract] OR "okra yellow vein mosaic virus"[Title/Abstract]',
-    ],
-    "Potyviridae": [
-        '"Potyviridae"[Title/Abstract] OR "potyvirus"[Title/Abstract] OR "ipomovirus"[Title/Abstract] OR "macluravirus"[Title/Abstract] OR "tritimovirus"[Title/Abstract] OR "bymovirus"[Title/Abstract] OR "rymovirus"[Title/Abstract]',
-        '"potato virus Y"[Title/Abstract] OR "Potyvirus yituberosi"[Title/Abstract] OR "plum pox virus"[Title/Abstract] OR "Potyvirus plumpoxi"[Title/Abstract]',
-        '"turnip mosaic virus"[Title/Abstract] OR "Potyvirus rapae"[Title/Abstract] OR "lettuce mosaic virus"[Title/Abstract]',
-        '"papaya ringspot virus"[Title/Abstract] OR "Potyvirus papayanuli"[Title/Abstract] OR "watermelon mosaic virus"[Title/Abstract]',
-    ],
-    "Tobamo_Virga": [
-        '"Virgaviridae"[Title/Abstract] OR "tobamovirus"[Title/Abstract] OR "furovirus"[Title/Abstract] OR "hordeivirus"[Title/Abstract] OR "pomovirus"[Title/Abstract]',
-        '"tobacco mosaic virus"[Title/Abstract] OR "Tobamovirus tabaci"[Title/Abstract] OR "cucumber green mottle mosaic virus"[Title/Abstract]',
-        '"pepino mosaic virus"[Title/Abstract] OR "Potexvirus pepini"[Title/Abstract]',
-    ],
-    "Tospo_Bunya": [
-        '"Tospoviridae"[Title/Abstract] OR "tospovirus"[Title/Abstract] OR "Orthotospovirus"[Title/Abstract]',
-        '"tomato spotted wilt virus"[Title/Abstract] OR "Orthotospovirus tomatomaculae"[Title/Abstract]',
-        '"groundnut bud necrosis virus"[Title/Abstract]',
-    ],
-    "Luteo_Solemo": [
-        '"Luteoviridae"[Title/Abstract] OR "Solemoviridae"[Title/Abstract] OR "luteovirus"[Title/Abstract] OR "polerovirus"[Title/Abstract]',
-        '"barley yellow dwarf virus"[Title/Abstract] OR "Luteovirus hordei"[Title/Abstract] OR "potato leafroll virus"[Title/Abstract]',
-    ],
-    "Clostero_Beta": [
-        '"Closteroviridae"[Title/Abstract] OR "Betaflexiviridae"[Title/Abstract] OR "closterovirus"[Title/Abstract] OR "crinivirus"[Title/Abstract]',
-        '"citrus tristeza virus"[Title/Abstract] OR "Closterovirus tristezae"[Title/Abstract]',
-    ],
-    "Seco_Bromo_Tombus": [
-        '"Secoviridae"[Title/Abstract] OR "Bromoviridae"[Title/Abstract] OR "Tombusviridae"[Title/Abstract]',
-        '"nepovirus"[Title/Abstract] OR "comovirus"[Title/Abstract] OR "fabavirus"[Title/Abstract]',
-        '"grapevine fanleaf virus"[Title/Abstract] OR "Nepovirus vitis"[Title/Abstract] OR "cucumber mosaic virus"[Title/Abstract] OR "Cucumovirus CMV"[Title/Abstract]',
-        '"cowpea mosaic virus"[Title/Abstract] OR "Comovirus vignae"[Title/Abstract]',
-    ],
-    "Rhabdo_Reo_Fiji_Tenu": [
-        '"Rhabdoviridae"[Title/Abstract] OR "Reoviridae"[Title/Abstract]',
-        '"cytorhabdovirus"[Title/Abstract] OR "nucleorhabdovirus"[Title/Abstract] OR "fijivirus"[Title/Abstract] OR "oryzavirus"[Title/Abstract] OR "tenuivirus"[Title/Abstract]',
-        '"rice stripe virus"[Title/Abstract] OR "Tenuivirus oryzae"[Title/Abstract] OR "rice dwarf virus"[Title/Abstract] OR "southern rice black-streaked dwarf virus"[Title/Abstract]',
-    ],
-    "Nanoviridae": [
-        '"Nanoviridae"[Title/Abstract] OR "babuvirus"[Title/Abstract]',
-        '"banana bunchy top virus"[Title/Abstract] OR "Babuvirus musae"[Title/Abstract]',
-    ],
-    "Caulimo_Badna_Tungro": [
-        '"Caulimoviridae"[Title/Abstract] OR "caulimovirus"[Title/Abstract] OR "badnavirus"[Title/Abstract]',
-        '"rice tungro bacilliform virus"[Title/Abstract] OR "rice tungro spherical virus"[Title/Abstract]',
-    ],
-    "Endorna_Parti_Amalga": [
-        '"Endornaviridae"[Title/Abstract] OR "Partitiviridae"[Title/Abstract] OR "Amalgaviridae"[Title/Abstract]',
-    ],
-    "Viroid": [
-        '"Pospiviroidae"[Title/Abstract] OR "Avsunviroidae"[Title/Abstract]',
-        '"potato spindle tuber viroid"[Title/Abstract] OR "Pospiviroid fusituberis"[Title/Abstract]',
-        '"citrus exocortis viroid"[Title/Abstract] OR "chrysanthemum stunt viroid"[Title/Abstract]',
-        '"hop stunt viroid"[Title/Abstract] OR "Hostuviroid impedihumuli"[Title/Abstract]',
-    ],
-    "Methods_Resistance": [
-        '"plant virus resistance"[Title/Abstract] OR "plant virus detection"[Title/Abstract]',
-        '"plant virus CRISPR"[Title/Abstract] OR "plant virus RNAi"[Title/Abstract] OR "plant virus siRNA"[Title/Abstract]',
-    ],
-    "Methods_Omics": [
-        '"plant virus genome"[Title/Abstract] OR "plant virus evolution"[Title/Abstract] OR "plant virus phylogeny"[Title/Abstract]',
-        '"plant virus metagenomics"[Title/Abstract] OR "plant virus proteomics"[Title/Abstract] OR "plant virus NGS"[Title/Abstract]',
-    ],
-    "Transmission_Epi": [
-        '"plant virus transmission"[Title/Abstract] OR "plant virus vector"[Title/Abstract] OR "plant virus epidemiology"[Title/Abstract]',
-    ],
     "New_Virus": [
-        '("novel virus"[Title/Abstract] OR "new virus"[Title/Abstract] OR "virus discovery"[Title/Abstract]) AND (plant[Title/Abstract] OR crop[Title/Abstract])',
-        '("first report"[Title] OR "recently identified"[Title/Abstract] OR "newly identified"[Title/Abstract] OR "previously unknown"[Title/Abstract]) AND virus[Title] AND plant[Title/Abstract]',
-        '("uncharacterized virus"[Title/Abstract] OR "unclassified virus"[Title/Abstract] OR "new species"[Title/Abstract]) AND (Viridiplantae[Organism] OR plant[Title/Abstract])',
-        '("viral metagenomics"[Title/Abstract] OR "virome"[Title/Abstract] OR "high-throughput sequencing"[Title/Abstract] OR "small RNA sequencing"[Title/Abstract]) AND (plant virus[Title/Abstract] OR novel virus[Title/Abstract])',
-        '("novel Geminiviridae"[Title/Abstract] OR "new begomovirus"[Title/Abstract] OR "novel Potyviridae"[Title/Abstract] OR "novel tospovirus"[Title/Abstract] OR "novel RNA virus"[Title/Abstract] OR "novel DNA virus"[Title/Abstract]) AND plant[Title/Abstract]',
-        '("complete genome"[Title] AND "novel"[Title]) AND (plant virus[Title/Abstract] OR phytovirus[Title/Abstract])',
+        # 新病毒发现（综合）
+        '("novel virus"[Title/Abstract] OR "new virus"[Title/Abstract] OR "virus discovery"[Title/Abstract]) AND ("plant virus"[Title/Abstract] OR phytovirus[Title/Abstract] OR "plant viroid"[Title/Abstract])',
+        '("first report"[Title] OR "recently identified"[Title/Abstract] OR "newly identified"[Title/Abstract] OR "previously unknown"[Title/Abstract]) AND virus[Title] AND (plant[Title/Abstract] OR crop[Title/Abstract])',
+        '("uncharacterized virus"[Title/Abstract] OR "unclassified virus"[Title/Abstract]) AND ("plant virus"[Title/Abstract] OR phytovirus[Title/Abstract])',
+        '("complete genome"[Title] AND "novel"[Title]) AND (plant virus[Title/Abstract] OR phytovirus[Title/Abstract] OR plant viroid[Title/Abstract])',
+        '("novel viroid"[Title/Abstract] OR "new viroid"[Title/Abstract] OR "viroid discovery"[Title/Abstract] OR ("viroid"[Title/Abstract] AND ("first report"[Title] OR "novel"[Title/Abstract] OR "new species"[Title/Abstract])))',
+    ],
+    "Molecular_Characterization": [
+        # 基因组/分子特征（合并所有科的基因组+进化+系统发育）
+        '("complete genome"[Title/Abstract] OR "full genome"[Title/Abstract] OR "genome sequence"[Title/Abstract] OR "genomic characterization"[Title/Abstract]) AND (plant virus[Title/Abstract] OR phytovirus[Title/Abstract] OR plant viroid[Title/Abstract] OR "Geminiviridae"[Title/Abstract] OR "Potyviridae"[Title/Abstract] OR "Tospoviridae"[Title/Abstract] OR "Closteroviridae"[Title/Abstract])',
+        '("phylogenetic"[Title/Abstract] OR "molecular characterization"[Title/Abstract] OR "sequence analysis"[Title/Abstract]) AND (plant virus[Title/Abstract] OR plant viroid[Title/Abstract])',
+        '("RNA-dependent RNA polymerase"[Title/Abstract] OR "coat protein"[Title/Abstract] OR "movement protein"[Title/Abstract]) AND (plant virus[Title/Abstract] OR phytovirus[Title/Abstract])',
+        '("recombination"[Title/Abstract] OR "reassortment"[Title/Abstract] OR "mixed infection"[Title/Abstract]) AND plant virus[Title/Abstract]',
+    ],
+    "Detection_Methods": [
+        # 检测与诊断（PCR/ELISA/LAMP/HTS/CRISPR）
+        '("detection"[Title/Abstract] OR "diagnosis"[Title/Abstract] OR "diagnostic"[Title/Abstract]) AND (plant virus[Title/Abstract] OR plant viroid[Title/Abstract] OR phytovirus[Title/Abstract])',
+        '("RT-PCR"[Title/Abstract] OR "qPCR"[Title/Abstract] OR "LAMP"[Title/Abstract] OR "RPA"[Title/Abstract] OR "isothermal amplification"[Title/Abstract]) AND plant virus[Title/Abstract]',
+        '("ELISA"[Title/Abstract] OR "immunoassay"[Title/Abstract] OR "serological"[Title/Abstract]) AND plant virus[Title/Abstract]',
+        '("CRISPR"[Title/Abstract] AND ("virus"[Title/Abstract] OR "viroid"[Title/Abstract])) AND (plant[Title/Abstract] OR crop[Title/Abstract])',
+        '("field-deployable"[Title/Abstract] OR "on-site detection"[Title/Abstract] OR "point-of-care"[Title/Abstract] OR "rapid detection"[Title/Abstract]) AND plant virus[Title/Abstract]',
+    ],
+    "Host_Virus_Interactions": [
+        # 宿主-病毒互作（抗性/RNAi/症状/病理）
+        '("plant virus resistance"[Title/Abstract] OR "virus resistance"[Title/Abstract] OR "antiviral defense"[Title/Abstract]) AND (plant[Title/Abstract] OR crop[Title/Abstract])',
+        '("RNA silencing"[Title/Abstract] OR "RNA interference"[Title/Abstract] OR "siRNA"[Title/Abstract] OR "viral suppressor"[Title/Abstract]) AND plant virus[Title/Abstract]',
+        '("hypersensitive response"[Title/Abstract] OR "programmed cell death"[Title/Abstract] OR "symptom development"[Title/Abstract] OR "pathogenesis"[Title/Abstract]) AND plant virus[Title/Abstract]',
+        '("susceptibility gene"[Title/Abstract] OR "recessive resistance"[Title/Abstract] OR "dominant resistance"[Title/Abstract] OR "R gene"[Title/Abstract]) AND plant virus[Title/Abstract]',
+    ],
+    "Antiviral_Resistance_Genes": [
+        # 植物抗病毒基因与抗性机制
+        '("plant antiviral"[Title/Abstract] OR "antiviral gene"[Title/Abstract] OR "antiviral mechanism"[Title/Abstract]) AND (plant virus[Title/Abstract] OR phytovirus[Title/Abstract])',
+        '("NBS-LRR"[Title/Abstract] OR "NB-LRR"[Title/Abstract] OR "NLR gene"[Title/Abstract] OR "NLR protein"[Title/Abstract] OR "immune receptor"[Title/Abstract]) AND (plant virus[Title/Abstract] OR phytovirus[Title/Abstract])',
+        '("antiviral defense"[Title/Abstract] OR "innate immunity"[Title/Abstract] OR "pattern-triggered immunity"[Title/Abstract] OR "effector-triggered immunity"[Title/Abstract]) AND (plant virus[Title/Abstract] OR phytovirus[Title/Abstract])',
+        '("autophagy"[Title/Abstract] OR "ubiquitin"[Title/Abstract] OR "proteasome"[Title/Abstract] OR "autophagic"[Title/Abstract]) AND (plant virus[Title/Abstract] OR "plant antiviral"[Title/Abstract])',
+        '("translation initiation factor"[Title/Abstract] OR "eIF4E"[Title/Abstract] OR "eIF4G"[Title/Abstract] OR "eIF(iso)4E"[Title/Abstract]) AND (plant virus[Title/Abstract] OR potyvirus[Title/Abstract])',
+        '("N gene"[Title/Abstract] OR "Rx gene"[Title/Abstract] OR "Sw-5"[Title/Abstract] OR "Tm-2"[Title/Abstract] OR "Ty-1"[Title/Abstract] OR "L locus"[Title/Abstract]) AND (plant virus[Title/Abstract] OR tobamovirus[Title/Abstract] OR tospovirus[Title/Abstract] OR geminivirus[Title/Abstract])',
+        '("nucleotide-binding"[Title/Abstract] OR "leucine-rich repeat"[Title/Abstract] OR "coiled-coil"[Title/Abstract] OR "TIR domain"[Title/Abstract]) AND plant virus[Title/Abstract]',
+        '("salicylic acid"[Title/Abstract] OR "jasmonic acid"[Title/Abstract] OR "ethylene signaling"[Title/Abstract] OR "systemic acquired resistance"[Title/Abstract]) AND (plant virus[Title/Abstract] OR phytovirus[Title/Abstract])',
+    ],
+    "Transmission_Epidemiology": [
+        # 传播与流行病学
+        '("plant virus transmission"[Title/Abstract] OR "virus vector"[Title/Abstract] OR "insect vector"[Title/Abstract]) AND (plant[Title/Abstract] OR crop[Title/Abstract])',
+        '("aphid"[Title/Abstract] OR "whitefly"[Title/Abstract] OR "thrips"[Title/Abstract] OR "leafhopper"[Title/Abstract] OR "planthopper"[Title/Abstract]) AND (plant virus[Title/Abstract] OR phytovirus[Title/Abstract])',
+        '("seed transmission"[Title/Abstract] OR "pollen transmission"[Title/Abstract] OR "mechanical transmission"[Title/Abstract] OR "graft transmission"[Title/Abstract]) AND plant virus[Title/Abstract]',
+        '("epidemiology"[Title/Abstract] OR "disease spread"[Title/Abstract] OR "outbreak"[Title/Abstract] OR "incidence"[Title/Abstract]) AND plant virus[Title/Abstract]',
+    ],
+    "Control_Management": [
+        # 防控与管理
+        '("plant virus management"[Title/Abstract] OR "virus disease management"[Title/Abstract]) AND (plant[Title/Abstract] OR crop[Title/Abstract])',
+        '("cross-protection"[Title/Abstract] OR "mild strain"[Title/Abstract] OR "attenuated virus"[Title/Abstract]) AND plant virus[Title/Abstract]',
+        '("biocontrol"[Title/Abstract] OR "biological control"[Title/Abstract]) AND (plant virus[Title/Abstract] OR phytovirus[Title/Abstract])',
+        '("resistant variety"[Title/Abstract] OR "resistant cultivar"[Title/Abstract] OR "breeding"[Title/Abstract]) AND (plant virus[Title/Abstract] OR phytovirus[Title/Abstract])',
+    ],
+    "Viral_Diversity_Ecology": [
+        # 病毒多样性与生态学
+        '("viral metagenomics"[Title/Abstract] OR "virome"[Title/Abstract] OR "virus diversity"[Title/Abstract]) AND (plant[Title/Abstract] OR crop[Title/Abstract] OR agroecosystem[Title/Abstract])',
+        '("high-throughput sequencing"[Title/Abstract] OR "next-generation sequencing"[Title/Abstract] OR "nanopore sequencing"[Title/Abstract]) AND (plant virus[Title/Abstract] OR plant virome[Title/Abstract])',
+        '("small RNA sequencing"[Title/Abstract] OR "sRNA-seq"[Title/Abstract] OR "degradome"[Title/Abstract]) AND (plant virus[Title/Abstract] OR phytovirus[Title/Abstract])',
+        '("virus evolution"[Title/Abstract] OR "molecular evolution"[Title/Abstract] OR "population genetics"[Title/Abstract]) AND plant virus[Title/Abstract]',
+        '("virus ecology"[Title/Abstract] OR "wild plant"[Title/Abstract] OR "natural ecosystem"[Title/Abstract] OR "weed"[Title/Abstract]) AND virus[Title/Abstract]',
+    ],
+    "Biotechnology_Applications": [
+        # 生物技术应用（VIGS/载体/纳米）
+        '("VIGS"[Title/Abstract] OR "virus-induced gene silencing"[Title/Abstract] OR "gene silencing vector"[Title/Abstract]) AND plant[Title/Abstract]',
+        '("plant viral vector"[Title/Abstract] OR "plant virus vector"[Title/Abstract] OR ("virus-like particle"[Title/Abstract] AND plant virus[Title/Abstract]))',
+        '("plant virus"[Title/Abstract] AND ("nanotechnology"[Title/Abstract] OR "nanoparticle"[Title/Abstract] OR "drug delivery"[Title/Abstract] OR "biotechnology"[Title/Abstract]))',
+        '("recombinant protein"[Title/Abstract] OR "transient expression"[Title/Abstract] OR "agroinfiltration"[Title/Abstract]) AND ("plant virus"[Title/Abstract] OR "viral vector"[Title/Abstract])',
     ],
 }
 

@@ -11,7 +11,7 @@ Much more precise than keyword search — only papers that actually
 studied/sampled specific plant virus sequences.
 """
 
-import json, os, time, argparse, random
+import json, os, time, argparse, re, random
 from datetime import datetime
 from pathlib import Path
 from urllib.request import urlopen, Request
@@ -116,7 +116,7 @@ def efetch(pmids, api_key=""):
         return []
     pmids = list(pmids)[:200]
 
-    params = {"db": "pubmed", "id": ",".join(pmids), "retmode": "xml", "rettype": "abstract"}
+    params = {"db": "pubmed", "id": ",".join(pmids), "retmode": "xml"}
     if api_key:
         params["api_key"] = api_key
 
@@ -140,10 +140,13 @@ def efetch(pmids, api_key=""):
             try:
                 pmid = art.findtext(".//PMID", "")
                 title = art.findtext(".//ArticleTitle", "")
-                abstract = art.findtext(".//Abstract/AbstractText", "")
-                if not abstract:
-                    texts = art.findall(".//Abstract/AbstractText")
-                    abstract = " ".join(t.text or "" for t in texts if t.text)
+                abs_parts = []
+                for at in art.findall(".//Abstract/AbstractText"):
+                    label = at.get("Label", "")
+                    txt = "".join(at.itertext()).strip()
+                    if txt:
+                        abs_parts.append(f"[{label}] {txt}" if label else txt)
+                abstract = " ".join(abs_parts) if abs_parts else ""
                 journal = art.findtext(".//Journal/Title", "")
                 pub_date = _extract_date(art)
                 year = pub_date.year if pub_date else 0
@@ -162,7 +165,7 @@ def efetch(pmids, api_key=""):
                         doi = aid.text or ""
                         break
                 articles.append({
-                    "pmid": pmid, "title": title, "abstract": abstract[:2000],
+                    "pmid": pmid, "title": title, "abstract": abstract,
                     "journal": journal, "year": year,
                     "pub_date": pub_date.strftime("%Y-%m-%d") if pub_date else "",
                     "first_author": authors[0] if authors else "",

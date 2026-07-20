@@ -185,7 +185,8 @@ def cmd_summarize(args):
 
 def cmd_build(args):
     """Build web data files."""
-    build(from_daily=not args.no_daily, journal_filter=args.journal_filter)
+    build(from_daily=not args.no_daily, journal_filter=args.journal_filter,
+          ai_verified=args.ai_verified)
 
 
 # ── Auto ──
@@ -279,7 +280,7 @@ def cmd_historical(args):
             sys.executable, str(script),
             "--start-date", date_from,
             "--end-date", date_to,
-            "--max-per-query", "50",
+            "--max-per-query", "200",
             "--output", str(out),
         ]
         if NCBI_API_KEY:
@@ -300,7 +301,12 @@ def cmd_historical(args):
         current = next_dt
         time.sleep(1)  # Extra rate limit between months
 
-    # Build after all
+    # Build after all (unless --no-build, to avoid colliding with a running summarize)
+    if getattr(args, "no_build", False):
+        print(f"\n[OK] Fetched {month_count} months to daily/ (skipped build). "
+              f"Run 'python pipeline.py build' later to merge.")
+        return
+
     print("\nBuilding web data...")
     build(from_daily=True)
 
@@ -367,6 +373,7 @@ Examples:
     p_build = sub.add_parser("build", help="Build web data files")
     p_build.add_argument("--no-daily", action="store_true")
     p_build.add_argument("--journal-filter", action="store_true")
+    p_build.add_argument("--ai-verified", action="store_true", help="Only include AI-extracted papers")
     p_build.set_defaults(func=cmd_build)
 
     # auto
@@ -385,6 +392,7 @@ Examples:
     p_hist.add_argument("--end", required=True, help="End YYYY-MM")
     p_hist.add_argument("--source", default="keyword")
     p_hist.add_argument("--summarize", action="store_true", help="Also generate AI summaries")
+    p_hist.add_argument("--no-build", action="store_true", help="Only fetch to daily/, skip build (avoid collision)")
     p_hist.set_defaults(func=cmd_historical)
 
     # digest-weekly

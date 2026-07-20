@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Plant Virus Literature Fetcher — multi-query, categorized PubMed crawler."""
 
-import json, os, sys, time, argparse
+import json, os, sys, time, argparse, re
 from datetime import datetime, timedelta
 from pathlib import Path
 from urllib.request import urlopen, Request
@@ -46,7 +46,7 @@ def efetch(pmids, api_key=""):
     """POST-based EFetch."""
     if not pmids:
         return []
-    params = {"db": "pubmed", "id": ",".join(pmids), "retmode": "xml", "rettype": "abstract"}
+    params = {"db": "pubmed", "id": ",".join(pmids), "retmode": "xml"}
     if api_key:
         params["api_key"] = api_key
     req = Request("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
@@ -65,10 +65,14 @@ def efetch(pmids, api_key=""):
             try:
                 pmid = art.findtext(".//PMID", "")
                 title = art.findtext(".//ArticleTitle", "")
-                abstract = art.findtext(".//Abstract/AbstractText", "")
-                if not abstract:
-                    texts = art.findall(".//Abstract/AbstractText")
-                    abstract = " ".join(t.text or "" for t in texts if t.text)
+                # Always collect ALL AbstractText elements (structured abstracts)
+                abs_parts = []
+                for at in art.findall(".//Abstract/AbstractText"):
+                    label = at.get("Label", "")
+                    txt = "".join(at.itertext()).strip()
+                    if txt:
+                        abs_parts.append(f"[{label}] {txt}" if label else txt)
+                abstract = " ".join(abs_parts) if abs_parts else ""
                 journal = art.findtext(".//Journal/Title", "")
                 pub_date = _extract_date(art)
                 year = pub_date.year if pub_date else 0
@@ -87,7 +91,7 @@ def efetch(pmids, api_key=""):
                         doi = aid.text or ""
                         break
                 articles.append({
-                    "pmid": pmid, "title": title, "abstract": abstract[:2000],
+                    "pmid": pmid, "title": title, "abstract": abstract,
                     "journal": journal, "year": year,
                     "pub_date": pub_date.strftime("%Y-%m-%d") if pub_date else "",
                     "first_author": authors[0] if authors else "",
@@ -126,7 +130,7 @@ def main():
     p.add_argument("--days", type=int, default=90)
     p.add_argument("--start-date", default=None, help="Start date YYYY-MM-DD (overrides --days)")
     p.add_argument("--end-date", default=None, help="End date YYYY-MM-DD (defaults to today)")
-    p.add_argument("--max-per-query", type=int, default=30)
+    p.add_argument("--max-per-query", type=int, default=200)
     p.add_argument("--output", default=str(DEFAULT_OUT))
     p.add_argument("--api-key", default=os.environ.get("NCBI_API_KEY", ""))
     p.add_argument("--categories", default="", help="Comma-separated categories, empty=all")

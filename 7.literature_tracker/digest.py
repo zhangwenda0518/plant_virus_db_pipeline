@@ -8,6 +8,7 @@ from collections import defaultdict, Counter
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import PAPERS_JSON, WEB_DATA_DIR
 from summarize_papers import summarize_digest
+import os as _os
 
 WEEKLY_DIR = WEB_DATA_DIR / "weekly"
 MONTHLY_DIR = WEB_DATA_DIR / "monthly"
@@ -44,8 +45,10 @@ def _top_papers(papers: list, n: int = 10) -> list:
         jq = {"high": 3, "medium": 2, "other": 1}.get(p.get("journal_quality", "other"), 1)
         return lvl * 10 + jq
     ranked = sorted(papers, key=score, reverse=True)[:n]
-    fields = ["pmid", "doi", "title", "journal", "year", "categories",
-              "summary_zh", "relevance_level", "journal_quality", "source"]
+    fields = ["pmid", "doi", "title", "abstract", "journal", "year", "pub_date",
+              "authors", "first_author", "categories",
+              "virus_name", "taxonomy", "host_plant", "location", "results",
+              "relevance_level", "journal_quality", "source"]
     return [{k: p.get(k, "") for k in fields} for p in ranked]
 
 
@@ -105,7 +108,10 @@ def build_weekly(weeks_back: int = 8, use_ai: bool = True, since: str = "2024-01
         ai_summary = ""
         if use_ai:
             print(f"  {wk}: {len(wp)} papers, generating AI digest...")
-            ai_summary = summarize_digest(wp, period="周")
+            ai_summary = summarize_digest(wp, period="周",
+                model=_os.environ.get("LLM_MODEL","gpt-4o-mini"),
+                base_url=_os.environ.get("LLM_BASE_URL",""),
+                api_key=_os.environ.get("LLM_API_KEY",""))
 
         digest = {
             "week": wk,
@@ -160,7 +166,10 @@ def build_monthly(start: str = "2020-01", end: str = None, use_ai: bool = True):
             ai_summary = ""
             if use_ai:
                 print(f"  {mkey}: {len(mp)} papers, generating AI digest...")
-                ai_summary = summarize_digest(mp, period="月")
+                ai_summary = summarize_digest(mp, period="月",
+                    model=_os.environ.get("LLM_MODEL","gpt-4o-mini"),
+                    base_url=_os.environ.get("LLM_BASE_URL",""),
+                    api_key=_os.environ.get("LLM_API_KEY",""))
 
             digest = {
                 "month": mkey,

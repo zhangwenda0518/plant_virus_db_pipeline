@@ -1,248 +1,78 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Plant Virus Reference Database</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Plant Virus Database Platform</title>
 <style>
-*{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;padding:0;background:#f5f5f5;color:#333}
-nav{background:#1a5276;color:#fff;padding:0 24px;display:flex;align-items:center;gap:4px;height:52px;position:sticky;top:0;z-index:10}
-nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 18px;font-size:14px;border-radius:6px 6px 0 0}
-nav a:hover,nav a.active{background:rgba(255,255,255,.15);color:#fff}
-nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0}
-.main{max-width:1400px;margin:0 auto;padding:0 20px}
-.hero{background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;padding:40px 32px;border-radius:0 0 12px 12px;margin-bottom:24px}
-.hero h1{margin:0 0 8px;font-size:26px}
-.hero p{margin:0;opacity:.9;font-size:14px;line-height:1.6;max-width:900px}
-.hero p a{color:#fff;text-decoration:underline}
-.intro{background:#fff;padding:24px 28px;border-radius:8px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.06);line-height:1.7}
-.intro h2{margin:0 0 10px;font-size:18px;color:#1a5276}
-.intro p{margin:0 0 8px;font-size:14px;color:#555}
-.pipeline{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}
-.pipe-step{background:#eaf2f8;color:#1a5276;padding:6px 14px;border-radius:4px;font-size:13px;font-weight:600}
-.pipe-arrow{color:#2e86c1;font-weight:700;padding:6px 2px}
-.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:20px}
-.kpi{background:#fff;padding:18px 12px;border-radius:8px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.kpi .val{font-size:26px;font-weight:700;color:#1a5276}
-.kpi .lbl{font-size:11px;color:#888;margin-top:4px}
-.card{background:#fff;padding:16px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-bottom:16px}
-.card h3{margin:0 0 12px;font-size:14px;color:#1a5276}
-canvas{max-height:320px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-.footer{text-align:center;padding:20px;color:#999;font-size:12px}
-.footer a{color:#2e86c1;text-decoration:none}
-.loading{text-align:center;padding:80px;color:#666;font-size:16px}
-.section-title{font-size:18px;color:#1a5276;margin:24px 0 12px}
-#ai-chat-btn{position:fixed;bottom:24px;right:24px;width:48px;height:48px;background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;z-index:9999;box-shadow:0 4px 12px rgba(26,82,118,.4);transition:transform .2s}#ai-chat-btn:hover{transform:scale(1.1)}#ai-chat-panel{position:fixed;bottom:84px;right:24px;width:400px;max-height:520px;background:#fff;border:1px solid #dee2e6;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:9998;display:none;flex-direction:column;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif}.chat-header{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-bottom:1px solid #eee;border-radius:12px 12px 0 0;background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;font-weight:600;font-size:14px}.chat-header button{background:none;border:none;color:#fff;font-size:18px;cursor:pointer}.chat-msgs{flex:1;overflow-y:auto;padding:10px;max-height:360px}.chat-msg{margin:4px 0;padding:8px 12px;border-radius:10px;font-size:13px;line-height:1.5;max-width:85%;word-break:break-word}.chat-msg.user{background:#1a5276;color:#fff;margin-left:auto}.chat-msg.ai{background:#eaf2f8;color:#333}.chat-msg.system{background:#fff3cd;color:#856404;text-align:center;max-width:100%;font-size:11px}.chat-input-row{display:flex;gap:8px;padding:10px 12px;border-top:1px solid #eee}.chat-input-row input{flex:1;padding:8px 12px;border:1px solid #dee2e6;border-radius:20px;font-size:13px;outline:none}.chat-input-row button{padding:6px 16px;background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;border:none;border-radius:20px;font-size:13px;cursor:pointer}.ai-typing{display:flex;gap:4px;padding:8px 12px}.ai-typing span{width:6px;height:6px;background:#999;border-radius:50%;animation:aiBounce 1.4s infinite ease-in-out}.ai-typing span:nth-child(2){animation-delay:.2s}.ai-typing span:nth-child(3){animation-delay:.4s}.preset-qs{display:flex;flex-wrap:wrap;gap:4px;padding:6px 10px;border-bottom:1px solid #eee;background:#fafafa}.preset-q{background:#fff;border:1px solid #dee2e6;border-radius:14px;padding:3px 10px;font-size:11px;cursor:pointer;color:#555;white-space:nowrap;max-width:180px;overflow:hidden;text-overflow:ellipsis;transition:all .2s}.preset-q:hover{background:#1a5276;color:#fff;border-color:#1a5276}@keyframes aiBounce{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
-</style>
-</head>
-<body>
-<nav>
-  <a class="brand" href="/">Plant Virus DB</a>
-  <a href="index.html" class="active">Dashboard</a>
-  <a href="segmented.html">Segmented</a>
-  <a href="nonsegmented.html">Non-Segmented</a>
-  <a href="submit.html">Submit</a>
-  <a href="photos.html">Photos</a>
-  <a href="download.html">Download</a>
-  <span style="border-left:1px solid rgba(255,255,255,.2);margin:0 4px"></span>
-  <a href="/explorer/">浏览器</a>
-  <a href="/virus/">病毒详情</a>
-  <a href="/primers/">引物</a>
-  <a href="/vector/">媒介</a>
-  <a href="/te/">TE·EVE</a>
-  <a href="/metabuli/">Metabuli</a>
-  <a href="/literature/">文献</a>
-  <a href="/knowledge/">知识</a>
-</nav>
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;margin:0;background:#f4f6f8;color:#2c3e50}
+.hero{background:linear-gradient(135deg,#134e6f 0%,#1a5276 45%,#2e86c1 100%);color:#fff;padding:48px 24px 40px;text-align:center}
+.hero h1{margin:0 0 8px;font-size:30px;letter-spacing:.5px}
+.hero .en{font-size:15px;opacity:.8;font-weight:400;letter-spacing:1px}
+.hero p{margin:16px auto 0;max-width:760px;font-size:14px;opacity:.9;line-height:1.7}
+.stats{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.stats .s{text-align:center}
+.stats .s b{display:block;font-size:24px;font-weight:700}
+.stats .s span{font-size:11px;opacity:.8}
+.wrap{max-width:1160px;margin:-26px auto 40px;padding:0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.card{background:#fff;border-radius:14px;padding:22px 20px;text-decoration:none;color:inherit;box-shadow:0 2px 10px rgba(20,60,90,.06);border:1px solid #eef2f5;transition:.18s;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(20,60,90,.14);border-color:#bcd8e8}
+.card .ic{font-size:32px;margin-bottom:12px}
+.card h3{margin:0 0 2px;font-size:17px;color:#1a5276}
+.card .path{font-family:'SF Mono',Consolas,monospace;font-size:12px;color:#2e86c1;margin-bottom:10px}
+.card p{margin:0;font-size:13px;color:#5a6b7b;line-height:1.6;flex:1}
+.card .go{margin-top:14px;font-size:12px;color:#2e86c1;font-weight:600}
+.sec{margin:34px 0 14px;font-size:14px;color:#8a99a8;font-weight:600;letter-spacing:.5px;border-left:3px solid #2e86c1;padding-left:10px}
+footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
+</style></head><body>
+
 <div class="hero">
-  <h1>Plant Virus Reference Database</h1>
-  <p>All plant virus sequences from NCBI GenBank, cross-referenced with ICTV VMR MSL41. Covers viruses, viroids, satellites and unclassified plant-associated sequences with host, taxonomy, genome type and collection metadata.</p>
-</div>
-<div class="main">
-  <div class="intro">
-    <h2>About This Database</h2>
-    <p>Curated plant virus sequences integrating NCBI GenBank records with authoritative ICTV taxonomy. The pipeline performs:</p>
-    <div class="pipeline">
-      <span class="pipe-step">Host Classify</span><span class="pipe-arrow">→</span>
-      <span class="pipe-step">ICTV Validate</span><span class="pipe-arrow">→</span>
-      <span class="pipe-step">Segmented Detect</span><span class="pipe-arrow">→</span>
-      <span class="pipe-step">Taxonomy Dedup</span><span class="pipe-arrow">→</span>
-      <span class="pipe-step">SeqKit rmdup</span><span class="pipe-arrow">→</span>
-      <span class="pipe-step">MMseqs2 0.98</span><span class="pipe-arrow">→</span>
-      <span class="pipe-step">vclust Cluster</span>
-    </div>
-  </div>
-  <div class="loading" id="loading">Loading data...</div>
-  <div id="content" style="display:none">
-    <div class="kpis" id="kpis"></div>
-    <h3 class="section-title">Sequence Overview</h3>
-    <div class="grid">
-      <div class="card"><h3>Sequence Types</h3><canvas id="chartSeq"></canvas></div>
-      <div class="card"><h3>Length Distribution</h3><canvas id="chartLen"></canvas></div>
-    </div>
-    <h3 class="section-title">Host &amp; Taxonomy</h3>
-    <div class="grid">
-      <div class="card"><h3>Top 20 Host Plants</h3><canvas id="chartHost"></canvas></div>
-      <div class="card"><h3>Top 20 Virus Families (Ref)</h3><canvas id="chartFam"></canvas></div>
-    </div>
-    <h3 class="section-title">Temporal Distribution</h3>
-    <div class="grid">
-      <div class="card"><h3>Collection Year</h3><canvas id="chartCollect"></canvas></div>
-      <div class="card"><h3>Release Year</h3><canvas id="chartRelease"></canvas></div>
-    </div>
-    <h3 class="section-title">Genome Properties</h3>
-    <div class="grid">
-      <div class="card"><h3>Genome Type</h3><canvas id="chartMol"></canvas></div>
-      <div class="card"><h3>Topology</h3><canvas id="chartTopo"></canvas></div>
-    </div>
-    <h3 class="section-title">Primer Design Results</h3>
-    <div id="primer-section"><div class="loading">Loading primer data...</div></div>
-    <h3 class="section-title">Virus Host Range</h3>
-    <div id="host-section"><div class="loading">Loading host data...</div></div>
+  <h1>Plant Virus Database Platform</h1>
+  <div class="en">Plant Virus Database Platform</div>
+  <p>Comprehensive plant virus reference database, primers, literature, knowledge base, vector-host-virus interaction network, and bioinformatics analysis.</p>
+  <div class="stats">
+    <div class="s"><b>11</b><span>Modules</span></div>
+    <div class="s"><b>8,465</b><span>Reference Records</span></div>
+    <div class="s"><b>1,806</b><span>Vector-Host Pairs</span></div>
+    <div class="s"><b>910 MB</b><span>Metabuli Database</span></div>
   </div>
 </div>
-<div class="footer">Plant Virus Reference Database · <a href="https://github.com/zhangwenda0518/plant_virus_db_pipeline">GitHub</a></div>
 
-<script>
-(async function() {
-  const load = async p => { try { const r = await fetch(p); if (!r.ok) return null; return (await r.text()).split('\n'); } catch(e) { return null; } };
-  const [fullTxt, refTxt] = await Promise.all([
-    fetch('data/Plant_Virus_Full.Info.tsv?v=2').then(r => r.ok ? r.text() : null).catch(() => null),
-    fetch('data/Plant_Virus_Ref.Info.tsv?v=2').then(r => r.ok ? r.text() : null).catch(() => null)
-  ]);
-  if (!fullTxt && !refTxt) { document.getElementById('loading').textContent = 'No data found'; return; }
-  const parseTSV = t => new Promise(resolve => Papa.parse(t, { header: true, skipEmptyLines: true, delimiter: '\t', complete(r) { resolve(r.data); } }));
-  const [fullData, refData] = await Promise.all([
-    fullTxt ? parseTSV(fullTxt) : null,
-    refTxt ? parseTSV(refTxt) : null
-  ]);
-  const fd = fullData || refData; // primary source for charts
-  const rd = refData; // for KPIs
-  const C = ['#2e86c1','#e74c3c','#27ae60','#f39c12','#8e44ad','#1abc9c','#e67e22','#2980b9','#c0392b','#16a085'];
-  const f=(d,n)=>d.map(r=>r[n]||'').filter(Boolean);
-  const top=(a,n)=>{const m={};a.forEach(v=>{m[v]=(m[v]||0)+1});return Object.entries(m).sort((a,b)=>b[1]-a[1]).slice(0,n);};
-  const taxCol=fd[0]&&fd[0].Taxid!=null?'Taxid':'taxid';
-  const taxids=new Set(fd.map(r=>r[taxCol]||'').filter(Boolean)).size;
+<div class="wrap">
 
-    // KPIs: refData has Category/Family/Genus; fullData for seqs/taxids
-    const kpi=(l,v)=>`<div class="kpi"><div class="val">${v.toLocaleString()}</div><div class="lbl">${l}</div></div>`;
-    const rf = (fld, fallback) => rd && rd[0] && rd[0][fld] != null ? fld : (fallback || null);
-    const fams = rd ? new Set(f(rd, 'VMR_Family')).size : null;
-    const gens = rd ? new Set(f(rd, 'VMR_Genus')).size : null;
-    const segN = rd ? rd.filter(r => (r.Category||'').startsWith('Segmented')).length : null;
-    const nsN = rd ? rd.filter(r => (r.Category||'').startsWith('NonSegmented')).length : null;
-    document.getElementById('kpis').innerHTML =
-      kpi('Sequences',fd.length) + kpi('TaxIDs',taxids) +
-      (fams ? kpi('Families',fams) : '') + (gens ? kpi('Genera',gens) : '') +
-      (nsN != null ? kpi('Non-Segmented',nsN) : '') + (segN != null ? kpi('Segmented',segN) : '');
+  <div class="sec">Core Databases</div>
+  <div class="grid">
+    <a class="card" href="/reference/"><div class="ic">&#128218;</div><h3>Reference DB</h3><div class="path">/reference/</div><p>Curated plant virus reference sequences: FASTA download, metadata, segmented/non-segmented, genome visualization.</p><div class="go">&#8594;  </div></a>
+    <a class="card" href="/explorer/"><div class="ic">&#128202;</div><h3>Virus Explorer</h3><div class="path">/explorer/</div><p>Interactive virus exploration with timeline, global distribution, sequence comparison, and taxonomy browsing.</p><div class="go">&#8594;  </div></a>
+    <a class="card" href="/primers/"><div class="ic">&#129514;</div><h3>Primer Database</h3><div class="path">/primers/</div><p>Plant virus diagnostic primer collection with target species, melting temperature, and validation status.</p><div class="go">&#8594;  </div></a>
+  </div>
 
-    // Sequence Types
-    const st={};fd.forEach(r=>{const v=(r.Sequence_Type||'Unknown').replace('/ICTV','');st[v]=(st[v]||0)+1;});
-    new Chart(document.getElementById('chartSeq'),{type:'bar',data:{labels:Object.keys(st),datasets:[{data:Object.values(st),backgroundColor:C}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
+  <div class="sec">Vector Ecology</div>
+  <div class="grid">
+    <a class="card" href="/vector/"><div class="ic">&#129433;</div><h3>Vector-Host DB</h3><div class="path">/vector/</div><p>Insect vector and plant host interaction database with transmission mode, acquisition/inoculation periods.</p><div class="go">&#8594;  </div></a>
+    <a class="card" href="/te/"><div class="ic">&#129516;</div><h3>TE &amp; EVE</h3><div class="path">/te/</div><p>Plant transposable elements and endogenous viral elements (EVEs) from U-RVDB v32.0 with MMseqs2 clustering.</p><div class="go">&#8594;  </div></a>
+    <a class="card" href="/metabuli/"><div class="ic">&#128300;</div><h3>Metabuli</h3><div class="path">/metabuli/</div><p>Upload/assemble contigs for plant virus detection: reads to reports, 8 taxonomy ranks, Krona/Sankey visualization.</p><div class="go">&#8594;  </div></a>
+  </div>
 
-    // Host
-    const th=top(f(fd,'Host'),20);
-    new Chart(document.getElementById('chartHost'),{type:'bar',data:{labels:th.map(x=>x[0]),datasets:[{data:th.map(x=>x[1]),backgroundColor:'#f39c12'}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
+  <div class="sec">Symptoms</div>
+  <div class="grid">
+    <a class="card" href="/photos/"><div class="ic">&#127807;</div><h3>Symptom Gallery</h3><div class="path">/photos/</div><p>925 plant virus disease symptom photos, filterable by host/tissue/symptom/position, EPPO Global Database.</p><div class="go">&#8594;  </div></a>
+  </div>
 
-    // Families from ref data
-    if (rd) {
-      const tf = top(f(rd, 'VMR_Family'), 20);
-      new Chart(document.getElementById('chartFam'),{type:'bar',data:{labels:tf.map(x=>x[0]),datasets:[{data:tf.map(x=>x[1]),backgroundColor:'#2e86c1'}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});
-    }
+  <div class="sec">Prediction &amp; Analysis</div>
+  <div class="grid">
+    <a class="card" href="/genes/gene_browser.html"><div class="ic">&#129516;</div><h3>Plant Immune &amp; sRNA Gene Atlas</h3><div class="path">/genes/</div><p>RefPlantNLR 415 validated NLRs (73 spp.) + 11,780 sRNA genes + 3,996 UPS + 83,166 miRNAs + 322K vsiRNAs + 59 antiviral NLR effectors.</p><div class="go">&#8594;  </div></a>
+    <a class="card" href="/pamirdb/"><div class="ic">&#128300;</div><h3>PV-miRNA (PAmiRDB)</h3><div class="path">/pamirdb/</div><p>Plant virus miRNA target prediction workbench. 3-algorithm consensus (miRanda+psRNATarget+RNAhybrid), 402 species x 42 virus.</p><div class="go">&#8594;  </div></a>
+  </div>
 
-    // Molecule
-    const mol={};fd.forEach(r=>{const v=(r.Molecule_type||'Unknown').replace(/[()]/g,'');mol[v]=(mol[v]||0)+1;});
-    new Chart(document.getElementById('chartMol'),{type:'doughnut',data:{labels:Object.keys(mol),datasets:[{data:Object.values(mol),backgroundColor:C}]}});
+  <div class="sec">Literature &amp; Knowledge</div>
+  <div class="grid">
+    <a class="card" href="/literature/"><div class="ic">&#128240;</div><h3>Literature Tracker</h3><div class="path">/literature/</div><p>PubMed plant virus literature auto-tracking, weekly classification, AI Chinese summaries.</p><div class="go">&#8594;  </div></a>
+    <a class="card" href="/knowledge/"><div class="ic">&#128172;</div><h3>Knowledge RAG</h3><div class="path">/knowledge/</div><p>DPV and viroidDB backed AI Q&amp;A assistant, supporting intelligent search of plant virology knowledge.</p><div class="go">&#8594;  </div></a>
+  </div>
 
-    // Dates
-    const db=arr=>{const m={};arr.forEach(v=>{const y=String(v||'').match(/\b(19|20)\d{2}\b/);if(y)m[y[0]]=(m[y[0]]||0)+1});return m;};
-    const mkDate=(id,bins)=>{const keys=Object.keys(bins).sort();new Chart(document.getElementById(id),{type:'bar',data:{labels:keys,datasets:[{data:keys.map(k=>bins[k]),backgroundColor:'#f39c12'}]},options:{plugins:{legend:{display:false}},scales:{x:{title:{display:true,text:'Year'}}}}})};
-    mkDate('chartCollect',db(f(fd,'Collection_Date')));
-    mkDate('chartRelease',db(f(fd,'Release_Date')));
-
-    // Topology
-    const topo={};fd.forEach(r=>{const v=r.Topology||'Unknown';topo[v]=(topo[v]||0)+1;});
-    new Chart(document.getElementById('chartTopo'),{type:'doughnut',data:{labels:Object.keys(topo),datasets:[{data:Object.values(topo),backgroundColor:C.slice(0,3)}]}});
-
-    // Length
-    const lens=fd.map(r=>parseInt(r.Length)||0).filter(v=>v>0&&v<20000);
-    const bins={},step=1000;lens.forEach(v=>{const b=Math.floor(v/step)*step;bins[b]=(bins[b]||0)+1});
-    const bks=Object.keys(bins).map(Number).sort((a,b)=>a-b);
-    new Chart(document.getElementById('chartLen'),{type:'bar',data:{labels:bks.map(b=>`${b}-${b+step-1}`),datasets:[{data:bks.map(b=>bins[b]),backgroundColor:'#27ae60'}]},options:{plugins:{legend:{display:false}},scales:{x:{title:{display:true,text:'Length (bp)'}}}}});
-
-    document.getElementById('loading').style.display='none';
-    document.getElementById('content').style.display='';
-
-    // Load primer data
-    (async function(){
-      const psum = await fetch('data/primers/primer_summary.tsv').then(r=>r.ok?r.text():null).catch(()=>null);
-      const ptop = await fetch('data/primers/primer_top_species.tsv').then(r=>r.ok?r.text():null).catch(()=>null);
-      const pel = document.getElementById('primer-section');
-      if (!psum) { pel.innerHTML='<div class=\"card\"><p style=\"color:#999;padding:16px\">Primer data not yet synced. Run primer design pipeline and sync primer_reference.tsv to docs/data/primers/.</p></div>'; return; }
-      const parse = t => Papa.parse(t,{header:true,skipEmptyLines:true,delimiter:'	'}).data;
-      const sd = parse(psum), td = ptop ? parse(ptop) : [];
-      const metrics = {}; sd.forEach(r=>{ if(r.Metric) metrics[r.Metric]=r.Value; });
-      pel.innerHTML = '<div class=\"kpis\" style=\"display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:16px\">' +
-        '<div class=\"kpi\"><div class=\"val\">'+(metrics.Total_Primers||0)+'</div><div class=\"lbl\">Total Primers</div></div>' +
-        '<div class=\"kpi\"><div class=\"val\">'+(metrics.Total_Species||0)+'</div><div class=\"lbl\">Species Covered</div></div>' +
-        '<div class=\"kpi\"><div class=\"val\">'+(metrics.PCR_Primers||0)+'</div><div class=\"lbl\">PCR</div></div>' +
-        '<div class=\"kpi\"><div class=\"val\">'+(metrics.qPCR_Primers||0)+'</div><div class=\"lbl\">qPCR</div></div>' +
-        '<div class=\"kpi\"><div class=\"val\">'+(metrics.Degenerate_Primers||0)+'</div><div class=\"lbl\">Degenerate</div></div>' +
-        '<div class=\"kpi\"><div class=\"val\">'+(metrics.Tiled_Primers||0)+'</div><div class=\"lbl\">Tiled</div></div></div>' +
-        (td.length ? '<div class=\"card\"><h3>Top 20 Species by Primer Count</h3><table style=\"font-size:12px;width:100%\"><thead><tr><th>Species</th><th>Primers</th><th>Family</th></tr></thead><tbody>' +
-        td.slice(0,20).map(r=>'<tr><td><i>'+r.Species+'</i></td><td>'+r.Num_Primers+'</td><td>'+r.Family+'</td></tr>').join('') +
-        '</tbody></table></div>' : '');
-    })();
-
-    // Load host range data
-    (async function(){
-      const hsum = await fetch('data/host_analysis/virus_host_range_summary.tsv').then(r=>r.ok?r.text():null).catch(()=>null);
-      const hel = document.getElementById('host-section');
-      if (!hsum) { hel.innerHTML='<div class=\"card\"><p style=\"color:#999;padding:16px\">Host analysis not yet synced. Run host_classify pipeline and sync probability tables to docs/data/host_analysis/.</p></div>'; return; }
-      const hd = Papa.parse(hsum,{header:true,skipEmptyLines:true,delimiter:'	'}).data;
-      hel.innerHTML = '<div class=\"card\"><div class=\"table-responsive\"><table style=\"font-size:12px;width:100%\"><thead><tr><th>Family</th><th>Species</th><th>Unique Hosts</th><th>Top Hosts</th></tr></thead><tbody>' +
-        hd.slice(0,20).map(r=>'<tr><td><strong>'+r.Family+'</strong></td><td>'+r.Num_Species+'</td><td>'+r.Total_Hosts+'</td><td style=\"max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap\">'+ (r.Host_List||'').substring(0,120)+'</td></tr>').join('') +
-        '</tbody></table></div></div>';
-    })();
-})();
-</script>
-</script>
-
-<button id="ai-chat-btn" onclick="toggleChat()" title="AI助手">?</button>
-<div id="ai-chat-panel">
-<div class="chat-header"><span>RefDB AI助手</span><div><button onclick="toggleSettings()" style="background:none;border:none;color:#fff;font-size:14px;cursor:pointer;margin-right:8px" title="设置">⚙</button><button onclick="toggleChat()">×</button></div></div>
-<div id="ai-settings-inline" style="display:none;padding:10px 12px;border-bottom:1px solid #eee;background:#f8f9fa">
-<div style="display:flex;gap:6px;flex-wrap:wrap">
-<input id="ai-api-key" type="password" placeholder="API Key (sk-...)" style="flex:1;min-width:120px;padding:5px 8px;border:1px solid #dee2e6;border-radius:4px;font-size:11px">
-<input id="ai-model" value="deepseek-chat" style="width:120px;padding:5px 8px;border:1px solid #dee2e6;border-radius:4px;font-size:11px">
-<button onclick="saveAISettings()" style="padding:5px 10px;background:#1a5276;color:#fff;border:none;border-radius:4px;font-size:11px;cursor:pointer">保存</button>
-</div></div>
-<div class="preset-qs" id="preset-qs">
-<button class="preset-q" onclick="askPreset('植物病毒有多少个科？哪些科最大？')">植物病毒科分类</button>
-<button class="preset-q" onclick="askPreset('分节段病毒和非分节段病毒有什么区别？')">分节段vs非分节段</button>
-<button class="preset-q" onclick="askPreset('植物病毒的主要宿主类型有哪些？')">病毒宿主类型</button>
-<button class="preset-q" onclick="askPreset('dsDNA和ssRNA病毒在植物中各占多少？')">基因组类型分布</button>
 </div>
 
-<div class="chat-msgs" id="chat-msgs"><div class="chat-msg system">你好！你好！我是RefDB AI助手。可以直接点下方预设问题，或输入你的问题。</div></div>
-<div class="chat-input-row">
-<input id="chat-input" placeholder="输入问题..." onkeydown="if(event.key==='Enter')sendMsg()">
-<button onclick="sendMsg()">发送</button>
-</div></div>
-<script>
-var chatConv=[],chatOpen=false;function askPreset(q){document.getElementById("chat-input").value=q;sendMsg()}
-function toggleChat(){chatOpen=!chatOpen;document.getElementById("ai-chat-panel").style.display=chatOpen?"flex":"none"}
-function toggleSettings(){var p=document.getElementById("ai-settings-inline");p.style.display=p.style.display==="none"?"block":"none"}
-function saveAISettings(){localStorage.setItem("ai_api_key",document.getElementById("ai-api-key").value);localStorage.setItem("ai_model",document.getElementById("ai-model").value);document.getElementById("ai-settings-inline").style.display="none";addChatMsg("system","设置已保存")}
-(function(){var k=localStorage.getItem("ai_api_key");if(k)document.getElementById("ai-api-key").value=k;var m=localStorage.getItem("ai_model");if(m)document.getElementById("ai-model").value=m})();
-function addChatMsg(role,text){var d=document.createElement("div");d.className="chat-msg "+role;d.textContent=text;document.getElementById("chat-msgs").appendChild(d);document.getElementById("chat-msgs").scrollTop=document.getElementById("chat-msgs").scrollHeight}
-function showTyping(){var d=document.createElement("div");d.className="ai-typing";d.id="typing-indicator";d.innerHTML="<span></span><span></span><span></span>";document.getElementById("chat-msgs").appendChild(d)}
-function hideTyping(){var t=document.getElementById("typing-indicator");if(t)t.remove()}
-async function sendMsg(){var inp=document.getElementById("chat-input");var msg=inp.value.trim();if(!msg)return;addChatMsg("user",msg);inp.value="";chatConv.push({role:"user",content:msg});var key=localStorage.getItem("ai_api_key")||"";// Server keyshowTyping();try{var resp=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:msg,api_key:key,api_url:"https://api.deepseek.com/v1/chat/completions",model:localStorage.getItem("ai_model")||"deepseek-chat",conversation:chatConv.slice(-8),context:"reference_db"})});var data=await resp.json();hideTyping();addChatMsg("ai",data.reply);chatConv.push({role:"assistant",content:data.reply})}catch(e){hideTyping();addChatMsg("system","请求失败: "+e.message)}}
-</script>
-
-</body>
-</html>
+<footer>Plant Virus Database Platform &middot; Plant Virus Database Platform</footer>
+<script src="/reference/i18n.js"></script>
+<script>PVDB_i18n.init({navSelector:'nav.__none__'});</script>
+</body></html>

@@ -95,7 +95,7 @@ def relevance_score(paper: dict, categories: dict) -> dict:
     }
 
 
-def build(from_daily: bool = True, journal_filter: bool = False) -> dict:
+def build(from_daily: bool = True, journal_filter: bool = False, ai_verified: bool = False) -> dict:
     """Merge all papers, compute stats, write web data files."""
     print("[1/4] Loading master database...")
     master = []
@@ -150,6 +150,12 @@ def build(from_daily: bool = True, journal_filter: bool = False) -> dict:
     # Sort by year desc
     master.sort(key=lambda x: x.get("year", 0) or 0, reverse=True)
 
+    # AI-verified filter: only keep papers with virus_name from Phase 2
+    if ai_verified:
+        before = len(master)
+        master = [p for p in master if p.get("virus_name") and p.get("virus_name") != "未提及"]
+        print(f"  AI-verified filter: {before} -> {len(master)} papers")
+
     # Journal lookup
     print("[2/4] Journal quality lookup...")
     journals = load_journal_info()
@@ -195,8 +201,21 @@ def build(from_daily: bool = True, journal_filter: bool = False) -> dict:
     web_fields = [
         "pmid", "doi", "title", "abstract", "journal", "year", "pub_date",
         "first_author", "authors", "categories", "source", "source_strategy",
-        "summary_zh", "innovation", "limitation", "study_object", "disease",
-        "sample_size", "method_zh", "contributions", "ai_done",
+        # Phase2 extraction - common
+        "virus_name", "taxonomy", "symptoms", "host_plant", "location",
+        "sample_date", "vector", "transmission", "overview", "methods",
+        "results", "discussion", "ai_done", "is_review",
+        # Phase2 extraction - category-specific
+        "genome_type", "genome_size", "is_novel",
+        "detection_technique", "target_molecule", "sensitivity", "field_deployable",
+        "resistance_gene", "gene_family", "resistance_mechanism",
+        "interaction_type", "viral_factor", "host_factor", "defense_pathway",
+        "control_strategy", "method_category", "efficacy",
+        "vector_species", "vector_type", "transmission_mode",
+        "application_type", "application_advantage",
+        "virus_groups", "ecosystem", "sequencing_approach",
+        "molecular_finding", "phylogenetic_context",
+        # Build fields
         "relevance_score", "relevance_level", "matched_topic",
         "journal_quality", "journal_jcr", "added_date", "keyword_hits",
     ]
@@ -230,15 +249,16 @@ def build(from_daily: bool = True, journal_filter: bool = False) -> dict:
     with open(WEB_DATA_DIR / "stats.json", "w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
 
-    # Trend milestones — auto-detect New_Virus + first-report + high-relevance papers
+    # Trend milestones — only include papers with AI-extracted virus_name
     milestones = []
     for p in master:
         cats = p.get("categories", [])
         title = (p.get("title") or "")
+        virus = p.get("virus_name", "")
         is_new = "New_Virus" in cats
         is_first = "first report" in title.lower() or "novel" in title.lower()
-        is_high = p.get("relevance_level") == "high" and p.get("journal_quality") == "high"
-        if is_new or (is_first and is_high):
+        has_ai = virus and virus != "未提及" and p.get("overview")
+        if has_ai and (is_new or is_first):
             milestones.append({
                 "date": p.get("pub_date", "") or (str(p.get("year", "")) + "-01-01"),
                 "year": p.get("year", 0),
@@ -247,7 +267,7 @@ def build(from_daily: bool = True, journal_filter: bool = False) -> dict:
                 "pmid": p.get("pmid", ""),
                 "doi": p.get("doi", ""),
                 "journal": p.get("journal", ""),
-                "note": p.get("summary_zh", "") if p.get("ai_done") else "",
+                "note": p.get("overview", "") or p.get("results", ""),
                 "type": "new_virus" if is_new else "milestone",
             })
     milestones.sort(key=lambda x: x.get("date", ""), reverse=True)
@@ -267,8 +287,10 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--no-daily", action="store_true", help="Skip merging daily files")
     p.add_argument("--journal-filter", action="store_true", help="Filter low-quality journals")
+    p.add_argument("--ai-verified", action="store_true", help="Only include AI-extracted papers (has virus_name)")
     args = p.parse_args()
-    build(from_daily=not args.no_daily, journal_filter=args.journal_filter)
+    build(from_daily=not args.no_daily, journal_filter=args.journal_filter,
+          ai_verified=args.ai_verified)
 
 
 if __name__ == "__main__":

@@ -52,8 +52,9 @@ def merge_paper(existing: dict, new: dict) -> dict:
         (new.get("associated_species") or [])
     ), key=lambda x: str(x))
     # Keep AI summary if exists
-    for ai_field in ("summary_zh", "innovation", "limitation", "study_object",
-                     "disease", "sample_size", "method_zh", "contributions"):
+    for ai_field in ("virus_name", "taxonomy", "symptoms", "host_plant",
+                     "location", "sample_date", "vector", "transmission",
+                     "overview", "methods", "results", "discussion", "is_review"):
         if existing.get(ai_field) and not new.get(ai_field):
             merged[ai_field] = existing[ai_field]
     if existing.get("ai_done") and not new.get("ai_done"):

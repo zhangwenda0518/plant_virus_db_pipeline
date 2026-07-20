@@ -29,6 +29,7 @@ jobs:
           cd 7.literature_tracker
           python pipeline.py auto --days 7 --source keyword,elink
           python pipeline.py digest-weekly --weeks-back 8
+          python pipeline.py digest-monthly --start $(date -d '2 months ago' +%Y-%m) --end $(date +%Y-%m)
 
       - name: Deploy to docs/literature
         run: |
