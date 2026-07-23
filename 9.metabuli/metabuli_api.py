@@ -74,8 +74,19 @@ def _load_genus_lens(path):
 TAXLIN = _load_taxlin(Path(__file__).parent / "taxid_lineage.tsv")
 GENUS_LENS = _load_genus_lens(Path(__file__).parent / "genus_lens")
 GENUS_LENS_LOWER = {k.lower(): v for k, v in GENUS_LENS.items()}
+# Build ICTV species → clean NCBI species name (strip strain/isolate suffixes)
+_ICTV2NCBI = {}
+for _tid, _rec in TAXLIN.items():
+    _sp = _rec.get("species", "")
+    _sc = _rec.get("sciname", "")
+    if not _sp or not _sc:
+        continue
+    # Prefer the shortest sciname for each ICTV species (species-level, not strain)
+    if _sp not in _ICTV2NCBI or len(_sc) < len(_ICTV2NCBI[_sp]):
+        _ICTV2NCBI[_sp] = _sc
 print(f"Taxid lineage: {len(TAXLIN)} entries")
 print(f"Genus lengths: {len(GENUS_LENS)} entries")
+print(f"ICTV→NCBI species map: {len(_ICTV2NCBI)} entries")
 
 
 def _load_genus_lens(path, taxdir=None):
@@ -482,7 +493,10 @@ def _extract_virus(job_id, outdir, cls_path, fasta_path):
         ft.write("contig\ttaxid\ttaxon\t" + "\t".join(RANKS) + "\tlength\tscore\tgenus_avg_len\n")
         for name, taxid, length, score in contigs:
             info = TAXLIN.get(taxid, {})
-            taxon = info.get("sciname", "")
+            taxon_raw = info.get("sciname", "")
+            ictv_species = info.get("species", "")
+            # Use species-level NCBI name (strip strain/isolate if available)
+            taxon = _ICTV2NCBI.get(ictv_species, taxon_raw) if ictv_species else taxon_raw
             rankvals = [info.get(r, "") for r in RANKS]
             genus_name = info.get("genus", "")
             genus_avg = _lookup_genus_avg_len(genus_name)
