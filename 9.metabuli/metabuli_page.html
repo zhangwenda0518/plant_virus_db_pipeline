@@ -422,7 +422,8 @@ async function renderMetabuli(data, jobId) {
         var tbody = '';
         rows.forEach(function(r) {
           var nc = _nearComplete(r.length, r.genus_avg_len);
-          tbody += '<tr' + (nc ? ' style="background:#e8f5e9"' : '') + '><td style="font-family:monospace;font-size:11px;word-break:break-all">' + escapeHtml(r.contig) + '</td>';
+          var contigShort = r.contig && r.contig.length > 35 ? r.contig.substring(0, 32) + '...' : (r.contig || '');
+          tbody += '<tr' + (nc ? ' style="background:#e8f5e9"' : '') + '><td style="font-family:monospace;font-size:11px;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + escapeHtml(r.contig) + '">' + escapeHtml(contigShort) + '</td>';
           RK.forEach(function(k) {
             var v = r[k] || '';
             var strong = (k === 'genus' || k === 'species') ? ';font-weight:600' : '';
@@ -1027,7 +1028,8 @@ function sortVirusTable(tid, colIdx) {
     var nc = (Number(r.length) && Number(r.genus_avg_len) && Number(r.genus_avg_len) > 0 &&
               (Number(r.length) / Number(r.genus_avg_len)) >= 0.8 &&
               (Number(r.length) / Number(r.genus_avg_len)) <= 1.2);
-    tbody += '<tr' + (nc ? ' style="background:#e8f5e9"' : '') + '><td style="font-family:monospace;font-size:11px;word-break:break-all">' + escapeHtml(r.contig) + '</td>';
+    var contigShort2 = r.contig && r.contig.length > 35 ? r.contig.substring(0, 32) + '...' : (r.contig || '');
+    tbody += '<tr' + (nc ? ' style="background:#e8f5e9"' : '') + '><td style="font-family:monospace;font-size:11px;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + escapeHtml(r.contig) + '">' + escapeHtml(contigShort2) + '</td>';
     RK.forEach(function(k) {
       var v = r[k] || '';
       var strong = (k === 'genus' || k === 'species') ? ';font-weight:600' : '';
