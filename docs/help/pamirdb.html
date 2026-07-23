@@ -3,8 +3,8 @@
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>PV-miRNA — Help</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;line-height:1.8}nav{background:linear-gradient(135deg,#1a3a5c,#2c6e49);color:#fff;height:46px;display:flex;align-items:center;padding:0 16px;gap:4px;position:sticky;top:0;z-index:100}nav .brand{font-weight:700;font-size:15px;margin-right:12px;color:#fff;text-decoration:none}nav a{color:rgba(255,255,255,.75);text-decoration:none;padding:5px 11px;border-radius:4px;font-size:12px}nav a:hover,nav a.on{color:#fff;background:rgba(255,255,255,.15)}nav .sep{color:rgba(255,255,255,.25);margin:0 2px;font-size:14px;user-select:none}nav .spacer{flex:1}.hero{background:linear-gradient(135deg,#134e6f,#2c6e49);color:#fff;padding:32px 24px;text-align:center}.hero h1{font-size:24px}.hero p{font-size:13px;opacity:.85;margin-top:4px}.wrap{max-width:900px;margin:0 auto;padding:24px 20px}h2{font-size:18px;color:#1a5276;margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid #e8f4ea}h3{font-size:15px;color:#2c6e49;margin:18px 0 6px}p{font-size:14px;color:#444;margin-bottom:10px}ol,ul{margin:8px 0 12px 20px;font-size:14px;color:#444}li{margin-bottom:4px}code{background:#e8f4ea;padding:1px 5px;border-radius:3px;font-size:13px}.tip{background:#e8f4ea;border-left:3px solid #2c6e49;padding:10px 14px;margin:12px 0;border-radius:4px;font-size:13px}footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}</style></head><body>
-<nav><a href="/" class="brand">Plant Virus DB</a><span class="sep">|</span><a href="/reference/">Reference</a><a href="/primers/">Primers</a><a href="/photos/">Photos</a><a href="/vector/">Vector</a><a href="/te/">TE·EVE</a><a href="/genes/">Genes</a><span class="sep">|</span><a href="/metabuli/">Metabuli</a><a href="/explorer/">Explorer</a><a href="/pamirdb/">PV-miRNA</a><span class="sep">|</span><a href="/literature/">Literature</a><a href="/knowledge/">Knowledge</a><span class="spacer"></span><a href="/help/" class="on">Help</a></nav>
-<div class="hero"><h1>PV-miRNA (PAmiRDB)</h1><p>Plant antiviral miRNA target prediction workbench with three-algorithm consensus</p></div>
+<nav><a href="/" class="brand" data-i18n="Plant Virus DB|植物病毒库">Plant Virus DB</a><span class="sep">|</span><a href="/reference/" data-i18n="Reference|参考库">Reference</a><a href="/primers/" data-i18n="Primers|引物">Primers</a><a href="/photos/" data-i18n="Photos|照片">Photos</a><a href="/vector/" data-i18n="Vector|媒介">Vector</a><a href="/te/" data-i18n="TE·EVE|转座子">TE·EVE</a><a href="/genes/" data-i18n="Genes|基因">Genes</a><span class="sep">|</span><a href="/metabuli/" data-i18n="Metabuli|分类">Metabuli</a><a href="/explorer/" data-i18n="Explorer|浏览器">Explorer</a><a href="/pamirdb/" data-i18n="PV-miRNA|预测">PV-miRNA</a><span class="sep">|</span><a href="/literature/" data-i18n="Literature|文献">Literature</a><a href="/knowledge/" data-i18n="Knowledge|知识">Knowledge</a><span class="spacer"></span><a href="/help/" class="on" data-i18n="Help|帮助">Help</a></nav>
+<div class="hero"><h1 data-i18n="PV-miRNA — Prediction Workbench|PV-miRNA — 预测工作台">PV-miRNA (PAmiRDB)</h1><p>Plant antiviral miRNA target prediction workbench with three-algorithm consensus</p></div>
 
 <div style="max-width:900px;margin:0 auto;padding:0 20px 16px">
   <img src="/help/images/pamirdb.png" alt="pamirdb.html screenshot" style="width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);border:1px solid #d0d8e0">
@@ -20,7 +20,7 @@
 <h2>Overview</h2>
 <p>PV-miRNA (formerly PAmiRDB) is a plant antiviral miRNA target prediction workbench. Using a <b>miRanda + psRNATarget + RNAhybrid</b> three-algorithm consensus strategy, it systematically predicts miRNA-virus interactions across <b>402 plant species</b> and <b>42 virus species</b>. Results are annotated with three-tier consensus labels and displayed with multi-dimensional visualizations including Sankey flow diagrams, force-directed network graphs, genomic position maps, and heatmaps.</p>
 
-<h2>Quick Start</h2>
+<h2 data-i18n="Quick Start|快速开始">Quick Start</h2>
 <ol>
   <li>Open <code>/pamirdb/</code> and click a preset example (e.g. <b>4 miRNAs to CMV RNA3</b>) for a quick experience</li>
   <li>Or select from database: (1) Left miRNA Input Panel: choose species and miRNA; (2) Virus Target Panel: select virus; (3) Click <b>Run Analysis</b></li>
@@ -46,7 +46,7 @@
   <li><b>RNAhybrid</b>: Minimum free energy (MFE) hybridization prediction</li>
 </ul>
 
-<h3>Visualization</h3>
+<h3 data-i18n="Visualization|可视化">Visualization</h3>
 <ul>
   <li><b>Sankey Diagram</b>: miRNA to viral protein flow; node size proportional to interaction count; supports scroll-wheel zoom</li>
   <li><b>Network Graph</b>: Force-directed interaction network; miRNA nodes in green, viral protein nodes in red; supports drag and hover highlighting</li>
@@ -56,7 +56,6 @@
 <div class="tip"><b>Tip</b>: Filter by MODERATE and above first, then export the filtered results. The Position Map requires CDS annotation data for the virus; choose full-length reference genome viruses (e.g. CMV RNA3) to see complete gene tracks.</div>
 
 </div>
-<footer>Plant Virus Database Platform · Help</footer>
-<script src="/reference/i18n.js"></script>
-<script>PVDB_i18n.init({navSelector:"nav"});</script>
+<footer data-i18n="Plant Virus Database Platform|植物病毒数据库平台">Plant Virus Database Platform · Help</footer>
+<script src="/i18n.js"></script>
 </body></html>

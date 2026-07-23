@@ -204,8 +204,7 @@ function hideTyping(){var t=document.getElementById("typing-indicator");if(t)t.r
 async function sendMsg(){var inp=document.getElementById("chat-input");var msg=inp.value.trim();if(!msg)return;addChatMsg("user",msg);inp.value="";chatConv.push({role:"user",content:msg});var key=localStorage.getItem("ai_api_key")||"";// Server keyshowTyping();try{var resp=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:msg,api_key:key,api_url:"https://api.deepseek.com/v1/chat/completions",model:localStorage.getItem("ai_model")||"deepseek-chat",conversation:chatConv.slice(-8),context:"reference_db"})});var data=await resp.json();hideTyping();addChatMsg("ai",data.reply);chatConv.push({role:"assistant",content:data.reply})}catch(e){hideTyping();addChatMsg("system","Request failed: "+e.message)}}
 </script>
 
-<script src="/reference/i18n.js"></script>
-<script>PVDB_i18n.init({navSelector:'nav'});</script>
+<script src="/i18n.js"></script>
 
 </body>
 </html>

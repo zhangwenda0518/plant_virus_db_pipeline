@@ -38,11 +38,11 @@ nav .spacer{flex:1}
 footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
 </style></head><body>
 <nav>
-  <a href="/" class="brand">Plant Virus DB</a><span class="sep">|</span>
-  <a href="/reference/">Reference</a><a href="/primers/">Primers</a><a href="/photos/">Photos</a><a href="/vector/">Vector</a><a href="/te/">TE·EVE</a><a href="/genes/">Genes</a>
-  <span class="sep">|</span><a href="/metabuli/">Metabuli</a><a href="/explorer/">Explorer</a><a href="/pamirdb/">PV-miRNA</a>
-  <span class="sep">|</span><a href="/literature/">Literature</a><a href="/knowledge/">Knowledge</a>
-  <span class="spacer"></span><a href="/help/" class="on">Help</a>
+  <a href="/" class="brand" data-i18n="Plant Virus DB|植物病毒库">Plant Virus DB</a><span class="sep">|</span>
+  <a href="/reference/" data-i18n="Reference|参考库">Reference</a><a href="/primers/" data-i18n="Primers|引物">Primers</a><a href="/photos/" data-i18n="Photos|照片">Photos</a><a href="/vector/" data-i18n="Vector|媒介">Vector</a><a href="/te/" data-i18n="TE·EVE|转座子">TE·EVE</a><a href="/genes/" data-i18n="Genes|基因">Genes</a>
+  <span class="sep">|</span><a href="/metabuli/" data-i18n="Metabuli|分类">Metabuli</a><a href="/explorer/" data-i18n="Explorer|浏览器">Explorer</a><a href="/pamirdb/" data-i18n="PV-miRNA|预测">PV-miRNA</a>
+  <span class="sep">|</span><a href="/literature/" data-i18n="Literature|文献">Literature</a><a href="/knowledge/" data-i18n="Knowledge|知识">Knowledge</a>
+  <span class="spacer"></span><a href="/help/" class="on" data-i18n="Help|帮助">Help</a>
 </nav>
 
 <div class="hero">
@@ -86,7 +86,7 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
   </div>
 
   <div class="card">
-    <h3>Three-Tier Scoring System</h3>
+    <h3 data-i18n="Three-Tier Scoring System|三级评分系统">Three-Tier Scoring System</h3>
     <p>Each primer pair is comprehensively evaluated based on BLAST validation results, specificity, dimer risk, and GC content:</p>
     <ul>
       <li><span class="score-rec">Recommended</span>: High BLAST specificity, no significant dimer risk, Tm and GC% within optimal range. Recommended for priority use.</li>
@@ -122,7 +122,7 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
   </div>
 
   <div class="card">
-    <h3>API Access</h3>
+    <h3 data-i18n="API Access|API访问">API Access</h3>
     <p><code>GET /api/all_primers?format=csv</code> returns the complete primer dataset as a CSV file containing all primer pairs and their validation information.</p>
   </div>
 
@@ -132,7 +132,6 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
   <div class="note-box"><strong>Tiling Primer Sets</strong>: Whole-genome tiling primers are suitable for MinION or Illumina whole-genome sequencing workflows. Each set contains dozens of overlapping primer pairs; note the amplification efficiency and segment coverage uniformity of each pair during use.</div>
   <div class="tip-box"><strong>Batch Export</strong>: To integrate large amounts of primer data into local experimental designs, directly obtain the complete dataset via the API endpoint <code>/api/all_primers?format=csv</code>.</div>
 </div>
-<footer>Plant Virus Database Platform · Primer Database Help</footer>
-<script src="/reference/i18n.js"></script>
-<script>PVDB_i18n.init({navSelector:"nav"});</script>
+<footer data-i18n="Plant Virus Database Platform|植物病毒数据库平台">Plant Virus Database Platform · Primer Database Help</footer>
+<script src="/i18n.js"></script>
 </body></html>

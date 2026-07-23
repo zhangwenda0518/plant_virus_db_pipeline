@@ -211,7 +211,6 @@ function changePage(d){var tp=Math.ceil(teFiltered.length/tePageSize);tePage=Mat
 function renderTable(){applyFilters();tePage=0;renderRows()}
 function renderRows(){var tp=Math.ceil(teFiltered.length/tePageSize);if(tePage>=tp)tePage=Math.max(0,tp-1);var start=tePage*tePageSize,page=teFiltered.slice(start,start+tePageSize),html='';for(var i=0;i<page.length;i++){var r=page[i],cls=r.cat==='rvdb.ENRV'?'tag-raw':r.cat==='rvdb.EX'?'tag-ex':r.cat==='ncbi.EVE'?'tag-clean':'tag-ex';html+='<tr><td><span class=\"tag-cat '+cls+'\">'+(catLabel[r.cat]||r.cat)+'</span></td><td><a href=\"https://www.ncbi.nlm.nih.gov/nuccore/'+r.acc+'\" target=\"_blank\">'+r.acc+'</a></td><td>'+(r.org||'-')+'</td><td class=\"desc-col\">'+(r.desc||'-')+'</td><td>'+r.len.toLocaleString()+'</td><td>'+(r.date||'-')+'</td></tr>'}document.getElementById('teTbody').innerHTML=html;document.getElementById('teCnt').textContent=teFiltered.length+' sequences';document.getElementById('tePageInfo').textContent='Page '+(tePage+1)+' / '+(tp||1);document.getElementById('tePageTotal').textContent=teFiltered.length+' total';document.getElementById('tePrev').disabled=tePage<=0;document.getElementById('teNext').disabled=tePage>=tp-1;['cat','acc','org','desc','len','date'].forEach(function(c){var el=document.getElementById('arr-'+c);if(el)el.textContent=c===teSortCol?(teSortAsc?'\u25B2':'\u25BC'):''})}
 </script>
-<script src="/reference/i18n.js"></script>
-<script>PVDB_i18n.init({navSelector:'nav'});</script>
+<script src="/i18n.js"></script>
 </body>
 </html>
