@@ -484,14 +484,14 @@ def _extract_virus(job_id, outdir, cls_path, fasta_path):
             n_total += 1
             if p[0] != "1":          # is_classified != 1 → 未分类，跳过
                 continue
-            contigs.append((p[1], p[2], p[3] if len(p) > 3 else "", p[4] if len(p) > 4 else ""))
+            contigs.append((p[1], p[2], p[3] if len(p) > 3 else "", p[4] if len(p) > 4 else "", p[5] if len(p) > 5 else ""))
     seqs = _parse_fasta(fasta_path) if fasta_path.exists() else {}
     vtsv = outdir / f"{job_id}_virus_classification.tsv"
     vfa = outdir / f"{job_id}_virus_sequences.fasta"
     rows = []
     with open(vtsv, "w", encoding="utf-8") as ft, open(vfa, "w", encoding="utf-8") as fa:
-        ft.write("contig\ttaxid\ttaxon\t" + "\t".join(RANKS) + "\tlength\tscore\tgenus_avg_len\n")
-        for name, taxid, length, score in contigs:
+        ft.write("contig\ttaxid\ttaxon\t" + "\t".join(RANKS) + "\tlength\tscore\te_value\tgenus_avg_len\n")
+        for name, taxid, length, score, evalue in contigs:
             info = TAXLIN.get(taxid, {})
             taxon_raw = info.get("sciname", "")
             ictv_species = info.get("species", "")
@@ -500,8 +500,8 @@ def _extract_virus(job_id, outdir, cls_path, fasta_path):
             rankvals = [info.get(r, "") for r in RANKS]
             genus_name = info.get("genus", "")
             genus_avg = _lookup_genus_avg_len(genus_name)
-            ft.write("\t".join([name, taxid, taxon] + rankvals + [length, score, str(genus_avg)]) + "\n")
-            row = {"contig": name, "taxid": taxid, "taxon": taxon, "length": length, "score": score, "genus_avg_len": genus_avg}
+            ft.write("\t".join([name, taxid, taxon] + rankvals + [length, score, evalue, str(genus_avg)]) + "\n")
+            row = {"contig": name, "taxid": taxid, "taxon": taxon, "length": length, "score": score, "e_value": evalue, "genus_avg_len": genus_avg}
             for r in RANKS:
                 row[r] = info.get(r, "")
             rows.append(row)

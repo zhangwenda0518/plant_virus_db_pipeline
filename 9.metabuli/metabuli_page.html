@@ -406,9 +406,9 @@ async function renderMetabuli(data, jobId) {
     h += '<div style="font-size:12px;color:#555;margin-bottom:8px">Total <b>' + (vs.total_contigs || 0) + '</b> contigs, <b style="color:#27ae60">' + (vs.virus_contigs || 0) + '</b> classified as Virus</div>';
     if (vc.length) {
       var RK = ['realm','kingdom','phylum','class','order','family','genus','species'];
-      var COL_KEYS = ['contig'].concat(RK).concat(['length','genus_avg_len']);
-      var COL_LABELS = ['Contig','Realm','Kingdom','Phylum','Class','Order','Family','Genus','Species','Length','Genus Avg Len'];
-      var NUM_COLS = {length:true, genus_avg_len:true};
+      var COL_KEYS = ['contig'].concat(RK).concat(['length','score','e_value','genus_avg_len']);
+      var COL_LABELS = ['Contig','Realm','Kingdom','Phylum','Class','Order','Family','Genus','Species','Length','Score','E-value','Genus Avg Len'];
+      var NUM_COLS = {length:true, score:true, e_value:true, genus_avg_len:true};
       
       function _nearComplete(len, avg) {
         if (!len || !avg) return false;
@@ -429,6 +429,19 @@ async function renderMetabuli(data, jobId) {
             tbody += '<td style="white-space:nowrap' + strong + '">' + (v ? escapeHtml(v) : '<span style="color:#ccc">-</span>') + '</td>';
           });
           tbody += '<td' + (nc ? ' style="font-weight:700;color:#1b5e20"' : '') + '>' + escapeHtml(r.length) + '</td>';
+          // Score: format to 4 decimal places if present
+          var sc = r.score;
+          tbody += '<td style="text-align:right;font-family:monospace;font-size:11px">' + (sc != null && sc !== '' ? Number(sc).toFixed(4) : '<span style="color:#ccc">-</span>') + '</td>';
+          // E-value: scientific notation or '-' if -1 (not supported)
+          var ev = r.e_value;
+          var evDisplay = '-';
+          if (ev != null && ev !== '' && ev !== '-1') {
+            var evNum = Number(ev);
+            if (evNum === 0) evDisplay = '0';
+            else if (evNum < 0.01) evDisplay = evNum.toExponential(1);
+            else evDisplay = evNum.toFixed(3);
+          }
+          tbody += '<td style="text-align:right;font-family:monospace;font-size:11px">' + evDisplay + '</td>';
           var gal = r.genus_avg_len;
           tbody += '<td style="text-align:right">' + (gal != null && gal !== '' ? Number(gal).toFixed(0) : '<span style="color:#ccc">-</span>') + '</td>';
           var sp = r.species || r.taxon || '';
@@ -1021,6 +1034,19 @@ function sortVirusTable(tid, colIdx) {
       tbody += '<td style="white-space:nowrap' + strong + '">' + (v ? escapeHtml(v) : '<span style="color:#ccc">-</span>') + '</td>';
     });
     tbody += '<td' + (nc ? ' style="font-weight:700;color:#1b5e20"' : '') + '>' + escapeHtml(r.length) + '</td>';
+    // Score
+    var sc2 = r.score;
+    tbody += '<td style="text-align:right;font-family:monospace;font-size:11px">' + (sc2 != null && sc2 !== '' ? Number(sc2).toFixed(4) : '<span style="color:#ccc">-</span>') + '</td>';
+    // E-value
+    var ev2 = r.e_value;
+    var evDisplay2 = '-';
+    if (ev2 != null && ev2 !== '' && ev2 !== '-1') {
+      var evNum2 = Number(ev2);
+      if (evNum2 === 0) evDisplay2 = '0';
+      else if (evNum2 < 0.01) evDisplay2 = evNum2.toExponential(1);
+      else evDisplay2 = evNum2.toFixed(3);
+    }
+    tbody += '<td style="text-align:right;font-family:monospace;font-size:11px">' + evDisplay2 + '</td>';
     var gal = r.genus_avg_len;
     tbody += '<td style="text-align:right">' + (gal != null && gal !== '' ? Number(gal).toFixed(0) : '<span style="color:#ccc">-</span>') + '</td>';
     tbody += '<td style="white-space:nowrap">'
