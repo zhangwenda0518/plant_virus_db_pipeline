@@ -1,0 +1,240 @@
+{
+  "week": "2025-W32",
+  "start": "2025-08-04",
+  "end": "2025-08-10",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 25,
+  "by_category": {
+    "Host_Virus_Interactions": 10,
+    "Control_Management": 5,
+    "Antiviral_Resistance_Genes": 5,
+    "New_Virus": 3,
+    "Viral_Diversity_Ecology": 2,
+    "Transmission_Epidemiology": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "40920647",
+      "doi": "10.1016/j.cub.2025.05.064",
+      "title": "Manipulation of host-plant preference by virus-induced changes to its insect vector's olfactory system.",
+      "abstract": "Plant viruses are known to indirectly manipulate insect vector behavior by altering host-plant phenotypes, yet the mechanisms by which they directly regulate vector behavior to enhance transmission remain poorly understood. Here, we reveal how the southern rice black-streaked dwarf virus (SRBSDV) reprograms the host preference of its planthopper vector, Sogatella furcifera, from infected to healthy rice plants by disrupting immune-olfactory crosstalk. We demonstrate that the SRBSDV-encoded P8 protein competitively binds to the S. furcifera Pelle kinase, a core component of the Toll signaling pathway, thereby inhibiting the phosphorylation and nuclear translocation of the transcription factor Dorsal-related immunity factor (DIF). This immune suppression downregulates the E-β-farnesene-responsive odorant receptor Or86 while upregulating the β-caryophyllene-responsive receptor Or127, shifting the olfactory preference of virus-carrying planthoppers toward uninfected plants. Knocking down Or86 or Or127 abolished this behavioral shift, reducing viral transmission rates in both plants and vectors. Our findings uncover a tripartite mechanism wherein a viral effector co-opts conserved immune signaling to rewire chemosensory perception in insect vectors, promoting virus spread. This work advances insight into the molecular arms race between viruses and vectors, offering novel targets for disrupting viral transmission in agricultural ecosystems.",
+      "journal": "Current biology : CB",
+      "year": 2025,
+      "pub_date": "2025-08-04",
+      "authors": "Ai Shupei; Luo Chang; Yao Xiaoqing; Qu Wenjing; Wang Ying; ... (+3)",
+      "first_author": "Ai Shupei",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "南方水稻黑条矮缩病毒 (SRBSDV)",
+      "taxonomy": "",
+      "host_plant": "水稻",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40767853",
+      "doi": "10.1094/PDIS-01-25-0029-PDN",
+      "title": "First Report of Cyrtanthus Elatus Virus A Infection in Daffodils in Korea.",
+      "abstract": "In Korea, the limited production and distribution of virus-free bulbs necessitate reliance on imported bulbs for daffodil (Narcissus pseudonarcissus) cultivation. Three viruses have been reported in daffodils in Korea, and quarantine measures target six viruses in imported bulbs (Kim and Jeong 2024; Kim et al. 2024). However, with 26 viruses reported globally in daffodils (Probowati et al. 2022), the risk of introducing novel viral pathogens remains a concern. In this study, we report the detection of cyrtanthus elatus virus A (CyEVA, Potyvirus cyrtanthi) in daffodils in Korea, through high-throughput sequencing (HTS). In May 2021, 75 daffodils were collected from four regions (Yesan, Wonju, Geoje, Shinan), including symptomatic and asymptomatic plants. Total RNA was extracted from pooled leaf tissues (10 mg each) using the Maxwell 16 LEV Plant RNA Kit (Promega, USA) and subjected to HTS on the Illumina NovaSeq 6000 platform (Macrogen, Korea). A cDNA library was constructed using the TruSeq Stranded Total RNA LT Sample Prep Kit (Illumina, USA), yielding 656,983,464 reads. De novo transcriptome assembly, performed using Trinity software, produced 96,215 contigs. BLASTn and BLASTx analyses identified five contigs mapped to CyEVA, with lengths of 860, 932, 1,713, 2,901, 3,646 bp. These contigs shared 92.06% to 98.72% nucleotide (nt) identity with the Marijiniup 7 isolate (NC_017977). The complete genome sequence of CyEVA was determined using 18 primer pairs, with the 5' and 3' terminal sequences obtained via RACE-PCR, following the previous method (Bak et al. 2024). All amplicons were cloned and sequenced (Bioneer, Korea), and the resulting sequences were assembled into the complete genome using DNAMAN software version 7.0. The sequence was deposited in GenBank (LC847160). It revealed a typical Potyvirus genome structure, measuring 10,024 nt long, and shared 96.47% nt identity with the Marijiniup 7. To confirm the presence of CyEVA, RT-PCR was individually performed on 75 samples using a primer pair (5'-CTCAGAGGGATGTTGAAGGT / GAAGCGTGCACCCTGTAAG-3'; amplicon size: 711 bp), and CyEVA was detected in only 4 samples collected from Yesan. Electron microscopy of infected leaves revealed filamentous rod-shaped particles about 800 nm long (Supplementary Fig. 1). The infected plants showed symptoms such as chlorotic stripes, stunting, and leaf distortion (Supplementary Fig. 2), which were similar to those described in previous studies on CyEVA (Kumar et al. 2015; Raj et al. 2018; Wylie et al. 2010). On May 12, 2022, 8 daffodils collected from Shinan were tested using RT-PCR, and 2 samples exhibiting symptoms similar to those of infected plants in 2021 were positive for CyEVA. Sap inoculation was performed using infected leaves on 19 indicator plants and CyEVA-uninfected daffodils (Supplementary Fig. 3); no CyEVA infection was detected via RT-PCR. As mentioned in previous literature (Ohshima et al. 2016; Probowati et al. 2022), the host range of Narcissus viruses generally seems to be narrow or limited to Narcissus in nature. As a Potyvirus, CyEVA may be transmitted to daffodils by aphids; but, further studies are needed to understand its transmission and epidemiology. CyEVA is presumed to cause poor growth in daffodils due to the described symptoms, and considering its consecutive detection, ongoing monitoring is thought to be needed. This study is the first report of CyEVA in Korea and is expected to contribute to the management of viral diseases in daffodils.",
+      "journal": "Plant disease",
+      "year": 2025,
+      "pub_date": "2025-08-06",
+      "authors": "Kim Minseok; Lim Taegun; Bak Sangmin; Lee Hong-Kyu; Min Jean Geung; ... (+8)",
+      "first_author": "Kim Minseok",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cyrtanthus elatus virus A (CyEVA, Potyvirus cyrtanthi)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "Narcissus pseudonarcissus (daffodil 水仙)",
+      "location": "韩国（Yesan, Wonju, Geoje, Shinan）",
+      "results": "从75株中4株检出CyEVA（Yesan），完整基因组10024nt，与Marijiniup 7 isolate 96.47%相似。电镜显示~800nm丝状粒子。症状为褪绿条纹、矮化、扭曲。2022年Shinan 8株中2株阳性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40872793",
+      "doi": "10.3390/v17081079",
+      "title": "A Virome Scanning of Saffron (",
+      "abstract": "Saffron (Crocus sativus L.) is a vegetatively propagated crop of high economic and cultural value, potentially affected by viral infections that may impact its productivity. Despite Iran's dominance in global saffron production, knowledge of its virome remains limited. In this study, we conducted the first nationwide virome survey of saffron in Iran employing a high-throughput sequencing (HTS) approach on pooled samples obtained from eleven provinces in Iran and one location in Afghanistan. Members of three virus families were detected-Potyviridae (Potyvirus), Solemoviridae (Polerovirus), and Geminiviridae (Mastrevirus)-as well as one satellite from the family Alphasatellitidae (Clecrusatellite). A novel Potyvirus, tentatively named saffron Iran virus (SaIRV) and detected in three provinces, shares less than 68% nucleotide identity with known Potyvirus species, thus meeting the ICTV criteria for designation as a new species. Genetic diversity analyses revealed substantial intrapopulation SNP variation but no clear geographical clustering. Among the two wild Crocus species sampled, only Crocus speciosus harbored turnip mosaic virus. Virome network and phylogenetic analyses confirmed widespread viral circulation likely driven by corm-mediated propagation. Our findings highlight the need for targeted certification programs and biological characterization of key viruses to mitigate potential impacts on saffron yield and quality.",
+      "journal": "Viruses",
+      "year": 2025,
+      "pub_date": "2025-08-04",
+      "authors": "Valouzi Hajar; Dizadji Akbar; Golnaraghi Alireza; Salami Seyed Alireza; Fontdevila Pareta Nuria; ... (+11)",
+      "first_author": "Valouzi Hajar",
+      "categories": [
+        "New_Virus",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "saffron Iran virus (SaIRV, novel Potyvirus), turnip mosaic virus, plus members of Potyviridae, Solemoviridae, Geminiviridae, Alphasatellitidae",
+      "taxonomy": "Potyviridae (Potyvirus), Solemoviridae (Polerovirus), Geminiviridae (Mastrevirus), Alphasatellitidae (Clecrusatellite)",
+      "host_plant": "Crocus sativus (saffron), Crocus speciosus",
+      "location": "Iran (11 provinces), Afghanistan",
+      "results": "检测到Potyviridae, Solemoviridae, Geminiviridae及Alphasatellitidae卫星；新病毒SaIRV与已知Potyvirus同源性<68%；C. speciosus携带TuMV；球茎传播为主，无地理聚类。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40770802",
+      "doi": "10.1186/s13007-025-01427-z",
+      "title": "Establishment and optimization of a tobacco rattle virus -based virus-induced gene Silencing in Atriplex canescens.",
+      "abstract": "Atriplex canescens, a halophytic model plant exhibiting remarkable tolerance to abiotic stress, possesses valuable genetic resources for crop improvement. However, the absence of a reliable and stable transformation systems has impeded the functional characterization of candidate genes in this species. In this study, we established an efficient virus-induced gene silencing (VIGS) system in A. canescens by constructing a tobacco rattle virus (TRV)-based vector targeting the phytoene desaturase gene (AcPDS), whose silencing induces an easily recognizable photobleaching phenotype. Through comparative analyses of inoculation materials and methods for VIGS implementation in A. canescens, we found that inoculating germinated seeds with Agrobacterium suspension (OD600 = 0.8) carrying TRV2:AcPDS vectors through vacuum-assisted agroinfiltration (0.5 kPa, 10 min) further achieving an average silencing efficiency of approximately 16.4%. Systemic photobleaching phenotypes appeared in newly emerged leaves at about 15 days post-inoculation, accompanied by a 40–80% reduction in AcPDS transcript abundance, as confirmed by qRT-PCR. Furthermore, we successfully validated this VIGS system by silencing two aquaporin genes (AcTIP2;1 and AcPIP2;5), achieving 60.3–69.5% knockdown efficiency, which confirmed the broad applicability of this system in A. canescens. In summary, our method provides a reliable reverse-genetics platform that facilitates the study of stress-resistance mechanisms in A. canescens, effectively overcoming previous technical limitations in genetic research on this species.",
+      "journal": "Plant methods",
+      "year": 2025,
+      "pub_date": "2025-08-07",
+      "authors": "Feng Shan; Chen Jin-Da; Bao Ai-Ke",
+      "first_author": "Feng Shan",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "烟草脆裂病毒 (TRV)",
+      "taxonomy": "",
+      "host_plant": "四翅滨藜 (Atriplex canescens)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40598768",
+      "doi": "10.1016/j.molp.2025.06.016",
+      "title": "Structural insights into a plant-conserved DHFR-TS reveal a selective herbicide target.",
+      "abstract": "Modern agricultural practices rely on herbicides to reduce yield losses. Herbicide-resistant weeds threaten herbicide utility and, hence, food security. New herbicide modes of action and integrated pest-management practices are vital to mitigate this threat. As the antimalarials that target the bifunctional enzyme dihydrofolate reductase-thymidylate synthase (DHFR-TS) have been shown to be herbicidal, DHFR-TS might represent a mode-of-action target for the development of herbicides. Here, we present the crystal structure of a DHFR-TS (AtDHFR-TS1) from the model dicot Arabidopsis thaliana. It shows a divergent DHFR active site and a linker domain that challenges previous classifications of bifunctional DHFR-TS proteins. This plant-conserved architecture enabled us to develop highly selective herbicidal inhibitors of AtDHFR-TS1 over human DHFR and identify inhibitors with unique scaffolds via a large-library virtual screen. These results suggest that DHFR-TS is a viable herbicide target.",
+      "journal": "Molecular plant",
+      "year": 2025,
+      "pub_date": "2025-08-04",
+      "authors": "Haywood Joel; Breese Karen J; McDougal Daniel P; Verdonk Callum; Partridge Abigail; ... (+8)",
+      "first_author": "Haywood Joel",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40671679",
+      "doi": "10.1016/j.molp.2025.07.008",
+      "title": "The RING-finger ubiquitin E3 ligase RFEL1 targets wheat NPR3 for degradation to confer broad-spectrum resistance against biotrophic fungal pathogens.",
+      "abstract": "Broad-spectrum resistance (BSR) is highly sought after for the effective management of crop diseases. However, genes suitable for developing BSR remain scarce. In this study, we demonstrate the development of BSR to wheat yellow rust (YR), powdery mildew (PM), and leaf rust (LR) diseases elicited by three biotrophic fungal pathogens using a newly defined module, namely, RFEL1-NPR3. RFEL1 is an active RING-finger E3 ubiquitin ligase identified in diploid and polyploid wheat species, which ubiquitinates and promotes the degradation of wheat NPR3 (TaNPR3), an important negative immune regulator conserved in higher plants, via the 26S proteasome system. Downregulation of TaNPR3 by either overexpressing RFEL1 or knocking out TaNPR3 confers strong resistance against four different YR races as well as the PM and LR diseases without adverse effects on wheat growth and yield traits. Notably, the enhanced disease resistance exhibited by RFEL1-overexpressing and TaNPR3-knockout lines is correlated with increased expression of defense related genes and elevated stability of NPR1, a pivotal positive regulator of plant immune signaling. Our findings underscore the importance of ubiquitination-dependent NPR3 degradation in plant immunity and advocate for the application of the RFEL1-NPR3 module in engineering BSR against biotrophic fungal pathogens in wheat and other crops.",
+      "journal": "Molecular plant",
+      "year": 2025,
+      "pub_date": "2025-08-04",
+      "authors": "Qiao Liuhui; Zhang Kunpu; Li Jinyan; Zhang Ziming; Sun Xiao; ... (+12)",
+      "first_author": "Qiao Liuhui",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40728082",
+      "doi": "10.1021/acs.jafc.5c04345",
+      "title": "Identification of Slime Mold Metabolites That Confer Protection to Commercial Crops against Root-Knot Nematodes.",
+      "abstract": "Root-knot nematodes are major pests of various crops, coexisting in the soil with amoebae, such as the cellular slime mold Dictyostelium discoideum. Prior studies have indicated that nematodes prey on Dictyostelium, prompting investigations into whether amoebae possess chemical defenses against nematodes for potential use in crop protection. Using improved culture and extraction methods, we found that Dictyostelium releases metabolites acting as repellents against root-knot nematodes, including L-type basic amino acids (e.g., l-histidine, l-arginine) and antioxidants (e.g., l-ascorbic acid, l-cysteine). A mixture of 14 different repellents proved to be extremely potent. The crude conditioned medium that facilitated the identification of these repellents inhibited root-knot nematode egg hatching, exhibited nematocidal effects, and promoted plant growth in pot tests. These findings suggest that the identified compounds and conditioned medium could provide a novel method for nematode control applicable to crops that lack existing control measures.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2025,
+      "pub_date": "2025-08-06",
+      "authors": "Hayashi Kana Y; Nagamatsu Yukiko; Kawano Moemi; Fuchimoto Sayaka; Araki Tsuyoshi; ... (+1)",
+      "first_author": "Hayashi Kana Y",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41119340",
+      "doi": "10.11646/zootaxa.5673.3.5",
+      "title": "Note on the genus Peritropis Uhler (Hemiptera: Miridae: Cylapinae), with descriptions of two new species from the Indochina Peninsula.",
+      "abstract": "Two new species of the fungal-inhabiting plant bug genus Peritropis Uhler, 1891 are described from the Indochina Peninsula: P. andrzeji sp. nov. and P. cheroti sp. nov. In addition, P. thailandica is recorded from Vietnam for the first time. Morphological information, including a detailed description of male and female genitalia, is presented. The importance of structural examination in the genus Peritropis is discussed, and a key to the species of Peritropis occurring in the Indochina Peninsula is provided.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-08-06",
+      "authors": "Kim Junggon; Taszakowski Artur; Keetapithchayakul Tosaphol Saetung; Phan Quoc Toan; Jung Sunghoon",
+      "first_author": "Kim Junggon",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40879171",
+      "doi": "10.1093/plphys/kiaf364",
+      "title": "Sequential protease deployment under acidic conditions degrades host defense proteins and drives Valsa mali pathogenicity in apple.",
+      "abstract": "Apple Valsa canker, caused by the ascomycete fungus Valsa mali, is a severe disease threatening apple (Malus domestica) production, particularly in East Asia. The pH at the infection site decreases from 6.0 to around 3.5, facilitating fungal pathogenicity. This study explores the role of the sedolisin protease (VmTPP3) in V. mali pathogenicity. VmTPP3 is a critical pathogenicity factor in V. mali, as its deletion significantly reduces fungal pathogenicity. Using yeast 2-hybrid (Y2H), bimolecular fluorescence complementation (BiFC), and co-immunoprecipitation (co-IP) assays, we demonstrated that VmTPP3 interacts with plant nonspecific lipid transfer proteins (MdnsLTP1). Furthermore, MdnsLTP1 overexpression in apple stabilizes the abscisic acid (ABA) receptor (MdPYL4), preventing its degradation by VmTPP3 and subtilase (VmSpm1), thereby enhancing disease resistance. Protease assays revealed optimal pH activities for VmTPP3 and VmSpm1 at 3.5 and 4.0, respectively, suggesting a sequential deployment of these effectors during infection. These findings provide insights into the pH-dependent strategies of V. mali and highlight potential targets for improving apple resistance against Valsa canker.",
+      "journal": "Plant physiology",
+      "year": 2025,
+      "pub_date": "2025-08-04",
+      "authors": "Yang Xinyi; Gao Mengjie; Pu Yanli; Wang Yinghao; Meng Yangguang; ... (+2)",
+      "first_author": "Yang Xinyi",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40472326",
+      "doi": "10.1093/plphys/kiaf220",
+      "title": "The wheat lesion mimic 34 mutant shows lesion mimicry and enhanced reactive oxygen species-mediated immunity to powdery mildew.",
+      "abstract": "Lesion mimicry typically manifests as leaf disease-like symptoms in the absence of pathogen infection, characterized by a hypersensitive response, which is intricately linked to plant disease resistance. In this study, the wheat (Triticum aestivum L.) mutant lesion mimic 34 (lm34), harboring a recessive mutation in the Zhongyou 206 (ZY206) background, was comprehensively investigated. The lm34 mutation was mapped to a 140-kb region on chromosome 4AL through bulked segregant exome capture sequencing and fine-mapping. Sequence comparison and phenotypic analysis of the lm34Jing mutant revealed that TraesCS4A03G1225400, encoding a typical coiled coil-nucleotide-binding-leucine-rich repeat protein, is the causal gene in lm34. Transient expression assays in Nicotiana benthamiana leaves indicated that the TaLM34 extended coiled coil domain can induce cell death. Furthermore, lm34 mutants display elevated reactive oxygen species levels and significantly increased expression of pathogenesis-related (PR) genes (PR2 and PR10), leading to enhanced powdery mildew resistance. Our findings suggest that TaLM34 can serve as a potential target for the development of wheat cultivars with improved disease resistance. Overall, our study sheds light on the molecular mechanisms underlying wheat disease resistance and cell death.",
+      "journal": "Plant physiology",
+      "year": 2025,
+      "pub_date": "2025-08-04",
+      "authors": "Fang Yu; Liu Sitong; Ding Run; Guo Feilong; Jiang Hao; ... (+7)",
+      "first_author": "Fang Yu",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

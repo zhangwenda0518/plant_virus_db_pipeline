@@ -1,0 +1,283 @@
+{
+  "month": "2009-09",
+  "generated": "2026-07-13 02:59:42",
+  "total": 37,
+  "by_category": {
+    "New_Virus": 10,
+    "Antiviral_Resistance_Genes": 9,
+    "Host_Virus_Interactions": 8,
+    "Biotechnology_Applications": 4,
+    "Molecular_Characterization": 2,
+    "Control_Management": 2,
+    "Viral_Diversity_Ecology": 1,
+    "Transmission_Epidemiology": 1,
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "19442691",
+      "doi": "10.1016/j.virusres.2009.05.002",
+      "title": "Pepper chat fruit viroid: biological and molecular properties of a proposed new species of the genus Pospiviroid.",
+      "abstract": "In autumn 2006, a new disease was observed in a glasshouse-grown crop of sweet pepper (Capsicum annuum L.) in the Netherlands. Fruit size of the infected plants was reduced up to 50%, and plant growth was also slightly reduced. Here we show that the disease is caused by a previously non-described viroid. The pepper viroid is transmitted by both mechanical inoculation and pepper seeds and, when inoculated experimentally, it infects several solanaceous plant species inducing vein necrosis and reduced fruit and tuber size in tomato and potato, respectively. The viroid RNA genome consists of 348 nucleotides and, with minor modifications, it has the central conserved and the terminal conserved regions characteristic of members of the genus Pospiviroid. Classification of the pepper viroid within the genus Pospiviroid is further supported by the presence and structure of hairpins I and II, the presence of internal and external RY motifs, and phylogenetic analyses. The primary structure of the pepper viroid only showed a maximum of 66% nucleotide sequence identity with other viroids, which is far below the main species demarcation limit of 90%. According to its biological and molecular properties, we propose to assign the pepper viroid to a new species within the genus Pospiviroid, and to name this new species Pepper chat fruit viroid.",
+      "journal": "Virus research",
+      "year": 2009,
+      "pub_date": "2009-09-01",
+      "authors": "Verhoeven J Th J; Jansen C C C; Roenhorst J W; Flores R; de la Peña M",
+      "first_author": "Verhoeven J Th J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Pepper chat fruit viroid (PCFVd)",
+      "taxonomy": "Pospiviroidae, Pospiviroid",
+      "host_plant": "Capsicum annuum (甜椒) 及其他茄科植物",
+      "location": "荷兰",
+      "results": "该病毒通过机械和种子传播，实验感染多种茄科植物导致症状。基因组348nt，与已知类病毒最大同源性66%，低于种界定阈值90%。具有Pospiviroid属特征结构。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19474248",
+      "doi": "10.1099/vir.0.012070-0",
+      "title": "Effects of dicer-like endoribonucleases 2 and 4 on infection of Arabidopsis thaliana by cucumber mosaic virus and a mutant virus lacking the 2b counter-defence protein gene.",
+      "abstract": "In tobacco and Nicotiana benthamiana, limited cross-protection against cucumber mosaic virus strain Fny (Fny-CMV) was provided by prior inoculation with a deletion mutant lacking the 2b silencing-suppressor protein gene (Fny-CMVDelta2b). Cross-protection by Fny-CMVDelta2b did not result from induction of systemic RNA silencing. We investigated whether protection occurs through induction of localized RNA silencing by using Arabidopsis thaliana plants harbouring mutations in genes encoding the dicer-like (DCL) endoribonucleases 2, 3 and 4 involved in antiviral silencing. In wild-type A. thaliana (Col-0) plants, Fny-CMVDelta2b was symptomless and cross-protected against Fny-CMV infection. Cross-protection by Fny-CMVDelta2b against Fny-CMV infection was not abolished in dcl2, dcl3 or dcl4 mutant plants and was strongest in dcl2/4 double mutants, although in these plants and in dcl4 mutants, Fny-CMVDelta2b replicated to high levels and induced strong symptoms. The results suggest that Fny-CMVDelta2b/Fny-CMV cross-protection is not completely dependent on RNA silencing and also involves competition between these viruses.",
+      "journal": "The Journal of general virology",
+      "year": 2009,
+      "pub_date": "2009-09-01",
+      "authors": "Ziebell Heiko; Carr John P",
+      "first_author": "Ziebell Heiko",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "黄瓜花叶病毒Fny株系（Fny-CMV）及缺失2b蛋白的突变体Fny-CMVΔ2b",
+      "taxonomy": "",
+      "host_plant": "拟南芥（Arabidopsis thaliana）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19495995",
+      "doi": "10.1007/s11103-009-9505-y",
+      "title": "Virus-induced gene silencing in soybean seeds and the emergence stage of soybean plants with Apple latent spherical virus vectors.",
+      "abstract": "Virus-induced gene silencing (VIGS) has great potential as a reverse-genetics tool in plant genomics. In this study, we examined the potential of VIGS in soybean seeds and the emergence stage of soybean plants using Apple latent spherical virus (ALSV) vectors. Inoculation of an ALSV vector (soyPDS-ALSV) carrying a fragment of the soybean phytoene desaturase (soyPDS) gene into soybean seedlings resulted in a highly uniform photo-bleached phenotype, typical of PDS inhibition, on the upper leaves throughout plant growth. The photo-bleached phenotype was also found on all immature pods, all seed coats, and about 50% embryos of seeds on soybean plants infected with soyPDS-ALSV. Infection with an ALSV vector (soyIFS2-ALSV) having a fragment of soybean isoflavone synthase 2 (soyIFS2) gene also led to a reduction of the levels of both soyIFS2- and soyIFS1- mRNAs and an isoflavone content in the cotyledons of about 36% mature seeds of infected soybean plants. Furthermore, VIGS of soyPDS was induced in the next generation plants by the seed transmission of soyPDS-ALSV. Thus ALSV vectors will be useful for studying gene functions in the reproductive stages and early growth stages, such as emergence and cotyledon stages, in addition to the vegetative stages of soybean plants.",
+      "journal": "Plant molecular biology",
+      "year": 2009,
+      "pub_date": "2009-09-01",
+      "authors": "Yamagishi Noriko; Yoshikawa Nobuyuki",
+      "first_author": "Yamagishi Noriko",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "苹果潜隐球形病毒 (Apple latent spherical virus, ALSV)",
+      "taxonomy": "",
+      "host_plant": "大豆",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19616595",
+      "doi": "10.1016/j.jbiotec.2009.07.007",
+      "title": "In vitro propagation of plant virus using different forms of plant tissue culture and modes of culture operation.",
+      "abstract": "Plant virus accumulation was investigated in vitro using three different forms of plant tissue culture. Suspended cells, hairy roots and shooty teratomas of Nicotiana benthamiana were infected with tobacco mosaic virus (TMV) using the same initial virus:biomass ratio. Viral infection did not affect tissue growth or morphology in any of the three culture systems. Average maximum virus concentrations in hairy roots and shooty teratomas were similar and about an order of magnitude higher than in suspended cells. Hairy roots were considered the preferred host because of their morphological stability in liquid medium and relative ease of culture. The average maximum virus concentration in the hairy roots was 0.82+/-0.14 mg g(-1) dry weight; viral coat protein represented a maximum of approximately 6% of total soluble protein in the biomass. Virus accumulation in hairy roots was investigated further using different modes of semi-continuous culture operation aimed at prolonging the root growth phase and providing nutrient supplementation; however, virus concentrations in the roots were not enhanced compared with simple batch culture. The relative infectivity of virus in the biomass declined by 80-90% during all the cultures tested, irrespective of the form of plant tissue used or mode of culture operation. Hairy root cultures inoculated with a transgenic TMV-based vector in batch culture accumulated green fluorescent protein (GFP); however, maximum GFP concentrations in the biomass were relatively low at 39 microg g(-1) dry weight, probably due to genetic instability of the vector. This work highlights the advantages of using hairy roots for in vitro propagation of TMV compared with shooty teratomas and suspended plant cells, and demonstrates that batch root culture is more effective than semi-continuous operations for accumulation of high virus concentrations in the biomass.",
+      "journal": "Journal of biotechnology",
+      "year": 2009,
+      "pub_date": "2009-09-10",
+      "authors": "Shih Sharon M-H; Doran Pauline M",
+      "first_author": "Shih Sharon M-H",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "烟草花叶病毒（Tobacco mosaic virus, TMV）",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19643453",
+      "doi": "10.1016/j.virol.2009.06.047",
+      "title": "A single point mutation disrupts the capsid assembly in Sesbania Mosaic Virus resulting in a stable isolated dimer.",
+      "abstract": "Protein-protein interactions play a crucial role in virus assembly and stability. With the view of disrupting capsid assembly and capturing smaller oligomers, interfacial residue mutations were carried out in the coat protein gene of Sesbania Mosaic Virus, a T=3 ss (+) RNA plant virus. A single point mutation of a Trp 170 present at the five-fold interface of the virus to a charged residue (Glu or Lys) arrested assembly of virus like particles and resulted in stable soluble dimers of the capsid protein. The X-ray crystal structure of one of the isolated dimer mutants - rCPDeltaN65W170K was determined to a resolution of 2.65 A. Detailed analysis of the dimeric mutant protein structure revealed that a number of structural changes take place, especially in the loop and interfacial regions during the course of assembly. The isolated dimer was \"more relaxed\" than the dimer found in the T=3 or T=1 capsids. The isolated dimer does not bind Ca(2+) ion and consequently four C-terminal residues are disordered. The FG loop, which interacts with RNA in the virus, has different conformations in the isolated dimer and the intact virus suggesting its flexible nature and the conformational changes that accompany assembly. The isolated dimer mutant was much less stable when compared to the assembled capsids, suggesting the importance of inter-subunit interactions and Ca(2+) mediated interactions in the stability of the capsids. With this study, SeMV becomes the first icosahedral virus for which X-ray crystal structures of T=3, T=1 capsids as well as a smaller oligomer of the capsid protein have been determined.",
+      "journal": "Virology",
+      "year": 2009,
+      "pub_date": "2009-09-30",
+      "authors": "Pappachan Anju; Chinnathambi Subashchandrabose; Satheshkumar P S; Savithri H S; Murthy M R N",
+      "first_author": "Pappachan Anju",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Sesbania Mosaic Virus (SeMV)",
+      "taxonomy": "植物病毒，T=3 ss(+)RNA病毒",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19578831",
+      "doi": "10.1007/s00122-009-1094-2",
+      "title": "High-resolution melting analysis of cDNA-derived PCR amplicons for rapid and cost-effective identification of novel alleles in barley.",
+      "abstract": "An original method has been established for the identification of novel alleles of eukaryotic translation initiation factor 4E (eIF4E) gene, which is required for resistance to agronomically important bymoviruses, in barley germplasm. This method involves scanning for sequence variations in cDNA-derived PCR amplicons using High-resolution melting (HRM) followed by direct Sanger sequencing of only those amplicons which were predicted to carry nucleotide changes. HRM is a simple, cost-effective, rapid and high-throughput assay, which so far has only been widely used in clinical pathology for molecular diagnostic of diseases and patient genotyping. Application of HRM allowed significant reduction in the amount of expensive Sanger sequencing required for allele mining in plants. The method described here involved an investigation of total cDNA rather than genomic DNA, thus permitting the analyses of shorter (up to 300-bp) and fewer overlapping amplicons to cover the coding sequence. This strategy further reduced the allele mining costs. The sensitivity and accuracy of HRM for predicting genotypes carrying a wide range of nucleotide polymorphisms in eIF4E approached 100%. Results of the current study are promising and suggest that this method could also potentially be applied to the discovery of superior alleles controlling other important traits in barley as well in other model and crop plant species.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 2009,
+      "pub_date": "2009-09-01",
+      "authors": "Hofinger Bernhard J; Jing Hai-Chun; Hammond-Kosack Kim E; Kanyuka Kostya",
+      "first_author": "Hofinger Bernhard J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "bymoviruses（大麦黄花叶病毒属）",
+      "taxonomy": "",
+      "host_plant": "大麦",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19632699",
+      "doi": "10.1016/j.virol.2009.06.034",
+      "title": "Agroinoculation of the Crinivirus, Lettuce infectious yellows virus, for systemic plant infection.",
+      "abstract": "Lettuce infectious yellows virus (LIYV) is phloem-limited, non-mechanically transmissible, and is transmitted to plants only by Bemisia tabaci. Here, we developed agroinoculation to deliver LIYV to plants thereby obviating the need for B. tabaci. Agroinfiltration of RNA 1 containing a green fluorescent protein gene into Nicotiana benthamiana leaves resulted in subliminal infections, as judged by green fluorescence. Agroinfiltration of LIYV wild-type RNA 1 and 2 constructs resulted in systemic infections in N. benthamiana plants and typical LIYV symptoms. In addition, partially purified LIYV virions from agroinoculated N. benthamiana plants were successfully acquired via membrane-feeding and transmitted to lettuce plants by B. tabaci. Agroinoculation coupled with targeted mutagenesis technologies will greatly enhance LIYV reverse genetics studies to characterize LIYV gene functions in planta for processes such as virus replication, recombination, trafficking, symptom elicitation and virus-vector interactions.",
+      "journal": "Virology",
+      "year": 2009,
+      "pub_date": "2009-09-15",
+      "authors": "Wang Jinbo; Turina Massimo; Stewart Lucy R; Lindbo John A; Falk Bryce W",
+      "first_author": "Wang Jinbo",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "莴苣传染性黄化病毒 (Lettuce infectious yellows virus, LIYV)",
+      "taxonomy": "",
+      "host_plant": "本氏烟 (Nicotiana benthamiana)、莴苣 (lettuce)",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754563",
+      "doi": "10.1094/PDIS-93-9-0964A",
+      "title": "First Report of Narcissus degeneration virus, Narcissus late season yellows virus, and Narcissus symptomless virus on Narcissus in New Zealand.",
+      "abstract": "In September 2008, Narcissus plants originating from commercial nurseries in Taranaki (TK) in New Zealand's North Island and Canterbury (CB) in the South Island were received showing leaf mottling, flower distortion, and color break. The CB plant also showed stunting. Filamentous virus particles (700 to 900 nm long) were seen in crude sap of both plants with a transmission electron microscope. Total RNA was isolated from the leaves of both plants with an RNeasy Plant Mini Kit (Qiagen, Chatsworth, CA), and cDNA was synthesized by Superscript III (Invitrogen, Carlsbad, CA). cDNA was used in PCR to test for viruses in the following genera: Allexivirus, Carlavirus, Cucumovirus, Nepovirus A and B, Potyvirus, Potexvirus, Tospovirus, and Tobravirus. Both plants tested positive for potyvirus using generic potyvirus primers (3). Amplicons from both plants were directly sequenced. The forward and reverse sequence from the CB plant matched sequences in the GenBank database for Narcissus late season yellows virus (NLSYV) and Narcissus degeneration virus (NDV), respectively. The potyvirus amplicon from the CB plant was cloned and sequenced. Sequence from independent clones was obtained for NLYSV only (No. FJ546721), and this sequence showed 97% nucleotide identity to NLYSV No. EU887015. The CB plant was tested with a second set of generic potyvirus primers using forward (PV1SP6) (2) and reverse primers (U335) (1). BLASTN analysis of the sequence obtained from independent clones (No. FJ543718) matched sequence for NDV only (97% nucleotide identity to No. AM182028). BLASTN analysis of the potyvirus obtained for the TK plant (No. FJ546720) showed 97% nucleotide identity to NLSYV (No. EU887015). The TK plant also tested positive for a carlavirus using commercial primers (Agdia, Elkhart, IN) and unpublished generic carlavirus primers (A. Blowers, personal communication). Amplicons from both PCRs were cloned and sequenced. BLASTN analysis of both sequences (Nos. FJ546719 and GQ205442) showed 94% nucleotide identity to Narcissus symptomless virus (NSV) No. AM182569. Both plants were also tested for NLSYV, Narcissus virus Q, Narcissus latent virus, and Narcissus yellow stripe virus by indirect ELISA (Neogen, Lansing, MI). Results confirmed the presence of NLSYV in both plants but the plants were negative for the other viruses. NLSYV has been detected previously from Narcissus pseudonarcissus L. (daffodil) (D. Hunter, personal communication); however, to our knowledge, this is the first official report of NDV, NLSYV, and NSV in New Zealand. Since both plants tested negative for several other viruses by PCR and ELISA, this would suggest that the symptoms observed may have been caused by NSV, NLSYV, NDV, or as a result of a mixed infection. However, symptoms were not confirmed using Koch's postulate. NSV has been reported in the literature as symptomless. NLYSV has been reported to be a possible cause of leaf chlorosis and striping and NDV has been associated with chlorotic leaf striping in N. tazetta plants (4). Since Narcissus is an important flower crop for domestic production in New Zealand, the reduction in flower quality observed when these viruses are present may be of economic significance in commercial nurseries. References: (1) S. A. Langeveld et al. J. Gen. Virol. 72:1531, 1991. (2) A. M. Mackenzie et al. Arch Virol. 143:903, 1998. (3) V. Marie-Jeanne et al. J. Phytopathol. 148:141, 2000. (4) W. P. Mowat et al. Ann. Appl. Biol. 113:531, 1988.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-09-01",
+      "authors": "Ward L I; Veerakone S; Tang J; Clover G R G",
+      "first_author": "Ward L I",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Narcissus degeneration virus (NDV), Narcissus late season yellows virus (NLSYV), Narcissus symptomless virus (NSV)",
+      "taxonomy": "Potyviridae, Potyvirus (NDV, NLSYV); Betaflexiviridae, Carlavirus (NSV)",
+      "host_plant": "Narcissus (水仙)",
+      "location": "新西兰（北岛Taranaki, 南岛Canterbury）",
+      "results": "两种植株检出potyvirus，序列与NDV、NLSYV相似性97%；一株检出carlavirus，与NSV相似性94%；ELISA确认NLSYV。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754550",
+      "doi": "10.1094/PDIS-93-9-0970A",
+      "title": "First Report of Tomato chlorosis virus in Tomato in Costa Rica.",
+      "abstract": "In early 2007, severe yellowing and chlorosis symptoms were observed in field-grown and greenhouse tomato (Solanum lycopersicum L.) plants in Costa Rica. Symptoms resembled those of the genus Crinivirus (family Closteroviridae), and large populations of whiteflies, including the greenhouse whitefly Trialeurodes vaporariorum (Westwood), were observed in the fields and on symptomatic plants. Total RNA was extracted from silica gel-dried tomato leaf tissue of 47 representative samples (all were from symptomatic plants) using TRI Reagent (Molecular Research Inc., Cincinnati, OH). Reverse transcription (RT)-PCR reactions were performed separately with each of the four primer sets with the Titan One-Tube RT-PCR Kit (Roche Diagnostics Corp., Chicago IL). Specific primers used for the detection of the criniviruses, Tomato chlorosis virus (ToCV) and Tomato infectious chlorosis virus (TICV), were primer pair ToCV-p22-F (5'-ATGGATCTCACTGGTTGCTTGC-3') and ToCV-p22-R (5'-TTATATATCACTCCCAAAGAAA-3') specific for the p22 gene of ToCV RNA1 (1), primer pair ToCVCPmF (5'-TCTGGCAGTACCCGTTCGTGA-3') and ToCVCPmR (5'-TACCGGCAGTCGTCCCATACC-3') designed to be specific for the ToCV CPm gene of ToCV RNA2 (GenBank Accession No. AY903448) (2), primer pair ToCVHSP70F (5'-GGCGGTACTTTCGACACTTCTT-3') and ToCVHSP70R (5'-ATTAACGCGCAAAACCATCTG-3') designed to be specific for the Hsp70 gene of RNA2 of ToCV (GenBank Accession No. EU284744) (1), and primer pair TICV-CP-F and TICV-CP-R specific for the coat protein gene of TICV (1). Amplified DNA fragments (582 bp) were obtained from nine samples, four from the greenhouse and five from the open field, with the ToCV-p22 specific primers and were cloned into the pCRII TOPO cloning vector (Invitrogen, Carlsbad, CA). Nucleotide sequence analysis of all purified RT-PCR products verified their identity as ToCV, sharing 99.5 to 100% sequence identity among themselves and 96% to 98% sequence identity with previously reported ToCV p22 sequences from Florida (Accession No. AY903447), Spain (Accession No. DQ983480), and Greece (Accession No. EU284745). The presence of ToCV in the samples was confirmed by additional amplification and sequence analysis of the CPm (449-bp fragment) and Hsp70 (420-bp fragment) genes of ToCV RNA2 and sharing 98 to 99% sequence homology to Accession Nos. AY903448 and EU284774, respectively. One representative sequence of the p22 gene of the Costa Rican isolate was deposited at GenBank (Accession No. FJ809714). No PCR products were obtained using either the TICV-specific primers nor from healthy tomato tissue. The ToCV-positive samples were collected from a region in the Central Valley around Cartago, Costa Rica. To our knowledge, this is the first report of ToCV in Costa Rica. The economic impact on tomato has not yet been determined. Studies are underway to determine the incidence of ToCV in Costa Rica field-grown and greenhouse tomatoes. References: (1) A. R. A. Kataya et al. Plant Pathol. 57:819, 2008. (2) W. M. Wintermantel et al. Arch. Virol. 150:2287, 2005.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-09-01",
+      "authors": "Castro R M; Hernandez E; Mora F; Ramirez P; Hammond R W",
+      "first_author": "Castro R M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato chlorosis virus (ToCV)",
+      "taxonomy": "Closteroviridae, Crinivirus",
+      "host_plant": "Solanum lycopersicum (番茄)",
+      "location": "哥斯达黎加，中央谷地，卡塔戈附近",
+      "results": "9个样品阳性，p22/CPm/Hsp70基因序列与已知ToCV具96-100%同源性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754546",
+      "doi": "10.1094/PDIS-93-9-0965B",
+      "title": "First Report of Freesia sneak virus in Freesia sp. in Virginia.",
+      "abstract": "In the spring of 2008, freesia, cvs. Honeymoon and Santana, with striking virus-like symptoms similar to freesia leaf necrosis disease were received by the Virginia Tech Plant Disease Clinic from a cut-flower nursery in Gloucester, VA and forwarded for analysis to the USDA-ARS Floral and Nursery Plants Research Unit in Beltsville, MD. Approximately 25% of the plants had coalescing, interveinal, chlorotic, whitish, necrotic or dark brown-to-purple necrotic spots on leaves. Symptomatic plants were scattered within the planting. Fifteen symptomatic plants were collected between March and May of 2008, and nucleic acid extracts were analyzed for ophiovirus infection by reverse transcription (RT)-PCR with ophiovirus-specific degenerate primers (2). The diagnostic 136-bp ophiovirus product from the RdRp gene was amplified from 14 of 15 freesia plants tested. A partially purified virus preparation was analyzed by transmission electron microscopy and potyvirus- and ophiovirus-like particles were detected. The potyviruses, Freesia mosaic virus (FreMV) and Bean yellow mosaic virus (BYMV), each cause mosaic symptoms (3), although BYMV may induce necrosis late in the season. RT-PCR performed on the same nucleic acid samples using potyvirus coat protein (CP)-specific degenerate primers D335 and U335 (1) amplified the diagnostic 335-bp fragment from 2 of 15 plants. Cloned sequence from these plants was identified as FreMV. The ophiovirus CP gene was amplified by RT-PCR and cloned from two symptomatic freesia plants using primers FreSVf-CP-XhoI 5'-GACTCGAGAAATGTCTGGAAAATACTCTGTTC-3' and FreSVf-CP-BamHI 5'-CCAGGATCCTTAGATAGTGAATCCATAAGCTG-3', based on the sequence of Freesia sneak virus (FreSV) isolates from freesia (GenBank No. DQ885455) and lachenalia (4). The approximate 1.3-kb amplicon was cloned and sequences of two cDNA clones were identical (GenBank No. FJ807730). The deduced amino acid sequence showed 99% identity with the Italian FreSV CP sequence (GenBank No. DQ885455), confirming FreSV in the symptomatic freesia plants. To our knowledge, this is the first report of FreSV in Virginia and the United States. Soilborne freesia leaf necrosis disease has been reported in Europe since the 1970s (3); several viral causal agents have been hypothesized but recent findings correlate best with the ophiovirus. In Virginia, the presence of FreSV, but not FreMV, was strongly correlated with the leaf necrosis syndrome. FreSV, likely soilborne through Olpidium brassicae, may pose a new soilborne threat for bulbous ornamentals, since it has been recently detected also in Lachenalia spp. (Hyacinthaceae) from South Africa (4). Although specific testing of O. brassicae was not performed, the disease may potentially persist in the soil for years in O. brassicae resting spores and development of symptoms may be affected by environmental conditions (3). References: (1) S. A. Langeveld et al. J. Gen. Virol. 72:1531, 1991. (2) A. M. Vaira et al. Arch.Virol. 148:1037, 2003. (3) A. M. Vaira et al. Acta Hortic. 722:191, 2006. (4) A. M. Vaira et al. Plant Dis. 91:770, 2007.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-09-01",
+      "authors": "Vaira A M; Hansen M A; Murphy C; Reinsel M D; Hammond J",
+      "first_author": "Vaira A M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Freesia sneak virus (FreSV)",
+      "taxonomy": "Ophioviridae, Ophiovirus",
+      "host_plant": "Freesia sp. (小苍兰) cv. Honeymoon and Santana",
+      "location": "美国弗吉尼亚州格洛斯特",
+      "results": "15株中14株检测到ophiovirus，2株检测到FreMV；FreSV CP基因与意大利分离物99%一致。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754562",
+      "doi": "10.1094/PDIS-93-9-0964B",
+      "title": "First Report of Barley yellow dwarf virus-MAV in Oat, Wheat, and Barley Grown in the Czech Republic.",
+      "abstract": "Barley yellow dwarf disease, a ubiquitous virus disease of cereal crops worldwide, is caused by a group of related, single-stranded RNA viruses assigned to Luteovirus (Barley yellow dwarf virus [BYDV] spp. PAV, PAS, MAV, and GAV) or Polerovirus (Cereal yellow dwarf virus-RPV) genera or unassigned to a genera (BYDV-SGV, BYDV-RMV, and BYDV-GPV) in the family Luteoviridae (1). Incidence of BYDV in cereal crops (e.g., barley, wheat, and oats) was high, and in recent years, reached epidemic levels in many regions of the Czech Republic. BYDV-PAV and BYDV-PAS have been identified in Czech cereal crops (2,4). Surveys of the incidence of BYDV were carried out using ELISA (SEDIAG SAS, Longvic, France) and one-step reverse transcription (RT)-PCR (Qiagen, Hilden, Germany) (2) during 2007 and 2008. Samples (125) were collected from different fields around the Czech Republic and 96 were BYDV positive. Three of the field isolates, CZ-6815, CZ-1561, and CZ-10844, from oat (Avena sativa; cv. Auron), winter wheat (Triticum aestivum; cv. Apache), and winter barley (Hordeum vulgare; cv. Merlot), respectively, were identified as BYDV-MAV by sequencing of the RT-PCR product (641-bp fragment) used to identify BYDV, which spanned 2839-3479 of the BYDV genome (GenBank Accession Nos. EF043235 and NC_002160) (2). The partial coat protein gene sequence of 483 nt was compared with the available sequences of 12 BYDV-PAV isolates (PAV-JP, PAV-NY, PAV-ILL, PAV-AUS, PAV-WG2, PAV-whG4y3, PAV-on21-4, Tahoe1, CA-PAV, HB3, FH3, and MA9501); nine BYDV-PAS isolates (PAS-129, PAS-64, WS6603, WG13, PAS-Tcb4-1, PASwaw5-9, FL2, PAS-Vd29, and PAS-MA9516); and six BYDV-MAV isolates (MAV-CA, MAV-PS1X1, MAV-Alameds268, LMB2a, SI-o4, and MAV-CN) by MEGA4 (3). Nucleotide and amino acid sequence identities for the three isolates ranged from 92.9 to 99.4% and 88.0 to 95.8%, respectively, for available BYDV-MAV isolates; 76.8 to 78.2% and 62.7 to 67.6%, respectively, for available BYDV-PAS isolates; and 77.6 to 79.3% and 65.5 to 70.4%, respectively, for available PAV isolates. The sequence data indicates that these isolates (CZ-6815, CZ-1561, and CZ10844; GenBank Accession Nos. FJ645747, FJ645758, and FJ645746, respectively) are BYDV-MAV. To my knowledge, this is the first record of BYDV-MAV in the Czech Republic. References: (1) C. J. D'Arcy and L. L. Domier. Page 891 in: Virus Taxonomy-8th Report of the ICTV. C. M. Fauquet et al., eds. Springer-Verlag, NY, 2005. (2) J. K. Kundu. Plant Dis. 92:1587, 2008. (3) K. Tamura et al. Mol. Biol. Evol. 24:1596, 2007. (4) J. Vacke. Page 100 in: Sbornik Referatu z Odborneho Seminare, Aktualni Problemy Ochrany Polnich Plodin, Praha, 1991.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-09-01",
+      "authors": "Kundu J K",
+      "first_author": "Kundu J K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Barley yellow dwarf virus-MAV (BYDV-MAV)",
+      "taxonomy": "Luteoviridae, Luteovirus",
+      "host_plant": "燕麦 (Avena sativa), 小麦 (Triticum aestivum), 大麦 (Hordeum vulgare)",
+      "location": "捷克共和国",
+      "results": "125个样品中96个BYDV阳性，三个分离株CZ-6815、CZ-1561、CZ-10844经序列分析确认为BYDV-MAV，与已知MAV株系核苷酸一致性92.9-99.4%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19694957",
+      "doi": "10.1111/j.1364-3703.2009.00559.x",
+      "title": "Cassava mosaic geminiviruses: actual knowledge and perspectives.",
+      "abstract": "SUMMARY Cassava mosaic disease (CMD) caused by cassava mosaic geminiviruses (CMGs) is one of the most devastating crop diseases and a major constraint for cassava cultivation. CMD has been reported only from the African continent and Indian subcontinent despite the large-scale cultivation of cassava in Latin America and several South-East Asian countries. Seven CMG species have been reported from Africa and two from the Indian subcontinent and, in addition, several strains have been recognized. Recombination and pseudo-recombination between CMGs give rise not only to different strains, but also to members of novel virus species with increased virulence and a new source of biodiversity, causing severe disease epidemics. CMGs are known to trigger gene silencing in plants and, in order to counteract this natural host defence, geminiviruses have evolved suppressor proteins. Temperature and other environmental factors can affect silencing and suppression, and thus modulate the symptoms. In the case of mixed infections of two or more CMGs, there is a possibility for a synergistic interaction as a result of the presence of differential and combinatorial suppressor proteins. In this article, we provide the status of recent research findings with regard to the CMD complex, present the molecular biology knowledge of CMGs with reference to other geminiviruses, and highlight the mechanisms by which CMGs have exploited nature to their advantage.",
+      "journal": "Molecular plant pathology",
+      "year": 2009,
+      "pub_date": "2009-09-01",
+      "authors": "Patil Basavaprabhu L; Fauquet Claude M",
+      "first_author": "Patil Basavaprabhu L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "木薯花叶双生病毒 (Cassava mosaic geminiviruses, CMGs)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "木薯 (Cassava, Manihot esculenta)",
+      "location": "非洲、印度次大陆",
+      "results": "综述无实验数据，主要总结已知研究：7种病毒来自非洲，2种来自印度；重组产生新种；病毒抑制子与宿主沉默互作；混合感染协同增强。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

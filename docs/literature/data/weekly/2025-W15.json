@@ -1,0 +1,238 @@
+{
+  "week": "2025-W15",
+  "start": "2025-04-07",
+  "end": "2025-04-13",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 26,
+  "by_category": {
+    "Host_Virus_Interactions": 15,
+    "Control_Management": 5,
+    "Transmission_Epidemiology": 2,
+    "Antiviral_Resistance_Genes": 2,
+    "Biotechnology_Applications": 2,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "40284047",
+      "doi": "10.3390/plants14081159",
+      "title": "Roles of WRKY Transcription Factors in Response to Sri Lankan Cassava Mosaic Virus Infection in Susceptible and Tolerant Cassava Cultivars.",
+      "abstract": "Cassava mosaic disease (CMD) is caused by viruses such as Sri Lankan cassava mosaic virus (SLCMV). It poses a significant threat to the cassava (Manihot esculenta) yield in Southeast Asia. Here, we investigated the expression of WRKY transcription factors (TFs) in SLCMV-infected cassava cultivars KU 50 (tolerant) and R 11 (susceptible) at 21, 32, and 67 days post-inoculation (dpi), representing the early, middle/recovery, and late infection stages, respectively. The 34 identified WRKYs were classified into the following six groups based on the functions of their homologs in the model plant Arabidopsis thaliana (AtWRKYs): plant defense; plant development; hormone signaling (abscisic, salicylic, and jasmonic acid); reactive oxygen species production; basal immune mechanisms; and other related hormones, metabolites, and abiotic stress responses. Regarding the protein interactions of the identified WRKYs, based on the interactions of their homologs (AtWRKYs), WRKYs increased reactive oxygen species production, leading to salicylic acid accumulation and systemic acquired resistance (SAR) against SLCMV. Additionally, some WRKYs were involved in defense-related mitogen-activated protein kinase signaling and abiotic stress responses. Furthermore, crosstalk among WRKYs reflected the robustly restricted viral multiplication in the tolerant cultivar, contributing to CMD recovery. This study highlights the crucial roles of WRKYs in transcriptional reprogramming, innate immunity, and responses to geminivirus infections in cassava, providing valuable insights to enhance disease resistance in cassava and, potentially, other crops.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-04-08",
+      "authors": "Chaowongdee Somruthai; Vannatim Nattachai; Malichan Srihunsa; Kuncharoen Nattakorn; Tongyoo Pumipat; ... (+1)",
+      "first_author": "Chaowongdee Somruthai",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Sri Lankan cassava mosaic virus (SLCMV)",
+      "taxonomy": "",
+      "host_plant": "木薯 (Manihot esculenta)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40221509",
+      "doi": "10.1038/s41598-025-97452-y",
+      "title": "Identification of peptidome-based biomarkers of cassava mosaic disease resistance in different cassava varieties.",
+      "abstract": "Cassava, a major economic crop in Thailand, yielded over 3 million USD in exports in 2023. However, its production has been declining since 2021 due to cassava mosaic disease (CMD) outbreaks, which affect cassava plantations. CMD infections have recently increased due to the scarcity of healthy stems and CMD-resistant varieties, the latter being key to controlling its spread. Developing novel methods is critical for accelerating the cultivation of high-yield, CMD-resistant varieties. In this study, signature peptide patterns were determined using matrix-assisted laser desorption/ionization time-of-flight mass spectrometry (MALDI-TOF MS) and liquid chromatography-tandem MS (LC-MS/MS) to screen for CMD-resistant varieties. Peptide mass fingerprint (PMF) analyses revealed distinct peptide barcodes across 11 varieties, clearly delineating CMD-resistant and CMD-tolerant phenotypes. LC-MS/MS and orthogonal partial least squares-discriminant analysis (OPLS-DA) further demonstrated clear distinctions between the peptide profiles of different phenotypes. Heatmap and PMF analyses consistently revealed unique peptide patterns across the varieties. Volcano plot analysis identified seven upregulated peptides-TATTVAGS, PAAGGGGG, PNELLSYSE, SSIEEGGS, GGGVGGPL, NNGGGFSV, and GPGPAPAA-in CMD-resistant plants. These peptides were associated with proteins containing CONSTANS-like zinc finger, C2H2-type, GST N-terminal, Tubby-like F-box, nuclear-localized AT-hook motif, auxin response factor, and C2 domains. Altogether, this study identified peptidome-based biomarkers for screening CMD-resistant varieties; however, further validation using larger samples is necessary.",
+      "journal": "Scientific reports",
+      "year": 2025,
+      "pub_date": "2025-04-12",
+      "authors": "Siriwan Wanwisa; Charoenlappanit Sawanya; Phaonakrop Narumon; Thaisakun Siriwan; Roytrakul Sittiruk",
+      "first_author": "Siriwan Wanwisa",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "木薯花叶病毒（未具体指定种类）",
+      "taxonomy": "",
+      "host_plant": "木薯",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40278390",
+      "doi": "10.3390/metabo15040261",
+      "title": "Enhancing Plant Resistance to Sri Lankan Cassava Mosaic Virus Using Salicylic Acid.",
+      "abstract": "Background: Cassava mosaic disease (CMD), caused by the Sri Lankan cassava mosaic virus (SLCMV), significantly increases cassava yield losses in Thailand, with losses ranging from 30% to 80%, and is exacerbated by limited access to healthy planting materials. Methods: This study explored salicylic acid (SA) as a potential treatment for enhancing disease resistance in CMD infected cassava plants. SA was applied at 100 and 200 mg/mL, and its effects were evaluated using quantitative real-time polymerase chain reaction (qPCR) and reverse transcription qPCR (RT-qPCR) to measure viral loads and the expression levels of resistance genes. Results: Although SA treatment did not considerably affect disease severity, foliar CMD symptoms visibly decreased, particularly with 200 mg/mL SA, which also reduced SLCMV particle counts at 1- and 2-weeks post-treatment. SA upregulated the expression of pathogenesis-related proteins (PRs), including HSP90.9, WRKY59, SRS1, and PR9e. Additionally, SA enhanced the regulation of secondary metabolite pathways involving L-serine within the glycine, serine, and threonine metabolism, as well as the phenylpropanoid biosynthesis pathways. Conclusions: These findings collectively indicate that SA enhances resistance through the systemic acquired resistance (SAR) pathway and can serve as a potential strategy for the management of CMD, particularly in regions where healthy cassava planting materials are scarce. The study highlights the efficacy of SA in reducing viral particles, inducing the immune response, and providing a promising approach for controlling CMD.",
+      "journal": "Metabolites",
+      "year": 2025,
+      "pub_date": "2025-04-10",
+      "authors": "Pattanavongsawat Chonnipa; Malichan Srihunsa; Vannatim Nattachai; Chaowongdee Somruthai; Hemniam Nuannapa; ... (+2)",
+      "first_author": "Pattanavongsawat Chonnipa",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Sri Lankan cassava mosaic virus (SLCMV)",
+      "taxonomy": "",
+      "host_plant": "木薯 (cassava)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40211356",
+      "doi": "10.1186/s13007-025-01368-7",
+      "title": "Citrus phloem specific transcriptional profiling through the development of a citrus tristeza virus expressed translating ribosome affinity purification system.",
+      "abstract": "[BACKGROUND] The analysis of translationally active mRNAs, or translatome, is a useful approach for monitoring cellular and plant physiological responses. One such method is the translating ribosome affinity purification (TRAP) system, which utilizes tagged ribosomal proteins to isolate ribosome-associated transcripts. This approach enables spatial and temporal gene expression analysis by driving the expression of tagged ribosomal proteins with tissue- or development-specific promoters. In plants, TRAP has enhanced our understanding of physiological responses to various biotic and abiotic factors. However, its utility is hampered by the necessity to generate transgenic plants expressing the tagged ribosomal protein, making this approach particularly challenging in perennial crops such as citrus. [RESULTS] This study involved the construction of a citrus tristeza virus (CTV) vector to express an immuno-tagged ribosome protein (CTV-hfRPL18). CTV, limited to the phloem, has been used for expressing marker and therapeutic sequences, making it suitable for analyzing citrus vascular tissue responses, including those related to huanglongbing disease. CTV-hfRPL18 successfully expressed a clementine-derived hfRPL18 peptide, and polysome purifications demonstrated enrichment for the hfRPL18 peptide. Subsequent translatome isolations from infected Nicotiana benthamiana and Citrus macrophylla showed enrichment for phloem-associated genes. [CONCLUSION] The CTV-hfRPL18 vector offers a transgene-free and rapid system for TRAP expression and translatome analysis of phloem tissues within citrus.",
+      "journal": "Plant methods",
+      "year": 2025,
+      "pub_date": "2025-04-10",
+      "authors": "Culver James N; Vallar Meinhart; Burchard Erik; Kamens Sophie; Lair Sebastien; ... (+5)",
+      "first_author": "Culver James N",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "柑橘衰退病毒",
+      "taxonomy": "",
+      "host_plant": "柑橘、本氏烟",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39998220",
+      "doi": "10.1128/mbio.03588-24",
+      "title": "A dual insect symbiont and plant pathogen improves insect host fitness under arginine limitation.",
+      "abstract": "Some facultative bacterial symbionts are known to benefit insects, but nutritional advantages are rare among these non-obligate symbionts. Here, we demonstrate that the facultative symbiont Candidatus Liberibacter psyllaurous enhances the fitness of its psyllid insect host, Bactericera cockerelli, by providing nutritional benefits. L. psyllaurous, an unculturable pathogen of solanaceous crops, also establishes a close relationship with its insect vector, B. cockerelli, increasing in titer during insect development, vertically transmitting through eggs, and colonizing various tissues, including the bacteriome, which houses the obligate nutritional symbiont, Carsonella. Carsonella supplies essential amino acids to its insect host but has gaps in some of its essential amino acid pathways that the psyllid complements with its own genes, many of which have been acquired through horizontal gene transfer (HGT) from bacteria. Our findings reveal that L. psyllaurous increases psyllid fitness on plants by reducing developmental time and increasing adult weight. In addition, through metagenomic sequencing, we reveal that L. psyllaurous maintains complete pathways for synthesizing the essential amino acids arginine, lysine, and threonine, unlike the psyllid's other resident microbiota, Carsonella, and two co-occurring Wolbachia strains. RNA sequencing reveals the downregulation of a HGT collaborative psyllid gene (ASL), which indicates a reduced demand for arginine supplied by Carsonella when the psyllid is infected with L. psyllaurous. Notably, artificial diet assays show that L. psyllaurous enhances psyllid fitness on an arginine-deplete diet. These results corroborate the role of L. psyllaurous as a beneficial insect symbiont, contributing to the nutrition of its insect host.IMPORTANCEUnlike obligate symbionts that are permanently associated with their hosts, facultative symbionts rarely show direct nutritional contributions, especially under nutrient-limited conditions. This study demonstrates, for the first time, that Candidatus Liberibacter psyllaurous, a facultative symbiont and a plant pathogen, enhances the fitness of its Bactericera cockerelli host by supplying an essential nutrient arginine that is lacking in the plant sap diet. Our findings reveal how facultative symbionts can play a vital role in helping their insect hosts adapt to nutrient-limited environments. This work provides new insights into the dynamic interactions between insect hosts, their symbiotic microbes, and their shared ecological niches, broadening our understanding of symbiosis and its role in shaping adaptation and survival.",
+      "journal": "mBio",
+      "year": 2025,
+      "pub_date": "2025-04-09",
+      "authors": "Kwak Younghwan; Argandona Jacob A; Miao Sen; Son Thomas J; Hansen Allison K",
+      "first_author": "Kwak Younghwan",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40138468",
+      "doi": "10.1021/acs.jafc.4c12430",
+      "title": "Host Defense Peptide-Mimicking Poly(2-oxazoline)s Displaying Potent Activities toward Phytopathogens to Alleviate Antimicrobial Resistance in Agriculture.",
+      "abstract": "Given the limited types of agricultural bactericides and the rapid emergence of antimicrobial resistance, bacterial plant diseases pose a serious threat to agricultural production, which calls for effective antimicrobial agents with a low propensity for resistance. Host defense peptides (HDPs) have drawn significant attention for their broad-spectrum antimicrobial activity. In this study, we found that HPD-mimicking poly(2-oxazoline) Gly-POX20 exhibits potent activity against bacterial phytopathogens, with superior antibacterial selectivity and proteolytic stability compared to the natural HDP melittin. Compared to commonly used agricultural bactericides, Gly-POX20 displays more efficient antibiofilm activity and a lower propensity for resistance than does the antibiotic streptomycin, likely due to its antibacterial mechanism, which involves DNA interaction and generating lethal doses of ROS. In vivo studies reveal that Gly-POX20 is effective in preventing and treating phytopathogens without observable damage to plant tissues, suggesting that poly(2-oxazoline) could be a promising bactericide for agricultural applications.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2025,
+      "pub_date": "2025-04-09",
+      "authors": "Chen Sheng; Zhou Min; Xiao Ximian; Xie Jiayang; Liu Longqiang; ... (+6)",
+      "first_author": "Chen Sheng",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40025738",
+      "doi": "10.1016/j.molp.2025.02.006",
+      "title": "Plant PAQR-like sensors activate heterotrimeric G proteins to confer resistance against multiple pathogens.",
+      "abstract": "Human adiponectin receptors (AdipoRs) and membrane progestin receptors (mPRs, members of the progestin and adipoQ receptor [PAQR] family) are seven-transmembrane receptors involved in the regulation of metabolism and cancer development, which share structural similarities with G protein-coupled receptors. Plant PAQR-like sensors (PLSs) are homologous to human PAQRs but their molecular functions remain unclear. In this study, we found that PLSs associate with cell surface receptor-like kinases through KIN7 and positively regulate plant immune responses, stomatal defense, and disease resistance. Moreover, PLSs activate heterotrimeric G proteins (Gαβγ) to transduce immune signals and regulate the exchange of GDP for GTP on GPA1. Further analyses revealed that the immune function of PLSs is conserved in rice and soybean and contributes to resistance against multiple diseases. Notably, heterologous expression of human AdipoRs in Arabidopsis replicates the immune functions of PLSs. Collectively, our findings demonstrate that PLSs are key modulators of plant immunity via the G-protein pathway and highlight the potential application of human genes in enhancing plant disease resistance.",
+      "journal": "Molecular plant",
+      "year": 2025,
+      "pub_date": "2025-04-07",
+      "authors": "Zhang Houxiao; Zhang Yuzhu; Li Quanlin; Hao Fengsheng; Stacey Gary; ... (+1)",
+      "first_author": "Zhang Houxiao",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40130596",
+      "doi": "10.1021/acsnano.4c15671",
+      "title": "Exploring Broad-Spectrum Antimicrobial Nanotopographies: Implications for Bactericidal, Antifungal, and Virucidal Surface Design.",
+      "abstract": "Inspired by the natural defense strategies of insect wings and plant leaves, nanostructured surfaces have emerged as a promising tool in various fields, including engineering, biomedical sciences, and materials science, to combat bacterial contamination and disrupt biofilm formation. However, the development of effective antimicrobial surfaces against fungal and viral pathogens presents distinct challenges, necessitating tailored approaches. Here, we aimed to review the recent advancements of the use of nanostructured surfaces to combat microbial contamination, particularly focusing on their mechano-bactericidal and antifungal properties, as well as their potential in mitigating viral transmission. We comparatively analyzed the diverse geometries and nanoarchitectures of these surfaces and discussed their application in various biomedical contexts, such as dental and orthopedic implants, drug delivery systems, and tissue engineering. Our review highlights the importance of preventing microbial attachment and biofilm formation, especially in the context of rising antimicrobial resistance and the economic impact of biofilms. We also discussed the latest progress in materials science, particularly nanostructured surface engineering, as a promising strategy for reducing viral transmission through surfaces. Overall, our findings underscore the significance of innovative strategies to mitigate microbial attachment and surface-mediated transmission, while also emphasizing the need for further interdisciplinary research in this area to optimize antimicrobial efficacy and address emerging challenges.",
+      "journal": "ACS nano",
+      "year": 2025,
+      "pub_date": "2025-04-08",
+      "authors": "Baulin Vladimir A; Linklater Denver P; Juodkazis Saulius; Ivanova Elena P",
+      "first_author": "Baulin Vladimir A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40204786",
+      "doi": "10.1038/s41598-025-94819-z",
+      "title": "Phenotypic variability of plant architecture, easy destemming, and yield for accelerated selection for mechanical harvestability in chile pepper.",
+      "abstract": "In recent years, chile pepper (Capsicum annuum L.) production in the US has shown a decline due to higher costs associated with manual harvesting and unavailability of skilled labor. Chile pepper breeding programs have incorporated mechanization as a long-term breeding objective alongside historically significant traits such as yield, disease resistance, and fruit quality. Nevertheless, information on the genetic landscape of traits crucial for chile pepper mechanization and their relationships with other agronomic traits remain limited. This study employed multivariate approaches, phenotypic and genetic correlations, hierarchical cluster analysis (HCA), and principal component analysis (PCA) to investigate the genetic architecture of mechanical harvestability traits using a diverse C. annuum L. population evaluated in field conditions in New Mexico, USA. Fruit morphology and fruit destemming force were the most discriminating traits that accounted for most of the observed phenotypic variation in the population. Medium to high narrow-sense heritability estimates (0.53-1.0) indicated the predominance of additive genetic effects for traits relevant for mechanical harvesting. Negative genetic correlations (rg; -0.28 to -0.67) were observed between fruit destemming force and plant architecture traits demonstrating the challenge in breeding New Mexican pod type chile peppers suitable for mechanical harvesting. Ten genotypes identified through HCA were further validated for mechanization potential using PCA. These genotypes could be used as potential parental lines in breeding programs aimed at developing chile pepper varieties amenable to mechanical harvest. The findings of the study provide valuable insights to breeders on the genetic architecture of traits critical for mechanization, thereby aiding informed decision-making and improving breeding and selection accuracy for the development of new mechanically harvestable chile pepper cultivars.",
+      "journal": "Scientific reports",
+      "year": 2025,
+      "pub_date": "2025-04-09",
+      "authors": "Khokhar Ehtisham S; Lozada Dennis N; Khan Muhammad Ibrar; Nourbakhsh Seyed Shahabeddin",
+      "first_author": "Khokhar Ehtisham S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40221954",
+      "doi": "10.1007/s00425-025-04682-5",
+      "title": "Advances in using non-thermal plasmas for healthier crop production: toward pesticide and chemical fertilizer-free agriculture.",
+      "abstract": "There is an urgent need for sustainable agriculture. Non-thermal plasma seed treatment offers a promising alternative by enhancing germination, nutrient uptake, and disease resistance, and reducing reliance on pesticides and fertilizers. There is an urgent need to transform agricultural practices to meet the challenges of sustainable food production amidst global population growth and environmental degradation. Traditional crop production methods heavily rely on pesticides and synthetic fertilizers, which pose significant risks to human health, disrupt ecosystems, and contribute to environmental pollution. Moreover, these methods are increasingly unsustainable due to rising costs and diminishing effectiveness, evolving pest resistance, and climate change impacts. Recently, non-thermal plasma (NTP) technology has emerged as a promising alternative for seed treatment in agriculture. NTP uses low-temperature plasma to modify seed surfaces, enhancing germination, vigor, and overall plant growth. Studies have demonstrated that NTP treatment improves nutrient uptake, increases disease resistance, and reduces the reliance on chemical inputs (pesticides and fertilizers), thereby promoting pesticide and chemical fertilizer-free agriculture. This paper explores recent research advancements in NTP seed treatment and its potential applications in sustainable agriculture. By exploring the mechanisms underlying the NTP effects on seed physiology, the paper provides a comprehensive understanding of how this technology can contribute to sustainable crop production. Furthermore, the paper discusses the strengths, weaknesses, opportunities, and challenges associated with the potential large-scale use of low-temperature plasmas in agriculture, aiming to accelerate the adoption of NTP and its commercialization in the agro-food industries. Overall, the goal of this paper is to highlight the transformative potential of NTP seed treatment in achieving healthier crop production that is environmentally friendly, economically viable, and capable of meeting the food demands of a growing global population.",
+      "journal": "Planta",
+      "year": 2025,
+      "pub_date": "2025-04-13",
+      "authors": "Pal Priti; Sehgal Hansa; Joshi Mukul; Arora Garima; Simek Milan; ... (+3)",
+      "first_author": "Pal Priti",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

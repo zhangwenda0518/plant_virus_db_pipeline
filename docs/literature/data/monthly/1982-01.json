@@ -1,0 +1,79 @@
+{
+  "month": "1982-01",
+  "generated": "2026-07-13 02:59:41",
+  "total": 3,
+  "by_category": {
+    "New_Virus": 1,
+    "Detection_Methods": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "6187313",
+      "doi": "10.1007/BF01314712",
+      "title": "Monoclonal antibodies against a plant virus.",
+      "abstract": "Eight stable hybridoma clones derived from fusion of spleen cells of Tobacco Mosaic Virus (TMV) immunized mice with murine myeloma cells were grown in mass culture. They were obtained by 2 subsequent limiting dilution cloning cycles and subcultivation. Five of these clones secreted monoclonal antibodies which reacted with TMV nucleocapsid but not with capsid monomers and the monoclonal antibodies secreted by 3 other clones reacted with the TMV capsid monomer but not with the nucleocapsid. The specificity was determined by Enzyme Linked Immunosorbent Assay (ELISA) adjusted for the detection of antibodies in hybridoma culture supernatants.",
+      "journal": "Archives of virology",
+      "year": 1982,
+      "pub_date": "1982-01-01",
+      "authors": "Dietzgen R G; Sander E",
+      "first_author": "Dietzgen R G",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "Tobacco Mosaic Virus (TMV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7201292",
+      "doi": "10.1007/BF00399488",
+      "title": "A new species of Anthopsis.",
+      "abstract": "",
+      "journal": "Antonie van Leeuwenhoek",
+      "year": 1982,
+      "pub_date": "1982-01-01",
+      "authors": "van Oorschot C A; De Hoog G S",
+      "first_author": "van Oorschot C A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7153775",
+      "doi": "10.1021/np50023a009",
+      "title": "Plant antiviral agents. III. Isolation of alkaloids from Clivia miniata Regel (Amaryllidaceae).",
+      "abstract": "Lycorine (1), one of the main alkaloids of the Amaryllidaceae family, was found to be responsible for the pronounced antiviral activity of the crude extracts from the roots and leaves of Clivia miniata Regel. It was shown that the inhibitory activity of lycorine on the cytopathogenic effect caused by a DNA and several RNA viruses on VERO cells was not virucidal. Poliomyelitis virus inhibition occurred at lycorine concentrations as low as 1 microgram/ml, whereas concentrations exceeding 25 micrograms/ml were found to be cytotoxic. Clivimine (2), clivonine (3) and cliviamartine (4) were also isolated and characterized, but these alkaloids exhibited no antiviral properties.",
+      "journal": "Journal of natural products",
+      "year": 1982,
+      "pub_date": "1982-01-01",
+      "authors": "Ieven M; Vlietinck A J; Vanden Berghe D A; Totte J; Dommisse R; ... (+2)",
+      "first_author": "Ieven M",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

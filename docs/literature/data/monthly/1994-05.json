@@ -1,0 +1,80 @@
+{
+  "month": "1994-05",
+  "generated": "2026-07-13 02:59:42",
+  "total": 3,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 2,
+    "Host_Virus_Interactions": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "24185918",
+      "doi": "10.1007/BF00225889",
+      "title": "Mapping and introgression of a tomato yellow leaf curl virus tolerance gene, TY-1.",
+      "abstract": "The whitefly-transmitted tomato yellow-leaf curl gemini-virus (TYLCV) is a major pathogen of tomatoes. The wild tomato species Lycopersicon chilense, which is resistant to the virus, was crossed to the cultivated tomato, L. esculentum. The backcross-1 selfed (BC1S1) generation was inoculated and a symptomless plant was selected. This plant was analyzed using 61 molecular markers, which span the tomato genome, to determine which L. chilense chromosome segments were introgressed. A BC2S1 population was cage-inoculated with viroliferous whiteflies (Bemisia tabaci), the natural insect vector of the virus, and subjected to RFLP analysis. Markers on chromosomes 3 and 6 were significantly associated with the level of tolerance; the association of chromosome-6 markers was further substantiated in two additional BC2S1 populations. A tolerant BC2S1 plant which was homozygous for L. chilense introgressions in chromosomes 3, 6 and 7 was crossed to generate a BC3S1 population which was planted in an infested field. A TYLCV-tolerance gene with partial dominance, TY-1, was mapped to chromosome 6; two modifier genes were mapped to chromosomes 3 and 7. Field and whitefly-mediated cage inoculations of nearly-isogenic lines in BC3S3 supported our conclusion that TY-1 is the major TYLCV-tolerance locus.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 1994,
+      "pub_date": "1994-05-01",
+      "authors": "Zamir D; Ekstein-Michelson I; Zakay Y; Navot N; Zeidan M; ... (+8)",
+      "first_author": "Zamir D",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "番茄黄化曲叶病毒（TYLCV）",
+      "taxonomy": "",
+      "host_plant": "番茄",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8187176",
+      "doi": "10.1016/0092-8674(94)90218-6",
+      "title": "Arabidopsis mutants simulating disease resistance response.",
+      "abstract": "We describe six Arabidopsis mutants, defining at least four loci, that spontaneously form necrotic lesions on leaves. Lesions resemble those resulting from disease, but occur in the absence of pathogen. In five mutants, lesion formation correlates with expression of histochemical and molecular markers of plant disease resistance responses and with expression of genes activated during development of broad disease resistance in plants (systemic acquired resistance [SAR]). We designate this novel mutant class Isd (for lesions simulating disease resistance response). Strikingly, four Isd mutants express substantial resistance to virulent fungal pathogen isolates. Isd mutants vary in cell type preferences for lesion onset and spread. Lesion formation can be conditional and can be induced specifically by biotic and chemical activators of SAR in Isd1 mutants.",
+      "journal": "Cell",
+      "year": 1994,
+      "pub_date": "1994-05-20",
+      "authors": "Dietrich R A; Delaney T P; Uknes S J; Ward E R; Ryals J A; ... (+1)",
+      "first_author": "Dietrich R A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7910798",
+      "doi": "10.1007/BF01920746",
+      "title": "Protective effect of shigyaku-to, a traditional Chinese herbal medicine, on the infection of herpes simplex virus type 1 (HSV-1) in mice.",
+      "abstract": "The antiviral activity of Shigyaku-to (TJS-109), a traditional Chinese herbal medicine, was investigated in mice infected with herpes simplex virus type 1 (HSV-1). TJS-109 is a combination of the medicinal plant extracts from Zingiberis siccatum rhizoma, Aconiti tuber and Glycyrrhizae radix in a specific proportion. Mice infected with a 10 LD50 dose of HSV-1 were treated with TJS-109 orally at doses of 1.25 to 20 mg/kg 2 days before, and 1 and 4 days after the infection. The treated groups had 80% (1.25 mg/kg), 40% (5 mg/kg) and 23% (20 mg/kg) mortality rates 25 days after the infection as compared with a 100% mortality rate in control mice treated with saline. When HSV-1 infected mice (recipients) received CD8+ T cell fractions derived from spleens of mice treated with TJS-109 (donors), 70% of recipients survived, as compared with 0% survivors in the groups of mice treated with saline, B cell fractions, CD4+ T cell fractions or macrophage-enriched fractions prepared from the same donors. TJS-109 did not show any virucidal activities against HSV-1 or any virostatic activities on the growth of HSV-1 in Vero cells. These results suggest that TJS-109 protected mice exposed to lethal amounts of HSV-1 through the activation of CD8+ T cells.",
+      "journal": "Experientia",
+      "year": 1994,
+      "pub_date": "1994-05-15",
+      "authors": "Ikemoto K; Utsunomiya T; Ball M A; Kobayashi M; Pollard R B; ... (+1)",
+      "first_author": "Ikemoto K",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

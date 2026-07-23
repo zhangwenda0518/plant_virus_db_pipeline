@@ -1,0 +1,237 @@
+{
+  "month": "1988-01",
+  "generated": "2026-07-13 02:59:42",
+  "total": 10,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 5,
+    "New_Virus": 2,
+    "Geminiviridae": 1,
+    "Control_Management": 1,
+    "Viral_Diversity_Ecology": 1,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "2829117",
+      "doi": "10.1093/nar/16.1.229",
+      "title": "Infectivity and complete nucleotide sequence of the genome of a South African isolate of maize streak virus.",
+      "abstract": "The complete infectious genome of a South African isolate of the geminivirus maize streak (MSV-S) has been cloned, characterized, and sequenced. Using an A. tumefaciens Ti plasmid delivery system, the cloned -2.7 kb single circular MSV component was shown to be necessary and sufficient for infection of maize. Based on sequence analysis of the infectious clone, MSV-S is highly homologous to the previously characterized Kenyan and Nigerian isolates. While the genomic organization of MSV-S has elements in common with each of these previously characterized isolates, it is identical to neither and its analysis addresses the discrepancies between them. The result is a somewhat simplified and unified picture of the viral genome, the structural organization of which is essentially identical to that of wheat dwarf virus.",
+      "journal": "Nucleic acids research",
+      "year": 1988,
+      "pub_date": "1988-01-11",
+      "authors": "Lazarowitz S G",
+      "first_author": "Lazarowitz S G",
+      "categories": [
+        "New_Virus",
+        "Geminiviridae"
+      ],
+      "virus_name": "Maize streak virus (MSV) 南非分离株 MSV-S",
+      "taxonomy": "Geminiviridae, Mastervirus",
+      "host_plant": "玉米 (maize)",
+      "location": "南非 (South Africa)",
+      "results": "获得2.7kb环状ssDNA感染性克隆；MSV-S与已知分离株高度同源；基因组组织与小麦矮缩病毒基本相同。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "3202695",
+      "doi": "10.1007/BF01310827",
+      "title": "Coat protein of potyviruses. 5. Symptomatology, serology, and coat protein sequences of three strains of passionfruit woodiness virus.",
+      "abstract": "Three strains of passionfruit woodiness virus, Tip Blight (PWV-TB), Severe (PWV-S) and Mild (PWV-M), were compared on the basis of their biological, serological and coat protein structural properties. Each of the strains could be distinguished on the basis of their reactions on selected test plant species but no differences were observed in the serological properties of the three PWV strains. Molecular weight estimates on SDS-PAGE suggest the PWV coat protein contains 275 amino acid residues and sequence data for 269 of these residues is presented. The amino terminal peptide is blocked and has not been sequenced. The coat proteins of PWV-TB and PWV-S, which cause severe symptoms in infected plants, showed only three sequence differences compared to the eleven or twelve sequence changes between their coat proteins and that of the mild strain. The high sequence homology (96-99%) between the three PWV strains is similar to that previously reported for two strains of tobacco etch virus and three strains of sugarcane mosaic virus. Sequence homology between the three strains of PWV and published sequences for the coat proteins of eight distinct potyviruses ranged from 43-71% (average 57%).",
+      "journal": "Archives of virology",
+      "year": 1988,
+      "pub_date": "1988-01-01",
+      "authors": "Shukla D D; McKern N M; Ward C W",
+      "first_author": "Shukla D D",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "百香果木质化病毒（PWV）的三个株系：Tip Blight (PWV-TB), Severe (PWV-S), Mild (PWV-M)",
+      "taxonomy": "",
+      "host_plant": "百香果",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "3247692",
+      "doi": "",
+      "title": "[Mannan sulfates--inducers of plant resistance to viral infection].",
+      "abstract": "Mannan sulphates (MS) synthesized on the basis of extracellular linear mannan (LM) of Rhodotorula rubra induce resistance of Immune-580 tobacco and thornapple (Datura stramonium) to tobacco mosaic virus (TMV). The resistance is manifested in a decrease in the number and/or size of viral local lesions (LL) in MS-treated (mg/ml) leaf halves. The reduction in the LL size does not seem to be due to the direct inhibition of TMV multiplication by the polysaccharide as the virus accumulation in the tissues of the systemic host (Samsun tobacco) does not decrease when MS is used 15 min after infection. The induced resistance is partially inhibited by actinomycin D and completely by heating (32 degrees C). Unlike MS, neutral LM decreases only the number of LL on the treated parts of the tissue but does not influence their size. The antiviral activity of LM does not change in the presence of actinomycin D. The possible mechanisms of the LM and MS protective effect in plants are discussed.",
+      "journal": "Voprosy virusologii",
+      "year": 1988,
+      "pub_date": "1988-01-01",
+      "authors": "Kovalenko A G; Grabina T D; Bobyr' A D; Korbelaĭnen E S; Vitovskaia G A",
+      "first_author": "Kovalenko A G",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒 (Tobacco mosaic virus, TMV)",
+      "taxonomy": "",
+      "host_plant": "烟草（Immune-580品种）、曼陀罗 (Datura stramonium)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "3421666",
+      "doi": "10.1007/BF00443578",
+      "title": "New basidiomycetous yeasts from southern Africa. III. Sporobolomyces phyllomatis sp. nov. (Sporobolomycetaceae).",
+      "abstract": "Three strains of an undescribed, leaf-borne species of the genus Sporobolomyces were recovered. A description of the new species, Sporobolomyces phyllomatis, is given.",
+      "journal": "Antonie van Leeuwenhoek",
+      "year": 1988,
+      "pub_date": "1988-01-01",
+      "authors": "van der Walt J P; Yamada Y; Ferreira N P; Richards P D",
+      "first_author": "van der Walt J P",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "3247856",
+      "doi": "",
+      "title": "[The antiviral action of a polyphenol complex isolated from the medicinal plant Geranium sanguineum L. VI. Reproduction of the influenza virus pretreated with the polyphenol complex].",
+      "abstract": "",
+      "journal": "Acta microbiologica Bulgarica",
+      "year": 1988,
+      "pub_date": "1988-01-01",
+      "authors": "Serkedzhieva Iu; Manolova N",
+      "first_author": "Serkedzhieva Iu",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "3229145",
+      "doi": "",
+      "title": "Cytotoxicity of pokeweed antiviral protein.",
+      "abstract": "Pokeweed antiviral protein, a plant protein which inactivates eukaryotic ribosomes, was found to be cytotoxic to both HeLa and Vero cells. Cellular protein synthesis was inhibited by exposure of the cells to microM concentrations of the antiviral protein for 24 h periods or longer. The extent of the inhibition of cellular protein synthesis was dependent upon the time of exposure to pokeweed antiviral protein and was partially reversed by washing the cells at various times prior to the measurement of protein synthesis. The antiviral protein was also observed to bind nonspecifically to cells at both 4 degrees and 34 degrees C. The data indicate that the pokeweed antiviral protein is capable of slowly entering mammalian cells which results in the inhibition cellular protein synthesis.",
+      "journal": "Cytobios",
+      "year": 1988,
+      "pub_date": "1988-01-01",
+      "authors": "Aron G M; Irvin J D",
+      "first_author": "Aron G M",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "3217321",
+      "doi": "",
+      "title": "Future developments in contraception.",
+      "abstract": "",
+      "journal": "The Practitioner",
+      "year": 1988,
+      "pub_date": "1988-01-01",
+      "authors": "Aitken J",
+      "first_author": "Aitken J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2853010",
+      "doi": "",
+      "title": "Monkeypox virus: ecology and public health significance.",
+      "abstract": "Recent investigations have revealed that monkeypox virus infections occur with a high prevalence in several species of squirrels belonging to the genus Funisciurus, less frequently in squirrels of the genus Heliosciurus, and rarely in forest-dwelling primates. These squirrels commonly inhabit the secondary forests around human settlements in the rural areas of Zaire, especially where oil palms are grown, and are rare in the primary rain forest.Human infection with monkeypox virus occurs most frequently in the 5-9-year-old age group, particularly in small villages where the children hunt and eat squirrels and other small mammals. As the populations are now increasing in number and can no longer feed on wild life alone for their animal protein requirements, the development of animal husbandry as a source of meat will certainly decrease the risk and the incidence of human monkeypox, even in areas where monkeypox virus is present in the local population of squirrels.Although population growth and economic development in western and central Africa will probably reduce the risk of human infection with monkeypox virus, visitors to these areas who are likely to come into contact with wild animals should be offered smallpox vaccination as a protection.",
+      "journal": "Bulletin of the World Health Organization",
+      "year": 1988,
+      "pub_date": "1988-01-01",
+      "authors": "Khodakevich L; Jezek Z; Messinger D",
+      "first_author": "Khodakevich L",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "3054491",
+      "doi": "",
+      "title": "[Molecular mechanisms of proteolytic processing of viral proteins and the problem of antiviral chemotherapy and vaccine design].",
+      "abstract": "Proteolytic cleavage of virus-specific proteins is a universal phenomenon, which is widely expanded among different viruses including bacterial, plant, animal, and human viruses. Proteolytic processing of viral proteins involves the cleavage in strictly specific sites (proteolytic sites) of polyprotein molecules. Specificity of this processing is a doubly dependent event controlled by the amino acids of proteolytic sites and the presence of adequate proteinases. Host-originated and/or virus-coded proteinases are known to perform the cleavage of viral polypeptides. Conformational and functional behaviour of many virus proteins is regulated by proteolytic modification; as a result, the reproduction of mature virions and the infection pathways are directly controlled. Molecular mechanisms of site-specific proteolytic processing of viral proteins are proposed as a target to be attacked for chemotherapeutic virus inhibition and to be modified for vaccine design. The approaches are analysed to realise this antiviral strategy, and prospects for its development are discussed.",
+      "journal": "Molekuliarnaia biologiia",
+      "year": 1988,
+      "pub_date": "1988-01-01",
+      "authors": "Zhirnov O P",
+      "first_author": "Zhirnov O P",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "3166481",
+      "doi": "10.1093/oxfordjournals.jhered.a110503",
+      "title": "The Wilhelmine E. Key 1987 invitational lecture. Genetic changes associated with the evolution of adaptedness in cultivated plants and their wild progenitors.",
+      "abstract": "The results of long-term studies of changes in adaptedness in a number of experimental populations of annual plants are summarized. Measurements made of quantitative traits showed that cumulative increases in reproductive capacity continued in these experimental populations for more than 50 generations. Highly significant allelic frequency changes also occurred for marker loci governing morphological variants, disease resistance, allozymes, and rDNA restriction fragments. Individual effects of the marker loci on quantitative traits were determined by extensive progeny testing of selfed families descended from single plants isolated from various generations of the experimental populations. Comparisons between homozygotes and heterozygotes of marker loci for quantitative trait expression revealed that all the marker loci studied had statistically significant additive effects on several to many quantitative traits; thus, each Mendelian locus, in addition to being a locus for its discrete descriptive effect, was also a locus for several quantitative traits. Consistent associations were found between superior reproductive capacity (e.g., larger numbers of kernels per plant) and the alleles of marker loci that increased in frequency over generations; no other quantitative traits measured were clearly and consistently associated with alleles that increased in frequency. Multilocus analyses based on canonical correlation, log linear, and cluster analysis procedures showed that highly significant associations developed in early generations among alleles of different loci in all the predominantly selfing populations studied. Dynamic changes featuring amalgamations of alleles into fewer clusters involving larger numbers of loci continued into the late generations. Patterns of ecogenetic differentiation that developed under predominant selfing were found to be fine-scaled overlays of environmental heterogeneity. The picture of evolutionary change that emerges is one in which the incorporation of increasing numbers of favorably interacting alleles into large synergistic complexes was accompanied in inbreeding populations by increases in adaptedness to the local environment and also by striking ecogenetic differentiation among local populations that occupy unlike habitats, including differentiation between cultivated plants and their wild progenitors. Selfing appears to promote the development and maintenance of adaptedness within populations and at the same time to facilitate the development of spatial differentiation by retarding gene flow between populations.(ABSTRACT TRUNCATED AT 400 WORDS)",
+      "journal": "The Journal of heredity",
+      "year": 1988,
+      "pub_date": "1988-01-01",
+      "authors": "Allard R W",
+      "first_author": "Allard R W",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

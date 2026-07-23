@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -62,6 +62,14 @@ textarea{resize:vertical;min-height:80px}
 .btn:hover{background:var(--blue2);transform:translateY(-1px)}
 .btn:disabled{background:var(--ink3);cursor:not-allowed;transform:none}
 .btn.gold{background:var(--gold);color:#fff}.btn.gold:hover{background:#a06a0c}
+.btn.ai{background:linear-gradient(135deg,#7b2d8b,#a855f7);color:#fff;font-size:10px;padding:2px 10px;border-radius:10px}
+.btn.ai:hover{background:linear-gradient(135deg,#6a1f7a,#9333ea);transform:translateY(-1px)}
+.btn.ai:disabled{background:var(--ink3);transform:none}
+.rag-cite{background:var(--bg);padding:12px;border-radius:var(--r);margin-bottom:6px;font-size:13px;border-left:3px solid var(--blue2)}
+.rag-cite .num{font-weight:700;color:var(--blue)}
+.ai-digest-btn{font-size:11px;padding:3px 12px;background:linear-gradient(135deg,#7b2d8b,#a855f7);color:#fff;border:none;border-radius:10px;cursor:pointer;float:right}
+.ai-digest-btn:hover{background:linear-gradient(135deg,#6a1f7a,#9333ea)}
+.ai-digest-btn:disabled{background:var(--ink3)}
 .btn.green{background:var(--good);color:#fff}
 .btn.outline{background:transparent;color:var(--blue);border:1px solid var(--rule)}.btn.outline:hover{background:var(--blue);color:#fff}
 .btn.sm{padding:5px 14px;font-size:12px}
@@ -69,7 +77,7 @@ textarea{resize:vertical;min-height:80px}
 
 .chip{display:inline-block;padding:4px 12px;border:1px solid var(--rule);border-radius:16px;font-size:12px;cursor:pointer;color:var(--ink2);transition:.15s;background:#fff}.chip:hover,.chip.on{background:var(--blue);color:#fff;border-color:var(--blue)}
 
-.charts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.charts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
 .charts canvas{max-height:240px}
 
 table{width:100%;border-collapse:collapse;font-size:13px}
@@ -110,12 +118,14 @@ footer a{color:var(--blue2)}
   <a href="/literature/" class="active">Literature</a>
   <a href="/primers/">Primers</a>
   <a href="/explorer/">Explorer</a>
+  <a href="/miRNA/">PV-miRNA</a>
+  <a href="/antigenes/">AntiGenes</a>
 </nav>
 
 <div class="hero">
   <div class="eyebrow">Literature Mining &amp; Tracking</div>
   <h1>Plant Virus <span class="gold">Literature</span> Hub</h1>
-  <p>Automated weekly tracking across 17 virus categories (incl. new virus discovery) + manual search over PubMed / bioRxiv / Crossref / OpenAlex + AI-generated Chinese summaries and trend analysis.</p>
+  <p>Automated weekly tracking across 9 virus categories (incl. new virus discovery) + manual search over PubMed / bioRxiv / Crossref / OpenAlex + AI-generated Chinese summaries and trend analysis.</p>
 </div>
 
 <div class="wrap">
@@ -129,16 +139,21 @@ footer a{color:var(--blue2)}
 </div>
 
 <div class="tabs">
-  <div class="tab active" onclick="switchTab('track')">Automated Track</div>
+  <div class="tab active" onclick="switchTab('knowledge')">AI Knowledge Assistant</div>
+  <div class="tab" onclick="switchTab('weekly_track')">Weekly Track</div>
   <div class="tab" onclick="switchTab('weekly')">Weekly Digest</div>
   <div class="tab" onclick="switchTab('monthly')">Monthly Archive</div>
   <div class="tab" onclick="switchTab('historical')">Historical</div>
-  <div class="tab" onclick="switchTab('search')">Manual Search</div>
-  <div class="tab" onclick="switchTab('analysis')">Trend Analysis</div>
+  <div class="tab" onclick="switchTab('track')">Paper List &amp; Trends</div>
 </div>
 
-<!-- TAB 1: Automated Track -->
-<div id="tab-track">
+<!-- TAB: Paper List & Trends -->
+<div id="tab-track" style="display:none">
+  <div class="charts" style="margin-bottom:16px">
+    <div class="card"><h3>Papers by Year</h3><canvas id="chartYear"></canvas></div>
+    <div class="card"><h3>Papers by Category</h3><canvas id="chartCat"></canvas></div>
+    <div class="card"><h3>Top Journals</h3><div id="topJournals"></div></div>
+  </div>
   <div class="row row21" style="margin-bottom:16px">
     <div class="card"><h3><span class="section-num">1</span>Category Filter</h3>
       <div id="catChips" style="display:flex;flex-wrap:wrap;gap:5px"></div>
@@ -152,10 +167,6 @@ footer a{color:var(--blue2)}
     </div>
   </div>
 
-  <div class="charts" style="margin-bottom:16px">
-    <div class="card"><h3>Papers by Year</h3><canvas id="chartYear"></canvas></div>
-    <div class="card"><h3>Papers by Category</h3><canvas id="chartCat"></canvas></div>
-  </div>
 
   <div class="card">
     <h3><span class="section-num">3</span>Paper List <span style="font-weight:400;color:var(--ink3);margin-left:8px;text-transform:none;letter-spacing:0" id="resultCount"></span>
@@ -165,67 +176,103 @@ footer a{color:var(--blue2)}
   </div>
 </div>
 
-<!-- TAB 2: Manual Search -->
-<div id="tab-search" style="display:none">
-  <div class="row row2" style="margin-bottom:16px">
-    <div class="card">
-      <h3><span class="section-num">S</span>Search Query</h3>
-      <div class="field"><label>Keywords (PubMed syntax)</label><textarea id="mq" rows="2" placeholder="e.g. tomato yellow leaf curl virus AND resistance">plant virus[Title/Abstract]</textarea></div>
-      <div class="row row2">
-        <div class="field"><label>Date From</label><input type="date" id="mdFrom"></div>
-        <div class="field"><label>Date To</label><input type="date" id="mdTo"></div>
+
+<!-- TAB: Weekly Track -->
+<div id="tab-weekly_track" style="display:none">
+  <div class="card" style="background:var(--blue4);border-color:var(--blue3);margin-bottom:16px">
+    <strong style="color:var(--blue)">Weekly Literature Tracking</strong> — new papers grouped by week. papers shown directly under each week.
+    <span style="margin-left:16px;font-size:12px;color:var(--ink3)">Click week header to expand/collapse</span>
+  </div>
+  <div id="wtUpdateInfo"></div>
+</div>
+
+<!-- TAB: AI Knowledge Assistant -->
+<div id="tab-knowledge">
+  <div class="card" style="background:var(--blue4);border-color:var(--blue3);margin-bottom:16px">
+    <strong style="color:var(--blue)">AI Knowledge Assistant</strong> — RAG-powered Q&amp;A + manual PubMed search
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:10px">
+      <div style="text-align:center;background:rgba(255,255,255,.6);padding:10px;border-radius:var(--r)">
+        <div style="font-size:20px;font-weight:700;color:var(--blue)">7,099</div>
+        <div style="font-size:10px;color:var(--ink3)">Curated Papers (AI Verified)</div>
       </div>
-      <div class="field"><label>Max Results</label><select id="mMax"><option>25</option><option selected>50</option><option>100</option></select></div>
-      <div class="field"><label>Data Sources</label>
-        <div style="display:flex;gap:8px;flex-wrap:wrap" id="mSources">
-          <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox" value="pubmed" checked onchange="updateSourceChips()"> PubMed</label>
-          <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox" value="biorxiv" onchange="updateSourceChips()"> bioRxiv</label>
-          <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox" value="crossref" onchange="updateSourceChips()"> Crossref</label>
-          <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox" value="openalex" onchange="updateSourceChips()"> OpenAlex</label>
-        </div>
+      <div style="text-align:center;background:rgba(255,255,255,.6);padding:10px;border-radius:var(--r)">
+        <div style="font-size:20px;font-weight:700;color:var(--blue)">2,892</div>
+        <div style="font-size:10px;color:var(--ink3)">Structured Records</div>
+        <div style="font-size:9px;color:var(--ink3)">ICTV / NCBI / ViralZone</div>
       </div>
-      <div class="btn-row" style="margin-top:8px">
-        <button class="btn gold" onclick="doSearch()">Search Literature</button>
-        <button class="btn outline sm" onclick="copyPlantVirusQuery()">Quick: Plant Virus</button>
+      <div style="text-align:center;background:rgba(255,255,255,.6);padding:10px;border-radius:var(--r)">
+        <div style="font-size:20px;font-weight:700;color:var(--blue)">20,010</div>
+        <div style="font-size:10px;color:var(--ink3)">Chunks</div>
       </div>
-    </div>
-    <div class="card">
-      <h3><span class="section-num">A</span>AI Processing</h3>
-      <div class="field"><label>AI Provider</label><select id="aiProvider" onchange="updateAIModels()">
-        <option value="deepseek">DeepSeek</option><option value="openai">OpenAI</option>
-        <option value="zhipu">Zhipu AI</option><option value="qwen">Qwen</option>
-      </select></div>
-      <div class="field"><label>Model</label><select id="aiModel">
-        <option>deepseek-chat</option><option>deepseek-reasoner</option>
-      </select></div>
-      <div class="field"><label>API Key</label><input type="password" id="aiKey" placeholder="sk-..."></div>
-      <div class="field"><label>AI Tasks</label>
-        <div style="display:flex;gap:6px;flex-wrap:wrap" id="aiTasks">
-          <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox" checked> Filter &amp; Score</label>
-          <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox"> Chinese Summary</label>
-          <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox"> Trend Tips</label>
-        </div>
+      <div style="text-align:center;background:rgba(255,255,255,.6);padding:10px;border-radius:var(--r)">
+        <div style="font-size:20px;font-weight:700;color:var(--blue)">229,184</div>
+        <div style="font-size:10px;color:var(--ink3)">Qdrant Vectors</div>
       </div>
-      <button class="btn sm outline" onclick="testAI()">Test Connection</button>
-      <span id="aiStatus" style="font-size:11px;margin-left:8px;font-family:var(--mono)"></span>
     </div>
   </div>
 
-  <div class="card"><h3>Search Log</h3><div id="log">Ready to search. Configure query and click "Search Literature".</div></div>
+  <!-- RAG Search -->
+  <div class="card" style="margin-bottom:14px">
+    <h3><span class="section-num">R</span>RAG Knowledge Base Q&amp;A</h3>
+    <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+      <input id="ragQuery" placeholder="Ask anything about plant viruses..." style="flex:1;min-width:200px" onkeydown="if(event.key==='Enter')ragSearch()">
+      <select id="ragModel" style="width:auto;padding:9px 12px;border:1px solid var(--rule);border-radius:var(--r);font-size:13px;background:#fff">
+        <option value="deepseek-v4-flash">V4 Flash (fast)</option>
+        <option value="deepseek-v4-pro">V4 Pro (reasoning)</option>
+      </select>
+      <select id="ragMode" style="width:auto;padding:9px 12px;border:1px solid var(--rule);border-radius:var(--r);font-size:13px;background:#fff">
+        <option value="rag">RAG Knowledge Base</option>
+        <option value="llm">Bare LLM</option>
+        <option value="hybrid">Hybrid (RAG+LLM)</option>
+      </select>
+      <button class="btn gold" onclick="ragSearch()">Search</button>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+      <span style="font-size:11px;color:var(--ink3);cursor:pointer;background:var(--bg);padding:3px 10px;border-radius:10px;border:1px solid var(--rule)" onclick="ragSetQuery('What is tomato yellow leaf curl virus?')">What is TYLCV?</span>
+      <span style="font-size:11px;color:var(--ink3);cursor:pointer;background:var(--bg);padding:3px 10px;border-radius:10px;border:1px solid var(--rule)" onclick="ragSetQuery('How to control whitefly-transmitted geminiviruses?')">Control geminiviruses</span>
+      <span style="font-size:11px;color:var(--ink3);cursor:pointer;background:var(--bg);padding:3px 10px;border-radius:10px;border:1px solid var(--rule)" onclick="ragSetQuery('Latest virus detection methods in plants')">Detection methods</span>
+      <span style="font-size:11px;color:var(--ink3);cursor:pointer;background:var(--bg);padding:3px 10px;border-radius:10px;border:1px solid var(--rule)" onclick="ragSetQuery('Recent new plant virus discoveries 2024-2026')">New virus discoveries</span>
+    </div>
+    <div id="ragMeta" style="font-size:11px;color:var(--ink3);margin-bottom:6px"></div>
+    <div id="ragAnswer" style="background:var(--bg);padding:16px;border-radius:var(--r);min-height:60px;white-space:pre-wrap;line-height:1.7;font-size:13px"></div>
+    <div id="ragCitations" style="margin-top:10px"></div>
+  </div>
 
-  <div id="searchResults" style="display:none">
+  <!-- Manual Search -->
+  <div class="card">
+    <h3><span class="section-num">S</span>Manual Literature Search</h3>
+    <div class="row row2">
+      <div>
+        <div class="field"><label>Keywords (PubMed syntax)</label><textarea id="mq" rows="2" placeholder="e.g. tomato yellow leaf curl virus AND resistance">plant virus[Title/Abstract]</textarea></div>
+        <div class="row row2">
+          <div class="field"><label>Date From</label><input type="date" id="mdFrom"></div>
+          <div class="field"><label>Date To</label><input type="date" id="mdTo"></div>
+        </div>
+        <div class="field"><label>Max Results</label><select id="mMax"><option>25</option><option selected>50</option><option>100</option></select></div>
+        <div class="field"><label>Data Sources</label>
+          <div style="display:flex;gap:8px;flex-wrap:wrap" id="mSources">
+            <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox" value="pubmed" checked> PubMed</label>
+            <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox" value="biorxiv"> bioRxiv</label>
+            <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox" value="crossref"> Crossref</label>
+            <label style="display:flex;align-items:center;gap:4px;font-size:12px"><input type="checkbox" value="openalex"> OpenAlex</label>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:12px;color:var(--ink2);margin-bottom:8px">AI summarization uses server DeepSeek. Click <span class="btn ai sm" style="cursor:default">AI</span> on search results to extract structured summaries.</p>
+        <div class="btn-row" style="margin-top:12px">
+          <button class="btn gold" onclick="doSearch()">Search Literature</button>
+          <button class="btn outline sm" onclick="copyPlantVirusQuery()">Quick: Plant Virus</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="searchResults" style="display:none;margin-top:14px">
     <div class="card"><h3>Search Results</h3>
       <div id="searchStats" style="margin-bottom:12px"></div>
       <div id="searchTable"></div>
     </div>
-  </div>
-</div>
-
-<!-- TAB 3: Trend Analysis -->
-<div id="tab-analysis" style="display:none">
-  <div class="row row2" style="margin-bottom:16px">
-    <div class="card"><h3><span class="section-num">T</span>Year-over-Year Trends</h3><canvas id="chartTrend" style="max-height:280px"></canvas></div>
-    <div class="card"><h3><span class="section-num">J</span>Top Journals</h3><div id="topJournals"></div></div>
   </div>
 </div>
 
@@ -276,13 +323,14 @@ let searchResults=[], searchSummary='';
     document.getElementById('mYear').textContent=yi.length?yi[0].year+'-'+yi[yi.length-1].year:'-';
     let sf=document.getElementById('sYear');
     yi.forEach(y=>{let o=document.createElement('option');o.value=y.year;o.textContent=y.year+' ('+y.count+')';sf.appendChild(o)});
-    for(let y of yi.slice(0,5)){
+    for(let y of yi){
       try{let r=await fetch('data/'+y.year+'.json');papers=papers.concat(await r.json())}
       catch(e){console.warn('Year',y.year,'not available')}
     }
     let seen=new Set();papers=papers.filter(p=>{let k=p.pmid||p.doi||(p.title||'').substring(0,80);if(seen.has(k))return false;seen.add(k);return true});
-    renderChips();renderTrack();renderCharts();
-  }catch(e){document.getElementById('paperList').innerHTML='<div class=empty>No data. Run <code>python pipeline.py auto --days 7</code> first.</div>'}
+    renderChips();renderTrack();renderCharts();loadTrendAnalysis();
+    if(_loaded.weekly_track)renderChipsWT();
+  }catch(e){document.getElementById('paperList').innerHTML='<div class=empty>No data. Run <code>python pipeline.py auto --days 7</code> . </div>'}
 })();
 
 function renderChips(){
@@ -313,13 +361,14 @@ function renderTrack(){
     let jq=p.journal_quality||'lo',jb=jq==='high'?'jb-hi':jq==='medium'?'jb-md':'jb-lo';
     let aid='abs_'+p.pmid;
     h+='<tr><td style="width:80px"><span class="journal-badge '+jb+'">'+(p.journal||'?').substring(0,25)+'</span><br><span style="font-size:10px;color:var(--ink3)">'+p.year+'</span></td>';
-    h+='<td><a class="paper-title" href="https://pubmed.ncbi.nlm.nih.gov/'+(p.pmid||'')+'" target="_blank">'+esc(p.title||'')+'</a><br><span style="font-size:10px;color:var(--ink3)">'+esc((p.first_author||'')+' '+(p.authors||'').substring(0,60))+'</span><br>'+cats;
-    if(p.ai_done)h+=aiCard(p);
+    h+='<td><a class="paper-title" href="https://pubmed.ncbi.nlm.nih.gov/'+(p.pmid||'')+'" target="_blank">'+esc(p.title||'')+'</a> <button class="btn ai sm" onclick="summarizePaper(\''+(p.pmid||'')+'\',this)" title="AI Summarize">AI</button><br><span style="font-size:10px;color:var(--ink3)">'+esc((p.first_author||'')+' '+(p.authors||'').substring(0,60))+'</span><br>'+cats;
+    if(p.ai_done||p.virus_name)h+=aiCard(p);
     if(p.abstract)h+='<div class="abs-pv" id="'+aid+'">'+esc(p.abstract)+'</div><span class="abs-tg" onclick="toggleAbs(\''+aid+'\')">Show abstract</span>';
     h+='</td></tr>';
   });
   document.getElementById('paperList').innerHTML='<table><thead><tr><th>Journal / Year</th><th>Title &amp; Info</th></tr></thead><tbody>'+h+'</tbody></table>';
 }
+
 
 function toggleAbs(id){let el=document.getElementById(id);if(!el)return;el.classList.toggle('open');let tg=el.nextElementSibling;if(tg)tg.textContent=el.classList.contains('open')?'Hide abstract':'Show abstract'}
 
@@ -333,32 +382,15 @@ function renderCharts(){
 }
 
 // ── Manual Search ──
-function updateSourceChips(){}
-function updateAIModels(){
-  let p=document.getElementById('aiProvider').value, m=document.getElementById('aiModel');
-  let models={deepseek:['deepseek-chat','deepseek-reasoner'],openai:['gpt-4o-mini','gpt-4o','gpt-4-turbo'],zhipu:['glm-4-flash','glm-4'],qwen:['qwen-turbo','qwen-max']};
-  m.innerHTML=models[p].map(v=>'<option>'+v+'</option>').join('');
-}
 function copyPlantVirusQuery(){
   document.getElementById('mq').value='("plant virus"[Title/Abstract] OR "phytovirus"[Title/Abstract] OR "Geminiviridae"[Title/Abstract] OR "Potyviridae"[Title/Abstract] OR "tospovirus"[Title/Abstract])';
-}
-async function testAI(){
-  let key=document.getElementById('aiKey').value.trim();
-  if(!key){document.getElementById('aiStatus').textContent='Enter API key';return}
-  document.getElementById('aiStatus').innerHTML='<span class=spinner></span>Testing...';
-  try{
-    let r=await fetch('https://api.deepseek.com/v1/models',{headers:{'Authorization':'Bearer '+key}});
-    document.getElementById('aiStatus').innerHTML='<span style=color:var(--good)>OK ('+(r.ok?'connected':'error '+r.status)+')</span>';
-  }catch(e){document.getElementById('aiStatus').innerHTML='<span style=color:#8c3030>Error: '+e.message+'</span>'}
 }
 async function doSearch(){
   let q=document.getElementById('mq').value.trim(),df=document.getElementById('mdFrom').value,dt=document.getElementById('mdTo').value,mx=parseInt(document.getElementById('mMax').value);
   let src=[];document.getElementById('mSources').querySelectorAll('input:checked').forEach(c=>src.push(c.value));
   if(!q){alert('Enter keywords');return}
-  let log=document.getElementById('log');log.innerHTML='<span class=log-info>Searching: '+q+'</span>\n<span class=log-info>Sources: '+src.join(', ')+'</span>\n';
   searchResults=[];
   for(let s of src){
-    log.innerHTML+='\n<span class=log-info>  Querying '+s+'...</span>';
     try{
       let papers=[];
       if(s==='pubmed')papers=await searchPubMed(q,df,dt,mx);
@@ -366,8 +398,7 @@ async function doSearch(){
       else if(s==='crossref')papers=await searchCrossref(q,df,dt,mx);
       else if(s==='openalex')papers=await searchOpenAlex(q,df,dt,mx);
       searchResults=searchResults.concat(papers);
-      log.innerHTML+='<span class=log-ok>  '+s+': '+papers.length+' found</span>\n';
-    }catch(e){log.innerHTML+='<span class=log-err>  '+s+': '+e.message+'</span>\n'}
+    }catch(e){console.warn(s+' search error:',e.message)}
   }
   // Dedup across sources: DOI > PMID > normalized title
   let seen={},merged=[];
@@ -381,7 +412,6 @@ async function doSearch(){
   merged.forEach(p=>{let txt=(p.title+' '+(p.abstract||'')).toLowerCase();p._score=qterms.filter(t=>txt.includes(t)).length});
   merged.sort((a,b)=>b._score-a._score);
   searchResults=merged;
-  log.innerHTML+='\n<span class=log-info>Total: '+searchResults.length+' unique papers after dedup</span>\n';
   if(searchResults.length){
     document.getElementById('searchResults').style.display='block';
     document.getElementById('searchStats').innerHTML='<span style="font-family:var(--mono);font-size:14px;color:var(--blue)">'+searchResults.length+' unique papers</span> <button class="btn sm gold" onclick="downloadSearchJSON()" style="margin-left:12px">Download JSON (for pipeline)</button> <button class="btn sm outline" onclick="exportSearchExcel()">Export XLSX</button>';
@@ -439,61 +469,216 @@ function exportSearchExcel(){
   let wb=XLSX.utils.book_new(),ws=XLSX.utils.json_to_sheet(data);XLSX.utils.book_append_sheet(wb,ws,'Search');XLSX.writeFile(wb,'manual_search.xlsx');
 }
 function renderSearchTable(results){
-  let h='<table><thead><tr><th>Title</th><th>Source</th><th>Year</th><th>Rel</th><th>Journal</th></tr></thead><tbody>';
+  let h='<table><thead><tr><th>Title</th><th>Source</th><th>Year</th><th>Journal</th></tr></thead><tbody>';
   results.forEach(p=>{
-    let sc=p._score||0,scb=sc>=3?'jb-hi':sc>=1?'jb-md':'jb-lo';
-    h+='<tr><td><a class="paper-title" href="'+(p.doi?'https://doi.org/'+p.doi:'https://pubmed.ncbi.nlm.nih.gov/'+p.pmid)+'" target="_blank">'+esc(p.title||'').substring(0,120)+'</a></td><td><span style="font-size:10px;font-family:var(--mono);color:var(--blue2)">'+p.source+'</span></td><td>'+p.year+'</td><td><span class="journal-badge '+scb+'">'+sc+'</span></td><td><span style="font-size:10px;color:var(--ink3)">'+(p.journal||'').substring(0,40)+'</span></td></tr>';
+    let id=p.pmid||p.doi||'';
+    h+='<tr><td><a class="paper-title" href="'+(p.doi?'https://doi.org/'+p.doi:'https://pubmed.ncbi.nlm.nih.gov/'+p.pmid)+'" target="_blank">'+esc(p.title||'').substring(0,100)+'</a> <button class="btn ai sm" onclick="summarizeSearchPaper(\''+id+'\',this)">AI</button><br><span style="font-size:10px;color:var(--ink3)">'+esc(p.journal||'')+'</span></td><td><span style="font-size:10px;font-family:var(--mono);color:var(--blue2)">'+p.source+'</span></td><td>'+p.year+'</td><td><span style="font-size:10px;color:var(--ink3)">'+esc((p.first_author||'')||'').substring(0,30)+'</span></td></tr>';
   });
   h+='</tbody></table>';document.getElementById('searchTable').innerHTML=h;
+}
+async function summarizeSearchPaper(id,btnEl){
+  let p=searchResults.find(x=>(x.pmid||x.doi||'')===id);
+  if(!p)return;
+  btnEl.disabled=true;btnEl.textContent='...';
+  try{
+    let r=await fetch('/literature/api/summarize/paper',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({title:p.title,abstract:p.abstract,pmid:p.pmid||''})
+    });
+    let d=await r.json();
+    if(d.success){
+      let exist=btnEl.parentElement.querySelector('.ai-card');
+      if(exist)exist.remove();
+      btnEl.insertAdjacentHTML('afterend',aiCard(d.result));
+    }else{alert('AI error: '+(d.error||'unknown'))}
+  }catch(e){alert('API error: '+e.message)}
+  btnEl.disabled=false;btnEl.textContent='AI';
 }
 
 // ── Export ──
 function exportExcel(){
-  let data=papers.map(p=>({PMID:p.pmid||'',DOI:p.doi||'',Title:p.title||'',Journal:p.journal||'',Year:p.year||'',Categories:(p.categories||[]).join('; '),Virus:p.virus_name||'',Taxonomy:p.taxonomy||'',Symptoms:p.symptoms||'',Host:p.host_plant||'',Location:p.location||'',SampleDate:p.sample_date||'',Vector:p.vector||'',Transmission:p.transmission||'',Methods:p.methods||'',Results:p.results||'',Discussion:p.discussion||'',Abstract:(p.abstract||'').substring(0,300)}));
+  let data=papers.map(p=>({PMID:p.pmid||'',DOI:p.doi||'',Title:p.title||'',Journal:p.journal||'',Year:p.year||'',Authors:(p.authors||'').substring(0,100),Categories:(p.categories||[]).join(';'),Virus:p.virus_name||'',Taxonomy:p.taxonomy||'',Host:p.host_plant||'',Location:p.location||'',Methods:p.methods||'',Results:p.results||'',Discussion:p.discussion||'',Abstract:(p.abstract||'').substring(0,300)}));
   let wb=XLSX.utils.book_new(),ws=XLSX.utils.json_to_sheet(data);
   XLSX.utils.book_append_sheet(wb,ws,'Papers');XLSX.writeFile(wb,'plant_virus_papers.xlsx');
 }
 
 // ── Tabs ──
-let _loaded={weekly:false,monthly:false,historical:false};
+let _loaded={weekly:false,monthly:false,historical:false,weekly_track:false,analysis:false};
 function switchTab(t){
-  document.querySelectorAll('.tab').forEach(el=>{el.classList.toggle('active',el.textContent.trim().toLowerCase().includes(t))});
-  ['track','search','analysis','weekly','monthly','historical'].forEach(n=>{let el=document.getElementById('tab-'+n);if(el)el.style.display=n===t?'block':'none'});
+  document.querySelectorAll('.tab').forEach(el=>{el.classList.toggle('active',el.textContent.trim().toLowerCase().includes(t.replace('_',' ')))});
+  ['track','weekly_track','weekly','monthly','historical','knowledge'].forEach(n=>{let el=document.getElementById('tab-'+n);if(el)el.style.display=n===t?'block':'none'});
+  if(t==='weekly_track'){_loaded.weekly_track=true;renderChipsWT();}
   if(t==='weekly'&&!_loaded.weekly){_loaded.weekly=true;loadWeekly()}
   if(t==='monthly'&&!_loaded.monthly){_loaded.monthly=true;loadMonthly()}
   if(t==='historical'&&!_loaded.historical){_loaded.historical=true;loadHistorical()}
+  if(t==='analysis'&&!_loaded.analysis){_loaded.analysis=true;renderCharts();loadTrendAnalysis()}
 }
 
-// ── Weekly Digest ──
+function renderChipsWT(){
+  // Build weekly cards with collapsible paper tables
+  let now=new Date();
+  let all='';
+  let idx=0;
+  for(let w=0;w<8;w++){
+    let end=new Date(now);end.setDate(end.getDate()-w*7);
+    let start=new Date(end);start.setDate(start.getDate()-7);
+    let es=end.toISOString().slice(0,10);let ss=start.toISOString().slice(0,10);
+    let wp=[...papers].filter(p=>p.title&&p.title.trim());
+    wp=wp.filter(p=>{let pd=p.pub_date||p.added_date||'';return pd>=ss&&pd<es});
+    if(wp.length===0)continue;
+    let cid='wtcard_'+idx,pid='wtpapers_'+idx;
+    let wcc={};wp.forEach(p=>{(p.categories||[]).forEach(c=>wcc[c]=(wcc[c]||0)+1)});
+    let chips=Object.entries(wcc).sort((a,b)=>b[1]-a[1]).map(([k,v])=>'<span style=\"display:inline-block;padding:1px 6px;margin:1px;border-radius:8px;font-size:9px;background:var(--blue4);color:var(--blue2)\">'+k+' '+v+'</span>').join('');
+    wp.sort((a,b)=>(b.year||0)-(a.year||0));
+    all+='<div class=\"card\" id=\"'+cid+'\" style=\"margin-bottom:12px\">';
+    all+='<h3 onclick="toggleWTCard(\''+pid+'\')" style="cursor:pointer;user-select:none"><span id="'+pid+'_icon" style="font-size:11px;margin-right:4px">&#9654;</span>'+ss+' ~ '+es+' <span style="font-weight:400;color:var(--ink3);font-size:13px">'+wp.length+' papers</span><button class="ai-digest-btn" onclick="event.stopPropagation();summarizeWTD(\'d_'+idx+'\',\''+ss+'\',\''+es+'\')">AI Digest</button></h3>';
+    if(chips)all+='<div style=\"margin-bottom:4px;line-height:1.6\">'+chips+'</div>';
+    all+='<div id=\"d_'+idx+'\" style=\"margin-bottom:4px\"></div>';
+    all+='<div id=\"'+pid+'\" style=\"display:none\">';
+    all+='<table><thead><tr><th style=width:70px>Journal/Year</th><th>Title & AI Extraction</th></tr></thead><tbody>';
+    wp.forEach(p=>{
+      let cats=(p.categories||[]).slice(0,3).map(c=>'<span style=\"display:inline-block;padding:1px 6px;border-radius:10px;font-size:9px;background:var(--blue4);color:var(--blue2);margin:2px\">'+c+'</span>').join(' ');
+      let jq=p.journal_quality||'lo',jb=jq=='high'?'jb-hi':jq=='medium'?'jb-md':'jb-lo';
+      let aid='wtabs_'+p.pmid;
+      all+='<tr><td><span class=\"journal-badge '+jb+'\">'+(p.journal||'?').substring(0,22)+'</span><br><span style=\"font-size:10px;color:var(--ink3)\">'+p.year+'</span></td>';
+      all+='<td><a class=\"paper-title\" href=\"https://pubmed.ncbi.nlm.nih.gov/'+(p.pmid||'')+'\" target=\"_blank\">'+esc(p.title||'')+'</a> <button class=\"btn ai sm\" onclick=\"summarizePaper(\''+(p.pmid||'')+'\',this)\">AI</button><br><span style=\"font-size:10px;color:var(--ink3)\">'+esc((p.first_author||'')+' '+(p.authors||'').substring(0,50))+'</span><br>'+cats;
+      if(p.ai_done||p.virus_name)all+=aiCard(p);
+      if(p.abstract)all+='<div class="abs-pv" id="'+aid+'">'+esc(p.abstract)+'</div><span class="abs-tg" onclick="toggleAbs(\''+aid+'\')">Show abstract</span>';
+      all+='</td></tr>';
+    });
+    all+='</tbody></table></div></div>';
+    idx++;
+  }
+  if(idx===0){document.getElementById('wtUpdateInfo').innerHTML='<div class=empty>No weekly data yet.</div>';return}
+  document.getElementById('wtUpdateInfo').innerHTML=all;
+}
+function toggleWTCard(pid){
+  let el=document.getElementById(pid);
+  if(!el)return;
+  let icon=document.getElementById(pid+'_icon');
+  if(el.style.display==='none'){el.style.display='block';if(icon)icon.innerHTML='&#9660;'}
+  else{el.style.display='none';if(icon)icon.innerHTML='&#9654;'}
+}
+
+// ── AI Summarize ──
+async function summarizePaper(pmid,btnEl){
+  let paper=papers.find(p=>p.pmid===pmid);
+  if(!paper)return;
+  btnEl.disabled=true;btnEl.textContent='...';
+  try{
+    let r=await fetch('/literature/api/summarize/paper',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({title:paper.title,abstract:paper.abstract,pmid:pmid})
+    });
+    let d=await r.json();
+    if(d.success){
+      for(let [k,v] of Object.entries(d.result))paper[k]=v;
+      paper.ai_done=true;
+      // Remove any existing AI card before adding new one
+      let exist=btnEl.parentElement.querySelector('.ai-card');
+      if(exist)exist.remove();
+      btnEl.insertAdjacentHTML('afterend',aiCard(paper));
+    }else{alert('AI error: '+(d.error||'unknown'))}
+  }catch(e){alert('API error: '+e.message)}
+  btnEl.disabled=false;btnEl.textContent='AI';
+}
+async function summarizeDigest(period,papersList,targetElId){
+  let el=document.getElementById(targetElId);
+  if(!el)return;
+  el.innerHTML='<span class="spinner"></span> Generating AI '+period+' digest...';
+  try{
+    let r=await fetch('/literature/api/summarize/digest',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({papers:papersList,period:period})
+    });
+    let d=await r.json();
+    if(d.success)el.innerHTML='<div class="ai-card"><div class="ai-row"><span class="ai-label">AI '+period+'\u7efc\u8ff0</span><span>'+esc(d.result)+'</span></div></div>';
+    else el.innerHTML='<div style="color:var(--ink3);font-size:12px">Error: '+esc(d.error||'unknown')+'</div>';
+  }catch(e){el.innerHTML='<div style="color:red;font-size:12px">Error: '+e.message+'</div>'}
+}
+function summarizeWTD(did,start,end){
+  let wp=[...papers].filter(p=>{let pd=p.pub_date||p.added_date||'';return pd>=start&&pd<end});
+  summarizeDigest('Week',wp.slice(0,60),did);
+}
+function summarizeMTD(elId,ym){
+  let wp=[...papers].filter(p=>{let pd=p.pub_date||p.added_date||'';return pd.substring(0,7)===ym});
+  summarizeDigest('Month',wp.slice(0,60),elId);
+}
+
+let _weeklyIdx=[], _weeklyCards={}, _weeklyActiveYear='';
 async function loadWeekly(){
   let c=document.getElementById('weeklyContent');
   try{
-    let idx=await(await fetch('data/weekly/index.json')).json();
-    if(!idx.length){c.innerHTML='<div class=empty>No weekly digests yet. Run <code>python pipeline.py digest-weekly</code></div>';return}
-    let h='<div style="font-size:12px;color:var(--ink3);margin-bottom:12px">Weekly digests cover 2024 onwards. For earlier literature see the Monthly Archive.</div>';
-    // Year filter buttons
-    let wkYears=[...new Set(idx.map(w=>w.week.substring(0,4)))].sort().reverse();
+    _weeklyIdx=await(await fetch('data/weekly/index.json')).json();
+    if(!_weeklyIdx.length){c.innerHTML='<div class=empty>No weekly digests yet.</div>';return}
+    _weeklyCards={};
+    let h='<div style="font-size:12px;color:var(--ink3);margin-bottom:12px">Weekly digests cover 2024 onwards. Select a year to load. For earlier literature see the Monthly Archive.</div>';
+    let wkYears=[...new Set(_weeklyIdx.map(w=>w.week.substring(0,4)))].sort().reverse();
     h+='<div style="margin-bottom:14px">';
-    wkYears.forEach(y=>h+='<span class="chip" onclick="filterWeekYear(\''+y+'\')">'+y+'</span>');
-    h+='<span class="chip on" onclick="filterWeekYear(\'\')">All</span></div><div id="weeklyCards">';
-    for(let w of idx){
-      let d=await(await fetch('data/weekly/'+w.file)).json();
-      let cats=Object.entries(d.by_category||{}).map(([k,v])=>'<span style="display:inline-block;padding:2px 8px;margin:2px;border-radius:10px;font-size:10px;background:var(--blue4);color:var(--blue2)">'+k+' '+v+'</span>').join('');
-      let tops=(d.top_papers||[]).slice(0,5).map(p=>'<li style="margin:4px 0"><a href="https://pubmed.ncbi.nlm.nih.gov/'+p.pmid+'" target=_blank>'+esc(p.title||'').substring(0,90)+'</a></li>').join('');
-      h+='<div class="wk-card" data-year="'+d.week.substring(0,4)+'" style="border:1px solid var(--rule);border-radius:var(--r2);padding:16px;margin-bottom:14px">';
-      h+='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><strong style="color:var(--blue)">Week '+d.week+'</strong><span style="font-size:11px;color:var(--ink3)">'+d.start+' ~ '+d.end+' · '+d.total_new+' papers</span></div>';
-      if(d.ai_summary)h+='<div class="ai-card"><div class="ai-row"><span class="ai-label">AI 综述</span><span>'+esc(d.ai_summary)+'</span></div></div>';
-      h+='<div style="margin:8px 0">'+cats+'</div>';
-      if(tops)h+='<ul style="font-size:12px;padding-left:18px;margin:6px 0">'+tops+'</ul>';
-      h+='</div>';
-    }
-    h+='</div>';
+    wkYears.forEach(y=>h+='<span class="chip'+(y===_weeklyActiveYear?' on':'')+'" onclick="loadWeekYear(\''+y+'\')">'+y+'</span>');
+    h+='</div><div id="weeklyCards"><div class=empty>Select a year above to view weekly digests.</div></div>';
     c.innerHTML=h;
+    // Auto-load latest year
+    if(wkYears.length) loadWeekYear(wkYears[0]);
   }catch(e){c.innerHTML='<div class=empty>No weekly digests available.</div>'}
 }
-function filterWeekYear(y){
-  document.querySelectorAll('#weeklyContent .chip').forEach(el=>el.classList.toggle('on',(y===''&&el.textContent==='All')||el.textContent===y));
-  document.querySelectorAll('.wk-card').forEach(el=>{el.style.display=(!y||el.getAttribute('data-year')===y)?'block':'none'});
+async function loadWeekYear(y){
+  document.querySelectorAll('#weeklyContent .chip').forEach(el=>el.classList.toggle('on',el.textContent===y));
+  _weeklyActiveYear=y;
+  let entries=_weeklyIdx.filter(w=>w.week.substring(0,4)===y).sort((a,b)=>b.week.localeCompare(a.week));
+  let totalWeeks=entries.length;
+  // Auto-select current week or closest past week
+  let today=new Date().toISOString().slice(0,10);
+  let closest=entries[0]?.week;
+  for(let w of entries){if(w.start<=today){closest=w.week;break}}
+  _weeklyActiveWeek=closest;
+  renderWeekNav(entries,totalWeeks,y);
+  loadSingleWeek(_weeklyActiveWeek);
+}
+function renderWeekNav(entries,totalWeeks,y){
+  let navHtml='<div id=\"weekNav\" style=\"display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:13px\">';
+  navHtml+='<button class=\"btn sm outline\" onclick=\"navigateWeek(-1)\">Previous Week</button>';
+  navHtml+='<select id=\"weekSelect\" onchange=\"navigateWeek(0)\" style=\"width:auto;padding:4px 8px;font-size:12px\">';
+  for(let w of entries)navHtml+='<option value=\"'+w.week+'\"'+(w.week===_weeklyActiveWeek?' selected':'')+'>'+w.week+'</option>';
+  navHtml+='</select>';
+  navHtml+='<button class=\"btn sm outline\" onclick=\"navigateWeek(1)\">Next Week</button>';
+  navHtml+='<span style=\"color:var(--ink3);font-size:11px\">'+totalWeeks+' weeks in '+y+'</span></div>';
+  document.getElementById('weeklyCards').innerHTML=navHtml+'<div id=\"singleWeekCard\"><div class=empty><div class=spinner></div>Loading...</div></div>';
+}
+async function loadSingleWeek(wk){
+  let w=_weeklyIdx.find(x=>x.week===wk);
+  if(!w)return;
+  let d=await(await fetch('data/weekly/'+w.file)).json();
+  _weeklyCards[wk]=d;
+  let cats=Object.entries(d.by_category||{}).map(([k,v])=>'<span style=\"display:inline-block;padding:2px 8px;margin:2px;border-radius:10px;font-size:10px;background:var(--blue4);color:var(--blue2)\">'+k+' '+v+'</span>').join('');
+  let tops=(d.top_papers||[]).slice(0,8).map(p=>{
+    let fullP=papers.find(x=>x.pmid===p.pmid)||p;
+    let aid='wd_abs_'+p.pmid;
+    let t='<div style=\"margin:6px 0;padding:6px 0;border-bottom:1px dotted var(--rule)\">';
+    t+='<a href=\"https://pubmed.ncbi.nlm.nih.gov/'+p.pmid+'\" target=_blank style=\"font-weight:600;color:var(--blue)\">'+esc(p.title||'').substring(0,100)+'</a>';
+    t+=' <button class=\"btn ai sm\" onclick=\"summarizePaper(\\\''+p.pmid+'\\\',this)\">AI</button>';
+    t+='<div style=\"font-size:10px;color:var(--ink3);margin-top:2px\">'+(p.journal||'')+' &middot; '+p.year+(p.first_author?' &middot; '+esc(p.first_author):'')+'</div>';
+    t+=aiCard(fullP);
+    if(p.abstract)t+='<div class=\"abs-pv\" id=\"'+aid+'\">'+esc(p.abstract)+'</div><span class=\"abs-tg\" onclick=\"toggleAbs(\''+aid+'\')\">Show abstract</span>';
+    t+='</div>';return t;
+  }).join('');
+  let card='<div class=\"wk-card\" style=\"border:1px solid var(--rule);border-radius:var(--r2);padding:16px;margin-bottom:14px\">';
+  card+='<div style=\"display:flex;justify-content:space-between;align-items:center;margin-bottom:8px\"><strong style=\"color:var(--blue)\">Week '+d.week+'</strong><span style=\"font-size:11px;color:var(--ink3)\">'+d.start+' ~ '+d.end+' &middot; '+d.total_new+' papers</span><button class=\"ai-digest-btn\" onclick=\"summarizeWTD(\'wdDigestAI\',\''+d.start+'\',\''+d.end+'\')\">AI Digest</button></div>';
+  card+='<div id=\"wdDigestAI\" style=\"margin-bottom:4px\"></div>';
+  if(d.ai_summary)card+='<div class=\"ai-card\"><div class=\"ai-row\"><span class=\"ai-label\">AI Summary</span><span>'+esc(d.ai_summary)+'</span></div></div>';
+  card+='<div style=\"margin:8px 0\">'+cats+'</div>';
+  card+='<div style=\"font-size:13px\">'+tops+'</div></div>';
+  let el=document.getElementById('singleWeekCard');
+  if(el)el.innerHTML=card;
+}
+let _weeklyActiveWeek='';
+function navigateWeek(dir){
+  let entries=_weeklyIdx.filter(w=>w.week.substring(0,4)===_weeklyActiveYear).sort((a,b)=>b.week.localeCompare(a.week));
+  let idx=entries.findIndex(w=>w.week===_weeklyActiveWeek);
+  if(dir===0){_weeklyActiveWeek=document.getElementById('weekSelect').value}
+  else{let ni=idx+dir;if(ni>=0&&ni<entries.length)_weeklyActiveWeek=entries[ni].week}
+  document.getElementById('weekSelect').value=_weeklyActiveWeek;
+  loadSingleWeek(_weeklyActiveWeek);
 }
 
 // ── Monthly Archive ──
@@ -504,7 +689,7 @@ async function loadMonthly(){
     idx.forEach(m=>_monthIndex[m.month]=m);
     // Show full 2020..current year range (even years without data)
     let curY=new Date().getFullYear();
-    let years=[];for(let y=curY;y>=2020;y--)years.push(String(y));
+    let years=[];for(let y=curY;y>=1940;y--)years.push(String(y));
     let ys=document.getElementById('monthYear');
     if(!years.length){document.getElementById('monthGrid').innerHTML='<div class=empty style="grid-column:1/-1">No monthly digests. Run <code>python pipeline.py digest-monthly</code></div>';return}
     ys.innerHTML=years.map(y=>'<option>'+y+'</option>').join('');
@@ -525,13 +710,24 @@ async function loadMonth(mk){
   let info=_monthIndex[mk];if(!info)return;
   let d=await(await fetch('data/monthly/'+info.file)).json();
   document.getElementById('monthDigestCard').style.display='block';
-  document.getElementById('monthDigestTitle').innerHTML='<span class="section-num">'+mk.substring(5)+'</span>'+mk+' · '+d.total+' papers';
+  document.getElementById('monthDigestTitle').innerHTML='<span class="section-num">'+mk.substring(5)+'</span>'+mk+' · '+d.total+' papers <button class="ai-digest-btn" style="float:right;margin-top:-2px" onclick="summarizeMTD(\'monthDigestAI\',\''+mk+'\')">AI Digest</button>';
   let cats=Object.entries(d.by_category||{}).map(([k,v])=>'<span style="display:inline-block;padding:2px 8px;margin:2px;border-radius:10px;font-size:10px;background:var(--blue4);color:var(--blue2)">'+k+' '+v+'</span>').join('');
-  let tops=(d.top_papers||[]).map(p=>'<li style="margin:4px 0"><a href="https://pubmed.ncbi.nlm.nih.gov/'+p.pmid+'" target=_blank>'+esc(p.title||'').substring(0,100)+'</a> <span style="font-size:10px;color:var(--ink3)">'+(p.journal||'')+'</span></li>').join('');
-  let h='';
-  if(d.ai_summary)h+='<div class="ai-card"><div class="ai-row"><span class="ai-label">AI 月度综述</span><span>'+esc(d.ai_summary)+'</span></div></div>';
-  h+='<div style="margin:10px 0">'+cats+'</div>';
-  if(tops)h+='<ul style="font-size:12px;padding-left:18px">'+tops+'</ul>';
+  let tops=(d.top_papers||[]).map(p=>{
+    let fullP=papers.find(x=>x.pmid===p.pmid)||p;
+    let aid='mo_abs_'+p.pmid;
+    let t='<div style=\"margin:6px 0;padding:6px 0;border-bottom:1px dotted var(--rule)\">';
+    t+='<a href=\"https://pubmed.ncbi.nlm.nih.gov/'+p.pmid+'\" target=_blank style=\"font-weight:600;color:var(--blue)\">'+esc(p.title||'').substring(0,100)+'</a>';
+    t+=' <button class=\"btn ai sm\" onclick=\"summarizePaper(\\\''+p.pmid+'\\\',this)\">AI</button>';
+    t+='<div style=\"font-size:10px;color:var(--ink3);margin-top:2px\">'+(p.journal||'')+' &middot; '+p.year+(p.first_author?' &middot; '+esc(p.first_author):'')+'</div>';
+    t+=aiCard(fullP);
+    if(p.abstract)t+='<div class=\"abs-pv\" id=\"'+aid+'\">'+esc(p.abstract)+'</div><span class=\"abs-tg\" onclick=\"toggleAbs(\''+aid+'\')>Show abstract</span>';
+    t+='</div>';
+    return t;
+  }).join('');
+  let h='<div id=\"monthDigestAI\"></div>';
+  if(d.ai_summary)h+='<div class=\"ai-card\"><div class=\"ai-row\"><span class=\"ai-label\">AI Monthly Summary</span><span>'+esc(d.ai_summary)+'</span></div></div>';
+  h+='<div style=\"margin:10px 0\">'+cats+'</div>';
+  h+='<div style=\"font-size:13px\">'+tops+'</div>';
   document.getElementById('monthDigestContent').innerHTML=h;
   document.getElementById('monthDigestCard').scrollIntoView({behavior:'smooth'});
 }
@@ -544,10 +740,15 @@ async function loadHistorical(){
     if(!ms.length){c.innerHTML='<div class=empty>No milestones detected yet.</div>';return}
     // Group by year
     let byYear={};ms.forEach(m=>{let y=m.year||'?';(byYear[y]=byYear[y]||[]).push(m)});
-    let h='<div style="position:relative;padding-left:20px;border-left:2px solid var(--blue3)">';
-    for(let y of Object.keys(byYear).sort().reverse()){
-      h+='<div style="margin-bottom:18px"><div style="font-family:var(--mono);font-size:16px;font-weight:700;color:var(--blue);margin-bottom:8px;margin-left:-8px">● '+y+' <span style="font-size:11px;color:var(--ink3);font-weight:400">('+byYear[y].length+' discoveries)</span></div>';
-      byYear[y].slice(0,15).forEach(m=>{
+    _histYears=Object.keys(byYear).sort().reverse();
+    let nav='<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--rule)">';
+    for(let y of _histYears)nav+='<span class="chip" onclick="scrollToYear(\''+y+'\')" style="cursor:pointer;font-size:11px;padding:3px 8px">'+y+' <span style="font-size:9px;color:var(--ink3)">'+byYear[y].length+'</span></span>';
+    nav+='</div>';
+    let h=nav+'<div style="position:relative;padding-left:20px;border-left:2px solid var(--blue3)">';
+    for(let y of _histYears){
+      let discoveries=byYear[y].filter(m=>m.type==='new_virus').length;
+      h+='<div id="hist_'+y+'" style="margin-bottom:18px"><div style="font-family:var(--mono);font-size:16px;font-weight:700;color:var(--blue);margin-bottom:8px;margin-left:-8px">● '+y+' <span style="font-size:11px;color:var(--ink3);font-weight:400">('+byYear[y].length+' milestones'+(discoveries>0?', '+discoveries+' new viruses':'')+')</span></div>';
+      byYear[y].slice(0,20).forEach(m=>{
         let badge=m.type==='new_virus'?'<span class="journal-badge jb-hi">NEW VIRUS</span>':'<span class="journal-badge jb-md">MILESTONE</span>';
         h+='<div style="margin:6px 0 6px 8px;font-size:12px">'+badge+' <a href="https://pubmed.ncbi.nlm.nih.gov/'+m.pmid+'" target=_blank>'+esc(m.title||'').substring(0,95)+'</a>';
         if(m.note)h+='<div style="font-size:11px;color:var(--ink2);margin-top:2px">'+esc(m.note)+'</div>';
@@ -559,24 +760,143 @@ async function loadHistorical(){
     c.innerHTML=h;
   }catch(e){c.innerHTML='<div class=empty>No milestone data available.</div>'}
 }
+function scrollToYear(y){
+  let el=document.getElementById('hist_'+y);
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+}
 
+// ── RAG Knowledge Assistant ──
+function ragSetQuery(q){document.getElementById("ragQuery").value=q;ragSearch()}
+async function ragSearch(){
+  let q=document.getElementById("ragQuery").value.trim();if(!q)return;
+  document.getElementById("ragMeta").innerHTML="";document.getElementById("ragAnswer").innerHTML="<span class=\"spinner\"></span> Searching...";
+  document.getElementById("ragCitations").innerHTML="";
+  try{
+    let r=await fetch("/knowledge/query",{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({query:q,top_k:7,mode:document.getElementById("ragMode").value,model:document.getElementById("ragModel").value})});
+    let d=await r.json();
+    document.getElementById("ragMeta").innerHTML="Type: <b>"+esc(d.task_type||"")+"</b> | Citations: "+(d.citations||[]).length+" | Valid: "+d.citation_valid;
+    // Format answer with structure
+    let ans=d.answer||"";
+    ans=esc(ans);
+    // Highlight [N] citation markers
+    ans=ans.replace(/\[(\d+)\]/g,'<sup style=\"color:var(--blue2);font-weight:700\">[$1]</sup>');
+    // Bold
+    ans=ans.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+    // Section headers
+    ans=ans.replace(/^### (.+)$/gm,'<div style=\"font-weight:700;color:var(--blue);margin-top:14px;margin-bottom:4px;font-size:14px\">$1</div>');
+    ans=ans.replace(/^## (.+)$/gm,'<div style=\"font-weight:700;color:var(--blue);margin-top:14px;margin-bottom:4px;font-size:14px\">$1</div>');
+    // Bullet points
+    ans=ans.replace(/^- (.+)$/gm,'<div style=\"margin-left:8px;margin-bottom:3px\">• $1</div>');
+    // Numbered items
+    ans=ans.replace(/^\d+\.\s+(.+)$/gm,'<div style=\"margin-left:8px;margin-bottom:4px\"><strong>$1</strong></div>');
+    // Paragraphs
+    ans=ans.replace(/\n\n+/g,'</p><p style=\"margin:0 0 8px;line-height:1.7\">');
+    ans='<p style=\"margin:0 0 8px;line-height:1.7\">'+ans+'</p>';
+    document.getElementById("ragAnswer").innerHTML=ans;
+    // Citations
+    let html="";
+    (d.citations||[]).forEach(c=>{
+      html+="<div class=\"rag-cite\"><span class=\"num\">["+c.number+"]</span> <b>"+esc(c.title||"")+"</b><br><span style=\"color:var(--ink2);font-size:11px\">"+esc(c.ama||"")+"</span>";
+      if(c.chunk_text&&c.chunk_text.length>1)html+="<div style=\"color:var(--ink3);font-size:12px;margin-top:4px;border-top:1px solid var(--rule);padding-top:4px\">"+esc((c.chunk_text||"").substring(0,250))+"...</div>";
+      html+="</div>";
+    });
+    document.getElementById("ragCitations").innerHTML=html;
+  }catch(e){document.getElementById("ragAnswer").innerHTML="<div style=\"color:#c0392b\">Error: "+esc(e.message)+"</div>"}
+}
 // ── Helpers ──
-function esc(s){if(!s)return'';let d=document.createElement('div');d.textContent=String(s).slice(0,500);return d.innerHTML}
 
-// Structured plant-virus AI extraction card
-const AI_FIELDS=[['virus_name','病毒名称'],['taxonomy','分类地位'],['symptoms','症状'],['host_plant','宿主植物'],['location','采样地点'],['sample_date','采样时间'],['vector','传播媒介'],['transmission','传播方式'],['overview','研究概况'],['methods','研究方法'],['results','研究结果'],['discussion','讨论意义']];
+let _topJournals=[],_jlPage=1,_jlPerPage=5;
+const JOURNAL_URL={
+  'plant disease':'https://apsjournals.apsnet.org/journal/pdis',
+  'archives of virology':'https://link.springer.com/journal/705',
+  'viruses':'https://www.mdpi.com/journal/viruses',
+  'virology':'https://www.sciencedirect.com/journal/virology',
+  'virus research':'https://www.sciencedirect.com/journal/virus-research',
+  'journal of virology':'https://journals.asm.org/journal/jvi',
+  'frontiers in plant science':'https://www.frontiersin.org/journals/plant-science',
+  'molecular plant pathology':'https://bsppjournals.onlinelibrary.wiley.com/journal/13643703',
+  'plos one':'https://journals.plos.org/plosone/',
+  'frontiers in microbiology':'https://www.frontiersin.org/journals/microbiology',
+  'the journal of general virology':'https://www.microbiologyresearch.org/content/journal/jgv',
+  'phytopathology':'https://apsjournals.apsnet.org/journal/phyto',
+  'journal of virological methods':'https://www.sciencedirect.com/journal/journal-of-virological-methods',
+  'plants (basel, switzerland)':'https://www.mdpi.com/journal/plants',
+  'scientific reports':'https://www.nature.com/srep/',
+  'methods in molecular biology (clifton, n.j.)':'https://link.springer.com/bookseries/7651',
+  'molecular plant-microbe interactions : mpmi':'https://apsjournals.apsnet.org/journal/mpmi',
+  'virus genes':'https://link.springer.com/journal/11262',
+  'journal of agricultural and food chemistry':'https://pubs.acs.org/journal/jafcau',
+  'plos pathogens':'https://journals.plos.org/plospathogens/',
+  'international journal of molecular sciences':'https://www.mdpi.com/journal/ijms',
+  'virology journal':'https://virologyj.biomedcentral.com/',
+  'pest management science':'https://onlinelibrary.wiley.com/journal/15264998',
+  'proceedings of the national academy of sciences of the united states of america':'https://www.pnas.org/',
+  'the plant journal : for cell and molecular biology':'https://onlinelibrary.wiley.com/journal/1365313x',
+  'plant physiology':'https://academic.oup.com/plphys',
+  'plant biotechnology journal':'https://onlinelibrary.wiley.com/journal/14677652',
+  'bmc plant biology':'https://bmcplantbiol.biomedcentral.com/',
+  'the new phytologist':'https://nph.onlinelibrary.wiley.com/journal/14698137',
+  'the plant cell':'https://academic.oup.com/plcell',
+};
+function getJournalUrl(name){
+  let key=(name||'').toLowerCase().trim();
+  if(JOURNAL_URL[key])return JOURNAL_URL[key];
+  // Fuzzy match
+  for(let k in JOURNAL_URL){if(key.includes(k)||k.includes(key))return JOURNAL_URL[k];}
+  return 'https://www.google.com/search?q='+encodeURIComponent(name)+'+journal+official+site';
+}
+async function loadTrendAnalysis(){
+  try{
+    let s=await(await fetch('data/stats.json')).json();
+    _topJournals=s.top_journals||[];
+    renderTopJournals();
+  }catch(e){console.error('Trend error',e)}
+}
+function renderTopJournals(){
+  let journals=_topJournals;
+  let tp=Math.ceil(journals.length/_jlPerPage);
+  let st=(_jlPage-1)*_jlPerPage,pg=journals.slice(st,st+_jlPerPage);
+  let jh='<table style="margin-top:8px"><thead><tr><th>Rank</th><th>Journal</th><th>Papers</th></tr></thead><tbody>';
+  pg.forEach(([name,cnt],i)=>{
+    let rank=st+i+1;
+    let jn=(name||'').replace(/'/g,'');  // raw name without quotes for onclick
+    jh+='<tr><td style="font-weight:700;color:var(--ink2)">'+rank+'</td><td><a href="'+getJournalUrl(name)+'" target="_blank" style="color:var(--blue);font-size:12px" title="Visit journal site">'+esc(name)+'</a></td><td style="text-align:right;font-weight:700"><a href="javascript:void(0)" onclick="filterByJournal(\''+jn+'\')" style="color:var(--ink);text-decoration:none" title="Filter Paper List">'+cnt+'</a></td></tr>';
+  });
+  jh+='</tbody></table>';
+  if(tp>1){
+    jh+='<div style="display:flex;justify-content:center;align-items:center;gap:4px;margin-top:8px">';
+    jh+='<button class="btn sm outline" onclick="_jlPage=Math.max(1,_jlPage-1);renderTopJournals()" '+(_jlPage===1?'disabled':'')+'>Prev</button>';
+    for(let i=1;i<=tp;i++){
+      jh+='<button class="btn sm '+(_jlPage===i?'':'outline')+'" onclick="_jlPage='+i+';renderTopJournals()">'+i+'</button>';
+    }
+    jh+='<button class="btn sm outline" onclick="_jlPage=Math.min('+tp+',_jlPage+1);renderTopJournals()" '+(_jlPage===tp?'disabled':'')+'>Next</button>';
+    jh+='</div>';
+  }
+  document.getElementById('topJournals').innerHTML=jh;
+}
+function filterByJournal(journal){
+  switchTab('track');
+  document.getElementById('sSearch').value=journal;
+  renderTrack();
+  window.scrollTo(0,200);
+}
+
+const AI_FIELDS=[['virus_name','Virus'],['overview','Overview'],['host_plant','Host'],['symptoms','Symptoms'],['vector','Vector'],['location','Location'],['methods','Methods'],['results','Results'],['discussion','Discussion'],['is_review','Type']];
 function aiCard(p){
   let rows='';
   for(let [k,label] of AI_FIELDS){
-    let v=p[k];
-    if(v&&v!=='未提及'){rows+='<div class="ai-row"><span class="ai-label">'+label+'</span><span>'+esc(v)+'</span></div>';}
+    let v=p[k];if(v&&v!=='Not Mentioned'&&v!=='δ�ἰ')rows+='<div class="ai-row"><span class="ai-label">'+label+'</span><span>'+esc(v)+'</span></div>';
   }
-  if(!rows)return'';
-  return'<div class="ai-card">'+rows+'</div>';
+  if(!rows&&p.overview&&p.overview!=='Not Mentioned'&&p.overview!=='δ�ἰ')rows+='<div class="ai-row"><span class="ai-label">Overview</span><span>'+esc(p.overview)+'</span></div>';
+  return rows?'<div class="ai-card">'+rows+'</div>':'';
 }
+function esc(s){if(!s)return'';let d=document.createElement('div');d.textContent=String(s);return d.innerHTML}
 
 // Init Excel book
 window.book=XLSX.utils.book_new();
 </script>
+<script src="/reference/i18n.js"></script>
+<script>PVDB_i18n.init({navSelector:'nav'});</script>
 </body>
 </html>

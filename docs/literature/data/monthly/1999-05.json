@@ -1,0 +1,277 @@
+{
+  "month": "1999-05",
+  "generated": "2026-07-13 02:59:42",
+  "total": 12,
+  "by_category": {
+    "Host_Virus_Interactions": 7,
+    "New_Virus": 4,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30845549",
+      "doi": "10.1094/PDIS.1999.83.5.487C",
+      "title": "First Report of Tomato Yellow Leaf Curl Virus in Tomato in South Georgia.",
+      "abstract": "In October 1998, symptoms characteristic of tomato yellow leaf curl virus (TYLCV) were observed on fresh market tomato (Lycopersicon esculentum Mill.) in four production fields, two in Decatur County, Georgia, and two in Gadsden County, Florida. Symptoms observed were plant stunting, reduced leaf size, yellow leaf margins, and mottling. The incidence of symptomatic plants was less than 1% in all fields examined. In most cases, symptoms were observed only on the upper portion of plants, suggesting these plants had been infected by secondary spread from an unknown source. Nuclear inclusions characteristic of geminiviruses were observed by light microscopy in leaf tissue from symptomatic plants (1). To identify the geminivirus, total DNA from infected plants was extracted from six symptomatic tomato plants (two from Georgia and four from Florida) for polymerase chain reaction (PCR; J. E. Polston, personal communication). DNA was amplified with geminivirus DNA A degenerate primer set PAL1v1978 and PAR1c496 (2) from these extracts in addition to extracts from a known TYLCV-infected, a tomato mottle virus (ToMoV)-infected, and a healthy tomato plant. A PCR product of 1.4 kb was obtained from plants with TYLCV-like symptoms, while a 1.4-kb product and a 1.1-kb product were obtained from extracts of the known TYLCV-infected and ToMoV-infected tomato plants, respectively. No PCR product was obtained from extracts of healthy tomato plants. The 1.4-kb PCR products from one Georgia sample and one Florida sample were compared with those of TYLCV and ToMoV by restriction enzyme (RE) digestion with EcoRI and ClaI. The RE pattern of the 1.4-kb fragment from both samples was identical to the RE pattern of TYLCV and different from that of ToMoV. Adult and immature whiteflies collected from the fields where TYLCV was found were identified as Bemisia tabaci, the vector of TYLCV, but the biotype was not established. This report of TYLCV in south Georgia and north Florida extends the geographic range of TYLCV in the U.S. northward approximately 100 km. Georgia is the second state in which TYLCV was found since its initial detection in south Florida in July 1997 (J. E. Polston, personal communication). Monitoring of silverleaf whitefly populations and detection of TYLCV on alternate hosts will continue in order to estimate the potential impact of this virus on south Georgia and north Florida agriculture. References: (1) R. G. Christie and J. R. Edwardson. Plant Dis. 70:273, 1986, (2) M. R. Rojas et al. Plant Dis. 77:340, 1993.",
+      "journal": "Plant disease",
+      "year": 1999,
+      "pub_date": "1999-05-01",
+      "authors": "Momol M T; Simone G W; Dankers W; Sprenkel R K; Olson S M; ... (+3)",
+      "first_author": "Momol M T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato yellow leaf curl virus (TYLCV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "番茄 (Lycopersicon esculentum)",
+      "location": "美国佐治亚州迪凯特县、佛罗里达州加兹登县",
+      "results": "从病株中扩增出1.4kb片段，酶切图谱与TYLCV一致；田间发现烟粉虱。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10381087",
+      "doi": "10.1016/s0166-0934(99)00014-2",
+      "title": "Selection of phage-display peptides that bind to cucumber mosaic virus coat protein.",
+      "abstract": "Several discrete peptides that bind specifically to the coat protein of cucumber mosaic virus (CMV) were isolated from a diverse phage library displaying random nonapeptides on the major coat protein VIII. Enrichment was shown by polyclonal phage enzyme linked immunosorbent assay (ELISA) after three rounds of selection. Sequencing of the genes encoding 10 of these peptides revealed an absence of any conserved motifs, although nine of them contained a high proportion of proline residues. Some of the selected peptides were displayed at the N-terminus of thioredoxin and expressed in the cytoplasm of Escherichia coli. Both the phage-displayed and thioredoxin-fusion versions of the peptides could detect purified CMV and CMV present in crude leaf extracts from infected plants. By dot blot analysis, a thioredoxin-peptide fusion could readily detect as little as 5 ng of CMV. The peptides did not bind to other plant viruses. These peptides have been shown to be specific and highly sensitive tools in the detection of CMV and, as well as their diagnostic potential, they could form the basis for a novel disease resistance strategy.",
+      "journal": "Journal of virological methods",
+      "year": 1999,
+      "pub_date": "1999-05-01",
+      "authors": "Gough K C; Cockburn W; Whitelam G C",
+      "first_author": "Gough K C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "黄瓜花叶病毒 (cucumber mosaic virus, CMV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10329615",
+      "doi": "10.1093/emboj/18.10.2683",
+      "title": "Strong host resistance targeted against a viral suppressor of the plant gene silencing defence mechanism.",
+      "abstract": "The 2b protein encoded by cucumber mosaic cucumovirus (Cmv2b) acts as an important virulence determinant by suppressing post-transcriptional gene silencing (PTGS), a natural plant defence mechanism against viruses. We report here that the tomato aspermy cucumovirus 2b protein (Tav2b), when expressed from the unrelated tobacco mosaic tobamovirus (TMV) RNA genome, activates strong host resistance responses to TMV in tobacco which are typical of the gene-for-gene disease resistance mechanism. Domain swapping between Cmv2b, which does not elicit these responses, and Tav2b, revealed functional domains in Tav2b critical for triggering virus resistance and hypersensitive cell death. Furthermore, substitution of two amino acids from Tav2b by those found at the same positions in Cmv2b, Lys21-->Val and Arg28-->Ser, abolished the ability to induce hypersensitive cell death and virus resistance. However, in Nicotiana benthamiana, a species related to tobacco, Tav2b functions as a virulence determinant and suppresses PTGS. Thus, a viral suppressor of the host gene silencing defence mechanism is the target of another independent host resistance mechanism. Our results provide new insights into the complex molecular strategies employed by viruses and their hosts for defence, counter-defence and counter counter-defence.",
+      "journal": "The EMBO journal",
+      "year": 1999,
+      "pub_date": "1999-05-17",
+      "authors": "Li H W; Lucy A P; Guo H S; Li W X; Ji L H; ... (+2)",
+      "first_author": "Li H W",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "番茄不孕病毒（TAV）2b蛋白、黄瓜花叶病毒（CMV）2b蛋白、烟草花叶病毒（TMV）",
+      "taxonomy": "",
+      "host_plant": "烟草（Nicotiana tabacum）、本氏烟（Nicotiana benthamiana）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10390871",
+      "doi": "10.1016/S0723-2020(99)80067-8",
+      "title": "Genotypic diversity of Acidovorax strains isolated from activated sludge and description of Acidovorax defluvii sp. nov.",
+      "abstract": "Fluorescence in situ hybridization of activated sludge samples from a municipal wastewater treatment plant using oligonucleotide probes specific for Acidovorax demonstrated that these bacteria are highly abundant in this environment. For the targeted cultivation of representatives belonging to this genus, isolates grown on agar plates after serial dilution were screened by whole-cell hybridization with specific probes. The obtained strains clustered in two phylogenetic groups as determined by 16S rRNA gene sequence analyses. The isolates of one cluster were phylogenetically and genotypically closely related to A. delafieldii. In contrast, the strains of the other cluster were genotypically and phenotypically distinct from the hitherto known Acidovorax species. Therefore, a new species, Acidovorax defluvii sp. nov., was proposed for these strains. The main characteristics of the newly defined species are as follows: Gram-negative, motile or non-motile rods with rounded ends, often with large polyhydroxybutyrate granules. In broth cultures flocs are formed. Test for cytochrome oxidase is positive with all strains. The majority of strains is catalase positive and reduces nitrate. All strains are metabolically inactive against most carbohydrates and organic acids. Fatty acid patterns are typical for the genus Acidovorax. The guanine-plus-cytosine content of DNAs varies between 62 and 64 mol%. The type strain of A. defluvii is BSB411T (DSM 12644). A new 16S rRNA-targeted oligonucleotide probe reacting by in situ hybridization with all known Acidovorax species, including A. defluvii sp. nov., was designed.",
+      "journal": "Systematic and applied microbiology",
+      "year": 1999,
+      "pub_date": "1999-05-01",
+      "authors": "Schulze R; Spring S; Amann R; Huber I; Ludwig W; ... (+2)",
+      "first_author": "Schulze R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30845544",
+      "doi": "10.1094/PDIS.1999.83.5.486A",
+      "title": "Occurrence of Smut Caused by a Ustilago sp. on Dry-Beans.",
+      "abstract": "In September 1997, after the tropical winter season and following a long warm (28 to 33°C) and rainy (27 mm) period, smut symptoms were observed on two dry-bean (Phaseolus vulgaris) fields in Brazil. Brownish to blackish powdery masses of spores were observed on stems, pods, and roof green and senescent plants. No galls were observed. Hyphae in infected tissue were intercellular; no clamp connections were observed. Typical globose teliospores were observed that measured 7 to 11 μm. Spores were uninucleate or binucleate; predominantly brownish with flattened poles and equatorial band; the exospore wall was thick and surface ornamented (echinulate-type). Teliospores incubated in water drops generated transversely septate promycelia, unbranched, producing terminal and lateral basidiospores. The fungus did not grow well on potato dextrose agar (PDA) medium, generating yeastlike colonies. To confirm pathogenicity of a Ustilago sp., spores collected from field-infected plants were inoculated on 8- and 20-day old seedlings of dry-bean cultivars Rosinha and Perola. Spore suspensions of 105 teliospores were sprayed all over the plants. After inoculation, plants were kept in a moist chamber (relative humidity [RH] 100%) for 2 days. At the third day, inoculated plants were covered with clear polyethylene bags and transferred to the greenhouse (RH 50%, temperature 25 ± 2°C). Noninoculated controls were included for comparisons. Within 2 weeks, all inoculated plants reproduced field symptoms of darkened tissues covered by profuse sori containing teliospores and basidiospores. Eight-day-old plants died 2 weeks after inoculation. Noninoculated plants did not develop any symptoms. Teliospores obtained from dead plants were identical to those used for inoculation, thus completing Koch's postulates. Fischer (1), and later Fischer and Shaw (2), proposed a species concept for Ustilago based on morphology (primarily of the teliospore), symptomatology, and host specialization at the host-family level. Although the teliospores found on dry-beans, in Brazil, are much like those of Ustilago maydis, the fungus did not cause galls on plants, was able to infect roots and kill seedlings. and is very well adapted to a legume plant. Cross inoculation tests indicated that spores from dry-beans cannot cause disease symptoms on maize. We therefore regard the bean smut as a new species. We are not aware of any other Ustilago sp. being reported on a legume host. References: (1) G. W. Fischer. 1953. Manual of the North America Smut Fungi. (2) G. W. Fischer and C. G. Shaw. Phytopathology 43:181, 1953.",
+      "journal": "Plant disease",
+      "year": 1999,
+      "pub_date": "1999-05-01",
+      "authors": "Costa J L da S; de Oliveira V C",
+      "first_author": "Costa J L da S",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10390870",
+      "doi": "10.1016/s0723-2020(99)80066-6",
+      "title": "Defluvibacter lusatiae gen. nov., sp. nov., a new chlorohenol-degrading member of the alpha-2 subgroup of proteobacteria.",
+      "abstract": "The two Gram-negative bacterial strains S1 and S4 were isolated from activated sludge of an industrial waste water treatment plant and exhibited a stable capability to degrade 2,4-dichlorophenol, 4-chloro-2-methylphenol, 4-chlorophenol and phenol. The cells were short rods with a polar flagellum, being mesophilic, strictly aerobic, oxidase-positive, and chemoorganotrophic. They utilized a range of amino acids, but only a restricted number of carbohydrates. Reassociation experiments with DNA from strains S1 and S4 revealed high interstrain similarity, indicating, that both strains belong to the same species. The phylogenetic position was determined by comparison of the almost complete 16S rDNA sequence of strain S1 with sequences of related bacteria. Strain S1 clustered with members of the alpha-2 subgroup of the Proteobacteria by forming a separate lineage within the radiation of Mesorhizobium, Phyllobacterium and Sinorhizobium. Both strains can be differentiated from members of related taxa by a set of physiological and chemotaxonomic properties including the ability to grow with norvaline, L-tryptophan, putrescine, glutarate and malonate, and by the presence of spermidine as major polyamine and of 12:0 3OH as fatty acid. Strain S1 is described as type strain of a new species and assigned to a new genus with the proposed name Defluvibacter lusatiae.",
+      "journal": "Systematic and applied microbiology",
+      "year": 1999,
+      "pub_date": "1999-05-01",
+      "authors": "Fritsche K; Auling G; Andreesen J R; Lechner U",
+      "first_author": "Fritsche K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10318973",
+      "doi": "10.1073/pnas.96.10.5850",
+      "title": "Recombination between diverged clusters of the tomato Cf-9 plant disease resistance gene family.",
+      "abstract": "The tomato Cf-4 and Cf-9 genes are the founder members of a large gene family of homologues of Cladosporium fulvum resistance gene Cf-9 (Hcr9 genes), several of which confer resistance against C. fulvum through recognition of different pathogen-encoded avirulence determinants. Three loci of tandemly repeated Hcr9 genes-Southern Cross (SC), Milky Way (MW), and Northern Lights (NL)-are located on the short arm of tomato chromosome 1. Comparisons between 2 SC-Hcr9s, 11 from MW, and 5 from NL implicated sequence exchange between gene family members in their evolution. The extent to which novel variants can be generated by recombination depends on the degree of sequence polymorphism available within the gene family. Here we show that physical separation of Hcr9 genes can be associated with elevated sequence divergence. Two diverged subclasses of Hcr9s could be defined. These are physically separated from each other, with members of one class exclusively residing at Northern Lights. One exceptional Hcr9 at Northern Lights carried sequence features specific for Hcr9s at other loci, suggesting a recent transfer of this gene by an interlocus recombination event. As members of diverged subclasses are brought into physical vicinity within a tandem repeat, a larger spectrum of sequence variants can potentially be generated by subsequent interhomologue sequence exchange.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1999,
+      "pub_date": "1999-05-11",
+      "authors": "Parniske M; Jones J D",
+      "first_author": "Parniske M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10322560",
+      "doi": "10.1016/s1360-1385(99)01404-1",
+      "title": "Resistance to oomycetes: a general role for the hypersensitive response?",
+      "abstract": "Oomycete plant pathogens, such as Phytophthora, downy mildews and Pythium, have devastating disease effects on numerous crop and ornamental plants. Various types of genetic resistance to oomycetes occur in plants, and can be determined at the subspecific or varietal level (race or cultivar-specific resistance), or at the species or genus level (nonhost resistance). In addition, resistance might be a quantitative phenotype (partial resistance). Resistance reactions are often associated with the hypersensitive response - a programed cell death pathway. Recent advances in the genetic, biochemical and cytological characterization of disease resistance suggests that the hypersensitive response is associated with all forms of resistance to Phytophthora and downy mildews. Identification of the resistance genes involved in nonhost and partial resistance to oomycetes remains an important challenge.",
+      "journal": "Trends in plant science",
+      "year": 1999,
+      "pub_date": "1999-05-01",
+      "authors": "Kamoun S; Huitema E; Vleeshouwers VG",
+      "first_author": "Kamoun S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10224233",
+      "doi": "10.1096/fasebj.13.8.903",
+      "title": "Polyisoprenyl phosphate (PIPP) signaling regulates phospholipase D activity: a 'stop' signaling switch for aspirin-triggered lipoxin A4.",
+      "abstract": "It is of wide interest to understand how opposing extracellular signals (positive or negative) are translated into intracellular signaling events. Receptor-ligand interactions initiate the generation of bioactive lipids by human neutrophils (PMN), which serve as signals to orchestrate cellular responses important in host defense and inflammation. We recently identified a novel polyisoprenyl phosphate (PIPP) signaling pathway and found that one of its components, presqualene diphosphate (PSDP), is a potent negative intracellular signal in PMN that regulates superoxide anion generation by several stimuli, including phosphatidic acid. We determined intracellular PIPP signaling by autocoids with opposing actions on PMN: leukotriene B4 (LTB4), a potent chemoattractant, and lipoxin A4 (LXA4), a 'stop signal' for recruitment. LTB4 receptor activation initiated a rapid decrease in PSDP levels concurrent with activation of PLD and cellular responses. In sharp contrast, activation of the LXA4 receptor reversed LTB4-initiated PSDP remodeling, leading to an accumulation of PSDP and potent inhibition of both PLD and superoxide anion generation. Thus, an inverse relationship was established for PSDP levels and PLD activity with two PMN ligands that evoke opposing responses. In addition, PSDP directly inhibited both isolated human recombinant (Ki = 6 nM) and plant (Ki = 20 nM) PLD. Together, these findings link PIPP remodeling to intracellular regulation of PMN function and suggest a role for PIPPs as lipid repressors in signal transduction, a novel mechanism that may also explain aspirin's suppressive actions in vivo in cell signaling.",
+      "journal": "FASEB journal : official publication of the Federation of American Societies for Experimental Biology",
+      "year": 1999,
+      "pub_date": "1999-05-01",
+      "authors": "Levy B D; Fokin V V; Clark J M; Wakelam M J; Petasis N A; ... (+1)",
+      "first_author": "Levy B D",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10339621",
+      "doi": "10.1073/pnas.96.11.6523",
+      "title": "Interaction of NPR1 with basic leucine zipper protein transcription factors that bind sequences required for salicylic acid induction of the PR-1 gene.",
+      "abstract": "The Arabidopsis thaliana NPR1 has been shown to be a key regulator of gene expression during the onset of a plant disease-resistance response known as systemic acquired resistance. The npr1 mutant plants fail to respond to systemic acquired resistance-inducing signals such as salicylic acid (SA), or express SA-induced pathogenesis-related (PR) genes. Using NPR1 as bait in a yeast two-hybrid screen, we identified a subclass of transcription factors in the basic leucine zipper protein family (AHBP-1b and TGA6) and showed that they interact specifically in yeast and in vitro with NPR1. Point mutations that abolish the NPR1 function in A. thaliana also impair the interactions between NPR1 and the transcription factors in the yeast two-hybrid assay. Furthermore, a gel mobility shift assay showed that the purified transcription factor protein, AHBP-1b, binds specifically to an SA-responsive promoter element of the A. thaliana PR-1 gene. These data suggest that NPR1 may regulate PR-1 gene expression by interacting with a subclass of basic leucine zipper protein transcription factors.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1999,
+      "pub_date": "1999-05-25",
+      "authors": "Zhang Y; Fan W; Kinkema M; Li X; Dong X",
+      "first_author": "Zhang Y",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10318699",
+      "doi": "10.1104/pp.120.1.217",
+      "title": "Salicylic acid induces rapid inhibition of mitochondrial electron transport and oxidative phosphorylation in tobacco cells.",
+      "abstract": "Salicylic acid (SA) is known to induce alternative pathway respiration by activating expression of the alternative oxidase gene. In the present study we report a rapid mode of action by SA on plant mitochondrial functions. SA at concentrations as low as 20 &mgr;M induced inhibition of both ATP synthesis and respiratory O2 uptake within minutes of incubation in tobacco (Nicotiana tabacum) cell cultures. Biologically active SA analogs capable of inducing pathogenesis-related genes and enhanced resistance also caused rapid inhibition of ATP synthesis and respiratory O2 uptake, whereas biologically inactive analogs did not. Inhibition of ATP synthesis and respiratory O2 uptake by SA was insensitive to the protein synthesis inhibitor cycloheximide, but was substantially reduced by the antioxidant N-acetylcysteine, suggesting a possible role for reactive oxygen species in the inhibition of mitochondrial functions. With exogenous NADH as the respiratory substrate, mitochondria isolated from SA-treated tobacco cell cultures were found to have normal capacities for both ATP synthesis and respiratory O2 uptake; direct incubation of isolated mitochondria with SA had no significant effect on these mitochondrial functions. These results indicate that (a) the respiration capacities of isolated mitochondria do not correspond to the in vivo respiration activities in SA-treated cell cultures and (b) the SA-induced inhibition of respiration in tobacco cell cultures may involve other components that are not present in isolated mitochondria. Given the recently demonstrated roles of mitochondria in plant disease resistance and animal apoptosis, this rapid inhibition by SA of mitochondrial functions may play a role in SA-mediated biological processes, including plant defense responses.",
+      "journal": "Plant physiology",
+      "year": 1999,
+      "pub_date": "1999-05-01",
+      "authors": "Xie Z; Chen Z",
+      "first_author": "Xie Z",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10339522",
+      "doi": "10.1073/pnas.96.11.5944",
+      "title": "Ecological approaches and the development of \"truly integrated\" pest management.",
+      "abstract": "Recent predictions of growth in human populations and food supply suggest that there will be a need to substantially increase food production in the near future. One possible approach to meeting this demand, at least in part, is the control of pests and diseases, which currently cause a 30-40% loss in available crop production. In recent years, strategies for controlling pests and diseases have tended to focus on short-term, single-technology interventions, particularly chemical pesticides. This model frequently applies even where so-called integrated pest management strategies are used because in reality, these often are dominated by single technologies (e.g., biocontrol, host plant resistance, or biopesticides) that are used as replacements for chemicals. Very little attention is given to the interaction or compatibility of the different technologies used. Unfortunately, evidence suggests that such approaches rarely yield satisfactory results and are unlikely to provide sustainable pest control solutions for the future. Drawing on two case histories, this paper demonstrates that by increasing our basic understanding of how individual pest control technologies act and interact, new opportunities for improving pest control can be revealed. This approach stresses the need to break away from the existing single-technology, pesticide-dominated paradigm and to adopt a more ecological approach built around a fundamental understanding of population biology at the local farm level and the true integration of renewable technologies such as host plant resistance and natural biological control, which are available to even the most resource-poor farmers.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1999,
+      "pub_date": "1999-05-25",
+      "authors": "Thomas M B",
+      "first_author": "Thomas M B",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

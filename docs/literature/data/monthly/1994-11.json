@@ -1,0 +1,78 @@
+{
+  "month": "1994-11",
+  "generated": "2026-07-13 02:59:42",
+  "total": 3,
+  "by_category": {
+    "Host_Virus_Interactions": 2,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "7954825",
+      "doi": "10.1016/0092-8674(94)90544-4",
+      "title": "H2O2 from the oxidative burst orchestrates the plant hypersensitive disease resistance response.",
+      "abstract": "Microbial elicitors or attempted infection with an avirulent pathogen strain causes the rapid production of reactive oxygen intermediates. We report here that H2O2 from this oxidative burst not only drives the cross-linking of cell wall structural proteins, but also functions as a local trigger of programmed death in challenged cells and as a diffusible signal for the induction in adjacent cells of genes encoding cellular protectants such as glutathione S-transferase and glutathione peroxidase. Thus, H2O2 from the oxidative burst plays a key role in the orchestration of a localized hypersensitive response during the expression of plant disease resistance.",
+      "journal": "Cell",
+      "year": 1994,
+      "pub_date": "1994-11-18",
+      "authors": "Levine A; Tenhaken R; Dixon R; Lamb C",
+      "first_author": "Levine A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17810266",
+      "doi": "10.1126/science.266.5188.1247",
+      "title": "A central role of salicylic Acid in plant disease resistance.",
+      "abstract": "Transgenic tobacco and Arabidopsis thaliana expressing the bacterial enzyme salicylate hydroxylase cannot accumulate salicylic acid (SA). This defect not only makes the plants unable to induce systemic acquired resistance, but also leads to increased susceptibility to viral, fungal, and bacterial pathogens. The enhanced susceptibility extends even to host-pathogen combinations that would normally result in genetic resistance. Therefore, SA accumulation is essential for expression of multiple modes of plant disease resistance.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 1994,
+      "pub_date": "1994-11-18",
+      "authors": "Delaney T P; Uknes S; Vernooij B; Friedrich L; Weymann K; ... (+6)",
+      "first_author": "Delaney T P",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "",
+      "host_plant": "烟草、拟南芥",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7881127",
+      "doi": "10.1002/aja.1002010307",
+      "title": "Mapping the origin of the avian enteric nervous system with a retroviral marker.",
+      "abstract": "The enteric nervous system is largely formed from the vagal neural crest which arises from the neuroaxis between somites 1-7. In order to evaluate the contribution of different regions of the vagal crest to the enteric nervous system, we marked crest cells by injecting somites 1-10 with a replication-defective spleen necrosis virus vector which contains the marker gene lacZ. After incubation in X-gal, lacZ-positive blue cells were found in the wall of the gut in three locations. Most were found at the peripheral edge of the developing circular muscle and within the developing submucosa, sites characteristic of developing ganglia. LacZ-positive cells in these ganglionic sites were always surrounded by HNK-1 immunostained cells, confirming their neural crest origin. LacZ-positive cells were also seen in a third location, the circular muscle layer of the esophagus and crop, and were separated from the HNK-1 positive ganglionic elements. These cells in the circular muscle are probably muscle cells derived from labeled mesodermal cells of the somite. Injection of somites 3, 4, 5, and 6 resulted in the largest percentage of preparations with lacZ-positive crest-derived cells and in the largest number of positive cells in the gut. After injection of these somites, lacZ-positive crest-derived cells were found in all regions of the gut from the proventriculus to the rectum. Very few positive crest-derived cells were found in the esophagus.(ABSTRACT TRUNCATED AT 250 WORDS)",
+      "journal": "Developmental dynamics : an official publication of the American Association of Anatomists",
+      "year": 1994,
+      "pub_date": "1994-11-01",
+      "authors": "Epstein M L; Mikawa T; Brown A M; McFarlin D R",
+      "first_author": "Epstein M L",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

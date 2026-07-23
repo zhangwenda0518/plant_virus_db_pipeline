@@ -1,0 +1,282 @@
+{
+  "month": "2000-02",
+  "generated": "2026-07-13 02:59:42",
+  "total": 13,
+  "by_category": {
+    "Host_Virus_Interactions": 5,
+    "New_Virus": 3,
+    "Antiviral_Resistance_Genes": 3,
+    "Biotechnology_Applications": 2,
+    "Molecular_Characterization": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "10644854",
+      "doi": "10.1099/0022-1317-81-2-541",
+      "title": "Nucleotide sequence and genome organization of apple latent spherical virus: a new virus classified into the family Comoviridae.",
+      "abstract": "A virus with isometric virus particles (ca. 25 nm) was isolated from an apple tree and named Apple latent spherical virus (ALSV). Virus particles purified from infected Chenopodium quinoa formed two bands with densities of 1.41 and 1.43 g/cm(3) in CsCl equilibrium density-gradient centrifugation, indicating that the virus is composed of two components. The virus had two ssRNA species (RNA1 and RNA2) and three capsid proteins (Vp25, Vp24 and Vp20). The complete nucleotide sequences of RNA1 and RNA2 were determined to be 6815 nt and 3384 nt excluding the 3' poly(A) tail, respectively. RNA1 contains two partially overlapping ORFs encoding polypeptides of molecular mass 23 kDa ('23K'; ORF1) and 235 kDa ('235K'; ORF2); RNA2 has a single ORF encoding a polypeptide of 108 kDa ('108K'). The 235K protein has, in order, consensus motifs of the protease cofactor, the NTP-binding helicase, the cysteine protease and the RNA polymerase, in good agreement with the gene arrangement of viruses in the COMOVIRIDAE: The 108K protein contains an LPL movement protein (MP) motif near the N terminus. Direct sequencing of the N-terminal amino acids of the three capsid proteins showed that Vp25, Vp20 and Vp24 are located in this order in the C-terminal region of the 108K protein. The cleavage sites of the 108K polyprotein were Q/G (MP/Vp25 and Vp25/Vp20) and E/G (Vp20/Vp24). Phylogenetic analysis of the ALSV RNA polymerase domain showed that ALSV falls into a cluster different from the nepo-, como- and fabavirus lineages.",
+      "journal": "The Journal of general virology",
+      "year": 2000,
+      "pub_date": "2000-02-01",
+      "authors": "Li C; Yoshikawa N; Takahashi T; Ito T; Yoshida K; ... (+1)",
+      "first_author": "Li C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Apple latent spherical virus (ALSV)",
+      "taxonomy": "Comoviridae",
+      "host_plant": "苹果树 (Malus domestica); 实验寄主 Chenopodium quinoa",
+      "location": "未提及",
+      "results": "病毒含两种ssRNA和三种衣壳蛋白；RNA1编码两个ORF，RNA2编码一个ORF；确定衣壳蛋白顺序及切割位点；系统发育显示ALSV属独立进化枝。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30841326",
+      "doi": "10.1094/PDIS.2000.84.2.201B",
+      "title": "First Report of Petunia vein clearing virus in Israel.",
+      "abstract": "Petunia vein clearing virus (PVCV), a possible member of the cauli-movirus group, was detected in several cultivars of vegetatively propagated petunias grown in commercial nurseries in Israel. Symptoms associated with PVCV infection in petunia cv. Chaplin consisted of stunted young shoots, leaf yellowing, and severe vein clearing. Virus incidence within this cultivar was 40 to 60%. Symptoms were most frequently expressed when plants were subjected to temperatures above 20°C and nutrient deficiencies. The virus was transmitted to petunia only by grafting, however, not by aphids or mechanical inoculation. Leaf dip preparations and thin sections of leaf tissue were analyzed by transmission electron microscopy. Spherical virus particles (45 to 50 nm diameter) were observed in samples from symptomatic petunia plants. In immunoelectron microscopy, the virus particles produced a distinct pattern with the specific antiserum against PVCV provided by D. Lesemann (Biologische Bundesanstalt, Braunschweig, Germany). Infection with PVCV also was confirmed by polymerase chain reaction with total nucleic acid extract preparations. Two primer pairs-5'-GAGGTCAGAGCAAGTCAGAGG-3' (nucleotides 4339 to 4359) and 5'-GTAATGATTTGACTTGTTGAG-3' (nucleotides 5055 to 5075)-were designed to flank a 736-bp sequence in the RNA-dependent RNA polymerase gene of the PVCV genome (GenBank Accession no. U95208). A DNA fragment of the predicted size was visualized in agarose gels. Authenticity of the amplified DNA fragment was confirmed by restriction analysis. The virus has been detected in the past in Germany (1) and recently in the United States (2). This is the first report of PVCV in commercial nurseries in Israel. References: (1) D. Lesemann and R. Casper. Phytopathology 63:1118, 1973. (2) B. Lockhart and D. Lesemann. Plant Dis. 82:262, 1998.",
+      "journal": "Plant disease",
+      "year": 2000,
+      "pub_date": "2000-02-01",
+      "authors": "Gera A; Sikron N; Cohen J; Zeidan M",
+      "first_author": "Gera A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Petunia vein clearing virus (PVCV)",
+      "taxonomy": "Caulimovirus (花椰菜花叶病毒属)",
+      "host_plant": "矮牵牛（Petunia）",
+      "location": "以色列",
+      "results": "观察到球形病毒颗粒（45-50 nm），PCR扩增出736 bp片段，经限制性酶切验证。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10872503",
+      "doi": "10.1385/mb:14:2:99",
+      "title": "In planta expression of HIV-1 p24 protein using an RNA plant virus-based expression vector.",
+      "abstract": "Plant viruses show significant potential as expression vectors for the production of foreign proteins (e.g., antigens) in plants. The HIV-1 p24 nucleocapsid protein is an important early marker of HIV infection and has been used as an antigen in the development of HIV vaccines. Toward developing a plant-based expression system for the production of p24, we have investigated the use of a (positive)-strand RNA plant virus, tomato bushy stunt virus (TBSV), as an expression vector. The HIV p24 open reading frame (ORF) was introduced into a cloned cDNA copy of the TBSV genome as an in-frame fusion with a 5'-terminal portion of the TBSV coat protein ORF. In vitro-generated RNA transcripts corresponding to the engineered virus vector were infectious when inoculated into plant protoplasts; Northern and Western blot analyses verified the accumulation of a predicted p24-encoding viral subgenomic mRNA and the production of p24 fusion product. Whole-plant infections with the viral vector led to the accumulation of p24 fusion protein in inoculated leaves, which cross-reacted with p24-specific antibodies, thus confirming the maintenance of key antigenic determinants. This study is the first to demonstrate that TBSV can be engineered to express a complete foreign protein of clinical importance. Strategies for optimizing protein yield from this viral vector are discussed.",
+      "journal": "Molecular biotechnology",
+      "year": 2000,
+      "pub_date": "2000-02-01",
+      "authors": "Zhang G; Leung C; Murdin L; Rovinski B; White K A",
+      "first_author": "Zhang G",
+      "categories": [
+        "Biotechnology_Applications",
+        "Molecular_Characterization",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "番茄丛矮病毒 (Tomato bushy stunt virus, TBSV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10701106",
+      "doi": "",
+      "title": "Development of SCAR markers to the PVY resistance gene Ryadg based on a common feature of plant disease resistance genes.",
+      "abstract": "Sequence-characterized amplified regions (SCARs) were developed, based on nucleotide differences within resistance gene-like fragments isolated from a potato plant carrying the Ryadg gene, which confers extreme resistance to potato Y potyvirus (PVY). It originates from Solanum tuberosum subsp. andigena, and a susceptible potato plant. SCARs were tested using 103 potato breeding lines and cultivars with diverse genetic backgrounds derived from Europe, North America, and Japan. Two markers showed high accuracy for detection of the Ryadg gene. The SCAR marker RYSC3 was generated only in genotypes carrying Ryadg. The SCAR marker RYSC4 was detected in all genotypes carrying Ryadg but also in four PVY-susceptible genotypes. Neither marker was detected in genotypes carrying other Ry genes originating from different species than S. tuberosum subsp. andigena. Therefore, these SCAR markers should be powerful tools in marker-assisted selection for Ryadg in potato breeding programs, and should also be useful for cloning of the Ryadg gene.",
+      "journal": "Genome",
+      "year": 2000,
+      "pub_date": "2000-02-01",
+      "authors": "Kasai K; Morikawa Y; Sorri V A; Valkonen J P; Gebhardt C; ... (+1)",
+      "first_author": "Kasai K",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "马铃薯Y病毒 (PVY)",
+      "taxonomy": "",
+      "host_plant": "马铃薯 (Solanum tuberosum subsp. andigena)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18944602",
+      "doi": "10.1094/PHYTO.2000.90.2.139",
+      "title": "Nucleocapsid Gene-Mediated Transgenic Resistance Provides Protection Against Tomato spotted wilt virus Epidemics in the Field.",
+      "abstract": "ABSTRACT Transformation of plants with the nucleocapsid (N) gene of Tomato spotted wilt tospovirus (TSWV) provides resistance to disease development; however, information is lacking on the response of plants to natural inoculum in the field. Three tobacco cultivars were transformed with the N gene of a dahlia isolate of TSWV (TSWV-D), and plants were evaluated over several generations in the greenhouse. The resistant phenotype was more frequently observed in 'Burley 21' than in 'KY-14' or 'K-326', but highly resistant 'Burley 21' transgenic lines were resistant to only 44% of the heterologous TSWV isolates tested. Advanced generation (R(3) and R(4)) transgenic resistant lines of 'Burley 21' and a 'K-326' F(1) hybrid containing the N genes of two TSWV isolates were evaluated in the field near Tifton, GA, where TSWV is endemic. Disease development was monitored by symptom expression and enzyme-linked immunosorbent assay (ELISA) analysis. Whereas incidence of TSWV infection in 'Burley 21' susceptible controls was 20% in 1996 and 62% in 1997, the mean incidence in transgenic lines was reduced to 4 and 31%, respectively. Three transgenic 'Burley 21' lines were identified that had significantly lower incidence of disease than susceptible controls over the two years of the study. In addition, the rate of disease increase at the onset of the 1997 epidemic was reduced for all the 'Burley 21' transgenic lines compared with the susceptible controls. The 'K-326' F(1) hybrid was as susceptible as the 'K-326' nontransformed control. ELISA analysis demonstrated that symptomless plants from the most resistant 'Burley 21' transgenic lines accumulated detectable nucleocapsid protein, whereas symptomless plants from more susceptible lines did not. We conclude that transgenic resistance to TSWV is effective in reducing incidence of the disease in the field, and that accumulation of transgene protein may be important in broad-spectrum resistance.",
+      "journal": "Phytopathology",
+      "year": 2000,
+      "pub_date": "2000-02-01",
+      "authors": "Herrero S; Culbreath A K; Csinos A S; Pappu H R; Rufty R C; ... (+1)",
+      "first_author": "Herrero S",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Tomato spotted wilt virus (TSWV)",
+      "taxonomy": "",
+      "host_plant": "烟草（Burley 21, KY-14, K-326）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12548872",
+      "doi": "",
+      "title": "[Characterization and phylogenic analysis on a new isolate of genus Rhodocista].",
+      "abstract": "A strain of purple non sulfur bacteria was isolated from waste water plant in Beijing. It is phototaxic, and can converted the vibrioid cells into thick-wall cyst. Internal synthetic membrane is present as lamellae. It has a low absorption maxima at 798 nm. and require thiamine and vitamin B12 as growth factors. It can use succinate as carbon and energy source, but glucose can not be used. It can not grow in 3% NaCl and had Q-9 as major quinone. The 16S rRNA gene was amplified, cloned and sequenced. A phylogenic tree was constructed on the basis of the 16S rDNA sequences. It showed that the previously known member of the genus Rhodocista, Rc. centenaria, is the nearest neighbor to strain 3-p. The level of binary sequence similarity between Rc. centenaria and strain 3-p of 95%, and their phenotypic differences and genetic DNA-DNA relatedness of 56%, shows they are different species of Rhodocista. A new species name, Rhodocista pekinense, was proposed for strain 3-p.",
+      "journal": "Wei sheng wu xue bao = Acta microbiologica Sinica",
+      "year": 2000,
+      "pub_date": "2000-02-01",
+      "authors": "Zhang D; Huang Z; Yang H",
+      "first_author": "Zhang D",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10655501",
+      "doi": "10.1073/pnas.97.3.1160",
+      "title": "Recent, extensive, and preferential insertion of members of the miniature inverted-repeat transposable element family Heartbreaker into genic regions of maize.",
+      "abstract": "A 314-bp DNA element called Heartbreaker-hm1 (Hbr-hm1) was previously identified in the 3' untranslated region of a mutant allele of the maize disease resistance gene HM1. This element has structural features of miniature inverted-repeat transposable elements (MITEs) and is a member of a large family of approximately 4,000 copies in the maize genome. Unlike previously described MITEs, most members of the Hbr family display over 90% sequence identity. This, coupled with the insertion of an Hbr element into an allele of the HM1 gene, suggested that this family might have spread recently throughout the genome. Consistent with this view is the finding that Hbr insertion sites are remarkably polymorphic. Ten of ten loci containing Hbr elements were found to be polymorphic for the presence or absence of Hbr among a collection of maize inbred lines and teosinte strains. Despite the fact that over 80% of the maize genome contain moderate to highly repetitive DNA, we find that randomly chosen Hbr elements are predominantly in single or low copy regions. Furthermore, when used to query both the public and private databases of plant genes, over 50% of the sequences flanking these Hbr elements resulted in significant \"hits.\" Taken together, these data indicate that the presence or absence of Hbr elements is a significant contributory factor to the high level of polymorphism associated with maize genic regions.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2000,
+      "pub_date": "2000-02-01",
+      "authors": "Zhang Q; Arbuckle J; Wessler S R",
+      "first_author": "Zhang Q",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10662863",
+      "doi": "",
+      "title": "The Arabidopsis NPR1/NIM1 protein enhances the DNA binding activity of a subgroup of the TGA family of bZIP transcription factors.",
+      "abstract": "The Arabidopsis NPR1 gene is essential in activating systemic, inducible plant defense responses. To gain a better understanding of NPR1 function, we conducted a yeast two-hybrid screening procedure and identified a differential interaction between NPR1 and all known members of the Arabidopsis TGA family of basic leucine zipper transcription factors. In the electrophoretic mobility shift assay, NPR1 substantially increased the binding of TGA2 to its cognate promoter element (as-1) as well as to a positive salicylic acid-inducible element (LS7) and a negative element (LS5) in the promoter of the pathogenesis-related PR-1 gene. Proteins encoded by npr1 mutants interacted poorly with TGA2 and did not substantially increase TGA2 binding to the as-1, LS5, or LS7 elements, thus establishing a link between the loss of disease resistance and the loss of TGA2 interaction and NPR1-enhanced DNA binding. Coupled with observations that the DNA binding activity of TGA factors is deregulated in npr1 plants, the results suggest that NPR1-mediated DNA binding of TGA2 is critical for activation of defense genes.",
+      "journal": "The Plant cell",
+      "year": 2000,
+      "pub_date": "2000-02-01",
+      "authors": "Després C; DeLong C; Glaze S; Liu E; Fobert P R",
+      "first_author": "Després C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10701117",
+      "doi": "10.1139/g99-107",
+      "title": "Expression and genome organization of resistance gene analogs in soybean.",
+      "abstract": "Sequence analysis of cloned plant disease-resistance genes reveals a number of conserved domains. Researchers have used these domains to amplify analogous sequences, resistance gene analogs (RGAs), from soybean and other crops. Many of these RGAs map in close proximity to known resistance genes. While this technique is useful in identifying potential disease resistance loci, identifying the functional resistance gene from a cluster of homologs requires sequence information from outside of these conserved domains. To study RGA expression and to determine the extent of their similarity to other plant resistance genes, two soybean cDNA libraries (root and epicotyl) were screened by hybridization with RGA class-specific probes. cDNAs hybridizing to RGA probes were detected in each library. Two types of cDNAs were identified. One type was full-length and contained several disease-resistance gene (R-gene) signatures. The other type contained several deletions within these signatures. Sequence analyses of the cDNA clones placed them in the Toll-Interleukin-1 receptor, nucleotide binding domain, and leucine-rich repeat family of disease-resistance genes. Using clone-specific primers from within the 3' end of the LRRs, we were able to map two cDNA clones (LM6 and MG13) to a BAC contig that is known to span a cluster of disease-resistance genes.",
+      "journal": "Genome",
+      "year": 2000,
+      "pub_date": "2000-02-01",
+      "authors": "Graham M A; Marek L F; Lohnes D; Cregan P; Shoemaker R C",
+      "first_author": "Graham M A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10937183",
+      "doi": "10.1111/j.0014-3820.2000.tb00007.x",
+      "title": "Evolutionary dynamics of pathogen resistance and tolerance.",
+      "abstract": "Host organisms can respond to the threat of disease either through resistance defenses (which inhibit or limit infection) or through tolerance strategies (which do not limit infection, but reduce or offset its fitness consequences). Here we show that resistance and tolerance can have fundamentally different evolutionary outcomes, even when they have equivalent short-term benefit for the host. As a gene conferring disease resistance spreads through a population, the incidence of infection declines, reducing the fitness advantage of carrying the resistance gene. Thus genes conferring complete resistance cannot become fixed (i.e., universal) by selection in a host population, and diseases cannot be eliminated solely by natural selection for host resistance. By contrast, as a gene conferring disease tolerance spreads through a population, disease incidence rises, increasing the evolutionary advantage of carrying the tolerance gene. Therefore, any tolerance gene that can invade a host population will tend to be driven to fixation by selection. As predicted, field studies of diverse plant species infected by rust fungi confirm that resistance traits tend to be polymorphic and tolerance traits tend to be fixed. These observations suggest a new mechanism for the evolution of mutualism from parasitism, and they help to explain the ubiquity of disease.",
+      "journal": "Evolution; international journal of organic evolution",
+      "year": 2000,
+      "pub_date": "2000-02-01",
+      "authors": "Roy B A; Kirchner J W",
+      "first_author": "Roy B A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10654941",
+      "doi": "10.1093/emboj/19.3.434",
+      "title": "Serum-stimulated, rapamycin-sensitive phosphorylation sites in the eukaryotic translation initiation factor 4GI.",
+      "abstract": "The eukaryotic translation initiation factor 4G (eIF4G) proteins play a critical role in the recruitment of the translational machinery to mRNA. The eIF4Gs are phosphoproteins. However, the location of the phosphorylation sites, how phosphorylation of these proteins is modulated and the identity of the intracellular signaling pathways regulating eIF4G phosphorylation have not been established. In this report, two-dimensional phosphopeptide mapping demonstrates that the phosphorylation state of specific eIF4GI residues is altered by serum and mitogens. Phosphopeptides resolved by this method were mapped to the C-terminal one-third of the protein. Mass spectrometry and mutational analyses identified the serum-stimulated phosphorylation sites in this region as serines 1108, 1148 and 1192. Phosphoinositide-3-kinase (PI3K) inhibitors and rapamycin, an inhibitor of the kinase FRAP/mTOR (FKBP12-rapamycin-associated protein/mammalian target of rapamycin), prevent the serum-induced phosphorylation of these residues. Finally, the phosphorylation state of N-terminally truncated eIF4GI proteins acquires resistance to kinase inhibitor treatment. These data suggest that the kinases phosphorylating serines 1108, 1148 and 1192 are not directly downstream of PI3K and FRAP/mTOR, but that the accessibility of the C-terminus to kinases is modulated by this pathway(s).",
+      "journal": "The EMBO journal",
+      "year": 2000,
+      "pub_date": "2000-02-01",
+      "authors": "Raught B; Gingras A C; Gygi S P; Imataka H; Morino S; ... (+3)",
+      "first_author": "Raught B",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10758482",
+      "doi": "10.1046/j.1365-313x.2000.00677.x",
+      "title": "Induction of competence for elicitation of defense responses in cucumber hypocotyls requires proteasome activity.",
+      "abstract": "The epidermal cells of hypocotyls from etiolated cucumber seedlings are not constitutively competent for elicitation of the rapid H2O2 defense response. However, elicitor competence developed while conditioning the surface-abraded seedlings by rotating them in buffer for 4 h. Competence development was greatly potentiated by inducers of systemic acquired resistance and suppressed by specific inhibitors of proteasome activity, clastolactacystin beta-lactone (LAC) and carboxybenzoyl-L-leucyl-L-leucyl-L-leucinal (LLL). In the freshly abraded seedlings, chitinase gene activation became evident approximately 4 h after elicitor addition. Accumulation of chitinase mRNA was enhanced upon conditioning prior to elicitation and was inhibited by LAC and LLL, indicating that the process which leads to H2O2 elicitation competence is also superimposed on the elicitation of chitinase mRNA. LAC and LLL caused an accumulation of ubiquitin-conjugated proteins and enhanced the expression of a proteasome alpha-subunit, suggesting that proteasome activity was specifically inhibited and that the effect observed on gene expression was not due to impaired gene induction in general. Together, our results suggest that the ubiquitin-proteasome system may play a crucial role in a process which switches the signaling pathway for diverse plant defense responses into a functional state, as is known for many basic cellular processes in both animals and yeast.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2000,
+      "pub_date": "2000-02-01",
+      "authors": "Becker J; Kempf R; Jeblick W; Kauss H",
+      "first_author": "Becker J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

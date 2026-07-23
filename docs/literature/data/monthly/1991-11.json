@@ -1,0 +1,37 @@
+{
+  "month": "1991-11",
+  "generated": "2026-07-13 02:59:42",
+  "total": 1,
+  "by_category": {
+    "Detection_Methods": 1,
+    "Host_Virus_Interactions": 1,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "1946413",
+      "doi": "10.1073/pnas.88.21.9863",
+      "title": "A determinant of disease symptom severity is located in the 3'-terminal noncoding region of the RNA of a plant virus.",
+      "abstract": "Inoculation of Nicotiana tabacum plants with RNA transcribed in vitro from a variant (pXBS8) of a cloned full-length DNA copy of tobacco vein mottling virus (TVMV) RNA resulted in attenuation of the vein mottling and blotching symptoms typically produced by transcripts of cloned wild-type cDNA (pXBS7). Similar amounts of virus were detected by ELISA (using anti-TVMV coat protein serum) in systemically infected leaves of plants inoculated with pXBS7 or pXBS8 transcripts. pXBS8 was shown to contain a 58-nucleotide segment in the sequence corresponding to the 3'-terminal untranslated region of TVMV RNA that was not present in pXBS7. This segment resulted in the appearance in pXBS8 transcripts of four adjacent direct repeats of a 14-nucleotide sequence, AUAAUUAUAUAUAU, that is present in the 3'-untranslated region of TVMV RNA, with two additional nucleotides (AU) between the first and second repeats. Insertion of restriction fragments containing the segment into pXBS7 and inoculation of plants with transcripts of the chimeric construct (pXBS78) resulted in the attenuated-symptom phenotype and was not accompanied by a reduced accumulation of virus in the plant as determined by ELISA and Northern blot analysis. When the extra nucleotides were removed from the variant clone, symptoms induced by transcripts of the cDNA (pXBS87) resembled those induced by wild-type transcripts. The results indicate that a noncoding region of the genome can have a direct effect on the induction of disease symptoms by an RNA virus.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1991,
+      "pub_date": "1991-11-01",
+      "authors": "Rodríguez-Cerezo E; Klein P G; Shaw J G",
+      "first_author": "Rodríguez-Cerezo E",
+      "categories": [
+        "Detection_Methods",
+        "Host_Virus_Interactions",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "烟草脉斑驳病毒 (TVMV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

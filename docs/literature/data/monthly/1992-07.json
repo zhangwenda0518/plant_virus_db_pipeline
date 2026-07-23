@@ -1,0 +1,103 @@
+{
+  "month": "1992-07",
+  "generated": "2026-07-13 02:59:42",
+  "total": 4,
+  "by_category": {
+    "Host_Virus_Interactions": 2,
+    "New_Virus": 1,
+    "Phenuiviridae": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "1629690",
+      "doi": "10.1099/0022-1317-73-7-1603",
+      "title": "Complete sequence of maize stripe virus RNA4 and mapping of its subgenomic RNAs.",
+      "abstract": "The complete nucleotide sequence of maize stripe virus RNA4 was determined and found to consist of 2227 nucleotides containing two significant open reading frames. One, in the 5' end of the viral RNA, encodes the major non-capsid protein of M(r) 19,815. The other is located in the 5' end of the viral complementary RNA and could encode a protein of M(r) 31,900. This protein has not been identified previously and has been designated NS4, a non-structural protein. RNA-RNA hybridization detected subgenomic RNAs encoding these proteins, a characteristic of RNA possessing an ambisense gene organization.",
+      "journal": "The Journal of general virology",
+      "year": 1992,
+      "pub_date": "1992-07-01",
+      "authors": "Huiet L; Tsai J H; Falk B W",
+      "first_author": "Huiet L",
+      "categories": [
+        "New_Virus",
+        "Phenuiviridae"
+      ],
+      "virus_name": "Maize stripe virus (玉米条纹病毒)",
+      "taxonomy": "Tenuivirus",
+      "host_plant": "Zea mays (玉米)",
+      "location": "未提及",
+      "results": "RNA4全长2227 nt，含两个ORF：5'端编码非衣壳蛋白（Mr 19,815），互补链5'端编码NS4蛋白（Mr 31,900），检测到亚基因组RNA。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "17778677",
+      "doi": "10.1126/science.257.5069.482",
+      "title": "Improving plant disease resistance.",
+      "abstract": "",
+      "journal": "Science (New York, N.Y.)",
+      "year": 1992,
+      "pub_date": "1992-07-24",
+      "authors": "Moffat A S",
+      "first_author": "Moffat A S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1639198",
+      "doi": "10.1016/0014-5793(92)80904-u",
+      "title": "Monoclonal antibody engineering in plants.",
+      "abstract": "Techniques for plant transformation have been developed to such an extent that a number of foreign genes are currently being introduced into transgenic plants. Tobacco plants that produce monoclonal antibodies are of interest, because in addition to synthesis of two gene products (i.e. the heavy and light chains), the two polypeptides need to be assembled correctly, in order to result in a functional antibody. The studies on a catalytic antibody suggest that this is the case, and that the antibody functions identically to the native murine-derived antibody. The only difference observed was in the glycosylation of the heavy chain. Further transgenic plants are being generated to produce monoclonal antibodies that may be used therapeutically (and are therefore required in large quantities), or to provide disease resistance in plants. In addition, the ability of plants to assemble antibody complexes is being investigated further, to study the possibility of generating secretory IgA, which consists of heavy and light chains as well as two additional polypeptide units.",
+      "journal": "FEBS letters",
+      "year": 1992,
+      "pub_date": "1992-07-27",
+      "authors": "Hiatt A; Ma J K",
+      "first_author": "Hiatt A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1612115",
+      "doi": "10.1016/0014-4827(92)90353-a",
+      "title": "High sensitivity of cultured human trophoblasts to ribosome-inactivating proteins.",
+      "abstract": "Many plant proteins possessing abortifacient activities were identified as ribosome-inactivating proteins (RIPs). The effect of several ribosome-inactivating proteins (saporin 6, dianthin 32, pokeweed antiviral protein from seeds, gelonin, bryodin-R, and momordin) on primary cultures of human trophoblasts and human embryonal fibroblasts and on choriocarcinoma (JAR and BeWo) and ovarian carcinoma (TG) cell lines was studied. Protein synthesis of human trophoblasts and BeWo cells was lowered by RIPs more than that of other cells. The trophoblastic receptors for estradiol were not affected by treatment of the cells with momordin. The binding and uptake of saporin 6 and momordin by BeWo and HeLa cells were not correlated to cell toxicity.",
+      "journal": "Experimental cell research",
+      "year": 1992,
+      "pub_date": "1992-07-01",
+      "authors": "Battelli M G; Montacuti V; Stirpe F",
+      "first_author": "Battelli M G",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

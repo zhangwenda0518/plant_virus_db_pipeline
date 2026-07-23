@@ -1,0 +1,280 @@
+{
+  "month": "2001-09",
+  "generated": "2026-07-13 02:59:42",
+  "total": 18,
+  "by_category": {
+    "New_Virus": 7,
+    "Molecular_Characterization": 3,
+    "Host_Virus_Interactions": 3,
+    "Antiviral_Resistance_Genes": 3,
+    "Control_Management": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30823088",
+      "doi": "10.1094/PDIS.2001.85.9.1027C",
+      "title": "Melon chlorotic leaf curl virus, a New Begomovirus Associated with Bemisia tabaci Infestations in Guatemala.",
+      "abstract": "In 2000, geminivirus-like symptoms were widespread in muskmelon (Cucumis melo L.) fields (70 to 80% incidence) in Zacapa Valley, Guatemala. Muskmelon fields were infested with the whitefly Bemisia tabaci (Genn.), and plants exhibited patchy foliar chlorosis, leaf curling, and reduced fruit set, which is reminiscent of symptoms caused by certain whitefly-transmitted geminiviruses. Quarantine restrictions prevented experimental transmission experiments from being carried out with the whitefly vector or biolistic inoculation. Leaves collected from six symptomatic plants were assessed for the presence of begomovirus DNA by polymerase chain reaction (PCR) with the use of degenerate primers that amplify the core region of the coat protein (CP) gene of most begomoviruses (1). PCR products of the expected size (approximately 576 bp) were obtained from all three melon samples. The core CP amplicons were cloned, and their nucleotide sequences were compared. Nucleotide sequences of core CP fragments shared 99.7% identity, suggesting the presence of a single begomovirus in all assayed symptomatic melon plants. Two additional pairs of degenerate primers were used to obtain contiguous viral fragments containing the CP gene, the common region of the A component (CR-A; approximately 2,100 bp), and a fragment containing the CR of the B component (CR-B; approximately 1,100 bp), respectively (2). At least three amplicons obtained with each primer pair were cloned and their nucleotide sequence was determined. Virus-specific PCR primers were then designed within the CP open reading frame and used to obtain fragments that overlapped with the 2,100-bp fragment to yield an apparent full-length A component of 2,662 nucleotides (accession no. AF325497). CR-A and CR-B (accession no. AF325498) sequences (161 nucleotides) shared 98.1% identity and contained an identical directly repeated, replication-associated protein (REP) binding site: GGTGT CCT GGTGT. Nucleotide sequence alignment, with CLUSTAL W, of the melon virus A-component with that of other well-studied begomoviruses revealed that its closest relatives were members of the Squash leaf curl virus (SLCV) group. The melon virus from Guatemala shared its greatest sequence identity, 83.1%, with SLCV extended (SLCV-E) (accession no. M38183), indicating that it is a new, previously unidentified begomovirus species, herein referred to as Melon chlorotic leaf curl virus (MCLCV). The next closest relatives of MCLCV were SLCV restricted (SLCV-R; 78.6%) (S. G. Lazarowitz, unpublished) Cucurbit leaf curl virus-Arizona (CuLCV-AZ; accession no. AF256199; 74.1%) (3), Cabbage leaf curl virus (CaLCV; 72.0%), Bean calico mosaic virus (BCMoV; 71.7%), and Texas pepper virus-Tamaulipas (71.4%). Additionally, the theoretical REP binding element, GGTGT, is 100% identical among MCLCV and BCMoV, CaLCV, CuLCV-AZ, SLCV-E, and SLCV-R. On the basis of shared nucleotide sequence identities with other begomoviruses described to date and the presence of B. tabaci in melon fields, it is likely that MCLCV also is whitefly-transmitted. Collectively, CP and CR sequences suggest that MCLCV is a new species of the SLCV lineage that contains other bipartite begomoviruses indigenous to Central America, Mexico, and the U.S. Sunbelt states. References: (1) S. D. Wyatt and J. K. Brown. Phytopathology 86:1288, 1996. (2) A. M. Idris and J. K Brown. Phytopathology 88:648, 1998. (3) J. K. Brown et al. Plant Dis. 84:809, 2000.",
+      "journal": "Plant disease",
+      "year": 2001,
+      "pub_date": "2001-09-01",
+      "authors": "Brown J K; Idris A M; Rogan D; Hussein M H; Palmieri M",
+      "first_author": "Brown J K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Melon chlorotic leaf curl virus (MCLCV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "甜瓜 (Cucumis melo L.)",
+      "location": "危地马拉萨卡帕谷 (Zacapa Valley)",
+      "results": "获得A组分全长2662 nt，与SLCV-E同源性83.1%，确认为新种；CR-A和CR-B有98.1%同源性，含相同REP结合位点。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30823092",
+      "doi": "10.1094/PDIS.2001.85.9.1029A",
+      "title": "First Report of Bean pod mottle virus in Soybean in Ohio.",
+      "abstract": "Soybean has been increasing in importance and acreage over wheat and corn for the past decade in Ohio and is now planted on 4.5 million acres. Previous surveys in Ohio of viruses infecting soybean failed to identify Bean pod mottle virus (BPMV) and soybean virus diseases have rarely caused economic losses (1). During 1999, producers in Ohio noticed virus-like symptoms in soybeans in a few isolated locations. Soybeans with green stems, undersized and \"turned up pods\" were collected from Union, Wood and Wyandot Counties during October 1999 and soybeans with crinkled, mottled leaves were collected in Henry, Licking and Sandusky during August 2000. Five to six plants were collected from a single field from each county each year. In 1999, samples were sent to the University of Wisconsin-Madison, where one symptomatic leaflet/sample was ground in 3 ml of chilled phosphate buffered saline (pH 7.2). Leaf sap was placed in 1.5-ml centrifuge tubes and stored at 4°C for 24 h. Sap was assayed for the presence of BPMV using an alkaline phosphatase-labeled double-antibody sandwich enzyme-linked immunosorbent assay (DAS ELISA) for BPMV (AgDia Inc., Elkhart, IN). All samples tested were positive for BPMV. Samples collected in 1999 were also maintained at The Ohio State University in Harosoy soybean and in 2000 assayed serologically along with samples collected in 2000 for BPMV and Soybean mosaic virus (SMV) by ELISA and for Tobacco ringspot virus (TRSV) and Bean yellow mosaic virus (BYMV) by a host-range symptom assay; SMV, BYMV and TRSV had been identified from soybean in previous Ohio surveys. Soybean leaf samples were assayed using F(ab')2-Protein A ELISA with antiserum prepared in 1968 to a southern U.S. isolate of BPMV and to an Ohio isolate of Soybean mosaic virus (SMV) prepared in 1967, both stored at -20°C. Diseased and non-symptomatic soybean leaf samples were ground in 4 ml 0.025M Tris pH 8.0, 0.015M NaCl and 0.05% Tween 20. Extracts were tested for BPMV and SMV by ELISA following a protocol described elsewhere (2). All of the samples collected during 1999 and maintained in the greenhouse tested positive for both BPMV and SMV while all of those samples collected during 2000 tested positive for BPMV and negative for SMV. Host-range symptom assays were conducted with leaf extracts prepared by grinding 1 g tissue:10 ml potassium phosphate buffer, pH 7.0. Extracts were inoculated by leaf rub method to Harosoy soybean, Phaseolus vulgaris cvs. Red Kidney and Bountiful, cowpea, and cucumber. The host-range symptom assays of both the 1999 and 2000 samples were negative for TRSV and BYMV; cowpea failed to express local lesions and cucumber systemic mosaic characteristic of TRSV infection and the two Phaseolus cultivars the yellow mosaic characteristic of BYMV infection. These results indicate that both BPMV and SMV were present in the samples in 1999 but only BPMV in 2000. The distribution of BPMV within Ohio and economic impact of this virus have yet to be determined. This is the first report of BPMV in Ohio. References: (1) A. F. Schmitthenner and D. T. Gordon. Phytopathology 59:1048, 1969. (2) R. Louie et al. Plant Dis. 84:1133-1139, 2000.",
+      "journal": "Plant disease",
+      "year": 2001,
+      "pub_date": "2001-09-01",
+      "authors": "Dorrance A E; Gordon D T; Schmitthenner A F; Grau C R",
+      "first_author": "Dorrance A E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Bean pod mottle virus (BPMV)",
+      "taxonomy": "Secoviridae, Comovirus",
+      "host_plant": "Glycine max (soybean)",
+      "location": "美国俄亥俄州 (Ohio): Union, Wood, Wyandot, Henry, Licking, Sandusky counties",
+      "results": "1999年样品同时感染BPMV和SMV，2000年仅BPMV；未检测到TRSV和BYMV。首次在俄亥俄州报道BPMV。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30823087",
+      "doi": "10.1094/PDIS.2001.85.9.1027B",
+      "title": "First Report of Potato spindle tuber viroid in Tomato in New Zealand.",
+      "abstract": "During May 2000, symptoms resembling those of Potato spindle tuber viroid (PSTVd) infection were observed in glasshouse tomatoes (cv. Daniella) growing on one site in Tuakau, South Auckland, New Zealand. Symptoms appeared 2 to 3 months after planting, were confined to plant tops, and included leaf interveinal chlorosis, epinasty, and brittleness. Affected plants comprised ≍10% of the crop and were located near access points. PSTVd was identified in symptomatic plants by the Dutch Plant Protection Service and confirmed by mechanical transmission and grafting to tomato cv. Rutgers and reverse transcription polymerase chain reaction (2). The sequenced genome of this isolate (Accession AF369530) was 358 nt in length and had the closest homology to a Dutch isolate (Accession X17268). Electron microscopy did not reveal the presence of any viruses in affected plants and specific tests for other tomato pathogens were negative. A survey of 50 tomato glasshouse facilities throughout New Zealand revealed three further infected sites, two located close to the original site and one in Nelson, some 480 km distant. However, a survey of field-grown potato crops within 1.5 km of the original outbreak site did not reveal the presence of the viroid. PSTVd is seed transmitted and was probably introduced in glasshouses by use of infected seed. Glasshouse tomatoes are an important crop in New Zealand and annual production is currently 40,000 tonnes. The yield of affected plants may be decreased by up to 80% if suitable controls are not implemented (1). References: (1) S. Kryczynski et al. Phytopath. Polonica 22:85, 1995. (2) A. M. Shamloul et al. Can. J. Plant Pathol. 19:89, 1997.",
+      "journal": "Plant disease",
+      "year": 2001,
+      "pub_date": "2001-09-01",
+      "authors": "Elliott D R; Alexander B J R; Smales T E; Tang Z; Clover G R G",
+      "first_author": "Elliott D R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Potato spindle tuber viroid (PSTVd)",
+      "taxonomy": "未提及",
+      "host_plant": "番茄 (Solanum lycopersicum cv. Daniella)",
+      "location": "新西兰，南奥克兰，图阿考；以及尼尔森",
+      "results": "PSTVd基因组358nt，与荷兰分离物同源；电镜未见病毒粒子；全国调查发现另三个感染点。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11514739",
+      "doi": "10.1099/0022-1317-82-9-2275",
+      "title": "Coat protein gene-mediated resistance to Potato virus A in transgenic plants is suppressed following infection with another potyvirus.",
+      "abstract": "High levels of resistance to Potato virus A (PVA, genus Potyvirus), indicated by absence of detectable infection in inoculated leaves, were attained in Nicotiana benthamiana transformed with a construct expressing the PVA 5'-untranslated region fused with the coat protein (CP)-encoding sequence. Low steady-state levels of the transgene transcripts were detected. Resistance was PVA-specific and did not protect the plants against infection with Potato virus Y (PVY, genus Potyvirus). Consequently, the steady-state levels of the CP-transgene mRNA were greatly elevated in the plants infected with PVY, and plants became susceptible to infection with PVA. These data show that virus resistance obtained by expressing regions of a plant virus genome in transgenic plants may be suppressed following infection with another virus that evades the virus-specific resistance.",
+      "journal": "The Journal of general virology",
+      "year": 2001,
+      "pub_date": "2001-09-01",
+      "authors": "Savenkov E I; Valkonen J P T",
+      "first_author": "Savenkov E I",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Potato virus A (PVA) 和 Potato virus Y (PVY)",
+      "taxonomy": "马铃薯Y病毒属 (Potyvirus)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11483749",
+      "doi": "10.1128/jvi.75.17.8045-8053.2001",
+      "title": "Conversion in the requirement of coat protein in cell-to-cell movement mediated by the cucumber mosaic virus movement protein.",
+      "abstract": "Plant viruses have movement protein (MP) gene(s) essential for cell-to-cell movement in hosts. Cucumber mosaic virus (CMV) requires its own coat protein (CP) in addition to the MP for intercellular movement. Our present results using variants of both CMV and a chimeric Brome mosaic virus with the CMV MP gene revealed that CMV MP truncated in its C-terminal 33 amino acids has the ability to mediate viral movement independently of CP. Coexpression of the intact and truncated CMV MPs extremely reduced movement of the chimeric viruses, suggesting that these heterogeneous CMV MPs function antagonistically. Sequential deletion analyses of the CMV MP revealed that the dispensability of CP occurred when the C-terminal deletion ranged between 31 and 36 amino acids and that shorter deletion impaired the ability of the MP to promote viral movement. This is the first report that a region of MP determines the requirement of CP in cell-to-cell movement of a plant virus.",
+      "journal": "Journal of virology",
+      "year": 2001,
+      "pub_date": "2001-09-01",
+      "authors": "Nagano H; Mise K; Furusawa I; Okuno T",
+      "first_author": "Nagano H",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "黄瓜花叶病毒 (CMV) 和雀麦花叶病毒 (BMV) 嵌合体",
+      "taxonomy": "CMV: Bromoviridae科, Cucumovirus属; BMV: Bromoviridae科, Bromovirus属",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18944231",
+      "doi": "10.1094/PHYTO.2001.91.9.856",
+      "title": "Serological and Molecular Characterization of Peanut chlorotic fan-spot virus, a New Species of the Genus Tospovirus.",
+      "abstract": "ABSTRACT To clarify the serological relationship of Peanut chlorotic fan-spot virus (PCFV) with other tospoviruses, antisera were produced against the nucleocapsid (N) proteins of this virus and tospoviruses from four serogroups including Tomato spotted wilt virus (TSWV), Impatiens necrotic spot virus (INSV), Groundnut ringspot virus (GRSV), and Watermelon silver mottle virus (WSMoV). In immunodiffusion tests, the antisera only reacted with their homologous antigens. Similar results were noticed in indirect enzyme-linked immunosorbent assay and immunoblot tests, with the exception that strong cross-reactions were observed in heterologous combinations between TSWV and GRSV. The results indicated that the N protein of PCFV is not serologically related to those of the tospoviruses from the four serogroups. To further characterize the virus, viral S double-stranded RNA was extracted from PCFV-infected Chenopodium quinoa and used for cDNA cloning and sequencing. The full-length viral strand of the S RNA was determined to be 2,833 nucleotides, with an inverted repeat at the 5' and 3' ends and two open reading frames in an ambisense arrangement. The 3'-terminal sequence (5'-AUUGCUCU-3') of the viral S RNA is identical to those of other tospoviruses, indicating that PCFV belongs to the genus Tospovirus. The N and the NSs proteins of PCFV share low amino acid identities (22.3 to 67.5% and 19.3 to 54.2%) with those of reported tospoviruses, respectively. The phylogenetic dendrogram of the N gene of PCFV compared with those of other tospoviruses indicates that PCFV is distinct from other tospoviruses. In hybridization analyses, an N gene cDNA probe of PCFV did not react with viral RNAs of TSWV, GRSV, INSV, and WSMoV, and vice versa. Thus, based on these results, we conclude that PCFV is a new tospovirus species.",
+      "journal": "Phytopathology",
+      "year": 2001,
+      "pub_date": "2001-09-01",
+      "authors": "Chu F H; Chao C H; Peng Y C; Lin S S; Chen C C; ... (+1)",
+      "first_author": "Chu F H",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Peanut chlorotic fan-spot virus (PCFV)",
+      "taxonomy": "",
+      "host_plant": "花生 (peanut), 藜麦 (Chenopodium quinoa)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11551073",
+      "doi": "10.1094/MPMI.2001.14.9.1086",
+      "title": "Induction of a hypersensitive response by chimeric helicase sequences of tobamoviruses U1 and Ob in N-carrying tobacco.",
+      "abstract": "Recently, the helicase domain of the Tobacco mosaic virus (TMV)-U1 replicase proteins (designated MOREHEL:U1) was identified as the elicitor of the N gene-mediated hypersensitive response (HR) in tobacco. In this study, we used agroinfiltration to express the equivalent MOREHEL domain of the non-HR-inducing tobamovirus strain TMV-Ob. It appeared that this MOREHEL:Ob sequence did not elicit a HR in N gene-carrying tobacco. Both MOREHEL sequences were divided into eight subdomains, and chimeras of MOREHEL sequences from U1 and Ob were constructed. Expression of these chimeric MOREHEL sequences revealed that, in the TMV-U1 MOREHEL sequence, at least four domains involved in full HR induction were present. The presence of at least three of these four domains seems a minimal requirement for HR induction. Two additional domains may play a minor role in HR induction. To study the elicitor function of the chimeras during the TMV life cycle, chimeric MOREHEL domains were introduced into full-length TMV cDNA clones. These constructs, however, were unable to establish an infection in Nicotiana benthamiana or Nicotiana tabacum plants.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 2001,
+      "pub_date": "2001-09-01",
+      "authors": "Abbink T E; de Vogel J; Bol J F; Linthorst H J",
+      "first_author": "Abbink T E",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒（TMV-U1和TMV-Ob）",
+      "taxonomy": "",
+      "host_plant": "烟草（携带N基因的烟草、本氏烟）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11594591",
+      "doi": "10.1099/00207713-51-5-1639",
+      "title": "Phylogenetic analysis and taxonomic study of marine Cytophaga-like bacteria: proposal for Tenacibaculum gen. nov. with Tenacibaculum maritimum comb. nov. and Tenacibaculum ovolyticum comb. nov., and description of Tenacibaculum mesophilum sp. nov. and Tenacibaculum amylolyticum sp. nov.",
+      "abstract": "Bacterial strains were isolated from sponge and green algae which were collected on the coast of Japan and Palau. The phylogenetic relationships of these isolates among marine species of the Cytophaga-Flavobacterium-Bacteroides complex were analysed by using their gyrB nucleotide sequences and translated peptide sequences (GyrB) in addition to 16S rDNA sequences. These isolates were closely related to the previously characterized marine Flexibacter species, [Flexibacter] maritimus and [Flexibacter] ovolyticus. These Flexibacter species are distantly related to Flexibacter flexilis, the type species of the genus Flexibacter, and phylogenetically belong to the family Flavobacteriaceae (according to analysis using both 16S rDNA and GyrB sequences). Their phylogenetic, chemotaxonomic and phenotypic characteristics prompted the proposal that these two species should be transferred to the new genus Tenacibaculum, as Tenacibaculum maritimum and Tenacibaculum ovolyticum, respectively. Two additional new species of the genus Tenacibaculum, Tenacibaculum mesophilum gen. nov., sp. nov. (= MBIC 1140T = IFO 16307T) and Tenacibaculum amylolyticum gen. nov., sp. nov. (= MBIC 4355T = IFO 16310T), which were isolated from sponges and macroalgae, are also reported. For taxonomic considerations at the species level, the resolution of gyrB sequences was superior to that of 16S rDNA sequences, and the grouping based on the gyrB phylogram was consistent with DNA-DNA hybridization results.",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2001,
+      "pub_date": "2001-09-01",
+      "authors": "Suzuki M; Nakagawa Y; Harayama S; Yamamoto S",
+      "first_author": "Suzuki M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11594600",
+      "doi": "10.1099/00207713-51-5-1709",
+      "title": "Polyhydroxyalkanoate-accumulating bacterium isolated from soil of a sugar-cane plantation in Brazil.",
+      "abstract": "Strain IPT101T, isolated from the soil of a sugar-cane plantation in Brazil, was analysed in a polyphasic taxonomic study. The strain produces polyhydroxyalkanoates from sucrose and other carbon sources. Morphological, physiological and biochemical data as well as 16S rDNA, whole-cell protein and fatty acid analyses indicated that strain IPT101T represents a new species in the genus Burkholderia. The name Burkholderia sacchari sp. nov. is proposed, with strain IPT101T (= LMG 19450T = CCT 6771T) as the type strain.",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2001,
+      "pub_date": "2001-09-01",
+      "authors": "Brämer C O; Vandamme P; da Silva L F; Gomez J G; Steinbüchel A",
+      "first_author": "Brämer C O",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11816979",
+      "doi": "10.1023/a:1012097023978",
+      "title": "Four new Candida species from geographically diverse locations.",
+      "abstract": "Four new species of Candida are described based on their unique nucleotide sequences in the D1/D2 domain of large subunit (26S) ribosomal DNA. Candida peoriaensis (type strain NRRL YB-1497, CBS 8800) and C. ponderosae (type strain NRRL YB-2307, CBS 8801) are members of the Pichia anomala clade and were isolated in the U.S. from, respectively, the stump of an elm tree (Ulmus sp.) and from insect frass of a Ponderosa pine (Pinusponderosa). Candida ghanaensis (type strain NRRL YB-1486, CBS 8798) is a phylogenetically divergent species from soil in Ghana and appears related to the Dipodascus/Geotrichum clade. Candida litsaeae (type strain NRRL YB-3246, CBS 8799) was isolated from the frass of an insect-infested Litsaea polyantha tree from India, and is a divergent species that is most closely related to Candida ontarioensis.",
+      "journal": "Antonie van Leeuwenhoek",
+      "year": 2001,
+      "pub_date": "2001-09-01",
+      "authors": "Kurtzman C P",
+      "first_author": "Kurtzman C P",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11545583",
+      "doi": "10.1006/jmbi.2001.4931",
+      "title": "RNA folding pathway functional intermediates: their prediction and analysis.",
+      "abstract": "The massively parallel genetic algorithm (GA) for RNA structure prediction uses the concepts of mutation, recombination, and survival of the fittest to evolve a population of thousands of possible RNA structures toward a solution structure. As described below, the properties of the algorithm are ideally suited to use in the prediction of possible folding pathways and functional intermediates of RNA molecules given their sequences. Utilizing Stem Trace, an interactive visualization tool for RNA structure comparison, analysis of not only the solution ensembles developed by the algorithm, but also the stages of development of each of these solutions, can give strong insight into these folding pathways. The GA allows the incorporation of information from biological experiments, making it possible to test the influence of particular interactions between structural elements on the dynamics of the folding pathway. These methods are used to reveal the folding pathways of the potato spindle tuber viroid (PSTVd) and the host killing mechanism of Escherichia coli plasmid R1, both of which are successfully explored through the combination of the GA and Stem Trace. We also present novel intermediate folds of each molecule, which appear to be phylogenetically supported, as determined by use of the methods described below.",
+      "journal": "Journal of molecular biology",
+      "year": 2001,
+      "pub_date": "2001-09-07",
+      "authors": "Shapiro B A; Bengali D; Kasprzak W; Wu J C",
+      "first_author": "Shapiro B A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11507188",
+      "doi": "10.1128/jvi.75.18.8434-8439.2001",
+      "title": "Chimeric plant virus particles as immunogens for inducing murine and human immune responses against human immunodeficiency virus type 1.",
+      "abstract": "The high-yield expression of a neutralizing epitope from human immunodeficiency virus type 1 (HIV-1) on the surface of a plant virus and its immunogenicity are presented. The highly conserved ELDKWA epitope from glycoprotein (gp) 41 was expressed as an N-terminal translational fusion with the potato virus X (PVX) coat protein. The resulting chimeric virus particles (CVPs), purified and used to immunize mice intraperitoneally or intranasally, were able to elicit high levels of HIV-1-specific immunoglobulin G (IgG) and IgA antibodies. Furthermore, the human immune response to CVPs was studied with severe combined immunodeficient mice reconstituted with human peripheral blood lymphocytes (hu-PBL-SCID). hu-PBL-SCID mice immunized with CVP-pulsed autologous dendritic cells were able to mount a specific human primary antibody response against the gp41-derived epitope. Notably, sera from both normal and hu-PBL-SCID mice showed an anti-HIV-1-neutralizing activity. Thus, PVX-based CVPs carrying neutralizing epitopes can offer novel perspectives for the development of effective vaccines against HIV and, more generally, for the design of new vaccination strategies in humans.",
+      "journal": "Journal of virology",
+      "year": 2001,
+      "pub_date": "2001-09-01",
+      "authors": "Marusic C; Rizza P; Lattanzi L; Mancini C; Spada M; ... (+3)",
+      "first_author": "Marusic C",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

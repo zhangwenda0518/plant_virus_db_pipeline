@@ -1,0 +1,238 @@
+{
+  "week": "2024-W41",
+  "start": "2024-10-07",
+  "end": "2024-10-13",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 28,
+  "by_category": {
+    "Control_Management": 11,
+    "Host_Virus_Interactions": 10,
+    "Antiviral_Resistance_Genes": 3,
+    "New_Virus": 3,
+    "Biotechnology_Applications": 2,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "39243759",
+      "doi": "10.1016/j.chom.2024.08.009",
+      "title": "Antiviral RNA interference inhibits virus vertical transmission in plants.",
+      "abstract": "Known for over a century, seed transmission of plant viruses promotes trans-continental virus dissemination and provides the source of infection to trigger devastating disease epidemics in crops. However, it remains unknown whether there is a genetically defined immune pathway to suppress virus vertical transmission in plants. Here, we demonstrate potent immunosuppression of cucumber mosaic virus (CMV) seed transmission in its natural host Arabidopsis thaliana by antiviral RNA interference (RNAi) pathway. Immunofluorescence microscopy reveals predominant embryo infection at four stages of embryo development. We show that antiviral RNAi confers resistance to seed infection with different genetic requirements and drastically enhanced potency compared with the inhibition of systemic infection of whole plants. Moreover, we detect efficient seed transmission of a mutant CMV lacking its RNAi suppressor gene in mutant plants defective in antiviral RNAi, providing further support for the immunosuppression of seed transmission by antiviral RNAi.",
+      "journal": "Cell host & microbe",
+      "year": 2024,
+      "pub_date": "2024-10-09",
+      "authors": "Liu Si; Ding Shou-Wei",
+      "first_author": "Liu Si",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "cucumber mosaic virus (CMV)",
+      "taxonomy": "",
+      "host_plant": "拟南芥 (Arabidopsis thaliana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39377979",
+      "doi": "10.1007/s00705-024-06142-z",
+      "title": "Genetic diversity of soybean dwarf virus in two regions of mainland Australia.",
+      "abstract": "Soybean dwarf virus (SbDV; family Tombusviridae, genus Luteovirus, species Luteovirus glycinis) is an RNA plant virus that is transmitted solely by aphids in a persistent, circulative and non-propagative manner. SbDV causes significant losses in cultivated Fabaceae, especially in subterranean clover (Trifolium subterraneum) pastures of mainland Australia. SbDV isolates are classified into four phenotypically distinguishable strains: YP, YS, DP, and DS. Y and D strains differ primarily in their host range, and P and S strains in their primary vector species. Genetically, Y and D strains separate into two clades in every genomic region except for the N-terminal region of the readthrough domain (N-RTD), in which P and S strains separate. SbDV diversity in Australia has yet to be investigated, so in this study, 41 isolates were collected from six different host species across two production regions of Australia: the south coast of Western Australia ('south-west') and northern New South Wales/southern Queensland ('north-east'). A near-complete genome sequence of each isolate was obtained, and together with all 50 whole-genome sequences available in the GenBank database, underwent phylogenetic analysis of the whole genome nt and the N-RTD aa sequences. At the whole-genome level, the isolates separated into D and Y clades. At the N-RTD level, most of the isolates separated into P and S clades. All south-west isolates and 11 of the 31 north-east isolates were in the Y clade, and the remaining 20 north-east isolates were in the D clade. Except for one isolate that fell outside the P and S clades, all south-west and north-east isolates were in the P clade, suggesting that they are transmitted by Acyrthosiphon pisum and Myzus persicae. Available biological data largely supported the phenotypic inferences made from the phylogenetic analysis, suggesting that genetic data can provide critical epidemiological insights, provided that sufficient biological data have been collected.",
+      "journal": "Archives of virology",
+      "year": 2024,
+      "pub_date": "2024-10-08",
+      "authors": "Congdon B S; Sharman M; Kehoe M A",
+      "first_author": "Congdon B S",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "大豆矮缩病毒（Soybean dwarf virus, SbDV）",
+      "taxonomy": "番茄丛矮病毒科（Tombusviridae），黄矮病毒属（Luteovirus），大豆腐化病毒种（Luteovirus glycinis）",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39456688",
+      "doi": "10.3390/ijms252010907",
+      "title": "Integrated Biological Experiments and Proteomic Analyses of ",
+      "abstract": "The plant vascular system is not only a transportation system for delivering nutrients but also a highway transport network for spreading viruses. Tomato spotted wilt orthotospovirus (TSWV) is among the most destructive viruses that cause serious losses in economically important crops worldwide. However, there is minimal information about the long-distance movements of TSWV in the host plant vascular system. In this this study, we confirm that TSWV virions are present in the xylem as observed by transmission electron microscopy (TEM). Further, a quantitative proteomic analysis based on label-free methods was conducted to reveal the uniqueness of protein expression in xylem sap during TSWV infection. Thus, this study identified and quantified 3305 proteins in two groups. Furthermore, TSWV infection induced three viral structural proteins, N, Gn and Gc, and 315 host proteins differentially expressed in xylem (163 up-regulated and 152 down-regulated). GO enrichment analysis showed up-regulated proteins significantly enriched in homeostasis, wounding, defense response, and DNA integration terms, while down-regulated proteins significantly enriched in cell wall biogenesis/xyloglucan metabolic process-related terms. KEGG enrichment analysis showed that the differentially expressed proteins (DEPs) were most strongly associated with plant-pathogen interaction, MAPK signaling pathway, and plant hormone signal transduction. Cluster analysis of DEPs function showed the DEPs can be categorized into cell wall metabolism-related proteins, antioxidant proteins, PCD-related proteins, host defense proteins such as receptor-like kinases (RLKs), salicylic acid binding protein (SABP), pathogenesis related proteins (PR), DNA methylation, and proteinase inhibitor (PI). Finally, parallel reaction monitoring (PRM) validated 20 DEPs, demonstrating that the protein abundances were consistent between label-free and PRM data. Finally, 11 genes were selected for RT-qPCR validation of the DEPs and label-free-based proteomic analysis concordant results. Our results contribute to existing knowledge on the complexity of host plant xylem system response to virus infection and provide a basis for further study of the mechanism underlying TSWV long-distance movement in host plant vascular system.",
+      "journal": "International journal of molecular sciences",
+      "year": 2024,
+      "pub_date": "2024-10-10",
+      "authors": "Feng Hongping; Mon Waiwai; Su Xiaoxia; Li Yu; Zhang Shaozhi; ... (+2)",
+      "first_author": "Feng Hongping",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "番茄斑萎病毒 (Tomato spotted wilt orthotospovirus, TSWV)",
+      "taxonomy": "",
+      "host_plant": "未提及（可能为番茄等经济作物）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39459913",
+      "doi": "10.3390/v16101579",
+      "title": "Detection and Quantification of Soil-Borne Wheat Mosaic Virus, Soil-Borne Cereal Mosaic Virus and Japanese Soil-Borne Wheat Mosaic Virus by ELISA and One-Step SYBR Green Real-Time Quantitative RT-PCR.",
+      "abstract": "Furoviruses are bipartite viruses causing mosaic symptoms and stunting in cereals. Infection with these viruses can lead to severe crop losses. The virus species Furovirus tritici with soil-borne wheat mosaic virus (SBWMV), Furovirus cerealis with soil-borne cereal mosaic virus (SBCMV) and Furovirus japonicum with Japanese soil-borne wheat mosaic virus (JSBWMV) and French barley mosaic virus (FBMV) as members are biologically and genetically closely related. Here, we develop SYBR green-based real-time quantitative RT-PCR assays to detect and quantify the RNA1 and RNA2 of the three virus species. Using experimental data in combination with Tm-value prediction and analysis of primer and amplicon sequences, we determine the capacity of our method to discriminate between the different viruses and evaluate its genericity to detect different isolates within the same virus species. We demonstrate that our method is suitable for discriminating between the different virus species and allows for the detection of different virus isolates. However, JSBWMV RNA1 primers may amplify SBWMV samples, bearing a risk for false positive detection with this primer. We also test the efficiency of polyclonal antibodies to detect the different viruses by ELISA and suggest that ELISA may be applied as a first screening to identify the virus. The real-time qRT-PCR assays developed provide the possibility to screen for quantitative disease resistance against SBCMV, SBWMV and JSBWMV. Moreover, with our method, we hope to promote research to unravel yet unresolved questions with respect to furovirus-host interaction concerning host range and resistance as well as regarding the role of multipartite genomes.",
+      "journal": "Viruses",
+      "year": 2024,
+      "pub_date": "2024-10-08",
+      "authors": "Gauthier Kevin; Strauch Claudia Janina; Bonse Sabine; Bauer Petra; Heidler Carolin; ... (+1)",
+      "first_author": "Gauthier Kevin",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "土壤传播小麦花叶病毒(SBWMV)、土壤传播禾谷花叶病毒(SBCMV)、日本土壤传播小麦花叶病毒(JSBWMV)",
+      "taxonomy": "",
+      "host_plant": "谷物（小麦、大麦等）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39377848",
+      "doi": "10.1007/s44154-024-00176-8",
+      "title": "An asymptomatic geminivirus activates autophagy and enhances plant defenses against diverse pathogens.",
+      "abstract": "Plant viral diseases cause great losses in agricultural production. Virus cross-protection is a strategy in which a mild virus is employed to shield plants against subsequent infections by severe viral strains. However, this approach is restricted to protection against the same viruses. In this study, we observed that pre-inoculation with apple geminivirus (AGV) reduced the accumulation of secondarily infected heterologous viruses, such as cucumber mosaic virus, potato virus X, and tobacco mosaic virus in Nicotiana benthamiana, tomato, and pepper plants. Transcriptional expression analysis showed that autophagy-related genes were transcriptionally up-regulated upon AGV inoculation at an early stage of infection. Accordingly, autophagic activity was observed to be elevated following AGV infection. Interestingly, AGV accumulation was reduced in autophagy-deficient plants, suggesting that autophagy activation promotes AGV infection in the plant. Moreover, pre-inoculation with AGV provided cross-protection against infection with a phytopathogenic bacterium (Pseudomonas syringae) and fungus (Botrytis cinerea) in Nicotiana species. In summary, our study showed that AGV, an asymptomatic virus, could protect plants against severe viral, fungal, and bacterial diseases to some extent through the activation of autophagy pathways, highlighting its potential as a biocontrol agent for managing a wide range of plant crop diseases in the field.",
+      "journal": "Stress biology",
+      "year": 2024,
+      "pub_date": "2024-10-08",
+      "authors": "Wang Li; Yu Zijie; Jiang Mengge; Tian Mengyuan; Zhou Hongsheng; ... (+4)",
+      "first_author": "Wang Li",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "苹果双生病毒(apple geminivirus, AGV)",
+      "taxonomy": "",
+      "host_plant": "本氏烟、番茄、辣椒",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39398119",
+      "doi": "10.1021/acsomega.4c06628",
+      "title": "Integrated Pest Management: An Update on the Sustainability Approach to Crop Protection.",
+      "abstract": "Integrated Pest Management (IPM) emerged as a pest control framework promoting sustainable intensification of agriculture, by adopting a combined strategy to reduce reliance on chemical pesticides while improving crop productivity and ecosystem health. This critical review synthesizes the most recent advances in IPM research and practice, mostly focusing on studies published within the past five years. The Review discusses the key components of IPM, including cultural practices, biological control, genetic pest control, and targeted pesticide application, with a particular emphasis on the significant advancements made in biological control and targeted pesticide delivery systems. Recent findings highlight the growing importance of genetic control and conservation biological control, which involves the management of agricultural landscapes to promote natural enemy populations. Furthermore, the recent discovery of novel biopesticides, including microbial agents and plant-derived compounds, has expanded the arsenal of tools available for eco-friendly pest management. Substantial progress has recently also been made in the development of targeted pesticide delivery systems, such as nanoemulsions and controlled-release formulations, which can minimize the environmental impact of pesticides while maintaining their efficacy. The Review also analyzes the environmental, economic, and social dimensions of IPM adoption, showcasing its potential to promote biodiversity conservation and ensure food safety. Case studies from various agroecological contexts demonstrate the successful implementation of IPM programs, highlighting the importance of participatory approaches and effective knowledge exchange among stakeholders. The Review also identifies the main challenges and opportunities for the widespread adoption of IPM, including the need for transdisciplinary research, capacity building, and policy support. In conclusion, this critical review discusses the essential role of IPM components in achieving the sustainable intensification of agriculture, as it seeks to optimize crop production while minimizing adverse environmental impacts and enhancing the resilience of agricultural systems to global challenges such as climate change and biodiversity loss.",
+      "journal": "ACS omega",
+      "year": 2024,
+      "pub_date": "2024-10-08",
+      "authors": "Zhou Wentao; Arcot Yashwanth; Medina Raul F; Bernal Julio; Cisneros-Zevallos Luis; ... (+1)",
+      "first_author": "Zhou Wentao",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39379763",
+      "doi": "10.1007/s00248-024-02438-4",
+      "title": "Leaf Rust Pathogens on Hypericum pseudohenryi: Describing Melampsora danbaensis sp. nov. and M. hyperici-pseudohenryi sp. nov. from China.",
+      "abstract": "Based on morphological and phylogenetic evidence, two novel species of Melampsora were discovered on Hypericum pseudohenryi in China and have been thoroughly characterized. One of these species, designated as M. danbaensis, exhibits distinct features such as aecia of Uredo-type, typically appearing in gregarious or grouped arrangements, and presenting a shallowly pulvinate structure. Aeciospores exhibit tremendous variations in size, ranging in shape from globose to ellipsoidal and bearing pronounced verrucose texture. Telia resemble crusts one-spore deep, covering nearly the entire abaxial leaf surface, with sessile teliospores reaching sizes of up to 65.8 µm, and exhibiting a clavate to cylindrical shape. Another species, designated as M. hyperici-pseudohenryi, is distinguished by Uredo-type uredinia, which are hypophyllous, scattered or grouped, and interspersed with numerous paraphyses. Its urediniospores tend to be globose, ellipsoidal or obovoid, echinulate, and are accompanied by clavate to capitate paraphyses reaching lengths up to 77.6 µm. Phylogenetically, both species form a novel monophyletic clade within the Melampsora genus, with robust support demonstrated by a high Maximum likelihood bootstrap support (MLBS) value of 100% and a Bayesian posterior probability (BPP) of 1. This study enriches our understanding of the diversity and geographical distribution of Melampsora species that infect Hypericum plants in China.",
+      "journal": "Microbial ecology",
+      "year": 2024,
+      "pub_date": "2024-10-08",
+      "authors": "Peng Zijia; Xu Zhengmei; Tong Haichuan; Xing Yujie; Luo Zeyu; ... (+2)",
+      "first_author": "Peng Zijia",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39645988",
+      "doi": "10.11646/zootaxa.5519.1.2",
+      "title": "The genus Siderus (Lepidoptera: Lycaenidae) in French Guiana: four newly discovered species and conspicuous male genitalia polymorphism.",
+      "abstract": "The species of Siderus Kaye present in French Guiana are listed and detailed with notes on male territorial behavior and the plants at which adults feed. In total, seven species were recorded: Siderus leucophaeus (Hübner); Siderus parvinotus Kaye (first record from French Guiana); Siderus athymbra (Hewitson); Siderus diringeri Faynel, Robbins & Fåhraeus sp. nov.; Siderus bisignatus Faynel, Ramírez & Robbins sp. nov.; Siderus castelain Faynel, Fåhraeus & Robbins sp. nov. and Siderus toussaint Faynel, Robbins & Fåhraeus sp. nov. A preliminary delimitation of the genus Siderus is proposed. Description, distribution, detailed illustrations of adults and male genitalia (and some female) are provided for each new species.",
+      "journal": "Zootaxa",
+      "year": 2024,
+      "pub_date": "2024-10-08",
+      "authors": "Faynel Christophe; Fåhraeus Christer; Ramirez Juan-Jose; Robbins Robert K",
+      "first_author": "Faynel Christophe",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39452649",
+      "doi": "10.3390/jof10100697",
+      "title": "Genomic Characterization and Establishment of a Genetic Manipulation System for ",
+      "abstract": "Trichoderma species have been reported as masters in producing cellulolytic enzymes for the biodegradation of lignocellulolytic biomass and biocontrol agents against plant pathogens and pests. In our previous study, a novel Trichoderma strain LZ117, which shows potent capability in cellulase production, was isolated. Herein, we conducted multilocus phylogenetic analyses based on DNA barcodes and performed time-scaled phylogenomic analyses using the whole genome sequences of the strain, annotated by integrating transcriptome data. Our results suggest that this strain represents a new species closely related to T. atrobrunneum (Harzianum clade). Genes encoding carbohydrate-active enzymes (CAZymes), transporters, and secondary metabolites were annotated and predicted secretome in Trichoderma sp. LZ117 was also presented. Furthermore, genetic manipulation of this strain was successfully achieved using PEG-mediated protoplast transformation. A putative transporter gene encoding maltose permease (Mal1) was overexpressed, which proved that this transporter does not affect cellulase production. Moreover, overexpressing the native Cre1 homolog in LZ117 demonstrated a more pronounced impact of glucose-caused carbon catabolite repression (CCR), suggesting the importance of Cre1-mediated CCR in cellulase production of Trichoderma sp. LZ117. The results of this study will benefit further exploration of the strain LZ117 and related species for their applications in bioproduction.",
+      "journal": "Journal of fungi (Basel, Switzerland)",
+      "year": 2024,
+      "pub_date": "2024-10-07",
+      "authors": "Yang Jie; Reyes Loaiciga Cristopher; Yue Hou-Ru; Hou Ya-Jing; Li Jun; ... (+6)",
+      "first_author": "Yang Jie",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39452663",
+      "doi": "10.3390/jof10100711",
+      "title": "The Application of Fungi and Their Secondary Metabolites in Aquaculture.",
+      "abstract": "Ensuring sustainability has increasingly become a significant concern not only in aquaculture but in the general agrifood sector. Therefore, it is imperative to investigate pathways to feed substitutes/best practices to enhance aquaculture sustainability. The application of fungi in aquaculture provides innovative methods to enhance the sustainability and productivity of aquaculture. Fungi play numerous roles in aquaculture, including growth, immunity enhancement and disease resistance. They also play a role in bioremediation of waste and bioflocculation. The application of fungi improves the suitability and utilization of terrestrial plant ingredients in aquaculture by reducing the fibre fractions and anti-nutritional factors and increasing the nutrients and mineral contents of plant ingredients. Fungi are good flotation agents and can enhance the buoyancy of aquafeed. Pigments from fungi enhance the colouration of fish fillets, making them more attractive to consumers. This paper, via the relevant literature, explores the multifaceted roles of fungi in aquaculture, emphasizing their potential to transform aquaculture through environmentally friendly and sustainable techniques. The effectiveness of fungi in reducing fibre fractions and enhancing nutrient availability is influenced by the duration of fermentation and the dosage administered, which may differ for various feed ingredients, making it difficult for most aquaculture farmers to apply fungi approximately. Therefore, the most effective dosage and fermentation duration for each feed ingredient should be investigated.",
+      "journal": "Journal of fungi (Basel, Switzerland)",
+      "year": 2024,
+      "pub_date": "2024-10-11",
+      "authors": "Onomu Abigail John; Okuthe Grace Emily",
+      "first_author": "Onomu Abigail John",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

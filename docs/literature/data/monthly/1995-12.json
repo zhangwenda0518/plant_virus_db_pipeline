@@ -1,0 +1,216 @@
+{
+  "month": "1995-12",
+  "generated": "2026-07-13 02:59:42",
+  "total": 9,
+  "by_category": {
+    "Host_Virus_Interactions": 4,
+    "Antiviral_Resistance_Genes": 3,
+    "New_Virus": 1,
+    "Control_Management": 1,
+    "Molecular_Characterization": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8846770",
+      "doi": "10.1002/j.1460-2075.1995.tb00265.x",
+      "title": "A novel naturally occurring hybrid gene encoded by a plant RNA virus facilitates long distance virus movement.",
+      "abstract": "We recently identified a new cucumovirus-specific gene (2b) which is encoded by RNA 2 of the cucumber mosaic cucumovirus (CMV) tripartite RNA genome and whose coding sequence overlaps the C-terminal 69 codons of ORF 2a encoding the RNA polymerase protein. We have now found that although a CMV mutant lacking ORF 2b accumulated in the inoculated cotyledons of cucumber plants, it was unable to spread systemically, demonstrating involvement of 2b in long distance movement. The same mutant infected tobacco systemically with a much reduced virulence and delayed appearance of symptoms, indicating that 2b may contribute to long distance movement in this host. Deletion of the overlapping C-terminal part of ORF 2a did not change infectivity of the mutant in either host species, ruling out 2a mutation as the reason for the change of phenotype. Further infectivity studies with mutants containing partial deletions in ORF 2b further supported the conclusion that 2b encodes a host-specific long distance movement function. Sequence analysis revealed that 2b may represent a novel naturally occurring hybrid gene important to the evolutionary formation of the cucumovirus group and that it could provide a genetic basis for the wide host range of these viruses.",
+      "journal": "The EMBO journal",
+      "year": 1995,
+      "pub_date": "1995-12-01",
+      "authors": "Ding S W; Li W X; Symons R H",
+      "first_author": "Ding S W",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cucumber mosaic virus (CMV)",
+      "taxonomy": "Bromoviridae, Cucumovirus",
+      "host_plant": "黄瓜 (cucumber)、烟草 (tobacco)",
+      "location": "未提及",
+      "results": "缺失2b的突变体在黄瓜中无法系统移动，在烟草中症状减轻且延迟出现；证明2b编码宿主特异性长距离移动功能。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8618922",
+      "doi": "10.1073/pnas.92.26.12466",
+      "title": "Inhibition of a plant virus infection by analogs of melittin.",
+      "abstract": "An approach that enables identification of specific synthetic peptide inhibitors of plant viral infection is reported. Synthetic analogs of melittin that have sequence and structural similarities to an essential domain of tobacco mosaic virus coat protein were found to possess highly specific antiviral activity. This approach involves modification of residues located at positions analogous to those that are critical for virus assembly. The degree of inhibition found correlates well with sequence similarities between the viral capsid protein and the melittin analogs studied as well as with the induced conformational changes that result upon interaction of the peptides and ribonucleic acid.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1995,
+      "pub_date": "1995-12-19",
+      "authors": "Marcos J F; Beachy R N; Houghten R A; Blondelle S E; Pérez-Payá E",
+      "first_author": "Marcos J F",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "烟草花叶病毒",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8533164",
+      "doi": "10.1016/s0168-9525(00)89157-x",
+      "title": "QTL mapping in rice.",
+      "abstract": "In the past 10 years, interest in applying the tools of molecular genetics to the problem of increasing world rice production has resulted in the generation of two highly saturated, molecular linkage maps of rice, and the localization of numerous genes and quantitative trait loci (QTLs). Primary studies have identified QTLs associated with disease resistance, abiotic stress tolerance and yield potential of rice in a range of ecosystems. The ability to identify, manipulate and potentially clone individual genes involved in quantitatively inherited characters, combined with the demonstrated conservation of numerous linkage blocks among members of the grass family, emphasizes the contribution of map-based genetic analyses both to applied and to basic crop research.",
+      "journal": "Trends in genetics : TIG",
+      "year": 1995,
+      "pub_date": "1995-12-01",
+      "authors": "McCouch S R; Doerge R W",
+      "first_author": "McCouch S R",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8525370",
+      "doi": "10.1126/science.270.5243.1804",
+      "title": "A receptor kinase-like protein encoded by the rice disease resistance gene, Xa21.",
+      "abstract": "The rice Xa21 gene, which confers resistance to Xanthomonas oryzae pv. oryzae race 6, was isolated by positional cloning. Fifty transgenic rice plants carrying the cloned Xa21 gene display high levels of resistance to the pathogen. The sequence of the predicted protein, which carries both a leucine-rich repeat motif and a serine-threonine kinase-like domain, suggests a role in cell surface recognition of a pathogen ligand and subsequent activation of an intracellular defense response. Characterization of Xa21 should facilitate understanding of plant disease resistance and lead to engineered resistance in rice.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 1995,
+      "pub_date": "1995-12-15",
+      "authors": "Song W Y; Wang G L; Chen L L; Kim H S; Pi L Y; ... (+7)",
+      "first_author": "Song W Y",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8589221",
+      "doi": "",
+      "title": "Genetic mapping of quantitative trait loci for traits with ordinal distributions.",
+      "abstract": "Statistical methods for mapping quantitative trait loci relative to genetic markers are now well established for continuous traits with normal distributions. However, many traits of economic importance are recorded on a discrete, ordinal scale. Here we describe a model developed for the analysis of ordinal traits, such as degree of difficulty in calving or categories of plant disease resistance. The model estimates the distance from the quantitative trait locus to neighbouring genetic markers, and also genetic parameters, either as gene effects on an underlying continuous scale or as probabilities of the observed categories. The model is tested on simulated data and is compared with an analysis based on mixtures of normal distributions. The ordinal model is found to estimate the parameters more accurately, especially when the number of categories is small or when only one linked marker is available.",
+      "journal": "Biometrics",
+      "year": 1995,
+      "pub_date": "1995-12-01",
+      "authors": "Hackett C A; Weller J I",
+      "first_author": "Hackett C A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12242366",
+      "doi": "10.1105/tpc.7.12.2013",
+      "title": "Suppression and Restoration of Lesion Formation in Arabidopsis lsd Mutants.",
+      "abstract": "Systemic acquired resistance (SAR) is a broad-spectrum, systemic defense response that is activated in many plant species after pathogen infection. We have previously described Arabidopsis mutants that constitutively express SAR and concomitantly develop lesions simulating disease (lsd). Here, we describe two new mutants, lsd6 and lsd7, that develop spontaneous necrotic lesions and possess elevated levels of salicylic acid (SA) as well as heightened disease resistance, similar to the previously characterized lsd and accelerated cell death (acd2) mutants. Genetic analysis of lsd6 and lsd7 showed that the mutant phenotypes segregated as simple dominant traits. When crossed with transgenic Arabidopsis plants containing the SA-degrading enzyme salicylate hydroxylase, the F1 progeny showed suppression of both SAR gene expression and resistance. In addition, salicylate hydroxylase suppressed lesion formation in the F1 progeny, suggesting that SA or some SA-dependent process may have a role in pathogen-associated cell death. Surprisingly, lesions were restored in the lsd6 F1 progeny after the application of either 2,6-dichloroisonicotinic acid or SA. Lesions were not restored by treatment with either compound in the lsd7 F1 plants. Our findings demonstrate that steps early in the signal transduction pathway leading to SAR and disease resistance are potentiated by later events, suggesting feedback control of lesion formation.",
+      "journal": "The Plant cell",
+      "year": 1995,
+      "pub_date": "1995-12-01",
+      "authors": "Weymann K.; Hunt M.; Uknes S.; Neuenschwander U.; Lawton K.; ... (+2)",
+      "first_author": "Weymann K.",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8770645",
+      "doi": "10.1089/hyb.1995.14.571",
+      "title": "Production and characterization of monoclonal antibodies against the ribosome-inactivating protein PAP from Phytolacca americana.",
+      "abstract": "Monoclonal antibodies specific to pokeweed antiviral protein (PAP), a ribosome-inactivating protein (RIP), were obtained after six unsuccessful fusions. A special procedure including injections of low doses of purified PAP from spring leaves in a short period was adopted. Some clones highly specific to PAP react with recombinant PAP. One clone cross-reacts with PAP-S isolated from seeds but none cross-reacts with the isoform PAP II isolated from summer leaves. These antibodies represent a useful tool to investigate the mechanisms of PAP biosynthesis and plant protection involving RIPs.",
+      "journal": "Hybridoma",
+      "year": 1995,
+      "pub_date": "1995-12-01",
+      "authors": "Desvoyes B; Dulieu P; Poyet J L; Adami P",
+      "first_author": "Desvoyes B",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8847882",
+      "doi": "10.1016/0378-8741(95)90037-3",
+      "title": "Antiviral screening of British Columbian medicinal plants.",
+      "abstract": "One hundred methanolic plant extracts were screened for antiviral activity against seven viruses. Twelve extracts were found to have antiviral activity at the non-cytotoxic concentrations tested. The extracts of Rosa nutkana and Amelanchier alnifolia, both members of the Rosaceae, were very active against an enteric coronavirus. A root extract of another member of the Rosaceae, Potentilla arguta, completely inhibited respiratory syncytial virus. A Sambucus racemosa branch tip extract was also very active against respiratory syncytial virus while the inner bark extract of Oplopanax horridus partially inhibited this virus. An extract of Ipomopsis aggregata demonstrated very good activity against parainfluenza virus type 3. A Lomatium dissectum root extract completely inhibited the cytopathic effects of rotavirus. In addition to these, extracts prepared from the following plants exhibited antiviral activity against herpesvirus type 1: Cardamine angulata, Conocephalum conicum, Lysichiton americanum, Polypodium glycyrrhiza and Verbascum thapsus.",
+      "journal": "Journal of ethnopharmacology",
+      "year": 1995,
+      "pub_date": "1995-12-01",
+      "authors": "McCutcheon A R; Roberts T E; Gibbons E; Ellis S M; Babiuk L A; ... (+2)",
+      "first_author": "McCutcheon A R",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8847495",
+      "doi": "10.1099/0022-1317-76-12-2915",
+      "title": "Genome organization of ageratum yellow vein virus, a monopartite whitefly-transmitted geminivirus isolated from a common weed.",
+      "abstract": "A full-length copy of a single genomic component of the whitefly-transmitted geminivirus ageratum yellow vein virus (AYVV) has been cloned from an extract of infected Ageratum conyzoides originating from Singapore. Sequence analysis shows that the genomic component encodes two virion-sense (V1 and V2) and four complementary-sense open reading frames (C1-C4), typical of DNA A of whitefly-transmitted geminiviruses from the Eastern hemisphere. A genomic component equivalent to DNA B was not detected in extracts of infected A. conyzoides. The cloned genomic component produced a systemic infection in Nicotiana benthamiana, Phaseolus vulgaris and Lycopersicon esculentum when introduced into plants by agroinoculation, and symptoms were identical to those produced by wild-type virus introduced into these hosts using viruliferous whiteflies. However, attempts to re-establish a systemic infection in A. conyzoides either by agroinoculation or by whitefly transmission of the cloned progeny were unsuccessful, suggesting that additional factors are required for infection of the natural host. The significance of A. conyzoides as a reservoir host for the economically important geminivirus diseases is discussed.",
+      "journal": "The Journal of general virology",
+      "year": 1995,
+      "pub_date": "1995-12-01",
+      "authors": "Tan P H; Wong S M; Wu M; Bedford I D; Saunders K; ... (+1)",
+      "first_author": "Tan P H",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

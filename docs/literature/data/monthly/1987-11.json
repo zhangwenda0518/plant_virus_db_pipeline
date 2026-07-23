@@ -1,0 +1,80 @@
+{
+  "month": "1987-11",
+  "generated": "2026-07-13 02:59:42",
+  "total": 3,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 2,
+    "Host_Virus_Interactions": 1,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "3664641",
+      "doi": "10.1016/0092-8674(87)90638-6",
+      "title": "A defective interfering RNA that contains a mosaic of a plant virus genome.",
+      "abstract": "A symptom-modulating RNA associated with tomato bushy stunt virus (TBSV) was investigated with respect to physical and biological properties. Linear RNA of approximately 396 nucleotides was packaged in viral coat protein and was dependent on TBSV for replication. Coinoculation of the small RNA with TBSV resulted in the attenuation of TBSV-induced symptoms and depression of virus synthesis in whole plants. Nucleotide sequence analysis revealed that the symptom-modulating RNA was derived from 5', 3', and internal segments of the TBSV genome. The identification of this symptom-modulating RNA as a co-linear deletion mutant of the helper virus genome establishes it as the first definitive defective interfering RNA (DI RNA) to be identified in association with a plant virus.",
+      "journal": "Cell",
+      "year": 1987,
+      "pub_date": "1987-11-06",
+      "authors": "Hillman B I; Carrington J C; Morris T J",
+      "first_author": "Hillman B I",
+      "categories": [
+        "Host_Virus_Interactions",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "番茄丛矮病毒（TBSV）",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "3446016",
+      "doi": "10.1016/0166-3542(87)90070-2",
+      "title": "Antiviral effects of dihydroxypropyladenine [RS)-DHPA) and bromovinyldeoxyuridine (BVDU) on plant viruses.",
+      "abstract": "Two established antiviral agents, dihydroxypropyladenine (RS)-DHPA and bromovinyldeoxyuridine (BVDU) were evaluated for their inhibitory effects on 4 plant viruses: Tobacco mosaic virus, potato virus X (PVX), eggplant mosaic virus (EMV) and a potyvirus isolated from Solanum palinacanthum (Poty-Sp). Using the leaf disc incubation test, BVDU proved virtually inactive while (RS)-DHPA efficiently inhibited EMV and Poty-Sp when applied at concentrations as low as 5 mg/l. TMV was less susceptible to the chemical while PVX could be inhibited at drug concentrations of 100 mg/l. To achieve a similar inhibitory effect in the leaf spray test, concentrations up to 250 and 500 mg/l were required. Using these tests no phytotoxicity was observed with (RS)-DHPA at any of the concentrations used.",
+      "journal": "Antiviral research",
+      "year": 1987,
+      "pub_date": "1987-11-01",
+      "authors": "De Fazio G; Vicente M; De Clercq E",
+      "first_author": "De Fazio G",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒（Tobacco mosaic virus）、马铃薯X病毒（PVX）、茄子花叶病毒（EMV）、马铃薯Y病毒（Poty-Sp）",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2825177",
+      "doi": "10.1073/pnas.84.22.8120",
+      "title": "Inhibition of human immunodeficiency virus syncytium formation and virus replication by castanospermine.",
+      "abstract": "Castanospermine (1,6,7,8-tetrahydroxyoctahydroindolizine) is a plant alkaloid that modifies glycosylation by inhibiting alpha-glucosidase I. Castanospermine is shown to inhibit syncytium formation induced by the envelope glycoprotein of the human immunodeficiency virus and to inhibit viral replication. The decrease in syncytium formation in the presence of castanospermine can be attributed to inhibition of processing of the envelope precursor protein gp160, with resultant decreased cell surface expression of the mature envelope glycoprotein gp120. In addition, castanospermine may cause defects in steps involved in membrane fusion after binding of CD4 antigen. The antiviral effects of castanospermine may be due to modifications of the envelope glycoprotein that affect the ability of the virus to enter cells after attachment to the CD4 cell receptor.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1987,
+      "pub_date": "1987-11-01",
+      "authors": "Walker B D; Kowalski M; Goh W C; Kozarsky K; Krieger M; ... (+4)",
+      "first_author": "Walker B D",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

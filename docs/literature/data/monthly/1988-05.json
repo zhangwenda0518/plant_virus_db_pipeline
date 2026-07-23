@@ -1,0 +1,78 @@
+{
+  "month": "1988-05",
+  "generated": "2026-07-13 02:59:42",
+  "total": 3,
+  "by_category": {
+    "New_Virus": 2,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "17835277",
+      "doi": "10.1126/science.240.4856.1188",
+      "title": "Virus-like particles and a spider mite intimately associated with a new disease of barley.",
+      "abstract": "The malting barley-producing regions in Montana and Canada are threatened with a new virus-like barley disease that appears to be etiologically novel. Ultrathin sections of diseased tissue contained enveloped, filamentous virus-like particles that measured 64 nanometers by 126 to 4000 nanometers. These lengths are unique for plant viruses. Unexpectedly, the spider mite,Petrobia latens, which has never been reported to be a vector of a pathogen, was found to transmit the causal agent from diseased plants to healthy barley, while noninfective mites failed to do so unless they were allowed prior access to diseased tissue.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 1988,
+      "pub_date": "1988-05-27",
+      "authors": "Robertson N L; Carroll T W",
+      "first_author": "Robertson N L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "未提及（暂定与barley disease相关）",
+      "taxonomy": "未提及",
+      "host_plant": "大麦（barley）",
+      "location": "美国蒙大拿州和加拿大",
+      "results": "观察到包膜丝状病毒样颗粒，尺寸64 nm×126-4000 nm，独特；螨可从病株传至健康大麦。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2454454",
+      "doi": "10.1093/nar/16.10.4197",
+      "title": "The molecular structure of hop latent viroid (HLV), a new viroid occurring worldwide in hops.",
+      "abstract": "A new viroid which does not seem to produce any symptoms of disease, and is therefore tentatively named hop latent viroid (HLV) was found to occur worldwide in hops. HLV proved to be infectious when mechanically inoculated onto viroid- and virus-free hops. The viroid nature of HLV was also substantiated by sequence analysis which revealed that HLV is a circular RNA consisting of 256 nucleotides, that can be arranged into the viroid-specific, rod-like secondary structure. HLV also contains the central conserved region typical for most of the presently known viroids. However HLV does not contain the viroid-specific oligo(A) stretch in the upper left part of its rod-like molecule. Because of this feature and a sequence similarity with the prototypes of the other viroid groups below 55%, HLV can be regarded as the first member of a new viroid group.",
+      "journal": "Nucleic acids research",
+      "year": 1988,
+      "pub_date": "1988-05-25",
+      "authors": "Puchta H; Ramm K; Sänger H L",
+      "first_author": "Puchta H",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Hop latent viroid (HLV)",
+      "taxonomy": "未提及",
+      "host_plant": "啤酒花 (hops, Humulus lupulus)",
+      "location": "世界范围内",
+      "results": "HLV无病症，可机械传播，为256nt环状RNA，含中央保守区，但缺乏寡聚A区段，与已知类病毒序列相似性低于55%，代表新类病毒组。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "3139086",
+      "doi": "10.1016/0300-9084(88)90255-6",
+      "title": "Plant viruses and new perspectives in cross-protection.",
+      "abstract": "Cross-protection in plants is the phenomenon whereby a plant preinoculated with a mild virus strain becomes resistant to subsequent inoculation by a related severe strain. It has been used on a large scale in cases where no resistant plants are available. Although several hypotheses have been proposed to explain the molecular mechanism underlying cross-protection, no single hypothesis can account for all the data obtained. Recently, a phenomenon akin to cross-protection has been achieved in transformed plants harboring the cDNA of a part of a viral RNA genome. These results obtained by genetic engineering raise new hopes for obtaining plants resistant to virus infection.",
+      "journal": "Biochimie",
+      "year": 1988,
+      "pub_date": "1988-05-01",
+      "authors": "Valle R P; Skrzeczkowski J; Morch M D; Joshi R L; Gargouri R; ... (+4)",
+      "first_author": "Valle R P",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

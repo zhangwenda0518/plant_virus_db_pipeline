@@ -1,0 +1,149 @@
+{
+  "month": "1993-09",
+  "generated": "2026-07-13 02:59:42",
+  "total": 6,
+  "by_category": {
+    "New_Virus": 2,
+    "Molecular_Characterization": 1,
+    "Detection_Methods": 1,
+    "Host_Virus_Interactions": 1,
+    "Antiviral_Resistance_Genes": 1,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8376963",
+      "doi": "10.1099/0022-1317-74-9-1879",
+      "title": "Novel rod-shaped viruses isolated from garlic, Allium sativum, possessing a unique genome organization.",
+      "abstract": "Rod-shaped flexuous viruses were partially purified from garlic plants (Allium sativum) showing typical mosaic symptoms. The genome was shown to be composed of RNA with a poly(A) tail of an estimated size of 10 kb as shown by denaturing agarose gel electrophoresis. We constructed cDNA libraries and screened four independent clones, which were designated GV-A, GV-B, GV-C and GV-D, using Northern and Southern blot hybridization. Nucleotide sequence determination of the cDNAs, two of which correspond to nearly one-third of the virus genomic RNA, shows that all of these viruses possess an identical genomic structure and that also at least four proteins are encoded in the viral cDNA, their M(r)s being estimated to be 15K, 27K, 40K and 11K. The 15K open reading frame (ORF) encodes the core-like sequence of a zinc finger protein preceded by a cluster of basic amino acid residues. The 27K ORF probably encodes the viral coat protein (CP), based on both the existence of some conserved sequences observed in many other rod-shaped or flexuous virus CPs and an overall amino acid sequence similarity to potexvirus and carlavirus CPs. The 11K ORF shows significant amino acid sequence similarities to the corresponding 12K proteins of the potexviruses and carlaviruses. On the other hand, the 40K ORF product does not resemble any other plant virus gene products reported so far. The genomic organization in the 3' region of the garlic viruses resembles, but clearly differs from, that of carlaviruses. Phylogenetic analysis based upon the amino acid sequence of the viral capsid protein also indicates that the garlic viruses have a unique and distinct domain different from those of the potexvirus and carlavirus groups. The results suggest that the garlic viruses described here belong to an unclassified and new virus group closely related to the carlaviruses.",
+      "journal": "The Journal of general virology",
+      "year": 1993,
+      "pub_date": "1993-09-01",
+      "authors": "Sumi S; Tsuneyoshi T; Furutani H",
+      "first_author": "Sumi S",
+      "categories": [
+        "Molecular_Characterization",
+        "New_Virus"
+      ],
+      "virus_name": "大蒜病毒（GV-A, GV-B, GV-C, GV-D）",
+      "taxonomy": "未分类的新病毒群，与香石竹潜隐病毒（carlavirus）近缘",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8250981",
+      "doi": "",
+      "title": "[Design of a universal biotin-containing oligonucleotide diagnostic kit for detecting viroid plant diseases].",
+      "abstract": "A non-radioactive diagnosticum for plant viroid diseases has been designed, based on hybridization of a biotin-labeled 26-member oligonucleotide probe with the viroid RNA site identical for potato spindle tuber viroid and chrysanthemum stunt viroid. The biotin label has been introduced into the synthetic oligonucleotide probe by the high-yield acylation of the oligonucleotide aminoalkylamide with the biotin imidazolide or N-hydroxysuccinimide ester. Hybridization techniques have been elaborated for nucleic acids isolated from plant sap. The hybrids obtained have been detected with streptavidin and biotinylated alkaline phosphatase or with the covalent conjugate of streptavidin and alkaline phosphatase, the sensitivity being as low as 1 ng. The methodology used can be applied for revealing viroids and for large scale and quick investigation of plant cell cultures.",
+      "journal": "Bioorganicheskaia khimiia",
+      "year": 1993,
+      "pub_date": "1993-09-01",
+      "authors": "Lebedeva I V; Ivanovskaia M G; Gurinovich T I; Gottykh M B; Meldraĭs Ia A; ... (+1)",
+      "first_author": "Lebedeva I V",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "马铃薯纺锤形块茎类病毒、菊花矮化类病毒",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8376970",
+      "doi": "10.1099/0022-1317-74-9-1939",
+      "title": "Nucleotide sequence of tobamovirus Ob which can spread systemically in N gene tobacco.",
+      "abstract": "The genomic RNA sequence of tobamovirus Ob (Ob), which can spread systemically in tobacco carrying the N gene, was determined. It consists of 6507 nucleotides and contains four open reading frames, exactly corresponding to the genomic organization of tobamoviruses known so far, i.e. encoding the 130K, 180K, 30K and coat proteins. There were no nucleotide overlaps between any open reading frames. The Ob nucleic acid sequence, predicted protein sequences and gene organization were compared with those of other tobamoviruses reported previously. This virus was originally reported as a tomato mosaic virus; however, the nucleotide sequence data given here refute this classification. The determinants that allow tobamovirus Ob to overcome the N gene, a feature peculiar to this virus, were not identified apart from sequence data. This virus should be regarded as a new tobamovirus. The determinants interacting with the tentative N gene product have not yet been analysed.",
+      "journal": "The Journal of general virology",
+      "year": 1993,
+      "pub_date": "1993-09-01",
+      "authors": "Ikeda R; Watanabe E; Watanabe Y; Okada Y",
+      "first_author": "Ikeda R",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "tobamovirus Ob",
+      "taxonomy": "",
+      "host_plant": "烟草（携带N基因）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "33874608",
+      "doi": "10.1111/j.1469-8137.1993.tb03877.x",
+      "title": "Altitudinal variation in the response of the vegetation to Late-glacial climatic events in the northern French Alps.",
+      "abstract": "Pollen and macroscopic plant remains were studied at eight neighbouring sites, in order to define Late-glacial vegetational history in the northern French Alps. Local pollen assemblage zones are described and indicate that the main elements of vegetational history combine the features of adjacent regions. Herb pollen assemblages are similar to those recorded in the Swiss Late-glacial, whereas the early occurrence of shrubs and trees is typical of the southern French Alps. An early effect of altitude on vegetation distribution is demonstrated at the end of the Oldest Dryas. At that time the landscape consisted of a patchwork of Arteimisia-Chenopodiaceae steppe, with shrubs in hollows and valleys. Betula was recorded up lo 700 in and Juniperus up to 1300 m. This altitudinal variation became more pronounced with the arrival of new species. During the Alleröd, mixed stands of Betula and Pinus were present up to an altitude of about 1000-1300 m, with Betula reaching 1700 m, this limit depending on factors such as exposure and continentality. The Younger Dryas oscillation is clearly recorded, as at more oceanic N.W. European coastal margins. Nevertheless, the record of the vegetation response to climatic change depends on the elevation of the studied sites. The limit of Pinus stands fell to 700-1000 m. At a lower altitude the climatic signal is weaker and alders [Alnus glutinosa (L.) Gaertn, Alnus incana (L.) Moench] began to spread. Continuous occurrences of alder owing to regional pollen transport are detected up to the highest sites. The empirical limit of Alnus is therefore proposed as a biostratigraphic marker of the Younger Dryas in the area. Finally. The possibility of a climatic deterioration that started during the late Alleröd is discussed on the basis of absolute chronology.",
+      "journal": "The New phytologist",
+      "year": 1993,
+      "pub_date": "1993-09-01",
+      "authors": "David Fernan",
+      "first_author": "David Fernan",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8220493",
+      "doi": "10.1046/j.1365-313x.1993.04030517.x",
+      "title": "Activation of a tobacco glycine-rich protein gene by a fungal glucan preparation.",
+      "abstract": "A Phytophthora megasperma f.sp. glycinea cell wall glucan preparation was previously shown to protect tobacco plants against viral infection. Eleven plant defense-related genes were assayed for elevated mRNA accumulation levels in response to glucan treatment of tobacco plants. The expression of only one of these genes, a glycine-rich protein (GRP) gene, was induced by glucan application. Elevated GRP gene mRNA levels could be detected within 15 min of glucan treatment and reached maximum levels at 4 h post-treatment followed by a slow decline to 8 h. The maximum induction of the GRP gene was approximately ninefold above H2O-treated control plants. Northern blot analysis showed that a single mRNA species of 1.4 kb was responding to the glucan treatment. GRP genes occur in tobacco as members of a multigene family, but only one specific GRP gene was induced by the glucan treatment. A genomic copy of this responding GRP gene was cloned and sequenced. This tobacco GRP gene is homologous to the petunia ptGRP1 gene and the French bean GRP1.8-gene, but is not closely related to the French bean GRP1.0 gene. GRP gene expression has previously been associated with disease resistance in plants, but it remains to be determined whether beta-glucan activation of the tobacco GRP gene results in the observed resistance to virus.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 1993,
+      "pub_date": "1993-09-01",
+      "authors": "Brady K P; Darvill A G; Albersheim P",
+      "first_author": "Brady K P",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19279784",
+      "doi": "",
+      "title": "The future of nematology: integration of new and improved management strategies.",
+      "abstract": "The potential for managing plant-parasitic nenlatodes by combining two or more control strategies in an integrated program is examined. Advantages of this approach include the use of partially effective strategies and protection of highly effective ones vulnerable from nematode adaptation or environmental risk. Strategies can be combined sequentially from season to season or applied simultaneously. Programs that have several strategies available but that are limited in the true integration of control components are used as examples of current management procedures and the potential for their improvement. These include potato cyst nematodes in northern Europe, soybean cyst nematode in North Carolina, and root-knot nematodes on vegetable and field crops in California. A simplified model of the impact of component strategies on the nematode damage function indicates the potential for combining control measures with different efficacies to give acceptable nematode population reduction and crop protection. The likelihood for additive, synergistic, or antagonistic effects from combining strategies is considered with respect to the biological target and component compatibility.",
+      "journal": "Journal of nematology",
+      "year": 1993,
+      "pub_date": "1993-09-01",
+      "authors": "Roberts P A",
+      "first_author": "Roberts P A",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

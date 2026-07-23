@@ -1,0 +1,280 @@
+{
+  "month": "1995-01",
+  "generated": "2026-07-13 02:59:42",
+  "total": 15,
+  "by_category": {
+    "Host_Virus_Interactions": 5,
+    "New_Virus": 4,
+    "Antiviral_Resistance_Genes": 4,
+    "Control_Management": 2,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "7605201",
+      "doi": "10.1007/BF01314965",
+      "title": "Properties of a previously undescribed supercoiled filamentous virus infecting papaya in Venezuela.",
+      "abstract": "Supercoiled filamentous virus particles with lengths of 400 to 700 nm and 3 nm wide were isolated from leaves of Carica papaya L. plants showing a mild yellowing between the veins. The morphological properties of this virus resemble those of tenuiviruses. However, it was serologically unrelated to three of the five definitive members of this group of plant viruses and had biochemical features quite different from tenuiviruses. Therefore, the virus described here is possible an unreported new virus infecting papaya for which the name of papaya mild yellow leaf virus (PMYLV) is proposed. PMYLV was mechanically transmitted to papaya and to several Cucurbitaceae species. Virus particles sedimented as one component in sucrose density gradients, containing one molecule of ssRNA with an apparent size of 6400 nucleotides which constitutes 5% of the particle weight. The buoyant density of PMYLV was 1.26 g/cm3 in cesium chloride equilibrium gradients, and the virus coat protein consisted of a single polypeptide with mol. wt. of c. 39 kDa. Estimated virus yield in purified preparations was 2.6 g/kg leaf tissues. An antiserum was produced with a titer of 1:1500. Ultrastructural observations of PMYLV-infected leaf tissues showed crystalline aggregates of virus particles, closely associated with electron dense amorphous inclusion bodies only within xylem cells.",
+      "journal": "Archives of virology",
+      "year": 1995,
+      "pub_date": "1995-01-01",
+      "authors": "Marys E; Carballo O; Izaguirre-Mayoral M L",
+      "first_author": "Marys E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Papaya mild yellow leaf virus (PMYLV)",
+      "taxonomy": "未明确分类，形态类似Tenuivirus但血清学无关",
+      "host_plant": "Carica papaya L. (木瓜)",
+      "location": "委内瑞拉",
+      "results": "病毒粒子400-700 nm长、3 nm宽，含1分子ssRNA (6.4 kb)，衣壳蛋白39 kDa，浮力密度1.26 g/cm³，产量2.6 g/kg叶片，抗血清滴度1:1500，仅在木质部细胞中形成晶体状聚集体和内含体。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8560791",
+      "doi": "10.1007/BF01701819",
+      "title": "Coat protein sequence of a resistance-breaking strain of potato virus X isolated in Argentina.",
+      "abstract": "The PVX coat protein (CP) is involved in many aspects of plant-virus interaction (virion morphology, plant symptoms, viral pathogenesis and virulence, and genomic RNA accumulation). Different virus strains have been distinguished according to their compatibility with the host resistance genes Nx, Nb, and Rx. Substitution of the Thr 122 on the CP with a Lys in PVX strain HB has been shown to affect the response of potato cultivars with the Rx resistance gene. In PVX DX the avirulence determinant for the Nx gene has been localized in the Gln 78 of the coat. PVX strain MS, like PVX HB, is able to overcome the Rx, Nx, and Nb genes. Sequencing of the CP gene of PVX MS (EMBL accession number Z34261) shows that it has a Thr in codon 122 and a Gln in codon 78. These results suggest that, in addition to the coat protein gene, other regions of the viral genome are involved in the pathogenicity.",
+      "journal": "Virus genes",
+      "year": 1995,
+      "pub_date": "1995-01-01",
+      "authors": "Feigelstock D A; Tozzini A C; Hopp H E",
+      "first_author": "Feigelstock D A",
+      "categories": [
+        "Host_Virus_Interactions",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "马铃薯X病毒 (Potato virus X, PVX)",
+      "taxonomy": "",
+      "host_plant": "马铃薯",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17791345",
+      "doi": "10.1126/science.267.5195.229",
+      "title": "Inhibition of host gene expression associated with plant virus replication.",
+      "abstract": "Pea seed-borne mosaic virus (PSbMV) RNA replication in pea cotyledonary tissues was restricted largely to a zone of cells close to the infection front. In situ hybridization probes representing nine genes from two pathways of metabolism failed to detect RNA transcripts within this zone, although transcripts were found in similar amounts in tissues on either side of the zone. Thus, in common with some animal viruses, PSbMV transiently suppresses the expression of host genes. Host protein accumulation was also affected. These observations provide insights into virus-plant interactions and symptom expression.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 1995,
+      "pub_date": "1995-01-13",
+      "authors": "Wang D; Maule A J",
+      "first_author": "Wang D",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Pea seed-borne mosaic virus (PSbMV)",
+      "taxonomy": "",
+      "host_plant": "豌豆 (pea)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8664500",
+      "doi": "10.1094/mpmi-8-0899",
+      "title": "Purification and characterization of an acidic beta-1,3-glucanase from cucumber and its relationship to systemic disease resistance induced by Colletotrichum lagenarium and tobacco necrosis virus.",
+      "abstract": "An acidic beta-1,3-glucanase was detected in cucumber leaves inoculated with either Colletotrichum lagenarium or tobacco necrosis virus (TNV) as well as in the leaves above those inoculated with the pathogens. The enzyme is extracellular and migrates in native polyacrylamide gel electrophoresis (PAGE) together with a Class III chitinase, a bifunctional chitinase/lysozyme. The beta-1,3-glucanase was separated by ultra-narrow pH range IEF-PAGE or by SDS_PAGE and was purified to apparent homogeneity. Only one isoform of the enzyme was detected. Its apparent molecular mass in 38 kDa as estimated by SDS-PAGE, its isoelectric point is 3.6 and the specific activity is approximately 26 micromol glucose equivalents liberated from laminarin min(-1)mg(-1) protein. Partial amino acid (five peptide fragments with a total of 65 amino acids) sequencing of the beta-1,3-glucanase revealed similarities of 49% to 72% to sequences of published beta-1,3-glucanases from tobacco, tomato, soybean, barley, and rice plants. A time course study indicated that the increase of the beta-1,3-glucanase activity was associated with induced resistance against C. lagenarium. The implications of these results to coordinate defense responses in plant-microbe interactions are discussed.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 1995,
+      "pub_date": "1995-01-01",
+      "authors": "Ji C; Kuc J",
+      "first_author": "Ji C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "烟草坏死病毒 (tobacco necrosis virus, TNV)",
+      "taxonomy": "",
+      "host_plant": "黄瓜 (cucumber)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7771763",
+      "doi": "10.1007/BF00871210",
+      "title": "Ballistosporous yeasts found on the surface of plant materials collected in New Zealand. 1. Six new species in the genus Sporobolomyces.",
+      "abstract": "Six new species of ballistosporous yeast, the genus Sporobolomyces, were isolated from dead leaves and fruit of plants collected in New Zealand; Sp. novazealandicus, Sp. dimmenae, Sp. coprosmicola, Sp. coprosmae, Sp. dracophyllus, and Sp. taupoensis. These species differ from any hitherto known species of Sporobolomyces based on chemotaxonomic characteristics.",
+      "journal": "Antonie van Leeuwenhoek",
+      "year": 1995,
+      "pub_date": "1995-01-01",
+      "authors": "Hamamoto M; Nakase T",
+      "first_author": "Hamamoto M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7626215",
+      "doi": "",
+      "title": "[Medicinal plant resources of Dendrobium in Sichuan Province].",
+      "abstract": "Eleven species of Dendrobium grown in Sichuan Province were studied including their classifications and distributions. All of them are used as the merchandise Shihu. Among them, there are 3 species which are found in Sichuan for the first time and 2 new species whose medical effects are described here in. Problems about the exploitation, utilization, quality standards, etc. of these resources are preliminarily discussed. A key for the identification of all these 11 species has been compiled and presented.",
+      "journal": "Zhongguo Zhong yao za zhi = Zhongguo zhongyao zazhi = China journal of Chinese materia medica",
+      "year": 1995,
+      "pub_date": "1995-01-01",
+      "authors": "Li J; Xiao X",
+      "first_author": "Li J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8828154",
+      "doi": "10.1007/BF01728667",
+      "title": "Molecular evolution of viruses: an interim summary.",
+      "abstract": "The origin and molecular evolution of viruses in this issue is dealt with at two levels: (1) tracing the past evolutionary pathways of viruses belonging to RNA virus families, retroviruses, and small and large DNA viruses; (2) tracing current changes in the RNA and DNA viral genomes that lead to the evolution of new virus mutants. In this interim summary, a time scale for the evolutionary processes is given, based on the accumulated published knowledge concerning the postulated origins of life on planet Earth, and the hypothesis that living cells with RNA genomes may have emerged (the \"RNA world hypothesis\") that then developed into cells with DNA genomes in eukaryotic and prokaryotic cells (1-3). The ideas about the evolution of RNA and DNA viruses from ancient cellular RNA and DNA molecules over a period of 3.5 billion years are discussed. It may be possible that by studying virus genes and molecular processes in virus-infected cells, and their involvement in the shaping of the genomes of bacteria, yeast, plants, insects, mammals, and humans, it will be possible to understand the importance of viruses in past evolution and to predict their possible impact on current and future evolutionary trends in biology.",
+      "journal": "Virus genes",
+      "year": 1995,
+      "pub_date": "1995-01-01",
+      "authors": "Becker Y",
+      "first_author": "Becker Y",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "24173782",
+      "doi": "10.1007/BF00220994",
+      "title": "The use of microsatellite DNA markers for soybean genotype identification.",
+      "abstract": "Conventional morphological and pigementation traits, as well as disease resistance, have been used to distinguish the uniqueness of new soybean cultivars for purposes of plant variety protection. With increasing numbers of cultivars and a finite number of conventional characters, it has become apparent that such traits will not suffice to establish uniqueness. The objective of this work was to provide an initial evaluation of microsatellite or simple-sequence-repeat (SSR) DNA markers to develop unique DNA profiles of soybean genotypes. Microsatellites are DNA sequences such as (AT) n /(TA) n and (ATT) n /(TAA) n that are composed of tandemly repeated 2-5-basepair DNA core sequences. The DNA sequences flanking microsatellites are generally conserved allowing the selection of polymerase chain reaction (PCR) primers that will amplify the intervening SSR. Variation in the number of tandem repeats, \"n\", results in PCR product length differences. The SSR alleles present at three (AT) n /(TA) n and four (ATT) n /(TAA) n loci were determined in each of 96 diverse soybean genotypes. Between 11 and 26 alleles were found at each of the seven loci. Only two genotypes had identical SSR allelic profiles and these had very similar pedigrees. The gene diversity for the seven markers averaged 0.87 for all 96 genotypes and 0.74 for a subset of 26 North American cultivars. These are much higher than soybean gene diversity values obtained using RFLP markers, and are similar to the average values obtained for human microsatellite markers. SSR markers provide an excellent complement to the conventional markers that are currently used to characterize soybean genotypes.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 1995,
+      "pub_date": "1995-01-01",
+      "authors": "Rongwen J; Akkaya M S; Bhagwat A A; Lavi U; Cregan P B",
+      "first_author": "Rongwen J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7568867",
+      "doi": "",
+      "title": "[Susceptibility of picornaviruses++ to an antiviral of plant origin (meliacin)].",
+      "abstract": "Meliacine, a peptide associated with antiviral activity isolated from the high plant Melia azedarach L (MA) inhibits the replication of different strains of foot and mouth disease virus (FMDV) and poliovirus in BHK-21 or Vero cells, respectively, infected at a multiplicity of infection (m.o.i.) of 1. A leaf extract of MA, containing meliacine was added to the culture medium after virus adsorption and maintained up to virus harvest (18 hs). FMDV O1 Campos and O69 strains showed 60% and 52% inhibition, respectively. A24 and A87 strains proved to be inhibited more than 90%, and the C3 Resende and O1 Case-ros strains were not sensitive to the extract. Regarding the three types of poliovirus, the most susceptible one was type 1 (84%). Types 2 and 3 were inhibited only 69% and 32%, respectively. Treatment of the cells with the antiviral for 24 hours before infection (pretreatment), was not effective for the two above mentioned viruses. Since the extract of MA is very active against other RNA viruses (i.e. vesicular stomatitis virus), the susceptibility of FMDV strain O1 Campos and poliovirus type 3 was tested using lower m.o.i. The results showed that MA produced an inhibition of viral replication of 99% at a m.o.i. of 0.001 in both cases. These results suggest that picornaviruses are also susceptible to MA. However, to demonstrate its antiviral effect it is necessary to slow down the rate of virus-cell killing by reducing the m.o.i.",
+      "journal": "Revista Argentina de microbiologia",
+      "year": 1995,
+      "pub_date": "1995-01-01",
+      "authors": "Wachsman M B; Coto C E",
+      "first_author": "Wachsman M B",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8564582",
+      "doi": "",
+      "title": "[Use of cell culture for the research of cytotoxic and antiviral effects of a natural extract of Amaryllidaceae].",
+      "abstract": "The use of tissue culture for evaluation of antiviral agents can provide rapid information on the toxicity induced by drugs. Toxicity is assessed through 4 different tests: observation through a light microscope, colorimetric evaluation of living cells stained with MTT (Methyl Thiazol Tetrazolium), colorimetric evaluation of fixed cells stained with crystal violet, inhibition of incorporation of radioactive labelled precursors specific to the synthesis under study. These tests allowing evaluation of effects on cell morphological changes (1), of modifications of mitochondrial and enzymatic activities in the cytoplasm (2), of effects on cell growth (3) and on their major synthesis [ADN, ARN, proteins] (4). This design of experiments has been applied to an hydroalcoolic extract from Haemanthus albiflos (Amaryllidaceae) tested for its antiviral properties towards Poliovirus type 1 propagated on monkey kidney cells line (MA 104). The maximum tolerated dose by the cell and the inhibition of virus replication were determined according to tests 2 and 3. The sensitive step of the virus replication cycle was investigated using test 4. Concentration of 7 microliters/ml plant extract showed: 20% cytotoxicity (MTT test). At 7 microliters/ml plant extract the inhibition of replication virus is 4.5 log units (microplates assay) and inhibition of proteins viral synthesis is 97% compared with the control.",
+      "journal": "Comptes rendus des seances de la Societe de biologie et de ses filiales",
+      "year": 1995,
+      "pub_date": "1995-01-01",
+      "authors": "Husson G P; Vilagines P; Sarrette B; Vilagines R",
+      "first_author": "Husson G P",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12228341",
+      "doi": "10.1104/pp.107.1.53",
+      "title": "TE7, An Inefficient Symbiotic Mutant of Medicago truncatula Gaertn. cv Jemalong.",
+      "abstract": "A mutagenesis program using ethylmethane sulfonate on Medicago truncatula Gaertn cv Jemalong, an annual, autogamous and diploid lucerne, permitted the isolation of a mutant (TE7) unable to establish an effective nitrogen-fixing symbiosis, [Nod+Fix-], with Rhizobium meliloti wild-type strains. The mutant phenotype is characterized by an altered infection process that leads to the formation of two kinds of inefficient nodules on the same root system. A certain proportion of the nodules are small, round, and uninfected, with infection threads limited to the outer root cortical cells. Others develop to a normal elongated shape and are infected; bacterial release occurs but the bacteria do not differentiate into bacteroids. The ratio of invaded to uninvaded nodules depends on the bacterial strain used. Throughout the infection process, certain events correlated with the plant defense response against pathogens can be observed: (a) the presence of polyphenolic compounds associated with the walls of infected cells and also with some parts of infection threads in the root cortex; (b) appositions on infection thread walls during the early stage of infection and also within the central tissue of infected nodules; and (c) autophagy of the plant cells that contain released bacteria. Genetic data suggest that the phenotype of TE7 is under monogenic and recessive control; this gene has been designated Mtsym1.",
+      "journal": "Plant physiology",
+      "year": 1995,
+      "pub_date": "1995-01-01",
+      "authors": "Benaben V.; Duc G.; Lefebvre V.; Huguet T.",
+      "first_author": "Benaben V.",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15091544",
+      "doi": "10.1016/0269-7491(95)93445-6",
+      "title": "Estimating the risks and benefits of pesticides: considering the agroecosystem and integrated pest management in the use of EBDC fungicides on apples.",
+      "abstract": "Calculating the risks and benefits of agricultural pesticides determines whether a pesticide will be registered for use on commodities. Historically, the US Environmental Protection Agency (EPA) has used very conservative estimates of health risks, particularly in the absence of data regarding actual use patterns of the pesticide and actual pesticide residue at the point of food purchase. However, when grower groups and manufacturers were faced with the problem of losing the ethylene bisdithiocarbamate (EBDC) fungicides, they approached EPA offering to provide hard data in place of estimates. Plant pathologists familiar with apple agroecosystems pointed out that different fungicides have highly specific uses in integrated pest management (IPM) programs, and that banning EBDC use on apples would probably raise total pesticide use in apples by compromising the pesticide reductions obtained under existing IPM programs. In addition, an early study showed that use-patterns could significantly reduce the amount of EBDC residue on apples. This approach led to a more realistic appraisal of both risks and benefits of the fungicides, lowering risks and raising benefits. The process ended with a registration prescribing use-patterns which result in minimal residue at harvest, thus providing valuable tools for use in IPM programs.",
+      "journal": "Environmental pollution (Barking, Essex : 1987)",
+      "year": 1995,
+      "pub_date": "1995-01-01",
+      "authors": "Cooley D R; Manning W J",
+      "first_author": "Cooley D R",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

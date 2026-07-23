@@ -1,0 +1,278 @@
+{
+  "month": "1997-09",
+  "generated": "2026-07-13 02:59:42",
+  "total": 12,
+  "by_category": {
+    "Host_Virus_Interactions": 4,
+    "Antiviral_Resistance_Genes": 4,
+    "New_Virus": 3,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "9261382",
+      "doi": "10.1128/JVI.71.9.6603-6610.1997",
+      "title": "A 451-nucleotide circular RNA from cherry with hammerhead ribozymes in its strands of both polarities.",
+      "abstract": "The sequence of 451 nucleotides of a cherry small circular RNA (csc RNA1) associated with a cherry disease has been determined. Both csc RNA1 and its complementary strand can form hammerhead structures similar to those found previously in other plant and animal small RNAs. In the branched secondary structure of lowest free energy of csc RNA1, the sequences involved in the hammerhead structures, which comprise approximately one-fourth of this RNA, are found opposite each other, forming part of a rod-like segment. Plus- and minus-strand full-length transcripts of csc RNA1 self-cleaved during transcription and after purification, as predicted by the hammerhead structures, which are stable and very probably act as single hammerhead structures. The minus-strand hammerhead structure of csc RNA1 is exceptional in having a central loop with only 11 conserved nucleotides, a situation previously observed in only one other natural hammerhead structure. Both hammerhead structures of csc RNA1 are also peculiar in having an A instead of a C preceding the self-cleavage sites. The in vivo concentration of the plus strand of csc RNA1 is only slightly higher than that of its complementary strand, and significant fractions of both strands are extracted from the tissue in the form of a complex. csc RNA1 has sequence similarities to viroids and especially to some viroid-like satellite RNAs; they also share some characteristics of their corresponding hammerhead structures with these satellite RNAs. These observations, together with the association in symptomatic tissue of csc RNA1 with a set of presumably viral double-stranded RNAs, suggest that csc RNA1 is a new viroid-like satellite RNA.",
+      "journal": "Journal of virology",
+      "year": 1997,
+      "pub_date": "1997-09-01",
+      "authors": "Di Serio F; Daròs J A; Ragozzino A; Flores R",
+      "first_author": "Di Serio F",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "樱桃小环状RNA1 (csc RNA1)",
+      "taxonomy": "未提及",
+      "host_plant": "樱桃 (cherry)",
+      "location": "未提及",
+      "results": "确定了csc RNA1的序列，正负链均可形成锤头状结构，体外自切割。正链浓度略高于负链，部分以复合物形式存在。与类病毒和卫星RNA有序列相似性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30861978",
+      "doi": "10.1094/PDIS.1997.81.9.1096A",
+      "title": "First Report of Banana Bunchy Top Virus in Malawi.",
+      "abstract": "Banana plants of the Cavendish subgroup (Musa AAA, locally known as \"Kabuthu\") with classical banana bunchy top virus (BBTV) symptoms were observed to be widespread in Thiwi Valley, Salima Agricultural Development Division, Malawi. The symptoms included marginal yellowing of the younger leaves, dark green, dot-dash streaks along the veins, petioles, and midribs, and shortened internodes. The aphid vector of this virus, Pentalonia nigronervosa, was abundant on bananas in this area (H. Thindwa, personal communication). Young leaf and midrib samples from apparently healthy plants and plants with symptoms were transported to the United Kingdom for testing. In a triple antibody sandwich enzyme-linked immunosorbent assay (ELISA) with poly- and monoclonal antibodies specific for BBTV (1), the samples from symptomatic plants gave positive reactions (OD infected ≥ OD healthy + 3SE healthy). Polymerase chain reaction (PCR) amplification tests were performed for confirmation with oligonucleotide primers BBT1 and BBT2, which are homologous to conserved regions in BBTV DNA component 1. All ELISA-positive samples produced a PCR amplification product of about 349 bp, whereas the healthy control samples did not. The sizes of the DNA fragments produced following restriction enzyme digest of the PCR product suggest that the Malawi virus falls within the South Pacific group of BBTV isolates (2). The presence of both the virus and its vector has the potential for causing great economic damage to this important banana-growing region, and recommendations have been made to eradicate all plants with symptoms. References: (1) R. G. Dietzgen and J. E. Thomas. Australas. Plant Pathol. 20:161, 1991. (2) M. Karan et al. J. Gen. Virol. 75:3541, 1994.",
+      "journal": "Plant disease",
+      "year": 1997,
+      "pub_date": "1997-09-01",
+      "authors": "Kenyon Lawrence; Brown Margaret; Khonje Patrick",
+      "first_author": "Kenyon Lawrence",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Banana bunchy top virus (BBTV)",
+      "taxonomy": "Nanoviridae, Babuvirus",
+      "host_plant": "Musa AAA Cavendish subgroup (当地称为Kabuthu)",
+      "location": "马拉维，萨利马农业发展区，Thiwi Valley",
+      "results": "症状植株ELISA和PCR阳性，PCR产物约349 bp，酶切分析显示属于南太平洋组。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9349703",
+      "doi": "10.1007/s004380050553",
+      "title": "Map-based cloning of the tomato genomic region that spans the Sw-5 tospovirus resistance gene in tomato.",
+      "abstract": "Two yeast artificial chromosomes (YACs) containing genomic DNA from tomato have been isolated using CT220, an RFLP marker which is tightly linked to the tomato spotted wilt virus resistance gene, Sw-5. High-resolution mapping of the YAC ends and internal YAC probes demonstrated that one of the YAC clones, TY257 (400 kb), spans Sw-5. By chromosome walking in a cosmid library, the position of Sw-5 has been delimited within the YAC to a maximal chromosomal segment of 100 kb, spanned by nine overlapping cosmid clones.",
+      "journal": "Molecular & general genetics : MGG",
+      "year": 1997,
+      "pub_date": "1997-09-01",
+      "authors": "Brommonschenkel S H; Tanksley S D",
+      "first_author": "Brommonschenkel S H",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "番茄斑萎病毒",
+      "taxonomy": "",
+      "host_plant": "番茄",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18945058",
+      "doi": "10.1094/PHYTO.1997.87.9.888",
+      "title": "Where are all the undescribed fungi?",
+      "abstract": "ABSTRACT The hypothesis that there are 1.5 million fungal species on Earth, of which only about 70,000 are described, implies that 1.43 million remain undescribed. The recognition that many new species have yet to be found is of fundamental importance to plant pathologists, agronomists, and plant regulatory officials, among others, who continue to encounter diseases caused by previously unknown or understudied fungi. Unexplored habitats with their arsenal of unknown fungi are also of interest to those searching for novel organisms for use in biological control or for their pharmaceutical attributes. This paper presents data on the expected numbers of fungi in some relatively unexplored habitats, such as tropical forests, and those obligately associated with plants, lichens, and insects. In addition to undiscovered species, many have been collected but remain lost or hidden as named species and ignored for lack of modern characterization; others have been collected and recognized as new species but remain undescribed. Some fungal species are unrecognized within erroneously circumscribed species, often based on presumed host specificity, while others exist as biological species but remain buried within those broadly defined species for lack of gross morphological characterization. From these data, one must conclude that enormous numbers of unrecognized fungi can be found almost everywhere, including one's own backyard.",
+      "journal": "Phytopathology",
+      "year": 1997,
+      "pub_date": "1997-09-01",
+      "authors": "Hawksworth D L; Rossman A Y",
+      "first_author": "Hawksworth D L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12223792",
+      "doi": "10.1104/pp.115.1.61",
+      "title": "Gene-Expression Patterns and Levels of Jasmonic Acid in Rice Treated with the Resistance Inducer 2,6-Dichloroisonicotinic Acid.",
+      "abstract": "Acquired disease resistance can be induced in rice (Oryza sativa) by a number of synthetic or natural compounds, but the molecular mechanisms behind the phenomenon are poorly understood. One of the synthetic inducers of resistance, 2,6-dichloroisonicotinic acid (INA), efficiently protected rice leaves from infection by the rice blast fungus Magnaporthe grisea (Hebert) Barr. A comparison of gene-expression patterns in plants treated with INA versus plants inoculated with the compatible pathogen M. grisea or the incompatible pathogen Pseudomonas syringae pv syringae revealed only a marginal overlap: 6 gene products, including pathogenesis-related proteins (PR1-PR9), accumulated in both INA-treated and pathogen-attacked leaves, whereas 26 other gene products accumulated only in INA-treated or only in pathogen-attacked leaves. Lipoxygenase enzyme activity and levels of nonconjugated jasmonic acid (JA) were enhanced in leaves of plants treated with a high dose of INA (100 ppm). Exogenously applied JA enhanced the gene induction and plant protection caused by lower doses of INA (0.1 to 10 ppm) that by themselves did not give rise to enhanced levels of endogenous (-)-JA. These data suggest that INA, aside from activating a pathogen-induced signaling pathway, also induces events that are not related to pathogenesis. JA acts as an enhancer of both types of INA-induced reactions in rice.",
+      "journal": "Plant physiology",
+      "year": 1997,
+      "pub_date": "1997-09-01",
+      "authors": "Schweizer P.; Buchala A.; Metraux J. P.",
+      "first_author": "Schweizer P.",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9291971",
+      "doi": "",
+      "title": "The molecular basis of disease resistance in rice.",
+      "abstract": "The rice gene Xa21 conferring resistance to Xanthomonas oryzae pv. oryzae (Xoo), was isolated using a map-based cloning strategy. Compared with previously cloned genes, the structure of Xa21 represents a novel class of plant disease R genes encoding a putative receptor kinase (RK). This article proposes a model for the mode of action of Xa21 and summarizes our current knowledge of the modular basis of resistance in rice to bacterial leaf blight and blast.",
+      "journal": "Plant molecular biology",
+      "year": 1997,
+      "pub_date": "1997-09-01",
+      "authors": "Ronald P C",
+      "first_author": "Ronald P C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9298904",
+      "doi": "10.1016/s0092-8674(00)80357-8",
+      "title": "A putative leucine-rich repeat receptor kinase involved in brassinosteroid signal transduction.",
+      "abstract": "Brassinosteroids are a class of growth-promoting regulators that play a key role throughout plant development. Despite their importance, nothing is known of the mechanism of action of these steroid hormones. We describe the identification of 18 Arabidopsis dwarf mutants that are unable to respond to exogenously added brassinosteroid, a phenotype that might be expected for brassinosteroid signaling mutants. All 18 mutations define alleles of a single previously described gene, BRI1. We cloned BRI1 and examined its expression pattern. It encodes a ubiquitously expressed putative receptor kinase. The extracellular domain contains 25 tandem leucine-rich repeats that resemble repeats found in animal hormone receptors, plant disease resistance genes, and genes involved in unknown signaling pathways controlling plant development.",
+      "journal": "Cell",
+      "year": 1997,
+      "pub_date": "1997-09-05",
+      "authors": "Li J; Chory J",
+      "first_author": "Li J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9291961",
+      "doi": "",
+      "title": "Rice genetic resources: history, conservation, investigative characterization and use in Japan.",
+      "abstract": "Rice has been grown in Japan for about 3000 years. Although both japonica and indica varieties have been grown in Japan, now japonica rices are grown. Japanese rice breeding has used an ecological breeding approach. While emphasis in rice breeding in the 1940's and 1950's focussed on yield in recent decades quality has been of major importance. Consumer preference and name recognition of high quality varieties, such as Koshihikari, has resulted in slow acceptance of new varieties. Rice germplasm was systematically collected throughout Japan between 1962 and 1963. Subsequent acquisition and collecting, in Japan and other countries, has resulted in 28,000 accessions being conserved in the National Genebank, based at the National institute of Agrobiological Resources (NIAR). Research on genetic diversity of rice using a range of techniques, for example esterase isozymes, has revealed clinal variation in rice radiating from the center of diversity of rice in and around southwest China. Newly found genes in traditional rice germplasm, such as genes for non-elongating mesocotyl, are now routinely identified on the rice genome. Pioneering studies on eco-genetic differentiation of species in the genus Oryza in Japan has revealed much about the complex genepool for which rice evolved. Pest and disease resistance sources, particularly to blast, bacterial blight and brown plant hopper, from many countries have been incorporated into Japanese varieties. Cold tolerance at the booting stage was found in the Indonesian variety Silewah. In the future in characterisation of rice germplasm and interaction between rice germplasm specialists and rice molecular scientists, both in Japan and internationally, will be corner stones to securing rice genetic diversity and rice improvement in the next century.",
+      "journal": "Plant molecular biology",
+      "year": 1997,
+      "pub_date": "1997-09-01",
+      "authors": "Nakagahra M; Okuno K; Vaughan D",
+      "first_author": "Nakagahra M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9367663",
+      "doi": "10.1006/phrs.1997.0224",
+      "title": "Antifungal, antibacterial, antiviral and cytotoxic activity of novel thio- and seleno-azoles.",
+      "abstract": "A series of pentaatomic heterocyclic compounds containing sulphur or selenium in position 2, were tested for cytotoxicity, antiviral and antimicrobial activities. Generally, selenium-containing compounds were more toxic than the corresponding sulphur-containing ones (30-75 times more toxic) and, furthermore, the biological activity against some microorganisms was also enhanced. In particular, some selenium-containing derivatives exerted an inhibitory activity on plant pathogenic fungi at doses markedly lower than the toxic ones, showing an interesting selectivity of action. In this case the tested compounds appeared more active than ketoconazole, the control used, with an almost comparable degree of cytotoxicity.",
+      "journal": "Pharmacological research",
+      "year": 1997,
+      "pub_date": "1997-09-01",
+      "authors": "Deidda D; Lampis G; Maullu C; Pompei R; Isaia F; ... (+2)",
+      "first_author": "Deidda D",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9330761",
+      "doi": "10.1016/s0166-3542(97)00035-1",
+      "title": "Antiviral activity of an extract from leaves of the tropical plant Acanthospermum hispidum.",
+      "abstract": "Incubation of the alphaherpesviruses pseudorabiesvirus (PRV) and bovine herpesvirus 1 during infection of cell cultures with an extract prepared from the leaves of Acanthospermum hispidum impaired productive replication of these viruses in a concentration-dependent manner whereas propagation of classical swine fever virus, foot-and-mouth disease virus and vaccinia virus was not affected. The 50% inhibitory concentration for cell growth (IC50) was 107 +/- 5 microliters/ml, and the concentration reducing PRV yield by 1 log10 (90% effective concentration, EC90) was 8 +/- 3 microliters/ml. The selectivity index calculated as the IC50/EC90 ration was 13 +/- 4. Delineation of the mechanism of the antiviral activity demonstrated inhibition of alphaherpesvirus attachment to and, to a lesser extent, penetration into the cells. In contrast, viral gene expression was not inhibited by the extract when added after entry of virions into the target cells. Reduced antiviral activity of A.h. against PRV deletion mutants lacking glycoprotein C (gC) or glycoproteins gC, gE, gG and gI altogether indicated that gC alone and/or viral attachment complexes of which gC is a component constitute the target structures for A. hispidum.",
+      "journal": "Antiviral research",
+      "year": 1997,
+      "pub_date": "1997-09-01",
+      "authors": "Summerfield A; Keil G M; Mettenleiter T C; Rziha H J; Saalmüller A",
+      "first_author": "Summerfield A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9315319",
+      "doi": "",
+      "title": "Free radical generation by selenium compounds and their prooxidant toxicity.",
+      "abstract": "Selenium (Se) and many of its compounds are among the most toxic of nutrients. Selenium toxicity was first described in range animals in the western United States in the 1930's which consumed \"selenium accumulator\" plants of the genus Astragalus, Xylorrhiza, Oonopsis, and Stanleya. Selenites and selenates from the soil accumulate in these plants primarily as methylated selenium compounds and plants evolve dimethyldiselenide and dimethylselenide. Dietary selenium, primarily as selenomethionine and selenocysteine for humans fulfill the dietary requirement for selenoenzymes and proteins. In humans and animals excessive dietary selenium may be toxic. In vitro, selenium compounds such as selenite, selenium dioxide and diselenides react with thiols, such as glutathione, producing superoxide and other reactive oxygen species. This catalytic reaction of selenium compounds with thiols likely accounts for selenium toxicity to cells ex vivo and in vivo where the major glutathione producing organ, the liver, is also the major target organ of selenium toxicity. Selenium enzymes and selenoethers that do not readily form a selenide (RSe-) anion and compounds such as Ebselen where selenium is sequestered, are not toxic. Methylation of selenium by both plants and animals serves to detoxify selenium by generating methylselenides. Alternatively, full reduction of Se to elemental selenium (Se0) as done by some bacteria and the formation of heavy metal selenides such as Ag2Se or Hg2Se, results in a non-catalytic non-toxic form of selenium. This catalytic prooxidant attribute of some selenium compounds appears to account for its toxicity when such activity exceeds plant and animal methylation reactions and antioxidant defenses. This prooxidant activity may also account for cellular apoptosis and may provide a useful pharmaceutical application for selenium compounds as antibacterial, antiviral, antifungal and anticancer agents.",
+      "journal": "Biomedical and environmental sciences : BES",
+      "year": 1997,
+      "pub_date": "1997-09-01",
+      "authors": "Spallholz J E",
+      "first_author": "Spallholz J E",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30861979",
+      "doi": "10.1094/PDIS.1997.81.9.1096B",
+      "title": "New Hosts of Potato Y Potyvirus (PVY) Identified in the Canary Islands.",
+      "abstract": "Potato Y potyvirus (PVY) causes annual epidemics with 30 to 40% production losses in tomato crops of the Canary Islands in autumn. Two strains of the virus were diagnosed: PVY-0 and PVY-N. To identify hosts in areas where the virus is prevalent, and to establish the role of weeds in the epidemiology of this virus and its vector, plants were collected, chosen randomly and by viruslike symptom expression. Eighty-two samples of 30 plant species were tested for PVY-0 and PVY-N by double antibody sandwich enzyme-linked immunosorbent assay (DAS-ELISA) with commercial antibodies made against PVY (INGENASA, Madrid), PVY-0/C (ADGEN, Auchincruive, UK), and PVY-N (BIOREBA, Reinach, Switzerland). Twenty-five weed species were found to be infected with PVY-0 and 12 plants were identified as new hosts (1) including the following: Argyranthemum gracile, Calendula arvensis, Convolvulus althaeoides, Foeniculum vulgare, Forsskaolea angustifolia, Hedypnois cretica, Hirschfeldia incana, Malva parviflora, Patellifolia patellaris, Sonchus oleraceus, Urospermum picroides, and Lavandula canariensis. Argyranthemum gracile and Lavandula canariensis were hosts only of PVY-N strain. References: (1) J. R. Edwarson. Fla. Agric. Exp. Stn. Monog. 5:96, 1974.",
+      "journal": "Plant disease",
+      "year": 1997,
+      "pub_date": "1997-09-01",
+      "authors": "Espino de Paz A I; Mendez Pérez P; Jordá-Gutiérrez C",
+      "first_author": "Espino de Paz A I",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

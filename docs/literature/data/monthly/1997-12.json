@@ -1,0 +1,279 @@
+{
+  "month": "1997-12",
+  "generated": "2026-07-13 02:59:42",
+  "total": 12,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 4,
+    "New_Virus": 3,
+    "Host_Virus_Interactions": 2,
+    "Control_Management": 2,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30861805",
+      "doi": "10.1094/PDIS.1997.81.12.1461B",
+      "title": "First Report of Tomato Yellow Leaf Curl Virus-Is in Spain: Coexistence of Two Different Geminiviruses in the Same Epidemic Outbreak.",
+      "abstract": "Epidemics of tomato yellow leaf curl have occurred annually in greenhouse- and field-grown tomato (Lycopersicon esculentum Mill.) crops in southern Spain since 1992 (2). The nucleotide sequences of two tomato yellow leaf curl virus (TYLCV) isolates from this region, TYLCV-M (GenBank accession no. Z25751) and TYLCV-Alm (L27708), have been determined and these isolates are closely related to isolates reported from Italy (X61153 and Z28390), suggesting the existence of a geographical cluster of closely related TYLCV isolates in the Western Mediterranean Basin (2). In June 1997, new and unusually severe symptoms of stunting, yellowing, and curling of leaflet margins, with a marked reduction in leaf size, were observed in some plants of a greenhouse-grown tomato crop in Almeria (southeastern Spain). Tomato plants showing milder symptoms similar to those previously described for TYLCV infection in that region (2) were also present in the same greenhouse. Total nucleic acids extracts from plants exhibiting both types of symptoms were analyzed by dot blot hybridization with a probe prepared by random priming on a 1,674-bp SalI fragment of the pSP95 clone of TYLCV-M (3). A strong reaction was obtained with the samples that showed mild symptoms, whereas a weak reaction was observed with the severely affected plants. Specific pairs of primers were prepared to amplify the complete pre-coat (V1) (MA10: 5'-ATGTGGGATCCTTTATTAAATG-3'; MA11: 5'-TCAGGGCTTCTGTACATTC-3') and C2 (MA12: 5'-TAAAGACTCTTAAAAAATGACC-3'; MA13: 5'-AATGCAATCTTCGTCACC-3') genes based on TYLCV-M sequence. With polymerase chain reaction (PCR), the expected fragments were amplified from extracts of both types of plants. The PCR products were submitted to single-strand conformation polymorphism (SSCP) analysis. Clearly distinguishable SSCP patterns were obtained: one for the plants with mild symptoms, identical to that of known TYLCV-M infected plants, and another for the plants with more severe symptoms. Further analyses done on tomato samples collected from the same area showed that both SSCP patterns were present simultaneously in several severely affected plants. The nucleotide sequences of the V1 and C2 PCR products from two samples differing in their SSCP pattern were obtained by direct sequencing, and compared with available TYLCV sequences. The sequences corresponding to the sample with mild symptoms were 100% identical to those previously reported for TYLCV-M. In contrast, the sequences from the sample that showed severe symptoms (GenBank accesion no. AF022219 for V1, and AF022220 for C2) were only 80 and 76% identical to TYLCV-M V1 and C2 genes, respectively, but were 99% identical to the sequence reported for an isolate of TYLCV-Is from Israel (X15656). Epidemics in tomato caused by TYLCV-Is have been recently reported from Portugal (1). Our results demonstrate that the unusually severe symptoms observed are associated with an isolate of TYLCV-Is that coexists in the field with the milder TYLCV previously reported from this area. This is the first report of the occurence of TYLCV-Is in Spain. References: (1) D. Louro et al. Plant Dis. 80:1079, 1996. (2) E. Noris et al. Arch. Virol. 135:165, 1994.",
+      "journal": "Plant disease",
+      "year": 1997,
+      "pub_date": "1997-12-01",
+      "authors": "Navas-Castillo J; Sánchez-Campos S; Díaz J A; Sáez-Alonso E; Moriones E",
+      "first_author": "Navas-Castillo J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato yellow leaf curl virus (TYLCV-Is)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "番茄 (Lycopersicon esculentum Mill.)",
+      "location": "西班牙东南部阿尔梅里亚",
+      "results": "严重症状植株V1和C2基因与以色列TYLCV-Is分离物同源性99%，轻微症状植株与TYLCV-M一致。两种株系在田间接合部位共存。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9365267",
+      "doi": "10.1093/nar/25.23.4850",
+      "title": "Synthesis and two-dimensional electrophoretic analysis of mixed populations of circular and linear RNAs.",
+      "abstract": "Spontaneous cleavage of the less abundant form of tobacco ringspot virus satellite RNA is readily reversible. Capitalizing on earlier observations by Feldstein and Bruening that small 'mini-monomer' RNAs derived from this molecule and containing little more than covalently attached ribozyme and substrate cleavage products are able to efficiently circularize, we have constructed a series of self-circularizing RNAs of precisely known size. Mixtures of linear and circular RNAs synthesized in vitro and containing 225-1132 nt could be completely resolved using a novel two-dimensional denaturing polyacrylamide gel electrophoresis system. Similar analyses of a complex mixture of coconut cadang-cadang viroid RNAs revealed the presence of relatively large amounts of a previously undescribed 'fast-slow' heterodimeric RNA species in infected palms. Only a single DNA template is required to prepare each pair of circular and linear RNA markers.",
+      "journal": "Nucleic acids research",
+      "year": 1997,
+      "pub_date": "1997-12-01",
+      "authors": "Feldstein P A; Levy L; Randles J W; Owens R A",
+      "first_author": "Feldstein P A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "烟草环斑病毒卫星RNA (tobacco ringspot virus satellite RNA), 椰子死亡类病毒 (coconut cadang-cadang viroid)",
+      "taxonomy": "未提及",
+      "host_plant": "椰子 (coconut)",
+      "location": "未提及",
+      "results": "成功构建225-1132 nt系列自环化RNA，线性和环状RNA可完全分辨；在感染椰子中检测到大量'快-慢'异二聚体RNA。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30861794",
+      "doi": "10.1094/PDIS.1997.81.12.1410",
+      "title": "Field Response of New Peanut Cultivar UF 91108 to Tomato Spotted Wilt Virus.",
+      "abstract": "Epidemics of spotted wilt, caused by tomato spotted wilt tospovirus (TSWV), were monitored in field plots of the new runner-type peanut (Arachis hypogaea) cv. UF 91108, in advanced breeding line F 84 × 9B-4-2-1-1-2-b2-B, in runner-type peanut cvs. Southern Runner and Florunner, and in Virginia-type cv. NC-V11 at two locations in 1994 and 1995. Epidemics of spotted wilt were suppressed in UF 91108 compared to the standard runner-type cv. Florunner. Final disease incidence, standardized area under the disease progress curve values, and final disease intensity ratings were lower in UF 91108 than in Florunner and were similar to those in the moderately resistant cv. Southern Runner. Results indicate that new cv. UF 91108 represents a new potential tool for management of spotted wilt in peanut production areas of the southeastern United States. UF 91108 is the first peanut cultivar in which an oil composition of approximately 65% oleic acid is combined with a moderate level of field resistance to TSWV. Epidemics of spotted wilt also were suppressed in breeding line F 84 × 9B-4-2-1-1-2-b2-B. Across the four tests, the effects of NC-V11 on epidemic development, final incidence, and spotted wilt intensity ratings were not consistent relative to the other genotypes. Use of final disease intensity ratings provided separation of the genotypes similar to use of final incidence of spotted wilt. Assessment values by these two methods were highly correlated. In three of four experiments, final disease intensity ratings were more closely correlated with pod yield than was final incidence. The new intensity rating method described in this paper requires much less time and effort than determining disease incidence and may be a practical alternative to individual plant assessment for characterization of genotype responses to TSWV.",
+      "journal": "Plant disease",
+      "year": 1997,
+      "pub_date": "1997-12-01",
+      "authors": "Culbreath A K; Todd J W; Gorbet D W; Shokes F M; Pappu H R",
+      "first_author": "Culbreath A K",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Tomato spotted wilt virus (TSWV)",
+      "taxonomy": "",
+      "host_plant": "花生 (Arachis hypogaea)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9509425",
+      "doi": "",
+      "title": "Expression of a cDNA encoding Phytolacca insularis antiviral protein confers virus resistance on transgenic potato plants.",
+      "abstract": "To develop an antiviral agent and virus-resistant plants, a cDNA clone encoding Phytolacca insularis antiviral protein (PIP) was isolated from a cDNA library constructed with poly(A)+ RNA purified from leaves of P. insularis. The PIP cDNA contains an open reading frame encoding 307 amino acids. The deduced amino acid sequence includes a putative signal sequence of 22 amino acids at the N-terminus. The amino acid sequence of PIP shares 84% homology with that of the pokeweed antiviral protein (PAP). In addition, the mature PIP exhibits the conserved putative active site found in other ribosome-inactivating proteins (RIPs). Recombinant PIP (rPIP) synthesized in Escherichia coli inhibits protein synthesis in vitro in rabbit reticulocyte lysate through the N-glycosidase activity in a similar manner with other RIPs. Local lesion assays with purified rPIP revealed that it inhibits infection of various viruses to plants. Transgenic potato plants expressing the PIP cDNA under the control of the cauliflower mosaic virus 35S promoter are resistant to viruses, such as potato virus X, potato virus Y, and potato leafroll virus. These results suggest that the PIP cDNA could be used for the development of an antiviral agent and transgenic plants resistant against a broad spectrum of plant viruses infecting through both mechanical and aphid transmission.",
+      "journal": "Molecules and cells",
+      "year": 1997,
+      "pub_date": "1997-12-31",
+      "authors": "Moon Y H; Song S K; Choi K W; Lee J S",
+      "first_author": "Moon Y H",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "马铃薯X病毒、马铃薯Y病毒、马铃薯卷叶病毒",
+      "taxonomy": "",
+      "host_plant": "马铃薯",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9390421",
+      "doi": "10.1094/MPMI.1997.10.9.1065",
+      "title": "Phenotypic variation in transgenic tobacco expressing mutated geminivirus movement/pathogenicity (BC1) proteins.",
+      "abstract": "Tobacco plants were transformed with the movement protein (pathogenicity) gene (BC1) from tomato mottle geminivirus (TMoV), using Agrobacterium-mediated transformation. Different transgenic tobacco lines that expressed high levels of the BC1 protein had phenotypes ranging from plants with severe stunting and leaf mottling (resembling geminivirus symptoms) to plants with no visible symptoms. The sequence data for the BC1 transgene from the transgenic plants with the different phenotypes indicated an association of spontaneously mutated forms of the BC1 gene in the transformed tobacco with phenotype variations. One mutated transgene associated with an asymptomatic phenotype had a major deletion at the C terminus of 119 amino acid residues with a recombination resulting in the addition of 26 amino acid residues of unidentified origin. This asymptomatic, mutated BC1 attenuated the phenotypic expression of the symptomatic BC1 in a tobacco line containing both copies of the BC1 gene. Another mutated form of the BC1 gene amplified from an asymptomatic, multicopy transgenic tobacco plant did not induce symptoms when transiently expressed in tobacco via a virus vector. The symptom attenuation in the transgenic tobacco by the asymptomatic BC1 may involve trans-dominant negative interference.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 1997,
+      "pub_date": "1997-12-01",
+      "authors": "Duan Y P; Powell C A; Purcifull D E; Broglio P; Hiebert E",
+      "first_author": "Duan Y P",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "番茄斑驳双生病毒（Tomato mottle geminivirus, TMoV）",
+      "taxonomy": "",
+      "host_plant": "烟草",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19274182",
+      "doi": "",
+      "title": "Cactodera salina n. sp. from the Estuary Plant, Salicornia bigelovii, in Sonora, Mexico.",
+      "abstract": "Cactodera salina n. sp. (Heteroderinae) is described from roots of the estuary plant Salicornia bigelovii (Chenopodiaceae), in Puerto Pefiasco, Sonora, Mexico, at the northern tip of the Sea of Cortez. The halophyte host is grown experimentally for oilseed in plots flooded daily with seawater. Infected plants appear to be adversely affected by C. salina relative to plants in noninfested plots. Cactodera salina extends the morphological limits of the genus. Females and cysts have a very small or absent terminal cone and deep cuticular folds in a zigzag pattern more typical of Heterodera and Globodera than of Cactodera spp. Many Cactodera spp. have a tuberculate egg surface, whereas C. salina shares the character of a smooth egg with C. amaranthi, C. weissi, and C. acnidae. Only C. milleri and C. acnidae have larger cysts than C. salina. Face patterns of males and second-stage juveniles, as viewed with scanning electron microscopy, reveal the full complement of six lip sectors as in other Cactodera spp. Circumfenestrae of C. salina are typical for the genus.",
+      "journal": "Journal of nematology",
+      "year": 1997,
+      "pub_date": "1997-12-01",
+      "authors": "Baldwin J G; Mundo-Ocampo M; McClure M A",
+      "first_author": "Baldwin J G",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9395402",
+      "doi": "10.1126/science.278.5345.1963",
+      "title": "NDR1, a pathogen-induced component required for Arabidopsis disease resistance.",
+      "abstract": "Plant disease resistance (R) genes confer an ability to resist infection by pathogens expressing specific corresponding avirulence genes. In Arabidopsis thaliana, resistance to both bacterial and fungal pathogens, mediated by several R gene products, requires the NDR1 gene. Positional cloning was used to isolate NDR1, which encodes a 660-base pair open reading frame. The predicted 219-amino acid sequence suggests that NDR1 may be associated with a membrane. NDR1 expression is induced in response to pathogen challenge and may function to integrate various pathogen recognition signals.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 1997,
+      "pub_date": "1997-12-12",
+      "authors": "Century K S; Shapiro A D; Repetti P P; Dahlbeck D; Holub E; ... (+1)",
+      "first_author": "Century K S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "23195586",
+      "doi": "10.1016/S0944-7113(97)80045-1",
+      "title": "In vitro activity of extracts of Persea americana leaves on acyclovir-resistant and phosphonoacetic resistant Herpes simplex virus.",
+      "abstract": "The lyophilized aqueous crude extract (LACE) from leaves of Persea americana (Lauraceae) species showed a strong inhibitory effect on acyclovir (ACG(r)4 and dlsp TK mutants) and PAA-resistant (PAA(r)5 mutant) herpes simplex virus. After exhaustive washing of LACE using methanol, the soluble fraction was chromatographed on a reverse-phase column giving 11 fractions that were revealed by thin-layer chromatography. Analysis of the antiviral effect of the fractions showed the extract contained compounds that were able to inhibit extracellular virus and the replication of resistant acyclovir HSV. The virucidal effect was concentrated from fraction 4 up to 8. Fraction 7 mainly contains the flavonoid isoquercitrin, and fraction 8 the flavonoid quercitrin. The flavonoid afzelin that is the major substance present in the fraction 9 showed virustatic effect with no virucidal effect. These results show P. americana is a potential plant extract for treatment of herpes simplex virus infections either alone or associated with acyclovir.",
+      "journal": "Phytomedicine : international journal of phytotherapy and phytopharmacology",
+      "year": 1997,
+      "pub_date": "1997-12-01",
+      "authors": "Miranda M M; Almeida A P; Costa S S; Santos M G; Lagrota M H; ... (+1)",
+      "first_author": "Miranda M M",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9426592",
+      "doi": "10.1023/a:1005871023944",
+      "title": "Induction of a ribosome-inactivating protein upon environmental stress.",
+      "abstract": "Transcripts of altered abundance in RNA from unstressed and 500 mm salt-shocked Mesembryanthemum crystallinum (common ice plant) were detected by reverse-transcription differential display (RT-DD). One transcript, Rip1, was of very low abundance in unstressed plants and was strongly induced by stress. RNA blot hybridizations showed strong induction and a diurnal rhythm of transcript abundance with a maximum each day around the middle of the light phase. Rip1 encodes a reading frame of 289 amino acids (molecular mass 32,652), RIP1, with homology to single-chain ribosome inactivating proteins (rRNA N-glycosidases). The deduced amino acid sequence is 31.7% identical to pokeweed antiviral protein RIP-C (overall similarity 66.5%) with highest identity in domains of documented functional importance. RT-DD also detected mRNA for pyruvate, orthophosphate dikinase (PPDK) which has already been shown to be stress-induced in the ice plant [16]. RIP1, expressed in Escherichia coli, showed rRNA N-glycosidase activity against ice plant and rabbit reticulocyte ribosomes. The induction of Rip1 coincides with the transition period during which global changes in translation lead to adaptation of the ice plant to salt stress.",
+      "journal": "Plant molecular biology",
+      "year": 1997,
+      "pub_date": "1997-12-01",
+      "authors": "Rippmann J F; Michalowski C B; Nelson D E; Bohnert H J",
+      "first_author": "Rippmann J F",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12348320",
+      "doi": "",
+      "title": "Traditional healers, traditional hospitals and HIV / AIDS: a case study in KwaZulu-Natal.",
+      "abstract": "",
+      "journal": "AIDS analysis Africa",
+      "year": 1997,
+      "pub_date": "1997-12-01",
+      "authors": "Munk K",
+      "first_author": "Munk K",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19274277",
+      "doi": "",
+      "title": "Effect of Compost and Maize Cultivars on Plant-parasitic Nematodes.",
+      "abstract": "Effects of yard waste compost and maize (Zea mays) cultivar on population densities of plant-parasitic nematodes were examined in four experiments in north Florida. In one experiment, eight maize cultivars were evaluated; the other three experiments involved split-plot designs with compost treatments as main plots and maize cultivars as subplots. The three compost treatments used in these experiments were: 269 mt/ha of a yard-waste compost applied to the soil surface as a mulch, 269 mt/ha of compost incolporated into the soil, and an unamended control. No interactions between compost treatment and cultivar occurred in any experiment. Effects of compost treatment on Mesocriconema spp., Meloidogyne incognita, and Pratylenchus spp. were inconsistent, whereas significant effects of compost on population densities of Paratrichodorus minor were found on four of six sampling occasions. Cultivar affected final population densities (Pf) of M. incognita. In two tests, Pf of M. incognita on a Florida subtropical experimental hybrid (Howard III) were only 36% and 23% of Pf on the standard tropical hybrid (Pioneer Brand X304C). In an integrated approach to management of nematodes in maize, the effects of compost amendment and culfivar choice acted independently. Apparently, cultivar choice is more important than amendment with yard waste compost for management of M. incognita population levels in a maize rotation crop.",
+      "journal": "Journal of nematology",
+      "year": 1997,
+      "pub_date": "1997-12-01",
+      "authors": "McSorley R; Gallaher R N",
+      "first_author": "McSorley R",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18945022",
+      "doi": "10.1094/PHYTO.1997.87.12.1226",
+      "title": "Rhizopus head rot of confectionery sunflower: effects on yield quantity and quality and implications for disease management.",
+      "abstract": "ABSTRACT The effects of Rhizopus head rot, caused by Rhizopus oryzae, on the yield of confectionery sunflower and its quality were studied in field experiments conducted from 1994 to 1996. The extent of yield loss was related to the crop growth stage at inoculation. When heads were inoculated at the budding stage, loss was not apparent, because inoculated heads were not infected. When inoculated at the anthesis stage, loss was relatively high (42.5 to 99.1%), and both the number of achenes per head and the individual achene weight were reduced. When heads were inoculated at the seed development stage, yield was not reduced significantly (although the entire receptacle was rotted). Effects of Rhizopus head rot on measures of yield quality were examined as well. Inoculation with R. oryzae did not affect the size of the achenes at any crop growth stage. In contrast, the incidence of discolored achenes (an external sign of nutmeats with a bitter off-flavor) was affected by the disease at all crop growth stages. A survey in eight commercial fields from 1992 to 1996 found that, by the end of the season, incidence of disease ranged from 2.3 to 17.4%. However, since disease intensified late, resultant yield losses were minor and did not exceed 3.1%. Loss figures were estimated by means of a model that was developed and validated in the field experiments. The disease did affect the incidence of discolored achenes. Thus, the conclusion drawn is that the effects of Rhizopus head rot in confectionery sunflower on crop yield is of minimal concern, at least when disease intensifies late, as was the case in the studied fields, but management of the disease should be considered in some situations. The objectives would be to prevent a reduction in yield quality, not yield quantity.",
+      "journal": "Phytopathology",
+      "year": 1997,
+      "pub_date": "1997-12-01",
+      "authors": "Shtienberg D",
+      "first_author": "Shtienberg D",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

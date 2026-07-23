@@ -1,0 +1,125 @@
+{
+  "month": "1993-07",
+  "generated": "2026-07-13 02:59:42",
+  "total": 5,
+  "by_category": {
+    "Host_Virus_Interactions": 3,
+    "New_Virus": 1,
+    "Partitiviridae": 1,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8336129",
+      "doi": "10.1099/0022-1317-74-7-1467",
+      "title": "Nucleotide sequence of beet cryptic virus 3 dsRNA2 which encodes a putative RNA-dependent RNA polymerase.",
+      "abstract": "The nucleotide sequence of a DNA copy of beet cryptic virus 3 double-stranded RNA2 was determined, and one strand was found to contain a single long open reading frame of 1431 nucleotides which encoded a putative polypeptide containing 478 amino acid residues with an M(r) of 54.9K. This polypeptide contained conserved amino acid sequence motifs found in the genes that encode putative RNA-dependent RNA polymerases of other RNA viruses.",
+      "journal": "The Journal of general virology",
+      "year": 1993,
+      "pub_date": "1993-07-01",
+      "authors": "Xie W S; Antoniw J F; White R F",
+      "first_author": "Xie W S",
+      "categories": [
+        "New_Virus",
+        "Partitiviridae"
+      ],
+      "virus_name": "Beet cryptic virus 3 (甜菜潜隐病毒3)",
+      "taxonomy": "未提及",
+      "host_plant": "甜菜 (beet)",
+      "location": "未提及",
+      "results": "dsRNA2含1431 nt的ORF，编码478 aa蛋白，该蛋白含有RNA病毒RNA聚合酶的保守氨基酸基序。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "8220470",
+      "doi": "10.1046/j.1365-313x.1993.04010125.x",
+      "title": "BPF-1, a pathogen-induced DNA-binding protein involved in the plant defense response.",
+      "abstract": "The mechanisms by which plants restrict the growth of pathogens include transient activation of numerous defense-related genes. Box P is a putative cis-acting element of a distinct group of such genes, including those encoding the enzyme phenylalanine ammonialyase (PAL). A DNA-binding activity to Box P was identified in nuclear extracts from cultured parsley cells and a cDNA encoding the protein BPF-1 (Box P-binding Factor) partially characterized. BPF-1 binds to this element with specificity similar to that of the binding activity in nuclear extracts. BPF-1 mRNA accumulates rapidly in elicitor-treated parsley cells and around fungal infection sites on parsley leaves. This accumulation is, at least partly, due to a rapid and transient increase in the transcription rate of BPF-1. Moreover, tight correlation between the relative amounts of BPF-1 and PAL mRNAs was observed in different organs of a parsley plant. These results are consistent with the hypothesis that BPF-1 is involved in disease resistance by modulating plant defense gene expression.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 1993,
+      "pub_date": "1993-07-01",
+      "authors": "da Costa e Silva O; Klein L; Schmelzer E; Trezzini G F; Hahlbrock K",
+      "first_author": "da Costa e Silva O",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8325975",
+      "doi": "10.1172/JCI116537",
+      "title": "Immunologic effects of national cholesterol education panel step-2 diets with and without fish-derived N-3 fatty acid enrichment.",
+      "abstract": "Reductions in dietary fat, saturated fat, and cholesterol have been recommended to reduce the risk of heart disease in our society. The effects of these modifications on human cytokine production and immune responses have not been well studied. 22 subjects > 40 yr of age were fed a diet approximating that of the current American (14.1% of calories as saturated fatty acids, [SFA], 14.5% monounsaturated fatty acids [MUFA], 6.1% [n-6] polyunsaturated fatty acids [PUFA], 0.8% [n-3] PUFA, and 147 mg cholesterol/1,000 calories) for 6 wk, after which time they consumed (11 in each group) one of the two low-fat, low-cholesterol, high-PUFA diets based on National Cholesterol Education Panel (NCEP) Step 2 recommendations (4.0-4.5% SFA, 10.8-11.6% MUFA, 10.3-10.5% PUFA, 45-61 mg cholesterol/1,000 calories) for 24 wk. One of the NCEP Step 2 diets was enriched in fish-derived (n-3) PUFA (low-fat, high-fish: 0.54% or 1.23 g/d eicosapentaenoic acid [EPA] and docosahexaenoic acid [DHA] [121-188 g fish/d]) and the other low in fish-derived (n-3) PUFA (low-fat, low-fish [0.13% or 0.27 g/d EPA and DHA] [33 g fish/d]). Measurements of in vivo and in vitro indexes of immune responses were taken after each dietary period. Long-term feeding of low-fat, low-fish diet enriched in plant-derived PUFA increased blood mononuclear cell mitogenic response to the T cell mitogen Con A, IL-1 beta, and TNF production and had no effect on delayed-type hypersensitivity skin response, IL-6, GM-CSF, or PGE2 production. In contrast, the low-fat, high-fish diet significantly decreased the percentage of helper T cells whereas the percentage of suppressor T cells increased. Mitogenic responses to Con A and delayed-type hypersensitivity skin response as well as the production of cytokines IL-1 beta, TNF, and IL-6 by mononuclear cells were significantly reduced after the consumption of the low-fat, high-fish diet (24, 40, 45, 35, and 34%, respectively; P < 0.05 by two-tailed Student's t test except for IL-1 beta and TNF, which is by one-tailed t test). Our data are consistent with the concept that the NCEP Step 2 diet that is high in fish significantly decreases various parameters of the immune response in contrast to this diet when it is low in fish. Such alterations may be beneficial for the prevention and treatment of atherosclerotic and inflammatory diseases but may be detrimental with regard to host defense against invading pathogens.",
+      "journal": "The Journal of clinical investigation",
+      "year": 1993,
+      "pub_date": "1993-07-01",
+      "authors": "Meydani S N; Lichtenstein A H; Cornwall S; Meydani M; Goldin B R; ... (+3)",
+      "first_author": "Meydani S N",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8267852",
+      "doi": "",
+      "title": "[Collection, evaluation and utilization of local varieties of Fritillaria thunbergii Miq].",
+      "abstract": "Nine local varieties of Fritillaria thunbergii were collected and their plant morphology, phenology, disease resistance yield characters and breeding rate were studied. A new and better variety (Duozhi) was found and put to use.",
+      "journal": "Zhongguo Zhong yao za zhi = Zhongguo zhongyao zazhi = China journal of Chinese materia medica",
+      "year": 1993,
+      "pub_date": "1993-07-01",
+      "authors": "Wang Z A",
+      "first_author": "Wang Z A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8354604",
+      "doi": "10.1016/0020-7519(93)90044-y",
+      "title": "The role of nematophagous fungi in the biological control of nematode parasites of livestock.",
+      "abstract": "The control of nematode parasites of livestock is presently based entirely on anthelmintic treatment and grazing management. On their own, these methods are not sustainable because parasites invariably develop resistance to anthelmintics and because of increasing public concern about chemical residues in livestock products and the environment. Although alternative, non-chemotherapeutic control strategies, such as vaccines and genetic selection for resistance are the focus of considerable research activity worldwide, biological control of nematode parasites has been virtually ignored. The little work that has been done is restricted largely to western Europe and involves virtually just one fungal species, namely Arthrobotrys oligospora. More recent studies indicate other known nematophagous fungal species are more efficient predators of infective larvae in sheep faeces than A. oligospora, and others have a greater capacity to survive passage through the gastrointestinal tract of ruminants. These findings plus the relatively sparse numbers of microbial competitors in the fresh faecal environment, compared with the plant rhizosphere where biological control of plant parasites is proving a particularly intractable problem, engenders optimism that the biological control of animal parasitic nematodes may become a practical reality. Such control will never be a substitute for chemotherapy, where the primary purpose is worm removal from the host, but should be incorporated together with other options into integrated pest management systems to provide sustainable nematode control of livestock into the twenty-first century.",
+      "journal": "International journal for parasitology",
+      "year": 1993,
+      "pub_date": "1993-07-01",
+      "authors": "Waller P J; Larsen M",
+      "first_author": "Waller P J",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

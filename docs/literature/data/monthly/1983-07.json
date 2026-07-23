@@ -1,0 +1,79 @@
+{
+  "month": "1983-07",
+  "generated": "2026-07-13 02:59:42",
+  "total": 3,
+  "by_category": {
+    "New_Virus": 1,
+    "Antiviral_Resistance_Genes": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "18639028",
+      "doi": "10.1016/0042-6822(83)90334-3",
+      "title": "Human leukocyte interferon and the antiviral factor (AVF) from virus-infected plants stimulate plant tissues to produce nucleotides with antiviral activity.",
+      "abstract": "Leaves of Nicotiana glutinosa and tobacco, as well as tobacco callus cultures, were treated with the plant antiviral factor AVF or with a purified subspecies of human leukocyte interferon. After incubation, a fraction containing short oligonucleotides was extracted directly from the plant tissue. In addition, a synthetase preparation was fractionated from treated tissues, which polymerized ATP in the presence of polyinosinic, polycytidylic acid (poly(I:C)). The various plant nucleotides were applied to tobacco mosaic virus (TMV)-infected leaf disks, the TMV content of which were determined by an enzyme-linked immunosorbent assay. The nucleotide fraction extracted directly from TMV-infected leaves exhibited a considerable antiviral activity, whereas similar fractions from AVF- or interferon-treated leaves did not, even though an antiviral state was induced in the tissue by these agents. However, when the synthetase fraction from TMV-infected, AVF-treated, or interferon-treated tissues was incubated with ATP and poly(I:C), the resultant, heat-stable, acid-soluble, polymerized ATP markedly inhibited TMV multiplication. It is concluded that the presence of double-stranded RNA is obligatory for the formation of the antiviral nucleotides. The analogy to interferon-induced resistance in animal tissues is discussed.",
+      "journal": "Virology",
+      "year": 1983,
+      "pub_date": "1983-07-15",
+      "authors": "Reichman M; Devash Y; Suhadolnik R J; Sela I",
+      "first_author": "Reichman M",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒 (Tobacco mosaic virus, TMV)",
+      "taxonomy": "",
+      "host_plant": "烟草 (Nicotiana glutinosa 和 tobacco)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19295818",
+      "doi": "",
+      "title": "Description of Thecavermiculatus andinus n.sp. (Meloidoderidae), a Round Cystoid Nematode from the Andes Mountains of Peru.",
+      "abstract": "Thecavermiculatus andinus n.sp. is described and illustrated from Oxalis tuberosa originally collected in the vicinity of Lake Titicaca high in the Andes mountains of southern Peru. This new species differs markedly front the other two species in the genus, especially in having a much greater female vulval-anal distance and annules with lined punctation on most of the female body with a lacelike pattern restricted to the posterior portion, particularly at the vulva and anus which do not protrude. Females are essentially spherical with protruding neck, white to yellowish in color, and can easily be mistaken for potato cyst nematodes. Among the dozen or more known weed and crop host plants are potato and eggplant. In order to accommodate this new species, the genus Thecavermieulatus is emended. A key to the species of this genus is presented.",
+      "journal": "Journal of nematology",
+      "year": 1983,
+      "pub_date": "1983-07-01",
+      "authors": "Golden A M; Franco J; Jatala P; Astogaza E",
+      "first_author": "Golden A M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "6193415",
+      "doi": "10.1128/mcb.3.7.1295-1309.1983",
+      "title": "Transient expression of a mouse alpha-fetoprotein minigene: deletion analyses of promoter function.",
+      "abstract": "The constitutive transcription of a mouse alpha-fetoprotein (AFP) minigene was examined during the transient expression of AFP-simian virus 40-pBR322 recombinant DNAs introduced into HeLa cells by Ca3(PO4)2 precipitation. We tested three constructs, each of which contains the AFP minigene and pBR322 DNAs inserted in the late region of simian virus 40 and found that the relative efficiency of AFP gene expression was dependent on the arrangement of the three DNA elements in the vector. The transcripts begin at the authentic AFP cap site and are properly spliced and polyadenylated. To define a sequence domain in the 5' flanking region of the AFP gene required for constitutive expression, sequential 5' deletion mutants of the AFP minigene were constructed and introduced into HeLa cells. All AFP deletion mutants which retained at least the TATA motif located 30 base pairs upstream from the cap site were capable of directing accurate and efficient AFP transcription. However, when the TATA sequence was deleted, no accurately initiated AFP transcripts were detected. These results are identical to those obtained from in vitro transcription of truncated AFP 5' deletion mutant templates assayed in HeLa cell extracts. The rate of AFP transcription in vivo was unaffected by deletion of DNA upstream of the AFP TATA box but was greatly affected by the distance between the simian virus 40 control region and the 5' end of the gene. The absence of any promoter activity upstream of the TATA box in this assay system is in contrast to what has been reported for several other eucaryotic structural genes in a variety of in vivo systems. A sequence comparison between the 5' flanking region of the AFP gene and these genes suggested that the AFP gene lacks those structural elements found to be important for constitutive transcription in vivo. Either the AFP gene lacks upstream promoter function in the 5' flanking DNA contained within the minigene, or the use of a viral vector in a heterologous system precludes its identification.",
+      "journal": "Molecular and cellular biology",
+      "year": 1983,
+      "pub_date": "1983-07-01",
+      "authors": "Scott R W; Tilghman S M",
+      "first_author": "Scott R W",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Vector-Host DB — Help</title>
+<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;line-height:1.8}nav{background:linear-gradient(135deg,#1a3a5c,#2c6e49);color:#fff;height:46px;display:flex;align-items:center;padding:0 16px;gap:4px;position:sticky;top:0;z-index:100}nav .brand{font-weight:700;font-size:15px;margin-right:12px;color:#fff;text-decoration:none}nav a{color:rgba(255,255,255,.75);text-decoration:none;padding:5px 11px;border-radius:4px;font-size:12px}nav a:hover,nav a.on{color:#fff;background:rgba(255,255,255,.15)}nav .sep{color:rgba(255,255,255,.25);margin:0 2px;font-size:14px;user-select:none}nav .spacer{flex:1}.hero{background:linear-gradient(135deg,#134e6f,#2c6e49);color:#fff;padding:32px 24px;text-align:center}.hero h1{font-size:24px}.hero p{font-size:13px;opacity:.85;margin-top:4px}.wrap{max-width:900px;margin:0 auto;padding:24px 20px}h2{font-size:18px;color:#1a5276;margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid #e8f4ea}h3{font-size:15px;color:#2c6e49;margin:18px 0 6px}p{font-size:14px;color:#444;margin-bottom:10px}ol,ul{margin:8px 0 12px 20px;font-size:14px;color:#444}li{margin-bottom:4px}code{background:#e8f4ea;padding:1px 5px;border-radius:3px;font-size:13px}.tip{background:#e8f4ea;border-left:3px solid #2c6e49;padding:10px 14px;margin:12px 0;border-radius:4px;font-size:13px}footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}</style></head><body>
+<nav><a href="/" class="brand">Plant Virus DB</a><span class="sep">|</span><a href="/reference/">Reference</a><a href="/primers/">Primers</a><a href="/photos/">Photos</a><a href="/vector/">Vector</a><a href="/te/">TE·EVE</a><a href="/genes/">Genes</a><span class="sep">|</span><a href="/metabuli/">Metabuli</a><a href="/explorer/">Explorer</a><a href="/pamirdb/">PV-miRNA</a><span class="sep">|</span><a href="/literature/">Literature</a><a href="/knowledge/">Knowledge</a><span class="spacer"></span><a href="/help/" class="on">Help</a></nav>
+<div class="hero"><h1>Vector-Host DB</h1><p>Insect vector and plant host interaction network for plant viruses</p></div>
+
+<div style="max-width:900px;margin:0 auto;padding:0 20px 16px">
+  <img src="/help/images/vector.png" alt="vector.html screenshot" style="width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);border:1px solid #d0d8e0">
+</div>
+
+<div style="max-width:900px;margin:0 auto;padding:0 20px 8px">
+  <img src="/help/images/vector_main.png" alt="Vector-Host DB — Vector-Host Database" style="width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);border:1px solid #d0d8e0;margin-bottom:4px">
+  <p style="text-align:center;font-size:12px;color:#888;margin-bottom:12px">Vector-Host DB — Vector-Host Database</p>
+</div>
+
+<div class="wrap">
+
+<h2>Overview</h2>
+<p>Vector-Host DB integrates insect vector and plant host association data for <b>1,806 viruses</b>, unifying records from the WUR Plant Virus Transmission Database and EPPO Global Database through a dual-source integration strategy. Each association includes key parameters such as vector taxonomy, transmission mode, acquisition period, and inoculation period.</p>
+
+<h2>Quick Start</h2>
+<ol>
+  <li>Open <code>/vector/</code> and enter a virus name in the search box</li>
+  <li>View the vector list for that virus, including vector species, taxonomic information, and transmission parameters</li>
+  <li>Filter by <b>vector type</b>: aphid, whitefly, thrips, leafhopper, mealybug, etc.</li>
+  <li>View <b>transmission modes</b>: persistent, non-persistent, semi-persistent</li>
+  <li>Browse the <b>host plant range</b> for that virus to understand its natural host spectrum</li>
+</ol>
+
+<h2>Reference: Data Fields</h2>
+<table style="width:100%;border-collapse:collapse;margin:12px 0;font-size:13px">
+<tr style="background:#e8f4ea"><th style="padding:8px;text-align:left">Field</th><th style="padding:8px;text-align:left">Description</th></tr>
+<tr><td style="padding:8px;border-bottom:1px solid #eee">Virus name</td><td style="padding:8px;border-bottom:1px solid #eee">Virus species name; links to Reference DB</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid #eee">Vector species</td><td style="padding:8px;border-bottom:1px solid #eee">Vector insect species (scientific name)</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid #eee">Vector taxonomy</td><td style="padding:8px;border-bottom:1px solid #eee">Vector family/order classification</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid #eee">Transmission mode</td><td style="padding:8px;border-bottom:1px solid #eee">persistent / semi-persistent / non-persistent</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid #eee">Acquisition period</td><td style="padding:8px;border-bottom:1px solid #eee">Acquisition feeding period (minutes/hours)</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid #eee">Inoculation period</td><td style="padding:8px;border-bottom:1px solid #eee">Inoculation access period</td></tr>
+<tr><td style="padding:8px">Host plant</td><td style="padding:8px">Host plant species name</td></tr>
+</table>
+
+<div class="tip"><b>Tip</b>: Persistently transmitted viruses (e.g. luteoviruses) typically require hours for acquisition, while non-persistently transmitted viruses (e.g. potyviruses) require only seconds to minutes of probing for acquisition. Understanding transmission modes is crucial for designing control strategies.</div>
+
+</div>
+<footer>Plant Virus Database Platform · Help</footer>
+<script src="/reference/i18n.js"></script>
+<script>PVDB_i18n.init({navSelector:"nav"});</script>
+</body></html>

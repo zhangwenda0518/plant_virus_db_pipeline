@@ -1,0 +1,241 @@
+{
+  "week": "2025-W24",
+  "start": "2025-06-09",
+  "end": "2025-06-15",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 21,
+  "by_category": {
+    "Control_Management": 7,
+    "New_Virus": 5,
+    "Antiviral_Resistance_Genes": 4,
+    "Biotechnology_Applications": 3,
+    "Host_Virus_Interactions": 3,
+    "Viral_Diversity_Ecology": 1,
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "40435295",
+      "doi": "10.1021/acs.jafc.5c02214",
+      "title": "Exogenous Thiamine Regulates Multiple Plant Immunity-Associated Pathways to Inhibit MCMV Infection.",
+      "abstract": "Thiamine, also known as vitamin B1, serves as an inducer that strengthens plants and elicits defense responses to enhance resistance against pathogens. Currently, the antiviral mechanism of thiamine remains unclear. Here, we used maize chlorotic mottle virus (MCMV) as a model to elucidate the antiviral mechanism of thiamine. We found that thiamine application improved maize resistance to the MCMV. Transcriptome sequencing indicated that MCMV infection influenced the expression of thiamine synthesis pathway-related genes. Besides, MCMV P31 interacted with the key thiamine synthesis factor, ZmTHIC in cytoplasm, and blocked ZmTHIC entering into chloroplast. Using the cucumber mosaic virus (CMV) induced gene silencing system, we silenced ZmTHIC in maize, resulting in higher accumulation of MCMV compared to the control plants. LC-MS analysis revealed that both ZmTHIC silencing and MCMV infection reduced the thiamine content in maize. Thiamine treatment prior to MCMV infection enhanced plant defense responses by activating the MAPK pathway and promoting lignin synthesis in plant cell walls, ultimately inhibiting MCMV infection. Taking together, our results suggest that thiamine induced the synthesis of lignin and MAPK pathway to enhance the systemic immunity, promoting antiviral defense in maize. MCMV P31 hijacked ZmTHIC and prevented it from entering the chloroplasts, thereby inhibiting the synthesis of thiamine to dampen the synthesis of lignin and MAPK pathway to dampen the plant immunity. This research provides new insights into the antiviral mechanism of thiamine.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2025,
+      "pub_date": "2025-06-11",
+      "authors": "Sun Shuhao; Han Xiaoyu; Zhang Yuyang; Xie Lina; Li Honglian; ... (+6)",
+      "first_author": "Sun Shuhao",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "玉米褪绿斑驳病毒 (MCMV)",
+      "taxonomy": "",
+      "host_plant": "玉米",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40440614",
+      "doi": "10.1021/acs.jafc.4c11009",
+      "title": "Quinazoline Alkaloids for Plant Protection: Design, Synthesis, and Biological Evaluation of Novel Deoxyvasicinone Derivatives.",
+      "abstract": "For many years, plant diseases brought about by viruses plus fungi have led to significant declines in crop yield as well as quality, highlighting the urgent need for the development of effective antiviral as well as fungicidal agents. Quinazolinone alkaloids have an important role in drug research and development (R&D). Herein, alkaloid deoxyvasicinone was chosen as the mother structure; deoxyvasicinone derivatives were designed, prepared, and evaluated for their antiviral and antifungal activities. The antiviral activity against tobacco mosaic virus (TMV) suggested most compounds displayed better inhibitory effects compared to ribavirin; especially, compounds 3a, 3d, 4, and 5 with significantly higher antiviral activities (AAs) (EC50 values: 113-208 μg/mL) than ningnanmycin (EC50 value: 229 μg/mL) emerged as novel antiviral leads. Compound 4 was chosen for the antiviral action mechanism study, which suggested that it can interfere with the formation of 20S coat protein (CP) discs, thereby affecting the TMV particles' assembly. In vitro antifungal activity research suggested most compounds exhibited wide-spectrum fungicidal activities (FAs) at a test concentration of 50 μg/mL. Further pesticide-likeness research exhibited that compounds 3a, 3d, 4, and 5 showed pesticide-likeness with the potential to be developed as pesticide candidates. This research establishes a basis for the use of deoxyvasicinone alkaloids in green pesticides.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2025,
+      "pub_date": "2025-06-11",
+      "authors": "Li Tingyi; Xu Yubin; Liu Sijia; Wu Yuliang; Lu Aidang; ... (+4)",
+      "first_author": "Li Tingyi",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒 (TMV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40504317",
+      "doi": "10.1007/s11033-025-10702-0",
+      "title": "A novel interspecific-recombinant monopartite begomovirus emerging in tomato (Solanum lycopersicum L.) genotypes with Ty-resistant genes.",
+      "abstract": "[BACKGROUND] Begomoviruses pose the deadliest threat to the productivity of most field crops especially vegetables like tomatoes. Mixed infections of begomoviruses under natural conditions often promote the frequent evolution of new species through genetic recombination between their genomes. Ty-genes of tomato are reported to provide resistance/tolerance to these begomoviruses. [METHODS AND RESULTS] In this study, PCR-based screening of 17 tomato genotypes with different Ty-gene combinations, along with a susceptible check cv. Pusa Ruby showed the presence of a weed-infecting begomovirus, croton yellow vein mosaic virus (CYVMV) in most of the (13 out of 18) genotypes tested. The complete genome of the virus was cloned and sequenced, revealing a maximum sequence identity of 90.6% with a different begomovirus species croton yellow vein leaf curl virus (CYVLCV). However, analysis of individual open reading frame (ORF) showed that ORF C1, C4, and the left intergenic region of the virus showed maximum sequence identity with tobacco curly shoot virus (TbCSV). ORF V1, V2, C2, and the right intergenic region showed maximum sequence identity with CYVMV. Phylogenetic profiling followed by recombination analysis showed the presence of recombination breakpoints in the viral genome. [CONCLUSION] Results indicated that the present virus may have evolved through interspecific recombination between CYVMV and TbCSV. The name tomato leaf curl Ty Pusa virus (ToLCTyPV) was proposed for the newly identified virus. Hence, the present study shows genetic recombination as the driving force for the evolution of a new begomovirus associated with leaf curl disease in Ty-resistance gene-containing tomato genotypes.",
+      "journal": "Molecular biology reports",
+      "year": 2025,
+      "pub_date": "2025-06-12",
+      "authors": "Mondal Firoz; Saxena Shipra; Hussain Zakir; Mandal Bikash; Roy Anirban",
+      "first_author": "Mondal Firoz",
+      "categories": [
+        "New_Virus",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "tomato leaf curl Ty Pusa virus (ToLCTyPV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "番茄 (Solanum lycopersicum L.)",
+      "location": "未提及",
+      "results": "在13/18基因型中检测到CYVMV，完整基因组与CYVLCV相似性90.6%，ORF分析显示与TbCSV和CYVMV存在重组断点。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40564973",
+      "doi": "10.3390/ijms26125510",
+      "title": "Harnessing Transient Expression Systems with Plant Viral Vectors for the Production of Biopharmaceuticals in ",
+      "abstract": "Plant Molecular Farming (PMF) capitalizes on the unique properties of plants as bioreactors to efficiently produce valuable proteins, pharmaceuticals, and enzymes. This review emphasizes the critical role of transient expression systems, particularly in Nicotiana benthamiana, due to its susceptibility to various pathogens. Viral vector-based transient expression has proven essential during health emergencies like COVID-19, enabling rapid recombinant protein production. The review also evaluates different transient expression platforms and highlights their applications in biopharmaceutical production, education, synthetic biology, and gene editing. Advances in viral vector modification, hydroponics, and Controlled Environment Agriculture (CEA) are presented as transformative innovations enhancing scalability and regulatory compliance. Furthermore, glycoengineering advancements broaden the range of producible biopharmaceuticals, improving global medication access. By exploring these advancements, this review underscores the vast potential of transient expression systems to meet dynamic scientific and market demands, positioning PMF as a vital component in modern biotechnology.",
+      "journal": "International journal of molecular sciences",
+      "year": 2025,
+      "pub_date": "2025-06-09",
+      "authors": "Akher Sayed Abdul; Wang Kevin Yueju; Hall Kylie; Hunpatin Oluwaseyi Setonji; Shan Muhammad; ... (+2)",
+      "first_author": "Akher Sayed Abdul",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "未提及（泛指植物病毒载体）",
+      "taxonomy": "",
+      "host_plant": "Nicotiana benthamiana（本氏烟）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40383599",
+      "doi": "10.1016/j.carbpol.2025.123559",
+      "title": "Advances in fucoidan and fucoidan oligosaccharides: Current status, future prospects, and biological applications.",
+      "abstract": "Sulfated polysaccharides (SPS) derived from seaweeds are precious bioactive compounds of diverse biological activities. Fucoidan is a complex SPS composed of L-fucose and sulfate groups, can be extracted from brown seaweeds, as well as microbial, insect, plant glycans, and marine invertebrates. It has gained considerable attention due to its anti-inflammatory, anticancer, antiviral, antithrombotic, hypolipidemic, and immune-modulatory properties. Recent research has focused on the extraction and extensive characterization of fucoidan. Its structural complexity, influenced by species, sources, and harvesting conditions, directly influences its bioactivity, with higher sulfation and lower molecular weight enhancing its activity. Interestingly, fucoidan oligosaccharides (FOs) play a critical role in various metabolic processes and hold significant potential in disease diagnostics. This comprehensive review explores the current status of fucoidan research, covering its sources, extraction and purification techniques, structural variations and biological activities. Additionally, we highlight its potential health benefits, providing insights for researchers interested in sulfated polysaccharides.",
+      "journal": "Carbohydrate polymers",
+      "year": 2025,
+      "pub_date": "2025-06-15",
+      "authors": "Hamouda Hamed I; Li Tang; Shabana Samah; Hashem Amr H; Yin Heng",
+      "first_author": "Hamouda Hamed I",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40336572",
+      "doi": "10.1016/j.omtn.2025.102536",
+      "title": "Genetic adjuvants: A paradigm shift in vaccine development and immune modulation.",
+      "abstract": "The COVID-19 pandemic underscored the urgency of developing effective vaccines to combat infectious diseases, especially in vulnerable populations such as the elderly and immunocompromised. While recombinant protein vaccines offer safety, their poor immunogenicity highlights the need for advanced vaccination platforms. New genetic/nucleic acid vaccine formulations like plasmid DNA and mRNA showed efficiency and safety in preclinical and clinical studies; however, they demand innovative adjuvants because their mechanism of action differs from traditional protein vaccines. Genetic adjuvants-encoded by nucleic acids within DNA, RNA, or viral vectors-emerge as a promising solution by targeting and modulating specific immune pathways, including antigen presentation, T cell activation, and memory formation. These innovative adjuvants enhance vaccine efficacy by fine-tuning innate and adaptive immune responses, overcoming immune senescence, and addressing the challenges of CD8+ T cell activation in immunocompromised populations. This review explores the potential of genetically encoded adjuvants, including cytokines, chemokines, and other immune modulators. By comparing these adjuvants to traditional formulations, we highlight their capacity to address the limitations of modern vaccines while discussing their integration with emerging technologies like RNA-based vaccines. As genetic adjuvants advance toward clinical application, understanding their mechanisms and optimizing their delivery is pivotal to unlocking next-generation immunization strategies.",
+      "journal": "Molecular therapy. Nucleic acids",
+      "year": 2025,
+      "pub_date": "2025-06-10",
+      "authors": "Spunde Karina; Korotkaja Ksenija; Sominskaya Irina; Zajakina Anna",
+      "first_author": "Spunde Karina",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40573775",
+      "doi": "10.3390/plants14121789",
+      "title": "Morphological and Molecular Evidence for a New Species Within ",
+      "abstract": "Styrax chongzuoensis, a novel endemic species with a narrow distribution in limestone regions of Chongzuo, Guangxi, China, is described herein. This new species seems somewhat similar to Styrax fortunei, but significantly differs from it by having long ovate or long lanceolate leaves, often with an asymmetrical base (vs. obovate-elliptic to elliptic, often with a symmetrical base) and fertile shoots with fewer flowers (1, or rarely 2 or 3, vs. many, always more than 10). Phylogenetic analyses based on the chloroplast coding sequences indicated that S. chongzuoensis and Styrax japonicus are sister taxa to each other, both clustered in the series Cyrta within Styrax. Overall, the integration of morphological and phylogenetic evidence indicates that S. chongzuoensis actually represents a new species. Color plates of S. chongzuoensis are illustrated, and a distribution map and conservation assessment of this species are also provided.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-06-11",
+      "authors": "Peng Guoxing; Liang Tongjun; Liang Jipeng; Wang Yitian; Zhao Liaocheng; ... (+5)",
+      "first_author": "Peng Guoxing",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41119621",
+      "doi": "10.11646/zootaxa.5647.2.4",
+      "title": "A new species of genus Townesia Ozols (Hymenoptera, Ichneumonidae, Pimplinae) parasitizing Dioryctria rubella.",
+      "abstract": "A new species of the genus Townesia Ozols, T. dioryctirae Sheng, Li & L, sp. nov. parasitizing larvae of the pine shoot moth, Dioryctria rubella Hampson, 1901, boring in a shoot of Pinus koraiensis Siebold et Zuccarini in Kuandian Manzu Autonomous County, Liaoning, in the Palaearctic part of China, is described and illustrated. A key to the species of Townesia known from China is provided.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-06-13",
+      "authors": "Li Tao; L Jun; Sheng Mao-Ling",
+      "first_author": "Li Tao",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41119637",
+      "doi": "10.11646/zootaxa.5646.4.4",
+      "title": "Taxonomic review of the genus Psallops Usinger, 1946 (Hemiptera: Miridae) from the Afrotropical Region, with descriptions of two new species and a discussion on the internal revision of Psallops.",
+      "abstract": "The plant bug genus Psallops Usinger, 1946 (Hemiptera: Heteroptera: Miridae: Psallopinae) has been represented so far in Africa by three species: P. linnavuorii Herczek, Popov & Gorczyca, 2016, P. niedzwiedzkii Herczek & Popov, 2016 and P. webbi Herczek & Popov, 2014. In this paper, the genus Psallops is taxonomically reviewed for the Afrotropical Region. Two new species, Psallops madagascariensis sp. nov. from Madagascar and P. namibiensis sp. nov. from Namibia and Botswana, are described. Detailed descriptions of external and genital morphology, along with diagnoses for each species, are provided. A key to the African species is also presented. Furthermore, the necessity of an internal classification within Psallops is discussed based on the detailed examination of morphological characters.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-06-11",
+      "authors": "Taszakowski Artur; Kim Junggon; Kaszyca-Taszakowska Natalia; Gierlasiski Grzegorz; Jung Sunghoon",
+      "first_author": "Taszakowski Artur",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41119622",
+      "doi": "10.11646/zootaxa.5647.2.3",
+      "title": "Two new ant-attended species of the soft scale insect genus Coccus L. (Hemiptera: Coccomorpha: Coccidae) from India, with a key to Indian Coccus species.",
+      "abstract": "Two new species of the soft scale genus Coccus Linnaeus (Hemiptera: Coccomorpha: Coccidae) from West Bengal, India, are described and illustrated based on mature adult females: Coccus mondouriensis Das, Pramanik & Das, sp. nov. on Mangifera indica L. (Anacardiaceae) and C. oecophyllae Das, Pramanik & Das, sp. nov. on Citrus aurantifolia (Christm.) (Rutaceae). Coccus mondouriensis is morphologically very similar to C. ophiorrhizae (Green), while the species most similar to C. oecophyllae are C. ficola Choi & Lee and C. discrepans (Green). The weaver ant, Oecophylla smaragdina Fabricius (Hymenoptera: Formicidae) was found tending an exposed colony of C. mondouriensis, whereas C. oecophyllae was only found inside the leaf nest of the ant on Citrus aurantifolia. An updated identification key to the Indian species of Coccus is provided.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-06-13",
+      "authors": "DAS Anirban; Pramanik Aniruddha; DAS Bijan Kumar",
+      "first_author": "DAS Anirban",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

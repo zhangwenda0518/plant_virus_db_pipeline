@@ -1,0 +1,78 @@
+{
+  "month": "1991-04",
+  "generated": "2026-07-13 02:59:42",
+  "total": 3,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 2,
+    "New_Virus": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "1854634",
+      "doi": "10.1099/00207713-41-2-197",
+      "title": "Taxonomy and pathogenicity of Erwinia cacticida sp. nov.",
+      "abstract": "A total of 108 pectolytic, soft-rotting Erwinia strains were collected from 11 types of cacti growing in Arizona, Texas, northern Mexico, and Australia between 1958 and 1989. Four strains were collected from soils beneath or close to naturally rotting saguaro cacti. Collectively, these strains caused soft rots of saguaro, organ pipe, and senita cacti, Opuntia (cactus) fruits and pads, tomato fruits, and potato slices, but only occasionally caused soft rots of slices of carrot roots. A numerical cluster analysis showed that 98 of the 112 strains formed a uniform group (cluster 1A) that was distinguished from other pectolytic erwinias by an API 20E code of 1205131, by negative reactions in API 50CHE tests for L-arabinose, myo-inositol, D-cellobiose, melibiose, and D-raffinose, and, in supplemental tests, by positive reactions for malonate and growth at 43 degrees C. The average levels of DNA relatedness of 22 cluster 1A strains to the proposed type strain (strain 1-12) as determined by the hydroxyapatite method were 88% in 60 degrees C reactions (with 1% divergence within related sequences) and 87% in 75 degrees C reactions. The levels of relatedness to the type strains of other Erwinia spp. were less than or equal to 38% in 75 degrees C reactions. Cluster 1A strains also had a characteristic cellular fatty acid profile containing cyclo-(11,12)-nonadecanoic acid (C19:0 Cyclo C11-12) and missing tridecanoic acid (C13:0), heptadecanoic acid (C17:0), and cis-9-heptadecenoic acid (C17:1 CIS 9), which separated them from other pectolytic erwinias. Collectively, these data indicate that the members of cluster 1A are members of a new species, which we name Erwinia cacticida. Three cactus strains in cluster 1B appear to represent a second new species that is closely related to E. cacticida; these strains are designated E. cacticida-like pending the availability of additional strains for testing. The remaining cactus strains (in cluster 4) have the physiological, DNA, and fatty acid profiles of Erwinia carotovora.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1991,
+      "pub_date": "1991-04-01",
+      "authors": "Alcorn S M; Orum T V; Steigerwalt A G; Foster J L; Fogleman J C; ... (+1)",
+      "first_author": "Alcorn S M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1367860",
+      "doi": "10.1016/0958-1669(91)90011-s",
+      "title": "Natural products of commercial potential as medicines.",
+      "abstract": "Recent advances in research on natural products (of both low and high molecular weight) of plant origin and their commercial potential as medicines are discussed. Substances with immunomodulating, antiviral, antimicrobial, antiparasite, antitumor, anti-inflammatory, hypoglycemic, tranquillizer and antifeedant activities are focused on.",
+      "journal": "Current opinion in biotechnology",
+      "year": 1991,
+      "pub_date": "1991-04-01",
+      "authors": "Yamada H",
+      "first_author": "Yamada H",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1652667",
+      "doi": "10.1016/0378-8741(91)90112-q",
+      "title": "Can ethnopharmacology contribute to the development of antiviral drugs?",
+      "abstract": "In recent years, many compounds having potent antiviral activity in cell cultures and in experimental animals have been detected, but only a few have been approved by Western health authorities for clinical use. Nevertheless, some of these compounds are currently undergoing either preclinical or clinical evaluation, and perspectives for finding new interesting antiviral drugs are promising. Among these antiviral substances are several natural compounds isolated from plants used in traditional medicine including polysaccharides, flavonoids, terpenes, alkaloids, phenolics and amino acids. Some of these plant compounds exhibit a unique antiviral mechanism of action and are good candidates for further clinical research. What follows is a brief summary of the selection methods of plants for antiviral screening and in vitro and in vivo assays, which are currently used for detecting this activity in plant extracts. The importance of the plant kingdom as a source of new antiviral substances will be illustrated by presenting a survey on plant-derived antirhinovirus and anti-HIV agents.",
+      "journal": "Journal of ethnopharmacology",
+      "year": 1991,
+      "pub_date": "1991-04-01",
+      "authors": "Vlietinck A J; Vanden Berghe D A",
+      "first_author": "Vlietinck A J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

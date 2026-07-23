@@ -1,0 +1,241 @@
+{
+  "week": "2025-W39",
+  "start": "2025-09-22",
+  "end": "2025-09-28",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 27,
+  "by_category": {
+    "Host_Virus_Interactions": 13,
+    "Antiviral_Resistance_Genes": 9,
+    "Control_Management": 5,
+    "Biotechnology_Applications": 3,
+    "New_Virus": 2,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "41153367",
+      "doi": "10.3390/genes16101150",
+      "title": "Genome-Wide Analysis of the HECT-Type E3 Ubiquitin Ligase Gene Family in ",
+      "abstract": "Background: The ubiquitin-proteasome system plays a critical role in plant antiviral defense, with HECT-type E3 ubiquitin ligases serving as key regulators of protein turnover. To explore the potential involvement of the HECT gene family in host resistance against tomato yellow leaf curl virus (TYLCV), a comprehensive analysis was conducted in Nicotiana benthamiana. Methods: In this study, the HECT gene family in N. benthamiana was systematically investigated using a genome-wide bioinformatic analysis. The potential roles of these genes in the response to TYLCV infection were further examined using a virus-induced gene silencing (VIGS) technique. Results: Using a Hidden Markov Model approach, 18 NbHECT genes were identified that phylogenetically clustered into four subfamilies with distinct structural features. Chromosomal location and synteny analyses indicated that these genes were unevenly distributed across 11 chromosomes, with 10 instances of segmental duplication identified. Tissue-specific expression profiling demonstrated that 17 NbHECTs were constitutively expressed, with Group III members showing the highest expression in reproductive tissues. Following TYLCV infection, NbHECT6 was significantly downregulated while NbHECT13 was upregulated in both inoculated and systemic leaves. Functional validation through the VIGS approach revealed that suppression of NbHECT6 and NbHECT13 increased host susceptibility, as evidenced by exacerbated symptom severity and enhanced viral DNA accumulation compared to controls. Conclusions: These findings establish NbHECT6 and NbHECT13 as critical components of the plant antiviral response, providing new insights into ubiquitin-mediated defense mechanisms against geminiviruses.",
+      "journal": "Genes",
+      "year": 2025,
+      "pub_date": "2025-09-27",
+      "authors": "Shen Jin; Yu Shasha; Ye Fang; Zhang Yiming; Wu Xue; ... (+8)",
+      "first_author": "Shen Jin",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Biotechnology_Applications",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "番茄黄化卷叶病毒（tomato yellow leaf curl virus, TYLCV）",
+      "taxonomy": "",
+      "host_plant": "本氏烟（Nicotiana benthamiana）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40996553",
+      "doi": "10.1007/s00425-025-04824-9",
+      "title": "Doubling down on groundnut bud necrosis virus: combined dsRNAs targeting non-structural (NSs) and nucleocapsid (NP) genes confer superior resistance.",
+      "abstract": "This study demonstrates that dsRNA targeting NSs and NP genes of GBNV effectively reduces viral titre and symptoms, strengthening RNAi defenses and offering a sustainable, eco-friendly approach for crop protection. Groundnut bud necrosis virus (GBNV), a highly destructive Orthotospovirus endemic to the Indian subcontinent, presents a major challenge due to the lack of resistant cultivars and rising insecticide resistance in vector populations. In this study, we evaluated the effectiveness of exogenously applied double-stranded RNAs (dsRNAs) targeting the non-structural (NSs) and nucleocapsid protein (NP) genes of GBNV in inducing RNA interference (RNAi)-mediated resistance. Two dsRNAs were expressed in Escherichia coli HT115 and exogenously applied to Nicotiana benthamiana and Vigna unguiculata (cowpea cv. Pusa Komal) as aqueous suspensions (10 µg/seedling), either individually or in combination (5 µg each). Following GBNV inoculation, untreated controls displayed severe local and systemic symptoms, while dsRNA-treated plants exhibited delayed symptom onset and reduced disease severity. Combined dsRNA treatment resulted in an 87% reduction in disease severity in cowpea and 54% in N. benthamiana. Quantitative real-time PCR revealed significant reductions in viral transcript levels: ~ 35-fold in cowpea and ~ 38-fold in N. benthamiana with combined dsRNAs, compared to 15- and 20-fold (dsNP alone) and 5- and 13-fold (dsNSs alone), respectively. The GBNV Protection Index (GBNVPI) was highest for the combined dsRNA (0.98 in cowpea, 0.90 in N. benthamiana), followed by dsNP (0.92 and 0.78) and dsNSs (0.75 and 0.70). Northern-blot analysis confirmed the generation of virus-derived siRNAs, indicating activation of the RNAi pathway. Overall, cowpea exhibited stronger protection than N. benthamiana. These results demonstrated that co-application of dsRNAs targeting dual genes of GBNV significantly enhanced RNAi-mediated resistance, representing a promising strategy for managing this virus in susceptible crops.",
+      "journal": "Planta",
+      "year": 2025,
+      "pub_date": "2025-09-25",
+      "authors": "Manik Suryakant; Gupta Dipinte; Singh Oinam Washington; Garai Sandip; Roy Anirban; ... (+1)",
+      "first_author": "Manik Suryakant",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "花生芽坏死病毒（Groundnut bud necrosis virus, GBNV）",
+      "taxonomy": "",
+      "host_plant": "本氏烟（Nicotiana benthamiana）和豇豆（Vigna unguiculata cv. Pusa Komal）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40991707",
+      "doi": "10.1126/sciadv.adv0819",
+      "title": "The MC4-La1 cleavage module restricts plant virus infection by integrating R-motif-mediated defense mRNA translation.",
+      "abstract": "The plant cysteine protease metacaspases are structural homologs of animal caspases and play pivotal roles under biotic and abiotic stresses. However, whether metacaspases and purine-rich element (R-motif)-mediated defense messenger RNA translation are involved in plant antiviral immunity remains elusive. Here, we report that barley stripe mosaic virus (BSMV) infection activates metacaspase 4 (MC4) to cleave the RNA binding protein lupus autoantigen 1 (La1) behind residue arginine-448. The cleaved La11-448 version relocates to the cytoplasm and promotes the R-motif-mediated cap-independent defense mRNA translation. Moreover, MC4 overexpression restricts BSMV infection in tobacco (Nicotiana benthamiana), whereas knockout of MC4 and knockdown of La1 are more susceptible to diverse plant virus infection. To counteract plant defense, the BSMV γb protein directly interacts with and inhibits the self-processing of MC4 and subsequent La1 cleavage, thereby impairing La1-mediated immune responses. Collectively, our findings unveil a hitherto unknown defense mechanism whereby the MC4-La1 cleavage module inhibits virus infection by coordinating R-motif-mediated defense mRNA translation.",
+      "journal": "Science advances",
+      "year": 2025,
+      "pub_date": "2025-09-26",
+      "authors": "Pi Qinglin; Hu Rujian; Yue Ning; Jiang Zhihao; Wei Jing; ... (+6)",
+      "first_author": "Pi Qinglin",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management"
+      ],
+      "virus_name": "大麦条纹花叶病毒（BSMV）及其他多种植物病毒",
+      "taxonomy": "",
+      "host_plant": "烟草（Nicotiana benthamiana）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40645542",
+      "doi": "10.1016/j.jep.2025.120273",
+      "title": "A comprehensive review of ethnopharmacology, phytochemistry, pharmacological effects, and quality control of Bletilla striata.",
+      "abstract": "[ETHNOPHARMACOLOGICAL RELEVANCE] Bletilla striata (Thunb.) Rchb.F., belonging to the genus Bletilla in the family Orchidaceae, is known as 'Bai-Ji' according to traditional Chinese medicine theory. It has abundant medicinal value, such as stringent hemostasis, reducing swelling, and promoting muscle growth. [THE AIM OF THE REVIEW] This review aims to comprehensively summarize the research progress in ethnopharmacology, phytochemistry, pharmacology, toxicity, pharmacokinetics, and quality control of B. striata, and to explore this plant's future therapeutic potential and development prospects. [MATERIALS AND METHODS] A comprehensive information search on B. striata was conducted through the following scientific databases: Elsevier, PubMed, Web of Science, Google Scholar, ACS publications, Wiley, Taylor & Francis, CNKI, SpringerLink, and ancient books. [RESULTS] 294 compounds have been identified from B. striata, including 272 non-polysaccharide compounds and 22 polysaccharides. Studies have demonstrated that the extracts and compounds from B. striata exhibit a wide range of pharmacological activities, such as anti-cancer, antiviral, anti-melanin, antibacterial, anti-ulcer, anti-aging, anti-fibrosis, anti-inflammatory, antioxidant, immunomodulatory, wound-healing, neuroprotective, and haemostasis effects. The safety evaluation of the potential components of B. striata is of great significance for safe clinical application. [CONCLUSIONS] As a traditional medicinal herb, B. striata has demonstrated various pharmacological activities; however, most studies have primarily relied on simplified in vitro cell models or basic animal disease models to evaluate its bioactivities. Therefore, future investigations should adopt more clinically relevant approaches to elucidate its mechanisms of action comprehensively to ensure the safe and effective clinical application of B. striata, it is strongly recommended that forthcoming research prioritize toxicity assessments and pharmacokinetic profiling. Moreover, as a rare and endangered species, its cultivation and conservation strategies warrant further investigation to support the sustainable utilization of this valuable resource.",
+      "journal": "Journal of ethnopharmacology",
+      "year": 2025,
+      "pub_date": "2025-09-25",
+      "authors": "Zhang Limei; Shi Xintian; Zhang Xiyue; Chen Ting; Liao Shihui; ... (+4)",
+      "first_author": "Zhang Limei",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40651726",
+      "doi": "10.1016/j.jep.2025.120270",
+      "title": "Antiviral efficacy of hexane extract of Hypericum gaitii Haines against Chikungunya and SARS-CoV-2 viruses: in vitro and in silico approaches.",
+      "abstract": "[ETHNOPHARMACOLOGICAL RELEVANCE] Viral infections have become a public health concern globally. The limited efficacy of existing antivirals against emerging viruses encourages extensive research to find alternative strategies. In this scenario, various plant bioactive compounds have been reported to possess potential against a wide range of illnesses, including viral diseases. Different extracts from the Hypericum genus are known to have anticancer, antioxidant, antimicrobial, antifungal, anti-inflammatory and antiviral properties. Among these, Hypericum gaitii Haines is an endemic and endangered perennial shrub possessing ethnobotanical and medicinal importance. Traditionally, a paste made from the leaves has been used as an ointment for treating skin eruptions. However, the antiviral potency of the same species remains mostly unexplored. [AIM OF THE STUDY] This study aimed to explore the antiviral effect of hexane extract of the leaves of Hypericum gaitii Haines (Code: E38) against Chikungunya virus (CHIKV) and Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2) using both in vitro and in silico approaches. [MATERIAL AND METHODS] The antiviral activity of E38 was examined by various techniques like quantitative real-time PCR (qRT-PCR), plaque assay, Western blot, immunofluorescence, and virucidal assay. Liquid chromatography-mass spectrometry (LC-MS) aided in chemical characterization of the extract, while in silico ADMET (Absorption, Distribution, Metabolism, Excretion and Toxicity) analysis, biological target prediction and molecular docking helped to elucidate the possible mechanism of antiviral efficacy. [RESULTS] E38 was found to abrogate CHIKV and SARS-CoV-2 infections efficiently with a drastic reduction of the viral Ribonucleic acids (RNAs), proteins and new viral particle formations (half-maximal inhibitory concentration (IC50) of 1.89-4.16 μg/mL in the Vero and C2C12 cells, respectively against CHIKV and 13.86-15.38 μg/mL in Vero and hACE2-A549 cells, respectively against SARS-CoV-2). Further, E38 demonstrated good selectivity indices (SI) (≥52.91 in Vero and >42.06 in C2C12 for anti-CHIKV potential as well as 7.21 and 9.56, respectively in Vero and hACE2-A549 cells against SARS-CoV-2). Notably, the extract interfered in different phases of the CHIKV life cycle, whereas the inhibition was effective in entry and post-entry stages for SARS-CoV-2. Additionally, E38 showed remarkable virucidal activity against both viruses. Further, LC-MS analysis of the extract characterized the presence of 13 main compounds with various biological activities. Amongst these compounds, Mannopine, 2'-Deoxymugineic acid, Avenic acid A and Avenanthramide A were found to have desirable ADMET properties based on in silico analysis. The biological target prediction of these compounds revealed potential to interact with various host proteins like NF-κB p105 subunit, Cathepsin D, Sphingosine kinase 1 (SphK1) and Tripartite motif containing 24 (TRIM24). Moreover, Avenanthramide A demonstrated relatively higher binding affinities for the capsid and nsP2 proteases of CHIKV as well as nsP5 (main protease) and nsP13 (helicase) of SARS-CoV-2 through molecular docking, indicating its direct and/or indirect effects on viral targets and host factors. [CONCLUSIONS] The overall study demonstrated that E38 significantly abrogates CHIKV and SARS-CoV-2 infections post-viral entry in vitro, indicating its potential for therapeutic use. Furthermore, this work underscores the effective antiviral potential of the hexane extract of H. gaitii for the first time, encouraging pre-clinical studies towards the development of pan-viral therapeutics.",
+      "journal": "Journal of ethnopharmacology",
+      "year": 2025,
+      "pub_date": "2025-09-25",
+      "authors": "Mahapatra Archana; Ghosh Soumyajit; Chatterjee Koustav; Mohanty Ipsita; Jena Rajshree Rajmohan; ... (+6)",
+      "first_author": "Mahapatra Archana",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40737854",
+      "doi": "10.1016/j.chroma.2025.466236",
+      "title": "Optimized fast gas chromatography coupled with proton-transfer-reaction time-of-flight mass spectrometry for the selective near real-time analysis of herbivore-induced plant volatiles.",
+      "abstract": "The analysis of herbivore-induced plant volatiles (HIPVs) is essential for understanding plant-environment interactions and defense strategies against herbivores. Proton transfer reaction time-of-flight mass spectrometry (PTR-TOF-MS) is a powerful analytical tool that enables real-time monitoring and quantification of diverse groups of HIPVs. However, the PTR-TOF-MS technique is constrained in its ability to effectively differentiate between isomers. When analyzing complex mixtures of HIPVs, the separation of isomers becomes crucial as major compound classes such as terpenes comprise thousands of isomers. In this study, we present an optimized fast gas chromatography (fastGC) based on a modified version of the commercially available fastGC add-on integrated into a mobile PTR-TOF. The system was optimized for the analysis of emissions from enclosed trunks of Acer platanoides infested by Anoplophora glabripennis (Motschulsky), commonly known as Asian longhorned beetle (ALB). The development of fastGC was primarily focused on the sesquiterpenes α-longipinene, cyclosativene and α-copaene, which serve as strong indicators of ALB infestation. These sesquiterpenes were separated in less than three minutes, with intra-day retention time RSD < 0.6 % and resolutions of 2.6 ± 0.3 and 1.3 ± 0.2. In comparison to the original system, the optimized fastGC demonstrates more than tripled sesquiterpene resolution, twice the sensitivity relative to direct inlet mode, and an approximately 10 % reduction in total analysis time. The optimized fastGC-PTR-TOF allows for near real-time analysis of complex mixtures of biogenic VOCs, making it a powerful tool for environmental monitoring, integrated pest management, and forest protection.",
+      "journal": "Journal of chromatography. A",
+      "year": 2025,
+      "pub_date": "2025-09-27",
+      "authors": "Braun Jennifer; Engelhard Carsten; Kaul Peter",
+      "first_author": "Braun Jennifer",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40852997",
+      "doi": "10.1128/msystems.00921-25",
+      "title": "Interactions between native soil microbiome and a synthetic microbial community reveals bacteria with persistent traits.",
+      "abstract": "Synthetic microbial communities (SynComs) are curated microbial groups that can be designed to optimize microbial functions, such as enhancing plant growth or disease resistance. Attaining SynCom stability in the presence of native soil communities remains a key challenge. This study investigated the survival, persistence, and chemical interactions of a SynCom with a native soil microbial community using a transwell system that spatially constrains bacteria while permitting chemical interactions. The SynCom, composed of six compatible Pseudomonas species identified through whole-genome sequencing, was analyzed for antagonistic interactions with native microbes over time and assessed using biomass and viability measurements. Over time, the SynCom exhibited reduced growth in the presence of native soil microbes compared to the SynCom not exposed to the native microbes. Flow cytometry analysis showed an 81% reduction of live cells for the persistent strain in the presence of native microbes and a 78% and 99% increase in dead and unstained cells, respectively. Compared to a non-persistent strain, one persistent SynCom strain showed lower metabolic utilization across five key compound classes: polymers, carboxylic acids, amino acids, amines, and phenols when exposed to the native soil microbes. These findings underscore the importance of understanding complex SynCom-environment interactions to enhance SynCom stability and optimize in situ applications.IMPORTANCESynComs are an emerging technology that can augment plant health. Still, their application in situ depends on deciphering the complex interactions between SynCom microbes and native microbial communities. This study provides insight into several Pseudomonas strains displaying persistent characteristics. Understanding the persistent traits of these bacteria is a vital advancement in SynCom technology and an important next step toward implementing SynComs in agricultural systems.",
+      "journal": "mSystems",
+      "year": 2025,
+      "pub_date": "2025-09-23",
+      "authors": "Velte Jessica M; Mudiyanselage Sameerika; Hofmann Olivia F; Lee Sonny T M; Huguet-Tapia Jose; ... (+2)",
+      "first_author": "Velte Jessica M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40815473",
+      "doi": "10.1128/msystems.01765-24",
+      "title": "",
+      "abstract": "WRKY transcription factors have been implicated in the regulation of disease resistance associated with plant immune responses, which has crucial implications for defense responses against stress in plants. The role played by the PsnWRKY70 gene of Populus (Populus simonii × P. nigra) in triggering the mechanism between the phyllosphere microbiome and plant defense against foliar pathogens remains unclear. Molecular ecological network analysis demonstrated that the stability and complexity of the phyllosphere bacterial community of Populus were influenced by Alternaria alternata infection. Specifically, compared to the wild-type line, the PsnWRKY70-overexpressing (OE) line had a higher average clustering coefficient and modularity. Furthermore, metabolomic analysis revealed that 19 differential metabolites were significantly enriched in the leaves of the OE line. Among these metabolites, coumarin compounds, such as fraxetin-8-O-glucoside (fraxin) and scopoletin-7-O-glucoside (scopolin), significantly promoted the proliferation of the genera Methylobacterium and Achromobacter with resistance to A. alternata. Additionally, these genera also served as connectors in the molecular ecological network of the phyllosphere microbiome of the OE line. Thus, we concluded that the PsnWRKY70 gene enhanced the stability, complexity, and core taxa cooperation of the phyllosphere microbial network in Populus and regulated the biosynthesis of fraxin and scopolin to recruit beneficial bacteria controlling A. alternata infection. These findings provide valuable insights into the ability of resistant plant genotypes to drive the assembly of the phyllosphere microbiome, advancing our understanding of defense against pathogens using the biocontrol phyllosphere microbial community.IMPORTANCEPoplar leaf blight caused by Alternaria alternata, a common disease in Northeast China, can cause abnormal abscission of poplar leaves and even lead to plant death in severe cases. WRKY transcription factors have been implicated in the regulation of disease resistance associated with plant immune responses to secondary metabolism via a complicated gene network. However, little is known about how the metabolites regulated by the PsnWRKY70 gene trigger changes in the phyllosphere microbiome, leading to increased resistance to foliar pathogens. Here, the PsnWRKY70 overexpressing line of Populus (Populus simonii × P. nigra) exhibited increased coumarin synthesis in the leaves, triggering changes in microbial species central in phyllosphere microbial networks and leading to increased resistance to A. alternata infection. This study provides insights into the role of the PsnWRKY70 gene in triggering the resistance mechanism to A. alternata in Populus.",
+      "journal": "mSystems",
+      "year": 2025,
+      "pub_date": "2025-09-23",
+      "authors": "Wang Wei; Wang Weixiong; Jiang Jing; Bai Xiangdong; Chen Kun; ... (+5)",
+      "first_author": "Wang Wei",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40982060",
+      "doi": "10.1007/s00284-025-04472-y",
+      "title": "Actinomadura opuntiae Sp. Nov., Isolated from a Soil of Cactus and the Reclassification of Actinomadura namibiensis Wink Et Al. 2003 as a Later Heterotypic Synonym of Actinomadura kijaniata Horan and Brodsky 1982.",
+      "abstract": "A novel actinomycete, designated as strain OS1-43T, was isolated from the rhizosphere soil of a cactus (Opuntia ficus-indica) in Mara Island, Jeju, Republic of Korea and the taxonomic position was unraveled by a polyphasic approach. A 16S rRNA gene-based phylogenetic analysis showed that strain OS1-43T belonged to the genus Actinomadura and was closely associated with Actinomadura xylanilytica BK147T. Morphological and chemotaxonomic characteristics supported the affiliation of strain OS1-43T to the genus Actinomadura. The calculation of 16S rRNA gene sequence similarity showed that strain OS1-43T revealed the highest sequence identity with Actinomadura violacea LCR2-06T (99.1%), followed by Actinomadura xylanilytica BK147T (98.9%). Core gene-based phylogenomic tree revealed that strain OS1-43T formed an independent lineage within the genus Actinomadura and well separated from representatives of this genus. The genome of strain OS1-43T revealed the highest OrthoANIu and dDDH values with Actinomadura montaniterrae CYP1-1BT (90.1 and 40%, respectively), followed by Actinomadura physcomitrii LD22T (89.8 and 38.7%, respectively), Actinomadura nitritigenes L46T (89.8 and 38.6%, respectively), and Actinomadura violacea LCR2-06T (89.7 and 38.1%, respectively), albeit that the former three type strains showed low 16S rRNA gene sequence similarities (97.5-98.0%) with strain OS1-43T. Based on the results of phenotypic and phylogenetic analyses, and the values of overall genomic relatedness indices, strain OS1-43T (= KACC 19750T = NBRC 114686T) represents a new species of the genus Actinomadura, for which the name Actinomadura opuntiae sp. nov. is proposed. Also, the results of genome analysis in addition to similar phenotypic features support the reclassification of Actinomadura namibiensis Wink et al. 2003 as a later heterotypic synonym of Actinomadura kijaniata Horan and Brodsky 1982.",
+      "journal": "Current microbiology",
+      "year": 2025,
+      "pub_date": "2025-09-22",
+      "authors": "Lee Soon Dong; Yang Hong Lim; Kim In Seop",
+      "first_author": "Lee Soon Dong",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41095138",
+      "doi": "10.3390/plants14192997",
+      "title": "Two New Species of ",
+      "abstract": "An integrative study of material from Yunnan Province, China, revealed two new Lophozia species. These species and several other representatives of the genus known from East Asia form a distinct clade within the phylogenetic structure of Lophozia. Descriptions, photographs, and comments regarding the morphological characteristics of the new taxa are provided. Lophozia neglecta is characterized by pink gemmae (another taxon with similar gemmae is East Asian L. koreana), whereas L. vinacea is characterized by vine-purple gemmae, which were previously unknown in the genus. Additionally, molecular analysis confirmed the occurrence of L. fuscovirens, a poorly known Lophozia taxon with brown gemmae, in the Kamchatka Peninsula. The taxonomic diversity of Lophozia in East Asia comprises 12 species belonging to various distribution groups, including the Sino-Himalayan and broadly East Asian groups.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-09-27",
+      "authors": "Bakalin Vadim A; Maltseva Yulia D; Klimova Ksenia G; Ma Wenzhang; Choi Seung Se",
+      "first_author": "Bakalin Vadim A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "week": "2025-W34",
+  "start": "2025-08-18",
+  "end": "2025-08-24",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 35,
+  "by_category": {
+    "Control_Management": 12,
+    "Host_Virus_Interactions": 11,
+    "New_Virus": 6,
+    "Biotechnology_Applications": 3,
+    "Antiviral_Resistance_Genes": 3,
+    "Viral_Diversity_Ecology": 2,
+    "Molecular_Characterization": 2,
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "40398647",
+      "doi": "10.1016/j.gene.2025.149573",
+      "title": "Expansion of the genus Bevemovirus: Novel genome discovery and evidence for virus-host co-segregation.",
+      "abstract": "The genus Bevemovirus (family Potyviridae) currently comprises one recognized species, bellflower veinal mottle virus (BVMoV), and one putative member, Striga-associated poty-like virus 1 (SaPlV1). To investigate the hidden diversity of this genus, we mined publicly available plant transcriptome datasets, yielding nine bevemovirus genome sequences from diverse host species, including five Oreocharis species, Campanula takesimana, Ariocarpus retusus, Maihueniopsis conoidea, and Pachycereus pringlei. Phylogenetic analysis of large polyprotein sequences placed all novel viruses within a well-supported Bevemovirus clade, distinct from other Potyviridae genera. Conserved proteolytic cleavage sites inferred from the polyproteins revealed sequence motifs similar to those of Macluravirus and Bymovirus, although several sites exhibited genus-specific features. All genomes encoded the P3N-PIPO protein via a conserved GA6 transcriptional slippage motif. The resulting PIPO peptides displayed conserved N-terminal regions and variable C-termini. Notably, the virus phylogeny was topologically congruent with that of their host plants, suggesting co-segregation and vertical transmission rather than the horizontal transmission typical of many potyviruses. These findings expand the known diversity of Bevemovirus, provide insights into its conserved genomic features, and suggest a persistent virus-host relationship. Our results underscore the utility of plant transcriptome data for virus discovery and for inferring evolutionary processes in RNA virus lineages.",
+      "journal": "Gene",
+      "year": 2025,
+      "pub_date": "2025-08-20",
+      "authors": "Baek Seungwoo; Hahn Yoonsoo; Lee Sung Chul",
+      "first_author": "Baek Seungwoo",
+      "categories": [
+        "New_Virus",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "Bellflower veinal mottle virus (BVMoV) 及9个新发现的bevenovirus",
+      "taxonomy": "Potyviridae, Bevemovirus",
+      "host_plant": "Oreocharis spp., Campanula takesimana, Ariocarpus retusus, Maihueniopsis conoidea, Pachycereus pringlei",
+      "location": "未提及",
+      "results": "获得9个完整bevenovirus基因组；系统发育支持独立分支；裂解位点基序与Macluravirus和Bymovirus相似但有属特异性；P3N-PIPO蛋白保守；病毒与宿主系统发育一致。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40626691",
+      "doi": "10.1128/jvi.00016-25",
+      "title": "Role of complementary-sense genes and intergenic region of beet curly top virus in intermolecular recombination frequency upon local infection in plants.",
+      "abstract": "Intermolecular recombination is a critical process in the evolution of plant viruses, including geminiviruses. In this study, we investigated the impact of geminiviral factors on the homologous recombination frequency (HRF) in a model system involving replicons of the beet curly top virus (BCTVRepl) and the cotton leaf curl Multan betasatellite (CLCuMB), which lacks the βC1 gene. BCTVRepl-cGFP and CLCuMB-nGFP replicated together and exhibited intermolecular recombination, which was monitored by reconstituted GFP fluorescence. Mutation of the C2, C3, and C4 genes in BCTVRepl-cGFP led to a significant decrease in HRF. Accumulation of BCTVRepl-cGFP was reduced in the C3 mutant but not in the C2 and C4 mutants. These findings suggest that C4 and, to a greater extent, C2 play a role in homologous recombination (HR) between BCTV and CLCuMB replicons. Furthermore, the BCTV large intergenic region (LIR) sequence to which the C1 (Rep) protein binds to initiate viral replication was introduced into the nGFP construct (referred to as LnGFP). This resulted in a low level of HR (5%) compared to the control nGFP construct, where HR did not occur. Subsequent mutational analysis of the iteron and stem-loop sequences within the LIR of LnGFP revealed the role of these sequences and the C1 (Rep) in the process of DNA recombination. This study presents a new model for assessing HRF in BCTV, which can be applied to other geminiviruses. It also highlights the roles of the C2, C4, C1, and LIR structural sequences in intermolecular recombination and replication in the BCTV replicon.IMPORTANCEIntermolecular recombination is a critical process in the evolution, adaptability, and pathogenicity of plant viruses, including geminiviruses. This study developed a visible and quantifiable system to measure the frequency of homologous recombination between beet curly top virus (BCTV) and cotton leaf curl Multan betasatellite (CLCuMB) replicons based on the reconstitution of GFP fluorescence. Furthermore, mutation analysis of complementary-sense genes in the BCTV replicon indicated that C4 and, to a greater extent, C2 play a role in the recombination between the BCTV and CLCuMB replicons. Subsequent mutational analysis of the iteron and stem-loop sequences within the large intergenic region of BCTV revealed the possible role of these structural sequences in the recombination process.",
+      "journal": "Journal of virology",
+      "year": 2025,
+      "pub_date": "2025-08-19",
+      "authors": "Eini Omid; Shoaei Zahra; Schumann Nadine; Varrelmann Mark",
+      "first_author": "Eini Omid",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "甜菜曲顶病毒 (beet curly top virus, BCTV)",
+      "taxonomy": "双生病毒科 (Geminiviridae), 曲顶病毒属 (Curtovirus)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40872220",
+      "doi": "10.3390/plants14162597",
+      "title": "Unveiling the ",
+      "abstract": "RNA sequencing is a high-throughput sequencing method essential for unbiased detection and characterization of known and emerging plant viruses. Its high sensitivity makes it particularly well-suited for identifying low-abundance viral sequences, even in asymptomatic plants or those affected by complex, mixed infections. Here, we conducted a metatranscriptomic survey of Petunia hybrida plants from the Bulgarian market, both symptomatic and asymptomatic, and their corresponding in vitro plantlets. Viruses were detected in all tested samples demonstrating that visual symptoms are not a reliable indicator of infection. The viromes were dominated by petunia vein clearing virus (PVCV, Petuvirus venapetuniae), cucumber mosaic virus (CMV, Cucumovirus CMV), and tomato aspermy virus (TAV, Cucumovirus TAV), along with bacteriophages and fungus-associated viruses. However, the PVCV and CMV abundance was elevated in in vitro samples, possibly due to cutting-induced activation and/or prolonged cultivation. Phylogenetic analysis of the Bulgarian CMV, TAV, and PVCV isolates highlights their genetic links to strains from a wide geographic range and diverse hosts, emphasizing the potential for virus movement and genetic exchange among plant viruses across regions and species. It also suggests that petunias may contribute to the transmission dynamics of viruses within ornamental trade networks. These findings also emphasize the phytosanitary risks to horticulture and establish a basis for further investigation into plant virus ecology.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-08-21",
+      "authors": "Valkova Rumyana; Jurak Stoyanka; Apostolova-Kuzova Elena; Baev Vesselin; Nacheva Lilyana; ... (+3)",
+      "first_author": "Valkova Rumyana",
+      "categories": [
+        "Detection_Methods",
+        "Molecular_Characterization",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "petunia vein clearing virus (PVCV), cucumber mosaic virus (CMV), tomato aspermy virus (TAV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40532698",
+      "doi": "10.1016/j.cell.2025.05.028",
+      "title": "Interfamily co-transfer of sensor and helper NLRs extends immune receptor functionality between angiosperms.",
+      "abstract": "Plant nucleotide-binding, leucine-rich repeat (NLR) immune receptors recognize pathogen effectors and activate defense. NLR genes can be non-functional in distantly related plants (restricted taxonomic functionality, RTF). Here, we enable Solanaceae NLR gene function in rice, soybean, and Arabidopsis by co-delivering sensor NLR genes with their cognate NLR required for cell death (NRC)-type helper NLRs. In soybean protoplasts and in Arabidopsis plants, Solanum americanum Rpi-amr1, Rpi-amr3, and pepper Bs2 sensor NLRs confer cognate effector responsiveness if co-expressed with NRC helper NLRs. Rice carrying pepper Bs2 and NRCs recognizes the conserved effector, AvrBs2, and resists an important pathogen, Xanthomonas oryzae pv. oryzicola, for which no resistance gene is available in rice. Rice lines carrying sensor and helper NLR genes otherwise resemble wild type, with unaltered basal resistance or field fitness. Thus, interfamily co-transfer of sensor and helper NLRs can broaden the utility of sensor NLRs, extending the tools available to control diseases of rice, soybean, Brassica, and other crops.",
+      "journal": "Cell",
+      "year": 2025,
+      "pub_date": "2025-08-21",
+      "authors": "Du Xiaofei; Alam Maheen; Witek Kamil; Milnes Lesley; Houghton James; ... (+7)",
+      "first_author": "Du Xiaofei",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40742104",
+      "doi": "10.1128/aem.00869-25",
+      "title": "Amicoumacins produced by the native citrus microbiome isolate ",
+      "abstract": "Huanglongbing (HLB) is a devastating citrus disease associated with the gram-negative, phloem-limited, and unculturable bacterium \"Candidatus Liberibacter asiaticus (CLas),\" which is transmitted by the Asian citrus psyllid Diaphorina citri. Despite extensive research, effective, long-term, and sustainable solutions for managing HLB remain elusive. Oxytetracycline (OTC) is currently used as an emergency measure, but there is an urgent need for alternative compounds to complement or replace OTC. In this study, we identified amicoumacins, a class of antimicrobial compounds produced by the bacterium Bacillus safensis CB729 isolated from the citrus microbiome, and demonstrated their ability to suppress CLas. Genome mining of B. safensis CB729, combined with metabolomic analysis and bioassay-guided fractionation, revealed the presence of amicoumacins and related derivatives in fractions inhibitory to Liberibacter crescens, a culturable surrogate for CLas. We tested commercially available synthetic amicoumacins A and B, along with a B. safensis-derived amicoumacin mixture, against L. crescens and CLas. We determined the MICs of amicoumacin A (1.25 µg/mL) and amicoumacin B (10 µg/mL) against L. crescens. Furthermore, amicoumacin B and the amicoumacin mixture significantly reduced CLas populations in ex vivo citrus hairy root assays. This study highlights the potential of amicoumacins as a promising group of natural products for the management of HLB, offering valuable insights for the development of novel and sustainable disease control strategies.IMPORTANCEFor two decades, the citrus industry has been severely impacted by Huanglongbing (HLB), a devastating disease caused by \"Candidatus Liberibacter asiaticus (CLas)\" and transmitted by the Asian citrus psyllid (Diaphorina citri). Despite extensive research, effective, long-term, and sustainable solutions remain unavailable for growers. Currently, medically relevant antibiotics, such as oxytetracycline (OTC), are used as an emergency response to combat HLB in Florida, the most affected citrus-producing state in the U.S. This underscores the urgent need for alternative treatments that can be used in rotation or as replacements for OTC. Here, we present amicoumacins, a group of bioactive secondary metabolites with antibiotic properties. We identified amicoumacin B and its derivatives from the culture broth of a Bacillus safensis isolate, native to citrus, and demonstrated their ability to inhibit Liberibacter spp. and reduce CLas populations in citrus tissue. This study highlights how microbial discovery can lead to the identification of antimicrobial compounds with potential applications in plant disease management.",
+      "journal": "Applied and environmental microbiology",
+      "year": 2025,
+      "pub_date": "2025-08-20",
+      "authors": "Vieira Flávia C; Mandadi Kranthi K; Ramasamy Manikandan; de Souza Amancio; Callahan Kiana; ... (+8)",
+      "first_author": "Vieira Flávia C",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41119275",
+      "doi": "10.11646/zootaxa.5683.1.7",
+      "title": "Three new species of Dikrella Oman (Hemiptera: Cicadellidae) associated to urban trees in Argentina.",
+      "abstract": "Three new species of Dikrella (Readionia) Oman, D. lilloi sp. nov., D. urbana sp. nov. and D. yungaensis sp. nov. from Tucumn and Jujuy provinces, Argentina, are described. Detailed morphological descriptions with genitalia illustrations of the new species and a key for identification of males of Dikrella (Readionia) are provided.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-08-19",
+      "authors": "Pereyra Mora; Hamity Veronica C; Albarracn Erica Luft; Catalano Ines; Paradell Susana",
+      "first_author": "Pereyra Mora",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40941779",
+      "doi": "10.3390/plants14172614",
+      "title": "Distribution and Phylogenetic Diversity of ",
+      "abstract": "Increased Atlantic water transport and river discharge are more pronounced effects of global warming at high latitudes. Both phenomena may lead to changes in the species composition of small-celled algae populations in marine ecosystems, as well as to the emergence of new species. This study investigated the spatial distribution of picocyanobacterial (PC) abundance and the phylogenetic diversity of PC Synechococcus in the Kara Sea. PC abundance varied from 2 to 88 cells mL-1 and increased with warming temperatures and decreasing salinity caused by river water influence. The contribution of Synechococcus to the total picophytoplankton biomass was low (<16%). The Synechococcus community was characterized at deep taxonomic level using amplicon sequencing targeting the petB gene. Diversity was low, revealing only Synechococcus subcluster 5.1 polar lineages I and IV, and euryhaline subcluster 5.2. Synechococcus subcluster 5.1.I represented on average 97% of the total reads assigned to cyanobacteria. For the first time, the presence of estuarine Synechococcus subcluster 5.2 was documented as far north as 82° N. Modified Atlantic water was the main source of cyanobacteria in the Kara Sea, followed by river discharge. Our study contributes to the understanding of PC sources in the Kara Sea and allows for the further monitoring of PC distribution and evolution.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-08-22",
+      "authors": "Belevich Tatiana A; Milyutina Irina A; Demidov Andrey B; Vorob'eva Olga V; Polukhin Alexander A; ... (+2)",
+      "first_author": "Belevich Tatiana A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40863558",
+      "doi": "10.3390/jof11080607",
+      "title": "Species Diversity and Resource Status of Macrofungi in Beijing: Insights from Natural and Urban Habitats.",
+      "abstract": "This study systematically documented macrofungal diversity in Beijing, China (field surveys conducted from 2020 to 2024) using line-transect and random sampling. A total of 1056 species were identified, spanning 2 phyla, 7 classes, 25 orders, 109 families, and 286 genera. The inventory includes 12 new species, 456 new records for Beijing, 79 new records for China, and comprises 116 edible, 56 edible-medicinal, 123 medicinal, and 58 poisonous species. Among these, 542 species were assessed against China's Macrofungi Redlist, revealing eight species needing conservation attention (seven Near Threatened, one Vulnerable). Analysis revealed stark differences in dominant taxa between natural ecosystems (protected areas) and urban green spaces/parks. In natural areas, macrofungi are dominated by 31 families (e.g., Russulaceae, Cortinariaceae) and 47 genera (e.g., Russula, Cortinarius). Ectomycorrhizal lineages prevailed, highlighting their critical role in forest nutrient cycling, plant symbiosis, and ecosystem integrity. In urban areas, 10 families (e.g., Agaricaceae, Psathyrellaceae) and 17 genera (e.g., Leucocoprinus, Coprinellus) were dominant. Saprotrophic genera dominated, indicating their adaptation to decomposing organic matter in human-modified habitats and the provision of ecosystem services. The study demonstrates relatively high macrofungal diversity in Beijing. The distinct functional guild composition-ectomycorrhizal dominance in natural areas versus saprotrophic prevalence in urban zones-reveals complementary ecosystem functions and underscores the conservation value of protected habitats for maintaining vital mycorrhizal networks. These findings provide fundamental data and scientific support for regional biodiversity conservation and sustainable macrofungal resource development.",
+      "journal": "Journal of fungi (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-08-21",
+      "authors": "Liu Dong-Mei; Wang Shi-Hui; Wang Ke; Li Jia-Xin; Yang Wen-Qiang; ... (+5)",
+      "first_author": "Liu Dong-Mei",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41119277",
+      "doi": "10.11646/zootaxa.5683.1.5",
+      "title": "New planthoppers in the genus Nesomyndus (Hemiptera: Fulgoromorpha: Cixiidae) from Bismarck palms in western Madagascar, redescription of Nesomyndus australis, a key to the genus and an updated molecular phylogeny of available Oecleini.",
+      "abstract": "In a survey conducted in Northwestern Madagascar for potential vectors of palm lethal decline phytoplasmas, planthoppers belonging to the genus Nesomyndus were collected from Bismarck palms (Bismarckia nobilis). The specimens represented three species, the type species, N. australis Jacobi and two new species, here described as N. maculatus sp. nov. and N. madagascarensis sp. nov. Supplemental molecular data is provided for the cytochrome c oxidase subunit I (COI) gene (5 and 3 regions), histone 3 (H3) gene, 18S rRNA gene and 28S rRNA gene (D8 to D10 expansion regions) to test monophyly of Nesomyndus and its placement relative to other Oecleini.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-08-19",
+      "authors": "Bahder Brian W; Pilet Fabian; Bartlett Charles R; Ratsimbazafy Miangaly Raharimandimby; Randretsiferana Safidinirina Armande; ... (+4)",
+      "first_author": "Bahder Brian W",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41119539",
+      "doi": "10.11646/zootaxa.5683.4.4",
+      "title": "A new species of Urodeta Stainton (Lepidoptera: Elachistidae) mining leaves of button mangrove (Combretaceae: Conocarpus erectus L.) in Florida and the Caribbean.",
+      "abstract": "Urodeta conocarpi Eiseman, spec. nov. (Lepidoptera: Elachistidae) is described from specimens reared from larvae found mining leaves of Conocarpus erectus L. (Combretaceae) in the Florida Keys. The leaf mine, larva, and pupa are illustrated. Similar leaf mines are reported from elsewhere in southern Florida as well as the Bahamas. This is the first record of Urodeta Stainton from the USA, the second species known from the Neotropical region, and the third to be reared, out of 29 species now known worldwide (of which one remains unnamed).",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-08-22",
+      "authors": "Eiseman Charles S; Ringer David Jeffrey; Irvine Thomas; Feldman Tracy S",
+      "first_author": "Eiseman Charles S",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

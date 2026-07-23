@@ -1,0 +1,57 @@
+{
+  "month": "1987-09",
+  "generated": "2026-07-13 02:59:42",
+  "total": 2,
+  "by_category": {
+    "Host_Virus_Interactions": 2,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "24240215",
+      "doi": "10.1007/BF00288858",
+      "title": "Inheritance of resistance to potato y viruses in Phaseolus vulgaris L : 1. Two independent genes for resistance to watermelon mosaic virus-2.",
+      "abstract": "Resistance to watermelon mosaic virus-2 in Phaseolus vulgaris L. is conferred by two distinct dominant alleles at independent loci. Based on segregation data one locus is designated Wmv, the other, Hsw. The dominant allele Wmv from cv. Great Northern 1140 prevents systemic spread of the virus but viral replication occurs in inoculated tissue. In contrast, Hsw confers both local and systemic resistance to WMV-2 below 30C. At higher temperatures, plants that carry this allele in the absence of modifying or epistatic factors develop systemic veinal necrosis upon inoculation with the virus that results in rapid death. Patho-type specificity has not been demonstrated for either allele; both factors confer resistance to every isolate tested. A temperature-sensitive shift in epistasis is apparent between dominant alleles at these loci. Because Hsw is very tightly linked if not identical to the following genes for hypersensitivity to potyviruses I, (bean common mosaic virus), Bcm, (blackeye cowpea mosaic virus), Cam, (cowpea aphid-borne mosaic virus) and Hss (soybean mosaic virus), parental, reciprocal dihybrid F1 populations, and selected F3 families were inoculated with each of these viruses and held at 35 C. F1 populations developed vascular necrosis completely or primarily limited to inoculated tissue, while F3 families from WMV-2-susceptible segregates were uniformly susceptible to these viruses. The relationship between Hsw, Wmv and other genes for potyvirus resistance suggest patterns in the evolution of resistance and viral pathogenicity. Characterization of the resistance spectrum associated with each factor provides an additional criterion to distinguish genes for plant virus resistance.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 1987,
+      "pub_date": "1987-09-01",
+      "authors": "Kyle M M; Provvidenti R",
+      "first_author": "Kyle M M",
+      "categories": [
+        "Host_Virus_Interactions",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Watermelon mosaic virus-2 (WMV-2)",
+      "taxonomy": "",
+      "host_plant": "菜豆 (Phaseolus vulgaris L.)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "28312296",
+      "doi": "10.1007/BF00377516",
+      "title": "Phenotypic and genetic patterns of resistance to the pathogen Phakopsora pachyrhizi in populations of Glycine canescens.",
+      "abstract": "Phenotypic patterns of resistance to nine races of the pathogen Phakopsora pachyrhizi (soybean rust) in two natural populations of Glycine canescens were determined. In both populations there was considerable variability both within and between different host lines in their resistance or susceptibility to the nine different pathogen races. The genetic basis of these patterns of resistance was analyzed through an extensive series of crosses. In both host populations resistance was conditioned by single dominant genes with major phenotypic effects. One, two or three such genes were present in each host line. Using the principles of the gene-for-gene hypothesis, knowledge about the number of resistance genes present in each host line and by cross comparison of the phenotypic patterns of disease resistance detected in each line, estimates were made of the number of resistance genes or alleles present in each population of G. canescens. The two populations contained a minimum of 10 and 12 resistance genes. The relevance of these results to agriculture is discussed briefly.",
+      "journal": "Oecologia",
+      "year": 1987,
+      "pub_date": "1987-09-01",
+      "authors": "Burdon J J",
+      "first_author": "Burdon J J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

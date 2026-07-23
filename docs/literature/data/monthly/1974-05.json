@@ -1,0 +1,55 @@
+{
+  "month": "1974-05",
+  "generated": "2026-07-13 02:59:41",
+  "total": 2,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "4376909",
+      "doi": "10.1128/AAC.5.5.485",
+      "title": "Mechanism of the antiviral action of 3-methyleneoxindole.",
+      "abstract": "The biochemical basis underlying the antiviral action of 3-methyleneoxindole (MO), a plant metabolite, was examined in HeLa cells infected with poliovirus. In the presence of antiviral concentrations of MO, poliovirus-specific ribonucleic acid (RNA) synthesis can proceed normally, and the RNA synthesized under such conditions is infectious. It is suggested that the ability of MO to bind to ribosomes of HeLa cells may underlie the antiviral affect. Data are presented which indicate that poliovirus messenger RNA cannot attach to those ribosomes which already are bound to MO. Consequently, virus-specific polysomes cannot be recovered from infected cells treated with antiviral concentrations of MO. In contrast, antiviral concentrations of MO do not prevent the formation of polysomes in uninfected HeLa cells.",
+      "journal": "Antimicrobial agents and chemotherapy",
+      "year": 1974,
+      "pub_date": "1974-05-01",
+      "authors": "Tuli V",
+      "first_author": "Tuli V",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "4477949",
+      "doi": "10.1128/AAC.5.5.479",
+      "title": "Antiviral activity of 3-methyleneoxindole.",
+      "abstract": "3-Methyleneoxindole (MO), an oxidation product of the plant auxin indole-3-acetic acid, can selectively inhibit the replication of herpes-, mengo-, polioviruses, and Sindbis virus. The antiviral action of MO, a sulfhydryl binding compound, is neutralized by 2-mercaptoethanol if the latter is added soon after exposure of infected cells to MO. If addition of 2-mercaptoethanol is delayed, the antiviral action of MO appears to be irreversible. Data are presented which indicate that the antiviral action of MO is not mediated by interferon.",
+      "journal": "Antimicrobial agents and chemotherapy",
+      "year": 1974,
+      "pub_date": "1974-05-01",
+      "authors": "Tuli V; Moyed H S; Stevenson D; Gordon I",
+      "first_author": "Tuli V",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

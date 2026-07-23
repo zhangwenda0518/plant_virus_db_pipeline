@@ -1,0 +1,168 @@
+{
+  "month": "1992-10",
+  "generated": "2026-07-13 02:59:42",
+  "total": 7,
+  "by_category": {
+    "New_Virus": 4,
+    "Transmission_Epidemiology": 3,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "1339468",
+      "doi": "10.1099/0022-1317-73-10-2553",
+      "title": "Nucleotide sequence of shallot virus X RNA reveals a 5'-proximal cistron closely related to those of potexviruses and a unique arrangement of the 3'-proximal cistrons.",
+      "abstract": "The 8890 nucleotide RNA sequence of shallot virus X (ShVX), a new virus isolated from shallot, has been determined. The sequence contains six open reading frames (ORFs) which encode putative proteins (in the 5' to 3' direction) of M(r) 194528 (ORF1), 26333 (ORF2), 11245 (ORF3), 42209 (ORF4), 28486 (ORF5) and 14741 (ORF6). The ORF1 protein was found to be highly homologous to the putative potexvirus RNA replicases; ORF2, -3, -5 and -6 proteins also have analogues among the potex- and/or carlavirus-encoded proteins. ORF3 is followed by an AUG-lacking frame coding for an amino acid sequence homologous to that of the 7K to 8K proteins of the triple gene block of the above-mentioned viruses. The putative ORF4 protein has no reliable homology with proteins in the database. The results obtained testify that, except for the unique 42K protein gene, the ShVX genome combines a number of elements typical of both carla- and potexviruses.",
+      "journal": "The Journal of general virology",
+      "year": 1992,
+      "pub_date": "1992-10-01",
+      "authors": "Kanyuka K V; Vishnichenko V K; Levay K E; Kondrikov DYu; Ryabov E V; ... (+1)",
+      "first_author": "Kanyuka K V",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Shallot virus X (ShVX)",
+      "taxonomy": "未提及",
+      "host_plant": "shallot (青葱)",
+      "location": "未提及",
+      "results": "ShVX RNA 8890 nt，6个ORF。ORF1与potexvirus RNA复制酶高度同源；ORF2、3、5、6与potex/carlavirus蛋白有类似物；ORF4无可靠同源。基因组组合了carla-和potexvirus的要素。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1381536",
+      "doi": "10.1016/0042-6822(92)90912-9",
+      "title": "Processing of linear longer-than-unit-length potato spindle tuber viroid RNAs into infectious monomeric circular molecules by a G-specific endoribonuclease.",
+      "abstract": "Different cDNA constructs were used for the in vitro synthesis of RNA transcripts that contain a complete monomeric unit of the potato spindle tuber viroid (PSTVd) plus an additional repeat of a part of the circular RNA genome. These permutated linear longer-than-unit-length PSTVd RNAs were incubated with the G-specific endoribonuclease RNase T1 which generated monomeric circular PSTVd RNA molecules that were infectious when mechanically inoculated to tomato plants. Besides the correct monomeric PSTVd RNA, smaller and larger circular RNAs were also formed during the reaction. The comparison of different transcripts revealed that correct in vitro processing of PSTVd RNA can proceed at alternative sites indicating that circularization is driven by RNA structure and not governed by a particular sequence. Based on these data, we propose a novel model for the processing of multimeric replicative viroid RNA intermediates through RNA cleavage and ligation catalyzed by a host endoribonuclease.",
+      "journal": "Virology",
+      "year": 1992,
+      "pub_date": "1992-10-01",
+      "authors": "Tabler M; Tzortzakaki S; Tsagris M",
+      "first_author": "Tabler M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Potato spindle tuber viroid (PSTVd)",
+      "taxonomy": "未提及",
+      "host_plant": "番茄 (tomato plants)",
+      "location": "未提及",
+      "results": "RNase T1可将线性多聚体PSTVd RNA加工为环状单体，具有感染性；多种环状产物生成；加工可在不同位点进行，表明环化由结构驱动。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "28311813",
+      "doi": "10.1007/BF00317263",
+      "title": "Alatae production and population increase of aphid vectors on virus-infected host plants.",
+      "abstract": "Zucchini yellow mosaic virus (ZYMV) and Aphis gossypii Glover are two components of a recently identified plant-parasite system that provides an excellent opportunity to study interrelations between a virus and a vector that share the same host, but have no direct physiological interaction. In a field experiment we documented numbers of alate and apterous A. gossypii on healthy Cucurbita pepo and on plants inoculated with virus 0, 7, 14, and 21 days before aphid infestation. When plants were inoculated and infested simultaneously, more than twice as many alatae were produced after 20 days of colony growth than on any other treatment. This indicates that properties unique to the early stages of viral infection somehow stimulated wing formation. Because it is spread by the activities of alatae, virus dispersal would be greater as a result of these properties. Developmental rate, total numbers of aphids, and numbers of alatae and apterae decreased as the time between virus inoculation and aphid colonization increased.",
+      "journal": "Oecologia",
+      "year": 1992,
+      "pub_date": "1992-10-01",
+      "authors": "Blua M J; Perring T M",
+      "first_author": "Blua M J",
+      "categories": [
+        "New_Virus",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Zucchini yellow mosaic virus (ZYMV)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "Cucurbita pepo",
+      "location": "未提及",
+      "results": "同时接种病毒和蚜虫时，20天后有翅蚜数量是其他处理的2倍以上；延迟接种降低发育率、总蚜数和翅型。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1364025",
+      "doi": "",
+      "title": "The effect of an Egyptian isolate of Streptomyces afghanensis on some plant viruses.",
+      "abstract": "An Egyptian isolate of Streptomyces afghanensis was examined for the production of antiviral metabolites. Concentrated broth exudates of this microorganism were tested against tobacco mosaic virus (TMV), tomato mosaic virus (ToMV) and potato virus X (PVX) infecting Nicotiana tabacum L. cv. White Burley. Both concentrated metabolites and their acetone extract inhibited local lesion development of the tested viruses. In all cases, maximum antiviral effect was observed 2 hr after infection. The ultrafiltrate of broth culture reduced the number of local PVX lesions produced on the challenged half leaves in the case of later applications.",
+      "journal": "Acta virologica",
+      "year": 1992,
+      "pub_date": "1992-10-01",
+      "authors": "Hussein M E",
+      "first_author": "Hussein M E",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒(TMV)、番茄花叶病毒(ToMV)、马铃薯X病毒(PVX)",
+      "taxonomy": "",
+      "host_plant": "烟草(Nicotiana tabacum cv. White Burley)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1409615",
+      "doi": "10.1073/pnas.89.19.9136",
+      "title": "Agroinfection as an alternative to insects for infecting plants with beet western yellows luteovirus.",
+      "abstract": "Beet western yellows luteovirus, like other luteoviruses, cannot be transmitted to host plants by mechanical inoculation but requires an aphid vector, a feature that has heretofore presented a serious obstacle to the study of such viruses. In this paper we describe use of agroinfection to infect hosts with beet western yellows virus without recourse to aphids. Agroinfection is a procedure for introducing a plant virus into a host via Agrobacterium tumefaciens harboring a Ti plasmid, which can efficiently transfer a portion of the plasmid (T-DNA) to plant cells near a wound. The viral genome must be inserted into the T-DNA in such a way that it can escape and begin autonomous replication, a requirement that has, so far, limited agroinfection to pathogens with a circular genome. We have cloned cDNA corresponding to the complete beet western yellows virus RNA genome between the cauliflower mosaic virus 35S promoter and the nopaline synthase transcription termination signal. In one construct, a self-cleaving (ribozyme) sequence was included so as to produce a transcript in planta with a 3' extremity almost identical to natural viral RNA. When inoculated mechanically to host plants, the naked plasmid DNA was not infectious but, when introduced into T-DNA and agroinfected to plants, both the construct with and without the ribozyme produced an infection. This approach should be applicable to virtually any plant virus with a linear plus-strand RNA genome.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1992,
+      "pub_date": "1992-10-01",
+      "authors": "Leiser R M; Ziegler-Graff V; Reutenauer A; Herrbach E; Lemaire O; ... (+3)",
+      "first_author": "Leiser R M",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Beet western yellows luteovirus (甜菜西方黄化病毒)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1416920",
+      "doi": "10.1007/BF00582585",
+      "title": "Kluyveromyces piceae sp. nov., a new yeast species isolated from the rhizosphere of Picea abies (L.) Karst.",
+      "abstract": "Two strains of an undescribed species of the genus Kluyveromyces were recovered from the rhizosphere of spruce. A description of the new species, Kluyveromyces piceae, is given and its classification on basis of ascospore shape, substrate utilization, G+C-content, DNA-DNA-reassociation data and habitat specificity is discussed.",
+      "journal": "Antonie van Leeuwenhoek",
+      "year": 1992,
+      "pub_date": "1992-10-01",
+      "authors": "Weber G; Spaaij F; van der Walt J P",
+      "first_author": "Weber G",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1438847",
+      "doi": "",
+      "title": "[Plant virus vector and recombinant virus].",
+      "abstract": "",
+      "journal": "Tanpakushitsu kakusan koso. Protein, nucleic acid, enzyme",
+      "year": 1992,
+      "pub_date": "1992-10-01",
+      "authors": "Okada Y",
+      "first_author": "Okada Y",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

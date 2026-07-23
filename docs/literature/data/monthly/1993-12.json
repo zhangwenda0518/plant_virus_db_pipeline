@@ -1,0 +1,123 @@
+{
+  "month": "1993-12",
+  "generated": "2026-07-13 02:59:42",
+  "total": 5,
+  "by_category": {
+    "Host_Virus_Interactions": 3,
+    "Molecular_Characterization": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8249300",
+      "doi": "10.1006/viro.1993.1655",
+      "title": "Asp-->Asn substitutions in the putative calcium-binding site of the turnip crinkle virus coat protein affect virus movement in plants.",
+      "abstract": "Many plant virus coat proteins have binding sites for divalent cations, particularly calcium. It has been speculated that the purpose of such sites is to ensure that plant viruses release their RNA only in the host cytoplasm which has a low calcium concentration. By comparison to tomato bushy stunt virus, two of the amino acids that probably interact directly with calcium ions in turnip crinkle virus (TCV) capsids, Asp155 and Asp157, were substituted with Asn residues by oligonucleotide-directed mutagenesis to create the mutant TCV-M18. TCV-M18 coat protein, and virions accumulated to wild-type levels in isolated protoplasts. Mutant virions were able to uncoat and to initiate de novo replication in protoplasts although no symptoms were observed in plants inoculated with TCV-M18. Mutant RNA accumulated to much lower levels than wild-type RNA in inoculated leaves and was not detected in upper, uninoculated leaves. The lower infectivity of TCV-M18 in plants may be due to a decreased capacity to move efficiently from cell to cell, and we suggest the possibility that TCV coat protein plays an active, pivotal role in cell-to-cell movement interactions.",
+      "journal": "Virology",
+      "year": 1993,
+      "pub_date": "1993-12-01",
+      "authors": "Laakso M M; Heaton L A",
+      "first_author": "Laakso M M",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "turnip crinkle virus (TCV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12271055",
+      "doi": "10.1105/tpc.5.12.1749",
+      "title": "Induction of a Highly Specific Antiviral State in Transgenic Plants: Implications for Regulation of Gene Expression and Virus Resistance.",
+      "abstract": "Transgenic tobacco plants expressing either a full-length form of the tobacco etch virus (TEV) coat protein or a form truncated at the N terminus of the TEV coat protein were initially susceptible to TEV infection, and typical systemic symptoms developed. However, 3 to 5 weeks after a TEV infection was established, transgenic plants \"recovered\" from the TEV infection, and new stem and leaf tissue emerged symptom and virus free. A TEV-resistant state was induced in the recovered tissue. The resistance was virus specific. Recovered plant tissue could not be infected with TEV, but was susceptible to the closely related virus, potato virus Y. The resistance phenotype was functional at the single-cell level because protoplasts from recovered transgenic tissue did not support TEV replication. Surprisingly, steady state transgene mRNA levels in recovered tissue were 12-to 22-fold less than transgene mRNA levels in uninoculated transgenic tissue of the same developmental stage. However, nuclear run-off studies suggested that transgene transcription rates in recovered and uninoculated plants were similar. We propose that the resistant state and reduced steady state levels of transgene transcript accumulation are mediated at the cellular level by a cytoplasmic activity that targets specific RNA sequences for inactivation.",
+      "journal": "The Plant cell",
+      "year": 1993,
+      "pub_date": "1993-12-01",
+      "authors": "Lindbo J. A.; Silva-Rosales L.; Proebsting W. M.; Dougherty W. G.",
+      "first_author": "Lindbo J. A.",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草蚀纹病毒 (TEV)",
+      "taxonomy": "",
+      "host_plant": "烟草",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19279804",
+      "doi": "",
+      "title": "Regulation of Defense-related Gene Expression during Plant-Pathogen Interactions.",
+      "abstract": "Plants have evolved a broad array of defense mechanisms involved in disease resistance. These include synthesis of phytoalexin antibiotics and proteinase inhibitors, deposition of cell wall materials, and accumulation of hydrolytic enzymes such as chitinases. Resistance appears to depend on the ability of the host to recognize the pathogen rapidly and induce these defense responses in order to limit pathogen spread. Application of molecular technologies has yielded significant new information on mechanisms involved in pathogen recognition, signal transduction, and defense-related gene activation, and is leading to novel strategies for engineering enhanced disease resistance. We are using these approaches to analyze regulation of 3-hydroxy-3-methylglutaryl CoA reductase (HMGR), a key enzyme mediating the production of terpenoid defense compounds. This enzyme is encoded by four genes in tomato; hmg2 gene expression is specifically associated with responses to pathogen or defense elicitors. Transgenic plants containing DNA constructs that fuse the hmg2 promoter to a reporter gene have been used to analyze both tissue specificity and patterns of defense-related expression. Because this gene is rapidly induced in tissues directly surrounding the site of ingress by a variety of pathogens, it may serve as a valuable tool in engineering new disease-resistance mechanisms.",
+      "journal": "Journal of nematology",
+      "year": 1993,
+      "pub_date": "1993-12-01",
+      "authors": "Cramer C L; Weissenborn D; Cottingham C K; Denbow C J; Eisenback J D; ... (+2)",
+      "first_author": "Cramer C L",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19279805",
+      "doi": "",
+      "title": "Use of Arabidopsis thaliana and Pseudomonas syringae in the Study of Plant Disease Resistance and Tolerance.",
+      "abstract": "The interaction between Arabidopsis thaliana and the bacterium Pseudomonas syringae is being developed as a model experimental system for plant pathology research. Race-specific (\"gene-for-gene\") resistance has been demonstrated for this interaction, and pathogen genes that determine avirulence have been isolated and characterized. Because certain lines of both Arabidopsis and soybean are resistant to bacteria carrying the avirulence genes avrRpt2 and avrB, extremely similar pathogen recognition mechanisms are apparently present in these two plant species. Isogenic bacterial strains that differ by the presence of single avirulence genes are being used to analyze plant resistance. Plant resistance genes have been identified in crosses between resistant and susceptible lines. The extensive map-based cloning tools available in Arabidopsis are being used to isolate these resistance genes. In a related project, ethylene-insensitive Arabidopsis mutants are being used to examine the role of ethylene in disease development. Ethylene apparently mediates symptom formation in susceptible plants and is not required for resistance, suggesting possible strategies for enhancement of disease tolerance in crops.",
+      "journal": "Journal of nematology",
+      "year": 1993,
+      "pub_date": "1993-12-01",
+      "authors": "Bent A F; Kunkel B N; Innes R W; Staskawicz B J",
+      "first_author": "Bent A F",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19279806",
+      "doi": "",
+      "title": "Plant chitinases and their roles in resistance to fungal diseases.",
+      "abstract": "Chitinases are enzymes that hydrolyze the N-acetylglucosamine polymer chitin, and they occur in diverse plant tissues over a broad range of crop and noncrop species. The enzymes may be expressed constitutively at low levels but are dramatically enhanced by numerous abiotic agents (ethylene, salicylic acid, salt solutions, ozone, UV light) and by biotic factors (fungi, bacteria, viruses, viroids, fungal cell wall components, and oligosaccharides). Different classes of plant chitinases are distinguishable by molecular, biochemical, and physicochemical criteria. Thus, plant chitinases may differ in substrate-binding characteristics, localization within the cell, and specific activities. Because chitin is a structural component of the cell wall of many phytopathogenic fungi, extensive research has been conducted to determine whether plant chitinases have a role in defense against fungal diseases. Plant chitinases have different degrees of antifungal activity to several fungi in vitro. In vivo, although rapid accumulation and high levels of chitinases (together with numerous other pathogenesis-related proteins) occur in resistant tissues expressing a hypersensitive reaction, high levels also can occur in susceptible tissues. Expression of cloned chitinase genes in transgenic plants has provided further evidence for their role in plant defense. The level of protection observed in these plants is variable and may be influenced by the specific activity of the enzyme, its localization and concentration within the cell, the characteristics of the fungal pathogen, and the nature of the host-pathogen interaction. The expression of chitinase in combination with one or several different antifungal proteins should have a greater effect on reducing disease development, given the complexities of fungal-plant cell interactions and resistance responses in plants. The effects of plant chitinases on nematode development in vitro and in vivo are worthy of investigation.",
+      "journal": "Journal of nematology",
+      "year": 1993,
+      "pub_date": "1993-12-01",
+      "authors": "Punja Z K; Zhang Y Y",
+      "first_author": "Punja Z K",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

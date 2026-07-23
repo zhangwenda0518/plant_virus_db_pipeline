@@ -1,0 +1,103 @@
+{
+  "month": "1987-07",
+  "generated": "2026-07-13 02:59:42",
+  "total": 4,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 2,
+    "Control_Management": 1,
+    "Molecular_Characterization": 1,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "16453779",
+      "doi": "10.1002/j.1460-2075.1987.tb02442.x",
+      "title": "Expression of alfalfa mosaic virus RNA 4 in transgenic plants confers virus resistance.",
+      "abstract": "Agrobacterium-mediated transfer from a binary vector was used to produce transgenic Nicotiana tabacum plants that expressed coat protein of the plant virus, alfalfa mosaic virus (AMV). Expression levels of the chimeric gene, which was under the control of the cauliflower mosaic virus 19S promoter, were determined in primary transformed plants, in the progeny from self-fertilization and in the progeny from crosses to normal tobacco. RNA transcripts that were of the expected size as well as a protein of the M(r) and antigenicity of AMV coat protein accumulated in the transgenic plants. Plants that expressed the highest levels of coat protein developed fewer primary infections following inoculation with two strains of AMV and developed systemic infection slower than did plants that did not express coat protein. Resistance was specifically against virions of the AMV strains. AMV RNA and the unrelated virus, tobacco mosaic virus, were as infectious on progeny that expressed coat protein as they were on progeny that did not. The relationship between the virus resistance expressed by these transgenic plants and that observed in virus cross-protection is discussed.",
+      "journal": "The EMBO journal",
+      "year": 1987,
+      "pub_date": "1987-07-01",
+      "authors": "Loesch-Fries L S; Merlo D; Zinnen T; Burhop L; Hill K; ... (+4)",
+      "first_author": "Loesch-Fries L S",
+      "categories": [
+        "Control_Management",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "苜蓿花叶病毒（AMV）",
+      "taxonomy": "",
+      "host_plant": "烟草（Nicotiana tabacum）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "24301193",
+      "doi": "10.1007/BF00021310",
+      "title": "Pea genes associated with non-host disease resistance to Fusarium are also active in race-specific disease resistance to Pseudomonas.",
+      "abstract": "A given plant species is able to resist most of the potentially pathogenic microorganisms with which it comes in contact. This phenomenon, known as non-host resistance, can be overcome only by a very small number of 'true pathogens' which can use that plant as a host. In some cases, plants have developed mechanisms for overcoming infection by specific races or strains of a true pathogen. This race-specific resistance can be easily manipulated into agronomically important cultivars by plant breeders. We have previously described nine cDNA clones which represent pea genes active during non-host resistance against the fungus Fusarium solani f. sp. phaseoli. In the present work, we have used these cDNAs as probes to compare non-host resistance with race-specific responses of peas against three races of Pseudomonas syringae pv. pisi. Five of the genes most active during non-host resistance were also active in direct correlation with the phenotypic expression of resistance in race-specific reactions of five differential pea cultivars against three races of Pseudomonas syringae pv. pisi.",
+      "journal": "Plant molecular biology",
+      "year": 1987,
+      "pub_date": "1987-07-01",
+      "authors": "Daniels C H; Fristensky B; Wagoner W; Hadwiger L A",
+      "first_author": "Daniels C H",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "3037488",
+      "doi": "10.1093/nar/15.13.5157",
+      "title": "Cloning and mapping of infA, the gene for protein synthesis initiation factor IF1.",
+      "abstract": "The gene for translation initiation factor IF1, infA, has been identified by using two synthetic oligonucleotides to screen a Charon 30 library of Escherichia coli DNA. A recombinant lambda phage, C1921, was purified from a plaque positive for both probes. A 2.8 kb BglII fragment and a 2.0 kb HindIII fragment isolated from C1921 were subcloned into the BamHI and HindIII sites of pBR322 to yield pTB7 and pTH2 respectively. Synthesis of IF1 in maxicells transformed with pTB7 or pTH2 indicates the presence of inf A in both inserts. This was confirmed by DNA sequencing: a region was found that codes for a 8,119 dalton protein with an amino acid sequence corresponding to IF1. The chromosomal location of inf A was determined by mapping the closely linked beta-lactamase gene (Ampr) in pTB7 and pTH2. pTB7 and pTH2 were transformed into polA Hfr hosts, and integration of the plasmid by homologous recombination near inf A was selected on the basis of ampicillin resistance. The site of integration was confirmed by Southern blot analysis of restriction nuclease digested wild type and transformed genomic DNA. The Ampr marker (and therefore inf A) was mapped to about 20 minutes by Hfr interrupted matings and P1 transduction experiments. The structure and regulation of the inf A operon currently are being investigated.",
+      "journal": "Nucleic acids research",
+      "year": 1987,
+      "pub_date": "1987-07-10",
+      "authors": "Sands J F; Cummings H S; Sacerdot C; Dondon L; Grunberg-Manago M; ... (+1)",
+      "first_author": "Sands J F",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "3153613",
+      "doi": "",
+      "title": "What does the molecular structure of viruses tell us about viral functions?",
+      "abstract": "The structures of the protein shell of a number of simple icosahedral RNA plant and animal viruses are now known at atomic resolution. In addition, components of viral capsids such as the haemagglutinin and neuraminidase spikes of influenza virus and the hexon unit of adenovirus are known in similar detail. These structures have provided a wealth of information on viral assembly, viral disassembly, the antigenic surface on viruses available to neutralizing antibodies, the host cell receptor attachment site, fusion of viral particles with the host cell, processing of polyproteins during maturation and the manner in which antiviral agents can interfere with the function of a viral capsid.",
+      "journal": "Microbiological sciences",
+      "year": 1987,
+      "pub_date": "1987-07-01",
+      "authors": "Rossmann M G; Reuckert R R",
+      "first_author": "Rossmann M G",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

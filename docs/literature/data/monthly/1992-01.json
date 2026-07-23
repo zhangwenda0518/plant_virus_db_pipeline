@@ -1,0 +1,260 @@
+{
+  "month": "1992-01",
+  "generated": "2026-07-13 02:59:42",
+  "total": 11,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 3,
+    "New_Virus": 2,
+    "Molecular_Characterization": 2,
+    "Detection_Methods": 2,
+    "Transmission_Epidemiology": 1,
+    "Biotechnology_Applications": 1,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "1450734",
+      "doi": "10.1007/978-3-7091-6920-9_2",
+      "title": "Application of genome sequence information in potyvirus taxonomy: an overview.",
+      "abstract": "The application of protein and nucleic acid sequence analysis in evolutionary and phylogenetic studies is well established. Available sequence information for the 5' untranslated region of potyviruses including the fungus-transmitted barley yellow mosaic virus (BaYMV) RNA-1 suggests that a 12-nucleotide conserved sequence, the \"potybox\" is unique to this group. Various non-structural proteins of potyviruses share considerable \"signature\" sequence homology across a broad spectrum of unrelated viruses, which makes their value limited to \"supergroup\" or \"superfamily\" identity. However, in potyviruses, the coat-protein N-terminal sequences and 3' noncoding regions are variable among viruses, but similar among strains of the same virus. This suggests that these sequences may be an accurate marker of genetic relatedness. Until complete genome sequences from a large number of potyviruses become available and their value in systematics is tested, coat protein and 3' noncoding regions remain as the choice of taxonomic indicators. The reason being, that cloning and sequencing of the coat-protein gene and 3' noncoding regions are less complicated and time consuming and the sequences show significant differences among the virus species within the family Potyviridae.",
+      "journal": "Archives of virology. Supplementum",
+      "year": 1992,
+      "pub_date": "1992-01-01",
+      "authors": "Atreya C D",
+      "first_author": "Atreya C D",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "马铃薯Y病毒属病毒（含大麦黄花叶病毒BaYMV）",
+      "taxonomy": "马铃薯Y病毒科(Potyviridae)，马铃薯Y病毒属(Potyvirus)；大麦黄花叶病毒属(Bymovirus)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1516562",
+      "doi": "10.1007/BF00195447",
+      "title": "Scanning calorimetric studies of the stability of tobacco mosaic virus and aggregates of its coat protein.",
+      "abstract": "The thermal denaturation of the common strain of a rod-shaped plant virus, tobacco mosaic virus, has been investigated by differential scanning calorimetry, and compared to that of various aggregation states of its coat protein and to that of three other TMV strains. The state of the virions was monitored by electron microscopy and analytical ultracentrifugation. The observed endotherms could be analysed in terms of a step-wise dissociation of the virions. The transition temperatures of the three successive structural changes increased with decreasing pH, from pH = 8.0 to pH = 5.0, although the corresponding enthalpy changes did not vary appreciably with pH. TMV-HR showed a stronger pH dependence of the transition temperatures than the other strains, probably reflecting the importance of the changes in affecting the charged amino acids of its coat protein. The first step of the dissociation, which correlates with the breaking up of the virions into three or four shorter rods, implies a conformational change of the particle that may be related to the first step of the in situ decapsidation of TMV.",
+      "journal": "European biophysics journal : EBJ",
+      "year": 1992,
+      "pub_date": "1992-01-01",
+      "authors": "Mutombo K; Michels B; Ott H; Cerf R; Witz J",
+      "first_author": "Mutombo K",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "烟草花叶病毒（Tobacco mosaic virus, TMV）及三种其他TMV株系（包括TMV-HR）",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1450747",
+      "doi": "10.1007/978-3-7091-6920-9_25",
+      "title": "The usefulness of aphid transmission as a taxonomic criterion for potyviruses.",
+      "abstract": "In the past vector relationships have been one of the criteria used for delineating plant virus taxa. The proposed family, the Potyviridae, continues that practice. Aphid transmission of viruses within the genus Potyvirus is a useful characteristic in terms of identification, but is of only limited use in terms of taxonomy. This conclusion is based on a greater understanding of the molecular biology of potyviruses. The molecular basis of aphid transmission is not well understood at the present, but these data suggest that, beyond disease diagnosis, virus identification and characterization, and potential identification of genome microheterogeneity, aphid transmission should only be considered as a minor taxonomic criterion.",
+      "journal": "Archives of virology. Supplementum",
+      "year": 1992,
+      "pub_date": "1992-01-01",
+      "authors": "Berger P H",
+      "first_author": "Berger P H",
+      "categories": [
+        "Detection_Methods",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "马铃薯Y病毒属",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1450770",
+      "doi": "10.1007/978-3-7091-6920-9_6",
+      "title": "Serology of potyviruses: current problems and some solutions.",
+      "abstract": "The serological relationships among members of the family Potyviridae are extremely complex and inconsistent. Variable cross-reactivity of polyclonal antisera, unexpected paired relationships between distinct viruses, and lack of cross-reactions between some strains are the major problems associated with the serology of potyviruses. Recent biochemical and immunochemical investigations of coat proteins have established the molecular basis for potyvirus serology and provided explanations for most of the problems with serology of potyviruses. Information from these studies has also formed the basis for the development of several novel approaches to the accurate detection and identification of potyviruses. However, even these novel approaches are not without drawbacks and some of them cannot be applied easily in plant virus laboratories, since they require prior sequence information and facilities for peptide synthesis. These findings suggest that serology is an imperfect criterion for the identification and classification of potyviruses.",
+      "journal": "Archives of virology. Supplementum",
+      "year": 1992,
+      "pub_date": "1992-01-01",
+      "authors": "Shukla D D; Lauricella R; Ward C W",
+      "first_author": "Shukla D D",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "Potyviridae科病毒（potyviruses）",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1338948",
+      "doi": "",
+      "title": "Excision of a transposable element from a viral vector introduced into maize plants by agroinfection.",
+      "abstract": "The geminivirus maize streak virus (MSV) was used as a vector to introduce the maize transposable element Dissociation (Ds) and to study its excision in maize plants. MSV carrying Ds1 in its genome was introduced into maize plants by agroinfection. Excision of the Ds1 element from the MSV genome was detected only when functions from the transposable element Activator (Ac) were supplied in trans, either endogenously by the recipient maize plant or by co-transformation with Agrobacterium carrying a genomic Ac clone. The excision of Ds1 could easily be visualized by the appearance of viral symptoms induced by the revertant virus. The junction sequences left on the MSV genome after excision revealed 'footprints' typical of transposition as described for maize. From these results, we conclude that transposition functions in our system and that the use of the MSV replicon provides a rapid and simple tool for the investigation of the excision of transposable elements in maize plants.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 1992,
+      "pub_date": "1992-01-01",
+      "authors": "Shen W H; Hohn B",
+      "first_author": "Shen W H",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "玉米线条病毒（Maize streak virus, MSV）",
+      "taxonomy": "",
+      "host_plant": "玉米（maize）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1510558",
+      "doi": "10.1007/BF00245158",
+      "title": "Clostridium neopropionicum sp. nov., a strict anaerobic bacterium fermenting ethanol to propionate through acrylate pathway.",
+      "abstract": "Strain X4 was isolated several years ago from an anaerobic mesophilic plant treating vegetable cannery waste waters. It was the first example of propionic fermentation from ethanol. Morphologic and physiologic characterizations of the strain are presented here. This strain is described as type strain of a new species, Clostridium neopropionicum sp. nov. Whole cells of strain X4 ferment [1-13C] ethanol and CO2 to [2-13C] propionate, [1-13C] acetate and [2-13C] propanol, suggesting the absence of a randomizing pathway during the propionate formation. Enzymes involved in this fermentation were assayed in cell-free extracts of cells grown with ethanol as sole substrate. Alcohol dehydrogenase, aldehyde dehydrogenase, phosphate acetyl transferase, acetate kinase, pyruvate synthase, lactate dehydrogenases, and the enzymes of the acrylate pathway were detected at activities sufficient to be involved in ethanol fermentation. The same pathway may be used for the degradation of lactate or acrylate to acetate.",
+      "journal": "Archives of microbiology",
+      "year": 1992,
+      "pub_date": "1992-01-01",
+      "authors": "Tholozan J L; Touzel J P; Samain E; Grivet J P; Prensier G; ... (+1)",
+      "first_author": "Tholozan J L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1734872",
+      "doi": "10.1016/0006-291x(92)91771-h",
+      "title": "Differential requirement of ATP and extra-ribosomal proteins for ribosome inactivation by eight RNA N-glycosidases.",
+      "abstract": "The requirement of ATP and extra-ribosomal proteins for the inactivation of ribosomes by eight plant RNA N-glycosidases [ribosome-inactivating proteins (RIPs)] was investigated. Tritin, pokeweed antiviral protein and barley RIP depend, as gelonin [Sperti, S., Brigotti, M., Zamboni, M., Carnicelli, D. and Montanaro, L. (1991) Biochem. J., 277, 281-284], on the presence of ATP and extra-ribosomal proteins for full inactivation of ribosomes, while bryodin, lychnin, momordin, momorcochin and saporin inactivate isolated Artemia salina ribosomes suspended in buffer saline.",
+      "journal": "Biochemical and biophysical research communications",
+      "year": 1992,
+      "pub_date": "1992-01-31",
+      "authors": "Carnicelli D; Brigotti M; Montanaro L; Sperti S",
+      "first_author": "Carnicelli D",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1438451",
+      "doi": "",
+      "title": "Search for new antiviral agents of plant origin.",
+      "abstract": "",
+      "journal": "Pharmaceutica acta Helvetiae",
+      "year": 1992,
+      "pub_date": "1992-01-01",
+      "authors": "Kaïj-a-Kamb M; Amoros M; Girre L",
+      "first_author": "Kaïj-a-Kamb M",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1505860",
+      "doi": "10.1007/BF02814572",
+      "title": "Biological effects of the antibiotic brefeldin A (decumbin, cyanein, ascotoxin, synergisidin): a retrospective.",
+      "abstract": "Brefeldin A has been recently characterized to act as an inhibitor of intracellular protein export with profound effects on the structure and function of the Golgi apparatus in animal cells. Manifold activities of the antibiotic (under different names) published in the 1960's and 1970's are reviewed: effects on fungal growth and morphogenesis, inhibition of mitosis in plant cells, cytotoxicity, cancerostatic, antiviral and antinematodal activity and peculiar effects on DNA, RNA and protein synthesis in microbial and animal cells.",
+      "journal": "Folia microbiologica",
+      "year": 1992,
+      "pub_date": "1992-01-01",
+      "authors": "Betina V",
+      "first_author": "Betina V",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1418237",
+      "doi": "10.1515/znc-1992-0612",
+      "title": "Ferredoxin-NADP+ oxidoreductase of C. paradoxa nucleus encoded, but cyanobacterial gene transfer from symbiont to host, an evolutionary mechanism originating new species.",
+      "abstract": "The nucleus encoded cyanoplast (\"cyanellar\") ferredoxin-NADP + oxidoreductase (FNR) of Cyanophora paradoxa, characterized by an N-terminal amino acid sequence, is compared with homologous sequences of other photoautotrophic organisms. The high degree of similarity to the cyanobacterial sequences indicates a cyanobacterial origin. This could be a first direct demonstration of an intertaxonic combination: a gene transfer from an original endocytobiont (cyanobacterium) to the nucleus of its host, one of the most important demands of the Endosymbiosis Theory, an evolutionary mechanism leading to the origin of a new species.",
+      "journal": "Zeitschrift fur Naturforschung. C, Journal of biosciences",
+      "year": 1992,
+      "pub_date": "1992-01-01",
+      "authors": "Schenk H E; Bayer M G; Maier T L; Lüttke A; Gebhart U B; ... (+1)",
+      "first_author": "Schenk H E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1472714",
+      "doi": "10.1094/mpmi-5-372",
+      "title": "Disease development in ethylene-insensitive Arabidopsis thaliana infected with virulent and avirulent Pseudomonas and Xanthomonas pathogens.",
+      "abstract": "The plant hormone ethylene has been hypothesized to play roles both in disease resistance and in disease susceptibility. These processes were examined by using isogenic virulent and avirulent bacterial pathogens and mutants of Arabidopsis thaliana that were altered in ethylene physiology. Ethylene-insensitive ein1 and ein2 mutants of Arabidopsis were resistant to Pseudomonas syringae pv. tomato made avirulent by the addition of the cloned avirulence genes avrRpt2, avrRpm1, or avrB; this suggests that ethylene is not required for active resistance against avirulent bacteria. In a second set of experiments, susceptibility was monitored with virulent P. s. pv. tomato, P. s. pv. maculicola, or Xanthomonas campestris pv. campestris strains. Wild-type Arabidopsis and ein1 mutants were susceptible to these strains, but ein2 mutants developed only minimal disease symptoms. Despite these reduced symptoms, virulent P. s. pv. tomato grew extensively within ein2 leaves. The Pseudomonas phytotoxin coronatine induces ethylene biosynthesis and diseaselike symptoms on many plant species, but the reduced symptomology of ein2 mutants could not be attributed to insensitivity to coronatine. The enhanced disease tolerance of ein2 plants suggests that ethylene may mediate pathogen-induced damage, but the absence of tolerance in ein1 mutants has yet to be explained.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 1992,
+      "pub_date": "1992-01-01",
+      "authors": "Bent A F; Innes R W; Ecker J R; Staskawicz B J",
+      "first_author": "Bent A F",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

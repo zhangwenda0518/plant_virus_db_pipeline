@@ -1,0 +1,234 @@
+{
+  "month": "1998-04",
+  "generated": "2026-07-13 02:59:42",
+  "total": 10,
+  "by_category": {
+    "Host_Virus_Interactions": 5,
+    "New_Virus": 2,
+    "Antiviral_Resistance_Genes": 2,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "9615471",
+      "doi": "",
+      "title": "The preparation of RNA-dependent RNA polymerase complex from virus infected plants.",
+      "abstract": "Cucumber mosaic virus (CMV) is an icosahedrion plant virus and contains three different single-stranded positive sense genomic RNAs. The very 3' ends of each of the genomic RNAs can fold into a tRNA-like structure. Based on the structural analysis of the 3' tRNA-like structure of the brome mosaic virus (BMV), we superimposed and redrew the 3' tRNA-like structure of CMV. We homogenized virus infected or healthy tobacco leaves with polytron and carried out low speed centrifugation twice and ultra-centrifugation three times to get detergent solubilized membrane bound fractions. We accidentally found that these fractions were enriched with a host-encoded RNA-dependent RNA polymerase (RdRp) activity. Similar activity could also be found in other plants tested. Alternately, the membrane bound fraction could be simply precipitated by low speed centrifugation (3,000 g) and high speed ultra-centrifugation (40,000 g). The pellet was then suspended in a detergent-containing buffer, after which 25%-55% glycerol gradient fractionation was performed. Activity was tested through the incorporation of [alpha-32P]UTP using endogenous CMV RNAs as templates on each fraction collected. It was found that most of the fractions contained the viral-encoded RNA-dependent RNA polymerase. The products of RdRp reaction were found to have a double-stranded from through further analysis of the RNase protection assay.",
+      "journal": "Proceedings of the National Science Council, Republic of China. Part B, Life sciences",
+      "year": 1998,
+      "pub_date": "1998-04-01",
+      "authors": "Tsai C H; Cheng J H",
+      "first_author": "Tsai C H",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "黄瓜花叶病毒 (Cucumber mosaic virus, CMV)",
+      "taxonomy": "雀麦花叶病毒科 黄瓜花叶病毒属",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30856889",
+      "doi": "10.1094/PDIS.1998.82.4.407",
+      "title": "Tomato Spotted Wilt Virus Resistance in Chrysanthemum Expressing the Viral Nucleocapsid Gene.",
+      "abstract": "Three tomato spotted wilt virus (TSWV) nucleocapsid (N) gene constructs were employed for Agrobacterium-mediated transformation of chrysanthemum (Dendranthema grandiflora) cv. Polaris. These constructs contained either a full-length N gene (pTSWVN+), a full-length N gene encoding a truncated N protein (pTSWVNt), or an antisense version of the full-length N gene (pTSWVN-), all derived from a dahlia isolate of TSWV (TSWV-D). Initial resistance screens were conducted on cuttings made from 152 pTSWVN+, 37 pTSWVNt, and 47 pTSWVN- transformed plants employing a highly virulent, heterologous strain of TSWV (TSWV-GB) isolated from chrysanthemum and vectored by thrips. This screening served to eliminate the majority of TSWV-susceptible transgenic lines. More rigorous resistance tests with three rounds of mechanical inoculation with TSWV-GB identified one pTSWVNt and two pTSWVN- transformed lines that exhibited a total lack of systemic symptoms and no virus accumulation. Six other lines, including some pTSWVN+, exhibited a lack of one or more of the destructive necrotic TSWV symptoms (stem canker and apical bud death) and a delay in symptom expression. Both sense and antisense constructs, therefore, were found to be effective at yielding TSWV resistance in chrysanthemum. Molecular analysis revealed that the highly TSWV-resistant pTSWVNt line had no detectable levels of N protein. All three resistant lines had low levels of N gene transcript and at least three transgene insertion sites within their genomes, although susceptible lines often had a similar number of insertion sites. The generation of Polaris lines resistant to TSWV transmitted either mechanically or by thrips represents the first time a major ornamental crop has been genetically engineered for disease resistance.",
+      "journal": "Plant disease",
+      "year": 1998,
+      "pub_date": "1998-04-01",
+      "authors": "Sherman John M; Moyer James W; Daub Margaret E",
+      "first_author": "Sherman John M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "番茄斑萎病毒",
+      "taxonomy": "",
+      "host_plant": "菊花 (Dendranthema grandiflora cv. Polaris)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9612957",
+      "doi": "10.1016/s0031-9422(97)00788-7",
+      "title": "An antiviral protein from Bougainvillea spectabilis roots; purification and characterisation.",
+      "abstract": "An antiviral protein active against mechanical transmission of tomato spotted wilt virus was identified in the root tissues of Bougainvillea spectabilis Willd. Bougainvillea Antiviral Protein I (BAP I) was purified to apparent homogeneity from the roots of Bougainvillea by ammonium sulphate precipitation, CM- and DEAE-Sepharose chromatography and reverse phase HPLC. BAP I is a highly basic protein (pI value > 8.6) with an Mr of 28,000. The N-terminal sequence of BAP I showed homology with other plant antiviral proteins. Preliminary tests suggest that purified BAP I is capable of interfering with in vitro protein synthesis.",
+      "journal": "Phytochemistry",
+      "year": 1998,
+      "pub_date": "1998-04-01",
+      "authors": "Balasaraswathi R; Sadasivam S; Ward M; Walker J M",
+      "first_author": "Balasaraswathi R",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "番茄斑萎病毒 (Tomato spotted wilt virus)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9731297",
+      "doi": "10.1099/00207713-48-2-549",
+      "title": "Burkholderia graminis sp. nov., a rhizospheric Burkholderia species, and reassessment of [Pseudomonas] phenazinium, [Pseudomonas] pyrrocinia and [Pseudomonas] glathei as Burkholderia.",
+      "abstract": "In a survey of soil and wheat or maize rhizoplane bacteria isolated using a medium containing azelaic acid and tryptamine as sole carbon and nitrogen sources, respectively, a large proportion of Burkholderia-like bacteria were found. Among them, a homogeneous group of strains was identifiable based on phenotypic properties, fatty acid composition, DNA-DNA hybridizations and 16S rDNA sequences. According to molecular data, this group belongs to the genus Burkholderia but its weak similarity to previously described species suggests that it belongs to a novel species. Closest 16S rDNA phylogenetic neighbours of this species are Burkholderia caryophylli and two previously named Pseudomonas species which clearly appear to be part of the Burkholderia genus and were thus named Burkholderia glathei comb. nov. and Burkholderia phenazinium comb. nov. Strains of the new species are oxidase- and catalase-positive, produce indole and gelatinase, and use L-xylose, lactose, rhamnose, trehalose, D-lyxose, L-arabitol, xylitol and D-raffinose as sole carbon source. This novel taxon is named Burkholderia graminis. In the course of this study, [Pseudomonas] pyrrocinia also proved to be a member of the Burkholderia genus.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1998,
+      "pub_date": "1998-04-01",
+      "authors": "Viallard V; Poirier I; Cournoyer B; Haurat J; Wiebkin S; ... (+2)",
+      "first_author": "Viallard V",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9731275",
+      "doi": "10.1099/00207713-48-2-369",
+      "title": "Characterization of tropical tree rhizobia and description of Mesorhizobium plurifarium sp. nov.",
+      "abstract": "A collection of strains isolated from root nodules of Acacia species in Senegal was analysed previously by electrophoresis of total cell protein, auxanographic tests, rRNA-DNA hydridization, 16S rRNA gene sequencing, DNA base composition and DNA-DNA hybridization [de Lajudie, P., Willems, A., Pot, B. & 7 other authors (1994). Int J Syst Bacteriol 44, 715-733]. Strains from Acacia were shown to belong to two groups, Sinorhizobium terangae, and a so-called gel electrophoretic cluster U, which also included some reference strains from Brazil. Further taxonomic characterization of this group using the same techniques plus repetitive extragenic palindromic-PCR and nodulation tests is presented in this paper. Reference strains from Sudan and a number of new rhizobia isolated from nodules of Acacia senegal, Acacia tortilis subsp. raddiana and Prosopis juliflora in Senegal were included. As a result of this polyphasic approach, the creation of a new species, Mesorhizobium plurifarium, is proposed for a genotypically and phenotypically distinct group corresponding to the former cluster U and containing strains isolated from Acacia, Leucaena, Prosopis and Chamaecrista in West Africa (Senegal), East Africa (Sudan) and South America (Brazil). The type strain of Mesorhizobium plurifarium ORS 1032 has been deposited in the LMG collection as LMG 11892.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1998,
+      "pub_date": "1998-04-01",
+      "authors": "de Lajudie P; Willems A; Nick G; Moreira F; Molouba F; ... (+7)",
+      "first_author": "de Lajudie P",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15494053",
+      "doi": "10.1046/j.1365-313X.1998.00093.x",
+      "title": "Salicylic acid has a dual role in the activation of defence-related genes in parsley.",
+      "abstract": "Systemic acquired resistance is an inducible plant defence state, the activation of which depends mostly on the accumulation of salicylic acid (SA). During the past several years, it has been demonstrated that pretreatment of cultured parsley cells with SA potentiates the elicitation of several defence responses that are local in whole plants, including the accumulation of phenylpropanoid products. Here it is reported that while anionic peroxidase and mannitol dehydrogenase encoding genes are directly responsive to SA, pretreating parsley cells with SA not only enhances elicitation of the phenylpropanoid genes phenylalanine ammonia-lyase and 4-coumarate:CoA ligase but also of genes for PR-10 and a hydroxyproline-rich glycoprotein. Enhanced induction of these genes was seen at low levels of endogenous free SA. Enhancement of phenylalanine ammonia-lyase gene activation was proportional to the length of SA pretreatment. Furthermore, the ability of SA analogues to both potentiate elicited and directly induce defence gene activation correlated with their biological activity to promote plant disease resistance. In summary, these results emphasize that SA has at least a dual role in plant defence gene activation.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 1998,
+      "pub_date": "1998-04-01",
+      "authors": "Thulke O; Conrath U",
+      "first_author": "Thulke O",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9628020",
+      "doi": "10.1046/j.1365-313x.1998.00106.x",
+      "title": "Glucocorticoid-inducible expression of a bacterial avirulence gene in transgenic Arabidopsis induces hypersensitive cell death.",
+      "abstract": "Pathogenic strains of Pseudomonas syringae pv. tomato carrying the avrRpt2 avirulence gene specifically induce a hypersensitive cell death response in Arabidopsis plants that contain the complementary RPS2 disease resistance gene. Transient expression of avrRpt2 in Arabidopsis plants having the RPS2 gene has been shown to induce hypersensitive cell death. In order to analyze the effects of conditional expression of avrRpt2 in Arabidopsis plants, transgenic lines were constructed that contained the avrRpt2 gene under the control of a tightly regulated, glucocorticoid-inducible promoter. Dexamethasone-induced expression of avrRpt2 in transgenic lines having the RPS2 gene resulted in a specific hypersensitive cell death response that resembled a Pseudomonas syringae-induced hypersensitive response and also induced the expression of a pathogenesis-related gene (PR1). Interestingly, high level expression of avrRpt2 in a mutant rps2-101C background resulted in plant stress and ultimately cell death, suggesting a possible role for avrRpt2 in Pseudomonas syringae virulence. Transgenic RPS2 and rps2 plants that contain the glucocorticoid-inducible avrRpt2 gene will provide a powerful new tool for the genetic, physiological, biochemical, and molecular dissection of an avirulence gene-specified cell death response in both resistant and susceptible plants.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 1998,
+      "pub_date": "1998-04-01",
+      "authors": "McNellis T W; Mudgett M B; Li K; Aoyama T; Horvath D; ... (+2)",
+      "first_author": "McNellis T W",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9664050",
+      "doi": "10.1016/s0958-1669(98)80116-x",
+      "title": "Genetics of plant-pathogen interactions.",
+      "abstract": "Progress has occurred in understanding the function of disease-resistance genes that govern the resistance of plants to pathogens, and pathogen-produced molecules, called elicitors, that resistance genes key on. Data support the elicitor-receptor model wherein resistant plants contain receptors for pathogen elicitors. This recognition may be complex, however, involving delivery of elicitors to plant cells by specialized pathogen secretion systems and their processing prior to perception. Furthermore, elicitor receptors may not be the resistance gene proteins that govern specificity of the system. It is now also recognized that many elicitors function as virulence factors for the pathogen but have been co-opted by plants as triggers for active resistance. Major recent advances in the cloning and sequencing of clustered plant disease-resistance genes are providing information on the basis of their recognitional specificities and offer the opportunity to engineer new genes that recognize refractory pathogens or exhibit increased efficacy and durability. In combination with the transformation of cloned disease-resistance genes into new plant species, these approaches should facilitate disease control strategies in practical agriculture.",
+      "journal": "Current opinion in biotechnology",
+      "year": 1998,
+      "pub_date": "1998-04-01",
+      "authors": "Ji C; Smith-Becker J; Keen NT",
+      "first_author": "Ji C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9530866",
+      "doi": "10.1094/MPMI.1998.11.4.251",
+      "title": "Identification of R-gene homologous DNA fragments genetically linked to disease resistance loci in Arabidopsis thaliana.",
+      "abstract": "Disease resistance in plants is a desirable economic trait. A number of disease resistance genes from various plant species have been cloned so far. The gene products of some of these can be distinguished by the presence of an N-terminal nucleotide binding site and a C-terminal stretch of leucine-rich repeats. Although these gene products are structurally related, the DNA sequences are poorly conserved. Only parts of the nucleotide binding site share enough DNA identity to design primers for polymerase chain reaction amplification of related DNA sequences. Such primers were used to amplify different resistance-gene-like (RGL) DNA fragments from Arabidopsis thaliana accessions Landsberg erecta and Columbia. Almost all cloned DNA fragments were genetically closely linked with known disease resistance loci. Most RGL fragments were found in a clustered or dispersed multi-copy sequence organization, supporting the supposed correlation of RGL sequences and disease resistance loci.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 1998,
+      "pub_date": "1998-04-01",
+      "authors": "Aarts M G; te Lintel Hekkert B; Holub E B; Beynon J L; Stiekema W J; ... (+1)",
+      "first_author": "Aarts M G",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10837618",
+      "doi": "10.1016/s0169-409x(97)00094-x",
+      "title": "Immunotoxins for targeted cancer therapy.",
+      "abstract": "Immunotoxins constitute a new modality for the treatment of cancer, since they target cells displaying specific surface-receptors or antigens. Immunotoxins contain a ligand such as a growth factor, monoclonal antibody, or fragment of an antibody which is connected to a protein toxin. After the ligand subunit binds to the surface of the target cell, the molecule internalizes and the toxin kills the cell. Bacterial toxins which have been targeted to cancer cells include Pseudomonas exotoxin and diphtheria toxin, which are well suited to forming recombinant single-chain or double-chain fusion toxins. Plant toxins include ricin, abrin, pokeweed antiviral protein, saporin and gelonin, and have generally been connected to ligands by disulfide-bond chemistry. Immunotoxins have been produced to target hematologic malignancies and solid tumors via a wide variety of growth factor receptors and antigens. Challenges facing the clinical application of immunotoxins are discussed.",
+      "journal": "Advanced drug delivery reviews",
+      "year": 1998,
+      "pub_date": "1998-04-06",
+      "authors": "Pastan I; Kreitman RJ",
+      "first_author": "Pastan I",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

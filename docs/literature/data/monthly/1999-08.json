@@ -1,0 +1,257 @@
+{
+  "month": "1999-08",
+  "generated": "2026-07-13 02:59:42",
+  "total": 11,
+  "by_category": {
+    "Host_Virus_Interactions": 4,
+    "Antiviral_Resistance_Genes": 3,
+    "Control_Management": 2,
+    "New_Virus": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30845575",
+      "doi": "10.1094/PDIS.1999.83.8.782C",
+      "title": "First Report of Onion Yellow Dwarf Virus in Ontario.",
+      "abstract": "Onion yellow dwarf virus (OYDV) (1) was identified in a commercial planting of garlic (Allium sativum L.) near Delhi, Ontario, in 1998. Infected plants exhibited mild mosaic symptoms that became less noticeable by mid-July. Many plants were co-infected with garlic latent virus (GLV) (4), which was mechanically transmitted to leek (A. porrum L.). Since leek is not susceptible to OYDV (3), it is an appropriate host for the differentiation of GLV and OYDV. OYDV was transmitted nonpersistently by Myzus persicae (Schultz) from garlic to garlic and onion (A. cepa L.). Infected onion exhibited yellow striping, leaf curling, and pronounced stunting. Necrotic lesions were not present on inoculated leaves of Chenopodium amaranticolor Coste & Reyn. and C. quinoa Willd., which are often associated with co-infection with leek yellow dwarf virus (2). The isolate reacted strongly in enzyme-linked immunosorbent assay with OYDV antisera (from M. Fukami, Chiba Prefectural Agric. Exp. Stn., Chiba 266, Japan; D. Z. Maat, DLO Research Instit., Plant Prot., Wageningen, The Netherlands). Electron microscopic observations of negatively stained preparations of infected leaf tissues revealed virus particles averaging 765 ± 45 nm with typical pinwheel inclusions. References: (1) L. Bos. CMI/AAB Descrip. Plant Viruses no. 158, 1976. (2) K. Graichen. Nachrichtenbl. Pflanzenschutz DDR 32: 245, 1978. (3) K. Graichen and H. U. Leistner. Arch. Phytopathol. Pflanzenschutz 23:165, 1987. (4) L. W. Stobbs et al. Plant Dis. 80:343, 1996.",
+      "journal": "Plant disease",
+      "year": 1999,
+      "pub_date": "1999-08-01",
+      "authors": "Stobbs L W; Van Driel L",
+      "first_author": "Stobbs L W",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Onion yellow dwarf virus (OYDV)",
+      "taxonomy": "未提及",
+      "host_plant": "大蒜 (Allium sativum L.), 洋葱 (Allium cepa L.), 韭葱 (A. porrum L.)",
+      "location": "加拿大安大略省德里附近",
+      "results": "鉴定到OYDV，与GLV共感染；蚜虫非持久性传播；电镜观察到典型颗粒和风轮状内含体。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10432637",
+      "doi": "10.1094/MPMI.1999.12.8.712",
+      "title": "A bean cDNA expressed during a hypersensitive reaction encodes a putative calcium-binding protein.",
+      "abstract": "The hypersensitive reaction (HR) is an inducible plant response that is associated with disease resistance. It is characterized by rapid, localized cell death at the site of infection and is believed to inhibit the spread of invading pathogens. We have isolated a cDNA clone, designated Hra32 (for hypersensitive reaction associated), corresponding to an RNA transcript that accumulates in bean during an HR. The predicted protein product of the Hra32 cDNA is an approximately 17 kDa protein of 161 amino acids, with four putative EF-hand calcium-binding domains. The temporal pattern of Hra32 transcript accumulation correlated closely with the onset of the HR in bean after inoculation with incompatible Pseudomonas syringae pv. tabaci and pv. tomato and with tobacco necrosis virus. Hra32 transcript also accumulated in bean in response to compatible P. syringae pv. phaseolicola and was correlated with necrotic cell death associated with disease lesion formation. A more transient pattern of Hra32 transcript accumulation occurred in bean in response to general stimuli that did not result in the HR or host cell death. These treatments included infiltration with a P. syringae pv. tabaci Hrp- mutant, P. syringae pv. tabaci cells treated with kanamycin, Escherichia coli, P. fluorescens, or glutathione, and in response to wounding. Thus, there was differential accumulation of the Hra32 transcript in response to specific stimuli resulting in the HR, compared with general stimuli that did not result in cell death. We hypothesize that the Hra32 product may be a component of the pathway that leads to hypersensitive cell death.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 1999,
+      "pub_date": "1999-08-01",
+      "authors": "Jakobek J L; Smith-Becker J A; Lindgren P B",
+      "first_author": "Jakobek J L",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "烟草坏死病毒",
+      "taxonomy": "",
+      "host_plant": "豆类（菜豆）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10429250",
+      "doi": "10.1038/11765",
+      "title": "Presymptomatic visualization of plant-virus interactions by thermography.",
+      "abstract": "Salicylic acid (SA), produced by plants as a signal in defense against pathogens, induces metabolic heating mediated by alternative respiration in flowers of thermogenic plants, and, when exogenously applied, increases leaf temperature in nonthermogenic plants. We have postulated that the latter phenomenon would be detectable when SA is synthesized locally in plant leaves. Here, resistance to tobacco mosaic virus (TMV) was monitored thermographically before any disease symptoms became visible on tobacco leaves. Spots of elevated temperature that were confined to the place of infection increased in intensity from 8 h before the onset of visible cell death, and remained detectable as a halo around the ongoing necrosis. Salicylic acid accumulates during the prenecrotic phase in TMV-infected tobacco and is known to induce stomatal closure in certain species. We show that the time course of SA accumulation correlates with the evolution of both localized thermal effect and stomatal closure. Since the contribution of leaf respiration is marginal, we concluded that the thermal effect results predominantly from localized, SA-induced stomatal closure. The presymptomatic temperature increase could be of general significance in incompatible plant-pathogen interactions.",
+      "journal": "Nature biotechnology",
+      "year": 1999,
+      "pub_date": "1999-08-01",
+      "authors": "Chaerle L; Van Caeneghem W; Messens E; Lambers H; Van Montagu M; ... (+1)",
+      "first_author": "Chaerle L",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒 (Tobacco mosaic virus, TMV)",
+      "taxonomy": "",
+      "host_plant": "烟草 (tobacco)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10458161",
+      "doi": "10.1038/23260",
+      "title": "Dynamics of disease resistance polymorphism at the Rpm1 locus of Arabidopsis.",
+      "abstract": "The co-evolutionary 'arms race' is a widely accepted model for the evolution of host-pathogen interactions. This model predicts that variation for disease resistance will be transient, and that host populations generally will be monomorphic at disease-resistance (R-gene) loci. However, plant populations show considerable polymorphism at R-gene loci involved in pathogen recognition. Here we have tested the arms-race model in Arabidopsis thaliana by analysing sequences flanking Rpm1, a gene conferring the ability to recognize Pseudomonas pathogens carrying AvrRpm1 or AvrB. We reject the arms-race hypothesis: resistance and susceptibility alleles at this locus have co-existed for millions of years. To account for the age of alleles and the relative levels of polymorphism within allelic classes, we use coalescence theory to model the long-term accumulation of nucleotide polymorphism in the context of the short-term ecological dynamics of disease resistance. This analysis supports a 'trench warfare' hypothesis, in which advances and retreats of resistance-allele frequency maintain variation for disease resistance as a dynamic polymorphism.",
+      "journal": "Nature",
+      "year": 1999,
+      "pub_date": "1999-08-12",
+      "authors": "Stahl E A; Dwyer G; Mauricio R; Kreitman M; Bergelson J",
+      "first_author": "Stahl E A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10458999",
+      "doi": "10.1016/S1369-5266(99)80049-1",
+      "title": "Functional analysis of plant disease resistance genes and their downstream effectors.",
+      "abstract": "Plant disease resistance (R) genes encode proteins that both determine recognition of specific pathogen-derived avirulence (Avr) proteins and initiate signal transduction pathways leading to complex defense responses. Recent developments suggest that recognition specificity of R proteins is determined by either a protein kinase domain or by a region consisting of leucine-rich repeats. R genes conferring resistance to bacterial, viral, and fungal pathogens appear to use multiple signaling pathways, some of which involve distinct proteins and others which converge upon common downstream effectors. Manipulation of R genes and their signaling pathways by transgenic expression is a promising strategy to improve disease resistance in plants.",
+      "journal": "Current opinion in plant biology",
+      "year": 1999,
+      "pub_date": "1999-08-01",
+      "authors": "Martin G B",
+      "first_author": "Martin G B",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30845559",
+      "doi": "10.1094/PDIS.1999.83.8.733",
+      "title": "Disease Resistance and Biomass Stability of Forage Pearl Millet Hybrids with Partial Rust Resistance.",
+      "abstract": "The expression of partial resistance to Puccinia substriata var. indica and its contribution to digestible biomass production in forage pearl millet hybrids were evaluated in field experiments at Tifton, GA. Inbreds Tift 383, Tift 65, and nine inbreds with partial resistance selected from the cross Tift 383 × 'ICMP 501' were crossed to Tift 23DA4. The parental inbreds and hybrids were evaluated in natural epidemics in 1996 and 1997. Because of maturity differences among the lines, slope of the regression of logit rust severity on time (apparent infection rate) and area under the disease progress curve (AUDPC) calculated for a defined interval of plant growth (10 days before to 20 days after anthesis) and adjusted for initial rust severity at 10 days prior to anthesis were the most useful indicators of resistance. Inbred resistance was not a reliable predictor of hybrid resistance when evaluated by either variable. Hybrids were evaluated for biomass production in 1996 and 1997 in a split-plot design, with hybrids as main plots and nontreated or chlorothalonil fungicide-treated as subplots. Differences existed among hybrids for AUDPC and for digestible dry matter yield (DDMY) and its components. Over all hybrids, the response between DDMY and final rust severity was described by logarithmic regression. Two clusters of hybrids were identified by cluster analysis of disease-related data from both experiments. The cluster of susceptible hybrids tended to have a lower DDMY and were less stable over year × treatment environments than the cluster of partially resistant hybrids. Lodging in nontreated plots in 1997 primarily occurred in susceptible hybrids. Although resistance was expressed in certain hybrids, greater levels of partial resistance are needed to provide adequate protection against DDMY losses.",
+      "journal": "Plant disease",
+      "year": 1999,
+      "pub_date": "1999-08-01",
+      "authors": "Wilson J P; Gates R N",
+      "first_author": "Wilson J P",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10441789",
+      "doi": "10.1002/(sici)1099-1573(199908/09)13:5<436::aid-ptr459>3.0.co;2-q",
+      "title": "Antiviral activity of Sanicula europaea L. extracts on multiplication of human parainfluenza virus type 2.",
+      "abstract": "The antiviral activity of Sanicula europaea L. extracts against human parainfluenza virus type 2 (HPIV-2) was examined. The extract prepared from the leaves of the plant and a fraction separated from the crude extract with gel filtration chromatography were found to inhibit HPIV-2 replication without any toxic effect on Vero cells. The acidic fraction obtained from the crude extract of S. europaea leaves was found to be the most active fraction with plaque inhibition assay at non-cytotoxic concentrations. Unfortunately, antiviral activity was not detected in the molecules purified from the crude ethanol extract of Sanicula leaves.",
+      "journal": "Phytotherapy research : PTR",
+      "year": 1999,
+      "pub_date": "1999-08-01",
+      "authors": "Karagöz A; Arda N; Gören N; Nagata K; Kuru A",
+      "first_author": "Karagöz A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10552602",
+      "doi": "10.1021/jf981260r",
+      "title": "Extractable components of the aerial parts of Salvia lavandulifolia and composition of the liquid smoke flavoring obtained from them.",
+      "abstract": "The fraction extractable with dichloromethane of the aerial parts of sage (Salvia lavandulifolia) and the liquid smoke obtained from this plant are studied by means of gas chromatography/mass spectrometry and gas chromatography. The extract of the aerial parts of the sage plant contains not only terpene, sesquiterpene hydrocarbons, and their oxygenated derivatives, which are interesting compounds both for their organoleptic properties and for their antioxidant activity, but also a large group of phenolic compounds with abietatriene or related structure, the mass spectra of which are given, many of them having antioxidant, antiviral, and antibacterial properties. The liquid sage smoke obtained is slightly acidic and contains common smoke components in specific proportions, and a large group of aromatic nitrogenated derivatives such as pyrazine and pyridine derivatives in small proportions, together with the main oxygenated terpene derivatives present in the plant; some of the compounds detected in this liquid smoke have not been described as smoke components before.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 1999,
+      "pub_date": "1999-08-01",
+      "authors": "Guillén M D; Manzanos M J",
+      "first_author": "Guillén M D",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18944679",
+      "doi": "10.1094/PHYTO.1999.89.8.668",
+      "title": "Moisture prediction from simple micrometeorological data.",
+      "abstract": "ABSTRACT Four linear regression methods and a generalized regression neural network (GRNN) were evaluated for estimation of moisture occurrence and duration at the flag leaf level of wheat. Moisture on a flat-plate resistance sensor was predicted by time, temperature, relative humidity, wind speed, solar radiation, and precipitation provided by an automated weather station. Dew onset was estimated by a classification regression tree model. The models were developed using micrometeorological data measured from 1993 to 1995 and tested on data from 1996 and 1997. The GRNN outperformed the linear regression methods in predicting moisture occurrence with and without dew estimation as well as in predicting duration of moisture periods. Average absolute error for prediction of moisture occurrence by GRNN was at least 31% smaller than that obtained by the linear regression methods. Moreover, the GRNN correctly predicted 92.7% of the moisture duration periods critical to disease development in the test data, while the best linear method correctly predicted only 86.6% for the same data. Temporal error distribution in prediction of moisture periods was more highly concentrated around the correct value for the GRNN than linear regression methods. Neural network technology is a promising tool for reasonably precise and accurate moisture monitoring in plant disease management.",
+      "journal": "Phytopathology",
+      "year": 1999,
+      "pub_date": "1999-08-01",
+      "authors": "Chtioui Y; Francl L J; Panigrahi S",
+      "first_author": "Chtioui Y",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10466123",
+      "doi": "10.1017/s0031182099004515",
+      "title": "Protease activity in the larval stage of the parasitoid wasp, Eulophus pennicornis (Nees) (Hymenoptera: Eulophidae); effects of protease inhibitors.",
+      "abstract": "Hymenopteran, parasitoid wasps have good potential for use in integrated pest management (IPM); for example, the gregarious ectoparasitoid, Eulophus pennicornis, has been suggested as a biological control agent for larvae of the tomato moth (Lacanobia oleracea L.). However, the processes by which such parasitic larvae are able to utilize the nutritional resource provided by the host have been little studied. Protease activity was present in E. pennicornis larvae, and characterization of the enzymes responsible for proteolysis was performed using a range of synthetic substrates and specific inhibitors. Serine protease enzymes was both trypsin- and chymotrypsin-like activities were present. A range of plant-derived serine protease inhibitors was tested for activity against these enzymes. Certain inhibitors, notably soybean Kunitz inhibitor (SKTI), inhibited enzyme activity by > 80% at < 10(-5) M. When SKTI was fed to L. oleracea larvae in an artificial diet, the inhibitor was subsequently detected within the larval haemolymph, showing that protease inhibitors in the host diet can be delivered to a parasitoid via the host haemolymph. If transgenic plants expressing foreign protease inhibitors for protection against insect pests are to form a component of IPM systems, possible adverse effects, whether direct or indirect, of transgene expression on parasitoids like E. pennicornis should be considered.",
+      "journal": "Parasitology",
+      "year": 1999,
+      "pub_date": "1999-08-01",
+      "authors": "Down R E; Ford L; Mosson H J; Fitches E; Gatehouse J A; ... (+1)",
+      "first_author": "Down R E",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10488777",
+      "doi": "10.1016/s0166-0934(99)00084-1",
+      "title": "Construction of a gene probe for detection of P virus (Reoviridae) in a marine decapod.",
+      "abstract": "The construction is described of a molecular probe to P virus, a double stranded RNA virus belonging to the Reoviridiae, which is an endemic pathogen of swimming crabs in British coastal waters and the Mediterranean. The probe hybridises to the P virus genome and can be easily produced in large quantities by PCR. It may be used by dot blotting or in situ hybridisation to specifically detect P virus in tissues and cells of natural or experimentally infected animals. Analyses of tissue samples with this probe show that the virus infects connective tissues of gills and hepatopancreas. This is the first gene probe to be constructed for a native viral pathogen of temperate water brachyurans and it will be useful to study virus ecology and virus-host interactions in vivo and in vitro. An understanding of these processes is essential to control and manage disease and, ultimately, to identify immune effectors capable of destroying viral pathogens.",
+      "journal": "Journal of virological methods",
+      "year": 1999,
+      "pub_date": "1999-08-01",
+      "authors": "Walton A; Montanie H; Arcier J M; Smith V J; Bonami J R",
+      "first_author": "Walton A",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

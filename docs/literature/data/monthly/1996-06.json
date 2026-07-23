@@ -1,0 +1,125 @@
+{
+  "month": "1996-06",
+  "generated": "2026-07-13 02:59:42",
+  "total": 5,
+  "by_category": {
+    "Detection_Methods": 2,
+    "Host_Virus_Interactions": 2,
+    "Molecular_Characterization": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8692807",
+      "doi": "10.1073/pnas.93.13.6286",
+      "title": "Assembly and movement of a plant virus carrying a green fluorescent protein overcoat.",
+      "abstract": "Potato virus X (PVX) is a filamentous plant virus infecting many members of the family Solanaceae. A modified form of PVX, PVX.GFP-CP which expressed a chimeric gene encoding a fusion between the 27-kDa Aequorea victoria green fluorescent protein and the amino terminus of the 25-kDa PVX coat protein, assembled into virions and moved both locally and systemically. The PVX.GFP-CP virions were over twice the diameter of wild-type PVX virions. Assembly of PVX.GFP-CP virions required the presence of free coat protein subunits in addition to the fusion protein subunits. PVX.GFP-CP virions accumulated as paracrystalline arrays in infected cells similar to those seen in cells infected with wild-type PVX The formation of virions carrying large superficial fusions illustrates a novel approach for production of high levels of foreign proteins in plants. Aggregates of PVX.GFP-CP particles were fluorescent, emitting green light when excited with ultraviolet light and could be imaged using confocal laser scanning microscopy. The detection of virus particles in infected tissue demonstrates the potential of fusions between the green fluorescent protein and virus coat protein for the non-invasive study of virus multiplication and spread.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1996,
+      "pub_date": "1996-06-25",
+      "authors": "Cruz S S; Chapman S; Roberts A G; Roberts I M; Prior D A; ... (+1)",
+      "first_author": "Cruz S S",
+      "categories": [
+        "Detection_Methods",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Potato virus X (PVX)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8659104",
+      "doi": "10.1006/viro.1996.0292",
+      "title": "Resistance to geminivirus infection by virus-induced expression of dianthin in transgenic plants.",
+      "abstract": "Ribosome-inactivating proteins (RIPs) are naturally occurring plant toxins that exhibit antiviral activity against a diverse range of plant and animal viruses. Here, the action of dianthin, a potent RIP isolated from Dianthus caryophyllus, has been exploited to engineer resistance to a plant DNA virus, African cassava mosaic virus (ACMV), in transgenic Nicotiana benthamiana. To achieve this, dianthin has been expressed from the ACMV virion-sense promoter that is transactivated by the product of viral gene AC2. This avoids the need for constitutive expression of the RIP, facilitating the regeneration of phenotypically normal plants, and ensures transgene expression is localized to virus-infected cells. When challenged with ACMV, transgenic plants produce atypical necrotic lesions on inoculated leaves, indicative of dianthin expression, viral DNA accumulation is significantly reduced in these tissues, and plants exhibit attenuated systemic symptoms from which they recover. This phenotype holds for isolates of ACMV but not for other geminiviruses, suggesting that AC2 homologues from the latter are unable to efficiently transactivate the ACMV promoter.",
+      "journal": "Virology",
+      "year": 1996,
+      "pub_date": "1996-06-01",
+      "authors": "Hong Y; Saunders K; Hartley M R; Stanley J",
+      "first_author": "Hong Y",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "African cassava mosaic virus (ACMV)",
+      "taxonomy": "",
+      "host_plant": "Nicotiana benthamiana (本氏烟)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8817828",
+      "doi": "10.1016/0264-410x(95)00229-t",
+      "title": "Stimulation of neutralizing antibodies to human immunodeficiency virus type 1 in three strains of mice immunized with a 22 amino acid peptide of gp41 expressed on the surface of a plant virus.",
+      "abstract": "A plant virus, cowpea mosaic virus, expressing a 22 amino acid peptide 731-752 of the gp41 glycoprotein of human immunodeficency virus type 1 (HIV-1 IIIB), was shown previously to stimulate HIV-1 cross reactive neutralizing antibodies in adult C57/BL6 mice. Here some parameters concerning the stimulation of HIV-1-specific neutralizing and ELISA antibody have been determined in adult C57/BL6, C3H/He-mg and BALB/c mice. Two injections per mouse of all CPMV-HIV/1 doses tested (100, 10 and 1 microgram chimera which contained, respectively, 1700, 170 and 17 ng HIV peptide per injection) stimulated a strong serum neutralizing antibody response in all mice. One hundred micrograms or 10 micrograms CPMV-HIV/1 per injection gave 99% neutralization of HIV-1 IIIB in C8166 cells at a serum dilution of 1/200, whereas sera from mice immunized with 1 microgram per injection neutralized virus to 97%, 79% and 63% at a 1/200 dilution of serum from C3H/He-mg, C57/BL6 and BALB/c mice, respectively. Restimulation of these mice with the same immunogen dose marginally increased the neutralization titres. The longevity of the neutralizing antibody response increased as the immunogen dose decreased, and was dependent on the strain of mouse, in the order C57/BL6C3H/He-mg BALB/c. Re-immunization with a third injection improved the longevity of the antibody response. All mice immunized with 100 micrograms CPMV-HIV/1 responded with ELISA antibody to the gp41 peptide bound in solid phase. Ten micrograms stimulated ELISA antibody in some but not all mice, while mice immunized with 1 microgram had no detectable ELISA antibody. This synthesis of ELISA antibody decreased > or = 230-fold over the range of immunogen doses tested but, in the same mice, the neutralizing antibody response decreased only twofold, showing an unusual bias to production of the latter. Neutralizing antibodies were thus stimulated at a lower immunogen dose than ELISA antibodies. Antibody which was affinity purified using the free gp41 peptide gave a good ELISA titre but did not neutralize HIV-1, suggesting that the neutralizing antibody is recognizing a conformational epitope on the gp41 oligomer.",
+      "journal": "Vaccine",
+      "year": 1996,
+      "pub_date": "1996-06-01",
+      "authors": "McLain L; Durrani Z; Wisniewski L A; Porta C; Lomonossoff G P; ... (+1)",
+      "first_author": "McLain L",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8725243",
+      "doi": "10.1093/genetics/143.2.973",
+      "title": "Isolation of Arabidopsis mutants with enhanced disease susceptibility by direct screening.",
+      "abstract": "To discover which components of plant defense responses make significant contributions to limiting pathogen attack, we screened a mutagenized population of Arabidopsis thaliana for individuals that exhibit increased susceptibility to the moderately virulent bacterial pathogen Pseudomonas syringae pv. maculicola ES4326 (Psm ES4326). The 12 enhanced disease susceptibility (eds) mutants isolated included alleles of two genes involved in phytoalexin biosynthesis (pad2, which had been identified previously, and pad4, which had not been identified previously), two alleles of the previously identified npr1 gene, which affects expression of other defense genes, and alleles of seven previously unidentified genes of unknown function. The npr1 mutations caused greatly reduced expression of the PR1 gene in response to PsmES4326 infection, but had little effect on expression of two other defense genes, BGL2 and PR5, suggesting that PR1 expression may be important for limiting growth of PsmES4326. While direct screens for mutants with quantitative pathogen-susceptibility phenotypes have not been reported previously, our finding that mutants isolated in this way include those affected in known defense responses supports the notion that this type of screening strategy allows genetic dissection of the roles of various plant defense responses in disease resistance.",
+      "journal": "Genetics",
+      "year": 1996,
+      "pub_date": "1996-06-01",
+      "authors": "Glazebrook J; Rogers E E; Ausubel F M",
+      "first_author": "Glazebrook J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8793280",
+      "doi": "10.1016/s0960-9822(09)00435-7",
+      "title": "Plant pathology: many roads lead to resistance.",
+      "abstract": "Recent studies suggest that plant disease-resistance responses use multiple signaling pathways acting subsequent to pathogen recognition, and that phosphorylation cascades play a prominent role in the recognition and execution of foreign invaders.",
+      "journal": "Current biology : CB",
+      "year": 1996,
+      "pub_date": "1996-06-01",
+      "authors": "Boyes D C; McDowell J M; Dangl J L",
+      "first_author": "Boyes D C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

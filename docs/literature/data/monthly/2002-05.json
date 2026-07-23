@@ -1,0 +1,283 @@
+{
+  "month": "2002-05",
+  "generated": "2026-07-13 02:59:42",
+  "total": 21,
+  "by_category": {
+    "Host_Virus_Interactions": 6,
+    "Antiviral_Resistance_Genes": 6,
+    "New_Virus": 5,
+    "Viral_Diversity_Ecology": 4,
+    "Biotechnology_Applications": 2,
+    "Control_Management": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "12009921",
+      "doi": "10.1021/bi025595k",
+      "title": "Characterization of a viroid-derived RNA promoter for the DNA-dependent RNA polymerase from Escherichia coli.",
+      "abstract": "This paper attributes a novel function, namely, that of transcriptional promoter, to the self-complementary, self-cleaving hammerhead RNA sequences found in RNA derived from the peach latent mosaic viroid (PLMVd). The features of this RNA promoter, which adopts a hairpin structure that can be utilized by Escherichia coli RNA polymerase (RNAP) for in vitro transcription, that trigger the RNAP driven transcription and are responsible for the specific initiation of synthesis are described. The essential requirement for initiation is a basepaired uridine adjacent to the loop. The presence of a loop composed of at least six nucleotides connected to a relatively unstable stem significantly increases the level of initiation. Finally, we present several insights into the mechanism of the RNAP which reveal that it behaves differently with an RNA template as compared to a DNA one.",
+      "journal": "Biochemistry",
+      "year": 2002,
+      "pub_date": "2002-05-21",
+      "authors": "Pelchat Martin; Grenier Catherine; Perreault Jean-Pierre",
+      "first_author": "Pelchat Martin",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "桃潜隐花叶类病毒 (Peach latent mosaic viroid, PLMVd)",
+      "taxonomy": "未提及",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "发现PLMVd的自我互补锤头RNA形成发夹结构可被RNA聚合酶识别；起始需要环相邻的配对尿苷；至少6核苷酸环和相对不稳定茎显著提高起始水平。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30818687",
+      "doi": "10.1094/PDIS.2002.86.5.559C",
+      "title": "First Report of Solanum sarrachoides (Hairy Nightshade) as an Important Host of Potato leafroll virus.",
+      "abstract": "Potato leafroll virus (PLRV) (genus Polerovirus, family Luteoviridae) is of great economic importance. It has a very narrow host range consisting of only 21 known species, 14 of which are Solanaceae. Ten aphid species transmit PLRV in a persistent manner, but the green peach aphid (Myzus persicae Sulzer) is by far the most important vector and the only important vector in the Columbia Basin of the Pacific Northwest (3). Solanum sarrachoides (Sendtner) may be especially important in the epidemiology of PLRV because it is a predominant weed in potatoes (S. tuberosum L.), other annual crops, and waste areas of the Columbia Basin (1), and herbicides available for potato are relatively ineffective against this weed (2). Since our research began in 1974, we have routinely observed many S. sarrachoides plants throughout the Columbia Basin that acquired an abnormal erect stiff appearance in middle to late summer. Their leaflets curled upward at the margins and expressed interveinal chlorosis and necrosis and a reddened or purple color on abaxial surfaces. The presence of PLRV in symptomatic plants was routinely detected by double-antibody sandwich enzyme-linked immunosorbent assay and by density gradient sedimentation and light absorbance properties of the purified virus when we evaluated the host as a source of purified PLRV in 1980. A systematic study to satisfy the requirements of Koch's postulates to prove that PLRV causes the disease in S. sarrachoides was conducted in 1998. The virus produced typical PLRV symptoms on three young Physalis floridana, Datura stramonium, and potato plants when transmitted by the green peach aphid from each of four symptomatic S. sarrachoides collected from widely spaced potato fields in the Columbia Basin and from purified virus preparations from these plants. Back-transmission from each of these hosts and from purified preparations to S. sarrachoides plants observed the same symptoms. The green peach aphid readily colonized S. sarrachoides in the field, and populations on this host were typically higher than on adjacent potato plants in potato fields. The concentration of PLRV was approximately equal in infected S. sarrachoides and P. floridana plants, as was the efficiency of virus transmission from these hosts by individual green peach aphids. The aphids used in transmission efficacy assays were all the same clone and were reared on the host species assayed. The incidence of PLRV infection among S. sarrachoides in potato fields was typically higher than in the potato crop. Only two other summer annual hosts of PLRV, Amaranthus caudatus and S. nigrum, occur sporadically in potato fields of the Columbia Basin (1). The virus rarely infected these species. To our knowledge, this is the first report that S. sarrachoides is highly susceptible to PLRV and may play an important role in PLRV epidemiology in the Columbia Basin. References: (1) A. G. Ogg, Jr. and B. S. Rogers. Rev. Weed Sci. 4:25, 1989. (2) L. S. Quakenbush and R. N. Anderson. Weed Sci. 33:386, 1985. (3) P. E. Thomas et al. Plant Dis. 81:1311, 1997.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-05-01",
+      "authors": "Thomas P E",
+      "first_author": "Thomas P E",
+      "categories": [
+        "New_Virus",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "Potato leafroll virus (PLRV)",
+      "taxonomy": "Polerovirus, Luteoviridae",
+      "host_plant": "Solanum sarrachoides (Hairy Nightshade); 也涉及马铃薯(Solanum tuberosum)、Physalis floridana、Datura stramonium",
+      "location": "美国太平洋西北地区哥伦比亚盆地",
+      "results": "S. sarrachoides对PLRV高度易感，症状典型；蚜虫在其上繁殖多，病毒浓度与标准指示植物相当，田间感染率高于马铃薯。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30818692",
+      "doi": "10.1094/PDIS.2002.86.5.561A",
+      "title": "First Report of Twenty-two New Hosts of Potato leafroll virus.",
+      "abstract": "The known host range of Potato leafroll virus (PLRV, genus Polerovirus, family Luteoviridae) is narrow, consisting of 21 species in 5 families: 3 Amaranthaceae, 2 Cruciferae, 1 Nolanaceae, 1 Portulacaceae, and 14 Solanaceae. Over a period of years, we identified 22 additional host species of PLRV in 5 new families and 1 previously identified family: 1 Chenopodiaceae, 2 Compositae, 1 Cucurbitaceae, 1 Labiatae, 2 Malvaceae, and 15 Solanaceae. The 22 additional host species are Cucurbita pepo L., Datura fastuosa L., Hibiscus golfrosens L., H. moscheutos L., Hypercymus niger L., Lactuca sativa L., Lycopersicon pimpinefolium (Jusl.) Mill., L. peruvianun L., Nicotiana accuminata Grah., N. agustifolia Comes, N. rustica L., N. tabacum L., N. glutinosa L., Ocimum basilicum L., Physalis ixocarpa Brot., P. lanceifolia Michx., P. peruvianum L., Solanum rostratum Dund., S. sarrachoides Sendtner, S. demissum L. (P.I. 230579), Spinacia oleraceae L., and Zinnia elegans Jaeq. In light of these new hosts, reevaluation of the epidemiology of PLRV may be advisable in regions where new virus hosts also host aphid vectors and where a virus host may ensure perennial survival of PLRV. Two new hosts were found naturally infected in the Columbia Basin of the Pacific Northwest. The potential impact of one of these, S. sarrachoides, a predominant and widespread weed in potatoes and an excellent host of the major PLRV vector, Myzus persicae Sulzer, may be very important. The second naturally infected host, Z. elegans, is of doubtful importance since it is largely confined to cultivated gardens, is a summer annual, and rarely is colonized by M. persicae. The new hosts were initially discovered in various experiments over a period of years. In confirmatory tests, the hosts were inoculated with six different isolates of PLRV collected from different regions of the United States. A portion of leaflet from the virus source plant, P. floridana Rydb., containing approximately 25 M. persicae, was placed on each test plant. Virus infection was assessed based on visual symptoms and double-antibody sandwich-enzyme-linked immunosorbent assay (DAS-ELISA) and confirmed by aphid transmission from inoculated test plants to a diagnostic host (P. floridana). Infection of the diagnostic host was confirmed based on symptoms and enzyme-linked immunosorbent assay (ELISA). Symptom severity varied markedly among symptomatic host species. Asymptomatic hosts included C. pepo, N. rustica, S. demissum, and Z. elegans. Field collections of two nonhosts, Malva neglecta Wallr. and Cardaria draba, often produced false-positive ELISA assays, but PLRV could not be isolated from these plants by aphid transmission nor detected using a polymerase chain reaction (PCR) assay. Species infected by some virus isolates but not others included C. pepo, H. golfrosens, H. moscheutos, N. rustica, N. tabacum, Lactuca sativa, O. basilicum, S. demissum, S. oleraceae, and Z. elegans. The variability in symptoms and host range indicates a considerable degree of variability in PLRV and may provide a much needed basis for PLRV strain separation and characterization. This work more than doubles the known host range of PLRV.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-05-01",
+      "authors": "Thomas P E; Hassan S",
+      "first_author": "Thomas P E",
+      "categories": [
+        "New_Virus",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "Potato leafroll virus (PLRV)",
+      "taxonomy": "Polerovirus, Luteoviridae",
+      "host_plant": "22种新宿主：Cucurbita pepo, Datura fastuosa, Hibiscus golfrosens, H. moscheutos, Hypercymus niger, Lactuca sativa, Lycopersicon pimpinefolium, L. peruvianum, Nicotiana accuminata, N. angustifolia, N. rustica, N. tabacum, N. glutinosa, Ocimum basilicum, Physalis ixocarpa, P. lanceifolia, P. peruvianum, Solanum rostratum, S. sarrachoides, S. demissum, Spinacia oleracea, Zinnia elegans",
+      "location": "美国（哥伦比亚盆地，太平洋西北地区）",
+      "results": "发现22种新宿主；症状和宿主范围存在变异；两个新宿主（S. sarrachoides和Z. elegans）自然感染；S. sarrachoides是马铃薯田间优势杂草且是桃蚜的良好宿主。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12028572",
+      "doi": "10.1046/j.1365-313x.2002.01297.x",
+      "title": "Tobacco Rar1, EDS1 and NPR1/NIM1 like genes are required for N-mediated resistance to tobacco mosaic virus.",
+      "abstract": "The tobacco N gene confers resistance to tobacco mosaic virus (TMV) and encodes a Toll-interleukin-1 receptor/nucleotide binding site/leucine-rich repeat (TIR-NBS-LRR) class protein. We have developed and used a tobacco rattle virus (TRV) based virus induced gene silencing (VIGS) system to investigate the role of tobacco candidate genes in the N-mediated signalling pathway. To accomplish this we generated transgenic Nicotiana benthamiana containing the tobacco N gene. The transgenic lines exhibit hypersensitive response (HR) to TMV and restrict virus spread to the inoculated site. This demonstrates that the tobacco N gene can confer resistance to TMV in heterologous N. benthamiana. We have used this line to study the role of tobacco Rar1-, EDS1-, and NPR1/NIM1- like genes in N-mediated resistance to TMV using a TRV based VIGS approach. Our VIGS analysis suggests that these genes are required for N function. EDS1-like gene requirement for the N function suggests that EDS1 could be a common component of bacterial, fungal and viral resistance signalling mediated by the TIR-NBS-LRR class of resistance proteins. Requirement of Rar1- like gene for N-mediated resistance to TMV and some powdery mildew resistance genes in barley provide the first example of converging points in the disease resistance signalling pathways mediated by TIR-NBS-LRR and CC-NBS-LRR proteins. The TRV based VIGS approach as described here to study N-mediated resistance signalling will be useful for the analysis of not only disease resistance signalling pathways but also of other signalling pathways in genetically intractable plant systems.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2002,
+      "pub_date": "2002-05-01",
+      "authors": "Liu Yule; Schiff Michael; Marathe Rajendra; Dinesh-Kumar S P",
+      "first_author": "Liu Yule",
+      "categories": [
+        "Biotechnology_Applications",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "烟草花叶病毒（TMV）和烟草脆裂病毒（TRV）",
+      "taxonomy": "",
+      "host_plant": "本氏烟草（Nicotiana benthamiana）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12034899",
+      "doi": "10.1105/tpc.010436",
+      "title": "Downregulation of a pathogen-responsive tobacco UDP-Glc:phenylpropanoid glucosyltransferase reduces scopoletin glucoside accumulation, enhances oxidative stress, and weakens virus resistance.",
+      "abstract": "Plant UDP-Glc:phenylpropanoid glucosyltransferases (UGTs) catalyze the transfer of Glc from UDP-Glc to numerous substrates and regulate the activity of compounds that play important roles in plant defense against pathogens. We previously characterized two tobacco salicylic acid- and pathogen-inducible UGTs (TOGTs) that act very efficiently on the hydroxycoumarin scopoletin and on hydroxycinnamic acids. To identify the physiological roles of these UGTs in plant defense, we generated TOGT-depleted tobacco plants by antisense expression. After inoculation with Tobacco mosaic virus (TMV), TOGT-inhibited plants exhibited a significant decrease in the glucoside form of scopoletin (scopolin) and a decrease in scopoletin UGT activity. Unexpectedly, free scopoletin levels also were reduced in TOGT antisense lines. Scopolin and scopoletin reduction in TOGT-depleted lines resulted in a strong decrease of the blue fluorescence in cells surrounding TMV lesions and was associated with weakened resistance to infection with TMV. Consistent with the proposed role of scopoletin as a reactive oxygen intermediate (ROI) scavenger, TMV also triggered a more sustained ROI accumulation in TOGT-downregulated lines. Our results demonstrate the involvement of TOGT in scopoletin glucosylation in planta and provide evidence of the crucial role of a UGT in plant defense responses. We propose that TOGT-mediated glucosylation is required for scopoletin accumulation in cells surrounding TMV lesions, where this compound could both exert a direct antiviral effect and participate in ROI buffering.",
+      "journal": "The Plant cell",
+      "year": 2002,
+      "pub_date": "2002-05-01",
+      "authors": "Chong Julie; Baltz Rachel; Schmitt Corinne; Beffa Roland; Fritig Bernard; ... (+1)",
+      "first_author": "Chong Julie",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒（Tobacco mosaic virus, TMV）",
+      "taxonomy": "",
+      "host_plant": "烟草",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12000679",
+      "doi": "10.1046/j.1365-313x.2002.01291.x",
+      "title": "Barley stripe mosaic virus-induced gene silencing in a monocot plant.",
+      "abstract": "RNA silencing of endogenous plant genes can be achieved by virus-mediated, transient expression of homologous gene fragments. This powerful, reverse genetic approach, known as virus-induced gene silencing (VIGS), has been demonstrated only in dicot plant species, where it has become an important tool for functional genomics. Barley stripe mosaic virus (BSMV) is a tripartite, positive-sense RNA virus that infects many agriculturally important monocot species including barley, oats, wheat and maize. To demonstrate VIGS in a monocot host, we modified BSMV to express untranslatable foreign inserts downstream of the gammab gene, in either sense or antisense orientations. Phytoene desaturase (PDS) is required for synthesizing carotenoids, compounds that protect chlorophyll from photo-bleaching. A partial PDS cDNA amplified from barley was 90, 88 and 74% identical to PDS cDNAs from rice, maize and Nicotiana benthamiana, respectively. Barley infected with BSMV expressing barley, rice or maize PDS fragments became photo-bleached and accumulated phytoene (the substrate for PDS) in a manner similar to plants treated with the chemical inhibitor of PDS, norflurazon. In contrast, barley infected with wild-type BSMV, or BSMV expressing either N. benthamiana PDS or antisense green fluorescent protein (GFP), did not photo-bleach or accumulate phytoene. Thus BSMV silencing of the endogenous PDS was homology-dependent. Deletion of the coat protein enhanced the ability of BSMV to silence PDS. This is the first demonstration of VIGS in a monocot, and suggests that BSMV can be used for functional genomics and studies of RNA-silencing mechanisms in monocot plant species.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2002,
+      "pub_date": "2002-05-01",
+      "authors": "Holzberg Steve; Brosio Paul; Gross Cynthia; Pogue Gregory P",
+      "first_author": "Holzberg Steve",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "大麦条纹花叶病毒 (Barley stripe mosaic virus, BSMV)",
+      "taxonomy": "",
+      "host_plant": "大麦 (barley)，也涉及水稻、玉米、燕麦、小麦",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11904292",
+      "doi": "10.1074/jbc.M108478200",
+      "title": "Mlo, a modulator of plant defense and cell death, is a novel calmodulin-binding protein. Isolation and characterization of a rice Mlo homologue.",
+      "abstract": "Transient influx of Ca(2+) constitutes an early event in the signaling cascades that trigger plant defense responses. However, the downstream components of defense-associated Ca(2+) signaling are largely unknown. Because Ca(2+) signals are mediated by Ca(2+)-binding proteins, including calmodulin (CaM), identification and characterization of CaM-binding proteins elicited by pathogens should provide insights into the mechanism by which Ca(2+) regulates defense responses. In this study, we isolated a gene encoding rice Mlo (Oryza sativa Mlo; OsMlo) using a protein-protein interaction-based screening of a cDNA expression library constructed from pathogen-elicited rice suspension cells. OsMlo has a molecular mass of 62 kDa and shares 65% sequence identity and scaffold topology with barley Mlo, a heptahelical transmembrane protein known to function as a negative regulator of broad spectrum disease resistance and leaf cell death. By using gel overlay assays, we showed that OsMlo produced in Escherichia coli binds to soybean CaM isoform-1 (SCaM-1) in a Ca(2+)-dependent manner. We located a 20-amino acid CaM-binding domain (CaMBD) in the OsMlo C-terminal cytoplasmic tail that is necessary and sufficient for Ca(2+)-dependent CaM complex formation. Specific binding of the conserved CaMBD to CaM was corroborated by site-directed mutagenesis, a gel mobility shift assay, and a competition assay with a Ca(2+)/CaM-dependent enzyme. Expression of OsMlo was strongly induced by a fungal pathogen and by plant defense signaling molecules. We propose that binding of Ca(2+)-loaded CaM to the C-terminal tail may be a common feature of Mlo proteins.",
+      "journal": "The Journal of biological chemistry",
+      "year": 2002,
+      "pub_date": "2002-05-31",
+      "authors": "Kim Min Chul; Lee Sang Hyoung; Kim Jong Kyong; Chun Hyun Jin; Choi Man Soo; ... (+13)",
+      "first_author": "Kim Min Chul",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12054263",
+      "doi": "10.1099/00207713-52-3-953",
+      "title": "Polyphasic identification of Bacillus and Brevibacillus strains from clinical, dairy and industrial specimens and proposal of Brevibacillus invocatus sp. nov.",
+      "abstract": "Thirty-three clinical, dairy and industrial isolates of aerobic endospore-forming bacteria which were unreactive in routine identification tests were characterized genotypically by using amplified rDNA restriction analysis (ARDRA), 16S rDNA sequencing and DNA-DNA reassociation, and phenotypically by using fatty acid methyl ester (FAME) analysis, SDS-PAGE of whole-cell proteins, API Biotype 100 assimilation tests and 16 other routine phenotypic tests. Three isolates were identified as strains of Bacillus badius, 12 as Brevibacillus agri, including 3 strains associated with an outbreak of waterborne illness, 4 as Brevibacillus centrosporus and 2 as Brevibacillus parabrevis; 12 strains contaminating an antibiotic production plant were recognized as members of a new species, for which the name Brevibacillus invocatus is proposed, with the type strain LMG 18962T (= B2156T = CIP 106911T = NCIMB 13772T).",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2002,
+      "pub_date": "2002-05-01",
+      "authors": "Logan N A; Forsyth G; Lebbe L; Goris J; Heyndrickx M; ... (+6)",
+      "first_author": "Logan N A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12702303",
+      "doi": "10.1111/j.1567-1364.2002.tb00080.x",
+      "title": "Rhodotorula pinicola sp. nov., a basidiomycetous yeast species isolated from xylem of pine twigs.",
+      "abstract": "Three pink-colored yeast strains 3-1-3, 10-3-3 and 19-3-3 were isolated from xylem of surface-sterilized twigs of Pinus tabulaeformis collected from Dongling Mountain, Beijing, in different seasons. These strains were identified as Rhodotorula minuta (Saito) F.C. Harrison by conventional taxonomic characterization. However, molecular phylogenetic analysis based on internal transcribed spacer region (including 5.8S rDNA) and large-subunit rDNA D1/D2 domain sequences indicated that they represent a novel basidiomycetous yeast species, for which Rhodotorula pinicola is proposed (type strain: AS 2.2193(T)=CBS 9130(T)). The new species was most closely related to Rhodotorula laryngis Reiersöl in the R. minuta complex.",
+      "journal": "FEMS yeast research",
+      "year": 2002,
+      "pub_date": "2002-05-01",
+      "authors": "Zhao Jian-Hua; Bai Feng-Yan; Guo Liang-Dong; Jia Jian-Hua",
+      "first_author": "Zhao Jian-Hua",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12015135",
+      "doi": "10.1016/s0960-9822(02)00857-6",
+      "title": "Plant defence: a new weapon in the arsenal.",
+      "abstract": "Plants have evolved intricate defence mechanisms to cope with the wide array of microbial pathogens they encounter. The identification of Sgt1 as an essential component of R gene-mediated disease resistance suggests that the ubiquitin protein degradation pathway plays an important role in plant defence.",
+      "journal": "Current biology : CB",
+      "year": 2002,
+      "pub_date": "2002-05-14",
+      "authors": "Gray William M",
+      "first_author": "Gray William M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12034893",
+      "doi": "10.1105/tpc.001032",
+      "title": "RAR1 and NDR1 contribute quantitatively to disease resistance in Arabidopsis, and their relative contributions are dependent on the R gene assayed.",
+      "abstract": "Plant disease resistance (R) genes mediate specific pathogen recognition, leading to a successful immune response. Downstream responses include ion fluxes, an oxidative burst, transcriptional reprogramming, and, in many cases, hypersensitive cell death at the infection site. We used a transgenic Arabidopsis line carrying the bacterial avirulence gene avrRpm1 under the control of a steroid-inducible promoter to select for mutations in genes required for RPM1-mediated recognition and signal transduction. We identified an allelic series of eight mutants that also were allelic to the previously identified pbs2 mutation. Positional cloning revealed this gene to be AtRAR1, the Arabidopsis ortholog of barley RAR1, a known mediator of R function. AtRAR1 is required for both full hypersensitive cell death and complete disease resistance mediated by many, but not all, tested R genes. Double mutant analysis of Atrar1 in combination with the R signal intermediate ndr1 suggests that AtRAR1 and NDR1 can operate in both linear and parallel signaling events, depending on the R gene function triggered. In Atrar1 null plants, the levels of RPM1-myc are reduced severely, suggesting that AtRAR1 may regulate R protein stability or accumulation.",
+      "journal": "The Plant cell",
+      "year": 2002,
+      "pub_date": "2002-05-01",
+      "authors": "Tornero Pablo; Merritt Peter; Sadanandom Ari; Shirasu Ken; Innes Roger W; ... (+1)",
+      "first_author": "Tornero Pablo",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12099523",
+      "doi": "10.1093/aob/mcf076",
+      "title": "Induced systemic resistance (ISR) against pathogens in the context of induced plant defences.",
+      "abstract": "Induced systemic resistance (ISR) of plants against pathogens is a widespread phenomenon that has been intensively investigated with respect to the underlying signalling pathways as well as to its potential use in plant protection. Elicited by a local infection, plants respond with a salicylic-dependent signalling cascade that leads to the systemic expression of a broad spectrum and long-lasting disease resistance that is efficient against fungi, bacteria and viruses. Changes in cell wall composition, de novo production of pathogenesis-related-proteins such as chitinases and glucanases, and synthesis of phytoalexins are associated with resistance, although further defensive compounds are likely to exist but remain to be identified. In this Botanical Briefing we focus on interactions between ISR and induced resistance against herbivores that is mediated by jasmonic acid as a central signalling molecule. While many studies report cross-resistance, others have found trade-offs, i.e. inhibition of one resistance pathway by the other. Here we propose a framework that explains many of the thus far contradictory results. We regard elicitation separately from signalling and from production, i.e. the synthesis of defensive compounds. Interactions on all three levels can act independently from each other.",
+      "journal": "Annals of botany",
+      "year": 2002,
+      "pub_date": "2002-05-01",
+      "authors": "Heil Martin; Bostock Richard M",
+      "first_author": "Heil Martin",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

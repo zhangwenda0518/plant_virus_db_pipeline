@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Reference DB Help — Plant Virus DB</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;line-height:1.7}
+nav{background:linear-gradient(135deg,#1a3a5c,#2c6e49);color:#fff;height:46px;display:flex;align-items:center;padding:0 16px;gap:4px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+nav .brand{font-weight:700;font-size:15px;margin-right:12px;letter-spacing:.5px;color:#fff;text-decoration:none}
+nav a{color:rgba(255,255,255,.75);text-decoration:none;padding:5px 11px;border-radius:4px;font-size:12px;transition:.15s}
+nav a:hover,nav a.on{color:#fff;background:rgba(255,255,255,.15)}
+nav .sep{color:rgba(255,255,255,.25);margin:0 2px;font-size:14px;user-select:none}
+nav .spacer{flex:1}
+.hero{background:linear-gradient(135deg,#134e6f,#2c6e49);color:#fff;padding:40px 24px 32px;text-align:center}
+.hero h1{font-size:28px;margin-bottom:6px}
+.hero p{font-size:14px;opacity:.85;max-width:700px;margin:0 auto}
+.wrap{max-width:900px;margin:0 auto;padding:24px 20px}
+.sec{margin:32px 0 14px;font-size:15px;color:#8a99a8;font-weight:600;letter-spacing:.5px;border-left:3px solid #2c6e49;padding-left:10px}
+.card{background:#fff;border-radius:12px;padding:24px 26px;box-shadow:0 1px 6px rgba(20,60,90,.06);border:1px solid #eef2f5;margin-bottom:18px}
+.card h3{font-size:17px;color:#1a5276;margin-bottom:12px}
+.card p{font-size:14px;color:#5a6b7b;margin-bottom:8px}
+.card ul,.card ol{margin:6px 0 6px 20px;font-size:14px;color:#5a6b7b}
+.card ul li,.card ol li{margin-bottom:6px}
+.card code{background:#eaf2f8;color:#1a5276;padding:1px 6px;border-radius:3px;font-size:13px;font-family:'SF Mono',Consolas,monospace}
+.stats-row{display:flex;gap:16px;flex-wrap:wrap;margin:16px 0}
+.stat-item{flex:1;min-width:130px;background:linear-gradient(135deg,#f0f6fb,#e8f4ea);border-radius:10px;padding:16px;text-align:center}
+.stat-item b{display:block;font-size:22px;color:#1a5276}
+.stat-item span{font-size:11px;color:#888}
+.step-list{counter-reset:step}
+.step-list li{counter-increment:step;list-style:none;margin-bottom:12px;padding:10px 14px;background:#f8fafb;border-radius:8px;border-left:3px solid #2c6e49}
+.step-list li::before{content:"Step "counter(step);display:block;font-size:11px;color:#2c6e49;font-weight:700;margin-bottom:4px}
+.tip-box{background:#fff8e1;border-left:3px solid #f9a825;padding:12px 16px;border-radius:6px;margin:12px 0;font-size:13px;color:#795548}
+.note-box{background:#e3f2fd;border-left:3px solid #1565c0;padding:12px 16px;border-radius:6px;margin:12px 0;font-size:13px;color:#0d47a1}
+footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="brand">Plant Virus DB</a>
+  <span class="sep">|</span>
+  <a href="/reference/">Reference</a>
+  <a href="/primers/">Primers</a>
+  <a href="/photos/">Photos</a>
+  <a href="/vector/">Vector</a>
+  <a href="/te/">TE·EVE</a>
+  <a href="/genes/">Genes</a>
+  <span class="sep">|</span>
+  <a href="/metabuli/">Metabuli</a>
+  <a href="/explorer/">Explorer</a>
+  <a href="/pamirdb/">PV-miRNA</a>
+  <span class="sep">|</span>
+  <a href="/literature/">Literature</a>
+  <a href="/knowledge/">Knowledge</a>
+  <span class="spacer"></span>
+  <a href="/help/" class="on">Help</a>
+</nav>
+
+<div class="hero">
+  <h1>Reference DB</h1>
+  <p>Plant Virus Reference Sequence Database — curated, deduplicated, and cross-referenced with ICTV taxonomy.</p>
+</div>
+
+<div style="max-width:900px;margin:0 auto;padding:0 20px 16px">
+  <img src="/help/images/reference.png" alt="reference.html screenshot" style="width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);border:1px solid #d0d8e0">
+</div>
+
+<div style="max-width:900px;margin:0 auto;padding:0 20px 8px">
+  <img src="/help/images/ref_segmented.png" alt="Segmented — Segmented Virus Browser" style="width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);border:1px solid #d0d8e0;margin-bottom:4px">
+  <p style="text-align:center;font-size:12px;color:#888;margin-bottom:12px">Segmented — Segmented Virus Browser</p>
+</div>
+<div style="max-width:900px;margin:0 auto;padding:0 20px 8px">
+  <img src="/help/images/ref_nonsegmented.png" alt="Non-Segmented — Non-Segmented Virus Browser" style="width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);border:1px solid #d0d8e0;margin-bottom:4px">
+  <p style="text-align:center;font-size:12px;color:#888;margin-bottom:12px">Non-Segmented — Non-Segmented Virus Browser</p>
+</div>
+<div style="max-width:900px;margin:0 auto;padding:0 20px 8px">
+  <img src="/help/images/ref_submit.png" alt="Submit — Submit New Sequence" style="width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);border:1px solid #d0d8e0;margin-bottom:4px">
+  <p style="text-align:center;font-size:12px;color:#888;margin-bottom:12px">Submit — Submit New Sequence</p>
+</div>
+<div style="max-width:900px;margin:0 auto;padding:0 20px 8px">
+  <img src="/help/images/ref_download.png" alt="Download — Data Download" style="width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);border:1px solid #d0d8e0;margin-bottom:4px">
+  <p style="text-align:center;font-size:12px;color:#888;margin-bottom:12px">Download — Data Download</p>
+</div>
+
+<div class="wrap">
+
+  <div class="sec">Overview</div>
+  <div class="card">
+    <p>Reference DB is the core reference sequence database of this platform, integrating all plant virus-related sequences from NCBI GenBank and cross-validated against the authoritative ICTV VMR MSL41 taxonomy. After the seven-step QC pipeline (Host Classify, ICTV Validate, Segmented Detect, Taxonomy Dedup, SeqKit rmdup, MMseqs2 0.98 clustering, vclust Cluster), it produces <strong>199K</strong> non-redundant sequences covering <strong>6,182</strong> plant virus species, including viruses, viroids, satellite nucleic acids, and unclassified plant-associated sequences.</p>
+    <div class="stats-row">
+      <div class="stat-item"><b>199,499</b><span>Reference Sequences</span></div>
+      <div class="stat-item"><b>6,182</b><span>Virus Species</span></div>
+      <div class="stat-item"><b>7-step</b><span>QC Pipeline</span></div>
+      <div class="stat-item"><b>MSL41</b><span>ICTV Taxonomy</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Dashboard Panel</h3>
+    <p>The Reference DB homepage provides six visualization dashboards:</p>
+    <ul>
+      <li><strong>Sequence Overview</strong>: Sequence count distribution by family, for a quick overview of each viral family's scale.</li>
+      <li><strong>Genome Type Distribution</strong>: Proportion statistics for ssRNA / ssDNA / dsRNA / dsDNA genome types.</li>
+      <li><strong>Sequence Length Distribution</strong>: Histogram of sequence lengths across the database, reflecting different genome size spectra.</li>
+      <li><strong>Host Classification</strong>: Virus sequence associations by host plant species/genus, revealing host specificity patterns.</li>
+      <li><strong>Temporal Distribution</strong>: Timeline trend of sequence submission years, tracking discovery and research activity changes across viral families.</li>
+      <li><strong>Segmented / Non-Segmented</strong>: Paginated browsing of segmented and non-segmented viral genomes with family/genus hierarchical filtering.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Core Features</h3>
+    <ul>
+      <li><strong>Sequence Search</strong>: Supports exact or fuzzy search by virus name, species, family/genus, or GenBank Accession number.</li>
+      <li><strong>Segmented Browser</strong>: Designed for multipartite viruses, displaying independent sequences and annotations for each segment.</li>
+      <li><strong>Submit</strong>: Users can submit new plant virus sequences; the system automatically performs host classification and ICTV validation before ingestion.</li>
+      <li><strong>Download</strong>: Download FASTA sequence files and corresponding metadata tables by family, genus, or segment dimensions.</li>
+      <li><strong>Genome Visualization</strong>: View genome structure annotation diagrams for selected virus entries, including CDS and mature peptide cleavage site annotations.</li>
+    </ul>
+  </div>
+
+  <div class="sec">Quick Start</div>
+  <div class="card">
+    <ol class="step-list">
+      <li>Go to <a href="/reference/" style="color:#2c6e49">Reference DB Dashboard</a> to view sequence overview and genome type distribution, building an intuitive understanding of the database's scale and composition.</li>
+      <li>Switch to the <strong>Segmented</strong> tab to browse multipartite virus segment details by family and genus hierarchy.</li>
+      <li>Use the top search box to enter a target virus species name or GenBank Accession to precisely locate entries of interest.</li>
+      <li>On the <strong>Download</strong> page, select family/genus/segment dimensions to download corresponding FASTA files and metadata tables for downstream analysis.</li>
+    </ol>
+  </div>
+
+  <div class="sec">Reference</div>
+  <div class="card">
+    <h3>Data Source</h3>
+    <ul>
+      <li><strong>Sequence Data</strong>: NCBI GenBank nucleotide database; all plant virus-related entries retrieved programmatically via Entrez.</li>
+      <li><strong>Taxonomy System</strong>: ICTV Virus Metadata Resource (VMR) MSL41, providing officially recognized virus species and their higher-order classification.</li>
+      <li><strong>Host Information</strong>: Host field from NCBI records processed via NLP and mapped to standardized plant species names.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>QC Pipeline</h3>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:8px">
+    <thead><tr style="background:#f8fafb"><th style="padding:8px 12px;text-align:left;border-bottom:1px solid #eef2f5">Step</th><th style="padding:8px 12px;text-align:left;border-bottom:1px solid #eef2f5">Tool/Method</th><th style="padding:8px 12px;text-align:left;border-bottom:1px solid #eef2f5">Description</th></tr></thead>
+    <tbody>
+    <tr><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">1. Host Classify</td><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">Custom NLP + lexicon</td><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">Parse NCBI host field; classify to plant species</td></tr>
+    <tr><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">2. ICTV Validate</td><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">VMR MSL41 mapping</td><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">Cross-validate species names against ICTV official taxonomy</td></tr>
+    <tr><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">3. Segmented Detect</td><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">Sequence name pattern matching</td><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">Identify segment annotations for segmented viruses</td></tr>
+    <tr><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">4. Taxonomy Dedup</td><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">NCBI Taxonomy parsing</td><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">Remove duplicate entries caused by synonyms</td></tr>
+    <tr><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">5. SeqKit rmdup</td><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">SeqKit</td><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">Deduplicate by sequence name</td></tr>
+    <tr><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">6. MMseqs2 0.98</td><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">MMseqs2 easy-cluster</td><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">98% Cluster by sequence similarity to reduce redundancy</td></tr>
+    <tr><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">7. vclust Cluster</td><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">vclust</td><td style="padding:8px 12px;border-bottom:1px solid #eef2f5">Virus-specific clustering; high fidelity</td></tr>
+    </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Download Interface</h3>
+    <p>The download page is organized into three levels:</p>
+    <ul>
+      <li><strong>Family Level</strong>: Download all sequences by viral family; suitable for large-scale comparative genomics analysis.</li>
+      <li><strong>Genus level</strong>: Download by viral genus, suitable for intra-genus genetic diversity studies.</li>
+      <li><strong>Segment level</strong>: Download each segment independently for multipartite viruses, suitable for per-segment analysis.</li>
+    </ul>
+    <p>Each download level includes a metadata table (CSV format) with Accession, species, host, genome type, length, and submission date fields.</p>
+  </div>
+
+  <div class="sec">Tips</div>
+  <div class="tip-box"><strong>Search Tips</strong>: Use the full scientific name of a virus species (e.g. <code>Tomato yellow leaf curl virus</code>) for optimal matching precision; abbreviations (e.g. <code>TYLCV</code>) can also be used for fuzzy search.</div>
+  <div class="tip-box"><strong>Download Optimization</strong>: When batch-downloading large numbers of sequences, download at the Family granularity to control file size and network transfer time.</div>
+  <div class="note-box"><strong>Submit New Sequence</strong>: Before using the Submit function, ensure sequences have undergone basic vector removal and quality filtering. The system will automatically perform host classification and ICTV cross-validation, and processing results will be displayed on the page.</div>
+  <div class="note-box"><strong>Multipartite Viruses</strong>: For multipartite viruses such as Geminiviridae and Bromoviridae, please view complete segment information on the Segmented page. Each segment is independently numbered (e.g. RNA1, RNA2, DNA-A, DNA-B), and different segments may encode distinct functional proteins.</div>
+
+</div>
+
+<footer>Plant Virus Database Platform · Reference DB Help</footer>
+<script src="/reference/i18n.js"></script>
+<script>PVDB_i18n.init({navSelector:"nav"});</script>
+</body>
+</html>

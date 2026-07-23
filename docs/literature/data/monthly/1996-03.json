@@ -1,0 +1,101 @@
+{
+  "month": "1996-03",
+  "generated": "2026-07-13 02:59:42",
+  "total": 4,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 2,
+    "New_Virus": 1,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8729138",
+      "doi": "10.1007/BF02637095",
+      "title": "Production of eicosapentaenoic acid from marine bacteria.",
+      "abstract": "A marine bacterium, judged as a new species close to Shewanella putrefaciens, was isolated from the intestinal contents of the Pacific mackerel. The isolated strain SCRC-2378 produced eicosapentaenoic acid (EPA) as the sole polyunsaturated fatty acid, which amounted to 24-40% of the total fatty acid in the cell, which corresponded to 2% of dry cell weight. Under the optimal growth conditions (pH 7.0, 20 degrees C, and grown aerobically for 12-18 h), the yield of SCRC-2738 reached 15 g of dry cells/L or 2 x 10(10) viable cells/mL. EPA existed as phospholipid and was found in the sn-2 position of phosphatidylethanolamine and phosphatidylglycerol. The 38 kbp (1,000 base pairs) genome DNA fragment was cloned from SCRC-2738 and expressed in Escherichia coli, which resulted in the production of EPA. The nucleotide sequence of the 38 kbp DNA fragment was determined. The DNA fragment contains eight open reading frames, and three of them possess homology with enzymes involved in fatty acid synthesis. Thus, it may be possible that these EPA biosynthesis genes are applied for EPA production in yeasts or higher plants, and offer a new method for EPA synthesis as new foods containing EPA.",
+      "journal": "Lipids",
+      "year": 1996,
+      "pub_date": "1996-03-01",
+      "authors": "Yazawa K",
+      "first_author": "Yazawa K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8637920",
+      "doi": "10.1073/pnas.93.6.2598",
+      "title": "The PR5K receptor protein kinase from Arabidopsis thaliana is structurally related to a family of plant defense proteins.",
+      "abstract": "We have isolated an Arabidopsis thaliana gene that codes for a receptor related to antifungal pathogenesis-related (PR) proteins. The PR5K gene codes for a predicted 665-amino acid polypeptide that comprises an extracellular domain related to the PR5 proteins, a central transmembrane-spanning domain, and an intracellular protein-serine/threonine kinase. The extracellular domain of PR5K (PR5-like receptor kinase) is most highly related to acidic PR5 proteins that accumulate in the extracellular spaces of plants challenged with pathogenic microorganisms. The kinase domain of PR5K is related to a family of protein-serine/threonine kinases that are involved in the expression of self-incompatibility and disease resistance. PR5K transcripts accumulate at low levels in all tissues examined, although particularly high levels are present in roots and inflorescence stems. Treatments that induce authentic PR5 proteins had no effect on the level of PR5K transcripts, suggesting that the receptor forms part of a preexisting surveillance system. When the kinase domain of PR5K was expressed in Escherichia coli, the resulting polypeptide underwent autophosphorylation, consistent with its predicted enzyme activity. These results are consistent with PR5K encoding a functional receptor kinase. Moreover, the structural similarity between the extracellular domain of PR5K and the antimicrobial PR5- proteins suggests a possible interaction with common or related microbial targets.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1996,
+      "pub_date": "1996-03-19",
+      "authors": "Wang X; Zafian P; Choudhary M; Lawton M",
+      "first_author": "Wang X",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8616080",
+      "doi": "10.1046/j.1365-2141.1995.404942.x",
+      "title": "Anti-CD30 (BER=H2) immunotoxins containing the type-1 ribosome-inactivating proteins momordin and PAP-S (pokeweed antiviral protein from seeds) display powerful antitumour activity against CD30+ tumour cells in vitro and in SCID mice.",
+      "abstract": "The anti-CD30 immunotoxin (IT) Ber-H2/saporin is effective in patients with refractory Hodgkin's disease. However, responses are short and partial, one of the main reasons being the inability to repeat IT doses because of formation of human antibodies against the murine antibody and/or the toxin. To overcome this problem, we constructed two new anti-CD30 ITs by covalently linking the mouse monoclonal antibody Ber-H2 to the type 1 ribosome-inactivating proteins (RIPs) momordin (MOM) and pokeweed antiviral protein from seeds (PAP-S), which do not cross-react with each other or with saporin. Both ITs inhibited protein synthesis by Hodgkin's disease and anaplastic large-cell lymphoma (ALCL)-derived CD30+ target cell lines with a very high efficiency (IC50 ranging from < 5 x 10(-13) M to 2.75 x 10(-11) M, as RIP). In a SCID mouse model of xenografted CD30+ human ALCL, a 3d treatment with non-toxin doses of Ber-H2/MOM (50%LD50), started 24 h after transplantation, prevented tumour development in about 40% of the animals and significantly delayed tumour growth rate in the others. Main toxicity signs in mice and rabbits were dose-related increase of serum transaminases (AST and ALT) and creatine phosphokinase (CPK). LD50 (as RIP) in Swiss mice was 7 mg/kg for Ber-H2/MOM and 0.45 mg/kg for Ber-H2/PAP-S. Sequential administration of two anti-CD30 ITs (Ber-H2/MOM and Ber-H2/saporin) was well tolerated and did not result in formation of antibodies cross-reacting and with the two plant toxins. The results presented in this paper suggest that in the future, sequential administration of anti-CD30 humanized antibodies linked to antigenically distinct type 1 RIPs (saporin, MOM, PAP-S) should be feasible.",
+      "journal": "British journal of haematology",
+      "year": 1996,
+      "pub_date": "1996-03-01",
+      "authors": "Terenzi A; Bolognesi A; Pasqualucci L; Flenghi L; Pileri S; ... (+8)",
+      "first_author": "Terenzi A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8691850",
+      "doi": "10.1016/0378-8741(96)01380-3",
+      "title": "Drug leads from the Kallawaya herbalists of Bolivia. 1. Background, rationale, protocol and anti-HIV activity.",
+      "abstract": "Aqueous, organic and alcoholic extracts of over 100 samples of 60 species of Kallawaya medicinal herbs representing 30 plant families were assayed to compare their toxicity and ability to protect MT-2 T-lymphoblastoid cells from the cytopathic effect of human immunodeficiency virus (HIV). The results are reported as a therapeutic index (TI) which was > 25 for eighteen species, including seven > 50 and one > 100. The anti-HIV activity resided primarily in the aqueous rather than in the organic extracts and was concentrated in plants used in ethnomedicine to treat lung and liver diseases.",
+      "journal": "Journal of ethnopharmacology",
+      "year": 1996,
+      "pub_date": "1996-03-01",
+      "authors": "Abdel-Malek S; Bastien J W; Mahler W F; Jia Q; Reinecke M G; ... (+3)",
+      "first_author": "Abdel-Malek S",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

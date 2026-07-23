@@ -1,0 +1,35 @@
+{
+  "month": "1980-08",
+  "generated": "2026-07-13 02:59:41",
+  "total": 1,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 1,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "6776544",
+      "doi": "10.1002/chin.198050198",
+      "title": "Synthesis of newer N-furylidene and N-acetophenonylidene-5-chlorodiphenylamine-2-carboxylic acid hydrazides as antiviral and antibacterial agents.",
+      "abstract": "Five N-furylidene and fifteen N-acetophenonylidene-5-chlorodiphenylamine-2-carboxylic acid hydrazides were synthesized by the condensation of 5-chlorodiphenylamine-2-carboxylic acid hydrazides with furfuraldehyde and appropriate acetophenones. All the N-acetophenonylidenes thus synthesized were screened for their antiviral activity against animal viruses (Ranikhet disease virus and vaccinia virus in a stationary culture of chorioallantoic membrane of chick embryo) and against plant virus, namely gomphrena mosaic virus (GMV) in vitro as well as in vivo. Whereas five N-furylidenes were tested against gomphrena mosaic virus only in vitro and in vivo for their antiviral activity. Maximum significant protection was observed to the extent of 20% against Ranikhet disease virus. The majority of these compounds showed highly significant antiviral activity up to the extent of 96% in vitro and 89% in vivo against gomphrena mosaic virus. These compounds were also screened for their antibacterial activity against two micro-organisms; Bacillus subtilis and Staphylococcus aureus. Almost all of them were found to exhibit significant inhibition against B. subtilis while only a fewer showed significant inhibition against S. aureus.",
+      "journal": "Die Pharmazie",
+      "year": 1980,
+      "pub_date": "1980-08-01",
+      "authors": "Bahadur S; Singh S P",
+      "first_author": "Bahadur S",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management"
+      ],
+      "virus_name": "gomphrena mosaic virus (GMV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

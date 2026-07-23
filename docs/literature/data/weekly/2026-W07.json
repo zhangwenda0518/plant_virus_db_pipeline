@@ -1,0 +1,238 @@
+{
+  "week": "2026-W07",
+  "start": "2026-02-09",
+  "end": "2026-02-15",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 28,
+  "by_category": {
+    "Host_Virus_Interactions": 8,
+    "Control_Management": 8,
+    "Antiviral_Resistance_Genes": 5,
+    "New_Virus": 4,
+    "Detection_Methods": 2,
+    "Biotechnology_Applications": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "41691003",
+      "doi": "10.1038/s41598-026-39107-0",
+      "title": "Morphophysiological disorders and metabolic reprogramming in Physalis peruviana infected with the physalis rugose mosaic virus.",
+      "abstract": "Physalis peruviana L. (Cape gooseberry) is susceptible to several pathogens, among which the sobemovirus physalis rugose mosaic virus (PhyRMV) is most prominent. This study investigated the anatomical, morphophysiological, and metabolic responses of P. peruviana to PhyRMV over the course of the infection cycle. P. peruviana plants were grown under greenhouse conditions (24 ± 2 ℃) and mechanically inoculated with buffer (mock) or PhyRMV inoculum. The local and systemic leaves were collected at 0, 3, 7, 14, 21, and 42 days after inoculation (DAI) and viral infection was confirmed by RT-qPCR. Morphological traits, including plant height, symptoms, and the Falker chlorophyll index, and histological changes were evaluated in PhyRMV-infected plants and compared to mock-inoculated controls. To characterize and compare their metabolic profile, the collected leaves were processed and subjected to gas chromatography-mass spectrometry (GC-MS). Yield was also assessed by quantifying the number and weight of fruits. PhyRMV could be detected in systemic leaves from 14 DAI onward, accompanied by an increase in viral load and the intensification of the symptoms, including mosaic, chlorosis, and leaf deformation from 21 DAI onward, which were associated with reduced plant height and chlorophyll contents. At 42 DAI, histological changes and increased starch accumulation were observed in the infected leaves, suggesting impaired photoassimilate transport. GC-MS revealed an accumulation of sucrose, pyruvate, and tricarboxylic acid (TCA) cycle metabolites, possibly due to the high energy demand associated with viral replication, indicating significant alterations in the functioning of the central metabolic pathways in systemic leaves in the late stage of infection at 42 DAI. Compounds such as glutamate, isoleucine, and malonate could potentially be involved in the activation of defense pathways, including the shikimic acid pathway. Metabolic networks demonstrated a loss of complexity in the infected plants, indicating a redirection of resources from primary metabolism to defense-associated mechanisms. Thus, fruit production was reduced by 31% in the infected plants, highlighting a negative impact of infection on the production potential. These results support management strategies based on the induction of plant defense mechanisms and reinforce the importance of the use of integrative approaches to understanding the physiological and biochemical impacts of viruses on crops.",
+      "journal": "Scientific reports",
+      "year": 2026,
+      "pub_date": "2026-02-14",
+      "authors": "Studnicka Muriel Herminio; Bianchini Jheniffer Rodolfi; Felisberto Naomi Borges; Silva Maria Eduarda Santos E; Pisano Julia; ... (+7)",
+      "first_author": "Studnicka Muriel Herminio",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "physalis rugose mosaic virus (PhyRMV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41754593",
+      "doi": "10.3390/v18020250",
+      "title": "Generation of a Bivalent Recombinant Vaccine Conferring Dual Protection Against Potyvirus and Orthotospovirus in Cucurbits.",
+      "abstract": "Climate warming has facilitated the expansion of insect vectors and plant viral pathogens, leading to increased incidence of viral diseases in crops. Cucurbit crops, including cucumber (Cucumis sativus), melon (Cucumis melo), squash (Cucurbita pepo), and watermelon (Citrullus lanatus), are of major economic importance worldwide, but their production is severely threatened by viral infections. Among the most damaging viruses are zucchini yellow mosaic virus (ZYMV; genus Potyvirus), transmitted by aphids, and melon yellow spot virus (MYSV; genus Orthotospovirus), transmitted by thrips, both of which cause significant yield losses in Asia, including Taiwan. Previously, an attenuated ZYMV mutant, ZAC, was shown to confer effective cross-protection against ZYMV in several cucurbit species. In the present study, we engineered a recombinant virus, ZAC-MYnp, by inserting the nucleocapsid protein (NP) open reading frame of MYSV into the ZAC genome. ZAC-MYnp retained the attenuated phenotype of ZAC and remained effective in protecting against ZYMV infection, with protection rates of 70.4% and 87.0% in zucchini and muskmelon plants, respectively. In addition, under both mechanical and thrips-mediated challenge conditions, ZAC-MYnp significantly reduced MYSV symptom severity in muskmelon, with a protection rate of 66.7% and a protective efficacy of 79.0%, respectively. These results demonstrate that ZAC-derived recombinant viruses can function as a bivalent viral vaccine, offering dual protection against an aphid-borne potyvirus and a thrips-borne orthotospovirus. Our study highlights the feasibility of using a bivalent recombinant vaccine to manage two distinct insect-borne viruses in cucurbit crops.",
+      "journal": "Viruses",
+      "year": 2026,
+      "pub_date": "2026-02-15",
+      "authors": "Chen Tsung-Chi; Kang Ya-Chi; Tran Thi-Ngoc-Bich; Huang Li-Hsin; Lin Chian-Chi; ... (+1)",
+      "first_author": "Chen Tsung-Chi",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "小西葫芦黄花叶病毒（ZYMV）和甜瓜黄斑病毒（MYSV）",
+      "taxonomy": "",
+      "host_plant": "葫芦科作物（西葫芦、甜瓜等）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41130580",
+      "doi": "10.1016/j.jep.2025.120763",
+      "title": "Ethnopharmacology, phytochemistry and pharmacological potential of the genus Diospyros.",
+      "abstract": "[ETHNOPHARMACOLOGICAL RELEVANCE] Diospyros species are deeply rooted in the cultural traditions of various communities across the globe. Their fruits and timber are among the most widely used natural resources from the genus, serving both ornamental and medicinal purposes. Traditionally, they have been employed to treat a range of health conditions, including leprosy, skin disorders, eye infections, cough, fever, diarrhea, dysentery, malaria, and other ailments. [AIM OF THE REVIEW] This review aims to provide an updated overview of the ethnopharmacology, phytochemistry and pharmacological potential of Diospyros species. [MATERIALS AND METHODS] The analysis was conducted using more than 500 scientific documents, including research articles, reviews, and patents, sourced from reputable databases such as SciFinder, Reaxys, PubMed, Scopus, Google Scholar, and Web of Science, using the keyword \"Diospyros\" along with filters such as \"natural products,\" \"antimicrobial,\" \"cytotoxic,\" \"antidiabetic,\" \"analgesic,\" \"anti-inflammatory,\" and \"biological evaluation.\" The literature review covers reports on Diospyros species published up to January 2025. [RESULTS] Since the last major phytochemical review of the genus in 1998, approximately 350 additional compounds have been described. These include simple naphthalenes, naphthoquinones, flavonoids, terpenoids, saponins, coumarins, and lignans. All plant organs have also been the subject of biological activities that stretch to antibacterial, antifungal, antiviral, antiparasitic, anticancer, anti-inflammatory, antidepressant, hepatoprotective, analgesic, neuroprotective, antipyretic, and cardioprotective actions. Among these, naphthoquinones, flavonoids, and triterpenes emerged as the most biologically active classes. [CONCLUSIONS] Interest in Diospyros species has surged in recent years, largely due to scientific validation of many of its traditional medicinal uses. The pharmacological profile within the Diospyros genus is both broad and deep, with its most outstanding promise lying in the treatment of infectious diseases and cancer, primarily driven by its unique and largely landscape of naphthoquinones. The challenge and opportunity for future research lie in leveraging modern scientific approaches to understand the synergies within extracts, refine the active compounds for better selectivity and safety, and fully explore neglected areas like antiviral activity. Moreover, the isolation of bioactive alkaloids, the underrepresented phytochemicals from Diospyros species, should be envisaged.",
+      "journal": "Journal of ethnopharmacology",
+      "year": 2026,
+      "pub_date": "2026-02-10",
+      "authors": "Fankam Aimé G; Nchiozem-Ngnitedem Vaderament-A; Seukep Armel J; Bitchagno Gabin T M; Kuete Victor",
+      "first_author": "Fankam Aimé G",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41696203",
+      "doi": "10.1021/acsomega.5c12185",
+      "title": "Enzymatic Glucosylation Enhances the Solubility of Niclosamide but Abrogates Its Therapeutic Efficacy.",
+      "abstract": "Niclosamide (Nic) is a small molecule therapeutic listed as an essential medicine by the World Health Organization for the treatment of tapeworm infections. Despite its demonstrated potential for other therapeutic applications in vitro, including cancer cell proliferation and SARS-CoV-2 infection, any clinical use beyond as an anthelminthic agent has been precluded by its poor solubility and bioavailability. In this study, we explored the use of glucosylation as a strategy to modulate the properties of Nic. We determined that the O-glucoside of Nic (Nic-Glc) is 100 times more soluble than Nic at physiological conditions, outperforming all previous attempts at increasing Nic solubility. Motivated by the mandatory green transition, we identified five Nic-active glycosyltransferases (GTs) with the view to enable Nic-Glc bioproduction. Of these five plant GTs, TOGT1_1 from Nicotiana attenuata was identified as the best candidate and a rational engineering campaign was performed to improve its activity, with a total of 14 variants tested. Most of these mutants outperformed wildtype TOGT1_1 in both stability (64%) and relative activity (79%), highlighting the robustness and evolvability of this enzyme. However, when we tested Nic-Glc using in vitro cell-based assays, we found that glucosylation abrogated the antimicrobial and antiviral efficacy of Nic, with Nic-Glc having no impact on the growth of Staphylococcus aureus nor the infectivity of SARS-CoV-2 or hepatitis C virus. Therefore, the potential application of a Nic glycoside would likely need to function as a prodrug. This would preserve the solubility benefit afforded by glycosylation and release the therapeutically active Nic at the desired site. This work provides evidence that glycosylation is a viable strategy for improving the solubility of Nic, and that the development of an enzymatic glycosylation reaction is feasible as a means for the bioproduction of Nic-Glc.",
+      "journal": "ACS omega",
+      "year": 2026,
+      "pub_date": "2026-02-10",
+      "authors": "Lax Brianna M; Escorial García Martina; Fernandez-Antunez Carlota; Bukh Jens; Ramirez Santseharay; ... (+1)",
+      "first_author": "Lax Brianna M",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41575212",
+      "doi": "10.1128/mbio.03741-25",
+      "title": "A CDK-4EBP1 signaling axis drives HSV-1 replication and underscores a druggable pathway for potent antiviral intervention.",
+      "abstract": "Herpes simplex virus type 1 (HSV-1) poses a persistent public health challenge, particularly due to the emergence of drug-resistant strains and the limited efficacy of current monotherapies. Through an unbiased multi-omic approach, we identify a previously lesser-known viral strategy in which HSV-1 hijacks cyclin-dependent kinase (CDK) signaling to disrupt host cell cycle and translational control, specifically via the eukaryotic translation initiation factor 4E-binding protein 1 (4EBP1). Targeted knockdown of CDKs confirmed their critical role in mediating 4EBP1 dephosphorylation during infection. Mechanistic evaluation of BX795, a previously known modulator of the 4EBP1 pathway, revealed an alternative route of translational repression mediated through CDKs. To further support this conclusion, we demonstrated that a distinct small-molecule CDK inhibitor, GW8510, exhibits potent antiviral activity against HSV-1 and functions as a true mechanistic analog of BX795. Together, these findings uncover a previously unrecognized CDK-4EBP1 regulatory axis exploited by HSV-1 and identify GW8510 as a promising candidate for host-directed antiviral intervention.IMPORTANCEHerpes simplex virus type 1 remains a major clinical burden, and resistance to existing therapies underscores the need for alternative strategies. This study reveals a mechanism by which HSV-1 regulates host cell cycle and translation control through cyclin-dependent kinase signaling and the 4E-binding protein 1 pathway. By revealing that pharmacological inhibition of this pathway suppresses viral replication, we identify a host-directed therapeutic approach that circumvents challenges associated with viral resistance to the current drugs. The demonstration of potent antiviral activity by GW8510, a small-molecule cyclin-dependent kinase inhibitor, establishes a promising foundation for translational development and highlights the potential of targeting host regulatory networks to combat viral infection.",
+      "journal": "mBio",
+      "year": 2026,
+      "pub_date": "2026-02-11",
+      "authors": "Madavaraju Krishnaraju; Yadavalli Tejabhiram; Singh Sudhanshu Kumar; Patil Chandrashekhar D; Borase Hemant; ... (+1)",
+      "first_author": "Madavaraju Krishnaraju",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41688530",
+      "doi": "10.1038/s41598-026-39004-6",
+      "title": "Phylogenomic analysis shows underestimated species within Cupriavidus and the new species Cupriavidus phytohabitans sp. nov.",
+      "abstract": "During a survey of nodule-associated bacteria from legume plants and soil collected in southern Mexico, several strains were obtained in Mexico City using Phaseolus vulgaris as a trap plant, inoculated with rhizospheric soil from the legume Acacia sp. collected in the state of Veracruz, a bordering state to the Gulf of Mexico. The 16S rRNA gene sequence analysis identified the strains AcVe19-1aT, AcVe19-6a, and AcVe19-6b as Cupriavidus (with 99.9% similarity to many type strains of Cupriavidus species and 99.9 to 100% similarity within the novel species). Comparative genomics by average nucleotide identity (ANI) and digital DNA-DNA hybridization (dDDH) showed that strains AcVe19-1aT and AcVe19-6a correspond to a new Cupriavidus genomic species (ANI values lower than 94% and dDDH values lower than 55% to any Cupriavidus strain, and the closest species Cupriavidus consociatus). The genome of the novel species harbors nitrogen-fixing and nodulation genes, enabling it to nodulate plants of P. vulgaris and Mimosa pudica, but it does so poorly with Acacia sp. However, nitrogen was not fixed in the nodule or the culture medium. According to the symbiovars guidelines, two symbiovars are proposed. The genome analysis, together with phenotypic, physiological, and chemotaxonomical analyses, corroborate that strains AcVe19-1aT, AcVe19-6a, and AcVe19-6b correspond to a novel species, for which we propose the name Cupriavidus phytohabitans sp. nov. with the type strain AcVe19-1aT = TSD-313T = CDBB B-2084T. In addition to the description of the novel species, a comparative genomic analysis of all Cupriavidus species in the NCBI database showed that many have been misclassified, and others correspond to new genomic species.",
+      "journal": "Scientific reports",
+      "year": 2026,
+      "pub_date": "2026-02-13",
+      "authors": "Tapia-García Erika-Yanet; Chávez-Ramírez Belén; Morales-Ruíz Leslie-Mariana; Arroyo-Herrera Ivan; Larios-Serrato Violeta; ... (+2)",
+      "first_author": "Tapia-García Erika-Yanet",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42408738",
+      "doi": "10.11646/zootaxa.5759.1.4",
+      "title": "",
+      "abstract": "Anoplistes minutus Hammarström, 1892 stat. rev., previously regarded as a subspecies of A. halodendri (Pallas, 1773), is reinstated as a valid species based on its clear morphological difference from the latter. This taxonomic decision automatically implies that all specimens of A. halodendri from Mongolia, incorrectly assigned to A. halodendri minutus sensu Danilevsky and Smetana (2010), should be referred to the nominotypical subspecies. Subsequently, A. tuvensissyn. nov. is considered as a junior synonym of A. minutusstat. rev.: Anoplistes minutus Hammarström, 1892 = Anoplistes tuvensis (Tsherepanov, 1978). Finally, Anoplistes pseudotuvensissp. nov. from northwestern Mongolia is described based on a series of six specimens collected in 1963 and a detailed morphological analysis using scanning electron microscopy. This overlooked taxon was previously confused and misidentified with A. tuvensissyn. nov., owing to their similar distribution areas, or misidentified with A. mongolicus Ganglbauer, 1889. The new species can be easily distinguished morphologically from A. minutusstat. rev. (= A. tuvensissyn. nov.) as they belong to different species groups. The two taxa also differ ecologically, being associated with different host plants and occurring in distinct habitats, as presented in this paper. Habitus of all the above-mentioned taxa is illustrated with high-resolution stacked images. The description of this new species and the reassessment of the two remaining taxa contribute to resolving the complex taxonomy of the genus and provides a basis for future revision integrating morphological, ecological, and molecular data.",
+      "journal": "Zootaxa",
+      "year": 2026,
+      "pub_date": "2026-02-13",
+      "authors": "Karpiński Lech",
+      "first_author": "Karpiński Lech",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41754270",
+      "doi": "10.3390/plants15040563",
+      "title": "",
+      "abstract": "Mentha deleoi is described from Isola Grande, an islet in the Stagnone of Marsala (Trapani, NW Sicily), included within the homonymous Regional Oriented Nature Reserve. It is a perennial herb with an ephemeral annual cycle; in several morphological characters, it shows affinity with M. pulegium, a Eurimediterranean hemicryptophyte widely distributed in Sicily from coastal areas to high mountain habitats. Diagnostic and differential characters are provided, together with analyses of the biology, ecology, and chemistry of this new Sicilian endemic species. Owing to its extremely restricted distribution, small population size, and the potential impacts affecting the islet and its fragile habitat, resulting from centuries saliculture, a conservation plan is proposed, aimed at both in situ and ex situ protection.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2026,
+      "pub_date": "2026-02-11",
+      "authors": "Raimondo Francesco Maria",
+      "first_author": "Raimondo Francesco Maria",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41754296",
+      "doi": "10.3390/plants15040589",
+      "title": "A New Species of ",
+      "abstract": "Two species of Stigmatodactylus have recently been observed in the Arfak Mountains of West Papua Province, Indonesian New Guinea. One of these is clearly undescribed and is here described as Stigmatodactylus antennatus Schuit., Saputra & Wanma, a species uniquely characterised by the presence of a pair of antennae on the lip. The other is believed to be S. gibbsiae (Kores) Kores. This species was only known from the type material collected in the Arfak Mountains more than a century ago, in 1913. There are, however, significant discrepancies between the protologue and the material recently found. We interpret these discrepancies as misinterpretations of the poor type material of S. gibbsiae, and provide images based on fresh material. An identification key to the four species of Stigmatodactylus in New Guinea is included.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2026,
+      "pub_date": "2026-02-13",
+      "authors": "Schuiteman André; Saputra Reza; Wanma Jimmy F; Heatubun Charlie D",
+      "first_author": "Schuiteman André",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41661420",
+      "doi": "10.1007/s44154-025-00283-0",
+      "title": "Quinoa as a naturally stress-resistant crop: current status and future promises.",
+      "abstract": "Quinoa (Chenopodium quinoa Willd.), a semi-domesticated halophyte originating in the Andean region, has emerged as a promising crop for exploiting marginal lands, valued for its exceptional nutritional profile and remarkable resilience to high salinity and drought. This review analyzes the current status and future potential of quinoa as a model halophytic crop. We begin by examining the physiological mechanisms that enable quinoa to thrive in marginal environments, which have been the subject of extensive study. Thanks to the advancement in high-throughput sequencing technology, genomic resources - including the recent development of high-quality reference genomes and a Chenopodium pangenome - are rapidly expanding. Sequence-based genetic mapping techniques hold the promise to dissect the molecular basis of complex traits in combination with the utility of functional genomics tools such as virus-induced gene silencing (VIGS) and stable genetic transformation. Ultimately, the application of modern breeding technologies, such as phenomics, genomic selection (GS), and CRISPR/Cas, will expedite the development of locally adapted, climate-resilient quinoa cultivars worldwide.",
+      "journal": "Stress biology",
+      "year": 2026,
+      "pub_date": "2026-02-09",
+      "authors": "Zhang Heng; Feng Guojun; Feng Yaozu",
+      "first_author": "Zhang Heng",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

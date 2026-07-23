@@ -1,0 +1,33 @@
+{
+  "month": "1986-08",
+  "generated": "2026-07-13 02:59:42",
+  "total": 1,
+  "by_category": {
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "3735485",
+      "doi": "10.1128/JVI.59.2.195-202.1986",
+      "title": "Regulation of expression of the wound tumor virus genome in persistently infected vector cells is related to change in translational activity of viral transcripts.",
+      "abstract": "The interaction between a plant virus and its insect vector was studied at the molecular level by examining wound tumor virus (WTV) gene expression in cultured cells derived from its leafhopper vector. Infection of vector cells by WTV is noncytopathic and results in an acute phase (through day 5), followed by persistence beginning with the first cell passage. Viral-specific polypeptide synthesis and viral genome RNA accumulation increased to a maximum level during the first 5 days following inoculation and then decreased as infected cells were passaged (to 5 to 20% of the level observed during the acute phase by passages 10 to 15). In contrast, viral-specific mRNAs were present at approximately the same level in the acute phase and in the early stage (passage 10) of the persistent phase of infection. Although viral transcripts isolated at different times after inoculation exhibited identical electrophoretic migration patterns, they had different functional activities in cell-free translation systems. Transcripts isolated from persistently infected cells were inefficiently translated in vitro, reflecting the situation in infected cells. These results indicate that the decline in the level of viral polypeptide synthesis associated with the persistent phase of WTV infection is related to a change in the translational activity of viral transcripts.",
+      "journal": "Journal of virology",
+      "year": 1986,
+      "pub_date": "1986-08-01",
+      "authors": "Peterson A J; Nuss D L",
+      "first_author": "Peterson A J",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Wound tumor virus (WTV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

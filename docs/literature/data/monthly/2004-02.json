@@ -1,0 +1,280 @@
+{
+  "month": "2004-02",
+  "generated": "2026-07-13 02:59:42",
+  "total": 25,
+  "by_category": {
+    "Host_Virus_Interactions": 8,
+    "Antiviral_Resistance_Genes": 7,
+    "New_Virus": 5,
+    "Control_Management": 3,
+    "Transmission_Epidemiology": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30812444",
+      "doi": "10.1094/PDIS.2004.88.2.224A",
+      "title": "First Report of Sweet Pepper (Capsicum annuum) as a Natural Host Plant for Tomato chlorosis virus.",
+      "abstract": "Since 1997, epidemics of a tomato yellowing disease have occurred in the Málaga and Almería provinces of southern Spain. These epidemics have been associated with infections of Tomato chlorosis virus (ToCV) (genus Crinivirus, family Closteroviridae) (2). During the past few years, an increasing incidence of the disease was observed and it spread to new areas including eastern Spain and the Balearic and Canary Islands (G. Lozano, E. Moriones, and J. Navas-Castillo, unpublished results and [1]). In 1999, plants of sweet pepper (Capsicum annuum L.) exhibiting symptoms of interveinal yellowing, mild upward leaf curling, and stunting were observed in greenhouses of Almería that were heavily infested with the whitefly, Bemisia tabaci. Symptomatic plants were tested for the presence of the begomovirus, Tomato yellow leaf curl virus, a virus previously reported in sweet pepper (3) by molecular hybridization or polymerase chain reaction (PCR). Some of these plants tested positive. Total RNA extracts from the symptomatic plants were also analyzed for the presence of tomato criniviruses using reverse transcription (RT)-PCR with primers MA59 and MA60 for the HSP70h gene (2). A PCR DNA product of the expected size (587 bp) was obtained from several samples. The cloning and sequencing of the PCR product obtained from one of these samples confirmed the presence of ToCV, with a sequence 100% identical to the equivalent region of the first ToCV isolated from tomato in Málaga (2). Total RNA extracts from plants that tested positive using RT-PCR were also positive with molecular hybridization using a probe for the HSP70h gene of ToCV. To our knowledge, this is the first report of sweet pepper as a natural host of a tomato crinivirus, which may have important epidemiological consequences in regions where both crops are grown. Association between ToCV infection and specific symptoms observed in sweet pepper plants is under study. References: (1) M. I. Font et al. Bol. San. Veg. Plagas 29:109, 2003. (2) J. Navas-Castillo et al. Plant Dis. 84:835, 2000. (3) J. Reina et al. Plant Dis. 83:1176, 1999.",
+      "journal": "Plant disease",
+      "year": 2004,
+      "pub_date": "2004-02-01",
+      "authors": "Lozano G; Moriones E; Navas-Castillo J",
+      "first_author": "Lozano G",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato chlorosis virus (ToCV)",
+      "taxonomy": "Closteroviridae, Crinivirus",
+      "host_plant": "Capsicum annuum (sweet pepper)",
+      "location": "Almería, Spain",
+      "results": "从甜椒样品中获得587 bp PCR产物，序列与番茄来源ToCV 100%相同；RT-PCR和杂交阳性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30812443",
+      "doi": "10.1094/PDIS.2004.88.2.223C",
+      "title": "First Report of Beet pseudo yellows virus in Blackberry in the United States.",
+      "abstract": "Blackberry (Rubus sp.) plants in Arkansas, North Carolina, and South Carolina during the last 3 years have shown symptoms typical of virus infection, including vein yellowing, line pattern, and mottle, and in certain cases, decline and death. All of the symptomatic plants used in our studies were infected with Blackberry yellow vein associated virus (BYVaV) (1). We cloned cDNA derived from dsRNA extracted from a symptomatic plant from South Carolina and identified two cDNA clones (approximate size of 700 and 900 bp, in addition to those that corresponded to a sequence of BYVaV) with sequences identical to the sequence (GenBank Accession No. AY 268107) of Beet pseudo yellows virus (BPYV) heat shock protein 70 homolog gene. Total RNA extracts from the symptomatic plant were tested using reverse transcription-polymerase chain reaction (RT-PCR) with oligonucleotide primers BP CPm F (5' TTCATATTAAGGATGCGCAGA 3') and BP CPm R (5' TGAAAGATGTCCRCTAATGATA 3') that amplified a fragment of the minor coat protein (CPm) gene of BPYV. A PCR amplicon of the expected size (334 bp) was generated, and sequencing confirmed the results of the random cloning. We also detected the virus in a second blackberry plant from South Carolina with RT-PCR. To our knowledge, this is the first report of blackberry as a host of BPYV and the third new host of BPYV identified in the last few months (2,3). The naturalization of Trialeuroides vaporariorum, the greenhouse whitefly in the southern United States, and the broad host range of virus and vector make BPYV a potential threat for many crops in North America. References: (1) I. E. Tzanetakis et al. (Abstr.) Phytopathology 93:S85, 2003. (2) I. E. Tzanetakis et al. Plant Dis. 87:1398, 2003. (3) W. M. Wintermantel. Plant Dis. 88:82, 2004.",
+      "journal": "Plant disease",
+      "year": 2004,
+      "pub_date": "2004-02-01",
+      "authors": "Tzanetakis I E; Martin R R",
+      "first_author": "Tzanetakis I E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Beet pseudo yellows virus (BPYV)",
+      "taxonomy": "Closteroviridae, Crinivirus",
+      "host_plant": "Blackberry (Rubus sp.)",
+      "location": "Arkansas, North Carolina, South Carolina, United States",
+      "results": "从南卡罗来纳州症状黑莓中检测到BPYV，通过克隆和RT-PCR确认，并在另一植株中检测到。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30812437",
+      "doi": "10.1094/PDIS.2004.88.2.221C",
+      "title": "First Report of Occurrence of Papaya ring spot virus Infecting Papaya in Bangladesh.",
+      "abstract": "Papaya (Carica papaya L.) is an important fruit crop in Bangladesh. During surveys conducted in Dhaka and Mymensingh regions from April to June 2003, >50% of papaya plants were observed to have leaf mottling, mosaic and mild distortion, and water-soaked streaks on petioles and stem, which are typical symptoms of Papaya ring spot virus (PRSV) infection. Electron-microscopic examination of negatively stained leaf-dip preparations from 10 symptomatic samples revealed the association of flexuous virus particles that were decorated with polyclonal antibodies raised to an isolate from India (PRSV-D). The identity of PRSV associated with the papaya disease in Bangladesh was further confirmed by reverse transcription polymerase chain reaction and sequence analysis (2). By using PRSV specific primers (2), the 3'-terminal region comprising a part of the nuclear inclusion b gene, the coat protein (CP) gene, and the untranslated region were amplified and sequenced (GenBank Accession No. AY423557). The CP gene consisted of 286 amino acids and the conserved regions common to the genus Potyvirus, such as WCIEN and QMKAA, were present. Like all known PRSV sequences (1), a stretch of glutamic acid and lysine repeats (EK region) after the aphid transmission motif (DAG) also was present. Comparative CP amino acid sequence analyses revealed that the virus infecting papaya in Bangladesh, designated as PRSV-Bd, shared 89 to 92% identity with PRSV isolates from India and 88 to 93% identity with isolates from other parts of the world. To our knowledge, this is the first report of occurrence of PRSV infecting papaya in Bangladesh. References: (1) M. F. Bateson et al. J. Gen. Virol. 83:2575, 2002. (2) R. K. Jain et al. Ann Appl. Biol. 132:413, 1998.",
+      "journal": "Plant disease",
+      "year": 2004,
+      "pub_date": "2004-02-01",
+      "authors": "Jain R K; Nasiruddin K M; Sharma Jyoti; Pant R P; Varma A",
+      "first_author": "Jain R K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Papaya ring spot virus (PRSV-Bd)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "Carica papaya (papaya)",
+      "location": "孟加拉国，达卡和迈门辛地区",
+      "results": "检测到弯曲病毒颗粒，与印度PRSV抗血清反应；CP基因286 aa，含WCIEN和QMKAA保守基序及DAG蚜虫传播基序；与其他PRSV分离株CP氨基酸同一性88-93%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15102373",
+      "doi": "10.1016/j.tplants.2003.12.010",
+      "title": "Effects and side-effects of viral RNA silencing suppressors on short RNAs.",
+      "abstract": "In eukaryotes, short RNAs play a crucial regulatory role in many processes including development, maintenance of genome stability and antiviral responses. These different but overlapping RNA-guided pathways are collectively termed 'RNA silencing'. To counteract an antiviral RNA silencing response, plant viruses express silencing suppressor proteins. Recent results have shown that silencing suppressors operate by modifying the accumulation and/or activity of short RNAs involved in the antiviral response. Because RNA silencing pathways intersect, silencing suppressors can also inhibit other short-RNA-regulated pathways. Thus, suppressors contribute to viral symptoms. These findings fuel further research to test whether certain symptoms caused by animal viruses are also manifestations of altered RNA regulatory pathways.",
+      "journal": "Trends in plant science",
+      "year": 2004,
+      "pub_date": "2004-02-01",
+      "authors": "Silhavy Dániel; Burgyán József",
+      "first_author": "Silhavy Dániel",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "未提及（多种植物病毒，涉及RNA沉默抑制子）",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14586656",
+      "doi": "10.1007/s00425-003-1136-y",
+      "title": "Cloning of soybean genes induced during hypersensitive cell death caused by syringolide elicitor.",
+      "abstract": "Syringolide elicitors produced by bacteria expressing Pseudomonas syringae pv. glycinea avirulence gene D (avrD) induce hypersensitive cell death (HCD) only in soybean (Glycine max [L.] Merr.) plants carrying the Rpg4 disease resistance gene. Employing a differential display method, we isolated 13 gene fragments induced in cultured cells of a soybean cultivar Harosoy (Rpg4) treated with syringolides. Several genes for isolated fragments were induced by syringolides in an rpg4 cultivar Acme as well as in Harosoy; however, the genes for seven fragments designated as SIH (for syringolide-induced/ HCD associated) were induced exclusively or strongly in Harosoy. cDNA clones for SIH genes were obtained from a cDNA library of Harosoy treated with syringolide. Several sequences are homologous to proteins associated with plant defense responses. The SIH genes did not respond to a non-specific beta-glucan elicitor, which induces phytoalexin accumulation but not HCD, suggesting that the induction of the SIH genes is specific for the syringolide-Harosoy interaction. HCD and the induction of SIH genes by syringolides were independent of H(2)O(2). On the other hand, Ca(2+) was required for HCD and the induction of some SIH genes. These results suggest that the induction of SIH genes by syringolides could be activated through the syringolide-specific signaling pathway and the SIH gene products may play an important role(s) in the processes of HCD induced by syringolides.",
+      "journal": "Planta",
+      "year": 2004,
+      "pub_date": "2004-02-01",
+      "authors": "Hagihara Takuya; Hashi Masaru; Takeuchi Yoji; Yamaoka Naoto",
+      "first_author": "Hagihara Takuya",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14742871",
+      "doi": "10.1105/tpc.016725",
+      "title": "Convergent evolution of disease resistance gene specificity in two flowering plant families.",
+      "abstract": "Plant disease resistance (R) genes that mediate recognition of the same pathogen determinant sometimes can be found in distantly related plant families. This observation implies that some R gene alleles may have been conserved throughout the diversification of land plants. To address this question, we have compared R genes from Glycine max (soybean), Rpg1-b, and Arabidopsis thaliana, RPM1, that mediate recognition of the same type III effector protein from Pseudomonas syringae, AvrB. RPM1 has been cloned previously, and here, we describe the isolation of Rpg1-b. Although RPM1 and Rpg1-b both belong to the coiled-coil nucleotide binding site (NBS) Leu-rich repeat (LRR) class of R genes, they share only limited sequence similarity outside the conserved domains characteristic of this class. Phylogenetic analyses of A. thaliana and legume NBS-LRR sequences demonstrate that Rpg1-b and RPM1 are not orthologous. We conclude that convergent evolution, rather than the conservation of an ancient specificity, is responsible for the generation of these AvrB-specific genes.",
+      "journal": "The Plant cell",
+      "year": 2004,
+      "pub_date": "2004-02-01",
+      "authors": "Ashfield Tom; Ong Laura E; Nobuta Kan; Schneider Christopher M; Innes Roger W",
+      "first_author": "Ashfield Tom",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14729910",
+      "doi": "10.1105/tpc.016907",
+      "title": "The Arabidopsis thaliana dihydroxyacetone phosphate reductase gene SUPPRESSSOR OF FATTY ACID DESATURASE DEFICIENCY1 is required for glycerolipid metabolism and for the activation of systemic acquired resistance.",
+      "abstract": "Systemic acquired resistance (SAR) is a broad-spectrum resistance mechanism in plants that is activated in naive organs after exposure of another organ to a necrotizing pathogen. The organs manifesting SAR exhibit an increase in levels of salicylic acid (SA) and expression of the PATHOGENESIS-RELATED1 (PR1) gene. SA signaling is required for the manifestation of SAR. We demonstrate here that the Arabidopsis thaliana suppressor of fatty acid desaturase deficiency1 (sfd1) mutation compromises the SAR-conferred enhanced resistance to Pseudomonas syringae pv maculicola. In addition, the sfd1 mutation diminished the SAR-associated accumulation of elevated levels of SA and PR1 gene transcript in the distal leaves of plants previously exposed to an avirulent pathogen. However, the basal resistance to virulent and avirulent strains of P. syringae and the accumulation of elevated levels of SA and PR1 gene transcript in the pathogen-inoculated leaves of sfd1 were not compromised. Furthermore, the application of the SA functional analog benzothiadiazole enhanced disease resistance in the sfd1 mutant plants. SFD1 encodes a putative dihydroxyacetone phosphate (DHAP) reductase, which complemented the glycerol-3-phosphate auxotrophy of the DHAP reductase-deficient Escherichia coli gpsA mutant. Plastid glycerolipid composition was altered in the sfd1 mutant plant, suggesting that SFD1 is involved in lipid metabolism and that an SFD1 product lipid(s) is important for the activation of SAR.",
+      "journal": "The Plant cell",
+      "year": 2004,
+      "pub_date": "2004-02-01",
+      "authors": "Nandi Ashis; Welti Ruth; Shah Jyoti",
+      "first_author": "Nandi Ashis",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14755059",
+      "doi": "10.1073/pnas.0308399100",
+      "title": "Cell-cell signaling controls Xylella fastidiosa interactions with both insects and plants.",
+      "abstract": "Xylella fastidiosa, which causes Pierce's disease of grapevine and other important plant diseases, is a xylem-limited bacterium that depends on insect vectors for transmission. Although many studies have addressed disease symptom development and transmission of the pathogen by vectors, little is known about the bacterial mechanisms driving these processes. Recently available X. fastidiosa genomic sequences and molecular tools have provided new routes for investigation. Here, we show that a diffusible signal molecule is required for biofilm formation in the vector and for vector transmission to plants. We constructed strains of X. fastidiosa mutated in the rpfF gene and determined that they are unable to produce the signal activity. In addition, rpfF mutants are more virulent than the wild type when mechanically inoculated into plants. This signal therefore directs interaction of X. fastidiosa with both its insect vector and plant host. Interestingly, rpfF mutants can still form in planta biofilms, which differ architecturally from biofilms in insects, suggesting that biofilm architecture, rather than a passive response to the environment, is actively determined by X. fastidiosa gene expression. This article reports a cell-cell signaling requirement for vector transmission. Identification of the genes regulated by rpfF should elucidate bacterial factors involved in transmission and biofilm formation in the insect.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2004,
+      "pub_date": "2004-02-10",
+      "authors": "Newman Karyn L; Almeida Rodrigo P P; Purcell Alexander H; Lindow Steven E",
+      "first_author": "Newman Karyn L",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15057346",
+      "doi": "10.1590/s0074-02762004000100008",
+      "title": "Simulium (Chirostilbia) bifenestratum (Diptera, Simuliidae), a new black-fly species from the Atlantic forest, State of São Paulo, Brazil.",
+      "abstract": "The larva, pupa, male, and female of Simulium bifenestratum n. sp. are described and illustrated. The pupae of the new species have 10 gill filaments, thick at their base and arranged in a three-dimensional way, surrounding the head and thorax. Its pupal cocoon is peculiar, not found in any of the known Brazilian black-fly species; it is very thick and hard with two openings in the anterior region. S. bifenestratum n. sp. was collected in one stream in the Bocaina mountain chain, Atlantic forest, in São José do Barreiro county, state of São Paulo, in a high (1500 m) natural grassland. Larvae and pupae were collected on the edges of small waterfalls and in places with-high speed laminar water flow, attached to the bedrock.",
+      "journal": "Memorias do Instituto Oswaldo Cruz",
+      "year": 2004,
+      "pub_date": "2004-02-01",
+      "authors": "Hamada Neusa; Pepinelli Mateus",
+      "first_author": "Hamada Neusa",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15053318",
+      "doi": "10.1078/0723-2020-00261",
+      "title": "Klebsiella variicola, a novel species with clinical and plant-associated isolates.",
+      "abstract": "A new Klebsiella species, K. variicola, is proposed on the basis of total DNA-DNA hybridization, on the monophyly observed in the phylogenetic analysis derived from the sequences of rpoB, gyrA, mdh, infB, phoE and nifH genes and on distinct phenotypic traits. The bacteria from this new species seem to be genetically isolated from K. pneumoniae strains, do not ferment adonitol and were obtained from plants (such as banana, rice, sugar cane and maize) and hospitals. The type strain is F2R9T (= ATCC BAA-830T = CFNE 2004T).",
+      "journal": "Systematic and applied microbiology",
+      "year": 2004,
+      "pub_date": "2004-02-01",
+      "authors": "Rosenblueth Mónica; Martínez Lucía; Silva Jesús; Martínez-Romero Esperanza",
+      "first_author": "Rosenblueth Mónica",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15040887",
+      "doi": "10.1038/sj.cr.7290199",
+      "title": "Alpha-picolinic acid, a fungal toxin and mammal apoptosis-inducing agent, elicits hypersensitive-like response and enhances disease resistance in rice.",
+      "abstract": "Alpha-picolinic acid (PA), a metabolite of tryptophan and an inducer of apoptosis in the animal cell, has been reported to be a toxin produced by some of plant fungal pathogens and used in screening for disease resistant mutants. Here, we report that PA is an efficient apoptosis agent triggering cell death of hypersensitive-like response in planta. Confirmed by Fluorescence Activated Cell Sorter (FACS), rice suspension cells and leaves exhibited programmed cell death induced by PA. The PA-induced cell death was associated with the accumulation of reactive oxygen species that could be blocked by diphenylene iodonium chloride, indicating that the generation of reactive oxygen species was NADPH-oxidase dependent. We also demonstrated the induction of rice defense-related genes and subsequent resistant enhancement by PA against the rice blast fungus Magnaporthe grisea. Hence, it was concluded that the PA-stimulated defense response likely involves the onset of the hypersensitive response in rice, which also provides a simple eliciting tool for studying apoptosis in the plant cell.",
+      "journal": "Cell research",
+      "year": 2004,
+      "pub_date": "2004-02-01",
+      "authors": "Zhang Hai Kuo; Zhang Xin; Mao Bi Zeng; Li Qun; He Zu Hua",
+      "first_author": "Zhang Hai Kuo",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15020460",
+      "doi": "10.1093/genetics/166.2.693",
+      "title": "Effector genes of Xanthomonas axonopodis pv. vesicatoria promote transmission and enhance other fitness traits in the field.",
+      "abstract": "Establishing durable disease resistance in agricultural crops, where much of the plant defense is provided through effector-R gene interactions, is complicated by the ability of pathogens to overcome R gene resistance by losing the corresponding effector gene. Many proposed methods to maintain disease resistance in the field depend on the idea that effector gene loss results in a fitness cost to the pathogen. In this article we test for fitness costs of effector gene function loss. We created directed knockouts of up to four effector genes from the bacterial plant pathogen Xanthomonas axonopodis pv. vesicatoria (Xav) and examined the effect of the loss of a functional gene product on several important fitness parameters in the field. These traits included transmission, lesion development, and epiphytic survival. We found that the products of all four effector genes had significant and often additive effects on fitness traits. Additional greenhouse tests revealed costs of effector gene loss on in planta growth and further showed that the effects on lesion development were separable from the effects on growth. Observable fitness effects of the three plasmid-borne effector genes were dependent upon the loss of functional avrBs2, indicating that complex functional interactions exist among effector genes with Xav.",
+      "journal": "Genetics",
+      "year": 2004,
+      "pub_date": "2004-02-01",
+      "authors": "Wichmann Gale; Bergelson Joy",
+      "first_author": "Wichmann Gale",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

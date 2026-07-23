@@ -1,0 +1,56 @@
+{
+  "month": "1988-09",
+  "generated": "2026-07-13 02:59:42",
+  "total": 2,
+  "by_category": {
+    "New_Virus": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "3167064",
+      "doi": "10.1016/0167-4781(88)90145-5",
+      "title": "A novel aspect of the information content of viroids.",
+      "abstract": "Viroids were found to exhibit a structural periodicity characterized by repeat units of a length of 11 or 12 (potato spindle tuber viroid group and coconut cadang-cadang viroid), 60 (apple scar skin viroid) and 80 (avocado sunblotch viroid) nucleotide residues, respectively. It is suggested that structural periodicity of viroids is an indication of their protein-binding ability.",
+      "journal": "Biochimica et biophysica acta",
+      "year": 1988,
+      "pub_date": "1988-09-07",
+      "authors": "Juhász A; Hegyi H; Solymosy F",
+      "first_author": "Juhász A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "马铃薯纺锤块茎类病毒(PSTVd)、椰子死亡类病毒(CCCVd)、苹果锈果类病毒(ASSVd)、鳄梨日斑类病毒(ASBVd)",
+      "taxonomy": "未提及",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "PSTVd和CCCVd组有11或12个核苷酸重复单元，ASSVd有60个，ASBVd有80个。推测结构周期性反映蛋白结合能力。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2904743",
+      "doi": "",
+      "title": "Antigenic classification and taxonomy of flaviviruses (family Flaviviridae) emphasizing a universal system for the taxonomy of viruses causing tick-borne encephalitis.",
+      "abstract": "For many years the expression \"tick-borne encephalitis (TBE) virus\" has been used to denote viruses causing the clinical entity TBE. No virus with the name \"TBE virus\" has been registered in the International Catalogue of Arboviruses, the generally accepted reference for naming arthropod-borne viruses, and no formal agreement has been reached within the scientific community to use the expression \"TBE virus\"; this term is inaccurate for indicating the etiologic agent of the disease TBE and confuses students and others regarding virus ecology, transmission, and disease severity. This paper suggests alternative names for viruses of the antigenic complex of flaviviruses (family Flaviviridae) to which viruses causing TBE belong. A classification scheme and system of taxonomy for flaviviruses is also proposed. It is suggested that universal acceptance of the term Central European encephalitis virus would improve the dialogue between laboratory virologists and clinicians and improve the understanding of the epidemiology of the tick-borne flaviviruses.",
+      "journal": "Acta virologica",
+      "year": 1988,
+      "pub_date": "1988-09-01",
+      "authors": "Calisher C H",
+      "first_author": "Calisher C H",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "month": "2002-03",
+  "generated": "2026-07-13 02:59:42",
+  "total": 18,
+  "by_category": {
+    "Host_Virus_Interactions": 7,
+    "New_Virus": 5,
+    "Biotechnology_Applications": 3,
+    "Transmission_Epidemiology": 2,
+    "Antiviral_Resistance_Genes": 2,
+    "Control_Management": 2,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30818617",
+      "doi": "10.1094/PDIS.2002.86.3.326C",
+      "title": "First Report of Peanut stunt virus in Perennial Peanut in North Florida and Southern Georgia.",
+      "abstract": "In spring 2001, symptoms similar to aphid-vectored peanut stunt disease caused by Peanut stunt virus (PSV) were observed on perennial peanut (Arachis glabrata) cv. Floragraze in Jackson and Gulf counties, FL and Lowndes County, GA. Symptoms observed in commercial hay fields and at the North Florida Research and Education Center in Marianna and Quincy included malformed leaves, plant chlorosis, leaf mottling, and stunted plants, which resulted in reduced foliage yield. Leaf symptoms were visible throughout the growing season. Stunting was more common in spring and early summer. No symptoms were seen on rhizomes. Diagnosis of PSV (genus Cucumovirus) from symptomatic leaves and rhizome materials of 12 plants was confirmed by a direct antigen-coated enzyme-linked immunosorbent assay (DAC-ELISA). ELISA tests were repeated three times. Antibodies specific to the Clemson isolate, serotype E, were obtained from Clemson University, Clemson, SC. DAC-ELISA (1) values of 0.1 A405 above the healthy control for perennial peanut were considered positive for foliage and rhizome material tested. ELISA values ranged from 0.4 to 2.1. The mean ELISA value of the positive controls was 2.65. Symptomatic plants were also tested with ELISA using available antibodies from Agdia Inc., Elkart, IN, for Tomato spotted wilt virus, from ATCC for Peanut stripe virus, and from Clemson University (Cowpea isolate) for Cucumber mosaic virus, but all results were negative. To our knowledge, this is the first report of PSV on perennial peanut in Florida and southern Georgia. At this time, it is not known what role perennial peanut may play as a reservoir of the virus in the vicinity of peanut fields. Little is known about the potential for forage production loss and stand longevity. Next season, molecular detection techniques and epidemiological studies on peanut and perennial peanut will be conducted to ascertain the incidence and possible impact of PSV in Georgia and Florida. Reference: (1) A. G. Gillaspie, Jr. et al. Plant Dis. 79:388, 1995.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-03-01",
+      "authors": "Blount A R; Pittman R N; Smith B A; Morgan R N; Dankers W; ... (+2)",
+      "first_author": "Blount A R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Peanut stunt virus (PSV)",
+      "taxonomy": "Bromoviridae, Cucumovirus",
+      "host_plant": "Arachis glabrata (perennial peanut) cv. Floragraze",
+      "location": "North Florida (Jackson and Gulf counties) and Southern Georgia (Lowndes County)",
+      "results": "12株症状植物的叶片和根茎材料DAC-ELISA阳性，ELISA值0.4-2.1，对照2.65；对其他病毒测试阴性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19265910",
+      "doi": "",
+      "title": "Eliminating Tobacco Rattle Virus from Viruliferous Paratrichodorus allius and Establishing a New Virus-Vector Combination.",
+      "abstract": "A reliable method to eliminate tobacco rattle virus (TRV) from viruliferous Paratrichodorus allius populations was developed. This virus is vectored by P. allius in the Pacific Northwest and causes corky ringspot disease (CRS) of potato. The viruliferous nematodes that were reared on 'Vernema' alfalfa or '770' scotch spearmint for at least 3 months did not transmit TRV to 'Samsun NN' tobacco, a suitable indicator plant, and did not cause CRS symptoms on 'Russet Norkotah' tubers. A new isolate of TRV was introduced into a nonviruliferous population of P. allius. First, tobacco plants were inoculated with a field population of P. allius that transmitted an isolate of TRV that caused severe symptoms on potato. The tobacco roots were then washed free from soil and dipped in 0.525% sodium hypochlorite to remove the initial nematode inoculum. After the disinfected tobacco plants recovered and began to grow, the virus-free population of P. allius was introduced around the root system to acquire the new virus isolate from tobacco roots. The newly established virus-vector combination caused CRS symptoms on 'Russet Norkotah' that were characteristic of the more virulent virus isolate, indicating that the virus-free P. allius population had reacquired virus.",
+      "journal": "Journal of nematology",
+      "year": 2002,
+      "pub_date": "2002-03-01",
+      "authors": "Mojtahedi Hassan; Santo G S; Thomas P E; Crosslin J M; Boydston R A",
+      "first_author": "Mojtahedi Hassan",
+      "categories": [
+        "New_Virus",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "烟草脆裂病毒 (Tobacco rattle virus, TRV)",
+      "taxonomy": "Virgaviridae, Tobravirus",
+      "host_plant": "马铃薯、烟草、苜蓿、苏格兰留兰香",
+      "location": "美国太平洋西北地区",
+      "results": "带毒线虫在苜蓿或留兰香上饲养3个月后不再传毒；无病毒线虫从接种烟草根部获新分离物后能传毒并引起马铃薯软木环斑症状。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30818627",
+      "doi": "10.1094/PDIS.2002.86.3.329D",
+      "title": "First Report of Mixed Infection of Hop stunt viroid and Peach latent mosaic viroid on Peach.",
+      "abstract": "Hop stunt viroid (HSVd), belonging to the family Pospiviroidae, was first reported in hop, but infects several plant species, including herbaceous and woody hosts (e.g., grapevine, pear, peach, plum [2], apricot, almond, and pomegranate). In grapevine and apricot, the viroid appears to be latent. However, in other species, the viroid is associated with specific disorders: hop stunt, dapple fruit disease of plum and peach (2), and citrus cachexia. During spring 2000, stunted trees exhibiting delayed budbreak were observed in peach, cv. Redhaven, orchards in Sicily. In the summer of 2000, peach leaves were collected from symptomatic trees, triturated, and used to purify total nucleic acids by phenol extraction followed by CF-11 cellulose-chromatography. Viroid RNAs were detected by sequential polyacrylamide gel electrophoresis (sPAGE) and silver staining. Citrus exocortis viroid (371 nt) and Citrus viroid IIIb (294 nt) were used as standards. Nonradioactive hybridizations with digoxigenin (DIG)-labeled, Peach latent mosaic viroid (PLMVd) and HSVd RNA probes were used in viroid detection and identification. Predicted sizes of the viroid RNAs calculated in sPAGE and DIG probe hybridization demonstrated that 'Redhaven' peach trees were infected with PLMVd and HSVd. These results provide the first evidence of the contemporary presence of HSVd and PLMVd in peach trees. To our knowledge, this is the first report of HSVd in peach trees in Italy. Molecular characterization of this HSVd isolate is in progress to determine the nucleotide sequence of some of the variants in the population and to decide to which of the five proposed HSVd groups (1) this isolate should be assigned. Reference: (1) S. A. Kofalvi et al. J. Gen. Virol. 78:3177, 1997. (2) T. Sano et al. J. Gen. Virol. 70:1311, 1989.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-03-01",
+      "authors": "Tessitori M; Reina A; Rosa R La",
+      "first_author": "Tessitori M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Hop stunt viroid (HSVd) 和 Peach latent mosaic viroid (PLMVd)",
+      "taxonomy": "HSVd: Pospiviroidae; PLMVd: 未提及",
+      "host_plant": "桃 (Prunus persica, cv. Redhaven)",
+      "location": "意大利西西里",
+      "results": "发现Redhaven桃树同时感染HSVd和PLMVd，首次报道HSVd在意大利桃树上的存在，也是首次混合感染证据。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30818628",
+      "doi": "10.1094/PDIS.2002.86.3.330A",
+      "title": "First Report of Bean pod mottle virus in Soybean in Canada.",
+      "abstract": "In 2001, soybean fields were surveyed to determine the incidence of viruses because soybean aphids (Aphis glycines Matsamura), known to transmit Soybean mosaic virus (SMV) (2), were found in Ontario. In addition, bean leaf beetle (Cerotoma trifurcata Forster) was found during 2000 to be contaminated with Bean pod mottle virus (BPMV), although soybean plants, on which the beetles were feeding, tested negative (3). In the current survey, young soybean leaves were selected at random in July and August from 20 plants per site at growth stages R4 to R5 (1) from 415 sites representing the entire soybean-producing area in Ontario. Samples were maintained under cool conditions until received at the laboratory, where they were promptly processed. A combined sub-sample was obtained from the 20 plants per site. The 415 sub-samples were tested for SMV, BPMV, Tobacco ringspot virus (TRSV), and Tobacco streak virus (TSV) using polyclonal antibody kits for double-antibody sandwich enzyme-linked immunosorbent assay (DAS-ELISA) (Agdia Inc., Elkart, IN). The ELISA plates were read with a plate reader (MRX, Dynex Technologies Inc., Chantilly, VA), and results were analyzed using ELISA software (Leading Edge Research, Merrickville, Ontario) and compared positive and negative controls (Agdia). TRSV was detected in one sample from Essex County and another sample from Middlesex County. SMV, BPMV, and TSV were not found in commercial soybean fields. However, SMV and BPMV were found in samples originating from two soybean breeding nurseries, one in Essex County and one in Kent County. Seedlings of soybean cv. Williams 82 were inoculated in the greenhouse with sap from leaf samples that tested positive for BPMV. Leaves of plants that developed mosaic symptoms were retested using ELISA and confirmed to be positive for BPMV. SMV and TRSV have been found previously in commercial soybean fields in Ontario (4). To our knowledge, this is the first report of BPMV on soybean plants in Canada. References: (1) W. R. Fehr et al. Merr. Crop. Sci. 11:929, 1971. (2) J. H. Hill et al. Plant Dis. 85:561, 2001. (3) A. U. Tenuta. Crop Pest. 5 (11):8, 2000. (4) J. C. Tu. Can. J. Plant Sci. 66:491, 1986.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-03-01",
+      "authors": "Michelutti R; Tu J C; Hunt D W A; Gagnier D; Anderson T R; ... (+2)",
+      "first_author": "Michelutti R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Bean pod mottle virus (BPMV)",
+      "taxonomy": "未提及",
+      "host_plant": "大豆 (Glycine max)",
+      "location": "加拿大安大略省",
+      "results": "商业田未检出BPMV，两个育种圃中发现阳性，接种后产生花叶症状并确认。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11891326",
+      "doi": "10.1073/pnas.062041499",
+      "title": "Characterization of mutant tobacco mosaic virus coat protein that interferes with virus cell-to-cell movement.",
+      "abstract": "Expression of tobacco mosaic virus (TMV) coat protein (CP) in plants confers resistance to infection by TMV and related tobamoviruses. Certain mutants of the CP (CP(T42W)) provide much greater levels of resistance than wild-type (wt) CP. In the present work, infection induced by RNA transcripts of TMV clones that contain wt CP or mutant CP(T42W) fused to the green fluorescent protein (GFP) (TMV-CP:GFP, TMV-CP(T42W):GFP) and clones harboring TMV movement protein (MP):GFP were followed in nontransgenic and transgenic tobacco BY-2 protoplasts and Nicotiana tabaccum Xanthi-nn plants that express wt CP or CP(T42W). On nontransgenic and wt CP transgenic plants, TMV-CP:GFP produced expanding, highly fluorescent disk-shaped areas. On plants expressing CP(T42W), infection by TMV-CP:GFP or TMV-MP:GFP-CP produced infection sites of smaller size that were characterized by low fluorescence, reflecting reduced levels of virus spread and reduced accumulation of both CP:GFP and MP:GFP. TMV-CP(T42W):GFP failed to produce visible infection sites on nontransgenic plants, yet produced normal infection sites on MP-transgenic plants that produce MP. TMV infection of transgenic BY-CP(T42W) protoplasts resulted in very low levels of MP accumulation, whereas on BY-CP protoplasts (containing wt CP), infection produced higher levels of MP than in nontransgenic BY-2 cells. The results suggest that wt CP has a positive effect on the production of MP, whereas the CP(T42W) has a negative effect on MP accumulation and/or function. This effect results in very high levels of resistance to TMV infection in plants containing CP(T42W). This report shows that the CP of a plant virus regulates production of the MP, and that a mutant CP interferes with MP accumulation and cell-to-cell movement of infection.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2002,
+      "pub_date": "2002-03-19",
+      "authors": "Bendahmane Mohammed; Szecsi Judit; Chen Iju; Berg R Howard; Beachy Roger N",
+      "first_author": "Bendahmane Mohammed",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "烟草花叶病毒 (Tobacco mosaic virus, TMV)",
+      "taxonomy": "烟草花叶病毒属 (Tobamovirus)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11874570",
+      "doi": "10.1046/j.1365-313x.2002.029005569.x",
+      "title": "An EDS1 orthologue is required for N-mediated resistance against tobacco mosaic virus.",
+      "abstract": "In Arabidopsis, EDS1 is essential for disease resistance conferred by a structural subset of resistance (R) proteins containing a nucleotide-binding site, leucine-rich-repeats and amino-terminal similarity to animal Toll and Interleukin-1 (so-called TIR-NBS-LRR proteins). EDS1 is not required by NBS-LRR proteins that possess an amino-terminal coiled-coil motif (CC-NBS-LRR proteins). Using virus-induced gene silencing (VIGS) of a Nicotiana benthaminana EDS1 orthologue, we investigated the role of EDS1 in resistance specified by structurally distinct R genes in transgenic N. benthamiana. Resistance against tobacco mosaic virus mediated by tobacco N, a TIR-NBS-LRR protein, was EDS1-dependent. Two other R proteins, Pto (a protein kinase), and Rx (a CC-NBS-LRR protein) recognizing, respectively, a bacterial and viral pathogen did not require EDS1. These data, together with the finding that expression of N. benthamiana and Arabidopsis EDS1 mRNAs are similarly regulated, lead us to conclude that recruitment of EDS1 by TIR-NBS-LRR proteins is evolutionarily conserved between dicotyledenous plant species in resistance against bacterial, oomycete and viral pathogens. We further demonstrate that VIGS is a useful approach to dissect resistance signaling pathways in a genetically intractable plant species.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2002,
+      "pub_date": "2002-03-01",
+      "authors": "Peart Jack R; Cook Graeme; Feys Bart J; Parker Jane E; Baulcombe David C",
+      "first_author": "Peart Jack R",
+      "categories": [
+        "Biotechnology_Applications",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "烟草花叶病毒 (TMV)",
+      "taxonomy": "",
+      "host_plant": "本氏烟草 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11952121",
+      "doi": "10.1094/MPMI.2002.15.3.193",
+      "title": "Efficient infection of Nicotiana benthamiana by Tomato bushy stunt virus is facilitated by the coat protein and maintained by p19 through suppression of gene silencing.",
+      "abstract": "Tomato bushy stunt virus (TBSV) is one of few RNA plant viruses capable of moving systemically in some hosts in the absence of coat protein (CP). TBSV also encodes another protein (p19) that is not required for systemic movement but functions as a symptom determinant in Nicotiana benthamiana. Here, the role of both CP and p19 in the systemic spread has been reevaluated by utilizing transgenic N. benthamiana plants expressing the movement protein (MP) of Red clover necrotic mosaic virus and chimeric TBSV mutants that express CP of Turnip crinkle virus. Through careful examination of the infection phenotype of a series of mutants with changes in the CP and p19 genes, we demonstrate that both of these genes are required for efficient systemic invasion of TBSV in N. benthamiana. The CP likely enables efficient viral unloading from the vascular system in the form of assembled virions, whereas p19 enhances systemic infection by suppressing the virus-induced gene silencing.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 2002,
+      "pub_date": "2002-03-01",
+      "authors": "Qu Feng; Morris T Jack",
+      "first_author": "Qu Feng",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "Tomato bushy stunt virus (TBSV)",
+      "taxonomy": "",
+      "host_plant": "Nicotiana benthamiana",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11847308",
+      "doi": "10.1126/science.1067747",
+      "title": "Regulatory role of SGT1 in early R gene-mediated plant defenses.",
+      "abstract": "Animal SGT1 is a component of Skp1-Cullin-F-box protein (SCF) ubiquitin ligases that target regulatory proteins for degradation. Mutations in one (SGT1b) of two highly homologous Arabidopsis SGT1 genes disable early plant defenses conferred by multiple resistance (R) genes. Loss of SGT1b function in resistance is not compensated for by SGT1a. R genes differ in their requirements for SGT1b and a second resistance signaling gene, RAR1, that was previously implicated as an SGT1 interactor. Moreover, SGT1b and RAR1 contribute additively to RPP5-mediated pathogen recognition. These data imply both operationally distinct and cooperative functions of SGT1 and RAR1 in plant disease resistance.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 2002,
+      "pub_date": "2002-03-15",
+      "authors": "Austin Mark J; Muskett Paul; Kahn Katherine; Feys Bart J; Jones Jonathan D G; ... (+1)",
+      "first_author": "Austin Mark J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11847307",
+      "doi": "10.1126/science.1067554",
+      "title": "The RAR1 interactor SGT1, an essential component of R gene-triggered disease resistance.",
+      "abstract": "Plant disease resistance (R) genes trigger innate immune responses upon pathogen attack. RAR1 is an early convergence point in a signaling pathway engaged by multiple R genes. Here, we show that RAR1 interacts with plant orthologs of the yeast protein SGT1, an essential regulator in the cell cycle. Silencing the barley gene Sgt1 reveals its role in R gene-triggered, Rar1-dependent disease resistance. SGT1 associates with SKP1 and CUL1, subunits of the SCF (Skp1-Cullin-F-box) ubiquitin ligase complex. Furthermore, the RAR1-SGT1 complex also interacts with two COP9 signalosome components. The interactions among RAR1, SGT1, SCF, and signalosome subunits indicate a link between disease resistance and ubiquitination.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 2002,
+      "pub_date": "2002-03-15",
+      "authors": "Azevedo Cristina; Sadanandom Ari; Kitagawa Katsumi; Freialdenhoven Andreas; Shirasu Ken; ... (+1)",
+      "first_author": "Azevedo Cristina",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11918795",
+      "doi": "10.1046/j.0962-1083.2001.01438.x",
+      "title": "Speciation via introgressive hybridization in East African cichlids?",
+      "abstract": "Speciation caused by introgressive hybridization occurs frequently in plants but its importance remains controversial in animal evolution. Here we report a case of introgressive hybridization between two ancient and genetically distinct species of Lake Tanganyika cichlids that led to the formation of a new species. Neolamprologus marunguensis contains mtDNA haplotypes from both parental species varying on average by 12.4% in the first section of the control region and by 5.2% in a segment of the cytochrome b gene. All individuals have almost identical DNA sequences in the flanking regions of the single-copy nuclear DNA locus TmoM27, and show a mosaic of alleles derived from both parental lineages in six microsatellite loci. Hence, our finding displays another mode of speciation in cichlid fishes. The increase of genetic and phenotypic diversity due to hybridization may contribute to the uniquely rapid pace of speciation in cichlids.",
+      "journal": "Molecular ecology",
+      "year": 2002,
+      "pub_date": "2002-03-01",
+      "authors": "Salzburger W; Baric S; Sturmbauer C",
+      "first_author": "Salzburger W",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11891259",
+      "doi": "10.1104/pp.010744",
+      "title": "Benzothiadiazole-induced priming for potentiated responses to pathogen infection, wounding, and infiltration of water into leaves requires the NPR1/NIM1 gene in Arabidopsis.",
+      "abstract": "Systemic acquired resistance (SAR) is a plant defense state that is induced, for example, after previous pathogen infection or by chemicals that mimic natural signaling compounds. SAR is associated with the ability to induce cellular defense responses more rapidly and to a greater degree than in noninduced plants, a process called \"priming.\" Arabidopsis plants were treated with the synthetic SAR inducer benzothiadiazole (BTH) before stimulating two prominent cellular defense responses, namely Phe AMMONIA-LYASE (PAL) gene activation and callose deposition. Although BTH itself was essentially inactive at the immediate induction of these two responses, the pretreatment with BTH greatly augmented the subsequent PAL gene expression induced by Pseudomonas syringae pv. tomato infection, wounding, or infiltrating the leaves with water. The BTH pretreatment also enhanced the production of callose, which was induced by wounding or infiltrating the leaves with water. It is interesting that the potentiation by BTH pretreatment of PAL gene activation and callose deposition was not seen in the Arabidopsis nonexpresser of PR genes 1/noninducible immunity 1 mutant, which is compromised in SAR. In a converse manner, augmented PAL gene activation and enhanced callose biosynthesis were found, without BTH pretreatment, in the Arabidopsis constitutive expresser of pathogenesis-related genes (cpr)1 and constitutive expresser of pathogenesis-related genes 5 mutants, in which SAR is constitutive. Moreover, priming for potentiated defense gene activation was also found in pathogen-induced SAR. In sum, the results suggest that priming is an important cellular mechanism in acquired disease resistance of plants that requires the nonexpresser of PR genes 1/noninducible immunity 1 gene.",
+      "journal": "Plant physiology",
+      "year": 2002,
+      "pub_date": "2002-03-01",
+      "authors": "Kohler Annegret; Schwindling Sandra; Conrath Uwe",
+      "first_author": "Kohler Annegret",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30818610",
+      "doi": "10.1094/PDIS.2002.86.3.292",
+      "title": "Suppression of Phytophthora Root and Crown Rot on Pepper Plants Treated with Acibenzolar-S-Methyl.",
+      "abstract": "The fungicide mefenoxam is registered for the control of Phytophthora blight of peppers caused by Phytophthora capsici. Isolates of the pathogen that are insensitive to mefenoxam, however, have been detected in some locations. Consequently, alternative methods are needed to control Phytophthora blight of peppers. Acibenzolar-S-methyl (ABM, Actigard) is a chemical activator of plant disease resistance that has potential for the management of Phytophthora blight of peppers. The effect of foliar applications of ABM on the development of root and crown rot on pepper plants grown in the greenhouse and inoculated with Phytophthora capsici or in soil naturally infested with the pathogen was evaluated. Inhibition of stem canker development on pepper cvs. Bell Tower and AZ9 after four treatments with ABM (75 μg/ml) was significantly greater than on plants receiving a single application of the chemical. Stem canker length on Bell Tower or AZ9 peppers was inhibited by 93.2 to 97.2% and 87.4 to 92.4% when plants were inoculated with P. capsici at 1 or 5 weeks, respectively, after the fourth application of ABM. Survival of chile pepper plants grown in field soil naturally infested with P. capsici was significantly increased by three foliar applications of ABM (75 μg/ml) compared with nontreated plants in all three trials when pots were watered daily and in two of three trials when pots were flooded for 48 h every 2 weeks. When soil was flooded every 2 weeks to establish conditions highly favorable for disease development, plants treated once with mefenoxam (100 μg/ml) survived significantly longer than those treated with ABM. On the other hand, when water was provided daily without periodic flooding to establish conditions less favorable for disease development, plant survival between the two chemicals was not different in two of three trials. Length of survival among chile pepper plants treated twice with 25, 50, or 75 μg/ml of ABM and grown in soil infested with P. capsici was not different. This work indicates that ABM could be an important management tool for Phytophthora root and crown rot on pepper plants.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-03-01",
+      "authors": "Matheron M E; Porchas M",
+      "first_author": "Matheron M E",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

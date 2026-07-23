@@ -1,0 +1,78 @@
+{
+  "month": "1962-01",
+  "generated": "2026-07-13 02:59:41",
+  "total": 3,
+  "by_category": {
+    "New_Virus": 2,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "13967314",
+      "doi": "10.1007/BF02538735",
+      "title": "[Torulopis burgeffiana nov. spec., a new species of yeast isolated from grapes].",
+      "abstract": "",
+      "journal": "Antonie van Leeuwenhoek",
+      "year": 1962,
+      "pub_date": "1962-01-01",
+      "authors": "BENDA I",
+      "first_author": "BENDA I",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "13943102",
+      "doi": "10.1007/BF02538734",
+      "title": "Four new species of yeast isolated from insect frass in bark of Tsuga heterophylla (Raf.) Sargent.",
+      "abstract": "",
+      "journal": "Antonie van Leeuwenhoek",
+      "year": 1962,
+      "pub_date": "1962-01-01",
+      "authors": "PHAFF H J; do CARMO-SOUSA",
+      "first_author": "PHAFF H J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14011652",
+      "doi": "",
+      "title": "[On the antiviral properties of some plant extracts. Experiments in vitro with poliomyelitis viruses and ECHO viruses].",
+      "abstract": "",
+      "journal": "Bollettino dell'Istituto sieroterapico milanese",
+      "year": 1962,
+      "pub_date": "1962-01-01",
+      "authors": "ALBANO A; DE DONATO S",
+      "first_author": "ALBANO A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

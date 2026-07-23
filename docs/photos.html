@@ -55,22 +55,40 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px}
 .modal .meta{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.7);color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;max-width:800px;text-align:center}
 .src-btn{padding:4px 12px;font-size:11px;border:1px solid #ddd;border-radius:4px;cursor:pointer;background:#fff;color:#555}
 .src-btn.active{background:#1a5276;color:#fff;border-color:#1a5276}
+.src-btn .cnt{font-size:9px;opacity:.7;margin-left:2px}
 .loading{text-align:center;padding:60px;color:#888}
 .footer{text-align:center;padding:16px;color:#999;font-size:12px}
+
+nav .sep{color:rgba(255,255,255,0.18);padding:0 2px;user-select:none}
 </style>
 </head>
 <body>
 <nav>
   <a class="brand" href="/">Plant Virus DB</a>
-  <a href="/">Home</a>
-  <a href="/reference/">Reference</a>
-  <a href="/explorer/">Explorer</a>
-  <a href="/primers/">Primers</a>
+  <span class="sep">|</span>
+  <a href="/reference/" >Reference</a>
   <a href="/photos/" class="active">Photos</a>
-  <a href="/literature/">Literature</a>
+  <a href="/te/" >TE·EVE</a>
+  <a href="/vector/" >Vector</a>
+  <span class="sep">|</span>
+  <a href="/explorer/" >Explorer</a>
+  <a href="/primers/" >Primers</a>
+  <a href="/metabuli/" >Metabuli</a>
+  <a href="/pamirdb/" >PAmiRDB</a>
+  <span class="sep">|</span>
+  <a href="/literature/" >Literature</a>
+  <a href="/knowledge/" >Knowledge</a>
 </nav>
 <div class="layout">
 <div class="sidebar">
+  <h3>SOURCE</h3>
+  <div style="display:flex;flex-wrap:wrap;gap:3px;margin-bottom:8px">
+    <button class="src-btn active" onclick="switchSrc('all')">All</button>
+    <button class="src-btn" onclick="switchSrc('eppo')">EPPO</button>
+    <button class="src-btn" onclick="switchSrc('dpv')">DPV</button>
+    <button class="src-btn" onclick="switchSrc('book')">Book</button>
+    <button class="src-btn" onclick="switchSrc('pdf')">PDF</button>
+  </div>
   <h3>FILTER (multi-select)</h3>
   <h3>Host <span style="font-weight:400;font-size:10px;color:#888" id="fHostsCnt"></span></h3>
   <div id="fHosts"></div>
@@ -88,11 +106,7 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px}
       <button class="tab active" onclick="showTab('dash')">Dashboard</button>
       <button class="tab" onclick="showTab('gal')">Browse Gallery</button>
       <button class="tab" onclick="showTab('sub')">Submit Correction</button>
-      <span style="margin-left:auto;display:flex;align-items:center;gap:8px">
-        <span style="font-size:12px;color:#888">Source:</span>
-        <button class="src-btn active" onclick="switchSrc('eppo')">EPPO (925)</button>
-        <button class="src-btn" onclick="switchSrc('dpv')">DPV (1,287)</button>
-      </span>
+      <button class="tab" onclick="showTab('table')">Data Table</button>
     </div>
     <div id="dash">
       <div class="kpis" id="kpis"></div>
@@ -129,6 +143,20 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px}
         <button class="btn" onclick="submit()" style="margin-top:12px;padding:10px 32px">Submit to GitHub</button>
       </div>
     </div>
+    <div id="table" style="display:none">
+      <div class="topbar" style="background:#fff;padding:12px 16px;border-radius:8px 8px 0 0;margin-bottom:0;box-shadow:0 1px 3px rgba(0,0,0,.06)">
+        <h2 style="font-size:16px;color:#1a5276;margin:0">Symptoms Data Table</h2>
+        <input class="search-box" id="tblSearch" placeholder="Search virus / host / symptom..." oninput="renderTable()" style="width:280px">
+        <span id="tblCount" style="font-size:13px;color:#888"></span>
+      </div>
+      <div style="overflow-x:auto;background:#fff;max-height:70vh;overflow-y:auto;border-radius:0 0 8px 8px;box-shadow:0 1px 3px rgba(0,0,0,.06)">
+        <table style="width:100%;border-collapse:collapse;font-size:12px">
+          <thead id="tblHead" style="position:sticky;top:0;z-index:1"></thead>
+          <tbody id="tblBody"></tbody>
+        </table>
+      </div>
+      <div id="tblPage" style="display:flex;justify-content:center;gap:8px;padding:10px;background:#fff;font-size:12px;border-top:1px solid #eee"></div>
+    </div>
   </div>
 </div>
 </div>
@@ -140,32 +168,31 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px}
 <div class="footer">Plant Virus Reference Database &middot; Data: EPPO Global Database</div>
 
 <script>
-var D=[],AF={h:new Set,s:new Set,p:new Set,v:new Set},currSrc='eppo';
-var SRC={eppo:'data/eppo_gallery.json?v=2',dpv:'data/dpv_gallery.json?v=1'};
+var D=[],Din=[],TABLE=[],AF={h:new Set,s:new Set,p:new Set,v:new Set},currSrc='all';
+var tblPage=0,tblPerPage=50,tblSortCol=0,tblSortAsc=true;
 
 async function switchSrc(src){
   if(src===currSrc)return;currSrc=src;
-  document.querySelectorAll('.src-btn').forEach(function(b,i){b.classList.toggle('active',(src==='eppo'&&i===0)||(src==='dpv'&&i===1))});
-  document.getElementById('load').style.display='';
-  document.getElementById('main').style.display='none';
-  try{
-    var r=await fetch(SRC[src]);if(!r.ok)throw new Error('HTTP '+r.status);
-    D=await r.json();
-    document.getElementById('fHosts').innerHTML='';
-    document.getElementById('fSymptoms').innerHTML='';
-    document.getElementById('fParts').innerHTML='';
-    document.getElementById('fViruses').innerHTML='';
-    AF={h:new Set,s:new Set,p:new Set,v:new Set};
-    var vl={};D.forEach(function(d){var v=d.virus_latin||d.virus;if(v)vl[v]=(vl[v]||0)+1});var vla=Object.entries(vl).sort(function(a,b){return b[1]-a[1]}).slice(0,30);
-    mkFilt('fHosts',cnt('hosts',30),'fHostsCnt');
-    mkFilt('fSymptoms',cnt('symptoms',25),'fSympsCnt');
-    mkFilt('fParts',cnt('parts',20),'fPartsCnt');
-    mkFilt('fViruses',vla,'fVirusCnt');
-    buildDash();
-    renderGal();
-  }catch(e){document.getElementById('load').innerHTML='<p style=color:red>Error: '+e.message+'</p>';return}
-  document.getElementById('load').style.display='none';
-  document.getElementById('main').style.display='';
+  document.querySelectorAll('.src-btn').forEach(function(b,i){
+    var names=['all','eppo','dpv','book','pdf'];
+    b.classList.toggle('active',names[i]===src);
+    var cnt=b.querySelector('.cnt');
+    var base=b.childNodes[0]?b.childNodes[0].textContent.trim():(names[i]==='all'?'All':names[i].toUpperCase());
+  });
+  D=src==='all'?Din:Din.filter(function(d){return (d.source||'').toLowerCase()===src});
+  document.getElementById('fHosts').innerHTML='';
+  document.getElementById('fSymptoms').innerHTML='';
+  document.getElementById('fParts').innerHTML='';
+  document.getElementById('fViruses').innerHTML='';
+  AF={h:new Set,s:new Set,p:new Set,v:new Set};
+  var vl={};D.forEach(function(d){var v=d.virus_latin||d.virus;if(v)vl[v]=(vl[v]||0)+1});var vla=Object.entries(vl).sort(function(a,b){return b[1]-a[1]}).slice(0,30);
+  mkFilt('fHosts',cnt('hosts',30),'fHostsCnt');
+  mkFilt('fSymptoms',cnt('symptoms',25),'fSympsCnt');
+  mkFilt('fParts',cnt('parts',20),'fPartsCnt');
+  mkFilt('fViruses',vla,'fVirusCnt');
+  buildDash();
+  renderGal();
+  if(document.getElementById('table').style.display!=='none')renderTable();
 }
 
 function cnt(key,n){
@@ -202,6 +229,7 @@ function mkFilt(id,items,cntId){
       if(set.has(k))set.delete(k);else set.add(k);
       s.classList.toggle('active',set.has(k));
       renderGal();
+      if(document.getElementById('table').style.display!=='none')renderTable();
     };
     el.appendChild(s);
   });
@@ -254,10 +282,12 @@ function renderGal(){
 }
 
 function showTab(t){
-  document.querySelectorAll('.tab').forEach(function(x,i){x.classList.toggle('active',(t==='dash'&&i===0)||(t==='gal'&&i===1)||(t==='sub'&&i===2))});
+  document.querySelectorAll('.tab').forEach(function(x,i){x.classList.toggle('active',(t==='dash'&&i===0)||(t==='gal'&&i===1)||(t==='sub'&&i===2)||(t==='table'&&i===3))});
   document.getElementById('dash').style.display=t==='dash'?'':'none';
   document.getElementById('gal').style.display=t==='gal'?'':'none';
   document.getElementById('sub').style.display=t==='sub'?'':'none';
+  document.getElementById('table').style.display=t==='table'?'':'none';
+  if(t==='table')renderTable();
 }
 
 function openImg(url,cap,virus){
@@ -281,9 +311,19 @@ function submit(){
 
 (async function init(){
   try{
-    var r=await fetch(SRC[currSrc]);
-    if(!r.ok)throw new Error('HTTP '+r.status);
-    D=await r.json();
+    var [gr,tr]=await Promise.all([
+      fetch('data/unified_gallery.json?v=3'),
+      fetch('data/symptom_table.json?v=1')
+    ]);
+    if(!gr.ok||!tr.ok)throw new Error('HTTP');
+    Din=await gr.json();TABLE=await tr.json();
+    D=Din;
+    var srcCounts={};Din.forEach(function(d){var s=(d.source||'unknown').toLowerCase();srcCounts[s]=(srcCounts[s]||0)+1});
+    srcCounts.all=Din.length;
+    ['all','eppo','dpv','book','pdf'].forEach(function(s,i){
+      var b=document.querySelectorAll('.src-btn')[i];
+      if(b&&srcCounts[s])b.innerHTML=b.innerHTML.replace(/<span.*/,'')+' <span class=\"cnt\">('+srcCounts[s]+')</span>';
+    });
     if(!D||!D.length)throw new Error('Empty');
     mkFilt('fHosts',cnt('hosts',30),'fHostsCnt');
     mkFilt('fSymptoms',cnt('symptoms',25),'fSympsCnt');
@@ -300,6 +340,64 @@ function submit(){
   document.getElementById('load').style.display='none';
   document.getElementById('main').style.display='';
 })();
+
+// ── Data Table ──
+function renderTable(){
+  if(!TABLE||!TABLE.length)return;
+  var src=currSrc==='all'?'':currSrc;
+  var data=TABLE;
+  if(src)data=TABLE.filter(function(r){return r.source===src});
+  var q=(document.getElementById('tblSearch').value||'').toLowerCase();
+  if(q)data=data.filter(function(r){return(r.virus||'').toLowerCase().indexOf(q)>=0||(r.host_cn||'').toLowerCase().indexOf(q)>=0||(r.symptoms||'').toLowerCase().indexOf(q)>=0});
+  // Apply sidebar filters
+  if(AF.h.size)data=data.filter(function(r){
+    var hh=(r.host_cn||'')+';'+(r.host_latin||'');
+    return Array.from(AF.h).some(function(f){return hh.toLowerCase().indexOf(f.toLowerCase())>=0});
+  });
+  if(AF.s.size)data=data.filter(function(r){
+    var ss=(r.symptoms||'').toLowerCase();
+    return Array.from(AF.s).some(function(f){return ss.indexOf(f.toLowerCase())>=0});
+  });
+  if(AF.p.size)data=data.filter(function(r){
+    var pp=(r.parts||'').toLowerCase();
+    return Array.from(AF.p).some(function(f){return pp.indexOf(f.toLowerCase())>=0});
+  });
+  if(AF.v.size)data=data.filter(function(r){
+    var vv=(r.virus||'').toLowerCase();
+    return Array.from(AF.v).some(function(f){return vv.indexOf(f.toLowerCase())>=0});
+  });
+  tblPage=0;
+  document.getElementById('tblCount').textContent=data.length.toLocaleString()+' rows';
+  var colKeys=['source','virus','host_cn','host_latin','family','symptoms','parts','caption'];
+  var colLabels=['Source','Virus','Host','Host Latin','Family','Symptoms','Parts','Caption'];
+  var ci=tblSortCol,asc=tblSortAsc;
+  data.sort(function(a,b){var va=(a[colKeys[ci]]||'').toLowerCase(),vb=(b[colKeys[ci]]||'').toLowerCase();if(va<vb)return asc?-1:1;if(va>vb)return asc?1:-1;return 0});
+  document.getElementById('tblHead').innerHTML='<tr style="background:#f8f9fa">'+colLabels.map(function(c,i){
+    return'<th style="padding:8px 12px;text-align:left;border-bottom:2px solid #dee2e6;cursor:pointer;white-space:nowrap;font-size:12px;color:#1a5276" onclick="tblSortCol='+i+';tblSortAsc=tblSortCol==='+i+'?!tblSortAsc:true;renderTable()">'+c+'<span style="font-size:10px;margin-left:4px;color:#999">'+(i===tblSortCol?(tblSortAsc?' \u25b2':' \u25bc'):'')+'</span></th>';
+  }).join('')+'</tr>';
+  var start=tblPage*tblPerPage,end=Math.min(start+tblPerPage,data.length);
+  var pageRows=data.slice(start,end);
+  var colors={Book:'#fff3e0',PDF:'#e3f2fd',DPV:'#e8f5e9',EPPO:'#fce4ec','Open-i':'#f3e5f5'};
+  document.getElementById('tblBody').innerHTML=pageRows.map(function(r,i){
+    return'<tr style="'+(i%2?'background:#fafafa':'')+'">'+colKeys.map(function(k){
+      if(k==='source'){
+        var bg=colors[r.source]||'#eee';
+        return'<td style="padding:6px 12px;border-bottom:1px solid #eee"><span style="font-size:10px;padding:1px 6px;border-radius:8px;background:'+bg+';font-weight:600">'+r.source+'</span></td>';
+      }
+      return'<td style="padding:6px 12px;border-bottom:1px solid #eee;max-width:250px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="'+(r[k]||'').replace(/"/g,'&quot;')+'">'+(r[k]||'')+'</td>';
+    }).join('')+'</tr>';
+  }).join('');
+  var total=Math.ceil(data.length/tblPerPage);
+  var html='<button '+(tblPage<=0?'disabled':'')+' onclick="tblPage=0;renderTable()" style="padding:4px 12px;border:1px solid #ddd;border-radius:4px;cursor:pointer">\u00ab\u00ab</button>';
+  html+='<button '+(tblPage<=0?'disabled':'')+' onclick="tblPage--;renderTable()" style="padding:4px 12px;border:1px solid #ddd;border-radius:4px;cursor:pointer">\u00ab</button>';
+  html+='<span>Page '+(tblPage+1)+' of '+(total||1)+'</span>';
+  html+='<button '+(tblPage>=total-1?'disabled':'')+' onclick="tblPage++;renderTable()" style="padding:4px 12px;border:1px solid #ddd;border-radius:4px;cursor:pointer">\u00bb</button>';
+  html+='<button '+(tblPage>=total-1?'disabled':'')+' onclick="tblPage='+(total-1)+';renderTable()" style="padding:4px 12px;border:1px solid #ddd;border-radius:4px;cursor:pointer">\u00bb\u00bb</button>';
+  html+=' <select onchange="tblPerPage=+this.value;tblPage=0;renderTable()" style="padding:4px;border:1px solid #ddd;border-radius:4px;margin-left:8px"><option value=50 '+(tblPerPage==50?'selected':'')+'>50</option><option value=100 '+(tblPerPage==100?'selected':'')+'>100</option><option value=200 '+(tblPerPage==200?'selected':'')+'>200</option></select>';
+  document.getElementById('tblPage').innerHTML=html;
+}
 </script>
+<script src="/reference/i18n.js"></script>
+<script>PVDB_i18n.init({navSelector:'nav'});</script>
 </body>
 </html>

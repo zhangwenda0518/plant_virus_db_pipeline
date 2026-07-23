@@ -1,0 +1,283 @@
+{
+  "month": "2003-12",
+  "generated": "2026-07-13 02:59:42",
+  "total": 19,
+  "by_category": {
+    "Host_Virus_Interactions": 9,
+    "New_Virus": 5,
+    "Antiviral_Resistance_Genes": 4,
+    "Viral_Diversity_Ecology": 1,
+    "Molecular_Characterization": 1,
+    "Biotechnology_Applications": 1,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "14615595",
+      "doi": "10.1105/tpc.015180",
+      "title": "Adenosine kinase is inactivated by geminivirus AL2 and L2 proteins.",
+      "abstract": "AL2 and L2 are related proteins encoded by geminiviruses of the Begomovirus and Curtovirus genera, respectively. Both are pathogenicity determinants that cause enhanced susceptibility when expressed in transgenic plants. To understand how geminiviruses defeat host mechanisms that limit infectivity, we searched for cellular proteins that interact with AL2 and L2. Here, we present evidence that the viral proteins interact with and inactivate adenosine kinase (ADK), a nucleoside kinase that catalyzes the salvage synthesis of 5'-AMP from adenosine and ATP. We show that the AL2 and L2 proteins inactivate ADK in vitro and after coexpression in Escherichia coli and yeast. We also demonstrate that ADK activity is reduced in transgenic plants expressing the viral proteins and in geminivirus-infected plant tissues. By contrast, ADK activity is increased after inoculation of plants with diverse RNA viruses or a geminivirus lacking a functional L2 gene. Consistent with its ability to interact with multiple cellular kinases, we also demonstrate that AL2 is present in both the nucleus and the cytoplasm of infected plant cells. These data indicate that ADK is targeted by viral pathogens and provide evidence that this \"housekeeping\" enzyme might be a part of host defense responses. In previous work, we showed that AL2 and L2 also interact with and inactivate SNF1 kinase, a global regulator of metabolism that is activated by 5'-AMP. Together, these observations suggest that metabolic alterations mediated by SNF1 are an important component of innate antiviral defenses and that the inactivation of ADK and SNF1 by the geminivirus proteins represents a dual strategy to counter this defense. AL2 proteins also have been shown to act as suppressors of RNA silencing, an adaptive host defense response. A possible relationship between ADK inactivation and silencing suppression is discussed.",
+      "journal": "The Plant cell",
+      "year": 2003,
+      "pub_date": "2003-12-01",
+      "authors": "Wang Hui; Hao Linhui; Shung Chia-Yi; Sunter Garry; Bisaro David M",
+      "first_author": "Wang Hui",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "双生病毒 (Begomovirus 和 Curtovirus 属的 AL2/L2 蛋白)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30812402",
+      "doi": "10.1094/PDIS.2003.87.12.1537B",
+      "title": "First Report of Peach latent mosaic viroid and Hop stunt viroid Infecting Peach Trees in the Czech Republic.",
+      "abstract": "Peach latent mosaic viroid (PLMVd) and Hop stunt viroid (HSVd) are known to naturally infect stone fruits, but their contemporary presence in peach trees has been reported only recently (3). During a field validation of detection methods developed for sanitary screening of propagation material, PLMVd and HSVd, alone or in mixed infections, were detected in peach trees grown in the trial orchard of the Czech University of Agriculture in Prague. Leaf samples were collected in September 2002 from symptomless trees of peach cultivars imported from the United States (cvs. Sunhaven, Redhaven, Fairhaven, Cresthaven, Dixired, Halehaven, and NJC 103), Slovakia (cv. Luna), and a tree of Chinese wild peach, Prunus davidiana, and analyzed by reverse transcription-polymerase chain reaction (RT-PCR). PLMVd cDNA was amplified as previously reported (2) or by using two sets of primer pairs designed to amplify partial cDNAs, one reverse primer R: GTTTCTACGG CGGTACCTGA, complementary to the nucleotide positions 204 to 223 and forward primers F1: CGTATCTCAACGCCTCATCA, homologous to the positions 109 to 128, and F2: CTGCAGTTCCCGCTAGAAAG, homologous to the positions 15 to 34 of PLMVd reference sequence (2). The two pairs using the R sequence produced the expected size PCR products of 115 and 209 bp, respectively. RT-PCR for HSVd detection was performed as reported (1). The same total RNA preparations were also analyzed by molecular hybridization with nonisotopic riboprobes specific for each viroid. With minor exceptions, both methods gave similar results. Of 66 tested trees, 5 were infected with PLMVd, 46 were infected with PLMVd and HSVd, and 15 were free of both viroids. Viroid free plants included cvs. Luna, Cresthaven, Dixired, and Halehaven and the species P. davidiana. The high number of infections by both viroids was unexpected because mixed infections are generally rare (3). Most likely, mixed infections occurred during field manipulations and propagation of infected materials. To our knowledge, this is the first report of PLMVd in the Czech Republic. Although further investigations are needed to ascertain the spread of stone fruit viroids in the Czech Republic, our results also report an unusually high incidence of mixed infections of peach trees in this country. These results stress the need for a certification program to help control the spread of stone fruit viroids in the Czech Republic. References: (1) K. Amari et al. J. Gen. Virol. 82:953, 2001. (2) A. M. Shamloul et al. Acta Hort. 386:522, 1995. (3) M. Tessitori et al. Plant Dis. 86:329, 2001.",
+      "journal": "Plant disease",
+      "year": 2003,
+      "pub_date": "2003-12-01",
+      "authors": "Hassan M; Rysanek P; Di Serio F",
+      "first_author": "Hassan M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Peach latent mosaic viroid (PLMVd), Hop stunt viroid (HSVd)",
+      "taxonomy": "未提及",
+      "host_plant": "桃树 (Prunus persica), Prunus davidiana",
+      "location": "捷克共和国, 布拉格",
+      "results": "66棵树中5株仅染PLMVd，46株混合感染，15株无病毒；首次在捷克报道PLMVd。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30812404",
+      "doi": "10.1094/PDIS.2003.87.12.1538A",
+      "title": "First Report of Calibrachoa mottle virus Infecting Petunia.",
+      "abstract": "Calibrachoa mottle virus (CbMV), a tentative carmovirus, was first isolated and reported by Liu et al. (1) from infected Calibrachoa plants. During the spring of 2003, petunia samples from Florida and California sent to testing services at Agdia, Inc (Elkhart IN) tested positive for CbMV by enzyme-linked immunosorbent assay (ELISA) and lateral flow immunoassay (ImmunoStrips). These samples also tested positive by carmovirus group-specific polymerase chain reaction (PCR) primers and by immunocapture PCR (2). RNA extracted from these samples with the RNeasy Plant Kit (Qiagen Inc., Valencia, CA) hybridized with a digoxigenin labeled probe derived from purified CbMV viral RNA. All plant samples that tested positive for CbMV were symptomless except one symptomatic sample that also tested positive for Tobacco mosaic virus. From samples that tested positive for CbMV only, mechanical inoculations were made to Chenopodium quinoa at a USDA-ARS greenhouse in Salinas, CA. Representative single, local lesions were used to inoculate additional C. quinoa plants. The resulting local lesions from these inoculations were freeze-dried and further used as virus inoculum (CbMV petunia). Similar inoculum was made with CbMV isolated from Calibrachoa plants (CbMV calibrachoa). Virus-free Petunia hybrida cultivars Surfinia 'Baby Pink' and Surfinia 'Violet' (Jackson and Perkins Inc., Somis, CA) were mechanically inoculated with CbMV petunia and CbMV calibrachoa. Four weeks postinoculation, all plants were tested using ELISA for the presence of CbMV. In greenhouse conditions, 14.3% of 'Baby Pink' plants were positive for CbMV petunia, whereas none were positive for CbMV calibrachoa. 'Violet' plants were 64.3 and 33.3% positive for CbMV petunia and CbMV calibrachoa, respectively. None of the positive plants expressed virus-like symptoms. Virus particles resembling those of CbMV were observed from infected petunia plants with transmission electron microscopy in leaf-dip preparations. To our knowledge, this is the first report of CbMV infecting petunia. Commercial reproduction of petunia plants and maintenance of genetic mother stock are usually by vegetative propagation. CbMV can be transmitted mechanically and is readily propagated along with its host. To produce healthy petunia plants, virus-free mother stock should be used, which requires regular screening of mother stock for CbMV. Reference: (1) H.-Y. Liu et al. Plant Dis. 87:167, 2003. (2) A. M. Harness et al. (Abstr.) Phytopathology 92:S34, 2002.",
+      "journal": "Plant disease",
+      "year": 2003,
+      "pub_date": "2003-12-01",
+      "authors": "Liu H-Y; Sears J L; Bandla M; Harness A M; Kulemeka B",
+      "first_author": "Liu H-Y",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Calibrachoa mottle virus (CbMV)",
+      "taxonomy": "Tombusviridae, Carmovirus (暂定)",
+      "host_plant": "Petunia (矮牵牛)",
+      "location": "美国佛罗里达州和加利福尼亚州",
+      "results": "2003年春从佛罗里达和加州的矮牵牛样品中检测到CbMV；机械接种显示品种间感染率差异（14.3%-64.3%），均无症；电镜观察到典型病毒颗粒。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18943611",
+      "doi": "10.1094/PHYTO.2003.93.12.1478",
+      "title": "Increase in Zucchini yellow mosaic virus Symptom Severity in Tolerant Zucchini Cultivars Is Related to a Point Mutation in P3 Protein and Is Associated with a Loss of Relative Fitness on Susceptible Plants.",
+      "abstract": "ABSTRACT Zucchini yellow mosaic virus (ZYMV, Potyvirus) is a very damaging cucurbit virus worldwide. Interspecific crosses with resistant Cucurbita moschata have led to the release of \"resistant\" zucchini squash (C. pepo) F(1) hybrids. However, although the resistance is almost complete in C. moschata, the commercial C. pepo hybrids are only tolerant. ZYMV evolution toward increased aggressiveness on tolerant hybrids was observed in the field and was obtained experimentally. Sequence comparisons and recombination experiments revealed that a point mutation in the P3 protein of ZYMV was enough to induce tolerance breaking. Competition experiments were performed between quasi-isogenic wild-type, and aggressive variants of ZYMV distinguished by monoclonal antibodies. The aggressive mutants were more fit than wild-type strains in mixed infections of tolerant zucchini, but they presented a drastic fitness loss in mixed infections of susceptible zucchini or melon. Thus, the ability to induce severe symptoms in tolerant zucchini is related to a genetic load in susceptible zucchini, but also on other susceptible hosts. This represents the first quantitative study of the fitness cost associated with tolerance breaking for a plant virus. Thus, although easily broken, the tolerance might prove durable in some conditions if the aggressive variants are counterselected in susceptible crops.",
+      "journal": "Phytopathology",
+      "year": 2003,
+      "pub_date": "2003-12-01",
+      "authors": "Desbiez C; Gal-On A; Girard M; Wipf-Scheibel C; Lecoq H",
+      "first_author": "Desbiez C",
+      "categories": [
+        "Host_Virus_Interactions",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Zucchini yellow mosaic virus (ZYMV)",
+      "taxonomy": "",
+      "host_plant": "西葫芦（Cucurbita pepo）、甜瓜（melon）、南瓜（Cucurbita moschata）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14645587",
+      "doi": "10.1128/jvi.77.24.13315-13322.2003",
+      "title": "Novel system for the simultaneous analysis of geminivirus DNA replication and plant interactions in Nicotiana benthamiana.",
+      "abstract": "The origin of replication of African cassava mosaic virus (ACMV) and a gene expression vector based on Potato virus X were exploited to devise an in planta system for functional analysis of the geminivirus replication-associated protein (Rep) in transgenic Nicotiana benthamiana line pOri-2. This line contains an integrated copy of a tandem repeat of the ACMV origin of replication flanking nonviral sequences that can be mobilized and replicated by Rep as an episomal replicon. A Rep-GFP fusion protein can also mobilize and amplify the replicon, facilitating Rep detection in planta. The activity of Rep and its mutants, Rep-mediated host response, and the correlation between Rep intracellular localization and biological functions could be effectively assessed by using this in planta system. Our results indicate that modification of amino acid residues R(2), R(5), R(7) and K(11) or H(56), L(57) and H(58) prevent Rep function in replication. This defect correlates with possible loss of Rep nuclear localization and inability to trigger the host defense mechanism resembling a hypersensitive response.",
+      "journal": "Journal of virology",
+      "year": 2003,
+      "pub_date": "2003-12-01",
+      "authors": "Hong Yiguo; Stanley John; van Wezel Rene",
+      "first_author": "Hong Yiguo",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "非洲木薯花叶病毒 (ACMV) 和 马铃薯X病毒 (PVX)",
+      "taxonomy": "",
+      "host_plant": "本氏烟 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12944322",
+      "doi": "10.1152/ajpendo.00177.2003",
+      "title": "Alcohol impairs leucine-mediated phosphorylation of 4E-BP1, S6K1, eIF4G, and mTOR in skeletal muscle.",
+      "abstract": "Acute alcohol (EtOH) intoxication impairs skeletal muscle protein synthesis. Although this impairment is not associated with a decrease in the total plasma amino acid concentration, EtOH may blunt the anabolic response to amino acids. To examine this hypothesis, rats were administered EtOH or saline (Sal) and 2.5 h thereafter were orally administered either leucine (Leu) or Sal. The gastrocnemius was removed 20 min later to assess protein synthesis and signaling components important in translational control of protein synthesis. Oral Leu increased muscle protein synthesis by the same magnitude in Sal- and EtOH-treated rats. However, the increase in the latter group was insufficient to overcome the suppressive effect of EtOH, and the rate of synthesis remained lower than that observed in rats from the Sal-Sal group. Leu markedly increased phosphorylation of Thr residues 36, 47, and 70 on 4E-binding protein (BP)1 in muscle from rats not receiving EtOH, and this response was associated with a redistribution of eukaryotic initiation factor (eIF) 4E from the inactive eIF4E. 4E-BP1 to the active eIF4E. eIF4G complex. In EtOH-treated rats, the Leu-induced phosphorylation of 4E-BP1 and changes in eIF4E availability were partially abrogated. EtOH also prevented the Leu-induced increase in phosphorylation of eIF4G, the serine/threonine protein kinase S6K1, and the ribosomal protein S6. Moreover, EtOH attenuated the Leu-induced phosphorylation of the mammalian target of rapamycin (mTOR). The ability of EtOH to blunt the anabolic effects of Leu could not be attributed to differences in the plasma concentrations of insulin, insulin-like growth factor I, or Leu. Finally, although EtOH increased the plasma corticosterone concentration, inhibition of glucocorticoid action by RU-486 was unable to prevent EtOH-induced defects in the ability of Leu to stimulate 4E-BP1, S6K1, and mTOR phosphorylation. Hence, ethanol produces a leucine resistance in skeletal muscle, as evidenced by the impaired phosphorylation of 4E-BP1, eIF4G, S6K1, and mTOR, that is independent of elevations in endogenous glucocorticoids.",
+      "journal": "American journal of physiology. Endocrinology and metabolism",
+      "year": 2003,
+      "pub_date": "2003-12-01",
+      "authors": "Lang Charles H; Frost Robert A; Deshpande Nobuko; Kumar Vinayshree; Vary Thomas C; ... (+2)",
+      "first_author": "Lang Charles H",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "13679986",
+      "doi": "10.1007/s00122-003-1410-1",
+      "title": "Cloning and characterization of receptor kinase class disease resistance gene candidates in Citrus.",
+      "abstract": "The rice gene Xa21 represents a unique class of plant disease resistance ( R) genes with distinct protein structure and broad-spectrum specificity; few sequences or genes of this class have been cloned and characterized in other plant species. Degenerate primers were designed from the conserved motifs in the kinase domains of Xa21 and tomato Pto, and used in PCR amplification to identify this class of resistance gene candidate (RGC) sequences from citrus for future evaluation of possible association with citrus canker resistance. Twenty-nine RGC sequences highly similar to the kinase domain of Xa21 (55%-60% amino-acid identity) were cloned and characterized. To facilitate recovery of full-length gene structures and to overcome RGC mapping limitations, large-insert genomic clones (BACs) were identified, fingerprinted and assembled into contigs. Southern hybridization revealed the presence of 1-3 copies of receptor-like kinase sequences (i.e., clustering) in each BAC. Some of these sequences were sampled by PCR amplification and direct sequencing. Twenty-three sequences were thus obtained and classified into five groups and eight subgroups, which indicates the possibility of enhancing RGC sequence diversity from BACs. A primer-walking strategy was employed to derive full-length gene structures from two BAC clones; both sequences 17o6RLK and 26m19RLK contained all the features of the rice Xa21 protein, including a signal peptide, the same number of leucine-rich-repeats, and transmembrane and kinase domains. These results demonstrate that PCR amplification with appropriately designed degenerate primers is an efficient approach for cloning receptor-like kinase class RGCs. Utilization of BAC clones can facilitate this approach in multiple ways by improving sequence diversity, providing full-length genes, and assisting in understanding gene structures and distribution.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 2003,
+      "pub_date": "2003-12-01",
+      "authors": "Deng Z; Gmitter F G",
+      "first_author": "Deng Z",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "13680022",
+      "doi": "10.1007/s00240-003-0352-z",
+      "title": "GnRH-PAP hormonotoxin targets cytotoxicity to prostate cancer cell lines.",
+      "abstract": "Pokeweed antiviral protein (PAP) is a plant-derived, highly potent ribosome inactivating protein that causes inhibition of protein translation and rapid cell death. We have previously described potent cytotoxic activity of a GnRH (gonadotropin-releasing hormone) receptor-targeted conjugate protein (GnRH-PAP) and demonstrated that cytotoxicity depended on the number of GnRH receptors and the duration of exposure. Here, we demonstrate that the GnRH-PAP conjugate was cytotoxic to three different prostate cancer cell lines, supporting the feasibility of using such hormonotoxins as novel therapeutics for hormone-responsive cancers such as prostate cancer.",
+      "journal": "Urological research",
+      "year": 2003,
+      "pub_date": "2003-12-01",
+      "authors": "Qi Lin; Nett Terry M; Allen Matthew C; Sha Xiaoming; Harrison Gail S; ... (+2)",
+      "first_author": "Qi Lin",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "13680390",
+      "doi": "10.1007/s10123-003-0142-z",
+      "title": "Variation and evolution of plant virus populations.",
+      "abstract": "Over the last 15 years, interest in plant virus evolution has re-emerged, as shown by the increasing number of papers published on this subject. In recent times, research in plant virus evolution has been viewed from a molecular, rather than populational, standpoint, and there is a need for work aimed at understanding the processes involved in plant virus evolution. However, accumulated data from analyses of experimental and natural populations of plant viruses are beginning to delineate some trends that often run contrary to accepted opinion: (1) high mutation rates are not necessarily adaptive, as a large fraction of the mutations are deleterious or lethal; (2) in spite of high potential for genetic variation, populations of plant viruses are not highly variable, and genetic stability is the rule rather than the exception; (3) the degree of constriction of genetic variation in virus-encoded proteins is similar to that in their eukaryotic hosts and vectors; and (4) in spite of huge census sizes of plant virus populations, selection is not the sole factor that shapes their evolution, and genetic drift may be important. Here, we review recent advances in understanding plant virus evolution, and describe the experimental and analytical methods most suited to this purpose.",
+      "journal": "International microbiology : the official journal of the Spanish Society for Microbiology",
+      "year": 2003,
+      "pub_date": "2003-12-01",
+      "authors": "García-Arenal Fernando; Fraile Aurora; Malpica José M",
+      "first_author": "García-Arenal Fernando",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14586641",
+      "doi": "10.1007/s00438-003-0940-1",
+      "title": "Isolation, genetic variation and expression of TIR-NBS-LRR resistance gene analogs from western white pine ( Pinus monticola Dougl. ex. D. Don.).",
+      "abstract": "Western white pine ( Pinus monticola Dougl. ex. D. Don., WWP) shows genetic variation in disease resistance to white pine blister rust ( Cronartium ribicola). Most plant disease resistance (R) genes encode proteins that belong to a superfamily with nucleotide-binding site domains (NBS) and C-terminal leucine-rich repeats (LRR). In this work a PCR strategy was used to clone R gene analogs (RGAs) from WWP using oligonucleotide primers based on the conserved sequence motifs in the NBS domain of angiosperm NBS-LRR genes. Sixty-seven NBS sequences were cloned from disease-resistant trees. BLAST searches in GenBank revealed that they shared significant identity to well-characterized R genes from angiosperms, including L and M genes from flax, the tobacco N gene and the soybean gene LM6. Sequence alignments revealed that the RGAs from WWP contained the conserved motifs identified in angiosperm NBS domains, especially those motifs specific for TIR-NBS-LRR proteins. Phylogenic analysis of plant R genes and RGAs indicated that all cloned WWP RGAs can be grouped into one major branch together with well-known R proteins carrying a TIR domain, suggesting they belong to the subfamily of TIR-NBS-LRR genes. In one phylogenic tree, WWP RGAs were further subdivided into fourteen clusters with an amino acid sequence identity threshold of 75%. cDNA cloning and RT-PCR analysis with gene-specific primers demonstrated that members of 10 of the 14 RGA classes were expressed in foliage tissues, suggesting that a large and diverse NBS-LRR gene family may be functional in conifers. These results provide evidence for the hypothesis that conifer RGAs share a common origin with R genes from angiosperms, and some of them may play important roles in defense mechanisms that confer disease resistance in western white pine. Ratios of non-synonymous to synonymous nucleotide substitutions (Ka/Ks) in the WWP NBS domains were greater than 1 or close to 1, indicating that diversifying selection and/or neutral selection operate on the NBS domains of the WWP RGA family.",
+      "journal": "Molecular genetics and genomics : MGG",
+      "year": 2003,
+      "pub_date": "2003-12-01",
+      "authors": "Liu J-J; Ekramoddoullah A K M",
+      "first_author": "Liu J-J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14648239",
+      "doi": "10.1007/s10142-003-0094-6",
+      "title": "Genes associated with the end of dormancy in grapes.",
+      "abstract": "A grape bud EST library was constructed and 4270 ESTs sequenced. The library clones were arrayed for the purpose of investigating the level of gene expression over time, particularly leading up to the buds' release from dormancy. The arrays were hybridized with P(33)-labeled probes produced from samples of buds collected at weekly intervals. These probes covered the time from 9 weeks prior to bud burst until just after the emergence of the shoots. Expression patterns from these genes have been examined. It was found that 74% of the genes in the data set were homologous to known proteins. Genes were then assigned to functional categories according to their primary BLAST match. Of these 13% were involved with photosynthesis, 13% with disease resistance and defense, 5% energy, 12% metabolism, 20% protein production and processing, 25% cell structure and plant growth and the remaining 12% were unclassified The expression pattern of a selection of \"candidate\" genes retrieved from literature previously reporting an association with dormancy changes was assessed. On closer examination most of these genes relate to the oxidative processes and stress responses within the cell. The results of this study show that even in the dormant state, gene expression in the buds is high.",
+      "journal": "Functional & integrative genomics",
+      "year": 2003,
+      "pub_date": "2003-12-01",
+      "authors": "Pacey-Miller Toni; Scott Kirsten; Ablett Effie; Tingey Scott; Ching Ada; ... (+1)",
+      "first_author": "Pacey-Miller Toni",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15000239",
+      "doi": "10.1017/s0953756203008785",
+      "title": "Phylogenetic relationships of Phytophthora ramorum, P. nemorosa, and P. pseudosyringae, three species recovered from areas in California with sudden oak death.",
+      "abstract": "Sudden oak death has been an emerging disease problem in coastal California and has caused significant losses in forest ecosystems in some regions of the state. The causal agent of this disease has been described as Phytophthora ramorum with two other less aggressive species, P. nemorosa and P. pseudosyringae, recovered from some symptomatic plants. The phylogenetic relationship of these species with other members of the genus was examined by sequence alignment of 667 bp of the mitochondrially-encoded cytochrome oxidase II gene and the nuclear encoded rDNA internal transcribed spacer region. P. ramorum was most closely related to P. hibernalis and P. lateralis in trees from both regions, although the specific relationship among species differed depending on the tree. In the cox II tree these species were on a single clade with P. lateralis basal to a group containing P. ramorum and P. hibernalis. On the maximum parsimony ITS tree P. ramorum was most closely affiliated with P. lateralis and in the same clade as P. hibernalis, but with maximum likelihood analysis P. ramorum was basal to a grouping of P. hibernalis and P. lateralis. While bootstrap support was strong for the grouping of these species together, it was not for determining the relationship among them. In contrast to the cox II tree, the clade containing these three species grouped with P. cryptogea, P. drechsleri, P. erythroseptica, and P. syringae in the ITS tree. Since the same isolates of these species were used for both the cox II and ITS sequence analysis, this difference in species grouping suggests either a differential rate of evolutionary divergence for these two regions, incorrect assumptions about alignment of ITS sequences, or different evolutionary histories of the regions under study. Analysis of combined cox II and ITS data sets gave trees where the relationships among these species were the same as for the ITS tree alone, although the results of the partition homogeneity test (P=0.072) suggest caution should be used in interpretation of this data. All analyses supported a close relationship between P. ilicis, P. nemorosa and P. pseudosyringae, although the analysis did not clarify the evolutionary relationships among these three species. Interestingly, these three species had a unique 6 bp deletion in the cox II gene just before the termination codon. While there was some similarity in phylogenetic grouping of these species and morphological characteristics, this was not consistent across all comparisons in the genus. Data would suggest that P. ramorum, P. nemorosa and P. pseudosyringae are phylogenetically distinct new species and not the result of interspecific hybridization.",
+      "journal": "Mycological research",
+      "year": 2003,
+      "pub_date": "2003-12-01",
+      "authors": "Martin Frank N; Tooley Paul W",
+      "first_author": "Martin Frank N",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

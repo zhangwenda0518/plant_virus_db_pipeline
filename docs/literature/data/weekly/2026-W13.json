@@ -1,0 +1,242 @@
+{
+  "week": "2026-W13",
+  "start": "2026-03-23",
+  "end": "2026-03-29",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 35,
+  "by_category": {
+    "Control_Management": 12,
+    "Antiviral_Resistance_Genes": 10,
+    "Host_Virus_Interactions": 8,
+    "New_Virus": 3,
+    "Biotechnology_Applications": 3,
+    "Viral_Diversity_Ecology": 2,
+    "Transmission_Epidemiology": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "41734062",
+      "doi": "10.1016/j.celrep.2026.117034",
+      "title": "Viral action on the auxin signaling repressor IAA16 reveals a conserved negative regulator of plant growth and immunity.",
+      "abstract": "Crop breeding endeavors are frequently constrained by the growth-defense trade-off, and uncoupling this trade-off remains challenging due to the limited knowledge of master regulators. Geminivirus-betasatellite complexes, through the betasatellite-encoded protein βC1, suppress auxin-mediated plant growth and salicylic acid (SA)-mediated immunity. βC1 interacts with and prevents the degradation of plant IAA16 by blocking ATL52-mediated ubiquitination. IAA16 functions as a negative regulator of both auxin and SA signaling pathways. IAA16 interacts with OBP4 to promote the transcription of the SA-signaling repressor NPR3. Notably, regulation of auxin and SA signaling by IAA16, as well as viral manipulation of IAA16 stability, appears to be conserved, as they were documented in tomato plants. Together, our study of viral action on IAA16 reveals a negative regulator of both plant growth and immunity. These findings open fresh avenues for understanding viral manipulation of plant growth and immunity and suggest potential targets for crop improvement.",
+      "journal": "Cell reports",
+      "year": 2026,
+      "pub_date": "2026-03-24",
+      "authors": "Chen Guan-Ping; Wu Ya-Min; Zhao Shi-Xing; Wang Su-Dan; Liu Yin-Quan; ... (+3)",
+      "first_author": "Chen Guan-Ping",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management"
+      ],
+      "virus_name": "双生病毒-卫星复合体",
+      "taxonomy": "",
+      "host_plant": "番茄",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41906034",
+      "doi": "10.1007/s00705-026-06598-1",
+      "title": "Red clover RNA virus 1: functional analysis of ORF2 protein, associations with co-infecting viruses, and seed transmission.",
+      "abstract": "A previously undescribed group of related plant viruses has recently been identified within the Benyviridae family. This group is called reclovirids, named after the type species, red clover RNA virus 1 (RCRV1). The single genomic RNA of most reclovirids contains two main open reading frames (ORFs): a large, well-conserved 5′-proximal ORF1 that encodes a viral replicase and a less conserved 5′-distal ORF2 that encodes a polypeptide of unknown function with a C4-type zinc finger motif. In this study, the ORF2 proteins of RCRV1 and a Gymnadenia rhellicani virus, another reclovirid, are found to be unable to serve as viral movement proteins (MPs) in a complementation assay and fail to suppress RNA silencing induced by double- and single-stranded RNA. Transcriptomic analysis of an RCRV1-infected plant revealed the presence of two other, previously unknown viruses of the Rhabdoviridae and Qinviridae families. Further analysis of publicly available sequencing data demonstrated that two independently studied RCRV1-infected plants both contained co-infecting viruses. In one case, RCRV1 was found together with a virus of genus Varicosavirus, family Rhabdoviridae, which has no MP gene, suggesting that, in the absence of its own MP and MP provided by the co-infecting virus, RCRV1 likely does not move cell to cell in infected plants. Additionally, RCRV1 is shown to be transmitted by seeds. Taken together, the presented data support the view that reclovirids are vertically transmitted persistent viruses.",
+      "journal": "Archives of virology",
+      "year": 2026,
+      "pub_date": "2026-03-29",
+      "authors": "Lazareva Ekaterina A; Lezzhov Alexander A; Chergintsev Denis A; Tolstyko Eugeny A; Selifonov Igor V; ... (+3)",
+      "first_author": "Lazareva Ekaterina A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "red clover RNA virus 1 (RCRV1)",
+      "taxonomy": "Benyviridae, reclovirids",
+      "host_plant": "红三叶草 (red clover)",
+      "location": "未提及",
+      "results": "ORF2蛋白不能互补移动蛋白功能，不抑制RNA沉默；RCRV1与缺少移动蛋白的Varicosavirus共感染；RCRV1通过种子传播。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42043197",
+      "doi": "10.3390/v18040408",
+      "title": "Characterization of the Alfalfa Pollen Virome.",
+      "abstract": "Vertical transmission of plant pathogenic viruses is an important component of viral persistence, survival, and spread in agricultural production systems. This type of transmission is of considerable economic significance as it can cause major crop losses by serving as the initial focus of infection for future epidemics. Vertical transmission occurs when a virus is passed on to offspring either by direct invasion of the developing seed embryo from infected mother plants or through infected pollen grains after fertilization. We have recently demonstrated via high-throughput sequencing that mature seeds of the agriculturally important forage crop alfalfa (Medicago sativa L.) are associated with a broad range of viruses, some of which could potentially spread over long distances via seed. With the exception of the alfalfa mosaic virus, little is currently known about viral transmission through alfalfa pollen and its subsequent impact on the disease epidemiology of the crop. The objective of this study was to screen pollen from diverse alfalfa genotypes for pathogenic viruses and assess their risk of transmission. The pollen was collected from alfalfa genotypes selected for fungal disease resistance and agronomic performance in the USDA ARS pre-breeding program in Prosser, WA.",
+      "journal": "Viruses",
+      "year": 2026,
+      "pub_date": "2026-03-25",
+      "authors": "Nemchinov Lev G; Grinstead Sam; Postnikova Olga A; Irish Brian M",
+      "first_author": "Nemchinov Lev G",
+      "categories": [
+        "Host_Virus_Interactions",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "多种病毒（包括苜蓿花叶病毒等）",
+      "taxonomy": "",
+      "host_plant": "苜蓿 (Medicago sativa L.)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41902970",
+      "doi": "10.1007/s00299-026-03787-9",
+      "title": "Rosemary extract primes cultivar-dependent defense responses in potato against pathogen attack.",
+      "abstract": "Constitutive defense profiles underlie potato resistance to PVX ROTH1 and P. infestans. Treatment with aqueous rosemary extract (ARE) primes susceptible cultivars, enhancing their defense and offering a sustainable strategy to boosts resilience against these major foliar pathogens. Potato (Solanum tuberosum L.) is a major global food crop increasingly threatened by viral and oomycete pathogens, such as potato virus X (PVX) and Phytophthora infestans, whose impact is exacerbated under changing environmental conditions. Although priming strategies offer a sustainable approach to enhance disease resistance, it remains unclear how cultivar-specific metabolic states influence priming efficiency. Infection responses to PVX (strain ROTH1) and a P. infestans isolate were evaluated in four commercial cultivars. Cultivar-dependent differences were observed: Innovator exhibited higher resistance, Kennebec and Spunta greater susceptibility, and Frital-INTA was resistant to PVX ROTH1 but susceptible to P. infestans. 1H NMR metabolomics combined with defense gene expression analysis under non-inoculated conditions revealed distinct cultivar-specific signatures. Resistant and susceptible cultivars segregated into separate clusters, identifying metabolites associated with constitutive defense states. These results indicate that basal metabolic configuration contributes to differential pathogen susceptibility and may influence responsiveness to priming. Spunta, due to its broad cultivation and susceptibility, was selected to assess aqueous rosemary extract (ARE)-mediated priming. ARE treatment reduced PVX ROTH1 accumulation by ~ 70% and decreased P. infestans lesion size by ~ 30%, demonstrating that it enhances potato immunity by integrating both constitutive and inducible defense mechanisms.",
+      "journal": "Plant cell reports",
+      "year": 2026,
+      "pub_date": "2026-03-28",
+      "authors": "Martin Ana Paula; Garcia Lucila; Martínez María Florencia; Burdisso Paula; Villalobos-Piña Liara; ... (+9)",
+      "first_author": "Martin Ana Paula",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "马铃薯X病毒 (PVX)",
+      "taxonomy": "",
+      "host_plant": "马铃薯 (Solanum tuberosum)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41896543",
+      "doi": "10.1038/s41467-026-70753-0",
+      "title": "Polyglutamate-loaded chitosan nanogels reprogram plant metabolism for increased growth and viral resistance.",
+      "abstract": "Asparagine synthetase B (AS-B) is essential for nitrogen metabolism, but its broader physiological functions remain poorly understood. Here we show that the evolutionarily conserved Nicotiana benthamiana NbAS-B confers expression-dependent antiviral resistance and promotes plant growth. Multi-omics analyses indicate that NbAS-B-mediated antiviral immunity relies on glutamate-induced activation of Ca²⁺ signaling through the receptor GLR3.3, whereas its growth-promoting effect results from photosynthetic reprogramming. Building on these insights, we develop polyglutamate-loaded chitosan nanogels (PGANPs) to artificially manipulate this pathway. These nanogels efficiently enter plant tissues and enable sustained in situ release of glutamate, thereby mimicking and amplifying NbAS-B signaling outputs. PGANPs provide long-lasting systemic antiviral immunity while concurrently enhancing plant growth, without incurring metabolic costs. Our work identifies NbAS-B as a dual-function regulator linking metabolic status to immune activation and establishes PGANPs as an eco-friendly, controllable, and durable nanobiotechnology for managing viral diseases in crops.",
+      "journal": "Nature communications",
+      "year": 2026,
+      "pub_date": "2026-03-27",
+      "authors": "Qiao Gang; Liu Changyun; Chen Li; Tian Shaorui; Yang Juan; ... (+7)",
+      "first_author": "Qiao Gang",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "未提及（广义抗病毒）",
+      "taxonomy": "",
+      "host_plant": "本氏烟 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42137034",
+      "doi": "10.5511/plantbiotechnology.25.0922a",
+      "title": "Virus-induced gene silencing in ",
+      "abstract": "For the functional analysis of Dianthus and carnation endogenous genes, we investigated a viral vector derived from the apple latent spherical virus (ALSV) as a tool for reverse genetic analysis. ALSV can infect the aerial parts, such as leaves and flower organs, of Dianthus and carnation plants, without causing viral symptoms. Partial sequences of the chalcone synthase (CHS), 1-aminocyclopropane-1-carboxylate (ACC) synthase (ACS), and ACC oxidase (ACO) genes were cloned into the ALSV vector and then used to infect the plant. Plants infected with ALSV vectors carrying these genes exhibited knockdown phenotypes typical of CHS, ACS, and ACO. Plants infected with the ALSV vector carrying CHS showed white flower petals, whereas those infected with the ALSV vector carrying ACS and ACO generated long-lived flowers. Thus, ALSV vectors can promote virus-induced gene silencing (VIGS) in the petals and gynoecium. ALSV infects plants without viral symptoms and effectively induces VIGS in several flower organs; thus, the ALSV vector is a valuable tool for determining the functions of genes of interest in Dianthus and carnation plants.",
+      "journal": "Plant biotechnology (Tokyo, Japan)",
+      "year": 2026,
+      "pub_date": "2026-03-25",
+      "authors": "Tanase Koji; Kasajima Ichiro; Yoshikawa Nobuyuki",
+      "first_author": "Tanase Koji",
+      "categories": [
+        "Biotechnology_Applications",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "苹果潜伏球形病毒 (ALSV)",
+      "taxonomy": "",
+      "host_plant": "Dianthus (石竹属) 和 carnation (康乃馨)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41902172",
+      "doi": "10.3390/s26062004",
+      "title": "Electrochemical Biosensing Platforms for Rapid and Early Diagnosis of Crop Fungal and Viral Diseases.",
+      "abstract": "Crop fungal and viral diseases cause annual economic losses exceeding USD 150 billion globally, demanding rapid, sensitive, and field-deployable diagnostic technologies. This review critically evaluates recent advances in electrochemical biosensing platforms for early crop pathogen detection, focusing on immunosensors, genosensors, aptasensors, and VOC-based systems. Reported analytical performances demonstrate ultralow detection capabilities, including 0.3 fg mL-1 for viral coat proteins, 15 DNA copies for bacterial pathogens, 0.5 fg µL-1 RNA detection for viroids, and nanomolar-level VOC sensing (35-62 nM), with response times ranging from 2 to 60 min. Comparative analysis reveals that genosensors and aptasensors generally achieve the lowest LODs due to nucleic acid amplification or high-affinity recognition, while immunosensors provide robust protein-level specificity validated against ELISA. Volatile organic compound (VOC) sensors enable non-invasive, pre-symptomatic monitoring but face specificity challenges. Despite strong laboratory performance, practical adoption is limited by matrix-derived electrochemical interference, environmental instability of biorecognition elements, workflow complexity, and insufficient standardization across studies. Emerging innovations, including magnetic bead enrichment, nanoporous and graphene-based electrodes, microfluidic integration, AI-assisted impedance interpretation, and biodegradable substrates, are progressively addressing these bottlenecks. This review emphasizes that successful field translation requires holistic workflow engineering, matrix-matched validation, and harmonized performance metrics rather than incremental sensitivity improvements alone. By integrating analytical chemistry, nanomaterials engineering, and agricultural decision-support frameworks, electrochemical biosensing platforms hold significant potential to enable decentralized, rapid, and sustainable crop disease management.",
+      "journal": "Sensors (Basel, Switzerland)",
+      "year": 2026,
+      "pub_date": "2026-03-23",
+      "authors": "Zheng Yuhong; Fu Li; Yang Jiale; Gao Shansong; Sun Haobo; ... (+1)",
+      "first_author": "Zheng Yuhong",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "多种植物病毒和类病毒（综述）",
+      "taxonomy": "",
+      "host_plant": "多种作物",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42043208",
+      "doi": "10.3390/v18040419",
+      "title": "Virus-Mediated Overexpression of Two Allelic Protein Fragments Elicits Drastically Different Responses in Soybean.",
+      "abstract": "Soybean (Glycine max) is relatively recalcitrant to genetic manipulations; hence, it is often interrogated with transient means such as virus-induced gene silencing (VIGS). We earlier modified cowpea severe mosaic virus (CPSMV) to develop a soybean-friendly VIGS system referred to as QUIN-FZ. Here we report additional calibrations of this system. We enhanced the intra-bacterial stability of plasmid QUIN, which contained a CPSMV RNA1 cDNA embedded with four introns, by adding a fifth intron, resulting in PENTIN. We separately upgraded the plasmid FZ, which contained a modified CPSMV RNA2 cDNA with a cloning site in the middle of the viral polyprotein, by creating another cloning site within the 3' untranslated region, leading to ZY. We next used the new PENTIN-ZY system to investigate a putative soybean protein kinase designated QL18. Virus-mediated overexpression of two allelic, 147-amino-acid (aa) protein fragments, derived from two different QL18 orthologs, elicited drastically different responses in soybeans. While the fragment derived from soybean accession OX20-8 prevented the cognate virus from infecting top young leaves in at least 50% of inoculated seedlings, its allelic counterpart derived from soybean accession PI427105B elicited apical necrosis in 100% of soybean seedlings. By examining progeny viruses as well as viruses encoding chimeras of the two fragments, we identified more than a dozen mutations that abrogated these unique phenotypes. Our findings establish the PENTIN-ZY system as a versatile tool for overexpressing small proteins and protein fragments, accelerating their functional characterization.",
+      "journal": "Viruses",
+      "year": 2026,
+      "pub_date": "2026-03-29",
+      "authors": "Yang Seung Hyun; Favalon Anna; Han Junping; Perdoncini Carvalho Camila; McHale Leah; ... (+2)",
+      "first_author": "Yang Seung Hyun",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "cowpea severe mosaic virus (CPSMV) / PENTIN-ZY系统",
+      "taxonomy": "",
+      "host_plant": "大豆 (Glycine max)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41977679",
+      "doi": "10.3390/plants15071020",
+      "title": "Characterization of the Soybean ",
+      "abstract": "Soybean mosaic virus (SMV) is a major constraint on global soybean (Glycine max (L.) Merr.) production, causing substantial economic losses worldwide. Despite these losses, the potential of resistance genes as a solution remains largely unexplored. In this study, the COPPER CHAPERONE FOR SUPEROXIDE DISMUTASE (GmCCS) was initially employed as a bait to screen the soybean cDNA library, leading to the identification of a protein homologous to Arabidopsis thaliana COP9 signalosome complex subunit 5B (AtCSN5B), designated as GmCSN5B. Quantitative real-time PCR (qRT-PCR) analysis revealed differential expression of GmCSN5B in the SMV-resistant (Qihuang No.1, QH) and susceptible (Nannong 1138-2, NN) variety following SMV-SC3 strain inoculation. Knockdown of GmCSN5B via Bean pod mottle virus (BPMV)-induced gene silencing (VIGS) significantly enhanced SMV resistance compared to control plants. This work further demonstrated that GmCSN5B can interact with the downstream GmVTC1 protein, which was potentially associated with ascorbic acid (AsA; Vitamin C) synthesis. Moreover, GmVTC1 also responded to SMV infection, and its knockdown led to a reduction in endogenous AsA levels within the host, thereby compromising the plant's resistance to SMV. Together, these findings suggest that the GmCCS-GmCSN5B-GmVTC1 pathway in soybean modulates host resistance to SMV through the regulation of AsA synthesis.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2026,
+      "pub_date": "2026-03-26",
+      "authors": "Li Bowen; Wang Tao; Liu Mengzhuo; Wang Liqun; Liu Hui; ... (+4)",
+      "first_author": "Li Bowen",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "大豆花叶病毒(SMV)、菜豆荚斑驳病毒(BPMV，用作VIGS载体)",
+      "taxonomy": "",
+      "host_plant": "大豆",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40966004",
+      "doi": "10.1515/znc-2025-0094",
+      "title": "Integrated experimental and ",
+      "abstract": "Boswellia neglecta has been traditionally used to treat leukemia, cancer, and skin diseases. In this study, seven compounds (1-7) were isolated from the stem methanol extract and identified for the first time from this species using NMR spectroscopy. GC-MS analysis revealed 17 compounds, with olean-12-en-3-one (32.59 %), oleic acid (13.79 %), and β-amyrin (10.66 %) as major constituents. Among the isolated compounds 7 showed the strongest antibacterial activity against Pseudomonas aeruginosa (MIC = 0.23 ± 0.11 mg/mL). Compounds 3-7 demonstrated promising antioxidant activity (IC50 = 1.29-7.05 μg/mL) compared with ascorbic acid (IC50 = 0.86 μg/mL). The methanol extract also exhibited significant cytotoxicity against MCF-7 breast cancer cells (27.25 % viability at 200 μg/mL) and antiviral activity against influenza A (H1N1) (IC50 = 1.5 μg/mL, SI = 21). Molecular docking revealed that compound 7 had strong binding affinity against P. aeruginosa DNA gyrase (-10.8 kcal/mol), surpassing ciprofloxacin (-6.9 kcal/mol). Compounds 3-7 also had stronger affinities (-5.1 to -6.5 kcal/mol) against human peroxiredoxin 5 and (-6.0 to -10.3 kcal/mol) against myeloperoxidase compared to ascorbic acid (-4.7 and -6.0 kcal/mol). These findings highlight the plant's therapeutic potential, warranting further in vivo, preclinical, clinical, and mechanistic investigations.",
+      "journal": "Zeitschrift fur Naturforschung. C, Journal of biosciences",
+      "year": 2026,
+      "pub_date": "2026-03-26",
+      "authors": "Nigussie Gashaw; Dekebo Aman; Abebe Markos; Meressa Asfaw; Negassa Temesgen; ... (+8)",
+      "first_author": "Nigussie Gashaw",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "month": "2000-12",
+  "generated": "2026-07-13 02:59:42",
+  "total": 18,
+  "by_category": {
+    "Host_Virus_Interactions": 7,
+    "New_Virus": 4,
+    "Antiviral_Resistance_Genes": 3,
+    "Molecular_Characterization": 2,
+    "Control_Management": 2,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30831878",
+      "doi": "10.1094/PDIS.2000.84.12.1342A",
+      "title": "A New Tomato-Infecting Begomovirus in Barbados.",
+      "abstract": "In September 1998, tomato plants in Barbados exhibited symptoms of severe leaf curling without marginal chlorosis. These symptoms were often associated with an increase in whitefly (Bemisia tabaci) populations. DNA was extracted from leaf tissue from symptomatic tomato plants. Polymerase chain reaction (PCR) was performed with DNA-A degenerate primer pair PAC1v1978/PAV1c715, which amplifies part of the rep gene, the cp gene, and the common region (CR), and with DNA-B primer pair PBC1v2039/PBV1c800, which amplifies part of the bc1 and bv1 genes and the CR (2). The amplified PCR fragments of DNA-A and DNA-B were 1.3 and 1.4 kb, respectively, which are the expected sizes from bipartite, whitefly-transmitted geminiviruses of the Western Hemisphere (2). DNA sequence of the cloned fragments of DNA-A and DNA-B are available as GenBank No. AF213013 and AF213014, respectively. The 181 nucleotides of the CR of DNA-A had a nucleotide identity of 96% with the CR of DNA-B, which indicates that this is a bipartite begomovirus. Pairwise comparisons using DNASTAR (DNASTAR, Madison, WI) of the sequenced part of DNA-A was most similar to Cabbage leaf curl virus (CaLCuV, 69%, U65529) and Squash leaf curl virus extended host range isolate (SqLCV-E, 64%, M38183), and <59% to 13 other bipartite Western Hemisphere geminiviruses and Tomato yellow leaf curl virus from Israel (X15656). Pairwise comparisons of the DNA-B fragment sequence was 59 and 55% similar to CaLCuV (U65530) and SqLCV-E (M38182), respectively. Phylogenetic analysis of DNA-A of the major groups of Western Hemisphere begomoviruses placed the Barbados tomato-infecting geminivirus in the cluster with CaLCuV and SqLCV-E (1), while DNA-B analysis placed it with CaLCuV. The DNA-A amplified fragment was used as a probe at high stringency with the dot blot hybridization assay using the Genius II labeling and detection kit (Boeringer Mannheim) to detect this geminivirus in tomato and several other plant species, which had typical geminiviral symptoms. Strong hybridization signals were obtained for all 23 tomato plants with symptoms, weak signals were observed for two of three muskmelon and two of seven watermelon plants, all with leaf curling symptoms. No hybridization signals were observed for peppers with leaf curling symptoms and two weed species, Macroptilium lathyroides and Rhynchosia minima, with golden mosaic symptoms or with the symptomless plant species used as negative controls. The weak signals observed from watermelon and muskmelon samples indicated the presence of low virus titer or geminiviruses distinct from this tomato virus. The presence of viral DNA in these two plant species was confirmed by PCR with degenerate primers described above. Resulting database searches of sequences in the GenBank revealed that the Barbados tomato virus appears to be a previously unreported virus. This new virus is given the provisional name Tomato leaf curl Barbados virus (ToLCBBV). References: (1) J. C. Faria et al. Phytopathology 84:321, 1994. (2) M. R. Rojas et al. Plant Dis. 77:340, 1993.",
+      "journal": "Plant disease",
+      "year": 2000,
+      "pub_date": "2000-12-01",
+      "authors": "Roye M E; Henry N M; Burrell P D; McLaughlin W A; Nakhla M K; ... (+1)",
+      "first_author": "Roye M E",
+      "categories": [
+        "New_Virus",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "Tomato leaf curl Barbados virus (ToLCBBV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "番茄 (Solanum lycopersicum)、甜瓜、西瓜",
+      "location": "巴巴多斯",
+      "results": "测序和系统发育分析表明病毒为双组分双生病毒，与Cabbage leaf curl virus和Squash leaf curl virus亲缘较近，为新种。斑点杂交检测到番茄、甜瓜、西瓜中有病毒，甜椒和杂草中未检测到。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11070002",
+      "doi": "10.1128/jvi.74.23.11073-11080.2000",
+      "title": "Identification and functional analysis of the turnip yellow mosaic tymovirus subgenomic promoter.",
+      "abstract": "Most plant viruses rely on the production of subgenomic RNAs (sgRNAs) for the expression of their genes and survival in the plant. Although this is a widely adopted strategy among viruses, the mechanism(s) whereby sgRNA production occurs remains poorly defined. Turnip yellow mosaic tymovirus (TYMV) is a positive-stranded RNA virus that produces an sgRNA for the expression of its coat protein. Here we report that the subgenomic promoter sequence of TYMV is located on a 494-nucleotide fragment, containing previously identified highly conserved sequence elements, which are shown here to be essential for promoter function. After duplication, the subgenomic promoter can be inserted into the coat protein open reading frame, giving rise to the in vivo production of a second sgRNA. It is suggested that this promoter can function when contained on a different molecule than viral genomic RNA. This interesting trait may be of general use for plant and plant virus research.",
+      "journal": "Journal of virology",
+      "year": 2000,
+      "pub_date": "2000-12-01",
+      "authors": "Schirawski J; Voyatzakis A; Zaccomer B; Bernardi F; Haenni A L",
+      "first_author": "Schirawski J",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Turnip yellow mosaic tymovirus (TYMV)",
+      "taxonomy": "Tymovirus属，正单链RNA病毒",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11206971",
+      "doi": "10.1023/a:1026526314875",
+      "title": "Constitutive expression of interferon-induced human MxA protein in transgenic tobacco plants does not confer resistance to a variety of RNA viruses.",
+      "abstract": "MxA is a key component in the interferon-induced antiviral defense in humans. After viral infections, MxA is rapidly induced and accumulates in the cytoplasm. The multiplication of many RNA viruses, including all bunyaviruses tested so far, is inhibited by MxA. These findings prompted us to express MxA in plants in an attempt to create resistance to tospoviruses. Here, we report the generation of transgenic tobacco plants that constitutively express MxA under the control of the 35 S cauliflower mosaic virus promotor. Northern and western blot analysis confirmed the expression of MxA in several transgenic plant lines. MxA expression had no obvious detrimental effects on plant growth and fertility. However, challenge experiments with tomato spotted wilt virus, tomato chlorotic spot virus, and groundnut ringspot virus revealed no increased resistance of MxA-transgenic tobacco plants to tospovirus infections. Neither was the multiplication of tobacco mosaic virus, cucumber mosaic virus and potato virus Y inhibited in MxA-transgenic plants. The results indicate that the expression of human MxA alone does not enhance virus resistance in planta.",
+      "journal": "Transgenic research",
+      "year": 2000,
+      "pub_date": "2000-12-01",
+      "authors": "Frese M; Prins M; Ponten A; Goldbach R W; Haller O; ... (+1)",
+      "first_author": "Frese M",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "多种RNA病毒（番茄斑萎病毒、番茄褪绿斑病毒、花生环斑病毒、烟草花叶病毒、黄瓜花叶病毒、马铃薯Y病毒）",
+      "taxonomy": "",
+      "host_plant": "烟草",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19270998",
+      "doi": "",
+      "title": "A survey of phytoparasitic nematodes on cultivated and non-cultivated plants in northwestern egypt.",
+      "abstract": "Surveys were conducted in Alexandria, El-Behera, and Matrouh Governorates in northwestern Egypt during the 1994-1998 cropping seasons to study the occurrence, population density, host associations, and distribution of phytoparasitic nematodes associated with 35 major crops, grasses, and weeds. A total of 220 soil and root samples containing mixed populations of 26 genera and 38 species of phytoparasitic nematodes was analyzed; three known genera and 13 known species are reported for the first time in northwestern Egypt. Root-knot nematodes with 34 occurrences were the most frequently encountered group of nematodes, followed by spiral, stunt, ring, lesion, lance, and dagger nematodes with 19, 18, 15, 9, 8, and 7 occurrences, respectively. New species records are Boleodorus pakistanensis, Criconemella sphaerocephala, Discocriconemella sphaerocephaloides, Hemicriconemoides cocophilus, Hemicycliophora thienmanni, Hoplolaimus clarissimus, Irantylenchus clavidorus, Merlinius nanus, Paratylenchus projectus, Tylenchorhynchus ebriensis, Tylenchus afghanicus, T. exiguus, Xiphinema basilgoodeyi, and X. ensiculiferum. Survey results showed new host plant records for most of the identified nematode species in Egypt.",
+      "journal": "Journal of nematology",
+      "year": 2000,
+      "pub_date": "2000-12-01",
+      "authors": "Ibrahim I K; Handoo Z A; El-Sherbiny A A",
+      "first_author": "Ibrahim I K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12483571",
+      "doi": "10.2323/jgam.46.297",
+      "title": "Four new species of Kockovaella isolated from plant leaves collected in Vietnam.",
+      "abstract": "Five ballistoconidiogenous yeast strains, isolated from plant leaves at Cuc Phuong National Forest of Ninh Binh, Vietnam, were assigned to the genus Kockovaella based on morphological and chemotaxonomical characteristics. They represent four new species based on analyses of 18S rDNA sequence, sequences of internal transcribed spacer regions, and DNA-DNA reassociation experiments. Four new species, Kockovaella calophylli (1 strain), Kockovaella cucphuongensis (2 strains), Kockovaella litseae (1 strain), and Kockovaella vietnamensis (1 strain) are proposed for these strains.",
+      "journal": "The Journal of general and applied microbiology",
+      "year": 2000,
+      "pub_date": "2000-12-01",
+      "authors": "Luong Dao Thi; Takashima Masako; Van Pham; Dung Nguyen Lan; Nakase Takashi",
+      "first_author": "Luong Dao Thi",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11118409",
+      "doi": "",
+      "title": "The effects of hybridization in plants on secondary chemistry: implications for the ecology and evolution of plant-herbivore interactions.",
+      "abstract": "Natural hybridization is a frequent phenomenon in plants. It can lead to the formation of new species, facilitate introgression of plant traits, and affect the interactions between plants and their biotic and abiotic environments. An important consequence of hybridization is the generation of qualitative and quantitative variation in secondary chemistry. Using the literature and my own results, I review the effects of hybridization on plant secondary chemistry, the mechanisms that generate patterns of chemical variation, and the possible consequences of this variation for plants and herbivores. Hybrids are immensely variable. Qualitatively, hybrids may express all of the secondary chemicals of the parental taxa, may fail to express certain parental chemicals, or may express novel chemicals that are absent in each parent. Quantitatively, concentrations of parental chemicals may vary markedly among hybrids. There are five primary factors that contribute to variation: parental taxa, hybrid class (F(1), F(2), etc.), ploidy level, chemical class, and the genetics of expression (dominance, recessive vs. additive inheritance). This variation is likely to affect the process of chemical diversification, the potential for introgression, the likelihood that hybrids will facilitate host shifts by herbivores, and the conditions that might lead to enhanced hybrid susceptibility and lower fitness.",
+      "journal": "American journal of botany",
+      "year": 2000,
+      "pub_date": "2000-12-01",
+      "authors": "Orians C M",
+      "first_author": "Orians C M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11086142",
+      "doi": "10.1099/0022-1317-81-12-3107",
+      "title": "A novel RNA mycovirus in a hypovirulent isolate of the plant pathogen Diaporthe ambigua.",
+      "abstract": "Hypovirulent isolates of the fruit tree fungal pathogen Diaporthe ambigua have previously been shown to harbour a double-stranded (ds)RNA genetic element of about 4 kb. In this study, we established the complete cDNA sequence of this dsRNA, which represents a replicative form of a positive-strand RNA virus that we have named D. ambigua RNA virus (DaRV). The nucleotide sequence of the genome is 4113 bp and has a GC content of 53%. Two large ORFs are present in the same reading frame. They are most probably translated by readthrough of a UAG stop codon in the central part of the genome. The longest possible translation product (p125) has a predicted molecular mass of about 125 kDa. A significant homology can be found to the non-structural proteins of carmoviruses of the positive-strand RNA virus family TOMBUSVIRIDAE: These proteins also include the conserved RNA-dependent RNA polymerase (RDRP) domain. In contrast to the genome organization of these plant viruses, no ORF is present at the 3' end of the DaRV genome that encodes a coat protein. Therefore, it is proposed that DaRV is not encapsidated but that it occurs as RNA-RDRP complexes and/or that it might be associated with cell membranes. Interestingly, six putative transmembrane helices are predicted in the N-terminal part of p56 (translation product of the first ORF, N-terminal part of p125), which might direct and anchor the viral complex to membranes. DaRV is a mycovirus with a unique genome organization and has a distant relationship to the plant virus family TOMBUSVIRIDAE:",
+      "journal": "The Journal of general virology",
+      "year": 2000,
+      "pub_date": "2000-12-01",
+      "authors": "Preisig O; Moleleki N; Smit W A; Wingfield B D; Wingfield M J",
+      "first_author": "Preisig O",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11123796",
+      "doi": "10.1046/j.1365-313x.2000.00902.x",
+      "title": "Oxidative burst and cognate redox signalling reported by luciferase imaging: identification of a signal network that functions independently of ethylene, SA and Me-JA but is dependent on MAPKK activity.",
+      "abstract": "Recognition of avirulent microbial pathogens activates an oxidative burst leading to the accumulation of reactive oxygen intermediates (ROIs), which are thought to integrate a diverse set of defence mechanisms resulting in the establishment of plant disease resistance. A novel transgenic Arabidopsis line containing a gst1:luc transgene was developed and employed to report the temporal and spatial dynamics of ROI accumulation and cognate redox signalling in response to attempted infection by avirulent strains of Pseudomonas syringae pv. tomato (Pst). Strong engagement of the oxidative burst was dependent on the presence of functional Pst hrpS and hrpA gene products. Experiments employing pharmacological agents suggested that at least two distinct sources, including an NADPH oxidase and a peroxidase-type enzyme, contributed to the generation of redox cues. The analysis of gst1 and pal1 gene expression in nahG, coi1 and etr1 plants suggested that engagement of the oxidative burst and cognate redox signalling functioned independently of salicylic acid, methyl jasmonate and ethylene. In contrast, studies using a panel of protein kinase and phosphatase inhibitors and in-gel kinase assays in these mutant backgrounds suggested that a 48 kDa mitogen-activated protein kinase (MAPK) activity was required for the activation of gst1 and pal1 in response to redox cues. Thus the engagement of a bifurcating redox signalling pathway possessing a MAPK module may contribute both to the establishment of plant disease resistance, and to the development of cellular protectant mechanisms.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2000,
+      "pub_date": "2000-12-01",
+      "authors": "Grant J J; Yun B W; Loake G J",
+      "first_author": "Grant J J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11101835",
+      "doi": "10.1038/82521",
+      "title": "The transcriptome of Arabidopsis thaliana during systemic acquired resistance.",
+      "abstract": "Infected plants undergo transcriptional reprogramming during initiation of both local defence and systemic acquired resistance (SAR). We monitored gene-expression changes in Arabidopsis thaliana under 14 different SAR-inducing or SAR-repressing conditions using a DNA microarray representing approximately 25-30% of all A. thaliana genes. We derived groups of genes with common regulation patterns, or regulons. The regulon containing PR-1, a reliable marker gene for SAR in A. thaliana, contains known PR genes and novel genes likely to function during SAR and disease resistance. We identified a common promoter element in genes of this regulon that binds members of a plant-specific transcription factor family. Our results extend expression profiling to definition of regulatory networks and gene discovery in plants.",
+      "journal": "Nature genetics",
+      "year": 2000,
+      "pub_date": "2000-12-01",
+      "authors": "Maleck K; Levine A; Eulgem T; Morgan A; Schmid J; ... (+3)",
+      "first_author": "Maleck K",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11095723",
+      "doi": "10.1073/pnas.250271997",
+      "title": "Predicting durability of a disease resistance gene based on an assessment of the fitness loss and epidemiological consequences of avirulence gene mutation.",
+      "abstract": "Durability of plant disease resistance (R) genes may be predicted if the cost of pathogen adaptation to overcome resistance is understood. Adaptation of the bacterial blight pathogen, Xanthomonas oryzae pv. oryzae (Xoo), to virulence in rice is the result of the loss of pathogen avirulence gene function, but little is known about its effect on aggressiveness under field conditions. We evaluated the cost in pathogenic fitness (aggressiveness and persistence) associated with adaptation of Xoo to virulence on near-isogenic rice lines with single R genes (Xa7, Xa10, and Xa4) at two field sites endemic for bacterial blight. Disease severity was high in all 3 years on all lines except the line with Xa7. Of two Xoo lineages (groups of strains inferred to be clonally related based on DNA fingerprinting) detected, one, lineage C, dominated the pathogen population at both sites. All Xoo strains were virulent to Xa4, whereas only lineage C strains were virulent to Xa10. Only a few strains of lineage C were virulent to Xa7. Adaptation to virulence on Xa7 occurred through at least four different pathways and was associated with a reduction in aggressiveness. Loss of avirulence and reduced aggressiveness were associated with mutations at the 3' terminus of the avrXa7 allele. Strains most aggressive to Xa7 were not detected after the second year, suggesting they were less persistent than less aggressive strains. These experiments support the prediction that Xa7 would be a durable R gene because of a fitness penalty in Xoo associated with adaptation to Xa7.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2000,
+      "pub_date": "2000-12-05",
+      "authors": "Vera Cruz C M; Bai J; Ona I; Leung H; Nelson R J; ... (+2)",
+      "first_author": "Vera Cruz C M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11148281",
+      "doi": "10.1105/tpc.12.12.2323",
+      "title": "The pseudomonas AvrPto protein is differentially recognized by tomato and tobacco and is localized to the plant plasma membrane.",
+      "abstract": "The avrPto gene of Pseudomonas syringae pv tomato triggers race-specific resistance in tomato plants carrying Pto, a resistance gene encoding a protein kinase. When introduced into P. s. tabaci, avrPto triggers resistance in tobacco W38 plants that carry the corresponding R gene. The AvrPto protein is believed to be secreted into host cells through the bacterial type III secretion pathway, where it activates disease resistance in tomato by interacting with Pto. We report here the identification of two distinct regions in AvrPto that determine the recognition specificity of this protein in tomato and tobacco. Point mutations in the central region disrupted the avirulence activity in tomato but not in tobacco. Conversely, point mutations in the C-terminal region abolished the avirulence in tobacco but not in tomato. We further report that AvrPto was localized to the plasma membrane of plant cells. Disrupting the membrane association by mutating a putative myristoylation motif of AvrPto abolished the avirulence activity in both tomato and tobacco. These findings demonstrate that AvrPto is recognized differently by the R genes in tomato and tobacco and that the recognition of AvrPto probably is associated with the plasma membrane.",
+      "journal": "The Plant cell",
+      "year": 2000,
+      "pub_date": "2000-12-01",
+      "authors": "Shan L; Thara V K; Martin G B; Zhou J M; Tang X",
+      "first_author": "Shan L",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11101813",
+      "doi": "10.1038/82436",
+      "title": "Fungal pathogen protection in potato by expression of a plant defensin peptide.",
+      "abstract": "Defensins are small cysteine-rich peptides with antimicrobial activity. We demonstrate that the alfalfa antifungal peptide (alfAFP) defensin isolated from seeds of Medicago sativa displays strong activity against the agronomically important fungal pathogen Verticillium dahliae. Expression of the alfAFP peptide in transgenic potato plants provides robust resistance in the greenhouse. Importantly, this resistance is maintained under field conditions. There have been no previous demonstrations of a single transgene imparting a disease resistance phenotype that is at least equivalent to those achieved through current practices using fumigants.",
+      "journal": "Nature biotechnology",
+      "year": 2000,
+      "pub_date": "2000-12-01",
+      "authors": "Gao A G; Hakimi S M; Mittanck C A; Wu Y; Woerner B M; ... (+4)",
+      "first_author": "Gao A G",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

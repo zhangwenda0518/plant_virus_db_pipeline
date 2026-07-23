@@ -1,0 +1,283 @@
+{
+  "month": "1998-01",
+  "generated": "2026-07-13 02:59:42",
+  "total": 27,
+  "by_category": {
+    "Host_Virus_Interactions": 6,
+    "Control_Management": 6,
+    "New_Virus": 3,
+    "Molecular_Characterization": 3,
+    "Detection_Methods": 2,
+    "Antiviral_Resistance_Genes": 2,
+    "Viral_Diversity_Ecology": 2,
+    "Biotechnology_Applications": 2,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30857058",
+      "doi": "10.1094/PDIS.1998.82.1.129C",
+      "title": "Banana Die-Back Virus - a New Virus Infecting Banana in Nigeria.",
+      "abstract": "Two viruses naturally infect Musa in Nigeria: banana streak badnavirus (BSV) and cucumber mosaic cucumovirus (CMV). During a recent field survey at Ibadan (Nigeria), some severely stunted banana plants (cv. Valery) were found that tested negative for CMV, banana bunchy-top virus, and BSV. The plants had symptoms of leaf crinkling, leaf necrosis, and cigar-leaf die-back. Subsequent suckers from the same mats were progressively more stunted. A 28- to 30-nm isometric virus was purified, and used for the production of antibodies, from the affected plants with (NH4)2SO4 to precipitate the virus. The antiserum (titer of 1:10,000) was used in enzyme-linked immunosorbent assay and immunosorbent electron microscopy to detect the virus. Mechanical inoculation with partially purified virus preparations resulted in stunting and development of pinpoint chlorotic lesions on Vigna unguiculata TVu-76 and symptomless systemic infection of Nicotiana occidentalis. The virus was not mechanically transmissible from N. occidentalis to banana. A serological relationship between this virus, banana die-back virus (BDBV), and tobacco ringspot, tomato ringspot, and cacao necrosis nepoviruses was found. The nematode species around the affected banana plants were isolated: Helicotylenchus multicinctus (Cobb) Golden was the dominant species, low numbers of H. dihystera (Cobb) Sher were present, but no virustransmitting nematodes were found in soil or banana roots. Further studies are needed to determine the mode of spread of BDBV, the implications for banana/plantain production in sub-Saharan Africa, and the safe international movement of germplasm.",
+      "journal": "Plant disease",
+      "year": 1998,
+      "pub_date": "1998-01-01",
+      "authors": "Hughes J d'A; Speijer P R; Olatunde O",
+      "first_author": "Hughes J d'A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Banana die-back virus (BDBV)",
+      "taxonomy": "Nepovirus（暂定）",
+      "host_plant": "香蕉（Musa, cv. Valery）；豇豆（Vigna unguiculata TVu-76）；西方烟草（Nicotiana occidentalis）",
+      "location": "尼日利亚伊巴丹",
+      "results": "分离到28-30nm等轴病毒，与烟草环斑等nepovirus血清学相关；能引起豇豆局部坏死，烟草系统感染但不传回香蕉。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9687881",
+      "doi": "10.1007/s007050050372",
+      "title": "Foveavirus, a new plant virus genus.",
+      "abstract": "Foveavirus is a novel genus of plant viruses with helically constructed filamentous particles ca. 800 nm long, typified by apple stem pitting virus (ASPV). Virions do not contain lipids or carbohydrates, have a positive sense, single-stranded, polyadenylated RNA genome 8.4 to 9.3 kb in size, and a single type of coat protein with a size of 28 to 44 kDa. The genome of definitive viral species is made up of five ORFs encoding respectively, the replication-related proteins (ORF 1), the putative movement proteins (ORF 2 to 4, constituting the triple block gene), and the coat protein (ORF 5). Virions accumulate in the cytoplasm, where replication is likely to occur with a strategy comparable to that of potexviruses, based on direct expression of the 5'-proximal ORF, and expression of downstream ORFs through subgenomic RNAs. No vector is known. Virus transmission is by grafting, and dispersal is through infected propagating material. The genome structure and organization (i.e., number and order of genes) closely resembles that of the genera Potexvirus, Carlavirus and Allexvirus, but ORF 1 and the coat protein cistron (ASPV only) are significantly larger.",
+      "journal": "Archives of virology",
+      "year": 1998,
+      "pub_date": "1998-01-01",
+      "authors": "Martelli G P; Jelkmann W",
+      "first_author": "Martelli G P",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Foveavirus属（典型种：苹果茎痘病毒ASPV）",
+      "taxonomy": "新属，与Potexvirus、Carlavirus、Allexvirus属亲缘关系近",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9926399",
+      "doi": "10.1023/a:1008065704102",
+      "title": "A core promoter hairpin is essential for subgenomic RNA synthesis in alfalfa mosaic alfamovirus and is conserved in other Bromoviridae.",
+      "abstract": "The nucleotide sequence immediately in front of the initiation site for subgenomic RNA 4 synthesis on RNA 3 minus strand, which has been proved to function as a core promoter, was inspected for secondary structure in 26 species of the plant virus family Bromoviridae. In 23 cases a stable hairpin could be predicted at a distance of 3 to 8 nucleotides from the initiation site of RNA 4. This hairpin contained several conserved nucleotides that are essential for core promoter activity in brome mosaic virus (R.W. Siegel, S. Adkins and C.C. Kao, Proc. Natl. Acad. Sci. USA 94, 11238-11243, 1997). Phylogenetic evidence and evidence from the effect of artificial mutations reported in the literature (E.A.G. van der Vossen, T. Notenboom and J.F. Bol, Virology 212, 663-672, 1995) indicate that the stem-loop structure is essential for promoter activity in alfalfa mosaic virus and probably in other Bromoviridae. Stability of the hairpin is most pronounced in the genera Alfamovirus and Ilarvirus which display genome activation by coat protein. The hypothesis is put forward that with these viruses the coat protein is needed for the viral RNA polymerase to interact with the core promoter hairpin leading to access for the enzyme to the initiation site of RNA 4.",
+      "journal": "Virus genes",
+      "year": 1998,
+      "pub_date": "1998-01-01",
+      "authors": "Jaspars E M",
+      "first_author": "Jaspars E M",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "苜蓿花叶病毒（alfalfa mosaic alfamovirus）及Bromoviridae科其他病毒",
+      "taxonomy": "植物病毒科Bromoviridae，属Alfamovirus、Ilarvirus等",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9760540",
+      "doi": "10.1385/0-89603-385-6:521",
+      "title": "Mechanisms of resistance. Expression of coat protein.",
+      "abstract": "Expression of viral CP genes in transgenic plants can lead to virus resistance by interference of either the transcript or the protein with virus infection. Dependence of resistance on CP accumulation can be most convincingly shown by comparison of plants that accumulate CP with plants that accumulate a nontranslatable CP transcript. Even in cases in which CP accumulation is required, the degree of resistance does not always correlate with CP levels in transgenic plants. In cases in which CPMR can be overcome by inoculation with viral RNA instead of virions, interference with virion disassembly is the likely cause of resistance. Classical crossprotection can also sometimes be overcome by RNA inoculation, and, in this case, appears to work by a similar mechanism. There is no evidence yet that CPMR is caused by a nonspecific plant defense response that might be triggered by the accumulating CP. Measurement of virus accumulation in protoplasts prepared from transgenic plants was used to show interference with early events of virus infection. There is no clear evidence yet for inhibition of local virus spread in transgenic plants. A reduced rate of virus accumulation in inoculated leaves can usually also be explained with reduced rate of replication. However, in the case of CPMR to CMV, it appears that early events, as well as systemic spread, are affected. Reduced vector transmission of virus infection from inoculated transgenic plants to nontransgenic plants has been observed. It is not known whether this is just a consequence of lower virus levels in the transgenic plants or whether direct interference with acquisition and transmission by the vector is also involved. In addition to virion formation, CP can function in different ways in plant virus infections. Replication, long-distance spread, and vector transmission can also depend on the presence of CP. Expression of genes encoding nonfunctional CPs in transgenic plants can be tried in order to interfere with normal CP function. Knowledge of CP function(s) in a particular plant-virus interaction will be useful to design gene constructs. Since CP accumulation levels in transgenic plants do not always correlate with resistance, newly generated transgenic plant lines are now frequently tested for virus resistance before further characterization. However, if the objective of a transformation experiment is also to study the mechanism of CPMR, it is necessary to determine transcript and protein levels in the transgenic plants. Gene constructs encoding nontranslatable and antisense CP transcripts should be included in the experiment. If possible, transgenic plants should be inoculated with virions and viral nucleic acid, and replication in isolated protoplasts should be determined.",
+      "journal": "Methods in molecular biology (Clifton, N.J.)",
+      "year": 1998,
+      "pub_date": "1998-01-01",
+      "authors": "Reimann-Philipp U",
+      "first_author": "Reimann-Philipp U",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "多种植物病毒（如黄瓜花叶病毒CMV）",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9760534",
+      "doi": "10.1385/0-89603-385-6:455",
+      "title": "Assaying levels of plant virus by ELISA.",
+      "abstract": "",
+      "journal": "Methods in molecular biology (Clifton, N.J.)",
+      "year": 1998,
+      "pub_date": "1998-01-01",
+      "authors": "Copeland R",
+      "first_author": "Copeland R",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "未提及（植物病毒）",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9541618",
+      "doi": "10.1007/s007050050291",
+      "title": "Peanut yellow spot virus is a member of a new serogroup of Tospovirus genus based on small (S) RNA sequence and organization.",
+      "abstract": "Peanut yellow spot virus (PYSV) represents a distinct tospovirus species based on serology and nucleic acid hybridization. THe sequence of the S RNA was 2970 nucleotides with 22 nucleotide long inverted repeats (with three mismatches) at the termini. The coding was ambisense with a long open reading frame (ORF) in each strand. The 5'-large ORF (1,400 nucleotides in the viral sense (v) strand) encoded a protein with a predicted size of 53.2 kDa that was identified as the nonstructural (NSs) protein based on 16-21% sequence identity and 42-48% sequence similarity with other tospoviruses. A 3' ORF (741 nucleotides) in the virus complementary (vc) sense encoded a 28.0 kDa protein that was identified as the nucleocapsid (N) gene based on immuno-blot analysis of the in vitro expressed protein with PYSV polyclonal antiserum. The predicted N protein had 24-28% amino acid sequence identity and 44-51% sequence similarity with the members of other serogroups. In contrast to other tospoviruses, a third ORF (204 nucleotides) occurred in the vc strand, which could encode a protein with a predicted size of 7.5 kDa with two strong hydrophobic regions. The low degree of homology of N and NSs protein sequences with other serogroup members coupled with an additional ORF suggests that PYSV should be classified as a distinct species of the Tospovirus genus. This conclusion also is supported by the absence of serological cross reaction with other serogroups, and biological characteristics including thrips transmission, symptoms and host range.",
+      "journal": "Archives of virology",
+      "year": 1998,
+      "pub_date": "1998-01-01",
+      "authors": "Satyanarayana T; Gowda S; Reddy K L; Mitchell S E; Dawson W O; ... (+1)",
+      "first_author": "Satyanarayana T",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Peanut yellow spot virus (PYSV)",
+      "taxonomy": "",
+      "host_plant": "花生 (peanut)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30857044",
+      "doi": "10.1094/PDIS.1998.82.1.117",
+      "title": "A Multivirus Epidemic of Tomatoes in Alabama.",
+      "abstract": "During 1992, a multivirus epidemic reduced tomato production by as much as 25% in the major tomato-growing region of Alabama. Estimated yield losses of 100% resulted from the epidemic in over 250 ha in two counties of North Alabama. Cucumber mosaic cucumovirus (CMV), alone or in combination with potato potyvirus Y (PVY) and/or tobacco etch potyvirus (TEV), was responsible for the crop failure. CMV was detected alone or in combination with PVY and/or TEV in over 70% of the samples tested and was present in 90% of the fields surveyed. In 1993, 21 tomato fields were monitored weekly from transplanting through harvest for CMV, PVY, TEV, tobacco mosaic tobamovirus, and tomato spotted wilt tospovirus. All 5 viruses were detected, with CMV occurring most frequently. Incidence of CMV at the 61% level or higher was found in 16 of the 21 fields surveyed. Tomatoes transplanted in April and May were least effected and had relatively low virus incidence until late in their development. Tomatoes transplanted in June and July were infected at an earlier age, had the highest virus incidence, were the most severely affected, and suffered the greatest loss in yield. In 1994,Aphis gossypii, the cotton aphid, was the most common virus vector found during an aphid monitoring/virus spread study. Populations of A. gossypii peaked in late June, immediately preceding a period of rapid CMV incidence and spread.",
+      "journal": "Plant disease",
+      "year": 1998,
+      "pub_date": "1998-01-01",
+      "authors": "Sikora Edward J; Gudauskas Robert T; Murphy John F; Porch Daniel W; Andrianifahanana Mahefa; ... (+4)",
+      "first_author": "Sikora Edward J",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Cucumber mosaic virus (CMV), Potato virus Y (PVY), Tobacco etch virus (TEV), Tobacco mosaic virus (TMV), Tomato spotted wilt virus (TSWV)",
+      "taxonomy": "",
+      "host_plant": "番茄",
+      "location": "美国阿拉巴马州",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9839194",
+      "doi": "10.1002/(SICI)1099-1271(1998090)13:5<295::AID-BIO493>3.0.CO;2-W",
+      "title": "Using non-radioactive probes on plants: a few examples.",
+      "abstract": "Due to costs in using and disposing of radiochemicals and to health considerations, we have been developing applications which include non-isotopic detection of DNA and proteins using chemiluminescence. Our major interests are in the detection of viral nucleic acids and in the analysis of transgenic plants. Generally, probes were labelled with digoxigenin, either by the random priming method or by PCR, and then detected with CSPD or CDP-Star. We routinely use a tissue blotting protocol for diagnosing TYLCV, a plant virus becoming a post in the Mediterranean region. Test results were comparable with those using the same radiolabelled probe. When total nucleic acids are extracted from the plant samples and used in dot-blot or Southern blot assays, viral DNAs are promptly detected by chemiluminescence. In transgenic plants, chemiluminescence was used to detect the transgene on genomic Southern blots, the transgenic mRNAs on Northern blots, and the transgenic protein on Western blots. In Southern and Northern blots, the quality of the results obtained was usually satisfactory, but not as good as with a radiolabelled probe, the main problem being the signal-to-background ratio. Our goal is now to improve the quality of results in demanding applications such as genomic Southern blots, by reducing the background on membranes.",
+      "journal": "Journal of bioluminescence and chemiluminescence",
+      "year": 1998,
+      "pub_date": "1998-01-01",
+      "authors": "Accotto G P; Vaira A M; Noris E; Vecchiati M",
+      "first_author": "Accotto G P",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "TYLCV（番茄黄化曲叶病毒）",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9474797",
+      "doi": "10.1098/rspb.1998.0274",
+      "title": "The phylogeography of the darkling beetle, Hegeter politus, in the eastern Canary Islands.",
+      "abstract": "We investigated the phylogeography of Hegeter politus, a saprophagous, flightless darkling beetle endemic to the eastern Canary Islands, using a fragment of the mitochondrial COI gene. Distance and parsimony based gene trees of the mitotypes identified revealed a striking association between mitotype clades and sampling locations. The branching order of the clades suggested that the colonization of the islands by Hegeter politus proceeded from the southern part of Fuerteventura in a north-northeast direction to Lanzarote and the smaller islands. Based on this, a colonization scenario compatible with the reported geological ages and volcanisms of the various parts of the islands has been proposed. The high divergence of the beetles collected from the extreme south of Fuerteventura (the Jandía peninsula) from all other samples has led us to propose that they may be from a new species that has not been described previously. The ecological isolation of Jandía from the rest of Fuerteventura by the sand dunes that cover its narrow isthmus in the north, and the existence of many plant and animal endemisms unique to Jandía, lend supportive evidence to our proposal. The similarities between the evolution of island endemics in the Hawaiian and Canary archipelagos have been discussed. We conclude that many endemics in the Canary archipelago, like the Hawaiian Islands, are most likely to have originated from post-colonization differentiation and divergence.",
+      "journal": "Proceedings. Biological sciences",
+      "year": 1998,
+      "pub_date": "1998-01-22",
+      "authors": "Juan C; Ibrahim K M; Oromí P; Hewitt G M",
+      "first_author": "Juan C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9562896",
+      "doi": "10.1023/a:1007966229595",
+      "title": "Origin, adaptation and evolutionary pathways of fungal viruses.",
+      "abstract": "Fungal viruses or mycoviruses are widespread in fungi and are believed to be of ancient origin. They have evolved in concert with their hosts and are usually associated with symptomless infections. Mycoviruses are transmitted intracellularly during cell division, sporogenesis and cell fusion, and they lack an extracellular phase to their life cycles. Their natural host ranges are limited to individuals within the same or closely related vegetative compatibility groups. Typically, fungal viruses are isometric particles 25-50 nm in diameter, and possess dsRNA genomes. The best characterized of these belong to the family Totiviridae whose members have simple undivided dsRNA genomes comprised of a coat protein (CP) gene and an RNA dependent RNA polymerase (RDRP) gene. A recently characterized totivirus infecting a filamentous fungus was found to be more closely related to protozoan totiviruses than to yeast totiviruses suggesting these viruses existed prior to the divergence of fungi and protozoa. Although the dsRNA viruses at large are polyphyletic, based on RDRP sequence comparisons, the totiviruses are monophyletic. The theory of a cellular self-replicating mRNA as the origin of totiviruses is attractive because of their apparent ancient origin, the close relationships among their RDRPs, genome simplicity and the ability to use host proteins efficiently. Mycoviruses with bipartite genomes (partitiviruses), like the totiviruses, have simple genomes, but the CP and RDRP genes are on separate dsRNA segments. Because of RDRP sequence similarity, the partitiviruses are probably derived from a totivirus ancestor. The mycoviruses with unencapsidated dsRNA-like genomes (hypoviruses) and those with bacilliform (+) strand RNA genomes (barnaviruses) have more complex genomes and appear to have common ancestry with plant (+) strand RNA viruses in supergroup 1 with potyvirus and sobemovirus lineages, respectively. The La France isometric virus (LIV), an unclassified virus with multipartite dsRNA genome, is associated with a severe die-back disease of the cultivated mushroom. LIV appears to be of recent origin since it differs from its host in codon usage.",
+      "journal": "Virus genes",
+      "year": 1998,
+      "pub_date": "1998-01-01",
+      "authors": "Ghabrial S A",
+      "first_author": "Ghabrial S A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9517001",
+      "doi": "10.1093/oxfordjournals.pcp.a029289",
+      "title": "Enhanced expression of an antimicrobial peptide sarcotoxin IA by GUS fusion in transgenic tobacco plants.",
+      "abstract": "To enhance the disease resistance of plants expressing a foreign peptide, the gene for sarcotoxin IA, which is an antimicrobial peptide from an insect consisting of 39 amino acid residues, was introduced into tobacco (Nicotiana tabacum) under the control of a high expression promotor via Agrobacterium-mediated transformation. In transgenic plants, sarcotoxin IA mRNA accumulated to detectable levels, however, the amount of the peptide produced was so small that we could scarcely detect it by protein gel blot analysis, probably because of the instability of short peptides in plant cells. To improve the expression efficiency, genes for four types of amino-terminal and carboxyl-terminal translational fusions of sarcotoxin IA together with the GUS gene were introduced into tobacco. In all four types of transgenic tobacco plants, high level transcripts similar to that in the direct expression sarcotoxin IA construct were found. Protein gel blot analysis with both anti-sarcotoxin IA and GUS antibodies showed production of high levels of fusion protein in all transgenic plants. Among them, three types had abnormal membranes and phenotypes, although no such abnormalities were found in transgenic plants in which only sarcotoxin IA was expressed in a secretable form. All together, these results indicated that, for stable and effective expression of a foreign short peptide in transgenic plants, expression as a fusion protein is useful and that secretion of sarcotoxin IA outside of cells is necessary for generation of useful antimicrobial transgenic plants.",
+      "journal": "Plant & cell physiology",
+      "year": 1998,
+      "pub_date": "1998-01-01",
+      "authors": "Okamoto M; Mitsuhara I; Ohshima M; Natori S; Ohashi Y",
+      "first_author": "Okamoto M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15012506",
+      "doi": "10.1146/annurev.phyto.36.1.393",
+      "title": "Programmed cell death in plant disease: the purpose and promise of cellular suicide.",
+      "abstract": "The interaction of pathogens with plants leads to a disruption in cellular homeostasis, often leading to cell death, in both compatible and incompatible relationships. The mechanistic basis of this cellular disruption and consequent death is complex and poorly characterized, but it is established that host responses to pathogens are dependent on gene expression, involve signal transduction, and require energy. Recent data suggest that in animals, a genetically regulated, signal transduction-dependent programmed cell death process, commonly referred to as apoptosis, is conserved over a wide range of phyla. The basic function of apoptosis is to direct the selective elimination of certain cells during development, but it also is a master template that is involved in host responses to many pathogens. Programmed cell death in plants, while widely observed, has not been studied extensively at either the biochemical or genetic level. Current data suggest that activation or suppression of programmed cell death may underlie diseases in plants as it does in animals. This review describes some of the fundamental characteristics of apoptosis in animals and points to a number of connections to programmed cell death in plants that may lead to both a better understanding of disease processes and novel strategies for engineering disease resistance in plants.",
+      "journal": "Annual review of phytopathology",
+      "year": 1998,
+      "pub_date": "1998-01-01",
+      "authors": "Gilchrist D G",
+      "first_author": "Gilchrist D G",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

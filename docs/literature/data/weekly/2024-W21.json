@@ -1,0 +1,243 @@
+{
+  "week": "2024-W21",
+  "start": "2024-05-20",
+  "end": "2024-05-26",
+  "generated": "2026-07-13 02:59:41",
+  "total_new": 28,
+  "by_category": {
+    "Host_Virus_Interactions": 15,
+    "Biotechnology_Applications": 6,
+    "Antiviral_Resistance_Genes": 3,
+    "Tobamo_Virga": 2,
+    "Potyviridae": 2,
+    "New_Virus": 1,
+    "Transmission_Epidemiology": 1,
+    "Control_Management": 1,
+    "General": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "38367853",
+      "doi": "10.1016/j.gene.2024.148290",
+      "title": "Overexpression of the NbZFP1 encoding a C3HC4-type zinc finger protein enhances antiviral activity of Nicotiana benthamiana.",
+      "abstract": "Viral diseases are crucial determinants affecting tobacco cultivation, leading to a substantial annual decrease in production. Previous studies have demonstrated the regulatory function of the C3HC4 family of plant zinc finger proteins in combating bacterial diseases. However, it remains to be clarified whether this protein family also plays a role in regulating resistance against plant viruses. In this study, the successful cloning of the zinc finger protein coding gene NbZFP1 from Nicotiana benthamiana has been achieved. The full-length coding sequence of NbZFP1 is 576 bp. Further examination and analysis of this gene revealed its functional properties. The induction of NbZFP1 transcription in N. benthamiana has been observed in response to TMV, CMV, and PVY. Transgenic N. benthamiana plants over-expressing NbZFP1 demonstrated a notable augmentation in the production of chlorophyll a (P < 0.05). Moreover, NbZFP1-overexpressing tobacco exhibited significant resistance to TMV, CMV, and PVY, as evidenced by a decrease in virus copies (P < 0.05). In addition, the defense enzymes activities of PAL, POD, and CAT experienced a significant increase (P < 0.05). The up-regulated expression of genes of NbPAL, NbNPR1 and NbPR-1a, which play a crucial role in SA mediated defense, indicated that the NbZFP1 holds promise in enhancing the virus resistance of tobacco plant. Importantly, the results demonstrate that NbZFP1 can be considered as a viable candidate gene for the cultivation of crops with enhanced virus resistance.",
+      "journal": "Gene",
+      "year": 2024,
+      "pub_date": "2024-05-25",
+      "authors": "Wang Yifan; Hu Ting; Li Minxue; Yin Xiaodan; Song Li",
+      "first_author": "Wang Yifan",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "TMV（烟草花叶病毒）、CMV（黄瓜花叶病毒）、PVY（马铃薯Y病毒）",
+      "taxonomy": "",
+      "host_plant": "本氏烟草（Nicotiana benthamiana）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38921358",
+      "doi": "10.3390/jof10060371",
+      "title": "Identification and Pathogenicity of Pestalotioid Species on ",
+      "abstract": "Alpinia oxyphylla is a traditional Chinese medicinal plant with a medicinal history of more than 1700 years. Ring leaf blight (RLB) disease, caused by pestalotioid species, is an important disease of A. oxyphylla, seriously affecting the yield and quality of its fruits. The causal agent of RLB disease has not been systematically identified or characterized yet. In this study, thirty-six pestalotioid strains were isolated from the leaves and stems of A. oxyphylla that was collected from six cities of Hainan province, China. Based on the multi-locus phylogeny (ITS, tef-1α and tub2) and morphological characteristic analyses, seventeen species belonging to three genera (Neopestalotiopsis, Pestalotiopsis and Pseudopestalotiopsis) were identified, and six new species (N. baotingensis, N. oblatespora, N. olivaceous, N. oxyphylla, N. wuzhishanensis and N. yongxunensis) were described. Pathogenicity tests revealed that strains of Neopestalotiopsis species caused more severe ring leaf blight on A. oxyphylla than strains of Pestalotiopsis and Pseudopestalotiopsis under wounded inoculation conditions.",
+      "journal": "Journal of fungi (Basel, Switzerland)",
+      "year": 2024,
+      "pub_date": "2024-05-22",
+      "authors": "Cui Xiufen; Hao Zhigang; Chen Menghuai; Song Shuang; Zhang Jinan; ... (+4)",
+      "first_author": "Cui Xiufen",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38690890",
+      "doi": "10.1128/aem.00242-24",
+      "title": "Calcium modulation of bacterial wilt disease on potato.",
+      "abstract": "[UNLABELLED] Ralstonia solanacearum species complex (RSSC) is a phytopathogenic bacterial group that causes bacterial wilt in several crops, being potato (Solanum tuberosum) one of the most important hosts. The relationship between the potato plant ionome (mineral and trace elements composition) and the resistance levels to this pathogen has not been addressed until now. Mineral content of xylem sap, roots, stems and leaves of potato genotypes with different levels of resistance to bacterial wilt was assessed in this work, revealing a positive correlation between divalent calcium (Ca) cation concentrations and genotype resistance. The aim of this study was to investigate the effect of Ca on bacterial wilt resistance, and on the growth and virulence of RSSC. Ca supplementation significantly decreased the growth rate of Ralstonia pseudosolanacearum GMI1000 in minimal medium and affected several virulence traits such as biofilm formation and twitching motility. We also incorporate for the first time the use of microfluidic chambers to follow the pathogen growth and biofilm formation in conditions mimicking the plant vascular system. By using this approach, a reduction in biofilm formation was observed when both, rich and minimal media, were supplemented with Ca. Assessment of the effect of Ca amendments on bacterial wilt progress in potato genotypes revealed a significant delay in disease progress, or a complete absence of wilting symptoms in the case of partially resistant genotypes. This work contributes to the understanding of Ca effect on virulence of this important pathogen and provides new strategies for an integrated control of bacterial wilt on potato. [IMPORTANCE] Ralstonia solanacearum species complex (RSSC) includes a diverse group of bacterial strains that cause bacterial wilt. This disease is difficult to control due to pathogen aggressiveness, persistence, wide range of hosts, and wide geographic distribution in tropical, subtropical, and temperate regions. RSSC causes considerable losses depending on the pathogen strain, host, soil type, environmental conditions, and cultural practices. In potato, losses of $19 billion per year have been estimated for this pathogen worldwide. In this study, we report for the first time the mineral composition found in xylem sap and plant tissues of potato germplasm with different levels of resistance to bacterial wilt. This study underscores the crucial role of calcium (Ca) concentration in the xylem sap and stem in relation to the resistance of different genotypes. Our in vitro experiments provide evidence of Ca's inhibitory effect on the growth, biofilm formation, and twitching movement of the model RSSC strain R. pseudosolanacearum GMI1000. This study introduces a novel element, the Ca concentration, which should be included into the integrated disease control management strategies for bacterial wilt in potatoes.",
+      "journal": "Applied and environmental microbiology",
+      "year": 2024,
+      "pub_date": "2024-05-21",
+      "authors": "Ferreira María Virginia; Naranjo Eber; Denis Nicol; Cobine Paul; De La Fuente Leonardo; ... (+1)",
+      "first_author": "Ferreira María Virginia",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38437153",
+      "doi": "10.1093/jxb/erae087",
+      "title": "Optimizing nutrient transporters to enhance disease resistance in rice.",
+      "abstract": "Fertilizers and plant diseases contribute positively and negatively to crop production, respectively. Macro- and micronutrients provided by the soil and fertilizers are transported by various plant nutrient transporters from the soil to the roots and shoots, facilitating growth and development. However, the homeostasis of different nutrients has different effects on plant disease. This review is aimed at providing insights into the interconnected regulation between nutrient homeostasis and immune responses, and it highlights strategies to enhance disease resistance by optimal manipulation of nutrient transporters in rice. First, we highlight the essential roles of six macronutrients (nitrogen, phosphorus, potassium, sulfur, calcium, magnesium) and eight micronutrients (iron, manganese, zinc, copper, boron, molybdenum, silicon, nickel), and summarize the diverse effects of each on rice diseases. We then systematically review the molecular mechanisms of immune responses modulated by nutrient transporters and the genetic regulatory pathways that control the specific nutrient-mediated immune signaling that is regulated by the pathogens and the host plant. Finally, we discuss putative strategies for breeding disease-resistant rice by genetic engineering of nutrient transporters.",
+      "journal": "Journal of experimental botany",
+      "year": 2024,
+      "pub_date": "2024-05-20",
+      "authors": "Hui Shugang; Zhang Peng; Yuan Meng",
+      "first_author": "Hui Shugang",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38891273",
+      "doi": "10.3390/plants13111464",
+      "title": "Seed-Coat Pigmentation Plays a Crucial Role in Partner Selection and N",
+      "abstract": "Legume-rhizobia symbiosis is the most important plant-microbe interaction in sustainable agriculture due to its ability to provide much needed N in cropping systems. This interaction is mediated by the mutual recognition of signaling molecules from the two partners, namely legumes and rhizobia. In legumes, these molecules are in the form of flavonoids and anthocyanins, which are responsible for the pigmentation of plant organs, such as seeds, flowers, fruits, and even leaves. Seed-coat pigmentation in legumes is a dominant factor influencing gene expression relating to N2 fixation and may be responsible for the different N2-fixing abilities observed among legume genotypes under field conditions in African soils. Common bean, cowpea, Kersting's groundnut, and Bambara groundnut landraces with black seed-coat color are reported to release higher concentrations of nod-gene-inducing flavonoids and anthocyanins compared with the Red and Cream landraces. Black seed-coat pigmentation is considered a biomarker for enhanced nodulation and N2 fixation in legumes. Cowpea, Bambara groundnut, and Kersting's bean with differing seed-coat colors are known to attract different soil rhizobia based on PCR-RFLP analysis of bacterial DNA. Even when seeds of the same legume with diverse seed-coat colors were planted together in one hole, the nodulating bradyrhizobia clustered differently in the PCR-RFLP dendrogram. Kersting's groundnut, Bambara groundnut, and cowpea with differing seed-coat colors were selectively nodulated by different bradyrhizobial species. The 16S rRNA amplicon sequencing also found significant selective influences of seed-coat pigmentation on microbial community structure in the rhizosphere of five Kersting's groundnut landraces. Seed-coat color therefore plays a dominant role in the selection of the bacterial partner in the legume-rhizobia symbiosis.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2024,
+      "pub_date": "2024-05-25",
+      "authors": "Jaiswal Sanjay K; Dakora Felix D",
+      "first_author": "Jaiswal Sanjay K",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38891858",
+      "doi": "10.3390/ijms25115670",
+      "title": "Glutamate Receptor-like (GLR) Family in ",
+      "abstract": "Plant glutamate receptor-like channels (GLRs) are homologs of animal ionotropic glutamate receptors. GLRs are critical in various plant biological functions, yet their genomic features and functions in disease resistance remain largely unknown in many crop species. Here, we report the results on a thorough genome-wide study of the GLR family in oilseed rape (Brassica napus) and their role in resistance to the fungal pathogen Sclerotinia sclerotiorum. A total of 61 GLRs were identified in oilseed rape. They comprised three groups, as in Arabidopsis thaliana. Detailed computational analyses, including prediction of domain and motifs, cellular localization, cis-acting elements, PTM sites, and amino acid ligands and their binding pockets in BnGLR proteins, unveiled a set of group-specific characteristics of the BnGLR family, which included chromosomal distribution, motif composition, intron number and size, and methylation sites. Functional dissection employing virus-induced gene silencing of BnGLRs in oilseed rape and Arabidopsis mutants of BnGLR homologs demonstrated that BnGLR35/AtGLR2.5 positively, while BnGLR12/AtGLR1.2 and BnGLR53/AtGLR3.2 negatively, regulated plant resistance to S. sclerotiorum, indicating that GLR genes were differentially involved in this resistance. Our findings reveal the complex involvement of GLRs in B. napus resistance to S. sclerotiorum and provide clues for further functional characterization of BnGLRs.",
+      "journal": "International journal of molecular sciences",
+      "year": 2024,
+      "pub_date": "2024-05-23",
+      "authors": "Gulzar Rana Muhammad Amir; Ren Chun-Xiu; Fang Xi; Xu You-Ping; Saand Mumtaz Ali; ... (+1)",
+      "first_author": "Gulzar Rana Muhammad Amir",
+      "categories": [
+        "Biotechnology_Applications",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38891243",
+      "doi": "10.3390/plants13111434",
+      "title": "Plant Immunity: At the Crossroads of Pathogen Perception and Defense Response.",
+      "abstract": "Plants are challenged by different microbial pathogens that affect their growth and productivity. However, to defend pathogen attack, plants use diverse immune responses, such as pattern-triggered immunity (PTI), effector-triggered immunity (ETI), RNA silencing and autophagy, which are intricate and regulated by diverse signaling cascades. Pattern-recognition receptors (PRRs) and nucleotide-binding leucine-rich repeat (NLR) receptors are the hallmarks of plant innate immunity because they can detect pathogen or related immunogenic signals and trigger series of immune signaling cascades at different cellular compartments. In plants, most commonly, PRRs are receptor-like kinases (RLKs) and receptor-like proteins (RLPs) that function as a first layer of inducible defense. In this review, we provide an update on how plants sense pathogens, microbe-associated molecular patterns (PAMPs or MAMPs), and effectors as a danger signals and activate different immune responses like PTI and ETI. Further, we discuss the role RNA silencing, autophagy, and systemic acquired resistance as a versatile host defense response against pathogens. We also discuss early biochemical signaling events such as calcium (Ca2+), reactive oxygen species (ROS), and hormones that trigger the activation of different plant immune responses. This review also highlights the impact of climate-driven environmental factors on host-pathogen interactions.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2024,
+      "pub_date": "2024-05-22",
+      "authors": "Ali Sajad; Tyagi Anshika; Mir Zahoor Ahmad",
+      "first_author": "Ali Sajad",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38769168",
+      "doi": "10.1038/s42003-024-06244-z",
+      "title": "Genome-wide association analysis uncovers rice blast resistance alleles of Ptr and Pia.",
+      "abstract": "A critical step to maximize the usefulness of genome-wide association studies (GWAS) in plant breeding is the identification and validation of candidate genes underlying genetic associations. This is of particular importance in disease resistance breeding where allelic variants of resistance genes often confer resistance to distinct populations, or races, of a pathogen. Here, we perform a genome-wide association analysis of rice blast resistance in 500 genetically diverse rice accessions. To facilitate candidate gene identification, we produce de-novo genome assemblies of ten rice accessions with various rice blast resistance associations. These genome assemblies facilitate the identification and functional validation of novel alleles of the rice blast resistance genes Ptr and Pia. We uncover an allelic series for the unusual Ptr rice blast resistance gene, and additional alleles of the Pia resistance genes RGA4 and RGA5. By linking these associations to three thousand rice genomes we provide a useful tool to inform future rice blast breeding efforts. Our work shows that GWAS in combination with whole-genome sequencing is a powerful tool for gene cloning and to facilitate selection of specific resistance alleles for plant breeding.",
+      "journal": "Communications biology",
+      "year": 2024,
+      "pub_date": "2024-05-20",
+      "authors": "Greenwood Julian R; Lacorte-Apostol Vanica; Kroj Thomas; Padilla Jonas; Telebanco-Yanoria Mary Jeanie; ... (+6)",
+      "first_author": "Greenwood Julian R",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38771313",
+      "doi": "10.5802/crbiol.153",
+      "title": "Molecular complexity of quantitative immunity in plants: from QTL mapping to functional and systems biology.",
+      "abstract": "In nature, plants defend themselves against pathogen attack by activating an arsenal of defense mechanisms. During the last decades, work mainly focused on the understanding of qualitative disease resistance mediated by a few genes conferring an almost complete resistance, while quantitative disease resistance (QDR) remains poorly understood despite the fact that it represents the predominant and more durable form of resistance in natural populations and crops. Here, we review our past and present work on the dissection of the complex mechanisms underlying QDR in Arabidopsis thaliana. The strategies, main steps and challenges of our studies related to one atypical QDR gene, RKS1 (Resistance related KinaSe 1), are presented. First, from genetic analyses by QTL (Quantitative Trait Locus) mapping and GWAs (Genome Wide Association studies), the identification, cloning and functional analysis of this gene have been used as a starting point for the exploration of the multiple and coordinated pathways acting together to mount the QDR response dependent on RKS1. Identification of RKS1 protein interactors and complexes was a first step, systems biology and reconstruction of protein networks were then used to decipher the molecular roadmap to the immune responses controlled by RKS1. Finally, exploration of the potential impact of key components of the RKS1-dependent gene network on leaf microbiota offers interesting and challenging perspectives to decipher how the plant immune systems interact with the microbial communities' systems.",
+      "journal": "Comptes rendus biologies",
+      "year": 2024,
+      "pub_date": "2024-05-21",
+      "authors": "Chauveau Carine; Roby Dominique",
+      "first_author": "Chauveau Carine",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38421062",
+      "doi": "10.1093/jxb/erae079",
+      "title": "A new chromosome-scale genome of wild Brassica oleracea provides insights into the domestication of Brassica crops.",
+      "abstract": "The cultivated diploid Brassica oleracea is an important vegetable crop, but the genetic basis of its domestication remains largely unclear in the absence of high-quality reference genomes of wild B. oleracea. Here, we report the first chromosome-level assembly of the wild Brassica oleracea L. W03 genome (total genome size, 630.7 Mb; scaffold N50, 64.6 Mb). Using the newly assembled W03 genome, we constructed a gene-based B. oleracea pangenome and identified 29 744 core genes, 23 306 dispensable genes, and 1896 private genes. We re-sequenced 53 accessions, representing six potential wild B. oleracea progenitor species. The results of the population genomic analysis showed that the wild B. oleracea populations had the highest level of diversity and represents the most closely related population to modern-day horticultural B. oleracea. In addition, the WUSCHEL gene was found to play a decisive role in domestication and to be involved in cauliflower and broccoli curd formation. We also illustrate the loss of disease-resistance genes during selection for domestication. Our results provide new insights into the domestication of B. oleracea and will facilitate the future genetic improvement of Brassica crops.",
+      "journal": "Journal of experimental botany",
+      "year": 2024,
+      "pub_date": "2024-05-20",
+      "authors": "Ji Gaoxiang; Long Ying; Cai Guangqin; Wang Aihua; Yan Guixin; ... (+10)",
+      "first_author": "Ji Gaoxiang",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

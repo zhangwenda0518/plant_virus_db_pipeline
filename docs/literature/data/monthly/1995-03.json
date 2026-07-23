@@ -1,0 +1,258 @@
+{
+  "month": "1995-03",
+  "generated": "2026-07-13 02:59:42",
+  "total": 11,
+  "by_category": {
+    "Host_Virus_Interactions": 4,
+    "Antiviral_Resistance_Genes": 3,
+    "New_Virus": 1,
+    "Molecular_Characterization": 1,
+    "Detection_Methods": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "7886952",
+      "doi": "10.1006/viro.1995.1108",
+      "title": "In vitro assembly of cowpea chlorotic mottle virus from coat protein expressed in Escherichia coli and in vitro-transcribed viral cDNA.",
+      "abstract": "The small spherical plant virus, cowpea chlorotic mottle virus (CCMV), provides an ideal system to examine spherical virus assembly. We have modified the CCMV in vitro assembly system to produce virions from coat protein expressed in Escherichia coli and viral RNA transcribed in vitro from full-length cDNAs. Examination of the in vitro-assembled particles with cryoelectron microscopy and image reconstruction techniques demonstrates that the particles are indistinguishable from plant purified particles at 2.5 nm resolution. Mutational analysis of the coat protein N- and C-terminal extensions demonstrate their respective roles in virus assembly. The N-terminus is required for assembly of RNA containing particles but not for the assembly of empty virions. The C-terminus is essential for coat protein dimer formation and particle assembly.",
+      "journal": "Virology",
+      "year": 1995,
+      "pub_date": "1995-03-10",
+      "authors": "Zhao X; Fox J M; Olson N H; Baker T S; Young M J",
+      "first_author": "Zhao X",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "豇豆褪绿斑驳病毒 (Cowpea chlorotic mottle virus, CCMV)",
+      "taxonomy": "雀麦花叶病毒科（Bromoviridae）雀麦花叶病毒属（Bromovirus）",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7890737",
+      "doi": "10.1074/jbc.270.11.6050",
+      "title": "Wild type Rhizobium etli, a bean symbiont, produces acetyl-fucosylated, N-methylated, and carbamoylated nodulation factors.",
+      "abstract": "Phaseolus vulgaris (common bean) can be nodulated by different Rhizobium species. A new species has been recently proposed: Rhizobium etli. Following transcriptional activation of the bacterial nodulation genes using naringenin or bean seed exudate, we have isolated, purified, and characterized R. etli extracellular nodulation factors. They are chitopentameric compounds that are N-methyl-N-vaccenoylated at their non-reducing end. At position 6 of the reducing N-acetyl-D-glucosamine, they are 4-O-acetyl-L-fucosylated. Minor compounds bear a carbamate group on the terminal non-reducing saccharidic residue.",
+      "journal": "The Journal of biological chemistry",
+      "year": 1995,
+      "pub_date": "1995-03-17",
+      "authors": "Poupot R; Martinez-Romero E; Gautier N; Promé J C",
+      "first_author": "Poupot R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7786579",
+      "doi": "10.1089/aid.1995.11.327",
+      "title": "Human immunodeficiency virus type 1-neutralizing antibodies raised to a glycoprotein 41 peptide expressed on the surface of a plant virus.",
+      "abstract": "An oligonucleotide encoding the amino acids 731-752 of the gp41 envelope protein of the human immunodeficiency virus type 1 strain IIIB, which is known to induce cross-reactive neutralizing antibodies in humans, was inserted into a full-length clone of the RNA encoding the coat proteins of cowpea mosaic virus (RNA 2 of CPMV). When transfected together with RNA 1 of CPMV, transcribed RNA 2 was able to replicate in plants and form infectious virions (CPMV-HIV). Purified virions were injected subcutaneously with alum adjuvant into adult C57/BL6 mice to determine their ability to stimulate ELISA and neutralizing antibody specific for HIV-1. Antisera to CPMV-HIV obtained after only two injections gave a strong ELISA response (mean of 1:25,800) using the free gp41 peptide as antigen, showing that the gp41 peptide incorporated into the chimera was immunogenic. The same antisera gave 97% neutralization of HIV-1 IIIB at 1:100 dilution, with a highly uniform response in all (six of six) animals tested. A third injection barely increased the neutralization titer. Normal mouse serum had no neutralizing activity. Antisera also strongly neutralized the HIV-1 strains RF and SF2. ELISA and neutralizing activity to HIV-1 IIIB declined after the second injection and were undetectable after 7 weeks, but were restimulated to the same level after the third injection. Neutralization was marginally more stable after the third injection. Antibody specific for CPMV epitopes was equally short lived. A bonus of this system was unexpected neutralizing activity specifically stimulated by unmodified CPMV virions, although this amounted to no more than 10% of the neutralizing activity stimulated by the CPMV-HIV chimera.(ABSTRACT TRUNCATED AT 250 WORDS)",
+      "journal": "AIDS research and human retroviruses",
+      "year": 1995,
+      "pub_date": "1995-03-01",
+      "authors": "McLain L; Porta C; Lomonossoff G P; Durrani Z; Dimmock N J",
+      "first_author": "McLain L",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7757120",
+      "doi": "10.1046/j.1365-313x.1995.7030525.x",
+      "title": "Construction of a rice bacterial artificial chromosome library and identification of clones linked to the Xa-21 disease resistance locus.",
+      "abstract": "A bacterial artificial chromosome (BAC) library consisting of 11,000 clones with an average DNA insert size of 125 kb was constructed from rice nuclear DNA. The BAC clones were stable in E. coli after 100 generations of serial growth. Transformation of the BAC clones by electroporation into E. coli was highly efficient and increased with decreasing size of the DNA inserts. The library was evaluated for the presence of organellar, repeated, and telomeric sequences. A very low percentage (< 0.3%) of the library consisted of chloroplast and mitochondrial clones. Eighteen BACs were identified that hybridized with an Arabidopsis telomere repeat. Sixteen BACs hybridized with the AA genome-specific repetitive sequence pOs48. Twelve clones were isolated that hybridized with three DNA markers linked to the Xa-21 disease resistance locus. The results indicate that the BAC system can be used to clone and manipulate large pieces of plant DNA efficiently.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 1995,
+      "pub_date": "1995-03-01",
+      "authors": "Wang G L; Holsten T E; Song W Y; Wang H P; Ronald P C",
+      "first_author": "Wang G L",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7608023",
+      "doi": "10.2527/1995.733881x",
+      "title": "Acremonium in fescue and ryegrass: boon or bane? A review.",
+      "abstract": "Acremonium coenophialum Morgan-Jones and Gams, an endophytic fungus commonly found in tall fescue (Festuca arundinacea Schreb.), has been identified as the cause of poor performance of beef cattle and horses on tall fescue. Ryegrass staggers, a neurological disorder of sheep, has been linked to the presence of a similar fungus, A. lolii Latch, Christensen and Samuels, in perennial ryegrass (Lolium perenne L.). Renovation of endophyte-infected (E+) pastures with endophyte-free (E-) cultivars of tall fescue or perennial ryegrass has resulted in improved animal performance, but productivity and stand persistence of the grasses have been reduced. Stand loss of E- tall fescue has been attributed to a number of stresses, including insect attack, disease, root predation by nematodes, and drought stress. The Acremonium endophyte has been observed to stimulate the tall fescue plant's production of chitinase, an enzyme associated with disease resistance. Nematode resistance, which can also be enhanced in E+ plants, has been attributed, in part, to thickening of the root endodermal layer. Drought stress has been identified as the most common cause of E- tall fescue stand loss in the eastern United States. Endophyte-infected tall fescue plants exhibit several adaptive morphological and physiological responses to drought stress compared with E- plants. Drought-induced leaf rolling, leaf senescence, stomatal closure, and osmotic adjustment are more prevalent in E+ than in E- plants and may be mediated through endophyte enhancement of the production of phytohormones such as abscisic acid. Endophyte-infected tall fescue plants have been shown to be more productive and competitive than E- plants through improvement of germination, tillering, and biomass production per tiller.(ABSTRACT TRUNCATED AT 250 WORDS)",
+      "journal": "Journal of animal science",
+      "year": 1995,
+      "pub_date": "1995-03-01",
+      "authors": "Joost R E",
+      "first_author": "Joost R E",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7546440",
+      "doi": "",
+      "title": "[Biological control in the preservation of pome fruits].",
+      "abstract": "Fresh fruits are susceptible of be attacked by several pathogenic fungi after harvest due to both their high water and nutrients content and their loss of most of the intrinsic resistance that protected them over their development while attached to the plant. Most rot pathogens can be controlled by various methods such as refrigeration, controlled atmospheres and fungicides. Biological control strategies are emerging as promising alternatives to the use of synthetic fungicides. Several factors must be considered for the selection of biocontrol agents to be used against postharvest fruits diseases. Survivability of the antagonist is a major factor to determine its usefulness. Antagonists must survive and be effective after their exposure to both postharvest treatments and storage conditions. Several antagonistic microorganisms have been found that can effectively inhibit postharvest diseases. Just as there is a diversity among microorganisms, there is also a diversity of mechanisms by which they operate. Although in most cases these mechanisms have not been satisfactorily elucidated, they are likely to involve antibiosis, nutrient competition, stimulation of host defense, predation and parasitism. In many cases, probably more than one mechanism operate. The marketing of some of these antagonists may be feasible and they could be an alternative to synthetic pesticides.",
+      "journal": "Microbiologia (Madrid, Spain)",
+      "year": 1995,
+      "pub_date": "1995-03-01",
+      "authors": "Viñas I",
+      "first_author": "Viñas I",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7704053",
+      "doi": "10.1007/BF01969415",
+      "title": "Expression of giant silkmoth cecropin B genes in tobacco.",
+      "abstract": "Cecropin B is a small antibacterial peptide from the giant silkmoth Hyalophora cecropia. To reveal the potential of this peptide for engineering bacterial disease resistance into crops, several cecropin B gene constructs were made either for expression in the cytosol or for secretion. All constructs were cloned in a plant expression vector and introduced in tobacco via Agrobacterium tumefaciens. A cDNA-derived cecropin B gene construct lacking the amino-terminal signal peptide was poorly expressed in transgenic plants at the mRNA level, whereas plants harbouring a full-length cDNA-derived construct containing the insect signal peptide, showed increased cecropin B-mRNA levels. Highest expression was found in plants harbouring a construct with a plant-gene-derived signal peptide. In none of the transgenic plants could the cecropin B peptide be detected. This is most likely caused by breakdown of the peptide by plant endogenous proteases, since a chemically synthesized cecropin B peptide was degraded within seconds in various plant cell extracts. This degradation could be prevented by the addition of specific protease inhibitors and by boiling the extract prior to adding the peptide. In addition, anionic detergents, in contrast to cationic, zwitter-ionic or non-ionic detergents, could prevent this degradation. Nevertheless, transgenic tobacco plants were evaluated for resistance to Pseudomonas solanacearum, the causal agent of bacterial wilt of many crops, and P. syringae pv. tabaci, the causal agent of bacterial wildfire, which are highly susceptible to cecropin B in vitro. No resistance was found. These experiments indicate that introduction and expression of cecropin B genes in tobacco does not result in detectable cecropin B protein levels and resistance to bacterial infections, most likely due to degradation of the protein by endogenous proteases.",
+      "journal": "Transgenic research",
+      "year": 1995,
+      "pub_date": "1995-03-01",
+      "authors": "Florack D; Allefs S; Bollen R; Bosch D; Visser B; ... (+1)",
+      "first_author": "Florack D",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7882330",
+      "doi": "",
+      "title": "In vitro and in vivo cytotoxicity of an anti-osteosarcoma immunotoxin containing pokeweed antiviral protein.",
+      "abstract": "Successful treatment of many patients with osteosarcoma requires more effective chemotherapy. Since new agents are needed, we have developed an immunotoxin using TP-3, an IgG2b mAb which recognizes human and canine osteosarcomas and budding capillaries of tumors. The plant hemitoxin, pokeweed antiviral protein (PAP), was conjugated to TP-3 to produce an immunotoxin highly active against osteosarcoma. After 48 h no viable human OHS osteosarcoma cells were present in cultures containing TP-3-PAP as demonstrated by the absence of [3H]thymidine uptake into DNA. Furthermore, clonogenic assays indicated > 3.9 log kill of OHS at 18 h. The IC50 of TP-3-PAP against OHS was 3.5 +/- 1.0 (SD) x 10(-12) M. TP-3 mAb without PAP had no effect on OHS proliferation; PAP alone had no effect on OHS growth unless concentrations > 1000 pM were used. When TP-3-PAP (1.25 micrograms-10.0 micrograms) was given i.p. q.d. on days 3-5 after tumor inoculation, a dose-dependent reduction of the number of lung metastases was observed (P < 0.001). These results indicate that the TP-3-PAP immunotoxin may be useful in the treatment of osteosarcoma and some soft tissue sarcomas.",
+      "journal": "Cancer research",
+      "year": 1995,
+      "pub_date": "1995-03-15",
+      "authors": "Anderson P M; Meyers D E; Hasz D E; Covalcuic K; Saltzman D; ... (+2)",
+      "first_author": "Anderson P M",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7695636",
+      "doi": "10.1006/bbrc.1995.1405",
+      "title": "Potentiation of anti-HIV activity of anti-inflammatory drugs, dexamethasone and indomethacin, by MAP30, the antiviral agent from bitter melon.",
+      "abstract": "MAP30 is an antiviral protein from bitter melon (Momordica charantia). The enhancement of weak HIV antagonists, dexamethasone and indomethacin, by MAP30 has been examined by measuring the reduction in p24 expression in acutely infected MT-4 lymphocytes. In the presence of 1.5 nM MAP30 the IC50 dose of dexamethasone and indomethacin has been lowered, without concurrent cytotoxicity, at least a thousand-fold to 10(-7) M and 10(-8) M, respectively. This observation indicates that MAP30, a multifunctional antiviral plant protein capable of topological inactivation of viral DNA and specific cleavage of 28 S ribosomal RNA, may regulate HIV replication in concert with steroid and non-steroidal inhibitors of prostaglandin synthesis. The results suggest that use of MAP30 in combination with low pharmacological doses of dexamethasone and indomethacin may improve the efficacy of anti-HIV therapy.",
+      "journal": "Biochemical and biophysical research communications",
+      "year": 1995,
+      "pub_date": "1995-03-17",
+      "authors": "Bourinbaiar A S; Lee-Huang S",
+      "first_author": "Bourinbaiar A S",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7698315",
+      "doi": "10.1016/0014-5793(95)00133-t",
+      "title": "Ligand-induced perturbations in Urtica dioica agglutinin.",
+      "abstract": "The binding of the trisaccharide, N,N',N\"-triacetylchitotriose, to Urtica dioica agglutinin (UDA) was investigated using 1H NMR spectroscopy. UDA is a small antiviral plant lectin containing two homologous 43-amino acid domains. Carbohydrate-induced pertubations occur in one domain of UDA at trisaccharide concentrations below equimolar. Residues in the second domain are shifted at higher carbohydrate concentrations. This data confirms the presence of two binding sites of non-identical affinities per UDA monomer. Qualitative analysis of the 2D NOESY spectra indicates that UDA contains two short stretches of antiparallel beta-sheet. The 1H resonance assignments for both antiparallel beta-sheet sequences have been completed and there is one beta-stretch per domain. A number of these beta-sheet residues are perturbed in the presence of carbohydrate.",
+      "journal": "FEBS letters",
+      "year": 1995,
+      "pub_date": "1995-03-20",
+      "authors": "Hom K; Gochin M; Peumans W J; Shine N",
+      "first_author": "Hom K",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7701573",
+      "doi": "",
+      "title": "Multiple vectors effectively achieve gene transfer in a murine cardiac transplantation model. Immunosuppression with TGF-beta 1 or vIL-10.",
+      "abstract": "The application of gene transfer techniques to organ transplantation offers the potential for modulation of immunity directly within an allograft without systemic side effects. Expression vectors and promoter elements are important determinants of gene transfer and expression. In this study, various vectors (naked plasmid DNA, retroviral vector, herpes simplex viral vector, and adenoviral vector) with various promoters (RSV-LTR, SV40, MuLV-LTR, HCMVie1) were directly compared to demonstrate the successful gene transfer and expression of beta-galactosidase in murine myoblasts in vitro and within murine heterotopic, nonvascularized cardiac isografts or allografts in vivo. Expression of transferred genes was not toxic to cells and strength of expression varied according to the type of vector. Plasmid DNA was expressed in myocytes, retroviral vector was expressed in the graft infiltrating cells, and herpes simplex and adenoviral vectors were expressed in both myocytes and graft-infiltrating cells. Preliminary studies evaluated the ability of these vectors to deliver immunologically important signals. Allografts injected with pSVTGF-beta 1, a plasmid-encoding transforming growth factor beta 1 (TGF-beta 1) under the control of the SV40 promoter, showed significant prolongation of graft survival of 26.3 +/- 2.5 days compared with 12.6 +/- 1.1 days for untreated allografts, and 12.5 +/- 1.5 days for the allografts injected with control plasmid (P < 0.05). Allografts injected with MFG-vIL-10, a retroviral vector encoding viral interleukin-10 under the control of the MuLV-LTR, showed prolongation of graft survival of 36.7 +/- 1.3 days versus 12.6 +/- 1.1 days for the untreated allograft, and 13.5 +/- 2.0 days for the allografts injected with control retroviral vector (P < 0.001). Both vectors were transcriptionally active in vivo and did not appear to have toxic effects. Gene therapy for transplantation can induce transient expression of immunologically relevant molecules within allografts that impede immune activation while avoiding the systemic toxicity of conventional immunosuppression.",
+      "journal": "Transplantation",
+      "year": 1995,
+      "pub_date": "1995-03-27",
+      "authors": "Qin L; Chavin K D; Ding Y; Favaro J P; Woodward J E; ... (+5)",
+      "first_author": "Qin L",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

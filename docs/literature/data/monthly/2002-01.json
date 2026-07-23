@@ -1,0 +1,281 @@
+{
+  "month": "2002-01",
+  "generated": "2026-07-13 02:59:42",
+  "total": 44,
+  "by_category": {
+    "Host_Virus_Interactions": 20,
+    "New_Virus": 8,
+    "Control_Management": 8,
+    "Antiviral_Resistance_Genes": 5,
+    "Biotechnology_Applications": 4,
+    "Viral_Diversity_Ecology": 3
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30823008",
+      "doi": "10.1094/PDIS.2002.86.1.72D",
+      "title": "First Report of Alfalfa mosaic virus in Physostegia virginiana.",
+      "abstract": "Physostegia virginiana Benth. (false dragon head) is a perennial plant from the family Lamiaceae cultivated as an ornamental in gardens and for cut-flower production. In 2000, stunting of plants and yellow-to-brown ringspots on leaves were observed in cut-flower production in the Alpes Maritimes Department (southeast France). These symptoms greatly decreased the commercial value of the stems. The disease was attributed to Alfalfa mosaic virus (AMV) because extracts of infected plant tissues revealed typical bacilliform particles by electron microscopy, produced symptoms typical of AMV after inoculation of a range of previously described test plants (1), and reacted positively in enzyme-linked immunosorbent assays (ELISA) with antibodies raised to a tomato strain of AMV (from G. Marchoux, INRA, France). After isolation from single local lesions on Vigna unguiculata, the AMV isolate was multiplied in cv. Xanthinc tobacco, where it induced local and systemic ringspot symptoms. Infected Xanthinc plants served as sources of inocula for subsequent mechanical- and aphid (Myzus persicae)-transmission tests to healthy seedlings of P. virginiana (seeds from the botanic garden of Nancy, France; 36 plants for each inoculation procedure). Chlorotic and necrotic local lesions were observed in 25% of mechanically inoculated plants. Three months after inoculation, uninoculated leaves of all mechanically inoculated plants and 30.5% of aphid-inoculated plants tested positive for AMV based on ELISA. During the first year after inoculation, less than 10% of infected plants showed typical systemic symptoms. This proportion reached 40% during the second year. Recently, we observed similar symptoms in P. virginiana plants cultivated in public gardens in Intercourse (Pennsylvania), Toronto (Ontario, Canada) and Montreal (Quebec, Canada). Using ELISA, AMV was detected in symptomatic plants from these three additional locations. Reference: (1) L. Cardin and B. Moury. Plant Dis. 84:594, 2000.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-01-01",
+      "authors": "Cardin L; Onesto J-P; Moury B",
+      "first_author": "Cardin L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Alfalfa mosaic virus (AMV)",
+      "taxonomy": "Bromoviridae, Alfamovirus",
+      "host_plant": "Physostegia virginiana (假龙头)",
+      "location": "法国阿尔卑斯滨海省，美国宾夕法尼亚州Intercourse，加拿大安大略省多伦多、魁北克省蒙特利尔",
+      "results": "在法国东南部切花生产中发现病株，提取物含典型杆菌状粒子，ELISA阳性；机械接种25%发病，蚜虫接种30.5%发病；2年后40%表现系统症状；北美三地亦发现。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30823009",
+      "doi": "10.1094/PDIS.2002.86.1.73A",
+      "title": "First Report of Tomato yellow leaf curl virus Infecting Pepper Plants in Cuba.",
+      "abstract": "The begomovirus Tomato yellow leaf curl virus (TYLCV) is one of the major threats to tomato production in tropical and subtropical regions worldwide. TYLCV was found in Cuba in 1994 and later became the most serious constraint to tomato production (2). During a field survey in 2001, pepper plants (Capsicum annuum) were observed in a greenhouse in Camagüey Province, showing mild interveinal yellowing and curling of leaves. Total nucleic acids were extracted from these plants and from pepper samples collected in previous years that showed similar symptoms. Polymerase chain reaction (PCR) was performed on extracts using a primer pair (TY-1/TY-2) (1) specific for the capsid protein (CP) gene of begomoviruses and a second primer pair (IR2353+: CTGAATGTTTGGATGGAAATGTGC; IR255-:GCTCGTAAGTTTCCT CAACGGAC) designed to amplify the part of the genome encompassing the intergenic region (IR) of the Cuban isolate of TYLCV-IS (2). With these primer pairs, amplicons of the expected size were obtained from five samples (one collected in 1995 in Havana Province, two in 1999 in Sancti Spiritus, and two in 2001 in Camagüey.) The CP fragment was digested with RsaI, while the IR amplicon was digested with AvaII and EcoRI. In all cases the patterns obtained corresponded to digestion patterns for identical PCR fragments obtained from TYLCV-infected tomatoes. The IR amplicon sequence from one sample showed ≈99% identity with the corresponding region of the TYLCV-IS isolated from tomato in Cuba. To our knowledge, this is the first report of TYLCV-IS infection in peppers in Cuba. References: (1) G. P. Accotto et al. Eur. J. Plant. Pathol. 106:179, 2000. (2) Y. Martínez et al. J. Phytopathol.144:277, 1996.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-01-01",
+      "authors": "Quiñones M; Fonseca D; Martinez Y; Accotto G P",
+      "first_author": "Quiñones M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato yellow leaf curl virus (TYLCV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "辣椒 (Capsicum annuum)",
+      "location": "古巴 (哈瓦那省、圣斯皮里图斯省、卡马圭省)",
+      "results": "1995-2001年三省辣椒样品检测到TYLCV，酶切图谱与番茄分离物一致，序列同源性99%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12147762",
+      "doi": "10.1146/annurev.phyto.40.120301.102400",
+      "title": "Tobacco mosaic virus assembly and disassembly: determinants in pathogenicity and resistance.",
+      "abstract": "The structural proteins of plant viruses have evolved to self-associate into complex macromolecules that are centrally involved in virus biology. In this review, the structural and biophysical properties of the Tobacco mosaic virus (TMV) coat protein (CP) are addressed in relation to its role in host resistance and disease development. TMV CP affects the display of several specific virus and host responses, including cross-protection, systemic virus movement, hypersensitive disease resistance, and symptom development. Studies indicate that the three-dimensional structure of CP is critical to the control of these responses, either directly through specific structural motifs or indirectly via alterations in CP assembly. Thus, both the structure and assembly of the TMV CP function as determinants in the induction of disease and resistance responses.",
+      "journal": "Annual review of phytopathology",
+      "year": 2002,
+      "pub_date": "2002-01-01",
+      "authors": "Culver James N",
+      "first_author": "Culver James N",
+      "categories": [
+        "Control_Management",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "烟草花叶病毒",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12147754",
+      "doi": "10.1146/annurev.phyto.40.021102.150133",
+      "title": "Making an ally from an enemy: plant virology and the new agriculture.",
+      "abstract": "Historically, the study of plant viruses has contributed greatly to the elucidation of eukaryotic biology. Recently, concurrent with the development of viruses into expression vectors, the biotechnology industry has developed an increasing number of disease therapies utilizing recombinant proteins. Plant virus vectors are viewed as a viable option for recombinant protein production. Employing pathogens in the process of creating added value to agriculture is, in effect, making an ally from an enemy. This review discusses the development and use of viruses as expression vectors, with special emphasis on (+) strand RNA virus systems. Further, the use of virus expression vectors in large-scale agricultural settings to produce recombinant proteins is described, and the technical challenges that need to be addressed by agriculturists and molecular virologists to fully realize the potential of this latest evolution of plant science are outlined.",
+      "journal": "Annual review of phytopathology",
+      "year": 2002,
+      "pub_date": "2002-01-01",
+      "authors": "Pogue Gregory P; Lindbo John A; Garger Stephen J; Fitzmaurice Wayne P",
+      "first_author": "Pogue Gregory P",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "正链RNA病毒载体",
+      "taxonomy": "",
+      "host_plant": "多种植物（农业规模）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12143960",
+      "doi": "10.1089/153623102760092742",
+      "title": "Epigenetic modification of plants with systemic RNA viruses.",
+      "abstract": "Knowledge of gene function is critical to the development of new plant traits for improved agricultural and industrial applications. Viral expression vectors offer a rapid and proven method to provide epigenetic expression of foreign sequences throughout infected plants. Expression of these sequences from viral vectors can lead to gain- or loss-of-function phenotypes, allowing gene function to be determined by phenotypic or biochemical effects in the infected plant. Tobacco mosaic virus and barley stripe mosaic virus expression vectors have been developed to express foreign gene sequences in dicotyledonous and monocotyledonous hosts, respectively. Large-scale application of both viral vector systems for gene function discovery in Nicotiana and barley hosts resulted in high infection rates and produced distinctive visual phenotypes in approximately 5% of transfected plants. Novel genes expressing potential herbicide target proteins in addition to genes promoting stem elongation, leaf development and apical dominance were identified in the large-scale screening. This report illustrates the adaptability of viral vectors for gene function discovery in higher plants.",
+      "journal": "Omics : a journal of integrative biology",
+      "year": 2002,
+      "pub_date": "2002-01-01",
+      "authors": "Fitzmaurice Wayne P; Holzberg Steve; Lindbo John A; Padgett Hal S; Palmer Kenneth E; ... (+2)",
+      "first_author": "Fitzmaurice Wayne P",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "Tobacco mosaic virus (TMV), Barley stripe mosaic virus (BSMV)",
+      "taxonomy": "",
+      "host_plant": "Nicotiana（烟草）和 barley（大麦）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12416301",
+      "doi": "10.1007/978-1-4615-0721-5_4",
+      "title": "Plant virus gene vectors: biotechnology applications in agriculture and medicine.",
+      "abstract": "",
+      "journal": "Genetic engineering",
+      "year": 2002,
+      "pub_date": "2002-01-01",
+      "authors": "Scholthof Karen-Beth G; Mirkov T Erik; Scholthof Herman B",
+      "first_author": "Scholthof Karen-Beth G",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "未提及（泛指植物病毒载体）",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11687590",
+      "doi": "10.1074/jbc.M109495200",
+      "title": "Cell death mediated by MAPK is associated with hydrogen peroxide production in Arabidopsis.",
+      "abstract": "Rapid and localized programmed cell death, known as the hypersensitive response (HR) is frequently associated with plant disease resistance. In contrast to our knowledge about the regulation and execution of apoptosis in animal system, information about plant HR is limited. Recent studies implicated the mitogen-activated protein kinase (MAPK) cascade in regulating plant HR cell death as well as several other defense responses during incompatible interactions between plants and pathogens. Here, we report the generation of transgenic Arabidopsis plants that express the active mutants of AtMEK4 and AtMEK5, two closely related MAPK kinases under the control of a steroid-inducible promoter. Induction of the transgene expression by the application of dexamethasone, a steroid, leads to HR-like cell death, which is preceded by the activation of endogenous MAPKs and the generation of hydrogen peroxide. Both prolonged MAPK activation and reactive oxygen species generation have been implicated in the regulation of HR cell death induced by incompatible pathogens. As a result, we speculate that the prolonged activation of the MAPK pathway in cells could disrupt the redox balance, which leads to the generation of reactive oxygen species and eventually HR cell death.",
+      "journal": "The Journal of biological chemistry",
+      "year": 2002,
+      "pub_date": "2002-01-04",
+      "authors": "Ren Dongtao; Yang Heping; Zhang Shuqun",
+      "first_author": "Ren Dongtao",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12429698",
+      "doi": "10.1146/annurev.genet.36.040202.092802",
+      "title": "Chromosome rearrangements and transposable elements.",
+      "abstract": "There has been limited corroboration to date for McClintock's vision of gene regulation by transposable elements (TEs), although her proposition on the origin of species by TE-induced complex chromosome reorganizations in combination with gene mutations, i.e., the involvement of both factors in relatively sudden formations of species in many plant and animal genera, has been more promising. Moreover, resolution is in sight for several seemingly contradictory phenomena such as the endless reshuffling of chromosome structures and gene sequences versus synteny and the constancy of living fossils (or stasis in general). Recent wide-ranging investigations have confirmed and enlarged the number of earlier cases of TE target site selection (hot spots for TE integration), implying preestablished rather than accidental chromosome rearrangements for nonhomologous recombination of host DNA. The possibility of a partly predetermined generation of biodiversity and new species is discussed. The views of several leading transposon experts on the rather abrupt origin of new species have not been synthesized into the macroevolutionary theory of the punctuated equilibrium school of paleontology inferred from thoroughly consistent features of the fossil record.",
+      "journal": "Annual review of genetics",
+      "year": 2002,
+      "pub_date": "2002-01-01",
+      "authors": "Lonnig Wolf-Ekkehard; Saedler Heinz",
+      "first_author": "Lonnig Wolf-Ekkehard",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12398283",
+      "doi": "10.1078/0944-5013-00145",
+      "title": "In vitro induction of lipo-chitooligosaccharide production in Bradyrhizobium japonicum cultures by root extracts from non-leguminous plants.",
+      "abstract": "Bradyrhizobium japonicum can form a N2-fixing symbiosis with compatible leguminous plants. It can also act as a plant-growth promoting rhizobacterium (PGPR) for non-legume plants, possibly through production of lipo-chitooligosaccharides (LCOs), which should have the ability to induce disease resistance responses in plants. The objective of this work was to determine whether non-leguminous crop plants can induce LCO formation by B. japonicum cultures. Cultures treated with root extracts of soybean, corn, cotton or winter wheat were assayed for presence and level of LCO. Root extracts of soybean, corn and winter wheat all induced LCO production, with extracts of corn inducing the greatest amounts. Root washings of corn also induced LCO production, but less than the root extract. These results indicated that the stimulation of non-legume plant growth by B. japonicum could be through the production of LCOs, induced by materials excreted by the roots of non-legume plants.",
+      "journal": "Microbiological research",
+      "year": 2002,
+      "pub_date": "2002-01-01",
+      "authors": "Lian Bin; Souleimanov Alfred; Zhou Xiaomin; Smith Donald L",
+      "first_author": "Lian Bin",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12467241",
+      "doi": "10.1007/978-3-642-59430-4_1",
+      "title": "Evolution of the TIR, tolls and TLRs: functional inferences from computational biology.",
+      "abstract": "The mammalian toll-like receptors (TLRs) are products of an evolutionary process that began prior to the separation of plants and animals. The most conserved protein motif within the TLRs is the TIR, which denotes Toll, the Interleukin-1 receptor, and plant disease Resistance genes. To trace the ancestry of the TLRs, it is desirable to draw upon the sequences of TIR domains from TLRs of diverse vertebrate species, including species with known dates of divergence (i.e., representatives of Mammalia and Aves) in order to establish a relationship between time and genetic divergence. It appears that a gene ancestral to modern TLRs 1 and 6 duplicated approximately 130 million years ago, only shortly before the speciation event that led to humans and mice. Though it is not represented in mice, TLR10 split from the TLR[1/6] precursor about 300 million years ago. The origins of other TLRs are more ancient, dating to the origins of vertebrate life, and some present-day vertebrate species appear to have many more TLRs than others. Moreover, the patterns of TLR expression are quite variable at the level of tissues, even among closely related species. A given TLR in species that are related by descent from a common ancestor may acquire different duties within each descendant line, so that some microbial inducers are avidly recognized in one species but not in others; likewise the intensity and the antomic location of an innate immune response may vary considerably. In this review, we discuss the computational methods used to analyze divergence of the TIR, and the conclusions that may be safely drawn.",
+      "journal": "Current topics in microbiology and immunology",
+      "year": 2002,
+      "pub_date": "2002-01-01",
+      "authors": "Beutler B; Rehli M",
+      "first_author": "Beutler B",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11862948",
+      "doi": "10.1046/j.0960-7412.2001.01205.x",
+      "title": "An ankyrin repeat-containing protein plays a role in both disease resistance and antioxidation metabolism.",
+      "abstract": "The Arabidopsis ankyrin repeat-containing protein AKR2 was identified as a GF14(lambda)-interacting protein in a yeast two-hybrid screening (GF14(lambda) is a 14-3-3 protein). Reduced expression of AKR2 by using the antisense technique results in small necrotic areas in leaves accompanied by higher production of H2O2, similar to the hypersensitive response to pathogen infection in plant disease resistance. Transcripts of genes encoding pathogen-induced protein PR-1 (pathogen-related protein 1) and stress-responsive protein GST6 (glutathione S-transferase 6) are increased in antisense plants. The resistance to a bacterial pathogen infection was also increased by at least 10-fold in antisense plants. AKR2 also interacts with another GF14(lambda)-interacting protein, the ascorbate peroxidase 3 that scavenges H2O2 in plant cells. These data suggest that AKR2 may be a negative regulator of PR-1 expression, and is probably involved in the regulation of antioxidation metabolism that is shared by both disease resistance and stress responses.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2002,
+      "pub_date": "2002-01-01",
+      "authors": "Yan Juqiang; Wang Jing; Zhang Hong",
+      "first_author": "Yan Juqiang",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12147757",
+      "doi": "10.1146/annurev.phyto.40.120601.125310",
+      "title": "Molecular basis of recognition between phytophthora pathogens and their hosts.",
+      "abstract": "Recognition is the earliest step in any direct plant-microbe interaction. Recognition between Phytophthora pathogens, which are oomycetes, phylogenetically distinct from fungi, has been studied at two levels. Recognition of the host by the pathogen has focused on recognition of chemical, electrical, and physical features of plant roots by zoospores. Both host-specific factors such as isoflavones, and host-nonspecific factors such as amino acids, calcium, and electrical fields, influence zoospore taxis, encystment, cyst germination, and hyphal chemotropism in guiding the pathogen to potential infection sites. Recognition of the pathogen by the host defense machinery has been analyzed using biochemical and genetic approaches. Biochemical approaches have identified chemical elicitors of host defense responses, and in some cases, their cognate receptors from the host. Some elicitors, such as glucans and fatty acids, have broad host ranges, whereas others such as elicitins have narrow host ranges. Most elicitors identified appear to contribute primarily to basic or nonhost resistance. Genetic analysis has identified host resistance (R) genes and pathogen avirulence (Avr) genes that interact in a gene-for-gene manner. One Phytophthora Avr gene, Avr1b from P. sojae, has been cloned and characterized. It encodes a secreted elicitor that triggers a system-wide defense response in soybean plants carrying the cognate R gene, Rps1b.",
+      "journal": "Annual review of phytopathology",
+      "year": 2002,
+      "pub_date": "2002-01-01",
+      "authors": "Tyler Brett M",
+      "first_author": "Tyler Brett M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

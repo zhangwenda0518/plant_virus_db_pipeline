@@ -1,0 +1,281 @@
+{
+  "month": "1999-07",
+  "generated": "2026-07-13 02:59:42",
+  "total": 14,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 5,
+    "New_Virus": 4,
+    "Host_Virus_Interactions": 3,
+    "Molecular_Characterization": 1,
+    "Control_Management": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "10393941",
+      "doi": "10.1073/pnas.96.14.8022",
+      "title": "Evidence that a plant virus switched hosts to infect a vertebrate and then recombined with a vertebrate-infecting virus.",
+      "abstract": "There are several similarities between the small, circular, single-stranded-DNA genomes of circoviruses that infect vertebrates and the nanoviruses that infect plants. We analyzed circovirus and nanovirus replication initiator protein (Rep) sequences and confirmed that an N-terminal region in circovirus Reps is similar to an equivalent region in nanovirus Reps. However, we found that the remaining C-terminal region is related to an RNA-binding protein (protein 2C), encoded by picorna-like viruses, and we concluded that the sequence encoding this region of Rep was acquired from one of these single-stranded RNA viruses, probably a calicivirus, by recombination. This is clear evidence that a DNA virus has incorporated a gene from an RNA virus, and the fact that none of these viruses code for a reverse transcriptase suggests that another agent with this capacity was involved. Circoviruses were thought to be a sister-group of nanoviruses, but our phylogenetic analyses, which take account of the recombination, indicate that circoviruses evolved from a nanovirus. A nanovirus DNA was transferred from a plant to a vertebrate. This transferred DNA included the viral origin of replication; the sequence conservation clearly indicates that it maintained the ability to replicate. In view of these properties, we conclude that the transferred DNA was a kind of virus and the transfer was a host-switch. We speculate that this host-switch occurred when a vertebrate was exposed to sap from an infected plant. All characterized caliciviruses infect vertebrates, suggesting that the host-switch happened first and that the recombination took place in a vertebrate.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1999,
+      "pub_date": "1999-07-06",
+      "authors": "Gibbs M J; Weiller G F",
+      "first_author": "Gibbs M J",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "nanovirus（纳米病毒）和circovirus（圆环病毒）",
+      "taxonomy": "nanovirus属于纳米病毒科（Nanoviridae），circovirus属于圆环病毒科（Circoviridae）",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18944693",
+      "doi": "10.1094/PHYTO.1999.89.7.575",
+      "title": "Tomato Spotted Wilt Tospovirus Adapts to the TSWV N Gene-Derived Resistance by Genome Reassortment.",
+      "abstract": "ABSTRACT Pathogen- and host-derived resistance have been shown to suppress infection by many plant viruses. Tomato spotted wilt tospovirus (TSWV) is among these systems; however, it has easily overcome nearly all host resistance genes and has recently been shown to overcome resistance mediated by the TSWV N gene. To better understand the resistance-breaking mechanisms, we have chosen TSWV N gene-derived resistance (TNDR) as a model to study how plant viruses defeat resistance genes. A defined viral population of isolates TSWV-D and TSWV-10, both suppressed by TNDR, was subjected to TNDR selection by serial passage in an N-gene transgenic plant. The genotype analysis demonstrated that the mixed viral population was driven to form a specific reassortant, L(10)M(10)S(D), in the presence of TNDR selection, but remained as a heterogeneous mixture in the absence of the selection. A genotype assay of 120 local lesion isolates from the first, fourth, and seventh transfers confirmed the shift of genomic composition. Further analysis demonstrated that the individual L(10), M(10), and S(D) RNA segments were each selected independently in response to TNDR selection rather than to a mutation or recombination event. Following the seventh transfer on the N-gene transgenic plants, TSWV S RNA remained essentially identical to the S RNA from TSWV-D, indicating that no intermolecular recombination occurred between the two S RNAs from TSWV-10 and TSWV-D nor with the transferred N gene. These results support the hypothesis that TSWV utilizes genome reassortment to adapt to new host genotypes rapidly and that elements from two or more segments of the genome are involved in suppression of the resistance reaction.",
+      "journal": "Phytopathology",
+      "year": 1999,
+      "pub_date": "1999-07-01",
+      "authors": "Qiu W; Moyer J W",
+      "first_author": "Qiu W",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "番茄斑萎病毒（Tomato spotted wilt tospovirus, TSWV）",
+      "taxonomy": "",
+      "host_plant": "番茄（推断）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10393929",
+      "doi": "10.1073/pnas.96.14.7956",
+      "title": "Bax-induced cell death in tobacco is similar to the hypersensitive response.",
+      "abstract": "Bax, a death-promoting member of the Bcl-2 family of proteins, triggered cell death when expressed in plants from a tobacco mosaic virus vector. Analysis of Bax deletion mutants demonstrated a requirement for the BH1 and BH3 domains in promoting rapid cell death, whereas deletion of the carboxyl-terminal transmembrane domain completely abolished the lethality of Bax in plants. The phenotype of cell death induced by Bax closely resembled the hypersensitive response induced by wild-type tobacco mosaic virus in tobacco plants carrying the N gene. The cell death-promoting function of Bax in plants correlated with accumulation of the defense-related protein PR1, suggesting Bax activated an endogenous cell-death program in plants. In support of this view, both N gene- and Bax-mediated cell death was blocked by okadaic acid, an inhibitor of protein phosphatase activity. The ability of Bax to induce cell death and a defense reaction in plants suggests that some features of animal and plant cell death processes may be shared.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1999,
+      "pub_date": "1999-07-06",
+      "authors": "Lacomme C; Santa Cruz S",
+      "first_author": "Lacomme C",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "烟草花叶病毒",
+      "taxonomy": "",
+      "host_plant": "烟草",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10425753",
+      "doi": "10.1099/00207713-49-3-975",
+      "title": "Aminomonas paucivorans gen. nov., sp. nov., a mesophilic, anaerobic, amino-acid-utilizing bacterium.",
+      "abstract": "A novel, asaccharolytic, amino-acid-degrading bacterium, designated strain GLU-3T, was isolated from an anaerobic lagoon of a dairy wastewater treatment plant. Strain GLU-3T stained Gram-negative and was an obligately anaerobic, non-spore-forming, slightly curved, rod-shaped bacterium (0.3 x 4.0-6.0 microns) which existed singly or in pairs. The DNA G+C content was 43 mol%. Optimum growth occurred at 35 degrees C and pH 7.5 on arginine with a generation time of 16 h. Good growth was obtained on arginine, histidine, threonine and glycine. Acetate was the end-product formed from all these substrates, but in addition, a trace of formate was detected from arginine and histidine, and ornithine was produced from arginine. Strain GLU-3T grew slowly on glutamate and produced acetate, carbon dioxide, formate, hydrogen and traces of propionate as the end-products. In syntrophic association with Methanobacterium formicicum, strain GLU-3T oxidized arginine, histidine and glutamate to give propionate as the major product; acetate, carbon dioxide and methane were also produced. Strain GLU-3T did not degrade alanine and the branched-chain amino acids valine, leucine and isoleucine either in pure culture or in association with M. formicicum. The nearest phylogenetic relative of strain GLU-3T was the thermophile Selenomonas acidaminovorans (similarity value of 89.5%). As strain GLU-3T is phylogenetically, physiologically and genotypically different from other amino-acid-degrading genera, it is proposed that it should be designated a new species of a new genus Aminomonas paucivorans gen. nov., sp. nov. (DSM 12260T).",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1999,
+      "pub_date": "1999-07-01",
+      "authors": "Baena S; Fardeau M L; Ollivier B; Labat M; Thomas P; ... (+2)",
+      "first_author": "Baena S",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10690243",
+      "doi": "10.1080/00034989958212",
+      "title": "Malaria and the Narmada-river development in India: a case study of the Bargi dam.",
+      "abstract": "The largest river-valley development to be proposed in India is that in the Narmada valley. The building of the Bargi dam, a multi-purpose irrigation and hydro-electric project, in Jabalpur, in central India, formed part of the first phase of the development of this valley (1974-1988). Many villages and several hectares of land in three districts were submerged as the waters rose behind the dam, the worst affected area being the catchment area of the primary health centre (PHC) at Narayanganj, in Mandla district. Until recently, cases of malaria were relatively rare in Narayanganj. However, an epidemic of malaria in late 1996 claimed hundreds of lives in the area and the outbreak spread, during 1997, to new villages in the region. A review of the records collected by the National Malaria Eradication Programme (NMEP) not only indicated that the slide positivity rate (SPR) for Narayanganj increased > 7.45-fold between 1979 and 1997 but also that the slide falciparum rate (SFR) increased > 32-fold over the same period. The NMEP data available for Mandla district as a whole indicated a doubling in mean SPR and SFR between 1979 and 1997. There is no evidence that a new species of vector has established since 1979. In fact, indoor-resting densities of anophelines and of the most established vector, Anopheles culicifacies, have fallen since the dam was built, but densities of another vector, An. fluviatilis, have increased.",
+      "journal": "Annals of tropical medicine and parasitology",
+      "year": 1999,
+      "pub_date": "1999-07-01",
+      "authors": "Singh N; Mehra R K; Sharma V P",
+      "first_author": "Singh N",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10425762",
+      "doi": "10.1099/00207713-49-3-1045",
+      "title": "Thauera mechernichensis sp. nov., an aerobic denitrifier from a leachate treatment plant.",
+      "abstract": "A heterotrophic bacterial strain TL1T capable of aerobic denitrification was previously enriched in continuous culture from a landfill leachate treatment plant and isolated as a pure culture. The taxonomic position of this isolate within the beta-subclass of the Proteobacteria was determined by 16S rDNA sequence analysis and by conventional taxonomy including substrate spectrum, quinone type (ubiquinone Q-8) and cellular fatty acid composition. Detection of the specific polyamine 2-hydroxyputrescine supports the membership of strain TL1T in the beta-subclass of the Proteobacteria. The results of 16S rDNA sequencing showed that the strain clustered with, but was separate from, Thauera aromatica and Thauera selenatis. DNA-DNA hybridization experiments indicated that the new isolate represents a new species of the genus, for which the name Thauera mechernichensis is proposed; the type strain is DSM 12266T.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1999,
+      "pub_date": "1999-07-01",
+      "authors": "Scholten E; Lukow T; Auling G; Kroppenstedt R M; Rainey F A; ... (+1)",
+      "first_author": "Scholten E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10425793",
+      "doi": "10.1099/00207713-49-3-1295",
+      "title": "Pichia lachancei sp. nov., associated with several Hawaiian plant species.",
+      "abstract": "A description is given of Pichia lachancei sp. nov., a new species of yeast that occurs in association with several Hawaiian plant species of the genera Tetraplasandra, Cheirodendron and Clermontia. The new species is heterothallic and occurs in nature in the haploid as well as the diploid state. Upon conjugation of complementary mating types, zygotes are formed that reproduce by budding as diploid cells. When placed on sporulation medium, four hat-shaped spores are produced which are rapidly released from the ascus. Phylogenetic analysis showed that P. lachancei is most closely related to Pichia rhodanensis and Pichia jadinii. The diploid type strain of P. lachancei, isolated from rotting bark of Tetraplasandra hawaiiensis on the island of Hawaii, is strain UCD-FST 79-9T (= ATCC 201914T = CBS 8557T = NRRL Y-27008T).",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1999,
+      "pub_date": "1999-07-01",
+      "authors": "Phaff H J; Starmer W T; Kurtzman C P",
+      "first_author": "Phaff H J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10415441",
+      "doi": "10.1016/s1383-5742(99)00020-4",
+      "title": "Genetic engineering of crops as potential source of genetic hazard in the human diet.",
+      "abstract": "The benefits of genetic engineering of crop plants to improve the reliability and quality of the world food supply have been contrasted with public concerns raised about the food safety of the resulting products. Debates have concentrated on the possible unforeseen risks associated with the accumulation of new metabolites in crop plants that may contribute to toxins, allergens and genetic hazards in the human diet. This review examines the various molecular and biochemical mechanisms by which new hazards may appear in foods as a direct consequence of genetic engineering in crop plants. Such hazards may arise from the expression products of the inserted genes, secondary or pleiotropic effects of transgene expression, and random insertional mutagenic effects resulting from transgene integration into plant genomes. However, when traditional plant breeding is evaluated in the same context, these mechanisms are no different from those that have been widely accepted from the past use of new cultivars in agriculture. The risks associated with the introduction of new genes via genetic engineering must be considered alongside the common breeding practice of introgressing large fragments of chromatin from related wild species into crop cultivars. The large proportion of such introgressed DNA involves genes of unknown function linked to the trait of interest such as pest or disease resistance. In this context, the potential risks of introducing new food hazards from the applications of genetic engineering are no different from the risks that might be anticipated from genetic manipulation of crops via traditional breeding. In many respects, the precise manner in which genetic engineering can control the nature and expression of the transferred DNA offers greater confidence for producing the desired outcome compared with traditional breeding.",
+      "journal": "Mutation research",
+      "year": 1999,
+      "pub_date": "1999-07-15",
+      "authors": "Conner A J; Jacobs J M",
+      "first_author": "Conner A J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10487219",
+      "doi": "10.1023/a:1006244323934",
+      "title": "Chemical induction of disease resistance in rice is correlated with the expression of a gene encoding a nucleotide binding site and leucine-rich repeats.",
+      "abstract": "Probenazole (3-allyloxy-1,2-benzisothiazole-1,1-dioxide) is an agricultural chemical primarily used to prevent rice blast disease. Probenazole-treated rice acquires resistance to blast fungus irrespective of the rice variety. The chemical is applied prophylactically, and is thought to induce or bolster endogenous plant defenses. However, the mechanisms underlying this effect have not been established. To understand the mode of the chemical's action, we screened for novel probenazole-responsive genes in rice by means of differential display and identified a candidate gene, RPR1. RPR1 contains a nucleotide binding site and leucine-rich repeats, thus sharing structural similarity with known disease resistance genes. The expression of RPR1 in rice can be up-regulated by treatment with chemical inducers of systemic acquired resistance (SAR) and by inoculation with pathogens. RPR1-related sequences in rice varieties seem to be varied in sequence and/or expression, indicating that RPR1 itself is not a crucial factor for induced resistance in rice. However, Southern blot analysis revealed the existence of homologous sequences in all varieties examined. While the role of RPR1 has yet to be clarified, this is the first report of the identification of a member of this gene class and its induction during the systemic expression of induced disease resistance.",
+      "journal": "Plant molecular biology",
+      "year": 1999,
+      "pub_date": "1999-07-01",
+      "authors": "Sakamoto K; Tada Y; Yokozeki Y; Akagi H; Hayashi N; ... (+2)",
+      "first_author": "Sakamoto K",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10417726",
+      "doi": "10.1046/j.1365-313x.1999.00498.x",
+      "title": "The Pib gene for rice blast resistance belongs to the nucleotide binding and leucine-rich repeat class of plant disease resistance genes.",
+      "abstract": "Rice blast, caused by the fungal pathogen Magnaporthe grisea, is one of the most serious diseases of rice. Here we describe the isolation and characterization of Pib, one of the rice blast resistance genes. The Pib gene was isolated by a map-based cloning strategy. The deduced amino acid sequence of the Pib gene product contains a nucleotide binding site (NBS) and leucine-rich repeats (LRRs); thus, Pib is a member of the NBS-LRR class of plant disease resistance genes. Interestingly, a duplication of the kinase 1a, 2 and 3a motifs of the NBS region was found in the N-terminal half of the Pib protein. In addition, eight cysteine residues are clustered in the middle of the LRRs, a feature which has not been reported for other R genes. Pib gene expression was induced upon altered environmental conditions, such as altered temperatures and darkness.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 1999,
+      "pub_date": "1999-07-01",
+      "authors": "Wang Z X; Yano M; Yamanouchi U; Iwamoto M; Monna L; ... (+3)",
+      "first_author": "Wang Z X",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10403789",
+      "doi": "10.1006/bbrc.1999.0922",
+      "title": "Pokeweed antiviral protein isoforms PAP-I, PAP-II, and PAP-III depurinate RNA of human immunodeficiency virus (HIV)-1.",
+      "abstract": "Pokeweed antiviral protein (PAP) is a naturally occurring broad-spectrum antiviral agent with potent anti-human immunodeficiency virus (HIV)-1 activity by an as yet undeciphered molecular mechanism. In the present study, we sought to determine if PAP is capable of recognizing and depurinating viral RNA. Depurination of viral RNA was monitored by directly measuring the amount of the adenine base released from the viral RNA species using quantitative high-performance liquid chromatography. Our findings presented herein provide direct evidence that three different PAP isoforms from Phytolacca americana (PAP-I from spring leaves, PAP-II from early summer leaves, and PAP-III from late summer leaves) cause concentration-dependent depurination of genomic RNA (63 to 400 pmols of adenine released per micrograms of RNA) purified from human immunodeficiency virus type-I (HIV-I), plant virus (tobacco mosaic virus (TMV), and bacteriophage (MS 2). In contrast to the three PAP isoforms, ricin A chain (RTA) failed to cause detectable depurination of viral RNA even at 5 microM, although it was as effective as PAP in inhibiting protein synthesis in cell-free translation assays. PAP-I, PAP-II, and PAP-III (but not RTA) inhibited the replication of HIV-1 in human peripheral blood mononuclear cells with IC(50) values of 17 nM, 25 nM, and 16 nM, respectively. These findings indicate that the highly conserved active site residues responsible for the depurination of rRNA by PAP or RTA are not sufficient for the recognition and depurination of viral RNA. Our study prompts the hypothesis that the potent antiviral activity of PAP may in part be due to its unique ability to extensively depurinate viral RNA, including HIV-1 RNA.",
+      "journal": "Biochemical and biophysical research communications",
+      "year": 1999,
+      "pub_date": "1999-07-05",
+      "authors": "Rajamohan F; Venkatachalam T K; Irvin J D; Uckun F M",
+      "first_author": "Rajamohan F",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10419833",
+      "doi": "10.1006/prep.1999.1084",
+      "title": "High-level expression and purification of biologically active recombinant pokeweed antiviral protein.",
+      "abstract": "Pokeweed antiviral protein (PAP) from the leaves of the pokeweed plant, Phytolacca americana, is a naturally occurring single-chain ribosome-inactivating protein, which catalytically inactivates both prokaryotic and eukaryotic ribosomes. The therapeutic potential of PAP has gained considerable interest in recent years due to the clinical use of native PAP as the active moiety of immunoconjugates against cancer and AIDS. The clinical use of native PAP is limited due to inherent difficulties in obtaining sufficient quantities of a homogenously pure and active PAP preparation with minimal batch to batch variability from its natural source. Previous methods for expression of recombinant PAP in yeast, transgenic plants and Escherichia coli have resulted in either unacceptably low yields or were too toxic to the host system. Here, we report a successful strategy which allows high level expression of PAP as inclusion bodies in E. coli. Purification of refolded recombinant protein from solubilized inclusion bodies by size-exclusion chromatography yielded biologically active recombinant PAP (final yield: 10 to 12 mg/L). The ribosome depurinating in vitro N-glycosidase activity and cellular anti-HIV activity of recombinant PAP were comparable to those of the native PAP. This expression and purification system makes it possible to obtain sufficient quantities of biologically active and homogenous recombinant PAP sufficient to carry out advanced clinical trials. To our knowledge, this is the first large-scale expression and purification of biologically active recombinant PAP from E. coli.",
+      "journal": "Protein expression and purification",
+      "year": 1999,
+      "pub_date": "1999-07-01",
+      "authors": "Rajamohan F; Engstrom C R; Denton T J; Engen L A; Kourinov I; ... (+1)",
+      "first_author": "Rajamohan F",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

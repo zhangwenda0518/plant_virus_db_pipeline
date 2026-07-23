@@ -1,0 +1,125 @@
+{
+  "month": "1996-05",
+  "generated": "2026-07-13 02:59:42",
+  "total": 5,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 3,
+    "New_Virus": 1,
+    "Virgaviridae": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8623558",
+      "doi": "10.1006/viro.1996.0217",
+      "title": "Comparisons of the genomic cis-elements and coding regions in RNA beta components of the hordeiviruses barley stripe mosaic virus, lychnis ringspot virus, and poa semilatent virus.",
+      "abstract": "Nucleotide sequences of the genomic RNA beta components of hordeiviruses poa semilatent virus (PSLV) and lychnis ringspot virus (LRSV) were determined. PSLV and LRSV closely resemble barley stripe mosaic virus (BSMV), type hordeivirus, in the gene arrangement of their RNAs beta, comprising 5'-proximal beta a (coat protein) gene and downstream triple gene block (TGB) coding for the beta b, beta c, and beta d putative transport proteins. The beta a, beta b, beta c, and beta d proteins of the three hordeiviruses showed significant sequence similarity, with the respective proteins of PSLV and BSMV being closer to each other than to their counterparts of LSRV. Comparisons of the TGB-encoded proteins of hordeiviruses, potexviruses, carlaviruses, and furoviruses indicate that the first and second TGB genes belong to the monophyletic groups, whereas the third gene may have multiple ancestry. LRSV, PSLV, and BSMV showed remarkable variation in the 3'-untranslated regions of their genomic RNAs. Among the three hordeiviruses, LRSV has the shortest 3'-noncoding region that lacks tentative pseudoknot-forming elements conserved upstream of the 3'-tRNA-like structure in the BSMV and PSLV genomes. On the other hand, LRSV RNA beta, like that of BSMV, contained the internal poly(A) sequence that is absent from PSLV RNA.",
+      "journal": "Virology",
+      "year": 1996,
+      "pub_date": "1996-05-01",
+      "authors": "Solovyev A G; Savenkov E I; Agranovsky A A; Morozov S Y",
+      "first_author": "Solovyev A G",
+      "categories": [
+        "New_Virus",
+        "Virgaviridae"
+      ],
+      "virus_name": "大麦条纹花叶病毒(BSMV), 剪秋罗环斑病毒(LRSV), 早熟禾半潜病毒(PSLV)",
+      "taxonomy": "Hordeivirus (未明确科)",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "PSLV和LRSV的RNA beta基因排列与BSMV相似；蛋白相似性显示PSLV与BSMV更近；LRSV的3'UTR缺少假结结构但含内部poly(A)序列；TGB基因进化分析表明第一、第二基因单系，第三基因多起源。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "8783800",
+      "doi": "10.1016/0166-3542(95)00839-x",
+      "title": "Antiviral properties of extract of Opuntia streptacantha.",
+      "abstract": "An extract of the cactus plant Opuntia streptacantha inhibited intracellular virus replication and inactivated extracellular virus. Inhibition of virus replication also occurred following pre-infection treatment--a favourable finding in terms of in-vivo limitation of virus disease. There was inhibition of both DNA and RNA virus replication, for example, herpes simplex virus, equine herpes virus, pseudorabies virus, influenza virus, respiratory syncytial virus and human immunodeficiency virus, with normal protein synthesis in uninfected cells at extract concentrations which were 15-fold in excess of 50% viral inhibitory concentrations (1 mg/ml). The active inhibitory component(s) of the extract appeared to be protein in nature and resided mainly in the wall of the plant rather than in the cuticle or inner sap. The extract was non-toxic on oral administration to mice, horses and human patients; the non-toxicity of intravenous administration of 70 mg to a mouse representing at least fifty tissue culture 50% viral inhibitory dosages encourages clinical trial of this extract in virus disease of human and veterinary species.",
+      "journal": "Antiviral research",
+      "year": 1996,
+      "pub_date": "1996-05-01",
+      "authors": "Ahmad A; Davies J; Randall S; Skinner G R",
+      "first_author": "Ahmad A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8655093",
+      "doi": "10.1016/0278-6915(96)00004-x",
+      "title": "An evaluation of the antioxidant and antiviral action of extracts of rosemary and Provençal herbs.",
+      "abstract": "Extracts of herbs and spices are increasingly of interest in the food industry because they retard oxidative degradation of lipids. There is also increasing interest in the antiviral activity of plant products. A liquid, deodorized rosemary extract and an oily extract of a mixture of Provençal herbs were tested for antioxidant and antiviral action in vitro. The rosemary extract (Herbor 025) and the extract of Provençal herbs (Spice Cocktail) inhibited peroxidation of phospholipid liposomes with 50% inhibition concentration values of 0.0009% (v/v) and 0.0035% (v/v), respectively. Herbor 025 and the spice cocktail (at 0.2%, v/v) reacted with trichloromethylperoxyl radical with calculated rates of 2.7 x 10(4) s-1 and 1.5 x 10(3) s-1, respectively. The main active components in the herbal preparations, carnosol and carnosic acid, at 0.05% (v/v) react with rate constants of (1-3) x 10(6) M-1 sec-1 and 2.7 x 10(7) M-1 sec-1, respectively. Both extracts show good antioxidant activity in the Rancimat test, especially in lard. Herbor 025 and the spice cocktail inhibited human immunodeficiency virus (HIV) infection at very low concentrations which were also cytotoxic. However, purified carnosol exhibited definite anti-HIV activity at a concentration (8 microM) which was not cytotoxic. Both preparations promoted some DNA damage in the copper-phenanthroline and the bleomycin-iron systems. The two herbal preparations possess antioxidant properties that may make them useful in the food matrix.",
+      "journal": "Food and chemical toxicology : an international journal published for the British Industrial Biological Research Association",
+      "year": 1996,
+      "pub_date": "1996-05-01",
+      "authors": "Aruoma O I; Spencer J P; Rossi R; Aeschbach R; Khan A; ... (+5)",
+      "first_author": "Aruoma O I",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8733118",
+      "doi": "10.1016/0378-8741(96)01387-6",
+      "title": "Inhibition of herpes simplex virus type 1 by aqueous extracts from shoots of Helichrysum aureonitens (Asteraceae).",
+      "abstract": "Helichrysum aureonitens, a southern African medicinal plant reported to have antibacterial properties, was evaluated for antiviral activity against herpes simplex virus type 1 (HSV-1) in vitro. The crude aqueous extract from shoots of H. aureonitens at a concentration of 1.35 mg/ml (w/v) showed significant antiviral activity on HSV-1 in human lung fibroblasts as demonstrated by the absence of a cytopathic effect.",
+      "journal": "Journal of ethnopharmacology",
+      "year": 1996,
+      "pub_date": "1996-05-01",
+      "authors": "Meyer J J; Afolayan A J; Taylor M B; Engelbrecht L",
+      "first_author": "Meyer J J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8643575",
+      "doi": "10.1073/pnas.93.11.5335",
+      "title": "Expression of Norwalk virus capsid protein in transgenic tobacco and potato and its oral immunogenicity in mice.",
+      "abstract": "Alternatives to cell culture systems for production of recombinant proteins could make very safe vaccines at a lower cost. We have used genetically engineered plants for expression of candidate vaccine antigens with the goal of using the edible plant organs for economical delivery of oral vaccines. Transgenic tobacco and potato plants were created that express the capsid protein of Norwalk virus, a calicivirus that causes epidemic acute gastroenteritis in humans. The capsid protein could be extracted from tobacco leaves in the form of 38-nm Norwalk virus-like particles. Recombinant Norwalk virus-like particle (rNV) was previously recovered when the same gene was expressed in recombinant baculovirus-infected insect cells. The capsid protein expressed in tobacco leaves and potato tubers cosedimented in sucrose gradients with insect cell-derived rNV and appeared identical to insect cell-derived rNV on immunoblots of SDS/polyacrylamide gels. The plant-expressed rNV was orally immunogenic in mice. Extracts of tobacco leaf expressing rNV were given to CD1 mice by gavage, and the treated mice developed both serum IgG and secretory IgA specific for rNV. Furthermore, when potato tubers expressing rNV were fed directly to mice, they developed serum IgG specific for rNV. These results indicate the potential usefulness of plants for production and delivery of edible vaccines. This is an appropriate technology for developing countries where vaccines are urgently needed.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1996,
+      "pub_date": "1996-05-28",
+      "authors": "Mason H S; Ball J M; Shi J J; Jiang X; Estes M K; ... (+1)",
+      "first_author": "Mason H S",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

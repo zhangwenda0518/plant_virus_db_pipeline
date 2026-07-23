@@ -1,0 +1,79 @@
+{
+  "month": "1985-01",
+  "generated": "2026-07-13 02:59:42",
+  "total": 3,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 1,
+    "Viral_Diversity_Ecology": 1,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "3994978",
+      "doi": "10.1021/bi00324a008",
+      "title": "Plant oligoadenylates: enzymatic synthesis, isolation, and biological activities.",
+      "abstract": "An enzyme that converts [3H, 32P]ATP, with a 3H:32P ratio of 1:1, to oligoadenylates with the same 3H:32P ratio was increased in plants following treatment with human leukocyte interferon or plant antiviral factor or inoculation with tobacco mosaic virus. The enzyme was extracted from tobacco leaves, callus tissue cultures, or cell suspension cultures. The enzyme, a putative plant oligoadenylate synthetase, was immobilized on poly(rI) . poly(rC)-agarose columns and converted ATP into plant oligoadenylates. These oligoadenylates were displaced from DEAE-cellulose columns with 350 mM KCl buffer, dialyzed, and further purified by high-performance liquid chromatography (HPLC) and DEAE-cellulose gradient chromatography. In all steps of purification, the ratio of 3H:32P in the oligoadenylates remained 1:1. The plant oligoadenylates isolated by displacement with 350 mM KCl had a molecular weight greater than 1000. The plant oligoadenylates had charges of 5- and 6-. HPLC resolved five peaks, three of which inhibited protein synthesis in reticulocyte and wheat germ systems. Partial structural elucidation of the plant oligoadenylates has been determined by enzymatic and chemical treatments. An adenylate with a 3',5'-phosphodiester and/or a pyrophosphoryl linkage with either 3'- or 5'-terminal phosphates is postulated on the basis of treatment of the oligoadenylates with T2 RNase, snake venom phosphodiesterase, and bacterial alkaline phosphatase and acid and alkaline hydrolyses. The plant oligoadenylates at 8 X 10(-7) M inhibit protein synthesis by 75% in lysates from rabbit reticulocytes and 45% in wheat germ cell-free systems.(ABSTRACT TRUNCATED AT 250 WORDS)",
+      "journal": "Biochemistry",
+      "year": 1985,
+      "pub_date": "1985-01-29",
+      "authors": "Devash Y; Reichman M; Sela I; Reichenbach N L; Suhadolnik R J",
+      "first_author": "Devash Y",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒",
+      "taxonomy": "",
+      "host_plant": "烟草",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "4028317",
+      "doi": "",
+      "title": "[Ecology of tick-borne arboviruses in the Central African Republic].",
+      "abstract": "Ticks have been collected on cattle skins for seven consecutive years in Bangui, Berberati, Bangassou and Bouar. 150 strains of arboviruses have been isolated from the four following species: Amblyomma variegatum: Dugbe, Jos, Thogoto, Crimean-Congo Hemorragic Fever (CCHF), Yellow Fever, Bhanja and Pétévo; Boophilus annulatus: Dugbe, Jos and Thogoto; B. decoloratus: Dugbe, Jos, Thogoto and CCHF; Hyalomma nitidum: CCHF. Dugbe (112 isolated strains), Jos (19 isolates) and Thogoto (11 isolates) viruses represent more than 95% of all the strains. Dugbe virus was isolated mostly during the first half of the rainy season. Jos virus shows a maximum rate of infection during the dry season (february) and a second peak in october (2nd half of the rainy season). Most of the strains of Thogoto virus have been isolated during the dry season. These seasonal variations of infection rates follow the seasonal variation of vector population densities. Thus preimagines and imagines of A. variegatum, the main vector of the Dugbe virus in C. A. R. show peaks of abundance respectively during the dry season and during the first half of the rainy season. Adults of Boophilus show maximum densities from december to february (dry season) when the greater number of Jos and Thogoto viruses are isolated. CCHF virus ecology needs more studies in Central African Republic. The importance of ticks in the wild cycle of Yellow Fever virus is not yet understood. Bhanja virus has been isolated only one time in C. A. R. Pétévo is a lately described virus which belongs to a group thus far unknown in Africa (Palyam gr.).",
+      "journal": "Bulletin de la Societe de pathologie exotique et de ses filiales",
+      "year": 1985,
+      "pub_date": "1985-01-01",
+      "authors": "Dégallier N; Cornet J P; Saluzzo J F; Germain M; Hervé J P; ... (+2)",
+      "first_author": "Dégallier N",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "3870503",
+      "doi": "10.2500/108854185779109151",
+      "title": "Immunologic aspects of eosinophilia.",
+      "abstract": "There is compelling investigative data to indicate that the eosinophil may be more than just coincidentally involved in immune system function. In concert with IgE and the mast cell it is likely that eosinophil actions evolved as an early host defense mechanism against helminth parasites. Thus, a reasonable basis exists for the concept that in the evolutionary scheme there emerged genetically endowed humans with the potential for mounting immediate hypersensitivity responses to multicellular and complex antigenic particulates and animal and plant products, e.g., pollens and danders; hence the atopic state, allergic reactivity and the eosinophil. In many instances there is reason to interpret and ascribe a benign nature to eosinophil accumulations. In other circumstances, associations with hypersensitivity inflammation, for better or for worse, are viewed with special interest by eosinophil watchers as the unraveling of allergic phenomena continues.",
+      "journal": "New England and regional allergy proceedings",
+      "year": 1985,
+      "pub_date": "1985-01-01",
+      "authors": "Cohen S G",
+      "first_author": "Cohen S G",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

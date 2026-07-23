@@ -1,0 +1,35 @@
+{
+  "month": "1987-06",
+  "generated": "2026-07-13 02:59:42",
+  "total": 1,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 1,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "2821895",
+      "doi": "10.1016/0166-3542(87)90010-6",
+      "title": "On the inhibition of plant virus multiplication by ribavirin.",
+      "abstract": "The inhibition of the replication of potato virus X (PVX), belladonna mottle virus, tobacco mosaic virus, potato virus Y (PVY), and tobacco necrosis virus by ribavirin and pyrazofurin is described with emphasis on the inhibition of PVX by ribavirin. Ribavirin inhibits an early step of PVX replication. The inhibition is reversed to different degrees by all ribo- and deoxyribonucleosides, most strongly by thymidine. In tobacco leaves, nucleosides compete with ribavirin for phosphorylation to monophosphate by a nucleoside phosphotransferase. However, the final and main phosphorylation product of ribavirin is triphosphate. It is suggested that ribavirin triphosphate is the antiviral form and that it acts by inhibiting the capping of viral RNAs. This mode of action cannot be applied to the inhibition of PVY, the RNA of which is probably covalently linked to a protein at the 5'-terminus.",
+      "journal": "Antiviral research",
+      "year": 1987,
+      "pub_date": "1987-06-01",
+      "authors": "Lerch B",
+      "first_author": "Lerch B",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management"
+      ],
+      "virus_name": "马铃薯X病毒(PVX)、颠茄斑驳病毒、烟草花叶病毒、马铃薯Y病毒(PVY)、烟草坏死病毒",
+      "taxonomy": "",
+      "host_plant": "烟草",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

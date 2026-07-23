@@ -1,0 +1,237 @@
+{
+  "month": "1991-01",
+  "generated": "2026-07-13 02:59:42",
+  "total": 10,
+  "by_category": {
+    "New_Virus": 3,
+    "Host_Virus_Interactions": 3,
+    "Molecular_Characterization": 2,
+    "Detection_Methods": 1,
+    "Antiviral_Resistance_Genes": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "1993475",
+      "doi": "10.1016/0014-5793(91)80083-f",
+      "title": "Effect of removal of zinc on alfalfa mosaic virus RNA-dependent RNA polymerase.",
+      "abstract": "The necessity of coat protein for infection of plants by alfalfa mosaic virus (AIMV) and other ilarviruses distinguishes this virus group from other plant virus groups. Recently, the presence of both a zinc-finger type motif and zinc in AIMV coat protein was described [(1989) Virology 168, 48-56]. We studied the effect of a zinc chelator on viral RNA synthesis. Strong inhibition of AIMV RNA-dependent RNA polymerase (RdRp) by ortho-phenanthroline (OP) was observed.",
+      "journal": "FEBS letters",
+      "year": 1991,
+      "pub_date": "1991-01-14",
+      "authors": "Quadt R; Jaspars E M",
+      "first_author": "Quadt R",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "苜蓿花叶病毒 (Alfalfa mosaic virus, AIMV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1863225",
+      "doi": "10.1007/BF01314325",
+      "title": "The use of serological differentiation indices for the phylogenetic analysis of plant virus relationships.",
+      "abstract": "The potential use of serological differentiation indices (SDIs) in the phylogenetic analysis of plant virus coat protein relationships is presented. Relationship dendrograms were constructed from SDI data for viruses in the tymovirus and Subgroup I geminivirus taxonomic groups, using distance or phenetic methods embodied in the computer programmes FITCH and NJTREE. Relationship dendrograms for geminiviruses agreed well with those constructed by others from sequence or other data; the dendrogram for tymoviruses was not in agreement with one calculated from amino acid composition data, or from other properties, but appears consistent with recently-shown sequence similarities between tymoviruses. Implications of these results for the classification and taxonomy of plant viruses are discussed.",
+      "journal": "Archives of virology",
+      "year": 1991,
+      "pub_date": "1991-01-01",
+      "authors": "Rybicki E P",
+      "first_author": "Rybicki E P",
+      "categories": [
+        "Detection_Methods",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "tymoviruses, geminiviruses",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "24221151",
+      "doi": "10.1007/BF00226104",
+      "title": "Characterization of a gametoclonal variant controlling virus resistance in tobacco.",
+      "abstract": "Potato virus Y (PVY), susceptible tobacco (Nicotiana tabacum L.) cultivar, McNair 944, was subjected to in vitro anther culture to determine if genetic variability for virus resistance could be induced among resulting haploids. Five hundred and forty-five haploids were produced and inoculated with a highly necrotic strain (NN) of PVY. One haploid plant survived, even though it was infected with the virus. Selfed progenies of a chromosome-doubled plant of this variant, designated NC 602, proved to be highly resistant to the necrotic effects of the virus. An investigation into the genetic nature of this variant showed the resistance mechanism to be controlled by a single gene exhibiting incomplete dominance. Cytoplasmic and maternal effects were not involved in the disease resistance reaction. The variant was challenged with ten additional strains of PVY from an international collection, and it proved to be resistant to three (VAM-B, MM, and Spanish) strains. NC 602 was evaluated for five agronomic traits and concentrations of total alkaloids as nicotine and reducing sugars in cured leaf. The gametoclonal variant differed from McNair 944 only for cured leaf yield, where an 18.4% reduction was measured.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 1991,
+      "pub_date": "1991-01-01",
+      "authors": "Witherspoon W D; Wernsman E A; Gooding G V; Rufty R C",
+      "first_author": "Witherspoon W D",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Potato virus Y (PVY)",
+      "taxonomy": "",
+      "host_plant": "烟草 (Nicotiana tabacum)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2020701",
+      "doi": "",
+      "title": "The novel tertiary structure in delta RNA may function as a ribozyme control element.",
+      "abstract": "The viroid-like domain making up the lefthand end of the delta hepatitis genome (Branch et al., 1989) has structural elements whose interactions may be essential for replication. This portion of the genome is highly conserved in primary sequence and contains two well-defined types of structural features: sites capable of self-cleavage, and those forming a UV-sensitive element of local tertiary structure which is very stable and contains non-Watson:Crick bonds that may form a distinctive surface for binding specific proteins. The proximity of the tertiary structure to the genomic self-cleavage site suggests that the photoreactive element may regulate the ribozyme. This element's stability would limit \"breathing\" in this region of the circular genome, maintaining the ribozyme in the \"off\" conformation; its tight structure could be relieved by protein binding at the time of replication. We previously mapped a novel local tertiary structure to a highly conserved portion of the viroid genome (Branch et al., 1985). The many additional properties shared by viroids, related infectious circular RNAs of plants, and the delta agent are discussed in a recent article (Branch et al., in press-a).",
+      "journal": "Progress in clinical and biological research",
+      "year": 1991,
+      "pub_date": "1991-01-01",
+      "authors": "Branch A D; Levine B J; Baroudy B M; Buckler-White A; Gerin J L; ... (+1)",
+      "first_author": "Branch A D",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1789112",
+      "doi": "",
+      "title": "[The structure of glyeurysaponin].",
+      "abstract": "A species of the genus Glycyrrhiza, G. eurycarpa P.C. Li recently reported as a new species growing in Gansu Province Xinjiang Autonomous Region has rarely been studied before on its chemical constituents. This paper reports the isolation and chemical elucidation of two triterpene glucosides named glyeurysaponin (K-4) and uralsaponin B (K-3) from this species collected in Jinta County, Gansu Province. Their chemical structures were elucidated by means of chemical and spectrometric analysis (UV, IR, MS, 1HNMR and 13CNMR) and were first reported to be present in this plant. Glyeurysaponin (K-4), C42H62O16 was obtained as white crystals, mp 288 degrees C (d), [alpha]18D + 22.5 degrees (c 0.62,60%MeOH). Its structure was found to be be 3 beta-hydroxy-11-oxo-olean-12-en-30-oic acid-3-O-beta-D-glucuronopyranosyl-(1----4)-beta-D-glucuronopyr anoside. Glyeurysaponin is a new triterpenoid saponin. The known saponin was identified to be 3 beta-hydroxy-11-oxo-olean-12-en-30-oic acid-3-O-beta-D-glucuronopyranosyl-(1----3)-beta-D-glucuronopyr anoside, uralsaponin B.",
+      "journal": "Yao xue xue bao = Acta pharmaceutica Sinica",
+      "year": 1991,
+      "pub_date": "1991-01-01",
+      "authors": "Cai L N; Zhang R Y; Zhang Z L; Wang B; Qiao L; ... (+2)",
+      "first_author": "Cai L N",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1816698",
+      "doi": "",
+      "title": "[Iconography of the coca plant].",
+      "abstract": "We can distinguish four periods in the iconography of the cocaplant, namely the prehispanic period in South-America, the early period in Europe, from 1749 until 1860, the period of confusion (1860-1906) and finally the period of modern iconography. The iconography of the cocaplant before the arrival of the Spanish invaders was limited to the drawing of cocaleaves. In Europe, the first people who showed any interest for the cocaplant were the botanists. In the second half of the XVIIIth century, the botanists made especially good drawings of Erythroxylum coca. From the second half of the XIXth century, the industry became interested in coca and, consequently, a very intensive research arose, coming from several directions. This led to the discovery of new species, at that time often described by non botanists. This resulted in discussions and in serious confusion as to the nomenclature. Excellent pictures were however produced in this period. During the XXth century fundamental botanical research resulted in the final classification of the different coca species. The quality of the pictures was however not better.",
+      "journal": "Verhandelingen - Koninklijke Academie voor Geneeskunde van Belgie",
+      "year": 1991,
+      "pub_date": "1991-01-01",
+      "authors": "Lemli J",
+      "first_author": "Lemli J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1824334",
+      "doi": "10.1105/tpc.3.1.49",
+      "title": "Identification of Pseudomonas syringae pathogens of Arabidopsis and a bacterial locus determining avirulence on both Arabidopsis and soybean.",
+      "abstract": "To develop a model system for molecular genetic analysis of plant-pathogen interactions, we studied the interaction between Arabidopsis thaliana and the bacterial pathogen Pseudomonas syringae pv tomato (Pst). Pst strains were found to be virulent or avirulent on specific Arabidopsis ecotypes, and single ecotypes were resistant to some Pst strains and susceptible to others. In many plant-pathogen interactions, disease resistance is controlled by the simultaneous presence of single plant resistance genes and single pathogen avirulence genes. Therefore, we tested whether avirulence genes in Pst controlled induction of resistance in Arabidopsis. Cosmids that determine avirulence were isolated from Pst genomic libraries, and the Pst avirulence locus avrRpt2 was defined. This allowed us to construct pathogens that differed only by the presence or absence of a single putative avirulence gene. We found that Arabidopsis ecotype Col-0 was susceptible to Pst strain DC3000 but resistant to the same strain carrying avrRpt2, suggesting that a single locus in Col-0 determines resistance. As a first step toward genetically mapping the postulated resistance locus, an ecotype susceptible to infection by DC3000 carrying avrRpt2 was identified. The avrRpt2 locus from Pst was also moved into virulent strains of the soybean pathogen P. syringae pv glycinea to test whether this locus could determine avirulence on soybean. The resulting strains induced a resistant response in a cultivar-specific manner, suggesting that similar resistance mechanisms may function in Arabidopsis and soybean.",
+      "journal": "The Plant cell",
+      "year": 1991,
+      "pub_date": "1991-01-01",
+      "authors": "Whalen M C; Innes R W; Bent A F; Staskawicz B J",
+      "first_author": "Whalen M C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1989493",
+      "doi": "10.1016/0003-9861(91)90279-r",
+      "title": "Stereoisomerism in plant disease resistance: induction and isolation of the 7,2'-dihydroxy-4',5'-methylenedioxyisoflavone oxidoreductase, an enzyme introducing chirality during synthesis of isoflavonoid phytoalexins in pea (Pisum sativum L).",
+      "abstract": "Treatment of pea seedlings with CuCl2 induced the activity of the enzyme NADPH:7,2'-dihydroxy-4',5'-methylenedioxyisoflavone oxidoreductase (DMIRase) that introduces (+) stereoisomerism in pisatin. DMIRase was purified approximately 7000 fold from CuCl2-treated pea seedlings to apparent homogeneity by a six-step process. The purification sequence included (NH4)2SO4 fractionation, gel filtration on AcA 44, chromatography on DEAE-Bio-Gel,phenyl-Sepharose CL-4B, and Reactive Red 120-agarose, and sodium dodecyl sulfate-polyacrylamide gel electrophoresis. Gel filtration and denaturing electrophoresis showed that the enzyme consisted of a single polypeptide chain with an Mr of 37,500. The pH optimum of DMIRase was determined to be 7.8. The enzyme showed apparent Michaelis constants of 20 microM for 7,2'-dihydroxy-4',5'-methylenedioxyisoflavone and 58 microM for NADPH. The reaction product of the enzyme, sophorol, gave a distinct negative Cotton effect in the region 300-360 nm, which indicated 3S configuration of the molecule. Antibodies against the enzyme were raised in rabbits and characterized for specificity.",
+      "journal": "Archives of biochemistry and biophysics",
+      "year": 1991,
+      "pub_date": "1991-01-01",
+      "authors": "Sun Y J; Wu Q D; Van Etten H D; Hrazdina G",
+      "first_author": "Sun Y J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1844311",
+      "doi": "",
+      "title": "Viral protein cleavages as a drug design target.",
+      "abstract": "Many animal and plant viruses encode proteolytic enzymes which are involved in regulation of viral replication and assembly. The proteases are becoming well-characterized, and offer attractive features for the design of selective antiviral agents. Approaches to the assay of viral protease inhibitors and the various classes identified are described.",
+      "journal": "Acta biologica Hungarica",
+      "year": 1991,
+      "pub_date": "1991-01-01",
+      "authors": "Korant B D",
+      "first_author": "Korant B D",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1880018",
+      "doi": "10.1016/0162-3109(91)90015-q",
+      "title": "The role of monocytes and T cells in 1,25-dihydroxyvitamin D3 mediated inhibition of B cell function in vitro.",
+      "abstract": "1,25-Dihydroxyvitamin D3 (1,25-(OH)2D3) inhibits immunoglobulin production by human mononuclear cells (MNC) in vitro. The present study was undertaken to evaluate the role of T cells and monocytes in 1,25-(OH)2D3 induced suppression of B cell functions. The synthetic vitamin D3 analogue MC 903 was examined in parallel. 1,25-(OH)2D3 and MC 903 showed a dose-related inhibition of IgM, IgG and IgA plaque-forming cells in poke-weed mitogen (PWM) activated cultures of MNC. This effect was most likely mediated through impairment of T cell and monocyte functions. First, the inhibitory effect was seen after PWM stimulation, but not after Epstein-Barr virus stimulation which activates B cells independently of T cells and monocytes. Second, 1,25-(OH)2D3 was not effective in T cell and monocyte-depleted cultures. Third, the effect of 1,25-(OH)2D3 on PWM driven MNC was reversed by addition of the recombinant monokines: interleukin (IL)-1 beta, tumour necrosis factor alpha (rTNF alpha), rIL-6, as well as the lymphokines: lymphotoxin (rLT) and rIL-2. This is consistent with the finding that 1,25-(OH)2D3 also inhibited IL-1 alpha, TNF alpha and LT production in these cultures. The assumption that B cells are not directly affected by 1,25-(OH)2D3 was further supported by the fact that 24 h of culture with 10(-8) M 1,25-(OH)2D3 failed to reduce immunoglobulin production by in vivo activated B cells.",
+      "journal": "Immunopharmacology",
+      "year": 1991,
+      "pub_date": "1991-01-01",
+      "authors": "Müller K; Heilmann C; Poulsen L K; Barington T; Bendtzen K",
+      "first_author": "Müller K",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

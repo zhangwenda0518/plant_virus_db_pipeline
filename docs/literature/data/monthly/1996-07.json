@@ -1,0 +1,147 @@
+{
+  "month": "1996-07",
+  "generated": "2026-07-13 02:59:42",
+  "total": 6,
+  "by_category": {
+    "Host_Virus_Interactions": 4,
+    "New_Virus": 1,
+    "Closteroviridae": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8661428",
+      "doi": "10.1006/viro.1996.0366",
+      "title": "Organization of the 3'-terminal half of beet yellow stunt virus genome and implications for the evolution of closteroviruses.",
+      "abstract": "The 3'-terminal half of the beet yellow stunt virus (BYSV) genome 10,545 nt, has been cloned and sequenced. The sequenced portion of the BYSV genome encompasses 10 open reading frames (ORFs) and 241 nt of the 3' untranslated region. The sequence spans, in the 5' to 3' direction, the C-terminal region of the replication-associated polyprotein gene (ORF 1a) which includes the set of motifs typical of helicases (HEL), the entire 53-kDa polymerase (RdRp) gene (ORF 1b), and genes encoding 30-kDa (ORF 2), 6-kDa (ORF 3), 66-kDa (ORF 4), 61-kDa (ORF 5), 25-kDa (ORF 6), 23.7-kDa (coat protein, CP) (ORF 7), 18-kDa (ORF 8), and 22-kDa (ORF 9) proteins. The double-stranded RNA \"replicative form\" of the BYSV was demonstrated to have a nontemplate G residue at the 3' terminus of the (+) strand. The RdRp of BYSV is presumably expressed via a +1 ribosomal frameshift. The five-gene module conserved among closteroviruses was identified in BYSV; it includes a gene array coding for a 6-kDa small hydrophobic protein, a 66-kDa homolog of the cellular HSP70 heat shock proteins, a 61-kDa protein, and a 25-kDa diverged copy of the CP followed by the CP gene itself. Phylogenetic analysis of the replication-associated HEL and RdRp domains as well as proteins from the five-gene module demonstrated the closest relationship between BYSV and two other closteroviruses, beet yellows (BYV) and citrus tristeza (CTV) viruses. Like CTV, the BYSV genome contains a 30-kDa protein gene between the RdRp and the 6-kDa protein genes, and like BYV it has only two genes downstream of the CP gene. The organization of the BYSV genome appears to be intermediate between BYV and CTV, which suggests that these three viruses might represent three distinct but probably close stages in the closterovirus evolution.",
+      "journal": "Virology",
+      "year": 1996,
+      "pub_date": "1996-07-01",
+      "authors": "Karasev A V; Nikolaeva O V; Mushegian A R; Lee R F; Dawson W O",
+      "first_author": "Karasev A V",
+      "categories": [
+        "New_Virus",
+        "Closteroviridae"
+      ],
+      "virus_name": "Beet yellow stunt virus (BYSV)",
+      "taxonomy": "Closteroviridae, Closterovirus",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "BYSV基因组包含复制相关蛋白、HSP70同源物、CP等基因，与BYV和CTV亲缘最近，基因组结构介于两者之间。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "8758979",
+      "doi": "10.1046/j.1365-313x.1996.10010071.x",
+      "title": "Benzothiadiazole induces disease resistance in Arabidopsis by activation of the systemic acquired resistance signal transduction pathway.",
+      "abstract": "Benzothiadiazole (BTH) is a novel chemical activator of disease resistance in tobacco, wheat and other important agricultural plants. In this report, it is shown that BTH works by activating SAR in Arabidopsis thaliana. BTH-treated plants were resistant to infection by turnip crinkle virus, Pseudomonas syringae pv 'tomato' DC3000 and Peronospora parasitica. Chemical treatment induced accumulation of mRNAs from the SAR-associated genes, PR-1, PR-2 and PR-5. BTH treatment induced both PR-1 mRNA accumulation and resistance against P. parasitica in the ethylene response mutants, etr1 and ein2, and in the methyl jasmonate-insensitive mutant, jar1, suggesting that BTH action is independent of these plant hormones. BTH treatment also induced both PR-1 mRNA accumulation and P. parasitica resistance in transgenic Arabidopsis plants expressing the nahG gene, suggesting that BTH action does not require salicylic acid accumulation. However, because BTH-treatment failed to induce either PR-1 mRNA accumulation or P. parasitica resistance in the non-inducible immunity mutant, nim1, it appears that BTH activates the SAR signal transduction pathway.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 1996,
+      "pub_date": "1996-07-01",
+      "authors": "Lawton K A; Friedrich L; Hunt M; Weymann K; Delaney T; ... (+3)",
+      "first_author": "Lawton K A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "芜菁皱缩病毒",
+      "taxonomy": "",
+      "host_plant": "拟南芥",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8768370",
+      "doi": "10.1105/tpc.8.7.1095",
+      "title": "Expression of the Pseudomonas syringae avirulence protein AvrB in plant cells alleviates its dependence on the hypersensitive response and pathogenicity (Hrp) secretion system in eliciting genotype-specific hypersensitive cell death.",
+      "abstract": "The nonpathogenic bacteria Pseudomonas fluorescens and Escherichia coli can elicit a genotype-specific hypersensitive response (HR) in plants if they express both the HR and pathogenesis (Hrp) protein secretion system and the HrpZ harpin from P. syringae pv syringae 61 and a P. syringae avirulence (avr) gene whose presence is recognized by a corresponding disease resistance gene in the plant. We have found that the recognition event appears to require transfer of the Avr protein into the plant cell. Elicitation of a genotype-specific HR was observed with avrB+ P. fluorescens in soybean and Arabidopsis plants carrying resistance genes RPG1 and RPM1, respectively, and with avrPto+ E. coll in tomato plants carrying resistance gene PTO, but only if the Hrp secretion system, HrpZ, and the appropriate Avr proteins were produced in the same bacterial cell. The failure of avrB hyperexpression and exogenous AvrB or HrpZ to alleviate these requirements in soybean and Arabidopsis suggests that the site of AvrB action is not in the bacterial cell or plant apoplast. An Arabidopsis rps3 (rpm1) glabrous1 mutant was transformed with constructs expressing avrB and was crossed with an Arabidopsis ecotype Columbia (RPM1 GLABROUS1) plant. F1 seedlings (identified by their kanamycin-resistant, pubescent phenotype) exhibited extensive necrosis on cotyledon leaves 10 days postgermination. Ecotype Columbia and rps3-1 leaves biolistically cobombarded with plasmids expressing the beta-glucuronidase (GUS) gene and avrB failed to produce GUS activity (indicative of cell death) only when RPM1 and avrB were present in the leaf. Thus, both stable and transient expression of avrB in Arabidopsis resulted in RPM1-dependent necrosis, and the only demonstrable site of action for AvrB was inside plant cells.",
+      "journal": "The Plant cell",
+      "year": 1996,
+      "pub_date": "1996-07-01",
+      "authors": "Gopalan S; Bauer D W; Alfano J R; Loniello A O; He S Y; ... (+1)",
+      "first_author": "Gopalan S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8805197",
+      "doi": "10.3382/ps.0750821",
+      "title": "Feeding regimen by sire family interactions on growth, immunocompetence, and disease resistance in chickens.",
+      "abstract": "Progeny from matings of 12 sires from a White Plymouth Rock line selected for high juvenile BW and 96 dams from a White Leghorn line selected for low antibody production to SRBC were reared under alternate-day (AD) or ad libitum (AL) feeding regimens. Within a feeding regimen males were heavier than females, and within a sex, chicks fed AL were heavier than those fed AD. Feeding regimen by sire family interactions were significant for BW at 21 d of age for both male and female progeny. The interaction was due to differences among sires in the magnitude of the AD: AL relationship. Product moment correlation coefficients between feeding regimens for male and female progeny of sire families for 21-d BW were essentially zero, which was consistent with the sire family by feeding regimen interactions observed at this age. At 41 d of age, relative to BW, weights of empty esophagus plus crop and of crop contents were greater for AD than AL chicks. There were differences among sire families for crop content and breast weights relative to BW. Lesion scores to Escherichia coli challenge were lower and antibody titers to SRBC antigen were higher in AD than in AL chicks. Sire families differed in antibody titers to SRBC antigen. Feeding regimen by sire family interactions were significant for percentage change in BW 144 h after E. coli challenge and lesion scores were greater for AL than AD chicks.",
+      "journal": "Poultry science",
+      "year": 1996,
+      "pub_date": "1996-07-01",
+      "authors": "Praharaj N K; Gross W B; Dunnington E A; Siegel P B",
+      "first_author": "Praharaj N K",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8689679",
+      "doi": "10.1016/s0092-8674(00)80083-5",
+      "title": "Tomato Prf is a member of the leucine-rich repeat class of plant disease resistance genes and lies embedded within the Pto kinase gene cluster.",
+      "abstract": "In tomato, resistance to Pseudomonas syringae pv. tomato (Pst) strains expressing the avirulence gene avrPto requires the presence of at least two host genes, designated Pto and Prf. Here we report that Prf encodes a protein with leucine-zipper, nucleotide-binding, and leucine-rich repeat motifs, as are found in a number of resistance gene products from other plants. prf mutant alleles (4) were found to carry alterations within the Prf coding sequence. A genomic fragment containing Prf complemented a prf mutant tomato line both for resistance to Pst strains expressing avrPto and for sensitivity to the insecticide Fenthion. Prf resides in the middle of the Pto gene cluster, 24 kb from the Pto gene and 500 bp from the Fen gene.",
+      "journal": "Cell",
+      "year": 1996,
+      "pub_date": "1996-07-12",
+      "authors": "Salmeron J M; Oldroyd G E; Rommens C M; Scofield S R; Kim H S; ... (+3)",
+      "first_author": "Salmeron J M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8661416",
+      "doi": "10.1006/viro.1996.0354",
+      "title": "Expression of bovine interleukin-1 beta in a bovine herpesvirus-1 vector: in vitro analysis.",
+      "abstract": "In order to evaluate whether bovine herpesvirus-1 (BHV-1) could be used as a live viral vector for the expression of cytokines, we constructed a recombinant BHV-1 expressing bovine interleukin-1 beta (boIL-1 beta). The boIL-1 beta coding sequence, corresponding to the cleaved mature product, was fused with the BHV-1 glycoprotein C (gC) signal peptide sequence; the resultant gC-boIL-1 beta fusion gene was recombined into the gC locus of the BHV-1 genome. Southern blot analysis confirmed the proper genomic configuration of the recombinant virus. Results from transcript analysis showed that boIL-1 beta was expressed in infected cells with kinetics similar to that of gC. Indirect immunofluorescence and immunoprecipitation assays showed that the recombinant protein was produced in both cell-associated and secreted forms. Western blot analysis detected a 19.3-kDa protein. Further analysis, using an IL-1 beta bioassay demonstrated that both the cellular and secreted forms of recombinant boIL-1 beta possessed biological activity. The expression of the boIL-1 beta protein did not affect the in vitro growth efficiency of the virus, which exhibited similar growth kinetics to that of a simple gC deletion mutant. The results from this study demonstrate that BHV-1 can be used to express a functional cytokine, thereby establishing the basis to further study recombinant BHV-1 expressing cytokines as an alternative means to attenuate the virus and also as a potential in situ cytokine delivery system to modulate immune responses against BHV-1 and other cattle pathogens.",
+      "journal": "Virology",
+      "year": 1996,
+      "pub_date": "1996-07-01",
+      "authors": "Raggo C; Fitzpatrick D R; Babiuk L A; Liang X",
+      "first_author": "Raggo C",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "week": "2026-W12",
+  "start": "2026-03-16",
+  "end": "2026-03-22",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 33,
+  "by_category": {
+    "Control_Management": 11,
+    "Host_Virus_Interactions": 9,
+    "New_Virus": 4,
+    "Antiviral_Resistance_Genes": 4,
+    "Biotechnology_Applications": 3,
+    "Molecular_Characterization": 1,
+    "Transmission_Epidemiology": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "41860726",
+      "doi": "10.1007/s00705-026-06580-x",
+      "title": "Agave associated crinivirus A: a novel monopartite crinivirus homolog isolated from agave.",
+      "abstract": "We describe the complete genome of the first monopartite and putative member of the genus Crinivirus which we propose naming agave associated crinivirus A (AaCA). AaCA was identified by high-throughput sequencing in an Agave tequilana leaf sample during a routine metagenomic screening of Agave plants from California. The 16,161 bp genome contains the protein hallmarks of the family Closteroviridae, the HSP70h and the three coat protein homologs (CPh, CP, CPm), along with the open reading frames (ORFs) unique to criniviruses. Two ORFs downstream of the CPm are unique to AaCA. The monopartite nature of the genome was verified by PCR and Sanger sequencing. Phylogenetic analysis of the HSP70h gene clusters AaCA basally with existing criniviruses.",
+      "journal": "Archives of virology",
+      "year": 2026,
+      "pub_date": "2026-03-20",
+      "authors": "Stevens Kristian A; de Souza Juliana Osse; Li Haoran; Ouro-Djobo Ashrafou; Alabi Olufemi J; ... (+1)",
+      "first_author": "Stevens Kristian A",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "agave associated crinivirus A (AaCA)",
+      "taxonomy": "属：Crinivirus；科：Closteroviridae",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41848898",
+      "doi": "10.1007/s11103-026-01700-2",
+      "title": "The prospects of targeting messenger RNA surveillance factor PELOTA for developing virus resistance in plants.",
+      "abstract": "The mRNA-surveillance factor, PELOTA is essential for maintaining translation fidelity and facilitating the degradation of faulty mRNAs. Initially recognized for its role in ribosome rescue and RNA quality control in eukaryotic cells, PELOTA has recently garnered attention for its diverse functions in plant biology as well as in plant-virus interactions. Numerous studies suggest that the PELOTA protein plays a distinctive role in determining either susceptibility or resistance to various plant pathogens, including viruses. Interestingly, PELOTA exhibits a dual function: while certain allelic variants confer resistance or susceptibility to diverse plant viruses, complete or severe disruption of its activity impairs fundamental processes of plant growth and development. In this review, we synthesize current knowledge of PELOTA-mediated mRNA surveillance across eukaryotes, critically examine its emerging role in shaping plant–virus dynamics, and assess the deleterious developmental consequences of its mutation in plants. Although disruption of PELOTA can enhance resistance to various pathogens, including viruses, it may also compromise RNA quality control and normal plant development. Thus, a thorough evaluation is essential before targeting PELOTA for engineering durable disease resistance in crops.",
+      "journal": "Plant molecular biology",
+      "year": 2026,
+      "pub_date": "2026-03-18",
+      "authors": "Majumdar Anik; Babu Yeluru Mohan; Mondal Firoz; Sarkar Mehulee; Mazumder Prantik; ... (+4)",
+      "first_author": "Majumdar Anik",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "多种植物病毒",
+      "taxonomy": "",
+      "host_plant": "植物",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41861008",
+      "doi": "10.1126/sciadv.adr9432",
+      "title": "Sugarcane streak mosaic virus P1 protein targets the BES1 transcription factor to subvert DAMP-triggered immunity in plant.",
+      "abstract": "Sugarcane streak mosaic virus (SCSMV) is the major cause of sugarcane mosaic disease. Its P1 protein (P1SCSMV) is crucial for pathogenesis, but how it disrupts plant immunity remains unclear. Here, we found that P1SCSMV directly binds to the core transcription factor of brassinosteroid signaling, NbBES1, disrupting its binding to the E-box elements of the xyloglucan endotransglucosylase/hydrolase gene 1 (NbXTH1) promoter and suppressing NbXTH1 transcription. NbXTH1 overexpression enhanced the plant resistance to fungal/viral infection, improved the contents of xyloglucan, which directly induced a damage-associated molecular pattern triggering innate immunity (DTI) and expression of several defense genes, and accompanied with a thickened middle lamellae and primary cell wall. Reduced xyloglucan due to NbXTH1 downexpression further weakened DTI responses and a thinner cell wall. This study reveals how a viral protein subverts cell wall-mediated immunity and identifies NbXTH1 as a broad-spectrum disease resistance factor. Our findings support using xyloglucan or NbXTH1 to engineer broad-spectrum disease resistance in crops.",
+      "journal": "Science advances",
+      "year": 2026,
+      "pub_date": "2026-03-20",
+      "authors": "He Zhen; Deng Xiaolong; Chen Haoyu; Xu Xiaowei; Tang Mengyan; ... (+9)",
+      "first_author": "He Zhen",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "甘蔗线条花叶病毒",
+      "taxonomy": "",
+      "host_plant": "甘蔗/本氏烟",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41897381",
+      "doi": "10.3390/biom16030446",
+      "title": "TBSV Alters Host Redox State After Short-Term Temperature Pre-Exposure in ",
+      "abstract": "Plant viruses can cause substantial yield losses, yet disease severity often varies between seasons because plants frequently experience heat or cold episodes before infection. In this study, we tested whether such temperature conditions affect the plant's redox balance and alter its response to Tomato bushy stunt virus (TBSV) infection in Nicotiana benthamiana. Plants were exposed to short-term heat and cold stress, after which they recovered before virus inoculation. Following this, we assessed the reactive oxygen species (ROS) content, lipid peroxidation (LPO), oxidative DNA damage, stress-related proteins, redox-associated enzymes, and antioxidant metabolites. TBSV led to non-parallel ROS responses during infection, with consistently elevated hydrogen peroxide in infected plants but reduced superoxide relative to corresponding mock controls. Heat pre-exposure caused pronounced LPO that decreased further after infection, whereas cold pre-exposure stabilized malondialdehyde near levels observed at 25 °C. Both thermal stress and infection increased 8-oxo-dG and were associated with distinct changes in 8-oxoguanine glycosylase abundance. Infection strongly induced heat shock protein 90 (and moderately heat shock protein 70), while prior heat limited further chaperone induction by TBSV. These results indicate that viral infection develops within and is limited by the host's oxidative state, where redox homeostasis may restrict infection-related processes, and infection leads to changes in this redox environment that are favorable for its development.",
+      "journal": "Biomolecules",
+      "year": 2026,
+      "pub_date": "2026-03-17",
+      "authors": "Amanbayeva Ulbike; Bekturova Assemgul; Kurmanbayeva Assylay; Todosiichuk Tetiana; Madirov Almas; ... (+3)",
+      "first_author": "Amanbayeva Ulbike",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Tomato bushy stunt virus (TBSV)",
+      "taxonomy": "",
+      "host_plant": "Nicotiana benthamiana",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41854806",
+      "doi": "10.1007/s11033-026-11691-4",
+      "title": "Genomic insight of plant pathogen, begomovirus and vector cross-talk: an emerging strategy to tackle the leaf curl disease.",
+      "abstract": "Leaf curl disease predominantly caused by begomoviruses and transmitted by whiteflies, poses a severe threat to crop productivity worldwide. These viruses manipulate plant cellular mechanisms and undergo fast genomic evolution to adapt and evade host defense responses. Despite advances in plant-pathogen interaction reports, the integrated genomic insights into cross-talk among the pathogen, plant, and insect as vector remain limited. This review aims to explore the complex interactions between the virus, vector, and plant at the molecular level. It explains how vectors help in the spread of the disease and describes how plants use different layers of defence to protect themselves. These include transcriptional and post-transcriptional gene silencing, protein kinase signalling, effector-triggered immunity, and changes in gene expression through epigenetic modifications. A precise attention is given to plant responses mediated by non-coding RNAs, mitochondrial & chloroplastidial genes, and the ubiquitin-proteasome system. Additionally, we highlight the virus’s counter-defense strategies that suppress or evade host immunity. The study identifies gaps in current genomic data, like limited understanding of vector and pathogen adaptability and underscores the need for integrated approaches to develop resistance. By analyzing existing defense mechanisms and viral tactics, this work offers insight into potential genomic targets for improving plant resistance against the leaf curl virus.",
+      "journal": "Molecular biology reports",
+      "year": 2026,
+      "pub_date": "2026-03-19",
+      "authors": "Sahoo Subham Jyoti; Mohanty Jatindra Nath",
+      "first_author": "Sahoo Subham Jyoti",
+      "categories": [
+        "Host_Virus_Interactions",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "begomovirus",
+      "taxonomy": "",
+      "host_plant": "多种作物（引起卷叶病的植物）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41901481",
+      "doi": "10.3390/plants15060963",
+      "title": "Integrating Prognostic Breeding Approach Through Phenotypic and Marker-Assisted Selection for Yield and BCMV Resistance in Common Bean Greek Landraces.",
+      "abstract": "Addressing principal challenges in common bean (Phaseolus vulgaris L.) breeding requires a holistic approach. A combined strategy was implemented to assess seven genotypes (landraces and commercial varieties) for yield potential, stability and resistance to bean common mosaic virus (BCMV) under Mediterranean low-input conditions. Pure-line selection and prognostic breeding together with SSR and CAPS-SCAR marker-assisted selection (MAS) formed the core methodology. Significant variation was detected across 24 morpho-agronomic descriptors, while SSR revealed 48.57% polymorphic loci and private alleles in specific landraces. High genetic coefficients of variation and high heritability were recorded for yield-related traits. Phenotypical evaluation showed diverse responses to BCMV, with mild symptoms predominating (52.14%). Entries G1 (45%) and G5 (35%) exhibited the highest frequency of the symptomless resistant phenotype. Molecular screening at I and bc-3/eIF4E loci confirmed G5's robust dominant I gene profile, while G1 included individuals carrying both the dominant I gene and recessive bc-3, offering a valuable source for pyramiding resistance. Additionally, G1 (LI = 2.35; 100%) performed strongly in productivity, whereas G2 (SI = 3.1; 100%) and G7 (SI = 2.8; 89.7%) exhibited exceptional stability. Overall, the mixed-model approach highlighted the complementary characteristics of the tested genotypes and identified G1, G2, G5 and G7 as promising candidates for future breeding programs targeting high yield, low-input adaptability and resistance to BCMV.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2026,
+      "pub_date": "2026-03-20",
+      "authors": "Demertzi Eirini N; Karapetsi Lefkothea; Pankou Chrysanthi I; Vasileiou Nefeli; Georgiadou Eleftheria; ... (+5)",
+      "first_author": "Demertzi Eirini N",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Bean common mosaic virus (BCMV)",
+      "taxonomy": "",
+      "host_plant": "普通菜豆 (Phaseolus vulgaris L.)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41801427",
+      "doi": "10.1021/acs.jafc.5c11247",
+      "title": "Dihydromyricetin Inhibits East Asian ",
+      "abstract": "Cultivation of passion fruit (Passiflora edulis) is significantly impacted by East Asian Passiflora virus (EAPV). This study investigates the antiviral potential of the natural flavonoid dihydromyricetin (DHM) in targeting the EAPV coat protein (CP). Molecular docking analyses revealed that DHM exhibits a strong affinity for EAPV-CP, a finding corroborated by microscale thermophoresis (KD = 3.48 ± 2.18 μM). In vivo experiments demonstrated that DHM treatment resulted in a reduction of CP transcription by up to 16-fold in tobacco leaves and 2-fold in passion fruit leaves after 18 days. Transcriptomic analysis indicated that DHM application significantly modified host gene expression, particularly through the upregulation of differentially expressed genes associated with flavonoid biosynthesis and plant defense signaling pathways. Metabolomic profiling revealed an enrichment of flavonoid-related metabolites. Furthermore, an integrative analysis identified three gene modules that exhibited strong correlations with flavonoid metabolism. These findings suggest that DHM inhibits EAPV by targeting the viral coat protein and enhancing the host-derived flavonoid-induced resistance. Consequently, DHM emerges as a novel and sustainable antiviral agent for managing Potyvirus infections in agricultural crops.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2026,
+      "pub_date": "2026-03-18",
+      "authors": "Jiang Junmei; Zhang Nuo; Hu Keyi; Srivastava Atul Kumar; Uddin Nisar; ... (+3)",
+      "first_author": "Jiang Junmei",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "East Asian Passiflora virus (EAPV)",
+      "taxonomy": "",
+      "host_plant": "西番莲（Passiflora edulis）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41902303",
+      "doi": "10.3390/v18030395",
+      "title": "Metagenomics Analysis of Viruses Associated with Cassava Brown Streak Disease in Kenya.",
+      "abstract": "Cassava brown streak disease (CBSD), caused by cassava brown streak virus (CBSV; Ipomovirus brunusmanihotis) and Ugandan cassava brown streak virus (UCBSV; Ipomovirus manihotis) (family Potyviridae, genus Ipomovirus), is increasingly becoming a threat to cassava production in several parts of Africa, especially in Eastern, Central and Southern Africa. In Kenya, the disease continues to wreak havoc on cassava production leading to a significant reduction in crop yields and economic losses of up to USD 1 billion. Variation in virus populations make the control of CBSD challenging as virus genomic variation can affect the accuracy of diagnostic tests, lead to resistance breaking isolates and jeopardize strategies of breeding for resistance. CBSV and UCBSV populations obtained from cassava fields in Kenya were characterized. In total, 44 new complete sequences of CBSV and UCBSV were assembled and 40 sequences successfully submitted to GenBank. Single Nucleotide Polymorphism (SNP) analysis revealed that the cylindrical inclusion protein (CI) is the most stable region across the genome of CBSV and UCBSV. In contrast, protein 1 (PI) and the coat protein (CP) were the most hypervariable regions. Phylogenetic analysis showed three major geographical groupings for both UCBSV and CBSV isolates, suggesting a continued spread of the viruses through human-mediated movement of infected planting materials. The data obtained in this study can support the development of disease management strategies through improved molecular diagnostic tests and targets for breeding for resistance against CBSD.",
+      "journal": "Viruses",
+      "year": 2026,
+      "pub_date": "2026-03-21",
+      "authors": "Munguti Florence M; LaTourrette Katherine; Silva Gonçalo; Maina Solomon; Kilalo Dora C; ... (+4)",
+      "first_author": "Munguti Florence M",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "木薯褐条病毒(CBSV)和乌干达木薯褐条病毒(UCBSV)",
+      "taxonomy": "",
+      "host_plant": "木薯",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40719329",
+      "doi": "10.1097/CM9.0000000000003651",
+      "title": "\"One stone three birds\": Andrographis paniculata -derived exosome-like nanoparticles mitigate dextran sulfate sodium-induced colitis.",
+      "abstract": "[BACKGROUND] Ulcerative colitis (UC), a chronic inflammatory bowel disease, is characterized by a multifactorial etiology and limited therapeutic options. Recent advancements in plant-derived exosome-like nanoparticles (PDENs) have demonstrated promising potential for UC treatment. This study explored the therapeutic efficacy of Andrographis paniculata -derived exosome-like nanoparticles (APELNs) in alleviating dextran sodium sulfate (DSS)-induced colitis. [METHODS] APELNs were isolated and purified using sucrose gradient centrifugation and subsequently characterized through visualization techniques. Their stability was assessed under simulated stomach-like and intestine-like conditions. The therapeutic potential of APELNs was evaluated through both in vivo and in vitro experiments. In addition, the biosafety of APELNs was comprehensively analyzed in these settings. [RESULTS] APELNs exhibited excellent stability and biosafety, with a targeted accumulation in inflamed colonic tissues under gastrointestinal conditions. The nanoparticles displayed a desirable size (about 180 nm) and a negative zeta potential (-40 mV). Treatment with APELNs significantly ameliorated colonic pathologies in vivo and suppressed the expression of pro-inflammatory cytokines in vitro . Mechanistically, APELNs enhanced gut microbiota richness and diversity, fostering the growth of the probiotic Lactobacillus murinus . Moreover, APELNs reduced intestinal permeability and preserved intestinal barrier integrity by upregulating tight junction proteins, including Claudin-1, zonula occludens-1, Mucin2, and anti-occludin. Importantly, oral administration of APELNs shifted macrophage polarization in the colon, inhibiting the pro-inflammatory M1 subset while promoting the anti-inflammatory M2 subset. This polarization was mediated through the activation of the phosphatidylinositol 3 kinase-protein kinase B (PI3K-AKT) and Janus tyrosine kinase-signal transducer and activator of transcription (JAK-STAT) signaling pathways and the upregulation of interleukin-4 receptor expression. [CONCLUSION] These findings highlighted the potential of APELNs as a novel therapeutic strategy for UC, offering a promising alternative for effective disease management.",
+      "journal": "Chinese medical journal",
+      "year": 2026,
+      "pub_date": "2026-03-20",
+      "authors": "Zhu Minzheng; Wang Shimin; Yue Ningning; Zhao Hailan; Zhang Yuan; ... (+13)",
+      "first_author": "Zhu Minzheng",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41713418",
+      "doi": "10.1016/j.cell.2026.01.007",
+      "title": "Genomic atlas of Bifidobacterium infantis and B. longum informs infant probiotic design.",
+      "abstract": "Bifidobacterium longum and B. infantis are pioneer colonizers of the neonatal gut and are widely used as probiotics to support infant growth, development, and disease resistance. However, commercial strains derived largely from high-income countries (HICs) may be suboptimal for infants in low- and middle-income countries (LMICs). We assembled a global genomic atlas of more than 4,000 genomes from 48 countries, increasing representation from LMICs by 12- to 17-fold. High-resolution phylogenomic and functional analyses support delineating B. longum and B. infantis as distinct species with divergent functions and epidemiological patterns. B. infantis dominates early-life microbiota in LMICs but is rarely detected in HICs. Natural B. infantis strains show extreme biogeographic stratification and predicted adaptations to local plant-glycan-rich diets and breast-milk-derived substrates, including urea and B vitamins. This genomic resource enables genome-guided selection of geographically matched strains to inform more effective probiotics and precision microbiome therapeutics for diverse infant populations.",
+      "journal": "Cell",
+      "year": 2026,
+      "pub_date": "2026-03-19",
+      "authors": "Shao Yan; Wang Shuyi; Gichuki Bonface M; Stares Mark D; Rozday Timothy J; ... (+22)",
+      "first_author": "Shao Yan",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

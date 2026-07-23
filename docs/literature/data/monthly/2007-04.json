@@ -1,0 +1,281 @@
+{
+  "month": "2007-04",
+  "generated": "2026-07-13 02:59:42",
+  "total": 30,
+  "by_category": {
+    "Host_Virus_Interactions": 8,
+    "New_Virus": 8,
+    "Antiviral_Resistance_Genes": 6,
+    "Biotechnology_Applications": 5,
+    "Molecular_Characterization": 2,
+    "Control_Management": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "17103245",
+      "doi": "10.1007/s11248-006-9038-y",
+      "title": "Reactivation of an integrated disabled viral vector using a Cre-loxP recombination system in Arabidopsis thaliana.",
+      "abstract": "We developed an inactivated DNA replicon of Turnip Mosaic Virus (TuMV), which was reactivated by a recombination event based on the Cre-loxP system. Viral replication was prevented by the insertion of a translation terminator sequence flanked by two loxP sites at the junction of the P1-HCPro-coding genes. In vitro recombination was tested with purified Cre, which excised the floxed sequence from the TuMV DNA, leaving a single loxP site in the reactivated viral genome, and restored the open reading frame of the replicon. Arabidopsis thaliana plants were made transgenic for the inactivated TuMV replicon. Removal of the translation terminator sequence was achieved by the controlled expression of Cre. Delivery of the Cre recombinase to the transgenic plants was obtained by three methods: agroinfiltration, PVX-based production, or transgenic chemical-inducible expression. In each case, reactivation of TuMV replication was observed.",
+      "journal": "Transgenic research",
+      "year": 2007,
+      "pub_date": "2007-04-01",
+      "authors": "Tremblay Arianne; Beauchemin Chantal; Séguin Armand; Laliberté Jean-François",
+      "first_author": "Tremblay Arianne",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "Turnip Mosaic Virus (TuMV)",
+      "taxonomy": "",
+      "host_plant": "拟南芥 (Arabidopsis thaliana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17267504",
+      "doi": "10.1128/JVI.02383-06",
+      "title": "Molecular bases of viral RNA targeting by viral small interfering RNA-programmed RISC.",
+      "abstract": "RNA silencing is conserved in a broad range of eukaryotes and operates in the development and maintenance of genome integrity in many organisms. Plants have adapted this system for antiviral defense, and plant viruses have in turn developed mechanisms to suppress RNA silencing. RNA silencing-related RNA inactivation is likely based on target RNA cleavage or translational arrest. Although it is widely assumed that virus-induced gene silencing (VIGS) promotes the endonucleolytic cleavage of the viral RNA genome, this popular assumption has never been tested experimentally. Here we analyzed the viral RNA targeting by VIGS in tombusvirus-infected plants, and we show evidence that antiviral response of VIGS is based on viral RNA cleavage by RNA-induced silencing effector complex (RISC) programmed by virus-specific small interfering RNAs (siRNAs). In addition, we found that the RISC-mediated cleavages do not occur randomly on the viral genome. Indeed, sequence analysis of cloned cleavage products identified hot spots for target RNA cleavage, and the regions of specific RISC-mediated cleavages are asymmetrically distributed along the positive- and negative-sense viral RNA strands. In addition, we identified viral siRNAs containing high-molecular-mass protein complexes purified from the recovery leaves of the silencing suppressor mutant virus-infected plants. Strikingly, these large nucleoproteins cofractionated with microRNA-containing complexes, suggesting that these nucleoproteins are silencing related effector complexes.",
+      "journal": "Journal of virology",
+      "year": 2007,
+      "pub_date": "2007-04-01",
+      "authors": "Pantaleo Vitantonio; Szittya György; Burgyán József",
+      "first_author": "Pantaleo Vitantonio",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "tombusvirus",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18654267",
+      "doi": "10.1038/nnano.2007.76",
+      "title": "A virus-based biocatalyst.",
+      "abstract": "Virus particles are probably the most precisely defined nanometre-sized objects that can be formed by protein self-assembly. Although their natural function is the storage and transport of genetic material, they have more recently been applied as scaffolds for mineralization and as containers for the encapsulation of inorganic compounds. The reproductive power of viruses has been used to develop versatile analytical methods, such as phage display, for the selection and identification of (bio)active compounds. To date, the combined use of self-assembly and reproduction has not been used for the construction of catalytic systems. Here we describe a self-assembled system based on a plant virus that has its coat protein genetically modified to provide it with a lipase enzyme. Using single-object and bulk catalytic studies, we prove that the virus-anchored lipase molecules are catalytically active. This anchored biocatalyst, unlike man-made supported catalysts, has the capability to reproduce itself in vivo, generating many independent catalytically active copies.",
+      "journal": "Nature nanotechnology",
+      "year": 2007,
+      "pub_date": "2007-04-01",
+      "authors": "Carette Noëlle; Engelkamp Hans; Akpa Eric; Pierre Sebastien J; Cameron Neil R; ... (+8)",
+      "first_author": "Carette Noëlle",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "未提及（可能为烟草花叶病毒等植物病毒）",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30781210",
+      "doi": "10.1094/PDIS-91-4-0465C",
+      "title": "First Report of Tomato yellow leaf curl virus Infecting Common Bean (Phaseolus vulgaris) in Greece.",
+      "abstract": "Tomato yellow leaf curl is one of the most devastating virus diseases of tomato (Lycopersicon esculentum Mill) crops worldwide. Several whitefly-transmitted viruses are associated with the disease and all are assigned to the genus Begomovirus, family Geminiviridae. In Greece, Tomato yellow leaf curl virus (TYLCV) was first reported to infect greenhouse and open-field tomatoes in 2000 (2). During 2006, a survey was conducted in the southwestern part of Peloponnese (mainland) within the areas of Kyparissia and Filiatra (Perfecture of Messinia) to identify the prevalence and natural hosts of the disease. During this survey, yellow mosaic, severe leaf curling, and leaf crumple symptoms were observed in greenhouse bean plants (Phaseolus vulgaris) that were cultivated together with tomatoes showing typical TYLCV symptoms. In all affected greenhouses, the incidence of the disease ranged from 1 to 5% in beans and 90 to 100% in tomato plants. Both bean and tomato plants were highly infested with Bemisia tabaci (Gennadius) populations and produced unmarketable fruits. Twenty-four symptomatic bean plants were collected from four greenhouses that tested positive by triple-antibody sandwich-ELISA using TYLCV-specific antibodies purchased from NEOGEN, EUROPE, Ltd. DNA was extracted from all infected bean plants, and a 580-bp fragment of the coat protein gene was amplified by PCR using the TY(+)/TY(-) primer pair (1). Amplified fragments were then analyzed by restriction fragment length polymorphism with Ava II cutter enzyme. Two DNA fragments of 277 and 302 bp in agarose gels were produced from all isolates and the restriction pattern corresponded to TYLCV. The amplified DNA from four infected bean plants was cloned and sequenced. All four sequences were 100% identical (EMBL Accession No. AM418398) and showed 99% nucleotide identity to a TYLCV isolate from Italy (EMBL Accession No. DQ144621). To our knowledge, this is the first report of TYLCV infection of P. vulgaris, which is an important commercial crop in Messinia, Greece. Within the last decade, TYLCV has emerged as an important pathogen for several cultivated plants in many regions and different TYLCV variants have been reported to infect P. vulgaris (3). Bean is often used as an intercrop between tomato crops, and thus, infected plants may serve as a potential reservoir for virus survival and spread (4). References: (1) G. P. Accotto et al. Eur. J. Plant Pathol. 106:179, 2000. (2) A. D. Avgelis et al. Plant Dis. 85:678, 2001. (3) J. Morris et al. EPPO Bull. 32:41, 2002. (4) J. Navas-Castillo et al. Plant Dis. 83:29, 1999.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-04-01",
+      "authors": "Papayiannis L C; Paraskevopoulos A; Katis N I",
+      "first_author": "Papayiannis L C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato yellow leaf curl virus (TYLCV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "Phaseolus vulgaris (common bean)",
+      "location": "Greece, southwestern Peloponnese, Kyparissia and Filiatra (Perfecture of Messinia)",
+      "results": "从24个症状植株检测到TYLCV，CP基因片段与意大利分离物99%同源，首次报道TYLCV侵染菜豆。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17374780",
+      "doi": "10.1099/vir.0.82715-0",
+      "title": "A novel, multipartite, negative-strand RNA virus is associated with the ringspot disease of European mountain ash (Sorbus aucuparia L.).",
+      "abstract": "Four RNAs from a new plant-pathogenic virus, which we have tentatively named European mountain ash ringspot-associated virus (EMARAV), were identified and sequenced completely. All four viral RNAs could be detected in previous double-stranded RNA preparations. RNA 1 (7040 nt) encodes a protein with similarity to the RNA-dependent RNA polymerase of different members of the Bunyaviridae, a family containing five genera with viruses infecting invertebrates, vertebrates and plants. RNA 2 (2335 nt) encodes a 75 kDa protein containing a conserved motif of the glycoprotein precursor of the genus Phlebovirus. Immunological detection indicated the presence of proteins with the expected size of the precursor and one of its processing products. The amino acid sequence of protein p3 (35 kDa) encoded by RNA 3 shows similarities to a putative nucleocapsid protein of two still unclassified plant viruses. The fourth viral RNA encodes a 27 kDa protein that has no significant homology to any known protein. As is typical for members of the family Bunyaviridae, the 5' and 3' ends of all viral RNAs are complementary, which allows the RNA to form a panhandle structure. Comparison of these sequences demonstrates a conserved terminal part of 13 nt, similar to that of the bunyaviral genus Orthobunyavirus. Despite the high agreement of the EMARAV genome with several characteristics of the family Bunyaviridae, there are a few features that make it difficult to allocate the virus to this group. It is therefore more likely that this plant pathogen belongs to a novel virus genus.",
+      "journal": "The Journal of general virology",
+      "year": 2007,
+      "pub_date": "2007-04-01",
+      "authors": "Mielke Nicole; Muehlbach Hans-Peter",
+      "first_author": "Mielke Nicole",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "European mountain ash ringspot-associated virus (EMARAV)",
+      "taxonomy": "Bunyaviridae（可能归属新属）",
+      "host_plant": "欧洲花楸 (Sorbus aucuparia L.)",
+      "location": "未提及",
+      "results": "鉴定四种RNA：RNA1编码RdRp，RNA2编码糖蛋白前体，RNA3类似核衣壳蛋白，RNA4无同源；5'和3'端互补形成panhandle结构；末端保守序列与正布尼亚病毒属相似。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30781199",
+      "doi": "10.1094/PDIS-91-4-0462A",
+      "title": "First Report of Apple chlorotic leaf spot virus in Quince in Greece.",
+      "abstract": "The sanitary status of pome fruit trees was evaluated in central and northern Greece during a survey in the autumn of 2004 and spring of 2005. Twenty-six leaf samples were collected from five symptomless and 21 symptomatic quince trees showing fruit deformation (FD) symptoms and diffuse chlorotic leaf spots. All samples were tested for the presence of Apple chlorotic leaf spot virus (ACLSV), a member of the Trichovirus genus, initially by ELISA and then by a specific reverse transcription (RT)-PCR assay reported previously (1). ACLSV has a broad host range that includes most, if not all, Prunoidae (peach, apricot, plum, and cherry) and Maloidae (apple, pear, and quince) fruit tree species. Although it has been tentatively linked with fruit, leaf, bark, and growth retardation symptoms in quince (2,3), its geographic distribution and association with specific symptoms is still poorly determined. ACLSV was initially detected by serology in two plants, one symptomless and one showing FD symptoms. ACLSV presence in these two samples and in an additional symptomless plant was confirmed by the ACLSV-specific RT-PCR assay. Sequencing of the RT-PCR amplicon from the symptomatic isolate (EMBL Accession No. AM292923), which was positive in both assays, confirmed the identification of ACLSV. The obtained sequence shows 93% nucleotide identity with an apple isolate of ACLSV (EMBL Accession No. AY677103). To our knowledge, these findings represent the first report of the presence of ACLSV in quince in Greece. They further indicate that at least for some host-cultivar/virus isolate combinations, ACLSV may be asymptomatic in quince and that the symptoms observed in the plants sampled are unrelated to ACLSV infection. References: (1) T. Candresse et al. Acta Hortic. 386:136, 1995. (2) J. C. Desvignes. Page 202 in: Virus Diseases of Fruit Trees. CTIFL Publishing, 1999. (3) S. Paunovic and M. Rankovic. Jugosl. Vocarstvo 31:231, 1997.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-04-01",
+      "authors": "Mathioudakis M M; Candresse T; Katis N I",
+      "first_author": "Mathioudakis M M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Apple chlorotic leaf spot virus (ACLSV)",
+      "taxonomy": "Trichovirus, Betaflexiviridae, Tymovirales (属科目)",
+      "host_plant": "榅桲 (quince, Cydonia oblonga)",
+      "location": "希腊中北部 (central and northern Greece)",
+      "results": "在3个样本中检测到ACLSV（1个有症状，2个无症状），测序确认，表明ACLSV可能无症状，症状与病毒感染无关。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30781197",
+      "doi": "10.1094/PDIS-91-4-0461B",
+      "title": "First Report of Onion yellow dwarf virus, Leek yellow stripe virus, and Garlic common latent virus in Garlic in Oregon.",
+      "abstract": "A general mosaic and yellowing of leaves of three cultivars of garlic (Allium sativum L., Late, Early, and Germinador) were observed in two seed-production fields in Morrow County, OR in June 2005. Approximately 50% of plants within the 50-ha fields were symptomatic. With recent findings of Onion yellow dwarf virus (OYDV), Leek yellow stripe virus (LYSV), and Garlic common latent virus (GCLV) in Washington (2), 45 composite samples of 10 leaves each from symptomatic (mosaic and yellowing) and nonsymptomatic plants were analyzed with a GCLV-specific antiserum (Agdia Inc., Elkhart, IN). All samples of 'Germinador' were infected regardless of symptoms, whereas 6.7% of all 'Late' and 'Early' samples were positive. GCLV infection was verified by reverse transcription (RT)-PCR using primers specific to the coat protein gene of GCLV followed by cloning and sequencing of the cloned amplicon. To determine the presence of a potyvirus, all composite samples were also tested with a general potyvirus antiserum (Agdia) and all samples from symptomatic plants were found to be positive. Representative positive samples from each cultivar were then tested by RT-PCR using degenerate, potyvirus group specific primers (3), and an amplicon of the expected size was obtained. To confirm which potyvirus was present, amplicons were cloned and sequenced, and sequence comparisons indicated that the representative samples were infected with OYDV. All symptomatic samples from the three cultivars were positive for OYDV when tested by RT-PCR using primers specific to its coat protein gene (1). Additionally, 53.3 and 6.7% of 'Early' and 'Late' samples, respectively, were also positive when tested with LYSV-specific primers (4). LYSV infection was further verified through cloning and sequencing of the cloned amplicon. Because this garlic is grown for seed, studies are being initiated to determine if current season spread occurs and yields are reduced. To our knowledge, this is the first report of OYDV, LYSV, and GCLV in garlic in Oregon. References: (1) P. Lunello et al. J. Virol. Methods 118:15, 2004. (2) H. R. Pappu et al. Plant Dis. 89:205, 2005. (3) S. S. Pappu et al. J. Virol. Methods 41:9, 1993. (4) T. Tsuneyoshi et al. Phytopathology. 86:253, 1996.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-04-01",
+      "authors": "Gieck S L; Pappu H R; Hamm P B; David N L",
+      "first_author": "Gieck S L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Onion yellow dwarf virus (OYDV), Leek yellow stripe virus (LYSV), Garlic common latent virus (GCLV)",
+      "taxonomy": "OYDV和LYSV属于Potyviridae科Potyvirus属，GCLV属于Carlavirus属",
+      "host_plant": "大蒜 (Allium sativum L.)",
+      "location": "美国俄勒冈州Morrow县",
+      "results": "约50%植株有症状；GCLV在所有Germinador品种样本中检出；OYDV在所有有症状样本中检出；LYSV在部分样本中检出。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30781217",
+      "doi": "10.1094/PDIS-91-4-0468A",
+      "title": "First Report of Iris yellow spot virus on Onion and Leek in Western Oregon.",
+      "abstract": "Onion (Allium cepa) and leek (Allium porrum) are grown on approximately 600 ha in western Oregon annually for bulb and seed production. During July and August of 2006, surveys of onion bulb crops and onion and leek seed crops in western Oregon found plants with symptoms of elongated to diamond-shaped, straw-colored lesions characteristic of those caused by Iris yellow spot virus (IYSV) (1-4). Symptomatic plants were collected from fields of an onion bulb crop, an onion seed crop, and two leek seed crops located in Marion County. The onion bulb crop had been planted in the spring of 2006, and the onion and leek seed crops had been planted in the fall of 2005, all direct seeded. Cultivar names were not provided for proprietary purposes. Symptomatic plants in the onion bulb crop and leek seed crop generally were found near the borders of the field. Disease incidence was less than 5% and yield losses in these crops appeared to be negligible. In the onion seed crop, symptomatic plants were found throughout the field and disease incidence was approximately 20%. Approximately 1% of the onion plants in this field had large necrotic lesions that caused the seed stalks (scapes) to lodge. The presence of IYSV was confirmed from symptomatic leaves and scapes by ELISA (Agdia Inc., Elkhart, IN) using antiserum specific to IYSV. RNA was extracted from symptomatic areas of onion leaves and scapes, and a portion of the nucleocapsid gene was amplified by reverse transcription-PCR. The amplicons were sequenced and found to share more than 99% nucleotide and amino acid sequence identity with an onion isolate of IYSV from the Imperial Valley of California (GenBank Accession No. DQ233475). In the Pacific Northwest region of the United States, IYSV has been confirmed in the semi-arid regions of central Oregon (1), central Washington (2), and the Treasure Valley of eastern Oregon and southwest Idaho (3). To our knowledge, this is the first report of the disease on a host crop in the mild, maritime region west of the Cascade Mountain Range and the first report of IYSV on leek seed crops in the United States, which complements a simultaneous report of IYSV on commercial leek in Colorado. The presence of IYSV may have implications for the iris and other ornamental bulb industries in western Oregon and western Washington. This report underscores the need for further research to determine the impact of the disease on allium crops and other hosts and the development of effective management programs for IYSV and the vector, Thrips tabaci. References: (1) F. J. Crowe and H. R. Pappu. Plant Dis. 89:105, 2005. (2) L. J. du Toit et al. Plant Dis. 88:222, 2004. (3) J. M. Hall et al. Plant Dis. 77:952, 1993. (4) H. F. Schwartz et al. Plant Dis. 91:113, 2007.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-04-01",
+      "authors": "Gent D H; Martin R R; Ocamb C M",
+      "first_author": "Gent D H",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Iris yellow spot virus (IYSV)",
+      "taxonomy": "未提及",
+      "host_plant": "Onion (Allium cepa), Leek (Allium porrum)",
+      "location": "Western Oregon, USA; Marion County",
+      "results": "典型症状植株分布于田边，发病率<5%至20%，洋葱种子田约20%植株感病；序列与加州分离物>99%核苷酸和氨基酸同源。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30781222",
+      "doi": "10.1094/PDIS-91-4-0469C",
+      "title": "Recovery of Four Novel Potato spindle tuber viroid Sequence Variants from Russian Seed Potatoes.",
+      "abstract": "First described in the early 1930s, the limited distribution of potato \"gothic\" disease made it of little economic significance in European Russia until the early 1970s when meristem-tip culture was widely adopted throughout the former USSR to increase production of virus-free seed potatoes. Shortly thereafter, the yield and quality of Russian seed potatoes began a dramatic decline. Symptoms of potato \"gothic\" resemble those of Potato spindle tuber viroid (PSTVd) (3), and initial suspicions that in vitro plantlets and seed potatoes might be viroid-infected were later proved correct when Kastalyeva et al. (2) showed that approximately 50 to 70% of in vitro plantlets and tubers collected from different regions of Russia as well as the in vitro germplasm collection maintained by the All-Russian Potato Research Institute (ARPRI) were infected with PSTVd. Measures have since been taken to reduce the incidence of PSTVd infection, and numerous PSTVd isolates were collected from territories of the former USSR; however, none of these isolates have been characterized at the molecular level. Overlapping reverse transcription (RT)-PCR products (1) were generated from four PSTVd isolates maintained in field-grown tubers at the VNIIF using two pairs of primers; PSTVd180F (5'-TCACCCTTCCTTTCTTCGGGTGTC-3') + PSTVd179R (5'-AAACCCTGTTTCGGCGGGAATTAC-3') and PSTVd112F (5'-ACT GGCAAAAAAGGACGGTGGGGA-3') + PSTVd359R (5'-AGGAACC AACTGCGGTTCCAAGGG-3'). Automated sequence analysis of the resulting uncloned PCR products revealed the presence of four previously unknown PSTVd variants (GenBank Accession Nos. EF044302-EF044305). All four tubers were also infected with Potato virus M and Potato virus Y and one tuber also contained Potato virus S. ELISA tests for Potato leaf roll virus were negative. Each isolate appeared to contain only a single 358-359 nt variant differing from PSTVd-intermediate strain (GenBank Accession No. V01465) at 2-5 positions. The three closely related variants originating from Leningradskaya Province (Northwest Russia) contain two to three changes in the variable domain and central conserved region and induced intermediate symptoms in Rutgers tomato. The fourth variant originating from Samarskaya Province (Volga River Region) contains additional changes in the pathogenicity domain and induced mild symptoms. Minor differences among the Leningradskaya variants may represent sequence drift during extended (9 to 11 year) tuber passage. The presence of additional sequence changes in the variant from Samarskaya is consistent with independent origin and/or prolonged separation. Additional studies with a wider range of Russian isolates of PSTVd are currently underway to develop diagnostic methods suitable for future large-scale screening programs. References: (1) Y. Hu et al. Virology 219:45, 1997. (2) T. B. Kastalyeva et al. Vestn. RASKHN 3:22, 1992. (3) Y. A. Leontyeva. Potato spindle tuber ('gothic') as one of the most important diseases in the Volga region. (In Russian.) Ph.D. thesis. Agricultural University of Leningrad, Pushkin, 1971.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-04-01",
+      "authors": "Kastalyeva T; Mozhaeva K; Thompson S M; Clark J R; Owens R A",
+      "first_author": "Kastalyeva T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Potato spindle tuber viroid (PSTVd) 的四个新序列变异体",
+      "taxonomy": "Pospiviroidae, Pospiviroid",
+      "host_plant": "马铃薯 (Solanum tuberosum), Rutgers番茄",
+      "location": "俄罗斯：Leningradskaya Province (西北俄罗斯), Samarskaya Province (伏尔加河地区)",
+      "results": "发现四个新变异体(358-359 nt)，与中间株系有2-5个差异；Leningradskaya变异体引起中间症状，Samarskaya变异体引起轻微症状。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30781204",
+      "doi": "10.1094/PDIS-91-4-0463C",
+      "title": "First Report of Blackberry chlorotic ringspot virus in Rubus sp. in the United States.",
+      "abstract": "Blackberry chlorotic ringspot virus (BCRV), genus Ilarvirus, has been found in Rubus sp. in Scotland (2) and rose in the United States (4). The possibility that BCRV infects other hosts in the United States was explored. We tested 18 accessions of Fragaria sp. and 30 of Rubus sp. maintained at the National Clonal Germplasm Repository in Corvallis, OR. Ilarviruses had been detected in these plants by reverse transcription (RT)-PCR, ELISA, or had caused symptoms typical of ilarviruses on indicator plants. The accessions were tested by RT-PCR with primers F (5'-GTTTCCTGTGCTCCTCA-3') and R (5'-GTCACACCGAGGTACT-3') (4) that amplify a 519 to 522 nt (depending on the isolate) region of the RNA 3 of BCRV. The virus was detected in two accessions of black raspberry (Rubus occidentalis L.): RUB433, cv. Lowden and RUB 9012, cv. New Logan. The sequences of the fragments amplified from these accessions (GenBank Accession Nos. EF041817 and EF041818, respectively) had 97% nt sequence identity to each other and 95 and 88% nt identity to the rose and Scottish isolates (GenBank Accession Nos. DQ329378 and DQ091195, respectively). Chenopodium quinoa indicator plants inoculated with isolate RUB 433 developed mild chlorotic spots on the inoculated leaves 4 days after inoculation. RT-PCR and sequencing of the amplicons verified BCRV infection of C. quinoa. RUB 9012 was used for the characterization of Black raspberry latent virus (BRLV), later thought to be an isolate of Tobacco streak virus (TSV). This accession was recently found to be infected with Strawberry necrotic shock virus (SNSV) but not TSV (3). It is possible that BRLV may be a mixture of SNSV and BCRV. SNSV is one of the most abundant viruses of Rubus sp. in the Pacific Northwest (1), and the finding of another ilarvirus, BCRV, may account in part for the rapid decline of Rubus sp. observed in several fields in Oregon and Washington. To our knowledge, this is the first report of BCRV infecting Rubus sp. outside the United Kingdom. References: (1) A. B. Halgren. Ph.D. Diss. Oregon State University, Corvallis, OR, 2006. (2) A. T. Jones et al. Ann. Appl. Biol. 149:125, 2006. (3) I. E. Tzanetakis et al. Arch. Virol. 149:2001, 2004. (4) I. E. Tzanetakis et al. Plant Pathol. 55:568, 2006.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-04-01",
+      "authors": "Tzanetakis I E; Postman J D; Martin R R",
+      "first_author": "Tzanetakis I E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Blackberry chlorotic ringspot virus (BCRV)",
+      "taxonomy": "Ilarvirus (科Bromoviridae)",
+      "host_plant": "Rubus sp. (Rubus occidentalis, 黑树莓品种Lowden和New Logan)",
+      "location": "美国俄勒冈州Corvallis (国家无性系种质资源库)",
+      "results": "在两个黑树莓种质中检出BCRV，序列与苏格兰和玫瑰分离物同源性分别为95%和88%，昆诺藜接种出现轻微褪绿斑。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30781211",
+      "doi": "10.1094/PDIS-91-4-0466A",
+      "title": "Tomato yellow leaf curl virus in Tomato in Texas, Originating from Transplant Facilities.",
+      "abstract": "Tomato yellow leaf curl virus (TYLCV), a monopartite virus in the genus Begomovirus (family, Geminiviridae) from the Middle East, is one of the most damaging whitefly-transmitted viruses of tomato (Lycopersicon esculentum) worldwide. TYLCV was first identified in the United States in 1997 in Florida (4), and most recently, in the Pacific Coast states of Mexico where fresh market tomatoes are grown for the U.S. market (1). During September 2006, tomatoes grown from transplants in Waller County, TX exhibited shortened internodes, stunting and puckering of leaflets, green vein banding, and diffuse chlorosis. The disease incidence in two fields (4 ha total) was 95% and yield was substantially reduced. Many of the transplants were symptomatic at planting. The transplants originated from two facilities in Hidalgo County, TX. Both facilities had experienced heavy infestations of the whitefly, Bemisia tabaci (Genn.), during transplant production. At the same time, transplants produced in Uvalde and Bexar counties, TX, where whitefly infestations were also prevalent, had similar virus symptoms. Total DNA was extracted from the leaves of symptomatic tomato plants from 10 samples from these four counties and amplified by PCR (2). DNA samples from Waller, Hidalgo, and Uvalde counties were cloned, and a partial fragment of the viral coat protein gene (core Cp) was sequenced. BLAST analysis of the core Cp sequences of each sample confirmed the presence of TYLCV. No other begomovirus was detected, and all attempts to amplify a bipartite begomovirus by PCR using degenerate DNA-B specific primers (3) were unsuccessful. The full-length TYLCV DNA was amplified from three samples using the rolling circle amplification method as described (1), cloned, and the sequences were determined. The three sequences shared 99.6 to 100% nt identity and so only one sequence was deposited in the NCBI GenBank database (Accession No. EF110890) (1). Analysis of the complete genome nucleotide sequence corroborated TYLCV identity predicted by core Cp analysis that was 98.1% identical with TYLCV from Egypt (GenBank Accession No. AY594174) and Spain (GenBank Accession No. AJ489258), 97.6% with TYLCV from Mexico (GenBank Accession No. DQ631892), and 96.5% with TYLCV-Is (GenBank Accession No. X15656). Additionally, a Southern blot with TYLCV as the probe detected replicating (double-stranded) TYLCV DNA in all samples consisting of three plants from Uvalde County and 21 plants from Bexar County. To our knowledge, this is the first report of TYLCV in Texas that occurred in two transplant production areas approximately 400 km apart. Transplants produced in Uvalde and Bexar counties were planted there, while Hidalgo County transplants were shipped outside of the usual range of the whitefly. Hidalgo County has a subtropical climate, which can allow overwintering of TYLCV and the whitefly vector, allowing the establishment and spread of this virus in the future. References: (1) J. K. Brown and A. M. Idris. Plant Dis. 90:1360, 2006. (2) J. K. Brown et al. Arch. Virol. 146:1581, 2001. (3) A. M. Idris and J. K. Brown. Phytopathology 88:648, 1998. (4) J. E. Polston et al. Plant Dis. 83:984, 1999.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-04-01",
+      "authors": "Isakeit T; Idris A M; Sunter G; Black M C; Brown J K",
+      "first_author": "Isakeit T",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "番茄黄化曲叶病毒 (Tomato yellow leaf curl virus, TYLCV)",
+      "taxonomy": "属：Begomovirus，科：Geminiviridae",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17373696",
+      "doi": "10.1002/bies.20556",
+      "title": "Viral suppression of RNA silencing: 2b wins the Golden Fleece by defeating Argonaute.",
+      "abstract": "In plants, virus-derived double-stranded RNA is processed into small interfering (si)RNAs by RNAse III-type enzymes. siRNAs are believed to guide an RNA-induced silencing complex (RISC) to promote sequence-specific degradation (or 'slicing') of homologous viral transcripts. This process, called RNA silencing, likely involves Argonaute (AGO) proteins that are known components of plant and animal RISCs. Plant viruses commonly counteract the silencing immune response by producing suppressor proteins, but the molecular basis of their action has remained largely unclear. A recent study by Zhang and colleagues now shows that the 2b suppressor of Cucumber mosaic virus directly interacts with Arabidopsis AGO1 and inhibits its slicing activity, suggesting that AGO1 might be a component of the elusive plant antiviral RISC.",
+      "journal": "BioEssays : news and reviews in molecular, cellular and developmental biology",
+      "year": 2007,
+      "pub_date": "2007-04-01",
+      "authors": "Ruiz-Ferrer Virginia; Voinnet Olivier",
+      "first_author": "Ruiz-Ferrer Virginia",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "黄瓜花叶病毒 (Cucumber mosaic virus)",
+      "taxonomy": "",
+      "host_plant": "拟南芥 (Arabidopsis thaliana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

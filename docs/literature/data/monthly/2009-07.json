@@ -1,0 +1,283 @@
+{
+  "month": "2009-07",
+  "generated": "2026-07-13 02:59:42",
+  "total": 41,
+  "by_category": {
+    "New_Virus": 14,
+    "Host_Virus_Interactions": 11,
+    "Viral_Diversity_Ecology": 5,
+    "Biotechnology_Applications": 5,
+    "Antiviral_Resistance_Genes": 3,
+    "Control_Management": 2,
+    "Molecular_Characterization": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "19463722",
+      "doi": "10.1016/j.virusres.2009.03.005",
+      "title": "'Kwanzan Stunting' syndrome: detection and molecular characterization of an Italian isolate of Little cherry virus 1.",
+      "abstract": "Evident stunting was observed for the first time on Prunus serrulata 'Kwanzan' indicator trees in Southern Italy during the indexing of two sour cherry accessions from cultivars 'Marasca di Verona' and 'Spanska'. Bud break and shooting were delayed and the developing leaves remained small. During the third year many Kwanzan plants died, regardless of the indexed cultivar. Electrophoretic analysis showed the presence of dsRNA pattern in extracts of stunted Kwanzan with a similar size to that of viruses of the family Closteroviridae. An identical pattern of more abundant dsRNA bands was obtained from GF305 seedlings grafted with the same sour cherry accessions. Observations by electron microscopy revealed the presence of long flexuous virus particles in both indicators (Kwanzan and GF305), characteristic of closteroviruses. Subsequent cloning work, starting from the dsRNA extracts of cultivar Marasca di Verona grafted on GF305 indicator, yielded 7 different clones, all showing high identity to the Little cherry virus 1 genome. Full sequencing of this virus isolate (ITMAR) was then done resulting in a complete genome composed of 16,936nt. Primers designed on the obtained sequences for RT-PCR detection confirmed the presence of Little cherry virus 1 in Kwanzan and GF305 trees, inoculated with both sour cherry cultivars. Phylogenetic analysis of the minor coat protein grouped virus isolates into two clusters: one including Italian isolates of sweet cherry, Japanese plum, peach and almond, together with German sweet cherry UW1 isolate, and a second one containing the Italian isolates of sour cherry (ITMAR and ITSPA), that were found associated with strong symptoms of 'Kwanzan Stunting'.",
+      "journal": "Virus research",
+      "year": 2009,
+      "pub_date": "2009-07-01",
+      "authors": "Matic Slavica; Minafra Angelantonio; Sánchez-Navarro Jesús A; Pallás Vicente; Myrta Arben; ... (+1)",
+      "first_author": "Matic Slavica",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Little cherry virus 1 (LChV-1) 意大利分离物ITMAR",
+      "taxonomy": "长线形病毒科 (Closteroviridae)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764362",
+      "doi": "10.1094/PDIS-93-7-0752",
+      "title": "Russian Isolates of Potato spindle tuber viroid Exhibit Low Sequence Diversity.",
+      "abstract": "Potato spindle tuber viroid (PSTVd) is currently widespread in seed potatoes grown in Russia. Characterization of 39 PSTVd isolates collected over a 15-year period from widely separated areas in Russia revealed the presence of 17 different sequence variants, all but one of which were previously unknown. Most variants were recovered only once, but two were more widely distributed; one of these was a mild variant previously isolated in Germany, the second was a novel variant inducing symptoms similar to those of the type strain in tomato. Despite this apparent lack of population diversity, several informative PSTVd variants were recovered. Sequence changes in the pathogenicity and variable domains were particularly common, but previously unknown changes were also detected within the loop E motif in the central domain, a structural motif known to play a key role in PSTVd replication and host range determination.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-07-01",
+      "authors": "Owens Robert A; Girsova Natalya V; Kromina Ksenia A; Lee Ing Ming; Mozhaeva Karina A; ... (+1)",
+      "first_author": "Owens Robert A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Potato spindle tuber viroid (PSTVd)",
+      "taxonomy": "Pospiviroidae, Pospiviroid",
+      "host_plant": "马铃薯、番茄",
+      "location": "俄罗斯",
+      "results": "发现17种序列变异体，多数仅出现一次，两种分布较广。致病性和可变区变化常见，中央区环E基序出现新变化。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19523106",
+      "doi": "10.1111/j.1364-3703.2009.00545.x",
+      "title": "Next-generation sequencing and metagenomic analysis: a universal diagnostic tool in plant virology.",
+      "abstract": "A novel, unbiased approach to plant viral disease diagnosis has been developed which requires no a priori knowledge of the host or pathogen. Next-generation sequencing coupled with metagenomic analysis was used to produce large quantities of cDNA sequence in a model system of tomato infected with Pepino mosaic virus. The method was then applied to a sample of Gomphrena globosa infected with an unknown pathogen originally isolated from the flowering plant Liatris spicata. This plant was found to contain a new cucumovirus, for which we suggest the name 'Gayfeather mild mottle virus'. In both cases, the full viral genome was sequenced. This method expedites the entire process of novel virus discovery, identification, viral genome sequencing and, subsequently, the development of more routine assays for new viral pathogens.",
+      "journal": "Molecular plant pathology",
+      "year": 2009,
+      "pub_date": "2009-07-01",
+      "authors": "Adams Ian P; Glover Rachel H; Monger Wendy A; Mumford Rick; Jackeviciene Elena; ... (+3)",
+      "first_author": "Adams Ian P",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Pepino mosaic virus, Gayfeather mild mottle virus (新病毒)",
+      "taxonomy": "Cucumovirus (Gayfeather mild mottle virus)",
+      "host_plant": "番茄 (Solanum lycopersicum), Gomphrena globosa, Liatris spicata",
+      "location": "未提及",
+      "results": "该方法成功检测已知病毒并发现新病毒，测得全基因组序列，加速了病毒发现、鉴定和后续常规检测的开发。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19523104",
+      "doi": "10.1111/j.1364-3703.2009.00553.x",
+      "title": "An artificial chimeric derivative of Citrus viroid V involves the terminal left domain in pathogenicity.",
+      "abstract": "The recently described Citrus viroid V (CVd-V) induces, in Etrog citron, mild stunting and very small necrotic lesions and cracks, sometimes filled with gum. As Etrog citron plants co-infected with Citrus dwarfing viroid (CDVd) and CVd-V show synergistic interactions, these host-viroid combinations provide a convenient model to identify the pathogenicity determinant(s). The biological effects of replacing limited portions of the rod-like structure of CVd-V with the corresponding portions of CDVd are reported. Chimeric constructs were synthesized using a novel polymerase chain reaction-based approach, much more flexible than those based on restriction enzymes used in previous studies. Of the seven chimeras (Ch) tested, only one (Ch5) proved to be infectious. Plants infected with Ch5 showed no symptoms and, although this novel chimera was able to replicate to relatively high titres in singly infected plants, it was rapidly displaced by either CVd-V or CDVd in doubly infected plants. The results demonstrate that direct interaction(s) between structural elements in the viroid RNA (in this case, the terminal left domain) and as yet unidentified host factors play an important role in modulating viroid pathogenicity. This is the first pathogenic determinant mapped in species of the genus Apscaviroid.",
+      "journal": "Molecular plant pathology",
+      "year": 2009,
+      "pub_date": "2009-07-01",
+      "authors": "Serra Pedro; Bani Hashemian Seyed Mehdi; Pensabene-Bellavia Giovanni; Gago Selma; Duran-Vila Núria",
+      "first_author": "Serra Pedro",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Citrus viroid V (CVd-V), Citrus dwarfing viroid (CDVd)",
+      "taxonomy": "未明确（类病毒），属 Apscaviroid",
+      "host_plant": "Etrog citron (Citrus medica)",
+      "location": "未提及",
+      "results": "7个嵌合体中仅Ch5有感染性但无症状，复制水平高，但在混合感染中会被野生型取代。证明末端左侧结构域与宿主因子互作调节致病性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764367",
+      "doi": "10.1094/PDIS-93-7-0764B",
+      "title": "First Report of the Occurrence of Sweet potato leaf curl virus in Tall Morningglory (Ipomoea purpurea) in China.",
+      "abstract": "Natural occurrence of Sweet potato leaf curl virus (SPLCV) has been reported in Ipomoea batatas (sweet potato, Convolvulaceae) or I. indica (Convolvulaceae) in several countries including the United States, Sicily, and China (1-3). In September of 2007, while collecting samples showing begomovirus-like symptoms in the Chinese province of Fujian, we observed tall morningglory (I. purpurea (L.) Roth, also known as Pharbitis purpurea (L.) Voigt), plants with slightly yellow mosaic and crinkled leaves. Total DNA was extracted from leaves of these plants and tested by rolling circle amplification (4). Amplification products were digested by the restriction enzyme BamHI for 30 min. Restriction products (2.8 kb) were then cloned into pMD18T vector (Takara Biotechnology, China) and sequenced. Comparison of complete DNA sequences by Clustal V analysis revealed that these samples were infected by the same virus, and an isolate denoted F-p1 was selected for further sequence analysis. F-p1 was 2,828 nucleotides, with the typical genomic organization of begomoviral DNA-A (GenBank Accession No. FJ515896). F-p1 was compared with the DNA sequences available in the NCBI database using BLAST. The whole DNA sequence showed the highest nucleotide sequence identity (92.1%) with an isolate of SPLCV (GenBank Accession No. FJ176701) from Jiangsu Province of China. The result confirmed that the samples from the symptomatic tall morningglory were infected by SPLCV. To our knowledge, this is the first report of the natural occurrence of SPLCV in I. purpurea, a common weed species in China. References: (1). P. Lotrakul et al. Plant Dis. 82:1253, 1998. (2). R. W. Briddon et al. Plant Pathol. 55:286, 2006. (3) Y. S. Luan et al. Virus Genes 35:379, 2007. (4) D. Haible et al. J. Virol. Methods 135:9, 2006.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-07-01",
+      "authors": "Yang C X; Wu Z J; Xie L H",
+      "first_author": "Yang C X",
+      "categories": [
+        "New_Virus",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "Sweet potato leaf curl virus (SPLCV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "Ipomoea purpurea (牵牛花)",
+      "location": "中国福建省",
+      "results": "获得全长2,828核苷酸序列，与江苏SPLCV分离物同源性92.1%，确认感染。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764375",
+      "doi": "10.1094/PDIS-93-7-0761B",
+      "title": "First Report of Tobacco mild green mosaic virus Infecting Capsicum annuum in Tunisia.",
+      "abstract": "During the springs of 2007 and 2008, leaf deformations as well as symptoms of mild green and chlorotic mosaic were observed on pepper (Capsicum annuum) plants grown in Monastir (northwest Tunisia) and Kebili (southeast Tunisia). With the support of projects A/5269/06 and A/8584/07 from the Spanish Agency for International Cooperation (AECI), symptomatic leaf samples were analyzed by transmission electron microscopy (TEM) of leaf-dip preparations. Typical tobamovirus-like particles (rigid rods ≈300 nm long) were observed in crude plant extracts. According to literature, at least six tobamoviruses infect peppers: Paprika mild mottle virus (PaMMV); Pepper mild mottle virus (PMMoV); Ribgrass mosaic virus (RMV); Tobacco mild green mosaic virus (TMGMV); Tobacco mosaic virus (TMV); and Tomato mosaic virus (ToMV) (1). Extracts from six symptomatic plants from Monastir and four from Kebili fields tested negative for ToMV, TMV, and PMMoV and tested positive for TMGMV by double-antibody sandwich (DAS)-ELISA using polyclonal antibodies specific to each virus (Loewe Biochemica GMBH, Sauerlach, Germany). To confirm the positive TMGMV results, total RNAs from 10 symptomatic plants that tested positive by ELISA were extracted and analyzed by reverse transcription (RT)-PCR using primers designed to specifically amplify a region of the coat protein gene (CP) of TMGMV (2). The 524-bp TMGMV-CP specific DNA fragment was amplified from all samples, but was not amplified from healthy plants or the sterile water used with negative controls. RT-PCR products were purified and directly sequenced. BLAST analysis of the obtained sequence (GenBank No. EU770626) showed 99 to 98% nucleotide identity with TMGMV isolates PAN-1, DSMZ PV-0113, TMGMV-Pt, and VZ1 (GenBank Nos. EU934035, EF469769, AM262165, and DQ460731, respectively) and less than 69% with PaMMV and PMMoV isolates (GenBank Nos. X72586 and AF103777, respectively). Two TMGMV-positive, singly, infected symptomatic pepper plants collected from Monastir and Kebili were used in mechanical transmissions to new pepper and tomato plants. Inoculated pepper plants exhibited mild chlorosis symptoms and tested positive for TMGMV only; however, inoculated tomato plants cv. Marmande were asymptomatic and tested negative as expected for TMGMV infection (1). To our knowledge, although C. annuum has been shown as a natural host for TMGMV (2), this is the first report of TMGMV in Tunisia. Reference: (1) A. A. Brunt et al. Plant Viruses Online: Descriptions and Lists from the VIDE Database. Version: 20th August 1996. Online publication, 1996. (2) J. Cohen et al. Ann. Appl. Biol. 138:153, 2001.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-07-01",
+      "authors": "Font M I; Córdoba-Sellés M C; Cebrián M C; Herrera-Vásquez J A; Alfaro-Fernández A; ... (+3)",
+      "first_author": "Font M I",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tobacco mild green mosaic virus (TMGMV)",
+      "taxonomy": "Virgaviridae, Tobamovirus",
+      "host_plant": "Capsicum annuum (辣椒)",
+      "location": "突尼斯莫纳斯提尔和凯比利",
+      "results": "检测到TMGMV，序列与已知分离物同源性98-99%，接种辣椒表现症状，番茄无症状。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764369",
+      "doi": "10.1094/PDIS-93-7-0761C",
+      "title": "First Report of Onion yellow dwarf virus in Allium chinense in China.",
+      "abstract": "Allium chinense (G. Don) is an economically important vegetable that has been considered to be of Asian origin (2). In April of 2007, plants of cultivated A. chinense showing mosaic, chlorotic streak, twist, and crinkle on leaves were collected from fields at Jiangxia, a suburban district of Wuhan, Hubei Province, China, and transplanted into pots in a greenhouse. Ultrathin sections of diseased leaves were observed under an electron microscope. Pinwheel or cylindrical inclusions, typical of a potyvirus infection, were observed. Filamentous virus particles (820 nm long) were also observed in the crude extract from the same plant. To identify the virus species, viral RNAs were extracted from partially purified virion preparation (3) and used as a template. First-strand cDNA was synthesized with M4-T (5'-GTT TTC CCA GTC ACG AC (T)15-3') as a complementary primer. The 3'-terminus of viral RNA was amplified using primer M4 (5'-GTT TTC CCA GTC ACG AC-3') in combination with a degenerate primer (5'-GGXAAYAAYAGY GGX CARCC-3') that was specific for potyviruses (1). Amplified products were cloned and nine clones were sequenced. Sequence analysis showed that the size of the amplified fragment, excluding the poly A tail, was 1,625 bp, which had the typical characteristics of the 3'-terminus of the potyvirus genome, including the partial NIb gene (636 bp) and the complete coat protein (CP gene; 771 bp). The 1,625-bp sequence from A. chinense (Genbank Accession No. FJ765739) had the highest identity at the nucleotide level with sequences of Onion yellow dwarf virus (OYDV), ranging from 76% (Genbank Accession Nos. AB219833 and AB219834) to 99% (Genbank Accession No. AJ409313). The CP gene had 88% (Genbank Accession Nos. AB219833 and AB219834) to 99% (Genbank Accession Nos. AJ409313 and AJ409310) identity at the amino acid level with corresponding regions of known OYDV isolates from other hosts. Until now, only Scallion mosaic virus (ScaMV), in the genus Potyvirus, had been detected from A. chinense (1); however, OYDV was reported in rakkyo, the same species as Chinese scallion, in Japan (4). To our knowledge, this is the first report of OYDV infecting A. chinense in China. References: (1) J. Chen et al. Arch. Virol. 147:683, 2002. (2) L. K. Mann and W. T. Stearn. Econ. Bot. 14:69, 1960. (3) T. Nagakubo et al. Phytopathology 84:640,1994. (4) I. Sako et al. Ann. Phytopathol. Soc. Jpn. 57:65, 1991.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-07-01",
+      "authors": "Wu C C; Hong N; Liu Y; Xu W X; Wang G P",
+      "first_author": "Wu C C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Onion yellow dwarf virus (OYDV)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "Allium chinense (薤白)",
+      "location": "中国湖北省武汉市江夏区",
+      "results": "观察到风轮状内含体和820nm丝状病毒粒子；获得1625bp序列，与OYDV同源性最高（76%-99%）；CP氨基酸同源性88%-99%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764374",
+      "doi": "10.1094/PDIS-93-7-0762A",
+      "title": "First Report of Natural Infection of Penstemon acuminatus with Cucumber mosaic virus in the Treasure Valley Region of Idaho and Oregon.",
+      "abstract": "Penstemons are perennials that are grown for their attractive flowers in the United States. Penstemon species (P. acuminatus, P. deustus, and P. speciosus) are among the native forbs considered as a high priority for restoration of great basin rangelands. During the summer of 2008, symptoms of red spots and rings were observed on leaves of P. acuminatus (family Scrophulariaceae) in an experimental trial in Malheur County, Oregon where the seeds from several native forbs were multiplied for restoration of range plants in intermountain areas. These plants were cultivated as part of the Great Basin Native Plant Selection and Increase Project. Several native wildflower species are grown for seed production in these experimental plots. Plants showed red foliar ringspots and streaks late in the season. Fungal or bacterial infection was ruled out. Two tospoviruses, Impatiens necrotic spot virus and Tomato spotted wilt virus, and one nepovirus, Tomato ring spot virus, are known to infect penstemon (2,3). Recently, a strain of Turnip vein-clearing virus, referred to as Penstemon ringspot virus, was reported in penstemon from Minnesota (1). Symptomatic leaves from the penstemon plants were negative for these viruses when tested by ELISA or reverse transcription (RT)-PCR. However, samples were found to be positive for Cucumber mosaic virus (CMV) when tested by a commercially available kit (Agdia Inc., Elkhart, IN). To verify CMV infection, total nucleic acid extracts from the symptomatic areas of the leaves were prepared and used in RT-PCR. Primers specific to the RNA-3 of CMV were designed on the basis of CMV sequences available in GenBank. The primer pair consisted of CMV V166: 5' CCA ACC TTT GTA GGG AGT GA 3' and CMV C563: 5' TAC ACG AGG ACG GCG TAC TT 3'. An amplicon of the expected size (400 bp) was obtained and cloned and sequenced. BLAST search of the GenBank for related sequences showed that the sequence obtained from penstemon was highly identical to several CMV sequences, with the highest identity (98%) with that of a sequence from Taiwan (GenBank No. D49496). CMV from infected penstemon was successfully transmitted by mechanical inoculation to cucumber seedlings. Infection of cucumber plants was confirmed by ELISA and RT-PCR. To our knowledge, this is the first report of CMV infection of P. acuminatus. With the ongoing efforts to revegetate the intermountain west with native forbs, there is a need for a comprehensive survey of pests and diseases affecting these plants. References: (1) B. E. Lockhart et al. Plant Dis. 92:725, 2008. (2) D. Louro. Acta Hortic. 431:99, 1996. (3) M. Navalinskiene et al. Trans. Estonian Agric. Univ. 209:140, 2000.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-07-01",
+      "authors": "Sampangi R K; Almeyda C; Druffel K L; Mohan S Krishna; Shock C C; ... (+1)",
+      "first_author": "Sampangi R K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cucumber mosaic virus (CMV)",
+      "taxonomy": "Bromoviridae, Cucumovirus",
+      "host_plant": "Penstemon acuminatus（玄参科）",
+      "location": "美国爱达荷州和俄勒冈州边界地区的Treasure Valley区域（Malheur County, Oregon）",
+      "results": "症状叶片RT-PCR阳性，扩增400bp片段，与CMV台湾株系（D49496）同源性98%，机械接种黄瓜成功。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764385",
+      "doi": "10.1094/PDIS-93-7-0760C",
+      "title": "First Report of Soybean mosaic virus on Soybean in North Dakota.",
+      "abstract": "Soybean, Glycine max L, is grown on 1,420,000 ha in North Dakota and is the most important oilseed crop in the state. Viruses in soybean have not previously been reported from North Dakota (2). In July and August of 2007, 64 soybean fields in Cass, Richland, and Sargent counties in southeastern North Dakota were surveyed for Soybean mosaic virus (SMV). These counties have a high concentration of soybean hectares, a long history of soybean production, and soybean aphid infestations that were observed in 2004 and 2006. Fields were sampled with a grid pattern across the area with at least 8 km (5 miles) between fields. A transect of approximately 60 m through each field was made and 20 leaves were collected at random. Sap was extracted in phosphate buffer and stored at -80°C until tested first using double antibody sandwich (DAS)-ELISA with positive controls and reagents and protocol from Agdia Inc. (Elkhart, IN). Using DAS-ELISA, SMV was detected in 19 of the 64 soybean fields sampled. To confirm the presence of SMV, 12 samples that were positive for SMV by DAS-ELISA also were tested by reverse transcription (RT)-PCR. RNA was extracted from sap by a Qiagen RNeasy Plant Mini Kit (Germantown, MD), reverse transcribed, and amplified with SuperScrip III Platinum SYBR Green One-Step qRT-PCR Kit (Invitrogen Inc., Carlsbad, CA) and SMV-specific primers (5'-TTCAGCACAATGGGTGAGGATG-3' and 5'-AATTCTGTGTGGCTTGATGTTGC-3') (1). Eight of the twelve ELISA-positive samples were positive for SMV by RT-PCR, confirming the presence of SMV in the samples. To our knowledge, this is the first report of SMV infecting soybean in North Dakota. References: (1) L. L. Domier et al. (Abstr.). Phytopathology 98(suppl.):S47, 2008. (2) B. D. Nelson and G. Danielson. (Abstr.). Phytopathology 95(suppl.):S164, 2005.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-07-01",
+      "authors": "Nelson B D; Domier L L",
+      "first_author": "Nelson B D",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Soybean mosaic virus (SMV)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "大豆 (Glycine max)",
+      "location": "美国北达科他州",
+      "results": "64块田中19块ELISA阳性；12个样本中8个RT-PCR阳性，确认SMV存在。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764389",
+      "doi": "10.1094/PDIS-93-7-0761A",
+      "title": "Identification and Incidence of Iris yellow spot virus, a New Pathogen in Onion and Leek in Greece.",
+      "abstract": "Iris yellow spot virus (IYSV; genus Tospovirus, family Bunyaviridae) is an emerging and serious pathogen affecting several Allium spp. worldwide (2). The virus causes straw-colored, chlorotic or necrotic lesions that coalesce, occasionally resulting in an extensive necrosis on onion (A. cepa L.) leaves. From February to June 2008, 530 onion and 439 leek (A. porum L.) leaf samples showing a variety of lesions were collected from different areas of Greece. All plants sampled were infested with Thrips tabaci Lindeman, the sole thrips species identified as the vector of this virus. Samples were analyzed by double-antibody sandwich (DAS)-ELISA using polyclonal antibodies against the N protein of IYSV (Laboratory of Virology, Wageningen Agricultural University). A higher percentage of onion samples than leek samples were infected, with IYSV detected in 36, 44, 23.7, 61.7, 10, 55, 15.3, and 9.4% of onion samples from the prefectures of Evros, Heraklion, Kavala, Magnissia, Pella, Rodopi, Thessaloniki, and Viotia, respectively, and in 5, 0, 0, 9.3, and 13% of leek samples from Evros, Heraklion, Magnissia, Pella, and Thessaloniki, respectively. No leek samples were tested from Kavala, Rodopi, and Viotia. Sap extracts from some positive samples were mechanically inoculated onto Nicotiana benthamiana leaves, and infected plants developed typical IYSV symptoms and were positive in DAS-ELISA, confirming transmission from the field samples. Viral RNA was extracted from ELISA-positive onion and leek samples and an ~800-bp amplicon was obtained from both hosts by reverse-transcription (RT)-PCR and N-gene primers derived from IYSV (IY1: 5'-CCCGAGGATCCATGGCTACCGTTAGGG-3' and IY2: 5'-CCCGAGGATCCAAATTAATTATATCTATCTTTCTTGG-3') (1). These amplicons were cloned and sequenced (GenBank Accession No. FJ785835) and nucleotide sequence comparisons showed a 98 to 99% identity with a Dutch isolate of IYSV (GenBank Accession No AF001387). The virus was transmitted among onion seedlings in the laboratory using a leek population of T. tabaci. Infected seedlings, as determined by DAS-ELISA, developed symptoms similar to those observed in the field samples. To our knowledge, this is the first report of IYSV in Greece; however, the virus seems already to be very well established. References: (1) I. Cortez et al. Phytopathology 88:1276, 1998. (2) D. Gent et al. Plant. Dis. 90:1468, 2006.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-07-01",
+      "authors": "Chatzivassiliou E K; Giavachtsia V; Mehraban A H; Hoedjes K; Peters D",
+      "first_author": "Chatzivassiliou E K",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Iris yellow spot virus (IYSV)",
+      "taxonomy": "",
+      "host_plant": "洋葱 (Allium cepa) 和 韭菜 (Allium porum)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19721879",
+      "doi": "10.4161/cib.2.4.8335",
+      "title": "Release of Rice dwarf virus from insect vector cells involves secretory exosomes derived from multivesicular bodies.",
+      "abstract": "Plant reoviruses in insect vector cells are sequestered in spherical multivesicular compartments. We demonstrated previously that the plant-infecting reovirus Rice dwarf virus (RDV) exploits multivesicular compartments for the transport and release of viral particles from infected insect vector cells. These multivesicular compartments contain small vesicles and, morphologically, they resemble previously reported endosomal multivesicular bodies (MVBs) exploited by enveloped RNA viruses during budding from the plasma membrane of infected cells. Electron microscopy revealed that, at a late stage of infection, RDV virions are released, together with small vesicles similar to secreted vesicles (exosomes), from infected cells. The incorporation of lysosomes into the multivesicular compartments raised the possibility that functions of host MVBs are required for the efficient release of RDV virions from infected insect vector cells. An actin-myosin transport system has been shown to mediate the transport of these multivesicular compartments. In this addendum, we provide evidence for the proposed model of release of RDV virions from infected insect vector cells that exploits secretory exosomes derived from MVBs.",
+      "journal": "Communicative & integrative biology",
+      "year": 2009,
+      "pub_date": "2009-07-01",
+      "authors": "Wei Taiyun; Hibino Hiroyuki; Omura Toshihiro",
+      "first_author": "Wei Taiyun",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Rice dwarf virus (RDV)",
+      "taxonomy": "",
+      "host_plant": "水稻",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19573239",
+      "doi": "10.1186/1746-4811-5-9",
+      "title": "Development of a gene silencing DNA vector derived from a broad host range geminivirus.",
+      "abstract": "[BACKGROUND] Gene silencing is proving to be a powerful tool for genetic, developmental, and physiological analyses. The use of viral induced gene silencing (VIGS) offers advantages to transgenic approaches as it can be potentially applied to non-model systems for which transgenic techniques are not readily available. However, many VIGS vectors are derived from Gemini viruses that have limited host ranges. We present a new, unipartite vector that is derived from a curtovirus that has a broad host range and will be amenable to use in many non-model systems. [RESULTS] The construction of a gene silencing vector derived from the geminivirus Beet curly top virus (BCTV), named pWSRi, is reported. Two versions of the vector have been developed to allow application by biolistic techniques or by agro-infiltration. We demonstrate its ability to silence nuclear genes including ribulose bisphosphate carboxylase small subunit (rbcS), transketolase, the sulfur allele of magnesium chelatase (ChlI), and two homeotic transcription factors in spinach or tomato by generating gene-specific knock-down phenotypes. Onset of phenotypes occurred 3 to 12 weeks post-inoculation, depending on the target gene, in organs that developed after the application. The vector lacks movement genes and we found no evidence for significant spread from the site of inoculation. However, viral amplification in inoculated tissue was detected and is necessary for systemic silencing, suggesting that signals generated from active viral replicons are efficiently transported within the plant. [CONCLUSION] The unique properties of the pWSRi vector, the ability to silence genes in meristem tissue, the separation of virus and silencing phenotypes, and the broad natural host range of BCTV, suggest that it will have wide utility.",
+      "journal": "Plant methods",
+      "year": 2009,
+      "pub_date": "2009-07-02",
+      "authors": "Golenberg Edward M; Sather D Noah; Hancock Leandria C; Buckley Kenneth J; Villafranco Natalie M; ... (+1)",
+      "first_author": "Golenberg Edward M",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "甜菜曲顶病毒 (Beet curly top virus, BCTV)",
+      "taxonomy": "",
+      "host_plant": "菠菜 (spinach) 和番茄 (tomato)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

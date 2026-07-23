@@ -1,0 +1,234 @@
+{
+  "month": "1995-08",
+  "generated": "2026-07-13 02:59:42",
+  "total": 10,
+  "by_category": {
+    "Host_Virus_Interactions": 5,
+    "New_Virus": 2,
+    "Antiviral_Resistance_Genes": 2,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "7636483",
+      "doi": "10.1099/0022-1317-76-8-2025",
+      "title": "The nucleotide sequence and proposed genome organization of oat chlorotic stunt virus, a new soil-borne virus of cereals.",
+      "abstract": "The complete genomic sequence of a new virus, first found infecting oats in Wales, UK, has been determined. The genome is a positive-sense ssRNA molecule, 4114 nucleotides in length, examination of which indicates the presence of four ORFs. The first ORF initiating at the 5' terminus (ORF1) encodes a protein with a predicted M(r) of 23476 (p23). ORF2 extends through the amber termination codon of ORF1 to give a protein with a predicted M(r) of 84355 (p84). The readthrough domain of p84 contains amino acid sequence similarities with a number of putative RNA-dependent RNA polymerases. ORF3 is in a different reading frame from ORF1/2 and encodes a protein with an M(r) of 48231 (p48), identified as the coat protein by direct peptide sequencing. ORF4 nests within ORF3 but is in a different frame from it and codes for a protein with a predicted M(r) of 8220 (p8). Comparisons of peptide sequence, particularly within the putative polymerase region and within the S domain of the coat protein, highlight similarities with members of both the tombusvirus and carmovirus groups. The coat protein region shows most similarity with members of the tombusvirus group, whilst the size and predicted strategy of the genome seem to be intermediate between that of the carmovirus and tombusvirus groups. These features highlight possible evolutionary links with each group whilst being distinct from both. We propose the name of oat chlorotic stunt for this new virus.",
+      "journal": "The Journal of general virology",
+      "year": 1995,
+      "pub_date": "1995-08-01",
+      "authors": "Boonham N; Henry C M; Wood K R",
+      "first_author": "Boonham N",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Oat chlorotic stunt virus (OCSV)",
+      "taxonomy": "未明确（与tombusvirus和carmovirus有相似性）",
+      "host_plant": "燕麦（oat）",
+      "location": "Wales, UK",
+      "results": "基因组为4114nt的ssRNA，含4个ORF，编码p23、p84、p48（衣壳蛋白）、p8；p84包含RdRp域；与tombusvirus和carmovirus有相似性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7636482",
+      "doi": "10.1099/0022-1317-76-8-2015",
+      "title": "Cherry virus A: cDNA cloning of dsRNA, nucleotide sequence analysis and serology reveal a new plant capillovirus in sweet cherry.",
+      "abstract": "The nucleotide sequence (7383 nucleotides) of a newly identified member of the genus Capillovirus, cherry virus A (CVA), was obtained from cDNA clones. The cDNA was generated from dsRNA extracted from plant tissue infected with little cherry virus (LCV). Small amounts of LCV dsRNA served as template nucleic acid and enabled the construction of a library of which, unexpectedly, 7.5% of the recombinant plasmids were specific for CVA. The genome organization of CVA resembles that of apple stem grooving virus (ASGV), the type member of the genus Capillovirus and is composed of a 266 kDa polyprotein (ORF1), a 52 kDa ORF2 located within ORF1 and a poly(A) tail. The 266 kDa ORF1 contains all the elements of a replication-related protein and has high identity with 'Sindbis-like' viruses. The ORF encodes the coat protein (CP) in the C-terminal region. The 52 kDa ORF2 has high identities with the putative viral cell-to-cell movement proteins of capillo- and trichoviruses. The CP was identified in immunoblot analysis and estimated to have a molecular mass of 24 kDa. Antiserum was obtained by expression of antigens as fusion proteins in Escherichia coli. There is significant sequence identity between CVA CP and the corresponding proteins of other capillo- and trichoviruses. However, no serological cross-reaction was obtained in immunoblot analysis with ASGV, apple chlorotic leafspot trichovirus (ACLSV), apple stem pitting virus (ASPV) and cherry mottle leaf virus (CMLV) antisera. Flexuous filamentous CVA virions were identified in extracts of sweet cherry by immunosorbent electron microscopy (ISEM) and decorated with the antiserum to the fusion protein. CVA was identified in three cherry sources of different disease status by ISEM, immunoblot analysis and hybridization to dsRNA. CVA is not closely related to any of the currently described diseases in cherry but it has all the properties of a capillovirus. It is suggested that CVA should be classified as a new member of the genus capillovirus.",
+      "journal": "The Journal of general virology",
+      "year": 1995,
+      "pub_date": "1995-08-01",
+      "authors": "Jelkmann W",
+      "first_author": "Jelkmann W",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cherry virus A (CVA)",
+      "taxonomy": "Capillovirus (属)",
+      "host_plant": "甜樱桃 (Prunus avium)",
+      "location": "未提及",
+      "results": "基因组7383 nt，含两个ORF，编码复制相关蛋白和运动蛋白，CP 24 kDa；与ASGV相似但无血清交叉反应；病毒粒子弯曲线状。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7491811",
+      "doi": "10.1016/0264-410x(95)00075-c",
+      "title": "Plant virus expressing hybrid coat protein with added murine epitope elicits autoantibody response.",
+      "abstract": "A modified tobacco mosaic virus (TMV) was used to direct the synthesis of TMV coat protein hybrids containing a 13 amino acid sequence of the murine zona pellucida ZP3 protein. This hybrid protein was found to be robust and accumulate to high concentrations in inoculated plants. Virus-like particles containing the hybrid coat protein could be readily purified from infected plant tissue. Parenteral immunization with these virus-like particles as antigen resulted in serum antibody recognizing ZP3 epitope in C57BL/6J and BALB/cBy mice. The antibodies recognized synthetic ZP3 peptide and the authentic murine ZP3 glycoprotein. Antibodies were recruited in vivo to the zone pellucida in female mice.",
+      "journal": "Vaccine",
+      "year": 1995,
+      "pub_date": "1995-08-01",
+      "authors": "Fitchen J; Beachy R N; Hein M B",
+      "first_author": "Fitchen J",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "烟草花叶病毒 (Tobacco mosaic virus, TMV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7549479",
+      "doi": "10.1105/tpc.7.8.1195",
+      "title": "The L6 gene for flax rust resistance is related to the Arabidopsis bacterial resistance gene RPS2 and the tobacco viral resistance gene N.",
+      "abstract": "The L6 rust resistance gene from flax was cloned after tagging with the maize transposable element Activator. The gene is predicted to encode two products of 1294 and 705 amino acids that result from alternatively spliced transcripts. The longer product is similar to the products of two other plant disease resistance genes, the tobacco mosaic virus resistance gene N of tobacco and the bacterial resistance gene RPS2 of Arabidopsis. The similarity involves the presence of a nucleotide (ATP/GTP) binding site and several other amino acid motifs of unknown function in the N-terminal half of the polypeptides and a leucine-rich region in the C-terminal half. The truncated product of L6, which lacks most of the leucine-rich C-terminal region, is similar to the truncated product that is predicted from an alternative transcript of the N gene. The L6, N, and RPS2 genes, which control resistance to three widely different pathogen types, are the foundation of a class of plant disease resistance genes that can be referred to as nucleotide binding site/leucine-rich repeat resistance genes.",
+      "journal": "The Plant cell",
+      "year": 1995,
+      "pub_date": "1995-08-01",
+      "authors": "Lawrence G J; Finnegan E J; Ayliffe M A; Ellis J G",
+      "first_author": "Lawrence G J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "烟草花叶病毒",
+      "taxonomy": "",
+      "host_plant": "亚麻（L6基因宿主），烟草（N基因宿主）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11607565",
+      "doi": "10.1073/pnas.92.16.7137",
+      "title": "Finding the missing pieces in the puzzle of plant disease resistance.",
+      "abstract": "",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1995,
+      "pub_date": "1995-08-01",
+      "authors": "Dong X",
+      "first_author": "Dong X",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7659744",
+      "doi": "10.1104/pp.108.4.1353",
+      "title": "Plant defensins: novel antimicrobial peptides as components of the host defense system.",
+      "abstract": "",
+      "journal": "Plant physiology",
+      "year": 1995,
+      "pub_date": "1995-08-01",
+      "authors": "Broekaert W F; Terras F R; Cammue B P; Osborn R W",
+      "first_author": "Broekaert W F",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11607566",
+      "doi": "10.1073/pnas.92.16.7143",
+      "title": "Two inducers of plant defense responses, 2,6-dichloroisonicotinec acid and salicylic acid, inhibit catalase activity in tobacco.",
+      "abstract": "2,6-Dichloroisonicotinic acid (INA) and salicylic acid (SA) are potent inducers of plant defense responses including the synthesis of pathogenesis-related (PR) proteins and the development of enhanced disease resistance. A soluble SA-binding protein has been purified from tobacco with an affinity and specificity of binding that suggest it is a SA receptor. Recently, this protein has been shown to be a catalase whose enzymatic activity is inhibited by SA binding. We have proposed that the resulting increase in intracellular levels of reactive oxygen species plays a role in the induction of defense responses such as PR protein gene expression. Here we report that INA, like SA, binds the SA-binding protein/catalase and inhibits its enzymatic activity. In fact, the dose-response curves for inhibition of catalase by these two compounds are similar. Furthermore, the ability of both INA analogues and SA derivatives to bind and inhibit tobacco catalase correlates with their biological activity to induce PR-1 gene expression and enhance resistance to tobacco mosaic virus. Comparison of the structures of INA, SA, and their analogues reveals several common features that appear to be important for biological activity. Thus, these results not only suggest that INA and SA share the same mechanism of action that involves binding and inhibition of catalase but also further indicate an important role for reactive oxygen species in the induction of certain plant defense responses. This is supported by the demonstration that INA-mediated PR-1 gene activation is suppressed by antioxidants.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1995,
+      "pub_date": "1995-08-01",
+      "authors": "Conrath U; Chen Z; Ricigliano J R; Klessig D F",
+      "first_author": "Conrath U",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12228554",
+      "doi": "10.1104/pp.108.4.1449",
+      "title": "Suppression of an Isoflavonoid Phytoalexin Defense Response in Mycorrhizal Alfalfa Roots.",
+      "abstract": "Isoflavonoids and steady-state mRNA levels of phenylalanine ammonia-lyase, chalcone isomerase, and isoflavone reductase were followed during a rapid, nearly synchronous infection of alfalfa (Medicago sativa L.) roots by the vesicular arbuscular fungus Glomus intraradices (Schenck & Smith) to test whether previously indicated suppression of the host defense response is regulated by changes in the steady-state mRNA level. Relative amounts of steady-state phenylalanine ammonia-lyase mRNA in the mycorrhizal roots doubled between d 14 and 18 and then immediately declined by 75% to reach and maintain a value lower than the control roots through d 21. Relative levels of chalcone isomerase mRNA in the inoculated roots increased 6-fold between d 14 and 17 and then decreased rapidly to the control level. Isoflavone reductase mRNA was not induced by mycorrhizal colonization. High-performance liquid chromatography, proton-nuclear magnetic resonance, and fast atom bombardment-mass spectrometry analyses showed consistent increases in formononetin levels and transient increases in medicarpin-3-O-glycoside and formononetin conjugates in the inoculated roots when colonization began. As colonization increased, levels of formononetin conjugates declined in mycorrhizal roots below those in uncolonized controls. Medicarpin aglycone, an alfalfa phytoalexin normally associated with pathogenic infections, was not detected at any stage. These findings supply detailed evidence that, during early colonization of plant roots by symbiotic Glomus, defense transcripts are induced and then subsequently suppressed.",
+      "journal": "Plant physiology",
+      "year": 1995,
+      "pub_date": "1995-08-01",
+      "authors": "Volpin H.; Phillips D. A.; Okon Y.; Kapulnik Y.",
+      "first_author": "Volpin H.",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7667309",
+      "doi": "10.1073/pnas.92.18.8448",
+      "title": "Isolation and characterization of pokeweed antiviral protein mutations in Saccharomyces cerevisiae: identification of residues important for toxicity.",
+      "abstract": "Pokeweed antiviral protein (PAP), a 29-kDa protein isolated from Phytolacca americana inhibits translation by catalytically removing a specific adenine residue from the 28S rRNA of eukaryotic ribosomes. PAP has potent antiviral activity against many plant and animal viruses, including human immunodeficiency virus. We describe here development of a positive selection system to isolate PAP mutants with reduced toxicity. In vitro translation in the presence or absence of microsomal membranes shows that PAP is synthesized as a precursor and undergoes at least two different proteolytic processing steps to generate mature PAP. The PAP cDNA was placed under control of the galactose-inducible GAL1 promoter and transformed into Saccharomyces cerevisiae. Induction of PAP expression was lethal to yeast. The PAP expression plasmid was mutagenized and plasmids encoding mutant PAP genes were identified by their failure to kill S. cerevisiae. A number of mutant alleles were sequenced. In one mutant, a point mutation at Glu-177 inactivated enzymatic function in vitro, suggesting that this glutamic acid residue is located at or near the catalytic site. Mutants with either point mutations near the N terminus or a nonsense mutation at residue 237 produced protein that was enzymatically active in vitro, suggesting that the toxicity of PAP is not due solely to enzymatic activity. Toxicity of PAP appears to be a multistep process that involves possibly different domains of the protein.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1995,
+      "pub_date": "1995-08-29",
+      "authors": "Hur Y; Hwang D J; Zoubenko O; Coetzer C; Uckun F M; ... (+1)",
+      "first_author": "Hur Y",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7665070",
+      "doi": "10.1016/0378-1119(95)00186-a",
+      "title": "Anti-HIV and anti-tumor activities of recombinant MAP30 from bitter melon.",
+      "abstract": "MAP30 is an anti-HIV plant protein that we have identified and purified to homogeneity from bitter melon (Momordica charantia). It is capable of acting against multiple stages of the viral life cycle, on acute infection as well as replication in chronically infected cells. In addition to antiviral action, MAP30 also possesses anti-tumor activity, topological inactivation of viral DNA, inhibition of viral integrase and cell-free ribosome-inactivation activities. We have cloned and expressed the MAP30 gene. The objective of this study is to characterize recombinant MAP30 (re-MAP30) and to determine its anti-HIV, anti-tumor and other activities. We report here that re-MAP30 inhibits HIV-1 and certain human tumors to the same extent as its native counterpart, natural MAP30 (nMAP30). The anti-HIV activity was measured by quantitative focal syncytium formation on CEM-ss cell monolayers, viral core protein p24 expression and viral-associated reverse transcriptase activity in HIV-1-infected H9 cells. The anti-tumor activity was measured by metabolic labeling of protein synthesis in tumor cells. In the dose range of the assay, re-MAP30 exhibits little toxicity to the uninfected viral target cells and other normal human cells. Identical to nMAP30, re-MAP30 is also active in topological inactivation of viral DNA, inhibition of viral DNA integration and cell-free ribosome inactivation. The cloning and expression of the gene encoding biologically active re-MAP30 provides an abundant source of homogeneous material for clinical investigations, as well as structure-function studies of this novel antiviral and anti-tumor agent.",
+      "journal": "Gene",
+      "year": 1995,
+      "pub_date": "1995-08-19",
+      "authors": "Lee-Huang S; Huang P L; Chen H C; Huang P L; Bourinbaiar A; ... (+2)",
+      "first_author": "Lee-Huang S",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "month": "1989-09",
+  "generated": "2026-07-13 02:59:42",
+  "total": 2,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "2685004",
+      "doi": "10.1016/0166-0934(89)90053-0",
+      "title": "The use of peroxidase anti-peroxidase (PAP) complexes in the detection of plant viruses by ELISA.",
+      "abstract": "An ELISA test system for detection of plant viruses in field samples is described, based on the unlabelled antibody method using a peroxidase-antiperoxidase (PAP) complex. Novel features of the system include the use of acid-treated naked bacteria as combined carrier-adjuvants for the production of rabbit antiviral antibodies, and the use of acid-treated chicken antibodies (IgY) for antigen trapping in the ELISA. Systems for detection of potato virus Y (PVY), potato leafroll virus (PLRV), grapevine fanleaf virus (GFV) and grapevine virus A (GVA) were developed and compared with conventional direct double antibody sandwich (DAS) systems in tests with both purified virus and field samples. The PAP systems offer improved sensitivity, no background problems in the outer rows of the microtitre plates and are much easier to visualize with the naked eye if no plate reader is available.",
+      "journal": "Journal of virological methods",
+      "year": 1989,
+      "pub_date": "1989-09-01",
+      "authors": "Rowland G F; Engelbrecht D J; Pool E J; Schmollgruber E C; Thompson G J; ... (+1)",
+      "first_author": "Rowland G F",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "potato virus Y (PVY), potato leafroll virus (PLRV), grapevine fanleaf virus (GFV), grapevine virus A (GVA)",
+      "taxonomy": "",
+      "host_plant": "未提及（实际可能为马铃薯、葡萄等）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2688551",
+      "doi": "10.1016/0166-3542(89)90070-3",
+      "title": "Plant photosensitizers with antiviral properties.",
+      "abstract": "Many antiviral compounds obtained from plants are photosensitizers, i.e., their biological properties are dependent upon or augmented by light of specific wavelengths, commonly long wave ultraviolet, UVA. Three groups of chemically distinct plant photosensitizers have been investigated in some detail in regard to antiviral properties. These are (a) thiophenes and polyacetylenes; (b) furyl compounds; (c) certain alkaloids. Some of the thiophenes and their acetylenic derivatives possess extremely potent phototoxic activities toward membrane-containing viruses. These activities are markedly affected by the chemical structures of these compounds. Inactivated virus retains its integrity, however, and penetrates cells, but does not replicate. Their mechanism of action is believed to occur via singlet-oxygen damage to the membranes, although other targets cannot be ruled out. In contrast, the antiviral activities of plant furyl compounds (such as psoralens and furanochromones) appear to depend on UVA-mediated covalent adduct formation with the viral genomes. Some of the photoactive beta-carboline alkaloids also have impressive antiviral activities, especially against viruses with single-stranded genomes. These and other types of alkaloids appear to work by mechanisms that do not require covalent bonding to nucleic acids, and may also involve other target molecules as well. Some of these compounds have potent antiviral activities at concentrations well below cytotoxic levels, and accordingly should be tested in animal models.",
+      "journal": "Antiviral research",
+      "year": 1989,
+      "pub_date": "1989-09-01",
+      "authors": "Hudson J B",
+      "first_author": "Hudson J B",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

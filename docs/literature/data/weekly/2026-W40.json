@@ -1,0 +1,59 @@
+{
+  "week": "2026-W40",
+  "start": "2026-09-28",
+  "end": "2026-10-04",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 2,
+  "by_category": {
+    "Host_Virus_Interactions": 2,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "42409521",
+      "doi": "10.1016/j.foodres.2026.119579",
+      "title": "RNA demethylase CsALKBH8 enhances postharvest disease resistance of citrus fruit against penicillium digitatum via m",
+      "abstract": "N6-methyladenosine (m6A) is a widespread internal modification of eukaryotic mRNA and is increasingly recognized as an important regulator of plant growth, development, and stress adaptation. However, its involvement in postharvest disease resistance of fruit is still poorly defined. In the present study, we identified an RNA demethylase, CsALKBH8, and investigated its function in citrus defense against green mold. We found that Penicillium digitatum infection significantly reduced global m6A levels in citrus peel, accompanied by rapid induction of CsALKBH8 expression. In vitro assays confirmed that CsALKBH8 possesses m6A demethylase activity. Transient overexpression of CsALKBH8 in citrus peel markedly alleviated disease development, as reflected by lower infection severity and smaller lesions after pathogen challenge. Transcriptome analysis revealed that CsALKBH8 overexpression induced extensive reprogramming of gene expression, with significant enrichment of defense-related pathways, including reactive oxygen species (ROS) metabolism, phenylpropanoid biosynthesis, and plant-pathogen interaction. Furthermore, CsALKBH8 reduced m6A levels on transcripts of multiple defense-related genes, including CsPR-1, CsPODs, CsRBOHF, CsGSTs, and lignin biosynthesis-associated genes, thereby enhancing their expression. This epitranscriptomic regulation promoted the activation of ROS metabolism and lignin accumulation, leading to increased enzyme activities (NOX, SOD, POD, APX, GST, and LAC) and elevated levels of H2O2, O₂-, and lignin, ultimately strengthening disease resistance in citrus fruit. Collectively, our findings demonstrate that CsALKBH8 enhances citrus resistance to P. digitatum through m6A-dependent post-transcriptional regulation of defense pathways, highlighting its potential as a molecular target for improving fruit storage quality and postharvest disease control.",
+      "journal": "Food research international (Ottawa, Ont.)",
+      "year": 2026,
+      "pub_date": "2026-09-30",
+      "authors": "Li Ting; Yue Lingqi; Liu Mengting; Zeng Jing; Li Ying; ... (+3)",
+      "first_author": "Li Ting",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42190962",
+      "doi": "10.1016/j.biortech.2026.134968",
+      "title": "Nanopesticides in sustainable agriculture: multi-pathogen control, environmental impact, and intelligent delivery systems.",
+      "abstract": "Nanopesticides are increasingly proposed as sustainable alternatives to conventional pesticides, yet their practical value should not be judged by nanoscale size alone, but by whether a formulation solves a defined biological or delivery barrier. This review evaluates recent advances in nanofungicides, nanobactericides, nanoviricides, nanoinsecticides, and nanonematicides by comparing design strategies, mechanisms of action, environmental behavior, and translational limitations. Emphasis is placed on how particle size, surface chemistry, carrier composition, active-ingredient protection, and stimuli-responsive release influence targeting, retention, bioavailability, and field performance. Current evidence suggests that nanofungicides and nanobactericides are among the most mature systems, primarily due to improved foliar retention, immune priming, membrane disruption, controlled ion release, and biofilm penetration. Nanoinsecticides show promise through gut-responsive, redox-triggered, and rainfast delivery, whereas evidence for nanoviricides remains comparatively limited, as many reported systems rely primarily on host-defense induction rather than virus-specific targeting. Nanonematicides may improve soil-root contact and localized delivery, but their performance remains dependent on soil conditions. Environmental fate, non-target toxicity, persistence, biodegradability, regulatory uncertainty, and field validation are critically assessed to separate realistic agricultural opportunities from laboratory-scale claims. Overall, this review supports a design-based framework that prioritizes biodegradable materials, standardized safety assessment, field-relevant validation, and scalable formulations that balance efficacy with environmental sustainability.",
+      "journal": "Bioresource technology",
+      "year": 2026,
+      "pub_date": "2026-10-01",
+      "authors": "Bakar Saddique Muhammad Abu; Xi Yitao; Ijaz Munazzah; Akram Sawera; Wang Shihang; ... (+5)",
+      "first_author": "Bakar Saddique Muhammad Abu",
+      "categories": [
+        "Control_Management",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

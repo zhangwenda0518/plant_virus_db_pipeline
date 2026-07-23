@@ -1,0 +1,242 @@
+{
+  "week": "2024-W49",
+  "start": "2024-12-02",
+  "end": "2024-12-08",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 32,
+  "by_category": {
+    "Host_Virus_Interactions": 13,
+    "Control_Management": 6,
+    "Antiviral_Resistance_Genes": 4,
+    "New_Virus": 4,
+    "Biotechnology_Applications": 3,
+    "Transmission_Epidemiology": 2,
+    "Viral_Diversity_Ecology": 2,
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "39636458",
+      "doi": "10.1007/s00705-024-06194-1",
+      "title": "Complete genome sequence of Valeriana jatamansi cryptic virus 1: a novel member of the genus Alphapartitivirus infecting Valeriana jatamansi Jones.",
+      "abstract": "A new double-stranded RNA (dsRNA) virus, tentatively named \"Valeriana jatamansi cryptic virus 1\" (VJCV1, GenBank accession nos. PP482519 and PP482520), was isolated from diseased Valeriana jatamansi Jones plants exhibiting vein-banding in Yunnan. Its complete genome sequence was determined using metatranscriptomic and Sanger sequencing. The genome of VJCV1 consists of two dsRNA of different size, namely dsRNA1 (2,026 bp) and dsRNA2 (1,754 bp), which are predicted to encode an RNA-dependent RNA polymerase (RdRp, 616 aa) with molecular weight of 72.6 kDa and coat protein (CP, 491 aa) with molecular weight of 55.8 kDa, respectively. The non-coding region of dsRNA in VJCV1 is predicted to have a stem-loop structure and a poly(A) tail that are unique to the members of the genus Alphapartitivirus. Multiple sequence alignments showed that the RdRp and CP of VJCV1 shared the highest amino acid sequence identity (86.2% and 56.1%, respectively) with red clover cryptic virus 1 (RCCV1). These values are below the threshold for creating new species within the genus Alphapartitivirus. Phylogenetic analysis based on RdRp and CP sequences showed that VJCV1 clustered independently from members of the genus Alphapartitivirus, with RCCV1 being the closest relative. It is therefore suggested that VJCV1 should be considered a member of a new species of the genus Alphapartitivirus in the family Partitiviridae. This is the first report of a member of the genus Alphapartitivirus infecting a plant of the genus Valeriana.",
+      "journal": "Archives of virology",
+      "year": 2024,
+      "pub_date": "2024-12-05",
+      "authors": "Yang Chaorong; Chu Bifan; Anane Rex Frimpong; He Jianqin; Wu Dexi; ... (+6)",
+      "first_author": "Yang Chaorong",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Valeriana jatamansi cryptic virus 1 (VJCV1)",
+      "taxonomy": "Partitiviridae, Alphapartitivirus",
+      "host_plant": "Valeriana jatamansi Jones (缬草)",
+      "location": "中国云南",
+      "results": "基因组全长分别为2,026 bp和1,754 bp，编码72.6 kDa RdRp和55.8 kDa CP，与红三叶草隐病毒1氨基酸一致性分别为86.2%和56.1%，低于种阈值，系统发育独立分支。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39639368",
+      "doi": "10.1186/s13059-024-03448-8",
+      "title": "Systemic evaluation of various CRISPR/Cas13 orthologs for knockdown of targeted transcripts in plants.",
+      "abstract": "[BACKGROUND] CRISPR/Cas13 system, recognized for its compact size and specificity in targeting RNA, is currently employed for RNA degradation. However, the potential of various CRISPR/Cas13 subtypes, particularly concerning the knockdown of endogenous transcripts, remains to be comprehensively characterized in plants. [RESULTS] Here we present a full spectrum of editing profiles for seven Cas13 orthologs from five distinct subtypes: VI-A (LwaCas13a), VI-B (PbuCas13b), VI-D (RfxCas13d), VI-X (Cas13x.1 and Cas13x.2), and VI-Y (Cas13y.1 and Cas13y.2). A systematic evaluation of the knockdown effects on two endogenous transcripts (GhCLA and GhPGF in cotton) as well as an RNA virus (TMV in tobacco) reveals that RfxCas13d, Cas13x.1, and Cas13x.2 exhibit enhanced stability with editing efficiencies ranging from 58 to 80%, closely followed by Cas13y.1 and Cas13y.2. Notably, both Cas13x.1 and Cas13y.1 can simultaneously degrade two endogenous transcripts through a tRNA-crRNA cassette approach, achieving editing efficiencies of up to 50%. Furthermore, different Cas13 orthologs enable varying degrees of endogenous transcript knockdown with minimal off-target effects, generating germplasms that exhibit a diverse spectrum of mutant phenotypes. Transgenic tobacco plants show significant reductions in damage, along with mild oxidative stress and minimal accumulation of viral particles after TMV infection. [CONCLUSIONS] In conclusion, our study presents an efficient and reliable platform for transcriptome editing that holds promise for plant functional research and future crop improvement.",
+      "journal": "Genome biology",
+      "year": 2024,
+      "pub_date": "2024-12-05",
+      "authors": "Yu Lu; Zou Jiawei; Hussain Amjad; Jia Ruoyu; Fan Yibo; ... (+4)",
+      "first_author": "Yu Lu",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "TMV（烟草花叶病毒）",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39215594",
+      "doi": "10.1093/pcp/pcae100",
+      "title": "Heritable Tissue-Culture-Free Gene Editing in Nicotiana benthamiana through Viral Delivery of SpCas9 and sgRNA.",
+      "abstract": "Conventional plant gene editing requires laborious tissue-culture-mediated transformation, which restricts the range of applicable plant species. In this study, we developed a heritable and tissue-culture-free gene editing method in Nicotiana benthamiana using tobacco ringspot virus (TRSV) as a vector for in planta delivery of Cas9 and single-guide RNA (sgRNA) to shoot apical meristems. Agrobacterium-mediated inoculation of the TRSV vector induced systemic and heritable gene editing in Nicotiana benthamiana PHYTOENE DESATURASE. Transient downregulation of RNA silencing enhanced gene editing efficiency, resulting in an order of magnitude increase (0.8-13.2%) in the frequency of transgenerational gene editing. While the TRSV system had a preference for certain sgRNA sequences, co-inoculation of a TRSV vector carrying only Cas9 and a tobacco rattle virus vector carrying sgRNA successfully introduced systemic mutations with all five tested sgRNAs. Extensively gene-edited lateral shoots occasionally grew from plants inoculated with the virus vectors, the transgenerational gene editing frequency of which ranged up to 100%. This virus-mediated heritable gene editing method makes plant gene editing easy, requiring only the inoculation of non-transgenic plants with a virus vector(s) to obtain gene-edited individuals.",
+      "journal": "Plant & cell physiology",
+      "year": 2024,
+      "pub_date": "2024-12-06",
+      "authors": "Yoshida Tetsuya; Ishikawa Masayuki; Toki Seiichi; Ishibashi Kazuhiro",
+      "first_author": "Yoshida Tetsuya",
+      "categories": [
+        "Host_Virus_Interactions",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "烟草环斑病毒 (TRSV) 和 烟草脆裂病毒 (TRV)",
+      "taxonomy": "",
+      "host_plant": "本氏烟 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39271144",
+      "doi": "10.1093/jxb/erae394",
+      "title": "Disrupted oxylipin biosynthesis mitigates pathogen infections and pest infestations in cotton (Gossypium hirsutum).",
+      "abstract": "Cotton (Gossypium hirsutum) is the world's most important fiber crop, critical to global textile industries and agricultural economies. However, cotton yield and harvest quality are undermined by the challenges introduced from invading pathogens and pests. Plant-synthesized oxylipins, specifically 9-hydroxy fatty acids resulting from 9-lipoxygenase activity (9-LOX), enhance the growth and development of many microbes and pests. We hypothesized that targeted disruption of 9-LOX-encoding genes in cotton could bolster crop resilience against prominent agronomic threats. Fusarium oxysporum f. sp. vasinfectum (FOV), Aphis gossypii (cotton aphid), and tobacco rattle virus induced the expression of 9-oxylipin biosynthesis genes, suggesting that the 9-LOX gene products were susceptibility factors to these stressors. Transiently disrupting the expression of the 9-LOX-encoding genes by virus-induced gene silencing significantly reduced target transcript accumulation, and this correlated with impaired progression of FOV infections and a significant decrease in the fecundity of cotton aphids. These findings emphasize that the cotton 9-LOX-derived oxylipins are leveraged by multiple pathogens and pests to enhance their virulence in cotton, and reducing the expression of 9-LOX-encoding genes can benefit cotton crop vitality.",
+      "journal": "Journal of experimental botany",
+      "year": 2024,
+      "pub_date": "2024-12-04",
+      "authors": "McGarry Róisín C; Lin Yen-Tung; Kaur Harmanpreet; Higgs Harrison; Arias-Gaguancela Omar; ... (+1)",
+      "first_author": "McGarry Róisín C",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "烟草脆裂病毒 (tobacco rattle virus)",
+      "taxonomy": "",
+      "host_plant": "棉花 (Gossypium hirsutum)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39454302",
+      "doi": "10.1016/j.bbrc.2024.150821",
+      "title": "MATE transporter OsMATE2 mediates root growth, grain size and weight by interacting with Mn-SOD and PABP in rice.",
+      "abstract": "Multidrug and toxic compound extrusion proteins (MATE) can transport small organic molecules in and out of cells and participate in detoxification, nutrient absorption, disease resistance and plant development processes. These compounds are widely distributed in plants. However, the mechanism by which MATE affects grain development remains elusive. In this study, we studied a MATE transporter, OsMATE2, which localized on the membrane. The CRISPR-Cas9 (CR) knockout line of OsMATE2 presented obvious decreases in grain weight. In addition, root development was also affected. Two proteins that interact with OsMATE2, namely, manganese-superoxide dismutase (Mn-SOD) and poly(A)-binding protein (PABP), were identified from a screening of yeast library. The results were validated through yeast two-hybrid and bimolecular fluorescence complementation experiments. The CRISPR-Cas9 (CR) knockout lines of Mn-SOD and PABP presented increased grain size and weight. Our findings demonstrated that OsMATE2 interacts with Mn-SOD and PABP to regulate grain development in rice.",
+      "journal": "Biochemical and biophysical research communications",
+      "year": 2024,
+      "pub_date": "2024-12-03",
+      "authors": "Yan-Jia Xiao; Si-Si Yu; Yan-Mei Zheng; Xin-Yue Wang; Xiao-Yu Zeng; ... (+6)",
+      "first_author": "Yan-Jia Xiao",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39472002",
+      "doi": "10.1128/spectrum.00559-24",
+      "title": "Analysis of the composition and function of rhizosphere microbial communities in plants with tobacco bacterial wilt disease and healthy plants.",
+      "abstract": "To explore the factors influencing the occurrence of bacterial wilt, the differences in the physicochemical properties, microbial community composition and function between rhizosphere soil of tobacco plants with bacterial wilt and healthy plants in the tobacco planting area of Fuzhou City, Jiangxi Province were analyzed and compared. The results showed that the rhizosphere soil of diseased tobacco exhibited significantly reduced levels of exchangeable potassium, water-soluble potassium, nitrate nitrogen, total nitrogen and pH, in comparison to the rhizosphere soil of healthy plants. Conversely, the available phosphorus content of the rhizosphere soil of diseased tobacco was significantly increased. The amount of Ralstonia solanacearum in soil was negatively correlated with pH, nitrate nitrogen and total nitrogen, and positively correlated with exchangeable potassium and water-soluble potassium. A total of 43 genera were significantly different between the two groups of rhizosphere soil, of which 24 genera were enriched in the rhizosphere of healthy plants, including Ideonella, Rhizophagus, Rhizobacter, Altererythrobacter and Ignavibacterium associated with plant disease resistance, Thermodesulfovibrio, Syntrophorhabdus, Syntrophus, Chlorobium, Hydrogenophaga and Limnohabitans associated with soil sulfur metabolism, as well as Ignavibacterium, Ideonella, Derxia and Azohydromonas associated with soil nitrogen cycling. Kyoto Encyclopedia of Genes and Genomes functional analysis of the unigenes obtained by metagenomic sequencing also showed that the differential unigenes were significantly enriched in the sulfur metabolism pathway. In addition, the rhizosphere soil of diseased tobacco plants exhibited a higher abundance of antibiotic-producing actinomycetes and an increased load of antibiotic resistance genes compared to that of healthy plants. In general, lower pH value, less content of nitrate nitrogen and total nitrogen, and more content of exchangeable potassium and water-soluble potassium could contribute to onset of bacterial wilt. Twenty-four genera, including Ideonella and Rhizophagus, may construct a healthy microecological network in the rhizosphere of tobacco plants. All these factors may interact with each other to control the development of bacterial wilt. This complicated interaction network needs to be explored further. IMPORTANCE Previous studies have mainly focused on the differences in microbial species composition between healthy and diseased soils, but the differences in microbial community functions between two types of soil have not been well characterized. In this study, soil samples in diseased and healthy plant rhizospheres were collected for physicochemical property testing and metagenomic sequencing. We focused on analyzing the differences in physicochemical properties and microbial community functions between these soils, as well as the correlation between these factors and pathogen content. The results of this study provide a theoretical basis for further understanding the occurrence of tobacco bacterial wilt in the field.",
+      "journal": "Microbiology spectrum",
+      "year": 2024,
+      "pub_date": "2024-12-05",
+      "authors": "Yang Bingye; Zhang Chaoqun; Guan Chengwei; Feng Xiaohu; Yan Ding; ... (+6)",
+      "first_author": "Yang Bingye",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39526560",
+      "doi": "10.1021/acs.molpharmaceut.4c00507",
+      "title": "Plant Virus Intratumoral Immunotherapy with CPMV and PVX Elicits Durable Antitumor Immunity in a Mouse Model of Diffuse Large B-Cell Lymphoma.",
+      "abstract": "Plant viruses are naturally occurring nanoparticles and adjuvants that interact with the mammalian immune system. This property can be harnessed in vaccines and immunotherapy. We have previously demonstrated that intratumoral immunotherapy with cowpea mosaic virus (CPMV) stimulates systemic and durable antitumor immunity in mouse tumor models and canine cancer patients. Here we compared the antitumor efficacy of CPMV with potato virus X (PVX) using a mouse model B-cell lymphoma (A20 and BALB/c mice). Despite their diverse morphologies and physiochemical properties, both plant viruses elicited systemic and long-lasting antitumor immune memory, preventing the recurrence of A20 lymphoma in rechallenge experiments. Data indicate differences in the underlying mechanism: CPMV persists longer in the tumor microenvironment (TME) compared to PVX; CPMV is a potent and multivalent toll-like receptor (TLR) agonist (activating TLRs 2, 4 and 7) while PVX may only weakly engage with TLR7. While CPMV and PVX recruit myeloid cells (neutrophils)─CPMV also recruits macrophages. Data further indicate that antiviral T cells may play a role in antitumor efficacy in the case of CPMV immunotherapy, however this may not be the case for PVX. Regardless of the mechanism of action, both CPMV and PVX elicited a durable antitumor response against a B-cell lymphoma tumor model and thus are intratumoral immunotherapy candidates for clinical development.",
+      "journal": "Molecular pharmaceutics",
+      "year": 2024,
+      "pub_date": "2024-12-02",
+      "authors": "Affonso de Oliveira Jessica Fernanda; Moreno-Gonzalez Miguel A; Ma Yifeng; Deng Xinyi; Schuphan Juliane; ... (+1)",
+      "first_author": "Affonso de Oliveira Jessica Fernanda",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39769574",
+      "doi": "10.3390/insects15120972",
+      "title": "",
+      "abstract": "Pouteria sapota, or \"mamey sapote\", is a tropical fruit tree native to Central America and Southern Mexico, producing sweet, nutrient and vitamin-rich fruit. Several insect pests are known to infest P. sapota, but none have been associated with plant growth alterations. Eriophyoid mites are well known to cause plant malformations, but mites that cause this type of damage to mamey sapote have not been reported. Trees with abnormal leaf growth, including stunted leaves, outward curling, leaf yellowing, and diminishing overall tree vigor, were found in multiple locations in Southern Florida and one location in Brazil. Numerous plant samples were examined for the presence of minute eriophyoid-like mites, and a new species was found. It was morphologically described, and DNA fragments of the mitochondrial gene cytochrome c oxidase subunit I (COI), the nuclear subunit D2 region in 28S rDNA, and the ITS nuclear regions were PCR-amplified and sequenced. Morphological and molecular descriptions of the new species, named E. pouteriae sp. nov., are provided to aid the identification and future detection of this mite. Even though several species within the genus Eriophyes have been reported on other Sapotaceae species, this is the first eriophyoid mite known to be associated with mamey sapote.",
+      "journal": "Insects",
+      "year": 2024,
+      "pub_date": "2024-12-06",
+      "authors": "De Giosa Marcello; de Lillo Enrico; Tassi Aline D; Revynthi Alexandra M; de Andrade Daniel J; ... (+3)",
+      "first_author": "De Giosa Marcello",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39276149",
+      "doi": "10.1093/evolut/qpae128",
+      "title": "Mismatch between pollen and pistil size causes asymmetric mechanical reproductive isolation across Phlox species.",
+      "abstract": "Characterizing the mechanisms of reproductive isolation between lineages is key to determining how new species are formed and maintained. In flowering plants, interactions between the reproductive organs of the flower-the pollen and the pistil-serve as the last barrier to reproduction before fertilization. As such, these pollen-pistil interactions are both complex and important for determining a suitable mate. Here, we test whether differences in style length (a part of the pistil) generate a postmating prezygotic mechanical barrier between five species of perennial Phlox wildflowers with geographically overlapping distributions. We perform controlled pairwise reciprocal crosses between three species with long styles and two species with short styles to assess crossing success (seed set). We find that the heterospecific seed set is broadly reduced compared to conspecific cross success and reveal a striking asymmetry in heterospecific crosses between species with different style lengths. To determine the mechanism underlying this asymmetric reproductive isolating barrier, we assess pollen tube growth in vivo and in vitro. We demonstrate that pollen tubes of short-styled species do not grow long enough to reach the ovaries of long-styled species. We find that short-styled species also have smaller pollen and that both within- and between-species pollen diameter is highly correlated with pollen tube length. Our results support the hypothesis that the small pollen of short-styled species lacks resources to grow pollen tubes long enough to access the ovaries of the long-styled species, resulting in an asymmetrical, mechanical barrier to reproduction. Such reproductive isolating mechanisms, combined with additional pollen-pistil incompatibilities, may be particularly important for closely related species in geographic proximity that share pollinators.",
+      "journal": "Evolution; international journal of organic evolution",
+      "year": 2024,
+      "pub_date": "2024-12-02",
+      "authors": "Feller Anna F; Burgin Grace; Lewis Nia F; Prabhu Rohan; Hopkins Robin",
+      "first_author": "Feller Anna F",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39646101",
+      "doi": "10.11646/zootaxa.5543.3.3",
+      "title": "Two new taxa of brush-footed butterflies (Lepidoptera: Nymphalidae) from the Western Ghats biodiversity hotspot, southern India.",
+      "abstract": "A new species, Amathusia travancorica sp. nov. (Nymphalidae: Satyrinae: Amathusiini), and a new subspecies, Athyma inara sahyadriensis ssp. nov. (Nymphalidae: Limenitidinae: Limenitidini), are described from the Western Ghats biodiversity hotspot, India, based on multiple male and female specimens. The new taxa are compared with type specimens of related species and subspecies, revealing consistent differences that distinguish the new taxa. Genitalia dissections are also provided as comparative materials. Additional information is provided on historical records, distributional ranges, habits and habitat, phenology, larval host plants, and early stages. Finally, the type locality and synonymy of Pantoporia mera Swinhoe, 1917 are discussed based on comparison of type specimens (Pantoporia mera Swinhoe, 1917 syn. nov.=Athyma inara Westwood, 1850).",
+      "journal": "Zootaxa",
+      "year": 2024,
+      "pub_date": "2024-12-04",
+      "authors": "Kunte Krushnamegh; Basu Dipendra Nath",
+      "first_author": "Kunte Krushnamegh",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

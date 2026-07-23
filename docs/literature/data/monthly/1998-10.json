@@ -1,0 +1,215 @@
+{
+  "month": "1998-10",
+  "generated": "2026-07-13 02:59:42",
+  "total": 9,
+  "by_category": {
+    "New_Virus": 4,
+    "Host_Virus_Interactions": 2,
+    "Closteroviridae": 1,
+    "Molecular_Characterization": 1,
+    "Control_Management": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "18944815",
+      "doi": "10.1094/PHYTO.1998.88.10.1040",
+      "title": "Characterization of the beet yellow stunt virus coat protein gene.",
+      "abstract": "ABSTRACT The beet yellow stunt virus (BYSV) genome contains at least nine open reading frames (ORFs) that code for proteins ranging from 6 to 66 kDa. Based on amino acid sequence comparisons, the coat protein (CP) was previously identified as the product of ORF7. We expressed the product of ORF7 in bacteria and confirmed that ORF7 codes for the BYSV CP by immunoblotting. BYSV is a phloem-limited virus, and virus CP antigen of a quality sufficient for diagnostic antisera production has not been available. To produce BYSV antigen free of plant host contaminants, ORF7 was cloned into a pMAL bacterial expression vector. The resulting fusion protein was affinity-purified and used as an antigen to raise anti-BYSV CP antisera in rabbits and guinea pigs. Using these antisera, an indirect double-antibody sandwich (DAS) enzyme-linked immunosorbent assay (ELISA)-based diagnostic system was developed. This indirect DAS-ELISA format enabled reliable detection of BYSV in tissue extracts from virus-infected lettuce diluted up to 5,000 times. The diagnostic system developed may enable large-scale epidemiological studies of BYSV using simple serological techniques. The antisera raised had a titer exceeding 1 x 10(5) in immunoblots and easily detected the 23.7-kDa BYSV CP in virus-infected lettuce and sowthistle plants. In these two plant species, BYSV CP was detected as two closely migrating bands during electrophoresis, which may suggest posttranslational CP modifications. To further characterize the BYSV CP gene, the 5'-untranslated region (UTR) of the BYSV CP subgenomic RNA (sgRNA) was cloned and sequenced. The CP-encoding, approximately 1.9-kb sgRNA has an AT-rich, 66-nucleotide-long 5'-UTR colinear to the genomic sequence upstream of ORF7.",
+      "journal": "Phytopathology",
+      "year": 1998,
+      "pub_date": "1998-10-01",
+      "authors": "Karasev A V; Nikolaeva O V; Lee R F; Wisler G C; Duffus J E; ... (+1)",
+      "first_author": "Karasev A V",
+      "categories": [
+        "New_Virus",
+        "Closteroviridae"
+      ],
+      "virus_name": "Beet yellow stunt virus (BYSV)",
+      "taxonomy": "未提及",
+      "host_plant": "莴苣（lettuce）、苦苣菜（sowthistle）",
+      "location": "未提及",
+      "results": "成功制备高效价抗血清（>1×10^5），可检测稀释5000倍的感染莴苣组织；CP在电泳中显示两条带，可能为翻译后修饰。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "30856787",
+      "doi": "10.1094/PDIS.1998.82.10.1172B",
+      "title": "First Report of the Presence of East African Cassava Mosaic Virus in Cameroon.",
+      "abstract": "Cassava mosaic disease (CMD) occurs in all cassava-growing regions of Africa, India, and Sri Lanka. Characterized by mosaic and distortion of cassava leaves and reduced plant growth, causing high yield losses, CMD is caused by geminiviruses (genus Begomovirus, family Geminiviridae) transmitted through infected cuttings or by the whitefly, Bemisia tabaci. Three such geminiviruses have been described: African cassava mosaic virus (ACMV) occurs in most of the cassava-producing zones of Africa; East African cassava mosaic virus (EACMV) in East Africa; and Indian cassava mosaic virus (ICMV) in the Indian subcontinent (1). The two components of ACMV and ICMV genomes, DNA-A and DNA-B, have been sequenced; only DNA-A of EACMV has been identified and sequenced. Variations in symptom expression and severity within the same cassava variety have been observed in Cameroon. To determine the nature of the virus species inducing such variations, 50 samples were collected from CMD-infected plants in the savannah and rainforest zones of Cameroon: 2 from the sahel/savannah plain, 13 from the western highland savannah, and 35 from the main cassava-producing belt of the southwestern rainforest. There is a high incidence of CMD in the rainforest region, with some farms completely infected, while in the savannah regions farms generally have less than 25% incidence. Variation in symptom expression was more common in the rainforest region. Samples were collected from plants with distinct symptoms and/or different extents of symptom severity, then analyzed with the polymerase chain reaction (PCR) with specific primers: JSP1, ATG TCG AAG CGA CCA GGA GAT; JSP2, TGT TTA TTA ATT GCC AAT ACT; and JSP3, CCT TTA TTA ATT TGT CAC TGC. Primer JSP1 anneals to the 5' end of the coat protein (CP) of ACMV and EACMV; primers JSP2 and JSP3 anneal to the 3' ends of ACMV and EACMV, respectively. Virus identification was based on presence of an amplified fragment of either virus. ACMV was detected in all 50 samples; EACMV was detected in 8. All samples infected with EACMV were from the southwestern rainforest of Cameroon and were more severely affected by the disease than single infected plants. Previous reports have limited occurrence of EACMV to East Africa (1). This is the first report of the occurrence of EACMV in West Africa. The CP gene of three isolates of EACMV from Cameroon (EACMV/CM) was sequenced from cloned PCR products. There was a high CP nucleotide sequence identity (>99%) with only two amino acid differences among all three EACMV isolates. In contrast, there was a rather low sequence identity (94%) with EACMV/TZ from Tanzania (2), suggesting they may belong to a previously undescribed West African strain of EACMV. This indicates the geminiviruses causing CMD in Africa are more widely distributed than previously reported. None of the Cameroon isolates showed the type of recombination of the EACMV isolate from Uganda (EACMV/ UG) (having the CP core segment the identical to the corresponding ACMV CP sequence) (2). This emphasizes the need for characterization of the viruses causing CMD in different cassava-growing regions of Africa since appropriate control strategies depend on adequate knowledge of disease etiology. References: (1) Y. G. Hong et al. J. Gen. Virol. 74:2437, 1993. (2) X. Zhou et al. J. Gen. Virol. 78:2101, 1997.",
+      "journal": "Plant disease",
+      "year": 1998,
+      "pub_date": "1998-10-01",
+      "authors": "Fondong V N; Pita J S; Rey C; Beachy R N; Fauquet C M",
+      "first_author": "Fondong V N",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "East African Cassava Mosaic Virus (EACMV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "木薯 (Manihot esculenta)",
+      "location": "喀麦隆 (西南部雨林)",
+      "results": "50个样品均检测到ACMV，8个检测到EACMV，均来自西南雨林。EACMV CP序列与坦桑尼亚株系相似度94%，可能为新株系。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9778251",
+      "doi": "10.1016/s0092-8674(00)81786-9",
+      "title": "Bean Dwarf mosaic geminivirus movement proteins recognize DNA in a form- and size-specific manner.",
+      "abstract": "Plant viral movement proteins mediate the cell-to-cell movement of nucleic acids. This involves either a direct interaction between the viral movement protein and the nucleic acid or an indirect interaction involving host factors. The bipartite geminiviruses possess two movement proteins, BV1 and BC1, that coordinate movement of viral DNA across nuclear and plasmodesmal boundaries, respectively. Here, we demonstrate that both BV1 and BC1 interact directly with DNA and, in addition, that they have the unique property to recognize DNA on the basis of form and size rather than sequence. This is a novel feature for plant virus movement proteins and raises the possibility that BV1 and BC1 may be determinants of genome size in the bipartite geminiviruses.",
+      "journal": "Cell",
+      "year": 1998,
+      "pub_date": "1998-10-02",
+      "authors": "Rojas M R; Noueiry A O; Lucas W J; Gilbertson R L",
+      "first_author": "Rojas M R",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Bean dwarf mosaic geminivirus (BDMV)",
+      "taxonomy": "双生病毒科(Geminiviridae)，双分体双生病毒属(bipartite geminiviruses)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9755216",
+      "doi": "10.1093/genetics/150.2.883",
+      "title": "A high-resolution linkage map of the citrus tristeza virus resistance gene region in Poncirus trifoliata (L.) Raf.",
+      "abstract": "Resistance to citrus tristeza virus (CTV) was evaluated in 554 progeny of 10 populations derived from Poncirus trifoliata. A dominant gene (Ctv) controlled CTV resistance in P. trifoliata. Twenty-one dominant PCR-based DNA markers were identified as linked to Ctv by bulked segregant analysis. Of the 11 closest markers to Ctv, only 2 segregated in all populations. Ten of these markers were cloned and sequenced, and codominant RFLP markers were developed. Seven RFLP markers were then evaluated in 10 populations. Marker orders were consistent in all linkage maps based on data of single populations or on combined data of populations with similar segregation patterns. In a consensus map, the six closest marker loci spanned 5.3 cM of the Ctv region. Z16 cosegregated with Ctv. C19 and AD08 flanked Ctv at distances of 0.5 and 0.8 cM, respectively. These 3 markers were present as single copies in the Poncirus genome, and could be used directly for bacterial artificial chromosome library screening to initiate a walk toward Ctv. BLAST searches of the GenBank database revealed high sequence similarities between 2 markers and known plant disease resistance genes, indicating that a resistance gene cluster exists in the Ctv region in P. trifoliata.",
+      "journal": "Genetics",
+      "year": 1998,
+      "pub_date": "1998-10-01",
+      "authors": "Fang D Q; Federici C T; Roose M L",
+      "first_author": "Fang D Q",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "柑橘衰退病毒 (Citrus tristeza virus, CTV)",
+      "taxonomy": "",
+      "host_plant": "枳壳 (Poncirus trifoliata)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9828426",
+      "doi": "10.1099/00207713-48-4-1245",
+      "title": "Description of four new species of the genus Kineosporia: Kineosporia succinea sp. nov., Kineosporia rhizophila sp. nov., Kineosporia mikuniensis sp. nov. and Kineosporia rhamnosa sp. nov., isolated from plant samples, and amended description of the genus Kineosporia.",
+      "abstract": "Eleven motile spore-bearing actinomycetes were isolated from various plant samples and were studied to determine their taxonomic positions. The isolates showed colony appearance and morphology similar to those of the 'sporedome actinomycetes' previously described by L. G. Willoughby in 1969. Although the isolates showed variety in composition of isomers of 2,6-diaminopimelic acid in the cell walls and in whole-cell sugar patterns, all of the isolates were classified in the genus Kineosporia Pagani and Parenti 1978 emend. Itoh et al. 1989 on the basis of their morphological and other chemotaxonomic characteristics, i.e., menaquinone, phospholipid and cellular fatty acid compositions. This assignment to the genus was also supported by a phylogenetic analysis using the 16S rRNA gene sequences. By DNA-DNA hybridization experiment, five genospecies were recognized among the isolates, and one of them showed high levels with the type strain of the type species, Kineosporia aurantiaca, which is the sole member of the genus. These genospecies can be distinguished from each other by their cultural, physiological and biochemical characteristics, and the other four genospecies should be placed into four new species for which the names Kineosporia succinea (type strain I-273T = JCM 9957T), Kineosporia rhizophila (type strain I-449T = JCM 9960T), Kineosporia mikuniensis (type strain I-463T = JCM 9961T) and Kineosporia rhamnosa (type strain I-132T = JCM 9954T) are proposed.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1998,
+      "pub_date": "1998-10-01",
+      "authors": "Kudo T; Matsushima K; Itoh T; Sasaki J; Suzuki K",
+      "first_author": "Kudo T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9817221",
+      "doi": "10.1111/j.1600-0536.1998.tb05888.x",
+      "title": "Immediate skin and mucosal symptoms from pot plants and vegetables in gardeners and greenhouse workers.",
+      "abstract": "Short-lived occupational skin symptoms of irritant or urticarial nature were commonly reported among 253 attendants in a clinical study on occupational dermatitis in Danish gardeners and greenhouse workers. Aimed prick or scratch-patch testing for immediate skin and mucosal symptoms was performed in 105 persons with plants as is. 35 persons (33%) had at least 1 positive reaction and a family history of, or personal, atopy was significantly more prevalent among these compared to attendants with negative reactions. Positive histamine release tests made immunologic etiology probable in Schlumbergera cacti, Stephanotis floribunda, Euphorbia pulcherrima and Gerbera reactions. Other new species implicated in immediate-type reactions included Ficus pumila, Gardenia jasminoides, Hibiscus rosa-sinensis, Campanula, Columnea, Epipremnum aureum, Pelargonium and Primula vulgaris. Because of the high prevalence of short-lived skin symptoms and because contact urticaria may present itself as a dermatitis, it is recommended that one supplement patch tests with tests for immediate reactions.",
+      "journal": "Contact dermatitis",
+      "year": 1998,
+      "pub_date": "1998-10-01",
+      "authors": "Paulsen E; Skov P S; Andersen K E",
+      "first_author": "Paulsen E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9768514",
+      "doi": "10.1094/MPMI.1998.11.10.968",
+      "title": "The isolation and mapping of disease resistance gene analogs in maize.",
+      "abstract": "Many of the plant disease resistance genes that have been isolated encode proteins with a putative nucleotide binding site and leucine-rich repeats (NBS-LRR resistance genes). Oligonucleotide primers based on conserved motifs in and around the NBS of known NBS-LRR resistance proteins were used to amplify sequences from maize genomic DNA by polymerase chain reaction (PCR). Eleven classes of non-cross-hybridizing sequences were obtained that had predicted products with high levels of amino acid identity to NBS-LRR resistance proteins. These maize resistance gene analogs (RGAs) and one RGA clone obtained previously from wheat were used as probes to map 20 restriction fragment length polymorphism (RFLP) loci in maize. Some RFLPs were shown to map to genomic regions containing virus and fungus resistance genes. Perfect cosegregation was observed between RGA loci and the rust resistance loci rp1 and rp3. The RGA probe associated with rp1 also detected deletion events in several rp1 mutants. These data strongly suggest that some of the RGA clones may hybridize to resistance genes.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 1998,
+      "pub_date": "1998-10-01",
+      "authors": "Collins N C; Webb C A; Seah S; Ellis J G; Hulbert S H; ... (+1)",
+      "first_author": "Collins N C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10021775",
+      "doi": "10.1098/rstb.1998.0331",
+      "title": "Myths, models and mitigation of resistance to pesticides.",
+      "abstract": "Resistance to pesticides in arthropod pests is a significant economic, ecological and public health problem. Although extensive research has been conducted on diverse aspects of pesticide resistance and we have learned a great deal during the past 50 years, to some degree the discussion about 'resistance management' has been based on 'myths'. One myth involves the belief that we can manage resistance. I will maintain that we can only attempt to mitigate resistance because resistance is a natural evolutionary response to environmental stresses. As such, resistance will remain an ongoing dilemma in pest management and we can only delay the onset of resistance to pesticides. 'Resistance management' models and tactics have been much discussed but have been tested and deployed in practical pest management programmes with only limited success. Yet the myth persists that better models will provide a 'solution' to the problem. The reality is that success in using mitigation models is limited because these models are applied to inappropriate situations in which the critical genetic, ecological, biological or logistic assumptions cannot be met. It is difficult to predict in advance which model is appropriate to a particular situation; if the model assumptions cannot be met, applying the model sometimes can increase the rate of resistance development rather than slow it down. Are there any solutions? I believe we already have one. Unfortunately, it is not a simple or easy one to deploy. It involves employing effective agronomic practices to develop and maintain a healthy crop, monitoring pest densities, evaluating economic injury levels so that pesticides are applied only when necessary, deploying and conserving biological control agents, using host-plant resistance, cultural controls of the pest, biorational pest controls, and genetic control methods. As a part of a truly multi-tactic strategy, it is crucial to evaluate the effect of pesticides on natural enemies in order to preserve them in the cropping system. Sometimes, pesticide-resistant natural enemies are effective components of this resistance mitigation programme. Another name for this resistance mitigation model is integrated pest management (IPM). This complex model was outlined in some detail nearly 40 years ago by V. M. Stern and colleagues. To deploy the IPM resistance mitigation model, we must admit that pest management and resistance mitigation programmes are not sustainable if based on a single-tactic strategy. Delaying resistance, whether to traditional pesticides or to transgenic plants containing toxin genes from Bacillus thuringiensis, will require that we develop multi-tactic pest management programmes that incorporate all appropriate pest management approaches. Because pesticides are limited resources, and their loss can result in significant social and economic costs, they should be reserved for situations where they are truly needed--as tools to subdue an unexpected pest population outbreak. Effective multi-tactic IPM programmes delay resistance (= mitigation) because the number and rates of pesticide applications will be reduced.",
+      "journal": "Philosophical transactions of the Royal Society of London. Series B, Biological sciences",
+      "year": 1998,
+      "pub_date": "1998-10-29",
+      "authors": "Hoy M A",
+      "first_author": "Hoy M A",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30856786",
+      "doi": "10.1094/PDIS.1998.82.10.1172A",
+      "title": "The Association of Severe Epidemics of Cucumber Mosaic in Commercial Fields of Pepper and Tobacco in North Florida with Inoculum in Commelina benghalensis and C. communis.",
+      "abstract": "Since 1995, severe epidemics of cucumber mosaic virus (CMV) have occurred in select fields of tobacco (Nicotiana tabacum) and pepper (Capsicum annuum) in three counties in northern Florida. Yield losses greater than 50% have occurred in both crops. Baker and Zettler (1) identified the presence of CMV in one plant of tropical spiderwort (Commelina benghalensis) in an organic garden on the campus of the University of Florida 10 years ago. In addition, they infected tropical spiderwort and Asiatic dayflower (Commelina communis) with isolates of CMV. Since 1995, in one area of northern Alachua County, Asiatic dayflower has been found in abundance in and around some fields and found to be infected with CMV. Prior to this time, CMV had not been known to be epidemic in any crop in northern Florida. Also, commelinaceous weeds did not occur in such abundance in northern Florida. In Hamilton County, an epidemic of CMV occurred in one field of tobacco in 1997. Tropical spiderwort with viral-like symptoms was growing abundantly in that field. The symptoms in this weed included chlorotic ringspots and chevron-like line patterns. Light microscopy, with Azure A stain, revealed the presence of typical inclusions of CMV in pepper, tobacco, tropical spiderwort, and Asiatic dayflower. Symptomatic samples of the tobacco and the tropical spiderwort reacted in an immunodiffusion test with antiserum to a winged bean isolate of CMV (2). Extracts from tropical spiderwort (isolate 3603) were rubbed on squash. This isolate was thereafter maintained in squash (Cucurbita pepo cvs. Prelude II or Early Prolific Straightneck). Infected plants of both of these cultivars developed strong mosaic symptoms and were stunted. After passage through squash, the 3603 isolate induced mosaic in tobacco (cv. Burley 21). Some plants of the squash cultivars Destiny III and Liberator III, which have transgenic, coat protein-mediated resistance to CMV, developed restricted symptoms after inoculation with this isolate. CMV was recovered by back inoculation from symptomatic plants of these cultivars. Symptomless plants of tropical spiderwort transplanted from the field developed chlorotic ringspots and chevron-like line patterns following inoculation in the greenhouse with isolate 3603. Back inoculations to squash followed by immunodiffusion assays confirmed the presence of CMV in the inoculated tropical spiderwort plants but CMV was not detected in noninoculated control plants. This is the first report of tropical spiderwort being infected with CMV in a commercial situation in the United States. Because commelinaceous plants are well known to be excellent hosts of CMV (1), we believe that the increased presence of perennial, commelinaceous weeds is a factor contributing to the epidemics of CMV in northern Florida. References: (1) C. A. Baker and F. W. Zettler. Plant Dis. 72:513, 1988. (2) C. A. Ku-wite and D. E. Purcifull. Plant Dis. 66:1071, 1982.",
+      "journal": "Plant disease",
+      "year": 1998,
+      "pub_date": "1998-10-01",
+      "authors": "Kucharek T A; Purcifull D E; Christie R G; Perkins K D",
+      "first_author": "Kucharek T A",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "month": "2000-03",
+  "generated": "2026-07-13 02:59:42",
+  "total": 15,
+  "by_category": {
+    "New_Virus": 7,
+    "Host_Virus_Interactions": 4,
+    "Antiviral_Resistance_Genes": 2,
+    "Solemoviridae": 1,
+    "Detection_Methods": 1,
+    "Molecular_Characterization": 1,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "18944611",
+      "doi": "10.1094/PHYTO.2000.90.3.214",
+      "title": "Sequence diversity within the three agents of groundnut rosette disease.",
+      "abstract": "ABSTRACT Sequence diversity was examined in the coat protein (CP) gene of Groundnut rosette assistor virus (GRAV), the overlapping open reading frames (ORFs) 3 and 4 of Groundnut rosette virus (GRV), and the satellite RNA (sat-RNA) of GRV obtained from field isolates from Malawi and Nigeria. These three agents cause groundnut rosette disease, a major disease of groundnut in sub-Saharan Africa (SSA). Sequence analysis showed that the GRAV CP gene was highly conserved (97 to 99%) independent of its geographic source. The nucleotide sequence of the overlapping ORFs 3 and 4 of GRV was highly conserved (98 to 100%) from isolates within a geographic region but less conserved (88 to 89%) between isolates from the two distinct geographic regions. Phylogenetic analysis of the overlapping ORFs 3 and 4 show that the GRV isolates cluster according to the geographic region from which they were isolated, indicating that Malawian GRV isolates are distinct from Nigerian GRV isolates. Similarity within the sat-RNA sequences analyzed ranged from 88 to 99%. Phylogenetic analysis also showed clustering within the sat-RNA isolates according to country of origin, as well as within isolates from two distinct regions of Malawi. Because the GRAV CP sequence is highly conserved, independent of the geographic source of the GRAV isolates, the GRAV CP sequence represents the most likely candidate to use for pathogen-derived resistance in groundnut and may provide effective protection against groundnut rosette disease throughout SSA.",
+      "journal": "Phytopathology",
+      "year": 2000,
+      "pub_date": "2000-03-01",
+      "authors": "Deom C M; Naidu R A; Chiyembekeza A J; Ntare B R; Subrahmanyam P",
+      "first_author": "Deom C M",
+      "categories": [
+        "New_Virus",
+        "Solemoviridae"
+      ],
+      "virus_name": "Groundnut rosette assistor virus (GRAV), Groundnut rosette virus (GRV), satellite RNA of GRV",
+      "taxonomy": "未提及",
+      "host_plant": "花生 (Arachis hypogaea)",
+      "location": "马拉维和尼日利亚",
+      "results": "GRAV CP高度保守(97-99%)；GRV ORF3/4区内保守(98-100%)，区间差异(88-89%)；sat-RNA相似性88-99%且按地理聚类。GRAV CP适合用于病原源抗性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "30841259",
+      "doi": "10.1094/PDIS.2000.84.3.371B",
+      "title": "First Report of Zucchini yellow mosaic virus in Argentina.",
+      "abstract": "In August 1996, a severe viral disease occurred in squash produced in the subtropical Province of Salta, Argentina. Plants of Cucurbita pepo L. (zucchini) and Cucurbita maxima L. 'Any' were affected. Approximately 50% of the plants showed prominent yellow mosaic, necrosis, and foliar distortion. Most of the fruits on infected plants were small, with scattered glossy yellow knobs over a green background, and some showed additional fruit malformation. A potyvirus was isolated from infected plants by mechanical transmission. Filamentous particles were associated with symptomatic inoculated squash and cucumber plants in leaf-dip preparations with an electron microscope (Elmisckop I, Siemens, Germany). The particles were flexuous rods ≈755 nm long. The host range of the isolated virus was mostly limited to the cucurbits (systemic infection) but also included Gomphrena globosa (local and systemic symptoms) and Chenopodium quinoa and Chenopodium amaranticolor, which showed only local chlorotic lesions. Twenty species in the Compositae, Leguminosae, and Solanaceae were not infected (2). In agar double-diffusion tests with sodium dodecyl sulfate (SDS)-degraded virus particles, no reactions were observed with Papaya ringspot virus, Watermelon mosaic virus (WMV), and WMV-Mo antisera, but a strong precipitin line was obtained with the antiserum prepared by Purcifull (1) for isolate 1119 of Zucchini yellow mosaic virus (ZYMV). Isolate 1119 and our isolate appeared serologically indistinguishable in SDS immunodiffusion tests. Both gave fused precipitin bands without spur formation. The results (field symptoms, transmissibility, host range, particle morphology, and serology) lead to the conclusion that ZYMV is present in Argentina. Since 1996, outbreaks have occurred every year in Salta, devastating squash crops. In 1998, ZYMV also was found in the provinces of Mendoza and San Juan, infecting zucchini squash and melons (Cucumis melo L.). A survey of crops indicates that disease incidence and severity were lower than in Salta. References: (1) D. E. Purcifull et al. Plant Dis. 68:230, 1984. (2) H. L. Wang. Plant Dis. 76:530, 1992.",
+      "journal": "Plant disease",
+      "year": 2000,
+      "pub_date": "2000-03-01",
+      "authors": "Gracia O",
+      "first_author": "Gracia O",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Zucchini yellow mosaic virus (ZYMV)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "西葫芦 (Cucurbita pepo), 南瓜 (Cucurbita maxima), 甜瓜 (Cucumis melo), 黄瓜, Gomphrena globosa, Chenopodium quinoa, Chenopodium amaranticolor",
+      "location": "阿根廷：Salta省（首次）、Mendoza省、San Juan省",
+      "results": "病毒粒子为长约755nm弯曲线状，寄主限于葫芦科及少数植物，与ZYMV抗血清强反应，确认ZYMV在阿根廷发生。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10684279",
+      "doi": "10.1128/jvi.74.6.2647-2654.2000",
+      "title": "Mapping in solution shows the peach latent mosaic viroid to possess a new pseudoknot in a complex, branched secondary structure.",
+      "abstract": "We have investigated the secondary structure of peach latent mosaic viroid (PLMVd) in solution, and we present here the first description of the structure of a branched viroid in solution. Different PLMVd transcripts of plus polarity were produced by using the circularly permuted RNA method and the exploitation of RNA internal secondary structure to position the 5' and 3' termini and studied by nuclease mapping and binding shift assays using DNA and RNA oligonucleotides. We show that PLMVd folds into a complex, branched secondary structure. In general, this structure is similar to that reported previously, which was based on sequence comparison and computer modelling. The structural microheterogeneity is apparently limited to only some small domains. More importantly, this structure includes a novel pseudoknot that is conserved in all PLMVd isolates and seems to allow folding into a very compact form. This pseudoknot is also found in chrysanthemum chlorotic mottle viroid, suggesting that it is a unique feature of the viroid members of the PLMVd subgroup.",
+      "journal": "Journal of virology",
+      "year": 2000,
+      "pub_date": "2000-03-01",
+      "authors": "Bussière F; Ouellet J; Côté F; Lévesque D; Perreault J P",
+      "first_author": "Bussière F",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Peach latent mosaic viroid (PLMVd)",
+      "taxonomy": "未提及；属PLMVd亚组",
+      "host_plant": "桃（Peach）",
+      "location": "未提及",
+      "results": "PLMVd折叠成复杂分支二级结构，与计算机预测相似，含一个新假结，允许形成紧凑结构。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18944619",
+      "doi": "10.1094/PHYTO.2000.90.3.269",
+      "title": "Molecular beacons: a new approach to plant virus detection.",
+      "abstract": "ABSTRACT Molecular beacons are single-stranded nucleic acid molecules with a stem-loop conformation. The stem portion consists of complementary sequences at the 5' and 3' terminals of the molecule, while the loop portion consists of probe sequences that are complementary to the target sequences of choice. A fluorescent moiety is attached to one end, while a quenching moiety is attached to the opposite end. Reverse transcription-polymerase chain reactions are carried out with primers that amplify specific genome sequences of interest, yielding targets complementary to their respective molecular beacons for subsequent detection. Here, we have designed four molecular beacons specific to the RNA-dependent RNA polymerase and coat protein genes of two orchid viruses, namely Cymbidium mosaic virus (CymMV) and Odontoglossum ringspot virus (ORSV). This technology is successfully applied to detect as little as 0.5 ng of viral RNA of both orchid viruses simultaneously in 100 mg of coinfected Oncidium orchid leaves. This rapid and specific technique is applicable to the orchid industry, which routinely carries out virus indexing and screening for virus-resistant cultivars. We belief that use of this molecular beacon approach can be extended to the detection of multiple plant viruses in various crops.",
+      "journal": "Phytopathology",
+      "year": 2000,
+      "pub_date": "2000-03-01",
+      "authors": "Eun A J; Wong S M",
+      "first_author": "Eun A J",
+      "categories": [
+        "Detection_Methods",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Cymbidium mosaic virus (CymMV) 和 Odontoglossum ringspot virus (ORSV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10708788",
+      "doi": "10.1016/s0034-6667(99)00042-1",
+      "title": "Ultrastructure and affinity of Lower Carboniferous megaspores from the Moscow Basin, Russia.",
+      "abstract": "Ten megaspore species isolated from Moscow Basin lignites of Lower Carboniferous (Viséan) age have been studied by scanning and transmission electron microscopy (SEM and TEM). These species belong to seven megaspore genera: Lagenicula, Sublagenicula, Crassilagenicula, Setosisporites, Zonalesporites, Caudatosporites, and Cystosporites. Megaspores of the genus Caudatosporites have only been described previously from the Duckmantian (Westphalian B); a new species is duly erected. The ultrastructure of megaspore walls from the genera Crassilagenicula and Zonalesporites has not been previously described. This study also places them in context with other contemporaneous megaspores. The study shows that during the Viséan, in the Moscow Basin, megaspores expressed a similar wall ultrastructure despite large differences in external appearance. The genus Crassilagenicula may represent a group of megaspores from plants that had evolved from those bearing gulate megaspores here typified by Lagenicula acuminata, Setosisporites brevispinosus, and Sublagenicula hirsutoida. Zonalesporites brasserti also appears to show affinities to this group, and may be representative of a plant species in a transitional state between the Lagenicula bearing lycopsids and those more isoetalean in nature.",
+      "journal": "Review of palaeobotany and palynology",
+      "year": 2000,
+      "pub_date": "2000-03-01",
+      "authors": "Glasspool IJ; Hemsley AR; Scott AC; Golitsyn A",
+      "first_author": "Glasspool IJ",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10758872",
+      "doi": "10.1099/00207713-50-2-649",
+      "title": "Reassessment of the taxonomic structure of the diazotrophic genus Azoarcus sensu lato and description of three new genera and new species, Azovibrio restrictus gen. nov., sp. nov., Azospira oryzae gen. nov., sp. nov. and Azonexus fungiphilus gen. nov., sp. nov.",
+      "abstract": "The taxonomic structure of members of the genus Azoarcus sensu lato was reassessed in a polyphasic approach. Two species, Azoarcus communis and Azoarcus indigens, three unnamed species containing diazotrophs associated with Kallar grass roots (groups C, D) and a group of strains (E) isolated from fungi were analysed. They were compared by PAGE analyses of cellular proteins, genomic fingerprints, morphological and nutritional features to new isolates from rice roots. All strains within groups C, D and E containing 5-12 isolates showed group-specific cell and colony morphology and carbon source utilization patterns, with exception of the obligately microaerobic strain BS20-3, a member of group C. All strains, with this exception, also had almost indistinguishable electrophoretic protein patterns and genomic fingerprints generated with tDNA-directed primers, suggesting they belong to the same species. Phylogenetic analyses of almost complete 16S rDNA sequences carried out with three different algorithms (neighbour-joining, maximum-likelihood, parsimony) revealed that Azoarcus sensu lato is not monophyletic. Groups C, D and E formed three distinct lineages located between the Azoarcus/Thauera and the Rhodocyclus clusters. Phylogenetic distances between groups C, D and E were as large as between other genera (93-94% sequence similarity). This suggested they have the rank of three different genera. Since it was possible to differentiate them from each other and other related bacteria by phenotypic features, three new genera with one type species each are proposed: Azovibrio restrictus gen. nov., sp. nov., Azospira oryzae gen. nov., sp. nov. and Azonexus fungiphilus gen. nov., sp. nov.",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2000,
+      "pub_date": "2000-03-01",
+      "authors": "Reinhold-Hurek B; Hurek T",
+      "first_author": "Reinhold-Hurek B",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10758856",
+      "doi": "10.1099/00207713-50-2-525",
+      "title": "Methanobacterium oryzae sp. nov., a novel methanogenic rod isolated from a Philippines ricefield.",
+      "abstract": "A rod (0.3-0.4 micron x 3-10 microns) to filamentous (up to 40 microns) non-motile methanogenic bacterium, designated strain FPiT (T = type strain), was isolated from ricefield soil in the Philippines. The strain uses H2 + CO2 or formate for growth and produces CH4. Optimum growth temperature is 40 degrees C; no growth is observed at 15 degrees C or 45 degrees C. Optimum pH for growth is 7; no growth is observed at pH 5.5 or 9.0. Strain FPiT is halotolerant and grows at NaCl concentrations of 0-25 g l-1. The G + C content of its DNA is 31 mol%. Based on 16S rRNA gene sequence analysis, the isolate was identified as a new species of the genus Methanobacterium: Methanobacterium oryzae sp. nov. The type strain is FPiT (= DSM 11106T).",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2000,
+      "pub_date": "2000-03-01",
+      "authors": "Joulian C; Patel B K; Ollivier B; Garcia J L; Roger P A",
+      "first_author": "Joulian C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19270947",
+      "doi": "",
+      "title": "Hemicycliophora hellenica n. sp. (Nemata: Criconematidae) from Greece.",
+      "abstract": "Hemicycliophora hellenica n. sp. is described and illustrated from a bisexual population found in Filippias, Epirus, Greece, in the rhizosphere of giant reed (Arundo donax) and unidentified aquatic plants along the edge of irrigation canals. Hemicycliophora hellenica n. sp. is characterized by a long stylet (more than 120 microm), body length (L = 1,078-1,634 microm; R = 303-362), and lateral field marked by three lateral lines in females and four in males. The lip region is distinctive in that the female labial disc is oval and offset from the first lip region annule, and protrudes markedly; the male labial disc is very large, offset and rectangular, and protrudes distinctly. Hemicycliophora hellenica n. sp. resembles H. megalodiscus Loof by possession of a strongly protruding labial disc, but differs in having a longer female body, more body annules, longer stylet, and dorsally and ventrally indented head annules. The male labial plate is larger than in H. megalodiscus, and the male has four incisures in the lateral field vs. three in H. megalodiscus.",
+      "journal": "Journal of nematology",
+      "year": 2000,
+      "pub_date": "2000-03-01",
+      "authors": "Vovlas N",
+      "first_author": "Vovlas N",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30841239",
+      "doi": "10.1094/PDIS.2000.84.3.261",
+      "title": "Sources of Resistance to Anthracnose in the Annual Medicago Core Collection.",
+      "abstract": "The annual genus Medicago core collection, consisting of 201 accessions, represents the genetic diversity inherent in 3,159 accessions from 36 annual Medicago species. This germ plasm was evaluated for resistance to anthracnose caused by Colletotrichum trifolii. Anthracnose is a major disease in perennial alfalfa (Medicago sativa L.) grown in North America and disease control is based principally on the use of resistant varieties. Evaluation of the core collection was conducted using standardized environmental conditions in growth chambers, and included the M. sativa standard reference cvs. Arc (resistant) and Saranac (susceptible). The degree of resistance found among accessions within species was highly variable; however, most annual species and accessions were susceptible. Only 14 accessions from seven species exhibited resistance greater than 40% seedling survival. These included accessions of M. murex, M. muricoleptis, M. polymorpha var. brevispina, M. polymorpha var. polymorpha, M. radiata, M. soleirolii, M. truncatula, and M. turbinata. Of the 12 accessions of M. polymorpha var. polymorpha, 4 exhibited more than 50% resistance, but 3 accessions were 100% susceptible. Most of the M. truncatula and M. turbinata accessions exhibited significantly more resistance than accessions of other species. Plant introduction (PI) accession number PI 495401 of M. muricoleptis exhibited 90.3% resistance. Accessions of M. scutellata were uniformly susceptible. Histological examinations of 14 of the most anthracnose-resistant accessions revealed that C. trifolii spores germinated and produced typical appressoria, but failed to penetrate and produce the primary and secondary hyphae characteristic of susceptible interactions. Resistant reactions were similar to those found in incompatible interactions with C. trifolii and alfalfa, which have been associated with specific genes leading to the production of isoflavonoid phytoalexins. The large genetic variability in annual Medicago spp. offers potential for locating and utilizing disease resistance genes through breeding or genetic engineering that will enhance the utilization of Medicago spp. as a forage crop.",
+      "journal": "Plant disease",
+      "year": 2000,
+      "pub_date": "2000-03-01",
+      "authors": "O'Neill Nichole R; Bauchan Gary R",
+      "first_author": "O'Neill Nichole R",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10707353",
+      "doi": "10.1094/MPMI.2000.13.3.277",
+      "title": "Identification of Arabidopsis mutants exhibiting an altered hypersensitive response in gene-for-gene disease resistance.",
+      "abstract": "A mutational study was carried out to isolate Arabidopsis thaliana plants that exhibit full or partial disruption of the RPS2-mediated hypersensitive response (HR) to Pseudomonas syringae that express avrRpt2. Five classes of mutants were identified including mutations at RPS2, dnd mutations causing a \"defense, no death\" loss-of-HR phenotype, a lesion-mimic mutant that also exhibited an HR- phenotype, and a number of intermediate or partial-loss-of-HR mutants. Surprisingly, many of these mutants displayed elevated resistance to virulent P. syringae and, in some cases, to Peronospora parasitica. Constitutively elevated levels of pathogenesis-related (PR) gene expression and salicylic acid were also observed. In the lesion-mimic mutant, appearance of elevated resistance was temporally correlated with appearance of lesions. For one of the intermediate lines, resistance was shown to be dependent on elevated levels of salicylic acid. A new locus was identified and named IHR1, after the mutant phenotype of \"intermediate HR.\" Genetic analysis of the intermediate-HR plant lines was difficult due to uncertainties in distinguishing the partial/intermediate mutant phenotypes from wild type. Despite this difficulty, the intermediate-HR mutants remain of interest because they reveal potential new defense-related loci and because many of these lines exhibit partially elevated disease resistance without dwarfing or other apparent growth defects.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 2000,
+      "pub_date": "2000-03-01",
+      "authors": "Yu I; Fengler K A; Clough S J; Bent A F",
+      "first_author": "Yu I",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10692124",
+      "doi": "10.1046/j.1523-1747.2000.00917.x",
+      "title": "Interleukin-1 and cutaneous inflammation: a crucial link between innate and acquired immunity.",
+      "abstract": "As our primary interface with the environment, the skin is constantly subjected to injury and invasion by pathogens. The fundamental force driving the evolution of the immune system has been the need to protect the host against overwhelming infection. The ability of T and B cells to recombine antigen receptor genes during development provides an efficient, flexible, and powerful immune system with nearly unlimited specificity for antigen. The capacity to expand subsets of antigen-specific lymphocytes that become activated by environmental antigens (memory response) is termed \"acquired\" immunity. Immunologic memory, although a fundamental aspect of mammalian biology, is a relatively recent evolutionary event that permits organisms to live for years to decades. \"Innate\" immunity, mediated by genes that remain in germ line conformation and encode for proteins that recognize conserved structural patterns on microorganisms, is a much more ancient system of host defense. Defensins and other antimicrobial peptides, complement and opsonins, and endocytic receptors are all considered components of the innate immune system. None of these, however, are signal-transducing receptors. Most recently, a large family of cell surface receptors that mediate signaling through the NF-kappaB transcription factor has been identified. This family of proteins shares striking homology with plant and Drosophila genes that mediate innate immunity. In mammals, this family includes the type I interleukin-1 receptor, the interleukin-18 receptor, and a growing family of Toll-like receptors, two of which were recently identified as signal-transducing receptors for bacterial endotoxin. In this review, we discuss how interleukin-1 links the innate and acquired immune systems to provide synergistic host defense activities in skin.",
+      "journal": "The Journal of investigative dermatology",
+      "year": 2000,
+      "pub_date": "2000-03-01",
+      "authors": "Murphy J E; Robert C; Kupper T S",
+      "first_author": "Murphy J E",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10754062",
+      "doi": "10.1007/s002399910023",
+      "title": "Divergent evolution of plant NBS-LRR resistance gene homologues in dicot and cereal genomes.",
+      "abstract": "The majority of plant disease resistance genes are members of very large multigene families. They encode structurally related proteins containing nucleotide binding site domains (NBS) and C-terminal leucine rich repeats (LRR). The N-terminal region of some resistance genes contain a short sequence called TIR with homology to the animal innate immunity factors, Toll and interleukin receptor-like genes. Only a few plant resistance genes have been functionally analyzed and the origin and evolution of plant resistance genes remain obscure. We have reconstructed gene phylogeny by exhaustive analysis of available genome and amplified NBS domain sequences. Our study shows that NBS domains faithfully predict whole gene structure and can be divided into two major groups. Group I NBS domains contain group-specific motifs that are always linked with the TIR sequence in the N terminus. Significantly, Group I NBS domains and their associated TIR domains are widely distributed in dicot species but were not detected in cereal databases. Furthermore, Group I specific NBS sequences were readily amplified from dicot genomic DNA but could not be amplified from cereal genomic DNA. In contrast, Group II NBS domains are always associated with putative coiled-coil domains in their N terminus and appear to be present throughout the angiosperms. These results suggest that the two main groups of resistance genes underwent divergent evolution in cereal and dicot genomes and imply that their cognate signaling pathways have diverged as well.",
+      "journal": "Journal of molecular evolution",
+      "year": 2000,
+      "pub_date": "2000-03-01",
+      "authors": "Pan Q; Wendel J; Fluhr R",
+      "first_author": "Pan Q",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

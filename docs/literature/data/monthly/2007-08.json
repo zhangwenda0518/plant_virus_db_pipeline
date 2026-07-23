@@ -1,0 +1,281 @@
+{
+  "month": "2007-08",
+  "generated": "2026-07-13 02:59:42",
+  "total": 30,
+  "by_category": {
+    "Host_Virus_Interactions": 9,
+    "Antiviral_Resistance_Genes": 6,
+    "Control_Management": 6,
+    "New_Virus": 6,
+    "Detection_Methods": 1,
+    "Transmission_Epidemiology": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "17429570",
+      "doi": "10.1007/s00726-007-0535-y",
+      "title": "Antiviral activity of oxidized polyamines.",
+      "abstract": "Polyamines, oxidized by serum amine oxidase, yield aminoaldehydes and hydrogen peroxide. Acrolein may be formed from the aminoaldehydes by a spontaneous beta-elimination process. These oxidation products \"oxidized polyamines\" inhibit bacterial growth and exhibit anticancer activity. The antimicrobial activity of oxidized polyamines is not limited to bacteria; and the inactivation of bacterial viruses, plant viruses and animal viruses, was also reported. Bacteriophages of the T-odd series are permeable and were inactivated by oxidized polyamines. The inactive phages absorb to their bacterial host and injected their DNA, which formed a stable inactive complex with the aminoaldehydes. Aminoaldehydes, synthesized chemically, also inactivated viruses. The growth of the plant viruses: Tobacco mosaic virus, Potato virus X and Alfalfa mosaic virus was also inhibited by oxidized polyamines. The animal viruses, which were inactivated by oxidized polyamines included Myxoviruses (influenza and Newcastle disease viruses), West Nile, vaccinia and Sindbis viruses. These findings may have practical implications.",
+      "journal": "Amino acids",
+      "year": 2007,
+      "pub_date": "2007-08-01",
+      "authors": "Bachrach U",
+      "first_author": "Bachrach U",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒(Tobacco mosaic virus); 马铃薯X病毒(Potato virus X); 苜蓿花叶病毒(Alfalfa mosaic virus)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780453",
+      "doi": "10.1094/PDIS-91-8-1055A",
+      "title": "First Report of Potato spindle tuber viroid in Tomato in Belgium.",
+      "abstract": "During August of 2006, a sample of a tomato plant (Solanum lycopersicum, formerly Lycopersicum esculentum) from a greenhouse in Belgium was received for diagnosis. The plant showed severe growth reduction and the young leaves were chlorotic and distorted. In the greenhouse, the disease had been spreading slowly along the row. These observations suggested the presence of a viroid infection, and reverse transcriptase (RT)-PCR with two sets of universal pospiviroid primers (Pospi1-RE/FW and Vid-FW/RE; 3) yielded amplicons of the expected size (approximately 196 and 360 bp). Sequence analysis of the larger PCR product revealed that the genome was 358 nt and 100% identical to two isolates of Potato spindle tuber viroid (PSTVd) previously submitted to the NCBI GenBank (Accession Nos. AJ583449 from the United Kingdom and AY962324 from Australia). A pathogen associated with the symptomatic tomato plants was therefore identified as PSTVd. Tracing the origin of the infection revealed the following information: during November of 2005, 8-day-old tomato seedlings raised from seed by a Dutch nursery were transferred to a small part of the greenhouse of the Belgian grower; 7 to 8 weeks later, the plants were transplanted to their final destination; during May of 2006, the grower first observed growth reduction in a single plant; several weeks later, similar symptoms were observed in two more plants in the same row close to the first symptomatic plant; and by September, there were approximately 20 symptomatic tomato plants, all located in two adjacent rows. The viroid outbreak was fully eradicated by destroying all tomato plants in the affected rows as well as in two adjacent rows at both sides. The absence of further infections was confirmed by testing approximately 1,200 tomato plants in pooled samples for PSTVd by RT-PCR (2) and real-time RT-PCR (1). The origin and the method of introduction and spread of the viroid remain unclear. References: (1) N. Boonham et al. J. Virol. Methods 116:139, 2004. (2) R. A. Mumford et al. Plant Pathol. 53:242, 2004. (3) J. Th. J. Verhoeven et al. Eur. J. Plant Pathol. 110:823, 2004.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-08-01",
+      "authors": "Verhoeven J Th J; Jansen C C C; Roenhorst J W; Steyer S; Michelante D",
+      "first_author": "Verhoeven J Th J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Potato spindle tuber viroid (PSTVd)",
+      "taxonomy": "Pospiviroidae, Pospiviroid",
+      "host_plant": "Solanum lycopersicum (tomato)",
+      "location": "Belgium, greenhouse",
+      "results": "确认PSTVd感染，追溯感染源为2005年11月从荷兰苗圃引入的番茄幼苗，症状于2006年5月首次发现，至9月约20株发病，销毁染病植株并检测1200株确认根除。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780456",
+      "doi": "10.1094/PDIS-91-8-1056A",
+      "title": "First Report of Tomato yellow leaf curl virus Associated with Tomato Yellow Leaf Curl Disease in California.",
+      "abstract": "Tomato yellow leaf curl disease caused by the whitefly-transmitted begomovirus (genus Begomovirus, family Geminiviridae) Tomato yellow leaf curl virus (TYLCV) is one of the most damaging diseases of tomato. TYLCV was introduced into the New World in the early 1990s and by the late 1990s, it was found in Florida (2). In 2005 and 2006, the virus was reported from northern Mexico (states of Sinaloa and Tamaulipas) (1) and subsequently from Texas and Arizona. In March 2007, tomato (Lycopersicon esculentum) plants growing in a greenhouse in Brawley, CA showed TYLCV-like symptoms including stunted upright growth, shortened internodes, and small upcurled leaves with crumpling and strong interveinal and marginal chlorosis. These plants also sustained high populations of whiteflies. Symptomatic tomato leaves and associated whiteflies were collected from inside the greenhouse. Leaf samples also were collected from symptomless weeds (cheeseweed [Malva parviflora] and dandelion [Taraxacum officinale]) outside of the greenhouse. Total nucleic acids were extracted from 41 symptomatic tomato leaf samples, seven samples of adult whiteflies (approximately 50 per sample), and six leaf samples each from cheeseweed and dandelion. PCR analyses were performed with the degenerate begomovirus primers PAL1v1978 and PAR1c496 (3) and a TYLCV capsid protein (CP) primer pair (4). The expected size of approximately 1.4-kbp and 300-bp DNA fragments, respectively, were amplified from extracts of all 41 symptomatic tomato leaves and adult whitefly samples; whereas the 300-bp DNA fragment was amplified from all six cheeseweed samples and four of the six dandelion samples. Sequence analysis of a portion of the AC1/C1 gene from the approximately 1.4-kbp fragment amplified from 12 tomato leaf samples and four whiteflies samples revealed 99 to 100% identity with the homologous sequence of TYLCV from Israel (GenBank Accession No. X15656). The putative genome of the California TYLCV isolate was amplified using PCR and an overlapping primer pair (TYBamHIv: 5'-GGATCCACTTCTAAATGAATTTCCTG-3' and TYBamHI2c: 5'-GGATCCCACATAGTGCAAGACAAAC-3'), cloned and sequenced. The viral genome was 2,781 nt (GenBank Accession No. EF539831), and sequence analysis confirmed it was a bona fide isolate of TYLCV. The California TYLCV sequence is virtually identical (99.7% total nucleotide and 100% CP amino acid sequence identity) to a TYLCV isolate from Sinaloa, Mexico (GenBank Accession No. EF523478) and closely related to isolates from China (AM282874), Cuba (AJ223505), Dominican Republic (AF024715), Egypt (AY594174), Florida (AY530931), Japan (AB192966), and Mexico (DQ631892) (sequence identities of 98.2 to 99.7%). Together, these results establish that TYLCV was introduced to California, probably from Mexico. Because the tomatoes in this greenhouse were grown from seed, and symptoms did not appear until after initial fruit set, the virus was probably introduced via viruliferous whiteflies. To our knowledge, this is the first report of TYLCV infecting tomato plants in California. References: (1) J. K. Brown and A. M. Idris. Plant Dis. 90:1360, 2006. (2) J. E. Polston et al. Plant Dis. 83:984, 1999. (3) M. R. Rojas et al. Plant Dis. 77:340, 1993. (4) R. Salati et al. Phytopathology 92:487, 2002.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-08-01",
+      "authors": "Rojas M R; Kon T; Natwick E T; Polston J E; Akad F; ... (+1)",
+      "first_author": "Rojas M R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato yellow leaf curl virus (TYLCV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "番茄 (Lycopersicon esculentum), 锦葵 (Malva parviflora), 蒲公英 (Taraxacum officinale)",
+      "location": "美国加州布劳利 (Brawley, CA)",
+      "results": "从所有41个症状番茄叶和烟粉虱样品中扩增出目的片段，锦葵和蒲公英部分阳性；序列分析显示与以色列TYLCV同源性99-100%，加州分离物基因组2781 nt，与墨西哥分离物最接近。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780425",
+      "doi": "10.1094/PDIS-91-8-0932",
+      "title": "A Severe Disease of Tomato in the Culiacan Area (Sinaloa, Mexico) Is Caused by a New Picorna-Like Viral Species.",
+      "abstract": "We were able to mechanically transmit a small isometric virus from field tomato samples showing severe necrotic symptoms, collected in the Culiacan area of Sinaloa state (Mexico). After gradient purification and three rounds of single-lesion passage on Chenopodium quinoa, the virus was back-inoculated to tomato plants and reproduced the original apical necrosis symptoms. The virus could be transmitted to a wide range of experimental hosts, including a number of solanaceous plants. Purified virus was used to produce specific polyclonal rabbit antibodies and serological tests such as enzyme-linked immunosorbent assay, Western blot analysis, and an immunochromatographic lateral flow assay. Such assays confirmed the wide distribution of this virus in symptomatic field plants in the area of the epidemic. Purified particles contained two genomic RNA molecules of ca. 7 kb (RNA1) and 5 kb (RNA2) estimated length. Analysis of clones from a cDNA library provided 6.5 and 3.0 kb of sequence for RNA1 and RNA2, respectively. Sequence analysis of the encoded replicase showed greatest similarity with members of the Sequiviridae family, and indicated that the virus we isolated is a new virus species, provisionally named Tomato apex necrosis virus.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-08-01",
+      "authors": "Turina M; Ricker M D; Lenzi R; Masenga V",
+      "first_author": "Turina M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato apex necrosis virus",
+      "taxonomy": "Sequiviridae",
+      "host_plant": "番茄（tomato）及多种茄科植物",
+      "location": "墨西哥，锡那罗亚州，库利亚坎地区",
+      "results": "病毒粒子为小等轴状，含两个RNA分子（~7kb和~5kb），复制酶与Sequiviridae最相似，为病毒新种，在田间广泛分布。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780466",
+      "doi": "10.1094/PDIS-91-8-1059B",
+      "title": "First Report of Soybean dwarf virus (Genus Luteovirus) Infecting Faba Bean and Clover in Germany.",
+      "abstract": "In 2003, leaf samples from faba bean plants (Vicia faba L.) showing slight growth reductions and yellowing symptoms were collected in a field near Hebenshausen, Hesse, Germany. Some of these samples did not react in triple-antibody sandwich enzyme-linked immunosorbent assay (TAS-ELISA) with species-specific monoclonal antibodies (Mabs) to either Bean leaf roll virus or Turnip yellows virus, but did react with a broad-spectrum Mab (B-2-5G4) used to detect viruses in the genera Polerovirus and Luteovirus (family Luteoviridae) (1). Since this indicated the occurrence of a hitherto unrecognized polero- or luteovirus in faba bean in Germany, attempts were made to obtain nucleotide sequence information on two of the unknown faba bean isolates using a pair of degenerate primers (S2 [5'-ATCACITTCGGGCCGWSTCTATCAGA-3'] and AS3 [5'-CACGCGTCIACCTATTTIGGRTTITG-3'] [I = inosine]) derived from conserved domains in the capsid protein (CP) genes of several polero- and luteoviruses. Following reverse transcription (RT)-PCR amplification and cloning, the CP gene sequences of two genetically distinct isolates of Soybean dwarf virus (SbDV), a species of the genus Luteovirus, were obtained. To our knowledge, SbDV has not been reported from Germany or Europe but only from Africa, Australia, Japan, and the United States. In the two latter countries, at least two SbDV strain groups, SbDV-Y (for yellowing) and SbDV-D (for dwarfing), are distinguished on the basis of differences in symptomatology, host range, and molecular properties (2-4). On the basis of CP aa sequences, the two faba bean isolates from Hebenshausen differed by 8%, with one (FB1) most similar (>96% identity) to SbDV-D isolates and the other (FB2) closely related (>96%) to SbDV-Y isolates. Similar to observations in Japan (3) and the United States (2), we were able to detect SbDV in numerous samples from red clover (Trifolium pratense) and white clover (T. repens) in Braunschweig using SbDV antibodies (Agdia, Elkhart, IN) in DAS-ELISA. This was confirmed by RT-PCR amplification of CP gene sequences using SbDV-specific primers (SbDVs: 5'-GTCTACCTAAAAATTTCAAAGAATCTG-3'; SbDVas: 5'-CGGACCCGGTTCTCCGTCTA-3'). CP sequence analysis of two SbDV-positive clover samples revealed the presence of a SbDV-D isolate in red clover. However, a white clover plant contained an unusual SbDV isolate that possessed a unique CP, sharing aa sequence identities of approximately 92% with the two faba bean isolates from Germany and only 88.5 to 90.5% with other SbDV isolates. Attempts at aphid transmission of SbDV isolates from clover to faba bean were only successful for the combination Acyrthosiphon pisum and the white clover isolate. No faba bean seedlings became infected when the aphid species Aulacorthum solani and Aphis craccivora were given acquisition access feedings of 48 to 72 h on SbDV-infected white and red clover plants. The sequences determined in this study were deposited in GenBank (Accession Nos. EF466131-EF466134). References: (1) A. D. Abraham et al. Phytopathology 96:437, 2006. (2) V. D. Damsteegt et al. Phytopathology 89:374, 1999. (3) T. Tamada and M. Kojima. No. 179 in: Descriptions of Plant Viruses. Assoc. Appl. Biol. Kew, England, 1977. (4) H. Terauchi et al. Arch. Virol. 146:1885, 2001.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-08-01",
+      "authors": "Abraham A D; Menzel W; Vetten H J; Saucke H",
+      "first_author": "Abraham A D",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Soybean dwarf virus (SbDV)",
+      "taxonomy": "Luteoviridae, Luteovirus",
+      "host_plant": "蚕豆(Vicia faba)、红三叶(Trifolium pratense)、白三叶(Trifolium repens)",
+      "location": "德国黑森州Hebenshausen（蚕豆），不伦瑞克（三叶草）",
+      "results": "获得两个蚕豆SbDV分离物（FB1类似SbDV-D，FB2类似SbDV-Y）；三叶草中检测到SbDV，白三叶中有一独特分离物（CP序列与已知SbDV同源性约88.5-92%）；仅Acyrthosiphon pisum能传毒。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780450",
+      "doi": "10.1094/PDIS-91-8-1054A",
+      "title": "First Report of Citrus leaf blotch virus on Kumquat in Italy.",
+      "abstract": "During the spring of 2006, nurserymen reported observations of the bud union disorder of 'Nagami' kumquat scions propagated on Troyer citrange rootstock to the CRA-Istituto Sperimentale per l'Agrumicoltura. These plants showed reduced canopy volume and new shoots below graft points 6 months after propagation; the bud union was brittle and broke down easily after 1 year. After tests excluded common citrus viruses and viroids that might cause the incompatibility (e.g., Citrus tristeza virus, Citrus psorosis virus, Citrus exocortis viroid, and Hop stunt viroid), we tested for Citrus leaf blotch virus (CLBV), a virus previously associated with a bud union crease in kumquat (2). Leaves were collected from 100 2-year-old kumquat plants from a nursery near Messina (Sicily [Italy]); 50 were grafted on sour orange rootstock (asymptomatic) and 50 were grafted on Troyer citrange rootstock (symptomatic). Total RNA was extracted using Qiagen RNeasy Plant Mini Kit (Qiagen S.P.A. Milan, Italy). Primers previously reported (1,2) and designed from a published CLBV sequence (Genbank Accession No. AJ318061) were used in reverse transcription (RT)-PCR assays to amplify the RNA-dependent RNA polymerase gene (sense primer KU 27, 5'-GATGCAAGCCAGGATGAATAC-3', genomic positions 5321-5340 and anti-sense primer KU 15, 5'-CAGACACTCCAAGACCTTTCC-3', genomic positions 5776-5756) and the coat protein gene (sense primer KU18, 5'-TTAAGATTACAGACACGAAGG-3' genomic positions 7686-7706 and anti-sense primer KU 19 5'-CTGTTTTTGAATTTTGCTCG-3', genomic positions 8123-8104). All kumquat samples yielded amplicons of the expected size (456 and 438 bp). No amplicons were obtained from healthy plants. Amplicons for each gene were cloned into the pGEM-T Easy Vector (Promega Italy, Milan), and four clones for each plasmid DNA were sequenced in both directions. Consensus sequences of the two genes (Genbank Accession Nos. EF203229 and EF203230) had 96 and 97% nucleotide sequence identity, respectively, and both had 99% amino acid identity with the previously reported CLBV sequence (Genbank Accession No. AJ318061). Approximately 400,000 ornamental kumquats are produced annually in Italy. CLBV infection can cause serious production losses because of the decline associated with bud union disorders grafted onto trifoliate orange and trifoliate-derived rootstocks. References: (1) L. Galipienso et al. Eur. J. Plant Pathol. 110:175, 2004. (2) M. C. Vives et al. Virology 287:225, 2001.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-08-01",
+      "authors": "Guardo M; Sorrentino G; Marletta T; Caruso A",
+      "first_author": "Guardo M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Citrus leaf blotch virus (CLBV)",
+      "taxonomy": "未提及",
+      "host_plant": "金桔 (Kumquat)",
+      "location": "意大利西西里岛墨西拿附近苗圃",
+      "results": "100份样品均扩增出预期条带，序列与已知CLBV有96-97%核苷酸同源性，99%氨基酸同源性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18770613",
+      "doi": "10.1002/9780471729259.mc16c01s6",
+      "title": "Reverse transcription-polymerase chain reaction-based detection of plant viruses.",
+      "abstract": "A one-step reverse transcription-polymerase chain reaction (RT-PCR) is used to detect two cherry flexiviruses, Cherry green ring mottle virus (CGRMV) and Cherry necrotic rusty mottle virus (CNRMV), in Prunus species. This unit presents procedures for collection of plant samples, preparation of total nucleic acids, viral RNA-rich or total RNA extracts from plant tissues, and subsequent amplification of the viral targets by one-step RT-PCR using a pair of consensus primers. The PCR amplicons are visualized by electrophoresis in a 1% agarose gel containing ethidium bromide in TAE buffer and viewed under ultraviolet light. This procedure is rapid, sensitive, reliable, and cost-effective and is generally useful on a wide variety of plant/virus systems. The use of a semi-automatic homogenizer for sample preparation and one-tube RT-PCR for virus detection makes this approach ideal for screening large numbers of samples.",
+      "journal": "Current protocols in microbiology",
+      "year": 2007,
+      "pub_date": "2007-08-01",
+      "authors": "Li Ruhui; Hartung John S",
+      "first_author": "Li Ruhui",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "Cherry green ring mottle virus (CGRMV) 和 Cherry necrotic rusty mottle virus (CNRMV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "36131478",
+      "doi": "10.1684/11-4.2011.7289",
+      "title": "[Nepovirus transmission by longidorid nematodes].",
+      "abstract": "Transmission of plant viruses in nature often involves vectors which are usually plant pests. A class of soil borne invertebrates acts in this way. Ectoparasitic nematodes belonging to the Longidoridae family are responsible for the transmission of viruses from the Nepovirus genus using a semipersistant, non circulative mechanism. This passive transmission occurs during the feeding process of the nematodes on actively growing roots. However, only a few longidorid nematodes are able to acquire and subsequently transmit 12 of the 32 known Nepovirus. This singularity reflects a highly specific and strong association between the virus and the vector likely via a putative receptor on the cuticular lining of the oesophageal tract. Using a reverse genetics approach, investigations on the Grapevine fanleaf virus/Xiphinema index virus-vector association showed that the transmission specificity is solely determined by the coat protein.",
+      "journal": "Virologie (Montrouge, France)",
+      "year": 2007,
+      "pub_date": "2007-08-01",
+      "authors": "Demangeat G",
+      "first_author": "Demangeat G",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Nepovirus属（具体包括葡萄扇叶病毒）",
+      "taxonomy": "",
+      "host_plant": "未提及（葡萄有暗示）",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17974258",
+      "doi": "",
+      "title": "[Systemic resistance induced by biocontrol agents in plants and its biochemical and cytological mechanisms].",
+      "abstract": "Microbial biocontrol agents (BCAs) are generally used for controlling plant diseases via antagonistic mechanisms including competition, antibiosis, parasitism, and cross-protection. Some BCAs can even promote plant growth, and provide induced systemic resistance (ISR), i. e., induce the plants to have resistance against pathogens including phytopathogenic fungi, bacteria and virus, and in some cases, pest insects and nematodes. ISR is characterized by non-specific, wide spectrum and systemic. It is phenotypically similar to the systemic acquired resistance (SAR) induced by the infection of pathogens, and with the same efficiency but without hypersensitive response (HR) and visible symptoms in plant as SAR, which is helpful to open a new way to develop and improve safer and environmentally friendly strategies for plant protection. In this paper, the research advances on ISR mediated by biocontrol fungi and bacteria, elicitors or determinants, and signaling transduction pathways were summarized, with more emphasis on the biochemical and cytological mechanisms of host plant defense reaction induced by free-living and endophytic BCAs. The potential application of ISR in biocontrol of plant diseases was also discussed.",
+      "journal": "Ying yong sheng tai xue bao = The journal of applied ecology",
+      "year": 2007,
+      "pub_date": "2007-08-01",
+      "authors": "Liu Xiao-Guang; Gao Ke-Xiang; Kang Zhen-Sheng; He Bang-Ling",
+      "first_author": "Liu Xiao-Guang",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "多种植物病毒",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17448687",
+      "doi": "10.1016/j.fsi.2006.09.015",
+      "title": "Enhancement of nonspecific immunity and disease resistance in Oreochromis mossambicus by Solanum trilobatum leaf fractions.",
+      "abstract": "The purpose of this study was to determine the effect of water and hexane soluble fractions of the Indian medicinal plant, Solanum trilobatum on the nonspecific immune mechanisms and disease resistance in Oreochromis mossambicus. Fish were intraperitoneally injected with different doses of 0, 4, 40 or 400 mg kg(-1) body weight of water or hexane soluble fraction. The nonspecific immune mechanisms were assessed in terms of serum lysozyme activity, reactive oxygen species production and reactive nitrogen species production by peripheral blood leucocytes. The functional immunity in terms of percentage mortality and Relative Percent Survival (RPS) was assessed by a challenge with live Aeromonas hydrophila. Almost all the doses of both water and hexane soluble fractions enhanced the serum lysozyme activity. All the doses of water soluble fraction significantly enhanced the ROS production on most of the days tested. In hexane soluble fraction treated groups, the enhancement in the ROS production was observed at least on 2 days. All the doses of water soluble fraction significantly enhanced the production of RNS only on one day. The RNS production was enhanced significantly only in the group treated with 40 mg kg(-1) of hexane fraction. The leaf fraction administration preceding the challenge with live A. hydrophila, decreased the percentage mortality in the experimental group with the consequent increase in RPS values. This preliminary study indicates that S. trilobatum could be used to promote the health status of fish in intensive finfish aquaculture.",
+      "journal": "Fish & shellfish immunology",
+      "year": 2007,
+      "pub_date": "2007-08-01",
+      "authors": "Divyagnaneswari M; Christybapita D; Michael R Dinakaran",
+      "first_author": "Divyagnaneswari M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17534592",
+      "doi": "10.1007/s00122-007-0571-8",
+      "title": "The M flax rust resistance pre-mRNA is alternatively spliced and contains a complex upstream untranslated region.",
+      "abstract": "Alternative splicing is an important step in controlling gene expression and has been shown to occur for a number of plant disease resistance (R) genes. The specific biological role of alternatively spliced transcripts from most R genes is unknown, yet in two cases it is clear that functional disease resistance cannot be activated without them. We report 12 splice isoforms of the M flax rust resistance gene, a TIR-NBS-LRR class of R gene. Collectively, these isoforms are predicted to encode at least nine different polypeptide products, only one of which is a full length peptide believed to confer functional M gene-specific disease resistance. An additional intron to that previously described was found in the 5' untranslated region. Splicing of this leader intron removes an upstream ORF (muORF) sequence. In some transcripts the leader intron is retained and in this case we predict negligible translation initiation of the full length M gene-encoding ORF. The majority of the alternatively spliced isoforms of M would encode truncated TIR and TIR-NBS containing proteins. Although the role of alternative splicing and the existence and function of the products they encode is still unclear, the complexities of the splicing profile, and the 5' UTR of the M gene, are likely to serve in mechanisms to regulate R protein levels.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 2007,
+      "pub_date": "2007-08-01",
+      "authors": "Schmidt Simon; Lombardi Maria; Gardiner Donald M; Ayliffe Michael; Anderson Peter A",
+      "first_author": "Schmidt Simon",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17509841",
+      "doi": "10.1016/j.phymed.2007.03.014",
+      "title": "A comprehensive review on the stinging nettle effect and efficacy profiles. Part II: urticae radix.",
+      "abstract": "Nettle root is recommended for complaints associated with benign prostatic hyperplasia (BPH). We therefore conducted a comprehensive review of the literature to summarise the pharmacological and clinical effects of this plant material. Only a few components of the active principle have been identified and the mechanism of action is still unclear. It seems likely that sex hormone binding globulin (SHBG), aromatase, epidermal growth factor and prostate steroid membrane receptors are involved in the anti-prostatic effect, but less likely that 5alpha-reductase or androgen receptors are involved. Extract and a polysaccharide fraction were shown to exert anti-inflammatory activity. A proprietary methanolic nettle root extract and particular fractions inhibited cell proliferation. Isolated lectins (UDA) were shown to be promising immunomodulatory agents, having also anti-viral and fungistatic effects. However, despite these in vitro studies it is unclear whether the in-vitro or animal data are a surrogate for clinical effects. The clinical evidence of effectiveness for nettle root in the treatment of BPH is based on many open studies. A small number of randomised controlled studies indicate that a proprietary methanolic extract is effective in improving BPH complaints. However, the significance and magnitude of the effect remains to be established in further confirmatory studies before nettle root treatment may be accepted in the guidelines for BPH treatment. The risk for adverse events during nettle root treatment is very low, as is its toxicity. Pre-clinical safety data remain to be completed.",
+      "journal": "Phytomedicine : international journal of phytotherapy and phytopharmacology",
+      "year": 2007,
+      "pub_date": "2007-08-01",
+      "authors": "Chrubasik Julia E; Roufogalis Basil D; Wagner Hildebert; Chrubasik Sigrun",
+      "first_author": "Chrubasik Julia E",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

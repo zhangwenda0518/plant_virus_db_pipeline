@@ -2,30 +2,40 @@
   "week": "2026-W28",
   "start": "2026-07-06",
   "end": "2026-07-12",
-  "generated": "2026-07-09 15:10:05",
-  "total_new": 8,
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 40,
   "by_category": {
-    "General": 3,
-    "Seco_Bromo_Tombus": 1,
-    "Gemini_Begomo": 1,
-    "Clostero_Beta": 1,
-    "Potyviridae": 1,
-    "Tospo_Bunya": 1,
-    "Luteo_Solemo": 1,
-    "Rhabdo_Reo_Fiji_Tenu": 1
+    "Host_Virus_Interactions": 15,
+    "Control_Management": 11,
+    "Antiviral_Resistance_Genes": 6,
+    "New_Virus": 3,
+    "Biotechnology_Applications": 3,
+    "Detection_Methods": 2,
+    "Viral_Diversity_Ecology": 2,
+    "Transmission_Epidemiology": 2,
+    "Molecular_Characterization": 1,
+    "General": 1
   },
   "ai_summary": "",
   "top_papers": [
     {
-      "pmid": "42294678",
-      "doi": "10.1128/mbio.00221-26",
-      "title": "A viroid-like RNA can be transmitted among different ",
-      "journal": "mBio",
+      "pmid": "42419434",
+      "doi": "10.1016/j.jviromet.2026.115434",
+      "title": "Broadening the use of Virus-Mimicking Artificial Positive Controls in Plant Virus Diagnostics.",
+      "abstract": "Positive controls are essential for diagnostics yet access to high quality ones remains a persistent bottleneck for assay validation and quality control. Infected tissues are scarce or even regulated, whereas synthetic DNA fragments lack matrix effects and raise contamination risks. Here, we validate the Virus-Mimicking Artificial Positive Control (ViMAPC) platform for 18 viruses, demonstrating platform scalability across multiple virus taxa. ViMAPCs primarily use genus-matched surrogates and built-in size shifts to easily distinguish natural infections (true positives) from false positives due to contamination. Controls were generated via chimeric primer reverse transcription followed by end-point PCR using peer-reviewed protocols. All targets yielded expected amplicons with designed size differentiation and similar amplification behaviour to naturally infected material, with percent differences in amplicon intensity of ≤30%. Independent synthesis and validation in two laboratories achieved 100% success with design-to-use timelines of 4-5 days, demonstrating transferability for routine diagnostic workflows. By providing rapid, low-cost controls that mimic natural infection while remaining clearly identifiable, ViMAPCs enable robust diagnostic validation, contamination tracing, and cross-laboratory comparability, supporting diagnostic laboratories in rapid assay deployment for both newly discovered and quarantine viruses.",
+      "journal": "Journal of virological methods",
       "year": 2026,
+      "pub_date": "2026-07-08",
+      "authors": "Atanda Habeeb Y; Osundahunsi Bolaji; Singh Shivani; Villamor Dan E; Tzanetakis Ioannis E",
+      "first_author": "Atanda Habeeb Y",
       "categories": [
-        "General"
+        "Detection_Methods"
       ],
-      "summary_zh": "",
+      "virus_name": "多种植物病毒（18种）",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
       "relevance_level": "",
       "journal_quality": "",
       "source": ""
@@ -34,56 +44,22 @@
       "pmid": "42410505",
       "doi": "10.1186/s12870-026-09448-z",
       "title": "Development of RT-RPA assays for rapid detection of mango-infecting viruses using high-throughput sequencing-derived genomic information.",
+      "abstract": "Plant viral diseases pose a major threat to perennial fruit crops, where infections often remain latent and persist over long periods, facilitating unnoticed spread through planting material. Recent advances in high-throughput sequencing (HTS) have greatly expanded knowledge of plant viral diversity and plant-virus interactions, including the identification of emerging and re-emerging viruses. However, translating virome-level discoveries into practical disease management tools remains a significant challenge, particularly for field-level surveillance and sustainable crop protection. Mango (Mangifera indica), a globally important fruit crop, exemplifies this gap, as virus infections are poorly correlated with visible symptoms and reliable on-site diagnostic tools are limited. In this study, HTS was employed to reconfirm the presence of mangifera indica latent virus (MiLV) and mangifera virus 1 (MaV-1) in mango plants and to generate validated genomic information for diagnostic assay development. Building on these data, reverse transcription-recombinase polymerase amplification (RT-RPA) assays were developed and optimized for rapid virus detection. The assays operated efficiently under isothermal conditions (40 °C) within 25 min. The MiLV RT-RPA assay enabled direct detection from crude leaf extracts without the need of RNA purification, whereas MaV-1 detection required purified RNA as template. Sensitivity analysis showed that the MiLV RT-RPA assay detected viral RNA up to 0.01 fg µl⁻¹ (equivalent to a 10⁻¹⁰ dilution of 100 ng µl⁻¹ RNA) and MaV-1 up to 0.1 ng µl⁻¹ showed complete concordance with RT-PCR (Cohen's K = 1.00). Validation using field-collected symptomatic and asymptomatic samples demonstrated complete concordance with conventional RT-PCR. The detection of both viruses in young grafted plants showed the potential role of vegetative propagation in virus dissemination and emphasizes the importance of screening both scion and rootstock materials. This study demonstrates how HTS-based insights into plant viral diversity can be effectively translated into rapid, field-deployable molecular diagnostics. The developed RT-RPA assays provide a practical tool for routine virus surveillance, certification of virus-free planting material, thereby contributing to improved stress resilience and sustainable mango production.",
       "journal": "BMC plant biology",
       "year": 2026,
+      "pub_date": "2026-07-06",
+      "authors": "Prajapati Malyaj R; Bhardwaj Pooja; Gehlot Jayesh; Singhal Pankhuri; Singh Deepak; ... (+3)",
+      "first_author": "Prajapati Malyaj R",
       "categories": [
-        "General"
+        "Control_Management",
+        "Detection_Methods",
+        "Viral_Diversity_Ecology"
       ],
-      "summary_zh": "",
-      "relevance_level": "",
-      "journal_quality": "",
-      "source": ""
-    },
-    {
-      "pmid": "42414904",
-      "doi": "10.1186/s12870-026-09453-2",
-      "title": "SatRNA-mediated exacerbation of disease symptoms in plants reduces virus transmission potential by aphids.",
-      "journal": "BMC plant biology",
-      "year": 2026,
-      "categories": [
-        "General",
-        "Seco_Bromo_Tombus"
-      ],
-      "summary_zh": "",
-      "relevance_level": "",
-      "journal_quality": "",
-      "source": ""
-    },
-    {
-      "pmid": "42409263",
-      "doi": "10.1016/j.mbs.2026.109765",
-      "title": "Intelligent machine learning solutions with Bayesian regularization backpropagation adaptive networks for differential systems of Maize streak virus diseases.",
-      "journal": "Mathematical biosciences",
-      "year": 2026,
-      "categories": [
-        "Gemini_Begomo"
-      ],
-      "summary_zh": "",
-      "relevance_level": "",
-      "journal_quality": "",
-      "source": ""
-    },
-    {
-      "pmid": "42417722",
-      "doi": "10.1094/PDIS-04-25-0864-SR",
-      "title": "Multiplex RT-PCR for simultaneous detection of seven cucurbit viruses found in Florida cucurbits.",
-      "journal": "Plant disease",
-      "year": 2026,
-      "categories": [
-        "Clostero_Beta",
-        "Potyviridae"
-      ],
-      "summary_zh": "",
+      "virus_name": "芒果潜隐病毒（MiLV）和芒果病毒1号（MaV-1）",
+      "taxonomy": "",
+      "host_plant": "芒果",
+      "location": "",
+      "results": "",
       "relevance_level": "",
       "journal_quality": "",
       "source": ""
@@ -92,26 +68,43 @@
       "pmid": "42410685",
       "doi": "10.1094/PDIS-02-26-0339-RE",
       "title": "Harnessing wild peanut genetic resources for field resistance to tomato spotted wilt and late leaf spot diseases.",
+      "abstract": "Tomato spotted wilt virus (TSWV) and late leaf spot (LLS) are among the major constraints to peanut production. Cultivated peanut has narrow genetic bases and lacks strong sources of resistance. Wild species, on the other hand, harbor diverse and strong resistances to multiple pathogens. In this study, we evaluated advanced breeding lines carrying introgressions from multiple wild Arachis species (A. stenosperma, A. batizocoi, A. valida, and A. cardenasii) across three contrasting field environments and experimental designs in Georgia, USA using complementary incidence- and severity-based phenotyping. Genotype effects were highly significant for both diseases. Several wild-derived lines -particularly those from A. stenosperma ancestry- showed strong and stable TSWV resistance across environments. Interestingly, some lines lacking detectable wild segments also showed high resistance to TSWV, suggesting cryptic or undetected introgressions. LLS resistance was primarily associated with the characteristic A. cardenasii segments on A02 and A03, and lines stacking these introgressions consistently outperformed both cultivated parents and Georgia-06G, the most popular cultivar in the USA. Correlations between TSWV and LLS responses were weak, confirming genetic independence and emphasizing the need to screen both traits. A small subset of lines combined resistance to both diseases, and many also retained resistance loci to root-knot nematode (RKN), expanding their value as multi-trait donors. These findings demonstrate the power of wild introgression breeding for enhancing disease resistance and provide a foundation for deploying stacked alleles through marker-assisted and multi-environment selection.",
       "journal": "Plant disease",
       "year": 2026,
+      "pub_date": "2026-07-06",
+      "authors": "Maharjan Namrata; Culbreath Albert; Gonzales Maricel; Bertioli David; Leal-Bertioli Soraya",
+      "first_author": "Maharjan Namrata",
       "categories": [
-        "Tospo_Bunya"
+        "Host_Virus_Interactions"
       ],
-      "summary_zh": "",
+      "virus_name": "Tomato spotted wilt virus (TSWV)",
+      "taxonomy": "",
+      "host_plant": "花生 (peanut)",
+      "location": "",
+      "results": "",
       "relevance_level": "",
       "journal_quality": "",
       "source": ""
     },
     {
-      "pmid": "42410684",
-      "doi": "10.1094/PDIS-03-26-0527-RE",
-      "title": "Prevalence and diversity of yellow dwarf virus strains in Nebraska cereal crops.",
-      "journal": "Plant disease",
+      "pmid": "42414904",
+      "doi": "10.1186/s12870-026-09453-2",
+      "title": "SatRNA-mediated exacerbation of disease symptoms in plants reduces virus transmission potential by aphids.",
+      "abstract": "[BACKGROUND] Plant viruses have evolved adaptations that enable them to alter host cues, thereby facilitating their replication and efficient transmission by insect vectors. Satellite RNAs (satRNAs), which accompany certain plant RNA viruses and are dependent on them for replication and transmission, can change the progression of pathogenesis and the expression of disease symptoms. This study aimed to analyse how the change in the course of infection by satRNA (exacerbation or mitigation of pathogenesis) impacts the subsequent stages of virus transmission. We hypothesised that satRNAs influence insect behaviour toward infected plants depending on their effect on pathogenesis progress; specifically, a significant disease exacerbation reduces plant attractiveness to aphids, whereas symptom mitigation promotes attraction. [RESULTS] Using peanut stunt virus (PSV) and cucumber mosaic virus (CMV), and their satRNAs, which induce divergent infection symptoms on Nicotiana benthamiana or Solanum lycopersicum plants, olfactometry, electrical penetration graph (EPG) monitoring, virus acquisition and transmission by Myzus persicae were analysed. The results showed that satRNA, naturally associated with the helper virus, that alleviate disease symptoms caused the plants to be more attractive to the insect vectors. On the other hand, the presence of satRNAs leading to symptom exacerbation reduced plant attractiveness and discouraged phloem feeding. However, acquisition effects were host-dependent: while symptom-exacerbating satRNAs generally reduced acquisition, nc-satRNA markedly enhanced CMV acquisition from N. benthamiana. Moreover, virus transmission was significantly reduced only in S. lycopersicum. [CONCLUSIONS] These findings suggest that symptom-attenuating satRNAs have greater capacity to persist in the environment by limiting disease damage in host plants and maintaining plant attractiveness to aphid vectors, thereby facilitating virus acquisition and transmission. In contrast, symptom-exacerbating satRNA variants appear not only to diminish the number of cells available for viral replication due to severe symptoms but also to reduce plant palatability and to impair vector feeding and thus virus transmission, particularly in crop hosts such as S. lycopersicum, which may limit their environmental persistence. Together, these results underscore the epidemiological relevance of satRNA-mediated symptom modulation as a factor shaping virus spread in natural and agricultural settings.",
+      "journal": "BMC plant biology",
       "year": 2026,
+      "pub_date": "2026-07-07",
+      "authors": "Wrzesińska-Krupa Barbara; Frąckowiak Patryk; Budziszewska Marta; Strażyński Przemysław; Obrępalska-Stęplowska Aleksandra",
+      "first_author": "Wrzesińska-Krupa Barbara",
       "categories": [
-        "Luteo_Solemo"
+        "Host_Virus_Interactions",
+        "Transmission_Epidemiology"
       ],
-      "summary_zh": "",
+      "virus_name": "花生矮化病毒(PSV)和黄瓜花叶病毒(CMV)",
+      "taxonomy": "",
+      "host_plant": "本氏烟(Nicotiana benthamiana)和番茄(Solanum lycopersicum)",
+      "location": "",
+      "results": "",
       "relevance_level": "",
       "journal_quality": "",
       "source": ""
@@ -120,12 +113,132 @@
       "pmid": "42177618",
       "doi": "10.1016/j.molp.2026.05.012",
       "title": "Plant viruses hijack and stabilize host ubiquitin-specific protease 14 to prevent viral protein degradation for efficient infection.",
+      "abstract": "Plant viruses evade host RNA silencing through viral suppressors, but whether they share strategies to prevent viral protein degradation remains unknown. Ubiquitinome profiling of Nicotiana benthamiana infected with three potyviruses revealed extensive reprogramming of host ubiquitination. Crucially, ubiquitin-specific protease 14 (UBP14) exhibited markedly reduced ubiquitination and increased accumulation across infections. We demonstrate that the potyviral cylindrical inclusion (CI) protein binds to UBP14, suppressing its ubiquitination and enhancing its stability. CI recruits UBP14 to viral replication complexes, where it deubiquitinates and stabilizes viral replication components, leading to more effective viral infection. Knocking down UBP14 or disrupting CI-UBP14 interaction severely attenuated infection, demonstrating a proviral function of UBP14. UBP14 is also critical for efficient viral infection across four additional families. Notably, potexvirus TGBp1 and nucleorhabdovirus P proteins stabilize UBP14 by inhibiting its ubiquitination. Thus, UBP14 represents a common proviral host factor. By convergently evolving UBP14-targeting effectors, plant viruses subvert host proteostasis to evade antiviral degradation.",
       "journal": "Molecular plant",
       "year": 2026,
+      "pub_date": "2026-07-06",
+      "authors": "Zhuang Xinjian; Qiu Yanglin; Du Xinying; Zhang Yuanming; Lu Wenlong; ... (+4)",
+      "first_author": "Zhuang Xinjian",
       "categories": [
-        "Rhabdo_Reo_Fiji_Tenu"
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
       ],
-      "summary_zh": "",
+      "virus_name": "多种植物病毒（potyviruses, potexvirus, nucleorhabdovirus）",
+      "taxonomy": "",
+      "host_plant": "Nicotiana benthamiana",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42410347",
+      "doi": "10.1186/s12864-026-13141-8",
+      "title": "Mixed viral infections uncover multifaceted RNA silencing strategies in plant antiviral defense.",
+      "abstract": "[BACKGROUND] Alphanecrovirus tessellati and Alphanecrovirus oleae are closely related alphanecroviruses, sharing over 74% genomic identity and frequently co-infecting plants under natural conditions. Despite their frequent coexistence, the molecular consequences of single versus mixed infections, particularly concerning host RNA silencing responses, remain poorly understood. Here, we investigated the antiviral defense responses of Nicotiana benthamiana to single and mixed infections with both viruses, focusing on symptom development, viral accumulation, Dicer-like (DCL) gene expression, and virus-derived small interfering RNA (vsiRNA) profiles. [RESULTS] Single infections resulted in contrasting disease phenotypes: A. oleae induced severe systemic necrosis and high viral accumulation, whereas A. tessellati caused transient infections with mild symptoms. In mixed infections, A. tessellati accumulated to significantly higher levels and was associated with enhanced disease severity, indicating that the interaction between the two viruses altered infection dynamics and favored A. tessellati accumulation. In contrast, A. oleae showed reduced relative genomic RNA accumulation in mixed infections despite the persistence of disease symptoms. Gene expression analyses showed consistent upregulation of DCL4 and DCL2 during mixed infection, supporting their involvement in antiviral RNA silencing under co-infection conditions. Small RNA profiling revealed infection-dependent differences in vsiRNA accumulation patterns. Notably, mixed infection was associated with a change in the predominant vsiRNA size class for A. oleae, alongside a shift in vsiRNAs genomic targeting from the RdRp gene during single infection to the suppressor-associated p6 gene during mixed infection, indicating a reprogramming of host silencing responses. [CONCLUSIONS] Our results demonstrate that closely related viruses can differentially modulate host RNA silencing responses depending on the infection context. These findings highlight the plasticity of antiviral RNA silencing during viral co-infections and provide new insights into how mixed infections reshape host-virus interactions at the molecular level.",
+      "journal": "BMC genomics",
+      "year": 2026,
+      "pub_date": "2026-07-07",
+      "authors": "Materatski Patrick; Ribeiro Joana Amaro; Marques Cristiana; Albuquerque André; do Rosário Félix Maria; ... (+1)",
+      "first_author": "Materatski Patrick",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Alphanecrovirus tessellati 和 Alphanecrovirus oleae",
+      "taxonomy": "",
+      "host_plant": "Nicotiana benthamiana（本氏烟）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42410527",
+      "doi": "10.1186/s12870-026-09348-2",
+      "title": "Characterization of the C4 proteins encoded by okra-infecting geminiviruses in India.",
+      "abstract": "[BACKGROUND] Okra (bhendi) is a widely cultivated food crop in warm regions of the world, with India contributing approximately 60% of global production. However, okra cultivation in India is severely constrained by viral diseases, among which infections caused by the geminiviruses bhendi yellow vein mosaic virus (BYVMV) and okra enation leaf curl virus (OELCuV), in association with their satellites, represent major limitations to crop productivity. In recent years, the geminivirus-encoded C4 protein has emerged as a key pathogenicity determinant in this viral family, with functions that include suppression of multiple layers of plant antiviral defence and induction of disease symptoms. [RESULTS] Here, we comparatively characterize the C4 proteins of BYVMV and OELCuV by determining their targeting signals and subcellular localization, and by assessing their ability to induce developmental abnormalities and interfere with the spread of RNA silencing in the SUC-SUL reporter system. Our results reveal that the two C4 proteins display distinct subcellular localization patterns, yet both are capable of inducing developmental alterations, likely through different mechanisms, and of decreasing the spread of RNA silencing in the reporter system, conceivably via interaction with a common host factor. [CONCLUSIONS] Together, these findings suggest that C4 might be a multifunctional virulence factor in okra-infecting geminiviruses and act as a symptom determinant. The C4 proteins encoded by BYVMV and OELCuV therefore emerge as potential targets for the development of antiviral management strategies in okra.",
+      "journal": "BMC plant biology",
+      "year": 2026,
+      "pub_date": "2026-07-07",
+      "authors": "Chodon Aparna; Medina-Puche Laura; Wei Hua; Pandi Gopal; Lozano-Durán Rosa",
+      "first_author": "Chodon Aparna",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "bhendi yellow vein mosaic virus (BYVMV) 和 okra enation leaf curl virus (OELCuV)",
+      "taxonomy": "",
+      "host_plant": "秋葵（okra/bhendi）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2423879",
+      "doi": "10.1038/321528a0",
+      "title": "Genetic recombination between RNA components of a multipartite plant virus.",
+      "abstract": "Genetic recombination of DNA is one of the fundamental mechanisms underlying the evolution of DNA-based organisms and results in their diversity and adaptability. The importance of the role of recombination is far less evident for the RNA-based genomes that occur in most plant viruses and in many animal viruses. RNA recombination has been shown to promote the evolutionary variation of picornaviruses, it is involved in the creation of defective interfering (DI) RNAs of positive- and negative-strand viruses and is implicated in the synthesis of the messenger RNAs of influenza virus and coronavirus. However, RNA recombination has not been found to date in viruses that infect plants. In fact, the lack of DI RNAs and the inability to demonstrate recombination in mixedly infected plants has been regarded as evidence that plants do not support recombination of viral RNAs. Here we provide the first molecular evidence for recombination of plant viral RNA. For brome mosaic virus (BMV), a plus-stranded, tripartite-genome virus of monocots, we show that a deletion in the 3' end region of a single BMV RNA genomic component can be repaired during the development of infection by recombination with the homologous region of either of the two remaining wild-type BMV RNA components. This result clearly shows that plant viruses have available powerful recombinatory mechanisms that previously were thought to exist only in animal hosts, thus they are able to adapt and diversify in a manner comparable to animal viruses. Moreover, our observation suggests an increased versatility of viruses for use as vectors in introducing new genes into plants.",
+      "journal": "Nature",
+      "year": 0,
+      "pub_date": "",
+      "authors": "Bujarski J J; Kaesberg P",
+      "first_author": "Bujarski J J",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Brome mosaic virus (BMV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42431408",
+      "doi": "10.1094/MPMI-12-25-0176-R",
+      "title": "A Novel Approach to Engineering Tomato Spotted Wilt Virus Infectious Clones by Disarming Key Nodes in Anti-Viral Defenses.",
+      "abstract": "Tomato spotted wilt virus (TSWV) is an economically devastating pathogen that rapidly overcomes genetic resistance in major crops. Reverse genetic systems are crucial for investigating plant-virus interactions and resistance breaking mechanisms, and developing these tools for segmented ambisense RNA viruses remains a crucial challenge. Current TSWV-clones rely on extensively modified Asian isolates requiring co-delivery of multiple replication helpers and viral silencing suppressors. Streamlining these systems for regionally significant strains with minimal genetic alterations is essential. Here we developed the first infectious clone of a USA TSWV isolate (PA01). Three binary plasmids contain cDNAs for the antigenomic L and S segments, and the genomic M segment, with enhanced GFP replacing NSs on the S segment. Co-delivery of the cucumovirus 2b alone or in combination with tombusvirus P19 or begomovirus AL2, achieved a high proportion of systemically infected Nicotiana benthamiana and Capsicum annuum plants. In N. tabacum, co-delivering the Caenorhabditis elegans cell death suppressor CED-9, or using NahG transgenic plants produced 20 to 62% systemically infected plants. These data indicate that in addition to the anti-viral RNA silencing machinery, additional host defense pathways influence TSWV rescue and systemic infection from cDNA.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 2026,
+      "pub_date": "2026-07-10",
+      "authors": "Ball Haden C; Atallah Osama; Garcia-Ruiz Hernan; Bedsole Caleb O; Shaw Brian; ... (+2)",
+      "first_author": "Ball Haden C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Tomato spotted wilt virus (TSWV)",
+      "taxonomy": "",
+      "host_plant": "Nicotiana benthamiana, Capsicum annuum, Nicotiana tabacum",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "36565261",
+      "doi": "10.1684/vir.2022.0979",
+      "title": "[Antiviral properties of plant alkaloids against RNA viruses].",
+      "abstract": "",
+      "journal": "Virologie (Montrouge, France)",
+      "year": 0,
+      "pub_date": "",
+      "authors": "Girard Marie-Pierre; Merindol Natacha; Berthoux Lionel; Desgagné-Penix Isabel",
+      "first_author": "Girard Marie-Pierre",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
       "relevance_level": "",
       "journal_quality": "",
       "source": ""

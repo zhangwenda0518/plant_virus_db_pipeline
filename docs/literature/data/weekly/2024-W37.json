@@ -1,0 +1,241 @@
+{
+  "week": "2024-W37",
+  "start": "2024-09-09",
+  "end": "2024-09-15",
+  "generated": "2026-07-13 02:59:41",
+  "total_new": 32,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 12,
+    "Host_Virus_Interactions": 9,
+    "New_Virus": 5,
+    "Control_Management": 4,
+    "Viral_Diversity_Ecology": 2,
+    "Detection_Methods": 1,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "39106871",
+      "doi": "10.1016/j.chom.2024.07.014",
+      "title": "Protein arginine methyltransferase 6 mediates antiviral immunity in plants.",
+      "abstract": "Viral suppressor RNA silencing (VSR) is essential for successful infection. Nucleotide-binding and leucine-rich repeat (NLR)-based and autophagy-mediated immune responses have been reported to target VSR as counter-defense strategies. Here, we report a protein arginine methyltransferase 6 (PRMT6)-mediated defense mechanism targeting VSR. The knockout and overexpression of PRMT6 in tomato plants lead to enhanced and reduced disease symptoms, respectively, during tomato bush stunt virus (TBSV) infection. PRMT6 interacts with and inhibits the VSR function of TBSV P19 by methylating its key arginine residues R43 and R115, thereby reducing its dimerization and small RNA-binding activities. Analysis of the natural tomato population reveals that two major alleles associated with high and low levels of PRMT6 expression are significantly associated with high and low levels of viral resistance, respectively. Our study establishes PRMT6-mediated arginine methylation of VSR as a mechanism of plant immunity against viruses.",
+      "journal": "Cell host & microbe",
+      "year": 2024,
+      "pub_date": "2024-09-11",
+      "authors": "Zhu Qiangqiang; Ahmad Ayaz; Shi Chunmei; Tang Qi; Liu Chunyan; ... (+4)",
+      "first_author": "Zhu Qiangqiang",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "番茄丛矮病毒 (TBSV)",
+      "taxonomy": "",
+      "host_plant": "番茄",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39249561",
+      "doi": "10.1007/s00705-024-06128-x",
+      "title": "Complete genome sequence of grapevine yellow speckle viroid 3, a novel apscaviroid infecting grapevine, characterized by high-throughput sequencing.",
+      "abstract": "A novel grapevine viroid was discovered in an asymptomatic grapevine of Indian rootstocks. The whole genome sequence of the viroid (370 nt) was determined by high-throughput sequencing as well as RT-PCR followed by cloning and Sanger sequencing. The terminal conserved region (TCR), central conserved region (CCR) upper strand, and CCR lower strand are conserved regions found in the viroid that are unique to the members of the genus Apscaviroid. Based on our findings and the demarcation criteria for viroids, the novel viroid, which we have tentatively named \"grapevine yellow speckle viroid 3\" is a putative new member of the genus Apscaviroid.",
+      "journal": "Archives of virology",
+      "year": 2024,
+      "pub_date": "2024-09-09",
+      "authors": "Prajapati Malyaj R; Thapa Pooja; Diksha Damini; Sharma Susheel Kumar; Gupta Nitika; ... (+1)",
+      "first_author": "Prajapati Malyaj R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "grapevine yellow speckle viroid 3 (GYSVd-3)",
+      "taxonomy": "Pospiviroidae, Apscaviroid",
+      "host_plant": "葡萄 (Vitis vinifera, Indian rootstocks)",
+      "location": "印度 (未具体说明地区)",
+      "results": "获得全长370 nt基因组，含有TCR、CCR上链和下链保守区，符合Apscaviroid属特征。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39339524",
+      "doi": "10.3390/plants13182550",
+      "title": "Defense Responses Induced by Viral Movement Protein and Its Nuclear Localization Modulate Virus Cell-to-Cell Transport.",
+      "abstract": "Movement proteins (MPs) encoded by plant viruses are essential for cell-to-cell transport of viral genomes through plasmodesmata. The genome of hibiscus green spot virus contains a module of two MP genes termed 'binary movement block' (BMB), encoding the proteins BMB1 and BMB2. Here, BMB1 is shown to induce a defense response in Nicotiana benthamiana plants that inhibits BMB-dependent virus transport. This response is characterized by the accumulation of reactive oxygen species, callose deposition in the cell wall, and upregulation of 9-LOX expression. However, the BMB1-induced response is inhibited by coexpression with BMB2. Furthermore, BMB1 is found to localize to subnuclear structures, in particular to Cajal bodies, in addition to the cytoplasm. As shown in experiments with a BMB1 mutant, the localization of BMB1 to nuclear substructures enhances BMB-dependent virus transport. Thus, the virus transport mediated by BMB proteins is modulated by (i) a BMB1-induced defense response that inhibits transport, (ii) suppression of the BMB1-induced response by BMB2, and (iii) the nuclear localization of BMB1 that promotes virus transport. Collectively, the data presented demonstrate multiple levels of interactions between viral pathogens and their plant hosts during virus cell-to-cell transport.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2024,
+      "pub_date": "2024-09-11",
+      "authors": "Atabekova Anastasia K; Lazareva Ekaterina A; Lezzhov Alexander A; Golyshev Sergei A; Skulachev Boris I; ... (+2)",
+      "first_author": "Atabekova Anastasia K",
+      "categories": [
+        "Host_Virus_Interactions",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "hibiscus green spot virus",
+      "taxonomy": "",
+      "host_plant": "本氏烟 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39261582",
+      "doi": "10.1038/s41598-024-72298-y",
+      "title": "Genetic analysis of tomato brown rugose fruit virus reveals evolutionary adaptation and codon usage bias patterns.",
+      "abstract": "Tomato brown rugose fruit virus (ToBRFV) poses a significant threat to tomato production worldwide, prompting extensive research into its genetic diversity, evolutionary dynamics, and adaptive strategies. In this study, we conducted a comprehensive analysis of ToBRFV at the codon level, focusing on codon usage bias, selection pressures, and evolutionary patterns across multiple genes. Our analysis revealed distinct patterns of codon usage bias and selection pressures within the ToBRFV genome, with varying levels of genetic diversity and evolutionary constraints among different genes. We observed a transition/transversion bias of 2.07 across the entire ToBRFV genome, with the movement protein (MP) gene exhibiting the highest transition/transversion bias and SNP density, suggesting potential evolutionary pressures or a higher mutation rate in this gene. Furthermore, our study identified episodic positive selection primarily in the MP gene, highlighting specific codons subject to adaptive changes in response to host immune pressures or environmental factors. Comparative analysis of codon usage bias in the coat protein (CP) and RNA-dependent RNA polymerase (RdRp) genes revealed gene-specific patterns reflecting functional constraints and adaptation to the host's translational machinery. Our findings provide valuable insights into the molecular mechanisms driving ToBRFV evolution and adaptation, with implications for understanding viral pathogenesis, host-virus interactions, and the development of control strategies. Future research directions include further elucidating the functional significance of codon usage biases, exploring the role of episodic positive selection in viral adaptation, and leveraging these insights to inform the development of effective antiviral strategies and crop protection measures.",
+      "journal": "Scientific reports",
+      "year": 2024,
+      "pub_date": "2024-09-11",
+      "authors": "Ghorbani Abozar",
+      "first_author": "Ghorbani Abozar",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "番茄褐色皱纹果病毒 (ToBRFV)",
+      "taxonomy": "",
+      "host_plant": "番茄",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39269658",
+      "doi": "10.1007/s00425-024-04529-5",
+      "title": "Bio-control of soil-borne virus infection by seed application of Glycyrrhiza glabra extract and the rhamnolipid Rhapynal.",
+      "abstract": "Seed-application of the natural products protects sugar beet and wheat plants against infection with plasmodiophorid-transmitted viruses and thus may represent an efficient, environmentally friendly, easy and cost effective biocontrol strategy. In times of intensive agriculture, resource shortening and climate change, alternative, more sustainable and eco-friendly plant protection strategies are required. Here, we tested the potential of the natural plant substances Glycyrrhiza glabra leaf extract (GE) and the rhamnolipid Rhapynal (Rha) applied to seeds to protect against infection of sugar beet and wheat with soil-borne plant viruses. The soil-borne Polymyxa betae- and Polymyxa graminis-transmitted viruses cause extensive crop losses in agriculture and efficient control strategies are missing. We show that GE and Rha both efficiently protect plants against infection with soil-borne viruses in sugar beet and wheat when applied to seeds. Moreover, the antiviral protection effect is independent of the cultivar used. No protection against Polymyxa sp. was observed after seed treatment with the bio-substances at our analysis time points. However, when we applied the bio-substances directly to soil a significant anti-Polymyxa graminis effect was obtained in roots of barley plants grown in the soil as well as in the treated soil. Despite germination can be affected by high concentrations of the substances, a range of antiviral protection conditions with no effect on germination were identified. Seed-treatment with the bio-substances did not negatively affect plant growth and development in virus-containing soil, but was rather beneficial for plant growth. We conclude that seed treatment with GE and Rha may represent an efficient, ecologically friendly, non-toxic, easy to apply and cost efficient biocontrol measure against soil-borne virus infection in plants.",
+      "journal": "Planta",
+      "year": 2024,
+      "pub_date": "2024-09-13",
+      "authors": "Fomitcheva Viktoria; Strauch Claudia J; Bonse Sabine; Bauer Petra; Kühne Thomas; ... (+1)",
+      "first_author": "Fomitcheva Viktoria",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "未提及（Polymyxa传播的土壤传播病毒）",
+      "taxonomy": "",
+      "host_plant": "甜菜和小麦",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38697409",
+      "doi": "10.1016/j.jep.2024.118269",
+      "title": "Evaluation of the antiplasmodial and anti-Toxoplasma activities of several Indonesian medicinal plant extracts.",
+      "abstract": "[ETHNOPHARMACOLOGICAL RELEVANCE] Malaria, caused by Plasmodium parasites, remains a significant global health challenge, particularly in tropical and subtropical regions. At the same time, the prevalence of toxoplasmosis has been reported to be 30% worldwide. Traditional medicines have long played a vital role in discovering and developing novel drugs, and this approach is essential in the face of increasing resistance to current antimalarial and anti-Toxoplasma drugs. In Indonesian traditional medicine, various plants are used for their therapeutic properties. This study focuses on eleven medicinal plants from which nineteen extracts were obtained and screened for their potential medicinal benefits against malaria and toxoplasmosis. [AIMS OF THE STUDY] The aim of this study was to evaluate the efficacy of extracts from Indonesian medicinal plants to inhibit Plasmodium falciparum, a parasite responsible for malaria, and Toxoplasma gondii, an opportunistic parasite responsible for toxoplasmosis. [METHODS] Nineteen extracts from eleven plants were subjected to in vitro screening against P. falciparum 3D7 (a chloroquine-sensitive strain) and the T. gondii RH strain. In vitro treatments were conducted on P. falciparum 3D7 and K1 (multidrug-resistant strains) using the potent extracts, and in vivo assessments were carried out with mice infected with P. yoelii 17XNL. LCMS analysis was also conducted to identify the main components of the most effective extract. [RESULTS] Seven extracts showed significant antiplasmodial activity (>80% inhibition) at a concentration of 100 μg/ml. These extracts were obtained from Dysoxylum parasiticum (Osbeck) Kosterm., Elaeocarpus glaber (Bl.) Bijdr., Eleutherine americana Merr., Kleinhovia hospita L., Peronema canescens Jack, and Plectranthus scutellarioides (L.) R.Br. Notably, the D. parasiticum ethyl acetate extract exhibited high selectivity and efficacy both in vitro and in vivo. Herein, the key active compounds oleamide and erucamide were identified, which had IC50 values (P. falciparum 3D7/K1) of 17.49/23.63 μM and 32.49/51.59 μM, respectively. [CONCLUSIONS] The results of this study highlight the antimalarial potential of plant extracts collected from Indonesia. Particularly, extracts from D. parasiticum EtOH and EtOAc stood out for their low toxicity and strong antiplasmodial properties, with the EtOAc extract emerging as a notably promising antimalarial candidate. Key compounds identified within this extract demonstrate the complexity of extracts' action against malaria, potentially targeting both the parasite and the host. This suggests a promising approach for developing new antimalarial strategies that tackle the multifaceted challenges of drug resistance and disease management. Future investigations are necessary to unlock the full therapeutic potential of these extracts.",
+      "journal": "Journal of ethnopharmacology",
+      "year": 2024,
+      "pub_date": "2024-09-15",
+      "authors": "Ariefta Nanang Rudianto; Sofian Ferry Ferdiansyah; Aboshi Takako; Kuncoro Hadi; Dinata Deden Indra; ... (+2)",
+      "first_author": "Ariefta Nanang Rudianto",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39021763",
+      "doi": "10.1016/j.omtn.2024.102235",
+      "title": "Protection of animals against devastating RNA viruses using CRISPR-Cas13s.",
+      "abstract": "The intrinsic nature of CRISPR-Cas in conferring immunity to bacteria and archaea has been repurposed to combat pathogenic agents in mammalian and plant cells. In this regard, CRISPR-Cas13 systems have proved their remarkable potential for single-strand RNA viruses targeting. Here, different types of Cas13 orthologs were applied to knockdown foot-and-mouth disease virus (FMDV), a highly contagious disease of a wide variety of species with genetically diverse strains and is widely geographically distributed. Using programmable CRISPR RNAs capable of targeting conserved regions of the viral genome, all Cas13s from CRISPR system type VI (subtype A/B/D) could comprehensively target and repress different serotypes of FMDV virus. This approach has the potential to destroy all strains of a virus as targets the ultra-conserved regions of genome. We experimentally compared the silencing efficiency of CRISPR and RNAi by designing the most effective short hairpin RNAs according to our developed scoring system and observed comparable results. This study showed successful usage of various Cas13 enzymes for suppression of FMDV, which provides a flexible strategy to battle with other animal infectious RNA viruses, an underdeveloped field in the biotechnology scope.",
+      "journal": "Molecular therapy. Nucleic acids",
+      "year": 2024,
+      "pub_date": "2024-09-10",
+      "authors": "Asadbeigi Adnan; Bakhtiarizadeh Mohammad Reza; Saffari Mojtaba; Modarressi Mohammad Hossein; Sadri Naser; ... (+4)",
+      "first_author": "Asadbeigi Adnan",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38925504",
+      "doi": "10.1016/j.jbiotec.2024.06.017",
+      "title": "Biologically inspired nanoformulations for the control of bacterial canker pathogens Clavibacter michiganensis subsp. michiganensis and subsp. capsici.",
+      "abstract": "Clavibacter michiganensis subsp. michiganensis (Cmm) and C. michiganensis subsp. capsici (Cmc) are phytopathogenic bacteria that cause bacterial canker disease in tomatoes and peppers, respectively. Bacterial canker disease poses serious challenges to solanaceous crops, causing significant yield losses and economic costs. Effective management necessitates the development of sustainable control strategies employing nanobiotechnology. In this study, the antibacterial effects of four Aspergillus sojae-mediated nanoformulations, including cobalt oxide nanoparticles (Co3O4 NPs), zinc oxide nanoparticles (ZnO NPs), cobalt ferrite nanoparticles (CoFe2O4 NPs), and CoFe2O4/functionalized multi-walled carbon nanotube (fMWCNT) bionanocomposite, were evaluated against Cmm and Cmc. The diameters of the zone of inhibition of A. sojae-mediated Co3O4 NPs, ZnO NPs, CoFe2O4 NPs, and CoFe2O4/fMWCNT bionanocomposite against Cmm and Cmc were 23.60 mm, 22.09 mm, 27.65 mm, 22.51 mm, and 19.33 mm, 17.66 mm, 21.64 mm, 18.77 mm, respectively. The broth microdilution assay was conducted to determine the minimal inhibitory and bactericidal concentrations. The MICs of Co3O4 NPs, ZnO NPs, CoFe2O4 NPs, and CoFe2O4/fMWCNT bionanocomposite against Cmm were 2.50 mg/mL, 1.25 mg/mL, 2.50 mg/mL, and 2.50 mg/mL, respectively. While, their respective MBCs against Cmm were 5.00 mg/mL, 2.50 mg/mL, 5.00 mg/mL, and 5.00 mg/mL. The respective MICs of Co3O4 NPs, ZnO NPs, CoFe2O4 NPs, and CoFe2O4/fMWCNT bionanocomposite against Cmc were 2.50 mg/mL, 1.25 mg/mL, 5.00 mg/mL, and 5.00 mg/mL. While, their respective MBCs against Cmc were 5.00 mg/mL, 2.50 mg/mL, 10.00 mg/mL, and 10.00 mg/mL. The morphological and ultrastructural changes of Cmm and Cmc cells were observed using field-emission scanning and transmission electron microscopy before and after treatment with sub-minimal inhibitory concentrations of the nanoformulations. Nanoformulation-treated bacterial cells became deformed and disrupted, displaying pits, deep cavities, and groove-like structures. The cell membrane detached from the bacterial cell wall, electron-dense particles accumulated in the cytoplasm, cellular components disintegrated, and the cells were lysed. Direct physical interactions between the prepared nanoformulations with Cmm and Cmc cells might be the major mechanism for their antibacterial potency. Further research is required for the in vivo application of the mycosynthesized nanoformulations as countermeasures to combat bacterial phytopathogens.",
+      "journal": "Journal of biotechnology",
+      "year": 2024,
+      "pub_date": "2024-09-10",
+      "authors": "Omran Basma A; Rabbee Muhammad Fazle; Baek Kwang-Hyun",
+      "first_author": "Omran Basma A",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38851370",
+      "doi": "10.1016/j.envres.2024.119345",
+      "title": "Review on personal protective equipment: Emerging concerns in micro(nano)plastic pollution and strategies for addressing environmental challenges.",
+      "abstract": "The COVID-19 pandemic was caused by the SARS-CoV-2 virus, marking one of the most catastrophic global health crises of the 21st century. Throughout this period, widespread use and improper disposal of personal protective equipment (PPE) emerged as a pressing environmental issue, significantly impacting various life forms. During the COVID-19 pandemic, there was a high rate of PEP disposal. An alarming 1.6 × 106 tons of plastic waste each day has been generated since the onset of the outbreak, predominantly from the inadequate disposal of PPE. The mismanagement and subsequent degradation of discarded PPE significantly contribute to increased non-biodegradable micro(nano)plastic (MNP) waste. This pollution has had profound adverse effects on terrestrial, marine, and aquatic ecosystems, which have been extensively of concern recently. Accumulated MNPs within aquatic organisms could serve as a potential route for human exposure when consuming seafood. This review presents a novel aspect concerning the pollution caused by MNPs, particularly remarking on their role during the pandemic and their detrimental effects on human health. These microplastic particles, through the process of fragmentation, transform into nanoparticles, persisting in the environment and posing potential hazards. The prevalence of MNP from PPE, notably masks, raises concerns about their plausible health risks, warranting global attention and comprehensive exploration. Conducting a comprehensive evaluation of the long-term effects of these processes and implementing effective management strategies is essential.",
+      "journal": "Environmental research",
+      "year": 2024,
+      "pub_date": "2024-09-15",
+      "authors": "Le Van-Giang; Nguyen Minh-Ky; Lin Chitsan; Nguyen Hoang-Lam; Nguyen Tri Quang Hung; ... (+5)",
+      "first_author": "Le Van-Giang",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39111320",
+      "doi": "10.1016/j.chom.2024.07.013",
+      "title": "Alleviating protein-condensation-associated damage at the endoplasmic reticulum enhances plant disease tolerance.",
+      "abstract": "Disease tolerance is an essential defense strategy against pathogens, alleviating tissue damage regardless of pathogen multiplication. However, its genetic and molecular basis remains largely unknown. Here, we discovered that protein condensation at the endoplasmic reticulum (ER) regulates disease tolerance in Arabidopsis against Pseudomonas syringae. During infection, Hematopoietic protein-1 (HEM1) and Bax-inhibitor 1 (BI-1) coalesce into ER-associated condensates facilitated by their phase-separation behaviors. While BI-1 aids in clearing these condensates via autophagy, it also sequesters lipid-metabolic enzymes within condensates, likely disturbing lipid homeostasis. Consequently, mutations in hem1, which hinder condensate formation, or in bi-1, which prevent enzyme entrapment, enhance tissue-damage resilience, and preserve overall plant health during infection. These findings suggest that the ER is a crucial hub for maintaining cellular homeostasis and establishing disease tolerance. They also highlight the potential of engineering disease tolerance as a defense strategy to complement established resistance mechanisms in combating plant diseases.",
+      "journal": "Cell host & microbe",
+      "year": 2024,
+      "pub_date": "2024-09-11",
+      "authors": "Tang Zhijuan; Shi Shaosong; Niu Ruixia; Zhou Yulu; Wang Zhao; ... (+5)",
+      "first_author": "Tang Zhijuan",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

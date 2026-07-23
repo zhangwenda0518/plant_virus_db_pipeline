@@ -253,19 +253,19 @@ function renderPapers() {
     // AI summary
     if (p.ai_done && (p.summary_zh || p.innovation)) {
       h += `<div class="ai-summary">`;
-      if (p.summary_zh && p.summary_zh !== '未提及') {
+      if (p.summary_zh && p.summary_zh !== 'Not Mentioned') {
         h += `<div class="ai-field"><span class="ai-label">摘要</span><span class="ai-value">${esc(p.summary_zh)}</span></div>`;
       }
-      if (p.innovation && p.innovation !== '未提及') {
+      if (p.innovation && p.innovation !== 'Not Mentioned') {
         h += `<div class="ai-field"><span class="ai-label">创新点</span><span class="ai-value">${esc(p.innovation)}</span></div>`;
       }
-      if (p.study_object && p.study_object !== '未提及') {
+      if (p.study_object && p.study_object !== 'Not Mentioned') {
         h += `<div class="ai-field"><span class="ai-label">研究对象</span><span class="ai-value">${esc(p.study_object)}</span></div>`;
       }
-      if (p.disease && p.disease !== '未提及') {
+      if (p.disease && p.disease !== 'Not Mentioned') {
         h += `<div class="ai-field"><span class="ai-label">病害</span><span class="ai-value">${esc(p.disease)}</span></div>`;
       }
-      if (p.method_zh && p.method_zh !== '未提及') {
+      if (p.method_zh && p.method_zh !== 'Not Mentioned') {
         h += `<div class="ai-field"><span class="ai-label">方法</span><span class="ai-value">${esc(p.method_zh)}</span></div>`;
       }
       h += `</div>`;

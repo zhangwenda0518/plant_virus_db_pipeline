@@ -1,0 +1,79 @@
+{
+  "month": "1990-09",
+  "generated": "2026-07-13 02:59:42",
+  "total": 3,
+  "by_category": {
+    "Host_Virus_Interactions": 1,
+    "Antiviral_Resistance_Genes": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "1698926",
+      "doi": "10.1099/0022-1317-71-9-2163",
+      "title": "Dependence of groundnut rosette virus on its satellite RNA as well as on groundnut rosette assistor luteovirus for transmission by Aphis craccivora.",
+      "abstract": "Transmission of groundnut rosette virus (GRV) by Aphis craccivora is known to depend on the additional presence in the source plants of a luteovirus, groundnut rosette assistor virus (GRAV). Naturally occurring isolates of GRV contain a satellite RNA which is the main cause of rosette symptoms in groundnut, different variants of the satellite being responsible for the green and chlorotic forms of rosette. In extensive glasshouse tests, GRAV-dependent transmission of GRV by A. craccivora occurred only from groundnut plants infected with satellite-containing isolates of GRV. This was true whether the GRV isolates were from groundnut plants from Nigeria or Malawi with either the green or chlorotic forms of rosette and whether they contained homologous or heterologous satellites. Aphid transmission of GRV therefore depends not only on the presence of GRAV but also on that of the GRV satellite RNA. This probably explains why satellite-free isolates of GRV have not been found in nature. This is the first report of satellite RNA mediating aphid transmission of a plant virus.",
+      "journal": "The Journal of general virology",
+      "year": 1990,
+      "pub_date": "1990-09-01",
+      "authors": "Murant A F",
+      "first_author": "Murant A F",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "groundnut rosette virus (GRV) 和 groundnut rosette assistor virus (GRAV)",
+      "taxonomy": "",
+      "host_plant": "花生 (groundnut)",
+      "location": "未提及（温室实验，样品源自尼日利亚和马拉维）",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "24220970",
+      "doi": "10.1007/BF00210073",
+      "title": "Progeny tests of barley, wheat, and potato regenerated from cell cultures after in vitro selection for disease resistance.",
+      "abstract": "Because plant cells cultured in vitro express genetic variability and since they can be regenerated into functional plants, procedures have been designed to use this system for the production of plants with new important agronomic characteristics, particularly for disease resistance. For barley, wheat, and potato somaclones have been found that were less susceptible to a toxin of Helminthosporium, fusaric acid, Fusarium coeruleum, F. sulphureum, or Phytophthora infestans, when screened in the first in-vitro-derived generation. Here the progeny of such somaclones is evaluated after natural and artificial infection, using greenhouse-grown or field material. The progenies of the same somaclones did not express detectable differences, which indicated that no heterozygous mutations occurred. Most lines and clones differed in their level of susceptibility to the pathogen compared to the level of the starting material, but these data were in no instance significant. It is discussed here whether this lack of significance is due to a lack of genetic differences or whether the test procedures are in adequate for detecting and securing the slight, probably quantitative, alterations.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 1990,
+      "pub_date": "1990-09-01",
+      "authors": "Wenzel G; Foroughi-Wehr B",
+      "first_author": "Wenzel G",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1975641",
+      "doi": "10.1038/347092a0",
+      "title": "Inhibition of HIV replication by pokeweed antiviral protein targeted to CD4+ cells by monoclonal antibodies.",
+      "abstract": "Functional impairment and selective depletion of CD4+ T cells, the hallmark of AIDS, are at least partly caused by human immunodeficiency virus (HIV-1) type 1 binding to the CD4 molecule and infecting CD4+ cells. It may, therefore, be of therapeutic value to target an antiviral agent to CD4+ cells to prevent infection and to inhibit HIV-1 production in patients' CD4+ cells which contain proviral DNA. We report here that HIV-1 replication in normal primary CD4+ T cells can be inhibited by pokeweed antiviral protein, a plant protein of relative molecular mass 30,000, which inhibits replication of certain plant RNA viruses, and of herpes simplex virus, poliovirus and influenza virus. Targeting pokeweed antiviral protein to CD4+ T cells by conjugating it to monoclonal antibodies reactive with CD5, CD7 or CD4 expressed on CD4+ cells, increased its anti-HIV potency up to 1,000-fold. HIV-1 replication is inhibited at picomolar concentrations of conjugates of pokeweed antiviral protein and monoclonal antibodies, which do not inhibit proliferation of normal CD4+ T cells or CD4-dependent responses. These conjugates inhibit HIV-1 protein synthesis and also strongly inhibit HIV-1 production in activated CD4+ T cells from infected patients.",
+      "journal": "Nature",
+      "year": 1990,
+      "pub_date": "1990-09-06",
+      "authors": "Zarling J M; Moran P A; Haffar O; Sias J; Richman D D; ... (+5)",
+      "first_author": "Zarling J M",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

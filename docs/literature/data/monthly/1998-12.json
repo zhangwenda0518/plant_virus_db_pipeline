@@ -1,0 +1,282 @@
+{
+  "month": "1998-12",
+  "generated": "2026-07-13 02:59:42",
+  "total": 13,
+  "by_category": {
+    "Host_Virus_Interactions": 5,
+    "New_Virus": 3,
+    "Control_Management": 2,
+    "Alphasatellitidae": 1,
+    "Molecular_Characterization": 1,
+    "Transmission_Epidemiology": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "9880028",
+      "doi": "10.1099/0022-1317-79-12-3101",
+      "title": "Ten distinct circular ssDNA components, four of which encode putative replication-associated proteins, are associated with the faba bean necrotic yellows virus genome.",
+      "abstract": "Four further circular ssDNA components (C7-C10), about 1 kb in size and structurally similar to the previously described components (C1-C6) found associated with a Syrian (Sy) isolate of faba bean necrotic yellows virus (FBNYV), have been identified. Similar to C1 and C2, two of the new components (C7 and C9) encode putative replication-associated (Rep) proteins of 33.2 and 32.7 kDa, respectively, the former of which is 90% identical to the C10 Rep protein of milk vetch dwarf virus (MDV). C8 encodes a putative protein (17.4 kDa) whose function is unknown, but which is highly conserved between FBNYV and the other nanoviruses MDV, subterranean clover stunt virus and banana bunchy top virus. The putative protein (19.7 kDa) encoded by C10 contains an LXCXE motif, which is also present in the homologues of its relatives, suggesting that they may all interact with plant retinoblastoma-like proteins. Sequence information for seven components of an Egyptian (Eg) FBNYV isolate indicated that six of them share > 96% identity with FBNYV-Sy. However, the C1 Rep protein of FBNYV-Eg was only 63.5% identical to that of FBNYV-Sy, but was 88.3 % identical to the MDV-C2 Rep protein. We conclude that the FBNYV genome consists of seven to ten components, six of which encode non-Rep proteins. All ten components of the FBNYV genome, except the Rep components C2 and C9, had closely related counterparts in the MDV genome. In spite of this similarity, FBNYV and MDV appear to be distinct virus species.",
+      "journal": "The Journal of general virology",
+      "year": 1998,
+      "pub_date": "1998-12-01",
+      "authors": "Katul L; Timchenko T; Gronenborn B; Vetten H J",
+      "first_author": "Katul L",
+      "categories": [
+        "New_Virus",
+        "Alphasatellitidae"
+      ],
+      "virus_name": "faba bean necrotic yellows virus (FBNYV)",
+      "taxonomy": "Nanoviridae, Nanovirus",
+      "host_plant": "蚕豆 (faba bean)",
+      "location": "叙利亚 (Syrian isolate) 和 埃及 (Egyptian isolate)",
+      "results": "C7和C9编码Rep蛋白，C8功能未知，C10含LXCXE基序；埃及分离物大部分组分与叙利亚高度同源，但C1与MDV-C2更相似。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "30845493",
+      "doi": "10.1094/PDIS.1998.82.12.1405C",
+      "title": "First Report of Sharka Disease Caused by Plum Pox Virus in Lithuania.",
+      "abstract": "Plum pox (sharka) disease caused by plum pox potyvirus (PPV) is considered the most important virus disease of stone fruit trees in Europe and the Mediterranean region. Nearly all those countries that produce stone fruits are affected (3). The causal virus of the disease is a European Plant Protection Organization A2 quarantine pathogen. Symptoms of leaf mottling, diffuse chlorotic spots, rings, and vein banding of varied intensity characteristic for plum pox virus infection were observed in the plum (Prunus domestica) orchard tree collection of the Lithuanian Institute of Horticulture in Babtai in 1996. Presence of this virus in the diseased trees was confirmed by double antibody sandwich-enzyme-linked immunosorbent assay (DAS-ELISA) with kits from BIOREBA (Reinach, Switzerland) and by polyclonal antibodies raised against a Moldavian isolate of PPV courtesy of T. D. Verderevskaya (Institute of Horticulture, Kishinev, Moldova). ELISAs with both sources of antiserum were positive for presence of PPV. Electron microscopy revealed the presence of potyvirus-like particles averaging 770 nm in extracts of mechanically inoculated plants of Chenopodium foetidum (chlorotic LL [local lesions]) and Pisum sativum cvs. Rainiai and Citron (mottling). For molecular diagnosis and characterization of this isolate, PPV-971, reverse transcription-polymerase chain reaction (RT-PCR) was employed. Total RNA from the leaves of infected pea was isolated as described (2). High molecular weight RNA selectively precipitated with 2 M lithium chloride was used for RT-PCR amplification of the coat protein encoding sequence by use of specific primers complementary to 5' and 3' parts of PPV coat protein L1 (GenBank accession no. X81081). Amino acid sequence comparison with GenBank data indicated 98.2% similarity with coat protein of PPV potyvirus isolated by E. Mais et al. (accession no. X81083) and 97.3% with PPV strain Rankovic (1).The specific DNA fragment, corresponding to predicted coat protein sequence size, was cloned into Escherichia coli pUC57 for DNA sequencing. Expression of the cloned sequence in bacteria and yeast expression systems is under investigation. The presence of PPV in plum trees in the 9-year-old collection at Babtai was confirmed by DAS-ELISA in 1997 and again in 1998. PPV was then detected in 20% of symptomatic trees of three cultivars. The Lithuanian PPV isolate reacted positively with \"universal\" Mab.5b and with a Mab (Mab.4DG5) specific for PPV-D. No reaction was observed with Mabs specific for PPV-M (Mab.AL), PPV-C (Mab.AC and Mab.TUV), and PPV-El Amar (Mab.EA24). PPV-971 seems to be a typical member of the less aggressive Dideron strain cluster of PPV (D. Boscia, personal communication). This is the first report of PPV in Lithuania and confirms the necessity for continuing the precautionary measures established in this country for indexing of nursery plum trees used for graft propagation. References: (1) S. Lain et al. Virus Res. 13:157, 1989. (2) J. Logemann et al. Anal. Biochem. 163:16, 1987. (3) M. Nemeth. OEPP/EPPO Bull. 24:525, 1994.",
+      "journal": "Plant disease",
+      "year": 1998,
+      "pub_date": "1998-12-01",
+      "authors": "Staniulis J; Stankiene J; Sasnauskas K; Dargeviciute A",
+      "first_author": "Staniulis J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Plum Pox Virus (PPV)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "Prunus domestica (plum); Chenopodium foetidum; Pisum sativum",
+      "location": "Babtai, Lithuania",
+      "results": "在李子树上观察到典型症状，ELISA和电镜确认PPV，RT-PCR和序列分析显示与PPV-Dideron株系高度同源（98.2%相似性），Mab鉴定为D株系。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9891975",
+      "doi": "10.1016/s0014-5793(98)01586-5",
+      "title": "Production of a functional single chain antibody attached to the surface of a plant virus.",
+      "abstract": "A potato virus X (PVX) vector was used to express a single chain antibody fragment (scFv) against the herbicide diuron, as a fusion to the viral coat protein. The modified virus accumulated in inoculated Nicotiana clevelandii plants and assembled to give virus particles carrying the antibody fragment. Electron microscopy was used to show that virus particles from infected leaf sap were specifically trapped on grids coated with a diuron-BSA conjugate. The results demonstrate that the PVX vector can be used as a presentation system for functional scFv.",
+      "journal": "FEBS letters",
+      "year": 1998,
+      "pub_date": "1998-12-28",
+      "authors": "Smolenska L; Roberts I M; Learmonth D; Porter A J; Harris W J; ... (+2)",
+      "first_author": "Smolenska L",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "马铃薯病毒X (Potato virus X, PVX)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30845460",
+      "doi": "10.1094/PDIS.1998.82.12.1298",
+      "title": "Viral Satellite RNAs for the Prevention of Cucumber Mosaic Virus (CMV) Disease in Field-Grown Pepper and Melon Plants.",
+      "abstract": "A benign viral satellite RNA, in combination with a mild strain of cucumber mosaic virus (CMV-S), was used as a \"vaccine\" or \"preinoculum\" to demonstrate the feasibility of protecting pepper (Capsicum annuum cv. California Wonder) and melon (Cucurbita melo cv. Janus des Canaries) against two severe CMV strains, CMV-D and CMV-16, in the final 2 years of a 4-year pilot field and greenhouse experiment. In the field, healthy pepper and melon seedlings challenged with CMV-D and CMV-16 reduced yields by 33 to 60%; CMV-S caused only limited yield reduction in pepper and had no effect on the yield of melon. Different time intervals between preinoculation of pepper and melon seedlings with CMV-S and challenge inoculation with the severe CMV strains were tested. All plants challenged 3 weeks after vaccination showed nearly complete protection from subsequent infection by severe strains. The yield from preinoculated and challenged pepper plants was 80% that of untreated plants, while the yield from preinoculated and challenged melon plants was increased slightly over the untreated control plants. The use of this technology for biological control of plant viruses is discussed.",
+      "journal": "Plant disease",
+      "year": 1998,
+      "pub_date": "1998-12-01",
+      "authors": "Montasser M S; Tousignant M E; Kaper J M",
+      "first_author": "Montasser M S",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "黄瓜花叶病毒（CMV-D, CMV-16）",
+      "taxonomy": "",
+      "host_plant": "辣椒、甜瓜",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9924822",
+      "doi": "10.1016/S0723-2020(98)80066-0",
+      "title": "Analysis of LMW RNA profiles of Frankia strains by staircase electrophoresis.",
+      "abstract": "An optimized technique of polyacrylamide gel electrophoresis, Staircase Electrophoresis (SCE), was applied to determine the stable Low Molecular Weight RNA (LMW RNA) profiles of 25 Frankia strains from diverse geographic origins and host specificity groups as well as species from other actinomycete genera. Application of the technique permits the rapid identification of Frankia strains and their differentiation from other actinomycetes. The isolates used in this study were grouped in eight clusters, each comprising strains with identical LMW RNA profiles. Comparison of these results with others obtained from DNA sequences or DNA hybridization methods suggest a high degree of complexity in the genus Frankia. Application of SCE to profile LMW RNA should in the future facilitate biodiversity studies of Frankia and discrimination of new species.",
+      "journal": "Systematic and applied microbiology",
+      "year": 1998,
+      "pub_date": "1998-12-01",
+      "authors": "Velázquez E; Cervantes E; Igual J M; Peix A; Mateos P F; ... (+7)",
+      "first_author": "Velázquez E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9869427",
+      "doi": "10.1023/a:1006036827841",
+      "title": "Cloning of genes by mRNA differential display induced during the hypersensitive reaction of soybean after inoculation with Pseudomonas syringae pv. glycinea.",
+      "abstract": "Soybean (Glycine max [L.] Merr.) cell suspension cultures (cv. Williams 82) inoculated with the pathogenic bacteria Pseudomonas syringae pv. glycinea respond with a hypersensitive reaction (HR) when the bacteria express the avirulence gene avrA. A mRNA differential display was established for this system to allow the identification of genes induced during the HR. Six PCR-fragments (DD1-DD6) from the differential display analysis were identified, which are induced during the HR. Database searches revealed that the fragment DD1 encodes chalcone isomerase and DD2 was identified as ubiquitin. The fragment DD3 shares significant homology to the signalling molecule 14-3-3. The partial DD4 product is homologous to the enhancer of rudimentary from Drosophila and an uncharacterized homologue of it from Arabidopsis. The fragment DD5 is similar to glucose-6-phosphate dehydrogenase which provides NADPH to the cell. The PCR-product DD6 seems to be a new leucine-rich-repeat disease resistance gene from soybean, which is significantly induced during the HR. All of the identified genes are clearly induced during a HR in infected plants of the same cultivar, indicating that results from the cell culture model system can be transferred to intact plants. These studies show that complex mRNA differential display is a powerful tool to identify new induced gene in plant-pathogen interactions.",
+      "journal": "Plant molecular biology",
+      "year": 1998,
+      "pub_date": "1998-12-01",
+      "authors": "Seehaus K; Tenhaken R",
+      "first_author": "Seehaus K",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9862802",
+      "doi": "10.1016/s1074-5521(98)90660-3",
+      "title": "Radically novel prostaglandins in animals and plants: the isoprostanes.",
+      "abstract": "Animal prostaglandins and plant jasmonates are well-known enzymatically formed cyclopentanoic lipids that have regulatory functions and serve as inducible mediators of host defense reactions. A novel group of prostaglandin-like compounds, the isoprostanes, generated in animals and plants by a nonenzymatic, free radical-catalyzed process, are now suspected to be mediators of oxidant injury in vivo.",
+      "journal": "Chemistry & biology",
+      "year": 1998,
+      "pub_date": "1998-12-01",
+      "authors": "Mueller M J",
+      "first_author": "Mueller M J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9861059",
+      "doi": "10.1073/pnas.95.26.15849",
+      "title": "The Arabidopsis thaliana RPM1 disease resistance gene product is a peripheral plasma membrane protein that is degraded coincident with the hypersensitive response.",
+      "abstract": "Disease resistance in plants is often controlled by a gene-for-gene mechanism in which avirulence (avr) gene products encoded by pathogens are specifically recognized, either directly or indirectly, by plant disease resistance (R) gene products. Members of the NBS-LRR class of R genes encode proteins containing a putative nucleotide binding site (NBS) and carboxyl-terminal leucine-rich repeats (LRRs). Generally, NBS-LRR proteins do not contain predicted transmembrane segments or signal peptides, suggesting they are soluble cytoplasmic proteins. RPM1 is an NBS-LRR protein from Arabidopsis thaliana that confers resistance to Pseudomonas syringae expressing either avrRpm1 or avrB. RPM1 protein was localized by using an epitope tag. In contrast to previous suggestions, RPM1 is a peripheral membrane protein that likely resides on the cytoplasmic face of the plasma membrane. Furthermore, RPM1 is degraded coincident with the onset of the hypersensitive response, suggesting a negative feedback loop controlling the extent of cell death and overall resistance response at the site of infection.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1998,
+      "pub_date": "1998-12-22",
+      "authors": "Boyes D C; Nam J; Dangl J L",
+      "first_author": "Boyes D C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9861058",
+      "doi": "10.1073/pnas.95.26.15843",
+      "title": "Independent deletions of a pathogen-resistance gene in Brassica and Arabidopsis.",
+      "abstract": "Plant disease resistance (R) genes confer race-specific resistance to pathogens and are genetically defined on the basis of intra-specific functional polymorphism. Little is known about the evolutionary mechanisms that generate this polymorphism. Most R loci examined to date contain alternate alleles and/or linked homologs even in disease-susceptible plant genotypes. In contrast, the resistance to Pseudomonas syringae pathovar maculicola (RPM1) bacterial resistance gene is completely absent (rpm1-null) in 5/5 Arabidopsis thaliana accessions that lack RPM1 function. The rpm1-null locus contains a 98-bp segment of unknown origin in place of the RPM1 gene. We undertook comparative mapping of RPM1 and flanking genes in Brassica napus to determine the ancestral state of the RPM1 locus. We cloned two B. napus RPM1 homologs encoding hypothetical proteins with approximately 81% amino acid identity to Arabidopsis RPM1. Collinearity of genes flanking RPM1 is conserved between B. napus and Arabidopsis. Surprisingly, we found four additional B. napus loci in which the flanking marker synteny is maintained but RPM1 is absent. These B. napus rpm1-null loci have no detectable nucleotide similarity to the Arabidopsis rpm1-null allele. We conclude that RPM1 evolved before the divergence of the Brassicaceae and has been deleted independently in the Brassica and Arabidopsis lineages. These results suggest that functional polymorphism at R gene loci can arise from gene deletions.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1998,
+      "pub_date": "1998-12-22",
+      "authors": "Grant M R; McDowell J M; Sharpe A G; de Torres Zabala M; Lydiate D J; ... (+1)",
+      "first_author": "Grant M R",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9868361",
+      "doi": "10.1016/s0968-0004(98)01311-5",
+      "title": "Plant disease-resistance proteins and the gene-for-gene concept.",
+      "abstract": "",
+      "journal": "Trends in biochemical sciences",
+      "year": 1998,
+      "pub_date": "1998-12-01",
+      "authors": "Van der Biezen E A; Jones J D",
+      "first_author": "Van der Biezen E A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18944842",
+      "doi": "10.1094/PHYTO.1998.88.12.1372",
+      "title": "Phytoplasma identity and disease etiology.",
+      "abstract": "ABSTRACT Many plant diseases believed to be caused by phytoplasmas were described before phytoplasma groups were delineated through molecular analyses. It is now possible to assess the relationships between phytoplasma identity or classification and specific plant diseases. Data were consistent with the hypothesis of a common ancestral origin of pathogenicity genes in many phytoplasmas and a limited repertoire of plant responses to certain pathogen signals. Observations also were consistent with the hypotheses that the botanical host ranges of some phytoplasmas reflect specificities in transmission by vectors and vector feeding preferences; phytoplasma-insect vector relationships are keys to understanding evolutionary divergence of phytoplasma lineages; small differences in a highly conserved phytoplasma gene may be regarded as potential indicators of separate gene pools; the reliability of a diagnosis based on symptoms must be learned empirically (i.e., through case study for each syndrome); and some discrete diseases can be ascribed to phytoplasma taxa at the 16S rRNA group level, whereas others are clearly associated with phytoplasma taxa below this level.",
+      "journal": "Phytopathology",
+      "year": 1998,
+      "pub_date": "1998-12-01",
+      "authors": "Davis R E; Sinclair W A",
+      "first_author": "Davis R E",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18944826",
+      "doi": "10.1094/PHYTO.1998.88.12.1255",
+      "title": "Sites of infection by pythium species in rice seedlings and effects of plant age and water depth on disease development.",
+      "abstract": "ABSTRACT Seedling disease, caused primarily by several species of Pythium, is one of the major constraints to water-seeded rice production in Louisiana. The disease, also known as water-mold disease, seed rot, and seedling damping-off, causes stand reductions and growth abnormalities. In severe cases, fields must be replanted, which may result in delayed harvests and reduced yields. To develop more effective disease management tactics including biological control, this study was conducted primarily to determine sites of infection in seeds and seedlings; effect of plant age on susceptibility to P. arrhenomanes, P. myriotylum, and P. dissotocum; and minimum exposure times required for infection and seedling death. In addition, the effect of water depth on seedling disease was investigated. Infection rates of seed embryos were significantly higher than those of endosperms for all three Pythium spp. The development of roots from dry-seeded seedlings was significantly reduced by P. arrhenomanes and P. myriotylum at 5 days after planting compared with that of roots from noninoculated controls. Susceptibility of rice to all three species was sharply reduced within 2 to 6 days after planting, and seedlings were completely resistant at 8 days after planting. There was a steep reduction in emergence through the flood water, relative to the noninoculated control, following 2 to 3 days of exposure to inoculum of P. arrhenomanes and P. myriotylum. In contrast, P. dissotocum was much less virulent and required longer exposure times to cause irreversible seedling damage. Disease incidence was higher when seeds were planted into deeper water, implying that seedlings become resistant after they emerge through the flood water. These results suggest that disease control tactics including flood water management need to be employed for a very short period of time after planting. Also, given that the embryo is the primary site of infection and it is susceptible for only a few days, the disease should be amenable to biological control.",
+      "journal": "Phytopathology",
+      "year": 1998,
+      "pub_date": "1998-12-01",
+      "authors": "Chun S C; Schneider R W",
+      "first_author": "Chun S C",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "month": "1999-04",
+  "generated": "2026-07-13 02:59:42",
+  "total": 12,
+  "by_category": {
+    "New_Virus": 7,
+    "Antiviral_Resistance_Genes": 3,
+    "Molecular_Characterization": 1,
+    "Detection_Methods": 1,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "10198077",
+      "doi": "10.1104/pp.119.4.1187",
+      "title": "Posttranscriptional gene silencing in transgenic sugarcane. Dissection Of homology-dependent virus resistance in a monocot that has a complex polyploid genome.",
+      "abstract": "RNA-mediated, posttranscriptional gene silencing has been determined as the molecular mechanism underlying transgenic virus resistance in many plant virus-dicot host plant systems. In this paper we show that transgenic virus resistance in sugarcane (Saccharum spp. hybrid) is based on posttranscriptional gene silencing. The resistance is derived from an untranslatable form of the sorghum mosaic potyvirus strain SCH coat protein (CP) gene. Transgenic sugarcane plants challenged with sorghum mosaic potyvirus strain SCH had phenotypes that ranged from fully susceptible to completely resistant, and a recovery phenotype was also observed. Clones derived from the same transformation event or obtained after vegetative propagation could display different levels of virus resistance, suggesting the involvement of a quantitative component in the resistance response. Most resistant plants displayed low or undetectable steady-state CP transgene mRNA levels, although nuclear transcription rates were high. Increased DNA methylation was observed in the transcribed region of the CP transgenes in most of these plants. Collectively, these characteristics indicate that an RNA-mediated, homology-dependent mechanism is at the base of the virus resistance. This work extends posttranscriptional gene silencing and homology-dependent virus resistance, so far observed only in dicots, to an agronomically important, polyploid monocot.",
+      "journal": "Plant physiology",
+      "year": 1999,
+      "pub_date": "1999-04-01",
+      "authors": "Ingelbrecht IL; Irvine JE; Mirkov TE",
+      "first_author": "Ingelbrecht IL",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "高粱花叶病毒（sorghum mosaic potyvirus strain SCH）",
+      "taxonomy": "马铃薯Y病毒科（Potyviridae），马铃薯Y病毒属（Potyvirus）",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30845585",
+      "doi": "10.1094/PDIS.1999.83.4.345",
+      "title": "Characterization of a Tospovirus Isolate of Iris Yellow Spot Virus Associated with a Disease in Onion Fields in Brazil.",
+      "abstract": "A tospovirus from onion causing a disease known as \"sapeca\" by growers in Brazil was characterized. Symptoms on onion consisted of numerous eyelike spots on the leaves and flower stalks resulting in flower abortion. Nicotiana benthamiana and N. rustica were the only systemic hosts experimentally found. Double antibody sandwich enzyme-linked immunosorbent assay (DAS-ELISA) experiments demonstrated that this virus was serologically related to iris yellow spot virus (IYSV), a tospovirus recently described in the Netherlands. This virus, from onion, based on an amino acid sequence identity of 90.5% for the N gene protein, is regarded as a strain of IYSV and is designated IYSVBR This 10% divergence in the nucleocapsid protein may represent an adaptation of the virus to distinct ecological niches.",
+      "journal": "Plant disease",
+      "year": 1999,
+      "pub_date": "1999-04-01",
+      "authors": "Pozzer L; Bezerra I C; Kormelink R; Prins M; Peters D; ... (+2)",
+      "first_author": "Pozzer L",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "鸢尾黄斑病毒（IYSV）巴西株系（IYSVBR）",
+      "taxonomy": "",
+      "host_plant": "洋葱（Allium cepa）；实验宿主：本氏烟、黄花烟",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10382970",
+      "doi": "10.1093/dnares/6.2.123",
+      "title": "Isolation and characterization of rice MADS box gene homologues and their RFLP mapping.",
+      "abstract": "Thirty-five MADS box gene homologues were identified through a large-scale cDNA analysis in rice. Based on the nucleotide sequences of the 3'-untranslated region, these clones were classified into 11 independent species. Seven species were found to be new among the rice MADS box gene family, and the other 4 corresponded to the previously reported OsMADS1, OsMADS2, OsMADS4, and OsMADS5. The full nucleotide sequences of the 7 new species were determined. Each clone encoded a deduced protein of 164-267 amino acids. The K-domain of the MADS protein was conserved in all clones though with lower degree in clone S10304. Reverse transcription PCR analysis showed that clones E31254 and E31864 were expressed mainly in panicles. Dendrogram analysis suggested that E31254 and E31864 are close to Arabidopsis AGL9 and AP1, respectively. Restriction fragment length polymorphism (RFLP) linkage mapping revealed that the rice MADS box gene homologues reported here are not clustered but are located throughout the genome. The locus of E31864 on the RFLP map was closely linked to the long sterile lemma gene, g-1.",
+      "journal": "DNA research : an international journal for rapid publication of reports on genes and genomes",
+      "year": 1999,
+      "pub_date": "1999-04-30",
+      "authors": "Shinozuka Y; Kojima S; Shomura A; Ichimura H; Yano M; ... (+2)",
+      "first_author": "Shinozuka Y",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10319516",
+      "doi": "10.1099/00207713-49-2-899",
+      "title": "Erwinia pyrifoliae sp. nov., a novel pathogen that affects Asian pear trees (Pyrus pyrifolia Nakai).",
+      "abstract": "A novel pathogen from Asian pears (Pyrus pyrifolia Nakai) was analysed by sequencing the 16S rDNA and the adjacent intergenic region, and the data were compared to related Enterobacteriaceae. The 16S rDNA of the Asian pear pathogen was almost identical with the sequence of Erwinia amylovora, in contrast to the 16S-23S rRNA intergenic transcribed spacer region of both species. A dendrogram was deduced from determined sequences of the spacer regions including those of several related species such as Erwinia amylovora, Enterobacter pyrinus, Pantoea stewartii subsp. stewartii and Escherichia coli. Dendrograms derived from 121 biochemical characteristics including Biotype 100 data placed the Asian pear pathogen close to Erwinia amylovora and more distantly to other members of the species Erwinia and to the species Pantoea and Enterobacter. Another DNA relatedness study was performed by DNA hybridizations and estimation of delta Tm values. The Asian pear strains constituted a tight DNA hybridization group (89-100%) and were barely related to strains of Erwinia amylovora (40-50%) with a delta Tm in the range of 5.2-6.8. The G + C content of DNA from the novel pathogen is 52 mol%. Therefore, it is proposed that strains isolated from Asian pears constitute a new species and the name Erwinia pyrifoliae is suggested; the type strain is strain Ep 16/96T (= CFBP 4172T = DSM 12163T).",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1999,
+      "pub_date": "1999-04-01",
+      "authors": "Kim W S; Gardan L; Rhim S L; Geider K",
+      "first_author": "Kim W S",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30845597",
+      "doi": "10.1094/PDIS.1999.83.4.397B",
+      "title": "A New Disease of Agrostis palustris Incited by an Undescribed Species of Ophiosphaerella.",
+      "abstract": "Creeping bentgrass (Agrostis palustris; syn. Agrostis stolonifera) is widely used on golf course putting greens. In September and October 1998, samples of diseased creeping bentgrass were received from golf courses in Maryland, Virginia, and Ohio. Disease symptoms developed in August or September 1998, and appeared initially as 1.0- to 2.0-cm-diameter, reddish brown spots that enlarged to about 8.0 cm in diameter. Leaves of plants in the center of diseased patches were tan and those on the periphery were reddish brown. Dark, ectotrophic hyphae were not observed on roots. Numerous pseudothecia were embedded in necrotic leaf and stolon tissues. A fungus was isolated from leaves, stems, and roots, and single-spore isolates were obtained from pseudothecia. Colonies of all isolates were identical in appearance and were initially rose-quartz to pinkish brown, developing a gray color as they aged. Inoculum was prepared by placing mycelium from a single-spore isolate on an autoclaved medium consisting of 50% tall fescue (Festuca arundinacea) seed, and 50% wheat (Triticum aestivum) bran (vol/vol) and grown at 28°C for 8 days. Putter and Crenshaw creeping bentgrass seedlings were grown for 14 days in 12 cm2 pots containing an autoclaved topdressing mix with a mechanical analysis of 95% sand, 1% silt, and 4% clay. The inoculum (200 mg) was mixed into the upper 5 mm of the sandy soil. Pots were placed in plastic bags and incubated during the daytime on a windowsill bench (20 to 24°C), and were maintained at 25°C at night in a darkened growth chamber. After 7 days, 2.0-cm-diameter patches of blighted leaves were observed on both cultivars in nearly all pots, and pseudothecia were found on the inoculum or on blighted foliage in some pots after 20 days. Blighted leaves were covered with a pale pinkish white mycelium and newly infected leaves at the periphery of the dead spot were a pale reddish brown. Most plants were dead 20 days after inoculation. The fungus was reisolated from blighted leaves of both cultivars and all isolates produced colonies identical in appearance and growth rate to those produced by the single-spore isolate. Pseudothecia produced in vivo were sectioned with a freezing microtome and examined microscopically. Bitunicate asci were observed and contained light-brown, 6- to 15-septate, filiform ascospores that were usually spirally twisted in the ascus and measured 70 to 150 × 2.0 to 2.5 μm. Characteristics of the pseudothecia and the ascospores fit those of the genus Ophiosphaerella Speg. (1). Based on morphometric studies of 12 collections from three different states, this fungus can be distinguished from O. graminicola by the lack of periphyses and fewer septa in ascospores (i.e., 12 to 20 septa in O. graminicola). It was distinguished from O. herpotricha by characteristics of the pseudothecia neck, ascospores, and colony color. Because of these differences, we suggest that this fungus represents a new species attacking creeping bentgrass, which will be described after further morphometric and molecular analyses. Reference: (1) J. Walker. Mycotaxon 11:1, 1980.",
+      "journal": "Plant disease",
+      "year": 1999,
+      "pub_date": "1999-04-01",
+      "authors": "Dernoeden P H; O'Neill N R; Câmara M P S; Feng Y",
+      "first_author": "Dernoeden P H",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10319500",
+      "doi": "10.1099/00207713-49-2-759",
+      "title": "Streptococcus waius sp. nov., a thermophilic Streptococcus from a biofilm.",
+      "abstract": "Thermophilic streptococci were isolated from biofilms on stainless steel samples exposed to pasteurized skimmed milk and from dairy products from a dairy manufacturing plant. The phenotypic characters of these isolates were distinct from those of other thermophilic streptococci of dairy origin (Streptococcus thermophilus and Streptococcus bovis). Genotypic data [restriction endonuclease analysis, ribotyping, random amplified polymorphic DNA (RAPD) profiles, DNA-DNA hybridization and G + C contents] support the classification of these isolates as a new species. The sequence of the 16S rRNA was compared with that of 29 species of streptococci and shown to be significantly different. The sequence of the 16S-23S rRNA intergenic spacer region also differed from published sequences of closely related species. A fluorescent in situ hybridization probe prepared to a specific part of the 16S rRNA gene sequence was able to distinguish the unknown isolates from reference isolates of S. thermophilus and S. bovis. It is proposed that these thermophilic streptococcal isolates from a dairy environment be classified in the genus Streptococcus as a new species, Streptococcus waius (from waiu, the New Zealand Maori word for milk). The type strain is 3/1T (= NZRCC 20100T).",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1999,
+      "pub_date": "1999-04-01",
+      "authors": "Flint S H; Ward L J; Brooks J D",
+      "first_author": "Flint S H",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10319493",
+      "doi": "10.1099/00207713-49-2-697",
+      "title": "Thiorhodospira sibirica gen. nov., sp. nov., a new alkaliphilic purple sulfur bacterium from a Siberian soda lake.",
+      "abstract": "A new purple sulfur bacterium was isolated from microbial films on decaying plant mass in the near-shore area of the soda lake Malyi Kasytui (pH 9.5, 0.2% salinity) located in the steppe of the Chita region of south-east Siberia. Single cells were vibrioid- or spiral-shaped (3-4 microns wide and 7-20 microns long) and motile by means of a polar tuft of flagella. Internal photosynthetic membranes were of the lamellar type. Lamellae almost filled the whole cell, forming strands and coils. Photosynthetic pigments were bacteriochlorophyll a and carotenoids of the spirilloxanthin group. The new bacterium was strictly anaerobic. Under anoxic conditions, hydrogen sulfide and elemental sulfur were used as photosynthetic electron donors. During growth on sulfide, sulfur globules were formed as intermediate oxidation products. They were deposited outside the cytoplasm of the cells, in the peripheral periplasmic space and extracellularly. Thiosulfate was not used. Carbon dioxide, acetate, pyruvate, propionate, succinate, fumarate and malate were utilized as carbon sources. Optimum growth rates were obtained at pH 9.0 and optimum temperature was 30 degrees C. Good growth was observed in a mineral salts medium containing 5 g sodium bicarbonate l-1 without sodium chloride. The new bacterium tolerated up to 60 g sodium chloride l-1 and up to 80 g sodium carbonates l-1. Growth factors were not required. The DNA G + C composition was 56.0-57.4 mol%. Based on physiological, biochemical and genetic characteristics, the newly isolated bacterium is recognized as a new species of a new genus with the proposed name Thiorhodospira sibirica.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1999,
+      "pub_date": "1999-04-01",
+      "authors": "Bryantseva I; Gorlenko V M; Kompantseva E I; Imhoff J F; Süling J; ... (+1)",
+      "first_author": "Bryantseva I",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10319505",
+      "doi": "10.1099/00207713-49-2-795",
+      "title": "Bacillus silvestris sp. nov., a new member of the genus Bacillus that contains lysine in its cell wall.",
+      "abstract": "A Gram-positive, aerobic, rod-shaped, peritrichously flagellated, round-endospore-forming bacterium was isolated from a forest soil near Braunschweig, Lower Saxony, Germany, and designated strain HR3-23T (T = type strain). Morphologically, strain HR3-23T shows the characteristics of a member of the genus Bacillus. The spore position is terminal in a swollen sporangium. Comparative analysis of the 16S rDNA sequence shows strain HR3-23T to be most closely related to Caryophanon tenue (95.8% 16S rRNA similarity) and to Bacillus sphaericus (95.4% 16S rRNA similarity). Phylogenetically, the isolate clusters among species of Bacillus RNA group 2. The DNA G + C content of isolate HR3-23T is 39.3 mol%, the peptidoglycan type is A4 alpha (L-Lys-D-Glu), the major respiratory lipoquinone is menaquinone MK-7 and the predominant fatty acid is of the iso-C15:0 type. Based on the morphological, chemotaxonomic, physiological and phylogenetic properties, a new species, Bacillus silvestris, is proposed; strain HR3-23T is the type strain (= DSM 12223T).",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1999,
+      "pub_date": "1999-04-01",
+      "authors": "Rheims H; Frühling A; Schumann P; Rohde M; Stackebrandt E",
+      "first_author": "Rheims H",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10319487",
+      "doi": "10.1099/00207713-49-2-639",
+      "title": "Isolation and characterization of Desulfovibrio burkinensis sp. nov. from an African ricefield, and phylogeny of Desulfovibrio alcoholivorans.",
+      "abstract": "A sulfate-reducing bacterium, strain HDvT (T = type strain), was isolated from an anoxic ricefield soil. Cells were Gram-negative, non-sporulating curved rods motile by means of a single polar flagellum. Cytochrome c3 and desulfoviridin were present. In the presence of sulfate, glycerol, 1,2- and 1,3-propanediol, dihydroxyacetone, pyruvate, lactate, fumarate, maleate, malate and succinate were incompletely oxidized mainly to acetate. Sulfite, thiosulfate, elemental sulfur, fumarate, maleate and malate were utilized as alternative electron acceptors. In the absence of added electron acceptors, pyruvate, fumarate, maleate, malate and dihydroxyacetone were fermented. The DNA base composition was 67 mol% G + C. The phylogenetic, phenotypic and physiological characteristics of strain HDvT indicate that it is a new species of the genus Desulfovibrio, for which the name Desulfovibrio burkinensis sp. nov. is proposed; the type strain is HDvT (= DSM 6830T). Phylogenetic analysis confirmed that Desulfovibrio alcoholivorans was a distinct species supporting the previously published phenotypic data.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1999,
+      "pub_date": "1999-04-01",
+      "authors": "Ouattara A S; Patel B K; Cayol J L; Cuzin N; Traore A S; ... (+1)",
+      "first_author": "Ouattara A S",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10219632",
+      "doi": "10.1007/s004180050363",
+      "title": "Fluorochrome-labeled RNA as a sensitive, strand-specific probe for direct fluorescence in situ hybridization.",
+      "abstract": "Detection of target RNA by in situ hybridization (ISH) in the classic and confocal fluorescence microscope was performed using strand-specific single-stranded RNA probes labeled directly with the fluorochromes fluorescein isothiocyanate or Texas red. The probes, produced by in vitro transcription from PCR-generated templates with T7 RNA polymerase and fluorochromized UTP, gave ISH signals directly visible by fluorescence microscopy without the use of any immunological detection step. In avoiding antibodies, it was possible to strongly increase the sensitivity of the ISH since antibodies may contain RNase which can reduce hybridization signals considerably, even beyond the detection limit. Fluorescent RNA probes thus allowed for the detection of low numbers of target molecules per cell, such as minus strand intermediates in picornavirus RNA replication. Using appropriate denaturing conditions, the targets could be visualized in a double-stranded configuration as well as in the presence of a 100-fold excess of complementary RNA. Furthermore, double ISH for the simultaneous detection of two different RNA species, such as plus and minus strand RNA of poliovirus, or of different regions of the viral genomic RNA was possible with appropriate fluorescent strand-specific probes labeled with different fluorochromes. Combination of ISH and immunofluorescence was found feasible if RNA was present in relatively large amounts. In addition to the investigation of virus replication, possible applications of fluorochromized RNA probes might include antisense RNA detection as well as plant virus resistance and gene silencing.",
+      "journal": "Histochemistry and cell biology",
+      "year": 1999,
+      "pub_date": "1999-04-01",
+      "authors": "Egger D; Bolten R; Rahner C; Bienz K",
+      "first_author": "Egger D",
+      "categories": [
+        "Detection_Methods",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10323492",
+      "doi": "10.1016/s0306-3623(98)00214-6",
+      "title": "Antiviral activity of Bolivian plant extracts.",
+      "abstract": "Ethanolic and aqueous extracts of seven plant species used in the traditional medicine of Bolivia have been tested for their antiviral activity against herpes simplex type I (HSV-1), vesicular stomatitis virus (VSV), and poliovirus type 1. The aqueous extracts of most of the species investigated showed antiviral activity. Two of these plants-namely, Satureja boliviana and Baccharis genistelloides-were active against two different viruses-HSV-1 and VSV.",
+      "journal": "General pharmacology",
+      "year": 1999,
+      "pub_date": "1999-04-01",
+      "authors": "Abad M J; Bermejo P; Gonzales E; Iglesias I; Irurzun A; ... (+1)",
+      "first_author": "Abad M J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10198104",
+      "doi": "10.1104/pp.119.4.1447",
+      "title": "Characterization of two novel type I ribosome-inactivating proteins from the storage roots of the andean crop Mirabilis expansa.",
+      "abstract": "Two novel type I ribosome-inactivating proteins (RIPs) were found in the storage roots of Mirabilis expansa, an underutilized Andean root crop. The two RIPs, named ME1 and ME2, were purified to homogeneity by ammonium sulfate precipitation, cation-exchange perfusion chromatography, and C4 reverse-phase chromatography. The two proteins were found to be similar in size (27 and 27.5 kD) by sodium dodecyl sulfate-polyacrylamide gel electrophoresis, and their isoelectric points were determined to be greater than pH 10.0. Amino acid N-terminal sequencing revealed that both ME1 and ME2 had conserved residues characteristic of RIPs. Amino acid composition and western-blot analysis further suggested a structural similarity between ME1 and ME2. ME2 showed high similarity to the Mirabilis jalapa antiviral protein, a type I RIP. Depurination of yeast 26S rRNA by ME1 and ME2 demonstrated their ribosome-inactivating activity. Because these two proteins were isolated from roots, their antimicrobial activity was tested against root-rot microorganisms, among others. ME1 and ME2 were active against several fungi, including Pythium irregulare, Fusarium oxysporum solani, Alternaria solani, Trichoderma reesei, and Trichoderma harzianum, and an additive antifungal effect of ME1 and ME2 was observed. Antibacterial activity of both ME1 and ME2 was observed against Pseudomonas syringae, Agrobacterium tumefaciens, Agrobacterium radiobacter, and others.",
+      "journal": "Plant physiology",
+      "year": 1999,
+      "pub_date": "1999-04-01",
+      "authors": "Vivanco J M; Savary B J; Flores H E",
+      "first_author": "Vivanco J M",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

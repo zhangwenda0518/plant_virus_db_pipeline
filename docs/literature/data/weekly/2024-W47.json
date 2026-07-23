@@ -1,0 +1,240 @@
+{
+  "week": "2024-W47",
+  "start": "2024-11-18",
+  "end": "2024-11-24",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 28,
+  "by_category": {
+    "Host_Virus_Interactions": 11,
+    "Antiviral_Resistance_Genes": 6,
+    "Biotechnology_Applications": 5,
+    "Control_Management": 4,
+    "New_Virus": 3,
+    "Viral_Diversity_Ecology": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "39572425",
+      "doi": "10.1007/s11103-024-01529-7",
+      "title": "A novel QTL qRYM-7H for barley yellow mosaic resistance identified by GWAS and linkage analysis.",
+      "abstract": "Barley (Hordeum vulgare L.) is the fourth largest cereal crop in the world after rice, wheat and maize. Barley yellow mosaic disease (BYMD) is a serious threat to winter barley production. The evolution and mutation of virus strains lead to the breakdown of the resistance of the originally resistant varieties. It is therefore vital to explore new BYMD resistance genes. In this study, a natural population (334 barley varieties or lines) and a double haploid population derived from the cross between Tam407227 and Franklin were used to search for new quantitative trait loci (QTL) for BYMD resistance. Two major QTL on chromosomes 3H and 7H, respectively, were detected from the genome wide association study and validated in the DH population. Among them, The QTL on 3H (qRYM-3H/qTFRYM-3H) was confirmed to be the reported BYMD resistance gene eIF4E by haplotype analysis. And the QTL on 7H (qRYM-7H/qTFRYM-7H) is a novel QTL that has not been reported before. Another QTL on 2H was identified from the DH population. This QTL is more likely the Rmy16Hb reported previously. These three QTL showed an additive effect on improving BYMD resistance with the average disease scores from 2.45 (all sensitive alleles for these three QTL) to 0.62 (all tolerant alleles for these three QTL). The candidate genes for the novel QTL qRYM-7H/qTFRYM-7H were predicted based on transcriptome sequencing and qPCR analysis.",
+      "journal": "Plant molecular biology",
+      "year": 2024,
+      "pub_date": "2024-11-22",
+      "authors": "Zhu Juan; Zhou Hui; Zhang Mengna; Hong Yi; Zhang Yuhang; ... (+4)",
+      "first_author": "Zhu Juan",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "大麦黄花叶病毒 (Barley yellow mosaic virus)",
+      "taxonomy": "",
+      "host_plant": "大麦 (Hordeum vulgare)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39551727",
+      "doi": "10.1186/s12870-024-05802-1",
+      "title": "Antiviral properties and molecular docking studies of eco-friendly biosynthesized copper oxide nanoparticles against alfalfa mosaic virus.",
+      "abstract": "[BACKGROUND] Nanotechnology has been recognized as a viable technology for enhancing agriculture, particularly in the plant pathogen management area. Alfalfa mosaic virus (AMV) is a global pathogen that affects many plant species, especially economically valuable crops. Currently, there is less data on the interaction of nanoparticles with phytopathogens, particularly viruses. The current study looked into how copper oxide nanoparticles (CuO-NPs)-mediated Haloxylon salicornicum aqueous extract can fight AMV infections on tobacco plants. [RESULTS] Scanning electron microscopy (SEM) and transmission electron microscopy (TEM) analyses showed that CuO-NPs have a spherical and hexagonal structure ranging from 20 to 70 nm in size. Fourier transform infrared spectroscopy (FTIR) analysis showed that the produced CuO-NPs have many functional groups and a lot of secondary plant metabolites. Under greenhouse conditions, the foliar application of CuO-NPs (100 ppm) enhanced tobacco growth and decreased viral symptoms. Treatment with CuO-NPs 48 h before (protective treatment) or 48 h after (curative treatment) AMV infection significantly reduced AMV accumulation levels by 97%. Additionally, the levels of total chlorophyll, phenolic, and flavonoid contents, as well as DPPH, exhibited a significant increase in tobacco leaves 30 days after inoculation in comparison to untreated plants. Moreover, considerable differences in levels of different antioxidant enzymes, including SOD, PPO, POX, and CAT, were also observed. On the other hand, the oxidative stress markers (MDA and H2O2) were significantly reduced in CuO-NPs-treated plants compared with non-treated plants. It was also found that the protective treatment increased the expression levels of genes involved in the jasmonic pathway (JERF3 and WRKY1). On the other hand, the curative treatment increased the expression levels of polyphenolic pathway acid (CHI and HQT) and the SA-signaling pathway genes (PR-2 and POD). The study of molecular docking interactions with four AMV target proteins showed that CuO-NPs had high binding energy with the viral replication protein 1a, measured at -3.2 kcal/mol. The binding with these proteins can suppress AMV replication and spread, potentially clarifying the mechanism behind the antiviral effect. [CONCLUSIONS] The overall analysis results indicate that the curative treatment is more influential and successful than the protective treatment in combating AMV infection. Consequentially, CuO-NPs could potentially be employed in foliar sprays for the effective and environmentally friendly management of plant virus infections.",
+      "journal": "BMC plant biology",
+      "year": 2024,
+      "pub_date": "2024-11-18",
+      "authors": "Aseel Dalia G; Rabie Mona; El-Far Ali; Abdelkhalek Ahmed",
+      "first_author": "Aseel Dalia G",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Biotechnology_Applications",
+        "Control_Management"
+      ],
+      "virus_name": "苜蓿花叶病毒",
+      "taxonomy": "",
+      "host_plant": "烟草",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39572654",
+      "doi": "10.1038/s41598-024-80444-9",
+      "title": "Incorporation of regulatory DNA elements within a viral vector improves recombinant protein expression in plants.",
+      "abstract": "Plants have significant potential as recombinant protein expression chassis, as they can produce complex post-translationally modified proteins that are unobtainable using prokaryotic production systems, with almost limitless scalability and substantially reduced costs relative to eukaryotic cell cultures. Transient protein expression reduces the time taken between transformation and recombinant protein extraction and purification, however low protein yields relative to conventional stable expression systems remain a major obstacle. Here, we have assessed the effectiveness of combining several established genetic components, including a promoter, 5' UTR, 3' UTR, double terminator, and matrix attachment region, to modify the TMV-based pJL-TRBO expression vector for improved recombinant protein expression in plants. Using enhanced green fluorescent protein (eGFP) as a reporter, we quantified expression using fluorescence imaging in planta together with SDS-PAGE and western blotting and showed that our optimum construct resulted in a significant increase relative to pJL-TRBO-eGFP. This increase was exclusively due to the presence of the additional 5' UTR. We anticipate that our expression constructs will be a useful tool for high-yield plant recombinant protein production and may serve as a template for further improvements.",
+      "journal": "Scientific reports",
+      "year": 2024,
+      "pub_date": "2024-11-21",
+      "authors": "Coates Ryan J; Scofield Simon; Young Mark T",
+      "first_author": "Coates Ryan J",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "TMV（烟草花叶病毒）",
+      "taxonomy": "",
+      "host_plant": "未提及具体植物种类",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39599916",
+      "doi": "10.3390/v16111802",
+      "title": "Chimeric Virus-like Particles of Physalis Mottle Virus as Carriers of M2e Peptides of Influenza a Virus.",
+      "abstract": "Plant viruses and virus-like particles (VLPs) are safe for mammals and can be used as a carrier/platform for the presentation of foreign antigens in vaccine development. The aim of this study was to use the coat protein (CP) of Physalis mottle virus (PhMV) as a carrier to display the extracellular domain of the transmembrane protein M2 of influenza A virus (M2e). M2e is a highly conserved antigen, but to induce an effective immune response it must be linked to an adjuvant or carrier VLP. Four tandem copies of M2e were either fused to the N-terminus of the full-length PhMV CP or replaced the 43 N-terminal amino acids of the PhMV CP. Only the first fusion protein was successfully expressed in Escherichia coli, where it self-assembled into spherical VLPs of about 30 nm in size. The particles were efficiently recognized by anti-M2e antibodies, indicating that the M2e peptides were exposed on the surface. Subcutaneous immunization of mice with VLPs carrying four copies of M2e induced high levels of M2e-specific IgG antibodies in serum and protected animals from a lethal influenza A virus challenge. Therefore, PhMV particles carrying M2e peptides may become useful research tools for the development of recombinant influenza vaccines.",
+      "journal": "Viruses",
+      "year": 2024,
+      "pub_date": "2024-11-20",
+      "authors": "Blokhina Elena A; Mardanova Eugenia S; Zykova Anna A; Shuklina Marina A; Stepanova Liudmila A; ... (+2)",
+      "first_author": "Blokhina Elena A",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "Physalis mottle virus (PhMV)",
+      "taxonomy": "",
+      "host_plant": "大肠杆菌",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39226738",
+      "doi": "10.1016/j.bbrc.2024.150624",
+      "title": "Temporal dynamics of N-hydroxypipecolic acid and salicylic acid pathways in the disease response to powdery mildew in wheat.",
+      "abstract": "Wheat (Triticum aestivum) is a major staple crop worldwide, and its yields are significantly threatened by wheat powdery mildew (Blumeria graminis f. sp. tritici). Enhancing disease resistance in wheat is crucial for meeting global food demand. This study investigated the disease response in wheat, focusing on the bioactive small molecules salicylic acid (SA), pipecolic acid (Pip), and N-hydroxypipecolic acid (NHP), to provide new insights for molecular breeding. We found that endogenous levels of SA, Pip, and NHP significantly increased in infected plants, with Pip and NHP levels rising earlier than those of SA. Notably, the rate of increase of NHP was substantially higher than that of SA. The gene expression levels of SARD1 and CBP60g, which are transcription factors for SA, Pip, and NHP biosynthesis, increased significantly during the early stages of infection. We also found that during the later stages of infection, the expression of ALD1, SARD4, and FMO1, which encode enzymes for Pip and NHP biosynthesis, dramatically increased. Additionally, ICS1, which encodes a key enzyme involved in SA biosynthesis, also showed increased expression during the later stages of infection. The temporal changes in ICS1 transcription closely mirrored the behavior of endogenous SA levels, suggesting that the ICS pathway is the primary route for SA biosynthesis in wheat. In conclusion, our results suggest that the early accumulation of Pip and NHP cooperates with SA in the disease response against wheat powdery mildew infection.",
+      "journal": "Biochemical and biophysical research communications",
+      "year": 2024,
+      "pub_date": "2024-11-19",
+      "authors": "Sato Yuki; Weng Yuanjie; Shimazaki Taichi; Yoshida Kentaro; Nihei Ken-Ichi; ... (+1)",
+      "first_author": "Sato Yuki",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39212248",
+      "doi": "10.1002/asia.202400677",
+      "title": "Xanthine Oxidase Inhibition by Monoterpene-Chalcone Conjugates from Kaempferia subglobosa and Molecular Docking Insights.",
+      "abstract": "Kaempferia subglobosa is a perennial medicinal plant in the Zingiberaceae family, identified as a new species in January 2024. To uncover the biological benefits of K. subglobosa and its compounds, investigation of the metabolites of the roots and rhizomes, yielded three new monoterpene-chalcone conjugates, the globosones A-C, representing a rare metabolite group within the Zingiberaceae, along with six known compounds. The biogenetic pathway for the globosones involves an oxidative [3+2] cycloaddition between α-phellandrene and 4'-methoxy-4,2',6'-trihydroxychalcone. Biological testing revealed potent xanthine oxidase (XO) inhibition by globosones A and B, with IC50 values of 7.0±1.0 and 3.0±0.2 μM, respectively, surpassing the positive control drug allopurinol (IC50 7.2±0.1 μM). Globosones A-C also showed good aromatase inhibition (IC50 3.0-3.5 μM). Molecular docking studies indicated that globosones A and B may inhibit xanthine oxidase through binding at the FAD domain site. The physicochemical properties of these isolates suggest that they possess characteristics suitable for additional biological assessment in more advanced test systems. This study enhances an understanding of monoterpene-chalcone conjugate inhibitors of XO, and offers preliminary insights into the metabolites and bioactivities of K. subglobosa, uncovering potent biological activities associated with this newly discovered plant species.",
+      "journal": "Chemistry, an Asian journal",
+      "year": 2024,
+      "pub_date": "2024-11-18",
+      "authors": "Boonsombat Jutatip; Jongsomjainuk Orawan; Thongnest Sanit; Sirirak Jitnapa; Batsomboon Paratchata; ... (+4)",
+      "first_author": "Boonsombat Jutatip",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39404263",
+      "doi": "10.1128/jvi.00361-24",
+      "title": "Genomics and evolutionary analysis of ",
+      "abstract": "Chloroviruses exhibit a close relationship with their hosts with the phenotypic aspect of their ability to form lytic plaques having primarily guided the taxonomy. However, with the isolation of viruses that are only able to complete their replication cycle in one strain of Chlorella variabilis, systematic challenges emerged. In this study, we described the genomic features of 53 new chlorovirus isolates and used them to elucidate part of the evolutionary history and taxonomy of this clade. Our analysis revealed new chloroviruses with the largest genomes to date (>400 kbp) and indicated that four genomic features are statistically different in the viruses that only infect the Syngen 2-3 strain of C. variabilis (OSy viruses). We found large regions of dissimilarity in the genomes of viruses PBCV-1 and OSy-NE5 when compared with the other genomes. These regions contained genes related to the interaction with the host cell machinery and viral capsid proteins, which provided insights into the evolution of the replicative and structural modules in these giant viruses. Phylogenetic analysis using hallmark genes of Nucleocytoviricota revealed that OSy-viruses evolved from the NC64A-viruses, possibly emerging as a result of the strict relationship with their hosts. Merging phylogenetics and nucleotide identity analyses, we propose strategies to demarcate viral species, resulting in seven new species of chloroviruses. Collectively, our results show how genomic data can be used as lines of evidence to demarcate viral species. Using the chloroviruses as a case study, we expect that similar initiatives will emerge using the basis exhibited here.IMPORTANCEChloroviruses are a group of giant viruses with long dsDNA genomes that infect different species of Chlorella-like green algae. They are host-specific, and some isolates can only replicate within a single strain of Chlorella variabilis. The genomics of these viruses is still poorly explored, and the characterization of new isolates provides important data on their genetic diversity and evolution. In this work, we describe 53 new chlorovirus genomes, including many isolated from alkaline lakes for the first time. Through comparative genomics and molecular phylogeny, we provide evidence of genomic gigantism in chloroviruses and show that a subset of viruses became highly specific for their hosts at a particular point in evolutionary history. We propose criteria to demarcate species of chloroviruses, paving the way for an update in the taxonomy of other groups of viruses. This study is a new and important piece in the complex puzzle of giant algal viruses.",
+      "journal": "Journal of virology",
+      "year": 2024,
+      "pub_date": "2024-11-19",
+      "authors": "Carvalho João Victor R P; Carlson Roger M; Ghosh Jayadri; Queiroz Victória F; de Oliveira Ellen G; ... (+7)",
+      "first_author": "Carvalho João Victor R P",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39480085",
+      "doi": "10.1128/jvi.01331-24",
+      "title": "Host species-specific activity of the poxvirus PKR inhibitors E3 and K3 mediate host range function.",
+      "abstract": "The antiviral protein kinase R (PKR) is activated by viral double-stranded RNA and phosphorylates translation initiation factor eIF2α, thereby inhibiting translation and virus replication. Most poxviruses contain two PKR inhibitors, called E3 and K3 in vaccinia virus (VACV), which are determinants of viral host range. The prevailing model for E3 function is that it inhibits PKR through the non-specific sequestration of double-stranded (ds) RNA. Our data revealed that Syrian hamster PKR was resistant to E3, which is at odds with the sequestration model. However, Syrian hamster PKR was still sensitive to K3 inhibition. In contrast, Armenian hamster PKR showed opposite sensitivities, being sensitive to E3 and resistant to K3 inhibition. Mutational analyses of hamster PKRs showed that sensitivity to E3 inhibition was largely determined by the region linking the dsRNA-binding domains and the kinase domain of PKR, whereas two amino acid residues in the kinase domain (helix αG) determined sensitivity to K3. The expression of PKRs in congenic cells showed that Syrian hamster PKR containing the two Armenian hamster PKR residues in helix αG was resistant to wild-type VACV infection and that cells expressing either hamster PKR recapitulated the phenotypes observed in species-derived cell lines. The observed resistance of Syrian hamster PKR to E3 explains its host range function and challenges the paradigm that dsRNA-binding PKR inhibitors mainly act by the sequestration of dsRNA.IMPORTANCEThe molecular mechanisms that govern the host range of viruses are incompletely understood. We show that the host range functions of E3 and K3, two host range factors from vaccinia virus, are a result of species-specific interactions with the antiviral protein kinase R (PKR) and that PKR from closely related species displayed dramatic differences in their sensitivities to these viral inhibitors. The current model for E3-mediated PKR inhibition is that E3 non-specifically sequesters double-stranded (ds) RNA to prevent PKR activation. This model does not predict species-specific sensitivity to E3; therefore, our data suggest that the current model is incomplete and that dsRNA sequestration is not the primary mechanism for E3 activity.",
+      "journal": "Journal of virology",
+      "year": 2024,
+      "pub_date": "2024-11-19",
+      "authors": "Haller Sherry L; Park Chorong; Bruneau Ryan C; Megawati Dewi; Zhang Chi; ... (+6)",
+      "first_author": "Haller Sherry L",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39558227",
+      "doi": "10.1186/s12866-024-03567-z",
+      "title": "Pseudomegasporoporia margallensis sp. nov. and Microporellus subadustus (Polyporaceae, Basidiomycota) newly described and recorded from Pakistan.",
+      "abstract": "In this study, we describe Pseudomegasporoporia margallensis as a novel species and report Microporellus subadustus as a new record from Pakistan based on morphology and phylogeny. Both genera are firstly reported in the country. Pseudomegasporoporia margallensis sp. nov. is characterized by light brownish gray poroid hymenphore, grayish brown subiculum surface, frequent generative hyphae in the subiculum with abundant clamp connections, and arboriform-branched skeletal hyphae in subiculum and tubes, and it forms a sister lineage of P. nerricola in the phylogeny. This novel taxon, showing 37 nucleotide differences in ITS nrDNA and 10 in LSU nrLSU sequences from P. nerricola, has GenBank accession numbers PP702233, PP702234, PP702235, PP702236, and PP70223, and is registered under MycoBank no. MB853645. This higlights the genetic distinction and importance of molecular identification in fungal taxonomy. The new species and the new record are described with detail illustrations.",
+      "journal": "BMC microbiology",
+      "year": 2024,
+      "pub_date": "2024-11-19",
+      "authors": "Razzaq Fauzia; Murtaza Rimsha; Usman Muhammad; Khalid Abdul Nasir; Ashraf Shazia; ... (+1)",
+      "first_author": "Razzaq Fauzia",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39563266",
+      "doi": "10.1186/s12870-024-05813-y",
+      "title": "Management of yield losses in Vigna radiata (L.) R. Wilczek crop caused by charcoal-rot disease through synergistic application of biochar and zinc oxide nanoparticles as boosting fertilizers and nanofungicides.",
+      "abstract": "The mung bean crop (Vigna radiata (L.) R. Wilczek) is widely recognized as a key source of pulse food worldwide. However, this crop suffers substantial yield losses due to humid environments, particularly from infestations by the fungal pathogen Macrophomina phaseolina, which causes charcoal rot disease. This infestation results in significant agronomic losses, affecting both the crop's growth characteristics and overall yield. Previous research suggests that these losses can be mitigated through environmentally friendly soil amendments, such as biochar, as well as by applying various nanofungicides. This study aims to explore the potential of biochar and zinc oxide nanoparticles (ZnONPs) to reduce the severity of charcoal rot disease and enhance the agronomic traits and yield of mung bean plants affected by this disease. The experiment was conducted in triplicate, applying ZnONPs at three concentrations (5, 10, and 20 mg. L- 1) via foliar spraying, combined with two levels of biochar (20 g and 40 g per pot). Positive and negative control treatments were also included for comparison. The results demonstrated that applying 40 g of biochar per pot and 20 mg. L- 1 of foliar-applied ZnONPs increased the activities of the anti-oxidative defence enzymes. Additionally, this treatment strategy boosted the plants' disease resistance mechanisms, leading to lower mortality rates and reduced levels of malondialdehyde (MDA) and hydrogen peroxide (H₂O₂) by 61.7% and 49.23%. Moreover, the treatment positively impacted key growth parameters, increasing total chlorophyll content by 43%, plant height by 47%, and legume count per plant by 80.4%. The application of biochar and ZnONPs also improved seed protein content, reflecting an enhancement in nutritional quality. This study supports the use of biochar and ZnONPs as biostimulants to manage yield losses in mung bean crops affected by charcoal rot disease. The future prospects of using ZnONPs and biochar as treatments in agriculture are promising, as they offer innovative, eco-friendly solutions to enhance crop productivity, improve soil health, and reduce reliance on synthetic chemicals, paving the way for more sustainable and resilient agricultural systems.",
+      "journal": "BMC plant biology",
+      "year": 2024,
+      "pub_date": "2024-11-19",
+      "authors": "Mazhar Muhammad Waqas; Ishtiaq Muhammad; Maqbool Mehwish; Mazher Mubsher; Amai Saud; ... (+2)",
+      "first_author": "Mazhar Muhammad Waqas",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

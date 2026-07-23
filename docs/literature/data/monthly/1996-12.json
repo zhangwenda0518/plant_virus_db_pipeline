@@ -1,0 +1,212 @@
+{
+  "month": "1996-12",
+  "generated": "2026-07-13 02:59:42",
+  "total": 9,
+  "by_category": {
+    "Host_Virus_Interactions": 7,
+    "Antiviral_Resistance_Genes": 2,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8986804",
+      "doi": "10.1073/pnas.93.26.15289",
+      "title": "Induction of HSP70 and polyubiquitin expression associated with plant virus replication.",
+      "abstract": "By examining the front of virus invasion in immature pea embryos infected with pea seed-borne mosaic virus (PSbMV), the selective control of different host genes has been observed. From our observations, the early responses to PSbMV replication can be grouped into three classes, inhibited host gene expression, induced host gene expression, and no effect on a normal host function. The expression of two heat-inducible genes encoding HSP70 and polyubiquitin was induced coordinately with the onset of virus replication and the down-regulation of two other genes encoding lipoxygenase and heat shock cognate protein. The down-regulation was part of a general suppression of host gene expression that may be achieved through the degradation of host transcripts. We discuss the possibilities of whether the induction of HSP70 and polyubiquitin genes represents a requirement for the respective protein products by the virus or is merely a consequence of the depletion of other host transcripts. The former is feasible, as the induction of both genes does result in increased HSP70 and ubiquitin accumulation. This also indicates that, in contrast to some animal virus infections, there is not a general inhibition of translation of host mRNAs following PSbMV infection. This selective control of host gene expression was observed in all cell types of the embryo and identifies mechanisms of cellular disruption that could act as triggers for symptom expression.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1996,
+      "pub_date": "1996-12-24",
+      "authors": "Aranda M A; Escaler M; Wang D; Maule A J",
+      "first_author": "Aranda M A",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "豌豆种传花叶病毒 (Pea seed-borne mosaic virus, PSbMV)",
+      "taxonomy": "",
+      "host_plant": "豌豆未成熟胚",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8962166",
+      "doi": "10.1073/pnas.93.25.14972",
+      "title": "Isolation and characterization of a tobacco mosaic virus-inducible myb oncogene homolog from tobacco.",
+      "abstract": "Salicylic acid (SA) plays an important role in signaling the activation of plant defense responses against pathogen attack including induction of pathogenesis-related (PR) proteins. To gain further insight into the SA-mediated signal transduction pathway, we have isolated and characterized a tobacco mosaic virus (TMV)-inducible myb oncogene homolog (myb1) from tobacco. The myb1 gene was induced upon TMV infection during both the hypersensitive response and development of systemic acquired resistance in the resistant tobacco cultivar following the rise of endogenous SA, but was not activated in the susceptible cultivar that fails to accumulate SA. The myb1 gene was also induced by incompatible bacterial pathogen Pseudomonas syringae pv. syringae during the hypersensitive response. Exogenous SA treatment rapidly (within 15 min) activated the expression of myb1 in both resistant and susceptible tobacco cultivars with the subsequent induction of PR genes occurring several hours later. Biologically active analogs of SA and 2,6-dichloroisonicotinic acid (a synthetic functional analog of SA), which induce PR genes and enhanced resistance, also activated the myb1 gene. In contrast, biologically inactive analogs were poor inducers of myb1 gene expression. Furthermore, the recombinant Myb1 protein was shown to specifically bind to a Myb-binding consensus sequence found in the promoter of the PR-1a gene. Taken together, these results suggest that the tobacco myb1 gene encodes a signaling component down-stream of SA that may participate in transcriptional activation of PR genes and plant disease resistance.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1996,
+      "pub_date": "1996-12-10",
+      "authors": "Yang Y; Klessig D F",
+      "first_author": "Yang Y",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "烟草花叶病毒 (Tobacco mosaic virus)",
+      "taxonomy": "",
+      "host_plant": "烟草",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8955042",
+      "doi": "10.1006/viro.1996.0650",
+      "title": "Tobamovirus cross protection using a potexvirus vector.",
+      "abstract": "Cross protection is the ability of one virus to prevent or delay infection by a related challenge virus. To examine this phenomena, a potato X potexvirus (PVX) vector (Chapman et al., 1992, Plant J. 2, 549) was used to systemically express the tobacco mosaic tobamovirus (TMV) coat protein (CP) open reading frame in Nicotiana benthamiana. PVX constructs induce mild mosaic symptoms in N. benthamiana, whereas TMV infection results in rapid systemic necrosis and plant death. Healthy plants or plants preinfected with the unmodified PVX vector succumbed to necrosis within 1 week of TMV challenge inoculation. However, plants preinfected with PVX vectors expressing the TMV CP or RNA coding sequence displayed a 1- to 2-week delay in the appearance of TMV-induced necrosis along with reduced accumulations of TMV. Symptom delay and reductions in the accumulation of TMV were more pronounced in plants protected with the vector expressing the TMV CP than with the vector expressing a nontranslatable CP sequence. Protection was overcome more quickly using a 10-fold higher concentration of challenge inoculum and was ineffective against TMV RNA or a TMV construct expressing a distantly related tobamovirus CP. These findings demonstrate that both RNA and protein are involved in this cross protection phenomenon, but that CP is the main contributor to protection. Taken together, these studies indicate that virus vectors can be used to simulate both cross protection and transgene-derived coat protein-mediated protection, thus providing a new method to further investigate the mechanisms behind each.",
+      "journal": "Virology",
+      "year": 1996,
+      "pub_date": "1996-12-15",
+      "authors": "Culver J N",
+      "first_author": "Culver J N",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "烟草花叶病毒 (TMV)",
+      "taxonomy": "",
+      "host_plant": "本氏烟 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8953033",
+      "doi": "10.1126/science.274.5295.2060",
+      "title": "Initiation of Plant Disease Resistance by Physical Interaction of AvrPto and Pto Kinase.",
+      "abstract": "Resistance to bacterial speck disease in tomato occurs when the Pto kinase in the plant responds to expression of the avirulence gene avrPto in the Pseudomonas pathogen. Transient expression of an avrPto transgene in plant cells containing Pto elicited a defense response. In the yeast two-hybrid system, the Pto kinase physically interacted with AvrPto. Alterations of AvrPto or Pto that disrupted the interaction in yeast also abolished disease resistance in plants. The physical interaction of AvrPto and Pto provides an explanation of gene-for-gene specificity in bacterial speck disease resistance.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 1996,
+      "pub_date": "1996-12-20",
+      "authors": "Tang X; Frederick RD; Zhou J; Halterman DA; Jia Y; ... (+1)",
+      "first_author": "Tang X",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8973569",
+      "doi": "10.1042/bj3200577",
+      "title": "Investigations into the molecular size and shape of tomato extensin.",
+      "abstract": "The molecular characteristics of soluble extensin from tomato have been investigated. An apparent molecular mass greater than 240 kDa has been previously observed with the shape-dependent method of gel-filtration chromatography [Brownleader and Dey (1993) Planta (Berlin) 191, 457-469]. Tomato extensin is a heavily glycosylated protein that does not migrate into SDS/polyacrylamide gels. This shape-dependent behaviour raises doubts about agreement between the observed apparent mass and the absolute value. The molecular mass measured with matrix-assisted laser desorption/ionization-time-of-flight mass spectrometry (MALDI-TOF MS) was 72.3 kDa, with no evidence of any other species except a doubly charged ion. The sample was therefore considered to be monodisperse under the conditions used. Electron microscopy of soluble extensin showed the presence of particles 40-50 nm in length and 2.0-2.5 nm in width. A minority of these particles showed a central 'kink'. A number of smaller and generally wider particles (20 nm x 2-4 nm) were considered to be folded monomers and larger particles were thought to be dimers. Sedimentation analysis showed that extensin exists in a rapid monomer-dimer equilibrium in the concentration range and buffer used. Sedimentation equilibrium data gave a Kd of 8.5 microM and sedimentation velocity data generated a Kd between 1 and 10 microM. The concentration dependence of the measured sedimentation coefficient was used, together with hydrodynamic bead modelling, to define plausible shapes for monomer and dimer. This suggests that monomeric extensin is an elongated rod of length 40 nm and width 2 nm, which forms staggered dimers of average length 50 nm and width 3 nm. Extensin is an integral component of the primary cell wall. The physical characteristics (size, shape and form) of the rod-like extensin have been evaluated in this paper so that the role that extensin plays in primary cell wall architecture and during plant disease resistance can be more fully understood.",
+      "journal": "The Biochemical journal",
+      "year": 1996,
+      "pub_date": "1996-12-01",
+      "authors": "Brownleader M D; Byron O; Rowe A; Trevan M; Welham K; ... (+1)",
+      "first_author": "Brownleader M D",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8969533",
+      "doi": "10.1094/mpmi-9-0850",
+      "title": "The cloned gene, Xa21, confers resistance to multiple Xanthomonas oryzae pv. oryzae isolates in transgenic plants.",
+      "abstract": "The cloned rice gene, Xa21, confers resistance to multiple pathogen isolates of Xanthomonas oryzae pv. oryzae in transgenic plants. The resistance phenotype was stably transmitted to T1 progeny and inherited as a single locus. The T1 progeny were tested for resistance to 32 X. oryzae pv. oryzae isolates from eight countries. Both the engineered line and the donor line showed resistance to 29 isolates and susceptibility to three isolates. The identical resistance spectrum of both lines indicates that the presence of a single member of a multigene family, Xa21, is sufficient to confer multi-isolate resistance. The results presented here have important implications for engineering disease resistance in crop plants.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 1996,
+      "pub_date": "1996-12-01",
+      "authors": "Wang G L; Song W Y; Ruan D L; Sideris S; Ronald P C",
+      "first_author": "Wang G L",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8969530",
+      "doi": "10.1094/mpmi-9-0819",
+      "title": "Isolation of a cDNA encoding a novel leucine-rich repeat motif from Sorghum bicolor inoculated with fungi.",
+      "abstract": "A sorghum cDNA clone has been isolated that encodes a protein containing six imperfect leucine-rich repeats (LRRs) of approximately 22 amino acids in length. The putative protein, designated SLRR, also contains a signal peptide, and six potential N-glycosylation sites. Comparisons of SLRR and its LRR consensus sequences found significant homology to the extracellular binding domains of receptor-protein kinases RLK5 and TMK1 of Arabidopsis, and some plant disease resistance genes. Results from RNA gel blot analyses showed that SLRR mRNA accumulates rapidly in mesocotyls and juvenile leaves by 6 h postinoculation with the fungus Colletotricum graminicola. Further experiments suggest that the gene encoding SLRR is neither systemically induced by fungal inoculation, nor transcriptionally activated in a host-fungal-pathogen-specific manner. The presence of LRRs strongly suggests that the SLRR protein is involved in protein-ligand binding and therefore may be a component of a signal transduction pathway.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 1996,
+      "pub_date": "1996-12-01",
+      "authors": "Hipskind J D; Nicholson R L; Goldsbrough P B",
+      "first_author": "Hipskind J D",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8986840",
+      "doi": "10.1073/pnas.93.26.15497",
+      "title": "Molecular recognition of pathogen attack occurs inside of plant cells in plant disease resistance specified by the Arabidopsis genes RPS2 and RPM1.",
+      "abstract": "The Arabidopsis thaliana disease resistance genes RPS2 and RPM1 belong to a class of plant disease resistance genes that encode proteins that contain an N-terminal tripartite nucleotide binding site (NBS) and a C-terminal tandem array of leucine-rich repeats. RPS2 and RPM1 confer resistance to strains of the bacterial phytopathogen Pseudomonas syringae carrying the avirulence genes avrRpt2 and avrB, respectively. In these gene-for-gene relationships, it has been proposed that pathogen avirulence genes generate specific ligands that are recognized by cognate receptors encoded by the corresponding plant resistance genes. To test this hypothesis, it is crucial to know the site of the potential molecular recognition. Mutational analysis of RPS2 protein and in vitro translation/translocation studies indicated that RPS2 protein is localized in the plant cytoplasm. To determine whether avirulence gene products themselves are the ligands for resistance proteins, we expressed the avrRpt2 and avrB genes directly in plant cell using a novel quantitative transient expression assay, and found that expression of avrRpt2 and avrB elicited a resistance response in plants carrying the corresponding resistance genes. This observation indicates that no bacterial factors other than the avirulence gene products are required for the specific resistance response as long as the avirulence gene products are correctly localized. We propose that molecular recognition of P. syringae in RPS2- and RPM1-specified resistance occurs inside of plant cells.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1996,
+      "pub_date": "1996-12-24",
+      "authors": "Leister R T; Ausubel F M; Katagiri F",
+      "first_author": "Leister R T",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9013081",
+      "doi": "10.1046/j.1365-2362.1996.410595.x",
+      "title": "Phyllanthus amarus down-regulates hepatitis B virus mRNA transcription and replication.",
+      "abstract": "The Phyllanthus amarus plant shows potential for treating hepatitis B virus. To define the mechanism of action of P. amarus, we used HepG2 2.2.15 cells, which support hepatitis B virus replication. P. amarus inhibited hepatitis B virus polymerase activity, decreased episomal hepatitis B virus DNA content and suppressed virus release into culture medium. To examine transcriptional control mechanisms, we used G26 hepatitis B virus transgenic mice, which produce serum HBsAg but neither HBcAg nor virion particles. When P. amarus was administered to transgenic mice, hepatic HBsAg mRNA levels decreased, indicating transcriptional or post-transcriptional down-regulation of the transgene. Increase in hepatitis B virus mRNA expression after stimulation of the glucocorticoid responsive element was also suppressed by P. amarus, suggesting involvement of the hepatitis B virus enhancer in this response. Disruption by P. amarus of hepatitis B virus polymerase activity, mRNA transcription and replication supports its role as an antiviral agent.",
+      "journal": "European journal of clinical investigation",
+      "year": 1996,
+      "pub_date": "1996-12-01",
+      "authors": "Lee C D; Ott M; Thyagarajan S P; Shafritz D A; Burk R D; ... (+1)",
+      "first_author": "Lee C D",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

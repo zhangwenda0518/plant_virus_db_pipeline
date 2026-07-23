@@ -1,0 +1,191 @@
+{
+  "month": "1994-09",
+  "generated": "2026-07-13 02:59:42",
+  "total": 8,
+  "by_category": {
+    "Host_Virus_Interactions": 5,
+    "Antiviral_Resistance_Genes": 2,
+    "Detection_Methods": 1,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8053160",
+      "doi": "10.1006/viro.1994.1496",
+      "title": "Increase in the relative fitness of a plant virus RNA associated with its recombinant nature.",
+      "abstract": "A recombination event at the 3' end of RNA 3 in a pseudorecombinant virus (C1C2T3) having RNAs 1 and 2 from TrK7-cucumber mosaic virus (CMV) and RNA 3 from P-tomato aspermy virus (TAV) was detected by ribonuclease protection assay (RPA). Sequence analysis of the 3' end of RNA 3 of C1C2T3 and of its parental CMV and TAV strains showed that RNA 3 of C1C2T3 had a hybrid nature in which most of the 3' noncoding region (3' ncr), including the whole 3' terminal tRNA-like structure, was derived from CMV RNA 2 by recombination. Recombination may have occurred in two steps. The first one would have caused the duplication of a large region 5' to the 3' end tRNA-like structure, derived from TAV and from CMV. The second one would have eliminated the TAV-derived sequences in this duplicated region. Competition experiments in tobacco plants showed that in a context of RNA 1 + 2 from CMV, RNA 3 from TAV is outcompleted by RNA 3 of CMV, but the recombinant TAV RNA 3 with the 3' end of CMV outcompetes both TAV and CMV RNA 3. This shows an increase in relative fitness associated with the recombinant nature of RNA 3. Our results document the potential importance of RNA-RNA recombination in the determination of the genetic structure of RNA viral populations.",
+      "journal": "Virology",
+      "year": 1994,
+      "pub_date": "1994-09-01",
+      "authors": "Fernández-Cuartero B; Burgyán J; Aranda M A; Salánki K; Moriones E; ... (+1)",
+      "first_author": "Fernández-Cuartero B",
+      "categories": [
+        "Detection_Methods",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "黄瓜花叶病毒（CMV）和番茄不孕病毒（TAV）的重组体",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7923359",
+      "doi": "10.1016/0092-8674(94)90283-6",
+      "title": "The product of the tobacco mosaic virus resistance gene N: similarity to toll and the interleukin-1 receptor.",
+      "abstract": "The products of plant disease resistance genes are postulated to recognize invading pathogens and rapidly trigger host defense responses. Here we describe isolation of the resistance gene N of tobacco that mediates resistance to the viral pathogen tobacco mosaic virus (TMV). The N gene was isolated by transposon tagging using the maize Activator transposon. A genomic DNA fragment containing the N gene conferred TMV resistance to TMV susceptible tobacco. Sequence analysis of the N gene shows that it encodes a protein of 131.4 kDa with an amino-terminal domain similar to that of the cytoplasmic domain of the Drosophila Toll protein and the interleukin-1 receptor (IL-1R) in mammals, a nucleotide-binding site (NBS), and 14 [corrected] imperfect leucine-rich repeats (LRR). The sequence similarity of N, Toll, and IL-1R suggests that N mediates rapid gene induction and TMV resistance through a Toll-IL-1-like pathway.",
+      "journal": "Cell",
+      "year": 1994,
+      "pub_date": "1994-09-23",
+      "authors": "Whitham S; Dinesh-Kumar S P; Choi D; Hehl R; Corr C; ... (+1)",
+      "first_author": "Whitham S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "烟草花叶病毒 (TMV)",
+      "taxonomy": "",
+      "host_plant": "烟草",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "24186243",
+      "doi": "10.1007/BF00220797",
+      "title": "Recombination of Solanum brevidens chromosomes in the second backcross generation from a somatic hybrid with S. tuberosum.",
+      "abstract": "Solanum brevidens synteny groups were examined with 47 widely-distributed RFLP markers in 17 BC2 progeny from six fertile BC1 plants. The BC1 plants were derived from a single S. brevidens + S. tuberosum somatic hybrid backcrossed with S. tuberosum (potato). Probes which were linked in potato and tomato were also found to be syntenic along each of the 12 S. brevidens chromosomes. More than half of the S. brevidens synteny groups had lost one or more S. brevidens-specific RFLPs in the BC2, suggesting that recombination had occurred. For 8 of the 12 S. brevidens RFLP synteny groups, the frequency of recombinant chromosomes exceeded that of intact parental chromosomes. Using the RFLP data, 161 RAPD markers were tentatively located throughout the S. brevidens genome. Further analyses with 39 of these 161 RAPD markers generally showed that RAPD and RFLP results were comparable, but some inconsistencies were noted with 14 of the 39 RAPD markers. The extent of marker loss and the high frequency of synteny groups which were marked by a single S. brevidens-specific RFLP marker suggest that the S. brevidens chromosomes have some pairing affinity with potato chromosomes. This interaction should facilitate the transfer of novel disease-resistance traits into potato breeding lines. One plant was recovered with the chromosome number of S. tuberosum (2n=48) that carried a single S. brevidens RFLP marker, suggesting transfer of this S. brevidens marker into the genome of S. tuberosum.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 1994,
+      "pub_date": "1994-09-01",
+      "authors": "McGrath J M; Wielgus S M; Uchytil T F; Kim-Lee H; Haberlach G T; ... (+2)",
+      "first_author": "McGrath J M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7923358",
+      "doi": "10.1016/0092-8674(94)90282-8",
+      "title": "The A. thaliana disease resistance gene RPS2 encodes a protein containing a nucleotide-binding site and leucine-rich repeats.",
+      "abstract": "In plants, resistance to a pathogen is frequently correlated with a genetically defined interaction between a plant resistance gene and a corresponding pathogen avirulence gene. A simple model explains these gene-for-gene interactions: avirulence gene products generate signals (ligands), and resistance genes encode cognate receptors. The A. thaliana RPS2 gene confers resistance to the bacterial pathogen P. syringae carrying the avirulence gene avrRpt2. A map-based positional cloning strategy was used to identify RPS2. The identification of RPS2 was verified using a newly developed transient assay for RPS2 function and by genetic complementation in transgenic plants. RPS2 encodes a novel 105 kDa protein containing a leucine zipper, a nucleotide-binding site, and 14 imperfect leucine-rich repeats.",
+      "journal": "Cell",
+      "year": 1994,
+      "pub_date": "1994-09-23",
+      "authors": "Mindrinos M; Katagiri F; Yu G L; Ausubel F M",
+      "first_author": "Mindrinos M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8091208",
+      "doi": "10.1126/science.8091208",
+      "title": "Plant genetics. Mapping the sequence of disease resistance.",
+      "abstract": "",
+      "journal": "Science (New York, N.Y.)",
+      "year": 1994,
+      "pub_date": "1994-09-23",
+      "authors": "Moffat A S",
+      "first_author": "Moffat A S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8091210",
+      "doi": "10.1126/science.8091210",
+      "title": "RPS2 of Arabidopsis thaliana: a leucine-rich repeat class of plant disease resistance genes.",
+      "abstract": "Plant disease resistance genes function is highly specific pathogen recognition pathways. PRS2 is a resistance gene of Arabidopsis thaliana that confers resistance against Pseudomonas syringae bacteria that express avirulence gene avrRpt2. RPS2 was isolated by the use of a positional cloning strategy. The derived amino acid sequence of RPS2 contains leucine-rich repeat, membrane-spanning, leucine zipper, and P loop domains. The function of the RPS2 gene product in defense signal transduction is postulated to involve nucleotide triphosphate binding and protein-protein interactions and may also involve the reception of an elicitor produced by the avirulent pathogen.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 1994,
+      "pub_date": "1994-09-23",
+      "authors": "Bent A F; Kunkel B N; Dahlbeck D; Brown K L; Schmidt R; ... (+3)",
+      "first_author": "Bent A F",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "23195881",
+      "doi": "10.1016/S0944-7113(11)80026-7",
+      "title": "SP-303, an antiviral oligomeric proanthocyanidin from the latex of Croton lechleri (Sangre de Drago).",
+      "abstract": "SP-303, a large proanthocyanidin oligomer isolated from the latex of the plant species Croton lechleri (Eupborbiaceae) has demonstrated broad activity against a variety of DNA and RNA viruses. In cell culture, SP-303 exhibits potent activity against isolates and laboratory strains of respiratory syncytial virus (RSV), influenza A virus (FLU-A) and parainfluenza virus (PIV). Parallel assays of SP-303 and ribavirin showed comparable activity against these viruses. SP-303 also exhibits significant inhibitory activity against herpesvirus (HSV) types 1 and 2, including herpesviruses resistant to acyclovir and foscarnet. Inhibition was also observed against hepatitis A and B viruses. The antiviral mechanism of SP-303 seems to derive from its direct binding to components of the viral envelope, resulting in inhibition of viral attachment and penetration of the plasma membrane. Antiviral effects of SP-303 were measured by three distinct methods: CPE, MTT and precursor uptake/incorporation. Cytotoxicity endpoints were markedly greater than the respective antiviral endpoints. SP-303 exhibited activity in RSV-infected cotton rats and African green monkeys, PIV-3-infected cotton rats, HSV-2 infected mice and guinea pigs and FLU-A-infected mice. The most successful routes of SP-303 administration for producing efficacy were: topical application to HSV-2- genital lesions in mice and guinea pigs, aerosol inhalation to FLU-A-infected mice and PIV-3-infected cotton rats, and oral dosage to RSV-infected cotton rats. A variety of toxicological evaluations demonstrated the safety of SP-303, particularly orally, which was predictable, since condensed tannins are a common dietary component. It is notable that the larger proanthocyanidins as a class have high antiviral activity, whereas most of the monomers are inactive. Clinical trials are ongoing to evaluate SP-303 as a therapeutic antiviral agent.",
+      "journal": "Phytomedicine : international journal of phytotherapy and phytopharmacology",
+      "year": 1994,
+      "pub_date": "1994-09-01",
+      "authors": "Ubillas R; Jolad S D; Bruening R C; Kernan M R; King S R; ... (+22)",
+      "first_author": "Ubillas R",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7972377",
+      "doi": "10.1111/j.1751-1097.1994.tb05100.x",
+      "title": "Hypocrellin, from Hypocrella bambuase, is phototoxic to human immunodeficiency virus.",
+      "abstract": "Hypocrellin, a photodynamic perylene quinonoid isolated from the Chinese medicinal fungus Hypocrella bambuase, was evaluated for antiviral activity against the human immunodeficiency virus (HIV-1). Hypocrellin was phototoxic to HIV-1, almost as good as the structurally similar plant pigment hypericin, and like hypericin its activity required visible light. In contrast peroxyhypocrellin had little or no effect on the virus.",
+      "journal": "Photochemistry and photobiology",
+      "year": 1994,
+      "pub_date": "1994-09-01",
+      "authors": "Hudson J B; Zhou J; Chen J; Harris L; Yip L; ... (+1)",
+      "first_author": "Hudson J B",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

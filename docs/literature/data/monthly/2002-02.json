@@ -1,0 +1,283 @@
+{
+  "month": "2002-02",
+  "generated": "2026-07-13 02:59:42",
+  "total": 16,
+  "by_category": {
+    "Host_Virus_Interactions": 5,
+    "New_Virus": 4,
+    "Antiviral_Resistance_Genes": 3,
+    "Detection_Methods": 1,
+    "Transmission_Epidemiology": 1,
+    "Control_Management": 1,
+    "Viral_Diversity_Ecology": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30823320",
+      "doi": "10.1094/PDIS.2002.86.2.186C",
+      "title": "First Report of Pepper mottle virus in Tomato.",
+      "abstract": "In 2000, a breeding company submitted a tomato (Lycopersicon esculentum) sample from Guatemala for diagnosis. The plants showed necrotic lesions on leaves surrounded by some chlorosis, necrotic streaks on stems, and large superficial necrotic lesions on fruits. By mechanical inoculation of plant sap to different plant species, symptoms appeared in Capsicum annuum 'Westlandse Grote Zoete', Lycopersicon esculentum 'Money-maker', Nicotiana benthamiana, N. bigelovii, N. glutinosa, N. hesperis-67A, N. occidentalis-P1, N. tabacum 'White Burley', and Physalis floridana. Systemically infected leaves from N. occidentalis-P1 were used for all further experiments. Leaf dip preparations were analyzed by transmission electron microscopy and revealed the presence of filamentous virus particles typical of a potyvirus. Double-antibody sandwich enzyme-linked immunosorbent assay tests for Potato virus A, V, and Y, Tobacco etch virus, and Wild potato mosaic virus were negative. An antiserum (PepMoV/DSMZ As 0186) to Pepper mottle virus (PepMoV), however, gave a positive reaction. To obtain further evidence for the presence of this virus, the nucleotide sequence of the complete 3' nontranslated region (3NTR) and the 3' terminal part of the coat protein gene (3CPG) was determined using the set of degenerate primers P9502/CPUP (1). The obtained nucleotide sequence (approximately 700 bp) was deposited in GenBank under Accession No. AF440801. It showed 93 to 94% 3NTR and 90 to 93% 3CPG homology with the three sequences of PepMoV from pepper already present in GenBank. The two viruses with the next closest nucleotide sequence homology were Potato virus V and Potato virus Y showing up to 80 and 75% homology with the 3CPG and up to 53 and 48% homology with the 3NTR, respectively. Based on these results, we concluded that the virus isolated from the symptomatic tomato plants was PepMoV. Because of the relatively low homologies with the pepper isolates of PepMoV, this tomato isolate might be a separate strain of the virus. To our knowledge, this is the first report of the occurrence of PepMoV in tomato. Reference: (1) R. A. A. van der Vlugt et al. Phytopathology 89:148, 1999.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-02-01",
+      "authors": "Verhoeven J Th J; Willemen T M; Roenhorst J W",
+      "first_author": "Verhoeven J Th J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Pepper mottle virus (PepMoV)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "番茄 (Lycopersicon esculentum)；实验寄主包括辣椒、本氏烟等",
+      "location": "危地马拉",
+      "results": "鉴定为PepMoV，与辣椒分离物3NTR同源性93-94%，3CPG同源性90-93%，提示可能为新株系。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30823324",
+      "doi": "10.1094/PDIS.2002.86.2.187D",
+      "title": "First Report of Beet soil-borne virus on Sugar Beet in Iran.",
+      "abstract": "Sugar beet is a main field crop in Iran and is cultivated in 186,000 ha. During the summer of 2001, sugar beet (Beta vulgaris) plants with pale, often upright, narrow, and rolled leaves were collected from the six main beet cultivation provinces of Iran (Fars, Ghazvin, Kermanshah, Khorasan, Semnan, and Isfahan). Roots of symptomatic plants were small, often with constriction, and exhibited warty outgrowth, proliferation of fibrous roots, and vascular necrosis. Beet soil-borne virus (BSBV) and Beet necrotic yellow vein (BNYVV, genus Benyvirus) were detected in sugar beet root samples by tissue-blot immunoassay (TBIA) using BSBV- and BNYVV-specific monoclonal antibodies (As-0576.1 and As-0799.1/CG6-F4, respectively; DSMZ Plant Virus Collection, Germany). Root extracts of sugar beet plants infected with BSBV, were infective by mechanical inoculation to Chenopodium quinoa causing necrotic ring spots. BSBV was detected in inoculated plants by TBIA. Laboratory tests using TBIA on 2,387 randomly collected samples showed that BSBV was present in 406 plants (17%) and BNYVV was present in 1,347 plants (56.43%). BSBV resembles BNYVV, the causal agent of sugar beet rhizomania, morphologically and in its transmission by Polymyxa betae (1). BNYVV has been reported previously from Iran (2). To our knowledge, this is the first report of BSBV occurring on sugar beet in Iran. References: (1) M. Ivanovic and I. Macfarlane. Annu. Rep. Rothamsted Exp. Stn. Page 190, 1982. (2) K. Izadpanah et al. Iran. J. Plant Pathol. 32:155, 1996.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-02-01",
+      "authors": "Farzadfar Sh; Pourrahim R; Golnaraghi A R; Shahraeen N",
+      "first_author": "Farzadfar Sh",
+      "categories": [
+        "Detection_Methods",
+        "New_Virus"
+      ],
+      "virus_name": "Beet soil-borne virus (BSBV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30823321",
+      "doi": "10.1094/PDIS.2002.86.2.187A",
+      "title": "First Report of a Distinct Begomovirus Infecting Cassava from Zanzibar.",
+      "abstract": "In 1998, cassava plants exhibiting extremely mild mosaic disease symptoms were collected from Uguja Island, Zanzibar. Total DNAs extracted from symptomatic leaves did not produce diagnostic PCR bands using primers specific to known Cassava mosaic viruses (genus Begomovirus, family Geminiviridae) (2). Degenerate primer pair A/B (1), however, produced a 564-nucleotide (nt) band in the common region of DNA-A to the conserved amino acid sequence CEGPCKYG within the coat protein gene for begomoviruses. Virus-specific primers were designed and the begomoviral genome was amplified and cloned to obtain the full-length DNA-A (2,785 nt) (AF422174) and the partial DNA-B (2,403 nt) (AF422175) component comprising the 5' end of the BV1 open reading frame (ORF) to eight (A) of the conserved nanonucleotide TAATATTAC in the common region. Phylogenetic comparisons of DNA-A and -B sequences of the cassava begomivirus showed they were most closely related to East African cassava mosaic virus (EACMV) from Tanzania (Z83256, 83% identity) and Uganda (AF126805, 87% identity). Based on DNA-A and -B components, its closest relatives among African cassava mosaic virus strains were the Nigerian (X17095, 67% identity) and Ugandan (AF126800, 38% identity) isolates respectively. The number and arrangement of the viral ORF was identical to other bipartite begomoviruses from the Old World. Work is in progress to determine whether this begomovirus is a new strain of an existing EACMV or a new species. References: (1) D. Deng et al. Ann. App. Biol. 125:327, 1994. (2) X. Zhou et al. J. Gen. Virol. 78:2101, 1997.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-02-01",
+      "authors": "Maruthi M N; Colvin J; Seal S; Thresh J M",
+      "first_author": "Maruthi M N",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Distinct Begomovirus (暂命名为Zanzibar cassava begomovirus)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "木薯 (Cassava)",
+      "location": "坦桑尼亚桑给巴尔岛乌古贾岛 (Uguja Island, Zanzibar, Tanzania)",
+      "results": "获得全长DNA-A (2785nt)和部分DNA-B (2403nt); 系统发育表明与EACMV最相似(83-87% identity), 但低于种界限。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12469312",
+      "doi": "10.2323/jgam.48.17",
+      "title": "Dioszegia zsoltii sp. nov., a new ballistoconidium-forming yeast species with two varieties.",
+      "abstract": "As a result of conventional characterization of yeasts isolated from various plant leaves collected in Yunnan, China, six ballistoconidium-forming strains with orange-colored colonies were grouped together. Molecular phylogenetic analysis based on 18S rDNA sequencing showed that two representative strains of this group of yeasts, CH 2.068 and CH 2.497, were closely related to the species in the genus Dioszegia and had signature sequences typical of this genus. However, the six strains from Yunnan differed from the described Dioszegia species remarkably (14.5-17.7% nucleotide divergences) in the ITS (internal transcribed spacer) region sequences, which indicated that they represent a distinct species. Furthermore, among the six strains studied, the ITS region sequence comparison allowed the recognition of two subgroups represented by CH 2.068 and CH 2.497, which differ from each other in three bases in the ITS 2 region. DNA-DNA relatedness revealed that the two subgroups represent two varieties of a new species in the genus Dioszegia, for which Dioszegia zsoltii sp. nov. var. zsoltii and Dioszegia zsoltii var. yunnanensis var. nov. are proposed.",
+      "journal": "The Journal of general and applied microbiology",
+      "year": 2002,
+      "pub_date": "2002-02-01",
+      "authors": "Bai Feng-Yan; Takashima Masako; Jia Jian-Hua; Nakase Takashi",
+      "first_author": "Bai Feng-Yan",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11925049",
+      "doi": "10.1007/s004250100656",
+      "title": "Evidence for regulation of resistance in Arabidopsis to Egyptian cotton worm by salicylic and jasmonic acid signaling pathways.",
+      "abstract": "Signaling cross-talk between wound- and pathogen-response pathways influences resistance of plants to insects and disease. To elucidate potential interactions between salicylic acid (SA) and jasmonic acid (JA) defense pathways, we exploited the availability of characterized mutants of Arabidopsis thaliana (L.) Heynh. and monitored resistance to Egyptian cotton worm (Spodoptera littoralis Boisd.; Lepidoptera: Noctuidae). This generalist herbivore is sensitive to induced plant defense pathways and is thus a useful model for a mechanistic analysis of insect resistance. As expected, treatment of wild-type Arabidopsis with JA enhanced resistance to Egyptian cotton worm. Conversely, the coil mutant, with a deficiency in the JA response pathway, was more susceptible to Egyptian cotton worm than wild-type Arabidopsis. By contrast, the nprl mutant, with defects in systemic disease resistance, exhibited enhanced resistance to Egyptian cotton worm. Pretreatment with SA significantly reduced this enhanced resistance of nprl plants but had no influence on the resistance of wild-type plants. However, exogenous SA reduced the amount of JA that Egyptian cotton worm induced in both npr1 mutant and wild-type plants. Thus, this generalist herbivore engages two different induced defense pathways that interact to mediate resistance in Arabidopsis.",
+      "journal": "Planta",
+      "year": 2002,
+      "pub_date": "2002-02-01",
+      "authors": "Stotz Henrik U; Koch Thomas; Biedermann Anja; Weniger Kerstin; Boland Wilhelm; ... (+1)",
+      "first_author": "Stotz Henrik U",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11834373",
+      "doi": "10.1016/s1369-5274(02)00289-8",
+      "title": "Nods: a family of cytosolic proteins that regulate the host response to pathogens.",
+      "abstract": "Genetic variation in Nod2 is associated with susceptibility to Crohn's disease. Nod2 and its homologue, Nod1, are members of a growing family of cytosolic factors related to the apoptosis regulator Apaf-1 and a class of plant disease resistance proteins. Nod1 and Nod2 confer responsiveness to lipopolysaccharides and interact with RICK, a mediator of NF-kappaB activation. Nod1 and Nod2 and related Nods appear to regulate the host response to pathogens, a process that may be faulty in certain inflammatory diseases. Recent studies that suggest that Nods may be involved in the recognition of pathogen components in the cytosol of mammalian cells are reviewed.",
+      "journal": "Current opinion in microbiology",
+      "year": 2002,
+      "pub_date": "2002-02-01",
+      "authors": "Inohara Naohiro; Ogura Yasunori; Nuñez Gabriel",
+      "first_author": "Inohara Naohiro",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11844114",
+      "doi": "10.1046/j.0960-7412.2001.01225.x",
+      "title": "Runaway cell death, but not basal disease resistance, in lsd1 is SA- and NIM1/NPR1-dependent.",
+      "abstract": "LSD1 was defined as a negative regulator of plant cell death and basal disease resistance based on its null mutant phenotypes. We addressed the relationship between lsd1-mediated runaway cell death and signaling components required for systemic acquired resistance (SAR), namely salicylic acid (SA) accumulation and NIM1/NPR1. We present two important findings. First, SA accumulation and NIM1/NPR1 are required for lsd1-mediated runaway cell death following pathogen infection or application of chemicals that mimic SA action. This implies that lsd1-dependent cell death occurs 'downstream' of the accumulation of SA. As SA application triggers runaway cell death in lsd1 but not wild-type plants, we infer that LSD1 negatively regulates an SA-dependent signal leading to cell death. Thus SA is both a trigger and a required mediator of lsd1 runaway cell death. Second, neither SA accumulation nor NIM1/NPR1 function is required for the basal resistance operating in lsd1. Therefore LSD1 negatively regulates a basal defense pathway that can act upstream or independently of both NIM1/NPR1 function and SA accumulation following avirulent or virulent pathogen challenge. Our data, together with results from other studies, point to the existence of an SA-dependent 'signal potentiation loop' controlling HR. Continued escalation of signaling in the absence of LSD1 leads to runaway cell death. We propose that LSD1 is a key negative regulator of this signal potentiation.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2002,
+      "pub_date": "2002-02-01",
+      "authors": "Aviv Daniel H; Rustérucci Christine; Holt Ben F; Dietrich Robert A; Parker Jane E; ... (+1)",
+      "first_author": "Aviv Daniel H",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12582696",
+      "doi": "10.1007/s00122-001-0785-0",
+      "title": "Targeted isolation, sequence analysis, and physical mapping of nonTIR NBS-LRR genes in soybean.",
+      "abstract": "Most cloned plant disease resistance genes (R-genes) code for proteins belonging to the nucleotide binding site (NBS) leucine-rich repeat (LRR) superfamily. NBS-LRRs can be divided into two classes based on the presence of a TIR domain ( Toll and interleukin receptor-like sequence) or a coiled coil motif (nonTIR) in their N-terminus. We used conserved motifs specific to nonTIR-NBS-LRR sequences in a targeted PCR approach to generate nearly 50 genomic soybean sequences with strong homology to known resistance gene analogs (RGAs) of the nonTIR class. Phylogenetic analysis classified these sequences into four main subclasses. A representative clone from each subclass was used for genetic mapping, bacterial artificial chromosome (BAC) library screening, and construction of RGA-containing BAC contigs. Of the 14 RGAs that could be mapped genetically, 12 localized to a 25-cM region of soybean linkage group F already known to contain several classical disease resistance loci. A majority of the genomic region encompassing the RGAs was physically isolated in eight BAC contigs, together spanning more than 1 Mb of genomic sequence with at least 12 RGA copies. Phylogenetic and sequence analysis, together with genetic and physical mapping, provided insights into the genome organization and evolution of this large cluster of soybean RGAs.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 2002,
+      "pub_date": "2002-02-01",
+      "authors": "Peñuela S.; Danesh D.; Young N. D.",
+      "first_author": "Peñuela S.",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11834368",
+      "doi": "10.1016/s1369-5274(02)00284-9",
+      "title": "Plant disease resistance triggered by pathogen-derived molecules: refined models of specific recognition.",
+      "abstract": "Plant disease resistance is often determined by complementary pairs of resistance genes (from the plant) and avirulence genes (from the invading pathogen). This gene-for-gene interaction has generally been interpreted as a receptor-ligand model in which the avirulence protein binds to the corresponding resistance protein, which in turn initiates plant defense. Recent studies indicate that co-localization of avirulence and resistance proteins is essential for their function. However, there is also accumulating evidence that resistance proteins are not the primary receptor for the avirulence protein. We review advances in our understanding of gene-for-gene resistance and examine validity of the receptor-ligand model and other proposed models in the context of the most recent findings.",
+      "journal": "Current opinion in microbiology",
+      "year": 2002,
+      "pub_date": "2002-02-01",
+      "authors": "Bonas Ulla; Lahaye Thomas",
+      "first_author": "Bonas Ulla",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11801376",
+      "doi": "10.1016/s0378-8741(01)00362-2",
+      "title": "Further evaluation of Rwandan medicinal plant extracts for their antimicrobial and antiviral activities.",
+      "abstract": "A total of 45 Rwandan plant extracts, belonging to 37 different plant species out of 21 families, were investigated for their antibacterial, antifungal, and antiviral properties. The plants were selected on the base of their ethnomedicinal use against infections and autoimmune diseases. From all the plant extracts tested, only Clematis hirsuta (leaves) showed a pronounced antifungal activity against Candida albicans and the dermatophytes Trichophyton rubrum, Epidermophyton floccosum, and Microsporum canis. Seven plant extracts showed a high antiviral activity against the DNA-virus Herpes simplex type 1, while five and three plant extracts were highly active against the RNA-viruses Coxsackie and Polio, respectively. Only Macaranga kilimandscharica (leaves) showed an interesting anti-measles activity, whereas Eriosema montanum (leaves) and Entada abyssinica (leaves) were highly active against Semliki forest virus. Some plant extracts showed an antibacterial activity against Gram-positive bacteria and Mycobacterium fortuitum, but none of them were active against the Gram-negative bacteria tested.",
+      "journal": "Journal of ethnopharmacology",
+      "year": 2002,
+      "pub_date": "2002-02-01",
+      "authors": "Cos P; Hermans N; De Bruyne T; Apers S; Sindambiwe J B; ... (+3)",
+      "first_author": "Cos P",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11859457",
+      "doi": "10.1055/s-2002-20238",
+      "title": "Antiviral activity of seven iridoids, three saikosaponins and one phenylpropanoid glycoside extracted from Bupleurum rigidum and Scrophularia scorodonia.",
+      "abstract": "As part of our screening of antiviral agents from medicinal plants, 11 compounds from plant origin (Bupleurum rigidum and Scrophularia scorodonia), three saikosaponins, seven iridoids and one phenylpropanoid glycoside were tested in vitro against herpes simplex type I (HSV-1), vesicular stomatitis virus (VSV) and poliovirus type 1. Five of these compounds showed antiviral activity against VSV. The percentages of cellular viability at the non-toxic limit concentrations of the active compounds were: verbascoside 53.6 % at 500 microg/ml, 8-acetylharpagide 32.1 % at 500 microg/ml, harpagoside 43.3 % at 450 microg/ml, scorodioside 47.8 % at 500 microg/ml and buddlejasaponin IV 56.9 % at 25 microg/ml. Although none of the saikosaponins were active against HSV-1, the iridoid scorodioside showed moderate in vitro anti-HSV-1 activity (30.6 % at 500 microg/ml). However, none of the compounds tested in this survey had any effect against poliovirus.",
+      "journal": "Planta medica",
+      "year": 2002,
+      "pub_date": "2002-02-01",
+      "authors": "Bermejo Paulina; Abad María José; Díaz Ana María; Fernández Lidia; De Santos Javier; ... (+4)",
+      "first_author": "Bermejo Paulina",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11820936",
+      "doi": "10.1093/oxfordjournals.jbchem.a003092",
+      "title": "Genomic clones encoding two isoforms of pokeweed antiviral protein in seeds (PAP-S1 and S2) and the N-glycosidase activities of their recombinant proteins on ribosomes and DNA in comparison with other isoforms.",
+      "abstract": "Pokeweed antiviral proteins (PAPs) are single-chain ribosome-inactivating proteins (RIPs) isolated from several organs of Phytolacca americana (Pokeweed) that are characterized by their ability to depurinate not only ribosomes but also various nucleic acids. PAP-S is one of the isoforms found in seeds. In this study, we obtained three different genomic clones encoding two forms of PAP-S (here designated as PAP-S1 and PAP-S2) and alpha-PAP after PCR using a pair of degenerated primers based on the known N- and C-terminal amino acid sequences of PAP-S. The nucleotide sequences of the genomic clones contained no introns. The deduced amino acid sequences of PAP-S1 and PAP-S2, which showed 83% identity to each other, were found to correspond to sequences reported independently for PAP-S protein and cDNA, respectively, demonstrating that at least two forms of PAP-S actually exist in seeds of the same plant. The recombinant PAP-S1, PAP-S2, alpha-PAP, and PAP I (a form appearing in spring leaves) exhibit the same level of depurinating activity on rat ribosomes, while their efficiencies on Escherichia coli ribosomes and salmon sperm DNA differ substantially from one another in the order of PAP I > alpha-PAP > PAP-S1 > PAP-S2 and alpha-PAP > PAP I > PAP-S1 > PAP-S2. Structural comparisons suggest that the large difference in ribosome recognition between PAP-S1 (or S2) and PAP I is caused by the alteration of residues adjacent to the adenine-binding site.",
+      "journal": "Journal of biochemistry",
+      "year": 2002,
+      "pub_date": "2002-02-01",
+      "authors": "Honjo Eijiro; Dong Danghong; Motoshima Hiroyuki; Watanabe Keiichi",
+      "first_author": "Honjo Eijiro",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

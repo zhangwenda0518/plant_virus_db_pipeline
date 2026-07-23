@@ -1,0 +1,56 @@
+{
+  "month": "1992-04",
+  "generated": "2026-07-13 02:59:42",
+  "total": 2,
+  "by_category": {
+    "Molecular_Characterization": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "1546451",
+      "doi": "10.1016/0042-6822(92)90455-x",
+      "title": "Agroinfection of transgenic plants leads to viable cauliflower mosaic virus by intermolecular recombination.",
+      "abstract": "Intermolecular reconstitution of a plant virus has been detected in whole plants in a system using a defective cauliflower mosaic virus genome and transgenic host plants containing the missing viral gene. The information for the gene VI protein of the virus was integrated into the chromosome of host Brassica napus plants and leaves of these plants were inoculated with Agrobacterium tumefaciens containing the complementing viral sequences. In several cases, upper leaves contained replicating viral DNA which was able to incite CaMV symptoms on turnip plants. The sequence of the resultant recombinant viral molecules suggested that both DNA and RNA recombination events may have been involved in the production of functional virus, one event being gene targeting of the T-DNA.",
+      "journal": "Virology",
+      "year": 1992,
+      "pub_date": "1992-04-01",
+      "authors": "Gal S; Pisan B; Hohn T; Grimsley N; Hohn B",
+      "first_author": "Gal S",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "花椰菜花叶病毒 (Cauliflower mosaic virus, CaMV)",
+      "taxonomy": "花椰菜花叶病毒属 (Caulimovirus)，花椰菜花叶病毒科 (Caulimoviridae)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1368484",
+      "doi": "10.1038/nbt0492-405",
+      "title": "Ribosome-inactivating proteins from plants: present status and future prospects.",
+      "abstract": "Plant ribosome-inactivating proteins (RIPs) are N-glycosidases which cleave the N-glycosidic bond of adenine in a specific ribosomal RNA sequence. Most commonly RIPs are single-chain proteins (type 1 RIPs), but some (type 2 RIPs) possess a galactose-specific lectin domain that binds to cell surfaces. The latter RIPs are potent toxins, the best known of which is ricin. RIPs have antiviral and abortifacient activities, and, in a widespread application, can also be linked to antibodies or ligands to form immunotoxins or conjugates specifically toxic to a given type of cell.",
+      "journal": "Bio/technology (Nature Publishing Company)",
+      "year": 1992,
+      "pub_date": "1992-04-01",
+      "authors": "Stirpe F; Barbieri L; Battelli M G; Soria M; Lappi D A",
+      "first_author": "Stirpe F",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "week": "2024-W42",
+  "start": "2024-10-14",
+  "end": "2024-10-20",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 35,
+  "by_category": {
+    "Control_Management": 10,
+    "Host_Virus_Interactions": 9,
+    "Antiviral_Resistance_Genes": 6,
+    "Viral_Diversity_Ecology": 3,
+    "New_Virus": 2,
+    "Biotechnology_Applications": 2,
+    "Transmission_Epidemiology": 1,
+    "Potyviridae": 1,
+    "Seco_Bromo_Tombus": 1,
+    "Tobamo_Virga": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "39415211",
+      "doi": "10.1186/s12985-024-02508-6",
+      "title": "Resistance gene Ty-1 restricts TYLCV infection in tomato by increasing RNA silencing.",
+      "abstract": "A major antiviral mechanism in plants is mediated by RNA silencing through the action of DICER-like (DCL) proteins, which cleave dsRNA into discrete small RNA fragments, and ARGONAUTE (AGO) proteins, which use the small RNAs to target single-stranded RNA. RNA silencing can also be amplified through the action of RNA-dependent RNA polymerases (RDRs), which use single stranded RNA to generate dsRNA that in turn is targeted by DCL proteins. As a counter-defense, plant viruses encode viral suppressors of RNA silencing (VSRs) that target different components in the RNA silencing pathway. The tomato Ty-1 gene confers resistance to the DNA virus tomato yellow leaf curl virus (TYLCV) and has been reported to encode an RDRγ protein. However, the molecular mechanisms by which Ty-1 controls TYLCV infection, including whether Ty-1 is involved in RNA silencing, are unknown. Here, by using a transient expression assay, we have confirmed that Ty-1 shows antiviral activity against TYLCV in Nicotiana benthamiana. Also, in transient expression-based silencing assays, Ty-1 augmented systemic transgene silencing in GFP transgenic N. benthamiana plants. Furthermore, co-expression of Ty-1 or other RDRγ proteins from N. benthamiana or Arabidopsis with various proteins resulted in lower protein expression. These results are consistent with a model wherein Ty-1-mediated resistance to TYLCV is due, at least in part, to an increase in RNA silencing activity.",
+      "journal": "Virology journal",
+      "year": 2024,
+      "pub_date": "2024-10-16",
+      "authors": "Ma Xiaofang; Zhou Yijun; Wu Liming; Moffett Peter",
+      "first_author": "Ma Xiaofang",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "番茄黄化曲叶病毒 (TYLCV)",
+      "taxonomy": "",
+      "host_plant": "番茄 (tomato), 本氏烟 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39419884",
+      "doi": "10.1007/s00248-024-02437-5",
+      "title": "Streptomyces fradiae Mitigates the Impact of Potato Virus Y by Inducing Systemic Resistance in Two Egyptian Potato (Solanum tuberosum L.) Cultivars.",
+      "abstract": "In this study, the impact of culture media filtrate of QD3 actinobacterial isolate on two potato cultivars, Spunta and Diamond, infected with potato virus Y (PVY) was investigated. Various parameters, including infection percentage, PVY virus infectivity, disease severity scoring, PVY optical density, photosynthetic and defense-related biochemical markers, enzymatic profiling, phenolic compounds, proline content, salicylic acid levels, and growth and yield parameters, were assessed to elucidate the potential of the QD3 actinobacterial isolate culture filtrate in mitigating PVY-induced damage. The physiological and biochemical characteristics of the QD3 actinobacterial isolate, including its salinity tolerance, pH preferences, and metabolic traits, were investigated. Molecular identification via 16S rRNA gene sequencing confirmed its classification as Streptomyces fradiae QD3, and it was deposited in GenBank with the gene accession number MN160630. Distinct responses between Spunta and Diamond cultivars, with Spunta displaying greater resistance to PVY infection. Notably, pre-infection foliar application of the QD3 filtrate significantly reduced disease symptoms and virus infection in both cultivars. For post-PVY infection, the QD3 filtrate effectively mitigated disease severity and the PVY optical density. Furthermore, the QD3 filtrate positively influenced photosynthetic pigments, enzymatic antioxidant activities, and key biochemical components associated with plant defense mechanisms. Gas chromatography‒mass spectrometry (GC‒MS) analysis revealed palmitic acid (hexadecanoic acid, methyl ester) and oleic acid (9-octadecanoic acid, methyl ester) as the most prominent compounds, with retention times of 23.23 min and 26.41 min, representing 53.27% and 23.25%, respectively, of the total peak area as primary unsaturated fatty acids and demonstrating antiviral effects against plant viruses. Cytotoxicity assays on normal human skin fibroblasts (HSFs) revealed the safety of QD3 metabolites, with low discernible toxicity at high concentrations, reinforcing their potential as safe and effective interventions. The phytotoxicity results indicate that all the seeds presented high germination rates of approximately 95-98%, suggesting that the treatment conditions had no phytotoxic effect on the Brassica oleracea (broccoli) seeds, Lactuca sativa (lettuce) seeds, and Eruca sativa (arugula or rocket) seeds. Overall, the results of this study suggest that the S. fradiae filtrate has promising anti-PVY properties, influencing various physiological, biochemical, and molecular aspects in potato cultivars. These findings provide valuable insights into potential strategies for managing PVY infections in potato crops, emphasizing the importance of Streptomyces-derived interventions in enhancing plant health and crop protection.",
+      "journal": "Microbial ecology",
+      "year": 2024,
+      "pub_date": "2024-10-17",
+      "authors": "Mohammed Fafy A; Abu-Hussien Samah H; Dougdoug Noha K El; Koutb Neima; Korayem Abdalla S",
+      "first_author": "Mohammed Fafy A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "马铃薯Y病毒",
+      "taxonomy": "",
+      "host_plant": "马铃薯",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38825208",
+      "doi": "10.1016/j.scitotenv.2024.173619",
+      "title": "The ADnet Bayesian belief network for alder decline: Integrating empirical data and expert knowledge.",
+      "abstract": "The globalization in plant material trading has caused the emergence of invasive pests in many ecosystems, such as the alder pathogen Phytophthora ×alni in European riparian forests. Due to the ecological importance of alder to the functioning of rivers and the increasing incidence of P. ×alni-induced alder decline, effective and accessible decision tools are required to help managers and stakeholders control the disease. This study proposes a Bayesian belief network methodology to integrate diverse information on the factors affecting the survival and infection ability of P. ×alni in riparian habitats to help predict and manage disease incidence. The resulting Alder Decline Network (ADnet) management tool integrates information about alder decline from scientific literature, expert knowledge and empirical data. Expert knowledge was gathered through elicitation techniques that included 19 experts from 12 institutions and 8 countries. An original dataset was created covering 1189 European locations, from which P. ×alni occurrence was modeled based on bioclimatic variables. ADnet uncertainty was evaluated through its sensitivity to changes in states and three scenario analyses. The ADnet tool indicated that mild temperatures and high precipitation are key factors favoring pathogen survival. Flood timing, water velocity, and soil type have the strongest influence on disease incidence. ADnet can support ecosystem management decisions and knowledge transfer to address P. ×alni-induced alder decline at local or regional levels across Europe. Management actions such as avoiding the planting of potentially infected trees or removing man-made structures that increase the flooding period in disease-affected sites could decrease the incidence of alder disease in riparian forests and limit its spread. The coverage of the ADnet tool can be expanded by updating data on the pathogen's occurrence, particularly from its distributional limits. Research on the role of genetic variability in alder susceptibility and pathogen virulence may also help improve future ADnet versions.",
+      "journal": "The Science of the total environment",
+      "year": 2024,
+      "pub_date": "2024-10-15",
+      "authors": "Gomes Marques Inês; Vieites-Blanco Cristina; Rodríguez-González Patricia M; Segurado Pedro; Marques Marlene; ... (+22)",
+      "first_author": "Gomes Marques Inês",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38902923",
+      "doi": "10.1016/j.xplc.2024.101005",
+      "title": "The biosynthesis of asiaticoside and madecassoside reveals tandem duplication-directed evolution of glycoside glycosyltransferases in the Apiales.",
+      "abstract": "Certain plant species within the Apiales order accumulate triterpenoid saponins that feature a distinctive glucose-glucose-rhamnose (G-G-R) sugar chain attached at the C-28 position of the pentacyclic triterpene skeleton. Until recently, the genomic basis underlying the biosynthesis and evolution of this sugar chain has remained elusive. In this study, we identified two novel glycoside glycosyltransferases (GGTs) that can sequentially install the sugar chain's second D-glucose and third L-rhamnose during the biosynthesis of asiaticoside and madecassoside, two representative G-G-R sugar chain-containing triterpenoid saponins produced by Centella asiatica. Enzymatic assays revealed the remarkable substrate promiscuity of the two GGTs and the key residues crucial for sugar-donor selectivity of the glucosyltransferase and rhamnosyltransferase. We further identified syntenic tandem gene duplicates of the two GGTs in the Apiaceae and Araliaceae families, suggesting a well-conserved genomic basis underlying sugar chain assembly that likely has evolved in the early ancestors of the Apiales order. Moreover, expression patterns of the two GGTs in pierced leaves of C. asiatica were found to be correlated with the production of asiaticoside and madecassoside, implying their involvement in host defense against herbivores and pathogens. Our work sheds light on the biosynthesis and evolution of complex saponin sugars, paving the way for future engineering of diverse bioactive triterpenoids with unique glycoforms.",
+      "journal": "Plant communications",
+      "year": 2024,
+      "pub_date": "2024-10-14",
+      "authors": "Han Xiaoyang; Zhao Jingyi; Zhou Hong; Zhou Xuan; Deng Zixin; ... (+2)",
+      "first_author": "Han Xiaoyang",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39048195",
+      "doi": "10.1016/j.carbpol.2024.122384",
+      "title": "Enhancing plant fiber antibacterial and antiviral performance through synergistic action of amino and sulfonic acid groups.",
+      "abstract": "As the most abundant renewable resource, cellulose fibers are potential candidates for use in health-protective clothing. Herein, we demonstrate a novel strategy for preparing cellulose fiber with prominent antibacterial and antiviral performance by the synergistic effect of amino groups and sulfonic acid groups. Specifically, guanylated chitosan oligosaccharide (GCOS) and N-sulfopropyl chitosan oligosaccharide (SCOS) were synthesized and chemically grafted onto cellulose fibers (CFs) to endow the fibers with antibacterial and antiviral properties. Moreover, a compounding strategy was applied to make the fibers with simultaneously high antibacterial and antiviral activity, especially in short contact time. The bacteriostatic rate (against S. aureus: 95.81 %, against E. coli: 92.07 %, 1 h) of the compounded fibers improved substantially when a few GCOS-CFs were mixed with SCOS-CFs; especially, it was much higher than both the individual GCOS-CFs and SCOS-CFs. By contrast, the improvement of the antiviral properties was less dramatic; however, even a few SCOS-CFs was mixed, the antiviral properties increased pronouncedly. Although the electrostatic interaction between SCOS and GCOS can make the SCOS-GCOS mixture lose some extent of antibacterial activity, the long chains of cellulose restrain the electrostatic interaction between sulfonic and amino groups, leading to their synergistic action and eventually superior antibacterial and antiviral effects.",
+      "journal": "Carbohydrate polymers",
+      "year": 2024,
+      "pub_date": "2024-10-15",
+      "authors": "Lan Jinxin; Wu Yao; Chen Jiazhen; Wang Peng; Chen Hui; ... (+5)",
+      "first_author": "Lan Jinxin",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39386835",
+      "doi": "10.1016/j.heliyon.2024.e37939",
+      "title": "Metal oxide nanoparticles as a promising method to reduce biotic stress in plant cell wall: A review.",
+      "abstract": "The application of metal-based nanoparticles in inhibiting plant pathogenic bacteria and fungi has gained significant attention in recent years. several nanoparticles, including silver (Ag), titanium dioxide (TiO2), magnesium oxide (MgO), copper (Cu), and zinc oxide (ZnO), can generate reactive oxygen species (ROS) when exposed to light. The oxidative damage inflicted by ROS can disrupt the cellular structures and metabolic processes of pathogens, leading to their inactivation and inhibition. However, it is crucial to consider the potential environmental and health impacts of nanoparticle use. The safe and responsible use of nanoparticles and their potential risks should be thoroughly evaluated to ensure sustainable and effective plant disease management practices.",
+      "journal": "Heliyon",
+      "year": 2024,
+      "pub_date": "2024-10-15",
+      "authors": "Yiblet Yalew; Sisay Miseganaw",
+      "first_author": "Yiblet Yalew",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39287447",
+      "doi": "10.1128/mbio.02120-24",
+      "title": "Reconceptualizing transcriptional slippage in plant RNA viruses.",
+      "abstract": "RNA viruses have evolved sophisticated strategies to exploit the limited encoded information within their typically compact genomes. One of them, named transcriptional slippage (TS), is characterized by the appearance of indels in nascent viral RNAs, leading to changes in the open reading frame (ORF). Although members of unrelated viral families express key proteins via TS, the available information about this phenomenon is still limited. In potyvirids (members of the Potyviridae family), TS has been defined by the insertion of an additional A at An motifs (n ≥ 6) in newly synthesized transcripts at a low frequency, modulated by nucleotides flanking the A-rich motif. Here, by using diverse experimental approaches and a collection of plant/virus combinations, we discover cases not following this definition. In summary, we observe (i) a high rate of single-nucleotide deletions at slippage motifs, (ii) overlapping ORFs acceded by slippage at an U8 stretch, and (iii) changes in slippage rates induced by factors not related to cognate viruses. Moreover, a survey of whole-genome sequences from potyvirids shows a widespread occurrence of species-specific An/Un (n ≥ 6) motifs. Even though many of them, but not all, lead to the production of truncated proteins rather than access to overlapping ORFs, these results suggest that slippage motifs appear more frequently than expected and play relevant roles during virus evolution. Considering the potential of this phenomenon to expand the viral proteome by acceding to overlapping ORFs and/or producing truncated proteins, a re-evaluation of TS significance during infections of RNA viruses is required.IMPORTANCETranscriptional slippage (TS) is used by RNA viruses as another strategy to maximize the coding information in their genomes. This phenomenon is based on a peculiar feature of viral replicases: they may produce indels in a small fraction of newly synthesized viral RNAs when transcribing certain motifs and then produce alternative proteins due to a change of the reading frame or truncated products by premature termination. Here, using plant-infecting RNA viruses as models, we discover cases expanding on previously established features of plant virus TS, prompting us to reconsider and redefine this expression strategy. An interesting conclusion from our study is that TS might be more relevant during RNA virus evolution and infection processes than previously assumed.",
+      "journal": "mBio",
+      "year": 2024,
+      "pub_date": "2024-10-16",
+      "authors": "Valli Adrian A; Domingo-Calap María Luisa; González de Prádena Alfonso; García Juan Antonio; Cui Hongguang; ... (+2)",
+      "first_author": "Valli Adrian A",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39407346",
+      "doi": "10.1186/s40168-024-01856-3",
+      "title": "In-depth characterization of food and environmental microbiomes across different meat processing plants.",
+      "abstract": "[BACKGROUND] Processing environments can be an important source of pathogenic and spoilage microorganisms that cross contaminate meat and meat products. The aim of this study was to characterize the microbiome of raw materials, processing environments and end products from 19 facilities producing different meat products. [RESULTS] The taxonomic profiles of the microbial communities evolved along processing, from raw materials to end products, suggesting that food contact (FC) surfaces play an important role in modulating the microbiome of final products. Some species persisted with the highest relative abundance in raw materials, food processing environments and/or in the final product, including species from the genera Pseudomonas, Staphylococcus, Brochothrix, Acinetobacter and Psychrobacter. Processing environments showed a very diverse core microbiota, partially shared with the products. Pseudomonas fragi and Pseudomonas sp. Lz4W (in all sample and facility types) and Brochothrix thermosphacta, Psychrobacter sp. and Psychrobacter sp. P11F6 (in raw materials, FC surfaces and end products) were prominent members of the core microbiota for all facilities, while Latilactobacillus sakei was found as a dominant species exclusively in end products from the facilities producing fermented sausages. Processing environments showed a higher amount of antimicrobial resistance genes and virulence factors than raw materials and end products. One thousand four hundred twenty-one medium/high-quality metagenome-assembled genomes (MAGs) were reconstructed. Of these, 274 high-quality MAGs (completeness > 90%) corresponded to 210 putative new species, mostly found in processing environments. For two relevant taxa in meat curing and fermentation processes (S. equorum and L. sakei, respectively), phylogenetic variation was observed associated with the specific processing facility under study, which suggests that specific strains of these taxa may be selected in different meat processing plants, likely contributing to the peculiar sensorial traits of the end products produced in them. [CONCLUSIONS] Overall, our findings provide the most detailed metagenomics-based perspective up to now of the microbes that thrive in meat, meat products and associated environments and open avenues for future research activities to better understand the microbiome functionality and potential contribution to meat quality and safety. Video Abstract.",
+      "journal": "Microbiome",
+      "year": 2024,
+      "pub_date": "2024-10-15",
+      "authors": "Barcenilla Coral; Cobo-Díaz José F; Puente Alba; Valentino Vincenzo; De Filippis Francesca; ... (+7)",
+      "first_author": "Barcenilla Coral",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39645950",
+      "doi": "10.11646/zootaxa.5523.1.6",
+      "title": "A new species of Meadow Katydid (Orthoptera: Tettigoniidae: Conocephalini) from the Apalachicola River Basin of Florida, USA.",
+      "abstract": "Odontoxiphidium apalachicolae, sp. nov., is described from seasonally flooded savannah habitats of the Central Panhandle of Florida. The new species differs from the only other member of the genus, O. apterum Morse, in morphology, coloration, calling song, and habitat. Color variation in O. apterum is also discussed. The new species appears to be a member of a unique insect fauna that is endemic to the Apalachicola River Basin, a well-known refugium and center for speciation in vascular plants. Continued exploration of this area is needed to fully document arthropod diversity in the region.",
+      "journal": "Zootaxa",
+      "year": 2024,
+      "pub_date": "2024-10-14",
+      "authors": "Woo Brandon",
+      "first_author": "Woo Brandon",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39458866",
+      "doi": "10.3390/plants13202919",
+      "title": "Early Flowering and Maturity Promote the Successful Adaptation and High Yield of Quinoa (",
+      "abstract": "Quinoa (Chenopodium quinoa Willd.) can offer an alternative for staple food considering its tolerance to abiotic stresses and high seed quality. However, its cultivation in temperate regions has not been successful due to its photoperiod sensitivity and low seed yield. This study investigated the agronomical performance and quality traits of 48 accessions for cultivation in northern Europe. We conducted two-year field trials and phenotyped traits related to phenological development, plant architecture, yield components, seed quality, and disease resistance. The major determinants of seed yield in this study were days to flowering, days to maturity, thousand-kernel weight, and panicle density, while downy mildew susceptibility and stem lodging showed a negative correlation with seed yield. We developed a selection index to enable simultaneous selection based on different important agronomical traits. We evaluated the stability of different accessions over the two years of the experiment. Finally, we provided a list of 10 selected accessions that can be directly integrated and serve as new crossing parents in quinoa breeding programs for temperate regions.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2024,
+      "pub_date": "2024-10-18",
+      "authors": "Emrani Nazgol; Maldonado-Taipe Nathaly; Hasler Mario; Patiranage Dilan S R; Jung Christian",
+      "first_author": "Emrani Nazgol",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "month": "1991-07",
+  "generated": "2026-07-13 02:59:42",
+  "total": 3,
+  "by_category": {
+    "Molecular_Characterization": 1,
+    "Host_Virus_Interactions": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "1856686",
+      "doi": "10.1099/0022-1317-72-7-1481",
+      "title": "Phylogeny of capsid proteins of small icosahedral RNA plant viruses.",
+      "abstract": "Statistically significant alignment was generated between the amino acid sequences of the (putative) shell (S) domains of the capsid proteins of small RNA plant viruses with icosahedral capsids in the tombusvirus, carmovirus, dianthovirus, sobemovirus and luteovirus groups. Inspection of the alignment showed good correspondence between the experimentally defined beta-strands and alpha-helices of the capsid proteins of tomato bushy stunt, southern bean mosaic and turnip crinkle viruses, allowing prediction of the secondary structure elements in proteins with unresolved tertiary structure. It is concluded that this set of viral capsid proteins forms a tight evolutionary cluster. Comparison of the alignment of the proteins of this family with the sequences of other capsid proteins of icosahedral RNA viruses revealed more distant similarities to the satellites of tobacco necrosis, panicum mosaic, tobacco mosaic and maize white line mosaic viruses, as well as to nepo- and comoviruses. The tentative phylogenetic tree derived from the capsid protein alignment separated into three main lineages: (I) carmo-, tombus- and dianthoviruses, (II) southern bean mosaic, tobacco necrosis and maize chlorotic mottle viruses, and (III) luteoviruses. Comparison of this tree topology with the tentative evolutionary schemes for the respective virus RNA-dependent RNA polymerases suggested that gene shuffling is the universal trend in the evolution of small RNA plant virus genomes.",
+      "journal": "The Journal of general virology",
+      "year": 1991,
+      "pub_date": "1991-07-01",
+      "authors": "Dolja V V; Koonin E V",
+      "first_author": "Dolja V V",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "多种小型二十面体RNA植物病毒，包括番茄丛矮病毒、南方菜豆花叶病毒、芜菁皱缩病毒等，涉及tombusvirus, carmovirus, dianthovirus, sobemovirus, luteovirus等属，以及烟草坏死卫星病毒、玉米褪绿斑驳病毒等",
+      "taxonomy": "植物病毒；具体分类包括tombusvirus, carmovirus, dianthovirus, sobemovirus, luteovirus等",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "24221538",
+      "doi": "10.1007/BF00234287",
+      "title": "Selection for Fusarium wilt disease resistance from regenerants derived from leaf callus of strawberry.",
+      "abstract": "Resistant lines of strawberry to the fungal wilt disease caused by Fusarium oxysporum f. sp. fragariae were selected strawberry plants regenerated from leaf-derived callus tissues. Regenerants were transplanted to a field heavily infested with this pathogen, and normally growing plants were selected as the putative resistant lines. Daughter plants produced vegetatively through runner formation of the lines were similarly tested in the pathogen-infested field over an additional three generations. Finally, two resistant lines were obtained from a total of 1,225 regenerants. The stable propagation of disease resistance in these lines was confirmed by directly inoculating the daughter plants with the pathogen and planting in a pathogen-infested soil. All of the control plants were efficiently infected and died within one month. The isolated plant lines grew and developed runners even after direct inoculation and produced daughter plants in this soil. Thus, the present study demonstrated the existence of somaclonal variation for disease resistance against a soil-borne fngal pathogen.",
+      "journal": "Plant cell reports",
+      "year": 1991,
+      "pub_date": "1991-07-01",
+      "authors": "Toyoda H; Horikoshi K; Yamano Y; Ouchi S",
+      "first_author": "Toyoda H",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1658826",
+      "doi": "10.1111/j.1751-1097.1991.tb01990.x",
+      "title": "Antiviral activity of the photoactive plant pigment hypericin.",
+      "abstract": "The polycyclic compound hypericin, a known photodynamic agent, was investigated for antiviral activity in the presence and absence of light. The three viruses tested: murine cytomegalovirus; Sindbis virus; and human immunodeficiency virus type 1, were all susceptible to hypericin; but these antiviral activities were considerably enhanced, in a dose-dependent manner, by exposure to light.",
+      "journal": "Photochemistry and photobiology",
+      "year": 1991,
+      "pub_date": "1991-07-01",
+      "authors": "Lopez-Bazzocchi I; Hudson J B; Towers G H",
+      "first_author": "Lopez-Bazzocchi I",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

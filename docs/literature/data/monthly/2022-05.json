@@ -1,0 +1,282 @@
+{
+  "month": "2022-05",
+  "generated": "2026-07-13 02:59:42",
+  "total": 143,
+  "by_category": {
+    "Host_Virus_Interactions": 46,
+    "Antiviral_Resistance_Genes": 35,
+    "New_Virus": 28,
+    "Control_Management": 27,
+    "Biotechnology_Applications": 7,
+    "Detection_Methods": 5,
+    "Viral_Diversity_Ecology": 5,
+    "Transmission_Epidemiology": 4
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "34859483",
+      "doi": "10.1002/arch.21857",
+      "title": "Effects of heat stress on virus transmission and virus-mediated apoptosis in whitefly Bemisia tabaci.",
+      "abstract": "Tomato yellow leaf curl virus (TYLCV), a plant DNA virus of the genus Begomovirus, is transmitted by whiteflies of the Bemisia tabaci species complex in a persistent manner. Our previous study indicated that activation of the apoptosis pathway in whiteflies could facilitate TYLCV accumulation and transmission. Considering that temperature change can influence the spread of insect-borne plant viruses, we focused on plant virus induced-apoptosis to investigate the underlying mechanism of temperature regulation on plant virus transmission via an insect vector. We found that heat stress (40°C) on whiteflies could facilitate TYLCV accumulation and increase transmission to tomato plants. Despite upregulation of caspase-1 and caspase-3 gene expression, heat stress failed to induce an increase in the activation of cleaved caspase-3 and DNA fragmentation in TYLCV-infected whiteflies. However, our data failed to determine the role of heat stress in apoptosis modulation of insect-plant virus interplay while still providing clues to understand insect vectors and their transmitted plant viruses.",
+      "journal": "Archives of insect biochemistry and physiology",
+      "year": 2022,
+      "pub_date": "2022-05-01",
+      "authors": "Wang Xin-Ru; Shao Yue; Wang Chao; Liu Yin-Quan",
+      "first_author": "Wang Xin-Ru",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Tomato yellow leaf curl virus (TYLCV)",
+      "taxonomy": "",
+      "host_plant": "番茄",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "35180691",
+      "doi": "10.1016/j.bios.2022.114076",
+      "title": "PAM-free loop-mediated isothermal amplification coupled with CRISPR/Cas12a cleavage (Cas-PfLAMP) for rapid detection of rice pathogens.",
+      "abstract": "Pathogenic disease is an important factor affecting rice growth, yield and quality, and the development and application of rapid diagnostic methods will contribute to the prevention and control of rice disease. Herein, we developed a novel protospacer adjacent motif (PAM)-free loop-mediated isothermal amplification (LAMP) assisted CRISPR/Cas12a cleavage (Cas-PfLAMP) assay for detection of three rice pathogens; Xanthomonas oryzae pv. Oryzae (XOO), rice stripe virus (RSV), and rice black-streaked dwarf virus (RBSDV). The Cas-PfLAMP assay showed high specificity due to doubly specific recognition of LAMP primer sets and FnCas12a/sgRNA, and high sensitivity down to 9 or 3 copies due to LAMP amplification and CRISPR/Cas12a trans cleavage activity. Furthermore, a visual on-spot Cas-PfLAMP platform was established for detection of rice pathogens by combining solid-phase nucleic acid extraction and a lateral flow strip (LFS) test. Analysis of rice leaf field samples confirmed the impressive performance of the Cas-PfLAMP platform, demonstrating its suitability for rapid (∼50 min) on-spot detection of rice diseases. The assay could also be extended to detection of other plant diseases, and other nucleic acid field tests.",
+      "journal": "Biosensors & bioelectronics",
+      "year": 2022,
+      "pub_date": "2022-05-15",
+      "authors": "Zhu Zaobing; Li Rong; Zhang Hanwen; Wang Jinyue; Lu Yongyi; ... (+2)",
+      "first_author": "Zhu Zaobing",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "rice stripe virus (RSV), rice black-streaked dwarf virus (RBSDV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "35184365",
+      "doi": "10.1111/mpp.13192",
+      "title": "The nonstructural protein NSs encoded by tomato zonate spot virus suppresses RNA silencing by interacting with NbSGS3.",
+      "abstract": "Viral suppressors of RNA silencing (VSRs) are encoded by diverse viruses to counteract the RNA silencing-mediated defence mounted by the virus-infected host cells. In this study, we identified the NSs protein encoded by tomato zonate spot virus (TZSV) as a potent VSR, and used a potato virus X (PVX)-based heterologous expression system to demonstrate TZSV NSs as a viral pathogenicity factor that intensified PVX symptoms in Nicotiana benthamiana. We then used a yeast two-hybrid screen to identify the suppressor of gene silencing 3 protein of N. benthamiana (NbSGS3), a known component of the plant RNA silencing pathway, as an interaction partner of TZSV NSs. We verified this interaction in plant cells with bimolecular fluorescence complementation, subcellular colocalization, and co-immunoprecipitation. We further revealed that the NSs-NbSGS3 interaction correlated with the VSR activity of TZSV NSs. TZSV NSs reduced the concentration of NbSGS3 protein in plant cells, probably through the ubiquitination and autophagy pathways. Interestingly, TZSV infection, but not NSs overexpression, significantly up-regulated the NbSGS3 transcript levels. Our data indicate that TZSV NSs suppresses RNA silencing of the host plant and enhances TZSV pathogenicity through its interaction with NbSGS3. This study reveals a novel molecular mechanism of NSs-mediated suppression of plant host antiviral defence.",
+      "journal": "Molecular plant pathology",
+      "year": 2022,
+      "pub_date": "2022-05-01",
+      "authors": "Chen Jianbin; Zheng Limin; Shi Xiaobin; Zhang Songbai; Tan Xinqiu; ... (+6)",
+      "first_author": "Chen Jianbin",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "tomato zonate spot virus (TZSV)",
+      "taxonomy": "",
+      "host_plant": "烟草 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "35138878",
+      "doi": "10.1146/annurev-arplant-102820-020542",
+      "title": "VIGS Goes Viral: How VIGS Transforms Our Understanding of Plant Science.",
+      "abstract": "Virus-induced gene silencing (VIGS) has developed into an indispensable approach to gene function analysis in a wide array of species, many of which are not amenable to stable genetic transformation. VIGS utilizes the posttranscriptional gene silencing (PTGS) machinery of plants to restrain viral infections systemically and is used to downregulate the plant's endogenous genes. Here, we review the molecular mechanisms of DNA- and RNA-virus-based VIGS, its inherent connection to PTGS, and what is known about the systemic spread of silencing. Recently, VIGS-based technologies have been expanded to enable not only gene silencing but also overexpression [virus-induced overexpression (VOX)], genome editing [virus-induced genome editing (VIGE)], and host-induced gene silencing (HIGS). These techniques expand the genetic toolbox for nonmodel organisms even more. Further, we illustrate the versatility of VIGS and the methods derived from it in elucidating molecular mechanisms, using tomato fruit ripening and programmed cell death as examples. Finally, we discuss challenges of and future perspectives on the use of VIGS to advance gene function analysis in nonmodel plants in the postgenomic era.",
+      "journal": "Annual review of plant biology",
+      "year": 2022,
+      "pub_date": "2022-05-20",
+      "authors": "Rössner Clemens; Lotz Dominik; Becker Annette",
+      "first_author": "Rössner Clemens",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "多种RNA/DNA病毒载体",
+      "taxonomy": "",
+      "host_plant": "多种植物（包括非模式植物）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "35148077",
+      "doi": "10.1021/acsabm.1c01204",
+      "title": "Surface Functionalization of Rod-Shaped Viral Particles for Biomedical Applications.",
+      "abstract": "While synthetic nanoparticles play a very important role in modern medicine, concerns regarding toxicity, sustainability, stability, and dispersity are drawing increasing attention to naturally derived alternatives. Rod-shaped plant viruses and virus-like particles (VLPs) are biological nanoparticles with powerful advantages such as biocompatibility, tunable size and aspect ratio, monodispersity, and multivalency. These properties facilitate controlled biodistribution and tissue targeting for powerful applications in medicine. Ongoing research efforts focus on functionalizing or otherwise engineering these structures for a myriad of applications, including vaccines, imaging, and drug delivery. These include chemical and biological strategies for conjugation to small molecule chemical dyes, drugs, metals, polymers, peptides, proteins, carbohydrates, and nucleic acids. Many strategies are available and vary greatly in efficiency, modularity, selectivity, and simplicity. This review provides a comprehensive summary of VLP functionalization approaches while highlighting biomedically relevant examples. Limitations of current strategies and opportunities for further advancement will also be discussed.",
+      "journal": "ACS applied bio materials",
+      "year": 2022,
+      "pub_date": "2022-05-16",
+      "authors": "Vaidya Akash J; Solomon Kevin V",
+      "first_author": "Vaidya Akash J",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "杆状植物病毒（如烟草花叶病毒等）",
+      "taxonomy": "",
+      "host_plant": "未提及（体外或异源表达系统）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "35332365",
+      "doi": "10.1007/s00705-022-05408-8",
+      "title": "Complete genome sequence of a putative novel alphaendornavirus isolated from Fagopyrum esculentum in South Korea.",
+      "abstract": "The complete genome sequence of a putative new virus isolate, provisionally named \"Fagopyrum esculentum endornavirus 2\" (FeEV2), is 15,706 nucleotides long with a single, large open reading frame and a typical endornavirus genome organization. FeEV2 shares 19.4%-22.1% nucleotide sequence identity with other known endornavirus genome sequences. The putative polyprotein, RNA-dependent RNA polymerase (RdRp), helicase, and glycosyltransferase (GT) share 10.6%-24.3%, 30.4%-66.1%, 16.3%-45.7%, and 10.1%-21.6% amino acid sequence identity, respectively, with the homologous sequenced proteins from known endornaviruses. This suggests that it is a member of a new, distinct species. Phylogenetic analysis of RdRp sequences places FeEV2 with other Alphaendornavirus genus members (family Endornaviridae). This is the first report of the complete genome sequence of FeEV2, which was isolated from Fagopyrum esculentum in South Korea.",
+      "journal": "Archives of virology",
+      "year": 2022,
+      "pub_date": "2022-05-01",
+      "authors": "Kim Se Eun; Igori Davaajargal; Kwon Suk-Yoon; Moon Jae Sun",
+      "first_author": "Kim Se Eun",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Fagopyrum esculentum endornavirus 2 (FeEV2)",
+      "taxonomy": "Endornaviridae, Alphaendornavirus",
+      "host_plant": "Fagopyrum esculentum",
+      "location": "South Korea",
+      "results": "FeEV2基因组15706nt，单一ORF，RdRp与已知病毒同源性30.4%-66.1%；系统发育分析将其归入Alphaendornavirus属，代表一个新种。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "35263622",
+      "doi": "10.1016/j.virusres.2022.198730",
+      "title": "Emerging value of the viroid model in molecular biology and beyond.",
+      "abstract": "Viroids are single-stranded circular noncoding RNAs that infect plants. Research in the past five decades has deciphered the viroid genome structures, viroid replication cycles, numerous host factors for viroid infection, viroid motifs for intracellular and intercellular trafficking, interactions with host defense machinery, etc. In this review, we mainly focus on some significant questions that remain to be tackled, centered around (1) how the RNA polymerase II machinery performs transcription on RNA templates of nuclear-replicating viroids, (2) how viroid RNAs coordinate multiple structural elements for diverse functions, and (3) how viroid RNAs activate plant immunity. Research on viroids has led to seminal discoveries in biology, and we expect the research directions outlined in this review to continue providing key knowledge inspiring other areas of biology.",
+      "journal": "Virus research",
+      "year": 2022,
+      "pub_date": "2022-05-01",
+      "authors": "Ma Junfei; Mudiyanselage Shachinthaka D Dissanayaka; Wang Ying",
+      "first_author": "Ma Junfei",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "多种类病毒",
+      "taxonomy": "",
+      "host_plant": "植物",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "35910423",
+      "doi": "10.1111/1365-2745.13854",
+      "title": "The role of pathogen-mediated insect superabundance in the East African emergence of a plant virus.",
+      "abstract": "One of the major crops for food security is cassava. Superabundant Bemisia tabaci whitefly, comprising unusually high landscape populations of the insect, have been implicated in cassava virus emergence. Studies have been unable to select from several hypotheses, however, as to the dynamic drivers of superabundant whitefly associated with the emergence in East Africa of severe cassava mosaic disease. One possibility is that pathogenic modification of infected plants can itself increase the growth of insect vector colonies on infected plants.Through the modelling of population processes at the landscape scale we introduce a framework for analysing patterns in the association of disease and insect waves.Our analyses demonstrate the role of pathogen-mediated insect superabundance in a plant disease invasion. Synthesis. An elevated abundance of insects at the landscape scale is frequently implicated in invasions of the plant pathogens that they carry. We advance ecological understanding of plant disease invasions by showing how landscape data can be used to investigate the causes of insect vector superabundance.",
+      "journal": "The Journal of ecology",
+      "year": 2022,
+      "pub_date": "2022-05-01",
+      "authors": "Donnelly Ruairí; Gilligan Christopher A",
+      "first_author": "Donnelly Ruairí",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "木薯花叶病病毒（cassava mosaic virus）",
+      "taxonomy": "",
+      "host_plant": "木薯",
+      "location": "东非",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "35430069",
+      "doi": "10.1016/j.pestbp.2022.105077",
+      "title": "Effects of indole derivatives from Purpureocillium lilacinum in controlling tobacco mosaic virus.",
+      "abstract": "There are various types of compounds studied and applied for plant disease management, and some of them are environment friendly and suitable in organic production. An example is indole-3-carboxaldehyde (A1) and indole-3-carboxylic acid (A2) derived from Purpureocillium lilacinum H1463, which have shown a strong activity in the control of tobacco mosaic virus (TMV). In this study, the effects of these compounds were studied on suppressing TMV and corresponding mechanism. Both A1 and A2 exhibited strong anti-TMV activities in vitro and in vivo. They fractured TMV virions and forced the fractured particles agglomerated. A1 and A2 also induced immune responses or resistance of tobacco to TMV infection, including expressing hypersensitive reaction (HR), increasing defense-related enzymes and overexpressing pathogenesis-related (PR) proteins. The upregulation of salicylic acid (SA) biosynthesis genes PAL, ICS, and PBS3 confirmed that SA served as a defense-related signal molecule. Therefore, indole derivatives have a potential for activating defense of tobacco against TMV and other pathogens and can be used for disease control.",
+      "journal": "Pesticide biochemistry and physiology",
+      "year": 2022,
+      "pub_date": "2022-05-01",
+      "authors": "Sun Yubo; Wu Hao; Zhou Wenning; Yuan Zhichun; Hao Jianjun; ... (+2)",
+      "first_author": "Sun Yubo",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "烟草花叶病毒 (tobacco mosaic virus, TMV)",
+      "taxonomy": "",
+      "host_plant": "烟草",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "34854758",
+      "doi": "10.1094/PDIS-09-21-1882-SC",
+      "title": "First Report of a Mastrevirus (",
+      "abstract": "Maize striate mosaic virus (MSMV; genus Mastrevirus) was recently reported in maize plants in Brazil and also detected by metagenomic analyses in the corn leafhopper, Dalbulus maidis (DeLong & Wolcott). Although these findings suggested that D. maidis is a potential vector, no transmission studies have been performed. Here, we tested the transmission of MSMV by D. maidis from field-collected infected plants and plants infected with MSMV via leafhopper-mediated transmission in the laboratory; all plants were confirmed positive for MSMV by PCR. In each one of three transmission replicates, aviruliferous D. maidis nymphs and adults were confined together on a source plant during a 4-day acquisition access period (AAP) and subsequently transferred to healthy maize seedlings (10 individuals per test plant) in a series of 4-day inoculation access periods (IAPs). We also tested transmission by the corn aphid, Rhopalosiphum maidis (Fitch) and by mechanical inoculation of healthy maize seedlings. Only D. maidis transmitted MSMV, with overall transmission rates of 29.4 and 39.5% on field-collected infected plants and 18.5% on infected plants in laboratory. D. maidis transmitted MSMV until the third (8 to 12 days after the AAP) or fourth successive IAP (12 to 16 days), with gradual loss in transmission efficiency and rate of viruliferous insects over time, suggesting a persistent but nonpropagative mode of transmission. Infected test plants showed mottling symptoms with mild chlorotic streaks and height reduction. This is the first report of transmission of a mastrevirus by D. maidis, facilitating the completion of Koch's postulate for MSMV.",
+      "journal": "Plant disease",
+      "year": 2022,
+      "pub_date": "2022-05-01",
+      "authors": "Vilanova Euclides S; Ramos Anderson; de Oliveira Maria C Souza; Esteves Mariana B; Gonçalves Marcos C; ... (+1)",
+      "first_author": "Vilanova Euclides S",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "玉米条纹花叶病毒 (Maize striate mosaic virus, MSMV)",
+      "taxonomy": "",
+      "host_plant": "玉米 (Zea mays)",
+      "location": "巴西",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "35746592",
+      "doi": "10.3390/v14061120",
+      "title": "Diverse Novel Viruses Coinfecting the Tropical Ornamental Plant ",
+      "abstract": "The viromic profile of Polyscias balfouriana cv. Marginata, a perennial woody and ornamental plant, was determined using ribosomal RNA-depleted total RNA (rRNA-depleted totRNA) sequencing. Five viruses (i.e., polyscias mosaic virus, PoMV; one potential novel rhabdovirus; and three novel viruses of Betaflexiviridae and Closteroviridae) were detected and prevalence-surveyed in Hainan province, China. The genomes of polyscias capillovirus 1 (PCaV-1) and polyscias citrivirus 1 (PCiV-1) of family Betaflexiviridae were completed, and the genomes of polyscias crinivirus 1 (PCrV-1) of Closteroviridae were nearly completed lacking the 5′ and 3′ termini. PCaV-1 shares 68% genome nucleotide (nt) identity and 66% replicase (Rep) amino acid (aa) identity with homologues in apple stem grooving virus (ASGV). PCiV-1 shares 65% genome nt identity and 64% Rep aa identity with homologs in citrus leaf blotch virus (CLBV). Meeting the species demarcation criteria, PCaV-1 and PCiV-1 were considered to be new species in genera Capillovirus and Citrivirus, respectively. PCrV-1 shares high genome nt identity (62%), heat shock protein 70-like protein (HSP70h) and RNA-dependent RNA polymerase (RdRp) aa identity (78−80%) with homologues in tomato chlorosis virus (ToCV). We tentatively consider PCrV-1 to be an unclassified member of the Crinivirus genus. PoMV, PCaV-1, PCiV-1, and PCrV-1 are the prevalent viruses with >73% occurrence in the Xinglong Tropical Botanical Garden, Hainan, China.",
+      "journal": "Viruses",
+      "year": 2022,
+      "pub_date": "2022-05-24",
+      "authors": "Ma Yuxin; Che Haiyan; Gao Shengfeng; Lin Yating; Li Shifang",
+      "first_author": "Ma Yuxin",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Polyscias mosaic virus (PoMV), polyscias capillovirus 1 (PCaV-1), polyscias citrivirus 1 (PCiV-1), polyscias crinivirus 1 (PCrV-1), potential novel rhabdovirus",
+      "taxonomy": "Betaflexiviridae (Capillovirus, Citrivirus), Closteroviridae (Crinivirus), Rhabdoviridae (unconfirmed)",
+      "host_plant": "Polyscias balfouriana cv. Marginata (圆叶福禄桐)",
+      "location": "中国海南省兴隆热带植物园",
+      "results": "获得PCaV-1和PCiV-1完整基因组，PCrV-1接近完整；PCaV-1与ASGV有68%基因组nt一致性，PCiV-1与CLBV有65%一致性；4种病毒在兴隆热带植物园流行率>73%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "35746655",
+      "doi": "10.3390/v14061183",
+      "title": "Discovery and Genomic Function of a Novel Rice Dwarf-Associated Bunya-like Virus.",
+      "abstract": "Bunyaviruses cause diseases in vertebrates, arthropods, and plants. Here, we used high-throughput RNA-seq to identify a bunya-like virus in rice plants showing the dwarfing symptom, which was tentatively named rice dwarf-associated bunya-like virus (RDaBV). The RDaBV genome consists of L, M, and S segments. The L segment has 6562 nt, and encodes an RdRp with a conserved Bunya_RdRp super family domain. The M segment has 1667 nt and encodes a nonstructural protein (NS). The complementary strand of the 1120 nt S segment encodes a nucleocapsid protein (N), while its viral strand encodes a small nonstructural protein (NSs). The amino acid (aa) sequence identities of RdRp, NS, and N between RDaBV and viruses from the family Discoviridae were the highest. Surprisingly, the RDaBV NSs protein did not match any viral proteins. Phylogenetic analysis based on RdRp indicated that RDaBV is evolutionarily close to viruses in the family Discoviridae. The PVX-expressed system indicated that RDaBV N and NS may be symptom determinants of RDaBV. Our movement complementation and callose staining experiment results confirmed that RDaBV NSs is a viral movement protein in plants, while an agro-infiltration experiment found that RDaBV NS is an RNA silencing suppressor. Thus, we determined that RDaBV is a novel rice-infecting bunya-like virus.",
+      "journal": "Viruses",
+      "year": 2022,
+      "pub_date": "2022-05-29",
+      "authors": "Wang Dan; Fu Shuai; Wu Hongyue; Cao Mengji; Liu Li; ... (+2)",
+      "first_author": "Wang Dan",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Rice dwarf-associated bunya-like virus (RDaBV)",
+      "taxonomy": "未提及目，Discoviridae科",
+      "host_plant": "水稻 (Oryza sativa)",
+      "location": "未提及",
+      "results": "RDaBV基因组L、M、S三段，编码RdRp、NS、N、NSs。NSs为新型运动蛋白，NS为RNA沉默抑制子，N和NS为症状决定因子。系统发育显示与Discoviridae科接近。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

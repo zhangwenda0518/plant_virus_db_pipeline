@@ -1,0 +1,56 @@
+{
+  "month": "1974-09",
+  "generated": "2026-07-13 02:59:41",
+  "total": 2,
+  "by_category": {
+    "Molecular_Characterization": 1,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "4474972",
+      "doi": "10.1093/genetics/78.1.383",
+      "title": "Protein synthesis directed by the RNA from a plant virus in a normal animal cell.",
+      "abstract": "RNA from tobacco mosaic virus can be translated inside oocytes of the frog Xenopus laevis. The main product is a polypeptide with a molecular weight of 140,000. There is no evidence for coat protein synthesis, and it is unlikely that the polypeptide that is made contains either a whole or a partial coat protein sequence. The picture of translation of tobacco mosaic virus RNA obtained using oocytes is very much simpler than that found using cell-free protein-synthesizing systems, in which a great many polypeptides are made under the direction of tobacco mosaic virus RNA. The reasons for this difference are discussed, and the relative merits of in vivo and in vitro protein-synthesizing systems are compared.",
+      "journal": "Genetics",
+      "year": 1974,
+      "pub_date": "1974-09-01",
+      "authors": "Knowland J",
+      "first_author": "Knowland J",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Tobacco mosaic virus (TMV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19280789",
+      "doi": "10.1111/j.1744-7348.1974.tb01485.x",
+      "title": "Investigations on fungicides. XVI. Natural resistance of plant roots to fungal pathogens.",
+      "abstract": "Uninoculated roots of pea (Pisum sativum) and French bean (Phaseolus vulgaris) have been shown to exude a number of antifungal compounds when grown in a non-sterile aqueous aerated medium. These have been identified and their possible importance in relation to disease resistance is discussed.",
+      "journal": "The Annals of applied biology",
+      "year": 1974,
+      "pub_date": "1974-09-01",
+      "authors": "Burden R S; Rogers P M; Wain R L",
+      "first_author": "Burden R S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

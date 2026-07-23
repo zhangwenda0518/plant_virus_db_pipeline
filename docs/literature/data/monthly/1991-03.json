@@ -1,0 +1,56 @@
+{
+  "month": "1991-03",
+  "generated": "2026-07-13 02:59:42",
+  "total": 2,
+  "by_category": {
+    "New_Virus": 1,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "2001670",
+      "doi": "10.1002/j.1460-2075.1991.tb07975.x",
+      "title": "An analysis of the origin of metazoans, using comparisons of partial sequences of the 28S RNA, reveals an early emergence of triploblasts.",
+      "abstract": "In order to study the origin of metazoans, we have compared sequences from the 5' end of the large subunit ribosomal RNA of a number of protists, fungi, plants and metazoans, including all diploblastic phyla (sequences of 10 new species have been determined, including that of the placozoan, Trichoplax adhaerens). These sequences were analyzed using distance matrix, maximum parsimony and maximum likelihood methods, and the validity of the results was ascertained with bootstrapping and species removal or addition. Triploblasts and diploblasts formed two clearly separated monophyletic units; this divergence, which apparently preceded the diversification of diploblastic animals (i.e. the successive sponge, ctenophore, cnidarian radiations), showed a much more ancient origin of triploblasts with respect to diploblasts than classically assumed. These results do not exclude the possibility that triploblasts and diploblasts arose independently from different protists.",
+      "journal": "The EMBO journal",
+      "year": 1991,
+      "pub_date": "1991-03-01",
+      "authors": "Christen R; Ratto A; Baroin A; Perasso R; Grell K G; ... (+1)",
+      "first_author": "Christen R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "24193841",
+      "doi": "10.1007/BF00194269",
+      "title": "Cytology of induced systemic resistance of tomato to Phytophthora infestans.",
+      "abstract": "The infection of tomato leaves by Phytophthora infestans was followed using cytological methods. Fungal ingress and plant reactions in untreated and induced resistant plants were studied. Systemic disease resistance was induced by a local pre-infection with the same fungus. Induction retarded fungal progress at the leaf surface, epidermis and in the mesophyll. The reduced numbers of germinated cysts indicate the presence of fungitoxic substances on the leaf surface of induced plants. Frequency of fungal penetration through the outer epidermal cell wall was reduced, but only in plants exhibiting a high level of induced resistance. Autofluor-escent material, indicating the presence of lignin-like substances, accumulated rapidly beneath some of the appressoria, but this plant response was similar in induced and non-induced plants. Staining with aniline blue indicated that callose deposition was not involved in induced resistance. Thus, none of the cytologically investigated plant reactions correlated with the reduced penetration frequency observed. In the mesophyll, however, the cytological picture corresponding to a hypersensitive reaction occurred more often in induced plants. It is concluded that reduction of disease severity by induction is the result of the combined action of several successive defence reactions.",
+      "journal": "Planta",
+      "year": 1991,
+      "pub_date": "1991-03-01",
+      "authors": "Kováts K; Binder A; Hohl H R",
+      "first_author": "Kováts K",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

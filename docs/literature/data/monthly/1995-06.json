@@ -1,0 +1,124 @@
+{
+  "month": "1995-06",
+  "generated": "2026-07-13 02:59:42",
+  "total": 5,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 2,
+    "Molecular_Characterization": 1,
+    "Host_Virus_Interactions": 1,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "7782775",
+      "doi": "10.1099/0022-1317-76-6-1471",
+      "title": "The genome organization of banana bunchy top virus: analysis of six ssDNA components.",
+      "abstract": "We have cloned, sequenced and analysed an additional five circular ssDNA components of banana bunchy top virus (BBTV) which we have called components 2, 3, 4, 5 and 6. These components were present in all BBTV infections tested. Four of these components (components 3, 4, 5 and 6) had one large open reading frame (ORF) in the virion sense located 3' of a stem-loop structure. Each ORF had a potential TATA box and one or two potential polyadenylation signals associated with it and each polyadenylation signal had an associated GC-rich region containing the trinucleotide sequence TTG. A number of ORFs were identified in component 2 but none of these had appropriately located potential TATA boxes and polyadenylation signals associated with them. None of the ORF amino acid sequences nor the full DNA sequences of any of the components had significant sequence identity with any known protein or nucleic acid sequences. However, the ORF of component 4 encoded a 30 residue hydrophobic domain which may indicate that this ORF encoded a transmembrane protein. Further, the ORFs of components 3 and 5 potentially encoded proteins of about 20 kDa, the size of the BBTV coat protein. There were two regions of sequence identity between the five components described here and the previously described component 1. Each component contained a conserved stem-loop structure and a nonanucleotide potential TATA box which was 5' of the large virion-sense ORF in five of the components. The stem-loop structures were incorporated in a common region (CR-SL) of 69 nucleotides which was 62% identical between components. All six BBTV components also contained a major common region (CR-M) which was located 5' of the CR-SL in each component, in the non-coding region and was 76% identical over 92 nucleotides. Each CR-M contained a near-complete 16 nucleotide direct repeat and a GC-box which was similar to the rightward promoter element found in wheat dwarf geminivirus. From these results, BBTV appears to belong to an undescribed plant virus group which could also include subterranean clover stunt virus, coconut foliar decay virus, faba bean necrotic yellows virus and milk vetch dwarf virus.",
+      "journal": "The Journal of general virology",
+      "year": 1995,
+      "pub_date": "1995-06-01",
+      "authors": "Burns T M; Harding R M; Dale J L",
+      "first_author": "Burns T M",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "香蕉束顶病毒 (banana bunchy top virus, BBTV)",
+      "taxonomy": "未描述植物病毒组（可能属于矮化病毒科）",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11607550",
+      "doi": "10.1073/pnas.92.13.6117",
+      "title": "Broad resistance to plant viruses in transgenic plants conferred by antisense inhibition of a host gene essential in S-adenosylmethionine-dependent transmethylation reactions.",
+      "abstract": "S-Adenosylhomocysteine hydrolase (SAHH) is a key enzyme in transmethylation reactions that use S-adenosylmethionine as the methyl donor. Because of the importance of SAHH in a number of S-adenosylmethionine-dependent transmethylation reactions, particularly the 5' capping of mRNA during viral replication, SAHH has been considered as a target of potential antiviral agents against animal viruses. To test the possibility of engineering a broad type of resistance to plant viruses, we expressed the antisense RNA for tobacco SAHH in transgenic tobacco plants. As expected, transgenic plants constitutively expressing an anti-sense SAHH gene showed resistance to infection by various plant viruses. Among those plants, about half exhibited some level of morphological change (typically stunting). Analysis of the physiological change in those plants showed that they contained excess levels of cytokinin. Because cytokinin has been found to induce acquired resistance, there is also a strong possibility that the observed resistance was induced by cytokinin.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1995,
+      "pub_date": "1995-06-20",
+      "authors": "Masuta C; Tanaka H; Uehara K; Kuwata S; Koiwai A; ... (+1)",
+      "first_author": "Masuta C",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "多种植物病毒",
+      "taxonomy": "",
+      "host_plant": "烟草",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8578994",
+      "doi": "",
+      "title": "Characterization of the alfalfa mosaic virus strain T6.",
+      "abstract": "A strain T6 of alfalfa mosaic virus (AlMV) was characterized. It was isolated from field grown lucerne. Purified virus preparations contained four types of particles, B, M, Tb and Ta, containing separately encapsidated ssRNAs 1 to 4. The strain T6 was able to infect 40 different plant species of 9 families, and to develop a systemic infection in most of them. The symptomatology on bean and the RNA mobility of the AlMV strains T6 and 425 were compared. The classical cross-protection experiments on bean have shown that plants inoculated with strain 425 did not develop symptoms of the challenge strain T6.",
+      "journal": "Acta virologica",
+      "year": 1995,
+      "pub_date": "1995-06-01",
+      "authors": "Kúdela O; Gallo J",
+      "first_author": "Kúdela O",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "苜蓿花叶病毒（AlMV）T6株系",
+      "taxonomy": "",
+      "host_plant": "菜豆（bean）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7662372",
+      "doi": "10.1016/0955-0674(95)80097-2",
+      "title": "Movers and shakers: maize transposons as tools for analyzing other plant genomes.",
+      "abstract": "Transposons have been successfully exploited as insertional mutagens for the efficient identification and isolation of genes (transposon tagging) in many organisms. Plants are no exception. The maize Activator and Suppressor-mutator transposons function when transferred into heterologous plant species, and many different gene tagging systems have been developed. These systems have recently been used to clone novel and important genes, including disease resistance loci from Nicotiana tabacum, tomato and flax.",
+      "journal": "Current opinion in cell biology",
+      "year": 1995,
+      "pub_date": "1995-06-01",
+      "authors": "Osborne B I; Baker B",
+      "first_author": "Osborne B I",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7568399",
+      "doi": "10.1111/j.1751-1097.1995.tb09903.x",
+      "title": "Novel therapeutic and diagnostic applications of hypocrellins and hypericins.",
+      "abstract": "Hypocrellins and hypericins, structurally related plant pigments isolated from Hypocrella bambuase and Hypericum respectively, are known photodynamic agents. This review summarizes certain significant advances in the photophysics, photochemistry and photobiology of these pigments in the last 2 years and discusses their prospects as novel therapeutic and diagnostic agents in the future. Recently, certain unique properties of hypocrellins and hypericins have been explored for a variety of therapeutic and diagnostic applications. In particular, substantial progress has been made in both anticancer and antiviral applications (especially anti-human immunodeficiency virus). The promising anticancer and antiviral results obtained both in vitro and in vivo have led to intensive investigation into their photo-physical and photochemical processes, especially kinetic studies of their intramolecular proton transfer. These compounds offer the potential for a highly sensitive fluorescent redox sensor for investigation of a variety of cellular events. The biomedical advances of hypocrellins and hypericins have been further promoted by significant progress in their chemical synthesis and the recent commercialization of hypocrellins A and B and hypericin.",
+      "journal": "Photochemistry and photobiology",
+      "year": 1995,
+      "pub_date": "1995-06-01",
+      "authors": "Diwu Z",
+      "first_author": "Diwu Z",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

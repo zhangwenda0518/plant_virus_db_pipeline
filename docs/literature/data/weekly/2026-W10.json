@@ -1,0 +1,240 @@
+{
+  "week": "2026-W10",
+  "start": "2026-03-02",
+  "end": "2026-03-08",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 34,
+  "by_category": {
+    "Control_Management": 14,
+    "Host_Virus_Interactions": 10,
+    "New_Virus": 6,
+    "Antiviral_Resistance_Genes": 6,
+    "Biotechnology_Applications": 2,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "41701625",
+      "doi": "10.1093/plphys/kiag072",
+      "title": "Large ribosomal protein 4 inhibits tobacco vein banding mosaic virus replication by impairing nuclear export of viral NIb.",
+      "abstract": "Cell-intrinsic restriction factors (CIRFs) negatively regulate plant virus infections and represent valuable resources for breeding virus-resistant crops. However, the potential for ribosomal proteins to function as CIRFs and the underlying mechanisms remains elusive. Our previous work demonstrated that the Nicotiana benthamiana chloroplastic ribosomal protein of the large subunit 1 (NbRPL1) promotes the infection of tobacco vein banding mosaic virus (TVBMV) by antagonizing the NbBeclin1-mediated degradation of the viral RNA-dependent RNA polymerase, NIb. Continuing this line of research, we explored the role of another nonchloroplastic ribosomal protein, large ribosomal protein 4 (RPL4), in TVBMV replication. We found that TVBMV NIb interacts with NbRPL4; however, the NIb proteins of 2 other related potyviruses, potato virus Y (PVY) and turnip mosaic virus (TuMV), did not interact with NbRPL4. Overexpression of NbRPL4 inhibited, whereas its downregulation promoted, TVBMV replication. NbRPL4 did not affect PVY or TuMV replication. The nuclear-cytoplasmic distribution of NbRPL4 positively correlated with its antiviral effect on TVBMV replication. NbRPL4 interfered with NbXPO1-mediated nuclear export of the NIb protein, subsequently affecting the translocation of NIb into the viral replication compartment. Our work indicates that NbRPL4 functions as a restriction factor for TVBMV by inhibiting NbXPO1-mediated nuclear export of NIb in a virus-specific manner.",
+      "journal": "Plant physiology",
+      "year": 2026,
+      "pub_date": "2026-03-02",
+      "authors": "Chen Xin-Yang; Dong Qi; Hu Wen-Xiu; Dong Chen-Chen; Geng Chao; ... (+5)",
+      "first_author": "Chen Xin-Yang",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "烟草脉带花叶病毒 (Tobacco vein banding mosaic virus, TVBMV)",
+      "taxonomy": "",
+      "host_plant": "本氏烟草 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41735766",
+      "doi": "10.1093/plphys/kiag081",
+      "title": "An E3 ligase-competent transcription factor orchestrates dual antiviral defenses against strawberry vein banding virus.",
+      "abstract": "During the \"arms race\" between viruses and plants, plants have evolved various antiviral immune defense responses, among which the most direct and effective is disrupting the accumulation of viral nucleic acids and proteins, thereby inhibiting viral infection. However, few studies have reported on the antiviral proteins of strawberry (Fragaria vesca) plants. Here, we report that zinc finger protein 1 (FvZFP1) from F. vesca interacts with the strawberry vein banding virus (SVBV) P6 protein. SVBV infection upregulated FvZFP1 expression, while FvZFP1 protein overexpression induced P6 degradation via the 26S proteasome and inhibited virus infection. FvZFP1 showed E3 ubiquitin ligase activity and promoted P6 ubiquitination both in vitro and in vivo. The interaction between P6 and FvZFP1, mediated by the key amino acids P6 Gln-174 and FvZFP1 Glu-146, was crucial for FvZFP1 to promote the ubiquitination and degradation of P6. Moreover, FvZFP1 acted as a transcription factor that bound to the SVBV 35S promoter, inhibiting its transcriptional activity and reducing viral replication levels. Overall, our results demonstrate a strawberry plant antiviral mechanism whereby ZFP1 defends against SVBV infection by targeting P6 abundance and viral nucleic acid levels.",
+      "journal": "Plant physiology",
+      "year": 2026,
+      "pub_date": "2026-03-02",
+      "authors": "Yang Xianchu; Rui Penghuan; Zuo Dengpan; Li Shuai; Xu Kai; ... (+7)",
+      "first_author": "Yang Xianchu",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "草莓镶脉病毒 (SVBV)",
+      "taxonomy": "",
+      "host_plant": "草莓 (Fragaria vesca)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41779235",
+      "doi": "10.1007/s10493-025-01090-y",
+      "title": "A survey of Brevipalpus mite species and their predators in Costa Rican citrus and coffee plantations.",
+      "abstract": "Brevipalpus mites pose a significant threat to citrus and coffee production worldwide due to their transmission of plant viruses. This study surveyed all seven provinces of Costa Rica to identify Brevipalpus species associated with these economically vital crops. The investigation revealed the presence of five Brevipalpus species, including B. yothersi, a major vector of citrus leprosis cilevirus in numerous countries, B. papayensis, previously linked to coffee ringspot dichorhavirus in South America, B. phoenicis, B. californicus, and B. azores, vectors of dichorhaviruses causing citrus leprosis diseases. Despite their presence, no viral symptoms were observed in the plantations surveyed. Generalized linear models revealed different distributional patterns across altitude gradients; the probability of occurrence of B. papayensis increased with altitude, whereas the detection of B. yothersi declined at higher elevations across both hosts. The other three species occurred at very low frequencies; B. californicus and B. phoenicis were positively associated with altitude, though the latter only on Citrus. In contrast, B. azores slight decline with altitude on Citrus. In addition, the study documented 17 predatory mite species, 14 species belonging to Phytoseiidae and three to Stigmaeidae. This study examines the relationship between Brevipalpus distribution and altitude using empirical survey data across an entire country, demonstrating that Brevipalpus distributions in Costa Rica on these two hosts are strongly shaped by altitude and host, with species responding in contrasting ways. Such ecological differentiation has important implications for predicting virus risk under changing environmental conditions and provides a critical baseline for designing integrated pest management strategies in citrus and coffee production systems.",
+      "journal": "Experimental & applied acarology",
+      "year": 2026,
+      "pub_date": "2026-03-04",
+      "authors": "Aguilar-Piedra Hugo; Solano-Guevara Ana María; Tassi Aline Daniele; Ochoa Ronald",
+      "first_author": "Aguilar-Piedra Hugo",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "柑橘麻风病毒（CiLV）和咖啡环斑病毒（CoRSV）",
+      "taxonomy": "",
+      "host_plant": "柑橘、咖啡",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41442897",
+      "doi": "10.1016/j.ijfoodmicro.2025.111576",
+      "title": "The impact of traditional wheat landraces on lambic beer production is limited.",
+      "abstract": "As defined by law, at least 30 % of the total amount of starch- or carbohydrate-containing raw materials used for the production of Belgian lambic beers should be unmalted wheat, since this is important for the longevity of the lambic beer production process. Whereas lambic beer brewers in the 19th and 20th century depended on local wheat landraces, supplied by the local farmers, they nowadays use modern wheat varieties that are mainly cultivated for their baking quality and available on the global market. However, it could be assumed that lambic beers made with traditional wheat varieties were characterized by different flavor profiles. To know the impact of those wheat varieties on the growing microbiota and metabolites produced throughout a lambic beer production process, three different productions were assessed as a function of fermentation and maturation time. Two of them were performed with a traditional wheat landrace, namely, Witte van Vlaanderen and Limburgse Rode, and one control was performed with current standard wheat. A multiphasic analysis approach revealed that the impact of the wheat variety on the microbiology and metabolome was limited, although some metabolic differences, such as the concentrations of volatile phenolic compounds and esters, could be linked with the use of the Limburgse Rode wheat landrace. However, the most impacting factor remained the spontaneous origin of the prevailing microorganisms and the environmental conditions, such as temperature, pH, and dissolved oxygen concentration, that are encountered during lambic beer production. Finally, this work allowed to discover a new species, namely, Acetobacter zythi.",
+      "journal": "International journal of food microbiology",
+      "year": 2026,
+      "pub_date": "2026-03-02",
+      "authors": "Bongaerts Dries; Sombolestani Atena Sadat; De Roos Jonas; Bouchez Arne; Croonenberghs Alejandro Pinilla; ... (+5)",
+      "first_author": "Bongaerts Dries",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41742413",
+      "doi": "10.1016/j.cell.2026.01.027",
+      "title": "A regulatory network promotes apoplastic alkalinization to prime plant immunity in tissues distal to site of infection.",
+      "abstract": "Immune activation in plants triggers extracellular alkalinization, presumably by inhibiting plasma membrane H+-ATPases. The precise role and underlying mechanisms of this process remain poorly understood. Here, we show that Pseudomonas syringae bacteria induce apoplastic alkalinization not only at the site of infection but also in neighboring distal tissues to prime defenses and disease resistance in Arabidopsis. We show that several calcium-dependent protein kinases phosphorylate Ser899 of two major autoinhibited H+-ATPases to dampen their activity, leading to alkalinization. The distal alkalinization is accompanied by the transcriptional activation of phytocytokines, including plant elicitor peptides, serine-rich endogenous peptides, and their receptors. We show that these phytocytokines promote distal alkalinization and disease resistance, whereas the apoplastic alkalinization sensitizes the phytocytokine perception that further induces phytocytokine genes. Our study suggests that apoplastic alkalinization and phytocytokine gene expression mutually potentiate and act as a combined signal that propagates in local-distal communication and disease resistance priming.",
+      "journal": "Cell",
+      "year": 2026,
+      "pub_date": "2026-03-05",
+      "authors": "Wang Hongze; Li Xiuming; Zhai Keran; Rhodes Jack; Sang Tian; ... (+11)",
+      "first_author": "Wang Hongze",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41707021",
+      "doi": "10.1021/acsnano.5c16870",
+      "title": "Nanoenabled Priming Helps Wheat to Handle Heat and Disease.",
+      "abstract": "Global wheat production faces growing threats from rising temperature and pathogen attacks under climate change. Here, we developed a nanoenabled seed priming strategy that simultaneously enhanced wheat thermotolerance and resistance to Fusarium head blight (FHB). Specifically, under heat shock stress (45 °C, 24 h), wheat seedlings that underwent AgSiO2NP (40 mg/L AgNPs + 40 mg/L SiO2NPs) seed priming exhibited reduced wilting symptoms, increased biomass (22.8%), improved water uptake, maintained cellular membrane integrity, and delayed protein/starch catabolism compared to the hydroprimed control. Reactive oxygen species (ROS) localization assays and RNA-seq analysis reveal that AgSiO2NP priming triggered ROS-mediated activation of \"plant hormone signal transduction\" and the \"MAPK signaling pathway\" in seeds. These molecular changes persisted into the seedling stage, establishing a primed state that enhanced seedlings' heat resilience. AgSiO2NP-primed seedlings also showed enhanced resistance to Fusarium graminearum, even under hotter conditions (28 °C). Comparative transcriptomics of wheat seedlings pre- and postpathogen infection revealed that AgSiO2NP priming intensified defense-related pathways, including the MAPK signaling pathway, plant hormone signal transduction pathway, plant-pathogen interaction pathway, and specialized metabolite biosynthesis pathways, as compared to hydropriming, leading to robust immune activation and disease resistance during pathogen attack. We also demonstrate that an inexpensive ($0.5-2 per acre) and environmentally friendly alternative, CuO@SiO2 nanoparticles, efficiently enhances the resistance of wheat seedlings to FHB. This study proposes a nontransgenic approach for engineering climate-resilient wheat, providing a sustainable strategy to address food insecurity exacerbated by climate change.",
+      "journal": "ACS nano",
+      "year": 2026,
+      "pub_date": "2026-03-03",
+      "authors": "Bai Tonghao; Duan Kaili; Zhuang Daiwei; Zhu Yixia; Jiang Cong; ... (+11)",
+      "first_author": "Bai Tonghao",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42408827",
+      "doi": "10.11646/zootaxa.5763.4.5",
+      "title": "",
+      "abstract": "A remarkable moss-mimicking new species, Pericentrus cryptopetalussp. nov., is described from Xizang, China. This species exhibits a marked reduction in antennae length relative to its congeners. An updated key to the females of this genus is provided, and hypotheses regarding the antennae reduction are discussed. The type specimens are deposited in Yunnan Agricultural University (YNAU).",
+      "journal": "Zootaxa",
+      "year": 2026,
+      "pub_date": "2026-03-05",
+      "authors": "Gao Hao-Ran; Wu Chao; Li Ya-Jin",
+      "first_author": "Gao Hao-Ran",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42408845",
+      "doi": "10.11646/zootaxa.5763.2.4",
+      "title": "",
+      "abstract": "Two new species of soft scale insect (Hemiptera: Coccomorpha: Coccidae) from the Brazilian Cerrado are described and illustrated based on the adult females. A new monotypic genus, Cerradococcus Kondo, Pacheco da Silva & Peronti, gen. nov., is erected to accommodate Cerradococcus gillianwatsonae Kondo, Pacheco da Silva & Peronti, sp. nov., found on leaves of Didymopanax vinosus (Cham. & Schltdl.) Marchal (Araliaceae). In addition, a new species of Philephedra Cockerell, 1898, Philephedra paralutea Kondo & Pacheco da Silva, sp. nov., found on an undetermined host plant, is described. Philephedra zipolitana Gavrilov-Zimin, 2023 is sunk as a junior synonym of Philephedra parvula (Cockerell, 1899), syn. nov. A diagnosis for the genus Philephedra and an updated key to species in the genus are also provided.",
+      "journal": "Zootaxa",
+      "year": 2026,
+      "pub_date": "2026-03-03",
+      "authors": "Kondo Takumasa; Silva Vitor Cezar Pacheco DA; Peronti Ana Lúcia Benfatti Gonzalez",
+      "first_author": "Kondo Takumasa",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41774171",
+      "doi": "10.1007/s00284-026-04769-6",
+      "title": "Two Novel Trichoderma Species and their Antagonistic Activity against Sclerotia-producing Plant Pathogens.",
+      "abstract": "Trichoderma species are among the most employed fungal biocontrol agents in global agriculture. One mechanism of activity of these fungi is mycoparasitism, which is responsible for degrading the cell wall of other fungi through the production of enzymes such as chitinases and cellulases. This mechanism is capable of targeting resistant structures like sclerotia and chlamydospores produced by pathogens such as Sclerotinia sclerotiorum and Stromatinia cepivora. Several Trichoderma species have been reported as antagonists of these pathogens, but most described species were not explored for their antagonism against sclerotia-producing pathogens. The objective of this study was to characterize new species of the Trichoderma genus and evaluate their antagonistic potential against pathogens that produce sclerotia. The taxonomical novelties reported in this study are the description of two novel species, T. variabile and T. littericola from the Restinga ecosystem and T. nordicum is reported from Brazil, showing that this species has a broader distribution than previously thought. In addition to that, T. nigricans was shown to be an invalid species that should be considered a synonym of T. nordicum according to the rule of priority in taxonomical descriptions. These strains showed antagonistic potential against S. sclerotiorum and S. cepivora in vitro, especially T. nordicum and T. littericola, which were superior to T. harzianum from a commercial product. This study contributed to extend our knowledge on the diversity of Trichoderma species from the Restinga ecosystem and points out to their potential use in the biological control of plant pathogens that produce sclerotia.",
+      "journal": "Current microbiology",
+      "year": 2026,
+      "pub_date": "2026-03-03",
+      "authors": "Rembinski Jessica; Sales Lucas S; Marbach Phellippe A S; De Souza Jorge T",
+      "first_author": "Rembinski Jessica",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41790311",
+      "doi": "10.1186/s40529-026-00492-4",
+      "title": "Drivers of floristic discovery in a temperate flora: insights from three decades of vascular plant records in Ukraine.",
+      "abstract": "BACKGROUND: Floristic discoveries continue to occur even in regions with a long history of botanical exploration. Ukraine, one of the largest countries in Europe, has been the subject of intensive botanical study for more than two centuries, yet new species, subspecies, and national records are still regularly documented. Understanding the ecological and methodological factors that drive these discoveries is important for improving biodiversity assessment, guiding field surveys, and updating national floras. This study provides a comprehensive synthesis of all vascular plant taxa newly described for science or newly recorded from Ukraine during the period from 1997 to 2024 and identifies the principal drivers of floristic discovery in a temperate flora. RESULTS: A total of 331 species and subspecies of vascular plant were discovered or newly recorded during the study period, including 57 taxa described as new to science. These findings span lycopods, ferns, gymnosperms, and flowering plants, with flowering plants contributing the largest share. Synanthropic habitats, particularly those associated with human disturbance and escaped cultivated plants, yielded the highest number of discoveries. Grasslands, woodlands, stone outcrops, and coastal habitats also contributed substantially, while mountainous areas were notable centres for both newly described taxa and hybridogenic diversity. The majority of discoveries were based on material collected during spring and summer, although historical herbarium specimens, some over a century old, were essential for many taxonomic descriptions and for confirming previously overlooked taxa. Citizen science platforms supported several recent national records by enabling rapid detection and preliminary verification of unusual occurrences, although they have not yet contributed directly to the description of new taxa. CONCLUSIONS: Our findings highlight the continued incompleteness of floristic knowledge, even in well-studied temperate regions, and underscore the need for targeted survey strategies that integrate historical collections, underexplored habitats, and public participation. While Ukraine provides the case study, these patterns and methodological approaches are broadly applicable to biodiversity assessment and conservation planning in similar biogeographic contexts worldwide.",
+      "journal": "Botanical studies",
+      "year": 2026,
+      "pub_date": "2026-03-06",
+      "authors": "Peregrym Mykyta; Olshanskyi Ihor; Zhygalova Svitlana",
+      "first_author": "Peregrym Mykyta",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "month": "1991-08",
+  "generated": "2026-07-13 02:59:42",
+  "total": 5,
+  "by_category": {
+    "Molecular_Characterization": 2,
+    "Detection_Methods": 1,
+    "Host_Virus_Interactions": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "1830181",
+      "doi": "10.1016/0042-6822(91)90977-j",
+      "title": "Defective RNAs of clover yellow mosaic virus encode nonstructural/coat protein fusion products.",
+      "abstract": "A small group of 1.2-kb RNAs present on polyribosomes from clover yellow mosaic virus (CYMV)-infected tissue contains sequences from the genomic RNA (gRNA) of CYMV and is encapsidated by CYMV coat protein. Some features of these RNAs suggest that they are similar to defective interfering (DI) RNAs, and would be the first to be reported for the potexvirus group. The prototype 1.2-kb RNA is 1172 nucleotides in length excluding a probable poly(A) tail and is composed of two noncontiguous regions corresponding to 757 nucleotides of the 5' and 415 nucleotides of the 3' termini of CYMV's gRNA. The sequence of the prototype 1.2-kb RNA reveals that the two terminal gRNA regions present in this RNA encode a single open reading frame (ORF) joining the N-terminus of the 191-kDa nonstructural product and the C-terminus of the coat protein to form a 35-kDa 191-kDa/coat protein fusion product. The coding properties of this prototype RNA have been confirmed by translation in vitro of native and synthetic transcripts of the 1.2-kb RNAs, both of which direct the synthesis of the anticipated 35-kDa product which reacts with anti-CYMV antiserum. Three additional 1.2-kb RNA species, each of which contains a unique junction site, have been characterized. In all cases, a fusion ORF encoding a 191-kDa/coat protein fusion product is encoded on the RNA. The presence of a fusion ORF in all members of the 1.2-kb RNA species analyzed suggests that maintenance of this ORF may be important for the survival of this class of RNA within the plant. This coding strategy represents a novel property of plant virus defective RNAs.",
+      "journal": "Virology",
+      "year": 1991,
+      "pub_date": "1991-08-01",
+      "authors": "White K A; Bancroft J B; Mackie G A",
+      "first_author": "White K A",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "三叶草黄脉病毒 (clover yellow mosaic virus, CYMV)",
+      "taxonomy": "马铃薯X病毒属 (Potexvirus)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1776675",
+      "doi": "10.1016/0003-2697(91)90464-5",
+      "title": "Detection of plant virus coat proteins on whole leaf blots.",
+      "abstract": "Coat proteins of several different plant viruses were transferred from entire leaves of infected hosts to nitrocellulose membranes in 2 min using a hydraulic laboratory press. Protein transfer was even across the leaf as evidenced by India ink staining of blots. Coat proteins of four different viruses were detected using virus specific IgG. The presence of viral coat proteins was observed as small intense spots whose distribution was irregular and coincided most frequently with the presence of chlorosis on the leaves. Detection was sensitive, and accurately reflected the distribution of virus symptoms across leaves.",
+      "journal": "Analytical biochemistry",
+      "year": 1991,
+      "pub_date": "1991-08-01",
+      "authors": "Polston J E; Bubrick P; Perring T M",
+      "first_author": "Polston J E",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "未提及具体病毒名称（多种植物病毒）",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1953699",
+      "doi": "10.1002/bies.950130802",
+      "title": "How do plant virus nucleic acids move through intercellular connections?",
+      "abstract": "In addition to their function in transport of water, ions, small metabolites, and growth factors in normal plant tissue, the plasmodesmata presumably serve as routes for cell-to-cell movement of plant viruses in infected tissue. Virus cell-to-cell spread through plasmodesmata is an active process mediated by specialized virus encoded movement proteins; however, the mechanism by which these proteins operate is not clear. We incorporate recent information on the biochemical properties of plant virus movement proteins and their interaction with plasmodesmata in a model for transport of nucleic acids through plasmodesmatal channels. We propose that only single stranded (ss) nucleic acids can be transported efficiently through plasmodesmata, and that movement proteins function as molecular chaperones for ss nucleic acids to form unfolded movement protein-ss nucleic acid complexes. These complexes are targeted to plasmodesmata. Plasmodesmatal permeability is then increased following interaction with movement protein and the entire movement complex or its nucleic acid component is translocated across the plasmodesmatal channel.",
+      "journal": "BioEssays : news and reviews in molecular, cellular and developmental biology",
+      "year": 1991,
+      "pub_date": "1991-08-01",
+      "authors": "Citovsky V; Zambryski P",
+      "first_author": "Citovsky V",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "28564187",
+      "doi": "10.1111/j.1558-5646.1991.tb04387.x",
+      "title": "NONADAPTIVE EVOLUTION OF DISEASE RESISTANCE IN AN ANNUAL LEGUME.",
+      "abstract": "Local populations of the plant Amphicarpaea bracteata often contain genetically divergent lineages that differ strongly in disease resistance toward the specialist pathogen Synchytrium decipiens. In one population, lineages with disease resistance were observed to significantly decrease in frequency over a two-year period, despite the continued presence of pathogens. Extensive self-pollination in A. bracteata restricts the opportunity for recombination of alleles affecting separate traits, resulting in strong correlations between disease resistance and other ecologically important characters, including plant morphology, phenology, and patterns of reproductive allocation. Natural selection on these correlated characters may thus cause nonadaptive changes in disease resistance. These results imply that A. bracteata's mating system is a basic constraint interfering with its adaptation to pathogen attack.",
+      "journal": "Evolution; international journal of organic evolution",
+      "year": 1991,
+      "pub_date": "1991-08-01",
+      "authors": "Parker Matthew A",
+      "first_author": "Parker Matthew A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1661356",
+      "doi": "10.1016/0378-8741(91)90182-d",
+      "title": "Screening of medicinal plants from Yunnan Province in southwest China for antiviral activity.",
+      "abstract": "In an ethnopharmacological screening of medicinal plants used in Yunnan province of China, ethanol extracts from 31 plant species were assayed for inhibition of murine cytomegalovirus and Sindbis virus infections. Parallel assays were carried out with and without exposure to UVA radiation to test for photo-mediation of activity. Antiviral activity was observed with 16 of the plant extracts. Eight plant extracts have been selected for further studies, with the objective of characterizing the antiviral constituents.",
+      "journal": "Journal of ethnopharmacology",
+      "year": 1991,
+      "pub_date": "1991-08-01",
+      "authors": "Yip L; Pei S; Hudson J B; Towers G H",
+      "first_author": "Yip L",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

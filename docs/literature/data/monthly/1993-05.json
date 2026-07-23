@@ -1,0 +1,55 @@
+{
+  "month": "1993-05",
+  "generated": "2026-07-13 02:59:42",
+  "total": 2,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8518557",
+      "doi": "10.1105/tpc.5.5.577",
+      "title": "Analysis of a tobacco mosaic virus strain capable of overcoming N gene-mediated resistance.",
+      "abstract": "The genome of Ob, a tobamovirus that overcomes the N gene-mediated hypersensitive response (HR), was cloned as a cDNA, and its nucleotide sequence was determined. The genomic organization of Ob is similar to that of other tobamoviruses, consisting of 6506 nucleotides and containing at least four open reading frames. These open reading frames encode a 126-kD polypeptide with a 183-kD readthrough product, a 30.6-kD movement protein, and an 18-kD coat protein. A bacteriophage T7 promoter sequence was fused to the full-length cDNA clone to obtain infectious RNA transcripts. These transcripts, when inoculated onto tobacco plants, induced disease symptoms indistinguishable from plants inoculated with Ob viral RNA. To determine which viral factor is responsible for the resistance-breaking character of Ob, a recombinant virus was constructed in which the movement protein gene of tobacco mosaic virus was replaced with that of Ob. Cultivar Xanthi NN tobacco plants infected with this virus responded with an HR, indicating that the Ob movement protein alone does not act to overcome the N gene-mediated response. Following mutagenesis of the infectious Ob cDNA clone with hydroxylamine, populations of transcripts from the mutagenized DNA were inoculated onto Xanthi NN tobacco, and a variant that induced the HR was identified. The mutant was analyzed and found to contain a single nucleotide change in the 126-kD gene. Recreating the mutation in the Ob cDNA clone by site-directed mutagenesis resulted in a virus that caused symptoms identical to the chemically induced mutant.",
+      "journal": "The Plant cell",
+      "year": 1993,
+      "pub_date": "1993-05-01",
+      "authors": "Padgett H S; Beachy R N",
+      "first_author": "Padgett H S",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒（TMV）Ob株系",
+      "taxonomy": "",
+      "host_plant": "烟草（Nicotiana tabacum）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8334385",
+      "doi": "",
+      "title": "Messenger-dependent action of the pokeweed antiviral protein and fusidic acid on in vitro Vicia sativa L. translation.",
+      "abstract": "Plant ribosome sensitivity to either pokeweed antiviral protein (PAP) or fusidic acid has been investigated using a highly coupled translation system obtained from Vicia sativa L., a plant that lacks ribosome-inactivating protein activity. Protein synthesis directed by endogenous messengers was more sensitive to PAP than synthesis of polyphenylalanine directed by polyuridylic acid. Conversely, the effects of fusidic acid were the highest in polyphenylalanine synthesis. Additionally, the concentration of magnesium ions during translation also played a determinant role in the extent of inhibition by both PAP and fusidic acid. The effects seem to be exerted on the interaction of the translational elongation factor 2 with the ribosome.",
+      "journal": "Cellular and molecular biology (Noisy-le-Grand, France)",
+      "year": 1993,
+      "pub_date": "1993-05-01",
+      "authors": "Arias F J; Rojo M A; Muñoz R; Iglesias R; Ferreras J M; ... (+1)",
+      "first_author": "Arias F J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

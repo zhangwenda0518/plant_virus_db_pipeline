@@ -1,0 +1,283 @@
+{
+  "month": "2005-06",
+  "generated": "2026-07-13 02:59:42",
+  "total": 33,
+  "by_category": {
+    "Host_Virus_Interactions": 16,
+    "Antiviral_Resistance_Genes": 8,
+    "New_Virus": 5,
+    "Control_Management": 5,
+    "Biotechnology_Applications": 1,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "15703845",
+      "doi": "10.1007/s00705-004-0488-3",
+      "title": "Identification and molecular characterization of Zantedeschia mild mosaic virus, a new calla lily-infecting potyvirus.",
+      "abstract": "Tissue-cultured seedlings of calla lily (Zantedeschia spp.) with mild mosaic symptom were observed in Taiwan. A new potyvirus, Zantedeschia mild mosaic virus (ZaMMV), was identified in the diseased plants based on the result of ELISA, virion morphology and sequence data. In the host range test, ZaMMV only infected Philodendron selloum and Zantedeschia spp. causing systemic mosaic and mild mosaic symptom, respectively. The 3'-terminal region of the virus was amplified by RT-PCR from total RNA using a potyvirus-specific degenerate primer and an oligo-dT primer. Sequence analysis revealed that the highest amino acid sequence identity of the capsid protein (CP) gene between ZaMMV and thirty potyviruses was 55%, and the highest nucleotide identity of 3' untranslated region (3'UTR) was 52%. Therefore, in terms of species demarcating criteria, ZaMMV is a new species of the genus Potyvirus. From the result of phylogenetic analysis, ZaMMV should be a member of the Bean common mosaic virus subgroup. According to the deduced amino acid sequence of ZaMMV, the N terminus of the CP contained 39 glutamine residues before DAG motif. This unique sequence has never been discovered in plant viruses.",
+      "journal": "Archives of virology",
+      "year": 2005,
+      "pub_date": "2005-06-01",
+      "authors": "Huang C-H; Chang Y-C",
+      "first_author": "Huang C-H",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Zantedeschia mild mosaic virus (ZaMMV)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "马蹄莲 (Zantedeschia spp.), Philodendron selloum",
+      "location": "台湾",
+      "results": "ZaMMV仅感染Philodendron selloum和Zantedeschia spp.，引起系统花叶。CP基因氨基酸与30种potyvirus最高一致55%，3'UTR核苷酸一致52%，符合新种标准。系统发育属BCMV亚组。CP的N端有39个谷氨酰胺重复，前所未见。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15863448",
+      "doi": "10.1093/jxb/eri164",
+      "title": "Molecular characterization and systemic induction of single-chain ribosome-inactivating proteins (RIPs) in sugar beet (Beta vulgaris) leaves.",
+      "abstract": "Sugar beet (Beta vulgaris L.) leaves contain virus-inducible type 1 (single chain) ribosome-inactivating proteins that have been named beetins. The structural and functional characterization, the cellular location, and the potential role of beetins as antiviral agents are reported here. Beetins are formed of a single polypeptide chain with a varying degree of glycosylation and strongly inhibited in vitro protein synthesis in rabbit reticulocyte lysates (IC50=1.15 ng ml(-1)) and a Vicia sativa L. cell-free system (IC50=68 ng ml(-1)) through the single depurination of the large rRNA. Beetins trigger the multidepurination of tobacco mosaic virus (TMV) genomic RNA which underwent extensive degradation upon treatment with acid aniline. Beetins are extracellular proteins that were recovered from the apoplastic fluid. Induction of sugar beet RIPs with either H2O2 or artichoke mottled crinkle virus (AMCV) was observed in leaves distant from the site of application of such elicitors. The external application of purified beetin to sugar leaves prevented infection by AMCV which supports the preliminary hypothesis that beetins could be involved in plant systemic acquired resistance subjected to induction by phytopathogens.",
+      "journal": "Journal of experimental botany",
+      "year": 2005,
+      "pub_date": "2005-06-01",
+      "authors": "Iglesias Rosario; Pérez Yolanda; de Torre Carlos; Ferreras J Miguel; Antolín Pilar; ... (+4)",
+      "first_author": "Iglesias Rosario",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒（TMV）、菜蓟斑驳皱叶病毒（AMCV）",
+      "taxonomy": "",
+      "host_plant": "甜菜 (Beta vulgaris)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15914862",
+      "doi": "10.1099/vir.0.80916-0",
+      "title": "Nemesia ring necrosis virus: a new tymovirus with a genomic RNA having a histidylatable tobamovirus-like 3' end.",
+      "abstract": "The complete nucleotide sequence of the genomic RNA of the new virus Nemesia ring necrosis virus (NeRNV), which is widespread in various ornamental plant species belonging to the Scrophulariaceae and Verbenaceae, has been determined. Based on its gene content, the folding properties of its 5'-untranslated region and in vitro translation experiments, NeRNV RNA is a typical tymovirus RNA. Its 3' end, however, differs greatly from those of the valine-specific tymoviral RNAs that have been analysed previously. It can be folded into an upstream pseudoknot domain and a histidine-specific tRNA-like structure, a combination that, so far, has been found only in tobamoviral RNAs. The identity elements found in NeRNV RNA for recognition by yeast histidyl-tRNA synthetase are more similar to those of yeast tRNAHis than the ones found in tobacco mosaic virus RNA. As a result NeRNV RNA can be charged with histidine even more efficiently than tobacco mosaic virus RNA.",
+      "journal": "The Journal of general virology",
+      "year": 2005,
+      "pub_date": "2005-06-01",
+      "authors": "Koenig R; Barends S; Gultyaev A P; Lesemann D-E; Vetten H J; ... (+2)",
+      "first_author": "Koenig R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Nemesia ring necrosis virus (NeRNV)",
+      "taxonomy": "Tymoviridae, Tymovirus",
+      "host_plant": "多种观赏植物（玄参科Scrophulariaceae和马鞭草科Verbenaceae）",
+      "location": "未提及",
+      "results": "NeRNV RNA是典型tymovirus，3'端有上游假结和组氨酸tRNA样结构，能被酵母组氨酰-tRNA合成酶高效识别，负载效率高于TMV。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30795409",
+      "doi": "10.1094/PD-89-0686A",
+      "title": "First Report of Citrus leprosis virus on Citrus in Santa Cruz, Bolivia.",
+      "abstract": "The citrus crop is rapidly expanding in the Province of Santa Cruz de la Sierra, Bolívia. Citrus, mostly planted by small growers, currently comprises approximately 15,000 ha. Sweet oranges (Citrus sinensis) and mandarins (C. reticulate) are the main citrus-types grown primarily for internal consumption. Recently, there has been an increase in incidence of leprosis-like symptoms (round to elliptic lesions on the leaves, chlorotic to necrotic lesions in young twigs, and depressed small lesions on the fruits). These symptoms were associated with infestations by the tenuipalpid mite Brevipalpus sp. To verify if Citrus leprosis virus was the causal agent of the observed symptoms, leaf and fruit samples (mostly from Valencia sweet orange) were collected from commercial groves in El Torno, 32 km south of Santa Cruz, and Yapacani and Colónia San Juan, 130 km northwest of Santa Cruz. Small fragments of these samples were placed immediately in a mixture of glutaraldehyde and paraformaldehyde in cacodylate buffer and later processed with transmission electron microscopy at ESALQ, Piracicaba, SP, Brazil. Some of the leaf samples were dried at 35°C and used for reverse transcription-polymerase chain reaction (RT-PCR) with primers that specifically amplify portions of the genome of Citrus leprosis virus, cytoplasmic type (CiLV-C) (1) at Centro APTA Citros, Cordeirópolis, SP, Brazil. Brevipalpus sp. mites were also collected and kept in 90% ethanol for further identification at the University of Florida, Gainesville and ESALQ. In the samples from the three surveyed areas, transmission electron microscopy confirmed the presence of short bacilliform particles within endoplasmic reticulum cisternae and electron dense viroplasms in the cytoplasm, typical of infection by CiLV-C (2). CiLV-C specific primers amplified DNA fragments of expected sizes in RT-PCR from dried leaf samples that came from these three localities. Direct sequencing of at least three amplicons of each sample confirmed the identity of the virus. The consensus sequence of the putative movement protein gene in samples from Yapacani and Colónia San Juan (GenBank Accessions Nos. AY960216 and AY960215, respectively) were identical and exhibited 99% nucleotide and 98% amino acid homology with the Brazilian isolate sequence available at GenBank (Accession No. AY289190). The consensus sequence of the putative replicase gene found in the sample from El Torno (GenBank Accession No. AY960214) exhibited 96 and 93% nucleotide and amino acid homology, respectively with the Brazilian isolate (GenBank Accession No. AY289191). Sampled mites were identified as B. phoenicis (Geijskes), the known vector of CiLV-C (2). The symptomatology, particle morphology and cytopathology, detection by molecular methods and the association with infestation by B. phoenicis, together indicate that the foliar, stem, and fruit lesions in sweet orange observed in the Santa Cruz region were caused by CiLV-C. To our knowledge, this is the first report of this virus in Bolivia. References: (1) E. C. Locali et al. Plant Dis. 87:1317, 2003. (2) J. C. V. Rodrigues et al. Exp. Appl. Acarol. 30:161, 2003.",
+      "journal": "Plant disease",
+      "year": 2005,
+      "pub_date": "2005-06-01",
+      "authors": "Gómez E C; Vargas M R; Rivadameira C; Locali E C; Freitas-Astua J; ... (+4)",
+      "first_author": "Gómez E C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Citrus leprosis virus, cytoplasmic type (CiLV-C)",
+      "taxonomy": "未提及",
+      "host_plant": "Citrus sinensis (甜橙), Citrus reticulata (柑橘)",
+      "location": "玻利维亚圣克鲁斯省：El Torno, Yapacani, Colónia San Juan",
+      "results": "电镜观察到内质网中杆状颗粒和电子致密病毒质；RT-PCR扩增并测序显示与巴西分离株高度同源；媒介为Brevipalpus phoenicis",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15919934",
+      "doi": "10.1128/JVI.79.12.7812-7818.2005",
+      "title": "Plant virus-derived small interfering RNAs originate predominantly from highly structured single-stranded viral RNAs.",
+      "abstract": "RNA silencing is conserved in a broad range of eukaryotes and includes the phenomena of RNA interference in animals and posttranscriptional gene silencing (PTGS) in plants. In plants, PTGS acts as an antiviral system; a successful virus infection requires suppression or evasion of the induced silencing response. Small interfering RNAs (siRNAs) accumulate in plants infected with positive-strand RNA viruses and provide specificity to this RNA-mediated defense. We present here the results of a survey of virus-specific siRNAs characterized by a sequence analysis of siRNAs from plants infected with Cymbidium ringspot tombusvirus (CymRSV). CymRSV siRNA sequences have a nonrandom distribution along the length of the viral genome, suggesting that there are hot spots for virus-derived siRNA generation. CymRSV siRNAs bound to the CymRSV p19 suppressor protein have the same asymmetry in strand polarity as the sequenced siRNAs and are imperfect double-stranded RNA duplexes. Moreover, an analysis of siRNAs derived from two other nonrelated positive-strand RNA viruses showed that they displayed the same asymmetry as CymRSV siRNAs. Finally, we show that Tobacco mosaic virus (TMV) carrying a short inverted repeat of the phytoene desaturase (PDS) gene triggered more accumulation of PDS siRNAs than the corresponding antisense PDS sequence. Taken together, these results suggest that virus-derived siRNAs originate predominantly by direct DICER cleavage of imperfect duplexes in the most folded regions of the positive strand of the viral RNA.",
+      "journal": "Journal of virology",
+      "year": 2005,
+      "pub_date": "2005-06-01",
+      "authors": "Molnár Attila; Csorba Tibor; Lakatos Lóránt; Várallyay Eva; Lacomme Christophe; ... (+1)",
+      "first_author": "Molnár Attila",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management",
+        "Host_Virus_Interactions",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Cymbidium ringspot tombusvirus (CymRSV), Tobacco mosaic virus (TMV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15919897",
+      "doi": "10.1128/JVI.79.12.7410-7418.2005",
+      "title": "Adenosine kinase inhibition and suppression of RNA silencing by geminivirus AL2 and L2 proteins.",
+      "abstract": "Most plant viruses are initiators and targets of RNA silencing and encode proteins that suppress this adaptive host defense. The DNA-containing geminiviruses are no exception, and the AL2 protein (also known as AC2, C2, and transcriptional activator protein) encoded by members of the genus Begomovirus has been shown to act as a silencing suppressor. Here, a three-component, Agrobacterium-mediated transient assay is used to further examine the silencing suppression activity of AL2 from Tomato golden mosaic virus (TGMV, a begomovirus) and to determine if the related L2 protein of Beet curly top virus (BCTV, genus Curtovirus) also has suppression activity. We show that TGMV AL2, AL2(1-100) (lacking the transcriptional activation domain), and BCTV L2 can all suppress RNA silencing directed against a green fluorescent protein (GFP) reporter gene when silencing is induced by a construct expressing an inverted repeat GFP RNA (dsGFP). We previously found that these viral proteins interact with and inactivate adenosine kinase (ADK), a cellular enzyme important for adenosine salvage and methyl cycle maintenance. Using the GFP-dsGFP system, we demonstrate here that codelivery of a construct expressing an inverted repeat ADK RNA (dsADK), or addition of an ADK inhibitor (the adenosine analogue A-134974), suppresses GFP-directed silencing in a manner similar to the geminivirus proteins. In addition, AL2/L2 suppression phenotypes and nucleic acid binding properties are shown to be different from those of the RNA virus suppressors HC-Pro and p19. These findings provide strong evidence that ADK activity is required to support RNA silencing, and indicate that the geminivirus proteins suppress silencing by a novel mechanism that involves ADK inhibition. Further, since AL2(1-100) is as effective a suppressor as the full-length AL2 protein, activation and silencing suppression appear to be independent activities.",
+      "journal": "Journal of virology",
+      "year": 2005,
+      "pub_date": "2005-06-01",
+      "authors": "Wang Hui; Buckley Kenneth J; Yang Xiaojuan; Buchmann R Cody; Bisaro David M",
+      "first_author": "Wang Hui",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "番茄金色花叶病毒(Tomato golden mosaic virus, TGMV) AL2蛋白; 甜菜曲顶病毒(Beet curly top virus, BCTV) L2蛋白",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15941403",
+      "doi": "10.1111/j.1365-313X.2005.02424.x",
+      "title": "The eukaryotic translation initiation factor 4E confers multiallelic recessive Bymovirus resistance in Hordeum vulgare (L.).",
+      "abstract": "Virus diseases are widespread threats for crop production, which can, in many cases, be controlled efficiently by exploiting naturally occurring resistance. Barley, an important cereal species of the Triticeae, carries two genes, rym4 and rym5, which are located in the telomeric region of chromosome 3HL and confer recessive resistance to various strains of the Barley yellow mosaic virus complex. The barley 'eukaryotic translation initiation factor 4E' (Hv-eIF4E) was identified as a candidate for resistance gene function by physical mapping on a 650 kb contig. It is located in a chromosomal region characterized by suppressed recombination, in a position collinear to its homologue on rice chromosome 1L. Sequence diversity in the coding region of Hv-eIF4E, as calculated from a collection of unrelated barley accessions, revealed non-silent single nucleotide polymorphisms (SNPs) in four of its five exons. Stable transformation of a resistant barley genotype with a genomic fragment or a full-length cDNA of Hv-eIF4E derived from susceptible cultivars induced susceptibility to Barley mild mosaic virus. Moreover, the identification of SNPs diagnostic for rym4 and rym5 provides evidence that these are two alleles, which confer different resistance specificities. These findings demonstrate that variants of Hv-eIF4E confer multiallelic recessive virus resistance in a monocot species. The identification of eIF4E as the causal host factor for bymovirus resistance illustrates that mutations in this basic component of the eukaryotic translation complex form a seminal mechanism for recessive virus resistance in both dicot and monocot plants.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2005,
+      "pub_date": "2005-06-01",
+      "authors": "Stein Nils; Perovic Dragan; Kumlehn Jochen; Pellio Bettina; Stracke Silke; ... (+3)",
+      "first_author": "Stein Nils",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "大麦黄花叶病毒复合体 (Barley yellow mosaic virus complex, 包括Barley mild mosaic virus)",
+      "taxonomy": "",
+      "host_plant": "大麦 (Hordeum vulgare)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "23923556",
+      "doi": "",
+      "title": "RNase and DNase activities of antiviral proteins from leaves of Bougainvillea xbuttiana.",
+      "abstract": "Antiviral proteins (AVPs) purified from the leaves of Bougainvillea xbuttiana cv Mahara exhibited RNase activity against viral RNA of the tobamoviruses, Tobacco mosaic virus (TMV) and Sunnhemp rosette virus (SRV). They caused complete degradation of viral RNAs in a concentration-dependent manner. RNase activity gel assay ruled out the possibility of the presence of contaminating nucleases. AVPs also showed DNase activity, as indicated by conversion of supercoiled form of plasmid DNA into relaxed and linear forms. The implications of these activities in controlling plant viruses are discussed.",
+      "journal": "Indian journal of biochemistry & biophysics",
+      "year": 2005,
+      "pub_date": "2005-06-01",
+      "authors": "Bhatia Shikha; Lodha M L",
+      "first_author": "Bhatia Shikha",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Tobacco mosaic virus (TMV), Sunnhemp rosette virus (SRV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15890960",
+      "doi": "10.1128/JVI.79.11.7217-7226.2005",
+      "title": "Aureusvirus P14 is an efficient RNA silencing suppressor that binds double-stranded RNAs without size specificity.",
+      "abstract": "RNA silencing is a conserved eukaryotic gene regulatory system in which sequence specificity is determined by small RNAs. Plant RNA silencing also acts as an antiviral mechanism; therefore, viral infection requires expression of a silencing suppressor. The mechanism and the evolution of silencing suppression are still poorly understood. Tombusvirus open reading frame (ORF) 5-encoded P19 is a size-selective double-stranded RNA (dsRNA) binding protein that suppresses silencing by sequestering double-stranded small interfering RNAs (siRNAs), the specificity determinant of the antiviral silencing system. To better understand the evolution of silencing suppression, we characterized the suppressor of the type member of Aureusviruses, the closest relatives of the genus Tombusvirus. We show that the Pothos latent virus (PoLV) ORF 5-encoded P14 is an efficient suppressor of both virus- and transgene-induced silencing. Findings that in vitro P14 binds dsRNAs and double-stranded siRNAs without obvious size selection suggest that P14, unlike P19, can suppress silencing by sequestering both long dsRNA and double-stranded siRNA components of the silencing machinery. Indeed, P14 prevents the accumulation of hairpin transcript-derived siRNAs, indicating that P14 inhibits inverted repeat-induced silencing by binding the long dsRNA precursors of siRNAs. However, viral siRNAs accumulate to high levels in PoLV-infected plants; therefore, P14 might inhibit virus-induced silencing by sequestering double-stranded siRNAs. Finally, sequence analyses suggest that P14 and P19 suppressors diverged from an ancient dsRNA binding suppressor that evolved as a nested protein within the common ancestor of aureusvirus-tombusvirus movement proteins.",
+      "journal": "Journal of virology",
+      "year": 2005,
+      "pub_date": "2005-06-01",
+      "authors": "Mérai Zsuzsanna; Kerényi Zoltán; Molnár Attila; Barta Endre; Válóczi Anna; ... (+4)",
+      "first_author": "Mérai Zsuzsanna",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Pothos latent virus (PoLV) 或 Aureusvirus",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15890961",
+      "doi": "10.1128/JVI.79.11.7227-7238.2005",
+      "title": "Viral class 1 RNase III involved in suppression of RNA silencing.",
+      "abstract": "Double-stranded RNA (dsRNA)-specific endonucleases belonging to RNase III classes 3 and 2 process dsRNA precursors to small interfering RNA (siRNA) or microRNA, respectively, thereby initiating and amplifying RNA silencing-based antiviral defense and gene regulation in eukaryotic cells. However, we now provide evidence that a class 1 RNase III is involved in suppression of RNA silencing. The single-stranded RNA genome of sweet potato chlorotic stunt virus (SPCSV) encodes an RNase III (RNase3) homologous to putative class 1 RNase IIIs of unknown function in rice and Arabidopsis. We show that RNase3 has dsRNA-specific endonuclease activity that enhances the RNA-silencing suppression activity of another protein (p22) encoded by SPCSV. RNase3 and p22 coexpression reduced siRNA accumulation more efficiently than p22 alone in Nicotiana benthamiana leaves expressing a strong silencing inducer (i.e., dsRNA). RNase3 did not cause intracellular silencing suppression or reduce accumulation of siRNA in the absence of p22 or enhance silencing suppression activity of a protein encoded by a heterologous virus. No other known RNA virus encodes an RNase III or uses two independent proteins cooperatively for RNA silencing suppression.",
+      "journal": "Journal of virology",
+      "year": 2005,
+      "pub_date": "2005-06-01",
+      "authors": "Kreuze Jan F; Savenkov Eugene I; Cuellar Wilmer; Li Xiangdong; Valkonen Jari P T",
+      "first_author": "Kreuze Jan F",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "甜菜温和黄化病毒 (SPCSV)",
+      "taxonomy": "",
+      "host_plant": "本塞姆氏烟草 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15790558",
+      "doi": "10.1074/jbc.M500992200",
+      "title": "Functional analysis of the plant disease resistance gene Pto using DNA shuffling.",
+      "abstract": "Pto is a serine/threonine kinase that mediates resistance in tomato to strains of Pseudomonas syringae pv. tomato expressing the (a)virulence proteins AvrPto or AvrPtoB. DNA shuffling was used as a combinatorial in vitro genetic approach to dissect the functional regions of Pto. The Pto gene was shuffled with four of its paralogs from a resistant haplotype to create a library of recombinant products that was screened for interaction with AvrPto in yeast. All interacting clones and a representative sample of noninteracting clones were sequenced, and their ability to signal downstream was tested by the elicitation of a hypersensitive response in an AvrPto-dependent or -independent manner in planta. Eight candidate regions important for binding to AvrPto or for downstream signaling were identified by statistical correlations between individual amino acid positions and phenotype. A subset of the regions had previously been identified as important for recognition, confirming the validity of the shuffling approach. Three novel regions important for Pto function were validated by site-directed mutagenesis. Several chimeras and point mutants exhibited a differential interaction with (a)virulence proteins in the AvrPto and VirPphA family, demonstrating distinct binding requirements for different ligands. Additionally, the identification of chimeras that are both constitutively active as well as capable of binding AvrPto indicates that elicitation of downstream signaling does not involve a conformational change that precludes binding of AvrPto, as previously hypothesized. The correlations between phenotypes and variation generated by DNA shuffling paralleled natural variation observed between orthologs of Pto from Lycopersicon spp.",
+      "journal": "The Journal of biological chemistry",
+      "year": 2005,
+      "pub_date": "2005-06-17",
+      "authors": "Bernal Adriana J; Pan Qilin; Pollack Jeff; Rose Laura; Kozik Alexander; ... (+5)",
+      "first_author": "Bernal Adriana J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15878128",
+      "doi": "10.1016/j.ympev.2005.03.012",
+      "title": "Molecular criteria for determining new hybrid species--an application to the Sonneratia hybrids.",
+      "abstract": "The possible hybrid origin of new species can usually be corroborated by molecular means. Here, we suggest that the segregation patterns of the molecular markers be further analyzed. A true hybrid species should show the patterns under continuous breeding among its members, at least beyond the F2 generation. We applied the guidelines to the putative hybrid species of Sonneratia, a widespread mangrove genus, and concluded that all the observed hybrids in this genus are simple F1's. Thus, S. x gulngai and S. x hainanensis are not true hybrid species. The segregation patterns of molecular markers should be heeded in interpreting the existence of hybrid species.",
+      "journal": "Molecular phylogenetics and evolution",
+      "year": 2005,
+      "pub_date": "2005-06-01",
+      "authors": "Zhou Renchao; Shi Suhua; Wu Chung-I",
+      "first_author": "Zhou Renchao",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

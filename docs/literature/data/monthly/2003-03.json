@@ -1,0 +1,280 @@
+{
+  "month": "2003-03",
+  "generated": "2026-07-13 02:59:42",
+  "total": 21,
+  "by_category": {
+    "Host_Virus_Interactions": 7,
+    "Antiviral_Resistance_Genes": 6,
+    "New_Virus": 6,
+    "Biotechnology_Applications": 2,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "12789421",
+      "doi": "10.1007/s00299-002-0570-9",
+      "title": "Transient expression of Arabidopsis thaliana ascorbate peroxidase 3 in Nicotiana benthamiana plants infected with recombinant potato virus X.",
+      "abstract": "We have explored the transient over-expression of Arabidopsis thaliana ascorbate peroxidase 3 (APX3) in Nicotiana benthamiana using a viral vector based on the potato virus X (PVX). Plants infected with a PVX:APX3 hybrid had a similar progression of viral particles compared to control plants infected with a PVX:GFP hybrid, indicating that infection was not affected by the over-expression of heterologous APX3. Our results also showed that in PVX:APX3-infected plants, the hybrid virus directed a high level of APX3 expression and the recombinant protein was functional, as inferred from the higher APX activity compared to mock and PVX:GFP hybrid-infected plants. The PVX recombinant expression system used is a simple and quick method for transient expression of heterologous APXs, which are expected to suffer specific processing in plant cells.",
+      "journal": "Plant cell reports",
+      "year": 2003,
+      "pub_date": "2003-03-01",
+      "authors": "Escobar C; Hernández L E; Jiménez A; Creissen G; Ruiz M T; ... (+1)",
+      "first_author": "Escobar C",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "马铃薯X病毒(PVX)",
+      "taxonomy": "",
+      "host_plant": "本氏烟(Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12565164",
+      "doi": "10.1016/s0166-0934(02)00257-4",
+      "title": "Colony establishment and maintenance of the eriophyid wheat curl mite Aceria tosichella for controlled transmission studies on a new virus-like pathogen.",
+      "abstract": "High plains disease (HPD) is of serious economic concern for wheat and corn production, but little is known about the virus-like causal agent. In the field, HPD is often associated with Wheat streak mosaic virus (WSMV) and both pathogens are transmitted by the same eriophyid wheat curl mite, Aceria tosichella Keifer. The objective of this study was to develop methods for establishing and maintaining HPD-transmitting wheat curl mite colonies for their use in studies on HPD. Towards this goal, mite colonies from a mixed infection source were separated into colonies either (i). not viruliferous; (ii). only transmitting WSMV; or (iii). only transmitting HPD. Maintenance of these colonies required strictly separated incubator facilities and adaptation of mite-suitable transfer techniques to permit frequent passages of mites to healthy plants. The established colonies provided reliable sources of infective material to study the progression of HPD and/or WSMV in plants using sensitive immuno-detection assays. In conclusion, we have developed reliable methods with a poorly studied arthropod vector to examine the biology and properties of a new virus-like disease.",
+      "journal": "Journal of virological methods",
+      "year": 2003,
+      "pub_date": "2003-03-01",
+      "authors": "Skare J M; Wijkamp I; Rezende J; Michels G; Rush C; ... (+2)",
+      "first_author": "Skare J M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "High plains disease (HPD) causative agent (virus-like pathogen); Wheat streak mosaic virus (WSMV)",
+      "taxonomy": "WSMV: Potyviridae, Potyvirus; HPD agent: 未提及",
+      "host_plant": "小麦 (wheat), 玉米 (corn)",
+      "location": "未提及",
+      "results": "成功建立三种螨群体，提供可靠传染源，用于研究HPD和WSMV在植物中的进展。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12678557",
+      "doi": "10.1023/a:1022599213648",
+      "title": "A novel TMV-induced hot pepper cell wall protein gene (CaTin2) is associated with virus-specific hypersensitive response pathway.",
+      "abstract": "Incompatible plant-pathogen interactions result in the rapid cell death response known as hypersensitive response (HR) and activation of host defense related genes. To understand the cellular mechanism controlling defense response better, a novel pathogenesis-related (PR) gene and putative cell wall protein gene, CaTin2, was isolated through differential screening of a hot pepper cDNA library and characterized. CaTin2 gene was locally and systemically induced in hot pepper plants upon TMV-P0 inoculation which induces HR. However, CaTin2 gene wasn't regulated by bacterial HR-specific signal pathway. The full-length cDNA for CaTin2, which is 864 nucleotides long, contained the open reading frame of 200 amino acids including cell wall targeting sequences of 26 amino acids. CaTin2 gene has no sequence similarity with other cell wall protein genes except the signal sequence and exists as only one copy in hot pepper genome. CaTin2 gene contains repeated helix-turn-helix motif consisting of 39 amino acids. CaTin2 mRNA accumulation was induced in response to various treatments such as ethylene, SA, MeJA, ABA, methyl viologen, NaCl and wounding at early time points. Subcelluar localization of CaTin2 was confirmed in the cell wall in hot pepper leaves by making CaTin2::smGFP fusion protein. The transgenic plants overexpressing CaTin2 cDNA were resistant to TMV and CMV inoculation. From these results, CaTin2 gene may encode a virus-related new cell wall protein member.",
+      "journal": "Plant molecular biology",
+      "year": 2003,
+      "pub_date": "2003-03-01",
+      "authors": "Shin Ryoung; Park Chang-Jin; An Jong-Min; Paek Kyung-Hee",
+      "first_author": "Shin Ryoung",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "TMV, CMV",
+      "taxonomy": "",
+      "host_plant": "辣椒",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30812752",
+      "doi": "10.1094/PDIS.2003.87.3.229",
+      "title": "Variants of East African cassava mosaic virus and Its Distribution in Double Infections with African cassava mosaic virus in Nigeria.",
+      "abstract": "In a survey for cassava mosaic begomoviruses conducted in 1997 and 1998 in Nigeria, East African cassava mosaic virus (EACMV) was detected by the polymerase chain reaction together with African cassava mosaic virus (ACMV) in 27 out of 290 cassava leaf samples of infected plants from 254 farmers' fields in five agroecological zones. One plant was infected with EACMV only. Five variant isolates of EACMV were observed based on their reactions to primers that could detect Cameroonian and East African strains of EACMV. Isolates of variants 1 and 3 occurred mostly in the derived or coastal and southern Guinea savannahs, while variants 4 and 5 predominated in the humid forest region. Isolates of variant 2 were widely distributed across the three agroecologies. EACMV was not detected in the northern Guinea savannah and arid and semiarid zones. Most doubly infected plants showed more severe symptoms than plants with single infection. Occurrence of EACMV variants together with ACMV detection and information about their distribution in Nigeria could be used for the selection of cassava clones in cassava mosaic disease resistance programs.",
+      "journal": "Plant disease",
+      "year": 2003,
+      "pub_date": "2003-03-01",
+      "authors": "Ogbe F O; Thottappilly G; Dixon A G O; Atiri G I; Mignouna H D",
+      "first_author": "Ogbe F O",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "East African cassava mosaic virus (EACMV)、African cassava mosaic virus (ACMV)",
+      "taxonomy": "",
+      "host_plant": "木薯 (cassava)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12609030",
+      "doi": "10.1046/j.1365-313x.2003.01675.x",
+      "title": "Brassinosteroid functions in a broad range of disease resistance in tobacco and rice.",
+      "abstract": "Brassinolide (BL), considered to be the most important brassinosteroid (BR) and playing pivotal roles in the hormonal regulation of plant growth and development, was found to induce disease resistance in plants. To study the potentialities of BL activity on stress responding systems, we analyzed its ability to induce disease resistance in tobacco and rice plants. Wild-type tobacco treated with BL exhibited enhanced resistance to the viral pathogen tobacco mosaic virus (TMV), the bacterial pathogen Pseudomonas syringae pv. tabaci (Pst), and the fungal pathogen Oidium sp. The measurement of salicylic acid (SA) in wild-type plants treated with BL and the pathogen infection assays using NahG transgenic plants indicate that BL-induced resistance does not require SA biosynthesis. BL treatment did not induce either acidic or basic pathogenesis-related (PR) gene expression, suggesting that BL-induced resistance is distinct from systemic acquired resistance (SAR) and wound-inducible disease resistance. Analysis using brassinazole 2001, a specific inhibitor for BR biosynthesis, and the measurement of BRs in TMV-infected tobacco leaves indicate that steroid hormone-mediated disease resistance (BDR) plays part in defense response in tobacco. Simultaneous activation of SAR and BDR by SAR inducers and BL, respectively, exhibited additive protective effects against TMV and Pst, indicating that there is no cross-talk between SAR- and BDR-signaling pathway downstream of BL. In addition to the enhanced resistance to a broad range of diseases in tobacco, BL induced resistance in rice to rice blast and bacterial blight diseases caused by Magnaporthe grisea and Xanthomonas oryzae pv. oryzae, respectively. Our data suggest that BDR functions in the innate immunity system of higher plants including dicotyledonous and monocotyledonous species.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2003,
+      "pub_date": "2003-03-01",
+      "authors": "Nakashita Hideo; Yasuda Michiko; Nitta Takako; Asami Tadao; Fujioka Shozo; ... (+5)",
+      "first_author": "Nakashita Hideo",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "烟草花叶病毒 (TMV)",
+      "taxonomy": "",
+      "host_plant": "烟草、水稻",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12650452",
+      "doi": "10.1094/MPMI.2003.16.3.206",
+      "title": "Analysis of the involvement of an inducible Arabidopsis RNA-dependent RNA polymerase in antiviral defense.",
+      "abstract": "RNA-dependent RNA polymerases (RdRPs) have been implicated in posttranscriptional gene silencing (PTGS) and antiviral defense. An Arabidopsis RdRP (SDE1/SGS2) has been previously shown to be required for transgene-induced PTGS but has no general role in antiviral defense. On the other hand, we have recently shown that transgenic tobacco deficient in an inducible RdRP (NtRdRP1) activity became more susceptible to both Tobacco mosaic virus and Potato virus X. Thus, different RdRPs may have distinct roles in closely related PTGS and antiviral defense. In the present study, we analyzed roles of a newly identified Arabidopsis RdRP gene (AtRdRP1) in plant antiviral defense. AtRdRP1 encodes an RdRP closely related structurally to NtRdRP1 and is also induced by salicylic acid treatment and virus infection. A T-DNA insertion mutant for AtRdRP1 has been isolated and analyzed for possible alterations in response to viral infection. When infected by a tobamovirus and a tobravirus, the knockout mutant accumulated higher and more persistent levels of viral RNAs in both the lower, inoculated and in upper, systemically infected leaves than did wild-type plants. These results suggest that the inducible AtRdRP1 is the Arabidopsis ortholog of NtRdRP1 and plays a role in antiviral defense. Examination of short viral RNAs and silencing studies using a viral vector harboring an endogenous plant gene suggest that, while not required for virus-induced PTGS, AtRdRP1 can apparently promote turnover of viral RNAs in infected plants.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 2003,
+      "pub_date": "2003-03-01",
+      "authors": "Yu Diqiu; Fan Baofang; MacFarlane Stuart A; Chen Zhixiang",
+      "first_author": "Yu Diqiu",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "烟草花叶病毒属(tobamovirus)和烟草脆裂病毒属(tobravirus)",
+      "taxonomy": "",
+      "host_plant": "拟南芥",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12647052",
+      "doi": "10.1007/s00122-002-1088-9",
+      "title": "Identification of five new blast resistance genes in the highly blast-resistant rice variety IR64 using a QTL mapping strategy.",
+      "abstract": "Rice progenies used for the construction of genetic maps permit exhaustive identification and characterization of resistance genes present in their parental cultivars. We inoculated a rice progeny derived from the cross IR64 x Azucena with different Magnaporthe grisea isolates that showed differential responses on the parental cultivars. By QTL mapping, nine unlinked loci conferring resistance to each isolate were identified and named Pi-24( t) to Pi-32( t). They could correspond to nine specific resistance genes. Five of these resistance loci (RLs) were mapped at chromosomal locations where no resistance gene was previously reported, defining new resistance genes. Using degenerate primers of the NBS (nucleotide binding site) motif found in many resistance genes, two resistance gene analogues (RGAs) IR86 and IR14 were identified and mapped closely to two blast RLs (resistance identified in this study, i.e. Pi-29(t) and Pi-30(t) respectively). These two RLs may correspond to the Pi-11 and Pi-a blast resistance genes previously identified. Moreover, the ir86 and ir14 genes have been identified \"in silico\" on the indica rice cultivar 93-11, recently sequenced by Chinese researchers. Both genes encodes NBS-LRR-like proteins that are characteristics of plant-disease resistance genes.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 2003,
+      "pub_date": "2003-03-01",
+      "authors": "Sallaud C; Lorieux M; Roumen E; Tharreau D; Berruyer R; ... (+4)",
+      "first_author": "Sallaud C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12562918",
+      "doi": "10.1113/jphysiol.2002.036673",
+      "title": "Mitogen-activated protein kinase (MAPK) pathway activation: effects of age and acute exercise on human skeletal muscle.",
+      "abstract": "The purpose of this investigation was to examine the activation (phosphorylation) and total protein content of MAPK signalling cascade proteins (ERK 1/2, p90RSK, Mnk 1, eIF4E, p38 MAPK, JNK/SAPK, MKP 1) at rest and following exercise, in sedentary young and old men. Eight young (22 +/- 1 years; YM) and eight old (79 +/- 3 years; OM) men underwent a resting muscle biopsy of the vastus lateralis; they then performed a knee extensor resistance exercise session (29 contractions at approximately 70 % of max), followed by a post-exercise biopsy. Western immunoblot analysis demonstrated that the OM had higher resting phosphorylation of ERK 1/2, p90RSK, Mnk 1, p38 MAPK and JNK/SAPK proteins versus YM (P < 0.05). The resistance exercise bout caused an increase in phosphorylation of the ERK 1/2, p90RSK and Mnk 1 proteins (P < 0.05) in the YM. Conversely, the OM had a decrease in ERK 1/2, p90RSK, Mnk 1, p38 MAPK and JNK/SAPK phosphorylation (P < 0.05) after the exercise bout. Neither group showed a change in eIF4E phosphorylation. The total amount of protein expression of the MAPK signalling proteins was not different between the YM and OM, except that there was a higher (P < 0.05) MKP 1 protein content in the OM. This investigation is the first to provide evidence that MAPK proteins are differentially activated at rest and in response to a bout of resistance exercise in skeletal muscle of young and old men. These findings may have implications for other processes (e.g. transcription and translation) involved in skeletal muscle type and growth, when examining the changes occurring with ageing muscle before and after resistance exercise/training.",
+      "journal": "The Journal of physiology",
+      "year": 2003,
+      "pub_date": "2003-03-15",
+      "authors": "Williamson D; Gallagher P; Harber M; Hollon C; Trappe S",
+      "first_author": "Williamson D",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12601171",
+      "doi": "10.1073/pnas.0437898100",
+      "title": "Comparative analyses of genomic locations and race specificities of loci for quantitative resistance to Pyricularia grisea in rice and barley.",
+      "abstract": "Comparative genomic analyses have revealed extensive colinearity in gene orders in distantly related taxa in mammals and grasses, which opened new horizons for evolutionary study. The objective of our study was to assess syntenic relationships of quantitative trait loci (QTL) for disease resistance in cereals by using a model system in which rice and barley were used as the hosts and the blast fungus Pyricularia grisea Sacc. as the pathogen. In total, 12 QTL against three isolates were identified in rice; two had effects on all three isolates, and the other 10 had effects on only one or two of the three isolates. Twelve QTL for blast resistance were identified in barley; one had effect on all three isolates, and the other 11 had effects on only one or two of the three isolates. The observed isolate specificity led to a hypothesis about the durability of quantitative resistance commonly observed in many plant host-pathogen systems. Four pairs of the QTL showed corresponding map positions between rice and barley, two of the four QTL pairs had complete conserved isolate specificity, and another two QTL pairs had partial conserved isolate specificity. Such corresponding locations and conserved specificity suggested a common origin and conserved functionality of the genes underlying the QTL for quantitative resistance and may have utility in gene discovery, understanding the function of the genomes, and identifying the evolutionary forces that structured the organization of the grass genomes.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2003,
+      "pub_date": "2003-03-04",
+      "authors": "Chen Huilan; Wang Shiping; Xing Yongzhong; Xu Caiguo; Hayes Patrick M; ... (+1)",
+      "first_author": "Chen Huilan",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15162679",
+      "doi": "",
+      "title": "Notes on Elaphoglossum (Lomariopsidaceae) section Polytrichia subsection Hybrida in Mexico and Central America.",
+      "abstract": "In Elaphoglossum sect. Polytrichia subsect. Hybrida six new species are described: E. angustioblongum A. Rojas, E. baquianorum A. Rojas, E. cotoi A. Rojas, E. jinoteganum A. Rojas, E. neeanum A. Rojas and E. silencioanum A. Rojas. New combination is made for Elaphoglossum mexicanum (E. Fourn.) A. Rojas. Two species are reported: E. barbatum (H. Karst.) Hieron. and E. scolopendrifolium (Raddi) J. Sm. Two species are redefined: E. erinaceum (Fée) T. Moore and E. tambillense (Hook.) T. Moore. E. pallidum (Baker ex Jenman) C. Chr. is eliminated for Mexico and Central America. Of the new species only E. neeanum is present outside of the region. A key is given to those species in Mexico and Central America.",
+      "journal": "Revista de biologia tropical",
+      "year": 2003,
+      "pub_date": "2003-03-01",
+      "authors": "Rojas-Alvarado Alexander Francisco",
+      "first_author": "Rojas-Alvarado Alexander Francisco",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12825504",
+      "doi": "10.1017/s0953756203007354",
+      "title": "Mycosphaerella species associated with Eucalyptus in south-western Australia: new species, new records and a key.",
+      "abstract": "Mycosphaerella ambiphylla sp. nov. (anamorph: Phaeophleospora) and Mycosphaerella aurantia sp. nov., are described from diseased Eucalyptus globulus leaves. In addition, a new fungal record in Australia, M. mexicana, and two new records for Western Australia, M. gregaria and M. parva, are discussed. A key is provided to Mycosphaerella species on E. globulus in Western Australia.",
+      "journal": "Mycological research",
+      "year": 2003,
+      "pub_date": "2003-03-01",
+      "authors": "Maxwell Aaron; Dell Bernie; Neumeister-Kemp Heike G; St J Hardy Giles E",
+      "first_author": "Maxwell Aaron",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12825505",
+      "doi": "10.1017/s0953756203007184",
+      "title": "New species of Anthostomella on fynbos, with a key to the genus in South Africa.",
+      "abstract": "A study of saprobic fungi occurring on the fynbos of the Western Cape Province of South Africa yielded four unknown Anthostomella species. A. proteae from Protea nitida, A. cynaroides from P. cynaroides, A. leucospermi from Leucospermum oleifolium, and A. brabeji from Brabejum stellatifolium are described as new. New records for South Africa include A. conorum from Leucadendron sp., Protea magnifica and P. neriifolia, and A. clypeata from Ischyrolepis subverticellata, Cannomois virgata, Restio egregius, and R. cfr confusus. A dichotomous key to the Anthostomella species in South Africa is also provided.",
+      "journal": "Mycological research",
+      "year": 2003,
+      "pub_date": "2003-03-01",
+      "authors": "Lee Seonju; Crous Pedro W",
+      "first_author": "Lee Seonju",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

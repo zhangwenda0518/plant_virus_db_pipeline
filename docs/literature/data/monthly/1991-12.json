@@ -1,0 +1,126 @@
+{
+  "month": "1991-12",
+  "generated": "2026-07-13 02:59:42",
+  "total": 5,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 2,
+    "New_Virus": 1,
+    "Tonesaviridae": 1,
+    "Molecular_Characterization": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "1962441",
+      "doi": "10.1016/0042-6822(91)90531-f",
+      "title": "Structural similarities between the RNAs of two satellites of tobacco necrosis virus.",
+      "abstract": "The complete nucleotide sequence of satellite tobacco necrosis virus 2 (STNV-2) RNA has been determined. It has the same organization as the previously studied STNV-1 RNA. The 5' untranslated regions (about 30 nt) are nearly identical, while the coat protein coding regions (about 600 nt) have 55% nucleotide sequence similarity. The 620-nt-long trailer sequences, with 64% nucleotide sequence conservation, can fold into a phylogenetically conserved secondary structure consisting of three pseudoknots followed by a long-range interaction-born hairpin structure. The significance of these elements is discussed in view of the particular properties (stability, translational competitiveness, and replication) that characterize these RNAs.",
+      "journal": "Virology",
+      "year": 1991,
+      "pub_date": "1991-12-01",
+      "authors": "Danthinne X; Seurinck J; Van Montagu M; Pleij C W; van Emmelo J",
+      "first_author": "Danthinne X",
+      "categories": [
+        "New_Virus",
+        "Tonesaviridae"
+      ],
+      "virus_name": "Satellite tobacco necrosis virus (STNV-1, STNV-2)",
+      "taxonomy": "卫星病毒（Satellite virus），主病毒为Tobacco necrosis virus (Tombusviridae)",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "STNV-2与STNV-1具有相同基因组组织；5'UTR几乎相同；衣壳蛋白编码区55%相似；3'端trailer区64%保守，可折叠成含三个假结和长程配对发夹的保守二级结构。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "1684985",
+      "doi": "10.1099/0022-1317-72-12-2895",
+      "title": "Diverse groups of plant RNA and DNA viruses share related movement proteins that may possess chaperone-like activity.",
+      "abstract": "Amino acid sequences of plant virus proteins mediating cell-to-cell movement were compared to each other and to protein sequences in databases. Two families of movement proteins have been identified, the members of which show statistically significant sequence similarity. The first, larger family (I) encompasses the movement proteins of tobamo-, tobra-, caulimo- and comoviruses, apple chlorotic leaf spot virus (ACLSV) and geminiviruses with bipartite genomes. Thus this family includes viruses which move by two methods, those requiring the coat protein for the cell-to-cell spread (comoviruses) and those not having this requirement (tobamoviruses). The previously unsuspected relationship between the movement proteins of RNA and DNA viruses having no RNA stage in their life cycle (geminiviruses) suggested that their movement mechanisms might be similar. The second, smaller family (II) consists of the movement proteins of tricornaviruses (bromoviruses, cucumoviruses, alfalfa mosaic virus and tobacco streak virus) and dianthoviruses. Alignment of the sequences of family I movement proteins highlighted two motifs, centred at conserved Gly and Asp residues, respectively, which are assumed to be crucial for the movement protein function(s). Screening the amino acid sequence database revealed another conserved motif that is shared by a large subset of family I movement proteins (those of caulimo- and comoviruses, and ACLSV) and the family of cellular 90K heat shock proteins (HSP90). Based on the analogy to HSP90, it is speculated that many plant virus movement proteins may mediate virus transport in a chaperone-like manner.",
+      "journal": "The Journal of general virology",
+      "year": 1991,
+      "pub_date": "1991-12-01",
+      "authors": "Koonin E V; Mushegian A R; Ryabov E V; Dolja V V",
+      "first_author": "Koonin E V",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "多种植物病毒，包括烟草花叶病毒属(Tobamovirus)、烟草脆裂病毒属(Tobravirus)、花椰菜花叶病毒属(Caulimovirus)、豇豆花叶病毒属(Comovirus)、苹果褪绿叶斑病毒(ACLSV)、双生病毒属(Geminivirus)、雀麦花叶病毒属(Bromovirus)、黄瓜花叶病毒属(Cucumovirus)、苜蓿花叶病毒(AMV)、烟草条纹病毒(TSV)、香石竹环斑病毒属(Dianthovirus)等",
+      "taxonomy": "涉及多个病毒科属，如Tobamovirus, Tobravirus, Caulimovirus, Comovirus, Geminiviridae, Bromovirus, Cucumovirus, Ilarvirus, Dianthovirus等",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1962460",
+      "doi": "10.1016/0042-6822(91)90568-v",
+      "title": "First field isolation of wound tumor virus from a plant host: minimal sequence divergence from the type strain isolated from an insect vector.",
+      "abstract": "A new strain of wound tumor virus (WTV) has been isolated from a periwinkle plant (Catharanthus roseus) that was among several used as bait plants in a blueberry field. The 12 segments of double-stranded RNA of the viral genome were isolated directly from infected tissue and found to have mobilities through agarose gels that were identical to those of the type strain WTV. Coupled complementary DNA (cDNA) and polymerase chain reactions (PCR) primed with oligonucleotides complementary to the termini of segments 4-12 of the type strain of WTV successfully amplified those segments. Amplification products of the 9 segments were of the size expected for the full-length segment, with no shorter than full-length products representing defective RNAs detected. PCR products representing segments 7, 11, and 12 were cloned and sequenced in their entirety. The sequence of each segment varied only slightly from the homologous segment of the type strain. Variation ranged from less than 1% for segment 12 to approximately 3% for segment 7, but even these low levels of variation were much greater than the variation found in WTV isolates maintained in the laboratory. Most of the variation in each of the three segments was confined to the coding regions, and most of the differences were third position transitions. The new WTV strain has been designated WTVNJ.",
+      "journal": "Virology",
+      "year": 1991,
+      "pub_date": "1991-12-01",
+      "authors": "Hillman B I; Anzola J V; Halpern B T; Cavileer T D; Nuss D L",
+      "first_author": "Hillman B I",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "伤瘤病毒（Wound tumor virus, WTV）",
+      "taxonomy": "",
+      "host_plant": "长春花（Catharanthus roseus）",
+      "location": "蓝莓田（未指明具体地区）",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1810179",
+      "doi": "10.1128/AAC.35.12.2463",
+      "title": "Inactivation of enveloped viruses by anthraquinones extracted from plants.",
+      "abstract": "To determine the extent of antiviral activity present in a number of plant extracts, hot glycerin extracts were prepared from Rheum officinale, Aloe barbadensis, Rhamnus frangula, Rhamnus purshianus, and Cassia angustifolia and their virucidal effects were tested against herpes simplex virus type 1. All the plant extracts inactivated the virus. The active components in these plants were separated by thin-layer chromatography and identified as anthraquinones. A purified sample of aloe emodin was prepared from aloin, and its effects on the infectivity of herpes simplex virus type 1 and type 2, varicella-zoster virus, pseudorabies virus, influenza virus, adenovirus, and rhinovirus were tested by mixing virus with dilutions of aloe emodin for 15 min at 37 degrees C, immediately diluting the sample, and assaying the amount of infectious virus remaining in the sample. The results showed that aloe emodin inactivated all of the viruses tested except adenovirus and rhinovirus. Electron microscopic examination of anthraquinone-treated herpes simplex virus demonstrated that the envelopes were partially disrupted. These results show that anthraquinones extracted from a variety of plants are directly virucidal to enveloped viruses.",
+      "journal": "Antimicrobial agents and chemotherapy",
+      "year": 1991,
+      "pub_date": "1991-12-01",
+      "authors": "Sydiskis R J; Owen D G; Lohr J L; Rosler K H; Blomster R N",
+      "first_author": "Sydiskis R J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1819691",
+      "doi": "10.1007/BF02536507",
+      "title": "Biotransformation of alkylglycerols in plant cell cultures: production of platelet activating factor and other biologically active ether lipids.",
+      "abstract": "Plant cells in culture are capable of incorporating exogenous 1-O-alkyl-sn-glycerols into various neutral and ionic ether lipids. 1-O-Alkyl-2-acyl-sn-glycero-3-phosphocholines, the major class of compounds thus formed, are used for the preparation of platelet activating factor (PAF) in high yields. Similarly, the prochiral 2-O-alkyl-sn-glycerols are transformed to chiral 2-O-alkyl glycerophospholipids from which compounds can be obtained that exhibit antiviral activity in plant and animal cells. Reaction of 1-O-alkyl-2-acyl-sn-glycero-3-phosphocholines with phospholipase D in the presence of ethanolamine leads to 1-O-alkyl-2-acyl-sn-glycero-3-phosphoethanolamines, which serve as starting material for the preparation of 1-O-alkyl-2-acyl-sn-glycero-3-phospho-(N-acyl)ethanolamines, compounds known to have antitumor activity.",
+      "journal": "Lipids",
+      "year": 1991,
+      "pub_date": "1991-12-01",
+      "authors": "Mangold H K; Apte S S; Weber N",
+      "first_author": "Mangold H K",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

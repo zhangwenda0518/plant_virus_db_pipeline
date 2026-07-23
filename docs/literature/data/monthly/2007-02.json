@@ -1,0 +1,283 @@
+{
+  "month": "2007-02",
+  "generated": "2026-07-13 02:59:42",
+  "total": 28,
+  "by_category": {
+    "Host_Virus_Interactions": 10,
+    "Antiviral_Resistance_Genes": 8,
+    "Biotechnology_Applications": 3,
+    "Control_Management": 3,
+    "Detection_Methods": 2,
+    "Molecular_Characterization": 1,
+    "New_Virus": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "17013543",
+      "doi": "10.1007/s00705-006-0846-4",
+      "title": "Genetic analysis of a novel Alaska barley yellow dwarf virus in the family Luteoviridae.",
+      "abstract": "A new plant virus belonging to the family Luteoviridae and isolated from diseased oat (Avena sativa L.) plants was discovered in Alaska in 2003. Even though plants with red/orange leaves were indicative of barley yellow dwarf disease, they were not reactive to specific antibodies corresponding to barley yellow dwarf virus (BYDV)-MAV, -PAV, -SGV, and cereal yellow dwarf virus-RPV from enzyme-linked immunosorbent assays (ELISA). An alternative RT-PCR assay that incorporated Shu-F/Yan-R primers for detection of BYDV-MAV, -PAS, -PAV, and SGV was effective in producing approximately 830-nt fragments that contained genomic sequences to the 3'-terminus of the polymerase gene (ORF 2), the intergenic region ( approximately 113 nt), the coat protein gene (ORF 3), and the putative movement gene (ORF 4). The Alaskan isolates were most similar to BYDV-MAV with only about 77 and 80% amino acid identity in the CP and ORF 4, respectively. The Alaska isolates coat protein gene sequences differed in several regions that otherwise are conserved among BYDV-MAV isolates, and may be important in serological variations, accounting for the negative ELISA results. Based upon sequence and serological differences, we concluded that the Alaskan BYDV-MAV-like isolates formed a novel species tentatively in the genus Luteovirus, and propose the name BYDV-ORV (oat red-leaf virus).",
+      "journal": "Archives of virology",
+      "year": 2007,
+      "pub_date": "2007-02-01",
+      "authors": "Robertson N L; French R",
+      "first_author": "Robertson N L",
+      "categories": [
+        "Detection_Methods",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "BYDV-ORV (oat red-leaf virus)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17151251",
+      "doi": "10.1534/genetics.106.063800",
+      "title": "Effects of introgression and recombination on haplotype structure and linkage disequilibrium surrounding a locus encoding Bymovirus resistance in barley.",
+      "abstract": "We present a detailed analysis of linkage disequilibrium (LD) in the physical and genetic context of the barley gene Hv-eIF4E, which confers resistance to the barley yellow mosaic virus (BYMV) complex. Eighty-three SNPs distributed over 132 kb of Hv-eIF4E and six additional fragments genetically mapped to its flanking region were used to derive haplotypes from 131 accessions. Three haplogroups were recognized, discriminating between the alleles rym4 and rym5, which each encode for a spectrum of resistance to BYMV. With increasing map distance, haplotypes of susceptible genotypes displayed diverse patterns driven mainly by recombination, whereas haplotype diversity within the subgroups of resistant genotypes was limited. We conclude that the breakdown of LD within 1 cM of the resistance gene was generated mainly by susceptible genotypes. Despite the LD decay, a significant association between haplotype and resistance to BYMV was detected up to a distance of 5.5 cM from the resistance gene. The LD pattern and the haplotype structure of the target chromosomal region are the result of interplay between low recombination and recent breeding history.",
+      "journal": "Genetics",
+      "year": 2007,
+      "pub_date": "2007-02-01",
+      "authors": "Stracke Silke; Presterl Thomas; Stein Nils; Perovic Dragan; Ordon Frank; ... (+1)",
+      "first_author": "Stracke Silke",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "大麦黄花叶病毒复合体（BYMV complex）",
+      "taxonomy": "",
+      "host_plant": "大麦",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30781015",
+      "doi": "10.1094/PDIS-91-2-0228A",
+      "title": "First Report of Spinach latent virus in Tomato in New Zealand.",
+      "abstract": "A Lycopersicon esculentum (tomato) plant from a commercial property in New Zealand was submitted to the Investigation and Diagnostic Centre for diagnosis in 2003. Fruits had faint yellow ringspots but no obvious symptoms were observed on leaves. No virus particles were observed from tomato and symptomatic herbaceous plants crude sap preparations. Mechanically inoculated Nicotiana clevelandii and N glutinosa developed systemic chlorosis, whereas pinpoint necrotic local lesions were observed on Chenopodium amaranticolor. Chlorotic local lesions were also observed on C. quinoa followed by systemic necrosis. No symptoms were observed on Cucumis sativus, Gomphrena globosa, N. benthamiana, N. sylvestris, or N. tabacum cv. White Burley. Total RNA was extracted from N. glutinosa and C. quinoa leaf samples using the Qiagen (Qiagen Inc., Valencia, CA) Plant RNeasy Kit. Reverse transcription (RT) was carried out by using random hexamer primers and SuperScript II reverse transcriptase (Invitrogen, Frederick, MD) followed with PCR using broad-detection primers targeting the genera Carmovirus, Dianthovirus, Ilarvirus, Tospovirus, (Agdia Inc., Elkhart, IN) and Tombusvirus (2). A positive RT-PCR amplification was obtained only with Ilarvirus primers. The 450-bp product (GenBank Accession No. DQ457000) from the replicase gene had a 97.4% nt and 98.6% aa identity with Spinach latent virus (SpLV; Accession No. NC_003808). An RT-PCR protocol was developed for the specific detection of SpLV. Primers were designed from three SpLV RNA sequences (RNA1: NC_003808; RNA2: NC_003809; RNA3: NC_003810) using the Primer3 software (3). Primers SpLV-RNA1-F (5'-TGTGGATTGGTGGTTGGA-3') and SpLV-RNA1-R (5'-CTTGCTTGAGGAGAGATGTTG-3') anneal to the replicase gene from nt 1720 to 2441. Primers SpLV-RNA2-F (5'-GAACCACCGAAACCGAAA-3') and SpLV-RNA2-R (5'-CCACCTCAACACCAGTCATAG-3') bind to the polymerase gene from nt 603 to 1038. Primers SpLV-RNA3-F (5'-GCCTTCATCTTTGCCTTTG-3') and SpLV-RNA3-R (5'-CATTTCATCTGCGGTGGT-3') amplify the movement protein gene from nt 724 to 936. The predicted amplified product sizes were 722, 436, and 213 bp from RNA1, RNA2, and RNA3, respectively. RT was carried out as described above. PCR was performed in a 20-μl reaction containing 2 μl cDNA, 1× Taq reaction buffer, 1.5 mM MgCl2, 0.2 mM dNTPs, 0.2 μM of forward and reverse primers, and 1 U Taq polymerase (Promega, Madison, WI). The PCR amplification cycle was identical for the three primer pairs: denaturation (95°C for 3 min) followed by 37 cycles of 95°C (20 s), 60°C (30 s), and 72°C (30 s) with a final elongation step (72°C for 3 min). The amplified products were analyzed by gel electrophoresis, stained with SYBR Green, and their identities confirmed by sequencing. The tomato sample was grown from seed imported from the Netherlands where SpLV occurs (4). The virus is of potential importance for the tomato industry because of its symptomless infection and high frequency of seed transmission in many plant species (1,4). SpLV has never been detected in other submitted tomato samples. Consequently, SpLV is not considered to be established in New Zealand. To our knowledge, this is the first report of SpLV in tomato. References: (1) L. Bos et al. Neth. J. Plant Pathol. 86:79, 1980. (2) R. Koeing et al. Arch. Virol. 149:1733, 2004. (3) S. Rozen and H. Skaletsky. Page 365 in: Bioinformatics Methods and Protocols. Humana Press, Totowa, NJ, 2000. (4) Z. Stefenac and M. Wrischer. Acta Bot. Croat. 42:1, 1983.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-02-01",
+      "authors": "Lebas B S M; Ochoa-Corona F M; Tang Z J; Thangavel R; Elliott D R; ... (+1)",
+      "first_author": "Lebas B S M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Spinach latent virus (SpLV)",
+      "taxonomy": "Bromoviridae, Ilarvirus",
+      "host_plant": "番茄 (Lycopersicon esculentum), Nicotiana clevelandii, N. glutinosa, Chenopodium amaranticolor, C. quinoa",
+      "location": "新西兰",
+      "results": "番茄果实有淡黄色环斑；从Nicotiana glutinosa和Chenopodium quinoa提取RNA，用Ilarvirus引物扩增得到450bp片段，测序与SpLV同源性97.4% nt，98.6% aa；开发了三对特异性引物分别扩增RNA1-3；该病毒可能由进口种子传入，未在新西兰建立种群。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17328120",
+      "doi": "10.1111/j.1574-6941.2006.00242.x",
+      "title": "Evidence for plant viruses in the region of Argentina Islands, Antarctica.",
+      "abstract": "This work focused on the assessment of plant virus occurrence among primitive and higher plants in the Antarctic region. Sampling occurred during two seasons (2004/5 and 2005/6) at the Ukrainian Antarctic Station 'Academician Vernadskiy' positioned on Argentina Islands. Collected plant samples of four moss genera (Polytrichum, Plagiatecium, Sanionia and Barbilophozia) and one higher monocot plant species, Deschampsia antarctica, were further subjected to enzyme-linked immunosorbent assay to test for the presence of common plant viruses. Surprisingly, samples of Barbilophozia and Polytrichum mosses were found to contain antigens of viruses from the genus Tobamovirus, Tobacco mosaic virus and Cucumber green mottle mosaic virus, which normally parasitize angiosperms. By contrast, samples of the monocot Deschampsia antarctica were positive for viruses typically infecting dicots: Cucumber green mottle mosaic virus, Cucumber mosaic virus and Tomato spotted wilt virus. Serological data for Deschampsia antarctica were supported in part by transmission electron microscopy observations and bioassay results. The results demonstrate comparatively high diversity of plant viruses detected in Antarctica; the results also raise questions of virus specificity and host susceptibility, as the detected viruses normally infect dicotyledonous plants. However, the means of plant virus emergence in the region remain elusive and are discussed.",
+      "journal": "FEMS microbiology ecology",
+      "year": 2007,
+      "pub_date": "2007-02-01",
+      "authors": "Polischuk Valery; Budzanivska Irena; Shevchenko Tetyana; Oliynik Svitlana",
+      "first_author": "Polischuk Valery",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "Tobamovirus属病毒、烟草花叶病毒、黄瓜绿斑驳花叶病毒、黄瓜花叶病毒、番茄斑萎病毒",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17299054",
+      "doi": "10.1073/pnas.0608356104",
+      "title": "Enemy release after introduction of disease-resistant genotypes into plant-pathogen systems.",
+      "abstract": "Predicting the magnitude of enemy release in host-pathogen systems after introduction of novel disease resistance genes has become a central problem in ecology. Here, we develop a general quantitative framework for predicting changes in realized niche size and intrinsic population growth rate after introgression of disease resistance genes into wild host populations. We then apply this framework to a model host-pathogen system targeted by genetically modified and conventionally bred disease-resistant host lines (Trifolium repens lines expressing resistance to Clover yellow vein potyvirus) and show that, under a range of ecologically realistic conditions, the introduction of novel pathogen resistance genes into host populations can pose a quantifiable risk to associated nontarget native plant communities. In the host-pathogen system studied, we predict that pathogen release could result in an increase in the intrinsic rate of population growth of up to 15% and the expansion of host populations into some marginal environments. This approach has general applicability to the ecological risk assessment of all novel disease-resistant plant genotypes that target coevolutionary host-pathogen systems for improvement of agricultural productivity.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2007,
+      "pub_date": "2007-02-20",
+      "authors": "Godfree Robert C; Thrall Peter H; Young Andrew G",
+      "first_author": "Godfree Robert C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Clover yellow vein potyvirus",
+      "taxonomy": "",
+      "host_plant": "Trifolium repens (白三叶草)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17436621",
+      "doi": "",
+      "title": "[The C4 proteins of Ageratum yellow vein China virus and Stachytarpheta leaf curl virus are suppressors of RNA silencing].",
+      "abstract": "RNA silencing is a highly conserved mechanism in many eukaryotic organisms that involves sequence-specific RNA degradation. One of the important roles of RNA silencing is antiviral infection. To counter this defense mechanism, many plant viruses have evolved or acquired functional proteins (suppressors) for suppression of RNA silencing. Geminiviruses are a family of small circular single-stranded DNA (ssDNA) viruses that cause severe diseases in major crop plants worldwide. AC2 (C2) and AC4 (C4) proteins of many geminiviruses were reported to be suppressors of RNA silencing. Ageratum yellow vein China virus (AYVCNV) and Stachytarpheta leaf curl virus are two distinct geminiviruses identified in China. In this study, the functions of C4 of AYVCNV and StaLCV were studied, analysis of infectivity of AYVCNV and StaLCV C4 genes using Tobacco rattle virus (TRV) vector were carried out in Nicotiana benthamiana plants, N. benthamiana plants expressing C4 can induce the virus-like symptoms, indicating that the C4 gene of AYVCNV or StaLCV is symptom determinant. In experiment of suppression of RNA silencing, C4 protein of AYVCNV or StaLCV can suppresses the local silencing of gfp in transgenic N. benthamiana plants (16c), suggests that both of them are suppressors of RNA silencing. The above results indicate that C4 of",
+      "journal": "Wei sheng wu xue bao = Acta microbiologica Sinica",
+      "year": 2007,
+      "pub_date": "2007-02-01",
+      "authors": "Xiong Qing; Zhou Xue-Ping",
+      "first_author": "Xiong Qing",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Ageratum yellow vein China virus (AYVCNV); Stachytarpheta leaf curl virus (StaLCV)",
+      "taxonomy": "",
+      "host_plant": "本氏烟 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17360619",
+      "doi": "10.1073/pnas.0611617104",
+      "title": "RNA-binding proteins that inhibit RNA virus infection.",
+      "abstract": "Arrays of >5,000 Saccharomyces cerevisiae proteins were screened to identify proteins that can preferentially bind a small RNA hairpin that contains a clamped adenine motif (CAM). A CAM is required for the replication of Brome Mosaic Virus (BMV), a plant-infecting RNA virus that can replicate in S. cerevisiae. Several hits were selected for further characterization in Nicotiana benthamiana. Pseudouridine Synthase 4 (Pus4) and the Actin Patch Protein 1 (App1) modestly reduced BMV genomic plus-strand RNA accumulation, but dramatically inhibited BMV systemic spread in plants. Pus4 also prevented the encapsidation of a BMV RNA in plants and the reassembly of BMV virions in vitro. These results demonstrate the feasibility of using proteome arrays to identify specific RNA-binding proteins for antiviral activities. Furthermore, the effects of Pus4 suggest that the CAM-containing RNA motif provides a regulatory link between RNA replication and encapsidation.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2007,
+      "pub_date": "2007-02-27",
+      "authors": "Zhu Jian; Gopinath Kodetham; Murali Ayaluru; Yi Guanghui; Hayward S Diane; ... (+2)",
+      "first_author": "Zhu Jian",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Brome Mosaic Virus (BMV)",
+      "taxonomy": "",
+      "host_plant": "Nicotiana benthamiana",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16900508",
+      "doi": "10.1002/bit.21126",
+      "title": "Propagation of plant viruses in hairy root cultures: a potential method for in vitro production of epitope vaccines and foreign proteins.",
+      "abstract": "Hairy roots were used as an in vitro culture system for the propagation of wild-type and transgenic plant viruses. Tobacco mosaic virus (TMV) was added to the liquid culture medium at the same time as root inoculation. Hairy root growth was unaffected by viral infection. Maximum concentrations of TMV in Nicotiana benthamiana hairy roots were 1-2 orders of magnitude greater than in suspended N. benthamiana cells and reached levels of 1-2 mg g(-1) dry weight or 20-28% total soluble protein. Virus accumulated in the roots initially with a constant doubling time of about 1.0 day; subsequent reductions in viral growth rate were correlated with a significant decline in infectivity relative to the inoculum virus. The morphological integrity of the viral particles was maintained during propagation in hairy roots. The contribution to the overall viral titer of passive association of virus with the biomass, for example, by surface adsorption, was negligible compared with active viral replication. N. benthamiana hairy roots were also infected with a TMV-based viral vector developed to express green fluorescent protein (GFP). This vector was about 260-fold less infectious than wild-type TMV and accumulated much more slowly in the roots. Maximum levels of TMV-GFP in the biomass were about 65-fold lower than for TMV. This work demonstrates that hairy root cultures are a feasible means for in vitro propagation of wild-type and transgenic plant viruses under conditions that allow a high degree of environmental containment and control.",
+      "journal": "Biotechnology and bioengineering",
+      "year": 2007,
+      "pub_date": "2007-02-15",
+      "authors": "Shadwick Fiona S; Doran Pauline M",
+      "first_author": "Shadwick Fiona S",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "烟草花叶病毒 (TMV), TMV-GFP载体",
+      "taxonomy": "",
+      "host_plant": "本氏烟 (Nicotiana benthamiana) 毛状根",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17136373",
+      "doi": "10.1007/s00122-006-0447-3",
+      "title": "Root-knot nematode (Meloidogyne spp.) Me resistance genes in pepper (Capsicum annuum L.) are clustered on the P9 chromosome.",
+      "abstract": "The root-knot nematode (Meloidogyne spp.) is a major plant pathogen, affecting several solanaceous crops worldwide. In Capsicum annuum, resistance to this pathogen is controlled by several independent dominant genes--the Me genes. Six Me genes have previously been shown to be stable at high temperature in three highly resistant and genetically distant accessions: PI 322719, PI 201234, and CM334 (Criollo de Morelos 334). Some genes (Me4, Mech1, and Mech2) are specific to certain Meloidogyne species or populations, whereas others (Me1, Me3, and Me7) are effective against a wide range of Meloidogyne species, including M. arenaria, M. javanica, and M. incognita, the most common species in Mediterranean and tropical areas. These genes direct different response patterns in root cells depending on the pepper line and nematode species. Allelism tests and fine mapping using the BSA-AFLP approach showed these genes to be different but linked, with a recombination frequency of 0.02-0.18. Three of the PCR-based markers identified in several genetic backgrounds were common to the six Me genes. Comparative mapping with CarthaGene software indicated that these six genes clustered in a single genomic region within a 28 cM interval. Four markers were used to anchor this cluster on the P9 chromosome on an intraspecific reference map for peppers. Other disease resistance factors have earlier been mapped in the vicinity of this cluster. This genomic area is colinear to chromosome T12 of tomato and chromosome XII of potato. Four other nematode resistance genes have earlier been identified in this area, suggesting that these nematode resistance genes are located in orthologous genomic regions in Solanaceae.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 2007,
+      "pub_date": "2007-02-01",
+      "authors": "Djian-Caporalino C; Fazari A; Arguel M J; Vernie T; VandeCasteele C; ... (+6)",
+      "first_author": "Djian-Caporalino C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17121801",
+      "doi": "10.1128/JVI.00960-06",
+      "title": "Interaction between a 54-kilodalton mammalian cell surface protein and cowpea mosaic virus.",
+      "abstract": "Cowpea mosaic virus (CPMV), a plant virus that is a member of the picornavirus superfamily, is increasingly being used for nanotechnology applications, including material science, vascular imaging, vaccine development, and targeted drug delivery. For these applications, it is critical to understand the in vivo interactions of CPMV within the mammalian system. Although the bioavailability of CPMV in the mouse has been demonstrated, the specific interactions between CPMV and mammalian cells need to be characterized further. Here we demonstrate that although the host range for replication of CPMV is confined to plants, mammalian cells nevertheless bind and internalize CPMV in significant amounts. This binding is mediated by a conserved 54-kDa protein found on the plasma membranes of both human and murine cell lines. Studies using a deficient cell line, deglycosidases, and glycosylation inhibitors showed that the CPMV binding protein (CPMV-BP) is not glycosylated. A possible 47-kDa isoform of the CPMV-BP was also detected in the organelle and nuclear subcellular fraction prepared from murine fibroblasts. Further characterization of CPMV-BP is important to understand how CPMV is trafficked through the mammalian system and may shed light on how picornaviruses may have evolved between plant and animal hosts.",
+      "journal": "Journal of virology",
+      "year": 2007,
+      "pub_date": "2007-02-01",
+      "authors": "Koudelka Kristopher J; Rae Chris S; Gonzalez Maria J; Manchester Marianne",
+      "first_author": "Koudelka Kristopher J",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17142480",
+      "doi": "10.1104/pp.106.091389",
+      "title": "MEKK1 is required for flg22-induced MPK4 activation in Arabidopsis plants.",
+      "abstract": "The Arabidopsis (Arabidopsis thaliana) gene MEKK1 encodes a mitogen-activated protein kinase kinase kinase that has been implicated in the activation of the map kinases MPK3 and MPK6 in response to the flagellin elicitor peptide flg22. In this study, analysis of plants carrying T-DNA knockout alleles indicated that MEKK1 is required for flg22-induced activation of MPK4 but not MPK3 or MPK6. Experiments performed using a kinase-impaired version of MEKK1 (K361M) showed that the kinase activity of MEKK1 may not be required for flg22-induced MPK4 activation or for other macroscopic FLS2-mediated responses. MEKK1 may play a structural role in signaling, independent of its protein kinase activity. mekk1 knockout mutants display a severe dwarf phenotype, constitutive callose deposition, and constitutive expression of pathogen response genes. This dwarf phenotype was largely rescued by introduction into mekk1 knockout plants of either the MEKK1 (K361M) construct or a nahG transgene that degrades salicylic acid. When treated with pathogenic bacteria, the K361M plants were slightly more susceptible to an avirulent strain of Pseudomonas syringae and showed a delayed hypersensitive response, suggesting a role for MEKK1 kinase activity in this aspect of plant disease resistance. Our results indicate that MEKK1 acts upstream of MPK4 as a negative regulator of pathogen response pathways, a function that may not require MEKK1's full kinase activity.",
+      "journal": "Plant physiology",
+      "year": 2007,
+      "pub_date": "2007-02-01",
+      "authors": "Suarez-Rodriguez Maria Cristina; Adams-Phillips Lori; Liu Yidong; Wang Huachun; Su Shih-Heng; ... (+4)",
+      "first_author": "Suarez-Rodriguez Maria Cristina",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17185563",
+      "doi": "10.1126/science.1136372",
+      "title": "Nuclear activity of MLA immune receptors links isolate-specific and basal disease-resistance responses.",
+      "abstract": "Plant immune responses are triggered by pattern recognition receptors that detect conserved pathogen-associated molecular patterns (PAMPs) or by resistance (R) proteins recognizing isolate-specific pathogen effectors. We show that in barley, intracellular mildew A (MLA) R proteins function in the nucleus to confer resistance against the powdery mildew fungus. Recognition of the fungal avirulence A10 effector by MLA10 induces nuclear associations between receptor and WRKY transcription factors. The identified WRKY proteins act as repressors of PAMP-triggered basal defense. MLA appears to interfere with the WRKY repressor function, thereby de-repressing PAMP-triggered basal defense. Our findings reveal a mechanism by which these polymorphic immune receptors integrate distinct pathogen signals.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 2007,
+      "pub_date": "2007-02-23",
+      "authors": "Shen Qian-Hua; Saijo Yusuke; Mauch Stefan; Biskup Christoph; Bieri Stéphane; ... (+5)",
+      "first_author": "Shen Qian-Hua",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

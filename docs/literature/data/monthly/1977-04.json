@@ -1,0 +1,33 @@
+{
+  "month": "1977-04",
+  "generated": "2026-07-13 02:59:41",
+  "total": 1,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "870617",
+      "doi": "10.1099/0022-1317-35-1-107",
+      "title": "Further studies on the biology of an antiviral factor (AVF) from virus-infected plants and its association with the N-gene of Nicotiana species.",
+      "abstract": "The antiviral factor (AVF) from virus-infected plants, purified on polyacrylamide gels, could be labelled with radioactive phosphorus and its activity could be eluted from the gels. The radioactivity and the antiviral activity were co-purified and thus co-electrophoresed; hence, the previously reported radioactive zone (Antignus, Sela & Harpaz, 1975) can be regarded as AVF. The production of AVF requires both the presence of the N-gene in the plant as well as virus infection. AVF production is inhibited by actinomycin D, but its activity is not affected by this drug. AVF production is correlated in time with the development of virus resistance in a local-lesion host. AVF inhibits TMV multiplication in infected leaves and suppresses virus synthesis almost totally in a local-lesion host. Some AVF is also produced when Nicotiana glutinosa L. is infected with a non-localized virus, but to a much lesser extent and at a later stage of infection. The production of AVF in N. glutinosa is not blocked at 30 degrees C. even though TMV is no longer localized at this temperature.",
+      "journal": "The Journal of general virology",
+      "year": 1977,
+      "pub_date": "1977-04-01",
+      "authors": "Antignus Y; Sela I; Harpaz I",
+      "first_author": "Antignus Y",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "TMV (烟草花叶病毒)",
+      "taxonomy": "",
+      "host_plant": "Nicotiana species（如 Nicotiana glutinosa）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

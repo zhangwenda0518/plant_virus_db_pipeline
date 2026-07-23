@@ -1,0 +1,80 @@
+{
+  "month": "1982-12",
+  "generated": "2026-07-13 02:59:41",
+  "total": 3,
+  "by_category": {
+    "New_Virus": 2,
+    "Detection_Methods": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "6760127",
+      "doi": "10.1093/nar/10.23.7521",
+      "title": "Circularization of linear viroid RNA via 2'-phosphomonoester, 3', 5'-phosphodiester bonds by a novel type of RNA ligase from wheat germ and Chlamydomonas.",
+      "abstract": "A novel type of RNA ligase activity in extracts of wheat germ or Chlamydomonas requires 2', 3'-cyclic phosphate and 5'-phosphate ends for ligation to form a 2'-phosphomonoester, 3',5'-phosphodiester bond. Using 5'-3 2P-labeled linear PSTV, we demonstrate that RNase T1-nicked viroid predominantly forms (formula; see text) U-bonds. Natural linear PSTV, however, forms mainly (formula; see text) A-bonds upon enzymatic circularization. We show that natural linear PSTV RNA has nicks between C181 and A182, or between C348 and A349, and that consequently C181 and C348 carry 2',3'-cyclophosphate termini.",
+      "journal": "Nucleic acids research",
+      "year": 1982,
+      "pub_date": "1982-12-11",
+      "authors": "Kikuchi Y; Tyc K; Filipowicz W; Sänger H L; Gross H J",
+      "first_author": "Kikuchi Y",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "马铃薯纺锤形块茎类病毒 (PSTV)",
+      "taxonomy": "未提及",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "RNase T1切割的类病毒主要形成U键；天然线性PSTV主要形成A键，切口在C181-A182或C348-A349。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "6186682",
+      "doi": "10.1016/0166-0934(82)90017-9",
+      "title": "Enzyme-assisted immune detection of plant virus proteins electroblotted onto nitrocellulose paper.",
+      "abstract": "A technique for the detection of plant virus coat proteins in plant sap is described. The method entails the electroblotting of sodium dodecyl sulphate-polyacrylamide gel electrophoresis-fractionated plant extracts onto nitrocellulose paper, probing the paper with virus-specific rabbit antisera, and indirect detection of virus proteins with horseradish peroxidase-conjugated goat anti-rabbit globulins. The sensitivity and specificity of the technique were tested using brome mosaic and barley stripe mosaic viruses. As little as 1 ng per track of virus protein was detectable, either as pure virus or when mixed with plant sap. Distant serological relationships were detected amongst tobamoviruses, and amongst the bromoviruses, with single antisera. The uses of the technique in probing capsid configuration in a presumed aphid picornavirus, and in routine diagnostic practice, are described.",
+      "journal": "Journal of virological methods",
+      "year": 1982,
+      "pub_date": "1982-12-01",
+      "authors": "Rybicki E P; von Wechmar M B",
+      "first_author": "Rybicki E P",
+      "categories": [
+        "Detection_Methods",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "brome mosaic virus, barley stripe mosaic virus; tobamoviruses, bromoviruses",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7165301",
+      "doi": "10.1007/BF00448420",
+      "title": "Sterigmatosporidium gen. n., a new heterothallic basidiomycetous yeast, the perfect state of a new species of Sterigmatomyces fell.",
+      "abstract": "Sterigmatosporidium gen. n. is described as a new basidiomycetous yeast-like fungus with the single species Sterigmatosporidium polymorphum sp. n. for which a Latin diagnosis and a preliminary life cycle are presented. The mean character distinguishing the new genus from the imperfect genus Sterigmatomyces is the development of a dikaryotic mycelium with clamp connections producing sexual spores in ramified whorls and lateral chlamydospores as well as blastospores. The dikaryotic phase could be induced by crossing compatible haploid clones of the heterothallic fungus, which are similar to Sterigmatomyces but not identical with any known species.",
+      "journal": "Antonie van Leeuwenhoek",
+      "year": 1982,
+      "pub_date": "1982-12-01",
+      "authors": "Kraepelin G; Schulze U",
+      "first_author": "Kraepelin G",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

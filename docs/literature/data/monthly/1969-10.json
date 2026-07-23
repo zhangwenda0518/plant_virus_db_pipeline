@@ -1,0 +1,33 @@
+{
+  "month": "1969-10",
+  "generated": "2026-07-13 02:59:41",
+  "total": 1,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "4312925",
+      "doi": "10.1128/am.18.4.660-667.1969",
+      "title": "Antiviral and antitumor antibiotics. XX. Effects of rotenone, deguelin, and related compounds on animal and plant viruses.",
+      "abstract": "Rotenoids and related compounds were investigated for their effects on animal and plant viruses. Of 35 compounds examined, rotenone, rotenone norketone, acetylrotenone, acetylrotenone norketone, deguelin, deguelic acid, dehydrodeguelin, and isotubanol norketone, all used at low concentrations, suppressed the growth of Newcastle disease and herpes simplex viruses as determined by the agar diffusion, plaque inhibition method. Most of the compounds likewise decreased the number of necrotic spots on tobacco mosaic virus-infected leaf discs. Only derrisic acid completely inhibited the local lesion formation at subphytotoxic concentrations. Correlation of antiviral activity with respiratory inhibition of these compounds is discussed.",
+      "journal": "Applied microbiology",
+      "year": 1969,
+      "pub_date": "1969-10-01",
+      "authors": "Takatsuki A; Nakatani N; Morimoto M; Tamura G; Matsui M; ... (+3)",
+      "first_author": "Takatsuki A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒 (Tobacco mosaic virus)",
+      "taxonomy": "",
+      "host_plant": "烟草 (Nicotiana tabacum, leaf discs)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

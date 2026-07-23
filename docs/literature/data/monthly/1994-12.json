@@ -1,0 +1,279 @@
+{
+  "month": "1994-12",
+  "generated": "2026-07-13 02:59:42",
+  "total": 12,
+  "by_category": {
+    "Host_Virus_Interactions": 5,
+    "Antiviral_Resistance_Genes": 3,
+    "Molecular_Characterization": 2,
+    "Control_Management": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "7704529",
+      "doi": "10.1016/s0969-2126(94)00121-9",
+      "title": "The three-dimensional distribution of RNA and protein in the interior of tomato bushy stunt virus: a neutron low-resolution single-crystal diffraction study.",
+      "abstract": "[BACKGROUND] The published high-resolution model of the isometric T = 3 plant virus tomato bushy stunt virus (TBSV) shows the packing in three different environments (A, B, C) of the 180 coat protein subunits of the capsid. It does not, however, account for the localization of either the viral RNA or approximately 25% of the amino acids of the protein subunits, although at least the RNA is rigidly linked to the viral capsid. Solution studies have shown that most of the missing protein is located in an inner shell, and that most of the RNA is sandwiched between the two protein shells. [RESULTS] We have determined the organization of TBSV at 16 A resolution, using neutron single-crystal diffraction. Connections between the two protein shells are confined to the 20 three-fold axes of the virion, where three C-type subunits meet. Much more RNA density is located under the 30 C-C dimers than under the 60 A-B dimers, where we could even identify lagoons of solvent. [CONCLUSIONS] Our results emphasize the importance of the amino termini of the 60 C-type protein subunits not only in the RNA-protein interactions but also in the organization of the coat protein, and, probably, in the assembly of the virion. The lack of equivalence between subunits of classes A or B and subunits of class C is even more pronounced in the interior of the virion than in the outer shell, which possesses icosahedral symmetry.",
+      "journal": "Structure (London, England : 1993)",
+      "year": 1994,
+      "pub_date": "1994-12-15",
+      "authors": "Timmins P A; Wild D; Witz J",
+      "first_author": "Timmins P A",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "番茄丛矮病毒（Tomato bushy stunt virus, TBSV）",
+      "taxonomy": "番茄丛矮病毒属（Tombusvirus），番茄丛矮病毒科（Tombusviridae）",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7966640",
+      "doi": "10.1128/JVI.68.12.8433-8436.1994",
+      "title": "Molecular dissection of influenza virus nucleoprotein: deletion mapping of the RNA binding domain.",
+      "abstract": "Influenza virus nucleoprotein (NP) is associated with the genome RNA, forming ribonucleoprotein cores. To identify the amino acid sequence involved in RNA binding, we performed Northwestern blot analysis with a set of N- and C-terminal deletion mutants of NP produced in Escherichia coli. The RNA binding region has been mapped between amino acid residues 91 and 188, a stretch of residues that contains a sequence that is not only highly conserved among NPs from A-, B-, and C-type influenza viruses but also similar to the RNA binding domain of a plant virus movement protein.",
+      "journal": "Journal of virology",
+      "year": 1994,
+      "pub_date": "1994-12-01",
+      "authors": "Kobayashi M; Toyoda T; Adyshev D M; Azuma Y; Ishihama A",
+      "first_author": "Kobayashi M",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7806546",
+      "doi": "",
+      "title": "Insect immunity. Septic injury of Drosophila induces the synthesis of a potent antifungal peptide with sequence homology to plant antifungal peptides.",
+      "abstract": "In response to a septic injury (pricking with a bacteria-soaked needle) larvae and adults of Drosophila produce considerable amounts of a 44-residue peptide containing 8 cysteines engaged in intramolecular disulfide bridges. The peptide is synthesized in the fat body, a functional homologue of the mammalian liver, and secreted into the blood of the insect. It exhibits potent antifungal activity but is inactive against bacteria. This novel inducible peptide, which we propose to name drosomycin, shows a significant homology with a family of 5-kDa cysteine-rich plant antifungal peptides recently isolated from seeds of Brassicaceae. This finding underlines that plants and insects can rely on similar molecules in their innate host defense.",
+      "journal": "The Journal of biological chemistry",
+      "year": 1994,
+      "pub_date": "1994-12-30",
+      "authors": "Fehlbaum P; Bulet P; Michaut L; Lagueux M; Broekaert W F; ... (+2)",
+      "first_author": "Fehlbaum P",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12232407",
+      "doi": "10.1104/pp.106.4.1269",
+      "title": "Acquired Resistance in Barley (The Resistance Mechanism Induced by 2,6-Dichloroisonicotinic Acid Is a Phenocopy of a Genetically Based Mechanism Governing Race-Specific Powdery Mildew Resistance).",
+      "abstract": "Treatment of susceptible barley (Hordeum vulgare) seedlings with 2,6-dichloroisonicotinic acid (DCINA) induces disease resistance against the powdery mildew fungus (Erysiphe graminis f. sp. hordei). A cytological analysis of the interaction reveals the hypersensitive cell collapse in attacked, short epidermal cells, along with the accumulation of fluorescent material in papillae, that appear at the time of fungal arrest. The cell-type-specific hypersensitive reaction occurs prior to formation of haustoria, reminiscent of the mechanism identified in genetically resistant barley plants containing the functionally active Mlg gene (R. Gorg, K. Hollricher, P. Schulze-Lefert [1993] Plant J 3: 857-866). This observation indicates that the mechanism of DCINA-induced resistance is a phenocopy of the mechanism governed by the Mlg locus. The onset of acquired resistance correlates with high-level transcript accumulation of barley defense-related genes encoding pathogenesis-related protein-1, peroxidase, and chitinase but not [beta]-1,3-glucanase. Subcellular localization of peroxidase activity shows an increase in enzyme activity in the epidermal cell layer and in the intercellular fluids of barley leaves. Four out of more than 10 identified extracellular isozymes are induced by DCINA. The epidermal cell layer contains a major constitutively formed isozyme, together with two isozymes specifically induced by DCINA. The data support the hypothesis that host cell death and high-level accumulation of defense-related gene transcripts are not only commonly controlled in certain types of race-specific resistance (A. Freialdenhoven, B. Scherag, K. Hollricher, D.B. Collinge, H. Thordal-Christensen, P. Schulze-Lefert [1994] Plant Cell 6: 983-994) but also in acquired resistance, which confers protection to a broad spectrum of different pathogens.",
+      "journal": "Plant physiology",
+      "year": 1994,
+      "pub_date": "1994-12-01",
+      "authors": "Kogel K. H.; Beckhove U.; Dreschers J.; Munch S.; Romme Y.",
+      "first_author": "Kogel K. H.",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "28565152",
+      "doi": "10.1111/j.1558-5646.1994.tb02227.x",
+      "title": "COSTS AND BENEFITS OF PLANT RESPONSES TO DISEASE: RESISTANCE AND TOLERANCE.",
+      "abstract": "A major assumption of models of the evolution of plant resistance to disease is that plant resistance involves fitness costs. To test this assumption, a field experiment was performed so that a quantitative-genetic analysis could be used to detect fitness costs to Ipomoea purpurea of resistance to different fungal isolates of Colletotrichum dematium, a pathogenic fungus causing the disease anthracnose. This experiment yielded no evidence that resistance to anthracnose involves direct fitness costs. Nevertheless, trade-offs in plant fitness that were unrelated to resistance were detected between different disease environments. Tolerance, defined as the ability to compensate in part for fitness decrements caused by disease, was found to involve fitness costs. Halfsib families that were more tolerant of disease had lower fitness in the absence of disease. The possibility that the cost of tolerance could obscure fitness costs of resistance is explored.",
+      "journal": "Evolution; international journal of organic evolution",
+      "year": 1994,
+      "pub_date": "1994-12-01",
+      "authors": "Simms Ellen L; Triplett Jim",
+      "first_author": "Simms Ellen L",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12244231",
+      "doi": "10.1105/tpc.6.12.1703",
+      "title": "Function of Oxidative Cross-Linking of Cell Wall Structural Proteins in Plant Disease Resistance.",
+      "abstract": "Elicitation of soybean cells causes a rapid insolubilization of two cell wall structural proteins, p33 and p100. Likewise, a short elicitation of 30 min rendered cell walls more refractory to enzyme digestion as assayed by the yield of protoplasts released. This effect could be ascribed to protein cross-linking because of its insensitivity to inhibitors of transcription (actinomycin D) and translation (cycloheximide) and its induction by exogenous H2O2. Moreover, the induced loss of protoplasts could be prevented by preincubation with DTT, which also blocks peroxidase-mediated oxidative cross-linking. The operation of protein insolubilization in plant defense was also demonstrated by its occurrence in the incompatible interaction but not in the compatible interaction between soybean and Pseudomonas syringae pv glycinea. Likewise, protein insolubilization was observed in bean during non-host hypersensitive resistance to the tobacco pathogen P. s. pv tabaci mediated by the hypersensitive resistance and pathogenicity (Hrp) gene cluster. Our data strongly suggest that rapid protein insolubilization leads to a strengthened cell wall, and this mechanism functions as a rapid defense in the initial stages of the hypersensitive response prior to deployment of transcription-dependent defenses.",
+      "journal": "The Plant cell",
+      "year": 1994,
+      "pub_date": "1994-12-01",
+      "authors": "Brisson L. F.; Tenhaken R.; Lamb C.",
+      "first_author": "Brisson L. F.",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7858211",
+      "doi": "10.1007/BF00019485",
+      "title": "Coordinate expression of antibody subunit genes yields high levels of functional antibodies in roots of transgenic tobacco.",
+      "abstract": "To explore the feasibility of employing antibodies to obtain disease resistance against plant root pathogens, we have studied the expression of genes encoding antibodies in roots of transgenic plants. A model monoclonal antibody was used that binds to a fungal cutinase. Heavy and light chain cDNAs were amplified by PCR, fused to a signal sequence for secretion and cloned behind CaMV 35S and TR2' promoters in a single T-DNA. The chimeric genes were cloned both in tandem and in a divergent orientation. The roots of tobacco plants transformed with these constructs produced antibodies that were able to bind antigen in an ELISA. Immunoblotting showed assembly to a full-size antibody. In addition, a F(ab')2-like fragment was observed, which is probably formed by proteolytic processing. Both antibody species were properly targeted to the apoplast, but the full-size antibody was partially retained by the wall of suspension cells. The construct with divergent promoters showed a better performance than the construct with promoters in tandem. It directed the accumulation of functional antibodies to a maximum of 1.1% of total soluble protein, with half of the plants having levels higher than 0.35%. The high efficiency of this construct probably results from coordinated and balanced expression of light and heavy chain genes, as evidenced by RNA blot hybridization.",
+      "journal": "Plant molecular biology",
+      "year": 1994,
+      "pub_date": "1994-12-01",
+      "authors": "van Engelen F A; Schouten A; Molthoff J W; Roosien J; Salinas J; ... (+5)",
+      "first_author": "van Engelen F A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "23195948",
+      "doi": "10.1016/S0944-7113(11)80074-7",
+      "title": "A review of the biological activity and chemistry of Mallotus japonicus (Euphorbiaceae).",
+      "abstract": "Biological and pharmacological activities of Mallotus japonicus (Euphorbiaceae) are reviewed. Chemical constituents, biological and pharmacological activities of tannins and related compounds, cardenolides, cytotoxicity, antitumor and antitumor-promoting effects, antiviral activity, and inhibition of HIV-RT activity of this plant are described.",
+      "journal": "Phytomedicine : international journal of phytotherapy and phytopharmacology",
+      "year": 1994,
+      "pub_date": "1994-12-01",
+      "authors": "Arisawa M",
+      "first_author": "Arisawa M",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7535992",
+      "doi": "10.1016/0166-3542(94)90006-x",
+      "title": "Antiviral activity of natural and semi-synthetic chromone alkaloids.",
+      "abstract": "The activity against human immunodeficiency virus (HIV) and herpes simplex virus (HSV), of the non-polar fraction of a methanolic extract of the rootbark of Schumanniophyton magnificum was found to be present in a fraction containing the chromone secondary amine schumannificine 1. Other chromone alkaloids present in the plant were isolated and tested for inhibition of HIV and HSV infections in C8166 and Vero cells, respectively. Acyl and methyl derivatives were prepared and tested. Of all the compounds tested, schumannificine 1 displayed the greatest activity against HIV, whereas potent anti-HSV activity was observed for a number of its derivatives. The presence of a piperidine ring and unsubstituted hydroxy groups on the molecules seems to favour the anti-HIV activity. The anti-HIV activity is considered to be due to irreversible binding to gp120 rather than inhibition of reverse transcriptase or protease.",
+      "journal": "Antiviral research",
+      "year": 1994,
+      "pub_date": "1994-12-01",
+      "authors": "Houghton P J; Woldemariam T Z; Khan A I; Burke A; Mahmood N",
+      "first_author": "Houghton P J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7527556",
+      "doi": "10.1073/pnas.91.25.12208",
+      "title": "Human immunodeficiency virus type 1 (HIV-1) inhibition, DNA-binding, RNA-binding, and ribosome inactivation activities in the N-terminal segments of the plant anti-HIV protein GAP31.",
+      "abstract": "GAP31 (gelonium anti-HIV protein of 31 kDa) is an anti-HIV protein which we have identified and purified from a medicinal plant, Gelonium multiflorum. It is capable of inhibiting HIV-1 infection and replication. GAP31 also exhibits DNA topoisomerase inhibitor activity and RNA N-glycosidase activity. The ability of GAP31 to interrupt both DNA and RNA functions may be related to its multiple antiviral actions. To define the roles of these activities in the anti-HIV action of GAP31, a series of peptides corresponding to the N-terminal segment of GAP31 were synthesized and assayed for the aforementioned activities of the parent molecule. A 33-aa segment (KGATYITYVNFLNELRVKTKPEGNSHGIPSLRK) designated as K10-K42 is the shortest peptide necessary and sufficient for HIV-1 inhibition, DNA and RNA binding, and ribosome inactivation. The peptides were 2-5 orders of magnitude less active than GAP31. Truncation of 19 aa from the C terminus of K10-K42 resulted in the loss of all of these activities. On the other hand, deletion of N-terminal residues to give E23-K42 did not alter ribosome-inactivation activity but eliminated the other activities. These findings permit identification of a 7-aa sequence, KGATYIT, at the N terminus of K10-K42 that is critical for DNA binding and RNA binding, whereas a 9-aa sequence, SHGIPSLRK, at the C terminus is important to ribosome inactivation. Both regions contribute to anti-HIV activity. Histidine at position 35 is critical for all of these activities. The disparity of sequence requirements for inhibition of HIV infection and replication and for ribosome-inactivation activity suggests that the anti-HIV activity of most ribosome-inactivating proteins may not be the result of N-glycosidase activity alone. Mapping the minimal domain of GAP31 offers insights into the rational design of molecular mimetics of anti-HIV drugs.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1994,
+      "pub_date": "1994-12-06",
+      "authors": "Lee-Huang S; Kung H F; Huang P L; Bourinbaiar A S; Morell J L; ... (+5)",
+      "first_author": "Lee-Huang S",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19279928",
+      "doi": "",
+      "title": "The challenge of research and extension to define and implement alternatives to methyl bromide.",
+      "abstract": "Over the past 30 years, methyl bromide (MBr), a broad spectrum fumigant, has been used extensively for soilborne disease and pest control in the production of many fruit, vegetable, turf, and nursery crops. Recently, agricultural emissions of MBr were implicated as a potentially significant contributor to stratospheric ozone depletion. As a precautionary measure for global ozone protection, the U.S. Environmental Protection Agency has enforced federal legislation which mandates a complete phase-out of MBr use within the United States by 1 January 2001. Thus, new cost effective, environmentally compatible strategies for control of nematodes and other soilborne pests and pathogens must be developed and tested in a relatively short time to avoid significant losses in crop productivity. The extent to which certain agricultural industries that are now heavily reliant on MBr are affected will depend on the development of sustainable, integrated tactics to pest control, such as combinations of cultural, chemical, and biological tactics. New muhidisciplinary research and extension programs must be developed to address and overcome major constraints and incompatibilities that have prevented such tactics from being widely adopted.",
+      "journal": "Journal of nematology",
+      "year": 1994,
+      "pub_date": "1994-12-01",
+      "authors": "Noling J W; Becker J O",
+      "first_author": "Noling J W",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7840448",
+      "doi": "10.1111/j.1749-6632.1994.tb19867.x",
+      "title": "Rift Valley fever virus ecology and the epidemiology of disease emergence.",
+      "abstract": "",
+      "journal": "Annals of the New York Academy of Sciences",
+      "year": 1994,
+      "pub_date": "1994-12-15",
+      "authors": "Wilson M L",
+      "first_author": "Wilson M L",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "month": "2004-05",
+  "generated": "2026-07-13 02:59:42",
+  "total": 21,
+  "by_category": {
+    "Host_Virus_Interactions": 8,
+    "Antiviral_Resistance_Genes": 5,
+    "Biotechnology_Applications": 4,
+    "New_Virus": 3,
+    "Control_Management": 2,
+    "Molecular_Characterization": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "15100397",
+      "doi": "10.1105/tpc.018986",
+      "title": "Viral virulence protein suppresses RNA silencing-mediated defense but upregulates the role of microrna in host gene expression.",
+      "abstract": "Small interfering RNAs (siRNAs) and microRNAs (miRNAs) are processed by the ribonuclease Dicer from distinct precursors, double-stranded RNA (dsRNA) and hairpin RNAs, respectively, although either may guide RNA silencing via a similar complex. The siRNA pathway is antiviral, whereas an emerging role for miRNAs is in the control of development. Here, we describe a virulence factor encoded by turnip yellow mosaic virus, p69, which suppresses the siRNA pathway but promotes the miRNA pathway in Arabidopsis thaliana. p69 suppression of the siRNA pathway is upstream of dsRNA and is as effective as genetic mutations in A. thaliana genes involved in dsRNA production. Possibly as a consequence of p69 suppression, p69-expressing plants contained elevated levels of a Dicer mRNA and of miRNAs as well as a correspondingly enhanced miRNA-guided cleavage of two host mRNAs. Because p69-expressing plants exhibited disease-like symptoms in the absence of viral infection, our findings suggest a novel mechanism for viral virulence by promoting the miRNA-guided inhibition of host gene expression.",
+      "journal": "The Plant cell",
+      "year": 2004,
+      "pub_date": "2004-05-01",
+      "authors": "Chen Jun; Li Wan Xiang; Xie Daoxin; Peng Jin Rong; Ding Shou Wei",
+      "first_author": "Chen Jun",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "芜菁黄花叶病毒 (Turnip yellow mosaic virus)",
+      "taxonomy": "",
+      "host_plant": "拟南芥 (Arabidopsis thaliana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15103020",
+      "doi": "10.1073/pnas.0400149101",
+      "title": "In planta engineering of viral RNA replicons: efficient assembly by recombination of DNA modules delivered by Agrobacterium.",
+      "abstract": "We have developed an efficient, versatile, and user-friendly viral engineering and expression system that is based on in planta assembly of functional viral vectors from separate pro-vector modules. With this new system, instead of supplying a plant cell with a complete viral vector as a mature viral particle, an RNA or a linear DNA molecule, we use agrobacteria to deliver various modules that are assembled inside the cell with the help of a site-specific recombinase. The resulting DNA is transcribed, and undesired elements such as recombination sites are spliced out, generating a fully functional RNA replicon. The proposed protocol allows us, by simply treating a plant with a mixture of two or more agrobacteria carrying specific prefabricated modules, to rapidly and inexpensively assemble and test multiple vector/gene combinations, without the need to perform the various engineering steps normally required with alternative protocols. The process described here is very fast (expression requires 3-4 days); it provides very high protein yield (up to 80% of total soluble protein); more than before, it is carried out using in vivo manipulations; it is based on prefabricated genetic modules that can be developed/upgraded independently; and it is inherently scalable.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2004,
+      "pub_date": "2004-05-04",
+      "authors": "Marillonnet Sylvestre; Giritch Anatoli; Gils Mario; Kandzia Romy; Klimyuk Victor; ... (+1)",
+      "first_author": "Marillonnet Sylvestre",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "未提及具体病毒名称（系统基于病毒RNA复制子）",
+      "taxonomy": "",
+      "host_plant": "未提及具体植物（泛指植物）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30812675",
+      "doi": "10.1094/PDIS.2004.88.5.575A",
+      "title": "First Report of Strawberry latent ringspot virus in Strawberry in the United States and Canada.",
+      "abstract": "Strawberries in southern California have shown decline symptoms during the last 2 years. More than 70% of plants tested in California were infected with two newly identified criniviruses that infect strawberry (Strawberry pallidosis and Beet pseudo-yellows). Strawberry cultivars are usually symptomless when infected with one virus, and testing for other strawberry viruses is performed to identify any other viruses that may be involved in the symptomatology. Primers SLRSV F (5' CCTCTCCAACC-TGCTAGACT 3') and SLRSV R (5' AAGCGCATGAAGGTGTAACT 3') that amplify a 497-bp fragment of RNA 2 of Strawberry latent ringspot virus (SLRSV) were developed and utilized for reverse transcription-polymerase chain reaction (RT-PCR) detection. SLRSV belongs to the family Sequiviridae and is transmitted by nematodes of the genus Xiphinema. The virus has a broad host range (4) and is usually symptomless in strawberries. Strawberry plants from commercial fields in California, Oregon, Washington, and British Columbia, Canada were tested. SLRSV was identified in 17% of plants tested from California and 4% of plants tested from British Columbia, while all samples from Oregon and Washington tested negative. The fragment amplified (GenBank Accession No. AY461735, isolate from British Columbia, Canada) shares 84% nucleotide and 94% amino acid sequence identity with the previously published sequence of SLRSV from strawberry (GenBank Accession No. X77466) (3). The virus was transmitted mechanically from strawberry samples from Canada to Chenopodium quinoa, and the infected C. quinoa plants tested positive for SLRSV with RT-PCR, while no amplicons were obtained from noninoculated control plants. To our knowledge, this is the first report of SLRSV in strawberry in North America, although it has been previously reported in a single cherry tree in Ontario, Canada (1) and in an imported seed lot of parsley in California (2). The number of plants that tested positive as well as the geographic distribution of the virus indicates that the virus is widespread in California, but further testing is needed to identify its distribution in other states. References: (1) W. R. Allen et al. Phytopathology 60:1262, 1970. (2) C. M. Hanson and R. N. Campbell. Plant Dis. Rep. 63:142, 1979. (3) S. Kreiah et al. J. Gen. Virol. 75:2527, 1994. (4) K. Schmelzer. Phytopath. Z. 66:1, 1969.",
+      "journal": "Plant disease",
+      "year": 2004,
+      "pub_date": "2004-05-01",
+      "authors": "Martin R R; Tzanetakis I E; Barnes J E; Elmhirst J F",
+      "first_author": "Martin R R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Strawberry latent ringspot virus (SLRSV)",
+      "taxonomy": "Sequiviridae",
+      "host_plant": "草莓 (Fragaria × ananassa) 及其他广谱宿主",
+      "location": "美国（加利福尼亚、俄勒冈、华盛顿）和加拿大（不列颠哥伦比亚）",
+      "results": "设计特异性引物，加州17%和加拿大4%样品阳性，俄勒冈和华盛顿阴性；序列与已知株系84%核苷酸同源性；机械传至藜并确认。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30812674",
+      "doi": "10.1094/PDIS.2004.88.5.574C",
+      "title": "First Report of Bean yellow mosaic virus (Pea Mosaic Strain) in Verbena × hybrida.",
+      "abstract": "Verbena × hybrida is an ornamental annual used in rock gardens as an edging plant and hanging baskets. It comes in a variety of colors and grows approximately 1.5 to 2.5 cm (6 to 10 inches) high. In the spring of 2002, verbena cv. Lavender Shades plants from California showing leaf mosaic symptoms tested positive for potyvirus using an antigen-coated plate enzyme-linked immunosorbent assay with our genus Potyvirus broad spectrum reacting PTY-1 monoclonal as the detecting antibody (3). The virus was transmitted mechanically to Nicotiana benthamiana by sap inoculation from infected verbena plants. Infected tobacco showed systemic mild mosaic symptoms. Total RNA extractions from infected verbena and tobacco leaves were used in reverse transcription-polymerase chain reaction (RT-PCR) assays with generic potyvirus-specific primers that amplify highly conserved 700-bp or 1,600-bp fragments from the 3' terminus of most potyviruses. This region includes the 3' noncoding region (3'NCR) and the potyviral coat protein (CP). The PCR-amplified fragments were cloned by using standard TA cloning procedures and sequenced using dye-terminator chemistry. The cloned nucleotide and putative coat protein amino acid sequences from the infected verbena and tobacco plants were compared with the corresponding regions of other potyviruses. Amino acid comparison of the CP region of the verbena po-tyvirus showed 95 to 96% identity to four pea mosaic strains (PMV) of Bean yellow mosaic virus (BYMV), 85 to 89% identity to 20 other strains of BYMV, 74 to 76% identity with six strains of Clover yellow vein virus (CYVV), and only 50 to 64% identity with 28 other potyviruses. Pairwise comparisons among and between the CP sequences of PMV, BYMV, CYVV, and other potyviruses revealed identities of 92 to 99% for BYMV∷ BYMV, PMV∷PMV, and CYVV∷CYVV; 84 to 89% for BYMV∷ PMV, 69 to 78% for BYMV∷CYVV and PMV∷CYVV, and 50 to 64% for all other potyvirus combinations. Additionally, similar pairwise analysis of the 3'NCR of the verbena potyvirus revealed 98 to 99% identity to PMV strains, 81 to 94% to other BYMVs, 68 to 75% to CYVVs, and 52 to 64% with other potyviruses. Other 3'NCR pairwise comparisons generally revealed the same identity trend as described for the CP. Further serological analysis with our panel of BYMV-specific, BYMV-subgroup, and potyvirus cross-reactive monoclonal antibodies (3) confirmed the designation of the verbena potyvirus isolate as a pea mosaic strain of BYMV. To our knowledge this is the first confirmed report of BYMV-pea mosaic strain in Verbena (1,2). References: (1) Agdia, Inc. Positive Ornamental Plant Samples. Agdia On-line Publication, 2003. (2) A. A. Brunt et al. Verbena hybrida. Plant Viruses Online: Descriptions and Lists from the VIDE Database. Version 20. On-line publication, August 1996. (3) R. L. Jordan, and J. Hammond. J. Gen. Virol. 72:1531, 1991.",
+      "journal": "Plant disease",
+      "year": 2004,
+      "pub_date": "2004-05-01",
+      "authors": "Guaragna M A; Jordan R L; Putnam M L",
+      "first_author": "Guaragna M A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Bean yellow mosaic virus (Pea Mosaic Strain)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "Verbena × hybrida (马鞭草), Nicotiana benthamiana (实验接种)",
+      "location": "美国加利福尼亚州",
+      "results": "CP和3'NCR序列与BYMV豌豆花叶株系同源性达95-99%，血清学确认。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30812667",
+      "doi": "10.1094/PDIS.2004.88.5.572B",
+      "title": "First Report of Blueberry scorch virus on Highbush Blueberry in Connecticut and Massachusetts.",
+      "abstract": "During June and July 2001, the Marucci Center received 33 foliage samples from healthy- and unhealthy-looking highbush blueberry (Vaccinium corymbosum L.) bushes from growers in Connecticut and Massachusetts, via local extension agents. Unhealthy bushes were reported to exhibit symptoms including leaf chlorosis and necrosis, blossom blight, tip dieback, or a general decline in vigor. Marginal leaf chlorosis, reddening, or necrosis characterized foliage samples from these bushes. Five-leaf samples from each bush were tested for Blueberry scorch virus (BlScV) (3) with Agri-Check detection kits (Hydros, Inc., Falmouth, MA). These kits use an indirect enzyme-linked immunosorbent assay (ELISA) protocol and antibodies developed at Rutgers University that are specific to the two eastern strains of BlScV (NJ1 and NJ2) (1). The ELISA extraction buffer was based on that used by Martin and Bristow (3) with 1% (wt/vol) nonfat dry milk powder added as a blocking agent. Fourteen samples from cvs. Blueray and Berkeley in both states and cvs. Elliott, Bluecrop, and Coville in Massachusetts tested positive for BlScV. These results were confirmed by a second test. Six of seven samples from symptomatic bushes and 8 of 26 samples from asymptomatic bushes harbored BlScV. Virus preparations extracted from five infected plants (two from Connecticut and three from Massachusetts) were examined using reverse transcription-polymerase chain reaction (RT-PCR) with oligonucleotide primers (5'-TGTGTCAAACAATATGGC-3' and 5'-GCATTTCGATGA-TTGCGG-3') designed to amplify a portion of the coat protein gene from any of the three known virus strains (1,2). Sequence analysis of fragments amplified from their coat protein genes revealed that two of the isolates from Massachusetts (GenBank Accession Nos. AY530957 and AY530958) and the two isolates from Connecticut (GenBank Accession Nos. AY530955 and AY530956) were similar but not identical to one another, and these four were most similar to strain NJ2. One isolate from Massachusetts (GenBank Accession No. AY530958) was most similar to strain NJ1. To our knowledge, this is the first report of BlScV on the east coast outside of New Jersey, where it was first reported in 1983 (4). These results indicate that the disease is now present in other blueberry-growing areas in the northeast and is likely to be spreading locally within those areas. Because blueberry scorch is symptomless in propagation material and may take several years to express symptoms in the field, the initial spread of the disease was probably due to the shipping of latently infected plants to BlScV-free areas before reliable testing was available. References: (1) T. D. Cavileer et al. J. Gen. Virol. 75:711, 1994. (2) B. T. Halpern and B. I. Hillman. Plant Dis. 80:219, 1996. (3) R. R. Martin and P. R. Bristow. Phytopathology 78:1636, 1988. (4) A. W. Stretch. (Abstr.) Phytopathology 73:375, 1983.",
+      "journal": "Plant disease",
+      "year": 2004,
+      "pub_date": "2004-05-01",
+      "authors": "DeMarsay A; Hillman B I; Petersen F P; Oudemans P V; Schloemann S",
+      "first_author": "DeMarsay A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Blueberry scorch virus (BlScV)",
+      "taxonomy": "未提及",
+      "host_plant": "高丛蓝莓 (Vaccinium corymbosum L.), 品种Blueray, Berkeley, Elliott, Bluecrop, Coville",
+      "location": "美国康涅狄格州和马萨诸塞州",
+      "results": "33份样品中14份阳性，包括有症状和无症状植株；序列显示4个分离物与NJ2相似，1个与NJ1相似。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15098118",
+      "doi": "10.1007/s00705-004-0304-0",
+      "title": "The new plant virus family Flexiviridae and assessment of molecular criteria for species demarcation.",
+      "abstract": "The new plant virus family Flexiviridae is described. The family is named because its members have flexuous virions and it includes the existing genera Allexivirus, Capillovirus, Carlavirus, Foveavirus, Potexvirus, Trichovirus and Vitivirus, plus the new genus Mandarivirus together with some related viruses not assigned to any genus. The family is justified from phylogenetic analyses of the polymerase and coat protein (CP) sequences. To help to define suitable molecular criteria for demarcation of species, a complete set of pairwise comparisons was made using the nucleotide (nt) and amino acid (aa) sequences of each fully-sequenced gene from every available accession in the family. Based on the distributions and on inspection of the data, it was concluded that, as a general rule, distinct species have less than ca. 72% identical nt or 80% identical aa between their entire CP or replication protein genes.",
+      "journal": "Archives of virology",
+      "year": 2004,
+      "pub_date": "2004-05-01",
+      "authors": "Adams M J; Antoniw J F; Bar-Joseph M; Brunt A A; Candresse T; ... (+5)",
+      "first_author": "Adams M J",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Flexiviridae（新病毒科）",
+      "taxonomy": "植物病毒科 Flexiviridae，包括Allexivirus、Capillovirus、Carlavirus、Foveavirus、Potexvirus、Trichovirus、Vitivirus和Mandarivirus等属",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15165818",
+      "doi": "10.1016/j.virol.2004.02.008",
+      "title": "The multifunctional plant viral suppressor of gene silencing P19 interacts with itself and an RNA binding host protein.",
+      "abstract": "Tomato bushy stunt virus (TBSV) is an RNA plant virus encoding a protein of approximately 19 kDa (P19) that is involved in various activities important for pathogenicity, including virus transport and suppression of gene silencing. In this study, we provide evidence in vivo and in vitro that P19 specifically interacts with itself to predominantly form dimers, and with a novel host protein, Hin19. Hin19 has a high degree of similarity with a class of RNA-binding proteins of which many are involved in RNA processing. The binding of P19 to itself and to Hin19 both depend on a structurally important central region of P19 that was previously shown critical for its biological function in plants. Our findings provide evidence for a model in which virus spread through suppression of defense-related gene silencing involves the formation of a complex that includes P19 dimers and a newly identified host RNA-binding protein.",
+      "journal": "Virology",
+      "year": 2004,
+      "pub_date": "2004-05-20",
+      "authors": "Park Jong-Won; Faure-Rabasse Sandrine; Robinson Michael A; Desvoyes Bénédicte; Scholthof Herman B",
+      "first_author": "Park Jong-Won",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Tomato bushy stunt virus (TBSV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15131083",
+      "doi": "10.1101/gad.1201204",
+      "title": "Viral RNA silencing suppressors inhibit the microRNA pathway at an intermediate step.",
+      "abstract": "RNA silencing suppressors from different plant viruses are structurally diverse. In addition to inhibiting the antiviral silencing response to condition susceptibility, many suppressors are pathogenicity factors that cause disease or developmental abnormalities. Here, unrelated suppressors from multiple viruses were shown to inhibit microRNA (miRNA) activities and trigger an overlapping series of severe developmental defects in transgenic Arabidopsis thaliana. This suggests that interference with miRNA-directed processes may be a general feature contributing to pathogenicity of many viruses. A normally labile intermediate in the miRNA biogenesis/RNA-induced silencing complex (RISC) assembly pathway, miRNA*, accumulated specifically in the presence of suppressors (P1/HC-Pro, p21, or p19) that inhibited miRNA-guided cleavage of target mRNAs. Both p21 and p19, but not P1/HC-Pro, interacted with miRNA/miRNA* complexes and hairpin RNA-derived short interfering RNAs (siRNAs) in vivo. In addition, p21 bound to synthetic miRNA/miRNA* and siRNA duplexes in vitro. We propose that several different suppressors act by distinct mechanisms to inhibit the incorporation of small RNAs into active RISCs.",
+      "journal": "Genes & development",
+      "year": 2004,
+      "pub_date": "2004-05-15",
+      "authors": "Chapman Elisabeth J; Prokhnevsky Alexey I; Gopinath Kodetham; Dolja Valerian V; Carrington James C",
+      "first_author": "Chapman Elisabeth J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "多种植物病毒（烟草蚀纹病毒、甜菜黄化病毒、番茄丛矮病毒等）",
+      "taxonomy": "",
+      "host_plant": "拟南芥",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15604671",
+      "doi": "10.1007/s11103-004-0116-3",
+      "title": "Fighting geminiviruses by RNAi and vice versa.",
+      "abstract": "Geminiviruses have recently emerged not only as the cause of devastating diseases of important crop plants but also as a tool to study fundamental aspects of RNA interference (RNAi) and virus-induced gene silencing. RNA silencing is an evolutionary conserved mechanism protecting cell from pathogenic RNA and DNA, which is increasingly viewed as an adaptive immune system of plants against viruses. Here we summarize recent developments in the field of geminivirology presented by several leading groups at the Meeting \"Gemini2004\" (a total of 85 participants from all over the world) with the main focus on the anti-viral strategies that exploit RNAi and related silencing phenomena.",
+      "journal": "Plant molecular biology",
+      "year": 2004,
+      "pub_date": "2004-05-01",
+      "authors": "Pooggin Mikhail; Hohn Thomas",
+      "first_author": "Pooggin Mikhail",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "双生病毒",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "20565612",
+      "doi": "10.1111/j.1364-3703.2004.00223.x",
+      "title": "Advances in understanding recessive resistance to plant viruses.",
+      "abstract": "SUMMARY Recent work carried out to characterize recessive mutations which render experimental hosts non-permissive to viral infection (loss-of-susceptibility mutants) seems to be converging with new data on natural recessive resistance in crop species, and also with functional analyses of virus avirulence determinants. Perhaps the most well known examples are the studies that identified the eukaryotic translation initiation factors 4E(iso) (eIF(iso)4E) and 4E(eIF4E) as the host factors required for potyvirus multiplication within experimental and natural hosts, respectively, and the potyviral genome-linked protein (VPg) as the viral factor that directly interacts with eIF4E to promote potyvirus multiplication. The purpose of this paper is to review the available information on the characterization of loss-of-susceptibility mutants in experimental hosts, natural recessive resistances and virus avirulence factors, and also to comment on possible implications for the design of new sources of sustainable virus resistance.",
+      "journal": "Molecular plant pathology",
+      "year": 2004,
+      "pub_date": "2004-05-01",
+      "authors": "Diaz-Pendon Juan A; Truniger Veronica; Nieto Cristina; Garcia-Mas Jordi; Bendahmane Abdelhafid; ... (+1)",
+      "first_author": "Diaz-Pendon Juan A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "potyvirus",
+      "taxonomy": "",
+      "host_plant": "多种植物",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15113877",
+      "doi": "10.1128/jvi.78.10.4976-4982.2004",
+      "title": "The plant virus Tomato Spotted Wilt Tospovirus activates the immune system of its main insect vector, Frankliniella occidentalis.",
+      "abstract": "Tospoviruses have the ability to infect plants and their insect vectors. Tomato spotted wilt virus (TSWV), the type species in the Tospovirus genus, infects its most important insect vector, Frankliniella occidentalis, the western flower thrips (WFT). However, no detrimental effects on the life cycle or cytopathological changes have been reported in the WFT after TSWV infection, and relatively few viral particles can be observed even several days after infection. We hypothesized that TSWV infection triggers an immune response in the WFT. Using subtractive cDNA libraries to probe WFT DNA macroarrays, we found that the WFT's immune system is activated by TSWV infection. The activated genes included (i) those encoding antimicrobial peptides, such as defensin and cecropin; (ii) genes involved in pathogen recognition, such as those encoding lectins; (iii) those encoding receptors that activate the innate immune response, such as Toll-3; and (iv) those encoding members of signal transduction pathways activated by Toll-like receptors, such as JNK kinase. Transcriptional upregulation of these genes after TSWV infection was confirmed by Northern analysis, and the kinetics of the immune response was measured over time. Several of the detected genes were activated at the same time that viral replication was first detected by reverse transcription-PCR. To our knowledge, this is the first report of the activation of an insect vector immune response by a plant virus. The results may lead to a better understanding of insects' immune responses against viruses and may help in the future development of novel control strategies against plant viruses, as well as human and animal viruses transmitted by insect vectors.",
+      "journal": "Journal of virology",
+      "year": 2004,
+      "pub_date": "2004-05-01",
+      "authors": "Medeiros Ricardo B; Resende Renato de O; de Avila Antonio Carlos",
+      "first_author": "Medeiros Ricardo B",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Tomato spotted wilt virus (TSWV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14666371",
+      "doi": "10.1007/s00122-003-1546-z",
+      "title": "Cucumis monosomic alien addition lines: morphological, cytological, and genotypic analyses.",
+      "abstract": "Cucumis hystrix Chakr. (HH, 2n=24), a wild relative of the cultivated cucumber, possesses several potentially valuable disease-resistance and abiotic stress-tolerance traits for cucumber ( C. sativus L., CC, 2n=14) improvement. Numerous attempts have been made to transfer desirable traits since the successful interspecific hybridization between C. hystrix and C. sativus, one of which resulted in the production of an allotriploid (HCC, 2n=26: one genome of C. hystrix and two of C. sativus). When this genotype was treated with colchicine to induce polyploidy, two monosomic alien addition lines (MAALs) (plant nos. 87 and 517: 14 CC+1 H, 2n=15) were recovered among 252 viable plants. Each of these plants was morphologically distinct from allotriploids and cultivated cucumbers. Cytogenetic and molecular marker analyses were performed to confirm the genetic constitution and further characterize these two MAALs. Chromosome counts made from at least 30 meristematic cells from each plant confirmed 15 nuclear chromosomes. In pollen mother cells of plant nos. 87 and 517, seven bivalents and one univalent were observed at diakinesis and metaphase I; the frequency of trivalent formation was low (about 4-5%). At anaphase I and II, stochastic and asymmetric division led to the formation of two gamete classes: n=7 and n=8; however, pollen fertility was relatively high. Pollen stainability in plant no. 87 was 86.7% and in plant no. 517 was 93.2%. Random amplified polymorphic DNA analysis was performed using 100 random 10-base primers. Genotypes obtained with eight primers (A-9, A-11, AH-13, AI-19, AJ-18, AJ-20, E-19, and N-20) showed a band common to the two MAAL plants and C. hystrix that was absent in C. sativus, confirming that the alien chromosomes present in the MAALs were derived from C. hystrix. Morphological differences and differences in banding patterns were also observed between plant nos. 87 and 517 after amplification with primers AI-5, AJ-13, N-12, and N-20, suggesting that these plants may contain different C. hystrix chromosomes.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 2004,
+      "pub_date": "2004-05-01",
+      "authors": "Chen Jin-Feng; Luo Xiang-Dong; Qian Chun-Tao; Jahn Molly M; Staub Jack E; ... (+3)",
+      "first_author": "Chen Jin-Feng",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

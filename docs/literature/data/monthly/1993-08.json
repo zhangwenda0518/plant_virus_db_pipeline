@@ -1,0 +1,146 @@
+{
+  "month": "1993-08",
+  "generated": "2026-07-13 02:59:42",
+  "total": 6,
+  "by_category": {
+    "Host_Virus_Interactions": 2,
+    "Antiviral_Resistance_Genes": 2,
+    "New_Virus": 1,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8400873",
+      "doi": "10.1105/tpc.5.8.973",
+      "title": "Alanine scanning mutagenesis of a plant virus movement protein identifies three functional domains.",
+      "abstract": "Alanine scanning mutagenesis was performed on the red clover necrotic mosaic virus (RCNMV) movement protein (MP), and 12 mutants were assayed in vitro for RNA binding characteristics and in vivo for their ability to potentiate RCNMV cell-to-cell movement. The mutant phenotypes that were identified in vitro and in vivo suggest both that cooperative RNA binding is not necessary for cell-to-cell movement in vivo and that only a fraction of the wild-type RNA binding may be required. The MP mutants defined at least three distinct functional regions in the MP: an RNA binding domain, a cooperative RNA binding domain, and a third domain that is necessary for cell-to-cell movement in vivo. This third domain may be required for targeting the MP to cell walls and plasmodesmata, interacting with host proteins, folding, or possibly binding RNA into a functional ribonucleoprotein complex capable of cell-to-cell movement.",
+      "journal": "The Plant cell",
+      "year": 1993,
+      "pub_date": "1993-08-01",
+      "authors": "Giesman-Cookmeyer D; Lommel S A",
+      "first_author": "Giesman-Cookmeyer D",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "红三叶草坏死花叶病毒 (Red clover necrotic mosaic virus, RCNMV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8011090",
+      "doi": "",
+      "title": "[An investigation of medicinal Rhodiola in Sichuan Province].",
+      "abstract": "Twenty-two species of Rhodiola produced in Sichuan Province are reported in this paper, including their distributions, habitats and localities. Among them, there is a new species named Rhodiola wolongensis. Its morphology has been described in Latin. I key for the identification of all these 22 species has been compiled and presented.",
+      "journal": "Zhongguo Zhong yao za zhi = Zhongguo zhongyao zazhi = China journal of Chinese materia medica",
+      "year": 1993,
+      "pub_date": "1993-08-01",
+      "authors": "An F; Yue S J; Guo D; Lou Z C",
+      "first_author": "An F",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8335641",
+      "doi": "10.1128/jb.175.15.4859-4869.1993",
+      "title": "Molecular analysis of avirulence gene avrRpt2 and identification of a putative regulatory sequence common to all known Pseudomonas syringae avirulence genes.",
+      "abstract": "The avrRpt2 locus from Pseudomonas syringae pv. tomato causes virulent strains of P. syringae to be avirulent on some, but not all, lines of Arabidopsis thaliana and Glycine max (soybean). We determined the DNA sequence of the avrRpt2 locus and identified the avrRpt2 gene as a 768-bp open reading frame encoding a putative 28.2-kDa protein. Deletion analysis and transcription studies provided further evidence that this open reading frame encodes AvrRpt2. We found that the avrRpt2 gene also has avirulence activity in P. syringae pathogens of Phaseolus vulgaris (common bean), suggesting that disease resistance genes specific to avrRpt2 are functionally conserved among diverse plant species. The predicted AvrRpt2 protein is hydrophilic and contains no obvious membrane-spanning domains or export signal sequences, and there was no significant similarity of AvrRpt2 to sequences in the GenBank, EMBL, or Swiss PIR data bases. A comparison of the avrRpt2 DNA sequence to nine other P. syringae avirulence genes revealed a highly conserved sequence, GGAACCNA-N14-CCACNNA, upstream of the translation initiation codon. This motif is located 6 to 8 nucleotides upstream of the transcription start site in all four P. syringae avirulence genes for which a transcription start site has been determined, suggesting a role as a binding site for a novel form of RNA polymerase. Regulation of avrRpt2 was similar to other P. syringae avirulence genes; expression was high in minimal medium and low in rich medium and depended on the hrpRS locus and an additional locus at the opposite end of the hrp cluster of P. syringae pv. tomato.",
+      "journal": "Journal of bacteriology",
+      "year": 1993,
+      "pub_date": "1993-08-01",
+      "authors": "Innes R W; Bent A F; Kunkel B N; Bisgrove S R; Staskawicz B J",
+      "first_author": "Innes R W",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8400869",
+      "doi": "10.1105/tpc.5.8.865",
+      "title": "RPS2, an Arabidopsis disease resistance locus specifying recognition of Pseudomonas syringae strains expressing the avirulence gene avrRpt2.",
+      "abstract": "A molecular genetic approach was used to identify and characterize plant genes that control bacterial disease resistance in Arabidopsis. A screen for mutants with altered resistance to the bacterial pathogen Pseudomonas syringae pv. tomato (Pst) expressing the avirulence gene avrRpt2 resulted in the isolation of four susceptible rps (resistance to P. syringae) mutants. The rps mutants lost resistance specifically to bacterial strains expressing avrRpt2 as they retained resistance to Pst strains expressing the avirulence genes avrB or avrRpm1. Genetic analysis indicated that in each of the four rps mutants, susceptibility was due to a single mutation mapping to the same locus on chromosome 4. Identification of a resistance locus with specificity for a single bacterial avirulence gene suggests that this locus, designated RPS2, controls specific recognition of bacteria expressing the avirulence gene avrRpt2. Ecotype Wü-0, a naturally occurring line that is susceptible to Pst strains expressing avrRpt2, appears to lack a functional allele at RPS2, demonstrating that there is natural variation at the RPS2 locus among wild populations of Arabidopsis.",
+      "journal": "The Plant cell",
+      "year": 1993,
+      "pub_date": "1993-08-01",
+      "authors": "Kunkel B N; Bent A F; Dahlbeck D; Innes R W; Staskawicz B J",
+      "first_author": "Kunkel B N",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7905240",
+      "doi": "",
+      "title": "Combined antiinfluenza activity of a plant preparation SHS-174 and amantadine derivatives.",
+      "abstract": "The results of the study on the combined antiviral activity of the SHS-174 preparation (a lyophylized infusion from three higher plants) and three amantadine derivatives (rimantadine, amantadine glucuronide and its derivative) are presented. The antiviral effect of the drugs on the reproduction of influenza virus strains A/H1N1 and A/H3N2 in vitro was studied. The combined antiviral effect was evaluated on the basis of viral yields and in many cases a synergism was found. The most synergistic effect was shown for the combination of SHS-174 with the derivative of amantadine glucuronide.",
+      "journal": "Acta virologica",
+      "year": 1993,
+      "pub_date": "1993-08-01",
+      "authors": "Serkedjieva J; Zgorniak-Nowosielska I",
+      "first_author": "Serkedjieva J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8346221",
+      "doi": "10.1073/pnas.90.15.7089",
+      "title": "Broad-spectrum virus resistance in transgenic plants expressing pokeweed antiviral protein.",
+      "abstract": "Exogenous application of pokeweed antiviral protein (PAP), a ribosome-inhibiting protein found in the cell walls of Phytolacca americana (pokeweed), protects heterologous plants from viral infection. A cDNA clone for PAP was isolated and introduced into tobacco and potato plants by transformation with Agrobacterium tumefaciens. Transgenic plants that expressed either PAP or a double mutant derivative of PAP showed resistance to infection by different viruses. Resistance was effective against both mechanical and aphid transmission. Analysis of the vacuum infiltrate of leaves expressing PAP showed that it is enriched in the intercellular fluid. Analysis of resistance in transgenic plants suggests that PAP confers viral resistance by inhibiting an early event in infection. Previous methods for creating virus-resistant plants have been specific for a particular virus or closely related viruses. To protect plants against more than one virus, multiple genes must be introduced and expressed in a single transgenic line. Expression of PAP in transgenic plants offers the possibility of developing resistance to a broad spectrum of plant viruses by expression of a single gene.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1993,
+      "pub_date": "1993-08-01",
+      "authors": "Lodge J K; Kaniewski W K; Tumer N E",
+      "first_author": "Lodge J K",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "",
+      "host_plant": "烟草和马铃薯",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

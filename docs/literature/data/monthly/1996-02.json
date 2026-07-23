@@ -1,0 +1,144 @@
+{
+  "month": "1996-02",
+  "generated": "2026-07-13 02:59:42",
+  "total": 6,
+  "by_category": {
+    "Host_Virus_Interactions": 4,
+    "Antiviral_Resistance_Genes": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8742708",
+      "doi": "10.1105/tpc.8.2.169",
+      "title": "Identification of an elicitor active site within the three-dimensional structure of the tobacco mosaic tobamovirus coat protein.",
+      "abstract": "The coat protein (CP) of tobacco mosaic tobamovirus (TMV) elicits the hypersensitive response (HR) conferred by the N' gene from Nicotiana sylvestris. This study presents evidence demonstrating a critical role for a specific CP structural site in eliciting this HR. Based on the known structure of the TMV CP, specific substitutions were created within the CP of the elicitor strain P20L to identify structural areas essential for host recognition. Of 32 substitutions made, 14 conferred either a temperature-sensitive (loss of the HR at 29 degrees C) or a knockout (loss of the HR at 25 degrees C) HR phenotype in N.sylvestris. These essential residues were noncontiguous in position; however, within the three-dimensional CP structure, all resided primarily along the right face of the molecule's helical bundle. Substitutions that did not affect the HR phenotype either were located outside of this area or were conservative in change. In addition, placing two temperature-sensitive substitutions within the same CP resulted in lowering temperature sensitivity from 29 to 27 degrees C. This additive effect suggests that residues essential for HR elicitation contribute independently to host recognition. This feature is characteristic of recognition surfaces. The presence of a specific elicitor active site within the three-dimensional structure of the TMV CP is consistent with binding of a host-encoded receptor and demonstrates the importance of CP structure in HR specificity.",
+      "journal": "The Plant cell",
+      "year": 1996,
+      "pub_date": "1996-02-01",
+      "authors": "Taraporewala Z F; Culver J N",
+      "first_author": "Taraporewala Z F",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒(TMV)",
+      "taxonomy": "",
+      "host_plant": "烟草(Nicotiana sylvestris)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12239383",
+      "doi": "10.1105/tpc.8.2.203",
+      "title": "Production of Salicylic Acid Precursors Is a Major Function of Phenylalanine Ammonia-Lyase in the Resistance of Arabidopsis to Peronospora parasitica.",
+      "abstract": "Arabidopsis ecotype Columbia (Col-0) seedlings, transformed with a phenylalanine ammonia-lyase 1 promoter (PAL1)-[beta]-glucuronidase (GUS) reporter construct, were inoculated with virulent and avirulent isolates of Peronospora parasitica. The PAL1 promoter was constitutively active in the light in vascular tissue but was induced only in the vicinity of fungal structures in the incompatible interaction. A double-staining procedure was developed to distinguish between GUS activity and fungal structures. The PAL1 promoter was activated in cells undergoing lignification in the incompatible interaction in response to the pathogen. Pretreatment of the seedlings with 2-aminoindan-2-phosphonic acid (AIP), a highly specific PAL inhibitor, made the plants completely susceptible. Lignification was suppressed after AIP treatment, and surprisingly, pathogen-induced PAL1 promoter activity could not be detected. Treatment of the seedlings with 2-hydroxyphenylaminosulphinyl acetic acid (1,1-dimethyl ester) (OH-PAS), a cinnamyl alcohol dehydrogenase inhibitor specific for the lignification pathway, also caused a shift toward susceptibility, but the effect was not as pronounced as it was with AIP. Significantly, although OH-PAS suppressed pathogen-induced lignification, it did not suppress pathogen-induced PAL1 promoter activation. Salicylic acid (SA), supplied to AIP-treated plants, restored resistance and both pathogen-induced lignification and activation of the PAL1 promoter. Endogenous SA levels increased significantly in the incompatible but not in the compatible combination, and this increase was suppressed by AIP but not by OH-PAS. These results provide evidence of the central role of SA in genetically determined plant disease resistance and show that lignification per se, although providing a component of the resistance mechanism, is not the deciding factor between resistance and susceptibility.",
+      "journal": "The Plant cell",
+      "year": 1996,
+      "pub_date": "1996-02-01",
+      "authors": "Mauch-Mani B.; Slusarenko A. J.",
+      "first_author": "Mauch-Mani B.",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8851973",
+      "doi": "10.1016/0168-9525(96)81402-8",
+      "title": "A useful weed put to work: genetic analysis of disease resistance in Arabidopsis thaliana.",
+      "abstract": "Plant resistance to disease caused by phytopathogenic organisms is often triggered by the ability of the plant to specifically recognize the invading pathogen. One of the most fascinating areas in plant biology research focusses on understanding the mechanisms governing this process. Several recent breakthroughs in this area have come from the genetic analyses of disease resistance in Arabidopsis thaliana.",
+      "journal": "Trends in genetics : TIG",
+      "year": 1996,
+      "pub_date": "1996-02-01",
+      "authors": "Kunkel B N",
+      "first_author": "Kunkel B N",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12239384",
+      "doi": "10.1105/tpc.8.2.251",
+      "title": "Interference between Two Specific Pathogen Recognition Events Mediated by Distinct Plant Disease Resistance Genes.",
+      "abstract": "We demonstrate that the interaction of the avirulence gene avrRpt2 and the cognate resistance gene RPS2 interferes with the interaction of avrRpm1-RPM1 in Arabidopsis. Interference is mediated outside of the bacterial pathogen Pseudomonas syringae, presumably at the level of recognition of avr-dependent signals, yet does not require the wild-type RPS2 product. A numerical excess of P. syringae expressing avrRpm1 can overcome this interference in mixed inoculations. The interference of avrRpt2-RPS2 engagement with RPM1-dependent functions is mirrored by transcriptional activation of genes preferentially expressed during RPM1- or RPS2-mediated disease resistance reactions. This demonstration of interference between two plant disease resistance genes suggests that their products compete for a common element(s) in a signal transduction pathway leading to disease resistance.",
+      "journal": "The Plant cell",
+      "year": 1996,
+      "pub_date": "1996-02-01",
+      "authors": "Ritter C.; Dangl J. L.",
+      "first_author": "Ritter C.",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8608599",
+      "doi": "10.1016/s0092-8674(00)81290-8",
+      "title": "The tomato Cf-2 disease resistance locus comprises two functional genes encoding leucine-rich repeat proteins.",
+      "abstract": "In plants, resistance to pathogens is frequently determined by dominant resistance genes, whose products are proposed to recognize pathogen-encoded avirulence gene (Avr) products. The tomato resistance locus Cf-2 was isolated by positional cloning and found to contain two almost identical genes, each conferring resistance to isolates of tomato leaf mould (C. fulvum) expressing the corresponding Avr2 gene. The two Cf-2 genes encode protein products that differ from each other by only three amino acids and contain 38 leucine-rich repeat (LRR) motifs. Of the LRRs, 20 show extremely conserved alternating repeats. The C-terminus of Cf-2 carries regions of pronounced homology to the protein encoded by the unlinked Cf-9 gene. We suggest that this conserved region interacts with other proteins involved in activating plant defense mechanisms.",
+      "journal": "Cell",
+      "year": 1996,
+      "pub_date": "1996-02-09",
+      "authors": "Dixon M S; Jones D A; Keddie J S; Thomas C M; Harrison K; ... (+1)",
+      "first_author": "Dixon M S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8870028",
+      "doi": "10.1006/phrs.1996.0019",
+      "title": "Pharmacological activities of Chelidonium majus L. (Papaveraceae).",
+      "abstract": "Chelidonium majus L. (Papaveraceae) has a long history as being useful for the treatment of many diseases in European countries. This plant is of great interest for its use also in Chinese herbal medicine. The plant contains, as major secondary metabolites, isoquinoline alkaloids, such as sanguinarine, chelidonine, chelerythrine, berberine and coptisine. Other compounds structurally unrelated to the alkaloids have been isolated from the aerial parts: several flavonoids and phenolic acids. C. majus extracts and its purified compounds exhibit interesting antiviral, antitumour and antimicrobial properties both in vitro and in vivo.",
+      "journal": "Pharmacological research",
+      "year": 1996,
+      "pub_date": "1996-02-01",
+      "authors": "Colombo M L; Bosisio E",
+      "first_author": "Colombo M L",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

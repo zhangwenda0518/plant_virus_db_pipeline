@@ -1,0 +1,81 @@
+{
+  "month": "1993-11",
+  "generated": "2026-07-13 02:59:42",
+  "total": 3,
+  "by_category": {
+    "Molecular_Characterization": 1,
+    "Detection_Methods": 1,
+    "Antiviral_Resistance_Genes": 1,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "7692669",
+      "doi": "10.1006/viro.1993.1598",
+      "title": "Expression of an animal virus antigenic site on the surface of a plant virus particle.",
+      "abstract": "To investigate if cowpea mosaic virus (CPMV) particles can be used to express foreign protein sequences, oligonucleotides encoding an epitope derived from VP1 of foot-and-mouth disease virus (FMDV) were cloned into the region of the CPMV genome encoding the small (S) coat protein. The chimeras were designed so that the foreign sequence was expressed either as an insertion or as a replacement for part of the wild-type sequence. While RNA from both chimeras was able to replicate in cowpea protoplasts only the construct containing the FMDV sequence as an insertion was able to direct capsid formation and infect whole cowpea plants. The modified S protein produced in plants infected with the insertion derivative reacted with FMDV-specific antiserum. These results show that CPMV can be used as an antigen presentation system and raises the possibility of producing vaccines in plants using a RNA virus-based vector.",
+      "journal": "Virology",
+      "year": 1993,
+      "pub_date": "1993-11-01",
+      "authors": "Usha R; Rohll J B; Spall V E; Shanks M; Maule A J; ... (+2)",
+      "first_author": "Usha R",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Cowpea mosaic virus (CPMV)",
+      "taxonomy": "Comovirus属，Secoviridae科",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7505786",
+      "doi": "10.1016/0166-0934(93)90143-f",
+      "title": "Chemiluminescent and colorigenic detection of cherry leaf roll virus with digoxigenin-labeled RNA probes.",
+      "abstract": "Digoxigenin-labeled RNA probes were used to detect cherry leaf roll virus in infected plants. A dot-blot hybridization immunoenzymatic assay in both crude sap extracts and partially purified tissue with a colorigenic and chemiluminescent detection was developed. The use of the new AMPPD substrate was found to be effective in clarified sap extracts in conditions were the colorigenic detection method failed. Both detection assays were effective when using unfractionated nucleic acid preparations, the chemiluminescent being five times more sensitive than the colorigenic. The chemiluminescent hybridization assay makes it possible to detect the virus at the picogram level. The non-radioactive dot-blot hybridization techniques described here turned out to be very suitable for plant virus diagnosis. The sensitivity of this method and those obtained by ELISA or radioactive dot-blot described previously is compared.",
+      "journal": "Journal of virological methods",
+      "year": 1993,
+      "pub_date": "1993-11-01",
+      "authors": "Más P; Sánchez-Navarro J A; Sánchez-Pina M A; Pallás V",
+      "first_author": "Más P",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "cherry leaf roll virus",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8227081",
+      "doi": "",
+      "title": "Characterization of the lectin from the bulbs of Eranthis hyemalis (winter aconite) as an inhibitor of protein synthesis.",
+      "abstract": "The lectin from Eranthis hyemalis has been previously characterized as consisting of two polypeptide chains covalently linked by disulfide bond(s) (Cammue, B. P., Peeters, B., and Peumans, W. J. (1985) Biochem. J. 227, 949-955). We have further characterized the biochemical properties of the lectin and demonstrated that it possesses the property of inhibition of protein synthesis using in vitro eukaryotic translation systems. The protein also possesses antiviral activity against the plant virus, alfalfa mosaic virus, and larvicidal activity against the southern corn rootworm, Diabrotica undecimpunctata howardii, a major insect pest of the maize plant. Both isoelectric focusing on gels and chromatofocusing indicated heterogeneity of the protein, with three species having isoelectric points in the range 4-5. The disulfide bond(s) can be rapidly reduced with beta-mercaptoethanol under native conditions. The reduced alkylated polypeptide chains remain associated under native conditions to form a species, EHL', that elutes at the same position as the native protein and has the same molecular weight by sedimentation equilibrium experiments. However, circular dichroism and fluorescence measurements indicated conformational differences between the species.",
+      "journal": "The Journal of biological chemistry",
+      "year": 1993,
+      "pub_date": "1993-11-25",
+      "authors": "Kumar M A; Timm D E; Neet K E; Owen W G; Peumans W J; ... (+1)",
+      "first_author": "Kumar M A",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management"
+      ],
+      "virus_name": "苜蓿花叶病毒",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

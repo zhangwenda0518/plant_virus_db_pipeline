@@ -1,0 +1,78 @@
+{
+  "month": "1990-04",
+  "generated": "2026-07-13 02:59:42",
+  "total": 3,
+  "by_category": {
+    "New_Virus": 2,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "2336357",
+      "doi": "10.1093/nar/18.7.1813",
+      "title": "Australian grapevine viroid--evidence for extensive recombination between viroids.",
+      "abstract": "Australian grapevine viroid (AGV, 369 residues) is a novel viroid with less than 50% sequence similarity with any known viroid. Nevertheless its entire sequence can be divided into regions, each with a high sequence similarity with segments from one of citrus exocortis, potato spindle tuber, apple scar skin, and grapevine yellow speckle viroids. AGV contains the entire central conserved region of the apple scar skin viroid group and is proposed as a member of this group. AGV appears to have originated from extensive RNA recombination involving other viroids. The vegetatively propagated grapevines which have been exposed to multiple viroid infections during their long history of cultivation may have allowed such recombination.",
+      "journal": "Nucleic acids research",
+      "year": 1990,
+      "pub_date": "1990-04-11",
+      "authors": "Rezaian M A",
+      "first_author": "Rezaian M A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Australian grapevine viroid (AGV)",
+      "taxonomy": "apple scar skin viroid group (Apscaviroid属)",
+      "host_plant": "葡萄 (grapevine)",
+      "location": "澳大利亚",
+      "results": "AGV全长369 nt，包含苹果锈果类病毒组完整的中央保守区，其序列由来自柑橘裂皮、马铃薯纺锤形块茎、苹果锈果和葡萄黄斑类病毒的片段重组而成。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19287710",
+      "doi": "",
+      "title": "Trichodorus philipi n. sp. from South Africa, with Notes on Paratrichodorus lobatus and P. acutus.",
+      "abstract": "A new species in the family Trichodoridae, from the rhizosphere of native plants of the Cape Fynbos in the western Cape, Republic of South Africa, is described and illustrated. Trichodorus philipi n. sp. resembles T. cottieri Clark, 1963 and T. degans Allen, 1957, from which both sexes are distinguished by a shorter body and onchiostyle. The females differ by the more posterior position of excretory pore, presence of two pairs of lateral body pores, and shape and sclerotization of vulval-vaginal region in lateral view. Males differ by the more posterior position of excretory pore and ventromedian cervical papilla and length and shape of the spicules. Additional morphological details and morphometrics are given for Paratrichodorus lobatus (Colbran, 1965) Siddiqi, 1974 and P. acutus (Bird, 1967) Siddiqi, 1974.",
+      "journal": "Journal of nematology",
+      "year": 1990,
+      "pub_date": "1990-04-01",
+      "authors": "De Waele D; Meyer A J; Van Mieghem A P",
+      "first_author": "De Waele D",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2379289",
+      "doi": "10.1248/cpb.38.945",
+      "title": "Antiviral agents of plant origin. III. Scopadulin, a novel tetracyclic diterpene from Scoparia dulcis L.",
+      "abstract": "The structure and stereochemistry of scopadulin, a novel aphidicolane-type diterpene isolated from Scoparia dulcis L. have been established from spectral data and single-crystal X-ray analysis of its acetone solvate.",
+      "journal": "Chemical & pharmaceutical bulletin",
+      "year": 1990,
+      "pub_date": "1990-04-01",
+      "authors": "Hayashi T; Kawasaki M; Miwa Y; Taga T; Morita N",
+      "first_author": "Hayashi T",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

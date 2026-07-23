@@ -1,0 +1,281 @@
+{
+  "month": "2001-10",
+  "generated": "2026-07-13 02:59:42",
+  "total": 25,
+  "by_category": {
+    "New_Virus": 9,
+    "Host_Virus_Interactions": 9,
+    "Antiviral_Resistance_Genes": 4,
+    "Control_Management": 2,
+    "Transmission_Epidemiology": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30823296",
+      "doi": "10.1094/PDIS.2001.85.10.1121B",
+      "title": "First Report of Pepino mosaic virus in Canada and the United States.",
+      "abstract": "During the winter of 2000, tomatoes (Lycopersicon esculentum) with a bright yellow leaf mosaic were observed in a commercial greenhouse in southern Ontario, Canada. Examination of leaf extracts, using leaf dips and immunosorbent absorption electron microscopy (ISEM), showed flexuous rods consistent with the potexvirus group. Polyclonal antibodies raised against the original Peruvian Pepino mosaic virus (PepMV) isolate (1) and commercial antibodies obtained from Deutsche Sammlung von Mikro-organismen und Zellkulturen (DSMZ), GmbH, Braunsweig, Germany, and Plant Research International (PRI), Wageningen, the Netherlands, were used in ISEM. Leaves tested positive in double-antibody sandwich-enzyme-linked immunosorbent assay (ELISA) with antibodies from DSMZ and PRI. A triple-antibody sandwich-ELISA obtained from Adgen Ltd. (Nellies Gate, UK) gave similar results. Potato virus X did not react with PepMV antiserum in ELISA. Positive PepMV ELISA controls were a U.K. and a Dutch isolate supplied by R. Mumford and R. A. A. van Vlugt, respectively, and DSMZ. Using primers generated from a sequence of the RNA polymerase region of a U.K. PepMV isolate (R. Mumford, unpublished data), a reverse transcription-polymerase chain reaction test showed the expected 312-bp amplicon for the Canadian, Dutch, and U.K. isolates. The primer sequences used were forward 5' CTA TTA CAA CTC CGG AAG CCA 3' and reverse 5' TGG TCT GGC CAG GCT TTG AC 3'. The three isolates were maintained in tomato cv. Bush Beefsteak. When mechanically inoculated on L. esculentum cv. Rapsodie, the Canadian isolate caused a bright yellow mosaic in 1 to 2 weeks, while the two European isolates caused a faint yellow mosaic and mild puckering of the leaves. When mechanically inoculated on 17 indicator plants, the Canadian isolate had a host range similar to the U.K. isolate. The most striking difference in symptoms occurred in L. pimpinellifolium, in which the Canadian isolate caused a yellow mosaic, the Dutch isolate caused no symptoms, and the U.K. isolate caused a marked puckering of the leaves, suggesting virus strain differences among the isolates. Tomato fruits originating from the United States were collected during border inspections by the Canadian Food Inspection Agency and tested for PepMV by ELISA with antisera from DSMZ. PepMV was not detected in 7 samples from California, but was detected in 6 of 12 samples from Colorado, 6 of 7 samples from Arizona, and 1 of 5 samples from Texas. PepMV was originally isolated from pepino (Solanum muricatum) in Peru in 1980 (1) and subsequently from tomato in the Netherlands in 1999 (2). To our knowledge, this is the first report of PepMV in North America. References: (1) R. Jones et al. Ann. Appl. Biol. 94:61, 1980. (2) R. A. A. van Vlugt et al. Plant Dis. 84:103, 2000.",
+      "journal": "Plant disease",
+      "year": 2001,
+      "pub_date": "2001-10-01",
+      "authors": "French C J; Bouthillier M; Bernardy M; Ferguson G; Sabourin M; ... (+4)",
+      "first_author": "French C J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Pepino mosaic virus (PepMV)",
+      "taxonomy": "未提及科，属Potexvirus",
+      "host_plant": "番茄 (Lycopersicon esculentum)、Solanum pimpinellifolium 及其他指示植物",
+      "location": "加拿大安大略省南部（温室）；美国科罗拉多州、亚利桑那州、德克萨斯州（果实样品）",
+      "results": "在加拿大温室番茄上检测到PepMV，RT-PCR获312bp片段；美国多地水果样本检出PepMV；加拿大分离物与欧洲分离物症状有差异。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30823290",
+      "doi": "10.1094/PDIS.2001.85.10.1119D",
+      "title": "First Report of Cassava virus X in Cassava in Venezuela.",
+      "abstract": "Cassava (Manihot esculenta Crantz) is a vegetatively propagated tropical root crop. Viral infections have been identified as an important biotic component limiting cassava production (2). To survey for virus diseases, symptomatic samples of cassava plants were collected from the Venezuelan cassava production states Amazonas, Aragua, Barinas, Cojedes, Monagas, and Portuguesa. Mechanical transmissions to a differential host (Chenopodium quinoa) and a previously described double antibody sandwich enzyme-linked immunosorbent assay (DAS-ELISA) procedure (3) were used to test for the presence of Cassava virus X (CsVX). The DAS-ELISA procedure used gamma globulin diluted 1/2,000, conjugate diluted 1/2,000, and leaf sap extracts diluted 1/100 (1). CsVX and frog skin disease (detected graft inoculation tests with cultivar Secundina and electron microscopy) were detected in mixed infections in plants collected in Barinas. CsVX was not detected in any of the plants collected in the other surveyed areas. The low incidence of the virus (11.43%; 4 of 35 samples) suggests that CsVX has been introduced only recently via infected planting stock. Transmission of the virus is 100% when infected cuttings are used as propagation material. CsVX caused no symptoms on any of the cultivars examined in the field, and the occurrence of symptomless CsVX in Venezuela may result from the inadvertent use of cuttings from virus-infected plants. This is the first report of CsVX in cassava in Venezuela. References: (1) B. L. Nolt et al. Ann. Appl. Biol. 118:105, 1991. (2) B. L. Nolt et al. Plant Pathol. 41:348, 1992. (3) A. C. Velasco et al. 1994. Prog. Virol. Yuca, CIAT, Cali, Colombia.",
+      "journal": "Plant disease",
+      "year": 2001,
+      "pub_date": "2001-10-01",
+      "authors": "Chaparro-Martínez E I; Trujillo-Pinto G",
+      "first_author": "Chaparro-Martínez E I",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cassava virus X (CsVX)",
+      "taxonomy": "未提及",
+      "host_plant": "木薯 (Manihot esculenta Crantz); 指示植物: 藜麦 (Chenopodium quinoa)",
+      "location": "委内瑞拉 (Amazonas, Aragua, Barinas, Cojedes, Monagas, Portuguesa; 检测到CsVX的州为Barinas)",
+      "results": "仅在Barinas州检出CsVX，总检出率11.43%；所有田间品种无症状；通过带毒插条100%传播。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30823289",
+      "doi": "10.1094/PDIS.2001.85.10.1119C",
+      "title": "First Report and Partial Molecular Characterization of a New Begomovirus Associated with Pigeon Pea in Puerto Rico.",
+      "abstract": "Pigeon pea (Cajanus cajan (L.) Millsp.) is an important edible legume crop in Puerto Rico. In late fall 1997, symptoms of a golden mosaic virus were observed in a pigeon pea planting in the municipality of Villalba. The symptoms resembled those incited by the Rhynchosia mosaic virus, a whitefly-transmitted virus, in pigeon pea (1). Tests with the 3F7 antigeminivirus antibody from Agdia (Elkhart, IN) confirmed the presence of a begomovirus in these symptomatic pigeon peas. Extraction of DNA from dried symptomatic foliar tissue was accomplished by the methods described in Rojas et al. (2), and subsequent viral DNA amplification was accomplished with the coat protein (CP) gene polymerase chain reaction primer pair AV494-AC1048 (3). A 550-bp fragment was cloned and sequenced (GenBank Accession No. AY028308). For sequence analysis, the BLAST program at the National Institutes of Health was used. The first match was 91% with the CP gene sequence (Accession No. AF070924) of a begomovirus from Clitoria falcata from Puerto Rico. The next three matches were approximately 86% with a begomovirus (accession no. AF058024) from Macroptilium lathyroides from Puerto Rico, Dicliptera yellow mottle virus (Accession No. AF139168) from Florida, and Tobacco apical stunt virus (Accession No. AF076855) from Mexico. On the basis of sequence analysis of this conserved region of the CP gene, it is concluded that the virus described in this report is a new virus, and thus named Pigeon pea golden mosaic virus. The only sequence for a begomovirus from a Rhynchosia sp. in GenBank is Rhynchosia golden mosaic virus from Honduras (accession no. AF239671). On the basis of sequence comparisons, the virus from pigeon pea is not an isolate of the Honduran Rhynchosia golden mosaic virus. References: (1) J. Bird et al. 1975. Pages 3-25 in: Tropical Diseases of Legumes. J. Bird and K. Maramorosch, eds. Academic Press, NY. (2) M. R. Rojas et al. Plant Dis. 77:340, 1993. (3) S. D. Wyatt and J. K. Brown. Phytopathology. 86:1288, 1996.",
+      "journal": "Plant disease",
+      "year": 2001,
+      "pub_date": "2001-10-01",
+      "authors": "Rodriguez R L; Hong S; Maxwell D P",
+      "first_author": "Rodriguez R L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Pigeon pea golden mosaic virus (PPGMV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "木豆 (Cajanus cajan (L.) Millsp.)",
+      "location": "波多黎各，Villalba市",
+      "results": "确认存在begomovirus；CP基因序列与波多黎各Clitoria falcata上的begomovirus相似性91%，与其他几种病毒86%左右；判断为新病毒并命名。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30823302",
+      "doi": "10.1094/PDIS.2001.85.10.1123B",
+      "title": "Outbreak of Tomato spotted wilt virus in Tomato in Kenya.",
+      "abstract": "Tomato spotted wilt virus (TSWV) of the genus Tospovirus, family Bunyaviridae (1), causes an economically important virus disease in tomato in several parts of the world. The virus has a wide host range that includes numerous crops and weeds and is transmitted by at least seven species of thrips. Tomato crops in the Subukia, Bahati, and Kabazi areas of the Nakuru District in Kenya were affected by a disease suggestive of TSWV infection during the November 1999 to March 2000 tomato-growing season. Farmers reported up to 80% losses of their potential yields. Characteristic symptoms were noticed on fruits, especially when they were green. Distinct concentric rings on fruits, which later turned into brown, uneven ripening, were the most visible symptoms. Foliage did not develop pronounced symptoms, but mild bronzing was observed in a few cultivars. However, foliage senesced prematurely, starting with older leaves. Foliar symptoms were mistaken for blight infection, and as a result, excessive fungicides were applied that failed to manage the disease. To test for TSWV infection, tomato leaf samples collected from the fields were tested initially with a TSWV test kit (HortiTech, Horticulture Research International, Wellesbourne, UK), and the results were confirmed by double-antibody sandwich-enzyme-linked immunosorbent assay with antibodies from Agdia Inc. (Elkhart, IN). Further molecular characterization was done using reverse transcription-polymerase chain reaction (RT-PCR). Total RNA was extracted from symptomatic leaves of tomato cv. Money Maker using the RNeasy mini kit (Qiagen Inc., Valencia, CA). Using primers 5' TTAAGC AAGTTCTGTGAG 3' and 5' ATGTCTAAGGTTAAGCTC 3' specific to the nucleoprotein (N) gene of TSWV, the N gene was amplified by RT-PCR (2). A 777-bp product of the expected size was obtained from symptomatic plants, whereas no amplification was obtained from noninfected tomato. The PCR product was cloned into pGEM-T Easy (Promega, Madison, WI) and sequenced. A search of GenBank revealed a sequence identity of 95 to 99% with the N genes of known TSWV isolates. To our knowledge, this is the first report TSWV infection of tomato in Kenya. Considering its wide host range, future surveys should be directed toward estimating its incidence in tomato and other TSWV-susceptible crops, such as Irish potatoes, pepper, peanut (groundnut), beans, and a wide variety of ornamental cut flowers in Kenya. References: (1) J. W. Moyer. Tospoviruses (Bunyaviridae). Pages 1803-1807 in: Encyclopedia of Virology. A. Granoff and R. G. Webster, eds. Academic Press, San Diego, CA, 1999. (2) Jain et al. Plant Dis. 82:900, 1998.",
+      "journal": "Plant disease",
+      "year": 2001,
+      "pub_date": "2001-10-01",
+      "authors": "Wangai A W; Mandal B; Pappu H R; Kilonzo S",
+      "first_author": "Wangai A W",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "番茄斑萎病毒（Tomato spotted wilt virus, TSWV）",
+      "taxonomy": "",
+      "host_plant": "番茄",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18944118",
+      "doi": "10.1094/PHYTO.2001.91.10.924",
+      "title": "Mathematical models of cross protection in the epidemiology of plant-virus diseases.",
+      "abstract": "ABSTRACT Mathematical models of plant-virus disease epidemics were developed where cross protection occurs between viruses or virus strains. Such cross protection can occur both naturally and through artificial intervention. Examples of diseases with continuous and discontinuous crop-host availability were considered: citrus tristeza and barley yellow dwarf, respectively. Analyses showed that, in a single host population without artificial intervention, the two categories of host plants, infected with a protecting virus alone and infected with a challenging virus, could not coexist in the long term. For disease systems with continuous host availability, the virus (strain) with the higher basic reproductive number (R(0)) always excluded the other eventually; whereas, for discontinuous systems, R(0) is undefined and the virus (strain) with the larger natural transmission rate was the one that persisted in the model formulation. With a proportion of hosts artificially inoculated with a protecting mild virus, the disease caused by a virulent virus could be depressed or eliminated, depending on the proportion. Artificial inoculation may be constant or adjusted in response to changes in disease incidence. The importance of maintaining a constant level of managed cross protection even when the disease incidence dropped was illustrated. Investigations of both pathosystem types showed the same qualitative result: that managed cross protection need not be 100% to eliminate the virulent virus (strain). In the process of replacement of one virus (strain) by another over time, the strongest competition occurred when the incidence of both viruses or virus strains was similar. Discontinuous crop-host availability provided a greater opportunity for viruses or virus strains to replace each other than did the more stable continuous cropping system. The process by which one Barley yellow dwarf virus replaced another in New York State was illustrated.",
+      "journal": "Phytopathology",
+      "year": 2001,
+      "pub_date": "2001-10-01",
+      "authors": "Zhang X S; Holt J",
+      "first_author": "Zhang X S",
+      "categories": [
+        "Control_Management",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "柑橘衰退病毒（CTV）和大麦黄矮病毒（BYDV）",
+      "taxonomy": "",
+      "host_plant": "柑橘、大麦",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11584139",
+      "doi": "",
+      "title": "Who was... Harry Champion?",
+      "abstract": "From insect collecting on the Surrey heaths, to forest management in Northern India, the rarefied atmosphere of Oxford University and the challenges of international consultancy, Harry Champion's life was rarely dull. As a schoolboy, he had declared his wish to travel widely and discover new species of plant and animal, though he probably never anticipated how far he would travel or how many species he would find.",
+      "journal": "Biologist (London, England)",
+      "year": 2001,
+      "pub_date": "2001-10-01",
+      "authors": "Ruffle J",
+      "first_author": "Ruffle J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11761366",
+      "doi": "10.1023/a:1012218108640",
+      "title": "Tilletiopsis derxii, Tilletiopsis oryzicola and Tilletiopsis penniseti, three new species of the ustilagionomycetous anamorphic genus Tilletiopsis isolated from leaves in Thailand.",
+      "abstract": "Four strains of ballistoconidium-forming yeast-like fungi (K-95, K-125, K-132 and K139), isolated from plants collected in Bangkok, Thailand, were assigned to the genus Tilletiopsis based on morphological and chemotaxonomical characteristics. On the basis of sequence data of 18S rDNA and the D1/D2 region of 26S rDNA, strains K-95, K-125 and K-132 were close to T. flava and T fulvescens, and strain K-139 each formed related to T. minor. DNA-DNA reassociation experiments with related species revealed that strains K-125, K-132 and K-139 each formed a new and distinct species whereas strain K-95 was identified as T. flava. Tilletiopsis derxii Takashima et Nakase sp. nov. (JCM 10217T; K-125), Tilletiopsis oryzicola Takashima et Nakase sp. nov. (JCM 10218T; K-132), and Tilletiopsis penniseti Takashima et Nakase sp. nov. (JCM 1021 6T; K- 139) are the names proposed for the new taxa.",
+      "journal": "Antonie van Leeuwenhoek",
+      "year": 2001,
+      "pub_date": "2001-10-01",
+      "authors": "Takashima M; Nakase T",
+      "first_author": "Takashima M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11718548",
+      "doi": "10.1139/w01-098",
+      "title": "Endophytic fungi from Amomum siamense.",
+      "abstract": "Endophytic fungi were isolated from apparently healthy organs of the wild ginger Amomum siamense Criab.. including leaves, pseudostems, and rhizomes, collected from two sites in Doi Suthep-Pui National Park, Thailand. Endophytes were relatively common with an isolate prevalence of 70%-83% at the two sites sampled in the wet and dry seasons. The endophyte assemblages from the two sites were diverse and comprised 7 Ascomycetes and 26 mitosporic fungi. Colletotrichum \"gloeosporioides\" (Penz.) Penz. & Sacc. in Penz., Glomerella spp., xylariaceous fungi, and Phomopsis spp. were consistently dominant as endophytes on Amomum siamense, but many rare species and mycelia sterilia were also recorded. There was no significant difference between the number of isolates recovered from leaves containing vein tissues and those containing intervein tissues, independent of leaf age. Most taxa showed a preference for either leaf tissue or pseudostems. Two new Ascomycetes species. Gaeumannomyces amomi and Leiosphaerella amomi, were discovered from leaves and rhizomes, respectively, and four species of Pyricularia, including three new species, were isolated from leaves.",
+      "journal": "Canadian journal of microbiology",
+      "year": 2001,
+      "pub_date": "2001-10-01",
+      "authors": "Bussaban B; Lumyong S; Lumyong P; McKenzie E H; Hyde K D",
+      "first_author": "Bussaban B",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11571151",
+      "doi": "10.1128/AEM.67.10.4520-4530.2001",
+      "title": "Identification of bacteria in pasteurized zucchini purées stored at different temperatures and comparison with those found in other pasteurized vegetable purées.",
+      "abstract": "One hundred nineteen isolates from a commercial zucchini purée stored at 4, 10, and 20 to 25 degrees C were fingerprinted using repetitive sequence-based PCR (REP-PCR) and classified into 35 REP types. One representative isolate of each REP type was subsequently identified by API50CHB/20E profile and partial rrs gene sequence analysis. Nine REP types were misidentified by the API system. Strains were misidentified as being in the Bacillus circulans (group 2) API taxon or in taxa with a low number of positive API characters such as Brevibacillus brevis. A phylogenetic analysis pointed to one new species of Bacillus and three new species of Paenibacillus among the misidentified REP types. Bacterial components in zucchini purée were compared phenotypically with those obtained in previous work on broccoli, carrot, leek, potato, and split pea purées, based on simple matching coefficient and unweighted pair group method with averages cluster analysis. Out of 254 strains, 69 strains previously identified as B. circulans (group 2) or B. circulans/B. macerans/B. polymyxa were assigned to a new Paenibacillus taxon phylogenetically related to P. azotofixans. Storage conditions at 4 degrees C favored the development of \"B. macroides/B. maroccanus\" and Paenibacillus spp. in zucchini purées and Paenibacillus spp. in other purées. Storage conditions at 20 to 25 degrees C favored the development of B. subtilis group (B. licheniformis and B. subtilis) and B. cereus group strains. At 10 degrees C, Paenibacillus spp. were always present at high frequencies, whereas the occurrence of B. macroides/B. maroccanus (in zucchini purées), B. cereus, and B. pumilus varied with the experiment.",
+      "journal": "Applied and environmental microbiology",
+      "year": 2001,
+      "pub_date": "2001-10-01",
+      "authors": "Guinebretiere M H; Berge O; Normand P; Morris C; Carlin F; ... (+1)",
+      "first_author": "Guinebretiere M H",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11710615",
+      "doi": "10.1023/a:1012203222876",
+      "title": "Epicuticular hydrocarbon variation in Drosophila mojavensis cluster species.",
+      "abstract": "Epicuticular hydrocarbon variation was investigated among the three species of the Drosophila mojavensis cluster (D. mojavensis, D. arizonae, and D. navojoa) within the large D. repleta group. Because these hydrocarbons serve as contact pheromones in adult D. mojavensis, the chemical characteristics and differences in hydrocarbon profiles in populations of these three sibling species were further investigated. Twenty-seven hydrocarbon components with chain lengths ranging from C28 to C40, including n-alkanes, methyl-branched alkanes, n-alkenes, methyl-branched alkenes, and alkadienes were observed. Hydrocarbon profiles among the three species reared on different cactus hosts were easily aligned with previously identified components in D. mojavensis. Male and female D. navojoa possessed a 31-methyldotricont-6-ene absent in both D. arizonae and D. mojavensis, while lacking the 8,24-tritricontadiene present in these two species. D. navojoa adults had far less 2-methyloctacosane than these sibling species, but the significance of this difference was obscured by the degree of variation among populations in amounts of this hydrocarbon. Mainland and Baja California populations of D. mojavensis were fixed for differences in the amounts 8,24-tritricontadiene, 9,25-pentatricontadiene, and 9,27-heptatricontadiene, consistent with all previous studies. Amounts of 18 of the 27 hydrocarbon components were greater in flies reared on Opuntia cactus. Canonical discriminant function analysis resolved all three species into distinct, nonoverlapping groups, suggesting that epicuticular hydrocarbon profiles are species-specific in the D. mojavensis cluster. Based on the amounts of interpopulation variation in hydrocarbon profiles in these three species, we hypothesize that epicuticular hydrocarbon differences may evolve early during the formation of new species.",
+      "journal": "Journal of chemical ecology",
+      "year": 2001,
+      "pub_date": "2001-10-01",
+      "authors": "Etges W J; Jackson L L",
+      "first_author": "Etges W J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12018599",
+      "doi": "",
+      "title": "Aniptodera indica, a new species of mangrove inhabiting ascomycete from west coast of India.",
+      "abstract": "On decomposing mangrove leaves and woods collected from west coast of India, a new species of Aniptodera was encountered. Aniptodera indica sp. nov. differs from other members of the genus, as the ascospores possess single polar appendage. This new species is described, illustrated and compared with closely resembling species: Aniptodera chesapeakensis and A. juncicola.",
+      "journal": "Journal of environmental biology",
+      "year": 2001,
+      "pub_date": "2001-10-01",
+      "authors": "Ananda K; Sridhar K R",
+      "first_author": "Ananda K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11595797",
+      "doi": "10.1105/tpc.010085",
+      "title": "The disease resistance signaling components EDS1 and PAD4 are essential regulators of the cell death pathway controlled by LSD1 in Arabidopsis.",
+      "abstract": "Specific recognition of pathogens is mediated by plant disease resistance (R) genes and translated into a successful defense response. The extent of associated hypersensitive cell death varies from none to an area encompassing cells surrounding an infection site, depending on the R gene activated. We constructed double mutants in Arabidopsis between positive regulators of R function and a negative regulator of cell death, LSD1, to address whether genes required for normal R function also regulate the runaway cell death observed in lsd1 mutants. We report here that EDS1 and PAD4, two signaling genes that mediate some but not all R responses, also are required for runaway cell death in the lsd1 mutant. Importantly, this novel function of EDS1 and PAD4 is operative when runaway cell death in lsd1 is initiated through an R gene that does not require EDS1 or PAD4 for disease resistance. NDR1, another component of R signaling, also contributes to the control of plant cell death. The roles of EDS1 and PAD4 in regulating lsd1 runaway cell death are related to the interpretation of reactive oxygen intermediate-derived signals at infection sites. We further demonstrate that the fate of superoxide at infection sites is different from that observed at the leading margins of runaway cell death lesions in lsd1 mutants.",
+      "journal": "The Plant cell",
+      "year": 2001,
+      "pub_date": "2001-10-01",
+      "authors": "Rustérucci C; Aviv D H; Holt B F; Dangl J L; Parker J E",
+      "first_author": "Rustérucci C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

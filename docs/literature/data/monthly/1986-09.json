@@ -1,0 +1,33 @@
+{
+  "month": "1986-09",
+  "generated": "2026-07-13 02:59:42",
+  "total": 1,
+  "by_category": {
+    "New_Virus": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "16453700",
+      "doi": "10.1002/j.1460-2075.1986.tb04465.x",
+      "title": "Replication of in vitro constructed viroid mutants: location of the pathogenicity-modulating domain of citrus exocortis viroid.",
+      "abstract": "Sequence variants from field isolates of citrus exocortis viroid (CEV) that cause either mild or severe symptoms on tomato plants have previously been classified into two groups, A and B. These groups differ primarily in two domains, P(L) and P(R), of the proposed native structure. Infectivity studies with full-length cDNA clones of variants from each class have now directly confirmed the original correlation between Class A sequences and the severe phenotype and between Class B sequences and the mild phenotype. Direct evidence for this correlation could only be obtained by using individual sequence variants since field isolates of CEV have been shown to contain a mixture of RNA species. The construction and infectivity of chimaeric cDNA clones derived from mild and severe sequence variants of CEV has demonstrated that novel, infectious viroid molecules can be generated in vitro, and that P(L) is the pathogenicity-modulating domain. The role of the P(R) domain is not known but infectivity experiments with one chimaeric cDNA clone suggest that it may influence the efficiency of the infection or replication process of the viroid in the plant.",
+      "journal": "The EMBO journal",
+      "year": 1986,
+      "pub_date": "1986-09-01",
+      "authors": "Visvader Jane E; Symons Robert H",
+      "first_author": "Visvader Jane E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "citrus exocortis viroid (CEV)",
+      "taxonomy": "未提及",
+      "host_plant": "柑橘 (citrus), 番茄 (tomato)",
+      "location": "未提及",
+      "results": "证实A类序列与严重表型、B类与轻微表型相关；嵌合cDNA克隆证明P(L)是致病性调控域；P(R)可能影响侵染或复制效率。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

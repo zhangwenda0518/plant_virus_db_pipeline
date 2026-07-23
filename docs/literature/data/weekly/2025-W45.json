@@ -1,0 +1,238 @@
+{
+  "week": "2025-W45",
+  "start": "2025-11-03",
+  "end": "2025-11-09",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 29,
+  "by_category": {
+    "Control_Management": 10,
+    "Host_Virus_Interactions": 7,
+    "New_Virus": 7,
+    "Antiviral_Resistance_Genes": 6,
+    "Biotechnology_Applications": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "41123353",
+      "doi": "10.1021/acs.jafc.5c04723",
+      "title": "Development and Mechanism Study of Vanillin-Based α-Amino Phosphonates against Potato Virus Y.",
+      "abstract": "Potato virus Y (PVY) is among the top ten plant viruses globally, posing a significant threat to crop yield and quality. Current chemical control agents are limited in variety and offer suboptimal efficiency. To address this, we designed and synthesized a series of new vanillin-based α-amino phosphonate derivatives and evaluated their anti-PVY activities and underlying mechanisms. Among the tested compounds, C2 demonstrated the highest protective activity (EC50 = 198 μg/mL), outperforming existing agents such as ningnanmycin (NNM, EC50 = 537 μg/mL), dufulin (EC50 = 495 μg/mL), and vanisufane (EC50 = 210 μg/mL). The α-amino phosphonate moiety in C2 contributed to its enhanced protective and inactivating activities. Molecular docking revealed that C2 forms a hydrogen bond with arginine 188 (ARG188) in the PVY coat protein (CP). In vivo experiments confirmed the important role of ARG188 in PVY intercellular movement. By competitively binding to ARG188 and activating the plant immune response, C2 significantly reduced PVY pathogenicity. These findings highlight the potential of vanillin-based α-amino phosphonates as effective anti-PVY agents. Specifically, compound C2 binds to PVY CP ARG188 and impairs PVY mobility, stimulates host immunity, and suppresses viral proliferation, offering a promising foundation for the development of next-generation antiviral agrochemicals.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2025,
+      "pub_date": "2025-11-05",
+      "authors": "Qin Ya; Long Yuefei; Zhu Yunying; Zhao Lei; Song Qingwei; ... (+3)",
+      "first_author": "Qin Ya",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Potato virus Y (PVY)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41188705",
+      "doi": "10.1186/s12864-025-12139-y",
+      "title": "Transcriptomic profiling provides molecular insights into tolerance mechanisms in wheat to wheat streak mosaic virus (WSMV).",
+      "abstract": "BACKGROUND: Wheat curl mites (WCM) are arthropod pests that pose significant threats to wheat production by causing direct damage through feeding and transmitting viruses, such as wheat streak mosaic virus (WSMV), triticum mosaic virus (TriMV), and High Plains wheat mosaic virus (HPWMoV). Management of the WCM–WSMV disease complex has relied on strategies such as controlling volunteer wheat, delaying planting, and using wheat varieties resistant to the mite and the viruses. However, the emergence of virulent WCM populations and resistance-breaking isolates of WSMV underscores the urgent need to develop more diverse and durable sources of resistance. RESULTS: Over a two-year period of field screening, we found that a commercial wheat cultivar, Hatcher, with no known sources of resistance, consistently produced higher yields under high WSMV disease pressure, outperforming varieties that carry the WSMV and mite resistance genes. To investigate the mechanisms underlying the apparent tolerance in Hatcher, we compared its response to WCM and WSMV infection to a susceptible genotype, CO15D173R. Transcriptomic analysis revealed a nuanced interplay between plant defense and growth in Hatcher, with upregulation of genes related to jasmonic acid (JA), salicylic acid (SA), and abscisic acid (ABA) pathways, indicating a coordinated defense response. Notably, activation of lignin biosynthesis genes in Hatcher points to a potential role of cell wall strengthening in deterring WCM transmission of WSMV. Additionally, the regulation of genes involved in growth-related hormonal pathways, such as gibberellic acid (GA) and brassinosteroids (BR), highlights Hatcher’s ability to maintain growth under disease pressure. CONCLUSIONS: Our findings provide insight into the intricate network of phytohormones, growth-defense trade-offs, and cell wall modifications contributing to Hatcher’s potential tolerance to WCM and WSMV. This knowledge can inform the development of tolerant wheat varieties and enhance integrated pest management strategies, ultimately safeguarding wheat production.",
+      "journal": "BMC genomics",
+      "year": 2025,
+      "pub_date": "2025-11-04",
+      "authors": "Pingault Lise; Albrecht Tessa; Broders Kirk; Rushton Jennifer; Louis Joe; ... (+2)",
+      "first_author": "Pingault Lise",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "小麦条纹花叶病毒（WSMV）",
+      "taxonomy": "",
+      "host_plant": "小麦",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40981432",
+      "doi": "10.1128/spectrum.00797-25",
+      "title": "",
+      "abstract": "Rice blast disease, caused by Magnaporthe oryzae, is a major threat to global rice production, necessitating sustainable disease management strategies. Compared to chemical pesticides, biocontrol agents, such as beneficial microbe antagonists, offer a sustainable approach to naturally inhibit plant pathogens. This study evaluates the biocontrol potential of Bacillus subtilis UD1022 against M. oryzae through both direct antagonism and volatile-mediated inhibition. In dual culture assays, UD1022 significantly inhibited fungal growth. Furthermore, a stacking plate assay demonstrated that UD1022 produces volatile organic compounds (VOCs) that suppress fungal growth. Beyond vegetative growth inhibition, UD1022 also disrupted key infection processes of M. oryzae, notably reducing spore germination and appressorium formation. In planta assays revealed that UD1022-treated rice plants exhibited a substantial reduction in disease severity compared to untreated controls. This reduction correlated with the upregulation of key defense genes in the salicylic acid, jasmonic acid, and ethylene signaling pathways, suggesting that UD1022 primes systemic resistance in rice plants. These findings establish UD1022 as a potent biocontrol agent capable of suppressing M. oryzae through direct antagonism, VOC-mediated inhibition, and induction of systemic resistance. This study underscores the potential of UD1022 as an eco-friendly alternative to chemical fungicides for managing rice blast disease.IMPORTANCEMagnaporthe oryzae is a destructive fungal pathogen that causes rice blast disease, leading to significant yield losses and threatening global food security. Here, we investigated the biocontrol potential of Bacillus subtilis UD1022, a beneficial rhizobacterium known for its plant growth-promoting and antifungal properties. Our in vitro and in planta studies revealed that UD1022 suppresses M. oryzae through direct antagonism, VOC-mediated inhibition, and the induction of systemic resistance in rice. These findings demonstrate UD1022 as a promising candidate for microbial-based disease management and the role of beneficial bacteria in enhancing crop protection. This research contributes to the development of sustainable agricultural practices by leveraging naturally occurring microbes to improve plant resilience and disease resistance.",
+      "journal": "Microbiology spectrum",
+      "year": 2025,
+      "pub_date": "2025-11-04",
+      "authors": "Johnson Timothy; Kemmerer Lainey; Garcia Nalleli; Fernandez Jessie",
+      "first_author": "Johnson Timothy",
+      "categories": [
+        "Control_Management",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41038076",
+      "doi": "10.1016/j.chroma.2025.466422",
+      "title": "Characterisation of volatile organic compounds of kanuka (Kunzea ericoides) subcritical water extract: A comparative analysis.",
+      "abstract": "Kānuka (Kunzea ericoides) is a traditional medicinal plant enriched with volatile organic compounds (VOCs) with known antimicrobial, anti-inflammatory, myorelaxant, antiviral, and insecticidal properties. Despite its known bioactive properties, a comprehensive VOCs profile of kānuka remains unexplored. This study evaluated the efficiency of subcritical water extraction (SWE) in profiling kānuka leaf VOCs, using gas chromatography-mass spectrometry (GC-MS), and compared the results conventional extraction methodologies, including steam distillation (SD) and solvent extraction (SE). The data revealed that kānuka contains diverse compounds, including terpenes, alkanes, esters, ketones, and alkenes. SWE was more efficient due to its wide range of selectivity in recovering a large number of VOCs (103 compounds) at a lower temperature (120°C) and time (20 min). SD was more effective in recovering terpenes, whereas SE exhibited limited selectivity for alkane groups. SWE facilitated the chemical transformation of compounds, including decarboxylation and hydroxylation, as the temperature increased and the recovery of oxygenated terpenes, alkanes, and ester derivatives. It indicates that SWE provides efficient extraction and induces structural modifications, which are beneficial for enhancing the biological properties. This study highlights the broad compound selectivity of SWE and its compatibility with GC-MS analysis. Additionally, it provides insights into method optimisation for chromatographic profiling of VOCs and supports the development of sustainable extraction methodologies for bioactive compound characterisation that focuses on industrial applications in the pharmaceutical, cosmetic, and food sectors.",
+      "journal": "Journal of chromatography. A",
+      "year": 2025,
+      "pub_date": "2025-11-08",
+      "authors": "Devadass Indhuja; Swift Simon; Baroutian Saeid",
+      "first_author": "Devadass Indhuja",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41004242",
+      "doi": "10.1128/aac.00527-25",
+      "title": "A nitrogen-containing diphyllin derivative C156-P1 exhibited broad-spectrum antiviral activity against ",
+      "abstract": "Dengue virus (DENV) represents a significant public health threat, with its four serotypes estimated to account for approximately 96 million symptomatic infections annually. Currently, there are no antiviral agents available for the prevention or treatment of DENV infection. Here, we initially screened 12 diphyllin derivatives and identified C156-P1, a nitrogen-containing compound, as a potent agent against DENV infection. Further, C156-P1 exhibited inhibitory effects against the viruses of the Flaviviridae family, including four serotypes of DENV (DENV-1 to DENV-4) in multiple human and monkey cell lines, as well as Zika virus, Japanese encephalitis virus, yellow fever virus, and hepatitis C virus. In addition, C156-P1 also showed inhibition of the infections of herpes simplex virus type 1 and vesicular stomatitis virus, but not adenovirus and Sendai virus. Mechanistic studies demonstrated that C156-P1 inhibited DENV-2 after cell entry but before the endosomal membrane fusion step. C156-P1 inhibited vacuolar-type ATPase activity by perturbing the expression of ATP6V0A2 subunit, thereby suppressing endosomal acidification. Consequently, DENV was restricted in the late endosome, inhibiting virus fusion with endosomal membranes and resulting in infection inhibition. C156-P1 treatment also suppressed both IFN-I responses and endosomal TLR3 activation induced by DENV-2 infection. Furthermore, administration of C156-P1 in AG129 mice significantly reduced DENV-2 infection and effectively increased the survival rate of the mice. Taken together, our study demonstrates that the novel nitrogen-containing diphyllin derivative C156-P1 functions as a broad-spectrum antiviral agent by inhibiting endosomal acidification, thus representing a promising host-targeting antiviral candidate for future development.",
+      "journal": "Antimicrobial agents and chemotherapy",
+      "year": 2025,
+      "pub_date": "2025-11-05",
+      "authors": "Chen Guoquan; Li Wanfei; Lam Ka Hei; Hu Mingyue; Wu Qian; ... (+10)",
+      "first_author": "Chen Guoquan",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41076556",
+      "doi": "10.1016/j.molp.2025.10.006",
+      "title": "Reversible S-acylation of BONZAI1 orchestrates the internalization of immune receptors to balance plant development and immunity.",
+      "abstract": "Plants have developed a multi-layered immune system to cope with pathogens. The receptors on the plasma membrane are controlled by endocytosis to modulate immune signaling, but the regulatory mechanisms of endocytosis in this process remain largely unclear. Here, we uncover that reversible S-acylation of BONZAI1 (BON1), a conserved copine-family protein that regulates development-immunity balance in Arabidopsis, contributes to the accurate control of endocytosis. BON1 is targeted by S-acylation, a type of protein lipidation, for its localization on the plasma membrane and its function in development and immunity. Furthermore, the S-acylation status of BON1 affects its association with the light-chain clathrin subunit CLC3 and regulates endocytosis. Specifically, PAT14 facilitates the S-acylation of BON1, while ABAPT11 mediates its de-S-acylation. Physiological levels of reversible S-acylation of BON1 are essential for endocytosis and the internalization of immune receptors. Interestingly, salicylic acid enhances ABAPT11-dependent de-S-acylation of BON1 to amplify immune signaling. Collectively, our study reveals that reversible S-acylation of BON1 precisely regulates immune receptor internalization for balancing plant development and immunity, providing potential targets that may be used to improve crop yields and disease resistance.",
+      "journal": "Molecular plant",
+      "year": 2025,
+      "pub_date": "2025-11-03",
+      "authors": "Liu Xiaoshi; Wang Zhiying; Li Shihui; Li Panpan; Yuan Meiqi; ... (+10)",
+      "first_author": "Liu Xiaoshi",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41204385",
+      "doi": "10.1186/s40851-025-00254-3",
+      "title": "Integrative taxonomy of the genus Longidorus (Nematoda: Longidoridae) reveals two new species in the Mediterranean Basin.",
+      "abstract": "The needle nematode genus Longidorus comprises approximately 194 species of polyphagous plant ectoparasites distributed worldwide, some of which serve as vectors for plant viruses. However, the high species diversity and conserved morphology of these nematodes pose significant challenges for accurate identification of species. To address this issue, we conducted an integrative taxonomic study across 264 sites in major olive-growing regions (Greece, Morocco, Italy, Portugal, and Spain) of the Mediterranean Basin, including nearby patches of natural vegetation. Herein, we describe two new species, Longidorus olearum sp. nov. and Longidorus morocciensis sp. nov., and report Longidorus oakgracilis in Portugal for the first time. We performed a comprehensive study that integrates morphological and morphometric traits with molecular data from nuclear ribosomal RNA (rRNA) genes (D2-D3 expansion segments of 28 S, ITS1, and partial 18 S) and a mitochondrial DNA (mtDNA) marker, specifically the Cytochrome c oxidase subunit I (COI). The results of our phylogenetic analyses provided robust support for the delimitation of the newly described species, L. olearum sp. nov. and L. morocciensis sp. nov., and further clarified of three previously recognized species within the genus: L. magnus, L. oakgracilis, and L. vineacola. Phylogenetic relationships inferred from ribosomal and mitochondrial markers revealed that the majority of Longidorus species from the Mediterranean Basin clustered within subclades of Clade I. The phylogenetic placement of these species demonstrated strong congruence across lineages, corroborating previous studies on the genus. These findings contribute to a broader understanding of Longidorus biodiversity in the Mediterranean region and highlight the need for further intensive and wide-ranging nematological surveys.",
+      "journal": "Zoological letters",
+      "year": 2025,
+      "pub_date": "2025-11-07",
+      "authors": "Salazar-García Rosana; Palomares-Rius Juan E; Bajoub Aadil; Ajal El Amine; Ouled-Bouallala Idriss; ... (+3)",
+      "first_author": "Salazar-García Rosana",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41199576",
+      "doi": "10.1017/S0022149X25100862",
+      "title": "Morphological and molecular characterisations of ",
+      "abstract": "The genus Aphelenchoides Fischer, 1894, encompasses nearly 200 species with significant ecological and economic importance, yet its taxonomy remains complex due to morphological similarities among species and limited molecular data. In this study, we describe a new species, Aphelenchoides vinhphucensis sp. n., collected from the rhizosphere of rice (Oryza sativa L.) in Vinh Phuc Province, Vietnam. The new species is distinguished by its morphological characteristics, including a slender stylet (9.6-12.7 μm), distinct lateral fields with four lines, a conical tail with a pointed mucro, and a well-developed post-uterine sac. Males feature three pairs of caudal papillae and arcuate spicules. Scanning electron microscopy provided detailed insights into surface features, complementing light microscopy observations. Molecular analyses of the D2-D3 regions of 28S rRNA and 18S rRNA supported the distinct phylogenetic placement of Aphelenchoides vinhphucensis sp. n., differentiating it from closely related species. Bayesian phylogenetic analysis confirmed its divergence, contributing to our understanding of biodiversity of the genus Aphelenchoides. This integrative approach highlights the importance of combining classical morphological methods with modern molecular tools for accurate species identification. The discovery of Aphelenchoides vinhphucensis sp. n. underscores the nematode diversity in Vietnam, especially those associated with rice cultivation.",
+      "journal": "Journal of helminthology",
+      "year": 2025,
+      "pub_date": "2025-11-07",
+      "authors": "Le A H; Le L T M; Nguyen D T; Nguyen T H; Trinh P Q",
+      "first_author": "Le A H",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41225913",
+      "doi": "10.3390/plants14213364",
+      "title": "Diversity Patterns and a New Species of ",
+      "abstract": "To systematically investigate the diversity and distribution patterns of Dendrocalamus in Yunnan Province, we integrated field surveys, literature reviews, specimen records, and existing research data to compile and analyze the distribution of Dendrocalamus species across the region. The results revealed the following: (1) A total of 3730 valid distribution points were compiled, representing 38 taxa of Dendrocalamus (including 32 species, 3 varieties, and 3 forms), reflecting remarkably high species diversity. These account for approximately 52% (38/73) of the global species and 69% (38/55) of those recorded in China. (2) Horizontal Distribution Pattern: In terms of distribution points, Pu'er had the highest count (929), followed by Xishuangbanna (759) and Lincang (586). Honghe, Wenshan, and Dehong also showed substantial records. Regarding species richness, Xishuangbanna ranked highest with over 20 species, while Pu'er and Honghe contained 15-20 species. Yuxi and Kunming supported 10-15 species, and Baoshan, Nujiang, Chuxiong, Wenshan, Qujing, and Zhaotong each hosted 5-10 species. In contrast, Dali, Lijiang, and Diqing recorded only 0-5 species. (3) Vertical Distribution Pattern: Distribution points were predominantly concentrated in the 1000-1500 m elevation range, whereas species richness peaked in the 500-1000 m band. Both the number of distribution points and species richness were lowest at elevations above 2500 m. (4) Based on the collected 3730 distribution points, kernel density analysis and hot spot analysis (Getis-Ord Gi*) were performed in ArcGIS 10.8. Both analyses indicated that southern Yunnan (centered on Xishuangbanna and Pu'er) exhibits significant spatial clustering characteristics, identifying it as the core distribution area for Dendrocalamus species in Yunnan Province. (5) During field surveys, a distinctive new species characterized by swollen internodes was discovered. Morphological comparison and phylogenetic analysis confirmed it as a new species of Dendrocalamus and named Dendrocalamus turgidinodis C.M.Hui, M.S.Sun & J.W.Li, it is similar to D. hamiltonii, D. fugongensis, and D. sinicus, but can be easily distinguished by culm diameter 13-16 cm, intranode swollen, culm leaf sheath deciduous, culm blade erect, culm leaf ligule ca. 5 mm tall., Foliage leaf ligule 1-1.5 mm tall (vs. 1.5-2 mm). In conclusion, this study demonstrates that Yunnan Province serves as a major distribution center for Dendrocalamus, with the genus primarily distributed from the southeastern to southwestern parts of the region, and concentrated most densely in the southern area encompassing Xishuangbanna and Pu'er.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-11-03",
+      "authors": "Li Jianwei; Sun Maosheng; Qin Wanling; Bao Haofeng; Hui Chaomao; ... (+1)",
+      "first_author": "Li Jianwei",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42407767",
+      "doi": "10.11646/zootaxa.5717.1.4",
+      "title": "",
+      "abstract": "A new species of Coriophagus Kinzelbach (Strepsiptera: Halictophagidae) is herein described from West Bengal, India, raising the total number of Indian representatives of the genus to three. Coriophagus bulbosussp. nov. is distinguished from its congeners by a combination of unique morphological traits, with its taxonomic status further corroborated through DNA barcoding. A tentative phylogenetic hypothesis for the genus, based on adult male morphology, is provided, alongside a revised global identification key to adult males. Additionally, we report a novel host association: the mango leafhopper Idioscopus nitidulus (Walker, 1870) (Hemiptera: Cicadellidae), found parasitised by C. chaudhuri Hui, Mukherjee & Hazra, 2023.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-11-04",
+      "authors": "Hui Poulami; Hazra Niladri",
+      "first_author": "Hui Poulami",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

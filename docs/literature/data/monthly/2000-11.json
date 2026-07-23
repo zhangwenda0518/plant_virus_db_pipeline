@@ -1,0 +1,282 @@
+{
+  "month": "2000-11",
+  "generated": "2026-07-13 02:59:42",
+  "total": 18,
+  "by_category": {
+    "Host_Virus_Interactions": 6,
+    "New_Virus": 4,
+    "Transmission_Epidemiology": 4,
+    "Antiviral_Resistance_Genes": 4,
+    "Control_Management": 1,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "11137170",
+      "doi": "10.1016/s0168-1702(00)00196-9",
+      "title": "A century of plant virus management in the Salinas valley of California, 'East of Eden'.",
+      "abstract": "The mild climate of the Salinas Valley, CA lends itself well to a diverse agricultural industry. However, the diversity of weeds, crops and insect and fungal vectors also provide favorable conditions for plant virus disease development. This paper considers the incidence and management of several plant viruses that have caused serious epidemics and been significant in the agricultural development of the Salinas Valley during the 20th century. Beet curly top virus (BCTV) almost destroyed the newly established sugarbeet industry soon after its establishment in the 1870s. A combination of resistant varieties, cultural management of beet crops to provide early plant emergence and development, and a highly coordinated beet leafhopper vector scouting and spray programme have achieved adequate control of BCTV. These programmes were first developed by the USDA and still operate. Lettuce mosaic virus was first recognized as causing a serious disease of lettuce crops in the 1930s. The virus is still a threat but it is controlled by a lettuce-free period in December and a seed certification programme that allows only seed lots with less than one infected seed in 30000 to be grown. 'Virus Yellows' is a term used to describe a complex of yellows inducing viruses which affect mainly sugarbeet and lettuce. These viruses include Beet yellows virus and Beet western yellows virus. During the 1950s, the complex caused significant yield losses to susceptible crops in the Salinas Valley. A beet-free period was introduced and is still used for control. The fungus-borne rhizomania disease of sugarbeet caused by Beet necrotic yellow vein virus was first detected in Salinas Valley in 1983. Assumed to have been introduced from Europe, this virus has now become widespread in California wherever beets are grown and crop losses can be as high as 100%. Movement of infested soil and beets accounts for its spread throughout the beet-growing regions of the United States. Control of rhizomania involves several cultural practices, but the use of resistant varieties is the most effective and is necessary where soils are infested. Rhizomania-resistant varieties are now available that perform almost as well as the non-resistant varieties under non-rhizomania conditions. Another soil-borne disease termed lettuce dieback, caused by a tomato bushy stunt-like tombusvirus, has become economically limiting to romaine and leaf lettuce varieties. The virus has no known vector and it seems to be moved through infested soil and water. Heavy rains in the past 4 years have caused flooding of the Salinas River and lettuce fields along the river have been affected severely by dieback. Studies are now in progress to characterize this new virus and identify sources of resistance. Agriculture in the Salinas Valley continues to grow and diversify, driven by demands for 'clean', high quality food by the American public and for export. The major aspects of plant virus control, including crop-free periods, breeding for resistance, elimination of inoculum sources, and vector control will continue to be vital to this expansion. Undoubtedly, the advances in crop production through genetic manipulation and advances in pest management through biological control will eventually become an important part of agricultural improvement.",
+      "journal": "Virus research",
+      "year": 2000,
+      "pub_date": "2000-11-01",
+      "authors": "Wisler G C; Duffus J E",
+      "first_author": "Wisler G C",
+      "categories": [
+        "Control_Management",
+        "New_Virus",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "甜菜曲顶病毒、莴苣花叶病毒、甜菜黄化病毒、甜菜西方黄化病毒、甜菜坏死黄脉病毒、番茄丛矮类病毒",
+      "taxonomy": "",
+      "host_plant": "甜菜、莴苣（罗马生菜、叶用莴苣）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11137158",
+      "doi": "10.1016/s0168-1702(00)00184-2",
+      "title": "The ecology of Cucumber mosaic virus and sustainable agriculture.",
+      "abstract": "An account is given of the ecology of Cucumber mosaic virus (CMV) as a pertinent example of how a virus can affect the sustainability of an important crop. It is now generally accepted that the technologies used in modern agriculture should ensure that production systems are operated in such a way that the quality of the produce is maintained year after year without causing degradation of the environment. Recent experiences in countries of the Mediterranean basin demonstrate that the benefits expected from the introduction of new and highly productive plant varieties may be quickly eroded by the concomitant introduction of new virus strains which can greatly change the structure of the resident virus population. Quarantine inspection of plant propagules and genetic engineering are suggested as powerful tools to help achieve sustainability.",
+      "journal": "Virus research",
+      "year": 2000,
+      "pub_date": "2000-11-01",
+      "authors": "Gallitelli D",
+      "first_author": "Gallitelli D",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cucumber mosaic virus (CMV)",
+      "taxonomy": "Bromoviridae, Cucumovirus",
+      "host_plant": "未提及",
+      "location": "地中海盆地",
+      "results": "讨论了CMV生态学与可持续农业的关系，指出植物检疫和基因工程有助于实现可持续性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11056538",
+      "doi": "10.1038/35041072",
+      "title": "Function of microtubules in intercellular transport of plant virus RNA.",
+      "abstract": "Cell-to-cell progression of tobacco mosaic virus (TMV) infection in plants depends on virus-encoded movement protein (MP). Here we show that a conserved sequence motif in tobamovirus MPs shares similarity with a region in tubulins that is proposed to mediate lateral contacts between microtubule protofilaments. Point mutations in this motif confer temperature sensitivity to microtubule association and viral-RNA intercellular-transport functions of the protein, indicating that MP-interacting microtubules are functionally involved in the transport of vRNA to plasmodesmata. Moreover, we show that MP interacts with microtubule-nucleation sites. Together, our results indicate that MP may mimic tubulin assembly surfaces to propel vRNA transport by a dynamic process that is driven by microtubule polymerization.",
+      "journal": "Nature cell biology",
+      "year": 2000,
+      "pub_date": "2000-11-01",
+      "authors": "Boyko V; Ferralli J; Ashby J; Schellenbaum P; Heinlein M",
+      "first_author": "Boyko V",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "烟草花叶病毒 (Tobacco mosaic virus, TMV)",
+      "taxonomy": "烟草花叶病毒属 (Tobamovirus)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11078509",
+      "doi": "10.1073/pnas.230334397",
+      "title": "Virus-encoded suppressor of posttranscriptional gene silencing targets a maintenance step in the silencing pathway.",
+      "abstract": "Certain plant viruses encode suppressors of posttranscriptional gene silencing (PTGS), an adaptive antiviral defense response that limits virus replication and spread. The tobacco etch potyvirus protein, helper component-proteinase (HC-Pro), suppresses PTGS of silenced transgenes. The effect of HC-Pro on different steps of the silencing pathway was analyzed by using both transient Agrobacterium tumefaciens-based delivery and transgenic systems. HC-Pro inactivated PTGS in plants containing a preexisting silenced beta-glucuronidase (GUS) transgene. PTGS in this system was associated with both small RNA molecules (21-26 nt) corresponding to the 3' proximal region of the transcribed GUS sequence and cytosine methylation of specific sites near the 3' end of the GUS transgene. Introduction of HC-Pro into these plants resulted in loss of PTGS, loss of small RNAs, and partial loss of methylation. These results suggest that HC-Pro targets a PTGS maintenance (as opposed to an initiation or signaling) component at a point that affects accumulation of small RNAs and methylation of genomic DNA.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2000,
+      "pub_date": "2000-11-21",
+      "authors": "Llave C; Kasschau K D; Carrington J C",
+      "first_author": "Llave C",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草蚀纹病毒",
+      "taxonomy": "",
+      "host_plant": "烟草",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30832179",
+      "doi": "10.1094/PDIS.2000.84.11.1250C",
+      "title": "Whitefly Transmission of Sweetpotato chlorotic stunt virus.",
+      "abstract": "The genus Crinivirus of the plant virus family Closteroviridae include members that are bipartite and whitefly-transmitted (2). The Crinivirus, Sweetpotato chlorotic stunt virus (SPCSV), was described from sweetpotato (Ipomoea batatas) in Nigeria (1). Vector transmission studies of SPCSV were conducted using two whitefly species, the sweetpotato whitefly (Bemisia tabaci biotype B) and the bandedwinged whitefly (Trialeurodes abutilonea). Whitefly colonies were reared in the laboratory on cotton plants in plexiglass cages. To evaluate transmission efficiency, single whiteflies were used in all experiments. Whiteflies were given 2-day acquisition access periods on I. batatas cv. White Bunch co-infected with SPCSV and Sweetpotato feathery mottle virus (SPFMV). Single whiteflies were then placed on individual healthy I. nil cv. Scarlet O'Hara seedlings for 2-day inoculation access periods. Plants then were sprayed with imidacloprid insecticide and placed in the greenhouse. Four independent tests were performed with each whitefly species. Seven to 10 days after exposing test plants to B. tabaci, 6 of 35, 4 of 28, 5 of 30, and 3 of 25 I. nil plants showed symptoms that consisted of leaf distortion and yellowing. In similar experiments conducted with T. abutilonea, 1 of 33, 0 of 32, 1 of 30, and 2 of 28 I. nil plants showed symptoms. Two weeks after inoculations, reverse transcription- polymerase chain reaction assays were performed with all 22 symptomatic and five randomly selected symptomless plants using primers that amplify the SPCSV heat shock protein 70 (HSP70) homolog gene fragment (446 bp). All 22 symptomatic plants were positive while the five symptomless plants tested were negative. Lower transmission rates were obtained with T. abutilonea (3.2%) when compared with B. tabaci (15.2%). These two whiteflies are present in sweetpotato fields in Louisiana and may play an important role in the spread of SPCSV. This represents the first report of transmission of SPCSV by the bandedwinged whitefly References: (1) S. Winter et al. Phytopathology 82:869-875, 1992. (2) G. C. Wisler et al. Plant Dis. 82:270-280, 1998.",
+      "journal": "Plant disease",
+      "year": 2000,
+      "pub_date": "2000-11-01",
+      "authors": "Sim J; Valverde R A; Clark C A",
+      "first_author": "Sim J",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Sweetpotato chlorotic stunt virus (SPCSV)",
+      "taxonomy": "",
+      "host_plant": "甘薯（Ipomoea batatas）和牵牛（Ipomoea nil）",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11137172",
+      "doi": "10.1016/s0168-1702(00)00198-2",
+      "title": "Mitigating epidemics caused by non-persistently transmitted aphid-borne viruses: the role of the pliant environment.",
+      "abstract": "Using Soybean mosaic virus as a model system, the rate, magnitude and timing of epidemics caused by non-persistently transmitted, aphid-borne viruses are examined under various field conditions. Emphasis is placed on the behavioural responses of vectors to environmental cues, although all three biotic components (host plant, vector and virus) are considered. Both single and double manipulations of the cropping system environment are explored using a computer model developed earlier by Ruesink and Irwin (Plant Virus Epidemics: Monitoring, Modelling and Predicting Outbreaks.",
+      "journal": "Virus research",
+      "year": 2000,
+      "pub_date": "2000-11-01",
+      "authors": "Irwin M E; Ruesink W G; Isard S A; Kampmeier G E",
+      "first_author": "Irwin M E",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "大豆花叶病毒",
+      "taxonomy": "",
+      "host_plant": "大豆",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11073452",
+      "doi": "10.1126/science.290.5494.1151",
+      "title": "The evolutionary fate and consequences of duplicate genes.",
+      "abstract": "Gene duplication has generally been viewed as a necessary source of material for the origin of evolutionary novelties, but it is unclear how often gene duplicates arise and how frequently they evolve new functions. Observations from the genomic databases for several eukaryotic species suggest that duplicate genes arise at a very high rate, on average 0.01 per gene per million years. Most duplicated genes experience a brief period of relaxed selection early in their history, with a moderate fraction of them evolving in an effectively neutral manner during this period. However, the vast majority of gene duplicates are silenced within a few million years, with the few survivors subsequently experiencing strong purifying selection. Although duplicate genes may only rarely evolve new functions, the stochastic silencing of such genes may play a significant role in the passive origin of new species.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 2000,
+      "pub_date": "2000-11-10",
+      "authors": "Lynch M; Conery J S",
+      "first_author": "Lynch M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11155998",
+      "doi": "10.1099/00207713-50-6-2207",
+      "title": "Taxonomic characterization of Ochrobactrum sp. isolates from soil samples and wheat roots, and description of Ochrobactrum tritici sp. nov. and Ochrobactrum grignonense sp. nov.",
+      "abstract": "A large collection of bacterial strains, immunotrapped from soil and from the wheat rhizoplane, was subjected to polyphasic taxonomy by examining various pheno- and genotypic parameters. Strains were grouped on (inter) repetitive extragenic palindromic DNA (REP) PCR profiles at the intraspecies level. Pheno- and genotypic characters were assessed for representatives from 13 different REP groups. Strains of nine REP groups constituting two physiological BIOLOG clusters fell in the coherent DNA-DNA reassociation group of Ochrobactrum anthropi. Strains of two REP groups constituting a separate BIOLOG cluster fell in the coherent DNA-DNA reassociation group of Ochrobactrum intermedium. Additional phenotypic characters differentiating O. anthropi and O. intermedium were found. REP group K strains constituted a different BIOLOG cluster, a separate DNA-DNA reassociation group and a distinct phylogenetic lineage in 165 rDNA homology analysis, indicating that REP group K strains represent a new species. Diagnostic phenotypic characters were found. Closest relatives were Ochrobactrum species. The name Ochrobactrum grignonense sp. nov. is proposed (type strain OgA9aT = LMG 18954T = DSM 13338T). REP group J strains again constituted a different BIOLOG cluster, a separate DNA-DNA reassociation group and showed, as a biological particularity, a strict preference for the rhizoplane as habitat. Diagnostic phenotypic characters were found. This indicated that REP group J strains represent a further new species, although phylogenetic analyses using 16S rDNA homology were not able to separate the cluster of REP group J sequences significantly from 16S rDNA sequences of Ochrobactrum anthropi. The name Ochrobactrum tritici sp. nov. is proposed (type strain SCII24T = LMG 18957T = DSM 13340T).",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2000,
+      "pub_date": "2000-11-01",
+      "authors": "Lebuhn M; Achouak W; Schloter M; Berge O; Meier H; ... (+3)",
+      "first_author": "Lebuhn M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11078510",
+      "doi": "10.1073/pnas.230361597",
+      "title": "Subgenome chromosome walking in wheat: a 450-kb physical contig in Triticum monococcum L. spans the Lr10 resistance locus in hexaploid wheat (Triticum aestivum L.).",
+      "abstract": "For many agronomically important plant genes, only their position on a genetic map is known. In the absence of an efficient transposon tagging system, such genes have to be isolated by map-based cloning. In bread wheat Triticum aestivum, the genome is hexaploid, has a size of 1.6 x 10(10) bp, and contains more than 80% of repetitive sequences. So far, this genome complexity has not allowed chromosome walking and positional cloning. Here, we demonstrate that chromosome walking using bacterial artificial chromosome (BAC) clones is possible in the diploid wheat Triticum monococcum (A(m) genome). BAC end sequences were mostly repetitive and could not be used for the first walking step. New probes corresponding to rare low-copy sequences were efficiently identified by low-pass DNA sequencing of the BACs. Two walking steps resulted in a physical contig of 450 kb on chromosome 1A(m)S. Genetic mapping of the probes derived from the BAC contig demonstrated perfect colinearity between the physical map of T. monococcum and the genetic map of bread wheat on chromosome 1AS. The contig genetically spans the Lr10 leaf rust disease resistance locus in bread wheat, with 0.13 centimorgans corresponding to 300 kb between the closest flanking markers. Comparison of the genetic to physical distances has shown large variations within 350 kb of the contig. The physical contig can now be used for the isolation of the orthologous regions in bread wheat. Thus, subgenome chromosome walking in wheat can produce large physical contigs and saturate genomic regions to support positional cloning.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2000,
+      "pub_date": "2000-11-21",
+      "authors": "Stein N; Feuillet C; Wicker T; Schlagenhauf E; Keller B",
+      "first_author": "Stein N",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11090206",
+      "doi": "10.1105/tpc.12.11.2019",
+      "title": "A telomeric avirulence gene determines efficacy for the rice blast resistance gene Pi-ta.",
+      "abstract": "Genetic mapping showed that the rice blast avirulence gene AVR-Pita is tightly linked to a telomere on chromosome 3 in the plant pathogenic fungus Magnaporthe grisea. AVR-Pita corresponds in gene-for-gene fashion to the disease resistance (R) gene Pi-ta. Analysis of spontaneous avr-pita(-) mutants indicated that the gene is located in a telomeric 6.5-kb BglII restriction fragment. Cloning and DNA sequencing led to the identification of a candidate gene with features typical of metalloproteases. This gene is located entirely within the most distal 1.5 kb of the chromosome. When introduced into virulent rice pathogens, the cloned gene specifically confers avirulence toward rice cultivars that contain Pi-ta. Frequent spontaneous loss of AVR-Pita appears to be the result of its telomeric location. Diverse mutations in AVR-Pita, including point mutations, insertions, and deletions, permit the fungus to avoid triggering resistance responses mediated by Pi-ta. A point mutation in the protease consensus sequence abolishes the AVR-Pita avirulence function.",
+      "journal": "The Plant cell",
+      "year": 2000,
+      "pub_date": "2000-11-01",
+      "authors": "Orbach M J; Farrall L; Sweigard J A; Chumley F G; Valent B",
+      "first_author": "Orbach M J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11059490",
+      "doi": "10.1094/MPMI.2000.13.11.1237",
+      "title": "Crg, a gene required for Ur-3-mediated rust resistance in common bean, maps to a resistance gene analog cluster.",
+      "abstract": "Race-specific resistance to the bean rust pathogen (Uromyces appendiculatus) is provided by a number of loci in common bean (Phaseolus vulgaris). The Ur-3 locus controls hypersensitive resistance (HR) to 44 of the 89 races curated in the United States. To better understand resistance mediated by this locus, we developed new genetic material for analysis. We developed a population of mutagenized seed of cv. Sierra (genotype = Ur-3 ur-4 ur-6) that was screened with a bean rust race that is normally incompatible (HR response) on Ur-3 genotypes. We discovered two mutants of common bean, crg and ur3-delta3, in which uredinia formed on leaves (a compatible interaction) following infection. The F1 generation from a cross of these two mutants expressed the HR response, and the F2 generation segregated in a ratio of 9:7 (HR/uredinia formation). Therefore, the two genes are unlinked. Further genetic analysis determined that the mutation in ur3-delta3 was in the Ur-3 locus, and the mutation in crg was in a newly discovered gene given the symbol Crg (Complements resistance gene). Each mutation was inherited in a recessive manner. Unlike ur3-delta3, crg expressed reduced compatibility to bean rust races 49 and 47 that are normally fully compatible on genotypes, such as Sierra, that are homozygous recessive at the Ur-4 and Ur-6 loci. This suggests a gene mutated in crg is normally a positive compatibility factor for the bean-bean rust interaction. Polymerase chain reaction analysis of crg with primers to common bean resistance gene analogs (RGA) that contain a nucleotide-binding site sequence similar to those found in a number of plant disease resistance genes revealed that crg is missing the SB1 RGA, but not the linked SB3 and SB5 RGAs. Genetic analyses revealed that Crg cosegregates with the SB1 RGA. These results demonstrate that Crg is located near a RGA cluster in the common bean genome.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 2000,
+      "pub_date": "2000-11-01",
+      "authors": "Kalavacharia V; Stavely J R; Myers J R; McClean P E",
+      "first_author": "Kalavacharia V",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754782",
+      "doi": "10.1007/s002990000244",
+      "title": "Vital staining of plant cell suspension cultures: evaluation of the phytotoxic activity of the phytotoxins phomalide and destruxin B.",
+      "abstract": "A cell suspension culture assay to determine the phytotoxicity of the fungal toxins phomalide, a host-selective toxin produced by the fungus Phoma lingam (Tode ex Fr.) Desm., perfect stage Leptosphaeria maculans (Desm.) Ces. et de Not., and destruxin B, the major host-selective toxin produced by the fungus Alternaria brassicae (Berk.) Sacc., was carried out with three Brassica spp. It was established that phomalide was significantly less phytotoxic to Cutlass (Brassica juncea), the cultivar resistant to L. maculans, than to Westar (B. napus), the cultivar susceptible to L. maculans, at concentrations ≤2×10-5  M. Similar to phomalide, destruxin B, at concentrations ≤5×10-5  M, decreased the viability of cells of the cultivar resistant to A. brassicae (Ochre, Sinapis alba) less than the viability of cells of the susceptible cultivar (Westar, B. napus). Considering the high selectivity of phomalide and its direct correlation with plant disease resistance, phomalide may have great potential application in breeding programs screening/selecting for blackleg resistance in brassicas.",
+      "journal": "Plant cell reports",
+      "year": 2000,
+      "pub_date": "2000-11-01",
+      "authors": "Pedras M S C; Biesenthal C J",
+      "first_author": "Pedras M S C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

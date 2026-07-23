@@ -1,0 +1,242 @@
+{
+  "week": "2025-W51",
+  "start": "2025-12-15",
+  "end": "2025-12-21",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 32,
+  "by_category": {
+    "Host_Virus_Interactions": 12,
+    "Antiviral_Resistance_Genes": 8,
+    "Control_Management": 7,
+    "New_Virus": 4,
+    "Biotechnology_Applications": 2,
+    "Viral_Diversity_Ecology": 2,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "40966092",
+      "doi": "10.1016/j.xpro.2025.104094",
+      "title": "Protocol for triggering plant gene silencing by viral delivery of short RNA.",
+      "abstract": "Virus-induced gene silencing (VIGS) leverages viral vectors to deliver 200-400-nt inserts targeting specific genes. Here, we present a protocol for triggering gene silencing by virus-delivered short RNA inserts (vsRNAi). We describe steps for designing 32-nt vsRNAi that simultaneously target Nicotiana benthamiana homeologous genes involved in chlorophyll biosynthesis and assembling them into JoinTRV, a vector system based on tobacco rattle virus (TRV). This approach results in robust gene silencing phenotypes, including visible leaf yellowing and reduced chlorophyll levels. For complete details on the use and execution of this protocol, please refer to García et al.1.",
+      "journal": "STAR protocols",
+      "year": 2025,
+      "pub_date": "2025-12-19",
+      "authors": "García Arcadio; Aragonés Verónica; Ortiz-García Paloma; Daròs José-Antonio; Pasin Fabio",
+      "first_author": "García Arcadio",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "烟草脆裂病毒（TRV）",
+      "taxonomy": "",
+      "host_plant": "本氏烟",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41321643",
+      "doi": "10.1016/j.isci.2025.113914",
+      "title": "Sulfonamine-containing aurone derivatives act as inhibitors of intercellular movement of potato virus Y.",
+      "abstract": "Intercellular movement plays an important role in plant virus infection and transmission, which provides an opportunity for antiviral agents that interfere with the intercellular motion. However, there are still few compounds that directly interfere with the movement of viruses between cells. Herein, a series of aurone derivatives containing sulfonamide active groups were designed and synthesized. Among them, compound D13 effectively inhibits virus infection by forming a stable hydrogen bond with Pro154 (P154) of potato virus Y (PVY) coat protein (CP). Further studies have shown that D13 can effectively interfere with the process of P154-mediated viral intercellular trafficking in plasmodesmata (PD). This study emphasizes the core position of virus intercellular movement in plant virus diseases and its inhibition strategy and confirms that the aurone derivative D13 is a candidate molecule for antiviral pesticides or intercellular movement inhibitors, providing a new direction for plant virus prevention and control.",
+      "journal": "iScience",
+      "year": 2025,
+      "pub_date": "2025-12-19",
+      "authors": "Chen Dan; Ma Qingqing; Li Xin; Yang Tao; Wu Shang; ... (+2)",
+      "first_author": "Chen Dan",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "马铃薯Y病毒(PVY)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41422032",
+      "doi": "10.1186/s12985-025-03013-0",
+      "title": "Evaluation of the influence of RNA extraction methods on the detection of citrus viruses and viroids.",
+      "abstract": "[BACKGROUND] Certification and disease management practices are reliant on accurate pathogen detection assays. Effective nucleic acid extraction is the cornerstone of various molecular detection techniques, and many virus and viroid RNA extraction protocols have been developed, each with accompanying advantages and limitations. The extraction method influences the type, quantity and quality of RNA and, therefore, the overall sensitivity of the assay. [METHODS] Plants from two citrus types were infected with multiple viruses and viroids. Ten plants from each were selected. RNA was extracted from bark and leaf samples using four protocols: CL (CTAB/LiCl), CE (CTAB/ethanol), TL (acid phenol buffer/LiCl and isopropanol) and SI (SDS/isopropanol). Extracts were subjected to RT-qPCR for pathogen quantitation. Results were confirmed with Illumina high-throughput sequencing (HTS). Leaf material from a citrus type was resampled, RNA extracted with CE, SI and CP (CTAB/isopropanol) and pathogen quantities determined with RT-qPCR. An additional five plants were also selected and subjected to RNA extraction with CP, SI and a modified CE. RT-qPCRs and HTS were applied to all of these extracts. Protocols were evaluated based on pathogen quantities and various bioinformatic approaches. Reference genes and CTV genotypes were also assessed with HTS. [RESULTS] The extraction protocol had a remarkable influence on RT-qPCR and HTS pathogen detection ability. The CL method performed best for CTV while SI proved more sensitive for the other viruses. Viroid detection had increased variability with CE extracts containing more viroid RNA although CL extracts showed comparable amounts of CDVd. The CE protocol indicated potential debilitating effects on virus detection. The additional sampled plants subjected to the modified CE protocol, showed increased virus and decreased viroid amounts. The extraction protocol did, however, not significantly influence CTV genotype composition and the investigation of reference genes provided insight into appropriate genes to be used as internal controls for cross sample comparisons. [CONCLUSIONS] Despite the differential pathogen extraction amongst protocols, all target pathogens could be detected with appropriate RT-qPCR replicates and combined bioinformatic approaches. This study emphasises that although multiple protocols can be effective, further selection and optimisation could enhance the performance. Present research serves as a foundation for the refinement of diagnostic pipelines in citrus pathology.",
+      "journal": "Virology journal",
+      "year": 2025,
+      "pub_date": "2025-12-20",
+      "authors": "Dippenaar Madelein; Maree Hans Jacob; Bester Rachelle",
+      "first_author": "Dippenaar Madelein",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "柑橘衰退病毒(Citrus tristeza virus, CTV), 柑橘矮化类病毒(Citrus dwarfing viroid, CDVd)等",
+      "taxonomy": "Closteroviridae, Closterovirus (CTV); Pospiviroidae (CDVd)",
+      "host_plant": "柑橘 (Citrus spp.)",
+      "location": "未提及",
+      "results": "不同方法对病毒/类病毒检测敏感性差异显著；CL对CTV最佳，SI对其他病毒更敏感，CE对类病毒提取好但可能损害病毒检测。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41423612",
+      "doi": "10.1186/s12985-025-03005-0",
+      "title": "Begomoviral pre-coat protein boosts potato virus X in mixed infection through interfering with antiviral RNAi response.",
+      "abstract": "[BACKGROUND] Plant-infecting viruses cause severe crop losses throughout the world. The frequent occurrence of mixed infection (co-existence of multiple viruses in a single infected plant) in the field makes the situation more alarming. Mixed infection of two viruses often boosts the fitness of either of the viruses and thus increases disease severity. Maize lethal necrosis disease and rice tungro disease are some devastating examples. This study focused on the mixed viral infection between begomovirus, a ssDNA virus, and potato virus X (PVX), a ssRNA virus. [RESULTS] V2 protein encoded by a monopartite begomovirus, pepper leaf curl Bangladesh virus (PepLCBV), promotes the accumulation of PVX. When Nicotiana benthamiana plants were infected with both PVX and PepLCBV, aggravated PVX-induced symptoms and increased PVX titre were detected compared to plants infected with PVX alone. This observation suggests that PepLCBV promotes the viral titre of PVX during mixed infection. Next, when PepLCBVΔV2 infectious clone was co-infiltrated with PVX, no increase in PVX-associated symptoms was observed in the plants, which confirmed that the V2 protein plays a pivotal role in mediating the interaction between these two viruses. PepLCBV-V2 was experimentally identified as a potent suppressor of post-transcriptional gene silencing. Its interaction with suppressor of gene silencing 3 (NbSGS3) was confirmed through yeast two-hybrid and BiFC. Silencing of NbSGS3 facilitated PVX pathogenesis. Next, specific amino acids responsible for the suppressor activity of the V2 protein were identified, and the silencing suppressor mutant V2 failed to boost the PVX titre. A similar observation was recorded when the association of PVX with a bipartite begomovirus, tomato leaf curl New Delhi virus, was checked in both N. benthamiana and tomato. [CONCLUSION] The present study, for the first time, reports that begomoviruses promote the pathogenesis of potato virus X during mixed infection and identifies begomoviral pre-coat protein (V2/AV2) as a key player in mediating this virus-virus interaction. We further demonstrated that the silencing suppression activity of V2 is important for regulating PVX titre in mixed-infected plants.",
+      "journal": "Virology journal",
+      "year": 2025,
+      "pub_date": "2025-12-21",
+      "authors": "Ghosh Dibyendu; Malavika M; Rawat Pratibha; Chakraborty Supriya",
+      "first_author": "Ghosh Dibyendu",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Potato virus X (PVX) 和 Pepper leaf curl Bangladesh virus (PepLCBV)",
+      "taxonomy": "",
+      "host_plant": "本氏烟 (Nicotiana benthamiana) 和番茄",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41402261",
+      "doi": "10.1038/s41421-025-00847-4",
+      "title": "A receptor-like kinase recognizes viral proteins at the trans-Golgi network/early endosome and inhibits infection in rice.",
+      "abstract": "Receptor-like kinases (RLKs) reside on the cell surface and recognize apoplastic colonization by plant-infecting microbes to initiate immune responses. Whether RLKs can also recognize intracellular colonization by viruses to activate antiviral defense mechanisms in plants remains unknown. Here, we report the identification and characterization of a trans-Golgi network/early endosome (TGN/EE)-localized RLK that recognizes viral proteins and inhibits infection in rice. OsVIRK1, a cysteine-rich receptor-like kinase, promotes rice resistance to rice stripe virus (RSV), one of the most devastating viruses of rice. OsVIRK1 transcription is induced in RSV-infected rice, and its protein accumulates through autophosphorylation and redox-mediated regulation. OsVIRK1 physically interacts with the RSV coat protein (CP), a known immune elicitor, and nonstructural protein 3 (NS3), an antiviral RNA-silencing suppressor, at the TGN/EE. OsVIRK1 is required for CP-triggered defense gene expression. It phosphorylates NS3, reducing NS3 accumulation in the cytoplasm and thus repressing its activity as an RNA-silencing suppressor. Our findings suggest that OsVIRK1 recognizes viral proteins at the TGN/EE to inhibit infection by activating plant antiviral immunity and dampening viral counterdefense.",
+      "journal": "Cell discovery",
+      "year": 2025,
+      "pub_date": "2025-12-16",
+      "authors": "Wang Huacai; Liu Yawen; Zhang Mengting; Fang Rongxiang; Yan Yongsheng",
+      "first_author": "Wang Huacai",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "水稻条纹病毒 (Rice stripe virus, RSV)",
+      "taxonomy": "",
+      "host_plant": "水稻",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41035776",
+      "doi": "10.1016/j.omton.2025.201047",
+      "title": "Targeted nanoencapsulation of tunicamycin reduces toxicity while improving its therapeutic effectiveness in pancreatic cancer cells.",
+      "abstract": "Pancreatic ductal adenocarcinoma (PDAC) remains one of the leading sources of cancer mortality worldwide. An initial response to chemotherapy, such as gemcitabine (GEM) alone or in combination with other chemotherapies, is often followed by emergent resistance, underscoring the urgent need for targeted therapies. PDAC cells are highly addicted to oncogenic K-RAS mutations for their growth, progression, immunosuppression, and drug resistance, but mutant K-RAS in PDAC is still challenging to target. A N-glycosylation inhibitor, tunicamycin (TM), is a potent killer of PDAC cells. However, the free TM is very toxic in clinical settings. We developed a pH/hypoxia-responsive iRGD-tagged biodegradable nano-encapsulated TM (NPTM) that overcomes the limitations of free TM and shows promising results in inhibiting PDAC cell growth via apoptosis. The NPTM has shown significant promise, reducing cellular heterogeneity, drug resistance, in vitro desmoplasia, and subcutaneous tumor growth and markedly prolonging the survival in a KPC-xenograft mouse model. The studies suggest that TM targets K-RasG12D-dependent multiple signaling pathways such as EIF4E, STAT3, and STAT5 activities and CCN1 to promote its anticancer efficacy. Together, these studies reveal the potential of simultaneously targeting a K-RasG12D-dependent signal and CCN1 with first-line chemotherapy and provide a rationale for future clinical testing of NPTM for PDAC therapy.",
+      "journal": "Molecular therapy. Oncology",
+      "year": 2025,
+      "pub_date": "2025-12-18",
+      "authors": "Dutta Debasmita; Upadhyay Sunil P; De Archana; Haque Inamul; Breier Axel H; ... (+8)",
+      "first_author": "Dutta Debasmita",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41446739",
+      "doi": "10.1016/j.isci.2025.114157",
+      "title": "Aptamers as emerging tools for plant disease management: From biosensing to active modulation.",
+      "abstract": "Conventional methods for plant disease detection and management often face limitations in sensitivity, specificity, and field applicability. Aptamers, with high affinity and specificity, present a promising alternative. The review begins by elucidating the molecular mechanisms and key benefits of aptamers over traditional antibodies, highlighting their robustness and versatility. Building upon their demonstrated successes in food safety, environmental monitoring, and medical diagnostics, we systematically examine the application prospects of aptamers in plant disease management. Specifically, aptamers not only served as sensitive biosensors for detecting plant hormones and pathogens but also as active agents that interfere with pathogen effectors and modulate plant immune responses. Although emerging, aptamers hold considerable potential to transform plant disease control. Future advancements will require overcoming challenges in aptamer screening and biosensor stability through integration with emerging technologies, including microfluidics, CRISPR, and artificial intelligence, paving the way for intelligent, field-deployable diagnostics for sustainable agriculture.",
+      "journal": "iScience",
+      "year": 2025,
+      "pub_date": "2025-12-19",
+      "authors": "Liu Fuguo; Zhang Yu; Wei Zhixuan; Wu Hongsen; Jia Yanhui; ... (+1)",
+      "first_author": "Liu Fuguo",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41415493",
+      "doi": "10.1021/acsagscitech.5c00455",
+      "title": "Systemic Accumulation and Deterrent Effects of Ipomeamarone in Sweetpotato Weevil-Injured Storage Roots.",
+      "abstract": "Sweetpotato weevil, Cylas formicarius elegantulus (Summers) (Coleoptera: Brentidae), is one of the most devastating pests of sweetpotatoes in tropical and subtropical regions. Furanoterpenoids are produced when sweetpotato weevils feed on storage roots, making them potentially unmarketable and toxic to livestock and humans. However, accumulation of these furanoterpenoids in uninfested parts of weevil-infested storage roots is poorly characterized. Here we identified ipomeamarone and its precursor, dehydroipomeamarone, in weevil-infested sweetpotato storage roots and confirmed the identities of the compounds by LC-MS, LC-MS/MS, and NMR analysis. Ipomeamarone induction was systemic in the roots, with elevated levels detected in healthy parts of the roots 2-5 cm away from the site of infestation. A clear relationship between the presence of furanoterpenoids in the storage root and the behavior of C. formicarius elegantulus was found. When adults were presented with root slices taken at several distances from the point of infestation, the number of eggs laid increased progressively with distance from the point of infestation, peaking at 7 cm from the site of infestation. Both egg-laying and adult feeding were reduced on isolated root slices treated with pure ipomeamarone, underscoring the potential role of this compound as a deterrent against C. formicarius elegantulus. This study contributes to our understanding of host plant selection and could inform integrated pest management strategies against the sweetpotato weevil.",
+      "journal": "ACS agricultural science & technology",
+      "year": 2025,
+      "pub_date": "2025-12-15",
+      "authors": "Ali Md Panna; Matsushima Jullyane Emi; Akhtar Nasim; Maia Ana Isabel Vitorino; Donnarumma Fabrizio; ... (+5)",
+      "first_author": "Ali Md Panna",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41222160",
+      "doi": "10.1128/msystems.00932-25",
+      "title": "Giant viruses specific to deep oceans show persistent presence and activity.",
+      "abstract": "Giant viruses (GVs) of the phyla Nucleocytoviricota and Mirusviricota are large double-stranded DNA viruses that infect diverse eukaryotic hosts and impact biogeochemical cycles. Their diversity and ecological roles have been well studied in the photic layer of the ocean, but less is known about their activity, population dynamics, and adaptive strategies in the aphotic layers. Here, we conducted eight seasonal time-series samplings of the surface and mesopelagic layers at a coastal site in Muroto, Japan, and integrated 18S metabarcoding, metagenomic, and metatranscriptomic data to investigate mesopelagic GVs and their potential hosts. The analysis identified 48 GV genomes including six that were exclusively detected in the mesopelagic layer. Notably, these mesopelagic-specific GVs showed persistent activity across seasons. To further investigate the distribution and phylogenomic features of GVs at a global scale across broader depths, we compiled 4,473 species-level GV genomes from the OceanDNA MAG project and other resources and analyzed 1,890 marine metagenomes. This revealed 101 deep-sea-specific GVs, distributed across the GV phylogenetic tree, indicating that adaptation to deep-sea environments has occurred in multiple lineages. One clade enriched with deep-sea-specific GVs included a GV genome identified in our Muroto data, which displayed a wide geographic distribution. Seventy-six KEGG orthologs and 74 Pfam domains were specifically enriched in deep-sea-specific GVs, encompassing functions related to the ubiquitin system, energy metabolism, and nitrogen acquisition. These findings support the scenario that distinct GV lineages have adapted to hosts in aphotic marine environments by altering their gene repertoire to thrive in this unique habitat.IMPORTANCEGiant viruses are widespread in the ocean surface and are key in shaping marine ecosystems by infecting phytoplankton and other protists. However, little is known about their activity and adaptive strategies in deep-sea environments. In this study, we performed metagenomic and metatranscriptomic analyses of seawater samples collected from a coastal site in Japan and discovered giant virus genomes showing persistent transcriptional activity across seasons in the mesopelagic water. Using a global marine data set, we further uncovered geographically widespread and vertically extensive groups of deep-sea-specific giant viruses and characterized their distinctive gene repertoire, which likely facilitates adaptation to the limited availability of light and organic compounds in the aphotic zone. These findings expand our understanding of giant virus ecology in the dark ocean.",
+      "journal": "mSystems",
+      "year": 2025,
+      "pub_date": "2025-12-17",
+      "authors": "Liu Wenwen; Nagasaka Komei; Wu Junyi; Ban Hiroki; Mimick Ethan; ... (+8)",
+      "first_author": "Liu Wenwen",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42407903",
+      "doi": "10.11646/zootaxa.5736.1.1",
+      "title": "The new annotated checklist of the wild bees of Europe (Hymenoptera: Anthophila)-version 2025.",
+      "abstract": "We introduce the initial modification to the most recently issued inventory of European wild bees published by Ghisbain & Rosa et al. in 2023. We report new changes and taxonomic acts including: the description of a new species, Panurginus cypricus Hopfenmüller, 2025 sp. nov.; the lectotype designation of Hylaeussubtilis Förster, 1871; the upgrade or resurrection of five subspecies to species rank: Lasioglossumaeneidorsum (Alfken, 1921) stat. rev., Osmia bulgarica Friese, 1923 stat. rev., Seladonia alpina (Alfken, 1907) stat. rev., Seladonia glacialis (Ebmer, 1979) stat. nov., and Seladonia perkinsi (Blüthgen, 1926) stat. rev.; the resurrection of two species from previous synonymy: Hylaeus subtilis Förster, 1871 spec. resurr. and Protosmiamirabilis (Friese, 1899) spec. resurr.; and Hoplitis taurica (Radoszkowski, 1874) is here considered to be a nomen dubium. Finally, the following six new synonymies are proposed: Anthophoralarvata Giraud, 1863 syn. nov. of Anthophorafulvipes Eversmann, 1846; Protosmiamonstrosa (Pérez, 1895) syn. nov. of Protosmiatiflensis (Morawitz, 1875); the following taxa are all synonyms of Hylaeussubtilis Förster, 1871: Hylaeus nigrifacies Bramson, 1879 syn. nov., Prosopis gracilicornis var. luteifrons Strand, 1909 syn. nov., Prosopis moricella Bischoff, 1954 syn. nov., and Prosopis moricella f. atricallosa Bischoff, 1954 syn. nov. We also report 4 new species for Europe: Andrena immaculata Warncke, 1975, Anthophora bifasciata Fedchenko, 1875, Nomada felici Schwarz, 1977, and Systropha anatolica Warncke, 1977. Ancyla nitida Friese, 1902 replaces the use of the name Ancyla nigricornis Friese, 1902 in Europe. Nomada chrysopyga Morawitz, 1871 replaces the use of the name N. mauritanica Lepeletier, 1841 in Europe. The presence and identity of species belonging to the genus Schmiedeknechtia in Europe is discussed. Seven species were overlooked and are now added to the European list: Andrena pinguis Ariana, Scheuchl, Tadauchi & Gusenleitner, 2009, Clavipanurgus anatolicus (Warncke, 1972), Eucera cressa (Tkalců, 1984), Euceramavromoustakisi (Tkalců, 1984), Icteranthidium floripetum (Eversmann, 1852), Seladonia pici (Pérez, 1895) and Megachile sanguinipes Morawitz, 1875. Conversely, seven species are excluded from the European list: Halictusconstantinensis Strand, 1910, Halictus rufipes (Fabricius, 1793), Hoplitisturcestanica (Dalla Torre, 1896), Hoplitis caucasicola Müller, 2012, Lasioglossum andromeda Ebmer, 1978, Lasioglossumedessae Ebmer, 1974, and Seladonia confusa Smith, 1853. Heriades labiata Pérez, 1895 is confirmed as being described from Europe (Barcelona), and not Algeria as previously thought. We also report taxonomic changes recorded after the publication of the latest European checklist (Ghisbain & Rosa et al. 2023), including: the revaluation of two genera, Acanthonomada Schwarz, 1966 and Eupavlovskia Popov, 1955; the synonymy of the subgenus Royanthidium with the genus Pseudoanthidium, which is the senior synonym; the report of the neotype designation of Tetralonia malvae (Rossi, 1790); 32 new species recently described as new to science; 12 species recently synonymized and ten subspecies upgraded to species rank; seven species recently resurrected from previous synonymy; eight species recently recorded as new for Europe; one species noticed as overlooked in the previous European checklists; six species recently removed from the European list; and other various changes such as transfer of species from one genus or subgenus to another. We provide corrections to 136 names of authors and specific epithets, years of publication, and gender agreements demonstrated to be incorrect for various reasons. Overall, the present work revises the total number of species for Europe sensu IUCN to 2,187.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-12-19",
+      "authors": "Ghisbain Guillaume; Rosa Paolo; Bogusch Petr; Brau Thomas; Carion Frédéric; ... (+27)",
+      "first_author": "Ghisbain Guillaume",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "month": "2003-09",
+  "generated": "2026-07-13 02:59:42",
+  "total": 25,
+  "by_category": {
+    "Host_Virus_Interactions": 9,
+    "New_Virus": 6,
+    "Molecular_Characterization": 3,
+    "Biotechnology_Applications": 3,
+    "Antiviral_Resistance_Genes": 3,
+    "Transmission_Epidemiology": 1,
+    "Control_Management": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "12954225",
+      "doi": "10.1016/s0042-6822(03)00352-0",
+      "title": "Identification of a novel structural interaction in Columnea latent viroid.",
+      "abstract": "Pairwise sequence comparisons suggest that Columnea latent viroid (CLVd) may have originated from a recombination event involving Potato spindle tuber viroid (PSTVd) and Hop stunt viroid (HSVd). To examine the role of specific structural features in determining the host range of CLVd, we constructed a series of interspecific chimeras by replacing increasing portions of its terminal left and pathogenicity domains with the corresponding portions of PSTVd. Exchanges involving the left side of the pathogenicity domain led to lower rates of progeny accumulation in tomato, but one of the resulting chimeras was still able to replicate in cucumber. Exchanges involving the right side of the pathogenicity domain severely inhibited replication in tomato and appeared to abolish replication in cucumber. To identify potential interactions between nucleotides comprising the right side of the pathogenicity domain and other portions of CLVd, melting behaviors of circularized CLVd and PSTVd RNA transcripts were compared using a combination of temperature gradient gel electrophoresis and structural calculations. These analyses revealed an unexpected complementarity between the upper portion of the pathogenicity and terminal right domains of CLVd that facilitates breakdown of the rod-like native structure and formation of secondary hairpin II. Unlike secondary hairpin II, CLVd hairpin IV appears likely to act within the context of the genomic RNA.",
+      "journal": "Virology",
+      "year": 2003,
+      "pub_date": "2003-09-01",
+      "authors": "Owens R A; Sano T; Feldstein P A; Hu Y; Steger G",
+      "first_author": "Owens R A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Columnea latent viroid (CLVd)",
+      "taxonomy": "未提及",
+      "host_plant": "番茄 (tomato), 黄瓜 (cucumber)",
+      "location": "未提及",
+      "results": "右致病性域交换抑制番茄和黄瓜中复制；发现CLVd上端致病性域与末端右域互补形成发夹II，而发夹IV可能作用于基因组RNA。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30812837",
+      "doi": "10.1094/PDIS.2003.87.9.1148D",
+      "title": "First Report of Raspberry bushy dwarf virus on Red Raspberry and Grapevine in Slovenia.",
+      "abstract": "In 2002, severe vein yellowing and partial or complete yellowing of leaves was observed on some shoots of red raspberry (Rubus idaeus) cvs. Golden Bliss and Autumn Bliss. Sap of infected plants of cv. Golden Bliss was inoculated onto Chenopodium quinoa and Nicotiana benthamiana. Faint chlorotic spots were observed on inoculated leaves of C. quinoa approximately 14 days after inoculation but no systemic symptoms appeared. No symptoms were observed on N. benthamiana. Raspberry bushy dwarf virus (RBDV) was detected in the original raspberry plant using double-antibody sandwich enzyme-linked immunosorbent assay (DAS-ELISA) with polyclonal antiserum (Loewe Biochemica, Sauerlach, Germany). Systemic infections of inoculated C. quinoa and N. benthaminana were confirmed using DAS-ELISA. In 2001 and 2002, unusual virus symptoms were observed on grapevine grafts (Vitis vinifera) of cv. Laški Rizling. Symptoms appeared as curved line patterns and yellowing of the leaves. No nepoviruses were found in symptomatic plants, but RBDV was confirmed using DAS-ELISA. RBDV infection was later confirmed in grapevine cv. Štajerska Belina with similar symptoms. RBDV was transmitted mechanically from grapevine to C. quinoa where it was detected by immunocapture-reverse transcription-polymerase chain reaction (IC-RT-PCR). IC-RT-PCR was used to amplify a part of the coat protein gene of the virus from raspberry and grapevine, and the amplification products were sequenced (1). The obtained sequence shared at least 93% nucleotide sequence identity with other known RBDV sequences, which confirmed the serological results. To our knowledge, this is the first report of the natural occurrence of RBDV in grapevine and also of RBDV infection of red raspberry in Slovenia. Reference: (1) H. I. Kokko et al. Biotechniques 20:842, 1996.",
+      "journal": "Plant disease",
+      "year": 2003,
+      "pub_date": "2003-09-01",
+      "authors": "Mavrič I; Marn M Viršček; Koron D; Žežlina I",
+      "first_author": "Mavrič I",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Raspberry bushy dwarf virus (RBDV)",
+      "taxonomy": "未提及",
+      "host_plant": "红树莓（Rubus idaeus cv. Golden Bliss, Autumn Bliss）、葡萄（Vitis vinifera cv. Laški Rizling, Štajerska Belina）",
+      "location": "斯洛文尼亚",
+      "results": "红树莓和葡萄出现黄化等症状，ELISA和分子检测证实RBDV感染，序列同源性≥93%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30812835",
+      "doi": "10.1094/PDIS.2003.87.9.1148B",
+      "title": "First Report of Papaya ringspot virus on Papaya in Iran.",
+      "abstract": "Papaya, a popular fruit crop native to the American tropics, was introduced to the southern tropical provinces of Iran in the 1990s and its cultivation is widely increasing in these areas. During April 2000, severe leaf distortion and mottling were observed on papaya trees (Carica papaya) in Hormozgan Province in southern Iran. Affected trees were stunted and yielded less fruit. Samples of papaya leaf extracts (1:10 wt/vol) in 0.01 M potassium phosphate buffer (pH 7.0) were mechanically inoculated on indicator host plants, causing local lesions on Chenopodium amaranticolor and C. quinoa and chlorotic spots followed by systemic mosaic symptoms on Cucurbita pepo. Papaya ringspot virus (PRSV) was detected in the leaf samples of papaya plants and the inoculated Cucurbita pepo plants using double antibody sandwich enzyme-linked immunosorbent assay (DAS-ELISA) with PRSV-specific antisera (polyclonal antibody AS-0086 and PV-0244, DSMZ, Braunschweig, Germany). PRSV causes one of the most destructive diseases of papaya worldwide (1). PRSV has been previously reported from Citrullus vulgaris and Cucumis melo from Iran as Watermelon mosaic virus 1 (2), but to our knowledge, this is the first report of occurrence of PRSV on papaya in Iran. References: (1) D. E. Purcifull et al. Papaya ringspot virus. No. 292. CMI/AAB, Surrey, England, 1984. (2) F. Ebrahim-Nesbat. Phytopathol. Z. 79:352, 1974.",
+      "journal": "Plant disease",
+      "year": 2003,
+      "pub_date": "2003-09-01",
+      "authors": "Pourrahim R; Farzadfar Sh; Golnaraghi A R; Shahraeen N",
+      "first_author": "Pourrahim R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Papaya ringspot virus (PRSV)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "番木瓜 (Carica papaya)",
+      "location": "伊朗霍尔木兹甘省",
+      "results": "在伊朗番木瓜上观察到严重症状，ELISA确认PRSV感染，可机械传播到苋色藜、昆诺藜和西葫芦。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12917477",
+      "doi": "10.1099/vir.0.19209-0",
+      "title": "Further variability within the genus Crinivirus, as revealed by determination of the complete RNA genome sequence of Cucurbit yellow stunting disorder virus.",
+      "abstract": "The complete nucleotide (nt) sequences of genomic RNAs 1 and 2 of Cucurbit yellow stunting disorder virus (CYSDV) were determined for the Spanish isolate CYSDV-AlLM. RNA1 is 9123 nt long and contains at least five open reading frames (ORFs). Computer-assisted analyses identified papain-like protease, methyltransferase, RNA helicase and RNA-dependent RNA polymerase domains in the first two ORFs of RNA1. This is the first study on the sequences of RNA1 from CYSDV. RNA2 is 7976 nt long and contains the hallmark gene array of the family Closteroviridae, characterized by ORFs encoding a heat shock protein 70 homologue, a 59 kDa protein, the major coat protein and a divergent copy of the coat protein. This genome organization resembles that of Sweet potato chlorotic stunt virus (SPCSV), Cucumber yellows virus (CuYV) and Lettuce infectious yellows virus (LIYV), the other three criniviruses sequenced completely to date. However, several differences were observed. The most striking novel features of CYSDV compared to SPCSV, CuYV and LIYV are a unique gene arrangement in the 3'-terminal region of RNA1, the identification in this region of an ORF potentially encoding a protein which has no homologues in any databases, and the prediction of an unusually long 5' non-coding region in RNA2. Additionally, the CYSDV genome resembles that of SPCSV in having very similar 3' regions in RNAs 1 and 2, although for CYSDV similarity in primary structures did not result in predictions of equivalent secondary structures. Overall, these data reinforce the view that the genus Crinivirus contains considerable genetic variation. Additionally, several subgenomic RNAs (sgRNAs) were detected in CYSDV-infected plants, suggesting that generation of sgRNAs is a strategy used by CYSDV for the expression of internal ORFs.",
+      "journal": "The Journal of general virology",
+      "year": 2003,
+      "pub_date": "2003-09-01",
+      "authors": "Aguilar Juan M; Franco Maribel; Marco Cristina F; Berdiales Benjamín; Rodriguez-Cerezo Emilio; ... (+2)",
+      "first_author": "Aguilar Juan M",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Cucurbit yellow stunting disorder virus (CYSDV)",
+      "taxonomy": "属：Crinivirus，科：Closteroviridae",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12941908",
+      "doi": "10.1128/jvi.77.18.9979-9986.2003",
+      "title": "cis-acting elements required for efficient packaging of brome mosaic virus RNA3 in barley protoplasts.",
+      "abstract": "Brome mosaic virus (BMV) is a positive-sense RNA plant virus, the tripartite genomic RNAs of which are separately packaged into virions. RNA3 is copackaged with subgenomic RNA4. In barley protoplasts coinoculated with RNA1 and RNA2, an RNA3 mutant with a 69-nucleotide (nt) deletion in the 3'-proximal region of the 3a open reading frame (ORF) was very poorly packaged compared with other RNA3 mutants and wild-type RNA3, despite their comparable accumulation in the absence of coat protein. Computer analysis of RNA secondary structure predicted two stem-loop (SL) structures (i.e., SL-I and SL-II) in the 69-nt region. Disruption of SL-II, but not of SL-I, significantly reduced RNA3 packaging. A chimeric BMV RNA3 (B3Cmp), with the BMV 3a ORF replacing that of cucumber mosaic virus (CMV), was packaged negligibly, whereas RNA4 was packaged efficiently. Replacement of the 3'-proximal region of the CMV 3a ORF in B3Cmp with the 3'-proximal region of the BMV 3a ORF significantly improved packaging efficiency, and the disruption of SL-II in the substituted BMV 3a ORF region greatly reduced packaging efficiency. These results suggest that the 3'-proximal region of the BMV 3a ORF, especially SL-II predicted between nt 904 and 933, plays an important role in the packaging of BMV RNA3 in vivo. Furthermore, the efficient packaging of RNA4 without RNA3 in B3Cmp-infected cells implies the presence of an element in the 3a ORF of BMV RNA3 that regulates the copackaging of RNA3 and RNA4.",
+      "journal": "Journal of virology",
+      "year": 2003,
+      "pub_date": "2003-09-01",
+      "authors": "Damayanti Tri Asmira; Tsukaguchi Satoshi; Mise Kazuyuki; Okuno Tetsuro",
+      "first_author": "Damayanti Tri Asmira",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Brome mosaic virus (BMV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12946414",
+      "doi": "10.1016/s0031-9422(03)00151-1",
+      "title": "Phenylpropanoid compounds and disease resistance in transgenic tobacco with altered expression of L-phenylalanine ammonia-lyase.",
+      "abstract": "Tobacco plants over-expressing L-phenylalanine ammonia-lyase (PAL(+)) produce high levels of chlorogenic acid (CGA) and exhibit markedly reduced susceptibility to infection with the fungal pathogen Cercospora nicotianae, although their resistance to tobacco mosaic virus (TMV) is unchanged. Levels of the signal molecule salicylic acid (SA) were similar in uninfected PAL(+) and control plants and also following TMV infection. In crosses of PAL(+) tobacco with tobacco harboring the bacterial NahG salicylate hydroxylase gene, progeny harboring both transgenes lost resistance to TMV, indicating that SA is critical for resistance to TMV and that increased production of phenylpropanoid compounds such as CGA cannot substitute for the reduction in SA levels. In contrast, PAL(+)/NahG plants showed strongly reduced susceptibility to Cercospora nicotianae compared to the NahG parent line. These results are consistent with a recent report questioning the role of PAL in SA biosynthesis in Arabidopsis, and highlight the importance of phenylpropanoid compounds such as CGA in plant disease resistance.",
+      "journal": "Phytochemistry",
+      "year": 2003,
+      "pub_date": "2003-09-01",
+      "authors": "Shadle Gail L; Wesley S Varsha; Korth Kenneth L; Chen Fang; Lamb Chris; ... (+1)",
+      "first_author": "Shadle Gail L",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "烟草花叶病毒 (TMV)",
+      "taxonomy": "",
+      "host_plant": "烟草 (tobacco)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12971601",
+      "doi": "10.1094/MPMI.2003.16.9.777",
+      "title": "The dual role of the potyvirus P3 protein of Turnip mosaic virus as a symptom and avirulence determinant in brassicas.",
+      "abstract": "Two isolates of the potyvirus Turnip mosaic virus (TuMV), UK 1 and CDN 1, differ both in their general symptoms on the susceptible propagation host Brassica juncea and in their ability to infect B. napus lines possessing a variety of dominant resistance genes. The isolate CDN 1 produces a more extreme mosaic in infected brassica leaves than UK 1 and is able to overcome the resistance genes TuRB01, TuRB04, and TuRB05. The resistance gene TuRB03, in the B. napus line 22S, is effective against CDN 1 but not UK 1. The nucleic acid sequences of the UK 1 and CDN 1 isolates were 90% identical. The C-terminal half of the P3 protein was identified as being responsible for the differences in symptoms in B. juncea. A single amino acid in the P3 protein was found to be the avirulence determinant for TuRB03. Previous work already has identified the P3 as an avirulence determinant for TuRB04. Our results increase the understanding of the basis of plant-virus recognition, show the importance of the potyviral P3 gene as a symptom determinant, and provide a role in planta for the poorly understood P3 protein in a normal infection cycle.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 2003,
+      "pub_date": "2003-09-01",
+      "authors": "Jenner Carol E; Wang Xiaowu; Tomimura Kenta; Ohshima Kazusato; Ponz Fernando; ... (+1)",
+      "first_author": "Jenner Carol E",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "芜菁花叶病毒 (Turnip mosaic virus, TuMV)",
+      "taxonomy": "",
+      "host_plant": "芸苔属植物 (Brassica juncea, B. napus)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "13129601",
+      "doi": "10.1016/S0378-1097(03)00525-1",
+      "title": "Pythium campanulatum sp. nov., isolated from the rhizosphere of maize, its taxonomy, ITS region of rDNA, and comparison with related species.",
+      "abstract": "Pythium campanulatum sp. nov. was isolated from some soil samples taken in the rhizosphere of maize (Zea mays) in north-eastern India. This species is characterized by the absence of zoospores and sporangia, antheridial branches wrapping around the oogonia leaving one to two campanulate antheridial cells after fertilization, and aplerotic oospores. The ITS region of its rDNA is comprised of 922 bases. This oomycete is closely related to Pythium orthogonon, Pythium nunn and Pythium toruloides. However, it has its own characteristic features and is completely devoid of zoospores. Taxonomic description of this new species and its comparison with related oomycetes, together with the sequence of the PCR-amplified internal transcribed region (spacers ITS1, ITS2, and the gene 5.8S) of its rDNA are given here.",
+      "journal": "FEMS microbiology letters",
+      "year": 2003,
+      "pub_date": "2003-09-12",
+      "authors": "Mathew Ritta; Singh Kusum Kumari; Paul Bernard",
+      "first_author": "Mathew Ritta",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "13130066",
+      "doi": "10.1099/ijs.0.02470-0",
+      "title": "Metschnikowia vanudenii sp. nov. and Metschnikowia lachancei sp. nov., from flowers and associated insects in North America.",
+      "abstract": "Two new species of the ascosporic yeast genus Metschnikowia were isolated from nectaries and associated muscoid flies of flowers from the common milkweed (Asclepias syriaca) in North America, and are described as Metschnikowia vanudenii [type strain=PYCC 4650(T)=CBS 9134(T)=NRRL Y-27243(T)=UWO(PS) 86A4.1(T)] and Metschnikowia lachancei [type strain=PYCC 4605(T)=CBS 9131(T)=NRRL Y-27242(T)=UWO(PS) 7ASB2.3(T)]. As with the previously described Metschnikowia gruessii, M. vanudenii has vegetative cells with an 'aeroplane' or cross-like configuration, produces ovoid chlamydospores and forms ellipsoidopedunculate asci with two acicular ascospores. Metschnikowia lachancei is distinguished from other Metschnikowia species by formation of club-shaped asci with 1-2 thick clavate ascospores. The phylogenetic positions of the proposed new species within Metschnikowia were determined from sequence analysis of the D1/D2 domain of 26S rDNA. The new species show low nuclear DNA relatedness with neighbouring taxa.",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2003,
+      "pub_date": "2003-09-01",
+      "authors": "Giménez-Jurado Gabriella; Kurtzman Cletus P; Starmer William T; Spencer-Martins Isabel",
+      "first_author": "Giménez-Jurado Gabriella",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14529179",
+      "doi": "10.1078/072320203322497392",
+      "title": "Tsukamurella spumae sp. nov., a novel actinomycete associated with foaming in activated sludge plants.",
+      "abstract": "A polyphasic taxonomic study was undertaken to establish the taxonomic position of six representative strains isolated from activated sewage sludge foam. The organisms were found to have chemical and morphological properties consistent with their assignment to the genus Tsukamurella. DNA:DNA relatedness studies showed that five out of the six isolates formed a distinct genomic species, the remaining strain was most closely associated with this taxon. The five isolates had a unique phenotypic profile that served to distinguish them from representatives of the validly described species of Tsukamurella. The combination of the genotypic and phenotypic data indicated that the five strains should be classified as a new species in the genus Tsukamurella. The name proposed for this taxon is Tsukamurella spumae, the type strain is N1171T (= DSM 44.113T = NCIMB 13947T). It was also shown that some of the reference strains were misclassified as Tsukamurella paurometabola.",
+      "journal": "Systematic and applied microbiology",
+      "year": 2003,
+      "pub_date": "2003-09-01",
+      "authors": "Nam Sun-Woo; Chun Jongsik; Kim Seungbum; Kim Wonyong; Zakrzewska-Czerwinska Jolanta; ... (+1)",
+      "first_author": "Nam Sun-Woo",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14517055",
+      "doi": "10.1016/s0042-6822(03)00382-9",
+      "title": "Characterization of a novel single-stranded RNA mycovirus in Pleurotus ostreatus.",
+      "abstract": "A mycovirus, named oyster mushroom spherical virus (OMSV), was isolated from cultivated oyster mushrooms with a severe epidemic of oyster mushroom Die-back disease. OMSV was a 27-nm spherical virus encapsidating a single-stranded RNA (ssRNA) of 5.784 kb with a coat protein of approximately 28.5 kDa. The nucleotide sequence of the virus revealed that its genomic RNA was positive strand, containing 5784 bases with seven open reading frames (ORF). ORF1 had the motifs of RNA-dependent RNA polymerases (RdRp) and helicase. ORF2 encoded a coat protein. ORF3 to 7 could encode putative polypeptides of approximately 12, 12.5, 21, 14.5, and 23 kDa, respectively, but none of them showed significant similarity to any other known polypeptides. The 5' end of the viral RNA was uncapped and the 3' end was polyadenylated with 74 bases. Genomic structure and organization and the derived amino acid sequence of RdRp and helicase domain were similar to those of tymoviruses, a plant virus group.",
+      "journal": "Virology",
+      "year": 2003,
+      "pub_date": "2003-09-15",
+      "authors": "Yu Hyun Jae; Lim Dongbin; Lee Hyun-Sook",
+      "first_author": "Yu Hyun Jae",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14504384",
+      "doi": "10.1073/pnas.2033934100",
+      "title": "HSP90 interacts with RAR1 and SGT1 and is essential for RPS2-mediated disease resistance in Arabidopsis.",
+      "abstract": "RAR1 and its interacting partner SGT1 play a central role in plant disease resistance triggered by a number of resistance (R) proteins. We identified cytosolic heat shock protein 90 (HSP90), a molecular chaperone, as another RAR1 interacting protein by yeast two-hybrid screening. RAR1 interacts with the N-terminal half of HSP90 that contains the ATPase domain. HSP90 also specifically interacts with SGT1 that contains a tetratricopeptide repeat motif and a domain with similarity to the cochaperone p23. In Arabidopsis, the HSP90 inhibitor geldanamycin reduces the hypersensitive response and abolishes resistance triggered by the R protein RPS2 against Pseudomonas syringae pv. tomato DC3000 (avrRpt2). One of four Arabidopsis cytosolic HSP90 isoforms, AtHSP90.1 is required for full RPS2 resistance and is rapidly induced upon pathogen challenge. We propose that RAR1 and SGT1 function closely with HSP90 in chaperoning roles that are essential for disease resistance.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2003,
+      "pub_date": "2003-09-30",
+      "authors": "Takahashi Akira; Casais Catarina; Ichimura Kazuya; Shirasu Ken",
+      "first_author": "Takahashi Akira",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

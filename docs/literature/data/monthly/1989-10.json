@@ -1,0 +1,123 @@
+{
+  "month": "1989-10",
+  "generated": "2026-07-13 02:59:42",
+  "total": 5,
+  "by_category": {
+    "New_Virus": 2,
+    "Control_Management": 2,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "2684775",
+      "doi": "10.1016/0378-1119(89)90028-0",
+      "title": "Sequences required for self-catalysed cleavage of the satellite RNA of tobacco ringspot virus.",
+      "abstract": "The satellite RNA of tobacco ringspot virus (sTobRV) undergoes self-catalysed cleavage during replication. A plasmid for in vitro expression of sTobRV has been constructed and used to obtain a library of mutagenized sTobRV sequences. Screening of these mutants has allowed precise definition of the sequences required for (+) and (-) strand cleavage. The sequences and RNA structures associated with cleavage of each strand differ markedly. Cleavage of the (+) strand requires those sequences flanking the site for cleavage to form a 'hammerhead' domain, similar to those found in other satellite and viroid RNA. In contrast, cleavage of the (-) strand requires only a small region of 12 nucleotides (nt) at the site of cleavage, and a sequence of 55 nt positioned elsewhere in the molecule. Comparison with a closely related satellite suggests that a novel RNA structure may be involved in (-) strand cleavage.",
+      "journal": "Gene",
+      "year": 1989,
+      "pub_date": "1989-10-15",
+      "authors": "Haseloff J; Gerlach W L",
+      "first_author": "Haseloff J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "烟草环斑病毒卫星RNA (satellite RNA of tobacco ringspot virus, sTobRV)",
+      "taxonomy": "未提及",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "正链切割需形成锤头结构；负链切割仅需切割位点处12nt和另一处55nt序列，提示新RNA结构。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2794980",
+      "doi": "10.1099/0022-1317-70-10-2775",
+      "title": "The use of 3' non-coding nucleotide sequences in the taxonomy of potyviruses: application to watermelon mosaic virus 2 and soybean mosaic virus-N.",
+      "abstract": "The sequence of the 3' 1106 nucleotides of the watermelon mosaic virus 2 (WMV 2) genome has been determined. The sequence contains the complete coding region of the viral coat protein followed by a 3' untranslated sequence of 251 nucleotides. When these sequences were compared with the equivalent regions of the N strain of soybean mosaic virus (SMV-N), the coat protein coding regions were 82% homologous, whereas the 3' untranslated sequences were 78% homologous. Optimal alignment of the 3' untranslated regions of RNA from 13 strains of seven other distinct potyviruses revealed that the degree of homology between strains was in the range 83 to 99%. In contrast, the sequences from distinct viruses had identities in the range 39 to 53%, comparable to the level of identity found between the 3' non-coding regions of viruses from unrelated plant virus groups. On the basis of these results, WMV 2 and SMV-N could be regarded as strains of one virus. These results also suggest that the sequence of the 3' untranslated region of the potyvirus genome may be an accurate marker of genetic relatedness and could serve as an aid to identification and classification of potyviruses.",
+      "journal": "The Journal of general virology",
+      "year": 1989,
+      "pub_date": "1989-10-01",
+      "authors": "Frenkel M J; Ward C W; Shukla D D",
+      "first_author": "Frenkel M J",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "西瓜花叶病毒2 (WMV 2) 和大豆花叶病毒N株系 (SMV-N)",
+      "taxonomy": "马铃薯Y病毒科(Potyviridae) 马铃薯Y病毒属(Potyvirus)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2572087",
+      "doi": "10.1016/0042-6822(89)90187-6",
+      "title": "Segregation of cauliflower mosaic virus symptom genetic determinants.",
+      "abstract": "We have created a series of hybrid cauliflower mosaic virus (CaMV) genomes between a severe virus strain (Cabb BJI) and a mild strain (Bari 1) to map the virus genetic loci responsible for specific systemic symptom characters produced in infected turnip plants. Recombinants were generated in vivo by recombinational rescue and in vitro by restriction enzyme fragment exchange. On infection, hybrids induced either parental (wild-type) symptoms or segregated parental characters. Some of the engineered hybrid genomes produced novel symptomatic effects not observed in either of the parental strains whilst others reverted to express parental symptom characters following passaging. Determinants defining differences between the two CaMV strains in respect of four specific symptom characters were delimited to separate genome regions. A locus involved in determining the rate of spread of systemic vein clearing symptoms mapped to a region containing part of gene VII and gene I (nts 109-780). This phenomenon is consistent with the putative involvement of the CaMV gene I product in mediating virus movement within infected plants. Determinants influencing the degree of leaf chlorosis were located in a separate genome domain encompassing part of gene VI together with the large intergenic region and part of gene VII (nts 6103-90). Determinants controlling timing of initial systemic symptom appearance were mapped to a region between nts 2150 and 4438 containing part of gene III, gene IV, and part of gene V. Plant stunting was influenced by loci in at least two separate regions, one containing parts of gene I and II, and a second within the reverse transcriptase gene (V). We conclude that symptoms produced by CaMV infection can be subdivided into individual characters, the genetic determinants of which segregate to different virus genetic loci and are not restricted to a single gene product.",
+      "journal": "Virology",
+      "year": 1989,
+      "pub_date": "1989-10-01",
+      "authors": "Stratford R; Covey S N",
+      "first_author": "Stratford R",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "花椰菜花叶病毒 (CaMV)",
+      "taxonomy": "",
+      "host_plant": "芜菁",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2615798",
+      "doi": "10.1007/BF00436780",
+      "title": "A new species of Trichosporonoides isolated from sweetened orange/mango drink in Australia.",
+      "abstract": "Trichosporonoides australiense sp. nov.: a basidiomycetous yeast-like fungus is described and illustrated with information on some physiological characteristics based on a single strain isolated from sweetened orange/mango in Australia. The differences between it and already described members of the genus are discussed. The new species may be distinguished principally by its inability to ferment sucrose and maltose. A dichotomous key to all described members of the genus is provided.",
+      "journal": "Mycopathologia",
+      "year": 1989,
+      "pub_date": "1989-10-01",
+      "authors": "Ramirez C",
+      "first_author": "Ramirez C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19287655",
+      "doi": "",
+      "title": "Managing Root-knot on Tobacco in the Southeastern United States.",
+      "abstract": "Root-knot nematodes suppress yields of flue-cured tobacco an estimated 0.1 to 4.8% annually in the southeastern United States, even though nematode management practices have been widely adopted. Although Meloidogyne incognita races 1 and 3 have predominated, M. arenaria, M. javanica, and M. incognita races 2 and 4 are increasingly important. Seventy-five percent of the flue-cured tobacco hectarage in North Carolina and Virginia is rotated on 2-year or 3-year intervals. Over half of the hectarage in the southeastern United States was planted with tobacco cultivars resistant to M. incognita races 1 and 3 in 1986. Resistance to other species or races of root-knot nematodes is not available in commercially available flue-cured tobacco cultivars. Most producers plow and (or) disc-out flue-cured tobacco roots and stalks after harvest. Nematicide use ranges from virtually 100% in Florida and Georgia to 60% in Virginia. Continued research is needed to develop management strategies for mixed populations of root-knot nematodes and to incorporate resistance to more root-knot nematode species and races into tobacco cultivars. Nematode advisory programs that allow producers to optimize nematicide use from an economical and ecological point of view are also needed.",
+      "journal": "Journal of nematology",
+      "year": 1989,
+      "pub_date": "1989-10-01",
+      "authors": "Johnson C S",
+      "first_author": "Johnson C S",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

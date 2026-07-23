@@ -1,0 +1,33 @@
+{
+  "month": "1993-03",
+  "generated": "2026-07-13 02:59:42",
+  "total": 1,
+  "by_category": {
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8445361",
+      "doi": "10.1099/0022-1317-74-3-323",
+      "title": "Nucleotide sequence of one component of the banana bunchy top virus genome contains a putative replicase gene.",
+      "abstract": "One DNA component of the banana bunchy top virus (BBTV) genome was cloned and sequenced. This component is present as a circular, ssDNA in the virions and consists of 1111 nucleotides. It contains one large open reading frame (ORF) of 858 nucleotides in the virion sense; this ORF encodes a putative replicase based on the presence of a dNTP-binding motif (GGEGKT). Two smaller ORFs (249 and 366 nucleotides), in the complementary orientation, could not be assigned any obvious function. Neither of these ORFs had significant sequence homology with any known DNA plant virus gene or gene product. Computer analysis of this component-predicted a strong stem-loop structure in the virion sense putative untranslated region; a nonanucleotide sequence in the loop was nearly identical to the nonanucleotide invariant loop sequence of geminiviruses and coconut foliar decay virus. There is strong evidence that the genome of BBTV consists of more than one component because no ORF was found that would encode a protein the size of the BBTV coat protein. BBTV has some characteristics in common with geminiviruses but cannot be classified as one. Rather, BBTV probably belongs to an undescribed plant virus group which could also include subterranean clover stunt virus and coconut foliar decay virus.",
+      "journal": "The Journal of general virology",
+      "year": 1993,
+      "pub_date": "1993-03-01",
+      "authors": "Harding R M; Burns T M; Hafner G; Dietzgen R G; Dale J L",
+      "first_author": "Harding R M",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "香蕉束顶病毒 (Banana bunchy top virus, BBTV)",
+      "taxonomy": "未描述植物病毒组 (可能含地下三叶草矮化病毒和椰树叶腐病毒)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

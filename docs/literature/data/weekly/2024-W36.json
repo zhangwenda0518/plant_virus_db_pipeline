@@ -1,0 +1,239 @@
+{
+  "week": "2024-W36",
+  "start": "2024-09-02",
+  "end": "2024-09-08",
+  "generated": "2026-07-13 02:59:41",
+  "total_new": 30,
+  "by_category": {
+    "Host_Virus_Interactions": 15,
+    "Control_Management": 5,
+    "Antiviral_Resistance_Genes": 4,
+    "New_Virus": 3,
+    "Transmission_Epidemiology": 1,
+    "Biotechnology_Applications": 1,
+    "Tobamo_Virga": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "39339896",
+      "doi": "10.3390/v16091420",
+      "title": "Demonstration of Insect Vector-Mediated Transfer of a Betasatellite between Two Helper Viruses.",
+      "abstract": "Begomoviruses, transmitted by the whitefly Bemisia tabaci, pose significant threats to global agriculture due to their severe impact on various crops. Among the satellite molecules associated with begomoviruses, betasatellites play a crucial role in enhancing disease severity and yield losses. The spread and association of these molecules with helper viruses in host plants are thus matters of concern. Here, we focus on the propagation of betasatellites and, more specifically, on their transfer between different helper viruses and hosts through vector transmission. Our results show that the cotton leaf curl Gezira betasatellite (CLCuGeB), initially acquired with its helper virus cotton leaf curl Gezira virus (CLCuGeV) from an okra plant, can be transmitted and assisted by a different helper virus, tomato yellow leaf curl virus (TYLCV), in a different host plant (tomato plant). The new association can be formed whether TYLCV and CLCuGeB encounter each other in a host plant previously infected with TYLCV or in whiteflies having acquired the different components separately. Our findings reveal two pathways by which betasatellites can be transferred between helper viruses and host plants and highlight the ability of betasatellites to spread in begomovirus-infected environments.",
+      "journal": "Viruses",
+      "year": 2024,
+      "pub_date": "2024-09-05",
+      "authors": "Fouad Noun; Granier Martine; Blanc Stéphane; Thébaud Gaël; Urbino Cica",
+      "first_author": "Fouad Noun",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "cotton leaf curl Gezira virus (CLCuGeV), tomato yellow leaf curl virus (TYLCV), cotton leaf curl Gezira betasatellite (CLCuGeB)",
+      "taxonomy": "",
+      "host_plant": "秋葵、番茄",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39030909",
+      "doi": "10.1016/j.molp.2024.07.008",
+      "title": "AlphaFold-guided redesign of a plant pectin methylesterase inhibitor for broad-spectrum disease resistance.",
+      "abstract": "Plant cell walls are a critical site where plants and pathogens continuously struggle for physiological dominance. Here we show that dynamic remodeling of pectin methylesterification of plant cell walls is a component of the physiological and co-evolutionary struggles between hosts and pathogens. A pectin methylesterase (PsPME1) secreted by Phytophthora sojae decreases the degree of pectin methylesterification, thus synergizing with an endo-polygalacturonase (PsPG1) to weaken plant cell walls. To counter PsPME1-mediated susceptibility, a plant-derived pectin methylesterase inhibitor protein, GmPMI1, protects pectin to maintain a high methylesterification status. GmPMI1 protects plant cell walls from enzymatic degradation by inhibiting both soybean and P. sojae pectin methylesterases during infection. However, constitutive expression of GmPMI1 disrupted the trade-off between host growth and defense responses. We therefore used AlphaFold structure tools to design a modified form of GmPMI1 (GmPMI1R) that specifically targets and inhibits pectin methylesterases secreted from pathogens but not from plants. Transient expression of GmPMI1R enhanced plant resistance to oomycete and fungal pathogens. In summary, our work highlights the biochemical modification of the cell wall as an important focal point in the physiological and co-evolutionary conflict between hosts and microbes, providing an important proof of concept that AI-driven structure-based tools can accelerate the development of new strategies for plant protection.",
+      "journal": "Molecular plant",
+      "year": 2024,
+      "pub_date": "2024-09-02",
+      "authors": "Xia Yeqiang; Sun Guangzheng; Xiao Junhua; He Xinyi; Jiang Haibin; ... (+16)",
+      "first_author": "Xia Yeqiang",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39177757",
+      "doi": "10.1021/acs.jafc.4c04091",
+      "title": "Virulent Effector Hasp155 of ",
+      "abstract": "As a kind of obligate biotrophic fungus, Puccinia striiformis f. sp. tritici (Pst) secretes vast effectors via haustoria to host cells during the infection to inhibit host defense responses and promote fungal invasion. In this study, based on the completion of genome sequencing and haustorial transcriptome sequencing of Pst, we identified a Pst effector (Hasp155) that is significantly induced in the early stage of Pst infection to wheat. The 18 N-terminal amino acids of Hasp155 encoded a signal peptide with a secretory function. Transient expression of Hasp155 in Nicotiana benthamiana inhibited Bax-induced cell death as well as chitin-triggered callose deposition and defense-related gene expression. Moreover, delivery of the Hasp155 protein into wheat cells via type three secretion systems (TTSS) led to reduced plant immunity to nonpathogenic bacteria and to the avirulent Pst race with decreased H2O2 accumulation and promoted Pst development. Furthermore, transgenic overexpression of Hasp155 significantly renders wheat resistance susceptible, resulting in a decreased defense response and increased Pst pathogenicity. Overall, these results indicate that Hasp155 is an important effector of Pst pathogenicity by suppressing plant immunity.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2024,
+      "pub_date": "2024-09-04",
+      "authors": "Yan Tong; Wang Yuteng; Cui Genfu; Wansee Somying; Wang Xinshi; ... (+6)",
+      "first_author": "Yan Tong",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39094568",
+      "doi": "10.1016/j.cell.2024.07.013",
+      "title": "Activation of the helper NRC4 immune receptor forms a hexameric resistosome.",
+      "abstract": "Innate immune responses to microbial pathogens are regulated by intracellular receptors known as nucleotide-binding leucine-rich repeat receptors (NLRs) in both the plant and animal kingdoms. Across plant innate immune systems, \"helper\" NLRs (hNLRs) work in coordination with \"sensor\" NLRs (sNLRs) to modulate disease resistance signaling pathways. Activation mechanisms of hNLRs based on structures are unknown. Our research reveals that the hNLR, known as NLR required for cell death 4 (NRC4), assembles into a hexameric resistosome upon activation by the sNLR Bs2 and the pathogenic effector AvrBs2. This conformational change triggers immune responses by facilitating the influx of calcium ions (Ca2+) into the cytosol. The activation mimic alleles of NRC2, NRC3, or NRC4 alone did not induce Ca2+ influx and cell death in animal cells, suggesting that unknown plant-specific factors regulate NRCs' activation in plants. These findings significantly advance our understanding of the regulatory mechanisms governing plant immune responses.",
+      "journal": "Cell",
+      "year": 2024,
+      "pub_date": "2024-09-05",
+      "authors": "Liu Furong; Yang Zhenlin; Wang Chao; You Zhang; Martin Raoul; ... (+8)",
+      "first_author": "Liu Furong",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39222118",
+      "doi": "10.1007/s00705-024-06115-2",
+      "title": "Detection and molecular characterization of a novel mitovirus associated with Passiflora edulis Sims.",
+      "abstract": "Mitoviruses are cryptic capsidless viruses belonging to the family Mitoviridae that replicate and are maintained in the mitochondria of fungi. Complete mitovirus-like sequences were recently assembled from plant transcriptome data and plant leaf tissue samples. Passion fruit (Passiflora spp.) is an economically important crop for numerous tropical and subtropical countries worldwide, and many virus-induced diseases impact its production. From a large-scale genomic study targeting viruses infecting Passiflora spp. in Brazil, we detected a de novo-assembled contig with similarity to other plant-associated mitoviruses. The contig is ∼2.6 kb long, with a single open reading frame (ORF) encoding an RNA-dependent RNA polymerase (RdRP). This contig has been named \"passion fruit mitovirus-like 1\" (PfMv1). An alignment of the predicted amino acid sequence of the RdRP of PfMv1 and those of other plant-associated mitoviruses revealed the presence of the six conserved motifs of mitovirus RdRPs. PfMv1 has 79% coverage and 50.14% identity to Humulus lupulus mitovirus 1. Phylogenetic analysis showed that PfMV1 clustered with other plant-associated mitoviruses in the genus Duamitovirus. Using RT-PCR, we detected a PfMv1-derived fragment, but no corresponding DNA was identified, thus excluding the possibility that this is an endogenized viral-like sequence. This is the first evidence of a replicating mitovirus associated with Passiflora edulis, and it should be classified as a member of a new species, for which we propose the name \"Duamitovirus passiflorae\".",
+      "journal": "Archives of virology",
+      "year": 2024,
+      "pub_date": "2024-09-02",
+      "authors": "Santos Yam Sousa; Vidal Andreza Henrique; Abreu Emanuel Felipe Medeiros; Nogueira Isadora; Faleiro Fábio Gelape; ... (+8)",
+      "first_author": "Santos Yam Sousa",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39232709",
+      "doi": "10.1186/s12870-024-05548-w",
+      "title": "Identification and functional characterization of bidirectional gene pairs and their intergenic regions in cotton.",
+      "abstract": "[BACKGROUND] In research to improve the quality of transgenic crops, it is often necessary to introduce multiple functionally related genes into recipient plants simultaneously to improve crop genetic traits effectively. Compared with unidirectional promoters, bidirectional promoters simultaneously regulate the expression of multiple genes and improve the efficiency of biotechnology. Therefore, in this study, bidirectional gene pairs were systematically analyzed in Gossypium hirsutum TM-1, and the structure, function and evolutionary relationships of the bidirectional genes were analyzed. The endogenous bidirectional promoters of cotton were mined, and their specific regulatory elements and biological functions were explored to provide useful promoter resources and a theoretical basis for cultivating new cotton germplasms with excellent fiber quality. [RESULTS] Using an improved search model, a total of 1,383 bidirectional transcript pairs were identified in the Gossypium hirsutum TM-1 genome, and their gene structure and functional annotations were systematically analyzed. Thirty bidirectional intergenic sequences were randomly screened for promoter activity analysis via a transient expression system, and 25 intergenic sequences were found to have bidirectional promoter activity. Comparative analysis of the bidirectional gene profiles of the four cotton subspecies revealed that these subspecies presented abundant bidirectional gene pairs with high homology and that the bidirectional genes in the cotton subspecies were more similar in terms of their molecular functions, cellular components and biological processes. In addition, parallel analysis of bidirectional genes in dicotyledons and monocotyledons revealed that abundant bidirectional gene pairs exist in different species. Although the total number of orthologous bidirectional genes was similar, there was a significant difference in the number of orthologous bidirectional gene pairs between dicotyledons and monocotyledons. This evolutionary analysis of the function and structure of homologous bidirectional gene pairs in different varieties and different subspecies of the same species revealed potential pathways by which these gene pairs originated, which may be necessary for the evolution of a new species. [CONCLUSION] In this study, many bidirectional gene pairs in Gossypium hirsutum TM-1 were identified using computer programming, and systematic analysis was conducted to explore their functions and evolutionary relationships. In addition, the promoter activity of the bidirectional intergenic sequences was verified. The combination of computer programming screening, experimental validation and other methods is expected to provide preferred bidirectional promoters for transgenic breeding work via multigene cotransformation methods, and this information is valuable for genetic engineering research and applications.",
+      "journal": "BMC plant biology",
+      "year": 2024,
+      "pub_date": "2024-09-04",
+      "authors": "Yang Jiangtao; Gao Lihua; Zhang Xiaochun; Zheng Ran; Liu Xuan; ... (+3)",
+      "first_author": "Yang Jiangtao",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39172738",
+      "doi": "10.1093/molbev/msae176",
+      "title": "Inference of Host-Pathogen Interaction Matrices from Genome-Wide Polymorphism Data.",
+      "abstract": "Host-pathogen coevolution is defined as the reciprocal evolutionary changes in both species due to genotype × genotype (G×G) interactions at the genetic level determining the outcome and severity of infection. While co-analyses of hosts and pathogen genomes (co-genome-wide association studies) allow us to pinpoint the interacting genes, these do not reveal which host genotype(s) is/are resistant to which pathogen genotype(s). The knowledge of this so-called infection matrix is important for agriculture and medicine. Building on established theories of host-pathogen interactions, we here derive four novel indices capturing the characteristics of the infection matrix. These indices can be computed from full genome polymorphism data of randomly sampled uninfected hosts, as well as infected hosts and their pathogen strains. We use these indices in an approximate Bayesian computation method to pinpoint loci with relevant G×G interactions and to infer their underlying interaction matrix. In a combined single nucleotide polymorphism dataset of 451 European humans and their infecting hepatitis C virus (HCV) strains and 503 uninfected individuals, we reveal a new human candidate gene for resistance to HCV and new virus mutations matching human genes. For two groups of significant human-HCV (G×G) associations, we infer a gene-for-gene infection matrix, which is commonly assumed to be typical of plant-pathogen interactions. Our model-based inference framework bridges theoretical models of G×G interactions with host and pathogen genomic data. It, therefore, paves the way for understanding the evolution of key G×G interactions underpinning HCV adaptation to the European human population after a recent expansion.",
+      "journal": "Molecular biology and evolution",
+      "year": 2024,
+      "pub_date": "2024-09-04",
+      "authors": "Märkle Hanna; John Sona; Metzger Lukas; Ansari M Azim; Pedergnana Vincent; ... (+1)",
+      "first_author": "Märkle Hanna",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39235644",
+      "doi": "10.1007/s11033-024-09894-8",
+      "title": "Identification and functional characterization of the npc-2-like domain containing rust effector protein that suppresses cell death in plants.",
+      "abstract": "The MD-2-related lipid-recognition (ML/Md-2) domain is a lipid/sterol-binding domain that are involved in sterol transfer and innate immunity in eukaryotes. Here we report a genome-wide survey of this family, identifying 84 genes in 30 fungi including plant pathogens. All the studied species were found to have varied ML numbers, and expansion of the family was observed in Rhizophagus irregularis (RI) with 33 genes. The molecular docking studies of these proteins with cholesterol derivatives indicate lipid-binding functional conservation across the animal and fungi kingdom. The phylogenetic studies among eukaryotic ML proteins showed that Puccinia ML members are more closely associated with animal (insect) npc2 proteins than other fungal ML members. One of the candidates from leaf rust fungus Puccinia triticina, Pt5643 was PCR amplified and further characterized using various studies such as qRT-PCR, subcellular localization studies, yeast functional complementation, signal peptide validation, and expression studies. The Pt5643 exhibits the highest expression on the 5th day post-infection (dpi). The confocal microscopy of Pt5643 in onion epidermal cells and N. benthamiana shows its location in the cytoplasm and nucleus. The functional complementation studies of Pt5643 in npc2 mutant yeast showed its functional similarity to the eukaryotic/yeast npc2 gene. Furthermore, the overexpression of Pt5643 also suppressed the BAX, NEP1, and H₂O₂-induced program cell death in Nicotiana species and yeast. Altogether the present study reports the novel function of ML domain proteins in plant fungal pathogens and their possible role as effector molecules in host defense manipulation.",
+      "journal": "Molecular biology reports",
+      "year": 2024,
+      "pub_date": "2024-09-05",
+      "authors": "Jaswal Rajdeep; Dubey Himanshu; Kiran Kanti; Rawal Hukam; Kumar Gulshan; ... (+7)",
+      "first_author": "Jaswal Rajdeep",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38922300",
+      "doi": "10.1093/plcell/koae179",
+      "title": "NRC Immune receptor networks show diversified hierarchical genetic architecture across plant lineages.",
+      "abstract": "Plants' complex immune systems include nucleotide-binding domain and leucine-rich repeat-containing (NLR) proteins, which help recognize invading pathogens. In solanaceous plants, the NRC (NLR required for cell death) family includes helper NLRs that form a complex genetic network with multiple sensor NLRs to provide resistance against pathogens. However, the evolution and function of NRC networks outside solanaceous plants are currently unclear. Here, we conducted phylogenomic and macroevolutionary analyses comparing NLRs identified from different asterid lineages and found that NRC networks expanded significantly in most lamiids but not in Ericales and campanulids. Using transient expression assays in Nicotiana benthamiana, we showed that NRC networks are simple in Ericales and campanulids, but have high complexity in lamiids. Phylogenetic analyses grouped the NRC helper NLRs into three NRC0 subclades that are conserved, and several family-specific NRC subclades of lamiids that show signatures of diversifying selection. Functional analyses revealed that members of the NRC0 subclades are partially interchangeable, whereas family-specific NRC members in lamiids lack interchangeability. Our findings highlight the distinctive evolutionary patterns of the NRC networks in asterids and provide potential insights into transferring disease resistance across plant lineages.",
+      "journal": "The Plant cell",
+      "year": 2024,
+      "pub_date": "2024-09-03",
+      "authors": "Goh Foong-Jing; Huang Ching-Yi; Derevnina Lida; Wu Chih-Hang",
+      "first_author": "Goh Foong-Jing",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39232097",
+      "doi": "10.1038/s41598-024-71380-9",
+      "title": "Transcriptome, hormonal, and secondary metabolite changes in leaves of DEFENSE NO DEATH 1 (DND1) silenced potato plants.",
+      "abstract": "DEFENSE NO DEATH 1 (DND1) is a cyclic nucleotide-gated ion channel protein. Earlier, it was shown that the silencing of DND1 in the potato (Solanum tuberosum L.) leads to resistance to late blight, powdery mildew, and gray mold diseases. At the same time, however, it can reduce plant growth and cause leaf necrosis. To obtain knowledge of the molecular events behind the pleiotropic effect of DND1 downregulation in the potato, metabolite and transcriptome analyses were performed on three DND1 silenced lines of the cultivar 'Désirée.' A massive increase in the salicylic acid content of leaves was detected. Concentrations of jasmonic acid and chlorogenic acid and their derivatives were also elevated. Expression of 1866 genes was altered in the same way in all three DND1 silenced lines, including those related to the synthesis of secondary metabolites. The activation of several alleles of leaf rust, late blight, and other disease resistance genes, as well as the induction of pathogenesis-related genes, was detected. WRKY and NAC transcription factor families were upregulated, whereas bHLHs were downregulated, indicating their central role in transcriptome changes. These results suggest that the maintenance of the constitutive defense state leads to the reduced growth of DND1 silenced potato plants.",
+      "journal": "Scientific reports",
+      "year": 2024,
+      "pub_date": "2024-09-04",
+      "authors": "Bánfalvi Zsófia; Kalapos Balázs; Hamow Kamirán Áron; Jose Jeny; Éva Csaba; ... (+4)",
+      "first_author": "Bánfalvi Zsófia",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "month": "2001-03",
+  "generated": "2026-07-13 02:59:42",
+  "total": 20,
+  "by_category": {
+    "New_Virus": 8,
+    "Host_Virus_Interactions": 4,
+    "Antiviral_Resistance_Genes": 3,
+    "Molecular_Characterization": 2,
+    "Biotechnology_Applications": 2,
+    "Detection_Methods": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "11172108",
+      "doi": "10.1099/0022-1317-82-3-655",
+      "title": "Recombination, pseudorecombination and synergism of geminiviruses are determinant keys to the epidemic of severe cassava mosaic disease in Uganda.",
+      "abstract": "The molecular variability of cassava geminiviruses occurring in Uganda was investigated in this study. Infected cassava plants and whiteflies were collected from cassava plantings in different geographical areas of the country and PCR was used for molecular characterization of the viruses. Two complete sequences of DNA-A and -B from African cassava mosaic virus (ACMV), two DNA-A sequences from East African cassava mosaic virus (EACMV), two DNA-B sequences of EACMV and the partial DNA-A nucleotide sequence of a new virus strain isolated in Uganda, EACMV-UG3, are reported here. Analysis of naturally infected cassava plants showed various assortments of DNA-A and DNA-B of the Ugandan viruses, suggesting the occurrence of natural inter- and intraspecies pseudorecombinations and a pattern of cassava mosaic disease (CMD) more complex than previously reported. EACMV-UG2 DNA-A, which contains a recombinant fragment between ACMV and EACMV-UG1 in the coat protein gene that resembles virus from Tanzania, was widespread in the country and always associated with EACMV-UG3 DNA-B, which probably resulted from another natural recombination event. Mixed infections of ACMV-UG and EACMV-UG in cassava and whiteflies were detected in most of the regions where both viruses occurred. These mixed-infected samples always showed extremely severe CMD symptoms, suggesting a synergistic interaction between ACMV-UG and EACMV-UG2. The first demonstration is provided of infectivity of EACMV clones to cassava, proving conclusively that the pseudorecombinant EACMV-UG2 DNA-A+EACMV-UG3 DNA-B is a causal agent of CMD in Uganda.",
+      "journal": "The Journal of general virology",
+      "year": 2001,
+      "pub_date": "2001-03-01",
+      "authors": "Pita J S; Fondong V N; Sangaré A; Otim-Nape G W; Ogwal S; ... (+1)",
+      "first_author": "Pita J S",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "African cassava mosaic virus (ACMV), East African cassava mosaic virus (EACMV), 以及新株系EACMV-UG3",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "木薯 (Manihot esculenta)",
+      "location": "乌干达",
+      "results": "获得多个病毒DNA序列，发现EACMV-UG2与EACMV-UG3的假重组体，混合感染产生协同作用，加重症状。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11164917",
+      "doi": "10.1016/s0166-0934(00)00272-x",
+      "title": "Sensitive detection of the Egyptian species of sugarcane streak virus by PCR-probe capture hybridization (PCR-ELISA) and its complete nucleotide sequence.",
+      "abstract": "A rapid and sensitive assay for the specific detection of Sugarcane streak virus (SSV) using PCR-probe capture hybridization (PCR-ELISA) was developed. Nucleic acids suitable for PCR were extracted from SSV-infected tissue using organic solvents or Fast DNA kit. SSV cDNA was amplified using viral specific primers and the amplified SSV cDNA (amplicon) was DIG-labelled during the amplification process. The amplicon was then detected in a colorimetric hybridization system by a microtiter plate using a biotinylated cDNA (22 nt), cDNA (789 nt) or cRNA (789 nt) capture probe. This system combines the specificity of molecular hybridization, the ease of the colorimetric protocol, and is 10-100 fold more sensitive than agarose gel electrophoretic analysis in detecting the amplified product. Long cDNA or cRNA capture probe was 2-7 fold more sensitive than the oligo cDNA probe for the detection. Complete nucleotide sequence of SSV from Naga Hammady, Egypt, revealed that SSV-EG is a new species of SSV that shares 66% nucleotide identity with the virus species from Natal, South Africa.",
+      "journal": "Journal of virological methods",
+      "year": 2001,
+      "pub_date": "2001-03-01",
+      "authors": "Shamloul A M; Abdallah N A; Madkour M A; Hadidi A",
+      "first_author": "Shamloul A M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Sugarcane streak virus (SSV-EG)",
+      "taxonomy": "Geminiviridae, Mastrevirus",
+      "host_plant": "甘蔗 (Sugarcane)",
+      "location": "埃及 (Egypt, Naga Hammady)",
+      "results": "PCR-ELISA比琼脂糖凝胶电泳灵敏10-100倍；长cDNA/cRNA探针比寡核苷酸探针灵敏2-7倍；埃及株系与南非株系核苷酸同源性66%，为新种。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11277425",
+      "doi": "10.1094/MPMI.2001.14.3.278",
+      "title": "Pathogenicity determinants in the complex virus population of a Plum pox virus isolate.",
+      "abstract": "Several subisolates were separated from a single Plum pox virus (PPV) isolate, PPV-PS. In spite of an extremely high sequence conservation (more than 99.9% similarity), different subisolates differed largely in pathogenicity in herbaceous hosts and infectivity in woody plants. The severity of symptomatology did not seem to correlate with virus accumulation. Sequence analysis and site-directed mutagenesis demonstrated that single amino acid changes in the helper component (HC) protein caused a drastic effect on virus symptoms in herbaceous hosts and notably modified virus infectivity in peach seedlings. These results indicate that HC variation might play an important role in virulence evolution of natural plant virus infections. Moreover, the analysis of Potato virus X (PVX)-HC chimeras showed that the identified HC amino acid changes had parallel effects on the severity of symptoms caused by PPV and on HC-induced enhancement of PVX pathogenicity, indicating that HC functions in potyvirus symptomatology and in synergism with other viruses have overlapping determinants.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 2001,
+      "pub_date": "2001-03-01",
+      "authors": "Sáenz P; Quiot L; Quiot J B; Candresse T; García J A",
+      "first_author": "Sáenz P",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Plum pox virus (PPV)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11330699",
+      "doi": "10.1271/bbb.65.719",
+      "title": "Primary structure and phylogenetic analysis of the coat protein of a Toyama isolate of tobacco necrosis virus.",
+      "abstract": "The amino acid sequence of the coat protein (CP) of a tobacco necrosis virus (TNV) strain, Toyama isolate, was determined by a combination of peptide and cDNA sequencing. The deduced sequence of 276 residues was compared with CPs of other TNV isolates and other plant virus isolates of Tombusviridae. It showed the highest similarity to the TNV Nebraska isolate with 92% identity and moderate similarity to the TNV strain A with 51% identity, confirming the previous serological analysis. It also showed overall similarity with CPs of mostly genera Necrovirus and Sobemovirus, and partial similarity with CPs of genera Tombusvirus and Carmovirus. Among 13 CPs that showed overall similarity, there were 10 completely conserved residues. These included three residues that participate in Ca2+ ligation at the interfaces of virion subunits in TNV crystal structure, suggesting that similar metal binding occur in the viruses of genera Necrovirus and Sobemovirus.",
+      "journal": "Bioscience, biotechnology, and biochemistry",
+      "year": 2001,
+      "pub_date": "2001-03-01",
+      "authors": "Saeki K; Takahashi Y; Oh-Oka H; Umeoka T; Oda Y; ... (+1)",
+      "first_author": "Saeki K",
+      "categories": [
+        "Detection_Methods",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "烟草坏死病毒（TNV）Toyama分离株",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11160744",
+      "doi": "10.1128/JVI.75.5.2411-2420.2001",
+      "title": "Cymbidium ringspot tombusvirus coat protein coding sequence acts as an avirulent RNA.",
+      "abstract": "Avirulent genes either directly or indirectly produce elicitors that are recognized by specific receptors of plant resistance genes, leading to the induction of host defense responses such as hypersensitive reaction (HR). HR is characterized by the development of a necrotic lesion at the site of infection which results in confinement of the invader to this area. Artificial chimeras and mutants of cymbidium ringspot (CymRSV) and the pepper isolate of tomato bushy stunt (TBSV-P) tombusviruses were used to determine viral factors involved in the HR resistance phenotype of Datura stramonium upon infection with CymRSV. A series of constructs carrying deletions and frameshifts of the CymRSV coat protein (CP) undoubtedly clarified that an 860-nucleotide (nt)-long RNA sequence in the CymRSV CP coding region (between nt 2666 and 3526) is the elicitor of a very rapid HR-like response of D. stramonium which limits the virus spread. This finding provides the first evidence that an untranslatable RNA can trigger an HR-like resistance response in virus-infected plants. The effectiveness of the resistance response might indicate that other nonhost resistance could also be due to RNA-mediated HR. It is an appealing explanation that RNA-mediated HR has evolved as an alternative defense strategy against RNA viruses.",
+      "journal": "Journal of virology",
+      "year": 2001,
+      "pub_date": "2001-03-01",
+      "authors": "Szittya G; Burgyán J",
+      "first_author": "Szittya G",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Cymbidium ringspot tombusvirus (CymRSV), pepper isolate of tomato bushy stunt virus (TBSV-P)",
+      "taxonomy": "",
+      "host_plant": "Datura stramonium",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11160714",
+      "doi": "10.1128/JVI.75.5.2097-2106.2001",
+      "title": "Mutation of host delta9 fatty acid desaturase inhibits brome mosaic virus RNA replication between template recognition and RNA synthesis.",
+      "abstract": "All positive-strand RNA viruses assemble their RNA replication complexes on intracellular membranes. Brome mosaic virus (BMV) replicates its RNA in endoplasmic reticulum (ER)-associated complexes in plant cells and the yeast Saccharomyces cerevisiae. BMV encodes RNA replication factors 1a, with domains implicated in RNA capping and helicase functions, and 2a, with a central polymerase-like domain. Factor 1a interacts independently with the ER membrane, viral RNA templates, and factor 2a to form RNA replication complexes on the perinuclear ER. We show that BMV RNA replication is severely inhibited by a mutation in OLE1, an essential yeast chromosomal gene encoding delta9 fatty acid desaturase, an integral ER membrane protein and the first enzyme in unsaturated fatty acid synthesis. OLE1 deletion and medium supplementation show that BMV RNA replication requires unsaturated fatty acids, not the Ole1 protein, and that viral RNA replication is much more sensitive than yeast growth to reduced unsaturated fatty acid levels. In ole1 mutant yeast, 1a still becomes membrane associated, recruits 2a to the membrane, and recognizes and stabilizes viral RNA templates normally. However, RNA replication is blocked prior to initiation of negative-strand RNA synthesis. The results show that viral RNA synthesis is highly sensitive to lipid composition and suggest that proper membrane fluidity or plasticity is essential for an early step in RNA replication. The strong unsaturated fatty acid dependence also demonstrates that modulating fatty acid balance can be an effective antiviral strategy.",
+      "journal": "Journal of virology",
+      "year": 2001,
+      "pub_date": "2001-03-01",
+      "authors": "Lee W M; Ishikawa M; Ahlquist P",
+      "first_author": "Lee W M",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "雀麦花叶病毒 (Brome mosaic virus, BMV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11257417",
+      "doi": "10.1016/s0264-410x(00)00511-9",
+      "title": "The green revolution: plants as heterologous expression vectors.",
+      "abstract": "Agrobacterium tumefaciens mediated gene transfer into the plant genome laid the groundwork for new procedures aimed at crop improvement, including resistance to pathogens, increased product yield, modified oil content, and resistance to environmental stress conditions. New developments in molecular plant virology have led to the generation of plant-based systems for transient expression of foreign sequences using plant virus vectors. In the last decade both transgenic plants and plant virus vectors have been used increasingly to produce a wide range of biomedical reagents, including vaccine antigens, in a safe and economically feasible manner. These new plant-based technologies have enormous potential for a variety of applications, including the oral delivery of vaccine antigens.",
+      "journal": "Vaccine",
+      "year": 2001,
+      "pub_date": "2001-03-21",
+      "authors": "Koprowski H; Yusibov V",
+      "first_author": "Koprowski H",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "植物病毒载体（未指定具体病毒）",
+      "taxonomy": "",
+      "host_plant": "植物（转基因植物与植物病毒载体系统）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11113131",
+      "doi": "10.1074/jbc.M008922200",
+      "title": "Hepcidin, a urinary antimicrobial peptide synthesized in the liver.",
+      "abstract": "Cysteine-rich antimicrobial peptides are abundant in animal and plant tissues involved in host defense. In insects, most are synthesized in the fat body, an organ analogous to the liver of vertebrates. From human urine, we characterized a cysteine-rich peptide with three forms differing by amino-terminal truncation, and we named it hepcidin (Hepc) because of its origin in the liver and its antimicrobial properties. Two predominant forms, Hepc20 and Hepc25, contained 20 and 25 amino acid residues with all 8 cysteines connected by intramolecular disulfide bonds. Reverse translation and search of the data bases found homologous liver cDNAs in species from fish to human and a corresponding human genomic sequence on human chromosome 19. The full cDNA by 5' rapid amplification of cDNA ends was 0.4 kilobase pair, in agreement with hepcidin mRNA size on Northern blots. The liver was the predominant site of mRNA expression. The encoded prepropeptide contains 84 amino acids, but only the 20-25-amino acid processed forms were found in urine. Hepcidins exhibited antifungal activity against Candida albicans, Aspergillus fumigatus, and Aspergillus niger and antibacterial activity against Escherichia coli, Staphylococcus aureus, Staphylococcus epidermidis, and group B Streptococcus. Hepcidin may be a vertebrate counterpart of cysteine-rich antimicrobial peptides produced in the fat body of insects.",
+      "journal": "The Journal of biological chemistry",
+      "year": 2001,
+      "pub_date": "2001-03-16",
+      "authors": "Park C H; Valore E V; Waring A J; Ganz T",
+      "first_author": "Park C H",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11321095",
+      "doi": "10.1099/00207713-51-2-489",
+      "title": "Methanobacterium congolense sp. nov., from a methanogenic fermentation of cassava peel.",
+      "abstract": "Strain CT, a non-motile, mesophilic, hydrogenotrophic, methanogenic bacterium, was isolated from an anaerobic digester used for the treatment of raw cassava-peel waste in Congo. The cells were rods, 0.4-0.5 x 2-10 microm in size, and stained Gram-positive. Hydrogen and carbon dioxide were the only substrates that supported growth and methane production. Methane production, but not growth, occurred with CO2 in the presence of either 2-propanol, 2-butanol or cyclopentanol as hydrogen donors. The temperature range for growth was 25-50 degrees C, the optimum being between 37 and 42 degrees C. The optimum pH for growth was 7.2; consistent growth and methane production were not observed below pH 5.9 or above pH 8.2. The doubling time under optimal growth conditions was 7.5 h. The DNA base composition was 39.5 mol% G+C. On the basis of 16S rRNA gene sequence analysis and phenotypic characteristics, the isolate is proposed as a new species of the genus Methanobacterium, namely Methanobacterium congolense sp. nov. The type strain is strain CT (= DSM 7095T = OCM 779T).",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2001,
+      "pub_date": "2001-03-01",
+      "authors": "Cuzin N; Ouattara A S; Labat M; Garcia J L",
+      "first_author": "Cuzin N",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11245900",
+      "doi": "10.1016/s0168-1656(00)00406-5",
+      "title": "Degradation of natural and synthetic polyesters under anaerobic conditions.",
+      "abstract": "Often, degradability under anaerobic conditions is desirable for plastics claimed to be biodegradable, e.g. in anaerobic biowaste treatment plants, landfills and in natural anaerobic sediments. The biodegradation of the natural polyesters poly(beta-hydroxybutyrate) (PHB), poly(beta-hydroxybutyrate-co-11.6%-beta-hydroxyvalerate) (PHBV) and the synthetic polyester poly(epsilon-caprolactone) (PCL) was studied in two anaerobic sludges and individual polyester degrading anaerobic strains were isolated, characterized and used for degradation experiments under controlled laboratory conditions. Incubation of PHB and PHBV films in two anaerobic sludges exhibited significant degradation in a time scale of 6-10 weeks monitored by weight loss and biogas formation. In contrast to aerobic conditions, PHB was degraded anaerobically more rapidly than the copolyester PHBV, when tested with either mixed cultures or a single strained isolate. PCL tends to degrade slower than the natural polyesters PHB and PHBV. Four PHB and PCL degrading isolates were taxonomically identified and are obviously new species belonging to the genus Clostridium group I. The depolymerizing enzyme systems of PHB and PCL degrading isolates are supposed to be different. Using one isolated strain in an optimized laboratory degradation test with PHB powder, the degradation time was drastically reduced compared to the degradation in sludges (2 days vs. 6-10 weeks).",
+      "journal": "Journal of biotechnology",
+      "year": 2001,
+      "pub_date": "2001-03-30",
+      "authors": "Abou-Zeid D M; Müller R J; Deckwer W D",
+      "first_author": "Abou-Zeid D M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11321117",
+      "doi": "10.1099/00207713-51-2-699",
+      "title": "Candida orba sp. nov., a new cactus-specific yeast species from Queensland, Australia.",
+      "abstract": "A new species of yeast from decaying cladodes of Opuntia cactus, Candida orba, is described. This species is a member of a four-species clade of cactophilic yeasts. The new species has only been found in one region of Queensland, Australia, where it was presumably introduced during attempts to eradicate prickly pear cactus. DNA-DNA relatedness, phylogenetic analysis, physiological differences, killer-sensitivity profiles and mating reactions establish the distinctness of the taxon as a new species. C. orba is most closely related to Phaffomyces thermotolerans, a species found associated with columnar cacti in the North American Sonoran Desert. The type strain of C. orba, isolated from rotting cladodes of Opuntia stricta in the State of Queensland, Australia, is strain UCD-FST 84-833.1T (= CBS 8782T = NRRL Y-27336T = ATCC MYA-341). Only the h- mating type of the species has been recovered. The lack of the opposite mating type could be the result of a bottleneck during its introduction to Australia. The original geographic/host distribution of this species in the Americas is unknown.",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2001,
+      "pub_date": "2001-03-01",
+      "authors": "Starmer W T; Phaff H J; Ganter P F; Lachance M A",
+      "first_author": "Starmer W T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11795164",
+      "doi": "",
+      "title": "[Two new species of Phrynopus (Anura: Leptodactylidae) from the Bolivian cloud forests].",
+      "abstract": "We describe two new species of Phrynopus from cloud forests in Cochabamba, Bolivia. The new species are assigned to the P. peruanus group and are characterized by the presence of basal webbing, distinctive coloration, and by having the first finger shorter than the second. The first of these new species was collected near Montepunko in Parque Nacional Carrasco and is known from eight males and six females. Among its distinctive characteristics are round cream-colored glands on its flanks. A second species is known from one male and one female collected near \"Zona de Aguirre\" near the northwest border of the park. V and X-shaped blotches and a dorsum that is smooth except for dorsolateral and scapular folds characterize this species. Musculature has rarely been described for species of Phrynopus. The species from Montepunko has unusual gular and thigh musculature that is quite unlike other species of the genus.",
+      "journal": "Revista de biologia tropical",
+      "year": 2001,
+      "pub_date": "2001-03-01",
+      "authors": "Aguayo Vedia C R; Harvey M B",
+      "first_author": "Aguayo Vedia C R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

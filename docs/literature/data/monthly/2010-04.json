@@ -1,0 +1,282 @@
+{
+  "month": "2010-04",
+  "generated": "2026-07-13 02:59:42",
+  "total": 41,
+  "by_category": {
+    "New_Virus": 16,
+    "Host_Virus_Interactions": 14,
+    "Antiviral_Resistance_Genes": 8,
+    "Control_Management": 3,
+    "Biotechnology_Applications": 1,
+    "Transmission_Epidemiology": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "20079779",
+      "doi": "10.1016/j.virusres.2009.12.007",
+      "title": "Chili leaf curl betasatellite is associated with a distinct recombinant begomovirus, Pepper leaf curl Lahore virus, in Capsicum in Pakistan.",
+      "abstract": "Capsium spp. are an important vegetable crop cultivated through Pakistan. Leaf curl disease is the major disease of Capsicum spp. in Pakistan caused by viruses. The disease has previously been shown to be associated with begomoviruses and betasatellites. We have cloned and sequenced a begomovirus and its associated betasatellite from Capsicum originating from central Pakistan. The begomovirus isolated was distinct from all previously characterised viruses and we propose the name Pepper leaf curl Lahore virus (PepLCLV) for this new species. Comparison of the sequence of PepLCLV with previously characterised begomoviruses shows it likely to have resulted from recombination between Papaya leaf curl virus and Chili leaf curl virus (ChiLCV), two species that have previously been identified in Pakistan. The betasatellite associated with PepLCLV in Capsicum was identified as Chili leaf curl betasatellite (ChLCB). This is the first identification of a cognate begomovirus for ChLCB infecting Capsicum, although this betasatellite has been shown in association with ChiLCV infecting potato in Pakistan. PepLCLV is one of an increasing number of monopartite begomoviruses shown to be associated with a betasatellite and one of the numerous species that affect Capsicum. In view of their only having been identified in Pakistan, PepLCLV and ChLCB likely represent a geographically distinct, Capsicum adapted, begomovirus-betasatellite complex.",
+      "journal": "Virus research",
+      "year": 2010,
+      "pub_date": "2010-04-01",
+      "authors": "Tahir Muhammad; Haider Muhammad Saleem; Briddon Rob W",
+      "first_author": "Tahir Muhammad",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Pepper leaf curl Lahore virus (PepLCLV) 和 Chili leaf curl betasatellite (ChLCB)",
+      "taxonomy": "Geminiviridae, Begomovirus (病毒); Betasatellite (卫星)",
+      "host_plant": "辣椒 (Capsicum spp.)",
+      "location": "巴基斯坦 (central Pakistan)",
+      "results": "PepLCLV由Papaya leaf curl virus和Chili leaf curl virus重组而来；首次在辣椒中发现PepLCLV与ChLCB的关联。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "20110096",
+      "doi": "10.1016/j.virol.2009.12.022",
+      "title": "Trafficking of the potato spindle tuber viroid between tomato and Orobanche ramosa.",
+      "abstract": "Viroids, small RNA pathogens capable of infecting flowering plants, coexist in the field with parasitic plants that infest many crops. The ability of viroids to be exchanged between host and parasitic plants and spread in the latter has not yet been investigated. We studied the interaction between the Potato spindle tuber viroid (PSTVd) and Branched bromrape (Orobanche ramosa) using the tomato, Solanum lycopersicon, as a common host. We report the long distance trafficking of PSTVd RNA via the phloem from tomato to O. ramosa, but not vice versa. Furthermore, we identify O. ramosa as a novel host with the ability to facilitate the replication and processing of PSTVd. Finally, molecular variants of PSTVd with single nucleotide substitutions that replicate with different efficiencies in tomato were isolated from O. ramosa.",
+      "journal": "Virology",
+      "year": 2010,
+      "pub_date": "2010-04-10",
+      "authors": "Vachev T; Ivanova D; Minkov I; Tsagris M; Gozmanova M",
+      "first_author": "Vachev T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Potato spindle tuber viroid (PSTVd)",
+      "taxonomy": "Pospiviroidae, Pospiviroid",
+      "host_plant": "番茄 (Solanum lycopersicum), 分枝列当 (Orobanche ramosa)",
+      "location": "未提及",
+      "results": "PSTVd RNA通过韧皮部从番茄长距离运输到O. ramosa，但反向不行；O. ramosa是新宿主，支持复制和加工；分离到不同效率的分子变异体。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "20224893",
+      "doi": "10.1007/s00705-010-0625-0",
+      "title": "A new strain of Indian cassava mosaic virus causes a mosaic disease in the biodiesel crop Jatropha curcas.",
+      "abstract": "Jatropha curcas mosaic disease is a newly emerging disease that challenges the productivity of a prospective biofuel crop, J. curcas. The aetiology of this disease has not been resolved. Here, we report the complete nucleotide sequences of a Jatropha virus isolated from Dharwad, Southern India. Phylogenetic analysis of the virus genome suggests it is a new strain of Indian cassava mosaic virus. Agroinfiltration of the two cloned viral DNA components produced systemic infection and typical mosaic symptoms in J. curcas, thereby fulfilling Koch's postulates. The availability of infectious clones will provide a valuable tool to screen J. curcas cultivars for disease resistance and facilitate the generation of virus-resistant J. curcas plants by transgenic technology.",
+      "journal": "Archives of virology",
+      "year": 2010,
+      "pub_date": "2010-04-01",
+      "authors": "Gao ShiQiang; Qu Jing; Chua Nam-Hai; Ye Jian",
+      "first_author": "Gao ShiQiang",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Indian cassava mosaic virus (新株系)",
+      "taxonomy": "",
+      "host_plant": "Jatropha curcas (麻风树)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "20224895",
+      "doi": "10.1007/s00705-010-0603-6",
+      "title": "First infectious clone of the propagatively transmitted Oat blue dwarf virus.",
+      "abstract": "Oat blue dwarf virus (OBDV) is a small, phloem-limited marafivirus that replicates in its leafhopper vector. We have developed complete cDNA clones of OBDV from which infectious transcripts may be derived--the first such clones for any propagatively transmitted plant virus. Prior to clone construction, the reported sequences of the 5' and 3' ends were confirmed using 5' RACE, primer extension, and ligation-anchored PCR. Using vascular puncture of maize seeds with capped transcripts, multiple clones were shown to be infectious at an average rate of 24.3% (range 14-36%). Aster leafhoppers successfully transmitted OBDV to oats and barley after feeding on detached, infected maize leaves. Proteins and RNAs consistent in size with those expected in OBDV infection were detected in young leaves via western and northern blotting, respectively. One construct, pOBDV-2r, was designated as the reference clone. An infectious clone of OBDV will be valuable in examining the interaction of this virus with both its insect and plant hosts.",
+      "journal": "Archives of virology",
+      "year": 2010,
+      "pub_date": "2010-04-01",
+      "authors": "Edwards Michael C; Weiland John J",
+      "first_author": "Edwards Michael C",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Oat blue dwarf virus (OBDV)",
+      "taxonomy": "",
+      "host_plant": "燕麦、大麦、玉米",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754496",
+      "doi": "10.1094/PDIS-94-4-0485A",
+      "title": "First Report of Cucurbit yellow stunting disorder virus on Melon in China.",
+      "abstract": "Melon (Cucumis melo L.) plants in commercial fields in Shanghai, Jiangsu, and Zhejiang exhibited stunting, deformation, interveinal chlorosis, and leaf mottling in the spring of 2008. In addition, adult and immature whiteflies (Bemisia tabaci biotype B) were present in these melon fields. Thirty-two symptomatic leaf samples were collected from these fields for further analysis (9 from Nanhui County in Shanghai, 11 from Fengxian County in Shanghai, 6 from Kunshan County of Jiangsu, and 6 from Jiashan County of Zhejiang). Total RNA was extracted from these samples along with asymptomatic control plants and screened for the presence of Cucurbit yellow stunting disorder virus (CYSDV) by using primers specific to genes encoding coat protein (2) and HSP70h (1) of CYSDV through reverse transcription (RT)-PCR methods. RNA was successfully extracted from 31 of 32 symptomatic samples. All 31 symptomatic leaf samples tested with coat protein primers were positive for CYSDV and yielded the expected fragment length of 394 bp. The RT-PCR products of the coat protein gene from all 31 isolates were cloned and found to be identical in sequence. Thus, only one was deposited in GenBank (No. GU189240). The submitted sequence of the amplified part of the coat protein gene was 99% identical to the sequence of coat protein gene of CYSDV from Jordan, France, and Florida (GenBank Accession Nos. DQ903107, AY204220, and EU596528, respectively) and 98% identical to that of an isolate from Spain (GenBank Accession No. AJ243000). Similarly, all 31 samples were also positive for CYSDV with the primers specific to HSP70h and yielded the expected fragment length of 175 bp. The RT-PCR products of the HSP70h gene from these isolates were also cloned and found to be identical in sequence. The sequence of the amplified portion of the HSP70h gene was found to be identical to the sequence of HSP70h of CYSDV deposited in GenBank (No. AJ439690.2). CYSDV was noticed in all three surveyed regions and the percentage of disease incidence was approximately 68% in all these regions. The occurrence of CYSDV has been previously reported in Europe (Spain and France), southern Asia (Iran and Jordan), North America (United States and Mexico), and other countries (1). To our knowledge, this is first report of CYSDV in China. References: (1) Y.-W. Kuo et al. Plant Dis. 91:330, 2007. (2) J. E. Polston et al. Plant Dis. 92:1251, 2008.",
+      "journal": "Plant disease",
+      "year": 2010,
+      "pub_date": "2010-04-01",
+      "authors": "Liu L Z; Chen Y Y; Zhu W M",
+      "first_author": "Liu L Z",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cucurbit yellow stunting disorder virus (CYSDV)",
+      "taxonomy": "Closteroviridae, Crinivirus",
+      "host_plant": "melon (Cucumis melo L.)",
+      "location": "中国上海（南汇、奉贤）、江苏（昆山）、浙江（嘉善）",
+      "results": "31份症状样品均阳性，CP片段394bp与约旦等分离物99%相似，HSP70h片段175bp与已知一致，三地区发病率约68%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "20024609",
+      "doi": "10.1007/s11262-009-0430-6",
+      "title": "Molecular characterization and phylogeny of two begomoviruses infecting Malvastrum americanum in Jamaica: evidence of the contribution of inter-species recombination to the evolution of malvaceous weed-associated begomoviruses from the northern Caribbean.",
+      "abstract": "Two distinct full-length begomovirus DNA-A components and a DNA-B component were PCR amplified, cloned and sequenced from Jamaican Malvastrum americanum plants exhibiting yellow mosaic symptoms. Whereas one of the DNA-A components is from a potentially new species that we have tentatively named Malvastrum yellow mosaic Helshire virus (MaYMHV), the other DNA-A and the DNA-B form a cognate pair and represent a new virus species tentatively named Malvastrum yellow mosaic Jamaica virus (MaYMJV). The MaYMJV genome components together infected M. americanum and produced yellow mosaic symptoms similar to those seen in naturally infected plants. Both the MaYMJV and MaYMHV DNA-A components are typical of those of bipartite begomoviruses from the Western Hemisphere. The DNA-As of MaYMJV and MaYMHV are most closely related to each other (sharing 84% sequence identity) and cluster phylogenetically with begomoviruses found infecting malvaceous weeds in Cuba and Florida. The DNA-B component of MaYMJV is most similar to that of Sida golden mosaic virus-[USA:Florida] (SiGMV-[US:Flo]) and Sida golden mosaic Costa Rica virus-[Costa Rica] (SiGMCRV-[CR]). As with many other geminivirus species, the genomes of MaYMJV and MaYMHV bear traces of inter-species recombination.",
+      "journal": "Virus genes",
+      "year": 2010,
+      "pub_date": "2010-04-01",
+      "authors": "Graham André P; Martin Darren P; Roye Marcia E",
+      "first_author": "Graham André P",
+      "categories": [
+        "New_Virus",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "Malvastrum yellow mosaic Helshire virus (MaYMHV) 和 Malvastrum yellow mosaic Jamaica virus (MaYMJV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "Malvastrum americanum",
+      "location": "牙买加",
+      "results": "获得两个DNA-A和一个DNA-B；MaYMJV和MaYMHV的DNA-A相似度84%，MaYMJV的DNA-B与SiGMV和SiGMCRV最相似；基因组存在种间重组痕迹。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754505",
+      "doi": "10.1094/PDIS-94-4-0484C",
+      "title": "First Report of Impatiens necrotic spot virus on Spiderlily in China.",
+      "abstract": "Impatiens necrotic spot virus (INSV) (genus Tospovirus; family Bunyaviridae) is a devastating disease in the production of ornamental flowers (1). From 2007 to 2009, a survey of 10 major parks and recreation areas in Kunming, the capital of Yunnan Province, China, indicated that approximately 60 to 70% of Spiderlily (Hymenocallis littoralis Salisb.) plants from eight parks had symptoms of concentric ring spots and necrotic spots. Symptomatic plants were tested for INSV and Tomato spotted wilt virus (TSWV) with an immunostrip (Agdia Inc. Elkhart, IN). Results indicated that only the samples designated HDL were positive for INSV and all other samples were negative for both INSV and TSWV. Mechanically inoculated Emilia sonchifolia, Nicotiana glutinosa, Impatiens balsamina, and N. rustica showed chlorotic lesions, concentric rings, and severe necrosis, symptoms typical for INSV in these hosts. Electron microscope inspection found tospovirus-like spheroidal, enveloped particles that were 90 nm in diameter. Primer 5 software (Premier, Canada) was used to design 14 primers from GenBank Accession No. NC_003625 to amplify the L RNA, nine from NC_003616 to amplify the M RNA, and six from NC_003624 to amplify the S RNA. With total RNA extracted from infected plant tissue as templates in reverse transcription (RT)-PCR, these primers generated 29 target fragments of 250 to 900 bp. These fragments were cloned with the vector pMD19 simple-T vector (Takara Bio Inc., Dalian, China) and sequenced. The sequences of the clones were aligned with the software DNAman (version 2.5; Lynnon Biosoft, Quebec, Canada), showing that RNAs L, M, and S are 8,776 bp (GenBank Accession No. GU112505), 4,948 bp (GenBank Accession No. GU112503), and 2,875 bp (GenBank Accession No. GU112504), respectively. BLAST analysis of these Spiderlily INSV sequences against the NCBI sequence database indicated that the RdRp protein (L RNA) was 99.6% identical with the RdRp protein from an Italian isolate (No. DQ425094), the Nsm protein (M RNA) has 99.0% identity with the Nsm protein from an isolate from Italy (No. DQ425095) and one from the United States (No. NC_003616), the G1G2 polyprotein (M RNA) has 99.9% identity with the analogous protein from an Italian isolate (No. DQ425095), the N protein (S RNA) has 99.6% identity with the N protein from an Italian isolate (No. DQ425096), and the NSs protein (S RNA) has 98.7% identity with the NSs protein from an isolate from Japan (No. AB109100). To our knowledge, this is the first report of INSV on Spiderlily in China. Reference: (1) A. E. Whitfield et al. Annu. Rev. Phytopathol. 43:459, 2005.",
+      "journal": "Plant disease",
+      "year": 2010,
+      "pub_date": "2010-04-01",
+      "authors": "Liu Y T; Zheng Y X; Li Y Z; Li Z Y",
+      "first_author": "Liu Y T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Impatiens necrotic spot virus (INSV)",
+      "taxonomy": "Bunyaviridae, Tospovirus",
+      "host_plant": "Spiderlily (Hymenocallis littoralis)",
+      "location": "中国云南省昆明市",
+      "results": "60-70%蜘蛛兰有症状，免疫条带阳性，电镜见典型粒子，RT-PCR扩增L、M、S RNA全长，序列与意大利分离株高度相似。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754482",
+      "doi": "10.1094/PDIS-94-4-0486A",
+      "title": "First Report of Tomato torrado virus on Tomato from Australia.",
+      "abstract": "Since 2005, a disease of greenhouse tomatoes has been observed in the North Adelaide Plains of South Australia. Symptoms include chlorosis and necrotic lesions on the leaves, stunted plants, and leaves that are frequently distorted. Necrotic lesions typically had a light green or yellow margin and affected areas often fell out, leaving small holes. The onset of disease was generally associated with an increase in population of the greenhouse whitefly (Trialeurodes vaporariorum). Isometric virions (25 to 30 nm) were observed by electron microscopy in partially purified extracts, but no other virion types were observed. In 2008, reverse transcription (RT)-PCR products were obtained using primers specific for RNA-1 (TR1F/TR1R) and RNA-2 (TR2F/TR2R) of Tomato torrado virus (ToTV) (1) using a fresh diseased sample (isolate 2136) and a 2005 archived, lyophilized sample (isolate 1883). Cucumber mosaic virus was not detected in these samples by RT-PCR (data not shown). The RT-PCR products were cloned and sequenced. The partial 892-bp RNA-1 consensus nucleotide (nt) sequences of isolates 1883 (GenBank Accession No. GQ844869) and 2136 (GenBank No. GQ844871) were 100% identical. The partial 573-bp RNA-2 consensus nt sequences of isolates 1883 (GenBank No. GQ844870) and 2143 (GenBank No. GQ844872) were 99.8% identical. The partial RNA-1 and -2 nt sequences of isolate 1883 were 99.1% and 98.5% identical to the published ToTV sequences (RNA-1, GenBank No. DQ388879; RNA-2, GenBank No. DQ88880), respectively (2). For isolate 2136, the identities were 98.1 and 98.7%, respectively. The putative amino acid sequences were all 100% identical to the published sequences. The virus was graft transmitted to tomato cv. Grosse Lisse and Datura stramonium, in which typical disease symptoms and leaf chlorosis, respectively, were induced, and by mechanical inoculation to Nicotiana benthamiana, which displayed leaf chlorosis. All inoculated plant species indexed positive by RT-PCR for ToTV. Seeds were collected from known ToTV-infected plants and the seedlings were grown in isolation in an insect-proof glasshouse. None of the seedlings exhibited symptoms of virus infection, and ToTV was not detected in 97 seedlings from cv. Beatrice, 368 seedlings from cv. Ediez, or from 286 seedlings from cv. Loretto with the virus-specific RT-PCR assays. The pathway for entry of ToTV into Australia is unknown, and although seed transmission was suspected, no evidence for this could be found. To our knowledge, this represents the first report of ToTV from Australia. References: (1) H. Pospieszny et al. Plant Dis. 91:1364, 2007. (2) M. Verbeek et al. Arch. Virol. 152:881, 2007.",
+      "journal": "Plant disease",
+      "year": 2010,
+      "pub_date": "2010-04-01",
+      "authors": "Gambley C F; Thomas J E; Persley D M; Hall B H",
+      "first_author": "Gambley C F",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato torrado virus (ToTV)",
+      "taxonomy": "未提及",
+      "host_plant": "番茄 (Solanum lycopersicum), Datura stramonium, Nicotiana benthamiana",
+      "location": "澳大利亚南澳North Adelaide Plains",
+      "results": "部分RNA1和RNA2序列与已知ToTV高度同源（>98%），可嫁接传播至番茄和曼陀罗，机械传播至本氏烟草，种子传播未发现",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754498",
+      "doi": "10.1094/PDIS-94-4-0477B",
+      "title": "First Report of Nasturtium as a Natural Host of Cherry leaf roll virus on Amsterdam Island.",
+      "abstract": "Cherry leaf roll virus (CLRV) is a well-known virus belonging to the genus Nepovirus, but unlike most members of this genus, it is not known to be transmitted by nematodes but only through seeds and pollen. Since its first description in 1955 on Prunus avium L. in England (1), CLRV has been shown to have a worldwide distribution and a wide natural host range. During a survey of plant viruses in the French sub-Antarctic islands, samples from nasturtium plants (Tropaeolum majus), an introduced plant species, showing symptoms of leaf mosaic, deformation, and veinal necrosis were collected on Amsterdam Island. Upon mechanical transmission with sap extracts, necrotic ringspot and oak-leaf symptoms typical of Nepovirus infection were observed on the leaves of inoculated Nicotiana clevelandii and N. tabacum plants. Inoculation of healthy nasturtium plants resulted in mosaic and pin-point necrosis symptoms. Electron microscopy on negatively stained sap extracts revealed the presence of icosahedral virions, 28 to 30 nm in diameter, in the symptomatic Nicotiana leaves. Amplification by reverse transcription (RT)-PCR with a polyvalent test, which identifies viruses belonging to the family Comoviridae (2), yielded the expected 248-bp fragment. Sequencing of the cloned amplicon showed 80% nucleotide and 90% amino acid identity with a part of the RNA dependent RNA polymerase (RdRp) of CLRV (CAE83562). To confirm the presence of CLRV, an approximate 4.6-kbp cDNA fragment was PCR amplified from double-stranded RNAs purifed from infected Nicotiana plants using the sense primer 5'-GTGGGACTGCCATGCACCTACTC-3' and an oligo-T25 as antisense primer. This PCR product (GenBank Accession No. GU167974) spans the region between the VPg gene and the polyA tail at the 3' end of the genome and thus provides approximately 2.8 kb of new internal sequence information on RNA1 of CLRV. The presence of CLRV in the initial nasturtium samples was confirmed with a CLRV-specific RT-PCR assay that amplifies the 3' non-coding region of the CLRV genome (3). Sequence of the amplified fragment showed it to be identical to the corresponding part of the 3' non-coding region of 4.6-kbp clone obtained from the CLRV isolate mechanically transmitted to the N. tabacum and N. clevelandii plants. Experimental infection of nasturtium by CLRV has been reported (4), but to the best of our knowledge these results represent the first report of natural infection of T. majus by CLRV. Given its seed transmissible character in many hosts, CLRV likely was introduced in infected seeds of T. majus imported to the remote sub-Antarctic Amsterdam Island. References: (1) R. Cropley. Ann. Appl. Biol. 49:524, 1961. (2) V. Maliogka et al. J. Phytopathol. 152:404, 2004. (3) K. Rebenstorf et al. J. Virol. 80:2453, 2006. (4) K. Schmelzer. Phytopathol. Z. 55:317, 1966.",
+      "journal": "Plant disease",
+      "year": 2010,
+      "pub_date": "2010-04-01",
+      "authors": "Marais A; Faure C; Candresse T; Hullé M",
+      "first_author": "Marais A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cherry leaf roll virus (CLRV)",
+      "taxonomy": "Comoviridae, Nepovirus",
+      "host_plant": "Tropaeolum majus (旱金莲), Nicotiana clevelandii, N. tabacum (实验)",
+      "location": "法属亚南极阿姆斯特丹岛",
+      "results": "鉴定出CLRV，与已知CLRV RdRp序列有80%核苷酸和90%氨基酸同源性；获得约4.6 kb新序列；CLRV可能通过受感染的种子引入该岛。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754494",
+      "doi": "10.1094/PDIS-94-4-0479B",
+      "title": "First Report of Helleborus net necrosis virus in Hellebore in New Zealand.",
+      "abstract": "Hellebores (Helleborus spp.) are widely grown in gardens for their winter and early spring flowers. They are extremely hardy and will grow easily in many different environments. In April 2009, black streaks on the leaves and stems were observed on approximately 3 to 5% of hellebores in a home garden in the Waikato Region, New Zealand. The symptoms appeared similar to those of 'black death', determined to be associated with a newly characterized carlavirus termed Helleborus net necrosis virus (HeNNV) (1). Transmission electron microscopy revealed the presence of typical carlavirus-like particles (slightly flexuous filaments ≈700 nm long) in crude sap extracts. Total nucleic acid was extracted separately from the leaves and stem from one of the symptomatic plants with an InviMag Plant DNA Mini Kit (Invitek GmbH, Berlin, Germany) and a KingFisher mL workstation (Thermo Scientific, Waltham, MA). One-step reverse transcription (RT)-PCR using carlavirus group-specific primers (Agdia Inc., Elkhart, IN) produced an amplicon of approximately 300 bp in both the leaf and stem samples. The PCR product was cloned into the pCR4-TOPO vector (Invitrogen, Carlsbad, CA) and three clones were sequenced. BLAST analysis of the consensus sequence (GenBank Accession No. GQ499837) showed the highest nucleotide identity (78%) to the replicase polyprotein genes of HeNNV strains I6 and G5 (GenBank Accession Nos. FJ196837 and FJ196836, respectively). A fragment of 376 bp was also amplified from the symptomatic plant by RT-PCR with primers HCV8484c and HCV8109, designed specifically to amplify the capsid protein genes and putative nucleic acid binding protein genes of HeNNV (1) and sequenced directly (GenBank Accession No. GQ499838). BLAST analysis showed the highest nucleotide identity (85%) with HeNNV strain G5 (GenBank Accession No. FJ196835) followed by 84% nucleotide identity with HeNNV strains H6 and I6 (GenBank Accession Nos. FJ196836 and FJ196837, respectively). Three asymptomatic hellebore plants purchased from a nursery tested negative by RT-PCR using the carlavirus group-specific and HeNNV-specific primers as described above. To our knowledge, this is the first report of HeNNV infecting hellebores in New Zealand. Hellebores are regularly imported into New Zealand as tissue cultures or nursery stock. The import requirement for acceptance of plants in tissue culture is visual inspection at the border. Nursery stock must be grown in a post-entry quarantine facility for 6 months during which time they are inspected for pests and diseases. The long latent period of HeNNV (1) and the recent discovery of the etiology of 'black death' could have resulted in accidental introduction of diseased plants. Knowledge of the causal agent of 'black death' is beneficial to growers who have already implemented cultural control strategies to reduce the spread of the disease. Most carlaviruses are aphid transmitted but no vector of HeNNV has been identified, and therefore, it is unknown if the virus spreads naturally in New Zealand. Reference: (1) K. C. Eastwell et al. Plant Dis. 93:332, 2009.",
+      "journal": "Plant disease",
+      "year": 2010,
+      "pub_date": "2010-04-01",
+      "authors": "Liefting L W; Perez-Egusquiza Z; Clover G R G",
+      "first_author": "Liefting L W",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Helleborus net necrosis virus (HeNNV)",
+      "taxonomy": "Carlavirus属",
+      "host_plant": "Helleborus spp.（铁筷子）",
+      "location": "新西兰怀卡托地区",
+      "results": "电镜观察到典型Carlavirus颗粒；RT-PCR扩增约300bp片段与HeNNV复制酶基因78%同源；376bp片段与衣壳蛋白基因84-85%同源；无症状植株检测阴性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754495",
+      "doi": "10.1094/PDIS-94-4-0487B",
+      "title": "First Report of Sida golden mosaic virus Infecting Snap Bean (Phaseolus vulgaris) in Florida.",
+      "abstract": "In October 2006, snap bean (Phaseolus vulgaris 'Titan') plants in an Alachua County field exhibited symptoms of foliar mottling, puckering, and curl. Symptomatic plants were distributed along field margins infested with whiteflies (100% incidence). Six collected leaf specimens all tested positive for nuclear inclusion bodies typical of begomoviruses with the methodology outlined by Christie et al. (1). To confirm the putative begomovirus association, total DNA was extracted with Qiagen's DNeasy Plant Mini Kit (Qiagen, Valencia, CA). The degenerate Begomovirus primers 5'-GCCCACATYGTCTTYCCNGT-3' and 5'-GGCTTYCTRTACATRGG-3' were used to amplify a 1.1-kb fragment of DNA-A (2). Primers SiGMVf 5'-CCTAAGCGCGATTTGCCAT-3' and SiGMVr 5'-TACAGGGAGCTAAATCCAGCT-3' were designed to amplify the remaining 1.5 kb of the DNA-A component. The sequence of both PCR products was compiled to generate a complete sequence of an A component (2,633 nt). BLAST analysis of this sequence (GenBank Accession No. GQ357649) isolated from snap bean indicated 95% nucleotide identity to Sida golden mosaic virus (SiGMV) (GenBank Accession No. AF049336) isolated from Sida santaremensis from Florida. To our knowledge, this is the first report of SiGMV in Florida snap beans. Further study is warranted to examine the etiological and economic implications of this finding. References: (1) R. G. Christie et al. Phytopathology 76:124, 1986. (2) M. R. Rojas et al. Plant Dis. 77:340, 1993.",
+      "journal": "Plant disease",
+      "year": 2010,
+      "pub_date": "2010-04-01",
+      "authors": "Durham T C; Baker C; Jones L; Snyder L Unruh",
+      "first_author": "Durham T C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Sida golden mosaic virus (SiGMV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "菜豆 Phaseolus vulgaris (品种 'Titan')",
+      "location": "美国佛罗里达州阿拉楚阿县",
+      "results": "获得DNA-A全长2633 nt，与已知SiGMV（AF049336）同源性95%，确认病毒身份。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754502",
+      "doi": "10.1094/PDIS-94-4-0479A",
+      "title": "First Report of Potato spindle tuber viroid in Cape Gooseberry (Physalis peruviana) in New Zealand.",
+      "abstract": "In February 2009, 10 cape gooseberry plants (Physalis peruviana) grown from seed on a domestic property in Christchurch, New Zealand, showed severe leaf distortion, fasciation and etiolation of growing tips, and weak flowering. Symptoms were first observed in the emerging seedlings. No virus particles were observed in sap from infected plants with the electron microscope. Total RNA was isolated from leaves of the 10 plants with a Qiagen RNeasy Plant Mini Kit (Valencia, CA). All 10 plants tested positive for Potato spindle tuber viroid (PSTVd) by real-time reverse transcription (RT)-PCR (1) and by RT-PCR with PSTVd-specific primers (3) and generic pospiviroid primers (4). For both conventional PCRs, the expected 359-bp amplicons were sequenced directly and sequences were aligned together to create a consensus sequence (GenBank Accession No. FJ797614). BLASTn analysis showed 98% nucleotide identity to PSTVd (EU862231, DQ308556, X17268, and AY532801-AY532804). Sap from one of the infected plants was mechanically inoculated onto healthy P. peruviana, Solanum lycopersicum 'Rutgers', Chenopodium amaranticolor, C. quinoa, Cucumis sativum 'Crystal Apple', Gomphrena globosa, Nicotiana benthamiana, N. clevelandii, N. occidentalis '37B', N. tabacum 'WB', N. sylvestris, and Phaseolus vulgaris 'Prince'. After 4 weeks, the leaves of the 'Rutgers' tomato plants were showing severe distortion, purpling, and necrosis of mid-veins and P. peruviana plants were showing distortion of newly emerging apical leaves. Healthy control P. peruviana were asymptomatic. Symptoms appeared milder than that observed in the original P. peruviana plants, but this may be related to different environmental conditions or age or growth stage of the plants when inoculated. All other indicator plants were symptomless, but along with P. peruviana, tested positive for PSTVd by real-time RT-PCR (1). The presence of PSTVd was further confirmed in one original symptomatic and the mechanically inoculated P. peruviana plants and in the indicator plants by dot-blot hybridization with a digoxygenin-labeled synthetic ssRNA probe specific to the full-length PSTVd genome. PSTVd has been reported in New Zealand previously in commercial glasshouse crops of tomatoes and peppers (2), but was eradicated and so remains a regulated pest. The plants were grown from seeds imported from Germany and it is possible that the infection was seedborne. PSTVd was reported in young cape gooseberry seedlings in Germany and Turkey but the infection was asymptomatic (5). Symptoms were associated with the PSTVd-infected cape gooseberry in New Zealand. To our knowledge, this is the first report of the viroid in domestically grown plants in New Zealand, and only the second report of PSTVd in cape gooseberry worldwide. Our findings suggest that this species is an emerging host for PSTVd and that dissemination of seed may provide a pathway for international movement of the viroid. References: (1) N. Boonham et al. J. Virol. Methods 116:139, 2004. (2) B. S. M. Lebas et al. Australas. Plant Pathol. 34:129, 2005. (3) A. M. Shamoul et al. Can. J. Plant Pathol. 19:89, 1997. (4) J. T. H. Verhoeven et al. Eur. J. Plant Pathol. 110:823, 2004. (5) J. T. H. Verhoeven et al. Plant Dis. 93:316, 2009.",
+      "journal": "Plant disease",
+      "year": 2010,
+      "pub_date": "2010-04-01",
+      "authors": "Ward L I; Tang J; Veerakone S; Quinn B D; Harper S J; ... (+2)",
+      "first_author": "Ward L I",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Potato spindle tuber viroid (PSTVd)",
+      "taxonomy": "Pospiviroidae, Pospiviroid",
+      "host_plant": "Physalis peruviana (cape gooseberry), Solanum lycopersicum 'Rutgers'",
+      "location": "Christchurch, New Zealand",
+      "results": "10株酸浆均阳性，序列与PSTVd 98%同源；机械接种后番茄和酸浆出现症状，其他指示植物无症状但PCR阳性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

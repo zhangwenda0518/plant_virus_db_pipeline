@@ -1,0 +1,282 @@
+{
+  "month": "2008-07",
+  "generated": "2026-07-13 02:59:42",
+  "total": 34,
+  "by_category": {
+    "Host_Virus_Interactions": 14,
+    "New_Virus": 8,
+    "Antiviral_Resistance_Genes": 3,
+    "Biotechnology_Applications": 3,
+    "Transmission_Epidemiology": 2,
+    "Control_Management": 2,
+    "Molecular_Characterization": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "18397378",
+      "doi": "10.1111/j.1365-313X.2008.03501.x",
+      "title": "Plant virus infection-induced persistent host gene downregulation in systemically infected leaves.",
+      "abstract": "Understanding of virus infection-induced alterations in host plant gene expression and metabolism leading to the development of virus disease symptoms is both scientifically and economically important. Here, we show that viruses belonging to various RNA virus families are able to induce efficient host gene mRNA downregulation (shut-off) in systemically infected leaves. We demonstrate that the host gene mRNA shut-off overlaps spatially with virus-occupied sectors, indicating the direct role of virus accumulation in this phenomenon. The establishment of shut-off was not directly connected to active viral replication or the RNA-silencing machinery. Importantly, the induced shut-off phenomenon persisted for several weeks, resulting in severe deficiency of mRNA for important housekeeping genes in the infected plants. Interestingly, we found that some other RNA viruses do not induce or only slightly induce the shut-off phenomenon for the same set of genes, implicating genetic determination in this process. Nuclear run-on experiments suggest that plant viruses, similarly to animal viruses, mediate suppression of host mRNA synthesis in the nucleus. By investigating various host-virus interactions, we revealed a correlation between the intensity of the shut-off phenomenon and the severity of disease symptoms. Our data suggest that efficient and persistent downregulation of host genes may be an important component of symptom development in certain host-virus interactions.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2008,
+      "pub_date": "2008-07-01",
+      "authors": "Havelda Zoltán; Várallyay Eva; Válóczi Anna; Burgyán József",
+      "first_author": "Havelda Zoltán",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "未提及（泛指多种RNA病毒）",
+      "taxonomy": "",
+      "host_plant": "未提及（系统性感染叶片）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18392858",
+      "doi": "10.1007/s00442-008-1027-9",
+      "title": "Herbivore benefits from vectoring plant virus through reduction of period of vulnerability to predation.",
+      "abstract": "Herbivores can profit from vectoring plant pathogens because the induced defence of plants against pathogens sometimes interferes with the induced defence of plants against herbivores. Plants can also defend themselves indirectly by the action of the natural enemies of the herbivores. It is unknown whether the defence against pathogens induced in the plant also interferes with the indirect defence against herbivores mediated via the third trophic level. We previously showed that infection of plants with Tomato spotted wilt virus (TSWV) increased the developmental rate of and juvenile survival of its vector, the thrips Frankliniella occidentalis. Here, we present the results of a study on the effects of TSWV infections of plants on the effectiveness of three species of natural enemies of F. occidentalis: the predatory mites Neoseiulus cucumeris and Iphiseius degenerans, and the predatory bug Orius laevigatus. The growth rate of thrips larvae was positively affected by the presence of virus in the host plant. Because large larvae are invulnerable to predation by the two species of predatory mites, this resulted in a shorter period of vulnerability to predation for thrips that developed on plants with virus than thrips developing on uninfected plants (4.4 vs. 7.9 days, respectively). Because large thrips larvae are not invulnerable to predation by the predatory bug Orius laevigatus, infection of the plant did not affect the predation risk of thrips larvae from this predator. This is the first demonstration of a negative effect of a plant pathogen on the predation risk of its vector.",
+      "journal": "Oecologia",
+      "year": 2008,
+      "pub_date": "2008-07-01",
+      "authors": "Belliure Belén; Janssen Arne; Sabelis Maurice W",
+      "first_author": "Belliure Belén",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Tomato spotted wilt virus (TSWV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18405995",
+      "doi": "10.1016/j.virusres.2008.02.014",
+      "title": "Role of a geminivirus AV2 protein putative protein kinase C motif on subcellular localization and pathogenicity.",
+      "abstract": "Virus-derived genes or genome fragments are increasingly being used to generate transgenic plants with resistance to plant viruses. There is need to rapidly investigate these genes in plants using transient expression prior to using them as transgenes since they may be pathogenic to plants. In this study, we investigated the AV2 protein encoded by East African cassava mosaic Cameroon virus, a virus associated with a cassava disease epidemic in western Africa. For subcellular localization, AV2 was fused to the yellow fluorescent protein (YFP) and expressed in Nicotiana benthamiana. Confocal analyses showed that AV2-YFP localizes mainly in the cytoplasm. Because it overlaps with the coat protein gene and therefore could be used to generate transgenic plants for resistance to geminiviruses, we investigated its pathogenesis in N. benthamiana by using the Potato virus X (PVX) vector. The chimeric virus PVX-AV2 induced a mild mottling in infected plants and was shown to suppress virus-induced gene silencing (VIGS). Using point mutations, we show here that AV2 pathogenicity is dependent on a conserved putative protein kinase C (PKC) phosphorylation motif. Because of its pathogenicity and ability to suppress RNA silencing, AV2 transgenic plants will less likely provide a control to geminiviruses, indeed it may weaken the resistance of the plant. We therefore suggest the use of the AV2 putative PKC mutants to generate transgenic plants.",
+      "journal": "Virus research",
+      "year": 2008,
+      "pub_date": "2008-07-01",
+      "authors": "Chowda-Reddy R V; Achenjang Fidelis; Felton Christian; Etarock Marie T; Anangfac Marie-Therese; ... (+2)",
+      "first_author": "Chowda-Reddy R V",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "East African cassava mosaic Cameroon virus (EACMCV), Potato virus X (PVX)",
+      "taxonomy": "",
+      "host_plant": "Nicotiana benthamiana",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769512",
+      "doi": "10.1094/PDIS-92-7-1134B",
+      "title": "First Report of Wisteria vein mosaic virus on Wisteria sinensis in New Zealand.",
+      "abstract": "Wisteria vein mosaic virus (WVMV) is a member of the Potyvirus genus. The virus has been reported in Wisteria spp. in Australia, China, the United States, and a number of European countries (2). In 2006, several W. sinensis plants with mottling and mosaic symptoms were observed in a commercial plant nursery in Whenuapai, north of Auckland, New Zealand. These plants had been propagated from a nursery in the New Plymouth area of New Zealand. Sap from the symptomatic Wisteria plants was examined with an electron microscope and elongated and flexuous potyvirus-like particles approximately 750 nm long were observed. RNA was extracted from the symptomatic plants with a Qiagen RNeasy Plant Mini Kit (Doncaster, Australia). The RNA was initially tested using general potyvirus primers, PV1/SP6 (4) and U335 (3), with the cycling conditions of 94°C for 5 min followed by 40 cycles of 94°C for 45 s, 50°C for 45 s, 72°C for 90 s, and a final extension of 72°C for 7 min. The polymerase chain reaction (PCR) product (695 bp) was directly sequenced (GenBank Accession No. EU580146) and a BLAST search in GenBank showed 98% nucleotide identity with WVMV (GenBank Accession no. AF484549). The RNA was then tested using WVMV-specific primers, WVMVF1 and WVMVR1, and the published cycling conditions (2). PCR amplicons of 701 bp were obtained. PCR products were directly sequenced (GenBank Accession No. EU308592), and a BLAST search in GenBank showed 98% nucleotide identity with published sequences of WVMV (GenBank Accession Nos. AF484549 and AY656816). In addition, RNA was extracted from the original isolate of WVMV that was reported in the Netherlands (1; supplied by R. van der Vlugt, Plant Research International) and the RNA was amplified using the WVMV-specific primer pair. The sequence obtained from PCR amplicons of the type isolate (GenBank Accession No. EU308593) showed a 98% nucleotide identity with the New Zealand WVMV isolate and with published sequences of WVMV (as shown above). From the symptomatology, particle morphology, and nucleotide sequences, it is concluded that WVMV is present in New Zealand. The distribution of the virus in New Zealand is not known, but the affected plants at the New Plymouth nursery may have been imported into New Zealand as many as 30 years ago. Although WVMV infection can reduce the quality of commercial plants, the disease is not economically significant in New Zealand. References: (1) L. Bos. Neth. J. Plant Pathol. 76:8, 1970. (2) G. R. G. Clover et al. Plant Pathol. 52:92, 2003. (3) S. A. Langeveld et al. J. Gen Virol. 72:1531, 1991. (4) A. M. Mackenzie et al. Arch Virol. 143:903, 1998.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-07-01",
+      "authors": "Ward L I; Tang J Z; Clover G R G",
+      "first_author": "Ward L I",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Wisteria vein mosaic virus (WVMV)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "紫藤 (Wisteria sinensis)",
+      "location": "新西兰 (New Zealand)，Whenuapai和New Plymouth地区",
+      "results": "观察到长约750 nm的弯曲线状病毒颗粒；RT-PCR获得695 bp和701 bp产物，序列与已知WVMV有98%核苷酸同一性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769507",
+      "doi": "10.1094/PDIS-92-7-1139A",
+      "title": "Tomato torrado virus is Transmitted by Bemisia tabaci and Infects Pepper and Eggplant in Addition to Tomato.",
+      "abstract": "Torrao or torrado is an emerging disease that is causing serious economic losses in tomato crops of southeastern Spain. The causal agent has been shown to be a new picorna-like plant virus, tentatively named Tomato torrado virus (ToTV) (4). By using trap tomato plants in a greenhouse affected by torrado located in the Murcia Region of Spain, we obtained a ToTV isolate (ToTV-CE) that we have biologically and molecularly characterized. Subtracted cDNA libraries (1) and expressed sequence tags sequencing were used to determine the partial nucleotide sequence of ToTV-CE. We covered ≈53% of the virus genome (GenBank Accession Nos. EU476181 and EU476182) and found that ToTV-CE RNAs 1 and 2 had a high nucleotide similarity (98 and 99%, respectively) with the ToTV published sequences (2,4). ToTV-CE sequences also showed a 70% nt similarity with those of Tomato apex necrosis virus, a newly identified virus in tomato crops of the Culiacan area (Sinaloa, Mexico) (3). To characterize the host range of ToTV-CE, 6 to 10 plants belonging to 14 species were mechanically inoculated with extracts from ToTV-CE-infected Nicotiana benthamiana plants. The presence of ToTV in these plants was analyzed at 3 and 6 weeks postinoculation (PI) by molecular hybridization in dot-blots. The determined host range was in agreement with that described earlier (2,4), but additional hosts and nonhosts were identified. Thus, the virus did not infect melon (Cucumis melo var. cantaloupe), cucumber (C. sativus cv. Marketmore), squash (Cucurbita pepo cv. Negro Belleza), Chenopodium album ssp. Amaranticolor, or Chenopodium quinoa. The virus infected systemically N. benthamiana, N. glutinosa, N. rustica, tobacco (N. tabacum cvs. Xanthi nc and Samsun), Physalis floridana, pepper (Capsicum annuum cv. Italian Long Sweet), tomato (Solanum lycopersicum cv. Boludo), and eggplant (S. melongena cv. Black Beauty). Pepper plants displayed severe symptoms of infection consisting of marked mosaics and stunting (but no necrosis), but eggplant remained asymptomatic for up to 6 weeks PI. A simple assay was devised to analyze whether ToTV can be transmitted by whiteflies. ToTV-CE-infected tomato plants were placed together with three to eight healthy tomato seedlings inside insect-proof glass boxes. Adult Bemisia tabaci (100 to 800 individuals in three replicates) or Trialeurodes vaporariorum (100 individuals in one replicate) were released into each box. For both treatments, symptoms typically induced by ToTV appeared in one to seven tomato seedlings by 1 week after the release of the whiteflies. ToTV infection was confirmed by molecular hybridization in tissue prints of petiole cross sections at 10 days PI. These data are in agreement with those reported by Pospieszny et al. (2) and strongly suggest that both B. tabaci and T. vaporariorum can transmit ToTV. References: (1) L. Diachenko et al. Proc. Natl. Acad. Sci. USA 93:6025, 1996. (2) H. Pospieszny et al. Plant Dis. 91:1364, 2007 (3) M. Turina et al. Plant Dis. 91:932, 2007. (4) M. Verbeek et al. Arch. Virol. 152:881, 2007.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-07-01",
+      "authors": "Amari K; Gonzalez-Ibeas D; Gómez P; Sempere R N; Sanchez-Pina M A; ... (+7)",
+      "first_author": "Amari K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato torrado virus (ToTV)",
+      "taxonomy": "未提及",
+      "host_plant": "番茄(Solanum lycopersicum)、辣椒(Capsicum annuum)、茄子(Solanum melongena)、本氏烟(Nicotiana benthamiana)等",
+      "location": "西班牙穆尔西亚地区",
+      "results": "获得ToTV-CE分离物，部分序列与已知ToTV相似性98-99%；宿主包括番茄、辣椒、茄子等，不侵染甜瓜、黄瓜等；两种粉虱均可传播ToTV",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769501",
+      "doi": "10.1094/PDIS-92-7-1137C",
+      "title": "First Report of Peach latent mosaic viroid in Peach Trees in Argentina.",
+      "abstract": "Peach trees (Prunus persica L.) with yellowing symptoms on leaves were found in December (summer season) of 2005 in commercial fields in Colonia Caroya, Córdoba, Argentina. This symptom resembled Peach latent mosaic viroid (PLMVd). The viroid-affected trees usually showed vein banding and yellowing symptoms on leaves, fruit suture splitting, delays in budding, flowering and fruit ripening, reduced foliage density, and a spindly appearance. PLMVd is mainly transmitted by the propagation of infected budwood and to a lesser extent by pruning tools and aphids (1). Extraction and partial purification of nucleic acids was made from symptomatic leaves (2) collected during the indicated summer season from seven peach trees from commercial plots. Preliminary identification of the viroid was made by dot-blot hybridization with a PLMVd probe (provided by R. Flores). The positive plants were tested also by reverse transcription (RT)-PCR with PLMVd primers RF-43 (5'-CTGGATCACACCCCCCTCGGAACCAACCGCT-3') and RF-44 (5'-TGTGATCCAGGTACCGCCGTAGAAACT-3'), which amplify the complete genome. All identified positive samples yielded the correct sized PCR product and four were cloned and sequenced. This local sequence (GenBank Accession No. EU429320) had 97% nucleotide sequence identity with a reported PLMVd sequence (GenBank Accession No. M83545), confirming the identity of the local pathogen as Peach latent mosaic viroid. This result suggests that the source of the pathogen may have been infected budwood introduced from Europe. To our knowledge, this is the first report of this viroid in Argentina. References: (1) R. Flores et al. Mol. Plant Pathol. 7:209, 2006. (2) V. Pallás et al. J. Gen. Virol. 68:3201, 1987.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-07-01",
+      "authors": "Nieto A M; Di Feo L; Nome C F",
+      "first_author": "Nieto A M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Peach latent mosaic viroid (PLMVd)",
+      "taxonomy": "未提及",
+      "host_plant": "桃树 (Prunus persica)",
+      "location": "阿根廷科尔多瓦省科洛尼亚卡罗亚",
+      "results": "从7棵症状树中检测到PLMVd，得到当地序列（EU429320），与已知序列（M83545）同源性97%，确认身份。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769506",
+      "doi": "10.1094/PDIS-92-7-1132B",
+      "title": "First Report of Alfalfa mosaic virus in Viburnum lucidum in Spain.",
+      "abstract": "Viburnum sp. is an ornamental shrub widely used in private and public gardens. It is common in natural wooded areas in the Mediterranean Region. The genus includes more than 150 species distributed widely in climatically mild and subtropical regions of Asia, Europe, North Africa, and the Americas. In January 2007, yellow leaf spotting in young plants of Viburnun lucidum was observed in two ornamental nurseries in the Mediterranean area of Spain. Symptoms appeared sporadically depending on environmental conditions but normally in cooler conditions. Leaf tissue from 24 asymptomatic and five symptomatic plants was sampled and analyzed by double-antibody sandwich (DAS)-ELISA with specific polyclonal antibodies against Tomato spotted wilt virus (TSWV) (Loewe Biochemica, Sauerlach, Germany) and Alfalfa mosaic virus (AMV) (SEDIAG S.A.S, Longvic, France). All symptomatic plants of V. lucidum were positive for Alfalfa mosaic virus (AMV). The presence of AMV was tested in the 29 samples by one-step reverse transcription (RT)-PCR with the platinum Taq kit (Invitrogen Life Technologies, Barcelona, Spain) using primers derived from a partial fragment of the coat protein gene of AMV (2). The RT-PCR assays produced an expected amplicon of 700 bp in the five symptomatic seropositive samples. No amplification product was observed when healthy plants or a water control were used as a template in the RT-PCR assays. One PCR product was purified (High Pure PCR Product Purification Kit; Roche Diagnostics, Mannheim, Germany) and directly sequenced (GenBank Accession No. EF427449). BLAST analysis showed 96% nucleotide sequence identity to an AMV isolate described from Phlox paniculata in the United States (GenBank Accession No. DQ124429). This virosis has been described as affecting Viburnum tinus L. in France (1). To our knowledge, this is the first report of natural infection of Viburnum lucidum with AMV in Spain, which might have important epidemiological consequences since V. lucidum is a vegetatively propagated ornamental plant. References: (1) L. Cardin et al. Plant Dis. 90:1115, 2006. (2) Ll. Martínez-Priego et al. Plant Dis. 88:908, 2004.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-07-01",
+      "authors": "Cebrián M C; Córdoba-Sellés M C; Alfaro-Fernández A; Herrera-Vásquez J A; Jordá C",
+      "first_author": "Cebrián M C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Alfalfa mosaic virus (AMV)",
+      "taxonomy": "未提及",
+      "host_plant": "Viburnum lucidum",
+      "location": "Spain",
+      "results": "5个有症状植株ELISA和RT-PCR阳性，700bp片段测序与Phlox分离物96%同源。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18559947",
+      "doi": "10.1099/vir.0.83637-0",
+      "title": "Diversity of begomoviruses associated with mosaic disease of cultivated cassava (Manihot esculenta Crantz) and its wild relative (Manihot glaziovii Mull. Arg.) in Uganda.",
+      "abstract": "Cassava (Manihot esculenta) growing in Uganda during 2001-2002 has been screened for the presence of begomoviruses using PCR-RFLP, cloning full-length genomic components and nucleotide sequence analysis. In contrast with a recent survey in neighbouring Kenya, which identified three distinct strains of East African cassava mosaic virus (EACMV, EACMV-UG and EACMV-KE2) as well as East African cassava mosaic Zanzibar virus and the new species East African cassava mosaic Kenya virus, only EACMV-UG and, to a lesser extent, African cassava mosaic virus (ACMV) were found associated with cassava in Uganda. The integrity of the cloned genomic components of representative virus isolates was confirmed by demonstrating their infectivity in Nicotiana benthamiana and cassava using biolistic inoculation, providing a convenient means to screen cassava varieties for disease resistance. Both EACMV-UG and ACMV were also associated with Manihot glaziovii. Infectivity studies using cloned components confirmed that viruses from one host could infect the other, suggesting that this wild relative of cassava might be a reservoir host for the disease. The relatively low level of diversity of begomoviruses associated with cassava mosaic disease in Uganda is consistent with reports that EACMV-UG has displaced other begomovirus species and strains during the recent epidemic that swept through the country.",
+      "journal": "The Journal of general virology",
+      "year": 2008,
+      "pub_date": "2008-07-01",
+      "authors": "Sserubombwe W S; Briddon R W; Baguma Y K; Ssemakula G N; Bull S E; ... (+5)",
+      "first_author": "Sserubombwe W S",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "East African cassava mosaic virus (EACMV-UG), African cassava mosaic virus (ACMV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "木薯 (Manihot esculenta), 野生近缘种 Manihot glaziovii",
+      "location": "乌干达",
+      "results": "乌干达木薯花叶病主要由EACMV-UG和少量ACMV引起；两者均可侵染Manihot glaziovii，后者可能是储源宿主；未发现其他种类，多样性低。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18559945",
+      "doi": "10.1099/vir.0.2008/000166-0",
+      "title": "The promiscuous evolutionary history of the family Bromoviridae.",
+      "abstract": "Recombination and segment reassortment are important contributors to the standing genetic variation of RNA viruses and are often involved in the genesis of new, emerging viruses. This study explored the role played by these two processes in the evolutionary radiation of the plant virus family Bromoviridae. The evolutionary history of this family has been explored previously using standard molecular phylogenetic methods, but incongruences have been found among the trees inferred from different gene sequences. This would not be surprising if RNA exchange was a common event, as it is well known that recombination and reassortment of genomes are poorly described by standard phylogenetic methods. In an attempt to reconcile these discrepancies, this study first explored the extent of segment reassortment and found that it was common at the origin of the bromoviruses and cucumoviruses and at least at the origin of alfalfa mosaic virus, American plum line pattern virus and citrus leaf rugose virus. Secondly, recombination analyses were performed on each of the three genomic RNAs and it was found that recombination was very common in members of the genera Bromovirus, Cucumovirus and Ilarvirus. Several cases of recombination involving species from different genera were also identified. Finally, a phylogenetic network was constructed reflecting these genetic exchanges. The network confirmed the taxonomic status of the different genera within the family, despite the phylogenetic noise introduced by genetic exchange.",
+      "journal": "The Journal of general virology",
+      "year": 2008,
+      "pub_date": "2008-07-01",
+      "authors": "Codoñer Francisco M; Elena Santiago F",
+      "first_author": "Codoñer Francisco M",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Bromoviridae 家族（包括 Bromovirus, Cucumovirus, Ilarvirus 属的病毒，如苜蓿花叶病毒、美国李线条病毒、柑橘皱叶病毒等）",
+      "taxonomy": "植物病毒科 Bromoviridae",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769537",
+      "doi": "10.1094/PDIS-92-7-1012",
+      "title": "Management of the Spread of Tomato spotted wilt virus in Tobacco Crops with Insecticides Based on Estimates of Thrips Infestation and Virus Incidence.",
+      "abstract": "Tomato spotted wilt virus (TSWV) causes serious losses in the tobacco-producing areas of northern Greece. Following a destructive epidemic of TSWV in the prefecture of Kilkis in 2003, a coordinated disease management scheme was developed in collaboration with the local tobacco farmers' associations on 1,000 ha in 2004 and 500 ha in 2005 of tobacco crops of the cv. Virginia. Insecticides first were evaluated for efficiency to control Thrips tabaci, the only TSWV vector present in tobacco crops in Greece. Field data on T. tabaci infestation, population fluctuation, and TSWV incidence were used to coordinate insecticide applications. T. tabaci overwinters in the soil covered by wild flora close to infested fields. The first adults of each season were recorded on blue sticky traps in week 13 and viruliferous individuals were found on weeds close to the tobacco fields in week 16 of both years. Tobacco seedlings were protected against thrips by a preventive drench application of carbofuran to soil in seedling beds, followed by two methomyl and one malathion foliage applications. To achieve an effective decrease of primary inoculum in the fields, malathion was applied to weeds on the field borders before transplanting the tobacco seedlings. In the tobacco crops, carbofuran was applied directly after transplanting. Early transplanted (week 19 to 20) seedlings were sprayed with methomyl. Subsequently, two rounds of foliar applications were started in week 23, consisting of cypermethrin, followed by malathion and methomyl, followed by one or two malathion sprays. At transplanting (week 19 to 23 or 22 in 2004 or 2005, respectively), 340 ± 160 (mean + standard deviation, n = 4 weeks) and 230 ± 130 (n = 3) T. tabaci individuals per trap were recorded in 2004 and 2005, respectively, and 52% of the thrips trapped in the neighboring flora in 2004 were TSWV infected. Afterwards, T. tabaci populations did not increase significantly until harvest (up to 350 individuals were counted per trap). In a control field of an oriental tobacco cultivar in which no insecticides were applied, up to 5,000 and 3,300 thrips were found per trap in 2004 and 2005, respectively. The final incidence of tobacco plants with TSWV infection fluctuated from 10 to 20% in the Virginia tobacco crops whereas, in the control crop, it was 60 and 85% in 2004 and 2005, respectively. This study showed that a well-coordinated collective plan based on data on infection pressure by TSWV and the vector population fluctuation during the growing season can represent an effective way of combating epidemics in tobacco.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-07-01",
+      "authors": "Chatzivassiliou E K",
+      "first_author": "Chatzivassiliou E K",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "番茄斑萎病毒 (Tomato spotted wilt virus, TSWV)",
+      "taxonomy": "",
+      "host_plant": "烟草 (品种Virginia和oriental)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19086287",
+      "doi": "10.1111/j.1469-8137.2008.02479.x",
+      "title": "Optimized virus-induced gene silencing in Solanum nigrum reveals the defensive function of leucine aminopeptidase against herbivores and the shortcomings of empty vector controls.",
+      "abstract": "Virus-induced gene silencing (VIGS) enables high-throughput analysis of gene function in plants but is not universally applicable and requires optimization for each species. Here a VIGS system is described for Solanum nigrum, a wild relative of tomato and potato and a valuable model species for ecogenomics. The efficiency of the two most widely used Tobacco rattle virus (TRV) vectors to silence phytoene desaturase (PDS) in S. nigrum was tested. Additionally, the infiltration method and growth temperatures for gene silencing were optimized and the suitability of different control vectors evaluated. Using leucine aminopeptidase (LAP), a herbivore-induced protein, silencing efficiency and the applicability of silenced plants for herbivore feeding assays were assessed. Vacuum infiltration of seedlings with Agrobacterium carrying the vector, pYL156, proved the most efficient means of silencing genes. Empty-vector controls decreased plant growth but control vectors carrying a piece of noncoding sequence did not. Silencing LAP significantly increased the larval mass of Manduca sexta that fed on silenced plants. This VIGS protocol proved highly successful for S. nigrum, which should include control vectors carrying noncoding sequence as control treatments. Silencing LAP provided the first experimental evidence that LAP has a defensive function against herbivores.",
+      "journal": "The New phytologist",
+      "year": 2008,
+      "pub_date": "2008-07-01",
+      "authors": "Hartl Markus; Merker Holger; Schmidt Dominik D; Baldwin Ian T",
+      "first_author": "Hartl Markus",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "Tobacco rattle virus (TRV)",
+      "taxonomy": "",
+      "host_plant": "Solanum nigrum (龙葵)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18423483",
+      "doi": "10.1016/j.jip.2008.01.009",
+      "title": "Potential of Lecanicillium spp. for management of insects, nematodes and plant diseases.",
+      "abstract": "Fungi in the genus Lecanicillium (formerly classified as the single species Verticillium lecanii) are important pathogens of insects and some have been developed as commercial biopesticides. Some isolates are also active against phytoparasitic nematodes or fungi. Lecanicillium spp. use both mechanical forces and hydrolytic enzymes to directly penetrate the insect integument and the cell wall of the fungal plant pathogen. In addition to mycoparasitism of the plant pathogen, the mode of action is linked to colonization of host plant tissues, triggering an induced systemic resistance. Recently it was demonstrated that development of Lecanicillium hybrids through protoplast fusion may result in strains that inherit parental attributes, thereby allowing development of hybrid strains with broader host range and other increased benefits, such as increased viability. Such hybrids have demonstrated increased virulence against aphids, whiteflies and the soybean cyst nematode. Three naturally occurring species of Lecanicillium, L. attenuatum, L. longisporum, and an isolate that could not be linked to any presently described species based on rDNA sequences have been shown to have potential to control aphids as well as suppress the growth and spore production of Sphaerotheca fuliginea, the causal agent of cucumber powdery mildew. These results suggest that strains of Lecanicillium spp. may have potential for development as a single microbial control agent effective against several plant diseases, pest insects and plant parasitic nematodes due to its antagonistic, parasitic and disease resistance inducing characteristics. However, to our knowledge, no Lecanicillium spp. have been developed for control of phytopathogens or phytoparasitic nematodes.",
+      "journal": "Journal of invertebrate pathology",
+      "year": 2008,
+      "pub_date": "2008-07-01",
+      "authors": "Goettel Mark S; Koike Masanori; Kim Jeong Jun; Aiuchi Daigo; Shinya Ryoji; ... (+1)",
+      "first_author": "Goettel Mark S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

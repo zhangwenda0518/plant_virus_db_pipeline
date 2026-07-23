@@ -1,0 +1,35 @@
+{
+  "week": "2026-W44",
+  "start": "2026-10-26",
+  "end": "2026-11-01",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 1,
+  "by_category": {
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "42402242",
+      "doi": "10.1016/j.bios.2026.118983",
+      "title": "One-Tube RPA-CRISPR-Cas13a assay with rational design for single-molecule detection of waterborne viruses in drinking water treatment.",
+      "abstract": "The global rise in waterborne viral infections has created an urgent need for portable, highly efficient environmental virus detection technologies. CRISPR-based nucleic acid detection coupled with isothermal amplification (e.g., Recombinase Polymerase Amplification, RPA) shows great promise for field applications. However, most reported designs fail to achieve the single-molecule sensitivity, which significantly limits their practical applications. To bridge the gap, we proposed a rational design strategy for the RPA primer and the CRISPR-Cas13a crRNA, suggesting that sensitivity can be enhanced by simplifying the secondary structure of the crRNA spacer region. Subsequently, we established a portable, one-tube CRISPR-Cas13a bioassay to detect two major waterborne viruses, achieving ultrasensitive detection limits of 5/8 aM for norovirus and 2/3 aM for rotavirus within 40 min. Thereafter, seasonal sampling across different treatment stages of a drinking water treatment plant was conducted, and water samples were analyzed using the one-tube CRISPR-Cas13a bioassay in comparison with qPCR and dPCR, revealing a positive detection rate of 15.79% (6/38) for the one-tube CRISPR-Cas13a bioassay, 18.42% (7/38) for qPCR, and 15.79% (6/38) for dPCR. The assay's modular design allows for broad applicability to other pathogens by simply modifying the target nucleic acid sequence, offering high sensitivity and specificity. This innovation paves the way for deployable point-of-care testing and large-scale spatiotemporal virus monitoring.",
+      "journal": "Biosensors & bioelectronics",
+      "year": 2026,
+      "pub_date": "2026-11-01",
+      "authors": "Wang Fan; He Changhua; Lin Yingzi; Zhou Xiaohong",
+      "first_author": "Wang Fan",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

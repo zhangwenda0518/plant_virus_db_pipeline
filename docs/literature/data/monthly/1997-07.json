@@ -1,0 +1,258 @@
+{
+  "month": "1997-07",
+  "generated": "2026-07-13 02:59:42",
+  "total": 11,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 4,
+    "New_Virus": 2,
+    "Control_Management": 2,
+    "Molecular_Characterization": 1,
+    "Host_Virus_Interactions": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "9225054",
+      "doi": "10.1099/0022-1317-78-7-1771",
+      "title": "Transgenic accumulation of two plant virus coat proteins on a single self-processing polypeptide.",
+      "abstract": "An expression cassette based on the highly specific tobacco etch potyvirus (TEV) nuclear inclusion (NIa) proteinase has been developed to produce multiple proteins through the translation of a single self-processing polypeptide. Gene constructs encoding TEV NIa, the tobacco mosaic tobamovirus (TMV) coat protein (CP) and the soybean mosaic potyvirus (SMV) CP were used to develop transgenic tobacco plants. Proper processing of the multifunctional polypeptide was demonstrated, leading to accumulation of separate proteins in planta. Moreover, the viral genes expressed in this way were biologically active and conferred pathogen-derived protection to TMV, TEV and potato potyvirus Y (PVY). Transgenic plants were also derived from gene constructs in which the NIa cleavage site was mutated, resulting in the accumulation of the non-processed polyprotein, as predicted. Although transgenic proteins accumulated in low amounts in all the plant lines analysed, accumulation of the mutant non-processed protein form was greatly increased in plants following infection with TEV, but not TMV, apparently as a consequence of protein stabilization.",
+      "journal": "The Journal of general virology",
+      "year": 1997,
+      "pub_date": "1997-07-01",
+      "authors": "Marcos J F; Beachy R N",
+      "first_author": "Marcos J F",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "烟草蚀纹病毒(TEV)、烟草花叶病毒(TMV)、大豆花叶病毒(SMV)、马铃薯Y病毒(PVY)",
+      "taxonomy": "TEV、SMV和PVY属于马铃薯Y病毒科(Potyviridae)；TMV属于烟草花叶病毒属(Tobamovirus)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9223349",
+      "doi": "10.1073/pnas.94.15.8261",
+      "title": "Nontarget DNA sequences reduce the transgene length necessary for RNA-mediated tospovirus resistance in transgenic plants.",
+      "abstract": "RNA-mediated virus resistance has recently been shown to be the result of post-transcriptional transgene silencing in transgenic plants. This study was undertaken to characterize the effect of transgene length and nontarget DNA sequences on RNA-mediated tospovirus resistance in transgenic plants. Transgenic Nicotiana benthamiana plants were generated to express different regions of the nucleocapsid (N) protein of tomato spotted wilt (TSWV) tospovirus. Transgenic plants expressing half-gene segments (387-453 bp) of the N gene displayed resistance through post-transcriptional gene silencing. Although smaller N gene segments (92-235 bp) were ineffective in conferring resistance when expressed alone in transgenic plants, these segments conferred resistance when fused to the nontarget green fluorescent protein gene DNA. These results demonstrate that (i) a critical length of N transgene (236-387 bp) is required for a high level of transgene expression and consequent gene silencing, and (ii) the post-transcriptional gene silencing mechanism can trans-inactivate the incoming tospovirus genome with homologous transgene segments that are as short as 110 bp. Therefore, the activation of post-transcriptional transgene silencing requires a significantly larger transgene than is required for the trans-inactivation of the incoming viral genome. These results raise the possibility of developing a simple new strategy for engineering multiple virus resistance in transgenic plants.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1997,
+      "pub_date": "1997-07-22",
+      "authors": "Pang S Z; Jan F J; Gonsalves D",
+      "first_author": "Pang S Z",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "番茄斑萎病毒(TSWV)",
+      "taxonomy": "",
+      "host_plant": "本氏烟(Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9234949",
+      "doi": "10.1006/viro.1997.8634",
+      "title": "Interaction of the viral protein genome linked of turnip mosaic potyvirus with the translational eukaryotic initiation factor (iso) 4E of Arabidopsis thaliana using the yeast two-hybrid system.",
+      "abstract": "The yeast LexA interaction trap was used to screen a cDNA library from Arabidopsis thaliana in order to identify proteins that interact with the viral protein genome linked (VPg)-proteinase of turnip mosaic potyvirus. The screen allowed the isolation of four candidate cDNA clones. Clones pHC4, pHC21, and pHC40 were partially sequenced but no homologies to known proteins were found. However, the amino acid sequence deduced from the complete nucleotide sequence of pSW56 revealed that it was the eukaryotic initiation factor (iso) 4E [eIF(iso)4E]. Deletion analysis indicated that the VPg domain was involved in the interaction with the plant protein. Interaction between the viral protein and the cellular protein was confirmed by ELISA-based binding experiments. eIF(iso)4E plays an essential role in the initiation of the translation of capped mRNAs and its association with VPg would point to a role of the viral protein in the translation of the virus.",
+      "journal": "Virology",
+      "year": 1997,
+      "pub_date": "1997-07-21",
+      "authors": "Wittmann S; Chatel H; Fortin M G; Laliberté J F",
+      "first_author": "Wittmann S",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "芜菁花叶病毒 (turnip mosaic potyvirus)",
+      "taxonomy": "",
+      "host_plant": "拟南芥 (Arabidopsis thaliana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12223762",
+      "doi": "10.1104/pp.114.3.1113",
+      "title": "Expression of Pokeweed Antiviral Protein in Transgenic Plants Induces Virus Resistance in Grafted Wild-Type Plants Independently of Salicylic Acid Accumulation and Pathogenesis-Related Protein Synthesis.",
+      "abstract": "Pokeweed antiviral protein (PAP), a 29-kD protein isolated from Phytolacca americana, inhibits translation by catalytically removing a specific adenine residue from the large rRNA of the 60S subunit of eukaryotic ribosomes. Transgenic tobacco (Nicotiana tabacum) plants expressing PAP or a variant (PAP-v) were shown to be resistant to a broad spectrum of plant viruses. Expression of PAP-v in transgenic plants induces synthesis of pathogenesis-related proteins and a very weak (<2-fold) increase in salicylic acid levels. Using reciprocal grafting experiments, we demonstrate here that transgenic tobacco rootstocks expressing PAP-v induce resistance to tobacco mosaic virus infection in both N. tabacum NN and nn scions. Increased resistance to potato virus X was also observed in N. tabacum nn scions grafted on transgenic rootstocks. PAP expression was not detected in the wild-type scions or rootstocks that showed virus resistance, nor was there any increase in salicylic acid levels or pathogenesis-related protein synthesis. Grafting experiments with transgenic plants expressing an inactive PAP mutant demonstrated that an intact active site of PAP is necessary for induction of virus resistance in wild-type scions. These results indicate that enzymatic activity of PAP is responsible for generating a signal that renders wild-type scions resistant to virus infection in the absence of increased salicylic acid levels and pathogenesis-related protein synthesis.",
+      "journal": "Plant physiology",
+      "year": 1997,
+      "pub_date": "1997-07-01",
+      "authors": "Smirnov S.; Shulaev V.; Tumer N. E.",
+      "first_author": "Smirnov S.",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒 (TMV) 和 马铃薯X病毒 (PVX)",
+      "taxonomy": "",
+      "host_plant": "烟草 (Nicotiana tabacum)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9226904",
+      "doi": "10.1099/00207713-47-3-727",
+      "title": "Amaricoccus gen. nov., a gram-negative coccus occurring in regular packages or tetrads, isolated from activated sludge biomass, and descriptions of Amaricoccus veronensis sp. nov., Amaricoccus tamworthensis sp. nov., Amaricoccus macauensis sp. nov., and Amaricoccus kaplicensis sp. nov.",
+      "abstract": "Three isolates of gram-negative bacteria, strains Ben 102T, Ben 103T, and Ben 104T, were obtained in pure culture by micromanipulation from activated sludge biomass from wastewater treatment plants in Italy, Australia, and Macau, respectively. These isolates all had a distinctive morphology; the cells were cocci that usually were arranged in tetrads. Based on this criterion, they resembled other bacteria from activated sludge previously called \"G\" bacteria. On the basis of phenotypic characteristics and the results of 16S ribosomal DNA sequence analyses, the three isolates were very similar to each other, but were sufficiently different from their closest phylogenetic relatives (namely, the genera Rhodobacter, Rhodovulum, and Paracoccus in the alpha subdivision of the Proteobacteria) to be placed in a new genus, Amaricoccus gen. nov. Each of the three isolates represents a new species of the genus Amaricoccus; strains Ben 102T, Ben 103T, and Ben 104T are named Amaricoccus veronensis, Amaricoccus tamworthensis, and Amaricoccus macauensis, respectively. An isolate designated Ben 101T, which was isolated independently by Cech and Hartman in Kaplice, Czech Republic, was also characterized and belongs to the same genus. We propose that the isolate of Cech and Hartman should be placed in another new species, Amaricoccus kaplicensis.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1997,
+      "pub_date": "1997-07-01",
+      "authors": "Maszenan A M; Seviour R J; Patel B K; Rees G N; McDougall B M",
+      "first_author": "Maszenan A M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9226920",
+      "doi": "10.1099/00207713-47-3-870",
+      "title": "Rhizobium hainanense sp. nov., isolated from tropical legumes.",
+      "abstract": "A fast-growing rhizobial group isolated from leguminous plants in Hainan Province, a tropical region of China, is proposed as a new Rhizobium species on the basis of 16S rRNA gene sequencing. DNA-DNA hybridization, and phenotypic characterization. This new species belongs to the phylogenetic branch which includes Rhizobium leguminosarum. We propose the name Rhizobium hainanense sp. nov. for this species. The strain CCBAU 57015 (166) is the type strain; it has been deposited in the culture collection of Beijing Agricultural University, People's Republic of China.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1997,
+      "pub_date": "1997-07-01",
+      "authors": "Chen W X; Tan Z Y; Gao J L; Li Y; Wang E T",
+      "first_author": "Chen W X",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9204559",
+      "doi": "10.1094/MPMI.1997.10.5.531",
+      "title": "Salicylate-independent lesion formation in Arabidopsis lsd mutants.",
+      "abstract": "In many interactions of plants with pathogens, the primary host defense reaction is accompanied by plant cell death at the site of infection. The resulting lesions are correlated with the establishment of an inducible resistance in plants called systemic acquired resistance (SAR), for which salicylic acid (SA) accumulation is a critical signaling event in Arabidopsis and tobacco. In Arabidopsis, the lesions simulating disease (lsd) mutants spontaneously develop lesions in the absence of pathogen infection. Furthermore, lsd mutants express SAR marker genes when lesions are present and are resistant to the same spectrum of pathogens as plants activated for SAR by necrogenic pathogen infection. To assess the epistatic relationship between SA accumulation and cell death, transgenic Arabidopsis unable to accumulate SA due to the expression of the salicylate hydroxylase (nahG) gene were used in crosses with the dominant mutants lsd2 or lsd4. Progeny from the crosses were inhibited for SAR gene expression and disease resistance. However, these progeny retained the spontaneous cell death phenotype similar to siblings not expressing nahG. Because lesions form in the absence of SA accumulation for isd2 and lsd4, a model is suggested in which lesion formation in these two mutants is determined prior to SA accumulation in SAR signal transduction. By contrast, the loss of SAR gene expression and disease resistance in nahG-expressing lsd mutants indicates that these traits are dependent upon SA accumulation in the SAR signal transduction pathway.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 1997,
+      "pub_date": "1997-07-01",
+      "authors": "Hunt M D; Delaney T P; Dietrich R A; Weymann K B; Dangl J L; ... (+1)",
+      "first_author": "Hunt M D",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9568541",
+      "doi": "10.1016/s0192-0561(97)00061-1",
+      "title": "Echinacea-induced cytokine production by human macrophages.",
+      "abstract": "Echinacea purpurea, a plant originally used by native Americans to treat respiratory infections, was evaluated for its ability to stimulate the production of cytokines by normal human peripheral blood macrophages in vitro. Commercial preparations of echinacea fresh pressed juice and dried juice were tested at concentrations ranging from 10 micrograms/ml to 0.012 microgram/ml and compared to endotoxin stimulated and unstimulated controls. Cytokine production was measured by ELISA after 18 h of incubation for IL-1 and 36 and 72 h for TNF-alpha, IL-6, and IL-10. Macrophages cultured in concentrations of echinacea as low as 0.012 microgram/ml produced significantly higher levels of IL-1, TNF-alpha, IL-6 and IL-10 (P < 0.05) than unstimulated cells. The high levels of IL-1, TNF-alpha, and IL-10 induced by very low levels of echinacea are consistent with an immune activated antiviral effect. Echinacea induced lower levels of IL-6 in comparison to the other cytokines measured. These results demonstrate the immune stimulatory ability of the unpurified fresh pressed juice of Echinacea purpurea and offer some insight into the nature of the resulting immune response as compared to endotoxin.",
+      "journal": "International journal of immunopharmacology",
+      "year": 1997,
+      "pub_date": "1997-07-01",
+      "authors": "Burger R A; Torres A R; Warren R P; Caldwell V D; Hughes B G",
+      "first_author": "Burger R A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18945093",
+      "doi": "10.1094/PHYTO.1997.87.7.712",
+      "title": "Sporulation of Fusarium oxysporum f. sp. lycopersici on Stem Surfaces of Tomato Plants and Aerial Dissemination of Inoculum.",
+      "abstract": "ABSTRACT Plants exhibiting symptoms of wilt and xylem discoloration typical of Fusarium wilt caused by Fusarium oxysporum f. sp. lycopersici were observed in greenhouses of cherry tomatoes at various sites in Israel. However, the lower stems of some of these plants were covered with a pink layer of macroconidia of F. oxysporum. This sign resembles the sporulating layer on stems of tomato plants infected with F. oxysporum f. sp. radicis-lycopersici, which causes the crown and root rot disease. Monoconidial isolates of F. oxysporum from diseased plants were assigned to vegetative compatibility group 0030 of F. oxysporum f. sp. lycopersici and identified as belonging to race 1 of F. oxysporum f. sp. lycopersici. The possibility of coinfection with F. oxysporum f. sp. lycopersici and F. oxysporum f. sp. radicis-lycopersici was excluded by testing several macroconidia from each plant. Airborne propagules of F. oxysporum f. sp. lycopersici were trapped on selective medium in greenhouses in which plants with a sporulating layer had been growing. Sporulation on stems was reproduced by inoculating tomato plants with races 1 and 2 of F. oxysporum f. sp. lycopersici. This phenomenon has not been reported previously with F. oxysporum f. sp. lycopersici and might be connected to specific environmental conditions, e.g., high humidity. The sporulation of F. oxysporum f. sp. lycopersici on plant stems and the resultant aerial dissemination of macroconidia may have serious epidemiological consequences. Sanitation of the greenhouse structure, as part of a holistic disease management approach, is necessary to ensure effective disease control.",
+      "journal": "Phytopathology",
+      "year": 1997,
+      "pub_date": "1997-07-01",
+      "authors": "Katan T; Shlevin E; Katan J",
+      "first_author": "Katan T",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9891121",
+      "doi": "10.1179/oeh.1997.3.3.210",
+      "title": "Acetylcholinesterase Inhibition as an Indicator of Organophosphate and Carbamate Poisoning in Kenyan Agricultural Workers.",
+      "abstract": "Acetylcholinesterase inhibition was determined for 666 Kenyan agricultural workers; 390 (58.6%) mainly pesticide applicators exposed to organophosphate and carbamate pesticides and 276 (41.4%) unexposed controls from four rural agricultural areas during 1993 and 1994. Baseline levels were depressed in the exposed group (6.1 +/- 0.84; 4.09 +/- 0.84) but not in the unexposed group (5.83 +/- 0.91; 5.60 +/- 0.87). Acetylcholinesterase inhibition was found in all exposed individuals and led, on average, to a decrease of baseline acetylcholinesterase levels of 33% (+/-12%). The control groups had a nonsignificant decrease of only 4% (+/- 8%). The exposed subjects in Naivasha (flower growers) had the largest inhibition (36%), followed by Homabay (cotton growers) (35%) and Wundanyi (vegetable growers) (33%). Those in Migori (tobacco growers) had, by far, the least inhibition of acetylcholinesterase activity (26%), indicating inherent factors that led to less inhibition. Acetylcholinesterase activity levels of 115 exposed individuals (29.6%) and no controls were depressed to values below 60% of baseline levels. The dramatic inhibition observed could lead to chronic clinical and subclinical intoxication. These findings show that acetylcholinesterase inhibition can be used as an indicator of organophosphate and carbamate poisoning in occupationally exposed agricultural workers. There is, therefore, an urgent need for primary prevention programs to monitor and address occupational exposures to these hazardous substances in agriculture in Kenya and other developing countries, as well as to use integrated pest management strategies in crop protection.",
+      "journal": "International journal of occupational and environmental health",
+      "year": 1997,
+      "pub_date": "1997-07-01",
+      "authors": "Ohayo-Mitoko GJA; Heederik DJJ; Kromhout H; Omondi BEO; Boleij JSM",
+      "first_author": "Ohayo-Mitoko GJA",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9225056",
+      "doi": "10.1099/0022-1317-78-7-1785",
+      "title": "Nucleotide sequence of a new bipartite geminivirus isolated from the common weed Sida rhombifolia in Costa Rica.",
+      "abstract": "The nucleotide sequence of infectious clones of a geminivirus from Costa Rica that infects Sida rhombifolia was determined. Sida golden mosaic virus (SiGMV-Co) has a bipartite genome (DNAs A and B). Computer analysis showed that the bipartite genome of SiGMV-Co resembles that of other whitefly-transmitted geminiviruses. The DNA A (2605 nt) and DNA B (2587 nt) components have little sequence homology other than within the common region (CR). Analysis of DNAs A and B showed that SiGMV-Co is closely related to bean dwarf mosaic virus (BDMV). SiGMV-Co was introduced via agroinoculation into seven plant species, including tomato and bean.",
+      "journal": "The Journal of general virology",
+      "year": 1997,
+      "pub_date": "1997-07-01",
+      "authors": "Höfer P; Engel M; Jeske H; Frischmuth T",
+      "first_author": "Höfer P",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

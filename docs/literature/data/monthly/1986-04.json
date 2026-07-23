@@ -1,0 +1,56 @@
+{
+  "month": "1986-04",
+  "generated": "2026-07-13 02:59:42",
+  "total": 2,
+  "by_category": {
+    "Molecular_Characterization": 1,
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "16453678",
+      "doi": "10.1002/j.1460-2075.1986.tb04261.x",
+      "title": "Recombination in a plant virus: template-switching in cauliflower mosaic virus.",
+      "abstract": "A hybrid plasmid, containing tandemly arranged pieces of two different but well-defined cauliflower mosaic virus (CaMV) genomes, was used to study the mechanism by which infectious viral DNA can escape from transforming DNA. Systemic viral infection followed inoculation of Brassica plants with a strain of Agrobacterium tumefaciens containing the hybrid plasmid in its T-DNA. Restriction mapping of uncloned viral DNA from these plants, and sequencing of relevant portions of cloned viral DNA, showed that the majority of viral progeny were probably descendants of DNA produced by transcription/reverse transcription of the viral genome, thus providing further evidence for the hypothesis that this process is normally involved in viral replication. The reverse transcriptase enzyme, which is thought to undergo an intramolecular template switch during viral replication, is shown to move very close to the 5' end of the terminal repeat on the 35S RNA molecule before switching templates. The remaining minority of viral genomes can best be explained as arising from products of recombination between homologous regions of CaMV DNA.",
+      "journal": "The EMBO journal",
+      "year": 1986,
+      "pub_date": "1986-04-01",
+      "authors": "Grimsley N; Hohn T; Hohn B",
+      "first_author": "Grimsley N",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "cauliflower mosaic virus (CaMV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "3722309",
+      "doi": "10.1016/0166-0934(86)90073-x",
+      "title": "Single antibody dot immunoassay--a simple technique for rapid detection of a plant virus.",
+      "abstract": "A single antibody dot immunoassay (SADI) was developed for use as a rapid, simple and sensitive technique for the direct assay of virus bound to nitrocellulose membranes. SADI has been tested for the detection of subterranean clover mottle virus (SCMoV) in small amounts of infected tissue and purified virus preparations, and the technique was found to be twelve times more sensitive than ELISA in terms of total antigen detected. DIBA, an indirect dot immunoassay, was about twice as sensitive as SADI, but the latter was more specific for the detection of SCMoV and is a simpler, more rapid assay, requiring less than three h to complete.",
+      "journal": "Journal of virological methods",
+      "year": 1986,
+      "pub_date": "1986-04-01",
+      "authors": "Graddon D J; Randles J W",
+      "first_author": "Graddon D J",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "地三叶草斑驳病毒 (SCMoV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

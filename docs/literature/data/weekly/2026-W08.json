@@ -1,0 +1,241 @@
+{
+  "week": "2026-W08",
+  "start": "2026-02-16",
+  "end": "2026-02-22",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 25,
+  "by_category": {
+    "Control_Management": 9,
+    "Host_Virus_Interactions": 6,
+    "Biotechnology_Applications": 4,
+    "Antiviral_Resistance_Genes": 3,
+    "New_Virus": 2,
+    "Transmission_Epidemiology": 2,
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "41711973",
+      "doi": "10.1007/s00705-026-06538-z",
+      "title": "Purα is an essential host factor for rice stripe virus accumulation and transmission in the small brown planthopper.",
+      "abstract": "As a persistent-propagative plant virus, Rice stripe virus (RSV) relies on specific interactions between viral proteins and components of its vector, the small brown planthopper (SBPH), for its efficient replication and transmission. To identify vector factors involved in this process, we employed GST pull-down/MS to screen SBPH proteins that interact with RSV P3, a key nonstructural protein for virus transmission, and obtained 55 candidate proteins. Among these, Purα was selected for further investigation. A direct interaction between P3 and Purα was confirmed by co-immunoprecipitation (Co-IP). Confocal microscopy revealed extensive colocalization of Purα and P3 in the cytoplasm of Sf9 cells and critically, within key SBPH tissues for virus transmission, including the midgut, salivary glands, and ovaries. Functional studies showed that knocking down Purα via RNA interference (RNAi) inhibited viral accumulation in SBPHs, consequently reducing both horizontal and vertical transmission efficiency. Our results provide compelling evidence that RSV hijacks the vector protein Purα to promote viral accumulation within the insect body, thereby facilitating transmission. These findings deepen our understanding of plant virus-vector interactions and reveal a potential target for developing novel strategies to control virus spread.",
+      "journal": "Archives of virology",
+      "year": 2026,
+      "pub_date": "2026-02-19",
+      "authors": "Zhao Shuling; Lin Chunling; Pan Wenyu; Liang Changyong",
+      "first_author": "Zhao Shuling",
+      "categories": [
+        "Biotechnology_Applications",
+        "Host_Virus_Interactions",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "水稻条纹病毒 (Rice stripe virus, RSV)",
+      "taxonomy": "",
+      "host_plant": "水稻 (通过介体灰飞虱传播)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41714414",
+      "doi": "10.1038/s41598-026-40402-z",
+      "title": "Virus-mediated changes in insect vector tolerance to a neonicotinoid insecticide.",
+      "abstract": "Beet curly top virus (BCTV), the causal agent of curly top disease, is an important viral pathogen of sugar beets in the western United States. BCTV is exclusively transmitted by the beet leafhopper (BLH, Neoalitarus tenellus (Baker), also referred to as Circulifer tenullus) in a circulative, non-propagative manner and is primarily managed through insecticides targeting vector. Vector-borne plant viruses have been shown to modify vector biology, behavior, or both, thereby favoring their transmission. In this study, viruliferous BLHs demonstrated increased survival compared to non-viruliferous insects when exposed to a neonicotinoid insecticide at a sub-lethal rate of 0.1x rate but not at the 1x rate. In contrast, no significant difference in survival was observed between viruliferous and non-viruliferous insects treated with a pyrethroid insecticide at either 0.1x or 1x rates. Transcriptomic analysis of BLHs exposed to a 0.1x neonicotinoid treatment revealed that differentially expressed transcripts (DETs) associated with detoxification, ubiquitination, and proteolysis, innate immunity, and stress were upregulated in viruliferous BLHs, potentially contributing to their enhanced survival. In contrast, DETs associated with locomotion and cuticular structure were concomitantly downregulated, suggesting that virus-mediated behavioral adaptations are unlikely to contribute to neonicotinoid tolerance in BLHs. This study represents the first comprehensive transcriptomic investigation of virus-mediated tolerance to a neonicotinoid insecticide.",
+      "journal": "Scientific reports",
+      "year": 2026,
+      "pub_date": "2026-02-20",
+      "authors": "Schmidtbauer Max; Withycombe Jordan; Han Jinlong; Neher Oliver T; Nachappa Punya",
+      "first_author": "Schmidtbauer Max",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Beet curly top virus (BCTV)",
+      "taxonomy": "",
+      "host_plant": "甜菜",
+      "location": "美国西部",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41727371",
+      "doi": "10.1021/acsmeasuresciau.5c00155",
+      "title": "A Systematically Enhanced LAMP Chip for Rapid, Sensitive, and Contamination-Free Pathogen Detection.",
+      "abstract": "Main techniques for pathogen detection include molecular or nucleic acid-based methods, such as polymerase chain reaction (PCR) and loop-mediated isothermal amplification (LAMP). Among these, chip-based LAMP provides a particularly promising platform for point-of-care diagnostics. To ensure accurate, reliable, and robust pathogen detection, systematic optimization of the LAMP-chip system is essential. Building on our previously developed LAMP-chip platform, we report a systematically advanced version for the rapid and sensitive detection of Phytophthora infestans. By systematically investigating the effects of primer concentrations, immobilization ratios, and reaction conditions, we identified an optimal configuration involving immobilized forward inner primers (FIP) on the sensor surface and unmodified backward inner primers (BIP) in solution. This approach enabled the detection of P. infestans DNA at concentrations as low as 1 fg/μL, with a transducing optical signal shift of up to 4.33 nm after a 30 min reaction. Further refinement reduced detection time to under 20 min, a 33% reduction of conventional LAMP detection time, without compromising sensitivity. Notably, the use of EDC-NHS chemistry for primer immobilization on the anodic aluminum oxide (AAO) nanopore surface of the LAMP chip effectively minimizes carryover contamination by strictly confining amplification to the chip, representing a major advance over conventional LAMP approaches. This robust, label-free, and user-friendly system offers a promising solution for point-of-care plant pathogen diagnostics, enabling accurate and rapid field-based detection to support timely disease management and improve agricultural outcomes.",
+      "journal": "ACS measurement science au",
+      "year": 2026,
+      "pub_date": "2026-02-18",
+      "authors": "Uchayash Sajid; Zhao Jinping; Kabir Md Iqbal; Song Junqi; Que Long",
+      "first_author": "Uchayash Sajid",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41563055",
+      "doi": "10.1128/jvi.01459-25",
+      "title": "Limited effect of short- to mid-term storage conditions on an Australian farmland soil RNA virome.",
+      "abstract": "Soils represent one of the largest and most diverse reservoirs of microbial life on Earth, yet their associated RNA viruses remain underexplored compared to animal and aquatic systems. Viral discovery in soils has been further limited by technical hurdles, particularly difficulties in obtaining sufficient yields of high-quality RNA for sequencing. To address this, we evaluated a range of storage and preservation strategies, including the use of commercial preservative solutions and ultra-cold snap-freezing, followed by standardized RNA extraction, sequencing, and virus discovery pipelines. This work aimed to establish minimum sample storage requirements that maintain RNA integrity, generate sufficient RNA sequencing data, and subsequently enable reliable soil virome characterization. While no preservative solution proved effective, \"neat\" soil samples were stable at 2°C-8°C and -30°C for at least 2 weeks, and at -80°C for at least 3 months, with no measurable reduction in RNA quality, sequencing data, or viral abundance and diversity. From 32 resulting libraries, we identified 1,475 putative novel RNA viruses, with the majority belonging to the microbe-associated phylum Lenarviricota. Several novel viruses formed divergent clusters with other environmentally derived sequences distantly related to traditionally animal-associated families, such as the Astroviridae and Picornaviridae. Furthermore, unique clusters within the Picobirnaviridae, Alsuvirucetes, Ghabrivirales, and Amabiliviricetes comprised exclusively Australian viruses, suggesting instances of region-specific evolution. Together, these findings highlight soils as rich reservoirs of RNA viral diversity and provide practical minimum standards for storage, expanding opportunities to investigate the ecological and evolutionary roles of RNA viruses in terrestrial systems.IMPORTANCERNA viruses are the most abundant and diverse biological entities on Earth and are likely present in all other organisms and ecosystems, including soil-dwelling invertebrates, microbes, and plants. Despite this, their diversity and role in soil systems remain largely unknown. Methodological challenges in preserving and extracting sufficient quantities of RNA from soils have hindered the study of these communities. Here, we identified 1,475 previously undescribed RNA viruses in Australian soils while systematically testing different preservation strategies. The significance of our research lies in the demonstration that snap-freezing soil is a viable and robust storage strategy for at least 3 months, while also highlighting the extraordinary scale of viral diversity present in terrestrial environments. This work establishes a foundation for reliable exploration of terrestrial RNA viruses, improving the accessibility of more remote environmental viromes and enabling future efforts to integrate them into broader models of microbial ecology and ecosystem function.",
+      "journal": "Journal of virology",
+      "year": 2026,
+      "pub_date": "2026-02-17",
+      "authors": "Sadiq Sabrina; Xue PeiPei; Tang Yijia; Du Mingming; Van Brussel Kate; ... (+3)",
+      "first_author": "Sadiq Sabrina",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41528143",
+      "doi": "10.1128/aem.02194-25",
+      "title": "Emerging insights into plant disease management: multi-omics approaches elucidate the molecular mechanisms underlying pathogen virulence differentiation in natural populations.",
+      "abstract": "A recent study by R. Cheng, T. Lv, P. Ji, B. Ma, et al. (Appl Environ Microbiol 91:e01685-25, 2025, https://doi.org/10.1128/aem.01685-25) used multi-omics analysis to reveal the molecular map of pathogen virulence differentiation driven by natural variation. Building on this work, this article examines how natural variation shapes pathogen virulence and disease prevalence and explores the use of multi-omics approaches to uncover associated molecular mechanisms. The opportunities and challenges of applying multi-omics technologies in plant disease management are also discussed in this article.",
+      "journal": "Applied and environmental microbiology",
+      "year": 2026,
+      "pub_date": "2026-02-18",
+      "authors": "Song Wenxin; Wei Mi",
+      "first_author": "Song Wenxin",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41562619",
+      "doi": "10.1128/jvi.01255-25",
+      "title": "SARS-CoV-2 spike protein expression drives post-acute coagulopathy.",
+      "abstract": "During the COVID-19 pandemic, multiple SARS-CoV-2 variants emerged, each with distinct pathogenicity and transmissibility. This study investigated the role of the viral spike (S) protein in disease progression, focusing on the highly virulent S variant. The Delta S protein exhibited enhanced cleavage efficiency at the S1/S2 junction, resulting in partial dissociation of the S1 subunit, with detectable levels of extracellular S1. Unexpectedly, transient expression of Ancestral and Delta S protein induced by a recombinant vesicular stomatitis viral vector caused mild pulmonary inflammation, neutrophil activation, microthrombosis, and ~40% mortality in transgenic K18-hACE2 mice between 8 and 16 days, similar to post-COVID sequelae. The diseased mice displayed splenic atrophy and systemic inflammation, with elevated serum IGFBP-1 and CXCL13 levels. Consistent with the animal findings, serum samples from long COVID patients showed significantly elevated IGFBP-1 levels. CXCL13 levels were particularly elevated in patients with more severe long COVID symptoms. Notably, treatment with the antiplatelet agent aspirin significantly reduced both mortality and weight loss in mice exposed to Delta S protein expression. These findings suggest that SARS-CoV-2 S protein-associated coagulation and systemic inflammation during infection may contribute to the development of post-acute sequelae of COVID-19.IMPORTANCEOur study investigates the distinctive pathogenic properties of the SARS-CoV-2 spike (S) protein from highly virulent variants, with a particular focus on its delayed pathological effects in mice. Using a vesicular stomatitis virus (VSV) vector to transiently express the Ancestral and Delta variant S proteins in K18-hACE2 mice, we observed minimal acute symptoms initially; however, approximately 40% of the mice developed mild pulmonary inflammation, neutrophil activation, and microthrombosis, leading to death between 8 and 16 days post-infection. This delayed pathology was accompanied by elevated circulating levels of CXCL13 and IGFBP-1. Consistent with these findings, serum samples from long COVID patients also showed significantly increased IGFBP-1 levels, while CXCL13 levels were particularly elevated in individuals with more severe long COVID symptoms. These findings provide important observational evidence that may guide future mechanistic studies on long COVID and inform the development of potential therapeutic approaches.",
+      "journal": "Journal of virology",
+      "year": 2026,
+      "pub_date": "2026-02-17",
+      "authors": "Tien Chih-Feng; Lin En-Ju; Tsai Wei-Hsiang; Tsai Wan-Ting; Chen Ming-Yu; ... (+11)",
+      "first_author": "Tien Chih-Feng",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42408702",
+      "doi": "10.11646/zootaxa.5760.1.7",
+      "title": "",
+      "abstract": "Leafmines found on Genista berberidea Lange in northern Portugal led to the discovery of two new species: Phyllonorycter berberidella Nunes, Laštůvka & Laštůvka sp. nov. (Lepidoptera: Gracillariidae) and Achrysocharoides genistae Hansson sp. nov. (Hymenoptera: Eulophidae). The moth is described based on specimens reared from the host plant, and the wasp from individuals that emerged from the moth larvae. Notes on the conservation status of the host plant at the type locality and a key to related Achrysocharoides species are presented.",
+      "journal": "Zootaxa",
+      "year": 2026,
+      "pub_date": "2026-02-20",
+      "authors": "Nunes João; Laštůvka Aleš; Hansson Christer; Laštůvka Zdenek",
+      "first_author": "Nunes João",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41702797",
+      "doi": "10.1016/j.tibtech.2025.12.017",
+      "title": "CRISPR genome editing in plants without tissue culture.",
+      "abstract": "Conventional plant genome editing relies on tissue culture-mediated somatic cell regeneration, a technically demanding process that limits its application across diverse species. Emerging strategies now circumvent this bottleneck by enabling direct genome editing of meristematic or germline cells. Key advances include (i) genome editing via de novo meristem induction or dormant meristem activation; (ii) germline editing facilitated by graft-mobile tRNA-like sequence systems and haploid induction technologies; and (iii) optimized viral delivery platforms that exploit mobile RNA elements and compact editors such as TnpB to achieve efficient, transgene-free, heritable modifications across a broad range of genotypes and species. The development of robust, tissue culture-free editing platforms promises to revolutionize crop improvement pipelines and accelerate trait development for sustainable agriculture.",
+      "journal": "Trends in biotechnology",
+      "year": 2026,
+      "pub_date": "2026-02-16",
+      "authors": "Li Chao; Mei Desheng; Cheng Hongtao; Pan Xiaoping; Zhang Baohong",
+      "first_author": "Li Chao",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41637569",
+      "doi": "10.1093/plcell/koag021",
+      "title": "The rust effector PstCFEM2 manipulates TaHA2- and TaCIPK9-mediated apoplastic acidification to promote wheat susceptibility.",
+      "abstract": "Apoplastic acidification represents a pivotal mechanism in the co-evolutionary dynamics between plants and pathogens. However, the mechanisms underlying this process remain largely uncharacterized. In this study, we unveil a mechanism by which the stripe rust fungal (Puccinia striiformis f. sp. tritici; Pst) effector manipulates plasma membrane (PM) H+-ATPases to promote apoplastic acidification and attenuate host immune responses. We identified a wheat (Triticum aestivum) PM H+-ATPase (TaHA2) as a key regulator of apoplastic pH and defense responses to Pst infection. The overexpression of TaHA2 exacerbated apoplastic acidification and Pst susceptibility, whereas the CRISPR-Cas9-mediated inactivation of TaHA2 in wheat conferred broad-spectrum resistance against multiple rust pathogens without compromising agronomic traits. Mechanistically, we found that the wheat calcineurin B-like interacting protein kinase 9 (TaCIPK9) phosphorylates TaHA2 at Ser-933, triggering intramolecular interactions between its C-terminal autoinhibitory domain and the central loop, thereby suppressing TaHA2 activity. Conversely, the CFEM (common in fungal extracellular membrane)-containing Pst effector PstCFEM2 competitively binds to the C-terminus of TaHA2, disrupting TaCIPK9-mediated phosphorylation and relieving autoinhibition. This effector-driven activation of TaHA2 amplifies apoplastic acidification and stomatal opening, ultimately dampening plant immunity. Our findings reveal a mechanism by which pathogens promote infection by subverting host pH regulation and provide a theoretical framework for engineering disease resistance through the manipulation of susceptibility genes.",
+      "journal": "The Plant cell",
+      "year": 2026,
+      "pub_date": "2026-02-16",
+      "authors": "Zhang Yanqin; Guo Shuangyuan; Yu Longhui; Lin Yi; Liu Haoshan; ... (+5)",
+      "first_author": "Zhang Yanqin",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41720778",
+      "doi": "10.1038/s41467-026-69532-8",
+      "title": "Ustilago maydis disrupts carbohydrate signaling networks to induce hypertrophy in host cells.",
+      "abstract": "Ustilago maydis infection in maize causes hypertrophic leaf tumors; however, the underlying mechanisms driving this excessive cell growth are unknown. In this study, we identify Hap1 (hypertrophy-associated protein 1) as an effector and virulence factor that regulates mesophyll cell hypertrophy. Using CRISPR-Cas9 mutagenesis, we demonstrate that Hap1 contributes to endoreduplication and starch accumulation in infected tissues. Transcriptomics revealed Hap1-dependent upregulation of starch biosynthesis and cell cycle genes, as well as suppression of plant defense. This links Hap1 to metabolic and cell cycle reprogramming, and immune suppression. To identify the target of Hap1 that drives metabolic reprogramming, we investigated its interaction with ZmSnRK1α in maize. We found that Hap1 interferes with the phosphorylation of SnRK1 substrates and that two Hap1-interacting effectors, Hip1 and Hip2, enhance its protein stability. We conclude that Hap1 contributes to the reprogramming of maize metabolism and cell cycle, as well as mesophyll cell hypertrophy, by modulating the SnRK1 signaling pathway to regulate starch biosynthesis and host defense responses.",
+      "journal": "Nature communications",
+      "year": 2026,
+      "pub_date": "2026-02-20",
+      "authors": "Lee Yoon Joo; Zhang Dong; Stolze Sara Christina; Saridis Georgios; Ebert Malaika K; ... (+2)",
+      "first_author": "Lee Yoon Joo",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

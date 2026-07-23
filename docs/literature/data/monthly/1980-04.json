@@ -1,0 +1,101 @@
+{
+  "month": "1980-04",
+  "generated": "2026-07-13 02:59:41",
+  "total": 4,
+  "by_category": {
+    "Host_Virus_Interactions": 2,
+    "Antiviral_Resistance_Genes": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "16592804",
+      "doi": "10.1073/pnas.77.4.2046",
+      "title": "Cell wall appositions and plant disease resistance: Acoustic microscopy of papillae that block fungal ingress.",
+      "abstract": "Plant cells react to localized stress by forming wall appositions outside their protoplasts on the inner surface of their cellulose walls. For many years it has been inferred that appositions elicited by encroaching fungi, termed \"papillae,\" may subsequently also deter them and thus represent a disease-resistance mechanism. Recently, it has been shown that preformed, oversized papillae, experimentally produced in coleoptile cells of compatible barley, Hordeum vulgare, can completely prevent direct entry of Erysiphe graminis f. sp. hordei that ordinarily penetrates and causes disease. To discover how these papillae may function, acoustic microscopy was used to contrast their in vivo elastic properties with those of ineffective normal papillae and contiguous cell wall. Raster and line scans showed intense acoustic activity at sites of preformed papillae; scans in selected focal planes identified this activity with the papillae, not with subtending cell wall. Minimal acoustic activity was found in normal papillae. It is suggested that some wall appositions could serve in disease resistance as viscoelastic barriers to mechanical forces exerted by the special penetration structures of advancing pathogenic fungi.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1980,
+      "pub_date": "1980-04-01",
+      "authors": "Israel H W; Wilson R G; Aist J R; Kunoh H",
+      "first_author": "Israel H W",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17731550",
+      "doi": "10.1126/science.208.4439.17",
+      "title": "Potato protoplasts in crop improvement.",
+      "abstract": "Clonal populations regenerated from single-leaf cell protoplasts of the potato cultivar ;Russet Burbank' display a high frequency of variation for several horticultural and disease resistance characters. Observations over a period of three tuber generations suggest stable changes in tuber shape, yield, and maturity date, in photo-period requirements for flowering, and in plant morphology. Enhanced resistance to early blight (Alternaria solani) and late blight (Phytophthora infestans) diseases also regularly occurs within regenerated populations. These findings are discussed in the context of possible application to varietal improvement, particularly as they pertain to asexually propagated plants.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 1980,
+      "pub_date": "1980-04-04",
+      "authors": "Shepard J F; Bidney D; Shahin E",
+      "first_author": "Shepard J F",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7364742",
+      "doi": "",
+      "title": "Inhibition of elongation factor 2-dependent translocation by the pokeweed antiviral protein and ricin.",
+      "abstract": "The pokeweed antiviral protein and the toxin ricin are two plant proteins which enzymatically inactivate eukaryotic ribosomes and cause the inhibition of the elongation cycle of protein synthesis. Their mode of inhibition of protein synthesis has been attributed to either the inhibition of enzymatic binding of aminoacyl-tRNA to the acceptor site of the ribosome or its subsequent translocation to the donor site. In this communication, we show that the treatment of ribosomes with either the pokeweed antiviral protein or ricin results in the inhibition of the elongation factor 2-catalyzed translocation of acceptor site aminoacyl-tRNA to the donor site. The inhibitory effects of both proteins are identical and are partially reversed by excess concentrations of elongation factor 2.",
+      "journal": "The Journal of biological chemistry",
+      "year": 1980,
+      "pub_date": "1980-04-25",
+      "authors": "Gessner S L; Irvin J D",
+      "first_author": "Gessner S L",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "6996540",
+      "doi": "",
+      "title": "Immunologic effects of experimental iodine toxicosis in young cattle.",
+      "abstract": "A study was designed to evaluate effects of 4 dosage levels (0, 50, 250, or 1,250 mg) of daily iodine supplementation on cell-mediated and humoral immune mechanisms in 40 calves, 10 per group, for a 6-month period. Immune and inflammatory responses were measured by titers to brucella, leptospira, and infectious bovine rhinotracheitis virus vaccinations, by stimulation of lymphocyte mitoses with poke-weed, phytohemagglutinin (PHA), and conconavalin A mitogens, by intradermal PHA responses, by in vitro phagocytosis of Candida albicans by WBC, and by total WBC counts. Calves given 1,250 mg of iodine daily had significant (P = less than 0.05) decreases in persistence of antibody titers to brucella and leptospira organisms, in lymphocyte mitotic activity, in PHA injection induration, in phagocytosis by WBC, and in WBC counts. Calves fed iodine at 50 or 250 mg daily tended to have decreased leptospiral titers, lymphocyte mitoses, PHA injection induration, and in vitro phagocytosis by WBC compared with responses of controls. Seemingly, large amounts of dietary iodine interfere with titer maintenance to some antigens, with lymphocyte DNA synthesis, and with phagocytic activity of WBC.",
+      "journal": "American journal of veterinary research",
+      "year": 1980,
+      "pub_date": "1980-04-01",
+      "authors": "Haggard D L; Stowe H D; Conner G H; Johnson D W",
+      "first_author": "Haggard D L",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "week": "2025-W35",
+  "start": "2025-08-25",
+  "end": "2025-08-31",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 30,
+  "by_category": {
+    "Control_Management": 14,
+    "Host_Virus_Interactions": 10,
+    "New_Virus": 4,
+    "Biotechnology_Applications": 2,
+    "Molecular_Characterization": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "41012603",
+      "doi": "10.3390/v17091175",
+      "title": "A Novel Cogu-like Virus Identified in Wine Grapes.",
+      "abstract": "A new negative-strand RNA virus was identified in grapevines from a 38-year-old 'Chardonnay' block in Idaho through high-throughput sequencing (HTS) of total RNA. This virus was tentatively named grapevine-associated cogu-like Idaho virus (GaCLIdV). GaCLIdV has three negative-sense, single-stranded RNA genome segments of ca. 7 kb, 1.9 kb, and 1.3 kb, encoding L protein (RNA-dependent RNA polymerase, RdRP), a movement protein (MP), and a nucleocapsid protein (NC), respectively, identified based on pair-wise comparisons with other cogu- and cogu-like viruses. In phylogenetic analysis based on the RdRP, GaCLIdV grouped within the family Phenuiviridae and was placed in a lineage of plant-infecting phenuiviruses as a sister clade of the genus Laulavirus, clustering most closely with switchgrass phenui-like virus 1 (SgPLV-1) and more distantly related to grapevine-associated cogu-like viruses from the Laulavirus and Coguvirus clades. Both GaCLIdV and SgPhLV-1 are proposed to form a new genus, Switvirus, within the family Phenuiviridae. The presence of GaCLIdV in the original 'Chardonnay' samples was confirmed by RT-PCR amplification and Sanger sequencing. This new virus was found in five wine grape cultivars and in six vineyards sampled in Idaho and in Oregon during the 2020-2024 seasons. GaCLIdV may have contributed to the decline observed in the old 'Chardonnay' block, although the role of the virus in symptom development awaits further investigation.",
+      "journal": "Viruses",
+      "year": 2025,
+      "pub_date": "2025-08-28",
+      "authors": "Dahan Jennifer; Orellana Gardenia E; Reyes-Proaño Edison; Lee Jungmin; Karasev Alexander V",
+      "first_author": "Dahan Jennifer",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "grapevine-associated cogu-like Idaho virus (GaCLIdV)",
+      "taxonomy": "Phenuiviridae, Switvirus (proposed new genus)",
+      "host_plant": "葡萄 (Vitis vinifera 'Chardonnay'及其他品种)",
+      "location": "美国爱达荷州 (Idaho) 和俄勒冈州 (Oregon)",
+      "results": "GaCLIdV具有三个负义ssRNA片段，编码RdRP、MP和NC；系统发育分析显示与switchgrass phenui-like virus 1聚类，建议为新属Switvirus；在多个葡萄品种和葡萄园中检测到。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41012590",
+      "doi": "10.3390/v17091162",
+      "title": "Wild Citrus CTV Genomic Data Provides Novel Insights into Its Global Transmission Dynamics.",
+      "abstract": "Citrus tristeza virus (CTV) is an important pathogen threatening the global citrus industry, but its evolution and transmission mechanism in wild citrus has not been clarified. Most of the existing studies are based on CTV-specific gene fragments, lacking genome-wide analysis. There is especially a lack of understanding of CTV transmission dynamics in wild citrus, which needs further investigation. In this study, wild citrus samples from three provinces of China were collected, virus genome data were obtained by high-throughput sequencing (HTS) technology and combined with public database data, and Bayesian phylogeographic inference was used to analyze virus composition characteristics in wild citrus, as well as the population genetic structure, temporal dynamic evolution, and spatial transmission mode of CTV. The results showed that Yunnan wild citrus samples contained the most abundant virus components, including CTV, Citrus Exocortis Viroid (CEVd), Citrus associated Ampelovirus 1 (CaAV-1), and Citrus Virus B (CiVB), while Jiangxi and Hunan samples only contained CTV and CEVd, with all samples showing mixed infection. Phylogenetic analysis showed that nine wild citrus CTV isolates were scattered in different evolutionary clades, and only 9.27% of genetic variation existed between the populations, while 90.72% of genetic variation existed within the populations, indicating little effect of geographic isolation on gene flow. The time to the most recent common ancestor (tMRCA) of CTV was estimated at 1360 CE, with subsequent divergence into two lineages, with population size stabilizing after a rapid increase in 1980-1990. Asia has been identified as the central source of CTV's global spread, with key migration events including Asia to North America (1746), Asia to Oceania (1829), and Asia to South America (1965), coinciding with global maritime trade and the expansion of the citrus industry.",
+      "journal": "Viruses",
+      "year": 2025,
+      "pub_date": "2025-08-26",
+      "authors": "Li Xiang; Zhou Jun; Huang Aijun; Yi Long",
+      "first_author": "Li Xiang",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "柑橘衰退病毒 (Citrus tristeza virus, CTV); 另涉及 Citrus Exocortis Viroid (CEVd), Citrus associated Ampelovirus 1 (CaAV-1), Citrus Virus B (CiVB)",
+      "taxonomy": "Closteroviridae, Closterovirus (CTV)",
+      "host_plant": "野生柑橘 (Citrus spp.)",
+      "location": "中国 (云南、江西、湖南)",
+      "results": "云南样本病毒种类最丰富；CTV分离株分散在不同进化枝，群体内遗传变异占90.72%；tMRCA约1360年，1980-1990年群体迅速增长；亚洲是全球传播中心。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40855013",
+      "doi": "10.1007/s00705-025-06390-7",
+      "title": "Molecular identification of a new monopartite begomovirus isolated from eggplant (Solanum melongena L.) with yellow mosaic symptoms in Nigeria.",
+      "abstract": "An isolate of a novel begomovirus, named eggplant yellow mosaic virus (EYMV), was molecularly characterized from a naturally infected, field-collected eggplant exhibiting yellow mosaic symptom in Iguowan, Edo State, Nigeria. Its complete monopartite genome is 2,805 nucleotides (nt) long, containing two virion-sense (V1 and V2) and four complementary-sense (C1-C4) open reading frames. In pairwise comparisons, EYMV shared the highest (86%) genome sequence identity with tomato leaf curl Cameroon virus isolate GH-Tou-12. Phylogenetic analysis showed that EYMV belonged to the same clade as okra yellow crinkle virus (OYCrV). Further analysis revealed the recombinant nature of EYMV, with the potential major and minor parental viruses being OYCrV and tomato leaf curl Nigeria virus, respectively. The species name \"Begomovirus melongenaflavi\" is proposed for EYMV.",
+      "journal": "Archives of virology",
+      "year": 2025,
+      "pub_date": "2025-08-25",
+      "authors": "Arogundade Olawale; Oladokun John O; Kumar P Lava; Alabi Olufemi J",
+      "first_author": "Arogundade Olawale",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "eggplant yellow mosaic virus (EYMV)",
+      "taxonomy": "双生病毒科(Geminiviridae)、菜豆金色花叶病毒属(Begomovirus)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41003165",
+      "doi": "10.3390/jof11090619",
+      "title": "Tracking of Tobacco Mosaic Virus in Taxonomically Different Plant Fungi.",
+      "abstract": "Plant viruses have been traditionally considered pathogens restricted to plant hosts. However, recent studies have shown that some plant viruses can infect and replicate in filamentous fungi and oomycetes, suggesting that their host range is broader than previously thought, and that their ecological interactions are more complex. In this study, we investigated the ability of the well-characterized positive-sense RNA plant virus Tobacco mosaic virus (TMV) to replicate in four major phytopathogenic fungi from different taxonomic groups: Botrytis cinerea, Fusarium oxysporum f. sp. lycopersici, Verticillium dahliae, and Monilinia fructicola. Using a recombinant TMV-based vector expressing a green fluorescent protein (TMV-GFP-1056) as reporter, we demonstrated that TMV can enter, replicate, and persist within the mycelia of B. cinerea and V. dahliae-at least through the first subculture. However, it cannot replicate in F. oxysporum f. sp. lycopersici and M. fructicola. RNA interference (RNAi) is a conserved eukaryotic epigenetic mechanism that provides an efficient defence against viruses. We explored the role of RNAi in the interaction between TMV and the mycelia of V. dahliae and B. cinerea. Our results revealed a strong induction of the Dicer-like 1 and Argonaute 1 genes, which are key compounds of the RNA silencing pathway. This RNAi-based response impaired TMV-GFP replication in both fungi. Notably, despite viral replication and RNAi activation, the virulence of V. dahliae and B. cinerea on their respective host plants remained unaffected. These findings reinforce the emerging recognition of cross-kingdom virus transmission and interactions, which likely play a crucial role in pathogen ecology and viral evolution. Understanding these virus-fungus interactions not only sheds light on RNAi interference silencing mechanisms but also suggests that plant viruses like TMV could serve as simple and effective tools for functional genomic studies in fungi, such as in V. dahliae and B. cinerea.",
+      "journal": "Journal of fungi (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-08-25",
+      "authors": "Barnaba Natascia Filomena; Vaccaro Lorenza; De Miccolis Angelini Rita Milvia; Spanò Roberta; Nigro Franco; ... (+1)",
+      "first_author": "Barnaba Natascia Filomena",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "烟草花叶病毒 (TMV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41119519",
+      "doi": "10.11646/zootaxa.5686.2.4",
+      "title": "One new genus and two new species of Phyllocoptini (Acari: Eriophyidae: Phyllocoptinae) from Hainan Island, China.",
+      "abstract": "One new genus and two new eriophyoid mite species of the tribe Phyllocoptini (Acari: Eriophyidae: Phyllocoptinae) collected from Hainan Island, China, are described and illustrated: Paracallyntrotus combretinus gen. nov. and sp. nov. on Combretumalfredi (Combretaceae) and Bischofius lineatus sp. nov. on Catunaregamspinosa (Rubiaceae). The genus Bischofius is recorded in China for the first time. Both new mite species were found as vagrants on their host plants, causing no apparent damage.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-08-27",
+      "authors": "Liang Cheng; Xue Xiao-Feng",
+      "first_author": "Liang Cheng",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41119521",
+      "doi": "10.11646/zootaxa.5686.2.2",
+      "title": "Review of the microleafhopper subgenus Matsumurasca (Solanasca) Ghauri, 1974 (Hemiptera: Cicadellidae) from Costa Rica, with description of a new species and its population dynamics in papaya crops.",
+      "abstract": "The taxonomy of the microleafhopper subgenus Matsumurasca (Solanasca) Ghauri, 1974 in Costa Rica is revised. A new species, Matsumurasca (Solanasca) judokuatare Arrieta-Arrieta & Pinedo-Escatel sp. nov., is described and illustrated from Puntarenas and Limn provinces. The new species can be distinguished from other Neotropical species by the following combination of features: rounded anterior margin of crown, apex of aedeagus wide and square-shaped, gonoduct medially wide, and basal aedeagal processes slender. In addition, M. laceiba (Ross & Cunningham, 1960) and M. stevensi (Young, 1953) are reported for the first time from Costa Rica and Mexico, respectively. A key to all species of Matsumurasca known to occur in Costa Rica and a distributional map are provided. The population dynamics of the new taxon in papaya crops throughout fourteen months of monitoring is discussed.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-08-27",
+      "authors": "Arrieta-Arrieta Luis Arturo; Pinedo-Escatel J Adilson; Blanco-Rodrguez Edith; Martnez Alejandro Vargas; Herrera Allan Gonzlez; ... (+1)",
+      "first_author": "Arrieta-Arrieta Luis Arturo",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40859130",
+      "doi": "10.1186/s12870-025-07117-1",
+      "title": "Rvi6-mediated defense mechanisms against apple scab.",
+      "abstract": "[BACKGROUND] Apple scab, caused by the hemibiotrophic fungus Venturia inaequalis (cooke) Wint., is a globally prevalent disease that severely threatens apple yield and fruit quality. Although the key resistance gene Rvi6 (resistance to Venturia inaequalis 6) has been widely deployed in apple scab-resistant breeding programs, the molecular mechanisms underlying its resistance phenotype remain poorly characterized. [RESULTS] In this study, we generated transgenic apple calli overexpressing Rvi6 and systematically investigated both its resistance phenotype and underlying molecular mechanisms. The Rvi6 gene presented high expression levels in leaves and fruits throughout the growth cycle, and aligning with the infection window of V. inaequalis. Rvi6 overexpression significantly reduced the levels of IAA (indole-3-acetic acid), ABA (abscisic acid), and JA (jasmonic acid), and auxin signaling, as well as the callus growth, which directly evidencing the \"growth-defense trade-off\" hypothesis on Rvi6-mediated apple scab resistance. The marked inhibition of V. inaequalis infection in Rvi6-overexpressing calli was attributed to increased ROS (reactive oxygen species) scavenging capacity, increased osmolyte accumulation, and maintenance of plasma membrane integrity. Additionally, Rvi6 induction depressed apple growth by reducing auxin accumulation and attenuating auxin signaling. Transcriptome analysis revealed that multiple biological processes and signaling pathways are involved in Rvi6-mediated disease resistance. Pathways related to plant‒pathogen interactions, lipid and amino acid metabolism, and flavonoid biosynthesis were significantly enriched among the upregulated pathways. Conversely, plant hormone signal transduction, protein processing and modification, and carbohydrate metabolism were enriched predominantly in the downregulated pathways. [CONCLUSIONS] Rvi6 exhibits high expression in leaves and fruits across the growth cycle, aligning with the infection window of V. inaequalis. Rvi6 enhances ROS scavenging capacity, osmolyte accumulation, and plasma membrane integrity, as well as suppresses apple growth, thereby restricting V. inaequalis invasion. Plant immune responses mediated by Ca2⁺ or MAPK cascade reactions, plant hormone signaling and multiple secondary metabolic mechanisms, contribute to Rvi6-mediated resistance against apple scab. This study provides novel insights into the biological functions of Rvi6.",
+      "journal": "BMC plant biology",
+      "year": 2025,
+      "pub_date": "2025-08-26",
+      "authors": "Chen Aoxing; Guo Hongyang; Jiang Heng; Yang Wenmao; Wang Xianpu; ... (+1)",
+      "first_author": "Chen Aoxing",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40943284",
+      "doi": "10.3390/ijms26178354",
+      "title": "Pan-Genome Analysis of ",
+      "abstract": "Cannabis sativa is a crop which has been cultivated since ancient times, with important cultural and industrial value. Due to its substantial economic impact, cannabis has attracted widespread scientific attention. A pan-genome is a significant tool for breeding, because it provides a comprehensive representation of genetic diversity. To provide a valuable tool for Cannabis breeding, we constructed a Cannabis pan-genome based on 113 accessions. A total of 24,679,380 bp of non-reference-genome sequences were assembled, identifying 1313 protein-coding genes. Using pan-genome analyses, a total of 32,428 gene presence/absence variations (PAVs) were obtained, and gene loss was recovered during the domestication of Cannabis. By partitioning the pan-genome using PAVs, a total of 23,309 core genes were identified, accounting for 71.88% of all genes in the pan-genome. In particular, there were 7148 flexible genes, making up 22.05% of the pan-genome. The flexible genes were associated with adaptive traits, including stress resistance and disease resistance in Cannabis. Population genetic analysis presented gene distribution, gene flow, and gene specificity on a pan-genome level. These results provide important genetic basis, functional genes, and guidance for Cannabis breeding.",
+      "journal": "International journal of molecular sciences",
+      "year": 2025,
+      "pub_date": "2025-08-28",
+      "authors": "Wang Shuyu; Zhong Xue; Cheng Yuhui; Yu Ying; Wan Jifeng; ... (+4)",
+      "first_author": "Wang Shuyu",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40941803",
+      "doi": "10.3390/plants14172638",
+      "title": "",
+      "abstract": "Verticillium wilt (VW), caused by Verticillium dahliae, poses a significant threat to global cotton production. Through analysis of public transcriptome databases, this study identified GhSTZ, a C2H2 zinc finger protein transcription factor gene, which was significantly induced by V. dahliae. Suppressing GhSTZ expression via virus-induced gene silencing significantly enhanced cotton resistance to VW. This resistance manifested as a 1.2-fold increase in lignin deposition, optimized ROS (reactive oxygen species) homeostasis, and a 1.3-fold elevation in glucose levels. Transcriptome analysis revealed 338 differentially expressed genes in GhSTZ-silenced plants, with 97 upregulated and 241 downregulated. Key downregulated genes included PME (pectin methylesterase) and PG1-pec (polygalacturonase) in the pentose phosphate pathway, while the key upregulated genes comprised C4H (cinnamate 4-hydroxylase) and C3H (p-coumarate 3-hydroxylase) in the phenylpropanoid biosynthesis pathway. Notably, in the plant-pathogen interaction signaling pathway, approximately half of the genes exhibited upregulated expression while the other half showed downregulation. Protein-protein interaction network analysis further revealed cooperative interaction between PME and the secoisolariciresinol dehydrogenase SIRD. This study is the first to elucidate GhSTZ as a negative regulator that compromises cotton disease resistance through a tripartite mechanism. These findings offer a novel approach to enhancing crop disease resistance by targeting the negative regulatory genes.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-08-25",
+      "authors": "Zhang Guoshuai; Zhu Xinyu; Bi Yanqing; Fernando W G Dilantha; Lv Xiaodi; ... (+3)",
+      "first_author": "Zhang Guoshuai",
+      "categories": [
+        "Biotechnology_Applications",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40827312",
+      "doi": "10.1021/acs.jafc.5c04070",
+      "title": "",
+      "abstract": "In recent years, global temperatures have steadily increased, leading to new patterns of plant disease occurrence. Plant diseases caused by Lasiodiplodia theobromae (Pat.) Griff. & Maubl., a member of the Botryosphaeriaceae family of fungi, have gradually expanded in terms of both range and host plants, intensifying the threat to agriculture and forestry. Due to insufficient understanding and a lack of control measures for these plant diseases, they pose significant risks to agricultural and forest production as well as global ecosystems. This review covers the biological features of L. theobromae and both the major and newly emerging plant diseases caused by the pathogen, as well as the human diseases it can cause. It also discusses detection methods for plant diseases and the pathogen, the mechanisms of pathogen pathogenicity and plant host defense, and disease management strategies. Finally, the review discusses pathogenesis in plant hosts, plant host resistance, sustainable disease control methods, and future risks associated with the diseases in agriculture, forestry, and human populations.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2025,
+      "pub_date": "2025-08-27",
+      "authors": "Jiang Shilong; Hu Lei; Rui Zhibing; Wang Delu; Zhang Libo; ... (+2)",
+      "first_author": "Jiang Shilong",
+      "categories": [
+        "Control_Management",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

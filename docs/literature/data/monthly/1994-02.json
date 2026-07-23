@@ -1,0 +1,148 @@
+{
+  "month": "1994-02",
+  "generated": "2026-07-13 02:59:42",
+  "total": 6,
+  "by_category": {
+    "Molecular_Characterization": 2,
+    "Host_Virus_Interactions": 2,
+    "New_Virus": 1,
+    "Detection_Methods": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8188816",
+      "doi": "10.1016/0166-0934(94)90105-8",
+      "title": "A PCR-microplate hybridization method for plant virus detection.",
+      "abstract": "A sensitive nonradioactive method for detection of plant viruses was evaluated. A cDNA fragment from the coat protein coding region of the potato virus Y (PVY) RNA genome amplified by reverse transcription (RT) followed by polymerase chain reaction (PCR), was directly adsorbed onto polystyrene microplate wells after heat denaturation. The adsorbed cDNA was hybridized with a digoxigenin (DIG)-labelled cDNA probe without a prehybridization step. The probe was also prepared by PCR using the same pair of primers to amplify the target sequence from a cDNA clone of part of the viral genome. The hybrid of the adsorbed cDNA and DIG-labelled probe was reacted with alkaline phosphatase-conjugated anti-DIG antibody. The enzyme activity was then detected by hydrolysis of a substrate, and the absorbance values were measured using a microplate reader. Highest absorbance values were obtained when the amplified DNA fragments were diluted 100 or 125-fold in 10 x SSC (1.5 M NaCl, 0.15 M sodium citrate) for adsorption. Highly concentrated DNA gave lower absorbance values. The absorbance values differed depending on the microplates used, and the highest value was obtained using Nunc Immunoplate II-Maxisorp microplates. DNA fragments longer than 300 bp all gave similar absorbance values, which were twice as high as those obtained with shorter fragments. When the amplified DNA was diluted 100-fold, 10 fg of PVY genomic RNA could be detected by this method, which is called PCR-microplate hybridization. This is about 10,000 times more sensitive than enzyme-linked immunosorbent assay (ELISA). By this method, PVY was detected from five field potato samples showing to be free from PVY by ELISA. PCR-microplate hybridization is nucleic acid-based ELISA-like highly sensitive diagnostic method, and may be generally applicable for detection of plant viruses, viroids, and possibly other plant pathogens.",
+      "journal": "Journal of virological methods",
+      "year": 1994,
+      "pub_date": "1994-02-01",
+      "authors": "Hataya T; Inoue A K; Shikata E",
+      "first_author": "Hataya T",
+      "categories": [
+        "Detection_Methods",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "马铃薯Y病毒 (PVY)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8188819",
+      "doi": "10.1016/0166-0934(94)90108-2",
+      "title": "A surprising effect of extraction conditions on the mobility of some plant virus coat proteins in SDS-PAGE.",
+      "abstract": "The coat protein from purified particles of pea seedborne mosaic potyvirus (PSbMV) moves in SDS-PAGE with an apparent molecular weight (M(r)) of 36 kDa. However, extracts of PSbMV infected plants prepared with SDS or urea contain PSbMV immunoreactive proteins with apparent M(r) 39 kDa as well as 36 kDa. The low mobility form may be generated from the apparent M(r) 36 kDa form by incubating purified PSbMV particles with healthy plant sap in the presence of denaturing agents. A similar effect is observed with bean yellow mosaic potyvirus, but not with three viruses outside the potyvirus group. Experiments suggest that a soluble plant enzyme is responsible for the conversion, which apparently takes place only in vitro under denaturing conditions. This phenomenon may lead to erroneous conclusions about the M(r) of some viral coat proteins. However, the conversion can be prevented by heat treatment of the plant tissue prior to extraction.",
+      "journal": "Journal of virological methods",
+      "year": 1994,
+      "pub_date": "1994-02-01",
+      "authors": "Hassan H; Borkhardt B; Albrechtsen M",
+      "first_author": "Hassan H",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "豌豆种传花叶病毒（PSbMV）和菜豆黄花叶病毒（BYMV）",
+      "taxonomy": "马铃薯Y病毒科（Potyviridae），花叶病毒属（Potyvirus）",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8181740",
+      "doi": "10.1139/g94-012",
+      "title": "Isolation of a new species-specific repetitive sequence from Thinopyrum elongatum and its use in the studies of alien translocations.",
+      "abstract": "A new repetitive sequence that is extremely abundant and well dispersed in the Thinopyrum elongatum genome but present in low-copy number in wheat (Triticum aestivum L.) has been isolated. This repeat and a Th. elongatum repeat isolated in another laboratory were used to identify cosmid genomic clones containing the repeats and, thus, putatively located on a Th. elongatum/T. aestivum translocation arm. Most of the selected cosmids contained single- or low-copy sequences, making them potentially useful in mapping studies. The repeats were used in deletion mapping to deduce gene order of three genes located on the Th. elongatum translocation arm. In situ hybridization studies suggested that this newly identified Th. elongatum repeat is well dispersed throughout the Thinopyrum genome but present at only one location in wheat. This raises some interesting questions about the role of such repetitive elements in the evolution of grass species.",
+      "journal": "Genome",
+      "year": 1994,
+      "pub_date": "1994-02-01",
+      "authors": "Bournival B; Obanni M; Abad A; Ohm H; Mackenzie S",
+      "first_author": "Bournival B",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8313464",
+      "doi": "10.1016/0092-8674(94)90106-6",
+      "title": "Plant disease resistance genes in signal perception and transduction.",
+      "abstract": "",
+      "journal": "Cell",
+      "year": 1994,
+      "pub_date": "1994-02-11",
+      "authors": "Lamb C J",
+      "first_author": "Lamb C J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12232119",
+      "doi": "10.1104/pp.104.2.683",
+      "title": "A Vesicular Arbuscular Mycorrhizal Fungus (Glomus intraradix) Induces a Defense Response in Alfalfa Roots.",
+      "abstract": "Flavonoid accumulation and activities of phenylalanine ammonia-lyase (PAL), chalcone isomerase (CHI), and chitinase were followed during early colonization of alfalfa roots (Medicago sativa L. cv Gilboa) by vesicular arbuscular (VA) fungi (Glomus intraradix). Formononetin was the only flavonoid detected that showed a consistent increase in the inoculated roots. This increase depended only on the presence of the fungus in the plant rhizosphere; no colonization of the root tissue was required. CHI and chitinase activities increased in inoculated roots prior to colonization, whereas the increase in PAL activity coincided with colonization. After reaching a maximum, activities of all enzymes declined to below those of uninoculated roots. PAL inactivation was not caused by a soluble inhibitor. Our results indicate that VA fungi initiate a host defense response in alfalfa roots, which is subsequently suppressed.",
+      "journal": "Plant physiology",
+      "year": 1994,
+      "pub_date": "1994-02-01",
+      "authors": "Volpin H.; Elkind Y.; Okon Y.; Kapulnik Y.",
+      "first_author": "Volpin H.",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8148876",
+      "doi": "10.1046/j.1365-313x.1994.05020173.x",
+      "title": "Pokeweed antiviral protein inactivates pokeweed ribosomes; implications for the antiviral mechanism.",
+      "abstract": "Pokeweed antiviral protein (PAP) and other ribosome-inactivating proteins (RIPs) had previously been thought to be incapable of attacking conspecific ribosomes, thus having no effect on endogenous processes. This assertion conflicts with a model for PAP's in vivo antiviral mechanism in which PAP (a cell wall protein) selectively enters virus-infected cells and disrupts protein synthesis, thus causing local suicide and preventing virus replication. We show here that pokeweed (Phytolacca americana) ribosomes, as well as endod (Phytolacca dodecandra) ribosomes, are indeed highly sensitive to inactivation by conspecific RIPs. Ribosomes isolated from RIP-free pokeweed and endod suspension culture cells were found to be highly active in vitro, as measured by poly(U)-directed polyphenylalanine synthesis. Phytolacca ribosomes challenged with conspecific RIPs generated dose-response curves (IC50 of 1 nM PAP or dodecandrin) very similar to those from wheat germ ribosomes. To determine if Phytolacca cells produce a cytosolic 'anti-RIP' protective element, ribosomes were combined with Phytolacca postribosomal supernatant factors from culture cells, then challenged with conspecific RIPs. Resulting IC50 values of 3-7 nM PAP, PAP-II, PAP-S or dodecandrin indicate that supernatants from these Phytolacca cells lack a ribosomal protective element. This research demonstrates that PAP inactivates pokeweed ribosomes (and is therefore potentially toxic to pokeweed cells) and supports the local suicide model for PAP's in vivo antiviral mechanism. The importance of spatial separation between PAP and ribosomes of cells producing this RIP is emphasized, particularly if crop plants are transformed with the PAP gene to confer antiviral protection.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 1994,
+      "pub_date": "1994-02-01",
+      "authors": "Bonness M S; Ready M P; Irvin J D; Mabry T J",
+      "first_author": "Bonness M S",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "",
+      "host_plant": "美洲商陆 (Phytolacca americana)、十蕊商陆 (Phytolacca dodecandra)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

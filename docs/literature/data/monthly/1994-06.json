@@ -1,0 +1,104 @@
+{
+  "month": "1994-06",
+  "generated": "2026-07-13 02:59:42",
+  "total": 4,
+  "by_category": {
+    "New_Virus": 1,
+    "Closteroviridae": 1,
+    "Host_Virus_Interactions": 1,
+    "Transmission_Epidemiology": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8207405",
+      "doi": "10.1099/0022-1317-75-6-1415",
+      "title": "Screening of the closterovirus genome by degenerate primer-mediated polymerase chain reaction.",
+      "abstract": "The genome of beet yellows virus (BYV), the type representative of the closterovirus group, encodes a homologue of the cellular heat-shock protein (HSP) 70 family. A pair of degenerate primers targeted to motifs A and E, which are highly conserved in HSP70s, was synthesized. Genomes of several definite and possible members of the closterovirus group were screened for the presence of the HSP70 gene with PCR using these degenerate primers. BYV, citrus tristeza virus (CTV), beet yellow stunt virus (BYSV) and carnation necrotic fleck virus templates produced 1 kb amplification products, which were shown by sequencing to represent fragments of the respective HSP70 genes. Further screening was performed with an additional degenerate primer targeted to the motif IV of the putative viral polymerase. This degenerate primer and specific primers complementary to the 5' region of the HSP70 genes of the respective viruses were used to estimate the distance between polymerase motif IV and the start point of the HSP70 gene for BYV (approximately 1.1 kb), CTV and BYSV (around 2.0 kb) by PCR. The amplified genome regions of CTV (3026 nucleotides) and BYSV (2837 nucleotides) were cloned and sequenced. CTV and BYSV were found to encode the gene for an additional 30K (BYSV) or 33K (CTV) protein between the polymerase and the small hydrophobic protein genes, which was absent in BYV. These two 30K proteins displayed very weak similarity to each other, unlike the highly conserved polymerases, hydrophobic proteins and HSP70s of BYV, CTV and BYSV. Degenerate primer-mediated PCR proved to be an efficient tool for rapid screening and subsequent cloning of the viral genomes.",
+      "journal": "The Journal of general virology",
+      "year": 1994,
+      "pub_date": "1994-06-01",
+      "authors": "Karasev A V; Nikolaeva O V; Koonin E V; Gumpf D J; Garnsey S M",
+      "first_author": "Karasev A V",
+      "categories": [
+        "New_Virus",
+        "Closteroviridae"
+      ],
+      "virus_name": "Beet yellows virus (BYV), Citrus tristeza virus (CTV), Beet yellow stunt virus (BYSV), Carnation necrotic fleck virus",
+      "taxonomy": "Closteroviridae (长线形病毒科)",
+      "host_plant": "甜菜、柑橘、香石竹等",
+      "location": "未提及",
+      "results": "成功扩增BYV、CTV、BYSV和香石竹坏死斑点病毒的HSP70基因片段。克隆测序了CTV（3026nt）和BYSV（2837nt）基因组区域，发现它们在聚合酶与小疏水蛋白基因间编码额外30K/33K蛋白，且相似性很低。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "12244258",
+      "doi": "10.1105/tpc.6.6.777",
+      "title": "A Model for Seed Transmission of a Plant Virus: Genetic and Structural Analyses of Pea Embryo Invasion by Pea Seed-Borne Mosaic Virus.",
+      "abstract": "Pea seed-borne mosaic virus (PSbMV), a seed-transmitted virus in pea and other legumes, invades pea embryos early in development. This process is controlled by maternal genes and, in a cultivar that shows no seed transmission, is prevented through the action of multiple host genes segregating as quantitative trait loci. These genes control the ability of PSbMV to spread into and/or multiply in the nonvascular testa tissues, thereby preventing the virus from crossing the boundary between the maternal and progeny tissues. Immunocytochemical and in situ hybridization studies suggested that the virus uses the embryonic suspensor as the route for the direct invasion of the embryo. The programmed degeneration of the suspensor during embryo development may provide a transient window for embryo invasion by the virus and could explain the inverse relationship between the age of the mother plant for virus infection and the extent of virus seed transmission.",
+      "journal": "The Plant cell",
+      "year": 1994,
+      "pub_date": "1994-06-01",
+      "authors": "Wang D.; Maule A. J.",
+      "first_author": "Wang D.",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Pea seed-borne mosaic virus (PSbMV)",
+      "taxonomy": "",
+      "host_plant": "豌豆及其他豆类",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8054991",
+      "doi": "10.1046/j.1365-313x.1994.5060863.x",
+      "title": "Transposition of the maize Ds element from a viral vector to the rice genome.",
+      "abstract": "The geminivirus miscanthus streak virus (MiSV) was used as a gene vector to study the transposition of the maize Ds element in rice protoplasts. Efficient excision of the Ds from the MiSV vector was observed only when the MiSV vector was allowed to replicate and the plasmid expressing the transposase gene encoded by Ac was co-transfected. Under the same condition, the Ds carrying a hygromycin phosphotransferase gene (Ds::HPT) was also efficiently excised. Hygromycin-resistant calli were obtained by culturing these transfected protoplasts in order to examine the transposition of the excised Ds::HPT into the rice genome. In five out of 16 calli examined, the Ds::HPT, but not the vector sequence, was integrated into the rice genome and 8 bp target site duplication typical of Ac/Ds transposition was generated. These results show that the Ds::HPT inserted in the MiSV vector transposed directly into the rice genome. This demonstrates the direct transposition of a cloned plant transposable element into the plant genome. Implications of these finding are discussed.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 1994,
+      "pub_date": "1994-06-01",
+      "authors": "Sugimoto K; Otsuki Y; Saji S; Hirochika H",
+      "first_author": "Sugimoto K",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "芒草线条病毒 (MiSV)",
+      "taxonomy": "",
+      "host_plant": "水稻 (原生质体)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "24186035",
+      "doi": "10.1007/BF00223661",
+      "title": "Characterisation of progeny from backcrosses of triploid hybrids between Hordeum vulgare L. (2x) and H. bulbosum L (4x) to H. vulgare.",
+      "abstract": "Interspecific hybridisations between Hordeum vulgare L. (cultivated barley) and H. bulbosum L. (bulbous barley grass) have been carried out to transfer desirable traits, such as disease resistance, from the wild species into barley. In this paper we report the results of an extensive backcrossing programme of triploid hybrids (H. vulgare 2x x H. bulbosum 4x) to two cultivars of H. vulgare. Progenies were characterised cytologically and by restriction fragment length polymorphism analysis and comprised (1) haploid and diploid H. vulgare plants, (2) hybrids and aneuploids, (3) single and double monosomic substitutions of H. bulbosum chromosomes into H. vulgare and (4) chromosomal rearrangements and recombinants. Five out of the seven possible single monosomic chromosome substitutions have now been identified amongst backcross progeny and will be valuable for directed gene introgression and genome homoeology studies. The presence amongst progeny of 1 plant with an H. vulgare-H. bulbosum translocated chromosome and one recombinant indicates the value of fertile triploid hybrids for interspecific gene introgression.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 1994,
+      "pub_date": "1994-06-01",
+      "authors": "Pickering R A; Timmerman G M; Cromey M G; Melz G",
+      "first_author": "Pickering R A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

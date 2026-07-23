@@ -1,0 +1,242 @@
+{
+  "week": "2026-W19",
+  "start": "2026-05-04",
+  "end": "2026-05-10",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 57,
+  "by_category": {
+    "Host_Virus_Interactions": 24,
+    "Control_Management": 17,
+    "Antiviral_Resistance_Genes": 7,
+    "New_Virus": 4,
+    "Biotechnology_Applications": 4,
+    "Detection_Methods": 3,
+    "Viral_Diversity_Ecology": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "42108591",
+      "doi": "10.1111/jipb.70285",
+      "title": "The ZmRACK1-ZmCDPK7-ZmAPX1 module regulates plant antiviral immunity.",
+      "abstract": "Calcium-dependent protein kinases (CDPKs) in plants play crucial roles in mediating responses to both biotic and abiotic stresses. However, the molecular mechanism through which CDPKs regulate antiviral immunity in plants remains largely elusive. In this study, we identified ZmCDPK7 as a key player in response to various stimuli. Lines overexpressing ZmCDPK7 exhibited enhanced resistance to maize chlorotic mottle virus (MCMV) infection, while ZmCDPK7 knock-out lines demonstrated increased sensitivity, indicating that ZmCDPK7 positively regulates maize immunity against MCMV. Furthermore, ZmCDPK7 interacts with ZmAPX1 and enhances its enzymatic activity by phosphorylating ZmAPX1 at Thr164, thereby reducing reactive oxygen species (ROS) production. The scaffold protein ZmRACK1 interacts with both ZmCDPK7 and ZmAPX1, facilitating the formation of a ternary complex that enhances ZmCDPK7-mediated ZmAPX1 enzymatic activity. Lines overexpressing ZmAPX1 also showed increased resistance to MCMV infection, while ZmAPX1 mutant lines (Zmapx1 MU1 and Zmapx1 MU2) exhibited increased sensitivity. Additionally, CRISPR/Cas9-mediated genome editing of ZmRACK1 in maize resulted in increased susceptibility to MCMV. To counteract plant defense, the MCMV protein P31 interacts with ZmCDPK7 and ZmRACK1, disrupting the interaction between ZmRACK1-ZmCDPK7 and ZmCDPK7-ZmAPX1, thereby blocking the ternary complex formation. Moreover, ZmCDPK7 is also implicated in defense against drought stress and corn stalk rot. Overall, our findings provide valuable insights into the molecular mechanisms by which the ZmRACK1-ZmCDPK7-ZmAPX1 module regulates plant immunity, identifying the potential new targets for the genetic control of maize viral diseases.",
+      "journal": "Journal of integrative plant biology",
+      "year": 2026,
+      "pub_date": "2026-05-10",
+      "authors": "Zhang Yuyang; Li Niannian; Wang Qiongqiong; Sun Yingchao; Shi Yajuan; ... (+9)",
+      "first_author": "Zhang Yuyang",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Detection_Methods"
+      ],
+      "virus_name": "玉米褪绿斑驳病毒 (MCMV)",
+      "taxonomy": "",
+      "host_plant": "玉米",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42080605",
+      "doi": "10.1111/pbi.70675",
+      "title": "A Modified Cas9 Scaffold Allows Extension of the Virus-Induced Gene Editing Technology to the Large Potyvirus Genus.",
+      "abstract": "Plant viruses are recognized as rapid and effective vectors to deliver CRISPR-Cas reaction components into plants, a strategy termed virus-induced gene editing (VIGE). However, VIGE is limited by the host range of the viral vectors. Development of new viral vectors to target a broad range of plant species will potentially enable the delivery of the editing components to new cultivars. Potyviruses (genus Potyvirus) comprise the largest group of plant RNA viruses. The main limitation of potyviral vectors to express a non-coding RNA consists of potential insertion of stop codons that interrupt the large open reading frame that encompasses most potyviral genome. This is the case with the Streptococcus pyogenes Cas9 sgRNA scaffold, which contains stop codons in all three possible frames. In this work, we first built on a visual reporter system targeting the two homeologs of Nicotiana benthamiana Magnesium chelatase subunit I (CHLI). Second, we developed a tobacco etch virus (Potyvirus nicotianainsculpentis)-derived vector for VIGE by engineering a modified Cas9 scaffold, free of stop codons, to maintain the potyviral polyprotein reading frame while ensuring effective editing. This vector self-replicates and moves systemically, delivering sgRNAs efficiently throughout the plant. This allowed us to obtain plants exhibiting a white phenotype with their four alleles edited through in vitro regeneration from infected leaves, and also to produce edited progeny. We further demonstrated the vector utility in tomato. Given the conserved biological properties within the genus Potyvirus, these findings may be broadly applicable to other potyviruses, expanding the reach of the VIGE technology.",
+      "journal": "Plant biotechnology journal",
+      "year": 2026,
+      "pub_date": "2026-05-04",
+      "authors": "Merwaiss Fernando; Aragonés Verónica; García Arcadio; Daròs José-Antonio",
+      "first_author": "Merwaiss Fernando",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "烟草蚀纹病毒 (Tobacco etch virus, Potyvirus nicotianainsculpentis)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42086987",
+      "doi": "10.1007/s44154-026-00308-2",
+      "title": "Reversible S-palmitoylation of C4 protein encoded by TYLCCxV orchestrates geminiviral pathogenesis.",
+      "abstract": "Cysteine palmitoylation (S-palmitoylation or S-acylation) is a reversible post-translational modification dynamically controlled by opposing enzymes: palmitoyl acyltransferases (PATs) and depalmitoylases. Despite its established roles in other systems, the mechanistic details of S-acylation in plants, particularly its spatiotemporal regulation during plant-virus interactions, remain poorly understood, largely due to the lack of validated enzyme-substrate pairs. Using the geminivirus tomato yellow leaf curl Chuxiong virus (TYLCCxV) as a model, we show that the viral effector C4 undergoes S-palmitoylation at Cys-4, a modification essential for its plasma membrane anchorage and subsequent mediation of viral pathogenesis. NbPAT4, a palmitoyl acyltransferase from Nicotiana benthamiana, catalyzes C4 S-palmitoylation, promoting its membrane localization, protein stability, and viral infection. Conversely, the C4S substitution (C4C4S) abolishes S-palmitoylation, leading to cytoplasmic redistribution, protein destabilization, and impaired viral pathogenicity. We further identify NbABHD6 as a depalmitoylase that interacts with C4 and catalyzes its S-depalmitoylation, triggering C4 degradation via the 26S proteasome pathway. This study reveals a regulatory axis in plant-geminivirus interactions, identifying NbPAT4 and NbABHD6 as antagonistic enzymes that dynamically regulate the stoichiometry of C4 S-acylation. These findings support a host-pathogen enzymatic tug-of-war model in which competitive S-palmitoylation homeostasis governs viral subcellular trafficking and pathogenicity.",
+      "journal": "Stress biology",
+      "year": 2026,
+      "pub_date": "2026-05-06",
+      "authors": "Xie Yan; Zhao Min; Liu Xianan; Yan Junjie; Yang Wanyi; ... (+5)",
+      "first_author": "Xie Yan",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "tomato yellow leaf curl Chuxiong virus (TYLCCxV)",
+      "taxonomy": "",
+      "host_plant": "Nicotiana benthamiana",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42108285",
+      "doi": "10.1038/s41598-026-52353-6",
+      "title": "Transcriptome SNP analysis of tomato seedlings exposed to low‑dose gamma irradiation and cold plasma suggests antiviral responses.",
+      "abstract": "Physical mutagens such as low-dose gamma irradiation and cold plasma have recently emerged as eco-friendly tools for enhancing plant vigor, stress tolerance, and disease resistance. However, their impact on genetic stability remains insufficiently characterized. Here, we performed transcriptome-wide single-nucleotide polymorphism (SNP) discovery in Solanum lycopersicum seedlings infected with Tomato brown rugose fruit virus (ToBRFV; Tobamovirus fructirugosum) and subjected to either 15 Gy gamma irradiation or cold plasma treatment. RNA-Seq analysis revealed distinct mutational footprints: gamma irradiation induced 82 high-confidence SNPs, whereas cold plasma generated 36, with only two SNPs shared between treatments. Chromosomal mapping indicated that gamma-induced SNPs were clustered on chromosomes 7, 12, and 9, while cold plasma-associated mutations were more evenly distributed, predominantly on chromosomes 6 and 11. Most SNPs were localized within protein-coding regions, resulting exclusively in nonsynonymous substitutions; however, the limited SNP dataset and transcriptome-based approach prevent robust inference of selection pressure. Functionally, gamma-induced SNPs were enriched in genes related to terpene biosynthesis, lipid metabolism, and secondary metabolite pathways, while cold plasma targeted genes associated with transcriptional regulation, redox signaling, and chloroplast function, which are closely linked to hormone-mediated signaling networks such as auxin pathways that coordinate plant stress responses and developmental adaptation. Protein modeling further highlighted amino acid substitutions in conserved domains of NB-LRR and regulatory proteins, suggesting possible contributions to plant stress and immune responses. Collectively, our results demonstrate that both treatments induce limited yet functionally relevant transcriptomic mutations within expressed genes, without evidence of widespread mutational disruption at the transcriptome level. However, because the analysis is based on RNA-Seq data, these findings reflect transcriptome-level stability rather than genome-wide genomic safety, and further validation using whole-genome sequencing would be required to assess genome-wide mutational effects.",
+      "journal": "Scientific reports",
+      "year": 2026,
+      "pub_date": "2026-05-10",
+      "authors": "Ghorbani Abozar; Mahmoudi Elham; Rostami Mahsa; Rastgou Mina; Koolivand Davoud; ... (+1)",
+      "first_author": "Ghorbani Abozar",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Tomato brown rugose fruit virus (ToBRFV)",
+      "taxonomy": "",
+      "host_plant": "番茄 (Solanum lycopersicum)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42097993",
+      "doi": "10.1094/PDIS-12-25-2498-RE",
+      "title": "Application of polysaccharide peptide for the effective elimination of AYRSpV in kiwifruit.",
+      "abstract": "Actinidia yellowing ringspot virus (AYRSpV) is an economically important pathogen that significantly reduces kiwifruit yield and impairs fruit quality. Conventional virus eradication methods, such as thermotherapy and ribavirin-based chemotherapy, often cause phytotoxicity and involve complex procedures. In this study, we evaluated the efficacy of polysaccharide peptide (PSP), a natural antiviral compound, for eliminating AYRSpV from kiwifruit (Actinidia spp.) in combination with shoot tip culture. Our results show that PSP treatment not only achieved high virus eradication rates but also promoted the growth and rooting capacity of kiwifruit plantlets in tissue culture. Treatment with 1 mg/mL PSP followed by culture of 0.5-1.5 mm shoot tips resulted in 76.7% to 90% elimination of AYRSpV, along with significant improvements in plant height and leaf development. This study reports the first successful use of PSP for eradicating kiwifruit viruses, offering a cost-effective and phytobeneficial alternative to conventional antiviral agents.",
+      "journal": "Plant disease",
+      "year": 2026,
+      "pub_date": "2026-05-07",
+      "authors": "Sun Yuan; Cheng Mengjia; Tan Shengyao; Li Xiaoling; Hou Caiting; ... (+2)",
+      "first_author": "Sun Yuan",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Actinidia yellowing ringspot virus (AYRSpV)",
+      "taxonomy": "",
+      "host_plant": "猕猴桃 (Actinidia spp.)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42108676",
+      "doi": "10.1002/ps.70897",
+      "title": "Obligate endosymbionts as promising targets for planthopper pest control: Exploring their effect on probing behavior.",
+      "abstract": "[BACKGROUND] Planthoppers (Hemiptera: Delphacidae) are sap-sucking insects that have emerged as major pests of economically important agricultural crops worldwide. These insects establish an obligate mutualistic relationship with fungal endosymbionts (yeast-like symbionts, YLS) which play a key role in their nutrition and physiology. Despite this, the influence of YLS on host probing behavior remains poorly understood. In this study, we experimentally reduced YLS abundance in the maize planthopper Delphacodes kuscheli, the main vector of Mal de Río Cuarto virus in the Neotropical region, by exposing host plants to systemic fungicides. We then evaluated the effects of YLS depletion on female probing behavior using the electrical penetration graph technique. [RESULTS] Sub-symbiotic females showed longer non-probing periods (mean values, 95% CI 70.80 min, 46.3-108) than control females (19.59 min, 12.8-30). They also required more probes and more time to reach the phloem and allocated less time to phloem sap ingestion (113.82 min, 84.9-153) than control females (180.96 min, 136.4-240). Additionally, sub-symbiotic females exhibited a higher proportion of probing time spent in pathway activities (32.52%, 26.30-39.42) than control females (22.38%, 17.13-28.70). [CONCLUSION] These findings suggest that nutritional symbionts may play an overlooked role in shaping probing behavior in D. kuscheli females. Our results highlight the ecological significance of YLS in these phloem-feeding insects and provide novel insights into symbiont-vector-plant interactions. The ability to alter probing behavior through reduction of obligate mutualistic symbionts in an agricultural pest opens new avenues for the development of integrated pest management strategies. © 2026 Society of Chemical Industry.",
+      "journal": "Pest management science",
+      "year": 2026,
+      "pub_date": "2026-05-10",
+      "authors": "de la Fuente Daniela; Catalano María Inés; Carpane Pablo; Toledo Andrea Vanesa; Brentassi María Eugenia",
+      "first_author": "de la Fuente Daniela",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "Mal de Río Cuarto virus",
+      "taxonomy": "",
+      "host_plant": "玉米",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42154676",
+      "doi": "10.1093/plphys/kiag100",
+      "title": "The HIRA-interacting histone chaperone CABIN1 negatively regulates plant immunity mediated by immune receptor gene SNC1.",
+      "abstract": "Plant intracellular immune receptors, mostly nucleotide-binding leucine-rich repeat (NLR) proteins, are tightly regulated to maintain low expression levels under non-infection conditions and to allow induced expression by pathogens. The extensively studied NLR gene SUPPRESSOR OF NPR1, CONSTITUTIVE 1 (SNC1) is transcriptionally regulated by transcription factors, histone-modifying enzymes, and chromatin remodelers in Arabidopsis (Arabidopsis thaliana). Here, we identified a putative histone chaperone protein, CABIN1 (CALCINEURIN BINDING PROTEIN 1), as a negative regulator of SNC1-mediated plant immunity through a sensitized genetic screen. The cabin1 mutant exhibited enhanced resistance to the bacterial pathogen Pseudomonas syringae pv. tomato (Pst) DC3000. This was accompanied by elevated expression of SNC1 and many defense genes even in the absence of pathogen infection. The enhanced disease resistance in the cabin1 mutant depended on a functional SNC1 gene, and CABIN1 physically bound to the SNC1 promoter region, indicating that SNC1 directly mediates autoimmunity in cabin1. The Arabidopsis CABIN1 protein interacted with HISTONE REGULATOR A (HIRA), similarly in animals. The hira mutant also exhibited enhanced disease resistance and a higher SNC1 expression than the wild type; however, the resistance enhancement did not depend on SNC1 alone. This work identifies regulators of plant immunity and implicates histone chaperones in the regulation of immune gene expression.",
+      "journal": "Plant physiology",
+      "year": 2026,
+      "pub_date": "2026-05-06",
+      "authors": "Yang Leiyun; Liu Yang; Xie Hairong; Zuo Wanzhou; Wang Zhixue; ... (+3)",
+      "first_author": "Yang Leiyun",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42019498",
+      "doi": "10.1016/j.molcel.2026.03.035",
+      "title": "A phosphorelay circuit drives extracellular alkalinization in receptor kinase-mediated immune and cell-wall damage signaling.",
+      "abstract": "Extracellular alkalinization has long been recognized as a hallmark of plant cell-surface receptor activation, including during pattern-triggered immunity (PTI), yet the mechanisms driving elicitor-induced alkalinization and its role in plant signaling remain unclear. Here, we demonstrate that inhibition of autoinhibited H+-ATPases (AHAs) is required for elicitor-induced extracellular alkalinization. This alkalinization is essential for immune and cell-wall damage signaling mediated by diverse plasma membrane-localized receptor kinases (RKs), likely through modulation of ligand-receptor interactions. Mechanistically, RKs transduce elicitor-triggered signaling via the receptor-like cytoplasmic kinase BOTRYTIS-INDUCED KINASE 1 (BIK1), which inhibits AHA activity by disrupting AHA-GENERAL REGULATORY FACTOR (GRF) interactions through a conserved phosphorylation event. This phosphorylation-driven extracellular alkalinization module is required for disease resistance and cell-wall damage responses initiated by ligand-RK pairs. Our findings uncover a conserved phosphorelay circuit that broadly regulates extracellular alkalinization to coordinate RK signaling, illuminating a general mechanism for RK activation and stress resilience.",
+      "journal": "Molecular cell",
+      "year": 2026,
+      "pub_date": "2026-05-07",
+      "authors": "Zhai Keran; Derbyshire Paul; Zhang Songyuan; Choi Sera; Wang Limin; ... (+6)",
+      "first_author": "Zhai Keran",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42048459",
+      "doi": "10.1073/pnas.2532423123",
+      "title": "Perception of a bacterial quorum sensing signal activates a tripartite plant immune strategy.",
+      "abstract": "Bacterial quorum sensing (QS) signals an increasing threat during pathogenesis. How plants deploy timely defenses through QS perception is poorly understood. Here, we report that Arabidopsis thaliana perceives 2'-aminoacetophenone (2'-AA), a volatile QS signal from Pseudomonas aeruginosa, and mounts a multilayered defense. This response comprises BRI1-ASSOCIATED RECEPTOR KINASE 1 (BAK1)-dependent intracellular immunity, extracellular quorum quenching through the release of acetic acid, and ecological remodeling of the root microbiome to suppress Pseudomonas. Our findings demonstrate that plants can translate the detection of a specific bacterial QS molecule into a coordinated, preemptive disease resistance strategy.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2026,
+      "pub_date": "2026-05-05",
+      "authors": "He Danxia; Zhou Yang; Li Meng; Wang Miao; Yu Wenjia; ... (+16)",
+      "first_author": "He Danxia",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42042856",
+      "doi": "10.1021/acs.jafc.5c18038",
+      "title": "",
+      "abstract": "Citrus Huanglongbing (HLB), caused by Candidatus Liberibacter asiaticus (CLas), is the most devastating citrus disease, with no effective control strategies currently available. This study investigated the contribution of the rhizosphere microbiome to HLB resistance by comparing bacterial communities associated with symptomatic and escape trees. Escape trees harbored distinct microbial communities, with notable enrichment of Paraburkholderia spp. Among over 300 isolates, four Burkholderia strains (G23, G24, G25, and G29) exhibited strong inhibitory activity against CLas-related bacteria and close phylogenetic affiliation with Burkholderia theae XITOU. Genomic analyses revealed genes associated with environmental adaptation and host interaction. All four strains suppressed CLas proliferation and induced defense-related gene expression in citrus. Notably, strain G24 significantly reduced CLas titers, alleviated disease symptoms, and promoted plant recovery under field conditions, highlighting its potential as a microbial strategy for HLB management.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2026,
+      "pub_date": "2026-05-06",
+      "authors": "Tian Yuzhen; Wu Libo; Xie Xiaolin; Gu Jun; Zhang Shaolong; ... (+7)",
+      "first_author": "Tian Yuzhen",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

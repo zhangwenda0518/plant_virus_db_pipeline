@@ -1,0 +1,283 @@
+{
+  "month": "2008-09",
+  "generated": "2026-07-13 02:59:42",
+  "total": 40,
+  "by_category": {
+    "Host_Virus_Interactions": 12,
+    "New_Virus": 10,
+    "Antiviral_Resistance_Genes": 8,
+    "Biotechnology_Applications": 5,
+    "Molecular_Characterization": 2,
+    "Control_Management": 2,
+    "Viral_Diversity_Ecology": 2,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "18566836",
+      "doi": "10.1007/s00442-008-1083-1",
+      "title": "Complex interactions between a plant pathogen and insect parasitoid via the shared vector-host: consequences for host plant infection.",
+      "abstract": "Plant viruses modify the development of their aphid vectors by inducing physiological changes in the shared host plant. The performance of hymenopterous parasitoids exploiting these aphids can also be modified by the presence of the plant pathogen. We used laboratory and glasshouse microcosms containing beans (Vicia faba) as the host plant to examine the interactions between a plant virus (pea enation mosaic virus; PEMV) and a hymenopterous parasitoid (Aphidius ervi) that share the aphid vector/host Acyrthosiphon pisum. Neither PEMV-infection of V. faba, nor the carriage of PEMV virions by A. pisum, affected the growth or morphology of the aphid, or the oviposition behaviour and development of A. ervi. The presence of developing Aphidius ervi larvae within Acyrthosiphon pisum did not affect the ability of the aphids to transmit PEMV. However, by reducing their longevity, parasitism ultimately decreased the time viruliferous aphids were able to inoculate plants. In terms of virus dispersal, parasitized aphids exhibited more movement around experimental arenas than unparasitized controls, causing a slight increase in the proportion of beans infected with PEMV. Exposure to adult Aphidius ervi caused Acyrthosiphon pisum to rapidly drop off bean plants and disperse to new hosts, resulting in considerably higher plant infection rates (70%) than that seen in control arenas (25%). The results of this investigation demonstrate that when parasitoids are added to a plant-pathogen-vector system, benefits to the host plant due to reduced herbivore infestation must be balanced against the consequences of parasitoid-induced aphid dispersal and a subsequent increase in the level of plant infection.",
+      "journal": "Oecologia",
+      "year": 2008,
+      "pub_date": "2008-09-01",
+      "authors": "Hodge Simon; Powell Glen",
+      "first_author": "Hodge Simon",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "豌豆耳突花叶病毒 (PEMV)",
+      "taxonomy": "",
+      "host_plant": "蚕豆 (Vicia faba)",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18644612",
+      "doi": "10.1016/j.virol.2008.06.020",
+      "title": "Multiple suppressors of RNA silencing encoded by both genomic RNAs of the crinivirus, Tomato chlorosis virus.",
+      "abstract": "Viruses express proteins with silencing suppression activity to counteract the RNA silencing-mediated defense response of the host. In the family Closteroviridae, examples of multiple-component RNA silencing suppression systems have been reported. To ascertain if this is a general strategy in this group of viruses, we have explored the bipartite genome of Tomato chlorosis virus (ToCV, genus Crinivirus). We have identified the RNA1-encoded p22 protein as an effective silencing suppressor by using a Agrobacterium co-infiltration assay. p22 suppressed local RNA silencing induced either by sense RNA or dsRNA very efficiently, but did not interfere with short or long-distance systemic spread of silencing. We have also demonstrated by using the heterologous vector PVX the silencing suppression activity of the RNA-2 encoded coat protein (CP) and minor coat protein (CPm). In this study, we demonstrate an even greater complexity of silencing suppressor activity for a plant virus, and for the first time we show the presence of RNA silencing suppressor genes encoded by both genomic RNA molecules of a bipartite genome in the complex family Closteroviridae.",
+      "journal": "Virology",
+      "year": 2008,
+      "pub_date": "2008-09-15",
+      "authors": "Cañizares M Carmen; Navas-Castillo Jesús; Moriones Enrique",
+      "first_author": "Cañizares M Carmen",
+      "categories": [
+        "Host_Virus_Interactions",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Tomato chlorosis virus (ToCV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18590770",
+      "doi": "10.1016/j.jviromet.2008.05.030",
+      "title": "Evidence for novel viruses by analysis of nucleic acids in virus-like particle fractions from Ambrosia psilostachya.",
+      "abstract": "To test the hypothesis that many viruses remain to be discovered in plants, a procedure was developed to sequence nucleic acids cloned randomly from virus-like particle fractions of plant homogenates. As a test of the efficiency of the procedure we targeted Ambrosia psilostachya, western ragweed, plants growing at the Tallgrass Prairie Preserve of northeastern Oklahoma. Amplifiable nucleic acid was found in the fractions from six of twelve specimens and sequences were characterized from four of them. Evidence was obtained for the presence of viruses belonging to two families (Caulimoviridae, Flexiviridae). Multiple viral species were found in two of the four specimens and their level within the isolated nucleic acid population varied from less than 1-37%. None of the sequences were derived from reported sequences of known viruses. Thus, the analysis of nucleic acid from virus-like particles is a useful tool to expand our knowledge of the universe of viruses to non-cultivated species.",
+      "journal": "Journal of virological methods",
+      "year": 2008,
+      "pub_date": "2008-09-01",
+      "authors": "Melcher Ulrich; Muthukumar Vijay; Wiley Graham B; Min Byoung Eun; Palmer Michael W; ... (+6)",
+      "first_author": "Melcher Ulrich",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "Caulimoviridae和Flexiviridae科中的新病毒（未具体命名）",
+      "taxonomy": "",
+      "host_plant": "Ambrosia psilostachya（西部豚草）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18621976",
+      "doi": "10.1104/pp.108.123869",
+      "title": "Geminivirus-mediated gene silencing from Cotton leaf crumple virus is enhanced by low temperature in cotton.",
+      "abstract": "A silencing vector for cotton (Gossypium hirsutum) was developed from the geminivirus Cotton leaf crumple virus (CLCrV). The CLCrV coat protein gene was replaced by up to 500 bp of DNA homologous to one of two endogenous genes, the magnesium chelatase subunit I gene (ChlI) or the phytoene desaturase gene (PDS). Cotyledons of cotton cultivar 'Deltapine 5415' bombarded with the modified viral vectors manifested chlorosis due to silencing of either ChlI or PDS in approximately 70% of inoculated plants after 2 to 3 weeks. Use of the green fluorescence protein gene showed that replication of viral DNA was restricted to vascular tissue and that the viral vector could transmit to leaves, roots, and the ovule integument from which fibers originate. Temperature had profound effects on vector DNA accumulation and the spread of endogenous gene silencing. Consistent with reports that silencing against viruses increases at higher temperatures, plants grown at a 30 degrees C/26 degrees C day/night cycle had a greater than 10-fold reduction in viral DNA accumulation compared to plants grown at 22 degrees C/18 degrees C. However, endogenous gene silencing decreased at 30 degrees C/26 degrees C. There was an approximately 7 d delay in the onset of gene silencing at 22 degrees C/18 degrees C, but silencing was extensive and persisted throughout the life of the plant. The extent of silencing in new growth could be increased or decreased by changing temperature regimes at various times following the onset of silencing. Our experiments establish the use of the CLCrV silencing vector to study gene function in cotton and show that temperature can have a major impact on the extent of geminivirus-induced gene silencing.",
+      "journal": "Plant physiology",
+      "year": 2008,
+      "pub_date": "2008-09-01",
+      "authors": "Tuttle John R; Idris A M; Brown Judith K; Haigler Candace H; Robertson Dominique",
+      "first_author": "Tuttle John R",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "Cotton leaf crumple virus (CLCrV)",
+      "taxonomy": "",
+      "host_plant": "棉花（Gossypium hirsutum，品种'Deltapine 5415'）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769428",
+      "doi": "10.1094/PDIS-92-9-1366A",
+      "title": "First Report of Little cherry virus 2 from Sweet Cherry in Poland.",
+      "abstract": "Little cherry disease (LChD) is a serious viral disease of sweet (Prunus avium) and sour (P. cerasus) cherry trees. Infection of sensitive cultivars results in small, angular, and pointed fruits with reduced sweetness. In late summer, leaves show a characteristic red coloration or bronzing of the surfaces. One Ampelovirus species, Little cherry virus 2 (LChV-2) (2), and one unassigned species in the Closteroviridae, Little cherry virus 1 (LChV-1) (3), have been associated with LChD. Twenty-seven sour and sweet cherry trees of six varieties from orchards located in several regions of Poland were tested for LChV-1 and LChV-2. Leaf samples were taken either from trees showing fruit symptoms or from asymptomatic trees during the summer of the 2006 growing season. RNA was isolated from the leaves with an RNeasy Kit (Qiagen, Hilden, CA), and reverse transcription (RT)-PCR was performed using primer pairs LCV1U/LCV1L and LCV2UP2/LCV2LO2, which are specific for a 419-bp fragment of the LChV-1 3' nontranslated region and a 438-bp fragment of the LChV-2 methyltransferase gene, respectively (1). The primer pair L2CPF (5'-GTTCGAAAGTGTTTCTTGAT-3') and L2CPR (5'-GCAACAGAAAAACATATGACTCA-3') was designed from existing LChV-2 sequences (GenBank Accession Nos. AF416335 and NC_005065) to amplify the entire LChV-2 coat protein (CP) gene (nucleotides 13,007 to 14,134). The amplified cDNA fragments of LChV-2 genome were ligated to the bacterial vector pCR2.1-TOPO (Invitrogen, Carlsbad, CA), which was used to transform Escherichia coli TOP10 competent cells following the manufacturer's protocol. Both strands of three clones for each amplified LChV-2 genome fragment were sequenced with an automated nucleotide sequencer at the Institute of Biochemistry and Biophysics in Warsaw. RT-PCR results showed that 6 of 27 trees were infected, with LChV-1 detected in five sweet cherry trees and LChV-2 singly infecting one sweet cherry tree cv Elton (isolate C4/14). The nucleotide sequence of the 438-bp methyltransferase gene fragment of isolate C4/14 showed 86, 85, and 84% identity to GenBank Accession Nos. AF333237, AF531505, and AJ430056, respectively, all previously reported LChV-2 sequences from cherry trees. Sequence analysis of the 1,088-bp coat protein gene showed 89 to 91% and 92 to 93% nucleotide and amino acid identity, respectively, with the aforementioned three LChV-2 isolates. The tree infected with LChV-2 was indexed by graft transmission to the woody indicator, Prunus avium cv. Canindex, which showed reddening of the leaves characteristic of LChD 3 months after inoculation. Since cherry production in Poland is 230,000 t per year, the disease may have a significant economic impact because the affected fruits are unsuitable either for consumption or sale. To our knowledge, this is the first report of LChV-2 in Poland. References: (1) M. E. Rott and W. Jelkmann. Phytopathology 91:261, 2001. (2) M. E. Rott and W. Jelkmann. Arch. Virol. 150:107, 2005. (3) M. Vitushkina et al. Eur. J. Plant Pathol. 103:803, 1997.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-09-01",
+      "authors": "Komorowska B; Cieślińska M",
+      "first_author": "Komorowska B",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Little cherry virus 2 (LChV-2)",
+      "taxonomy": "Closteroviridae, Ampelovirus",
+      "host_plant": "甜樱桃 (Prunus avium), 酸樱桃 (P. cerasus), 品种 cv Elton",
+      "location": "波兰",
+      "results": "27株树中6株感染，5株LChV-1，1株LChV-2（品种Elton）。甲基转移酶基因片段与已知LChV-2序列相似性86%，CP基因核苷酸同源性89-91%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18816368",
+      "doi": "10.1186/1743-422X-5-104",
+      "title": "Experimental observations of rapid Maize streak virus evolution reveal a strand-specific nucleotide substitution bias.",
+      "abstract": "[BACKGROUND] Recent reports have indicated that single-stranded DNA (ssDNA) viruses in the taxonomic families Geminiviridae, Parvoviridae and Anellovirus may be evolving at rates of approximately 10(-4) substitutions per site per year (subs/site/year). These evolution rates are similar to those of RNA viruses and are surprisingly high given that ssDNA virus replication involves host DNA polymerases with fidelities approximately 10,000 times greater than those of error-prone viral RNA polymerases. Although high ssDNA virus evolution rates were first suggested in evolution experiments involving the geminivirus maize streak virus (MSV), the evolution rate of this virus has never been accurately measured. Also, questions regarding both the mechanistic basis and adaptive value of high geminivirus mutation rates remain unanswered. [RESULTS] We determined the short-term evolution rate of MSV using full genome analysis of virus populations initiated from cloned genomes. Three wild type viruses and three defective artificial chimaeric viruses were maintained in planta for up to five years and displayed evolution rates of between 7.4 x 10(-4) and 7.9 x 10-4 subs/site/year. [CONCLUSION] These MSV evolution rates are within the ranges observed for other ssDNA viruses and RNA viruses. Although no obvious evidence of positive selection was detected, the uneven distribution of mutations within the defective virus genomes suggests that some of the changes may have been adaptive. We also observed inter-strand nucleotide substitution imbalances that are consistent with a recent proposal that high mutation rates in geminiviruses (and possibly ssDNA viruses in general) may be due to mutagenic processes acting specifically on ssDNA molecules.",
+      "journal": "Virology journal",
+      "year": 2008,
+      "pub_date": "2008-09-24",
+      "authors": "van der Walt Eric; Martin Darren P; Varsani Arvind; Polston Jane E; Rybicki Edward P",
+      "first_author": "van der Walt Eric",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Maize streak virus (MSV)",
+      "taxonomy": "未提及（已知为双生病毒科Geminiviridae）",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18700826",
+      "doi": "10.1094/MPMI-21-9-1215",
+      "title": "The Arabidopsis AtNPR1 inversely modulates defense responses against fungal, bacterial, or viral pathogens while conferring hypersensitivity to abiotic stresses in transgenic rice.",
+      "abstract": "The nonexpressor of pathogenesis-related (PR) genes (NPR1) protein plays an important role in mediating defense responses activated by pathogens in Arabidopsis. In rice, a disease-resistance pathway similar to the Arabidopsis NPR1-mediated signaling pathway one has been described. Here, we show that constitutive expression of the Arabidopsis NPR1 (AtNPR1) gene in rice confers resistance against fungal and bacterial pathogens. AtNPR1 exerts its protective effects against fungal pathogens by priming the expression of salicylic acid (SA)-responsive endogenous genes, such as the PR1b, TLP (PR5), PR10, and PBZ1. However, expression of AtNPR1 in rice has negative effects on viral infections. The AtNPR1-expressing rice plants showed a higher susceptibility to infection by the Rice yellow mottle virus (RYMV) which correlated well with a misregulation of RYMV-responsive genes, including expression of the SA-regulated RNA-dependent RNA polymerase 1 gene (OsRDR1). Moreover, AtNPR1 negatively regulates the expression of genes playing a role in the plant response to salt and drought stress (rab21, salT, and dip1), which results in a higher sensitivity of AtNPR1 rice to the two types of abiotic stress. These observations suggest that AtNPR1 has both positive and negative regulatory roles in mediating defense responses against biotic and abiotic stresses.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 2008,
+      "pub_date": "2008-09-01",
+      "authors": "Quilis Jordi; Peñas Gisela; Messeguer Joaquima; Brugidou Christophe; San Segundo Blanca",
+      "first_author": "Quilis Jordi",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Rice yellow mottle virus (RYMV)",
+      "taxonomy": "",
+      "host_plant": "水稻",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19704817",
+      "doi": "10.4161/psb.3.9.5758",
+      "title": "Viral suppression of RNA silencing by destabilisation of ARGONAUTE 1.",
+      "abstract": "RNA silencing is a manifestation of a ubiquitous phenomenon that acts, at least in plants and some insects, as a natural defense mechanism against viruses. As a counter-strategy, viruses have evolved to encode silencing suppressor proteins (SSPs) that can block the defense response and evade the host immunity. Although numerous SSP have been identified, little information is available on the molecular basis of their mode of action. Among SSPs, the polerovirus protein P0 functions as an F-box protein that targets an essential actor of the silencing pathway. Our work demonstrates that one of the main targets is ARGONAUTE 1 (AGO1), a key component of the RISC effector complex. By a physical interaction with AGO1, P0 mediates AGO1 protein degradation in planta. This is the first report of a plant virus that exploits components of the host ubiquitination machinery to overcome RNA silencing. This unusual mode of action may provide some clues concerning the mechanism governing phloem tropism of poleroviruses.",
+      "journal": "Plant signaling & behavior",
+      "year": 2008,
+      "pub_date": "2008-09-01",
+      "authors": "Bortolamiol Diane; Pazhouhandeh Maghsoud; Ziegler-Graff Véronique",
+      "first_author": "Bortolamiol Diane",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Polerovirus",
+      "taxonomy": "",
+      "host_plant": "植物",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18772955",
+      "doi": "10.1139/G08-056",
+      "title": "Functional markers for selection of potyvirus resistance alleles at the pvr2-eIF4E locus in pepper using tetra-primer ARMS-PCR.",
+      "abstract": "Functional markers targeted on single nucleotide polymorphisms (SNPs) responsible for phenotypic variation constitute optimal tools for marker-assisted selection (MAS) of resistance alleles with different specificities. Here, we used the tetra-primer ARMS-PCR procedure to assay SNP signatures of four distinct alleles at the pvr2-eIF4E locus, which controls pepper resistance to several potyviruses. These simple, economical, and codominant markers open the way for MAS of pepper genotypes resistant to the potyviral strains and species that are prevalent in distinct cultivation areas across the world.",
+      "journal": "Genome",
+      "year": 2008,
+      "pub_date": "2008-09-01",
+      "authors": "Rubio Manuel; Caranta Carole; Palloix Alain",
+      "first_author": "Rubio Manuel",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "马铃薯Y病毒属病毒 (potyviruses)",
+      "taxonomy": "",
+      "host_plant": "辣椒",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18753244",
+      "doi": "10.1099/vir.0.2008/002139-0",
+      "title": "Arabidopsis thaliana class II poly(A)-binding proteins are required for efficient multiplication of turnip mosaic virus.",
+      "abstract": "The poly(A)-binding protein (PABP) is an important translation initiation factor that binds to the polyadenylated 3' end of mRNA. We have previously shown that PABP2 interacts with the RNA-dependent RNA polymerase (RdRp) and VPg-Pro of turnip mosaic virus (TuMV) within virus-induced vesicles. At least eight PABP isoforms are produced in Arabidopsis thaliana, three of which (PABP2, PABP4 and PABP8) are highly and broadly expressed and probably constitute the bulk of PABP required for cellular functions. Upon TuMV infection, an increase in protein and mRNA expression from PAB2, PAB4 and PAB8 genes was recorded. In vitro binding assays revealed that RdRp and the viral genome-linked protein (VPg-Pro) interact preferentially with PABP2 but are also capable of interaction with one or both of the other class II PABPs (i.e. PABP4 and PABP8). To assess whether PABP is required for potyvirus replication, A. thaliana single and double pab knockouts were isolated and inoculated with TuMV. All lines showed susceptibility to TuMV. However, when precise monitoring of viral RNA accumulation was performed, it was found to be reduced by 2.2- and 3.5-fold in pab2 pab4 and pab2 pab8 mutants, respectively, when compared with wild-type plants. PABP levels were most significantly reduced in the membrane-associated fraction in both of these mutants. TuMV mRNA levels thus correlated with cellular PABP concentrations in these A. thaliana knockout lines. These data provide further support for a role of PABP in potyvirus replication.",
+      "journal": "The Journal of general virology",
+      "year": 2008,
+      "pub_date": "2008-09-01",
+      "authors": "Dufresne Philippe J; Ubalijoro Eliane; Fortin Marc G; Laliberté Jean-François",
+      "first_author": "Dufresne Philippe J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "芜菁花叶病毒 (Turnip mosaic virus, TuMV)",
+      "taxonomy": "",
+      "host_plant": "拟南芥 (Arabidopsis thaliana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18571752",
+      "doi": "10.1016/j.mimet.2008.05.011",
+      "title": "Effect of gentian violet on the growth of the N and T RFLP types of the Aspergillus niger aggregate.",
+      "abstract": "Taxa included in the Aspergillus niger aggregate are difficult to distinguish by phenotypic characterization. In this work, the effect of gentian violet on the growth of the N and T RFLP types of A. niger aggregate strains has been investigated. In total, 105 strains from different sources and origins, including reference cultures and field isolates were studied. Type N and T RFLP patterns, ochratoxin A production and the effect of different concentrations of gentian violet on the growth were determined in these strains. Forty nine strains belonged to the N type and 56 strains to the T type. Sixteen out of the 105 strains assayed were OTA producers. All the OTA-producing species belonged to the RFLP type N and none of the T type strains was able to produce OTA. Approximately 90% of the N type strains grew in the presence of 25 ppm of gentian violet. Only five N type strains did not grow on this medium. One of these strains was A. niger ATCC 22343, a well documented induced mutant strain and the remaining four strains belonged to the new species A. brasiliensis. On the contrary, all the T type strains failed to grow on this medium after 3 days of incubation (sensitivity 89.79%; specificity 100%). The use of growth in gentian violet as an additional character for classification and identification purposes in this taxonomic group may be useful because no phenotypic methods have yet been found that can distinguish between these species.",
+      "journal": "Journal of microbiological methods",
+      "year": 2008,
+      "pub_date": "2008-09-01",
+      "authors": "Bragulat M Rosa; Cabañes F Javier",
+      "first_author": "Bragulat M Rosa",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18509654",
+      "doi": "10.1007/s00299-008-0554-5",
+      "title": "Mammalian pro-apoptotic bax gene enhances tobacco resistance to pathogens.",
+      "abstract": "Emerging evidence suggests that plants and animals may share certain biochemical commonalities in apoptosis, or programmed cell death (PCD) pathways, though plants lack key animal apoptosis related genes. In plants, PCD has many important functions including a role in immunity and resistance to pathogen infection. In this study, a rice phenylalanine ammonia-lyase promoter is used to regulate the expression of the mouse pro-apoptotic bax gene in transgenic tobacco plants. Ectopic expression of the bax negatively affects the growth of transgenic plants. Nonetheless, results show that the bax transgene is induced upon infection by plant pathogens and accumulation of Bax is observed by Western blot analysis. By estimating and measuring the extent of cell death, release of active oxygen species, and accumulation defense-associated gene transcripts, it is shown that bax transgenic plants mount a more robust cell death response compared to control plants. The bax transgenic tobacco plants are also more resistant to infection by Phytophthora parasitica and Ralstonia solanacearum, but have no obvious resistance to tobacco mosaic virus. These results substantiate past studies and illustrate the powerful effects mammalian bax genes may have on plant development and disease resistance.",
+      "journal": "Plant cell reports",
+      "year": 2008,
+      "pub_date": "2008-09-01",
+      "authors": "Dong Suomeng; Zhang Zhengguang; Zheng Xiaobo; Wang Yuanchao",
+      "first_author": "Dong Suomeng",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

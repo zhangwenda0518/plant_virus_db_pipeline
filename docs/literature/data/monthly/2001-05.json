@@ -1,0 +1,279 @@
+{
+  "month": "2001-05",
+  "generated": "2026-07-13 02:59:42",
+  "total": 22,
+  "by_category": {
+    "New_Virus": 9,
+    "Host_Virus_Interactions": 9,
+    "Antiviral_Resistance_Genes": 2,
+    "Molecular_Characterization": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30823148",
+      "doi": "10.1094/PDIS.2001.85.5.561C",
+      "title": "First Report of Transmission of Soybean mosaic virus and Alfalfa mosaic virus by Aphis glycines in the New World.",
+      "abstract": "The recent discovery of the soybean aphid, Aphis glycines Matsamura, in the North Central region of the United States is significant because it is the first time that a soybean-colonizing aphid has been detected in the New World. Although the aphid has the potential to cause physiological loss of up to 52% on soybeans (4), it can also transmit Soybean mosaic virus (SMV). Transmission of Alfalfa mosaic virus (AMV) has not been reported. SMV, and less commonly AMV, are found in soybeans in the North Central states and are transmitted by numerous aphids in a nonpersistent manner (2; Grau, unpublished). For SMV, potential exists for specificity of transmission between virus strain and aphid species (3). For these reasons, it was important to determine if an endemic isolate of these viruses could be transmitted by this introduced species of aphid in the North Central region. Transmission experiments were conducted as described (3), using 3, 5, and 10 aphids per plant. Ten plants of the soybean cultivar Williams 82 were used for each treatment. To preclude confounding results by possible seed transmission, plants used in all tests were grown from seeds harvested from virus-indexed plants grown in the greenhouse. For experiments involving SMV, the aphid-transmissible field isolate Al5 (GeneBank Accession no. AF242844) and, as a negative control, the non-aphid transmissible isolate N (GeneBank Accession no. D500507) were used. For experiments involving AMV, a field isolate of AMV, confirmed by ELISA and host range, was used. The aphid species Myzus persicae was maintained on broad bean and A. glycines was maintained on virus-free soybean. The protocol for transmission studies of AMV was identical to that used in the SMV study, except only A. glycines was tested. For experiments, plants were periodically observed for symptom development and tested by ELISA 4 to 5 weeks after inoculation access. No transmission of SMV-N occurred in any tests, which together involved 180 aphids each of M. persicae or A. glycines. For the Al5 isolate, transmission efficiencies of 30, 50, and 50% were obtained with 3, 5, and 10 individuals, respectively, of M. persicae per plant. Efficiencies for A. glycines were 30, 40, and 40%. Transmission levels by the two aphid species did not differ significantly (t-test, P = 0.01). For AMV, corresponding transmission efficiencies were 0, 0, and 20%. The data suggest that the introduced A. glycines can be an efficient vector of SMV, but a less efficient vector of AMV, in the North Central region. Transmission of AMV by M. persicae has been documented (1) but was not examined in this study. Transmission of SMV and AMV by A. glycines is of concern because it may increase SMV and AMV incidence. With the recent outbreak of Bean pod mottle virus (BPMV) in the region, the potential for synergism of SMV and BPMV is increased (2). References: (1) M. B. Castillo and G. G. Orlob. Phytopathology 56:1028, 1966. (2) G. L. Hartman et al., eds. 1999. Compendium of Soybean Diseases, 4th Ed. American Phytopathological Society, St. Paul, MN. (3) B. S. Lucas and J. H. Hill. Phytopathol. Z. 99:47, 1980. (4) C. L. Wang et al. Plant Prot. 20:12, 1994.",
+      "journal": "Plant disease",
+      "year": 2001,
+      "pub_date": "2001-05-01",
+      "authors": "Hill J H; Alleman R; Hogg D B; Grau C R",
+      "first_author": "Hill J H",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Soybean mosaic virus (SMV) and Alfalfa mosaic virus (AMV)",
+      "taxonomy": "未提及",
+      "host_plant": "soybean (Glycine max cv. Williams 82)",
+      "location": "United States, North Central region",
+      "results": "大豆蚜虫对SMV-Al5分离株传毒效率30-40%，对AMV仅为0-20%；对SMV-N无传播；与桃蚜相比无显著差异。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30823136",
+      "doi": "10.1094/PDIS.2001.85.5.558A",
+      "title": "First Report of a Mexican Isolate of Papaya mosaic virus in Papaya (Carica papaya) and Pumpkin (Cucurbita pepo).",
+      "abstract": "Papaya mosaic virus (PMV) is a member of the Potexvirus group and has filamentous particles of 530 nm with a positive sense single-stranded RNA of 6.6Kb. PMV was detected in Mexico in diseased papaya plants growing alone and in mixed plantations with pumpkin. Reverse transcription polymerase chain reactions (RT-PCR) and standard double-antibody sandwich enzyme linked immunosorbent assay (DAS-ELISA) procedures were used on 45 leaf samples from single plants in seven locations in southeast Mexico (States of Yucatan, Campeche, and Quintana Roo). PCR primer design was based on a GenBank sequence with accession number D13957 (1). Amplified PCR products were cloned using a TOPO TA Cloning Kit and sequenced by the dideoxy chain termination method. Twenty-six samples tested positive for PMV using one or both detection techniques: 23 of 41 from papaya and three of four from pumpkin. The two sequences reported here, YY-15 and YY-22 (from papaya and pumpkin respectively, with accession numbers AYO17186 and AYO17187), were 1180 nucleotides long and contained a fragment of ORF3, the complete ORF4 and the putative CP gene, including the 3' end untranslatable region. Within the CP gene sequence, the amino acid sequence derived had a similarity of 88% with that of D13957 from the GenBank. The similarity of the CP between the two Mexican isolates (from papaya and pumpkin) was 94% and would therefore represent two variants of PMV. A healthy papaya plant in the greenhouse, inoculated with tissue from an infected papaya plant from the field, tested positive for PMV in DAS-ELISA. (PVX was used as a negative control). These results confirmed the identity of the isolate as PMV. Reference: (1) T. L. Sit, M. G. AbouHaidar, and S. Holi. J. Gen. Virol. 70:2335-2331, 1989.",
+      "journal": "Plant disease",
+      "year": 2001,
+      "pub_date": "2001-05-01",
+      "authors": "Noa-Carrazana J C; Silva-Rosales L",
+      "first_author": "Noa-Carrazana J C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Papaya mosaic virus (PMV)",
+      "taxonomy": "Alphaflexiviridae, Potexvirus",
+      "host_plant": "Carica papaya (番木瓜), Cucurbita pepo (南瓜)",
+      "location": "墨西哥，东南部：尤卡坦州、坎佩切州、金塔纳罗奥州",
+      "results": "26/45样品阳性；两个分离物CP基因相似性94%，与参考序列D13957相似性88%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30823146",
+      "doi": "10.1094/PDIS.2001.85.5.561A",
+      "title": "First Report of Cabbage leaf curl virus (Family Geminiviridae) in Georgia.",
+      "abstract": "Cabbage and collard greens were inflicted with a previously undescribed virus-like disease during the fall 2000. Symptoms on leaves were yellow spots, vein clearing, mosaic, curling, and puckering. Symptomatic plants were widespread in Brooks, Colquitt, Grady, and Pierce counties in Georgia. Disease incidence ranged from 10 to 20% in the majority of the fields surveyed but some fields had 100% incidence. Fields were heavily infested by Bemisia argentifolii and the symptoms were suggestive of a whitefly-transmitted geminivirus infection. A polymerase chain reaction (PCR)-based diagnostic test for geminivirus was conducted. Total DNA was extracted from symptomatic cabbage and collard green plants collected from commercial fields. The two primers, 5'-GCCCACATYGTCTTYCCNGT-3' and 5'- GGCTTYCTRTACATRGG-3' (2,3), are \"universal\" for genus Begomovirus of family Geminiviridae. The primer pair could amplify a part of the replicase-associated protein and coat protein and the complete common region of DNA-A. The PCR gave a DNA band of expected size (1.1 kb) from both symptomatic cabbage and collard green samples, whereas no such product was obtained from healthy samples, suggesting that the causal agent could be a geminivirus. To establish the identity of the virus, the 1.1 kb PCR product was cloned into pGEM-T Easy (Promega) and sequenced. GenBank search showed that the geminivirus isolated in Georgia was most closely related (98% sequence identity) to Cabbage leaf curl virus (accession number U65529) reported from Florida (1). The virus was mechanically transmitted to healthy cabbage and collard green plants under experimental conditions. To our knowledge, this is the first report of Cabbage leaf curl virus from Georgia. References: (1) A. M. Abouzid et al. Phytopathology 82:1070, 1992. (2) S. S. Pappu et al. Plant Dis. 84:370, 2000. (3) M. R. Rojas et al. Plant Dis. 77:340-347, 1993.",
+      "journal": "Plant disease",
+      "year": 2001,
+      "pub_date": "2001-05-01",
+      "authors": "Mandal B; Langston D B; Pappu H R; Beard G H; Kucharek T A; ... (+4)",
+      "first_author": "Mandal B",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cabbage leaf curl virus",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "Brassica oleracea (cabbage, collard greens)",
+      "location": "美国佐治亚州 (Brooks, Colquitt, Grady, Pierce counties)",
+      "results": "PCR从病样扩增出1.1kb带，序列与Florida的Cabbage leaf curl virus (U65529) 98%相似，确认病毒。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11297700",
+      "doi": "10.1099/0022-1317-82-5-1245",
+      "title": "An Arabidopsis thaliana protein interacts with a movement protein of Turnip crinkle virus in yeast cells and in vitro.",
+      "abstract": "Plant virus movement proteins bind host components to promote virus movement from initially infected cells to neighbouring cells. In this study, cDNA clones encoding p8 and p9, two small proteins required for the movement of Turnip crinkle virus, were used as 'bait' in a yeast two-hybrid system to screen an Arabidopsis thaliana cDNA library for interactive proteins. One A. thaliana clone was identified that encodes a protein, designated Atp8, which interacted with p8 in yeast cells and in vitro. The apparent full-length of Atp8 mRNA was sequenced and shown to encode a protein with two possible transmembrane helices, several potential phosphorylation sites and two 'RGD' sequences.",
+      "journal": "The Journal of general virology",
+      "year": 2001,
+      "pub_date": "2001-05-01",
+      "authors": "Lin Bing; Heaton Louis A",
+      "first_author": "Lin Bing",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Turnip crinkle virus",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11353867",
+      "doi": "10.1073/pnas.111440998",
+      "title": "An important role of an inducible RNA-dependent RNA polymerase in plant antiviral defense.",
+      "abstract": "Plants contain RNA-dependent RNA polymerase (RdRP) activities that synthesize short cRNAs by using cellular or viral RNAs as templates. During studies of salicylic acid (SA)-induced resistance to viral pathogens, we recently found that the activity of a tobacco RdRP was increased in virus-infected or SA-treated plants. Biologically active SA analogs capable of activating plant defense response also induced the RdRP activity, whereas biologically inactive analogs did not. A tobacco RdRP gene, NtRDRP1, was isolated and found to be induced both by virus infection and by treatment with SA or its biologically active analogs. Tobacco lines deficient in the inducible RDRP activity were obtained by expressing antisense RNA for the NtRDRP1 gene in transgenic plants. When infected by tobacco mosaic virus, these transgenic plants accumulated significantly higher levels of viral RNA and developed more severe disease symptoms than wild-type plants. After infection by a strain of potato virus X that does not spread in wild-type tobacco plants, the transgenic NtRDRP1 antisense plants accumulated virus and developed symptoms not only locally in inoculated leaves but also systemically in upper uninoculated leaves. These results strongly suggest that inducible RdRP activity plays an important role in plant antiviral defense.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2001,
+      "pub_date": "2001-05-22",
+      "authors": "Xie Z; Fan B; Chen C; Chen Z",
+      "first_author": "Xie Z",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒（tobacco mosaic virus）、马铃薯X病毒（potato virus X）",
+      "taxonomy": "",
+      "host_plant": "烟草（tobacco）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11411688",
+      "doi": "10.1099/00207713-51-3-1201",
+      "title": "Candida cleridarum, Candida tilneyi and Candida powellii, three new yeast species isolated from insects associated with flowers.",
+      "abstract": "Three new asexual yeast species were isolated from various floricolous insects. Candida cleridarum sp. nov. was the dominant species in clerid beetles collected in flowers of various cacti in Arizona and Southern California. The sequence of the D1D2 domains of the large-subunit rDNA showed that it is a sister species to Candida fragi (0.9% base difference), a yeast isolated once from fermenting strawberries. Candida tilneyi sp. nov. and Candida powellii sp. nov. were recovered from bees and from nitidulid beetles in flowers of two species of morning glory (Ipomoea) in north-western Costa Rica. C. tilneyi sp. nov. is most closely related to Candida geochares, but differs in the D1D2 sequence by 4.7% base substitutions. C. powellii sp. nov. is a relative of Candida batistae and Candida floricola, showing sequence differences of 5.9 and 6.9%, respectively. In all cases, the new species are phenotypically similar to their nearest relatives, but are sufficiently different to allow conventional identification. The type strains are C. cleridarum strain UWO(PS) 99-101.1T ( = CBS 8793T), C. tilneyi strain UWO(PS) 99-325.1T ( = CBS 8794T) and C. powellii strain UWO(PS) 99-325.3T ( = CBS 8795T).",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2001,
+      "pub_date": "2001-05-01",
+      "authors": "Lachance M A; Bowles J M; Chavarría Díaz M M; Janzen D H",
+      "first_author": "Lachance M A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11411726",
+      "doi": "10.1099/00207713-51-3-999",
+      "title": "Comamonas denitrificans sp. nov., an efficient denitrifying bacterium isolated from activated sludge.",
+      "abstract": "To find a biomarker for denitrification in activated sludge, five denitrifying strains isolated from three wastewater treatment plants were studied. These strains were selected from among 1,500 isolates for their excellent denitrifying properties. They denitrify quickly and have no lag phase when switching from aerobic to anoxic conditions. All strains have the cd1-type of nitrite reductase. The strains are Gram-negative rods and they all grow as filamentous chains when cultivated in liquid solution. The strains differ in colony morphology when grown on nutrient agar. Almost full-length 16S rDNA sequences were determined and phylogenetic analysis revealed that these strains are positioned among members of the genus Comamonas in the beta-subclass of the Proteobacteria. Signature nucleotides and bootstrap percentages were also analysed to verify this position. Strains 110, 123T, 2.99g, 5.38g and P17 were < or = 96.7% similar to known strains, but > or = 99.7% similar to each other, as judged from their 16S rDNA sequences, and grouped tightly together in the phylogenetic tree. Sequence motifs in the 16S rRNA gene were also found, suggesting the monophyletic origin of these strains. Nevertheless, some strains differed from the others, for example strain 110 branches early from the other strains and 5.38g is phenotypically more inert. Therefore, it is proposed that strains 110, 123T, 2.99g and P17 are classified into a new species, Comamonas denitrificans sp. nov., while the taxonomic status of strain 5.38g will have to await the outcome of further studies. The type strain of Comamonas denitrificans is 123T (ATCC 700936T).",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2001,
+      "pub_date": "2001-05-01",
+      "authors": "Gumaelius L; Magnusson G; Pettersson B; Dalhammar G",
+      "first_author": "Gumaelius L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11411678",
+      "doi": "10.1099/00207713-51-3-1099",
+      "title": "Burkholderia fungorum sp. nov. and Burkholderia caledonica sp. nov., two new species isolated from the environment, animals and human clinical samples.",
+      "abstract": "A polyphasic taxonomic study that included DNA-DNA hybridizations, DNA base ratio determinations, 16S rDNA sequence analyses, whole-cell protein and fatty acid analyses and an extensive biochemical characterization was performed on 16 strains isolated from the environment, animals and human clinical samples. The isolates belonged to the genus Burkholderia, were phylogenetically closely related to Burkholderia graminis, Burkholderia caribensis and Burkholderia phenazinium and had G+C contents between 61.9 and 62.2 mol%. Seven strains isolated from the rhizosphere were assigned to Burkholderia caledonica sp. nov. [type strain LMG 19076T (= CCUG 42236T)]. Nine strains isolated from the environment, animals and human clinical samples were assigned to Burkholderia fungorum sp. nov. [type strain LMG 16225T (= CCUG 31961T)]. Differential tests for B. graminis, B. caribensis, B. phenazinium, B. caledonica and B. fungorum include the following: assimilation of trehalose, citrate, DL-norleucine, adipate and sucrose; nitrate reduction; growth in the presence of 0.5% NaCl; and beta-galactosidase activity.",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2001,
+      "pub_date": "2001-05-01",
+      "authors": "Coenye T; Laevens S; Willems A; Ohlén M; Hannant W; ... (+4)",
+      "first_author": "Coenye T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11411714",
+      "doi": "10.1099/00207713-51-3-909",
+      "title": "Rhizobium yanglingense sp. nov., isolated from arid and semi-arid regions in China.",
+      "abstract": "A novel rhizobial group, cluster 9, defined in previous research [Tan, Z. Y., Wang, E. T., Peng, G. X., Zhu, M. E., Martinez-Romero, E. & Chen, W. X. (1999). Int J Syst Bacteriol 49, 1457-1469], was further characterized by determination of DNA base composition, whole-cell protein SDS-PAGE analysis, DNA-DNA hybridization, 16S rRNA gene sequencing and host specificity. These isolates were collected from the wild legumes Amphicarpaea trisperma, Coronilla varia and Gueldenstaedtia multiflora growing in arid and semi-arid regions in northwestern China. Isolates within cluster 9 grouped into a single cluster above a similarity level of 90.6% in a cluster analysis based on protein SDS-PAGE, and they were differentiated from defined rhizobial species. Comparative analysis of 16S rRNA gene sequences showed that isolate CCBAU 71623T, representing cluster 9, was most related to Rhizobium gallicum and Rhizobium mongolense. The DNA-DNA homologies were lower than 42.4% among cluster 9 and defined species, including R. gallicum and R. mongolense. These data indicated that cluster 9 was a unique genomic species. Isolates within this cluster could share their host plants. They could not nodulate Galega orientalis and Leucaena leucocephala and formed ineffective nodules on Phaseolus vulgaris. This group could also be differentiated from defined species by phenotypic characteristics. It is therefore proposed as a new species, Rhizobium yanglingense, with isolate CCBAU 71623 as the type strain.",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2001,
+      "pub_date": "2001-05-01",
+      "authors": "Tan Z Y; Kan F L; Peng G X; Wang E T; Reinhold-Hurek B; ... (+1)",
+      "first_author": "Tan Z Y",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11344290",
+      "doi": "10.1073/pnas.091093198",
+      "title": "Human-caused environmental change: impacts on plant diversity and evolution.",
+      "abstract": "Human-caused environmental changes are creating regional combinations of environmental conditions that, within the next 50 to 100 years, may fall outside the envelope within which many of the terrestrial plants of a region evolved. These environmental modifications might become a greater cause of global species extinction than direct habitat destruction. The environmental constraints undergoing human modification include levels of soil nitrogen, phosphorus, calcium and pH, atmospheric CO(2), herbivore, pathogen, and predator densities, disturbance regimes, and climate. Extinction would occur because the physiologies, morphologies, and life histories of plants limit each species to being a superior competitor for a particular combination of environmental constraints. Changes in these constraints would favor a few species that would competitively displace many other species from a region. In the long-term, the \"weedy\" taxa that became the dominants of the novel conditions imposed by global change should become the progenitors of a series of new species that are progressively less weedy and better adapted to the new conditions. The relative importance of evolutionary versus community ecology responses to global environmental change would depend on the extent of regional and local recruitment limitation, and on whether the suite of human-imposed constraints were novel just regionally or on continental or global scales.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2001,
+      "pub_date": "2001-05-08",
+      "authors": "Tilman D; Lehman C",
+      "first_author": "Tilman D",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11411669",
+      "doi": "10.1099/00207713-51-3-1023",
+      "title": "Agrobacterium larrymoorei sp. nov., a pathogen isolated from aerial tumours of Ficus benjamina.",
+      "abstract": "Tumorigenic Agrobacterium strains isolated from tumours growing on pruned branches of Ficus benjamina have previously been shown to have unique opine metabolism and sufficient 16S rRNA sequence differences to suggest that they belong to a new species. DNA-DNA hybridization results confirmed that these strains represent a new species and Agrobacterium larrymoorei sp. nov. (type strain ATCC 51759T = CFBP 5473T = NCPPB 4096T) is proposed as the name for the species.",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2001,
+      "pub_date": "2001-05-01",
+      "authors": "Bouzar H; Jones J B",
+      "first_author": "Bouzar H",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18943589",
+      "doi": "10.1094/PHYTO.2001.91.5.449",
+      "title": "Differential Colonization of Tomato Roots by Nonpathogenic and Pathogenic Fusarium oxysporum Strains May Influence Fusarium Wilt Control.",
+      "abstract": "ABSTRACT Histochemical staining, beta-glucuronidase (GUS) activity, or placing roots on agar were methods used to characterize interactions between the pathogenic fungus, Fusarium oxysporum f. sp. lycopersici, and the nonpathogenic biocontrol F. oxysporum strain 70T01 with respect to colonization behaviors, interaction sites, and population densities on tomato roots. Mycelia of strain 70T01, a genetic transformant expressing stable GUS activity, hygromycin B resistance, and effective disease control, were localized in epidermal and cortex cell layers of tomato roots in a discontinuous and uneven pattern. In contrast, mycelia of F. oxysporum f. sp. lycopersici were found in the vascular bundles. Thus, direct interactions between the two fungi likely happen in the root surface cell layers. Colonization density of strain 70T01 was related to the inoculation density but decreased with distance from the inoculation site. Host defense reactions, including increased cell wall thickness or papilla deposits, were adjacent to 70T01 hyphae. Experiments done in soil showed that strain 70T01 densities in roots were highest at inoculation zones and barely detectable for root segments more than 2 cm away from the inoculation sites. F. oxysporum f. sp. lycopersici densities were lowest at 70T01 inoculation zones and highest (>10 times) where strain 70T01 was not directly applied. Newly elongating roots where strain 70T01 did not reach were available for infection by the pathogen. The higher strain 70T01 density was always found when the plants were simultaneously infected by F. oxysporum f. sp. lycopersici, suggesting that F. oxysporum f. sp. lycopersici has as much influence in predisposing the plant to colonization by strain 70T01 as strain 70T01 has on providing disease protection against the pathogen.",
+      "journal": "Phytopathology",
+      "year": 2001,
+      "pub_date": "2001-05-01",
+      "authors": "Bao J R; Lazarovits G",
+      "first_author": "Bao J R",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

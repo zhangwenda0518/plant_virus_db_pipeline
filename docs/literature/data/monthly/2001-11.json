@@ -1,0 +1,280 @@
+{
+  "month": "2001-11",
+  "generated": "2026-07-13 02:59:42",
+  "total": 18,
+  "by_category": {
+    "Host_Virus_Interactions": 8,
+    "New_Virus": 4,
+    "Antiviral_Resistance_Genes": 2,
+    "Transmission_Epidemiology": 2,
+    "Detection_Methods": 1,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30823178",
+      "doi": "10.1094/PDIS.2001.85.11.1208C",
+      "title": "First Report of Tomato chlorosis virus in Italy.",
+      "abstract": "During winter 2000-2001, an unusual disease of tomato was observed in some greenhouses in Sardinia, Sicily, and Apulia, in southern Italy. Plants were chlorotic and reduced in size, expanded leaves showed interveinal yellowing, and older leaves developed interveinal reddish-bronze necrosis and downward rolling. The symptoms resembled those recently reported from Portugal (1) as induced by Tomato chlorosis virus (ToCV) (family Closteroviridae, genus Crinivirus), a whitefly-transmitted virus new to Europe. Symptomatic leaf tissues were extracted and analyzed by reverse transcription-polymerase chain reaction as described by Louro et al.(1). The 439-bp ToCV-specific DNA fragment was amplified in samples collected from 6 of 14 greenhouses in Sardinia, 2 of 5 greenhouses in Sicily, and 1 of 1 greenhouse in Apulia. The sequence of the fragment obtained from a Sicilian isolate (GenBank Accession No. AY048854) showed more than 99% identity to ToCV isolates (Accession Nos. AF024630 and AF234029) from the United States and Portugal, respectively. Infestations of Trialeurodes vaporariorum and Bemisia tabaci have been reported in autumn. To our knowledge, this is the first report of ToCV in Italy. Although we found the virus in three regions of the country, its distribution is likely to be wider, since the symptoms can be mistaken for those of a physiological disorder or of Tomato infectious chlorosis virus, another crinivirus infecting tomato. Reference: (1) Louro et al. Eur. J. Plant Pathol. 106:589, 2000.",
+      "journal": "Plant disease",
+      "year": 2001,
+      "pub_date": "2001-11-01",
+      "authors": "Accotto G P; Vaira A M; Vecchiati M; Finetti Sialer M M; Gallitelli D; ... (+1)",
+      "first_author": "Accotto G P",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato chlorosis virus (ToCV)",
+      "taxonomy": "Closteroviridae, Crinivirus",
+      "host_plant": "番茄",
+      "location": "意大利南部（撒丁岛、西西里岛、普利亚大区）",
+      "results": "从撒丁岛、西西里岛和普利亚的温室样品中扩增出ToCV特异性439bp片段，序列与美葡分离株99%以上同源。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30823185",
+      "doi": "10.1094/PDIS.2001.85.11.1210C",
+      "title": "First Report of Parietaria mottle virus on Tomato in Spain.",
+      "abstract": "During spring 2001, plants of different tomato (Lycopersicon esculentum) cultivars grown in several commercial fields in the eastern Catalonia Region of Spain had fruit with brown patches and young leaves with rings and a bright necrotic mosaic that progressed to stem necrosis of the apex, which might die and later develop new symptomless shoots. The symptoms were similar to those of Cucumber mosaic virus (CMV) and Tomato spotted wilt virus (TSWV). Sap of tomato sample R1 (in buffered saline [0.02 M sodium phosphate, 0.15 M NaCl at pH 7.2, containing 0.2% 2-mercaptoethanol]) was infective to Cucumis sativus (local necrosis), tomato cv. Marmande (systemic infection consisting of chlorotic local lesions and necrotic mosaic), Nicotiana clevelandii and N. benthamiana (chlorosis and rosetting), and Chenopodium quinoa (chlorotic local lesions, systemic mottle, and leaf distortion). The sap was not infective to N. glutinosa, N. tabacum cv. Xanthi, Datura stramonium, or Gomphrena globosa. The host range data indicated that the infective agent in sample R1 could be Parietaria mottle virus (PMoV) (1). Symptomatic plants inoculated in a greenhouse with the R1 isolate and symptomatic from tomato plants from the field were analyzed by indirect enzyme-linked immunosorbent assay (ELISA) and had minimum ELISA values at least 10-fold higher than healthy controls, using a polyclonal antiserum (provided by P. Roggero) of a tomato strain of PMoV denoted tomato virus 1 (2). The R1 isolate of PMoV was negative in ELISA when analyzed with commercial antisera to TSWV, CMV, Tomato mosaic virus, Tomato bushy stunt virus, Potato Y virus, Tobacco etch virus, Pelargonium zonate spot virus, and Tobacco streak virus. References: (1) P. Caciagli et al. Plant Pathol. 38:577, 1989. (2) P. Roggero et al. J. Plant Pathol. 82:159, 2000.",
+      "journal": "Plant disease",
+      "year": 2001,
+      "pub_date": "2001-11-01",
+      "authors": "Aramburu J",
+      "first_author": "Aramburu J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Parietaria mottle virus (PMoV)",
+      "taxonomy": "未提及",
+      "host_plant": "番茄 (Lycopersicon esculentum)",
+      "location": "西班牙加泰罗尼亚东部地区",
+      "results": "分离物侵染黄瓜、番茄等，不侵染部分烟草；ELISA检测PMoV阳性，其他病毒阴性",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18943445",
+      "doi": "10.1094/PHYTO.2001.91.11.1085",
+      "title": "Rapid and Sensitive Detection of Apple stem pitting virus in Apple Trees Through RNA Amplification and Probing with Fluorescent Molecular Beacons.",
+      "abstract": "ABSTRACT Currently, detection of Apple stem pitting virus (ASPV; genus Foveavirus) in apple trees for certification purposes occurs by woody indexing. This method requires a minimum of 12 to 24 weeks in greenhouse testing to up to 2 years in field testing. In this paper, the development of a single tube AmpliDet RNA system for the rapid gel-free detection of ASPV in apple tree tissues is described. The system relies on the specific amplification of the viral RNA by nucleic acid sequence-based amplification and the simultaneous fluorescent detection of the amplification product through molecular beacons. A sensitivity of a minimum of 100 molecules of transcript RNA was obtained by the ASPV-specific AmpliDet RNA. All biologically characterized ASPV isolates from a field trial and 12 of 14 isolates from a plant virus collection were readily detected with this AmpliDet RNA system. In addition, the efficiency of this method for detecting ASPV in 'Golden Delicious' and 'Gravenstein' apple trees was compared throughout the year with mechanical inoculation onto Nicotiana occidentalis 37B, a candidate indicator for ASPV. This revealed that only AmpliDet RNA consistently detected the virus in bark tissue, irrespective of the season. Season-specific tissues such as buds, petals, and fruits, but not leaves, also were reliable sources for detection of ASPV by the AmpliDet RNA system.",
+      "journal": "Phytopathology",
+      "year": 2001,
+      "pub_date": "2001-11-01",
+      "authors": "Klerks M M; Leone G; Lindner J L; Schoen C D; van den Heuvel J F",
+      "first_author": "Klerks M M",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "Apple stem pitting virus (ASPV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11606758",
+      "doi": "10.1073/pnas.231178298",
+      "title": "Signal interactions between nitric oxide and reactive oxygen intermediates in the plant hypersensitive disease resistance response.",
+      "abstract": "Nitric oxide (NO) and reactive oxygen intermediates (ROIs) play key roles in the activation of disease resistance mechanisms both in animals and plants. In animals NO cooperates with ROIs to kill tumor cells and for macrophage killing of bacteria. Such cytotoxic events occur because unregulated NO levels drive a diffusion-limited reaction with O(2)(-) to generate peroxynitrite (ONOO(-)), a mediator of cellular injury in many biological systems. Here we show that in soybean cells unregulated NO production at the onset of a pathogen-induced hypersensitive response (HR) is not sufficient to activate hypersensitive cell death. The HR is triggered only by balanced production of NO and ROIs. Moreover, hypersensitive cell death is activated after interaction of NO not with O(2)- but with H(2)O(2) generated from O(2)(-) by superoxide dismutase. Increasing the level of O(2)(-) reduces NO-mediated toxicity, and ONOO(-) is not a mediator of hypersensitive cell death. During the HR, superoxide dismutase accelerates O(2)(-) dismutation to H(2)O(2) to minimize the loss of NO by reaction with O(2)(-) and to trigger hypersensitive cell death through NO/H(2)O(2) cooperation. However, O(2)(-) rather than H(2)O(2) is the primary ROI signal for pathogen induction of glutathione S-transferase, and the rates of production and dismutation of O(2)(-) generated during the oxidative burst play a crucial role in the modulation and integration of NO/H(2)O(2) signaling in the HR. Thus although plants and animals use a similar repertoire of signals in disease resistance, ROIs and NO are deployed in strikingly different ways to trigger host cell death.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2001,
+      "pub_date": "2001-11-06",
+      "authors": "Delledonne M; Zeier J; Marocco A; Lamb C",
+      "first_author": "Delledonne M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11606766",
+      "doi": "10.1073/pnas.231324698",
+      "title": "A new class of oxidosqualene cyclases directs synthesis of antimicrobial phytoprotectants in monocots.",
+      "abstract": "Many plants synthesize antimicrobial secondary metabolites as part of their normal program of growth and development, often sequestering them in tissues where they may protect against microbial attack. These include glycosylated triterpenoids (saponins), natural products that are exploited by man for a variety of purposes including use as drugs [Hostettmann, K. & Marston, A. (1995) Saponins (Cambridge Univ. Press, Cambridge, U.K.)]. Very little is known about the genes required for the synthesis of this important family of secondary metabolites in plants. Here we show the novel oxidosqualene cyclase AsbAS1 catalyzes the first committed step in the synthesis of antifungal triterpenoid saponins that accumulate in oat roots. We also demonstrate that two sodium azide-generated saponin-deficient mutants of oat, which define the Sad1 genetic complementation group, are defective in the gene encoding this enzyme and provide molecular genetic evidence indicating a direct link between AsbAS1, triterpenoid saponin biosynthesis, and disease resistance. Orthologs of AsbAS1 are absent from modern cereals and may have been lost during selection, raising the possibility that this gene could be exploited to enhance disease resistance in crop plants.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2001,
+      "pub_date": "2001-11-06",
+      "authors": "Haralampidis K; Bryan G; Qi X; Papadopoulou K; Bakht S; ... (+2)",
+      "first_author": "Haralampidis K",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11822675",
+      "doi": "10.1078/0723-2020-00045",
+      "title": "Metschnikowia fructicola, a new ascosporic yeast with potential for biocontrol of postharvest fruit rots.",
+      "abstract": "A new ascosporic yeast, Metschnikowia fructicola (type strain NRRL Y-27328, CBS 8853), is described and was isolated from grapes grown in central Israel. Preliminary tests indicate the new species has biocontrol activity against Botrytis rot of stored grapes. Phylogenetic analysis of domain D1/D2 26S rDNA sequences showed M. fructicola to be a sister species of M. pulcherrima.",
+      "journal": "Systematic and applied microbiology",
+      "year": 2001,
+      "pub_date": "2001-11-01",
+      "authors": "Kurtzman C P; Droby S",
+      "first_author": "Kurtzman C P",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12071326",
+      "doi": "10.1590/s1519-69842001000400019",
+      "title": "Androlaelaps marmosops (Acari: Laelapidae), a new species associated with the mouse opossum, Marmosops incanus (Lund, 1840) in the Atlantic forest of Rio De Janeiro State, Brazil.",
+      "abstract": "Androlaelaps marmosops, a new species of laelapid mite, is described from the pelage of the mouse opossum, Marmosops incanus (Lund, 1840) (Mammalia: Didelphidae), in two areas of Atlantic Forest of Rio de Janeiro State. Measurements and illustrations are included for females only.",
+      "journal": "Brazilian journal of biology = Revista brasleira de biologia",
+      "year": 2001,
+      "pub_date": "2001-11-01",
+      "authors": "Martins-Hatano F; Gettinger D; Bergallo H G",
+      "first_author": "Martins-Hatano F",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11737779",
+      "doi": "10.1046/j.1365-313x.2001.01155.x",
+      "title": "A local accumulation of the Ralstonia solanacearum PopA protein in transgenic tobacco renders a compatible plant-pathogen interaction incompatible.",
+      "abstract": "Plants activate disease resistance responses when they recognize pathogen-derived molecules (elicitors). Frequently, recognition results in a hypersensitive response (HR), which is characterized by local host cell death at the infection site. Here we describe a genetic engineering approach to generate an HR in plants, whether or not an invading micro-organism produces a recognized elicitor. To that aim we created transgenic tobacco plants in which the pathogen-inducible promoter of the hsr203J gene from tobacco controls the expression of the popA elicitor gene from Ralstonia solanacearum. Because PopA itself also induces the hsr203J promoter, transgenic plants rapidly accumulate the bacterial elicitor in the pathogen infection sites. The elicitor becomes converted in plant tissues into its fully active derivatives PopA1-PopA3, showing that the previously observed processing events are not dependent on the bacterial type III secretion system. The outcome of induced PopA accumulation is a localized HR and a high degree of resistance of the transgenic plants to an oomycete pathogen. The system is functional in hybrids between different tobacco varieties, and we show that the engineered resistance, but not the associated cell death, is dependent on the salicylic acid signalling cascade. Although the approach is powerful in generating oomycete resistance, the induced HR might affect plant health. Its application thus requires a careful selection of individual transgenic lines and trials with various pathogens.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2001,
+      "pub_date": "2001-11-01",
+      "authors": "Belbahri L; Boucher C; Candresse T; Nicole M; Ricci P; ... (+1)",
+      "first_author": "Belbahri L",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11706168",
+      "doi": "",
+      "title": "Expression of an antimicrobial peptide via the chloroplast genome to control phytopathogenic bacteria and fungi.",
+      "abstract": "The antimicrobial peptide MSI-99, an analog of magainin 2, was expressed via the chloroplast genome to obtain high levels of expression in transgenic tobacco (Nicotiana tabacum var. Petit Havana) plants. Polymerase chain reaction products and Southern blots confirmed integration of MSI-99 into the chloroplast genome and achievement of homoplasmy, whereas northern blots confirmed transcription. Contrary to previous predictions, accumulation of MSI-99 in transgenic chloroplasts did not affect normal growth and development of the transgenic plants. This may be due to differences in the lipid composition of plastid membranes compared with the membranes of susceptible target microbes. In vitro assays with protein extracts from T(1) and T(2) plants confirmed that MSI-99 was expressed at high levels to provide 88% (T(1)) and 96% (T(2)) inhibition of growth against Pseudomonas syringae pv tabaci, a major plant pathogen. When germinated in the absence of spectinomycin selection, leaf extracts from T(2) generation plants showed 96% inhibition of growth against P. syringae pv tabaci. In addition, leaf extracts from transgenic plants (T(1)) inhibited the growth of pregerminated spores of three fungal species, Aspergillus flavus, Fusarium moniliforme, and Verticillium dahliae, by more than 95% compared with non-transformed control plant extracts. In planta assays with the bacterial pathogen P. syringae pv tabaci resulted in areas of necrosis around the point of inoculation in control leaves, whereas transformed leaves showed no signs of necrosis, demonstrating high-dose release of the peptide at the site of infection by chloroplast lysis. In planta assays with the fungal pathogen, Colletotrichum destructivum, showed necrotic anthracnose lesions in non-transformed control leaves, whereas transformed leaves showed no lesions. Genetically engineering crop plants for disease resistance via the chloroplast genome instead of the nuclear genome is desirable to achieve high levels of expression and to prevent pollen-mediated escape of transgenes.",
+      "journal": "Plant physiology",
+      "year": 2001,
+      "pub_date": "2001-11-01",
+      "authors": "DeGray G; Rajasekaran K; Smith F; Sanford J; Daniell H",
+      "first_author": "DeGray G",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11725950",
+      "doi": "10.1023/a:1012457113700",
+      "title": "Expression of the Pib rice-blast-resistance gene family is up-regulated by environmental conditions favouring infection and by chemical signals that trigger secondary plant defences.",
+      "abstract": "The rice blast resistance gene Pib is a member of the nucleotide binding site (NBS) and leucine-rich repeat (LRR) class of plant disease resistance (R) genes and belongs to a small gene family. We describe here the isolation and characterization of a Pib homologue (PibH8), and extensive investigation of the expression of the Pib gene family (Pib, PibH8, HPibH8-1, HPibH8-2) under various environmental and chemical treatments. PibH8 shows 42% identity and 60% similarity to Pib and, like Pib, has a duplication of the kinase 1a, 2, and 3a motifs of the NBS region in the N-terminal half of the protein. Interestingly, genes of the Pib family exhibit a diurnal rhythm of expression. RNA gel blot analysis revealed that their expression was regulated dramatically by environmental signals. such as temperature, light and water availability. Their expression was also induced by chemical treatments, such as jasmonic acid, salicylic acid, ethylene and probenazole. Our findings suggest that expression of the Pib gene family is up-regulated by environmental conditions that would favour pathogen infection. This may reflect the evolution of anticipatory control of R gene expression.",
+      "journal": "Plant molecular biology",
+      "year": 2001,
+      "pub_date": "2001-11-01",
+      "authors": "Wang Z X; Yamanouchi U; Katayose Y; Sasaki T; Yano M",
+      "first_author": "Wang Z X",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11701380",
+      "doi": "10.1016/s1360-1385(01)02103-3",
+      "title": "MAPK cascades in plant defense signaling.",
+      "abstract": "The Arabidopsis genome encodes approximately 20 different mitogen-activated protein kinases (MAPKs) that are likely to be involved in growth, development and responses to endogenous and environmental cues. Several plant MAPKs are activated by a variety of stress stimuli, including pathogen infection, wounding, temperature, drought, salinity, osmolarity, UV irradiation, ozone and reactive oxygen species. Recent gain-of-function studies show that two tobacco MAPKs induce the expression of defense genes and cause cell death. By contrast, loss-of-function studies of other MAPK pathways revealed negative regulation of disease resistance. This 'push-and-pull' regulation by different MAPK pathways might provide a more precise control of plant defense responses.",
+      "journal": "Trends in plant science",
+      "year": 2001,
+      "pub_date": "2001-11-01",
+      "authors": "Zhang S; Klessig D F",
+      "first_author": "Zhang S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "20573019",
+      "doi": "10.1046/j.1464-6722.2001.00084.x",
+      "title": "The tomato powdery mildew fungus Oidium neolycopersici.",
+      "abstract": "[UNLABELLED] summary Pathogen: Powdery mildew fungus; Ascomycete although sexual stage is yet to be found; an obligate biotroph. [IDENTIFICATION] Superficial mycelium with hyaline hyphae; unbranched erect conidiophores; conidia, ellipsoid-ovoid or doliform, 22-46 x 10-20 microm, lack fibrosin bodies; conidia formed singly, rarely in short chains of 2-6 conidia; appressoria lobed to multilobed, rarely nipple-shaped. Pseudoidium species. [HOST RANGE] Broad, reported to attack over 60 species in 13 plant families, particularly members of the Solanaceae and Curcubitaceae. [SYMPTOMS] Powdery white lesions on all aerial plant parts except the fruit. In severe outbreaks the lesions coalesce and disease is debilitating. Agronomic importance: Extremely common in glasshouse tomatoes world wide but increasing in importance on field grown tomato crops. [CONTROL] Chemical control and breeding programmes for disease resistance.",
+      "journal": "Molecular plant pathology",
+      "year": 2001,
+      "pub_date": "2001-11-01",
+      "authors": "Jones H; Whipps J M; Gurr S J",
+      "first_author": "Jones H",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

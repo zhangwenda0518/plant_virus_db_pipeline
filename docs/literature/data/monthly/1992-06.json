@@ -1,0 +1,78 @@
+{
+  "month": "1992-06",
+  "generated": "2026-07-13 02:59:42",
+  "total": 3,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 2,
+    "New_Virus": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "1633862",
+      "doi": "10.1016/0014-5793(92)80644-v",
+      "title": "Transcripts of the viroid central conserved region contain the local tertiary structural element found in full-length viroid.",
+      "abstract": "The viroid central conserved region (CCR) is highly conserved among different viroids and is thought to be involved in viroid replication. A novel tertiary structure occurs in the CCR of native circular potato spindle tuber RNAs. To permit more detailed studies of this structural element, a small RNA oligonucleotide containing the CCR of the viroid genome was synthesized. The tertiary structure of these CCR transcripts was examined by UV-crosslinking of the RNA, followed by mapping of the crosslink using limited alkaline digestion and classical RNA secondary analysis. The CCR transcript was found to undergo UV-crosslinking between the same two bases as in full-length viroid, indicating that the tertiary structure is the same and that the CCR transcript will be useful for the affinity purification of host components.",
+      "journal": "FEBS letters",
+      "year": 1992,
+      "pub_date": "1992-06-22",
+      "authors": "Paul C P; Levine B J; Robertson H D; Branch A D",
+      "first_author": "Paul C P",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Potato spindle tuber viroid (PSTVd)",
+      "taxonomy": "Pospiviroidae, Pospiviroid",
+      "host_plant": "马铃薯 (Solanum tuberosum)",
+      "location": "未提及",
+      "results": "CCR转录本与全长类病毒相同碱基间发生UV交联，表明三级结构相同。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1416905",
+      "doi": "10.1016/0166-3542(92)90033-2",
+      "title": "Effects of Phyllanthus plant extracts on duck hepatitis B virus in vitro and in vivo.",
+      "abstract": "The effects of extracts of five Australian Phyllanthus species (P. hirtellus, P. gunnii, P. gasstroemii, P. similis and P. tenellus), other plant extracts and the antiviral drug foscarnet on duck hepatitis B virus (DHBV) endogenous DNA polymerase (DNAp) activity were compared. All 5 Phyllanthus species caused 50% inhibition at concentrations of dry weight between 350-800 micrograms/ml, which is comparable with the effect described for P. amarus on the DNAp of human and woodchuck hepatitis B viruses. Incubation of P. hirtellus with 100 ID50 DHBV neutralized infection. However, neither P. gasstroemi extract, given by intraperitoneal injection (i.p.) at a dose of 20 mg/kg 3 times per week to ducklings early in the incubation period, or P. hirtellus extract, given to established DHBV carrier ducklings, prevented or eliminated infection.",
+      "journal": "Antiviral research",
+      "year": 1992,
+      "pub_date": "1992-06-01",
+      "authors": "Shead A; Vickery K; Pajkos A; Medhurst R; Freiman J; ... (+2)",
+      "first_author": "Shead A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1329650",
+      "doi": "10.1016/0166-3542(92)90038-7",
+      "title": "The mannose-specific plant lectins from Cymbidium hybrid and Epipactis helleborine and the (N-acetylglucosamine)n-specific plant lectin from Urtica dioica are potent and selective inhibitors of human immunodeficiency virus and cytomegalovirus replication in vitro.",
+      "abstract": "A series of four mannose(Man)-, three N-acetylglucosamine (GlcNAc)n-, ten N-acetylgalactosamine/galactose(GalNAc/Gal)-, one 5-acetylneuraminic acid (alpha-2,3-Gal/GalNAc)- and one 5-acetylneuroaminic acid(alpha-2,6-Gal/Gal-NAc)-specific plant agglutinins were evaluated for their antiviral activity in vitro. the mannose-specific lectins from the orchid species Cymbidium hybrid (CA), Epipactis helleborine (EHA) and Listera ovata (LOA) were highly inhibitory to human immunodeficiency virus type 1 (HIV-1) and type 2 (HIV-2) in MT-4, and showed a marked anti-human cytomegalovirus (CMV), respiratory syncytial virus (RSV) and influenza A virus activity in HEL, HeLa and MDCK cells, respectively. The 50% effective concentration (EC50) of CA and EHA for HIV ranged from 0.04 to 0.08 micrograms/ml, that is about 3 orders of magnitude below their toxicity threshold (50% inhibitory concentration for MT-4 cell growth: 54 to 60 micrograms/ml). Also, the (GlcNAc)n-specific lectin from Urtica dioica (UDA) was inhibitory to HIV-1-, HIV-2-, CMV-, RSV- and influenza A virus-induced cytopathicity at an EC50 ranging from 0.3 to 9 micrograms/ml. The GalNAc/Gal-, alpha-2,3-Gal/GalNAc- or alpha-2,6-Gal/GalNAc-specific lectins were not inhibitory to HIV or CMV at non-toxic concentrations. CA, EHA and UDA proved to be potent inhibitors of syncytium formation between persistently HIV-1- and HIV-2-infected HUT-78 cells and CD4+ Molt/4 (clone 8) cells (EC50: 0.2-2 micrograms/ml). Unlike dextran sulfate, the plant lectins CA, EHA and UDA did not interfere with HIV-1 adsorption to MT-4 cells and RSV- and influenza A virus adsorption to HeLa and MDCK cells, respectively. They presumably interact at the level of virion fusion with the target cell.",
+      "journal": "Antiviral research",
+      "year": 1992,
+      "pub_date": "1992-06-01",
+      "authors": "Balzarini J; Neyts J; Schols D; Hosoya M; Van Damme E; ... (+2)",
+      "first_author": "Balzarini J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

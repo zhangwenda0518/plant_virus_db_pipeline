@@ -1,0 +1,281 @@
+{
+  "month": "2003-11",
+  "generated": "2026-07-13 02:59:42",
+  "total": 22,
+  "by_category": {
+    "Host_Virus_Interactions": 9,
+    "New_Virus": 7,
+    "Antiviral_Resistance_Genes": 3,
+    "Transmission_Epidemiology": 3,
+    "Potyviridae": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "14579181",
+      "doi": "10.1007/s00705-003-0169-7",
+      "title": "Characterization of a new potyvirus isolated from Chinese artichoke in Japan.",
+      "abstract": "Afilamentous virus was isolated in Japan from virus-infected Chinese artichoke showing mosaic symptoms. This virus was assigned to the genus Potyvirus, based on particle morphology and serological properties. The virus could be transmitted to several test plants but not to Perilla frutesence, the host plant of Perilla mottle virus. cDNA corresponding to the 3'-terminal 1675 nucleotides of the viral RNA, excluding the poly (A) tail, was cloned and sequenced. The amino acid sequence of the coat protein was different from those of 74 distinct potyviruses. Therefore, we propose that the new potyvirus should be designated as Chinese artichoke mosaic virus (ChAMV).",
+      "journal": "Archives of virology",
+      "year": 2003,
+      "pub_date": "2003-11-01",
+      "authors": "Fuji S; Yamamoto H; Furuya H; Naito H",
+      "first_author": "Fuji S",
+      "categories": [
+        "New_Virus",
+        "Potyviridae"
+      ],
+      "virus_name": "Chinese artichoke mosaic virus (ChAMV)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "中国地蚕 (Stachys affinis / Stachys sieboldii)",
+      "location": "日本",
+      "results": "病毒可传至多种测试植物但不能侵染紫苏；外壳蛋白氨基酸序列与74种已知马铃薯Y病毒不同，确认为新病毒。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "30812571",
+      "doi": "10.1094/PDIS.2003.87.11.1398C",
+      "title": "First Report of Beet pseudo yellows virus in Strawberry in the United States: A Second Crinivirus Able to Cause Pallidosis Disease.",
+      "abstract": "During efforts to characterize strawberry pallidosis disease, we identified a single strawberry plant that indexed positive for pallidosis disease by grafting but it was not infected with the Strawberry pallidosis associated virus (SPaV) based on reverse transcription-polymerase chain reaction (1). Leaves of this plant were grafted onto Fragaria vesca UC-4 and UC-5 and F. virginiana UC-10 and UC-11 indicator plants. The F. vesca plants remained asymptomatic, while the F. virginiana plants gave typical pallidosis symptoms that included marginal leaf chlorosis and epinasty. The combination of these symptoms on F. virginiana and lack of symptoms on F. vesca is used to define pallidosis disease (1). We extracted dsRNA from the original plant, and synthesized and cloned cDNA as previously described (2). Sequence analysis revealed several clones that corresponded to the published sequence of the Beet pseudo yellows virus (BPYV) heat shock protein 70 homolog gene (HSP70h). We transferred the isolate to Nicotiana benthamiana by using the whitefly vector, Trialeuroides vaporariorum, and then reisolated and cloned dsRNA from the infected N. benthamiana. Here we present the complete sequence of the HSP70h and minor coat protein (CPm) genes of the strawberry isolate of BPYV (GenBank Accession Nos. AY 267369 and AY 268107, respectively). Oligonucleotide primers BP CPm F (5' TTCATATTAAGGATGCGCAGA 3') and BP CPm R (5' TGAAAG- ATGTCCACTAATGATA 3') were designed to amplify a 334-nucleotide fragment of the CPm gene of the strawberry isolate of BPYV. Using this primer set, we were able to verify the presence of BPYV in 1- to 3-year-old plants from the major strawberry producing areas of the United States, including California, Oregon, and the Mid-Atlantic States. Infection rates were highest near Watsonville, CA where more than 20% of plants tested were infected with BPYV. To our knowledge, this is the first report of BPYV infecting strawberry. BPYV and the closely related SPaV (2) pose new concerns for the U.S. strawberry industry. Studies are currently underway to determine the effects of these two viruses on strawberry vigor and productivity. References: (1) N. W. Frazier and L. L. Stubbs. Plant Dis. Rep. 53:524, 1969. (2) I. E. Tzanetakis et al. (Abstr.) Phytopathology 92:S82, 2002.",
+      "journal": "Plant disease",
+      "year": 2003,
+      "pub_date": "2003-11-01",
+      "authors": "Tzanetakis I E; Wintermantel W M; Martin R R",
+      "first_author": "Tzanetakis I E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Beet pseudo yellows virus (BPYV)",
+      "taxonomy": "Closteroviridae, Crinivirus",
+      "host_plant": "草莓（Fragaria spp.）",
+      "location": "美国（加利福尼亚、俄勒冈、中大西洋各州）",
+      "results": "从草莓中鉴定出BPYV，测序HSP70h和CPm基因，设计特异性引物检测美国主要草莓产区，沃森维尔感染率超20%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30812568",
+      "doi": "10.1094/PDIS.2003.87.11.1397C",
+      "title": "First Report of Tomato yellow leaf curl virus in Tomato in Guadeloupe.",
+      "abstract": "In September 2001, symptoms of stunting and chlorotic curled leaves of reduced size were observed on tomato plants in Guadeloupe. These symptoms were different from those described for Potato yellow mosaic virus, which has been present since 1993, but similar to those described for Tomato yellow leaf curl virus (TYLCV). Samples from symptomatic plants were collected and analyzed by polymerase chain reaction (PCR). Primers PC1 (5'-TGACTATGTCGAAGCGACCAGG-3') and PC2 (5'-CGACATTACAGCCTCAGACTGG-3') were designed to amplify a 950-bp fragment within the coat protein gene (CP) of TYLCV-IL species (2). Primer pair MP16/MP82 (3) amplified a 550-bp fragment from the conserved nonanucleotide sequence (TAATATTAC) to the 5' end of the CP gene. Products of expected sizes were obtained with both pairs of primers from all symptomatic samples but not from uninfected samples. A 950-bp and a 550-bp PCR product were cloned into a pGEM-T Easy Vector (Promega, Madison, WI) and sequenced with plasmid specific primers (SP6 and T7). Sequences were compared with those available in the NCBI database using BlastN. Fifteen of the sequences that gave the highest score with BlastN were aligned with the Guadeloupe sequences using Clustal W. The nucleotide sequence of the 950-bp fragment (GenBank Accession No. AY319645) shared at least 97% sequence identity with that of TYLCV from Israel (EMBL Accession No. X15656), Puerto Rico (GenBank Accession No. AY134494), Cuba (EMBL Accession No. AJ223505), and the Dominican Republic (GenBank Accession No. AF024715). Similar percentages of identity were obtained with the 550-bp sequence (GenBank Accession No. AY319646). These results confirm that a begomovirus belonging to the species TYLCV-Israel is infecting tomato in Guadeloupe. To our knowledge, this is the first report of TYLCV in this region of the Caribbean. Puerto Rico is the closest location from which TYLCV was previously reported (1). In May 2002, typical TYLCV symptoms were observed in all tomato production areas at an incidence of 80 to 100%. References: (1) J. Bird et al. Plant Dis. 85:1028, 2001. (2) Y. Martinez et al. Rev. Prot. Veg. 18:168, 2003. (3) P. Umaharan et al. Phytopathology 88:1262, 1998.",
+      "journal": "Plant disease",
+      "year": 2003,
+      "pub_date": "2003-11-01",
+      "authors": "Urbino C; Tassius K",
+      "first_author": "Urbino C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato yellow leaf curl virus (TYLCV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "番茄 (tomato)",
+      "location": "瓜德罗普 (Guadeloupe)",
+      "results": "从症状样本中扩增出TYLCV CP基因950bp和550bp片段，序列与以色列等株系同源性≥97%。2002年5月发病率达80-100%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30812564",
+      "doi": "10.1094/PDIS.2003.87.11.1396B",
+      "title": "First Report of Tobacco streak virus Infecting Safflower (Carthamus tinctorius) in Maharashtra, India.",
+      "abstract": "Safflower, Carthamus tinctorius L. (Asteraceae), is extensively cultivated in India, China, and other parts of Asia for edible oil, dyeing agent, and its medicinal value. In 2003, safflower entry (NARI-6) in the All-India Coordinated Research Project on Oilseeds (Safflower) grown in the experimental fields of M/s Syngenta India Ltd., Aurangabad (Maharashtra State, India) exhibited symptoms of veinal and leaf necrosis, necrotic streaks on the stem, necrosis of the terminal bud, and ultimately plant death. The disease was attributed to Tobacco streak virus (TSV) because sunflower growing adjacent to safflower showed similar symptoms caused by TSV (1). Mechanical inoculations of sap from symptomatic safflower leaves caused typical symptoms of TSV (local, irregular, necrotic rings, veinal necrosis, and systemic veinal necrosis) on Vigna unguiculata (L.) Walp. cv. C-152 and Phaseolus vulgaris (L.) cv. Topcrop, and symptoms of local, necrotic lesions, veinal necrosis, and systemic necrosis of leaf and growing bud on Arachis hypogaea L. cv. JL-24. Sap-inoculated safflower cv. Manjeera showed chlorotic and necrotic local lesions followed by systemic leaf necrosis, leading to necrosis and death of the terminal bud. Safflower cvs. A-1, BIP-2, Co-1, and Bheema (10 plants of each cultivar) inoculated with sap from safflower plants showing typical TSV symptoms did not show any visible symptoms except stunting, but six to nine plants of each cultivar tested positive for TSV using enzyme-linked immunosorbent assay (ELISA) tests. In direct antigen coating-ELISA, the virus reacted positively with antiserum produced to an isolate of TSV from peanut (2) and to antiserum to TSV (ATCC-PVAS 276 for Datura stramonium), but did not react to peanut bud necrosis tospovirus antiserum. Examination of leaf extracts using leaf-dips and immunosorbent electron microscopy with the antiserum of TSV-peanut isolate showed isometric particles resembling those in the genus Ilarvirus. To our knowledge, this is the first report of an isolate of Tobacco streak virus infecting safflower. References: (1) R. D. V. J. Prasada Rao et al. J. Oilseeds Res. 17:400, 2000. (2) A. S. Reddy et al. Plant Dis. 86:173, 2002.",
+      "journal": "Plant disease",
+      "year": 2003,
+      "pub_date": "2003-11-01",
+      "authors": "Rao S Chander; Rao R D V J Prasada; Kumar V Manoj; Raman Divya S; Raoof M A; ... (+1)",
+      "first_author": "Rao S Chander",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tobacco streak virus (TSV)",
+      "taxonomy": "Bromoviridae, Ilarvirus",
+      "host_plant": "红花 (Carthamus tinctorius)",
+      "location": "印度马哈拉施特拉邦奥兰加巴德",
+      "results": "从病株分离到TSV，ELISA与TSV抗血清阳性，免疫电镜观察到等轴粒子，可机械传播至豇豆、菜豆、花生和红花。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "20569402",
+      "doi": "10.1046/j.1364-3703.2003.00188.x",
+      "title": "Cotton leaf curl disease, a multicomponent begomovirus complex.",
+      "abstract": "[UNLABELLED] SUMMARY Cotton leaf curl is a serious disease of cotton and several other malvaceous plant species that is transmitted by the whitefly Bemisia tabaci. The disease is, at this time, endemic throughout Pakistan and epidemic in Western India. Affected cotton plants exhibit a range of symptoms such as leaf curling, stunted growth and a poor yield of cotton fibre. In addition, affected plants may develop leaf-like outgrowths from the veins on the undersides of leaves. A number of distinct begomoviruses have been shown to be associated with infected plants, all of which require a satellite component (DNA beta) to induce symptoms in cotton. DNA beta components are a group of recently identified, symptom modulating, single-stranded satellite molecules. An additional, satellite-like component, DNA 1, is invariably found in diseased plants, although it is not required for disease development. [TAXONOMY] The viruses associated with the CLCuD complex on the Indian subcontinent, five of which have been identified thus far (Table 1), are all single component begomoviruses (genus Begomovirus family Geminiviridae). The satellite (DNA beta) and satellite-like (DNA 1) components have yet to be classified, although the DNA 1 components are closely related to, and thought to have originated from, components of a second group of single-stranded DNA viruses, the nanoviruses (family Nanoviridae). Physical properties: The begomoviruses associated with CLCuD, like all geminiviruses, have geminate (twinned) particles, approximately 18-20 nm in diameter and 30 nm long, consisting of two incomplete T = 1 icosahedra joined together in a structure with 22 pentameric capsomers and 110 identical protein subunits. It is probable, although not conclusively proven, that the DNA 1 and DNA beta components, being half the size of the viral component, are encapsidated in monomeric, rather than geminate particles. Disease symptoms: Symptoms in cotton usually appear within 2-3 weeks of inoculation by B. tabaci (determined experimentally (Singh et al., 1997)) and are initially characterized by a deep downward cupping of the youngest leaves. This is followed by either upward or downward curling of the leaf margins, swelling and darkening of the veins as well as the formation of enations on the veins, which frequently (dependant on variety) develop into cup-shaped, leaf-like structures (Fig. 1). Disease control: Control of CLCuD is mainly based on insecticide treatments against the insect vector (Bemisia tabaci). Roguing, the removal of affected plants, particularly of ratoon cotton from the previous seasons crop, is recommended but appears to have little affect in reducing the incidence of the disease. More recently, resistant cotton cultivars have been introduced that were developed by conventional breeding/selection. After initially showing promise in the control of CLCuD, recent reports have suggested that the virus complex has overcome the resistance. [USEFUL WEBSITES] <http://www.danforthcentre.org/iltab/geminiviridae/>, <http://gemini.biosci.arizona.edu/>.",
+      "journal": "Molecular plant pathology",
+      "year": 2003,
+      "pub_date": "2003-11-01",
+      "authors": "Briddon Rob W",
+      "first_author": "Briddon Rob W",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "棉花卷叶病毒复合体（多种菜豆金色花叶病毒属病毒）",
+      "taxonomy": "",
+      "host_plant": "棉花（Gossypium）及其他锦葵科植物",
+      "location": "巴基斯坦和印度西部",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12704242",
+      "doi": "10.1073/pnas.0831246100",
+      "title": "Non-self recognition, transcriptional reprogramming, and secondary metabolite accumulation during plant/pathogen interactions.",
+      "abstract": "Disease resistance of plants involves two distinct forms of chemical communication with the pathogen: recognition and defense. Both are essential components of a highly complex, multifaceted defense response, which begins with non-self recognition through the perception of pathogen-derived signal molecules and results in the production, inter alia, of antibiotically active compounds (phytoalexins) and cell wall-reinforcing material around the infection site. To elucidate the molecular details and the genomic basis of the underlying chains of events, we used two different experimental systems: suspension-cultured cells of Petroselinum crispum (parsley) and wild-type as well as mutant plants of Arabidopsis thaliana. Particular emphasis was placed on the structural and functional identification of signal and defense molecules, and on the mechanisms of signal perception, intracellular signal transduction and transcriptional reprogramming, including the structural and functional characterization of the responsible cis-acting gene promoter elements and transacting regulatory proteins. Comparing P. crispum and A. thaliana allows us to distinguish species-specific defense mechanisms from more universal responses, and furthermore provides general insights into the nature of the interactions. Despite the complexity of the pathogen defense response, it is experimentally tractable, and knowledge gained so far has opened up a new realm of gene technology-assisted strategies for resistance breeding of crop plants.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2003,
+      "pub_date": "2003-11-25",
+      "authors": "Hahlbrock Klaus; Bednarek Pawel; Ciolkowski Ingo; Hamberger Björn; Heise Andreas; ... (+6)",
+      "first_author": "Hahlbrock Klaus",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12944393",
+      "doi": "10.1074/jbc.M308304200",
+      "title": "Solution structure of the plant disease resistance-triggering protein NIP1 from the fungus Rhynchosporium secalis shows a novel beta-sheet fold.",
+      "abstract": "Activation of the disease resistance response in a host plant frequently requires the interaction of a plant resistance gene product with a corresponding, pathogenderived signal encoded by an avirulence gene. The products of resistance genes from diverse plant species show remarkable structural similarity. However, due to the general paucity of information on pathogen avirulence genes the recognition process remains in most cases poorly understood. NIP1, a small protein secreted by the fungal barley pathogen Rhynchosporium secalis, is one of only a few fungal avirulence proteins identified and characterized to date. The defense-activating activity of NIP1 is mediated by barley resistance gene Rrs1. In addition, a role of the protein in fungal virulence is suggested by its nonspecific toxicity in leaf tissues of host and non-host cereals as well as its resistance gene-independent stimulatory effect on the plant plasma membrane H+-ATPase. Four naturally occurring NIP1 isoforms are characterized by single amino acid alterations that affect the different activities in a similar way. As a step toward unraveling the signal perception/transduction mechanism, the solution structure of NIP1 was determined. The protein structure is characterized by a novel fold. It consists of two parts containing beta-sheets of two and three anti-parallel strands, respectively. Five intramolecular disulfide bonds, comprising a novel disulfide bond pattern, stabilize these parts and their position with respect to each other. A comparative analysis of the protein structure with the properties of the NIP1 isoforms suggests two loop regions to be crucial for the resistance-triggering activity of NIP1.",
+      "journal": "The Journal of biological chemistry",
+      "year": 2003,
+      "pub_date": "2003-11-14",
+      "authors": "van't Slot Klaas A E; van den Burg Harrold A; Kloks Cathelijne P A M; Hilbers Cornelis W; Knogge Wolfgang; ... (+1)",
+      "first_author": "van't Slot Klaas A E",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12937293",
+      "doi": "10.1113/jphysiol.2003.047019",
+      "title": "Immediate response of mammalian target of rapamycin (mTOR)-mediated signalling following acute resistance exercise in rat skeletal muscle.",
+      "abstract": "The purpose of the present investigation was to determine whether mammalian target of rapamycin (mTOR)-mediated signalling and some key regulatory proteins of translation initiation are altered in skeletal muscle during the immediate phase of recovery following acute resistance exercise. Rats were operantly conditioned to reach an illuminated bar located high on a Plexiglass cage, such that the animals completed concentric and eccentric contractions involving the hindlimb musculature. Gastrocnemius muscle was extracted immediately after acute exercise and 5, 10, 15, 30 and 60 min of recovery. Phosphorylation of protein kinase B (PKB) on Ser-473 peaked at 10 min of recovery (282% of control, P < 0.05) with no significant changes noted for mTOR phosphorylation on Ser-2448. Eukaryotic initiation factor (eIF) 4E-binding protein-1 (4E-BP1) and S6 kinase-1 (S6K1), both downstream effectors of mTOR, were altered during recovery as well. 4E-BP1 phosphorylation was significantly elevated at 10 min (292%, P < 0.01) of recovery. S6K1 phosphorylation on Thr-389 demonstrated a trend for peak activation at 10 min following exercise (336%, P = 0.06) with ribosomal protein S6 phosphorylation being maximally activated at 15 min of recovery (647%, P < 0.05). Components of the eIF4F complex were enhanced during recovery as eIF4E association with eIF4G peaked at 10 min (292%, P < 0.05). Events regulating the binding of initiator methionyl-tRNA to the 40S ribosomal subunit were assessed through eIF2B activity and eIF2 alpha phosphorylation on Ser-51. No differences were noted with either eIF2B or eIF2 alpha. Collectively, these results provide strong evidence that mTOR-mediating signalling is transiently upregulated during the immediate period following resistance exercise and this response may constitute the most proximal growth response of the cell.",
+      "journal": "The Journal of physiology",
+      "year": 2003,
+      "pub_date": "2003-11-15",
+      "authors": "Bolster Douglas R; Kubica Neil; Crozier Stephen J; Williamson David L; Farrell Peter A; ... (+2)",
+      "first_author": "Bolster Douglas R",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14576290",
+      "doi": "10.1105/tpc.015842",
+      "title": "A gain-of-function mutation in a plant disease resistance gene leads to constitutive activation of downstream signal transduction pathways in suppressor of npr1-1, constitutive 1.",
+      "abstract": "Plants have evolved sophisticated defense mechanisms against pathogen infections, during which resistance (R) genes play central roles in recognizing pathogens and initiating defense cascades. Most of the cloned R genes share two common domains: the central domain, which encodes a nucleotide binding adaptor shared by APAF-1, certain R proteins, and CED-4 (NB-ARC), plus a C-terminal region that encodes Leu-rich repeats (LRR). In Arabidopsis, a dominant mutant, suppressor of npr1-1, constitutive 1 (snc1), was identified previously that constitutively expresses pathogenesis-related (PR) genes and resistance against both Pseudomonas syringae pv maculicola ES4326 and Peronospora parasitica Noco2. The snc1 mutation was mapped to the RPP4 cluster. In snc1, one of the TIR-NB-LRR-type R genes contains a point mutation that results in a single amino acid change from Glu to Lys in the region between NB-ARC and LRR. Deletions of this R gene in snc1 reverted the plants to wild-type morphology and completely abolished constitutive PR gene expression and disease resistance. The constitutive activation of the defense responses was not the result of the overexpression of the R gene, because its expression level was not altered in snc1. Our data suggest that the point mutation in snc1 renders the R gene constitutively active without interaction with pathogens. To analyze signal transduction pathways downstream of snc1, epistasis analyses between snc1 and pad4-1 or eds5-3 were performed. Although the resistance signaling in snc1 was fully dependent on PAD4, it was only partially affected by blocking salicylic acid (SA) synthesis, suggesting that snc1 activates both SA-dependent and SA-independent resistance pathways.",
+      "journal": "The Plant cell",
+      "year": 2003,
+      "pub_date": "2003-11-01",
+      "authors": "Zhang Yuelin; Goritschnig Sandra; Dong Xinnian; Li Xin",
+      "first_author": "Zhang Yuelin",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14666992",
+      "doi": "10.1078/072320203770865945",
+      "title": "New Penicillium species associated with bulbs and root vegetables.",
+      "abstract": "Taxa of the Penicillium series Corymbifera are known for their strongly fasciculate growth and association with the rhizosphere of vegetables and flower bulbs. Using micromorphology, colony characteristics on various media and chemotaxonomic profiling, P. albocoremium sensu stricto and two new species, P. radicicola and P. tulipae, are redescribed during a taxonomic survey of P. albocoremium isolates contained within the IBT culture collection. Although these novel taxa are micromorphologically quite similar, their unique secondary metabolite profiles individually distinguish them from isolates of P. albocoremium. Moreover, the following metabolites produced by these species are known mycotoxins: citrinin, penicillic acid and terrestric acid by P. radicicola and terrestric acid and penitrem A by P. tulipae.",
+      "journal": "Systematic and applied microbiology",
+      "year": 2003,
+      "pub_date": "2003-11-01",
+      "authors": "Overy David Patrick; Frisvad Jens Christian",
+      "first_author": "Overy David Patrick",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14666981",
+      "doi": "10.1078/072320203770865837",
+      "title": "Candidatus \"Scalindua brodae\", sp. nov., Candidatus \"Scalindua wagneri\", sp. nov., two new species of anaerobic ammonium oxidizing bacteria.",
+      "abstract": "Anaerobic ammonium oxidation (anammox) is both a promising process in wastewater treatment and a long overlooked microbial physiology that can contribute significantly to biological nitrogen cycling in the world's oceans. Anammox is mediated by a monophyletic group of bacteria that branches deeply in the Planctomycetales. Here we describe a new genus and species of anaerobic ammonium oxidizing planctomycetes, discovered in a wastewater treatment plant (wwtp) treating landfill leachate in Pitsea, UK. The biomass from this wwtp showed high anammox activity (5.0 +/- 0.5 nmol/mg protein/min) and produced hydrazine from hydroxylamine, one of the unique features of anammox bacteria. Eight new planctomycete 16S rRNA gene sequences were present in the 16S rRNA gene clone library generated from the biomass. Four of these were affiliated to known anammox 16S rRNA gene sequences, but branched much closer to the root of the planctomycete line of descent. Fluorescence in situ hybridization (FISH) with oligonucleotide probes specific for these new sequences showed that two species (belonging to the same genus) together made up > 99% of the planctomycete population which constituted 20% of the total microbial community. The identification of these organisms as typical anammox bacteria was confirmed with electron microscopy and lipid analysis. The new species, provisionally named Candidatus \"Scalindua brodae\" and \"Scalindua wagneri\" considerably extend the biodiversity of the anammox lineage on the 16S rRNA gene level, but otherwise resemble known anammox bacteria. Simultaneously, another new species of the same genus, Candidatus \"Scalindua sorokinii\", was detected in the water column of the Black Sea, making this genus the most widespread of all anammox bacteria described so far.",
+      "journal": "Systematic and applied microbiology",
+      "year": 2003,
+      "pub_date": "2003-11-01",
+      "authors": "Schmid Markus; Walsh Kerry; Webb Rick; Rijpstra W Irene C; van de Pas-Schoonen Katinka; ... (+10)",
+      "first_author": "Schmid Markus",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "21653333",
+      "doi": "10.3732/ajb.90.11.1585",
+      "title": "The Enigmatic Paleozoic plants Spermopteris and Phasmatocycas reconsidered.",
+      "abstract": "Ovule-bearing leaves from the Paleozoic of North America assigned to Spermopteris and Phasmatocycas have been interpreted as primitive cycad megasporophylls. According to this hypothesis, Cycas megasporophylls were derived from a Spermopteris-like ancestor via Phasmatocycas and various other taeniopterid forms. This putative transformation entailed the phyletic shift of ovule attachment from the abaxial lamina surface of Spermopteris to the leaf midrib in Phasmatocyas. However, reexamination of the original Spermopteris specimens from the Lawrence Shale of Kansas has shown that the ovules are attached to the leaf midrib. Therefore, Spermopteris and Phasmatocyas differ only in a few details of lamina morphology. The apical cleft of the ovules of both forms is interpreted as an original feature rather than a preservational artifact; however, the abaxial flange is probably a result of compression of a terete midrib. Spermopteris is typified by sterile specimens of Taeniopteris coriacea from Europe, which are of uncertain affinity to the fertile leaves. Therefore, we propose that the ovule-bearing leaves now known as Spermopteris coriacea be named as a new species of Phasmatocycas (Phasmatocycas bridwellii sp. nov.). The new concept of Phasmatocyas is less cycad-like than previously thought, and the phylogenetic position of the genus is unclear.",
+      "journal": "American journal of botany",
+      "year": 2003,
+      "pub_date": "2003-11-01",
+      "authors": "Axsmith Brian J; Serbet Rudolph; Krings Michael; Taylor Thomas N; Taylor Edith L; ... (+1)",
+      "first_author": "Axsmith Brian J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

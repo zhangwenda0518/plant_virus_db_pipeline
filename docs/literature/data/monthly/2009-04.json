@@ -1,0 +1,283 @@
+{
+  "month": "2009-04",
+  "generated": "2026-07-13 02:59:42",
+  "total": 37,
+  "by_category": {
+    "New_Virus": 13,
+    "Host_Virus_Interactions": 11,
+    "Antiviral_Resistance_Genes": 5,
+    "Control_Management": 3,
+    "Viral_Diversity_Ecology": 3,
+    "Transmission_Epidemiology": 2,
+    "Biotechnology_Applications": 1,
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "19138527",
+      "doi": "10.1016/j.plaphy.2008.12.003",
+      "title": "Cloning and characterization of VIGG, a novel virus-induced grapevine protein, correlated with fruit quality.",
+      "abstract": "We report here the identification and characterization of VIGG, a novel virus-induced grapevine protein. Analysis of VIGG expression in grapevine demonstrated that VIGG was constitutively expressed in leaves and stems in virus-infected grapevine, and that VIGG expression was induced by grapevine virus A (GVA) infection, but not by infection with other viruses. The virus-induced expression profile of VIGG was supported by the finding that virus-free meristem cultures prepared from virus-infected grapevines did not express VIGG. An experiment using GFP-VIGG fusion protein demonstrated that VIGG might be localized in or around the endoplasmic reticulum (ER). Treatment of grapevine cells with ER stress inducers resulted in the induction of VIGG expression. Berries from VIGG-expressing grapevines had higher organic acid and phenolic contents than those from control grapevines that did not express VIGG. Interestingly, fruit composition of a grapevine that was simultaneously infected by GVA and grapevine virus B (GVB), which did not express VIGG, was significantly different from that of GVA-infected grapevines expressing VIGG, suggesting that the effector of fruit composition alteration might be VIGG expression, but not GVA infection. Taken together, VIGG expression might suppress the decrease in organic acid content and increase phenol content in berries. Further investigation of the biological function of VIGG is expected to provide new information on the fruit quality of grapevines.",
+      "journal": "Plant physiology and biochemistry : PPB",
+      "year": 2009,
+      "pub_date": "2009-04-01",
+      "authors": "Katoh Hironori; Suzuki Shunji; Saitoh Toshiyuki; Takayanagi Tsutomu",
+      "first_author": "Katoh Hironori",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "葡萄病毒A (Grapevine virus A, GVA); 葡萄病毒B (Grapevine virus B, GVB)",
+      "taxonomy": "Betaflexiviridae, Vitivirus",
+      "host_plant": "葡萄 (Vitis vinifera)",
+      "location": "未提及",
+      "results": "VIGG在GVA感染的葡萄中组成型表达，病毒脱除后不表达；VIGG定位于内质网；ER胁迫诱导其表达；VIGG表达导致浆果有机酸和酚含量增加。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19162174",
+      "doi": "10.1016/j.mcp.2008.12.007",
+      "title": "A novel hybridization approach for detection of citrus viroids.",
+      "abstract": "Citrus plants are natural hosts of several viroid species all belonging to the family Pospiviroidae. Previous attempts to detect viroids from field-grown species and cultivars yielded erratic results unless analyses were performed using Etrog citron a secondary bio-amplification host. To overcome the use of Etrog citron a number of RT-PCR approaches have been proposed with different degrees of success. Here we report the suitability of an easy to handle northern hybridization protocol for viroid detection of samples collected from field-grown citrus species and cultivars. The protocol involves: (i) Nucleic acid preparations from bark tissue samples collected from field-grown trees regardless of the growing season and storage conditions; (ii) Separation in 5% PAGE or 1% agarose, blotting to membrane and fixing; (iii) Hybridization with viroid-specific DIG-labelled probes and detection with anti-DIG-alkaline phosphatase conjugate and autoradiography with the CSPD substrate. The method has been tested with viroid-infected trees of sweet orange, lemon, mandarin, grapefruit, sour orange, Swingle citrumello, Tahiti lime and Mexican lime. This novel hybridization approach is extremely sensitive, easy to handle and shortens the time needed for reliable viroid indexing tests. The suitability of PCR generated DIG-labelled probes and the sensitivity achieved when the samples are separated and blotted from non-denaturing gels are discussed.",
+      "journal": "Molecular and cellular probes",
+      "year": 2009,
+      "pub_date": "2009-04-01",
+      "authors": "Murcia N; Serra P; Olmos A; Duran-Vila N",
+      "first_author": "Murcia N",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Citrus viroids (Pospiviroidae科，未具体说明种类)",
+      "taxonomy": "Pospiviroidae",
+      "host_plant": "甜橙(sweet orange)、柠檬(lemon)、柑橘(mandarin)、葡萄柚(grapefruit)、酸橙(sour orange)、Swingle citrumello、Tahiti lime、墨西哥来檬(Mexican lime)",
+      "location": "未提及",
+      "results": "方法灵敏简便，可检测多种柑橘品种中的类病毒，缩短检测时间，适用于不同季节和储存条件的样品。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19215953",
+      "doi": "10.1016/j.virol.2008.12.044",
+      "title": "Nicotiana benthamiana protein, NbPCIP1, interacting with Potato virus X coat protein plays a role as susceptible factor for viral infection.",
+      "abstract": "The interactions of viral coat protein (CP) and host factors play an important role in viral replication and/or host defense mechanism. In this study, we constructed Nicotiana benthamiana cDNA library to find host factors interacting with Potato virus X (PVX) CP. Using yeast two-hybrid assay, we screened 3.3 x 10(6) independent yeast transformants from N. benthamiana cDNA library and identified six positive clones. One positive clone, named PVX CP-interacting protein 1 (NbPCIP1), is a plant-specific protein with homologue in N. tabacum (GenBank accession no. AB04049). We confirmed the PVX CP-NbPCIP1 interaction using yeast-two hybrid assay in yeast, protein-protein binding assay in vitro, and bimolecular fluorescent complementation assay in planta. Quantitative real-time RT-PCR analysis showed that the mRNA level of NbPCIP1 increased in PVX-infected N. benthamiana plants as compared to that of healthy plants. The green fluorescent protein (sGFP)-fused NbPCIP1 (NbPCIP1-sGFP) was localized in ER or ER-associated granular-like structure of cells. When we co-express NbPCIP1-sGFP and red fluorescent protein (RFP)-fused PVX CP (PVX CP-RFP), which were introduced by transiently expressing these proteins in N. benthamiana protoplasts and epidermal cells, however, we observed the co-localization of these proteins in the inclusion body-like complex in areas surrounding nucleus. Transient over-expression and transgene silencing of NbPCIP1 assay analysis indicated that NbPCIP1 plays a critical role in viral replication during PVX infection in host plant.",
+      "journal": "Virology",
+      "year": 2009,
+      "pub_date": "2009-04-10",
+      "authors": "Park Mi-Ri; Park Sang-Ho; Cho Sang-Yun; Kim Kook-Hyung",
+      "first_author": "Park Mi-Ri",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Potato virus X (PVX)",
+      "taxonomy": "",
+      "host_plant": "Nicotiana benthamiana (本氏烟)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19243807",
+      "doi": "10.1016/j.virol.2009.01.039",
+      "title": "Apple latent spherical virus vectors for reliable and effective virus-induced gene silencing among a broad range of plants including tobacco, tomato, Arabidopsis thaliana, cucurbits, and legumes.",
+      "abstract": "Apple latent spherical virus (ALSV) vectors were evaluated for virus-induced gene silencing (VIGS) of endogenous genes among a broad range of plant species. ALSV vectors carrying partial sequences of a subunit of magnesium chelatase (SU) and phytoene desaturase (PDS) genes induced highly uniform knockout phenotypes typical of SU and PDS inhibition on model plants such as tobacco and Arabidopsis thaliana, and economically important crops such as tomato, legume, and cucurbit species. The silencing phenotypes persisted throughout plant growth in these plants. In addition, ALSV vectors could be successfully used to silence a meristem gene, proliferating cell nuclear antigen and disease resistant N gene in tobacco and RCY1 gene in A. thaliana. As ALSV infects most host plants symptomlessly and effectively induces stable VIGS for long periods, the ALSV vector is a valuable tool to determine the functions of interested genes among a broad range of plant species.",
+      "journal": "Virology",
+      "year": 2009,
+      "pub_date": "2009-04-10",
+      "authors": "Igarashi Aki; Yamagata Kousuke; Sugai Tomokazu; Takahashi Yukari; Sugawara Emiko; ... (+7)",
+      "first_author": "Igarashi Aki",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "Apple latent spherical virus (ALSV)",
+      "taxonomy": "",
+      "host_plant": "烟草、番茄、拟南芥、葫芦科植物、豆科植物等",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764217",
+      "doi": "10.1094/PDIS-93-4-0332",
+      "title": "Helleborus net necrosis virus: A New Carlavirus Associated with 'Black Death' of Helleborus spp.",
+      "abstract": "Symptoms of 'black death' were observed on Helleborus spp. in each of three independent nurseries from across the United States. A new virus of the genus Carlavirus was identified in association with this disease. Symptomatic plants contained curved, rod-shaped particles averaging 800 by 17 nm, and yielded predominant bands of double-stranded (ds)RNA corresponding to approximately 9.0, 2.6, and 1.7 kbp. Amplification with degenerate primers for carlaviruses yielded a product of approximately 3,000 bp from diseased plants. Complete genomic sequences of two virus isolates were determined. Particle size, dsRNA patterns, genome organization, and sequence were consistent with members of the family Flexiviridae, genus Carlavirus. The name Helleborus net necrosis virus (HeNNV) is proposed for the virus associated with black death of Helleborus spp. in the United States. The sequence of the 3' terminus of Helleborus mosaic virus (HeMV) (genus Carlavirus) was also determined. Nucleotide sequences of HeNNV and HeMV were only 49% identical, revealing the distinct nature of these viruses. Assays for other viruses failed to reveal a consistent association of any other virus with black death symptoms. Cucumber mosaic virus was detected in hellebore specimens both with and without distinct black death symptoms.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-04-01",
+      "authors": "Eastwell K C; du Toit L J; Druffel K L",
+      "first_author": "Eastwell K C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Helleborus net necrosis virus (HeNNV)",
+      "taxonomy": "Flexiviridae, Carlavirus",
+      "host_plant": "Helleborus spp.（铁筷子属）",
+      "location": "美国",
+      "results": "观察到弯曲杆状粒子（800×17 nm），dsRNA条带约9.0、2.6、1.7 kbp；扩增出约3 kb产物；序列分析表明为Carlavirus新种，与Helleborus mosaic virus (HeMV)核苷酸同源性仅49%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764230",
+      "doi": "10.1094/PDIS-93-4-0425B",
+      "title": "First Report of Cherry virus A in Sweet Cherry Trees in China.",
+      "abstract": "Plants in the genus Prunus of the family Rosaceae are important fruit and ornamental trees in China. In June of 2007, sweet cherry (Prunus avium) trees with mottling and mosaic symptoms were observed in a private garden near Kunming, Yunnan Province. Twenty-four samples, six each from sweet cherry, sour cherry (P. cerasus), flowering cherry (P. serrulata), and peach (P. persica) were collected from trees in private and community gardens in the area. The peach and sour and flowering cherry trees did not show any symptoms. Total nucleic acids were extracted using a cetyltrimethylammoniumbromide (CTAB) extraction method, and the extracts were tested for the following eight viruses by reverse transcription (RT)-PCR: American plum line pattern virus, Apple chlorotic leaf spot virus, Cherry green ring mottle virus, Cherry necrotic rusty mottle virus, Cherry virus A (CVA), Little cherry virus 1, Prune dwarf virus, and Prunus necrotic ringspot virus. Only CVA was detected in two symptomatic sweet cherry trees by RT-PCR with forward (5'-GTGGCATTCAACTAGCACCTAT-3') and reverse (5'-TCAGCTGCCTCAGCTTGGC-3') primers specific to an 873-bp fragment of the CVA replicase gene (2). The CVA infection of the two trees was confirmed by RT-PCR using primers CVA-7097U and CVA-7383L that amplified a 287-bp fragment from the 3'-untranslated region (UTR) of the virus (1). Amplicons from both amplifications were cloned and sequenced. Analysis of the predicted amino acid sequences of the 873-bp fragments (GenBank Accession Nos. EU862278 and EU862279) showed that they were 98% identical with each other and 97 to 98% with the type isolate of CVA from Germany (GenBank Accession No. NC_003689). The 286-bp sequences of the 3'-UTR (GenBank Accession Nos. FJ608982 and FJ608983) were 93% identical with each other and 93 to 98% with the type isolate. The sequence indicated that the three isolates were very similar and should be considered to be the same strain. CVA is a member of the genus Capillovirus in the family Flexiviridae and has been previously reported in Europe, North America, and Japan. The contribution of CVA to the symptoms observed and its distribution in China remain to be evaluated. To our knowledge, this is the first report of CVA in sweet cherry in China. References: (1) M. Isogai et al. J. Gen. Plant Pathol. 70:288. (2) W. Jelkmann. J. Gen. Virol. 76:2015, 1995.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-04-01",
+      "authors": "Rao W-L; Zhang Z-K; Li R",
+      "first_author": "Rao W-L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cherry virus A",
+      "taxonomy": "Flexiviridae, Capillovirus",
+      "host_plant": "甜樱桃 (Prunus avium)",
+      "location": "中国云南昆明",
+      "results": "2株有症状甜樱桃仅检出CVA，873bp复制酶基因氨基酸与德国分离株97-98%一致，3'-UTR 93-98%一致。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764248",
+      "doi": "10.1094/PDIS-93-4-0428C",
+      "title": "Identification and Molecular Characterization of a Potyvirus Isolated from Native Larkspur (Delphinium glaucum) in Alaska.",
+      "abstract": "Wild larkspur, Delphinium glaucum S. Watson, grows throughout most of Alaska along roadsides and in forests and is planted as an ornamental. Leaves containing distinct vein-clearing and chlorotic mosaic symptoms were first noticed on several D. glaucum plants during 2000 at the Georgeson Botanical Garden in Fairbanks, AK. Although affected plants continued to produce normal flowers, by 2008, the plants developed overall stunting. Initially, virus presence was determined by a general differential centrifugation extraction and concentration protocol followed by examination of the partially purified virus and leaf sap by electron microscopy. Filamentous particles approximately 725 nm long were observed. Virion protein extractions analyzed by sodium dodecyl sulfate-polyacrylamide gel electrophoresis revealed a putative coat protein (CP) of ~35 kDa. Potyvirus identity (family Potyviridae) was confirmed with universal potyvirus antiserum in western blots and ELISA assays (Agdia, Inc., Elkhart, IN). Exotic larkspur plants, D. elatum L., growing next to diseased D. glaucum plants, did not exhibit symptoms nor were they positive for potyvirus when tested serologically as described previously. Total RNA was extracted from potyvirus-infected leaves and used in reverse transcriptase-PCR assays that specifically targeted potyviruses (2,4) to generate genomic segments for identification and sequence analysis. Fragments representing portions of the helper component protease gene, HC-Pro (~700 bp), the cylindrical inclusion gene, CI (~700 bp), and the 3'-end (~1.7 kbp) were purified, cloned, sequenced, and deposited in GenBank (Accession Nos. FJ349329, FJ349328, and FJ349327, respectively). The sequenced 3'-end (1,674 nt) revealed a partial nuclear inclusion protein gene, NIb (1 to 630 nt), a CP gene (631 to 1,443 nt), and a 3'-untranslated region (1,447 to 1,674 nt) attached to a poly (A) tail. Blast searches in GenBank for percent identities of the nucleotide and amino acid comparisons resulted in highest similarities in conserved regions among members in the genus Potyvirus. For example, the highest CI, CP, and HP amino acid identities (0 gaps) were 67% with Potato virus A (Accession No. AF543709), 74% with Araujia mosaic virus (Accession No. EF710625), and 65% with Potato virus A (Accession No. AJ131403), respectively. However, none of the identities were sufficient for inclusion with an existing potyvirus species, whereby the CP amino acid sequence identity must be at least 80% (1). Mechanical transmission of purified virus to Chenopodium amaranticolor, C. quinoa, D. elatum, D. glaucum, and Nicotiana benthamiana seedlings was unsuccessful. We conclude that the isolated virus is a new species in the genus Potyvirus and propose the name Delphinium vein-clearing virus (DeVCV). To our knowledge, this is the first report of a virus isolated from D. glaucum and is representative of the growing number of viruses found in native plants (3). The distribution of DeVCV-infected larkspur is not known in managed or natural ecosystems. Identification of new viruses from native plants is important, in that, the host plant may act as a virus reservoir for transmission to other ornamental and crop plants. References: (1) P. H. Berger et al. Family Potyviridae. Page 819 in: Virus Taxonomy-8th Report of the ICTV. C. M. Fauquet et al., eds. Elsevier Academic Press, San Diego, CA, 2005. (2) J. Chen et al. Arch. Virol. 146:757, 2001. (3) I. Cooper and A. C. Jones. Adv. Virus Res. 67:1, 2006. (4) C. Ha et al. Arch. Virol. 153:25, 2008.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-04-01",
+      "authors": "Robertson N L; Brown K L",
+      "first_author": "Robertson N L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Delphinium vein-clearing virus (DeVCV)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "Delphinium glaucum (Native Larkspur)",
+      "location": "美国阿拉斯加州费尔班克斯(Fairbanks, AK)",
+      "results": "观察到约725nm丝状粒子，CP ~35kDa。获得HC-Pro、CI和3'端序列，CP氨基酸与Araujia mosaic virus相似性最高74%，低于80%种阈值，确认为新种。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764231",
+      "doi": "10.1094/PDIS-93-4-0430B",
+      "title": "First Report of Wheat streak mosaic virus on Wheat in New Zealand.",
+      "abstract": "In August of 2005, seeds of wheat (Triticum aestivum) breeding line 6065.3 tested positive for Wheat streak mosaic virus (WSMV; genus Tritimovirus) by a WSMV-specific reverse transcription (RT)-PCR assay (2). The sequence of the 200-bp amplicon (GenBank Accession No. FJ434246) was 99% identical with WSMV isolates from Turkey and the United States (GenBank Accession Nos. AF454455 and AF057533) and 96 to 97% identical to isolates from Australia (GenBank Accession Nos. DQ888801 to DQ888805 and DQ462279), which belong to the subclade D (1). As a result, an extensive survey of three cereal experimental trials and 105 commercial wheat crops grown on the South Island of New Zealand was conducted during the 2005-2006 summer to determine the distribution of WSMV. Wherever possible, only symptomatic plants were collected. Symptoms on wheat leaf samples ranged from very mild mosaic to symptomless. In total, 591 leaf samples suspected to be symptomatic were tested for WSMV by a double-antibody sandwich (DAS)-ELISA (DSMZ, Braunschweig, Germany). Of the 591 symptomatic samples, 81 tested positive. ELISA results were confirmed by RT-PCR with novel forward (WSMV-F1; 5'-TTGAGGATTTGGAGGAAGGT-3') and reverse (WSMV-R1; 5'-GGATGTTGCCGAGTTGATTT-3') primers designed to amplify a 391-nt fragment encoding a region of the P3 and CI proteins. Total RNA was extracted from the 81 ELISA-positive leaf samples using the Plant RNeasy Kit (Qiagen Inc., Chatsworth, CA). The expected size fragment was amplified from each of the 81 ELISA-positive samples. The positive samples represent 30 of 56 wheat cultivars (54%) collected from 28 of 108 sites (26%) sampled in the growing regions from mid-Canterbury to North Otago. These results suggest that WSMV is widespread in New Zealand both geographically and within cultivars. WSMV is transmitted by the wheat curl mite (Aceria tosichella) (3), which had not been detected in New Zealand despite repeated and targeted surveys. WSMV is of great economic importance in some countries, where the disease has been reported to cause total yield loss (3). Although WSMV is transmitted by seeds at low rates (0.1 to 0.2%) (4), it is the most likely explanation of the spread of the disease in New Zealand. References: (1) G. I. Dwyer et al. Plant Dis. 91:164, 2007. (2) R. French and N. L. Robertson. J. Virol. Methods 49:93, 1994. (3) R. French and D. C. Stenger. Descriptions of Plant Viruses. Online publication. No. 393, 2002. (4) R. A. C. Jones et al. Plant Dis. 89:1048, 2005.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-04-01",
+      "authors": "Lebas B S M; Ochoa-Corona F M; Alexander B J R; Lister R A; Fletcher J D F; ... (+2)",
+      "first_author": "Lebas B S M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Wheat streak mosaic virus (WSMV)",
+      "taxonomy": "Tritimovirus, Potyviridae",
+      "host_plant": "小麦 (Triticum aestivum)",
+      "location": "新西兰南岛 (South Island of New Zealand)",
+      "results": "591份症状样品中81份阳性，涉及30个品种和28个地点，病毒在品种和地理上广泛分布。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764242",
+      "doi": "10.1094/PDIS-93-4-0431A",
+      "title": "First Report of Garlic virus B and Garlic virus D in Garlic in the Pacific Northwest.",
+      "abstract": "With the recent report of several viruses infecting garlic (Allium sativum L.) grown in the Pacific Northwest (1-3), studies were initiated on cloves planted in the fall of 2006 to determine the presence of additional viruses infecting plants exhibiting mosaic and/or chlorotic leaves. Cloves from symptomatic plants of the cultivar 'Early' from two seed production fields in Benton County, WA and two seed production fields in Morrow County, OR were tested by two-step reverse transcription (RT)-PCR using primers specific to the coat protein (CP) of the allexiviruses (4), since garlic infected with this group had similar symptoms in Asia and South America (4). Of the 87 cloves tested, 84 were positive, and four representative samples of the RT-PCR amplicons from each location were cloned and sequenced. Sequence comparisons indicated that the cloves from both locations were infected with Garlic virus D (GarV-D), also known as Japanese garlic virus (JGV), since they shared 98% identity with known isolates (GenBank Accession Nos. L388922.1, AF519572.1, and AB010303.1). In addition, sequences of isolates from the Oregon cloves shared a 96% identity with a known isolate of Garlic virus B (GarV-B; GenBank Accession No. AF543829.1). Because no antiserum specific to these viruses was available, primers specific to the CP genes of GarV-D (JGV-F2/JGV-R2 5'-GCTCACTCRGATGTGTTAGC-3' and 5'-CGCGTGGACATAAGTTGTTG-3') and GarV-B (GVB-F1/GVB-R2 5'-GAGGAGAACTAACGCCACAC-3' and 5'-ACGACCTAGCTTCCTACTTG-3') were designed and the cloves were retested by RT-PCR using these virus-specific primers. With the GarV-D specific primers, 98 and 63% of the cloves were positive from Washington and Oregon, respectively, and 52% of the cloves from Oregon were positive using the GarV-B specific primers. None of the cloves tested from Washington were positive for GarV-B. The identity of the amplicons was verified by cloning and sequencing (GarV-D, GenBank Accession No. FJ643476; GarV-B, GenBank Accession No. FJ643475). Incidence of the two viruses differed between Oregon and Washington was likely due to the expansion of the seed lots in two different locations (California and Nevada) prior to planting in 2006. With such high infection rates, studies should be conducted to determine the impact of these viruses on yield when plants are singly infected as well as in combination with the other viruses known to infect garlic in this region. These and the other viruses (1) are likely to impact yield. To our knowledge, this is the first report of GarV-D (JGV) and GarV-B in garlic in the Pacific Northwest. References: (1) S. L. Gieck et al. Plant Dis. 91:461, 2007. (2) H. R. Pappu et al. Plant Dis. 89:205, 2005 (3) H. R. Pappu et al. Online publication. doi:10.1094/PHP-2008-0919-01-RS. Plant Health Progress, 2008. (4) T. Tsuneyoshi et al. Phytopathology 86:253, 1996.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-04-01",
+      "authors": "Gieck S L; Hamm P B; David N L; Pappu H R",
+      "first_author": "Gieck S L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Garlic virus B (GarV-B) and Garlic virus D (GarV-D, also known as Japanese garlic virus)",
+      "taxonomy": "Alphaflexiviridae, Allexivirus",
+      "host_plant": "Garlic (Allium sativum L.)",
+      "location": "Benton County, Washington and Morrow County, Oregon, Pacific Northwest, USA",
+      "results": "87个蒜瓣中84个阳性，华盛顿州和俄勒冈州均检测到GarV-D，俄勒冈州还检测到GarV-B，序列同源性>96%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764235",
+      "doi": "10.1094/PDIS-93-4-0432A",
+      "title": "First Report of Impatiens necrotic spot virus in Blackberry in the Southeastern United States.",
+      "abstract": "Blackberry yellow vein disease (BYVD) has emerged as an important disease of blackberry (Rubus spp.) in the south and southeastern United States (2,3). In an effort to characterize viruses that may be involved in the disease, double-stranded RNA extracted from a symptomatic 'Apache' blackberry from South Carolina was used for shotgun cDNA cloning (4). Sequence analysis showed that in addition to Blackberry yellow vein associated virus (BYVaV) (2), a constant component of BYVD, sequences of Impatiens necrotic spot virus (INSV) also were obtained. The 623-nt fragment of INSV (Genbank Accession No. EU287930) shared 98% nucleotide and amino acid sequence identity with GenBank Accession No. NC003616. Confirmation of the results of the initial shotgun cloning was done by reverse transcription-PCR with primers INSVF (5' GATCTGTCCTGGGATTGTTC 3') and INSVR (5' GTCTCCTTCTGGTTCTATAATCAT 3') that amplify a 460 base fragment of the M RNA of INSV. Amplicons obtained from single-stranded and dsRNA templates were sequenced and found to be identical with EU287930. The identity of INSV by PCR was also supported by positive results with a commercially available INSV-ELISA kit (AC Diagnostics, Fayetteville, AR). Earlier, more than 400 plants from North Carolina, South Carolina, and Virginia with BYVD and other virus-like symptoms were tested for INSV by ELISA and approximately 33% were found to be infected with the virus (1). Thus, INSV appears to be one of the major viruses infecting blackberry in the southeastern United States, and it remains to be seen if INSV acts synergistically with BYVaV and other viruses to contribute to the severity of BYDV. To our knowledge, this is the first report of INSV infecting Rubus spp. References: (1) T. L. Guzmán-Baeny. M.S. thesis. North Carolina State University, Raleigh, 2003. (2) J. Susaimuthu et al. Plant Pathol. 55:607, 2006. (3) J. Susaimuthu et al. Virus Res. 131:145, 2008. (4) I. E. Tzanetakis et al. J. Virol. Methods 124:73, 2005.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-04-01",
+      "authors": "Tzanetakis I E; Guzmán-Baeny T L; VanEsbroeck Z P; Fernandez G E; Martin R R",
+      "first_author": "Tzanetakis I E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Impatiens necrotic spot virus (INSV)",
+      "taxonomy": "未提及",
+      "host_plant": "Rubus spp. (黑莓，品种Apache)",
+      "location": "美国东南部 (南卡罗来纳州、北卡罗来纳州、弗吉尼亚州)",
+      "results": "从黑莓中检测到INSV，其M RNA片段与已知序列98%同源；在超400株病样中约33%感染INSV。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764233",
+      "doi": "10.1094/PDIS-93-4-0430C",
+      "title": "Natural Infection of Iris yellow spot virus in Twoscale Saltbush (Atriplex micrantha) Growing in Utah.",
+      "abstract": "Iris yellow spot virus (IYSV; family Bunyaviridae, genus Tospovirus) continues to be an economically important pathogen affecting onion bulb and seed production in several parts of the world and the United States (1). Several weeds were reported naturally infected with IYSV (1,2,4). Leaves of Atriplex micrantha Ledeb. (synonym A. heterosperma Bunge) were collected from naturally occurring plants in a weed trial conducted in commercial onions grown in Box Elder County, UT on 24 September 2008. Leaves displayed a range of symptoms including spotting, chlorosis, and necrosis. Symptomatic leaves were preferentially selected for subsequent diagnostic analyses. Samples were positive for IYSV when tested by double-antibody sandwich-ELISA using a commercially available kit (Agdia Inc., Elkhart, IN). For further confirmation, total nucleic acid extracts from the symptomatic parts of the leaves were prepared and tested for the presence of IYSV by reverse transcription-PCR with primers specific to the nucleocapsid (N) gene coded by the small (S)-RNA of IYSV. The forward and reverse primer pair, 5'-TCAGAAATCGAGAAACTT-3' and 5'-CACCAATGTCTTCAACAATCTT-3', respectively, amplifies a 751-nt fragment of the N gene (3). An amplicon of expected size was obtained, cloned, and sequenced. The nucleotide sequence analysis and comparison with known IYSV S-RNA sequences showed that the sequence of the amplicon from A. micrantha (GenBank Accession No. FJ493541) shared more than 84% nt sequence identity with the corresponding region of IYSV isolates available in GenBank, confirming the IYSV infection of the new host weed. The highest sequence identity (98%) was with an IYSV isolate from Jefferson County, OR (GenBank Accession No. DQ233479). To our knowledge, this is the first report of IYSV infection of A. micrantha under natural conditions. The role of A. micrantha and other weeds in IYSV epidemiology needs further investigation. References: (1) D. Gent et al. Plant Dis. 90:1468, 2006. (2) C. Nischwitz et al. Plant Dis. 91:1518, 2007. (3) H. R. Pappu et al. Arch. Virol. 151:1015, 2006. (4) R. Sampangi et al. Plant Dis. 91:1683, 2007.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-04-01",
+      "authors": "Evans C K; Bag S; Frank E; Reeve J R; Ransom C; ... (+2)",
+      "first_author": "Evans C K",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "Iris yellow spot virus (IYSV)",
+      "taxonomy": "",
+      "host_plant": "双鳞盐草 (Atriplex micrantha)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18415692",
+      "doi": "10.1007/s10661-008-0272-z",
+      "title": "Analysis of insecticides in okra and brinjal from IPM and non-IPM fields.",
+      "abstract": "Samples of okra and brinjal fruits, collected from non-integrated pest management (Non-IPM) and IPM fields in village Raispur, Ghaziabad District (U.P.), were analyzed for pesticide residues. The residues of chlorpyrifos in soil were 4.219 and 1.135 microg/g at harvest time in non-IPM and IPM fields of summer okra crop from initial value of 0.407 microg/g before sowing, while in brinjal crop, it was not detected in soils of any trials. During first year of study, the residues of chlorpyrifos and cypermethrin in okra fruit were observed to be 5.75 and 0.625 microg/g, respectively, for non-IPM fields; and 0.104 microg/g of chlorpyrifos for IPM trials. The pesticide residues were found to be 0.77, 1.39, 0.4 and 0.32 microg/g for cypermethrin, chlorpyrifos, monocrotophos and dimethoate, respectively, for non-IPM okra fruits in second year. For brinjal fruit, residues of cypermethrin and imidacloprid were not detected in IPM trials while it was found to be 0.28 and 0.78 microg/g for cypermethrin and chlorpyrifos respectively, for non-IPM trials.",
+      "journal": "Environmental monitoring and assessment",
+      "year": 2009,
+      "pub_date": "2009-04-01",
+      "authors": "Arora Sumitra",
+      "first_author": "Arora Sumitra",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

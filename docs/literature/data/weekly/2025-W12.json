@@ -1,0 +1,243 @@
+{
+  "week": "2025-W12",
+  "start": "2025-03-17",
+  "end": "2025-03-23",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 25,
+  "by_category": {
+    "Control_Management": 9,
+    "Antiviral_Resistance_Genes": 4,
+    "Biotechnology_Applications": 4,
+    "New_Virus": 4,
+    "Host_Virus_Interactions": 4,
+    "Transmission_Epidemiology": 1,
+    "Detection_Methods": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "39927775",
+      "doi": "10.1128/jvi.02183-24",
+      "title": "A conserved lysine/arginine-rich motif is essential for the autophagic degradation of potyviral 6K1 protein and virus infection.",
+      "abstract": "Potyviruses possess one positive-sense single-stranded RNA genome, mainly dependent on polyprotein processing as the expression strategy. The resulting polyproteins are proteolytically processed by three virus-encoded proteases into 11 or 12 mature proteins. One such factor, 6 kDa peptide 1 (6K1), is an understudied viral factor. Its function in viral infection remains largely mysterious. This study is to reveal part of its roles by using pepper veinal mottle virus (PVMV) as the model. Alanine substitution screening analysis revealed that 15 of 17 conserved residues across potyviral 6K1 sequences are essential for PVMV infection. However, 6K1 protein is less accumulated in virus-infected cells, although P3-6K1 and 6K1-CI junctions are efficiently processed by NIa-Pro for its release, indicating that 6K1 undergoes a self-degradation event. Mutating the cleavage site to prevent NIa-Pro processing abolishes viral infection, suggesting that the generation of 6K1 along with its degradation might be important for viral multiplication. We corroborated that cellular autophagy is engaged in 6K1's degradation. Individual engineering of the 15 6K1 variants into PVMV allows their expression along with viral infection. Five of such variants, D30A, V32A, K34A, L36A, and L39A, significantly interfere with viral infection. The five residues are enclosed in a conserved lysine/arginine-rich motif; four of them appear crucial in engaging autophagy-mediated self-degradation. Based on these data, we envisaged a scenario which potyviral 6K1s interact with an unknown anti-viral component to be co-degraded by autophagy to promote viral infection.IMPORTANCEPotyvirus is the largest genus of plant-infecting RNA viruses, which encompasses socio-economically important virus species, such as Potato virus Y, Plum pox virus, and Soybean mosaic virus. Like all picorna-like viruses, potyviruses express their factors mainly via polyprotein processing. Theoretically, viral factors P3 through CP, including 6K1, should share an equivalent number of molecules. The 6K1 is small in size (~6 kDa) and conserved across potyviruses but less accumulated in virus-infected cells. This study demonstrates that cellular autophagy is engaged in the degradation of 6K1 to promote viral infection. In particular, we found a conserved lysine/arginine-rich motif in 6K1s across potyviruses that is engaged in this degradation event. This finding reveals one facet of a small protein that helps understand the pro-viral role of cellular autophagy in viral infection.",
+      "journal": "Journal of virology",
+      "year": 2025,
+      "pub_date": "2025-03-18",
+      "authors": "Hu Weiyao; Deng Changhui; Qin Li; Liu Peilan; Wang Linxi; ... (+9)",
+      "first_author": "Hu Weiyao",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "辣椒脉斑驳病毒 (PVMV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39932283",
+      "doi": "10.1128/jvi.02172-24",
+      "title": "Begomovirus capsid proteins interact with cyclic adenosine monophosphate (cAMP)-specific phosphodiesterase of its whitefly vector and modulate virus retention within its vector.",
+      "abstract": "[UNLABELLED] Begomoviruses are whitefly-transmitted ss-DNA viruses that infect dicotyledonous plants and contribute to major economic losses to global crop production. Invasion and establishment of an aggressive cryptic species of Bemisia tabaci, known as the B cryptic species, has severely constrained vegetable production in the southeastern and southwestern United States. Disruption of genes/pathways critical for whitefly-mediated transmission can be effective for the management of begomoviruses. In this study, yeast two-hybrid (Y2H)-based screening of B. tabaci cDNA library identified a cyclic adenosine monophosphate (cAMP)-specific phosphodiesterase-4 (PDE4) of the whitefly as an interacting partner with capsid proteins (CPs) of old- and new-world begomoviruses. Interactions of PDE4 with begomovirus CPs were validated by glutathione-S-transferase (GST) pull-down assay and co-immunolocalization in whitefly midgut. The PDE4 family of enzymes hydrolyzes cAMP and regulates intracellular cAMP levels. This study conclusively proves that acquisition of begomoviruses downregulates the expression of PDE4 (mRNA and protein) resulting in elevated cAMP levels within the whitefly. The role of cAMP post virus acquisition is further elucidated wherein elevation of cAMP by chemical inhibition or gene (PDE4) silencing resulted in increased retention and transmission of begomoviruses. Similarly, decreased cAMP levels resulted in reduced begomovirus retention. The results of this study demonstrate that whitefly-mediated transmission of begomoviruses is regulated by intracellular cAMP by unknown mechanisms. [IMPORTANCE] Begomoviruses, transmitted by the sweetpotato whitefly (Bemisia tabaci Gennadius), are the causal agents of many economically important plant virus diseases. Lack of host plant resistance against begomoviruses, high whitefly abundance, and whitefly's ability to develop insecticide resistance rapidly often render the commonly used management practice ineffective. This study demonstrates how begomovirus retention within whitefly and its transmission can be modulated by altering cyclic adenosine monophosphate (cAMP) expression of its insect vector. Naturally occurring bio-pesticides that target insect cAMPs are known. Our findings can lead to alternative strategies for the management of begomoviruses by targeting whitefly cAMP using chemicals, botanicals, or RNAi-based insecticides.",
+      "journal": "Journal of virology",
+      "year": 2025,
+      "pub_date": "2025-03-18",
+      "authors": "Ghosh Saptarshi; Mondal Banani; Jassar Ola; Ghanim Murad; Gautam Saurabh; ... (+2)",
+      "first_author": "Ghosh Saptarshi",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "菜豆金色花叶病毒属病毒",
+      "taxonomy": "",
+      "host_plant": "双子叶植物",
+      "location": "美国东南部和西南部",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40143368",
+      "doi": "10.3390/v17030441",
+      "title": "Detection and In Vivo Validation of ",
+      "abstract": "Dichorhavirus is a recently accepted plant virus genus within the family Rhabdoviridae. Species assigned to the genus consist of bi-segmented, negative sense, single-stranded RNA viruses and are transmitted by Brevipalpus spp. Currently, there are five recognized species and two unclassified members in the genus Dichorhavirus. Four out of seven-orchid fleck virus (OFV), citrus leprosis virus N, citrus chlorotic spot virus, and citrus bright spot virus-can infect citrus and produce leprosis disease-like symptoms. The E-probe Diagnostic for Nucleic Acid Analysis (EDNA) was developed to reduce computational effort and then integrated within Microbe-Finder (MiFi®) online platform to design and evaluate e-probes in raw High Throughput Sequencing (HTS) data. During this study, Dichorhavirus genomes were downloaded from public databases and e-probes were designed using the MiProbe incorporated into the MiFi® platform. Three different sizes of e-probes, 40, 60, and 80 nucleotides, were developed and selected based on whole genome comparisons with near-neighbor genomes. For curation, each e-probe was searched in the NCBI nucleotide sequence database using BLASTn. All the e-probes that had hits with non-target species with ≥90% identities were removed. The sensitivity and specificity of Dichorhavirus genus, species, strain, and variant-specific e-probes were validated in vivo using HTS meta-transcriptomic libraries generated from Dichorhavirus-suspected citrus, orchid, and ornamentals. Through downstream analysis of HTS data, EDNA not only detected the known hosts of OFV but also discovered an unknown host leopard plant (Farfugium japonicum), and the possible existence of a new ornamental strain of OFV in nature.",
+      "journal": "Viruses",
+      "year": 2025,
+      "pub_date": "2025-03-19",
+      "authors": "Roy Avijit; Shao Jonathan; Espindola Andres S; Ramos Lopez Daniel; Otero-Colina Gabriel; ... (+5)",
+      "first_author": "Roy Avijit",
+      "categories": [
+        "Detection_Methods",
+        "New_Virus",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "Dichorhavirus (包括orchid fleck virus, citrus leprosis virus N, citrus chlorotic spot virus, citrus bright spot virus等)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40108347",
+      "doi": "10.1038/s41598-025-92268-2",
+      "title": "Harnessing plant growth-promoting bacteria to combat watermelon mosaic virus in squash.",
+      "abstract": "Plant diseases significantly threaten global food security, with viral infections, particularly Watermelon Mosaic Virus (WMV), causing substantial losses in economically important crops such as squash. This study aims to investigate the efficacy of beneficial bacteria isolated from various plants in promoting growth and mitigating the effects of WMV in squash. Understanding the interactions between plants and beneficial microbes could provide sustainable solutions for managing viral infections in agriculture. Sixty-two bacterial isolates were obtained from the rhizosphere of basil, mint, thyme, and squash plants. Among these, six strains exhibited notable plant growth-promoting activities, including the synthesis of indole acetic acid, solubilization of phosphate and zinc, ammonia production, and activity of 1-aminocyclopropane-1-carboxylate deaminase (ACCD). Morphological observations and 16S rRNA gene sequencing identified these isolates as Pseudomonas indica, Bacillus paramycoides, Bacillus thuringiensis, Bacillus mycoides, Paenibacillus glucanolyticus, and Niallia circulans. In pot experiments, squash plants inoculated with these bacterial strains demonstrated significant reductions in disease severity after being infected with WMV. Specifically, foliar applications of the bacteria resulted in the following reductions in disease severity: B. mycoides (87%), B. thuringiensis (73%), Paenibacillus glucanolyticus (73%), Niallia circulans (70%), B. paramycoides (65%), and Pseudomonas indica (65%). Additionally, plants treated with B. mycoides showed increased plant height and shoot dry weight, indicating enhanced growth performance relative to infected controls. Statistical analysis revealed that these growth promotions and disease severity reduction were significant (p < 0.05). GC-MS analysis of the six bacterial strains revealed a diverse array of 73 chemical metabolites, including common compounds such as 9-Octadecenoic acid (Z), benzene derivatives, and cyclopentanones. These findings suggest shared metabolic pathways among the strains and indicate potential roles in ecological interactions, plant defense mechanisms, and antiviral properties. These metabolites likely contribute to the observed reductions in viral severity and enhance plant resilience. The study indicates that inoculating squash plants with specific beneficial bacteria, especially B. mycoides, through foliar or soil application can significantly decrease the severity of WMV and promote plant growth. This approach offers an environmentally friendly alternative to chemical antiviral treatments and may reduce reliance on pesticides. This research highlights the potential of using plant growth-promoting bacteria (PGPB)as a sustainable approach to control viral infections in crops. Further field trials are necessary to PGPB validate the scalability of these findings and assess their effectiveness under diverse agricultural conditions. Incorporating these beneficial microbes into agricultural practices could enhance the resilience of cropping systems, ultimately fostering sustainable agriculture and enhancing food security.",
+      "journal": "Scientific reports",
+      "year": 2025,
+      "pub_date": "2025-03-19",
+      "authors": "Bashandy Shymaa R; Mohamed Omima Abdelsater; Abdalla Osama A; Elfarash A; Abd-Alla Mohamed Hemida",
+      "first_author": "Bashandy Shymaa R",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management"
+      ],
+      "virus_name": "Watermelon Mosaic Virus (WMV)",
+      "taxonomy": "",
+      "host_plant": "squash（南瓜）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40141390",
+      "doi": "10.3390/ijms26062748",
+      "title": "Characterization of the m",
+      "abstract": "Common bean (Phaseolus vulgaris L.) is known for its high protein, dietary fiber, and various trace element contents, making it a widely grown leguminous crop globally. The bean common mosaic virus (BCMV) poses a significant threat to leguminous crop production, causing substantial yield reductions when common beans are infected. Widely occurring in mRNA, the m6A modification is vital for maintaining mRNA stability, facilitating splicing, enabling nuclear export, supporting polyadenylation, and initiating translation. Recent studies have identified the m6A regulatory gene family in various plant species, and its ability to regulate plant virus infection has been confirmed. There is currently insufficient information regarding the m6A regulatory gene family in beans and how it responds to BCMV infection. Consequently, we carried out a genome-wide characterization of the m6A regulatory gene family in common bean, which led to the identification of 31 potential regulatory gene members associated with m6A. According to evolutionary analysis, the increase in the bean m6A regulatory gene family appears to be linked to either whole-genome duplication or segmental duplication events. Subsequent investigations into the expression levels of these genes throughout different phases of BCMV infection showed that all candidate genes responded to the infection with various changes in expression. Moreover, we characterized the methyltransferase activity of PvMTA and validated the interactive relationship between mRNA adenosine methyltransferase A (MTA) and mRNA adenosine methyltransferase B (MTB) in common beans. Through overexpressing and silencing PvMTA, we further ascertained that this particular gene has a detrimental impact on the regulation of BCMV infection. This research provides fresh perspectives on the molecular processes that govern the interaction between the common bean and BCMV and aids progress in molecular bean breeding.",
+      "journal": "International journal of molecular sciences",
+      "year": 2025,
+      "pub_date": "2025-03-19",
+      "authors": "Wu Wenyan; Wang Xinhua; Liang Xingrui; Huang Xinqi; Nawaz Muhammad Amjad; ... (+5)",
+      "first_author": "Wu Wenyan",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "普通豆花叶病毒（Bean common mosaic virus, BCMV）",
+      "taxonomy": "",
+      "host_plant": "普通豆（Phaseolus vulgaris L.）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40173013",
+      "doi": "10.1093/nar/gkaf221",
+      "title": "A method for in-depth analysis of circular DNA virus populations by unambiguously profiling the low abundant virus variants and partial genomic components.",
+      "abstract": "Severe epidemic outbreaks of diseases associated with newly emerging strains of single-stranded DNA (ssDNA) viruses have led to serious economic losses of numerous important food crops. While the current mitigation strategies are mostly relying on the deployment of genetic resistance in crop varieties, the constantly evolving virus populations have the potential to rapidly break virus resistance. Therefore, the development of diagnostic tools enabling early detection of virus variants associated with hypervirulence and/or expansion to new host species is urgently needed as an effective mitigation solution. Here, we introduce a novel approach by designing a pipeline that allows accurately identifying and characterizing the full-length sequence variants of viral circular DNA genomes utilizing Nanopore sequencing technology and the bioinformatics tool Genome Detective. We demonstrate that the pipeline is suitable to provide an accurate and in-depth analysis of monopartite Tomato yellow leaf curl Sardinia virus (TYLCSV) and multipartite Banana bunchy top virus (BBTV) ssDNA virus populations resulting in the profiling of high- and low-frequency virus variants with ≥1% relative abundance. The approach also enabled the unambiguous detection and characterization of four TYLCSV partial genomic sequences as well as several partial genomic sequences for each BBTV genomic component not previously reported and accumulating during infection.",
+      "journal": "Nucleic acids research",
+      "year": 2025,
+      "pub_date": "2025-03-20",
+      "authors": "Golyaev Victor; Dierickx Sam; Deforche Koen; Dumon Wim; Vanderschuren Hervé",
+      "first_author": "Golyaev Victor",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Tomato yellow leaf curl Sardinia virus (TYLCSV), Banana bunchy top virus (BBTV)",
+      "taxonomy": "",
+      "host_plant": "番茄、香蕉（推断）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39982054",
+      "doi": "10.1128/aem.01771-24",
+      "title": "Fungicide use intensity influences the soil microbiome and links to fungal disease suppressiveness in amenity turfgrass.",
+      "abstract": "[UNLABELLED] Disease-suppressive soils have been documented in many economically important crops, but not in turfgrass, one of the most intensively managed plant systems in the United States. Dollar spot, caused by the fungus Clarireedia jacksonii, is the most economically important disease of managed turfgrass and has historically been controlled through the intensive use of fungicides. However, previous anecdotal observations of lower dollar spot severity on golf courses with less intensive fungicide histories suggest that intensive fungicide usage may suppress microbial antagonism of pathogen activity. This study explored the suppressive activity of transplanted microbiomes against dollar spot from seven locations in the Midwestern U.S. and seven locations in the Northeastern U.S. with varying fungicide use histories. Creeping bentgrass was established in pots containing homogenized sterile potting mix and field soil and inoculated with C. jacksonii upon maturity. Bacterial and fungal communities of root-associated soil and phyllosphere were profiled with short-amplicon sequencing to investigate the microbial community associated with disease suppression. The results showed that plants grown in the transplanted soil microbiome collected from sites with lower fungicide intensities exhibited reduced disease severity. Plant growth-promoting and pathogen-antagonistic microbes may be responsible for disease suppression, but further validation is required. Additional least squares regression analysis of the fungicides used at each location suggested that contact fungicides such as chlorothalonil and fluazinam had a greater influence on the microbiome disease suppressiveness than penetrant fungicides. Potential organisms antagonistic to Clarireedia were identified in the subsequent amplicon sequencing analysis, but further characterization and validation are required. [IMPORTANCE] Given the current reliance on fungicides for plant disease control, this research provides new insights into the potential non-target effects of repeated fungicide usage on disease-suppressive soils. It also indicates that intensive fungicide usage can decrease the activity of beneficial soil microbes and lead to a more disease conducive microbial environment in turfgrass. The results from this study can be used to identify more sustainable disease management strategies for a variety of economically important and intensively managed pathosystems. Understanding the factors that facilitate disease-suppressive soils will contribute to more sustainable plant protection practices.",
+      "journal": "Applied and environmental microbiology",
+      "year": 2025,
+      "pub_date": "2025-03-19",
+      "authors": "Chou Ming-Yi; Patil Apoorva Tarihalkar; Huo Daowen; Lei Qiwei; Kao-Kniffin Jenny; ... (+1)",
+      "first_author": "Chou Ming-Yi",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39938315",
+      "doi": "10.1016/j.vaccine.2025.126861",
+      "title": "Protective efficacy of a bivalent equine influenza H3N8 virus-like particle vaccine in horses.",
+      "abstract": "Equine influenza (EI) is a highly contagious acute respiratory disease of wild and domesticated horses, donkeys, mules, and other Equidae. EI is caused by the Equine Influenza virus (EIV), is endemic in many countries and outbreaks still have a severe impact on the equine industry globally. Conventional EI vaccines are widely used, but a need exists for a platform that facilitates prompt manufacturing of a highly immunogenic, antigenically matched, updated vaccine product. Here we developed a plant-produced bivalent EI virus-like particle (VLP) vaccine candidate which lacks the viral genome and are therefore non-infectious. We conducted a pilot safety/dose response study of a plant produced bivalent VLP vaccine expressing the HA proteins of Florida clade (FC) 1 and FC2 EIV in 1:1 ratio. Groups of three EIV seronegative horses were vaccinated using four antigen levels (0 sham control, 250, 500, 1000 HAU/dose component). Two doses of vaccines were administered one month apart, and horses were observed for adverse reactions, which were minimal. Sera were collected for hemagglutination inhibition (HI) testing using FC1 and FC2 viruses. One month after the second dose, all horses were challenged with the aerosolized FC1 virus. Horses were observed daily for clinical signs, and nasopharyngeal swabs were collected to quantify viral RNA using qPCR and infectious virus by titration in embryonated hens' eggs. Results showed that all vaccinated groups seroconverted prior to challenge. Post-challenge, both clinical scores and virus shedding were much reduced in all vaccinates compared to the sham-vaccinated controls. We conclude that the VLP vaccines were safe and effective in this natural host challenge model. A safe, efficacious, new-generation bivalent EI VLP vaccine produced in plants, which can promptly and regularly be antigenically matched to ensure optimal protection, will pave the way to highly competitive commercially viable vaccine products for all economic environments globally.",
+      "journal": "Vaccine",
+      "year": 2025,
+      "pub_date": "2025-03-19",
+      "authors": "O'Kennedy Martha M; Reedy Stephanie E; Abolnik Celia; Khan Amjad; Smith Tanja; ... (+5)",
+      "first_author": "O'Kennedy Martha M",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40174182",
+      "doi": "10.11646/zootaxa.5604.4.7",
+      "title": "Two new species of the tribe Mirini (Hemiptera: Heteroptera: Miridae: Mirinae) from Vietnam, with additional data to Vietnamese Mirinae catalogue.",
+      "abstract": "Two new species of the plant bug tribe Mirini are described from Vietnam: Adelphocorisella tamdaoensis sp. nov. and Cheilocapsidea bachmaensis sp. nov. Detailed morphological descriptions for each species are presented. New records, four genera, and eight species of the subfamily Mirinae are additionally catalogued to the Vietnamese fauna.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-03-17",
+      "authors": "Kim Junggon; Chérot Frédéric; Phan Quoc Toan; Jung Sunghoon",
+      "first_author": "Kim Junggon",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40174138",
+      "doi": "10.11646/zootaxa.5609.3.9",
+      "title": "Two new species of the genus Arctornis Germar (Lepidoptera: Erebidae: Lymantriinae) from China.",
+      "abstract": "Two new species of the genus Arctornis Germar, A. lingnana sp. nov. and A. harpeforma sp. nov., are described from Fenghuangshan Provincial Nature Reserve, Chaozhou, Guangdong, China. Illustrations of their adults, genitalia, larvae are provided, with records of their host plants.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-03-21",
+      "authors": "Yuan Ziqi; Ye Peizhao; Huang Weichao; Wang Houshuai",
+      "first_author": "Yuan Ziqi",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

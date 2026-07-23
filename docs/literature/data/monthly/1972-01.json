@@ -1,0 +1,78 @@
+{
+  "month": "1972-01",
+  "generated": "2026-07-13 02:59:41",
+  "total": 3,
+  "by_category": {
+    "New_Virus": 2,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "4550504",
+      "doi": "10.1073/pnas.69.1.191",
+      "title": "Transformation of Agrobacterium tumefaciens into a non-oncogenic species by an Escherichia coli RNA.",
+      "abstract": "Transforming RNA excreted by showdomycin-resistant Escherichia coli induces a persistent, heritable, and spectacular change in Agrobacterium tumefaciens B(6), a bacterium that carries the oncogenic principle for tumor induction in plants. Transformants possessing new physiological and biochemical properties have completely or partially lost the capacity for tumor induction. They synthetize new ribosomes whose components are profoundly modified. On the basis of biological and biochemical characteristics, one is inclined to consider the completely transformed Agrobacterium tumefaciens as a \"new species\".",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1972,
+      "pub_date": "1972-01-01",
+      "authors": "Beljanski M; Manigault P; Bourgarel P",
+      "first_author": "Beljanski M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "4509280",
+      "doi": "",
+      "title": "[Description of 2 new species of bactera isolated from pozol: Agrobacterium azotophilum and Achromobacter pozolis].",
+      "abstract": "",
+      "journal": "Revista latinoamericana de microbiologia",
+      "year": 1972,
+      "pub_date": "1972-01-01",
+      "authors": "Ulloa M; Herrera T",
+      "first_author": "Ulloa M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17731351",
+      "doi": "10.1126/science.175.4020.375",
+      "title": "Genes conferring specific plant disease resistance.",
+      "abstract": "Genes conferring host resistance to an obligate parasite, grouped together in complex loci provide opportunities to study their structure. By means of an appropriate operational definition of these genes, a modified cis-trans test was used to interpret the position effects of codominant genes mutually recombined within each of two complex loci of flax, with the use of a specially developed method of analysis among F(2) segregants. The different behavior of genes in the M and L groups may reflect a difference in their structure sufficient to raise important implications in the theory of specific host-parasite interactions.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 1972,
+      "pub_date": "1972-01-28",
+      "authors": "Shepherd K W; Mayo G M",
+      "first_author": "Shepherd K W",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

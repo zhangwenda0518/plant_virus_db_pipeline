@@ -1,0 +1,280 @@
+{
+  "month": "1999-01",
+  "generated": "2026-07-13 02:59:42",
+  "total": 31,
+  "by_category": {
+    "Host_Virus_Interactions": 9,
+    "New_Virus": 7,
+    "Antiviral_Resistance_Genes": 6,
+    "Control_Management": 5,
+    "Molecular_Characterization": 2,
+    "Biotechnology_Applications": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "11701828",
+      "doi": "10.1146/annurev.phyto.37.1.369",
+      "title": "NATURAL GENOMIC AND ANTIGENIC VARIATION IN WHITEFLY-TRANSMITTED GEMINIVIRUSES (BEGOMOVIRUSES).",
+      "abstract": "Begomoviruses have circular single-stranded DNA genomes, cause many diseases of dicotyledons in areas with warm climates and are transmitted by whiteflies of the Bemisia tabaci complex. Their genomic and antigenic variation represents geography-related lineages that have little relation to host range. Genomic variation resulting from mutation is amplified by acquisition of extra DNA components, pseudo-recombination and recombination, both intraspecific and interspecific. Recombination, especially interspecific recombination, seems the key mechanism for generating novel virus forms, for enhancing biological fitness of pseudo-recombinants derived from closely related species and for maintaining the flow of genetic material among different geminiviruses occurring in the same geographical region. Recent begomovirus epidemics reflect favorable conjunctions of plant, vector, and viral (e.g. emergence of a novel recombinant virus) factors. Such epidemics typically result in co-infection of plants with different begomoviruses, leading to the appearance of further variants, especially recombinants. In their patterns of variation and evolution, begomoviruses differ greatly from plant viruses with RNA genomes.",
+      "journal": "Annual review of phytopathology",
+      "year": 1999,
+      "pub_date": "1999-01-01",
+      "authors": "Harrison BD; Robinson DJ",
+      "first_author": "Harrison BD",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Begomoviruses",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "双子叶植物 (dicotyledons)",
+      "location": "温暖气候地区",
+      "results": "基因组变异由突变、额外DNA组分、伪重组和重组产生；重组（尤其是种间）是生成新病毒、增强适合度和维持遗传物质流动的关键；近期流行病反映植物、媒介和病毒因素的整合。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10470280",
+      "doi": "10.1007/978-3-7091-6425-9_15",
+      "title": "Viroids and the nature of viroid diseases.",
+      "abstract": "In its methodology, the unexpected discovery of the viroid in 1971 resembles that of the virus by Beijerinck some 70 years earlier. In either case, a novel type of plant pathogen was recognized by its ability to penetrate through a medium with pores small enough to exclude even the smallest previously known pathogen: bacteria as compared with the tobacco mosaic agent; viruses as compared with the potato spindle tuber agent. Interestingly, one of the two methods used by Beijerinck, diffusion of the tobacco mosaic agent into agar gels, is conceptually similar to one method used to establish the size of the potato spindle tuber agent, namely polyacrylamide gel electrophoresis. Further work demonstrated that neither agent is an unusually small conventional pathogen (a microbe in the case of the tobacco mosaic agent; a virus in the case of the potato spindle tuber agent), but that either agent represents the prototype of a fundamentally distinct class of pathogen, the viruses and the viroids, respectively. With the viroids, this distinction became evident once their unique molecular structure, lack of mRNA activity, and autonomous replication had become elucidated. Functionally, viroids rely to a far greater extent than viruses on their host's biosynthetic systems: Whereas translation of viral genetic information is essential for virus replication, viroids are totally dependent on their hosts' transcriptional system and, in contrast to viruses, no viroid-coded proteins are involved. Because of the viroids' simplicity and extremely small size they approach more closely even than viruses Beijerinck's concept of a contagium vivum fluidum.",
+      "journal": "Archives of virology. Supplementum",
+      "year": 1999,
+      "pub_date": "1999-01-01",
+      "authors": "Diener T O",
+      "first_author": "Diener T O",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "类病毒（viroids，以马铃薯纺锤块茎类病毒PSTVd为原型）",
+      "taxonomy": "未提及",
+      "host_plant": "植物",
+      "location": "未提及",
+      "results": "类病毒具有独特的环状RNA结构，无mRNA活性，完全依赖宿主转录系统复制。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10486107",
+      "doi": "10.1007/s007050050607",
+      "title": "Genome evolution of tobacco mosaic virus populations during long-term passaging in a diverse range of hosts.",
+      "abstract": "The effects of host changes on plant virus genome evolution was studied by nucleotide sequencing. A single tobacco (Nicotiana tabacum cv. Xanthi) plant was inoculated with in vitro transcripts from a plasmid clone of tobacco mosaic tobamovirus (TMV). This initial viral population was then transferred 11-12 times in parallel populations in 7 plant host species (1-4 replicates each) over a period of 413-515 days. Virion RNA was then isolated, reverse transcribed, amplified, cloned in bacteria, and sequenced. Portions of the coat protein, movement protein, and replicase genes were sequenced. Fourteen unique mutations were detected from a total of 188 clones (35,607 bases) sequenced, indicating a relatively small overall mutation rate of 3.1 x 10(-4) nucleotide substitutions/base-year. A small Ka/Ks value of 0.09 was also found, indicating selection against amino acid changes. Eighty-five percent of the substitutions were transitions. A G'(ST) value of 0.7 for the coat protein gene suggested that host type affected sequence changes in this region of the genome, but chi(2) analysis did not support this conclusion. This is the first study using sequencing to compare representative sample sections of a plant viral genome following a major selective disturbance such as extended passaging in an alternate host.",
+      "journal": "Archives of virology",
+      "year": 1999,
+      "pub_date": "1999-01-01",
+      "authors": "Kearney C M; Thomson M J; Roland K E",
+      "first_author": "Kearney C M",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "烟草花叶病毒 (Tobacco mosaic virus, TMV)",
+      "taxonomy": "烟草花叶病毒属 (Tobamovirus)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10206701",
+      "doi": "10.1099/13500872-145-1-211",
+      "title": "Pseudomonas aeruginosa outer-membrane protein F epitopes are highly immunogenic in mice when expressed on a plant virus.",
+      "abstract": "A synthetic peptide (peptide 10) representing a surface-exposed, linear B cell epitope from outer-membrane (OM) protein F of Pseudomonas aeruginosa was shown previously to afford protection in mice from P. aeruginosa infection. This peptide was expressed in tandem with the protein F peptide 18 on each of the two coat proteins of cowpea mosaic virus (CPMV). The chimaeric virus particles (CVPs) expressing the peptides on the S (small) coat protein (CPMV-PAE4) and L (large) coat protein (CPMV-PAE5) were used to immunize mice. Following subcutaneous immunization in Freund's and QuilA adjuvants, CPMV-PAE4 induced antibodies predominantly against peptide 18, whereas CPMV-PAE5 produced antibodies exclusively against peptide 10, indicating that the site of peptide expression on CPMV influences its immune recognition. The anti-peptide antibodies elicited by CPMV-PAE5 were predominantly of the IgG2a isotype, indicating a highly polarized TH1-type response. The peptide-specific IgG2a strongly recognized the whole F protein, but more importantly, recognized protein F in all seven Fisher-Devlin immunotypes of P. aeruginosa. Furthermore, the peptide-specific IgG2a in CVP/QS-21 adjuvant-immunized mice was shown to bind complement and to augment phagocytosis of P. aeruginosa by human neutrophils in vitro. The ability of CPMV-PAE5 to induce P. aeruginosa-specific opsonic IgG2a gives it potential for further development as a protective vaccine against P. aeruginosa.",
+      "journal": "Microbiology (Reading, England)",
+      "year": 1999,
+      "pub_date": "1999-01-01",
+      "authors": "Brennan F R; Jones T D; Gilleland L B; Bellaby T; Xu F; ... (+7)",
+      "first_author": "Brennan F R",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "豇豆花叶病毒 (Cowpea mosaic virus, CPMV)",
+      "taxonomy": "豇豆花叶病毒属 (Comovirus)，豇豆花叶病毒科 (Secoviridae)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10069066",
+      "doi": "10.1046/j.1365-313x.1999.00350.x",
+      "title": "Plants expressing the Pto disease resistance gene confer resistance to recombinant PVX containing the avirulence gene AvrPto.",
+      "abstract": "Elicitation of hypersensitive cell death and induction of plant disease resistance by Pseudomonas syringae pv. tomato (Pst) is dependent on activity of the Pst Hrp secretion system and the gene-for-gene interaction between the tomato resistance gene Pto and the bacterial avirulence gene avrPto. AvrPto was expressed transiently in resistant or susceptible plant lines via a potato virus X (PVX) vector. We found that while PVX is normally virulent on tomato, a PVX derivative expressing avrPto was only capable of infecting plants lacking a functional Pto resistance pathway. Mutations in either the Pto or Prf genes allowed systemic spread of the recombinant virus. These results indicate that recognition of AvrPto by Pto in resistant plant lines triggers a plant defense response that can confer resistance to a viral as well as a bacterial pathogen.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 1999,
+      "pub_date": "1999-01-01",
+      "authors": "Tobias C M; Oldroyd G E; Chang J H; Staskawicz B J",
+      "first_author": "Tobias C M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "马铃薯X病毒 (PVX)",
+      "taxonomy": "",
+      "host_plant": "番茄",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10394716",
+      "doi": "10.1007/978-3-642-60234-4_4",
+      "title": "Plant viral vectors based on tobamoviruses.",
+      "abstract": "The potential of plant virus-based transient expression vectors is substantial. One objective is the production of large quantities of foreign peptides or proteins. At least one commercial group (Biosource Technologies) is producing large quantities of product in the field, has built factories to process truck-loads of material and soon expects to market virus-generated products. In the laboratory, large amounts of protein have been produced for structural or biochemical analyses. An important aspect of producing large amounts of a protein or peptide is to make the product easily purifiable. This has been done by attaching peptides or proteins to easily purified units such as virion particles or by exporting proteins to the apoplast so that purification begins with a highly enriched product. For plant molecular biology, virus-based vectors have been useful in identifying previously unknown genes by overexpression or silencing or by expression in different genotypes. Also, foreign peptides fused to virions are being used as immunogens for development of antisera for experimental use or as injected or edible vaccines for medical use. As with liposomes and microcapsules, plant cells and plant viruses are also expected to provide natural protection for the passage of antigen through the gastrointestinal tract. Perhaps the greatest advantage of plant virus-based transient expression vectors is their host, plants. For the production of large amounts of commercial products, plants are one of the most economical and productive sources of biomass. They also present the advantages of lack of contamination with animal pathogens, relative ease of genetic manipulation and the presence eukaryotic protein modification machinery.",
+      "journal": "Current topics in microbiology and immunology",
+      "year": 1999,
+      "pub_date": "1999-01-01",
+      "authors": "Yusibov V; Shivprasad S; Turpen T H; Dawson W; Koprowski H",
+      "first_author": "Yusibov V",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "tobamoviruses（烟草花叶病毒属）",
+      "taxonomy": "",
+      "host_plant": "植物（未具体指明）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10028247",
+      "doi": "10.1099/00207713-49-1-51",
+      "title": "Diversity of rhizobia associated with Amorpha fruticosa isolated from Chinese soils and description of Mesorhizobium amorphae sp. nov.",
+      "abstract": "Fifty-five Chinese isolates from nodules of Amorpha fruticosa were characterized and compared with the type strains of the species and genera of bacteria which form nitrogen-fixing symbioses with leguminous host plants. A polyphasic approach, which included RFLP of PCR-amplified 16S rRNA genes, multilocus enzyme electrophoresis (MLEE), DNA-DNA hybridization, 16S rRNA gene sequencing, electrophoretic plasmid profiles, cross-nodulation and a phenotypic study, was used in the comparative analysis. The isolates originated from several different sites in China and they varied in their phenotypic and genetic characteristics. The majority of the isolates had moderate to slow growth rates, produced acid on YMA and harboured a 930 kb symbiotic plasmid (pSym). Five different RFLP patterns were identified among the 16S rRNA genes of all the isolates. Isolates grouped by PCR-RFLP of the 16S rRNA genes were also separated into groups by variation in MLEE profiles and by DNA-DNA hybridization. A representative isolate from each of these DNA homology groups had a separate position in a phylogenetic tree as determined from sequencing analysis of the 16S rRNA genes. A new species, Mesorhizobium amorphae, is proposed for the majority of the isolates, which belonged to a moderately slow- to slow-growing, acid-producing group based upon their distinct phylogenetic position, their unique electrophoretic type, their low DNA homology with reference strains representing the species within the genus Mesorhizobium and their distinct phenotypic features. Strain ACCC 19665 was chosen as the type strain for M. amorphae sp. nov.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1999,
+      "pub_date": "1999-01-01",
+      "authors": "Wang E T; van Berkum P; Sui X H; Beyene D; Chen W X; ... (+1)",
+      "first_author": "Wang E T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10028275",
+      "doi": "10.1099/00207713-49-1-297",
+      "title": "A taxonomic study of bacteria isolated from grasses: a proposed new species Pseudomonas graminis sp. nov.",
+      "abstract": "The taxonomic position of a yellow-pigmented group of bacteria, isolated from the phyllosphere of grasses was investigated. Results obtained from restriction analysis of amplified 16S rDNA with seven endonucleases (CfoI, HaeIII, AluI, HinfI, MspI, Sau3A and ScrFI) showed identical restriction patterns for each enzyme of all isolates studied, which suggests that all strains belong to the same species. The grass isolates displayed the characteristics of the genus Pseudomonas. They were Gram-negative, aerobic and rod-shaped with polar flagella. Isolates were catalase-positive and oxidase-negative, and unable to oxidize or ferment glucose with the production of acid. The isolates did not reduce nitrate to nitrite but were able to utilize a wide range of compounds individually as a sole carbon source, with preference being given to the utilization of monosaccharides. The disaccharides tested were not utilized as substrates. The DNA base compositions of the tested strains ranged from 60 to 61 mol% G+C. The major isoprenoid quinone of each was ubiquinone Q-9 and hydroxy fatty acids were represented by 3-hydroxydodecanoic acid and 2-hydroxydodecanoic acid. Comparison of 16S rDNA sequences showed that the bacteria were members of the genus Pseudomonas, with similarity values between 91.5 and 97.7%. DNA-DNA hybridization studies with closely related neighbours revealed a low level of homology (< 27%), indicating that the isolates represent an individual species. On the basis of phenotypic and phylogenetic analyses a new species, Pseudomonas graminis sp. nov. (type strain DSM 11363T), is proposed.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1999,
+      "pub_date": "1999-01-01",
+      "authors": "Behrendt U; Ulrich A; Schumann P; Erler W; Burghardt J; ... (+1)",
+      "first_author": "Behrendt U",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10028258",
+      "doi": "10.1099/00207713-49-1-167",
+      "title": "Kocuria palustris sp. nov. and Kocuria rhizophila sp. nov., isolated from the rhizoplane of the narrow-leaved cattail (Typha angustifolia).",
+      "abstract": "Two Gram-positive, aerobic spherical actinobacteria were isolated from the rhizoplane of narrow-leaved cattail (Typha angustifolia) collected from a floating mat in the Soroksár tributary of the Danube river, Hungary. Sequence comparisons of the 16S rDNA indicated these isolates to be phylogenetic neighbours of members of the genus Kocuria, family Micrococcaceae, in which they represent two novel lineages. The phylogenetic distinctness of the two organisms TA68T and TAGA27T was supported by DNA-DNA similarity values of less than 55% between each other and with the type strains of Kocuria rosea, Kocuria kristinae and Kocuria varians. Chemotaxonomic properties supported the placement of the two isolates in the genus Kocuria. The diagnostic diamino acid of the cell-wall peptidoglycan is lysine, the interpeptide bridge is composed of three alanine residues. Predominant menaquinone was MK-7(H2). The fatty acid pattern represents the straight-chain saturated iso-anteiso type. Main fatty acid was anteiso-C15:0. The phospholipids are diphosphatidylglycerol, phosphatidylglycerol and an unknown component. The DNA base composition of strains TA68T and TAGA27T is 69.4 and 69.6 mol% G+C, respectively. Genotypic, morphological and physiological characteristics are used to describe two new species of Kocuria, for which we propose the names Kocuria palustris, type strain DSM 11925T and Kocuria rhizophila, type strain DSM 11926T.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1999,
+      "pub_date": "1999-01-01",
+      "authors": "Kovács G; Burghardt J; Pradella S; Schumann P; Stackebrandt E; ... (+1)",
+      "first_author": "Kovács G",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9872761",
+      "doi": "10.1128/AEM.65.1.67-72.1999",
+      "title": "Characterization of a facultatively psychrophilic bacterium, vibrio rumoiensis sp. nov., that exhibits high catalase activity.",
+      "abstract": "A novel facultatively psychrophilic bacterium, strain S-1, which exhibits extraordinarily high catalase activity was isolated from the drain pool of a fish product processing plant that uses H2O2 as a bleaching and microbicidal agent. The catalase activity of the isolate was 1 or 2 orders of magnitude higher than those of Corynebacterium glutamicum, Staphylococcus aureus, Pseudomonas fluorescens, and five other species tested in this study. The strain seemed to possess only one kind of catalase, according to the results of polyacrylamide gel electrophoresis of the cell extract. The optimum temperature for catalase activity was about 30 degreesC, which was about 20 degreesC lower than that for bovine catalase activity. Electron microscopic observation revealed that the surface of the microorganism was covered by blebs. Although the isolate was nonflagellated, its taxonomic position on the basis of physiological and biochemical characteristics and analysis of 16S rRNA sequence and DNA-DNA relatedness data indicated that strain S-1 is a new species belonging to the genus Vibrio. Accordingly, we propose the name Vibrio rumoiensis. The type strain is S-1 (FERM P-14531).",
+      "journal": "Applied and environmental microbiology",
+      "year": 1999,
+      "pub_date": "1999-01-01",
+      "authors": "Yumoto I; Iwata H; Sawabe T; Ueno K; Ichise N; ... (+3)",
+      "first_author": "Yumoto I",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11701827",
+      "doi": "10.1146/annurev.phyto.37.1.335",
+      "title": "THE TOMATO-CLADOSPORIUM FULVUM INTERACTION: A Versatile Experimental System to Study Plant-Pathogen Interactions.",
+      "abstract": "Over the past 20 years, the interaction between the biotrophic fungal pathogen Cladosporium fulvum and tomato has developed into a versatile experimental system for molecular plant pathology and resistance breeding. This interaction provided the resources for cloning of fungal avirulence genes for the first time and interesting clues on recognition of their extracellular products by tomato, as well as mechanisms employed by the fungus to circumvent this recognition. A wealth of information has become available on the structure and genomic organization of Cf resistance genes. The occurrence of many clustered Cf homologues allows the generation of new genes with additional recognitional specificities by reshuffling. It is anticipated that potentially all proteins secreted by C. fulvum are recognized by one or more individuals in a population of tomato genotypes, a hypothesis that has been experimentally confirmed. The future challenge will be to elucidate the mechanisms of perception of avirulence factors and the subsequent signaling eventually leading to activation of host defense responses.",
+      "journal": "Annual review of phytopathology",
+      "year": 1999,
+      "pub_date": "1999-01-01",
+      "authors": "Joosten MHAJ; de Wit PJGM",
+      "first_author": "Joosten MHAJ",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9892708",
+      "doi": "10.1073/pnas.96.2.766",
+      "title": "Involvement of specific calmodulin isoforms in salicylic acid-independent activation of plant disease resistance responses.",
+      "abstract": "The Ca2+ signal is essential for the activation of plant defense responses, but downstream components of the signaling pathway are still poorly defined. Here we demonstrate that specific calmodulin (CaM) isoforms are activated by infection or pathogen-derived elicitors and participate in Ca2+-mediated induction of plant disease resistance responses. Soybean CaM (SCaM)-4 and SCaM-5 genes, which encode for divergent CaM isoforms, were induced within 30 min by a fungal elicitor or pathogen, whereas other SCaM genes encoding highly conserved CaM isoforms did not show such response. This pathogen-triggered induction of these genes specifically depended on the increase of intracellular Ca2+ level. Constitutive expression of SCaM-4 and SCaM-5 in transgenic tobacco plants triggered spontaneous induction of lesions and induces an array of systemic acquired resistance (SAR)-associated genes. Surprisingly, these transgenic plants have normal levels of endogenous salicylic acid (SA). Furthermore, coexpression of nahG gene did not block the induction of SAR-associated genes in these transgenic plants, indicating that SA is not involved in the SAR gene induction mediated by SCaM-4 or SCaM-5. The transgenic plants exhibit enhanced resistance to a wide spectrum of virulent and avirulent pathogens, including bacteria, fungi, and virus. These results suggest that specific CaM isoforms are components of a SA-independent signal transduction chain leading to disease resistance.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1999,
+      "pub_date": "1999-01-19",
+      "authors": "Heo W D; Lee S H; Kim M C; Kim J C; Chung W S; ... (+6)",
+      "first_author": "Heo W D",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

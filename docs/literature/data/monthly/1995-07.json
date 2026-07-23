@@ -1,0 +1,172 @@
+{
+  "month": "1995-07",
+  "generated": "2026-07-13 02:59:42",
+  "total": 7,
+  "by_category": {
+    "Detection_Methods": 2,
+    "New_Virus": 1,
+    "Bromoviridae": 1,
+    "Host_Virus_Interactions": 1,
+    "Antiviral_Resistance_Genes": 1,
+    "Control_Management": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "9049385",
+      "doi": "10.1099/0022-1317-76-7-1801",
+      "title": "The complete nucleotide sequence of the RNA 3 of lilac ring mottle ilarvirus.",
+      "abstract": "The nucleotide sequence of lilac ring mottle ilarvirus (LRMV) RNA 3 consists of 2287 nucleotides and contains two open reading frames (ORF). The first encodes a putative translation product of 285 amino acids (Mr 31 308) and the second encodes a putative translation product of 206 amino acids (Mr 22751). The 3' terminal nucleotides can be folded into a loop structure similar to models proposed for other ilarviruses, although the last four nucleotides are UCGC not AUGC. The absence of the terminal AUGC motif in both LRMV and two isolates of apple mosaic ilarvirus (ApMV) provides circumstantial evidence which confirms the importance of AUGC motifs upstream of the terminal AUGC in the protein binding function associated with these models. Although the 3' terminal structure of LRMV exhibits similarities to that of ApMV, comparison of the putative translation products of the two ORFs with similar products for other ilarviruses showed greatest identity with citrus leaf rugose (CiLRV) and citrus variegation (CVV) ilarviruses both of which are members of subgroup 2 of this genus. Thus it is proposed that LRMV be reassigned to subgroup 2 rather than remaining in its current subgroup, 7, or being reassigned to subgroup 3 which contains ApMV.",
+      "journal": "The Journal of general virology",
+      "year": 1995,
+      "pub_date": "1995-07-01",
+      "authors": "Scott S W; Ge X",
+      "first_author": "Scott S W",
+      "categories": [
+        "New_Virus",
+        "Bromoviridae"
+      ],
+      "virus_name": "丁香环斑驳等轴易变环斑病毒(Lilac ring mottle ilarvirus, LRMV)",
+      "taxonomy": "Bromoviridae, Ilarvirus",
+      "host_plant": "丁香(lilac)",
+      "location": "未提及",
+      "results": "RNA 3长2287 nt，含两个ORF，分别编码31.3 kDa和22.8 kDa的蛋白；3'端可形成环结构，但末端为UCGC而非AUGC；与柑橘叶皱病毒和柑橘杂色病毒相似性最高。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "7622041",
+      "doi": "10.1016/0378-1119(95)00173-4",
+      "title": "Detection of cleavage products from an in vivo transcribed cis hairpin ribozyme in turnips using the CaMV plant virus.",
+      "abstract": "In order to examine ribozyme (Rz) activity in vivo, we have adapted a virus to deliver Rz to plants. DNA fragments that code for both active and mutant cis-hairpin Rz were cloned into the double-stranded DNA plant virus, cauliflower mosaic virus (CaMV). These Rz constructs successfully infected Brassica campestris rapa (turnip). The plants that were infected with the active-Rz construct showed, on average, a one-week delay in the appearance of viral symptoms, when compared to the mutant-Rz control. Since CaMV replicates through reverse transcription of a full-length RNA intermediate, Rz cloned into the CaMV DNA should be transcribed within this viral RNA. If these Rz constructs cleave, the amount of intact virus RNA should be reduced, resulting in attenuated viral symptoms. In addition, lysate RNase protection assays showed fragments corresponding to the sizes of both the 5' and 3' cis cleavage products in the active Rz tissue. No cleavage products were observed from plant tissue infected with the mutant Rz. Both the attenuated systemic viral symptoms and the cleavage products from the protection assay strongly support in vivo transcription and cleavage of this hairpin Rz. This is the first report of an in vivo transcribed Rz showing cleaved products by direct RNA analysis (non-PCR) in plants or animals.",
+      "journal": "Gene",
+      "year": 1995,
+      "pub_date": "1995-07-04",
+      "authors": "Borneman J; Tritz R; Hampel A; Altschuler M",
+      "first_author": "Borneman J",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "Cauliflower mosaic virus (CaMV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7580844",
+      "doi": "",
+      "title": "PCR and non-isotopic labeling techniques for plant virus detection.",
+      "abstract": "PCR technology permits the detection of viruses at levels several orders of magnitude lower than is possible by other methods. This high sensitivity facilitates detection of virus sequences during the early stages of infection of plants and in soil and vector samples. Early detection of beet necrotic yellow vein virus (BNYVV) in Beta vulgaris is an important part of the strategy for prevention of the spread of rhizomania, a commercially significant disease of sugar beet. A diagnostic test for BNYVV has been developed. This test involves amplification of the viral genome by PCR coupled with non-isotopic labeling and detection of specific sequences. The PCR amplification of BNYVV sequences has been optimized with respect to primer design, sample preparation and reaction conditions. Several non-isotopic labeling strategies for signal amplification have been compared. Hybridization with digoxigenin-labelled cDNA permits the most sensitive detection of PCR products and is the most appropriate method for routine diagnosis. These observations are discussed in the context of the application of PCR for detecting a wide range of viruses.",
+      "journal": "Cellular and molecular biology (Noisy-le-Grand, France)",
+      "year": 1995,
+      "pub_date": "1995-07-01",
+      "authors": "Fenby N S; Scott N W; Slater A; Elliott M C",
+      "first_author": "Fenby N S",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "甜菜坏死黄脉病毒（Beet necrotic yellow vein virus, BNYVV）",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "24414751",
+      "doi": "10.1007/BF00364618",
+      "title": "Application of recombinant DNA technology to plant protection: molecular approaches to engineering virus resistance in crop plants.",
+      "abstract": "Developments in plant tissue culture, plant transformation and regeneration, and improvements in techniques to isolate and manipulate viral genes have led to the exploitation of the concept of 'cross protection': turning the virus onto itself and controlling it with its own genes. By introducing and expressing genes of viral origin in crop plants, scientists have engineered resistance to several plant viruses. Some of the approaches, used singly or in combination, include expression of viral-coat protein, untranslatable sense or antisense RNA, satellite RNA, virusspecific 'neutralizing' antibody genes, plant viral replicase, protease or movement proteins and defective, interfering RNA. All of these approaches have resulted in manifestation of virus resistance to varying degrees in several commercially important crop plants. This review summarizes the recent advances in engineering virus resistance using the above approaches, and lists specific examples of their use in cultivated crop plants of economic importance.",
+      "journal": "World journal of microbiology & biotechnology",
+      "year": 1995,
+      "pub_date": "1995-07-01",
+      "authors": "Pappu H R; Niblett C L; Lee R F",
+      "first_author": "Pappu H R",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "多种植物病毒（未具体指定）",
+      "taxonomy": "",
+      "host_plant": "多种重要经济作物",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11607554",
+      "doi": "10.1073/pnas.92.14.6597",
+      "title": "NDR1, a locus of Arabidopsis thaliana that is required for disease resistance to both a bacterial and a fungal pathogen.",
+      "abstract": "We have employed Arabidopsis thaliana as a model host plant to genetically dissect the molecular pathways leading to disease resistance. A. thaliana accession Col-0 is susceptible to the bacterial pathogen Pseudomonas syringae pv. tomato strain DC3000 but resistant in a race-specific manner to DC3000 carrying any one of the cloned avirulence genes avrB, avrRpm1, avrRpt2, and avrPph3. Fast-neutron-mutagenized Col-0 M2 seed was screened to identify mutants susceptible to DC3000(avrB). Disease assays and analysis of in planta bacterial growth identified one mutant, ndr1-1 (nonrace-specific disease resistance), that was susceptible to DC3000 expressing any one of the four avirulence genes tested. Interestingly, a hypersensitive-like response was still induced by several of the strains. The ndr1-1 mutation also rendered the plant susceptible to several avirulent isolates of the fungal pathogen Peronospora parasitica. Genetic analysis of ndr1-1 demonstrated that the mutation segregated as a single recessive locus, located on chromosome III. Characterization of the ndr1-1 mutation suggests that a common step exists in pathways of resistance to two unrelated pathogens.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1995,
+      "pub_date": "1995-07-03",
+      "authors": "Century K S; Holub E B; Staskawicz B J",
+      "first_author": "Century K S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7561898",
+      "doi": "10.1021/np50121a009",
+      "title": "Addition of methyl thioglycolate and benzylamine to (Z)-ligustilide, a bioactive unsaturated lactone constituent of several herbal medicines. An improved synthesis of (Z)-ligustilide.",
+      "abstract": "(Z)-Ligustilide [1] is a dihydrophthalide purported to be the active ingredient of Ligusticum plant species widely used as herbal medicines in the Orient and in Native American and Hispanic cultures. It readily underwent 1,6-conjugate addition with methyl thioglycolate in the presence of triethylamine. The methyl thioglycolate reaction also yielded a product from addition to the C-6-C-7 double bond and a diadduct from both 1,6-addition and addition to the C-6-C-7 bond. Reaction of 1 with benzylamine did not afford a 1,6-adduct, but yielded instead an N-benzyllactam, presumably formed by rearrangement from initial 1,2-addition to the carbonyl. An improved total synthesis of 1 was developed. (Z)-Ligustilide had weak antiviral properties and weak antimicrobial activity against Gram-positive, Gram-negative, and yeast microorganisms. The broad biological activity of 1 and its electrophilic reactivity are consistent with the use of Ligusticum species in folk medicine.",
+      "journal": "Journal of natural products",
+      "year": 1995,
+      "pub_date": "1995-07-01",
+      "authors": "Beck J J; Stermitz F R",
+      "first_author": "Beck J J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7624340",
+      "doi": "10.1073/pnas.92.15.6901",
+      "title": "Expression of a flower-specific Myb protein in leaf cells using a viral vector causes ectopic activation of a target promoter.",
+      "abstract": "The promoter of the bean PAL2 gene (encoding phenylalanine ammonia-lyase; EC 4.3.1.5) is a model for studies of tissue-restricted gene expression in plants. Petal epidermis is one of the tissues in which this promoter is activated in tobacco. Previous work suggested that a major factor establishing the pattern of PAL2 expression in tobacco petals is the tissue distribution of a protein closely related to Myb305, which is a Myb-like transcriptional activator from snapdragon. In the present work, we show that Myb305 expression in tobacco leaves causes ectopic activation of the PAL2 promoter. To achieve Myb305 expression in planta, a viral expression vector was used. This approach combines the utility of transient assays with the possibility of direct biochemical detection of the introduced factor and may have wider application for studying the function of plant transcription factors.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1995,
+      "pub_date": "1995-07-18",
+      "authors": "Sablowski R W; Baulcombe D C; Bevan M",
+      "first_author": "Sablowski R W",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

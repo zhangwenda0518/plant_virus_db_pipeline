@@ -1,0 +1,126 @@
+{
+  "month": "1991-09",
+  "generated": "2026-07-13 02:59:42",
+  "total": 5,
+  "by_category": {
+    "Host_Virus_Interactions": 2,
+    "New_Virus": 1,
+    "Molecular_Characterization": 1,
+    "Transmission_Epidemiology": 1,
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "1891367",
+      "doi": "10.1093/nar/19.17.4767",
+      "title": "Nucleotide sequence of a new viroid species, citrus bent leaf viroid (CBLVd) isolated from grapefruit in Israel.",
+      "abstract": "",
+      "journal": "Nucleic acids research",
+      "year": 1991,
+      "pub_date": "1991-09-11",
+      "authors": "Ashulin L; Lachman O; Hadas R; Bar-Joseph M",
+      "first_author": "Ashulin L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "citrus bent leaf viroid (CBLVd)",
+      "taxonomy": "类病毒 (Viroid)",
+      "host_plant": "葡萄柚 (grapefruit)",
+      "location": "以色列",
+      "results": "获得了CBLVd的完整核苷酸序列，证实为新类病毒物种。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1881922",
+      "doi": "10.1073/pnas.88.17.7887",
+      "title": "Amino acid substitutions in the coat protein result in loss of insect transmissibility of a plant virus.",
+      "abstract": "Amino acids near the N terminus of the coat protein of tobacco vein mottling virus were deleted or altered by site-directed mutagenesis to determine the effect on aphid transmissibility of the virus. Deletion of a three amino acid sequence Asp-Ala-Gly, which is conserved in aphid-transmissible potyvirus isolates, abolished transmission. The mutation Ala----Thr in this triplet drastically reduced transmission, whereas the mutation Asp----Asn had no effect, and the mutation Asp----Lys consistently reverted to the wild-type residue. The mutation Lys----Glu, in the residue adjacent to the glycine of the triplet, drastically reduced transmission, whereas the mutation Gln----Pro, seven residues downstream from the glycine had no effect. Comparison of the sequences of other potyviruses suggests that the presence of a glycine residue at the third position of the Asp-Ala-Gly triplet is critical for aphid transmissibility and that certain changes in the residues adjacent to this position abolish or greatly reduce aphid transmissibility.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1991,
+      "pub_date": "1991-09-01",
+      "authors": "Atreya P L; Atreya C D; Pirone T P",
+      "first_author": "Atreya P L",
+      "categories": [
+        "Molecular_Characterization",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "烟草脉斑驳病毒（tobacco vein mottling virus）",
+      "taxonomy": "马铃薯Y病毒科（Potyviridae），马铃薯Y病毒属（Potyvirus）",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1955492",
+      "doi": "10.1016/0166-0934(91)90123-h",
+      "title": "Rapid detection of a plant virus by solution hybridization using oligonucleotide probes.",
+      "abstract": "A novel solution hybridization method for the diagnosis of a plant virus was evaluated. Synthetic oligonucleotide probes were used for the detection of potato virus X (PVX) in crude leaf sap extracts by hybridization in solution. Three 40-nucleotide-long oligonucleotide probes complementary to RNA sequences of potato virus X near the 3' end were synthesized. Two probes were 32P-labelled and one biotinylated. The three probes were allowed to form hybrids with the target viral nucleic acid in solution, and the formed hybrids were isolated with the aid of the biotinylated capture probe using avidin polystyrene beads after the reaction. Alternatively, hybrids were captured from the poly(A) tail of the viral RNA on oligo(dT) cellulose. The maximum signal was obtained after 4 h hybridization. About 70% of the maximum signal was obtained after 2 h hybridization. Sensitivity with the two 32P-labelled oligonucleotide probes was 1-5 x 10(7) molecules of PVX RNA. This corresponds to 0.6-3 ng of the virus. Crude leaf sap did not interfere with the detection of the virus. These results suggest that this solution hybridization method permits rapid detection of a plant virus in crude plant sap without sample pretreatment and may thus open new avenues for the development of a nucleic-acid-based ELISA-like diagnostic test for the detection of plant viruses.",
+      "journal": "Journal of virological methods",
+      "year": 1991,
+      "pub_date": "1991-09-01",
+      "authors": "Rouhiainen L; Laaksonen M; Karjalainen R; Söderlund H",
+      "first_author": "Rouhiainen L",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "马铃薯X病毒（Potato virus X, PVX）",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11607212",
+      "doi": "10.1073/pnas.88.18.8179",
+      "title": "Identification of a soluble salicylic acid-binding protein that may function in signal transduction in the plant disease-resistance response.",
+      "abstract": "It has recently been demonstrated that salicylic acid (SA) may serve as an endogenous signal molecule in the induction of systemic acquired resistance in tobacco and cucumber. In addition, SA is an endogenous regulator of heat and odor production in the inflorescence of some thermogenic plants. No information, however, is currently available concerning the mode(s) of action of SA in plant signal transduction. In a search for possible cellular factors that directly interact with SA, we have detected and partially characterized a SA-binding protein in tobacco leaves. The SA-binding activity is both SDS and proteinase sensitive and behaves as a soluble protein with an apparent mass of 650 kDa. The protein has an apparent Kd of 14 microM for SA, which is consistent with the range of physiological concentrations of SA observed for the induction of plant resistance responses. Furthermore, the ability of SA analogues to compete with SA for binding to this soluble protein is strictly correlated with their biological activity to induce the expression of genes associated with disease resistance. Biologically active analogues effectively inhibit SA binding while biologically inactive analogues do not. These results collectively indicate that this SA-binding protein may play a role in perceiving and transducing the SA signal to appropriate response elements, which ultimately activate one or more of the plant disease-resistance responses.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1991,
+      "pub_date": "1991-09-15",
+      "authors": "Chen Z; Klessig D F",
+      "first_author": "Chen Z",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1894629",
+      "doi": "",
+      "title": "Molecular cloning, induction and taxonomic distribution of caffeoyl-CoA 3-O-methyltransferase, an enzyme involved in disease resistance.",
+      "abstract": "Trans-Caffeoyl-CoA 3-O-methyltransferase is involved in the reinforcement of the plant cell wall under conditions that trigger the disease resistance response (Pakusch, A.-E., Kneusel, R.E., and Matern, U. (1989) Arch. Biochem. Biophys. 271, 488-494). Partial amino acid sequences of the enzyme from cultured parsley cells that had been treated with a crude elicitor were identified (Pakusch, A.-E., Matern, U., and Schiltz, E. (1991) Plant Physiol. 95, 137-143), and corresponding degenerated oligonucleotides of 29- and 30-nucleotide length were synthesized. Northern hybridizations with these probes revealed one specific RNA band, and the amount of this RNA appeared to be transiently induced upon elicitation of the cells. De novo enzyme synthesis was confirmed by Western blotting experiments using a specific antiserum. The time course of induction closely followed the pattern observed for phenylalanine ammonia-lyase and suggested the operational coordination of the methyltransferase with the general phenylpropanoid pathway in vivo. Full size cDNA of 1.258 kilobases was isolated in lambda gt11, sequenced and found to contain a remarkably long 5'-untranslated leader sequence followed by an open reading frame that codes for a 241-residue polypeptide representing the 27-kDa subunit of the native, dimeric parsley enzyme. Almost no homology was found to protein sequences filed in data banks. Southern hybridization with genomic DNA suggested that only one or two copies of the respective gene(s) are present in the parsley genome. Caffeoyl-CoA-specific methyltransferase activity was demonstrated in taxonomically widely diverse plants such as Dianthus caryophyllus (Caryophyllaceae), Carthamus tinctorius (Asteraceae) or Daucus carota, and Ammi majus (Apiaceae) where it is commonly induced by elicitor treatment. In Northern blots with RNA from Ammi or Daucus, parsley cDNA hybridized specifically to one band comparable in size to the parsley RNA, whereas Dianthus and Carthamus appear to code for slightly larger RNAs (roughly 1.45 and 1.3 kilobases, respectively). Slot-blot hybridizations revealed in all instances the rapid and transient increase of mRNA levels in response to elicitation. This emphasizes the integral role of the enzyme in disease resistance expression in plants far beyond parsley and also illustrates a new physiological context for the induction of 4-coumarate:CoA ligase.",
+      "journal": "The Journal of biological chemistry",
+      "year": 1991,
+      "pub_date": "1991-09-15",
+      "authors": "Schmitt D; Pakusch A E; Matern U",
+      "first_author": "Schmitt D",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

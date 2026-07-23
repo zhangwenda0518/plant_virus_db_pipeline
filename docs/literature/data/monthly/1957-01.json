@@ -1,0 +1,56 @@
+{
+  "month": "1957-01",
+  "generated": "2026-07-13 02:59:41",
+  "total": 2,
+  "by_category": {
+    "New_Virus": 1,
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "13496912",
+      "doi": "",
+      "title": "[Dependence of incidence of new virus strains on the culture temperature of the host plants].",
+      "abstract": "",
+      "journal": "Zeitschrift fur induktive Abstammungs- und Vererbungslehre",
+      "year": 1957,
+      "pub_date": "1957-01-01",
+      "authors": "MUNDRY K W",
+      "first_author": "MUNDRY K W",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "未提及",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "未提及",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "13435803",
+      "doi": "",
+      "title": "[The electron microscope in diagnosis of plant virus diseases; measuring of rod and string-like virus sections].",
+      "abstract": "",
+      "journal": "Archiv fur Mikrobiologie",
+      "year": 1957,
+      "pub_date": "1957-01-01",
+      "authors": "BRANDES J; PAUL H L",
+      "first_author": "BRANDES J",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

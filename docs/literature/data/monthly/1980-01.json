@@ -1,0 +1,123 @@
+{
+  "month": "1980-01",
+  "generated": "2026-07-13 02:59:41",
+  "total": 5,
+  "by_category": {
+    "Viral_Diversity_Ecology": 3,
+    "Molecular_Characterization": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "7024292",
+      "doi": "10.1016/0166-0934(80)90014-2",
+      "title": "Hen egg yolk as a source of antiviral antibodies in the enzyme-linked immunosorbent assay (ELISA): a comparison of two plant viruses.",
+      "abstract": "A method of raising antibodies against plant viruses in hen egg yolk is described. Laying hens were immunized with citrus tristeza virus (CTV) or tobacco mosaic virus-avocado isolate (TMV-A). Anti-viral antibodies in the yolks of sequentially laid eggs as well as in the serum were titrated by the (heterologous) antiglobulin double antibody sandwich form of the enzyme-linked immunosorbent assay (HADAS-ELISA). Antibodies first appeared in yolk 7 days after injection and peak levels were attained on day 9-11; these levels persisted for about 6-12 days. Non-specific yolk antibodies were removed by absorption with an extract of uninfected plant tissue. Using the HADAS-ELISA technique we found that yolk titres were equal to, or higher than those in serum. The benefits of using laying hens over conventional laboratory animals as a source of antiviral antibody are discussed.",
+      "journal": "Journal of virological methods",
+      "year": 1980,
+      "pub_date": "1980-01-01",
+      "authors": "Bar-Joseph M; Malkinson M",
+      "first_author": "Bar-Joseph M",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "柑橘衰退病毒(CTV)和烟草花叶病毒-鳄梨分离株(TMV-A)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "6771224",
+      "doi": "10.1159/000149154",
+      "title": "Application of single radial immunodiffusion for qualitative comparison of plant virus particles.",
+      "abstract": "The three fundamental types of precipitin patterns obtained with plant viruses by double radial immunodiffusion (DRID) tests can also be obtained by single radial immunodiffusion (SRID) tests. Using virus antigens that were serologically identical or unrelated, the reaction patterns were readily recognized. However, the precipitin reaction corresponding to the spur in DRID tests using virus antigens that were partially identical serologically was difficult to distinguish. It seems, therefore, that when virus isolates are serologically closely related, DRID should be preferred to SRID. Different viruses in a mixed infection can be successfully distinguished by SRID and also by 'rocket' immunoelectrophoresis.",
+      "journal": "Intervirology",
+      "year": 1980,
+      "pub_date": "1980-01-01",
+      "authors": "Juretić N; Mamula D",
+      "first_author": "Juretić N",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7434917",
+      "doi": "",
+      "title": "[Role of the Far Eastern region in influenza virus ecology].",
+      "abstract": "",
+      "journal": "Vestnik Akademii meditsinskikh nauk SSSR",
+      "year": 1980,
+      "pub_date": "1980-01-01",
+      "authors": "L'vov D K",
+      "first_author": "L'vov D K",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "6258849",
+      "doi": "10.1016/0147-9571(80)90038-7",
+      "title": "Equine influenza--a segment in influenza virus ecology.",
+      "abstract": "",
+      "journal": "Comparative immunology, microbiology and infectious diseases",
+      "year": 1980,
+      "pub_date": "1980-01-01",
+      "authors": "Tůmová B",
+      "first_author": "Tůmová B",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7460129",
+      "doi": "",
+      "title": "[Ecology of Soldado virus: apparent lack of a viral inhibitor in th tissues of the vector tick Ornithodoros (Alectorobius) maritimus Vermeil and Marguet 1967].",
+      "abstract": "It was previously postulated by others that suspensions of ticks O. (A.) maritmus may contain virucidal material (viral inhibitor) for Soldado virus leading to observe different infection rates according as the ticks were tested individually or in pools. In order to test this hypothesis, suspensions of nymphs of this species originating from a laboratory breeding stock, were mixed with Soldado virus before inoculation to suckling mice. No difference in mortality was observed between the mice receiving the virus exposed to tick suspensions and the controls. So, it seems unlike a viral inhibitor was responsible for the phenomenon. Other factors involved in Soldado virus ecology and possibly influencing the virus isolation efficiency are briefly discussed.",
+      "journal": "Bulletin de la Societe de pathologie exotique et de ses filiales",
+      "year": 1980,
+      "pub_date": "1980-01-01",
+      "authors": "Chastel C; Roguès G",
+      "first_author": "Chastel C",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

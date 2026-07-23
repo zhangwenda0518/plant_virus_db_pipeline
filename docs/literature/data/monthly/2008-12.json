@@ -1,0 +1,283 @@
+{
+  "month": "2008-12",
+  "generated": "2026-07-13 02:59:42",
+  "total": 44,
+  "by_category": {
+    "New_Virus": 16,
+    "Antiviral_Resistance_Genes": 10,
+    "Host_Virus_Interactions": 7,
+    "Control_Management": 4,
+    "Transmission_Epidemiology": 4,
+    "Viral_Diversity_Ecology": 3,
+    "Molecular_Characterization": 2,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "18643998",
+      "doi": "10.1111/j.1365-313X.2008.03630.x",
+      "title": "Mechanism of plant eIF4E-mediated resistance against a Carmovirus (Tombusviridae): cap-independent translation of a viral RNA controlled in cis by an (a)virulence determinant.",
+      "abstract": "Translation initiation factors are universal determinants of plant susceptibility to RNA viruses, but the underlying mechanisms are poorly understood. Here, we show that a sequence in the 3' untranslated region (3'-UTR) of a viral genome that is responsible for overcoming plant eIF4E-mediated resistance (virulence determinant) functions as a 3' cap-independent translational enhancer (3'-CITE). The virus/plant pair studied here is Melon necrotic spot virus (MNSV) and melon, for which a recessive resistance controlled by melon eIF4E was previously described. Chimeric viruses between virulent and avirulent isolates enabled us to map the virulence and avirulence determinants to 49 and 26 nucleotides, respectively. The translational efficiency of a luc reporter gene flanked by 5'- and 3'-UTRs from virulent, avirulent and chimeric viruses was analysed in vitro, in wheatgerm extract, and in vivo, in melon protoplasts, showing that: (i) the virulence determinant mediates the efficient cap-independent translation in vitro and in vivo; (ii) the avirulence determinant was able to promote efficient cap-independent translation in vitro, but only when eIF4E from susceptible melon was added in trans, and, coherently, only in protoplasts of susceptible melon, but not in the protoplasts of resistant melon; (iii) these activities required the 5'-UTR of MNSV in cis. Thus, the virulence and avirulence determinants function as 3'-CITEs. The activity of these 3'-CITEs was host specific, suggesting that an inefficient interaction between the viral 3'-CITE of the avirulent isolate and eIF4E of resistant melon impedes the correct formation of the translation initiation complex at the viral RNA ends, thereby leading to resistance.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2008,
+      "pub_date": "2008-12-01",
+      "authors": "Truniger Verónica; Nieto Cristina; González-Ibeas Daniel; Aranda Miguel",
+      "first_author": "Truniger Verónica",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Melon necrotic spot virus (MNSV)",
+      "taxonomy": "",
+      "host_plant": "甜瓜 (melon)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18835780",
+      "doi": "10.1016/j.plaphy.2008.08.002",
+      "title": "Abscisic acid is involved in chitosan-induced resistance to tobacco necrosis virus (TNV).",
+      "abstract": "Chitosan (CHT) antiviral activity has been further investigated in the pathosystem Phaseolus vulgaris - tobacco necrosis virus (TNV). CHT application elicited both callose apposition and ABA accumulation in leaf tissues, at 12 and 24h after treatment, respectively, and induced a high level of resistance against TNV. Besides, treatment with the ABA inhibitor nordihydroguaiaretic acid (NDGA), before CHT application, reduced both callose deposition and plant resistance to the virus, thus indicating the involvement of ABA in these processes. Exogenous application of ABA also induced a significant resistance to TNV, though this resistance was abolished by NDGA pre-treatment. These results, overall, indicate that the rise of ABA synthesis induced by chitosan plays an important role in enhancing callose deposition but the latter has only a partial effect on virus spreading, which must be constraint by other resistance mechanisms.",
+      "journal": "Plant physiology and biochemistry : PPB",
+      "year": 2008,
+      "pub_date": "2008-12-01",
+      "authors": "Iriti Marcello; Faoro Franco",
+      "first_author": "Iriti Marcello",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草坏死病毒 (TNV)",
+      "taxonomy": "",
+      "host_plant": "菜豆 (Phaseolus vulgaris)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18775500",
+      "doi": "10.1016/j.cbpb.2008.08.005",
+      "title": "A novel anti-plant viral protein from coelomic fluid of the earthworm Eisenia foetida: purification, characterization and its identification as a serine protease.",
+      "abstract": "A novel protein showing strong antiviral activities against cucumber mosaic virus (CMV) and tomato mosaic virus (TMV) was purified from the coelomic fluid of the earthworm Eisenia foetida. The protein was characterized as a cold-adapted serine protease. Its molecular weight was estimated to be 27,000 by SDS-PAGE. The enzyme was most active at pH 9.5 and 40-50 degrees C. The protease activity at 4 degrees C was 60% of that obtained at the optimal temperature. The activity was suppressed by various serine protease inhibitors. Partial N-terminal amino acid sequence of the enzyme showed homology with serine proteases of earthworms, E. foetida and Lumbricus rubellus previously studied. Our results suggest that the enzyme can be applicable as a potential antiviral factor against CMV, TMV, and other plant viruses.",
+      "journal": "Comparative biochemistry and physiology. Part B, Biochemistry & molecular biology",
+      "year": 2008,
+      "pub_date": "2008-12-01",
+      "authors": "Ueda Mitsuhiro; Noda Kanako; Nakazawa Masami; Miyatake Kazutaka; Ohki Satoshi; ... (+2)",
+      "first_author": "Ueda Mitsuhiro",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "黄瓜花叶病毒（CMV）和番茄花叶病毒（TMV）",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18792773",
+      "doi": "10.1007/s11262-008-0286-1",
+      "title": "Molecular characterization of a distinct bipartite begomovirus species infecting tomato in India.",
+      "abstract": "A distinct bipartite begomovirus was found associated with tomato plants showing yellowing, curling, and crumpling of the leaves, in a sub-temperate region in India. The complete DNA-A and DNA-B components were amplified through rolling circle amplification (RCA) using Phi-29 DNA polymerase and characterized. The DNA-A of the isolate was comprised of 2,756 nucleotides, encoding six open reading frames (ORFs) and DNA-B that of 2,725 nucleotides, encoding two ORFs. Genome organization of the isolate was typical of an old world bipartite begomovirus. Comparisons showed that DNA-A and its intergenic region (IR) have the highest sequence identity (86% and 84%, respectively) with the Tomato leaf curl New Delhi virus (ToLCNDV; DQ116885) and some other begomoviruses (>84%) reported from cucurbits and tomato. This data suggested that the isolate is a distinct begomovirus species for which a name Tomato leaf curl Palampur virus (ToLCPMV) is proposed. DNA-B showed the maximum sequence identity (73%) with Tomato leaf curl New Delhi virus-India-[Pakistan:Dargai:T5/6:2001] (AY150305). The common region (CR) of DNA-A and DNA-B showed 94% sequence similarity with each other. In the present study, phylogenetic relationship of this new species was also established with different begomoviruses reported from tomato and other begomoviruses showing highest homologies with complete DNA-A and DNA-B sequences. ToLCPMV is being reported from a sub-temperate region in India which was previously unaffected by begomoviruses and its whitefly vector.",
+      "journal": "Virus genes",
+      "year": 2008,
+      "pub_date": "2008-12-01",
+      "authors": "Kumar Yogesh; Hallan Vipin; Zaidi Aijaz A",
+      "first_author": "Kumar Yogesh",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "番茄曲叶帕伦普尔病毒 (Tomato leaf curl Palampur virus, ToLCPMV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "番茄 (Solanum lycopersicum)",
+      "location": "印度亚温带地区",
+      "results": "DNA-A 2756 nt，与ToLCNDV同源性86%；DNA-B 2725 nt，同源性73%；CR区同源性94%；确认为新种。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18781383",
+      "doi": "10.1007/s11262-008-0284-3",
+      "title": "The nucleotide sequence of a Polish isolate of Tomato torrado virus.",
+      "abstract": "A new virus was isolated from greenhouse tomato plants showing symptoms of leaf and apex necrosis in Wielkopolska province in Poland in 2003. The observed symptoms and the virus morphology resembled viruses previously reported in Spain called Tomato torrado virus (ToTV) and that in Mexico called Tomato marchitez virus (ToMarV). The complete genome of a Polish isolate Wal'03 was determined using RT-PCR amplification using oligonucleotide primers developed against the ToTV sequences deposited in Genbank, followed by cloning, sequencing, and comparison with the sequence of the type isolate. Phylogenetic analyses, performed on the basis of fragments of polyproteins sequences, established the relationship of Polish isolate Wal'03 with Spanish ToTV and Mexican ToMarV, as well as with other viruses from Sequivirus, Sadwavirus, and Cheravirus genera, reported to be the most similar to the new tomato viruses. Wal'03 genome strands has the same organization and very high homology with the ToTV type isolate, showing only some nucleotide and deduced amino acid changes, in contrast to ToMarV, which was significantly different. The phylogenetic tree clustered aforementioned viruses to the same group, indicating that they have a common origin.",
+      "journal": "Virus genes",
+      "year": 2008,
+      "pub_date": "2008-12-01",
+      "authors": "Budziszewska Marta; Obrepalska-Steplowska Aleksandra; Wieczorek Przemysław; Pospieszny Henryk",
+      "first_author": "Budziszewska Marta",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato torrado virus (ToTV) 波兰分离物 Wal'03",
+      "taxonomy": "未提及（与Sequivirus, Sadwavirus, Cheravirus属相关）",
+      "host_plant": "番茄（温室）",
+      "location": "波兰，大波兰省",
+      "results": "波兰分离物Wal'03与ToTV原型株高度同源，基因组组织相同，仅有少数核苷酸和氨基酸变化；与ToMarV差异显著。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18815304",
+      "doi": "10.1128/JVI.01343-08",
+      "title": "Cymbidium ringspot virus harnesses RNA silencing to control the accumulation of virus parasite satellite RNA.",
+      "abstract": "Cymbidium ringspot virus (CymRSV) satellite RNA (satRNA) is a parasitic subviral RNA replicon that replicates and accumulates at the cost of its helper virus. This 621-nucleotide (nt) satRNA species has no sequence similarity to the helper virus, except for a 51-nt-long region termed the helper-satellite homology (HSH) region, which is essential for satRNA replication. We show that the accumulation of satRNA strongly depends on temperature and on the presence of the helper virus p19 silencing suppressor protein, suggesting that RNA silencing plays a crucial role in satRNA accumulation. We also demonstrate that another member of the Tombusvirus genus, Carnation Italian ringspot virus (CIRV), supports satRNA accumulation at a higher level than CymRSV. Our results suggest that short interfering RNA (siRNA) derived from CymRSV targets satRNA more efficiently than siRNA from CIRV, possibly because of the higher sequence similarity between the HSH regions of the helper and CIRV satRNAs. RNA silencing sensor RNA carrying the putative satRNA target site in the HSH region was efficiently cleaved when transiently expressed in CymRSV-infected plants but not in CIRV-infected plants. Strikingly, replacing the CymRSV HSH box2 sequence with that of CIRV restores satRNA accumulation both at 24 degrees C and in the absence of the p19 suppressor protein. These findings demonstrate the extraordinary adaptation of this virus to its host in terms of harnessing the antiviral silencing response of the plant to control the virus parasite satRNA.",
+      "journal": "Journal of virology",
+      "year": 2008,
+      "pub_date": "2008-12-01",
+      "authors": "Pantaleo Vitantonio; Burgyán József",
+      "first_author": "Pantaleo Vitantonio",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Cymbidium ringspot virus (CymRSV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18842732",
+      "doi": "10.1128/JVI.01542-08",
+      "title": "Estimation of the effective number of founders that initiate an infection after aphid transmission of a multipartite plant virus.",
+      "abstract": "The fecundity of RNA viruses can be very high. Thus, it is often assumed that viruses have large populations, and RNA virus evolution has been mostly explained using purely deterministic models. However, population bottlenecks during the virus life cycle could result in effective population numbers being much smaller than reported censuses, and random genetic drift could be important in virus evolution. A step at which population bottlenecks may be severe is host-to-host transmission. We report here an estimate of the size of the population that starts a new infection when Cucumber mosaic virus (CMV) is transmitted by the aphid Aphis gossypii, based on the segregation of two CMV genotypes in plants infected by aphids that acquired the virus from plants infected by both genotypes. Results show very small effective numbers of founders, between one and two, both in experiments in which the three-partite genome of CMV was aphid transmitted and in experiments in which a fourth RNA, CMV satellite RNA, was also transmitted. These numbers are very similar to those published for Potato virus Y, which has a monopartite genome and is transmitted by aphids according to a different mechanism than CMV. Thus, the number of genomic segments seems not to be a major determinant of the effective number of founders. Also, our results suggest that the occurrence of severe bottlenecks during horizontal transmission is general for viruses nonpersistently transmitted by aphids, indicating that random genetic drift should be considered when modeling virus evolution.",
+      "journal": "Journal of virology",
+      "year": 2008,
+      "pub_date": "2008-12-01",
+      "authors": "Betancourt Mónica; Fereres Alberto; Fraile Aurora; García-Arenal Fernando",
+      "first_author": "Betancourt Mónica",
+      "categories": [
+        "Transmission_Epidemiology",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "Cucumber mosaic virus (CMV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19004869",
+      "doi": "10.1093/nar/gkn896",
+      "title": "Depurination within the intergenic region of Brome mosaic virus RNA3 inhibits viral replication in vitro and in vivo.",
+      "abstract": "Pokeweed antiviral protein (PAP) is a glycosidase of plant origin that has been shown to depurinate some viral RNAs in vitro. We have demonstrated previously that treatment of Brome mosaic virus (BMV) RNAs with PAP inhibited their translation in a cell-free system and decreased their accumulation in barley protoplasts. In the current study, we map the depurination sites on BMV RNA3 and describe the mechanism by which replication of the viral RNA is inhibited by depurination. Specifically, we demonstrate that the viral replicase exhibited reduced affinity for depurinated positive-strand RNA3 compared with intact RNA3, resulting in less negative-strand product. This decrease was due to depurination within the intergenic region of RNA3, between ORF3 and 4, and distant from the 3' terminal core promoter required for initiation of negative-strand RNA synthesis. Depurination within the intergenic region alone inhibited the binding of the replicase to full-length RNA3, whereas depurination outside the intergenic region permitted the replicase to initiate negative-strand synthesis; however, elongation of the RNA product was stalled at the abasic nucleotide. These results support a role of the intergenic region in controlling negative-strand RNA synthesis and contribute new insight into the effect of depurination by PAP on BMV replication.",
+      "journal": "Nucleic acids research",
+      "year": 2008,
+      "pub_date": "2008-12-01",
+      "authors": "Karran Rajita A; Hudak Katalin A",
+      "first_author": "Karran Rajita A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Brome mosaic virus (BMV)",
+      "taxonomy": "",
+      "host_plant": "大麦 (barley)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764319",
+      "doi": "10.1094/PDIS-92-12-1706B",
+      "title": "First Report of Rosa multiflora cryptic virus in Rosa multiflora in the Eastern United States.",
+      "abstract": "In the process of attempting to identify the rose rosette agent, double-stranded RNA was isolated from several symptomatic Rosa multiflora plants from northwestern Arkansas. The pattern of the dsRNA bands differed among the five samples used in this study, suggesting the presence of several viruses. Four of the five plants tested had two predominant bands of approximately 1.8 and 1.5 kbp, a pattern similar to that observed in plants infected with Fragaria chiloensis cryptic virus (FCCV; 3), and further steps were taken for the identification of the putative virus. One plant that only had the two predominant bands was chosen for further characterization using degenerate oligonucleotide primed (DOP)-PCR (4). Twenty clones were sequenced and all were found to be part of two contigs of 937 and 1,087 nucleotides that have been deposited in GenBank (Accession nos. EU350962 and EU350963). The two contigs had 82 and 72% nucleotide and 85 and 69% amino acid sequence identities with RNA 1 and 2 of FCCV, respectively; 98 and 99% amino acid sequence identities with Rose multiflora cryptic virus (RMCV; 2) RNA 1 and 3, respectively. Oligonucleotide primers F (5' gaatgggaactacgctttgc 3') and R (5' cgatgcttccaatgatgttg 3') designed to amplify a 196-bp region of RNA 1 of the virus were tested using ss and dsRNA templates and were shown to be virus specific after sequencing of multiple PCR amplicons. Just before submission of this manuscript, the complete sequence of RMCV, a virus isolated from R. multiflora showing rose spring dwarf symptoms was published (2). RMCV and the dsRNAs isolated from R. multiflora in Arkansas are the same species because they share 99% nucleotide sequence identity. Cryptic viruses are expected to be symptomless though mild symptoms have been associated with several cryptic viruses (1). The presence of RMCV has been verified in both symptomless and plants infected with two severe diseases of rose, thus, the virus could play a role in the phenotype of these diseases as part of a virus complex. To our knowledge, this is the first report of RMCV in the eastern United States, which is closley related to RMCV from California (2). In the review process of this note, it was brought to our attention that a similar virus named Rose cryptic virus 1 was being investigated in Mississippi (Genbank Accession Nos. EU413666-68), supporting the statement that this virus is probably widespread in Rosa germplasm. References: (1) L. Chen et al. Arch. Virol. 151:849, 2006. (2) N. M. Salem et al. Arch. Virol. 153:455, 2008. (3) I. E. Tzanetakis et al. Virus Genes 36:267, 2008. (4) I. E. Tzanetakis and R. R. Martin. J. Virol. Methods 149:167, 2008.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-12-01",
+      "authors": "Martin R R; Tzanetakis I E",
+      "first_author": "Martin R R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Rosa multiflora cryptic virus (RMCV)",
+      "taxonomy": "未提及",
+      "host_plant": "Rosa multiflora",
+      "location": "美国东部（阿肯色州西北部）",
+      "results": "获得两个contig（937和1087 nt），与FCCV核苷酸同源性72-82%，与RMCV氨基酸同源性98-99%；设计特异性引物检测到病毒在无症状及病株中存在。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764310",
+      "doi": "10.1094/PDIS-92-12-1709C",
+      "title": "First Report of Tomato chlorosis virus Infecting Tomato Crops in Brazil.",
+      "abstract": "During 2006 and 2007 in the region of Sumaré, state of São Paulo, Brazil, surveys were done on tomato (Solanum lycopersicum L.) virus diseases in three open field-grown crops. The data revealed low incidence (0.25 to 3.42%) of randomly distributed plants exhibiting interveinal chlorosis and some necrosis on the basal leaves. Symptoms were only observed on old fruit-bearing plants. Preliminary analysis of thin sections of symptomatic leaves from one plant by transmission electron microscopy revealed the presence of aggregates of thin, flexible, and elongated particles in some phloem vessels, suggesting infection with a member of the genus Crinivirus, family Closteroviridae. Total RNA was extracted separately from leaves of 10 symptomatic plants and used for one-step reverse transcription (RT)-PCR using the HS-11/HS-12 primer pair, which amplifies a fragment of 587 bp from the highly conserved region of the heat shock protein (HSP-70) homolog gene reported for Tomato infectious chlorosis virus (TICV) and Tomato chlorosis virus (ToCV) (1). The RT-PCR product was subsequently tested by nested-PCR for single detection of TICV and ToCV using primer pairs TIC-3/TIC-4 and ToC-5/ToC-6, respectively (1). Only one fragment of approximately 463 bp was amplified from 7 of the 10 plants with the primer pair specific for ToCV. No amplification was obtained with the primers specific for TICV. Two amplicons of 463 bp were purified and directly sequenced in both directions. Sequence comparisons of the 463-bp consensus sequence (GenBank Accession No. EU868927) revealed 99% identity with the reported sequence of ToCV from the United States (GenBank Accession No. AY903448) (3). Virus-free adults of Bemisia tabaci biotype B confined on symptomatic tomato leaves for a 24-h acquisition access period were able to transmit the virus to healthy tomato plants, which reproduced the original symptoms on the bottom leaves 65 days after inoculation under greenhouse conditions. Infection from transmission was confirmed by RT-PCR using the HS-11/HS-12 primer pair. In addition to B. tabaci biotype B, the greenhouse whitefly, Trialeurodes vaporariorum, has also been reported as a vector of ToCV, although it is less efficient than the B. tabaci biotype B in transmission of this virus (4). T. vaporariorum, which was previously considered limited to greenhouses, was recently reported in tomato and green bean (Phaseolus vulgaris L.) crops under field conditions in São Paulo State (2). Therefore, it might also contribute to the spread of ToCV in tomato crops in São Paulo. To our knowledge, this is the first report of ToCV in Brazil and South America. References: (1) C. I. Dovas et al. Plant Dis.86:1345, 2002. (2) A. L. Lourenção et al. Neotrop. Entomol. 37:89, 2008. (3) W. M. Wintermantel et al. Arch. Virol. 15:2287, 2005. (4) W. M. Wintermantel and G. C. Wisler. Plant Dis. 90:814, 2006.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-12-01",
+      "authors": "Barbosa J C; Teixeira A P M; Moreira A G; Camargo L E A; Filho A Bergamin; ... (+2)",
+      "first_author": "Barbosa J C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato chlorosis virus (ToCV)",
+      "taxonomy": "Closteroviridae, Crinivirus",
+      "host_plant": "番茄 (Solanum lycopersicum)",
+      "location": "巴西圣保罗州Sumaré地区",
+      "results": "7/10症状植物RT-PCR阳性，序列与ToCV美国分离物同源性99%；烟粉虱B生物型可传播病毒并重现症状。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764307",
+      "doi": "10.1094/PDIS-92-12-1710C",
+      "title": "First Report of Infection of Poison Hemlock and Celery by Apium virus Y in Washington State.",
+      "abstract": "A commercial field of celery (Apium graveolens var. dulce) cvs. Conquistador and Sabroso was planted with sets between 1 June and 10 July 2004 in Pierce County in western Washington (WA). In late August, many plants were stunted and showed chlorotic line patterns. One symptomatic plant and five nonsymptomatic plants were transferred to a greenhouse and grown at 22°C with supplemental lighting to extend day length to 16 h; foliage was trimmed back. The symptomatic plant and three nonsymptomatic plants developed a distinctive chlorotic line pattern when new foliage emerged in February. Two plants remained nonsymptomatic. Young foliage was tested by ELISA with the general potyvirus monoclonal antibody (Agdia, Inc., Elkhart, IN). All symptomatic plants yielded a positive result and the two nonsymptomatic plants were negative. Celery mosaic virus (CeMV) was previously reported to be widespread in WA (3), but primers specific for CeMV did not yield amplicons in reverse transcription (RT)-PCR from RNA isolated from symptomatic leaf tissue (RNeasy Plant Mini Kit: QIAGEN, Valencia, CA). General potyvirus primers (1) were used to amplify ≈1,700 nucleotides from the 3' terminus of the virus genome adjacent to the poly-A tail. Six amplicons from each of three independent reactions were cloned into pCR2.1 (Invitrogen, Carlsbad, CA) and sequenced (GenBank Accession No. FJ010827). Comparison with the nucleotide sequence database revealed 98 and 97% identity to Australian isolates of Apium virus Y (ApVY) (family Potyviridae) from parsley (GenBank Accession No. AF207594) and poison hemlock (Conium maculatum) (GenBank Accession No. AY049716) (4) and 91% identity to North American isolates of ApVY from celery and Ammi majus reported from California (GenBank Accession No. EU515126) and Florida (GenBank Accession No. EU255632), respectively. To our knowledge, this is the first report of a natural infection of celery by ApVY in WA. No other potyvirus sequences were identified in RT-PCR products from symptomatic celery. In 2008, in an effort to locate local samples of CeMV, poison hemlock plants were randomly collected in Benton, Walla Walla, and Whitman counties of eastern WA. No symptoms were observed and no CeMV was detected by RT-PCR in any of these plants. No ApVY was detected in 10 of 10 poison hemlock collected from Walla Walla County, but based on sequence analysis of RT-PCR amplicons, two of two plants collected from Benton and Whitman counties were infected with ApVY. In contrast to the WA isolates from celery, sequences from these poison hemlock plants (GenBank Accession No. FJ010828) were 98% identical to previously reported North American isolates of ApVY (GenBank Accession Nos. EU515126 and EU255632) and only 91% identical to Australian isolates (GenBank Accession Nos. AF207594 and AY049716). To our knowledge, this is the first report of ApVY in WA and the first report of a natural infection of poison hemlock in the United States. The celery and poison hemlock isolates reported in this study were from different geographic regions of the state and were only 91% identical. As is the case for other potyviruses (2), weeds such as poison hemlock may serve as a reservoir of ApVY in eastern WA where many plants of the family Apiaceae are grown commercially. References: (1) J. Chen et al. Arch. Virol. 146:757, 2001. (2) W. E. Howell and G. I. Mink. Plant Dis. Rep. 61:217, 1977. (3) W. E. Howell and G. I. Mink. Plant Dis. 65:277, 1981. (4) J. Moran et al. Arch. Virol. 147:1855, 2002.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-12-01",
+      "authors": "Eastwell K C; Glass J R; Seymour L M; Druffel K J",
+      "first_author": "Eastwell K C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Apium virus Y (ApVY)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "芹菜 (Apium graveolens var. dulce) 和毒参 (Conium maculatum)",
+      "location": "美国华盛顿州（西部皮尔斯县和东部本顿县、瓦拉瓦拉县、惠特曼县）",
+      "results": "芹菜和毒参分离物与已知ApVY分离物同源性91-98%；华盛顿州东西部分离物间同源性仅91%；毒参可能作为病毒储主。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30764308",
+      "doi": "10.1094/PDIS-92-12-1709B",
+      "title": "First Report of the Occurrence of African cassava mosaic virus in a Mosaic Disease of Soybean in Nigeria.",
+      "abstract": "African cassava mosaic virus (ACMV; genus Begomovirus, family Geminiviridae) is one of six viruses documented in cassava (Manihot esculenta Crantz.) plants showing cassava mosaic disease in sub-Saharan Africa (SSA). In addition to cassava, the natural host range of ACMV includes a few wild Manihot species, Jatropha multifida, and Ricinus communis L. in Euphorbiaceae, and Hewittia sublobata in Convolvulaceae. The experimental host range of ACMV includes Nicotiana sp. and Datura sp. in the Solanaceae (2). Recently, natural occurrence of ACMV was reported in Combretum confertum (Benth.), Leucana leucocephala (Lam.) De Witt, and Senna occidentalis (L.) Link belonging to Leguminasae from Nigeria (1,3). During reconnaissance studies conducted on soybean (Glycine max L. Merr.) in September and October of 2007 in the Ibadan (N = 19) and Benue (N = 23) regions and in February of 2008 in Ibadan (N = 16), we observed soybean showing yellow mosaic and mottling symptoms. Samples from these plants (N = 58) were tested by indirect ELISA and symptomatic leaves tested negative to Cucumber mosaic virus, Cowpea mottle virus, Southern bean mosaic virus, Tobacco ringspot virus, Soybean dwarf virus, Cowpea aphid-borne mosaic virus, Blackeye cowpea mosaic virus, Peanut mottle virus, and Broad bean mosaic virus, which have been documented in soybean in SSA. However, 8.6% of these samples (5 of 58) (one each from Ibadan and Benue in the 2007 survey and three from Ibadan in the 2008 survey) tested positive in triple-antibody sandwich-ELISA with a monoclonal antibody (SCR33) to ACMV. ELISA results were further confirmed by PCR with ACMV specific primers AL1/F and AR0/R that amplified a 987-bp DNA fragment corresponding to the intergenic region, AC-4 and AC-1 genes of DNA-A segment (4). The PCR product was cloned into pCR2.1 (Invitrogen, Carlsbad, CA) and three independent clones were sequenced in both orientations. Pairwise comparison of the derived consensus sequence (GenBank Accession No. EU367500) with corresponding ACMV sequence of ACMV isolate from Nigeria (GenBank Accession No. X17095) showed 98% identity at the nucleotide level. To further confirm the virus identity, complete nucleotide sequence of the DNA-A segment was determined by PCR amplification of viral DNA with four primers, cloning of overlapping products into pCR2.1 vector and sequencing. The derived sequence (2,781 nucleotides; GenBank Accession No. EU685385) was compared with the DNA sequences available at NCBI database using BLAST. This revealed 97% nucleotide sequence identity with ACMV-[NG:Ogo:90] (Accession No. AJ427910) and ACMV-[NG] (Accession No. X17095) from Nigeria. These results confirm the presence of ACMV in symptomatic soybean leaves. To our knowledge, this is the first report of soybean as a natural host of ACMV in SSA. On the basis of previous reports (1) and the results currently presented it seems that ACMV has a wide host range. References: (1) O. J. Alabi et al. Phytopathology (Abstr.) 97(suppl.):S3, 2007. (2) A. A. Brunt et al., eds. Plant viruses online: Descriptions and lists from the VIDE database. Version 20. Online publication, 1996. (3) F. O. Ogbe et al. Plant Dis. 90:548, 2006; (4) X. Zhou et al. J. Gen. Virol. 78:2101, 1997.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-12-01",
+      "authors": "Mgbechi-Ezeri J U; Alabi O J; Naidu R A; Kumar P Lava",
+      "first_author": "Mgbechi-Ezeri J U",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "African cassava mosaic virus (ACMV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "大豆 (Glycine max L. Merr.)",
+      "location": "尼日利亚，伊巴丹和贝努埃地区",
+      "results": "在58份样品中检测到5份阳性（8.6%），DNA-A序列与已知ACMV分离物有97-98%核苷酸同源性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

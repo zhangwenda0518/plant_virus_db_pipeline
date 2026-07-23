@@ -1,0 +1,102 @@
+{
+  "month": "1991-06",
+  "generated": "2026-07-13 02:59:42",
+  "total": 4,
+  "by_category": {
+    "New_Virus": 1,
+    "Molecular_Characterization": 1,
+    "Detection_Methods": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "2045786",
+      "doi": "10.1099/0022-1317-72-6-1199",
+      "title": "Identification of a new viroid as the putative causal agent of pear blister canker disease.",
+      "abstract": "A small RNA species with the structural and functional properties characteristic of viroids has been isolated from three different pear sources each of which induced symptoms of the pear blister canker (PBC) disease when indexed in the pear indicator A 20. A close association between this RNA and PBC disease was established, since two of the three studied sources were known to be affected by this malady only, and the viroid was not detected in healthy pear tissue. Moreover, the PBC-associated viroid (PBCVd) replicated when purified preparations were inoculated into cucumber and pear plants. PBCVd behaved in denaturing polyacrylamide gels as a circular RNA with a molecular size of approximately 315 nucleotide residues. Analysis by dot blot hybridization indicated that PBCVd shares similarities in sequence with peach latent mosaic viroid and hop stunt viroid, and to a lesser extent with apple scar skin viroid.",
+      "journal": "The Journal of general virology",
+      "year": 1991,
+      "pub_date": "1991-06-01",
+      "authors": "Flores R; Hernández C; Llácer G; Desvignes J C",
+      "first_author": "Flores R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "PBCVd (Pear blister canker viroid)",
+      "taxonomy": "未提及",
+      "host_plant": "梨 (pear), 黄瓜 (cucumber)",
+      "location": "未提及",
+      "results": "PBCVd为约315核苷酸的环状RNA，与桃潜隐花叶类病毒和酒花矮化类病毒序列相似，与苹果锈果类病毒相似度较低。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2059653",
+      "doi": "10.1016/0005-2736(91)90233-x",
+      "title": "Interaction of non-enveloped plant viruses and their viral coat proteins with phospholipid vesicles.",
+      "abstract": "The interaction of the non-enveloped plant viruses TMV (rod-shaped) and CCMV (spherical) and of their coat proteins in several well-defined aggregation states, with artificial membranes was investigated to study the early stages of the cellular infection process. Information about the separate steps in the interaction mechanisms was obtained by employing three assays, performed as a function of vesicle size, net membrane charge, pH and ionic strength. The assays allow to discriminate between aggregation of vesicles (turbidity assay) and membrane destabilization (vesicle leakage assay and lipid mixing assay). The aggregation of the vesicles is a result of electrostatic interactions between the viral material and vesicles surface (cross-linking), while the destabilization of the membrane is a result of penetration or bilayer disruption by hydrophobic protein domains. TMV virions and its coat protein, and CCMV virions, due to their net negative charge, predominantly interact with positively charged membranes. The coat protein of CCMV was found to interact with negatively charged membranes, an interaction that can be assigned to its basical N-terminal sequence. Changing the aggregational state of the viral coat proteins yielded most significant interactions in case of TMV coat protein aggregated in the disk form and CCMV coat protein aggregated in empty capsids with oppositely charged membranes. These protein aggregates are found to be the best compromise between efficiency (capacity of the protein to bridge vesicles and destabilize their membranes) and concentration of protein aggregates. The results are discussed with respect to previously proposed biological models of the early stages of plant virus infection.",
+      "journal": "Biochimica et biophysica acta",
+      "year": 1991,
+      "pub_date": "1991-06-18",
+      "authors": "Spruijt R B; Böhmer M R; Wilschut J; Hemminga M A",
+      "first_author": "Spruijt R B",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "TMV (烟草花叶病毒) 和 CCMV (豇豆花叶病毒)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1889835",
+      "doi": "",
+      "title": "Elimination of eggplant mottled crinkle virus using virazole in explant cultures of Solanum melongena L.",
+      "abstract": "Virazole (1-beta-D-ribofuranosyl-1,2,4-triazole-3-carboxamide; 100 and 150 mg/l) incorporated into brinjal explant culture medium induced in complete elimination of eggplant mottled crinkle virus - Indian isolate (EMCV-1) from infected explant cultures of S. melongena L. and production of virus free plant progeny. Acridine orange and ethidium bromide (150 ml/l) were also potent antiviral agents to some extent.",
+      "journal": "Indian journal of experimental biology",
+      "year": 1991,
+      "pub_date": "1991-06-01",
+      "authors": "Raj S K; Aminuddin; Aslam M; Singh B P",
+      "first_author": "Raj S K",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "eggplant mottled crinkle virus - Indian isolate (EMCV-1)",
+      "taxonomy": "",
+      "host_plant": "Solanum melongena L.",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2057357",
+      "doi": "10.1093/nar/19.11.2993",
+      "title": "Monoclonal antibodies to double-stranded RNA as probes of RNA structure in crude nucleic acid extracts.",
+      "abstract": "We describe four monoclonal antibodies (MAB) which specifically recognize double-stranded RNA (dsRNA) together with their use in new methods for detecting and characterizing dsRNA in unfractionated nucleic acid extracts. The specificity of the antibodies was analyzed using a panel of 27 different synthetic and naturally occurring nucleic acids. All four antibodies reacted in a highly specific manner with long dsRNA helices, irrespective of their sequence; no binding to single-stranded RNA homopolymers or to DNA or RNA-DNA hybrids was observed. The apparent affinity of the antibodies to short (less than or equal to 11 bp) RNA helices was very low in all test systems used: only background levels of binding were obtained on single-stranded RNA species which contain double-helical secondary structures (e.g. rRNA, tRNA, viroid RNA). A sandwich ELISA and a dsRNA-immunoblotting procedure have been established which allow detection and characterization of dsRNA by MAB even in the presence of a large excess of other nucleic acids. In combination with temperature-gradient gelelectrophoresis (TGGE) not only the molecular weights but also the highly characteristic Tm-values of conformational transitions of individual dsRNA species could be determined by immunoblotting. An example of the general use of these methods for the detection of plant virus infections is demonstrated with groundnut rosette virus (GRV) dsRNAs. We were able to estimate the dsRNA content of infected leaves, identify the dsRNA species present in crude extracts and to determine the Tm- values of GRV dsRNA-3.",
+      "journal": "Nucleic acids research",
+      "year": 1991,
+      "pub_date": "1991-06-11",
+      "authors": "Schönborn J; Oberstrass J; Breyel E; Tittgen J; Schumacher J; ... (+1)",
+      "first_author": "Schönborn J",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "month": "1999-11",
+  "generated": "2026-07-13 02:59:42",
+  "total": 16,
+  "by_category": {
+    "Host_Virus_Interactions": 6,
+    "New_Virus": 5,
+    "Viral_Diversity_Ecology": 2,
+    "Control_Management": 2,
+    "Alphasatellitidae": 1,
+    "Molecular_Characterization": 1,
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "10580042",
+      "doi": "10.1099/0022-1317-80-11-2813",
+      "title": "Transformation of tobacco and potato with cDNA encoding the full-length genome of potato leafroll virus: evidence for a novel virus distribution and host effects on virus multiplication.",
+      "abstract": "A full-length cDNA copy of the genome of Potato leafroll virus (PLRV) was introduced into the genome of tobacco and potato plants by Agrobacterium tumefaciens-mediated transformation. Transgenic lines were obtained in which the transgene was readily detected by PCR with DNA extracted from T(1) tobacco seedlings and clonally multiplied potato plants. PLRV-specific genomic and sub- genomic RNAs, coat protein antigen and virus particles were detected in transgenic plants. Aphids fed on the transgenic tobacco plants readily transmitted PLRV to test plants. Infected transgenic tobacco plants, like non-transgenic (WT) PLRV-infected plants, displayed no symptoms of the infection but transgenic plants of potato were severely stunted. In parallel tests, the mean PLRV titres in WT tobacco plants and transgenic tobacco plants were 600 and 630 ng virus/g leaf, respectively, although differences in PLRV titres among transgenic plants were much greater than those among infected WT plants. In similar tests with potato, the mean PLRV titre of WT plants was 50 ng virus/g leaf whereas higher concentrations (up to 3400 ng virus/g leaf) accumulated in transgenic potato plants. In tissue prints of stems, PLRV was detected in similar proportions of phloem cells in transgenic and infected WT plants. In transgenic tobacco and potato plants, but not in infected WT plants, a few stem epidermal cells also contained virus. From tissue prints of transgenic tobacco leaves, it was estimated that about one in 40000 mesophyll cells contained virus, but in transgenic potato, a greater proportion of mesophyll cells was infected.",
+      "journal": "The Journal of general virology",
+      "year": 1999,
+      "pub_date": "1999-11-01",
+      "authors": "Franco-Lara Liliana F; McGeachy Kara D; Commandeur Uli; Martin Robert R; Mayo Mike A; ... (+1)",
+      "first_author": "Franco-Lara Liliana F",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Potato leafroll virus (PLRV)",
+      "taxonomy": "Luteoviridae, Polerovirus",
+      "host_plant": "烟草 (Nicotiana tabacum)、马铃薯 (Solanum tuberosum)",
+      "location": "未提及",
+      "results": "转基因植株产生病毒RNA和粒子；蚜虫可传播；烟草无症状，马铃薯严重矮化；病毒滴度在转基因马铃薯中高达3400 ng/g，野生型仅50 ng/g；病毒出现于叶肉细胞和表皮细胞。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30841288",
+      "doi": "10.1094/PDIS.1999.83.11.1072D",
+      "title": "First Report of Potato Spindle Tuber Viroid in Costa Rica.",
+      "abstract": "During 1997 to 1998, symptoms of leaf roll, dwarfism, chlorosis, and occasional leaf necrosis were observed on Solanum tuberosum in several plots in Cartago, the principal potato-production region of Costa Rica. Because of the known association between potato leafroll virus (PLRV) and viroids (1) and previous reports of PLRV in Costa Rica, the presence of potato spindle tuber viroid (PSTVd) was suspected. Leaf samples from 122 symptomatic potato plants, cvs. Atzimba, Floresta, Idiafrit, and Birris, were collected from 10 plots. Total nucleic acids (TNAs) were extracted and purified (2) from collected symptomatic samples and six healthy potato controls. TNAs were spotted on nylon membranes and hybridized to a digoxigenin-labeled DNA probe specific for PSTVd. Of 122 symptomatic plants, 71 were positive for PSTVd based on dot blot hybridization. TNAs from 12 positive potato samples, including at least 1 sample from each cultivar, were used to inoculate Lycopersicum esculentum cv. Super Marmande. Eleven of twelve inoculated tomato plants showed symptoms of dwarfism, leaf deformation, and grayish foliage, often with a dull surface. TNAs were extracted from inoculated tomato and hybridized to the PSTVd probe. All inoculated symptomatic plants were positive for PSTVd based on dot blot hybridization. This is the first report of PSTVd in Costa Rica. References: (1) M. Querci et al. J. Gen. Virol. 78:1207, 1997. (2) W. Villalobos et al. Rev. Biol. Trop. 45:983, 1997.",
+      "journal": "Plant disease",
+      "year": 1999,
+      "pub_date": "1999-11-01",
+      "authors": "Badilla R; Hammond R; Rivera C",
+      "first_author": "Badilla R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Potato spindle tuber viroid (PSTVd)",
+      "taxonomy": "Pospiviroidae, Pospiviroid",
+      "host_plant": "Solanum tuberosum (马铃薯), Lycopersicum esculentum (番茄)",
+      "location": "哥斯达黎加，卡塔戈省",
+      "results": "122份症状样品中71份PSTVd阳性；12份阳性样品接种番茄，11份出现症状且杂交验证阳性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30841292",
+      "doi": "10.1094/PDIS.1999.83.11.1074A",
+      "title": "First Report of Soilborne Rye Mosaic Virus in Rye in Denmark.",
+      "abstract": "Soilborne wheat mosaic furovirus (SBWMV)-like particles were detected in rye (Secale cereale) grown in sandy soil in West Zealand during spring 1999. Infected plants showed yellow leaf mosaic and light stunting. Electron microscopy of negatively stained crude sap preparations revealed rigid rod-shaped particles with two average lengths, 296 and 162 nm; average diameter was 23 nm. Sap-inoculation to Chenopodium quinoa and C. amaranticolor produced local leaf lesions when grown at 17°C but none when grown at 22 to 25°C. All the features agree with the description of SBWMV (1). Immunosorbent electronmicroscopy with polyclonal antiserum produced by W. Huth to furovirus-like particles isolated from rye in Germany gave a distinct decoration to particles. Light microscopy of roots cleared with 10% KOH and stained with a 0.5% solution of trypan blue in lactoglycerol revealed resting spores with a morphology and size similar to Polymyxa graminis, a furovirus vector. This is the first record of a furovirus on cereals in Denmark. The complete nucleotide sequence of the isolate was analyzed and compared with data on isolates from wheat. Sequence identity was only 74%. Therefore, the isolate was designated as soilborne rye mosaic virus. SBRMV has been recorded previously in rye and triticale in several regions of Germany (2). References: (1) M. K. Brakke. 1971. CMI/AAB Descr. Plant Viruses No. 77. (2) W. Huth. Nachrichtenbl. Dtsch. Pflanzenschutzdienstes 50:163, 1998.",
+      "journal": "Plant disease",
+      "year": 1999,
+      "pub_date": "1999-11-01",
+      "authors": "Nielsen S L; Nicolaisen M; Koenig R; Huth W",
+      "first_author": "Nielsen S L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Soilborne rye mosaic virus (SBRMV)",
+      "taxonomy": "Furovirus, Virgaviridae",
+      "host_plant": "黑麦 (Secale cereale)",
+      "location": "丹麦，西西兰岛",
+      "results": "发现类似SBWMV的病毒粒子，与德国抗血清反应，序列同源性仅74%，命名为SBRMV，首次在丹麦发现。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10567701",
+      "doi": "10.1016/s0014-5793(99)01447-7",
+      "title": "A novel function for a ubiquitous plant enzyme pectin methylesterase: the host-cell receptor for the tobacco mosaic virus movement protein.",
+      "abstract": "Plant virus-encoded movement proteins promote viral spread between plant cells via plasmodesmata. The movement is assumed to require a plasmodesmata targeting signal to interact with still unidentified host factors presumably located on plasmodesmata and cell walls. The present work indicates that a ubiquitous cell wall-associated plant enzyme pectin methylesterase of Nicotiana tabacum L. specifically binds to the movement protein encoded by tobacco mosaic virus. We also show that pectin methylesterase is an RNA binding protein. These data suggest that pectin methylesterase is a host cell receptor involved in cell-to-cell movement of tobacco mosaic virus.",
+      "journal": "FEBS letters",
+      "year": 1999,
+      "pub_date": "1999-11-19",
+      "authors": "Dorokhov Y L; Mäkinen K; Frolova O Y; Merits A; Saarinen J; ... (+3)",
+      "first_author": "Dorokhov Y L",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "烟草花叶病毒 (Tobacco mosaic virus)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10544132",
+      "doi": "10.1006/viro.1999.9923",
+      "title": "Protection of mice against challenge with foot and mouth disease virus (FMDV) by immunization with foliar extracts from plants infected with recombinant tobacco mosaic virus expressing the FMDV structural protein VP1.",
+      "abstract": "A tobacco mosaic virus (TMV)-based vector has been used to express in plants the complete open reading frame coding for VP1, the major immunogenic protein of foot and mouth disease virus (FMDV). In vitro RNA transcripts were inoculated into Nicotiana benthamiana plants and detectable amounts of recombinant VP1 were identified by Western blot as soon as 4 days postinfection. Foliar extracts prepared from infected leaves were injected intraperitoneally into mice and all of the immunized animals developed a specific antibody response to both the complete virus particle and the major immunogenic region as determined by ELISA and Western blot analysis. Most importantly, all immunized mice developed a protective immune response against experimental challenge with virulent FMDV. To our knowledge, this is the first report showing the expression of a complete open reading frame of an antigenic foreign protein in plants, using a recombinant plant virus, in sufficient quantity to permit use of the crude plant extract as an experimental immunogen to protect animals against virus challenge.",
+      "journal": "Virology",
+      "year": 1999,
+      "pub_date": "1999-11-10",
+      "authors": "Wigdorovitz A; Pérez Filgueira D M; Robertson N; Carrillo C; Sadir A M; ... (+2)",
+      "first_author": "Wigdorovitz A",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "口蹄疫病毒(FMDV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10544139",
+      "doi": "10.1006/viro.1999.9948",
+      "title": "A nanovirus-like DNA component associated with yellow vein disease of Ageratum conyzoides: evidence for interfamilial recombination between plant DNA viruses.",
+      "abstract": "Yellow vein disease of Ageratum conyzoides, a weed species that is widely distributed throughout Asia, has been attributed to infection by the geminivirus Ageratum yellow vein virus (AYVV). In addition to a single AYVV genomic component (DNA A), we have previously demonstrated that infected plants contain chimeric defective viral components, comprising DNA A and nongeminiviral sequences, that act as defective interfering DNAs. A database search has revealed that the nongeminiviral sequences of one such defective component (def19) show significant homology with sequences of nanovirus components that encode replication-associated proteins (Reps). Primers designed to hybridise to the nongeminiviral DNA were used to PCR-amplify a full-length nanovirus-like component, referred to as DNA 1, from an extract of infected A. conyzoides. DNA 1 is unrelated to AYVV DNA A but resembles nanovirus components that encode Reps and is most closely related (73% identity) to a nanovirus-like DNA recently isolated from geminivirus-infected cotton. DNA 1 is dependent on AYVV DNA A for systemic infection of A. conyzoides and Nicotiana benthamiana and can systemically infect N. benthamiana in the presence of the bipartite geminivirus African cassava mosaic virus. A. conyzoides plants coinfected with AYVV DNA A and DNA 1 remain asymptomatic, indicating that additional factors are required to elicit yellow vein disease. Our results provide direct evidence for recombination between distinct families of plant single-stranded DNA viruses and suggest that coinfection by geminivirus and nanovirus-like pathogens may be a widespread phenomenon. The ability of plant DNA viruses to recombine in this way may greatly increase their scope for diversification.",
+      "journal": "Virology",
+      "year": 1999,
+      "pub_date": "1999-11-10",
+      "authors": "Saunders K; Stanley J",
+      "first_author": "Saunders K",
+      "categories": [
+        "Alphasatellitidae",
+        "New_Virus",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10570165",
+      "doi": "10.1073/pnas.96.24.13869",
+      "title": "A test of alternative models of diversification in tropical rainforests: ecological gradients vs. rainforest refugia.",
+      "abstract": "Comparison of mitochondrial and morphological divergence in eight populations of a widespread leaf-litter skink is used to determine the relative importance of geographic isolation and natural selection in generating phenotypic diversity in the Wet Tropics Rainforest region of Australia. The populations occur in two geographically isolated regions, and within each region, in two different habitats (closed rainforest and tall open forest) that span a well characterized ecological gradient. Morphological differences among ancient geographic isolates (separated for several million years, judging by their mitochondrial DNA sequence divergence) were slight, but morphological and life history differences among habitats were large and occurred despite moderate to high levels of mitochondrial gene flow. A field experiment identified avian predation as one potential agent of natural selection. These results indicate that natural selection operating across ecological gradients can be more important than geographic isolation in similar habitats in generating phenotypic diversity. In addition, our results indicate that selection is sufficiently strong to overcome the homogenizing effects of gene flow, a necessary first step toward speciation in continuously distributed populations. Because ecological gradients may be a source of evolutionary novelty, and perhaps new species, their conservation warrants greater attention. This is particularly true in tropical regions, where most reserves do not include ecological gradients and transitional habitats.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1999,
+      "pub_date": "1999-11-23",
+      "authors": "Schneider C J; Smith T B; Larison B; Moritz C",
+      "first_author": "Schneider C J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10571178",
+      "doi": "10.1016/s0092-8674(00)81522-6",
+      "title": "A novel class of eukaryotic zinc-binding proteins is required for disease resistance signaling in barley and development in C. elegans.",
+      "abstract": "Barley Rar1 is a convergence point in the signaling of resistance to powdery mildew, triggered by multiple race-specific resistance (R) genes. Rar1 is shown to function upstream of H2O2 accumulation in attacked host cells, which precedes localized host cell death. We isolated Rar1 by map-based cloning. The sequence of the deduced 25.5 kDa protein reveals two copies of a 60-amino acid domain, CHORD, conserved in tandem organization in protozoa, plants, and metazoa. CHORD defines a novel eukaryotic Zn2+-binding domain. Silencing of the C. elegans CHORD-containing gene, chp, results in semisterility and embryo lethality, suggesting an essential function of the wild-type gene in nematode development. Our findings indicate that plant R genes have recruited a fundamental cellular control element for signaling of disease resistance and cell death.",
+      "journal": "Cell",
+      "year": 1999,
+      "pub_date": "1999-11-12",
+      "authors": "Shirasu K; Lahaye T; Tan M W; Zhou F; Azevedo C; ... (+1)",
+      "first_author": "Shirasu K",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10607299",
+      "doi": "10.1046/j.1365-313x.1999.00619.x",
+      "title": "Pseudomonas syringae pv tomato induces the expression of tomato EREBP-like genes pti4 and pti5 independent of ethylene, salicylate and jasmonate.",
+      "abstract": "The tomato genes Pti4 and Pti5 encode ethylene-responsive element binding protein-like transcription factors that bind to the GCC box, a conserved cis-element in many defense-related genes. The Pti proteins have previously been shown to interact with the tomato disease resistance protein Pto. Here we report that the expression of both Pti4 and Pti5 are induced by a virulent strain of Pseudomonas syringae pv tomato. The expression of Pti5 is further enhanced by the interaction of the Pto gene in tomato and the corresponding avrPto gene in the bacterium. The enhancement of Pti5 expression by Pto-avrPto interaction requires a functional Prf gene in the plant. Pti5 appears to be expressed specifically during biotic stresses, suggesting a specific role in plant defense. Pti4 and several EREBP-like genes are induced by ethylene, salicylate and wounding. However, the Pseudomonas bacterium induced a wild-type level of Pti4 and Pti5 transcripts in tomato plants carrying the nahG transgene, the Nr mutation, or the def1 mutation. In addition, the ethylene action inhibitor norbornadiene did not inhibit the induction of Pti4 and Pti5 either in the compatible or incompatible interactions. The results suggest that the Pseudomonas bacterium induces Pti4 and Pti5 expression through a pathway independent of salicylic acid, ethylene and jasmonic acid.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 1999,
+      "pub_date": "1999-11-01",
+      "authors": "Thara VK; Tang X; Gu YQ; Martin GB; Zhou JM",
+      "first_author": "Thara VK",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10571892",
+      "doi": "10.1046/j.1365-313x.1999.t01-1-00606.x",
+      "title": "Plant disease resistance genes encode members of an ancient and diverse protein family within the nucleotide-binding superfamily.",
+      "abstract": "The nucleotide binding site (NBS) is a characteristic domain of many plant resistance gene products. An increasing number of NBS-encoding sequences are being identified through gene cloning, PCR amplification with degenerate primers, and genome sequencing projects. The NBS domain was analyzed from 14 known plant resistance genes and more than 400 homologs, representing 26 genera of monocotyledonous, dicotyle-donous and one coniferous species. Two distinct groups of diverse sequences were identified, indicating divergence during evolution and an ancient origin for these sequences. One group was comprised of sequences encoding an N-terminal domain with Toll/Interleukin-1 receptor homology (TIR), including the known resistance genes, N, M, L6, RPP1 and RPP5. Surprisingly, this group was entirely absent from monocot species in searches of both random genomic sequences and large collections of ESTs. A second group contained monocot and dicot sequences, including the known resistance genes, RPS2, RPM1, I2, Mi, Dm3, Pi-B, Xa1, RPP8, RPS5 and Prf. Amino acid signatures in the conserved motifs comprising the NBS domain clearly distinguished these two groups. The Arabidopsis genome is estimated to contain approximately 200 genes that encode related NBS motifs; TIR sequences were more abundant and outnumber non-TIR sequences threefold. The Arabidopsis NBS sequences currently in the databases are located in approximately 21 genomic clusters and 14 isolated loci. NBS-encoding sequences may be more prevalent in rice. The wide distribution of these sequences in the plant kingdom and their prevalence in the Arabidopsis and rice genomes indicate that they are ancient, diverse and common in plants. Sequence inferences suggest that these genes encode a novel class of nucleotide-binding proteins.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 1999,
+      "pub_date": "1999-11-01",
+      "authors": "Meyers B C; Dickerman A W; Michelmore R W; Sivaramakrishnan S; Sobral B W; ... (+1)",
+      "first_author": "Meyers B C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10571887",
+      "doi": "10.1046/j.1365-313x.1999.t01-1-00600.x",
+      "title": "The Arabidopsis RPS4 bacterial-resistance gene is a member of the TIR-NBS-LRR family of disease-resistance genes.",
+      "abstract": "Plant-disease resistance (R) genes mediate the specific recognition of invading pathogens carrying cognate avirulence (avr) determinants. RPS4 is a disease-resistance locus on chromosome 5 of Arabidopsis thaliana specifying resistance to strains of Pseudomonas syringae pv. tomato expressing avrRps4. We have isolated the RPS4 gene using a map-based cloning approach. RPS4 encodes a predicted protein of 1217 amino acids that contains an N-terminus with homology to the intracellular domains of the Drosophila Toll protein and the mammalian interleukin-1 receptor (TIR domain), a tripartite nucleotide-binding site (NBS), and leucine-rich repeats (LRR). Incomplete splicing of the RPS4 mRNA was observed, which may give rise to truncated protein products consisting mainly of the TIR and NBS domains. These features classify RPS4 as a member of the TIR-NBS-LRR R gene family founded by N, L6 and RPP5, which determine resistance to viral, fungal and oomycete pathogens, respectively. Previous work has shown that RPS4, like other Arabidopsis TIR-NBS-LRR R genes specifying resistance to oomycetes, is dependent on a functional EDS1 allele for disease-resistance signaling. The characterization of RPS4 presented here thus establishes a role for TIR-NBS-LRR R genes in resistance to bacterial pathogens, and provides evidence for the model that dependence of R genes on EDS1 is determined by R protein structure, and not by pathogen type. The cloning of RPS4 and the previous isolation of avrRps4 provide the molecular tools for a genetic and molecular dissection of the TIR-NBS-LRR R gene signaling pathway in Arabidopsis.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 1999,
+      "pub_date": "1999-11-01",
+      "authors": "Gassmann W; Hinsch M E; Staskawicz B J",
+      "first_author": "Gassmann W",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10587474",
+      "doi": "10.1006/fgbi.1999.1167",
+      "title": "Disruption of the cyanide hydratase gene in Gloeocercospora sorghi increases its sensitivity to the phytoanticipin cyanide but does not affect its pathogenicity on the cyanogenic plant sorghum.",
+      "abstract": "The release of hydrogen cyanide (HCN) from preformed cyanogenic compounds in plants such as sorghum is thought to provide a protective barrier against infection by microorganisms. Gloeocercospora sorghi, a fungal pathogen of sorghum, produces the enzyme cyanide hydratase (CHT) which converts HCN to the less toxic compound formamide. There is considerable prior evidence indicating that this mechanism for detoxifying HCN plays an important role in the pathogenicity of G. sorghi on sorghum. In the present study, the CHT gene was made nonfunctional in G. sorghi through transformation-mediated gene disruption. The transformant lacked CHT activity and no reacting polypeptides were detected with CHT-specific antibodies. This CHT mutant was highly sensitive to HCN, confirming that CHT is an HCN detoxifying mechanism, but it retained virulence on sorghum, causing lesions indistinguishable from those caused by the wild-type strain. This result indicates that G. sorghi does not require CHT for pathogenicity on cyanogenic lines of sorghum and suggests that cyanogenic compounds in plants may serve functions other than providing a mechanism of disease resistance.",
+      "journal": "Fungal genetics and biology : FG & B",
+      "year": 1999,
+      "pub_date": "1999-11-01",
+      "authors": "Wang P; Sandrock R W; VanEtten H D",
+      "first_author": "Wang P",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

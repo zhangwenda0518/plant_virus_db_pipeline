@@ -1,0 +1,239 @@
+{
+  "week": "2025-W25",
+  "start": "2025-06-16",
+  "end": "2025-06-22",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 25,
+  "by_category": {
+    "Control_Management": 11,
+    "Host_Virus_Interactions": 7,
+    "New_Virus": 4,
+    "Antiviral_Resistance_Genes": 4,
+    "Biotechnology_Applications": 3,
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "40438032",
+      "doi": "10.1021/acssynbio.5c00153",
+      "title": "Engineering Encapsidated TRV1 as a Complete VIGS Platform.",
+      "abstract": "Tobacco rattle virus (TRV) is a bipartite single-stranded RNA virus that encodes a replicase, movement protein, and silencing suppressor on TRV1 and a capsid protein on TRV2. Researchers typically insert target silencing sequences into TRV2 and coexpress this with TRV1 to achieve virus-induced gene silencing (VIGS). However, TRV1 does not require TRV2 for mobility or replication within a plant host. With this knowledge, we engineer TRV1 alone as a self-replicating RNA (srRNA) that moves systemically throughout plants for targeted gene repression of up to 89%. As TRV1 is encapsidated in trans by the capsid protein encoded on TRV2, we demonstrate the ability to encapsidate our TRV1 srRNAs for application to target plants by coexpression of the capsid protein off a nonviral expression vector. The subsequent encapsidated TRV1 srRNA can then be harvested and applied to new plants by using a simple spray-on application. Since the RNA for the capsid does not accompany the TRV1 srRNA, our srRNAs are incapable of spreading from plant to plant after the initial application. Minimal to no phenotypic penalties were observed when we used our spray-on srRNA approach. To our knowledge, this is the first demonstration of engineering a sprayable TRV1-based srRNA that is highly capable of repressing target genes. As TRV has a broad host range and our encapsidated srRNAs are unlikely to persist in the environment, we envision that this platform can be used for targeted gene silencing in agriculture.",
+      "journal": "ACS synthetic biology",
+      "year": 2025,
+      "pub_date": "2025-06-20",
+      "authors": "Pfotenhauer Alexander C; Jones Samantha M; Clark Mikayla; Concha Bryn L; Goldstein Elliot B; ... (+6)",
+      "first_author": "Pfotenhauer Alexander C",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "烟草脆裂病毒 (Tobacco rattle virus, TRV)",
+      "taxonomy": "",
+      "host_plant": "未提及（宿主范围广）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40542915",
+      "doi": "10.1007/s00705-025-06340-3",
+      "title": "Identification and complete genome sequence of a new cheravirus discovered in grapevine.",
+      "abstract": "High-throughput sequencing (HTS) was applied to identify viruses present in grapevine samples collected in Ningxia, China, that exhibited obvious symptoms of viral disease. A putative novel cheravirus was found through the analysis of sequencing data, and its presence was confirmed by RT-PCR in a Cabernet Sauvignon sample with vein yellowing. The complete genome sequence of this virus was determined by Sanger sequencing of overlapping RT-PCR products and the rapid amplification of cDNA ends (RACE) method. The genome of the putative virus comprises two RNA segments 7,395 and 3,645 nucleotides in length, excluding their poly-A tails. The new virus was tentatively named \"grapevine cheravirus\" (GCheV). The Pro-Pol region of RNA1 and the CP region of RNA2 of GCheV shared the highest amino acid sequence identity, reaching 72.0% and 48.9%, respectively, with the corresponding sequences of Corymbium villosum cheravirus (CvCV). Phylogenetic analysis revealed that GCheV clustered with CvCV in the genus Cheravirus. These results suggest that GCheV is a new member of that genus. To the best of our knowledge, this is the first report of a virus belonging to the genus Cheravirus in grapevines.",
+      "journal": "Archives of virology",
+      "year": 2025,
+      "pub_date": "2025-06-21",
+      "authors": "Fan Xudong; Hao Yuxin; Ren Fang; Hu Guojun; Zhang Ying; ... (+5)",
+      "first_author": "Fan Xudong",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "grapevine cheravirus (GCheV)",
+      "taxonomy": "Cheravirus",
+      "host_plant": "葡萄 (Vitis vinifera cv. Cabernet Sauvignon)",
+      "location": "中国宁夏 (Ningxia, China)",
+      "results": "基因组由RNA1(7,395 nt)和RNA2(3,645 nt)组成，与CvCV的Pro-Pol和CP氨基酸序列一致性分别为72.0%和48.9%，系统发育分析表明为Cheravirus新成员。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40532009",
+      "doi": "10.1126/sciadv.adw4333",
+      "title": "Identification of a gene conferring broad-spectrum orthotospovirus resistance in Solanaceae.",
+      "abstract": "Linkage drag can hinder the integration of resistance genes from wild crop relatives into breeding programs. We used a chromosome-scale Nicotiana alata genome assembly and a segregating population exceeding 160,000 plants to dissect the complex genetic architecture and overcome the tight linkage between resistance and deleterious loci to produce plants free from linkage drag. We cloned N. alata RTSW, encoding an immune receptor that confers broad-spectrum resistance to orthotospoviruses through the interaction of its carboxyl-terminal domain with an orthotospovirus-encoded protein. Notably, despite recognizing the same avirulence factor, RTSW genes from N. alata and Sw-5b from Solanum peruvianum have evolved independently of adjacent nonorthologous ancestral loci. Our work illustrates the potential of wild relative genomes as resources from which to precisely introduce disease resistance into cultivated crops.",
+      "journal": "Science advances",
+      "year": 2025,
+      "pub_date": "2025-06-20",
+      "authors": "Liu Yong; Wang Jie; Zuo Chongkun; Fan Weishu; Yuan Cheng; ... (+11)",
+      "first_author": "Liu Yong",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "orthotospoviruses (番茄斑萎病毒属)",
+      "taxonomy": "",
+      "host_plant": "茄科植物（Nicotiana alata, Solanum peruvianum 及栽培作物）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40556773",
+      "doi": "10.1021/acsbiomedchemau.5c00069",
+      "title": "Unlocking the Potential of Brazilian Plant Terpenes to Combat Antimicrobial Resistance.",
+      "abstract": "The group of bacteria known as ESKAPE: Enterococcus faecium, Staphylococcus aureus, Klebsiella pneumoniae, Acinetobacter baumannii, Pseudomonas aeruginosa, and Enterobacter spp. are well recognized for their high virulence and pathogenicity, employing diverse modalities and mechanisms to resist multiple classes of clinically relevant antibiotics. Their capacity to evade treatment presents a major public health challenge, highlighting the urgent need for novel antibiotics to address the growing resistance crisis. The plant kingdom presents a promising avenue to this fight. Plants are naturally endowed with the genomic and proteomic machinery to synthesize a wide arsenal of secondary metabolites, including terpenes and terpenoids, which have demonstrated potent antimicrobial properties both as standalone agents and as synergists or enhancers of existing antibiotics. These plant-derived compounds often operate through mechanisms distinct from those of conventional antibiotics, offering a potentially effective solution against antibiotic-resistant bacteria. Brazil, home to some of the richest biodiversity on the planet, boasts 46,000 recorded plant species, with 250 new species identified annually. This review delves into the methods of preparing and isolating terpenes and terpenoids from plants, explores the techniques used to assess their antibacterial activity, and highlights ongoing research using Brazilian plants to target ESKAPE pathogens. This compilation of knowledge aims to establish a pipeline for evaluating the antibacterial potential of terpenes and terpenoids, contributing to efforts addressing the growing threat of antimicrobial resistance.",
+      "journal": "ACS bio & med chem Au",
+      "year": 2025,
+      "pub_date": "2025-06-18",
+      "authors": "Bardaji Danae K R; Silva Nagela B S; Miranda Renata R; Martins Carlos Henrique G; Savka Michael A; ... (+1)",
+      "first_author": "Bardaji Danae K R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40340407",
+      "doi": "10.1021/acssynbio.4c00846",
+      "title": "Molecular Studies on Plant Telomeres: Expanding Horizons in Plant Biology.",
+      "abstract": "The integrity of plant genomes is intricately safeguarded by telomeres, the protective caps located at the ends of the chromosome. This review provides a comprehensive analysis of the molecular mechanisms governing the structure, maintenance, and dynamics of plant telomeres, highlighting their genetic and epigenetic regulation and their pivotal roles in plant development, longevity, stress adaptation, and disease resistance. Recent advancements, such as next-generation sequencing and single-molecule imaging, have revolutionized our understanding of telomere biology, unveiling new insights into telomerase activity and telomere-associated genetic variants. Additionally, the review also discusses the challenges and future directions of telomere research, including the potential applications of telomere biology in plant breeding and genetic engineering.",
+      "journal": "ACS synthetic biology",
+      "year": 2025,
+      "pub_date": "2025-06-20",
+      "authors": "Lin Xiao J; Wang Ming L; Kong Wen W; Mo Bei X",
+      "first_author": "Lin Xiao J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40422290",
+      "doi": "10.1128/aem.00613-25",
+      "title": "AcMNPV, a viral insecticide of Lepidoptera pests, stimulates the immune response of the natural enemy ",
+      "abstract": "Autographa Californica multiple nucleopolyhedrovirus (AcMNPV) is the most widely studied baculovirus currently used as a biopesticide application for crop pest control. AcMNPV has a good control effect on Lepidoptera pests, but the impact of AcMNPV on other insects in the environment, especially natural enemies, is worth further discussion. Arma chinensis Fallou, an essential natural enemy insect widely distributed in China, can prey on multiple pests that cause severe damage to the production economy and can play an effective role in preventing agroforestry pests. In this study, the natural enemy Arma chinensis Fallou was used as the research material to analyze the effect of AcMNPV on the immune system of Arma chinensis Fallou. The immune mechanism of AcMNPV-EGFP in infecting A. chinensis was revealed for the first time, and the critical factor miR-8 was found. The relationship between AcMNPV, miR-8, and A. chinensis was described. RNAi pathway and JAK/STAT signaling pathway are the main antiviral pathways in insects, and we have newly discovered the molecular regulation mechanism of the Toll signaling pathway in antiviral immunity. In a word, AcMNPV, a Lepidopteran insecticide, affects the immune response of Arma chinensis Fallou and has side effects on natural enemies in the process of pest control.IMPORTANCEAcMNPV is a viral pesticide that is widely used to control Lepidoptera pests. However, the impact on other insects has yet to be thoroughly studied. Therefore, the toxicity and side effects of AcMNPV on non-target organisms need to be effectively evaluated. As a biological control agent in agricultural ecosystems, natural enemy insects can effectively control the number of pests and reduce crop damage. Compared with chemical pesticides, natural enemy insects can avoid or reduce pesticide residues in agricultural products and have no environmental pollution, and pests do not quickly develop resistance to them. It will help ensure crops' safe production and balance the ecosystem. In this study, AcMNPV-EGFP was used to infect the natural enemy-Arma chinensis Fallou, which proved the effect of the virus pesticide on Arma chinensis Fallou. This work helps optimize the joint use of the natural enemy-Arma chinensis Fallou and other insecticides in applying biological control and also provides a reference for understanding the mechanism of insect antiviral infection.",
+      "journal": "Applied and environmental microbiology",
+      "year": 2025,
+      "pub_date": "2025-06-18",
+      "authors": "Yuan Ximei; Meng Qingyao; Lu Zhengjie; Wang Chen; He Yiqing; ... (+3)",
+      "first_author": "Yuan Ximei",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41119087",
+      "doi": "10.11646/zootaxa.5647.5.3",
+      "title": "A new species of Amphibolips (Hymenoptera: Cynipidae: Cynipini) from Mexico.",
+      "abstract": "A new species of Amphibolips from Mexico galling on Quercus calophylla Schltdl. & Cham. is described. The new species, Amphibolips chilito sp. nov., is morphologically closely related to A. zacatecaensis and A. nassa based on the forewing exhibiting a strongly infuscate radial cell. The gall morphology of the new species is unique and greatly differs from the galls of its allied species. The phylogenetic placement of the new species is discussed alongside with a summary of the phenology of the Amphibolips species.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-06-18",
+      "authors": "Cuesta-Porta Vctor; Equihua-Martnez Armando; Estrada-Venegas Edith; Romero-Rangel Silvia; Pujade-Villar Juli",
+      "first_author": "Cuesta-Porta Vctor",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40526297",
+      "doi": "10.1007/s13744-025-01281-7",
+      "title": "A New Species of Physocleora Warren 1897 (Lepidoptera: Geometridae) from Atacama and Puna Provinces, Northernmost Chile.",
+      "abstract": "Riparian zones of the Atacama Desert and slopes of the Andes mountain range host a diversity of insect species still unknown, and some lineages of different species of Geometridae have been discovered in recent years in such areas. Here, we describe Physocleora polyphaga Vargas-Ortiz & Parra sp.nov., a polyphagous species closely related to several native plants, distributed in coastal valleys and slopes of the Andes mountain range in the northernmost Chile. We present their diagnostic morphological characteristics, some ecological traits, and a representation of its evolutionary history within Physocleora Warren 1897 from DNA barcode sequence data. To validate the hypothesis of conspecificity of the specimens found, we use species delimitation methods based on genetic distances and phylogenetics.",
+      "journal": "Neotropical entomology",
+      "year": 2025,
+      "pub_date": "2025-06-17",
+      "authors": "Vargas-Ortiz Marcelo; Parra Luis E",
+      "first_author": "Vargas-Ortiz Marcelo",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40522535",
+      "doi": "10.1007/s44154-025-00244-7",
+      "title": "Cellulose synthase TaCESA7 negatively regulates wheat resistance to stripe rust by reducing cell wall lignification.",
+      "abstract": "Cellulose is synthesized by cellulose synthases (CESAs) in plasma membrane-localized complexes, which act as a central component of the cell wall and influence plant growth and defense responses. Puccinia striiformis f. sp. tritici (Pst) is an airborne fungus that causes stripe rust to seriously endanger wheat production. In this study, a CESA gene, TaCESA7, was identified to be significantly up-regulated during Pst infection in wheat (Triticum aestivum L.). TaCESA7 was localized on the plasma membrane in dimeric form, and the dimers interact to assemble into CESA complexes. Stable overexpression of TaCESA7 weakened the resistance of wheat to Pst. Knockdown of TaCESA7 by RNA interference (RNAi) and virus-induced gene silencing led to restricted hyphal spread, increased necrotic area, and simultaneously promotes reactive oxygen species (ROS) accumulation and the expression of pathogenesis-related (PR) genes. Transcriptome analysis of TaCESA7-RNAi plants revealed that the up-regulated genes were significantly enriched in the phenylpropanoid biosynthesis and plant-pathogen interaction pathways. Moreover, silencing TaCESA7 promoted the deposition of lignin and the expression of genes related to lignin synthesis. CRISPR-Cas9-mediated inactivation of TaCESA7 in wheat could confer broad-spectrum resistance against Pst without affecting agronomic traits. These findings provide valuable candidate gene resources and guidance for molecular breeding to improve the resistance of wheat to fungal disease.",
+      "journal": "Stress biology",
+      "year": 2025,
+      "pub_date": "2025-06-16",
+      "authors": "Zhang Yanqin; Yu Longhui; Guo Shuangyuan; Huang Xueling; Chen Yihan; ... (+5)",
+      "first_author": "Zhang Yanqin",
+      "categories": [
+        "Biotechnology_Applications",
+        "Detection_Methods"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40985390",
+      "doi": "10.3390/jof11070471",
+      "title": "Optimized Combinations of Filtrates of ",
+      "abstract": "Trichoderma spp., Metarhizium spp., and Bacillus spp. are commonly used as biocontrol microorganisms domestically and internationally. However, microbial pesticides currently prepared from single living microorganisms have problems such as a short shelf life, particularly under stressful environment conditions. Secondary metabolites produced from biocontrol microorganisms are comparatively stable when used under field conditions. This study screened the optimal combination of biocontrol metabolites, referred to as TMB, composed of culture filtrates from certain isolates of Trichoderma asperellum 10264, Bacillus subtilis S4-4-10, and Metarhizium anisopliae 3.11962 (1:4:1 (v/v)). RNA-seq analysis and transmission electron microscope observations were carried out to identify the major functions of the most effective culture filtrates against Magnaporthe oryzae (the pathogen causing rice blast disease) and Chilo suppressalis (an insect pest in rice cultivation). TMB was found to disrupt the midgut subcellular structure of C. suppressalis larvae and inhibit the expression of genes related to immunity, membrane components, protein synthesis, and other functions in C. suppressalis larvae and M. oryzae, thereby interfering with their normal growth, reproduction, and infection potential in rice. In addition, TMB was also able to promote rice growth and trigger host defense responses against infections by the target pests and pathogens. In summary, TMB generated different inhibitory activities against multiple targets in C. suppressalis and M. oryzae and induced plant immunity in rice. Therefore, it can be used as a new environmentally friendly agent or alternative to control rice pests and diseases.",
+      "journal": "Journal of fungi (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-06-20",
+      "authors": "Zhang Xifen; Chen Lusheng; Bai Zhenxu; Li Yaqian; Chen Jie",
+      "first_author": "Zhang Xifen",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

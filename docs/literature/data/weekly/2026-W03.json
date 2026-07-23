@@ -1,0 +1,241 @@
+{
+  "week": "2026-W03",
+  "start": "2026-01-12",
+  "end": "2026-01-18",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 39,
+  "by_category": {
+    "Control_Management": 14,
+    "Antiviral_Resistance_Genes": 7,
+    "Host_Virus_Interactions": 7,
+    "New_Virus": 4,
+    "Biotechnology_Applications": 4,
+    "Viral_Diversity_Ecology": 4,
+    "Detection_Methods": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "41176619",
+      "doi": "10.1016/j.xplc.2025.101584",
+      "title": "Transcription factor NFYA3_0 promotes MTA-mediated m",
+      "abstract": "N6-methyladenosine (m6A), a reversible epigenetic modification, is ubiquitously present across diverse RNA species, including viral RNA. This modification plays a pivotal role in orchestrating RNA metabolism. Nevertheless, the mechanisms by which plants utilize m6A modifications to fine-tune antiviral immunity remain largely unknown. In this study, we systematically examined the dynamic changes and biological significance of m6A modifications throughout potato virus Y (PVY) infection in host plants. Methylated RNA immunoprecipitation sequencing reveals a conserved m6A distribution pattern in Nicotiana benthamiana, predominantly enriched in 3' untranslated regions of transcripts. The nuclear transcription factor NFYA3_0 exhibits robust hypermethylation accompanied by transcriptional upregulation during PVY infection. NFYA3_0 knockdown promotes PVY accumulation and reduces global m6A modification levels in the host. NFYA3_0 positively regulates transcription of the m6A methyltransferase gene NbMTA, whose loss of function similarly compromises viral resistance while diminishing m6A abundance. Moreover, NbMTA anchors and methylates the PVY coat protein-coding region, thereby facilitating viral RNA degradation and effectively restricting infection. These findings indicate that the core antiviral mechanism of the nuclear transcription factor NFYA3_0 enables targeted degradation of viral RNA by activating methyltransferase NbMTA-mediated m6A epitranscriptome regulation. This work provides a new strategy for developing green virus-resistant crop lines based on epigenetic editing.",
+      "journal": "Plant communications",
+      "year": 2026,
+      "pub_date": "2026-01-12",
+      "authors": "Li Jiao; Luo Jianli; He Hongfu; Wang Fenyan; Wu Huan; ... (+3)",
+      "first_author": "Li Jiao",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "马铃薯Y病毒 (Potato virus Y, PVY)",
+      "taxonomy": "",
+      "host_plant": "本塞姆氏烟草 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41431849",
+      "doi": "10.1021/acs.jafc.5c09595",
+      "title": "Rice Fatty Acid Desaturase OsFAD6 Confers Antiviral Resistance against RBSDV through MAPK and Hormone Signaling.",
+      "abstract": "Fatty acids (FAs) are crucial for plant defense against pathogens. While unsaturated fatty acids (UFAs), synthesized by fatty acid desaturases (FADs), are established mediators of resistance against bacterial and fungal pathogens, their involvement in regulating virus infection remains poorly understood. Here, we demonstrate that OsFAD6, a chloroplast-localized fatty acid desaturase, confers resistance to rice black-streaked dwarf virus (RBSDV). RBSDV infection significantly suppresses OsFAD6 expression, suggesting viral targeting of this defense component. Functional analyses using OsFAD6-overexpressing and knockout rice lines established that OsFAD6 enhances resistance to RBSDV. Transcriptomic profiling revealed that OsFAD6 enhances antiviral defense through modulation of the MAPK signaling cascade and reprogramming of multiple hormone signaling pathway-associated genes. Furthermore, OsFAD6 can be degraded by RBSDV P5-2 through the autophagy pathway. These findings identify OsFAD6 as a novel antiviral component in rice and provide new molecular targets for breeding virus-resistant rice varieties.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2026,
+      "pub_date": "2026-01-14",
+      "authors": "Liu Jianjian; Zhao Yange; Wang Pengyue; Jing Xinxin; Xiang Meirong; ... (+8)",
+      "first_author": "Liu Jianjian",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "水稻黑条矮缩病毒 (RBSDV)",
+      "taxonomy": "",
+      "host_plant": "水稻",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41537910",
+      "doi": "10.1007/s00705-025-06498-w",
+      "title": "Evolutionary origin and demographic trajectory of tomato spotted wilt virus (Orthotospovirus tomatomaculae).",
+      "abstract": "Tomato spotted wilt virus (TSWV) is a harmful pathogen that causes severe disease in tomato, pepper, and other horticultural and agronomic crops. Its genome comprises three linear single-stranded RNA molecules (segments L, M, and S), which are unequally packed in nucleocapsids. Although its genome structure and molecular mechanism of infection are well understood, the evolutionary dynamics of this virus require further analysis to determine the most probable viral ancestor, the date of divergence, the ancestral geographical source of dispersal, and the demographic history of TSWV. For this, we employed a Bayesian framework to analyze whole-genome sequences of 136 isolates of TSWV obtained from different sites worldwide with a sampling window of 35 years, and phylodynamic analysis was performed separately for segments L, M, and S. Our results showed that the mutation rates of the different genome segments ranged from 1.678 × 10- 4 to 2.444 × 10- 4 substitutions/site/year. Although the estimated time to the most recent common ancestor varied depending on the dataset used, the most probable date of TSWV divergence was around 1768 CE. Our phylogeographic analysis yielded concordant results for the three genome segments, indicating that the TSWV population originated in South Korea and, from there, first expanded to Europe and then to North America and other continents. Past population dynamics analysis showed that the virus experienced two major population expansions that coincided with the expansion of the agricultural frontier and the emergence of new species of insect vectors.",
+      "journal": "Archives of virology",
+      "year": 2026,
+      "pub_date": "2026-01-15",
+      "authors": "Castillo José A; Ramírez-Cando Lenin",
+      "first_author": "Castillo José A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato spotted wilt virus (TSWV)",
+      "taxonomy": "Bunyavirales, Tospoviridae, Orthotospovirus",
+      "host_plant": "番茄、辣椒等",
+      "location": "全球（推测原产地：韩国）",
+      "results": "突变率1.678×10^-4–2.444×10^-4 subs/site/year；TMRCA约1768年；种群起源于韩国，先扩至欧洲再到美洲；两次扩张与农业及新媒介昆虫出现吻合。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41530334",
+      "doi": "10.1038/s41598-026-35808-8",
+      "title": "Significant efficiency of Ti-MOF and Ag-NPs in antiviral effect in PVY-tobacco pathosystem.",
+      "abstract": "Plant virus infection has a negative impact on agricultural crops. One of the main problems is controlling viral diseases, as the only option is to prevent plant–virus interactions. Some studies have focused on the application of nanoparticles (NPs) to combat plant pathogens, but their use against viral diseases is still underexplored. Moreover, the antiviral mechanisms of NPs are not fully understood, and more studies are needed to provide evidence of the mechanisms involved. This study assessed the comparison between innovative Ti-NPs derived from Ti-MOF material and Ag-NPs in their effects on potato virus Y (PVYNTN) - tobacco “Samsun” interaction. The results clearly indicated that foliar pretreatment with 25 and 50 ppm of Ti-NPs and Ag-NPs significantly reduced PVYNTN concentration without toxic effect on plants. Interestingly, SEM (Scanning Electron Microscope) and LIBS (Laser Induced Breakdown Spectroscopy) analyses confirmed a lower concentration of Ti-NPs compared with Ag-NPs, but Ti-NPs migrated more intensively than Ag-NPs in tobacco tissues. Moreover, the smaller size of Ti-NPs (14–19 nm) revealed a stronger preventive antiviral effect, expressed in tobacco cells by a significant reduction of PVYNTN-CP gene expression and the absence of viral cytoplasmic inclusions between 7 and 21 dpi (day post inoculation). Additionally, it was demonstrated that only Ti-NPs had direct contact with PVYNTN in in vitro test resulting in virus particles fragmentation. Furthermore, it was revealed that virus limitation as an effect of Ti-NPs and Ag-NPs application, along with significant induction of total soluble phenolic compounds and proline content, was accompanied by reduced lipid peroxidation levels compared with PVYNTN-inoculated and mock-inoculated tobacco plants without pretreatment. Additionally, PVYNTN-infected tobacco pretreated with Ti-NPs and Ag-NPs displayed a highly dynamic increase in salicylic acid, which plays a role in systemic resistance as a signaling factor. This study also reported that SOD (superoxide dismutase), PAL (phenylalanine ammonia-lyase), and PPO (polyphenol oxidase) are important components of the antioxidant response to Ti-NPs and Ag-NPs application, leading to PVYNTN suppression. Correspondingly, the significant increase in SA (salicylic acid) was followed by upregulation of NtPR-5 and NtPR-12 genes, with slight induction of NtPR-1 compared with mock-inoculated plants with and without Ti-NP and Ag-NP pretreatment, in contrast to the downregulation of NtPR-2 in comparison with mock-inoculated and virus-inoculated plants. Overall, this study established that Ti-NPs from Ti-MOF (metal–organic frameworks) and Ag-NP pretreatments offer a promising preventive approach in the PVYNTN-tobacco pathosystem without phytotoxicity risk. Nonetheless, future research is needed for deeper analyses of the mechanisms of Ti-NP and Ag-NP action, particularly focusing on their interactions with viral particles and plants.",
+      "journal": "Scientific reports",
+      "year": 2026,
+      "pub_date": "2026-01-13",
+      "authors": "Otulak-Kozieł Katarzyna; Nasiłowska Barbara; Gohari Gholamreza; Skrzeczanowski Wojciech; Fotopoulos Vasileios; ... (+4)",
+      "first_author": "Otulak-Kozieł Katarzyna",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management"
+      ],
+      "virus_name": "马铃薯Y病毒（PVYNTN株系）",
+      "taxonomy": "",
+      "host_plant": "烟草（Nicotiana tabacum 'Samsun'）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41590736",
+      "doi": "10.3390/md24010039",
+      "title": "Discovery of a Marine ",
+      "abstract": "Tobacco mosaic virus (TMV) threatens crop yield and quality, while chemical antivirals offer limited efficacy and potential environmental hazards. Marine fungal polysaccharides are promising eco-friendly alternatives due to their biocompatibility and biodegradability. Here, extracellular polysaccharides (EPSs) from the deep-sea fungus Beauveria bassiana T2-2 was isolated, characterized, and produced under optimized conditions (28 °C, 200 rpm, 9 days, pH 8, inoculum 4%) using an L9 (34) orthogonal medium, yielding 3.42 g/L, which is a 48% increase over unoptimized culture. EPSs were glucose-rich, with a molecular weight of 3.56 × 104 Da, containing 90.05% total sugar, 0.28% protein, 1.15% uronic acid, and 1.18% sulfate. In a Nicotiana benthamiana-TMV model, EPSs alleviated viral symptoms, maintained chlorophyll content, enhanced antioxidant enzymes (SOD, POD, CAT), reduced malondialdehyde, and upregulated defense genes in SA, ET, ROS, and phenylpropanoid pathways. EPSs, alone or combined with Ribavirin, activated multi-pathway antiviral immunity, highlighting its potential as a sustainable plant-protective agent.",
+      "journal": "Marine drugs",
+      "year": 2026,
+      "pub_date": "2026-01-13",
+      "authors": "Qiu Xu; Jiao Lihang; Xue Jingjing; Xu Guangxin; Tang Xixiang",
+      "first_author": "Qiu Xu",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒（TMV）",
+      "taxonomy": "",
+      "host_plant": "本氏烟草（Nicotiana benthamiana）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41600997",
+      "doi": "10.3390/vaccines14010081",
+      "title": "Plant Viral Vectors for Vaccine Development.",
+      "abstract": "Plant viruses are useful tools for quickly and easily producing recombinant proteins in plants. Compared to systems that use genetically modified plants, viral vectors are easier to work with and can produce recombinant proteins faster and in larger amounts. Recently, there has been growing interest in using plant viruses as vectors to make vaccines, either as whole proteins or as small parts displayed on plant virus particles. The best examples for this purpose are tobacco mosaic virus, cowpea mosaic virus and potato virus X. Vaccines made using these viruses target various human and animal diseases and have often triggered immune responses and provided protection against infections. This review looks at the benefits of using plant virus vectors, the progress in developing different viral vector systems, and immune studies that support the idea of vaccines made from plant viruses.",
+      "journal": "Vaccines",
+      "year": 2026,
+      "pub_date": "2026-01-12",
+      "authors": "Shahgolzari Mehdi; Yavari Afagh; Venkataraman Srividhya; Faija Mehrin; Hefferon Kathleen",
+      "first_author": "Shahgolzari Mehdi",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "烟草花叶病毒、豇豆花叶病毒、马铃薯X病毒",
+      "taxonomy": "",
+      "host_plant": "植物（未具体说明）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41363449",
+      "doi": "10.1128/mbio.03335-25",
+      "title": "Microbial dispersal from surrounding vegetation influences phyllosphere microbiome assembly of corn and soybean.",
+      "abstract": "Non-crop plants surrounding agricultural fields provide numerous ecological services to crops but have rarely been considered a source of microorganisms during the early stages of crop growth. In this study, we test whether crops in close proximity to surrounding woodland habitat fragments develop a denser microbiome that more closely resembles the microbiome composition of the surrounding vegetation than plants farther away. We sampled epiphytic bacteria from corn and soybean plants weekly for 4 (corn) and 3 (soybean) weeks during early development using a spatially explicit design, and on the final time point, we sampled additional cohorts of younger leaves. To contextualize the source strength of the surrounding vegetation, we also sampled soil at each sampling location. Both crop species exhibited a microbiome density gradient and a decay of microbiome similarity to the surrounding vegetation over a distance of 100 m from the vegetation at many time points. Phyllosphere microbiome similarity to the soil tended to increase into the field interior. The strength of host microbiome filtering also depended on the proximity to the surrounding vegetation, with intermediate to most distant locations exhibiting the highest values of host filtering. Last, the microbiomes of younger leaves tended to more closely resemble those of the older surrounding conspecific leaves than the soil or surrounding woodland vegetation. Overall, our study demonstrates that dispersal of bacteria from nearby leaves can shape the abundance and composition of developing crop phyllosphere microbiomes and highlights the diminishing role that soil plays when plant sources are closer or more abundant.IMPORTANCEA central concern in microbial ecology is understanding the sources of microbial colonists and how proximity to such sources impacts community assembly. This area of research is especially important for plants during early stages of development, where the arrival of leaf-specialized bacteria plays an influential role in priming plant immunity and consequently promoting disease resistance. In this study, we test the effect of dispersal from surrounding vegetation on the phyllosphere assembly of corn and soybean using a time series over the early stages of growth. Our work demonstrates that at these early developmental stages, non-crop vegetation surrounding croplands acts as a meaningful source of phyllosphere microorganisms. We further show that the influence of soil on the phyllosphere depends on host proximity to surrounding vegetation and that microbiomes of young leaves emerging on more mature plants tend to be more influenced by older surrounding crop leaves than soil or non-crop leaves.",
+      "journal": "mBio",
+      "year": 2026,
+      "pub_date": "2026-01-14",
+      "authors": "Meyer Kyle M; Lindow Steven E",
+      "first_author": "Meyer Kyle M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41468313",
+      "doi": "10.1021/acs.langmuir.5c05450",
+      "title": "Pectinase-Responsive Mesoporous Silica Nanocarriers for Targeted Delivery of Carvacrol in Fungal Disease Management of Kiwifruit.",
+      "abstract": "Natural plant-derived bioactive compounds, particularly essential oils, have received increasing attention as eco-friendly alternatives for postharvest disease management in perishable fruits. In this work, a pectinase-responsive nanodelivery system was designed for controlled and localized release of carvacrol. This system was fabricated using aminated mesoporous silica nanoparticles serving as the delivery vehicle and pectin functioning as the enzyme-responsive regulator. These nanoparticles displayed a well-defined spherical shape with a mean diameter of 234 nm, while the loading capacity reached 8.42%. Carvacrol release was markedly enhanced in the presence of pectinase, mimicking pathogen-induced enzyme secretion. Antifungal assays demonstrated that the pectin-functionalized nanocarriers had greater antifungal efficacy against Botryosphaeria dothidea, showing a half-maximal effective concentration of 23.38 mg·L-1, and performed better than the conventional soluble carvacrol formulation. Furthermore, the nanoparticles adhered strongly to kiwifruit leaf surfaces, ensuring better surface retention. In postharvest trials, the system effectively delayed fruit softening and reduced the occurrence of soft rot. Safety assessments in human hepatocyte cells indicated high cell viability (>96.5%) at the maximum tested level and a markedly lower apoptosis rate compared with the control. Overall, this enzyme-responsive nanocarrier provides pathogen-triggered release of carvacrol and represents a sustainable and effective strategy for postharvest fruit disease control.",
+      "journal": "Langmuir : the ACS journal of surfaces and colloids",
+      "year": 2026,
+      "pub_date": "2026-01-13",
+      "authors": "Mo Yalan; Liu Yiping; Li Chaonan; Zhou Jianxin; Li Xiaogang",
+      "first_author": "Mo Yalan",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41468001",
+      "doi": "10.1021/acs.jafc.5c10857",
+      "title": "Oat Leaf Diseases: Secondary Metabolites of Pathogenic Fungi and Infected Plants and Their Toxicity.",
+      "abstract": "Oats (Avena sativa), a globally vital cereal and forage crop, incur heavy losses from foliar fungal pathogens, whose virulence is largely mediated by secondary metabolites. These compounds are toxic to the host plant, normal cells, and livestock. This review summarizes the current knowledge on 31 pathogenic fungi and their 310 secondary metabolites, which are classified into 9 chemical classes: lactones, benzene derivatives, terpenoids, nitrogen-containing compounds, peptides, flavonoids, pyranones, steroids, and organic acids. Of these 310 secondary metabolites, 68 compounds display phytotoxicity, and an additional 3, 3, and 2 exhibit cytotoxic, teratogenic, and carcinogenic activities, respectively. Pathogen-infected oat plants produce 16 inducible secondary metabolites as defense responses to pathogenic fungi, but their toxicity to plants, animals, and the agroecosystem remains unexplored. Therefore, integrating pathogen-derived toxins and host-derived phytochemicals is essential for developing eco-friendly disease management strategies and deepening our understanding of the chemical ecology underpinning oat-pathogen interactions.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2026,
+      "pub_date": "2026-01-14",
+      "authors": "Guo Yongsha; Chen Xunfeng; Wei Xuhong; Wang Xin; Pan Yanxiu; ... (+3)",
+      "first_author": "Guo Yongsha",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41552464",
+      "doi": "10.1021/acsomega.5c07651",
+      "title": "From Nature to Nanotech: Customizing Essential Oil Delivery for a Reduced Fungicide in Agriculture.",
+      "abstract": "Modern agriculture is increasingly challenged by climate change, soil degradation, and the growing incidence of fungal diseases, which significantly reduce crop yields and quality. To mitigate these problems, the increased use of synthetic pesticides has become common; however, their overuse has led to environmental contamination, human health risks, and the emergence of resistant pathogens. Essential oils (EOs) have shown promise as a sustainable alternative due to their natural antifungal, antioxidant, and antimicrobial properties. Despite their potential, direct agricultural application of EOs is limited by volatility, poor water solubility, and instability under environmental conditions. Nanotechnology offers an innovative approach through the nanoencapsulation of EOs, enhancing their stability, bioavailability, and controlled release while minimizing volatilization losses. Among the available delivery systems, lipid-based nanoparticles, such as solid lipid nanoparticles (SLNs) and nanostructured lipid carriers (NLCs), stand out for their biocompatibility, environmental safety, and ability to prolong biological activity in the field. These systems also enable codelivery of EOs with biocontrol agents or micronutrients, thereby supporting integrated pest and disease management strategies. This review provides a timely and comprehensive synthesis of recent advances in the nanoencapsulation of EOs using lipid-based nanoplatforms, filling a critical gap in the literature by elucidating the pivotal role of NLCs in enabling sustainable, effective, and scalable strategies for fungal disease control in agriculture. Additionally, it highlights current challenges and future research directions related to large-scale production, field validation, and the assessment of ecological safety and potential effects on nontarget organisms.",
+      "journal": "ACS omega",
+      "year": 2026,
+      "pub_date": "2026-01-13",
+      "authors": "Terra Michele Caroline; Ramos Campos Estefânia Vangelie; Preisler Ana Cristina; do Espírito Santo Pereira Anderson; de Oliveira Jhones Luiz; ... (+1)",
+      "first_author": "Terra Michele Caroline",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "month": "2008-04",
+  "generated": "2026-07-13 02:59:42",
+  "total": 32,
+  "by_category": {
+    "Host_Virus_Interactions": 12,
+    "New_Virus": 10,
+    "Antiviral_Resistance_Genes": 5,
+    "Molecular_Characterization": 3,
+    "Biotechnology_Applications": 3,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "18199644",
+      "doi": "10.1128/JVI.02506-07",
+      "title": "Rice yellow mottle virus, an RNA plant virus, evolves as rapidly as most RNA animal viruses.",
+      "abstract": "The rate of evolution of an RNA plant virus has never been estimated using temporally spaced sequence data, by contrast to the information available on an increasing range of animal viruses. Accordingly, the evolution rate of Rice yellow mottle virus (RYMV) was calculated from sequences of the coat protein gene of isolates collected from rice over a 40-year period in different parts of Africa. The evolution rate of RYMV was estimated by pairwise distance linear regression on five phylogeographically defined groups comprising a total of 135 isolates. It was further assessed from 253 isolates collected all over Africa by Bayesian coalescent methods under strict and relaxed molecular clock models and under constant size and skyline population genetic models. Consistent estimates of the evolution rate between 4 x 10(-4) and 8 x 10(-4) nucleotides (nt)/site/year were obtained whatever method and model were applied. The synonymous evolution rate was between 8 x 10(-4) and 11 x 10(-4) nt/site/year. The overall and synonymous evolution rates of RYMV were within the range of the rates of 50 RNA animal viruses, below the average but above the distribution median. Experimentally, in host change studies, substitutions accumulated at an even higher rate. The results show that an RNA plant virus such as RYMV evolves as rapidly as most RNA animal viruses. Knowledge of the molecular clock of plant viruses provides methods for testing a wide range of biological hypotheses.",
+      "journal": "Journal of virology",
+      "year": 2008,
+      "pub_date": "2008-04-01",
+      "authors": "Fargette D; Pinel A; Rakotomalala M; Sangu E; Traoré O; ... (+7)",
+      "first_author": "Fargette D",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Rice yellow mottle virus (RYMV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18182024",
+      "doi": "10.1111/j.1365-313X.2008.03407.x",
+      "title": "Natural variation and functional analyses provide evidence for co-evolution between plant eIF4E and potyviral VPg.",
+      "abstract": "Amino acid substitutions in the eukaryotic translation initiation factor 4E (eIF4E) result in recessive resistance to potyviruses in a range of plant species, including Capsicum spp. Correspondingly, amino acid changes in the central part of the viral genome-linked protein (VPg) are responsible for the potyvirus's ability to overcome eIF4E-mediated resistance. A key observation was that physical interaction between eIF4E and the VPg is required for viral infection, and eIF4E mutations that cause resistance prevent VPg binding and inhibit the viral cycle. In this study, polymorphism analysis of the pvr2-eIF4E coding sequence in a worldwide sample of 25 C. annuum accessions identified 10 allelic variants with exclusively non-synonymous variations clustered in two surface loops of eIF4E. Resistance and genetic complementation assays demonstrated that pvr2 variants, each with signature amino acid changes, corresponded to potyvirus resistance alleles. Systematic analysis of the interactions between eIF4E proteins encoded by the 10 pvr2 alleles and VPgs of virulent and avirulent potato virus Y (PVY) and tobacco etch virus (TEV) strains demonstrated that resistance phenotypes arose from disruption of the interaction between eIF4E and VPg, and that viral adaptation to eIF4E-mediated resistance resulted from restored interaction with the resistance protein. Complementation of an eIF4E knockout yeast strain by C. annuum eIF4E proteins further shows that amino acid changes did not impede essential eIF4E functions. Altogether, these results argue in favour of a co-evolutionary 'arms race' between Capsicum eIF4E and potyviral VPg.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2008,
+      "pub_date": "2008-04-01",
+      "authors": "Charron Carine; Nicolaï Maryse; Gallois Jean-Luc; Robaglia Christophe; Moury Benoît; ... (+2)",
+      "first_author": "Charron Carine",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "马铃薯Y病毒(PVY)和烟草蚀纹病毒(TEV)",
+      "taxonomy": "",
+      "host_plant": "辣椒(Capsicum annuum)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18272576",
+      "doi": "10.1128/JVI.02438-07",
+      "title": "Tobacco rattle virus 16-kilodalton protein encodes a suppressor of RNA silencing that allows transient viral entry in meristems.",
+      "abstract": "RNA silencing is a host defense mechanism that limits the accumulation and spread of viruses in infected plants. Correspondingly, plant viruses encode suppressors of silencing. In the positive-strand RNA virus Tobacco rattle virus (TRV), the suppressor of silencing is a 16-kDa (16K) protein encoded by RNA1. The suppressor action of the 16K protein is transient and weaker than that of the P19 suppressor, encoded by tomato bushy stunt virus. Mutant TRV that does not produce its suppressor, unlike other suppressor-defective viruses, is competent to accumulate and spread systemically in the infected plant. However, this mutant virus does not exhibit the transient invasion of the meristem that is characteristic of the wild-type virus. Based on this analysis, we propose that the 16K suppressor of silencing allows TRV to transiently invade the meristem. Our data are consistent with a mechanism of long-term meristem virus exclusion that is dependent on a transient invasion of the meristem early in the infection cycle. This novel mechanism of meristem exclusion may be associated with the phenomenon of recovery in virus-infected plants in which upper leaves have little or no virus and are immune to secondary infection by the same virus.",
+      "journal": "Journal of virology",
+      "year": 2008,
+      "pub_date": "2008-04-01",
+      "authors": "Martín-Hernández Ana M; Baulcombe David C",
+      "first_author": "Martín-Hernández Ana M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Tobacco rattle virus (TRV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769623",
+      "doi": "10.1094/PDIS-92-4-0648A",
+      "title": "First Report of a New Potyvirus, Tricyrtis virus Y, and Lily virus X, a Potexvirus, in Tricyrtis formosana in the United States.",
+      "abstract": "Tricyrtis formosana (toad lily) is an herbaceous perennial in the family Liliaceae. Native to Asia, T. formosana is now used in the United States as an ornamental border plant in woodland and shade gardens. A T. formosana var. stolonifera plant showing chlorosis and mild mosaic symptoms obtained from a commercial grower in Columbia County, Oregon tested positive for potyvirus by ELISA using our genus Potyvirus broad spectrum reacting PTY-1 Mab (3). Electron microscopic examination of negatively stained leaf-dip preparations from symptomatic leaves showed a mixture of two sizes of flexuous rod-shaped particles, approximately 700 nm long (resembling potyviruses) and 470 nm long (resembling potexviruses). Total RNA extracts from symptomatic leaves were used in reverse transcription (RT)-PCR assays with potyvirus- or potexvirus-specific primers. The degenerate primers for the genus Potyvirus (2) direct the amplification of approximately 1,600-bp fragments from the 3' terminus of most potyviruses. Overlapping potexvirus cDNA clones were generated using degenerate genus Potexvirus replicase primers, and later, virus-specific primers in 3' RACE (4). The RT-PCR amplified fragments were cloned and sequenced. Analysis of the 1,688 nt potyvirus sequence (GenBank Accession No. AY864850) using BLAST showed highest identity with members of the Bean common mosaic virus (BCMV) subgroup of potyviruses. Pairwise amino acid comparisons of the CP region of the new potyvirus showed 78% identity to strains of Bean common mosaic necrosis virus, 77% identity with Soybean mosaic virus and Ceratobium mosaic virus, 72 to 76% identity to strains of BCMV, and only 50 to 64% identity with 54 other potyviruses. Additionally, similar pairwise analysis of the CP nucleotide sequence and 3'NCR of the new potyvirus generally revealed the same identity trend as described for the CP amino acid sequences, albeit with the highest nucleotide identities at less than 73% for CP and less than 66% for the 3'NCR. These results suggest that this virus is a new species in the genus Potyvirus (1), which we have tentatively named Tricyrtis virus Y (TrVY). BLAST analysis of the 3' terminal 3,010 nt potexvirus sequence (GenBank Accession No. AY864849) showed 89% nucleotide identity with Lily virus X (LVX). Pairwise amino acid comparisons of the putative gene products revealed 98, 95, 94 and 99% identity with LVX TGBp1, TGBp2, TGBp3-like, and CP, respectively, and 97% identity with the 108 nt 3'NCR. Homology with other members of the genus Potexvirus was less than 50% for these corresponding genes and gene products. ELISA and RT-PCR analysis for these two viruses in toad lily plants obtained from a grower in Illinois also revealed the presence of TrVY in three of seven cultivars and LVX coinfecting only one of the plants. The standard propagation method for T. formosana is plant division, which along with mechanical contact, provides efficient means for spread of both viruses. To our knowledge, this is the first description of this potyvirus and the first report of any potyvirus in T. formosana. LVX has been reported in Lilium formosanum, but to our knowledge, this is also the first report of LVX in T. formosana. References: (1) P. H. Berger et al. Potyviridae. Page 819 in: Virus Taxonomy: 8th Rep. ICTV, 2005. (2) M. A. Guaragna et al. Acta. Hortic. 722:209, 2006. (3) R. L. Jordan and J. Hammond. J. Gen. Virol. 72:1531, 1991. (4) C. J. Maroon-Lango et al. Arch. Virol. 150:1187, 2005.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-04-01",
+      "authors": "Jordan R L; Guaragna M A; Van Buren T; Putnam M L",
+      "first_author": "Jordan R L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tricyrtis virus Y (TrVY), Lily virus X (LVX)",
+      "taxonomy": "Potyviridae, Potyvirus; Alphaflexiviridae, Potexvirus",
+      "host_plant": "Tricyrtis formosana (toad lily)",
+      "location": "美国俄勒冈州哥伦比亚县; 伊利诺伊州",
+      "results": "TrVY为新种, CP氨基酸与BCMV等相似性<78%; LVX与已知LVX同源性>94%; 伊利诺伊州样品中也检测到两种病毒。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769630",
+      "doi": "10.1094/PDIS-92-4-0650A",
+      "title": "First Report of Beet mild curly top virus Infection of Chile Pepper in North-Central Mexico.",
+      "abstract": "During the 2005 growing season, widespread virus-like symptoms were observed in pepper (Capsicum annuum) fields in north-central Mexico. Early in the season, plants were chlorotic and stunted with thickened, elongated leaves. From mid to late season, the affected plants showed severe yellowing, upwardly rolled, small leaves, and a few deformed fruits. Symptoms were similar to those described for curtoviruses in pepper (1). The leafhopper vector of curtoviruses, Circulifer tenellus, was first reported in the area in 1953 (3) (its presence was confirmed again in January 2008). Pepper fields were sampled in the states of Aguascalientes and Zacatecas, and five symptomatic plants from Zacatecas tested positive for the presence of curtoviruses by PCR using primers to the coat protein (CP) coding region (2). PCR amplicons from three samples of Ancho and Mirasol pepper types from Zacatecas, which also tested positive by PCR using the rep coding region (2), were sequenced and compared with reported curtoviruses. The samples showed 91% identity with the CP coding region and 93% identity with the rep coding region of Beet mild curly top virus (formerly the Worland strain). A survey of pepper fields from Aguascalientes and Zacatecas based on symptomatic plants was conducted from July to August of 2005. Forty-three fields of different types of pepper, including those growing under mulch and drip irrigation, were surveyed. Twenty-five plants in each of five contiguous rows were inspected for the symptoms described above. Disease symptoms were noted in Mirasol, Ancho, Pasilla, and Guajillo pepper types, and the average disease incidence was 9.87% (range: 1.6 to 48%), 15.2% (range: 6.4 to 25.6%), 7.85% (range: 2.4 to 15.2%), and 20.8% (range: 8 to 33.6%), respectively. To our knowledge, this is the first report of curtovirus infection of chile pepper in this region of Mexico. The moderate level of curtovirus infection found here suggests the need to initiate management strategies for this disease. References: (1) L. L. Black et al. Page 98 in: Pepper Diseases. A Field Guide. AVRDC, Taiwan, 1991. (2) R. Creamer et al. Plant Dis. 89:480, 2005. (3) D. A. Young and N. W. Frazier. Hilgardia 23:25, 1954.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-04-01",
+      "authors": "Velásquez-Valle R; Medina-Aguilar M M; Creamer R",
+      "first_author": "Velásquez-Valle R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Beet mild curly top virus",
+      "taxonomy": "Geminiviridae, Curtovirus",
+      "host_plant": "Capsicum annuum (chile pepper)",
+      "location": "墨西哥中北部 (Aguascalientes和Zacatecas州)",
+      "results": "鉴定为Beet mild curly top virus，与已知株系CP 91%、rep 93%同源性；各品种平均发病率9.87%-20.8%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769627",
+      "doi": "10.1094/PDIS-92-4-0651B",
+      "title": "First Report of Angelonia flower break virus in Nemesia spp. and Other Ornamental Plants in California.",
+      "abstract": "Between June 2006 and July 2007, ornamental plant samples were collected from four counties in California (Riverside, Sacramento, San Diego, and Santa Barbara) and tested for the presence of Angelonia flower break virus (AnFBV) using ELISA (Agdia, Inc., Elkhart, IN). Tissue samples were from propagation facilities or wholesale outlets except those from Riverside County, which were from retail stores. Thirteen positive samples were found in three varieties each of Angelonia and Nemesia spp. and seven varieties of Verbena spp., with at least one positive from each county. Foliar symptoms ranged from asymptomatic to a mild mosaic with distinct flower breaking in the Angelonia spp. Results were confirmed by reverse transcription (RT)-PCR of the coat protein gene (1) and the 1,172-bp amplicons were sequenced. Viral isolates from the three varieties of the Angelonia spp. had 98 to 99% nucleotide similarity and 99 to 100% amino acid identity to the Maryland strain of AnFBV (1; GenBank Accession No. DQ221212), with 91 to 92% nucleotide similarity and 96 to 97% amino acid identity to the Israel and Florida strains (GenBank Accession Nos. DQ223771 and DQ219415). All viral isolates from the Nemesia and Verbena spp. plants had nucleotide similarities of 96 to 98% and 98% amino acid identity to the Israel and Florida strains, with 91 to 92% nucleotide similarity to the Maryland strain. AnFBV has been previously reported in Angelonia and Verbena spp. among other hosts (1,2), but not in Nemesia spp. and not in California. This recently described carmovirus appears to be well established in the state in a variety of ornamental plant species. References: (1) S. Adkins et al. Phytopathology 96:460, 2006. (2) F. Assis-Filho et al. Plant Dis. 90:1115, 2006.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-04-01",
+      "authors": "Mathews D M; Dodds J A",
+      "first_author": "Mathews D M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Angelonia flower break virus (AnFBV)",
+      "taxonomy": "Tombusviridae, Carmovirus",
+      "host_plant": "Angelonia spp., Nemesia spp., Verbena spp. 及多种观赏植物",
+      "location": "美国加州（Riverside, Sacramento, San Diego, Santa Barbara县）",
+      "results": "在Angelonia、Nemesia和Verbena多个品种中检出阳性，病毒分离株与已知株系核苷酸相似性91-99%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769651",
+      "doi": "10.1094/PDIS-92-4-0508",
+      "title": "Identification and Partial Characterization of a New Luteovirus Associated with Rose Spring Dwarf Disease.",
+      "abstract": "A number of viruses in the genera Ilarvirus and Nepovirus have been shown to be associated with specific diseases in rose, but many graft-transmissible rose diseases still have unknown etiologies. One of these diseases originally was detected by grafting from nonsymptomatic roses to Rosa multiflora indicator plants. Double-stranded RNAs (dsRNAs) were recovered and used as templates for cDNA synthesis and generating a cDNA library. Analysis of deduced amino acid sequences clearly positioned this virus as a member of the family Luteoviridae. The name rose spring dwarf associated virus (RSDaV) is tentatively proposed for the novel virus because the symptoms of this virus on R. multiflora are consistent with previous descriptions of rose spring dwarf disease (RSD). Phylogenetic analysis revealed a close relationship of RSDaV with members of the genus Luteovirus. Aphid transmission studies identified the rose-grass aphid (Metapolophium dirhodum) and yellow rose aphid (Rhodobium porosum) as vectors for this new virus. Host range data showed that RSDaV has a host range including both monocots and dicots. A specific reverse-transcription polymerase chain reaction assay was developed and revealed the presence of the RSDaV in several rose cultivars. RSDaV-inoculated rose plants developed RSD symptoms, confirming its role in the etiology of the disease.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-04-01",
+      "authors": "Salem Nidá; Golino Deborah A; Falk Bryce W; Rowhani Adib",
+      "first_author": "Salem Nidá",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Rose spring dwarf associated virus (RSDaV)",
+      "taxonomy": "Luteoviridae, Luteovirus",
+      "host_plant": "玫瑰（Rosa spp.），包括Rosa multiflora指示植物及多个玫瑰品种",
+      "location": "未提及",
+      "results": "RSDaV属于Luteovirus属，由两种蚜虫传播，宿主涵盖单子叶和双子叶植物；开发了特异性RT-PCR检测方法，证实其与玫瑰春季矮化病的因果关系。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769631",
+      "doi": "10.1094/PDIS-92-4-0649B",
+      "title": "First Report of Peach latent mosaic viroid Infecting Peach in Egypt.",
+      "abstract": "Peach latent mosaic viroid (PLMVd) is a widespread pathogen of stone fruit trees in some European and Mediterranean countries and also in North America. To access the presence of the viroid in Egypt, a survey was conducted that covered five commercial peach orchards in the El Khatatba Region in Al Minufiya Governorate. During 2003 and 2004, 73 peach trees (cv. Florida grafted on Nemagard rootstock) were visually inspected and sampled. No symptoms characteristic of PLMVd infection, such as mosaic, delayed growth, or fruit suture cracking, were observed. All samples were tested for the presence of PLMVd using dot-blot hybridization and reverse transcription (RT)-PCR. Aliquots (5 μl) of total nucleic acids extracted from approximately 2 mg of leaf tissue were spotted onto positively charged nylon membranes and hybridized under stringent conditions with a digoxigenin-labeled riboprobe (2). The extracts (1 μl) also were used in RT-PCR as described (1). Only 1 of the 73 peach trees was positive for PLMVd using these detection techniques. The RT-PCR product was of the size expected for PLVMd and was cloned and sequenced. The 339 nucleotide sequence was deposited in GenBank as Accession No. DQ839564. The sequence of this Egyptian PLMVd isolate was 94% identical to the reference PLMVd variant (GenBank Accession No. M83545) and most closely (95%) related to Canadian isolate variant 16 (GenBank Accession No. AJ550911). Such a low incidence compared with other countries may be because the survey was restricted to a limited number of samples, conducted on newly reclaimed lands where no sources of infection existed before, and material with relatively low PLMVd incidence might have been used for planting. Although the incidence of PLMVd was low in this survey, the occurrence represents a threat to the stone fruit tree industry in this country and regular screening of PLMVd in certification programs is suggested. To our knowledge, this is the first report of PLMVd on peach in Egypt. References: (1) S. Loreti et al. EPPO Bull. 29:433, 1999. (2) A. M. Shamloul et al. Acta Hortic. 386:522, 1995.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-04-01",
+      "authors": "Hassan M; Rysanek P; Malfitano M; Alioto D",
+      "first_author": "Hassan M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Peach latent mosaic viroid (PLMVd)",
+      "taxonomy": "Avsunviroidae, Pelamoviroid",
+      "host_plant": "桃树 (Prunus persica cv. Florida grafted on Nemagard rootstock)",
+      "location": "埃及，Al Minufiya Governorate, El Khatatba Region",
+      "results": "73棵桃树中检出1棵阳性；RT-PCR产物339nt，序列与参考株系94%同源，与加拿大分离株16最相似(95%)。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "21086722",
+      "doi": "",
+      "title": "Optimized expression, solubilization and purification of nuclear inclusion protein b of cardamom mosaic virus.",
+      "abstract": "All RNA viruses encode an RNA-dependent RNA polymerase (RdRP) that is required for replication of the viral genome. Nuclear inclusion b (NIb) gene codes for the RdRp in Potyviridae viruses. In this study, expression, solubilization and purification of NIb protein of Cardamom mosaic virus (CdMV) is reported. The objective of the present study was to express and purify the NIb protein of CdMV on a large scale for structural characterization, as the structure of the RdRp from a plant virus is yet to be determined. However, the expression of NIb protein with hexa-histidine tag in Escherichia coli led to insoluble aggregates. Out of all the approaches [making truncated versions to reduce the size of protein; replacing an amino acid residue likely to be involved in hydrophobic intermolecular interactions with a hydrophilic one; expressing the protein along with chaperones; expression in Origami cells for proper disulphide bond formation, in E. coli as a fusion with maltose-binding protein (MBP) and in Nicotiana tabacum] to obtain the RdRp in a soluble form, only expression in E. coli as a fusion with MBP and its expression in N. tabacum were successful. The NIb expressed in plant or as a fusion with MBP in E. coli can be scaled up for further work.",
+      "journal": "Indian journal of biochemistry & biophysics",
+      "year": 2008,
+      "pub_date": "2008-04-01",
+      "authors": "Jebasingh T; Jacob T; Shah M; Das D; Krishnaswamy S; ... (+1)",
+      "first_author": "Jebasingh T",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Cardamom mosaic virus (CdMV)",
+      "taxonomy": "Potyviridae",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18193287",
+      "doi": "10.1007/s00442-007-0953-2",
+      "title": "Ecosystem engineering affects ecosystem functioning in high-Andean landscapes.",
+      "abstract": "Ecosystem engineers are organisms that change the distribution of materials and energy in the abiotic environment, usually creating and maintaining new habitat patches in the landscape. Such changes in habitat conditions have been widely documented to affect the distributions and performances of other species but up to now no studies have addressed how such effects can impact the biotically driven physicochemical processes associated with these landscapes, or ecosystem functions. Based on the widely accepted positive relationship between species diversity and ecosystem functions, we propose that the effects of ecosystem engineers on other species could have an impact on ecosystem functions via two mutually inclusive mechanisms: (1) by adding new species into landscapes, hence increasing species diversity; and (2) by improving the performances of species already present in the landscape. To test these hypotheses, we focused on the effects of a high-Andean ecosystem engineer, the cushion plant Azorella monantha, by comparing the accumulation of plant biomass and nitrogen fixed in plant tissues as species richness increases in landscapes with and without the engineer species. Our results show that both ecosystem functions increased with species richness in both landscape types, but landscapes including A. monantha cushions reached higher outcomes of plant biomass and nitrogen fixed in plant tissues than landscapes without cushions. Moreover, our results indicate that such positive effects on ecosystem functions could be mediated by the two mechanisms proposed above. Then, given the conspicuousness of ecosystem engineering in nature and its strong influence on species diversity, and given the well-known relationship between species diversity and ecosystem function, we suggest that the application of the conceptual framework proposed herein to other ecosystems would help to advance our understanding of the forces driving ecosystem functioning.",
+      "journal": "Oecologia",
+      "year": 2008,
+      "pub_date": "2008-04-01",
+      "authors": "Badano Ernesto I; Marquet Pablo A",
+      "first_author": "Badano Ernesto I",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18188603",
+      "doi": "10.1007/s00442-007-0946-1",
+      "title": "Contrasting effects of invasive plants in plant-pollinator networks.",
+      "abstract": "The structural organization of mutualism networks, typified by interspecific positive interactions, is important to maintain community diversity. However, there is little information available about the effect of introduced species on the structure of such networks. We compared uninvaded and invaded ecological communities, to examine how two species of invasive plants with large and showy flowers (Carpobrotus affine acinaciformis and Opuntia stricta) affect the structure of Mediterranean plant-pollinator networks. To attribute differences in pollination to the direct presence of the invasive species, areas were surveyed that contained similar native plant species cover, diversity and floral composition, with or without the invaders. Both invasive plant species received significantly more pollinator visits than any native species and invaders interacted strongly with pollinators. Overall, the pollinator community richness was similar in invaded and uninvaded plots, and only a few generalist pollinators visited invasive species exclusively. Invasive plants acted as pollination super generalists. The two species studied were visited by 43% and 31% of the total insect taxa in the community, respectively, suggesting they play a central role in the plant-pollinator networks. Carpobrotus and Opuntia had contrasting effects on pollinator visitation rates to native plants: Carpobrotus facilitated the visit of pollinators to native species, whereas Opuntia competed for pollinators with native species, increasing the nestedness of the plant-pollinator network. These results indicate that the introduction of a new species to a community can have important consequences for the structure of the plant-pollinator network.",
+      "journal": "Oecologia",
+      "year": 2008,
+      "pub_date": "2008-04-01",
+      "authors": "Bartomeus Ignasi; Vilà Montserrat; Santamaría Luís",
+      "first_author": "Bartomeus Ignasi",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18228022",
+      "doi": "10.1007/s00299-008-0506-0",
+      "title": "Characterization and expression of an nsLTPs-like antimicrobial protein gene from motherwort (Leonurus japonicus).",
+      "abstract": "In screening for potent antimicrobial proteins (AMPs) from plant seeds, we had purified a heat-stable AMP, LJAMP2, from the seeds of a medicine herb, motherwort (Leonurus japonicus Houtt). In an in vitro assay, the protein can inhibit the growth of both fungi and bacteria. Then a cDNA encoding LJAMP2 was cloned by the rapid amplification of cDNA ends based on the N-terminal amino acid sequence determined. The deduced amino acid sequences of this cDNA show similarity to plant non-specific lipid transfer proteins. Northern blotting assay revealed that this nsLTP-like gene, designated LJAMP2, was expressed in seeds. Overexpression of LJAMP2 in tobacco enhanced resistance to the fungal pathogen Alternaria alternata and the bacterial pathogen Ralstonia solanacearum, significantly, while no visible alteration in plant growth and development. Our data confirm the antifungal and antibacterial function of LJAMP2 from motherwort seeds and suggest the potential of LJAMP2 in improving disease resistance in plants.",
+      "journal": "Plant cell reports",
+      "year": 2008,
+      "pub_date": "2008-04-01",
+      "authors": "Yang Xingyong; Wang Xiaowen; Li Xianbi; Zhang Beibei; Xiao Yuehua; ... (+3)",
+      "first_author": "Yang Xingyong",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

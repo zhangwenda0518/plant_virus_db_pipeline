@@ -1,0 +1,102 @@
+{
+  "month": "1983-01",
+  "generated": "2026-07-13 02:59:42",
+  "total": 4,
+  "by_category": {
+    "Detection_Methods": 1,
+    "Antiviral_Resistance_Genes": 1,
+    "Transmission_Epidemiology": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "18638866",
+      "doi": "10.1016/0042-6822(83)90350-1",
+      "title": "Ultrastructure of mixed plant virus infection: bean yellow mosaic virus with cowpea severe mosaic virus or cowpea mosaic virus in bean.",
+      "abstract": "Ultrastructural responses of bean leaf cells simultaneously infected with two morphologically distinct RNA viruses, cowpea mosaic virus (CPMV) and bean yellow mosaic virus (BYMV), or cowpea severe mosaic virus (CSMV) and BYMV, were studied in situ. The major effects on cells infected with two viruses included: (1) association of virus group-specific cytoplasmic inclusions characteristic of each virus; (2) close association of virions into specifically arranged aggregates in which CPMV or CSMV icosahedra were aligned along the long axes of the BYMV rods; and (3) the induced formation of intranuclear inclusions, spheres (22-26 nm in diameter) and filaments (10-14 nm wide and of variable length) in mixed infections of CSMV and BYMV. Intracellular serological testing using ferritin conjugated with CSMV antibodies revealed no relationship between the spherical intranuclear inclusions and CSMV capsids. We conclude that the ultrastructure of mixed infections could be used as another tool for identifying related plant viruses.",
+      "journal": "Virology",
+      "year": 1983,
+      "pub_date": "1983-01-30",
+      "authors": "Carr R J; Kim K S",
+      "first_author": "Carr R J",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "bean yellow mosaic virus (BYMV), cowpea severe mosaic virus (CSMV), cowpea mosaic virus (CPMV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "6629594",
+      "doi": "10.1016/0192-0561(83)90037-1",
+      "title": "The immunomodulatory activity of the plant proteins Momordica charantia inhibitor and pokeweed antiviral protein.",
+      "abstract": "The immunological activity of Momordica Charantia inhibitor (MCI) and of Pokeweed antiviral protein (PAP-S), 30,000 daltons plant proteins possessing close similarity to Ricin A chain as inhibitor of protein synthesis, was investigated in mice. In vivo, single nontoxic injections of microgram amount of these substances delayed H2-incompatible skin allograft rejection, splenocyte responsiveness to ConA and PHA, but not to LPS, and abrogated the PFC response to a T-dependent (SRBC) antigen while totally sparing that to a T-independent (S III) stimulus. Injection of these substances could also reduce NK cell activity while increasing macrophage-mediated spontaneous cytotoxicity. In vitro, MCI and PAP-S at non-cytotoxic concentrations inhibited lymphoid cell responsiveness to PHA and ConA, but not to LPS, and markedly enhanced macrophage-dependent cytotoxicity.",
+      "journal": "International journal of immunopharmacology",
+      "year": 1983,
+      "pub_date": "1983-01-01",
+      "authors": "Spreafico F; Malfiore C; Moras M L; Marmonti L; Filippeschi S; ... (+3)",
+      "first_author": "Spreafico F",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "6362363",
+      "doi": "10.1016/s0065-3527(08)60722-8",
+      "title": "Sternorrhynchous vectors of plant viruses: virus-vector interactions and transmission mechanisms.",
+      "abstract": "",
+      "journal": "Advances in virus research",
+      "year": 1983,
+      "pub_date": "1983-01-01",
+      "authors": "Harris K F",
+      "first_author": "Harris K F",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "6600907",
+      "doi": "",
+      "title": "Influence of adjuvant radiation therapy in breast cancer on PWM induced Ig-secretion by blood lymphocytes in vitro.",
+      "abstract": "The capacity of PWM (poke-weed mitogen) to stimulate Ig-secretion by blood lymphocytes was examined before and at various times after local radiation therapy (46.0 Gy) for breast cancer. It was observed that the secretion of IgM, IgA and IgG were significantly reduced at completion of radiation therapy. Secretion of IgM was reduced to the highest relative extent (approximately 10% of the pretreatment value). Thereafter there was a recovery of the Ig-secreting capacity which, however, remained below the pretreatment level, 12-18 months after completion of radiation therapy. The capacity of PWM-stimulated blood lymphocytes to secrete specific antibodies against morbilli and herpes simplex virus was also significantly impaired after radiation therapy. The reduction of Ig-synthesis in vitro was not correlated with the increase in the ratio between numbers of monocytes and lymphocytes in peripheral blood after radiation therapy. Possible explanations for these results are discussed.",
+      "journal": "Anticancer research",
+      "year": 1983,
+      "pub_date": "1983-01-01",
+      "authors": "Strender L E; Blomgren H; Wasserman J; Forsgren M; von Stedingk L V; ... (+2)",
+      "first_author": "Strender L E",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

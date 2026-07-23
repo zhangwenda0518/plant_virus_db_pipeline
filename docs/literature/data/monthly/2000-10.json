@@ -1,0 +1,281 @@
+{
+  "month": "2000-10",
+  "generated": "2026-07-13 02:59:42",
+  "total": 18,
+  "by_category": {
+    "Host_Virus_Interactions": 7,
+    "New_Virus": 5,
+    "Antiviral_Resistance_Genes": 4,
+    "Control_Management": 3,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30831916",
+      "doi": "10.1094/PDIS.2000.84.10.1152D",
+      "title": "First Report of Tobacco vein banding mosaic virus in China (Xian, Shaanxi Province) in Datura stramonium and Tobacco.",
+      "abstract": "Tobacco vein banding mosaic virus (TVBMV) has been reported in Taiwan (1), North America (Tennessee) (2), and Japan (3) and induces a severe disease of tobacco. During surveys on viruses of vegetables in China, TVBMV was isolated from a Datura stramonium weed plant in July 1998 in Shaanxi Province. It showed severe mosaic with blistering of the leaves. The plant was also infected by Cucumber mosaic virus (CMV). When sap from D. stramonium was frozen, thawed, and mechanically inoculated, only TVBMV was recovered. The 3'-end of the viral genome was amplified by reverse transcription-polymerase chain reaction (RT-PCR) using primers derived from the potyviridae primers (4) and cloned in pBlueScript. The sequence of 1,630 bp (GenBank AF274315) was determined on both DNA strands and found to have approximately 94% homology with other TVBMV sequences (L 28816 from Tennessee, X77637 from Taiwan, and AB020524 from Japan). The host range of the Chinese isolate was similar to that reported for the U.S. isolate. D. stramonium, Nicotiana benthamiana, N. clevelandii, N. glutinosa, N. tabacum Samsun, White Burley type and Xanthi, Lycopersicon esculentum cv. Marmande, and Petunia hybrida were systemically infected. A local infection developed in N. rustica, Chenopodium amaranticolor, C. quinoa, and Ocimum basilicum. The Chinese isolate did not infect Capsicum annuum cv. Quadrato d'Asti, Solanum melongena, or several Cucurbitaceae and Leguminosae species. Myzus persicae transmitted the Chinese TVBMV in a non-persistent mode from both D. stramonium and tobacco to the same plants and to tomato. No seed transmission occurred in experimentally infected D. stramonium (20 seedlings), tobacco White Burley type (200 seedlings), and tomato cv. Marmande (100 seedlings). The virus was found in the roots of D. stramonium and tobacco. Since the virus was not seed-transmissible, overwintering rootstocks may provide sites for winter survival of the virus. An antiserum was produced against the virus and an enzyme-linked immunosorbent assay survey was carried out in solanaceous crops including D. stramonium collected in July 1999 in Shaanxi, Shanxi, Henan, and Hebei provinces and Beijing surroundings. TVBMV was found only in the same field as in 1998 in four D. stramonium plants in association with CMV and in a tobacco plant 200 m from D. stramonium. TVBMV was not found in the closest tomato crops, where infection of CMV was severe. This is the first report of TVBMV in China, and Xian is the most northern location in which this virus has been found. References: (1) J. K. Chiang et al. Bull. Tobacco Res. Inst. 32:39, 1990. (2) B. B. Reddick et al. Plant Dis. 76:856, 1992. (3) H. Tochihara. Rev. Plant Prot. Res. 13:122, 1980. (4) A. Gibbs and A. Mackenzie. J. Virol. Meth. 63:9, 1997.",
+      "journal": "Plant disease",
+      "year": 2000,
+      "pub_date": "2000-10-01",
+      "authors": "Roggero P; Accotto G P; Ciuffo M; Lenzi R; Desbiez C; ... (+4)",
+      "first_author": "Roggero P",
+      "categories": [
+        "New_Virus",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "Tobacco vein banding mosaic virus (TVBMV)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "Datura stramonium (曼陀罗), 烟草 (Nicotiana tabacum)",
+      "location": "中国陕西省西安市",
+      "results": "获得1630 bp序列，与已知TVBMV同源性约94%；寄主范围与美分离株相似；桃蚜非持久性传播；无种子传播；仅在原采样地附近发现病毒。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30831924",
+      "doi": "10.1094/PDIS.2000.84.10.1155B",
+      "title": "First Report of Tomato spotted wilt virus Infection of Tomatillo in Georgia.",
+      "abstract": "During the 2000 spring season, tomatillo (Physalis ixocarpa) plants showing chlorotic streaks on leaves were observed in an experimental plot of the University of Georgia's Coastal Plain Experiment Station in Tift County, GA. Leaf samples from 192 plants were collected. These included plants that had chlorotic streaks and those without obvious symptoms. Samples were tested by ELISA using a commercially available Tomato spotted wilt virus (TSWV) detection kit (Agdia Inc., Elkhart, IN). TSWV was found in 10 samples that had chlorotic streaks on leaves, and the remaining plants with no obvious symptoms were negative for TSWV. Infected plants were found in both cultivars, Verde Puebla and Toma Verde. The presence of the virus had no apparent effect on plant size or fruit appearance. TSWV infection of the ELISA-positive samples was further verified by immunocapture reverse transcription-polymerase chain reaction (IC-RT-PCR) (1). The primer pair (5'-ATGTCTAAGGTTAAGCTC-3' and 5' TTAAGCAAGTTCTGTGAG-3') represented the first and last 18 bases of the coding region of the nucleocapsid gene of TSWV, respectively, and produced approximately 800-bp PCR product (1). IC-RT-PCR gave a single DNA band of expected size and no amplification was found in the uninfected control. This is the first report of TSWV on tomatillo in Georgia. Reference: (1) R. K. Jain et al. Plant Dis. 82:900, 1998.",
+      "journal": "Plant disease",
+      "year": 2000,
+      "pub_date": "2000-10-01",
+      "authors": "Díaz-Pérez J C; Pappu H R",
+      "first_author": "Díaz-Pérez J C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato spotted wilt virus (TSWV)",
+      "taxonomy": "Tospoviridae, Orthotospovirus",
+      "host_plant": "Physalis ixocarpa (tomatillo)",
+      "location": "美国佐治亚州Tift县",
+      "results": "10株有叶绿纹样品ELISA阳性，IC-RT-PCR扩增出预期条带；无症状样品均为阴性；病毒不影响植株大小和果实外观。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30831914",
+      "doi": "10.1094/PDIS.2000.84.10.1152B",
+      "title": "First Report of Oidium sp. Powdery Mildew and Tomato spotted wilt virus on Melampodium divaricatum.",
+      "abstract": "Melampodium divaricatum (Rich. ex Pers.) DC. (=M. paludosum H.B.K.), a member of the family Asteraceae and native to South America, is a recent introduction for use as a summer bedding ornamental. In September 1999, melampodium plants in multiple Baton Rouge landscapes were observed with signs of powdery mildew and symptoms of a virus-like disease. Powdery mildew spread throughout one of the plantings by late November and infected flowers and leaves. An Oidium species sporulated on both leaf surfaces but was more common on the adaxial surface. Ellipsoid conidia were produced in chains, lacked fibrosin bodies, and averaged 31 × 19 µm. No sexual stage was observed. Eight of 63 plants (cv. Derby) in one of the plantings showed virus disease symptoms that included severe leaf mosaic, leaf malformation, and stunting. Leaves from infected plants were used to sap inoculate seedling plants of melampodium and Nicotiana benthamiana. Melampodium seedlings developed typical mosaic symptoms after 48 to 56 days. N. benthamiana developed severe chlorosis and mosaic, then wilted and died after 14 days. Noninoculated plants of both species remained healthy. The virus in both plant species was identified as Tomato spotted wilt virus (TSWV) by enzyme-linked immunosorbent assay (ELISA) (Agdia, Elkhart, IN). ELISA tests for presence of Impatiens necrotic spot virus were negative. This is the first report of powdery mildew and TSWV on M. divaricatum.",
+      "journal": "Plant disease",
+      "year": 2000,
+      "pub_date": "2000-10-01",
+      "authors": "Holcomb G E; Valverde R A",
+      "first_author": "Holcomb G E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato spotted wilt virus (TSWV)",
+      "taxonomy": "Tospoviridae, Orthotospovirus",
+      "host_plant": "Melampodium divaricatum",
+      "location": "Baton Rouge, Louisiana, USA",
+      "results": "TSWV在M. divaricatum和Nicotiana benthamiana上引发典型症状，ELISA阳性，首次报道该病毒宿主。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30831922",
+      "doi": "10.1094/PDIS.2000.84.10.1154C",
+      "title": "First Report of Tomato spotted wilt virus in Habanero and Tabasco Peppers in Florida.",
+      "abstract": "In spring 2000, symptoms similar to thrips-vectored spotted wilt disease caused by Tomato spotted wilt virus (TSWV) were observed on habanero (Capsicum chinense) and tabasco (Capsicum frutescens) peppers in north Florida. Habanero peppers were from commercial fields grown for specialty markets and tabasco peppers were from research plots. Symptoms observed were leaf necrosis, fruit drop, necrotic stem lesions, and stunting. Fruit symptoms included chlorotic and necrotic spotting and distinct ring pattern and distortion. The incidence of symptomatic habanero peppers was 7 to 8% in one of the three production fields visited, and a lower incidence in two other fields (all in Jackson County). In tabasco pepper, TSWV was detected in spring and fall 1999, and spring 2000 seasons in 10 to 15% of the plants (Gadsden County). Adjacent tomato fields contained scattered plants exhibiting symptoms of TSWV. Diagnosis of TSWV from symptomatic stems, leaves, and fruit of habanero and tabasco peppers was confirmed by a double antibody sandwich enzyme linked immunosorbent assay (ELISA) using a commercially available kit (Agdia Inc., Elkhart, IN). ELISA values ranged from 1.57 to 1.95 for habanero pepper and 0.80 to 0.95 for tabasco pepper. The mean ELISA value of the negative controls was 0.001. To further verify TSWV infection, immunocapture reverse transcription-polymerase chain reaction (IC-RT-PCR) was performed (1). The primer pair 5'-ATGTCTAAGGTTAAGCTC-3' and 5'-TTAAGCAAGTTCTGTGAG-3' represented the first and last 18 bases of the coding region of the nucleocapsid gene of TSWV, respectively, and produces approximately 800 bp PCR product (1). IC-RT-PCR gave a single DNA band of expected size in both habanero and tabasco samples, while no amplification was found in an uninfected pepper sample. This is the first report of TSWV on habanero and tabasco peppers in Florida. TSWV continues to be an economically important disease constraint to the production of tomato, pepper (C. annuum), peanut, and tobacco in the southeastern United States (observations from Georgia and Florida). Meanwhile, the known host range is expanding to include new species of cultivated vegetables. References: (1) R. K. Jain et al.. Plant Dis. 82:900, 1998.",
+      "journal": "Plant disease",
+      "year": 2000,
+      "pub_date": "2000-10-01",
+      "authors": "Momol M T; Pappu H R; Dankers W; Rich J R; Olson S M",
+      "first_author": "Momol M T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato spotted wilt virus (TSWV)",
+      "taxonomy": "Bunyaviridae, Orthotospovirus",
+      "host_plant": "Capsicum chinense (habanero), Capsicum frutescens (tabasco)",
+      "location": "美国佛罗里达州北部（Jackson County, Gadsden County）",
+      "results": "ELISA阳性（Habanero: 1.57-1.95，Tabasco: 0.80-0.95）；IC-RT-PCR扩增出约800 bp预期条带，健康对照无扩增。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11043474",
+      "doi": "10.1094/MPMI.2000.13.10.1130",
+      "title": "The broad-spectrum tospovirus resistance gene Sw-5 of tomato is a homolog of the root-knot nematode resistance gene Mi.",
+      "abstract": "We used a positional cloning approach to isolate the Sw-5 disease resistance locus of tomato. Complementation experiments with overlapping cosmid clones enabled us to demonstrate that Sw-5 is a single gene locus capable of recognizing several tospovirus isolates and species. Analysis of the predicted Sw-5 protein suggests that it is a cytoplasmic protein, with a potential nucleotide binding site (NBS) domain and a C-terminal end consisting of leucine-rich repeats (LRRs). Based on its structural features, Sw-5 belongs to the class of NBS-LRR resistance genes that includes the tomato Mi, 12, and Prf genes; the Arabidopsis RPM1 gene; and the plant potato virus X resistance gene Rx. The overall similarity between the Sw-5 and Mi proteins of tomato suggests that a shared or comparable signal transduction pathway leads to both virus and nematode resistance in tomato. The similarity also supports the hypothesis that Sw-5 provides resistance via a hypersensitive response. Sw-5 is a member of a loosely clustered gene family in the telomeric region of chromosome 9. Members of this family map to other regions of chromosome 9 and also to chromosome 12, where several fungal, virus, and nematode genes have been mapped, suggesting that paralogs of Sw-5 may have evolved to provide different resistance specificities.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 2000,
+      "pub_date": "2000-10-01",
+      "authors": "Brommonschenkel S H; Frary A; Frary A; Tanksley S D",
+      "first_author": "Brommonschenkel S H",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "tospovirus（多种分离物和种）",
+      "taxonomy": "",
+      "host_plant": "番茄",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754843",
+      "doi": "10.1007/s002990000226",
+      "title": "Evaluation of resistance in Osteospermum ecklonis (DC.) Norl. plants transgenic for the N protein gene of tomato spotted wilt virus.",
+      "abstract": "The nucleocapsid protein (N) gene of tomato spotted wilt virus (TSWV) was inserted into Osteospermum ecklonis via Agrobacterium tumefaciens leaf strips co-cultivation. Sixteen primary transformant clones of two O. ecklonis genotypes were analysed. Southern blots of restricted genomic DNA demonstrated integration of the transgene and indicated the number of integrated copies. Expression of the transgene was estimated by DAS-ELISA and Western and Northern blotting. Plants were challenged with TSWV inoculation, either mechanically or by the thrips Frankliniella occidentalis; they were then monitored for symptom appearance and tested by TAS-ELISA for infection. Inoculation of the transgenic clones via the natural TSWV vector was more efficient and led to the identification of 1 clone, characterised by multiple transgene integration and no transgene expression, with improved resistance to TSWV.",
+      "journal": "Plant cell reports",
+      "year": 2000,
+      "pub_date": "2000-10-01",
+      "authors": "Vaira A M; Berio T; Accotto G P; Vecchiati M; Allavena A",
+      "first_author": "Vaira A M",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "番茄斑萎病毒 (tomato spotted wilt virus, TSWV)",
+      "taxonomy": "",
+      "host_plant": "蓝雏菊 (Osteospermum ecklonis)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11042329",
+      "doi": "10.1016/s0034-6667(00)00038-5",
+      "title": "A reconsideration of Wattieza Stockmans (here attributed to Cladoxylopsida) based on a new species from the Devonian of Venezuela.",
+      "abstract": "A single small plant fragment from the Middle Devonian of Belgium, first illustrated by Stockmans as Wattieza givetiana, is redescribed. It consists of a small central axis bearing on it whorls of four several-times bifurcate laterals that are terminally recurved. One tip is here shown to have attached one elongate ellipsoid sporangium. More abundant Middle Devonian fossils from Venezuela have similar characteristics, although they are more robust. They, together with more simple sterile examples, are demonstrated to be attached laterally and irregularly to large axes that are themselves found distal to a digitate division of a substantial branch with an enlarged base. All branches, axes and the central axes of the lateral branching systems are covered in small tangentially elongate depressions. These characteristics, taken together, demonstrate that Wattieza is a large plant of similar habit to Pseudosporochnus Potonié et Bernard. Wattieza joins Lorophyton Fairon-Demaret et Li, Calamophyton Kräusel et Weyland and Pseudosporochnus as morphologically well-circumscribed Devonian members of the phylogenetically important plant group Cladoxylopsida. Wattieza casasii Berry sp. nov. is erected to accommodate the Venezuelan material.",
+      "journal": "Review of palaeobotany and palynology",
+      "year": 2000,
+      "pub_date": "2000-10-01",
+      "authors": "Berry CM",
+      "first_author": "Berry CM",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11199395",
+      "doi": "10.1023/a:1026552827716",
+      "title": "Regulators of cell death in disease resistance.",
+      "abstract": "Cell death and disease resistance are intimately connected in plants. Plant disease resistance genes (R genes) are key components in pathogen perception and have a potential to activate cell death pathways. Analysis of R proteins suggests common molecular mechanisms for pathogen recognition and signal emission whereas the subsequent signalling unexpectedly involves a network of pathways of parallel, branching and converging action. Disease resistance signalling mutants have revealed novel types of regulatory proteins whose biochemical functions are still unknown. Accumulation of small molecules such as salicylic acid, reactive oxygen intermediates, and nitric oxide amplifies resistance responses and directs cells to initiate cell death programs. Genetic analyses of lesion mimic mutants provide a glimpse of how cell death thresholds are set via an interplay of positive and negative regulatory components.",
+      "journal": "Plant molecular biology",
+      "year": 2000,
+      "pub_date": "2000-10-01",
+      "authors": "Shirasu K; Schulze-Lefert P",
+      "first_author": "Shirasu K",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11035086",
+      "doi": "10.4049/jimmunol.165.8.4470",
+      "title": "Regulated production and molecular diversity of human liver and activation-regulated chemokine/macrophage inflammatory protein-3 alpha from normal and transformed cells.",
+      "abstract": "Liver and activation-regulated chemokine (LARC), also designated macrophage inflammatory protein-3alpha (MIP-3alpha), Exodus, or CCL20, is a C-C chemokine that attracts immature dendritic cells and memory T lymphocytes, both expressing CCR6. Depending on the cell type, this chemokine was found to be inducible by cytokines (IL-1beta) and by bacterial, viral, or plant products (including LPS, dsRNA, and PMA) as measured by a specific ELISA. Although coinduced with monocyte chemotactic protein-1 (MCP-1) and IL-8 by dsRNA, measles virus, and IL-1beta in diploid fibroblasts, leukocytes produced LARC/MIP-3alpha only in response to LPS. However, in myelomonocytic THP-1 cells LARC/MIP-3alpha was better induced by phorbol ester, whereas in HEp-2 epidermal carcinoma cells IL-1beta was the superior inducer. The production levels of LARC/MIP-3alpha (1-10 ng/ml) were, on the average, 10- to 100-fold lower than those of IL-8 and MCP-1, but were comparable to those of other less abundantly secreted chemokines. Natural LARC/MIP-3alpha protein isolated from stimulated leukocytes or tumor cell lines showed molecular diversity, in that NH(2)- and COOH-terminally truncated forms were purified and identified by amino acid sequence analysis and mass spectrometry. In contrast to other chemokines, including MCP-1 and IL-8, the natural processing did not affect the calcium-mobilizing capacity of LARC/MIP-3alpha through its receptor CCR6. Furthermore, truncated natural LARC/MIP-3alpha isoforms were equally chemotactic for lymphocytes as intact rLARC/MIP-3alpha. It is concluded that in addition to its role in homeostatic trafficking of leukocytes, LARC/MIP-3alpha can function as an inflammatory chemokine during host defense.",
+      "journal": "Journal of immunology (Baltimore, Md. : 1950)",
+      "year": 2000,
+      "pub_date": "2000-10-15",
+      "authors": "Schutyser E; Struyf S; Menten P; Lenaerts J P; Conings R; ... (+4)",
+      "first_author": "Schutyser E",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10944400",
+      "doi": "",
+      "title": "Structural modeling of a plant disease resistance gene product domain.",
+      "abstract": "Dominant plant resistance genes are involved in the protection of plants against a wide variety of pathogens. Sequence analysis has revealed a variety of classes, often having domains in common. One commonly found region has come to be known as a putative nucleotide-binding site (NBS) due to the simple presence of sequence motifs. Until now, no experimental evidence has supported this idea. Here we suggest, as an alternative hypothesis, that part of this region is structurally homologous to the receiver domain common to many proteins of His-Asp phosphotransfer pathways. This conclusion is based on sequence analysis, threading experiments, and the construction of a molecular model of one domain that performs well against structure validation tools. The new hypothesis, in contrast to the NBS hypothesis, can explain the devastating effect of a Thr-->Ala mutation in a well-characterized resistance gene product. According to the new hypothesis, regions located N-terminal and C-terminal to the modeled portion, containing highly conserved sequence motifs, could form a separate domain.",
+      "journal": "Proteins",
+      "year": 2000,
+      "pub_date": "2000-10-01",
+      "authors": "Rigden D J; Mello L V; Bertioli D J",
+      "first_author": "Rigden D J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11010874",
+      "doi": "10.1128/AEM.66.10.4305-4314.2000",
+      "title": "Cytological effects of cellulases in the parasitism of Phytophthora parasitica by Pythium oligandrum.",
+      "abstract": "The ubiquitous oomycete Pythium oligandrum is a potential biocontrol agent for use against a wide range of pathogenic fungi and an inducer of plant disease resistance. The ability of P. oligandrum to compete with root pathogens for saprophytic colonization of substrates may be critical for pathogen increase in soil, but other mechanisms, including antibiosis and enzyme production, also may play a role in the antagonistic process. We used transmission electron microscopy and gold cytochemistry to analyze the intercellular interaction between P. oligandrum and Phytophthora parasitica. Growth of P. oligandrum towards Phytophthora cells correlated with changes in the host, including retraction of the plasma membrane and cytoplasmic disorganization. These changes were associated with the deposition onto the inner host cell surface of a cellulose-enriched material. P. oligandrum hyphae could penetrate the thickened host cell wall and the cellulose-enriched material, suggesting that large amounts of cellulolytic enzymes were produced. Labeling of cellulose with gold-complexed exoglucanase showed that the integrity of the cellulose was greatly affected both along the channel of fungal penetration and also at a distance from it. We measured cellulolytic activity of P. oligandrum in substrate-free liquid medium. The enzymes present were almost as effective as those from Trichoderma viride in degrading both carboxymethyl cellulose and Phytophthora wall-bound cellulose. P. oligandrum and its cellulolytic enzymes may be useful for biological control of oomycete pathogens, including Phytophthora and Pythium spp., which are frequently encountered in field and greenhouse production.",
+      "journal": "Applied and environmental microbiology",
+      "year": 2000,
+      "pub_date": "2000-10-01",
+      "authors": "Picard K; Tirilly Y; Benhamou N",
+      "first_author": "Picard K",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11050331",
+      "doi": "10.1016/s0168-9525(00)02107-7",
+      "title": "Interplay of signaling pathways in plant disease resistance.",
+      "abstract": "Plants are under constant threat of infection by pathogens armed with a diverse array of effector molecules to colonize their host. Plants have, in turn, evolved sophisticated detection and response systems that decipher pathogen signals and induce appropriate defenses. Genetic analysis of plant mutants impaired in mounting a resistance response to invading pathogens has uncovered a number of distinct, but interconnecting, signaling networks that are under both positive and negative control. These pathways operate, at least partly, through the action of small signaling molecules such as salicylate, jasmonate and ethylene. The interplay of signals probably allows the plant to fine-tune defense responses in both local and systemic tissue.",
+      "journal": "Trends in genetics : TIG",
+      "year": 2000,
+      "pub_date": "2000-10-01",
+      "authors": "Feys B J; Parker J E",
+      "first_author": "Feys B J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

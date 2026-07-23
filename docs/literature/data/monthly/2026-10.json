@@ -1,0 +1,35 @@
+{
+  "month": "2026-10",
+  "generated": "2026-07-13 02:59:42",
+  "total": 1,
+  "by_category": {
+    "Control_Management": 1,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "42190962",
+      "doi": "10.1016/j.biortech.2026.134968",
+      "title": "Nanopesticides in sustainable agriculture: multi-pathogen control, environmental impact, and intelligent delivery systems.",
+      "abstract": "Nanopesticides are increasingly proposed as sustainable alternatives to conventional pesticides, yet their practical value should not be judged by nanoscale size alone, but by whether a formulation solves a defined biological or delivery barrier. This review evaluates recent advances in nanofungicides, nanobactericides, nanoviricides, nanoinsecticides, and nanonematicides by comparing design strategies, mechanisms of action, environmental behavior, and translational limitations. Emphasis is placed on how particle size, surface chemistry, carrier composition, active-ingredient protection, and stimuli-responsive release influence targeting, retention, bioavailability, and field performance. Current evidence suggests that nanofungicides and nanobactericides are among the most mature systems, primarily due to improved foliar retention, immune priming, membrane disruption, controlled ion release, and biofilm penetration. Nanoinsecticides show promise through gut-responsive, redox-triggered, and rainfast delivery, whereas evidence for nanoviricides remains comparatively limited, as many reported systems rely primarily on host-defense induction rather than virus-specific targeting. Nanonematicides may improve soil-root contact and localized delivery, but their performance remains dependent on soil conditions. Environmental fate, non-target toxicity, persistence, biodegradability, regulatory uncertainty, and field validation are critically assessed to separate realistic agricultural opportunities from laboratory-scale claims. Overall, this review supports a design-based framework that prioritizes biodegradable materials, standardized safety assessment, field-relevant validation, and scalable formulations that balance efficacy with environmental sustainability.",
+      "journal": "Bioresource technology",
+      "year": 2026,
+      "pub_date": "2026-10-01",
+      "authors": "Bakar Saddique Muhammad Abu; Xi Yitao; Ijaz Munazzah; Akram Sawera; Wang Shihang; ... (+5)",
+      "first_author": "Bakar Saddique Muhammad Abu",
+      "categories": [
+        "Control_Management",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

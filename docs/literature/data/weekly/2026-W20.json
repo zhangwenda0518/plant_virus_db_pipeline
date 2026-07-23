@@ -1,0 +1,242 @@
+{
+  "week": "2026-W20",
+  "start": "2026-05-11",
+  "end": "2026-05-17",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 43,
+  "by_category": {
+    "Control_Management": 17,
+    "Host_Virus_Interactions": 13,
+    "Antiviral_Resistance_Genes": 8,
+    "New_Virus": 5,
+    "Biotechnology_Applications": 3,
+    "Transmission_Epidemiology": 2,
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "42138765",
+      "doi": "10.1007/s00705-026-06641-1",
+      "title": "A proposed new virus in the genus Marafivirus detected from Oriental persimmon 'Kumemaru'.",
+      "abstract": "A novel virus belonging to the genus Marafivirus was identified from the male Oriental persimmon (Diospyros kaki Thunb.) cultivar 'Kumemaru'. The complete genome of persimmon marafivirus (PerMaV) is 6,397 nucleotides in length and encodes a single large polyprotein containing conserved domains typical of viruses in the genus Marafivirus. Phylogenetic and sequence identity analyses indicate that PerMaV represents a new species in the family Tymoviridae.",
+      "journal": "Archives of virology",
+      "year": 2026,
+      "pub_date": "2026-05-15",
+      "authors": "Fujita Naoko; Lytras Spyros; Hagiwara-Komoda Yuka",
+      "first_author": "Fujita Naoko",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "persimmon marafivirus (PerMaV)",
+      "taxonomy": "Tymoviridae, Marafivirus",
+      "host_plant": "Oriental persimmon (Diospyros kaki Thunb.) cultivar 'Kumemaru'",
+      "location": "未提及",
+      "results": "全长基因组6397nt，编码单一大多聚蛋白，含有Marafivirus保守结构域，系统发育支持为新种。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42115922",
+      "doi": "10.1186/s12870-026-08866-3",
+      "title": "BSMV-mediated genome editing exhibits host-specific heritability: germline transmission in barley and somatic edits in Nicotiana benthamiana.",
+      "abstract": "[BACKGROUND] Plant RNA virus-mediated guide RNA (gRNA) delivery represents a transformative advance in genome editing technologies. Unlike conventional transformation methods that rely on labor-intensive tissue culture and regeneration for each individual gRNA delivery, viral vectors can rapidly and systemically transmit gRNAs into pre-established Cas-expressing plants, providing an accelerated route for functional genomics and trait discovery directly in planta. However, key design parameters, including subgenomic promoter choice, transcript architecture, and their effects on viral fitness and editing outcomes, remain to be elucidated for most viral platforms. [RESULTS] We developed five Barley stripe mosaic virus (BSMV) vectors, each with distinct subgenomic promoter elements to drive single gRNA expression. These were initially evaluated in Cas9-expressing transgenic Nicotiana benthamiana plants targeting the Phytoene desaturase (PDS) gene to compare their editing efficiencies. Single gRNAs expressed under the duplicated γb subgenomic promoter or when fused directly to the γb genome achieved the highest mutation frequencies (up to 90% at 60 days post-inoculation), whereas β1- and β2-driven sgRNAs produced delayed and reduced editing. Thus, promoter selection critically determines gRNA accumulation and the efficacy of BSMV-mediated genome editing. The top-performing design was then applied to Cas9-expressing barley (Hordeum vulgare) targeting HvCMF7 (conferring green-white variegation) and HvGW2.1 (impacts grain width and weight). BSMV spread systemically throughout barley, inducing somatic and heritable mutations at frequencies up to 100%, with virus-free edited progeny. In contrast, despite robust somatic editing in N. benthamiana, no heritable mutations were detected indicating species-dependent limitations in germline transmission. [CONCLUSION] Our systematic comparison of subgenomic promoter architectures establishes clear design principles for optimizing viral vector-mediated delivery. Promoter choice and transcript structure critically shape editing efficiency and viral stability. The host-specific boundary for germline editing, defined by efficient heritable editing in barley but not N. benthamiana, highlights where BSMV offers advantages and where alternative vectors or hybrid strategies are required, guiding rational platform selection for diverse crop species and applications. Collectively, these findings establish BSMV as a promising next-generation vector for rapid, tissue culture-free, and transformation-independent genome editing in cereals and other recalcitrant monocots.",
+      "journal": "BMC plant biology",
+      "year": 2026,
+      "pub_date": "2026-05-12",
+      "authors": "Bhowmik Pankaj K; Williams John T; Polley Brittany; Chen Naichong; Kavuri Naga Rajitha; ... (+8)",
+      "first_author": "Bhowmik Pankaj K",
+      "categories": [
+        "Biotechnology_Applications",
+        "Detection_Methods"
+      ],
+      "virus_name": "大麦条纹花叶病毒（BSMV）",
+      "taxonomy": "",
+      "host_plant": "大麦（Hordeum vulgare）和本氏烟（Nicotiana benthamiana）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42182251",
+      "doi": "10.64898/2026.05.11.724421",
+      "title": "Natural enemies mediate the impact of plant microbiota on insect-borne virus transmission.",
+      "abstract": "When only some hosts are protected from disease vectors, disease spread may be inhibited through a net reduction in vector visits or amplified as vectors redirect their attention to unprotected hosts. Two factors that determine which outcome prevails are host microbiota that alter vector host-seeking behavior and natural enemies that redistribute or suppress vector populations. Because both shape the frequency and distribution of vector visits, they are essential for understanding how individual-level protection scales to population-level disease dynamics. Yet, how these processes interact across scales remains poorly understood. Pea aphids are major virus vectors in pea crops and are commonly managed using parasitoid wasps. Recent evidence suggests that epiphytic bacteria in the genus Pseudomonas can also repel or kill pea aphids, yet whether Pseudomonas complements or undermines parasitoid-based vector control remains unknown. We used a mathematical model to show when and why Pseudomonas complements versus undermines biocontrol of aphid-vectored virus outbreaks. The effect of Pseudomonas on virus outbreaks depends most strongly on how successful parasitoids are at tracking aphid densities: When parasitoids effectively track aphids, Pseudomonas inhibits virus outbreaks by reducing aphid densities. With poor parasitoid tracking of aphids, Pseudomonas-induced aphid mortality generates spatial variability in aphid densities that slows parasitoid population growth. The net result is amplified crowding in plants not protected by Pseudomonas, increasing winged aphid production and accelerating viral spread. Counterintuitively, the more effective Pseudomonas is at killing aphids, the more strongly it generates spatial variability and promotes virus spread. The only other factor that can change the direction of Pseudomonas effects on virus outbreaks is whether the virus starts on a Pseudomonas-protected plant, which can cause Pseudomonas to inhibit virus outbreaks when it would otherwise promote them. Our results show how community and spatial context dictate whether microbiota protective to individual hosts will accelerate viral outbreaks.",
+      "journal": "bioRxiv : the preprint server for biology",
+      "year": 2026,
+      "pub_date": "2026-05-14",
+      "authors": "Nell Lucas A; Hendry Tory A; Hein Andrew M; Greischar Megan A",
+      "first_author": "Nell Lucas A",
+      "categories": [
+        "Control_Management",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "未指明（蚜虫传播的病毒）",
+      "taxonomy": "",
+      "host_plant": "豌豆",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41814663",
+      "doi": "10.1016/j.xplc.2026.101815",
+      "title": "From triangle to pyramid: Understanding host-pathogen-microniome-environment interplay for sustainable, enviromics-empowered management of plant diseases.",
+      "abstract": "Understanding plant disease development requires moving beyond the classic disease triangle, which considers the host, pathogen, and environment. Recent advances in multi-omics have highlighted the importance of a disease pyramid that integrates the host, pathogen, microbiome, and environment to capture the complex interactions among these core biological/ecological components. This pyramid framework emphasizes how host genetic architecture, pathogen traits, microbiome dynamics, and environmental conditions collectively and interactively shape disease outcomes, plant phenotypes, and adaptive potential. The conceptual expansion from the disease triangle to a pyramid model reflects this shift, providing a more holistic and dynamic view of plant disease ecology. Environmental factors regulate host susceptibility and restructure both pathogenic and non-pathogenic microbial communities, thereby influencing infection severity and disease progression. Multi-omics approaches-encompassing hostomics, pathomics, microbiomics, and enviromics-hold strong promise for dissecting these interactions, enabling predictive disease modeling and the development of sustainable management strategies. Moreover, integrating enviromics data into resistance breeding enables the identification of key environmental variables and their interactions with host genotypes and pathogenic and non-pathogenic microbes, thereby supporting the deployment of durable resistance across diverse agroecosystems. Together, these perspectives advance a systems-level understanding of plant health and open new avenues for disease management through omics-driven breeding, microbiome-informed strategies, and environmentally responsive interventions.",
+      "journal": "Plant communications",
+      "year": 2026,
+      "pub_date": "2026-05-11",
+      "authors": "Wang Taotao; Hu Wenjing; Song Weifeng; Liao Xiwen; Zheng Hongjian; ... (+5)",
+      "first_author": "Wang Taotao",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41989182",
+      "doi": "10.1128/mbio.03120-25",
+      "title": "Transcriptomic and functional analyses uncover a conserved effector driving genotype-dependent virulence in the ",
+      "abstract": "[UNLABELLED] The introduction of invasive microbes compromises the structure, biodiversity, and function of naïve ecosystems. Sphaerulina musiva, a hemibiotrophic pathogen that causes leaf spot and stem cankers in Populus species, exemplifies an invasive fungal pathogen spread by human activities. However, the genetic mechanisms of pathogenicity and virulence are poorly understood, impeding mitigation strategies. We utilized RNA sequencing to identify fungal effectors linked to stem canker formation, informing the development of future strategies for effective disease management. Our analysis revealed 70 genes differentially expressed at 2 weeks and 110 genes at 3 weeks between inoculated trees and controls. Notably, the gene with the highest expression at 2 weeks and the second highest at 3 weeks was homologous to Extracellular protein 2 (Ecp2). Complementary genome-wide association studies linked sequence polymorphisms in this locus to phenotypic variation in disease severity. Infiltration of S. musiva Ecp2 into Populus trichocarpa leaves induced necrosis in susceptible genotypes. Gene disruption using a CRISPR-Cas9 RNP system resulted in a genotype-dependent reduction of stem canker and disease severity. Tracing the evolutionary history of this effector across the fungal kingdom, we uncovered clade-specific gene-family expansions and orthologs in new species. These findings raise questions about the function and adaptive significance of these gene families in fungal lifestyles. Our study provides the first tractable target for breeding resistant poplar genotypes, addressing the challenges of managing S. musiva and uncovering mechanisms that drive its virulence, and provides deeper insights into the evolutionary dynamics of a conserved small-secreted protein with a diversity of functions. [IMPORTANCE] Populus species, key feedstocks in the bioeconomy, are severely impacted by leaf spot and stem canker caused by Sphaerulina musiva. This disease diminishes biomass, reduces wood quality, and increases tree mortality, jeopardizing industrial sustainability. Invasion of S. musiva into naïve ecosystems exacerbates these challenges by disrupting ecosystem processes. Breeding resistant poplar genotypes has been the primary strategy to combat this pathogen, but it has remained unclear which molecular drivers of infection breeders should target. Our study makes a significant advance by identifying a key necrotrophic effector that increases S. musiva virulence in specific Populus genotypes. We identify clade-specific gene-family expansions of this effector that raise questions about the function of closely related genes. Our research elucidates the ecology and evolution of a small-secreted protein across the fungal kingdom while offering insights that enable host-breeding efforts to reduce the economic impact of S. musiva.",
+      "journal": "mBio",
+      "year": 2026,
+      "pub_date": "2026-05-13",
+      "authors": "Søndreli Kelsey L; Rush Tomás A; Drott Milton T; McTaggart Alistair; Alexander William; ... (+10)",
+      "first_author": "Søndreli Kelsey L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42052991",
+      "doi": "10.1021/acs.jafc.5c16064",
+      "title": "Integrative Metabolomics and Machine Learning Approach to Uncover Scab Resistance Markers in Mature Pecan Trees.",
+      "abstract": "Scab, caused by Venturia effusa, is the most destructive disease affecting pecan (Carya illinoinensis). Developing scab-resistant cultivars offers a sustainable solution for disease management. To elucidate the metabolic basis of resistance, we applied a pathway-based metabolomics that examines metabolites within pathways relevant to plant-pathogen interactions across 15 orchard-grown pecan cultivars with varying resistance levels. Machine learning models including support vector machine, random forest, and linear regression identified biomarkers predictive of resistance, achieving over 97% classification accuracy. Resistant cultivars showed elevated levels of metabolic precursors supporting lignin biosynthesis, energy metabolism, and antioxidant turnover, such as syringin, proline, and galactono-1,4-lactone, indicating a proactive and coordinated defense strategy. In contrast, susceptible trees accumulated defense-related end-products (e.g., salicylate glucoside, ascorbic acid) and nitrogen-rich amino acids, but showed limited availability of precursors, potentially contributing to increased susceptibility. These metabolic traits will support breeding of disease-resilient cultivars and improve disease management strategies in pecan orchards.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2026,
+      "pub_date": "2026-05-13",
+      "authors": "Kang Min Jeong; Pegg Ronald B; Kerr William L; Wells M Lenny; Conner Patrick J; ... (+1)",
+      "first_author": "Kang Min Jeong",
+      "categories": [
+        "Control_Management",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42059130",
+      "doi": "10.1021/acsami.6c03466",
+      "title": "Bioactive Amino-Carbon Dots for Sustainable Crop Protection: Cellular Uptake and Metabolomic Insights into the Antifungal and Antibacterial Activity in Tomato Plants.",
+      "abstract": "Amino-functionalized carbon dots (CDs-NH2) are emerging as multifunctional nanomaterials for sustainable agriculture due to their tunable surface chemistry, water dispersibility, low toxicity, and inherent antimicrobial activity. In this study, we envisioned the application of CDs-NH2 as both antifungal and antibacterial materials against plant pathogens, thoroughly assessing CDs-NH2 internalization and their effects on plant growth and metabolomic profiles as well as defense responses to pathogen infection. Initially, CDs-NH2 were synthesized and fully characterized with a focus on morphology, structure, and their stability under biotic and abiotic environmental conditions. Antioxidant assays based on DPPH and ABTS radical scavenging demonstrated the redox activity of CDs-NH2. Fluorescence microscopy investigations demonstrated that CDs-NH2 can quickly penetrate plant and fungal cells. Confocal microscopy investigations, complemented by colocalization studies with endocytic tracer FM4-64, demonstrated that endocytosis is the primary mechanism for CDs-NH2 cellular uptake in Botrytis cinerea. Furthermore, CDs-NH2 were found to quickly penetrate plant cells, enhancing tomato seed germination and subsequent development. Quantitative chemical analyses indicated the absorption of CDs-NH2 via the root system of the rice seedlings. In vitro and in planta experiments have shown the efficacy of CDs-NH2 against phytopathogenic fungi (Botrytis cinerea) and bacteria (Pseudomonas syringae pv. tomato). In vitro antibacterial activity tests combined with metabolomic analyses via 1H NMR indicate that CDs-NH2 exert their antimicrobial activity straight on P. syringae and trigger defense responses in the plant upon infection. Overall, these findings highlight the dual role of CDs-NH2 as antivirulence agents and metabolic modulators, underscoring their potential as sustainable nanotools for integrated crop protection at the plant-pathogen interface while emphasizing the need for further investigation into their environmental and human safety.",
+      "journal": "ACS applied materials & interfaces",
+      "year": 2026,
+      "pub_date": "2026-05-13",
+      "authors": "Camilli Alessandro; Patriarca Adriano; Ferrante Patrizia; Brasili Elisa; Atanasio Pierfrancesco; ... (+9)",
+      "first_author": "Camilli Alessandro",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42133212",
+      "doi": "10.1007/s11230-026-10271-1",
+      "title": "A new species of Hormius Nees, 1819 (Hymenoptera: Braconidae) as a parasitoid of the larvae of mango leaf webber Orthaga exvinacea (Hampson) (Lepidoptera: Pyralidae) in India.",
+      "abstract": "A new species Hormius orthagae Gupta & Belokobylskij n. sp. (Hymenoptera: Braconidae: Hormiinae) is found parasitizing young larvae of mango leaf webber Orthaga exvinacea (Hampson) (Lepidoptera: Pyralidae) feeding within the leaf webs of Mangifera indica L. in Central India. In the present paper, the new ectoparasitoid species is described and biological notes on its host are provided with illustrations.",
+      "journal": "Systematic parasitology",
+      "year": 2026,
+      "pub_date": "2026-05-14",
+      "authors": "Gupta Ankita; Belokobylskij Sergey A; Namdev Brajesh K; Dikshith S",
+      "first_author": "Gupta Ankita",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42408386",
+      "doi": "10.11646/zootaxa.5807.2.2",
+      "title": "",
+      "abstract": "The first comprehensive taxonomic survey of the leaf beetle fauna (Coleoptera: Chrysomelidae) of the oceanic volcanic Fernando de Noronha Archipelago, Pernambuco State, northeastern Brazil, is presented herein. A total of 17 taxa distributed across five subfamilies (Bruchinae, Cassidinae, Cryptocephalinae, Eumolpinae, and Galerucinae) are recorded, including the description of two new species of seed beetles: Megacerus ibiaiso Santos, Sampaio & Viana, sp. nov., and Sennius binotatus Viana & Ribeiro-Costa, sp. nov. In addition, 11 new distributional records are provided, along with corrections of previously misidentified specimens from the archipelago. For the taxa identified to the species level, information on host plant associations and natural enemies, when available, is included. The study also provides photographs of the external morphology of all taxa and the internal structures of the new species, as well as a map of the beaches and sampling trails.",
+      "journal": "Zootaxa",
+      "year": 2026,
+      "pub_date": "2026-05-11",
+      "authors": "Sampaio Aline; Santos Aluska Tavares Dos; Viana Jéssica Herzog; Linzmeier Adelita Maria; Konstantinov Alexander S; ... (+6)",
+      "first_author": "Sampaio Aline",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42187839",
+      "doi": "10.3390/jof12050357",
+      "title": "Phylogeny and Taxonomy of Spider-Pathogenic ",
+      "abstract": "Gibellula (Cordycipitaceae, Hypocreales) represents a group of highly specialized obligate fungal pathogens restricted to spider hosts. Species delimitation was conducted using morphological characteristics in combination with multilocus phylogenetic analyses (nrSSU, ITS, nrLSU, tef1-α, rpb1, rpb2), and we recognized nine spider-associated Gibellula species from specimens collected in the Lancang-Mekong biodiversity hotspot (China, Laos, Thailand, and Vietnam). Among them, four are described as new to science: Gibellula longiconidiophora sp. nov., G. mekongensis sp. nov., G. ovorum sp. nov., and G. pseudopilosa sp. nov. The other five species represent new national distributional records: G. yunnanensis (new to Laos), G. pseudopigmentosa (new to Thailand), G. trimorpha (new to Vietnam), G. penicillioides (new to Laos), and G. scorpioides (new to China and Laos). Phylogenetic analyses resolved these taxa into well-supported lineages. Notably, G. ovorum is a rare example of a Gibellula species parasitizing spider egg sacs rather than adult spiders, revealing an unusual substrate shift. Morphological distinctions among the new species include differences in conidiophore length, synnematal development, conidial size, and sporulation patterns. Detailed descriptions, illustrations, and taxonomic comparisons are provided. This study significantly expands the known diversity and geographic distribution of Gibellula in the Lancang-Mekong region and underscores the importance of integrative taxonomy for uncovering hidden diversity in spider-pathogenic fungi.",
+      "journal": "Journal of fungi (Basel, Switzerland)",
+      "year": 2026,
+      "pub_date": "2026-05-12",
+      "authors": "Tu Bo; Chen Hui; Zhang Xu; Tang De-Xiang; Dao Van-Minh; ... (+2)",
+      "first_author": "Tu Bo",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

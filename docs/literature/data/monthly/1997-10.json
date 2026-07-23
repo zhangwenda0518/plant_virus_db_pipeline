@@ -1,0 +1,280 @@
+{
+  "month": "1997-10",
+  "generated": "2026-07-13 02:59:42",
+  "total": 15,
+  "by_category": {
+    "Host_Virus_Interactions": 4,
+    "Antiviral_Resistance_Genes": 4,
+    "New_Virus": 3,
+    "Control_Management": 2,
+    "Molecular_Characterization": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "9468608",
+      "doi": "10.1016/s0301-4622(97)00005-7",
+      "title": "Structure of Sesbania mosaic virus at 3 A resolution.",
+      "abstract": "Sesbania mosaic virus (SMV) is an isometric, ss-RNA plant virus found infecting Sesbania grandiflora plants in fields near Tirupathi, South India. The virus particles, which sediment at 116 S at pH 5.5, swell upon treatment with EDTA at pH 7.5 resulting in the reduction of the sedimentation coefficient to 108 S. SMV coat protein amino acid sequence was determined and found to have approximately 60% amino acid sequence identity with that of southern bean mosaic virus (SBMV). The amino terminal 60 residue segment, which contains a number of positively charged residues, is less well conserved between SMV and SBMV when compared to the rest of the sequence. The 3D structure of SMV was determined at 3.0 A resolution by molecular replacement techniques using SBMV structure as the initial phasing model. The icosahedral asymmetric unit was found to contain four calcium ions occurring in inter subunit interfaces and three protein subunits, designated A, B and C. The conformation of the C subunit appears to be different from those of A and B in several segments of the polypeptide. These observations coupled with structural studies on SMV partially depleted of calcium suggest a plausible mechanism for the initiation of the disassembly of the virus capsid.",
+      "journal": "Biophysical chemistry",
+      "year": 1997,
+      "pub_date": "1997-10-01",
+      "authors": "Murthy M R; Bhuvaneswari M; Subramanya H S; Gopinath K; Savithri H S",
+      "first_author": "Murthy M R",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Sesbania mosaic virus (SMV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9335052",
+      "doi": "10.1038/nbt1097-992",
+      "title": "Plant resistance to fungal infection induced by nontoxic pokeweed antiviral protein mutants.",
+      "abstract": "Pokeweed antiviral protein (PAP), a 29-kD protein isolated from Phytolacca americana inhibits translation by catalytically removing a specific adenine residue from the large rRNA of the 60S subunit of eukaryotic ribosomes. Transgenic plants expressing PAP are resistant to a broad spectrum of plant viruses. Nontoxic PAP mutants have been isolated by random mutagenesis and selection in yeast. One of these mutants, PAP-X, had a point mutation at the active-site (E176V) that abolished enzymatic activity, and another mutant, delta C25PAP, had a nonsense mutation near the C-terminus (W237stop) that deleted 25 C-terminal amino acids. Unlike the wild-type PAP, expression of neither mutant was toxic to transgenic plants. We show that both class I (basic) and class II (acidic) isoforms of pathogenesis-related (PR) proteins are overexpressed in transgenic plants expressing PAP and the nontoxic PAP mutants. Although PR-proteins are constitutively expressed, no increase in salicylic acid levels was detected. Homozygous progeny of transgenic plants expressing either PAP or the nontoxic PAP mutants displayed resistance to the fungal pathogen Rhizoctonia solani. These results show that expression of PAP or the nontoxic PAP mutants activates multiple plant defense pathways independently of salicylic acid and confers resistance to fungal infection. The C-terminal 25 amino acids of PAP, which are required for toxicity in vivo, are not critical for resistance to viral or fungal infection, indicating that toxicity of PAP can be separated from pathogen resistance.",
+      "journal": "Nature biotechnology",
+      "year": 1997,
+      "pub_date": "1997-10-01",
+      "authors": "Zoubenko O; Uckun F; Hur Y; Chet I; Tumer N",
+      "first_author": "Zoubenko O",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "广谱植物病毒（未具体指定）",
+      "taxonomy": "",
+      "host_plant": "转基因植物（未具体说明种类）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9336898",
+      "doi": "10.1099/00207713-47-4-996",
+      "title": "Rhizobium gallicum sp. nov. and Rhizobium giardinii sp. nov., from Phaseolus vulgaris nodules.",
+      "abstract": "Thirty-one strains of two new genomic species (genomic species 1 and 2) of rhizobia isolated from root nodules of Phaseolus vulgaris and originating from various locations in France were compared with reference strains of rhizobia by performing a numerical analysis of 64 phenotypic features. Each genomic species formed a distinct phenon and was separated from the other rhizobial species. A comparison of the complete 16S rRNA gene sequences of a representative of genomic species 1 (strain R602spT) and a representative of genomic species 2 (strain H152T) with the sequences of other rhizobia and related bacteria revealed that each genomic species formed a lineage independent of the lineages formed by the previously recognized species of rhizobia. Genomic species 1 clustered with the species that include the bean-nodulating rhizobia, Rhizobium leguminosarum, Rhizobium etli, and Rhizobium tropici, and branched with unclassified rhizobial strain OK50, which was isolated from root nodules of Pterocarpus klemmei in Japan. Genomic species 2 was distantly related to all other Rhizobium species and related taxa, and the most closely related organisms were Rhizobium galegae and several Agrobacterium species. On the basis of the results of phenotypic and phylogenetic analyses and genotypic data previously published and reviewed in this paper, two new species of the genus Rhizobium, Rhizobium gallicum and Rhizobium giardinii, are proposed for genomic species 1 and 2, respectively. Each species could be divided in two subgroups on the basis of symbiotic characteristics, as shown by phenotypic (host range and nitrogen fixation effectiveness) and genotypic data. For each species, one subgroup had the same symbiotic characteristics as R. leguminosarum biovar phaseoli and R. etli biovar phaseoli. The other subgroup had a species-specific symbiotic phenotype and genotype. Therefore, we propose that each species should be subdivided into two biovars, as follows: R. gallicum biovar gallicum and R. gallicum biovar phaseoli; and R. giardinii biovar giardinii and R. giardinii biovar phaseoli.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1997,
+      "pub_date": "1997-10-01",
+      "authors": "Amarger N; Macheret V; Laguerre G",
+      "first_author": "Amarger N",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9380503",
+      "doi": "10.1093/nar/25.19.3816",
+      "title": "Detection and isolation of RNA-binding proteins by RNA-ligand screening of a cDNA expression library.",
+      "abstract": "A screening assay for the detection of RNA-binding proteins was developed. It allows the rapid isolation of cDNA clones coding for proteins with sequence-specific binding affinity to a target RNA. For developing the screening protocol, constituents of the human U1 snRNP were utilized as model system. The RNA partner consisted of the U1-RNA stem-loop II and the corresponding protein consisted of the 102 amino acid N-terminal recognition motif of the U1A protein, which was fused to beta-galactosidase and expressed by the recombinant lambda phage LU1A. Following binding of the fusion protein to nitrocellulose membranes, hybridization with a 32P-labeled U1-RNA ligand was carried out to detect specific RNA-protein interaction. Parameters influencing the specificity and the detection limit of binding were systematically investigated with the aid of the model system. Processing the nitrocellulose membranes in the presence of transition metals greatly increased the signal:background ratio. A simple screening protocol involving a single-buffer system was developed. Specific RNA-protein interaction could be detected in the presence of a large excess of recombinant phages from a cDNA library. Only moderate binding affinities (Kd = 10(-8) M) were required. The suitability of the RNA-ligand screening protocol was demonstrated by the identification of new viroid-RNA binding proteins from tomato.",
+      "journal": "Nucleic acids research",
+      "year": 1997,
+      "pub_date": "1997-10-01",
+      "authors": "Sägesser R; Martinez E; Tsagris M; Tabler M",
+      "first_author": "Sägesser R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9336924",
+      "doi": "10.1099/00207713-47-4-1165",
+      "title": "Aeromonas popoffii sp. nov., a mesophilic bacterium isolated from drinking water production plants and reservoirs.",
+      "abstract": "We examined the taxonomic position of seven Aeromonas isolates, recovered from Flemish and Scottish drinking water production plants and reservoirs, which were previously recognized by numerical analysis of genomic AFLP fingerprints as members of an unknown Aeromonas taxon that most closely resembled the species Aeromonas bestiarum (DNA hybridization group [HG] 2). The new phenotypic and DNA-DNA hybridization data obtained in this study show that the A. bestiarum-like strains constitute a separate Aeromonas species, for which the name Aeromonas popoffii sp. nov. is being proposed. The new species exhibited an internal DNA relatedness ranging from 79 to 100% and was 22 to 63% related to the type or reference strains of other Aeromonas spp. The highest DNA binding values were determined with A. bestiarum (51 to 63%), followed by Aeromonas hydrophila sensu stricto (HG1; 50 to 60%) and Aeromonas salmonicida (HG3; 39 to 55%). Although fingerprints generated by ribotyping and cellular fatty acid analysis often were highly similar, minor differences between the respective fingerprints were of significance for the differentiation of A. popoffii from its closest taxonomic neighbors, HG1, HG2, and HG3. Phenotypically, all seven strains of A. popoffii were positive for acid and gas production from D-glucose and glycerol, growth in KCN broth, arginine dihydrolase, DNase, Voges-Proskauer reaction, and resistance to vibriostatic agent O/129 and ampicillin but displayed negative reactions for production of urease, tryptophan deaminase, ornithine decarboxylase, and lysine decarboxylase (LDC). None of the strains displayed strong hemolytic activity. The lack of D-sucrose fermentation and LDC production and the ability to utilize DL-lactate as the sole energy and carbon source were useful characteristics for the biochemical separation of A. popoffii from A. bestiarum. Other Aeromonas spp. could be differentiated phenotypically from the new species by at least two features. The chromosomal G+C content of A. popoffii ranges from 57.7 to 59.6 mol%. Strain LMG 17541 is proposed as the type strain.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1997,
+      "pub_date": "1997-10-01",
+      "authors": "Huys G; Kämpfer P; Altwegg M; Kersters I; Lamb A; ... (+5)",
+      "first_author": "Huys G",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12223812",
+      "doi": "10.1104/pp.115.2.343",
+      "title": "Is the High Basal Level of Salicylic Acid Important for Disease Resistance in Potato?",
+      "abstract": "Potato (Solanum tuberosum) plants contain a high basal level of salicylic acid (SA), the role of which in disease resistance is currently unclear. Here we report that, in spite of a drastic reduction in total SA levels in transgenic potato plants expressing the bacterial salicylate hydroxylase gene (nahG), there was no significant increase in disease severity when infected by Phytophthora infestans. Therefore, the high basal level of SA does not lead to constitutive resistance in healthy potato plants. However, in contrast to control plants, arachidonic acid failed to induce systematic acquired resistance (SAR) in nahG plants against P. infestans, indicating an essential role of SA in potato SAR. These results suggest that in potato the development of SAR against P. infestans may involve increased sensitivity of the plant to SA.",
+      "journal": "Plant physiology",
+      "year": 1997,
+      "pub_date": "1997-10-01",
+      "authors": "Yu D.; Liu Y.; Fan B.; Klessig D. F.; Chen Z.",
+      "first_author": "Yu D.",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9352645",
+      "doi": "10.1139/g97-087",
+      "title": "Map-based cloning of a gene sequence encoding a nucleotide-binding domain and a leucine-rich region at the Cre3 nematode resistance locus of wheat.",
+      "abstract": "The Cre3 gene confers a high level of resistance to the root endoparasitic nematode Heterodera avenae in wheat. A DNA marker cosegregating with H. avenae resistance was used as an entry point for map-based cloning of a disease resistance gene family at the Cre3 locus. Two related gene sequences have been analysed at the Cre3 locus. One, identified as a cDNA clone, encodes a polypeptide with a nucleotide binding site (NBS) and a leucine-rich region; this member of the disease resistance gene family is expressed in roots. A second Cre3 gene sequence, cloned as genomic DNA, appears to be a pseudogene, with a frame shift caused by a deletion event. These two genes, related to members of the cytoplasmic NBS-leucine rich repeat class of plant disease resistance genes were physically mapped to the distal 0.06 fragment of the long arm of wheat chromosome 2D and cosegregated with nematode resistance.",
+      "journal": "Genome",
+      "year": 1997,
+      "pub_date": "1997-10-01",
+      "authors": "Lagudah E S; Moullet O; Appels R",
+      "first_author": "Lagudah E S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9351175",
+      "doi": "10.1016/S0966-842X(97)01124-4",
+      "title": "Bacterial avirulence proteins as triggers of plant disease resistance.",
+      "abstract": "Disease resistance in plants is often characterized by matching resistance and avirulence genes in host and pathogen, respectively. It has recently been shown that expression of bacterial avirulence genes in plants induces resistance gene-dependent defense reactions. The finding that avirulence proteins act inside plant cells represents a major advance in our understanding of host-pathogen specificity.",
+      "journal": "Trends in microbiology",
+      "year": 1997,
+      "pub_date": "1997-10-01",
+      "authors": "Van den Ackerveken G; Bonas U",
+      "first_author": "Van den Ackerveken G",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12223817",
+      "doi": "10.1104/pp.115.2.427",
+      "title": "Activation of Host Defense Mechanisms by Elevated Production of H2O2 in Transgenic Plants.",
+      "abstract": "Active oxygen species have been postulated to perform multiple functions in plant defense, but their exact role in plant resistance to diseases is not fully understood. We have recently demonstrated H2O2-mediated disease resistance in transgenic potato (Solanum tuberosum) plants expressing a foreign gene encoding glucose oxidase. In this study we provide further evidence that the H2O2-mediated disease resistance in potato is effective against a broad range of plant pathogens. We have investigated mechanisms underlying the H2O2-mediated disease resistance in transgenic potato plants. The constitutively elevated levels of H2O2 induced the accumulation of total salicylic acid severalfold in the leaf tissue of transgenic plants, although no significant change was detected in the level of free salicylic acid. The mRNAs of two defense-related genes encoding the anionic peroxidase and acidic chitinase were also induced. In addition, an increased accumulation of several isoforms of extracellular peroxidase, including a newly induced one, was observed. This was accompanied by a significant increase in the lignin content of stem and root tissues of the transgenic plants. The results suggest that constitutively elevated sublethal levels of H2O2 are sufficient to activate an array of host defense mechanisms, and these defense mechanisms may be a major contributing factor to the H2O2-mediated disease resistance in transgenic plants.",
+      "journal": "Plant physiology",
+      "year": 1997,
+      "pub_date": "1997-10-01",
+      "authors": "Wu G.; Shortt B. J.; Lawrence E. B.; Leon J.; Fitzsimmons K. C.; ... (+3)",
+      "first_author": "Wu G.",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9406903",
+      "doi": "10.1016/s0378-8741(97)00091-3",
+      "title": "Pharmacological investigation of Cassia italica.",
+      "abstract": "In the present study, the ethanolic extract of the whole plant parts (root, stem leaves and pods) of Cassia italica (Mill.) Lam. ex F.W. Ander (Leguminosae) was investigated for bioactivities: namely anti-inflammatory, antipyretic, analgesic and prostaglandin (PG) release by rat peritoneal leucocytes, antineoplastic and antiviral. In rats, the extracts reduced carrageenin-induced paw swelling (100 mg/kg bw-31%) and fever (100 mg/kg bw-37%). The extract showed weak effect on writhing induced by acetic acid. A dose-dependent inhibition of PG release effect was observed using rat peritoneal leucocytes.",
+      "journal": "Journal of ethnopharmacology",
+      "year": 1997,
+      "pub_date": "1997-10-01",
+      "authors": "Jain S C; Jain R; Sharma R A; Capasso F",
+      "first_author": "Jain S C",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9370368",
+      "doi": "10.1111/j.1432-1033.1997.t01-1-00564.x",
+      "title": "Molecular characterisation of the pifC gene encoding translation initiation factor 3, which is required for normal photosynthetic complex formation in Rhodobacter sphaeroides NCIB 8253.",
+      "abstract": "In order to determine whether translation initiation events play a selective role in regulating the expression of photosynthetic complexes in the photosynthetic bacterium Rhodobacter sphaeroides, we have undertaken an initial study to investigate the potential role of translation initiation factor IF3, which also behaves as a pleiotropic regulatory factor in some bacteria. Following the isolation and purification of a 24-kDa IF3-like protein (PifC) from R. sphaeroides, we used nested PCR to clone and characterise the encoding gene, pifC (photosynthesis-affecting initiation factor). The 545-bp pifC encodes a protein exhibiting 60% identity (78.6% similarity) with the Escherichia coli IF3 (InfC) protein and, in common with all other IF3 genes identified to date, pifC possesses a rare initiation codon (AUA). Furthermore, in common with IF3, PifC was shown here to perform a discriminatory function towards CUG start codons, confirming its role and function as an IF3 in R. sphaeroides. Insertion of a kanamycin resistance cassette into the 5' end of pifC resulted in a viable phenotype which exhibits growth rates similar to wild type but which possesses reduced bacteriochlorophyll and photosynthetic complexes in semi-aerobic cultures. It is shown here that the mutant is still able to produce a PifC protein but that it possesses reduced IF3 activity. This may account for the viable nature of the mutant strain, and may indicate that the effect of the mutation on photosynthesis can be more severe than shown in the present study. The mechanisms by which PifC may exert its selective regulatory effect on photosynthesis expression are discussed.",
+      "journal": "European journal of biochemistry",
+      "year": 1997,
+      "pub_date": "1997-10-15",
+      "authors": "Babic S; Hunter C N; Rakhlin N J; Simons R W; Phillips-Jones M K",
+      "first_author": "Babic S",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9402326",
+      "doi": "10.3109/10428199709059683",
+      "title": "Large scale manufacturing of TXU(anti-CD7)-pokeweed antiviral protein (PAP) immunoconjugate for clinical trials.",
+      "abstract": "We have conjugated the murine monoclonal anti-CD7 antibody TXU to the plant hemitoxin pokeweed antiviral protein (PAP) to construct an effective immunotoxin against CD7 antigen positive hematologic malignancies. The scaled-up production and purification of TXU antibody, PAP toxin, and TXU-PAP immunotoxin permitted the manufacturing of a highly purified clinical-grade TXU-PAP preparation. In clonogenic assays, TXU-PAP elicited selective and potent cytotoxicity against CD7 antigen positive human leukemia cells and killed primary clonogenic leukemic cells from T-lineage acute lymphoblastic leukemia (ALL) patients. To our knowledge, this pre-IND work represents the first effort of producing a clinical-grade PAP immunotoxin for treatment of T-lineage ALL. Since the CD7 antigen is also expressed on AML cells, TXU-PAP could also be useful for the treatment of CD7 positive acute myeloid leukemia (AML) patients.",
+      "journal": "Leukemia & lymphoma",
+      "year": 1997,
+      "pub_date": "1997-10-01",
+      "authors": "Myers D E; Jun X; Clementson D; Donelson R; Sicheneder A; ... (+6)",
+      "first_author": "Myers D E",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

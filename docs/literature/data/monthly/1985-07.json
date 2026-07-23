@@ -1,0 +1,58 @@
+{
+  "month": "1985-07",
+  "generated": "2026-07-13 02:59:42",
+  "total": 2,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 1,
+    "Control_Management": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "18640514",
+      "doi": "10.1016/0042-6822(85)90305-8",
+      "title": "Topographic analysis of tobacco etch virus capsid protein epitopes.",
+      "abstract": "Monoclonal antibodies have been prepared, which react with capsid protein of an aphid-transmitted isolate of tobacco etch virus (TEV). Ten different monoclonal antibodies were characterized with reference to (1) antibody class, (2) reactivity with different plant virus antigens, (3) the spatial relationship between epitopes, and (4) whether these epitopes were located on the exterior surface of the virion. Three monoclonal antibodies were specific for TEV isolates. These monoclonal antibodies reacted with epitopes exposed on the external surface of the TEV particle. Seven monoclonal antibodies reacted with a variety of different potyviruses including TEV, potato virus Y, tobacco vein mottling virus, pepper mottle virus, watermelon mosaic virus II, and maize dwarf mosaic virus. In general, these seven monoclonal antibodies defined epitopes not readily accessible on the virion surface.",
+      "journal": "Virology",
+      "year": 1985,
+      "pub_date": "1985-07-15",
+      "authors": "Dougherty W G; Willis L; Johnston R E",
+      "first_author": "Dougherty W G",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "烟草蚀纹病毒 (Tobacco etch virus)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2993337",
+      "doi": "10.1016/0166-0934(85)90110-7",
+      "title": "Quantitative microcomplement fixation tests using chicken anti-viral antibody extracted from egg yolk.",
+      "abstract": "Yolk immunoglobulins obtained from hens immunized with human rotavirus and two plant virus antigens were used in quantitative microcomplement fixation tests. Difficulties inherent in the use of avian complement were overcome by utilizing a mixture of the C1 component of chicken complement and guinea-pig complement devoid of its own C1. The method is suitable for detecting small quantities of viral antigen and antibody and for detecting antigenic activity present on peptide fragments of viral proteins.",
+      "journal": "Journal of virological methods",
+      "year": 1985,
+      "pub_date": "1985-07-01",
+      "authors": "Van Regenmortel M H; Burckard J",
+      "first_author": "Van Regenmortel M H",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

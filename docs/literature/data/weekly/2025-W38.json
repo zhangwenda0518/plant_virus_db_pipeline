@@ -1,0 +1,242 @@
+{
+  "week": "2025-W38",
+  "start": "2025-09-15",
+  "end": "2025-09-21",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 20,
+  "by_category": {
+    "Host_Virus_Interactions": 9,
+    "Control_Management": 5,
+    "Detection_Methods": 3,
+    "Biotechnology_Applications": 3,
+    "Antiviral_Resistance_Genes": 1,
+    "Transmission_Epidemiology": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "41012695",
+      "doi": "10.3390/v17091268",
+      "title": "Tomato Bushy Stunt Virus (TBSV): From a Plant Pathogen to a Multifunctional Biotechnology Platform.",
+      "abstract": "Plant viruses have evolved from being viewed exclusively as pathogens into versatile and powerful tools for modern biotechnology. Among them, Tomato bushy stunt virus (TBSV) holds a special place due to its well-studied molecular biology and unique structural properties. This review systematizes the knowledge on TBSV's dual role as a multifunctional platform. On one hand, we cover its application as a viral vector for the highly efficient expression of recombinant proteins in plants, as well as a tool for functional genomics, including Virus-Induced Gene Silencing (VIGS) and the delivery of CRISPR/Cas9 gene-editing components. On the other hand, we provide a detailed analysis of the use of the stable and monodisperse TBSV virion in nanobiotechnology. Its capsid serves as an ideal scaffold for creating next-generation vaccine candidates, platforms for targeted drug delivery to tumor cells, and as a building block for the programmable self-assembly of complex nanoarchitectures. In conclusion, key challenges limiting the widespread adoption of the platform are discussed, including the genetic instability of vectors and difficulties in scalable purification, along with promising strategies to overcome them.",
+      "journal": "Viruses",
+      "year": 2025,
+      "pub_date": "2025-09-19",
+      "authors": "Madirov Almas; Iksat Nurgul; Masalimov Zhaksylyk",
+      "first_author": "Madirov Almas",
+      "categories": [
+        "Biotechnology_Applications",
+        "Detection_Methods"
+      ],
+      "virus_name": "番茄丛矮病毒 (Tomato bushy stunt virus, TBSV)",
+      "taxonomy": "",
+      "host_plant": "植物（未具体指定）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41012677",
+      "doi": "10.3390/v17091250",
+      "title": "Heat Stress Induces Partial Resistance to Tomato Bushy Stunt Virus in ",
+      "abstract": "Global climate change is the impact of combined abiotic and biotic stresses negatively affecting plant health and productivity. This study investigated the molecular and cellular responses of Nicotiana benthamiana L. plants to wild-type tomato bushy stunt virus (wtTBSV) infection under conditions of pre-existing heat stress. The experiments were conducted under controlled temperature regimes of 30 °C and 37 °C in combination with virus challenge. Morphological and biochemical analyses in plants under the influence of combined stress showed the alleviation of disease symptoms, reduction in virus content and reduced expression levels of viral proteins P19 and P33. Under conditions of combined stress, accumulation of hydrogen peroxide and malondialdehyde, as well as activation of the antioxidant enzyme catalase, especially in root tissues, were observed. Notably, at 37 °C, virus infection was suppressed despite high levels of oxidative stress, whereas at 30 °C, a marked decrease in the expression of host factors was observed. The results indicate that thermal stress modulates virus-host interactions and activates defense mechanisms, including antioxidant and RNA interference pathways. Therefore, temperature adaptation can be considered as a promising strategy for enhancing plant resistance to viral pathogens under climate changes.",
+      "journal": "Viruses",
+      "year": 2025,
+      "pub_date": "2025-09-16",
+      "authors": "Iksat Nurgul; Madirov Almas; Artykbayeva Dana; Shevchenko Oleksiy; Zhanassova Kuralay; ... (+2)",
+      "first_author": "Iksat Nurgul",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Tomato bushy stunt virus (TBSV)",
+      "taxonomy": "",
+      "host_plant": "Nicotiana benthamiana",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41012696",
+      "doi": "10.3390/v17091269",
+      "title": "Insect-Specific Viruses and Their Emerging Role in Plant Disease Mitigation.",
+      "abstract": "Insect vectors play a pivotal role in the emergence and dissemination of plant viral diseases. Beyond their function in transmitting plant viruses, these insects harbor diverse insect-specific viruses (ISVs). Advances in high-throughput sequencing (HTS) have uncovered virus diversity and prevalence in insects that far exceed previous estimations. However, current knowledge of ISVs remains predominantly limited to genomic sequencing information. Investigating the fundamental biology of ISVs, their effects on insect physiology, and their modulation of vector competence is critical for deciphering complex virus-virus and virus-insect interactions. Such research holds substantial promise for developing innovative biocontrol strategies against plant viral pathogens. This review synthesizes current insights into the interplay between plant viruses and their insect vectors, explores the discovery and functional roles of ISVs, and discusses the potential application of ISVs in mitigating plant viral diseases. Understanding these dynamic relationships offers new avenues for sustainable plant disease management.",
+      "journal": "Viruses",
+      "year": 2025,
+      "pub_date": "2025-09-19",
+      "authors": "Lei Jianing; Yuan Jingna; Chen Mengnan; Mao Qianzhuo",
+      "first_author": "Lei Jianing",
+      "categories": [
+        "Control_Management",
+        "Transmission_Epidemiology",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "植物病毒（泛指，由昆虫媒介传播）",
+      "taxonomy": "",
+      "host_plant": "多种作物（未明确指定）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41012701",
+      "doi": "10.3390/v17091274",
+      "title": "Comparative Acquisition, Transmission, and Retention of Distinct Grapevine Red Blotch Virus Isolates in Relation to the Genotype and Sex of ",
+      "abstract": "Grapevine red blotch virus (GRBV), the causal agent of red blotch disease of grapevines, is transmitted by Spissistilus festinus, the threecornered alfalfa hopper. Isolates of GRBV belong to two phylogenetic clades (I and II) and S. festinus is a dimorphic insect, with two genotypes found in the western (California, CA) and the southeastern (SE) regions of the United States. The transmission of GRBV by S. festinus is circulative and nonpropagative, yet some parameters of transmission remain to be characterized. Here, we compared the acquisition, transmission, and retention of GRBV isolates from phylogenetic clades I and II by S. festinus males and females of the two genotypes. Results indicated that the SE genotype acquired GRBV more efficiently (72.5%, 29/40) than the CA genotype (22.5%, 18/80), with differences in acquisition observed between males (32.5%, 26/80) and females (52.5%, 21/40) of the two S. festinus genotypes and between GRBV isolates of phylogenetic clades I (29%, 23/80) and II (60%, 24/40). Following acquisition, both S. festinus genotypes and sexes retained GRBV isolates of phylogenetic clades I and II for at least 60 days without access to an infected plant. For transmission, the GRBV isolate of phylogenetic clade II was more efficiently transmitted by the SE genotype (54%, 13/24) than the CA genotype (17%, 4/24) and SE females (75%, 12/16) were significantly more efficient transmitters of GRBV than CA females (19%, 3/16). Together, our findings revealed that S. festinus genotype, sex, and virus isolate influence GRBV acquisition and transmission but not retention. This research addressed important knowledge gaps in S. festinus-mediated transmission of GRBV that are essential for advancing red blotch disease epidemiology and developing appropriate disease management responses.",
+      "journal": "Viruses",
+      "year": 2025,
+      "pub_date": "2025-09-20",
+      "authors": "Hoyle Victoria J; Wunsch Anna O; McLane Heather; Browning Scottie; Flasco Madison T; ... (+2)",
+      "first_author": "Hoyle Victoria J",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "葡萄红斑病毒",
+      "taxonomy": "",
+      "host_plant": "葡萄",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40885112",
+      "doi": "10.1016/j.ecoenv.2025.118889",
+      "title": "Using Russian dandelion allelochemicals to elevate disease resistance and improve sugar beet growth.",
+      "abstract": "The continuous cropping of sugar beet (Beta vulgaris L.) degrades soil quality, intensifies soil-borne diseases, and substantially reduces yield and quality. Thus, continuous cropping is a serious issue that needs urgent attention. Here, we found that rotation of Taraxacum kok-saghyz Rodin (TKS) with sugar beet increased the diversity of soil microbial community and reduced abundance of pathogenic Fusarium spp., thereby promoting the germination and growth of sugar beet seedlings. Allelochemicals (chemosensory substances) from the roots of TKS were extracted using a heating and stirring ultrasound method. The effects of TKS-RE (T. kok-saghyz-root extracts) allelochemicals on Fusarium spp mycelial growth and spore germination were analyzed. TKS-RE inhibited the growth of F. oxysporum and F. solani. Application of TKS-RE to the roots of sugar beet seedlings increased sugar beet biomass accumulation, activated antioxidant enzymes, increased betaine content, and reduced malondialdehyde content, as compared to the control. The result suggested this rotation of TKS with sugar beet can help establish a better cultivation system to reduce the negative effects of continuous sugar beet cropping and to utilize the advantageous TKS resources.",
+      "journal": "Ecotoxicology and environmental safety",
+      "year": 2025,
+      "pub_date": "2025-09-15",
+      "authors": "Zang Meng; Guo Chuanqi; Li Haiying; Chen Sixue; Ma Chunquan",
+      "first_author": "Zang Meng",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40778777",
+      "doi": "10.1128/aem.00600-25",
+      "title": "Diversity of bradyrhizobial T3SS systems and their roles in symbiosis with peanut (",
+      "abstract": "Symbiosis between Bradyrhizobium strains isolated from Lao People's Democratic Republic (Lao PDR) and intercropped legumes (Arachis hypogaea, Vigna radiata, and V. mungo) was regulated by the type III secretion system (T3SS), which delivers effector proteins (T3Es) into host plant cells to modulate nodulation. To explore this mechanism, we sequenced and analyzed seven Bradyrhizobium genomes, identifying putative T3Es across five T3SS groups (G.1-G.5), which were classified based on the sequence of rhcN, a conserved ATPase gene essential for T3SS function. Phylogenetic analysis of rhcN more closely reflected the evolutionary relationships of nodulation genes than those based on 16S rRNA or whole-genome comparisons, underscoring its symbiotic relevance. Functional assays using rhcN mutants revealed group-specific effects on nodulation; G.1 strains showed neutral effects on A. hypogaea, negative effects on V. radiata, and positive effects on V. mungo. G.2 strains consistently promoted nodulation across all hosts and lacked effectors related to SUMO (small ubiquitin-like modifier) pathways, which have been implicated in host defense regulation. G.3 strains reduced nodulation in A. hypogaea but enhanced it in Vigna species. G.4 strains suppressed nodulation in A. hypogaea, and G.5 strains inhibited nodulation across all tested legumes. These findings highlight the diversity in T3SS organization, effector composition, and symbiotic responses among native Bradyrhizobium strains. The identification of known and uncharacterized effectors suggests roles in host compatibility and specificity. These strains, along with their effector profiles, provide a foundation for future functional studies to better understand T3SS-mediated interactions and support the development of targeted inoculants for legume hosts.IMPORTANCEThis study advances our understanding of legume-Bradyrhizobium symbiosis by examining the genetic organization and evolutionary patterns of T3SS genes. Our findings revealed that T3SS gene evolution does not always align with phylogenies based on 16S rRNA or whole-genome sequences, suggesting that horizontal gene transfer and functional adaptation may shape diversification. The observed variation in T3SS architecture and effector profiles among the five distinct Bradyrhizobium groups was correlated with host-specific nodulation outcomes in A. hypogaea, V. radiata, and V. mungo. We also identified novel candidate genes influencing symbiotic signaling and compatibility. These insights into the diversity and function of T3SS components contribute to a broader understanding of host-microbe communication and may support the development of more targeted and efficient rhizobial inoculants for sustainable legume cultivation and improved biological nitrogen fixation.",
+      "journal": "Applied and environmental microbiology",
+      "year": 2025,
+      "pub_date": "2025-09-17",
+      "authors": "Phimphong Tarnee; Hashimoto Shun; Songwattana Pongpan; Wongdee Jenjira; Greetatorn Teerana; ... (+13)",
+      "first_author": "Phimphong Tarnee",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41009599",
+      "doi": "10.3390/ijms26189035",
+      "title": "Genomic-Encoded Mitovirus RdRp Is Required for Embryo Development and Maintaining Mitochondrial Dynamics in ",
+      "abstract": "Mitoviral-derived sequences are frequently detected in plant genomes, encoding an RNA-dependent RNA polymerase (RdRp). These sequences share many similarities with mitoviruses that are known to commonly infect plant mitochondria. However, the functional characterization of nuclear-encoded mitoviral-RdRp remains unclear. This study elucidates the critical role of mRdRp (AT2G07749) in maintaining mitochondrial homeostasis and embryo viability, highlighting the dual role of viral-derived genes in plant development and stress response. Phylogenetic analysis reveals that mRdRp shares 96.8% identity with the mitoviral RdRp encoded by mitochondrial-genomes, suggesting that this nuclear mRdRp gene originated from horizontal transfer events following ancestral plant-mitovirus infections. To dissect mRdRp function, we generated a mRdRp knockout mutant via CRISPR-Cas9 or knockdown mutant by RNA interference (RNAi). These mRdRp mutants exhibited severe developmental defects, including dwarfism, embryo lethality, and sterility. Phenotypic assays further showed that mRdRp mutants displayed heightened susceptibility to ABA and rotenone, indicating impaired adaptive capacity to both hormonal and metabolic stress. Loss of mRdRp led to fragmented mitochondrial networks and a significant reduction in mitochondrial abundance in both leaf protoplasts and root meristematic cells. Additionally, mitochondrial-derived small RNA (sRNA) aberrantly accumulated in mRdRp mutants, which potentially disrupts endogenous RNA-silencing pathways that rely on sRNA-mediated gene regulation. Collectively, these results provide mechanistic insights into the function integration of a virus-derived gene into plant cellular networks, advancing our understanding of host-virus coevolution and the role of horizontally transferred viral genes in shaping plant physiology.",
+      "journal": "International journal of molecular sciences",
+      "year": 2025,
+      "pub_date": "2025-09-17",
+      "authors": "Gong Yadi; Chen Rongqin; Yang Chen; Lu Yingcui; Fu Zhenjie; ... (+4)",
+      "first_author": "Gong Yadi",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40981378",
+      "doi": "10.3390/biotech14030074",
+      "title": "",
+      "abstract": "Pectins are high-value plant cell-wall polysaccharides with extensive applications in the food, pharmaceutical, textile, paper, and environmental sectors. Traditional extraction and processing methodologies rely heavily on harsh acids, high temperatures, and non-renewable solvents, generating substantial environmental and economic costs. This review consolidates recent advances across the entire Bacillus-pectinase value chain, from green pectin extraction and upstream substrate characterization, through process and statistical optimization of enzyme production, to industrial biocatalysis applications. We propose a practical roadmap for developing high-efficiency, low-environmental-footprint enzyme systems that support circular bioeconomy objectives. Critical evaluation of optimization strategies, including submerged versus solid-state fermentation, response surface methodology, artificial neural networks, and design of experiments, is supported by comparative data on strain performance, fermentation parameters, and industrial titers. Sector-specific case studies demonstrate the efficacy of Bacillus pectinases in fruit-juice clarification, textile bio-scouring, paper bio-bleaching, bio-based detergents, coffee and tea processing, oil extraction, animal feed enhancement, wastewater treatment, and plant-virus purification. Remaining challenges, including enzyme stability in complex matrices, techno-economic scale-up, and structure-guided protein engineering, are identified. Future directions are charted toward CRISPR-driven enzyme design and fully integrated circular-economy bioprocessing platforms.",
+      "journal": "Biotech (Basel (Switzerland))",
+      "year": 2025,
+      "pub_date": "2025-09-19",
+      "authors": "Kaissar Fatima Zohra; Bouacem Khelifa; Benine Mohammed Lamine; Mechri Sondes; Sharma Shubha Rani; ... (+4)",
+      "first_author": "Kaissar Fatima Zohra",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41009717",
+      "doi": "10.3390/ijms26189157",
+      "title": "Proteomics Integrated with Transcriptomics of Clubroot Resistant and Susceptible ",
+      "abstract": "Clubroot disease, caused by Plasmodiophora brassicae, is a threat to Brassica crops; therefore, understanding of host-resistance is important for developing clubroot-resistant cultivars. Using multi-omics analysis of clubroot-resistant (CR) and -susceptible (CS) near-isogenic lines (NILs) of B. napus, carrying the resistance of turnip (B. rapa var. rapifera), we characterized the host resistance mechanisms. Through proteome analysis, we identified 6626 differentially abundant proteins (DAPs) (2353 in CR-NILs, 4273 in CS-NILs) (q < 0.05), of which 50 in CR- and 62 in CS-NILs were detected across the disease developmental stages. Notable proteins included those involved in reactive oxygen species scavenging (BnaA09T0647200WE)], cell-wall modifications (BnaA04T0244300WE) and glucosinolate biosynthesis (BnaA01T0266700WE) in the CR-NILs. Additionally, disease-resistance proteins like ENHANCED DISEASE RESISTANCE 2-like (BnaA03T0055600WE) and hairpin-induced family protein YLS9 (BnaA08T0237900WE) showed increased abundance in CR-NILs. In contrast, CS-NILs exhibited decreased abundance of defense-related proteins, including proteins containing CUPIN domain (BnaA09T0578800WE) and LACCASE (BnaA02T0019200WE). Integration of proteome data with transcriptome data revealed 33 genes in CR- and 32 in CS-NILs showing a consistent pattern, including the genes related to PLANT INVERTASE/PECTIN METHYLESTERASE INHIBITOR (BnaC04T0003100WE), KELCH MOTIF (BnaC02T0374800WE), LACCASE (BnaA02T0019200WE), and antioxidant-related transcripts [GLUTATHIONE S-TRANSFERASES (BnaA03T0280900WE) and 4-HYDROXYPHENYLPYRUVATE DIOXYGENASE (BnaA09T0641500WE)]. Our findings offer valuable new targets for breeding clubroot-resistant B. napus.",
+      "journal": "International journal of molecular sciences",
+      "year": 2025,
+      "pub_date": "2025-09-19",
+      "authors": "Kaur Kawalpreet; Adhikary Dinesh; Kav Nat N V; Scandola Sabine; Uhrig R Glen; ... (+1)",
+      "first_author": "Kaur Kawalpreet",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41003229",
+      "doi": "10.3390/jof11090683",
+      "title": "Identification of ",
+      "abstract": "Species of Trichoderma are currently in high demand as eco-friendly and commercial biocontrol agents due to the proliferation of organic farming methods. This study focused on the potential biocontrol agents of Trichoderma against plant-pathogenic fungi. Trichoderma strains were isolated from different sources (soil, grapevine tissues, lemon fruit, and maize seeds), and were characterized morphologically on two culture media, i.e., Potato Dextrose Agar and Malt Extract Agar, and molecularly using two gene regions: translation elongation factor 1 (TEF) and nuclear ribosomal internal transcribed spacer (ITS). Phylogenetic trees were constructed. As a result, two Trichoderma species were identified, i.e., T. afroharzianum and T. longibrachiatum. The biocontrol effects of all isolated strains of Trichoderma on Fusarium plant damping-off and the promotion of plant growth were evaluated. Additionally, the antagonistic efficiency of Trichoderma spp. against F. proliferatum using the dual-culture method was evaluated. Under greenhouse conditions, T. afroharzianum strains AEMCTa3 and AEMCTa6 were used to treat maize plants infected with Fusarium. The application of Trichoderma significantly reduced the disease index to 15.6% and 0%, respectively. Additionally, maize seedlings showed significant improvements in shoot and root lengths and fresh and dry weights and increased photosynthetic pigment contents compared to Fusarium-infected plants and the untreated control. The gas chromatography-mass spectrometry (GC-MS) analysis of T. afroharzianum extracts identified a variety of bioactive compounds. These compounds included antifungal substances like N-ethyl-1,3-dithioisoindoline, as well as plant growth-promoting hormones like 6-pentyl-α-pyrone and gibberellic acid. Interestingly, the analysis also revealed new phenylacetic acid derivatives that may play important roles in both plant health and disease resistance. From a practical perspective, developing diverse application methods for Trichoderma is essential to optimize its role as a biocontrol agent and a plant growth promoter, thereby supporting sustainable agriculture through improved adaptability and effectiveness across different farming systems.",
+      "journal": "Journal of fungi (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-09-19",
+      "authors": "El-Dawy Eman G A M; Gherbawy Youssuf A; Ioan Pet; Hussein Mohamed A",
+      "first_author": "El-Dawy Eman G A M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

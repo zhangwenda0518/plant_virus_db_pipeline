@@ -1,0 +1,101 @@
+{
+  "month": "1997-08",
+  "generated": "2026-07-13 02:59:42",
+  "total": 4,
+  "by_category": {
+    "Host_Virus_Interactions": 2,
+    "New_Virus": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "9242593",
+      "doi": "10.1006/mpev.1996.0401",
+      "title": "Cladistic analysis of Tospovirus using molecular characters.",
+      "abstract": "The genus Tospovirus was thought to be composed only of the tomato spotted wilt virus (TSWV), but now at least four Tospovirus species have been proposed based on serological and molecular data. A classification of tospoviruses has been proposed taking into account global similarities of the N gene and N protein sequences of 7 isolates of Tospovirus. Because phylogenetic analyses based on global similarities can lead to classifications which do not mirror the genealogy of the group, we have employed a cladistic analysis using parsimony of this genus with RNA sequences of 450 nucleotides of the N gene from 14 new Argentinean isolates and 4 previously described isolates. Representatives of the Bunyaviridae family, Rift Valley Fever Virus (Phlebovirus) and Bunyamwera (Bunyavirus), were used as the outgroup in separate analyses.",
+      "journal": "Molecular phylogenetics and evolution",
+      "year": 1997,
+      "pub_date": "1997-08-01",
+      "authors": "Dewey R A; Semorile L C; Grau O; Crisci J V",
+      "first_author": "Dewey R A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Tospovirus属（包括番茄斑萎病毒TSWV等）",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9298190",
+      "doi": "10.1023/a:1000244502608",
+      "title": "Penicillium discolor, a new species from cheese, nuts and vegetables.",
+      "abstract": "The new species Penicillium discolor, frequently isolated from nuts, vegetables and cheese is described. It is characterised by rough, dark green conidia, synnemateous growth on malt agar and the production of the secondary metabolites chaetoglobosins A, B and C, palitantin, cyclopenin, cyclopenol, cyclopeptin, dehydrocyclopeptin, viridicatin and viridicatol. It also produces the mouldy smelling compounds geosmin and 2-methyl-isoborneol, and a series of specific orange to red pigments on yeast extract sucrose agar, hence the epithet discolor. P. discolor resembles P. echinulatum morphologically but on basis of the secondary metabolites is also related to P. expansum, P. solitum and P. crustosum.",
+      "journal": "Antonie van Leeuwenhoek",
+      "year": 1997,
+      "pub_date": "1997-08-01",
+      "authors": "Frisvad J C; Samson R A; Rassing B R; van der Horst M I; van Rijn F T; ... (+1)",
+      "first_author": "Frisvad J C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9270301",
+      "doi": "10.1016/s0968-0004(97)01089-x",
+      "title": "Molecular intimacy between proteins specifying plant-pathogen recognition.",
+      "abstract": "Disease resistance in plants is commonly specified by genetically paired plant resistance (R) and pathogen avirulence (Avr) proteins. Recent molecular analyses of several R-Avr protein interactions provide compelling evidence for a receptor-ligand mechanism in which specific binding of the Avr elicitor by its matching R protein leads to activation of the plant defence response. Direct R-Avr protein recognition precedes the function of an expanding battery of plant resistance signalling components.",
+      "journal": "Trends in biochemical sciences",
+      "year": 1997,
+      "pub_date": "1997-08-01",
+      "authors": "Parker J E; Coleman M J",
+      "first_author": "Parker J E",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9266820",
+      "doi": "10.1006/bbrc.1997.6965",
+      "title": "Phospholipase D involvement in the plant oxidative burst.",
+      "abstract": "Pathogen-triggered generation of reactive oxidants, termed the oxidative burst, contributes to disease resistance in both plant and animal kingdoms. Since phospholipase D plays a key role in the neutrophil oxidative burst signaling cascade and is highly abundant in plants, we investigated its participation in the plant oxidative burst. Thin layer chromatography of extracted phospholipids revealed no changes in phosphatidic acid levels in soybean cells undergoing oxidant production, and no changes in phosphatidyl-ethanol biosynthesis could be detected when ethanol was present during elicitation. An inhibitor of phosphatidic acid hydrolase, propranolol, did not modify burst parameters or phosphatidic acid levels during the burst, suggesting our inability to detect phosphatidic acid accumulation was not due to rapid elimination. Furthermore, exogenous phosphatidic acid did not elicit a burst or enhance elicitor-stimulated bursts. Finally, ethanol, a substitute nucleophile, did not abrogate the burst. With data showing the presence of phospholipase D in soybean cells, these data argue that soybean phospholipase D does not participate in signaling the oxidative burst. This constitutes the first major difference between the plant and animal oxidative burst signal transduction pathways.",
+      "journal": "Biochemical and biophysical research communications",
+      "year": 1997,
+      "pub_date": "1997-08-08",
+      "authors": "Schroeder Taylor A T; Low P S",
+      "first_author": "Schroeder Taylor A T",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "month": "1999-12",
+  "generated": "2026-07-13 02:59:42",
+  "total": 18,
+  "by_category": {
+    "Host_Virus_Interactions": 7,
+    "Antiviral_Resistance_Genes": 5,
+    "New_Virus": 3,
+    "Molecular_Characterization": 3,
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30841149",
+      "doi": "10.1094/PDIS.1999.83.12.1176D",
+      "title": "First Report of Capsicum annuum Plants Infected by Tomato Yellow Leaf Curl Virus.",
+      "abstract": "Infection of tomato crops by tomato yellow leaf curl virus (TYLCV) has occurred annually in southern Spain since 1992. In 1997, TYLCV also was reported in common bean (Phaseolus vulgaris) (2) in southern Spain. During the summer of 1999, we observed pepper plants (Capsicum annuum) from a greenhouse in Almería (Spain) exhibiting clear leaf internervial and marginal chlorosis and upward curling of the leaflet margin. Total nucleic acids were extracted from five plants with symptoms and analyzed by Southern blot hybridization and polymerase chain reaction (PCR). As a probe, we used a plasmid (pSP72/97) encompassing the complete genome of the Spanish isolate of TYLCV-IS (1). A positive signal was obtained from three samples. A pair of primers (OTYA3/OTYA6) designed to amplify TYLCV was used for detection in samples (OTYA3: GGGTCGACGTCATCAATGACG; OTYA6: CTACATGAGAATGGGGAACC). Using PCR, we were able to obtain fragments of the expected sizes (649 bp for OTYA3/OTYA6) from four of five samples analyzed. Amplified fragments were later analyzed by restriction fragment length polymorphism with three cutter enzymes (AluI, RsaI, and HinfI). The restriction pattern obtained in all cases corresponded with the Spanish isolate of TYLCV-IS. One of the fragments amplified with OTYA3/OTYA6 was fully sequenced. The sequence was 100% identical to that previously reported for the Spanish isolate of TYLCV-IS. This is the first report of TYLCV infection in C. annuum, which is one of the most important commercial crops in southeastern Spain. Work is in progress to determine whether the presence of TYLCV-IS in pepper plants is responsible for the symptoms described here. References: (1) J. Navas-Castillo et al. Plant Dis. 81:1461, 1997. (2) J. Navas-Castillo et al. Plant Dis. 83:29, 1999.",
+      "journal": "Plant disease",
+      "year": 1999,
+      "pub_date": "1999-12-01",
+      "authors": "Reina J; Morilla G; Bejarano E R; Rodríguez M D; Janssen D",
+      "first_author": "Reina J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato yellow leaf curl virus (TYLCV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "Capsicum annuum (甜椒)",
+      "location": "西班牙阿尔梅里亚",
+      "results": "从5株病株中4株PCR阳性，RFLP和测序证实为TYLCV-IS西班牙分离株。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10611288",
+      "doi": "10.1073/pnas.96.26.14771",
+      "title": "HSP70 homolog functions in cell-to-cell movement of a plant virus.",
+      "abstract": "Plant closteroviruses encode a homolog of the HSP70 (heat shock protein, 70 kDa) family of cellular proteins. To facilitate studies of the function of HSP70 homolog (HSP70h) in viral infection, the beet yellows closterovirus (BYV) was modified to express green fluorescent protein. This tagged virus was competent in cell-to-cell movement, producing multicellular infection foci similar to those formed by the wild-type BYV. Inactivation of the HSP70h gene by replacement of the start codon or by deletion of 493 codons resulted in complete arrest of BYV translocation from cell to cell. Identical movement-deficient phenotypes were observed in BYV variants possessing HSP70h that lacked the computer-predicted ATPase domain or the C-terminal domain, or that harbored point mutations in the putative catalytic site of the ATPase. These results demonstrate that the virus-specific member of the HSP70 family of molecular chaperones functions in intercellular translocation and represents an additional type of a plant viral-movement protein.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1999,
+      "pub_date": "1999-12-21",
+      "authors": "Peremyslov V V; Hagiwara Y; Dolja V V",
+      "first_author": "Peremyslov V V",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "甜菜黄化曲顶病毒 (Beet yellows closterovirus, BYV)",
+      "taxonomy": "长线形病毒科 (Closteroviridae)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18944643",
+      "doi": "10.1094/PHYTO.1999.89.12.1182",
+      "title": "Fully biologically active in vitro transcripts of the eriophyid mite-transmitted wheat streak mosaic tritimovirus.",
+      "abstract": "ABSTRACT Infectious RNA of wheat streak mosaic virus (WSMV) has been produced using a full-length cDNA clone as a template for in vitro transcription with SP6 RNA polymerase. Infectivity was dependent on the use of template plasmid DNA that had not undergone spontaneous rearrangement during amplification in Escherichia coli. The presence of WSMV in systemically infected wheat plants inoculated with in vitro transcripts was confirmed by reverse-transcription polymerase chain reaction of the WSMV P3 gene and by accumulation of WSMV coat protein as detected by immunoblotting. Maintenance of the full-length WSMV cDNA in the high copy number plasmid pUC18 was problematic because of spontaneous rearrangement of WSMV sequences during growth in liquid media for more than 8 h or if the clone was subcultured. Stability of the WSMV cDNA clone was improved by the use of the low copy number plasmid pACYC177, and it could be grown in large scale volumes (up to 1 liter) of liquid culture for 14 h without noticeable rearrangements. Both the original WSMV culture and the progeny virus derived from infectious in vitro transcripts were efficiently transmitted by the natural eriophyid mite vector Aceria tosichella. This is the first report of infectious in vitro transcripts for any eriophyid mite-transmitted plant virus and represents the only monopartite member of the family Potyviridae infecting monocotyledonous hosts for which infectious in vitro transcripts are available.",
+      "journal": "Phytopathology",
+      "year": 1999,
+      "pub_date": "1999-12-01",
+      "authors": "Choi I R; French R; Hein G L; Stenger D C",
+      "first_author": "Choi I R",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "小麦条纹花叶病毒 (wheat streak mosaic virus, WSMV)",
+      "taxonomy": "Potyviridae科，Tritimovirus属",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10651909",
+      "doi": "10.1046/j.1365-2540.1999.00591.x",
+      "title": "Host race or species? Allozyme characterization of the 'flowering dogwood fly', a member of the Rhagoletis pomonella complex.",
+      "abstract": "The term 'flowering dogwood fly' has been used in the literature for a poorly understood member of the Rhagoletis pomonella sibling species complex infesting the fruits of flowering dogwood (Cornus florida). Electrophoretic analysis of 17 allozyme loci in 21 populations reveals significant frequency differences between the flowering dogwood fly and its closest relative the apple maggot fly, R. pomonella, and between it and the somewhat more distant 'sparkleberry fly'. Frequency differences between the flowering dogwood fly and R. pomonella are as great as 0.817 in the north, but are less in the south, with a maximum difference at one site of only 0.328. No fixed allozyme differences distinguish the flowering dogwood fly anywhere; its only consistent, unique feature is the highest frequency of Aat-259 in the pomonella species group. Population structure of the flowering dogwood fly is moderate with FST=0.084 and fewer latitudinal clines than R. pomonella. The conclusion from the allozyme and life history data is that the flowering dogwood fly is a species, although some interspecific gene flow may be occurring. Additional issues discussed include how to estimate interspecific gene flow when genetic markers are under divergent selection, the appropriate species concept when there is gene flow, and the future of the flowering dogwood fly in the face of the dogwood anthracnose epidemic. The possible utility of a new species concept for phytophagous insects, using as a criterion the capacity of a host race to regenerate the ancestral population, is also discussed.",
+      "journal": "Heredity",
+      "year": 1999,
+      "pub_date": "1999-12-01",
+      "authors": "Berlocher S H",
+      "first_author": "Berlocher S H",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12205977",
+      "doi": "",
+      "title": "[A SEM observation on taxonomic and pharmacognostical identification of genus murraya produced in China].",
+      "abstract": "[OBJECTIVE] To Observe the morphological characteristics of the leaf epidermis of 9 Chinese species of genus Murraya and prepare and index for their differentiation. [METHOD] SEM(scanning electron microscope). [RESULT] Sect. Murraya was found having with blurred dividing lines on epidermis without ropy emblazonry, while sect. Bergera appeared the other way round. [CONCLUSION] M. kwangsiensis var. macrophylla should be ground under Sect. Murraya as a new species, while M. tetramera should be separated from M. euchrestifolia; SEM has been proved very useful in the identification, taxonomic and pharmacognostical study of Murraya.",
+      "journal": "Zhongguo Zhong yao za zhi = Zhongguo zhongyao zazhi = China journal of Chinese materia medica",
+      "year": 1999,
+      "pub_date": "1999-12-01",
+      "authors": "Zou L; Yang C; Zheng H",
+      "first_author": "Zou L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10648933",
+      "doi": "10.1016/s0022-1759(99)00150-7",
+      "title": "Rapid production of single-chain Fv fragments in plants using a potato virus X episomal vector.",
+      "abstract": "We have used a plant virus episomal vector, based on potato virus X (PVX) to transiently express a single-chain Fv (scFv) and its diabody derivative in plants. The scFv was directed against a continuous epitope (cryptotope) on the coat protein of potato virus V. A cloned, full-length PVX vector sequence, containing the scFv gene, was used to direct in vitro transcription and the resulting RNA was used to inoculate Nicotiana clevelandii plants. Within a few days, plants developed characteristic symptoms and immunoblot analysis showed that accumulation of scFv protein coincided with accumulation of PVX. Targeting of the scFv to the apoplast greatly increased protein accumulation compared with cytosolic scFv and produced more severe symptoms on infected plants. ELISA demonstrated that the scFv and diabody extracted from infected plants showed the same antigen-binding specificity as that of the parental monoclonal antibody. The PVX vector is a convenient, rapid, low-cost in planta expression system that can also be used for assessment of scFv production and function prior to stable plant transformation.",
+      "journal": "Journal of immunological methods",
+      "year": 1999,
+      "pub_date": "1999-12-10",
+      "authors": "Hendy S; Chen Z C; Barker H; Santa Cruz S; Chapman S; ... (+3)",
+      "first_author": "Hendy S",
+      "categories": [
+        "Detection_Methods",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30841131",
+      "doi": "10.1094/PDIS.1999.83.12.1105",
+      "title": "Monogenic Dominant Resistance to Gummy Stem Blight in Two Melon (Cucumis melo) Accessions.",
+      "abstract": "Two melon (Cucumis melo L.) accessions, plant introduction (PI) 157082 and PI 511890, reported to be resistant to gummy stem blight, a disease incited by the fungus Didymella bryoniae, were crossed with a susceptible parent to determine the inheritance of resistance. Resistance in both accessions is due to a single dominant gene, based on analysis of F1, F2, and backcross populations. Additionally, PI 157082 was crossed with PI 140471, the other source of resistance identified to date, to examine the genetic relationship of resistance found in these two sources. The frequency of susceptible individuals from the (PI 157082 × 140471) F2 population was consistent with a 15:1 resistant:susceptible ratio, indicating that PIs 140471 and 157082 possess different resistance genes.",
+      "journal": "Plant disease",
+      "year": 1999,
+      "pub_date": "1999-12-01",
+      "authors": "Zuniga T L; Jantz J P; Zitter T A; Jahn M K",
+      "first_author": "Zuniga T L",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10574976",
+      "doi": "10.1074/jbc.274.49.34993",
+      "title": "Topology, subcellular localization, and sequence diversity of the Mlo family in plants.",
+      "abstract": "Barley Mlo defines the founder of a novel class of plant integral membrane proteins. Lack of the wild type protein leads to broad spectrum disease resistance against the pathogenic powdery mildew fungus and deregulated leaf cell death. Scanning N-glycosylation mutagenesis and Mlo-Lep fusion proteins demonstrated that Mlo is membrane-anchored by 7 transmembrane (TM) helices such that the N terminus is located extracellularly and the C terminus intracellularly. Fractionation of leaf cells and immunoblotting localized the protein to the plant plasma membrane. A genome-wide search for Mlo sequence-related genes in Arabidopsis thaliana revealed approximately 35 family members, the only abundant gene family encoding 7 TM proteins in higher plants. The sequence variability of Mlo family members within a single species, their topology and subcellular localization are reminiscent of the most abundant class of metazoan 7 TM receptors, the G-protein-coupled receptors.",
+      "journal": "The Journal of biological chemistry",
+      "year": 1999,
+      "pub_date": "1999-12-03",
+      "authors": "Devoto A; Piffanelli P; Nilsson I; Wallin E; Panstruga R; ... (+2)",
+      "first_author": "Devoto A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10624014",
+      "doi": "10.1094/MPMI.1999.12.12.1053",
+      "title": "Characterization of a new Arabidopsis mutant exhibiting enhanced disease resistance.",
+      "abstract": "In many plant-pathogen interactions, resistance is associated with the synthesis and accumulation of salicylic acid (SA) and pathogenesis-related (PR) proteins. At least two general classes of mutants with altered resistance to pathogen attack have been identified in Arabidopsis. One class exhibits increased susceptibility to pathogen infection; the other class exhibits enhanced resistance to pathogens. In an attempt to identify mutations in resistance-associated loci, we screened a population of T-DNA tagged Arabidopsis thaliana ecotype Wassilewskija (Ws) for mutants showing constitutive expression of the PR-1 gene (cep). A mutant was isolated and shown to constitutively express PR-1, PR-2, and PR-5 genes. This constitutive phenotype segregated as a single recessive trait in the Ws genetic background. The mutant also had elevated levels of SA, which are responsible for the cep phenotype. The cep mutant spontaneously formed hypersensitive response (HR)-like lesions on the leaves and cotyledons and also exhibited enhanced resistance to virulent bacterial and fungal pathogens. Genetic analyses of segregating progeny from outcrosses to other ecotypes unexpectedly revealed that alterations in more than one gene condition the constitutive expression of PR genes in the original mutant. One of the mutations, designated cpr20, maps to the lower arm of chromosome 4 and is required for the cep phenotype. Another mutation, which has been termed cpr21, maps to chromosome 1 and is often, but not always, associated with this phenotype. The recessive nature of the cep trait suggests that the CPR20 and CPR21 proteins may act as negative regulators in the disease resistance signal transduction pathway.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 1999,
+      "pub_date": "1999-12-01",
+      "authors": "Silva H; Yoshioka K; Dooner H K; Klessig D F",
+      "first_author": "Silva H",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18944646",
+      "doi": "10.1094/PHYTO.1999.89.12.1200",
+      "title": "Cytological Investigation of Resistance to Leptosphaeria maculans Conferred to Brassica napus by Introgressions Originating from B. juncea or B. nigra B Genome.",
+      "abstract": "ABSTRACT Introgressions into Brassica napus from the B genome, either the B. nigra chromosome B4 or the B. juncea fragment carrying the Jlm1 gene, have given rise to the B. napus-B. nigra addition line (LA4+) and the B. napus-B. juncea recombinant line (MXS), respectively. The resistance of these two lines to Leptosphaeria maculans is characterized by a hypersensitive reaction (HR) on both the cotyledons and leaves, while the collar displays a high degree of resistance. Responses induced in cotyledons of the two lines by L. maculans inoculation were investigated with emphasis on cytological events underlying the HR and on host defense reactions. Features of host cell changes including condensation and lobing of nuclei, fragmentation of chromatin, disruption of the nuclear membranes, and plasma membrane withdrawal were reminiscent of HR cell death in MXS and LA4+ plants. Restriction of pathogen growth to the infection areas in LA4+ was correlated to reinforcement of cell wall barriers, including wall apposition, papillae, and vessel plugging. In MXS, the lower expression of resistance was associated with a delay in plant responses. These results indicate that mechanisms underlying the HR in the B. napus recombinant and addition lines are differently controlled according to the introgressed genes.",
+      "journal": "Phytopathology",
+      "year": 1999,
+      "pub_date": "1999-12-01",
+      "authors": "Roussel S; Nicole M; Lopez F; Renard M; Chèvre A M; ... (+1)",
+      "first_author": "Roussel S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10682345",
+      "doi": "10.1093/oxfordjournals.pcp.a029511",
+      "title": "Molecular cloning of a defense-response-related cytochrome P450 gene from tobacco.",
+      "abstract": "Plant defenses against pathogen attack involve a series of inducible responses that contribute to resistance. Tobacco leaves injected with HWC (hyphal wall components prepared from Phytophthora infestans) elicitor showed typical defense responses, including the induction of localized necrosis and the accumulation of pathogenesis-related proteins. In order to elucidate the molecular mechanisms by which plant defense systems are activated, we screened tobacco plants for genes differentially expressed in response to HWC. We performed differential screening by RT-PCR with random primers and obtained PCR products specific to HWC-treated leaf RNA. Northern hybridization using the PCR products as probes confirmed that one transcript was actually induced by HWC treatment. As the deduced amino acid sequence of this clone showed the highest degree of similarity to elicitor-induced soybean cytochrome P450 CYP82A4, it was designated CYP82E1. The expression of CYP82E1 was strongly induced in tobacco by the soybean pathogen Pseudomonas syringae pv. glycinea (nonpathogenic on tobacco), but it was activated only slightly and in a delayed fashion by the tobacco pathogen P. syringae pv. tabaci (pathogenic on tobacco), implying that the product of CYP82E1 may be involved in disease resistance in tobacco.",
+      "journal": "Plant & cell physiology",
+      "year": 1999,
+      "pub_date": "1999-12-01",
+      "authors": "Takemoto D; Hayashi M; Doke N; Nishimura M; Kawakita K",
+      "first_author": "Takemoto D",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10652126",
+      "doi": "10.1046/j.1365-313x.1999.00624.x",
+      "title": "Transient expression of members of the germin-like gene family in epidermal cells of wheat confers disease resistance.",
+      "abstract": "The wheat genome encodes a family of germin-like proteins that differ with respect to regulation and tissue specificity of expression of the corresponding genes. While germin exhibits oxalate oxidase (E.C. 1.2.3.4.) activity, the germin-like proteins (GLPs) have no known enzymatic activity. A role of oxalate oxidase in plant defence has been proposed, based on the capacity of the enzyme to produce H2O2, a reactive oxygen species. The role in defence of germin and other members of the germin-like gene family was functionally assessed in a transient assay system based on particle bombardment of wheat leaves. Transient expression of the pathogen-induced germin gf-2.8 gene, but not of the constitutively expressed HvGLP1 gene, reduced the penetration efficiency of Blumeria (syn. Erysiphe) graminis f.sp. tritici, the causal agent of wheat powdery mildew, on transformed cells. Two engineered germin-gf-2.8 genes and the TaGLP2a gene, which all encoded proteins without oxalate oxidase activity, also reduced the penetration efficiency of the fungus, demonstrating that oxalate oxidase activity is not required for conferring enhanced resistance. Instead, activity tagging experiments showed that in cells transiently expressing the germin gf-2.8 gene, the transgene product became insolubilized at sites of attempted fungal penetration where localised production of H2O2 was observed. Thus, germin and GLPs may play a structural role in cell-wall re-enforcement during pathogen attack.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 1999,
+      "pub_date": "1999-12-01",
+      "authors": "Schweizer P; Christoffel A; Dudler R",
+      "first_author": "Schweizer P",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "week": "2025-W17",
+  "start": "2025-04-21",
+  "end": "2025-04-27",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 30,
+  "by_category": {
+    "Control_Management": 8,
+    "Host_Virus_Interactions": 7,
+    "New_Virus": 6,
+    "Antiviral_Resistance_Genes": 5,
+    "Viral_Diversity_Ecology": 3,
+    "Biotechnology_Applications": 3,
+    "Detection_Methods": 1,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "40106437",
+      "doi": "10.1016/j.celrep.2025.115449",
+      "title": "The E3 ligase HRD1 enhances plant antiviral immunity by targeting viral movement proteins.",
+      "abstract": "The ubiquitin-26S proteasome system (UPS) is a conserved protein degradation process involved in plant growth and immunity. However, whether some UPS E3 ligases directly target plant viruses in the endoplasmic reticulum (ER) remains less understood. Here, we identify an E3 ubiquitin ligase Hmg-CoA reductase degradation 1 of Nicotiana benthamiana (NbHRD1) interacting with the triple gene block (TGB) movement proteins of beet necrotic yellow vein virus (BNYVV) in the ER. The TGB proteins are ubiquitinated by NbHRD1 and then degraded by the UPS. Consequently, overexpression of NbHRD1a significantly inhibits BNYVV infection, whereas silencing of NbHRD1 promotes BNYVV infection in N. benthamiana. Moreover, NbHRD1a mainly impairs BNYVV cell-to-cell movement, rather than virus replication. Interestingly, NbHRD1 also targets the TGB proteins of potato virus X for ubiquitination and virus inhibition. Collectively, our results demonstrate that NbHRD1 is an important antiviral component targeting plant viruses with TGB movement proteins.",
+      "journal": "Cell reports",
+      "year": 2025,
+      "pub_date": "2025-04-22",
+      "authors": "Guo Zhi-Hong; Qin Xin-Yu; Guo Hong-Fang; Zheng Chuan; Zhang Zong-Ying; ... (+4)",
+      "first_author": "Guo Zhi-Hong",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "甜菜坏死黄脉病毒（BNYVV）、马铃薯X病毒（PVX）",
+      "taxonomy": "",
+      "host_plant": "本氏烟（Nicotiana benthamiana）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40261439",
+      "doi": "10.1007/s00705-025-06293-7",
+      "title": "Discovery of a novel alphasatellite of the genus Clecrusatellite associated with a wide array of New World tomato-infecting begomoviruses.",
+      "abstract": "A new alphasatellite was discovered via high-throughput sequencing in mixed infections with five distinct tomato-infecting begomoviruses in central Brazil, and the presence of this alphasatellite in tomato leaf samples was confirmed by PCR and Sanger sequencing. It has a circular genome of 1,321 nucleotides with typical features of alphasatellites belonging to the subfamily Geminialphasatellitinae, including a replication-associated hairpin sequence (TAGTATTAC) and an open reading frame encoding a replication-associated protein. Pairwise sequence comparisons and phylogenetic analysis indicated that this alphasatellite represents a new species, with 69-77% sequence identity to other members of the genus Clecrusatellite. Tomato golden vein virus (TGVV) was the only begomovirus present in all six positive samples. However, it was not possible to determine which of these viruses can function as a helper virus for the alphasatellite. The species name \"Clecrusatellite solanumbrasiliensis\" is proposed to classify this alphasatellite associated with endemic Brazilian begomoviruses. To our knowledge, this is the first report of a tomato-associated alphasatellite in the New World.",
+      "journal": "Archives of virology",
+      "year": 2025,
+      "pub_date": "2025-04-22",
+      "authors": "Reis Luciane de Nazaré A Dos; Boiteux Leonardo S; Fonseca Maria Esther N; Pereira-Carvalho Rita de Cássia",
+      "first_author": "Reis Luciane de Nazaré A Dos",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Clecrusatellite solanumbrasiliensis（暂定名）；相关病毒：Tomato golden vein virus (TGVV) 等五种番茄侵染性begomoviruses",
+      "taxonomy": "Geminialphasatellitinae, Clecrusatellite",
+      "host_plant": "番茄 (Solanum lycopersicum)",
+      "location": "巴西中部",
+      "results": "新alphasatellite基因组1321 nt，包含典型特征（复制相关发卡序列TAGTATTAC和Rep蛋白ORF），与Clecrusatellite其他成员序列一致性69-77%，代表新种；TGVV存在于所有阳性样品，但无法确定其辅助病毒角色。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40364302",
+      "doi": "10.3390/plants14091273",
+      "title": "The First High-Throughput Sequencing-Based Study of Viruses Infecting Solanaceous Crops in Kosovo Reveals Multiple Infections in Peppers by Six Plant Viruses.",
+      "abstract": "High-throughput sequencing (HTS) was employed for the first time to investigate plant viruses infecting solanaceous crops, including potato (Solanum tuberosum), tomato (Solanum lycopersicum), and pepper (Capsicum annuum), in Kosovo. Leaf samples showing virus-like symptoms were collected from various regions during the summer of 2023. Based on ribodepleted RNA sequencing and bioinformatics analysis, six viruses were identified: cucumber mosaic virus, broad bean wilt virus 2 (BBWV2), potato virus Y, pepper cryptic virus 2 (PCV2), bell pepper endornavirus (BPEV), and ranunculus white mottle virus. BBWV2, PCV2, and BPEV are reported for the first time in the Balkan region. Virus presence was validated using RT-PCR. Phylogenetic analyses revealed that the identified viral strains did not cluster according to their hosts and geographical origins. CMV and BBWV2 variants exhibited reassortment events, indicating possible local evolution or novel virus introductions. This research highlights the widespread occurrence of mixed infections in pepper plants and highlights the need for additional research into the virus transmission dynamics and potential reservoir hosts. These findings emphasize the need for continuous surveillance and integrated plant protection strategies to mitigate the impacts of viral infections on pepper and other economically important crops in Kosovo.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-04-22",
+      "authors": "Ismajli Burim; Galbács Zsuzsanna N; Takács András Péter; Várallyay Éva",
+      "first_author": "Ismajli Burim",
+      "categories": [
+        "Detection_Methods",
+        "Molecular_Characterization",
+        "New_Virus",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "六种植物病毒（黄瓜花叶病毒、蚕豆萎蔫病毒2、马铃薯Y病毒、辣椒隐病毒2、甜椒内源RNA病毒、毛茛白斑驳病毒）",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40259211",
+      "doi": "10.1186/s12870-025-06515-9",
+      "title": "Elucidating long non-coding RNA networks in tomato plants in response to Funneliformis mosseae colonization and cucumber mosaic virus infection.",
+      "abstract": "Tomato plants face biotic challenges like infections by cucumber mosaic virus (CMV), a member of the Cucumovirus genus in the Bromoviridae family, as well as beneficial interactions, such as colonization by the symbiotic fungus Funneliformis mosseae, which belongs to the Glomeraceae family. While this symbiosis boosts nutrient uptake and stress tolerance, viral infections can reduce yield and quality. Understanding how tomatoes manage these interactions is vital for enhancing crop productivity. To explore the molecular mechanisms behind these interactions, this study focuses on long non-coding RNAs (lncRNAs), which play crucial roles in gene regulation, stress response, and plant metabolic pathways. Tomato RNA-seq data were analyzed to identify lncRNAs and their interactions with microRNAs (miRNAs) through de novo assembly, mapping, expression analysis, and localization prediction. In this study, 3210 lncRNAs were identified from 12 SRA datasets of tomato plants, including control, CMV-infected, F. mosseae-colonized, and co-infected samples. Among these, 3194 were novel lncRNAs and 16 were conserved. Expression analysis revealed significant differential expression patterns across treatments. Pathway analysis indicated that these lncRNAs are involved in key metabolic processes, such as carbon metabolism, amino acid biosynthesis, and secondary metabolite production, suggesting their role in enhancing disease resistance. Furthermore, we predicted interactions between identified lncRNAs and miRNAs, including miR160a, miR166a/b, miR167a, miR171a/b/c, miR1917, miR1918, and miR395a/b, thereby highlighting potential regulatory networks that could modulate stress responses. The subcellular localization of identified lncRNAs revealed a predominance in the cytoplasm, implying their involvement in post-transcriptional regulation. This study accentuates the significance of lncRNAs in tomato plant defense mechanisms and provides a foundation for future research focused on enriching resistance to viral infections and boosting stress resilience.",
+      "journal": "BMC plant biology",
+      "year": 2025,
+      "pub_date": "2025-04-21",
+      "authors": "Maleki Narjes; Ghorbani Abozar; Rostami Mahsa; Maina Solomon",
+      "first_author": "Maleki Narjes",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "黄瓜花叶病毒 (CMV)",
+      "taxonomy": "",
+      "host_plant": "番茄",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40274639",
+      "doi": "10.1007/s00299-025-03489-8",
+      "title": "Leveraging chlorophyll fluorescence uncovers potato virus Y resistance in potato and its validation through viral quantification and yield loss studies.",
+      "abstract": "Chlorophyll fluorescence (CF) measurements have been demonstrated to be an efficient and non-invasive tool for identifying and developing PVY-resistant potato cultivars. The validity of CF measurements was confirmed through viral titer and yield-loss assays. In the quest to identify resistant sources for potato virus Y (PVY) within Indian potato germplasm, we developed a phenotyping approach leveraging plant physiological responses against PVY infection. The study evaluated 71 potato genotypes including cultivated and experimental clones, during the year 2021-2022 and 2022-23 through mechanical inoculation in experimental fields at the Punjab Agricultural University, Ludhiana. We employed a combination of serological and molecular screening, complemented with chlorophyll fluorescence (CF) measurements to classify resistant and susceptible genotypes. Out of 71 genotypes, 34 exhibited PVY resistance, with KP-16-19-14 being the highly resistant line with minimal yield loss (i.e., only 1.64% reduction) and undetectable viral titer. This genotype holds promise as a valuable resistance source for future breeding programmes. Our findings revealed that resistant genotypes maintained stable CF metrics and experienced minimal yield reductions (up to 5.15% only), with very low viral titer. In contrast, the photosynthetic efficiency was significantly declined in susceptible genotypes, which also experienced yield losses up to 58.84% with very high viral titer. Correlation coefficient and principal component analysis (PCA) revealed a strong association among the CF parameters, disease severity, viral titer, and yield losses. This emphasizes the utility of CF as a valuable tool for assessing resistance through physiological responses to PVY. Study demonstrates that photochemistry, heat dissipation, and fluorescence emission patterns of PS-II effectively differentiate resistant and susceptible genotypes. Moreover, this study highlights the potential of integrating physiological assessments with molecular diagnostics in large-scale preliminary screening to identify and develop PVY-resistant potato genotypes.",
+      "journal": "Plant cell reports",
+      "year": 2025,
+      "pub_date": "2025-04-24",
+      "authors": "Belludi Rakesh; Sharma Abhishek; Sharma Sat Pal; Ramesh Gutha Venkata; Gudi Santosh",
+      "first_author": "Belludi Rakesh",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "马铃薯Y病毒 (Potato virus Y, PVY)",
+      "taxonomy": "",
+      "host_plant": "马铃薯",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40431615",
+      "doi": "10.3390/v17050602",
+      "title": "Investigation of HCPro-Mediated Ethylene Synthesis Pathway Through RNA-Seq Approaches.",
+      "abstract": "Chilli veinal mottle virus (ChiVMV) severely compromises the quality and yield of solanaceous crops. The helper component protease (HCPro) of ChiVMV functions as a multifunctional RNA silencing suppressor that subverts host antiviral defenses through diverse strategies, However, the underlying mechanisms remain mechanistically unresolved. In this study, HCPro-overexpressing (HCPro-OX) and wild-type (WT) plants were inoculated with ChiVMV to monitor the physiological and molecular changes. Transcriptome analysis identified 11,815 differentially expressed genes (DEGs) under viral infection, among which 1115 genes were specifically regulated by HCPro. KEGG enrichment analysis revealed that the DEGs were significantly associated with plant hormone signal transduction pathways, indicating their crucial role in host-virus interactions. Furthermore, functional clustering of HCPro-regulated DEGs specifically identified key components in ethylene biosynthesis pathways. GO analysis of DEGs between virus-inoculated WT and HCPro-OX plants annotated ethylene biosynthesis-related genes NtACO and NtACS. qPCR validation confirmed that the expression of ethylene biosynthesis-related genes was suppressed by HCPro. Exogenous treatments with the ethylene precursor ACC demonstrated that ethylene suppressed viral accumulation, enhanced POD activity, and reduced the ROS accumulation induced by viral infection. In conclusion, our results demonstrate that HCPro promotes viral infection by suppressing ethylene biosynthesis, which in turn attenuates peroxidase activity, leading to ROS accumulation.",
+      "journal": "Viruses",
+      "year": 2025,
+      "pub_date": "2025-04-23",
+      "authors": "Jiang Xinpeng; Dong Lan; Wan Renjing; Zeng Changli; Yang Ting",
+      "first_author": "Jiang Xinpeng",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Chilli veinal mottle virus (ChiVMV)",
+      "taxonomy": "",
+      "host_plant": "茄科作物",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39755117",
+      "doi": "10.1016/j.devcel.2024.12.020",
+      "title": "Rice extracellular vesicles send defense proteins into fungus Rhizoctonia solani to reduce disease.",
+      "abstract": "The exchange of molecular information across kingdoms is crucial for the survival of both plants and their pathogens. Recent research has identified that plants transfer their small RNAs and microRNAs into fungal pathogens to suppress infection. However, whether and how plants send defense proteins into pathogens remains unknown. Here, we report that rice (Oryza sativa) plants package defense proteins into extracellular vesicles (EVs) and deliver them to the fungal pathogen Rhizoctonia solani. These EVs, enriched with host defense proteins, are internalized by the fungal cells. Reducing the transfer of host defense proteins via EVs results in increased disease susceptibility. Furthermore, the overexpression of host defense proteins in either rice plants or the fungal cells reduced the infection. Therefore, plants use EVs to send defense proteins into fungal pathogens, thereby combating infection. This mechanism represents a form of protein exchange between plants and pathogens, which contributes to reducing crop diseases.",
+      "journal": "Developmental cell",
+      "year": 2025,
+      "pub_date": "2025-04-21",
+      "authors": "Huang Yifan; Li Wei; Liu Tiangu; Lin Xiaoli; Xia Yanhui; ... (+3)",
+      "first_author": "Huang Yifan",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40118196",
+      "doi": "10.1016/j.jep.2025.119635",
+      "title": "Traditional Herbal Medicine Pithecellobium clypearia (Jack) Benth: Research progress in chemical constituents and pharmacological activities.",
+      "abstract": "[ETHNOPHARMACOLOGICAL RELEVANCE] Pithecellobium clypearia, a traditional herbal medicine, has garnered widespread attention for its significant anti-infective benefits. However, there is currently a lack of comprehensive reviews examining the chemical constituents and pharmacological activities of P. clypearia. [AIMS OF THE STUDY] This review aims to investigate the chemical constituents and pharmacological effects of P. clypearia, and to explore its potential for wider medical applications through the synthesis of these findings. [MATERIALS AND METHODS] The Web of Science, PubMed, CNKI, Google Scholar, and WanFang databases were searched for Pithecellobium clypearia, Using \"Pithecellobium clypearia\", \"Archidendron clypearia\", \"pharmacology\", \"chemical composition\" and \"biological activity\", as the keywords, we summarized the main chemical compositions and pathological mechanisms of P. clypearia. [RESULTS] A total of 129 compounds were isolated from P. clypearia, the primary active components identified include flavonoids, polysaccharides, lignins, triterpenoids, steroids, and phenolic acids. These compounds contribute to the medicinal plant's diverse pharmacological effects, which include antiviral, antibacterial, anti-inflammatory, antioxidant, and neuroprotective properties. P. clypearia presents great potential, especially in its antiviral and anti-inflammatory effects, indicating its valuable role in future therapeutic strategies. [CONCLUSION] P. clypearia has demonstrated effectiveness and safety in treating various respiratory and gastrointestinal diseases. It shows good monotherapy efficacy and significantly enhances overall treatment outcomes when used in combination therapy. P. clypearia is a valuable treatment option for patients of different age groups and provides a safe and effective alternative in various clinical settings.",
+      "journal": "Journal of ethnopharmacology",
+      "year": 2025,
+      "pub_date": "2025-04-25",
+      "authors": "Su Dapeng; Liu Siqi; Lyu Chaogeng; Wu Dehua; Wang Tielin; ... (+4)",
+      "first_author": "Su Dapeng",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40422665",
+      "doi": "10.3390/jof11050331",
+      "title": "Morphology and Phylogeny Reveal New Species and Records of ",
+      "abstract": "The fungal family Botryosphaeriaceae, which includes genera such as Diplodia, Dothiorella, and Phaeobotryon, comprises species commonly associated with woody plants such as endophytes, pathogens, and saprophytes. The Xizang Autonomous Region of China, known for its rich forest resources, harbors significant fungal diversity. However, limited research has been conducted on plant-disease-associated fungi in this region. In this study, we employed morphological characteristics and molecular phylogenetic analyses of the internal transcribed spacer region of rDNA (ITS), the ribosomal large subunit (LSU), the translation elongation factor 1-alpha (tef1) gene, and the partial beta-tubulin (tub2) gene to identify fungal species. As a result, two new species, Diplodia salicicola sp. nov. and Phaeobotryon xizangense sp. nov., are proposed and described herein. Additionally, Di. corticola, Di. mutila, Do. acericola, Do. magnoliae, Do. vidmadera, Do. yunnana comb. nov., and Do. zanthoxyli are reported for the first time in Xizang. Our findings contribute to advancing the knowledge of fungal biodiversity in Xizang's high-altitude ecosystems.",
+      "journal": "Journal of fungi (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-04-22",
+      "authors": "Zhou Jia; Li Aining; Jiang Ning",
+      "first_author": "Zhou Jia",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40257606",
+      "doi": "10.1007/s00114-025-01982-4",
+      "title": "Many problems for a solo mother: maternal care efficiency of the ghost spider of new genus Eldar (Araneae: Anyphaenidae, Anyphaeninae) against new species Pseudogaurax Malloch (Diptera: Chloropidae).",
+      "abstract": "Parental care in nature can present itself in different forms and vary in intensities and strategies, being maternal care one of the widely observed patterns in animals. In spiders, parental investment is carried out mainly by females. Despite this, newly hatched eggs can still be targets of a series of natural enemies. In a remnant of Atlantic Forest in Brazil, females of the spider Eldar galadrielae sp. nov., family Anyphaenidae, build nests at the forest's edge by folding plant leaves. However, information about the plants chosen for nest, the importance of maternal care by females in offspring survival, and predators are completely unknown. In this study, we (1) presented new information about the nest built by females of Eldar galadrielae sp. nov.; (2) compared the predation rate on eggs of the spider Eldar galadrielae in nests with and without the presence of the female; (3) provided morphological descriptions and distribution maps to the genus Eldar gen. nov. as well as presenting; and (4) the described Pseudogaurax vasconcellosi sp. nov. as the predator of the spider eggs. This is the first report on an interaction between Pseudogaurax flies and Anyphaenidae spiders. Our results support predation rates higher in female-less Eldar galadrielae sp. nov. nests. Although egg consumption was 100% in nests attacked by flies, overall nest predation rate was low, as flies were only recorded in three of the 12 nests that maintained female care, indicating that active protection of egg sacs by females can increase the offspring's chances of survival.",
+      "journal": "Die Naturwissenschaften",
+      "year": 2025,
+      "pub_date": "2025-04-21",
+      "authors": "Villanueva-Bonilla German Antonio; de Oliveira Luiz Fernando Moura; Brescovit Antonio Domingos; Riccardi Paula Raile; de Andrade Santiago Lílian; ... (+1)",
+      "first_author": "Villanueva-Bonilla German Antonio",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

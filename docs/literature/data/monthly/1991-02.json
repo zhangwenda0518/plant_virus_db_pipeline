@@ -1,0 +1,78 @@
+{
+  "month": "1991-02",
+  "generated": "2026-07-13 02:59:42",
+  "total": 3,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 2,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "24221211",
+      "doi": "10.1007/BF00215731",
+      "title": "Genetic variation and covariation in a population of tetraploid Dactylis L. accessions.",
+      "abstract": "Efficient utilization of divergent germ plasm sources in breeding cultivated Dactylis glomerata L. ssp. glomerata Domin depends on knowledge of quantitative variation within and among accessions. This study was undertaken to quantify variation and covariation for forage yield, maturity, disease reaction, and ground cover within a population of tetraploid Dactylis accessions. Variation was observed among families within the population for each variable. Most genetic variation (73%-93% of the family sums of squares) was within country sources or within accessions. Thus, country boundaries, which are traditionally important factors used in defining limits of plant exploration expeditions, have limited expected use in targeting future exploration for specific sources of high yield, disease resistance, or ground cover. Maturity was the exception to this; late-maturing accessions were identified as originating exclusively from the USSR. Some relationships among traits, such as that for yield and disease reaction, differed for accessions and cultivars. Several accessions and families within accessions were identified to have performance superior to most or all cultivars included in this study. Existing germ plasm from several countries was identified to have potential in breeding orchardgrass, while that from other countries appeared to have little or no potential in supplying germ plasm for hay production in humid-temperate environments.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 1991,
+      "pub_date": "1991-02-01",
+      "authors": "Casler M D",
+      "first_author": "Casler M D",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1705571",
+      "doi": "10.1016/0022-1759(91)90009-5",
+      "title": "Production of a pokeweed antiviral protein (PAP)-containing immunotoxin, B43-PAP, directed against the CD19 human B lineage lymphoid differentiation antigen in highly purified form for human clinical trials.",
+      "abstract": "We describe a standardized method for the preparation and purification of a potent immunotoxin against B-lineage leukemia/lymphoma cells, constructed with the ribosome inhibitory single chain plant toxin pokeweed antiviral protein (PAP) and a murine IgG1 monoclonal antibody (MoAb) specific for the human B lineage differentiation antigen CD19 for human clinical trials. PAP was prepared from spring leaves of Phytolacca americana plants by ammonium sulfate precipitation and purified to homogeneity by successive steps of ion exchange chromatography. B43 MoAb was produced in vitro by hollow fiber technology and purified to homogeneity by affinity chromatography. PAP toxin and B43 MoAb were modified via their free amino groups prior to their intermolecular conjugation. 2-iminothiolane was used to introduce reactive sulfhydryl groups into PAP and N-succinimidyl 3-(2-pyridyldithio) propionate was used to introduce 2-pyridyl disulfide bonds into B43 MoAb. Modified PAP was reacted with modified B43 MoAb resulting in a sulfhydryl-disulfide exchange reaction and yielding disulfide linked PAP-B43 MoAb conjugates, which we refer to as B43-PAP immunotoxin. B43-PAP immunotoxin was subjected to preparative gel filtration chromatography and cation exchange chromatography to obtain a highly purified, sterile, and pyrogen-free immunotoxin preparation with less than 5% free antibody contamination and less than 0.5% free PAP contamination. The final product displayed a high affinity for and a very potent anti-leukemic activity against B lineage leukemia cells. With slight modifications, the procedures detailed in this report should be generally applicable to preparation of other PAP-MoAb conjugates for treatment of cancer or AIDS.",
+      "journal": "Journal of immunological methods",
+      "year": 1991,
+      "pub_date": "1991-02-15",
+      "authors": "Myers D E; Irvin J D; Smith R S; Kuebelbeck V M; Uckun F M",
+      "first_author": "Myers D E",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1650164",
+      "doi": "10.1016/0166-3542(91)90028-p",
+      "title": "Antiviral activities of hypericin.",
+      "abstract": "Hypericin, a photodynamic plant quinone, readily inactivated murine cytomegalovirus (MCMV), Sindbis virus, and human immunodeficiency virus type 1 (HIV-1), especially on exposure to fluorescent light. Sindbis virus was significantly more sensitive than MCMV. The inactivated MCMV, when used to infect cells, was incapable of synthesizing early or late viral antigens. In addition to this direct virucidal effect, when hypericin was added to cells infected with viable MCMV, inhibition was also observed, particularly when the compound was added in the first two hours of infection. Again the antiviral effect was augmented by visible light. At effective antiviral concentrations, there were no discernible adverse effects on cultured cells. Thus hypericin appears to have two modes of antiviral activity: one directed at the virions, possibly on membrane components (although other virion targets cannot be ruled out), and the other directed at virus-infected cells. Both activities are substantially enhanced by light. Other recent studies on the antiviral activities of hypericin have not considered the role of light, and it is conceivable that apparent discrepancies between their results may have reflected different conditions of light exposure.",
+      "journal": "Antiviral research",
+      "year": 1991,
+      "pub_date": "1991-02-01",
+      "authors": "Hudson J B; Lopez-Bazzocchi I; Towers G H",
+      "first_author": "Hudson J B",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

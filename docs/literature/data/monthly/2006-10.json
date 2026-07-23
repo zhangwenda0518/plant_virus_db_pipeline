@@ -1,0 +1,282 @@
+{
+  "month": "2006-10",
+  "generated": "2026-07-13 02:59:42",
+  "total": 22,
+  "by_category": {
+    "New_Virus": 6,
+    "Molecular_Characterization": 5,
+    "Host_Virus_Interactions": 5,
+    "Antiviral_Resistance_Genes": 3,
+    "Biotechnology_Applications": 2,
+    "Control_Management": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "16612640",
+      "doi": "10.1007/s00253-005-0305-2",
+      "title": "Efficient transient expression of human GM-CSF protein in Nicotiana benthamiana using potato virus X vector.",
+      "abstract": "The human granulocyte macrophage colony-stimulating factor (GM-CSF) is a glycoprotein with important clinical applications for the treatment of neutropenia and aplastic anemia and reducing infections associated with bone marrow transplants. We evaluated the potential for using a potato virus X (PVX) viral vector system for efficient expression of the biologically functional GM-CSF protein in Nicotiana benthamiana leaves. The GM-CSF gene was cloned into PVX viral expression vector, driven with the CaMV 35S promoter. Gene transfer was accomplished by inoculating N. benthamiana leaves with the plasmid DNA of PVX vector containing the GM-CSF gene. The expression level of the recombinant GM-CSF protein was determined with ELISA and its size was confirmed by Western blot analysis. The results showed that: (1) leaf age significantly affects GM-CSF protein concentration with younger leaves accumulating 19.8 mg g(-1) soluble protein which is 2.6 times the concentration in older leaves, (2) recombinant protein accumulation within a given leaf declined slightly over time but was not significantly different between 7 and 11 days post-inoculation (dpi), and (3) the two leaves immediately above the inoculated leaves play an important role for GM-CSF accumulation in the younger leaves. Protein extracts of infected N. benthamiana leaves contained recombinant human GM-CSF protein in concentrations of up to 2% of total soluble protein, but only when the pair of leaves immediately above the inoculated leaves remained intact. The recombinant protein actively stimulated the growth of human TF-1 cells suggesting that the recombinant human GM-CSF expressed via PVX viral vector was biologically active.",
+      "journal": "Applied microbiology and biotechnology",
+      "year": 2006,
+      "pub_date": "2006-10-01",
+      "authors": "Zhou Fengyong; Wang Ming-Li; Albert Henrik H; Moore Paul H; Zhu Yun J",
+      "first_author": "Zhou Fengyong",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "马铃薯X病毒 (PVX)",
+      "taxonomy": "",
+      "host_plant": "本氏烟草 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16699829",
+      "doi": "10.1007/s00705-006-0776-1",
+      "title": "The complete genome sequence of pepper severe mosaic virus and comparison with other potyviruses.",
+      "abstract": "The complete nucleotide sequence of pepper severe mosaic virus (PepSMV) was determined. The viral genome consisted of 9890 nucleotides, excluding a poly (A) tract at the 3' end of the genome. The PepSMV RNA genome encoded a single polyprotein of 3085 amino acid residues, resulting in ten functionally distinct potyviral proteins. The lengths of the 5' nontranslated region (NTR) and the 3' NTR were 164 and 468 nucleotides, respectively. The genome organization of the virus was typical for members of the genus Potyvirus in the family Potyviridae. The coat protein amino acid sequence identity between PepSMV and the other 45 potyviruses ranged from 53.4 to 79.7%. Sequence alignments and phylogenetic analyses of the potyviral polyprotein sequences revealed that PepSMV was the closest to potato virus Y (PVY) and closely related to members of the PVY subgroup. Our genome sequence data clearly confirmed that PepSMV belongs to a separate species in the genus Potyvirus.",
+      "journal": "Archives of virology",
+      "year": 2006,
+      "pub_date": "2006-10-01",
+      "authors": "Ahn H I; Yoon J Y; Hong J S; Yoon H I; Kim M J; ... (+5)",
+      "first_author": "Ahn H I",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "pepper severe mosaic virus (PepSMV)",
+      "taxonomy": "Potyvirus属, Potyviridae科",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16732495",
+      "doi": "10.1007/s00705-006-0783-2",
+      "title": "The role of inter-subunit ionic interactions in the assembly of Physalis mottle tymovirus.",
+      "abstract": "Physalis mottle tymovirus (PhMV) is a small spherical plant virus with its RNA genome encapsidated in a protein shell made of 180 identical coat protein (CP) subunits. The amino acid residues involved in two interfacial salt bridges, Asp-83/Arg-159 and Arg-68/Asp-150 and Lys-153, were targeted for mutagenesis with a view to delineate the role of interfacial ionic interactions in the subunit folding and assembly of the virus. R159A and D83A-R159A recombinant CP (rCP) mutants formed stable T = 3 capsids, indicating that the D83-R159 interfacial salt bridge is dispensable for the folding and assembly of PhMV. However, D150A and R68Q-D150A mutant rCPs were present in the insoluble fraction, suggesting that the R68-D150 interfacial salt bridge is crucial for subunit folding and assembly. Similarly, K153Q, D83A-K153Q, and H69A-K153Q mutant rCPs were present in the insoluble fraction. Interestingly, the R68Q-D150A, D83A-K153Q, and H69A-K153Q double mutant rCPs could be refolded into partially folded soluble heterogeneous aggregates of 14-16 S. The results further confirm our earlier observation that subunit folding and assembly are concerted events in PhMV.",
+      "journal": "Archives of virology",
+      "year": 2006,
+      "pub_date": "2006-10-01",
+      "authors": "Umashankar M; Murthy M R N; Singh S A; Appu Rao A G; Savithri H S",
+      "first_author": "Umashankar M",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Physalis mottle tymovirus (PhMV)",
+      "taxonomy": "芜菁黄花叶病毒属 (Tymovirus)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16949329",
+      "doi": "10.1016/j.tplants.2006.08.008",
+      "title": "Endogenous pararetroviruses: two-faced travelers in the plant genome.",
+      "abstract": "Endogenous plant pararetroviruses (EPRVs) were identified as integrated counterparts of most members of the plant virus family Caulimoviridae and represent repetitive elements that are ubiquitous in the plant kingdom. They are often located in pericentromeric regions of plant chromosomes in the vicinity of retrotransposon sequences. Depending on their structure and sequence integrity, some EPRVs are able to replicate and to initiate viral infection. However, conservation of integrated sequences in plant genomes might indicate benefits for the host during evolution. Understanding EPRV activation and control by the host could have important implications for plant breeding strategies to prevent viral disease caused by EPRVs in newly generated cultivars.",
+      "journal": "Trends in plant science",
+      "year": 2006,
+      "pub_date": "2006-10-01",
+      "authors": "Staginnus Christina; Richert-Pöggeler Katja R",
+      "first_author": "Staginnus Christina",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "内源性植物副反转录病毒（Caulimoviridae家族）",
+      "taxonomy": "",
+      "host_plant": "植物",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780961",
+      "doi": "10.1094/PD-90-1363A",
+      "title": "First Report of Beet virus Q on Sugar Beet in Poland.",
+      "abstract": "The objective of this work was to determine whether Beet virus Q (BVQ), a member of the genus Pomovirus, is present in Poland. BVQ, like Beet necrotic yellow vein virus (BNYVV), is transmitted by Polymyxa betae Keskin. Earlier, BVQ was described as the Wierthe serotype of Beet soilborne virus (BSBV). Now, on the basis of its genomic properties (2), BVQ is recognized as a distinct virus species. BVQ is often found in fields where BSBV and BNYVV are present (4). During the fall of 2005, five plants of a cultivar susceptible to rhizomania (cv. Alyssa) and five resistant to rhizomania (cv. Henrietta) were collected from a field in the Wielkopolska Region of Poland, where BSBV and BNYVV had been previously identified, and tested for BVQ (1). All samples were analyzed by a double antibody sandwich-enzyme linked immunosorbent assay (DAS-ELISA) with antiserum against BNYVV (Bio-Rad, Hercules, CA). Rhizomania was identified only in sugar beet samples of the susceptible variety. The same samples were then tested using a triple antibody sandwich (TAS)-ELISA with commercial antisera against BSBV/BVQ (As-0576.2) and BSBV (As-0576.1) (DSMZ, Braunschweig, Germany). Nine sugar beet plants gave positive reactions with antiserum against BSBV/BVQ and negative reactions with antiserum specific to BSBV. Total RNA extracted from roots of 10 beet samples was then tested using a multiplex reverse transcription-polymerase chain reaction (mRT-PCR) and specific primers designed to amplify a fragment of the RNA2 for BNYVV and BVQ (3). The primers specifically amplified fragments of 545 bp and 291 bp of the BNYVV and BVQ, respectively. BNYVV was detected in all five samples from susceptible sugar beet plants. The presence of BVQ was confirmed in nine of the sugar beer plants, and the RT-PCR products were sequenced. Sequence analysis of the 206-nt amplicon sequence of the Polish isolate of BVQ (GenBank Accession No. DQ309444) indicated 97% nucleotide and 94% amino acid sequence identity with the previously published sequence of BVQ (GenBank Accession No. AJ223596) (2). To my knowledge, this is the first report of the natural occurrence of BVQ on sugar beet in Poland. In Europe, it has been previously reported in Belgium, Bulgaria, France, Germany, Hungary, Italy, the Netherlands, Spain, and Sweden (3,4). References: (1) N. Borodynko et al. Plant Dis. 90:112, 2006. (2) R. Koenig et al. J. Gen. Virol. 79:2027, 1998. (3) A. Meunier et al. Appl. Environ. Microbiol. 69:2356, 2003. (4) C. Rubies Autonell et al. Plant Dis. 90:110, 2006.",
+      "journal": "Plant disease",
+      "year": 2006,
+      "pub_date": "2006-10-01",
+      "authors": "Borodynko N",
+      "first_author": "Borodynko N",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Beet virus Q (BVQ)",
+      "taxonomy": "Virgaviridae, Pomovirus",
+      "host_plant": "糖用甜菜 (Beta vulgaris)",
+      "location": "波兰，大波兰省",
+      "results": "9个样品检测到BVQ，序列与已知BVQ有97%核苷酸同源性；BNYVV仅出现在感病品种。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780950",
+      "doi": "10.1094/PD-90-1359B",
+      "title": "First Report of Iris yellow spot virus on Onion (Allium cepa) in Texas.",
+      "abstract": "Iris yellow spot virus (IYSV; family Bunyaviridae, genus Tospovirus) has emerged as a potentially devastating and widespread virus of onion. IYSV was first reported in the United States from Idaho in 1993 and has since spread to many of the onion-producing areas (1). In South America, the most recent reports of the virus on onion were from Peru and Chile (2,4). In 2005, onion plants in Uvalde County, Texas exhibited necrotic lesions on leaves typical of IYSV and disease incidence approached 100% in some fields with yield loss and quality problems. Five of six plants tested were positive for IYSV with double antibody sandwich-enzyme linked immunosorbent assay (DAS-ELISA; Agdia Inc., Elkhart, IN). In 2006, similar lesions were observed on onion plants in Uvalde County and approximately 400 km south in Hidalgo and Cameron counties. Infection points generally started as a single plant near the edge of fields and spread to plants in a 3- to 4-m area after 1 to 2 weeks. Early-season disease incidence was low in onions grown for bulbs and transplants, <10% in 2006. Disease incidence increased in some fields until the crop was harvested. Leaves of symptomatic plants were tested for IYSV and Tomato spotted wilt virus (TSWV) using DAS-ELISA, and 18 of 23 samples from the Hidalgo County area and 12 of 21 samples from the Uvalde County area were positive for IYSV. All samples tested for TSWV from these counties were negative. Virus infection in some ELISA-positive plants was verified by reverse transcription-polymerase chain reaction (RT-PCR) using primers derived from the small RNA of IYSV. The primers flanked the IYSV nucleocapsid (N) gene (5'-TAA AAC AAA CAT TCA AAC AA-3' and 5'-CTC TTA AAC ACA TTT AAC AAG CAC-3' (3). RT-PCR gave a PCR product of expected size (approximately 1.2 kb). The DNA amplicon was cloned and sequenced (GenBank Accession No. DQ658242). Nucleotide sequence analysis confirmed the identity of the amplicon as that of IYSV N gene and sequence comparisons with known IYSV N gene sequences showed 95 to 98% sequence identity. The primary vector of IYSV, onion thrips (Thrips tabaci), is a widespread and destructive pest of onion in south Texas. The year-to-year incidence of IYSV and the severity of the disease will probably depend on the onion thrips population levels. Bulb yield reduction could be severe during years with high thrips populations. More research is needed to determine the impact of IYSV on bulb yield in Texas, the relationship between IYSV incidence and T. tabaci population levels, and oversummering hosts. To our knowledge, this is the first known report of IYSV in Texas. References: (1) D. H. Gent et al. Plant Dis. 88:446, 2004, (2) S. W. Mullis et al. Plant Dis. 90:377, 2006, (3) H. Pappu et al. Arch. Virol. 151:1015, 2006. (4) M. Rosales et al. Plant Dis. 89:1245, 2005.",
+      "journal": "Plant disease",
+      "year": 2006,
+      "pub_date": "2006-10-01",
+      "authors": "Miller M E; Saldana R R; Black M C; Pappu H R",
+      "first_author": "Miller M E",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "New_Virus"
+      ],
+      "virus_name": "Iris yellow spot virus (IYSV)",
+      "taxonomy": "",
+      "host_plant": "洋葱 (Allium cepa)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780949",
+      "doi": "10.1094/PD-90-1359A",
+      "title": "First Report of Potato virus M and Chrysanthemum stunt viroid in Solanum jasminoides.",
+      "abstract": "In 2005, a plant of the ornamental crop Solanum jasminoides from the Netherlands was submitted for testing on viruses and viroids because of its intended use for propagation. Sap from this plant was mechanically inoculated to the test plant species Chenopodium quinoa, Nicotiana benthamiana, N. hesperis-67A, and N. occidentalis-P1 (3). N. hesperis-67A showed chlorotic local lesions and rugosity followed by vein necrosis, N. occidentalis-P1 showed necrotic local lesions and systemic leaf distortion, and the two other test plant species remained symptomless. Potato virus M (PVM) was identified by double antibody sandwich enzyme-linked immunosorbent assay using leaves from S. jasminoides and N. hesperis-67A. The plant of S. jasminoides was also tested for the presence of viroids by reverse transcriptase-polymerase chain reaction (RT-PCR) with universal pospiviroid primers Pospi1-RE/FW (2). This reaction yielded an amplicon of the expected size of 198 bp. The sequence showed 100% identity to an isolate of Chrysanthemum stunt viroid (CSVd; NCBI GenBank Accession No. AF394453). Subsequently, the complete sequence of our viroid isolate (GenBank Accession No. DQ406591) was determined from the amplicon obtained after RT-PCR using specific primers for the detection of CSVd (1). The viroid isolate from S. jasminoides consisted of 354 nucleotides and showed the highest identity (98.6%) to a chrysanthemum isolate of CSVd (GenBank Accession No. AB055974). Therefore, the viroid was identified as CSVd. To our knowledge, this is the first report of PVM and CSVd in S. jasminoides. Reference: (1) R. Hooftman et al. Acta Hortic. 432:120, 1996. (2) J. Th. J. Verhoeven et al. Eur. J. Plant Pathol. 110:823, 2004. (3) J. Th. J. Verhoeven and J. W. Roenhorst, EPPO Bull. 33:305, 2003.",
+      "journal": "Plant disease",
+      "year": 2006,
+      "pub_date": "2006-10-01",
+      "authors": "Verhoeven J Th J; Jansen C C C; Roenhorst J W",
+      "first_author": "Verhoeven J Th J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "马铃薯病毒M (Potato virus M) 和 菊花矮化类病毒 (Chrysanthemum stunt viroid)",
+      "taxonomy": "Betaflexiviridae, Carlavirus (PVM); Pospiviroidae, Pospiviroid (CSVd)",
+      "host_plant": "茉莉叶茄 (Solanum jasminoides)",
+      "location": "荷兰",
+      "results": "S. jasminoides携带PVM和CSVd；CSVd全长354 nt，与菊花分离株同源性98.6%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16963768",
+      "doi": "10.1099/vir.0.81971-0",
+      "title": "A minimal region in the NTPase/helicase domain of the TGBp1 plant virus movement protein is responsible for ATPase activity and cooperative RNA binding.",
+      "abstract": "The TGBp1 protein, encoded in the genomes of a number of plant virus genera as the first gene of the 'triple gene block', possesses an NTPase/helicase domain characterized by seven conserved sequence motifs. It has been shown that the TGBp1 NTPase/helicase domain exhibits NTPase, RNA helicase and RNA-binding activities. In this paper, we have analysed a series of deletion and point mutants in the TGBp1 proteins encoded by Potato virus X (PVX, genus Potexvirus) and Poa semilatent virus (PSLV, genus Hordeivirus) to map functional regions responsible for their biochemical activities in vitro. It was found that, in both PVX and PSLV, the N-terminal part of the TGBp1 NTPase/helicase domain comprising conserved motifs I, Ia and II was sufficient for ATP hydrolysis, RNA binding and homologous protein-protein interactions. Point mutations in a single conserved basic amino acid residue upstream of motif I had little effect on the activities of C-terminally truncated mutants of both TGBp1 proteins. However, when introduced into the full-length NTPase/helicase domains, these mutations caused a substantial decrease in the ATPase activity of the protein, suggesting that the conserved basic amino acid residue upstream of motif I was required to maintain a reaction-competent conformation of the TGBp1 ATPase active site.",
+      "journal": "The Journal of general virology",
+      "year": 2006,
+      "pub_date": "2006-10-01",
+      "authors": "Leshchiner Anna D; Solovyev Andrey G; Morozov Sergey Yu; Kalinina Natalia O",
+      "first_author": "Leshchiner Anna D",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "马铃薯X病毒（PVX）和早熟禾半潜病毒（PSLV）",
+      "taxonomy": "PVX: Potexvirus属; PSLV: Hordeivirus属，均为植物病毒",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780952",
+      "doi": "10.1094/PD-90-1360A",
+      "title": "Introduction of the Exotic Monopartite Tomato yellow leaf curl virus into West Coast Mexico.",
+      "abstract": "Leaf curl symptoms that are reminiscent of begomovirus (genus Begomovirus, family Geminiviridae) infection were observed widespread in the tomato crop during the early fall 2005 through the spring 2006 growing seasons in Sinaloa State, Mexico. Symptoms were widespread in three major valleys (Culiacan, Guasave, and Los Mochis) that are largely dedicated to fresh-market tomato production for the U.S. market from October to June. Symptoms included stunting of leaves, shortened internodes, distortion of leaf margins, and green vein banding. Fruit set was reduced significantly (as much as 90%) on the portion of the plant that developed above the point of symptom expression. Tomato fields were heavily infested with the B biotype of the whitefly Bemisia tabaci (Genn.) vector and no other insect vectors were noted in the fields. Total DNA was extracted from six symptomatic tomato plants (two from each valley) and used as template to amplify, clone, and sequence the core region of the begomovirus CP. BLAST analysis of begomovirus sequences available in the NCBI GenBank database indicated the closest match was the Old World monopartite begomovirus Tomato yellow leaf curl virus (TYLCV) from Israel (Accession No. X15656) at 97.8% shared nucleotide (nt) identity. The full-length genome was amplified for each of six isolates using TempliPhi (Amersham Biosciences, Piscataway, NJ) and cloned into the pGEM7 vector (Promega, Madison, WI). The complete DNA genome sequence was determined for eight clones by primer walking. Cloned TempliPhi products sequenced represented two to three isolates from each valley. Results indicated that the isolates (n = 8) were 98.9 to 100% identical (Accession No. DQ631892) to each other, and they shared 98% identity with TYLCV isolates reported from the Caribbean Region and Florida. This highly virulent begomovirus of tomato, originating in Israel, was first reported in Mexico from 1996 to 1997 when it was identified in tomato plants in the Yucatan Peninsula (1) (>1,500 miles from Sinaloa). The latter report followed the introduction of TYLCV in tomato seedlings from Florida into several eastern U.S. states (3,4) and then into Puerto Rico (2). The introduction of TYLCV into Sinaloa where tomato production is highly concentrated is significant because the region supplies the majority (as much as 93%) of fresh-market tomatoes to the western United States from October to June (>$750 million dollars). Of equal importance is the immediate proximity of the pandemic to California where more than 90% of the processing tomatoes in the United States are grown. References: (1) J. T. Ascencio-Ibáñez et al. Plant Dis. 83:1178, 1999. (2) J. Bird et al. Plant Dis. 85:1028, 2001. (3) M. T. Momol et al. Plant Dis 83:487, 1999. (4) J. E. Polston and P. K. Anderson, Plant Dis. 81:1358, 1997.",
+      "journal": "Plant disease",
+      "year": 2006,
+      "pub_date": "2006-10-01",
+      "authors": "Brown J K; Idris A M",
+      "first_author": "Brown J K",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Tomato yellow leaf curl virus (TYLCV)",
+      "taxonomy": "双生病毒科(Geminiviridae)，菜豆金色花叶病毒属(Begomovirus)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16963766",
+      "doi": "10.1099/vir.0.81834-0",
+      "title": "Selective constraint and genetic differentiation in geographically distant barley yellow dwarf virus populations.",
+      "abstract": "Numerous studies have documented molecular variability in plant virus populations, but few have assessed the relative contribution of natural selection and genetic drift in generating the observed pattern of diversity. To this end, gene function, environment and phylogenetic history were examined to observe the effect on genetic diversity and population structure of the PAV and PAS species of Barley yellow dwarf virus (family Luteoviridae). Three functional classes of gene were analysed: transcription-related (RdRp), structural (CP) and movement-related (MP). The results indicate that there were no inherent differences, in terms of total diversity or diversity at synonymous or non-synonymous nucleotide sites, between functional classes of genes or populations. Rather, selective constraints on a gene may be more or less relaxed depending on its function and the phylogenetic history of the population sampled. The CP of the PAS species, but not the PAV species, was differentiated genetically between regions. This is probably due to genetic drift, as there was no evidence that any gene deviated from a neutral model of evolution or is under positive selection. In general, the MP was under considerably less functional constraint than structural or replication-related proteins and four positively selected codon sites were identified. Mutations at these sites differentiate species and geographical subpopulations, so presumably they have aided the virus in adaptation to its host environment and contributed to intra- and interspecies diversification.",
+      "journal": "The Journal of general virology",
+      "year": 2006,
+      "pub_date": "2006-10-01",
+      "authors": "Hall Gerod",
+      "first_author": "Hall Gerod",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Barley yellow dwarf virus PAV and PAS species (大麦黄矮病毒PAV和PAS种)",
+      "taxonomy": "科：Luteoviridae（黄症病毒科）",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16718483",
+      "doi": "10.1007/s00425-006-0302-4",
+      "title": "Functional roles of the pepper pathogen-induced bZIP transcription factor, CAbZIP1, in enhanced resistance to pathogen infection and environmental stresses.",
+      "abstract": "Transcription factors often belong to multigene families and their individual contribution in a particular regulatory network remains difficult to assess. We identify and functionally characterize the pepper bZIP transcription factor CAbZIP1 gene isolated from pepper leaves infected with Xanthomonas campestris pv. vesicatoria. Transient expression analysis of the CAbZIP1-GFP fusion protein in Arabidopsis protoplasts revealed that the CAbZIP1 protein is localized in the nucleus. The N-terminal region of CAbZIP1 fused to the GAL4 DNA-binding domain is required to activate transcription of reporter genes in yeast. The CAbZIP1 transcripts are constitutively expressed in the pepper root and flower, but not in the leaf, stem and fruit. The CAbZIP1 gene is locally or systemically induced in pepper plants infected by either X. campestris pv. vesicatoria or Pseudomonas fluorescens. The CAbZIP1 gene is also induced by abiotic elicitors and environmental stresses. The CAbZIP1 transgenic Arabidopsis exhibits a dwarf phenotype, indicating that CAbZIP1 may be involved in plant development. The CAbZIP1 overexpression in the transgenic Arabidopsis plants confers enhanced resistance to Pseudomonas syringae pv. tomato DC3000, accompanied by expression of the AtPR-4 and AtRD29A. The transgenic plants also exhibit increased drought and salt tolerance during all growth stages. Moreover, the transgenic plants are tolerant to methyl viologen-oxidative stress. Together, these data suggest that the CAbZIP1 transcription factor function as a possible regulator in enhanced disease resistance and environmental stress tolerance.",
+      "journal": "Planta",
+      "year": 2006,
+      "pub_date": "2006-10-01",
+      "authors": "Lee Sung Chul; Choi Hyong Woo; Hwang In Sun; Choi Du Seok; Hwang Byung Kook",
+      "first_author": "Lee Sung Chul",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16828312",
+      "doi": "10.1016/j.jsb.2006.05.002",
+      "title": "Classification of AAA+ proteins.",
+      "abstract": "AAA+ proteins form a large superfamily of P-loop ATPases involved in the energy-dependent unfolding and disaggregation of macromolecules. In a clustering study aimed at defining the AAA proteins within this superfamily, we generated a map of AAA+ proteins based on sequence similarity, which suggested higher-order groups. A classification based primarily on morphological characteristics, which was proposed at the same time, differed from the cluster map in several aspects, such as the position of RuvB-like helicases and the inclusion of divergent clades, such as viral SF3 helicases and plant disease resistance proteins (RFL1). Here, we establish the presence of an alpha-helical domain C-terminal to the ATPase domain (the C-domain) as characteristic for AAA+ proteins and re-evaluate all clades proposed to belong to this superfamily, based on this characteristic. We find that RFL1 and its homologs (APAF-1, CED-4, MalT, and AfsR) are AAA+ proteins and SF3 helicases are not. We also present a new and more comprehensive cluster map, which assigns a central position to RuvB and clarifies the relationships between the clades of the AAA+ superfamily.",
+      "journal": "Journal of structural biology",
+      "year": 2006,
+      "pub_date": "2006-10-01",
+      "authors": "Ammelburg Moritz; Frickey Tancred; Lupas Andrei N",
+      "first_author": "Ammelburg Moritz",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

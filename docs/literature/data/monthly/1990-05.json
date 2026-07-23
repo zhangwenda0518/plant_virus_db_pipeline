@@ -1,0 +1,33 @@
+{
+  "month": "1990-05",
+  "generated": "2026-07-13 02:59:42",
+  "total": 1,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "2396830",
+      "doi": "10.1016/0166-3542(90)90067-h",
+      "title": "Antiviral activity of S-adenosylhomocysteine hydrolase inhibitors against plant viruses.",
+      "abstract": "Three SAH hydrolase inhibitors, (RS)-3-adenin-9-yl-2-hydroxypropanoic acid (isobutyl ester) [(RS)-AHPA]; (RS)-9-(2,3-dihydroxypropyl)adenine [(RS)-DHPA] and the carbocyclic analog of 3-deazaadenosine (C-c3Ado) were evaluated for their inhibitory activity against tobacco mosaic virus (TMV) and potato virus X (PVX). Using the local lesion assay and ELISA, we demonstrated that all three compounds inhibit the replication of TMV and PVX. Whereas the three compounds proved about equally active against PVX, (RS)-AHPA was the most effective against TMV. (RS)-AHPA and C-c3Ado induced chlorosis in Nicotiana tabacum leaf discs. They also caused a substantial reduction in the growth of the main root of Phaseolus vulgaris. (RS)-DHPA was less phytotoxic than its two congeners.",
+      "journal": "Antiviral research",
+      "year": 1990,
+      "pub_date": "1990-05-01",
+      "authors": "De Fazio G; Alba A P; Vicente M; De Clercq E",
+      "first_author": "De Fazio G",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒, 马铃薯X病毒",
+      "taxonomy": "",
+      "host_plant": "烟草 (Nicotiana tabacum), 菜豆 (Phaseolus vulgaris)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

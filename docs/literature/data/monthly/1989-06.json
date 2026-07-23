@@ -1,0 +1,101 @@
+{
+  "month": "1989-06",
+  "generated": "2026-07-13 02:59:42",
+  "total": 4,
+  "by_category": {
+    "New_Virus": 2,
+    "Antiviral_Resistance_Genes": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "2728347",
+      "doi": "10.1016/0042-6822(89)90440-6",
+      "title": "Infectivity of chimeric viroid transcripts reveals the presence of alternative processing sites in potato spindle tuber viroid.",
+      "abstract": "In an investigation of viroid replication and pathogenesis, we have assessed the effect of sequence duplication of the upper central conserved region (CCR) of the molecule on the infectivity of RNAs transcribed in vitro from partial dimers of wild-type and mutant viroid cDNAs. In one set of experiments, the relative infectivities of one monomeric potato spindle tuber viroid (PSTV) and five oligomeric SP6 transcripts [PSTV or PSTV-TASV (tomato apical stunt viroid) chimeras] were compared. With one exception, the extent of sequence duplication in the CCR, and thus the length of the so-called palindrome, does correlate with an increase in specific infectivity. In a second set of experiments, in vitro generated site-specific mutations in cloned PSTV were used as markers to determine if a cleavage/ligation at sites other than the palindrome could generate infectious molecules in vivo. The creation of a novel PSTV-TPMV (tomato planta macho viroid) chimera in these experiments provides evidence that multimeric RNAs can be processed at sites other than the CCR to yield monomeric progeny.",
+      "journal": "Virology",
+      "year": 1989,
+      "pub_date": "1989-06-01",
+      "authors": "Hammond R W; Diener T O; Owens R A",
+      "first_author": "Hammond R W",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "马铃薯纺锤形块茎类病毒 (PSTV)，番茄顶缩类病毒 (TASV)，番茄植株雄性类病毒 (TPMV) 的嵌合体",
+      "taxonomy": "Pospiviroidae, Pospiviroid",
+      "host_plant": "番茄、马铃薯",
+      "location": "未提及",
+      "results": "中央保守区序列重复长度增加提高感染性；发现新的加工位点并产生具感染性的嵌合类病毒。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2662963",
+      "doi": "10.1002/bies.950100602",
+      "title": "Plant viruses: a tool-box for genetic engineering and crop protection.",
+      "abstract": "Traditionally, plant viruses are viewed as harmful, undesirable pathogens. However, their genomes can provide several useful 'designer functions' or 'sequence modules' with which to tailor future gene vectors for plant or general biotechnology. The majority (77%) of known plant viruses have single-stranded RNA of the messenger (protein coding) sense as their genetic material. Over the past 4 years, improved in vitro transcription systems and the construction of partial or full-length DNA copies of several plant RNA viruses have enhanced our ability to manipulate and study their genomes, particularly in the context of their pathogenic interactions with host plants. Recently, two forms of genetically engineered protection against plant virus infections have been reported. In both, a virus-related 'interfering' molecule was stably introduced into plants via the DNA-transfer mechanism of Agrobacterium tumefaciens. To date, the choice of 'interfering' molecule has been guided by empirical field-observations and each is effective against only a narrow range of closely-related viruses. As yet, we do not fully understand the molecular mechanism(s) responsible for the observed protection. The ability to manipulate the plant-pathogen relationship is a powerful tool to increase our knowledge and improve future strategies for unconventional cropprotection by genetic engineering techniques.",
+      "journal": "BioEssays : news and reviews in molecular, cellular and developmental biology",
+      "year": 1989,
+      "pub_date": "1989-06-01",
+      "authors": "Wilson T M",
+      "first_author": "Wilson T M",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "多种植物RNA病毒（未指定具体名称）",
+      "taxonomy": "",
+      "host_plant": "多种植物（未指定具体）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2591924",
+      "doi": "",
+      "title": "[New taxa of coptis from China].",
+      "abstract": "The rhizomes of Coptis, known as Huang-Lian, are commonly used as traditional Chinese drugs. Two new species, viz., Coptis linearisepala, C. gulinensis and a new variety, viz., C. chinensis var. unguiculata are reported and the descriptions of the new species and new variety are presented in the present paper.",
+      "journal": "Hua xi yi ke da xue xue bao = Journal of West China University of Medical Sciences = Huaxi yike daxue xuebao",
+      "year": 1989,
+      "pub_date": "1989-06-01",
+      "authors": "Wang T Z; Zhang H; Fang X P; Shuai H; Xie C K",
+      "first_author": "Wang T Z",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2753059",
+      "doi": "10.1016/0277-5379(89)90159-4",
+      "title": "Anticancer activities as well as antiviral and virus-enhancing properties of aqueous fruit extracts from fifty-six European plant species.",
+      "abstract": "Several plant-derived drugs are used in medical oncology today. Since only a small part of the flora has been tested for any kind of bioactivity intensive further screening may be rewarding. Fifty-six plant extracts were studied attempting to explore the feasibility of an assay that screens cytotoxic, antiviral and virus-enhancing activities in the same test. We made use of the property of an avian influenza virus replicating in a human breast cancer cell line. During the first 3 days of the test the cytotoxicity of the extracts was evaluated by phase-contrast microscopy. From the 4th day on when viral cytopathogenic effect became manifest we were able to identify antiviral and virus-enhancing activity among some of those extracts not showing cytotoxicity during the first 3 days of incubation. Aqueous extracts from the fruits of 56 plant species belonging to 22 families were screened. Twelve species exhibited cytotoxic, eight antiviral, five virus-enhancing and 31 no activity. These results show that the replication of a myxovirus in a human tumor cell offers the possibility of screening cytotoxic, antiviral and virus-enhancing activity in the same assay.",
+      "journal": "European journal of cancer & clinical oncology",
+      "year": 1989,
+      "pub_date": "1989-06-01",
+      "authors": "Sauter C; Wolfensberger C",
+      "first_author": "Sauter C",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

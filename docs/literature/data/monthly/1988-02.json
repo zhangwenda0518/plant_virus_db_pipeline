@@ -1,0 +1,56 @@
+{
+  "month": "1988-02",
+  "generated": "2026-07-13 02:59:42",
+  "total": 2,
+  "by_category": {
+    "New_Virus": 1,
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "3344221",
+      "doi": "10.1093/nar/16.3.849",
+      "title": "Grapevine yellow speckle viroid: structural features of a new viroid group.",
+      "abstract": "A single stranded circular RNA was isolated from grapevines infected with yellow speckle disease. The RNA which we have called grapevine yellow speckle viroid (GYSV), contains 367 nucleotide residues and has the potential to form the rod-like secondary structure characteristic of viroids. GYSV has 37% sequence homology with the recently described apple scar skin viroid (ASSV; 330 residues) and has some sequence homology with the viroids in the potato spindle tuber viroid (PSTV) group. The sequence of GYSV has characteristics which fit the structural domains described for the PSTV group. However, GYSV lacks the PSTV central conserved sequence. Instead, there is a conserved sequence in the central region of GYSV and ASSV which has the potential to form a stem loop configuration and a stable palindromic structure as does the central conserved region of the PSTV group. These structural features suggest there is a different central conserved region for GYSV and ASSV. The results support the viroid nature of GYSV and its inclusion into a separate viroid group which we suggest should be represented by ASSV.",
+      "journal": "Nucleic acids research",
+      "year": 1988,
+      "pub_date": "1988-02-11",
+      "authors": "Koltunow A M; Rezaian M A",
+      "first_author": "Koltunow A M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Grapevine yellow speckle viroid (GYSV)",
+      "taxonomy": "未提及（新类病毒组，以ASSV为代表）",
+      "host_plant": "葡萄（grapevine）",
+      "location": "未提及",
+      "results": "GYSV为单链环状RNA，367 nt，具杆状二级结构；与ASSV有37%同源性；缺乏PSTV中央保守区，但有新的中央保守区；支持其类病毒性质，建议归入以ASSV为代表的新类病毒组。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "3366853",
+      "doi": "10.1016/0166-0934(88)90157-7",
+      "title": "Analysis and application of substrate hydrolysis rates in indirect ELISA of a purified plant virus.",
+      "abstract": "The transient colorimetric signal in a microtiter plate is used to quantify a purified plant virus, cowpea mosaic virus (CPMV), over five concentration decades in a single plate. The method involves the coating of the polystyrene microtiter plate wells directly with the CPMV antigen, followed by incubation with a rabbit-derived CPMV-specific antibody, and lastly by incubation with a commercially available antibody against rabbit immunoglobulin which has been pre-labeled with alkaline phosphatase. The rate of p-nitrophenylphosphate hydrolysis, both non-specific and that which was catalyzed by this enzyme, was measured spectrophotometrically at 405 nm. Enzyme-catalyzed hydrolysis rates followed first order kinetics at all antigen coating concentrations, and the 1 degree rate constants, which ranged from 2 X 10(-6) min-1 to 1 X 10(-3) min-1, were found to increase with increasing antigen concentration.",
+      "journal": "Journal of virological methods",
+      "year": 1988,
+      "pub_date": "1988-02-01",
+      "authors": "Vilker V L; Verduin B J",
+      "first_author": "Vilker V L",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "豇豆花叶病毒（cowpea mosaic virus, CPMV）",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

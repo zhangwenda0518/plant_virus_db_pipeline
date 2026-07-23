@@ -1,0 +1,101 @@
+{
+  "month": "1992-03",
+  "generated": "2026-07-13 02:59:42",
+  "total": 4,
+  "by_category": {
+    "Host_Virus_Interactions": 2,
+    "Detection_Methods": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "1571153",
+      "doi": "",
+      "title": "R-ELISA: repeated use of antigen-coated plates for ELISA and its application for testing of antibodies to HIV and other pathogens.",
+      "abstract": "In this paper we report on the evaluation of several procedures that allow for the repeated use of an antigen-coated, enzyme-linked immunosorbent assay (ELISA) plate for enzyme immunoassay (EIA). We have shown that antigen-coated ELISA plates that were incubated once with an aqueous solution containing 8 M urea, 2% sodium dodecyl sulfate and 2% mercaptoethanol, after an EIA, can be reused again for EIA without loss of antigenic capacity. Thus, in this procedure, after an EIA, the ELISA plates were washed once with the above solution and then in a buffer containing 20 mM Tris-HCl, pH 7.5, 0.1% Tween 20 and 500 mM NaCl. This washing protocol was shown to remove the primary antibody, enzyme-conjugated secondary antibody and substrate without removing the antigen from the ELISA plate microwells. Thus, an antigen-coated ELISA plate previously used for an assay could be reused. We tested this repeat ELISA (R-ELISA) procedure on high antigen-binding ELISA plates coated with two different plant virus proteins, a synthetic peptide, the p25/24 gag and the gp120 proteins of the human immuno-deficiency virus, or the staphylococcus enterotoxin protein. In each case tested, the procedure allowed for the repeated use of the same antigen-coated plates for EIA of the respective antibodies. This procedure should prove to be particularly valuable for mass screening of samples tested for HIV and other disease-causing agents.",
+      "journal": "BioTechniques",
+      "year": 1992,
+      "pub_date": "1992-03-01",
+      "authors": "Baunoch D A; Das P; Browning M E; Hari V",
+      "first_author": "Baunoch D A",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1312527",
+      "doi": "10.1128/jb.174.6.1742-1749.1992",
+      "title": "Phenotypic expression of the Pseudomonas syringae pv. syringae 61 hrp/hrm gene cluster in Escherichia coli MC4100 requires a functional porin.",
+      "abstract": "Plants, in general, appear to be able to detect the presence of incompatible Pseudomonas syringae strains by a hypothetical cell-cell recognition process to initiate inducible defense mechanisms that contribute to disease resistance. A 25-kb hrp/hrm gene cluster isolated from P. syringae pv. syringae 61(pHIR11) enables Escherichia coli to elicit a hypersensitive response (HR), a plant response generally considered to be a manifestation of recognition and resistance. To identify the nature of the HR-eliciting signal produced by E. coli cells carrying pHIR11, bacterial surface features were surveyed by immunological and biochemical procedures. No immunoreactive epitopes or outer membrane proteins were detected that were associated with expression of the P. syringae pv. syringae 61 hrp/hrm cluster in E. coli MC4100. Phenotypic expression of the P. syringae pv. syringae 61 hrp/hrm cluster in E. coli MC4100, however, was found to be dependent upon ompC and ompF, which control outer membrane permeability to hydrophilic solutes. The results suggest that deployment of the HR-eliciting signal occurs via outer membrane porins and imply that a low-molecular-weight, hydrophilic factor mediates signal exchange between the bacterium and the responding plant cell.",
+      "journal": "Journal of bacteriology",
+      "year": 1992,
+      "pub_date": "1992-03-01",
+      "authors": "Li T H; Benson S A; Hutcheson S W",
+      "first_author": "Li T H",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1537802",
+      "doi": "10.1128/jb.174.5.1604-1611.1992",
+      "title": "The cloned avirulence gene avrPto induces disease resistance in tomato cultivars containing the Pto resistance gene.",
+      "abstract": "Resistance of tomato plants to the bacterial pathogen Pseudomonas syringae pv. tomato race 0 is controlled by the locus Pto. A bacterial avirulence gene was cloned by constructing a cosmid library from an avirulent P. syringae pv. tomato race, conjugating the recombinants into a strain of P. syringae pv. maculicola virulent on a tomato cultivar containing Pto, and screening for those clones that converted the normally virulent phenotype to avirulence. The cloned gene, designated avrPto, reduced multiplication of P. syringae pv. tomato transconjugants specifically on Pto tomato lines, as demonstrated by bacterial growth curve analyses. Analysis of F2 populations revealed cosegregation of resistance to P. syringae pv. tomato transconjugants carrying avrPto with resistance to P. syringae pv. tomato race 0. Surprisingly, mutation of avrPto in P. syringae pv. tomato race 0 does not eliminate the avirulent phenotype of race 0, suggesting that additional, as yet uncharacterized, avirulence genes and/or resistance genes may contribute to specificity in the avrPto-Pto interaction. Genetic analysis indicates that this resistance gene(s) would be tightly linked to Pto. Interestingly, P. syringae pv. glycinea transconjugants carrying avrPto elicit a typical hypersensitive resistant response in the soybean cultivar Centennial, suggesting conservation of Pto function between two crop plants, tomato and soybean.",
+      "journal": "Journal of bacteriology",
+      "year": 1992,
+      "pub_date": "1992-03-01",
+      "authors": "Ronald P C; Salmeron J M; Carland F M; Staskawicz B J",
+      "first_author": "Ronald P C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1313232",
+      "doi": "10.1042/bj2820883",
+      "title": "Site-specific DNA cleavage by mammalian DNA topoisomerase II induced by novel flavone and catechin derivatives.",
+      "abstract": "Four naturally occurring flavones (baicalein, quercetin, quercetagetin and myricetin) and two novel catechins [(-)-epicatechin gallate and (-)-epigallocatechin gallate, from the tea plant Camellia sinensis], which are known inhibitors of reverse transcriptase, were shown to induce mammalian topoisomerase II-dependent DNA-cleavage in vitro. The flavones differed from the catechins in causing unwinding of duplex DNA, but both classes of compound induced enzymic DNA breakage at the same sites on DNA. Moreover, the cleavage specificity was the same as that for the known intercalator 4'-(acridin-9-ylamino)methanesulphon-m-anisidide, suggesting that these agents trap the same cleavable complex. Analysis of some 30 flavonoid compounds allowed elucidation of the structure-function relationships for topoisomerase II-mediated DNA cleavage. For flavonoid inhibitors an unsaturated double bond between positions 2 and 3 of the pyrone ring and hydroxy groups at the 5, 7, 3' and 4' positions favoured efficient cleavage. Hydroxy substitutions could be tolerated at the 3, 6 and 5' positions. Indeed, the absence of substituents at the 3', 4' and 5' positions could be compensated by a hydroxy group at position 6 (baicalein). Similar requirements have been reported for flavonoid inhibitors of protein kinase C that act competitively with ATP, suggesting interaction with a conserved protein feature. Formation of the cleavable complex is a cytotoxic lesion that may contribute to the growth-inhibitory properties of flavones observed for three human tumour cell lines. These results are discussed in regard to the selectivity of antiviral agents.",
+      "journal": "The Biochemical journal",
+      "year": 1992,
+      "pub_date": "1992-03-15",
+      "authors": "Austin C A; Patel S; Ono K; Nakane H; Fisher L M",
+      "first_author": "Austin C A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

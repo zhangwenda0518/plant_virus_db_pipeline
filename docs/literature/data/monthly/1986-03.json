@@ -1,0 +1,55 @@
+{
+  "month": "1986-03",
+  "generated": "2026-07-13 02:59:42",
+  "total": 2,
+  "by_category": {
+    "Molecular_Characterization": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "17839568",
+      "doi": "10.1126/science.231.4743.1294",
+      "title": "Bacterial gene inserted in an engineered RNA virus: efficient expression in monocotyledonous plant cells.",
+      "abstract": "Brome mosaic virus (BMV) is a plant virus whose genome consists of three RNA components. A previously described viral complementary DNA expression system has been used to express both wild-type and altered genomic RNA's in barley protoplasts. Variants of BMV RNA3 were constructed in which the coat gene had been removed or replaced with sequences encoding chloramphenicol acetyltransferase (CAT). CAT sequences were also inserted near the 5' end of the intact coat gene. When inoculated on protoplasts together with transcripts of BMV RNA's 1 and 2, all of these RNA3 derivatives were replicated and produced subgenomic RNA's analogous to the normal subgenomic coat protein messenger RNA. RNA3 derivatives in which the CAT coding sequences were oriented with the same polarity as viral genes produced significant CAT activity in protoplasts. CAT expression was improved by inserting the CAT gene in frame with the upstream coat protein initiation codon, and exceeded expression in plant cells transformed with Ti plasmid-based vectors.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 1986,
+      "pub_date": "1986-03-14",
+      "authors": "French R; Janda M; Ahlquist P",
+      "first_author": "French R",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Brome mosaic virus (BMV) 雀麦花叶病毒",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17833317",
+      "doi": "10.1126/science.231.4745.1577",
+      "title": "Autolytic processing of dimeric plant virus satellite RNA.",
+      "abstract": "Associated with some plant viruses are small satellite RNA's that depend on the plant virus to provide protective coat protein and presumably at least some of the proteins necessary for satellite RNA replication. Multimeric forms of the satellite RNA of tobacco ringspot virus are probable in vivo precursors of the monomeric satellite RNA. Evidence is presented for the in vitro autolytic processing of dimeric and trimeric forms of this satellite RNA. The reaction generates biologically active monomeric satellite RNA, apparently is reversible to form dimeric RNA from monomeric RNA, and does not require an enzyme for its catalysis.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 1986,
+      "pub_date": "1986-03-28",
+      "authors": "Prody G A; Bakos J T; Buzayan J M; Schneider I R; Bruening G",
+      "first_author": "Prody G A",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "烟草环斑病毒卫星RNA",
+      "taxonomy": "卫星RNA，依赖烟草环斑病毒（Tobacco ringspot virus，属于豇豆花叶病毒科）",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

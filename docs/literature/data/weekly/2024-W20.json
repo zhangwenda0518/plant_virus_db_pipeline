@@ -1,0 +1,243 @@
+{
+  "week": "2024-W20",
+  "start": "2024-05-13",
+  "end": "2024-05-19",
+  "generated": "2026-07-13 02:59:41",
+  "total_new": 26,
+  "by_category": {
+    "Control_Management": 6,
+    "Antiviral_Resistance_Genes": 5,
+    "Host_Virus_Interactions": 4,
+    "Biotechnology_Applications": 4,
+    "New_Virus": 3,
+    "Viral_Diversity_Ecology": 1,
+    "Potyviridae": 1,
+    "Tobamo_Virga": 1,
+    "Clostero_Beta": 1,
+    "Rhabdo_Reo_Fiji_Tenu": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "38753216",
+      "doi": "10.1007/s00705-024-06048-w",
+      "title": "Complete genome sequence of a novel totivirus isolated from the leaves of Myrica rubra.",
+      "abstract": "Chinese bayberry is a fruit that is appreciated for its taste. A novel totivirus associated with rolling, disfiguring, chlorotic and vein-clearing symptoms on the leaf apices of Chinese bayberry was identified by transcriptome sequencing and reverse transcription PCR (RT-PCR). The complete genome of the virus was determined to be 4959 nucleotides long, and it contains two open reading frames (ORFs). Its genomic organization is similar to that of previously reported totiviruses. ORF1 encodes a putative coat protein (CP) of 765 aa, and ORF2 encodes an RNA-dependent RNA polymerase (RdRp) of 815 aa. These two putative proteins share 55.1% and 62.6%, amino acid sequence identity, respectively, with the corresponding proteins of Panax notoginseng virus A, respectively. According to the demarcation criteria for totivirus species established by the International Committee on Taxonomy of Viruses (ICTV), the new virus should be considered a member of a new species in the genus totivirus, family Orthototiviridae, which we have tentatively named ''Myrica rubra-associated totivirus'' (MRaTV).",
+      "journal": "Archives of virology",
+      "year": 2024,
+      "pub_date": "2024-05-16",
+      "authors": "Luo Weihao; Zhang Lizhen; Zhang Lei; Dong Xian; Ji Pengzhang; ... (+2)",
+      "first_author": "Luo Weihao",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Myrica rubra-associated totivirus (MRaTV)",
+      "taxonomy": "Orthototiviridae, Totivirus",
+      "host_plant": "Myrica rubra (Chinese bayberry)",
+      "location": "未提及",
+      "results": "基因组4959nt，两个ORF：CP 765aa，RdRp 815aa；与三七病毒A氨基酸同源性分别为55.1%和62.6%，为新种。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38794415",
+      "doi": "10.3390/plants13101344",
+      "title": "Exploring Disease Resistance in Pepper (",
+      "abstract": "This study utilized a diverse Capsicum accessions (5658) sourced from various species and geographical regions, deposited at the National Agrobiodiversity Center, Genebank. We employed 19 SNP markers through a Fluidigm genotyping system and screened these accessions against eight prevalent diseases of pepper. This study revealed accessions resistant to individual diseases as well as those exhibiting resistance to multiple diseases, including bacterial spot, anthracnose, powdery mildew, phytophthora root rot, and potyvirus. The C. chacoense accessions were identified as resistant materials against bacterial spot, anthracnose, powdery mildew, and phytophthora root rot, underscoring the robust natural defense mechanisms inherent in the wild Capsicum species and its potential uses as sources of resistance for breeding. C. baccatum species also demonstrated to be a promising source of resistance to major pepper diseases. Generally, disease-resistant germplasm has been identified from various Capsicum species. Originating from diverse locations such as Argentina, Bolivia, and the United Kingdom, these accessions consistently demonstrated resistance, indicating the widespread prevalence of disease-resistant traits across varied environments. Additionally, we selected ten pepper accessions based on their resistance to multiple diseases, including CMV, Phytophthora root rot, potyviruses, and TSWV, sourced from diverse geographical regions like Hungary, Peru, the United States, and the Netherlands. This comprehensive analysis provides valuable insights into disease resistance in Capsicum, crucial for fostering sustainable agricultural practices and advancing crop improvement through breeding strategies.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2024,
+      "pub_date": "2024-05-13",
+      "authors": "Ro Nayoung; Lee Gi-An; Ko Ho-Cheol; Oh Hyeonseok; Lee Sukyeung; ... (+2)",
+      "first_author": "Ro Nayoung",
+      "categories": [
+        "Host_Virus_Interactions",
+        "Potyviridae"
+      ],
+      "virus_name": "Potyvirus, Cucumber mosaic virus, Tomato spotted wilt virus",
+      "taxonomy": "",
+      "host_plant": "辣椒（Capsicum spp.）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38758218",
+      "doi": "10.1007/s00438-024-02151-4",
+      "title": "Identification of soybean mosaic virus strain SC7 resistance loci and candidate genes in soybean [Glycine max (L.) Merr.].",
+      "abstract": "Soybean [Glycine max (L.) Merr.] is an important legume crop worldwide, which provides abundant plant protein and oil for human beings. Soybean mosaic virus (SMV) can cause serious damage to the yield and quality of soybean, but it is difficult to control SMV with chemicals, breeding SMV-resistant varieties has become the most effective way to control the disease. Therefore, it is important to identify SMV resistance genes from soybean resources and apply them to soybean breeding. In this study, the disease rates (DRs) of 219 soybean accessions to SMV strain SC7 in two environments were investigated. A high-density NJAU 355 K SoySNP array was used for genome-wide association study (GWAS) of DR. A 274 kb region on chromosome 15 (1,110,567 bp to 1,384,173 bp) was repeatedly detected in two environments. Six new significant single nucleotide polymorphisms (SNPs) on chromosome 15 were identified. Four of these six SNPs were located within two candidate genes, Glyma.15G015700 and Glyma.15G015800. The elite haplotype Glyma.15G015700Hap I with low DR exhibited strong resistance to SC7. The expression of Glyma.15G015700 in the SMV-resistant accession increased significantly after inoculation with SC7. Furthermore, most of the proteins predicted to interact with Glyma.15G015700 are heat shock proteins, which have been shown to be related to disease resistance. In summary, new SMV resistance loci and a new candidate gene, Glyma.15G015700, were identified and might be utilized in further soybean disease resistance breeding.",
+      "journal": "Molecular genetics and genomics : MGG",
+      "year": 2024,
+      "pub_date": "2024-05-17",
+      "authors": "Pu Yixiang; Yan Rujuan; Jia Dongbing; Che Zhijun; Yang Rufei; ... (+4)",
+      "first_author": "Pu Yixiang",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "大豆花叶病毒 SC7株系",
+      "taxonomy": "",
+      "host_plant": "大豆 [Glycine max (L.) Merr.]",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38520898",
+      "doi": "10.1016/j.wasman.2024.03.021",
+      "title": "Integrated nutrient recycling: Ammonia recovery from thermophilic composting of shrimp aquaculture sludge via self-heated bench-scale reactor and mango plant growth enhancement by the compost.",
+      "abstract": "Due to the rapid growth of the aquaculture industry, large amounts of organic waste are released into nature and polluted the environment. Traditional organic waste treatment such as composting is a time-consuming process that retains the ammonia (NH3) in the compost, and the compost produced has little economic value as organic fertilizer. Illegal direct discharge into the environment is therefore widespread. This study investigates the recovery of NH3 through thermophilic composting of shrimp aquaculture sludge (SAS) and its application as a soil conditioner for the growth of mango plants. A maximum composting temperature of 57.10 °C was achieved through self-heating in a 200 L bench-scale reactor, resulting in NH3 recovery of 224.04 mol/ton-ds after 14 days. The addition of calcium hydroxide and increased aeration have been shown to increase NH3 volatilization. The recovered NH3 up to 3 kg-N can be used as a source of clean nitrogen for high-value microalgae cultivation, with a theoretical yield of up to 34.85 kg-algae of microalgae biomass from 1 ton-ds of SAS composting. Despite the high salinity, SAS compost improved mango plant growth and disease resistance. These results highlight the potential of SAS compost as a sustainable source of clean nitrogen for microalgae cultivation and soil conditioner, contributing to a waste-free circular economy through nutrient recycling and sustainable agriculture.",
+      "journal": "Waste management (New York, N.Y.)",
+      "year": 2024,
+      "pub_date": "2024-05-15",
+      "authors": "Tie Hieng Ong; Che Man Hasfalina; Koyama Mitsuhiko; Syukri Fadhil; Md Yusoff Fatimah; ... (+3)",
+      "first_author": "Tie Hieng Ong",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38503169",
+      "doi": "10.1016/j.bbrc.2024.149763",
+      "title": "DT-13 attenuates inflammation by inhibiting NLRP3-inflammasome related genes in RAW264.7 macrophages.",
+      "abstract": "Plant derived saponins or other glycosides are widely used for their anti-inflammatory, antioxidant, and anti-viral properties in therapeutic medicine. In this study, we focus on understanding the function of the less known steroidal saponin from the roots of Liriope muscari L. H. Bailey - saponin C (also known as DT-13) in lipopolysaccharide (LPS)-stimulated RAW264.7 macrophages in comparison to the well-known saponin ginsenoside Rk1 and anti-inflammatory drug dexamethasone. We proved that DT-13 reduces LPS-induced inflammation by inhibiting nitric oxide (NO) production, interleukin-6 (IL-6) release, cycloxygenase-2 (COX-2), tumour necrosis factor-alpha (TNF-α) gene expression, and nuclear factor kappa-B (NFκB) translocation into the nucleus. It also inhibits the inflammasome component NOD-like receptor family pyrin domain containing protein 3 (NLRP3) regulating the inflammasome activation. This was supported by the significant inhibition of caspase-1 and interleukin-1 beta (IL-1β) expression and release. This study demonstrates the anti-inflammatory effect of saponins on LPS-stimulated macrophages. For the first time, an in vitro study shows the attenuating effect of DT-13 on NLRP3-inflammasome activation. In comparison to the existing anti-inflammatory drug, dexamethasone, and triterpenoid saponin Rk1, DT-13 more efficiently inhibits inflammation in the applied cell culture model. Therefore, DT-13 may serve as a lead compound for the development of new more effective anti-inflammatory drugs with minimised side effects.",
+      "journal": "Biochemical and biophysical research communications",
+      "year": 2024,
+      "pub_date": "2024-05-14",
+      "authors": "Raina Shikha; Hübner Emely; Samuel Esther; Nagel Gregor; Fuchs Hendrik",
+      "first_author": "Raina Shikha",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38765079",
+      "doi": "10.1016/j.heliyon.2024.e30080",
+      "title": "Therapeutic implications of quercetin and its derived-products in COVID-19 protection and prophylactic.",
+      "abstract": "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), a novel human coronavirus, which has triggered a global pandemic of the coronavirus infectious disease 2019 (COVID-19). Outbreaks of emerging infectious diseases continue to challenge human health worldwide. The virus conquers human cells through the angiotensin-converting enzyme 2 receptor-driven pathway by mostly targeting the human respiratory tract. Quercetin is a natural flavonoid widely represented in the plant kingdom. Cumulative evidence has demonstrated that quercetin and its derivatives have various pharmacological properties including anti-cancer, anti-hypertension, anti-hyperlipidemia, anti-hyperglycemia, anti-microbial, antiviral, neuroprotective, and cardio-protective effects, because it is a potential treatment for severe inflammation and acute respiratory distress syndrome. Furthermore, it is the main life-threatening condition in patients with COVID-19. This article provides a comprehensive review of the primary literature on the predictable effectiveness of quercetin and its derivatives docked to multi-target of SARS-CoV-2 and host cells via in silico and some of validation through in vitro, in vivo, and clinically to fight SARS-CoV-2 infections, contribute to the reduction of inflammation, which suggests the preventive and therapeutic latency of quercetin and its derived-products against COVID-19 pandemic, multisystem inflammatory syndromes (MIS), and long-COVID.",
+      "journal": "Heliyon",
+      "year": 2024,
+      "pub_date": "2024-05-15",
+      "authors": "Ho Wan-Yi; Shen Zi-Han; Chen Yijing; Chen Ting-Hsu; Lu XiaoLin; ... (+1)",
+      "first_author": "Ho Wan-Yi",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38737274",
+      "doi": "10.1016/j.heliyon.2024.e29583",
+      "title": "Deep learning and content-based filtering techniques for improving plant disease identification and treatment recommendations: A comprehensive review.",
+      "abstract": "The importance of identifying plant diseases has risen recently due to the adverse effect they have on agricultutal production. Plant diseases have been a big concern in agriculture, as they affect crop production, and constitute a major threat to global food security. In the domain of modern agriculture, effective plant disease management is vital to ensure healthy crop yields and sustainable practices. Traditional means of identifying plant disease are faced with lots of challenges and the need for better and efficient detection methods cannot be overemphazised. The emergence of advanced technologies, particularly deep learning and content-based filtering techniques, if integrated together can changed the way plant diseases are identified and treated. Such as speedy and correct identification of plant diseases and efficient treatment recommendations which are keys for sustainable food production. In this work, We try to investigate the current state of research, identified gaps and limitations in knowledge, and suggests future directions for researchers, experts and farmers that could help to provide better ways of mitigating plant disease problems.",
+      "journal": "Heliyon",
+      "year": 2024,
+      "pub_date": "2024-05-15",
+      "authors": "Isinkaye Folasade Olubusola; Olusanya Michael Olusoji; Singh Pramod Kumar",
+      "first_author": "Isinkaye Folasade Olubusola",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38742062",
+      "doi": "10.1016/j.heliyon.2024.e30226",
+      "title": "Flooding soil with biogas slurry suppresses root-knot nematodes and alters soil nematode communities.",
+      "abstract": "Root-knot nematodes (RKNs) pose a serious threat to crop production. Flooding soil with biogas slurry, combined with soil heating before crop planting, has the potential for RKN disease suppression. However, the actual effect of this method has not been verified under field conditions. Here, we present the results of a two-year field experiment in a greenhouse demonstrating the control effect on RKN disease and plant growth using this method, as well as its influence on the soil nematode community. Four treatments were set: untreated control (CK), local control method for RKN (CC), soil flooded with 70 % biogas slurry (BS70), and soil flooded with undiluted biogas slurry (BS100). In the first year, all three RKN control treatments significantly reduced the root-knot index (p < 0.05). In the next year, only BS70 and BS100 still presented significantly suppressed effects (p < 0.05), and it was more obvious under BS70 with a relative control effect of 74.6 %. In the first year, BS70 and BS100 significantly inhibited the plant height of watermelon (p < 0.05). In the next year, however, all three RKN control treatments promoted the growth of watermelon, and their stem diameter was significantly greater than that of CK. The application of biogas slurry (BS70 and BS100) significantly increased nematode richness and the Shannon index in the second year (p < 0.05). However, the structure index showed no significant difference among treatments (p > 0.05), indicating that biogas slurry application did not increase the soil food web complex. Principal component analysis showed that the application of biogas slurry changed the nematode community, especially under BS70, which presented a more lasting influence. The high-level input of biogas slurry also caused soil NH4+-N and heavy-metal and arsenic accumulation in the first year, but these soil-pollution risks disappeared in the second year.",
+      "journal": "Heliyon",
+      "year": 2024,
+      "pub_date": "2024-05-15",
+      "authors": "Li Yufei; Liu Bensheng; Li Jijin; Zou Guoyuan; Xu Junxiang; ... (+4)",
+      "first_author": "Li Yufei",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38651902",
+      "doi": "10.1128/msystems.00124-24",
+      "title": "Unveiling the hidden viromes across the animal tree of life: insights from a taxonomic classification pipeline applied to invertebrates of 31 metazoan phyla.",
+      "abstract": "Invertebrates constitute the majority of animal species on Earth, including most disease-causing agents or vectors, with more diverse viromes when compared to vertebrates. Recent advancements in high-throughput sequencing have significantly expanded our understanding of invertebrate viruses, yet this knowledge remains biased toward a few well-studied animal lineages. In this study, we analyze invertebrate DNA and RNA viromes for 31 phyla using 417 publicly available RNA-Seq data sets from diverse environments in the marine-terrestrial and marine-freshwater gradients. This study aims to (i) estimate virome compositions at the family level for the first time across the animal tree of life, including the first exploration of the virome in several phyla, (ii) quantify the diversity of invertebrate viromes and characterize the structure of invertebrate-virus infection networks, and (iii) investigate host phylum and habitat influence on virome differences. Results showed that a set of few viral families of eukaryotes, comprising Retroviridae, Flaviviridae, and several families of giant DNA viruses, were ubiquitous and highly abundant. Nevertheless, some differences emerged between phyla, revealing for instance a less diverse virome in Ctenophora compared to the other animal phyla. Compositional analysis of the viromes showed that the host phylum explained over five times more variance in composition than its habitat. Moreover, significant similarities were observed between the viromes of some phylogenetically related phyla, which could highlight the influence of co-evolution in shaping invertebrate viromes.IMPORTANCEThis study significantly enhances our understanding of the global animal virome by characterizing the viromes of previously unexamined invertebrate lineages from a large number of animal phyla. It showcases the great diversity of viromes within each phylum and investigates the role of habitat shaping animal viral communities. Furthermore, our research identifies dominant virus families in invertebrates and distinguishes phyla with analogous viromes. This study sets the road toward a deeper understanding of the virome across the animal tree of life.",
+      "journal": "mSystems",
+      "year": 2024,
+      "pub_date": "2024-05-16",
+      "authors": "Alfonso Pau; Butković Anamarija; Fernández Rosa; Riesgo Ana; Elena Santiago F",
+      "first_author": "Alfonso Pau",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "38786927",
+      "doi": "10.3390/insects15050371",
+      "title": "A New Species of ",
+      "abstract": "In this study, a new species of the subgenus Pullus belonging to the Scymnus genus from Pakistan, Scymnus (Pullus) cardi sp. nov., was described and illustrated, with information on its distribution, host plants, and prey. Additionally, the completed mitochondrial genome (mitogenome) of the new species using high-throughput sequencing technology was obtained. The genome contains the typical 37 genes (13 protein-coding genes, two ribosomal RNAs, and 22 transfer RNAs) and a non-coding control region, and is arranged in the same order as that of the putative ancestor of beetles. The AT content of the mitogenome is approximately 85.1%, with AT skew and GC skew of 0.05 and -0.43, respectively. The calculated values of relative synonymous codon usage (RSCU) determine that the codon UUA (L) has the highest frequency. Furthermore, we explored the phylogenetic relationship among 59 representatives of the Coccinellidae using Bayesian inference and maximum likelihood methods, the results of which strongly support the monophyly of Coccinellinae. The phylogenetic results positioned Scymnus (Pullus) cardi in a well-supported clade with Scymnus (Pullus) loewii and Scymnus (Pullus) rubricaudus within the genus Scymnus and the tribe Scymnini. The mitochondrial sequence of S. (P.) cardi will contribute to the mitochondrial genome database and provide helpful information for the identification and phylogeny of Coccinellidae.",
+      "journal": "Insects",
+      "year": 2024,
+      "pub_date": "2024-05-19",
+      "authors": "Iqbal Zafar; Azad Rashid; Chen Xiao-Sheng; Lin Xiao-Ling; Zhou Zichen; ... (+2)",
+      "first_author": "Iqbal Zafar",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

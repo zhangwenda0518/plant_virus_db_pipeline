@@ -1,0 +1,56 @@
+{
+  "month": "1993-06",
+  "generated": "2026-07-13 02:59:42",
+  "total": 2,
+  "by_category": {
+    "New_Virus": 1,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8514785",
+      "doi": "",
+      "title": "Assembly of in vitro synthesized large subunits into ribulose-bisphosphate carboxylase/oxygenase. Formation and discharge of an L8-like species.",
+      "abstract": "Ribulose-bisphosphate carboxylase/oxygenase (Rubisco) from higher plants consists of eight approximately 53-kDa large subunits and eight approximately 14-kDa small subunits. Cytosolic ribosomes synthesize the small subunits as precursors, which enter the chloroplast, undergo proteolytic processing, and assemble with large subunits. Large subunits, synthesized in the chloroplast, first form a complex with the chloroplast chaperonin 60 (Cpn60(14)). In the presence of ATP, large subunits dissociate from Cpn60(14) and assemble into Rubisco. We now describe partial characterization of a new species, Z, containing radiotracer-labeled, newly synthesized pea Rubisco large subunits. Rubisco assembly occurs in low salt in the presence of small subunits and ATP. As with Rubisco assembly, the formation of Z is ATP-dependent and is inhibited by high chloride. Once formed, Z is stable except in high chloride. Z does not appear to interact directly with small subunits. However, after Z formation, Rubisco assembly occurs in an ATP-independent reaction that requires KCl and small subunits. These results are consistent with the hypothesis that Z is a large subunit containing structure that can contribute large subunits to Rubisco under appropriate conditions. Z shares some physical characteristics with reported cyanobacterial L8 core particles. However, formation of Rubisco from Z in the absence of ATP and the presence of small subunits appears to require conditions that otherwise destabilize Z.",
+      "journal": "The Journal of biological chemistry",
+      "year": 1993,
+      "pub_date": "1993-06-25",
+      "authors": "Hubbs A E; Roy H",
+      "first_author": "Hubbs A E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8143122",
+      "doi": "10.1016/0966-842x(93)90113-6",
+      "title": "Salicylic acid: a systemic signal in induced plant disease resistance.",
+      "abstract": "Some plants respond to infection by pathogens with both localized and systemic resistance responses. These prevent the spread of the disease-causing organism and reduce the severity of a subsequent infection. Recent evidence suggests that systemic increases in the host's salicylic acid levels act as a signal for the activation of at least some of these induced defenses.",
+      "journal": "Trends in microbiology",
+      "year": 1993,
+      "pub_date": "1993-06-01",
+      "authors": "Yalpani N; Raskin I",
+      "first_author": "Yalpani N",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "month": "1981-05",
+  "generated": "2026-07-13 02:59:41",
+  "total": 1,
+  "by_category": {
+    "New_Virus": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "7231549",
+      "doi": "10.1038/291297a0",
+      "title": "DNA-dependent RNA polymerase II of plant origin transcribes viroid RNA into full-length copies.",
+      "abstract": "DNA-dependent RNA polymerase II purified from healthy plant tissue is capable of synthesizing linear (-)-viroid RNA copies of full length from (+)-viroid RNA templates in vitro. Together with the specific alpha-amanitin sensitivity of viroid replication observed in vivo, these findings suggest that viroids replicate by an entirely novel mechanism in which infecting viroid RNA molecules are copied by the host enzyme which is normally responsible for the synthesis of nuclear precursors to messenger RNA.",
+      "journal": "Nature",
+      "year": 1981,
+      "pub_date": "1981-05-28",
+      "authors": "Rackwitz H R; Rohde W; Sänger H L",
+      "first_author": "Rackwitz H R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "未提及",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "纯化的RNA聚合酶II能合成全长线性(-)-类病毒RNA；结合体内α-鹅膏蕈碱敏感性，提示类病毒复制由宿主RNA聚合酶II催化。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "month": "1995-11",
+  "generated": "2026-07-13 02:59:42",
+  "total": 3,
+  "by_category": {
+    "Molecular_Characterization": 1,
+    "Host_Virus_Interactions": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "7491788",
+      "doi": "10.1006/viro.1995.0036",
+      "title": "Interaction between RNA-dependent RNA polymerase of alfalfa mosaic virus and its template: oxidation of vicinal hydroxyl groups blocks in vitro RNA synthesis.",
+      "abstract": "In the life cycle of a (+)-strand RNA plant virus the processes of template RNA recognition and initiation of the synthesis of a complementary strand by the viral RNA-dependent RNA polymerase (RdRp) are crucial early steps. Using a template-dependent in vitro RNA synthesizing system of alfalfa mosaic virus (AIMV) we were able to study the effect of small chemical modifications of the 3' end of the template RNAs on product formation. After oxidation of the 3'-terminal nucleoside of the template no products could be detected. Presumably, RNA synthesis was blocked at the stage of initiation, since the promoter of the RdRp is internal (A. C. Van der Kuyl et al., Virology 176, 346-354, 1990). Blocking was probably due to an irreversible binding of the enzyme to the 3' end of the modified RNA. Using this system it was shown that in template competition experiments the RdRp of AIMV displays a high specificity for its cognate template, either before or after the oxidation of the 3'-terminal nucleoside. From this it was concluded that periodate modification of the 3'-terminal nucleoside has little or no effect on template recognition. Furthermore, we showed that the viral coat protein, which forms a part of the viral polymerase (R. Quadt et al., Virology 182, 309-315, 1991), was not the main target involved in the inhibition of RNA synthesis.",
+      "journal": "Virology",
+      "year": 1995,
+      "pub_date": "1995-11-10",
+      "authors": "De Graaff M; Thorburn C; Jaspars E M",
+      "first_author": "De Graaff M",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "苜蓿花叶病毒 (Alfalfa mosaic virus, AIMV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8552716",
+      "doi": "10.1104/pp.109.3.839",
+      "title": "A structural model for the mechanisms of elicitor release from fungal cell walls by plant beta-1,3-endoglucanase.",
+      "abstract": "The release of elicitor-active carbohydrates from fungal cell walls by beta-1,3-endoglucanase contained in host tissues has been implicated as one of the earliest processes in the interaction between soybean (Glycine max) and the fungal pathogen Phytophthora megasperma f. sp. glycinea leading to host defense responses such as phytoalexin production. The present study was conducted to evaluate the primary structure of the glucanase-released elicitor (RE). Gel-filtration chromatography of carbohydrates released from mycelial walls by purified soybean beta-1,3-endoglucanase resolved them into the four fractions (elicitor-active RE-I, -II, and -III and elicitor-inactive RE-IV). Sugar composition analysis indicated that all of the fractions were composed almost entirely of glucose. 1H- and 13C-nuclear magnetic resonance analysis indicated the presence of both beta-1,3- and beta-1,6-linkages for the elicitor-active RE-I, -II, and -III fractions and only beta-1,3 linkage for the elicitor-inactive RE-IV fraction. Methylation analysis and degradation studies employing beta-1,3-endo- and beta-1,3-exoglucanase further suggested that the basic structure of elicitor-active RE consists of beta-1,6-linked glucan backbone chains of various lengths with frequent side branches composed of beta-1,3-linked one or two glucose moieties. From these structural analyses of RE, a structural model of how RE is originally present in fungal cell walls and released by host beta-1,3-endoglucanase is also proposed.",
+      "journal": "Plant physiology",
+      "year": 1995,
+      "pub_date": "1995-11-01",
+      "authors": "Okinaka Y; Mimori K; Takeo K; Kitamura S; Takeuchi Y; ... (+2)",
+      "first_author": "Okinaka Y",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11362991",
+      "doi": "",
+      "title": "BUCAST: another new antiviral.",
+      "abstract": "",
+      "journal": "GMHC treatment issues : the Gay Men's Health Crisis newsletter of experimental AIDS therapies",
+      "year": 1995,
+      "pub_date": "1995-11-01",
+      "authors": "Torres G",
+      "first_author": "Torres G",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "week": "2026-W49",
+  "start": "2026-11-30",
+  "end": "2026-12-06",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 5,
+  "by_category": {
+    "Control_Management": 3,
+    "Host_Virus_Interactions": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "42425687",
+      "doi": "10.1016/j.fm.2026.105217",
+      "title": "YlCrh1 as a secreted protein of Yarrowia lipolytica to reduce blue mold by enhancing the resistance of pear.",
+      "abstract": "Secreted proteins of microorganisms can alter plant defense mechanisms; however, little is known about the effect of yeast-secreted proteins on plant disease resistance. Yarrowia lipolytica has been reported to exhibit significant control efficacy against postharvest blue mold in pears caused by Penicillium expansum. However, no research has been conducted on whether the proteins secreted by Y. lipolytica have a defense against blue mold in pears after harvest. This study aimed to extract and identify the secreted proteins of Y. lipolytica and investigate its resistance to pear blue mold. Crude secreted protein was extracted from the Y. lipolytica supernatant, and proteomic analysis revealed that the extract contained 175 different proteins. Among these, 87 secreted proteins possessed an N-terminal signal peptide, and software predictions indicated the absence of transmembrane structural domains in these proteins. Ten secreted proteins were chosen for overexpression, among which, three secreted proteins significantly reduced the disease incidence and lesion diameter of P. expansum infections in pears. Research have shown that YlCrh1 can directly inhibit the growth of P. expansum, while also inducing postharvest disease resistance in pears through physiological regulation. YlCrh1 not only reduces reactive oxygen species accumulation and enhances antioxidant enzyme activity, but also increases defense-related enzyme activity and promotes the accumulation of secondary metabolites. In addition, it upregulates the expression of related genes. This significantly improved the disease resistance of postharvest pear blue mold. The findings of this study demonstrated that Y. lipolytica-secreted proteins could increase the resistance of postharvest pears to blue mold. They also offer new insights and ideas for the commercialization and application of these proteins, as well as a new concept for using secreted proteins to control postharvest pear diseases.",
+      "journal": "Food microbiology",
+      "year": 2026,
+      "pub_date": "2026-12-01",
+      "authors": "Yan Ziqi; Zhao Lina; Zhang Mingjian; Dhanasekaran Solairaj; Chen Xifei; ... (+3)",
+      "first_author": "Yan Ziqi",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42182949",
+      "doi": "10.1016/j.idm.2026.03.001",
+      "title": "Rek-Surv: A lightweight deep survival model for plant infectious disease onset prediction.",
+      "abstract": "Infectious disease outbreaks in crop systems pose a significant threat to global food security, particularly when early detection and intervention opportunities are missed. Predicting not just whether but when an infection will emerge is critical for effective disease management and control. In this context, survival analysis-a statistical framework for modeling time-to-event data-offers a natural and powerful solution. Widely adopted in epidemiology and clinical research, survival analysis can be adapted to plant disease surveillance for predicting the timing of infection onset at the host or population level. However, deep survival models based on multilayer perceptrons (MLPs) often struggle with high-dimensional agricultural data, leading to issues such as overfitting, poor parameter efficiency, and limited interpretability. To address these challenges, we introduce a Kolmogorov-Arnold Network (KAN) architecture into the survival analysis context, leveraging its compact nonlinear function-approximation capabilities to improve predictive performance and efficiency. We present Rek-Surv, a lightweight deep survival model built on an Efficient-KAN backbone and augmented with residual connections and enhanced regularization. Rek-Surv is evaluated on five clinical benchmark datasets as well as a citrus Huanglongbing (HLB) plant disease dataset, demonstrating its generalizability across human and plant infectious disease contexts. On the HLB task, Rek-Surv achieves a high concordance index (C-index) of 0.962 with only 114 trainable parameters and millisecond-level inference speed. It outperforms existing survival models by providing more accurate outbreak onset predictions with a fraction of the model complexity. This efficiency makes Rek-Surv well-suited for real-time outbreak detection and early intervention, illustrating how advanced survival models can enable proactive infectious disease management in both agriculture and healthcare.",
+      "journal": "Infectious Disease Modelling",
+      "year": 2026,
+      "pub_date": "2026-12-01",
+      "authors": "Xiao Jinggui; Hu Shan; Deng Xiaoling; Lan Yubin; Xu Meirong; ... (+5)",
+      "first_author": "Xiao Jinggui",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42242151",
+      "doi": "10.1016/j.saa.2026.128143",
+      "title": "An early detection model of wheat stripe rust utilizing two-dimensional correlation spectroscopy for eliminate growth-related interference.",
+      "abstract": "Wheat stripe rust, caused by Puccinia striiformis f. sp. Tritici (Pst), represents a significant threat to global wheat production. Early detection, particularly during the asymptomatic phase, is critical for effective disease management. Hyperspectral sensing can detect subtle physiological alterations associated with initial infection; However, its effectiveness is frequently limited by substantial background interference from normal plant growth. In this study, the reliability of hyperspectral data obtained from early asymptomatic leaves was first validated using quantitative real-time polymerase chain reaction (qPCR). To mitigate background the interference, generalized two-dimensional correlation spectroscopy (2D-COS) was employed, utilizing infection time as the perturbation variable. This approach surpasses conventional dimensionality reduction techniques such as principal component analysis (PCA) and the chemometric feature selection algorithm known as competitive adaptive reweighted sampling (CARS). Through this methodology, six feature bands exhibiting distinct absorption changes were identified. Analysis of synchronous and asynchronous 2D-COS correlation features from 1 to 6 days post-inoculation (dpi), enabled effective discrimination between spectral variations attributable to growth and those specific to disease responses. The biological significance of these spectral dynamics was empirically validated using steady-state chlorophyll fluorescence imaging and destructive biomass measurements. This combined evidence confirmed that Pst-induced chloroplast functional impairment strictly precedes macroscopic tissue structural collapse. This process effectively suppressed background noise while preserving critical infection-related signals. Subsequently, three classifiers-support vector machine (SVM), random forest (RF), and eXtreme gradient boosting (XGBoost)-were evaluated using the extracted 2D-COS features. Asynchronous features generally produced superior classification performance, with XGBoost achieving the highest accuracy (86.79%) and area under the receiver operating characteristic curve (AUC) (94.12%). Compared to conventional methods like PCA and CARS, 2D-COS more effectively attenuated growth-related interference and accentuated early disease signatures. These results demonstrate that the integrated framework of \"multiplicative scatter correction (MSC) + Asynchronous Correlation Features + XGBoost\" offers substantial potential for accurate, non-destructive, and early diagnosis of wheat stripe rust.",
+      "journal": "Spectrochimica acta. Part A, Molecular and biomolecular spectroscopy",
+      "year": 2026,
+      "pub_date": "2026-12-05",
+      "authors": "Liang Xiaoying; Jiang Guihe; Shi Huanrui; Mao Yunfei; Wang Ning; ... (+2)",
+      "first_author": "Liang Xiaoying",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42191175",
+      "doi": "10.1080/19336934.2026.2677279",
+      "title": "Application, ecotoxicology and regulation of insecticides with special reference to neonicotinoids.",
+      "abstract": "This review examines the efficacy and toxicity of the major insecticide groups in current use, with particular reference to neonicotinoids, which are one of the most widely used pesticides in the world. Mammalian toxicity and hazards posed during insecticide application will be discussed, along with their ecotoxicology, effects on non-target organisms and on the environment. However, toxicity must be balanced by usefulness in crop protection, first in terms of integrated pest management (IPM) and then by detailing national registration processes according to international normative frameworks to achieve the appropriate balance between efficacy and toxicity. Critical in ensuring that this balance is met are controls on pesticides in use, enforcement of pesticide regulations, and food safety measures related insecticide residues and maximum residue limit (MRL) setting. International trade conventions and trade issues are of direct relevance to import and export not only of agricultural products protected by the use of pesticides, but also of the pesticides themselves along with the waste products from their manufacture or use.",
+      "journal": "Fly",
+      "year": 2026,
+      "pub_date": "2026-12-01",
+      "authors": "Hunter David; Black Robert",
+      "first_author": "Hunter David",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41846417",
+      "doi": "10.1080/21645698.2026.2640757",
+      "title": "The sugar transporter ZmSWEET11 participates in plant autophagy to respond to salt stress.",
+      "abstract": "The sugar will eventually be exported transporters (SWEET) proteins play an important role in plant growth, development and stress responses. However, current research on the function of SWEET proteins in maize in response to salt stress is limited. In this study, we characterized the function of ZmSWEET11, a gene involved in salt stress response and autophagy induced by salt stress in plants. ZmSWEET11 is primarily expressed in the stems and is significantly induced by salt stress at maize seedlings stage. Subcellular localization analysis showed that ZmSWEET11 is localized to the plasma membrane. Gene silencing of ZmSWEET11 via the technology of virus-induced gene silencing (VIGS) impaired maize salt tolerance and autophagic activity. Furthermore, we also determined that ZmSWEET11 interacts with autophagy-related (ATG) proteins (ZmATG2a, ZmATG2b, ZmATG8e and ZmATG18f). Overexpression of ZmSWEET11 in Arabidopsis led to enhanced salt tolerance and increased autophagosome abundance, whereas the atsweet11 mutant exhibited salt sensitivity. Taken together, our study demonstrated that ZmSWEET11 improves salt tolerance and autophagic activity both in maize and Arabidopsis seedlings, thereby mediating tolerance to abiotic stresses in plants. This is the first confirmation of a direct interaction between ZmSWEET11 and autophagic proteins, and shows that autophagy is closely with sugar transport in response to salt stress, thereby filling a gap in understanding the molecular mechanism of autophagy.",
+      "journal": "GM crops & food",
+      "year": 2026,
+      "pub_date": "2026-12-01",
+      "authors": "Xing Zhiyang; Tian Zengyuan; Chen Tongxian; Zang Haoyu; Wang Jiaying; ... (+2)",
+      "first_author": "Xing Zhiyang",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

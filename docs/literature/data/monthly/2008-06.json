@@ -1,0 +1,283 @@
+{
+  "month": "2008-06",
+  "generated": "2026-07-13 02:59:42",
+  "total": 35,
+  "by_category": {
+    "Host_Virus_Interactions": 11,
+    "New_Virus": 7,
+    "Antiviral_Resistance_Genes": 7,
+    "Control_Management": 5,
+    "Molecular_Characterization": 3,
+    "Transmission_Epidemiology": 2,
+    "Viral_Diversity_Ecology": 2,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "18327592",
+      "doi": "10.1007/s00299-008-0526-9",
+      "title": "Agrobacterium tumefaciens-mediated transformation of poinsettia, Euphorbia pulcherrima, with virus-derived hairpin RNA constructs confers resistance to Poinsettia mosaic virus.",
+      "abstract": "Agrobacterium-mediated transformation for poinsettia (Euphorbia pulcherrima Willd. Ex Klotzsch) is reported here for the first time. Internode stem explants of poinsettia cv. Millenium were transformed by Agrobacterium tumefaciens, strain LBA 4404, harbouring virus-derived hairpin (hp) RNA gene constructs to induce RNA silencing-mediated resistance to Poinsettia mosaic virus (PnMV). Prior to transformation, an efficient somatic embryogenesis system was developed for poinsettia cv. Millenium in which about 75% of the explants produced somatic embryos. In 5 experiments utilizing 868 explants, 18 independent transgenic lines were generated. An average transformation frequency of 2.1% (range 1.2-3.5%) was revealed. Stable integration of transgenes into the poinsettia nuclear genome was confirmed by PCR and Southern blot analysis. Both single- and multiple-copy transgene integration into the poinsettia genome were found among transformants. Transgenic poinsettia plants showing resistance to mechanical inoculation of PnMV were detected by double antibody sandwich enzyme-linked immunosorbent assay (DAS-ELISA). Northern blot analysis of low molecular weight RNA revealed that transgene-derived small interfering (si) RNA molecules were detected among the poinsettia transformants prior to inoculation. The Agrobacterium-mediated transformation methodology developed in the current study should facilitate improvement of this ornamental plant with enhanced disease resistance, quality improvement and desirable colour alteration. Because poinsettia is a non-food, non-feed plant and is not propagated through sexual reproduction, this is likely to be more acceptable even in areas where genetically modified crops are currently not cultivated.",
+      "journal": "Plant cell reports",
+      "year": 2008,
+      "pub_date": "2008-06-01",
+      "authors": "Clarke Jihong Liu; Spetz Carl; Haugslien Sissel; Xing Shaochen; Dees Merete W; ... (+2)",
+      "first_author": "Clarke Jihong Liu",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Poinsettia mosaic virus (PnMV)",
+      "taxonomy": "",
+      "host_plant": "Euphorbia pulcherrima（一品红）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18353962",
+      "doi": "10.1128/JVI.00272-08",
+      "title": "Structural and genetic requirements for the biogenesis of tobacco rattle virus-derived small interfering RNAs.",
+      "abstract": "In plants, small RNA-guided processes referred to as RNA silencing control gene expression and serve as an efficient antiviral mechanism. Plant viruses are inducers and targets of RNA silencing as infection involves the production of functional virus-derived small interfering RNAs (siRNAs). Here we investigate the structural and genetic components influencing the formation of Tobacco rattle virus (TRV)-derived siRNAs. TRV siRNAs are mostly 21 nucleotides in length and derive from positive and negative viral RNA strands, although TRV siRNAs of positive polarity are significantly more abundant. This asymmetry appears not to correlate with the presence of highly structured regions of single-stranded viral RNA. The Dicer-like enzyme DCL4, DCL3, or DCL2 targets, alone or in combination, viral templates to promote synthesis of siRNAs of both polarities from all regions of the viral genome. The heterogeneous distribution profile of TRV siRNAs reveals differential contributions throughout the TRV genome to siRNA formation. Indirect evidence suggests that DCL2 is responsible for production of a subset of siRNAs derived from the 3' end region of TRV. TRV siRNA biogenesis and antiviral silencing are strongly dependent on the combined activity of the host-encoded RNA-dependent RNA polymerases RDR1, RDR2, and RDR6, thus providing evidence that perfectly complementary double-stranded RNA serves as a substrate for siRNA production. We conclude that the overall composition of viral siRNAs in TRV-infected plants reflects the combined action of several interconnected pathways involving different DCL and RDR activities.",
+      "journal": "Journal of virology",
+      "year": 2008,
+      "pub_date": "2008-06-01",
+      "authors": "Donaire Livia; Barajas Daniel; Martínez-García Belén; Martínez-Priego Llucia; Pagán Israel; ... (+1)",
+      "first_author": "Donaire Livia",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Tobacco rattle virus (TRV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18423510",
+      "doi": "10.1016/j.virol.2008.03.008",
+      "title": "Changes in the intraisolate genetic structure of Beet necrotic yellow vein virus populations associated with plant resistance breakdown.",
+      "abstract": "The causal agent of rhizomania disease, Beet necrotic yellow vein virus (BNYVV), typically produces asymptomatic root-limited infections in sugar beets (Beta vulgaris) carrying the Rz1-allele. Unfortunately, this dominant resistance has been recently overcome. Multiple cDNA clones of the viral pathogenic determinant p25, derived from populations infecting susceptible or resistant plants, were sequenced to identify host effects on the viral population structure. Populations isolated from compatible plant-virus interactions (susceptible plant-wild type virus and resistant plant-resistant breaking variants) were large and relatively homogeneous, whereas those from the incompatible interaction (resistant plant-avirulent type virus) were small and highly heterogeneous. All populations from susceptible plants had the same dominant haplotype, whereas those from resistant cultivars had a different haplotype surrounded by a spectrum of mutants. Selection and diversification analyses suggest an evolutionary trajectory of BNYVV with positive selection for changes required to overcome resistance, followed by elimination of hitchhiking mutations through purifying selection.",
+      "journal": "Virology",
+      "year": 2008,
+      "pub_date": "2008-06-20",
+      "authors": "Acosta-Leal Rodolfo; Fawley Marvin W; Rush Charles M",
+      "first_author": "Acosta-Leal Rodolfo",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "甜菜坏死黄脉病毒 (Beet necrotic yellow vein virus, BNYVV)",
+      "taxonomy": "",
+      "host_plant": "甜菜 (Beta vulgaris)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769734",
+      "doi": "10.1094/PDIS-92-6-0973A",
+      "title": "First Report of Solanum jasminoides Infected by Citrus exocortis viroid in Germany and the Netherlands and Tomato apical stunt viroid in Belgium and Germany.",
+      "abstract": "Recent identifications of Chrysanthemum stunt viroid (CSVd) and Potato spindle tuber viroid (PSTVd) in Solanum jasminoides (3,4) prompted the testing of this plant species for infections with other pospiviroids. From autumn of 2006 to spring of 2007, samples from symptomless plants of S. jasminoides were collected in Belgium (3 samples ranging from 75 to 150 plants), Germany (3 samples ranging from 1 to 200 plants), and the Netherlands (3 samples ranging from 2 to 200 plants). Samples were tested for pospiviroids by reverse transcription (RT)-PCR assays using the Pospi1-FW/RE and Vid-FW/RE (2) and PSTV-Nb-FW (5'-ggatccccggggaaacctgga-3')/RE (5'-ggatccctgaagcgctcctcc-3') primer sets. Each set amplifies several but not all pospiviroids. The first and last primer sets amplified PCR products from six samples. The full-length genomes of all six isolates were amplified using primer pairs CEVd-FW1/RE1 (1) and CEVd-FW2 (5'-gtgctcacctgaccctgcagg-3')/RE2 (5'-accacaggaacctcaagaaag-3'), which are fully complementary to both Citrus exocortis viroid (CEVd) and Tomato apical stunt viroid (TASVd). Sequence analysis of the PCR products identified CEVd from two samples each from Germany and the Netherlands and TASVd from one sample each from Germany and Belgium (plants were imported from Israel). Although the sequences of the different CEVd isolates from S. jasminoides were not identical, all exhibited more than 95% identity with a CEVd isolate from Vicia faba (GenBank Accession No. EF494687). Both TASVd sequences were identical and showed 99.2% identity to a TASVd isolate from tomato (GenBank Accession No. AY 062121). Two nucleotide sequences of CEVd were submitted to the NCBI GenBank (Accession Nos. EU094207 and EU094208). The two other CEVd sequences and the TASVd sequence were submitted to the EMBL Nucleotide Sequence Database as Accession Nos. AM774356, AM774357, and AM777161. In addition to identification from S. jasminoides by sequence analysis, TASVd infection in the S. jasminoides sample from Germany and CEVd in one sample from the Netherlands was confirmed by mechanical inoculation to tomato followed by RT-PCR using the two CEVd-FW/RE primer pairs and analysis of the sequenced PCR product. Infection by CEVd and TASVd was also confirmed in the German samples by Northern hybridization and TASVd was confirmed in the Belgian sample by return-polyacrylamide gel electrophoresis. To our knowledge, these are the first reports of CEVd and TASVd in S. jasminoides. The viroids do not reduce the quality of S. jasminoides plants; however, the infected plants may act as infection sources for other crops. References: (1) N. Önelge. Turk. J. Agric. For. 21:419, 1997. (2) J. Th. J. Verhoeven et al. Eur. J. Plant Pathol. 110:823, 2004. (3) J. Th. J. Verhoeven et al. Plant Dis. 90:1359, 2006. (4) J. Th. J. Verhoeven et al. Plant Pathol. 57:399, 2008.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-06-01",
+      "authors": "Verhoeven J Th J; Jansen C C C; Roenhorst J W; Steyer S; Schwind N; ... (+1)",
+      "first_author": "Verhoeven J Th J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Citrus exocortis viroid (CEVd) 和 Tomato apical stunt viroid (TASVd)",
+      "taxonomy": "Pospiviroidae, Pospiviroid",
+      "host_plant": "Solanum jasminoides",
+      "location": "比利时、德国、荷兰",
+      "results": "从六个样品中检测到CEVd（德国2个、荷兰2个）和TASVd（比利时1个、德国1个），序列与已知分离物高度同源。机械接种和杂交验证了感染。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769738",
+      "doi": "10.1094/PDIS-92-6-0982A",
+      "title": "First Report of Maize streak virus Field Infection of Sugarcane in South Africa.",
+      "abstract": "Prior to the introduction of highly resistant sugarcane varieties, Sugarcane streak virus (SSV) caused serious sugar yield losses in southern Africa. Recently, sugarcane plants with streak symptoms have been identified across South Africa. Unlike the characteristic fine stippling and streaking of SSV, the symptoms resembled the broader, elongated chlorotic lesions commonly observed in wild grasses infected with the related Maize streak virus (MSV). Importantly, these symptoms have been reported on a newly released South African sugarcane cultivar, N44 (resistant to SSV). Following a first report from southern KwaZulu-Natal, South Africa in February 2006, a survey in May 2007 identified numerous plants with identical symptoms in fields of cvs. N44, N27, and N36 across the entire South African sugarcane-growing region. Between 0.04 and 1.6% of the plants in infected fields had streak symptoms. Wild grass species with similar streaking symptoms were observed adjacent to one of these fields. Potted stalks collected from infected N44 plants germinated in a glasshouse exhibited streak symptoms within 10 days. Virus genomes were isolated and sequenced from a symptomatic N44 and Urochloa plantaginea plants collected from one of the surveyed fields (1). Phylogenetic analysis determined that while viruses from both plants closely resembled the South African maize-adapted MSV strain, MSV-A4 (>98.5% genome-wide sequence identity), they were only very distantly related to SSV (~65% identity; MSV-Sasri_S: EU152254; MSV-Sasri_G: EU152255). To our knowledge, this is the first confirmed report of maize-adapted MSV variants in sugarcane. In the 1980s, \"MSV strains\" were serologically identified in sugarcane plants exhibiting streak symptoms in Reunion and Mauritius, but these were not genetically characterized (2,3). There have been no subsequent reports on the impact of such MSV infections on sugarcane cultivation on these islands. Also, at least five MSV strains have now been described, only one of which, MSV-A, causes significant disease in maize and it is unknown which strain was responsible for sugarcane diseases on these islands in the 1980s (2,3). MSV-A infections could have serious implications for the South African sugar industry. Besides yield losses in infected plants due to stunting and reduced photosynthesis, the virus could be considerably more difficult to control than it is in maize because sugarcane is vegetatively propagated and individual plants remain within fields for years rather than months. Moreover, there is a large MSV-A reservoir in maize and other grasses everywhere sugarcane is grown in southern Africa. References: (1) B. E. Owor et al. J Virol. Methods 140:100, 2007. (2) M. S. Pinner and P. G. Markham. J. Gen. Virol. 71:1635, 1990. (3) M. S. Pinner et al. Plant Pathol. 37:74, 1998.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-06-01",
+      "authors": "van Antwerpen T; McFarlane S A; Buchanan G F; Shepherd D N; Martin D P; ... (+2)",
+      "first_author": "van Antwerpen T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Maize streak virus (MSV, strain MSV-A4)",
+      "taxonomy": "Geminiviridae, Mastrevirus",
+      "host_plant": "甘蔗 (Saccharum officinarum) 品种 N44, N27, N36；Urochloa plantaginea",
+      "location": "南非，南夸祖鲁-纳塔尔省",
+      "results": "从甘蔗和杂草中分离的MSV与玉米适应株系MSV-A4高度同源（>98.5%），与SSV仅65%同源。甘蔗品种N44抗SSV但感染MSV，田间感染率0.04-1.6%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769732",
+      "doi": "10.1094/PDIS-92-6-0978C",
+      "title": "First Report of Cucumber mosaic virus on Lavandula angustifolia in Poland.",
+      "abstract": "Lavandula angustifolia Mill. (synonym Lavandula officinalis Chaix), belonging to the Lamiaceae family, is a plant that is widespread in Mediterranean countries. The species is widely grown as an ornamental crop in Poland. Currently, only Alfalfa mosaic virus (AMV) is known to infect L. latifolia × L. officinalis in Italy (3). In the spring of 2005, we observed yellow mottling, leaf deformation, and growth reduction of L. angustifolia plants from the Agricultural Academy of Kraków collection of medicinal herbs and spices. Mechanical inoculation of a range of indicator plant species, Chenopodium quinoa, Cucumis sativus, Datura strammonium, Nicotiana glutinosa, N. tabacum cv. Xanthi, Lycopersicon esculentum, and Spinacia oleracea, with sap from symptomatic L. angustifolia plants resulted in symptoms typical of Cucumber mosaic virus (CMV). Chlorotic local lesions and systemic mosaic were observed after a few days on the tested plant species. However, local lesions did not develop on inoculated C. sativus cotyledons. A lack of systemic infection on Chenopodium quinoa excluded infection by AMV. The sap from symptomatic N. tabacum cv. Xanthi leaves contained spherical virus particles of 29 nm in diameter when examined with electron microscopy. Symptomatic N. tabacum cv. Xanthi leaves were positive for CMV in a double-antibody-ELISA using commercial CMV antiserum (Loewe Biochemica GmbH, Sauerlach, Germany). Total RNA was extracted from infected N. tabacum cv. Xanthi plants by the phenolchloroform method. Reverse transcription-PCR was carried out using specific primers CMVF 5'-CCCACAGGTAGAATCAAAT-3' and CMVR 5'-ATGGACAAATCTGAATCAAC-3' (1). The 367-bp amplicon representing a portion of the coat protein gene located in RNA3 was cloned into pGEM-T Easy Vector (Promega, Madison, WI) and two clones were sequenced. The fragment sequence (Accession No. EU303304) was compared with homologous sequences of CMV isolates from the GenBank database. Multiple sequence alignment was performed by using Mega 4 (Center for Evolutionary Functional Genomics, Tempe, AZ) (4) and revealed 99% nucleotide and amino acid identity between the Polish isolate of CMV-PL and the RT67 (subgroup II) isolate from the Netherlands (2) To our knowledge, this is the first report on the occurrence of CMV on Lavandula angustifolia Mill. in Poland or worldwide. References: (1) N. Borodynko et al. Prog. Plant Protect. 44:604, 2004. (2) Z. Deyong et al. J Virol. Methods 123:101, 2005. (3) L. Giunchedi et al. Phytopathol. Mediterr. 11:74, 1972. (4) K. Tamura et al. Mol. Biol. Evol. 24:1596, 2007.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-06-01",
+      "authors": "Kobyłko T; Dańda P; Hasiów B; Borodynko N; Pospieszny H",
+      "first_author": "Kobyłko T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cucumber mosaic virus (CMV)",
+      "taxonomy": "Bromoviridae, Cucumovirus",
+      "host_plant": "Lavandula angustifolia (薰衣草)",
+      "location": "波兰",
+      "results": "薰衣草出现黄斑驳、叶变形和生长抑制；接种指示植物产生典型CMV症状；电镜见29nm球形颗粒；ELISA阳性；RT-PCR扩增CP基因片段，测序与荷兰分离物RT67（亚组II）同源性99%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18624632",
+      "doi": "10.1094/MPMI-21-6-0675",
+      "title": "Twenty years of transgenic plants resistant to Cucumber mosaic virus.",
+      "abstract": "Plant genetic engineering has promised researchers improved speed and flexibility with regard to the introduction of new traits into cultivated crops. A variety of approaches have been applied to produce virus-resistant transgenic plants, some of which have proven to be remarkably successful. Studies on transgenic resistance to Cucumber mosaic virus probably have been the most intense of any plant virus. Several effective strategies based on pathogen-derived resistance have been identified; namely, resistance mediated by the viral coat protein, the viral replicase, and post-transcriptional gene silencing. Techniques using non-pathogen-derived resistance strategies, some of which could offer broader resistance, generally have proven to be much less effective. Not only do the results obtained so far provide a useful guide to help focus on future strategies, but they also suggest that there are a number of possible mechanisms involved in conferring these resistances. Further detailed studies on the interplay between viral transgene-derived molecules and their host are needed in order to elucidate the mechanisms of resistance and pathogenicity.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 2008,
+      "pub_date": "2008-06-01",
+      "authors": "Morroni Marco; Thompson Jeremy R; Tepfer Mark",
+      "first_author": "Morroni Marco",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "黄瓜花叶病毒 (Cucumber mosaic virus)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18575612",
+      "doi": "10.1371/journal.pone.0002523",
+      "title": "The prehistory of potyviruses: their initial radiation was during the dawn of agriculture.",
+      "abstract": "[BACKGROUND] Potyviruses are found world wide, are spread by probing aphids and cause considerable crop damage. Potyvirus is one of the two largest plant virus genera and contains about 15% of all named plant virus species. When and why did the potyviruses become so numerous? Here we answer the first question and discuss the other. [METHODS AND FINDINGS] We have inferred the phylogenies of the partial coat protein gene sequences of about 50 potyviruses, and studied in detail the phylogenies of some using various methods and evolutionary models. Their phylogenies have been calibrated using historical isolation and outbreak events: the plum pox virus epidemic which swept through Europe in the 20th century, incursions of potyviruses into Australia after agriculture was established by European colonists, the likely transport of cowpea aphid-borne mosaic virus in cowpea seed from Africa to the Americas with the 16th century slave trade and the similar transport of papaya ringspot virus from India to the Americas. [CONCLUSIONS/SIGNIFICANCE] Our studies indicate that the partial coat protein genes of potyviruses have an evolutionary rate of about 1.15x10(-4) nucleotide substitutions/site/year, and the initial radiation of the potyviruses occurred only about 6,600 years ago, and hence coincided with the dawn of agriculture. We discuss the ways in which agriculture may have triggered the prehistoric emergence of potyviruses and fostered their speciation.",
+      "journal": "PloS one",
+      "year": 2008,
+      "pub_date": "2008-06-25",
+      "authors": "Gibbs Adrian J; Ohshima Kazusato; Phillips Matthew J; Gibbs Mark J",
+      "first_author": "Gibbs Adrian J",
+      "categories": [
+        "Molecular_Characterization",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "马铃薯Y病毒属（包括李痘病毒、豇豆蚜传花叶病毒、番木瓜环斑病毒等约50种）",
+      "taxonomy": "马铃薯Y病毒科（Potyviridae）下的马铃薯Y病毒属（Potyvirus）",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18535629",
+      "doi": "10.1139/w08-026",
+      "title": "Isolation and characterization of ZH14 with antiviral activity against Tobacco mosaic virus.",
+      "abstract": "A large number of bacteria were isolated from plant samples and screened for antiviral activity against the Tobacco mosaic virus (TMV). The bacterium ZH14, which was isolated from Chinese Anxi oolong tea, secreted the antiviral substances, having 94.2% virus inhibition when the bacterial culture filtrate and TMV extract were mixed at a ratio of 1:1. The ZH14 strain is a gram-positive, spore-forming rod and has the ability to degrade ribonucleic acid. Based on its effectiveness on virus inhibition, ZH14 was selected for characterization and was identified as a strain of the Bacillus cereus group based on phenotypic tests and comparative analysis of its 16S rDNA sequence. At the same time, we determined the antiviral product of ZH14 as an extracellular protein with high molecular mass, having an optimum temperature of 15-60 degrees C and an optimum pH of 6-10. Hence, the ZH14 strain and its culture filtrate have potential application in controlling plant diseases caused by TMV.",
+      "journal": "Canadian journal of microbiology",
+      "year": 2008,
+      "pub_date": "2008-06-01",
+      "authors": "Zhou Wen-Wen; Zhang Li-Xiang; Zhang Bin; Wang Fei; Liang Zhi-Hong; ... (+1)",
+      "first_author": "Zhou Wen-Wen",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒 (Tobacco mosaic virus, TMV)",
+      "taxonomy": "",
+      "host_plant": "未提及（从植物样本中分离细菌，但未明确宿主植物）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18613572",
+      "doi": "10.1603/0022-0493(2008)101[728:bobcaa]2.0.co;2",
+      "title": "Behavior of bird cherry-oat aphid and green peach aphid in relation to potato virus Y transmission.",
+      "abstract": "Potato virus Y is transmitted to potato in a nonpersistent manner by many aphid species, some of which do not colonize this crop. The behavior of bird cherry-oat aphid, Rhopalosiphum padi (L.) on potato, Solanum tuberosum L., a plant species that is not colonized by this aphid, was described and compared with that of the potato-colonizing green peach aphid, Myzuspersicae (Sulzer). A higher proportion of winged morph of R. padi than M. persicae left the plant, but aphids that stayed in contact with the plant took the same mean time to initiate the first probe and it lasted the same mean time compared with M. persicae. Electronic penetration graph technique was used to study the probing behavior of the aphids during Potato virus Y (family Potyviridae, genus Potyvirus, PVY) transmission tests. Transmission rate decreased from 29 to 8% when the acquisition time increased from 5 min of continuous probing to 1 h with M. persicae, but it remained low (2 and 1%) with R. padi. Most of the difference in transmission rate between acquisition time with M. persicae and between aphid species was related to the change in the time and behavior taking place between the last cell puncture of the acquisition phase to the first cell puncture of the inoculation phase. Results presented here clearly demonstrated the importance of host plant selection and probing behavior in the transmission of nonpersistent plant viruses. They also stress the need to consider the behavior of the aphid in the design of laboratory tests of virus vector efficacy.",
+      "journal": "Journal of economic entomology",
+      "year": 2008,
+      "pub_date": "2008-06-01",
+      "authors": "Pelletier Y; Nie X; McClure M; Whitney S; Giguère M A",
+      "first_author": "Pelletier Y",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Potato virus Y (PVY)",
+      "taxonomy": "",
+      "host_plant": "马铃薯 (Solanum tuberosum)",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18819657",
+      "doi": "10.3923/pjbs.2008.1642.1645",
+      "title": "Molecular detection of potato spindle tuber viroid in Razavi and Northern Khorasan provinces.",
+      "abstract": "The aim of this study was to identify the Potato Spindle Tuber Viroid (PSTVd) by Reverse Transcriptase-PCR. Among all plant diseases which are caused by viroids, PSTVd was the first viroid which is recognized by plant pathologist. Suspended potato tubers from Razavi and Northern Khorasan provinces collected and cultured. Leaves of cultured tubers were used for RNA extraction by PEG6000 Precipitation method. Subsequent RT-PCR reaction has been carried out using specific primers. A 359 bp fragment has been appeared after electrophoresis which has not appeared in healthy tuber samples. Digestion of obtained fragment with BamHI confirmed the sequence by producing two fragments of 119 and 240 bp. Sequencing has been done to certify the PSTVd. The sequencing result showed that infection in tested areas is caused by mild strain of PSTVd. In this project from 250 samples, 14 tubers were infected. This was the first report of occurrence of mild strain of PSTVd in Iran.",
+      "journal": "Pakistan journal of biological sciences : PJBS",
+      "year": 2008,
+      "pub_date": "2008-06-15",
+      "authors": "Arezou Yazarlou; Jafarpour Behrouz; Rastegar Mahrokh Falahati; Javadmanesh Ali",
+      "first_author": "Arezou Yazarlou",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "马铃薯纺锤形块茎类病毒 (PSTVd)",
+      "taxonomy": "",
+      "host_plant": "马铃薯",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17520342",
+      "doi": "10.1007/s11033-007-9080-8",
+      "title": "Molecular characterization and expression analysis of OsBISERK1, a gene encoding a leucine-rich repeat receptor-like kinase, during disease resistance responses in rice.",
+      "abstract": "A rice gene, OsBISERK1, encoding a protein belonging to SOMATIC EMBRYOGENESIS RECEPTOR KINASE (SERK) type of leucine-rich repeat receptor-like kinases (LRR-RLKs) was identified. The OsBISERK1 encodes a 624 aa protein with high level of identity to known plant SERKs. OsBISERK1 contains a hydrophobic signal peptide, a leucine zipper, and five leucine-rich repeat motifs in the extracellular domain; the cytoplasmic region carries a proline-rich region and a single transmembrane domain, as well as a conserved intracellular serine/threonine protein kinase domain. OsBISERK1 has a low level of basal expression in leaf tissue. However, expression of OsBISERK1 was induced by treatment with benzothiadiazole (BTH), which is capable of inducing disease resistance in rice, and also up-regulated after inoculation with Magnaporthe grisea in BTH-treated rice seedlings and during incompatible interaction between a blast-resistant rice genotype and M. grisea. The results suggest that OsBISERK1 may be involved in disease resistance responses in rice.",
+      "journal": "Molecular biology reports",
+      "year": 2008,
+      "pub_date": "2008-06-01",
+      "authors": "Song Donghui; Li Guojun; Song Fengming; Zheng Zhong",
+      "first_author": "Song Donghui",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "week": "2025-W10",
+  "start": "2025-03-03",
+  "end": "2025-03-09",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 31,
+  "by_category": {
+    "Host_Virus_Interactions": 10,
+    "Control_Management": 6,
+    "Antiviral_Resistance_Genes": 5,
+    "New_Virus": 5,
+    "Viral_Diversity_Ecology": 3,
+    "Biotechnology_Applications": 3
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "39960812",
+      "doi": "10.1021/acsnano.4c10637",
+      "title": "Multiple Pathways Revealing the CeO",
+      "abstract": "\"Nanophytovirology\" is a potential management approach to combat plant viral diseases. Herein, the impact of foliar application of CeO2 nanoparticles (CeO2-NPs) on the growth, plant cell ultrastructure, and physiology of alfalfa mosaic virus (AMV)-infected alfalfa seedlings was explored at different concentrations and application strategies. In a solar greenhouse, 20 mL of CeO2-NP suspensions of 50, 100, 200, and 500 mg/L was sprayed onto the plant surface every other day for 9 days. As a result, the total volume applied per pot was 100 mL. It showed that the beneficial effects of CeO2-NPs on infected alfalfa seedlings were dependent on the concentration and application period. Compared to the infected control, foliar application with 100 mg/L CeO2-NPs before AMV infection (CeO2-NPs-BVI) showed the greatest virus suppression efficacy; significantly reduced the disease indices by 58.87%; improved growth, yield, and nutritional quality; and significantly increased plant height, plant dry biomass, crude protein, and crude fat contents and relative feeding value by 15.17, 37.12, 18.77, 71.19, and 10.09%, respectively. Moreover, CeO2-NPs-BVI maintained the chloroplast quantity and structure of leaf cells and significantly enhanced the chlorophyll content and photosynthesis rate of alfalfa leaves by 36.14 and 40.13%, respectively, as compared to infected control. Mechanistically, cell ultrastructure, physiology, and transcriptomic analyses revealed that (1) CeO2-NPs effectively mitigated AMV-induced chloroplast structure damage, subsequently enhancing photosynthesis and carbon fixation in photosynthetic organisms, providing sufficient energy and antiviral activities for maintaining plant growth and development; (2) CeO2-NPs reduced the AMV's ability to bind to host receptors and evade host immune recognition, significantly activating and boosting plant systemic immunity by down-regulating ABA and ETH levels and upregulating SA, IAA, and BR levels; (3) CeO2-NPs activated the plant antioxidative systems to eliminate excess reactive oxygen species. These findings provide significant insight into the potential of CeO2-NPs as highly efficient antiviral agent.",
+      "journal": "ACS nano",
+      "year": 2025,
+      "pub_date": "2025-03-04",
+      "authors": "Guo Zhipeng; Zhang Tingting; Chen Zhao; Niu Junpeng; Rasel Md; ... (+8)",
+      "first_author": "Guo Zhipeng",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "苜蓿花叶病毒（Alfalfa mosaic virus, AMV）",
+      "taxonomy": "",
+      "host_plant": "苜蓿",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40050730",
+      "doi": "10.1186/s12864-025-11366-7",
+      "title": "High-resolution genetic and physical mapping reveals a peanut spotted wilt disease resistance locus, PSWDR-1, to Tomato spotted wilt virus (TSWV), within a recombination cold-spot on chromosome A01.",
+      "abstract": "[BACKGROUND] Peanut (Arachis hypogaea L.) is a vital global crop, frequently threatened by both abiotic and biotic stresses. Among the most damaging biotic stresses is Tomato spotted wilt virus (TSWV), which causes peanut spotted wilt disease resulting in significant yield loss. Developing TSWV-resistant cultivars is crucial to new cultivar release. Previous studies have used a subset of the \"S\" recombinant inbred line (RIL) population derived from SunOleic 97R and NC94022 and identified quantitative trait loci (QTLs) for resistance to TSWV. These studies utilized different genotyping techniques and found large consistent genomic regions on chromosome A01. The objective of this study was to fine map the QTL and identify candidate genes using the entire population of 352 RILs and high-density, high-quality peanut SNP arrays. [RESULTS] We used both versions of the peanut SNP arrays with five years of disease ratings, and successfully mapped the long-sought peanut spotted wilt disease resistance locus, PSWDR-1. QTL analyses identified two major QTLs, explaining 41.43% and 43.69% of the phenotypic variance within 3.6 cM and 0.28 cM intervals using the peanut Axiom_Arachis-v1 and Axiom_Arachis-v2 SNP arrays, respectively, on chromosome A01. These QTLs corresponded to 295 kb and 235 kb physical intervals. The unique overlap region of these two QTLs was 488 kb. A comparison of the genetic linkage map with the reference genome revealed a 1.3 Mb recombination \"cold spot\" (11.325-12.646 Mb) with only two recombination events of RIL-S1 and RIL-S17, which displayed contrasting phenotypes. Sequencing of these two recombinants confirmed the cold spot with only five SNPs detected within this region. [CONCLUSIONS] This study successfully identified a peanut spotted wilt disease resistance locus, PSWDR-1, on chromosome A01 within a recombination \"cold spot\". The PSWDR-1 locus contains three candidate genes, a TIR-NBS-LRR gene (Arahy.1PK53M), a glutamate receptor-like gene (Arahy.RI1BYW), and an MLO-like protein (Arahy.FX71XI). These findings provide a foundation for future functional studies to validate the roles of these candidate genes in resistance and application in breeding TSWV-resistant peanut cultivars.",
+      "journal": "BMC genomics",
+      "year": 2025,
+      "pub_date": "2025-03-06",
+      "authors": "Wu Dongliang; Zhao Chuanzhi; Korani Walid; Thompson Ethan A; Wang Hui; ... (+7)",
+      "first_author": "Wu Dongliang",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Tomato spotted wilt virus (TSWV)",
+      "taxonomy": "",
+      "host_plant": "花生 (Arachis hypogaea L.)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40050684",
+      "doi": "10.1038/s42003-025-07812-7",
+      "title": "Microbiota transplantation for cotton leaf curl disease suppression-core microbiome and transcriptome dynamics.",
+      "abstract": "Microbiota transplantation is a strong tool for managing plant disease. This study investigates the effects of microbiota transplantation on Cotton Leaf Curl Disease (CLCuD) resistance in Gossypium hirsutum, a species with good fiber length but high susceptibility to biotic stresses. Using metabarcoding for V3-V4 16S rRNA gene amplicon, microbial fractions from both rhizosphere and phyllosphere of CLCuD-resistant species Gossypium arboreum, and susceptible cotton varieties are analyzed. Unique bacterial taxa have been identified associated with disease resistance. Interspecies and intraspecies microbiota transplantation is conducted, followed by CLCuD incidence assays. It is seen that rhizospheric microbiota transplantation from G. arboreum FDH228 significantly suppresses CLCuD in G. hirsutum varieties, outperforming exogenous salicylic acid application. While phyllospheric transplants also reduce disease incidence, they are less effective than rhizospheric transplants. Differential expression analysis DESeq2 is utilized to identify key bacterial genera correlated with CLCuD suppression, including Pseudoxanthomonas and Stenotrophomonas in the rhizosphere of G. arboreum FDH228. Functional pathway analysis reveals upregulation of stress response and metabolism in tolerant species. Transcriptomics reveals upregulation of genes involved in protein phosphorylation and stress response in interspecies rhizospheric microbiota transplants. This study highlights microbiota transplantation as a sustainable method for controlling CLCuD along with specific microbial and genetic mechanisms contributing to CLCuD resistance.",
+      "journal": "Communications biology",
+      "year": 2025,
+      "pub_date": "2025-03-06",
+      "authors": "Badar Ayesha; Aqueel Rhea; Nawaz Ali; Ijaz Umer Zeeshan; Malik Kauser Abdulla",
+      "first_author": "Badar Ayesha",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "棉花曲叶病毒（Cotton leaf curl virus, CLCuV）",
+      "taxonomy": "",
+      "host_plant": "棉花（Gossypium hirsutum, Gossypium arboreum）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39985456",
+      "doi": "10.1021/acs.langmuir.4c04890",
+      "title": "Tailored Fibrils Approach via Ag(I).Peptidomimetic-Based Interface Design: Efficient Encapsulation of Diverse Active Pharmaceutical Ingredients in Wastewater Remediation during Effluent Treatment Plant (ETP) Processing.",
+      "abstract": "Pharmaceutical pollution in wastewater poses significant environmental and public health concerns worldwide. Chloramphenicol (CP), an antibiotic widely used in medical and veterinary applications, is among the active pharmaceutical ingredients (APIs) frequently detected in aquatic environments. This study explored the encapsulation of chloramphenicol API in contaminated wastewater using rationally designed fibrations based on the silver metal ion-directed self-assembly of fibrillator-type self-assembling ligand (ANS-3). We further investigated the removal of various commonly prescribed drugs, including antibiotics such as β-lactam (amoxicillin), fluoroquinolone (ciprofloxacin), aminoglycoside (neomycin), and tetracycline; antiparasitic agents with antiprotozoal properties (praziquantel and metronidazole); nonsteroidal anti-inflammatory drugs (NSAIDs) such as phenylbutazone and ketoprofen; the vasodilator isoxsuprine; amphiphilic antidepressants (amitriptyline); and the antiviral drug amantadine. The findings validated the crucial influence of polar multifunctionality and structural complexity in enhancing interactions with Ag.ANS-3 matrix, emphasizing its potential for efficient drug sequestration. First, picolinic acid (PA) and phenylalanine (F) were evaluated for their ability to form fibrillar structures, and their morphological characterization revealed well-defined fibrillar networks with varying degrees of porosity and interconnectivity. Then, the strategic inclusion of leucine in synthesizing ANS-3 facilitated the formation of robust fibrillar networks, employing its hydrophobic interactions to drive the self-assembly process. Finally, the encapsulation of APIs was evaluated using Ag(I) metal ion-driven ANS-3 based self-assembled nanofibrous material. This research contributes to the development of innovative physicochemical wastewater treatment strategies for environmental remediation and validates the importance of rational design in encapsulation-based wastewater remediation technologies.",
+      "journal": "Langmuir : the ACS journal of surfaces and colloids",
+      "year": 2025,
+      "pub_date": "2025-03-04",
+      "authors": "Sharma Arun; Kaur Navneet; Singh Narinder",
+      "first_author": "Sharma Arun",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39713951",
+      "doi": "10.1093/evolut/qpae185",
+      "title": "Genome-wide differentiation by geography not species in taxonomically complex eyebrights (Euphrasia).",
+      "abstract": "Most studies investigating the genomic nature of species differences anticipate monophyletic species with genome-wide differentiation. However, this may not be the case at the earliest stages of speciation where reproductive isolation is weak and homogenizing gene flow blurs species boundaries. We investigate genomic differences between species in a postglacial radiation of eyebrights (Euphrasia), a taxonomically complex plant group with variation in ploidy and mating system. We use genotyping-by-sequencing and spatially aware clustering methods to investigate genetic structure across 378 populations from 18 British and Irish Euphrasia species. We find only northern Scottish populations of the selfing heathland specialist E. micrantha demonstrate genome-wide divergence from other species. Instead of genetic clusters corresponding to species, all other clusters align with geographic regions, such as a genetic cluster on Shetland that includes 10 tetraploid species. Recent divergence and extensive gene flow between putative species are supported by a lack of species-specific single-nucleotide polymorphisms or clear outlier loci. We anticipate a similar lack of association between genomic clusters and species identities may occur in other recent postglacial groups. Where new species emerge this is associated with a transition in mating system or novel ecological preferences.",
+      "journal": "Evolution; international journal of organic evolution",
+      "year": 2025,
+      "pub_date": "2025-03-03",
+      "authors": "Ding Yanqian; Metherell Chris; Huang Wu; Hollingsworth Peter M; Twyford Alex D",
+      "first_author": "Ding Yanqian",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40052422",
+      "doi": "10.1093/gbe/evaf039",
+      "title": "Tracing the Origin and Evolution of the Fungal Mycophenolic Acid Biosynthesis Pathway.",
+      "abstract": "Like bacteria and plants, fungi produce a remarkable diversity of small molecules with potent activities for human health known as natural products or secondary metabolites. One such example is mycophenolic acid, a powerful immunosuppressant drug that is administered daily to millions of transplant recipients worldwide. Production of mycophenolic acid is restricted to a very limited number of filamentous fungi, and little is known about its biosynthetic modalities. It is therefore a particular challenge to improve our knowledge of the biosynthesis of this valuable natural compound, as this would contribute to a better understanding of the specialized metabolism of fungi and could also lead to the identification of new fungal producers for the supply of immunosuppressants. Here, we were interested in deciphering the origin and evolution of the fungal mycophenolic acid biosynthetic pathway. Large-scale analyses of fungal genomic resources led us to identify several new species that harbor a gene cluster for mycophenolic acid biosynthesis. Phylogenomic analysis suggests that the mycophenolic acid biosynthetic gene cluster originated early in a common ancestor of the fungal family Aspergillaceae but was repeatedly lost and it is now present in a narrow but diverse set of filamentous fungi. Moreover, a comparison of the inosine 5'-monophosphate dehydrogenase protein sequences that are the target of the mycophenolic acid drug as well as analysis of mycophenolic acid production and susceptibility suggest that all mycophenolic acid fungal producers are resistant to this toxic compound, but that this resistance is likely to be based on different molecular mechanisms. Our study provides new insight into the evolution of the biosynthesis of the important secondary metabolite mycophenolic acid in fungi.",
+      "journal": "Genome biology and evolution",
+      "year": 2025,
+      "pub_date": "2025-03-06",
+      "authors": "Bidon Baptiste; Yaakoub Hajar; Lanoue Arnaud; Géry Antoine; Séguin Virginie; ... (+13)",
+      "first_author": "Bidon Baptiste",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40057696",
+      "doi": "10.1186/s12866-025-03854-3",
+      "title": "Characterization of a novel lytic phage vB_AbaM_AB4P2 encoding depolymerase and its application in eliminating biofilms formed by Acinetobacter baumannii.",
+      "abstract": "[BACKGROUND] Acinetobacter baumannii strains are a primary cause of hospital-acquired infections. This bacterium frequently causes biofilm-related infections, notably ventilator-associated pneumonia and catheter-related infections, which exhibit remarkable resistance to antibiotic treatment, posing a severe challenge in the prevention of A. baumannii infections. Therefore, strategies to eliminate the biofilm of A. baumannii in catheters are becoming increasingly important. Phages are capable of lysing bacteria and have a certain effect on the ablation of biofilms. [METHODS] Sewage treatment plant water was collected for the isolation of A. baumannii phages. The morphological, host range, one-step growth, temperature and pH stability, bactericidal activity, sequencing and genomic analysis were performed to characterize the isolated phage. The three-dimensional structure of the tail fiber protein was predicted by AlphaFold3. The efficacy of phage in clearing biofilms of A. baumannii from 24-well plates and PVC catheters was also evaluated. [RESULTS] In this study, A. baumannii lytic phage vB_AbaM_AB4P2 was isolated from sewage treatment plant water, showing a clear plaque with halo zone. One-step growth assays unveiled a 20-minute latent period and a burst size of 61 plaque forming unit/cell (PFU/cell). At the same time, phage AB4P2 exhibited remarkable stability at pH 3-11 and temperatures 30-70 °C. Its dsDNA genome is composed of 45,680 bp with a G + C content of 46.13%. Genomic and phylogenetic analysis situated phage AB4P2 as a new species of Caudoviricetes class. Its fiber protein possesses a pectin lyase-like domain that is linked to depolymerase activity, playing a crucial role in disrupting biofilms. Additionally, it also encodes a lysis cassette comprising endolysin, holin and Rz-like spanin, yet lacks any genes responsible for antibiotic resistance and virulence factors. Phage AB4P2 can completely inhibit A. baumannii growth for 16 h. In the 24-well plate and the polyvinyl chloride (PVC) catheter model experiments, phage AB4P2 achieved a significant biofilm ablation rate and effectively killed the live bacterial cells in the biofilm. [CONCLUSIONS] Phage AB4P2 had good environmental stability and strong ability to inhibit the growth of A. baumannii and destroy formed biofilms by A. baumannii. It exhibits promising potential for development as an alternative environmental disinfectant against A. baumannii in the hospital. [CLINICAL TRIAL NUMBER] Not applicable.",
+      "journal": "BMC microbiology",
+      "year": 2025,
+      "pub_date": "2025-03-08",
+      "authors": "Su Jianhui; Tan Yujing; Liu Shenshen; Zou Huanhuan; Huang Xiaoyi; ... (+4)",
+      "first_author": "Su Jianhui",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40173697",
+      "doi": "10.11646/zootaxa.5601.2.3",
+      "title": "Two new species of Ormyrus Westwood (Hymenoptera: Ormyridae) from Cynipidae (Hymenoptera) galls on Silphium L. (Asteraceae: Heliantheae).",
+      "abstract": "Two new species of Ormyrus Westwood, 1832 (Hymenoptera: Chalcidoidea: Ormyridae) are described: Ormyrus myrae Nastasi, Alcorn, & Davis sp. nov. and Ormyrus bellbowl Nastasi, Alcorn, & Davis sp. nov. Species of Ormyrus are parasitoids in insect galls, especially those induced by Cynipidae (Hymenoptera: Cynipoidea), and the new species are parasitoids in galls induced by Antistrophus Walsh, 1869 (Cynipidae: Aulacideini) on rosinweeds of the genus Silphium L. (Asteraceae: Heliantheae). Ormyrus bellbowl is a parasitoid of Antistrophus meganae Tooker & Hanks, 2004 in stems of S. terebinthinaceum Jacq., as well as other species of Antistrophus inducing inconspicuous galls in stems of S. laciniatum L. Ormyrus myrae is a parasitoid of Antistrophus laciniatus Gillette, 1891 on S. laciniatum and S. terebinthinaceum; the latter represents a new association of A. laciniatus with S. terebinthinaceum. Previous records of O. labotus Walker, 1843 in association with Antistrophus species are suggested as the results of misidentifications.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-03-07",
+      "authors": "Nastasi Louis F; Davis Charles K; Alcorn Jelani K; Frey Timothy S; Hatfield M J; ... (+3)",
+      "first_author": "Nastasi Louis F",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40137246",
+      "doi": "10.3390/jof11030208",
+      "title": "Five New ",
+      "abstract": "Tar spot is a prevalent fungal disease characterized by shiny black spots on the leaves, stems, and fruits of various plants. It is typically caused by members of the family Phyllachoraceae, which consists of biotrophic and obligate plant parasitic fungi. During field investigations of tar spot fungi in Sichuan Province, China, 70 fungal samples associated with tar spots belonging to the family Poaceae were collected from 13 different locations. Through morphological studies and multi-locus phylogenetic analysis of combined ITS, SSU, and LSU datasets, the collected samples were classified into eight Phyllachora species. Among these, five were identified as new species (Phyllachora cylindricae, P. festucae, P. luzhouensis, P. palmifoliae, and P. wenchuanensis), and two represented new host records (P. chongzhouensis, P. panicicola). The new species are accompanied by descriptions and illustrations, while their characteristics are discussed in relation to comparable taxa. Additionally, P. yuanjiangensis is synonymized under P. xinpingensis. These findings enhance our understanding of tar spot fungi in Sichuan and, given that Phyllachora species are important pathogens of plants in the Poaceae family, establish a foundation for further research to better understand their potential impacts on agriculture and the local ecology.",
+      "journal": "Journal of fungi (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-03-07",
+      "authors": "Su Pengwei; Liao Yuechi; Jin Yan; Chen Yanpeng; Madhushan Asanka; ... (+2)",
+      "first_author": "Su Pengwei",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40085777",
+      "doi": "10.1093/plcell/koaf051",
+      "title": "The kinase CPK5 phosphorylates MICRORCHIDIA1 to promote broad-spectrum disease resistance.",
+      "abstract": "In Arabidopsis (Arabidopsis thaliana), MICRORCHIDIA 1 (MORC1), a member of the MORC family of evolutionarily conserved GHKL-type ATPases, plays important roles in multiple layers of plant immunity. However, the molecular mechanism by which MORC1 regulates plant immunity remains obscure. Here, we report that the pathogen-responsive kinase CALCIUM-DEPENDENT PROTEIN KINASE 5 (CPK5) directly interacts with and phosphorylates MORC1, thereby promoting its stability and nuclear translocation. In the nucleus, MORC1 associates with the NONEXPRESSOR OF PATHOGENESIS-RELATED GENES 1 (NPR1)-TGACG-BINDING FACTOR (TGA) transcriptional complex to upregulate defense-responsive genes and promote plant resistance against several pathogens, such as the bacterial pathogen Pseudomonas syringae pv. tomato DC3000 and fungal pathogen Botrytis cinerea. Therefore, this study uncovers a MORC1-mediated immune signaling pathway, in which the CPK5-MORC1-NPR1-TGA module transduces Ca2+ signals, leading to the upregulation of defense genes involved in plant immunity.",
+      "journal": "The Plant cell",
+      "year": 2025,
+      "pub_date": "2025-03-05",
+      "authors": "Sun Congcong; Chen Yongming; Ma Aifang; Wang Pan; Song Yingying; ... (+10)",
+      "first_author": "Sun Congcong",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

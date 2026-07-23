@@ -1,0 +1,238 @@
+{
+  "week": "2026-W02",
+  "start": "2026-01-05",
+  "end": "2026-01-11",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 38,
+  "by_category": {
+    "Control_Management": 11,
+    "Host_Virus_Interactions": 10,
+    "Antiviral_Resistance_Genes": 9,
+    "New_Virus": 6,
+    "Biotechnology_Applications": 3,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "41131825",
+      "doi": "10.1016/j.molp.2025.10.015",
+      "title": "Cleavage of Beclin 1 by metacaspase 1 activates antiviral autophagy in plants.",
+      "abstract": "Beclin 1/ATG6 plays a critical role in the biogenesis of autophagosomes and various cellular processes, but how Beclin 1-dependent autophagy is activated in plants remains elusive. In this study, we found that the cysteine protease metacaspase 1 (MC1) functions as a new positive regulator of autophagy and cleaves Beclin 1 behind residues R97 and R99 in tobacco (Nicotiana benthamiana). Genetic analysis further demonstrated that the MC1-Beclin 1 cleavage module is both necessary and sufficient for the activation of plant autophagy. Mechanistically, this cleavage releases the N-terminal fragment of Beclin 1 (aa 1-97), which exhibits intrinsic autophagy-inducing activity and is dependent on the phosphatidylinositol 3-kinase complex. Moreover, the activated autophagy boosts broad-spectrum antiviral responses, while the barley stripe mosaic virus-encoded γb protein targets MC1 and suppresses MC1-mediated Beclin 1 cleavage, thereby optimizing viral infection. The cleavage of Beclin 1 is thought to abolish its autophagic function in mammals; however, our findings unveil a distinctive plant autophagy mechanism whereby Beclin 1 activation necessitates MC1-mediated cleavage to drive antiviral autophagy.",
+      "journal": "Molecular plant",
+      "year": 2026,
+      "pub_date": "2026-01-05",
+      "authors": "Hu Rujian; Pi Qinglin; Yang Meng; Song Wen; Jiang Zhihao; ... (+5)",
+      "first_author": "Hu Rujian",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "大麦条纹花叶病毒 (barley stripe mosaic virus)",
+      "taxonomy": "",
+      "host_plant": "烟草 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41501243",
+      "doi": "10.1007/s00705-025-06491-3",
+      "title": "Molecular characterization of a novel partitivirus from quinoa (Chenopodium quinoa) in China.",
+      "abstract": "A novel partitivirus was detected in quinoa (Chenopodium quinoa) plants growing in China. The complete genome sequence of quinoa cryptic virus (QCV) was determined using a combination of next-generation sequencing, RT-PCR, and RACE. Phylogenetic analysis based on amino acid (aa) sequences of the RdRP revealed that QCV belongs to the genus Deltapartitivirus within the family Partitiviridae. The aa sequence identity values obtained when comparing RdRP and CP of QCV with those of the most closely related virus, pistacia cryptic virus, were significantly below the threshold for species demarcation within the genus (≤ 90% aa sequence identity for RdRP and ≤ 80% for CP), suggesting that QCV represents a new species.",
+      "journal": "Archives of virology",
+      "year": 2026,
+      "pub_date": "2026-01-07",
+      "authors": "Mao Wenqi; Lin Jiajia; Xu Zhongtian; Rui Penghuan; Fang Xinxin; ... (+5)",
+      "first_author": "Mao Wenqi",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "quinoa cryptic virus (QCV)",
+      "taxonomy": "Partitiviridae, Deltapartitivirus",
+      "host_plant": "Chenopodium quinoa (quinoa)",
+      "location": "China",
+      "results": "获得了QCV完整基因组序列，系统发育表明属于Deltapartitivirus，RdRP和CP序列相似性低于属内物种阈值，确认为新种。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41600848",
+      "doi": "10.3390/v18010084",
+      "title": "Genomic Organization of the Newly Discovered Cassava Congo Cheravirus Reveals a Unique Maf/HAM1 Motif in the C-Terminal Region of the RNA1 Polyprotein and Suggests the Presence of Two Protein Domains Upstream of the Putative Helicase Domain.",
+      "abstract": "Cassava (Manihot esculenta) is a staple crop in sub-Saharan Africa threatened by several viral diseases. Here, we describe the genome sequence of a novel bipartite cheravirus (family Secoviridae) infecting cassava in the Democratic Republic of Congo and Tanzania. We designate the new virus \"cassava Congo cheravirus\". Each RNA segment encodes a single polyprotein (P1 and P2 for RNA1 and RNA2, respectively), embedded with various putative cleavage sites (six and three in P1 and P2, respectively), consistent with members of the genus Cheravirus. We note two new features in the P1: (i) the presence of two domains, X1 and X2, upstream of the putative helicase region, which we also predict in other cheraviruses and (ii) the presence of a Maf/HAM1-like inosine triphosphatase (ITPase) domain, a rare motif among viruses only previously detected in three potyviruses and a torradovirus, all of which infect plants from the Euphorbia family. Phylogenetic analyses placed the virus firmly within the genus Cheravirus, with amino acid identities in the Pro-Pol and coat protein regions well below existing ICTV species thresholds, supporting its classification as a virus belonging to a new species in the Cheravirus genus. Spatially distinct isolates from Bas-Congo, South-Kivu, and Tanzania form three genetic clusters, with evidence of recombination in both RNA segments. These results expand the known diversity of cassava viruses and suggest possible adaptation to the cassava host via ITPase acquisition.",
+      "journal": "Viruses",
+      "year": 2026,
+      "pub_date": "2026-01-08",
+      "authors": "Kwibuka Yves Bisimwa; Winter Stephan; Bisimwa Espoir Basengere; Vasudevan Kumar; Sanfaçon Hélène; ... (+2)",
+      "first_author": "Kwibuka Yves Bisimwa",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "cassava Congo cheravirus (CCC)",
+      "taxonomy": "Secoviridae, Cheravirus",
+      "host_plant": "Manihot esculenta (cassava, 木薯)",
+      "location": "刚果民主共和国（Bas-Congo, South-Kivu）和坦桑尼亚",
+      "results": "P1多聚蛋白具有两个新结构域（X1, X2）和一个罕见的Maf/HAM1 ITPase基序；系统发育明确属于Cheravirus属且氨基酸同源性低于物种阈值；存在重组事件。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41492962",
+      "doi": "10.7554/eLife.88132",
+      "title": "Rice stripe virus utilizes a ",
+      "abstract": "Plant viruses typically rely on insect vectors for transmission between plants, with insect salivary proteins playing critical roles in this process. In this study, we demonstrate how Laodelphax striatellus salivary carbonic anhydrase (LssaCA) promotes rice stripe virus (RSV) infection in plants. We discovered that LssaCA directly binds to RSV nucleocapsid protein (NP) in insect salivary glands. This LssaCA-NP complex interacts with a rice thaumatin-like protein (OsTLP) that possesses endo-β-1,3-glucanase activity potentially degrading callose. Upon binding, the LssaCA-NP complex significantly enhances OsTLP enzymatic activity. We further clarify that both L. striatellus feeding and RSV infection induce callose deposition. The tripartite LssaCA-NP-OsTLP interaction enhances callose degradation, thereby facilitating RSV infection via its insect vector. This study provides new insights into complex virus-insect-plant tripartite interactions mediated by insect salivary proteins, with broad implications for numerous plant viruses transmitted by insect vectors.",
+      "journal": "eLife",
+      "year": 2026,
+      "pub_date": "2026-01-06",
+      "authors": "Zhao Jing; Meng Xiangyi; Yang Jie; Fang Rongxiang; Huo Yan; ... (+1)",
+      "first_author": "Zhao Jing",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Rice stripe virus (RSV)",
+      "taxonomy": "",
+      "host_plant": "水稻",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40865657",
+      "doi": "10.1016/j.jep.2025.120475",
+      "title": "A comprehensive review of the botany, traditional uses, phytochemistry, pharmacology, processing and quality evaluation of Bupleurum scorzonerifolium Willd.",
+      "abstract": "[ETHNOPHARMACOLOGICAL RELEVANCE] Bupleurum scorzonerifolium Willd. (commonly referred to as Nan Chai Hu in China, BS) is a widely cultivated herb in several Asian countries, including China, Russia, Mongolia, North Korea and Japan. For more than 2000 years, BS has been a cornerstone of traditional Chinese medicine (TCM). Historically, both the roots and aerial parts of BS have been extensively utilized to treat a variety of ailments, such as fever, liver disorders, inflammatory conditions, and emotional imbalances such as depression. To date, it remains a commonly used herbal medicine in clinical practice. [AIM OF THE REVIEW] This comprehensive review aims to provide an in-depth overview of the botany, traditional uses, phytochemistry, pharmacology, processing and quality evaluation of BS, thereby offering novel insights and robust scientific evidence to inform future research endeavors. [MATERIALS AND METHODS] Information on BS was systematically gathered from a wide range of sources, including TCM literature and electronic databases such as Web of Science, PubMed, Google Scholar, CNKI and Wanfang Data. [RESULTS] BS is an herb with a long-standing history of medicinal use. Phytochemical investigations have thus far identified approximately 289 compounds from this plant, including triterpenoid saponins, flavonoids, volatile oils, polysaccharides, lignans, polyacetylenes, and other constituents. Among these compounds, saikosaponins, a class of pentacyclic triterpenoid saponins, have garnered significant attention because of their diverse pharmacological activities and are currently a focal point of pharmacological research. Extensive pharmacological studies have confirmed the antidepressant, anti-inflammatory, antipyretic, analgesic, antitumor, antioxidant, hepatoprotective, lipid-lowering, antibacterial, antiviral and immunomodulatory properties of BS. Traditional processing methods have been shown to increase the therapeutic efficacy of its active components. Moreover, evaluating the quality of BS is of paramount importance to ensure the safe and effective use of this herbal medicine in clinical settings. [CONCLUSIONS] The chemical constituents of BS are highly diverse and exhibit a broad spectrum of biological activities. Modern pharmacological studies have provided compelling evidence supporting its traditional therapeutic effects, which include relieving the exterior and reducing fever, as well as soothing the liver and relieving depression. However, further in-depth investigations of the pharmacodynamic material basis, pharmacological mechanisms, development of a Q-marker-based quality evaluation system, optimization of cultivation techniques, and conservation of germplasm resources for BS are needed. Additionally, fundamental studies on and the utilization of BS aerial parts represent essential research directions. It is anticipated that BS will contribute more effectively to clinical practice in the future.",
+      "journal": "Journal of ethnopharmacology",
+      "year": 2026,
+      "pub_date": "2026-01-10",
+      "authors": "Zhu Yinghuan; Li Zehao; Wu Shuang; Zhang Tianlei; Zhao Shicheng; ... (+5)",
+      "first_author": "Zhu Yinghuan",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40876791",
+      "doi": "10.1016/j.jep.2025.120474",
+      "title": "The continuing need for taxonomic input in phytochemical research.",
+      "abstract": "[ETHNOPHARMACOLOGICAL RELEVANCE] Correct taxonomic identification and depositing voucher herbarium specimens in an internationally recognized herbarium institution listed in the Index Herbariorum (https://sweetgum.nybg.org/science/ih/), such as the John G. Searle Herbarium of the Field Museum of Natural History (code: F), Chicago, in our case, are considered critical components and a requirement in phytochemical work. These specimens are not only important as a basis for proper taxonomic identification and as a future reference, but can also decide the fate of a research project. Despite this, numerous aberrations have been observed in the literature over several decades resulting in inconsistencies in the use of the correct plant names in natural products research papers. These include botanical misidentification, the lack of the involvement of a taxonomist when botanical products are purchased, and the lack of documenting the research by depositing herbarium vouchers in a recognized herbarium institution prior to their phytochemical investigation. [AIM OF THE REVIEW] This short review attempts to point out the importance of a voucher herbarium specimen as the physical evidence of the correct taxonomic identification of the plant being studied, and the need to have voucher herbarium specimens of plants being investigated deposited in an internationally recognized herbarium institution, so that it may be retrieved whenever needed. [METHODS] In addition to pointing out common errors found in the use of the correct plant scientific names in natural products research papers, a rationale is presented on the importance of documenting the plant investigated by voucher herbarium specimens and the use of correct taxonomic identification in natural product research papers. [RESULTS] Whether in phytochemistry, food science, drug discovery or other relevant fields, correct botanical identification based on a voucher herbarium specimen is critical for successful research. Examples are presented on the practices of the two senior investigators of this review during their collaborative work for the past several decades, in following appropriate and correct taxonomic protocols in phytochemical research as part of the discovery of bioactive lead compounds as potential candidates for therapies against cancer and other diseases. One example is the case when voucher herbarium specimens dating back >60 years were used in identifying a species of Stevia as a source of the steviol glycoside class of sweeteners. Furthermore, the involvement of a taxonomic specialist in correcting the misidentification of the source plant of the potent rocaglate derivative, silvestrol (18), was shown to be of great value. This has led not only to the use of the correct name of the plant concerned but also enabled further work on the large-scale re-isolation and the more extensive biological testing of the prototype members of this class of antitumor and antiviral secondary metabolites.",
+      "journal": "Journal of ethnopharmacology",
+      "year": 2026,
+      "pub_date": "2026-01-10",
+      "authors": "Soejarto Djaja Djendoel; Addo Ermias Mekuria; Kinghorn A Douglas",
+      "first_author": "Soejarto Djaja Djendoel",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41235927",
+      "doi": "10.1128/spectrum.01155-25",
+      "title": "The application of ",
+      "abstract": "Microbial biofertilizers present a sustainable approach to enhancing agricultural productivity by reducing reliance on chemical inputs. A total of 193 bacterial strains were isolated from the soybean rhizosphere using culture-dependent methods and high-throughput sequencing. Genetic diversity analysis via IS-PCR fingerprinting identified 19 representative strains, followed by 16S rRNA sequencing that delineated Bacillus, Rhizobium, and Paenibacillus as dominant genera. We chose Rhizobium subbaraonis TY15 on the basis of its dominant position and plant growth-promoting rhizobacteria characteristics. Functional screening highlighted strains exhibiting phosphate and potassium solubilization, plant growth-promoting traits (e.g., auxin production and enzyme synthesis), and antagonistic activity against phytopathogens such as Fusarium oxysporum, Rhizoctonia solani, and Pseudomonas solanacearum. Notably, Rhizobium subbaraonis TY15 demonstrated dual benefits in promoting soybean growth and modulating rhizosphere microbial communities, significantly increasing the abundance of beneficial genera like Bacillus and Rhizobium. These findings underscore the potential of targeted microbial inoculants to improve crop resilience and nutrient efficiency, offering insights for developing sustainable biofertilizers through plant-microbe interaction optimization.IMPORTANCEPersistent challenges in soybean production demand sustainable solutions leveraging plant growth-promoting rhizobacteria. While biofertilizers enhance crop resilience, understanding how elite strains reconfigure rhizosphere microbiomes remains limited. Our study demonstrates that Rhizobium subbaraonis TY15 uniquely enriches beneficial genera (e.g., Bacillus and Rhizobium) while suppressing oligotrophic taxa, synergistically boosting nutrient mobilization and pathogen resistance-effects overlooked by conventional screening methods. By integrating culture-dependent isolation with high-throughput sequencing, we expose limitations of standard protocols in capturing strain-specific microbiome modulation. These insights establish a framework for precision microbial consortia design, advancing biofertilizer development to sustainably address global food security challenges.",
+      "journal": "Microbiology spectrum",
+      "year": 2026,
+      "pub_date": "2026-01-06",
+      "authors": "Huang Minqing; Afzal Muhammad; Liang Qihua; Chen Yihang; Tian Junling; ... (+2)",
+      "first_author": "Huang Minqing",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41403129",
+      "doi": "10.1016/j.molp.2025.12.011",
+      "title": "Integrating plant immune mechanisms, resistance gene discovery, and engineering strategies to improve crop disease resistance.",
+      "abstract": "",
+      "journal": "Molecular plant",
+      "year": 2026,
+      "pub_date": "2026-01-05",
+      "authors": "Ma Zhiming; Wang Lei; Fan Jing; Zhou Jian-Min",
+      "first_author": "Ma Zhiming",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41334917",
+      "doi": "10.1128/spectrum.01658-25",
+      "title": "A microbial safari: finding evidence of ",
+      "abstract": "[UNLABELLED] The primary pathogen causing animal tuberculosis (TB), Mycobacterium bovis, can infect a wide range of mammals, including humans. This pathogen is considered endemic in the Kruger National Park (KNP), South Africa, where it threatens the health and conservation of African wildlife, including endangered species. This mycobacterial pathogen is spread through close contact with an infected host by aerosols or ingestion but may also be transmitted indirectly through the environment. Detecting environmental M. bovis is challenging due to the complexity of the sample matrix and may require culture-independent techniques due to biosecurity restrictions associated with sample movement. In this study, DNA was extracted from soil near water sources in the KNP (n = 180) and screened for Mycobacterium tuberculosis complex (MTBC) DNA using the hsp65 polymerase chain reaction (PCR) followed by Sanger amplicon sequencing and the GeneXpert MTB/RIF Ultra (GXU) qPCR assay. The region of difference (RD)-PCR was used to confirm whether M. bovis DNA was present. Sanger hsp65 amplicon sequencing and GXU detected MTBC DNA in three and zero samples, respectively. Moreover, Sanger sequencing detected organisms belonging to the Mycobacterium genus in 44 samples and non-tuberculous Mycobacterium species in 21 samples. The RD-PCR confirmed M. bovis DNA presence in 2/3 MTBC-positive samples. The presence of M. bovis DNA in KNP soil suggests potential environmental contamination by shedding from infected animals. Further research is required to confirm the viability of MTBC and the role of environmental contamination in the TB epidemiology of this multi-host system. [IMPORTANCE] This article describes the first evidence that DNA from the bacterial pathogen, Mycobacterium bovis, which causes animal tuberculosis (TB) in wildlife, can be detected in soil from the Kruger National Park (KNP). Animal TB threatens wildlife conservation, including threatened and endangered species, in areas such as the KNP. Pathogenic Mycobacterium are spread primarily through direct contact with infected hosts. However, the presence of M. bovis DNA in KNP soil could indicate a role for the environment in disease transmission. This complements the growing evidence from European regions that M. bovis can be shed by infected animals into water, soil, or plant material and potentially infect animals in the surrounding environment. This indirect route of spread has implications for disease management strategies and warrants further scientific investigation. Moreover, the direct DNA-based detection techniques described in this study may provide a tool for detecting Mycobacterium pathogens using non-invasive sampling (sampling the environment rather than animals directly) when culturing is not possible.",
+      "journal": "Microbiology spectrum",
+      "year": 2026,
+      "pub_date": "2026-01-06",
+      "authors": "Matthews M C; Toorians M E M; Davies T J; Stewart R D; Goosen W J; ... (+1)",
+      "first_author": "Matthews M C",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41520358",
+      "doi": "10.1094/PDIS-05-25-1125-RE",
+      "title": "A new species of ",
+      "abstract": "Reynoutria japonica (Polygonaceae) is widely considered one of the most persistent and problematic non-native invasive weeds introduced to North America. Conventional methods to manage infestations are labor-intensive and often require annual monitoring and re-treatment. Biological control agents (BCAs) present an alternative management strategy. Currently, few organisms are effective for managing Re. japonica, presenting a need to discover additional candidate BCAs. Recently, leaf spots were observed on Re. japonica in two locations in the eastern United States, and the causal agent was investigated as a potential BCA. In this study, fungi isolated from symptomatic Re. japonica were identified as belonging to a previously undescribed species of Didymella based on DNA sequence homology, phylogenetic analysis, and morphological characteristics. The host range of related Didymella spp. includes other polygonaceous plants, notably cultivated Rheum rhabarbarum. Therefore, the pathogenicity of isolates representing this new fungal species was tested on seedlings of Re. japonica and Rh. rhabarbarum 'Victoria'. The novel species was capable of infecting both Re. japonica and Rh. rhabarbarum under artificial conditions. An isolate of D. rhei (Ellis & Everh.) Qian Chen & L. Cai, a close relative and known pathogen of Rh. rhabarbarum, was included in pathogenicity tests but failed to cause disease on Re. japonica. The pathogen from Re. japonica was described as D. polygonacearum sp. nov. This study suggests D. polygonacaeum is a poor candidate for biological control use and that Re. japonica may harbor crop pathogenic microbes.",
+      "journal": "Plant disease",
+      "year": 2026,
+      "pub_date": "2026-01-11",
+      "authors": "Indermaur Elizabeth J; Fulcher Michael Robert; Szarka Desiree; Johnson Alexandra; Tewksbury Lisa; ... (+2)",
+      "first_author": "Indermaur Elizabeth J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

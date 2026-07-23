@@ -1,0 +1,233 @@
+{
+  "month": "1997-04",
+  "generated": "2026-07-13 02:59:42",
+  "total": 10,
+  "by_category": {
+    "Host_Virus_Interactions": 4,
+    "New_Virus": 3,
+    "Antiviral_Resistance_Genes": 3
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "18945119",
+      "doi": "10.1094/PHYTO.1997.87.4.404",
+      "title": "Purification and properties of a new virus from black currant, its affinities with nepoviruses, and its close association with black currant reversion disease.",
+      "abstract": "ABSTRACT Black currant reversion is a virus-like disease whose causal agent has not been identified. In rooted cuttings of a black currant plant affected with the severe form of the disease, pronounced chlorotic line patterns and ringspots developed in newly emerging leaves. From such symptom-bearing leaves, a virus was mechanically transmitted with difficulty to Chenopodium quinoa and, from this host, to other herbaceous test plants. The virus was purified and partially characterized, and the purified viri-ons were used for antiserum production. Virus particles were isometric, approximately 27 nm in diameter, and sedimented as two nucleoprotein components. They contained a protein species with a molecular mass of 55 kDa, which was readily degraded into a 54-kDa protein and two major RNA components of about 6,700 and 7,700 nucleotides (nt), each with a poly(A) tail. Most of these properties are shared by nepoviruses, but the virus was serologically unrelated to 14 nepoviruses or putative nepovi-ruses tested. However, the deduced sequence of 1,260 nt at the 3' end of one of the viral RNA species was distinct from any known viral sequence, except that it contained short regions of homology to the 3' terminal sequences of RNAs of seven other nepoviruses and two comovi-ruses. To detect this virus in Ribes plants, primers were designed from the known sequence to amplify a 210-nt region of the cDNA of the virus RNA using an immunocapture reverse transcriptase polymerase chain reaction (IC-RT-PCR) protocol. Using this assay for the virus, we associated its presence with two recognized forms of black currant reversion disease occurring in Finland, Scotland, or New Zealand. We also detected the virus in vector gall mites from reverted plants and in black currant plants on which such vector mites had fed. However, the virus was not detected by IC-RT-PCR in known healthy Ribes plants; in Ribes plants free from reversion, but affected by three other distinct virus-like diseases of Ribes; or in plants infected with arabis mosaic, strawberry latent ringspot, or raspberry ringspot nepoviruses. These data suggest that this virus may be the causal agent of reversion disease, and it is tentatively called black currant reversion associated virus.",
+      "journal": "Phytopathology",
+      "year": 1997,
+      "pub_date": "1997-04-01",
+      "authors": "Lemmetty A; Latvala S; Jones A T; Susi P; McGavin W J; ... (+1)",
+      "first_author": "Lemmetty A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "黑加仑退化相关病毒 (black currant reversion associated virus)",
+      "taxonomy": "推测为Nepovirus属（Secoviridae科）",
+      "host_plant": "黑加仑 (Ribes)、藜麦 (Chenopodium quinoa) 及其他草本试验植物",
+      "location": "芬兰、苏格兰、新西兰",
+      "results": "病毒颗粒等径约27nm，含两个RNA（6.7kb和7.7kb），55kDa衣壳蛋白，3'端1260nt序列与多种nepoviruses有同源区；IC-RT-PCR在病株和瘿螨中检出，健康植株无检出。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9108070",
+      "doi": "10.1073/pnas.94.8.3866",
+      "title": "C-terminal deletion mutant of pokeweed antiviral protein inhibits viral infection but does not depurinate host ribosomes.",
+      "abstract": "Pokeweed antiviral protein (PAP), a 29-kDa protein isolated from Phytolacca americana, inhibits translation by catalytically removing a specific adenine residue from the large rRNA of the 60S subunit of eukaryotic ribosomes. In addition to its ribosome-inactivating ability, PAP has potent antiviral activity against many plant and animal viruses, including HIV. We recently described the isolation and characterization of nontoxic PAP mutants, NT123-2, which has a point mutation (E176V) in the active site that abolishes enzymatic activity, and NT124-3, which has a nonsense mutation that results in deletion of the C-terminal 25 aa (W237Stop). In vitro translation of rabbit reticulocyte lysate ribosomes was inhibited by the C-terminal deletion mutant, but not by the active site mutant. We expressed both mutants in transgenic tobacco and showed that, unlike PAP or variant PAP, neither mutant is toxic to transgenic plants. In vivo depurination of rRNA was detected in transgenic tobacco expressing variant PAP, but not in transgenic plants expressing either the active site mutant or the C-terminal deletion mutant PAP. When extracts from transgenic plants containing the mutant PAPs were exogenously applied to tobacco leaves in the presence of potato virus X (PVX), the C-terminal deletion mutant had antiviral activity, while the active site mutant had no antiviral activity. Furthermore, transgenic plants expressing low levels of the C-terminal deletion mutant showed resistance to PVX infection, while transgenic plants expressing very high levels of the active site mutant PAP were not resistant to PVX. Our results demonstrate that an intact active site of PAP is necessary for antiviral activity, toxicity, and in vivo depurination of tobacco ribosomes. However, an intact active site is not sufficient for all these activities. An intact C terminus is also required for toxicity and depurination of tobacco ribosomes in vivo, but not for antiviral activity, suggesting that antiviral activity of PAP can be dissociated from its toxicity.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1997,
+      "pub_date": "1997-04-15",
+      "authors": "Tumer N E; Hwang D J; Bonness M",
+      "first_author": "Tumer N E",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "potato virus X (PVX)",
+      "taxonomy": "",
+      "host_plant": "烟草",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9103627",
+      "doi": "10.1099/00207713-47-2-394",
+      "title": "Xanthobacter tagetidis sp. nov., an organism associated with Tagetes species and able to grow on substituted thiophenes.",
+      "abstract": "Members of the marigold genus of flowering plants (the genus Tagetes), which synthesize and accumulate thiophene compounds in their roots, were investigated as potential sources of bacteria able to degrade substituted thiophenes. Batch and continuous enrichment cultures inoculated with compost from root balls of Tagetes patula and Tagetes erecta reproducibly produced the same predominant type of bacterium when they were supplied with thiophene-2-carboxylate (T2C) or thiophene-2-acetate (T2A) as a carbon and energy substrate. This organism was a yellow-pigmented, neutrophilic, mesophilic, gram-negative, pleomorphic, rodshaped bacterium, which we classify as a new species of the genus Xanthobacter, Xanthobacter tagetidis; strain TagT2C (= DSM 11105) is the type strain. Strain TagT2CT (T = type strain) grew on simple thiophenes, such as T2C, thiophene-3-carboxylate, and T2A, on analogs of these compounds (pyrrole-2-carboxylate and furan-2-carboxylate), and on the condensed thiophene dibenzothiophene. X. tagetidis was facultatively autotrophic, fixing carbon dioxide by means of ribulose bisphosphate carboxylase, and was able to grow on hydrogen, thiosulfate, or sulfide as an energy substrate. It also grew on a wide range of other heterotrophic, chemolithotrophic, and methylotrophic substrates. Its growth on T2C was optimal at 28 to 31 degrees C and pH 7.6 to 7.8, and the maximum growth rate in batch culture was 0.22 h-1. The DNA base composition of X.tagetidis is 68 mol% G + C. A 16S ribosomal DNA sequence analysis of strain TagT2CT showed that this organism represents a distinct lineage within the Aquabacter-Azorhizobium-Xanthobacter cluster of the alpha-2 subclass of the Pro-teobacteria. Discrimination of X. tagetidis from the other genera in this group and from other Xanthobacter species is discussed.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1997,
+      "pub_date": "1997-04-01",
+      "authors": "Padden A N; Rainey F A; Kelly D P; Wood A P",
+      "first_author": "Padden A N",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9103618",
+      "doi": "10.1099/00207713-47-2-336",
+      "title": "Candida aquaetextoris sp. nov., a new species of yeast occurring in sludge from a textile industry wastewater treatment plant in Tuscany, Italy.",
+      "abstract": "We describe Candida aquaetextoris, a new yeast species isolated from sludge that accumulates at the main wastewater treatment facility which processes discharges from textile factories located in the Prato metropolitan district, northern Tuscany, Italy. This yeast degrades 4-(1-nonyl)phenol, a toxic intermediate originating from the microbial attack of nonylphenol polyethoxylates, which are nonionic surfactants largely used in leather and textile industries. In the investigation we employed conventional and molecular taxonomy techniques to compare the new isolate to strains of physiologically similar species, such as Candida maltosa and Candida tropicalis, as well as strains of quite phenotypically different species, such as Candida haemulonii. The results demonstrate that the yeast which we identified represents a separate taxon. The type strain of C. aquaetextoris is strain Lmar1, which has been deposited in the Industrial Yeast Collection of the Division of Applied Microbiology, Department of Plant Biology, University of Perugia, Perugia, Italy, as strain DBVPG 6732.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1997,
+      "pub_date": "1997-04-01",
+      "authors": "Vallini G; Frassinetti S; Scorzetti G",
+      "first_author": "Vallini G",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12223676",
+      "doi": "10.1104/pp.113.4.1319",
+      "title": "Identification of a Soluble, High-Affinity Salicylic Acid-Binding Protein in Tobacco.",
+      "abstract": "Salicylic acid (SA) is a key component in the signal transduction pathway(s), leading to the activation of certain defense responses in plants after pathogen attack. Previous studies have identified several proteins, including catalase and ascorbate peroxidase, through which the SA signal might act. Here we describe a new SA-binding protein. This soluble protein is present in low abundance in tobacco (Nicotiana tabacum) leaves and has an apparent molecular weight of approximately 25,000. It reversibly binds SA with an apparent dissociation constant of 90 nM, an affinity that is 150-fold higher than that between SA and catalase. The ability of most analogs of SA to compete with labeled SA for binding to this protein correlated with their ability to induce defense gene expression and enhanced resistance. Strikingly, benzothiadiazole, a recently described chemical activator that induces plant defenses and disease resistance at very low rates of application, was the strongest competitor, being much more effective than unlabeled SA. The possible role of this SA-binding protein in defense signal transduction is discussed.",
+      "journal": "Plant physiology",
+      "year": 1997,
+      "pub_date": "1997-04-01",
+      "authors": "Du H.; Klessig D. F.",
+      "first_author": "Du H.",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9079730",
+      "doi": "10.1016/s0958-1669(97)80104-8",
+      "title": "Genetic engineering for fungal and bacterial diseases.",
+      "abstract": "Significant new advances at the molecular level in the field of plant-pathogen interactions form the basis for novel transgenic approaches to crop protection. The cloning of disease resistance genes and the dissection of the signal transduction components of the hypersensitive response and systemic acquired resistance pathways have greatly increased the diversity of options available for transgenic disease resistance. These new approaches will supplement our rapidly increasing repertoire of antimicrobial peptides, defense-related proteins and antimicrobial compounds. The combinatorial deployment of these strategies will be exploited for engineering effective and durable resistance to pathogens in the field. The integration of transgenic approaches with classical resistance breeding offers a potentially chemical-free and environmentally friendly solution for controlling pathogens.",
+      "journal": "Current opinion in biotechnology",
+      "year": 1997,
+      "pub_date": "1997-04-01",
+      "authors": "Shah DM",
+      "first_author": "Shah DM",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18464819",
+      "doi": "10.1139/g97-028",
+      "title": "Characterization by RFLP analysis and genomic in situ hybridization of a recombinant and a monosomic substitution plant derived from Hordeum vulgare L. x Hordeum bulbosum L. crosses.",
+      "abstract": "Interspecific crosses in Hordeum have been made with the aim of transferring desirable traits, such as disease resistance, from a wild species, Hordeum bulbosum, into cultivated barley (Hordeum vulgare). Interspecific recombinants have previously been identified using several methods, but there are limitations with all the techniques. We improved our ability to characterize progeny from H. vulgare x H. bulbosum crosses by using genomic in situ hybridization (GISH). The plant material comprised a recombinant and a monosomic alien substitution plant derived from H. vulgare x H. bulbosum crosses. The recombinant possesses a pubescent leaf sheath conferred by a gene transferred from H. bulbosum into barley cultivar Golden Promise. The use of GISH on a plant homozygous for the pubescence gene confirmed the presence of H. bulbosum DNA located distally on two barley chromosomes and we mapped the introgression to barley chromosome 4HL using RFLP analysis. Furthermore, by means of an allelism test we found that the transferred gene for pubescence is allelic or closely linked to a gene for pubescence (Hs) located on barley chromosome 4HL. The presence of a single H. bulbosum chromosome in the monosomic substitution plant was confirmed by GISH. A distal introgression of H. bulbosum DNA was also observed on one barley chromosome, which was located on chromosome 3HL by RFLP analysis.",
+      "journal": "Genome",
+      "year": 1997,
+      "pub_date": "1997-04-01",
+      "authors": "Pickering R A; Hill A M; Kynast R G",
+      "first_author": "Pickering R A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9144960",
+      "doi": "10.1105/tpc.9.4.521",
+      "title": "The I2C family from the wilt disease resistance locus I2 belongs to the nucleotide binding, leucine-rich repeat superfamily of plant resistance genes.",
+      "abstract": "Characterization of plant resistance genes is an important step in understanding plant defense mechanisms. Fusarium oxysporum f sp lycopersici is the causal agent of a vascular wilt disease in tomato. Genes conferring resistance to plant vascular diseases have yet to be described molecularly. Members of a new multigene family, complex I2C, were isolated by map-based cloning from the I2 F. o. lycopersici race 2 resistance locus. The genes show structural similarity to the group of recently isolated resistance genes that contain a nucleotide binding motif and leucine-rich repeats. Importantly, the presence of I2C antisense transgenes abrogated race 2 but not race 1 resistance in otherwise normal plants. Expression of the complete sense I2C-1 transgene conferred significant but partial resistance to F. o. lycopersici race 2. All members of the I2C gene family have been mapped genetically and are dispersed on three different chromosomes. Some of the I2C members cosegregate with other tomato resistance loci. Comparison within the leucine-rich repeat region of I2C gene family members shows that they differ from each other mainly by insertions or deletions.",
+      "journal": "The Plant cell",
+      "year": 1997,
+      "pub_date": "1997-04-01",
+      "authors": "Ori N; Eshed Y; Paran I; Presting G; Aviv D; ... (+3)",
+      "first_author": "Ori N",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9244565",
+      "doi": "",
+      "title": "[Prunella vulgaris L.--a rediscovered medicinal plant].",
+      "abstract": "In the past, the self-heal (Prunella vulgaris L.) was primarily used as a remedy alleviating pains in the throat, fevers and accelerating wound healing. A high content of rosmarinic acid, immunomodulation effects of the polysaccharide prunelline and antiviral activity of some constituents make the plant interesting from the viewpoint of therapeutical applications. The paper summarizes the contemporary phytochemical knowledge about the self-heal and the results of pharmacological studies of the extracts and pure substances from this plant.",
+      "journal": "Ceska a Slovenska farmacie : casopis Ceske farmaceuticke spolecnosti a Slovenske farmaceuticke spolecnosti",
+      "year": 1997,
+      "pub_date": "1997-04-01",
+      "authors": "Marková H; Sousek J; Ulrichová J",
+      "first_author": "Marková H",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9107574",
+      "doi": "10.1038/icb.1997.27",
+      "title": "Plant immunomodulators for termination of unwanted pregnancy and for contraception and reproductive health.",
+      "abstract": "Neem (Azadirachta indica) seed and leaf extracts have spermicidal, anti-microbial, anti-fungal and anti-viral properties. They are also immunomodulators that induce primarily a TH1 type response. These properties are being exploited to develop two different useful methods of fertility control. Neem extracts given orally at early post-implantation stage terminate pregnancy in rodents and primates. Treatment has no residual permanent effect and fertility is regained in subsequent cycles. The mechanism by which the action occurs is not fully clear. A transient increase in CD4 and more significantly in CD8 cells is noticed in mesenteric lymph nodes and spleen. A rise in immunoreactive and bioactive TNF-alpha and IFN-gamma in draining lymph nodes, serum and foetal-placental tissue is observed. A polyherbal cream and pessary have been developed containing three active ingredients of plant origin. These have synergistic spermicidal properties on human sperm as determined by the Sander Cramer test. Their use before mating has high contraceptive efficacy in rabbits and baboons. Another interesting property is their inhibitory action on a wide spectrum of micro-organisms, including Candida albicans, C. tropicalis, Neisseria gonorrhoeae, the multidrug-resistant Staphylococcus aureus and urinary tract Escherichia coli, Herpes simplex-2 and HIV-1. Phase I clinical trials have been completed in India, Egypt and the Dominican Republic, and indicate the safety of the formulation, its acceptability and beneficial action invaginosis due to infections.",
+      "journal": "Immunology and cell biology",
+      "year": 1997,
+      "pub_date": "1997-04-01",
+      "authors": "Talwar G P; Raghuvanshi P; Misra R; Mukherjee S; Shah S",
+      "first_author": "Talwar G P",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

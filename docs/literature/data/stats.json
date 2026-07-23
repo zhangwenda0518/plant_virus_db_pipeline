@@ -1,153 +1,216 @@
 {
-  "total": 3362,
+  "total": 6525,
   "by_year": {
-    "2022": 1,
-    "2023": 5,
-    "2024": 1242,
-    "2025": 1340,
-    "2026": 774
+    "1941": 1,
+    "1946": 1,
+    "1949": 1,
+    "1950": 1,
+    "1954": 1,
+    "1959": 2,
+    "1963": 2,
+    "1964": 3,
+    "1965": 2,
+    "1967": 2,
+    "1968": 1,
+    "1969": 1,
+    "1972": 1,
+    "1973": 1,
+    "1974": 1,
+    "1977": 4,
+    "1978": 2,
+    "1979": 1,
+    "1980": 3,
+    "1981": 6,
+    "1982": 8,
+    "1983": 4,
+    "1984": 1,
+    "1985": 4,
+    "1986": 7,
+    "1987": 10,
+    "1988": 10,
+    "1989": 7,
+    "1990": 16,
+    "1991": 20,
+    "1992": 15,
+    "1993": 24,
+    "1994": 16,
+    "1995": 26,
+    "1996": 31,
+    "1997": 28,
+    "1998": 30,
+    "1999": 41,
+    "2000": 70,
+    "2001": 89,
+    "2002": 67,
+    "2003": 70,
+    "2004": 109,
+    "2005": 114,
+    "2006": 103,
+    "2007": 145,
+    "2008": 172,
+    "2009": 169,
+    "2010": 206,
+    "2011": 184,
+    "2012": 220,
+    "2013": 261,
+    "2014": 307,
+    "2015": 242,
+    "2016": 213,
+    "2017": 288,
+    "2018": 269,
+    "2019": 274,
+    "2020": 371,
+    "2021": 368,
+    "2022": 398,
+    "2023": 367,
+    "2024": 358,
+    "2025": 447,
+    "2026": 308
   },
   "by_category": {
-    "New_Virus": 1135,
-    "General": 698,
-    "Potyviridae": 398,
-    "Gemini_Begomo": 361,
-    "Tobamo_Virga": 348,
-    "Rhabdo_Reo_Fiji_Tenu": 283,
-    "Seco_Bromo_Tombus": 234,
-    "Tospo_Bunya": 138,
-    "Luteo_Solemo": 126,
-    "Clostero_Beta": 97,
-    "Endorna_Parti_Amalga": 83,
-    "Viroid": 62,
-    "Transmission_Epi": 46,
-    "Caulimo_Badna_Tungro": 39,
-    "Methods_Resistance": 17,
-    "Nanoviridae": 16,
-    "Methods_Omics": 5
+    "New_Virus": 1809,
+    "Antiviral_Resistance_Genes": 1809,
+    "Host_Virus_Interactions": 1142,
+    "Molecular_Characterization": 920,
+    "Biotechnology_Applications": 862,
+    "Transmission_Epidemiology": 843,
+    "Control_Management": 766,
+    "Detection_Methods": 546,
+    "Viral_Diversity_Ecology": 346,
+    "General": 107,
+    "Potyviridae": 66,
+    "Tobamo_Virga": 43,
+    "Gemini_Begomo": 31,
+    "Solemoviridae": 27,
+    "Closteroviridae": 24,
+    "Tombusviridae": 24,
+    "Caulimoviridae": 22,
+    "Seco_Bromo_Tombus": 21,
+    "Betaflexiviridae": 20,
+    "Rhabdoviridae": 17
   },
   "top_journals": [
     [
-      "Viruses",
-      169
-    ],
-    [
-      "Zootaxa",
-      151
+      "Plant disease",
+      822
     ],
     [
       "Archives of virology",
-      136
+      567
     ],
     [
-      "Plants (Basel, Switzerland)",
-      108
-    ],
-    [
-      "Plant disease",
-      104
-    ],
-    [
-      "MycoKeys",
-      96
-    ],
-    [
-      "Scientific reports",
-      75
-    ],
-    [
-      "PhytoKeys",
-      75
-    ],
-    [
-      "Frontiers in plant science",
-      73
+      "Viruses",
+      264
     ],
     [
       "Virology",
-      65
-    ],
-    [
-      "Frontiers in microbiology",
-      65
-    ],
-    [
-      "Pest management science",
-      62
-    ],
-    [
-      "Methods in molecular biology (Clifton, N.J.)",
-      59
-    ],
-    [
-      "Molecular plant pathology",
-      55
-    ],
-    [
-      "Journal of agricultural and food chemistry",
-      46
-    ],
-    [
-      "International journal of molecular sciences",
-      44
-    ],
-    [
-      "Phytopathology",
-      41
-    ],
-    [
-      "PloS one",
-      40
-    ],
-    [
-      "BMC plant biology",
-      38
-    ],
-    [
-      "Journal of fungi (Basel, Switzerland)",
-      36
-    ],
-    [
-      "PLoS pathogens",
-      34
-    ],
-    [
-      "International journal of systematic and evolutionary microbiology",
-      34
-    ],
-    [
-      "The Journal of general virology",
-      32
-    ],
-    [
-      "Insects",
-      31
-    ],
-    [
-      "Plant biotechnology journal",
-      29
-    ],
-    [
-      "The New phytologist",
-      27
-    ],
-    [
-      "Virology journal",
-      27
-    ],
-    [
-      "ZooKeys",
-      27
-    ],
-    [
-      "Pathogens (Basel, Switzerland)",
-      25
+      171
     ],
     [
       "Virus research",
-      25
+      161
+    ],
+    [
+      "Journal of virology",
+      160
+    ],
+    [
+      "Frontiers in plant science",
+      155
+    ],
+    [
+      "Molecular plant pathology",
+      153
+    ],
+    [
+      "PloS one",
+      139
+    ],
+    [
+      "Frontiers in microbiology",
+      133
+    ],
+    [
+      "The Journal of general virology",
+      122
+    ],
+    [
+      "Phytopathology",
+      118
+    ],
+    [
+      "Journal of virological methods",
+      118
+    ],
+    [
+      "Plants (Basel, Switzerland)",
+      115
+    ],
+    [
+      "Scientific reports",
+      115
+    ],
+    [
+      "Methods in molecular biology (Clifton, N.J.)",
+      111
+    ],
+    [
+      "Molecular plant-microbe interactions : MPMI",
+      110
+    ],
+    [
+      "Virus genes",
+      97
+    ],
+    [
+      "Journal of agricultural and food chemistry",
+      96
+    ],
+    [
+      "PLoS pathogens",
+      88
+    ],
+    [
+      "International journal of molecular sciences",
+      88
+    ],
+    [
+      "Virology journal",
+      77
+    ],
+    [
+      "Pest management science",
+      75
+    ],
+    [
+      "Proceedings of the National Academy of Sciences of the United States of America",
+      75
+    ],
+    [
+      "The Plant journal : for cell and molecular biology",
+      72
+    ],
+    [
+      "Plant physiology",
+      71
+    ],
+    [
+      "Plant biotechnology journal",
+      70
+    ],
+    [
+      "BMC plant biology",
+      55
+    ],
+    [
+      "The New phytologist",
+      52
+    ],
+    [
+      "The Plant cell",
+      47
     ]
   ],
-  "ai_summarized": 50,
-  "last_updated": "2026-07-09 16:46:52"
+  "ai_summarized": 6525,
+  "last_updated": "2026-07-13 01:49:35"
 }

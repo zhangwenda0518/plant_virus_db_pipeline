@@ -1,0 +1,78 @@
+{
+  "month": "1985-08",
+  "generated": "2026-07-13 02:59:42",
+  "total": 3,
+  "by_category": {
+    "Detection_Methods": 2,
+    "New_Virus": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "4055975",
+      "doi": "10.1016/0166-0934(85)90024-2",
+      "title": "Plant virus detection using a new form of indirect ELISA.",
+      "abstract": "A novel form of indirect enzyme-linked immunosorbent assay (ELISA) has been devised for the detection of viruses in plants. The method uses protein A in two applications to sandwich antibody-antigen-antibody layers. The first applied layer of protein A prepares the plate for the coating antibody layer. The second layer of protein A is conjugated to the enzyme and detects the second antibody layer. The orientation of the IgG induced in the coating layer of antibody prevents later unwanted reaction with the conjugated protein A. Using seven antisera, protein A sandwich ELISA (PAS-ELISA) detected homologous virus isolates in standard dilutions of infected plant homogenates at A405 values which were at least one absorbance unit greater than those of healthy controls. The PAS-ELISA method was more sensitive than the direct double antibody sandwich form of ELISA (DAS-ELISA), e.g. not only were A405 values for homologous reactions greater in PAS-ELISA but also an antiserum to a birch isolate of cherry leaf roll virus detected four related isolates with the new method against only one with DAS-ELISA. However, dilution end points for the homologous virus were about the same in both methods. In a practical application, PAS-ELISA detected prune dwarf virus in 18-36% of tested Prunus avium seeds.",
+      "journal": "Journal of virological methods",
+      "year": 1985,
+      "pub_date": "1985-08-01",
+      "authors": "Edwards M L; Cooper J I",
+      "first_author": "Edwards M L",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "多种植物病毒（cherry leaf roll virus, prune dwarf virus等）",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "4051480",
+      "doi": "10.1128/aem.50.2.212-219.1985",
+      "title": "Treponema saccharophilum sp. nov., a large pectinolytic spirochete from the bovine rumen.",
+      "abstract": "A large, obligately anaerobic spirochete (strain PB) was isolated from bovine rumen fluid by a procedure involving rifampin as a selective agent. The helical cells measured 0.6 to 0.7 micron by 12 to 20 micron and possessed approximately 16 periplasmic flagella inserted near each end of the protoplasmic cylinder. The periplasmic flagella were arranged in a bundle wound around the cell body. Strain PB utilized as fermentable substrates various plant polysaccharides (e.g., pectin, arabinogalactan, starch, and inulin) as well as pentoses, hexoses, disaccharides, and uronic acids. Glucose was fermented to acetate, formate, and ethanol, whereas the fermentation of pectin or glucuronic acid yielded only acetate and formate as major end products. Determinations of radioactivity in end products and assays of enzymatic activities indicated that strain PB catabolized glucose via the Embden-Meyerhof pathway. Extracts of cells grown in pectin-containing media possessed relatively high levels of phospho-2-keto-3-deoxygluconate aldolase activity, an enzymatic activity typical of the Entner-Doudoroff pathway. The guanine-plus-cytosine content of the DNA of strain PB (54 mol%) was considerably higher than that of known host-associated anaerobic spirochetes. This study indicates that strain PB represents a new species of Treponema, for which we propose the name Treponema saccharophilum.",
+      "journal": "Applied and environmental microbiology",
+      "year": 1985,
+      "pub_date": "1985-08-01",
+      "authors": "Paster B J; Canale-Parola E",
+      "first_author": "Paster B J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "4055976",
+      "doi": "10.1016/0166-0934(85)90027-8",
+      "title": "An evaluation of some factors important for maximising sensitivity of plant virus detection by immuno-electron microscopy.",
+      "abstract": "We report the results of a comparison of the variations to the basic technique developed by Derrick and called 'serologically specific electron microscopy' by him. We have found that the reaction time of the antibody-coated grid with the virus preparation (virus acquisition time) is one of the key factors in determining the efficiency of the method at trapping virus particles. The lower the virus concentration, the longer the reaction time should be. The use of protein A to pretreat the grids before coating with antiserum did not appear to be of benefit under our conditions.",
+      "journal": "Journal of virological methods",
+      "year": 1985,
+      "pub_date": "1985-08-01",
+      "authors": "Pares R D; Whitecross M I",
+      "first_author": "Pares R D",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

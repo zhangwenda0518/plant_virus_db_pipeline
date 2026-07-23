@@ -1,0 +1,242 @@
+{
+  "week": "2025-W04",
+  "start": "2025-01-20",
+  "end": "2025-01-26",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 35,
+  "by_category": {
+    "Host_Virus_Interactions": 14,
+    "Antiviral_Resistance_Genes": 7,
+    "New_Virus": 6,
+    "Control_Management": 5,
+    "Biotechnology_Applications": 5,
+    "Transmission_Epidemiology": 2,
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "39727156",
+      "doi": "10.1093/nar/gkae1278",
+      "title": "Diversity and evolution of viroids and viroid-like agents with circular RNA genomes revealed by metatranscriptome mining.",
+      "abstract": "Viroids, the agents of several plant diseases, are the smallest and simplest known replicators that consist of covalently closed circular (ccc) RNA molecules between 200 and 400 nucleotides in size. Viroids encode no proteins and rely on host RNA polymerases for replication, but some contain ribozymes involved in replication intermediate processing. Although other viroid-like agents with cccRNAs genomes, such as satellite RNAs, ribozyviruses and retrozymes, have been discovered, until recently, the spread of these agents in the biosphere appeared narrow, and their actual diversity and evolution remained poorly understood. Extensive, targeted metatranscriptome mining dramatically expanded the known diversity of cccRNAs genomes. These searches identified numerous, diverse viroid-like cccRNAs, many found in environments devoid of plant and animal material, suggesting replication in unicellular eukaryotic and/or prokaryotic hosts. Several cccRNAs are targeted by CRISPR systems, supporting their association with bacteria. In addition to small cccRNAs in the viroid size range, a broad variety of ribozyviruses and novel viruses with cccRNAs genomes, with genomes reaching nearly 5 kilobases, were discovered. Thus, metatranscriptome mining shows that the diversity of viroid-like cccRNAs genomes is far greater than previously suspected, prompting reassessment of the relevance of these replicators for understanding the primordial RNA world.",
+      "journal": "Nucleic acids research",
+      "year": 2025,
+      "pub_date": "2025-01-24",
+      "authors": "Koonin Eugene V; Lee Benjamin D",
+      "first_author": "Koonin Eugene V",
+      "categories": [
+        "Detection_Methods",
+        "New_Virus"
+      ],
+      "virus_name": "多种类病毒和类病毒样因子（含卫星RNA、核酶病毒、逆转酶等）",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39861649",
+      "doi": "10.3390/plants14020295",
+      "title": "Global Transcriptomic Analysis of Inbred Lines Reveal Candidate Genes for Response to Maize Lethal Necrosis.",
+      "abstract": "Maize lethal necrosis (MLN) is a significant threat to food security in Sub-Saharan Africa (SSA), with limited commercial inbred lines displaying tolerance. This study analyzed the transcriptomes of four commercially used maize inbred lines and a non-adapted inbred line, all with varying response levels to MLN. RNA-Seq revealed differentially expressed genes in response to infection by maize chlorotic mottle virus (MCMV) and sugarcane mosaic virus (SCMV), the causative agents of MLN. Key findings included the identification of components of the plant innate immune system, such as differentially regulated R genes (mainly LRRs), and activation/deactivation of virus resistance pathways, including RNA interference (RNAi) via Argonaute (AGO), Dicer-like proteins, and the ubiquitin-proteasome system (UPS) via RING/U-box and ubiquitin ligases. Genes associated with redox signaling, WRKY transcription factors, and cell modification were also differentially expressed. Additionally, the expression of translation initiation and elongation factors, eIF4E and eIF4G, correlated with the presence of MLN viruses. These findings provide valuable insights into the molecular mechanisms of MLN resistance and highlight potential gene candidates for engineering or selecting MLN-resistant maize germplasm for SSA.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-01-20",
+      "authors": "Murithi Ann; Panangipalli Gayathri; Wen Zhengyu; Olsen Michael S; Lübberstedt Thomas; ... (+2)",
+      "first_author": "Murithi Ann",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Maize chlorotic mottle virus (MCMV) and Sugarcane mosaic virus (SCMV)",
+      "taxonomy": "",
+      "host_plant": "玉米 (maize)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40004449",
+      "doi": "10.3390/genes16020121",
+      "title": "Genome-Wide Identification and Characterization of the ",
+      "abstract": "Background: Pirins are nuclear cupin proteins, one of several gene families within the plant cupin superfamily. However, the identification and functional analysis of Pirin proteins in Nicotiana benthamiana have not been explored. Methods: In this study, genome-wide analysis identifying NbPirin genes in N. benthamiana was conducted, as was phylogenetic analysis of Pirin genes in four Solanaceae species (including Capsicum annuum, Solanum lycopersicum, Solanum tuberosum, and N. benthamiana). In addition, we also evaluated the expression pattern of NbPirins under abiotic stress (temperature and phytohormones) and biotic stress (TMV, TuMV, and PVX). Results: A total of six Nbpirin genes were identified, which can be divided into three clades, and NbPirins also embraced a variety of abiotic or biotic cis-acting elements. The results showed that the expression of NbPirin1-6 was influenced by temperature variations, of which NbPirin6 was significantly upregulated at high temperatures (42 °C) but downregulated at low temperatures (4 °C). Notably, the expression of NbPirin6 exhibited a consistent decrease under ABA and MeJA treatments. Moreover, the expression of NbPirin1-6 was also affected by TMV, TuMV, and PVX infection. NbPirin1, NbPirin2, NbPirin3, and NbPirin5 showed higher expression levels under different viral infections compared to non-infection. Interestingly, NbPirin3 showed the highest expression level during TuMV infection (approximately a 20-fold increase compared to non-infection). Conclusions: Our study proposes the potential role of NbPirin6 in plant responses to abiotic stress, and the role of NbPirin3 in plant antiviral defense, and further lays the groundwork for future research on the functions of NbPirin proteins in responses to various stressors.",
+      "journal": "Genes",
+      "year": 2025,
+      "pub_date": "2025-01-22",
+      "authors": "Xu Gecheng; Shi Jingjing; Qiao Jiliang; Liao Pingan; Yong Bin; ... (+1)",
+      "first_author": "Xu Gecheng",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "TMV, TuMV, PVX",
+      "taxonomy": "",
+      "host_plant": "本生烟 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39980275",
+      "doi": "10.1093/jisesa/ieaf017",
+      "title": "Aphis gossypii (Hemiptera: Aphididae) feeding responses to double virus infections in melon.",
+      "abstract": "Virus infections cause economic losses in crops worldwide and their management and control present major challenges. In the field, double infections of two or more viruses are the rule, not the exception. The presence of several viruses in a plant makes it difficult to interpret virus-insect vector-plant interactions. Mixed infections can alter plant symptoms compared with single infections and may also impact their vectors. We describe plant-mediated indirect effects of virus double-infection on feeding behavior of an aphid vector (Aphis gossypii Glover) and virus transmission in melon (Cucumis melo L.). The viruses we used were a circulative cucurbit aphid-borne yellows virus (CABYV, Solemoviridae:Polerovirus) and a non-circulative cucumber mosaic virus (CMV, Bromoviridae:Cucumovirus). When melon plants were CMV-infected, indirect plant-mediated effects on A. gossypii feeding were like those reported on other plant species; specifically, intracellular punctures (pd) were more frequent and longer than on mock-inoculated plants, which enhanced CMV transmission. Similarly, when plants were CABYV-infected, we observed a statistically non-significant trend for increases in extended salivation (E1) and ingestion (E2) activities in phloem compared with mock-inoculated plants, which also enhanced CABYV transmission. When aphids fed on CMV-CABYV double-infected plants feeding behavior activities related to the transmission of both viruses were enhanced even more than when feeding on single-infected plants. Nevertheless, the virus transmission rate was the same on single-infected or double-infected plants. Thus, our results suggest that double infections do not modify viral dispersion compared with single infections since the indirect effect of CMV and CABYV in single infections is already optimized to favor virus transmission.",
+      "journal": "Journal of insect science (Online)",
+      "year": 2025,
+      "pub_date": "2025-01-20",
+      "authors": "Galán-Cubero Rocio; Fereres Alberto; Moreno Aránzazu",
+      "first_author": "Galán-Cubero Rocio",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "CMV, CABYV",
+      "taxonomy": "",
+      "host_plant": "甜瓜 (Cucumis melo)",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40006903",
+      "doi": "10.3390/v17020148",
+      "title": "The Role of Plant Virus-like Particles in Advanced Drug Delivery and Vaccine Development: Structural Attributes and Application Potential.",
+      "abstract": "Plant virus-like particles (pVLPs) present distinct research advantages, including cost-effective production and scalability through plant-based systems, making them a promising yet underutilized alternative to traditional VLPs. Human exposure to plant viruses through diet for millions of years supports their biocompatibility and safety, making them suitable for biomedical applications. This review offers a practical guide to selecting pVLPs based on critical design factors. It begins by examining how pVLP size and shape influence cellular interactions, such as uptake, biodistribution, and clearance, key for effective drug delivery and vaccine development. We also explore how surface charge affects VLP-cell interactions, impacting binding and internalization, and discuss the benefits of surface modifications to enhance targeting and stability. Additional considerations include host range and biosafety, ensuring safe, effective pVLP applications in clinical and environmental contexts. The scalability of pVLP production across different expression systems is also reviewed, noting challenges and opportunities in large-scale manufacturing. Concluding with future perspectives, the review highlights the innovation potential of pVLPs in vaccine development, targeted therapies, and diagnostics, positioning them as valuable tools in biotechnology and medicine. This guide provides a foundation for selecting optimal pVLPs across diverse applications.",
+      "journal": "Viruses",
+      "year": 2025,
+      "pub_date": "2025-01-23",
+      "authors": "Peralta-Cuevas Esperanza; Garcia-Atutxa Igor; Huerta-Saquero Alejandro; Villanueva-Flores Francisca",
+      "first_author": "Peralta-Cuevas Esperanza",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "植物病毒样颗粒（pVLPs）",
+      "taxonomy": "",
+      "host_plant": "植物表达系统",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39653292",
+      "doi": "10.1016/j.ijpharm.2024.125057",
+      "title": "Encapsulation of thyme essential oil in dendritic mesoporous silica nanoparticles: Enhanced antimycotic properties and ROS-mediated inhibition mechanism.",
+      "abstract": "Dendritic mesoporous silica nanoparticles (DMSNs) have emerged as promising nanocarriers due to their unique three-dimensional structure and tunable pore characteristics. This study investigates the potential of DMSNs to deliver thyme essential oil (TEO) for enhanced antifungal activity against Fusarium oxysporum (F. oxysporum), a major plant pathogen. DMSNs were successfully synthesized and characterized, followed by the encapsulation of TEO within their porous structure. The resulting TEO@DMSNs composites exhibited significant antifungal activity against F. oxysporum, with inhibition rates reaching 70%, indicating an effective crop protection with a dose-dependent effect. The enhanced antifungal efficacy of TEO@DMSNs compared to free TEO is attributed to the sustained release of TEO and the synergistic effect of the nanocarrier itself. In-depth mechanism investigations revealed that TEO@DMSNs likely disrupted the fungal cell membrane, leading to leakage of cellular contents and ultimately cell death. Moreover, DMSNs and TEO@DMSNs were found to be safe for plant growth, demonstrating their potential as environmentally friendly antifungal agents. This study provides valuable insights into the design and development of advanced nanocarriers for targeted drug delivery and disease management in agriculture.",
+      "journal": "International journal of pharmaceutics",
+      "year": 2025,
+      "pub_date": "2025-01-25",
+      "authors": "Yu Liyuan; Peng Jianqin; Han Qun; Huang Wanxin; Jiang Yijie; ... (+4)",
+      "first_author": "Yu Liyuan",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39942872",
+      "doi": "10.3390/plants14030310",
+      "title": "The Description of the Extremophile ",
+      "abstract": "This article describes a new genus and species of cyanobacteria isolated from Laguna Pastos Grandes in the Bolivian Altiplano. This discovery marks the first described species of this phylum from this extreme environment. Additionally, the phylogenetic status of the genus Capilliphycus is reassessed. The analyses are based on 16S rRNA gene maximum likelihood and Bayesian phylogenies, identity (p-distance), morphology and habitat comparisons. The new genus is a Lyngbya-like type from a mat at the margin of a brackish-alkaline lake with borax. It is phylogenetically close to Dapis, Tenebriella and Okeania, but compared to these genera, the maximum 16S rRNA gene identity values reached only 90.9%, 91.1% and 92.5%, respectively. The genus Capilliphycus was found to be polyphyletic. The type species Capilliphycus salinus is clustered with C. guerandensis. However, \"C. tropicalis\" and \"C. flaviceps\" form a distinct clade, distant from the Capilliphycus type species. Between the two \"Capilliphycus\" clades, Sirenicapillaria and Limnoraphis are found.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-01-21",
+      "authors": "Hentschke Guilherme Scotta; Hoepfner Claudia; Guzmán Daniel; Vasconcelos Vitor M",
+      "first_author": "Hentschke Guilherme Scotta",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39942862",
+      "doi": "10.3390/plants14030300",
+      "title": "Maya Vanilla (",
+      "abstract": "Vanilla-producing regions in Mexico and around the world are experiencing declining yields due to global climate change. However, Mexico, Guatemala, and other parts of Central America possess underutilized genetic resources within the Vanilla genus, which can be used to increase their production. One such resource is Vanilla cribbiana Soto Arenas, known as Maya vanilla, which is native to Guatemala and Mexico. This study evaluated some of the physical and chemical characteristics as well as the aromatic and fatty acid profiles of cured vanilla pods of Maya vanilla. A 5 kg batch of cured vanilla pods from Cobán, Guatemala, was analyzed for length, weight, humidity content, and proximate chemical composition and aromatic profile using HPLC-DAD and GC-MS. The pod lengths ranged from 6 to 16 cm, and weights ranged from 2.2 to 8.2 g. The humidity content varied between 22% and 38.63%. The main component in the cured vanilla pods was insoluble crude fiber (51.18%). The vanillin, vanillic acid, p-hydroxybenzoic acid, and p-hydroxybenzaldehyde concentrations in the cured vanilla beans were 2.13 ± 0.68, 0.105 ± 0.035, 0.38 ± 0.05, and 0.345 ± 0.115 g/100 g dry matter, respectively. A total of 70 volatile compounds were identified with GC-MS-16 acids, 12 alcohols, 8 aldehydes, 15 esters, 12 hydrocarbons, 5 ketones, and 2 furans-among which were compounds characteristic of other commercial vanilla species. Oleic acid and linoleic acid represented over 82% of the total fatty acids. This study provides fundamental insights into the physicochemical and aromatic characteristics of Maya vanilla, highlighting the differences between this species and vanilla species traditionally used in commerce. Vanilla cribbiana Soto Arenas represents an excellent alternative for the vanilla market as a flavoring agent for the food and perfume industries.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-01-21",
+      "authors": "Pérez-Silva Araceli; Peña-Mojica Eduardo; Ortega-Galeana Abimael; López-Cruz Jocelyn I; Ledesma-Escobar Carlos A; ... (+2)",
+      "first_author": "Pérez-Silva Araceli",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40173858",
+      "doi": "10.11646/zootaxa.5575.3.7",
+      "title": "New species and host plants of Hexachaeta Loew (Diptera: Tephritidae) from Colombia.",
+      "abstract": "Hexachaeta cundiboyacensis Rodriguez, a new species of the colombiana species group is described and illustrated. In addition, the first biological information on host plants and natural enemies for the colombiana species group is provided. Host plants include: Aegiphila alba Moldenke (Lamiaceae) for H. colombiana Lima and Aegiphila integrifolia (Jacq.) B.D. Jacks. (Lamiaceae) for the new species described here. The wasp Opius (Bellopius) hexachaeta Kula and Aguirre (Braconidae) was found parasitizing the new species. A modification of the species key of Hernández-Ortiz (1999) to incorporate this new species is also presented.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-01-24",
+      "authors": "Clavijo Pedro Alexander Rodriguez",
+      "first_author": "Clavijo Pedro Alexander Rodriguez",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39836327",
+      "doi": "10.1007/s00248-025-02490-8",
+      "title": "Harnessing PGPRs from Asparagus officinalis to Increase the Growth and Yield of Zea mays L.",
+      "abstract": "Microbial biotechnology employs techniques that rely on the natural interactions that occur in ecosystems. Bacteria, including rhizobacteria, play an important role in plant growth, providing crops with an alternative that can mitigate the negative effects of abiotic stress, such as those caused by saline environments, and increase the excessive use of chemical fertilizers. The present study examined the promoting potential of bacterial isolates obtained from the rhizospheric soil and roots of the Asparagus officinalis cultivar UF-157 F2 in Viru, la Libertad, Peru. This region has high soil salinity levels. Seventeen strains were isolated, four of which are major potential plant growth-promoting traits, and were characterized based on their morphological and molecular characteristics. These salt-tolerant bacteria were screened for phosphate solubilization, indole acetic acid, deaminase activity, and molecular characterization by 16S rDNA sequencing. Fifteen samples were from saline soils of A. officinalis plants in the northern coastal desert of San Jose, Lambayeque, Peru. The bacterial isolates were screened in a range of salt tolerances from 3 to 6%. Isolates 05, 08, 09, and 11 presented maximum salt tolerance, ammonium quantification, phosphate solubilization, and IAA production. The four isolates were identified by sequencing the amplified 16S rRNA gene and were found to be Enterobacter sp. 05 (OQ885483), Enterobacter sp. 08 (OQ885484), Pseudomonas sp. 09 (OR398704) and Klebsiella sp. 11 (OR398705). These microorganisms promoted the germination of Zea mays L. plants, increased the germination rates in the treatments with chemical fertilizers at 100% and 50%, and the PGPRs increased the height and length of the roots 40 days after planting. The beneficial effects of salt-tolerant PGPR isolates isolated from saline environments may lead to new species that can be used to overcome the detrimental effects of salt stress on plants. The biochemical response and inoculation of the three isolates prove the potential of these strains as sources of products to develop new compounds, confirming their potential as biofertilizers for saline environments.",
+      "journal": "Microbial ecology",
+      "year": 2025,
+      "pub_date": "2025-01-21",
+      "authors": "Flores Clavo Rene; Suclupe-Campos Danny Omar; Castillo Rivadeneira Luis; Velez Chicoma Ricardo Leonidas de Jesus; Sánchez-Purihuamán Marilín; ... (+5)",
+      "first_author": "Flores Clavo Rene",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

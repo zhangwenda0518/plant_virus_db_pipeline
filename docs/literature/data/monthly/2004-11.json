@@ -1,0 +1,280 @@
+{
+  "month": "2004-11",
+  "generated": "2026-07-13 02:59:42",
+  "total": 27,
+  "by_category": {
+    "Host_Virus_Interactions": 11,
+    "New_Virus": 9,
+    "Antiviral_Resistance_Genes": 4,
+    "Control_Management": 3,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "15505219",
+      "doi": "10.1073/pnas.0404940101",
+      "title": "Three distinct suppressors of RNA silencing encoded by a 20-kb viral RNA genome.",
+      "abstract": "Viral infection in both plant and invertebrate hosts requires a virus-encoded function to block the RNA silencing antiviral defense. Here, we report the identification and characterization of three distinct suppressors of RNA silencing encoded by the approximately 20-kb plus-strand RNA genome of citrus tristeza virus (CTV). When introduced by genetic crosses into plants carrying a silencing transgene, both p20 and p23, but not coat protein (CP), restored expression of the transgene. Although none of the CTV proteins prevented DNA methylation of the transgene, export of the silencing signal (capable of mediating intercellular silencing spread) was detected only from the F(1) plants expressing p23 and not from the CP- or p20-expressing F(1) plants, demonstrating suppression of intercellular silencing by CP and p20 but not by p23. Thus, intracellular and intercellular silencing are each targeted by a CTV protein, whereas the third, p20, inhibits silencing at both levels. Notably, CP suppresses intercellular silencing without interfering with intracellular silencing. The novel property of CP suggests a mechanism distinct to p20 and all of the other viral suppressors known to interfere with intercellular silencing and that this class of viral suppressors may not be consistently identified by Agrobacterium coinfiltration because it also induces RNA silencing against the infiltrated suppressor transgene. Our analyses reveal a sophisticated viral counter-defense strategy that targets the silencing antiviral pathway at multiple steps and may be essential for protecting CTV with such a large RNA genome from antiviral silencing in the perennial tree host.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2004,
+      "pub_date": "2004-11-02",
+      "authors": "Lu Rui; Folimonov Alexey; Shintaku Michael; Li Wan-Xiang; Falk Bryce W; ... (+2)",
+      "first_author": "Lu Rui",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "柑橘衰退病毒 (Citrus tristeza virus, CTV)",
+      "taxonomy": "",
+      "host_plant": "柑橘等",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30795337",
+      "doi": "10.1094/PDIS.2004.88.11.1286C",
+      "title": "First Report of Lettuce big-vein virus and Mirafiori lettuce virus in Chile.",
+      "abstract": "Lettuce big-vein disease (BVD) is a serious virus disease of lettuce. Recent evidence has brought into question the role of Lettuce big-vein virus (LBVV) in the etiology of BVD, and suggested that Mirafiori lettuce virus (MiLV) and not LBVV is the causal agent of BVD (1,2). Lettuce plants (Lactuca sativa L.) with symptoms similar to those of BVD were observed during the winter of 2003 in open-field and hydroponic-grown lettuce plants located in the Chacabuco Province of central Chile. Symptomatic plants exhibited leaves with chlorotic vein banding that became ruffled and distorted. Symptoms were usually accompanied by reduced plant size and absence of head formation. Roots from symptomatic plants were analyzed by light microscopy-acid fuchsin staining. Zoosporangia and resting spores of Olpidium brassicae were identified on the basis of their morphology and structure. Additionally, soil transmission experiments were performed with 50 healthy lettuce seedlings replanted into contaminated soil collected from lettuce fields having symptomatic crops. After 3 weeks, one-half of the seedlings showed differing degrees of big-vein symptoms, and the presence of spores of O. brassicae was confirmed in the roots by light microscopy. Seedlings raised in sterilized soil showed no symptoms after the same period of time. On the basis of nucleotide sequences of LBVV and MiLV from the GenBank database, primers specific to the coat protein genes of each virus were designed as follows: MiLVV-CP1: 5'-CAAATCTGTCCACAATTCC-3'; MiLVV-CP2: 5'-TCTCACTTGAAAACCTTCC-3'; MiLVV-CP3: 5'-TTGCAACGTGATGAAACC-3'; MiLVV-CP4: 5'-AAAGAAGAGAAGCCTGTTCC-3'; LBVV-CP1: 5'-AAGCTTTCCGTACTGTCC-3'; LBVV-CP2: 5'-CCTTGATACAGTTTTTGACC-3'; LBVV-CP3: 5'-GTATGCTGATTTCTGTAGACC-3'; LBVV-CP4: 5'-TAGATGTTCTTCGCCACC-3'. The primers were used in reverse transcription-polymerase chain reaction (RT-PCR) assays with dsRNA as a template. Amplicons of the expected size were obtained in each of the five symptomatic plants analyzed, using each of the designated primer sets: MiLVV-CP1/MiLVV-CP2: 562 bp; MiLVV-CP3/MiLVV-CP4: 743 bp; LBVV-CP1/LBVV-CP2: 485 bp; and LBVV-CP3/ LBVV-CP4: 570 bp. No amplicons were obtained from healthy lettuce plants. The identity of both viruses was verified by cloning and sequencing of the amplicons. Nucleotide sequences were compared with those in the GenBank database. Sequences derived from the Chilean isolates resulted in identities of 87 to 97% for MiLV and 97 to 99% for LBVV. All samples analyzed were from the Chacabuco Province where 43% of the lettuce crops in Chile are grown. Thus, the impact that BVD may have on lettuce availability for local consumption may be significant. To our knowledge, this is the first report of Lettuce big-vein disease and Mirafiori lettuce virus infecting lettuce and the first report of BVD in Chile. References: (1) H. Lot et al. Phytopathology 92:288, 2002. (2) P. Roggero et al. Eur. J. Plant Pathol. 109:261, 2003.",
+      "journal": "Plant disease",
+      "year": 2004,
+      "pub_date": "2004-11-01",
+      "authors": "Rosales I M; Sepúlveda P; Bruna A",
+      "first_author": "Rosales I M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Lettuce big-vein virus (LBVV) 和 Mirafiori lettuce virus (MiLV)",
+      "taxonomy": "未提及",
+      "host_plant": "生菜 (Lactuca sativa L.)",
+      "location": "智利查卡布科省",
+      "results": "症状植株扩增出预期大小片段，序列与LBVV和MiLV相似性87-99%；根中观察到O. brassicae孢子；土壤传播实验再现症状。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30795332",
+      "doi": "10.1094/PDIS.2004.88.11.1285A",
+      "title": "First Report of Soybean dwarf virus on Soybean in Wisconsin.",
+      "abstract": "Soybean dwarf virus (SbDV) causes widespread economic losses on soybean (Glycine max (L.) Merr.) in Japan (4), and has been reported on soybean in Virginia (2), in various legumes in the southeastern United States (1), and in peas in California (3). During late July and early August of 2003, soybean plants in Wisconsin were surveyed for SbDV. In 286 soybean fields at the R2-R4 growth stage, the uppermost fully unfurled leaf was collected from 10 plants at each of five sites. Samples were collected at random without regard to symptoms. SbDV symptom information was not recorded. Samples were stored on ice until frozen at -80°C. Five fields in four Wisconsin counties (Columbia, Lafayette, Sauk, and Waushara) tested positive for SbDV using double antibody sandwich enzyme-linked immunosorbent assay (DAS-ELISA). DAS-ELISA testing was conducted with reagents from Agdia, Inc (Elkhart, IN) following the manufacturer's protocol. Absorbance was read at 405 nm with a Stat Fax 2100 microplate reader (Awareness Technology, Inc., Palm City, FL) or visually evaluated. DAS-ELISA did not discriminate between strains of SbDV. The presence of SbDV was confirmed, and strain identity was inferred as dwarfing strain using reverse transcription-polymerase chain reaction (RT-PCR). Total RNA was extracted from homogenized leaf tissue, reverse transcribed, and amplified with the SuperScript One Step RT-PCR System (Invitrogen, Carlsbad, CA) and SbDV-specific primers (5'-CTGCTTCTGGTGATTACACTGCCG-3' and 5'-CGCTTTCATTTAACGYCATCAAAGGG-3'). Size of the RT-PCR products (110 bp) was consistent with the dwarfing strain, SbDV-D. All locations that tested positive for SbDV showed soybean aphids, Aphis glycines Matsumura (Homoptera: Aphididae), on 100% of soybean plants. Several aphid species have been reported to vector SbDV, but at this time, vector relations in the Wisconsin infections are unknown. To our knowledge, this is the first report of SbDV infecting soybean in Wisconsin. References: (1) V. D. Damsteegt et al. Plant Dis. 79:48, 1995. (2) A. Fayad et al. Phytopathology (Abstr.) 90(Suppl.):S132, 2000. (3) G. R. Johnstone et al. Phytopathology (Abstr.) 74:795(A43), 1984. (4) T. Tamada et al. Ann. Phytopathol. Soc. Jpn. 35:282, 1969.",
+      "journal": "Plant disease",
+      "year": 2004,
+      "pub_date": "2004-11-01",
+      "authors": "Phibbs A; Barta A; Domier L L",
+      "first_author": "Phibbs A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Soybean dwarf virus (SbDV)",
+      "taxonomy": "未提及",
+      "host_plant": "大豆 (Glycine max)",
+      "location": "美国威斯康星州（哥伦比亚县、拉斐特县、索克县、沃沙拉县）",
+      "results": "在286个大豆田中5个田阳性，均为矮化株系（SbDV-D），全部阳性田100%植株上有大豆蚜虫。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30795333",
+      "doi": "10.1094/PDIS.2004.88.11.1285B",
+      "title": "First Report of Vidalia Onion (Allium cepa) Naturally Infected with Tomato spotted wilt virus and Iris yellow spot virus (Family Bunyaviridae, Genus Tospovirus) in Georgia.",
+      "abstract": "Vidalia onion is an important crop in Georgia's agriculture with worldwide recognition as a specialty vegetable. Vidalia onions are shortday, Granex-type sweet onions grown within a specific area of southeastern Georgia. Tomato spotted wilt virus (TSWV) has been endemic to Georgia crops for the past decade, but has gone undetected in Vidalia onions. Tobacco thrips (Frankliniella fusca) and Western flower thrips (Frankliniella occidentalis) are the primary vectors for TSWV in this region, and a number of plant species serve as reproductive reservoirs for the vector or virus. Iris yellow spot virus (IYSV), an emerging tospovirus that is potentially a devastating pathogen of onion, has been reported in many locations in the western United States (2,4). Thrips tabaci is the known vector for IYSV, but it is unknown if noncrop plants play a role in its epidemiology in Georgia. During October 2003, a small (n = 12) sampling of onions with chlorosis and dieback of unknown etiology from the Vidalia region was screened for a variety of viruses, and TSWV and IYSV infections were serologically detected. Since that time, leaf and bulb tissues from 4,424 onion samples were screened for TSWV and IYSV using double antibody sandwich-enzyme linked immunosorbent assay (DAS-ELISA) with commercial kits (Agdia Inc., Elkhart, IN). Samples were collected from 53 locations in the Vidalia region during the growing season between November 2003 and March 2004. Plants exhibiting stress, such as tip dieback, necrotic lesions, chlorosis or environmental damage were selected. Of these, 306 were positive for TSWV and 396 were positive for IYSV using positive threshold absorbance of three times the average plus two standard deviations of healthy negative onion controls. Positive serological findings of the onion tissues were verified by immunocapture-reverse transcription-polymerase chain reaction (IC-RT-PCR) for TSWV (3) and RT-PCR for IYSV (1). In both instances, a region of the viral nucleocapsid (N) gene was amplified. The PCR products were analyzed with gel electrophoresis with an ethidium bromide stain in 0.8% agarose. Eighty-six percent (n = 263) of the TSWV ELISA-positive samples exhibited the expected 774-bp product and 55 percent (n = 217) of the IYSV ELISA-positive samples exhibited the expected 962-bp product. The reduced success of the IYSV verification could be attributed to the age and deteriorated condition of the samples at the time of amplification. Thrips tabaci were obtained from onion seedbeds and cull piles within the early sampling (n = 84) and screened for TSWV by the use of an indirect-ELISA to the nonstructural (NSs) protein of TSWV. Of the thrips sampled, 25 were positive in ELISA. While the incidence of IYSV and TSWV in the Vidalia onion crop has been documented, more research is needed to illuminate their potential danger to Vidalia onions. References: (1) I. Cortês et al. Phytopathology 88:1276, 1998. (2) L. J. du Toit et al. Plant Dis. 88:222, 2004. (3) R. K. Jain et al. Plant Dis. 82:900, 1998. (4) J. W. Moyer et al. (Abstr.) Phytopathology 93(suppl.):S115, 2003.",
+      "journal": "Plant disease",
+      "year": 2004,
+      "pub_date": "2004-11-01",
+      "authors": "Mullis S W; Langston D B; Gitaitis R D; Sherwood J L; Csinos A C; ... (+4)",
+      "first_author": "Mullis S W",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "New_Virus"
+      ],
+      "virus_name": "Tomato spotted wilt virus (TSWV) 和 Iris yellow spot virus (IYSV)",
+      "taxonomy": "",
+      "host_plant": "Vidalia onion (Allium cepa)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15469495",
+      "doi": "10.1111/j.1365-313X.2004.02215.x",
+      "title": "The potyvirus recessive resistance gene, sbm1, identifies a novel role for translation initiation factor eIF4E in cell-to-cell trafficking.",
+      "abstract": "From the characterization of the recessive resistance gene, sbm1, in pea we have identified the eukaryotic translation initiation factor, eIF4E, as a susceptibility factor required for infection with the Potyvirus, Pea seed-borne mosaic virus. A functional analysis of the mode of action of the product of the dominant allele revealed a novel function for eIF4E in its support for virus movement from cell-to-cell, in addition to its probable support for viral RNA translation, and hence replication. Different resistance specificities in two independent pea lines were explained by different mutations in eIF4E. On the modelled structure of eIF4E the coding changes were in both cases lying in and around the structural pocket involved in binding the 5'-m7G cap of eukaryotic mRNAs. Protein expression and cap-binding analysis showed that eIF4E encoded by a resistant plant could not bind to m7G-Sepharose, a result which may point to functional redundancy between eIF4E and the paralogous eIF(iso)4E in resistant peas. These observations, together with related findings for other potyvirus recessive resistances, provide a more complete picture of the potyvirus life cycle.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2004,
+      "pub_date": "2004-11-01",
+      "authors": "Gao Zhihuan; Johansen Elisabeth; Eyers Samantha; Thomas Carole L; Noel Ellis T H; ... (+1)",
+      "first_author": "Gao Zhihuan",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Pea seed-borne mosaic virus (PSbMV)",
+      "taxonomy": "",
+      "host_plant": "豌豆",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15630623",
+      "doi": "10.1007/s11103-004-0147-9",
+      "title": "Broad spectrum resistance to ssDNA viruses associated with transgene-induced gene silencing in cassava.",
+      "abstract": "Geminiviruses are ssDNA viruses that infect a range of economically important crop species. We have developed a pathogen-derived transgenic approach to generate high levels of resistance against these pathogens in a susceptible cultivar of cassava (Manihot esculenta). Integration of the AC1 gene (which encodes the replication-associated protein) from African cassava mosaic virus imparted resistance against the homologous virus and provided strong cross-protection against two heterologous species of cassava-infecting geminiviruses. Short-interfering RNAs specific to the AC1 transgene were identified in the two most resistant transgenic plant lines prior to virus challenge. Levels of AC1 mRNA were suppressed in these plants. When challenged with geminiviruses, accumulation of viral DNA was reduced by up to 98% compared to controls, providing evidence that integration of AC1 initiates protection against viral infection via a post-transcriptional gene silencing mechanism. The robust cross-resistance reported has important implications for field deployment of transgenic strategies to control geminiviruses.",
+      "journal": "Plant molecular biology",
+      "year": 2004,
+      "pub_date": "2004-11-01",
+      "authors": "Chellappan Padmanabhan; Masona Munyaradzi V; Vanitharani Ramachandran; Taylor Nigel J; Fauquet Claude M",
+      "first_author": "Chellappan Padmanabhan",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "双生病毒（非洲木薯花叶病毒及异源双生病毒）",
+      "taxonomy": "",
+      "host_plant": "木薯",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15500476",
+      "doi": "10.1111/j.1365-313X.2004.02233.x",
+      "title": "Virus-induced gene silencing as a tool for functional genomics in a legume species.",
+      "abstract": "Virus-induced gene silencing (VIGS) is an attractive reverse-genetics tool for studies of gene function. However, efficient VIGS has only been accomplished in a few plant species. In order to extend the application of VIGS, we examined whether a VIGS vector based on Pea early browning virus (PEBV) would produce recognizable phenotypes in Pisum sativum. A plasmid vector of PEBV was modified to allow agro-inoculation and insertion of heterologous sequences. cDNA fragments of the P. sativum phytoene desaturase (PDS), LEAFY (LFY) and KORRIGAN1 (KOR1) homologues were inserted into the PEBV RNA2 vector, replacing the genes required for nematode transmission. Pisum sativum inoculated with PEBV carrying a fragment of PsPDS developed characteristic photo-bleached leaves and this phenotype was associated with a significant reduction in PsPDS mRNA. The P. sativum homologue of LFY is known as UNIFOLIATA (UNI). Plants inoculated with PEBV carrying a fragment of UNI developed distorted flowers and leaves with modified architecture, which are also observed in UNI-mutants. In Arabidopsis thaliana, the KOR1-mutant is characterized by an extreme dwarf phenotype. Pisum sativum plants inoculated with PEBV carrying a fragment of PsKOR1 displayed a significant reduction in height and inhibition of root growth. The PEBV VIGS vector did not affect the ability of P. sativum to flower, set seeds, and form nodules characteristic of symbiosis with rhizobium. These results suggest that the PEBV vector can be applied to functional genomics in a legume species to study genes involved in a wide range of biological processes.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2004,
+      "pub_date": "2004-11-01",
+      "authors": "Constantin Gabriela D; Krath Britta N; MacFarlane Stuart A; Nicolaisen Mogens; Johansen Ida Elisabeth; ... (+1)",
+      "first_author": "Constantin Gabriela D",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "Pea early browning virus (PEBV)",
+      "taxonomy": "",
+      "host_plant": "豌豆（Pisum sativum）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15309302",
+      "doi": "10.1007/s00122-004-1758-x",
+      "title": "Full-genome analysis of resistance gene homologues in rice.",
+      "abstract": "The availability of the rice genome sequence enabled the global characterization of nucleotide-binding site (NBS)-leucine-rich repeat (LRR) genes, the largest class of plant disease resistance genes. The rice genome carries approximately 500 NBS-LRR genes that are very similar to the non-Toll/interleukin-1 receptor homology region (TIR) class (class 2) genes of Arabidopsis but none that are homologous to the TIR class genes. Over 100 of these genes were predicted to be pseudogenes in the rice cultivar Nipponbare, but some of these are functional in other rice lines. Over 80 other NBS-encoding genes were identified that belonged to four different classes, only two of which are present in dicotyledonous plant sequences present in databases. Map positions of the identified genes show that these genes occur in clusters, many of which included members from distantly related groups. Members of phylogenetic subgroups of the class 2 NBS-LRR genes mapped to as many as ten different chromosomes. The patterns of duplication of the NBS-LRR genes indicate that they were duplicated by many independent genetic events that have occurred continuously through the expansion of the NBS-LRR superfamily and the evolution of the modern rice genome. Genetic events, such as inversions, that inhibit the ability of recently duplicated genes to recombine promote the divergence of their sequences by inhibiting concerted evolution.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 2004,
+      "pub_date": "2004-11-01",
+      "authors": "Monosi B; Wisser R J; Pennill L; Hulbert S H",
+      "first_author": "Monosi B",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15356262",
+      "doi": "10.1091/mbc.e04-07-0575",
+      "title": "Modulation of the biological activity of a tobacco LTP1 by lipid complexation.",
+      "abstract": "Plant lipid transfer proteins (LTPs) are small, cysteine-rich proteins secreted into the extracellular space. They belong to the pathogenesis-related proteins (PR-14) family and are believed to be involved in several physiological processes including plant disease resistance, although their precise biological function is still unknown. Here, we show that a recombinant tobacco LTP1 is able to load fatty acids and jasmonic acid. This LTP1 binds to specific plasma membrane sites, previously characterized as elicitin receptors, and is shown to be involved in the activation of plant defense. The biological properties of this LTP1 were compared with those of LTP1-linolenic and LTP1-jasmonic acid complexes. The binding curve of the LTP1-linolenic acid complex to purified tobacco plasma membranes is comparable to the curve obtained with LTP1. In contrast, the LTP1-jasmonic acid complex shows a strongly increased interaction with the plasma membrane receptors. Treatment of tobacco plants with LTP1-jasmonic acid resulted in an enhancement of resistance toward Phytophthora parasitica. These effects were absent upon treatment with LTP1 or jasmonic acid alone. This work presents the first evidence for a biological activity of a LTP1 and points out the crucial role of protein-specific lipophilic ligand interaction in the modulation of the protein activity.",
+      "journal": "Molecular biology of the cell",
+      "year": 2004,
+      "pub_date": "2004-11-01",
+      "authors": "Buhot Nathalie; Gomès Eric; Milat Marie-Louise; Ponchet Michel; Marion Didier; ... (+4)",
+      "first_author": "Buhot Nathalie",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15516506",
+      "doi": "10.1104/pp.104.049064",
+      "title": "nip, a symbiotic Medicago truncatula mutant that forms root nodules with aberrant infection threads and plant defense-like response.",
+      "abstract": "To investigate the legume-Rhizobium symbiosis, we isolated and studied a novel symbiotic mutant of the model legume Medicago truncatula, designated nip (numerous infections and polyphenolics). When grown on nitrogen-free media in the presence of the compatible bacterium Sinorhizobium meliloti, the nip mutant showed nitrogen deficiency symptoms. The mutant failed to form pink nitrogen-fixing nodules that occur in the wild-type symbiosis, but instead developed small bump-like nodules on its roots that were blocked at an early stage of development. Examination of the nip nodules by light microscopy after staining with X-Gal for S. meliloti expressing a constitutive GUS gene, by confocal microscopy following staining with SYTO-13, and by electron microscopy revealed that nip initiated symbiotic interactions and formed nodule primordia and infection threads. The infection threads in nip proliferated abnormally and very rarely deposited rhizobia into plant host cells; rhizobia failed to differentiate further in these cases. nip nodules contained autofluorescent cells and accumulated a brown pigment. Histochemical staining of nip nodules revealed this pigment to be polyphenolic accumulation. RNA blot analyses demonstrated that nip nodules expressed only a subset of genes associated with nodule organogenesis, as well as elevated expression of a host defense-associated phenylalanine ammonia lyase gene. nip plants were observed to have abnormal lateral roots. nip plant root growth and nodulation responded normally to ethylene inhibitors and precursors. Allelism tests showed that nip complements 14 other M. truncatula nodulation mutants but not latd, a mutant with a more severe nodulation phenotype as well as primary and lateral root defects. Thus, the nip mutant defines a new locus, NIP, required for appropriate infection thread development during invasion of the nascent nodule by rhizobia, normal lateral root elongation, and normal regulation of host defense-like responses during symbiotic interactions.",
+      "journal": "Plant physiology",
+      "year": 2004,
+      "pub_date": "2004-11-01",
+      "authors": "Veereshlingam Harita; Haynes Janine G; Penmetsa R Varma; Cook Douglas R; Sherrier D Janine; ... (+1)",
+      "first_author": "Veereshlingam Harita",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15612621",
+      "doi": "10.1078/0723202042369983",
+      "title": "Leucobacter chromiireducens sp. nov, and Leucobacter aridicollis sp. nov., two new species isolated from a chromium contaminated environment.",
+      "abstract": "Two strains designated strains L-1T and L-9T were isolated from activated sludge of a treatment plant that receives wastewater from the tannery industry contaminated with chromium. Phylogenetic analysis showed that the organisms represented two new species of the genus Leucobacter. Strains L-1T and L-9T could be distinguished from the type strain of L. komagatae and from the type strain of \"L. albus\" by the B-type peptidoglycan composition, fatty acid composition, several phenotypic and physiological characteristics. The major fatty acids of the organisms were iso- and anteiso-branched C15:0 and C17:0, straight-chain C16:0 was also found in relatively high proportions. The organisms were halotolerant, grew in medium containing 9% NaCl, and all strains, including the type strain of L. komagatae grew in medium containing 5 mM Cr(VI). On the basis of the distinct peptidoglycan composition, 16S ribosomal DNA sequence analysis, percentage of DNA-DNA reassociation values, and phenotypic characteristics we are of the opinion that strain L-1T represents a new species of the genus Leucobacter for which we propose the name Leucobacter chromiireducens and that strain L-9T represents an additional new species of the same genus for which we propose the name Leucobacter aridicollis.",
+      "journal": "Systematic and applied microbiology",
+      "year": 2004,
+      "pub_date": "2004-11-01",
+      "authors": "Morais Paula V; Francisco Romeu; Branco Rita; Chung Ana Paula; da Costa Milton S",
+      "first_author": "Morais Paula V",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15704288",
+      "doi": "10.1007/s10482-005-0353-8",
+      "title": "Rhodotorula oryzae sp. nov., a novel basidiomycetous yeast species isolated from paddy rice.",
+      "abstract": "A basidiomycetous yeast strain RO-203, which formed orange-red colored colonies, was isolated from a sample of paddy rice crops at the ripe stage in Japan. Morphological, physiological and biochemical characterization indicated that this strain belonged to the genus Rhodotorula. Molecular taxonomic analysis based on the 26S rDNA D1/D2 domain and internal transcribed spacer (ITS) region sequences showed that RO-203 represents an undescribed yeast species, for which the name Rhodotorula oryzae sp. nov. is proposed (type strain: AS 2.2363T = MAFF 516128T). The new species clustered in a branch together with Sakaguchia dacryoidea in phylogenetic trees based on the D1/D2 and ITS sequences. These two species differed by 2.3% and 12% nucleotide divergences in the D1/D2 and ITS regions, respectively.",
+      "journal": "Antonie van Leeuwenhoek",
+      "year": 2004,
+      "pub_date": "2004-11-01",
+      "authors": "Bai Feng-Yan; Cai Yimin; Wang Qi-Ming; Ohkubo Hiroto",
+      "first_author": "Bai Feng-Yan",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

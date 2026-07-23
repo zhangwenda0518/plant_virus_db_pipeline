@@ -1,0 +1,237 @@
+{
+  "week": "2025-W20",
+  "start": "2025-05-12",
+  "end": "2025-05-18",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 25,
+  "by_category": {
+    "Host_Virus_Interactions": 10,
+    "Control_Management": 6,
+    "Antiviral_Resistance_Genes": 5,
+    "Biotechnology_Applications": 3,
+    "New_Virus": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "40431707",
+      "doi": "10.3390/v17050696",
+      "title": "Genomic Diversity of Tomato Brown Rugose Fruit Virus in Canadian Greenhouse Production Systems.",
+      "abstract": "Tomato brown rugose fruit virus (ToBRFV) is a recently emerged viral pathogen in the Tobamovirus genus first observed in 2014 in the Middle East that has since spread worldwide, causing significant losses in greenhouse tomato production. ToBRFV is easily mechanically transmitted and can escape the durable Tm-22 resistance gene, facilitating its global spread. Seed companies have identified novel sources of resistance and introduced these resistance traits into commercial cultivars. The identity, number, and mechanisms of these putative novel resistance genes are largely unknown but could be exerting selective pressures on ToBRFV. Here, we report 15 new ToBRFV genomic sequences from Canadian greenhouse production systems in susceptible and novel resistant or tolerant cultivars collected since 2023. We combined these sequences with five other Canadian ToBRFV genomes previously deposited in Genbank and a further five consensus sequences derived from metagenomic-based wastewater monitoring sequence data and conducted phylogenetic analysis. Most Canadian sequences grouped together when compared with 332 publicly available international sequences, but several isolates appeared distantly related, suggesting multiple introductions to Canadian production systems. High sequence identity between samples suggest movement of ToBRFV between independent greenhouses, highlighting areas where biosecurity can be improved. Several novel non-synonymous polymorphisms identified in the p126 and movement protein (MP) open reading frames (ORFs) were unique to Canadian sequences and associated with infection of novel resistant tomato cultivars. Many polymorphisms in the p126 ORF are located in a region of the protein associated with Tm-1 resistance-breaking isolates of tomato mosaic virus and ToBRFV, but have not been previously reported. Four novel polymorphisms in MP were also identified and do not appear to be associated with sites previously identified as interacting with Tm-22 and could be related to other unknown resistance genes. Together, these results confirm the difficulties in preventing the transmission of ToBRFV, identify putative adaptations to novel and existing resistance genes, and emphasize the urgent need for the cloning and characterization of these new sources of resistance to ToBRFV.",
+      "journal": "Viruses",
+      "year": 2025,
+      "pub_date": "2025-05-12",
+      "authors": "Fougere Gregory C; Xu Dong; Gaiero Jonathan R; McCreary Cara; Marchand Geneviève; ... (+4)",
+      "first_author": "Fougere Gregory C",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Tomato brown rugose fruit virus (ToBRFV)",
+      "taxonomy": "",
+      "host_plant": "番茄（温室番茄）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40312881",
+      "doi": "10.1021/acs.jafc.4c11533",
+      "title": "9β-Hydroxy-Ageraphoron Enhances TMV Resistance in Tobacco by Activating the SA Signaling Pathway through Upregulation of ",
+      "abstract": "Tobacco mosaic virus (TMV) poses a significant threat to global tobacco production. In this study, nine sesquiterpenoids isolated from Ageratina adenophora were evaluated for their anti-TMV activity using the half-leaf method. Among them, compound 1 (9β-hydroxy-ageraphorone) demonstrated the highest therapeutic (42.97%) and superior inactivation (48.87%) efficacy at 50 μg/mL. Further studies revealed that compound 1 disrupted TMV particle integrity and accelerated virion polymerization via hydrogen bonding and hydrophobic interactions with the viral coat protein. Additionally, it upregulated salicylic acid (SA) levels and enhanced the activities of PAL, POD, and SOD. Transcriptome and qRT-PCR analyses further indicated that compound 1 upregulated stress-responsive genes particularly MYB and LBD and activated the SA signaling pathway, leading to elevated expression of disease-resistant transcription factors and proteins, thereby enhancing TMV resistance in tobacco. These findings highlight 9β-hydroxy-ageraphorone as a promising candidate for botanical antiviral agents, contributing to the development of eco-friendly crop protection strategies.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2025,
+      "pub_date": "2025-05-14",
+      "authors": "Liu Yang; Yang Taijiao; He Yanyi; Zuo Anjian; Li Qing; ... (+3)",
+      "first_author": "Liu Yang",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒（TMV）",
+      "taxonomy": "",
+      "host_plant": "烟草",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40377693",
+      "doi": "10.1007/s10493-025-01024-8",
+      "title": "Sequential sampling of the citrus leprosis mite in different cultivation systems in the Eastern Amazon.",
+      "abstract": "Citrus leprosis is a major viral disease transmitted by the citrus leprosis mite (Brevipalpus spp.), causing significant economic losses in Brazilian citrus farming. This study developed a sequential sampling plan for Brevipalpus spp. in two citrus cultivation systems. Two plots in an orange orchard ('Pêra Rio' variety) in Capitão Poço, Pará, Brazil, were selected: one under monoculture and the other intercropped with teak. Monthly sampling from September 2015 to August 2016 involved 112 georeferenced plants per plot. Mite counts were performed on six fruits, branches, and leaves from both inner and outer plant parts using a 10 × pocket lens. Aggregation indices, including variance-to-mean ratio, Morisita's index, Green's coefficient, and Taylor's power law, revealed an aggregated distribution for all variables. The k parameter of the negative binomial distribution confirmed aggregation, and this model provided the best fit for both systems. The sequential sampling plan determined that the maximum expected sampling units for decision-making is 21 mites per plant and 28 mites per six branches in both systems. These thresholds were established based on the observed distribution pattern and aim to enhance monitoring efficiency. Although these values may seem low, they indicate the infestation level at which control measures should be implemented to prevent economic losses. These findings contribute to improved monitoring strategies for Brevipalpus spp. in citrus orchards, supporting more effective pest management.",
+      "journal": "Experimental & applied acarology",
+      "year": 2025,
+      "pub_date": "2025-05-16",
+      "authors": "de Oliveira Fábio Júnior; Farias Paulo Roberto Silva; Noronha Aloyséia Cristina da Silva; Maldonado Junior Walter; Cardoso Luiz Antonio Soares",
+      "first_author": "de Oliveira Fábio Júnior",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "柑橘麻风病毒",
+      "taxonomy": "",
+      "host_plant": "柑橘（橙树，品种'Pêra Rio'）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40158830",
+      "doi": "10.1016/j.jep.2025.119651",
+      "title": "Genus Senecio in China: A review on its traditional uses, phytochemistry, pharmacology, and toxicity.",
+      "abstract": "[ETHNOPHARMACOLOGICAL RELEVANCE] The genus Senecio comprises approximately 1500 species worldwide, with over 60 species distributed throughout China. These plants have been widely used in traditional Chinese medicine to treat various conditions including inflammation, eye diseases, vaginal trichomoniasis, and acute urinary tract infections. [AIM OF THE REVIEW] This review aims to provide a comprehensive analysis of the geographical distribution, traditional uses, phytochemical composition, pharmacological activities, and toxicology of medicinally important Senecio species in China. Furthermore, we critically evaluate future research directions to provide valuable insights for subsequent research and development of this genus. [MATERIALS AND METHODS] We collected and analyzed relevant literature from 1963 to 2023 using multiple databases including PubMed, Web of Science, ScienceDirect, Google Scholar, Elsevier, Sci Finder, CNKI, and Wan fang. We also examined doctoral and master's theses, the Chinese Pharmacopoeia (2020 edition), and various Materia Medica monographs. Plant nomenclature was verified using \"The Plant List\" (http://www.theplantlist.org). [RESULTS] As traditional Chinese medicinal herbs, Senecio plants are commonly employed to treat acute inflammation, eye diseases, and pruritus. To date, 217 chemical constituents have been isolated and characterized from medicinal Senecio species, primarily including alkaloids, sesquiterpenes, flavonoids, phenolic acids, jacaranones, and volatile oils, along with minor amounts of lignans and steroids. Among these compounds, pyrrolizidine alkaloids (PAs) and furoeremophilanes represent the characteristic chemical constituents of the genus. Extensive studies have demonstrated that extracts and isolated compounds from Senecio plants exhibit diverse pharmacological activities, including antibacterial, anti-inflammatory, antitumor, antiviral, antioxidant, hepatoprotective, and analgesic effects. However, Senecio species also demonstrate specific toxicity profiles, primarily manifesting as acute toxicity, hepatotoxicity, and reproductive toxicity, with PAs identified as the main toxic components. [CONCLUSIONS] Phytochemical and pharmacological studies have established Senecio species as valuable medicinal plants with significant bioactive properties. However, research has focused primarily on a limited number of species, necessitating comprehensive investigation of other species to identify additional medicinal candidates. Additionally, given that Senecio species generally contain toxic unsaturated PAs, with variations in both types and concentrations among different species, studying their toxic components and content profiles remains a priority for future research.",
+      "journal": "Journal of ethnopharmacology",
+      "year": 2025,
+      "pub_date": "2025-05-12",
+      "authors": "Wu Mengyao; Wu Yuyang; Li Ruiyu; Cheng Shiji; Tao Chengtian; ... (+3)",
+      "first_author": "Wu Mengyao",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40083160",
+      "doi": "10.1016/j.xplc.2025.101315",
+      "title": "Identification of a key peptide cyclase for novel cyclic peptide discovery in Pseudostellaria heterophylla.",
+      "abstract": "Orbitides, also known as Caryophyllaceae-type cyclic peptides, from the Traditional Chinese Medicine plant Pseudostellaria heterophylla (Miq.) Pax, exhibit great potential for improving memory and treating diabetes. Orbitides are ribosomally encoded and post-translationally modified peptides; however, the key biosynthetic enzyme mediating this process remains unknown in P. heterophylla. In this study, we investigated the distribution of orbitides in P. heterophylla and mined novel precursor peptide genes and peptide cyclases from multiple omics datasets. The function of PhPCY3, a gene encoding a key tailoring enzyme, was elucidated using transient heterologous expression and virus-induced gene silencing systems. Our findings suggest that PhPCY3 specifically cyclizes linear precursor peptides in planta. Molecular docking and multiple sequence alignment, followed by site-directed mutagenesis, identified N500 and S502 as critical amino acid residues for PhPCY3 function. We identified gene sequences for over 100 precursor peptides and successfully biosynthesized known active orbitides, such as heterophyllin B and pseudostellarin E/F/G. Additionally, four novel orbitides, cyclo-[LDGPPPYF], cyclo-[WGSSTPHT], cyclo-[GLPIGAPWG], and cyclo-[FGDVGPVI], were synthesized using a heterologous expression platform. This study introduces a gene-guided approach for elucidating the biosynthesis pathway and discovering novel orbitides, providing a strategy for mining and biosynthesizing novel orbitides in P. heterophylla and other plants to further investigate their activities.",
+      "journal": "Plant communications",
+      "year": 2025,
+      "pub_date": "2025-05-12",
+      "authors": "Qin Xianjin; Wang Fengjiao; Xie Dejin; Zhou Qi; Lin Sheng; ... (+2)",
+      "first_author": "Qin Xianjin",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40422716",
+      "doi": "10.3390/jof11050382",
+      "title": "Three New Species and a New Record of Arbuscular Mycorrhizal Fungi of the Genus ",
+      "abstract": "Arbuscular mycorrhizal (AM) fungi are root symbionts that play an important role in the growth of vascular plants. Four AM fungi, including three new species, Acaulospora citrusnsis, A. guangxiensis, A. jiangxiensis, and a new country record from China, Acaulospora herrerae, are reported based on morphological characteristics and molecular phylogenetic analysis. They were isolated and propagated from spores extracted from the rhizosphere soils of citrus. A. citrusnsis is characterized by forming hyaline to pale yellow globose to subglobose spores of (70.0-)85.0(-100.0) μm in diameter. Spores of A. guangxiensis are pale yellow to pale yellowish brown, with spherical to sub-spherical appearance and (103.1-)122.1(-147.1) μm in diameter. Young spores of A. jiangxiensis are hyaline, gradually turning pale yellow as they mature, with spherical to sub-spherical appearance and (78.7-)85.6(-90.0) μm in diameter. Spores of A. herrerae are hyaline and 86.3-127.2 μm in diameter. Four species have three spore wall layers, and spores form individually in the soil. The phylogenetic tree was constructed and inferred from sequences of 18S-ITS1-5.8S-ITS2-28S datasets by Bayesian inference and maximum likelihood analysis. Voucher specimens are deposited in the Center for Subtropical Arbuscular Mycorrhizal Fungi Culture Collection (CSMC).",
+      "journal": "Journal of fungi (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-05-16",
+      "authors": "Huang Haisi; Qin Xiaojuan; Kang Yihao; Xu Jie; Shang Pengxiang; ... (+3)",
+      "first_author": "Huang Haisi",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39324423",
+      "doi": "10.1093/pcp/pcae110",
+      "title": "Genetic Isolation among Four Lineages of Silene nutans.",
+      "abstract": "Speciation is the process leading to the emergence of new species. While being usually progressive, it can sometimes be fast with rapid emergence of reproductive barriers leading to high level of reproductive isolation. Some reproductive barriers might leave signatures in the genome, through elevated level of genetic differentiation at specific loci. Similar signatures might also be the results of linked selection acting in low recombination regions. Nottingham catchfly (Silene nutans) is a Caryophyllaceae species composed of four genetically differentiated lineages for which strong and asymmetric levels of reproductive isolation have been identified. Using population transcriptomic data from several individuals of the four lineages, we inferred the best evo-demographic scenario leading to the current reproductive isolation of these four lineages. We also tested whether loci exhibiting high level of genetic differentiation represented barrier loci or were located in low recombination regions, evolving under strong influence of linked selection. Overall, the four lineages of S. nutans have diverged in strict isolation, likely during the different glacial period, through migration in distinct glacial refugia. Speciation between these four lineages appeared to be particularly fast, likely due to fast evolving plastid genome accelerating plastid-nuclear co-evolution and the probability of plastid-nuclear incompatibilities in inter-lineage hybrids.",
+      "journal": "Plant & cell physiology",
+      "year": 2025,
+      "pub_date": "2025-05-17",
+      "authors": "Postel Zoé; Martin Hélène; Roux Camille; Godé Cécile; Genete Mathieu; ... (+4)",
+      "first_author": "Postel Zoé",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40382554",
+      "doi": "10.1186/s12870-025-06565-z",
+      "title": "A three-way transcriptomic crosstalk interaction in a biocontrol agent (Bacillus velezensis), a fungal pathogen (Colletotrichum gloeosporioides), and a walnut host (Juglans regia L.).",
+      "abstract": "Walnut anthracnose, caused by Colletotrichum gloeosporioides, is a globally significant disease. Bacillus velezensis demonstrates strong inhibitory effects against C. gloeosporioides. Current research primarily focuses on interactions between two species, leaving the molecular mechanisms of three-way interactions among walnut, pathogen, and biocontrol agent unexplored. To elucidate the molecular mechanisms in the \"Walnut-C. gloeosporioides-B. velezensis\" system, we employed three-way RNA-Seq to obtain transcriptome data for each species. We identified 111,674, 799, and 79 differentially expressed genes (DEGs) in walnut, C. gloeosporioides, and B. velezensis respectively. By integrating WGCNA and PPI network analyses, we discovered 3 key modules and 10 hub genes in C. gloeosporioides, and 2 key modules and 2 hub genes in B. velezensis. Functional enrichment analyses (GO and KEGG) revealed that walnut DEGs were enriched in secondary metabolism, disease-resistance proteins, plant hormone signal transduction, and pathogenesis-related proteins; C. gloeosporioides DEGs were associated with binding, antigen processing and presentation, and regulation of actin cytoskeleton; B. velezensis DEGs were linked to transmembrane transport, amino acid biosynthesis, carbon metabolism, and TCA cycle. These results demonstrate that the transcriptional responses of the three species mutually influence each other within the three-way system. This study addresses knowledge gaps in the biocontrol-pathogen-host interaction and provides a theoretical foundation for developing environmentally sustainable strategies to control walnut anthracnose.",
+      "journal": "BMC plant biology",
+      "year": 2025,
+      "pub_date": "2025-05-17",
+      "authors": "Wang Shiwei; Zhu Hanmingyue; Li Shuying; Zhu Tianhui",
+      "first_author": "Wang Shiwei",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40431076",
+      "doi": "10.3390/plants14101511",
+      "title": "Metagenomic Analysis of Wild Apple (",
+      "abstract": "Kazakhstan's rich biodiversity includes diverse apple populations, notably the wild apple tree (Malus sieversii) prized for traits like disease resistance and adaptability, potentially aiding breeding programs. Analyzing their microbiomes offers insights into bacterial diversity and how it influences apple tree development, making it a reliable method for understanding ecological interactions. In this research, 334 apple tree samples were collected from different mountain ranges in southeastern Kazakhstan. An analysis using nanopore-based 16S rRNA sequencing showed a distinct similarity in the microbiome compositions of samples from the Zhongar and Ile Alatau mountain ranges, with a predominance of Pseudomonadaceae, Enterobacteriaceae, and Microbacteriaceae. In contrast, samples from Ketmen ridge showed a higher prevalence of Enterobacteriaceae. Alongside the less represented Pseudomonadaceae family, in the Ketmen ridge region, bacteria of the Xanthomonadaceae, Alcaligenaceae, and Brucellaceae families were also present. Across all regions, beneficial plant-associated bacteria were identified, such as Pseudomonas veronii, Stenotrophomonas geniculata, and Kocuria rhizophila, potentially enhancing plant resilience. However, opportunistic phytopathogens were also detected, including Pseudomonas viridiflava and Serratia marcescens, particularly in the Ile Alatau region. These findings highlight the complex microbial interactions in M. sieversii, thus offering key insights into host-microbe relationships that can inform apple breeding and ecological preservation efforts.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-05-18",
+      "authors": "Mendybayeva Aruzhan; Makhambetov Alibek; Yanin Kirill; Taskuzhina Aisha; Khusnitdinova Marina; ... (+1)",
+      "first_author": "Mendybayeva Aruzhan",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39763901",
+      "doi": "10.1101/2024.12.27.630494",
+      "title": "Mixed DAMP/MAMP oligosaccharides promote both growth and defense against fungal pathogens of cucumber.",
+      "abstract": "Plants recognize a variety of environmental molecules, thereby triggering appropriate responses to biotic or abiotic stresses. Substances containing microbes-associated molecular patterns (MAMPs) and damage-associated molecular patterns (DAMPs) are representative inducers of pathogen resistance and damage repair, thus treatment of healthy plants with such substances can pre-activate plant immunity and cell repair functions. In this study, the effects of DAMP/MAMP oligosaccharides mixture (Oligo-Mix) derived from plant cell wall (cello-oligosaccharide and xylo-oligosaccharide), and fungal cell wall (chitin-oligosaccharide) were examined in cucumber. Treatment of cucumber with Oligo-Mix promoted root germination and plant growth, along with increased chlorophyll contents in the leaves. Oligo-Mix treatment also induced typical defense responses such as MAP kinase activation and callose deposition in leaves. Pretreatment of Oligo-Mix enhanced disease resistance of cucumber leaves against pathogenic fungi Podosphaera xanthii (powdery mildew) and Colletotrichum orbiculare (anthracnose). Oligo-Mix treatment increased the induction of hypersensitive cell death around the infection site of pathogens, which inhibited further infection and the conidial formation of pathogens on the cucumber leaves. RNA-seq analysis revealed that Oligo-Mix treatment upregulated genes associated with plant structural reinforcement, responses to abiotic stresses and plant defense. These results suggested that Oligo-Mix has beneficial effects on growth and disease resistance in cucumber, making it a promising biostimulant for agricultural application.",
+      "journal": "bioRxiv : the preprint server for biology",
+      "year": 2025,
+      "pub_date": "2025-05-13",
+      "authors": "Pring Sreynich; Kato Hiroaki; Taniuchi Keiko; Camagna Maurizio; Saito Makoto; ... (+6)",
+      "first_author": "Pring Sreynich",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

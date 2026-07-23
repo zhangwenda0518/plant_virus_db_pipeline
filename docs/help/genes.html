@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Immune & sRNA Gene Atlas — Help</title>
+<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;line-height:1.8}nav{background:linear-gradient(135deg,#1a3a5c,#2c6e49);color:#fff;height:46px;display:flex;align-items:center;padding:0 16px;gap:4px;position:sticky;top:0;z-index:100}nav .brand{font-weight:700;font-size:15px;margin-right:12px;color:#fff;text-decoration:none}nav a{color:rgba(255,255,255,.75);text-decoration:none;padding:5px 11px;border-radius:4px;font-size:12px}nav a:hover,nav a.on{color:#fff;background:rgba(255,255,255,.15)}nav .sep{color:rgba(255,255,255,.25);margin:0 2px;font-size:14px;user-select:none}nav .spacer{flex:1}.hero{background:linear-gradient(135deg,#134e6f,#2c6e49);color:#fff;padding:32px 24px;text-align:center}.hero h1{font-size:24px}.hero p{font-size:13px;opacity:.85;margin-top:4px}.wrap{max-width:900px;margin:0 auto;padding:24px 20px}h2{font-size:18px;color:#1a5276;margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid #e8f4ea}h3{font-size:15px;color:#2c6e49;margin:18px 0 6px}p{font-size:14px;color:#444;margin-bottom:10px}ol,ul{margin:8px 0 12px 20px;font-size:14px;color:#444}li{margin-bottom:4px}code{background:#e8f4ea;padding:1px 5px;border-radius:3px;font-size:13px}.tip{background:#e8f4ea;border-left:3px solid #2c6e49;padding:10px 14px;margin:12px 0;border-radius:4px;font-size:13px}footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}</style></head><body>
+<nav><a href="/" class="brand">Plant Virus DB</a><span class="sep">|</span><a href="/reference/">Reference</a><a href="/primers/">Primers</a><a href="/photos/">Photos</a><a href="/vector/">Vector</a><a href="/te/">TE·EVE</a><a href="/genes/">Genes</a><span class="sep">|</span><a href="/metabuli/">Metabuli</a><a href="/explorer/">Explorer</a><a href="/pamirdb/">PV-miRNA</a><span class="sep">|</span><a href="/literature/">Literature</a><a href="/knowledge/">Knowledge</a><span class="spacer"></span><a href="/help/" class="on">Help</a></nav>
+<div class="hero"><h1>Immune & sRNA Gene Atlas</h1><p>Integrated plant antiviral immune receptors and small RNA pathway genes</p></div>
+
+<div style="max-width:900px;margin:0 auto;padding:0 20px 16px">
+  <img src="/help/images/genes.png" alt="genes.html screenshot" style="width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);border:1px solid #d0d8e0">
+</div>
+
+<div style="max-width:900px;margin:0 auto;padding:0 20px 8px">
+  <img src="/help/images/genes_browser.png" alt="Gene Browser — Gene Browser Panel" style="width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);border:1px solid #d0d8e0;margin-bottom:4px">
+  <p style="text-align:center;font-size:12px;color:#888;margin-bottom:12px">Gene Browser — Gene Browser Panel</p>
+</div>
+
+<div class="wrap">
+
+<h2>Overview</h2>
+<p>Gene Atlas integrates five previously separate plant antiviral immune gene resources into a single searchable browser, covering the complete antiviral defense line from immune receptors to RNA silencing pathways to ubiquitin-proteasome systems.</p>
+<table style="width:100%;border-collapse:collapse;margin:12px 0;font-size:13px">
+<tr style="background:#e8f4ea"><th style="padding:8px;text-align:left">Panel</th><th style="padding:8px;text-align:left">Content</th><th style="padding:8px;text-align:left">Source</th></tr>
+<tr><td style="padding:8px;border-bottom:1px solid #eee">NLR</td><td style="padding:8px;border-bottom:1px solid #eee">415 experimentally validated immune receptors</td><td style="padding:8px;border-bottom:1px solid #eee">RefPlantNLR (73 species)</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid #eee">sRNA Pathway</td><td style="padding:8px;border-bottom:1px solid #eee">11,780 genes (AGO, DCL, RDR, DRB, SGS3, HEN1)</td><td style="padding:8px;border-bottom:1px solid #eee">NCBI</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid #eee">UPS</td><td style="padding:8px;border-bottom:1px solid #eee">3,996 ubiquitin-proteasome system components</td><td style="padding:8px;border-bottom:1px solid #eee">NCBI</td></tr>
+<tr><td style="padding:8px;border-bottom:1px solid #eee">miRNA</td><td style="padding:8px;border-bottom:1px solid #eee">83,166 plant miRNAs (837 species)</td><td style="padding:8px;border-bottom:1px solid #eee">miRBase + PlantRG</td></tr>
+<tr><td style="padding:8px">vsiRNA</td><td style="padding:8px">322,214 virus-derived siRNA records (12 species)</td><td style="padding:8px">PVsiRNAdb</td></tr>
+</table>
+<p>Additionally, <b>59 experimentally validated antiviral NLR effectors</b> are displayed alongside RefPlantNLR data.</p>
+
+<h2>Quick Start</h2>
+<ol>
+  <li>Open <code>/genes/</code> and select a target panel (NLR / sRNA / UPS / miRNA / vsiRNA)</li>
+  <li>NLR Panel: Browse 415 NLR genes with GFF3 domain architecture diagrams (CC-NB-LRR, TIR-NB-LRR domains)</li>
+  <li>sRNA Panel: View key gene families in RNA silencing pathways such as AGO, DCL, RDR</li>
+  <li>Filter by species: Enter a species name (e.g. <code>Arabidopsis thaliana</code>) or genus to narrow results</li>
+  <li>miRNA Panel: Browse 83,166 plant miRNA mature sequences; search by species or miRNA family</li>
+</ol>
+
+<div class="tip"><b>Tip</b>: After identifying candidate antiviral receptor genes in the NLR Panel, jump to PAmiRDB (PV-miRNA) to predict whether corresponding miRNAs target specific viruses, building a dual NLR + miRNA defense hypothesis.</div>
+
+</div>
+<footer>Plant Virus Database Platform · Help</footer>
+<script src="/reference/i18n.js"></script>
+<script>PVDB_i18n.init({navSelector:"nav"});</script>
+</body></html>

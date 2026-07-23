@@ -1,0 +1,240 @@
+{
+  "week": "2025-W03",
+  "start": "2025-01-13",
+  "end": "2025-01-19",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 29,
+  "by_category": {
+    "Host_Virus_Interactions": 12,
+    "Antiviral_Resistance_Genes": 7,
+    "Control_Management": 4,
+    "New_Virus": 3,
+    "Viral_Diversity_Ecology": 3,
+    "Biotechnology_Applications": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "39807520",
+      "doi": "10.1016/j.heliyon.2024.e40984",
+      "title": "Meta-QTL analysis for mining of candidate genes and constitutive gene network development for viral disease resistance in maize (",
+      "abstract": "Viral diseases severely impact maize yields, with occurrences of maize viruses reported worldwide. Deployment of genetic resistance in a plant breeding program is a sustainable solution to minimize yield loss to viral diseases. The meta-QTL (MQTL) has demonstrated to be a promising approach to pinpoint the most robust QTL(s)/candidate gene(s) in the form of an overlapping or common genomic region identified through leveraging on different research studies that independently report genomic regions significantly associated with the target traits. Here, we employed an MQTL approach by targeting 39 independent research investigations aimed at genetic dissection of the resistance in maize against 14 viral diseases. We could project 27 % (53) of the total 196 QTLs onto the maize genome. Our analysis found a robust set of 14 MQTLs on chromosomes 1, 3 and 10 that explain significant proportion of the variations for resistance against 11 viral diseases. Marker trait associations (MTAs) identified from genome-wide association studies (GWAS) provide evidence in support of the two MQTLs (MQTL3_2 and MQTL10_2) playing crucial roles in viral disease resistance (VDR) in maize. A total of 1,715 candidate genes underlie the identified MQTL regions, of which, we further examined the constitutively-expressed genes for their involvement in various metabolic pathways. The involvement of the identified genes in the antiviral resistance mechanism renders them a valuable genomic resource for allele mining and elucidating plant-virus interactions for maize research and breeding.",
+      "journal": "Heliyon",
+      "year": 2025,
+      "pub_date": "2025-01-15",
+      "authors": "Gupta Mamta; Choudhary Mukesh; Singh Alla; Sheoran Seema; Kumar Harish; ... (+3)",
+      "first_author": "Gupta Mamta",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "多种玉米病毒（14种）",
+      "taxonomy": "",
+      "host_plant": "玉米",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39754580",
+      "doi": "10.1021/acs.jafc.4c08156",
+      "title": "Design, Synthesis, and Biological Activity Evaluation of 5-Aryl-cyclopenta[",
+      "abstract": "Taking the natural product cerbinal as the lead compound, 30 novel 5-aryl-cyclopenta[c]pyridine derivatives were designed and synthesized based on the previous bioactivity studies of the cyclopenta[c]pyridines. The modification of the position-5 of compound 2 was achieved by amination, bromination, and cross coupling using cerbinal as the raw material. The results of the bioactivity tests demonstrated that partial compounds exhibited superior activity against plant viruses compared to compound 2. Compounds 4g and 4k showed higher anti-TMV activity levels than commercial varieties of ribavirin at concentrations of 500 and 100 μg/mL. In particular, compound 4k, which contained a m-methoxyphenyl substitution, displayed the most potent anti-TMV activity in vivo (inactivation effect 51.1 ± 1.9%, curative effect 50.7 ± 3.6%, protection effect 53.8 ± 2.8% at 500 μg/mL) The toxicological experiments also revealed that compound 4k exhibited low toxicity to zebrafish. Additionally, molecular docking results indicated that access to the benzene ring enhanced the binding affinity of these derivatives for TMV receptor proteins. Furthermore, studies on the insecticidal and fungicidal activities of these derivatives showed that most of the compounds exhibited good larvicidal efficacy against Plutella xylostella and broad-spectrum fungicidal activities. Notably, compound 4i (3,4,5-trifluorophenyl) displayed an outstanding inhibition ratio of 91.9% against Sclerotinia sclerotiorum, 75% against Botrytis cinerea, and 62.5% against Phytophthora infestans at a concentration of 50 μg/mL. These results suggest that 5-aryl-cyclopenta[c]pyridine derivatives could serve as promising candidate agents for antiviral, insecticidal, and fungicidal applications in agricultural production.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2025,
+      "pub_date": "2025-01-15",
+      "authors": "Tan Jie; Xu Changjiang; Liu Dong; Liu Shuai; Liu Yu; ... (+8)",
+      "first_author": "Tan Jie",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒（TMV）",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39278376",
+      "doi": "10.1016/j.gene.2024.148942",
+      "title": "Comparative transcriptome profiling reveals the key genes and molecular mechanisms involved in rice under blast infection.",
+      "abstract": "The aim of this study was to analyze the resistance genes and molecular mechanisms involved in rice blast infection. The contents of seven hormones and eight biochemical indicators in the leaves and spikes were at dynamic levels after inoculation with rice blast strains over time. The mRNA and protein expression of the six genes were consistent with the transcriptome analysis results. In addition, KEGG enrichment analysis showed that Os03g0132000, Os06g0215600, and Os06g0215500 were significantly enriched in the alpha-linolenic acid metabolism KEGG pathway, whereas Os05g0311801 was significantly enriched in the zeatin biosynthesis KEGG pathway. Furthermore, Os03g0180900 and Os09g0439200 were significantly enriched in the plant hormone signal transduction KEGG pathways. Therefore, blast infection could alter the hormones, biochemical indicators, and traits of rice. Moreover, genes including Os03g0132000, Os03g0180900, and Os05g0311801 were identified as rice blast resistance genes, and the mechanism might involve alpha-linolenic acid metabolism, zeatin biosynthesis, and plant hormone signal transduction KEGG pathways.",
+      "journal": "Gene",
+      "year": 2025,
+      "pub_date": "2025-01-15",
+      "authors": "Li Gang; Gao Qingsong; Li Bianhao; Wang Jian; Cheng Baoshan; ... (+9)",
+      "first_author": "Li Gang",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39277790",
+      "doi": "10.1016/j.xplc.2024.101135",
+      "title": "Phosphorylation of PIP2;7 by CPK28 or Phytophthora kinase effectors dampens pattern-triggered immunity in Arabidopsis.",
+      "abstract": "Plasma membrane intrinsic proteins (PIPs), a subclass of aquaporins, play an important role in plant immunity by acting as H2O2 transporters. Their homeostasis is mostly maintained by C-terminal serine phosphorylation. However, the kinases that phosphorylate PIPs and manipulate their turnover are largely unknown. Here, we found that Arabidopsis thaliana PIP2;7 positively regulates plant immunity by transporting H2O2. Arabidopsis CALCIUM-DEPENDENT PROTEIN KINASE 28 (CPK28) directly interacts with and phosphorylates PIP2;7 at Ser273/276 to induce its degradation. During pathogen infection, CPK28 dissociates from PIP2;7 and destabilizes, leading to PIP2;7 accumulation. As a countermeasure, oomycete pathogens produce conserved kinase effectors that stably bind to and mediate the phosphorylation of PIP2;7 to induce its degradation. Our study identifies PIP2;7 as a novel substrate of CPK28 and shows that its protein stability is negatively regulated by CPK28. Such phosphorylation could be mimicked by Phytophthora kinase effectors to promote infection. Accordingly, we developed a strategy to combat oomycete infection using a phosphorylation-resistant PIP2;7S273/276A mutant. The strategy only allows accumulation of PIP2;7S273/276A during infection to limit potential side effects on normal plant growth.",
+      "journal": "Plant communications",
+      "year": 2025,
+      "pub_date": "2025-01-13",
+      "authors": "Zhu Hai; Bao Yazhou; Peng Hao; Li Xianglan; Pan Weiye; ... (+7)",
+      "first_author": "Zhu Hai",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39255711",
+      "doi": "10.1016/j.foodchem.2024.141151",
+      "title": "Absorption, transportation, residual distribution of chiral ",
+      "abstract": "Dufulin is a novel chiral plant antiviral agent. In this study, we investigated the uptake, translocation and accumulation of 14C-dufulin stereoisomers in different tissues of garlic via leaf introduction and root uptake. The behavior of dufulin enantiomers in plants is not stereoselective, and dufulin is more likely to be absorbed by leaves than by roots. The metabolites of 14C-dufulin with high specific activity in garlic were qualitatively and quantitatively analyzed by HPLC-QTOF-MS, and the metabolic pathway involved was elucidated. In the leaf and bulb, dufulin underwent phase I and phase II metabolism and produced four metabolites. The ratios and concentrations of these four metabolites in the bulb, but not in the leaf, met the residue criterion. Overall, our results provide relatively accurate predictions for the risk assessment of dufulin, which will help guide its rational use and ensure its ecological safety and human health.",
+      "journal": "Food chemistry",
+      "year": 2025,
+      "pub_date": "2025-01-15",
+      "authors": "Zheng Ruonan; Wang Binjie; Wang Jiye; Cheng Xi; Ye Qingfu",
+      "first_author": "Zheng Ruonan",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39410714",
+      "doi": "10.1016/j.xplc.2024.101173",
+      "title": "Interspecific allelopathic interaction primes direct and indirect resistance in neighboring plants within agroforestry systems.",
+      "abstract": "The agroforestry system with high biodiversity enhances ecosystem stability and reduces vulnerability to environmental disturbances and diseases. Investigating the mechanisms of interspecies allelopathic interactions for disease suppression in agroforestry offers a sustainable strategy for plant disease management. Here, we used Panax ginseng cultivated under Pinus koraiensis forests, which have low occurrences of Alternaria leaf spot, as a model to explore the role of allelochemicals in disease suppression. Our findings demonstrate that foliar application of P. koraiensis needle leachates effectively enhanced the resistance of P. ginseng against Alternaria leaf spot. Using gas chromatography-mass spectrometry, we identified and quantified endo-borneol as a key compound in P. koraiensis leachates and confirmed its ability to prime resistance in neighboring P. ginseng plants. We discovered that endo-borneol not only directly activates defense-related pathways in P. ginseng to confer resistance but also indirectly recruits its beneficial rhizospheric microbiota by promoting the secretion of ginsenosides, thereby triggering induced systemic resistance. Notably, higher concentrations of endo-borneol, ranging from 10 to 100 mg/l, have a greater capacity to induce plant resistance and enhance root secretion, thereby recruiting more microbiota compared to lower concentrations ranging from 0.01 to 1 mg/l. Additionally, endo-borneol exhibits antifungal activities against the growth of the pathogen Alternaria panax when concentrations exceeded 10 mg/l. These results reveal the multifaceted functions of allelochemical endo-borneol in disease suppression within agroforestry systems and highlight its potential as an environmentally friendly agent for sustainable agriculture.",
+      "journal": "Plant communications",
+      "year": 2025,
+      "pub_date": "2025-01-13",
+      "authors": "Ji Xing-Yu; Ye Chen; Kang Wenting; Luan Wenjie; Liu Yixiang; ... (+7)",
+      "first_author": "Ji Xing-Yu",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39601594",
+      "doi": "10.1128/mra.00626-24",
+      "title": "Complete genomes of ",
+      "abstract": "Mucilaginibacter species have been isolated from various environments, often in association with plants. Here, we report the complete genomes of Mucilaginibacter sabulilitoris SNA2 and Mucilaginibacter sp. cycad4. The former is the first available for that species, and based on 16S sequence analysis, the latter strain is likely a new species.",
+      "journal": "Microbiology resource announcements",
+      "year": 2025,
+      "pub_date": "2025-01-16",
+      "authors": "Hirsch Ann M; Humm Ethan; Rubbi Liudmilla; Del Vecchio Giorgia; Ha Sung Min; ... (+2)",
+      "first_author": "Hirsch Ann M",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39859680",
+      "doi": "10.3390/insects16010099",
+      "title": "A Review of the Psyllid Genus ",
+      "abstract": "Epipsylla Kuwayama, 1908, constitutes an Old World genus of psyllids with 15 described species. Based on characters of immatures, Epipsylla was recently assigned to Ciriacreminae (Psyllidae). The genus is morphologically well circumscribed but species are currently difficult to identify as many descriptions lack detail and precision. Eight species are reported from the Chinese mainland. Here, we provide diagnoses for the adults of these species and, as far as known, the fifth-instar immatures. Figures are provided of taxonomically relevant adult characters. A new species, Epipsylla suni sp. nov., is described from Yunnan (China). We provide illustrations of its habitus and morphological features, and list the host plant. Furthermore, we sequenced the mitochondrial genome of the new species and constructed a phylogenetic tree using thirteen protein-coding genes and two rRNA genes. The results of the molecular phylogenetic analysis using the maximum likelihood method support the assignment to Ciriacreminae.",
+      "journal": "Insects",
+      "year": 2025,
+      "pub_date": "2025-01-18",
+      "authors": "He Zhixin; Burckhardt Daniel; Luo Xinyu; Xu Rongzhen; Cai Wanzhi; ... (+1)",
+      "first_author": "He Zhixin",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39861884",
+      "doi": "10.3390/v17010095",
+      "title": "RNA Virus Discovery Sheds Light on the Virome of a Major Vineyard Pest, the European Grapevine Moth (",
+      "abstract": "The European grapevine moth (Lobesia botrana) poses a significant threat to vineyards worldwide, causing extensive economic losses. While its ecological interactions and control strategies have been well studied, its associated viral diversity remains unexplored. Here, we employ high-throughput sequencing data mining to comprehensively characterize the L. botrana virome, revealing novel and diverse RNA viruses. We characterized four new viral members belonging to distinct families, with evolutionary cues of cypoviruses (Reoviridae), sobemo-like viruses (Solemoviridae), phasmaviruses (Phasmaviridae), and carmotetraviruses (Carmotetraviridae). Phylogenetic analysis of the cypoviruses places them within the genus in affinity with other moth viruses. The bi-segmented and highly divergent sobemo-like virus showed a distinctive evolutionary trajectory of its encoding proteins at the periphery of recently reported invertebrate Sobelivirales. Notably, the presence of a novel phasmavirus, typically associated with mosquitoes, expands the known host range and diversity of this family to moths. Furthermore, the identification of a carmotetravirus branching in the same cluster as the Providence virus, a lepidopteran virus which replicates in plants, raises questions regarding the biological significance of this moth virus to the grapevine host. We further explored viral sequences in several publicly available transcriptomic datasets of the moth, indicating potential prevalence across distinct conditions. These results underscore the existence of a complex virome within L. botrana and lay the foundation for future studies investigating the ecological roles, evolutionary dynamics, and potential biocontrol applications of these viruses in the L. botrana-vineyard ecosystem.",
+      "journal": "Viruses",
+      "year": 2025,
+      "pub_date": "2025-01-13",
+      "authors": "Debat Humberto; Gomez-Talquenca Sebastian; Bejerman Nicolas",
+      "first_author": "Debat Humberto",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39859482",
+      "doi": "10.3390/ijms26020768",
+      "title": "Advances in Protein Kinase Regulation of Stress Responses in Fruits and Vegetables.",
+      "abstract": "Fruits and vegetables (F&Vs) are essential in daily life and industrial production. These perishable produces are vulnerable to various biotic and abiotic stresses during their growth, postharvest storage, and handling. As the fruit detaches from the plant, these stresses become more intense. This unique biological process involves substantial changes in a variety of cellular metabolisms. To counter these stresses, plants have evolved complex physiological defense mechanisms, including regulating cellular activities through reversible phosphorylation of proteins. Protein kinases, key components of reversible protein phosphorylation, facilitate the transfer of the γ-phosphate group from adenosine triphosphate (ATP) to specific amino acid residues on substrates. This phosphorylation alters proteins' structure, function, and interactions, thereby playing a crucial role in regulating cellular activity. Recent studies have identified various protein kinases in F&Vs, underscoring their significant roles in plant growth, development, and stress responses. This article reviews the various types of protein kinases found in F&Vs, emphasizing their roles and regulatory mechanisms in managing stress responses. This research sheds light on the involvement of protein kinases in metabolic regulation, offering key insights to advance the quality characteristics of F&Vs.",
+      "journal": "International journal of molecular sciences",
+      "year": 2025,
+      "pub_date": "2025-01-17",
+      "authors": "Song Yanan; Li Fujun; Ali Maratab; Li Xiaoan; Zhang Xinhua; ... (+1)",
+      "first_author": "Song Yanan",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

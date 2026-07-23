@@ -1,0 +1,240 @@
+{
+  "week": "2025-W28",
+  "start": "2025-07-07",
+  "end": "2025-07-13",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 33,
+  "by_category": {
+    "Host_Virus_Interactions": 11,
+    "New_Virus": 8,
+    "Antiviral_Resistance_Genes": 5,
+    "Control_Management": 5,
+    "Biotechnology_Applications": 3,
+    "Detection_Methods": 2,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "40733596",
+      "doi": "10.3390/v17070979",
+      "title": "Comprehensive Virome Profiling of Apple Mosaic Disease-Affected Trees in Iran Using RT-PCR and Next-Generation Sequencing.",
+      "abstract": "Apples (Malus domestica), one of Iran's oldest cultivated fruit crops, hold considerable economic importance. In this study, 170 apple leaf samples representing various commercial cultivars were collected across the country. RT-PCR screening targeted five common apple-infecting viruses and two viroids: apple chlorotic leaf spot virus (ACLSV), apple stem pitting virus (ASPV), apple stem grooving virus (ASGV), apple green crinkle-associated virus (AGCaV), apple mosaic virus (ApMV), apple scar skin viroid (ASSVd), and hop stunt viroid (HSVd). To identify additional or novel agents, 40 RT-PCR-negative samples were pooled into two composite groups and analyzed using next-generation sequencing (NGS). NGS was also performed on individual samples with mixed infections to retrieve full genomes. RT-PCR confirmed the presence of ACLSV, ASPV, ASGV, AGCaV, ApMV, and HSVd. NGS further revealed three additional pathogens: citrus concave gum-associated virus (CCGaV), apple hammerhead viroid (AHVd), and apricot vein clearing-associated virus (AVCaV), which were subsequently detected across the collection by RT-PCR. AGCaV was most prevalent (47.6%), followed by ACLSV (45.8%), HSVd (27.6%), AVCaV (20.5%), ASGV (17%), AHVd (15.2%), ASPV (14.1%), CCGaV (4.7%), and ApMV (3.5%). Mixed infections occurred in 67% of samples. Phylogenetic analysis based on CP genes (ACLSV, ASGV, AGCaV) and full genomes (AVCaV, AHVd) clustered Iranian isolates together, suggesting a common origin. This is the first report in Iran of AGCaV, CCGaV, ApMV, and AVCaV in apple, and notably, the first global report of AVCaV in a non-Prunus host. The findings provide the first comprehensive assessment of the sanitary status of apple trees in Iran.",
+      "journal": "Viruses",
+      "year": 2025,
+      "pub_date": "2025-07-13",
+      "authors": "Hamedi Anahita; Rakhshandehroo Farshad; Safarnejad Mohammad Reza; Jouzani Gholamreza Salehi; Ben Slimen Amani; ... (+1)",
+      "first_author": "Hamedi Anahita",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Apple chlorotic leaf spot virus (ACLSV), Apple stem pitting virus (ASPV), Apple stem grooving virus (ASGV), Apple green crinkle-associated virus (AGCaV), Apple mosaic virus (ApMV), Hop stunt viroid (HSVd), Citrus concave gum-associated virus (CCGaV), Apple hammerhead viroid (AHVd), Apricot vein clearing-associated virus (AVCaV)",
+      "taxonomy": "未提及",
+      "host_plant": "苹果 (Malus domestica)",
+      "location": "伊朗",
+      "results": "RT-PCR确认ACLSV、ASPV、ASGV、AGCaV、ApMV、HSVd；NGS发现CCGaV、AHVd、AVCaV。AGCaV流行率最高(47.6%)，67%样品混合感染，系统发育显示伊朗分离株共同起源。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40732725",
+      "doi": "10.3390/pathogens14070679",
+      "title": "Potential for Duplexed, In-Tandem gRNA-Mediated Suppression of Two Essential Genes of Tomato Leaf Curl New Delhi Virus in Crop Plants.",
+      "abstract": "Tomato leaf curl New Delhi virus (ToLCNDV) is among the most prevalent and widely distributed begomovirus infecting chili pepper (Capsicum annuum) and tomato in the Indian subcontinent. In this study, a guide RNA (gRNA) sequence-CRISPR-Cas9 approach was used to target and cleave two essential coding regions in the begomovirus genome. The gRNAs were designed to target conserved regions of the ToLCNDV replication-associated protein (rep) gene or ORF AC1, and/or the coat protein (cp) gene or AV1 ORF, respectively. Based on an alignment of 346 representative ToLCNDV genome sequences, all predicted single nucleotide polymorphisms off-target sites were identified and eliminated as potential gRNA targets. Based on the remaining genome regions, four candidate gRNAs were designed and used to build gRNA-Cas9 duplexed constructs, e.g., containing two gRNAs cloned in tandem, in different combinations (1-4). Two contained two gRNAs that targeted the coat protein gene (cp; AV1 ORF), while the other two constructs targeted both the cp and replication-associated protein gene (rep; AC1 ORF). These constructs were evaluated for the potential to suppress ToLCNDV infection in Nicotiana benthamiana plants in a transient expression-transfection assay. Among the plants inoculated with the duplexed gRNA construct designed to cleave ToLCNDV-AV1 or AC1-specific nucleotides, the construct designed to target both the cp (293-993 nt) and rep (1561-2324) showed the greatest reduction in virus accumulation, based on real-time quantitative PCR amplification, and attenuated disease symptoms, compared to plants inoculated with the DNA-A component alone or mock-inoculated, e.g., with buffer. The results demonstrate the potential for gRNA-mediated suppression of ToLCNDV infection in plants by targeting at least two viral coding regions, underscoring the great potential of CRISPR-Cas-mediated abatement of begomovirus infection in numerous crop species.",
+      "journal": "Pathogens (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-07-10",
+      "authors": "Naveed Saher; Brown Judith K; Mubin Muhammad; Javed Nazir; Nawaz-Ul-Rehman Muhammad Shah",
+      "first_author": "Naveed Saher",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "番茄曲叶新德里病毒 (ToLCNDV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40646025",
+      "doi": "10.1038/s41598-025-09038-3",
+      "title": "A geminivirus attenuation vector for crop protection using episomal plant gene therapy.",
+      "abstract": "Although plant viruses inflict billions of dollars in global crop yield loss, they also encode functions that can be used for crop protection. A viral vector attenuation strategy is developed that enables modulation of a 'gene therapy' viral vector designed for protective gene delivery. This attenuation vector targets its homologous native viral counterpart, where the A-component of the bipartite tomato mottle virus (ToMoV) viral vector delivers siRNA constructs targeting native viral sequences for which its own genome has been synthetically modified to avoid silencing. A target coat protein replacement viral vector was engineered with a Nano-luciferase reporter gene to quantify effectiveness based on bioluminescence. To silence the target virus, siRNA constructs were designed against the transactivating protein (TrAP) which is responsible for activating the promoter driving the native coat protein transcript. This siRNA was placed in the attenuation vector designed to avoid self-targeting by modifying its own TrAP sequence. Viral infections were initiated in tobacco using Agrobacterium DNA delivery. Measurements at 3, 6, and 9 days post infiltration revealed a significantly reduced luminescence in attenuation treatment demonstrating suppression of the target virus transgene expression. This work sets the stage for a breadth of virus attenuation studies that can be rapidly applied to diverse crop threats.",
+      "journal": "Scientific reports",
+      "year": 2025,
+      "pub_date": "2025-07-11",
+      "authors": "Thompson Natalie; Kandaswamy Rekha; Anwar Aliya Fathima; Polston Jane; Sunter Garry; ... (+1)",
+      "first_author": "Thompson Natalie",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "番茄斑驳病毒 (tomato mottle virus, ToMoV)",
+      "taxonomy": "",
+      "host_plant": "烟草 (tobacco)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40640274",
+      "doi": "10.1038/s41598-025-09176-8",
+      "title": "Predicting yellow mosaic disease severity in yardlong bean using visible imaging coupled with machine learning model.",
+      "abstract": "Accurate estimation of plant disease severity is pivotal for effective management and decision-making. Field experiments were conducted to understand the correlation and predict the yellow mosaic disease severity in yard-long beans using visible image indices. A total of 45 visible / Red Green Blue (RGB) indices were derived from the RGB images and correlated with disease severity, and also used as inputs for predicting disease severity using nine machine learning (ML) models. Out of 143 genotypes screened based on final disease severity 3, 18, 18, 17, 34 and 53 genotypes were grouped in immune, resistant, moderately resistant, moderately susceptible, susceptible and highly susceptible categories, respectively. Model performances was evaluated using R2, d-index, mean bias error, and normalized Root Mean Square Error (n-RMSE) metrics. Results revealed that 34 indices exhibited significant correlations (p < 0.01) with YMD severity, with 23 positively and 12 negatively correlated. Among these, Red Color Composite (RCC) and Excessive red (ExR) demonstrated the highest and equal positive correlations (0.87), while Green red difference (GRD) exhibited the largest negative correlation (-0.88) with disease severity. The ML models achieved commendable performance, attaining R2 and d-index values exceeding 0.92 and 0.98, respectively, in calibration, and 0.88 and 0.96 in validation, underscoring their effectiveness in predicting YMD severity using RGB images only. Random Forest (RF), Cubist, XGBoost (XGB), K-Nearest Neighbors (KNN), and Gradient Boosting Machine (GBM) emerged as the five top-performing models for predicting YMD severity using visible indices in yard-long beans. These findings hold practical implications for timely disease management strategies, expediting breeding programs, and aiding policy planners and farmers in making well-informed decisions.",
+      "journal": "Scientific reports",
+      "year": 2025,
+      "pub_date": "2025-07-10",
+      "authors": "Dubey Abhishek Kumar; Jha Prakash Kumar; Shubha Kumari; Singh R N; Tamta Manisha; ... (+9)",
+      "first_author": "Dubey Abhishek Kumar",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "豆类黄化花叶病毒（MYMV等）",
+      "taxonomy": "",
+      "host_plant": "长豇豆（yardlong bean）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40560040",
+      "doi": "10.1021/acs.jafc.5c04281",
+      "title": "Ellagic Acid and the Metabolite Urolithin A Suppress HSV-1 Infection and Brain Inflammation by Targeting Casein Kinase CK2.",
+      "abstract": "Plant-based phenolic components and their metabolites, such as ellagic acid (EA) and urolithin A (UA), possess a variety of biological activities. Here, we investigated the antiviral effect of EA and UA against HSV-1 infection, a virus that causes peripheral infection as well as brain inflammation. Both compounds demonstrated potent antiviral activity. Network pharmacology and molecular docking analyses identified protein kinase CK2 as a common target for their action. We showed that both EA and UA were direct CK2 inhibitors using an enzymatic assay, an observation substantiated in cell culture studies. The effect of EA and UA on HSV-1 infection through CK2 was confirmed in CK2 (CSNK2B) knockout cells. Finally, we demonstrated an antiviral effect using a murine model of herpetic stromal keratitis. EA or UA treatment reduced HSV-1 shedding and prevented viral neuroinvasion. CK2 is a critical enzyme involved in cell proliferation and the proinflammatory response. In addition to identifying CK2 as a putative target of EA and UA antiviral activities, this study also demonstrates that EA and its metabolite UA have the potential to reduce infection-associated neurodegenerative inflammation.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2025,
+      "pub_date": "2025-07-09",
+      "authors": "Sun Weikang; Luo Renjie; Qu Qingwei; Yang Jie; Yang Guang; ... (+3)",
+      "first_author": "Sun Weikang",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40643005",
+      "doi": "10.1017/S0022149X25100497",
+      "title": "Morphological and molecular characterisation of ",
+      "abstract": "During nematode surveys conducted to investigate the biodiversity of plant-parasitic nematodes in Mediterranean olive groves with different management strategies (organic and conventional), a nematode population of the genus Neothada was detected in southern Spain. Application of integrative taxonomical approaches clearly demonstrated that it is a new species described herein as Neothada olearum sp. nov., also representing the first report of the genus in Spain. The new species is amphimictic, characterised by a short body (563-774 μm); cuticle widely annulated (2.5-3.0 μm); total number of body annuli 214-226; 16 longitudinal ridges giving a tessellate body surface; stylet without distinct basal knobs (9.0-11.0 μm); and tail elongate-conoid, with tip bluntly rounded. The results of molecular analysis of D2-D3 28S rRNA, ITS rRNA, partial 18S rRNA, and cytochrome oxidase c subunit 1 (COI) gene sequences support for the new species status and clearly separated from N. major and other species within Neothada. Phylogenetic analyses of ribosomal and mitochondrial markers of this study suggested that Neothada is a monophyletic genus, clearly separated from Thada.",
+      "journal": "Journal of helminthology",
+      "year": 2025,
+      "pub_date": "2025-07-11",
+      "authors": "Salazar-García R; Palomares-Rius J E; Cantalapiedra-Navarrete C; Liébanas G; Castillo P; ... (+1)",
+      "first_author": "Salazar-García R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40637942",
+      "doi": "10.1007/s13744-025-01285-3",
+      "title": "About Bamboo, Ants, Scales and a Strange New Butterfly: Four-Level Interactions and the Evolution of Complex Life-History Traits in Annulata (Lepidoptera: Riodinidae).",
+      "abstract": "Annulata J. Hall is a recently described monotypic riodinid genus composed of a single myrmecophilous butterfly species, Annulata annulifera Godman, which occurs in bamboo forests in the Amazonian region. Here, we describe a new species of this genus, Annulata kaminskii Seraphim, Freitas & Mota sp. nov., from the southern Brazilian Amazonia, in addition to its life history and immature stages. This new species is aphytophagous and involved in a four-level trophic interaction with the bamboo plants it inhabits, scale insects whose honeydew and wax it feeds on, and two different, parabiotic ant species that tend to young and older larvae. This is the first case of a butterfly larva observed to offer, as rewards to tending ants, both a secretion produced by specific ant-organs (tentacle nectary organs) and an anal exudate that probably results from its liquid diet. Annulata kaminskii sp. nov. larvae present both tentacle nectary organs and vibratory papillae as ant-organs but anterior tentacle organs are absent. Furthermore, we provide a preliminary attempt at a phylogenetic hypothesis suggesting its systematic position within the Nymphidiini, as a member of the Lemoniadina subtribe (Nymphidiini: Riodininae), despite its lack of anterior tentacle organs. We further discuss the evolution of complex life-history traits in myrmecophilous butterflies in light of current published evidence.",
+      "journal": "Neotropical entomology",
+      "year": 2025,
+      "pub_date": "2025-07-10",
+      "authors": "Mota Luísa L; Machado Patrícia Avelino; Freitas André Victor Lucci; Seraphim Noemy",
+      "first_author": "Mota Luísa L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41119883",
+      "doi": "10.11646/zootaxa.5660.2.2",
+      "title": "Nesiophasma davisdamaledoi sp. nov.a new stick insect from the island of Sumba, Indonesia (Insecta: Phasmatodea).",
+      "abstract": "The new stick insect Nesiophasma davisdamaledoi sp. nov. from the island of Sumba is described and illustrated from both sexes and eggs. It is the first species of the genus Nesiophasma Gnther, 1934 and first stick insect to be recorded from Sumba and the third species of Nesiophasma to become known from the Lesser Sunda Islands, Indonesia. Information on its habitat, host plants, biology and captive breeding are provided. Updated keys to the species of Nesiophasma are presented. The holotype of the new species as well as that of the Timorese Nesiophasma sobesonbaii Hennemann et al., 2023 are deposited in the collection of Museum Zoologicum Bogoriense (MZB).",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-07-09",
+      "authors": "Hennemann Frank H; Damastra Garda Bagus; Tirant Stphane LE; Suputa",
+      "first_author": "Hennemann Frank H",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40733361",
+      "doi": "10.3390/plants14142124",
+      "title": "Systematics and Palaeoecology of Three New Acrocarpous Mosses from the Mid-Cretaceous of Kachin, Myanmar.",
+      "abstract": "The mid-Cretaceous Kachin amber deposit from northern Myanmar is currently a promising locality for reconstructing Cretaceous bryophyte floras. However, the vast majority of bryophyte fossils reported from Kachin amber are epiphytic leafy liverworts of Porellales and pleurocarpous mosses of Hypnodendrales, while acrocarpous mosses are rarely discovered. In addition, terrestrial-to-lithophytic bryophytes have never been reported from Kachin amber. In this study, we describe three new species of acrocarpous mosses, Calymperites proboscideus sp. nov., Calymperites chenianus sp. nov., and Ditrichites aristatus sp. nov. (Dicranales s.l.), based on 34 whole plants and 11 fragments embedded in 13 pieces of Kachin amber. Calymperites chenianus is an epiphytic species based on the connection to a bark fragment, while the other two species are the first terrestrial-to-lithophytic bryophytes from Kachin amber, based on the attachment of rhizoids to soil or rock. Calymperites chenianus and Calymperites proboscideus probably represent stem group members of Calymperaceae. Ditrichites aristatus is likely a member of Ditrichaceae or Dicranaceae. These new findings provide compelling evidence for palaeoecological habitat reconstruction of acrocarpous mosses and significantly expand our understanding of the species diversity of bryophyte communities in the Cretaceous amber forest of Myanmar.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-07-09",
+      "authors": "Tan Zhen-Zhen; Cui Yi-Ming; Saing Lwin Mar; Li Chun-Xiang; Li Ya",
+      "first_author": "Tan Zhen-Zhen",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40637938",
+      "doi": "10.1007/s13744-025-01297-z",
+      "title": "Description of Chrysonotomyia ophelimi sp. nov., Parasitoid of the Eucalyptus Gall Wasp Ophelimus bipolaris in China (Hymenoptera: Eulophidae).",
+      "abstract": "A new species of the genus Chrysonotomyia Ashmead, Chrysonotomyia ophelimi Zheng & Yefremova sp. nov. (green shield wasp) (Hymenoptera: Eulophidae) is described from the Guangxi Zhuang Autonomous Region, China. This species was reared as parasitoid of the Eucalyptus gall wasp Ophelimus bipolaris Chen & Yao (Hymenoptera: Eulophidae). The new parasitoid wasp is identified based on morphological features and molecular analysis of 28S rRNA genes. Both sexes of the newly described species are illustrated, and identification keys are provided.",
+      "journal": "Neotropical entomology",
+      "year": 2025,
+      "pub_date": "2025-07-10",
+      "authors": "Li Yuan-Hao; Su Jing-Hui; Hu Jin; Sun Jin-Bo; Qin Yan; ... (+2)",
+      "first_author": "Li Yuan-Hao",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

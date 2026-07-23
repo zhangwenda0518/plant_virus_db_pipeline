@@ -1,0 +1,78 @@
+{
+  "month": "1965-01",
+  "generated": "2026-07-13 02:59:41",
+  "total": 3,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 2,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "14277088",
+      "doi": "10.1016/0042-6822(65)90254-0",
+      "title": "SUPPRESSION OF VIRUS INFECTIVITY IN DISEASED PLANT TISSUE FOLLOWING TREATMENT WITH AN ANTIVIRAL FACTOR FROM VIRUS-INFECTED PLANTS.",
+      "abstract": "",
+      "journal": "Virology",
+      "year": 1965,
+      "pub_date": "1965-01-01",
+      "authors": "SELA I; HARPAZ I; BIRK Y",
+      "first_author": "SELA I",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "未提及（泛指植物病毒）",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14277089",
+      "doi": "10.1016/0042-6822(65)90255-2",
+      "title": "THE USE OF ANTIVIRAL CHEMICALS TO PROTECT PLANTS AGAINST SOME VIRUSES TRANSMITTED BY APHIDS.",
+      "abstract": "",
+      "journal": "Virology",
+      "year": 1965,
+      "pub_date": "1965-01-01",
+      "authors": "SHANKS C H; CHAPMAN R K",
+      "first_author": "SHANKS C H",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "5322437",
+      "doi": "10.1016/s0065-3527(08)60543-6",
+      "title": "Plant virus-vector relationships.",
+      "abstract": "",
+      "journal": "Advances in virus research",
+      "year": 1965,
+      "pub_date": "1965-01-01",
+      "authors": "Smith K M",
+      "first_author": "Smith K M",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

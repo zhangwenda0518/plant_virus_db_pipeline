@@ -1,0 +1,56 @@
+{
+  "month": "1968-01",
+  "generated": "2026-07-13 02:59:41",
+  "total": 2,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 1,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "5733673",
+      "doi": "",
+      "title": "[Investigation of antiviral properties of plant origin].",
+      "abstract": "",
+      "journal": "Mikrobiolohichnyi zhurnal",
+      "year": 1968,
+      "pub_date": "1968-01-01",
+      "authors": "Aĭzenman B Iu; Frolov A F; Mishenkova E L; Bondarenko A S",
+      "first_author": "Aĭzenman B Iu",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "4878741",
+      "doi": "",
+      "title": "Plant disease resistance.",
+      "abstract": "",
+      "journal": "Science progress",
+      "year": 1968,
+      "pub_date": "1968-01-01",
+      "authors": "Day P R",
+      "first_author": "Day P R",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

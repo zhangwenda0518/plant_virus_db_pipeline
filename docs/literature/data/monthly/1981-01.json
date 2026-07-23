@@ -1,0 +1,80 @@
+{
+  "month": "1981-01",
+  "generated": "2026-07-13 02:59:41",
+  "total": 3,
+  "by_category": {
+    "New_Virus": 2,
+    "Virgaviridae": 1,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "6950195",
+      "doi": "10.1007/BF00271189",
+      "title": "Nucleotide sequence of a cloned cDNA copy of TMV (cowpea strain) RNA, including the assembly origin, the coat protein cistron, and the 3' non-coding region.",
+      "abstract": "The cloned cDNA derived from the 3' end of cowpea strain (Cc) RNA of tobacco mosaic virus (TMV) has been sequenced. Substantial sequence information of 1,060 nucleotides from the 3' end of the RNA reveals some interesting features: (1) the coat protein cistron corresponds to residues 210-701 from the 3' end. Some errors in the amino acid sequence previously reported have been corrected and the revised total length of the coat protein is 162 amino acid residues. The capping site of the coat protein mRNA is at residue 711 from the 3' end of genome RNA. (2) The assembly origin of reconstitution is positioned within the coat protein cistron at residue 369-461 which can be formed into a highly base-paired hairpin loop structure. The sequence, GAXGUUG, in the loop region and a triplet-repeated purine base tract surrounding the loop are found. These structural features are common to assembly origins of both Cc and vulgare strains. (3) We find the sequence highly homologous to, but distinct from, the genuine assembly origin. It will be called the pseudo-assembly origin, which is located in the corresponding region to the assembly origin of the vulgare strain, outside the coat protein cistron. There is also the sequence, GAXGUUG, in the middle of the region. (4) In the 5' flanking region of the coat protein cistron, a long reading frame, probably of 30 K protein, is found. The coding region is terminated in the coat protein cistron and thus the 30 K protein and the coat protein cistrons overlap. (5) The 3' non-coding region is 209 residues long and can be folded into a possible tRNA-like structure. Surprisingly, we find that the 3' terminal sequence of Cc RNA is not very similar to that of vulgare RNA but extensively homologous to that of turnip yellow mosaic virus (TYMV) RNA.",
+      "journal": "Molecular & general genetics : MGG",
+      "year": 1981,
+      "pub_date": "1981-01-01",
+      "authors": "Meshi T; Ohno T; Iba H; Okada Y",
+      "first_author": "Meshi T",
+      "categories": [
+        "New_Virus",
+        "Virgaviridae"
+      ],
+      "virus_name": "Tobacco mosaic virus (cowpea strain, TMV-Cc)",
+      "taxonomy": "Virgaviridae, Tobamovirus",
+      "host_plant": "cowpea (Vigna unguiculata)",
+      "location": "未提及",
+      "results": "获得1060 nt序列；确定外壳蛋白顺反子及162个氨基酸；组装起始位点位于外壳蛋白基因内，形成发夹结构；发现假组装起始位点；30K蛋白与外壳蛋白阅读框重叠；3'非编码区209 nt可形成tRNA样结构，且与TYMV RNA高度同源。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "7197246",
+      "doi": "10.1159/000212473",
+      "title": "Age-related changes in transfer RNAs and synthetases in germinating soybean (Glycine max) cotyledons.",
+      "abstract": "Transfer RNAs and aminoacyl-tRNA synthetases were isolated from 5- and 20-day-old etiolated ageing soybean cotyledons. The relative concentrations of Mg2+ and ATP for optimal acylation (using homologous tRNAs and synthetases) for the 16 amino acids tested indicate that the amino acids can be grouped into 3 categories with a Mg:ATP ratio of 2:1, 5:1 and 10:1 (aspartic acid, isoleucine, leucine, serine, and valine). The total amino acid acceptance for 5-day-old cotyledons was 0.427 mumol tRNA and 0.349 mumol/mumol tRNA for 20-day-old cotyledons. This shows that as cotyledons age, tRNA preparations show an overall decrease of 16.6% amino acid acceptance ability compared to tRNA from younger cotyledons. Charged tRNA samples from 5- and 20-day cotyledons chromatographed on RPC-5 columns demonstrate pronounced qualitative and quantitative changes in tRNA species as cotyledons age, including displacements of peaks as in alanyl-tRNAs and glycyl-tRNAs; disappearance of some species as in valyl-tRNAs, glutamyl-tRNAs, leucyl-tRNAs, lysyl-tRNAs, arginyl-tRNAs, histidyl-tRNAs and tyrosyl-tRNAs and formation of new species as in phenylalanine-tRNA.",
+      "journal": "Gerontology",
+      "year": 1981,
+      "pub_date": "1981-01-01",
+      "authors": "Pillay D T; Gowda S",
+      "first_author": "Pillay D T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16661621",
+      "doi": "10.1104/pp.67.1.170",
+      "title": "Localization of Fungal Components in the Pea-Fusarium Interaction Detected Immunochemically with Anti-chitosan and Anti-fungal Cell Wall Antisera.",
+      "abstract": "Antisera specific for purified cell walls of Fusarium solani f. sp. pisi and phaseoli and of shrimp shell chitosan were utilized as immunochemical probes to determine the location of fungal components in the pea-Fusarium interaction.Within 15 minutes after inoculation, fungal cell wall components appear to enter the plant cell and to accumulate inside the plant cell wall as fungal growth on the plant tissue is inhibited. The accumulation patterns of chitosan and all components containing hexosamine polymers resembled those of the fungal wall components.Chitosan is present on, and is released from, the outer surface of the fungal spore. Within 15 minutes after applying [(3)H]chitosan to the surface of the plant tissue, the label is readily detectable within the plant cytoplasm and conspicuously detectable within the plant nucleus. It is proposed that the potential for transport of chitosan between the spores of Fusarium solani and pea cells, in addition to its potential to inhibit fungal growth and elicit disease resistance responses, suggests chitosan has a major regulatory role in this host-parasite interaction.",
+      "journal": "Plant physiology",
+      "year": 1981,
+      "pub_date": "1981-01-01",
+      "authors": "Hadwiger L A; Beckman J M; Adams M J",
+      "first_author": "Hadwiger L A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

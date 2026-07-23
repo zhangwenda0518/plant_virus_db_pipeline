@@ -1,0 +1,281 @@
+{
+  "month": "2005-09",
+  "generated": "2026-07-13 02:59:42",
+  "total": 30,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 9,
+    "Host_Virus_Interactions": 9,
+    "New_Virus": 8,
+    "Biotechnology_Applications": 2,
+    "Control_Management": 2,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "15968476",
+      "doi": "10.1007/s00705-005-0567-0",
+      "title": "Molecular characterization of banana virus X (BVX), a novel member of the Flexiviridae family.",
+      "abstract": "A novel virus was identified in banana (Musa spp). Analysis of the last 2917 nucleotides of its positive strand genomic RNA showed five open reading frames corresponding, from 5' to 3', to a truncated ORF coding for a replication-associated protein, three ORFs coding for a movement-associated triple gene block (TGB) and a capsid protein (CP) gene. This genome organization is similar to that of some members of the Flexiviridae family such as potexviruses and foveaviruses. This virus was named Banana virus X (BVX). Comparative sequence analysis showed that BVX is only distantly related to other members of the Flexiviridae family, in which it appears to define a new genus. BVX produces defective RNAs derived from its genomic RNA by non-homologous recombination. Three distinct pairs of donor/acceptor recombination sites involving short direct nucleotide repeats were characterized, accounting for deletions of 1268, 1358 and 1503 nucleotides. Contrary to the situation encountered for Potexviruses, these recombination sites are located within the TGB1 and CP genes and result in a truncated TGB1 protein.",
+      "journal": "Archives of virology",
+      "year": 2005,
+      "pub_date": "2005-09-01",
+      "authors": "Teycheney P-Y; Marais A; Svanella-Dumas L; Dulucq M-J; Candresse T",
+      "first_author": "Teycheney P-Y",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Banana virus X (BVX)",
+      "taxonomy": "Flexiviridae",
+      "host_plant": "香蕉 (Musa spp.)",
+      "location": "未提及",
+      "results": "BVX基因组含5个ORF，编码复制相关蛋白、TGB和CP；产生三种缺失型缺陷RNA，重组位点位于TGB1和CP基因内。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16096641",
+      "doi": "10.1038/sj.emboj.7600776",
+      "title": "A plant RNA virus suppresses RNA silencing through viral RNA replication.",
+      "abstract": "RNA interference (RNAi) is a post-transcriptional gene-regulatory mechanism that operates in many eukaryotes. RNAi is induced by double-stranded RNA (dsRNA) and is mainly involved in defence against transposons and viruses. To counteract RNAi, viruses have RNAi suppressors. Here we show a novel mechanism of RNAi suppression by a plant virus Red clover necrotic mosaic virus (RCNMV). To suppress RNAi, RCNMV needs multiple viral components, which include viral RNAs and putative RNA replicase proteins. A close relationship between the RNA elements required for negative-strand RNA synthesis and RNAi suppression suggests a strong link between the viral RNA replication machinery and the RNAi machinery. In a transient assay, RCNMV interferes with the accumulation of small-interfering RNA (siRNAs) in RNAi induced by a hairpin dsRNA and it also interferes with microRNA (miRNA) biogenesis. An Arabidopsis dcl1 mutant showed reduced susceptibility to RCNMV infection. Based on these results, we propose a model in which, to replicate, RCNMV deprives the RNAi machinery of Dicer-like enzymes that are involved in both siRNA and miRNA biogenesis.",
+      "journal": "The EMBO journal",
+      "year": 2005,
+      "pub_date": "2005-09-07",
+      "authors": "Takeda Atsushi; Tsukuda Misato; Mizumoto Hiroyuki; Okamoto Kimiyuki; Kaido Masanori; ... (+2)",
+      "first_author": "Takeda Atsushi",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Red clover necrotic mosaic virus (RCNMV)",
+      "taxonomy": "",
+      "host_plant": "拟南芥",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30786642",
+      "doi": "10.1094/PD-89-1011C",
+      "title": "First Report of Tomato leaf curl New Delhi virus Infecting Tomato in Bangladesh.",
+      "abstract": "Tomato is an important cash crop for resource-poor farmers and accounts for 20% of the 2 million t of vegetables grown annually in Bangladesh. Tomato cultivation is affected by Tomato leaf curl virus (ToLCV), which can cause as much as 100% yield loss. Plants exhibiting typical ToLCV disease symptoms of yellowing, severe leaf curling, and stunting were collected at Jessore, Bangladesh during September 2003. The putative virus was transmitted from tomato to tomato by the whitefly Bemisia tabaci. In two separate experiments, 100% transmission was achieved by using 10 viruliferous B. tabaci adults for each of the 20 test plants that was confirmed by comparing the symptoms on test and virus source plants. Total DNAs were extracted from the symptomatic leaves, and the putative viral genomes were amplified by polymerase chain reaction by using the Deng A and B primers (1). Sequences generated from these primers were used to design virus-specific primers that were used to obtain complete viral sequences. Full-length DNA-A (2,740 nt; GenBank Accession No. AJ875157) and DNA-B (2,688 nt; GenBank Accession No. AJ875158) sequences of a bipartite Tomato leaf curl New Delhi virus from Jessore (ToLCNDV-[Jes]) were obtained, which were most similar to the corresponding sequences of ToLCNDV-(Lucknow) (GenBank Accession No. Y16421) at 95.7% and Tomato leaf curl Gujarat virus-(Varanasi) (Gen-Bank Accession No. AY190291) at 90.6% nt identities, respectively. DNA-A sequences had only 73.2% nt identity with the previously reported monopartite Tomato leaf curl Bangladesh virus (GenBank Accession No. AF188481) (2), confirming the occurrence of mono- and bipartite bego-moviruses in Bangladesh. The virus diversity poses a challenge for ToLCVD management in Bangladesh. References: (1) D. Deng et al. Ann. Appl. Biol. 125:327, 1994. (2) S. K. Green et al. Plant Dis. 85:1286, 2001.",
+      "journal": "Plant disease",
+      "year": 2005,
+      "pub_date": "2005-09-01",
+      "authors": "Maruthi M N; Rekha A R; Cork A; Colvin J; Alam S N; ... (+1)",
+      "first_author": "Maruthi M N",
+      "categories": [
+        "New_Virus",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "Tomato leaf curl New Delhi virus (ToLCNDV-[Jes])",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "Tomato (Solanum lycopersicum)",
+      "location": "Jessore, Bangladesh",
+      "results": "获得全长DNA-A和DNA-B序列；ToLCNDV-[Jes]与ToLCNDV-(Lucknow) DNA-A相似度95.7%，与ToLCGV-(Varanasi) DNA-B相似度90.6%；证实孟加拉国存在单分和双分begomoviruses。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30786644",
+      "doi": "10.1094/PD-89-1012B",
+      "title": "A Survey of Viruses Affecting French bean (Phaseolus vulgaris) in Iran Includes a First Report of Southern bean mosaic virus and Bean pod mottle virus.",
+      "abstract": "A survey was conducted from 2003 to 2004 to identify viruses infecting common bean (Phaseolus vulgaris L.) in different growing areas of East Azarbaejan Province of Iran. A total of 300 French bean samples with symptoms of viral infection (mosaic, vein clearing, leaf rolling, yellowing, and leaf distortion) were collected. The samples were tested for eight viruses using the tissue-blot immunoassay procedures (TBIA) (2) and double-antibody sandwich enzyme-linked immunosorbent assay (DAS-ELISA) according to the manufacturer's instructions (DSMZ, Braun-schweig, Germany). ELISA tests for Alfalfa mosaic virus (AMV), Bean yellow mosaic virus (BYMV), Bean common mosaic virus (BCMV), Bean common mosaic necrosis virus (BCMNV), Cucumber mosaic virus (CMV), Bean leaf roll virus (BLRV), and Southern bean mosaic virus (SBMV) were used. In addition, antiserum was provided by S. A. Ghabrial (University of Kentucky, Lexington) to test for Bean pod mottle virus (BPMV). Serological tests showed that SBMV and BPMV were present in 12% (35 samples) and 5% (15 samples) of samples, respectively. BCMV, BCMNV, BYMV, BLRV, CMV, and AMV were more common and were detected in 155, 105, 80, 46, 30, and 10 samples of 300 samples, respectively. These six viruses were previously reported in other pulses and in French bean in Iran (1). The presence of SBMV and BPMV were verified in samples by transmission to French bean (Phaseolus vulgaris), cowpea (Vigna unguiculata), and soybean (Glycine max) indicator test plants (3,4). Inoculation with extracts from SBMV-positive plants produced systemic mottle and mosaic symptoms in soybean (cv. Gorgan-3) and French bean (cvs. Dubbele Witte and Cheete). In cowpea (cv. Mashad) and French bean (cv. Pinto), inoculation produced necrotic local lesions. Inoculation with extracts from BPMV-positive plants produced severe mosaic, leaf distortion, and puckering in soybean (cv. Gorgan-3) and French bean (cv. Ten-dergreen). No symptoms were observed in cowpea (cv. Mashad). Cvs. Pinto and Bountiful bean reacted with necrotic local lesions. All indicator test plants tested positive for the presence of SBMV or BPMV as expected using DAS-ELISA. To our knowledge, this is the first report of BPMV and SBMV naturally infecting French bean in Iran. These viruses can cause a serious problem to other leguminous crops grown in Iran. References: (1) W. J. Kaiser et al. Plant Dis. Rep. 52:687, 1968. (2) K. M. Makkouk and A. Comeau. Eur. J. Plant Pathol. 100:71, 1994. (3) J. S. Semancik. Bean pod mottle virus. No. 108 in: Descriptions of Plant Viruses. CMI/AAB, Kew, Surrey, England, 1972. (4) J. H. Tremain and R. I. Hamilton. Southern bean mosaic virus. No. 274 in: Descriptions of Plant Viruses. CMI/AAB, Kew, Surrey, England, 1983.",
+      "journal": "Plant disease",
+      "year": 2005,
+      "pub_date": "2005-09-01",
+      "authors": "Shahraeen N; Ghotbi T; Elkhache A Dezaje; Sahandi A",
+      "first_author": "Shahraeen N",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Southern bean mosaic virus (SBMV), Bean pod mottle virus (BPMV), Alfalfa mosaic virus (AMV), Bean yellow mosaic virus (BYMV), Bean common mosaic virus (BCMV), Bean common mosaic necrosis virus (BCMNV), Cucumber mosaic virus (CMV), Bean leaf roll virus (BLRV)",
+      "taxonomy": "未提及",
+      "host_plant": "Phaseolus vulgaris (French bean), Vigna unguiculata (cowpea), Glycine max (soybean)",
+      "location": "Iran, East Azarbaejan Province",
+      "results": "SBMV在12%样品中检出，BPMV在5%中检出；BCMV等六种病毒检出率更高。指示植物接种后出现典型症状，ELISA确认。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16115626",
+      "doi": "10.1016/j.febslet.2005.07.083",
+      "title": "Coat proteins of two filamentous plant viruses display NTPase activity in vitro.",
+      "abstract": "Coat proteins (CPs) of plant viruses are involved in different stages of the viral life cycle such as virion assembly, replication, movement, vector transmission, and regulation of host defense responses. Here, we report that the CPs of two filamentous RNA viruses, potato virus X (PVX, Potexvirus) and potato virus A (PVA, Potyvirus) exhibit an enzyme activity. The CP isolated from PVX virions possesses ATP-binding and ATPase activities. Recombinant PVX and PVA CPs produced in Escherichia coli show Mg2+-dependent ATPase and UTPase activities inhibited by antibodies against virus particles. Deletion of the C-terminal regions of these proteins diminishes their ATPase activity.",
+      "journal": "FEBS letters",
+      "year": 2005,
+      "pub_date": "2005-09-12",
+      "authors": "Rakitina Daria V; Kantidze Omar L; Leshchiner Anna D; Solovyev Andrey G; Novikov Viktor K; ... (+2)",
+      "first_author": "Rakitina Daria V",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "马铃薯X病毒(Potato virus X, PVX)和马铃薯A病毒(Potato virus A, PVA)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16154094",
+      "doi": "10.1016/j.str.2005.06.017",
+      "title": "RNA silencing suppressor p21 of Beet yellows virus forms an RNA binding octameric ring structure.",
+      "abstract": "Many plant viruses encode proteins that suppress the antiviral RNA silencing response mounted by the host. The suppressors p19 from tombusvirus and p21 from Beet yellows virus appear to block silencing by directly binding siRNA, a critical mediator in the process. Here, we report the crystal structure of p21, which reveals an octameric ring architecture with a large central cavity of approximately 90 A diameter. The all alpha-helical p21 monomer consists of N- and C-terminal domains that associate with their neighboring counterparts through symmetric head-to-head and tail-to-tail interactions. A putative RNA binding surface is identified in the conserved, positive-charged inner surface of the ring. In contrast to the specific p19-siRNA duplex interaction, p21 is a general nucleic acid binding protein, interacting with 21 nt or longer single- and double-stranded RNAs in vitro. This study reveals an RNA binding structure adopted by the p21 silencing suppressor.",
+      "journal": "Structure (London, England : 1993)",
+      "year": 2005,
+      "pub_date": "2005-09-01",
+      "authors": "Ye Keqiong; Patel Dinshaw J",
+      "first_author": "Ye Keqiong",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Beet yellows virus",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16099919",
+      "doi": "10.1099/vir.0.81107-0",
+      "title": "HcPro, a multifunctional protein encoded by a plant RNA virus, targets the 20S proteasome and affects its enzymic activities.",
+      "abstract": "The proteasome is a multicatalytic complex involved in many cellular processes in eukaryotes, such as protein and RNA turnover, cell division, signal transduction, transcription and translation. Intracellular pathogens are targets of its enzymic activities, and a number of animal viruses are known to interfere with these activities. The first evidence that a plant virus protein, the helper component-proteinase (HcPro) of Lettuce mosaic virus (LMV; genus Potyvirus), interferes with the 20S proteasome ribonuclease is reported here. LMV infection caused an aggregation of the 20S proteasome to high-molecular mass structures in vivo, and specific binding of HcPro to the proteasome was confirmed in vitro using two different approaches. HcPro inhibited the 20S endonuclease activity in vitro, while its proteolytic activities were unchanged or slightly stimulated. This ability of HcPro, a pathogenicity regulator of potyviruses, to interfere with some of the catalytic functions of the 20S proteasome suggests the existence of a novel type of defence and counter-defence interplay in the course of interaction between potyviruses and their hosts.",
+      "journal": "The Journal of general virology",
+      "year": 2005,
+      "pub_date": "2005-09-01",
+      "authors": "Ballut Lionel; Drucker Martin; Pugnière Martine; Cambon Florence; Blanc Stéphane; ... (+6)",
+      "first_author": "Ballut Lionel",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "莴苣花叶病毒（Lettuce mosaic virus, LMV）",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16266271",
+      "doi": "10.1007/s10541-005-0216-y",
+      "title": "Cloning and expression of small cDNA fragment encoding strong antiviral peptide from Celosia cristata in Escherichia coli.",
+      "abstract": "A small cDNA fragment containing a ribosome-inactivating site was isolated from the leaf cDNA population of Celosia cristata by polymerase chain reaction (PCR). PCR was conducted linearly using a degenerate primer designed from the partially conserved peptide of ribosome-inactivating/antiviral proteins. Sequence analysis showed that it is 150 bp in length. The cDNA fragment was then cloned in a bacterial expression vector and expressed in Escherichia coli as a ~57 kD fused protein, and its presence was further confirmed by Western blot analysis. The recombinant protein was purified by affinity chromatography. The purified product showed strong antiviral activity towards tobacco mosaic virus on host plant leaves, Nicotiana glutinosa, indicating the presence of a putative antiviral determinant in the isolated cDNA product. It is speculated that antiviral site is at, or is separate but very close to, the ribosome-inactivating site. We nominate this short cDNA fragment reported here as a good candidate to investigate further the location of the antiviral determinants. The isolated cDNA sequence was submitted to EMBL databases under accession number of AJ535714.",
+      "journal": "Biochemistry. Biokhimiia",
+      "year": 2005,
+      "pub_date": "2005-09-01",
+      "authors": "Gholizadeh A; Kohnehrouz B Baghban; Santha I M; Lodha M L; Kapoor H C",
+      "first_author": "Gholizadeh A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒",
+      "taxonomy": "",
+      "host_plant": "鸡冠花、烟草",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15827064",
+      "doi": "10.1152/ajpendo.00591.2004",
+      "title": "Indinavir alters regulators of protein anabolism and catabolism in skeletal muscle.",
+      "abstract": "The HIV protease inhibitor indinavir adversely impairs carbohydrate and lipid metabolism, whereas its influence on protein metabolism under in vivo conditions remains unknown. The present study tested the hypothesis that indinavir also decreases basal protein synthesis and impairs the anabolic response to insulin in skeletal muscle. Indinavir was infused intravenously for 4 h into conscious rats, at which time the homeostasis model assessment of insulin resistance was increased. Indinavir decreased muscle protein synthesis by 30%, and this reduction was due to impaired translational efficiency. To identify potential mechanisms responsible for regulating mRNA translation, several eukaryotic initiation factors (eIFs) were examined. Under basal fasted conditions, there was a redistribution of eIF4E from the active eIF4E.eIF4G complex to the inactive eIF4E.4E-BP1 complex, and this change was associated with a marked decrease in the phosphorylation of 4E-BP1 in muscle. Likewise, indinavir decreased constitutive phosphorylation of eIF4G and mTOR in muscle, but not S6K1 or the ribosomal protein S6. In contrast, the ability of a maximally stimulating dose of insulin to increase the phosphorylation of PKB, 4E-BP1, S6K1, or mTOR was not altered 20 min after intravenous injection. Indinavir increased mRNA expression of the ubiquitin ligase MuRF1, but the plasma concentration of 3-methylhistidine remained unaltered. These indinavir-induced changes were associated with a marked reduction in the plasma testosterone concentration but were independent of changes in plasma levels of IGF-I, corticosterone, TNF-alpha, or IL-6. In conclusion, indinavir acutely impairs basal protein synthesis and translation initiation in skeletal muscle but, in contrast to muscle glucose uptake, does not impair insulin-stimulated signaling of protein synthetic pathways.",
+      "journal": "American journal of physiology. Endocrinology and metabolism",
+      "year": 2005,
+      "pub_date": "2005-09-01",
+      "authors": "Hong-Brown Ly Q; Pruznak Anne M; Frost Robert A; Vary Thomas C; Lang Charles H",
+      "first_author": "Hong-Brown Ly Q",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15944360",
+      "doi": "10.1534/genetics.104.039339",
+      "title": "Natural variation in the Pto pathogen resistance gene within species of wild tomato (Lycopersicon). I. Functional analysis of Pto alleles.",
+      "abstract": "Disease resistance to the bacterial pathogen Pseudomonas syringae pv. tomato (Pst) in the cultivated tomato, Lycopersicon esculentum, and the closely related L. pimpinellifolium is triggered by the physical interaction between plant disease resistance protein, Pto, and the pathogen avirulence protein, AvrPto. To investigate the extent to which variation in the Pto gene is responsible for naturally occurring variation in resistance to Pst, we determined the resistance phenotype of 51 accessions from seven species of Lycopersicon to isogenic strains of Pst differing in the presence of avrPto. One-third of the plants displayed resistance specifically when the pathogen expressed AvrPto, consistent with a gene-for-gene interaction. To test whether this resistance in these species was conferred specifically by the Pto gene, alleles of Pto were amplified and sequenced from 49 individuals and a subset (16) of these alleles was tested in planta using Agrobacterium-mediated transient assays. Eleven alleles conferred a hypersensitive resistance response (HR) in the presence of AvrPto, while 5 did not. Ten amino acid substitutions associated with the absence of AvrPto recognition and HR were identified, none of which had been identified in previous structure-function studies. Additionally, 3 alleles encoding putative pseudogenes of Pto were isolated from two species of Lycopersicon. Therefore, a large proportion, but not all, of the natural variation in the reaction to strains of Pst expressing AvrPto can be attributed to sequence variation in the Pto gene.",
+      "journal": "Genetics",
+      "year": 2005,
+      "pub_date": "2005-09-01",
+      "authors": "Rose Laura E; Langley Charles H; Bernal Adriana J; Michelmore Richard W",
+      "first_author": "Rose Laura E",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15968510",
+      "doi": "10.1007/s00425-005-1534-4",
+      "title": "Rice SERK1 gene positively regulates somatic embryogenesis of cultured cell and host defense response against fungal infection.",
+      "abstract": "Here we report on the isolation and characterization of a somatic embryogenesis receptor-like kinase (OsSERK1) gene in rice (Oryza sativa). The OsSERK1 gene belongs to a small subfamily of receptor-like kinase genes in rice and shares a highly conserved gene structure and extensive sequence homology with previously reported plant SERK genes. Though it has a basal level of expression in various rice organs/tissues, as high expression level was detected in rice callus during somatic embryogenesis. Suppression of OsSERK1 expression in transgenic calli by RNA interference resulted in a significant reduction of shoot regeneration rate (from 72% to 14% in the japonica rice Zhonghua11). Overexpression of OsSERK1, however, increased the shoot regeneration rate (from 72% to 86%). Interestingly, OsSERK1 is significantly activated by the rice blast fungus, particularly during the incompatible interaction, and is associated with host cell death in Sekigushi lesion mimic mutants. This gene is also inducible by defense signaling molecules such as salicylic acid, jasmonic acid, and abscisic acid. Furthermore, constitutive overexpression of OsSERK1 in two rice cultivars led to an increase in host resistance to the blast fungus. Our data suggest that OsSERK1 may partially mediate defense signal transduction in addition to its basic role in somatic embryogenesis.",
+      "journal": "Planta",
+      "year": 2005,
+      "pub_date": "2005-09-01",
+      "authors": "Hu H; Xiong L; Yang Y",
+      "first_author": "Hu H",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16113209",
+      "doi": "10.1104/pp.105.066811",
+      "title": "The Arabidopsis PEX12 gene is required for peroxisome biogenesis and is essential for development.",
+      "abstract": "Peroxisomes perform diverse and vital functions in eukaryotes, and abnormalities in peroxisomal function lead to severe developmental disorders in humans. Peroxisomes are also involved in a wide array of physiological and metabolic functions unique to plants, yet many aspects of this important organelle are poorly understood. In yeast and mammals, various steps in peroxisome biogenesis require the function of peroxin (PEX) proteins, among which PEX12 is a RING finger peroxisomal membrane protein involved in the import of matrix proteins. To investigate the role of PEX12 in plants, we identified a T-DNA knockout allele of PEX12 and generated partial loss-of-function pex12 mutants using RNA interference. We show that pex12 null mutants are developmentally arrested during early embryogenesis, and that the embryo-lethal phenotype can be rescued by overexpression of the PEX12-cyan fluorescent protein fusion protein, which targets to the peroxisome. Using virus-induced gene-silencing techniques, we demonstrate that peroxisomal number and fluorescence of the yellow fluorescent protein-peroxisome targeting signal type 1 protein are greatly reduced when PEX12 is silenced. RNA interference plants with partial reduction of the PEX12 transcript exhibit impaired peroxisome biogenesis and function, inhibition of plant growth, and reduced fertility. Our work provides evidence that the Arabidopsis (Arabidopsis thaliana) PEX12 protein is required for peroxisome biogenesis and plays an essential role throughout plant development.",
+      "journal": "Plant physiology",
+      "year": 2005,
+      "pub_date": "2005-09-01",
+      "authors": "Fan Jilian; Quan Sheng; Orth Travis; Awai Chie; Chory Joanne; ... (+1)",
+      "first_author": "Fan Jilian",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "week": "2025-W19",
+  "start": "2025-05-05",
+  "end": "2025-05-11",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 25,
+  "by_category": {
+    "Host_Virus_Interactions": 10,
+    "Control_Management": 9,
+    "Antiviral_Resistance_Genes": 4,
+    "New_Virus": 3,
+    "Molecular_Characterization": 1,
+    "Biotechnology_Applications": 1,
+    "Detection_Methods": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "40266879",
+      "doi": "10.1021/acs.jafc.4c12485",
+      "title": "Graphene Oxide Nanosheets for Delivery of RNAi and Plant Immune Stimulation for Sustained Protection against Plant Viruses.",
+      "abstract": "Given the dearth of effective antiviral drugs, the exogenous delivery of dsRNA for RNAi against plant viral diseases holds great promise. Here, we present an effective delivery approach of dsRNA utilizing graphene oxide nanosheets (GONs) on mature plant leaves via a spray. Our method achieves rapid and sustained gene knockdown, reducing the level of the target gene to 46% by day 2, and continuously releases dsRNA for at least 6 days. The coupling of GONs with specific fragments of coat protein and replicase gene dsRNA exhibited a superior antiviral effect compared to specific fragments of RNA-dependent replicase and movement protein. The coupling of GONs with the specific fragment of the replicase gene even has 87.2% protection against TMV. Moreover, the nanocomplex GONs@dsRNA can also stimulate plant immunity through bursts of reactive oxygen species without harming growth. Overall, our findings present a robust and convenient tool for plant virus control.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2025,
+      "pub_date": "2025-05-07",
+      "authors": "Zhang Hongbao; Fan Guangjin; Leng Dongwei; Liu Shuaikang; Cai Lin",
+      "first_author": "Zhang Hongbao",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "烟草花叶病毒（TMV）",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40329141",
+      "doi": "10.1007/s00705-025-06283-9",
+      "title": "A novel varicosavirus associated with Orychophragmus violaceus in China.",
+      "abstract": "Plant rhabdoviruses have garnered considerable attention due to their broad host range and significant agricultural threats. Despite their prevalence in various ecosystems, rhabdoviruses in non-crop species, which often serve as reservoirs for novel viral strains, remain understudied. Here, a novel plant rhabdovirus, Orychophragmus violaceus varicosavirus (OVVV), was identified in the ornamental plant Orychophragmus violaceus and characterized by high-through sequencing. OVVV has a bisegmented genome, with RNA1 consisting of 6,795 nucleotides (nt) and RNA2 consisting of 5,895 nt. The L protein encoded by RNA1 shares 36.4-67.2% amino acid sequence identity with those of known varicosaviruses. The four proteins encoded by RNA2 share 19.5-53.4% amino acid identity with the corresponding proteins of known varicosaviruses. Sequence comparisons and phylogenetic analysis indicated that OVVV is a novel RNA virus representing a new species within the genus Varicosavirus. This discovery not only expands the known host range of varicosaviruses but also offers new insights into the molecular evolution of this group of viruses.",
+      "journal": "Archives of virology",
+      "year": 2025,
+      "pub_date": "2025-05-07",
+      "authors": "Chen Yuanling; Li Qian; Yu Jiaping; Zhou Yali; Fei Shifang; ... (+2)",
+      "first_author": "Chen Yuanling",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Orychophragmus violaceus varicosavirus (OVVV)",
+      "taxonomy": "Rhabdoviridae, Varicosavirus",
+      "host_plant": "Orychophragmus violaceus (二月兰)",
+      "location": "中国",
+      "results": "OVVV基因组RNA1长6795 nt，RNA2长5895 nt；L蛋白与已知varicosavirus氨基酸一致性36.4-67.2%，RNA2编码的四个蛋白一致性19.5-53.4%；系统发育表明为新种。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40429744",
+      "doi": "10.3390/ijms26104599",
+      "title": "Virus-Induced Genome Editing (VIGE): One Step Away from an Agricultural Revolution.",
+      "abstract": "There is currently a worldwide trend towards deregulating the use of genome-edited plants. Virus-induced genome editing (VIGE) is a novel technique that utilizes viral vectors to transiently deliver clustered regularly interspaced short palindromic repeat (CRISPR) components into plant cells. It potentially allows us to obtain transgene-free events in any plant species in a single generation without in vitro tissue culture. This technology has great potential for agriculture and is already being applied to more than 14 plant species using more than 20 viruses. The main limitations of VIGE include insufficient vector capacity, unstable expression of CRISPR-associated (Cas) protein, plant immune reaction, host specificity, and reduced viral activity in meristem. Various solutions to these problems have been proposed, such as fusion of mobile elements, RNAi suppressors, novel miniature Cas proteins, and seed-borne viruses, but the final goal has not yet been achieved. In this review, the mechanism underlying the ability of different classes of plant viruses to transiently edit genomes is explained. It not only focuses on the latest achievements in virus-induced editing of crops but also provides suggestions for improving the technology. This review may serve as a source of new ideas for those planning to develop new approaches in VIGE.",
+      "journal": "International journal of molecular sciences",
+      "year": 2025,
+      "pub_date": "2025-05-11",
+      "authors": "Mikhaylova Elena",
+      "first_author": "Mikhaylova Elena",
+      "categories": [
+        "Biotechnology_Applications",
+        "Detection_Methods"
+      ],
+      "virus_name": "多种植物病毒（超过20种，如烟草花叶病毒等）",
+      "taxonomy": "",
+      "host_plant": "超过14种植物物种",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40172225",
+      "doi": "10.1128/spectrum.01774-24",
+      "title": "",
+      "abstract": "[UNLABELLED] Although the high-altitude limit for microbial survival in the Earth-atmosphere system has remained a scientific curiosity and topic of study, the ecological significance of long-distance microbial dispersal in the atmosphere has been perceived to have marginal relevance. Here, we report the characterization of novel plant pathogenic species of Curtobacterium that were isolated from samples collected at altitudes ranging from 1.5 to 29 km above sea level. Whole genome-based phylogenies of three strains, paired with plant challenge assays, indicate that each is a previously unrecognized species and causes disease on beans comparable to Curtobacterium flaccumfaciens. Isolates from the stratosphere (strain L6-1) and agricultural millet (G77) were identified to be the same species and designated as Curtobacterium aetherium sp. nov. C. aetherium displays high levels of tolerance to desiccation and UV radiation, which are stresses that increase in intensity with altitude. Back trajectory air mass analysis implied that the phytopathogens may have had an intercontinental source, but regional origins in the continental US cannot be excluded. The environmentally robust phytopathogens we have documented in the upper atmosphere provide new perspective on the role that high-altitude transport may play in microbial dispersal, gene flow, and the epidemiology of aerially dispersed plant disease. [IMPORTANCE] Enormous quantities and varieties of microorganisms are continually aerosolized and transported in the atmosphere, yet there is a limited understanding of the consequences to downwind ecosystems. While studying bacteria that survive extreme conditions at altitudes up to 29 km in the atmosphere, we discovered new species that have the capacity to cause disease in agriculturally relevant bean varieties. The hardiest isolate we characterized from the stratosphere is a member of the same species as an isolate from an agricultural source, which we have designated Curtobacterium aetherium. C. aetherium is a phytopathogen capable of enduring high-altitude and long-distance atmospheric transport while also possessing the potential to opportunistically infect crops in deposition locations.",
+      "journal": "Microbiology spectrum",
+      "year": 2025,
+      "pub_date": "2025-05-06",
+      "authors": "Mijatović Scouten Jovana; Smith Amy; Ellington Adam J; Bryan Noelle C; Harveson Robert M; ... (+2)",
+      "first_author": "Mijatović Scouten Jovana",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40197128",
+      "doi": "10.1128/spectrum.00135-25",
+      "title": "Improved isolation and PCR detection of ",
+      "abstract": "[UNLABELLED] Phytophthora species are eukaryotic microorganisms responsible for severe dieback and root rot in plants worldwide, impacting crops, forests, and other important ecosystems. In New Zealand, P. agathidicida leads to fatal dieback in kauri (Agathis australis), long-lived endemic trees of significant cultural and ecological importance. A critical aspect of the P. agathidicida lifecycle is the production of oospores-thick-walled spores essential for long-term survival in soil, dispersal, and disease inoculation. However, their heterogeneous distribution in soils, robust structure, and dormant state make them challenging to detect using soil baiting or DNA-based methods. Soil baiting is the basis of most current testing for P. agathidicida, but baiting-based methods have low sensitivity, are slow, and require specialised facilities. To address these challenges, we developed and validated a PCR-based method for detecting P. agathidicida oospores directly from soil. Our approach includes a technique for separating oospores from soil, improved oospore lysis and DNA extraction, and a primer pair that targets a repeat region of the P. agathidicida genome with high sensitivity and specificity. The primers amplified the target product in all tested P. agathidicida isolates without cross-reactivity against eight non-target Phytophthora species. The detection limit was 1 femtogram of P. agathidicida DNA via endpoint PCR. Performance assessment against 65 soil samples from kauri forests revealed P. agathidicida in 69% of samples compared to only 11% detected by existing methods. By eliminating the need for baiting, our assay enhances the speed, accuracy, and accessibility of testing, thereby facilitating more comprehensive monitoring and improved disease management. [IMPORTANCE] Phytophthora species are notorious plant pathogens responsible for severe dieback and root rot diseases, significantly impacting crops, forests, and irreplaceable natural ecosystems. Rapid and accurate detection of these pathogens is essential for effective disease management. In New Zealand, P. agathidicida threatens the country's endemic kauri forests. In this study, we developed and validated a PCR-based method for detecting P. agathidicida oospores in soil. Oospores are long-lived, thick-walled spores that serve as key propagules for survival in soil and the spread of disease. Their robust structure and dormant state make them particularly challenging to detect using traditional soil baiting techniques or DNA-based methods. Our method is fast, accurate, and requires minimal equipment, enabling local testing and thereby empowering communities and enhancing surveillance efforts. Although developed for P. agathidicida, this method could be adapted for other plant pathogens, potentially improving disease management across various agricultural and ecological contexts.",
+      "journal": "Microbiology spectrum",
+      "year": 2025,
+      "pub_date": "2025-05-06",
+      "authors": "Palmer Jade T T; Vink Jochem N A; Castro Leticia M; Craig Oliver J S; Davison Emily E; ... (+1)",
+      "first_author": "Palmer Jade T T",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41118817",
+      "doi": "10.11646/zootaxa.5632.3.6",
+      "title": "Three new species of the plant bug tribe Pilophorini from Japan (Hemiptera: Heteroptera: Miridae: Phylinae).",
+      "abstract": "Three new species of the plant bug tribe Pilophorini, belonging to Hypseloecus Reuter, 1891 and Pilophorus Hahn, 1825 are described from Japan as new to science, based on recently accumulated specimens as well as field-based investigations. Hypseloecus fukutomii sp. nov. and H. tamaderai sp. nov. were confirmed to be associated with Loranthaceae mistletoes, Taxillus yadoriki and T. nigrans. Pilophorus reoi sp. nov., assumed to be a predator, was found from the shrub of a raspberry, Rubus sieboldii, on Amami-Oshima and Okino-Erabu Islands of the Ryukyus. Updated keys to the Japanese species of Hypseloecus and allied members of Pilophorus reoi sp. nov. are also provided.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-05-08",
+      "authors": "Yasunaga Tomohide; Duwal Ram Keshari",
+      "first_author": "Yasunaga Tomohide",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40429714",
+      "doi": "10.3390/ijms26104569",
+      "title": "LRR Receptor-like Protein in Rapeseed Confers Resistance to ",
+      "abstract": "Brassica napus is one of the most extensively cultivated oilseed crops in China, but its yield is significantly impacted by stem rot caused by Sclerotinia sclerotiorum. Receptor-like proteins (RLPs) and receptor-like kinases (RLKs) play essential roles in plant-pathogen interactions; however, their regulatory mechanisms remain largely unknown in B. napus. In this study, we investigated the function of the leucine-rich repeat receptor-like protein BnaRLP-G13-1 in Brassica napus immunity. Previous observations indicated that B. napus plants expressing BnaRLP-G13-1 exhibited enhanced resistance to Sclerotinia sclerotiorum. We hypothesized that BnaRLP-G13-1 mediates pathogen recognition and immune signaling. To test this, we employed mitogen-activated protein kinase (MAPK) activity assays, transgenic overexpression analyses, and pathogen infection assays. Our results demonstrated that BnaRLP-G13-1 recognizes the conserved necrosis- and ethylene-inducing peptide Ssnlp24SsNEP2 derived from S. sclerotiorum, triggering MAPK cascades and subsequent immune responses. Furthermore, protein interaction studies revealed that BnaRLP-G13-1 physically interacts with the receptor-like kinase BnaSOBIR1, which is essential for full antifungal defense activation. These results elucidate the molecular basis of BnaRLP-G13-1-mediated immunity, providing insights into improving disease resistance in oilseed crops.",
+      "journal": "International journal of molecular sciences",
+      "year": 2025,
+      "pub_date": "2025-05-10",
+      "authors": "Yang Chenghuizi; Zhong Weiping; Li Wei; Xia Yunong; Qin Lei; ... (+2)",
+      "first_author": "Yang Chenghuizi",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40335733",
+      "doi": "10.1007/s00248-025-02539-8",
+      "title": "Antagonism of Bacillus velezensis ZGE166 Against the Pathogenic Fungi Causing Corm Rot Disease in Saffron (Crocus sativus L.).",
+      "abstract": "Saffron can be infected with pathogenic fungi that cause corm rot as it grows and multiplies, which can reduce the quality and yield of saffron. Corm rot has become one of the most serious diseases of saffron. In this study, rhizosphere bacteria were isolated from saffron rhizosphere soil, and bacteria exhibiting antagonistic effects against corm rot pathogenic fungi were screened using in vitro plate co-culture assays and dual-compartment agar plate systems. Selected strains were further evaluated for hydrolase activity determination and PGP potential assessment. Among them, Bacillus velezensis showed the best disease resistance activity. The degradative enzyme production and some beneficial characteristics of Bacillus velezensis for plant growth promotion were evaluated. It was found that Bacillus velezensis possesses nitrogen fixing, NH3-producing, IAA production, and ACC-deaminating enzymes. The whole genome sequence of this strain was annotated and analyzed. The genome of Bacillus velezensis consists of a circular chromosome of 3,908,025 bp base pairs, with a guanine and cytosine content of 46.64%. There are 3737 protein-coding genes, including 86 tRNA genes, 27 rRNA genes, and 85 sRNA genes. The genome also contains four genomic islands, two pre-phages, and one transposon. The prediction of the secondary metabolic accumulation gene cluster demonstrated that the genome sequence of ZGE166 encodes 12 gene clusters involved in the synthesis of secondary metabolites, including macrolactin H, bacillaene, fengycin, difficidin, and bacillibactin. In summary, strain ZGE166 Bacillus velezensis has the potential to be developed as a biological agent.",
+      "journal": "Microbial ecology",
+      "year": 2025,
+      "pub_date": "2025-05-08",
+      "authors": "Guo Yingqiu; Tian Li; Zhu Xinyu; Liu Shu; Wang Lili; ... (+1)",
+      "first_author": "Guo Yingqiu",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40346305",
+      "doi": "10.1007/s00299-025-03508-8",
+      "title": "A method for maintaining the release of co-suppression and maximally restoring the RDR6 expression.",
+      "abstract": "Tissue-specific RDR6 compensation rescues Arabidopsis defects while maintaining seed polyunsaturated fatty acid accumulation, balancing co-suppression relief and key trait retention for modular engineering. The transgene-induced co-suppression of fatty acid desaturase 2 (FAD2) can be effectively released in rdr6 mutant, enabling a significant increase in polyunsaturated fatty acid (PUFA) content in seeds. However, the global suppression of RNA-dependent RNA polymerase 6 (RDR6) compromises plant growth and disease resistance. To address this limitation, we developed a spatiotemporal compensation strategy by restoring RDR6 expression in non-seed tissues using tissue-specific promoters while maintaining its low expression during seed maturation. To implement this goal, we identified PBnTC06, a Brassica napus promoter, through transcriptomic data mining and functional characterization. GUS staining revealed that the PBnTC06 promoter drives strong gene expression in vegetative tissues (e.g., leaves, stems, and flowers) but exhibits negligible activity in mid- to late-stage-developing seeds. We introduced PBnTC06::RDR6 into Pha::AtFAD2/rdr6-11, the previously established high- PUFA Arabidopsis line. This intervention rescued the rdr6 mutant phenotype (characterized by gracile, downward-curling leaves) to wild-type morphology and restored RDR6 expression across non-seed tissues, while maintaining minimal expression in middle and late developing seeds. Crucially, FAD2 transcript levels remained at a high level during late seed development, resulting in sustained high PUFA accumulation in mature seeds. This strategy establishes a practical strategy to circumvent transgene co-suppression and proposes a modular framework for precision breeding of complex traits in crops.",
+      "journal": "Plant cell reports",
+      "year": 2025,
+      "pub_date": "2025-05-09",
+      "authors": "Li Na; Wang Hailan; Wen Jiayin; Liu Xiangling; Zhang Meng",
+      "first_author": "Li Na",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40445949",
+      "doi": "10.1093/plcell/koaf049",
+      "title": "Gene editing of the E3 ligase PIRE1 fine-tunes reactive oxygen species production for enhanced bacterial disease resistance in tomato.",
+      "abstract": "Reactive oxygen species (ROS) accumulation is required for effective plant defense. Accumulation of the Arabidopsis (Arabidopsis thaliana) NADPH oxidase respiratory burst oxidase homolog D (RBOHD) is regulated by phosphorylation of a conserved C-terminal residue (T912) leading to ubiquitination by the RING E3 ligase Pbl13-interacting RING domain E3 ligase (PIRE). Arabidopsis PIRE knockouts exhibit enhanced ROS production and resistance to the foliar pathogen Pseudomonas syringae. Here, we identified 170 PIRE homologs, which emerged in tracheophytes and expanded in angiosperms. We investigated the role of tomato (Solanum lycopersicum) PIRE homologs in regulating ROS production, RBOH stability, and disease resistance. Mutational analyses of residues corresponding to T912 in the tomato RBOHD ortholog, SlRBOHB, affected protein accumulation and ROS production in a PIRE-dependent manner. Using genome editing, we generated mutants in 2 S. lycopersicum PIRE (SlPIRE) homologs. SlPIRE1 edited lines (Slpire1) in the tomato cultivar M82 displayed enhanced ROS production upon treatment with flg22, an immunogenic epitope of flagellin. Furthermore, Slpire1 exhibited decreased disease symptoms and bacterial accumulation when inoculated with foliar bacterial pathogens P. syringae and Xanthomonas campestris. However, Slpire1 exhibited similar levels of colonization as wild type upon inoculation with diverse soil-borne pathogens. These results indicate that PIRE regulates RBOHs in multiple plant species and is a promising target for foliar disease control. This study also highlights the pathogen-specific role of PIRE, indicating its potential for targeted manipulation to enhance foliar disease resistance without affecting root-associated pathogenic interactions.",
+      "journal": "The Plant cell",
+      "year": 2025,
+      "pub_date": "2025-05-09",
+      "authors": "Castro Bardo; Baik Suji; Tran Megann; Zhu Jie; Li Tianrun; ... (+10)",
+      "first_author": "Castro Bardo",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

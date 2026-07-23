@@ -1,0 +1,168 @@
+{
+  "month": "1997-03",
+  "generated": "2026-07-13 02:59:42",
+  "total": 7,
+  "by_category": {
+    "Host_Virus_Interactions": 3,
+    "Antiviral_Resistance_Genes": 2,
+    "Control_Management": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "9132066",
+      "doi": "10.1023/a:1005716103632",
+      "title": "Cloning and characterisation of a gene encoding an antiviral protein from Clerodendrum aculeatum L.",
+      "abstract": "The Clerodendrum aculeatum-systemic resistance inducing (CA-SRI) protein, a 34 kDa basic protein, plays a key role in inducing strong systemic resistance in susceptible plants against various plant viruses [22]. We have cloned the cDNA encoding the CA-SRI from C. aculeatum leaves using antibodies raised against the purified protein and degenerate oligonucleotide probes derived from microsequencing of the CA-SRI protein. The full-length cDNA consisted of 1218 nucleotides with an open reading frame of 906 bp. The deduced amino acid sequence of CA-SRI protein showed varying homology (ranging from 11 to 54%) to the ribosome inactivating proteins (RIPs) from other plant species. CA-SRI inhibited in vitro protein synthesis both in rabbit reticulocyte lysate and wheat germ lysate but not in Escherichia coli in vitro translation system. The CA-SRI open reading frame was expressed in an E. coli expression vector and the purified recombinant protein inhibited protein synthesis in rabbit reticulocyte lysate. Southern blot analysis indicated that the CA-SRI gene may be present in low copy number.",
+      "journal": "Plant molecular biology",
+      "year": 1997,
+      "pub_date": "1997-03-01",
+      "authors": "Kumar D; Verma H N; Tuteja N; Tewari K K",
+      "first_author": "Kumar D",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "多种植物病毒",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9057330",
+      "doi": "10.1094/MPMI.1997.10.2.234",
+      "title": "Cloning and mapping of a putative barley NADPH-dependent HC-toxin reductase.",
+      "abstract": "The NADPH-dependent HC-toxin reductase (HCTR), encoded by Hm1 in maize, inactivates HC-toxin produced by the fungus Cochliobolus carbonum, and thus confers resistance to the pathogen. The fact that C. carbonum only infects maize (Zea mays) and is the only species known to produce HC-toxin raises the question: What are the biological functions of HCTR in other plant species? An HCTR-like enzyme may function to detoxify toxins produced by pathogens which infect other plant species (R. B. Meeley, G. S. Johal, S. E. Briggs, and J. D. Walton, Plant Cell, 4:71-77, 1992). Hm1 homolog in rice (Y. Hihara, M. Umeda, C. Hara, Q. Liu, S. Aotsuka, K. Toriyama, and H. Uchimiya, unpublished) and HCTR activity in barley, wheat, oats and sorghum have been reported (R. B. Meeley and J. D. Walton, Plant Physiol. 97:1080-1086, 1993). To investigate the sequence conservation of Hm1 and HCTR in barley and the possible relationship of barley Hm1 homolog to the known disease resistance genes, we cloned and mapped a barley (Hordeum vulgare) Hm1-like gene. A putative full-length cDNA clone, Bhm1-18, was isolated from a cDNA library consisting of mRNA from young leaves, inflorescences, and immature embryos. This 1,297-bp clone encodes 363 amino acids which show great similarity (81.6%) with the amino acid sequence of HM1 in maize. Two loci were mapped to barley molecular marker linkage maps with Bhm1-18 as the probe; locus A (Bhm1A) on the long arm of chromosome 1, and locus B (Bhm1B) on the short arm of chromosome 1 which is syntenic to maize chromosome 9 containing the Hm2 locus. The Bhm1-18 probe hybridized strongly to a Southern blot of a wide range of grass species, indicating high conservation of HCTR at the DNA sequence level among grasses. The HCTR mRNA was detected in barley roots, leaves, inflorescences, and immature embryos. The conservation of the HCTR sequence, together with its expression in other plant species (R. B. Meeley and J. D. Walton, Plant Physiol. 97:1080-1086, 1993), suggest HCTR plays an important functional role in other plant species.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 1997,
+      "pub_date": "1997-03-01",
+      "authors": "Han F; Kleinhofs A; Kilian A; Ullrich S E",
+      "first_author": "Han F",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9127691",
+      "doi": "10.1016/s0009-9120(96)00155-5",
+      "title": "Resveratrol: a molecule whose time has come? And gone?",
+      "abstract": "[OBJECTIVES] Resveratrol (3,5,4'-trihydroxystilbene) is the parent compound of a family of molecules, including glucosides and polymers, existing in cis and trans configurations in a narrow range of spermatophytes of which vines, peanuts and pines are the prime representatives. Its synthesis from p-coumaroyl CoA and malonyl CoA is induced by stress, injury, infection or UV-irradiation, and it is classified as a phytoalexin anti-fungicide conferring disease resistance in the plant kingdom. [RESULTS] In vitro, ex vivo and animal experiments have shown that it possesses many biological attributes that favour protection against atherosclerosis, including antioxidant activity, modulation of hepatic apolipoprotein and lipid synthesis, inhibition of platelet aggregation as well as the production of pro-atherogenic eicosanoids by human platelets and neutrophils. Red wine represents its main source in the human diet, and it has been proposed as a major constituent of the polyphenol fraction to which the health benefits of red wine consumption have been attributed. [CONCLUSIONS] The past several years have witnessed intense research devoted to its measurement in wine and the factors likely to promote its enrichment in this beverage. Up to the present, conclusive evidence for its absorption by human subjectsin biologically significant amounts is lacking, and it is questionable (but not yetexcluded) that its powerful and beneficial in vitro activities are reproduced as a consequence of sustained moderate red wine consumption.",
+      "journal": "Clinical biochemistry",
+      "year": 1997,
+      "pub_date": "1997-03-01",
+      "authors": "Soleas G J; Diamandis E P; Goldberg D M",
+      "first_author": "Soleas G J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9108242",
+      "doi": "10.1111/j.1432-1033.1997.00743.x",
+      "title": "Purification, characterisation and cDNA cloning of an antimicrobial peptide from Macadamia integrifolia.",
+      "abstract": "An antimicrobial peptide with no significant amino acid sequence similarity to previously described peptides has been isolated from the nut kernels of Macadcamia integrifolia. The peptide, termed MiAMP1, is highly basic with an estimated pI of 10.1, a mass of 8.1 kDa and contains 76 amino acids including 6 cysteine residues. A cDNA clone containing the entire coding region corresponding to the peptide was obtained. The deduced amino acid sequence of the cDNA indicated a 26-amino-acid signal peptide at the N-terminus of the preprotein. Purified MiAMP1 inhibited the growth of a variety of fungal, oomycete and gram-positive bacterial phytopathogens in vitro. Some pathogens exhibited close to 100% inhibition in less than 1 microM peptide (5 microg/ml). Antimicrobial activity was diminished against most, but not all, microbes in the presence of calcium and potassium chloride salts (1 mM and 50 mM, respectively). MiAMP1 was active against bakers yeast, was inactive against Escherichia coli and was non-toxic to plant and mammalian cells. Analysis of genomic DNA indicated that MiAMP1 was encoded on a single copy gene containing no introns. The MiAMP1 gene may prove useful in genetic manipulations to increase disease resistance in transgenic plants.",
+      "journal": "European journal of biochemistry",
+      "year": 1997,
+      "pub_date": "1997-03-15",
+      "authors": "Marcus J P; Goulter K C; Green J L; Harrison S J; Manners J M",
+      "first_author": "Marcus J P",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9032289",
+      "doi": "10.1128/MCB.17.3.1615",
+      "title": "DAP-5, a novel homolog of eukaryotic translation initiation factor 4G isolated as a putative modulator of gamma interferon-induced programmed cell death.",
+      "abstract": "A functional approach to gene cloning was applied to HeLa cells in an attempt to isolate cDNA fragments which convey resistance to gamma interferon (IFN-gamma)-induced programmed cell death. One of the rescued cDNAs, described in this work, was a fragment of a novel gene, named DAP-5. Analysis of a DAP-5 full-length cDNA clone revealed that it codes for a 97-kDa protein that is highly homologous to eukaryotic translation initiation factor 4G (eIF4G, also known as p220). According to its deduced amino acid sequence, this novel protein lacks the N-terminal region of eIF4G responsible for association with the cap binding protein eIF4E. The N-terminal part of DAP-5 has 39% identity and 63% similarity to the central region of mammalian p220. Its C-terminal part is less homologous to the corresponding region of p220, suggesting that it may possess unique functional properties. The rescued DAP-5 cDNA fragment which conveyed resistance to IFN-gamma-induced cell death was expressed from the vector in the sense orientation. Intriguingly, it comprised part of the coding region which corresponds to the less conserved C-terminal part of DAP-5 and directed the synthesis of a 28-kDa miniprotein. The miniprotein exerted a dual effect on HeLa cells. Low levels of expression protected the cells from IFN-gamma-induced programmed cell death, while high levels of expression were not compatible with continuous cell growth. The relevance of DAP-5 protein to possible changes in a cell's translational machinery during programmed cell death and growth arrest is discussed.",
+      "journal": "Molecular and cellular biology",
+      "year": 1997,
+      "pub_date": "1997-03-01",
+      "authors": "Levy-Strumpf N; Deiss L P; Berissi H; Kimchi A",
+      "first_author": "Levy-Strumpf N",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18945166",
+      "doi": "10.1094/PHYTO.1997.87.3.242",
+      "title": "Suppression of phytophthora blight in bell pepper by a no-till wheat cover crop.",
+      "abstract": "ABSTRACT Four mechanisms of dispersal of propagules of Phytophthora capsici were investigated through modifications in cultural practices and fungicide applications in field plots of bell pepper (Capsicum annuum). Dispersal of soil inoculum was suppressed, and final incidence of disease was 2.5 to 43% when stubble from a fall-sown, no-till, wheat cover crop was present. Final disease incidence was 71 to 72% and pathogen spread occurred within and across rows when all dispersal mechanisms were operative in plots of pepper planted into bare soil. Final disease incidence was 42 to 78% with black plastic mulch when a sporulating pepper fruit placed on the surface served as the source of initial inoculum. The fungicide metalaxyl applied in the irrigation system did not suppress within-row spread of surface inoculum from a sporulating fruit on plastic, but did limit across-row spread; final disease incidence in metalaxyl-treated plots was 11.5 to 14%. Pathogen dispersal mechanisms were modified most dramatically by the no-till cropping system. Thus, simple changes in cultural practices can have dramatic effects on the development of Phytophthora epidemics. Ecologically based disease management strategies have the potential to reduce our reliance on agrichemicals in this and similar pathosystems.",
+      "journal": "Phytopathology",
+      "year": 1997,
+      "pub_date": "1997-03-01",
+      "authors": "Ristaino J B; Parra G; Campbell C L",
+      "first_author": "Ristaino J B",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30861780",
+      "doi": "10.1094/PDIS.1997.81.3.312A",
+      "title": "Partial Characterization of Two Whitefly-Transmitted Geminiviruses Infecting Tomatoes in Venezuela.",
+      "abstract": "Whitefly-transmitted geminiviruses can cause significant yield losses on tomatoes (Lycopersicon esculentum Mill.) in Venezuela. To identify the geminivirus(es) infecting tomatoes in Venezuela, 20 tomato samples from commercial tomato fields in four states and one weed (Euphorbia heterophylla L.) sample were examined for geminivirus infection. All samples showed symptoms generally associated with geminivirus infection, including golden or yellow mosaic, mottling, crumpling and/or distortion of leaves, and, in some cases, stunted and distorted growth. Through the use of squash blot hybridization analysis and a general probe for Western Hemisphere whitefly-transmitted geminiviruses (4), geminivirus nucleic acids were detected in 19 of 20 tomato samples and the weed sample. No samples were infected with tomato yellow leaf curl virus (TYLCV), based on squash blot hybridization analysis with a TYLCV-specific probe. With polymerase chain reaction (PCR) and degenerate primers for whitefly-transmitted geminiviruses (PAL1v1978 and PAR1c496) (4), an approximately 1.2-kb DNA-A fragment was amplified from the 19 squash blot-positive tomato samples and from the weed sample. No DNA fragment was amplified from any samples when TYLCV-specific primers (PTYC1v2406 and PTYIRc287) (3) were used. PCR-amplified DNA-A fragments from four samples representing four different states [Monagas (5L), Guarico (3M), Aragua (3R), and Portuguesa (2U)] were cloned and sequenced. Partial AC1, AV1, and complete common region (CR) sequences of the 5L, 3M, and 2U DNA-A fragments were 92 to 93, 93, and 95 to 97% identical, respectively, indicating that these were DNA-A clones of the same virus. Furthermore, these sequences were 91 to 92, 92 to 95, and 93 to 95% identical, respectively, to sequences of homologous regions of potato yellow mosaic virus (PYMV), indicating that these tomato-infecting geminiviruses are isolates or strains of PYMV. The partial AC1, AV1, and complete CR sequences of the 3R DNA-A fragment were 79, 95, and 77% identical to those of 5L, 3M, and 2U clones, respectively, suggesting that this is a different geminivirus. These sequences were 75 to 87, 82 to 88, and 73 to 81% identical, respectively, to sequences of homologous regions of other tomato geminiviruses, including tomato golden mosaic from Brazil, tomato mottle from Florida, and tomato leaf crumple from Mexico. The bipartite nature of the geminiviruses that were present in the 5L, 3M, 3R, and 2U samples was suggested by the amplification of a DNA-B fragment with degenerate DNA-B primers (PBL1v2040 and PCRc1) (4). These results suggest at least two distinct bipartite Western Hemisphere whitefly-transmitted geminiviruses are associated with tomato virus diseases in Venezuela, and that one of these (sample 3R) may be an undescribed geminivirus. The sequence of the DNA-A fragment from the weed sample was not closely related to the tomato-infecting geminiviruses and, therefore, this weed was not an alternate host of these viruses. Furthermore, because PYMV has been shown to infect tomatoes and cause yellow mosaic symptoms (1), it would be of interest to determine the relationship of PYMV and tomato yellow mosaic geminivirus (ToYMV), which has been reported infecting tomatoes in Venezuela (2), but has not been characterized on the molecular level. References: (1) A. K. Buragohain et al. J. Gen. Virol. 75:2857, 1994. (2) R. C. de Uzcátegui and R. Lastra. Phytopathology 68:985, 1978. (3) M. K. Nakhla et al. Phy-topathol. Mediterr. 32:163, 1993. (4) M. R. Rojas et al. Plant Dis. 77:340, 1993.",
+      "journal": "Plant disease",
+      "year": 1997,
+      "pub_date": "1997-03-01",
+      "authors": "Guzman P; Arredondo C R; Emmatty D; Portillo R J; Gilbertson R L",
+      "first_author": "Guzman P",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

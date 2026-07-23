@@ -1,0 +1,283 @@
+{
+  "month": "2005-08",
+  "generated": "2026-07-13 02:59:42",
+  "total": 35,
+  "by_category": {
+    "Host_Virus_Interactions": 14,
+    "Antiviral_Resistance_Genes": 7,
+    "Biotechnology_Applications": 6,
+    "New_Virus": 5,
+    "Control_Management": 3,
+    "Viral_Diversity_Ecology": 2,
+    "Tospoviridae": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "18944405",
+      "doi": "10.1094/PHYTO-95-0852",
+      "title": "A new tomato-infecting tospovirus from iran.",
+      "abstract": "ABSTRACT A new tospovirus species serologically distinct from all other established tospoviruses was found in tomato in Iran. Typical disease symptoms observed include necrotic lesions on the leaves and yellow ring spots on the fruits, hence the name Tomato yellow ring virus (TYRV) was proposed. The S RNA of this virus was cloned and its 3,061 nucleotide long sequence showed features characteristic for tospoviral S RNA segments. The nucleocapsid (N) protein with a predicted Mr of 30.0 kDa showed closest relationship to the N protein of Iris yellow spot virus (74% sequence identity).",
+      "journal": "Phytopathology",
+      "year": 2005,
+      "pub_date": "2005-08-01",
+      "authors": "Hassani-Mehraban Afshin; Saaijer Janneke; Peters Dick; Goldbach Rob; Kormelink Richard",
+      "first_author": "Hassani-Mehraban Afshin",
+      "categories": [
+        "New_Virus",
+        "Tospoviridae"
+      ],
+      "virus_name": "Tomato yellow ring virus (TYRV)",
+      "taxonomy": "Tospovirus, Bunyaviridae",
+      "host_plant": "番茄 (tomato)",
+      "location": "伊朗",
+      "results": "S RNA全长3061 nt，具备典型tospovirus S RNA特征，N蛋白分子量30.0 kDa，与鸢尾黄斑病毒N蛋白序列一致性74%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "16040661",
+      "doi": "10.1104/pp.105.066563",
+      "title": "Effect of temperature on geminivirus-induced RNA silencing in plants.",
+      "abstract": "Short-interfering RNAs (siRNAs), the molecular markers of posttranscriptional gene silencing (PTGS), are powerful tools that interfere with gene expression and counter virus infection both in plants and animals. Here, we report the effect of temperature on geminivirus-induced gene silencing by quantifying virus-derived siRNAs and by evaluating their distribution along the virus genome for isolates of five species of cassava geminiviruses in cassava (Manihot esculenta, Crantz) and Nicotiana benthamiana. Cassava geminivirus-induced RNA silencing increased by raising the temperature from 25 degrees C to 30 degrees C, with the appearance of less symptomatic newly developed leaves, irrespective of the nature of the virus. Consequently, nonrecovery-type geminiviruses behaved like recovery-type viruses under high temperature. Next, we evaluated the distribution of virus-derived siRNAs on the respective virus genome at three temperatures (25 degrees C, 25 degrees C-30 degrees C, and 30 degrees C). For recovery-type viruses, siRNAs accumulated at moderately higher levels during virus-induced PTGS at higher temperatures, and there was no change in the distribution of the siRNA population along the virus genome. For nonrecovery-type viruses, siRNAs accumulated at strikingly higher levels than those observed for infections with recovery-type viruses at high temperature. As determined for an RNA virus, temperature influences gene silencing for single-stranded DNA geminiviruses. It is possible that other mechanisms besides gene silencing also control geminivirus accumulation at high temperatures. The findings presented here should be taken into consideration when implementing PTGS-based strategies to control plant virus accumulation.",
+      "journal": "Plant physiology",
+      "year": 2005,
+      "pub_date": "2005-08-01",
+      "authors": "Chellappan Padmanabhan; Vanitharani Ramachandran; Ogbe Francis; Fauquet Claude M",
+      "first_author": "Chellappan Padmanabhan",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "双生病毒（木薯双生病毒多种）",
+      "taxonomy": "",
+      "host_plant": "木薯（Manihot esculenta）、本氏烟（Nicotiana benthamiana）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16024691",
+      "doi": "10.1104/pp.105.061861",
+      "title": "Development of a virus-induced gene-silencing system for hexaploid wheat and its use in functional analysis of the Lr21-mediated leaf rust resistance pathway.",
+      "abstract": "Virus-induced gene silencing (VIGS) is an important tool for the analysis of gene function in plants. In VIGS, viruses engineered to carry sequences derived from plant gene transcripts activate the host's sequence-specific RNA degradation system. This mechanism targets the RNAs of the viral genome for degradation, and as the virus contains transcribed plant sequence, homologous host mRNAs are also targeted for destruction. While routinely used in some dicots, no VIGS system was known for monocot plants until the recent report of silencing in barley (Hordeum vulgare) by barley stripe mosaic virus (BSMV). Here, we report development of protocols for use of BSMV to efficiently silence genes in hexaploid wheat (Triticum aestivum). The VIGS system was first optimized in studies silencing phytoene desaturase expression. Next, we used it to assay genes functioning in leaf rust resistance mediated by Lr21, which encodes a nucleotide binding site-leucine-rich repeat class resistance gene product. We demonstrated that infection with BSMV constructs carrying a 150-bp fragment of Lr21 caused conversion of incompatible interactions to compatible, whereas infection with a control construct or one that silences phytoene desaturase had no effect on resistance or susceptibility. Additionally, silencing the RAR1, SGT1, and HSP90 genes, known to be required in many but not all nucleotide binding site-leucine-rich repeat resistance pathways in diverse plant species, resulted in conversion to compatibility, indicating that these genes are essential in Lr21-mediated resistance. These studies indicate that BSMV-VIGS is a powerful tool for dissecting the genetic pathways of disease resistance in hexaploid wheat.",
+      "journal": "Plant physiology",
+      "year": 2005,
+      "pub_date": "2005-08-01",
+      "authors": "Scofield Steven R; Huang Li; Brandt Amanda S; Gill Bikram S",
+      "first_author": "Scofield Steven R",
+      "categories": [
+        "Biotechnology_Applications",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "大麦条纹花叶病毒 (Barley stripe mosaic virus, BSMV)",
+      "taxonomy": "",
+      "host_plant": "六倍体小麦 (Triticum aestivum)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16040651",
+      "doi": "10.1104/pp.105.063537",
+      "title": "An RNA-dependent RNA polymerase prevents meristem invasion by potato virus X and is required for the activity but not the production of a systemic silencing signal.",
+      "abstract": "One of the functions of RNA silencing in plants is antiviral defense. A hallmark of RNA silencing is spreading of the silenced state through the plant. Little is known about the nature of the systemic silencing signal and the proteins required for its production, transport, and reception in plant tissues. Here, we show that the RNA-dependent RNA polymerase RDR6 in Nicotiana benthamiana is involved in defense against potato virus X at the level of systemic spreading and in exclusion of the virus from the apical growing point. It has no effect on primary replication and cell-to-cell movement of the virus and does not contribute significantly to the formation of virus-derived small interfering (si) RNA in a fully established potato virus X infection. In grafting experiments, the RDR6 homolog was required for the ability of a cell to respond to, but not to produce or translocate, the systemic silencing signal. Taking these findings together, we suggest a model of virus defense in which RDR6 uses incoming silencing signal to generate double-stranded RNA precursors of secondary siRNA. According to this idea, the secondary siRNAs mediate RNA silencing as an immediate response that slows down the systemic spreading of the virus into the growing point and newly emerging leaves.",
+      "journal": "Plant physiology",
+      "year": 2005,
+      "pub_date": "2005-08-01",
+      "authors": "Schwach Frank; Vaistij Fabian E; Jones Louise; Baulcombe David C",
+      "first_author": "Schwach Frank",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "马铃薯X病毒",
+      "taxonomy": "",
+      "host_plant": "本氏烟",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16040646",
+      "doi": "10.1104/pp.105.065722",
+      "title": "The tobacco mosaic virus 126-kilodalton protein, a constituent of the virus replication complex, alone or within the complex aligns with and traffics along microfilaments.",
+      "abstract": "Virus-induced cytoplasmic inclusion bodies (referred to as virus replication complexes [VRCs]) consisting of virus and host components are observed in plant cells infected with tobacco mosaic virus, but the components that modulate their form and function are not fully understood. Here, we show that the tobacco mosaic virus 126-kD protein fused with green fluorescent protein formed cytoplasmic bodies (126-bodies) in the absence of other viral components. Using mutant 126-kD:green fluorescent fusion proteins and viral constructs expressing the corresponding mutant 126-kD proteins, it was determined that the size of the 126-bodies and the corresponding VRCs changed in synchrony for each 126-kD protein mutation tested. Through colabeling experiments, we observed the coalignment and intracellular trafficking of 126-bodies and, regardless of size, VRCs, along microfilaments (MFs). Disruption of MFs with MF-depolymerizing agents or through virus-induced gene silencing compromised the intracellular trafficking of the 126-bodies and VRCs and virus cell-to-cell movement, but did not decrease virus accumulation to levels that would affect virus movement or prevent VRC formation. Our results indicate that (1) the 126-kD protein modulates VRC size and traffics along MFs in cells; (2) VRCs traffic along MFs in cells, possibly through an interaction with the 126-kD protein, and the negative effect of MF antagonists on 126-body and VRC intracellular movement and virus cell-to-cell movement correlates with the disruption of this association; and (3) virus movement was not correlated with VRC size.",
+      "journal": "Plant physiology",
+      "year": 2005,
+      "pub_date": "2005-08-01",
+      "authors": "Liu Jian-Zhong; Blancaflor Elison B; Nelson Richard S",
+      "first_author": "Liu Jian-Zhong",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "烟草花叶病毒",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30786538",
+      "doi": "10.1094/PD-89-0912B",
+      "title": "First Report of Wheat dwarf virus in Winter Wheat in Finland.",
+      "abstract": "During June and July of 2004, several diseased plants in winter wheat (Triticum aestivum L.) were reported by agricultural advisers in the southern and southwestern coastal area of Finland. The plants showed extreme dwarfing, various yellowing symptoms, and reduced or no heading. The damage varied considerably. Yield loss estimates in direct-drilled winter wheat fields were approximately 20 to 40% and in worst cases as much as 100%. A few leafhoppers (Psammotettix alienus Dahlb.) were collected from the field with sweep nets and yellow traps. Roots and symptomatic leaves of winter wheat and the leafhoppers were first tested using a commercial polyclonal antibody (DSMZ, Braunschweig, Germany) specific for Wheat dwarf virus (WDV). For the leaf and root samples, routine double-antibody sandwich enzyme-linked immunosorbent assay (DAS-ELISA) procedures were used. Five leafhoppers per sample were homogenized with the extraction buffer provided. The homogenate was centrifuged and the extract was evaluated using DAS-ELISA (2). The highest absorbance values were obtained from leafhoppers suspected to be viruliferous. The mean values varied from 1.002 to 1.990 after incubation in the substrate for 2 h. The absorbance values of several leaf samples exceeded the virus-positive threshold but were lower than those of the viruliferous leafhoppers. The virus was not detected in roots. Low absorbance values of virus-positive plants were confirmed using polymerase chain reaction (PCR) with primers specific for WDV (1). Total DNA extracts (DNeasy Plant Mini Kit; Qiagen, Hilden, Germany) from symptomatic leaves were tested using puRe Taq Ready-To-Go PCR beads (Amersham Biosciences, Buckinghamshire, UK). The PCR amplicon was the expected size (1,201 bp). The high absorbance value of the leafhoppers showed that the leafhoppers were carriers of the virus. These results confirmed that the causal agent of dwarfing and yellowing symptoms in winter wheat was WDV (genus Mastrevirus, family Geminiviridae). References: (1) A. Kvarnheden et al. Arch Virol 147:205, 2002. (2) J. Vacke and R. Cibulka. Plant Prot. Sci. 35:41, 2000.",
+      "journal": "Plant disease",
+      "year": 2005,
+      "pub_date": "2005-08-01",
+      "authors": "Lemmetty A; Huusela-Veistola E",
+      "first_author": "Lemmetty A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Wheat dwarf virus (WDV)",
+      "taxonomy": "Geminiviridae, Mastrevirus",
+      "host_plant": "冬小麦 (Triticum aestivum)",
+      "location": "芬兰南部和西南沿海地区",
+      "results": "病株叶片和叶蝉提取物ELISA阳性，PCR产物大小正确，确认WDV感染，叶蝉为传播媒介。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30786543",
+      "doi": "10.1094/PD-89-0914A",
+      "title": "First Report of Cucumber mosaic virus in Banana from Iran.",
+      "abstract": "Banana bunchy top virus (BBTV), Banana streak virus (BSV), and Cucumber mosaic virus (CMV) (genus Cucumovirus, family Bromoviridae [2]) cause widespread economic losses on banana (Musa sp.) throughout the world and have been reported on banana in different countries including Pakistan along its southeastern border with Iran (1). A survey was conducted from 2004-2005 to identify viruses infecting banana in greenhouses in different growing areas in northern Iran, Mazandaran Province (Sari, Babol, Behshahr, and Ghaemshahr cities). A total of 180 samples from seven banana-growing greenhouses with symptoms of mosaic, chlorosis, stunting, and fruit malformation were collected. All samples were tested for CMV with polyclonal antibodies using double-antibody sandwich enzyme-linked immunosorbent assay (DAS-ELISA) (CMV strain D subgroup I; gifted by H. Lecoq, INRA, Avignion, France). For sap inoculation onto indicator test plants, selected ELISA-positive leaf samples were ground in chilled 0.01 M phosphate buffer, pH 7.0, containing 0.15% 2-mercaptoethanol. Chlorotic and necrotic local lesions developed on Chenopodium amaranticolor and Vigna unguiculata (cv. Mashad local) 10 and 12 days postinoculation, respectively. Cucumis sativus and Nicotiana rustica also developed systemic mosaic symptoms (3). All indicator test plants were rechecked for the presence of CMV using DAS-ELISA. On the basis of serological tests and indicator host plants reactions, CMV was identified in 32% of samples including Sari (13.8%), Babol (2.7%), Behshahr (10%) and Ghahemshahr (5%), respectively. Fifty-five samples did not react with CMV antiserum but the presence of symptoms resembling BBTV and BSV (4) emphasizes the need for further investigations to confirm the presence and identities of other viruses. References: (1) J. Bird and F. L. Wellman. Phytopathology 52:286, 1962. (2) S. K. Choi et al. J. Virol. Methods 83:67, 1999. (3) A. J. Gibbs and B. D. Harrison. Descriptions of Plant Viruses. No.1. CMI/AAB, Surrey, England, 1970. (4) R. C. Ploetz et al., eds. Compendium of Tropical Fruit Diseases. The American Phytopathological Society, St. Paul, MN, 1994.",
+      "journal": "Plant disease",
+      "year": 2005,
+      "pub_date": "2005-08-01",
+      "authors": "Ghotbi T; Bananej K",
+      "first_author": "Ghotbi T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cucumber mosaic virus (CMV)",
+      "taxonomy": "Bromoviridae, Cucumovirus",
+      "host_plant": "Banana (Musa sp.)",
+      "location": "Iran, northern Iran, Mazandaran Province (Sari, Babol, Behshahr, Ghaemshahr cities)",
+      "results": "180份样本中32%ELISA阳性，Sari、Babol、Behshahr和Ghaemshahr阳性率分别为13.8%、2.7%、10%和5%。指示植物产生局部或系统症状，ELISA确认。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30786532",
+      "doi": "10.1094/PD-89-0910B",
+      "title": "First Report of Tobacco as a Natural Host of Tomato yellow leaf curl virus in Spain.",
+      "abstract": "Two begomovirus species, Tomato yellow leaf curl Sardinia virus (TYLCSV) and Tomato yellow leaf curl virus (TYLCV), have been identified as causal agents of tomato yellow leaf curl disease (TYLCD) in Spain. TYLCSV was reported in Spain in 1992 and TYLCV in 1997 on tomato crops (3). TYLCV was also reported in common bean (Phaseolus vulgaris L.) and pepper (Capsicum annuum L.) crops in southern Spain in 1997 and 1999, respectively. During the summer of 2004, symptoms of yellowing, crumpling, and necrosis of new leaves were observed sporadically in young, field-grown tobacco (Nicotiana tabacum L.) plants in the Badajoz Province. These tobacco plants were next to tomato crops where TYLCV was detected for the first time in Badajoz in 2003. In September 2004, four symptomatic tobacco plants were selected for double antibody sandwich enzyme linked immunosorbent assay (DAS-ELISA) and polymerase chain reaction (PCR) identification analyses. Serological analyses were carried out in two repetitions and with the following polyclonal antisera: Potato virus Y (PVY) (Loewe Biochemica, Sauerlach, Germany); Tobacco mild green mosaic virus (produced in our laboratory); Tobacco mosaic virus (BIO-RAD, Marnes-La-Coquette, France); and Tomato spotted wilt virus (Loewe Biochemica). A simplified method of duplex PCR was used for a rapid, sensitive, and simultaneous detection of TYLCSV and TYLCV (2). Mixed infections of PVY and TYLCV were detected in all four tobacco samples tested. TYLCV infection was confirmed using the primer pair TY-1/TY-2 specific for the coat protein (CP) gene of begomoviruses (1). The CP fragment was digested with the restriction enzyme AvaII, and the pattern obtained corresponded to that obtained from TYLCV-infected tomato that served as a positive control. Two PCR products from different tobacco samples were sequenced and both showed 100% identity with the corresponding region (Almería) of TYLCV (GenBank Accession No. AJ489258) and 99% with TYLCV-Mild (Spain) (GenBank Accession No. AJ519441), confirming the diagnosis. The symptoms observed in the tobacco plants can not be attributed solely to TYLCV since the virus was present in a mixed infection with PVY. However, tobacco infected with TYLCV may serve as an important alternate host for TYLCV in the tomato cropping system. To our knowledge, this is the first report of N. tabacum as a natural host of TYLCV in Spain. References: (1) G. P. Accotto et al. Eur. J. Plant Pathol. 106:179, 2000. (2) P. Martínez-Culebras et al. Ann. Appl. Biol. 139:251, 2001. (3) J. Navas-Castillo et al. Plant Dis. 81:1461, 1997.",
+      "journal": "Plant disease",
+      "year": 2005,
+      "pub_date": "2005-08-01",
+      "authors": "Font M I; Córdoba C; García A; Santiago R; Jordá C",
+      "first_author": "Font M I",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato yellow leaf curl virus (TYLCV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "烟草 (Nicotiana tabacum L.)，番茄、菜豆、辣椒等",
+      "location": "西班牙巴达霍斯省",
+      "results": "四株烟草样本均检测到PVY和TYLCV混合感染；TYLCV CP基因片段测序与Almería分离株100%同源，确认为TYLCV。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30786521",
+      "doi": "10.1094/PD-89-0879",
+      "title": "A New Technique to Select Mild Strains of Cucumber mosaic virus.",
+      "abstract": "An efficient technique to select a good attenuated virus to control Cucumber mosaic virus (CMV) disease was developed. Preliminary screenings were conducted to assess the virulence of virus recovered from dark-green islands and yellow tissues of mosaic leaves of Nicotiana rustica after co-inoculation with an attenuated mutant P2bR46C of CMV and its original severe isolate Pepo. All single-lesion isolates (SLIs) obtained from dark-green islands had the attenuated P2bR46C phenotype, but the SLIs from yellow tissue had either the virulent Pepo or the P2bR46C phenotype. When Pepo-infected N. rustica and tomato plants were grown at 15 or 36°C for 30 days, 17 of 288 SLIs obtained from the treated leaves elicited mosaic and dark-green spots without malformation. Dark-green tissue from each plant infected with 1 of these 17 SLIs then was used to inoculate one plant of N. rustica. All 17 plants had either very mild mosaic or no visible symptoms. One of these potential mild strains, 36R37, had an amino acid substitution on the 2b gene encoding the 2b protein. Isolate 36R37 also was highly cross-protective, and its symptom attenuation was stable for three serial host passages. After cold or heat treatment, the dark-green tissue proved to be a good source for isolating mild strains of the virus.",
+      "journal": "Plant disease",
+      "year": 2005,
+      "pub_date": "2005-08-01",
+      "authors": "Kobori Takashi; Ryang Bo-Song; Natsuaki Tomohide; Kosaka Yoshitaka",
+      "first_author": "Kobori Takashi",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "黄瓜花叶病毒（Cucumber mosaic virus, CMV）",
+      "taxonomy": "",
+      "host_plant": "烟草（Nicotiana rustica）和番茄",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16201407",
+      "doi": "10.1007/s11248-005-0388-7",
+      "title": "Inducible expression in plants by virus-mediated transgene activation.",
+      "abstract": "We have developed a plant virus-mediated transgene activation (VMTA) system that utilizes a viral expression vector to present the inducer. The concept was tested using two well characterized components: (i) an artificial promoter based on the yeast GAL4 upstream activating sequence and the minimal TATA element of Cauliflower Mosaic Virus 35S RNA promoter, and (ii) a transcriptional activator (TA) consisting of a fusion between the GAL4 DNA binding domain and the Herpes simplex virus VP16 activation domain. The TA was expressed under the control of the subgenomic promoter of a Tobacco Mosaic Virus-based expression vector. The VMTA system was functional in transient Agroinfiltration assays with the reporter gene beta-glucuronidase, the intracellular domain of the diabetes associated autoimmune antigen, IA-2ic, and with the anti-tetanus antibody 9F12. Transgenic lines harboring the reporter gene were also examined. The VMTA system displayed tight transcriptional control in both transient assays and in transgenic Nicotiana benthamiana plants carrying the TA-inducible reporter.",
+      "journal": "Transgenic research",
+      "year": 2005,
+      "pub_date": "2005-08-01",
+      "authors": "Hull Anna K; Yusibov Vidadi; Mett Vadim",
+      "first_author": "Hull Anna K",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "Tobacco Mosaic Virus (TMV)",
+      "taxonomy": "",
+      "host_plant": "Nicotiana benthamiana",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16098104",
+      "doi": "10.1111/j.1365-313X.2005.02472.x",
+      "title": "High-throughput in planta expression screening identifies a class II ethylene-responsive element binding factor-like protein that regulates plant cell death and non-host resistance.",
+      "abstract": "We performed high-throughput screening using the potato virus X (PVX) system to overexpress Nicotiana benthamiana genes in planta and identify positive regulators of cell death. This screening identified NbCD1, a novel class II ethylene-responsive element binding factor (ERF), as a potent inducer of the hypersensitive response (HR)-like cell death. NbCD1 expression was induced by treatments with INF1 elicitor and a non-host pathogen Pseudomonas cichorii. NbCD1 exhibited transcriptional repressor activity through its EAR motif, and this motif was necessary for NbCD1 to cause cell death. We identified 58 genes that displayed altered transcription following NbCD1 overexpression. NbCD1 overexpression downregulated the expression of HSR203, a negative regulator of hypersensitive death. Conditional expression of NbCD1 in Arabidopsis also caused cell death, indicating that NbCD1 downstream cascades are conserved in dicot plants. To further confirm the role of NbCD1 in defense, we used virus-induced gene silencing to demonstrate that NbCD1 is required for non-host resistance of N. benthamiana to the bacterial pathogen P. cichorii. Our data point to a model of transcriptional regulatory cascades. NbCD1 positively regulates cell death and contributes to non-host resistance, possibly by downregulating the expression of other defense response genes.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2005,
+      "pub_date": "2005-08-01",
+      "authors": "Nasir Khairun Hisam Bin; Takahashi Yoshihiro; Ito Akiko; Saitoh Hiromasa; Matsumura Hideo; ... (+8)",
+      "first_author": "Nasir Khairun Hisam Bin",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "马铃薯病毒X (potato virus X, PVX)",
+      "taxonomy": "",
+      "host_plant": "本氏烟 (Nicotiana benthamiana) 和拟南芥 (Arabidopsis)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16258249",
+      "doi": "",
+      "title": "Silencing of NbNAP1 encoding a plastidic SufB-like protein affects chloroplast development in Nicotiana benthamiana.",
+      "abstract": "It was previously shown that AtNAP1 is a plastidic SufB protein involved in Fe-S cluster assembly in Arabidopsis. In this study, we investigated the effects of depleting SufB protein from plant cells using virus-induced gene silencing (VIGS). VIGS of NbNAP1 encoding a Nicotiana benthamiana homolog of AtNAP1 resulted in a leaf yellowing phenotype. NbNAP1 was expressed ubiquitously in plant tissues with the highest level in roots. A GFP fusion protein of the N-terminal region (M1-V103) of NbNAP1 was targeted to chloroplasts. Depletion of NbNAP1 resulted in reduced numbers of chloroplasts of reduced size. Mitochondria also seemed to be affected. Despite the reduced number and size of the chloroplasts in the NbNAP1 VIGS lines, the expression of many nuclear genes encoding chloroplast-targeted proteins and chlorophyll biosynthesis genes remained unchanged.",
+      "journal": "Molecules and cells",
+      "year": 2005,
+      "pub_date": "2005-08-31",
+      "authors": "Ahn Chang Sook; Lee Jeong Hee; Pai Hyun-Sook",
+      "first_author": "Ahn Chang Sook",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "未提及（VIGS载体）",
+      "taxonomy": "",
+      "host_plant": "Nicotiana benthamiana",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

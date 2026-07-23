@@ -1,0 +1,56 @@
+{
+  "month": "1987-04",
+  "generated": "2026-07-13 02:59:42",
+  "total": 2,
+  "by_category": {
+    "New_Virus": 1,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "16593818",
+      "doi": "10.1073/pnas.84.7.1824",
+      "title": "Cauliflower mosaic virus coat protein is phosphorylated in vitro by a virion-associated protein kinase.",
+      "abstract": "A protein kinase has been found to be associated with particles of the plant virus cauliflower mosaic virus. This protein kinase can phosphorylate endogenous viral capsid proteins in vitro and exchange substrates with casein kinase type II. The activity is not affected by cAMP but is enhanced considerably by ADP. The cofactor is either Mn(2+) or Mg(2+), and the phosphate donor is either ATP or GTP. Serine and threonine residues are phosphorylated.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1987,
+      "pub_date": "1987-04-01",
+      "authors": "Martinez-Izquierdo J; Hohn T",
+      "first_author": "Martinez-Izquierdo J",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Cauliflower mosaic virus（花椰菜花叶病毒）",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16347324",
+      "doi": "10.1128/aem.53.4.802-809.1987",
+      "title": "Properties of Desulfovibrio carbinolicus sp. nov. and Other Sulfate-Reducing Bacteria Isolated from an Anaerobic-Purification Plant.",
+      "abstract": "Several sulfate-reducing microorganisms were isolated from an anaerobic-purification plant. Four strains were classified as Desulfovibrio desulfuricans, Desulfovibrio sapovorans, Desulfobulbus propionicus, and Desulfovibrio sp. The D. sapovorans strain contained poly-beta-hydroxybutyrate granules and seemed to form extracellular vesicles. A fifth isolate, Desulfovibrio sp. strain EDK82, was a gram-negative, non-spore-forming, nonmotile, curved organism. It was able to oxidize several substrates, including methanol. Sulfate, sulfite, thiosulfate, and sulfur were utilized as electron acceptors. Pyruvate, fumarate, malate, and glycerol could be fermented. Because strain EDK82 could not be ascribed to any of the existing species, a new species, Desulfovibrio carbinolicus, is proposed. The doubling times of the isolates were determined on several substrates. Molecular hydrogen, lactate, propionate, and ethanol yielded the shortest doubling times (3.0 to 6.3 h). Due to the presence of support material in an anaerobic filter system, these species were able to convert sulfate to sulfide very effectively at a hydraulic retention time as short as 0.5 h.",
+      "journal": "Applied and environmental microbiology",
+      "year": 1987,
+      "pub_date": "1987-04-01",
+      "authors": "Nanninga H J; Gottschal J C",
+      "first_author": "Nanninga H J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

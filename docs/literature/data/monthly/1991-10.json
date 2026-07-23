@@ -1,0 +1,101 @@
+{
+  "month": "1991-10",
+  "generated": "2026-07-13 02:59:42",
+  "total": 4,
+  "by_category": {
+    "Host_Virus_Interactions": 2,
+    "New_Virus": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "12324583",
+      "doi": "10.1105/tpc.3.10.1085",
+      "title": "Coordinate Gene Activity in Response to Agents That Induce Systemic Acquired Resistance.",
+      "abstract": "In a variety of plant species, the development of necrotic lesions in response to pathogen infection leads to induction of generalized disease resistance in uninfected tissues. A well-studied example of this \"immunity\" reaction is systemic acquired resistance (SAR) in tobacco. SAR is characterized by the development of a disease-resistant state in plants that have reacted hypersensitively to previous infection by tobacco mosaic virus. Here, we show that the onset of SAR correlates with the coordinate induction of nine classes of mRNAs. Salicylic acid, a candidate for the endogenous signal that activates the resistant state, induces expression of the same \"SAR genes.\" A novel synthetic immunization compound, methyl-2,6-dichloroisonicotinic acid, also induces both resistance and SAR gene expression. These observations are consistent with the hypothesis that induced resistance results at least partially from coordinate expression of these SAR genes. A model is presented that ties pathogen-induced necrosis to the biosynthesis of salicylic acid and the induction of SAR.",
+      "journal": "The Plant cell",
+      "year": 1991,
+      "pub_date": "1991-10-01",
+      "authors": "Ward E. R.; Uknes S. J.; Williams S. C.; Dincher S. S.; Wiederhold D. L.; ... (+4)",
+      "first_author": "Ward E. R.",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "烟草花叶病毒 (tobacco mosaic virus)",
+      "taxonomy": "",
+      "host_plant": "烟草 (tobacco)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1840613",
+      "doi": "10.1099/0022-1317-72-10-2597",
+      "title": "Nucleotide sequence of the 3' non-coding region and N gene of the S RNA of a serologically distinct tospovirus.",
+      "abstract": "A tomato spotted wilt-like virus (TSWV-I) is a distinct member of the Tospovirus genus of the Bunyaviridae and is distinguished from the typical TSWV by having a serologically distinct nucleoprotein (N). A cDNA clone extending from the 3' terminus of the viral RNA through the entire N open reading frame (ORF) was sequenced. The TSWV-I N ORF is capable of encoding a polypeptide of 262 amino acids with a predicted Mr of 28.8K. In vitro transcription and translation of the clone produced a protein which comigrated with TSWV-I N and was immunoprecipitated by TSWV-I antibodies. Hybridization analysis of lithium chloride-precipitated RNA from healthy and TSWV-I-infected tissue detected a virus-specific 1.2 kb subgenomic RNA. The TSWV-I S RNA terminal consensus sequence (8 nucleotides) was identical to that of TSWV; the remaining TSWV-I untranslated region showed only 51% identity with that of TSWV. Comparison of the TSWV-I and TSWV N proteins showed 67% identity at the amino acid level. The degree of similarity in the terminal sequence, untranslated region and N ORF is similar to that expected between distinct serogroups within certain genera of the Bunyaviridae.",
+      "journal": "The Journal of general virology",
+      "year": 1991,
+      "pub_date": "1991-10-01",
+      "authors": "Law M D; Speck J; Moyer J W",
+      "first_author": "Law M D",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "番茄斑萎病毒类似病毒(TSWV-I)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1742196",
+      "doi": "10.1099/00207713-41-4-502",
+      "title": "Numerical analysis and DNA base compositions of some thermophilic Bacillus species.",
+      "abstract": "Morphological, physiological, and biochemical characteristics and the DNA base compositions of 133 thermophilic Bacillus strains were determined. A total of 54 of these strains were received as identified species (mainly Bacillus stearothermophilus, Bacillus coagulans, Bacillus brevis, and Bacillus licheniformis) from international culture collections, and 79 newly isolated strains, which were isolated mainly from sugar diffusion juices of Italian plants, were also examined. Numerical taxonomy techniques (simple matching coefficient and unweight pair grouping using the mathematical average) and DNA G + C values showed that the strains aggregated into nine clusters. Both B. licheniformis and B. brevis were well separated from the other organisms. B. stearothermophilus and B. coagulans were confirmed as separate clusters and exhibited greater heterogeneity than previously shown. The B. stearothermophilus strains clustered into four groups, three of which have been recognized previously by other authors; the members of the fourth group had distinctive characteristics, including considerable biochemical inertness, an inability to grow at temperatures greater than 60 degrees C, and a high G + C content. Within the B. coagulans cluster the strains with characteristics very similar to those of the new species Bacillus smithii clustered together. However, the remaining strains were still clearly separated into two groups; one of these groups was considered B. coagulans sensu stricto, and the other was distinguished by morphological and biochemical criteria, such as spores which do not swell the sporangia, utilization of citrate, a higher proteolytic activity, and acidification of some carbohydrates. Our results were confirmed by comparing them with distinctive characteristics of recently described thermophilic Bacillus species.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1991,
+      "pub_date": "1991-10-01",
+      "authors": "De Bartolomeo A; Trotta F; La Rosa F; Saltalamacchia G; Mastrandrea V",
+      "first_author": "De Bartolomeo A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17226218",
+      "doi": "10.1055/s-2006-960224",
+      "title": "Coumarins and other phenylpropanoid compounds in the defense response of plant cells.",
+      "abstract": "Cultured cells of the Apiaceae, e. g. PETROSELINUM CRISPUM and AMMI MAJUS, produce large quantities of coumarin phytoalexins upon treatment with fungal elicitors and concomitantly reinforce their cell walls by ferulic ester incorporation. In these reactions, the cells mimic the disease resistance response commonly expressed in plants following infection by phytopathogenic fungi. Both coumarins and ferulic esters are derived from the general phenylpropanoid pathway. The elicited Apiaceae cell cultures have therefore served as model systems for the investigation of the biosynthetic and regulatory mechanisms involved in phenylpropanoid accumulation. The results of these studies suggest an unconventional pathway for umbelliferone biosynthesis and demonstrate both the transcriptional and post-transcriptional control of a novel pathway to feruloyl-CoA. They underline the enormous contribution of such model systems to the present knowledge on regulatory patterns and DNA coding in secondary metabolism.",
+      "journal": "Planta medica",
+      "year": 1991,
+      "pub_date": "1991-10-01",
+      "authors": "Matern U",
+      "first_author": "Matern U",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

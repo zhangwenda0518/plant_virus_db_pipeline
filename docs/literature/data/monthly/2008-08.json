@@ -1,0 +1,283 @@
+{
+  "month": "2008-08",
+  "generated": "2026-07-13 02:59:42",
+  "total": 50,
+  "by_category": {
+    "New_Virus": 17,
+    "Host_Virus_Interactions": 17,
+    "Antiviral_Resistance_Genes": 7,
+    "Biotechnology_Applications": 3,
+    "Transmission_Epidemiology": 3,
+    "Molecular_Characterization": 2,
+    "Detection_Methods": 2,
+    "Control_Management": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "18480444",
+      "doi": "10.1128/JVI.00209-08",
+      "title": "Mutational analysis of plant cap-binding protein eIF4E reveals key amino acids involved in biochemical functions and potyvirus infection.",
+      "abstract": "The eukaryotic translation initiation factor 4E (eIF4E) (the cap-binding protein) is involved in natural resistance against several potyviruses in plants. In lettuce, the recessive resistance genes mo1(1) and mo1(2) against Lettuce mosaic virus (LMV) are alleles coding for forms of eIF4E unable, or less effective, to support virus accumulation. A recombinant LMV expressing the eIF4E of a susceptible lettuce variety from its genome was able to produce symptoms in mo1(1) or mo1(2) varieties. In order to identify the eIF4E amino acid residues necessary for viral infection, we constructed recombinant LMV expressing eIF4E with point mutations affecting various amino acids and compared the abilities of these eIF4E mutants to complement LMV infection in resistant plants. Three types of mutations were produced in order to affect different biochemical functions of eIF4E: cap binding, eIF4G binding, and putative interaction with other virus or host proteins. Several mutations severely reduced the ability of eIF4E to complement LMV accumulation in a resistant host and impeded essential eIF4E functions in yeast. However, the ability of eIF4E to bind a cap analogue or to fully interact with eIF4G appeared unlinked to LMV infection. In addition to providing a functional mutational map of a plant eIF4E, this suggests that the role of eIF4E in the LMV cycle might be distinct from its physiological function in cellular mRNA translation.",
+      "journal": "Journal of virology",
+      "year": 2008,
+      "pub_date": "2008-08-01",
+      "authors": "German-Retana Sylvie; Walter Jocelyne; Doublet Bénédicte; Roudet-Tavert Geneviève; Nicaise Valérie; ... (+5)",
+      "first_author": "German-Retana Sylvie",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Lettuce mosaic virus (LMV)",
+      "taxonomy": "",
+      "host_plant": "莴苣",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18615098",
+      "doi": "10.1038/emboj.2008.129",
+      "title": "Nuclear import of CaMV P6 is required for infection and suppression of the RNA silencing factor DRB4.",
+      "abstract": "Replication of Cauliflower mosaic virus (CaMV), a plant double-stranded DNA virus, requires the viral translational transactivator protein P6. Although P6 is known to form cytoplasmic inclusion bodies (viroplasms) so far considered essential for virus biology, a fraction of the protein is also present in the nucleus. Here, we report that monomeric P6 is imported into the nucleus through two importin-alpha-dependent nuclear localization signals, and show that this process is mandatory for CaMV infectivity and is independent of translational transactivation and viroplasm formation. One nuclear function of P6 is to suppress RNA silencing, a gene regulation mechanism with antiviral roles, commonly counteracted by dedicated viral suppressor proteins (viral silencing suppressors; VSRs). Transgenic P6 expression in Arabidopsis is genetically equivalent to inactivating the nuclear protein DRB4 that facilitates the activity of the major plant antiviral silencing factor DCL4. We further show that a fraction of P6 immunoprecipitates with DRB4 in CaMV-infected cells. This study identifies both genetic and physical interactions between a VSR to a host RNA silencing component, and highlights the importance of subcellular compartmentalization in VSR function.",
+      "journal": "The EMBO journal",
+      "year": 2008,
+      "pub_date": "2008-08-06",
+      "authors": "Haas Gabrielle; Azevedo Jacinthe; Moissiard Guillaume; Geldreich Angèle; Himber Christophe; ... (+4)",
+      "first_author": "Haas Gabrielle",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "花椰菜花叶病毒 (CaMV)",
+      "taxonomy": "",
+      "host_plant": "拟南芥",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769467",
+      "doi": "10.1094/PDIS-92-8-1254B",
+      "title": "First Report of Apium virus Y on Cilantro, Celery, and Parsley in California.",
+      "abstract": "Recently, Apium virus Y (ApVY) was detected in field-grown cilantro (Coriandrum sativum), celery (Apium graveolens), and parsley (Petroselinum crispum) in California. In 2003, cilantro plants growing in three different fields in California (Monterey, San Joaquin, and San Luis Obispo counties) expressed symptoms of mosaic, vein clearing, and stunting. When plant sap was examined by transmission electron microscopy, flexuous, rod-shaped virus particles were observed. Total RNA was extracted from the symptomatic cilantro plants and used as a template in reverse transcription (RT)-PCR using universal potyvirus primers according to Chen et al. (1). The RT-PCR product was cloned into pGEM-T (Promega, Madison, WI) and the insert of 1,713 bp was sequenced (GenBank Accession No. EU515125). Nucleotide sequences from clones derived from three different infected cilantro plants were 89 to 97% identical to ApVY sequences encoding partial sequence of polyprotein in GenBank (Accession Nos. AY049716, EU127499, AF207594, AF203529, and EU255632). In 2007, celery plants showing necrotic line patterns and necrotic lesions on lower leaves and petioles were observed in several fields in two coastal counties in California (Monterey and Santa Clara counties). Flexuous, rod-shaped virus particles were also observed in the sap of those plants. ELISA for Cucumber mosaic virus and RT-PCR for Celery mosaic virus were negative. ApVY specific primers were designed on the basis of a consensus sequence of ApVY identified from cilantro in 2003; reverse primer 5'-GGCTCTTGCTATAGACAAATAGT-3' and forward primer 5'-GAAGACCAAGCCAATGTGTGTA-3'. The sequence of RT-PCR products (GenBank Accession No. EU515126) amplified from infected celery had 90 to 98% nucleotide identity to ApVY. When the deduced amino acid sequences of NIb and CP regions from both cilantro and celery were used for comparison, they showed 95 to 99% identity with the known ApVY GenBank sequences mentioned above. More than 10 asymptomatic parsley plants growing in fields adjacent to the infected celery were also tested for ApVY and found to be infected. ApVY was previously identified in three Apiaceae weeds in Australia (2) and in celery in New Zealand (3). To our knowledge, this is the first report of ApVY on cilantro, celery, and parsley in California. References: (1) J. Chen et al. Arch. Virol. 146:757, 2001. (2) J. Moran et al. Arch. Virol. 147:1855, 2002. (3) J. Tang et al. Plant Dis. 91:1682, 2007.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-08-01",
+      "authors": "Tian T; Liu H-Y; Koike S T",
+      "first_author": "Tian T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Apium virus Y (ApVY)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "Coriandrum sativum (香菜), Apium graveolens (芹菜), Petroselinum crispum (欧芹)",
+      "location": "美国加利福尼亚州（蒙特雷、圣华金、圣路易斯奥比斯波县；蒙特雷、圣克拉拉县）",
+      "results": "发现ApVY感染三种伞形科作物，序列与已知ApVY有89-99%相似性，芹菜表现坏死症状，欧芹无症状。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769469",
+      "doi": "10.1094/PDIS-92-8-1253A",
+      "title": "First Report of Zantedeschia mosaic virus Infecting a Zantedeschia sp. in New Zealand.",
+      "abstract": "In February 2004, leaf yellowing, mottling, and mosaics were observed on a few plants of a Zantedeschia sp. (calla lily) growing in Rangiora, Canterbury, New Zealand. Zantedeschia spp. are known to be susceptible to at least 13 virus species (1). No symptoms were observed on Chenopodium amaranticolor, C. quinoa, Cucumis sativus, Gomphrena globosa, Nicotiana benthamiana, N. clevelandii, N. occidentalis, or N. tabacum when inoculated with sap from symptomatic plants. However, electron microscopy of crude sap preparations from a symptomatic Zantedeschia sp. and inoculated N. clevelandii plants revealed the presence of flexuous, filamentous virus particles approximately 700 nm long and 12 nm wide. No virus particles were seen in the other inoculated indicator species. Nucleic acid was extracted from leaves of the infected Zantedeschia sp. and N. clevelandii plants and tested in reverse transcription (RT)-PCR using published potyvirus-specific primers (4). PCR amplicons of the expected size (327 bp) were obtained from both plant species and sequenced directly. The products were identical, and a BLAST search in GenBank showed 99% nucleotide identity with a Taiwanese isolate of the species Zantedeschia mosaic virus (ZaMV) (GenBank Accession No. AY026463). A product of 1,531 bp (GenBank Accession No. EU544542) was amplified from symptomatic Zantedeschia by RT-PCR using novel forward (5'-GCACGGCAGATAAACACGAC-3') and reverse (5'-GTGGGCAACCTTCAACTGTG-3') primers designed to amplify the 3' untranslated region (3'UTR), coat protein (CP), and partial nuclear inclusion b protein (NIb) genes. The product was sequenced and had 94% nucleotide identity with a South Korean ZaMV isolate (GenBank Accession No. AB081519), with 95% nucleotide (97% amino acid) identity in the CP gene. A second crop of Zantedeschia spp. in Tauranga, New Zealand (approximately 700 km north of Rangiora) was observed to have similar disease symptoms. Symptomatic plants tested positive in ELISA using a potyvirus-specific monoclonal antibody (Agdia Inc., Elkhart, IN). Nucleic acid was extracted from leaves of symptomatic plants and tested in RT-PCR using potyvirus-specific primer pairs, PV2I/T7 and D335 and U335 and PV1/SP6, which amplify overlapping regions within the 3'UTR, CP, and NIb genes (2,3). The products were sequenced and a consensus sequence of 1,793 bp was generated (GenBank Accession No. EU532065). A BLAST search showed that the sequence had 78% nucleotide (88% amino acid) identity with Zantedeschia mild mosaic virus (ZaMMV) (GenBank Accession No. AY626825). However, the sequences had only 73% nucleotide (79% amino acid) identity in the CP gene, and therefore, this second virus may be a distinct species. To our knowledge, this is the first report of ZaMV in New Zealand. Cut flowers are an increasingly important commodity in New Zealand and Zantedeschia is one of the most important crops; in 2005, exports of rhizomes and cut flowers of the genus were worth NZ$10.9 million. These viral diseases may require management to ensure that the quality of production is maintained. References: (1) C. H. Huang et al. Plant Pathol. 56:183, 2007. (2) S. A. Langeveld et al. J. Gen. Virol. 72:1531, 1991. (3) A. M. Mackenzie et al. Arch. Virol. 143:903, 1998. (4) V. Marie-Jeanne et al. J. Phytopathol. 148:141, 2000.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-08-01",
+      "authors": "Wei T; Pearson M N; Cohen D; Tang J Z; Clover G R G",
+      "first_author": "Wei T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Zantedeschia mosaic virus (ZaMV)；另检测到可能的新病毒种（与ZaMMV相关）",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "Zantedeschia sp. (马蹄莲)",
+      "location": "新西兰：坎特伯雷Rangiora；陶朗加Tauranga",
+      "results": "从症状植株中检测到ZaMV，CP序列与台湾分离物99%同源，与韩国分离物94%同源；另一地点样品中检测到可能的新病毒种，CP仅与ZaMMV有73%核苷酸同源性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769473",
+      "doi": "10.1094/PDIS-92-8-1248A",
+      "title": "First Report of Impatiens necrotic spot virus Infecting Lettuce in California.",
+      "abstract": "Impatiens necrotic spot virus (INSV; family Bunyaviridae, genus Tospovirus) is an important pathogen of ornamental plants in North America and Europe, particularly in the greenhouse industry (2,3). However, INSV is now emerging as a pathogen of vegetable crops. During the 2006 and 2007 growing seasons, lettuce (Lactuca sativa) in Monterey County, CA showed necrotic spotting, leaf chlorosis, and plant stunting typical of symptoms induced by Tomato spotted wilt virus (TSWV). Significant and damaging outbreaks of these disease symptoms were found in numerous romaine, greenleaf, redleaf, butterhead, and iceberg lettuce fields in Monterey and San Benito counties. Samples from symptomatic plants from 21 of 27 fields in Monterey County were negative when tested with TSWV immunostrips (Agdia, Elkhart, IN); however, tests of the TSWV-negative samples with INSV immunostrips were positive. In most fields where INSV was detected, disease development was limited to the edges of fields and disease incidence was <5%; however, some fields had incidences >50% and crop loss was experienced. The virus causing the tospovirus symptoms in the TSWV-negative lettuce was sap transmitted to Nicotiana benthamiana and lettuce, where it induced chlorosis and necrosis. Symptoms in N. benthamiana were consistent with INSV infection, and those in lettuce were similar to symptoms observed in the field. Immunostrip tests confirmed that symptomatic N. benthamiana and lettuce plants were infected with INSV. To further confirm the identity of this virus, reverse transcription (RT)-PCR analysis was conducted with an INSV primer pair that directs the amplification of a ~1.3-kb fragment from the small RNA of INSV (4). The 1.3-kb fragment was amplified from RNA from symptomatic lettuce plants that were INSV positive with immunostrips, and not from asymptomatic lettuce. A total of 38 of 54 samples showing tospovirus-like symptoms were confirmed to be infected with INSV by RT-PCR. Sequences of two representative 1.3-kb DNA fragments were 98 to 99% identical with sequences of INSV isolates from Japan, Italy, and The Netherlands (GenBank Accession Nos. AB109100, DQ425096, and X66972). Taken together with the previous identification of the INSV vector, the western flower thrips (Frankliniella occidentalis), in central California lettuce (1), these results confirm that INSV induced tospovirus symptoms in lettuce fields in Monterey County in 2007. To our knowledge, this is the first report of the occurrence of INSV infecting lettuce in California. References: (1) W. E. Chaney. Annu. Rep. California Lettuce Res. Board. 2006. (2) M. Daughtrey et al. Plant Dis. 81:1220, 1997. (3) M. D. Law and J. W. Moyer. J. Gen. Virol. 71:933, 1990. (4) R. A. Naidu et al. Online publication. doi: 10.1094/PHP-2005-0727-01-HN. Plant Health Progress, 2005.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-08-01",
+      "authors": "Koike S T; Kuo Y-W; Rojas M R; Gilbertson R L",
+      "first_author": "Koike S T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Impatiens necrotic spot virus (INSV)",
+      "taxonomy": "Bunyaviridae, Tospovirus",
+      "host_plant": "Lactuca sativa (莴苣)",
+      "location": "美国加利福尼亚州蒙特雷县和圣贝尼托县",
+      "results": "在加州蒙特雷和圣贝尼托县的多个莴苣田中检测到INSV，发病率为<5%至>50%，RT-PCR确认38/54样本阳性，序列与日本、意大利、荷兰分离株相似度98-99%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769466",
+      "doi": "10.1094/PDIS-92-8-1247B",
+      "title": "First Report of Begonia Chlorotic Ringspot Caused by Zucchini yellow mosaic virus in Taiwan.",
+      "abstract": "Begonia (Begonia semperflorens) showing symptoms of systemic chlorotic ringspots were observed in the central part of Taiwan in May 2006. Infected begonia plants showed faint ringspots in leaves at the early stage of infection. Symptoms turned chlorotic and coalesced as the disease progressed. Electron microscopic examination revealed filamentous virus particles approximately 750 × 13 nm in the crude sap of infected begonia. Typical pinwheel inclusion bodies of potyvirus infection were observed in the ultrathin sections of infected begonia. A virus culture was isolated via mechanical inoculations in Chenopodium quinoa and serologically identified as Zucchini yellow mosaic virus (ZYMV) (1) by ELISA, western blotting, and immunoelectron microscopy. Complementary DNA fragments of viral genomic RNA were cloned, sequenced, and the full-length sequence was submitted to the EMBL database (Accession No. AM422386). The genomic RNA consists of 9,591 nucleotides excluding the poly-A tail and has an identical genome organization to that reported for members of the genus, Potyvirus. The nucleotide sequence of the full-length genome and the deduced amino acid sequence of coat protein share 98% identity to those of ZYMV-CU (Accession No. AJ307036), ZYMV-SG (Accession No. AJ316228), and ZYMV-TW-TN3 (Accession No. AF127929). The virus caused local lesions on the inoculated leaves of C. quinoa, systemic mosaic in cucumber (Cucumis sativus), zucchini (Cucurbita pepo), and Cucumis metuliferus, and chlorotic ringspots in begonia. Symptoms caused by the begonia isolate in cucurbits were much milder than those caused by ZYMVs of cucurbit origin. A ringspot disease with symptoms similar to those caused by ZYMV is also produced on begonia by an Ilarvirus, Prunus necrotic ringspot virus (PNRSV), which was previously identified in begonia (2). To our knowledge, this is the first report of natural infection of ZYMV in begonia. References: (1) V. Lisa et al. Phytopathology 71:667, 1981. (2) N. Verma et al. Plant Pathol. 51:800, 2002.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-08-01",
+      "authors": "Chen Y K; Hong Y H",
+      "first_author": "Chen Y K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Zucchini yellow mosaic virus (ZYMV)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "Begonia semperflorens (四季海棠)",
+      "location": "台湾中部",
+      "results": "病毒粒子750×13 nm，风轮状内含体；基因组全序列与ZYMV其他株系98%相似；分离物在瓜类上症状较轻",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769474",
+      "doi": "10.1094/PDIS-92-8-1250A",
+      "title": "First Report of the Occurrence of Grapevine fanleaf virus in Washington State Vineyards.",
+      "abstract": "Grapevine fanleaf virus (GFLV; genus Nepovirus, family Comoviridae), responsible for fanleaf degeneration disease, is one of the most important viruses of grapevines worldwide (1). During our reconnaissance studies during 2007, dormant wood cuttings from individual grapevines of wine grape cv. Chardonnay were collected randomly from two geographically separate vineyards in eastern Washington State. Extracts made from cambial scrapings of these cuttings were tested separately for different viruses by single-tube reverse transcription (RT)-PCR using virus-specific primers. Two of the thirty-one grapevines in one vineyard tested positive for GLFV as mixed infection with Grapevine leafroll-associated virus (GLRaV)-3. In another vineyard, six of the twenty-six grapevines tested positive for GFLV as mixed infection with GLRaV-1, GLRaV-3, and Grapevine virus A (GVA) A forward primer (5'-ACCGGATTGACGTGGGTGAT, corresponding to nucleotides [nt] 2231-2250) and reverse primer (5'-CCAAAGTTGGTTTCCCAAGA, complementary to nt 2533-2552) specific to RNA-2 of GFLV-F13 isolate (GenBank Accession No. X16907) were used in RT-PCR assays for the detection of GFLV (4). Primers used for RT-PCR detection of GLRaV-1, GLRaV-2, and GVA were described in Martin et al (2) and Minafra et al (3). The RT-PCR results indicated mixed infection of GFLV with GLRaV-1, GLRaV-3, and GVA. To confirm the presence of GFLV, the 322-bp sequence representing a portion of the coat protein encoded by RNA-2 genomic segment was cloned into pCR2.1 (Invitrogen Corp., Carlsbad, CA). Amplicons obtained from six individual grapevines in the two vineyards were used for cloning. Three independent clones per amplicon were sequenced from both orientations. Pairwise comparison of these sequences showed 99 to 100% nucleotide sequence identity among themselves, indicating that GFLV isolates from the two vineyards may be identical. A comparison of the consensus sequence (GenBank Accession No. EU573307) with corresponding sequences of other GFLVs deposited in GenBank showed 89 to 91% identity at the nucleotide level and 95 to 99% identity at the amino acid level. However, mixed infection of GFLV with different viruses in the two vineyards suggests separate introduction of the planting material. ELISA with GFLV-specific antibodies further confirmed the presence of the virus in samples that were positive in RT-PCR. To our knowledge, this is the first report of GFLV in grapevines grown in the Pacific Northwest states of the United States. Further investigations are being carried out on the distribution, symptoms, molecular variability, and nematode vector transmission of GFLV. References: (1) P. Andret-Link et al. J. Plant Pathol. 86:183, 2004. (2) R. R. Martin et al. Plant Dis. 89:763, 2005. (3) A. Minafra et al. Arch. Virol. 142:417, 1997 (4) A. Rowhani et al. Phytopathology 83:749, 1993.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-08-01",
+      "authors": "Mekuria T; Martin R R; Naidu R A",
+      "first_author": "Mekuria T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Grapevine fanleaf virus (GFLV)",
+      "taxonomy": "Comoviridae, Nepovirus",
+      "host_plant": "葡萄 (Vitis vinifera cv. Chardonnay)",
+      "location": "美国华盛顿州东部",
+      "results": "两个葡萄园中分别有2/31和6/26株检测出GFLV混合感染；序列相似性99-100%，与已知GFLV核苷酸同源性89-91%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769468",
+      "doi": "10.1094/PDIS-92-8-1254C",
+      "title": "First Report of Tobacco rattle virus Causing Corky Ringspot in Potatoes Grown in Minnesota and Wisconsin.",
+      "abstract": "In July 2007, potato tubers cv. Russet Burbank (RB) with necrotic arcs and spots were detected in three fields in Buffalo County, Wisconsin and one field in Benson County, Minnesota. Umatilla Russet (UR) potatoes harvested from the west half of a field in Swift County, MN had similar, but visually distinct necrotic lesions. Portions of one field in Minnesota were abandoned, and the stored potato crop from two fields in Wisconsin was rejected by processors, representing a total crop loss due to tuber necrosis. Tuber symptoms displayed in both cultivars resembled those described for corky ringspot caused by Tobacco rattle virus (TRV) (4). Total RNA was isolated from necrotic tuber tissue crushed in liquid nitrogen and extracted using the Total RNA Isolation Kit (Promega Corp., Madison, WI). These extracts were tested for the presence of TRV by reverse transcription (RT)-PCR using primers complementary to nucleotides 6555 to 6575 and identical to nucleotides 6113 to 6132 within the 3' terminal open reading frame of TRV RNA-1 (3). The expected 463-bp fragments were amplified from RB tubers. Nucleotide sequences from a Wisconsin and Minnesota isolate (GenBank Accession Nos. EU569290 and EU569291, respectively) were 99 to 100% identical to the corresponding region in a published TRV sequence (GenBank Accession No. AF055912). A 396-bp fragment was amplified from UR tubers and sequence data (GenBank Accession No. EU569292) indicated a unique 63 nucleotide sequence was substituted for a 129 nucleotide sequence spanning residues 227 to 357 of the 463-bp amplicon from the RB TRV isolates. Seven fragments were sequenced from different UR tubers and the 396-bp fragment was identical among them. The sequence outside the substituted region had 92% identity to the published TRV sequence. Amplification of the full-length TRV RNA2 using primers 179/180 located in the 5' and 3' untranslated regions (2) was successful for 28 and 0% of the RB and UR samples, respectively, suggesting that the RNA2 is not present in these strains or has undergone significant mutation. TRV-infected sap from both potato cultivars was mechanically transmitted to tobacco cv. Samsun NN and these plants subsequently tested positive for TRV by ELISA using ATCC antiserum PVAS 820. Ninety tubers exhibiting mild to severe symptoms of TRV were planted in the greenhouse. Each tuber was bisected laterally; necrotic tissue was removed from one half of the tuber and tested for the presence of TRV using RT-PCR protocols described above for RNA1. The remaining half was bisected horizontally and both sections were planted. Foliage from each emerged plant was subsequently also tested by RT-PCR for TRV RNA1. All RB tubers from Wisconsin tested positive for TRV, but only 7 of 24 emerged plants tested positive. Only 72% of the UR tubers and 4 of 25 emerged plants tested positive. TRV has been confirmed in California, Colorado, Florida, Idaho, Michigan (1), Oregon, and Washington. To our knowledge, this is the first report of corky ringspot in potato caused by TRV in Minnesota and Wisconsin. References: (1) W. W. Kirk et al. Plant Dis. 92:485, 2008. (2) S. A. MacFarlane. J. Virol. Methods. 56:91, 1996. (3) D. J. Robinson. J. Virol. Methods 40:57, 1992. (4) S. A. Slack. Tobacco rattle virus. Page 71 in: Compendium of Potato Diseases. 2nd ed. W. R. Stevenson et al., eds. The American Phytopathological Society, St. Paul, MN, 2001.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-08-01",
+      "authors": "Gudmestad N C; Mallik I; Pasche J S; Crosslin J M",
+      "first_author": "Gudmestad N C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tobacco rattle virus (TRV)",
+      "taxonomy": "Virgaviridae, Tobravirus",
+      "host_plant": "马铃薯 (Solanum tuberosum) 品种 Russet Burbank 和 Umatilla Russet",
+      "location": "美国明尼苏达州（Benson County, Swift County）和威斯康星州（Buffalo County）",
+      "results": "从Russet Burbank块茎扩增463bp片段，序列与已知TRV 99-100%一致；Umatilla Russet块茎扩增396bp片段，存在63nt替换；部分样品RNA2检测阴性；机械传播成功。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769463",
+      "doi": "10.1094/PDIS-92-8-1252C",
+      "title": "First Report on the Occurrence of Grapevine leafroll-associated virus 7 and 9 in Chilean Grapevines.",
+      "abstract": "Grapevine is one of the oldest horticultural crops and represents a highly valuable agricultural commodity. So far, nine distinct Grapevine leafroll-associated viruses (GLRaVs) within the Closteroviridae family have been found to be associated with grapevine leafroll disease (3). Previous studies have demonstrated a high incidence of GLRaV-1, -2, and -3 in Chile (2). To determine if other GLRaVs were present, 21 dormant cane samples were screened with a comprehensive 70-mer oligonucleotide microarray designed to simultaneously detect all grapevine viruses with total or partial genomic sequence available. The array contained 570 unique probes designed against specific regions of more than 40 viral genomes (E. Engel et al., 15th ICVG [Abstr.], 2006). One sample (cv. Black Seedless) showing a microarray hybridization pattern compatible with a mixed infection of GLRaV-7 and GLRaV-1 was analyzed by ELISA using GLRaV-7 specific antibodies (Agritest, Valenzano, Italy) and reverse transcription (RT)-PCR using virus-specific primers LR7-F: 5'- TAT ATC CCA ACG GAG ATG GC -3' and LR7-R: 5'- ATG TTC CTC CAC CAA AAT CG -3' (based on GenBank Accession No. Y15987). The serological analysis confirmed the presence of GLRaV-7 with further confirmation by the RT-PCR product of 502 bp corresponding to a fragment of the HSP70h gene that was cloned and sequenced. The Chilean GLRaV-7 sequence (GenBank Accession No. EU334662) showed 94% nucleotide and 95% amino acid identity when compared with a corresponding region of another GLRaV-7 isolate from Albania (GenBank Accession No. Y15987). GLRaV-1 infection was confirmed by ELISA (Bioreba AG, Reinach, Switzerland) and RT-PCR. A second sample (cv. Tintorera) showing microarray hybridization pattern compatible with a mixed infection of GLRaV-9 and Grapevine virus A (GVA) was analyzed by RT-PCR using virus-specific primers LR9-F: 5'- CGG CAT AAG AAA AGA TGG CAC -3' and LR9-R: 5'- TCA TTC ACC ACT GCT TGA AC -3' (1). The RT-PCR product of 393 bp corresponding to a fragment of the HSP70h gene was cloned and sequenced (GenBank Accession No. EU334663), showing 94% nucleotide and 95% amino acid identity when compared with a corresponding region of another GLRaV-9 isolate from the United States (GenBank Accession No. AY297819). Since there are no commercial antibodies available for GLRaV-9 detection, a second pair of primers, LR9-F1: 5'- AAA GGT TTC TGC TGG TTA CC -3' and LR9-R1: 5'- CTT TCA GAA CAG TCC TCC TC -3' that amplified a fragment of ORF1a was also used. The 301-bp product was cloned and sequenced (GenBank Accession No. EU588989) showing 93.7% nucleotide and 98% amino acid identity when compared with a corresponding region of another GLRaV-9 isolate (GenBank Accession No. AY297819). GVA infection was confirmed by ELISA (Bioreba AG) and RT-PCR. To our knowledge, this is the first report of GLRaV-7 and GLRaV-9 in Chile. Further studies will help determine the effect and incidence of these viruses in Chilean grapevines. References: (1) R. Alkowni et al. J. Plant Pathol. 86:123, 2004. (2) N. Fiore et al. J. Plant Pathol. 90:125, 2008. (3) G. P. Martelli and E. Boudon-Padieu. Options Méditerr. B55, 2006.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-08-01",
+      "authors": "Engel E A; Escobar P; Montt C; Gómez-Talquenca S; Valenzuela P D T",
+      "first_author": "Engel E A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Grapevine leafroll-associated virus 7 (GLRaV-7), Grapevine leafroll-associated virus 9 (GLRaV-9)",
+      "taxonomy": "Closteroviridae",
+      "host_plant": "葡萄 (Vitis vinifera)，品种 Black Seedless 和 Tintorera",
+      "location": "智利",
+      "results": "GLRaV-7和GLRaV-9的HSP70h基因片段与已知分离物核苷酸同源性均为94%；GLRaV-9的ORF1a片段同源性93.7%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769460",
+      "doi": "10.1094/PDIS-92-8-1251B",
+      "title": "First Report of Cucurbit yellow stunting disorder virus in Cucurbits in Florida.",
+      "abstract": "In August and September 2007, watermelon plants (Citrullus lanatus L.) in commercial fields in Manatee and Hillsborough counties in Florida exhibited stunting, deformation, interveinal chlorosis, and leaf mottling. Adult and immature whiteflies (Bemisia tabaci biotype B) were observed. Leaf samples were collected from seven watermelon and two squash plants showing different combinations of symptoms. Total RNA was extracted using RNeasy Plant Mini Kit (Qiagen, Valencia, CA) and subjected to reverse transcription (RT)-PCR for the presence of criniviruses using primers specific to regions of the Cucurbit yellow stunting disorder virus (CYSDV) genome encoding the coat protein (CysCP5206F 5' TTTGGAAAAGAACCTGACGAG 3'; CysCP5600R 5' TTCATCAACAGATTGGCTGC 3') and HSP70h genes (2). Total nucleic acids were extracted using Gentra Puregene Kit (Qiagen) and subjected to PCR for the presence of begomoviruses using the degenerate primer pairs AC1048 and AV494, designed to amplify a region of the begomovirus coat protein gene (4), and PBL1v2040 and PCRc154, designed to amplify a region of the hypervariable region of the begomovirus B component (3). RT-PCR amplified the expected 394-bp fragment of the coat protein gene from three symptomatic plants (one squash, two watermelon) and from CYSDV-infected control plants but not from healthy controls. Similarly, the 175-bp HSP70h fragment was amplified from the same samples and from CYSDV-infected control plants but not from healthy controls. The coat protein amplicon was sequenced from one of the Manatee County isolates (GenBank Accession No. EU596528) and the 344 nt sequenced portion of the amplicon was found to be 100% identical to sequences of CYSDV from Texas, California, Jordan, and France (GenBank Accession Nos. AF312823, EU596529, DQ903107, and AY204220, respectively) and shared 99% identity with an isolate from Spain (GenBank Accession No. NC_004810), but only 91% with an isolate from Iran (GenBank Accession No. AY730779). The begomovirus primer pair pBL1v2040 and PCRc154 produced a 678-bp amplicon that is consistent with the presence of a bipartite begomovirus in all nine samples. Sequence analysis of four of the 678-bp amplicons revealed that all had greater than 97% sequence identity to isolates of Cucurbit leaf crumple virus (CuLCrV) from Arizona (GenBank Accession No. AF327559) and California (GenBank Accession No. AF224761). These results are similar to those reported in the first detection of CuLCrV in Florida in 2006 (1). In October 2007, CYSDV was detected in squash plants (Cucurbita pepo L.) in two additional fields in Manatee and Hillsborough counties, and additional fields with CYSDV-like symptoms have been observed with increasing frequency throughout the region. The appearance of CYSDV in Florida follows the recent emergence of CYSDV in California and Arizona and Sonora, Mexico in 2006 where the CYSDV infection of fall melons resulted in severe economic losses (2). The emergence of CYSDV in Florida, where the vector B. tabaci biotype B is well established, warrants concern for all cucurbit production in the southern United States. Disease monitoring efforts are in progress to determine the extent, severity, and impact of CYSDV on Florida cucurbit production. References: (1) F. Akad et al. Plant Dis.92:648, 2008. (2) Y.-W. Kuo et al. Plant Dis. 91:330, 2007. (3) M. R. Rojas et al. Plant Dis. 77:340, 1993. (4) S. D. Wyatt and J. K. Brown. Phytopathology 86:1288, 1996.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-08-01",
+      "authors": "Polston J E; Hladky L L; Akad F; Wintermantel W M",
+      "first_author": "Polston J E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cucurbit yellow stunting disorder virus (CYSDV), 同时检测到Cucurbit leaf crumple virus (CuLCrV)",
+      "taxonomy": "Closteroviridae, Crinivirus (CYSDV); Geminiviridae, Begomovirus (CuLCrV)",
+      "host_plant": "西瓜 (Citrullus lanatus) 和南瓜 (Cucurbita pepo)",
+      "location": "美国佛罗里达州Manatee和Hillsborough县",
+      "results": "从3个症状植株检测到CYSDV，外壳蛋白序列与德州、加州等分离物100%一致；所有样品检出CuLCrV。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30769477",
+      "doi": "10.1094/PDIS-92-8-1247A",
+      "title": "First Report of Iris yellow spot virus on Onion (Allium cepa) in Serbia.",
+      "abstract": "Iris yellow spot virus (IYSV; genus Tospovirus, family Bunyaviridae) is established in several European countries (France, Italy, The Netherlands, Poland, Slovenia, Spain, and the UK) and its distribution in the EU region has increased since 2002 (3). In July 2007, symptoms resembling those of IYSV were observed in an onion (Allium cepa) seed crop in the Sirig locality in Serbia. Onion plants exhibited characteristic symptoms of chlorotic or necrotic spindle and diamond-shaped lesions on the leaves and scapes. Symptomatic plants were found throughout the field and disease incidence was estimated at 80%. Leaf and scape samples were tested for the presence of IYSV and two other tospoviruses, Tomato spotted wilt virus (TSWV) and Impatiens necrotic spot virus (INSV), using commercial double-antibody sandwich (DAS)-ELISA diagnostic kits (Loewe Biochemica, Sauerlach, Germany). All samples tested negative for TSWV and INSV. IYSV was detected serologically in 26 of 34 onion samples. To determine an experimental host range, samples of IYSV-infected onion plants were homogenized in chilled 0.05 M phosphate buffer pH 7 containing 1 mM Na-EDTA, 5 mM Na-DIECA, and 5 mM Na-thioglycolate (2), and host plants were inoculated with the sap. Mechanical transmission of the virus occurred rarely. All inoculated test plants were assayed by DAS-ELISA and only four species tested positive for IYSV, but not in all replications. Inoculated Chenopodium quinoa developed local chlorotic lesions, Nicotiana tabacum cvs. Samsun and Prilep showed mild mosaic, while infected N. benthamiana were symptomless. For further confirmation of IYSV, conventional reverse transcription (RT)-PCR was performed on extracts made from symptomatic onion leaf material and from the ELISA-positive symptomless leaves of N. benthamiana. Total RNAs were extracted with an RNeasy Plant Mini Kit (Qiagen, Hilden, Germany) and RT-PCR was carried out with the OneStep RT PCR Kit (Qiagen) following the manufacturer's instructions. The primer pair, IYSV56U/IYSV917L, covering the entire nucleocapsid (NC) gene was used for both amplification and sequencing (1). A product of the correct predicted size (896 bp) was obtained from each of the plants assayed, and that derived from isolate 605-SRB was purified (QUIAqick PCR Purification Kit, Qiagen) and sequenced (GenBank Accession No. EU586203). BLAST analyses revealed 86 to 97% sequence identity with the NC gene from all other IYSV. The highest identity (97%) was with leek and onion isolates (GenBank Accession Nos. EF427447 and EF19888) from Spain. To our knowledge, this is the first report of IYSV infection of onion seed crop in Serbia. Thorough inspections and subsequent testing would be needed to establish the distribution and incidence of IYSV in Serbia. References: (1) I. Robène-Soustrade et al. Plant Pathol. 55:288, 2006. (2) P. Roggero et al. Plant Dis. 86:950, 2002. (3) C. Sansford and J. Woodhall. Pest Risk Analysis for Iris Yellow Spot Virus. Online publication. Central Science Laboratory, Sand Hutton, UK, 2007.",
+      "journal": "Plant disease",
+      "year": 2008,
+      "pub_date": "2008-08-01",
+      "authors": "Bulajić A; Jović J; Krnjajić S; Petrov M; Djekić I; ... (+1)",
+      "first_author": "Bulajić A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Iris yellow spot virus (IYSV)",
+      "taxonomy": "Tospovirus, Bunyaviridae",
+      "host_plant": "洋葱 (Allium cepa)",
+      "location": "塞尔维亚，Sirig locality",
+      "results": "ELISA检测34个样品中26个阳性；RT-PCR扩增896 bp核衣壳基因序列；序列与西班牙分离物同源性最高达97%；机械接种仅少数测试植物感染。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18704169",
+      "doi": "10.1371/journal.ppat.1000125",
+      "title": "Diversification of rice yellow mottle virus and related viruses spans the history of agriculture from the neolithic to the present.",
+      "abstract": "The mechanisms of evolution of plant viruses are being unraveled, yet the timescale of their evolution remains an enigma. To address this critical issue, the divergence time of plant viruses at the intra- and inter-specific levels was assessed. The time of the most recent common ancestor (TMRCA) of Rice yellow mottle virus (RYMV; genus Sobemovirus) was calculated by a Bayesian coalescent analysis of the coat protein sequences of 253 isolates collected between 1966 and 2006 from all over Africa. It is inferred that RYMV diversified approximately 200 years ago in Africa, i.e., centuries after rice was domesticated or introduced, and decades before epidemics were reported. The divergence time of sobemoviruses and viruses of related genera was subsequently assessed using the age of RYMV under a relaxed molecular clock for calibration. The divergence time between sobemoviruses and related viruses was estimated to be approximately 9,000 years, that between sobemoviruses and poleroviruses approximately 5,000 years, and that among sobemoviruses approximately 3,000 years. The TMRCA of closely related pairs of sobemoviruses, poleroviruses, and luteoviruses was approximately 500 years, which is a measure of the time associated with plant virus speciation. It is concluded that the diversification of RYMV and related viruses has spanned the history of agriculture, from the Neolithic age to the present.",
+      "journal": "PLoS pathogens",
+      "year": 2008,
+      "pub_date": "2008-08-15",
+      "authors": "Fargette Denis; Pinel-Galzi Agnès; Sérémé Drissa; Lacombe Séverine; Hébrard Eugénie; ... (+2)",
+      "first_author": "Fargette Denis",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Rice yellow mottle virus (RYMV) 及相关病毒（sohemoviruses, poleroviruses, luteoviruses）",
+      "taxonomy": "RYMV属于Sobemovirus属，相关病毒包括Polerovirus属和Luteovirus属",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

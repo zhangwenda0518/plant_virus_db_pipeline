@@ -1,0 +1,78 @@
+{
+  "month": "1974-11",
+  "generated": "2026-07-13 02:59:41",
+  "total": 3,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 2,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "16658953",
+      "doi": "10.1104/pp.54.5.690",
+      "title": "Physiological and Cytological Similarities between Disease Resistance and Cellular Incompatibility Responses.",
+      "abstract": "Excised pea pods responded similarly to both the invasion of plant pathogenic fungi and the presence of bean tissue, bean pollen, and mouse tumor cells by synthesizing pisatin and by developing a characteristic yellow-green fluorescence. Both responses were dependent on RNA and protein synthesis. Conversely, the foreign pollen and incompatible fungi were sensitive to the pea pod tissue and were subject to abnormal development.The induction of pisatin and the yellow-green fluorescence development were mediated by multiple compounds of varying sizes released by fungi or mouse tumor cells. The incompatibility between a bean pathogen, Fusarium solani f. sp. phaseoli, and pea pod tissue was hypothesized to occur as a result of the cross contamination of such inducing compounds.",
+      "journal": "Plant physiology",
+      "year": 1974,
+      "pub_date": "1974-11-01",
+      "authors": "Teasdale J; Daniels D; Davis W C; Eddy R; Hadwiger L A",
+      "first_author": "Teasdale J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "4375728",
+      "doi": "10.1111/j.1348-0421.1974.tb00832.x",
+      "title": "Antiviral activity of scillarenin, a plant bufadienolide.",
+      "abstract": "",
+      "journal": "Japanese journal of microbiology",
+      "year": 1974,
+      "pub_date": "1974-11-01",
+      "authors": "Sato N; Muro T",
+      "first_author": "Sato N",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "4377141",
+      "doi": "",
+      "title": "Antiviral effect of some indigenous plant extracts on vaccinia & fowl-pox viruses in chick embryo fibroblast cell culture.",
+      "abstract": "",
+      "journal": "Indian journal of experimental biology",
+      "year": 1974,
+      "pub_date": "1974-11-01",
+      "authors": "Reddy A B; Sethi M S",
+      "first_author": "Reddy A B",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

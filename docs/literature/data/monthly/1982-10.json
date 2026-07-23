@@ -1,0 +1,171 @@
+{
+  "month": "1982-10",
+  "generated": "2026-07-13 02:59:41",
+  "total": 7,
+  "by_category": {
+    "New_Virus": 2,
+    "Antiviral_Resistance_Genes": 2,
+    "Virgaviridae": 1,
+    "Molecular_Characterization": 1,
+    "Detection_Methods": 1,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "6292867",
+      "doi": "10.1093/nar/10.19.6111",
+      "title": "Nucleotide sequence of the 30K protein cistron of cowpea strain of tobacco mosaic virus.",
+      "abstract": "The nucleotide sequence of cloned cDNA copies of cowpea strain of tobacco mosaic virus RNA including the 30K protein cistron was determined. The 30K protein cistron was located at residue 676-1,527 from the 3' end of the genomic RNA. The 30K protein was composed of 282 amino acid residues and was basic, similar to the 30K protein of common strain OM. However, homology of the amino acid sequences between the two strains was only 27%.",
+      "journal": "Nucleic acids research",
+      "year": 1982,
+      "pub_date": "1982-10-11",
+      "authors": "Meshi T; Ohno T; Okada Y",
+      "first_author": "Meshi T",
+      "categories": [
+        "New_Virus",
+        "Virgaviridae"
+      ],
+      "virus_name": "Tobacco mosaic virus cowpea strain (TMV-CP)",
+      "taxonomy": "Virgaviridae, Tobamovirus",
+      "host_plant": "cowpea (豇豆)",
+      "location": "未提及",
+      "results": "30K蛋白cistron位于基因组3'端676-1527位，编码282个氨基酸的碱性蛋白，与OM株系氨基酸同源性仅27%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "6183446",
+      "doi": "10.1128/JVI.44.1.209-216.1982",
+      "title": "Poliovirus RNA-dependent RNA polymerase synthesizes full-length copies of poliovirion RNA, cellular mRNA, and several plant virus RNAs in vitro.",
+      "abstract": "The poliovirus RNA-dependent RNA polymerase was active on synthetic homopolymeric RNA templates as well as on every natural RNA tested. The polymerase copied polyadenylate. oligouridylate [oligo(U)], polycytidylate . oligoinosinate, and polyinosinate. oligocytidylate templates to about the same extent. The observed activity on polyuridylate. oligoadenylate was about fourfold less. Full-length copies of both poliovirion RNA and a wide variety of other polyadenylated RNAs were synthesized by the polymerase in the presence of oligo(U). Polymerase elongation rates on poliovirion RNA and a heterologous RNA (squash mosaic virus RNA) were about the same. Changes in the Mg(2+) concentration affected the elongation rates on both RNAs to the same extent. With two non-polyadenylated RNAs (tobacco mosaic virus RNA and brome mosaic virus RNA3), the results were different. The purified polymerase synthesized a subgenomic-sized product RNA on brome mosaic virus RNA3 in the presence of oligo(U). This product RNA appeared to initiate on oligo(U) hybridized to an internal oligoadenylate sequence in brome mosaic virus RNA3. No oligo(U)-primed product was synthesized on tobacco mosaic virus RNA. When partially purified polymerase was used in place of the completely purified enzyme, some oligo(U)-independent activity was observed on the brome mosaic virus and tobacco mosaic virus RNAs. The size of the product RNA from these reactions suggested that at least some of the product RNA was full-sized and covalently linked to the template RNA. Thus, the polymerase was found to copy many different types of RNA and to make full-length copies of the RNAs tested.",
+      "journal": "Journal of virology",
+      "year": 1982,
+      "pub_date": "1982-10-01",
+      "authors": "Tuschall D M; Hiebert E; Flanegan J B",
+      "first_author": "Tuschall D M",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "脊髓灰质炎病毒、南瓜花叶病毒、烟草花叶病毒、雀麦花叶病毒",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "6759518",
+      "doi": "10.1016/0166-0934(82)90088-x",
+      "title": "Variants of ELISA in plant virus diagnosis.",
+      "abstract": "Variations of enzyme-linked immunosorbent assay (ELISA) were compared with respect to their ability to detect and to differentiate serologically related plant viruses. The broadest range of serologically related viruses was detected by an indirect ELISA on unprecoated plates. Coating the plates with F(ab')2 fragments led to narrowing of the specificity in heterologous reactions of tymo-, tombus- and tobamoviruses in indirect ELISA. With Andean potato latent virus (APLV) heterologous reactions were weaker on plates precoated with F(ab')2 fragments than on those precoated with intact antibodies. Even on plates precoated with F(ab')2 fragments the indirect ELISA detected a broader range of serologically related viruses than the direct double antibody sandwich method. Heterologous reactions in indirect ELISA procedures on plates precoated with either intact antibodies or F(ab')2 fragments were always weaker than homologous reactions independent of the concentration of coating reactants and detecting antibodies. Attempts to differentiate closely related strains of APLV or radish mosaic virus by direct ELISA using F(ab')2 fragments either for coating the plates or after labelling with alkaline phosphatase for detecting the trapped antigens failed. Under suitable conditions, the additional working step usually necessary for indirect ELISA could be avoided by using a short procedure which at low concentrations of detecting antibodies was more sensitive than the conventional procedure.",
+      "journal": "Journal of virological methods",
+      "year": 1982,
+      "pub_date": "1982-10-01",
+      "authors": "Koenig R; Paul H L",
+      "first_author": "Koenig R",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "多种植物病毒（如Andean potato latent virus、萝卜花叶病毒、tymoviruses、tombusviruses、tobamoviruses等）",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18638809",
+      "doi": "10.1016/0042-6822(82)90232-x",
+      "title": "Plant virus-specific transport function. II. A factor controlling virus host range.",
+      "abstract": "An experimental system allowing the transport of the dependent virus from the conducting tissues into the leaf mesophyll of a plant preinfected by the helper virus has been developed recently [Taliansky et al. (1982). Virology 122, 318-326]. The role of virus-specific transport function in the host range control of a plant virus was studied here by this technique. It was shown that Tm-2 tomato lines (in which the resistance to TMV is expressed only at the level of the intact plant, but not in protoplasts) became susceptible to TMV after preinfection with the helper virus (potato virus X, PVX). It is assumed that TMV accumulation in Tm-2 lines under these conditions becomes possible due to the transport function coded for by the helper virus (PVX), which allows TMV to spread over the resistant plant. Tm-1 tomato lines (whose protoplasts are resistant to TMV infection) remained resistant to TMV under the conditions outlined above. It was found that brome mosaic virus (BMV) can be transported from the conducting tissues and replicates in the mesophyll cells of tomato and bean plants preinfected by TMV and dolichos enation mosaic virus (DEMV), respectively. The same was true of TMV introduced into the conducting tissues of wheat plants preinfected with barley stripe mosaic virus (BSMV). It is concluded that a nonhost plant, whose resistance to a virus is due to the blockage of the transport function, can be infected systemically by this virus as a result of the complementation of transport with the helper virus.",
+      "journal": "Virology",
+      "year": 1982,
+      "pub_date": "1982-10-30",
+      "authors": "Taliansky M E; Malyshenko S I; Pshennikova E S; Atabekov J G",
+      "first_author": "Taliansky M E",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "TMV (烟草花叶病毒) 为主要研究对象，辅以 PVX、BMV、DEMV、BSMV",
+      "taxonomy": "",
+      "host_plant": "番茄 (Tm-2 和 Tm-1 品系)、菜豆、小麦",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "22556964",
+      "doi": "",
+      "title": "Urginea nagarjunae hemadri et swahari a new species of uliaceae from India (a new plant discovery).",
+      "abstract": "A new species of Urginea Steinhill. located in Andhra Pradaah and Tamilnadu (India), namely Urginea negarjunae Hemadri et Swaharl which produces the thickest scape coupled with the largest and closely arranged flowers and nonreflexed tepals among all the Indian species so far recorded under Urginea Steinhill, is described with illustrations. Chromosomal study revealed that the new taxon is not a polyploid; its 2n = 20.",
+      "journal": "Ancient science of life",
+      "year": 1982,
+      "pub_date": "1982-10-01",
+      "authors": "Hemadri K; Sasibhushan S",
+      "first_author": "Hemadri K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "6815785",
+      "doi": "10.1111/j.1365-3083.1982.tb00731.x",
+      "title": "Lectins as inducers of interferon-gamma production in human lymphocytes: lentil lectin is highly efficient.",
+      "abstract": "Several of many tested plant lectins induced interferon (IFN) production in cultures of human peripheral blood mononuclear leucocytes (PBL). The mannose-binding lectin obtained from Lens culinaris (LCL) was a particularly efficient inducer of trypsin-sensitive antiviral activity, which qualified as IFN-gamma because it was 90-95% destroyed by pH 2 treatment but not neutralized by anti-IFN-gamma antibodies. However, such antibodies neutralized the residual 5-10% pH 2-resistant IFN, which therefore represented IFN-alpha. Further evidence for the IFN-gamma nature of the LCL-induced IFN was that its production in PBL cultures required both T lymphocytes and macrophages and that its induction of antiviral resistance in human amnion cells was significantly delayed compared with IFN-alpha. Under optimal conditions LCL induced titres of IFN-gamma corresponding to more than 20,000 IFN-alpha units/ml medium, higher than observed with other tested, established IFN-gamma inducers. Other desirable properties of this lectin, as discussed, also suggest that it will be of value for efficient large-scale IFN-gamma production.",
+      "journal": "Scandinavian journal of immunology",
+      "year": 1982,
+      "pub_date": "1982-10-01",
+      "authors": "Rönnblom L; Funa K; Ersson B; Alm G V",
+      "first_author": "Rönnblom L",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19295740",
+      "doi": "",
+      "title": "Effects of Selected Insecticides and Nematicides on the In Vitro Development of the Entomogenous Nematode Neoaplectana carpocapsae.",
+      "abstract": "The effects of organophosphates (mevinphos, phenamiphos, trichlorfon), carbamates (carbofuran, methomyl, oxamyl), a formamidine (chlordimeform), a synthetic pyrethroid (fenvalerate), a chlorinated hydrocarbon (methoxychlor). and an insect growth regulator (diflubenzuron) on in vitro development and reproduction of Neoaplectana carflocapsae were tested by incorporating each chemical into a nematode rearing medium. Organophosphates and carbamates adversely affected development and reproduction at concentrations >/= 0.1 mg/ml. Phenamiphos was the most toxic, with no nematode reproduction at 0.01 mg/ml. Inoculated infective juveniles developed to adults with some of the organophosphates and carbamates, but limited or no reproduction occurred. Chlordimeform inhibited development at 1.0 mg/ml, while diflubenzuron, fenvalerate, and methoxychlor did not significantly (P > 0.05) reduced reproduction at 1.0 mg/ml. The organophosphate and carbamate nematicides in use for control of plant-parasitic nematodes may be toxic to N. carpocapsae in the soil.",
+      "journal": "Journal of nematology",
+      "year": 1982,
+      "pub_date": "1982-10-01",
+      "authors": "Hara A H; Kaya H K",
+      "first_author": "Hara A H",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

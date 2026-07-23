@@ -1,0 +1,283 @@
+{
+  "month": "2002-12",
+  "generated": "2026-07-13 02:59:42",
+  "total": 23,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 8,
+    "New_Virus": 6,
+    "Control_Management": 4,
+    "Host_Virus_Interactions": 4,
+    "Detection_Methods": 1,
+    "Molecular_Characterization": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30818451",
+      "doi": "10.1094/PDIS.2002.86.12.1402D",
+      "title": "First Report of Orchid fleck virus in Costa Rica.",
+      "abstract": "Orchid fleck virus (OFV), a tentative member of the family Rhabdoviridae, infects orchids in several countries. The virus is vectored worldwide by the mite Brevipalpus californicus (Banks) (Acari: Tenuipalpidae). Eleven plants of Oncidium spp. and one plant each of the genera Cymbidium and Maxillaria exhibiting numerous yellow flecks and necrotic ringspot lesions on leaves were collected in two private orchid collections in Costa Rica. Presence of OFV was assessed by plate-trapped antigen enzyme-linked immunosorbent assay (PTA-ELISA) using an antiserum developed against an OFV isolate in Japan (2), analyses of ultrathin sections of the host cell with transmission electron microscopy (TEM), and reverse transcription-polymerase chain reaction (RT-PCR) amplification using specific primers for the viral nucleocapsid gene (1). Eight of eleven Oncidium samples, and both Cymbidium and Maxillaria samples tested positive for OFV with PTA-ELISA having A405 values ranging from 3.9 to 14.6 times higher than negative controls. Thin sections from individual samples of Cymbidium, Oncidium, and Maxillaria revealed electron-lucent intranuclear viroplasm and short, rodlike particles (40 to 50 × 100 nm) in the nucleus or cytoplasm typical of OFV-infected cells. RT-PCR amplifications from one sample of each genera resulted in PCR-product bands of approximately 800 bp. The Cymbidium RT-PCR product was cloned into a pGEM-T-Easy expression vector and sequenced using an ABI 3700 sequencer. The 619-bp nucleocapsid gene consensus sequence had 98% homology with the OFV isolate 0023 identified in Germany (GenBank Accession No. AF343870) (1). However, it had only approximately 85% nucleocapsid gene homology with other OFV isolates available through GenBank, including those from countries geographically closer to Costa Rica, such as Brazil (1). To our knowledge, this is the first report of OFV infecting orchids in Costa Rica. References: (1) A. L. Blanchfield et al. J. Phytopathol. 149:713, 2001. (2) H. Kondo et al. Bull. Res. Inst. Bioresour. Okayama Univ. 4:149, 1996.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-12-01",
+      "authors": "Freitas-Astúa Juliana; Moreira Lisela; Rivera Carmen; Rodríguez Carlos M; Kitajima Elliot W",
+      "first_author": "Freitas-Astúa Juliana",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Orchid fleck virus (OFV)",
+      "taxonomy": "Rhabdoviridae（弹状病毒科）",
+      "host_plant": "文心兰属（Oncidium spp.）、兰属（Cymbidium）、Maxillaria属",
+      "location": "哥斯达黎加",
+      "results": "11份文心兰样品中8份阳性，兰属和Maxillaria属阳性；电镜见核内病毒质和杆状颗粒（40-50×100 nm）；RT-PCR产物约800 bp，核衣壳基因与德国分离株同源98%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30818458",
+      "doi": "10.1094/PDIS.2002.86.12.1405A",
+      "title": "First Report of Tulip band breaking virus in Mosaic Diseased Tulip in Japan.",
+      "abstract": "Tulip (Tulipa spp.) is an ornamental plant of major economic importance in Japan. Regions in Toyama Prefecture are some of the most productive for producing tulip bulbs, shipping approximately 50 million bulbs annually. However, mosaic diseases caused by viruses such as Tulip breaking virus (TBV) currently limit bulb production in these areas. Only the potyviruses TBV and Lily mottle virus (LMoV) have been reported infecting tulip in Japan. A virus isolate from tulip with flower-breaking symptom in Toyama Prefecture was tentatively named OE4 and was presumed to be LMoV after detection by LMoV-specific reverse transcription-polymerase chain reaction (RT-PCR) (4). When OE4 was mechanically inoculated on test plants (13 species from six families), RT-PCR confirmed that it infected plants in the Liliaceae (Tulipa spp., Lilium formosanum, and L. concolor) with mosaic symptoms but did not induce any symptoms in Chenopodium quinoa, Tetragonia tetragonoides, and Nicotiana benthamiana. According to Dekker et al. (2) LMoV and Tulip band breaking virus (TBBV) infected Tulipa spp. and TBBV did not infect C. quinoa, T. tetragonoides, N. clevelandii, and N. benthamiana, species that were local or systemic hosts for LMoV. To analyze the genomic sequence of OE4, a primer set was designed for amplifying the coat protein (CP) gene of LMoV, with 5' -GCAAATGAGACACTCAATG-3' as a forward primer and 5'-TTACATAGAAATTCCAAGTAAG-3' as a reverse primer. The fragment obtained was cloned and sequenced (DDBJ/EMBL/GenBank Accession No. AB078007). The CP gene of OE4 consisted of 825 nucleotides and had 86.5% identity (90.6% identity in deduced amino acid sequence) with the CP gene of LMoV-Netherlands (S44147) (3). When it was compared with partial sequences (277 nucleotides) of LMoV (S60810) and TBBV (S60805) (2), the nucleotide sequence identities were 89.9 and 96.4%, respectively. Multiple alignment and a phylogenetic tree based on the 277 nt of the tulip potyviruses, including OE4, showed the close relationship between OE4 and TBBV. These results indicated that OE4 was an isolate of TBBV. However, the CP amino acid sequence identity between TBBV and LMoV was more than 80%, and it seemed logical that TBBV be assigned to a strain of LMoV, according to potyvirus species demarcating criteria (1). Another screening using RT-PCR based detection, and an inoculation test for 55 flower-breaking tulips collected from fields in Toyama Prefecture revealed that four tulip plants were infected with TBBV and 54 with TBV. This suggests that TBV is more prevalent than TBBV, and we need to produce an attenuated virus of TBV, which will be effective for managing tulip breaking disease in the prefecture. References: (1) P. H. Berger et al. Family Potyviridae. Pages 703-724 in: Virus Taxonomy. Academic Press, San Diego, CA, 2000. (2) E. L. Dekker et al. J. Gen. Virol. 74:881, 1993. (3) S. A. Langeveld et al. J. Gen. Virol. 72:1531, 1991. (4) T. Se and S. Kanematsu. Ann. Phytopathol. Soc. Jpn. 64:420, 1998.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-12-01",
+      "authors": "Se T; Kanematsu S",
+      "first_author": "Se T",
+      "categories": [
+        "Control_Management",
+        "New_Virus"
+      ],
+      "virus_name": "Tulip band breaking virus (TBBV)、Tulip breaking virus (TBV)",
+      "taxonomy": "",
+      "host_plant": "郁金香（Tulipa spp.）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30818460",
+      "doi": "10.1094/PDIS.2002.86.12.1405C",
+      "title": "First Report of Peach latent mosaic viroid on Peach in Uruguay.",
+      "abstract": "Peach latent mosaic viroid (PLMVd) (2) is widely distributed and causes yellow, chlorotic mosaics and delayed foliation, flowering, and ripening. Infected fruits display a cracked suture and are often dented, misshapen, frequently flattened, and discolored. In the greenhouse, PLMVd natural isolates are divided into severe or latent strains depending on whether they induce leaf symptoms on seedlings of the peach indicator GF-305. PLMVd was detected in 2001 during a survey in three locations in the Canelones Department, the main peach producing area in Uruguay. Fifty samples were tested for the presence of five viruses: Prunus necrotic ringspot virus (PNRSV), Prune dwarf virus (PDV), American plum line pattern virus (APLPV), Plum pox virus (PPV) and Apple chlorotic leaf spot virus (ACLSV); samples were also tested for the viroids affecting stone fruits, Hop stunt viroid (HSVd) and PLMVd. The analyses were completed with molecular hybridization using specific nonisotopic riboprobes for each virus (4). PLMVd, undescribed in Uruguay, was detected in 9 of 50 samples in three peach cultivars, Scarlet Pearl, EarliGrande, and Barcelo. The PLMVd-positive sample for 'Scarlet Pearl' showed mild mosaic symptoms on leaves whereas the two PLMVd-positives of 'EarliGrande' showed clear calico type symptoms. The remaining PLMVd-positive samples belonged to 'Barcelo' and showed no symptoms or mild chlorosis. The first two cultivars were imported from the United States, a source with a high percentage of PLMVd infections in peach germ plasm (1). In five of nine PLMVd-positive samples, the viroid occurred with PNRSV and in one with PDV and PNRSV. PLMVd has previously been reported in Brazil (3), but to our knowledge, this is the first report of PLMVd in Uruguay. These results reveal the importance of following strict sanitary practices with plant material used for propagation. Molecular tools are available to prescreen scion and rootstock sources for PLMVd. References: (1) M. L. Badenes and G. Llácer. Acta Hortic. 309:565, 1998. (2) R. Flores et al. Res. Virol. 141:109, 1990. (3) A. Hadidi et al. Plant Dis. 81:154, 1997. (4) V. Pallás et al. Detection of plant RNA viruses by non-isotopic dot-blot hybridization. Pages 461-468 in: Plant Virus Protocols: From Virus Isolation to Transgenic Resistance. G. Foster and S. Taylor, eds. Humana Press, Totowa, NJ. 1998.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-12-01",
+      "authors": "Herranz M C; Maeso D; Soria J; Pallás V",
+      "first_author": "Herranz M C",
+      "categories": [
+        "Detection_Methods",
+        "New_Virus"
+      ],
+      "virus_name": "Peach latent mosaic viroid (PLMVd)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30818457",
+      "doi": "10.1094/PDIS.2002.86.12.1404C",
+      "title": "First Molecular Identification of a Begomovirus Isolated from Tomato in Madagascar.",
+      "abstract": "In April 2001, reduced leaf size, leaf curling, yellowing symptoms, and reduced yield were observed in tomato plants in the southwestern (Toliary, Morondava, Miandrivazo) and northern (Antsiranana) regions of Madagascar. Symptoms were similar to those caused by Tomato yellow leaf curl virus (TYLCV, genus Begomovirus, family Geminiviridae). Large populations of Bemisia tabaci (Gennadius) were observed colonizing tomato, other crops, and weeds. Leaf samples were collected from tomato plants from 14 sites located in northern, central, and southern Madagascar. Two plant samples collected near Antsiranana, one sample near Morondava, and one sample near Toliary were positive in triple-antibody sandwich enzyme-linked immunosorbent assay using a begomovirus-specific antibody purchased from ADGEN (Nellies Gates, Auchincruive, Scotland, UK). A 500-bp product was amplified and cloned (2) from two leaf samples collected near Toliary and one near Morondava using a pair of degenerate primers that are expected to amplify a region of the A component of begomoviruses between the intergenic conserved nonanucleotide sequence and the first 200 nucleotides of the coat protein ORF. The sequences corresponding to the two Toliary samples (GenBank Accession Nos. AJ422123 and AJ422124) and the Morondava sample (GenBank No. AJ422125) showed the most significant alignments (NCBI, BLAST) with begomoviruses, Tobacco leaf curl virus from Zimbabwe (GenBank Accession No. AF 350330) and Tomato leaf curl virus from Tanzania (GenBank Accession No. U73498) with 76 to 77% nucleotide identity (Clustal method, MegAlign, DNASTAR, London) and South African cassava mosaic viruses (SACMV GenBank Accession Nos. AJ422132 and AF155806) and East African cassava mosaic viruses from Malawi (GenBank Accession Nos. AJ006459 and AJ006460) with 74 to 75.5% nucleotide identity. The low nucleotide identity suggests that the begomovirus isolated from tomato in Madagascar is a new species. Since the core region of the coat protein gene is a molecular marker for provisional classification of begomoviruses (1), this region was amplified for the Morondava isolate with degenerate primers. The 519nt core fragment obtained showed the most significant alignments with SACMV (GenBank Accession No. AF329227), Cassava geminivirus from Mozambique (GenBank Accession No. AF329240), and with TYLCV (GenBank Accession Nos. AB014346 and AF105975) with 81 to 82% nucleotide identity. According to the current taxonomic criteria (4), the begomovirus from Madagascar is a new one that is related to begomoviruses from the southern part of Africa and to TYLCV and is provisionally named Tomato yellow leaf curl Morondava virus (TYLCMV). Tomato yellow leaf curl disease was previously described in Madagascar by Reckhaus (3) who presumed that it was caused by TYLCV. Although symptoms in the tomato plant from which TYLCMV was isolated were similar to those induced by TYLCV, TYLCV was not detected in our samples. References: (1) J. K. Brown et al. Arch. Virol. 146:1581, 2001 (2) M. Peterschmitt et al. Plant Dis. 83:303, 1999. (3) P. Reckhaus, Maladies et ravageurs des cultures maraîchères: A l'exemple de Madagascar. GTZ, Weikersem, 1997. (4) M. H. V. van Regenmortel et al. Virus Taxonomy. Seventh Rep. Int. Comm. Taxon. Viruses. Academic Press, San Diego, 2000.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-12-01",
+      "authors": "Delatte H; Reynaud B; Lett J M; Peterschmitt M; Granier M; ... (+2)",
+      "first_author": "Delatte H",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato yellow leaf curl Morondava virus (TYLCMV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "番茄 (Solanum lycopersicum)",
+      "location": "马达加斯加西南部（Toliary、Morondava、Miandrivazo）和北部（Antsiranana）",
+      "results": "从4个阳性样品中扩增并测序，与已知双生病毒核苷酸同源性74-77%，核心衣壳蛋白片段同源性81-82%，确认为新种。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12491096",
+      "doi": "10.1007/s00705-002-0891-6",
+      "title": "RNA-protein interactions in spherical viruses.",
+      "abstract": "The three-dimensional structure of many non-enveloped spherical RNA viruses has been determined in great detail, mainly using X-ray crystallography. Great insight in the structure of the protein capsid has been obtained, but much less information is available about the secondary and tertiary structure of the RNA in situ, due to a number of methodological problems. In this paper the current knowledge about RNA-protein interactions and the folding of the RNA is reviewed, with a special emphasis on the plant virus Turnip yellow mosaic virus. A major characteristic of many spherical RNA viruses appears to be the positioning of A-type double helical segments of 7-9 basepairs at icosahedral symmetry axes, probably interacting via its phosphates with basic amino acid residues of the coat protein in a sequence-independent manner. It is only in the case of the RNA bacteriophages that we know in atomic detail how an RNA hairpin interacts with the coat protein.",
+      "journal": "Archives of virology",
+      "year": 2002,
+      "pub_date": "2002-12-01",
+      "authors": "Bink H H J; Pleij C W A",
+      "first_author": "Bink H H J",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Turnip yellow mosaic virus (芜菁黄花叶病毒)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12492847",
+      "doi": "10.1046/j.1365-313x.2002.01499.x",
+      "title": "A natural recessive resistance gene against potato virus Y in pepper corresponds to the eukaryotic initiation factor 4E (eIF4E).",
+      "abstract": "We show here that the pvr2 locus in pepper, conferring recessive resistance against strains of potato virus Y (PVY), corresponds to a eukaryotic initiation factor 4E (eIF4E) gene. RFLP analysis on the PVY-susceptible and resistant pepper cultivars, using an eIF4E cDNA from tobacco as probe, revealed perfect map co-segregation between a polymorphism in the eIF4E gene and the pvr2 alleles, pvr2(1) (resistant to PVY-0) and pvr2(2) (resistant to PVY-0 and 1). The cloned pepper eIF4E cDNA encoded a 228 amino acid polypeptide with 70-86% nucleotide sequence identity with other plant eIF4Es. The sequences of eIF4E protein from two PVY-susceptible cultivars were identical and differed from the eIF4E sequences of the two PVY-resistant cultivars Yolo Y (YY) (pvr2(1)) and FloridaVR2 (F) (pvr2(2)) at two amino acids, a mutation common to both resistant genotypes and a second mutation specific to each. Complementation experiments were used to show that the eIF4E gene corresponds to pvr2. Thus, potato virus X-mediated transient expression of eIF4E from susceptible cultivar Yolo Wonder (YW) in the resistant genotype YY resulted in loss of resistance to subsequent PVY-0 inoculation and transient expression of eIF4E from YY (resistant to PVY-0; susceptible to PVY-1) rendered genotype F susceptible to PVY-1. Several lines of evidence indicate that interaction between the potyvirus genome-linked protein (VPg) and eIF4E are important for virus infectivity, suggesting that the recessive resistance could be due to incompatibility between the VPg and eIF4E in the resistant genotype.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2002,
+      "pub_date": "2002-12-01",
+      "authors": "Ruffel Sandrine; Dussault Marie-Hélène; Palloix Alain; Moury Benoît; Bendahmane Abdelhafid; ... (+2)",
+      "first_author": "Ruffel Sandrine",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "马铃薯Y病毒 (PVY)",
+      "taxonomy": "",
+      "host_plant": "辣椒",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30818463",
+      "doi": "10.1094/PDIS.2002.86.12.1406C",
+      "title": "New Variant of Little cherry virus Associated with Little Cherry Disease of Sweet Cherry in British Columbia, Canada.",
+      "abstract": "Little cherry disease (LChD) occurs in most cherry growing areas in the world. Infection of sensitive cultivars results in small fruit with poor color, angular shape, and insipid flavor. Three viruses associated with LCD have been described: (i) Little cherry virus-1 (LChV-1) first found and described in Germany (4); (ii) LChV-2 an isolate obtained from the United States (2); and (iii) LChV-3 first found and described in British Columbia (1). Despite similarities in symptom development in orchard trees and woody indexing, the three viruses have distinct molecular sequences (3). LChV-2 and -3 share greater homology with each other than either does with LChV-1. For many years, the British Columbia Ministry of Agriculture, Fisheries and Food (BCMAFF) in conjunction with Agriculture and Agri-Food Canada, Pacific Agri-Food Research Centre (AAFC-PARC) has conducted a survey to monitor the incidence and spread of LChD in the Okanagan and Kootenay valleys of British Columbia, Canada. Until recently, testing for LChD used woody indexing on indicator trees, Prunus avium cv. Lambert (fruit symptoms) and cvs. Canindex1 and Sam (foliar symptoms). Recently, incidence of LChD has been evaluated using double-antibody sandwich enzyme-linked immunosorbent assay (DAS-ELISA) developed at AAFC-PARC (3), and reverse transcription-polymerase chain reaction (RT-PCR) tests based on sequence data from LChV-3 (1). During the 1999 survey, orchard trees displaying symptoms typical of LChD tested negative for LChV-3 using ELISA and RT-PCR. Also, trees that formerly tested positive for LChD by woody indexing also tested negative for LChV-3 using RT-PCR and ELISA. Two hundred ninety-three trees were subsequently tested for LChV-1 by RT-PCR using the primer set LCV3EC/LCV16659 (4). A 276-bp fragment corresponding to the extreme 3' untranslated region (3' UTR) of the LChV-1 genome was amplified by RT-PCR from 140 of the trees. The RT-PCR amplicon from one sample (#99-68B from Peachland) was sequenced and using a BLASTn search, LChV-1 was identified as the most probable match (E value 4e-59). Sequence alignment using ClustalX identified two regions of high sequence homology; bases 2 to 70 (92%) and bases 99 to 239 (95%). The intervening region displayed much lower homology (61%). The overall homology of the amplicon was 88% compared to the corresponding region in LChV-1. Divergence between the published sequence of LChV-1 and the sequence of the new LChV isolate (tentatively named LChV-4) was investigated. Seven sets of primers constructed on the basis of sequence data from various regions of the LChV-1 genome (two sets from each of the RNA-dependent RNA polymerase, heat shock 70 protein homologue, and coat protein) failed to yield RT-PCR products when tested with the LChV-4 isolate. LChV-4 is clearly related to LChV-1 within the 3'-UTR but complete sequencing is required to determine the overall relationship with other viruses causing LChD. The discovery of a new isolate of LChV in British Columbia may require a reevaluation of the epidemiology of LChD and disease management strategy. References: (1) K. C. Eastwell and M. G. Bernardy. Phytopathology 91:268, 2001. (2) M. E. Rott, and W. Jelkmann. Phytopathology 91:261, 2001. (3) J. Theilmann et al. Phytopathology 92:87, 2002. (4) M. Vitushkina et al. Eur. J. Plant Pathol. 103;803, 1997.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-12-01",
+      "authors": "Bernardy M G; French C J; Milks M; Jesperson G",
+      "first_author": "Bernardy M G",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "Little cherry virus-1 (LChV-1)的新变异（暂命名LChV-4）",
+      "taxonomy": "",
+      "host_plant": "甜樱桃",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12682873",
+      "doi": "10.2323/jgam.48.345",
+      "title": "Bullera taiwanensis sp nov and Bullera formosensis sp nov, two new ballistoconidium-forming yeast species isolated from plant leaves in Taiwan.",
+      "abstract": "Two strains of ballistoconidiogenous yeasts that contain xylose and form Q-10 ubiquinone were isolated from plant leaves collected in Taiwan and were found to represent two new species. The taxonomic properties of both coincide with the genus Bullera so they are described as Bullera taiwanensis sp. nov. and Bullera formosensis sp. nov. In a phylogenetic tree based on the nucleotide sequences of 18S ribosomal DNAs, these two species are distant from the clusters where the remaining members of the genus Bullera are located, i.e., Bullera taiwanensis is located in the Filobasidium lineage (Filobasidiales clade) and Bullera formosensis is located in the Cryptococcus humicola-Trichosporon lineage (Trichosporonales clade).",
+      "journal": "The Journal of general and applied microbiology",
+      "year": 2002,
+      "pub_date": "2002-12-01",
+      "authors": "Nakase Takashi; Tsuzuki Satoko; Takashima Masako",
+      "first_author": "Nakase Takashi",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12589075",
+      "doi": "10.1266/ggs.77.399",
+      "title": "Two new Fagopyrum (Polygonaceae) species, F. gracilipedoides and F. jinshaense from Yunnan, China.",
+      "abstract": "Two new Fagopyrum (Polygonaceae) species, F. gracilipedoides and F. jinshaense, are described. Fagopyrum gracilipedoides was only found at Baoshan village, Lijiang district, Yunnan province, China. This species resembles the weedy species, F. gracilipes in morphology but they differ in both mating system and ploidy level; F. gracilipedoides is a heterostylous self-incompatible diploid species (2n = 16), whereas F. gracilipes is a self-compatible tetraploid species (2n = 32). Fagopyrum jinshaense was found along the Jinsha River valley near the border of Sichuan, Yunnan, and Tibet in China. Fagopyrum jinshaense is morphologically similar to F. gilesii, but they differ in the morphology of their inflorescences. Fagopyrum jinshaense has long spike-like inflorescences, whereas F. gilesii has a compact head-like one. Both F. jinshaense and F. gilesii are self-incompatible with heterostylous flowers and are diploid. Interspecific crosses between the two new species and already known species in the urophyllum group of Fagopyrum resulted in the production of self- and cross-sterile hybrids in the species combinations attempted. These results indicated that both new species are reproductively isolated from other Fagopyrum species. Molecular phylogenetic analysis based on the nucleotide sequence of the trnK gene intron in chloroplast DNA revealed the following points: 1) F. gracilipedoides, F. rubifolium and F. gracilipes / F. capillatum showed a trifurcating relationship and 2) F. jinshaense formed a clade with F. pleioramosum, F. callanthum, and F. macrocarpum, and was only distantly related to F. gilesii. In the clade of F. capillatum, F. gracilipes, F. gracilipedoides and F. rubifolium, the breakdown of self-incompatibility accompanying genome duplication seems to have occurred twice independently.",
+      "journal": "Genes & genetic systems",
+      "year": 2002,
+      "pub_date": "2002-12-01",
+      "authors": "Ohsako Takanori; Yamane Kyoko; Ohnishi Ohmi",
+      "first_author": "Ohsako Takanori",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12509131",
+      "doi": "10.1023/a:1021182111770",
+      "title": "Resistance and susceptibility of plants to fungal pathogens.",
+      "abstract": "Plants are under continuous threat of infection by pathogens endowed with diverse strategies to colonize their host. Comprehensive biochemical and genetic approaches are now starting to reveal the complex signaling pathways that mediate plant disease resistance. Initiation of defense signaling often involves specific recognition of invading pathogens by the products of specialized host resistance (R) genes. Potential resistance signaling components have been identified by mutational analyses to be required for specific resistance in the model Arabidopsis and some crop species. Strikingly, many of the components share similarity to that of innate immune systems in animals. Evidence is also accumulating that plant pathogens have a number of ways to evade host defenses during the early stages of infection, similar to animal pathogens. These strategies are becoming much better understood in a number of plant-pathogen interactions. In this review, we focus on the current knowledge of host factors that control plant resistance and susceptibility to fungal pathogens. The knowledge accumulated in these studies will serve a fundamental basis for combating diseases in strategic molecular agriculture.",
+      "journal": "Transgenic research",
+      "year": 2002,
+      "pub_date": "2002-12-01",
+      "authors": "Toyoda Kazuhiro; Collins Nicholas C; Takahashi Akira; Shirasu Ken",
+      "first_author": "Toyoda Kazuhiro",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12516865",
+      "doi": "10.1023/a:1021291522243",
+      "title": "Protein complexes mediate signalling in plant responses to hormones, light, sucrose and pathogens.",
+      "abstract": "Living organisms use complex pathways of signal perception and transduction to respond to stimuli in their environments. In plants, putative signal transduction components have been identified through mutant screens and comparative analysis of genome sequences of model eukaryotes. Several pieces in a large series of puzzles have now been identified and a current challenge is to determine how these pieces interconnect. Functional analysis of the encoded proteins has necessitated a change from genetic to biochemical approaches. In recent years, the application of techniques such as two-hybrid screening and epitope tagging has facilitated the study of protein-protein interactions and has increased our understanding of cellular signalling mechanisms. One focus of present research is the ubiquitin/proteasome-mediated degradation of proteins. Increasing evidence suggests this is a control common to many plant signalling pathways including development and responsiveness to hormones, light and sucrose. A central challenge in the study of plant disease resistance has been to identify protein complexes that contain host defence proteins and pathogenicity factors. In this review we summarize the latest developments in these areas where the existence of protein complexes has been demonstrated to be of fundamental importance in plant signalling.",
+      "journal": "Plant molecular biology",
+      "year": 2002,
+      "pub_date": "2002-12-01",
+      "authors": "Ellis Christine; Turner John G; Devoto Alessandra",
+      "first_author": "Ellis Christine",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12492839",
+      "doi": "10.1046/j.1365-313x.2002.01482.x",
+      "title": "Overexpression of a kinase-deficient form of the EDR1 gene enhances powdery mildew resistance and ethylene-induced senescence in Arabidopsis.",
+      "abstract": "The EDR1 gene of Arabidopsis has previously been reported to encode a Raf-like mitogen-activated protein kinase kinase (MAPKK) kinase, and to function as a negative regulator of disease resistance. A phylogenetic analysis of plant and animal protein kinases revealed, however, that plant Raf-like kinases are more closely related to animal mixed lineage kinases (MLKs) than Raf-like kinases, and are deeply divergent from both classes of animal kinases, making inferences of substrate specificity questionable. We, therefore, assayed the kinase activity of recombinant EDR1 protein in vitro. The EDR1 kinase domain displayed autophosphorylation activity and phosphorylated the common MAP kinase substrate myelin basic protein. The EDR1 kinase domain also phosphorylated a kinase-deficient EDR1 protein, indicating that EDR1 autophosphorylation can occur via an intermolecular mechanism. Overexpression of a kinase-deficient full-length EDR1 gene (35S::dnEDR1) in wild-type Arabidopsis plants caused a dominant negative phenotype, conferring resistance to powdery mildew (Erysiphe cichoracearum) and enhancing ethylene-induced senescence. RNA-gel blot analyses showed that the 35S::dnEDR1 transgene was highly transcribed in transgenic plants. Western blot analysis, however, revealed that neither the wild-type nor mutant EDR1 protein could be detected in these lines, indicating that the dominant negative phenotype may be caused by a translational inhibition mechanism rather than by a protein level effect. Overexpression of orthologous dnEDR1 constructs may provide a novel strategy for controlling powdery mildew disease in crops.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2002,
+      "pub_date": "2002-12-01",
+      "authors": "Tang Dingzhong; Innes Roger W",
+      "first_author": "Tang Dingzhong",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

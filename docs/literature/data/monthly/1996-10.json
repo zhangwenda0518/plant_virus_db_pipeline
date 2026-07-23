@@ -1,0 +1,233 @@
+{
+  "month": "1996-10",
+  "generated": "2026-07-13 02:59:42",
+  "total": 10,
+  "by_category": {
+    "Host_Virus_Interactions": 5,
+    "New_Virus": 3,
+    "Antiviral_Resistance_Genes": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8887500",
+      "doi": "10.1099/0022-1317-77-10-2631",
+      "title": "The molecular structure of Iresine viroid, a new viroid species from Iresine herbstii ('beefsteak plant').",
+      "abstract": "A viroid was isolated from Iresine herbstii plants using the bidirectional PAGE method for analysis of small circular RNA molecules. The viroid was transmitted to viroid-free Iresine herbstii plants of the cultivar 'Aureoreticulata' by mechanical inoculation. Infected plants did not develop any symptoms. The new viroid species has been named Iresine viroid (IrVd). It is a member of the potato spindle tuber viroid group and consists of 370 nucleotides, 227 G+C, 143 A+U (GC content, 61.4%). The most stable rod-like secondary structure of this viroid has 86 G:C, 34 A:U and 12 G:U base pairs with a minimum free energy of -153.4 kcal/mol (-641.2 kJ/mol). The sequence and the position of the terminal conserved region (TCR) within the rod-like secondary structure of IrVd differ from the other known TCRs. The structure of the left terminal domain of IrVd may reflect the result of an intramolecular RNA recombination event.",
+      "journal": "The Journal of general virology",
+      "year": 1996,
+      "pub_date": "1996-10-01",
+      "authors": "Spieker R L",
+      "first_author": "Spieker R L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Iresine viroid (IrVd)",
+      "taxonomy": "马铃薯纺锤形块茎类病毒组 (Pospiviroidae科, Pospiviroid属？)",
+      "host_plant": "Iresine herbstii (beefsteak plant)，品种'Aureoreticulata'",
+      "location": "未提及",
+      "results": "IrVd由370个核苷酸组成，GC含量61.4%，棒状二级结构有86 G:C、34 A:U、12 G:U碱基对，最小自由能-153.4 kcal/mol。TCR序列和位置不同于已知TCR，左末端域结构可能源于分子内RNA重组。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8863426",
+      "doi": "10.1099/00207713-46-4-972",
+      "title": "Sinorhizobium medicae sp. nov., isolated from annual Medicago spp.",
+      "abstract": "The taxonomic position of isolates of a new genomic species (designated genomic species 2) obtained from several annual Medicago species and originating from different geographical locations was established through the results of phenotypic tests (including the results of auxanographic and biochemical tests and symbiotic properties) and 16S rRNA phylogenetic inferences. A comparison of the complete 16S rRNA sequence of a representative of genomic species 2 (strain A 321T [T = type strain]) with the 16S rRNA sequences of other members of the Rhizobiaceae and closely related taxa showed that genomic species 2 was phylogenetically related to Sinorhizobium meliloti, Sinorhizobium fredii, Sinorhizobium saheli, and Sinorhizobium teranga. The levels of sequence similarity and observed numbers of nucleotide substitutions in Sinorhizobium strains indicated that A 321T and S. meliloti exhibited the highest level of sequence similarity (99.7%), with four nucleotide substitutions and one deletion. The results of a numerical analysis based on data from 63 auxanographic and biochemical tests clearly separated genomic species 2 isolates from S. meliloti. Genomic species 2 isolates nodulated and fixed nitrogen with Medicago polymorpha, whereas S. meliloti isolates were ineffective and formed rudimentary nodules on this host plant. On the basis of phenotypic and 16S sequence analysis data, genomic species 2 isolates cannot be assigned to a previously described species. We propose that these isolates belong to a new species, Sinorhizobium medicae.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1996,
+      "pub_date": "1996-10-01",
+      "authors": "Rome S; Fernandez M P; Brunel B; Normand P; Cleyet-Marel J C",
+      "first_author": "Rome S",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8863412",
+      "doi": "10.1099/00207713-46-4-876",
+      "title": "Gordona hirsuta sp. nov.",
+      "abstract": "Bacterial strain K718aT (T = type strain), which was isolated from the packing material of a biofilter used for deodorization of animal-rendering plant emissions, was subjected to a polyphasic taxonomic study in which physiological, chemotaxonomic, and genomic methods were used. On the basis of the chemotaxonomic and physiological properties found and the results of 16S ribosomal DNA sequence comparisons, it was evident that strain K718aT belongs to a new species in the genus Gordona. We propose that strain K718a should be the type strain of the new species Gordona hirsuta.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1996,
+      "pub_date": "1996-10-01",
+      "authors": "Klatte S; Kroppenstedt R M; Schumann P; Altendorf K; Rainey F A",
+      "first_author": "Klatte S",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "28565608",
+      "doi": "10.1111/j.1558-5646.1996.tb03572.x",
+      "title": "GENETICS OF BRASSICA RAPA. 3. COSTS OF DISEASE RESISTANCE TO THREE FUNGAL PATHOGENS.",
+      "abstract": "Genetic costs of resistance to pathogens may be an important factor maintaining heritable variation for resistance in natural populations. Pleiotropic fitness trade-offs occur when genetic resistance causes reduction in other components of fitness. Although costs of resistance have an important influence on plant-pathogen interactions, few previous studies have detected pleiotropic costs of resistance in the absence of confounding effects of linkage disequilibrium. To avoid this potential problem, we performed artificial selection experiments on resistance to two fungal pathogens, Leptosphaeria maculans, and Peronospora parasitica, and compared growth rates of resistant and susceptible genotypes of Brassica rapa in the absence of pathogens. Leptosphaeria resistance had no effect on growth rate, indicating cost-free defense. In contrast, Peronospora-resistant genotypes grow 6% slower than Peronospora-susceptible genotypes in pathogen-free environments, indicating a significant genetic fitness cost to Peronospora resistance. Such genetic trade-offs could maintain genetic variation in the wild. Another factor that might explain heritable variation for resistance is ecological trade-offs, in which genetic resistance to one species causes susceptibility to another. Such ecological trade-offs do not exist for the pathogens studied in this system.",
+      "journal": "Evolution; international journal of organic evolution",
+      "year": 1996,
+      "pub_date": "1996-10-01",
+      "authors": "Mitchell-Olds Thomas; Bradley Douglas",
+      "first_author": "Mitchell-Olds Thomas",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8939722",
+      "doi": "10.1016/s0959-437x(96)80093-1",
+      "title": "Transcriptional activation of plant defense genes.",
+      "abstract": "Significant progress has been made in the characterization of disease resistance genes and receptors for pathogen avirulence signals and non-specific elicitors. Some components involved in elicitor-induced signal transduction have been identified. Phosphorylation of transcription factors has been found to be one of the mechanisms regulating their cellular localization, DNA binding and transcription activities for defense gene activation.",
+      "journal": "Current opinion in genetics & development",
+      "year": 1996,
+      "pub_date": "1996-10-01",
+      "authors": "Zhu Q; Dröge-Laser W; Dixon R A; Lamb C",
+      "first_author": "Zhu Q",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8914140",
+      "doi": "",
+      "title": "Plant hormones and plant virus diseases. The auxins.",
+      "abstract": "Systemic virus infection impairs the steady state of auxin hormone in plant with consequent morphogenetic alterations. Most reports indicate a reduction of auxin activity in diseased plants, generally associated with stunting, but a substantial increase in auxin activity has sometimes been observed in cases of severe symptomatology. Treatments of virus-diseased plants with exogenous auxins may inhibit virus replication and reduce symptom severity, although results have been obtained by empirical application and must therefore be considered with caution. There is no information on how virus infection alters auxin metabolism or how this alteration affects both plant growth and development. The considerable progress reached in auxin biochemistry now allows more accurate re-investigations of this important relationship.",
+      "journal": "The new microbiologica",
+      "year": 1996,
+      "pub_date": "1996-10-01",
+      "authors": "Pennazio S; Roggero P",
+      "first_author": "Pennazio S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8876208",
+      "doi": "10.1073/pnas.93.21.11746",
+      "title": "Resistance gene analogs are conserved and clustered in soybean.",
+      "abstract": "Sequences of cloned resistance genes from a wide range of plant taxa reveal significant similarities in sequence homology and structural motifs. This is observed among genes conferring resistance to viral, bacterial, and fungal pathogens. In this study, oligonucleotide primers designed for conserved sequences from coding regions of disease resistance genes N (tobacco), RPS2 (Arabidopsis) and L6 (flax) were used to amplify related sequences from soybean [Glycine max (L.) Merr.]. Sequencing of amplification products indicated that at least nine classes of resistance gene analogs (RGAs) were detected. Genetic mapping of members of these classes located them to eight different linkage groups. Several RGA loci mapped near known resistance genes. A bacterial artificial chromosome library of soybean DNA was screened using primers and probes specific for eight RGA classes and clones were identified containing sequences unique to seven classes. Individual bacterial artificial chromosomes contained 2-10 members of single RGA classes. Clustering and sequence similarity of members of RGA classes suggests a common process in their evolution. Our data indicate that it may be possible to use sequence homologies from conserved motifs of cloned resistance genes to identify candidate resistance loci from widely diverse plant taxa.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1996,
+      "pub_date": "1996-10-15",
+      "authors": "Kanazin V; Marek L F; Shoemaker R C",
+      "first_author": "Kanazin V",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12239361",
+      "doi": "10.1105/tpc.8.10.1757",
+      "title": "Plant Disease Resistance Genes: Function Meets Structure.",
+      "abstract": "",
+      "journal": "The Plant cell",
+      "year": 1996,
+      "pub_date": "1996-10-01",
+      "authors": "Bent A. F.",
+      "first_author": "Bent A. F.",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8895571",
+      "doi": "",
+      "title": "Direct inhibition of the signaling functions of the mammalian target of rapamycin by the phosphoinositide 3-kinase inhibitors, wortmannin and LY294002.",
+      "abstract": "The immunosuppressant, rapamycin, inhibits cell growth by interfering with the function of a novel kinase, termed mammalian target of rapamycin (mTOR). The putative catalytic domain of mTOR is similar to those of mammalian and yeast phosphatidylinositol (PI) 3-kinases. This study demonstrates that mTOR is a component of a cytokine-triggered protein kinase cascade leading to the phosphorylation of the eukaryotic initiation factor-4E (eIF-4E) binding protein, PHAS-1, in activated T lymphocytes. This event promotes G1 phase progression by stimulating eIF-4E-dependent translation initiation. A mutant YAC-1 T lymphoma cell line, which was selected for resistance to the growth-inhibitory action of rapamycin, was correspondingly resistant to the suppressive effect of this drug on PHAS-1 phosphorylation. In contrast, the PI 3-kinase inhibitor, wortmannin, reduced the phosphorylation of PHAS-1 in both rapamycin-sensitive and -resistant T cells. At similar drug concentrations (0.1-1 microM), wortmannin irreversibly inhibited the serine-specific autokinase activity of mTOR. The autokinase activity of mTOR was also sensitive to the structurally distinct PI 3-kinase inhibitor, LY294002, at concentrations (1-30 microM) nearly identical to those required for inhibition of the lipid kinase activity of the mammalian p85-p110 heterodimer. These studies indicate that the signaling functions of mTOR, and potentially those of other high molecular weight PI 3-kinase homologs, are directly affected by cellular treatment with wortmannin or LY294002.",
+      "journal": "The EMBO journal",
+      "year": 1996,
+      "pub_date": "1996-10-01",
+      "authors": "Brunn G J; Williams J; Sabers C; Wiederrecht G; Lawrence J C; ... (+1)",
+      "first_author": "Brunn G J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8981754",
+      "doi": "",
+      "title": "Synthesis and microbiological evaluations of (N-heteroaryl) arylmethanamines and their Schiff bases.",
+      "abstract": "The synthesis as well as the antimicrobial and antiviral activities of new (N-heteroaryl)arylmethanamines and their Schiff bases are reported. None of the tested compounds shown activity against Herpes simplex virus type 2 and against Gram positive and Gram negative bacteria. Weak or moderate activity on poliovirus Sabin type 1, on reverse transcriptase and against Cryptococcus neoformans was shown by some of the tested compounds. Viceversa several synthesized compounds exhibited a moderate or good activity against strains of Candida albicans, while only some of the tested compounds were found moderately active against strains of Candida sp. Instead numerous new compounds 3 or 4 were active as control against isolates of plant pathogenic fungi. The obtained results are discussed on the basis of structure-activity relationships.",
+      "journal": "Farmaco (Societa chimica italiana : 1989)",
+      "year": 1996,
+      "pub_date": "1996-10-01",
+      "authors": "Fioravanti R; Biava M; Donnarumma S; Porretta G C; Simonetti N; ... (+5)",
+      "first_author": "Fioravanti R",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

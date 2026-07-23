@@ -1,0 +1,242 @@
+{
+  "week": "2026-W05",
+  "start": "2026-01-26",
+  "end": "2026-02-01",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 140,
+  "by_category": {
+    "Host_Virus_Interactions": 50,
+    "Control_Management": 44,
+    "Antiviral_Resistance_Genes": 24,
+    "Biotechnology_Applications": 23,
+    "New_Virus": 11,
+    "Viral_Diversity_Ecology": 3,
+    "Detection_Methods": 3,
+    "Transmission_Epidemiology": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "40976866",
+      "doi": "10.1111/pbi.70320",
+      "title": "Development of Modular Geminivirus-Based Vectors for High Cargo Expression and Gene Targeting in Plants.",
+      "abstract": "Viral vectors can be useful tools for expressing recombinant proteins as well as delivering gene-editing machinery. Despite their utility, the development and subsequent optimisation of these tools is often a difficult and tedious process. Thus, although considerable work has been done to create useful viral vectors for gene editing and protein expression, there is a lack of understanding of how best to design these vectors for specific applications. For instance, it is often unclear whether the inclusion of heterologous promoter sequences or different viral components will improve cargo expression or replicon accumulation. To address some of these hurdles, we designed a GoldenBraid (GB)-compatible viral vector system based on the geminivirus-beet curly top virus (BCTV). This system allows for simple, modular cloning of a variety of reporter constructs. Making use of this modular cloning strategy, we compared a variety of alternative viral vector architectures. Interestingly, native BCTV promoters outperformed the constitutive 35S promoter, while the removal of the BCTV virion-sense genes promoted reporter expression. Intriguingly, these modifications had no effect on total replicon accumulation. These results show the utility of the new modular BCTV-based vectors for protein expression and gene targeting applications, as well as uncover design principles that may inform future geminivirus-based viral vector architectures. We anticipate that the availability of this new modular system will spark the broad adoption of replicon-based strategies in protein expression and gene editing experiments in plants.",
+      "journal": "Plant biotechnology journal",
+      "year": 2026,
+      "pub_date": "2026-02-01",
+      "authors": "Neubauer Matthew; Vollen Katie; Zhao Chengsong; Ascencio-Ibáñez José T; Hanley-Bowdoin Linda; ... (+2)",
+      "first_author": "Neubauer Matthew",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "甜菜曲顶病毒 (Beet curly top virus, BCTV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41139897",
+      "doi": "10.1111/pce.70257",
+      "title": "Barley Yellow Dwarf Virus-GAV 17K Manipulates HvSRC2 to Dampen Plant Defence to Promote Viral Infection.",
+      "abstract": "SRC2 is a C2 domain-containing protein that responds to attack from the host and non-host pathogens as well as abiotic stresses. The role of SRC2 in regulating viral infection is largely unknown. We employed the BYDV-barley pathosystem to characterize the involvement of HvSRC2 in viral infection. Here, we report that 17K protein encoded by barley yellow dwarf virus-GAV (BYDV-GAV) interacted with Hordeum vulgare SRC2 (HvSRC2) and promoted its accumulation. Silencing of HvSRC2 expression blocked BYDV-GAV accumulation. Transcriptome sequencing indicated that HvSRC2 regulated plant defence-related pathways like plant hormone signal transduction, plant-pathogen interaction and other disease resistance pathways. Genes involved in plant immunity including HvRBOHC, HvRGA1, HvB-2b, HvNPR2, HvBSK3, HvRPP13L3, HvMYC2 and HvMkk4 were upregulated upon HvSRC2 silencing. We further found that HvRBOHC interacted with HvSRC2. HvRBOHC silencing increased BYDV-GAV accumulation, coinciding with upregulated expression of other HvRBOHs and elevated H2O2 and O2 - levels. Furthermore, we also found that MaYMV MP and TuMV viral genome-linked protein (VPg), can both interact with HvSRC2, indicating the relative conservation between viral proteins and HvSRC2. Silencing of NbSRC2 inhibited the accumulation of TuMV and MaYMV. Taken together, our findings suggest that viral proteins utilize HvSRC2 to regulate plant defence pathways to aid viral infection.",
+      "journal": "Plant, cell & environment",
+      "year": 2026,
+      "pub_date": "2026-02-01",
+      "authors": "Wang He; Shi Yajuan; Yang Xue; Wang Qiongqiong; Chen Linlin; ... (+5)",
+      "first_author": "Wang He",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "大麦黄矮病毒-GAV (BYDV-GAV)",
+      "taxonomy": "",
+      "host_plant": "大麦 (Hordeum vulgare)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41146538",
+      "doi": "10.1002/ps.70335",
+      "title": "The natural chalcone derivative 4-hydroxychalcone primes tobacco immunity against TMV via Ca",
+      "abstract": "[BACKGROUND] Tobacco mosaic virus (TMV) threatens global agriculture due to environmental persistence and limited chemical controls. Plant immune elicitors offer promising solutions, yet novel low-cost agents are urgently needed. [RESULTS] Here, natural chalcones, particularly 4-hydroxychalcone (4-HC), demonstrated potent anti-TMV activity as plant immune elicitors. Among eight chalcones screened, 4-HC at 1 mm achieved 48.36% protective efficacy - comparable to the benchmark elicitor benzothiazole (BTH). Crucially, 4-HC showed no direct virucidal activity against TMV particles (confirmed by half-leaf assays and transmission electron microscopy (TEM)), indicating plant-mediated defense induction. Transcriptomics revealed 4-HC significantly up-regulated immune pathways, including plant-pathogen interactions, mitogen-activated protein kinase (MAPK) signaling (MPK4, MKK5), and WRKY transcription factors. Mechanistically, 4-HC elicited rapid calcium ion (Ca2+) flux and sustained reactive oxygen species (ROS) burst (four-fold hydrogen peroxide (H2O2) increase at 24 h), enhancing defense-related enzyme activities (phenylalanine ammonia-lyase (PAL), peroxidase (POD), superoxide dismutase (SOD) and catalase (CAT)) to establish systemic resistance. It also promoted flavonoid accumulation (two-fold at 72 h), leveraging its role as a flavonoid precursor. [CONCLUSION] This study identifies 4-HC as a sustainable, plant-derived immune elicitor that primes tobacco immunity against TMV through conserved signaling cascades, highlighting its potential for eco-friendly disease management. © 2025 Society of Chemical Industry.",
+      "journal": "Pest management science",
+      "year": 2026,
+      "pub_date": "2026-02-01",
+      "authors": "Gu Huiping; Liu Yingchen; Bai Jing; Xu Jiaying; Wang Yong; ... (+2)",
+      "first_author": "Gu Huiping",
+      "categories": [
+        "Control_Management",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Tobacco mosaic virus (TMV)",
+      "taxonomy": "",
+      "host_plant": "烟草",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41051098",
+      "doi": "10.1002/ps.70290",
+      "title": "Design, synthesis, structural optimization, and biological activity research of quinazolinone alkaloid isaindigotone.",
+      "abstract": "[BACKGROUND] Plant viruses, which are among the most devastating pathogens, cause enormous losses to agricultural industries worldwide and continue to threaten global food security. Current antivirals like ribavirin and ningnanmycin show limited efficacy against plant viruses, underscoring the need for more potent agents. Quinazolinone alkaloids play a vital role in drug discovery. [RESULT] After an extensive literature survey, we explored a highly efficient and straightforward synthetic route to access isaindigotone. Starting from commercially available deoxyvasicinone, a two-step sequence delivered the target isaindigotone in an overall yield of 60%. A series of isaindigotone derivatives were designed, synthesized, and evaluated for their bioactivities. We found that these compounds have good to excellent antiviral activities against tobacco mosaic virus (TMV). Most of these compounds exhibited higher anti-TMV activities than ribavirin. Alkaloid isaindigotone and its derivatives 2b and 2f displayed significantly higher inhibitory effects (half-maximal inhibitory concentration (IC50): 120-195 μg mL-1) than ningnanmycin (IC50: 220 μg mL-1), thus emerged as novel antiviral candidates. We selected 2f for further antiviral mechanism studies and found that 2f can inhibit viral assembly by interacting with the TMV coat protein (CP). Molecular docking results further confirmed that these compounds can interact with CP through hydrogen bonds. These compounds also demonstrated broad-spectrum antifungal activities. In particular, compound 4a displayed significant antifungal activity (IC50: 1.14 μg mL-1) against Pyricularia grisea. The preliminary action mechanism research proved that 4a can destroy the cell membrane of pathogens. [CONCLUSION] The natural product isaindigotone and its derivatives were synthesized and evaluated for their anti-TMV and fungicidal activities. Some compounds with good activities emerged as new antiviral and anti-fungal candidates. This study provides a reference for the application of isaindigotone alkaloids as new pesticides. © 2025 Society of Chemical Industry.",
+      "journal": "Pest management science",
+      "year": 2026,
+      "pub_date": "2026-02-01",
+      "authors": "Liu Sijia; Xu Yubin; Li Mingpeng; Zhao Zhiting; Lu Aidang; ... (+3)",
+      "first_author": "Liu Sijia",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒 (TMV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41174967",
+      "doi": "10.1002/ps.70328",
+      "title": "Virus-induced plant volatiles modulate insect vector conditional preference to enhance viral transmission.",
+      "abstract": "[BACKGROUND] Insect vectors that transmit persistent plant viruses mostly show a conditional preference, wherein non-viruliferous vectors prefer virus-infected hosts over virus-free ones, and once the vector acquires the virus, this preference is reversed. Nevertheless, the precise timing of when vectors change this conditional preference, and whether virus-induced plant volatiles influence this initiation process remains largely unexplored. [RESULTS] Working with the insect vector green rice leafhoppers (GRLHs), rice dwarf virus (RDV) and rice plants, we observed that GRLHs did not consistently show conditional preference during RDV replication and proliferation in rice plants. When rice was infected with RDV for 30 days, GRLHs began to exhibit conditional preference, which persisted for a period of 5 days. During the period when GRLHs exhibited conditional preference, RDV infection significantly induced the emission of 2-heptanone, 2-heptanol and α-cedrene by rice plants. Non-viruliferous GRLHs are attracted to 2-heptanone and viruliferous GRLHs are repelled, whereas α-cedrene does not affect non-viruliferous GRLHs but viruliferous GRLHs are attracted. Furthermore, the combination of all three volatiles attracted non-viruliferous GRLHs feeding on RDV-infected plants, while repelling viruliferous GRLHs feeding on RDV-free plants. [CONCLUSION] These novel findings illustrate that GRLHs only exhibit conditional preference during specific stages of viral infection, and the resulting blend of volatiles modify the behavior of GRLHs and promotes RDV acquisition and transmission. They will provide a critical window period for controlling the transmission of the virus through manipulation of plant volatiles to regulate insect vector populations. © 2025 Society of Chemical Industry.",
+      "journal": "Pest management science",
+      "year": 2026,
+      "pub_date": "2026-02-01",
+      "authors": "Zhang Qingsong; Wang Qianjin; Xie Yujia; Ren Yijia; Ye Gongyin; ... (+2)",
+      "first_author": "Zhang Qingsong",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "水稻矮缩病毒",
+      "taxonomy": "",
+      "host_plant": "水稻",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41380400",
+      "doi": "10.1016/j.virol.2025.110773",
+      "title": "Proteomic analysis of plant interactors with the RNA silencing suppressor V2 encoded by croton yellow vein mosaic virus.",
+      "abstract": "Croton yellow vein mosaic virus (CYVMV) is a Begomovirus infecting a wide range of vegetables, ornamentals, and weeds. The monopartite CYVMV genome comprises a single-stranded circular DNA (DNA-A). It is also associated with a DNA-betasatellite (DNA-β) called croton yellow vein mosaic betasatellite (CroYVMB). While DNA-A encodes three RNA silencing suppressors viz. V2/C2/C4, DNA-β encodes βC1, which also acts as silencing suppressor. The V2 protein physically interacts with both itself and V1, which is critical for cell-to-cell movement of CYVMV. However, little is known about the molecular mechanism of how V2 suppresses plant RNA silencing machinery and the defense system. Here, we identified twenty-three putative V2-interacting proteins in Nicotiana benthamiana via affinity purification-mass spectrometry (AP-MS) and performed gene ontology (GO) analysis on these V2-interacting candidates. Particularly, two N. benthamiana (Nb) proteins, Ankyrin repeat domain containing protein (NbANK) and Receptor for Activated C Kinase 1 (NbRACK1), were verified to physically interact with V2 in both yeast two-hybrid (Y2H) and bimolecular fluorescence complementation (BiFC). Compared to NbRACK1, NbANK exhibited much stronger binding capacity with V2 in Y2H assays, which was consistent with structural predictions of V2-NbANK and V2-NbRACK1 complexes using AlphaFold 3. Virus-induced gene silencing (VIGS) assays using the pTRV vectors demonstrated that the silencing of NbANK significantly increased CYVMV abundance in N. benthamiana, but did not lead to enhanced pathogenicity. In conclusion, our proteomic analysis identifies specific CYVMV V2 interactors in plants, and NbANK is used as an example to show their critical roles in CYVMV propagation.",
+      "journal": "Virology",
+      "year": 2026,
+      "pub_date": "2026-02-01",
+      "authors": "Zhai Ying; Peng Hao; Gnanasekaran Prabu; Roy Anirban; Pappu Hanu R",
+      "first_author": "Zhai Ying",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "Croton yellow vein mosaic virus (CYVMV)",
+      "taxonomy": "",
+      "host_plant": "本氏烟 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41586916",
+      "doi": "10.1007/s00705-025-06492-2",
+      "title": "Discovery and characterization of a novel marafivirus from Artemisia argyi plants.",
+      "abstract": "Artemisia argyi is a significant medicinal plant in China. To date, no viruses have been reported to infect A. argyi. In this study, using the RNA-seq technique, we identified a novel marafivirus in A. argyi plants showing leaf mottle and albinism symptoms, which we have tentatively named “Artemisia argyi albinism-associated virus” (AAAaV). The AAAaV genome is a positive-sense single-stranded RNA with a length of 6749 nt, excluding the poly(A) tail, containing a single open reading frame (ORF) encoding a large polyprotein. Phylogenetic analysis based on the full-length genome and polyprotein amino acid sequences revealed that AAAaV is related to members of the genus Marafivirus of the family Tymoviridae. The polyprotein of AAAaV shares 33.68-38.14% amino acid sequence identity with those of 12 closely related marafiviruses and contains five conserved domains that are characteristic of members of this genus. This discovery expands our knowledge of marafivirus diversity, host range, and viruses capable of infecting A. argyi.",
+      "journal": "Archives of virology",
+      "year": 2026,
+      "pub_date": "2026-01-26",
+      "authors": "Li Liyan; Chen Lele; Wang Yaqin; Xie Li; Fu Shuai; ... (+1)",
+      "first_author": "Li Liyan",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Artemisia argyi albinism-associated virus (AAAaV)",
+      "taxonomy": "Tymoviridae, Marafivirus",
+      "host_plant": "Artemisia argyi",
+      "location": "中国",
+      "results": "AAAaV基因组6749nt，含单个ORF编码多聚蛋白，与Marafivirus成员氨基酸一致性33.68-38.14%，含5个保守结构域。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41620642",
+      "doi": "10.1186/s12870-026-08250-1",
+      "title": "Geminiviral-CR-gRNA expressed in cowpea efficiently edited MYMV and MYMIV genome to provide resistance against cowpea yellow mosaic disease without hampering plant growth and yield.",
+      "abstract": "BACKGROUND: Cowpea is an economically important grain legume widely cultivated in Africa, Latin America, and Southeast Asia. In Southeast Asia, two of the most devastating viral diseases affecting cowpea are cowpea golden mosaic and severe leaf curl disease, both caused by Mungbean yellow mosaic India virus (MYMIV). Despite the availability of various molecular breeding strategies to manage viral infections, progress in cowpea improvement remains limited due to the lack of resistant germplasm, the absence of a reliable transformation system, and the restricted availability of efficient tools for viral gene inactivation. RESULTS: In this study, we employed CRISPR/Cas9-mediated genome editing technology to efficiently disrupt the common region (CR) of the single-stranded DNA-A component of legume-infecting geminiviruses, using cowpea as a test system. Transgenic cowpea plants expressing Cas9 and a guide RNA (gRNA) targeting the CR of MYMV/MYMIV were evaluated for resistance to yellow mosaic disease (YMD). Agrobacterium tumefaciens strain EHA105 carrying pXSE901B-Cas9 and CR-gRNA cassettes was used to generate the transgenic plants. PCR and Southern blot analyses confirmed the integration of transgenes into the cowpea genome. Transgenic lines in the T₁ and T₂ generations were tested for YMD resistance via agroinfiltration using MYMV and MYMIV agroinfectious clones. Accumulation of AV2 and AC2 transcripts was drastically reduced in T₂ lines, which also displayed either no or minimal mosaic symptoms. Mutation analysis of the viral genome revealed frameshift mutations near the PAM region of the targeted CR sequence, with editing frequencies of 28%, 34%, 22%, and 33% in MYMV/MYMIV-infected cowpea lines #L2, #L4, #L7, and #L11, respectively. The transgenic cowpea plants exhibited a normal phenotype and did not show any yield reduction under greenhouse conditions. CONCLUSION: To the best of our knowledge, this is the first report of transgenic cowpea plants stably expressing a geminiviral common region (CR)–targeting gRNA via the CRISPR/Cas9 system, leading to efficient editing of the MYMV/MYMIV genome and conferring durable resistance to Yellow Mosaic Disease without adversely affecting plant growth or yield. These findings demonstrate the potential of CRISPR/Cas9 as a precise and robust platform for developing virus-resistant cowpea and other legume crops.",
+      "journal": "BMC plant biology",
+      "year": 2026,
+      "pub_date": "2026-01-31",
+      "authors": "Kumar Sanjeev; Murugan Bharatheeswaran; Das Mahesh; Sanan-Mishra Neeti; Sahoo Lingaraj",
+      "first_author": "Kumar Sanjeev",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "Mungbean yellow mosaic virus (MYMV) 和 Mungbean yellow mosaic India virus (MYMIV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41681593",
+      "doi": "10.3390/plants15030430",
+      "title": "Enhanced Soybean Immunity to the Soybean Mosaic Virus Through RNA Interference Targeting the ",
+      "abstract": "The soybean mosaic virus (SMV), a significant viral pathogen impacting soybean cultivation, leads to substantial yield losses and diminishes seed quality. In a prior study, we developed a targeted silencing vector using RNA interference (RNAi) technology targeting the CP gene, which codes for the viral coat proteins in the SMV genome. This vector was delivered into soybean plants through Agrobacterium-mediated transformation. In our current research, we utilized ongoing molecular characterization and resistance screening to identify four genetically pure lines that display moderate to high resistance to SMV. Additionally, the transgenic plants exhibited resistance to three other potyviruses: the bean common mosaic virus, the recombinant soybean mosaic virus, and the watermelon mosaic virus. Greenhouse and field trials conducted with these lines demonstrated that RNAi-mediated silencing of the CP gene significantly enhanced disease resistance. It is noteworthy that, in comparison to the receptor plants, the transgenic plants exhibited no significant differences in maturity, plant height, branching number, node number, pod number, or 100-seed weight. These results offer valuable genetic resources and theoretical support for molecular breeding strategies aimed at combating SMV in soybeans, as well as for RNAi-based methods to control plant viral infections.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2026,
+      "pub_date": "2026-01-30",
+      "authors": "Wang Tao; Gao Le; Wang Liqun; Ren Rui; Zhai Rui; ... (+6)",
+      "first_author": "Wang Tao",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "大豆花叶病毒 (SMV)",
+      "taxonomy": "",
+      "host_plant": "大豆",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41520974",
+      "doi": "10.1016/j.ijbiomac.2026.150132",
+      "title": "In silico prediction of faba bean necrotic yellows virus proteins and their interactions with host protein SnRK1 through expression analysis.",
+      "abstract": "Faba bean necrotic yellows virus (FBNYV) is a multipartite nanovirus (family Nanoviridae) that poses a significant threat to legume crops worldwide. Its genome encodes various viral proteins that promote infection, systemic spread, and vector transmission. This study evaluated the interaction dynamics between the sucrose non-fermenting 1-related kinase 1 (SnRK1) and eight key FBNYV proteins using in silico docking analysis. All the viral proteins bound to SnRK1 with notable affinity; however, the nuclear shuttle protein encoded by DNA-N showed the strongest binding affinity to SnRK1, revealing that it may modulate host energy signaling. Alongside the computational results, we performed quantitative reverse transcription-polymerase chain reaction analysis of SnRK1 in faba bean plants inoculated with FBNYV using varying concentrations of the viral DNA-N segment. SnRK1 transcript levels were elevated in infections with higher DNA-N dosage, revealing a host response aimed at curbing viral replication. The expression profiles of key plant defense-related genes (WRKY33, bZIP11, AGO2, ATG8, ATL2, and MKS1) were also assessed. Notably, genes related to stress and immune signaling (such as WRKY33, bZIP11, and ATG8) were induced, whereas the RNA-silencing gene AGO2 was suppressed. These findings improve our understanding of host-virus interactions in faba beans and highlight the dual role of SnRK1 in metabolic regulation and antiviral defense. Overall, this study provides a strong molecular foundation for enhancing resistance to FBNYV. IMPORTANCE: Considering the critical role of SnRK1 in plant stress responses and antiviral defense, this study used in silico approaches to identify FBNYV proteins that interact with SnRK1 and to infer the potential impacts on host immunity. Similar to geminiviruses, nanoviruses are circular DNA viruses that rely on the cellular machinery for replication and spread. Although previous research on the antiviral functions of SnRK1 has predominantly focused on geminivirus infections, the parallels between geminivirus and nanovirus host interactions show that SnRK1 could play a comparable defensive role against nanoviruses like FBNYV. By investigating the interaction of SnRK1 with FBNYV proteins and monitoring related defense gene expression, our work provides insight into how this host kinase may contribute to resistance. Ultimately, understanding this relationship may facilitate the development of virus-resistant faba bean varieties through targeted breeding or biotechnological approaches.",
+      "journal": "International journal of biological macromolecules",
+      "year": 2026,
+      "pub_date": "2026-02-01",
+      "authors": "Qureshi Muhammad Amir; Jeyaraj Gnanaprakash; Nawaz-Ul-Rehman M S; Kil Eui-Joon; Lal Aamir; ... (+7)",
+      "first_author": "Qureshi Muhammad Amir",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "Faba bean necrotic yellows virus (FBNYV)",
+      "taxonomy": "",
+      "host_plant": "蚕豆 (faba bean)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

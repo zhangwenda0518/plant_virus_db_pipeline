@@ -1,0 +1,283 @@
+{
+  "month": "2009-11",
+  "generated": "2026-07-13 02:59:42",
+  "total": 45,
+  "by_category": {
+    "New_Virus": 14,
+    "Host_Virus_Interactions": 13,
+    "Antiviral_Resistance_Genes": 11,
+    "Biotechnology_Applications": 4,
+    "Control_Management": 3,
+    "Molecular_Characterization": 3,
+    "Viral_Diversity_Ecology": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "19641047",
+      "doi": "10.1099/vir.0.013151-0",
+      "title": "Allele mining in the pepper gene pool provided new complementation effects between pvr2-eIF4E and pvr6-eIF(iso)4E alleles for resistance to pepper veinal mottle virus.",
+      "abstract": "Molecular cloning of recessive resistance genes to potyviruses in a large range of host species identified the eukaryotic translation initiation factor 4E (eIF4E) as an essential determinant in the outcome of potyvirus infection. Resistance results from a few amino acid changes in the eIF4E protein encoded by the recessive resistance allele that disrupt the direct interaction with the potyviral protein VPg. In plants, several loci encode two protein subfamilies, eIF4E and eIF(iso)4E. While most eIF4E-mediated resistance to potyviruses depends on mutations in a single eIF4E protein, simultaneous mutations in eIF4E (corresponding to the pvr2 locus) and eIF(iso)4E (corresponding to the pvr6 locus) are required to prevent pepper veinal mottle virus (PVMV) infection in pepper. We used this model to look for additional alleles at the pvr2-eIF4E locus that result in resistance when combined with the pvr6-eIF(iso)4E resistant allele. Among the 12 pvr2-eIF4E resistance alleles sequenced in the pepper gene pool, three were shown to have a complementary effect with pvr6-eIF(iso)4E for resistance. Two amino acid changes were exclusively shared by these three alleles and were systematically associated with a second amino acid change, suggesting that these substitutions are associated with resistance expression. The availability of new resistant allele combinations increases the possibility for the durable deployment of resistance against this pepper virus which is prevalent in Africa.",
+      "journal": "The Journal of general virology",
+      "year": 2009,
+      "pub_date": "2009-11-01",
+      "authors": "Rubio Manuel; Nicolaï Maryse; Caranta Carole; Palloix Alain",
+      "first_author": "Rubio Manuel",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Pepper veinal mottle virus (PVMV)",
+      "taxonomy": "",
+      "host_plant": "辣椒",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19664665",
+      "doi": "10.1016/j.virusres.2009.07.018",
+      "title": "Molecular characterisation and infectivity of a \"Legumovirus\" (genus Begomovirus: family Geminiviridae) infecting the leguminous weed Rhynchosia minima in Pakistan.",
+      "abstract": "The legume yellow mosaic viruses (LYMVs) that cause extensive losses to grain legumes across southern Asia are an evolutionarily unusual group of begomoviruses (genus Begomovirus; family Geminiviridae) with bipartite genomes. All previously identified LYMVs were isolated from leguminous crop species. Here we have identified a virus related to the LYMVs in a common weed, the legume Rhynchosia minima originating from Pakistan. Analysis of the sequence of the virus shows it to be a typical bipartite begomovirus. Sequence comparisons to all other begomovirus sequences available in the databases show the virus from R. minima to be distinct, with the highest level of sequence identity (69.5%) to an isolate of Mungbean yellow mosaic virus. This indicates that the virus identified here is a new species in the genus Begomovirus for which we propose the name Rhynchosia yellow mosaic virus (RhYMV). By Agrobacterium-mediated inoculation we show that, in common with the other LYMVs, the clones of RhYMV are not infectious to the experimental host Nicotiana benthamiana. In soybean, the results of inoculation depended upon the variety. In soybean var. Ig6 the symptoms were mild and plants recovered from infection. However, in var. FS-85, symptoms were severe and progressed to necrosis, indicative of a hypersensitive response. These results indicate that there is resistance to RhYMV in the soybean germplasm. The significance of these results is discussed.",
+      "journal": "Virus research",
+      "year": 2009,
+      "pub_date": "2009-11-01",
+      "authors": "Ilyas Muhammad; Qazi Javaria; Mansoor Shahid; Briddon Rob W",
+      "first_author": "Ilyas Muhammad",
+      "categories": [
+        "New_Virus",
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "Rhynchosia yellow mosaic virus (RhYMV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "Rhynchosia minima, Nicotiana benthamiana, Glycine max (大豆)",
+      "location": "巴基斯坦",
+      "results": "病毒全序列与绿豆黄化花叶病毒最高一致性69.5%，确认为新种；农杆菌接种不能感染本氏烟，在大豆上品种间反应差异明显（Ig6轻微，FS-85坏死）。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19793602",
+      "doi": "10.1016/j.virol.2009.08.006",
+      "title": "Permutation of the active site of putative RNA-dependent RNA polymerase in a newly identified species of plant alpha-like virus.",
+      "abstract": "To direct the genome synthesis, RNA viruses without a DNA stage in the replication cycle use RNA-dependent RNA polymerase (RdRp). All RdRps have conserved right hand-like shape that includes characteristic A-->B-->C sequence motifs forming the active site. Recently, the structural permutation of the RdRp active site (C-->A-->B) has been described in few double-stranded RNA birnaviruses and a subset of positive-stranded RNA tetraviruses distantly related to Picorna-like viruses. Here we describe a permuted RdRp in the newly identified plant alpha-like virus with 6.5 kb-long polyadenylated genome, dubbed Grapevine virus Q (GVQ). The multi-domain layout and sequence similarities place GVQ into the genus Marafivirus of the family Tymoviridae. In contrast to other tymovirids, GVQ has 21 amino acid residues corresponding to the motif C relocated upstream of the motif A in the putative RdRp. This unique sequence characteristic was extensively verified and identified in several GVQ isolates infecting wild and cultivated Vitis and Rubus spp.",
+      "journal": "Virology",
+      "year": 2009,
+      "pub_date": "2009-11-10",
+      "authors": "Sabanadzovic Sead; Ghanem-Sabanadzovic Nina Abou; Gorbalenya Alexander E",
+      "first_author": "Sabanadzovic Sead",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Grapevine virus Q (GVQ)",
+      "taxonomy": "Tymoviridae, Marafivirus",
+      "host_plant": "Vitis spp. and Rubus spp.",
+      "location": "未提及",
+      "results": "GVQ的RdRp中基序C（21个氨基酸残基）移位到基序A上游，多个分离株中验证。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19740507",
+      "doi": "10.1016/j.virol.2009.08.008",
+      "title": "Recombination, selection and clock-like evolution of Rice yellow mottle virus.",
+      "abstract": "The clock-like diversification of Rice yellow mottle virus (RYMV), a widespread RNA plant virus that infects rice in Africa, was tested following a three-step approach with (i) an exhaustive search of recombinants, (ii) a comprehensive assessment of the selective constraints over lineages, and (iii) a stepwise series of tests of the molecular clock hypothesis. The first evidence of recombination in RYMV was found in East Africa, in the region most favorable to co-infection. RYMV evolved under a pronounced purifying selection, but the selection pressure did vary among lineages. There was no phylogenetic evidence of transient deleterious mutations. ORF2b, which codes for the polymerase and is the most constrained ORF, tends to diversify clock-like. With the other ORFs and the full genome, the departure from the strict clock model was limited. This likely reflects the dominant conservative selection pressure and the clock-like fixation of synonymous mutations.",
+      "journal": "Virology",
+      "year": 2009,
+      "pub_date": "2009-11-10",
+      "authors": "Pinel-Galzi A; Mpunami A; Sangu E; Rakotomalala M; Traoré O; ... (+6)",
+      "first_author": "Pinel-Galzi A",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Rice yellow mottle virus (RYMV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754610",
+      "doi": "10.1094/PDIS-93-11-1218C",
+      "title": "First Report of Grapevine leafroll-associated virus-3 in Six Wine Grape Cultivars in Idaho.",
+      "abstract": "In recent years, wine grape (Vitis vinifera) acreage in Idaho has expanded because of favorable climatic conditions for premium wine production. Nearly 95% of the 491.7 ha (1,215 acres) of wine grapes are in the Snake River Valley with Canyon County accounting for 81% of the vines. Previous studies have shown that grapevine leafroll disease (GLD) is the most widespread and economically significant virus disease in wine grapes in Washington and Oregon (1,2). However, little is known about the incidence and economic impact of GLD on wine grapes in Idaho. During the 2008 growing season, leaf samples were collected from approximately 25 individual grapevines of red-berried cultivars (Cabernet Sauvignon, Merlot, Syrah, and Petit Syrah) showing GLD symptoms and white-berried (Chardonnay) cultivars with suspected GLD symptoms growing in 10 geographically separate vineyards in Canyon County. An additional five samples were collected from a Lemberger block in Elmore County. Petiole extracts from these samples were tested by single-tube reverse transcription (RT)-PCR with primers LC 1 (5'-CGC TAG GGC TGT GGA AGT ATT-3') and LC 2 (5'-GTT GTC CCG GGT ACC AGA TAT-3') specific for the heat shock protein 70 homologue (HSP-70 gene) of Grapevine leafroll-associated virus-3 (GLRaV-3) (3). All samples, except the Petit Syrah, produced a single band of the expected size of 546 bp. ELISA with GLRaV-3-specific antibodies (BIOREBA AG, Reinach, Switzerland) confirmed the presence of the virus in samples that were positive in RT-PCR. GLRaV-3-specific amplicons were cloned in pCR2.1 plasmid (Invitrogen Corp., Carlsbad, CA) and 2 to 3 independent clones per isolate were sequenced in both orientations. A pairwise comparison of 22 sequences, six from Chardonnay (GenBank Accessions GQ344810, GQ344811, GQ344823, GQ344824, GQ344825, and GQ344826), five from Cabernet Sauvignon (GQ344807, GQ344808, GQ344809, GQ344827, and GQ344828), four each from Merlot (GQ344815, GQ344816, GQ344817, and GQ344818) and Syrah (GQ344819, GQ344820, GQ344821, and GQ344822), and three from Lemberger (GQ344812, GQ344813, and GQ344814) showed 87 to 100% identity at the nucleotide level and 92 to 100% identity at the amino acid level. A pairwise comparison of HSP-70 sequences of GLRaV-3 isolates from Idaho with corresponding sequences of GLRaV-3 isolates from GenBank showed nucleotide sequence identities between 88% (AJ748519) and 100% (DQ780885). Phylogenetic analysis of HSP-70 sequences from Idaho and GenBank showed clustering of Idaho sequences into five groups, with 12 sequences clustering with a Washington isolate (DQ780885), six sequences in a second group clustering with an isolate from Tunisia (AJ748522), two sequences in a third group clustering with an isolate from Austria (AJ748513), and one sequence each in groups four and five clustering with isolates from Italy (AJ748520) and Washington (DQ780889), respectively. The clustering was not cultivar- or vineyard-specific, suggesting separate introductions of different GLRaV-3 isolates in planting materials. To our knowledge, this is the first report of GLRaV-3 in grapevines grown in Idaho. These and previous results (1,2), indicate the wide distribution of GLRaV-3 in several grapevine cultivars in the Pacific Northwest Region. References: (1) R. R. Martin et al. Plant Dis. 89:763, 2005. (2) R. A. Naidu et al. (Abstr.) Phytopathology 96(suppl.):S83, 2006. (3) M. J. Soule et al. Plant Dis. 90:1461, 2006.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-11-01",
+      "authors": "Mekuria T A; Karasev A V; Martin R R; Naidu R A",
+      "first_author": "Mekuria T A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Grapevine leafroll-associated virus-3 (GLRaV-3)",
+      "taxonomy": "Closteroviridae, Ampelovirus",
+      "host_plant": "Vitis vinifera (酿酒葡萄): Cabernet Sauvignon, Merlot, Syrah, Petit Syrah, Chardonnay, Lemberger",
+      "location": "美国爱达荷州，坎宁县和埃尔莫尔县",
+      "results": "除Petit Syrah外，其他品种均检测到GLRaV-3；HSP-70基因序列核苷酸同源性87-100%，氨基酸92-100%；系统发育分为5组，与华盛顿、突尼斯、奥地利、意大利等分离株聚类。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754607",
+      "doi": "10.1094/PDIS-93-11-1216A",
+      "title": "First Report of a Natural Infection by Mexican Papita Viroid and Tomato Chlorotic Dwarf Viroid on Greenhouse Tomatoes in Mexico.",
+      "abstract": "In early 2008, tomato plants (Solanum lycopersicum) grown in a large greenhouse facility located near Mexico City exhibited general stunting, leaf chlorosis at the top of the diseased plant that later turned bronze or purple, and reduced-sized fruits. Initially, diseased plants were confined to a 5-ha greenhouse, but the disease quickly spread to two additional 5-ha greenhouses in the summer of 2008. By the end of 2008, approximately 5% of tomato plants in 35-ha of greenhouse were infected. Sixteen diseased samples were collected, twelve in 2008 and four in 2009. Bioassays through mechanical inoculation with leaf extracts of diseased samples demonstrated the transmissibility of the causal agent to plants of tomato cvs. Horizon or Rutgers, which expressed symptoms that were similar to those on the source plants. Serological or PCR assays were negative for several commonly occurring greenhouse tomato viruses. However, an expected size product (~196 bp) was consistently detected by reverse transcription (RT)-PCR using pospiviroid-specific primers Pospil-RE and Pospil-FW (4) in all symptomatic samples or from the mechanically inoculated tomato plants. Preliminary analysis with sequences obtained from direct sequencing of amplicons revealed one dominant sequence with 94% identity to Mexican papita viroid (MPVd) (GenBank Accessions Nos. L78454 and L78456-L78463). However, further analysis of the cloned cDNAs indicated a mixed infection of two pospiviroids in two samples. Of 10 cDNA clones analyzed, 9 were MPVd-like sequences and one was sequence of Tomato chlorotic dwarf viroid (TCDVd). Further analysis using full genomic sequences obtained by RT-PCR with previously designed primers (2) or a new set of primers (MTTVd-F: 5' GGG GAA ACC TGG AGC GAA CTG G, and MTTVd-R: 5' GGG GAT CCC TGA AGC GCT CCT) revealed genetic diversity in this population. Eight of thirteen cloned cDNAs represented by the 359-nt sequence of isolate Mex8 (GenBank Accession No. GQ131572) had 93 to 94% nucleotide sequence identity to other MPVd isolates (L78454 and L78456-L78463). Five other cDNA clones represented by the 361-nt sequence of isolate HM2 (GenBank Accession No. GQ131573) were 99% identical to a TCDVd isolate recently identified in Arizona (GenBank Accession No. FJ822878) and 96 to 97% identical to TCDVd isolates from other areas (GenBank Accession Nos. AF162131 and AB329668). These results are the first evidence of a mixed infection of two viroids infecting tomatoes in Mexico. MPVd was first identified in Mexico on papita (S. cardiophyllum) in 1996 (1). The origin of TCDVd in this greenhouse was not determined, but TCDVd potentially can be seed transmitted in tomato (3). The close relationship between the Mexican and the U.S. isolates suggests that TCDVd in these two countries may share a common origin, likely from seed. To our knowledge, this is the first report of a natural infection of MPVd and TCDVd on tomatoes in Mexico. References: (1) J. P. Martinez-Soriano et al. Proc. Natl. Acad. Sci. U.S.A. 93:9397, 1996. (2) A. M. Shamloul et al. Can. J. Plant Pathol. 19:89, 1997. (3) R. P. Singh and A. D. Dilworth. Eur. J. Plant Pathol. 123:111, 2009. (4) J. Th. J. Verhoeven et al. Eur. J. Plant Pathol. 110:823, 2004.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-11-01",
+      "authors": "Ling K-S; Zhang W",
+      "first_author": "Ling K-S",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Mexican Papita Viroid (MPVd), Tomato Chlorotic Dwarf Viroid (TCDVd)",
+      "taxonomy": "Pospiviroidae, Pospiviroid",
+      "host_plant": "Solanum lycopersicum (番茄)",
+      "location": "墨西哥，墨西哥城附近",
+      "results": "病样中检出两种类病毒；MPVd分离物与已知分离物同源性93-94%，TCDVd分离物与亚利桑那分离物同源性99%，证实混合感染。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754605",
+      "doi": "10.1094/PDIS-93-11-1214B",
+      "title": "First Report of Soybean yellow mottle mosaic virus in Soybean in North America.",
+      "abstract": "Soybean yellow mottle mosaic virus (SYMMV) is a soybean-infecting virus recently discovered in Korea that initially induces bright yellow mosaic on leaves followed by stunting and reduced growth of older leaves (1). Nucleotide sequence analysis of genomic RNA of the Korean SYMMV isolate suggested that the virus is a new member of the genus Carmovirus in the family Tombusviridae. To determine whether SYMMV is present in the United States, single leaflets were collected without regard for symptoms from 7 to 10 plants in each of 136 plots in August 2008 from a research field in Stoneville, MS that contained 16 plant introductions (including five from Korea) and 'Williams 82'. Samples were grouped into 10 pools of 100 leaves from which total RNA was extracted with the Qiagen RNeasy Plant Mini Kit (Germantown, MD), reverse transcribed, and amplified with SuperScript III Platinum SYBR Green One-Step Quantitative Real-time Reverse Transcriptase-PCR Kit (Invitrogen, Carlsbad, CA) and two pairs of oligonucleotide primers (5'-CGTCTGCCAGGGTTTAATACTA-3', and 5'-GATTAGCATGTCAGGGTGGTCG-3'; and 5'-ACTGAGTCCCCTGCTTAT-3' and 5'-CATCACTAGCGTCYGGATCA-3') that were designed from regions conserved between SYMMV and Cowpea mottle virus (CPMoV; a related and seed-transmitted carmovirus). Six 100-leaflet pools were positive with both primer sets and four pools were negative with both primer sets. Total RNA extracted from one positive pool was reverse transcribed using SuperScript II reverse transcriptase and a primer complementary to nt 4,000 to 4,009 of the SYMMV genome and amplified using iProof DNA polymerase (Bio-Rad, Hercules, CA) as two overlapping DNA fragments using primers corresponding to nt 1 to 21 and complementary to nt 3,483 to 3,508 and corresponding to nt 3,366 to 3,391 and complementary to nt 4,000 to 4,009. DNA fragments were sequenced using a BigDye Terminator Cycle Sequencing Kit and ABI 3730XL capillary sequencers (Applied Biosystems, Foster City, CA). The 4,009-nt sequence of the Mississippi SYMMV isolate (GenBank Accession No. FJ707484) was 96% identical to the Korean SYMMV isolate and 65% identical to CPMoV. Because of the sampling techniques used, it was not possible to associate SYMMV-positive plants with disease symptoms in Mississippi. To our knowledge, this is the first report of SYMMV in North America. Reference: (1) M. Nam et al. Online publication. doi:10.1077/s00705-009-0480. Arch. Virol., 2009.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-11-01",
+      "authors": "Li S; Moon J S; Lee S H; Domier L L",
+      "first_author": "Li S",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Soybean yellow mottle mosaic virus (SYMMV)",
+      "taxonomy": "Tombusviridae, Carmovirus",
+      "host_plant": "大豆 (Glycine max)",
+      "location": "美国密西西比州Stoneville",
+      "results": "136个小区叶片混池中6个阳性，获得4009-nt基因组序列，与韩国分离株同源性96%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754601",
+      "doi": "10.1094/PDIS-93-11-1221B",
+      "title": "First Report of Tobacco mosaic virus in Abutilon theophrasti in China.",
+      "abstract": "Velvetleaf (Abutilon theophrasti Medic), a tall, fecund, self-fertile annual plant in the family Malvaceae, is widely grown in China as a fiber crop and for its medicinal properties. In July of 2008, we observed diffuse chlorotic and necrotic spots on the oldest leaves of velvetleaf plants in the field in Shanxi Province. Sap extracts from six symptomatic plants were tested by direct antigen coated ELISA using polyclonal antibodies specific to Potato virus Y (PVY) and monoclonal antibodies specific to Tomato mosaic virus (ToMV), Cucumber mosaic virus (CMV), and Tobacco mosaic virus (TMV). Five of the six samples were negative for ToMV, CMV, and PVY but positive for TMV. Double-stranded RNA extracted from leaves of the five velvetleaf plants was used as template for reverse transcription (RT)-PCR as described by Krajačića et al. (1) and Li et al. (2) with some modifications. One-step RT-PCR was performed using a Quant One Step RT-PCR Kit (TIANGEN BIOTECH CO., LTD., Beijing, China) with sense (5'-CTGTTTAGCCGGTTTGGT-3'), and antisense (5'-TCCCTTTACGGACATCAC-3') primers (3) designed to specifically amplify a fragment of the movement protein coding region of TMV. The expected 470-bp fragments were amplified from dsRNA from these five plants and the amplicon from each plant was cloned and sequenced (GenBank Accession No. FJ873800). Comparisons of a consensus sequence derived from the five amplicons with the nucleotide sequences available in the NCBI database using BLAST showed 99% identity with TMV from South Korea (GenBank Accession No. AB354955) and Spain (Accession No. AJ308692) and 98% with TMV from China (Accession No. AF165190). The serological, RT-PCR results and sequence data revealed that these velvetleaf plants were infected by TMV. On the basis of the serological analysis and genome sequence comparisons, this isolate was tentatively designated as TMV-Velvetleaf. To our knowledge, this is the first report of TMV in Abutilon theophrasti Medic in China. References: (1) M. Krajačić et al. J. Chromatogr A. 1144:111, 2007. (2) H. Li et al. Agric. Sci. Chin. 6:86, 2007. (3) Y. B. Niu et al. Chin. Biotechnol. 29:76, 2009.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-11-01",
+      "authors": "Niu Y B; Qing L; Yao M; Wang D F; Liu J D; ... (+1)",
+      "first_author": "Niu Y B",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tobacco mosaic virus (TMV)",
+      "taxonomy": "Virgaviridae, Tobamovirus",
+      "host_plant": "西蜀苘麻 (Abutilon theophrasti)",
+      "location": "中国山西省",
+      "results": "5株症状植物ELISA检测TMV阳性，RT-PCR扩增470 bp运动蛋白片段，序列与TMV同源性99%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754604",
+      "doi": "10.1094/PDIS-93-11-1218B",
+      "title": "First Report of Carrot red leaf virus and Carrot mottle virus, Causal Agents of Carrot Motley Dwarf, in Carrot in Mauritius.",
+      "abstract": "Carrot motley dwarf (CMD) affects carrot and other apiaceous plants by causing leaf yellowing or reddening as well as plant stunting and leads often to serious economic losses wherever these crops are grown (2). CMD has been reported from Australia, Europe, Japan, Israel, and North America and is known to result from a mixed infection by at least two viruses, the polerovirus, Carrot red leaf virus (CtRLV), and one of the umbraviruses, Carrot mottle virus (CMoV) or Carrot mottle mimic virus (CMoMV). The viruses are transmitted in a circulative persistent manner by aphid species (Cavariella spp.). In November of 2008, symptoms typical of CMD were observed in carrot (Daucus carota) and coriander (Coriandrum sativum) plantations in the region of Henrietta in the central part of Mauritius. Carrot cultivars affected were Victoria, Sigma, and Namdhari. Incidences of up to 50% were recorded in some fields. Symptoms were observed mainly on plants near the edges of fields and were initially attributed to physiological factors. However, following RNA extraction from affected carrot plants and reverse transcription (RT)-PCR, fragments of the expected sizes (CtRLV; 377 bp: CMoV; 549 bp) were obtained. For CtRLV, a pair of degenerate primers (S2/AS3 [1]) for poleroviruses, and for the above mentioned umbraviruses, a universal primer pair (UmbraCS: CTTTGGAGTACACAACAACTCC and UmbraCAS: GCA/GTCIAGICCIACACAA/GACTGG, I = Inosin; unpublished) was used. Direct sequencing of one PCR product for each virus (Eurofins MWG Operon GmbH, Martinsried, Germany) and comparison with sequences retrieved from GenBank resulted in nucleotide and amino acid sequence identities of 93 and 90% (coat protein) to the CtRLV strain UK-1 (Accession No. AY695933) and 86 and 96% (replicase) to the German CMoV isolate (Accession No. FJ188473), respectively. Carrot samples also tested CtRLV-positive in triple-antibody sandwich-ELISA using polyclonal IgGs to CtRLV for trapping and a mixture of two CtRLV-specific monoclonal antibodies (CtRLV-2-3A9 and CtRLV 3-4B9) as detecting antibodies (all from the stock of the Julius Kuehn Institute; H. J. Vetten, Braunschweig, Germany). The presence of CMoV was confirmed by sap transmission to Nicotiana benthamiana and N. occidentalis 'P1', which resulted in vein yellowing/etching symptoms. In addition, agarose gel electrophoresis of the dsRNA extract of a primary infected carrot sample revealed major dsRNAs of approximately 4.2 and 1.4 kbp, which represent the genomic and subgenomic RNAs of an umbravirus. Thus, sequence analysis, as well as serological and biological data, demonstrates that CMD-affected carrot plants from Mauritius were infected with CtRLV and CMoV isolates closely related to those from Europe. The sequences obtained in this study for CtRLV and CMoV have been deposited in GenBank under Accession Nos. FJ969849 and FJ969848, respectively. To our knowledge, this is the first report of CMD in Mauritius and the Indian Ocean Region. Future works comprise an island wide survey across carrot-growing regions to determine the incidence of the virus complex and the natural host range of the viruses in Mauritius. References: (1) A. D. Abraham et al. Plant Dis. 91:1059, 2007. (2) A. F. Murant. No 137 in: Descriptions of Plant Viruses. Assoc. Appl. Biol. Kew, England, 1974.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-11-01",
+      "authors": "Gungoosingh-Bunwaree A; Menzel W; Winter S; Vally V; Seewoogoolam R; ... (+2)",
+      "first_author": "Gungoosingh-Bunwaree A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Carrot red leaf virus (CtRLV), Carrot mottle virus (CMoV)",
+      "taxonomy": "Polerovirus (CtRLV), Umbravirus (CMoV)",
+      "host_plant": "胡萝卜 (Daucus carota), 芫荽 (Coriandrum sativum)",
+      "location": "毛里求斯中部 Henrietta 地区",
+      "results": "从病株中检测到CtRLV和CMoV，序列与欧洲株系高度相似（CtRLV CP 93%核苷酸/90%氨基酸；CMoV 复制酶86%/96%），dsRNA提取显示4.2和1.4 kbp片段。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30754600",
+      "doi": "10.1094/PDIS-93-11-1220C",
+      "title": "First Report of Faba bean necrotic yellows virus Affecting Legume Crops in Azerbaijan.",
+      "abstract": "A total of 482 chickpea (Cicer arietinum L.), 182 lentil (Lens culinaris Medik.), 12 vetch (Vicia sativa L.), 5 field pea (Pisum sativum L.), and 3 faba bean (Vicia faba L.) samples were collected from plants with symptoms suggestive of a viral infection (leaf rolling, yellowing, and stunting) from the major legume-production areas of Azerbaijan in the 2007 and 2008 growing seasons. All samples were tested by the tissue-blot immunoassay (3) at the Virology Laboratory of ICARDA, Syria using 11 specific legume virus antisera including a monoclonal antibody (2-5H9) (1) for Faba bean necrotic yellows virus (FBNYV). Laboratory tests showed that FBNYV was detected in 73, 61, 11, 3, and 2 samples of chickpea, lentil, vetch, field pea, and faba bean, respectively. Total DNA was extracted from six FBNYV-positive samples (two chickpea, two lentil, and two vetch) and tested by PCR with the following four primer sets (FBNYV, Milk vetch dwarf virus [MDV], Subterranean clover stunt virus [SCSV], and nanovirus DNA-R primers [F103 and R101]) (2). All six Azeri samples as well as the reference nanovirus isolates (SCSV-Australia, MDV-Japan, and FBNYV-Syria) generated amplicons of the expected size (~770 bp) using the nanovirus DNA-R primers (F103 & R101). In addition, Azeri samples and FBNYV-Syria yielded a PCR amplicon of the expected size (666 bp) with the FBNYV primer pair. The MDV- and SCSV-specific primers did not generate amplicons with these six samples. Sequence analysis of the FBNYV amplicons from two isolates (AzL 282-07 from lentil [GenBank Accession No. GQ351600] and AzV 277-07 from vetch [GenBank Accession No. GQ371215]) showed that they were 99% identical with each other. Comparing the sequence of AzL 282-07 with that of other nanoviruses revealed identities of 97% (FBNYV-Spain; DQ830990), 96% (FBNYV-Iran; AM493900), 92% (FBNYV-Syria; Y11408), 92% (FBNYV-Egypt; AJ132183), 78% (MDV; AB044387) and 69% (SCSV-Australia; U16734). FBNYV has been reported to infect food legumes in many countries in West Asia and North Africa and cause economic losses on faba bean in Egypt, Jordan, and Syria. To our knowledge, this is the first record of FBNYV infecting legume crops in Azerbaijan. References: (1) A. Franz et al. Ann. Appl. Biol. 128:255, 1996. (2) S. G. Kumari et al. Phytopathol. Mediterr. 47:42, 2008. (3) K. M. Makkouk and A. Comeau. Eur. J. Plant Pathol. 100:71, 1994.",
+      "journal": "Plant disease",
+      "year": 2009,
+      "pub_date": "2009-11-01",
+      "authors": "Kumari S G; Attar N; Mustafayev E; Akparov Z",
+      "first_author": "Kumari S G",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Faba bean necrotic yellows virus (FBNYV)",
+      "taxonomy": "Nanoviridae, Nanovirus",
+      "host_plant": "鹰嘴豆、扁豆、野豌豆、豌豆、蚕豆",
+      "location": "阿塞拜疆",
+      "results": "在150份样品中检测到FBNYV，来自鹰嘴豆、扁豆、野豌豆、豌豆和蚕豆；PCR和测序确认，与已知FBNYV分离物序列相似性达92%以上。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19903330",
+      "doi": "10.1186/1743-422X-6-194",
+      "title": "Comparative analysis of Panicum streak virus and Maize streak virus diversity, recombination patterns and phylogeography.",
+      "abstract": "[BACKGROUND] Panicum streak virus (PanSV; Family Geminiviridae; Genus Mastrevirus) is a close relative of Maize streak virus (MSV), the most serious viral threat to maize production in Africa. PanSV and MSV have the same leafhopper vector species, largely overlapping natural host ranges and similar geographical distributions across Africa and its associated Indian Ocean Islands. Unlike MSV, however, PanSV has no known economic relevance. [RESULTS] Here we report on 16 new PanSV full genome sequences sampled throughout Africa and use these together with others in public databases to reveal that PanSV and MSV populations in general share very similar patterns of genetic exchange and geographically structured diversity. A potentially important difference between the species, however, is that the movement of MSV strains throughout Africa is apparently less constrained than that of PanSV strains. Interestingly the MSV-A strain which causes maize streak disease is apparently the most mobile of all the PanSV and MSV strains investigated. [CONCLUSION] We therefore hypothesize that the generally increased mobility of MSV relative to other closely related species such as PanSV, may have been an important evolutionary step in the eventual emergence of MSV-A as a serious agricultural pathogen.The GenBank accession numbers for the sequences reported in this paper are GQ415386-GQ415401.",
+      "journal": "Virology journal",
+      "year": 2009,
+      "pub_date": "2009-11-10",
+      "authors": "Varsani Arvind; Monjane Aderito L; Donaldson Lara; Oluwafemi Sunday; Zinga Innocent; ... (+11)",
+      "first_author": "Varsani Arvind",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Panicum streak virus (PanSV) 和 Maize streak virus (MSV)",
+      "taxonomy": "双生病毒科(Geminiviridae)，菜豆病毒属(Mastrevirus)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19821737",
+      "doi": "10.1094/PHYTO-99-11-1321",
+      "title": "Broomrape can acquire viruses from its hosts.",
+      "abstract": "Broomrapes (Phelipanche, formerly Orobanche) are parasitic plants that physically connect with the vascular systems of their hosts through haustorial structures. In this study, we found that Cucumber mosaic virus (CMV), Tomato mosaic virus (ToMV), Potato virus Y (PVY), and Tomato yellow leaf curl virus (TYLCV) translocate from infected host plants to Phelipanche aegyptiaca. In order to examine whether these viruses, and specifically CMV, replicate in the parasite, we tested several replication parameters. We detected accumulation of both plus and minus strands of CMV genomic RNA and CMV-derived siRNAs in the shoots of Phelipanche grown on CMV-infected tobacco and tomato plants. We purified CMV particles from Phelipanche grown on CMV-infected plants. These particles were present in amounts comparable to those found in the hosts' leaves. These data indicate that CMV replicates in Phelipanche tissues. In addition, viable ToMV and PVY were observed, and the plus and minus strand RNAs of ToMV were detected in Phelipanche shoots grown on infected hosts. However, we found only low levels of ToMV coat protein and did not detect any PVY coat protein. We also detected genomic TYLCV DNA in shoots of Phelipanche grown on TYLCV-infected tomato. Thus, for the first time, we demonstrate that broomrape is a host for at least one plant virus CMV, and possibly various other viruses.",
+      "journal": "Phytopathology",
+      "year": 2009,
+      "pub_date": "2009-11-01",
+      "authors": "Gal-On Amit; Naglis Anna; Leibman Diana; Ziadna Hammam; Kathiravan Kathir; ... (+5)",
+      "first_author": "Gal-On Amit",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Cucumber mosaic virus (CMV), Tomato mosaic virus (ToMV), Potato virus Y (PVY), Tomato yellow leaf curl virus (TYLCV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

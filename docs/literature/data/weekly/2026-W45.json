@@ -1,0 +1,35 @@
+{
+  "week": "2026-W45",
+  "start": "2026-11-02",
+  "end": "2026-11-08",
+  "generated": "2026-07-10 10:59:00",
+  "total_new": 1,
+  "by_category": {
+    "Tobamo_Virga": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "42096805",
+      "doi": "10.1016/j.saa.2026.127999",
+      "title": "Assembly of AuNPs on TMV biotemplates toward SERS substrate development.",
+      "abstract": "Tobacco mosaic virus (TMV) is an effective nanorod-shaped biotemplate for assembling metal nanoparticles because of its precise protein structure and chemical stability. In this study, we explore the formation of gold nanoparticle-TMV (TMV-AuNP) complexes by using a TMV variant exposing more than 2100 thiol groups per 300 nm rod, and analyze how the solution environment influences nanoparticle attachment. By systematically adjusting the pH and citrate buffer concentrations, we determine conditions that enable defined and homogenous gold nanoparticle attachment along single TMV particle while minimizing unwanted aggregation. These TMV-AuNP complexes were immobilized on glass surfaces and tested as platforms for surface-enhanced Raman spectroscopy (SERS) with Janus Green B (JGB) as the probe. Under optimal conditions (8.5 mM citrate buffer, pH 4), the TMV-AuNP substrates yielded about 1.6 times higher SERS intensity and a 12% decrease in relative standard deviation compared to non-templated gold nanoparticle deposits. These findings emphasize the importance of buffer chemistry in TMV-based nanoparticle assemblies and provide a preliminary proof-of-concept demonstration of how biological templates may be utilized to improve SERS signal uniformity.",
+      "journal": "Spectrochimica acta. Part A, Molecular and biomolecular spectroscopy",
+      "year": 2026,
+      "pub_date": "2026-11-05",
+      "authors": "Tu Zhengke; Bertz Morten; Kunimoto Masahiro; Jahan Fatema; Welden Melanie; ... (+3)",
+      "first_author": "Tu Zhengke",
+      "categories": [
+        "Tobamo_Virga"
+      ],
+      "virus_name": "Tobacco mosaic virus (TMV)",
+      "taxonomy": "未提及",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "最优条件下（8.5 mM柠檬酸盐缓冲液，pH4），TMV-AuNP基底SERS强度比非模板沉积提高1.6倍，相对标准偏差降低12%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

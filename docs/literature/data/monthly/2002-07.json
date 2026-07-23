@@ -1,0 +1,282 @@
+{
+  "month": "2002-07",
+  "generated": "2026-07-13 02:59:42",
+  "total": 19,
+  "by_category": {
+    "Host_Virus_Interactions": 10,
+    "Antiviral_Resistance_Genes": 6,
+    "New_Virus": 3,
+    "Control_Management": 2,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30818589",
+      "doi": "10.1094/PDIS.2002.86.7.814D",
+      "title": "First Report of Tomato yellow leaf curl virus Associated with Beans, Phaseolus vulgaris, in Cuba.",
+      "abstract": "Beans with yellow mosaic and/or leaf crumple symptoms were collected in three fields in the southern area of the province of Havana, Cuba in December 2001 and February 2002. DNA was extracted from the fresh bean leaves of 25 samples (1). Dot blot hybridization was performed at high stringency with a specific probe for Tomato yellow leaf curl virus (TYLCV). The specific probe was prepared by alkaline phosphatase labeling of the polymerase chain reaction (PCR) fragment amplified with primer pair, PTYIRv21/PTYIRc287, containing the intergenic region (IR) of TYLCV, and chemiluminescent hybridization was completed as described by the manufacturer (AlkPhos Direct Labeling and Detection Systems, Amersham Pharmacia Biotech Inc., Piscataway, NJ). Four of the samples had positive hybridization signals. PCR was performed with overlapping primers for TYLCV (2) with the DNA extract from sample 01-44, which gave a positive hybridization signal with the TYLCV probe, and a 2.8-kb fragment was obtained. This fragment was cloned in pGem T-Easy (pBeTY44) and partially sequenced. Greater than 96% nt identity was obtained for the 591 nt of the IR and 504 nt of the N-terminus of the Rep gene with TYLCV (GenBank Accession No. AF260331). Also, PCR was completed on 11 of the 25 samples with the degenerate primer pair PAL1v1978/PAR1c715 for DNA-A (3). Eight samples gave fragment sizes of 1.4 kb and one sample gave a fragment of 1.3 kb. The 1.3-kb fragment from sample number 01-50 was cloned in pGem T-Easy (pBeBG50) and partially sequenced. Pairwise nucleotide comparisons with Bean golden yellow mosaic virus (BGYMV, GenBank Accession No. M91604) were 95% for 719 nt of the N-terminus of the Rep gene. These results are consistent with the association of both TYLCV and BGYMV in beans and have important implications for future disease management strategies. References: (1) G. P. Accotto et al. Eur. J. Plant. Pathol. 106:179, 2000. (2) M. K. Nakhla et al. Plant Dis. 78:926, 1994. (3) M. Rojas et al. Plant Dis. 77:340, 1993.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-07-01",
+      "authors": "Martínez Zubiaur Y; Quiñones M; Fonseca D; Potter J L; Maxwell D P",
+      "first_author": "Martínez Zubiaur Y",
+      "categories": [
+        "Control_Management",
+        "New_Virus"
+      ],
+      "virus_name": "番茄黄化曲叶病毒 (TYLCV) 和菜豆金色花叶病毒 (BGYMV)",
+      "taxonomy": "",
+      "host_plant": "菜豆 (Phaseolus vulgaris)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12143316",
+      "doi": "",
+      "title": "[Cloning a gene related to resistance to TuMV in cabbage].",
+      "abstract": "A cDNA library was constructed from cabbage 84075 which resists TuMV. The degenerate primers was designed with the disease resistance gene conservative domain (NBS-LRR). The fragments of 513 bp were amplified by RT-PCR and genomic DNA PCR from resistant material 84075, then cloned and sequenced. Two recombinants which are highly homologous with the resistance genes cloned in other plants were used as probes, (named as Bor1, Bor2), the cDNA library was screened. A positive clone was obtained, named as TuR2, whose length was 762 bp, which encodes 226 amino acids, contains a long 681 bp open reading frame (ORF), and has different homology score of amino acid compared with the cloned resistance disease genes of other plants. TuR2 was used as probe. Southern blotting hybridization with genomic DNA shows that TuR2 is probably present in single copy; No. rthern blotting hybridization with RNA shows that the gene expression is constitutive and not differential in every part of the resistance plant 84075, the result of separating detection in F2 population shows that TuR2 gene is probably related to resistance to TuMV in cabbage.",
+      "journal": "Yi chuan xue bao = Acta genetica Sinica",
+      "year": 2002,
+      "pub_date": "2002-07-01",
+      "authors": "Cao Bi-Hao; Song Hong-Yuan; Lei Jian-Jun; Song Ming; Yang Zhao-Hui",
+      "first_author": "Cao Bi-Hao",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "TuMV（芜菁花叶病毒）",
+      "taxonomy": "",
+      "host_plant": "甘蓝",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12110203",
+      "doi": "10.1016/s0966-842x(02)02387-9",
+      "title": "Viral suppression of systemic silencing.",
+      "abstract": "RNA silencing in plants is a form of antiviral defense that was originally discovered from the anomalous effects of transgenes. The process is associated with a systemic signal, presumed to be RNA, and is suppressed by plant virus-encoded proteins. One of these proteins, the 2b protein of cucumber mosaic virus, prevents systemic spread of the signal molecule but, curiously, is located in the nucleus of infected cells. The antiviral role of silencing might also apply in animals because a suppressor of silencing encoded by an insect virus was identified recently.",
+      "journal": "Trends in microbiology",
+      "year": 2002,
+      "pub_date": "2002-07-01",
+      "authors": "Baulcombe David",
+      "first_author": "Baulcombe David",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "cucumber mosaic virus (CMV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12119369",
+      "doi": "10.1105/tpc.002493",
+      "title": "Role of SCF ubiquitin-ligase and the COP9 signalosome in the N gene-mediated resistance response to Tobacco mosaic virus.",
+      "abstract": "The tobacco N gene confers resistance to Tobacco mosaic virus (TMV) and encodes a toll-interleukin-1 receptor/nucleotide binding/Leu-rich repeat class protein. Recent evidence indicates that the Nicotiana benthamiana Rar1 gene (NbRar1), which encodes a protein with a zinc finger motif called CHORD (Cys- and His-rich domain), is required for the function of N. To investigate the role of NbRar1 in plant defense, we identified its interaction partners. We show that the NbRar1 protein interacts with NbSGT1, a highly conserved component of the SCF (Skp1/Cullin/F-box protein)-type E3 ubiquitin ligase complex involved in protein degradation. In addition, we show that NbSGT1 interacts with NbSKP1. Suppression of NbSGT1 and NbSKP1 shows that these genes play an important role in the N-mediated resistance response to TMV. Both NbRar1 and NbSGT1 associate with the COP9 signalosome, another multiprotein complex involved in protein degradation via the ubiquitin-proteasome pathway. Silencing of the NbCOP9 signalosome also compromises N-mediated resistance to TMV. Our results reveal new roles for SCF and the COP9 signalosome in plant defense signaling.",
+      "journal": "The Plant cell",
+      "year": 2002,
+      "pub_date": "2002-07-01",
+      "authors": "Liu Yule; Schiff Michael; Serino Giovanna; Deng Xing-Wang; Dinesh-Kumar S P",
+      "first_author": "Liu Yule",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒 (Tobacco mosaic virus)",
+      "taxonomy": "",
+      "host_plant": "烟草 (Nicotiana tabacum) 及本氏烟 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30818575",
+      "doi": "10.1094/PDIS.2002.86.7.769",
+      "title": "Quantification of Yield Losses Caused by Barley yellow dwarf virus in Wheat and Oats.",
+      "abstract": "Grain yield data obtained from five field experiments in Western Australia from 1992 to 1994, in which insecticide applications suppressed the spread of Barley yellow dwarf virus (BYDV) in wheat and oats, were used to quantify the relationships between incidence of BYDV and yield gaps, 500-seed weight, and percent shriveled grain. Yield gaps ranged from 0 to 2,700 kg/ha, and the relationship between yield gap and incidence of BYDV was always linear. Single point yield loss models revealed that BYDV infection explained most of the variation in yield gaps. There was a significant linear relationship between incidence of BYDV and 500-seed weight for wheat, but not for oats. The percent shriveled grain always increased with an increase in incidence of BYDV in wheat but not in oats. Cost-benefit relationships were determined for the return on investment when deploying imidacloprid-treated seed and/or one or two foliar applications of pyrethroid insecticides to reduce incidence of BYDV and to decrease the yield gaps in wheat and oats due to BYDV.",
+      "journal": "Plant disease",
+      "year": 2002,
+      "pub_date": "2002-07-01",
+      "authors": "McKirdy S J; Jones R A C; Nutter F W",
+      "first_author": "McKirdy S J",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Barley yellow dwarf virus (BYDV)",
+      "taxonomy": "",
+      "host_plant": "小麦和燕麦",
+      "location": "西澳大利亚",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12582561",
+      "doi": "10.1007/s00122-001-0846-4",
+      "title": "PCR Sampling of disease resistance-like sequences from a disease resistance gene cluster in soybean.",
+      "abstract": "Clusters of Resistance-like genes (RLGs) have been identified from a variety of plant species. In soybean, RLG-specific primers and BAC-fingerprinting were used to develop a contig of overlapping BACs for a cluster of RLGs on soybean linkage group J. The resistance genes Rps2 ( Phytophthora stem and root rot) and Rmd-c (powdery mildew) and the ineffective nodulation gene Rj2 were previously mapped to this region of linkage group J. PCR hybridization was used to place two TIR/NBD/LRR cDNAs on overlapping BACs from this contig. Both of the cDNAs were present on BAC 34P7. Fingerprinting of this BAC suggested as many as twelve different RLGs were present. Given the high nucleotide identity shared between cDNAs LM6 and MG13 (>90%), direct sequencing of this region would be difficult. More sequence information was needed about the RLGs within this region before sequencing could be undertaken. By comparing the genomic sequences of cDNAs LM6 and MG13 we identified conserved regions from which oligonucleotide primers specific to BAC 34P7 RLGs could be designed. The nine primer pairs spanned the genomic sequence of LM6 and produced overlapping RLG products upon amplification of BAC 34P7. Amplification products from 12 different RLGs were identified. On average, nucleotide identity between RLG sequences was greater than 95%. Examination of RLG sequences also revealed evidence of additions, deletions and duplications within targeted regions of these genes. Using previously mapped cDNAs we were able to quickly and inexpensively access multiple RLGs within a single specific cluster.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 2002,
+      "pub_date": "2002-07-01",
+      "authors": "Graham A.; Marek F.; Shoemaker C.",
+      "first_author": "Graham A.",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12077318",
+      "doi": "10.1073/pnas.142284999",
+      "title": "The barley stem rust-resistance gene Rpg1 is a novel disease-resistance gene with homology to receptor kinases.",
+      "abstract": "Stem rust caused by Puccinia graminis f. sp. tritici was among the most devastating diseases of barley in the northern Great Plains of the U.S. and Canada before the deployment of the stem rust-resistance gene Rpg1 in 1942. Since then, Rpg1 has provided durable protection against stem rust losses in widely grown barley cultivars (cvs.). Extensive efforts to clone Rpg1 by synteny with rice provided excellent flanking markers but failed to yield the gene because it does not seem to exist in rice. Here we report the map-based cloning and characterization of Rpg1. A high-resolution genetic map constructed with 8,518 gametes and a 330-kb bacterial artificial chromosome contig physical map positioned the gene between two crossovers approximately 0.21 centimorgan and 110 kb apart. The region including Rpg1 was searched for potential candidate genes by sequencing low-copy probes. Two receptor kinase-like genes were identified. The candidate gene alleles were sequenced from resistant and susceptible cvs. Only one of the candidate genes showed a pattern of apparently functional gene structure in the resistant cvs. and defective gene structure in the susceptible cvs. identifying it as the Rpg1 gene. Rpg1 encodes a receptor kinase-like protein with two tandem protein kinase domains, a novel structure for a plant disease-resistance gene. Thus, it may represent a new class of plant resistance genes.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2002,
+      "pub_date": "2002-07-09",
+      "authors": "Brueggeman R; Rostoks N; Kudrna D; Kilian A; Han F; ... (+4)",
+      "first_author": "Brueggeman R",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12148659",
+      "doi": "10.1099/00207713-52-4-1423",
+      "title": "Conflicting results obtained by RAPD-PCR and large-subunit rDNA sequences in determining and comparing yeast strains isolated from flowers: a comparison of two methods.",
+      "abstract": "Sixty-six yeast strains isolated from the nectar of various plant species in Central Europe were characterized by randomly amplified polymorphic DNA PCR (RAPD-PCR) and by sequencing of the variable D1/D2 domain of large-subunit (26S) rDNA. The usefulness of both methods for the determination and comparison of unknown ascomycetous and basidiomycetous yeast strains was compared and evaluated. The reproducibility of RAPD-PCR was shown to be low and the information obtained by this method was clearly not as precise as that obtained from sequence analysis. Numerous imponderables make RAPD-PCR analysis unreliable, at least as a means of identifying yeasts in ecological studies. The lack of standard protocols for RAPD-PCR analysis and the absence of a general database of banding patterns made it impossible to identify unknown yeast strains or to recognize new species. In contrast to RAPD-PCR, sequence analysis of the D1/D2 domain was found to be a fast and reliable method for the rapid identification of yeast species and was also shown to be an invaluable tool for the discovery of new species.",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2002,
+      "pub_date": "2002-07-01",
+      "authors": "Herzberg Michael; Fischer Reinhard; Titze Andreas",
+      "first_author": "Herzberg Michael",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12148616",
+      "doi": "10.1099/00207713-52-4-1127",
+      "title": "Corynebacterium efficiens sp. nov., a glutamic-acid-producing species from soil and vegetables.",
+      "abstract": "Three glutamic-acid-producing coryneform strains were isolated from soil and vegetable samples. Chemotaxonomic investigations indicated that these strains belonged to the genus Corynebacterium. Phylogenetic studies, based on 16S rDNA analysis, demonstrated that the three strains formed a distinct cluster within the genus Corynebacterium and that their nearest relatives were Corynebacterium glutamicum and Corynebacterium callunae, also known as glutamic-acid-producing species. The data from 16S rDNA sequence and DNA-DNA relatedness studies clearly indicated that the three isolates represented a new species within the genus Corynebacterium. All of the isolates could grow at 45 degrees C and produced acid from dextrin; these were the most significant characteristics differentiating the three isolates from their neighbours. On the basis of the data presented here, it is proposed that the three glutamic-acid-producing isolates together be classified as Corynebacterium efficiens sp. nov., the type strain of which is YS-314T (= AJ 12310T = JCM 11189T = DSM 44549T).",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2002,
+      "pub_date": "2002-07-01",
+      "authors": "Fudou Ryosuke; Jojima Yasuko; Seto Akira; Yamada Kazuhiko; Kimura Eiichiro; ... (+3)",
+      "first_author": "Fudou Ryosuke",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "28547363",
+      "doi": "10.1007/s00442-002-0966-9",
+      "title": "Fungal diversity and plant disease in mangrove forests: salt excretion as a possible defense mechanism.",
+      "abstract": "Salt excretion in leaves of some mangrove species may serve as an important defense against fungal attack, reducing the vulnerability of typically high-density, monospecific forest stands to severe disease pressure. In field surveys of a Caribbean mangrove forest in Panama, Avicennia germinans suffered much less damage from foliar diseases than did Laguncularia racemosa or Rhizophora mangle. Similarly, Avicennia leaves supported the least superficial fungal growth, endophytic colonization, and diversity, followed by Laguncularia and Rhizophora. Host specificity of leaf-colonizing fungi was greater than expected at random. We hypothesize that the different salt tolerance mechanisms in the three mangrove species may differentially regulate fungal colonization. The mangroves differ in their salt tolerance mechanisms such that Avicennia (which excretes salt through leaf glands) has the highest salinity of residual rain water on leaves, Laguncularia (which accumulates salt in the leaves) has the greatest bulk salt concentration, and Rhizophora (which excludes salt at the roots) has little salt associated with leaves. The high salt concentrations associated with leaves of Avicennia and Laguncularia, but not the low salinity of Rhizophora, were sufficient to inhibit the germination of many fungi associated with mangrove forests.",
+      "journal": "Oecologia",
+      "year": 2002,
+      "pub_date": "2002-07-01",
+      "authors": "Gilbert Gregory S; Mejía-Chang Mónica; Rojas Enith",
+      "first_author": "Gilbert Gregory S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12385234",
+      "doi": "",
+      "title": "[Agroinfiltration, a useful technique in plant molecular biology research].",
+      "abstract": "Agroinfiltration is a newly developed plant transient gene expression technique, which is simple, rapid and reproducible. It has been widely used in analyses of foreign gene expression, hypersensitive reaction, gene silencing, promoter activity and identification of new disease-resistance genes. In this paper, we describe the principle and the operation procedure of Agroinfiltration and its application in diverse aspects of plant molecular biology research. Our experiences in modification of the Agroinfiltration technique are also provided.",
+      "journal": "Sheng wu gong cheng xue bao = Chinese journal of biotechnology",
+      "year": 2002,
+      "pub_date": "2002-07-01",
+      "authors": "Liu Zhao-Ming; Liu Zong-Zhi; Bai Qing-Wu; Fang Rong-Xiang",
+      "first_author": "Liu Zhao-Ming",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12089009",
+      "doi": "10.1128/AEM.68.7.3315-3320.2002",
+      "title": "Phage-displayed peptides as developmental agonists for Phytophthora capsici zoospores.",
+      "abstract": "As part of its pathogenic life cycle, Phytophthora capsici disperses to plants through a motile zoospore stage. Molecules on the zoospore surface are involved in reception of environmental signals that direct preinfection behavior. We developed a phage display protocol to identify peptides that bind to the surface molecules of P. capsici zoospores in vitro. The selected phage-displayed peptides contained an abundance of polar amino acids and proline but were otherwise not conserved. About half of the selected phage that were tested concomitantly induced zoospore encystment in the absence of other signaling agents. A display phage was shown to bind to the zoospore but not to the cyst form of P. capsici. Two free peptides corresponding to active phage were similarly able to induce encystment of zoospores, indicating that their ability to serve as signaling ligands did not depend on their exact molecular context. Isolation and subsequent expression of peptides that act on pathogens could allow the identification of receptor molecules on the zoospore surface, in addition to forming the basis for a novel plant disease resistance strategy.",
+      "journal": "Applied and environmental microbiology",
+      "year": 2002,
+      "pub_date": "2002-07-01",
+      "authors": "Bishop-Hurley Sharon L; Mounter Sarah A; Laskey James; Morris Roy O; Elder Jim; ... (+4)",
+      "first_author": "Bishop-Hurley Sharon L",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

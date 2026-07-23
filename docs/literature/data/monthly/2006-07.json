@@ -1,0 +1,281 @@
+{
+  "month": "2006-07",
+  "generated": "2026-07-13 02:59:42",
+  "total": 22,
+  "by_category": {
+    "Host_Virus_Interactions": 8,
+    "Antiviral_Resistance_Genes": 8,
+    "New_Virus": 5,
+    "Biotechnology_Applications": 2,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "16580040",
+      "doi": "10.1016/j.virol.2006.02.028",
+      "title": "Begomovirus genetic diversity in the native plant reservoir Solanum nigrum: Evidence for the presence of a new virus species of recombinant nature.",
+      "abstract": "We examined the native plant host Solanum nigrum as reservoir of genetic diversity of begomoviruses that cause the tomato yellow leaf curl disease (TYLCD) emerging in southern Spain. Presence of isolates of all the species and strains found associated with TYLCD in this area was demonstrated. Mixed infections were common, which is a prerequisite for recombination to occur. In fact, presence of a novel recombinant begomovirus was demonstrated. Analysis of an infectious clone showed that it resulted from a genetic exchange between isolates of the ES strain of Tomato yellow leaf curl Sardinia virus and of the type strain of Tomato yellow leaf curl virus. The novel biological properties suggested that it is a step forward in the ecological adaptation to the invaded area. This recombinant represents an isolate of a new begomovirus species for which the name Tomato yellow leaf curl Axarquia virus is proposed. Spread into commercial tomatoes is shown.",
+      "journal": "Virology",
+      "year": 2006,
+      "pub_date": "2006-07-05",
+      "authors": "García-Andrés Susana; Monci Francisco; Navas-Castillo Jesús; Moriones Enrique",
+      "first_author": "García-Andrés Susana",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato yellow leaf curl Axarquia virus",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "Solanum nigrum (龙葵), 番茄",
+      "location": "西班牙南部",
+      "results": "在龙葵中检测到所有与番茄黄化卷叶病相关的病毒种类和株系，混合感染常见，发现新重组病毒由TYLCSV-ES和TYLCV型株系重组而来，并扩散到商业番茄。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16626853",
+      "doi": "10.1016/j.biochi.2006.02.012",
+      "title": "Potyvirus terminal protein VPg, effector of host eukaryotic initiation factor eIF4E.",
+      "abstract": "Potyvirus RNA contains at the 5' end a covalently linked virus-encoded protein VPg, which is required for virus infectivity. This role has been attributed to VPg interaction with the eukaryotic translation initiation factor eIF4E, a cap-binding protein. We characterized the dissociation constants for the interaction of the potato virus Y VPg with different plant eIF4Es and its isoforms and mapped the eIF(iso)4E attachment region on VPg. VPg/eIF4E interaction results in the inhibition of cell-free protein synthesis, and we show that it stems from the liberation of the cap moiety from the complex with eIF4E. Since VPg does not attach the cap, it appears that VPg induces changes in the eIF4E structure, diminishing its affinity to the cap. We show here that the initiation complex scaffold protein eIF(iso)4G increases VPg interaction with eIF(iso)4E. These data together suggest similar cap and VPg interactions with eIF4E and characterize VPg as a novel eIF4E-binding protein, which inhibits host protein synthesis at a very early stage of the initiation complex formation through the inhibition of cap attachment to the initiation factor eIF4E.",
+      "journal": "Biochimie",
+      "year": 2006,
+      "pub_date": "2006-07-01",
+      "authors": "Grzela R; Strokovska L; Andrieu J-P; Dublet B; Zagorski W; ... (+1)",
+      "first_author": "Grzela R",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "马铃薯Y病毒 (PVY)",
+      "taxonomy": "",
+      "host_plant": "植物（多种）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30781052",
+      "doi": "10.1094/PD-90-0974B",
+      "title": "First Report of Papaya ringspot virus W in Sponge Gourd from India.",
+      "abstract": "During August 2004, symptoms resembling a virus disease were observed in commercial cultivation of sponge gourd (Luffa cylindrica (L.) M. Roem. [cv. Chikni]) in Pune, India. Affected plants exhibited mosaic mottling, vein banding, and downward marginal curling on leaves. The incidence of disease was 10 to 30% based on the symptoms and confirmed using enzyme-linked immunosorbent assay (ELISA). Six fields of sponge gourd were visited, and 30 samples were collected randomly. Samples from affected fields were analyzed for the presence of virus by mechanical inoculation. Symptoms typical of those observed in the original field plants appeared 10 days after inoculation on sponge gourd. The virus isolate produced local lesions on Chenopodium amaranticolor and systemic symptoms on Cucumis melo, Cucumis sativus, Cucurbita maxima, Cucurbita pepo, L. acutangula, and L. cylindrica, but did not produce symptoms on Carica papaya (cvs. CO2 and Red Lady), Nicotiana glutinosa, N. tabacum (cv. White Burley), or Vigna unguiculata. Field-infected sponge gourd and all indicator plants were tested using double-antibody sandwich (DAS)-ELISA. The virus was identified as Papaya ringspot virus-W (PRSV-W) using DAS-ELISA (Agdia, Elkhart, IN). A strong, positive reaction was obtained with antiserum to PRSV-W but not with antisera to PRSV-P, Cucumber mosaic virus, Squash mosaic virus, Zucchini yellow mosaic virus, and Groundnut bud necrosis virus. To ensure virus purity, the isolate was passed through three successive single-lesion transfers on C. amaranticolor. Flexuous filamentous particles 775 nm long were observed with electron microscopy of leaf-dip preparation from symptomatic sponge gourd leaves. The virus particles were then decorated with a second PRSV-W antiserum obtained from the Plant Virology Unit, IARI, New Delhi. PRSV-W on sponge gourd has previously been reported from Taiwan (1). To our knowledge, this is the first report of natural occurrence of PRSV-W on sponge gourd in India. Reference: (1.) C. H. Huang et al. J. Agri. Res. China 36:413, 1987.",
+      "journal": "Plant disease",
+      "year": 2006,
+      "pub_date": "2006-07-01",
+      "authors": "Verma Raj; Baranwal V K; Prakash Satya; Tomer S P S; Pant R P; ... (+1)",
+      "first_author": "Verma Raj",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Papaya ringspot virus W (PRSV-W)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "丝瓜 (Luffa cylindrica, cv. Chikni)",
+      "location": "印度, Pune",
+      "results": "确认PRSV-W感染丝瓜，不能侵染木瓜，病毒粒子775 nm，寄主范围测定。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16760413",
+      "doi": "10.1099/vir.0.81817-0",
+      "title": "Simultaneous mutations in translation initiation factors eIF4E and eIF(iso)4E are required to prevent pepper veinal mottle virus infection of pepper.",
+      "abstract": "Capsicum resistance to Pepper veinal mottle virus (PVMV) results from complementation between the pvr2 and pvr6 resistance genes: recessive alleles at these two loci are necessary for resistance, whereas any dominant allele confers susceptibility. In line with previous results showing that pvr2 resistance alleles encode mutated versions of the eukaryotic translation initiation factor 4E (eIF4E), the involvement of other members of the eIF4E multigenic family in PVMV resistance was investigated. It was demonstrated that pvr6 corresponds to an eIF(iso)4E gene, predicted to encode the second cap-binding isoform identified in plants. Comparative genetic mapping in pepper and tomato indicated that eIF(iso)4E maps in the same genomic region as pvr6. Sequence analysis revealed an 82 nt deletion in eIF(iso)4E cDNAs from genotypes with the pvr6 resistance allele, leading to a truncated protein. This deletion was shown to co-segregate with pvr6 in doubled haploid and F(2) progeny. Transient expression in a PVMV-resistant genotype of eIF(iso)4E derived from a genotype with the pvr6(+) susceptibility allele resulted in loss of resistance to subsequent PVMV inoculation, confirming that pvr6 encodes the translation factor eIF(iso)4E. Similarly, transient expression of eIF4E from a genotype with the pvr2(+)-eIF4E susceptibility allele also resulted in loss of resistance, demonstrating that wild-type eIF4E and eIF(iso)4E are susceptibility factors for PVMV and that resistance results from the combined effect of mutations in the two cap-binding isoforms. Thus, whilst most potyviruses specifically require one eIF4E isoform to perform their replication cycle, PVMV uses either eIF4E or eIF(iso)4E for infection of pepper.",
+      "journal": "The Journal of general virology",
+      "year": 2006,
+      "pub_date": "2006-07-01",
+      "authors": "Ruffel Sandrine; Gallois Jean-Luc; Moury Benoît; Robaglia Christophe; Palloix Alain; ... (+1)",
+      "first_author": "Ruffel Sandrine",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Pepper veinal mottle virus (PVMV)",
+      "taxonomy": "",
+      "host_plant": "辣椒 (pepper)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16824961",
+      "doi": "10.1016/j.syapm.2005.10.004",
+      "title": "Paracoccus bengalensis sp. nov., a novel sulfur-oxidizing chemolithoautotroph from the rhizospheric soil of an Indian tropical leguminous plant.",
+      "abstract": "Paracoccus versutus-like isolates from the rhizosphere of Clitoria ternatea, a slender leguminous herb (family--Papilionaceae), found ubiquitously in waste places and village forests of the Lower Gangetic plains of India, presented a case of graduated infraspecific variation that was capped by the identification of a new species Paracoccus bengalensis (type strain JJJ(T) = LMG 22700(T) = MTCC 7003(T)). The diverged phenetic and genetic structure of these sulfur-oxidizing chemolithoautotrophs presented a case of apparent nonconformity of 16S rRNA gene sequence similarities with results of DNA-DNA hybridization. Despite high 16S rRNA gene sequence similarity with P. versutus one of the newly isolated strains, viz., JJJ(T) was identified as a new species of Paracoccus by virtue of its explicitly low DNA-DNA hybridization (42-45%) with the type strain of the closest species P. versutus (), distinct G + C content (65.3 mol%), physiological and biochemical differences amounting to <60% phenetic similarity with strains of P. versutus as well as new isolates akin to the species. The newly described species also had a unique fatty acid profile that was distinguished by the absence of 18:1 omega9c, unique possession of Summed feature 3 (16:1omega7c & 15:0 iso 2-OH), 19:0 10 methyl, and a much higher concentration of 19:0 cycloomega8c.",
+      "journal": "Systematic and applied microbiology",
+      "year": 2006,
+      "pub_date": "2006-07-01",
+      "authors": "Ghosh Wriddhiman; Mandal Sukhendu; Roy Pradosh",
+      "first_author": "Ghosh Wriddhiman",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16777535",
+      "doi": "10.1016/j.jplph.2005.08.016",
+      "title": "Benzothiadiazole inhibits mitochondrial NADH:ubiquinone oxidoreductase in tobacco.",
+      "abstract": "An inducer of acquired disease resistance in plants, benzo (1,2,3) thiadiazole-7-carbothioic acid S-methyl ester, exhibited direct, concentration-dependent inhibition of the NADH:ubiquinone oxidoreductase activity of complex I of the mitochondrial electron transport chain of cultured tobacco cells. The complex I activity was less sensitive to inhibition by salicylic acid, an endogenous activator of acquired disease resistance. Using a dichlorodihydrofluorescein assay, it was found that benzothiadiazole, salicylic acid and the complex I inhibitor rotenone, increased reactive oxygen species production within cells in a concentration-dependent manner. The results indicate that both benzothiadiazole and salicylic acid affect the mitochondria of treated plant cells and result in increased production of reactive oxygen species. The biochemical basis of this response could be related to the inhibition of the NADH:ubiquinone oxidoreductase activity of complex I that results in channelling of electrons via complex II, with concomitant higher levels of superoxide production.",
+      "journal": "Journal of plant physiology",
+      "year": 2006,
+      "pub_date": "2006-07-01",
+      "authors": "van der Merwe Johannes A; Dubery Ian A",
+      "first_author": "van der Merwe Johannes A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17070754",
+      "doi": "10.1016/j.ejop.2005.10.001",
+      "title": "A new soil hypotrich ciliate (Protozoa, Ciliophora) from Slovakia: Gonostomum albicarpathicum nov. spec.",
+      "abstract": "The morphology and infraciliature of the soil hypotrich ciliate, Gonostomum albicarpathicum nov. spec., collected from Biele Karpaty (White Carpathian Mts.), Slovakia, were investigated using living observations and the protargol impregnation method. This new species is distinguished from its congeners by a combination of characters including arrangement of macronuclear nodules forming a pair of nodules each ahead of and behind mid-body; 6-10 frontoventral cirri and 3 frontoterminal cirri forming a short row; first frontoterminal cirrus separated from the second by a slightly greater distance than between second and third.",
+      "journal": "European journal of protistology",
+      "year": 2006,
+      "pub_date": "2006-07-01",
+      "authors": "Vd'acný Peter; Tirjaková Eva",
+      "first_author": "Vd'acný Peter",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16504434",
+      "doi": "10.1016/j.jep.2006.01.018",
+      "title": "Immunostimulant properties of Heracleum maximum Bartr.",
+      "abstract": "The root of Heracleum maximum Bartr. (Umbelliferae), known to possess direct antifungal and anti-mycobacterial properties, has been reported anecdotally to possess antiviral properties. It was therefore hypothesized that the plant may have immunostimulant properties. This hypothesis was tested using a macrophage activation assay to evaluate the ability of aqueous extracts of the root of Heracleum maximum to stimulate IL-6 production. All Heracleum maximum extracts were found to stimulate IL-6 and produced a steep dose-response curve. With the assay performed twice in the absence of the macrophage primer, IFN-gamma, the mean IL-6 production in the setting of the strongest extract was 3648pg/ml (95% CI 3361-3935) and 5430pg/ml (95% CI 4976-5885) as compared to 2722pg/ml (95% CI 2620-2824) and 6772pg/ml (95% CI 6282-7262) produced by the LPS positive control, respectively. In the presence of IFN-gamma, the strongest extract produced a mean concentration of IL-6 of 21804pg/ml (95% CI 19755-23854) surpassing the 14893pg/ml (13159-16628) produced by the LPS+IFN-gamma positive control. These positive results confirm the hypothesis of immunostimulation and thus support the anecdotal reports of antiviral activity.",
+      "journal": "Journal of ethnopharmacology",
+      "year": 2006,
+      "pub_date": "2006-07-19",
+      "authors": "Webster Duncan; Taschereau Pierre; Lee Timothy D G; Jurgens Tannis",
+      "first_author": "Webster Duncan",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16698208",
+      "doi": "10.1016/j.jep.2006.04.003",
+      "title": "Anti-infective potential of natural products: how to develop a stronger in vitro 'proof-of-concept'.",
+      "abstract": "Natural products, either as pure compounds or as standardized plant extracts, provide unlimited opportunities for new drug leads because of the unmatched availability of chemical diversity. To secure this, a number of pivotal quality standards need to be set at the level of extract processing and primary evaluation in pharmacological screening models. This review provides a number of recommendations that will help to define a more sound 'proof-of-concept' for antibacterial, antifungal, antiviral and antiparasitic potential in natural products. An integrated panel of pathogens is proposed for antimicrobial profiling, using accessible standard in vitro experimental procedures, endpoint parameters and efficacy criteria. Primary requirements include: (1) use of reference strains or fully characterized clinical isolates, (2) in vitro models on the whole organism and if possible cell-based, (3) evaluation of selectivity by parallel cytotoxicity testing and/or integrated profiling against unrelated micro-organisms, (4) adequately broad dose range, enabling dose-response curves, (5) stringent endpoint criteria with IC(50)-values generally below 100microug/ml for extracts and below 25microM for pure compounds, (6) proper preparation, storage and in-test processing of extracts, (7) inclusion of appropriate controls in each in vitro test replicate (blanks, infected and reference controls) and (8) follow-up of in vitro activity ('hit'-status) in matching animal models ('lead'-status).",
+      "journal": "Journal of ethnopharmacology",
+      "year": 2006,
+      "pub_date": "2006-07-19",
+      "authors": "Cos Paul; Vlietinck Arnold J; Berghe Dirk Vanden; Maes Louis",
+      "first_author": "Cos Paul",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16675607",
+      "doi": "10.1093/aob/mcl078",
+      "title": "Former diversity of Ephedra (Gnetales): evidence from Early Cretaceous seeds from Portugal and North America.",
+      "abstract": "[BACKGROUND AND AIMS] The extant species of the seed plant group Gnetales (Ephedra, Gnetum and Welwitschia) have been considered a remnant of a much greater, now extinct, diversity due to the pronounced differences in form and ecology among the genera. Until recently, this hypothesis has not been supported by evidence from the fossil record. This paper adds to the expanding information on Gnetales from the Early Cretaceous and describes coalified seeds from Barremian-Albian localities in Portugal and USA. [METHODS] The fossils were extracted from sediment samples by sieving in water. Adhering mineral matrix was removed by chemical treatment. Seeds were investigated using light and scanning electron microscopy. Morphology and anatomy of the seeds were documented and compared with those of extant species. [KEY RESULTS] The fossils share characters with extant Ephedra, for example papillae on the inner surface of the seed envelope and in situ polyplicate pollen grains that shed the exine during germination. They differ from extant Ephedra seeds in morphological and anatomical details as well as in their smaller size. Two new species of Ephedra are described together with one species assigned to a new genus of Gnetales. Other Ephedra-like seeds, for which pollen and critical morphological details are currently unknown, are also present in the samples. [CONCLUSIONS] These Cretaceous seeds document that key reproductive characters and pollen germination processes have remained unchanged within Ephedra for about 120 million years or more. There is sufficient variety in details of morphology to suggest that a diversity of Ephedra and Ephedra-like species were present in the Early Cretaceous flora. Their presence in Portugal and eastern North America indicates that they were widespread on the Laurasian continent. The fossil seeds are similar to seeds of Erdtmanithecales and this supports the previously suggested relationship between Erdtmanithecales and Gnetales.",
+      "journal": "Annals of botany",
+      "year": 2006,
+      "pub_date": "2006-07-01",
+      "authors": "Rydin Catarina; Pedersen Kaj Raunsgaard; Crane Peter R; Friis Else Marie",
+      "first_author": "Rydin Catarina",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16741077",
+      "doi": "10.1126/science.1128214",
+      "title": "Hierarchical action and inhibition of plant Dicer-like proteins in antiviral defense.",
+      "abstract": "The mechanisms underlying induction and suppression of RNA silencing in the ongoing plant-virus arms race are poorly understood. We show here that virus-derived small RNAs produced by Arabidopsis Dicer-like 4 (DCL4) program an effector complex conferring antiviral immunity. Inhibition of DCL4 by a viral-encoded suppressor revealed the subordinate antiviral activity of DCL2. Accordingly, inactivating both DCL2 and DCL4 was necessary and sufficient to restore systemic infection of a suppressor-deficient virus. The effects of DCL2 were overcome by increasing viral dosage in inoculated leaves, but this could not surmount additional, non-cell autonomous effects of DCL4 specifically preventing viral unloading from the vasculature. These findings define a molecular framework for studying antiviral silencing and defense in plants.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 2006,
+      "pub_date": "2006-07-07",
+      "authors": "Deleris Angélique; Gallego-Bartolome Javier; Bao Jinsong; Kasschau Kristin D; Carrington James C; ... (+1)",
+      "first_author": "Deleris Angélique",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "未提及",
+      "taxonomy": "",
+      "host_plant": "拟南芥",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16740148",
+      "doi": "10.1111/j.1365-313X.2006.02772.x",
+      "title": "Rapid generation of new powdery mildew resistance genes after wheat domestication.",
+      "abstract": "Plant defence against pathogens is controlled by disease resistance (R) gene products that directly or indirectly detect specific pathogen effectors. Plant-pathogen interactions have been proposed to follow a co-evolutionary arms-race model where R genes are recent and evolve rapidly in response to structural changes in matching pathogen effectors. However, the longevity and extensive polymorphism of R genes studied were more consistent with balancing selection maintaining ancient and diverse R genes or alleles. In bread wheat (Triticum aestivum), the Pm3 locus confers race-specific resistance to wheat powdery mildew (Blumeria graminis f.sp. triticii). Here we describe recently generated Pm3 resistance alleles that all derive from one susceptible allele, Pm3CS, which is widespread among hexaploid bread-wheat lines. One group of four Pm3 resistance alleles shows few, clearly delimited, polymorphic sequence blocks of ancient origin, embedded in sequences identical to Pm3CS and possibly derived from gene conversion. A second group of three alleles differs from Pm3CS by only two to five mutations, all non-synonymous, and all in the leucine-rich repeat-encoding region. Transient transformation experiments confirmed that Pm3 resistance specificities are based on one or few amino acid changes. The Pm3CS allele was found in wild tetraploid wheat, the ancestor of hexaploid bread wheat, specifically from southern Turkey, a region proposed to be the site of wheat domestication. Based on these data, we propose that the Pm3 resistance alleles were generated in agricultural ecosystems after domestication of wheat 10,000 years ago. The evolution of Pm3 alleles in wheat is best described by the model of evolved recycling, where novel genetic variation is integrated in plant populations together with recycling of old variation.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2006,
+      "pub_date": "2006-07-01",
+      "authors": "Yahiaoui Nabila; Brunner Susanne; Keller Beat",
+      "first_author": "Yahiaoui Nabila",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

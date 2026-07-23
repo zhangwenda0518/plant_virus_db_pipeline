@@ -1,0 +1,56 @@
+{
+  "month": "1990-11",
+  "generated": "2026-07-13 02:59:42",
+  "total": 2,
+  "by_category": {
+    "New_Virus": 1,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "2254750",
+      "doi": "10.1099/0022-1317-71-11-2519",
+      "title": "Detection and typing of maize streak virus and other distantly related geminiviruses of grasses by polymerase chain reaction amplification of a conserved viral sequence.",
+      "abstract": "The application of the polymerase chain reaction DNA amplification technique to the detection and typing of isolates of maize streak virus (MSV) and other related geminiviruses of grasses is described. The oligonucleotide primers used for amplification were 17-mers which contained a number of degeneracies. An approximately 250 base pair fragment was amplified from all geminivirus-infected grass and cereal samples tested. The amplification reaction was specific, working down to a concentration of 50 fg/ml of MSV-specific plasmid-cloned DNA and with a 10(-9) dilution of MSV-infected maize DNA extract. DNA could also be amplified from distantly related geminiviruses, including two different sugarcane viruses, digitaria streak virus and another as yet uncharacterized virus of a Panicum sp. Amplified DNA from a Mauritian sugarcane isolate (SSV-M) was cloned and sequenced. Sequence comparison and phylogenetic analysis showed that this sequence differed sufficiently from the analogous region of other geminiviruses for SSV-M to be considered a distinct virus. The use of the polymerase chain reaction for the amplification of gemini- and other virus genomes or genomic fragments for typing, mapping, phylogenetic analysis and taxonomy is discussed.",
+      "journal": "The Journal of general virology",
+      "year": 1990,
+      "pub_date": "1990-11-01",
+      "authors": "Rybicki E P; Hughes F L",
+      "first_author": "Rybicki E P",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Maize streak virus (MSV), Sugarcane streak virus (SSV-M), Digitaria streak virus, Panicum sp. virus",
+      "taxonomy": "Geminiviridae, Mastrevirus (推测)",
+      "host_plant": "玉米、甘蔗、马唐、黍属等禾本科植物",
+      "location": "毛里求斯（及其他未明确地区）",
+      "results": "成功扩增所有双生病毒感染的样本，灵敏度达50 fg/ml；SSV-M序列与其他双生病毒差异显著，被鉴定为新型病毒。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "28310966",
+      "doi": "10.1007/BF00317354",
+      "title": "Effects of disease resistance genes on Rhizobium symbiosis in an annual legume.",
+      "abstract": "The evolution of disease resistance in plants may be constrained if genes conferring resistance to pathogens interfere with plant responses toward other, nonpathogenic organisms. To test for such effects, we compared symbiotic nitrogen fixation in Amphicarpaea bracteata plants that differed at a major locus controlling resistance to the pathogen Synchytrium decipiens. Both resistant and susceptible plant genotypes nodulated successfully and grew significantly better in the presence of Rhizobium, although growth enhancement by Rhizobium was altered by different levels of nitrate fertilization. Plants homozygous for disease resistance achieved 2% higher growth than susceptible homozygotes across all treatments, but this difference was not significant. Resistant and susceptible plant genotypes did not differ in the mean number of nodules formed per plant or in nodule diameter. However, there was highly significant variation among replicate families within each disease resistance category for both nodulation characteristics. These results imply that genetic variation exists among A. bracteata plants both for diease resistance and for traits affecting symbiotic nitrogen fixation. However, there were no evident pleiotropic effects of disease resistance genes on the plant-Rhizobium symbiosis.",
+      "journal": "Oecologia",
+      "year": 1990,
+      "pub_date": "1990-11-01",
+      "authors": "Parker Matthew A; Wilkens Richard T",
+      "first_author": "Parker Matthew A",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

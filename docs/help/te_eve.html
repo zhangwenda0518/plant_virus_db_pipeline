@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>TE & EVE — Help</title>
+<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;line-height:1.8}nav{background:linear-gradient(135deg,#1a3a5c,#2c6e49);color:#fff;height:46px;display:flex;align-items:center;padding:0 16px;gap:4px;position:sticky;top:0;z-index:100}nav .brand{font-weight:700;font-size:15px;margin-right:12px;color:#fff;text-decoration:none}nav a{color:rgba(255,255,255,.75);text-decoration:none;padding:5px 11px;border-radius:4px;font-size:12px}nav a:hover,nav a.on{color:#fff;background:rgba(255,255,255,.15)}nav .sep{color:rgba(255,255,255,.25);margin:0 2px;font-size:14px;user-select:none}nav .spacer{flex:1}.hero{background:linear-gradient(135deg,#134e6f,#2c6e49);color:#fff;padding:32px 24px;text-align:center}.hero h1{font-size:24px}.hero p{font-size:13px;opacity:.85;margin-top:4px}.wrap{max-width:900px;margin:0 auto;padding:24px 20px}h2{font-size:18px;color:#1a5276;margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid #e8f4ea}h3{font-size:15px;color:#2c6e49;margin:18px 0 6px}p{font-size:14px;color:#444;margin-bottom:10px}ol,ul{margin:8px 0 12px 20px;font-size:14px;color:#444}li{margin-bottom:4px}code{background:#e8f4ea;padding:1px 5px;border-radius:3px;font-size:13px}.tip{background:#e8f4ea;border-left:3px solid #2c6e49;padding:10px 14px;margin:12px 0;border-radius:4px;font-size:13px}footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}</style></head><body>
+<nav><a href="/" class="brand">Plant Virus DB</a><span class="sep">|</span><a href="/reference/">Reference</a><a href="/primers/">Primers</a><a href="/photos/">Photos</a><a href="/vector/">Vector</a><a href="/te/">TE·EVE</a><a href="/genes/">Genes</a><span class="sep">|</span><a href="/metabuli/">Metabuli</a><a href="/explorer/">Explorer</a><a href="/pamirdb/">PV-miRNA</a><span class="sep">|</span><a href="/literature/">Literature</a><a href="/knowledge/">Knowledge</a><span class="spacer"></span><a href="/help/" class="on">Help</a></nav>
+<div class="hero"><h1>TE & EVE</h1><p>Plant transposable elements and endogenous viral elements from U-RVDB</p></div>
+
+<div style="max-width:900px;margin:0 auto;padding:0 20px 16px">
+  <img src="/help/images/te_eve.png" alt="te_eve.html screenshot" style="width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);border:1px solid #d0d8e0">
+</div>
+
+<div style="max-width:900px;margin:0 auto;padding:0 20px 8px">
+  <img src="/help/images/te_main.png" alt="TE & EVE — Full Page" style="width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);border:1px solid #d0d8e0;margin-bottom:4px">
+  <p style="text-align:center;font-size:12px;color:#888;margin-bottom:12px">TE & EVE — Full Page</p>
+</div>
+
+<div class="wrap">
+
+<h2>Overview</h2>
+<p>TE & EVE module catalogs <b>Transposable Elements (TE)</b> and <b>Endogenous Viral Elements (EVE)</b> in plant genomes. Sourced from U-RVDB v32.0, the data has been clustered at 98% sequence identity with MMseqs2 to remove redundancy. TEs and EVEs represent the fossil record of virus-host genome interactions, holding great significance for understanding long-term virus evolution, host antiviral mechanisms, and horizontal genome transfer.</p>
+
+<h2>Quick Start</h2>
+<ol>
+  <li>Open <code>/te/</code>; the page has two tabs: <b>TE</b> and <b>EVE</b></li>
+  <li>Select the TE tab to browse transposable elements (LTR, LINE, SINE, DNA transposon types)</li>
+  <li>Select the EVE tab to browse endogenous viral elements (viral sequence fragments integrated into host genomes)</li>
+  <li>Filter by family, species, or element type</li>
+  <li>Download sequences of interest for evolutionary analysis and horizontal transfer studies</li>
+</ol>
+
+<h2>Reference</h2>
+<h3>TE (Transposable Elements)</h3>
+<p>Transposable elements are DNA sequences capable of moving within genomes. TEs can account for 50-80% of plant genomes. The module catalogs major TE types: LTR retrotransposons (e.g. Copia, Gypsy superfamilies), non-LTR retrotransposons (LINE, SINE), and DNA transposons (e.g. hAT, Mutator superfamilies). Each record includes element name, superfamily, host species, and sequence length.</p>
+<h3>EVE (Endogenous Viral Elements)</h3>
+<p>EVEs are viral sequences integrated into host germline genomes that can be stably inherited. They are molecular fossils of viral invasion history, preserving traces of ancient viral infections. Plant EVEs primarily originate from double-stranded DNA viruses (Caulimoviridae) and single-stranded DNA viruses (Geminiviridae).</p>
+
+<div class="tip"><b>Tip</b>: Using a 98% clustering threshold effectively removes highly similar TE copies among closely related species, reducing dataset redundancy. For cross-species comparative analysis, download the deduplicated non-redundant set.</div>
+
+</div>
+<footer>Plant Virus Database Platform · Help</footer>
+<script src="/reference/i18n.js"></script>
+<script>PVDB_i18n.init({navSelector:"nav"});</script>
+</body></html>

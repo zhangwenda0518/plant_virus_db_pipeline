@@ -1,0 +1,239 @@
+{
+  "week": "2025-W26",
+  "start": "2025-06-23",
+  "end": "2025-06-29",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 26,
+  "by_category": {
+    "Host_Virus_Interactions": 8,
+    "Control_Management": 8,
+    "Antiviral_Resistance_Genes": 5,
+    "New_Virus": 4,
+    "Molecular_Characterization": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "40579666",
+      "doi": "10.1007/s00705-025-06346-x",
+      "title": "Genome characterization of prunus maculavirus 1 (PrMcV-1), a novel member of the genus maculavirus identified in prunus spp.",
+      "abstract": "A novel virus with a (+)ssRNA genome was identified in a symptomless peach tree by high-throughput sequencing. The complete RACE-verified genome of the virus, tentatively named \"Prunus maculavirus 1\" (PrMcV-1; GenBank accession number PV231830), is 6,664 nucleotides (nt) long, excluding the poly(A) tail, and contains two open reading frames (ORFs). ORF1 (nt 64-5895) encodes a large replication-associated polyprotein, which contains conserved domains associated with methyltransferase (Mtr), papain-like protease (Pro), helicase (Hel), and RNA-dependent RNA polymerase (RdRp). ORF2 (nt 5571-6478) partially overlaps ORF1 and encodes the capsid protein (CP). Phylogenetic analysis based on both ORFs placed PrMcV-1 in a distinct clade within the genus Maculavirus of the family Tymoviridae. Experimental evidence showed that PrMcV-1 is graft-transmissible. This study expands the known host range of maculaviruses to include Prunus species.",
+      "journal": "Archives of virology",
+      "year": 2025,
+      "pub_date": "2025-06-27",
+      "authors": "Abou Kubaa Raied; Ouro-Djobo Ashrafou; Stevens Kristian A; Alabi Olufemi J; Al Rwahnih Maher",
+      "first_author": "Abou Kubaa Raied",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Prunus maculavirus 1 (PrMcV-1)",
+      "taxonomy": "Tymoviridae, Maculavirus",
+      "host_plant": "桃树 (Prunus persica)",
+      "location": "未提及",
+      "results": "基因组全长6664 nt，含两个ORF，编码复制相关多聚蛋白和衣壳蛋白，系统发育位于Maculavirus属独立分支。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40576819",
+      "doi": "10.1007/s00705-025-06354-x",
+      "title": "Phragmivirus, a new genus within the family Potyviridae.",
+      "abstract": "The plant-infecting virus family Potyviridae was previously formed by 12 genera, consisting of 249 virus species, with the majority of these classified in the largest genus, Potyvirus. Potyvirids are viruses with a ssRNA genome packaged in long filamentous particles. While members of the genus Bymovirus have bipartite genomes, members of the remaining genera have monopartite genomes. All viruses in the family have a genome-linked protein (VPg) present at the 5' terminus of the genome, and all but celery latent virus (genus Celavirus) have a polyadenylated tail at the 3' end. The members of the 12 genera are differentiated by genomic sequence identity, various functional motifs, and biological factors such as the type of the transmission vector and host range. Demarcation criteria for a new genus include < 46% nucleotide sequence identity to potyvirids of other genera. Here, we report the new genus Phragmivirus within the family Potyviridae, which has been accepted by the International Committee on Taxonomy of Viruses, becoming the 13th genus in the family. The genus Phragmivirus is represented by two virus species (Phragmivirus phragmii and Phragmivirus spartinae). Complete genome sequences are available for both members, namely, common reed chlorotic stripe virus (CRCSV) and Spartina mottle virus (SpMV), respectively. The new genus name is derived from the botanical name of the host of CRCSV, Phragmites australis. The genome sequences of CRCSV and SpMV isolates resemble those of members of the genus Potyvirus but lack typical conserved aphid-transmission motifs.",
+      "journal": "Archives of virology",
+      "year": 2025,
+      "pub_date": "2025-06-27",
+      "authors": "Inoue-Nagata Alice Kazuko; Jordan Ramon; Kreuze Jan F; Li Fan; López-Moya Juan José; ... (+4)",
+      "first_author": "Inoue-Nagata Alice Kazuko",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Common reed chlorotic stripe virus (CRCSV) 和 Spartina mottle virus (SpMV)",
+      "taxonomy": "科Potyviridae，属Phragmivirus",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40583058",
+      "doi": "10.1186/s13059-025-03620-8",
+      "title": "A BAC-guided haplotype assembly pipeline increases the resolution of the virus resistance locus CMD2 in cassava.",
+      "abstract": "[BACKGROUND] Cassava is an important crop for food security in the tropics where its production is jeopardized by several viral diseases, including the cassava mosaic disease (CMD) which is endemic in Sub-Saharan Africa and the Indian subcontinent. Resistance to CMD is linked to a single dominant locus, namely CMD2. The cassava genome contains highly repetitive regions making the accurate assembly of a reference genome challenging. [RESULTS] In the present study, we generate BAC libraries of the CMD-susceptible cassava cultivar (cv.) 60444 and the CMD-resistant landrace TME3. We subsequently identify and sequence BACs belonging to the CMD2 region in both cultivars using high-accuracy long-read PacBio circular consensus sequencing (ccs) reads. We then sequence and assemble the complete genomes of cv. 60444 and TME3 using a combination of ONT ultra-long reads and optical mapping. Anchoring the assemblies on cassava genetic maps reveals discrepancies in our, as well as in previously released, CMD2 regions of the cv. 60444 and TME3 genomes. A BAC-guided approach to assess cassava genome assemblies significantly improves the synteny between the assembled CMD2 regions of cv. 60444 and TME3 and the CMD2 genetic maps. We then performed repeat-unmasked gene annotation on CMD2 assemblies and identify 81 stress resistance proteins present in the CMD2 region, among which 31 were previously not reported in publicly available CMD2 sequences. [CONCLUSIONS] The BAC-assessed approach improved CMD2 region accuracy and revealed new sequences linked to virus resistance, advancing our understanding of cassava mosaic disease resistance.",
+      "journal": "Genome biology",
+      "year": 2025,
+      "pub_date": "2025-06-29",
+      "authors": "Cornet Luc; Zaidi Syed Shan-E-Ali; Li Jia; Ngapout Yvan; Shakir Sara; ... (+7)",
+      "first_author": "Cornet Luc",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "木薯花叶病毒（CMD相关病毒）",
+      "taxonomy": "",
+      "host_plant": "木薯",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39954677",
+      "doi": "10.1016/j.devcel.2025.01.017",
+      "title": "TaANK-TPR1 enhances wheat resistance against stripe rust via controlling gene expression and protein activity of NLR protein TaRPP13L1.",
+      "abstract": "Nucleotide-binding site, leucine-rich repeat (NLR) proteins activate a robust immune response on recognition of pathogen invasion. However, the function and regulatory mechanisms of NLRs during Puccinia striiformis f. sp. tritici (Pst) infection in wheat remain elusive. Here, we identify an ankyrin (ANK) repeat and tetratricopeptide repeat (TPR)-containing protein, TaANK-TPR1, which plays a positive role in the regulation of wheat resistance against Pst and the immune response of NLR. TaANK-TPR1 targets the NLR protein TaRPP13L1 (Recognition of Peronospora Parasitica 13-like 1) to facilitate its homodimerization and cell death to enhance the resistance of wheat against Pst. Meanwhile, TaANK-TPR1 binds to the TGACGT motif (methyl jasmonate-responsive element) of the TaRPP13L1 promoter and activates TaRPP13L1 transcription. Both TaANK-TPR1 and TaRPP13L1 respond to jasmonic acid (JA) signaling via the TGACGT element. Importantly, overexpressing TaRPP13L1 confers robust rust resistance without impacting important agronomic traits in the field. These findings identify a regulatory mechanism of NLR protein and provide targets for improving crop disease resistance.",
+      "journal": "Developmental cell",
+      "year": 2025,
+      "pub_date": "2025-06-23",
+      "authors": "Guo Shuangyuan; Zhang Feng; Du Xiaoya; Zhang Xinmei; Huang Xueling; ... (+10)",
+      "first_author": "Guo Shuangyuan",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40731969",
+      "doi": "10.3390/microorganisms13071459",
+      "title": "New Species, New Record, and Antagonistic Potential of ",
+      "abstract": "During a survey of ascomycetous fungi associated with plant litter and submerged wood in Jilin Province, China, two hyphomycetous fungi were discovered. Morphological examination and molecular phylogenetic analyses revealed that these isolates represent two species within the genus Torula, which are herein described as Torula changchunensis sp. nov. and a new host record of T. mackenziei. Detailed morphological characteristics are provided, and the phylogenetic relationships of the new species are also discussed. The new species differs from T. chinensis and T. phytolaccae by having smaller conidiogenous cells, smaller conidia, and fewer septa. Preliminary assessments were conducted on T. changchunensis and T. mackenziei to evaluate their antagonistic activity against two pathogenic fungi (Cladobotryum mycophilum and Botrytis cinerea) and two pathogenic bacteria (Staphylococcus aureus and Bacillus subtilis). Torula changchunensis sp. nov. exhibited 67.18% inhibition against C. mycophilum and moderate inhibition against the pathogenic bacteria, whereas Torula mackenziei showed moderate-to-weak inhibitory activity against both pathogenic fungi and bacteria.",
+      "journal": "Microorganisms",
+      "year": 2025,
+      "pub_date": "2025-06-23",
+      "authors": "Xu Rong; Zhang Yue; Su Wenxin; Li Yu",
+      "first_author": "Xu Rong",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40985377",
+      "doi": "10.3390/jof11070494",
+      "title": "Six Novel Species of ",
+      "abstract": "Saprobic hyphomycetous fungi exhibit high colonization density and diversity on rotting woody plant material. During our continuing mycological research in the forest ecosystem of Jiangxi, Fujian and Zhejiang provinces, China, several Distoseptispora-like and Helminthosporium-like strains were isolated from unidentified dead branches in terrestrial habitats. Based on morphological comparisons and multi-locus phylogenetic analyses using maximum-likelihood (ML) and Bayesian inference (BI), six novel species of Distoseptispora (D. terrestris, D. wuyishanensis, D. zhejiangensis) and Helminthosporium (H. ganzhouense, H. jiangxiense, H. saprophyticum) were introduced, and one known species, H. velutinum was reported. The species diversity within Distoseptispora and Helminthosporium was supplemented in this study.",
+      "journal": "Journal of fungi (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-06-29",
+      "authors": "Liao Ming-Gen; Luo Xing-Xing; Xia Ji-Wen; Hu Ya-Fen; Zhang Xiu-Guo; ... (+4)",
+      "first_author": "Liao Ming-Gen",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40985393",
+      "doi": "10.3390/jof11070489",
+      "title": "Additions to ",
+      "abstract": "The genus Macgarvieomyces (Magnaporthales, Sordariomycetes, Ascomycota) currently includes three species, which are associated with leaf spots on plants belonging to the Cyperaceae and Juncaceae families and are known only in Europe and New Zealand. During a comprehensive survey conducted between 2020 and 2022 targeting host plants from these families across various regions of Iran, six novel species of Macgarvieomyces-M. caspica, M. cyperi, M. junci-acuti, M. juncigenus, M. salkadehensis, and M. schoeni-were uncovered. These species were identified based on detailed morphological characterizations and multi-locus phylogenetic analyses using ITS-rDNA, RPB1, ACT, and CAL gene regions. This study provides thorough descriptions and illustrations of the new taxa, including information on their morphology, ecological preferences, and geographic distribution. The phylogenetic relationships among the species are also discussed. This work significantly enhances the known diversity of Macgarvieomyces associated with Cyperaceae and Juncaceae, expands their geographic distribution, and underscores the value of integrating morphological and molecular data in fungal taxonomy; accordingly, the findings of this study lay the groundwork for future ecological and evolutionary studies of this genus.",
+      "journal": "Journal of fungi (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-06-27",
+      "authors": "Ahmadpour Abdollah; Ghosta Youbert; Alavi Fatemeh; Alavi Zahra; Hashemlou Esmaeil; ... (+3)",
+      "first_author": "Ahmadpour Abdollah",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40732010",
+      "doi": "10.3390/microorganisms13071502",
+      "title": "Endophytic Diversity in Sicilian Olive Trees: Identifying Optimal Conditions for a Functional Microbial Collection.",
+      "abstract": "This study aims to identify the optimal conditions-host, plant material, seasonality, and agricultural practices-for isolating and developing a collection of culturable endophytic microorganisms to support sustainable Olea europaea L. cultivation. Samples were collected from three Sicilian olive cultivars ('Nocellara del Belice', 'Nocellara Etnea', and 'Nocellara Messinese') and six wild olive accessions across different phenological phases and under organic and conventional agronomic management. Endophytes were isolated from leaves and twigs using a culture-dependent approach, and their taxonomic diversity and plant-growth-promoting (PGP) traits were analyzed. A total of 133 endophytic isolates were identified, spanning bacterial (Proteobacteria, Firmicutes, and Actinobacteria) and fungal (Ascomycota and Basidiomycota) phyla. Wild olive trees contributed more than cultivated varieties to enriching the diversity and composition of culturable endophyte collection as well as twigs instead of leaves. Winter sampling allowed to implement the taxonomic genera of olive endophyte collection. Both farming systems favored an increase in the composition of microbial collection, though organic farming systems supported greater microbial richness. Functional analysis highlighted key PGP traits in a selection of bacterial isolates, including indole-3-acetic acid and siderophore production, nitrogen fixation, and antifungal activity. Bacillus spp. dominated enzymatic activities, such as amylase, protease, and lipase production, as well as antifungal activity against the olive fungal pathogen Neofusicoccum vitifusiforme. This research highlights the significant diversity and functional potential of Mediterranean olive endophytes. Our findings emphasize the role of native microbial communities as bio-inoculants, promoting plant growth, nutrient uptake, and disease resistance. These insights lay the groundwork for developing targeted olive-microbial consortia for biocontrol and stress tolerance applications.",
+      "journal": "Microorganisms",
+      "year": 2025,
+      "pub_date": "2025-06-27",
+      "authors": "Crucitti Dalila; Barone Stefano; Navarro-Torre Salvadora; Quatrini Paola; Carimi Francesco; ... (+2)",
+      "first_author": "Crucitti Dalila",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40579624",
+      "doi": "10.1007/s00122-025-04948-2",
+      "title": "Integrating multi-omics and machine learning for disease resistance prediction in legumes.",
+      "abstract": "Multi-omics assisted prediction of disease resistance mechanisms using machine learning has the potential to accelerate the breeding of resistant legume varieties. Grain legumes, such as soybean (Glycine max (L.) Merr.), chickpea (Cicer arietinum L.), and lentil (Lens culinaris Medik.) play an important role in combating micronutrient malnutrition in the growing human population. However, plant diseases significantly reduce grain yield, causing 10-40% losses in major food crops. The genetic mechanisms associated with disease resistance in legumes have been widely studied using genomic approaches. Multi-omics data encompassing various biological layers such as the transcriptome, epigenome, proteome, and metabolome, in addition to the genome, enables researchers to gain a deeper understanding of these complementary layers and their roles in complex legume-pathogen interactions. Genomic prediction, used to select the best genotypes with desirable traits for breeding, has largely relied on genome-wide markers and statistical approaches to estimate the breeding values of individuals. Integrating multi-omics data into genomic prediction can be achieved using machine learning models, which can capture nonlinear relationships prevalent in high-dimensional data better than traditional statistical methods. This integration may enable more accurate predictions and identification of resistance mechanisms for breeding resistant legumes. Despite its potential, multi-omics integration for disease resistance prediction in legumes has been largely unexplored. In this review, we explore omics studies focusing on disease resistance in legumes and discuss how machine learning models can integrate multi-omics data for disease resistance prediction. Such multi-omics assisted prediction has the potential to reduce the breeding cycle for developing disease-resistant legume varieties.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 2025,
+      "pub_date": "2025-06-27",
+      "authors": "Mohamedikbal Shameela; Al-Mamun Hawlader A; Bestry Mitchell S; Batley Jacqueline; Edwards David",
+      "first_author": "Mohamedikbal Shameela",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40581909",
+      "doi": "10.1007/s00299-025-03559-x",
+      "title": "Blue light regulates jasmonic acid synthesis via CRY1a and boosts antioxidant enzymes activity in Solanum lycopersicum to resist Botrytis cinerea.",
+      "abstract": "Blue light treatment can stimulate antioxidant enzyme activity and induce JA synthesis through CRY1a enhancing the resistance of Solanum lycopersicum to Botrytis cinerea. Light signals are prevalent in the environment and significantly influence the growth, development, plant resistance, and pathogenicity of phytopathogenic fungi. The agricultural application of spectral engineering through optimized red and blue light proportions has been used as a practical methodology for synergistically improving plant photobiology, nutritional metabolism, and environmental adaptation capabilities. However, its role in plant disease resistance has not been comprehensively explored. In our study, the pathogenicity analysis indicates that blue light significantly enhances the resistance of Solanum lycopersicum to Botrytis cinerea. Transcriptomic profiling revealed that blue light activates OPR3 and JAR1 expression, concomitant with elevated jasmonic acid biosynthesis and significantly enhanced activities of key antioxidant enzymes including peroxidase, catalase, and ascorbate peroxidase in S. lycopersicum. Furthermore, the mutation of the blue light receptor cryptochrome 1a (CRY1a) was found to enhance S. lycopersicum resistance to B. cinerea. For the pathogen B. cinerea, blue light was observed to induce DHN-melanin synthesis-related genes Bop2, Bcbrn2, Bcpks4, and Bcpks21 expression, and the development of its infection cushion was notably slower under blue light in B. cinerea. The above results indicate that blue light can control tomato gray mold by enhancing S. lycopersicum resistance and suppressing B. cinerea infection, which suggests that blue light may possess potential application value in disease management for facility-based S. lycopersicum cultivation. Our study reveals how blue light and light receptor CRY1a function in S. lycopersicum to defend necrotrophic fungal pathogens.",
+      "journal": "Plant cell reports",
+      "year": 2025,
+      "pub_date": "2025-06-29",
+      "authors": "Cai Yunfei; Ying Jiali; Ye Youju; Wen Shuangshuang; Qian Renjuan",
+      "first_author": "Cai Yunfei",
+      "categories": [
+        "Control_Management",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

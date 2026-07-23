@@ -1,0 +1,283 @@
+{
+  "month": "2014-02",
+  "generated": "2026-07-13 02:59:42",
+  "total": 49,
+  "by_category": {
+    "New_Virus": 19,
+    "Antiviral_Resistance_Genes": 11,
+    "Host_Virus_Interactions": 9,
+    "Control_Management": 7,
+    "Biotechnology_Applications": 5,
+    "Viral_Diversity_Ecology": 4,
+    "Transmission_Epidemiology": 2,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "23834501",
+      "doi": "10.2217/nnm.13.100",
+      "title": "Biodistribution and clearance of a filamentous plant virus in healthy and tumor-bearing mice.",
+      "abstract": "[AIM] Nanoparticles based on plant viruses are emerging biomaterials for medical applications such as drug delivery and imaging. Their regular structures can undergo genetic and chemical modifications to carry large payloads of cargos, as well as targeting ligands. Of several such platforms under development, only few have been characterized in vivo. We recently introduced the filamentous plant virus, potato virus X (PVX), as a new platform. PVX presents with a unique nanoarchitecture and is difficult to synthesize chemically. [METHODS] Here, we present a detailed analysis of PVX biodistribution and clearance in healthy mice and mouse tumor xenograft models using a combination of ex vivo whole-organ imaging, quantitative fluorescence assays and immunofluorescence microscopy. [RESULTS & CONCLUSION] While up to 30% of the PVX signal was from the colon, mammary and brain tumor tissues, remaining particles were cleared by the reticuloendothelial system organs (the spleen and liver), followed by slower processing and clearance through the kidneys and bile.",
+      "journal": "Nanomedicine (London, England)",
+      "year": 2014,
+      "pub_date": "2014-02-01",
+      "authors": "Shukla Sourabh; Wen Amy M; Ayat Nadia R; Commandeur Ulrich; Gopalkrishnan Ramamurthy; ... (+4)",
+      "first_author": "Shukla Sourabh",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "potato virus X (PVX)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "24132551",
+      "doi": "10.1007/s11030-013-9484-4",
+      "title": "Design, synthesis, and anti-tobacco mosaic virus (TMV) activity of glycoconjugates of phenanthroindolizidines alkaloids.",
+      "abstract": "Glycoconjugates of phenanthroindolizidine alkaloids targeting tobacco mosaic virus (TMV) RNA were designed, synthesized, and evaluated for their antiviral activity against TMV for the first time. The glycoconjugation of (S)-6-O-desmethylantofine (2) and 14-hydroxyltylophorines (3-6) was accomplished in three ways (O-glycosylation manner, using carbamoyloxy as linker arm, and using 1,2,3-triazole as linker arm) with three different sugar units (glucose, galactose, and mannose). The glycoconjugates showed improved water solubility and molecule polarity compared with phenanthroindolizidine alkaloids. The bioassay results showed that C6 was a suitable position for glycoconjugation and O-glycosylation can increase the antiviral activity of phenanthroindolizidine alkaloids indicating that the introduction of sugar units can improve the antiviral activity profile of glycoconjugates. Two O-glycosides of (S)-6-O-desmethylantofine, (13aS)-6-O-β-D-galactopyranosyl-2,3-dimethoxyphenanthro [9,10-b]-11-indolizidinone (10) and (13aS)-6-O-β-D-mannopyranosyl-2,3-dimethoxyphenanthro [9,10-b]-11-indolizidinone (11) displayed significant higher activity than commercial ningnanmycin, and thus could be considered for novel therapy against plant virus infection.",
+      "journal": "Molecular diversity",
+      "year": 2014,
+      "pub_date": "2014-02-01",
+      "authors": "Wu Meng; Han Guifang; Meng Chuisong; Wang Ziwen; Liu Yuxiu; ... (+1)",
+      "first_author": "Wu Meng",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management"
+      ],
+      "virus_name": "烟草花叶病毒",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "24291215",
+      "doi": "10.1016/j.virusres.2013.11.014",
+      "title": "Infectious cDNA clones of four viroids in Coleus blumei and molecular characterization of their progeny.",
+      "abstract": "Four viroid species infecting Coleus blumei, named Coleus blumei viroid 1-4 (CbVd-1-CbVd-4), and two tentative new viroid species, named CbVd-5 and CbVd-6, have been characterized, for two of which (CbVd-5 and CbVd-6, first reported in 2009), there is no established bioassay. Here, infectious clones were used as inoculums sources and the biological properties of CbVd-1, -3, -5 and -6 were assessed. When dimeric CbVd (+) RNAs synthesized in vitro were bioassayed, the first detection time for the four CbVds was different, ranging from 45 to 300 days. In addition, we confirmed that CbVd-5 and CbVd-6 can be transmitted via seeds. Molecular characterization of their progeny from slash-inoculated plants one year after inoculation demonstrated that the genetic diversity of CbVd populations may depend on the infected coleus plants and on the viroid genotype.",
+      "journal": "Virus research",
+      "year": 2014,
+      "pub_date": "2014-02-13",
+      "authors": "Jiang Dongmei; Gao Rui; Qin Lv; Wu Zujian; Xie Lianhui; ... (+2)",
+      "first_author": "Jiang Dongmei",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Coleus blumei viroid 1-4 (CbVd-1~CbVd-4), CbVd-5, CbVd-6",
+      "taxonomy": "未提及",
+      "host_plant": "Coleus blumei (锦紫苏)",
+      "location": "未提及",
+      "results": "四种CbVd首次检测时间45-300天不等；证实CbVd-5和-6种子传播；后代遗传多样性取决于感染植株和类病毒基因型。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "24187016",
+      "doi": "10.1099/vir.0.058693-0",
+      "title": "Binding and processing of small dsRNA molecules by the class 1 RNase III protein encoded by sweet potato chlorotic stunt virus.",
+      "abstract": "Sweet potato chlorotic stunt virus (SPCSV; genus Crinivirus, family Closteroviridae) causes heavy yield losses in sweet potato plants co-infected with other viruses. The dsRNA-specific class 1 RNase III-like endoribonuclease (RNase3) encoded by SPCSV suppresses post-transcriptional gene silencing and eliminates antiviral defence in sweet potato plants in an endoribonuclease activity-dependent manner. RNase3 can cleave long dsRNA molecules, synthetic small interfering RNAs (siRNAs), and plant- and virus-derived siRNAs extracted from sweet potato plants. In this study, conditions for efficient expression and purification of enzymically active recombinant RNase3 were established. Similar to bacterial class 1 RNase III enzymes, RNase3-Ala (a dsRNA cleavage-deficient mutant) bound to and processed double-stranded siRNA (ds-siRNA) as a dimer. The results support the classification of SPCSV RNase3 as a class 1 RNase III enzyme. There is little information about the specificity of RNase III enzymes on small dsRNAs. In vitro assays indicated that ds-siRNAs and microRNAs (miRNAs) with a regular A-form conformation were cleaved by RNase3, but asymmetrical bulges, extensive mismatches and 2'-O-methylation of ds-siRNA and miRNA interfered with processing. Whereas Mg(2+) was the cation that best supported the catalytic activity of RNase3, binding of 21 nt small dsRNA molecules was most efficient in the presence of Mn(2+). Processing of long dsRNA by RNase3 was efficient at pH 7.5 and 8.5, whereas ds-siRNA was processed more efficiently at pH 8.5. The results revealed factors that influence binding and processing of small dsRNA substrates by class 1 RNase III in vitro or make them unsuitable for processing by the enzyme.",
+      "journal": "The Journal of general virology",
+      "year": 2014,
+      "pub_date": "2014-02-01",
+      "authors": "Weinheimer Isabel; Boonrod Kajohn; Moser Mirko; Wassenegger Michael; Krczal Gabi; ... (+2)",
+      "first_author": "Weinheimer Isabel",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "甘薯褪绿矮化病毒 (Sweet potato chlorotic stunt virus, SPCSV)",
+      "taxonomy": "",
+      "host_plant": "甘薯 (sweet potato)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30708748",
+      "doi": "10.1094/PDIS-07-13-0686-PDN",
+      "title": "First Report of Curly Top Disease of Basil Caused by Beet severe curly top virus in California.",
+      "abstract": "In August 2012, symptoms of stunted growth and leaf epinasty, crumpling, and yellowing, were observed in basil plants (Ocimum basilicum) grown in a shadehouse in Calipatria in the Imperial Valley of California. Populations of the beet leafhopper (Circulifer tenellus) carrying curtoviruses (genus Curtovirus, family Geminiviridae) were detected in the Imperial Valley in May 2012. Together, this suggested a curtovirus etiology for this virus-like disease of basil. Total DNA extracts were prepared from leaves of nine representative symptomatic plants (BA1 through 9) and used in the PCR with the general curtovirus primer pair, BGv377 and BGc1509 (1,2). This primer pair directed the amplification of the expected ~1.1 kb DNA fragments from extracts prepared from all nine plants, and not from equivalent extracts from symptomless plants. The sequences of 1.1 kb fragments amplified from four plants (BA1 through 4) were determined, and BLAST analyses revealed 99% nucleotide sequence identities among these sequences, and 98% identities with the homologous region (V2/CP) of Beet severe curly top virus-Cfh (BSCTV-Cfh; GenBank Accession No. U02311). A second primer pair (BGv981 5'-AACGGTCAGGCTATGCCGTCTAC-3' and BGc479 5'-GAAAGACCTCGCCTTCTTCTAGGG-3') was designed to amplify the remainder of the viral genome. The expected size ~2.4 kb fragments were amplified from the extracts of the BA1 through 9 plants, and the fragments from the BA1 and 2 plants were cloned into the pGEM-T Easy Vector (Promega, Madison, WI) and sequenced. Using the sequences of the overlapping PCR-amplified fragments, the complete viral genome sequences of the BA1 and BA2 isolates were determined. The BA1 and BA2 sequences were 2,934 bp and were 99% identical to each other and to the sequence of BSCTV-Cfh (3). To confirm the infectivity of BSCTV in basil, the BSCTV-Cfh infectious clone, which originated from California, was used for agroinoculation and leafhopper transmission experiments in basil plants (cvs. Sweet aroma and Genovese). Basil plants agroinoculated with the BSCTV-Cfh clone developed stunted growth and leaf crumpling and curling symptoms, similar to symptoms observed in the symptomatic plants from the Imperial Valley. The presence of viral DNA in symptomatic plants was confirmed by PCR with the BGv377/BGc1509 primer pair. Basil plants inoculated with an empty vector control did not develop symptoms, nor was curtovirus DNA amplified from these plants by PCR. Beet leafhoppers were given a 48-h acquisition access period on BSCTV-Cfh-infected sugarbeet plants, followed by a 48-h inoculation access period on healthy basil plants. These plants developed curly top symptoms approximately 21 days after inoculation, indicating that BSCTV was transmitted to basil by the beet leafhopper. Together, these results establish that the cause of the disease symptoms in basil in the Imperial Valley of California was BSCTV. This is the first report of curly top disease in basil, which is the second member of the mint family (Lamiaceae) known to be infected by a curtovirus. The stunted growth induced in basil by BSCTV has the potential to cause yield and economic loss, particularly in open field or screenhouse production when beet leafhopper populations are high. References: (1) L-F. Chen et al. Plant Dis. 94:99, 2010. (2) S. L. Dellaporta et al. Plant Mol. Biol. Rep. 1:19, 1983. (3) D. C. Stenger. Mol. Plant-Micro. Interact. 7:154, 1994.",
+      "journal": "Plant disease",
+      "year": 2014,
+      "pub_date": "2014-02-01",
+      "authors": "Chen L-F; Natwick E; Cabrera S; Gilbertson R L",
+      "first_author": "Chen L-F",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Beet severe curly top virus (BSCTV)",
+      "taxonomy": "Geminiviridae, Curtovirus",
+      "host_plant": "罗勒 (Ocimum basilicum)",
+      "location": "美国加利福尼亚州帝国谷Calipatria",
+      "results": "从9株症状植物扩增到约1.1kb片段，测序与BSCTV-Cfh同源性99-98%；全基因组2934bp，与BSCTV-Cfh 99%一致；农杆菌和叶蝉接种均产生相似症状。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30708766",
+      "doi": "10.1094/PDIS-05-13-0562-RE",
+      "title": "Effect of Raspberry bushy dwarf virus, Raspberry leaf mottle virus, and Raspberry latent virus on Plant Growth and Fruit Crumbliness in 'Meeker' Red Raspberry.",
+      "abstract": "Raspberry crumbly fruit in red raspberry (Rubus idaeus), widespread in the Pacific Northwest of the United States and British Columbia, Canada, is most commonly caused by a virus infection. Raspberry bushy dwarf virus (RBDV) has long been attributed as the causal agent of the disease. Recently, the identification of two additional viruses, Raspberry leaf mottle virus (RLMV) and Raspberry latent virus (RpLV), in northern Washington and British Columbia, suggested the existence of a possible new virus complex responsible for the increased severity of the disease. Virus testing of crumbly fruited plants from five fields in northern Washington revealed the presence of RLMV and RpLV, in addition to RBDV. Plants with less severe crumbly fruit symptoms had a much lower incidence of RLMV or RpLV. Field trials using replicated plots of 'Meeker' plants containing single and mixed infections of RBDV, RLMV, or RpLV, along with a virus-free control, were developed to determine the role of RLMV and RpLV in crumbly fruit. Field evaluations during establishment and two fruiting years revealed that plants infected with the three viruses or the combinations RBDV+RLMV and RBDV+RpLV had the greatest reduction in cane growth, or fruit firmness and fruit weight, respectively. Quantitative reverse transcription-polymerase chain reaction (RT-PCR) showed that the titer of RBDV was increased ~400-fold when it occurred in mixed infections with RLMV compared to RBDV in single infections. In addition, a virus survey revealed that RLMV and RpLV are present at high incidence in northern Washington; whereas the incidence in southern Washington and Oregon, where crumbly fruit is not as serious a problem, was considerably lower.",
+      "journal": "Plant disease",
+      "year": 2014,
+      "pub_date": "2014-02-01",
+      "authors": "Quito-Avila Diego F; Lightle Danielle; Martin Robert R",
+      "first_author": "Quito-Avila Diego F",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Raspberry bushy dwarf virus (RBDV), Raspberry leaf mottle virus (RLMV), Raspberry latent virus (RpLV)",
+      "taxonomy": "未提及",
+      "host_plant": "Rubus idaeus (红覆盆子品种Meeker)",
+      "location": "美国华盛顿州北部及加拿大不列颠哥伦比亚省",
+      "results": "三种病毒或混合感染显著降低植株生长、果实硬度和重量；RLMV与RBDV混合感染使RBDV滴度升高约400倍；病毒在北部高发，南部低发。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30708762",
+      "doi": "10.1094/PDIS-07-13-0745-PDN",
+      "title": "First Report of Potato virus Y in Potato in West Java, Indonesia.",
+      "abstract": "Potato (Solanum tuberosum) is an important vegetable crop in Indonesia. A small survey was conducted for virus diseases in November 2011 in Lembang, West Java, as part of assessing the sanitary status of potatoes produced in farmers' fields. Among the six potato fields surveyed, one field had nearly 20% of plants displaying stunted growth with leaves showing mild chlorotic spots and reduced size of lamina. Tubers harvested from symptomatic plants showed no necrosis symptoms. Symptomatic leaves from three representative potato plants were positive for Potato virus Y (PVY) when tested with PVY-specific immunostrips (Agdia Inc., Elkhart, IN). Leaf samples from virus-positive plants were imprinted on FTA Classic Cards (Whatman International Ltd., Maidstone, UK), air dried, and shipped to Washington State University for confirmatory diagnostic tests. Total nucleic acids were eluted from FTA cards (1) and subjected to reverse transcription (RT)-PCR using primers (PVY/Y4A and PVY/Y3S) specific to the coat protein (CP) of PVY (3). Nucleic acid extracts from samples infected with PVY ordinary strain (PVYO), tuber necrosis strain (PVYNTN), tobacco veinal necrosis strains (PVYEU-N and PVYNA-N), and a recombinant strain (PVYN:O) were included as standards to validate RT-PCR assays. The approximately 480-bp DNA fragment, representing a portion of the CP, amplified in RT-PCR was cloned into pCR2.1 (Invitrogen Corp., Carlsbad, CA). DNA isolated from four independent recombinant clones was sequenced from both orientations. Pairwise comparison of these sequences (GenBank Accession Nos. KF261310 to 13) showed 100% identity among themselves and 93 to 100% identity with corresponding sequences of reference strains of PVY available in GenBank (JQ743609 to 21). To our knowledge, this study represents the first confirmed report of PVY in potato in West Java, Indonesia. Studies are in progress to assess the prevalence of PVY in other potato-growing regions of Indonesia and document the presence of different strains of the virus (2). Since the majority of farmers in Indonesia plant seed selected from their previous potato crop, there is an increased risk of primary and secondary spread of PVY through the informal seed supply system, leading to its increased significance to potato production in Indonesia. Therefore, strengthening foundation seed potato and supply chain programs will promote the production of virus-free potatoes in Indonesia. References: (1) O. J. Alabi et al. Plant Dis. 96:107, 2012. (2) A. Karasev and S. M. Gray. Am. J. Potato Res. 90:7, 2013. (3) R. P. Singh et al. J. Virol. Methods 59:189, 1996.",
+      "journal": "Plant disease",
+      "year": 2014,
+      "pub_date": "2014-02-01",
+      "authors": "Damayanti T A; Alabi O J; Hidayat S H; Crosslin J M; Naidu R A",
+      "first_author": "Damayanti T A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Potato virus Y (PVY)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "马铃薯 (Solanum tuberosum)",
+      "location": "Lembang, West Java, Indonesia",
+      "results": "3株阳性，序列与参考株系同源性93-100%，为首次确认报道。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30708753",
+      "doi": "10.1094/PDIS-07-13-0690-PDN",
+      "title": "A Distinct Strain of Chickpea chlorotic dwarf virus Infecting Pepper in Oman.",
+      "abstract": "During a field survey in 2011, pepper (Capsicum annum) plants showing symptoms suggestive of geminivirus infection were observed in three fields in the Al-Sharqiya region of Oman. Symptoms observed included upward leaf curling leading to cupping and stunting with 15 to 25% disease incidence in surveyed fields. Total DNA was extracted from the leaves of seven symptomatic plants and subjected to rolling circle amplification (RCA). The RCA product was digested with several restriction endonucleases to obtain unit length of ~2.6 to 2.8, typical of geminivirus. Out of seven samples, only four yielded a product of ~2.6 kb in size by KpnI digestion. The fragments were cloned in pUC19 and sequenced. The partial sequences of four isolates were >95% identical to each other at the nucleotide (nt) level and thus only one isolate (P-25) was fully sequenced, determined to be 2,572 nt in length, and its sequence deposited in GenBank (KF111683). The P-25 sequence showed a genome organization typical of a mastrevirus, with four open reading frames (ORFs), two in virion-sense and two in complementary-sense. The virion and complementary-sense ORFs were separated by a long intergenic region, containing a predicted hairpin structure with the nonanucleotide sequence (TAATATTAC) in the loop, and a short intergenic region. An initial comparison to all sequences in the NCBI database using BlastN showed the isolate to have the highest level of sequence identity with isolates of the dicot-infecting mastrevirus Chickpea chlorotic dwarf virus (CpCDV). Subsequent alignments of all available CpCDV isolates using the species demarcation tool (2) showed the isolate P-25 to share between 83.6 and 90.3% identity to isolates of CpCDV available in databases, with the highest (90.3%) to CpCDV strain A originating from Syria (FR687959) (3). Amino acid sequence comparison showed that the predicted proteins encoded by the four ORFs of P-25 (coat protein [CP], movement protein [MP], replication associated protein A [RepA], and RepB) share 91.5, 88.2, 89.1, and 90.8% amino acid sequence identity, respectively, with the homologous proteins of the CpCDV isolate from Syria. Based on the recently revised mastreviruses species and strain demarcation criteria (78 and 94% whole genome nt identity, respectively) proposed by Muhire et al. (2), the results indicate that isolate P-25 represents a newly identified strain (strain F) of CpCDV. The presence of CpCDV in symptomatic pepper plants was further confirmed by Southern blot hybridization technique using digoxygenin (DIG) labeled probe prepared from CpCDV isolate P-25. The genus Mastrevirus consists of geminiviruses with single component genomes that are transmitted by leafhoppers. Mastreviruses have so far only been identified in the Old World and infect either monocotyledonous or dicotyledonous plants (1). To our knowledge, this is the first report of a mastrevirus on the Arabian Peninsula and the first record of pepper as host of CpCDV. Recently, several begomoviruses of diverse geographic origins have been found infecting vegetable crops in Oman. The propensity of geminiviruses to evolve through recombination may lead to evolution of recombinant CpCDV with new host adaptability. Due to extensive agricultural/travel links of Oman with rest of the world, there exists high probability for the spread of this virus. References: (1) M. I. Boulton. Physiol. Mol. Plant Pathol. 60:243, 2002. (2) B. Muhire et al. Arch. Virol. 158:1411, 2013 (3) H. Mumtaz et al. Virus Genes 42:422, 2011.",
+      "journal": "Plant disease",
+      "year": 2014,
+      "pub_date": "2014-02-01",
+      "authors": "Akhtar S; Khan A J; Briddon R W",
+      "first_author": "Akhtar S",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Chickpea chlorotic dwarf virus (CpCDV) strain F",
+      "taxonomy": "Geminiviridae, Mastrevirus",
+      "host_plant": "辣椒 (Capsicum annum)",
+      "location": "阿曼 Al-Sharqiya 地区",
+      "results": "四个分离物部分序列同源性>95%，全序列2572nt，与CpCDV株系A最高同源性90.3%，确定为株系F。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30708755",
+      "doi": "10.1094/PDIS-06-13-0653-PDN",
+      "title": "First Report of Chrysanthemum stem necrosis virus on Russell Prairie Gentian in Brazil.",
+      "abstract": "In November 2012, plants of Russell prairie gentian (Eustoma grandiflorum, Lisianthus russellianus) were collected from a commercial greenhouse in Atibaia, SP, Brazil, displaying necrotic spots on leaves and necrosis on stems, followed by generalized systemic necrosis. Disease symptom incidence was estimated at 10%. Preliminary electron microscopy observations of negatively stained leaf extracts prepared from those lesions revealed the presence of a large number of spherical tospovirus-like, approximately 100 nm in diameter. Samples of infected leaves were ground in 0.01 M phosphate buffer containing 0.5% sodium sulphide and mechanically inoculated in six plants of each species of Nicotiana glutinosa, N. tabacum cv. White Burley, N. megalosiphon, N. debneyii, Datura stramonium, Chenopodium amaranticolor, C. quinoa, and E. grandiflorum. All inoculated plants displayed local lesions 4 to 5 days after inoculation, while N. debneyii and D. stramonium showed systemic symptoms, typical of Tospovirus infection. In addition, E. grandiflorum reproduced the original symptoms. Total RNA was extracted from infected E. grandiflorum and D. stramonium, and reverse transcription (RT)-PCR was performed using universal primers BR60 and BR65 (2) targeting conserved regions of the nucleocapsid gene (N). The amplification products of approximately 450 bp were purified, cloned, and sequenced. The unknown virus was identified as Chrysanthemum stem necrosis virus (CSNV-Lis) based on host range and nucleotide sequence (Genbank Accession No. KC894721) and showed 99% identity with a CSNV chrysanthemum isolate from Japan (AB600872). Maximum likelihood phylogenetic analysis using nine homologous CSNV sequences available in GenBank classified CSNV-Lis into a monophyletic group formed by chrysanthemum isolates from Japan and China while a Japanese lisianthus isolate was separately clustered. CSNV is a member of the genus Tospovirus (Bunyaviridae) and was first reported on chrysanthemum in Brazil (1) and later in the Netherlands, Slovenia, United Kingdom, and Japan (3). Despite scattered recent reports of CSNV, the simultaneous production of chrysanthemum and lisianthus crops along the year by Brazilian farmers has contributed to the virus maintenance in the field. The high identity between Brazilian and Japanese isolates of CSNV suggest a possible reintroduction of the virus through exchange of vegetative propagating material. References: (1) L. M. L. Duarte et al. J. Phytopathol. 143:569, 1995. (2) M. Eiras et al. Fitopatol. Bras. 26:170, 2001. (3) K. Momonoi et al. J. Gen. Plant Pathol. 77:142, 2011.",
+      "journal": "Plant disease",
+      "year": 2014,
+      "pub_date": "2014-02-01",
+      "authors": "Duarte L M L; Alexandre M A V; Gobatto D; Kitajima E W; Harakava R",
+      "first_author": "Duarte L M L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Chrysanthemum stem necrosis virus (CSNV-Lis)",
+      "taxonomy": "Tospovirus, Bunyaviridae",
+      "host_plant": "Russell prairie gentian (Eustoma grandiflorum, Lisianthus russellianus)",
+      "location": "巴西圣保罗州Atibaia",
+      "results": "病毒粒子约100nm，与日本菊花CSNV分离物核苷酸同源性99%，系统发育表明巴西洋桔梗分离物与中日菊花分离物聚为一支。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30708758",
+      "doi": "10.1094/PDIS-03-13-0288-PDN",
+      "title": "First Report of Wheat mosaic virus Infecting Wheat in Western Australia.",
+      "abstract": "In eastern Australia, there have been several as yet unconfirmed reports of Wheat mosaic virus (WMoV) infecting wheat (3). WMoV, previously known as High plains virus (HPV), is transmitted by the wheat curl mite (WCM, Aceria tosichella). It is often found in mixed infections with Wheat streak mosaic virus (WSMV), also transmitted by WCM (2,3). WSMV was first identified in Australia in 2003 (3). In October 2012, stunted wheat plants with severe yellow leaf streaking were common in a field experiment near Corrigin in Western Australia consisting of nine wheat cultivars. These symptoms were also common in two commercial crops of wheat cv. Mace near Kulin. Leaf samples (one per plant) from each location were tested by ELISA using specific antiserum to WMoV (syn. HPV 17200, Agdia, Elkhart, IN). At the field experiment, 20 leaf samples were collected at random from each wheat plot (4 replicates) and tested individually by ELISA. WMoV incidence was 5% for cv. Yipti, 16% for cvs Emu Rock, Wyalkatchem and Mace, 22% for cvs. Corack, Fortune, Calingiri, and Magenta, and 55% for cv. Cobra. From the two commercial wheat crops, 100 leaf samples were collected at random from each and tested by ELISA. WMoV incidence was 2 and 4%. In addition, 50 leaf samples of Hordeum leporinum (barley grass) and 20 of Lolium rigidum (annual ryegrass) were collected and tested by ELISA. WMoV incidence was 2% in H. leporinum, but 0% in L. rigidum. Infected H. leporinum plants were symptomless. Symptomatic wheat leaf samples from both sites were tested by RT-PCR using WMoV specific primers designed from its RNA3 sequence (1). The PCR products (339 bp) were sequenced and lodged in GenBank (Accession Nos KC337341 and KC337342). WMoV isolates from Corrigin (WA-CG12) and Kulin (WA-KU12) had identical sequences. When the nucleic acid sequences of WA-CG12 and WA-KU12 were compared with those of the three other WMoV isolates on GenBank, they had 100% nucleotide sequence identity with a Nebraska isolate (U60141), and 99.7% identity to two United States sweet corn isolates (AY836524 and AY836525). Ten symptomatic wheat plants were collected from each location, transplanted into pots and leaf samples tested individually for WMoV and WSMV (07048, Loewe, Germany) by ELISA. All were infected with both viruses and infested with WCM. WCM-infested glumes (>10 WCM/glume) were placed on the leaf sheaths of 60 wheat plants cv. Calingiri (35 with WA-CG12 and 25 with WA-KU12) and 13 sweet corn plants cv. Snow Gold (WA-CG12 only). In addition, 20 wheat and 10 sweet corn plants were left without infested glumes to be uninoculated controls. All 60 WCM-inoculated wheat plants became stunted with severe leaf streaking. When leaf samples from each plant were tested by ELISA 18 to 30 days later, both viruses were detected. WMoV was detected in all 13 WCM-inoculated sweet corn plants and WSMV in two of them. Plants with WMoV alone initially had short chlorotic leaf streaks that subsequently combined, causing broad streaks. These are typical WMoV symptoms for sweet corn (1). No symptoms developed and no virus was detected in any of the uninoculated wheat or sweet corn control plants. The WMoV nucleotide sequence obtained from an infected sweet corn plant was identical to those of WA-CG12 and WA-KU12. To our knowledge, this is the first confirmed report of WMoV presence in Australia. References: (1) B. S. M. Lebas et al. Plant Dis. 89:1103, 2005. (2) D. Navia et al. Exp. Appl. Acarol. 59:95, 2013. (3) J. M. Skare et al. Virology 347:343, 2006.",
+      "journal": "Plant disease",
+      "year": 2014,
+      "pub_date": "2014-02-01",
+      "authors": "Coutts B A; Cox B A; Thomas G J; Jones R A C",
+      "first_author": "Coutts B A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Wheat mosaic virus (WMoV)",
+      "taxonomy": "Fimoviridae科，Emaravirus属",
+      "host_plant": "小麦(Triticum aestivum)、甜玉米(Zea mays)、大麦草(Hordeum leporinum)",
+      "location": "澳大利亚西澳大利亚州，Corrigin和Kulin",
+      "results": "在Corrigin和Kulin的小麦、大麦草中检测到WMoV，发病率2-55%。序列与内布拉斯加分离物100%一致。温室接种成功，甜玉米出现典型症状。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30708760",
+      "doi": "10.1094/PDIS-07-13-0731-PDN",
+      "title": "First Report of Tobacco streak virus Infecting Pigeon Pea (Cajanus cajan) in India.",
+      "abstract": "Pigeon pea is an important pulse crop grown in diversified cropping systems in India. In the rainy season of August 2011 and September 2012, pigeon pea cv. LRG 30 plants with leaf necrosis having wrinkled margin on one side were observed in Kadiri mandal of the Anantapuram district of Andhra Pradesh (A.P.), India. Symptoms included necrotic spots on young leaves followed by wilting of leaves, petiole and branch/axillary shoot proliferation, with small leaves having mosaic symptoms. Symptomatic leaves were sap-inoculated onto 10 seedlings of cowpea (cv. Pusa Komal) using 0.01 M phosphate buffer (pH 7.0). Localized necrotic lesions developed in all the inoculated plants after 2 days post inoculation. Field symptoms were reproduced on healthy pigeon pea upon back inoculation using single lesions of infected cowpea leaves. In direct antigen coating (DAC)-ELISA, all the infected pigeon pea and cowpea leaf samples were positive to a polyclonal antiserum specific to Tobacco streak virus (TSV) supplied by ICRISAT, India. Total RNA was extracted using infected pigeon pea and healthy leaf samples by TRI Reagent (Sigma). Reverse transcription (RT)-PCR was carried out using primers specific to the coat protein (CP) gene of TSV (1). A product of the 700-bp DNA fragment was obtained in field-infected pigeon pea samples but not in healthy controls. The amplicon was cloned into PTZ57R/T using the Ins TA clone PCR kit (Fermentas). Recombinant clone was sequenced in both directions and the CP gene sequence obtained was deposited in GenBank (KF220492). Sequence analysis of the CP gene of TSV from pigeon pea shared 98 to 100% identity with Indian TSV isolates originating from different hosts including groundnut (FJ355948), mung bean (FJ749259), and sunflower (DQ864448), and 88 to 92% similarity with TSV type isolate (white clover: X00435) both at nucleotide and amino acid levels. TSV belongs to the genus Ilarvirus of family Bromoviride and has a wide host range. TSV is pollen borne, assisted by thrips causing mechanical injury (2). To our knowledge, this is the first report of TSV on pigeon pea in India and was widespread in Anantapuram, Kadapa, Kurnool, and Mahbubnagar districts of A.P. Yield loss depends on the stage of infection as early infection resulted in complete failure of the crop. TSV was prevalent on many legume crops such as black gram, green gram, and groundnut in A.P, Tamil Nadu, Karnataka, and Maharashtra states (3). TSV infection of pigeon pea may pose a serious implication for pulse production. References: (1). A. I. Bhat et al. Arch. Virol. 147:651, 2002. (2). M. Sharman et al. Australian Plant Dis. 6:54, 2011. (3). K. Vemana and R. K. Jain. Indian J. Virol. 21:117, 2010.",
+      "journal": "Plant disease",
+      "year": 2014,
+      "pub_date": "2014-02-01",
+      "authors": "Vemana K; Goud T E Seshadri; Reddy D L; Venkateswarlu N C; Naik K S S; ... (+3)",
+      "first_author": "Vemana K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tobacco streak virus (TSV)",
+      "taxonomy": "Bromoviridae, Ilarvirus",
+      "host_plant": "Pigeon pea (Cajanus cajan)",
+      "location": "印度安得拉邦阿纳恩塔普尔县Kadiri mandal",
+      "results": "CP基因序列与印度其他分离物同源性98-100%，与白三叶草型分离物88-92%；病毒广泛分布于安得拉邦多个县；早期感染导致完全绝收。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30708780",
+      "doi": "10.1094/PDIS-03-13-0276-PDN",
+      "title": "First Report of Grapevine leaf roll-associated virus-2 and -3 in Ohio Vineyards.",
+      "abstract": "Grapevine leaf roll-associated viruses (GLRaVs) are a group of nine closely related viruses belonging to the Closteroviridae family that cause grapevine leaf roll disease in vineyards across the world (3). Within the continental United States, GLRaVs have been reported in the states of California, Michigan, Missouri, New York, Oregon, Washington, and Wisconsin, but not in Ohio (2,3). During 2012, grapevines with typical leaf roll symptoms were reported by owners of several Ohio vineyards. The symptoms included small, red leaves and downwardly rolled leaf margins, accompanied by tiny grape clusters with few fruits. A total of 20 symptomatic leaf samples were collected from two sites about 300 miles apart within Ohio, namely Valley Vineyards (cultivars Vidal Blanc and Fronterac) and South River Winery (cultivar Cabernet Franc). Total RNA was extracted from the samples using a previously reported procedure (1) and subjected to reverse transcription (RT)-PCR using specific primers for five known grapevine viruses including GLRaV-1 (1F: 5'-ACCTGGTTGAACGAGATCGCTT and 1R: 5'-GTAAACGGGTGTTCTTCAATTCTCT), GLRaV-2 [2F(FQ): 5'-GCTCCTAACGAGGGTATAGAAG and 2R(FQ): 5'-AGAGCGTACATACTCGCGAACAT], GLRaV-3 [3F(FQ): CAAGTGCTCTAGTTAAGGTCAG and 3R(FQ): 5'-CGGAACGTCGGTTCATTTAGA], Grapevine fan leaf virus (GFLVR1-F: 5'-TGAGATTAGTCATGGAGCAGCTT and GFLVR1-R: 5'-GGATAGACGTCTGGTTGATTTTG), and Tobacco ring spot virus (TRSVR1-1255F: 5'-GAGTGTTGTGCAATTATCT-GCATA and TRSVR1-1844R: 5'-CAAAGATGCCAAGAAAAGTTGCAAG). A 295-bp fragment of a grapevine actin cDNA (primers VvACT-F: 5'-ATCTCCATGTCAACCAAACTGAG and VvACT-R: 5'-GACAGAATGAGCAAGGAAATCAC) was used as a positive control for RT-PCR. The samples tested negative for GFLV, TRSV, or GLRaV-1 with our primer sets. However, four of the samples were positive for GLRaV-2, and 12 positive for GLRaV-3, as evidenced by the detection of PCR fragments of expected sizes (404 and 344 bp, respectively). All samples positive for GLRaV-2 were from a single field, whereas samples positive for GLRaV-3 were from both vineyards examined. The identities of GLRaV-2 and -3 were further confirmed by directly sequencing one GLRaV-2 and two GLRaV-3 (one from each location) PCR fragments from both ends. The 404 bp GLRaV-2-specific fragment shared 95 to 98% sequence identity with various GLRaV-2 isolates whose sequences were deposited at the GenBank. Similarly, the two 344-bp GLRaV-3 fragments share a 95 to 97% identity with known GLRaV-3 isolates. Notably, the sequences of the two GLRaV-3-specific fragments derived from two vineyards are not identical (97% identity), suggesting these two isolates might have different origins. As these viruses are known to be recalcitrant to mechanical transmission, we did not attempt to transmit these viruses to healthy plants. In summary, our results report for the first time the detection of GLRaV-2 and -3 in Ohio, suggesting that these two viruses are associated with the observed leaf roll symptoms, hence should be part of an effective management plan for grapevine viral diseases in the state. References: (1) C. Louime et al. Eur. J. Sci. Res. 22:232, 2008. (2) S. Lunden and W. Qiu. Plant Dis. 96:462, 2012. (3) A. M. Sharma et al. PLoS One 6:e26227, 2011.",
+      "journal": "Plant disease",
+      "year": 2014,
+      "pub_date": "2014-02-01",
+      "authors": "Han J; Ellis M A; Qu F",
+      "first_author": "Han J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Grapevine leaf roll-associated virus-2 (GLRaV-2), Grapevine leaf roll-associated virus-3 (GLRaV-3)",
+      "taxonomy": "Closteroviridae",
+      "host_plant": "葡萄 (Vitis vinifera cultivars Vidal Blanc, Fronterac, Cabernet Franc)",
+      "location": "美国俄亥俄州",
+      "results": "20个症状样品中4个检出GLRaV-2，12个检出GLRaV-3；序列与已知分离物同源性95-98%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

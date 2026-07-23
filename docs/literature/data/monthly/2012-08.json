@@ -1,0 +1,283 @@
+{
+  "month": "2012-08",
+  "generated": "2026-07-13 02:59:42",
+  "total": 48,
+  "by_category": {
+    "Host_Virus_Interactions": 18,
+    "Antiviral_Resistance_Genes": 11,
+    "New_Virus": 9,
+    "Control_Management": 4,
+    "Biotechnology_Applications": 3,
+    "Transmission_Epidemiology": 2,
+    "Viral_Diversity_Ecology": 2,
+    "Molecular_Characterization": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "22543634",
+      "doi": "10.1007/s00705-012-1314-y",
+      "title": "A novel maize-infecting mastrevirus from La Réunion Island.",
+      "abstract": "Despite extensive sampling, only one virus belonging to the genus Mastrevirus of the family Geminiviridae, maize streak virus (MSV), has until now been detected in maize with maize streak disease (MSD) symptoms. Here, we report for the first time a second, highly divergent, mastrevirus isolated from two maize plants displaying characteristic MSD-like symptoms, sampled on the South-west Indian Ocean Island, La Réunion. The two isolates shared <57 % genome-wide identity with all other known mastreviruses. We propose calling the new species Maize streak Réunion virus.",
+      "journal": "Archives of virology",
+      "year": 2012,
+      "pub_date": "2012-08-01",
+      "authors": "Pande Daniel; Kraberger Simona; Lefeuvre Pierre; Lett Jean-Michel; Shepherd Dionne N; ... (+2)",
+      "first_author": "Pande Daniel",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Maize streak Réunion virus",
+      "taxonomy": "Geminiviridae, Mastrevirus",
+      "host_plant": "玉米 (Zea mays)",
+      "location": "留尼汪岛（西南印度洋岛屿）",
+      "results": "从两株有MSD症状的玉米中分离到新mastrevirus，基因组同源性低于57%，提议为新种。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "22608761",
+      "doi": "10.1016/j.ejmech.2012.04.020",
+      "title": "Design, synthesis and antiviral activity of novel pyridazines.",
+      "abstract": "A series of pyridazines were prepared and evaluated for their anti-HIV activity. The new synthetic route involving a novel rearrangement reaction provided a practical method for the preparation of 5-hydroxypyridazines. The primary bioassay results indicated that most of the pyridazines possess anti-HIV activity. It ought to been mentioned that the rearranged compounds 35 and 39 exhibited relatively higher HIV inhibitory effect. Most of the synthesized compounds were also found to possess good anti-TMV activity, of which compound 9 showed similar in vivo anti-TMV activity to commercial plant virucide Ribavirin. This work provides a new and efficient approach to evolve novel multi-functional antiviral agents by rational integration and optimization of previously reported antiviral agents.",
+      "journal": "European journal of medicinal chemistry",
+      "year": 2012,
+      "pub_date": "2012-08-01",
+      "authors": "Wang Ziwen; Wang Mingxiao; Yao Xue; Li Yue; Tan Juan; ... (+5)",
+      "first_author": "Wang Ziwen",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "TMV（烟草花叶病毒）",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "22491062",
+      "doi": "10.1038/hdy.2012.15",
+      "title": "Magnitude and sign epistasis among deleterious mutations in a positive-sense plant RNA virus.",
+      "abstract": "How epistatic interactions between mutations determine the genetic architecture of fitness is of central importance in evolution. The study of epistasis is particularly interesting for RNA viruses because of their genomic compactness, lack of genetic redundancy, and apparent low complexity. Moreover, interactions between mutations in viral genomes determine traits such as resistance to antiviral drugs, virulence and host range. In this study we generated 53 Tobacco etch potyvirus genotypes carrying pairs of single-nucleotide substitutions and measured their separated and combined deleterious fitness effects. We found that up to 38% of pairs had significant epistasis for fitness, including both positive and negative deviations from the null hypothesis of multiplicative effects. Interestingly, the sign of epistasis was correlated with viral protein-protein interactions in a model network, being predominantly positive between linked pairs of proteins and negative between unlinked ones. Furthermore, 55% of significant interactions were cases of reciprocal sign epistasis (RSE), indicating that adaptive landscapes for RNA viruses maybe highly rugged. Finally, we found that the magnitude of epistasis correlated negatively with the average effect of mutations. Overall, our results are in good agreement to those previously reported for other viruses and further consolidate the view that positive epistasis is the norm for small and compact genomes that lack genetic robustness.",
+      "journal": "Heredity",
+      "year": 2012,
+      "pub_date": "2012-08-01",
+      "authors": "Lalić J; Elena S F",
+      "first_author": "Lalić J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草蚀纹病毒 (Tobacco etch potyvirus)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "22827939",
+      "doi": "10.4161/psb.20935",
+      "title": "The tomato yellow leaf curl virus (TYLCV) V2 protein interacts with the host papain-like cysteine protease CYP1.",
+      "abstract": "The V2 protein of Tomato yellow leaf curl geminivirus (TYLCV) is an RNA-silencing suppressor that counteracts the innate immune response of the host plant. However, this anti-host defense function of V2 may include targeting of other defensive mechanisms of the plant. Specifically, we show that V2 recognizes and directly binds the tomato CYP1 protein, a member of the family of papain-like cysteine proteases which are involved in plant defense against diverse pathogens. This binding occurred both in vitro and in vivo, within living plant cells. The V2 binding site within mCYP1 was identified in the direct proximity to the papain-like cysteine protease active site.",
+      "journal": "Plant signaling & behavior",
+      "year": 2012,
+      "pub_date": "2012-08-01",
+      "authors": "Bar-Ziv Amalia; Levy Yael; Hak Hagit; Mett Anahit; Belausov Eduard; ... (+2)",
+      "first_author": "Bar-Ziv Amalia",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "番茄黄化曲叶病毒 (Tomato yellow leaf curl virus, TYLCV)",
+      "taxonomy": "",
+      "host_plant": "番茄",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "22773840",
+      "doi": "10.1074/jbc.M112.367581",
+      "title": "Inhibition of pokeweed antiviral protein (PAP) by turnip mosaic virus genome-linked protein (VPg).",
+      "abstract": "Pokeweed antiviral protein (PAP) from Phytolacca americana is a ribosome-inactivating protein (RIP) and an RNA N-glycosidase that removes specific purine residues from the sarcin/ricin loop of large rRNA, arresting protein synthesis at the translocation step. PAP is also a cap-binding protein and is a potent antiviral agent against many plant, animal, and human viruses. To elucidate the mechanism of RNA depurination, and to understand how PAP recognizes and targets various RNAs, the interactions between PAP and turnip mosaic virus genome-linked protein (VPg) were investigated. VPg can function as a cap analog in cap-independent translation and potentially target PAP to uncapped IRES-containing RNA. In this work, fluorescence spectroscopy and HPLC techniques were used to quantitatively describe PAP depurination activity and PAP-VPg interactions. PAP binds to VPg with high affinity (29.5 nm); the reaction is enthalpically driven and entropically favored. Further, VPg is a potent inhibitor of PAP depurination of RNA in wheat germ lysate and competes with structured RNA derived from tobacco etch virus for PAP binding. VPg may confer an evolutionary advantage by suppressing one of the plant defense mechanisms and also suggests the possible use of this protein against the cytotoxic activity of ribosome-inactivating proteins.",
+      "journal": "The Journal of biological chemistry",
+      "year": 2012,
+      "pub_date": "2012-08-24",
+      "authors": "Domashevskiy Artem V; Miyoshi Hiroshi; Goss Dixie J",
+      "first_author": "Domashevskiy Artem V",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "芜菁花叶病毒 (Turnip mosaic virus, TuMV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30727072",
+      "doi": "10.1094/PDIS-03-12-0273-PDN",
+      "title": "First Report of Olive mild mosaic virus and Sowbane mosaic virus in Spinach in Greece.",
+      "abstract": "Uncommon, viruslike symptoms (yellowing, line patterns, leaf deformation, and necrosis), were observed in spinach fields in the Marathon area, Greece in 2004. Seedlings from the same seed lot, grown in the greenhouse, also developed the same viruslike symptoms, indicating that the causal agent(s) of the disorder is seed-transmissible. Spinach seedlings of the same variety but a different lot and herbaceous indicators (Chenopodium quinoa, C. amaranticolor, Sonchus oleraceus, and Nicotiana benthamiana) were mechanically inoculated with infected material. Spinach developed yellowing or necrotic spots whereas indicators showed variety of symptoms including mosaic, vein banding, and necrotic lesions. Virus purifications, double-stranded RNA extractions, cloning, and sequencing (2,3) followed by a combination of molecular (reverse transcription [RT]-PCR and immunocapture RT-PCR) and serological (ELISA) techniques with antisera provided by Dr. Avgelis were performed as described (4), verifying the presence of two viruses in the diseased seedlings: Sowbane mosaic virus (SoMV), a sobemovirus, was present in spinach and indicators with mottling and leaf deformation, whereas Olive mild mosaic virus (OMMV), a necrovirus, was present in plants with necrotic spots. All RT-PCR products amplified with primers SoMV-F (5'-CAAATGGTCTTGGTCAGCAGTC)/SoMV-R (5'-GCATACGCTCGACGATCTG) and OMMV-F (5'-CAAACCCAGCCTGTGTTCGATG)/OMMV-R (5'-CATCAGTTTGGTAATCCATTGA) were sequenced and found to confirm the other results. The SoMV-spinach isolate polyprotein gene sequence (GenBank Accession No. DQ450973) has 95% sequence identity with the type isolate from C. quinoa (GenBank Accession No. GQ845002), whereas the OMMV-spinach isolate (GenBank Accession No. JQ288895) has 92% sequence identity with the OMMV type isolate from olive (GenBank Accession No. AY616760). SoMV has been found to naturally infect spinach in the Netherlands (1) and, to our knowledge, this is the first report on spinach in Greece. The presence of OMMV in spinach is, to our knowledge, the first report worldwide. Its natural host range is limited to olive, tulip, and now spinach. OMMV might be transmitted by Olpidium spp. and may, according to data of its close relatives, persist in the soil for several decades. Pollen- and seedborne viruses (PSVs) like sobemoviruses and necroviruses are of particular importance for a crop like spinach where crop increase takes place in small, seed production-designated areas. If a PSV spreads in such an area it has the potential to become a major problem for the industry, especially when it remains undetected. Infected seed can be shipped worldwide with PSVs, causing diseases and becoming endemic in areas where they were absent. For this reason and the fact that field losses can exceed 50%, rigorous monitoring for the presence of SoMV and OMMV in seed fields is essential to minimize the possibility of the viruses moving to new areas. References: (1) L. Bos and N. Huijberts. Eur. J. Plant Pathol. 102:707, 1996. (2) S. M. Girgis et al., Eur. J. Plant Pathol. 125:203, 2009, (3) I. E. Tzanetakis et al. J. Virol. Methods 124:73, 2005. (4) I. E. Tzanetakis et al. Virus Res. 121:199, 2006.",
+      "journal": "Plant disease",
+      "year": 2012,
+      "pub_date": "2012-08-01",
+      "authors": "Gratsia M E; Kyriakopoulou P E; Voloudakis A E; Fasseas C; Tzanetakis I E",
+      "first_author": "Gratsia M E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Olive mild mosaic virus (OMMV) 和 Sowbane mosaic virus (SoMV)",
+      "taxonomy": "OMMV: Tombusviridae, Necrovirus; SoMV: Sobemoviridae, Sobemovirus",
+      "host_plant": "菠菜 (Spinacia oleracea) 及指示植物 Chenopodium quinoa、C. amaranticolor、Sonchus oleraceus、Nicotiana benthamiana",
+      "location": "希腊马拉松地区",
+      "results": "鉴定出OMMV和SoMV，序列比对显示与已知分离株分别有92%和95%同源性；OMMV自然宿主扩展至菠菜，SoMV首次在希腊菠菜中检出。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30727081",
+      "doi": "10.1094/PDIS-04-12-0368-PDN",
+      "title": "First Report of Raspberry leaf blotch virus in Raspberries in Finland.",
+      "abstract": "Raspberry (Rubus idaeus L.) is a valuable and widely grown softfruit that is a host for 40 viruses and virus-like agents, of which many are not characterized at the molecular level. Recently, Raspberry leaf blotch virus (RLBV, putative emaravirus species) was described from raspberries (cv. Glen Ample) in the United Kingdom and Serbia. Plants displayed conspicuous yellow blotches on leaves and abnormal development of leaf hairs in the corresponding areas of the abaxial side (3). Similar symptoms were observed in 'Glen Ample' grown in protective plastic tunnels and open fields in the main berry growing area in eastern Finland in June 2011. In three farms, leaves were sampled from symptomatic and symptomless plants of 'Glen Ample' and also cv. Polka displaying no symptoms. Total RNA was extracted using CTAB reagent. Equal amounts of RNA were pooled from 13 samples and subjected to small-RNA (sRNA) deep sequencing (Fasteris SA, Plan-les-Ouates, Switzerland) to detect viruses without advance information (2). Contigs were built on 21- to 24-nt sRNA reads using Velvet. Contigs larger than 50 nt were used to search homologous sequences in GenBank by BLAST and significant similarity (up to 99%) was observed with RLBV RNA3 and RNA4. Mapping sRNA reads to the genome of RLBV (1) by MAQ resulted in significant coverage of RNA1 (16%), RNA2 (37%), RNA3 (46%), RNA4 (65%), and RNA5 (27%). cDNA was synthesized on RNA of one symptom-expressing plant using random hexamer primers and the cDNA tested by PCR with a forward primer (RLBV-F 5'-TCAAATCCACTTGCATAGAACC-3', nt 723 to 744) and reverse primer (RLBV-R1 5'-CCTCAAACCTTGCAAACACA-3', nt 1,318 to 1,337) designed according to the nucleocapsid (NP) gene of the Scottish RLBV isolate (3). The sequence of the amplified partial NP gene (576 nt; GenBank Accession No. JQ684678) was 92.8% and 94.8% identical to the Scottish isolate at nt and amino acid levels, respectively. The forward primer RLBV-F and a new reverse primer (RLBV-R2 5'-GCCGAAAGTCAAACCTGGTG-3', nt 943 to 962) were used to test additional plants for RBLV and to make a probe (198 nt) to detect RLBV using digoxigen-labeled sense and antisense RNA probes, as described for European mountain ash ringspot associated virus (1). RLBV was detected in all tested plants of 'Glen Ample' with yellow leaf blotch symptoms in the three farms, but not in any symptomless plants of 'Glen Ample' and 'Polka.' The sense probes gave strong signals, in contrast to the antisense probes, which gave only weak or no detectable signals in the virus-positive plants, consistent with the negative RNA strand of RLBV being encapsidated in virus particles. The results show RLBV is associated with severe, distinct, and characteristic symptoms in raspberries of cv. Glen Ample grown in plastic tunnels and open fields in Finland and has an apparent negative impact on plant growth and yield. Our observations in 2011 also suggest that the incidence of diseased plants is much higher in plastic tunnels than in open fields, perhaps because the conditions for the vector of RLBV (raspberry leaf and bud mite, Phyllocoptes gracilis Nalepa) (1) are more favorable in plastic tunnels. These results clarify the etiology of raspberry leaf blotch disease in Finland and emphasize the need to inspect raspberry planting materials for RLBV for better control of the disease. References: (1) A. K. Kallinen et al. Phytopathology 99:344, 2009. (2) J. F. Kreuze et al. Virology 388:1, 2009. (3) W. J. McGavin et al. J. Gen. Virol. 93:430, 2012.",
+      "journal": "Plant disease",
+      "year": 2012,
+      "pub_date": "2012-08-01",
+      "authors": "Bi Y; Artola K; Kurokura T; Hytönen T; Valkonen J P T",
+      "first_author": "Bi Y",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Raspberry leaf blotch virus (RLBV)",
+      "taxonomy": "Emaravirus属（推定）",
+      "host_plant": "树莓（Rubus idaeus）品种Glen Ample和Polka",
+      "location": "芬兰东部",
+      "results": "通过sRNA测序和RT-PCR确认RLBV感染，部分NP基因序列与苏格兰分离物核苷酸相似性92.8%，症状植株全部阳性，无症状植株阴性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30727082",
+      "doi": "10.1094/PDIS-03-12-0258-PDN",
+      "title": "First Report of Tomato yellow leaf curl virus Infecting Common Bean in China.",
+      "abstract": "Common bean (Phaseolus vulgaris) is one of the most economically important vegetable crops in China. In November 2011, symptoms with thickening and crumpling of leaves and stunting were observed on common bean with incidence rate of 50 to 70% in the fields of Huaibei, northern Anhui Province, China. Diseased common bean plants were found to be infested with large population of whiteflies (Bemisia tabaci), which induced leaf crumple symptoms in healthy common beans, suggesting begomovirus etiology. To identify possible begomoviruses, 43 symptomatic leaf samples from nine fields were collected and total DNA of each sample was extracted. PCR was performed using degenerate primers PA and PB to amplify a specific region covering AV2 gene of DNA-A and part of the adjacent intergenic region (2). DNA fragments were successfully amplified from 37 out of 43 samples and PCR amplicons of 31 samples were used for sequencing. Sequence alignments among them showed that the nucleotide sequence identity ranged from 99 to 100%, which implied that only one type of begomovirus might be present. Based on the consensus sequences, a primer pair MB1AbF (ATGTGGGATCCACTTCTAAATGAATTTCC) and MB1AsR (GCGTCGACAGTGCAAGACAAACTACTTGGGGACC) was designed and used to amplify the circular viral DNA genome. The complete genome (Accession No. JQ326957) was 2,781 nucleotides long and had the highest sequence identity (over 99%) with Tomato yellow leaf curl virus (TYLCV; Accession Nos. GQ352537 and GU199587). These samples were also examined by dot immunobinding assay using monoclonal antibody against TYLCV and results confirmed that TYLCV was present in the samples. These results demonstrated that the virus from common bean is an isolate of TYLCV, a different virus from Tomato yellow leaf curl China virus (TYLCCNV). TYLCV is a devastating pathogen causing significant yield losses on tomato in China since 2006 (4). The virus has also been reported from cowpea in China (1) and in common bean in Spain (3). To our knowledge, this is the first report of TYLCV infecting common bean in China. References: (1) F. M. Dai et al. Plant Dis. 95:362, 2011. (2) D. Deng et al. Ann. Appl. Biol. 125:327, 1994. (3) J. Navas-Castillo et al. Plant Dis. 83:29, 1999. (4) J. B. Wu et al. Plant Dis. 90:1359, 2006.",
+      "journal": "Plant disease",
+      "year": 2012,
+      "pub_date": "2012-08-01",
+      "authors": "Ji Y H; Cai Z D; Zhou X W; Liu Y M; Xiong R Y; ... (+4)",
+      "first_author": "Ji Y H",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato yellow leaf curl virus (TYLCV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "菜豆 (Phaseolus vulgaris)",
+      "location": "中国安徽省北部淮北市",
+      "results": "从43份样品中37份扩增出目的片段，31份测序显示序列高度一致；完整基因组2781nt，与TYLCV相似度>99%；免疫试验确认TYLCV。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30727089",
+      "doi": "10.1094/PDIS-04-12-0409-PDN",
+      "title": "First Report of Broad bean wilt virus 2 in Echinacea purpurea in China.",
+      "abstract": "Field-grown Echinacea purpurea plants showing necrosis, leaf roll, yellow mosaic, and mosaic symptoms in leaves were collected in June 2010 in Huairou, Beijing, China. ELISAs of extracts of four samples showed that one sample with mosaic symptoms had a positive reaction with Broad bean wilt virus 2 (BBWV-2) monoclonal antibody provided by Professor X. P. Zhou (1). The monoclonal antibody recognized the 44.7 kD coat protein subunit of BBWV-2. We used Chenopodium quinoa as an assay species to isolate the virus by sap transmissions and to maintain the virus strain. Sap from infected C. quinoa, when inoculated onto indicator plant species, induced the following symptoms: C. quinoa: local lesions in inoculated leaves, systemic chlorotic mottle in upper leaves, deformation, and apical necrosis; C. amaranticolor: chlorotic local lesions, systemic mosaic and leaf distortion; Nicotiana benthamiana: systemic mosaic; Gomphrena globosa: local purple spots in inoculated leaves and systemic infection in upper leaves; Tetragonia expansa: local lesions, but no symptoms of systemic infection; Physalis floridana: systemic mosaic. No symptoms were observed on Capsicum annuum, Datura stramonium, N. glutinosa, or N. tabacum cv. White Burley. To confirm BBWV-2 infection, total RNAs extracted from infected C. quinoa leaves were reverse transcripted to cDNA using oligo-dT primer (T17V). The primer pair Fab5'R1F (5'-AAATATTAAAACAAACAGCTTTCGTT-3') and Fab5'R1R (5'-TTCAAAGCTCGTGCCATNTYATTKGC-3') for specific detection of the Fabavirus genus (2) was used for PCR analysis. The amplified fragment is between the 5'-terminal non-translatable region (NTR) and the beginning of the coding region of RNA1. Amplicons of approximately the expected size (~391 bp) were produced from the virus-infected C. quinoa and a BBWV-2 positive control (ATCC PV131, PV0537). Amplicons of approximately the expected size (~350 bp) were produced from the BBWV-1 positive control (ATCC PV132). However, no such amplicons were observed from healthy C. quinoa plants and water control. The 391-bp amplicons of RNA1 obtained from the infected C. quinoa were cloned and sequenced. Comparison with sequences of other BBWV-2 isolates showed that the isolate we obtained (No. JX070674) had approximately 99% nt identity (98% amino acid identity) with Chinese BBWV-2 isolate BC (No. FJ485686.1) (3). As an ornamental and medicinal plant, E. purpurea is widely cultivated in northern China. Up until now, Tomato ring spot virus, Tobacco rattle virus, Cucumber mosaic virus, and Tomato spotted wilt virus have been detected or isolated from E. purpurea in the world (4). To our knowledge, this is the first report of BBWV-2 infecting E. purpurea in China. BBWV-2-infected E. purpurea may have less secondary metabolites, which could influence the quality and therapeutic efficacy of this herbal medicine. References: (1) L. Qing et al. Acta Microbiologica Sinica 40:166, 2000. (2) R. M. Ferrer et al. J. Virol. Methods 144:156, 2007. (3) C. Sui et al. Plant Dis. 93:844, 2009. (4) B. Dikova. Bulgarian J. Agric. Sci. 17:306, 2011.",
+      "journal": "Plant disease",
+      "year": 2012,
+      "pub_date": "2012-08-01",
+      "authors": "Li G F; Wei M S; Ma J; Zhu S F",
+      "first_author": "Li G F",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Broad bean wilt virus 2 (BBWV-2)",
+      "taxonomy": "Secoviridae, Fabavirus",
+      "host_plant": "Echinacea purpurea (紫锥菊)",
+      "location": "中国北京怀柔",
+      "results": "样品ELISA阳性，RT-PCR扩增391 bp片段，序列与BBWV-2分离物BC同源性99%，首次报道。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30727074",
+      "doi": "10.1094/PDIS-03-12-0254-PDN",
+      "title": "First Report of Iris yellow spot virus Infecting Onion in Pennsylvania.",
+      "abstract": "Iris yellow spot virus (IYSV; genus Tospovirus; family Bunyaviridae) is an economically important pathogen of onion. It is vectored by onion thrips (Thrips tabaci Lindeman) and causes widespread disease of onion in all major onion growing states in the western United States (1). In the eastern United States, IYSV was first reported in Georgia in 2004 (4) and then in New York in 2006 (2). In mid-July of 2010, symptomatic onion (Allium cepa) plants (cv. Candy) were found in New Holland, Pennsylvania, in Lancaster County on a small, diversified commercial farm (40.06°N, 76.06°W). Bleached, elongated lesions with tapered ends occurred on middle-aged leaves on approximately 30% of the 13,760 plants in an area approximately one tenth of an acre. Leaf tissue from five symptomatic plants tested positive for IYSV in a double-antibody sandwich (DAS)-ELISA with IYSV-specific serological reagents from Agdia Inc. (Elkhart, IN). A reverse transcription (RT)-PCR assay was used to verify the presence of IYSV in a subset of symptomatic leaf samples that reacted to IYSV antibodies in DAS-ELISA. Primers specific to the nucleocapsid (N) gene of IYSV (5'-ACTCACCAATGTCTTCAAC-3' and 5'-GGCTTCCTCTGGTAAGTGC-3') were used to characterize a 402-bp fragment (3). The resulting amplicons were ligated in TOPO TA cloning vector (Invitrogen, Carlsbad, CA) and two clones of each isolate were sequenced in both directions. Sequence analysis showed a consensus sequence for the partial N gene of the five IYSV isolates from Pennsylvania (GenBank Accession No. JQ952568) and an 87 to 100% nucleotide sequence identity with other IYSV N gene sequences that are available in GenBank. The highest nucleotide sequence identity (100%) was with an IYSV isolate from Texas (GenBank Accession No. DQ658242) and the lowest was with an isolate from India (GenBank Accession No. EU310291). To our knowledge, this is the first report of IYSV infection of onion in Pennsylvania. This finding confirms further spread of the virus within North America. Further study is warranted to determine the impact of IYSV on the Pennsylvania onion industry and to determine viable management strategies, if necessary. References: (1) D. H. Gent et al. Plant Dis. 88:446, 2004 (2) C. A. Hoepting et al. Plant Dis. 91:327, 2007 (3) C. L. Hsu et al. Plant Dis. 95:735-743. (4) S. W. Mullis et al. Plant Dis. 88: 1285, 2004.",
+      "journal": "Plant disease",
+      "year": 2012,
+      "pub_date": "2012-08-01",
+      "authors": "Hoepting C A; Fuchs M F",
+      "first_author": "Hoepting C A",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "New_Virus"
+      ],
+      "virus_name": "Iris yellow spot virus (IYSV)",
+      "taxonomy": "",
+      "host_plant": "洋葱 (Allium cepa)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30727071",
+      "doi": "10.1094/PDIS-03-12-0293-PDN",
+      "title": "First Report of Rice yellow mottle virus on Rice in Burundi.",
+      "abstract": "Since the mid-1980s, rice cultivation has expanded rapidly in Burundi to reach approximately 50,000 ha in 2011. In 2007, leaf mottling, reduced tillering, and stunting symptoms were observed on rice at Gatumba near Bujumbura, causing small patches in less than 10% of the fields. Rice yellow mottle virus (RYMV, genus Sobemovirus), which has seriously threatened rice cultivation in Africa (1) and was recently described in the neighboring Rwanda (3), was suspected to be involved because of similar symptoms. To identify the pathogen that caused the disease in Burundi, a survey was performed in the major rice-producing regions of Burundi and Rwanda. Six locations in Burundi and four in Rwanda were investigated in April and October 2011. Disease incidence in the fields was estimated to be 15 ± 5%. Symptomatic leaves of 24 cultivated rice plants were collected and tested by double antibody sandwich-ELISA with polyclonal antibodies raised against the RYMV isolate Mg1 (2). All tested samples reacted positively. Four isolates were inoculated on susceptible Oryza sativa cultivar IR64 (2). The typical symptoms of RYMV were reproduced 7 days after inoculation, whereas the noninoculated controls remained healthy. Total RNA was extracted by the RNeasy Plant Mini kit (QIAGEN, Hilden, Germany) from 12 samples. The RYMV coat protein gene was amplified by RT-PCR with primers 5'CGCTCAACATCCTTTTCAGGGTAG3' and 5'CAAAGATGGCCAGGAA3' (3). The sequences were deposited in GenBank (Accession Nos. HE654712 to HE654723). To characterize the isolates, the sequences of the tested samples were compared in a phylogenic tree including a set of 45 sequences of isolates from Rwanda, Uganda, western Kenya, and northern Tanzania (2,3). Six isolates from western Burundi, namely Bu1, Bu2, Bu4, Bu7, Bu10, and Bu13 (Accession Nos. HE654712 to HE654716 and HE654718), and the isolate Rw208 (HE654720) from southwestern Rwanda, belonged to strain S4-lm previously reported near Lakes Malawi and Tanganyika. They fell within the group gathering isolates from the western Bugarama plain of Rwanda (3). The isolates Bu16 (HE654719) and Bu17 (HE654717) from Mishiha in eastern Burundi belonged to strain S4-lv previously reported around Lake Victoria. However, they did not cluster with isolates from the eastern and southern provinces of Rwanda. They were genetically more closely related to isolates of strain S4-lv from northern Tanzania. Overall, the phylogeography of RYMV in Burundi and Rwanda region was similar. In the western plain of the two countries, the isolates belonged to the S4-lm lineage, whereas at the east of the two countries at midland altitude, they belonged to the S4-lv lineage. The presence of RYMV in Burundi should be considered in the future integrative pest management strategies for rice cultivation in the country. References: (1) D. Fargette et al. Annu. Rev. Phytopathol. 44:235, 2006. (2) Z. L. Kanyeka et al. Afr. Crop Sci. J. 15:201, 2007. (3) I. Ndikumana et al. New Dis. Rep. 23:18, 2011.",
+      "journal": "Plant disease",
+      "year": 2012,
+      "pub_date": "2012-08-01",
+      "authors": "Ndikumana I; Pinel-Galzi A; Negussie Z; Msolla S N'chimbi; Njau P; ... (+5)",
+      "first_author": "Ndikumana I",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Rice yellow mottle virus (RYMV)",
+      "taxonomy": "Sobemovirus",
+      "host_plant": "水稻 (Oryza sativa)",
+      "location": "布隆迪（Gatumba near Bujumbura, Mishiha）",
+      "results": "所有样品ELISA阳性；接种后7天出现典型症状；西部分离株属S4-lm株系，东部属S4-lv株系。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30727069",
+      "doi": "10.1094/PDIS-03-12-0265-PDN",
+      "title": "First Report of Grapevine Leafroll-associated Virus 4 in Vineyards of Turkey.",
+      "abstract": "Turkey is one of the main grape producers in the world, with an annual production of about 4 million tons on approximately 500,000 hectares of viticulture areas, mainly in the Aegean, Southeast Anatolia, and Central Anatolia regions. Nearly 29% of the vineyards in Turkey are located in the Aegean region, with major growing districts including the provinces of Manisa and Izmir. Previous studies have shown that Grapevine leafroll-associated viruses (GLRaV-1, -2, -3, -5, -6, and -7), which cause Grapevine Leafroll Disease (GLD), were present in Turkish vineyards (1,2). Surveys in 2009 and 2011 were conducted to determine other viruses associated with this disease in commercial vineyards of the provinces of Manisa and Izmir. Leaves and young canes were randomly collected from individual symptomatic and symptomless grapevines (Vitis vinifera L.) of red or white cultivars in late summer and autumn. Symptoms observed in plants were reddening and downward rolling of leaves in red cultivars and yellowing of leaf tissue between main veins and leaf curling in white cultivars. In addition, affected grapevines appeared to have reduced growth resulting in smaller canopies. Samples were analyzed first by double antibody sandwich (DAS)-ELISA using commercial diagnostic kits (Bioreba, Switzerland) to GLRaV-4-9 according to the manufacturer's instructions. The results from serological assays on 145 samples revealed that five samples of cv. Syrah and three of cv. Round seedless from Izmir-Menderes and from Manisa-Alasehir, respectively, reacted positively with specific antibodies to GLRaV-4-9. The identification of GLRaV-4 was confirmed by reverse transcriptase-PCR and total nucleic acids were extracted by a silica capture method from fresh, symptomatic plant samples (3). The synthesis of complementary DNA (cDNA) was performed by a Fermentas cDNA synthesis kit in accordance with the procedure specified by the manufacturer and specific primers (Forward: CCAACTGTCGTGGGTATAAGGAAT, Reverse: CCCAGACACCGGTCCTATACT) were used according to methods described by Maliogka et al. (4). An expected PCR product of approximately 200 nt was obtained from symptomatic samples that were GLRaV-4 positive in DAS-ELISA. GLRaV, comprising GLRaV-4 as quarantine pests, are under official control in Turkey. To our knowledge, this is the first report of natural GLRaV-4 infection of grapevines in Turkey. References: (1) B. Akbas et al., J. Phytopathol. 155:122, 2007. (2) N. Buzkan et al., J. Phytopathol. 158:448, 2010. (3) X. Foissac et al., Acta Hortic. 550:37, 2001. (4) V. I. Maliogka et al., J. Virol. Methods 154:41, 2008.",
+      "journal": "Plant disease",
+      "year": 2012,
+      "pub_date": "2012-08-01",
+      "authors": "Kaya A; Erilmez S; Paylan I C; Erkan S",
+      "first_author": "Kaya A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Grapevine leafroll-associated virus 4 (GLRaV-4)",
+      "taxonomy": "Closteroviridae, Ampelovirus",
+      "host_plant": "葡萄 (Vitis vinifera L.)",
+      "location": "土耳其（伊兹密尔-门德雷斯和马尼萨-阿拉谢希尔）",
+      "results": "145个样本中5个Syrah和3个Round seedless样品阳性，PCR获得约200 nt产物。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

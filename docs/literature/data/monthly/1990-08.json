@@ -1,0 +1,35 @@
+{
+  "month": "1990-08",
+  "generated": "2026-07-13 02:59:42",
+  "total": 1,
+  "by_category": {
+    "New_Virus": 1,
+    "Betaflexiviridae": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "2391504",
+      "doi": "10.1099/0022-1317-71-8-1877",
+      "title": "Nucleotide sequence of the 3'-terminal region of Helenium virus S RNA.",
+      "abstract": "The sequence of 1390 nucleotides of the 3'-terminal region of Helenium virus S RNA was determined from cloned cDNA. This portion of the viral RNA contains two major open reading frames (ORFs) encoding proteins of Mr 32.9K and 12.6K. The 32.9K protein, which is similar in size to the capsid protein of the virus, shares marked homology with the coat proteins of potexviruses and two other carlaviruses. The ORF, corresponding to Mr 12.6K, nearest to the 3'-terminal poly(A) tail shows extensive similarity with the corresponding proteins of potato virus S and potato virus M. We propose that this protein may be involved in nucleic acid binding within infected cells.",
+      "journal": "The Journal of general virology",
+      "year": 1990,
+      "pub_date": "1990-08-01",
+      "authors": "Foster G D; Millar A W; Meehan B M; Mills P R",
+      "first_author": "Foster G D",
+      "categories": [
+        "New_Virus",
+        "Betaflexiviridae"
+      ],
+      "virus_name": "Helenium virus S",
+      "taxonomy": "Carlavirus",
+      "host_plant": "未提及（推测为堆心菊属植物）",
+      "location": "未提及",
+      "results": "3'端1390 nt包含两个ORF；32.9K蛋白与potexviruses和carlaviruses外壳蛋白同源；12.6K蛋白与PVS、PVM对应蛋白相似，推测参与核酸结合。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "month": "1991-05",
+  "generated": "2026-07-13 02:59:42",
+  "total": 6,
+  "by_category": {
+    "Host_Virus_Interactions": 3,
+    "Antiviral_Resistance_Genes": 2,
+    "New_Virus": 1,
+    "Phenuiviridae": 1,
+    "Control_Management": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "2024478",
+      "doi": "10.1016/0042-6822(91)90646-s",
+      "title": "Nucleotide sequence and RNA hybridization analyses reveal an ambisense coding strategy for maize stripe virus RNA3.",
+      "abstract": "The 2357-nt sequence of maize stripe virus (MStV) RNA3 was determined. Two nonoverlapping open reading frames (ORFs) of opposite polarities are contained in RNA3. A 591-nt ORF is located near the 5' end of MStV RNA3, while a second ORF of 948 nt is located near the 3' end in the viral complementary RNA (vcRNA). In vitro translation of transcripts derived from cDNA clones representing regions of each ORF was used to identify the respective proteins. A ca. 22,000 Mr protein was translated from the 591-nt ORF transcript. This protein comigrated in SDS-PAGE with a protein produced by in vitro translation of MStV RNA and is referred to as the NS3 protein. The protein from the 948-nt ORF transcript was specifically immunoprecipitated by antiserum to the MStV nucleocapsid protein (N protein). RNA hybridization analyses identified two subgenomic RNAs in total RNA extracts from MStV-infected Zea mays plants. These RNAs are ca. 650 and 1350 nt in size, are of opposite polarities, and correspond to regions of RNA3 containing the two ORFs. These data suggest that MStV RNA3 has an ambisense coding strategy similar to that found for the S RNA of the vertebrate-infecting phleboviruses, uukuviruses, and arenaviruses, as for tomato spotted wilt virus.",
+      "journal": "Virology",
+      "year": 1991,
+      "pub_date": "1991-05-01",
+      "authors": "Huiet L; Klaassen V; Tsai J H; Falk B W",
+      "first_author": "Huiet L",
+      "categories": [
+        "New_Virus",
+        "Phenuiviridae"
+      ],
+      "virus_name": "Maize stripe virus (MStV)",
+      "taxonomy": "Tenuivirus",
+      "host_plant": "Zea mays (玉米)",
+      "location": "未提及",
+      "results": "RNA3含591 nt和948 nt两个反向ORF，分别编码22 kDa NS3蛋白和N蛋白。感染玉米中存在约650和1350 nt的亚基因组RNA，极性相反。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "2022657",
+      "doi": "",
+      "title": "DNA sequence of Mirabilis antiviral protein (MAP), a ribosome-inactivating protein with an antiviral property, from mirabilis jalapa L. and its expression in Escherichia coli.",
+      "abstract": "We cloned a cDNA for Mirabilis antiviral protein (MAP), a ribosome-inactivating protein (RIP), which inhibits the mechanical transmission of plant virus and the in vitro protein synthesis of both prokaryotes and eukaryotes. The cDNA consisted of 1066 nucleotides and could encode 278 amino acids. The major part of the amino acid sequence (from Ala29 to Ser278) was identical with the sequence of native MAP as determined by protein sequencing. An NH2-terminal extrapeptide (28 amino acid residues) of MAP was comparable with the signal peptides of plant proteins accumulating in the vacuole. A stable hairpin structure was predicted in the 3'-noncoding region of the cDNA. Tandem repeated sequences were found downstream from the hairpin structure. They were composed of triple complete repeats of a heptanucleotide with preceding and following hexa-nucleotide repeats. The cDNA was expressed in Escherichia coli based on the T7 expression system. The product encoded by the cDNA was confirmed to be MAP precursor by Western blotting followed by immunological analysis. The growth of the transformants was inhibited by the expression of the gene. MAP precursor also seemed to inhibit the protein synthesis of E. coli just as native MAP has been observed to do.",
+      "journal": "The Journal of biological chemistry",
+      "year": 1991,
+      "pub_date": "1991-05-05",
+      "authors": "Kataoka J; Habuka N; Furuno M; Miyano M; Takanami Y; ... (+1)",
+      "first_author": "Kataoka J",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Control_Management",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "未明确指定（抑制植物病毒机械传播）",
+      "taxonomy": "",
+      "host_plant": "紫茉莉 (Mirabilis jalapa L.)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16668176",
+      "doi": "10.1104/pp.96.1.327",
+      "title": "Kinetic characterization of caffeoyl-coenzyme a-specific 3-o-methyltransferase from elicited parsley cell suspensions.",
+      "abstract": "The activity of caffeoyl-coenzyme A (CoA) 3-O-methyltransferase, an enzyme widely distributed in plants and involved in cell wall reinforcement in a disease resistance response, appears to be subject to a complex type of regulation in vivo. In cultured parsley (Petroselinum crispum) cells treated with an elicitor from Phytophthora megasperma f.sp. glycinea, the enzyme activity is rapidly induced by a transient increase in the rate of de novo transcription. Parsley caffeoyl-CoA-specific methyltransferase differs in several aspects from other plant O-methyltransferases but shows limited homology to bacterial adenine-specific DNA methyltransferases. Kinetic analysis revealed an Ordered Bi Bi mechanism for catalysis, with caffeoyl-CoA bound prior to S-adenosyl-l-methionine and feruloyl-CoA released last from the enzyme. The small inhibitory constant determined in vitro for feruloyl-CoA suggests that, in vivo, the enzyme activity is also under tight control by the steady-state product concentration in addition to the rate of transcription that becomes affected upon elicitor challenge.",
+      "journal": "Plant physiology",
+      "year": 1991,
+      "pub_date": "1991-05-01",
+      "authors": "Pakusch A E; Matern U",
+      "first_author": "Pakusch A E",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1862248",
+      "doi": "",
+      "title": "Botanical lipids: potential role in modulation of immunologic responses and inflammatory reactions.",
+      "abstract": "Enrichment of cells with fatty acids of particular botanical lipids alters cell function in vitro (for example, suppression of human synovial cell and T lymphocyte proliferation) in a manner that suggests that administration of these botanical lipids may be a useful therapeutic strategy for patients with diseases characterized by disordered immune responses and chronic inflammation. Treatment of animal models with certain plant seed oils suppresses inflammation and joint tissue injury. Controlled trials in patients with rheumatoid arthritis are in an early stage, but offer encouragement. The mechanisms whereby these novel lipids influence host defense include alteration of arachidonic acid oxygenation products and direct effects on cells independent of fatty acid metabolism.",
+      "journal": "Rheumatic diseases clinics of North America",
+      "year": 1991,
+      "pub_date": "1991-05-01",
+      "authors": "Callegari P E; Zurier R B",
+      "first_author": "Callegari P E",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "21232447",
+      "doi": "10.1016/0169-5347(91)90058-6",
+      "title": "Parasitic castration of plants by fungi.",
+      "abstract": "If the production of genetically variable offspring is a mechanism of host defense against parasites, then parasites capable of suppressing sexual reproduction in hosts may gain a selective advantage over parasites that do not do so. Recent work has shown that a range of systemic fungi infecting plants sterilize their hosts, effectively preventing coevolutionary responses by host populations to avoid infection, while stimulating clonal spread of the infected plant. Indeed, parasitic castration of plants may represent a widespread fungal adaptation.",
+      "journal": "Trends in ecology & evolution",
+      "year": 1991,
+      "pub_date": "1991-05-01",
+      "authors": "Clay K",
+      "first_author": "Clay K",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1888019",
+      "doi": "10.1016/0003-2697(91)90298-8",
+      "title": "A method for the quantitation of hypericin, an antiviral agent, in biological fluids by high-performance liquid chromatography.",
+      "abstract": "Hypericin, a polycyclic aromatic dianthroquinone, is a natural plant product with antiviral properties. We report here the development of a methodology for the extraction and quantitation of hypericin from plasma and biological fluids and the adaptation of a sensitive and selective method for detection of the compound by high-performance liquid chromatography. The methodology offers a rapid and specific means of monitoring drug blood levels in clinical and pharmacokinetic studies. The chromatographic procedure utilizes the substantial retentive properties of hypericin on reverse-phase media and detection by the strong visible absorbance maximum at 590 nm. Verification by the fluorescence spectral properties of hypericin in organic media can also be utilized. The assay is linear over a 3 log concentration range and hypericin is consistently recovered from murine, simian, and human plasma. The methodology was applied to assess the pharmacokinetic properties of hypericin in mice receiving a single bolus injection of 350 micrograms. A distribution half-life of 2.0 h and an elimination half-life of 38.5 h were calculated. We also discuss the limitations of direct analysis of hypericin by absorbance or fluorescence measurements.",
+      "journal": "Analytical biochemistry",
+      "year": 1991,
+      "pub_date": "1991-05-15",
+      "authors": "Liebes L; Mazur Y; Freeman D; Lavie D; Lavie G; ... (+5)",
+      "first_author": "Liebes L",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

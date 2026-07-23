@@ -1,0 +1,282 @@
+{
+  "month": "2003-08",
+  "generated": "2026-07-13 02:59:42",
+  "total": 19,
+  "by_category": {
+    "Host_Virus_Interactions": 11,
+    "Antiviral_Resistance_Genes": 4,
+    "Biotechnology_Applications": 3,
+    "Molecular_Characterization": 1,
+    "Control_Management": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "12886005",
+      "doi": "10.1073/pnas.1733874100",
+      "title": "Short interfering RNA-mediated interference of gene expression and viral DNA accumulation in cultured plant cells.",
+      "abstract": "Gene silencing mediated by double-stranded RNA is a sequence-specific RNA degradation mechanism highly conserved in eukaryotes that serves as an antiviral defense pathway in both plants and Drosophila. Short interfering RNAs (siRNAs), the 21- to 23-nt double-stranded intermediates of this natural defense mechanism, are becoming powerful tools for reducing gene expression and countering viral infection in a variety of mammalian cells. Here we report the use of siRNAs to target reporter gene expression and viral DNA accumulation in cultured plant cells. Transient expression of reporter genes encoding either GFP or red fluorescent protein from Discosoma was specifically reduced by 58% and 47%, respectively, at 24 h after codelivery of cognate siRNAs in BY2 protoplasts. In contrast to mammalian systems, the siRNA-induced silencing of GFP expression was transitive as indicated by the presence of siRNAs representing parts of the target RNA outside the region homologous to the triggering siRNA. Codelivery of an siRNA designed to target the mRNA encoding the replication-associated protein (AC1) of the geminivirus African cassava mosaic virus (ACMV) from Cameroon blocked AC1 mRNA accumulation by approximately 91% and inhibited accumulation of the ACMV genomic DNA by approximately 66% at 36 and 48 h after transfection. As with siRNA-induced reporter gene silencing, the siRNA targeting ACMV AC1 was specific and did not affect the replication of East African cassava mosaic Cameroon virus. This report demonstrates the occurrence of siRNA-mediated suppression of gene expression in cultured plant cells and that siRNA can interfere with and suppress accumulation of a nuclear-replicated DNA virus.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2003,
+      "pub_date": "2003-08-05",
+      "authors": "Vanitharani Ramachandran; Chellappan Padmanabhan; Fauquet Claude M",
+      "first_author": "Vanitharani Ramachandran",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "African cassava mosaic virus (ACMV)",
+      "taxonomy": "",
+      "host_plant": "烟草（BY2细胞）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18943860",
+      "doi": "10.1094/PHYTO.2003.93.8.941",
+      "title": "An analysis of the durability of resistance to plant viruses.",
+      "abstract": "ABSTRACT Genetic resistance often fails because a resistance-breaking (RB) pathogen genotype increases in frequency. On the basis of an analysis of cellular plant pathogens, it was recently proposed that the evolutionary potential of a pathogen is a major determinant of the durability of resistance. We test this hypothesis for plant viruses, which differ substantially from cellular pathogens in the nature, size, and expression of their genomes. Our analysis was based on 29 plant virus species that provide a good representation of the genetic and biological diversity of plant viruses. These 29 viruses were involved in 35 pathosystems, and 50 resistance factors deployed against them were analyzed. Resistance was found to be durable more often than not, in contrast with resistance to cellular plant pathogens. In a third of the analyzed pathosystems RB strains have not been reported, and in another third RB strains have been reported but have not become prevalent in the virus population. The evolutionary potential of the viruses in the 35 pathosystems was evaluated with a compound risk index based on three evolutionary factors: the population of the pathogen, the degree of recombination, and the amount of gene and genotype flow. Our analysis indicates that evolutionary potential may be an important determinant of the durability of resistance against plant viruses.",
+      "journal": "Phytopathology",
+      "year": 2003,
+      "pub_date": "2003-08-01",
+      "authors": "García-Arenal Fernando; McDonald Bruce A",
+      "first_author": "García-Arenal Fernando",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "29种植物病毒（详见原文）",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12827500",
+      "doi": "10.1007/s00438-003-0868-5",
+      "title": "Isolation of Resistance Gene Candidates (RGCs) and characterization of an RGC cluster in cassava.",
+      "abstract": "Plant disease resistance genes (R genes) show significant similarity amongst themselves in terms of both their DNA sequences and structural motifs present in their protein products. Oligonucleotide primers designed from NBS (Nucleotide Binding Site) domains encoded by several R-genes have been used to amplify NBS sequences from the genomic DNA of various plant species, which have been called Resistance Gene Analogues (RGAs) or Resistance Gene Candidates (RGCs). Using specific primers from the NBS and TIR (Toll/Interleukin-1 Receptor) regions, we identified twelve classes of RGCs in cassava (Manihot esculenta Crantz). Two classes were obtained from the PCR-amplification of the TIR domain. The other 10 classes correspond to the NBS sequences and were grouped into two subfamilies. Classes RCa1 to RCa5 are part of the first subfamily and were linked to a TIR domain in the N terminus. Classes RCa6 to RCa10 corresponded to non-TIR NBS-LRR encoding sequences. BAC library screening with the 12 RGC classes as probes allowed the identification of 42 BAC clones that were assembled into 10 contigs and 19 singletons. Members of the two TIR and non-TIR NBS-LRR subfamilies occurred together within individual BAC clones. The BAC screening and Southern hybridization analyses showed that all RGCs were single copy sequences except RCa6 that represented a large and diverse gene family. One BAC contained five NBS sequences and sequence analysis allowed the identification of two complete RGCs encoding two highly similar proteins. This BAC was located on linkage group J with three other RGC-containing BACs. At least one of these genes, RGC2, is expressed constitutively in cassava tissues.",
+      "journal": "Molecular genetics and genomics : MGG",
+      "year": 2003,
+      "pub_date": "2003-08-01",
+      "authors": "López C E; Zuluaga A P; Cooke R; Delseny M; Tohme J; ... (+1)",
+      "first_author": "López C E",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12947197",
+      "doi": "10.1126/science.1085671",
+      "title": "Cleavage of Arabidopsis PBS1 by a bacterial type III effector.",
+      "abstract": "Plant disease-resistance (R) proteins are thought to function as receptors for ligands produced directly or indirectly by pathogen avirulence (Avr) proteins. The biochemical functions of most Avr proteins are unknown, and the mechanisms by which they activate R proteins have not been determined. In Arabidopsis, resistance to Pseudomonas syringae strains expressing AvrPphB requires RPS5, a member of the class of R proteins that have a predicted nucleotide-binding site and leucine-rich repeats, and PBS1, a protein kinase. AvrPphB was found to proteolytically cleave PBS1, and this cleavage was required for RPS5-mediated resistance, which indicates that AvrPphB is detected indirectly via its enzymatic activity.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 2003,
+      "pub_date": "2003-08-29",
+      "authors": "Shao Feng; Golstein Catherine; Ade Jules; Stoutemyer Mark; Dixon Jack E; ... (+1)",
+      "first_author": "Shao Feng",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12913147",
+      "doi": "10.1104/pp.103.022731",
+      "title": "Overexpression of the disease resistance gene Pto in tomato induces gene expression changes similar to immune responses in human and fruitfly.",
+      "abstract": "The Pto gene encodes a serine/threonine protein kinase that confers resistance in tomato (Lycopersicon esculentum) to Pseudomonas syringae pv tomato strains that express the type III effector protein AvrPto. Constitutive overexpression of Pto in tomato, in the absence of AvrPto, activates defense responses and confers resistance to several diverse bacterial and fungal plant pathogens. We have used a series of gene discovery and expression profiling methods to examine the effect of Pto overexpression in tomato leaves. Analysis of the tomato expressed sequence tag database and suppression subtractive hybridization identified 600 genes that were potentially differentially expressed in Pto-overexpressing tomato plants compared with a sibling line lacking Pto. By using cDNA microarrays, we verified changes in expression of many of these genes at various time points after inoculation with P. syringae pv tomato (avrPto) of the resistant Pto-overexpressing line and the susceptible sibling line. The combination of these three approaches led to the identification of 223 POR (Pto overexpression responsive) genes. Strikingly, 40% of the genes induced in the Pto-overexpressing plants previously have been shown to be differentially expressed during the human (Homo sapiens) and/or fruitfly (Drosophila melanogaster) immune responses.",
+      "journal": "Plant physiology",
+      "year": 2003,
+      "pub_date": "2003-08-01",
+      "authors": "Mysore Kirankumar S; D'Ascenzo Mark D; He Xiaohua; Martin Gregory B",
+      "first_author": "Mysore Kirankumar S",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12913158",
+      "doi": "10.1104/pp.103.020438",
+      "title": "The Arabidopsis NHL3 gene encodes a plasma membrane protein and its overexpression correlates with increased resistance to Pseudomonas syringae pv. tomato DC3000.",
+      "abstract": "The Arabidopsis genome contains a family of NDR1/HIN1-like (NHL) genes that show homology to the nonrace-specific disease resistance (NDR1) and the tobacco (Nicotiana tabacum) harpin-induced (HIN1) genes. NHL3 is a pathogen-responsive member of this NHL gene family that is potentially involved in defense. In independent transgenic NHL3-overexpressing plant lines, a clear correlation between increased resistance to virulent Pseudomonas syringae pv. tomato DC3000 and enhanced NHL3 transcript levels was seen. These transgenic plants did not show enhanced pathogenesis-related gene expression or reactive oxygen species accumulation. Biochemical and localization experiments were performed to assist elucidation of how NHL3 may confer enhanced disease resistance. Gene constructs expressing amino-terminal c-myc-tagged or carboxyl-terminal hemagglutinin epitope (HA)-tagged NHL3 demonstrated membrane localization in transiently transformed tobacco leaves. Stable Arabidopsis transformants containing the NHL3-HA construct corroborated the findings observed in tobacco. The detected immunoreactive proteins were 10 kD larger than the calculated size and could be partially accounted for by the glycosylation state. However, the expected size was not attained with deglycosylation, suggesting possibly additional posttranslational modification. Detergent treatment, but not chemicals used to strip membrane-associated proteins, could displace the immunoreactive signal from microsomal fractions, showing that NHL3 is tightly membrane associated. Furthermore, immunofluorescence and immunogold labeling, coupled with two-phase partitioning techniques, revealed plasma membrane localization of NHL3-HA. This subcellular localization of NHL3 positions it at an initial contact site to pathogens and may be important in facilitating interception of pathogen-derived signals.",
+      "journal": "Plant physiology",
+      "year": 2003,
+      "pub_date": "2003-08-01",
+      "authors": "Varet Anne; Hause Bettina; Hause Gerd; Scheel Dierk; Lee Justin",
+      "first_author": "Varet Anne",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12873536",
+      "doi": "10.1016/s1369-5266(03)00067-0",
+      "title": "The impact zone: genomics and breeding for durable disease resistance.",
+      "abstract": "Durable disease resistance is a major but elusive goal of many crop improvement programs. Genomic approaches will have a significant impact on efforts to ameliorate plant diseases by increasing the definition of and access to genepools available for crop improvement. This approach will involve the detailed characterization of the many genes that confer resistance, as well as technologies for the precise manipulation and deployment of resistance genes. Genomic studies on pathogens are providing an understanding of the molecular basis of specificity and the opportunity to select targets for more durable resistance. There are, however, several biological and societal issues that will have to be resolved before the full impact of genomics on breeding for disease resistance is realized.",
+      "journal": "Current opinion in plant biology",
+      "year": 2003,
+      "pub_date": "2003-08-01",
+      "authors": "Michelmore Richard W",
+      "first_author": "Michelmore Richard W",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12873522",
+      "doi": "10.1016/s1369-5266(03)00057-8",
+      "title": "Early signal transduction events in specific plant disease resistance.",
+      "abstract": "Gene-for-gene disease resistance in plants is initiated by highly specific molecular recognition processes, which often lead to a cell-death phenotype termed the hypersensitive response (HR). Recent studies have yielded insight into recognition events, and have begun to explain why the virulence and avirulence activities of pathogen effector molecules often appear to be linked. The nucleotide-binding (NB)-leucine-rich repeat (LRR) proteins appear to be central to both recognition and the activation of defence responses. New structure-function studies suggest that intramolecular interactions are important in the regulation of these proteins.",
+      "journal": "Current opinion in plant biology",
+      "year": 2003,
+      "pub_date": "2003-08-01",
+      "authors": "Rathjen John P; Moffett Peter",
+      "first_author": "Rathjen John P",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12906111",
+      "doi": "10.1094/MPMI.2003.16.8.669",
+      "title": "Targeted activation tagging of the Arabidopsis NBS-LRR gene, ADR1, conveys resistance to virulent pathogens.",
+      "abstract": "A transgenic Arabidopsis line containing a chimeric PR-1::luciferase (LUC) reporter gene was subjected to mutagenesis with activation tags. Screening of lines via high-throughput LUC imaging identified a number of dominant Arabidopsis mutants that exhibited enhanced PR-1 gene expression. Here, we report the characterization of one of these mutants, designated activated disease resistance (adr) 1. This line showed constitutive expression of a number of key defense marker genes and accumulated salicylic acid but not ethylene or jasmonic acid. Furthermore, adr1 plants exhibited resistance against the biotrophic pathogens Peronospora parasitica and Erysiphe cichoracearum but not the necrotrophic fungus Botrytis cinerea. Analysis of a series of adr1 double mutants suggested that adr1-mediated resistance against P. parasitica was salicylic acid (SA)-dependent, while resistance against E. cichoracearum was both SA-dependent and partially NPR1-dependent. The ADR1 gene encoded a protein possessing a number of key features, including homology to subdomains of protein kinases, a nucleotide binding domain, and leucine-rich repeats. The controlled, transient expression of ADR1 conveyed striking disease resistance in the absence of yield penalty, highlighting the potential utility of this gene in crop protection.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 2003,
+      "pub_date": "2003-08-01",
+      "authors": "Grant John J; Chini Andrea; Basu Debrabata; Loake Gary J",
+      "first_author": "Grant John J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12873523",
+      "doi": "10.1016/s1369-5266(03)00060-8",
+      "title": "Role of ubiquitination in the regulation of plant defence against pathogens.",
+      "abstract": "Ubiquitination is emerging as a common regulatory mechanism that controls a range of cellular processes in plants. Recent exciting discoveries from several laboratories suggest that ubiquitination may also play an important role in plant disease resistance. Several putative ubiquitin ligases have been identified as defence regulators. In addition, a combination of genetic screens and gene-silencing technologies has identified subunits and proposed regulators of SCF ubiquitin ligases as essential components of resistance (R)-gene-mediated resistance. Although no ubiquitin ligase targets that are associated with disease resistance have yet been identified in plants, there is evidence that this well-known protein-modification system may regulate plant defences against pathogens.",
+      "journal": "Current opinion in plant biology",
+      "year": 2003,
+      "pub_date": "2003-08-01",
+      "authors": "Devoto Alessandra; Muskett Paul R; Shirasu Ken",
+      "first_author": "Devoto Alessandra",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12828943",
+      "doi": "10.1016/s1046-2023(03)00037-9",
+      "title": "Virus-induced gene silencing in plants.",
+      "abstract": "Virus-induced gene silencing (VIGS) is a technology that exploits an RNA-mediated antiviral defense mechanism. In plants infected with unmodified viruses the mechanism is specifically targeted against the viral genome. However, with virus vectors carrying inserts derived from host genes the process can be additionally targeted against the corresponding mRNAs. VIGS has been used widely in plants for analysis of gene function and has been adapted for high-throughput functional genomics. Until now most applications of VIGS have been in Nicotiana benthamiana. However, new vector systems and methods are being developed that could be used in other plants, including Arabidopsis. Here we discuss practical and theoretical issues that are specific to VIGS rather than other gene \"knock down\" or \"knockout\" approaches to gene function. We also describe currently used protocols that have allowed us to apply VIGS to the identification of genes required for disease resistance in plants. These methods and the underlying general principles also apply when VIGS is used in the analysis of other aspects of plant biology.",
+      "journal": "Methods (San Diego, Calif.)",
+      "year": 2003,
+      "pub_date": "2003-08-01",
+      "authors": "Lu Rui; Martin-Hernandez Ana Montserrat; Peart Jack R; Malcuit Isabelle; Baulcombe David C",
+      "first_author": "Lu Rui",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Biotechnology_Applications",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "14682239",
+      "doi": "",
+      "title": "[Construction of expression vector with BG2 gene and its transformation in wheat].",
+      "abstract": "beta-1,3-glucanase(BG2) is one of the pathogensis-related-proteins(PR). Study of these proteins and their related genes is one of the hot points in plant genetic engineering of disease resistance for a long time. In this research, specific primers were designed with the enzyme cleavage site of Spe I in its forward one and Not I site in the backward according to the BG2 gene sequence. Using this pair of primers, BG2 gene, which was contained in the plasmid of pRTL2, was amplified and confirmed by sequencing the amplified fragment inserted into T-easy vector. The positive clone containing BG2 gene was digested with the enzymes of Spe I/Not I and then BG2 gene was inserted into the Xba I/Not I sites of super expression binary vector pATC940. The reconstructed expression vector named as pATCBG2 was introduced into the wheat of Longfumai10 and Longfumai3 (Triticum aestivum L. em. Thell) through the particle gun transformation method. The Kanamysin resistant (Km') transformants were obtained. PCR, Dot-blotting and PCR-Southern hybridization analysis showed that the BG2 gene was integrated into the genome of wheat. Result of pathogen inoculation assay on the transgenic plants showed that the transgenic plants had a higher resistant disease score of 1-2 grade than the control.",
+      "journal": "Yi chuan xue bao = Acta genetica Sinica",
+      "year": 2003,
+      "pub_date": "2003-08-01",
+      "authors": "Xing Quan-Hua; Wang Guang-Jin; Shi Jin-Feng; Wang Yue-Guang; Li Zhong-Jie; ... (+3)",
+      "first_author": "Xing Quan-Hua",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

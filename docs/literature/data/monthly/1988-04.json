@@ -1,0 +1,56 @@
+{
+  "month": "1988-04",
+  "generated": "2026-07-13 02:59:42",
+  "total": 2,
+  "by_category": {
+    "Molecular_Characterization": 1,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "2894473",
+      "doi": "10.1128/JVI.62.4.1460-1463.1988",
+      "title": "A viable mutation in cauliflower mosaic virus, a retroviruslike plant virus, separates its capsid protein and polymerase genes.",
+      "abstract": "A viable strain of cauliflower mosaic virus is described which arose by illegitimate recombination of two lethal parents. In this strain, the normally overlapping open reading frames IV and V, corresponding to the retrovirus gag and pol genes, are separated by a short intergenic region, suggesting that in this virus and in contrast to retroviruses, fusion of gag and pol gene products is not obligatory.",
+      "journal": "Journal of virology",
+      "year": 1988,
+      "pub_date": "1988-04-01",
+      "authors": "Penswick J; Hübler R; Hohn T",
+      "first_author": "Penswick J",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Cauliflower mosaic virus (CaMV)",
+      "taxonomy": "花椰菜花叶病毒属 (Caulimovirus)，花椰菜花叶病毒科 (Caulimoviridae)，双链DNA反转录病毒",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "21227120",
+      "doi": "10.1016/0169-5347(88)90131-0",
+      "title": "Genetic engineering, integrated pest management and the evolution of pests.",
+      "abstract": "It is well known that pest populations can evolve resistance to pesticides. The bollworm complex (Heliothis spp.), which attacks cotton plants, is a particularly good example of a highly adaptable pest. To achieve long-term success, genetic engineering projects for the production of 'insecticidal' crop plants, including cotton, need to take account of the adaptive potential of pests. Using the bollworm complex as a model, it is possible to show how an integrated approach to pest management, involving genetic engineers, evolutionary biologists and ecologists, could lead to the development of safe and effective transgenic cultivars.",
+      "journal": "Trends in ecology & evolution",
+      "year": 1988,
+      "pub_date": "1988-04-01",
+      "authors": "Gould F",
+      "first_author": "Gould F",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

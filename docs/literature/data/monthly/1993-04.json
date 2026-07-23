@@ -1,0 +1,170 @@
+{
+  "month": "1993-04",
+  "generated": "2026-07-13 02:59:42",
+  "total": 7,
+  "by_category": {
+    "New_Virus": 2,
+    "Molecular_Characterization": 2,
+    "Antiviral_Resistance_Genes": 2,
+    "Phenuiviridae": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8468548",
+      "doi": "10.1099/0022-1317-74-4-549",
+      "title": "Maize stripe virus RNA5 is of negative polarity and encodes a highly basic protein.",
+      "abstract": "The entire 1317 nucleotide sequence of the maize stripe virus (MStV) RNA5 was determined. Only one open reading frame (ORF) was identified and was found in the viral complementary RNA (vcRNA). This ORF appears to encode a protein of M(r) 44237, hereafter referred to as NS5 delta. In vitro translation of transcripts representing nearly full-length RNA5 vcRNA yielded products of the predicted size, as well as some smaller, less prominent products. No products were identified from transcripts of viral polarity. RNA hybridization analyses of MStV-infected Zea mays revealed RNAs corresponding only to full-length RNA5, but both positive and negative polarity RNAs were abundant. Analysis of the NS5 amino acid sequence revealed that it is extremely basic, containing 21% arginine and lysine. Database comparisons showed that NS5 had no significant similarity to other protein sequences.",
+      "journal": "The Journal of general virology",
+      "year": 1993,
+      "pub_date": "1993-04-01",
+      "authors": "Huiet L; Tsai J H; Falk B W",
+      "first_author": "Huiet L",
+      "categories": [
+        "New_Virus",
+        "Phenuiviridae"
+      ],
+      "virus_name": "Maize stripe virus (MStV) RNA5",
+      "taxonomy": "未提及科属，但 MStV 属于 Tenuivirus 属 (Phenuiviridae)",
+      "host_plant": "Zea mays (玉米)",
+      "location": "未提及",
+      "results": "RNA5 仅含一个 ORF，位于互补链，编码 44.2 kDa 蛋白 NS5，富含碱性氨基酸(21% Arg+Lys)；体外翻译验证大小；受染玉米中仅全长 RNA5 存在，正负义链均丰富。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "7682715",
+      "doi": "10.1073/pnas.90.8.3641",
+      "title": "Molecular characterization of a structural epitope that is largely conserved among severe isolates of a plant virus.",
+      "abstract": "Direct molecular evidence was obtained for the critical role of a single amino acid residue in a structural epitope distinguished by the monoclonal antibody MCA-13, which reacts selectively with severe isolates of citrus tristeza virus (CTV). Different CTV isolates cause a wide range of symptoms in the diverse citrus species they affect. Severe symptoms include decline, stem pitting, and seedling yellows. Plants infected by mild isolates are essentially symptomless. The monoclonal antibody MCA-13, which discriminates severe isolates from mild isolates of the virus, was used to map its epitope on the coat protein of CTV. A diverse group of coat protein genes of geographically and biologically distinct CTV isolates which are either MCA-13-reactive or MCA-13-nonreactive was cloned and sequenced. A series of mutant coat protein genes was constructed through oligonucleotide-directed, site-specific mutagenesis. The reactivity of the wild-type and mutant coat proteins expressed in Escherichia coli was evaluated by Western blotting using MCA-13 and polyclonal antibody prepared to CTV-coat protein. A single nucleotide alteration resulting in a Phe-->Tyr mutation at position 124 of the coat protein abolished the MCA-13 reactivity of a severe isolate, whereas a Tyr-->Phe mutation at the same site conferred MCA-13 reactivity on the coat protein of a previously nonreactive mild isolate of CTV.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1993,
+      "pub_date": "1993-04-15",
+      "authors": "Pappu H R; Pappu S S; Manjunath K L; Lee R F; Niblett C L",
+      "first_author": "Pappu H R",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "柑橘衰退病毒",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8468549",
+      "doi": "10.1099/0022-1317-74-4-555",
+      "title": "Sequence analysis of the parsnip yellow fleck virus polyprotein: evidence of affinities with picornaviruses.",
+      "abstract": "The 9.9 kb monopartite ssRNA genome of parsnip yellow fleck virus (PYFV) encodes a polyprotein from which the functional proteins are assumed to arise by proteolytic cleavage. The 22.5K, 26K and 31K particle proteins were mapped in the polyprotein by determining their N-terminal amino acid sequences, and were found to begin at amino acid positions 395, 589 and 811, respectively. There could be polypeptide(s) of up to 43K on the N-terminal side of the particle protein sequences. A region within the 26K particle protein has sequence similarity to the VP3 particle protein of picornaviruses. Three other regions in the PYFV polyprotein have sequence similarity to regions thought to have RNA polymerase, NTP-binding and protease functions in the polyproteins of picornaviruses, comoviruses and nepoviruses. Despite these similarities in sequence and in genome organization to viruses in the picorna-like supergroup, PYFV is distinct from all other plant and animal viruses described. This justifies placing it in a separate plant virus genus for which the name 'sequivirus' has been proposed.",
+      "journal": "The Journal of general virology",
+      "year": 1993,
+      "pub_date": "1993-04-01",
+      "authors": "Turnbull-Ross A D; Mayo M A; Reavy B; Murant A F",
+      "first_author": "Turnbull-Ross A D",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Parsnip yellow fleck virus (PYFV)",
+      "taxonomy": "属于sequivirus属（提议中）",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8490237",
+      "doi": "10.1002/jemt.1070240608",
+      "title": "Rapid fixation and embedding method for immunocytochemical studies of tomato spotted wilt tospovirus (TSWV) in plant and insect tissues.",
+      "abstract": "A new rapid fixation and embedding technique using microwave energy was evaluated for immunolabelling and examination of ultrastructure of plant and insect cells. Tissues in gluteraldehyde-paraformaldehyde were fixed for fifteen seconds in a microwave at 100% power, and dehydrated. Microwave energy was then used to polymerize the London Resin White (LR White) acrylic resin during the embedding process. Embedded specimens were then thin sectioned (90 nm) and treated with anti-tomato spotted wilt tospovirus (TSWV) antiserum followed by protein A-gold label, or antisera against a TSWV encoded nonstructural protein followed by goat anti-rabbit gold label. Using this technique, structural and nonstructural proteins of TSWV were readily detected and specifically labelled in cells of the insect vector, the western flower thrips, Frankliniella occidentalis (Pergande), and in infected cells of the plant species, Emilia sonchifolia L.",
+      "journal": "Microscopy research and technique",
+      "year": 1993,
+      "pub_date": "1993-04-15",
+      "authors": "Westcot D M; Ullman D E; Sherwood J L; Cantone F A; German T L",
+      "first_author": "Westcot D M",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "番茄斑萎病毒(TSWV)",
+      "taxonomy": "",
+      "host_plant": "Emilia sonchifolia L.",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7684243",
+      "doi": "10.1099/00207713-43-2-352",
+      "title": "Mycobacterium hiberniae sp. nov.",
+      "abstract": "Strains of a new type of slowly growing scotochromogenic, rose-pink-pigmented mycobacterium were isolated repeatedly from sphagnum vegetation, true moss, and soil in Ireland. These strains grew at 22, 31, and 37 degrees C but not at 45 degrees C and possessed acid phosphatase and arylsulfatase activities. They reduced nitrate, tolerated 0.1% NaNO2, did not split amides, and were resistant to most of the antituberculous drugs tested, except ethambutol. They did not form acid from glucose and mannose. Their internal phenetic similarity was 97.08% +/- 2.07%. The whole mycolate pattern confirmed the homogeneity of the taxa sharing similar mycolate types with several other mycobacterial species. However, on the basis of the nature of the major pyrolysis esters, the taxon appeared unique. The phylogenetic analysis based on evolutionary distance values revealed that the strains belong to a new species of slowly growing mycobacteria. The DNA-DNA hybridization values confirmed that these strains differ significantly from Mycobacterium nonchromogenicum, M. terrae, M. triviale, and M. thermoresistibile. The strains produced a unique rose-pink pigment and were nonpathogenic for mice, guinea pigs, and rabbits, but they provoked a nonspecific hypersensitivity reaction to bovine tuberculin in guinea pigs and cattle. Hence, they are considered a member of a new species of nonpathogenic slowly growing mycobacteria, for which the name Mycobacterium hiberniae is proposed. Strain Hi 11 is the type strain, a culture of which has been deposited in the American Type Culture Collection as strain ATCC 49874.",
+      "journal": "International journal of systematic bacteriology",
+      "year": 1993,
+      "pub_date": "1993-04-01",
+      "authors": "Kazda J; Cooney R; Monaghan M; Quinn P J; Stackebrandt E; ... (+5)",
+      "first_author": "Kazda J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8389484",
+      "doi": "10.1111/j.1751-1097.1993.tb02936.x",
+      "title": "Light-mediated activities of thiarubrines against human immunodeficiency virus.",
+      "abstract": "Two thiarubrines (dithiacyclohexadienes), which were isolated recently from species of Asteraceae, were investigated for light-mediated antiviral activity against human immunodeficiency virus (HIV-1). Both compounds (thiarubrines A and D) showed good anti-HIV activity, in micromolar concentrations, which was dependent upon UVA radiation. They showed no anti-viral activity in the dark, and only weak visible light-mediated activity, despite the significant absorbance of these compounds in the 480 nm region. The resulting inactivated virus was unable to replicate in cell cultures, as indicated by loss of cytopathogenicity, the absence of cells expressing HIV-1 antigens and lack of production of HIV-1 p24 protein. Although this antiviral activity was not as efficient as that shown by the photoactive plant thiophene, alpha-terthienyl, both thiarubrines demonstrated increased activity when the serum component of the virus stock was reduced. This suggested that a component of bovine serum interfered to some extent with the anti-HIV activity.",
+      "journal": "Photochemistry and photobiology",
+      "year": 1993,
+      "pub_date": "1993-04-01",
+      "authors": "Hudson J B; Balza F; Harris L; Towers G H",
+      "first_author": "Hudson J B",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8386251",
+      "doi": "10.1099/00222615-38-4-262",
+      "title": "Antiviral properties of the seed extract of an Indian medicinal plant, Pongamia pinnata, Linn., against herpes simplex viruses: in-vitro studies on Vero cells.",
+      "abstract": "Pongamia pinnata, Linn., an Indian medicinal plant used in the Ayurvedha and Siddha traditional medicine systems, for treatment of clinical lesions of skin and genitalia, was evaluated for antiviral properties against herpes simplex virus type-1 (HSV-1) and type-2 (HSV-2) by in-vitro studies in Vero cells. A crude aqueous seed extract of P. pinnata completely inhibited the growth of HSV-1 and HSV-2 at concentrations of 1 and 20 mg/ml (w/v), respectively, as shown by complete absence of cytopathic effect.",
+      "journal": "Journal of medical microbiology",
+      "year": 1993,
+      "pub_date": "1993-04-01",
+      "authors": "Elanchezhiyan M; Rajarajan S; Rajendran P; Subramanian S; Thyagarajan S P",
+      "first_author": "Elanchezhiyan M",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

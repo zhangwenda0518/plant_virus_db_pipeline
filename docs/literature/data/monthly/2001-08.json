@@ -1,0 +1,283 @@
+{
+  "month": "2001-08",
+  "generated": "2026-07-13 02:59:42",
+  "total": 20,
+  "by_category": {
+    "Host_Virus_Interactions": 7,
+    "Molecular_Characterization": 5,
+    "New_Virus": 3,
+    "Antiviral_Resistance_Genes": 3,
+    "Transmission_Epidemiology": 2,
+    "Control_Management": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "30823063",
+      "doi": "10.1094/PDIS.2001.85.8.919B",
+      "title": "First Report of Turnip mosaic virus in Watercress in Mauritius.",
+      "abstract": "In July 1999, leaf mosaic and distortions were observed on watercress in the region of Camp de Masque, in the eastern part of Mauritius. Electron microscopy of crude sap preparations revealed the presence of 720 nm, flexuous filamentous particles. Virus detection by reverse-transcription polymerase chain reaction (RT-PCR) and virus sequencing by A. Mackenzie (Research School of Biological Sciences, Australian National University) confirmed the identity of the causal pathogen as Turnip mosaic virus (TuMV) in November 1999. A survey was initiated in January 2000, covering the 44 major watercress ponds across the island. Two hundred seventy-five samples (231 symptomatic; 44 symptomless) were collected from 22 localities. TuMV was detected by double antibody sandwich enzyme-linked immunosorbent assay (DAS-ELISA) using commercial antisera (Agdia Inc.). Plant extracts were prepared by cutting approximately 20 g of leaf samples into small pieces, from which 1.0 to 1.5 g were used in the evaluation. Eighty-one percent of symptomatic samples (187 out of 231) were TuMV positive; all of the symptomless samples were TuMV negative. Symptoms on infected watercress included leaf mosaic, mottling, distortions, general yellowing, and plant stunting. TuMV has since been detected on all three commonly grown watercress varieties in Mauritius: Brède Doux, Brède Blanc, and Constance. Under local conditions, TuMV affects the quality and thus the commercial value of the crop. Additional hosts of TuMV among local brassicas are also being determined, and to date the virus has been detected in turnip (Brassica campestris spp. rapa), pak choi (Brassica campestris spp. chinensis), and petsai (Brassica campestris spp. pekinensis).",
+      "journal": "Plant disease",
+      "year": 2001,
+      "pub_date": "2001-08-01",
+      "authors": "Gungoosingh A; Beni Madhu S P; Dumur D",
+      "first_author": "Gungoosingh A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Turnip mosaic virus (TuMV)",
+      "taxonomy": "Potyviridae, Potyvirus",
+      "host_plant": "豆瓣菜（水芹）(Watercress)，以及芜菁(Brassica campestris spp. rapa)、小白菜(Brassica campestris spp. chinensis)、大白菜(Brassica campestris spp. pekinensis)",
+      "location": "毛里求斯，东部Camp de Masque地区，全岛44个主要水芹池塘",
+      "results": "231个有症状样品中81%（187个）阳性，44个无症状样品全部阴性；三种品种均感病。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30823064",
+      "doi": "10.1094/PDIS.2001.85.8.919C",
+      "title": "First Report of Sugarcane yellow leaf virus (ScYLV) in Costa Rica.",
+      "abstract": "In Costa Rica, sugarcane plants with symptoms similar to those described for yellow leaf syndrome (YLS) (1,2) were first observed in 1994 in research plots of imported material in the midland areas of San Carlos and Turrialba. Recently, the same symptoms have been observed in commercial plantations in Turrialba. Symptomatic plants were characterized by yellowing of the leaves and central veins, the yellowing being more intense near the leaf tips. In severe cases, veins became reddish, and necrosis developed along the leaf edges, beginning at the leaf tip and extending to the base of the leaf. Growth of stems and roots was also reduced in infected plants. Minipurifications of six plants of four different varieties were examined by immunospecific electron microscopy (ISEM) using polyclonal antibodies (1). They were: one symptomatic plant each of the varieties H782313 and H608521; two symptomatic plants of H657052, and one asymptomatic plant each of H608521 and H827318. Isometric particles of approximately 28 nm were observed in the asymptomatic H827318 plant and in all symptomatic plants, with the exception of one plant of H657052. The size and morphology of the particles was similar to those reported for Sugarcane yellow leaf virus (ScYLV) (2). The presence of ScYLV was verified by indirect enzyme-linked immunosorbent assay (ELISA) using polyclonal antibodies (1). Twenty-two of 24 symptomatic plants and five of 13 asymptomatic plants were positive for ScYLV. These findings confirm the association of ScYLV with the yellows syndrome of sugarcane observed in Costa Rica. However, as was also reported by Scaglusi and Lockhart (1), ScYLV was not detected in several symptomatic plants, and research is continuing to determine whether other pathogens are associated with this syndrome in Costa Rica. References: (1) S. Scagliusi and B. E. L. Lockhart. Phytopathology 90:120, 2000; (2) J. Vega et al. Plant Dis. 81:21, 1997.",
+      "journal": "Plant disease",
+      "year": 2001,
+      "pub_date": "2001-08-01",
+      "authors": "Avila R; Arrieta M C; Villalobos W; Moireira L; Chavarría E; ... (+2)",
+      "first_author": "Avila R",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Sugarcane yellow leaf virus (ScYLV)",
+      "taxonomy": "未提及",
+      "host_plant": "甘蔗 (Sugarcane)",
+      "location": "哥斯达黎加 (Costa Rica)，San Carlos 和 Turrialba",
+      "results": "从6株不同品种甘蔗中提取，在无症状的H827318和所有有症状植株中观察到约28nm等轴颗粒；ELISA检测显示22/24有症状和5/13无症状植株阳性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11485394",
+      "doi": "10.1006/viro.2001.0931",
+      "title": "Beet necrotic yellow vein virus particles localize to mitochondria during infection.",
+      "abstract": "Fluorescent beet necrotic yellow vein virus (BNYVV) particles were produced by replacing part of the readthrough domain of the minor coat protein P75 with the green fluorescent protein (GFP). The recombinant virus was functional in plants and P75-GFP was incorporated at one end of the rod-shaped virions. Laser scanning confocal microscopy and transmission electron microscopy showed that virus-like particles, almost certainly authentic BNYVV virions, localized to the cytoplasmic surface of mitochondria at early times postinfection but relocated at later times to semiordered clusters in the cytoplasm. This is the first report of specific targeting of plant virus particles to the mitochondria in vivo.",
+      "journal": "Virology",
+      "year": 2001,
+      "pub_date": "2001-08-01",
+      "authors": "Erhardt M; Dunoyer P; Guilley H; Richards K; Jonard G; ... (+1)",
+      "first_author": "Erhardt M",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Beet necrotic yellow vein virus (BNYVV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11676409",
+      "doi": "10.1007/s007050170070",
+      "title": "The genome organisation and taxonomy of Sugarcane striate mosaic associated virus.",
+      "abstract": "Sugarcane striate mosaic associated virus (SCSMaV) has slightly flexuous 950 nm x 15 nm filamentous particles and is associated with sugarcane striate mosaic disease in central Queensland, Australia. We report the full sequence of its RNA genome, which comprises 5 open reading frames representing the polymerase, movement function proteins encoded in a triple gene block and coat protein. Phylogenetic analyses based on either the full nucleotide sequence, the polymerase protein, or the coat protein all placed SCSMaV in an intermediate position between the genera Foveavirus and Carlavirus, but outside both genera. In addition, the absence of a sixth open reading frame excludes it from the genus Carlavirus, and the coat protein is approximately half the size of the type member for the genus Foveavirus. Although SCSMaV was most closely allied to Cherry green ring mottle virus by genome analysis, the two viruses are morphologically and biologically dissimilar. SCSMaV may therefore represent a new plant virus taxon.",
+      "journal": "Archives of virology",
+      "year": 2001,
+      "pub_date": "2001-08-01",
+      "authors": "Thompson N; Randles J W",
+      "first_author": "Thompson N",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Sugarcane striate mosaic associated virus (SCSMaV)",
+      "taxonomy": "介于Foveavirus属和Carlavirus属之间，独立于两者，可能代表新分类单元",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11497465",
+      "doi": "10.1094/MPMI.2001.14.8.939",
+      "title": "Dark green islands in plant virus infection are the result of posttranscriptional gene silencing.",
+      "abstract": "Dark green islands (DGIs) are a common symptom of plants systemically infected with a mosaic virus. DGIs are clusters of green leaf cells that are free of virus but surrounded by yellow, virus-infected tissue. We report here on two lines of evidence showing that DGIs are caused by posttranscriptional gene silencing (PTGS). First, transcripts of a transgene derived from the coat protein of Tamarillo mosaic potyvirus (TaMV) were reduced in DGIs relative to adjacent yellow tissues when the plants were infected with TaMV. Second, nontransgenic plants coinfected with TaMV and a heterologous virus vector carrying TaMV sequences showed reduced titers of the vector in DGIs compared with surrounding tissues. DGIs also were compared with recovered tissue at the top of transgenic plants because recovery has been shown previously to involve PTGS. Cytological analysis of the cells at the junction between recovered and infected tissue was undertaken. The interface between recovered and infected cells had very similar features to that surrounding DGIs. We conclude that DGIs and recovery are related phenomena, differing in their ability to amplify or transport the silencing signal.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 2001,
+      "pub_date": "2001-08-01",
+      "authors": "Moore C J; Sutherland P W; Forster R L; Gardner R C; MacDiarmid R M",
+      "first_author": "Moore C J",
+      "categories": [
+        "Host_Virus_Interactions",
+        "Molecular_Characterization",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Tamarillo mosaic potyvirus (TaMV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11485397",
+      "doi": "10.1006/viro.2000.0897",
+      "title": "Crystallization of Brome mosaic virus and T = 1 Brome mosaic virus particles following a structural transition.",
+      "abstract": "Brome mosaic virus (BMV), a T = 3 icosahedral plant virus, can be dissociated into coat protein subunits and subunit oligomers at pH 7.5 in the presence of concentrated salts. We have found that during the course of this treatment the coat protein subunits are cleaved, presumably by plant cell proteases still present in the preparation, between amino acids 35 and 36. The truncated protein subunits will then reorganize into T = 1 icosahedral particles and can be crystallized from sodium malonate. Quasi elastic light scattering and atomic force microscopy results suggest that the transition from T = 3 to T = 1 particles can occur by separate pathways, dissociation into coat protein subunits and oligomers and reassembly into T = 1 particles, or direct condensation of the T = 3 virions to T = 1 particles with the shedding of hexameric capsomeres. The latter process has been directly visualized using atomic force microscopy. Native T = 3 virions have been crystallized in several different crystal forms, but neither a rhombohedral form nor either of two orthorhombic forms diffract beyond about 3.4 A. Tetragonal crystals of the T = 1 particles, however, diffract to at least 2.5 A resolution. Evidence suggests that the T = 1 particles are more structurally uniform and ordered than are native T = 3 virions. A variety of anomalous virus particles having diverse sizes have been visualized in preparations of BMV used for crystallization. In some cases these aberrant particles are incorporated into growing crystals where they are frequently responsible for defect formation.",
+      "journal": "Virology",
+      "year": 2001,
+      "pub_date": "2001-08-01",
+      "authors": "Lucas R W; Kuznetsov Y G; Larson S B; McPherson A",
+      "first_author": "Lucas R W",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Brome mosaic virus (BMV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11485817",
+      "doi": "10.1016/s0168-9525(01)02367-8",
+      "title": "RNA silencing as a plant immune system against viruses.",
+      "abstract": "\"RNA silencing\" refers to related processes of post-trancriptional control of gene expression found in plants, animals and fungi. A unifying feature of RNA silencing is that it mediates sequence-specific degradation of target transcripts, recruiting RNA molecules of 21-23 nucleotides as specificity determinants. In higher plants, RNA silencing serves as an adaptive, antiviral defence system, which is transmitted systemically in response to localized virus challenge. Plant viruses have elaborated a variety of counter-defensive measures to overcome the host silencing response. One of these strategies is to produce proteins that target the cell autonomous or signalling steps of RNA silencing. It is not known whether a similar antiviral mechanism also operates in animal cells.",
+      "journal": "Trends in genetics : TIG",
+      "year": 2001,
+      "pub_date": "2001-08-01",
+      "authors": "Voinnet O",
+      "first_author": "Voinnet O",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "多种植物病毒",
+      "taxonomy": "",
+      "host_plant": "植物（未具体指定）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11458007",
+      "doi": "10.1099/0022-1317-82-8-1995",
+      "title": "Studies on the role of the minor capsid protein in transport of Beet western yellows virus through Myzus persicae.",
+      "abstract": "Beet western yellows virus (BWYV), family Luteoviridae, is an icosahedral plant virus which is strictly transmitted by aphids in a persistent and circulative manner. Virions cross two cellular barriers in the aphid by receptor-based mechanisms involving endocytosis and exocytosis. Particles are first transported across intestinal cells into the haemolymph and then across accessory salivary gland cells for delivery to the plant via saliva. We identified the midgut part of the digestive tract as the site of intestinal passage by BWYV virions. To analyse the role in transmission of the minor capsid component, the readthrough (RT) protein, the fate of a BWYV RT-deficient non-transmissible mutant was followed by transmission electron microscopy in the vector Myzus persicae. This mutant was observed in the gut lumen but was never found inside midgut cells. However, virion aggregates were detected in the basal lamina of midgut cells when BWYV antiserum was microinjected into the haemolymph. The presence of virions in the haemolymph was confirmed by a sensitive molecular technique for detecting viral RNA. Thus, transport of the mutant virions through intestinal cells occurred but at a low frequency. Even when microinjected into the haemolymph, the RT protein mutant was never detected near or in the accessory salivary gland cells. We conclude that the RT protein is not strictly required for the transport of virus particles through midgut cells, but is necessary for the maintenance of virions in the haemolymph and their passage through accessory salivary gland cells.",
+      "journal": "The Journal of general virology",
+      "year": 2001,
+      "pub_date": "2001-08-01",
+      "authors": "Reinbold C; Gildow F E; Herrbach E; Ziegler-Graff V; Gonçalves M C; ... (+2)",
+      "first_author": "Reinbold C",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Beet western yellows virus",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11532181",
+      "doi": "10.1046/j.1365-313x.2001.01080.x",
+      "title": "Silencing of a meristematic gene using geminivirus-derived vectors.",
+      "abstract": "Geminiviruses are DNA viruses that replicate and transcribe their genes in plant nuclei. They are ideal vectors for understanding plant gene function because of their ability to cause systemic silencing in new growth and ease of inoculation. We previously demonstrated DNA episome-mediated gene silencing from a bipartite geminivirus in Nicotiana benthamiana. Using an improved vector, we now show that extensive silencing of endogenous genes can be obtained using less than 100 bp of homologous sequence. Concomitant symptom development varied depending upon the target gene and insert size, with larger inserts producing milder symptoms. In situ hybridization of silenced tissue in attenuated infections demonstrated that silencing occurs in cells that lack detectable levels of viral DNA. A mutation confining the virus to vascular tissue produced extensive silencing in mesophyll tissue, further demonstrating that endogenous gene silencing can be separated from viral infection. We also show that two essential genes encoding a subunit of magnesium chelatase and proliferating cell nuclear antigen (PCNA) can be silenced simultaneously from different components of the same viral vector. Immunolocalization of silenced tissue showed that the PCNA protein was down-regulated throughout meristematic tissues. Our results demonstrate that geminivirus-derived vectors can be used to study genes involved in meristem function in intact plants.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2001,
+      "pub_date": "2001-08-01",
+      "authors": "Peele C; Jordan C V; Muangsan N; Turnage M; Egelkrout E; ... (+3)",
+      "first_author": "Peele C",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "双组分双生病毒载体",
+      "taxonomy": "",
+      "host_plant": "本氏烟（Nicotiana benthamiana）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11463746",
+      "doi": "10.1093/embo-reports/kve155",
+      "title": "CARD4/Nod1 mediates NF-kappaB and JNK activation by invasive Shigella flexneri.",
+      "abstract": "Epithelial cells are refractory to extracellular lipopolysaccharide (LPS), yet when presented inside the cell, it is capable of initiating an inflammatory response. Using invasive Shigella flexneri to deliver LPS into the cytosol, we examined how this factor, once intracellular, activates both NF-kappaB and c-Jun N-terminal kinase (JNK). Surprisingly, the mode of activation is distinct from that induced by toll-like receptors (TLRs), which mediate LPS responsiveness from the outside-in. Instead, our findings demonstrate that this response is mediated by a cytosolic, plant disease resistance-like protein called CARD4/Nod1. Biochemical studies reveal enhanced oligomerization of CARD4 upon S. flexneri infection, an event necessary for NF-kappaB induction. Dominant-negative versions of CARD4 block activation of NF-kappaB and JNK by S. flexneri as well as microinjected LPS. Finally, we showed that invasive S. flexneri triggers the formation of a transient complex involving CARD4, RICK and the IKK complex. This study demonstrates that in addition to the extracellular LPS sensing system mediated by TLRs, mammalian cells also possess a cytoplasmic means of LPS detection via a molecule that is related to plant disease-resistance proteins.",
+      "journal": "EMBO reports",
+      "year": 2001,
+      "pub_date": "2001-08-01",
+      "authors": "Girardin S E; Tournebize R; Mavris M; Page A L; Li X; ... (+6)",
+      "first_author": "Girardin S E",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11487689",
+      "doi": "10.1105/tpc.010082",
+      "title": "Allopolyploidy-induced rapid genome evolution in the wheat (Aegilops-Triticum) group.",
+      "abstract": "To better understand genetic events that accompany allopolyploid formation, we studied the rate and time of elimination of eight DNA sequences in F1 hybrids and newly formed allopolyploids of Aegilops and TRITICUM: In total, 35 interspecific and intergeneric F1 hybrids and 22 derived allopolyploids were analyzed and compared with their direct parental plants. The studied sequences exist in all the diploid species of the Triticeae but occur in only one genome, either in one homologous pair (chromosome-specific sequences [CSSs]) or in several pairs of the same genome (genome-specific sequences [GSSs]), in the polyploid wheats. It was found that rapid elimination of CSSs and GSSs is a general phenomenon in newly synthesized allopolyploids. Elimination of GSSs was already initiated in F1 plants and was completed in the second or third allopolyploid generation, whereas elimination of CSSs started in the first allopolyploid generation and was completed in the second or third generation. Sequence elimination started earlier in allopolyploids whose genome constitution was analogous to natural polyploids compared with allopolyploids that do not occur in nature. Elimination is a nonrandom and reproducible event whose direction was determined by the genomic combination of the hybrid or the allopolyploid. It was not affected by the genotype of the parental plants, by their cytoplasm, or by the ploidy level, and it did not result from intergenomic recombination. Allopolyploidy-induced sequence elimination occurred in a sizable fraction of the genome and in sequences that were apparently noncoding. This finding suggests a role in augmenting the differentiation of homoeologous chromosomes at the polyploid level, thereby providing the physical basis for the diploid-like meiotic behavior of newly formed allopolyploids. In our view, this rapid genome adjustment may have contributed to the successful establishment of newly formed allopolyploids as new species.",
+      "journal": "The Plant cell",
+      "year": 2001,
+      "pub_date": "2001-08-01",
+      "authors": "Ozkan H; Levy A A; Feldman M",
+      "first_author": "Ozkan H",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11479570",
+      "doi": "10.1038/90816",
+      "title": "Plant viral genes in DNA idiotypic vaccines activate linked CD4+ T-cell mediated immunity against B-cell malignancies.",
+      "abstract": "DNA delivery of tumor antigens can activate specific immune attack on cancer cells. However, antigens may be weak, and immune capacity can be compromised. Fusion of genes encoding activating sequences to the tumor antigen sequence facilitates promotion and manipulation of effector pathways. Idiotypic determinants of B-cell tumors, encoded by the variable region genes, are clone-specific tumor antigens. When assembled as single-chain Fv (scFv) alone in a DNA vaccine, immunogenicity is low. Previously, we found that fusion of a sequence from tetanus toxin (fragment C; FrC) promoted anti-idiotypic protection against lymphoma and myeloma. We have now investigated an alternative fusion gene derived from a plant virus, potato virus X coat protein, a primary antigen in humans. When fused to scFv, the self-aggregating protein generates protection against lymphoma and myeloma. In contrast to scFv-FrC, protection against lymphoma is mediated by CD4+ T cells, as is protection against myeloma. Plant viral proteins offer new opportunities to activate immunity against linked T-cell epitopes to attack cancer.",
+      "journal": "Nature biotechnology",
+      "year": 2001,
+      "pub_date": "2001-08-01",
+      "authors": "Savelyeva N; Munday R; Spellerberg M B; Lomonossoff G P; Stevenson F K",
+      "first_author": "Savelyeva N",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "month": "1999-06",
+  "generated": "2026-07-13 02:59:42",
+  "total": 12,
+  "by_category": {
+    "Host_Virus_Interactions": 5,
+    "Control_Management": 3,
+    "New_Virus": 2,
+    "Antiviral_Resistance_Genes": 2,
+    "Alphasatellitidae": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "10364503",
+      "doi": "10.1006/viro.1999.9766",
+      "title": "Identification of a novel circular single-stranded DNA associated with cotton leaf curl disease in Pakistan.",
+      "abstract": "Recent reports have suggested that cotton leaf curl virus (CLCuV), a geminivirus of the genus Begomovirus, may be responsible for cotton leaf curl disease in Pakistan. However, the causal agent of the disease remains unclear as CLCuV genomic components resembling begomovirus DNA A are unable to induce typical disease symptoms when reintroduced into plants. All attempts to isolate a genomic component equivalent to begomovirus DNA B have been unsuccessful. Here, we describe the isolation and characterisation of a novel circular single-stranded (ss) DNA associated with naturally infected cotton plants. In addition to a component resembling DNA A, purified geminate particles contain a smaller unrelated ssDNA that we refer to as DNA 1. DNA 1 was cloned from double-stranded replicative form of the viral DNA isolated from infected cotton plants. Blot hybridisation using probes specific for either CLCuV DNA or DNA 1 was used to demonstrate that both DNAs co-infect naturally infected cotton plants from different geographical locations. DNA 1 was detected in viruliferous Bemisia tabaci and in tobacco plants infected under laboratory conditions using B. tabaci, indicating that it is transmitted by whiteflies. Sequence analysis showed that DNA 1 is approximately half the size of CLCuV DNA but shares no homology, indicating that it is not a defective geminivirus component. DNA 1 has some homology to a genomic component of members of Nanoviridae, a family of DNA viruses that are normally transmitted by aphids or planthoppers. DNA 1 encodes a homologue of the nanovirus replication-associated protein (Rep) and has the capacity to autonomously replicate in tobacco. The data suggest that a nanovirus-like DNA has become whitefly-transmissible as a result of its association with a geminivirus and that cotton leaf curl disease may result from a mutually dependent relationship that has developed between members of two distinct DNA virus families that share a similar replication strategy.",
+      "journal": "Virology",
+      "year": 1999,
+      "pub_date": "1999-06-20",
+      "authors": "Mansoor S; Khan S H; Bashir A; Saeed M; Zafar Y; ... (+4)",
+      "first_author": "Mansoor S",
+      "categories": [
+        "New_Virus",
+        "Alphasatellitidae"
+      ],
+      "virus_name": "棉花曲叶病毒(CLCuV)和DNA 1",
+      "taxonomy": "Geminiviridae, Begomovirus (CLCuV); Nanoviridae (DNA 1相关)",
+      "host_plant": "棉花、烟草",
+      "location": "巴基斯坦",
+      "results": "DNA 1与CLCuV共感染棉花，大小约为CLCuV DNA的一半，编码纳米病毒Rep同源物，可自主复制，经烟粉虱传播。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "30849845",
+      "doi": "10.1094/PDIS.1999.83.6.589B",
+      "title": "First Report of Soybean Dwarf Virus Infecting Lentil and Beet Western Yellows Virus Infecting Lentil and Chickpea Crops in Ethiopia.",
+      "abstract": "A survey conducted during November 14-23, 1998, to identify viruses infecting chickpea (Cicer arietinum) and lentil (Lens culinaris) crops in the Shewa province of Ethiopia covered 33 chickpea and 32 lentil fields randomly selected. Identity of the viruses present and virus incidence were determined on the basis of laboratory testing of 100 to 200 randomly collected samples in addition to 15 to 20 symptomatic samples from each field. A total of 5,427 lentil and 3,836 chickpea samples were collected and tested for the presence of 12 different viruses by tissue blot immunoassay (1) at the Plant Pathology Laboratory in Debre Zeit Agriculture Research Center, Ethiopia. All antisera were virus specific, including those for beet western yellows virus (BWYV; ATCC PVAS-647) and soybean dwarf virus (SbDV; ATCC PVAS-650). More than 21% of the samples from 5 chickpea fields were infected; the most common virus was BWYV. Also, at least 21% of the samples from 11 lentil fields were virus positive; the most widespread virus was PSbMV. Highest rates of infection: of lentil in a single field, PSbMV in 58.5% of the samples; in a chickpea field, 41.3% of the samples positive for BWYV. Other viruses such as faba bean necrotic yellows nanovirus (FBNYV) and broad bean wilt fabavirus in chickpea and FBNYV, broad bean stain comovirus, bean yellow mosaic potyvirus, and cucumber mosaic cucumovirus in lentil were detected at very low incidence. Reference: (1) K. M. Makkouk and A. Comeau. Eur. J. Plant Pathol. 100:71, 1994.",
+      "journal": "Plant disease",
+      "year": 1999,
+      "pub_date": "1999-06-01",
+      "authors": "Tadesse N; Ali K; Gorfu D; Abraham A; Lencho A; ... (+4)",
+      "first_author": "Tadesse N",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Soybean dwarf virus (SbDV), Beet western yellows virus (BWYV)",
+      "taxonomy": "未提及",
+      "host_plant": "Lens culinaris (lentil), Cicer arietinum (chickpea)",
+      "location": "Ethiopia, Shewa province",
+      "results": "超过21%的样本呈阳性；扁豆中最普遍为PSbMV（最高58.5%），鹰嘴豆中BWYV最常见（最高41.3%）。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10420993",
+      "doi": "",
+      "title": "Molecular cloning of a catalase cDNA from Nicotiana glutinosa L. and its repression by tobacco mosaic virus infection.",
+      "abstract": "Recent reports revealed that catalase has a role in the plant defense mechanism against a broad range of pathogens through being inhibited by salicylic acid (SA). During an effort to clone disease resistance-responsive genes, a cDNA encoding catalase (Ngcat1; Nicotiana glutinosa cat1) was isolated from a tobacco cDNA library. In N. glutinosa, catalase is encoded by a small gene family. The deduced amino acid sequence of the Ngcat1 cDNA has 98% homology with the cat1 gene of N. plumbaginifolia. The Ngcat1 expression is controlled by the circadian clock, and its mRNA level is the most abundant in leaves. Both the expression of Ngcat1 mRNA and its enzyme activity in the tobacco plant undergoing a hypersensitive response (HR) to TMV infection were repressed. The repression of the mRNA level was also observed following treatment with SA. These results imply that SA may act as an inhibitor of catalase transcription during the HR of tobacco. Cloning and expression of the Ngcat1 in tobacco following pathogen infection and SA treatment are presented.",
+      "journal": "Molecules and cells",
+      "year": 1999,
+      "pub_date": "1999-06-30",
+      "authors": "Yi S Y; Yu S H; Choi D",
+      "first_author": "Yi S Y",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "烟草花叶病毒 (TMV)",
+      "taxonomy": "",
+      "host_plant": "烟草 (Nicotiana glutinosa)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10369664",
+      "doi": "10.1093/emboj/18.12.3232",
+      "title": "Constitutively active Pto induces a Prf-dependent hypersensitive response in the absence of avrPto.",
+      "abstract": "Resistance in tomato to Pseudomonas syringae pv tomato (avrPto) is conferred by the gene Pto in a gene-for-gene relationship. A hypersensitive disease resistance response (HR) is elicited when Pto and avrPto are expressed experimentally within the same plant cell. The kinase capability of Pto was required for AvrPto-dependent HR induction. Systematic mutagenesis of the activation segment of Pto kinase confirmed the homologous P+1 loop as an AvrPto-binding determinant. Specific amino acid substitutions in this region led to constitutive induction of HR upon expression in the plant cell in the absence of AvrPto. Constitutively active Pto mutants required kinase capability for activity, and were unable to interact with proteins previously shown to bind to wild-type Pto. The constitutive gain-of-function phenotype was dependent on a functional Prf gene, demonstrating activation of the cognate disease resistance pathway and precluding a role for Prf upstream of Pto.",
+      "journal": "The EMBO journal",
+      "year": 1999,
+      "pub_date": "1999-06-15",
+      "authors": "Rathjen J P; Chang J H; Staskawicz B J; Michelmore R W",
+      "first_author": "Rathjen J P",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10367766",
+      "doi": "10.1203/00006450-199906000-00001",
+      "title": "Antimicrobial peptides as mediators of epithelial host defense.",
+      "abstract": "Mammalian epithelial surfaces are remarkable for their ability to provide critical physiologic functions in the face of frequent microbial challenges. The fact that these mucosal surfaces remain infection-free in the normal host suggests that highly effective mechanisms of host defense have evolved to protect these environmentally exposed tissues. Throughout the animal and plant kingdoms, endogenous genetically encoded antimicrobial peptides have been shown to be key elements in the response to epithelial compromise and microbial invasion. In mammals, a variety of such peptides have been identified, including the well-characterized defensins and cathelicidins. A major source of these host defense molecules is circulating phagocytic leukocytes. However, more recently, it has been shown that resident epithelial cells of the skin and respiratory, alimentary, and genitourinary tracts also synthesize and release antimicrobial peptides. Both in vitro and in vivo data support the hypothesis that these molecules are important contributors to intrinsic mucosal immunity. Alterations in their level of expression or biologic activity can predispose the organism to microbial infection. The regulatory and developmental aspects of antimicrobial peptide synthesis are discussed from a perspective that emphasizes the possible relevance to pediatric medicine.",
+      "journal": "Pediatric research",
+      "year": 1999,
+      "pub_date": "1999-06-01",
+      "authors": "Huttner K M; Bevins C L",
+      "first_author": "Huttner K M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10373113",
+      "doi": "10.1126/science.284.5422.1976",
+      "title": "Xyloglucan fucosyltransferase, an enzyme involved in plant cell wall biosynthesis.",
+      "abstract": "Cell walls are crucial for development, signal transduction, and disease resistance in plants. Cell walls are made of cellulose, hemicelluloses, and pectins. Xyloglucan (XG), the principal load-bearing hemicellulose of dicotyledonous plants, has a terminal fucosyl residue. A 60-kilodalton fucosyltransferase (FTase) that adds this residue was purified from pea epicotyls. Peptide sequence information from the pea FTase allowed the cloning of a homologous gene, AtFT1, from Arabidopsis. Antibodies raised against recombinant AtFTase immunoprecipitate FTase enzyme activity from solubilized Arabidopsis membrane proteins, and AtFT1 expressed in mammalian COS cells results in the presence of XG FTase activity in these cells.",
+      "journal": "Science (New York, N.Y.)",
+      "year": 1999,
+      "pub_date": "1999-06-18",
+      "authors": "Perrin R M; DeRocher A E; Bar-Peled M; Zeng W; Norambuena L; ... (+3)",
+      "first_author": "Perrin R M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10361296",
+      "doi": "10.1046/j.1365-2958.1999.01403.x",
+      "title": "Characterization of the Pseudomonas syringae pv. tomato AvrRpt2 protein: demonstration of secretion and processing during bacterial pathogenesis.",
+      "abstract": "Pseudomonas syringae pv. tomato strain DC3000 (Pst DC3000) expressing avrRpt2 is specifically recognized by plant cells expressing RPS2 activity, resulting in localized cell death and plant resistance. Furthermore, transient expression of this bacterial avrRpt2 gene in plant cells results in RPS2-dependent cell death. This indicates that the AvrRpt2 protein is recognized inside RPS2 plant cells and is sufficient for the activation of disease resistance-mediated cell death in planta. We explored the possibility that Pst DC3000 delivers AvrRpt2 protein to plant cells via the hrp (type III) secretion pathway. We now provide direct evidence that mature AvrRpt2 protein is secreted from Pst DC3000 and that secretion is hrp dependent. We also show that AvrRpt2 is N-terminally processed when Arabidopsis thaliana plants are infected with Pst DC3000 expressing avrRpt2. Similar N-terminal processing of AvrRpt2 occurred when avrRpt2 was stably expressed in A. thaliana. No cleavage of AvrRpt2 was detected in bacteria expressing avrRpt2 in culture or in the plant extracellular fluids. The N-terminus of AvrRpt2 was not required for RPS2 recognition in planta. However, this region of AvrRpt2 was essential for Pst DC3000-mediated elicitation of RPS2-dependent cell death in A. thaliana leaves.",
+      "journal": "Molecular microbiology",
+      "year": 1999,
+      "pub_date": "1999-06-01",
+      "authors": "Mudgett M B; Staskawicz B J",
+      "first_author": "Mudgett M B",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10336651",
+      "doi": "10.1046/j.1432-1327.1999.00443.x",
+      "title": "A single-chain antibody fragment is functionally expressed in the cytoplasm of both Escherichia coli and transgenic plants.",
+      "abstract": "Despite the well-known crucial role of intradomain disulfide bridges for immunoglobulin folding and stability, the single-chain variable fragment of the anti-viral antibody F8 is functionally expressed when targeted to the reducing environment of the plant cytoplasm. We show here that this antibody fragment is also functionally expressed in the cytoplasm of Escherichia coli. A gel shift assay revealed that the single-chain variable fragment (scFv) accumulating in the plant and bacterial cytoplasm bears free sulfhydryl groups. Guanidinium chloride denaturation/renaturation studies indicated that refolding occurs even in a reducing environment, producing a functional molecule with the same spectral properties of the native scFv(F8). Taken together, these results suggest that folding and functionality of this antibody fragment are not prevented in a reducing environment. This antibody fragment could therefore represent a suitable framework for engineering recombinant antibodies to be targeted to the cytoplasm.",
+      "journal": "European journal of biochemistry",
+      "year": 1999,
+      "pub_date": "1999-06-01",
+      "authors": "Tavladoraki P; Girotti A; Donini M; Arias F J; Mancini C; ... (+4)",
+      "first_author": "Tavladoraki P",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10404540",
+      "doi": "10.1002/(SICI)1099-1573(199906)13:4<323::AID-PTR448>3.0.CO;2-C",
+      "title": "Mechanism of antiviral activity of triterpenoid saponins.",
+      "abstract": "Triterpenoid saponins are naturally occurring sugar conjugates of triterpenes possessing various biological activities, including antiviral action. Two substances isolated from natural sources were tested against herpes simplex virus type 1 replication. They did not show evidence of cytotoxicity under antiviral test conditions. The triterpenoid saponin, isolated from a Brazilian plant (s21), represents the oleanane group and inhibited herpes simplex virus type 1 DNA synthesis. The triterpenoid saponin, isolated from a Chinese plant (s17), represents the ursane group and seemed to inhibit viral capsid protein synthesis of herpes simplex virus type 1.",
+      "journal": "Phytotherapy research : PTR",
+      "year": 1999,
+      "pub_date": "1999-06-01",
+      "authors": "Simões C M; Amoros M; Girre L",
+      "first_author": "Simões C M",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "10352445",
+      "doi": "10.1016/S0194-5998(99)70332-3",
+      "title": "Food pollution.",
+      "abstract": "Food can influence the human body in many ways, both positively and negatively. Several key elements of contemporary food cultivation and production are presented, along with their potential consequences to our health. The history of food cultivation and consumption is contrasted between early hunter-gatherer societies and modern day societies. Natural nutrient-rich foods produced from the soil in early societies have been replaced with artificial supplements and treated with pesticides and herbicides to control plant disease. The evolution of pesticides is chronicled from the synthesis of DDT in 1870 to present day. Several commonly used chemicals are described along with their documented side effects. A number of methods of pest control from ancient to modern day are offered as alternatives to polluting chemicals. Integrated pest management is proposed as a promising, economically feasible method of pest management, reducing pollution and risk to wildlife and human health.",
+      "journal": "Otolaryngology--head and neck surgery : official journal of American Academy of Otolaryngology-Head and Neck Surgery",
+      "year": 1999,
+      "pub_date": "1999-06-01",
+      "authors": "Trevino R J",
+      "first_author": "Trevino R J",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30849844",
+      "doi": "10.1094/PDIS.1999.83.6.589A",
+      "title": "The Influence of Diurnal Temperatures on the Susceptibility of Bedding Plants to Gray Mold Caused by Botrytis cinerea.",
+      "abstract": "Plant height can be regulated by manipulation of day (DT) and night temperatures (NT). Traditionally, commercial flower crops are grown with a DT higher than the NT, which results in greater internode length than when the regimen is reversed. Because temperature manipulation is a popular height-control tool among growers, the influence of DT/NT regimens of 16/16, 19/19, 22/22, 16/19, 19/22, 16/22, 19/16, 22/19, and 22/16°C on foliage susceptibility to Botrytis cinerea was investigated. After a minimum 3-week temperature treatment, seed geraniums (Pelargonium × hortorum), petunias (Petunia × hybrida), and impatiens (Impatiens wallerana) were inoculated with 2.7 × 105 B. cinerea conidia per ml of water and incubated at 20°C for the duration of the experiment. When averaged over two experiments, the maximum proportion of geranium, petunia, and impatiens foliage infected was 81.5, 35.5, and 27.0%, respectively. The maximum proportion of leaves supporting sporulating B. cinerea was 59.5% for geraniums, 25.5% for petunias, and 5.5% for impatiens. Area under the disease progress curve data indicated that susceptibility of bedding plant foliage was not influenced by the difference in DT/NT regimens. Results suggest that growers that use higher NT than DT to limit plant height do not increase host susceptibility to B. cinerea. However, more rigorous disease management strategies are needed for production of seed geraniums than for petunias or impatiens.",
+      "journal": "Plant disease",
+      "year": 1999,
+      "pub_date": "1999-06-01",
+      "authors": "Prichard P M; Hausbeck M K; Heins R D",
+      "first_author": "Prichard P M",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30849832",
+      "doi": "10.1094/PDIS.1999.83.6.554",
+      "title": "Epidemiology of Botrytis cinerea in Sweet Basil and Implications for Disease Management.",
+      "abstract": "Sweet basil (Ocimum basilicum) is a herbaceous annual plant that is highly susceptible to gray mold, caused by Botrytis cinerea. Infections are initiated on the surface of stem wounds that are caused during harvest; the pathogen then progresses on the stem, killing leaves and secondary buds. When the infection reaches the main stem, the entire plant dies. A study of the epidemiology of the disease and of host-pathogen interactions led to the development of rules for effective disease management. The research was conducted in three steps. (i) Natural epidemics in commercial crops were monitored during the 1993 to 1994 and 1994 to 1995 growing seasons. Disease outbreaks were found to coincide with harvests during rainy days, whereas disease intensity did not change much when harvests were completed during rainless days. (ii) Studies under controlled environmental conditions revealed that cut ends of stems were highly susceptible soon after harvest, susceptibility diminished gradually, and stem cuts inoculated 48 h after harvest were rarely diseased. Observations under a scanning electron microscope showed that an opaque layer had appeared over the cut surface and, as the entire wound surface became covered, penetration of the fungus into the tissue was prevented. Based on these findings, it was hypothesized that avoidance of harvesting during rain events and application of one fungicidal spray, soon after harvest, would result in adequate disease suppression. (iii) These hypotheses were tested and corroborated in greenhouses in two experiments, in 1994 to 1995 and 1995 to 1996. Management of basil crops according to these concepts would also lower the risks for contamination of the marketable product with pesticide residues.",
+      "journal": "Plant disease",
+      "year": 1999,
+      "pub_date": "1999-06-01",
+      "authors": "Sharabani G; Shtienberg D; Elad Y; Dinoor A",
+      "first_author": "Sharabani G",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

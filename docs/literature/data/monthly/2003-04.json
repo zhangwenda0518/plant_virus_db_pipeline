@@ -1,0 +1,280 @@
+{
+  "month": "2003-04",
+  "generated": "2026-07-13 02:59:42",
+  "total": 19,
+  "by_category": {
+    "Host_Virus_Interactions": 9,
+    "Antiviral_Resistance_Genes": 4,
+    "New_Virus": 3,
+    "Control_Management": 2,
+    "Biotechnology_Applications": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "12655099",
+      "doi": "10.1099/vir.0.18987-0",
+      "title": "Double-stranded RNA-binding proteins could suppress RNA interference-mediated antiviral defences.",
+      "abstract": "RNA interference (RNAi) is a double-stranded (ds)RNA-inducible, sequence-specific RNA-degradation mechanism that operates as a natural antiviral system in plants and animals. Successful virus infection requires evasion or suppression of RNAi. Indeed, RNAi suppressor proteins have been identified in plant and animal viruses, although the molecular mechanism of silencing inhibition is still poorly understood. Because many RNA viruses encode dsRNA-binding proteins (dsRBPs) and as RNAi is triggered by the accumulation of dsRNAs, dsRBPs were examined to see if they inhibit RNAi. Here, it is shown that heterologous dsRBPs suppressed RNAi in plants, indicating that in natural host-virus interactions, pathogen-encoded dsRBPs could inactivate RNAi-mediated host defences.",
+      "journal": "The Journal of general virology",
+      "year": 2003,
+      "pub_date": "2003-04-01",
+      "authors": "Lichner Zsuzsanna; Silhavy Dániel; Burgyán József",
+      "first_author": "Lichner Zsuzsanna",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "未提及（泛指RNA病毒）",
+      "taxonomy": "",
+      "host_plant": "植物（未具体指定，可能包括模式植物）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12778545",
+      "doi": "10.1111/j.0014-3820.2003.tb00287.x",
+      "title": "The evolution of virulence in a plant virus.",
+      "abstract": "The evolution of virulence is a rapidly growing field of research, but few reports deal with the evolution of virulence in natural populations of parasites. We present here an observational and experimental analysis of the evolution of virulence of the plant virus Cucumber mosaic virus (CMV) during an epidemic on tomato in eastern Spain. Three types of CMV isolates were found that caused in tomato plants either a systemic necrosis (N isolates), stunting and a severe reduction of leaf lamina (Y isolates), or stunting and leaf curl (A isolates). These phenotypes were due to the presence of satellite RNAs (satRNAs) necrogenic (in N isolates) or attenuative (in A isolates) of the symptoms caused by CMV without satRNA (Y isolates). For these three types of isolates, parameters of virulence and transmission were estimated experimentally. For virulence the ranking of isolates was N > Y > A, for transmissibility, Y > A > N. The predictions of theoretical models for the evolution of virulence were analyzed with these parameters and compared with observations from the field. A single-infection model predicted adequately the observed long-term evolution of the CMV population to intermediate levels of virulence. A coinfection model that considered competition between isolates with an effect on transmission explained the invasion of the CMV population by N isolates at the beginning of the epidemic, and its predictions also agreed with field data on the long-term evolution of the CMV population. An important conclusion from both models was that the density of the aphid vector's population is a major factor in the evolution of CMV virulence. This may be relevant for the design of control strategies for CMV-induced diseases.",
+      "journal": "Evolution; international journal of organic evolution",
+      "year": 2003,
+      "pub_date": "2003-04-01",
+      "authors": "Escriu Fernando; Fraile Aurora; García-Arenal Fernando",
+      "first_author": "Escriu Fernando",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Cucumber mosaic virus (CMV)",
+      "taxonomy": "",
+      "host_plant": "番茄",
+      "location": "西班牙东部",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12715163",
+      "doi": "10.1007/s00438-003-0823-5",
+      "title": "Barley disease resistance gene analogs of the NBS-LRR class: identification and mapping.",
+      "abstract": "The majority of verified plant disease resistance genes isolated to date are of the NBS-LRR class, encoding proteins with a predicted nucleotide binding site (NBS) and a leucine-rich repeat (LRR) region. We took advantage of the sequence conservation in the NBS motif to clone, by PCR, gene fragments from barley representing putative disease resistance genes of this class. Over 30 different resistance gene analogs (RGAs) were isolated from the barley cultivar Regatta. These were grouped into 13 classes based on DNA sequence similarity. Actively transcribed genes were identified from all classes but one, and cDNA clones were isolated to derive the complete NBS-LRR protein sequences. Some of the NBS-LRR genes exhibited variation with respect to whether and where particular introns were spliced, as well as frequent premature polyadenylation. DNA sequences related to the majority of the barley RGAs were identified in the recently expanded public rice genomic sequence database, indicating that the rice sequence can be used to extract a large proportion of the RGAs from barley and other cereals. Using a combination of RFLP and PCR marker techniques, representatives of all barley RGA gene classes were mapped in the barley genome, to all chromosomes except 4H. A number of the RGA loci map in the vicinity of known disease resistance loci, and the association between RGA S-120 and the nematode resistance locus Ha2 on chromosome 2H was further tested by co-segregation analysis. Most of the RGA sequences reported here have not been described previously, and represent a useful resource as candidates or molecular markers for disease resistance genes in barley and other cereals.",
+      "journal": "Molecular genetics and genomics : MGG",
+      "year": 2003,
+      "pub_date": "2003-04-01",
+      "authors": "Madsen L H; Collins N C; Rakwalska M; Backes G; Sandal N; ... (+9)",
+      "first_author": "Madsen L H",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12825522",
+      "doi": "10.1017/s0953756203007585",
+      "title": "First records of ectomycorrhizal Cortinarius species (Agaricales, Basidiomycetes) from tropical India and their phylogenetic position based on rDNA ITS sequences.",
+      "abstract": "Three new Cortinarius species, Cortinarius conopileus, C. keralensis, and C. phlegmophorus spp. nov., are described from Kerala State in southern India. This is the first record of ectomycorrhizal Cortinarius spp. in the tropical part of India. In addition to distinct morphological characters, the comparative analysis of rDNA ITS sequences of the collections from India and morphologically similar species support the recognition of these taxa as new species. Phylogenetic analyses demonstrate that the three Indian Cortinarius spp. belong to both larger subclades of the genus Cortinarius, clade/cortinarius and clade/telamonia. As supported by morphological and molecular data, C. phlegmophorus belongs to Cortinarius subgen. Myxacium sect. Defibulati. Based on classical morphological characters, both C. keralensis and C. conopileus are representatives of subgen. Telamonia. However, C. conopileus belongs to clade/obtusi, which is a well-supported subclade of clade/cortinarius. Thus, in contrast to classical taxonomy, the clade/obtusi represents an independent evolutionary origin of telamonioid taxa. This result is also reflected by the distinct morphological characters of taxa of clade/obtusi, namely the lamellar trama with ellipsoid inflated hyphae and the presence of cystidia. In contrast, C. keralensis is a typical member of clade/telamonia. Within/telamonia, only relationships of closely related taxa are resolved due to the low genetic divergence found in ITS sequences. Based on morphological and molecular criteria, C. keralensis is a distinct taxon of sect. Saturnini.",
+      "journal": "Mycological research",
+      "year": 2003,
+      "pub_date": "2003-04-01",
+      "authors": "Peintner Ursula; Moser Meinhard M; Thomas K Agretious; Manimohan P",
+      "first_author": "Peintner Ursula",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12825523",
+      "doi": "10.1017/s0953756203007627",
+      "title": "New species of Inocybe from Dicymbe forests of Guyana.",
+      "abstract": "Four new species of Inocybe (Agaricales) with pleurocystidia and nodulose spores are recorded from a remote region of rain forest in Guyana, in northeastern South America. All four species of Inocybe occur in association with the arborescent legume genus, Dicymbe (Caesalpiniaceae, tribe Amherstieae). This constitutes the first report of a legume host genus with Inocybe in the neotropics. The new species are I. ayangannae, I. epidendron, I. lilacinosquamosa and I. pulchella. A dichotomous key, morphological descriptions, illustrations, taxonomic commentary, and a discussion of Inocybe in the tropics, are provided.",
+      "journal": "Mycological research",
+      "year": 2003,
+      "pub_date": "2003-04-01",
+      "authors": "Matheny P Brandon; Aime M Catherine; Henkel Terry W",
+      "first_author": "Matheny P Brandon",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12725932",
+      "doi": "10.1016/S0378-1097(03)00206-4",
+      "title": "ITS region of the rDNA of Pythium rhizosaccharum sp. nov. isolated from sugarcane roots: taxonomy and comparison with related species.",
+      "abstract": "Pythium rhizosaccharum (F-1244) was isolated from soil samples taken in the rhizosphere of sugarcane (Saccharum officinarum) in the north-eastern India. This species is characterized by its smooth-walled, spherical sporangia and rarely formed sexual structures. When formed, the antheridial branches wrap around the oogonia and soon disappear after fertilization. The internal transcribed spacer (ITS) region of its rDNA is comprised of 904 bases. The taxonomical description of this new species and its comparison with related species are given here, together with the nucleotide sequences of the ITS1 and ITS2, and the 5.8S gene of its ribosomal nuclear DNA.",
+      "journal": "FEMS microbiology letters",
+      "year": 2003,
+      "pub_date": "2003-04-25",
+      "authors": "Singh Kusum Kumari; Mathew Ritta; Masih Isaac Emmanuel; Paul Bernard",
+      "first_author": "Singh Kusum Kumari",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12701708",
+      "doi": "10.1002/ps.706",
+      "title": "Role of reactive oxygen species and antioxidants in plant disease resistance.",
+      "abstract": "Membrane damage caused by the non-specific fungal toxin fusaric acid was less on pretreated than on control leaves when tobacco leaves were pretreated with anti-senescence plant hormones, such as kinetin, benzyladenine or the anti-ozonant N-[2-(2-oxo-1-imidazolidinyl)]ethyl-N'-phenylurea. Similarly, the necrosis caused by mercuric chloride was reduced by the above anti-senescence agents. In addition, in in vitro tests, leaves from selected paraquat-tolerant tobacco plants were less sensitive to Alternaria alternata (Fr) Keissler infection than those of the control paraquat-sensitive tobacco leaves. Paraquat-tolerant Conyza canadensis (L) Cronq weeds naturally selected in vineyards in Hungary showed similar inhibition of senescence to paraquat-tolerant tobacco, expressed as more green leaves and slower development. In accordance with this, the paraquat-tolerant Conyza leaves remained almost symptomless, while paraquat-sensitive plants showed severe symptoms after infection with Botrytis cinerea Pers. Oxidative burst (accumulation of hydrogen peroxide) was attenuated in TMV-infected leaves of Xanthi-nc tobacco as a result of treatment with salicylic acid or in leaves where systemic acquired resistance (SAR) had been induced by a previous TMV infection. Accordingly, superoxide dismutase (SOD) activity was higher in Xanthi tobacco leaves with SAR than without SAR. However, in NahG tobacco, in which SAR cannot develop, there was no augmentation of SOD activity. All the above data support the significance of delayed senescence and antioxidants in the resistance of plants to biotic and abiotic necrosis-inducing agents.",
+      "journal": "Pest management science",
+      "year": 2003,
+      "pub_date": "2003-04-01",
+      "authors": "Barna Balázs; Fodor József; Pogány Miklós; Király Zoltán",
+      "first_author": "Barna Balázs",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12732319",
+      "doi": "10.1016/s0958-1669(03)00035-1",
+      "title": "Deciphering plant-pathogen communication: fresh perspectives for molecular resistance breeding.",
+      "abstract": "Activation of local and systemic plant defences in response to pathogen attack involves dramatic cellular reprogramming. Over the past 10 years many novel genes, proteins and molecules have been discovered as a result of investigating plant-pathogen interactions. Most attempts to harness this knowledge to engineer improved disease resistance in crops have failed. Although gene efficacy in transgenic plants has often been good, commercial exploitation has not been possible because of the detrimental effects on plant growth, development and crop yield. Biotechnology approaches have now shifted emphasis towards marker-assisted breeding and the construction of vectors containing highly regulated transgenes that confer resistance in several distinct ways.",
+      "journal": "Current opinion in biotechnology",
+      "year": 2003,
+      "pub_date": "2003-04-01",
+      "authors": "Hammond-Kosack Kim E; Parker Jane E",
+      "first_author": "Hammond-Kosack Kim E",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12784627",
+      "doi": "10.1271/bbb.67.847",
+      "title": "Family 19 chitinase of Streptomyces griseus HUT6037 increases plant resistance to the fungal disease.",
+      "abstract": "Chitinase C (ChiC) is the first bacterial family 19 chitinase discovered in Streptomyces griseus HUT6037. In vitro, ChiC clearly inhibited hyphal extension of Trichoderma reesei but a rice family 19 chitinase did not. In order to investigate the effects of ChiC as an increaser of plant resistance to fungal diseases, the chiC gene was introduced into rice plants under the control of the increased CaMV 35S promoter and a signal sequence from the rice chitinase gene. Transgenic plants were morphologically normal. Resistance to leaf blast disease caused by Magnaporthe grisea was evaluated in R1 and R2 generations using a spray method. Ninety percent of transgenic rice plants expressing ChiC had higher resistance than non-transgenic plants. Disease resistance of sibling plants within the same line was correlated with the ChiC expression levels. ChiC produced in rice plants accumulated intercellularly and had the hydrolyzing activity against glycol chitin.",
+      "journal": "Bioscience, biotechnology, and biochemistry",
+      "year": 2003,
+      "pub_date": "2003-04-01",
+      "authors": "Itoh Yoshikane; Takahashi Kazunari; Takizawa Hironobu; Nikaidou Naoki; Tanaka Hiroshi; ... (+3)",
+      "first_author": "Itoh Yoshikane",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30831827",
+      "doi": "10.1094/PDIS.2003.87.4.345",
+      "title": "Induced Resistance as a Possible Means to Control Diseases of Strawberry Caused by Phytophthora spp.",
+      "abstract": "Two putative elicitors of disease resistance (acibenzolar-S-methyl and chitosan) were tested for their effect on crown rot (Phytophthora cactorum) in strawberry. The effect of both compounds was enhanced when the time between treatment and inoculation was prolonged from 2 to 20 days. There were no significant differences between treatments when the concentration of acibenzolar-S-methyl was increased from 10 to 1,000 μg a.i./plant. The lowest tested concentrations of chitosan (10 and 50 μg a.i./plant) resulted in a lower disease score compared with the highest concentrations (250 or 1,000 μg a.i./plant). There were no differences in disease score between treatment with fosetyl-Al, acibenzolar-S-methyl, or chitosan when applied 5 or 15 days before inoculation. The effect of acibenzolar-S-methyl and chitosan also was tested against P. fragariae var. fragariae in alpine strawberry (Fragaria vesca var. alpina cv. Alexandria). Chitosan had no effect, whereas fosetyl-Al and all treatments with acibenzolar-S-methyl (50 or 250 μg a.i./plant; 5, 10, 20, or 40 days before inoculation) reduced the severity of the disease. There were no significant differences between acibenzolar-S-methyl and fosetyl-Al when applied at the same time. Acibenzolar-S-methyl and chitosan at concentrations of 0.5, 5, 50, and 500 μg a.i. ml-1 in V8 juice agar were tested for possible effects on P. cactorum and P. fragariae var. fragariae in vitro. Only chitosan at concentrations of 50 and 500 μg a.i. ml-1 had a growth-retarding effect on P. cactorum. Both acibenzolar-S-methyl and chitosan at a concentration of 500 μg a.i. ml-1 reduced the growth rate of P. fragariae var. fragariae.",
+      "journal": "Plant disease",
+      "year": 2003,
+      "pub_date": "2003-04-01",
+      "authors": "Eikemo H; Stensvand A; Tronsmo A M",
+      "first_author": "Eikemo H",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12679066",
+      "doi": "10.1016/S0167-7799(03)00053-2",
+      "title": "Plant disease resistance genes: recent insights and potential applications.",
+      "abstract": "Plant disease resistance genes (R genes) encode proteins that detect pathogens. R genes have been used in resistance breeding programs for decades, with varying degrees of success. Recent molecular research on R proteins and downstream signal transduction networks has provided exciting insights, which will enhance the use of R genes for disease control. Definition of conserved structural motifs in R proteins has facilitated the cloning of useful R genes, including several that are functional in multiple crop species and/or provide resistance to a relatively wide range of pathogens. Numerous signal transduction components in the defense network have been defined, and several are being exploited as switches by which resistance can be activated against diverse pathogens.",
+      "journal": "Trends in biotechnology",
+      "year": 2003,
+      "pub_date": "2003-04-01",
+      "authors": "McDowell John M; Woffenden Bonnie J",
+      "first_author": "McDowell John M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12723042",
+      "doi": "10.1139/g03-002",
+      "title": "Predicting progeny performance in common bean (Phaseolus vulgaris L.) using molecular marker-based cluster analysis.",
+      "abstract": "Recovery of superior individuals from a cross based solely on the phenotypic characteristics ofsingle-plant selections is inefficient because some traits, like yield, have low heritabilities, or because it is difficult to create the correct conditions for selection, as with disease resistance. In contrast, molecular markers are highly heritable and unaffected by environmental conditions. The objective of this study was to investigate the potential of molecular markers to identify superior lines in a breeding population by examining relationships between genetic distances (GDs) and phenotypic data for eight agronomic and architectural traits (branch angle, height, hypocotyl diameter, lodging, maturity, upper pods, pods per plant, and yield) obtained from three locations over a two-year period. From an elite common bean (Phaseolus vulgaris L.) cross, 110 recombinant inbred lines (RILs) and the two parents were screened with 116 random amplified polymorphic DNA (RAPD) markers. Pairwise GD values were calculated between each line and a selected \"target\" (the parent 'OAC Speedvale') using the Jaccard method and correlated to the trait data. The correlations were low and non-significant for all traits, except for branch angle (r = 0.30), maturity (r = -0.25), and pods per plant (r = 0.35). The lines were also grouped according to their cluster-based GD from the target parent using UPGMA cluster analysis. Trait data of lines within groups were combined and correlated to cluster-based GD. Correlation values were large and significant for all traits. Additionally, one-half of the top 10 yielding lines and nearly one-third of the best phenotypically ranked lines were present within the 13% of lines clustered nearest the target. A selection method using marker-based cluster analysis (MBCA) is suggested to assist phenotypic selection by directing a breeder's attention to a subsample of the population containing a high proportion of superior lines.",
+      "journal": "Genome",
+      "year": 2003,
+      "pub_date": "2003-04-01",
+      "authors": "Beattie Aaron D; Michaels Tom E; Pauls K Peter",
+      "first_author": "Beattie Aaron D",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

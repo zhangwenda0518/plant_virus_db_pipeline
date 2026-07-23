@@ -1,0 +1,282 @@
+{
+  "month": "2007-03",
+  "generated": "2026-07-13 02:59:42",
+  "total": 37,
+  "by_category": {
+    "New_Virus": 14,
+    "Host_Virus_Interactions": 12,
+    "Antiviral_Resistance_Genes": 4,
+    "Control_Management": 3,
+    "Viral_Diversity_Ecology": 3,
+    "Transmission_Epidemiology": 2,
+    "Biotechnology_Applications": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "17125850",
+      "doi": "10.1016/j.antiviral.2006.10.007",
+      "title": "Antiviral activity of tiazofurin and mycophenolic acid against Grapevine leafroll-associated virus 3 in Vitis vinifera explants.",
+      "abstract": "The ability to control plant viral diseases with chemicals has great potential value for agriculture, but few chemicals are available to date due to the difficulty in obtaining effective drugs. IMP dehydrogenase is an enzyme which catalyzes the conversion of inosine 5'-monophosphate to xanthosine 5'-monophosphate in the de novo purine nucleotide synthetic pathway, and is considered a sensitive target for antiviral drugs. Two IMPDH inhibitors, tiazofurin (TR) and mycophenolic acid (MPA), were tested for their inhibitory effect on Grapevine leafroll-associated virus 3 (GLRaV-3) in in vitro grapevine explants. TR administration produced plantlets characterized by negative ELISA readings. No PCR products were obtained from these samples. This was confirmed by the absence of viral particles. MPA was essentially ineffective against GLRaV-3 replication in Sangiovese explants. This is the first report of GLRaV-3 eradication in grapevine explants following TR administration.",
+      "journal": "Antiviral research",
+      "year": 2007,
+      "pub_date": "2007-03-01",
+      "authors": "Panattoni A; D'Anna F; Triolo E",
+      "first_author": "Panattoni A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Grapevine leafroll-associated virus 3 (GLRaV-3)",
+      "taxonomy": "",
+      "host_plant": "Vitis vinifera (葡萄)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17174409",
+      "doi": "10.1016/j.jviromet.2006.11.004",
+      "title": "Successful application of FTA Classic Card technology and use of bacteriophage phi29 DNA polymerase for large-scale field sampling and cloning of complete maize streak virus genomes.",
+      "abstract": "Leaf samples from 155 maize streak virus (MSV)-infected maize plants were collected from 155 farmers' fields in 23 districts in Uganda in May/June 2005 by leaf-pressing infected samples onto FTA Classic Cards. Viral DNA was successfully extracted from cards stored at room temperature for 9 months. The diversity of 127 MSV isolates was analysed by PCR-generated RFLPs. Six representative isolates having different RFLP patterns and causing either severe, moderate or mild disease symptoms, were chosen for amplification from FTA cards by bacteriophage phi29 DNA polymerase using the TempliPhi system. Full-length genomes were inserted into a cloning vector using a unique restriction enzyme site, and sequenced. The 1.3-kb PCR product amplified directly from FTA-eluted DNA and used for RFLP analysis was also cloned and sequenced. Comparison of cloned whole genome sequences with those of the original PCR products indicated that the correct virus genome had been cloned and that no errors were introduced by the phi29 polymerase. This is the first successful large-scale application of FTA card technology to the field, and illustrates the ease with which large numbers of infected samples can be collected and stored for downstream molecular applications such as diversity analysis and cloning of potentially new virus genomes.",
+      "journal": "Journal of virological methods",
+      "year": 2007,
+      "pub_date": "2007-03-01",
+      "authors": "Owor Betty E; Shepherd Dionne N; Taylor Nigel J; Edema Richard; Monjane Adérito L; ... (+3)",
+      "first_author": "Owor Betty E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Maize streak virus (MSV)",
+      "taxonomy": "Geminiviridae, Mastrevirus",
+      "host_plant": "玉米 (Zea mays)",
+      "location": "乌干达 (Uganda) 23个区",
+      "results": "成功从155个样品提取病毒DNA，分析127个分离株RFLP，克隆6个代表性全长基因组，序列无错误。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17316629",
+      "doi": "10.1016/j.febslet.2007.02.007",
+      "title": "Coordinated and selective recruitment of eIF4E and eIF4G factors for potyvirus infection in Arabidopsis thaliana.",
+      "abstract": "The translation initiation factors eIF4E and eIF(iso)4E play a key role during virus infection in plants. During mRNA translation, eIF4E provides the cap-binding function and is associated with the protein eIF4G to form the eIF4F complex. Susceptibility analyses of Arabidopsis mutants knocked-out for At-eIF4G genes showed that eIF4G factors are indispensable for potyvirus infection. The colonization pattern by a viral recombinant carrying GFP indicated that eIF4G is involved at a very early infection step. Like eIF4E, eIF4G isoforms are selectively recruited for infection. Moreover, the eIF4G selective involvement parallels eIF4E recruitment. This is the first report of a coordinated and selective recruitment of eIF4E and eIF4G factors, suggesting the whole eIF4F recruitment.",
+      "journal": "FEBS letters",
+      "year": 2007,
+      "pub_date": "2007-03-06",
+      "authors": "Nicaise Valérie; Gallois Jean-Luc; Chafiai Faccila; Allen Leah M; Schurdi-Levraud Valérie; ... (+5)",
+      "first_author": "Nicaise Valérie",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "potyvirus",
+      "taxonomy": "",
+      "host_plant": "拟南芥 (Arabidopsis thaliana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780582",
+      "doi": "10.1094/PDIS-91-3-0327A",
+      "title": "First Report of Iris yellow spot virus on Onion in New York.",
+      "abstract": "Iris yellow spot virus (IYSV [family Bunyaviridae, genus Tospovirus]), a potentially devastating disease of onion vectored by onion thrips (Thrips tabaci Lindeman), has been reported from most states in the western United States where significant onion production occurs, with the most recent report from Texas (1). In June 2006, volunteer onion (Allium cepa) plants in Orleans County, New York (Elba muckland) were found to have symptoms indicative of IYSV infection. The scapes (seed stalks) of the volunteer onions found at the edge of a cull pile from a 2005 onion crop exhibited diamond-shaped lesions, each with a distinct green center and a double yellow border. Approximately 25 of 100 plants of red and yellow onion cultivars exhibited characteristic IYSV lesions. The cull pile was composed primarily of locally grown onions, although a few of the bulbs were grown from imported bare-root transplants imported from Arizona. Symptomatic plants tested positive for IYSV using IYSV-specific antiserum from Agdia Inc. (Elkhart, IN) in a double-antibody sandwich-ELISA. The presence of IYSV was verified by reverse transcription (RT)-PCR using primers derived from the small RNA of IYSV (S-RNA). The primers flanked the IYSV nucleocapsid (N) gene (5'-TAA AAC AAA CAT TCA AAC AA-3' and 5'-CTC TTA AAC ACA TTT AAC AAG CAC-3' (3). RT-PCR assays produced a PCR amplicon of expected size (approximately 1.2 kb) and the product was cloned and sequenced. Nucleotide sequence analysis confirmed the identity of the amplicon as that of the IYSV S-RNA. Sequence comparisons showed 95 to 98% identity with known IYSV N gene sequences available in GenBank. The virus is poorly transmitted to onion by mechanical inoculation and we did not have access to a noninfested colony of the onion thrips vector to transfer the virus from these samples to noninfected onions. No asymptomatic plants were tested. Among the onion-growing states in the eastern United States, IYSV has previously only been reported from Georgia (2). To our knowledge, this is the first report of IYSV in New York and the greater northeastern United States. The finding of this disease in New York confirms further spread of the virus within North America and the need for research to develop more effective management options to reduce the impact of IYSV on onion crops. References: (1) M. Miller et al. Plant Dis. 90:1359, 2006. (2) S. W. Mullis et al. Plant Dis. 90:377, 2006. (3) H. R. Pappu et al. Arch. Virol. 151:1015, 2006.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-03-01",
+      "authors": "Hoepting C A; Schwartz H F; Pappu H R",
+      "first_author": "Hoepting C A",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "New_Virus"
+      ],
+      "virus_name": "Iris yellow spot virus (IYSV)",
+      "taxonomy": "",
+      "host_plant": "洋葱 (Allium cepa)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780591",
+      "doi": "10.1094/PDIS-91-3-0330A",
+      "title": "First Report of Tobacco streak virus Infecting Guizotia abyssinica from India.",
+      "abstract": "Guizotia abyssinica (L.f.) Cass. (niger), an important oil seed crop grown in India, is used in foods, paints, soaps, and as an illuminant. During a survey conducted in 2004 to monitor Tobacco streak virus (TSV) in Helianthus annuus L. (sunflower) and Arachis hypogaea L. (groundnut), typical symptoms of leaf and petiole necrosis were observed in niger plants from Karnataka State, India. The field-collected samples reacted with TSV-specific polyclonal antiserum in direct antigen coated (DAC)-ELISA. Indicator host species were mechanically inoculated with extracts from symptomatic leaves and grown under greenhouse conditions. The inoculations resulted in local necrotic lesions on Vigna unguiculata cv. C-152 (cowpea), Gomphrena globosa, and Nicotiana tabacum cv. Xanthi (tobacco) at 3 to 4 days postinoculation (dpi) and systemic mosaic mottling on sunflower and G. globosa at 7 to 9 dpi. To identify the virus at the molecular level, total RNA was isolated (RNeasy kit, Qiagen Inc., Chatsworth, CA) from the virus-inoculated cowpea leaf and used for reverse transcription-PCR using TSV CP (coat protein) specific primers (2). The resulting ~720-bp amplicon corresponding to the CP gene of TSV was cloned into pGem-T vector (Promega, Madison, WI) and sequenced. The resulting sequence of the TSV-niger isolate (TSV-NG) comprised 717 nucleotides encoding 238 amino acid residues of the viral coat protein (GenBank Accession No. DQ864458). Comparison of the sequence with those of other TSV CP gene indicated 98.5 to 99.3% nucleotide and 97.9 to 99.6% amino acid sequence identity with TSV isolates from India (1,2; GenBank Accession Nos. AF505073, AY061930, AY061929, AF515823, AF515824, and AF515825). The sequence of TSV-NG had 89.5 and 80.0% amino acid identity with TSV-WC, type strain from the United States (GenBank Accession No. X00435) and TSV-BR, isolate from Brazil (GenBank Accession No. AY354406), respectively. On the basis of symptoms, transmission, and serological and molecular data, the causal agent of necrosis in niger was identified as a strain of TSV widely prevalent in other oil seed and vegetable crops in India. The new report of Tobacco streak virus infecting niger from India, indicated the expansion of host range among oil seed crops. References: (1) A. I. Bhat et al. Indian J Biotechnol. 1:350, 2002. (2) K. S. Ravi et al. Plant Pathol. 50:800, 2001.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-03-01",
+      "authors": "Arun Kumar N; Lakshmi Narasu M; Zehr U B; Ravi K S",
+      "first_author": "Arun Kumar N",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tobacco streak virus (TSV)",
+      "taxonomy": "Bromoviridae, Ilarvirus",
+      "host_plant": "Guizotia abyssinica (niger), 以及指示植物 cowpea, Gomphrena globosa, tobacco, sunflower",
+      "location": "印度卡纳塔克邦",
+      "results": "发现典型坏死症状，ELISA阳性，接种产生局部坏死和系统症状，CP基因序列与印度其他分离物高度相似(98.5-99.3%核苷酸同源性)，与USA和Brazil分离物相似性较低。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780581",
+      "doi": "10.1094/PDIS-91-3-0326C",
+      "title": "First Report on the Natural Occurrence of Beet chlorosis virus in Poland.",
+      "abstract": "Yellowing symptoms on sugar beet (Beta vulgaris L.) are caused by several viruses, especially those belonging to the genus Polerovirus of the family Luteoviridae, including Beet mild yellowing virus (BMYV) and Beet western yellows virus (BWYV), and recently, a new species, Beet chlorosis virus (BChV), was reported (2). To identify Polerovirus species occurring in beet crops in Poland and determine their molecular variability, field surveys were performed in the summer and autumn of 2005. Leaves from symptomatic beet plants were collected at 26 localities in the main commercial sugar-beet-growing areas in Poland that included the Bydgoszcz, Kutno, Lublin, Poznań, Olsztyn, and Warszawa regions. Enzyme-linked immunosorbent assay (ELISA) tests (Loewe Biochemica GmbH, Sauerlach, Germany) detected poleroviruses in 23 of 160 samples (approximately 20 samples from each field). Multiplex reverse-transcription polymerase chain reaction (RT-PCR) (1) (GE Healthcare S.A.-Amersham Velizy, France) confirmed the presence of poleroviruses in 13 of 23 samples. Nine of twenty sugar beet plants gave positive reactions with BChV-specific primers and three with primers specific to the BMYV P0 protein. Two isolates reacted only with primer sets CP+/CP, sequences that are highly conserved for all beet poleroviruses. Leaf samples collected from three plants infected with BChV were used as inoculum sources for Myzus persicae in transmission tests to suitable indicator plants including sugar beet, red beet (Beta vulgaris L. var. conditiva Alef.), and Chenopodium capitatum. All C. capitatum and beet plants were successfully infected with BChV after a 48-h acquisition access period and an inoculation access period of 3 days. Transmission was confirmed by the presence of characteristic symptoms and by ELISA. Amino acid sequences obtained from each of four purified (QIAquick PCR Purification kit, Qiagen S.A., Courtaboeuf, France) RT-PCR products (550 and 750 bp for CP and P0, respectively) were 100% identical with the CP region (GenBank Accession No. AAF89621) and 98% identical with the P0 region (GenBank Accession No. NP114360) of the French isolate of BChV. To our knowledge, this is the first report of BChV in Poland. References: (1) S. Hauser et al. J. Virol. Methods 89:11, 2000. (2) M. Stevens et al. Mol. Plant Pathol. 6:1, 2005.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-03-01",
+      "authors": "Kozlowska-Makulska A; Szyndel M S; Syller J; Bouzoubaa S; Beuve M; ... (+2)",
+      "first_author": "Kozlowska-Makulska A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Beet chlorosis virus (BChV)",
+      "taxonomy": "Luteoviridae, Polerovirus",
+      "host_plant": "甜菜 (Beta vulgaris L.), 红甜菜 (Beta vulgaris L. var. conditiva Alef.), Chenopodium capitatum",
+      "location": "波兰 (Bydgoszcz, Kutno, Lublin, Poznań, Olsztyn, Warszawa 地区)",
+      "results": "从23份样品中检出BChV，序列与法国分离株CP区100%相同，P0区98%相同；蚜虫可成功传播至指示植物。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780583",
+      "doi": "10.1094/PDIS-91-3-0327B",
+      "title": "First Report of Sweet potato chlorotic stunt virus, a Component of Sweetpotato Virus Disease, in North Carolina.",
+      "abstract": "Sweet potato chlorotic stunt virus (SPCSV) is the whitefly-transmitted component of the sweet potato virus disease (SPVD), a devastating disease originally described in Africa (4). Two isolates designated as G-01 and T-03 were obtained in North Carolina in July 2001 and October 2003, respectively, from plants of cv. Beauregard exhibiting symptoms typical of SPVD, including stunting, leaf narrowing and distortion, vein clearing, and chlorotic mosaic. Sap extract from symptomatic plants tested positive for SPCSV by nitrocellulose immuno-dot blot, using monoclonal antibodies specific for SPCSV obtained from the International Potato Center. Total RNA was extracted from 100 mg of symptomatic leaf tissue by using the PureLink Total RNA Purification System Kit from Invitrogen (Carlsbad, CA) with a minor modification (adding 2% PVP-40 and 1% 2-mercaptoethanol to the extraction buffer) (1). Results were confirmed by reverse transcription (RT)-PCR using primers CP1 and CP3 and HSP70-A/HSP70-B (2), corresponding to the capsid protein and 'heat shock' protein genes, respectively. HSP70 amplicons were cloned using the TOPO TA Cloning Kit (Invitrogen) and sequenced. At the nucleotide level, viral sequences from clones from both isolates were an average 99.4% similar to West Africa and 77.9% to East Africa sequences of SPCSV from Genbank (1). Although the isolates were collected from different fields, viral sequences generated from clones for T-03 and G-01 differed by only six nucleotides and were identical at the amino acid level. The neighbor-joining phylogenetic tree constructed using the HSP70 gene fragment (39 nt) delineated two major clusters with two subpopulations each: Cluster 1, \"East Africa\", consisted of East Africa and Peru subpopulations; Cluster 2, \"West Africa\", consisted of Argentina-Brazil and USA-West Africa subpopulations (1). In addition, SPCSV isolates from East Africa and West Africa clusters were sufficiently distant phylogenetically to suggest that they may correspond to two different criniviruses, with an average similarity between the populations of 78.14% and an average within the populations above 89%. Hudson's tests confirmed the presence of genetically distinct SPCSV groups with high statistical significance (1). Two groups (Peru and East Africa) were differentiated in the East Africa cluster, and three groups (Argentina-Brazil, USA, and West Africa) were differentiated in the West Africa cluster, suggesting that the USA population is not a recent introduction. Although SPCSV was previously reported in the United States, the source was a single accession of cv. White Bunch from the USDA Sweetpotato Germplasm Repository (3). Sweet potato feathery mottle virus (SPFMV) (family Potyviridae, genus Potyvirus), the other component of SPVD, was also detected in both cultivars. To our knowledge, this is the first report of SPCSV in sweetpotato fields in the United States. References: (1) J. A. Abad et al. Phytopathology (Abstr.) 96(suppl.):S1, 2006. (2) T. Alicai et al. Plant Pathol. 48:718, 1999. (3) G. Pio-Ribeiro et al. Plant Dis. 80:551, 1996. (4) G. A. Schaefer and E. R. Terry. Phytopathology 66:642, 1977.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-03-01",
+      "authors": "Abad J A; Parks E J; New S L; Fuentes S; Jester W; ... (+1)",
+      "first_author": "Abad J A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Sweet potato chlorotic stunt virus (SPCSV)",
+      "taxonomy": "Closteroviridae, Crinivirus",
+      "host_plant": "甘薯 (Ipomoea batatas) 品种 Beauregard",
+      "location": "美国北卡罗来纳州",
+      "results": "两个分离株与西非分离株序列相似度99.4%，与东非77.9%。系统发育树显示美国分离株属于西非簇，且与东非簇差异显著，可能为不同crinivirus。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780574",
+      "doi": "10.1094/PDIS-91-3-0324B",
+      "title": "First Report of Tomato chlorotic dwarf viroid in Petunia hybrida from the United States of America.",
+      "abstract": "In November 2005, 13 accessions of Petunia hybrida from the United States of America entered the post-entry quarantine station of the Plant Protection Service in the Netherlands. The plants were inspected and tested for quarantine organisms according to Directives 95/44 and 97/46 of the European Union. No virus and viroid symptoms were observed in the imported plants or in mechanically inoculated plants of Chenopodium quinoa, Nicotiana benthamiana, and N. occidentalis-P1 (3). Testing for pospiviroids by return-polyacrylamide gel electrophoresis (1) and reverse transcriptase-PCR with universal pospiviroid primers Pospi1-RE/FW (2) indicated the presence of pospiviroids in 3 and 11 P. hybrida accessions, respectively. The 196-bp amplicons of six accessions were sequenced. Sequence analysis showed the highest identity for all amplicons to both isolates of Tomato chlorotic dwarf viroid (TCDVd) in NCBI GenBank, Accession Nos. AF162131and AY372399, from Canada and the United States, respectively. Additional RT-PCRs with the Pospi1-RE/FW primers in opposite order and the semi-universal pospiviroid primers Vid-RE/FW (2) for one isolate, followed by sequence analysis, confirmed the identity as TCDVd. The isolate consisted of 359 nucleotides (GenBank Accession No. DQ859013) and showed sequence identities of 98.6 and 96.1% to the Canadian and American tomato isolates of this viroid, respectively. The next highest sequence identity was 90.0% to two accessions of Potato spindle tuber viroid (GenBank Accession Nos. AJ593449 and AY962324). On the basis of these results, the viroid from P. hybrida was identified as TCDVd. To our knowledge, this is the first report of TCDVd in this plant species. Reference: (1) J. W. Roenhorst et al. EPPO Bull. 30:453, 2000. (2) J. Th. J. Verhoeven et al. Eur. J. Plant Pathol. 110:823, 2004. (3) J. Th. J. Verhoeven and J. W. Roenhorst. EPPO Bull. 33:305, 2003.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-03-01",
+      "authors": "Verhoeven J Th J; Jansen C C C; Werkman A W; Roenhorst J W",
+      "first_author": "Verhoeven J Th J",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato chlorotic dwarf viroid (TCDVd)",
+      "taxonomy": "Pospiviroidae (pospiviroids)",
+      "host_plant": "Petunia hybrida (矮牵牛)",
+      "location": "美国（进口至荷兰检测）",
+      "results": "3份return-PAGE阳性，11份RT-PCR阳性；6份扩增子测序显示与TCDVd最高同源性，全长359nt，与加拿大和美国番茄分离株同源性98.6%和96.1%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780593",
+      "doi": "10.1094/PDIS-91-3-0330C",
+      "title": "First Report of the Presence of Tomato apical stunt viroid on Tomato in Sénégal.",
+      "abstract": "Tomato apical stunt viroid (TASVd) was initially discovered in the Ivory Coast (2). It was later reported in Indonesia and more recently was found to be responsible for severe outbreaks in protected tomatoes in Israel (1) and Tunisia (3). Although not of quarantine status, TASVd is included in the EPPO alert list. In 2005, severe arrest of apical growth and leaf chlorosis were observed in tomato samples from northern Sénégal. Tomato yellow leaf curl virus was initially identified in some samples, but since the symptoms observed were reminiscent of those associated with viroid infection, samples were analyzed by return-polyacrylamide gel electrophoresis and molecular hybridization with a Potato spindle tuber viroid (PSTVd) probe. Positive results prompted a reanalysis by reverse transcription-PCR assays specific for PSTVd or TASVd. Positive amplification was only obtained with the TASVd-specific primers (Vir+ GGGGAAACCTGGAGGAA and Vir- GGGGATCCCTGAAGGAC), and the identity of the viroid confirmed by sequencing of the amplified fragment. The complete genome sequence obtained (GenBank Accession No. EF051631) shows 94 to 96% identity with other TASVd sequences in the databases, the highest homology being with the original Ivory Coast isolate (96%, 11 mutations, and 4 indels for the 362-nt genome). These results provide new information on the diversity of TASVd and of its detrimental potential for tomato crops and represent, to our knowledge, the first report of the presence of TASVd in Sénégal. References: (1) Y. Antignus et al. Phytoparasitica 30:502, 2002. (2) C. R. Walter. Acad. Sci. 292:537, 1981. (3) J. Th. J. Verhoeven et al. Plant Disease 90:528, 2006.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-03-01",
+      "authors": "Candresse T; Marais A; Ollivier F; Verdin E; Blancard D",
+      "first_author": "Candresse T",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato apical stunt viroid (TASVd)",
+      "taxonomy": "未提及",
+      "host_plant": "番茄",
+      "location": "塞内加尔北部",
+      "results": "从症状疑似类病毒的番茄样品中检出TASVd，基因组全长362 nt，与数据库序列同源性94-96%，最高与科特迪瓦分离物同源(96%)。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780595",
+      "doi": "10.1094/PDIS-91-3-0331C",
+      "title": "First Report of Impatiens necrotic spot virus in Ornamental Plants in Hungary.",
+      "abstract": "Economically important viruses such as Tomato spotted wilt virus, genus Tospovirus, are transmissible mechanically and mainly by two thrips species (Thrips tabaci and Frankliniella occidentalis) in Hungary (1). Samples (31) of eight ornamental plant species (Catharanthus roseus, Cyclamen persicum, Dendranthema × grandiflorum, Eustoma grandiflorum, Gerbera sp., Impatiens walleriana, Ocimum basilicum, and Verbena hybrida) were studied. Symptoms including color breaking on flowers and necrotic symptoms on leaves were observed on four samples (C. persicum, I. walleriana, O. basilicum, and E. grandiflorum). Infection by Impatiens necrotic spot virus (INSV) was determined by double-antibody sandwich-ELISA and triple-antibody sandwich-ELISA using antisera obtained from Loewe (Sauerlach, Germany) and the DSMZ. Back inoculation with the F. occidentalis vector was also carried out to Lycopersicon esculentum as indicator plants. Back inoculation was also positive for INSV by symptoms and ELISA. The high amount of ornamental plant production together with the use of virus-infected propagation material and the increasing thrips vector populations may result in significantly increased establishment and distribution of INSV in Hungary. References: (1) M. L. Daughtrey et al. Plant Dis. 81:1220, 1997.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-03-01",
+      "authors": "Tóth E K; Kriston É; Takács A; Bajtek M; Kazinczi G; ... (+1)",
+      "first_author": "Tóth E K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Impatiens necrotic spot virus (INSV)",
+      "taxonomy": "Tospovirus属",
+      "host_plant": "仙客来、凤仙花、罗勒、洋桔梗等八种观赏植物",
+      "location": "匈牙利",
+      "results": "从四种症状植物中检出INSV，通过西花蓟马成功回接到番茄指示植物，ELISA阳性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780568",
+      "doi": "10.1094/PDIS-91-3-0322B",
+      "title": "First Report of Tobacco rattle virus and Cucumber mosaic virus in Phlox paniculata in France.",
+      "abstract": "Phlox paniculata L., a perennial plant from the family Polemoniaceae, is cultivated as an ornamental in gardens and for cut-flower production. In spring 2003, two types of symptoms were observed in P. paniculata plants grown for cut flowers on a farm in the Var department, France. Some plants showed a mild leaf mosaic while others showed leaf browning and delayed growth. In plants showing mild mosaic, Cucumber mosaic virus (CMV) was detected on the basis of the symptoms exhibited by a range of inoculated plants, the observation of isometric particles (approximately 30 nm) with the electron microscope in crude sap preparations from the infected plants, and the positive reaction in double-antibody sandwich (DAS)-ELISA to polyclonal antibodies raised against CMV (1). In double-immunodiffusion analysis, the five tested isolates were shown to belong to group II of CMV strains. To determine if CMV was responsible for the symptoms observed, one isolate was multiplied in Nicotiana tabacum cv. Xanthi-nc plants after isolation from local lesions on Vigna unguiculata and mechanically inoculated to 12 1-year-old P. paniculata plants. At 3 months post inoculation (mpi), all plants showed mild mosaic and CMV was detected by DAS-ELISA. In sap preparations from P. paniculata plants showing leaf browning symptoms, rod-shaped particles with two distinct sizes of 190 to 210 and 70 to 90 nm long, typical of those associated with tobraviruses, were revealed using electron microscopy. Local lesions typical of Tobacco rattle virus (TRV) were observed after inoculation of N. tabacum cv. Xanthi-nc, Chenopodium amaranticolor, and C. quinoa. Total nucleic acid preparations were prepared from symptomatic plants, and amplicons of the expected size (463 bp) were generated by reverse-transcription (RT)-PCR using primers specific to TRV RNA 1 (4). The nucleotide sequence of one amplicon was 93.6% identical to the sequence of a reference TRV isolate (GenBank Accession No. AJ586803). Twelve 1-year-old P. paniculata plants were mechanically inoculated with an extract of infected tissues from one symptomatic P. paniculata plant. TRV was detected 2 to 6 mpi in apical leaves of all inoculated plants by RT-PCR, although the plants did not express symptoms. Since no other pathogens were detected in the source plants, it is plausible that the lack of symptoms in back-inoculated plants is either due to a long incubation period or an interaction with particular environmental factors such as cold conditions. The survey of approximately 200 plants revealed that approximately 7, 10, and 1% were infected by TRV, CMV, or by both viruses, respectively. CMV and TRV were previously detected in P. paniculata in Latvian SSR and in Lithuania (2,3). These results show that sanitary selection of P. paniculata prior to vegetative propagation should include a screening for TRV and CMV infections. References: (1) J.-C. Devergne et al. Ann. Phytopathol. 10:233, 1978. (2) Y. Ignab and A. Putnaergle. Tr. Latv. S.-Kh. Akad. 118:27, 1977. (3) M. Navalinskiene and M. Samuitiene. Biologija 1:52, 1996. (4) D. J. Robinson. J. Virol. Methods 40:57, 1992.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-03-01",
+      "authors": "Cardin L; Onesto J P; Bornard I; Moury B",
+      "first_author": "Cardin L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tobacco rattle virus (TRV) and Cucumber mosaic virus (CMV)",
+      "taxonomy": "Tobravirus (TRV); Cucumovirus (CMV)",
+      "host_plant": "Phlox paniculata",
+      "location": "法国，Var省",
+      "results": "CMV属于Group II；TRV序列与参考株93.6%同源；回接试验中CMV产生花叶，TRV无症状；田间感染率：TRV 7%、CMV 10%、混合1%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30780594",
+      "doi": "10.1094/PDIS-91-3-0331A",
+      "title": "First Report of Cucumber mosaic virus in Viola hederacea in France and Italy.",
+      "abstract": "Viola hederacea Labill. (Australian violet or trailing violet), family Violaceae, is native to eastern Australia and used for its ornamental quality in humid conditions, especially in terrariums. Mosaic and chlorotic ringspots associated with a mild crinkling on leaves of V. hederacea were observed in gardens in southeast France and La Mortola, Italy in 2001 and 2003, respectively. These symptoms were different from the small chlorotic spots reported in the same species in Queensland, Australia, from which a rhabdovirus was isolated (1). In samples collected from both locations, presence of Cucumber mosaic virus (CMV) was suspected on the basis of the symptoms exhibited by a range of inoculated plants (2) and the observation of isometric particles of approximately 30 nm with the electron microscope in sap preparations. This was confirmed by positive reactions with CMV polyclonal antiserum (3) in double-antibody sandwich-ELISA. Because of the viscosity of the V. hederacea extracts, 0.01% (w/v) of pectolyase in phosphate buffer was used to grind the samples and the homogenate was kept at room temperature for 2 h. In double-immunodiffusion analysis, each isolate was shown to belong to the group II of CMV. Tomato strains D and To were used as positive controls for CMV groups I and II, respectively. The virus was transmitted by aphids (Myzus persicae) in a nonpersistent manner from infected Nicotiana tabacum cv. Xanthi-nc plants to healthy Xanthi-nc plants. To determine if CMV was responsible for the symptoms observed, the French and Italian isolates were multiplied in Xanthi-nc tobacco plants after isolation from local lesions on Vigna unguiculata and mechanically inoculated to 10 plants of V. hederacea. A systemic vein clearing developed on leaves 10 days after inoculation, followed by mosaic and crinkling. CMV was detected in each plant 3 weeks after inoculation. To our knowledge, this is the first report of CMV in V. hederacea in France and Italy. References: (1) D. H. Gowanlock and R. G. Dietzgen. Australas. Plant Pathol. 24:215, 1995. (2) L. Cardin et al. Plant Dis. 87:200, 2003. (3) J.-C. Devergne et al. Ann. Phytopathol. 10:233, 1978.",
+      "journal": "Plant disease",
+      "year": 2007,
+      "pub_date": "2007-03-01",
+      "authors": "Cardin L; Moury B",
+      "first_author": "Cardin L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cucumber mosaic virus (CMV)",
+      "taxonomy": "Bromoviridae, Cucumovirus",
+      "host_plant": "Viola hederacea (澳大利亚紫罗兰)",
+      "location": "法国东南部, 意大利La Mortola",
+      "results": "分离到CMV组II，蚜虫非持久性传播，机械接种证实致病性，首次报道该病毒在法国和意大利的V. hederacea上。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

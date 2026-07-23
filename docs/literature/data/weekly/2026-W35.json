@@ -1,0 +1,35 @@
+{
+  "week": "2026-W35",
+  "start": "2026-08-24",
+  "end": "2026-08-30",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 1,
+  "by_category": {
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "41588790",
+      "doi": "10.1002/jsfa.70478",
+      "title": "The regulatory frameworks surrounding CRISPR-edited papaya and their impact on international commerce.",
+      "abstract": "The papaya tree (Carica papaya L.), native to the Americas, is cultivated in tropical regions and holds substantial economic importance, with an estimated export volume of 365 000 t in 2023. However, diseases caused by viruses, fungi, bacteria, and nematodes can lead to severe losses. Among the more than 38 known viral diseases affecting papaya, only a few poses serious threats to cultivation, notably Papaya Ringspot, Papaya Mosaic, and Papaya Sticky Disease (PSD). Emerging technologies, particularly CRISPR/Cas9 gene editing, offer promising avenues to enhance plant resistance. This study examines regulatory paradigms in key papaya-producing and importing countries, highlighting the need for international regulatory harmonization to reduce trade barriers and improve market access for CRISPR-edited cultivars. We demonstrate the feasibility of CRISPR-based genome editing in papaya (Carica papaya L.) by targeting phytoene desaturase as a proof-of-concept marker gene and β-1,3-glucanase, a resistance gene identified through proteomic profiling of host-pathogen interactions during infection by the papaya meleira virus (PMeV and PMeV2) complex. This virus complex causes PSD, a major threat to papaya production, rendering the fruit commercially unviable due to negative effects on texture and flavor as well as inhibiting the formation of benzyl isothiocyanate (BITC), and the fruits become susceptible to fruit flies, which are quarantine pests. Despite extensive traditional breeding efforts, resistant papaya genotypes have yet to be identified, underscoring the need for innovative approaches. However, translating advancements into commercial applications remains challenging due to the diverse and often inconsistent regulatory frameworks governing genome-edited crops across different jurisdictions. © 2026 The Author(s). Journal of the Science of Food and Agriculture published by John Wiley & Sons Ltd on behalf of Society of Chemical Industry.",
+      "journal": "Journal of the science of food and agriculture",
+      "year": 2026,
+      "pub_date": "2026-08-30",
+      "authors": "Favaratto Luíza; da Silva Mirielson L; Buss David S; Quadros Oeber F; Tapia-Tussell Raul; ... (+3)",
+      "first_author": "Favaratto Luíza",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "Papaya meleira virus (PMeV) and PMeV2 complex",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

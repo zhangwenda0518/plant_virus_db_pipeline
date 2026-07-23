@@ -1,0 +1,262 @@
+{
+  "month": "1998-06",
+  "generated": "2026-07-13 02:59:42",
+  "total": 11,
+  "by_category": {
+    "Host_Virus_Interactions": 4,
+    "New_Virus": 2,
+    "Control_Management": 2,
+    "Spinareoviridae": 1,
+    "Tonesaviridae": 1,
+    "Antiviral_Resistance_Genes": 1,
+    "Viral_Diversity_Ecology": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "9634091",
+      "doi": "10.1099/0022-1317-79-6-1479",
+      "title": "Taxonomic characteristics of fijiviruses based on nucleotide sequences of the oat sterile dwarf virus genome.",
+      "abstract": "Sequence determination of full-length cDNA clones of genomic segments 7-10 (S7-S10) of oat sterile dwarf fijivirus (OSDV) revealed that the 5' and 3' ends of the plus strands of these segments had the same conserved terminal sequences, 5' AACGAAAAA and UUUUUUUAGUC 3'. These sequences are similar, but not identical, to the conserved terminal nucleotide sequences of the genomic segments of rice black streaked dwarf fijivirus (RBSDV) and maize rough dwarf fijivirus (MRDV). The coding strands of S7 and S10 each contained two large nonoverlapping open reading frames (ORFs), as do RBSDV S7 and S9, MRDV S6 and S8 and Nilaparvata lugens reovirus (NLRV; a putative member of Fijivirus) S9. These results strongly suggest that the dicistronic nature of certain genomic segments is characteristic of fijiviruses. Computer analyses revealed sequence homology between RBSDV S7 ORF2, MRDV S6 ORF2 and OSDV S7 ORF2, suggesting that this protein is conserved among plant fijiviruses. No counterparts were found in the genome of NLRV, which is a nonphytopathogenic insect reovirus. Furthermore, phylogenetic trees derived from multiple sequence alignments of each of the homologous proteins from OSDV, RBSDV, MRDV and NLRV suggest that NLRV did not evolve from either Fijivirus group 2 (RBSDV and MRDV) or group 3 (OSDV).",
+      "journal": "The Journal of general virology",
+      "year": 1998,
+      "pub_date": "1998-06-01",
+      "authors": "Isogai M; Uyeda I; Lindsten K",
+      "first_author": "Isogai M",
+      "categories": [
+        "New_Virus",
+        "Spinareoviridae"
+      ],
+      "virus_name": "Oat sterile dwarf virus (OSDV)",
+      "taxonomy": "Reoviridae, Fijivirus",
+      "host_plant": "燕麦",
+      "location": "未提及",
+      "results": "OSDV S7-S10末端保守序列5'AACGAAAAA和3'UUUUUUUAGUC；S7和S10各有两个非重叠ORF；与RBSDV和MRDV有同源蛋白；系统发育表明NLRV不从斐济病毒2或3群进化而来。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "9634099",
+      "doi": "10.1099/0022-1317-79-6-1539",
+      "title": "The nucleotide sequence of satellite tobacco necrosis virus strain C and helper-assisted replication of wild-type and mutant clones of the virus.",
+      "abstract": "The complete nucleotide sequence of satellite tobacco necrosis virus strain C (STNV-C) was determined. The genome has a similar overall organization to two STNV isolates studied previously but differs significantly from them in the secondary structure of the translated and untranslated regions (UTRs). STNV-C RNA is naturally uncapped and contains 1221 nt: 101 nt in the 5' UTR, 606 nt in the capsid protein (CP) coding region and 514 nt in the 3' UTR. Using the known sequences of STNV-C and tobacco necrosis virus strain D (TNV-D) RNAs, full-length cDNA clones of both RNAs were constructed. Synthetic transcripts derived from STNV-C cDNA clones only replicated in plants and protoplasts when co-inoculated with TNV-D transcripts. A number of mutant clones in both the 3' and the 5' STNV-C RNA UTRs were constructed which disrupted putative cis-acting elements recognized by helper virus polymerase. Deletion analysis revealed an essential requirement of all 3' and 5' proximal sequences in the STNV-C UTRs for replication. However, an internal region in the 3' UTR could be deleted without loss of infectivity. Likewise, the entire STNV-C CP-encoding region could be deleted and replaced with a marker gene of a similar size without loss of transcript accumulation in plants.",
+      "journal": "The Journal of general virology",
+      "year": 1998,
+      "pub_date": "1998-06-01",
+      "authors": "Bringloe D H; Gultyaev A P; Pelpel M; Pleij C W; Coutts R H",
+      "first_author": "Bringloe D H",
+      "categories": [
+        "New_Virus",
+        "Tonesaviridae"
+      ],
+      "virus_name": "卫星烟草坏死病毒C株系 (Satellite tobacco necrosis virus strain C, STNV-C)",
+      "taxonomy": "卫星病毒 (Satellite virus); 辅助病毒: Tombusviridae, Necrovirus",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "STNV-C RNA长1221nt，5'UTR 101nt，CP区606nt，3'UTR 514nt。5'和3'UTR全部序列对复制必需，但3'UTR内部区域可缺失，CP区可被标记基因替换。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "9617823",
+      "doi": "10.1023/a:1006031316476",
+      "title": "A glycine-rich RNA-binding protein gene is differentially expressed during acute hypersensitive response following Tobacco Mosaic Virus infection in tobacco.",
+      "abstract": "During efforts for cloning disease resistance-responsive genes, a cDNA encoding a putative Nicotiana glutinosa glycine-rich RNA binding protein (ngRBP) was isolated from TMV induced cDNA library. Northern blot hybridization revealed that ngRBP gene is negatively regulated during early hours of TMV induced acute hypersensitive response (HR). Under greenhouse conditions induced expression of ngRBP gene was observed after 24 h following TMV infection. Salicylic acid and copper also induced ngRBP mRNA expression. Our findings are suggestive of some possible role for ngRBP in plant-pathogen interaction.",
+      "journal": "Plant molecular biology",
+      "year": 1998,
+      "pub_date": "1998-06-01",
+      "authors": "Naqvi S M; Park K S; Yi S Y; Lee H W; Bok S H; ... (+1)",
+      "first_author": "Naqvi S M",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "烟草花叶病毒（Tobacco Mosaic Virus, TMV）",
+      "taxonomy": "",
+      "host_plant": "Nicotiana glutinosa（烟草）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9634582",
+      "doi": "10.1105/tpc.10.6.937",
+      "title": "Initiation and maintenance of virus-induced gene silencing.",
+      "abstract": "The phytoene desaturase (PDS) gene of Nicotiana benthamiana was silenced in plants infected with potato virus X (PVX) vectors carrying PDS inserts, and a green fluorescent protein (GFP) transgene was silenced in plants infected with PVX-GFP. This virus-induced gene silencing (VIGS) is post-transcriptional and cytoplasmic because it is targeted against exons rather than introns of PDS RNA and against viral RNAs. Although PDS and GFP RNAs are most likely targeted through the same mechanism, the VIGS phenotypes differed in two respects. PDS mRNA was targeted by VIGS in all green tissue of the PVX-PDS-infected plant, whereas PVX-PDS was not affected. In contrast, VIGS of the GFP was targeted against PVX-GFP. Initially, VIGS of the GFP was initiated in all green tissues, as occurred with PDS VIGS. However, after 30 days of infection, the GFP VIGS was no longer initiated in newly emerging leaves, although it was maintained in tissue in which it had already been initiated. Based on these analyses, we propose a model for VIGS in which the initiation of VIGS is dependent on the virus and maintenance of it is virus independent.",
+      "journal": "The Plant cell",
+      "year": 1998,
+      "pub_date": "1998-06-01",
+      "authors": "Ruiz MT; Voinnet O; Baulcombe DC",
+      "first_author": "Ruiz MT",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "马铃薯X病毒 (PVX)",
+      "taxonomy": "",
+      "host_plant": "本氏烟 (Nicotiana benthamiana)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9624187",
+      "doi": "10.1074/jbc.273.25.15860",
+      "title": "Biochemical properties of two protein kinases involved in disease resistance signaling in tomato.",
+      "abstract": "In tomato plants, resistance to bacterial speck disease is mediated by a phosphorylation cascade, which is triggered by the specific recognition between the plant serine/threonine protein kinase Pto and the bacterial AvrPto protein. In the present study, we investigated in vitro biochemical properties of Pto, which appears to function as an intracellular receptor for the AvrPto signal molecule. Pto and its downstream effector Pti1, which is also a serine/threonine protein kinase, were expressed in Escherichia coli as maltose-binding protein and glutathione S-transferase fusion proteins, respectively. The two kinases each autophosphorylated at multiple sites as determined by phosphopeptide mapping. In addition, Pto and Pti1 autophosphorylation occurred via an intramolecular mechanism, as their specific activity was not affected by their molar concentration in the assay. Moreover, an active glutathione S-transferase-Pto fusion failed to phosphorylate an inactive maltose-binding protein-Pto(K69Q) fusion excluding an intermolecular mechanism of phosphorylation for Pto. Pti1 phosphorylation by Pto was also characterized and found to occur with a Km of 4.1 microM at sites similar to those autophosphorylated by Pti1. Pto and the product of the recessive allele pto phosphorylated Pti1 at similar sites, as observed by phosphopeptide mapping. This suggests that the inability of the kinase pto to confer resistance to bacterial speck disease in tomato is not caused by altered recognition specificity for Pti1 phosphorylation sites.",
+      "journal": "The Journal of biological chemistry",
+      "year": 1998,
+      "pub_date": "1998-06-19",
+      "authors": "Sessa G; D'Ascenzo M; Loh Y T; Martin G B",
+      "first_author": "Sessa G",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9636234",
+      "doi": "10.1073/pnas.95.13.7819",
+      "title": "Gene-for-gene disease resistance without the hypersensitive response in Arabidopsis dnd1 mutant.",
+      "abstract": "The cell death response known as the hypersensitive response (HR) is a central feature of gene-for-gene plant disease resistance. A mutant line of Arabidopsis thaliana was identified in which effective gene-for-gene resistance occurs despite the virtual absence of HR cell death. Plants mutated at the DND1 locus are defective in HR cell death but retain characteristic responses to avirulent Pseudomonas syringae such as induction of pathogenesis-related gene expression and strong restriction of pathogen growth. Mutant dnd1 plants also exhibit enhanced resistance against a broad spectrum of virulent fungal, bacterial, and viral pathogens. The resistance against virulent pathogens in dnd1 plants is quantitatively less strong and is differentiable from the gene-for-gene resistance mediated by resistance genes RPS2 and RPM1. Levels of salicylic acid compounds and mRNAs for pathogenesis-related genes are elevated constitutively in dnd1 plants. This constitutive induction of systemic acquired resistance may substitute for HR cell death in potentiating the stronger gene-for-gene defense response. Although cell death may contribute to defense signal transduction in wild-type plants, the dnd1 mutant demonstrates that strong restriction of pathogen growth can occur in the absence of extensive HR cell death in the gene-for-gene resistance response of Arabidopsis against P. syringae.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1998,
+      "pub_date": "1998-06-23",
+      "authors": "Yu I C; Parker J; Bent A F",
+      "first_author": "Yu I C",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "9612955",
+      "doi": "10.1094/MPMI.1998.11.6.572",
+      "title": "The myristylation motif of Pto is not required for disease resistance.",
+      "abstract": "The tomato Pto kinase confers resistance to bacterial speck disease caused by strains of Pseudomonas syringae pv. tomato that express the avirulence gene avrPto. Pto contains a putative myristylation site at its amino terminus that was hypothesized to play a role in localizing Pto in the plant cell. Site-directed mutagenesis was used to change the invariant glycine residue in the myristylation motif to an alanine. Transgenes encoding the mutant Pto(G2A) and wild-type Pto were placed behind the cauliflower mosaic virus 35S promoter and transformed into tomato plants that are susceptible to bacterial speck disease. Both the mutant and wild-type forms of Pto conferred resistance to a strain of P. syringae pv. tomato expressing avrPto. These results indicate that the myristylation motif of Pto is not required for bacterial speck disease resistance.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 1998,
+      "pub_date": "1998-06-01",
+      "authors": "Loh Y T; Zhou J; Martin G B",
+      "first_author": "Loh Y T",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "17655412",
+      "doi": "",
+      "title": "[Basidiomycetes: A new source of secondary metabolites.].",
+      "abstract": "The area of natural products research is the most rapidly growing field of organic chemistry, due to the great technical developments in the isolation and identification techniques. Today, near to one million natural products -isolated from the most diverse living things- are known. Microorganisms are among the least-studied of these. Nevertheless, they offer large possibilities for the discovery of new structures and biological activities. Among the microorganisms, the Basidiomycetes present a production capacity and a range of biologically active metabolites, which have scarcely been investigated. The wide spectrum of natural products with biological activity produced by Basidiomycetes includes antimicrobial agents, antifungal, antiviral and cytotoxic activities, enzymes, plant growth regulators and flavors. These metabolites are generally grouped by their chemical origin, and the relationship between chemical structure and the different biological activities reported. The main objective of this review is to bring an updated revision of the numerous and interesting biosynthetic pathways from basidiomycetes.",
+      "journal": "Revista iberoamericana de micologia",
+      "year": 1998,
+      "pub_date": "1998-06-01",
+      "authors": "Brizuela M A; García L; Pérez L; Mansur M",
+      "first_author": "Brizuela M A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30857026",
+      "doi": "10.1094/PDIS.1998.82.6.705",
+      "title": "Assessing the Representativeness of Data on Yield Losses Due to Rice Diseases in Tropical Asia.",
+      "abstract": "The representativeness of information on yield losses due to rice diseases in tropical Asia was studied. Published studies involving different groups of diseases (viral, bacterial, and fungal) and conducted in different rice production ecosystems were compared to help identify research gaps, the filling of which could improve current disease management in rice and help in developing strategies that fit the management needs of fast-evolving rice production systems in the future. Four criteria of representativeness of yield loss information were used: representativeness over time (the proportion of studies conducted over more than one crop cycle), representativeness over space (the proportion of studies conducted in more than one location), representativeness of scale (the proportion of studies conducted on the scale of plots or fields), and representativeness of injury (the standard deviation of the proportion of studies using inoculation, spontaneous infection, or chemical control). A strong imbalance in both the number and the representativeness of studies dealing with fungal, viral, and bacterial diseases was found. Most of the few studies of yield loss due to viral diseases (mainly rice tungro disease) were conducted on the scale of individual (potted) plants or were based on one-year data sets, often reflecting strong epidemics only. Studies of bacterial diseases were conducted in single locations only, and whether such results can be extrapolated still needs to be addressed. There is an acute need to better document yield losses in rice ecosystems other than the irrigated ecosystem. While studies conducted in the upland, rain-fed lowland, and deep-water rice ecosystems seem to have a high degree of representativeness, this cannot compensate for their small number in view of the great diversity of these environments. Studies of irrigated rice tend to concentrate on one year and one location. This approach may be based on the erroneous view that the irrigated ecosystem is homogeneous, and possible extrapolation of data from these studies needs to be examined.",
+      "journal": "Plant disease",
+      "year": 1998,
+      "pub_date": "1998-06-01",
+      "authors": "Savary Serge; Elazegui F A; Teng Paul S",
+      "first_author": "Savary Serge",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "18944906",
+      "doi": "10.1094/PHYTO.1998.88.6.536",
+      "title": "Effects of a Cover Crop on Splash Dispersal of Colletotrichum acutatum Conidia.",
+      "abstract": "ABSTRACT A rain simulator, with generated rains of 11 and 30 mm/h, was used to determine the effect of a cover crop or intercrop on the splash dispersal of Colletotrichum acutatum conidia. Dispersal through sudangrass, which can be used as a 'living mulch', was tested at two planting densities (140 or 280 kg/ha) and two heights (5 and 20 cm) and compared with a control consisting of a bare soil. Dispersal of C. acutatum conidia was assessed by counting colonies formed from spore-bearing splash droplets deposited in sheltered petri plates containing a selective medium. Both a cover crop and rain intensity significantly affected splash dispersal as measured by the interpolated total number of colonies (denoted by Sigma) from 0 to 72 cm from the inoculum source and in a time span of 61 min of generated rain (P < 0.001). However, there was no significant interaction of cover crop and intensity (P > 0.90). Dispersal with a 30-mm/h rain was higher than dispersal with a 11-mm/h rain, and presence of a cover crop significantly reduced dispersal compared with bare soil (P < 0.001). Of the treatments with sudangrass, cover crop planting density did not affect dispersal overall, but there was greater spore dispersal with the taller sudangrass at the higher planting density, due in part to the higher rate of water splashing with the tall grass compared with the short grass. Spore deposition in the petri plates could be functionally related to distance and time using a diffusion-type model, and parameter estimates could be used to explain the effects of cover crop on Sigma. Although the relationship between cover crop properties and splash dispersal is complex, results show the potential beneficial effects of the cover crop on disease management.",
+      "journal": "Phytopathology",
+      "year": 1998,
+      "pub_date": "1998-06-01",
+      "authors": "Ntahimpera N; Ellis M A; Wilson L L; Madden L V",
+      "first_author": "Ntahimpera N",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30857038",
+      "doi": "10.1094/PDIS.1998.82.6.712D",
+      "title": "First Report of Celery Mosaic Potyvirus on Dill (Anethum graveolens).",
+      "abstract": "In the spring and summer of 1997, nearly 90% of dill plants (Anethum graveolens L.) cultivated in a crop of Emilia-Romagna region (northern Italy), exhibited viruslike symptoms. Approximately 30% of the plants showed narrowing of the leaf lamina and stunting that evolved to yellow or bronze color. The plants appeared bushy and had low seed production. Electron microscopy of leaf-dip preparations revealed the association of flexuous, potyvirus-like particles of 750 nm in length with diseased dill plants. The identity of this virus was established by differential host reactions and serological assays. It was mechanically transmitted only to Chenopodium amaranticolor Coste et Reyn. and C. quinoa Willd. plants (which showed local chloro-necrotic lesions after about a week), and Petunia × hybrida Hort. Vilm.-Andr. plants (latently infected). No infections were obtained in several inoculated Umbelliferae plants, including dill and celery (Apium graveolens L.). Therefore, our isolate is similar to that described by others (1,2) and unlike the type strain that infects only members of the Umbelliferae. Virus particles reacted in protein A sandwich-enzyme-linked immunosorbent assay with antiserum to celery mosaic potyvirus (CeMV) (supplied from the Istituto di Fitovirologia Applicata, CNR, Turin, Italy). This result was further confirmed by immunosorbent electron microscopy decoration tests. CeMV in the field was likely transmitted to dill by abundant aphid populations from weeds and/or other Umbelliferae species cultivated in the same location. In particular, the weed host Daucus carota L. and the cultivated Petroselinum sativum Hoffm. plants both exhibited bronze foliage and stunting, and were found to be infected by CeMV. This note represents the first report of CeMV in A. graveolens. References: (1) E. Luisoni et al. Ann. Phytopathol. 1:375, 1969. (2) C. Rubies-Autonell et al. Phytopathol Mediterr. 35:58, 1996.",
+      "journal": "Plant disease",
+      "year": 1998,
+      "pub_date": "1998-06-01",
+      "authors": "Bellardi M G; Rubies-Autonell C",
+      "first_author": "Bellardi M G",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

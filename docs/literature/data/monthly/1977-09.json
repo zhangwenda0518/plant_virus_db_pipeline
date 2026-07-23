@@ -1,0 +1,33 @@
+{
+  "month": "1977-09",
+  "generated": "2026-07-13 02:59:41",
+  "total": 1,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "330505",
+      "doi": "10.1128/jb.131.3.943-950.1977",
+      "title": "Threonyl-transfer ribonucleic acid synthetase from Escherichia coli: subunit structure and genetic analysis of the structural gene by means of a mutated enzyme and of a specialized transducing lambda bacteriophage.",
+      "abstract": "Threonyl-transfer ribonucleic acid synthetase (ThrRS) has been purified from a strain of Escherichia coli that shows a ninefold overproduction of this enzyme. Determination of the molecular weight of the purified, native enzyme by gel chromatography and by polyacrylamide gel electrophoresis at different gel concentrations yielded apparent molecular weight values of 150,000 and 161,000, respectively. Polyacrylamide gel electrophoresis in the presence of sodium dodecyl sulfate yields a single protein band of 76,000-dalton size. From these results an alpha(2) subunit structure can be inferred. A mutant with a structurally altered ThrRS, which had been obtained by selection for resistance against the antibiotic borrelidin, was used to map the position of the ThrRS structural gene (thrS) by P1 transductions. It was found that thrS is located in the immediate neighborhood of pheS and pheT, which are the structural genes for the alpha and beta subunits of phenylalanyl-transfer ribonucleic acid (tRNA) synthetase, the gene order being aroD-pheT-pheS-thrS. A lambda phage that was previously shown to specifically transduce pheS, pheT, and also the structural gene for the translation initiation factor IF3 can complement the defect of the altered ThrRS of the borrelidin-resistant strain. This phage also stimulates the synthesis of the 76,000, molecular-weight polypeptide of ThrRS in ultraviolet light-irradiated. E. coli cells. These results indicate that the genes for ThrRS, alpha and beta subunits of phenylalanyl-tRNA synthetase, and initiation factor IF3 are immediately adjacent on the E. coli chromosome.",
+      "journal": "Journal of bacteriology",
+      "year": 1977,
+      "pub_date": "1977-09-01",
+      "authors": "Hennecke H; Böck A; Thomale J; Nass G",
+      "first_author": "Hennecke H",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

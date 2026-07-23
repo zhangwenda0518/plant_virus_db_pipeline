@@ -1,0 +1,56 @@
+{
+  "month": "1988-08",
+  "generated": "2026-07-13 02:59:42",
+  "total": 2,
+  "by_category": {
+    "Host_Virus_Interactions": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "24232107",
+      "doi": "10.1007/BF00257847",
+      "title": "Effects of Alternaria alternata f.sp. lycopersici toxins on pollen.",
+      "abstract": "Effects of the phytotoxic compounds (AAL-toxins) isolated from cell-free culture filtrates of Alternaria alternata f.sp. lycopersici on in vitro pollen development were studied. AAL-toxins inhibited both germination and tube growth of pollen from several Lycopersicon genotypes. Pollen from susceptible genotypes, however, was more sensitive for AAL-toxins than pollen from resistant plants, while pollen of species not belonging to the host range of the fungus was not significantly affected by the tested toxin concentrations. AAL-toxins elicit symptoms in detached leaf bioassays indistinguishable from those observed on leaves of fungal infected tomato plants, and toxins play a major role in the pathogenesis. Apparently, pathogenesis-related processes and mechanisms involved in disease resistance are expressed in both vegetative and generative tissues. This overlap in gene expression between the sporophytic and gametophytic level of a plant may be advantageously utilized in plant breeding programmes. Pollen may be used to distinguish susceptible and resistant plants and to select for resistances and tolerances against phytotoxins and other selective agents.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 1988,
+      "pub_date": "1988-08-01",
+      "authors": "Bino R J; Franken J; Witsenboer H M; Hille J; Dons J J",
+      "first_author": "Bino R J",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2970564",
+      "doi": "",
+      "title": "Mitogenic activity of high molecular polysaccharide fractions isolated from the Cupressaceae Thuja occidentale L. I. Macrophage-dependent induction of CD-4-positive T-helper (Th+) lymphocytes.",
+      "abstract": "The arborvitae or Thuja occidentale L., one of the Cupressaceae, has rarely been investigated until now. Several authors have demonstrated that allopathic extracts of this plant could be used as strong antiviral agents directed against plant and animal viruses. Polysaccharide fractions with molecular weights ranging between 20,000 and 1,000,000 and higher have been isolated from the aqueous alkaline extract of the herbal parts of T. occidentale L. by ethanol precipitation and fractionation by ultrafiltration. High molecular subfractions of Thujapolysaccharides (TPS) proved to be highly mitogenic on peripheral blood leukocytes. It was demonstrated by the alcalic immune phosphatase-antiphosphatase and Pappenheim staining methods that the mitogenic and cluster-forming activity of TPS cause T cell induction, in particular, of CD 4-positive T-helper/inducer cells as opposed to B cells. The CD-4+ T-helper/inducer cell induction is connected to an increased production of IL-2. The cluster-forming ability and mitogenity of TPS correlates well with the 3H-thymidine uptake and seems to be IL-1 and IFN-gamma dependent as could be shown by blocking the mitogenic effect using anti-IL-1- and anti-IFN antibodies. Whether it is possible to use these polysaccharide fractions as an adjuvant in the therapy of immune deficiency syndromes and cancer must now be further investigated.",
+      "journal": "Leukemia",
+      "year": 1988,
+      "pub_date": "1988-08-01",
+      "authors": "Gohla S H; Haubeck H D; Neth R D",
+      "first_author": "Gohla S H",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

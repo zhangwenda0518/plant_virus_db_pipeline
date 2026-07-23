@@ -1,0 +1,56 @@
+{
+  "month": "1983-11",
+  "generated": "2026-07-13 02:59:42",
+  "total": 2,
+  "by_category": {
+    "New_Virus": 1,
+    "Detection_Methods": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "6417624",
+      "doi": "10.1093/nar/11.21.7387",
+      "title": "Demonstration of the bipartite nature of the genome of a single-stranded DNA plant virus by infection with the cloned DNA components.",
+      "abstract": "Linear double-stranded (ds)DNA, obtained by excision of the cloned A and B components of tomato golden mosaic virus (TGMV) from recombinant plasmids, was found to infect plants and to elicit symptoms identical to those obtained with TGMV or TGMV DNA. Progeny virus isolated from plants infected with cloned DNA was infective and indistinguishable from TGMV on the basis of (a) its circular single-stranded (ss)DNA genome, (b) its capsid polypeptide, (c) its particle morphology and (d) serological identity. Southern blot analysis of DNA extracted from cells infected with cloned DNA, or TGMV DNA, revealed the same intracellular ss and dsDNA species, represented in both A and B components, except for a subgenomic, possibly defective, DNA, which was not detected in infections with cloned DNA. Infection with cloned DNA was achieved when cloned A and B components were both present, but not with either cloned A or B components separately. TGMV is the first DNA virus for which unequivocal proof of a bipartite genome has been obtained.",
+      "journal": "Nucleic acids research",
+      "year": 1983,
+      "pub_date": "1983-11-11",
+      "authors": "Hamilton W D; Bisaro D M; Coutts R H; Buck K W",
+      "first_author": "Hamilton W D",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "Tomato golden mosaic virus (TGMV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "6663283",
+      "doi": "10.1099/00221287-129-11-3427",
+      "title": "Streptococcus garvieae sp. nov. and Streptococcus plantarum sp. nov.",
+      "abstract": "Biochemical and chemotaxonomical studies were performed on some streptococci from frozen peas and bovine mastitis in an attempt to clarify their taxonomy. The results of the present and earlier studies indicate the pea and mastitis isolates represent two new species of the genus Streptococcus. The isolates from frozen peas are named Streptococcus plantarum sp. nov. and those from mastitis, Streptococcus garvieae sp. nov. The type strains are NCDO 1869 and NCDO 2155, respectively.",
+      "journal": "Journal of general microbiology",
+      "year": 1983,
+      "pub_date": "1983-11-01",
+      "authors": "Collins M D; Farrow J A; Phillips B A; Kandler O",
+      "first_author": "Collins M D",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

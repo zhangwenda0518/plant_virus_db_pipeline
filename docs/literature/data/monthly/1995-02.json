@@ -1,0 +1,215 @@
+{
+  "month": "1995-02",
+  "generated": "2026-07-13 02:59:42",
+  "total": 9,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 3,
+    "Detection_Methods": 2,
+    "Host_Virus_Interactions": 2,
+    "Molecular_Characterization": 1,
+    "Transmission_Epidemiology": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "7871745",
+      "doi": "10.1006/viro.1995.1084",
+      "title": "Use of highly conserved motifs in plant virus RNA polymerases as the tags for specific detection of carmovirus-related RNA-dependent RNA polymerase genes.",
+      "abstract": "Two highly degenerate primers for sequence-specific amplification and cloning of a 510-nucleotide-long segment of RNA-dependent RNA-polymerase (RdRp) genes were selected and synthesized on the basis of available plant carmovirus-like viral RdRp sequences. These primers were shown to be efficient in PCR screening of different RdRp genes including those of carmoviruses, dianthoviruses, and tombusviruses. In particular, they were used for amplification, cloning, and sequencing of an RdRp gene fragment of an isometric plant virus with unknown evolutionary relationships, pelargonium flower break virus (PFBV). Alignment of the respective nucleotide and amino acid sequences indicates a very close similarity between PFBV and carnation mottle virus, the type member of carmoviruses.",
+      "journal": "Virology",
+      "year": 1995,
+      "pub_date": "1995-02-20",
+      "authors": "Morozov SYu; Ryabov E V; Leiser R M; Zavriev S K",
+      "first_author": "Morozov SYu",
+      "categories": [
+        "Detection_Methods",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "carmovirus-related viruses（包括carmoviruses, dianthoviruses, tombusviruses, pelargonium flower break virus）",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7844568",
+      "doi": "10.1099/0022-1317-76-2-459",
+      "title": "Efficient infection from cDNA clones of cucumber mosaic cucumovirus RNAs in a new plasmid vector.",
+      "abstract": "Full-length cucumber mosaic cucumovirus (CMV) cDNAs were cloned into a new plasmid vector containing a modified plant virus promoter designed to transcribe the inserted sequence from its first nucleotide. cDNA copies of CMV strain Q (Q-CMV) genomic RNAs 1, 2 and 3 cloned into this vector were infectious when inoculated together, producing symptoms indistinguishable from those caused by wildtype Q-CMV infection. The infectivity of the clones could be substantially increased by excision of the viral insert together with the transcriptional promoter and terminator prior to inoculation. A diagnostic but silent mutation was introduced into the RNA 2 cDNA and found to be stably maintained in viral infection, allowing distinction of the recombinant virus from native contaminants. The infectious cDNA clones supported the replication of CMV satellite RNA when co-inoculated with biologically active Q-CMV satellite RNA transcripts. Using the infectious cDNAs described, it was found that a newly-identified overlapping gene (2b) encoded by Q-CMV RNA 2 was not essential for either systemic viral infection of Nicotiana glutinosa or replication of the satellite RNAs.",
+      "journal": "The Journal of general virology",
+      "year": 1995,
+      "pub_date": "1995-02-01",
+      "authors": "Ding S W; Rathjen J P; Li W X; Swanson R; Healy H; ... (+1)",
+      "first_author": "Ding S W",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "黄瓜花叶病毒（CMV）",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7878039",
+      "doi": "10.1073/pnas.92.5.1679",
+      "title": "Cytoplasmic inhibition of carotenoid biosynthesis with virus-derived RNA.",
+      "abstract": "The carotenoid biosynthetic pathway in higher plants was manipulated by using an RNA viral vector. A cDNA encoding phytoene synthase and a partial cDNA encoding phytoene desaturase (PDS) were placed under the transcriptional control of a tobamovirus subgenomic promoter. One to two weeks after inoculation, systemically infected Nicotiana benthamiana plants were analyzed for phytoene. Leaves from transfected plants expressing phytoene synthase developed a bright orange phenotype and accumulated high levels of phytoene. Cytoplasmic inhibition of plant gene expression by viral RNA was demonstrated with an antisense RNA transcript to a partial PDS cDNA derived from tomato. The leaves of the plants transfected with the antisense PDS sequence developed a white phenotype and also accumulated high levels of phytoene. A partial cDNA to the corresponding N. benthamiana PDS gene was isolated and found to share significant homology with the tomato antisense PDS transcript. This work demonstrates that an episomal RNA viral vector can be used to deliberately manipulate a major, eukaryotic biosynthetic pathway. In addition, our results indicate that an antisense transcript generated in the cytoplasm of a plant cell can turn off endogenous gene expression.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1995,
+      "pub_date": "1995-02-28",
+      "authors": "Kumagai M H; Donson J; della-Cioppa G; Harvey D; Hanley K; ... (+1)",
+      "first_author": "Kumagai M H",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "tobamovirus",
+      "taxonomy": "",
+      "host_plant": "Nicotiana benthamiana",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7743174",
+      "doi": "10.1016/s0960-9822(95)00032-7",
+      "title": "Plant disease resistance. Grand unification theory in sight.",
+      "abstract": "Molecular characterization of the components of signalling pathways that mediate disease resistance is at last providing a unified picture of how plants fight disease.",
+      "journal": "Current biology : CB",
+      "year": 1995,
+      "pub_date": "1995-02-01",
+      "authors": "Briggs S P",
+      "first_author": "Briggs S P",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7859277",
+      "doi": "10.1016/0092-8674(95)90485-9",
+      "title": "Pièce de Résistance: novel classes of plant disease resistance genes.",
+      "abstract": "",
+      "journal": "Cell",
+      "year": 1995,
+      "pub_date": "1995-02-10",
+      "authors": "Dangl J L",
+      "first_author": "Dangl J L",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7572469",
+      "doi": "",
+      "title": "Inhibition of influenza virus protein synthesis by a plant preparation from Geranium sanguineum L.",
+      "abstract": "A polyphenolic complex (PC) with antiviral properties has been isolated from the Bulgarian medicinal plant Geranium sanguineum L. A study was undertaken to investigate the effect of PC on virus-specific protein synthesis in influenza virus-infected cells. The expression of viral glycoproteins on the surface of chick embryo fibroblasts infected with virus A/FPV, strain Rostock (H7N1) was suppressed. Virus protein synthesis was selectively inhibited as shown by SDS polyacrylamide gel electrophoresis of 35S-methionine-labelled proteins and proteins immunoprecipitated with monoclonal antibodies. The inhibitory effect was dose-dependent and better pronounced when PC was applied after virus infection. Two variants of influenza virus FPV/Rostock with reduced drug susceptibility were selected. PC affected to a lesser extent the synthesis of viral proteins in cells infected with the variants as compared to the sensitive parental virus.",
+      "journal": "Acta virologica",
+      "year": 1995,
+      "pub_date": "1995-02-01",
+      "authors": "Serkedjieva J",
+      "first_author": "Serkedjieva J",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7742801",
+      "doi": "10.1248/bpb.18.295",
+      "title": "Antiviral activity of plant flavonoid, 5,7,4'-trihydroxy-8-methoxyflavone, from the roots of Scutellaria baicalensis against influenza A (H3N2) and B viruses.",
+      "abstract": "We investigated effects of isoscutellarein-8-methylether (5,7,4'-trihydroxy-8-methoxyflavone, F36) from the roots of Scutellaria baicalensis on the single-cycle replication of mouse-adapted influenza viruses A/Guizhou/54/89 (H3N2 subtype) and B/Ibaraki/2/85 in Madin-Darby canine kidney (MDCK) cells. The agent suppressed replication of these viruses from 6 to 12 h after incubation in a dose-dependent manner by 50% at 20 microM and 90% at 40 microM, respectively. F36 (50 microM) reduced the release of B/Ibaraki virus in the medium by 90-93% when it was added to the MDCK cells at 0 to 4 h after incubation. The cell-associated virus determined by sialidase activity was also reduced by the treatment at 0 to 4 h. F36 (120 microM) inhibited the low pH-dependent membrane fusion of both the viruses with the liposome containing mixed gangliosides from bovine brain. However, the agent little affected the hemagglutination and RNA-dependent RNA polymerase activities of these viruses in vitro. These results suggest that F36 inhibits the replication of A/Guizhou and B/Ibaraki viruses at least partly by inhibiting the fusion of viral envelopes with the endosome/lysosome membrane which occurs at the early stage of the virus infection cycle. F36 (0.5 mg/kg) showed no antiviral activity against A/Guizhou and B/Ibaraki viruses in mice when administered intranasally 5 min prior to virus inoculation, whereas it significantly inhibited their proliferation in the mouse lung when administered intranasally 7 times (total 3.5 mg/kg) from 18 h before to 54 h after virus infection.",
+      "journal": "Biological & pharmaceutical bulletin",
+      "year": 1995,
+      "pub_date": "1995-02-01",
+      "authors": "Nagai T; Suzuki Y; Tomimori T; Yamada H",
+      "first_author": "Nagai T",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7537029",
+      "doi": "10.1128/AAC.39.2.484",
+      "title": "Michellamine B, a novel plant alkaloid, inhibits human immunodeficiency virus-induced cell killing by at least two distinct mechanisms.",
+      "abstract": "Studies of the mechanism of action of michellamine B, a novel anti-human immunodeficiency virus (HIV) alkaloid from the tropical plant Ancistrocladus korupensis, have revealed that the compound acts at two distinct stages of the HIV life cycle. The compound had no direct effect on HIV virions and did not block the initial binding of HIV to target cells. Postinfection time course studies revealed that the agent partially inhibited HIV-induced cell killing and syncytium formation when added up to 48 h following acute infection; however, viral reproduction was fully inhibited only when the compound was added immediately after infection. Time-limited treatments of HIV-infected cells revealed that michellamine B had to be present continuously to provide maximum antiviral protection. HIV replication in cells in which infection was already fully established or in chronically infected cells was unaffected by michellamine B. Biochemical studies showed that michellamine B inhibited the enzymatic activities of reverse transcriptases (RTs) from both HIV type 1 and HIV type 2 as well as two different nonnucleoside drug-resistant RTs with specific amino acid substitutions. In addition, human DNA polymerases alpha and beta were inhibited by the alkaloid. Michellamine B exerted a potent dose-dependent inhibition of cell fusion in two independent cell-based fusion assays. Thus, michellamine B acts both at an early stage of the HIV life cycle by inhibiting RT as well as at later stages by inhibiting cellular fusion and syncytium formation.",
+      "journal": "Antimicrobial agents and chemotherapy",
+      "year": 1995,
+      "pub_date": "1995-02-01",
+      "authors": "McMahon J B; Currens M J; Gulakowski R J; Buckheit R W; Lackman-Smith C; ... (+2)",
+      "first_author": "McMahon J B",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7871743",
+      "doi": "10.1006/viro.1995.1082",
+      "title": "Nonpathogenic Nilaparvata lugens reovirus is transmitted to the brown planthopper through rice plant.",
+      "abstract": "Nilaparvata lugens reovirus (NLRV) was found in a colony of the brown planthopper, N. lugens, an important plant virus vector. Unlike with usual phytopathogenic reoviruses, there are no visible symptoms on a rice plant which has been attacked by NLRV-infected planthoppers. Manner of transmission, host range, and multiplication of NLRV in rice plant were studied by enzyme-linked immunosorbent assay or polymerase chain reaction using reverse transcriptase. NLRV was transovumly transmitted to about 15% of nymphs. NLRV could further spread to planthoppers via rice plants through sucking by viruliferous insects. This horizontal transmission was apparently of primary importance for continuous NLRV infection to a colony of N. lugens. By corearing with viruliferous N. lugens on rice seedlings, Laodelphax striatellus acquired NLRV but Sogatella furcifera, Nephotettix cincticeps, and N. malayanus did not during the period studied. NLRV inoculated onto rice plant by viruliferous N. lugens failed to multiply, which accounts for the lack of symptoms on the plant even after an attack by viruliferous planthoppers. These biological properties and our previous data, which revealed a molecular similarity between NLRV and fijiviruses, suggest that NLRV is an ancestral virus of fijiviruses.",
+      "journal": "Virology",
+      "year": 1995,
+      "pub_date": "1995-02-20",
+      "authors": "Nakashima N; Noda H",
+      "first_author": "Nakashima N",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

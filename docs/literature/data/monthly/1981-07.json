@@ -1,0 +1,79 @@
+{
+  "month": "1981-07",
+  "generated": "2026-07-13 02:59:41",
+  "total": 3,
+  "by_category": {
+    "New_Virus": 1,
+    "Detection_Methods": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "18635064",
+      "doi": "10.1016/0042-6822(81)90616-4",
+      "title": "Maize stripe virus: characteristics of a member of a new virus class.",
+      "abstract": "An unusual filamentous nucleoprotein about 3 nm in diameter was consistently associated with maize stripe-diseased maize. Antiserum to purified nucleoprotein neutralized the infectivity of extracts from maize stripe-diseased plants suggesting that the nucleoprotein was the maize stripe virus (MStpV). The rate-zonal sedimentation pattern of the nucleoprotein on sucrose gradients was polydisperse between 51 and 70 S. CsCl isopycnic centrifugation of combined nucleoprotein zones from sucrose gradients resulted in a single band of 1.28 g/ml. The nucleoprotein consisted of 5.2% RNA and a single capsid protein of molecular weight 32,700 daltons. Large quantities of a noncapsid protein of molecular weight 16,300 daltons were also found in MStpV-infected tissue. MStpV was transovarially transmitted by its vector, Peregrinus maidis. Other species susceptible to MStpV in addition to Zea mays were Rottboellia exaltata and Sorghum bicolor. The similarities between MStpV and rice stripe virus are discussed. We conclude that these viruses represent a new virus class.",
+      "journal": "Virology",
+      "year": 1981,
+      "pub_date": "1981-07-15",
+      "authors": "Gingery R E; Nault L R; Bradfute O E",
+      "first_author": "Gingery R E",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Maize stripe virus (MStpV)",
+      "taxonomy": "未提及",
+      "host_plant": "Zea mays, Rottboellia exaltata, Sorghum bicolor",
+      "location": "未提及",
+      "results": "纯化核蛋白为MStpV，沉降系数51-70S，密度1.28g/ml，RNA含量5.2%，衣壳蛋白32.7kDa，感染组织中有16.3kDa非衣壳蛋白，可经卵传播。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7021576",
+      "doi": "10.1016/0166-0934(81)90019-7",
+      "title": "Detection of plant virus by using purified IgG in ELISA.",
+      "abstract": "An optimized ELISA system for the detection of soybean mosaic virus was developed. Purified anti-soybean mosaic virus IgG, a secondary ovalbumin coat, and a clearly defined optimal concentration of enzyme-conjugated anti-soybean mosaic virus IgG are used. The test detects purified virus, or purified virus added to leaf and seed extracts, at a concentration of 2.5 ng/ml. Various buffers significantly affect detection sensitivity.",
+      "journal": "Journal of virological methods",
+      "year": 1981,
+      "pub_date": "1981-07-01",
+      "authors": "Hill J H; Bryant G R; Durand D P",
+      "first_author": "Hill J H",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "大豆花叶病毒 (soybean mosaic virus)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "16593050",
+      "doi": "10.1073/pnas.78.7.4102",
+      "title": "Isolation and characterization of virus-specific double-stranded DNA from tissues infected by bean golden mosaic virus.",
+      "abstract": "A double-stranded (ds) DNA which may be a replication intermediate was isolated from bean (Phaseolus vulgaris L. \"Top Crop\") leaves systemically infected with bean golden mosaic virus, a whitefly-transmitted plant virus with a genome of circular single-stranded (ss) DNA. The isolation method used phenol/chloroform extraction, hydroxyapatite column chromatography, and rate-zonal centrifugation. The dsDNA had sequences complementary to those of viral DNA. The guanine-plus-cytosine content was 35%, and the sedimentation coefficient in alkaline sucrose density gradients was similar to that of viral ssDNA. Digestion of the dsDNA by Hha I endonuclease produced fragments that corresponded exactly in number and size with those produced by complete digestion of circular viral ssDNA by Hha I, when the fragments were denatured and analyzed on polyacrylamide gels. The dsDNA molecule was a circular structure with one discontinuity in one strand; hybridization results suggest that some of a the dsDNA has a discontinuity in the viral strand and some has a discontinuity in the nonviral strand. On the basis of these structures for the dsDNA, a preliminary model for replication of viral DNA is discussed.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1981,
+      "pub_date": "1981-07-01",
+      "authors": "Ikegami M; Haber S; Goodman R M",
+      "first_author": "Ikegami M",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "菜豆金色花叶病毒 (bean golden mosaic virus)",
+      "taxonomy": "",
+      "host_plant": "菜豆 (Phaseolus vulgaris)",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

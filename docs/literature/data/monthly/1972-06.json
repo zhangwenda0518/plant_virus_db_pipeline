@@ -1,0 +1,33 @@
+{
+  "month": "1972-06",
+  "generated": "2026-07-13 02:59:41",
+  "total": 1,
+  "by_category": {
+    "New_Virus": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "4504488",
+      "doi": "10.1038/newbio237242a0",
+      "title": "Exocortis disease: evidence for a new species of \"infectious\" low molecular weight RNA in plants.",
+      "abstract": "",
+      "journal": "Nature: New biology",
+      "year": 1972,
+      "pub_date": "1972-06-21",
+      "authors": "Semancik J S; Weathers L G",
+      "first_author": "Semancik J S",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Citrus exocortis viroid (exocortis viroid)",
+      "taxonomy": "未提及",
+      "host_plant": "柑橘 (Citrus spp.)",
+      "location": "未提及",
+      "results": "确认该RNA是传染性病原，具有类病毒特征。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

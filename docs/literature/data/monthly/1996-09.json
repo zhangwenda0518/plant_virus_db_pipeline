@@ -1,0 +1,214 @@
+{
+  "month": "1996-09",
+  "generated": "2026-07-13 02:59:42",
+  "total": 9,
+  "by_category": {
+    "New_Virus": 2,
+    "Host_Virus_Interactions": 2,
+    "Antiviral_Resistance_Genes": 2,
+    "Molecular_Characterization": 1,
+    "Control_Management": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8790341",
+      "doi": "10.1073/pnas.93.18.9397",
+      "title": "Mexican papita viroid: putative ancestor of crop viroids.",
+      "abstract": "The potato spindle tuber disease was first observed early in the 20th century in the northeastern United States and shown, in 1971, to be incited by a viroid, potato spindle tuber viroid (PSTVd). No wild-plant PSTVd reservoirs have been identified; thus, the initial source of PSTVd infecting potatoes has remained a mystery. Several variants of a novel viroid, designated Mexican papita viroid (MPVd), have now been isolated from Solanum cardiophyllum Lindl. (papita güera, cimantli) plants growing wild in the Mexican state of Aguascalientes. MPVd's nucleotide sequence is most closely related to those of the tomato planta macho viroid (TPMVd) and PSTVd. From TPMVd, MPVd may be distinguished on the basis of biological properties, such as replication and symptom formation in certain differential hosts. Phylogenetic and ecological data indicate that MPVd and certain viroids now affecting crop plants, such as TPMVd, PSTVd, and possibly others, have a common ancestor. We hypothesize that commercial potatoes grown in the United States have become viroid-infected by chance transfer of MPVd or a similar viroid from endemically infected wild solanaceous plants imported from Mexico as germplasm, conceivably from plants known to have been introduced from Mexico to the United States late in the 19th century in efforts to identify genetic resistance to the potato late blight fungus, Phytophthora infestans.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1996,
+      "pub_date": "1996-09-03",
+      "authors": "Martínez-Soriano J P; Galindo-Alonso J; Maroon C J; Yucel I; Smith D R; ... (+1)",
+      "first_author": "Martínez-Soriano J P",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Mexican papita viroid (MPVd)",
+      "taxonomy": "Pospiviroidae, Pospiviroid (推测，未明确提及科属，但根据与PSTVd和TPMVd的关系属于Pospiviroid属)",
+      "host_plant": "Solanum cardiophyllum (papita güera, cimantli)",
+      "location": "墨西哥阿瓜斯卡连特斯州",
+      "results": "MPVd与TPMVd和PSTVd亲缘关系近，但在复制和症状上有差异；生态学数据提示MPVd与某些作物类病毒有共同祖先。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8811098",
+      "doi": "10.1093/nar/24.17.3424",
+      "title": "UGA suppression by tRNACmCATrp occurs in diverse virus RNAs due to a limited influence of the codon context.",
+      "abstract": "We have recently identified chloroplast and cytoplasmic tRNACmCATrp as the first natural UGA suppressor tRNAs in plants. The interaction of these tRNAs with UGA involves a Cm: A mismatch at the first anticodon position. We show here that tRNACmCATrp is incapable of misreading UAA and UAG codons in vitro, implying that unconventional base pairs are not tolerated in the middle anticodon position. Furthermore, we demonstrate that the ability of tRNACmCATrp to promote UGA read-through depends on a quite simple codon context. Part of the sequence surrounding the leaky UGA stop codon in tobacco rattle virus RNA-1 was subcloned into a zein reporter gene and read-through efficiency was measured by translation of RNA transcripts in wheat germ extract. A number of mutations in the codons adjacent to the UGA were introduced by site-directed mutagenesis. It was found that single nucleotide exchanges at either side of the UGA had little effect on read-through efficiency. A pronounced influence on suppression by tRNACmCATrp was seen only if 2 or 3 nt at the 3'-side of the UGA codon had been simultaneously replaced. As a consequence of the flexible codon context accepted by tRNACmCATrp, this tRNA is able to misread the UGA in a number of plant and animal viral RNAs that use translational read-through for expression of some of their genes.",
+      "journal": "Nucleic acids research",
+      "year": 1996,
+      "pub_date": "1996-09-01",
+      "authors": "Urban C; Zerfass K; Fingerhut C; Beier H",
+      "first_author": "Urban C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "烟草脆裂病毒 (Tobacco rattle virus, TRV)",
+      "taxonomy": "Virgaviridae, Tobravirus",
+      "host_plant": "未提及（实验中使用小麦胚芽提取物，非直接宿主）",
+      "location": "未提及",
+      "results": "tRNACmCATrp不能识别UAA/UAG；UGA3'侧单核苷酸突变对通读影响小，同时替换2-3个核苷酸才显著影响；该tRNA因上下文灵活可通读多种病毒RNA。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "15157433",
+      "doi": "10.1016/0962-8924(96)10031-3",
+      "title": "Getting it together in plant virus movement: cooperative interactions between bipartite geminivirus movement proteins.",
+      "abstract": "To move cell-to-cell and systemically infect the host, plant viruses must cross the barrier posed by the plant cell wall. Plant viruses accomplish this through strategies that alter the architecture of the infected cell, eliminating this barrier through the action of viral-encoded 'movement proteins'. Detailed studies of a number of cytoplasmically replicating viruses suggest that movement proteins interact with components of the cytoskeleton and transport systems of the plant cell to allow passage of progeny into adjacent cells. Recent work on the two movement proteins encoded by the phloem-restricted geminivirus squash leaf curl virus has defined unique aspects of nuclear transport and protein protein interaction in the movement of this nuclear-replicating virus, and suggests that post-translational phosphorylation may be important in the regulation of movement protein function.",
+      "journal": "Trends in cell biology",
+      "year": 1996,
+      "pub_date": "1996-09-01",
+      "authors": "Sanderfoot A A; Lazarowitz S G",
+      "first_author": "Sanderfoot A A",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "squash leaf curl virus（南瓜卷叶病毒）",
+      "taxonomy": "双生病毒科（Geminiviridae），双分体双生病毒",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8819331",
+      "doi": "10.1104/pp.112.1.353",
+      "title": "Molecular cloning of a metallothionein-like gene from Nicotiana glutinosa L. and its induction by wounding and tobacco mosaic virus infection.",
+      "abstract": "The cloning and characterization of genes expressed in plant disease resistance could be an initial step toward understanding the molecular mechanisms of disease resistance. A metallothionein-like gene that is inducible by tobacco mosaic virus and by wounding was cloned in the process of subtractive cloning of disease resistance-response genes in Nicotiana glutinosa. One 530-bp cDNA clone (KC9-10) containing an open reading frame of 81 amino acids was characterized. Genomic Southern blot hybridization with the cDNA probe revealed that tobacco metallothionein-like genes are present in few or in one copy per diploid genome. Northern blot hybridization detected strong induction of a 0.5-kb mRNA by wounding and tobacco mosaic virus infection, but only mild induction was detected when copper was tested as an inducer. Methyl jasmonate, salicylic acid, and ethylene were also tested as possible inducers of this gene, but they had no effect on its expression. The possible role of this gene in wounded and pathogen-stressed plants is discussed.",
+      "journal": "Plant physiology",
+      "year": 1996,
+      "pub_date": "1996-09-01",
+      "authors": "Choi D; Kim H M; Yun H K; Park J A; Kim W T; ... (+1)",
+      "first_author": "Choi D",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "烟草花叶病毒（TMV）",
+      "taxonomy": "",
+      "host_plant": "粘毛烟草 (Nicotiana glutinosa L.)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8810074",
+      "doi": "10.1094/mpmi-9-0594",
+      "title": "Mutational analysis of the putative nicking motif in the replication-associated protein (AC1) of bean golden mosaic geminivirus.",
+      "abstract": "Geminiviruses are circular single-stranded DNA viruses that replicate by a rolling circle mechanism involving the viral-encoded AC1 protein. DNA nicking is necessary both for initiating replication of the covalently closed double-stranded DNA templates and for releasing unit-length monomers. The effects of mutations in a putative nicking motif (K101 A Y I D K106; E. V. Koonin and T. V. Ilyina, J. Gen. Virol. 73:2763-2766, 1992) of the AC1-derived protein for bean golden mosaic geminivirus isolate GA (BGMV-GA) were studied. The amino acids equivalent to Y103 and K106 of BGMV-GA are invariant in all whitefly-transmitted geminiviruses. Phaseolus vulgaris plant infectivity assays showed that the mutants K101-->H, K101-->A, and D105-->T produced symptoms, but mutants Y103-->A, Y103-->F, K106-->R, and K106-->H did not. A mutant with a stop codon in the N terminus of the AC4 open reading frame (ORF) produced the same symptoms as the wild-type BGMV-GA. Only those that were infectious replicated in NT-1 tobacco suspension cells. These results indicate that the Y103 and K106 residues are essential for replication, and that this putative DNA-nicking motif of the AC1 ORF may be functional in the rolling circle mechanism of replication for geminiviruses. The potential role of these mutants in the design of antiviral strategies is discussed.",
+      "journal": "Molecular plant-microbe interactions : MPMI",
+      "year": 1996,
+      "pub_date": "1996-09-01",
+      "authors": "Hoogstraten R A; Hanson S F; Maxwell D P",
+      "first_author": "Hoogstraten R A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "Bean golden mosaic geminivirus (BGMV)",
+      "taxonomy": "",
+      "host_plant": "Phaseolus vulgaris (菜豆) 和 NT-1 tobacco suspension cells (烟草悬浮细胞)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "23194960",
+      "doi": "10.1016/S0944-7113(96)80026-2",
+      "title": "Investigations of cellular parameters to establish the response of a biomodulator: galactoside-specific Lectin from Viscum album plant extract.",
+      "abstract": "Injections of non-toxic doses of purified galactoside-specific lectin from the Viscum album plant (VAA-I) caused significant changes in the cellular host defense system in animal models. To establish the immunomodulatory potency of VAA-I on human subjects, four randomized double blind crossover trials were performed on healthy volunteers. In the first and second trials using either older (storage over 8 months at 4°C) or freshly (application immediately after production) isolated lectin enriched preparation from mistletoe extract by ultrafiltration with known VAA-I content, the effect of lectin on the number of CD 3+, CD4+, CD 8+, CD 16+/56+ cells, natural killer cytotoxicity and frequency of large granular lymphocytes was tested in peripheral blood of nine and eight individuals, respectively. In comparison to the significant increase in the number of peripheral lymphocytes observed in balb/c mice, human healthy individuals showed no significant difference between their responses after lectin enriched preparation and saline treatment. Due the considerable intrinsic fluctuation of these parameters in placebo control and the assumption that a change in immunomodulatory potency of VAA-I in lectin enriched preparation depends on aging, a third and fourth double blind trial, in this case using freshly isolated VAA-I from plant, were performed on six and eight healthy volunteers, respectively. In these studies an other more rapidly detectable parameter, the priming of polymorphonuclear (PMN) leukocytes, was monitored. In both studies, 5 h after lectin injection, significant enhancement in priming of circulating PMNs was found compared to the placebo response.",
+      "journal": "Phytomedicine : international journal of phytotherapy and phytopharmacology",
+      "year": 1996,
+      "pub_date": "1996-09-01",
+      "authors": "Hajto T; Hostanska K; Fischer J; Lentzen H",
+      "first_author": "Hajto T",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "23194968",
+      "doi": "10.1016/S0944-7113(96)80034-1",
+      "title": "Antiviral activity of a derivative of the photosensitive compound Hypericin.",
+      "abstract": "Eight synthetic compounds related to the photosensitive antiviral quinonic plant compound hypericin were screened for light-mediated antiviral activity. The compound 2,5,9,12-tetra(carboxyethylthiomethyl) hypericin was found to have activity against membrane-enveloped Sindbis virus and murine cytomegalovirus but not against the non-enveloped poliovirus. The activity of this compound was investigated in more detail. The mechanism of action appeared to be of the photosensitive singlet oxygen type and the activity could be reduced by the presence of a singlet oxygen quencher molecule. The membrane proteins of Sindbis virus were found not to be altered by treatment with this compound or hypericin, although the derivative did affect the electrophoretic mobility of the capsid protein.",
+      "journal": "Phytomedicine : international journal of phytotherapy and phytopharmacology",
+      "year": 1996,
+      "pub_date": "1996-09-01",
+      "authors": "Yip L; Hudson J B; Gruszecka-Kowalik E; Zalkow L H; Neil Towers G H",
+      "first_author": "Yip L",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "19277151",
+      "doi": "",
+      "title": "Population Development of Heterodera glycines and Soybean Yield in Soybean-maize Rotations Following Introduction into a Noninfested Field.",
+      "abstract": "An 11-year field study was initiated in 1979 to monitor population development of Heterodera glycines. Fifty cysts of a race 5 population were introduced into plots in a field with no history of soybean production and that had been in sod for 20 years. Soybean cultivars either susceptible or resistant to H. glycines were grown either in monoculture or rotated with maize in a 2-year rotation. During the first 5 years, resistant cultivars with the Peking source of resistance were planted. After year 5, monocuhure of Peking resistance resulted in 18 cysts/250 cm(3) of soil, whereas populations resulting from the continuous cropping of susceptible soybean resulted in 45 cysts/250 cm(3). Some plots in all treatments, including control plots, were contaminated at the end of year 5. Crop rotation delayed population development of H. glycines. During years 6 through 11 cv. Fayette (PI88.788 source of resistance) was planted. In year 6 numbers of cysts declined to 1/250 cm(3) of soil in the treatment consisting of monocultured Fayette. At the end of year 10, cysts were below the detection level in all treatments in which Fayette was planted. Yield of susceptible soybean in monoculture with or without H. glycines infestation was lower beginning in year 6 when compared to yield of soybean grown in rotation and remained lower throughout the duration of the experiment except for 1987 (year 9). Yields of susceptible and resistant soybean were different each year except for drought years in 1980 and 1988. From 1979 to 1982 differences in yield were due to lower yield potential of resistant cultivars. Except for the drought year, yield of cv. Fayette was greater than susceptible Williams 82 during years 6 through 11.",
+      "journal": "Journal of nematology",
+      "year": 1996,
+      "pub_date": "1996-09-01",
+      "authors": "Noel G R; Edwards D I",
+      "first_author": "Noel G R",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8806548",
+      "doi": "10.1006/viro.1996.0463",
+      "title": "Genetic diversity in tobacco mild green mosaic tobamovirus infecting the wild plant Nicotiana glauca.",
+      "abstract": "The variability and genetic structure of tobacco mild green mosaic tobamovirus (TMGMV) was analyzed in a collection of isolates from Nicotiana glauca plants from Australia, California, Spain, and the east Mediterranean Basin. Ribonuclease protection was assayed on 53 isolates with six probes representing 85% of the TMGMV genome. Results showed that conserved domains in the TMGMV genome were different for each geographic population. The nucleotide sequence of two regions of the TMGMV genome was determined for 33 isolates. Nucleotide diversity values were smaller than those reported for other RNA genomes. For each population, genetic diversity was not related to the size of the area from which the isolates were collected, and was particularly small for Australia and Spain. Diversity values indicated population differentiation, which was largest between the less diverse Spanish and Australian populations. Nucleotide diversity values for nonsynonymous vs synonymous positions indicate moderate negative selection, except for the Spanish population for which it gave evidence of positive selection. On the whole, our data indicate that the low genetic diversity for this plant virus may be due to different factors such as positive and negative selection or the recent colonization of new areas or host plants. The intensity of these factors appears to be different for the various TMGMV geographical populations.",
+      "journal": "Virology",
+      "year": 1996,
+      "pub_date": "1996-09-01",
+      "authors": "Fraile A; Malpica J M; Aranda M A; Rodríguez-Cerezo E; García-Arenal F",
+      "first_author": "Fraile A",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

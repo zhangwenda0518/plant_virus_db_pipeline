@@ -1,0 +1,241 @@
+{
+  "week": "2025-W16",
+  "start": "2025-04-14",
+  "end": "2025-04-20",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 32,
+  "by_category": {
+    "Host_Virus_Interactions": 15,
+    "Control_Management": 6,
+    "Biotechnology_Applications": 5,
+    "New_Virus": 4,
+    "Antiviral_Resistance_Genes": 3,
+    "Molecular_Characterization": 1,
+    "Transmission_Epidemiology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "40116513",
+      "doi": "10.1128/jvi.01919-24",
+      "title": "Hairpin inserts in viral genomes are stable when they conform to the thermodynamic properties of viral RNA substructures.",
+      "abstract": "[UNLABELLED] Virus-induced gene silencing (VIGS) allows for the rapid targeting of gene expression and has been instrumental in characterizing plant genes. However, foreign sequences inserted into VIGS vectors are rarely maintained for unknown reasons. Citrus yellow vein-associated umbravirus-like virus (CY1) with its solved secondary structure was converted into a VIGS vector to determine why simple hairpins inserted into non-functional, single-stranded locations are not maintained. When CY1 contained foreign hairpins with thermodynamic properties (positional entropy and/or ΔG) differing from those of natural CY1 hairpins, deletions arose within a few weeks of infecting Nicotiana benthamiana. In contrast, duplication and insertion of four natural CY1 hairpins (up to 200 nt) into the same locations were retained until plant senescence. Hairpins containing similar conformations and thermodynamic properties as natural hairpins were also retained, as were hairpins that shared thermodynamic properties but were conformationally distinct. By predicting and modulating these thermodynamic properties, a hairpin was retained by CY1 for at least 30 months in citrus. These findings strongly suggest that RNA viruses have evolved to contain substructures with specific thermodynamic properties, and hairpins containing these properties are stable when inserted into non-functional regions of the genome, opening up VIGS for long-lived trees and vines. [IMPORTANCE] Plus-strand RNA plant viruses are used as tools to introduce small interfering RNAs (siRNAs) into laboratory plants to target and silence genes. However, virus-induced gene silencing (VIGS) vectors engineered to contain foreign hairpins or other sequences for siRNA generation are not stable, and the foreign sequences are rapidly lost. We found that foreign sequences are not maintained in an umbravirus-like VIGS vector (CY1) because their physical properties conflict with the innate properties of the CY1 genome's substructures (i.e., hairpins). When natural CY1 hairpins were duplicated and inserted into locations where previous inserts were rapidly lost, the hairpins were now stable as were unrelated hairpins with the same physical properties. By mimicking the physical properties of the viral genome, one insert was stable for over 30 months. These results suggest that RNA viral genomes have evolved to have specific physical properties, and these properties appear to be similar for other plus-strand RNA viruses.",
+      "journal": "Journal of virology",
+      "year": 2025,
+      "pub_date": "2025-04-15",
+      "authors": "Jang Chanyong; Needham Jason M; Johnson Philip Z; Gao Feng; Simon Anne E",
+      "first_author": "Jang Chanyong",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "Citrus yellow vein-associated umbravirus-like virus (CY1)",
+      "taxonomy": "",
+      "host_plant": "本氏烟(Nicotiana benthamiana)和柑橘(citrus)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40283223",
+      "doi": "10.3390/life15040669",
+      "title": "Transient Overexpression of the Pepper ",
+      "abstract": "The role of WRKY transcription factor proteins in plant defense reactions against fungal and bacterial pathogens is well studied, but less information is available about plant-virus interactions. We observed the rapid and strong activation of the transcription factor gene, CaWRKY2, in pepper leaves following inoculation with Obuda pepper virus (ObPV). In contrast, CaWRKY2 was only weakly induced by pepper mild mottle virus (PMMoV) inoculation. To carry out a functional analysis of CaWRKY2, the gene was transiently overexpressed in Nicotiana benthamiana leaves by agroinfiltration. Four days later, CaWRKY2-overexpressing and empty vector control leaves were inoculated with tobacco mosaic virus (TMV). Transiently overexpressing CaWRKY2 did not affect the replication rate of TMV in the inoculated leaves. However, TMV inoculation up-regulated the expression of a pathogenesis-related gene (NbPR-1b) and a lipoxygenase (NbLOX1) gene significantly more strongly in N. benthamiana leaves overexpressing CaWRKY2 than in empty vector control leaves. Intriguingly, CaWRKY2 overexpression delayed (by 3 days) the development of systemic necrosis and plant death caused by TMV in N. benthamiana. These results suggest that CaWRKY2 is able to hinder the spread of TMV from inoculated leaves towards vascular tissues and systemic leaves in N. benthamiana.",
+      "journal": "Life (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-04-17",
+      "authors": "Juhász Csilla; Szatmári Ágnes; Bozsó Zoltán; Barna Balazs; Gullner Gábor",
+      "first_author": "Juhász Csilla",
+      "categories": [
+        "Biotechnology_Applications",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "烟草花叶病毒(TMV)、Obuda pepper virus (ObPV)、pepper mild mottle virus (PMMoV)",
+      "taxonomy": "",
+      "host_plant": "Nicotiana benthamiana（本氏烟）",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "39903452",
+      "doi": "10.1093/ee/nvaf005",
+      "title": "A phloem-limited RNA phytovirus infection does not positively modulate vector preference and fitness in primary and alternate hosts.",
+      "abstract": "Colonizing aphids play an important role in the transmission of RNA phytoviruses in the family Solemoviridae. According to \"host manipulation hypothesis,\" phloem limited and persistently transmitted Solemoviridae viruses modulate host physiology that positively affects vector behavior and fitness and facilitates virus spread. However, it is unclear if virus-modulated host effects on vectors across pathosystems involving Solemoviridae members are always positive. Cotton leafroll dwarf virus (CLRDV) is a recently introduced Solemoviridae member in the United States, and it is transmitted by the cotton aphid (Aphis gossypii). Effects of CLRDV infection on vector behavior and fitness were evaluated on its primary host plant, cotton (Gossypium hirsutum), and an alternate host plant, hibiscus (Hibiscus acetosella). In this study, changes to viruliferous and non-viruliferous aphid preference and aphid fitness on virus-infected and non-infected hosts were examined. In contrast to the hypothesized preference of non-viruliferous aphids for infected plants and vice-versa, both viruliferous and non-viruliferous A. gossypii preferred non-infected cotton and hibiscus plants over CLRDV-infected plants. This suggested that the preference of non-viruliferous vectors to non-infected plants might negatively impact virus acquisition, whereas the preference of viruliferous vectors toward non-infected plants could positively facilitate virus inoculation. The total fecundity and intrinsic rate of increase of aphids were higher on non-infected plants compared with CLRDV-infected plants. The lack of enhanced fitness benefits on CLRDV-infected hosts also could negatively impact virus spread. Overall, this study suggested that \"host manipulation hypothesis\" favoring vector attraction and enhanced fitness on infected plants does not apply to all pathosystems involving Solemoviridae members.",
+      "journal": "Environmental entomology",
+      "year": 2025,
+      "pub_date": "2025-04-17",
+      "authors": "Pandey Sudeep; Roberts Phillip; Bag Sudeep; Jacobson Alana L; Srinivasan Rajagopalbabu",
+      "first_author": "Pandey Sudeep",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Cotton leafroll dwarf virus (CLRDV)",
+      "taxonomy": "",
+      "host_plant": "Gossypium hirsutum (棉花), Hibiscus acetosella (木槿)",
+      "location": "美国",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40232328",
+      "doi": "10.1007/s11033-025-10499-y",
+      "title": "Recombination, phylogenetic insights and co-existence dynamics of begomoviruses and satellite DNAs: implications for tomato viral disease management.",
+      "abstract": "[BACKGROUND] Tomato leaf curl viral disease (ToLCV) is a major biotic stress, threatening tomato cultivation. However, limited information exists on the prevalence and diversity of ToLCV in Tamil Nadu, India and hence this study focused on identifying and characterizing such begomoviruses. [METHODS AND RESULTS] Tomato samples with infected symptoms were collected from major tomato-growing tracts of Tamil Nadu during 2023 to 2024 and subjected to polymerase chain reaction (PCR) using degenerate primers specific to ToLCV. Further, by employing rolling circle amplification (RCA), full-length sequences of viral genomes (∼2.7 kb), alphasatellites and betasatellites (∼1.35 kb each) were also obtained for three samples collected from different locations of Tamil Nadu (Dharmapuri (DPI-03), Krishnagiri (KGI-01) and Salem (SLM-01)). Diverse begomoviruses, including tomato leaf curl New Delhi virus (ToLCNDV), tomato leaf curl Palampur virus (ToLCPalV), tomato leaf curl Bangalore virus (ToLCBaV), and tomato leaf curl Gujarat virus (ToLCGUV) were identified in these three samples. Additionally, an alphasatellite (cotton leaf curl Multan alphasatellite, CLCuMuA), and two betasatellites (tomato leaf curl Bangalore betasatellite, ToLCBaB and tomato leaf curl Gujarat betasatellite, ToLCGUB) were also identified in KGI-01 and SLM-01. Evaluation of phylogenetic relationship and genetic variability revealed distinct clustering of begomoviruses and satellite sequences with high nucleotide diversity. In addition, recombinant analysis predicted inter- and intra- species recombination events. [CONCLUSION] This study identified the co-occurrence of ToLCNDV with ToLCPalV, ToLCBaV with CLCuMuA and ToLCBaB, and ToLCGUV with ToLCGUB within the same plants. These findings underscore the diverse nature of the begomovirus-satellite complex infecting tomatoes in Tamil Nadu and emphasize the urgent need to develop effective plant protection strategies.",
+      "journal": "Molecular biology reports",
+      "year": 2025,
+      "pub_date": "2025-04-15",
+      "authors": "Naveen Murugesan; Shanmugam Pagalahalli Sankaran; Srinivasan Ramasamy; Shanthi Mookiah; Murugan Marimuthu; ... (+5)",
+      "first_author": "Naveen Murugesan",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "番茄曲叶病毒病（ToLCV）相关双生病毒，包括番茄曲叶新德里病毒（ToLCNDV）、番茄曲叶帕拉姆普尔病毒（ToLCPalV）、番茄曲叶班加罗尔病毒（ToLCBaV）、番茄曲叶古吉拉特病毒（ToLCGUV）",
+      "taxonomy": "",
+      "host_plant": "番茄",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40248120",
+      "doi": "10.1016/j.isci.2025.112108",
+      "title": "Diverse Mesozoic thrips carrying pollen during the gymnosperm-to-angiosperm plant-host ecological shift.",
+      "abstract": "Insects are important pollinators, and entomophilous pollination of gymnosperms occurred long before the Cretaceous radiation of angiosperms, but most extant pollination systems involve angiosperms. We studied four thrips of the extinct genus Tethysthrips present in Albian (Early Cretaceous) Spanish amber, one of which carried a patch of gymnosperm Cycadopites pollen grains, some of them attached around the mouthparts, providing direct fossil evidence of pollinivory and pollination. We describe the new species Tethysthrips attenboroughi, which belongs to the extant family Thripidae (suborder Terebrantia). In addition, we studied a Cycadopites pollen load in one specimen belonging to stem group Phlaeothripidae (suborder Tubulifera), from Cenomanian Burmese amber. This illustrates an ancient stage of gymnosperm plant host that most likely favored the later stage involving angiosperms. The absence of extant pollinators of gymnosperms in Thripidae and Phlaeothripidae, and in the terebrantian family Melanthripidae, which contain Cretaceous pollinators of gymnosperms, indicates impoverishment in their gymnosperm relationship.",
+      "journal": "iScience",
+      "year": 2025,
+      "pub_date": "2025-04-18",
+      "authors": "Peñalver Enrique; Peña-Kairath Constanza; Barrón Eduardo; Nel Patricia; Nel André; ... (+4)",
+      "first_author": "Peñalver Enrique",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40126174",
+      "doi": "10.1021/acs.jafc.5c00525",
+      "title": "Synthesis, Biological Activity and Mechanism of Action of Pyridine-Containing Arylthiourea Derivatives.",
+      "abstract": "A well-developed root system is a key factor in improving crop quality, as it can absorb water, nourish and resist stress. A series of arylthiourea derivatives were synthesized and their biological activities were evaluated in this study. The results indicate that compound A2 significantly promotes rice root growth, exhibiting effects more than twice those of the naphthylacetic acid (NAA). Additionally, A2 enhances dry matter accumulation and increases chlorophyll content, thereby improving the disease resistance of rice. Preliminary mechanistic studies suggest that compound A2 mimics auxin-like activity, similar to NAA, A2 interacts with SER438 and PHE82, demonstrating strong binding affinity to the auxin receptor TIR1. Moreover, compound A2 upregulates the auxin-responsive gene ARF, promoting cell elongation and accelerating lateral root development, leading to a larger root system in rice. Compound A2 may have application potential as an auxin receptor agonist, providing a molecular basis for the design of root growth regulators.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2025,
+      "pub_date": "2025-04-16",
+      "authors": "Dai Ali; Zheng Zhiguo; Ma Dengke; Wu Ronghao; Mo You; ... (+2)",
+      "first_author": "Dai Ali",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40237826",
+      "doi": "10.1007/s00284-025-04223-z",
+      "title": "Diversity and Function of Strawberry Endophytic Bacterial Communities Associated with Host Genotype and Niche.",
+      "abstract": "Strawberry (Fragaria × ananassa) is the most widely cultivated small berries in the world. They are not only delicious, juicy, and nutritious, but also have important economic value. However, current research on endophytic bacteria related to strawberry is limited. This work provides a comprehensive description of the composition and diversity of bacterial communities in three niches (root, stem, and leaf) of three strawberry cultivars (White Elves, Tokun, and Akihime). This study indicated that the diversity and composition of strawberry bacterial communities differ significantly between the belowground niche (roots) and aboveground compartments (stems and leaves). The bacterial diversity and richness varied between niches for all three cultivars; and it significantly decreased from root to stem to leaf. The richness and alpha diversity of Akihime bacterial community were significantly lower than that of White Elves in the stems and leaves. Beneficial bacterial genera, such as Ochrobacter, Bradyrhizobium, Sphingomonas, and Pseudolobrys, were more abundant in White Elves and Tokun than in Akihime, especially in roots and stems. The results of this study provide an important reference for discovering new species or genetic variations to improve host fitness and stress tolerance. Further research is needed to uncover the interactions between plants and endophytic bacteria, as well as the potential for extracting bioactive compounds from these bacteria.",
+      "journal": "Current microbiology",
+      "year": 2025,
+      "pub_date": "2025-04-16",
+      "authors": "Yang Hongjun; Zhang Xu; Yan Zhiming; Wang Yuanhua; Wang Quanzhi; ... (+3)",
+      "first_author": "Yang Hongjun",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40278141",
+      "doi": "10.3390/jof11040321",
+      "title": "Morpho-Molecular Characterization of Hypocrealean Fungi Isolated from Rice in Northern Thailand.",
+      "abstract": "Hypocreales is one of the largest orders within the class Sordariomycetes and is renowned for its diversity of lifestyles, encompassing plant, insect, and human pathogens, as well as endophytes, parasites, and saprobes. In this study, we focused on saprobic hypocrealean fungi isolated from rice in northern Thailand. Species identification was conducted using morphological characteristics and multilocus phylogenetic analyses, including the internal transcribed spacer region (ITS), 28S large subunit nuclear ribosomal DNA (LSU), translation elongation factor 1-alpha (tef1-α), RNA polymerase II second-largest subunit (rpb2), and calmodulin (cmdA). This research confirmed the presence of 14 species of hypocrealean taxa, viz. Fusarium (9), Ochronectria (1), Sarocladium (2), Trichothecium (1), and Waltergamsia (1). Among these were two new species (Fusarium chiangraiense and F. oryzigenum), four new host records (Fusarium kotabaruense, Ochronectria thailandica, Sarocladium bactrocephalum, and Waltergamsia fusidioides), and three new geographical records (Fusarium commune, F. guilinense, and F. hainanese).",
+      "journal": "Journal of fungi (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-04-18",
+      "authors": "Absalan Sahar; Armand Alireza; Jayawardena Ruvishika S; Suwannarach Nakarin; Monkai Jutamart; ... (+3)",
+      "first_author": "Absalan Sahar",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41119359",
+      "doi": "10.11646/zootaxa.5621.4.4",
+      "title": "Leaf-mining moths of the genus Phyllonorycter Hbner (Lepidoptera: Gracillariidae: Lithocolletinae) associated with Juglandaceae in China, with descriptions of two new species and one newly recorded species.",
+      "abstract": "Until recently, no species of Phyllonorycter Hbner, 1822 had been recorded to feed on Juglandaceae in China. In this study, we describe two new species, P. stenopterae Lu & Liu, sp. nov. and P. tumoris Lu & Liu, sp. nov., both discovered in Shandong Province, China, feeding on Pterocarya stenoptera C. DC. (Juglandaceae). Additionally, this paper provides the first record of P. pterocaryae (Kumata, 1963) in China, along with its newly identified host plant, Pterocarya stenoptera. Detailed images of the adults, genitalia, pupae, host plants, leaf mines, and DNA barcode data of the new species are presented.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-04-17",
+      "authors": "Lu Ming; Yao Zhicheng; Liu Tengteng",
+      "first_author": "Lu Ming",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40284742",
+      "doi": "10.3390/microorganisms13040906",
+      "title": "Mycoviral Diversity of ",
+      "abstract": "Watermelon is one of the most important fruits in China, accounting for more than 70% of the world's total output. Fusarium wilt of watermelon is the most common and serious disease in the cultivation of watermelon. It is mainly caused by Fusarium oxysporum f. sp. niveum (FoN), which has caused serious damage to the watermelon-planting industry. Some mycoviruses can reduce the pathogenicity of host pathogens and have the potential for biocontrol, so their application potential in the biological control of plant fungal diseases has attracted much attention. In this study, high-throughput sequencing was performed on 150 FoN strains isolated from three major watermelon-production areas (northern semi-arid area, northwestern arid area, and southern humid area) to detect the diversity of mycoviruses and to uncover new mycoviruses. The analysis identified 25 partial or complete genome segments representing eight previously undescribed mycoviruses. The existence of six mycoviruses was verified via RT-PCR. The southern humid area had the highest diversity of mycoviruses, with 15 species identified. Among these, 40% are dsRNA viruses and 33.3% belong to the family Chrysoviridae, representing the predominant viral type and family. In the northern semi-arid area, a total of 12 viral species were identified, among these 41.7% were +ssRNA viruses and 25% belonged to the family Mymonaviridae, constituting the main viral types and family. The northwestern arid area showed relatively low viral diversity, only containing three species. Two of these were +ssRNA viruses classified under the Mitoviridae and Potyviridae families. Notably, only one virus, Fusarium oxysporum f. sp. niveum Potyvirus 1 (FoNPTV1), was shared across all three areas. These findings reveal significant regional differences in the mycoviral species composition and distribution, highlighting the complex interactions between mycoviruses and FoN in different environments. By uncovering new mycoviruses associated with FoN, this study provides valuable resources for the potential biocontrol of Fusarium wilt in watermelon, contributing to sustainable disease management and improving the quality and safety of watermelon production in China.",
+      "journal": "Microorganisms",
+      "year": 2025,
+      "pub_date": "2025-04-14",
+      "authors": "Yang Jiawang; Wang Yajiao; Li Zihao; Han Sen; Li Bo; ... (+1)",
+      "first_author": "Yang Jiawang",
+      "categories": [
+        "Control_Management",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

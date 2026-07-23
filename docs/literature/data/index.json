@@ -1,27 +1,327 @@
 [
   {
-    "year": "2022",
+    "year": "1941",
     "count": 1,
+    "file": "1941.json"
+  },
+  {
+    "year": "1946",
+    "count": 1,
+    "file": "1946.json"
+  },
+  {
+    "year": "1949",
+    "count": 1,
+    "file": "1949.json"
+  },
+  {
+    "year": "1950",
+    "count": 1,
+    "file": "1950.json"
+  },
+  {
+    "year": "1954",
+    "count": 1,
+    "file": "1954.json"
+  },
+  {
+    "year": "1959",
+    "count": 2,
+    "file": "1959.json"
+  },
+  {
+    "year": "1963",
+    "count": 2,
+    "file": "1963.json"
+  },
+  {
+    "year": "1964",
+    "count": 3,
+    "file": "1964.json"
+  },
+  {
+    "year": "1965",
+    "count": 2,
+    "file": "1965.json"
+  },
+  {
+    "year": "1967",
+    "count": 2,
+    "file": "1967.json"
+  },
+  {
+    "year": "1968",
+    "count": 1,
+    "file": "1968.json"
+  },
+  {
+    "year": "1969",
+    "count": 1,
+    "file": "1969.json"
+  },
+  {
+    "year": "1972",
+    "count": 1,
+    "file": "1972.json"
+  },
+  {
+    "year": "1973",
+    "count": 1,
+    "file": "1973.json"
+  },
+  {
+    "year": "1974",
+    "count": 1,
+    "file": "1974.json"
+  },
+  {
+    "year": "1977",
+    "count": 4,
+    "file": "1977.json"
+  },
+  {
+    "year": "1978",
+    "count": 2,
+    "file": "1978.json"
+  },
+  {
+    "year": "1979",
+    "count": 1,
+    "file": "1979.json"
+  },
+  {
+    "year": "1980",
+    "count": 3,
+    "file": "1980.json"
+  },
+  {
+    "year": "1981",
+    "count": 6,
+    "file": "1981.json"
+  },
+  {
+    "year": "1982",
+    "count": 8,
+    "file": "1982.json"
+  },
+  {
+    "year": "1983",
+    "count": 4,
+    "file": "1983.json"
+  },
+  {
+    "year": "1984",
+    "count": 1,
+    "file": "1984.json"
+  },
+  {
+    "year": "1985",
+    "count": 4,
+    "file": "1985.json"
+  },
+  {
+    "year": "1986",
+    "count": 7,
+    "file": "1986.json"
+  },
+  {
+    "year": "1987",
+    "count": 10,
+    "file": "1987.json"
+  },
+  {
+    "year": "1988",
+    "count": 10,
+    "file": "1988.json"
+  },
+  {
+    "year": "1989",
+    "count": 7,
+    "file": "1989.json"
+  },
+  {
+    "year": "1990",
+    "count": 16,
+    "file": "1990.json"
+  },
+  {
+    "year": "1991",
+    "count": 20,
+    "file": "1991.json"
+  },
+  {
+    "year": "1992",
+    "count": 15,
+    "file": "1992.json"
+  },
+  {
+    "year": "1993",
+    "count": 24,
+    "file": "1993.json"
+  },
+  {
+    "year": "1994",
+    "count": 16,
+    "file": "1994.json"
+  },
+  {
+    "year": "1995",
+    "count": 26,
+    "file": "1995.json"
+  },
+  {
+    "year": "1996",
+    "count": 31,
+    "file": "1996.json"
+  },
+  {
+    "year": "1997",
+    "count": 28,
+    "file": "1997.json"
+  },
+  {
+    "year": "1998",
+    "count": 30,
+    "file": "1998.json"
+  },
+  {
+    "year": "1999",
+    "count": 41,
+    "file": "1999.json"
+  },
+  {
+    "year": "2000",
+    "count": 70,
+    "file": "2000.json"
+  },
+  {
+    "year": "2001",
+    "count": 89,
+    "file": "2001.json"
+  },
+  {
+    "year": "2002",
+    "count": 67,
+    "file": "2002.json"
+  },
+  {
+    "year": "2003",
+    "count": 70,
+    "file": "2003.json"
+  },
+  {
+    "year": "2004",
+    "count": 109,
+    "file": "2004.json"
+  },
+  {
+    "year": "2005",
+    "count": 114,
+    "file": "2005.json"
+  },
+  {
+    "year": "2006",
+    "count": 103,
+    "file": "2006.json"
+  },
+  {
+    "year": "2007",
+    "count": 145,
+    "file": "2007.json"
+  },
+  {
+    "year": "2008",
+    "count": 172,
+    "file": "2008.json"
+  },
+  {
+    "year": "2009",
+    "count": 169,
+    "file": "2009.json"
+  },
+  {
+    "year": "2010",
+    "count": 206,
+    "file": "2010.json"
+  },
+  {
+    "year": "2011",
+    "count": 184,
+    "file": "2011.json"
+  },
+  {
+    "year": "2012",
+    "count": 220,
+    "file": "2012.json"
+  },
+  {
+    "year": "2013",
+    "count": 261,
+    "file": "2013.json"
+  },
+  {
+    "year": "2014",
+    "count": 307,
+    "file": "2014.json"
+  },
+  {
+    "year": "2015",
+    "count": 242,
+    "file": "2015.json"
+  },
+  {
+    "year": "2016",
+    "count": 213,
+    "file": "2016.json"
+  },
+  {
+    "year": "2017",
+    "count": 288,
+    "file": "2017.json"
+  },
+  {
+    "year": "2018",
+    "count": 269,
+    "file": "2018.json"
+  },
+  {
+    "year": "2019",
+    "count": 274,
+    "file": "2019.json"
+  },
+  {
+    "year": "2020",
+    "count": 371,
+    "file": "2020.json"
+  },
+  {
+    "year": "2021",
+    "count": 368,
+    "file": "2021.json"
+  },
+  {
+    "year": "2022",
+    "count": 398,
     "file": "2022.json"
   },
   {
     "year": "2023",
-    "count": 5,
+    "count": 367,
     "file": "2023.json"
   },
   {
     "year": "2024",
-    "count": 1242,
+    "count": 358,
     "file": "2024.json"
   },
   {
     "year": "2025",
-    "count": 1340,
+    "count": 447,
     "file": "2025.json"
   },
   {
     "year": "2026",
-    "count": 774,
+    "count": 308,
     "file": "2026.json"
   }
 ]

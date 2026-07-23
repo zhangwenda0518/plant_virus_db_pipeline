@@ -1,0 +1,279 @@
+{
+  "month": "2002-11",
+  "generated": "2026-07-13 02:59:42",
+  "total": 19,
+  "by_category": {
+    "Host_Virus_Interactions": 9,
+    "New_Virus": 5,
+    "Molecular_Characterization": 2,
+    "Antiviral_Resistance_Genes": 2,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "18944241",
+      "doi": "10.1094/PHYTO.2002.92.11.1167",
+      "title": "Maize fine streak virus, a New Leafhopper-Transmitted Rhabdovirus.",
+      "abstract": "ABSTRACT A previously uncharacterized virus was isolated from fall-planted sweet corn (Zea mays L., Syngenta GSS 0966) leaves showing fine chlorotic streaks. Symptomatic plants were negative in enzyme-linked immunosorbent assay against many maize viruses, but reacted weakly with antisera to Sorghum stunt mosaic virus suggesting a distant relationship between the viruses. The virus was readily transmitted by vascular puncture inoculation (VPI), but not by leaf-rub inoculation. Symptoms on maize included dwarfing and fine chlorotic streaks along intermediate and small veins that developed 12 to 17 days post-VPI. The isolated virus was bacilliform (231 +/- 5 nm long and 71 +/- 2 nm wide), with a knobby surface, and obvious helical structure typical of rhabdovirus morphology. Nucleorhabdovirus virions were observed by transmission electron microscopy of infected maize leaf tissue sections. Proteins unique to infected plants were observed in extracts of infected leaves, and the isolated virion contained three proteins with molecular masses 82 +/- 2, 50 +/- 3, and 32 +/- 2 kDa. Preliminary sequence analysis indicated the virus had similarity to members of the family Rhabdoviridae. The virus was transmitted by Graminella nigrifrons under persistent conditions. The data indicate the virus, provisionally designated Maize fine streak virus, is a new species in the genus Nucleorhabdovirus.",
+      "journal": "Phytopathology",
+      "year": 2002,
+      "pub_date": "2002-11-01",
+      "authors": "Redinbaugh M G; Seifers D L; Meulia T; Abt J J; Anderson R J; ... (+7)",
+      "first_author": "Redinbaugh M G",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Maize fine streak virus",
+      "taxonomy": "Rhabdoviridae, Nucleorhabdovirus",
+      "host_plant": "甜玉米 (Zea mays L., Syngenta GSS 0966)",
+      "location": "未提及",
+      "results": "病毒粒体杆状(231×71 nm)，具螺旋结构；含3种蛋白(82、50、32 kDa)；与高粱花叶矮缩病毒弱反应；由Graminella nigrifrons持久性传播。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12417955",
+      "doi": "10.1007/s00705-002-0875-6",
+      "title": "Nucleotide sequence, genome organisation and phylogenetic analysis of Indian citrus ringspot virus. Brief report.",
+      "abstract": "The sequence of the single-stranded RNA genome of Indian citrus ringspot virus (ICRSV) consists of 7560 nucleotides. It contains six open reading frames (ORFs) which encode putative proteins of 187.3, 25, 12, 6.4, 34 and 23 kDa respectively. ORF1 encodes a polypeptide that contains all the elements of a replicase; ORFs 2, 3 and 4 compose a triple-gene block; ORF5 encodes the capsid protein; the function of ORF6 is unknown. Phylogenetic analysis of the complete genome and each ORF separately, and database searches indicate that ICRSV, though showing some similarities to potexviruses, is significantly different, as in the presence of ORF6, the genome and CP sizes, and particle morphology. These differences favour its inclusion in a new virus genus.",
+      "journal": "Archives of virology",
+      "year": 2002,
+      "pub_date": "2002-11-01",
+      "authors": "Rustici G; Milne R G; Accotto G P",
+      "first_author": "Rustici G",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Indian citrus ringspot virus (ICRSV)",
+      "taxonomy": "新属（未明确科属，建议归入新属）",
+      "host_plant": "柑橘",
+      "location": "印度",
+      "results": "基因组7560nt，含6个ORF，编码复制酶、三基因块、衣壳蛋白等；系统发育显示不同于potexviruses，有ORF6等独有特征。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12388824",
+      "doi": "10.1099/0022-1317-83-11-2879",
+      "title": "RNA-dependent RNA polymerase complex of Brome mosaic virus: analysis of the molecular structure with monoclonal antibodies.",
+      "abstract": "Viral RNA-dependent RNA polymerase (RdRp) plays crucial roles in the genomic replication and subgenomic transcription of Brome mosaic virus (BMV), a positive-stranded RNA plant virus. BMV RdRp is a complex of virus-encoded 1a and 2a proteins and some cellular factors, and associates with the endoplasmic reticulum at an infection-specific structure in the cytoplasm of host cells. In this study, we investigate the gross structure of the active BMV RdRp complex using monoclonal antibodies raised against the 1a and 2a proteins. Immunoprecipitation experiments showed that the intermediate region between the N-terminal methyltransferase-like domain and the C-terminal helicase-like domain of 1a protein, and the N terminus region of 2a protein are exposed on the surface of the solubilized RdRp complex. Inhibition assays for membrane-bound RdRp suggested that the intermediate region between the methyltransferase-like and the helicase-like domains of 1a protein is located at the border of the region buried within a membrane structure or with membrane-associated material.",
+      "journal": "The Journal of general virology",
+      "year": 2002,
+      "pub_date": "2002-11-01",
+      "authors": "Dohi Koji; Mise Kazuyuki; Furusawa Iwao; Okuno Tetsuro",
+      "first_author": "Dohi Koji",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Brome mosaic virus (BMV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12368343",
+      "doi": "10.1128/jvi.76.21.11003-11011.2002",
+      "title": "Interaction between long-distance transport factor and Hsp70-related movement protein of Beet yellows virus.",
+      "abstract": "Systemic spread of viruses in plants involves local movement from cell to cell and long-distance transport through the vascular system. The cell-to-cell movement of the Beet yellows virus (BYV) is mediated by a movement protein that is an Hsp70 homolog (Hsp70h). This protein is required for the assembly of movement-competent virions that incorporate Hsp70h. By using the yeast two-hybrid system, in vitro coimmunoprecipitation, and in planta coexpression approaches, we show here that the Hsp70h interacts with a 20-kDa BYV protein (p20). We further demonstrate that p20 is associated with the virions presumably via binding to Hsp70h. Genetic and immunochemical analyses indicate that p20 is dispensable for assembly and cell-to-cell movement of BYV but is required for the long-distance transport of virus through the phloem. These results reveal a novel activity for the Hsp70h that provides a molecular link between the local and systemic spread of a plant virus by docking a long-distance transport factor to virions.",
+      "journal": "Journal of virology",
+      "year": 2002,
+      "pub_date": "2002-11-01",
+      "authors": "Prokhnevsky Alexey I; Peremyslov Valera V; Napuli Alberto J; Dolja Valerian V",
+      "first_author": "Prokhnevsky Alexey I",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Beet yellows virus (BYV)",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12582918",
+      "doi": "10.1007/s00122-002-0994-1",
+      "title": "Mapping of quantitative trait loci determining agronomic important characters in hexaploid wheat ( Triticum aestivum L.).",
+      "abstract": "A set of 114 recombinant inbred lines of the 'International Triticeae Mapping Initiative' mapping population was grown during the seasons 1997, 1998, 1999 and 2000 under several environments. Twenty morphological (glume colour, awn colour, waxiness, leaf erectness, peduncle length), agronomical (ear emergence time, flowering time, grain filling time, ear length, plant height, lodging, grain number, thousand-grain-weight, grain weight per ear, grain protein content, winter hardiness) and disease resistance (powdery mildew, yellow rust, leaf rust, fusarium) traits were studied. Not all traits were scored in each experiment. In total 210 QTLs with a LOD threshold of >2.0 (minor QTLs) were detected of which 64 reached a LOD score of >3.0 (major QTLs). Often QTLs were detected in comparable positions in different experiments. Homologous and homoeologous relationships of the detected QTLs, and already described major genes or QTLs determining the same traits in wheat or other Triticeae members, are discussed.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 2002,
+      "pub_date": "2002-11-01",
+      "authors": "Börner A.; Schumann E.; Fürste A.; Cöster H.; Leithold B.; ... (+2)",
+      "first_author": "Börner A.",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12375167",
+      "doi": "10.1007/s00436-002-0606-7",
+      "title": "Lectin-blot analyses of Trichinella spiralis muscle larvae excretory-secretory components.",
+      "abstract": "The rapid recognition of invading pathogen polysaccharides by host lectins might have a significant role in the outcome of the infection. Oligosaccharide structures of the pathogens may provoke an antibody response and serve as a target for specific antibodies. It is well known that Trichinella spiralis antigens, either on the surface or excreted-secreted, are key modulators or targets of the host immune system. In our study of the role of lectins in host defense against T. spiralis infection, an investigation on sugar component of parasite glycoproteins was performed. Affino-blot analyses of T. spiralis muscle larvae excretory-secretory (ES) products by plant lectins revealed that these proteins possess: (1) N-glycans (ConA, PSA, PHA), and probably some O-linked structures (AAA), (2) oligosaccharide structures with mannose residues, especially of the oligomannose type (ConA) and the biantennary complex type with Fuc in the pentasaccharide core (PSA), (3) bisected oligosaccharides, probably some polyantennary glycophorms (PHA), (4) terminally positioned Gal (RCA I, AAA), (5) N-glycans containing oligomers of, or bisected GlcNAc (WGA), that lack alpha2,6 type of linkage (absence of SNA binding).",
+      "journal": "Parasitology research",
+      "year": 2002,
+      "pub_date": "2002-11-01",
+      "authors": "Gruden-Movsesijan Alisa; Ilic Natasa; Sofronic-Milosavljevic Ljiljana",
+      "first_author": "Gruden-Movsesijan Alisa",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12403830",
+      "doi": "10.1073/pnas.232579799",
+      "title": "Expression of the antiapoptotic baculovirus p35 gene in tomato blocks programmed cell death and provides broad-spectrum resistance to disease.",
+      "abstract": "The sphinganine analog mycotoxin, AAL-toxin, induces a death process in plant and animal cells that shows apoptotic morphology. In nature, the AAL-toxin is the primary determinant of the Alternaria stem canker disease of tomato, thus linking apoptosis to this disease caused by Alternaria alternata f. sp. lycopersici. The product of the baculovirus p35 gene is a specific inhibitor of a class of cysteine proteases termed caspases, and naturally functions in infected insects. Transgenic tomato plants bearing the p35 gene were protected against AAL-toxin-induced death and pathogen infection. Resistance to the toxin and pathogen co-segregated with the expression of the p35 gene through the T3 generation, as did resistance to A. alternata, Colletotrichum coccodes, and Pseudomonas syringae pv. tomato. The p35 gene, stably transformed into tomato roots by Agrobacterium rhizogenes, protected roots against a 30-fold greater concentration of AAL-toxin than control roots tolerated. Transgenic expression of a p35 binding site mutant (DQMD to DRIL), inactive against animal caspases-3, did not protect against AAL-toxin. These results indicate that plants possess a protease with substrate-site specificity that is functionally equivalent to certain animal caspases. A biological conclusion is that diverse plant pathogens co-opt apoptosis during infection, and that transgenic modification of pathways regulating programmed cell death in plants is a potential strategy for engineering broad-spectrum disease resistance in plants.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 2002,
+      "pub_date": "2002-11-12",
+      "authors": "Lincoln James E; Richael Craig; Overduin Bert; Smith Kathy; Bostock Richard; ... (+1)",
+      "first_author": "Lincoln James E",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12508869",
+      "doi": "10.1099/00207713-52-6-2061",
+      "title": "Runella zeae sp. nov., a novel gram-negative bacterium from the stems of surface-sterilized Zea mays.",
+      "abstract": "A Gram-negative bacterium, designated NS12(T), was previously isolated from duplicate treatments of surface-sterilized Zea mays stems. The plants were grown in synthetic soil under greenhouse conditions and watered with fertilizer containing no nitrogen. Strain NS12(T) was not isolated from plants watered with the standard level or 20% (w/v) of the standard level of nitrogen. Cells were bent rods that formed chains of irregular shapes in R2A broth. Unlike its closest described relative Runella slithyformis, strain NS12(T) fermented glucose and sucrose. The G+C content was 49 mol%. Phylogenetic analysis of the 16S rRNA gene showed that the strain was a member of the domain Bacteria and is most closely related to R. slithyformis, a member of the Flexibacter group within the Cytophaga-Flexibacter-Bacteroides phylum. Phenotypic and genotypic analyses indicated that strain NS12(T) could not be assigned to any recognized species; therefore a new species designated Runella zeae sp. nov. is proposed, for which NS12(T) ( = ATCC BAA-293(T) = LMG 21438(T)) is the type strain.",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2002,
+      "pub_date": "2002-11-01",
+      "authors": "Chelius Marisa K; Henn Jennifer A; Triplett Eric W",
+      "first_author": "Chelius Marisa K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12406707",
+      "doi": "10.1128/AEM.68.11.5217-5222.2002",
+      "title": "A new species of Devosia that forms a unique nitrogen-fixing root-nodule symbiosis with the aquatic legume Neptunia natans (L.f.) druce.",
+      "abstract": "Rhizobia are the common bacterial symbionts that form nitrogen-fixing root nodules in legumes. However, recently other bacteria have been shown to nodulate and fix nitrogen symbiotically with these plants. Neptunia natans is an aquatic legume indigenous to tropical and subtropical regions and in African soils is nodulated by Allorhizobium undicola. This legume develops an unusual root-nodule symbiosis on floating stems in aquatic environments through a unique infection process. Here, we analyzed the low-molecular-weight RNA and 16S ribosomal DNA (rDNA) sequence of the same fast-growing isolates from India that were previously used to define the developmental morphology of the unique infection process in this symbiosis with N. natans and found that they are phylogenetically located in the genus Devosia, not Allorhizobium or RHIZOBIUM: The 16S rDNA sequences of these two Neptunia-nodulating Devosia strains differ from the only species currently described in that genus, Devosia riboflavina. From the same isolated colonies, we also located their nodD and nifH genes involved in nodulation and nitrogen fixation on a plasmid of approximately 170 kb. Sequence analysis showed that their nodD and nifH genes are most closely related to nodD and nifH of Rhizobium tropici, suggesting that this newly described Neptunia-nodulating Devosia species may have acquired these symbiotic genes by horizontal transfer.",
+      "journal": "Applied and environmental microbiology",
+      "year": 2002,
+      "pub_date": "2002-11-01",
+      "authors": "Rivas Raul; Velázquez Encarna; Willems Anne; Vizcaíno Nieves; Subba-Rao Nanjappa S; ... (+4)",
+      "first_author": "Rivas Raul",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12508851",
+      "doi": "10.1099/00207713-52-6-1937",
+      "title": "Stenotrophomonas rhizophila sp. nov., a novel plant-associated bacterium with antifungal properties.",
+      "abstract": "A polyphasic taxonomic study was performed on 16 Stenotrophomonas strains from environmental and clinical sources. A group of three plant-associated isolates were shown to be phenotypically different from the other strains. This group formed a separate physiological cluster (B1) with 42% heterogeneity to the other isolates. The defining characteristics of the new species were as follows: growth at 4 degrees C and the absence of growth at 40 degrees C; the utilization of xylose as a carbon source; lower osmolytic tolerance (< 4.5% NaCl, w/v), although the isolates can produce trehalose and glucosylglycerol as osmoprotective substances; the absence of lipase and beta-glucosidase production; and antifungal activity against plant-pathogenic fungi. The whole-cell fatty acid profile of this group was different and characterized by the main fatty acids iso-C15:0 and anteiso-C15:0. Numerical analysis of the fatty acid profiles of the strains examined supports the differentiation of the physiological B1 group. By 16S rDNA analysis, three clusters were distinguished. The three strains of the B1 group formed a separate environmental cluster (E1). They showed a mean similarity of 99.5% within the cluster, and differed from strains of a second environmental cluster (E2) by 2.2% and from the clinical cluster (C) by about 3.0%. DNA-DNA hybridization data supported the taxonomic differentiation. All results led to the proposal of a new species, Stenotrophomonas rhizophila sp. nov., with strain e-p10(T) (= DSM 14405(T) = ATCC BAA-473(T)) as the type strain.",
+      "journal": "International journal of systematic and evolutionary microbiology",
+      "year": 2002,
+      "pub_date": "2002-11-01",
+      "authors": "Wolf Arite; Fritze Antje; Hagemann Martin; Berg Gabriele",
+      "first_author": "Wolf Arite",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12445127",
+      "doi": "10.1046/j.1365-313x.2002.01444.x",
+      "title": "The plant disease resistance gene Asc-1 prevents disruption of sphingolipid metabolism during AAL-toxin-induced programmed cell death.",
+      "abstract": "The nectrotrophic fungus Alternaria alternata f.sp. lycopersici infects tomato plants of the genotype asc/asc by utilizing a host-selective toxin, AAL-toxin, that kills the host cells by inducing programmed cell death. Asc-1 is homologous to genes found in most eukaryotes from yeast to humans, suggesting a conserved function. A yeast strain with deletions in the homologous genes LAG1 and LAC1 was functionally complemented by Asc-1, indicating that Asc-1 functions in an analogous manner to the yeast homologues. Examination of the yeast sphingolipids, which are almost absent in the lag1Deltalac1Delta mutant, showed that Asc-1 was able to restore the synthesis of sphingolipids. We therefore examined the biosynthesis of sphingolipids in tomato by labeling leaf discs with l-[3-3H]serine. In the absence of AAL-toxin, there was no detectable difference in sphingolipid labeling between leaf discs from Asc/Asc or asc/asc leaves. In the presence of pathologically significant concentrations of AAL-toxin however, asc/asc leaf discs showed severely reduced labeling of sphingolipids and increased label in dihydrosphingosine (DHS) and 3-ketodihydrosphingosine (3-KDHS). Leaf discs from Asc/Asc leaves responded to AAL-toxin treatment by incorporating label into different sphingolipid species. The effects of AAL-toxin on asc/asc leaflets could be partially blocked by the simultaneous application of AAL-toxin and myriocin. Leaf discs simultaneously treated with AAL-toxin and myriocin showed no incorporation of label into sphingolipids or long-chain bases as expected. These results indicate that the presence of Asc-1 is able to relieve an AAL-toxin-induced block on sphingolipid synthesis that would otherwise lead to programmed cell death.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2002,
+      "pub_date": "2002-11-01",
+      "authors": "Spassieva Stefka D; Markham Jonathan E; Hille Jacques",
+      "first_author": "Spassieva Stefka D",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "12399933",
+      "doi": "10.1007/s00239-002-2355-8",
+      "title": "A novel gene family in moss (Physcomitrella patens) shows sequence homology and a phylogenetic relationship with the TIR-NBS class of plant disease resistance genes.",
+      "abstract": "Plant disease resistance (R) genes encode proteins in which several motifs of the nucleotide-binding region (NBS) are highly conserved. Using degenerate primers designed according to the kinase 1 (P-loop) and hydrophobic (HD) motifs of the R gene NBS domains, homologous sequences were cloned from moss (Physcomitrella patens; phylum Bryophyta) representing an ancient nonvascular plant. A novel gene family (PpC) with at least eight homologous members was found. Expression of five members was detected. The level of expression was dependent on the developmental stage of moss, being higher in the gametophyte tissue than in the protonema tissue. The PpCs contained the conserved motifs characteristic of the NBS regions of R genes, and a kinase domain was found upstream from the NBS region. Phylogenetic analysis using the deduced NBS amino acid sequences of the PpCs and the plant genes available in databanks indicated that the PpCs show the closest relationship with the TIR-NBS class of R genes. No significant similarity to plant genes other than R genes was observed. These findings shed novel light on the evolutionary history of the R gene families, suggesting that the NBS region characteristic of the TIR-NBS class of R-like genes evolved prior to the evolutionary differentiation of vascular and nonvascular plants.",
+      "journal": "Journal of molecular evolution",
+      "year": 2002,
+      "pub_date": "2002-11-01",
+      "authors": "Akita Motomu; Valkonen Jari P T",
+      "first_author": "Akita Motomu",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

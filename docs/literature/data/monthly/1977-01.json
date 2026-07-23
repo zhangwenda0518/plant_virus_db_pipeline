@@ -1,0 +1,102 @@
+{
+  "month": "1977-01",
+  "generated": "2026-07-13 02:59:41",
+  "total": 4,
+  "by_category": {
+    "New_Virus": 1,
+    "Antiviral_Resistance_Genes": 1,
+    "Molecular_Characterization": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "878706",
+      "doi": "",
+      "title": "[Spontaneous hosts of broad bean wilt virus. Communication].",
+      "abstract": "Of 110 plant species, grown from seeds in the vicinity of sources of broad bean wilt virus (BBWV) in 1974, exactly 50% proved to be infected by the mentioned virus within one vegetation period. Obviously 54 of the species are previously unknown hosts of BBWV. They belong to the following 21 families: Amaranthaceae, Boraginaceae, Campanulaceae, Caryophyllaceae, Chenopodiaceae, Commelinaceae, Compositae, Cruciferae, Euphorbiaceae, Hydrophyllaceae, Labiatae, Leguminosae, Loasaceae, Papaveraceae, Polemoniaceae, Portulacaceae, Ranunculaceae, Resedaceae, Scrophulariaceae, Solanaceae, and Umbelliferae. Within 6 families, marked by, no spontaneous hosts of BBWV were ascertained before. Only a few of the plant species found to be infected did not show disease symptoms. However, a considerable part of the BBWV hosts were additionally infected by cucumber mosaic virus. BBWV seems to possess a natural host range not very much less than alfalfa mosaic virus. Among monocotyls BBWV seems to have even a larger host range than alfalaf mosaic virus has.",
+      "journal": "Zentralblatt fur Bakteriologie, Parasitenkunde, Infektionskrankheiten und Hygiene. Zweite naturwissenschaftliche Abt.: Allgemeine, landwirtschaftliche und technische Mikrobiologie",
+      "year": 1977,
+      "pub_date": "1977-01-01",
+      "authors": "Schmelzer K; Stahl P",
+      "first_author": "Schmelzer K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "broad bean wilt virus (BBWV)",
+      "taxonomy": "未提及",
+      "host_plant": "54种新宿主植物，分属21科（包括苋科、紫草科、桔梗科、石竹科、藜科、鸭跖草科、菊科、十字花科、大戟科、田基麻科、唇形科、豆科、刺莲科、罂粟科、花荵科、马齿苋科、毛茛科、木犀草科、玄参科、茄科、伞形科）",
+      "location": "未提及",
+      "results": "110种植物中55种被感染，54种为新宿主，分属21科；少数无症状，部分同时感染CMV；BBWV自然宿主范围接近苜蓿花叶病毒，在单子叶植物中范围更广。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "141815",
+      "doi": "10.1515/znc-1977-5-618",
+      "title": "A method for the purification of large quantities of biologically active ribonucleic acid components from cowpea chlorotic mottle virus, a multicomponent plant virus.",
+      "abstract": "Cowpea chlorotic mottle virus RNA has been prepared in comparatively high yield (at least 50%) by a modified phenol extraction method. The preparation, which has high biological activity, has been resolved into four components by zonal centrifugation on a 15-40% (w/v) sucrose density gradient. The components obtained have been tested for biological activity against whole plants and plant protoplasts. Each of the two largest components RNA 1 and RNA 2 was by itself infective (50-90% of the specific infectivity of the whole genome) and produced virus-specific proteins (coat protein and P2) and RNAs (\"RNA 3\" and \"RNA 4\"). Contamination by small proportions (less than 10%) of neighbouring RNAs is presumed to be involved in this infectivity. The two smallest components were obtained in an almost pure form.",
+      "journal": "Zeitschrift fur Naturforschung. Section C, Biosciences",
+      "year": 1977,
+      "pub_date": "1977-01-01",
+      "authors": "Trim A R; Dawson J R; Dickerson P E; Sakai F; Watts J W",
+      "first_author": "Trim A R",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "豇豆褪绿斑驳病毒（Cowpea chlorotic mottle virus, CCMV）",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "561296",
+      "doi": "",
+      "title": "[Antiviral properties of compounds of plant origin].",
+      "abstract": "",
+      "journal": "Mikrobiolohichnyi zhurnal",
+      "year": 1977,
+      "pub_date": "1977-01-01",
+      "authors": "Loziuk L V",
+      "first_author": "Loziuk L V",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "144367",
+      "doi": "",
+      "title": "[Virological and serological examination of wild birds during the spring migrations in the region of the Manych Reservoir, Rostov Province].",
+      "abstract": "In accordance with the Soviet-American collaboration program on influenza and ARD, cooperative field studies were undertaken in 1975 in the USSR in order to test the field and laboratory methods for studies on influenza virus ecology. In the Rostov region of the USSR, virological and serological examinations of 321 birds of 25 species were carried out. Virological tests were performed with 678 biological specimens and in various serological tests 308 blood serum specimesn from wild birds were examined. Examinations of specimens of washings and organs of birds revealed no hemagglutinating agents. The paper presents the results of studies of avian blood serum specimens in the HI test, neuraminidase activity inhibition test and the immunodiffusion test.",
+      "journal": "Voprosy virusologii",
+      "year": 1977,
+      "pub_date": "1977-01-01",
+      "authors": "L'vov D K; Easterday B; Webster R; Sazonov A A; Zhilina N N",
+      "first_author": "L'vov D K",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

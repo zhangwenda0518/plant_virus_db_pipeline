@@ -1,0 +1,80 @@
+{
+  "week": "2026-W53",
+  "start": "2026-12-28",
+  "end": "2027-01-03",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 3,
+  "by_category": {
+    "Host_Virus_Interactions": 2,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "41981758",
+      "doi": "10.1080/15592324.2026.2657733",
+      "title": "Microbiome-metabolite signaling drives aluminum stress alleviation in soybean under intercropping and selenium nanoparticle application.",
+      "abstract": "Aluminum (Al) toxicity and soil-borne pathogens severely constrain legume productivity in acidic soils, yet the signaling mechanisms underlying intercropping-mediated stress alleviation remain insufficiently understood. Here, we investigated whether soybean-sorghum intercropping under Al stress (SSAl), alone or combined with selenium nanoparticles (SSAl + Se), modulates rhizosphere signaling networks and plant defense responses. Integrated 16S rRNA microbiome sequencing and rhizosphere metabolomics were employed to decipher microbe‒metabolite interactions associated with Al detoxification and disease suppression. Compared with monoculture soybean under Al stress (MSAl), SSAl and SSAl + Se significantly reduced Al accumulation (16.9% and 57.4%, respectively) and Fusarium wilt incidence (10.9% and 34.4%, respectively), accompanied by enhanced root growth. These treatments attenuated oxidative stress, as evidenced by decreased O₂-, H₂O₂, and malondialdehyde (MDA) levels, while stimulating antioxidant enzyme activities (SOD, POD, and APX), indicating reinforcement of redox homeostasis. In the rhizosphere, NH₄⁺-N and available K levels increased, with NH₄⁺-N positively correlated with urease activity and negatively correlated with Al accumulation, suggesting nitrogen-mediated modulation of Al dynamics. Microbiome analysis revealed enrichment of beneficial taxa, including Streptomyces, Intrasporangium, and Sphingomonas, which are positively associated with antimicrobial and stress-related metabolites such as 15-methyl palmitate, lactucin, and sordarin. These coordinated shifts in the microbial community structure and metabolite profiles indicate that the activation of rhizosphere chemical signaling restricts pathogen proliferation and enhances Al detoxification. Collectively, our findings demonstrate that selenium nanoparticles potentiate intercropping-induced rhizosphere reprogramming, linking redox regulation, nitrogen transformation, and microbiome-metabolite signaling to improve aluminum stress tolerance and disease resistance in soybean. This study provides mechanistic insight into how nano-enabled agronomic strategies influence plant signaling networks under edaphic stress.",
+      "journal": "Plant signaling & behavior",
+      "year": 2026,
+      "pub_date": "2026-12-31",
+      "authors": "Murtaza Ghulam; Hassan Najmaldin Ezaldin; Ahmed Zeeshan; Elmenofy Wael; El-Mogy Mohamed Mohamed; ... (+5)",
+      "first_author": "Murtaza Ghulam",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42070129",
+      "doi": "10.1080/15592324.2026.2668219",
+      "title": "Identifying anthracnose resistance genes involving in ROS and JA accumulation.",
+      "abstract": "Anthracnose, caused by one of the top ten most destructive plant fungal pathogen Colletotrichum spp., is a devastating disease that infects a wide range of plant species and severely compromises crop yields. Understanding the molecular mechanisms underlying plant resistance to anthracnose is therefore crucial for developing effective control strategies. In previous studies, we have identified two broad-spectrum disease resistance genes, Cystatin 6 (CYS6) and Botrytis cinerea-induced F-box protein 1 (BFP1), which encode proteins modulating reactive oxygen species (ROS) and jasmonic acid (JA) accumulation, respectively. Here, we investigated whether these genes contribute to anthracnose resistance. Our results demonstrated that Colletotrichum higginsianum infection caused milder symptoms in CYS6 and BFP1 overexpression lines compared to wild-type plants. Importantly, neither BFP1 nor CYS6 overexpression adversely affected plant growth or seed production. The evolutionary conservation of CYS6 and BFP1 across different crops were also checked. Our study highlights the potential of CYS6 and BFP1 as promising targets for molecular breeding programs aimed at developing anthracnose-resistant crops.",
+      "journal": "Plant signaling & behavior",
+      "year": 2026,
+      "pub_date": "2026-12-31",
+      "authors": "Zhang Min; Wang Yuxin; Cheng Shuqi; Huang Weijuan; Liu Yang; ... (+1)",
+      "first_author": "Zhang Min",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42318993",
+      "doi": "10.1080/15592324.2026.2691464",
+      "title": "",
+      "abstract": "Colletotrichum species are a taxonomically complex group of hemibiotrophic fungi that cause anthracnose diseases, posing a major constraint to global crop productivity. Their broad host range, high genetic diversity, and ability to shift between biotrophic and necrotrophic phases complicate effective disease management. Although synthetic fungicides are widely used, their prolonged application has raised concerns regarding pathogen resistance, environmental contamination, and food safety, driving the search for sustainable approaches. Unlike previous reviews that mainly discuss Colletotrichum biology or Trichoderma biocontrol mechanisms separately, this review integrates pathogen taxonomy and infection biology with mechanistic, applied, and future-oriented perspectives on Trichoderma-based anthracnose management. Evidence from laboratory, greenhouse, field, and postharvest studies indicates that Trichoderma has promising potential for suppressing Colletotrichum, particularly under controlled conditions, although its efficacy remains influenced by environmental factors, strain specificity, formulation stability, and application method. Integrating Trichoderma-based products into disease management systems offers a promising strategy to reduce chemical inputs and enhance crop resilience. Future research should focus on multi-omics approaches, strain optimization, formulation development, and field validation to ensure consistent performance across diverse agroecosystems.",
+      "journal": "Plant signaling & behavior",
+      "year": 2026,
+      "pub_date": "2026-12-31",
+      "authors": "Adhitya Rendra; Miranti Mia; Jefferson Thomas Argyarich; Albert Malvin; Joshi Ravindra Chandra; ... (+6)",
+      "first_author": "Adhitya Rendra",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

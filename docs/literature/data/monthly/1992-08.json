@@ -1,0 +1,103 @@
+{
+  "month": "1992-08",
+  "generated": "2026-07-13 02:59:42",
+  "total": 4,
+  "by_category": {
+    "Antiviral_Resistance_Genes": 2,
+    "New_Virus": 1,
+    "Virgaviridae": 1,
+    "Viral_Diversity_Ecology": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "1645144",
+      "doi": "10.1099/0022-1317-73-8-2085",
+      "title": "Poa semilatent virus, a hordeivirus having no internal polydisperse poly(A) in the 3' non-coding region of the RNA genome.",
+      "abstract": "RNA from the Hungarian isolate of poa semilatent virus (PSLV) directed in vitro synthesis of 120K, 75K, 25K (coat protein) and 20K polypeptides. In vitro translation of PSLV RNA was blocked by the cap analogue, m7Gpp, thus suggesting that the virus RNA was capped. PSLV RNA could be aminoacylated with [14C]tyrosine in vitro. The sequence of 1.5 kb from the 3' end of the PSLV RNA gamma component revealed two open reading frames (ORFs) separated by a uridine-rich intergenic region. The putative product of the incomplete 5'-proximal ORF showed a close amino acid sequence similarity with the C-terminal segment of the gamma a protein (putative RNA replicase) encoded in the barley stripe mosaic virus (BSMV) RNA gamma, and the 20K product of the 3'-proximal ORF was found to be related to the 17K gamma b product of BSMV. The sequence of 0.8 kb from the 3' end of PSLV RNA beta encompassed two (incomplete) overlapping ORFs whose putative products are related to the beta c and beta d proteins encoded in the similarly arranged ORFs of BSMV RNA beta. Nucleotide sequence homology between the respective parts of the two hordeivirus genomes was restricted to the ORF for gamma a, the spacer between the ORFs for gamma a and gamma b, and the 3' non-coding region, particularly the 95 nucleotide segment at the 3' end representing a tRNA-like structure. Despite limited sequence conservation beyond this segment, the entire 3' non-coding region of PSLV RNA could be folded in a tight pseudoknotted structure closely resembling that of BSMV RNA. Surprisingly, the 'signature' sequence typical for BSMV RNA, internal polydisperse poly(A) intercalated between the coding part of the 3' tRNA-like structure, was not detected in the PSLV genome. Instead, the virus RNA contained several oligoadenylate stretches spaced by other residues, close to the junction of its coding and 3' non-coding portions.",
+      "journal": "The Journal of general virology",
+      "year": 1992,
+      "pub_date": "1992-08-01",
+      "authors": "Agranovsky A A; Karasev A V; Novikov V K; Lunina N A; Loginov S; ... (+1)",
+      "first_author": "Agranovsky A A",
+      "categories": [
+        "New_Virus",
+        "Virgaviridae"
+      ],
+      "virus_name": "Poa semilatent virus (PSLV)",
+      "taxonomy": "Hordeivirus",
+      "host_plant": "未提及",
+      "location": "匈牙利",
+      "results": "PSLV RNA可氨基酰化酪氨酸，编码120K、75K、25K和20K多肽；RNA gamma和beta部分序列与BSMV同源，但3'非编码区无内部poly(A)，仅有间隔的寡腺苷酸。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "1520257",
+      "doi": "10.1042/bj2860001",
+      "title": "Some ribosome-inactivating proteins depurinate ribosomal RNA at multiple sites.",
+      "abstract": "Saporin-S6, a ribosome-inactivating protein (RIP) from Saponaria officinalis released more than 1 mol of adenine/mol of ribosomes from house fly (Musca domestica) larvae and from rat liver. The release of adenine from rat liver ribosomes by several RIPs (plant enzymes with RNA N-glycosidase activity) was examined. Saporins, pokeweed antiviral protein from roots of Phytolacca americana (PAP-R), and trichokirin from Trichosanthes kirilowii seeds depurinated rat liver ribosomes at more than one site. Up to 33 mol of adenine were released from 1 mol of ribosomes. This property is not common to all RIPS.",
+      "journal": "The Biochemical journal",
+      "year": 1992,
+      "pub_date": "1992-08-15",
+      "authors": "Barbieri L; Ferreras J M; Barraco A; Ricci P; Stirpe F",
+      "first_author": "Barbieri L",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1368478",
+      "doi": "10.1007/BF01583838",
+      "title": "Use of antisense RNA to confer bacteriophage resistance in dairy starter cultures.",
+      "abstract": "The strategy and implementation of a unique system for engineering bacteriophage resistant starter cultures of Lactococcus lactis employing antisense RNA is reviewed. As a necessary prerequisite for developing this system, we have cloned and sequenced a number of bacteriophage genes coding for minor and major structural proteins. In addition, we have also identified a series of genes whose function(s) is not known but their sequences appear to be conserved in a vast number of isolates. One of these latter sequences, designated gp51C, codes for a 51-kDa protein which is extremely charged and shares some homology with yeast translation initiation factor. Resistance to a broad class of isometric bacteriophages has been achieved by expression of an antisense RNA targeted against, for example, gp51C. In the best case, expression of the antisense gp51C RNA results is a greater than 99% reduction in the total number of plaque forming units. Additional antisense RNA constructs directed against other bacteriophage genes, including the major capsid protein, also appear effective at inhibiting infection from 40-55% suggesting that this approach may prove useful for engineering a set of truly isogenic strains to be used in a starter culture rotation plan.",
+      "journal": "Journal of industrial microbiology",
+      "year": 1992,
+      "pub_date": "1992-08-01",
+      "authors": "Kim J H; Kim S G; Chung D K; Bor Y C; Batt C A",
+      "first_author": "Kim J H",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "1334518",
+      "doi": "",
+      "title": "Strategies for blood screening for the hepatitis C virus and for the human immunodeficiency virus in high risk groups.",
+      "abstract": "For many infectious agents, seroprevalence rate is low but has serious consequences and must therefore be kept out of donated blood supplies. However, screening to ensure the safety of blood supplies has an associated very high cost. For example, in blood banks, detection of all the harmful items in a large number of samples is an expensive and tedious process. The laboratory and statistical approaches to obtain significant savings by the pooling method were discussed from 1943, recently, there have been further discussions of pooling sera as a means to determining the HIV seroprevalence rate in the general population or the weed out all HIV-positive individuals in blood screening. Here we describe a simple mathematical method to weed out all HIV, and HCV seropositive units. The method is designed to maximize possible savings. Two examples illustrate the application of this method in determining the number to be pooled in each stage, and the resulting savings. When the prevalence rate is lower than 2 percent. our method offers savings of over 80 percent.",
+      "journal": "Gaoxiong yi xue ke xue za zhi = The Kaohsiung journal of medical sciences",
+      "year": 1992,
+      "pub_date": "1992-08-01",
+      "authors": "Lan S J; Yen Y Y; Tsuang M S; Lu C T; Chiu J F; ... (+2)",
+      "first_author": "Lan S J",
+      "categories": [
+        "Viral_Diversity_Ecology"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

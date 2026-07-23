@@ -1,0 +1,127 @@
+{
+  "month": "1990-03",
+  "generated": "2026-07-13 02:59:42",
+  "total": 5,
+  "by_category": {
+    "New_Virus": 3,
+    "Solemoviridae": 1,
+    "Tymoviridae": 1,
+    "Host_Virus_Interactions": 1,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "2313269",
+      "doi": "10.1099/0022-1317-71-3-719",
+      "title": "Nucleotide sequences of an Australian and a Canadian isolate of potato leafroll luteovirus and their relationships with two European isolates.",
+      "abstract": "The genomes of an Australian and a Canadian isolate of potato leafroll virus have been cloned and sequenced. The sequences of both isolates are similar (about 93%), but the Canadian isolate (PLRV-C) is more closely related (about 98% identity) to a Scottish (PLRV-S) and a Dutch isolate (PLRV-N) than to the Australian isolate (PLRV-A). The 5'-terminal 18 nucleotide residues of PLRV-C, PLRV-A, PLRV-N and beet western yellows virus have 17 residues in common. In contrast, PLRV-S shows no obvious similarity in this region. PLRV-A and PLRV-C genomic sequences have localized regions of marked diversity, in particular a 600 nucleotide residue sequence in the polymerase gene. These data provide a world-wide perspective on the molecular biology of PLRV strains and their comparison with other luteoviruses and related RNA plant viruses suggests that there are two major subgroups in the plant luteoviruses.",
+      "journal": "The Journal of general virology",
+      "year": 1990,
+      "pub_date": "1990-03-01",
+      "authors": "Keese P; Martin R R; Kawchuk L M; Waterhouse P M; Gerlach W L",
+      "first_author": "Keese P",
+      "categories": [
+        "New_Virus",
+        "Solemoviridae"
+      ],
+      "virus_name": "马铃薯卷叶病毒 (Potato leafroll virus, PLRV)",
+      "taxonomy": "Luteoviridae, Luteovirus",
+      "host_plant": "马铃薯 (potato)",
+      "location": "澳大利亚、加拿大、苏格兰、荷兰",
+      "results": "两种分离株序列相似约93%，加拿大分离株与苏格兰、荷兰分离株更相似（约98%），而澳大利亚分离株差异较大；5'端保守；聚合酶基因有600nt差异。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "2320413",
+      "doi": "10.1093/nar/18.5.1181",
+      "title": "The tymobox, a sequence shared by most tymoviruses: its use in molecular studies of tymoviruses.",
+      "abstract": "The 5'-terminal sequences of the virion protein mRNAs of ononis yellow mosaic and kennedya yellow mosaic tymoviruses were determined, and also the positions in the genomes of the transcription initiation sites of those mRNAs. Comparisons of the available genomic sequences of tymoviruses revealed two conserved regions, one at the initiation site and another longer sequence of sixteen nucleotides to the 5' side of it. The longer sequence, which we call the tymobox, was tested as a target for a designed ribozyme, which cleaved appropriate genomic fragments of three tymoviruses. A synthetic oligonucleotide with sequence complementary to the tymobox was shown to be a tymovirus-specific probe for diagnosing and identifying tymoviruses, except for wild cucumber mosaic tymovirus. The tymobox sequence was also used as a primer for the second strand DNA synthesis of dsDNA representing the virion protein gene of cacao yellow mosaic tymovirus, a tymovirus with unknown sequence. Thus, the tymobox is a useful tool in molecular studies of tymoviruses.",
+      "journal": "Nucleic acids research",
+      "year": 1990,
+      "pub_date": "1990-03-11",
+      "authors": "Ding S W; Howe J; Keese P; Mackenzie A; Meek D; ... (+5)",
+      "first_author": "Ding S W",
+      "categories": [
+        "New_Virus",
+        "Tymoviridae"
+      ],
+      "virus_name": "Ononis yellow mosaic virus, Kennedya yellow mosaic virus, Wild cucumber mosaic virus, Cacao yellow mosaic virus 等芜菁黄花叶病毒（Tymovirus）",
+      "taxonomy": "Tymoviridae, Tymovirus",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "确定了两种病毒外壳蛋白mRNA的5'端序列和转录起始位点；发现两个保守区域；核酶可切割三种病毒基因组片段；tymobox互补探针对多数病毒特异；该序列可作引物成功合成未知病毒的cDNA。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": "elink"
+    },
+    {
+      "pmid": "2309444",
+      "doi": "10.1016/0042-6822(90)90204-5",
+      "title": "Construction of novel viroid chimeras containing portions of tomato apical stunt and citrus exocortis viroids.",
+      "abstract": "Several novel tomato apical stunt viroid (TASV) recombinants were isolated after inoculation of tomato seedlings with monomeric viroid cDNAs. Two intraspecific recombinants were constructed by exchanging the left and right sides of the closely related Ivory Coast and Indonesian strains of TASV, and a third, interspecific, recombinant was constructed by similar manipulations involving TASV and citrus exocortis viroid (CEV) cDNAs. Characterization of these TASV recombinants by RNA protection assays and nucleotide sequence analysis of polymerase chain reaction-amplified cDNAs revealed no evidence for sequence instability. The symptoms induced by replication of the CEV-TASV chimera in tomato were milder than those induced by either TASV or the TASV chimeras and resembled those induced by the CEV isolate which provided its pathogenicity domain.",
+      "journal": "Virology",
+      "year": 1990,
+      "pub_date": "1990-03-01",
+      "authors": "Owens R A; Candresse T; Diener T O",
+      "first_author": "Owens R A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Tomato apical stunt viroid (TASV), Citrus exocortis viroid (CEV) and their chimeras",
+      "taxonomy": "未提及",
+      "host_plant": "番茄 (tomato)",
+      "location": "未提及",
+      "results": "成功构建两种种内重组体和一种CEV-TASV嵌合体，序列稳定；嵌合体症状较轻，类似提供致病域的CEV。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2152111",
+      "doi": "10.1105/tpc.2.3.185",
+      "title": "Identification and genetic regulation of the chalcone synthase multigene family in pea.",
+      "abstract": "Chalcone synthase (CHS) is a key enzyme in the biosynthesis of diverse flavonoids involved in disease resistance, nodulation, and pigmentation in pea. We describe a multigene family encoding CHS and the effects of two regulatory loci, a and a2, on the pattern of expression of three of its member genes. Two of the genes, CHS1 and CHS3, are expressed in both petal and root tissue, whereas expression of a third gene, CHS2, is detected only in roots. The products encoded by the a and a2 loci are required for the expression of the CHS1 gene and for wild-type levels of expression of the CHS3 gene in petal tissue. In root tissue, all three CHS genes are expressed and induced by CuCl2 regardless of the genotype at the a and a2 loci. These results show that the various members of the CHS multigene family interact in diverse ways with multiple genetic signals in the plant, providing a basis for the differential expression of these genes. Spatially specific genetic regulation of distinct members of a multigene family has been clearly demonstrated.",
+      "journal": "The Plant cell",
+      "year": 1990,
+      "pub_date": "1990-03-01",
+      "authors": "Harker C L; Ellis T H; Coen E S",
+      "first_author": "Harker C L",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "11607069",
+      "doi": "10.1073/pnas.87.5.1787",
+      "title": "Laticifer-specific gene expression in Hevea brasiliensis (rubber tree).",
+      "abstract": "Natural rubber, cis-1,4-polyisoprene, is obtained from a colloidal fluid called latex, which represents the cytoplasmic content of the laticifers of the rubber tree (Hevea brasiliensis). We have developed a method of extracting translatable mRNA from freshly tapped latex. Analysis of in vitro translation products of latex mRNA showed that the encoded polypeptides are very different from those of leaf mRNA and these differences are visible in the protein profiles of latex and leaf as well. Northern blot analysis demonstrated that laticifer RNA is 20- to 100-fold enriched in transcripts encoding enzymes involved in rubber biosynthesis. Plant defense genes encoding chitinases, pathogenesis-related protein, phenylalanine ammonia-lyase, chalcone synthase, chalcone isomerase, cinnamyl alcohol dehydrogenase, and 5-enolpyruvylshikimate-3-phosphate synthase show a 10- to 50-fold higher expression in laticifers than in leaves, indicating the probable response of rubber trees to tapping and ethylene treatment. Photosynthetic genes encoding ribulose-bisphosphate carboxylase small subunit and chlorophyll a/b-binding protein are not expressed at a detectable level in laticifers. In contrast, genes encoding two hydrolytic enzymes, cellulase and polygalacturonase, are more highly expressed in laticifers than in leaves. Transcripts for the cytoplasmic form of glutamine synthase are preferentially expressed in laticifers, whereas those for the chloroplastic form of the same enzyme are present mainly in leaves. Control experiments demonstrated that beta-ATPase, actin, and ubiquitin are equally expressed in laticifers and leaves. Therefore, the differences in specific transcript abundance between laticifers and leaves are due to differential expression of the genes for these transcripts in the laticifers.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1990,
+      "pub_date": "1990-03-01",
+      "authors": "Kush A; Goyvaerts E; Chye M L; Chua N H",
+      "first_author": "Kush A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

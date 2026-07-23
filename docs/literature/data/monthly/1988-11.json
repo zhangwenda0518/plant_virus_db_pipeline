@@ -1,0 +1,78 @@
+{
+  "month": "1988-11",
+  "generated": "2026-07-13 02:59:42",
+  "total": 3,
+  "by_category": {
+    "New_Virus": 2,
+    "Antiviral_Resistance_Genes": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "2847424",
+      "doi": "10.1016/0042-6822(88)90052-9",
+      "title": "Novel virus-like particles containing circular single-stranded DNAs associated with subterranean clover stunt disease.",
+      "abstract": "Novel virus-like particles, 17-19 nm in diameter, have been isolated from subterranean clover and pea plants infected with the pathogen of subterranean clover stunt disease (SCSD). The structure and genetic organization of these particles suggest that the pathogen of SCSD is representative of a new group of plant DNA viruses. SCS virus-like particles (SCSV) are isometric and band as a single component with buoyant densities of 1.24 g/ml in Cs2SO4 and 1.34 g/ml in CsCl. The A260 nm/A280 nm is about 1.35, which is consistent with an estimated nucleic acid content of 17%. Molecular calculations suggest that the particles have a T = 1 capsid structure containing 60 polypeptide subunits each with Mr of 19,000. Nucleic acid analysis including restriction enzyme digestions of double-stranded cDNAs suggests that SCSV have a divided genome composed of multiple species of circular, single-stranded DNA molecules each of approximately 850-880 nucleotides and that each is encapsidated in a separate particle. Linear and aggregated forms of these DNAs are also detected by gel electrophoresis. Evidence suggests that these virus-like particles are the pathogen of SCSD.",
+      "journal": "Virology",
+      "year": 1988,
+      "pub_date": "1988-11-01",
+      "authors": "Chu P W; Helms K",
+      "first_author": "Chu P W",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Subterranean clover stunt virus (SCSV)",
+      "taxonomy": "未提及（代表新的植物DNA病毒组）",
+      "host_plant": "地三叶草（subterranean clover）和豌豆（pea）",
+      "location": "未提及",
+      "results": "颗粒直径17-19 nm，等轴，密度1.24/1.34 g/ml，A260/A280=1.35，核酸含量17%，T=1衣壳，60个亚基Mr 19,000；基因组为多个环状ssDNA，分别包装。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "3186697",
+      "doi": "10.1073/pnas.85.21.7927",
+      "title": "Thermotolerance and synthesis of heat shock proteins: these responses are present in Hydra attenuata but absent in Hydra oligactis.",
+      "abstract": "Organisms respond to environmental stress by synthesizing a small number of highly conserved heat shock proteins. In organisms as diverse as bacteria, plants, invertebrates, and vertebrates, synthesis of these proteins is directly correlated with the acquisition of thermotolerance. While studying the freshwater coelenterate hydra, we observed that Hydra oligactis was extremely sensitive to thermal stress. In contrast, the related species Hydra attenuata survives short-term exposure to high temperatures. Furthermore, after incubation at an elevated but nonlethal temperature, H. oligactis did not become thermotolerant. H. attenuata, however, acquired thermotolerance after such a preincubation. In H. attenuata the major heat shock protein was found to be 60 kDa in size. H. oligactis did not synthesize detectable levels of this protein or any new species of proteins in response to stress. Several other species of hydra were found to behave like H. oligactis in response to stress. Thus, these findings provide direct support for the hypothesis that heat shock proteins are required for stress tolerance and that the major heat shock protein in hydra does not have any effects on normal growth or physiology. The findings also indicate that the presence of a heat shock response might be related to the natural environment in which an organism lives.",
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": 1988,
+      "pub_date": "1988-11-01",
+      "authors": "Bosch T C; Krylow S M; Bode H R; Steele R E",
+      "first_author": "Bosch T C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "2852915",
+      "doi": "10.1016/0166-3542(88)90011-3",
+      "title": "Loss of cytomegalovirus infectivity after treatment with castanospermine or related plant alkaloids correlates with aberrant glycoprotein synthesis.",
+      "abstract": "Many plants contain polyhydroxyalkaloids which are potent inhibitors of glucosidases, enzymes involved in oligosaccharide trimming. These are important in determining the final configuration of specific glycoproteins. Human cytomegalovirus (CMV) encodes a number of glycoproteins, some of which ultimately reside in the outer envelope of the mature virion and are important for virus infectivity. Treatment with three polyhydroxyalkaloids, castanospermine (CAST), deoxynojirimycin (DNJ) and 2R,5R-dihydroxymethyl-3R,4R-dihydroxypyrrolidine (DMDP) blocked the growth of infectious virus, as determined by yield reduction and plaque reduction assays. However, in the presence of CAST, CMV infected cells continued to shed virions into the extracellular medium, as determined by electron microscopy. Envelope glycoproteins of virions produced after treatment with CAST (2.5 mM) were immunoprecipitated with a monoclonal antibody (F5) specific for the gcI family of glycoproteins. Analysis by PAGE-SDS showed an absence of gcI complex 2 (gp52 disulphide-linked to gp130) with a proportional increase in gcI complex 1 (gp52 disulphide-linked to gp95). The results indicated that gp130 alone, or linked to gp52, was important for CMV infectivity. As well as being potential targets for antiviral agents against CMV, inhibitors of glycoprotein trimming reactions may define components of the virion surface important for infectivity.",
+      "journal": "Antiviral research",
+      "year": 1988,
+      "pub_date": "1988-11-01",
+      "authors": "Taylor D L; Fellows L E; Farrar G H; Nash R J; Taylor-Robinson D; ... (+4)",
+      "first_author": "Taylor D L",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

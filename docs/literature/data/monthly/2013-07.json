@@ -1,0 +1,282 @@
+{
+  "month": "2013-07",
+  "generated": "2026-07-13 02:59:42",
+  "total": 57,
+  "by_category": {
+    "Host_Virus_Interactions": 20,
+    "New_Virus": 14,
+    "Antiviral_Resistance_Genes": 12,
+    "Biotechnology_Applications": 7,
+    "Transmission_Epidemiology": 3,
+    "Molecular_Characterization": 3,
+    "Control_Management": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "23247686",
+      "doi": "10.1007/s00442-012-2540-4",
+      "title": "Influence of a propagative plant virus on the fitness and wing dimorphism of infected and exposed insect vectors.",
+      "abstract": "To maximize fitness, plant pathogenic viruses may manipulate their arthropod vectors through direct and indirect (via the host plant) interactions. For many virus-vector-plant associations, insect feeding does not always lead to virus acquisition. In fact, many plant viruses, especially those that propagate into their vectors, are acquired at low rates. Although the majority of insects colonizing an infected plant escape from viral infection, they are still exposed to the indirect effects (i.e. the effect of plant metabolism modification following virus infection). Little information has been reported on the effects of plant viruses on insects that become infected versus those that do not (here referred to as \"exposed\"). The effect that the Maize mosaic virus (MMV) (Rhabdoviridae) exerts on the fitness and wing dimorphism of the planthopper vector, Peregrinus maidis (Hemiptera, Delphacidae), that developed on leaves from either young or old corn plants was examined. MMV exerted non-consistent to minimal direct effects on developmental time, longevity, nymphal mortality and fecundity. In addition, some small yet significant fitness costs were encountered by exposed planthoppers to escape MMV infection. Furthermore, a significantly higher proportion of macropters over brachypters were produced on MMV-infected old leaves compared with healthy leaves of a similar age. We conclude that the virus influences the dispersal of the vector, promoting a larger production of macropters at the costs of brachypters at a late stage of the plant infection. Because MMV infection in planthoppers did not segregate by wing morphotype, our results indicate that the dispersal of both infected and exposed planthoppers was a likely consequence of the indirect effects of MMV.",
+      "journal": "Oecologia",
+      "year": 2013,
+      "pub_date": "2013-07-01",
+      "authors": "Higashi Clesson H V; Bressan Alberto",
+      "first_author": "Higashi Clesson H V",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "玉米花叶病毒 (Maize mosaic virus, MMV)",
+      "taxonomy": "",
+      "host_plant": "玉米",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "23462887",
+      "doi": "10.1007/s00705-013-1632-8",
+      "title": "Molecular characterization of a novel monopartite begomovirus isolated from Pouzolzia zeylanica in China.",
+      "abstract": "The complete genome sequence of a monopartite begomovirus isolate TY01 was obtained from diseased Pouzolzia zeylanica plants exhibiting golden mosaic symptoms in Baise, Guangxi Province, China. It consisted of 2723 nucleotides (nt) and encoded two ORFs (CP and AV2) in the virion-sense DNA and five ORFs (AC1-AC5) in the complementary-sense DNA. Compared with the DNA-A sequences of other begomoviruses, it has the highest (78.5 %) nucleotide sequence identity with ageratum yellow vein virus (AYVV) isolate AFSP6D from Thailand, which is less than the 89 % identity in the complete genome that has been defined as the threshold value for demarcation of species in the genus Begomovirus, family Geminiviridae. Phylogenetic analysis showed that TY01 was grouped in a separate clade from the other 28 begomovirus isolates. These results indicate that isolate TY01 is a member of a novel Begomovirus species, for which the name \"Pouzolzia golden mosaic virus\" (PGMV) is proposed.",
+      "journal": "Archives of virology",
+      "year": 2013,
+      "pub_date": "2013-07-01",
+      "authors": "Tang Y F; Du Z G; He Z F; She X M; Cai J H",
+      "first_author": "Tang Y F",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Pouzolzia golden mosaic virus (PGMV)",
+      "taxonomy": "双生病毒科(Geminiviridae)，菜豆金色花叶病毒属(Begomovirus)",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "23379770",
+      "doi": "10.1111/tpj.12134",
+      "title": "Microtubules in viral replication and transport.",
+      "abstract": "Viruses use and subvert host cell mechanisms to support their replication and spread between cells, tissues and organisms. Microtubules and associated motor proteins play important roles in these processes in animal systems, and may also play a role in plants. Although transport processes in plants are mostly actin based, studies, in particular with Tobacco mosaic virus (TMV) and its movement protein (MP), indicate direct or indirect roles of microtubules in the cell-to-cell spread of infection. Detailed observations suggest that microtubules participate in the cortical anchorage of viral replication complexes, in guiding their trafficking along the endoplasmic reticulum (ER)/actin network, and also in developing the complexes into virus factories. Microtubules also play a role in the plant-to-plant transmission of Cauliflower mosaic virus (CaMV) by assisting in the development of specific virus-induced inclusions that facilitate viral uptake by aphids. The involvement of microtubules in the formation of virus factories and of other virus-induced inclusions suggests the existence of aggresomal pathways by which plant cells recruit membranes and proteins into localized macromolecular assemblies. Although studies related to the involvement of microtubules in the interaction of viruses with plants focus on specific virus models, a number of observations with other virus species suggest that microtubules may have a widespread role in viral pathogenesis.",
+      "journal": "The Plant journal : for cell and molecular biology",
+      "year": 2013,
+      "pub_date": "2013-07-01",
+      "authors": "Niehl Annette; Peña Eduardo J; Amari Khalid; Heinlein Manfred",
+      "first_author": "Niehl Annette",
+      "categories": [
+        "Host_Virus_Interactions",
+        "Molecular_Characterization"
+      ],
+      "virus_name": "烟草花叶病毒 (Tobacco mosaic virus, TMV), 花椰菜花叶病毒 (Cauliflower mosaic virus, CaMV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "23623981",
+      "doi": "10.1016/j.virusres.2013.04.007",
+      "title": "Agroinoculation of a full-length cDNA clone of cotton leafroll dwarf virus (CLRDV) results in systemic infection in cotton and the model plant Nicotiana benthamiana.",
+      "abstract": "Cotton blue disease is the most important viral disease of cotton in the southern part of South America. Its etiological agent, cotton leafroll dwarf virus (CLRDV), is specifically transmitted to host plants by the aphid vector (Aphis gossypii) and any attempt to perform mechanical inoculations of this virus into its host has failed. This limitation has held back the study of this virus and the disease it causes. In this study, a full-length cDNA of CLRDV was constructed and expressed in vivo under the control of cauliflower mosaic virus 35S promoter. An agrobacterium-mediated inoculation system for the cloned cDNA construct of CLRDV was developed. Northern and immunoblot analyses showed that after several weeks the replicon of CLRDV delivered by Agrobacterium tumefaciens in Gossypium hirsutum plants gave rise to a systemic infection and typical blue disease symptoms correlated to the presence of viral RNA and P3 capsid protein. We also demonstrated that the virus that accumulated in the agroinfected plants was transmissible by the vector A. gossypii. This result confirms the production of biologically active transmissible virions. In addition, the clone was infectious in Nicotiana benthamiana plants which developed interveinal chlorosis three weeks postinoculation and CLRDV was detected both in the inoculated and systemic leaves. Attempts to agroinfect Arabidopsis thaliana plants were irregularly successful. Although no symptoms were observed, the P3 capsid protein as well as the genomic and subgenomic RNAs were irregularly detected in systemic leaves of some agroinfiltrated plants. The inefficient infection rate infers that A. thaliana is a poor host for CLRDV. This is the first report on the construction of a biologically-active infectious full-length clone of a cotton RNA virus showing successful agroinfection of host and non-host plants. The system herein developed will be useful to study CLRDV viral functions and plant-virus interactions using a reverse genetic approach.",
+      "journal": "Virus research",
+      "year": 2013,
+      "pub_date": "2013-07-01",
+      "authors": "Delfosse Verónica C; Casse María F; Agrofoglio Yamila C; Kresic Iván Bonacic; Hopp Horacio E; ... (+2)",
+      "first_author": "Delfosse Verónica C",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "cotton leafroll dwarf virus (CLRDV)",
+      "taxonomy": "",
+      "host_plant": "棉花 (Gossypium hirsutum), 本氏烟 (Nicotiana benthamiana), 拟南芥 (Arabidopsis thaliana)",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "23665893",
+      "doi": "10.1016/j.plaphy.2013.04.008",
+      "title": "vsiRNAs derived from the miRNA-generating sites of pri-tae-miR159a based on the BSMV system play positive roles in the wheat response to Puccinia striiformis f. sp. tritici through the regulation of taMyb3 expression.",
+      "abstract": "Plants live in a complex environment, exposed to stresses, such as unsuitable climates, pests and pathogenic microorganisms. Pathogens are one of the most serious factors that threaten plant growth. Wheat stripe rust, caused by Puccinia striiformis f. sp. tritici (Pst), is one of the most destructive diseases worldwide. Virus-induced gene silencing (VIGS) is a popular tool for the functional analysis of wheat genes, generating abundant small RNAs (sRNAs). sRNAs are key components in gene regulatory networks, silencing corresponding genes at the post-transcriptional level. In this study, we transduced pri-tae-miR159a into plant tissues using the barley stripe mosaic virus (BSMV) system, and demonstrated that vsiRNAs were generated from the same miRNAs generating sites of pri-tae-miR159a, with the function of Dicer RNase III-like classes of endonucleases (DCL4). In addition, the accumulation of vsiRNAs in wheat leaves challenged with Pst Chinese yellow rust 23 (CYR23), resulted in a resistant phenotype, and in the compatible interaction, the sporation of Pst was limited. Whereas, infection with a control construct had no effect on the resistance or susceptibility. The results of the histological observation also supported these phenotype changes. Interestingly, vsiRNAs were also involved in the interactions between wheat and Pst through the tae-miR159-mediated regulation of taMyb3 expression. Moreover, these results also supported the speculation that vsiRNAs were generated from the same sites of pri-tae-miR159a. These studies indicated that vsiRNAs from miRNAs generating sites of pri-tae-miR159a based on the BSMV system play positive roles in the wheat response to Pst through the regulation of taMyb3 expression.",
+      "journal": "Plant physiology and biochemistry : PPB",
+      "year": 2013,
+      "pub_date": "2013-07-01",
+      "authors": "Feng Hao; Zhang Qiong; Li Huayi; Wang Xiaojie; Wang Xiaodong; ... (+3)",
+      "first_author": "Feng Hao",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "大麦条纹花叶病毒 (BSMV)",
+      "taxonomy": "",
+      "host_plant": "小麦",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30722532",
+      "doi": "10.1094/PDIS-10-12-0935-PDN",
+      "title": "First Report of Cowpea mild mottle virus in Cowpea and French Bean in Taiwan.",
+      "abstract": "In 2009, more than 50% of vine type French beans were found bearing severe viral symptoms in a vegetable garden in Nantou County, Taiwan. Infected plants were stunted and exhibited pronounced mottling symptoms on their leaves. The symptomatic plants were mechanically inoculated on Chenopodium quinoa and local lesions developed 7 to 10 days after inoculation. The virus source established by back isolation the single lesion from C. quinoa on French beans developed symptoms similar to those found in the field. Host range test showed that this isolate could only infect leguminous plants, including soybean, mung bean, pea, peanut, asparagus bean, cowpea, adzuki bean, and lima bean, but not cucurbitaceous and solanaceous plants. Since only Cucumber mosaic virus (CMV) has been reported in Taiwan to induce similar symptoms in French beans, we tested both the field collected and inoculated French beans by CMV antiserum in ELISA but obtained a negative result. Due to subsequent electron microscopy studies that found potyvirus and carlavirus like particles in the leaf dips of infected French beans, we conducted reverse transcription (RT)-PCR using generic degenerate primers for potyviruses (Hrp5/Pot1 (2) and PotZ/Pot1 (3)) and carlaviruses (Decarla-u2 (5'-TGCACTGARTCMGAYTATGARGCYTT-3' and Decarla-d1 (5'-GCACATRTCRTCVCCDGCAAA-3') previously designed in our lab. No amplification was found from the potyvirus primers, while the carlavirus one gave an expected amplicon of 285 bp, which was found sharing 81% nucleotide sequence identity with the replicase gene of Cowpea mild mottle virus (CpMMV) (GenBank Accession No. FJ560903). A primer pair (CpMMV-CPu: 5'-TTTACTCTTAggTWATggAgTC-3' and CpMMV-CPd: 5'-CCTATTAAAACACACAAHTCAAA-3') was thus designed to amplify the complete coat protein (CP) gene based on the reported CP sequences and obtained an expected 867-bp product from our French bean isolate. This 867-bp sequence (JX020701) was confirmed to have 97.6% amino acid sequence identities with the CP gene of a Puerto Rican CpMMV isolate (GU191840). In a separate survey, another isolate from asparagus bean (CpMMV-V) causing mild mottling symptom was obtained. Analyses of the CP gene of CpMMV-V (JX070669) confirmed that it shared 88.8% and 97.8% of nucleotide and amino acid sequence identities with the French bean isolate, respectively. Different from most carlaviruses with aphid transmissibility, CpMMV has been shown to be transmitted non-persistently by whiteflies (1). Both CpMMV isolates from Taiwan were confirmed to be transmitted by silver leaf whiteflies (Bemicia argentifolii Bellows and Perring). This is the first record of whitefly transmissible legume virus in Taiwan. Since whitefly has been a problem in agriculture worldwide, CpMMV can be a new emerging threat for Taiwan's legume crop production. References: (1) M. Iwaki et al. Plant Dis. 66:365, 1982. (2) S. S. Pappu et al. J. Virol. Methods 41:9, 1993. (3) F. M. Zerbini et al. Phytopathology 85:746.",
+      "journal": "Plant disease",
+      "year": 2013,
+      "pub_date": "2013-07-01",
+      "authors": "Chang C A; Chien L Y; Tsai C F; Lin Y Y; Cheng Y H",
+      "first_author": "Chang C A",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cowpea mild mottle virus (CpMMV)",
+      "taxonomy": "Betaflexiviridae, Carlavirus",
+      "host_plant": "French bean (Phaseolus vulgaris), cowpea (Vigna unguiculata), asparagus bean, soybean, mung bean, pea, peanut, adzuki bean, lima bean",
+      "location": "台湾南投县",
+      "results": "法国豆分离物与已知CpMMV复制酶基因核苷酸同源性81%，CP基因氨基酸同源性97.6%；另一豇豆分离物CP基因核苷酸同源性88.8%，氨基酸97.8%。两种分离物均可由银叶粉虱传播。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30722547",
+      "doi": "10.1094/PDIS-12-12-1142-PDN",
+      "title": "First Report of Alfalfa mosaic virus Infecting Lavandula × intermedia in Croatia.",
+      "abstract": "Lavandin (Lavandula × intermedia Emeric ex Loiseleur) is cultivated on a large scale in some South European countries for the extraction of essential oils or as an ornamental plant for gardens and landscapes. In May of 2012, virus-like symptoms including bright yellow calico mosaic, leaf distortion, and growth reduction were observed on 15% of lavandin plants in a commercial nursery in Banovo Brdo locality, Baranja County, Republic of Croatia. Leaves from 15 symptomatic lavandin plants were collected and examined by double-antibody sandwich (DAS)-ELISA using commercial antisera (Bioreba AG, Reinach, Switzerland) against two viruses known to infect Lavandula spp.: Alfalfa mosaic virus (AMV) and Cucumber mosaic virus (CMV) (2,3). Commercial positive and negative controls and extracts from healthy lavandin leaves were included in each ELISA. Only AMV was detected serologically in all 15 tested samples. Five plants each of Chenopodium quinoa, C. amaranticolor, and Nicotiana benthamiana were mechanically inoculated with sap from an ELISA-positive sample (70-12) using 0.01 M phosphate buffer (pH 7). Local chlorotic spots accompanied by systemic mosaic on both Chenopodium species and bright yellow mosaic on N. benthamiana were observed 6 and 12 days post-inoculation, respectively. Test plants were assayed by DAS-ELISA and all inoculated plants of each species tested positive for AMV. The presence of AMV in all symptomatic lavandin plants was further confirmed by reverse transcription (RT)-PCR assay. Total nucleic acid was extracted using RNeasy Plant Mini Kit (Qiagen, Hilden, Germany). RT-PCR was performed with the One-Step RT-PCR Kit (Qiagen) using AMV specific primer pair CP AMV1 (5'-TCCATCATGAGTTCTTCAC-3') and CP AMV2 (5'-AGGACTTCATACCTTGACC-3') (1). Total RNAs obtained from the Serbian AMV isolate from alfalfa (GenBank Accession No. FJ527748) and healthy L. × intermedia plant served as the positive and negative control, respectively. The 751-bp amplicons, covering the partial coat protein (CP) gene and 3'-UTR, were obtained from all 15 samples that were serologically positive to AMV as well as from positive control. No amplification product was observed when extract from healthy L. × intermedia plant was used as template in the RT-PCR assay. The RT-PCR product derived from isolate 70-12 was directly sequenced in both directions using the same primer pair as in RT-PCR and deposited in GenBank (JX996119). Multiple sequence alignment of the CP open reading frame was performed by MEGA5 software (4) and revealed that the isolate 70-12 showed the highest nucleotide identity of 99.4% (99.5% amino acid identity) with Serbian AMV isolate from tobacco (FJ527749). To our knowledge, this is the first report of AMV on L. × intermedia in Croatia. Because lavandin is an aromatic plant traditionally and widely grown in Croatia, the presence of AMV could be a limiting factor for its successful production. References: (1) M. M. Finetti-Sialer et al. J. Plant Pathol. 79:115, 1997. (2) T. Kobylko et al. Plant Dis. 92:978, 2008. (3) L. Martínez-Priego et al. Plant Dis. 88:908, 2004. (4) K. Tamura et al. Mol. Biol. Evol. 28:2731, 2011.",
+      "journal": "Plant disease",
+      "year": 2013,
+      "pub_date": "2013-07-01",
+      "authors": "Vrandečić K; Jurković D; Ćosić J; Stanković I; Vučurović A; ... (+2)",
+      "first_author": "Vrandečić K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Alfalfa mosaic virus (AMV)",
+      "taxonomy": "Bromoviridae, Alfamovirus",
+      "host_plant": "Lavandula × intermedia",
+      "location": "Banovo Brdo, Baranja County, Croatia",
+      "results": "15个样品均检出AMV；分离物70-12与塞尔维亚AMV烟草分离物核苷酸同源性99.4%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30722558",
+      "doi": "10.1094/PDIS-01-13-0088-PDN",
+      "title": "First Report of Impatiens necrotic spot virus on Begonia in Bosnia and Herzegovina.",
+      "abstract": "Impatiens necrotic spot virus (INSV) and Tomato spotted wilt virus (TSWV) are the most serious viral pathogens in the production of ornamental plants in Europe and North America (1). During a survey for the presence of tospoviruses in July 2012, potted begonia hybrids (Begonia × tuberhybrida Voss) exhibiting foliar chlorotic rings and zonal spots accompanied by leaf necrosis and distortion, were observed in a greenhouse in the vicinity of Banja Luka (Bosnia and Herzegovina). Leaf samples collected from 12 symptomatic plants were analyzed for the presence of INSV and TSWV by commercial double-antibody sandwich (DAS)-ELISA kits (Bioreba AG, Reinach, Switzerland). Commercial positive and negative controls and extracts from healthy begonia leaves were included in each ELISA. INSV was detected serologically in all 12 begonia samples and all tested samples were negative for TSWV. Five healthy plants of each Petunia × hybrida and Nicotiana benthamiana were mechanically inoculated with sap from an ELISA-positive sample (157-12) using chilled 0.01 M phosphate buffer (pH 7) containing 0.1% sodium sulphite. Local necrotic lesions on P. × hybrida and systemic chlorotic mottling on N. benthamiana were observed on all inoculated plants 4 and 10 days post-inoculation, respectively. For further confirmation of INSV infection, total RNAs were extracted from all ELISA-positive begonia plants as well as mechanically inoculated N. benthamiana plants with the RNeasy Plant Mini Kit (Qiagen, Hilden, Germany) and used as template in reverse transcription (RT)-PCR. RT-PCR was performed with the OneStep RT-PCR Kit (Qiagen) using primer pair INSV-589 and TOS-R15 (3), specific to the partial INSV nucleocapsid (N) gene. Total RNA obtained from Serbian INSV isolate from a begonia (GenBank Accession No. HQ724289) and RNA extracts from healthy begonia plants were used as positive and negative controls, respectively. All naturally and mechanically infected plants as well as the positive control yielded an amplicon of the expected size (589 bp), while no amplification products were obtained from the healthy controls. The RT-PCR product derived from the isolate 157-12 was sequenced directly after purification with QIAquick PCR Purification Kit (Qiagen) and submitted to GenBank (KC494869). Pairwise comparison of the 157-12 isolate N sequence with other homologous sequences available in GenBank, conducted using MEGA5 software (2), revealed that begonia isolate from Bosnia and Herzegovina showed the highest nucleotide identity of 99.7% (100% amino acid identity) with the Chinese INSV isolate (FN400772) originating from Oncidium sp. To our knowledge, this is the first report of INSV on begonia in Bosnia and Herzegovina. Begonias are very popular and widely grown ornamentals in Bosnia and Herzegovina and the presence of a new and devastating pathogen could represent a serious threat for its production. Since begonia is commonly grown together with numerous ornamental plants susceptible to INSV, further investigations are needed in order to prevent spread of this potentially harmful pathogen to new hosts in Bosnia and Herzegovina. References: (1) M. L. Daughtrey et al. Plant Dis. 81:1220, 1997. (2) K. Tamura et al. Mol. Biol. Evol. 28:2731, 2011. (3) H. Uga and S. Tsuda. Phytopathology 95:166, 2005.",
+      "journal": "Plant disease",
+      "year": 2013,
+      "pub_date": "2013-07-01",
+      "authors": "Trkulja V; Salapura J Mihić; Ćurković B; Stanković I; Bulajić A; ... (+2)",
+      "first_author": "Trkulja V",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Impatiens necrotic spot virus (INSV)",
+      "taxonomy": "Tospoviridae, Orthotospovirus",
+      "host_plant": "Begonia × tuberhybrida Voss",
+      "location": "波斯尼亚和黑塞哥维那，巴尼亚卢卡附近",
+      "results": "12株秋海棠中INSV血清学阳性，机械接种产生症状，RT-PCR扩增出589bp片段，序列与INSV N基因99.7%核苷酸同源性。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30722553",
+      "doi": "10.1094/PDIS-11-12-1103-PDN",
+      "title": "First Report of Fragaria chiloensis cryptic virus, Fragaria chiloensis latent virus, Strawberry mild yellow edge virus, Strawberry necrotic shock virus, and Strawberry pallidosis associated virus in Single and Mixed Infections in Strawberry in Central Mexico.",
+      "abstract": "For phytosanitary purposes, the prevalence and incidence of viruses found in strawberry production within a centralized breeding program was investigated in Abasolo and Irapuato Counties, Guanajuato State, Mexico. Single and mixed infections of Strawberry mottle virus (SMoV) and Strawberry crinkle virus (SCV) were originally reported in the area (3), and subsequently, Strawberry latent ringspot virus (SLRSV) was also found (4). Samples of strawberry plants showing viral symptoms: stunting, mild chlorosis and reddening, occasional wrinkled, curled, and deformed leaves that may exhibit mottling, and chlorotic spots, forming a putative virus complex were collected in April and December 2007 and July and December 2008. The detection and identification of viruses reported in the United States, the country of origin of most of the imported plantlets, was carried out with sets of primers for 11 viruses, through reverse transcription (RT)-PCR (developed by Robert Martin and Ioannis Tzanetakis in Corvallis, OR). The endogenous NADH 2 subunit was employed to test the quality of the RNA extracted. Amplification conditions were: 40 cycles of 1 min at each temperature, denaturation at 95°C, annealing at 50°C for Strawberry necrotic shock virus (SNSV); 52°C for Strawberry mild yellow edge virus (SMYEV); 55°C for Fragaria chiloensis latent virus (FClLV), Strawberry pallidosis associated virus (SPaV), Fragaria chiloensis cryptic virus (FClCV), and SMoV; and 58°C for SCV and NADH dehydrogenase, followed by a final extension at 72°C of 5 min after completion of the 40 cycles. The cloning and nucleotide sequencing of amplified fragments revealed the presence of seven viral species in 40 samples collected. These were FClLV, SCV, SMoV, SNSV, SPaV, and SMYEV, which were allocated GenBank accession numbers of JQ629412, JQ629413, JQ629414, JQ629415, JQ629416, and JQ629417, respectively. Strawberry UC-4 and UC-10 (1,2) were planted as indicators of viral infections on an experimental plot. All seven viruses were detected in single or mixed infections. SMoV was the most commonly found in combination with other viruses. Out of 40 samples, 35 were positive for the presence of viruses and six had single infections, of which five had SMoV and one had SPaV. The remaining 29 samples had mixed infections with two or more viruses in a total of 22 combinations. The combination of FCICV + SMoV was present in five samples, whereas the combination of SMoV + SMYEV was in two samples. All other samples had two and up to six different viruses per plant. SMoV was detected in 26 out of the 40 samples tested. SNSV and FClCV were detected in 14 samples. SMYEV was present in 13 samples. SCV was present in nine samples, whereas SPaV and FClLV were found in eight samples each. To the best of our knowledge, this is the first report of FClLV, FClCV, SNSV, SMYEV, and SPaV in Mexico. References: (1) N. W. Frazier. Plant Dis. Rep. 58:28, 1974. (2) N. W. Frazier. Plant Dis. Rep. 58:203, 1974. (3) D. Teliz-Ortiz and A. Trejo-Reyes. Rev. Mex. Fitopatol. 7:38, 1989. (4) L. Pérez-Moreno et al. Rev. Mex. Fitopatol. 22:187, 2004.",
+      "journal": "Plant disease",
+      "year": 2013,
+      "pub_date": "2013-07-01",
+      "authors": "Silva-Rosales L; Vázquez-Sánchez M N; Gallegos V; Ortiz-Castellanos M L; Rivera-Bustamante R; ... (+2)",
+      "first_author": "Silva-Rosales L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Fragaria chiloensis cryptic virus (FClCV), Fragaria chiloensis latent virus (FClLV), Strawberry mild yellow edge virus (SMYEV), Strawberry necrotic shock virus (SNSV), Strawberry pallidosis associated virus (SPaV), 以及 Strawberry mottle virus (SMoV), Strawberry crinkle virus (SCV)",
+      "taxonomy": "未提及",
+      "host_plant": "草莓 (Fragaria × ananassa)",
+      "location": "墨西哥，瓜纳华托州，阿瓦索洛县和伊拉普阿托县",
+      "results": "40份样品中35份阳性，6份单侵染（5份SMoV，1份SPaV），29份混合侵染（22种组合），SMoV检出率最高（26/40）。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30722569",
+      "doi": "10.1094/PDIS-01-13-0125-PDN",
+      "title": "First Report of Cucurbit chlorotic yellows virus Infecting Cucumber, Melon, and Squash in Iran.",
+      "abstract": "Yellowing diseases of field- and greenhouse-grown cucurbits are becoming increasingly important in many cucurbit cultivation areas in Iran. Virus surveys were conducted from 2011 to 2012 in greenhouse-grown cucumber (Cucumis sativus L.) and field-cultivated cucumber, squash (Cucurbita sp.) and melon (Cucumis melo L.) in Tehran, Semnan, Bushehr, Hormozgan, Isfahan, Yazd, and Fars provinces, the major cucurbit-growing areas in Iran. Leaf samples with various symptoms, e.g., chlorosis, interveinal chlorotic spots on lower leaves, bright yellow color or sever yellowing on older leaves, were collected and screened for the presence of the whitefly transmitted criniviruses (family Closteroviridae) Cucurbit chlorotic yellows virus (CCYV) and Cucurbit yellow stunting disorder virus (CYSDV) through double-antibody sandwich (DAS)-ELISA, using CCYV and CYSDV specific antisera (DSMZ, Germany). The ELISA results showed that of 347 cucumber leaf samples originating from cucumber greenhouses, 170 and 65 were positive for CCYV and CYSDV, respectively, and 45 samples were infected with both viruses. In addition, of 147 leaf samples collected from melon, cucumber, and squash grown in open fields, 57 and 53 were infected with CCYV and CYSDV, respectively, and 14 were infected with both viruses. These results indicate that these two viruses are widely distributed on these cucurbit crops in Iran. CCYV was not detected in Bushehr and CYSDV was not detected in Isfahan and Hormozgan provinces. To confirm the presence of CCYV and CYSDV, total RNA was extracted (Sigma Chemical, St. Louis, MO) from 18 samples that reacted positive in DAS-ELISA originating from different surveyed provinces. RT-PCR was carried out using specific primers Crini-s2 (5'-CATTCCTACCTGTTTAGCCA-3') (2) and Crini-as1 (5'-ATCCTTCGCAGTGAAAAACC-3') to amplify a 460-bp fragment of the HSP70 gene and CCYV using specific primers CCYV-HSP-F1 (5'-TGCGTATGTCAATGGTGTTATG-3') and CCYV-HSP-R1 (5'-ATCCTTCGCAGTGAAAAACC-3') to amplify a 462-bp fragment of the HSP70 gene (latter 3 primers from [3]). Expected DNA fragments for CYSDV and CCYV were amplified from 11 (CCYV 7/11, CYSDV 4/11) of 18 samples but not from any of the healthy controls. Further analysis by sequencing three selected PCR products amplified with primers CCYV-HSP-F1/R1 showed complete consensus among the sequences, and in comparison with sequences available at GenBank, the highest identities were obtained to Asian CCYV isolates (94% nt/98% aa identity). The CCYV sequences were deposited in GenBank under accessions KC559449 to KC559451. The identity of the amplified CYSDV DNA could also be confirmed by sequencing of three PCR products. CCYV has first been proven to occur in different countries in East Asia and has recently been reported from Sudan (2) and Lebanon (1), indicating the putative spread of the virus wherever cucurbits are grown and its vector, the whitefly Bemisia tabaci, is present. Large populations of whiteflies were present in all surveyed areas. However, to our knowledge, this is the first report for the occurrence of CCYV in Iran. In conclusion, the presence of CCYV and CYSDV in the major cucurbit growing provinces and the large whitefly population pose a serious threat to cucurbit production in Iran. References: (1) P. E. Abrahamian et al. Plant Dis. 96:1704, 2012. (2) K. Hamed et al. Plant Dis. 95:1321, 2011. (3) R. Zeng et al. Plant Dis. 95:354, 2011.",
+      "journal": "Plant disease",
+      "year": 2013,
+      "pub_date": "2013-07-01",
+      "authors": "Bananej K; Menzel W; Kianfar N; Vahdat A; Winter S",
+      "first_author": "Bananej K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cucurbit chlorotic yellows virus (CCYV) and Cucurbit yellow stunting disorder virus (CYSDV)",
+      "taxonomy": "Closteroviridae, Crinivirus",
+      "host_plant": "黄瓜 (Cucumis sativus)、甜瓜 (Cucumis melo)、南瓜 (Cucurbita sp.)",
+      "location": "伊朗德黑兰、塞姆南、布什尔、霍尔木兹甘、伊斯法罕、亚兹德、法尔斯等省",
+      "results": "温室黄瓜中CCYV阳性率49%，CYSDV 18.7%，田间样本中两病毒阳性率分别为38.8%和36.1%。序列与亚洲分离物同源性94% nt/98% aa。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30722559",
+      "doi": "10.1094/PDIS-01-13-0089-PDN",
+      "title": "First Report of Cucumber mosaic virus Infecting Peperomia tuisana in Serbia.",
+      "abstract": "Peperomia tuisana C.DC. ex Pittier (family Piperaceae) is an attractive succulent grown as an ornamental. Despite its tropical origins, it can be successfully grown indoors in any climate. In March 2012, three samples of P. tuisana showing virus-like symptoms were collected from a commercial greenhouse in Zemun (District of Belgrade, Serbia) in which estimated disease incidence was 80%. Infected plants showed symptoms including necrotic ringspots and line patterns that enlarged and caused necrosis of leaves. A serious leaf drop led to growth reduction and even death of the plant. Leaves from three symptomatic P. tuisana plants were sampled and analyzed by double-antibody sandwich (DAS)-ELISA using commercial diagnostic kits (Bioreba AG, Reinach, Switzerland) against the most common viral pathogens of ornamentals: Cucumber mosaic virus (CMV), Tomato spotted wilt virus (TSWV), and Impatiens necrotic spot virus (INSV) (1,2). Commercial positive and negative controls were included in each ELISA. Serological analyses showed that all plants were positive for CMV and negative for TSWV and INSV. The ELISA-positive sample (isolate 1-12) was mechanically inoculated onto five plants each of three test species as well as of healthy young P. tuisana using 0.01 M phosphate buffer (pH 7). Chlorotic local lesions on Chenopodium quinoa and severe mosaic and leaf malformations were observed on all inoculated Nicotiana tabacum 'Samsun' and N. glutinosa. Also, the virus was successfully mechanically transmitted to P. tuisana that reacted with symptoms identical to those observed on the original host plants. All mechanically inoculated plants were positive for CMV in DAS-ELISA. For further confirmation of CMV infection, reverse transcription (RT)-PCR was performed on extracts made from symptomatic P. tuisana, N. tabacum 'Samsun,' and N. glutinosa leaf materials. Total RNAs were extracted with the RNeasy Plant Mini Kit (Qiagen, Hilden, Germany) and RT-PCR was carried out using One-Step RT-PCR Kit (Qiagen). A CMV-specific primer pair, CMVCPfwd and CMVCPrev (3), which amplifies an 871-bp fragment of the entire coat protein (CP) gene and part of 3'- and 5'-UTRs, were used for both amplification and sequencing. Total RNAs obtained from the Serbian CMV isolate (HM065510) and healthy P. tuisana were used as positive and negative controls, respectively. A product of the correct predicted size was obtained in all naturally and mechanically infected plants, as well as positive control. No amplicon was recorded in the healthy control. The amplified product derived from isolate 1-12 was purified (QIAquick PCR Purification Kit, Qiagen), directly sequenced in both directions, deposited in GenBank (KC505441), and analyzed by MEGA5 software (4). Sequence comparison of the complete CP gene (657 nt) revealed that the Serbian isolate 1-12 shared the highest nucleotide identity of 99.1% (99.5% amino acid identity) with the Japanese isolate (AB006813). To our knowledge, this is the first report on the occurrence of CMV in P. tuisana in Serbia. This is also an important discovery since P. tuisana is commonly grown together with other ornamental hosts of CMV, and thus could represent a serious threat for future expansion of CMV in the greenhouse floriculture industry in Serbia. References: (1) M. L. Daughtrey et al. Plant Dis. 81:1220, 1997. (2) S. Flasinski et al. Plant Dis. 79:843, 1995. (3) K. Milojevic et al. Plant Dis. 96:1706, 2012. (4) K. Tamura et al. Mol. Biol. Evol. 28:2731, 2011.",
+      "journal": "Plant disease",
+      "year": 2013,
+      "pub_date": "2013-07-01",
+      "authors": "Milojević K; Stanković I; Vučurović A; Ristić D; Milošević D; ... (+2)",
+      "first_author": "Milojević K",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cucumber mosaic virus (CMV)",
+      "taxonomy": "Bromoviridae, Cucumovirus",
+      "host_plant": "Peperomia tuisana",
+      "location": "塞尔维亚贝尔格莱德泽蒙",
+      "results": "所有症状植株CMV ELISA阳性，机械接种成功，CP基因序列与日本分离物99.1%同源。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "30722554",
+      "doi": "10.1094/PDIS-12-12-1198-PDN",
+      "title": "First Report of Raspberry bushy dwarf virus in Andean Blackberry (Rubus glaucus) in Central Ecuador.",
+      "abstract": "During the past two decades, several viruses have been identified from Rubus spp. in wild and commercial plantings around the world (2). In Ecuador, approximately 14 tons of blackberries are produced each year from an estimated area of 5,500 ha. In 2012, a preliminary survey was conducted to determine the presence of RNA viruses in Rubus glaucus, the most prevalent blackberry in Ecuador. Fifteen plants showing leaf mottling and severe mosaic were leaf-sampled from each of five different fields in Azuay Province. A total of 12 pooled samples of 20 g were obtained from the collected symptomatic tissue and used for dsRNA extraction using a cellulose-based protocol for detection of RNA viruses in plants (3). Three dsRNA segments of approximately 5 kbp, 2 kbp, and 900 bp were observed from all 12 dsRNA preparations. The dsRNA was heat-denatured and used as template for the generation of cDNA library using the universal random primer 5'-GCCGGAGCTCTGCAGAATTCNNNNNN-3', for reverse transcription (RT), and the anchor primer 5'-GCCGGAGCTCTGCAGAATTC-3'for PCR as described (1). The PCR products were cloned using a StrataClone Kit (Agilent, CA) and sequenced (Macrogen, Korea). Sequence analysis revealed the presence of Raspberry bushy dwarf virus (RBDV), a pollen-borne Idaeovirus naturally found in several Rubus spp. worldwide. Approximately 120 RBDV sequences obtained from the Ecuadorean isolate were assembled into two contigs belonging to RNA1 and RNA2. Both sequences were re-confirmed by RT-PCR using specific primers. Partial sequences were assigned GenBank Accessions KC315894, KC315893, and KC315892 for the replicase, MP and CP, respectively. Furthermore, BLAST searches showed that the nucleotide sequence corresponding to the replicase was 95% similar to an isolate from the resistance breaking R15 strain (S51557.1), whereas the MP and CP nucleotide sequences were up to 98% similar to a Slovenian isolate (EU796088.1). Primers designed to amplify a 427-bp portion of the CP were used to detect RBDV from four blackberry plantings in two distant production areas: Ambato in Tungurahua Province and Paute in Azuay Province. Leaf mottling and severe mosaic was observed in 90% of blackberry fields in those two locations. Leaf samples (n = 90) were randomly collected from both symptomatic and asymptomatic plants in each location. In Ambato, RBDV was detected in 50% and 40% of symptomatic and asymptomatic plants, respectively. In Paute, RBDV was present in 70% of symptomatic plants and 29% of asymptomatic plants. The presence of RBDV in asymptomatic plants suggests the virus might not be the sole causal agent of the disorder. Further studies are needed to determine the role of RBDV in the observed symptoms, since virus complexes responsible for increased severity of symptoms have been commonly reported in Rubus spp. (4). R. glaucus is native to the tropical highlands (from Ecuador to Mexico) and differs from blackberries commercially grown in the United States and Europe. Therefore, RBDV-induced symptoms reported in blackberry grown in the United States and Europe may not be extrapolated to the Andes berry. To the best of our knowledge, this is the first report of RBDV from blackberry in Ecuador. References: (1) P. Froussard. Nucleic Acids Res. 20:2900, 1992. (2) R. R. Martin et al. Plant Dis. 97:168, 2013. (3). T. J. Morris and J. A. Dodds. Phytopathology 69:854. 1979. (4) D. F. Quito-Avila et al. J. Virol. Methods 179:38, 2012.",
+      "journal": "Plant disease",
+      "year": 2013,
+      "pub_date": "2013-07-01",
+      "authors": "Quito-Avila D F; Ibarra M A; Alvarez R A; Espinoza L; Ratti M F; ... (+2)",
+      "first_author": "Quito-Avila D F",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Raspberry bushy dwarf virus (RBDV)",
+      "taxonomy": "Idaeovirus属",
+      "host_plant": "Rubus glaucus (安第斯黑莓)",
+      "location": "厄瓜多尔，阿苏艾省、通古拉瓦省（安巴托、保特）",
+      "results": "观察到三个dsRNA片段（~5kbp, ~2kbp, ~900bp）；序列分析鉴定为RBDV，与R15株系和斯洛文尼亚分离物高度相似；RT-PCR显示无症状植株带毒率为29%-50%。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

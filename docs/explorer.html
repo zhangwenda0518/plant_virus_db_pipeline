@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -55,12 +55,12 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
     <div id="filters" style="display:none">
       <div class="row">
         <div class="field">
-          <label>基因组结构 (Category) <span class="cnt" id="catCnt"></span></label>
+          <label>Genome Structure (Category) <span class="cnt" id="catCnt"></span></label>
           <select id="category" multiple></select>
           <span class="select-all" onclick="toggleAll('category')">Select All / Deselect All</span>
         </div>
         <div class="field">
-          <label>病毒科 (Family) <span class="cnt" id="famCnt"></span></label>
+          <label>Virus Family <span class="cnt" id="famCnt"></span></label>
           <select id="family" multiple></select>
           <span class="select-all" onclick="toggleAll('family')">Select All / Deselect All</span>
           <div class="hint">Ctrl/Cmd+Click to select multiple</div>
@@ -68,13 +68,13 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
       </div>
       <div class="row">
         <div class="field">
-          <label>检索宿主种类 (Host) <span class="cnt" id="hostCnt"></span></label>
+          <label>Search Host Species (Host) <span class="cnt" id="hostCnt"></span></label>
           <select id="host" multiple></select>
           <span class="select-all" onclick="toggleAll('host')">Select All / Deselect All</span>
           <div class="hint">Ctrl/Cmd+Click to select multiple</div>
         </div>
         <div class="field">
-          <label>分析目标国家/地区 (Country) <span class="cnt" id="ctryCnt"></span></label>
+          <label>Target Country/Region <span class="cnt" id="ctryCnt"></span></label>
           <select id="country" multiple></select>
           <span class="select-all" onclick="toggleAll('country')">Select All / Deselect All</span>
           <div class="hint">Blank = all regions</div>
@@ -82,7 +82,7 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
       </div>
       <div class="row">
         <div class="field" style="flex:2">
-          <label>目标病毒物种 (Virus Species) <span class="cnt" id="spCnt"></span></label>
+          <label>Target Virus Species <span class="cnt" id="spCnt"></span></label>
           <select id="virus" multiple></select>
           <span class="select-all" onclick="toggleAll('virus')">Select All / Deselect All</span>
           <div class="hint">Ctrl/Cmd+Click to select multiple · blank = all</div>
@@ -90,7 +90,7 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
       </div>
       <div class="row">
         <div class="field" style="flex:2">
-          <label>数据报告年度跨度</label>
+          <label>Report Year Span</label>
           <div class="slider-row">
             <input type="range" id="yearMin" min="1970" max="2026" value="1970" oninput="updateYear()">
             <input type="range" id="yearMax" min="1970" max="2026" value="2026" oninput="updateYear()">
@@ -179,38 +179,41 @@ function launch() {
 })();
 </script>
 
-<button id="ai-chat-btn" onclick="toggleChat()" title="AI助手">?</button>
+<button id="ai-chat-btn" onclick="toggleChat()" title="AI Assistant">?</button>
 <div id="ai-chat-panel">
-<div class="chat-header"><span>RefDB AI助手</span><div><button onclick="toggleSettings()" style="background:none;border:none;color:#fff;font-size:14px;cursor:pointer;margin-right:8px" title="设置">⚙</button><button onclick="toggleChat()">×</button></div></div>
+<div class="chat-header"><span>RefDB AI Assistant</span><div><button onclick="toggleSettings()" style="background:none;border:none;color:#fff;font-size:14px;cursor:pointer;margin-right:8px" title="Settings">⚙</button><button onclick="toggleChat()">×</button></div></div>
 <div id="ai-settings-inline" style="display:none;padding:10px 12px;border-bottom:1px solid #eee;background:#f8f9fa">
 <div style="display:flex;gap:6px;flex-wrap:wrap">
 <input id="ai-api-key" type="password" placeholder="API Key (sk-...)" style="flex:1;min-width:120px;padding:5px 8px;border:1px solid #dee2e6;border-radius:4px;font-size:11px">
 <input id="ai-model" value="deepseek-chat" style="width:120px;padding:5px 8px;border:1px solid #dee2e6;border-radius:4px;font-size:11px">
-<button onclick="saveAISettings()" style="padding:5px 10px;background:#1a5276;color:#fff;border:none;border-radius:4px;font-size:11px;cursor:pointer">保存</button>
+<button onclick="saveAISettings()" style="padding:5px 10px;background:#1a5276;color:#fff;border:none;border-radius:4px;font-size:11px;cursor:pointer">Save</button>
 </div></div>
 <div class="preset-qs" id="preset-qs">
-<button class="preset-q" onclick="askPreset('植物病毒有多少个科？哪些科最大？')">植物病毒科分类</button>
-<button class="preset-q" onclick="askPreset('分节段病毒和非分节段病毒有什么区别？')">分节段vs非分节段</button>
-<button class="preset-q" onclick="askPreset('植物病毒的主要宿主类型有哪些？')">病毒宿主类型</button>
-<button class="preset-q" onclick="askPreset('dsDNA和ssRNA病毒在植物中各占多少？')">基因组类型分布</button>
+<button class="preset-q" onclick="askPreset('How many plant virus families? Largest ones?')">Plant Virus Family Classification</button>
+<button class="preset-q" onclick="askPreset('Segmented vs non-segmented viruses: differences?')">Segmented vs Non-segmented</button>
+<button class="preset-q" onclick="askPreset('Main host types of plant viruses?')">Virus Host Type</button>
+<button class="preset-q" onclick="askPreset('dsDNA vs ssRNA proportions in plants?')">Genome Type Distribution</button>
 </div>
 
-<div class="chat-msgs" id="chat-msgs"><div class="chat-msg system">你好！你好！我是RefDB AI助手。可以直接点下方预设问题，或输入你的问题。</div></div>
+<div class="chat-msgs" id="chat-msgs"><div class="chat-msg system">Hello! I am the RefDB AI Assistant. Click a preset question below or type your own.</div></div>
 <div class="chat-input-row">
-<input id="chat-input" placeholder="输入问题..." onkeydown="if(event.key==='Enter')sendMsg()">
-<button onclick="sendMsg()">发送</button>
+<input id="chat-input" placeholder="Type a question..." onkeydown="if(event.key==='Enter')sendMsg()">
+<button onclick="sendMsg()">Send</button>
 </div></div>
 <script>
 var chatConv=[],chatOpen=false;function askPreset(q){document.getElementById("chat-input").value=q;sendMsg()}
 function toggleChat(){chatOpen=!chatOpen;document.getElementById("ai-chat-panel").style.display=chatOpen?"flex":"none"}
 function toggleSettings(){var p=document.getElementById("ai-settings-inline");p.style.display=p.style.display==="none"?"block":"none"}
-function saveAISettings(){localStorage.setItem("ai_api_key",document.getElementById("ai-api-key").value);localStorage.setItem("ai_model",document.getElementById("ai-model").value);document.getElementById("ai-settings-inline").style.display="none";addChatMsg("system","设置已保存")}
+function saveAISettings(){localStorage.setItem("ai_api_key",document.getElementById("ai-api-key").value);localStorage.setItem("ai_model",document.getElementById("ai-model").value);document.getElementById("ai-settings-inline").style.display="none";addChatMsg("system","Settings saved")}
 (function(){var k=localStorage.getItem("ai_api_key");if(k)document.getElementById("ai-api-key").value=k;var m=localStorage.getItem("ai_model");if(m)document.getElementById("ai-model").value=m})();
 function addChatMsg(role,text){var d=document.createElement("div");d.className="chat-msg "+role;d.textContent=text;document.getElementById("chat-msgs").appendChild(d);document.getElementById("chat-msgs").scrollTop=document.getElementById("chat-msgs").scrollHeight}
 function showTyping(){var d=document.createElement("div");d.className="ai-typing";d.id="typing-indicator";d.innerHTML="<span></span><span></span><span></span>";document.getElementById("chat-msgs").appendChild(d)}
 function hideTyping(){var t=document.getElementById("typing-indicator");if(t)t.remove()}
-async function sendMsg(){var inp=document.getElementById("chat-input");var msg=inp.value.trim();if(!msg)return;addChatMsg("user",msg);inp.value="";chatConv.push({role:"user",content:msg});var key=localStorage.getItem("ai_api_key")||"";// Server keyshowTyping();try{var resp=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:msg,api_key:key,api_url:"https://api.deepseek.com/v1/chat/completions",model:localStorage.getItem("ai_model")||"deepseek-chat",conversation:chatConv.slice(-8),context:"reference_db"})});var data=await resp.json();hideTyping();addChatMsg("ai",data.reply);chatConv.push({role:"assistant",content:data.reply})}catch(e){hideTyping();addChatMsg("system","请求失败: "+e.message)}}
+async function sendMsg(){var inp=document.getElementById("chat-input");var msg=inp.value.trim();if(!msg)return;addChatMsg("user",msg);inp.value="";chatConv.push({role:"user",content:msg});var key=localStorage.getItem("ai_api_key")||"";// Server keyshowTyping();try{var resp=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:msg,api_key:key,api_url:"https://api.deepseek.com/v1/chat/completions",model:localStorage.getItem("ai_model")||"deepseek-chat",conversation:chatConv.slice(-8),context:"reference_db"})});var data=await resp.json();hideTyping();addChatMsg("ai",data.reply);chatConv.push({role:"assistant",content:data.reply})}catch(e){hideTyping();addChatMsg("system","Request failed: "+e.message)}}
 </script>
+
+<script src="/reference/i18n.js"></script>
+<script>PVDB_i18n.init({navSelector:'nav'});</script>
 
 </body>
 </html>

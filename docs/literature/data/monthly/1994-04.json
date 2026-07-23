@@ -1,0 +1,100 @@
+{
+  "month": "1994-04",
+  "generated": "2026-07-13 02:59:42",
+  "total": 4,
+  "by_category": {
+    "New_Virus": 3,
+    "Host_Virus_Interactions": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "8190070",
+      "doi": "10.1007/BF00283875",
+      "title": "A gene encoding a novel isoform of the PR-1 protein family from tomato is induced upon viroid infection.",
+      "abstract": "A Lycopersicon esculentum cDNA clone encoding an acidic-type pathogenesis-related protein (PR-1a1) was isolated, sequenced and characterized. It contains an open reading frame of 175 amino acids and the mature protein, after cleavage of the 21 amino acid signals peptide, has a pI of 5.24. The protein shows highest homology (75% identity) with the basic pathogenesis-related prb-1b protein from tobacco. The PR-1a1 gene shows constitutive expression in roots from tomato plants. It is expressed in leaves and stems upon viroid infection, and appears to be induced by ethylene. Comparative studies of this gene and a related basic isoform of PR-1 indicate that the expression of these two members of the PR-1 gene family in tomato may be differentially regulated upon viroid infection.",
+      "journal": "Molecular & general genetics : MGG",
+      "year": 1994,
+      "pub_date": "1994-04-01",
+      "authors": "Tornero P; Conejero V; Vera P",
+      "first_author": "Tornero P",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "类病毒（未指定）",
+      "taxonomy": "未提及",
+      "host_plant": "番茄 (Lycopersicon esculentum)",
+      "location": "未提及",
+      "results": "获得编码175个氨基酸的cDNA，成熟蛋白pI 5.24，与烟草碱性PR-1b同源性75%；基因在根中组成型表达，在茎叶中受类病毒感染和乙烯诱导；与碱性PR-1基因表达差异。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "24185876",
+      "doi": "10.1007/BF00222388",
+      "title": "Restriction fragment length polymorphism analysis of loci associated with disease resistance genes and developmental traits in Pisum sativum L.",
+      "abstract": "An F2 population of pea (Pisum sativum L.) consisting of 174 plants was analysed by restriction fragment length polymorphism (RFLP) and random amplified polymorphic DNA (RAPD) techniques. Ascochyta pisi race C resistance, plant height, flowering earliness and number of nodes were measured in order to map the genes responsible for their variation. We have constructed a partial linkage map including 3 morphological character genes, 4 disease resistance genes, 56 RFLP loci, 4 microsatellite loci and 2 RAPD loci. Molecular markers linked to each resistance gene were found: Fusarium wilt (6 cM from Fw), powdery mildew (11 cM from er) and pea common Mosaic virus (15 cM from mo). QTLs (quantitative traits loci) for Ascochyta pisi race C resistance were mapped, with most of the variation explained by only three chromosomal regions. The QTL with the largest effect, on chromosome 4, was also mapped using a qualitative, Mendelian approach. Another QTL displayed a transgressive segregation, i.e. the parental line that was susceptible to Ascochyta blight had a resistance allele at this QTL. Analysis of correlations between developmental traits in terms of QTL effects and positions suggested a common genetic control of the number of nodes and earliness, and a loose relationship between these traits and height.",
+      "journal": "TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik",
+      "year": 1994,
+      "pub_date": "1994-04-01",
+      "authors": "Dirlewanger E; Isaac P G; Ranade S; Belajouza M; Cousin R; ... (+1)",
+      "first_author": "Dirlewanger E",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "豌豆普通花叶病毒 (Pea common mosaic virus)",
+      "taxonomy": "",
+      "host_plant": "豌豆 (Pisum sativum L.)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "8073766",
+      "doi": "",
+      "title": "[A new species of Pseudomonas].",
+      "abstract": "A strain No. 9191 isolated from fruit juice mineral drink is gram-negative short-rod. It differs from reported species of Pseudomonas in morphological, physiological and biochemical characteristics. Main characteristics of No. 9191 are single polar flagelled, oxidase and catalase positive, no acid from glucose but producing alkali, nitrate reduced to nitrite, inability to hydrolize gelatin and starch, arginine dihydrolase absent, no growth in presence of 0.85% NaCl. The G+C mol% of DNA is 65.15. It is named Pseudomonas halosensibilis Zou & Cai nov. sp. by the sensibility property for salt.",
+      "journal": "Wei sheng wu xue bao = Acta microbiologica Sinica",
+      "year": 1994,
+      "pub_date": "1994-04-01",
+      "authors": "Zou G; Li W; Gan Q; Zou L; Xu J; ... (+4)",
+      "first_author": "Zou G",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "7945849",
+      "doi": "",
+      "title": "[A second discussion on the position of a new species mianbixie].",
+      "abstract": "The characteristics of Dioscorea spongiosa, or in Chinese Mianbixie, are clearly different from those of D. septemloba in morphology, histology, pollen etc. The establishment of the position of the new species of D. spongiosa is well grounded.",
+      "journal": "Zhongguo Zhong yao za zhi = Zhongguo zhongyao zazhi = China journal of Chinese materia medica",
+      "year": 1994,
+      "pub_date": "1994-04-01",
+      "authors": "Zhao W L; He J Y; Xi J Q",
+      "first_author": "Zhao W L",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

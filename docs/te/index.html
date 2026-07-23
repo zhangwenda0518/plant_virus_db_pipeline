@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Plant TE & EVE Database — Transposons and Endogenous Viral Elements</title>
+<title>Plant TE & EVE Database -- Transposons and Endogenous Viral Elements</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 *{box-sizing:border-box}
@@ -43,226 +43,175 @@ table.dltbl tr:hover{background:#faf5fc}
 .tag-green{background:#e8f5e9;color:#2e7d32}
 .tag-orange{background:#fff3e0;color:#e65100}
 .tag-blue{background:#e3f2fd;color:#1565c0}
+.srch{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.srch input{padding:8px 14px;border:1px solid #ddd;border-radius:6px;font-size:13px;width:240px}
+.srch select{padding:8px 12px;border:1px solid #ddd;border-radius:6px;font-size:13px}
+.srch .cnt{font-size:12px;color:#999;margin-left:auto}
+.tbl-wrap{overflow-x:auto;max-height:520px;overflow-y:auto}
+.tbl-wrap table{width:100%;border-collapse:collapse;font-size:12px;min-width:900px}
+.tbl-wrap thead{position:sticky;top:0;z-index:2}
+.tbl-wrap th{background:#6C3483;color:#fff;padding:10px 12px;text-align:left;cursor:pointer;user-select:none;white-space:nowrap}
+.tbl-wrap th:hover{background:#7D3C98}
+.tbl-wrap th .arr{margin-left:4px;font-size:10px}
+.tbl-wrap td{padding:8px 12px;border-bottom:1px solid #f0e6f6;white-space:nowrap}
+.tbl-wrap td.desc-col{white-space:normal;min-width:300px;max-width:500px}
+.tbl-wrap tr:hover{background:#faf5fc}
+.pager{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:13px}
+.pager button{padding:6px 14px;border:1px solid #8E44AD;background:#fff;color:#8E44AD;border-radius:6px;cursor:pointer;font-size:12px}
+.pager button:hover{background:#8E44AD;color:#fff}
+.pager button:disabled{opacity:.3;cursor:default}
+.pager span{color:#666}
+.tag-cat{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700}
+.tag-raw{background:#fff3e0;color:#e65100}
+.tag-clean{background:#e8f5e9;color:#2e7d32}
+.tag-ex{background:#e3f2fd;color:#1565c0}
+
+nav .sep{color:rgba(255,255,255,0.18);padding:0 2px;user-select:none}
 </style>
 </head>
 <body>
 <nav>
   <a class="brand" href="/">Plant Virus DB</a>
-  <a href="/">Dashboard</a>
-  <a href="/segmented.html">Segmented</a>
-  <a href="/nonsegmented.html">Non-Segmented</a>
-  <a href="/download.html">Download</a>
-  <a href="/te/" class="active">TE &amp; EVE</a>
-  <span style="border-left:1px solid rgba(255,255,255,.2);margin:0 4px"></span>
-  <a href="/reference/">参考库</a>
-  <a href="/explorer/">浏览器</a>
-  <a href="/virus/">病毒详情</a>
-  <a href="/primers/">引物</a>
-  <a href="/vector/">媒介</a>
-  <a href="/metabuli/">Metabuli</a>
-  <a href="/literature/">文献</a>
-  <a href="/knowledge/">知识</a>
+  <span class="sep">|</span>
+  <a href="/reference/" >Reference</a>
+  <a href="/photos/" >Photos</a>
+  <a href="/te/" class="active">TE·EVE</a>
+  <a href="/vector/" >Vector</a>
+  <span class="sep">|</span>
+  <a href="/explorer/" >Explorer</a>
+  <a href="/primers/" >Primers</a>
+  <a href="/metabuli/" >Metabuli</a>
+  <a href="/pamirdb/" >PAmiRDB</a>
+  <span class="sep">|</span>
+  <a href="/literature/" >Literature</a>
+  <a href="/knowledge/" >Knowledge</a>
 </nav>
 
 <div class="hero">
   <h1>Plant Transposon &amp; Endogenous Viral Element Database</h1>
-  <p>Plant LTR retrotransposons (copia/gypsy/LINE) and endogenous viral elements (EVEs) extracted from U-RVDB v32.0 PLN division, supplemented with targeted NCBI searches. All sequences filtered for Viridiplantae only, clustered at 95% identity.</p>
+  <p>Plant LTR retrotransposons (copia/gypsy/LINE) and endogenous viral elements (EVEs) extracted from U-RVDB v32.0 PLN and NCBI nuccore. All sequences filtered for Viridiplantae only.</p>
 </div>
 
 <div class="main">
 
-<!-- KPI Row -->
 <div class="kpis">
-  <div class="kpi"><div class="val">10,537</div><div class="lbl">LTR Retrotransposons</div></div>
-  <div class="kpi"><div class="val">217</div><div class="lbl">Endogenous Viruses (ENRV)</div></div>
-  <div class="kpi"><div class="val">200</div><div class="lbl">Exogenous Viruses (EX)</div></div>
-  <div class="kpi"><div class="val">20.0 MB</div><div class="lbl">TE Reference Size</div></div>
-  <div class="kpi"><div class="val">1,025</div><div class="lbl">Plant Species Covered</div></div>
+  <div class="kpi"><div class="val" id="kpiTotal">-</div><div class="lbl">Total Sequences</div></div>
+  <div class="kpi"><div class="val">446</div><div class="lbl">RVDB ENRV</div></div>
+  <div class="kpi"><div class="val">298</div><div class="lbl">RVDB EX</div></div>
+  <div class="kpi"><div class="val">671</div><div class="lbl">NCBI EVE</div></div>
+  <div class="kpi"><div class="val">3</div><div class="lbl">Data Sources</div></div>
 </div>
 
-<!-- Introduction -->
 <div class="intro">
   <h2>About This Collection</h2>
-  <p>This database provides a curated reference set of <strong>plant transposable elements (TEs)</strong> and <strong>endogenous viral elements (EVEs)</strong>. The data is derived from two complementary sources:</p>
-  <p><strong>U-RVDB v32.0</strong> — The 11.1M-sequence unclustered reference virus database. We extracted the PLN (Plant & Fungal) division (22,210 sequences), classified them using the RVDB keyword-based system into LTR-RETRO, ENRV, ERV, EX, and UNASSIGNED categories, then filtered for Viridiplantae organisms only.</p>
-  <p><strong>NCBI nuccore</strong> — Targeted searches for plant endogenous viral elements using terms: <code>endogenous[Title] OR EPRV[Title] OR EVE[Title] OR florendovirus[Title] OR badnavirus[Title]</code> in Viridiplantae. After removing PREDICTED, patent, mRNA, and UNVERIFIED entries, 597 genuine plant EVE sequences were added.</p>
+  <p>This database provides <strong>plant transposable elements (TEs)</strong> and <strong>endogenous viral elements (EVEs)</strong> from three complementary sources:</p>
+  <p><strong>U-RVDB v32.0</strong> -- 11.1M sequences. PLN (Plant & Fungal) division classified into LTR-RETRO, ENRV, ERV, EX, UNASSIGNED categories.</p>
+  <p><strong>NCBI nuccore</strong> -- Targeted search: endogenous[Title] OR EPRV[Title] OR EVE[Title] OR florendovirus[Title] OR badnavirus[Title] in Viridiplantae. 671 genuine plant EVE sequences retained after filtering.</p>
 </div>
 
-<!-- Charts Row 1 -->
 <div class="grid2">
-  <div class="card">
-    <h3>TE Type Distribution</h3>
-    <canvas id="chartTeTypes"></canvas>
-  </div>
-  <div class="card">
-    <h3>ENRV Host Species (Top 15)</h3>
-    <canvas id="chartEnrvSpecies"></canvas>
-  </div>
+  <div class="card"><h3>TE Type Distribution</h3><canvas id="chartTeTypes"></canvas></div>
+  <div class="card"><h3>ENRV Host Species (Top 15)</h3><canvas id="chartEnrvSpecies"></canvas></div>
 </div>
-
-<!-- Charts Row 2 -->
 <div class="grid2">
-  <div class="card">
-    <h3>TE Host Species (Top 20)</h3>
-    <canvas id="chartTeSpecies"></canvas>
+  <div class="card"><h3>TE Host Species (Top 20)</h3><canvas id="chartTeSpecies"></canvas></div>
+  <div class="card"><h3>Data Source Composition</h3><canvas id="chartSources"></canvas></div>
+</div>
+
+<div class="card" id="seqTable">
+  <h3>Sequence Browser <span style="font-weight:400;font-size:13px;color:#999">(rvdb.ENRV + rvdb.EX + ncbi.EVE)</span></h3>
+  <div class="srch">
+    <input type="text" id="teSearch" placeholder="Search by accession, organism, or description..." oninput="renderTable()">
+    <select id="teCatFilter" onchange="renderTable()">
+      <option value="all">All Categories</option>
+      <option value="rvdb.ENRV">rvdb.ENRV</option>
+      <option value="rvdb.EX">rvdb.EX</option>
+      <option value="ncbi.EVE">ncbi.EVE</option>
+      <option value="ENRV_clean">ENRV_clean</option>
+      <option value="EX_clean">EX_clean</option>
+    </select>
+    <span class="cnt" id="teCnt"></span>
   </div>
-  <div class="card">
-    <h3>Data Source Composition</h3>
-    <canvas id="chartSources"></canvas>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr>
+        <th onclick="sortTable('cat')">Category <span class="arr" id="arr-cat"></span></th>
+        <th onclick="sortTable('acc')">Accession <span class="arr" id="arr-acc"></span></th>
+        <th onclick="sortTable('org')">Organism <span class="arr" id="arr-org"></span></th>
+        <th style="min-width:180px" onclick="sortTable('desc')">Description <span class="arr" id="arr-desc"></span></th>
+        <th onclick="sortTable('len')">Length (bp) <span class="arr" id="arr-len"></span></th>
+        <th onclick="sortTable('date')">Date <span class="arr" id="arr-date"></span></th>
+      </tr></thead>
+      <tbody id="teTbody"><tr><td colspan="6" style="text-align:center;padding:30px">Loading sequences...</td></tr></tbody>
+    </table>
+  </div>
+  <div class="pager">
+    <button id="tePrev" onclick="changePage(-1)">&#8592; Prev</button>
+    <span id="tePageInfo">Page 1</span>
+    <button id="teNext" onclick="changePage(1)">Next &#8594;</button>
+    <span style="margin-left:12px;font-size:11px;color:#999" id="tePageTotal"></span>
   </div>
 </div>
 
-<!-- Download Section -->
 <div class="card">
   <h3>Download Data</h3>
   <table class="dltbl">
-    <tr>
-      <th>File</th><th>Sequences</th><th>Size</th><th>Format</th><th>Description</th><th>Download</th>
-    </tr>
-    <tr>
-      <td><strong>plant_te_clean.fasta</strong></td>
-      <td>10,537</td><td>20.0 MB</td><td>FASTA</td>
-      <td>Clustered plant LTR retrotransposons (copia, gypsy, LINE, etc.)</td>
-      <td><a class="btn btn-sm" href="data/plant_te_clean.fasta">Download</a></td>
-    </tr>
-    <tr>
-      <td><strong>plant_envr_clean.fasta</strong></td>
-      <td>217</td><td>420 KB</td><td>FASTA</td>
-      <td>Clustered plant endogenous non-retroviral virus elements (ENRV)</td>
-      <td><a class="btn btn-sm" href="data/plant_envr_clean.fasta">Download</a></td>
-    </tr>
-    <tr>
-      <td><strong>plant_ex_clean.fasta</strong></td>
-      <td>200</td><td>328 KB</td><td>FASTA</td>
-      <td>Clustered plant exogenous virus sequences (EX)</td>
-      <td><a class="btn btn-sm" href="data/plant_ex_clean.fasta">Download</a></td>
-    </tr>
-    <tr>
-      <td><strong>plant_rvdb.LTR-RETRO.fasta</strong></td>
-      <td>18,197</td><td>26.7 MB</td><td>FASTA</td>
-      <td>Raw (unclustered) LTR retrotransposons from RVDB PLN</td>
-      <td><a class="btn btn-sm" href="data/plant_rvdb.LTR-RETRO.fasta">Download</a></td>
-    </tr>
-    <tr>
-      <td><strong>plant_rvdb.ENRV.fasta</strong></td>
-      <td>446</td><td>782 KB</td><td>FASTA</td>
-      <td>Raw RVDB ENRV sequences (pre-NCBI supplementation)</td>
-      <td><a class="btn btn-sm" href="data/plant_rvdb.ENRV.fasta">Download</a></td>
-    </tr>
+    <tr><th>File</th><th>Sequences</th><th>Size</th><th>Format</th><th>Description</th><th>Download</th></tr>
+    <tr><td><strong>plant_ncbi_eve.fasta</strong></td><td>671</td><td>0.7 MB</td><td>FASTA</td><td>NCBI nuccore plant EVE sequences (standard GenBank headers)</td><td><a class="btn btn-sm" href="data/plant_ncbi_eve.fasta">Download</a></td></tr>
+    <tr><td><strong>plant_rvdb.ENRV.fasta</strong></td><td>446</td><td>0.8 MB</td><td>FASTA</td><td>Raw RVDB ENRV sequences</td><td><a class="btn btn-sm" href="data/plant_rvdb.ENRV.fasta">Download</a></td></tr>
+    <tr><td><strong>plant_rvdb.EX.fasta</strong></td><td>298</td><td>0.5 MB</td><td>FASTA</td><td>Raw RVDB EX (exogenous) sequences</td><td><a class="btn btn-sm" href="data/plant_rvdb.EX.fasta">Download</a></td></tr>
+    <tr><td><strong>plant_envr_clean.fasta</strong></td><td>217</td><td>0.4 MB</td><td>FASTA</td><td>Clustered plant ENRV (95% identity)</td><td><a class="btn btn-sm" href="data/plant_envr_clean.fasta">Download</a></td></tr>
+    <tr><td><strong>plant_ex_clean.fasta</strong></td><td>200</td><td>0.3 MB</td><td>FASTA</td><td>Clustered plant exogenous virus sequences (EX)</td><td><a class="btn btn-sm" href="data/plant_ex_clean.fasta">Download</a></td></tr>
+    <tr><td><strong>plant_te_clean.fasta</strong></td><td>10,537</td><td>20 MB</td><td>FASTA</td><td>Clustered plant LTR retrotransposons</td><td><a class="btn btn-sm" href="data/plant_te_clean.fasta">Download</a></td></tr>
   </table>
-  <p class="meta" style="margin-top:12px">All sequences are in FASTA format with RVDB-style headers: <code>&gt;acc|SOURCE|ACCESSION|Description|Organism|Division|Date</code>. Clustered at 95% identity with MMseqs2 (--min-seq-id 0.95 -c 0.8 --cov-mode 1).</p>
 </div>
 
-<!-- Pipeline Info -->
 <div class="card">
   <h3>Processing Pipeline</h3>
   <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:13px">
-    <span class="tag tag-purple">U-RVDB v32.0</span> →
-    <span class="tag tag-blue">PLN Division (22,210)</span> →
-    <span class="tag tag-green">Keyword Classification</span> →
-    <span class="tag tag-orange">Viridiplantae Filter</span> →
-    <span class="tag tag-purple">NCBI Supplement (v2)</span> →
-    <span class="tag tag-blue">MMseqs2 95% Cluster</span> →
-    <span class="tag tag-green">Quality Filter (no patent/rRNA/yeast)</span> →
+    <span class="tag tag-purple">U-RVDB v32.0</span> &rarr;
+    <span class="tag tag-blue">PLN Division (22,210)</span> &rarr;
+    <span class="tag tag-green">Keyword Classification</span> &rarr;
+    <span class="tag tag-orange">Viridiplantae Filter</span> &rarr;
+    <span class="tag tag-purple">NCBI Supplement</span> &rarr;
+    <span class="tag tag-blue">MMseqs2 95% Cluster</span> &rarr;
+    <span class="tag tag-green">Quality Filter</span> &rarr;
     <span class="tag tag-orange">Final Reference Set</span>
   </div>
-  <p class="meta" style="margin-top:8px">Script: <code>rvdb_extract_plant.py</code> — single-pass scan of 183GB U-RVDB FASTA with inline RVDB classification logic, taxonomy filtering, and MMseqs2 clustering.</p>
+  <p class="meta" style="margin-top:8px">Script: <code>download_ncbi_eve.py</code> -- NCBI E-utilities search &amp; download with summary-based filtering.</p>
 </div>
 
 </div>
 
 <div class="footer">
-  <p>Plant Virus DB — Transposon &amp; EVE Collection | Data source: U-RVDB v32.0 + NCBI GenBank | Last updated: July 2026</p>
+  <p>Plant Virus DB -- Transposon &amp; EVE Collection | Data source: U-RVDB v32.0 + NCBI GenBank</p>
 </div>
 
 <script>
-// Color palette
-const COLORS = ['#8E44AD','#3498DB','#2ECC71','#E74C3C','#F39C12','#1ABC9C','#E67E22','#9B59B6','#2980B9','#27AE60',
-                '#C0392B','#D35400','#16A085','#8E44AD','#2C3E50','#95A5A6','#F1C40F','#7D3C98','#00BCD4','#FF5722'];
+// ---- Charts ----
+const COLORS = ['#8E44AD','#3498DB','#2ECC71','#E74C3C','#F39C12','#1ABC9C','#E67E22','#9B59B6','#2980B9','#27AE60','#C0392B','#D35400','#16A085','#8E44AD','#2C3E50','#95A5A6','#F1C40F','#7D3C98','#00BCD4','#FF5722'];
 
-// TE Type Distribution (Pie)
-new Chart(document.getElementById('chartTeTypes'), {
-  type: 'doughnut',
-  data: {
-    labels: ['copia/Ty1','LTR-retro_other','gypsy/Ty3','LINE','unclassified','DNA-TE'],
-    datasets: [{
-      data: [4778, 3014, 2552, 173, 13, 7],
-      backgroundColor: COLORS
-    }]
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      legend: { position: 'right', labels: { font: { size: 11 }, padding: 8 } },
-      tooltip: { callbacks: { label: ctx => ctx.label + ': ' + ctx.raw.toLocaleString() + ' (' + (ctx.raw/10537*100).toFixed(1) + '%)' } }
-    }
-  }
-});
+new Chart(document.getElementById('chartTeTypes'),{type:'doughnut',data:{labels:['copia/Ty1','LTR-retro_other','gypsy/Ty3','LINE','unclassified','DNA-TE'],datasets:[{data:[4778,3014,2552,173,13,7],backgroundColor:COLORS}]},options:{responsive:true,plugins:{legend:{position:'right',labels:{font:{size:11},padding:8}},tooltip:{callbacks:{label:function(c){return c.label+': '+c.raw.toLocaleString()+' ('+(c.raw/10537*100).toFixed(1)+'%)'}}}}}});
 
-// ENRV Species (Horizontal Bar - Top 15)
-const envrSpecies = [
-  {s:'Musa acuminata',c:60},{s:'Dioscorea spp.',c:43},{s:'Theobroma cacao',c:22},{s:'Musa balbisiana',c:14},
-  {s:'Solanum lycopersicum',c:12},{s:'Solanum habrochaites',c:8},{s:'Ananas comosus',c:6},{s:'Petunia spp.',c:5},
-  {s:'Piper nigrum',c:3},{s:'Punica granatum',c:2},{s:'Melicytus spp.',c:2},{s:'Citrullus lanatus',c:1},
-  {s:'Macadamia integrifolia',c:1},{s:'Rubus idaeus',c:1},{s:'Gerbera jamesonii',c:1}
-];
-new Chart(document.getElementById('chartEnrvSpecies'), {
-  type: 'bar',
-  data: {
-    labels: envrSpecies.map(d=>d.s).reverse(),
-    datasets: [{ data: envrSpecies.map(d=>d.c).reverse(), backgroundColor: '#8E44AD' }]
-  },
-  options: {
-    indexAxis: 'y',
-    responsive: true,
-    plugins: { legend: { display: false } },
-    scales: { x: { title: { display: true, text: 'Sequence Count' } } }
-  }
-});
+var envrSpecies=[{s:'Musa acuminata',c:60},{s:'Dioscorea spp.',c:43},{s:'Theobroma cacao',c:22},{s:'Musa balbisiana',c:14},{s:'Solanum lycopersicum',c:12},{s:'Solanum habrochaites',c:8},{s:'Ananas comosus',c:6},{s:'Petunia spp.',c:5},{s:'Piper nigrum',c:3},{s:'Punica granatum',c:2},{s:'Melicytus spp.',c:2},{s:'Citrullus lanatus',c:1},{s:'Macadamia integrifolia',c:1},{s:'Rubus idaeus',c:1},{s:'Gerbera jamesonii',c:1}];
+new Chart(document.getElementById('chartEnrvSpecies'),{type:'bar',data:{labels:envrSpecies.map(function(d){return d.s}).reverse(),datasets:[{data:envrSpecies.map(function(d){return d.c}).reverse(),backgroundColor:'#8E44AD'}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false}},scales:{x:{title:{display:true,text:'Sequence Count'}}}}});
 
-// TE Species (Horizontal Bar - Top 20)
-const teSpecies = [
-  {s:'Silene latifolia',c:861},{s:'Microbotryum violaceum*',c:809},{s:'Triticum aestivum',c:549},
-  {s:'Gossypium herbaceum',c:417},{s:'Zea mays',c:341},{s:'Gossypium exiguum',c:340},
-  {s:'Gossypium raimondii',c:318},{s:'Gossypioides kirkii',c:307},{s:'Olea europaea',c:258},
-  {s:'Gossypium hirsutum',c:258},{s:'Helianthus annuus',c:252},{s:'Lathyrus oleraceus',c:250},
-  {s:'Passiflora edulis',c:237},{s:'Morus notabilis',c:207},{s:'Oryza sativa',c:205},
-  {s:'Malus domestica',c:192},{s:'Arachis duranensis',c:181},{s:'Dendrobium officinale',c:163},
-  {s:'Saccharum hybrid',c:162},{s:'Phyllostachys edulis',c:159}
-];
-new Chart(document.getElementById('chartTeSpecies'), {
-  type: 'bar',
-  data: {
-    labels: teSpecies.map(d=>d.s).reverse(),
-    datasets: [{ data: teSpecies.map(d=>d.c).reverse(), backgroundColor: '#3498DB',
-      backgroundColor: teSpecies.map((d,i) => d.s.includes('*') ? '#E74C3C' : '#3498DB').reverse() }]
-  },
-  options: {
-    indexAxis: 'y',
-    responsive: true,
-    plugins: { legend: { display: false }, subtitle: { display: true, text: '* fungal, removed in clean set', font: {size:10} } },
-    scales: { x: { title: { display: true, text: 'Sequence Count' } } }
-  }
-});
+var teSpecies=[{s:'Silene latifolia',c:861},{s:'Microbotryum violaceum*',c:809},{s:'Triticum aestivum',c:549},{s:'Gossypium herbaceum',c:417},{s:'Zea mays',c:341},{s:'Gossypium exiguum',c:340},{s:'Gossypium raimondii',c:318},{s:'Gossypioides kirkii',c:307},{s:'Olea europaea',c:258},{s:'Gossypium hirsutum',c:258},{s:'Helianthus annuus',c:252},{s:'Lathyrus oleraceus',c:250},{s:'Passiflora edulis',c:237},{s:'Morus notabilis',c:207},{s:'Oryza sativa',c:205},{s:'Malus domestica',c:192},{s:'Arachis duranensis',c:181},{s:'Dendrobium officinale',c:163},{s:'Saccharum hybrid',c:162},{s:'Phyllostachys edulis',c:159}];
+new Chart(document.getElementById('chartTeSpecies'),{type:'bar',data:{labels:teSpecies.map(function(d){return d.s}).reverse(),datasets:[{data:teSpecies.map(function(d){return d.c}).reverse(),backgroundColor:teSpecies.map(function(d,i){return d.s.includes('*')?'#E74C3C':'#3498DB'}).reverse()}]},options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false},subtitle:{display:true,text:'* fungal, removed in clean set',font:{size:10}}},scales:{x:{title:{display:true,text:'Sequence Count'}}}}});
 
-// Data Sources (Pie)
-new Chart(document.getElementById('chartSources'), {
-  type: 'doughnut',
-  data: {
-    labels: ['LTR-RETRO (RVDB)','ENRV (RVDB)','ENRV (NCBI v2)','EX (RVDB)','UNASSIGNED (RVDB)','ERV (RVDB)'],
-    datasets: [{
-      data: [18197, 446, 597, 298, 946, 1],
-      backgroundColor: ['#8E44AD','#2ECC71','#27AE60','#3498DB','#95A5A6','#E74C3C']
-    }]
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      legend: { position: 'bottom', labels: { font: { size: 11 }, padding: 8 } },
-      tooltip: { callbacks: { label: ctx => ctx.label + ': ' + ctx.raw.toLocaleString() } }
-    }
-  }
-});
+new Chart(document.getElementById('chartSources'),{type:'doughnut',data:{labels:['LTR-RETRO (RVDB)','ENRV (RVDB)','ENRV (NCBI)','EX (RVDB)','UNASSIGNED (RVDB)','ERV (RVDB)'],datasets:[{data:[18197,446,671,298,946,1],backgroundColor:['#8E44AD','#2ECC71','#27AE60','#3498DB','#95A5A6','#E74C3C']}]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{font:{size:11},padding:8}},tooltip:{callbacks:{label:function(c){return c.label+': '+c.raw.toLocaleString()}}}}}});
+
+// ---- Sequence Browser Table ----
+var teData=[],teFiltered=[],teSortCol='cat',teSortAsc=true,tePage=0,tePageSize=25;
+var catLabel={'rvdb.ENRV':'rvdb.ENRV','rvdb.EX':'rvdb.EX','ncbi.EVE':'ncbi.EVE','ENRV_clean':'ENRV_clean','EX_clean':'EX_clean'};
+fetch('data/te_table_data.json').then(function(r){return r.json()}).then(function(d){teData=d;document.getElementById('kpiTotal').textContent=d.length.toLocaleString();renderTable()}).catch(function(e){console.error('Failed to load TE data:',e);document.getElementById('teTbody').innerHTML='<tr><td colspan=6 style=text-align:center;padding:30px;color:red>Failed to load data. Please check console.</td></tr>'});
+function applyFilters(){var q=(document.getElementById('teSearch').value||'').toLowerCase(),cat=document.getElementById('teCatFilter').value;teFiltered=teData.filter(function(r){if(cat!=='all'&&r.cat!==cat)return false;if(q&&r.acc.toLowerCase().indexOf(q)<0&&r.org.toLowerCase().indexOf(q)<0&&r.desc.toLowerCase().indexOf(q)<0)return false;return true})}
+function sortTable(col){if(teSortCol===col)teSortAsc=!teSortAsc;else{teSortCol=col;teSortAsc=true}applyFilters();var asc=teSortAsc?1:-1;teFiltered.sort(function(a,b){var va=a[col],vb=b[col];if(typeof va==='number')return(va-vb)*asc;return String(va).localeCompare(String(vb))*asc});tePage=0;renderRows()}
+function changePage(d){var tp=Math.ceil(teFiltered.length/tePageSize);tePage=Math.max(0,Math.min(tp-1,tePage+d));renderRows()}
+function renderTable(){applyFilters();tePage=0;renderRows()}
+function renderRows(){var tp=Math.ceil(teFiltered.length/tePageSize);if(tePage>=tp)tePage=Math.max(0,tp-1);var start=tePage*tePageSize,page=teFiltered.slice(start,start+tePageSize),html='';for(var i=0;i<page.length;i++){var r=page[i],cls=r.cat==='rvdb.ENRV'?'tag-raw':r.cat==='rvdb.EX'?'tag-ex':r.cat==='ncbi.EVE'?'tag-clean':'tag-ex';html+='<tr><td><span class=\"tag-cat '+cls+'\">'+(catLabel[r.cat]||r.cat)+'</span></td><td><a href=\"https://www.ncbi.nlm.nih.gov/nuccore/'+r.acc+'\" target=\"_blank\">'+r.acc+'</a></td><td>'+(r.org||'-')+'</td><td class=\"desc-col\">'+(r.desc||'-')+'</td><td>'+r.len.toLocaleString()+'</td><td>'+(r.date||'-')+'</td></tr>'}document.getElementById('teTbody').innerHTML=html;document.getElementById('teCnt').textContent=teFiltered.length+' sequences';document.getElementById('tePageInfo').textContent='Page '+(tePage+1)+' / '+(tp||1);document.getElementById('tePageTotal').textContent=teFiltered.length+' total';document.getElementById('tePrev').disabled=tePage<=0;document.getElementById('teNext').disabled=tePage>=tp-1;['cat','acc','org','desc','len','date'].forEach(function(c){var el=document.getElementById('arr-'+c);if(el)el.textContent=c===teSortCol?(teSortAsc?'\u25B2':'\u25BC'):''})}
 </script>
+<script src="/reference/i18n.js"></script>
+<script>PVDB_i18n.init({navSelector:'nav'});</script>
 </body>
 </html>

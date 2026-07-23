@@ -1,0 +1,238 @@
+{
+  "week": "2025-W46",
+  "start": "2025-11-10",
+  "end": "2025-11-16",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 33,
+  "by_category": {
+    "Host_Virus_Interactions": 13,
+    "Antiviral_Resistance_Genes": 8,
+    "Control_Management": 6,
+    "New_Virus": 5,
+    "Biotechnology_Applications": 3,
+    "Transmission_Epidemiology": 2
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "41233605",
+      "doi": "10.1007/s00705-025-06440-0",
+      "title": "Identification and characterization of a novel carlavirus isolated from viburnum (Viburnum opulus) in Aotearoa New Zealand.",
+      "abstract": "The genus Viburnum includes more than 150 species of ornamental shrubs and trees that are cultivated worldwide. In Aotearoa New Zealand (NZ), V. opulus is the most popular of the species widely used in landscaping. To date, alfalfa mosaic virus (AMV) has been the only virus reported in viburnum in NZ. Here, we report the identification and molecular characterization of a novel carlavirus, tentatively named \"viburnum carlavirus 1\" (VibCV1), from a V. opulus plant coinfected with AMV. The virus was characterized using high-throughput sequencing, transmission electron microscopy, and herbaceous indexing. The complete genome of VibCV1 is 8,444 nucleotides in length and contains six open reading frames, with an organization typical of members of the genus Carlavirus. Phylogenetic analysis revealed that VibCV1 is most closely related to helleborus mosaic virus (HeMV), sharing 80.24% and 85.48% amino acid sequence identity in the replicase and coat protein, respectively. These values lie on the borderline of the current species demarcation criteria for the family Betaflexiviridae. Considering its distinct natural host range, limited distribution, and phylogenetic divergence from HeMV, we suggest that VibCV1 possibly represents a new species within the genus Carlavirus. The low incidence of VibCV1 in NZ viburnum populations is also discussed.",
+      "journal": "Archives of virology",
+      "year": 2025,
+      "pub_date": "2025-11-13",
+      "authors": "Tang Joe; Liefting Lia; Veerakone Stella; Thompson Jeremy R",
+      "first_author": "Tang Joe",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "viburnum carlavirus 1 (VibCV1)",
+      "taxonomy": "Betaflexiviridae, Carlavirus",
+      "host_plant": "Viburnum opulus",
+      "location": "Aotearoa New Zealand",
+      "results": "基因组8444nt，6个ORF；与HeMV复制酶和CP氨基酸同源性分别为80.24%和85.48%，处于种界定边界。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41217529",
+      "doi": "10.1007/s00705-025-06463-7",
+      "title": "Complete genome sequence of a novel alphanucleorhabdovirus infecting cassava (Manihot esculenta Crantz) in Brazil.",
+      "abstract": "The genus Alphanucleorhabdovirus comprises plant-infecting viruses with an unsegmented, negative-sense, single-stranded RNA genome. Here, we report the complete genome sequence of a novel alphanucleorhabdovirus infecting cassava (Manihot esculenta Crantz), identified in accession BGM-1275 from the germplasm collection at Embrapa Mandioca e Fruticultura (Cruz das Almas, Bahia, Brazil). The viral genome is 13,625 nucleotides (nt) in length and displays the typical organization of alphanucleorhabdoviruses, with six predicted open reading frames. Pairwise comparisons of its whole genome sequence with those of other known alphanucleorhabdoviruses revealed nt sequence identity values in the range of 31.0-67.8%, which is below the species demarcation threshold (75%). Phylogenetic analysis based on the L gene confirmed placement of the novel virus within the genus Alphanucleorhabdovirus, with cassava alphanucleorhabdovirus 1 as the closest relative. Reverse transcription polymerase chain reaction assays detected the virus in symptomatic (cassava frogskin disease) and asymptomatic cassava samples collected in fields in Northeast Brazil (Paraíba and Rio Grande do Norte) and in other Embrapa accessions, suggesting widespread occurrence. The name \"cassava alphanucleorhabdovirus 2\" (CsRV2) is proposed for the newly discovered virus.",
+      "journal": "Archives of virology",
+      "year": 2025,
+      "pub_date": "2025-11-11",
+      "authors": "Bezerra Dayla Geovana Pereira; Ferreira Odaiza Fabiana Gomes; Dos Santos José Ailton Cruz Macêdo; de Oliveira Eder Jorge; Margaria Paolo; ... (+1)",
+      "first_author": "Bezerra Dayla Geovana Pereira",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "Cassava alphanucleorhabdovirus 2 (CsRV2)",
+      "taxonomy": "Rhabdoviridae, Alphanucleorhabdovirus",
+      "host_plant": "木薯（Manihot esculenta Crantz）",
+      "location": "巴西：巴伊亚州克鲁斯达斯阿尔马斯（Embrapa Mandioca e Fruticultura）；东北部帕拉伊巴州和北里奥格兰德州",
+      "results": "基因组13625nt，预测6个ORF；全基因组序列与已知alphanucleorhabdovirus相似性31.0-67.8%；L基因系统发育确认新种；RT-PCR检测到有症状和无症状样本均存在，表明广泛分布。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41238897",
+      "doi": "10.1038/s41598-025-24071-y",
+      "title": "Rosemary essential oil: chemical composition, antiviral, cytotoxicity, and in silico molecular docking analysis against tobacco mosaic virus.",
+      "abstract": "Aromatic plants represent a significant source of bioactive compounds and have recently expanded their potential applications in agriculture. In the current study, the essential oil of Salvia rosmarinus (rosemary) was extracted, and its chemical composition was analyzed using gas chromatography-mass spectrometry (GC-MS). Under greenhouse conditions, the antiviral effectiveness of the essential oil against tobacco mosaic virus (TMV) was evaluated on Nicotiana glutinosa, marking the first comprehensive assessment of its impact on plant viruses. A computational analysis of molecular docking interactions was performed to explore the potential interactions of target compounds with the three protein components of TMV. Additionally, the influence of essential oil on the root tips of Allium cepa was assessed for its genotoxic effects. In comparison to untreated infected plants, the curative treatment demonstrated a peak viral inhibition rate of 76.3% at 300 µg/mL, while the protective and inactivation treatments reached maximum rates of 70.7% and 62.8%, respectively, at the same concentration. At elevated concentrations of essential oil (300 µg/mL), the genotoxicity assay showed a concentration-dependent decrease in the mitotic index and an increase in chromosomal abnormalities. The GC-MS analysis revealed that the primary constituents of the essential oil were α-terpineol (19.3%), isoborneol (14.1%), and camphor (13.2%). Furthermore, an in-silico assessment of the candidate phytoconstituents indicated that the antiviral properties are mainly associated with the isoaromadendrene epoxide (0.35%), cubenol (0.22%), epiglobulol (2.06%), caryophyllene (5.73%), and caryophyllene oxide (2.66%) compounds. Thus, we assert that the synergistic properties of oil components account for their significant antiviral efficacy. Overall, the results of our study suggest that rosemary essential oil demonstrates significant antiviral properties and may serve as a promising antiviral agent for combating plant viral infections. Nonetheless, additional field validation and investigations into individual components and their synergistic combinations are essential to comprehend their effectiveness and maximize their application.",
+      "journal": "Scientific reports",
+      "year": 2025,
+      "pub_date": "2025-11-14",
+      "authors": "Al-Askar Abdulaziz A; Hamzah Karrar A; Aseel Dalia G; El-Far Ali H; Abdelhamid Mohamed M; ... (+3)",
+      "first_author": "Al-Askar Abdulaziz A",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "烟草花叶病毒 (Tobacco mosaic virus, TMV)",
+      "taxonomy": "",
+      "host_plant": "黏毛烟草 (Nicotiana glutinosa)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41220218",
+      "doi": "10.1111/1744-7917.70187",
+      "title": "Hemipteran vectors of stylet-borne plant viruses: Aphids lead the charge.",
+      "abstract": "Insect vectors play a key role in the transmission of plant viruses, acting as major drivers of crop losses worldwide. Noncirculative plant viruses rely on brief and transient interactions with their insect vectors for successful transmission. Here, we focused on aphids (Aphidoidea), whiteflies (Aleyrodoidea), and mealybugs (Coccoidea), hemipterans of the suborder Sternorrhyncha, known for transmitting 95% of viruses in a noncirculative mode. Based on the current knowledge, we compared specific morphological and behavioral traits related to their stylets, the cuticular needle-like structures. This comparison shed some light on the leading role of aphids as vectors, owing to their highly specialized mouthparts and unique intracellular probing behavior. The review also discusses known key molecular interactions at the virus-stylet interface. Comparing these features across the 3 hemipteran superfamilies underscores how specific behavioral and anatomical traits set aphids apart, enabling their remarkable capacity to transmit stylet-borne, noncirculative viruses.",
+      "journal": "Insect science",
+      "year": 2025,
+      "pub_date": "2025-11-11",
+      "authors": "Fu Yu; Colella Stefano; Uzest Marilyne",
+      "first_author": "Fu Yu",
+      "categories": [
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "未提及（泛指非循环型植物病毒）",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "未提及",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41239255",
+      "doi": "10.1186/s12870-025-07576-6",
+      "title": "Development of convenient potyvirus-based vectors for simultaneous expression of two heterologous proteins in solanaceous plants.",
+      "abstract": "Plant virus-based vectors can deliver foreign nucleic acid sequences into host plants for expression, serving as powerful biotechnological tools in agricultural applications, such as plant functional genomic study, agronomic trait improvement, pest management, genome editing. Viruses in the genus Potyvirus represent the largest group of plant-infecting RNA viruses, employing polyprotein processing as the genome expression strategy. A variety of potyvirus-based vectors have been documented, whereas the ones with a simple cloning strategy for simultaneous expression of two heterologous proteins await to be exploited. In this study, we developed an infectious cDNA clone of a potato virus Y (PVY) isolate PVY-N, termed pPVY. Next, we engineered Golden Gate-compatible derivatives of pPVY and pPVMV (an infectious cDNA clone of an attenuated strain of pepper veinal mottle virus) by incorporating Type IIS restriction enzyme sites into the P1/HCPro and NIb/CP junctions of the viral genomes. The resulting recombinant clones, pPVY-2×GoldG and pPVMV-2×GoldG, are highly infectious in their natural Solanaceae hosts. Both vectors allow simultaneous insertion of two reporter genes (mCherry and GFP) for robust expression in Nicotiana benthamiana and N. tabacum (for PVY) and N. benthamiana and pepper plants (for PVMV). Serial passage revealed that the recombinant viruses harboring two heterologous genes were genetically stable. Considered the fact that both viruses have a wide host range in Solanaceae plants, the PVY- and PVMV-based vectors would serve as valuable biotechnological tools and have a promising application prospect.",
+      "journal": "BMC plant biology",
+      "year": 2025,
+      "pub_date": "2025-11-14",
+      "authors": "Li Na; Deng Changhui; Zhu Yubo; Qin Li; Dai Zhaoji; ... (+4)",
+      "first_author": "Li Na",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "马铃薯Y病毒（PVY）和辣椒脉斑驳病毒（PVMV）",
+      "taxonomy": "",
+      "host_plant": "本氏烟、烟草、辣椒等茄科植物",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41214077",
+      "doi": "10.1038/s41598-025-22951-x",
+      "title": "Construction of efficient virus removal and micropropagation system for 'Yu Tai Yi Hao' chrysanthemum.",
+      "abstract": "'Yu Tai Yi Hao' (Chrysanthemum × morifolium Ramat.) is a perennial herbaceous plant from the Asteraceae family and Chrysanthemum genus.As the first officially approved tea chrysanthemum variety in the country, 'Yu Tai Yi Hao' has gained significant market demand due to its high tea (medicinal) value and nutritional content.However, 'Yu Tai Yi Hao' faces serious issues in propagation and cultivation, such as genetic degeneration and virus contamination in seedlings, which significantly hinder its widespread use and application.This study used new shoots of the 'Yu Tai Yi Hao' tea chrysanthemum as plant material to induce callus formation from stem cross-sections and differentiate adventitious buds into seedlings. RT-PCR was employed to detect four viruses: Chrysanthemum B virus (CVB), Chrysanthemum stunt virus (CSVd), Chrysanthemum chlorotic mottle virus (CChMVd), and Tomato spotted wilt virus (TSWV).Plants testing positive for viruses were selected, and their shoot-tip explants were used for further propagation and culture. The study optimized the combinations of hormone types and concentrations at various culture stages to provide a reference for developing a virus-free tissue culture system for 'Yu Tai Yi Hao'. The results showed that in the induction of callus and differentiation of adventitious buds for 'Yu Tai Yi Hao', a medium containing MS, 2.0 mg/L 6-BA, and 0.3 mg/L NAA achieved 100% induction and differentiation rates, with an average differentiation coefficient of 42.83 and a maximum of 90. In the rooting medium (MS + 0.1 mg/L NAA), 100% rooting rate was achieved in 15 days.After 5 days of hardening treatment, the seedlings were transplanted into a growth medium with a 1:1 peat moss: perlite ratio, achieving a survival rate of 100%. Virus testing on regenerated plants revealed that 9 samples were free of CVB and CSVd viruses, with a 100% virus elimination rate, while 2 samples were free of CChMVd and TSWV, resulting in a 22.2% virus elimination rate. This study has preliminarily developed a virus-free tissue culture system for 'Yu Tai Yi Hao', providing technical support for the high-quality and efficient industrial propagation of virus-free seedlings for 'Yu Tai Yi Hao'. It also lays the foundation for exploring targeted virus elimination techniques, virus resistance, as well as for establishing a genetic transformation system for 'Yu Tai Yi Hao' and conducting related gene functional verification studies.",
+      "journal": "Scientific reports",
+      "year": 2025,
+      "pub_date": "2025-11-10",
+      "authors": "Chen Lijie; Wang Lili; Chen Qingbing; Pan Bo; Wang Yaoyao; ... (+9)",
+      "first_author": "Chen Lijie",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "CVB, CSVd, CChMVd, TSWV",
+      "taxonomy": "",
+      "host_plant": "Yu Tai Hao chrysanthemum (Chrysanthemum × morifolium)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40466219",
+      "doi": "10.1016/j.jpba.2025.116995",
+      "title": "Structure elucidation and quantification of the active pharmaceutical ingredient in a non-approved drug and in cat serum using QTRAP-MS/MS and ZenoTOF-MS/MS.",
+      "abstract": "Feline infectious peritonitis (FIP) is a fatal systemic disease in cats caused by a feline coronavirus (FCoV). Recent studies have shown that Xraphconn, an unapproved veterinary drug, has significantly increased survival rates in cats with FIP. However, the lack of transparent information regarding the chemical structure and quantity of the active pharmaceutical ingredient (API) necessitates a thorough investigation of this drug. In this study, the API from Xraphconn's plant-based matrix was successfully isolated and purified using weak cation-exchange solid-phase extraction (WCX-SPE). Preliminary structure elucidation was conducted using mass spectra simulations, multiple reaction monitoring-information-dependent acquisition-enhanced product ion (MRM-IDA-EPI) scans from a 6500+ QTRAP-MS, and both collision-induced dissociation (CID) and electron-activated dissociation (EAD) fragmentation techniques with the ZenoTOF 7600. Conclusive structural identification of the Xraphconn API was achieved by 13C and 1H nuclear magnetic resonance spectroscopy. A 4-minute RP HPLC-MS/MS method was optimized to achieve satisfactory separation of the API peak from an isobaric contaminant. The limit of detection (LOD) and limit of quantification (LOQ) were established at 2.11 nM and 6.39 nM in water, and 7.21 nM and 21.84 nM in plasma, respectively. The intra- and inter-day accuracy was found to range between 96 % and 105 %, with a coefficient of variation (CV%) of ≤ 5.51 %. The API content was determined to be 21.56 ± 0.98 mg per tablet employing 13C5-GS-441524 as an internal standard to account for potential matrix effects. The API concentration was measured in plasma and serum samples collected at four different time points from six treated cats.",
+      "journal": "Journal of pharmaceutical and biomedical analysis",
+      "year": 2025,
+      "pub_date": "2025-11-15",
+      "authors": "Tu Luke; Horak Jeannie; Krentz Daniela; Zwicklbauer Katharina; Hartmann Katrin; ... (+4)",
+      "first_author": "Tu Luke",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40609333",
+      "doi": "10.1016/j.foodchem.2025.145332",
+      "title": "New insights of licorice (Glycyrrhiza genus) as a functional food.",
+      "abstract": "Licorice-derived prenylated flavonoids and triterpenoids undergo intricate biosynthetic pathways, conferring distinctive structural features and bioactive properties. These compounds are integral to traditional Chinese medicine, serving as functional food ingredients, and having broad applications in various industries. The up to date reports on prenylated flavonoids and triterpenoids found in licorice are reviewed in this paper. Their structural characteristics and fragmentation profiles in mass spectrometry are described. These compounds possess multiple biological activities, including antioxidant, anti-inflammatory, antibacterial, antiviral, and antitumor activities. Additionally, techniques for obtaining these bioactive constituents are introduced, ranging from natural plant extraction to biosynthetic approaches. The discussion culminates with an exploration of their applications in the food and cosmeceuticals industries. The compilation and analysis of these data establish a scientific foundation for the development of nutraceuticals and health-promoting products enriched with licorice prenylated flavonoids and triterpenoids.",
+      "journal": "Food chemistry",
+      "year": 2025,
+      "pub_date": "2025-11-15",
+      "authors": "Shao Lulu; Li Bailin; Jiang Yueming; Yang Bao",
+      "first_author": "Shao Lulu",
+      "categories": [
+        "Antiviral_Resistance_Genes"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40754153",
+      "doi": "10.1016/j.jmb.2025.169369",
+      "title": "A New Approach to In Vivo Transformation of Killer T Cells.",
+      "abstract": "Chimeric antigen receptor (CAR) T cell therapy is a relatively new and powerful way of transforming T cells with receptors needed to recognize and kill diseased cells. Traditionally, it involves extraction of T cells from a patient, ex vivo transformation of them with CARs, expansion, and subsequent re-infusion into the patient. Recent developments aim to avoid this lengthy, costly patient-specific procedure by using various viral and non-viral vector particles for direct in vivo delivery of CAR-encoding genes. In this paper we highlight several fundamental connections between in vitro and in vivo aspects of this process. We discuss the proposed use of in vitro-reconstituted virus-like particles (VLPs), prepared from purified CAR-encoding mRNA and viral capsid protein, and functionalized with a T cell-targeting antibody. We compare and contrast these particles - and their use as gene vectors - with the several modalities currently employed that involve in cellulo generation of lentiviral or AAV vectors or in vitro complexation of nucleic acids with cationic polymers or lipid vesicles. We report the unique stoichiometric preciseness and thermodynamic stability of VLPs formed from anti-HIV-glycoprotein CAR-encoding mRNA and the capsid protein from a plant virus, and quantify the extent to which these monodisperse spherical VLPs are RNase resistant and lead to strong CAR expression in T cells. Further, in vitro cell-killing experiments are proposed, in which these CAR VLP-transformed T cells are mixed with HIV-infected cells, to be followed by in vivo experiments involving injection of the particles into HIV-infected humanized mice.",
+      "journal": "Journal of molecular biology",
+      "year": 2025,
+      "pub_date": "2025-11-15",
+      "authors": "Rodriguez Noe; Hofmann Christian; Yang Otto O; Gelbart William M",
+      "first_author": "Rodriguez Noe",
+      "categories": [
+        "Biotechnology_Applications"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40990634",
+      "doi": "10.1128/mra.00609-25",
+      "title": "Complete genome sequence of the ",
+      "abstract": "We report the complete genome sequence of the Niallia sp. strain Kr1, a gram-negative, spore-forming bacterium isolated from the geothermal fluids of an Icelandic geothermal power plant injection well. This strain belongs to a putative new species within the Niallia genus.",
+      "journal": "Microbiology resource announcements",
+      "year": 2025,
+      "pub_date": "2025-11-13",
+      "authors": "Bregnard Danae; Gonzalez Diego; Clark Deirdre E; Sigurðardóttir Ásgerður K; Regenspurg Simona; ... (+1)",
+      "first_author": "Bregnard Danae",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}

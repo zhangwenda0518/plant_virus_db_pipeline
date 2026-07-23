@@ -1,0 +1,243 @@
+{
+  "week": "2025-W37",
+  "start": "2025-09-08",
+  "end": "2025-09-14",
+  "generated": "2026-07-13 02:59:40",
+  "total_new": 16,
+  "by_category": {
+    "Host_Virus_Interactions": 6,
+    "Antiviral_Resistance_Genes": 6,
+    "Transmission_Epidemiology": 2,
+    "Control_Management": 2,
+    "New_Virus": 2,
+    "Detection_Methods": 1,
+    "Biotechnology_Applications": 1
+  },
+  "ai_summary": "",
+  "top_papers": [
+    {
+      "pmid": "40460836",
+      "doi": "10.1016/j.devcel.2025.04.023",
+      "title": "Rice stripe virus NS3 uses the host signaling pathways to control pathogenicity.",
+      "abstract": "Viruses pose a significant threat to animal and plant health worldwide. How viruses adapt to vectors and hosts more sustainably remains unclear. Rice stripe virus (RSV) is a devastating rice-infecting RNA virus and is exclusively transmitted by Laodelphax striatellus (Fallén). During the early stages of viral infection, limited NS3 protein undergoes self-interaction, thereby suppressing the host's antiviral RNA interference (RNAi) pathway. Meanwhile, RSV-induced Ca2+ signals activate the OsSnRK3.25-OsCBL1/3-OsRBOHs-mediated reactive oxygen species (ROS) burst and programmed cell death (PCD). RSV exhibits strong pathogenicity and transmissibility. In later stages, an abundance of NS3 interacts with OsSnRK3.25 and undergoes phosphorylation, which enhances the host antiviral RNAi pathway while concurrently disrupting the endogenous OsSnRK3.25-OsCBL1/3-OsRBOHs signaling. Here, RSV demonstrates reduced pathogenicity and transmissibility. Thus, the virus fine-tunes its pathogenicity and transmissibility by NS3 phosphorylation and hijacking OsSnRK3.25, sustaining a delicate balance between virus-host-vector interactions. This study identifies a co-survival strategy within virus-vector-host triple interactions.",
+      "journal": "Developmental cell",
+      "year": 2025,
+      "pub_date": "2025-09-08",
+      "authors": "Zhuang Xinjian; Feng Chenwei; Hua Yanhong; Gu Tianxiao; Guo Xiao; ... (+5)",
+      "first_author": "Zhuang Xinjian",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "水稻条纹病毒 (Rice stripe virus, RSV)",
+      "taxonomy": "",
+      "host_plant": "水稻 (Rice)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40944776",
+      "doi": "10.1007/s11033-025-11020-1",
+      "title": "Characterization of a novel recombinant begomovirus and tomato leaf curl Kunene virus infecting bottle gourd in Kenya.",
+      "abstract": "[BACKGROUND] Leaves of bottle gourd (Lagenaria siceraria (Molina) Standl.) exhibiting mottling and interveinal chlorosis symptoms Were collected from Meru, Kenya, in 2023. The current study investigated the causal agent of this disease. [METHODS AND RESULTS] Polymerase Chain Reaction (PCR) using universal begomovirus primers confirmed the presence of a monopartite begomovirus in two out of four symptomatic samples. No satellite DNA or DNA-B components were detected. Full-length genome sequencing and BLAST analysis identified one isolate (L5; GenBank accession no. LC865744) as tomato leaf curl Kunene virus (ToLCKunV) with a nucleotide identity of 91.2%, while the other (L4; LC865743) showed low nucleotide identity (at most 87.4%) to any known begomovirus. Recombination analysis revealed that the novel virus (L4) is a chimera derived from ToLCKunV-[Na:19] and tomato leaf curl Uganda virus [UG:Iga:05]. Based on ICTV criteria, this recombinant qualifies as a new begomovirus species, for which we propose a new species name \"Begomovirus lagenariae\" and virus name \"bottle gourd leaf mottling virus (BGLMV-[KE:Mer:23])\". Infectious clones of both isolates were constructed and used to successfully infect Nicotiana benthamiana, tomato, cucumber, and bottle gourd under controlled conditions. [CONCLUSION] This study presents the first evidence of begomovirus infection in cucurbit crops in Kenya, highlighting the presence of two distinct viral isolates: a newly characterized recombinant, BGLMV, and a local isolate of ToLCKunV.",
+      "journal": "Molecular biology reports",
+      "year": 2025,
+      "pub_date": "2025-09-13",
+      "authors": "Ringeera Kimathi Harun; Neriya Yutaro; Natsuaki Tomohide; Mwenda Cynthia Mugo; Miinda Ateka Elijah; ... (+1)",
+      "first_author": "Ringeera Kimathi Harun",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "bottle gourd leaf mottling virus (BGLMV-[KE:Mer:23]) 和 tomato leaf curl Kunene virus (ToLCKunV)",
+      "taxonomy": "Geminiviridae, Begomovirus",
+      "host_plant": "葫芦 (Lagenaria siceraria)；实验接种：Nicotiana benthamiana、番茄、黄瓜、葫芦",
+      "location": "肯尼亚, Meru",
+      "results": "鉴定两个分离物：L5为ToLCKunV（同源91.2%），L4为新种BGLMV（<87.4%），重组源自ToLCKunV和ToLCUV。侵染性克隆成功侵染多种寄主。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40857584",
+      "doi": "10.1093/plcell/koaf210",
+      "title": "The barley m6A demethylase HvALKBH1B undergoes phase separation to enhance immunity to a plant rhabdovirus.",
+      "abstract": "N 6-methyladenosine (m6A) is one of the most abundant RNA modifications and plays important roles in plant development and stress responses. However, how m6A affects the infection cycles of plant viruses, especially plant negative-stranded RNA viruses, remains poorly understood. Here, we demonstrate that the accessory gene P6 mRNA of the insect-borne plant rhabdovirus barley yellow striate mosaic virus (BYSMV) harbors a high level of m6A modification. The m6A-mutated P6 mRNA is less stable than the wild-type P6 mRNA, and the corresponding mutant virus exhibits reduced infectivity. Additionally, we identified HvALKBH1B, a m6A demethylase from barley (Hordeum vulgare) that displays strong antiviral activity through m6A removal from viral mRNA. Furthermore, HvALKBH1B undergoes liquid-liquid phase separation (LLPS) and binds P6 mRNA into cytoplasmic condensates. Deletion assays indicated that the intrinsically disordered region 3 of HvALKBH1B is required for its LLPS capacity and antiviral function. Overexpression of a truncated HvALKBH1B variant (HvALKBH1BT) in transgenic barley confers enhanced resistance to BYSMV, whereas CRISPR knockout lines exhibit increased susceptibility. Altogether, our results reveal that plant rhabdoviruses exploit m6A modification to promote viral mRNA stability and infection, which is counteracted by the host demethylase HvALKBH1B in barley to improve antiviral immunity.",
+      "journal": "The Plant cell",
+      "year": 2025,
+      "pub_date": "2025-09-09",
+      "authors": "Zang Ying; Qiao Ji-Hui; Liu De-Shui; Gao Dong-Min; Zhang Xin-Wen; ... (+4)",
+      "first_author": "Zang Ying",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Detection_Methods"
+      ],
+      "virus_name": "大麦黄条点花叶病毒 (Barley yellow striate mosaic virus, BYSMV)",
+      "taxonomy": "",
+      "host_plant": "大麦 (Hordeum vulgare)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41011972",
+      "doi": "10.3390/plants14182820",
+      "title": "High Basal Expression and Dual Stress Responsiveness of Soybean (",
+      "abstract": "Genes involved in disease resistance are crucial for plant immune systems, yet their transcriptional regulatory mechanisms remain poorly understood. SRC4, a key member of the soybean mosaic virus resistance cluster (SRC), encodes a Ca2+-binding EF-hand domain and possesses antiviral activity, but its expression regulation is unclear. Here, we systematically analyzed 4085 soybean (Glycine max) transcriptome datasets and conducted SMV inoculation experiments to characterize SRC4 expression patterns. Cis-acting element analysis identified 12 regulatory elements in the SRC4 promoter, including salicylic acid (SA)-responsive elements. Furthermore, a ProSRC4::GUS reporter vector was constructed and functional analysis was performed in tobacco (Nicotiana benthamiana) and transgenic Arabidopsis thaliana. SRC4 exhibited significantly higher basal expression than typical resistance genes (R genes) and was induced by SMV infection, SA treatment, and Ca2+ supplementation, with peak expression at 2-5 h post-treatment (hpi). In transgenic tobacco overexpressing NahG, neither SMV nor Ca2+ could induce ProSRC4::GUS expression, demonstrating that SRC4 transcriptional regulation is mediated through SA signaling pathways. SRC4 showed predominant expression in roots and leaves and responded to temperature stress. Transgenic plants overexpressing SRC4 exhibited enhanced tolerance to both 12 °C and 37 °C temperature stress. This study elucidates the molecular mechanisms underlying SRC4 transcriptional regulation through Ca2+ and SA signaling pathways, revealing its dual role in both biotic and abiotic stress responses, especially in temperature stress.",
+      "journal": "Plants (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-09-09",
+      "authors": "Zhou Zikai; Bao Zhuo; Miao Di; Zhou Yuxi; Niu Niu; ... (+1)",
+      "first_author": "Zhou Zikai",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "大豆花叶病毒 (SMV)",
+      "taxonomy": "",
+      "host_plant": "大豆 (Glycine max)",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40516836",
+      "doi": "10.1016/j.gene.2025.149623",
+      "title": "Bridging BioSciences and technology: The impact of AI & GenAI in life sciences and agribusiness.",
+      "abstract": "The intersection of biosciences and technology has yielded transformative advancements, and Generative Artificial Intelligence (GenAI) started to stand at the forefront of this synergy. In the field of life sciences, GenAI is emerging as a catalyst, accelerating drug discovery by swiftly generating and predicting novel molecules. This expedites the identification of potential drug candidates, significantly reducing time and costs compared to traditional methods. Beyond drug discovery, GenAI contributes to protein folding predictions, genomics research, disease diagnosis and biomarker identification, enhancing our understanding of diseases and health conditions, fostering the development of personalized medicine. In agribusiness, GenAI proves instrumental in optimizing crop breeding and improving agricultural productivity. It can generate new crop varieties with desired traits by analyzing vast datasets comprising genomic and ecological information, addressing challenges such as disease resistance, improved yield, and enhanced nutritional content. Moreover, GenAI transcends traditional applications and extends its influence on synthetic biology, contributing to the design of novel enzymes and pathways. This opens avenues for bio-based manufacturing, renewable energy production, and environmental remediation. By harnessing the power of GenAI, the synergies between biosciences and technology accelerate innovation, improve efficiency, decrease costs, and address critical challenges. Conversely, the ethical considerations surrounding GenAI, especially Large Language Model (LLM) utilization in life sciences and agribusiness, such as data privacy, algorithmic bias, and the equitable distribution of benefits, must be addressed to ensure responsible and fair implementation, especially environment sustainability when utilizing this technology. This review article discusses the multifaceted impact of GenAI in a new era of advancements in life sciences and agribusiness.",
+      "journal": "Gene",
+      "year": 2025,
+      "pub_date": "2025-09-10",
+      "authors": "da Cunha Nicolau Brito; Fernandes Fabiano Cavalcanti; Gil-Ley Abel; Franco Octavio L; Timakondu Naagma; ... (+1)",
+      "first_author": "da Cunha Nicolau Brito",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40887780",
+      "doi": "10.1021/acs.jafc.5c06127",
+      "title": "Transcription Factor OsNF-YC12 Positively Regulates ",
+      "abstract": "Globally, rice (Oryza sativa) is one of the most important food crops, but its production is threatened by root-knot nematodes (Meloidogyne graminicola). Although NF-YC transcription factors play important roles in plant growth and development, their involvement in disease resistance has been poorly characterized. In this study, transcriptome analysis revealed that transcription factor OsNF-YC12 was upregulated upon treatment with nematode PAMP (Ascr#18). OsNF-YC12 expression was induced by Ascr#18, nematodes, and jasmonic acid (JA), predominantly in roots. Functional studies demonstrated that overexpression of OsNF-YC12 significantly reduced nematode infection and gall formation, whereas knockout lines exhibited increased susceptibility. OsNF-YC12 enhanced immunity by activating the defense genes and promoting reactive oxygen species (ROS) accumulation. Furthermore, OsNF-YC12 directly bound to and activated the promoter of OsSRZ22, and overexpression of OsSRZ22 similarly conferred significant nematode resistance. This study establishes for the first time the crucial roles of OsNF-YC12 and its target OsSRZ22 in rice nematode resistance, providing valuable genetic resources for breeding resistant varieties.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2025,
+      "pub_date": "2025-09-10",
+      "authors": "Chen Dong; Li Zhiyong; Wang Minghao; Zhao Wei; Qin Tong; ... (+5)",
+      "first_author": "Chen Dong",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "40856755",
+      "doi": "10.1021/acs.jafc.5c08579",
+      "title": "Interface Reconstruction Driven by Lesion Effects: The Synergistic Mechanism of Surfactant Self-Assembly in Pesticide Droplet Deposition.",
+      "abstract": "Surfactants play a crucial role in enhancing pesticide wetting; however, their effectiveness is influenced by pathogen-induced interfacial heterogeneity, such as the presence of hydrophobic and hydrophilic microdomains, particularly in the context of apple rust. Conventional homogeneous surfactant strategies lack the adaptability required to effectively address these dynamically changing interfaces. This study synthesizes insights from interfacial dynamics and plant pathology to elucidate the adaptive interactions of AEO-series nonionic surfactants with rust-infected leaves. Initially, small spherical micelles (AEO-4/AEO-5) effectively penetrate hydrophobic barriers, facilitating the delivery of pesticides to mesophyll cells. Subsequently, rod-shaped micelles (AEO-6/AEO-7) infiltrate spore tubules through capillary action, forming isolation membranes that impede pathogen dissemination. The evolution of the \"penetration-coverage-targeting\" gradient enhances the efficiency of pesticide delivery while minimizing environmental impact. Surfactants, adjusted by their ethylene oxide (EO) number, are strategically combined at different stages (e.g., AEO-4 early and AEO-7 later) to achieve an optimal balance between penetration and persistence. By integrating micelle morphology, droplet dynamics, and disease progression, we develop a multiscale framework for surfactant-mediated pesticide transport. The interplay between interfacial chemistry and pathology facilitates the advancement of intelligent agrochemical design, providing sustainable strategies for disease management.",
+      "journal": "Journal of agricultural and food chemistry",
+      "year": 2025,
+      "pub_date": "2025-09-10",
+      "authors": "He Lifei; Zhang Guocai; Kong Xianhao; Zhang Pengjiu; Liu Zhongfang; ... (+4)",
+      "first_author": "He Lifei",
+      "categories": [
+        "Control_Management"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41119729",
+      "doi": "10.11646/zootaxa.5691.1.7",
+      "title": "A new species of the non-pollinating fig wasp genus Ficobracon van Achterberg & Weiblen (Hymenoptera: Braconidae) associated with Ficus tinctoria subsp. gibbosa (Rosales: Moraceae) from the Western Ghats, India.",
+      "abstract": "Syconia of figs (Moraceae: Ficus spp.) are known to harbour diverse parasitoid communities; however, records of braconid wasps within these microhabitats remains limited. In this study, we describe a new species of Ficobracon van Achterberg & Weiblen (Hymenoptera: Braconidae), based on female and male specimens reared from syconia of Ficus tinctoria subsp. gibbosa (Blume) Corner (Rosales: Moraceae) in Kerala, India. The new species, morphologically similar to F. codonatus Huang & van Achterberg, 2013, is distinguished and illustrated herein. It is the first record of the genus Ficobracon from southern India and the sixth known species globally. Additionally, this study documents the first association of a Ficobracon species with non-pollinating fig wasps in F. tinctoria subsp. gibbosa syconia from India, expanding our understanding of the ecological interactions within these specialized microhabitats.",
+      "journal": "Zootaxa",
+      "year": 2025,
+      "pub_date": "2025-09-08",
+      "authors": "Binoy C; Achterberg Cornelis VAN; Sureshan P M",
+      "first_author": "Binoy C",
+      "categories": [
+        "New_Virus"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41007387",
+      "doi": "10.3390/biology14091243",
+      "title": "Crosstalk Between Intestinal Microbiota and Host Defense Peptides in Fish.",
+      "abstract": "The intricate crosstalk between intestinal microbiota and host defense peptides (HDPs) in aquaculture has emerged as a cornerstone for advancing sustainable disease management and reducing reliance on antibiotics. This review synthesizes current insights into the bidirectional interactions shaping aquatic animal health, where HDPs, multifunctional immune molecules, directly neutralize pathogens while selectively modulating intestinal microbial communities to favor beneficial taxa (including Lactobacillus, Bacillus, Cetobacterium, Lactococcus, and so on) and suppress harmful species. Conversely, intestinal microbiota regulate HDP expression through microbial-derived signals, such as lipopolysaccharides and metabolites, which activate host immune pathways like Toll-like receptors (TLRs) to amplify innate defenses. This dynamic interplay underpins critical physiological functions, including nutrient absorption, intestinal barrier integrity, and systemic immune homeostasis, offering a dual mechanism to enhance disease resistance and growth performance. Practical applications, such as HDP-enriched feeds and probiotic-HDP synergies, have demonstrated efficacy in reducing mortality and improving productivity across species like shrimp, salmon, and carp. However, challenges such as HDP instability, species-specific variability in peptide efficacy, and the complexity of microbiota-HDP networks hinder broad implementation. Future research must prioritize innovative strategies, including engineered microbial systems for scalable HDP production, multi-omics approaches to unravel interaction mechanisms, and eco-friendly combinatorial therapies integrating HDPs, probiotics, and plant-derived compounds. By bridging immunology, microbiology, and aquaculture science, this field can transition toward antibiotic-free practices, ensuring ecological sustainability and global food security in the face of rising aquatic disease threats and environmental pressures.",
+      "journal": "Biology",
+      "year": 2025,
+      "pub_date": "2025-09-11",
+      "authors": "Yu Xiao-Zheng; Yu Yang; Liu Zi-Yan",
+      "first_author": "Yu Xiao-Zheng",
+      "categories": [
+        "Control_Management",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41003209",
+      "doi": "10.3390/jof11090663",
+      "title": "Metagenomic Insights into Disease-Induced Microbial Dysbiosis and Elemental Cycling Alterations in ",
+      "abstract": "Soil-borne diseases represent a major constraint on the sustainable cultivation of morel mushrooms (Morchella spp.), yet the microbial ecological mechanisms driving disease occurrence and progression remain poorly understood. In this study, we conducted comparative metagenomic analyses of rhizosphere and root-adhering soils associated with healthy and diseased Morchella crops from two major production regions in China, aiming to elucidate shifts in microbial community composition, assembly processes, and functional potential. Disease conditions were linked to pronounced microbial dysbiosis, with community assembly shifting from stochastic to deterministic processes, particularly within fungal communities under host selection and pathogen pressure. Co-occurrence network analysis revealed substantial reductions in connectivity, modularity, and clustering coefficients in diseased soils, indicating the loss of ecological stability and keystone taxa. Functional annotations using CAZy, COG, and KEGG databases showed that healthy soils were enriched in genes related to carbohydrate metabolism, aerobic respiration, and ecosystem resilience, whereas diseased soils exhibited higher abundance of genes associated with stress responses, proliferation, and host defense. Furthermore, elemental cycling analysis demonstrated that healthy soils supported pathways involved in aerobic carbon degradation, nitrogen fixation, phosphate transport, and sulfur oxidation, while diseased soils favored fermentation, denitrification, phosphorus limitation responses, and reductive sulfur metabolism. Collectively, these results highlight the importance of microbial functional integrity in maintaining soil health and provide critical insights into microbiome-mediated disease dynamics, offering a foundation for developing microbiome-informed strategies for sustainable fungal crop management.",
+      "journal": "Journal of fungi (Basel, Switzerland)",
+      "year": 2025,
+      "pub_date": "2025-09-10",
+      "authors": "Deng Zong-Lin; Yu Feng-Ming; Ma Xiang; Zhao Qi; Liu Jian-Kui",
+      "first_author": "Deng Zong-Lin",
+      "categories": [
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    }
+  ]
+}
