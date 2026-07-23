@@ -677,8 +677,8 @@ document.addEventListener('click', function(e) {
   var tool = btn.getAttribute('data-tool');
   if (contig && tool) {
     e.preventDefault();
-    // For primer, use NCBI taxon name (data-taxon) for species lookup, fallback to ICTV species
-    var species = tool === 'primer' ? (btn.getAttribute('data-taxon') || btn.getAttribute('data-species') || '') : '';
+    // For primer, prefer ICTV species name (same as VSC table display), fallback to NCBI taxon
+    var species = tool === 'primer' ? (btn.getAttribute('data-species') || btn.getAttribute('data-taxon') || '') : '';
     analyzeContig(contig, tool, species);
   }
 });
