@@ -2,6 +2,23 @@
 
 All notable changes to the Plant Virus Database Platform.
 
+## [2026-07-23b] — README 全面更新 + 数据量同步
+
+### Changed
+- **根 README.md**: 修正引物总量 57,072 → 103,642; 新增服务端口映射表; 补充 Metabuli Primer/GenBank 功能描述; 统一 12 模块技术栈说明
+- **7.literature_tracker README**: 新增 Mermaid 架构图 + CI 自动化流程图; 补充 7 类检索策略/AI 摘要 8 字段/文件结构全览; 从 ~30 行扩展到 ~200 行
+- **8.plant-insect README**: 新增 Mermaid 架构图 + 合并管线流程图; 补充三维 facet 检索详情; Web 三标签页可视化说明; 从 ~60 行扩展到 ~150 行
+- **9.metabuli README**: 更新四大→五大分析标签 (新增 Primer + GenBank 基因可视化); 补充引物设计工作流 Mermaid 图; 添加 2026-07-23 修复记录; 完善 VSC 表 Analyze 列四件套说明
+- **11.antiviral_genes README**: 全中文化 + 新增 Mermaid 架构图; 补充处理管线流程图; 从 ~120 行英文化扩展到 ~220 行中文版
+- **12.pamirdb README**: 新增 Mermaid 架构图 + 三算法共识分级说明; 补充预测管线/Sankey-Chord-Heatmap 可视化; 从 ~100 行扩展到 ~170 行
+- **docs README**: 新增路由覆盖表; 补充 TE FASTA 文件清单/i18n 版本号; 完善缓存策略说明
+
+### Fixed
+- 根 README 引物对数量: 57,072 → 103,642 (同步 primer 模块最新统计)
+- 根 README RAG 论文数: 193,000+ → 60,000+ (修正为向量化全文数)
+- 根 README 在线服务表: 补充 Metabuli Primer 设计/GenBank 可视化功能
+- 根 README Metabuli 分析标签数: 四 → 五 (新增 Primer 设计)
+
 ## [2026-07-23] — Metabuli 增强: Primer 设计 + GenBank 基因可视化 + 错误修复
 
 ### Added
