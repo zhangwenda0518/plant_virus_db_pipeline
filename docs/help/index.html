@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Plant Virus DB — Help & Documentation</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;line-height:1.7}
+nav{background:linear-gradient(135deg,#1a3a5c,#2c6e49);color:#fff;height:46px;display:flex;align-items:center;padding:0 16px;gap:4px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+nav .brand{font-weight:700;font-size:15px;margin-right:12px;letter-spacing:.5px;color:#fff;text-decoration:none}
+nav a{color:rgba(255,255,255,.75);text-decoration:none;padding:5px 11px;border-radius:4px;font-size:12px;transition:.15s}
+nav a:hover,nav a.on{color:#fff;background:rgba(255,255,255,.15)}
+nav .sep{color:rgba(255,255,255,.25);margin:0 2px;font-size:14px;user-select:none}
+nav .spacer{flex:1}
+.hero{background:linear-gradient(135deg,#134e6f,#2c6e49);color:#fff;padding:40px 24px 32px;text-align:center}
+.hero h1{font-size:28px;margin-bottom:6px}
+.hero p{font-size:14px;opacity:.85;max-width:700px;margin:0 auto}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 20px}
+.sec{margin:28px 0 12px;font-size:15px;color:#8a99a8;font-weight:600;letter-spacing:.5px;border-left:3px solid #2c6e49;padding-left:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 1px 6px rgba(20,60,90,.06);border:1px solid #eef2f5;text-decoration:none;color:inherit;transition:.15s;display:block}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(20,60,90,.1)}
+.card h3{font-size:16px;color:#1a5276;margin-bottom:4px}
+.card .path{font-size:11px;color:#777;margin-bottom:8px;font-family:monospace}
+.card p{font-size:13px;color:#5a6b7b}
+.card .topics{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.card .topics span{font-size:10px;background:#e8f4ea;color:#2c6e49;padding:2px 8px;border-radius:10px}
+footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="brand">Plant Virus DB</a>
+  <span class="sep">|</span>
+  <a href="/reference/">Reference</a>
+  <a href="/primers/">Primers</a>
+  <a href="/photos/">Photos</a>
+  <a href="/vector/">Vector</a>
+  <a href="/te/">TE·EVE</a>
+  <a href="/genes/">Genes</a>
+  <span class="sep">|</span>
+  <a href="/metabuli/">Metabuli</a>
+  <a href="/explorer/">Explorer</a>
+  <a href="/pamirdb/">PV-miRNA</a>
+  <span class="sep">|</span>
+  <a href="/literature/">Literature</a>
+  <a href="/knowledge/">Knowledge</a>
+  <span class="spacer"></span>
+  <a href="/help/" class="on">Help</a>
+</nav>
+
+<div class="hero">
+  <h1>Help & Documentation</h1>
+  <p>Plant Virus Database Platform user guides — how to use each module, what data is available, and common workflows.</p>
+</div>
+
+<div class="wrap">
+
+  <div class="sec">📚 Data Resources</div>
+  <div class="grid">
+    <a class="card" href="/help/reference.html">
+      <h3>Reference DB</h3>
+      <div class="path">/reference/</div>
+      <p>Curated plant virus reference sequences from NCBI GenBank, cross-referenced with ICTV VMR MSL41. 199K sequences, 6,182 species.</p>
+      <div class="topics"><span>search</span><span>download FASTA</span><span>segmented/non-segmented</span><span>genome visualization</span></div>
+    </a>
+    <a class="card" href="/help/primers.html">
+      <h3>Primer Database</h3>
+      <div class="path">/primers/</div>
+      <p>57,072 PCR/qPCR primer pairs for 4,789 plant virus species. Includes degenerate primers and whole-genome tiling designs.</p>
+      <div class="topics"><span>PCR primers</span><span>qPCR</span><span>degenerate</span><span>tiled amplicons</span><span>BLAST validation</span></div>
+    </a>
+    <a class="card" href="/help/photos.html">
+      <h3>Symptom Gallery</h3>
+      <div class="path">/photos/</div>
+      <p>2,757 plant virus symptom photos from EPPO Global Database. Filter by host plant, tissue type, symptom, and photo position.</p>
+      <div class="topics"><span>filter by host</span><span>tissue type</span><span>symptom type</span></div>
+    </a>
+    <a class="card" href="/help/vector.html">
+      <h3>Vector-Host DB</h3>
+      <div class="path">/vector/</div>
+      <p>Insect vector and plant host interaction database. 1,806 virus-vector-host pairs with transmission mode, acquisition/inoculation periods.</p>
+      <div class="topics"><span>vector taxonomy</span><span>transmission mode</span><span>host range</span></div>
+    </a>
+    <a class="card" href="/help/te_eve.html">
+      <h3>TE & EVE</h3>
+      <div class="path">/te/</div>
+      <p>Plant transposable elements and endogenous viral elements from U-RVDB v32.0, clustered with MMseqs2 at 98% identity.</p>
+      <div class="topics"><span>transposons</span><span>EVEs</span><span>MMseqs2 clustering</span></div>
+    </a>
+    <a class="card" href="/help/genes.html">
+      <h3>Immune & sRNA Gene Atlas</h3>
+      <div class="path">/genes/</div>
+      <p>RefPlantNLR 415 NLRs + 11,780 sRNA pathway genes + 3,996 UPS components + 83,166 miRNAs + 322K vsiRNAs + 59 antiviral NLR effectors.</p>
+      <div class="topics"><span>NLR browser</span><span>sRNA genes</span><span>miRNA</span><span>vsiRNA</span></div>
+    </a>
+  </div>
+
+  <div class="sec">🔬 Analysis Tools</div>
+  <div class="grid">
+    <a class="card" href="/help/metabuli.html">
+      <h3>Metabuli</h3>
+      <div class="path">/metabuli/</div>
+      <p>Metagenomic virus classifier. Upload FASTQ reads or assembled contigs, get taxonomic classification with Krona/Sankey visualization.</p>
+      <div class="topics"><span>FASTQ upload</span><span>contig classification</span><span>8-rank taxonomy</span><span>Krona plot</span></div>
+    </a>
+    <a class="card" href="/help/explorer.html">
+      <h3>Virus Explorer</h3>
+      <div class="path">/explorer/</div>
+      <p>Interactive Dash-based explorer with 7 panels: timeline, global map, genome viewer, taxonomy tree, and sequence alignment.</p>
+      <div class="topics"><span>timeline</span><span>world map</span><span>genome browser</span><span>taxonomy tree</span></div>
+    </a>
+    <a class="card" href="/help/pamirdb.html">
+      <h3>PV-miRNA (PAmiRDB)</h3>
+      <div class="path">/pamirdb/</div>
+      <p>miRNA-virus target prediction workbench. 3-algorithm consensus (miRanda + psRNATarget + RNAhybrid). 402 plant species × 42 virus species.</p>
+      <div class="topics"><span>Sankey diagram</span><span>network graph</span><span>position map</span><span>consensus tier</span></div>
+    </a>
+  </div>
+
+  <div class="sec">📡 Knowledge & Communication</div>
+  <div class="grid">
+    <a class="card" href="/help/literature.html">
+      <h3>Literature Tracker</h3>
+      <div class="path">/literature/</div>
+      <p>Automated PubMed monitoring — daily/weekly plant virus paper discovery, AI-generated Chinese summaries, 6,575 papers tracked.</p>
+      <div class="topics"><span>daily updates</span><span>AI summaries</span><span>category filter</span><span>search</span></div>
+    </a>
+    <a class="card" href="/help/knowledge.html">
+      <h3>Knowledge RAG</h3>
+      <div class="path">/knowledge/</div>
+      <p>DPV + viroidDB backed AI Q&A assistant. Ask plant virology questions in natural language, get referenced answers.</p>
+      <div class="topics"><span>natural language Q&A</span><span>DPV database</span><span>viroidDB</span><span>cited sources</span></div>
+    </a>
+    <a class="card" href="/help/resources.html">
+      <h3>📑 Supplementary Resources</h3>
+      <div class="path">/help/resources.html</div>
+      <p>Curated collection of 100+ public databases and tools for plant virology research: virus sequences, hosts, vectors, metagenomics, primers, transcriptomes, natural products.</p>
+      <div class="topics"><span>databases</span><span>tools</span><span>transcriptome</span><span>medicinal plants</span></div>
+    </a>
+  </div>
+
+</div>
+
+<footer>Plant Virus Database Platform · Help Documentation</footer>
+</body>
+</html>

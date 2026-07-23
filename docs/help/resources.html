@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Supplementary Resources — Plant Virus DB</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;line-height:1.8}
+nav{background:linear-gradient(135deg,#1a3a5c,#2c6e49);color:#fff;height:46px;display:flex;align-items:center;padding:0 16px;gap:4px;position:sticky;top:0;z-index:100}
+nav .brand{font-weight:700;font-size:15px;margin-right:12px;color:#fff;text-decoration:none}
+nav a{color:rgba(255,255,255,.75);text-decoration:none;padding:5px 11px;border-radius:4px;font-size:12px}
+nav a:hover,nav a.on{color:#fff;background:rgba(255,255,255,.15)}
+nav .sep{color:rgba(255,255,255,.25);margin:0 2px;font-size:14px;user-select:none}
+nav .spacer{flex:1}
+.hero{background:linear-gradient(135deg,#134e6f,#2c6e49);color:#fff;padding:32px 24px;text-align:center}
+.hero h1{font-size:24px}.hero p{font-size:13px;opacity:.85;margin-top:4px}
+/* TOC sidebar */
+.layout{max-width:1300px;margin:0 auto;display:flex;gap:0}
+.toc{width:230px;flex-shrink:0;position:sticky;top:62px;align-self:flex-start;max-height:calc(100vh - 70px);overflow-y:auto;padding:20px 16px;font-size:12px;line-height:2;border-right:1px solid #e0e4e8;background:#fafbfc}
+.toc a{display:block;color:#5a6b7b;text-decoration:none;padding:1px 8px;border-radius:3px;transition:.12s}
+.toc a:hover,.toc a.on{color:#1a5276;background:#e8f4ea}
+.toc .cat{font-weight:700;color:#2c6e49;margin-top:10px;font-size:12px}
+.main{flex:1;min-width:0;padding:24px 28px}
+h2{font-size:18px;color:#1a5276;margin:32px 0 12px;padding-bottom:6px;border-bottom:2px solid #e8f4ea;scroll-margin-top:62px}
+h3{font-size:15px;color:#2c6e49;margin:20px 0 8px;scroll-margin-top:62px}
+p{font-size:14px;color:#444;margin-bottom:8px}
+/* Tables */
+table{width:100%;border-collapse:collapse;margin:8px 0 16px;font-size:13px}
+th{background:#e8f4ea;color:#1a3a5c;padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap}
+th:first-child{width:22%}th:nth-child(2){width:33%}th:nth-child(3){width:25%}th:nth-child(4){width:20%}
+td{padding:7px 10px;border-bottom:1px solid #eef2f5;vertical-align:top}
+td a{color:#2e86c1;text-decoration:none;word-break:break-all;font-size:12px}
+td a:hover{text-decoration:underline}
+tr:hover td{background:#f8fafb}
+.tag{display:inline-block;font-size:10px;padding:1px 6px;border-radius:8px;margin:1px 2px 1px 0}
+.tag-ncbi{background:#d4e6f1;color:#1a5276}.tag-ictv{background:#fdebd0;color:#7d6608}
+.tag-kegg{background:#d5f5e3;color:#1d8348}.tag-wur{background:#e8daef;color:#6c3483}
+.tag-tool{background:#fadbd8;color:#922b21}.tag-db{background:#d6eaf8;color:#154360}
+.note{background:#fff3cd;border-left:3px solid #f0ad4e;padding:8px 12px;margin:10px 0;border-radius:4px;font-size:13px}
+footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
+@media(max-width:800px){.layout{flex-direction:column}.toc{display:none}}
+</style></head><body>
+
+<nav><a href="/" class="brand">Plant Virus DB</a><span class="sep">|</span><a href="/reference/">Reference</a><a href="/primers/">Primers</a><a href="/photos/">Photos</a><a href="/vector/">Vector</a><a href="/te/">TE·EVE</a><a href="/genes/">Genes</a><span class="sep">|</span><a href="/metabuli/">Metabuli</a><a href="/explorer/">Explorer</a><a href="/pamirdb/">PV-miRNA</a><span class="sep">|</span><a href="/literature/">Literature</a><a href="/knowledge/">Knowledge</a><span class="spacer"></span><a href="/help/">Help</a></nav>
+
+<div class="hero"><h1>Supplementary Resources</h1><p>植物病毒学公共数据库与工具资源整理 &mdash; 涵盖病毒序列、宿主、传播、宏基因组、分析工具、转录组、天然产物等领域</p></div>
+
+<div class="layout">
+<div class="toc">
+<div class="cat">&#128218; 病毒序列数据库</div>
+<a href="#ncbi-virus">NCBI Virus / RefSeq / GenBank</a>
+<a href="#rvdb">RVDB 参考病毒库</a>
+<a href="#viroids">Viroids 类病毒库</a>
+<a href="#ictv">ICTV 官方分类</a>
+<a href="#virjendb">VirJenDB</a>
+<a href="#virushuntdb">VirusHuntDB</a>
+<a href="#openvirus">OpenVirus / LucaVirus</a>
+<div class="cat">&#127793; 植物病毒专项</div>
+<a href="#ncbi-plant">NCBI Virus (植物)</a>
+<a href="#virusdetect">VirusDetect V267</a>
+<a href="#plantvirusbase">PlantVirusBase</a>
+<a href="#pvirdb">PVirDB</a>
+<a href="#virtool">Virtool / ViralZone</a>
+<a href="#dpvweb-phytopipe">DPVweb / PhytoPipe</a>
+<div class="cat">&#127758; 宏基因组病毒</div>
+<a href="#vire">VIRE / IMG/VR</a>
+<a href="#metavr">MetaVR / gcMeta</a>
+<div class="cat">&#129440; 宿主与传播</div>
+<a href="#virus-host">病毒-宿主数据库</a>
+<a href="#transmission">传播与媒介数据库</a>
+<div class="cat">&#128300; 数据库构建</div>
+<a href="#db-build">建库工具与方法</a>
+<div class="cat">&#128269; 序列与元数据</div>
+<a href="#seq-meta">下载与检索工具</a>
+<div class="cat">&#129514; 引物设计</div>
+<a href="#primer-tools">引物设计工具与数据库</a>
+<div class="cat">&#128200; 公共转录组</div>
+<a href="#transcriptome">转录组与SRA资源</a>
+<div class="cat">&#127807; 药用植物</div>
+<a href="#medicinal">基因组与天然产物</a>
+<div class="cat">&#128736; 其他</div>
+<a href="#pathogen">病原菌 / 蛋白结构 / RAG</a>
+</div>
+
+<div class="main">
+
+<!-- ============================================================ -->
+<h2 id="ncbi-virus">&#128218; 病毒参考序列数据库</h2>
+
+<h3>NCBI Virus 门户</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>NCBI Virus Portal</td><td><a href="https://www.ncbi.nlm.nih.gov/labs/virus/vssi/" target="_blank">ncbi.nlm.nih.gov/labs/virus</a></td><td>~6234 植物相关物种, 162,836 核酸序列; 按宿主谱系/分类/长度多维筛选</td><td>在线交互式检索浏览病毒序列</td></tr>
+<tr><td>NCBI RefSeq Viral</td><td><a href="https://ftp.ncbi.nlm.nih.gov/refseq/release/viral/" target="_blank">ftp.ncbi.nlm.nih.gov/refseq/release/viral/</a></td><td>18,760 条高质量非冗余病毒参考基因组; 含 genomic.fna / gbff / protein.faa</td><td>病毒分类与系统发育分析的标准参考集</td></tr>
+<tr><td>NCBI GenBank Viral</td><td><a href="https://ftp.ncbi.nlm.nih.gov/genomes/genbank/viral/" target="_blank">ftp.ncbi.nlm.nih.gov/genomes/genbank/viral/</a></td><td>~246,565 条病毒基因组组装 (assembly_summary.txt 索引)</td><td>最全面的病毒基因组原始数据下载</td></tr>
+<tr><td>NCBI AllNucleotide</td><td><a href="https://ftp.ncbi.nlm.nih.gov/genomes/Viruses/AllNucleotide/" target="_blank">ftp.ncbi.nlm.nih.gov/genomes/Viruses/AllNucleotide/</a></td><td>AllNucleotide.fa.gz (~277 GB); AllNuclMetadata.csv (~2 GB)</td><td>全量病毒核酸序列 + 元数据批量下载</td></tr>
+<tr><td>NCBI VHostMetadata</td><td><a href="https://ftp.ncbi.nlm.nih.gov/genomes/Viruses/AllDataTmp/" target="_blank">ftp.ncbi.nlm.nih.gov/genomes/Viruses/AllDataTmp/</a></td><td>~1,824 条植物相关宿主关联 (自动谱系推导)</td><td>病毒-宿主关联元数据（自动标注）</td></tr>
+<tr><td>NCBI RefSeq Viral BLAST DB</td><td><a href="https://ftp.ncbi.nlm.nih.gov/blast/db/v5/" target="_blank">ftp.ncbi.nlm.nih.gov/blast/db/v5/</a></td><td>ref_viruses_rep_genomes + ref_viroids_rep_genomes (预构建 BLAST v5)</td><td>离线本地 BLAST 搜索病毒/类病毒</td></tr>
+<tr><td>NCBI REST API (2025)</td><td><a href="https://github.com/ctb/2025-ncbi-rest-api" target="_blank">github.com/ctb/2025-ncbi-rest-api</a></td><td>按分类学批量抽取基因组登录号并下载</td><td>程序化大规模数据提取</td></tr>
+<tr><td>Sourmash NCBI Viral DB</td><td><a href="https://github.com/sourmash-bio/2025-sourmash-ncbi-viral-databases" target="_blank">github.com/sourmash-bio/2025-sourmash-ncbi-viral-databases</a></td><td>基于 sourmash 的 NCBI 病毒数据库构建工具</td><td>k-mer 草图快速搜索分类</td></tr>
+<tr><td>Genome Updater</td><td><a href="https://github.com/pirovc/genome_updater" target="_blank">github.com/pirovc/genome_updater</a></td><td>从 NCBI refseq/genbank 下载/更新文件快照的 Bash 脚本; 跟踪更改, 无冗余</td><td>数据库持续同步更新</td></tr>
+<tr><td>gbFeatExtractor</td><td><a href="https://github.com/ChrispinChaguza/gbFeatExtractor" target="_blank">github.com/ChrispinChaguza/gbFeatExtractor</a></td><td>从 GenBank 注释文件中提取 UTR/CDS/成熟肽/蛋白质组</td><td>基因组结构特征提取</td></tr>
+<tr><td>Viral Genome Feature Extractor</td><td><a href="https://github.com/Satish-Kumar-Manjhi/Viral-Genome-Feature-Extractor" target="_blank">github.com/Satish-Kumar-Manjhi/Viral-Genome-Feature-Extractor</a></td><td>解析 NCBI GenBank 病毒基因组, 提取 UTR/CDS/成熟肽/完整蛋白质组</td><td>批量基因组注释解析</td></tr>
+</table>
+
+<h3 id="rvdb">RVDB 参考病毒数据库</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>RVDB (核酸) v31</td><td><a href="https://rvdb.dbi.udel.edu/" target="_blank">rvdb.dbi.udel.edu</a> | <a href="https://github.com/ArifaKhanLab/RVDB_PY3" target="_blank">GitHub</a></td><td>含植物逆转录病毒元件; 非聚类(U-)和聚类(C-)双版; 人工审核去除噬菌体/错误注释</td><td>宏基因组病毒检测参考库; 降低宿主污染假阳性</td></tr>
+<tr><td>RVDB-prot (蛋白)</td><td><a href="https://rvdb-prot.pasteur.fr/" target="_blank">rvdb-prot.pasteur.fr</a> | <a href="https://gitlab.pasteur.fr/tbigot/rvdb-prot/" target="_blank">GitLab</a></td><td>参考病毒蛋白序列数据库; 去冗余 unique 版本</td><td>蛋白水平的远缘病毒检测 (kaiju/diamond)</td></tr>
+<tr><td>RVDB Taxonomy</td><td><a href="https://rvdb.dbi.udel.edu/download/RVDBv31_taxonomy.tab.gz" target="_blank">rvdb.dbi.udel.edu</a></td><td>配套分类注释表; RVDB_characterization.py / RVDB_extract.py 分类统计与提取</td><td>按分类单元提取子集; 统计病毒分类分布</td></tr>
+</table>
+
+<h3 id="viroids">Viroids 类病毒数据库</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>Viroids.org</td><td><a href="https://viroids.org/" target="_blank">viroids.org</a></td><td>54 种, 9,312 记录 (Avsunviroidae 8,384 + Pospiviroidae 8,489); 持续更新</td><td>类病毒参考序列标准集</td></tr>
+<tr><td>NCBI Viroid (NCBI)</td><td><a href="https://www.ncbi.nlm.nih.gov/labs/virus/" target="_blank">ncbi.nlm.nih.gov</a></td><td>146 种, ~16,832 记录; NCBI Taxonomy 全覆盖</td><td>综合类病毒序列检索</td></tr>
+</table>
+
+<h3 id="ictv">ICTV 国际病毒分类委员会</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>ICTV VMR (MSL)</td><td><a href="https://ictv.global/vmr" target="_blank">ictv.global/vmr</a></td><td>官方分类 + 每个物种代表性基因组登录号; 定期更新 (当前 MSL41)</td><td>病毒分类学权威标准; 物种名规范化</td></tr>
+<tr><td>ICTVdump</td><td><a href="https://github.com/christopher-riccardi/ICTVdump" target="_blank">github.com/christopher-riccardi/ICTVdump</a></td><td>自动从 ICTV VMR 下载并处理分类与登录号信息</td><td>程序化 ICTV 数据获取</td></tr>
+<tr><td>ICTVtaxablast</td><td><a href="https://github.com/ICTV-Virus-Knowledgebase/ICTVtaxablast" target="_blank">github.com/ICTV-Virus-Knowledgebase/ICTVtaxablast</a></td><td>基于 VMR 代表性登录号下载对应序列</td><td>构建 ICTV 标准参考序列集</td></tr>
+<tr><td>ICTV mmseqs2 Protein DB</td><td><a href="https://github.com/apcamargo/ictv-mmseqs2-protein-database" target="_blank">github.com/apcamargo/ictv-mmseqs2-protein-database</a></td><td>ICTV 分类对应的 MMseqs2 蛋白数据库</td><td>蛋白水平分类与搜索</td></tr>
+<tr><td>ICTV Taxonomy Challenge</td><td><a href="https://0mician.github.io/ICTV-TaxonomyChallenge/" target="_blank">0mician.github.io/ICTV-TaxonomyChallenge/</a></td><td>多种工具参与的分类学挑战 (vConTACT3/Metabuli/Vclust/genomad/sourmash/CAT 等)</td><td>工具基准评估参考</td></tr>
+</table>
+
+<h3 id="virjendb">VirJenDB 综合病毒序列数据库</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>VirJenDB</td><td><a href="https://www.virjendb.org" target="_blank">virjendb.org</a></td><td>超 100 列元数据; ICTV+NCBI 双分类; 含宿主性别/年龄/组织/地理/BV-BRC 编号等</td><td>超大规模多维病毒元数据分析</td></tr>
+<tr><td>VirJenDB Full Dataset</td><td><a href="https://api.virjendb.org/v2/datasets_download" target="_blank">api.virjendb.org</a></td><td>完整元数据 CSV + 序列 FASTA 批量下载 (2025-12-04 快照)</td><td>本地全量数据分析</td></tr>
+</table>
+
+<h3 id="virushuntdb">VirusHuntDB</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>VirusHuntDB</td><td><a href="https://github.com/ammaraziz/virushuntdb" target="_blank">github.com/ammaraziz/virushuntdb</a></td><td>INSDC 来源; 去除不完整序列; 手动整理大小阈值; 分节段/非分节; Expasy ViralZone 真核病毒过滤; ICTV 物种名标注</td><td>高质量病毒序列参考集</td></tr>
+</table>
+
+<h3 id="openvirus">OpenVirus / LucaVirus 大规模数据集</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>LucaVirus (OpenVirus)</td><td><a href="https://github.com/LucaOne/LucaVirus" target="_blank">github.com/LucaOne/LucaVirus</a></td><td>1570 万条非冗余病毒序列 (1040 万核酸 + 520 万蛋白)</td><td>大规模病毒进化模式与功能特征学习</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="ncbi-plant">&#127793; 植物病毒专项数据库</h2>
+
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>NCBI Virus (Viridiplantae)</td><td><a href="https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?HostLineage_ss=Viridiplantae,taxid:33090" target="_blank">ncbi.nlm.nih.gov/labs/virus</a></td><td>6,234 物种, 162,836 序列; 按 Viridiplantae 宿主谱系筛选</td><td>在线浏览下载植物病毒序列</td></tr>
+</table>
+
+<h3 id="virusdetect">VirusDetect 植物病毒数据库 (V267)</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>VirusDetect v267</td><td><a href="http://bioinfo.bti.cornell.edu/ftp/program/VirusDetect/virus_database/v267/" target="_blank">bioinfo.bti.cornell.edu</a></td><td>100%/97%/95% 三级去冗余; vrl_Plants_267_U97: 46,894 条中 29,979 确认植物宿主 (63.9%)</td><td>VirusDetect 软件内置参考库; 分级去冗余策略</td></tr>
+</table>
+
+<h3 id="plantvirusbase">PlantVirusBase</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>PlantVirusBase</td><td><a href="http://47.90.94.155/PlantVirusBase" target="_blank">47.90.94.155/PlantVirusBase</a></td><td>3,353 种植物病毒; 9,010 病毒-植物宿主关联 (2025-05-08)</td><td>植物病毒宿主范围系统分析; dsDNA 病毒宿主范围更广</td></tr>
+</table>
+
+<h3 id="pvirdb">PVirDB</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>PVirDB</td><td><a href="https://zenodo.org/records/6609576" target="_blank">zenodo.org/records/6609576</a></td><td>4,463 种植物病毒 + 类病毒; 50,611 核酸序列 (2022-06-03); FASTA 分发</td><td>精选植物病毒参考序列集</td></tr>
+</table>
+
+<h3 id="virtool">Virtool / ViralZone</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>Virtool Ref Plant Viruses</td><td><a href="https://github.com/virtool/ref-plant-viruses" target="_blank">github.com/virtool/ref-plant-viruses</a></td><td>v1.5.0: 2,084 种植物病毒, 4,783 组装; JSON 分发; 用于 Virtool/Virfind/V-pipe</td><td>生物信息学软件内置参考库</td></tr>
+<tr><td>ViralZone Virosaurus</td><td><a href="https://viralzone.expasy.org/8676" target="_blank">viralzone.expasy.org/8676</a></td><td>1,230 种植物病毒, 6,038 组装 (2020-03-30); 98% 去冗余</td><td>植物病毒代表性序列集</td></tr>
+</table>
+
+<h3 id="dpvweb-phytopipe">DPVweb / PhytoPipe</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>DPVweb</td><td><a href="https://www.dpvweb.net/" target="_blank">dpvweb.net</a></td><td>植物病毒/类病毒/卫星 37,076 条 + 真菌/动物/噬菌体参考序列</td><td>植物病毒百科知识 + 序列下载</td></tr>
+<tr><td>PhytoPipe</td><td><a href="https://github.com/healthyPlant/PhytoPipe" target="_blank">github.com/healthyPlant/PhytoPipe</a></td><td>3,253 种植物病毒 TaxID (基于 ICTV VMR + VHDB)</td><td>植物病毒检测流程内置参考列表</td></tr>
+<tr><td>Plant Virus CN</td><td><a href="http://www.plantvirus.cn/" target="_blank">plantvirus.cn</a></td><td>中国园艺植物病毒检测和鉴定研究项目网站</td><td>国内植物病毒信息门户</td></tr>
+<tr><td>Geminiviridae DB</td><td><a href="http://gpi.geminiviridae.com/" target="_blank">gpi.geminiviridae.com</a></td><td>双生病毒科专项数据库</td><td>双生病毒基因组特征浏览</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="vire">&#127758; 宏基因组病毒数据库</h2>
+
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>VIRE</td><td><a href="https://vire.embl.de" target="_blank">vire.embl.de</a></td><td>全球尺度宏基因组病毒组资源库 (2025); 比 IMG/VR v4 新增 56.1% 物种级病毒集群; 极端环境发现系数 >0.8</td><td>环境病毒组大规模发现与比较</td></tr>
+<tr><td>IMG/VR v4</td><td><a href="https://img.jgi.doe.gov/vr/" target="_blank">img.jgi.doe.gov/vr</a></td><td>15.67M vGenomes, 9.16M vOTUs; 含核酸/蛋白 FASTA + 宿主预测表</td><td>目前最大病毒宏基因组数据库之一</td></tr>
+<tr><td id="metavr">MetaVR</td><td><a href="https://www.meta-virome.org/" target="_blank">meta-virome.org</a></td><td>宏病毒资源库</td><td>宏病毒组数据检索与分析</td></tr>
+<tr><td>gcMeta 2025</td><td><a href="https://gcmeta.wdcm.org/" target="_blank">gcmeta.wdcm.org</a></td><td>270 万+ MAGs, 104,266 样本; 50 个生物群落专属目录; 109,586 物种级聚类 (63% 新类群); 7,490 万+ 新基因</td><td>跨生态系统微生物发现; AI 友好型标准化数据集</td></tr>
+<tr><td>全球噬菌体名录</td><td><a href="https://nmdc.cn/phage/" target="_blank">nmdc.cn/phage/</a></td><td>国家微生物科学数据中心维护</td><td>噬菌体基因组资源</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="virus-host">&#129440; 病毒-宿主相互作用数据库</h2>
+
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>KEGG Virus-Host DB</td><td><a href="https://www.genome.jp/virushostdb/" target="_blank">genome.jp/virushostdb</a></td><td>2,555 条植物相关 (Viridiplantae 筛选); 人工文献整理, 可信度高</td><td>文献溯源的病毒-宿主关联</td></tr>
+<tr><td>VHRdb (Viral Host Range DB)</td><td><a href="https://viralhostrangedb.pasteur.cloud/" target="_blank">viralhostrangedb.pasteur.cloud</a></td><td>~1.7 万实验验证的病毒-宿主相互作用对</td><td>实验验证的宿主范围数据; 支持数据上传</td></tr>
+<tr><td>ZOVER 2.0</td><td><a href="https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkaf1243/8328549" target="_blank">NAR 2026</a></td><td>动物源和媒介传播病毒; 5,883 个 mNGS 文库, 362 种野生动物; 标准化 reads 分析流程</td><td>人畜共患病毒跨宿主传播监测</td></tr>
+<tr><td>EPPO Global Database</td><td><a href="https://gd.eppo.int/datasheets/" target="_blank">gd.eppo.int</a></td><td>欧洲和地中海植物保护组织; 植物有害生物 (含病毒) 分类/分布/宿主; 人工审核</td><td>检疫性植物病毒宿主界定</td></tr>
+<tr><td>Virus-Host DB (BV-BRC)</td><td><a href="https://www.bv-brc.org/" target="_blank">bv-brc.org</a></td><td>15,179 种病毒与 3,791 种宿主的相互作用; ~2.95 亿病毒基因/序列</td><td>综合病毒-宿主关联查询与分析</td></tr>
+</table>
+
+<h3 id="transmission">植物病毒传播与媒介数据库</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>WUR Plant Virus Transmission DB</td><td><a href="https://library.wur.nl/WebQuery/virus" target="_blank">library.wur.nl/WebQuery/virus</a></td><td>1,654 种病毒; 基于 3,500+ 出版物 (100 年文献); 种子/汁液/土壤/水/无性繁殖 多维度</td><td>植物病毒传播方式与媒介系统查询</td></tr>
+<tr><td>VIP-DB</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/42357690/" target="_blank">PubMed</a></td><td>583 病毒-昆虫传播; 855 病毒-植物; 1,375 三元组; 含传毒机制/DOI/分类学</td><td>循证病毒-昆虫-植物关系; 可追溯文献证据</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="db-review">&#128214; 病毒数据库综述与综合资源</h2>
+
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>VOGDB (病毒正交群)</td><td><a href="https://vogdb.org/" target="_blank">vogdb.org</a></td><td>38,109 个病毒正交群, 11,133 病毒种; 三层分组 (序列相似性/谱比对/结构); 原核+真核病毒联合聚类</td><td>比较病毒(宏)基因组学; 远源同源性搜索</td></tr>
+<tr><td>ViralZone</td><td><a href="https://viralzone.expasy.org/" target="_blank">viralzone.expasy.org</a></td><td>128 个病毒科, 567 个属的详细知识库; 基因组结构/复制周期/宿主范围</td><td>病毒生物学知识检索</td></tr>
+<tr><td>VIPERdb</td><td><a href="http://viperdb.scripps.edu/" target="_blank">viperdb.scripps.edu</a></td><td>1,323 个二十面体病毒衣壳蛋白质结构</td><td>病毒结构生物学; 衣壳可视化</td></tr>
+<tr><td>Virxicon</td><td><a href="https://virxicon.cs.put.poznan.pl/" target="_blank">virxicon.cs.put.poznan.pl</a></td><td>59.9 万病毒基因组; 巴尔的摩分类系统注释</td><td>按巴尔的摩分类法组织的序列</td></tr>
+<tr><td>Virus Genome Viewer (VGV)</td><td><a href="https://github.com/weiyanle/VGV" target="_blank">github.com/weiyanle/VGV</a></td><td>多病毒基因组序列在线比对; 同源片段 + 系统发育树可视化</td><td>病毒基因组交互式浏览</td></tr>
+<tr><td>MVIP</td><td><a href="http://mvip.whu.edu.cn/" target="_blank">mvip.whu.edu.cn</a></td><td>6,586 个测序样本, 77 种病毒; 宿主转录组等多组学数据</td><td>病毒感染后宿主反应分析</td></tr>
+<tr><td>Database Commons</td><td><a href="https://ngdc.cncb.ac.cn/databasecommons/" target="_blank">ngdc.cncb.ac.cn/databasecommons</a></td><td>5,902 个生物数据库目录; 元数据和用户评价</td><td>数据库发现与对比</td></tr>
+<tr><td>NAR Database List</td><td><a href="https://www.oxfordjournals.org/nar/database/a/" target="_blank">oxfordjournals.org/nar</a></td><td>1,965 个经审核的生物数据库 (年度专刊)</td><td>领域权威数据库目录</td></tr>
+<tr><td>FAIRsharing</td><td><a href="https://fairsharing.org/" target="_blank">fairsharing.org</a></td><td>3,888 条标准/数据库/政策注册; FAIR 原则</td><td>数据管理合规参考</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="db-build">&#128300; 数据库构建工具与方法</h2>
+
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>MAG-based Pipeline</td><td><a href="https://github.com/pengsihua2023/mag-based-pipeline" target="_blank">github.com/pengsihua2023/mag-based-pipeline</a></td><td>完整的参考病毒数据库构建流程文档; DATABASE_SETUP.md</td><td>参考建库方案参考</td></tr>
+<tr><td>VirusDetect Classification</td><td><a href="https://github.com/kentnf/VirusDetect/tree/master/tools/genbank_vrl_classification" target="_blank">GitHub</a></td><td>从 GenBank 下载+分类+人工校验+提取蛋白序列+去冗余+建索引 全流程</td><td>按宿主分类病毒序列的完整管线</td></tr>
+<tr><td>Vclust Deduplicate</td><td><a href="https://github.com/refresh-bio/vclust" target="_blank">github.com/refresh-bio/vclust</a></td><td>跨多数据集去重 (RefSeq > GenBank > IMG/VR 优先级); vclust deduplicate</td><td>合并多源数据生成非冗余 FASTA</td></tr>
+<tr><td>build_virus_db.py</td><td>本项目 2.Build_plant_virus_db/</td><td>17 种下游工具统一建库 (Metabuli/Kraken2/Centrifuger/Kaiju/Diamond 等)</td><td>核酸+蛋白双模一站式建库</td></tr>
+<tr><td>SearchAccessionIdToTaxId</td><td>本项目脚本</td><td>并行 Accession to TaxID 映射 (30 线程, 10万批量)</td><td>大规模序列 ID 到分类 ID 转换</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="seq-meta">&#128269; 序列下载与元数据工具</h2>
+
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>NCBI Datasets</td><td><a href="https://www.ncbi.nlm.nih.gov/datasets/" target="_blank">ncbi.nlm.nih.gov/datasets</a></td><td>datasets download genome taxon &lt;id&gt; --include genome,rna,protein,cds,gff3,gbff</td><td>一行命令下载基因组+注释全格式</td></tr>
+<tr><td>genomepy</td><td><a href="https://github.com/vanheeringen-lab/genomepy" target="_blank">github.com/vanheeringen-lab/genomepy</a></td><td>搜索/下载/管理参考基因组和注释 (FASTA/GTF/GFF)</td><td>程序化基因组管理</td></tr>
+<tr><td>NCBImeta</td><td><a href="https://github.com/ktmeaton/NCBImeta" target="_blank">github.com/ktmeaton/NCBImeta</a></td><td>支持 Assembly/BioProject/BioSample/Nucleotide/SRA/PubMed 批量元数据检索; 本地 SQLite</td><td>元数据批量获取与整理</td></tr>
+<tr><td>pysradb</td><td><a href="https://github.com/saketkc/pysradb" target="_blank">github.com/saketkc/pysradb</a></td><td>SRA 元数据检索; DOI/PMID → GSE/PRJNA/SRP 转换</td><td>SRA 数据定位与元数据下载</td></tr>
+<tr><td>kingfisher</td><td>conda install -c bioconda kingfisher</td><td>多镜像下载 SRA (ena-ascp/ena-ftp/prefetch/aws-http); 自动切换源</td><td>高速 SRA 下载; 应对限速</td></tr>
+<tr><td>ffq</td><td><a href="https://github.com/pachterlab/ffq" target="_blank">github.com/pachterlab/ffq</a></td><td>从公共数据库查找测序数据和元数据</td><td>统一接口查询多数据库</td></tr>
+<tr><td>iSeq</td><td><a href="https://github.com/BioOmics/iSeq" target="_blank">github.com/BioOmics/iSeq</a></td><td>GSA/SRA/ENA/DDBJ 四源统一检索下载</td><td>跨数据库测序数据获取</td></tr>
+<tr><td>geofetch</td><td><a href="https://github.com/pepkit/geofetch" target="_blank">github.com/pepkit/geofetch</a></td><td>GEO+SRA 数据+元数据下载; 标准化 PEP 格式输出</td><td>批量 GEO 数据处理</td></tr>
+<tr><td>SRA Metadata Extractor</td><td><a href="https://github.com/juanjo255/SRA-Metadata-Extractor" target="_blank">GitHub</a></td><td>批量提取 BioProject 21 字段 + BioSample 11 字段</td><td>项目/样本元数据批量获取</td></tr>
+<tr><td>NCBI Sequence Fetcher</td><td><a href="https://github.com/engkinandatama/NCBI-Sequence-Fetcher" target="_blank">GitHub</a></td><td>GUI 工具; 直接 URL 下载 GenBank/FASTA; 自动提取 accession/organism/strain 等元数据; Excel 导出</td><td>无代码序列下载和元数据提取</td></tr>
+<tr><td>GenParser</td><td><a href="https://github.com/yunomer/GenParser" target="_blank">GitHub</a></td><td>下载+解析 GenBank 文件; 按配置提取字段; xlsx 输出</td><td>批量 GenBank 解析</td></tr>
+<tr><td>datavzrd</td><td><a href="https://github.com/datavzrd/datavzrd" target="_blank">github.com/datavzrd/datavzrd</a></td><td>CSV/TSV/JSON/Parquet → 交互式 HTML 报告</td><td>元数据可视化浏览</td></tr>
+<tr><td>ExTaxsI</td><td><a href="https://github.com/qLSLab/ExTaxsI" target="_blank">github.com/qLSLab/ExTaxsI</a></td><td>NCBI 核苷酸查询结果可视化; 散点图/旭日图/世界地图; TaxID 转换</td><td>核酸数据与分类信息探索</td></tr>
+<tr><td>MADAME</td><td><a href="https://github.com/BiomeResearchTeam/MADAME.tutorial" target="_blank">GitHub</a></td><td>微生物组研究元数据和数据检索; 元数据→出版物→报告→数据四模块; 交互式 HTML 报告</td><td>下载前评估元数据适用性</td></tr>
+<tr><td>q2-fondue</td><td><a href="https://github.com/bokulich-lab/q2-fondue" target="_blank">GitHub</a></td><td>QIIME 2 生态系统中 SRA 数据的可重复获取/管理/荟萃分析; 完整溯源</td><td>标准化微生物组数据复用</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="primer-tools">&#129514; 引物设计与验证工具</h2>
+
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>Olivar</td><td><a href="https://github.com/treangenlab/Olivar" target="_blank">github.com/treangenlab/Olivar</a></td><td>多重 PCR 平铺设计; 全基因组覆盖</td><td>病毒全基因组扩增引物设计</td></tr>
+<tr><td>varVAMP</td><td><a href="https://github.com/jonas-fuchs/varVAMP" target="_blank">github.com/jonas-fuchs/varVAMP</a></td><td>高变异区简并引物设计 (single/tiled/qpcr 三模式); 专为病毒开发; 2025 Nature Comms</td><td>高变异病毒株系全覆盖引物</td></tr>
+<tr><td>VPrimer</td><td><a href="https://github.com/qhtjrmin/VPrimer" target="_blank">github.com/qhtjrmin/VPrimer</a></td><td>RNA 病毒高变异覆盖率引物和探针设计+更新; C++ 实现</td><td>快速进化的 RNA 病毒检测</td></tr>
+<tr><td>AutoPVPrimer</td><td><a href="https://github.com/Abozarghorbani/AutoPVPrimer" target="_blank">github.com/Abozarghorbani/AutoPVPrimer</a></td><td>AI 增强植物病毒引物设计和评估; 自动 NCBI 下载 + Primer3 + ML 调优 + BLAST 验证</td><td>植物病毒一站式引物设计</td></tr>
+<tr><td>PCR_strainer</td><td><a href="https://github.com/KevinKuchinski/PCR_strainer" target="_blank">GitHub</a></td><td>引物和探针特异性评估; TNTBLAST 热力学解析</td><td>qPCR 检测特异性验证</td></tr>
+<tr><td>qPrimerDB 2.0</td><td><a href="https://qprimerdb.biodb.org" target="_blank">qprimerdb.biodb.org</a></td><td>1,172 物种, 1,308 基因组预计算 qPCR 引物; 热力学基因特异性设计</td><td>基因组规模 qPCR 引物资源</td></tr>
+<tr><td>MetaPrimerDB</td><td>—</td><td>1,388 物种 (含植物 182 种, 521 万引物); 跨物种同源性在线测试; 批量设计</td><td>多物种特异性引物设计</td></tr>
+<tr><td>VirPrimer</td><td><a href="http://www.virprimer.org.cn/" target="_blank">virprimer.org.cn</a></td><td>病毒 PCR 引物数据库</td><td>病毒检测引物检索</td></tr>
+<tr><td>CRISPR/Cas12a 引物 (AutoCORDSv2)</td><td><a href="https://github.com/duao42/AutoCORDSv2" target="_blank">GitHub</a></td><td>自动化 Cas12a crRNA + RPA 引物设计</td><td>现场快速检测系统开发</td></tr>
+<tr><td>degenprime</td><td>conda install -c bioconda degenprime</td><td>简并引物设计; MAFFT 全局/局部比对; 热力学筛选</td><td>多序列比对保守区简并引物</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="transcriptome">&#128200; 公共转录组与 SRA 资源</h2>
+
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>ARCHS4</td><td><a href="https://archs4.org/" target="_blank">archs4.org</a></td><td>~966,693 个 RNA-Seq 样本 (Kallisto 比对); GEO+SRA; 持续更新; tSNE/相关性</td><td>大规模预处理转录组直接复用</td></tr>
+<tr><td>recount3</td><td><a href="https://rna.recount.bio/" target="_blank">rna.recount.bio</a></td><td>8,679 人 + 10,088 小鼠数据集, >75 万样本; gene/exon/exon-junction 统一处理</td><td>跨研究转录组荟萃分析</td></tr>
+<tr><td>1KP (千种植物转录组)</td><td><a href="https://db.cngb.org/onekp/" target="_blank">db.cngb.org/onekp</a></td><td>1,124 种植物转录组数据</td><td>植物进化与比较转录组学</td></tr>
+<tr><td>SRA Run Info</td><td><a href="https://www.ncbi.nlm.nih.gov/sra/docs/sragrowth/" target="_blank">ncbi.nlm.nih.gov/sra</a></td><td>SRA 数据增长统计; SRR→ENA 信息转换</td><td>SRA 数据全景掌握</td></tr>
+<tr><td>AncientMetagenomeDir</td><td><a href="https://github.com/SPAAM-community/AncientMetagenomeDir" target="_blank">GitHub</a></td><td>社区维护的古代宏基因组样本标准化元数据</td><td>古代 DNA 宏基因组复用</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="medicinal">&#127807; 药用植物基因组与天然产物数据库</h2>
+
+<h3>基因组资源</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>IMP (整合药用植物组学)</td><td><a href="https://www.bic.ac.cn/IMP/" target="_blank">bic.ac.cn/IMP</a></td><td>1,024 种药用植物基因组; 含枸杞 (Lycium barbarum)</td><td>药用植物基因组浏览下载</td></tr>
+<tr><td>plantGIR</td><td><a href="http://plantgir.cn/" target="_blank">plantgir.cn</a></td><td>1,117 种植物基因组; 开花/生长素/花青素基因+转录因子全鉴定; BLAST/引物设计/hmmsearch 在线工具</td><td>植物基因组一站式资源与分析</td></tr>
+<tr><td>GP Genome (药典数据库)</td><td><a href="http://www.gpgenome.com/" target="_blank">gpgenome.com</a></td><td>903 种药用植物; 八个国家药典收录</td><td>药典收录物种基因组检索</td></tr>
+<tr><td>GNDC</td><td><a href="https://cbcb.cdutcm.edu.cn/gndc/" target="_blank">cbcb.cdutcm.edu.cn/gndc</a></td><td>药用植物基因组与天然产物关联</td><td>天然产物生物合成途径挖掘</td></tr>
+<tr><td>reference_genome_download</td><td><a href="https://github.com/wanjinhu/reference_genome_download" target="_blank">GitHub</a></td><td>自动化参考基因组下载工具</td><td>批量基因组获取</td></tr>
+</table>
+
+<h3>天然产物数据库</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>HerbalMDB</td><td><a href="https://cbcb.cdutcm.edu.cn/smdb/" target="_blank">cbcb.cdutcm.edu.cn/smdb</a></td><td>草药代谢物数据库</td><td>药用植物化学成分检索</td></tr>
+<tr><td>MedMeta</td><td><a href="https://cbcb.cdutcm.edu.cn/MedMeta/" target="_blank">cbcb.cdutcm.edu.cn/MedMeta</a></td><td>全球药用物种次生代谢物综合数据库</td><td>跨物种次生代谢物比较</td></tr>
+<tr><td>CMAUP</td><td><a href="https://www.bidd.group/CMAUP/" target="_blank">bidd.group/CMAUP</a></td><td>植物活性分子数据库</td><td>天然产物活性与靶标</td></tr>
+<tr><td>NPBS Atlas</td><td><a href="https://biochemai.cstspace.cn/npbs/" target="_blank">biochemai.cstspace.cn/npbs</a></td><td>21 万+ 天然产物与生物来源图谱; 植物 67%/真菌/动物(海洋 77%)</td><td>天然产物-物种关系全景探索</td></tr>
+<tr><td>COCONUT</td><td><a href="https://coconut.naturalproducts.net" target="_blank">coconut.naturalproducts.net</a></td><td>大规模天然产物开放数据库</td><td>天然产物结构检索</td></tr>
+<tr><td>AVMPNPDev</td><td><a href="https://avmpnpdev.luar.dcc.ufmg.br/database" target="_blank">avmpnpdev.luar.dcc.ufmg.br</a></td><td>抗病毒药用植物和天然产物数据库</td><td>抗病毒活性天然产物筛选</td></tr>
+<tr><td>AlkaPlorer</td><td><a href="https://alkaplorer.qmclab.com/" target="_blank">alkaplorer.qmclab.com</a></td><td>生物碱数据库</td><td>生物碱类化合物检索</td></tr>
+<tr><td>TeroKit</td><td><a href="https://terokit.qmclab.com/" target="_blank">terokit.qmclab.com</a></td><td>萜类化合物数据库</td><td>萜类化学空间探索</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2 id="pathogen">&#128736; 病原菌 / 蛋白结构 / 其他</h2>
+
+<h3>病原菌与病害数据库</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>PHI-base</td><td><a href="http://www.phi-base.org/" target="_blank">phi-base.org</a></td><td>病原体-宿主相互作用基因数据库; 含真菌/细菌/原生生物</td><td>病原致病基因功能注释</td></tr>
+<tr><td>PRGdb 4</td><td><a href="https://prgdb.org/prgdb4/" target="_blank">prgdb.org</a></td><td>植物抗病基因数据库</td><td>植物免疫受体挖掘</td></tr>
+<tr><td>APS Image Database</td><td><a href="https://imagedatabase.apsnet.org/" target="_blank">imagedatabase.apsnet.org</a></td><td>美国植物病理学会病害图片库 (付费)</td><td>植物病害症状参考</td></tr>
+<tr><td>EPPO Photos</td><td><a href="https://gd.eppo.int/photos/virus" target="_blank">gd.eppo.int/photos/virus</a></td><td>欧洲病虫害照片库 (病毒专项)</td><td>病毒症状视觉诊断</td></tr>
+<tr><td>Pacific Pests Pathogens</td><td><a href="https://apps.lucidcentral.org/ppp_v9/" target="_blank">apps.lucidcentral.org/ppp_v9</a></td><td>太平洋地区害虫/病原体/杂草综合信息</td><td>热带地区植物病害参考</td></tr>
+</table>
+
+<h3>蛋白质结构与功能预测</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>BFVD</td><td><a href="https://bfvd.steineggerlab.workers.dev" target="_blank">bfvd.steineggerlab.workers.dev</a></td><td>351,242 个病毒蛋白结构 (ColabFold 预测); 62% 与现有数据库结构相似度低; Foldseek 检索</td><td>病毒特异性蛋白结构库</td></tr>
+<tr><td>DRfold2</td><td><a href="https://github.com/leeyang/DRfold" target="_blank">GitHub</a></td><td>深度学习高精度 RNA 二级/三级结构预测</td><td>RNA 结构建模</td></tr>
+<tr><td>RhoFold+</td><td><a href="https://github.com/ml4bio/RhoFold" target="_blank">GitHub</a></td><td>单链 RNA 3D 结构预测</td><td>非编码 RNA 结构预测</td></tr>
+<tr><td>trRosettaRNA</td><td><a href="https://github.com/RNA-folding/trRosettaRNA" target="_blank">GitHub</a></td><td>RNA 三维结构预测平台</td><td>RNA 结构建模</td></tr>
+<tr><td>DeepMVP (PTMAtlas)</td><td><a href="https://github.com/bzhanglab/PTMAtlas" target="_blank">GitHub</a></td><td>39.7 万高置信度 PTM 位点; 6 类修饰; 深度学习预测错义变异对 PTM 影响</td><td>翻译后修饰与变异功能后果预测</td></tr>
+<tr><td>ProEnd</td><td><a href="https://pubmed.ncbi.nlm.nih.gov/39396964/" target="_blank">PubMed</a></td><td>含 HbYX 基序的蛋白质综合数据库; 病毒蛋白质组中普遍存在</td><td>病毒蛋白基序功能研究</td></tr>
+</table>
+
+<h3>相互作用与抗病毒系统</h3>
+<table>
+<tr><th>名称</th><th>网站</th><th>特点</th><th>用途</th></tr>
+<tr><td>ViRBase v3.0</td><td><a href="http://www.virbase.org/" target="_blank">virbase.org</a></td><td>82 万+ 病毒-宿主 ncRNA 相互作用; RNA 编辑/定位/修饰/SNP/药物注释; IntaRNA+PRIdictor 预测</td><td>ncRNA 介导的病毒-宿主互作</td></tr>
+<tr><td>DefenseFinder</td><td><a href="https://github.com/mdmparis/defense-finder" target="_blank">GitHub</a></td><td>60 个抗病毒系统家族, 151 (亚)型自动注释; 灵敏度 97.4-99.4%, 特异性 96.7-99.97%</td><td>原核生物抗病毒免疫系统发现</td></tr>
+<tr><td>PADLOC</td><td><a href="https://github.com/padlocbio/padloc" target="_blank">GitHub</a></td><td>基于 HMM+遗传结构的防御系统识别; 23 万 RefSeq 基因组预计算; 含 CRISPR 阵列+逆转录 ncRNA</td><td>原核基因组抗病毒系统注释</td></tr>
+<tr><td>Deep-HPI-pred</td><td><a href="https://cbi.gxu.edu.cn/shiny-apps/Deep-HPI-pred/" target="_blank">cbi.gxu.edu.cn</a></td><td>MLP 预测宿主-病原体 PPI; 植物(MCC>0.80)/人类/动物多系统验证</td><td>宿主-病原体蛋白互作预测</td></tr>
+</table>
+
+<div class="note"><b>&#128161; 说明</b>: 本页面整理了植物病毒学研究常用的公共数据库、分析工具和在线资源。部分数据库的下载脚本与方法见项目各模块 README 及 <code>~/bin/</code> 工具集。</div>
+
+</div></div>
+<footer>Plant Virus Database Platform &middot; Supplementary Resources &middot; Last updated 2026-07-23</footer>
+</body></html>

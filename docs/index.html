@@ -13,7 +13,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC
 .stats .s b{display:block;font-size:24px;font-weight:700}
 .stats .s span{font-size:11px;opacity:.8}
 .wrap{max-width:1160px;margin:-26px auto 40px;padding:0 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}@media(max-width:700px){.grid{grid-template-columns:1fr}}
 .card{background:#fff;border-radius:14px;padding:22px 20px;text-decoration:none;color:inherit;box-shadow:0 2px 10px rgba(20,60,90,.06);border:1px solid #eef2f5;transition:.18s;display:flex;flex-direction:column;position:relative;overflow:hidden}
 .card:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(20,60,90,.14);border-color:#bcd8e8}
 .card .ic{font-size:32px;margin-bottom:12px}
@@ -27,52 +27,46 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
 
 <div class="hero">
   <h1>Plant Virus Database Platform</h1>
-  <div class="en">Plant Virus Database Platform</div>
-  <p>Comprehensive plant virus reference database, primers, literature, knowledge base, vector-host-virus interaction network, and bioinformatics analysis.</p>
+  <div class="en">A Comprehensive Resource for Plant Virology Research</div>
+  <p>Data, tools, and knowledge — in one place. Browse curated reference sequences, symptom photos, vector-host networks and endogenous viral elements. Analyze with interactive explorer, primer designer, metagenomic classifier and miRNA target prediction. Stay current with AI-powered literature tracking and knowledge retrieval.</p>
   <div class="stats">
-    <div class="s"><b>11</b><span>Modules</span></div>
     <div class="s"><b>8,465</b><span>Reference Records</span></div>
+    <div class="s"><b>2,757</b><span>Symptom Photos</span></div>
     <div class="s"><b>1,806</b><span>Vector-Host Pairs</span></div>
-    <div class="s"><b>910 MB</b><span>Metabuli Database</span></div>
+    <div class="s"><b>6,575</b><span>Papers Tracked</span></div>
   </div>
 </div>
 
 <div class="wrap">
 
-  <div class="sec">Core Databases</div>
+  <div class="sec">&#128218; Data Resources</div>
   <div class="grid">
     <a class="card" href="/reference/"><div class="ic">&#128218;</div><h3>Reference DB</h3><div class="path">/reference/</div><p>Curated plant virus reference sequences: FASTA download, metadata, segmented/non-segmented, genome visualization.</p><div class="go">&#8594;  </div></a>
-    <a class="card" href="/explorer/"><div class="ic">&#128202;</div><h3>Virus Explorer</h3><div class="path">/explorer/</div><p>Interactive virus exploration with timeline, global distribution, sequence comparison, and taxonomy browsing.</p><div class="go">&#8594;  </div></a>
-    <a class="card" href="/primers/"><div class="ic">&#129514;</div><h3>Primer Database</h3><div class="path">/primers/</div><p>Plant virus diagnostic primer collection with target species, melting temperature, and validation status.</p><div class="go">&#8594;  </div></a>
-  </div>
-
-  <div class="sec">Vector Ecology</div>
-  <div class="grid">
-    <a class="card" href="/vector/"><div class="ic">&#129433;</div><h3>Vector-Host DB</h3><div class="path">/vector/</div><p>Insect vector and plant host interaction database with transmission mode, acquisition/inoculation periods.</p><div class="go">&#8594;  </div></a>
+    <a class="card" href="/photos/"><div class="ic">&#127807;</div><h3>Symptom Gallery</h3><div class="path">/photos/</div><p>925 plant virus disease symptom photos, filterable by host/tissue/symptom/position, EPPO Global Database.</p><div class="go">&#8594;  </div></a>
+    <a class="card" href="/genes/gene_browser.html"><div class="ic">&#129516;</div><h3>Immune &amp; sRNA Gene Atlas</h3><div class="path">/genes/</div><p>RefPlantNLR 415 NLRs + 11,780 sRNA genes + 3,996 UPS + 83,166 miRNAs + 322K vsiRNAs + 59 antiviral NLR effectors.</p><div class="go">&#8594;  </div></a>
     <a class="card" href="/te/"><div class="ic">&#129516;</div><h3>TE &amp; EVE</h3><div class="path">/te/</div><p>Plant transposable elements and endogenous viral elements (EVEs) from U-RVDB v32.0 with MMseqs2 clustering.</p><div class="go">&#8594;  </div></a>
+    <a class="card" href="/vector/"><div class="ic">&#129433;</div><h3>Vector-Host DB</h3><div class="path">/vector/</div><p>Insect vector and plant host interaction database with transmission mode, acquisition/inoculation periods.</p><div class="go">&#8594;  </div></a>
+  
+     <a class="card" href="/primers/"><div class="ic">&#129514;</div><h3>Primer Database</h3><div class="path">/primers/</div><p>57,072 PCR/qPCR primer pairs covering 4,789 plant virus species. Search by species, type, or validation score.</p><div class="go">&#8594;  </div></a>
+   </div>
+
+  <div class="sec">&#128300; Analysis Tools</div>
+  <div class="grid">
+    <a class="card" href="/explorer/"><div class="ic">&#128202;</div><h3>Virus Explorer</h3><div class="path">/explorer/</div><p>Interactive virus exploration with timeline, global distribution, sequence alignment, and taxonomy browsing.</p><div class="go">&#8594;  </div></a>
+    <a class="card" href="/pamirdb/"><div class="ic">&#128300;</div><h3>PV-miRNA (PAmiRDB)</h3><div class="path">/pamirdb/</div><p>Plant virus miRNA target prediction workbench. 3-algorithm consensus (miRanda+psRNATarget+RNAhybrid), 402 species x 42 virus.</p><div class="go">&#8594;  </div></a>
     <a class="card" href="/metabuli/"><div class="ic">&#128300;</div><h3>Metabuli</h3><div class="path">/metabuli/</div><p>Upload/assemble contigs for plant virus detection: reads to reports, 8 taxonomy ranks, Krona/Sankey visualization.</p><div class="go">&#8594;  </div></a>
   </div>
 
-  <div class="sec">Symptoms</div>
-  <div class="grid">
-    <a class="card" href="/photos/"><div class="ic">&#127807;</div><h3>Symptom Gallery</h3><div class="path">/photos/</div><p>925 plant virus disease symptom photos, filterable by host/tissue/symptom/position, EPPO Global Database.</p><div class="go">&#8594;  </div></a>
-  </div>
-
-  <div class="sec">Prediction &amp; Analysis</div>
-  <div class="grid">
-    <a class="card" href="/genes/gene_browser.html"><div class="ic">&#129516;</div><h3>Plant Immune &amp; sRNA Gene Atlas</h3><div class="path">/genes/</div><p>RefPlantNLR 415 validated NLRs (73 spp.) + 11,780 sRNA genes + 3,996 UPS + 83,166 miRNAs + 322K vsiRNAs + 59 antiviral NLR effectors.</p><div class="go">&#8594;  </div></a>
-    <a class="card" href="/pamirdb/"><div class="ic">&#128300;</div><h3>PV-miRNA (PAmiRDB)</h3><div class="path">/pamirdb/</div><p>Plant virus miRNA target prediction workbench. 3-algorithm consensus (miRanda+psRNATarget+RNAhybrid), 402 species x 42 virus.</p><div class="go">&#8594;  </div></a>
-  </div>
-
-  <div class="sec">Literature &amp; Knowledge</div>
+  <div class="sec">&#128172; Knowledge</div>
   <div class="grid">
     <a class="card" href="/literature/"><div class="ic">&#128240;</div><h3>Literature Tracker</h3><div class="path">/literature/</div><p>PubMed plant virus literature auto-tracking, weekly classification, AI Chinese summaries.</p><div class="go">&#8594;  </div></a>
     <a class="card" href="/knowledge/"><div class="ic">&#128172;</div><h3>Knowledge RAG</h3><div class="path">/knowledge/</div><p>DPV and viroidDB backed AI Q&amp;A assistant, supporting intelligent search of plant virology knowledge.</p><div class="go">&#8594;  </div></a>
+    <a class="card" href="/help/resources.html"><div class="ic">&#128218;</div><h3>Supplementary Resources</h3><div class="path">/help/resources.html</div><p>Curated 100+ public databases &amp; tools: virus sequences, hosts, vectors, metagenomics, primers, transcriptomes, natural products.</p><div class="go">&#8594;  </div></a>
   </div>
 
 </div>
 
-<footer>Plant Virus Database Platform &middot; Plant Virus Database Platform</footer>
+<footer>Plant Virus Database Platform · Plant Virus Database Platform</footer>
 <script src="/reference/i18n.js"></script>
 <script>PVDB_i18n.init({navSelector:'nav.__none__'});</script>
 </body></html>
