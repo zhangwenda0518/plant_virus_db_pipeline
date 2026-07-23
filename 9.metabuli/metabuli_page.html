@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Metabuli Classification</title>
+<title>Metabuli — Virus Sequence Analysis</title>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -15,178 +15,372 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .bar a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 18px;font-size:14px}
 .bar a:hover{background:rgba(255,255,255,.15);color:#fff}
 .bar .brand{font-weight:700;font-size:16px;color:#fff;margin-right:8px;padding:0}
-.hero{background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;padding:24px;margin-bottom:20px}
+.hero{background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;padding:20px 24px 16px;margin-bottom:0}
 .hero h1{margin:0;font-size:20px}.hero p{margin:4px 0 0;opacity:.85;font-size:13px}
-.main{max-width:1000px;margin:0 auto;padding:16px}
+/* ── Tabs ── */
+.tab-nav{display:flex;background:#fff;border-bottom:2px solid #e0e0e0;padding:0 24px;position:sticky;top:0;z-index:10}
+.tab-nav button{padding:12px 24px;border:none;background:none;font-size:14px;font-weight:500;color:#666;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s}
+.tab-nav button:hover{color:#1a5276;background:#f0f5fa}
+.tab-nav button.active{color:#1a5276;border-bottom-color:#1a5276;font-weight:700}
+.tab-badge{font-size:10px;background:#e8e8e8;color:#888;padding:1px 6px;border-radius:8px;margin-left:4px;vertical-align:middle}
+.main{max-width:1100px;margin:0 auto;padding:16px}
 .c{background:#fff;border-radius:8px;padding:20px;margin:12px 0;box-shadow:0 1px 3px rgba(0,0,0,.04)}
 .c h3{font-size:15px;color:#1a5276;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid #e8e8e8}
-textarea{width:100%;height:260px;font-family:monospace;font-size:13px;padding:10px;border:1px solid #ddd;border-radius:6px;resize:vertical;box-sizing:border-box}
+textarea{width:100%;height:260px;font-family:monospace;font-size:13px;padding:10px;border:1px solid #ddd;border-radius:6px;resize:vertical;box-sizing:border-box;overflow-x:auto;white-space:pre}
 .btn-go{background:#1a5276;color:#fff;padding:14px 36px;border:none;border-radius:8px;font-size:16px;cursor:pointer;font-weight:600;width:100%}
 .btn-go:hover{background:#2e86c1}.btn-go:disabled{background:#ccc;cursor:not-allowed}
 .progress{height:20px;border-radius:10px;background:#e0e0e0;overflow:hidden;margin:8px 0}
 .progress-bar{height:100%;background:linear-gradient(90deg,#2e86c1,#27ae60);transition:width .3s;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px}
-.ok{color:#27ae60}.err{color:#dc3545}
-table.tb{font-size:12px;width:100%}table.tb th{background:#f5f5f5;padding:6px}table.tb td{padding:6px;border-bottom:1px solid #f0f0f0}
+.ok{color:#27ae60}.err{color:#dc3545}.warn{color:#e67e22}
+/* Tables */
+table.tb{font-size:12px;width:100%}table.tb th{background:#f5f5f5;padding:6px;position:sticky;top:0}table.tb td{padding:6px;border-bottom:1px solid #f0f0f0}
+table.tb tr:hover{background:#f8fbff}
 .ex-btn{font-size:11px;color:#2e86c1;background:none;border:1px solid #ddd;border-radius:4px;cursor:pointer;padding:3px 8px;margin:2px}
 .ex-btn:hover{background:#e3f2fd;border-color:#2e86c1}
+/* CDD domain bar */
+.domain-bar{position:relative;height:28px;border-radius:4px;overflow:hidden;margin:4px 0;background:#eee}
+.domain-seg{position:absolute;top:0;height:100%;cursor:pointer;transition:opacity .2s;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:600;white-space:nowrap;overflow:hidden}
+.domain-seg:hover{opacity:.85}
+/* Alignment view */
+.aln-view{font-family:'Courier New',monospace;font-size:13px;line-height:1.5;background:#1a1a2e;color:#e0e0e0;padding:16px;border-radius:6px;max-height:70vh;overflow:auto;white-space:pre;tab-size:4}
+/* Modal */
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:999;display:flex;align-items:center;justify-content:center}
+.modal-box{background:#fff;border-radius:8px;max-width:90vw;max-height:85vh;overflow:auto;box-shadow:0 8px 32px rgba(0,0,0,.2)}
+.modal-hdr{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:1}
+.modal-hdr span{font-weight:600;color:#1a5276;font-size:14px}
+.modal-close{border:none;background:none;font-size:22px;cursor:pointer;color:#999;padding:0 4px;line-height:1}
+.modal-close:hover{color:#333}
+.modal-body{padding:16px}
+
+.bar .sep{color:rgba(255,255,255,0.18);padding:0 2px;user-select:none}
 </style>
 </head>
 <body>
-<div class="bar"><a class="brand" href="/">Plant Virus DB</a><a href="/reference/">参考库</a><a href="/explorer/">浏览器</a><a href="/virus/">病毒详情</a><a href="/primers/">引物</a><span style="color:rgba(255,255,255,.3);margin:0 6px">|</span><a href="/vector/">媒介</a><a href="/te/">TE·EVE</a><a href="/metabuli/" style="color:#fff;font-weight:600">Metabuli</a><span style="color:rgba(255,255,255,.3);margin:0 6px">|</span><a href="/literature/">文献</a><a href="/knowledge/">知识</a></div>
-<div class="hero"><h1>Metabuli Contig Classification</h1><p>Upload or paste FASTA contigs for taxonomic classification against the plant virus reference database (910 MB) <span style="background:#ff0;color:#000;padding:2px 6px;border-radius:3px;font-size:10px">v3</span></p></div>
+<div class="bar">
+  <a class="brand" href="/">Plant Virus DB</a>
+  <span class="sep">|</span>
+  <a href="/reference/">Reference</a>
+  <a href="/photos/">Photos</a>
+  <a href="/te/">TE·EVE</a>
+  <a href="/vector/">Vector</a>
+  <span class="sep">|</span>
+  <a href="/explorer/">Explorer</a>
+  <a href="/primers/">Primers</a>
+  <a href="/metabuli/" style="color:#fff;font-weight:600">Metabuli</a>
+  <a href="/pamirdb/">PAmiRDB</a>
+  <span class="sep">|</span>
+  <a href="/literature/">Literature</a>
+  <a href="/knowledge/">Knowledge</a>
+</div>
+
+<div class="hero">
+  <h1>Virus Sequence Analysis</h1>
+  <p id="heroDesc">Taxonomic classification, domain search, and similarity search for plant virus sequences</p>
+</div>
+
+<!-- ── Tab bar ── -->
+<div class="tab-nav">
+  <button class="active" data-tab="metabuli" onclick="switchTab('metabuli')">Metabuli <span class="tab-badge">classify</span></button>
+  <button data-tab="cdd" onclick="switchTab('cdd')">CDD <span class="tab-badge">domain</span></button>
+  <button data-tab="blastn" onclick="switchTab('blastn')">BLASTN <span class="tab-badge">nt→nt</span></button>
+  <button data-tab="blastx" onclick="switchTab('blastx')">BLASTX <span class="tab-badge">nt→aa</span></button>
+  <button data-tab="primer" onclick="switchTab('primer')">Primer <span class="tab-badge">design</span></button>
+</div>
+
 <div class="main">
 
-<div class="c">
-<h3>1. Input Sequence</h3>
-<div style="margin-bottom:10px">
-  <input type="file" id="fileInput" accept=".fasta,.fa,.fna,.faa" style="width:100%;padding:8px" onchange="updateInputStatus()">
-</div>
-<textarea id="seqInput" placeholder="Or paste FASTA sequence(s) here..." oninput="updateInputStatus()"></textarea>
-<div style="margin-top:8px">
-  <span style="font-size:11px;color:#888">Quick fill (全长基因组): </span>
-  <button class="ex-btn" onclick="loadExample('tmv')">TMV</button>
-  <button class="ex-btn" onclick="loadExample('pvy')">PVY</button>
-  <button class="ex-btn" onclick="loadExample('cmv')">CMV</button>
-  <button class="ex-btn" onclick="loadExample('pstvd')">PSTVd</button>
-  <button class="ex-btn" onclick="loadExample('mix')" style="background:#e3f2fd;font-weight:600">Mix All</button>
-</div>
-<div style="font-size:11px;color:#888;margin-top:4px" id="inputStatus">No input selected</div>
-</div>
-
-<div class="c">
-<h3>2. Classify</h3>
-<button class="btn-go" id="goBtn" disabled onclick="startClassify()">Start Classification</button>
-<div id="statusDiv" style="margin-top:10px"></div>
+<!-- ── Shared input ── -->
+<div class="c" id="inputCard">
+  <h3>1. Input Sequence <span style="font-size:11px;color:#888;font-weight:400" id="inputHint"></span></h3>
+  <div style="margin-bottom:10px">
+    <input type="file" id="fileInput" accept=".fasta,.fa,.fna,.faa,.txt" style="width:100%;padding:8px" onchange="updateInputStatus()">
+  </div>
+  <textarea id="seqInput" placeholder="Or paste FASTA sequence(s) here..." oninput="updateInputStatus()"></textarea>
+  <div style="margin-top:8px">
+    <span style="font-size:11px;color:#888">Quick fill: </span>
+    <button class="ex-btn" onclick="loadExample('tmv')">TMV</button>
+    <button class="ex-btn" onclick="loadExample('pvy')">PVY</button>
+    <button class="ex-btn" onclick="loadExample('cmv')">CMV</button>
+    <button class="ex-btn" onclick="loadExample('pstvd')">PSTVd</button>
+    <button class="ex-btn" onclick="loadExample('mix')" style="background:#e3f2fd;font-weight:600">Mix All</button>
+    <button class="ex-btn" onclick="clearInput()" style="color:#dc3545">Clear</button>
+  </div>
+  <div style="font-size:11px;color:#888;margin-top:4px" id="inputStatus">No input selected</div>
 </div>
 
+<!-- ── Submit ── -->
+<div class="c" id="submitCard">
+  <h3>2. <span id="runLabel">Classify</span></h3>
+  <button class="btn-go" id="goBtn" disabled onclick="startJob()"><span id="btnLabel">Classification</span></button>
+  <div id="statusDiv" style="margin-top:10px"></div>
+</div>
+
+<!-- ── Primer-specific parameters (visible only on primer tab) ── -->
+<div class="c" id="primerParamsCard" style="display:none">
+  <h3>Primer Design Parameters</h3>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:end">
+    <div style="flex:1;min-width:120px">
+      <label style="font-size:12px;color:#666;display:block">Species Name (optional)</label>
+      <input type="text" id="primerSpeciesName" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:4px;font-size:13px" placeholder="e.g. Tobacco mosaic virus">
+    </div>
+    <div style="min-width:110px">
+      <label style="font-size:12px;color:#666;display:block">Design Mode</label>
+      <select id="primerMode" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:4px;font-size:13px">
+        <option value="PCR">PCR</option>
+        <option value="qPCR">qPCR (+probe)</option>
+      </select>
+    </div>
+    <div style="min-width:60px">
+      <label style="font-size:12px;color:#666;display:block">Pairs</label>
+      <input type="number" id="primerNumPairs" value="5" min="1" max="20" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:4px;font-size:13px">
+    </div>
+    <div style="min-width:80px">
+      <label style="font-size:12px;color:#666;display:block">Product (min-max bp)</label>
+      <div style="display:flex;gap:4px">
+        <input type="number" id="primerProdMin" value="250" min="60" max="2000" style="width:50%;padding:8px;border:1px solid #ddd;border-radius:4px;font-size:13px">
+        <input type="number" id="primerProdMax" value="1000" min="80" max="5000" style="width:50%;padding:8px;border:1px solid #ddd;border-radius:4px;font-size:13px">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Results (per-tab) ── -->
 <div class="c" id="resultCard" style="display:none">
-<h3>Results <span id="jobIdLabel" style="font-size:11px;color:#888"></span></h3>
-<div id="resultContent"></div>
+  <h3>Results <span id="jobIdLabel" style="font-size:11px;color:#888"></span></h3>
+  <div id="resultContent"></div>
+</div>
+
+<!-- ── CDD results (separate card for domain viz) ── -->
+<div class="c" id="cddResultCard" style="display:none">
+  <h3>Conserved Domains <span id="cddJobIdLabel" style="font-size:11px;color:#888"></span></h3>
+  <div id="cddResultContent"></div>
+</div>
+
+<!-- ── BLASTN results (separate card) ── -->
+<div class="c" id="blastnResultCard" style="display:none">
+  <h3>BLASTN Hits <span id="blastnJobIdLabel" style="font-size:11px;color:#888"></span></h3>
+  <div id="blastnResultContent"></div>
+</div>
+
+<!-- ── BLASTX results (separate card) ── -->
+<div class="c" id="primerResultCard" style="display:none">
+  <h3>Primer Design Results <span id="primerJobIdLabel" style="font-size:11px;color:#888"></span></h3>
+  <div id="primerResultContent"></div>
+</div>
+
+<div class="c" id="blastxResultCard" style="display:none">
+  <h3>BLASTX Hits <span id="blastxJobIdLabel" style="font-size:11px;color:#888"></span></h3>
+  <div id="blastxResultContent"></div>
 </div>
 
 </div>
 
 <script>
-function escapeHtml(t) {
-  return String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+// ── Global state ──
+var ACTIVE_TAB = 'metabuli';
+var EXAMPLES = {};
+var SANKEY_DATA = {};
+var activePollId = null;
+var CURRENT_METABULI_JOB = null;  // 当前 Metabuli 结果 job id（用于一键分析）
+
+// ── Tab descriptions ──
+var TAB_INFO = {
+  metabuli:  { hero: "Taxonomic classification — k-mer matching against the 910 MB plant virus reference database",
+              hint: "FASTA nucleotide sequences (contigs/scaffolds/genomes)", btn: "Classification", route: "/metabuli/classify", poll: "/metabuli/status/", label: "Classify" },
+  cdd:       { hero: "Conserved Domain Database — Batch CD-Search (nucleotide auto-translated 6-frame)",
+              hint: "Protein or nucleotide FASTA (nucleotide → 6-frame protein)", btn: "Domain Search", route: "/metabuli/cdd", poll: "/metabuli/cdd_status/", label: "Search Domains" },
+  blastn:    { hero: "BLASTN — nucleotide-to-nucleotide similarity search against NCBI nt (Virus-restricted)",
+              hint: "FASTA nucleotide sequence", btn: "BLASTN Search", route: "/metabuli/blastn", poll: "/metabuli/blast_status/", label: "BLASTN" },
+  primer:    { hero: "Primer Design — design PCR/qPCR primers from your sequences using Primer3",
+              hint: "FASTA nucleotide sequence(s) for primer design", btn: "Design Primers", route: "/metabuli/primer_design", poll: "/metabuli/primer_status/", label: "Design" },
+  blastx:    { hero: "BLASTX — translated nucleotide-to-protein similarity search against NCBI nr (Virus-restricted)",
+              hint: "FASTA nucleotide sequence", btn: "BLASTX Search", route: "/metabuli/blastx", poll: "/metabuli/blast_status/", label: "BLASTX" }
+};
+
+function switchTab(tab) {
+  ACTIVE_TAB = tab;
+  document.querySelectorAll('.tab-nav button').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.tab === tab);
+  });
+  document.getElementById('heroDesc').textContent = TAB_INFO[tab].hero;
+  document.getElementById('inputHint').textContent = TAB_INFO[tab].hint;
+  document.getElementById('runLabel').textContent = TAB_INFO[tab].label;
+  document.getElementById('btnLabel').textContent = TAB_INFO[tab].btn;
+  updateInputStatus();
+  // Hide ALL result cards, then show the right one
+  document.getElementById('resultCard').style.display = 'none';
+  document.getElementById('cddResultCard').style.display = 'none';
+  document.getElementById('blastnResultCard').style.display = 'none';
+  document.getElementById('blastxResultCard').style.display = 'none';
+  var cardMap = {metabuli:'resultCard', cdd:'cddResultCard', blastn:'blastnResultCard', blastx:'blastxResultCard', primer:'primerResultCard'};
+  var target = cardMap[tab];
+  if (target) document.getElementById(target).style.display = 'block';
+  document.getElementById('statusDiv').innerHTML = '';
+  document.getElementById('primerParamsCard').style.display = (tab === 'primer') ? 'block' : 'none';
 }
+
+// ── Helpers ──
+function escapeHtml(t) {
+  return String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+function clearInput() {
+  document.getElementById('seqInput').value = '';
+  document.getElementById('fileInput').value = '';
+  updateInputStatus();
+}
+
 function toggleKrona(id) {
   var cb = document.getElementById('krona-unc-' + id);
   var f = document.getElementById('krona-frame-' + id);
   if (f) f.src = '/metabuli/krona/' + id + (cb && cb.checked ? '?unclassified=1' : '');
 }
-var EXAMPLES = {};
-// 全长参考基因组示例（TMV/PVY/CMV 三段/PSTVd），由 /metabuli/examples 提供
-fetch('/metabuli/examples').then(function(r){return r.json()}).then(function(d){EXAMPLES = d || {}}).catch(function(){});
 
+// ── Examples ──
+fetch('/metabuli/examples').then(function(r){return r.json()}).then(function(d){EXAMPLES = d || {}}).catch(function(){});
 function loadExample(key) {
   var seq = EXAMPLES[key];
-  if (seq) {
-    document.getElementById('seqInput').value = seq;
-    updateInputStatus();
-  } else {
-    alert('示例仍在加载，请稍候重试');
-  }
+  if (seq) { document.getElementById('seqInput').value = seq; updateInputStatus(); }
+  else { alert('Examples still loading, please retry'); }
 }
 
 function updateInputStatus() {
   var hasFile = !!document.getElementById('fileInput').files[0];
   var hasSeq = !!document.getElementById('seqInput').value.trim();
-  var btn = document.getElementById('goBtn');
-  btn.disabled = !(hasFile || hasSeq);
+  document.getElementById('goBtn').disabled = !(hasFile || hasSeq);
   var st = document.getElementById('inputStatus');
   if (hasFile) st.textContent = 'File selected';
   else if (hasSeq) st.textContent = 'Sequence pasted (' + document.getElementById('seqInput').value.length + ' chars)';
   else st.textContent = 'No input selected';
 }
 
-async function startClassify() {
+// ── Job submission ──
+async function startJob() {
   var btn = document.getElementById('goBtn');
   btn.disabled = true;
-  btn.textContent = 'Submitting...';
+  document.getElementById('btnLabel').textContent = 'Submitting...';
   var status = document.getElementById('statusDiv');
+  status.innerHTML = '';
 
   try {
     var resp;
     var file = document.getElementById('fileInput').files[0];
-    if (file) {
-      var fd = new FormData();
-      fd.append('file', file);
-      resp = await fetch('/metabuli/classify', {method: 'POST', body: fd});
+    // Primer tab: send params (use separate vars to avoid clashing)
+    if (ACTIVE_TAB === 'primer') {
+      var _pseq = document.getElementById('seqInput').value.trim();
+      if (!_pseq && !file) { status.innerHTML = '<span class="err">Please upload a FASTA file or paste sequences.</span>'; btn.disabled = false; document.getElementById('btnLabel').textContent = 'Design Primers'; return; }
+      var _pfd = new FormData();
+      if (file) { _pfd.append('file', file); }
+      else { _pfd.append('sequence', _pseq); }
+      _pfd.append('species_name', document.getElementById('primerSpeciesName').value);
+      _pfd.append('mode', document.getElementById('primerMode').value);
+      _pfd.append('num_pairs', document.getElementById('primerNumPairs').value);
+      _pfd.append('prod_min', document.getElementById('primerProdMin').value);
+      _pfd.append('prod_max', document.getElementById('primerProdMax').value);
+      resp = await fetch(TAB_INFO[ACTIVE_TAB].route, {method: 'POST', body: _pfd});
+    } else if (file) {
+      var fd = new FormData(); fd.append('file', file);
+      resp = await fetch(TAB_INFO[ACTIVE_TAB].route, {method: 'POST', body: fd});
     } else {
       var seq = document.getElementById('seqInput').value.trim();
-      resp = await fetch('/metabuli/classify', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
+      resp = await fetch(TAB_INFO[ACTIVE_TAB].route, {
+        method: 'POST', headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({sequence: seq})
       });
     }
     var data = await resp.json();
     if (data.error) {
       status.innerHTML = '<span class="err">' + data.error + '</span>';
-      btn.disabled = false;
-      btn.textContent = 'Start Classification';
+      btn.disabled = false; document.getElementById('btnLabel').textContent = TAB_INFO[ACTIVE_TAB].btn;
       return;
     }
     status.innerHTML = '<div class="progress"><div class="progress-bar" style="width:10%">Queued...</div></div><div style="font-size:11px;color:#888;margin-top:4px">Results auto-delete in 2 hours</div>';
     pollJob(data.job_id);
   } catch(e) {
     status.innerHTML = '<span class="err">Error: ' + e.message + '</span>';
-    btn.disabled = false;
-    btn.textContent = 'Start Classification';
+    btn.disabled = false; document.getElementById('btnLabel').textContent = TAB_INFO[ACTIVE_TAB].btn;
   }
 }
 
 async function pollJob(jobId) {
-  var card = document.getElementById('resultCard');
-  card.style.display = 'block';
-  document.getElementById('jobIdLabel').textContent = '#' + jobId;
-  var el = document.getElementById('resultContent');
+  if (activePollId) activePollId = null; // cancel any prior poll visually
+  activePollId = jobId;
+  var pollUrl = TAB_INFO[ACTIVE_TAB].poll + jobId;
 
-  for (var i = 0; i < 120; i++) {
+  for (var i = 0; i < 200; i++) {
+    if (activePollId !== jobId) return; // cancelled by tab switch
     try {
-      var resp = await fetch('/metabuli/status/' + jobId);
+      var resp = await fetch(pollUrl);
       var data = await resp.json();
       if (data.status === 'done') {
-        renderResult(data);
+        renderResult(data, jobId);
         return;
       }
       if (data.status === 'failed' || data.status === 'timeout' || data.status === 'no_result') {
+        var el = getResultEl();
         el.innerHTML = '<span class="err">' + data.status + ': ' + (data.error || 'No results') + '</span>';
+        document.getElementById('goBtn').disabled = false;
+        document.getElementById('btnLabel').textContent = TAB_INFO[ACTIVE_TAB].btn;
         return;
       }
-      el.innerHTML = '<div class="progress"><div class="progress-bar" style="width:' + Math.min(90, i*2) + '%">Running...</div></div>';
+      // Progress bar
+      var pct = Math.min(90, (data.status === 'submitting' ? 15 : i * 3));
+      var label = data.status === 'submitting' ? 'Submitted to NCBI...' : 'Running...';
+      getResultEl().innerHTML = '<div class="progress"><div class="progress-bar" style="width:' + pct + '%">' + label + '</div></div>';
+      document.getElementById('goBtn').disabled = false;
+      document.getElementById('btnLabel').textContent = TAB_INFO[ACTIVE_TAB].btn;
     } catch(e) {}
-    await new Promise(r => setTimeout(r, 3000));
+    await new Promise(r => setTimeout(r, (ACTIVE_TAB === 'metabuli') ? 3000 : 5000));
   }
-  el.innerHTML = '<span class="err">Timeout</span>';
+  getResultEl().innerHTML = '<span class="err">Timeout — NCBI may be busy, please retry</span>';
 }
 
-async function renderResult(data) {
+function getResultEl() {
+  switch (ACTIVE_TAB) {
+    case 'cdd':    document.getElementById('cddResultCard').style.display = 'block'; return document.getElementById('cddResultContent');
+    case 'blastn': document.getElementById('blastnResultCard').style.display = 'block'; return document.getElementById('blastnResultContent');
+    case 'blastx': document.getElementById('blastxResultCard').style.display = 'block'; return document.getElementById('blastxResultContent');
+    case 'primer': document.getElementById('primerResultCard').style.display = 'block'; return document.getElementById('primerResultContent');
+    default:       document.getElementById('resultCard').style.display = 'block'; return document.getElementById('resultContent');
+  }
+}
+
+// ── Result renderers ──
+function renderResult(data, jobId) {
+  if (ACTIVE_TAB === 'cdd') return renderCDD(data, jobId);
+  if (ACTIVE_TAB === 'blastn' || ACTIVE_TAB === 'blastx') return renderBLAST(data, jobId);
+  if (ACTIVE_TAB === 'primer') return renderPrimer(data, jobId);
+  return renderMetabuli(data, jobId);
+}
+
+// ── Metabuli renderer (existing logic, adapted) ──
+async function renderMetabuli(data, jobId) {
+  CURRENT_METABULI_JOB = data.id;  // 保存用于 contig 一键分析
   var el = document.getElementById('resultContent');
+  document.getElementById('jobIdLabel').textContent = '#' + jobId;
   var h = '<div class="ok" style="font-weight:600;margin-bottom:12px">Classification complete &middot; Expires in 2 hours</div>';
 
-  // Fetch full report once (Sankey + Classification Table both use it)
   var reportData = [];
   try {
     var rr = await fetch('/metabuli/report/' + data.id);
     reportData = await rr.json();
     if (!Array.isArray(reportData)) reportData = [];
-  } catch(e) { console.log('report fetch error:', e); }
+  } catch(e) { console.log('report error:', e); }
 
-  // Taxonomy Sankey — 存数据 + 复选框(默认每属仅前 5 个种)，渲染交给全局 renderSankey
+  // Sankey
   if (reportData.length > 1) {
     SANKEY_DATA[data.id] = reportData;
     h += '<h4 style="font-size:14px;color:#1a5276;margin:16px 0 8px">Taxonomy Sankey</h4>';
     h += '<label style="font-size:12px;color:#555;display:inline-block;margin-bottom:6px;cursor:pointer">'
-       + '<input type="checkbox" id="sk-top5-' + data.id + '" checked onchange="toggleSankey(\'' + data.id + '\')"> 每属仅展示前 5 个种（避免种级节点过多）</label>';
+       + '<input type="checkbox" id="sk-top5-' + data.id + '" checked onchange="toggleSankey(\'' + data.id + '\')"> Only top 5 species per genus</label>';
     h += '<div id="sk-' + data.id + '" style="width:100%;height:500px"></div>';
   }
 
-  // Classification Table — full taxonomic hierarchy from report (rank / taxon / taxid / % / reads)
+  // Class table
   if (reportData && reportData.length) {
     var STD = {'superkingdom':1,'acellular root':1,'realm':1,'subrealm':1,'kingdom':1,'subkingdom':1,'phylum':1,'subphylum':1,'class':1,'subclass':1,'order':1,'suborder':1,'family':1,'subfamily':1,'genus':1,'subgenus':1,'species':1};
-    h += '<h4 style="font-size:14px;color:#1a5276;margin:16px 0 8px">Classification Table <span style="font-size:11px;color:#888;font-weight:400">(完整分类等级)</span></h4>';
+    h += '<h4 style="font-size:14px;color:#1a5276;margin:16px 0 8px">Classification Table</h4>';
     h += '<div style="max-height:440px;overflow:auto;border:1px solid #eee;border-radius:4px">';
     h += '<table class="tb"><thead><tr><th>Rank</th><th>Taxon</th><th>TaxID</th><th>%</th><th>Reads</th></tr></thead><tbody>';
     reportData.forEach(function(r) {
@@ -194,58 +388,101 @@ async function renderResult(data) {
       var depth = nm.length - trimmed.length;
       var isStd = !!STD[r.rank];
       var rankColor = r.rank === 'no rank' ? '#aaa' : '#1a5276';
-      h += '<tr>'
-         + '<td style="color:' + rankColor + ';white-space:nowrap">' + escapeHtml(r.rank) + '</td>'
+      h += '<tr><td style="color:' + rankColor + ';white-space:nowrap">' + escapeHtml(r.rank) + '</td>'
          + '<td><span style="padding-left:' + (depth * 8) + 'px' + (isStd ? ';font-weight:600' : '') + '">' + escapeHtml(trimmed) + '</span></td>'
          + '<td style="color:#888">' + escapeHtml(r.taxid) + '</td>'
-         + '<td>' + escapeHtml(r.proportion) + '</td>'
-         + '<td>' + escapeHtml(r.count) + '</td>'
-         + '</tr>';
+         + '<td>' + escapeHtml(r.proportion) + '</td><td>' + escapeHtml(r.count) + '</td></tr>';
     });
     h += '</tbody></table></div>';
   }
 
-  // 病毒序列分类结果 + 序列下载
+  // Virus contigs
   try {
     var vr = await fetch('/metabuli/virus_contigs/' + data.id);
     var vdata = await vr.json();
     var vc = (vdata && vdata.contigs) || [];
     var vs = (vdata && vdata.summary) || {};
-    h += '<h4 style="font-size:14px;color:#1a5276;margin:16px 0 8px">病毒序列分类结果 <span style="font-size:11px;color:#888;font-weight:400">(被分类为病毒的 contig)</span></h4>';
-    h += '<div style="font-size:12px;color:#555;margin-bottom:8px">共 <b>' + (vs.total_contigs || 0) + '</b> 条 contig，其中 <b style="color:#27ae60">' + (vs.virus_contigs || 0) + '</b> 条被分类为病毒</div>';
+    h += '<h4 style="font-size:14px;color:#1a5276;margin:16px 0 8px">Virus Sequence Classification</h4>';
+    h += '<div style="font-size:12px;color:#555;margin-bottom:8px">Total <b>' + (vs.total_contigs || 0) + '</b> contigs, <b style="color:#27ae60">' + (vs.virus_contigs || 0) + '</b> classified as Virus</div>';
     if (vc.length) {
-      h += '<div style="max-height:380px;overflow:auto;border:1px solid #eee;border-radius:4px">';
-      h += '<table class="tb"><thead><tr><th>Contig</th><th>域<br><span style="font-weight:400;color:#999">Realm</span></th><th>界<br><span style="font-weight:400;color:#999">Kingdom</span></th><th>门<br><span style="font-weight:400;color:#999">Phylum</span></th><th>纲<br><span style="font-weight:400;color:#999">Class</span></th><th>目<br><span style="font-weight:400;color:#999">Order</span></th><th>科<br><span style="font-weight:400;color:#999">Family</span></th><th>属<br><span style="font-weight:400;color:#999">Genus</span></th><th>种<br><span style="font-weight:400;color:#999">Species</span></th><th>Length</th></tr></thead><tbody>';
       var RK = ['realm','kingdom','phylum','class','order','family','genus','species'];
-      vc.forEach(function(r) {
-        h += '<tr><td style="font-family:monospace;font-size:11px;word-break:break-all">' + escapeHtml(r.contig) + '</td>';
-        RK.forEach(function(k) {
-          var v = r[k] || '';
-          var strong = (k === 'genus' || k === 'species') ? ';font-weight:600' : '';
-          h += '<td style="white-space:nowrap' + strong + '">' + (v ? escapeHtml(v) : '<span style="color:#ccc">-</span>') + '</td>';
+      var COL_KEYS = ['contig'].concat(RK).concat(['length','genus_avg_len']);
+      var COL_LABELS = ['Contig','Realm','Kingdom','Phylum','Class','Order','Family','Genus','Species','Length','Genus Avg Len'];
+      var NUM_COLS = {length:true, genus_avg_len:true};
+      
+      function _nearComplete(len, avg) {
+        if (!len || !avg) return false;
+        var l = Number(len), a = Number(avg);
+        if (isNaN(l) || isNaN(a) || a <= 0) return false;
+        var ratio = l / a;
+        return ratio >= 0.8 && ratio <= 1.2;
+      }
+      
+      function _buildVirusTbody(rows) {
+        var tbody = '';
+        rows.forEach(function(r) {
+          var nc = _nearComplete(r.length, r.genus_avg_len);
+          tbody += '<tr' + (nc ? ' style="background:#e8f5e9"' : '') + '><td style="font-family:monospace;font-size:11px;word-break:break-all">' + escapeHtml(r.contig) + '</td>';
+          RK.forEach(function(k) {
+            var v = r[k] || '';
+            var strong = (k === 'genus' || k === 'species') ? ';font-weight:600' : '';
+            tbody += '<td style="white-space:nowrap' + strong + '">' + (v ? escapeHtml(v) : '<span style="color:#ccc">-</span>') + '</td>';
+          });
+          tbody += '<td' + (nc ? ' style="font-weight:700;color:#1b5e20"' : '') + '>' + escapeHtml(r.length) + '</td>';
+          var gal = r.genus_avg_len;
+          tbody += '<td style="text-align:right">' + (gal != null && gal !== '' ? Number(gal).toFixed(0) : '<span style="color:#ccc">-</span>') + '</td>';
+          var sp = r.species || r.taxon || '';
+          var tx = r.taxon || r.species || '';
+          tbody += '<td style="white-space:nowrap">'
+             + '<button class="ex-btn ac-btn" style="font-size:10px;background:#e3f2fd;color:#1565c0;border-color:#90caf9;margin:1px" data-contig="' + escapeHtml(r.contig) + '" data-tool="cdd">CDD</button>'
+             + '<button class="ex-btn ac-btn" style="font-size:10px;background:#e8f5e9;color:#2e7d32;border-color:#a5d6a7;margin:1px" data-contig="' + escapeHtml(r.contig) + '" data-tool="blastn">BLASTN</button>'
+             + '<button class="ex-btn ac-btn" style="font-size:10px;background:#fff3e0;color:#e65100;border-color:#ffcc80;margin:1px" data-contig="' + escapeHtml(r.contig) + '" data-tool="blastx">BLASTX</button>'
+             + '<button class="ex-btn ac-btn" style="font-size:10px;background:#f3e5f5;color:#7b1fa2;border-color:#ce93d8;margin:1px" data-contig="' + escapeHtml(r.contig) + '" data-tool="primer" data-species="' + escapeHtml(sp) + '" data-taxon="' + escapeHtml(tx) + '">Primer</button>'
+             + '</td></tr>';
         });
-        h += '<td>' + escapeHtml(r.length) + '</td></tr>';
+        return tbody;
+      }
+      
+      var tid = 'vtbl-' + data.id;
+      h += '<div style="max-height:380px;overflow:auto;border:1px solid #eee;border-radius:4px">';
+      h += '<table class="tb" id="' + tid + '"><thead><tr>';
+      COL_LABELS.forEach(function(label, i) {
+        h += '<th style="cursor:pointer;user-select:none" data-ci="' + i + '" onclick="sortVirusTable(\'' + tid + '\',' + i + ')">' + label + '</th>';
       });
+      h += '<th style="width:240px">Analyze</th></tr></thead><tbody>';
+      h += _buildVirusTbody(vc);
       h += '</tbody></table></div>';
-      h += '<div style="font-size:11px;color:#888;margin-top:4px">完整分类(含 TaxID / rank / lineage / score)见「病毒分类表 (TSV)」下载。</div>';
+      
+      // 挂载数据和方法到 table DOM
+      setTimeout(function() {
+        var tbl = document.getElementById(tid);
+        if (tbl) {
+          tbl._vcData = vc;
+          tbl._vcKeys = COL_KEYS;
+          tbl._vcNum  = NUM_COLS;
+          tbl._vcRK   = RK;
+          tbl._sortCol = -1;  // -1 = 未排序
+          tbl._sortDir = 1;
+        }
+      }, 0);
     } else {
-      h += '<div style="font-size:12px;color:#888">无被分类为病毒的 contig。</div>';
+      h += '<div style="font-size:12px;color:#888">No contigs classified as Virus.</div>';
     }
   } catch(e) { console.log('virus_contigs error:', e); }
 
-  // Krona iframe — 默认隐藏 unclassified，勾选可显示
+  // Krona
   if (data.files && data.files.krona) {
     h += '<h4 style="font-size:14px;color:#1a5276;margin:16px 0 8px">Krona Taxonomy Plot</h4>';
     h += '<label style="font-size:12px;color:#555;display:inline-block;margin-bottom:6px;cursor:pointer">'
-       + '<input type="checkbox" id="krona-unc-' + data.id + '" onchange="toggleKrona(\'' + data.id + '\')"> 显示 unclassified 结果</label>';
+       + '<input type="checkbox" id="krona-unc-' + data.id + '" onchange="toggleKrona(\'' + data.id + '\')"> Show unclassified</label>';
     h += '<iframe id="krona-frame-' + data.id + '" src="/metabuli/krona/' + data.id + '" style="width:100%;height:500px;border:1px solid #ddd;border-radius:4px"></iframe>';
   }
 
-  // Download buttons
+  // Downloads
   if (data.files) {
     h += '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">';
-    if (data.files.virus_fasta) h += '<a href="/metabuli/download/' + data.id + '/virus_fasta" class="btn btn-sm btn-success">病毒序列 (FASTA)</a>';
-    if (data.files.virus_tsv) h += '<a href="/metabuli/download/' + data.id + '/virus_tsv" class="btn btn-sm btn-outline-success">病毒分类表 (TSV)</a>';
+    if (data.files.virus_fasta) h += '<a href="/metabuli/download/' + data.id + '/virus_fasta" class="btn btn-sm btn-success">Virus Sequences (FASTA)</a>';
+    if (data.files.virus_tsv) h += '<a href="/metabuli/download/' + data.id + '/virus_tsv" class="btn btn-sm btn-outline-success">Virus Classification (TSV)</a>';
     if (data.files.classifications) h += '<a href="/metabuli/download/' + data.id + '/classifications" class="btn btn-sm btn-outline-primary">Classifications (TSV)</a>';
     if (data.files.report) h += '<a href="/metabuli/download/' + data.id + '/report" class="btn btn-sm btn-outline-secondary">Report (TSV)</a>';
     if (data.files.krona) h += '<a href="/metabuli/download/' + data.id + '/krona" class="btn btn-sm btn-outline-success">Download Krona</a>';
@@ -253,14 +490,430 @@ async function renderResult(data) {
   }
 
   el.innerHTML = h;
+  document.getElementById('resultCard').style.display = 'block';
   if (SANKEY_DATA[data.id]) renderSankey(data.id, true);
+  document.getElementById('goBtn').disabled = false;
+  document.getElementById('btnLabel').textContent = 'Classification';
+  console.log('Metabuli result rendered, job=' + CURRENT_METABULI_JOB + ', ac-btn count=' + document.querySelectorAll('.ac-btn').length);
 }
 
-// ── Taxonomy Sankey：全局渲染 + 每属前 N 个种的开关 ──
-var SANKEY_DATA = {};
+// ── BLAST renderer (blastn + blastx) ──
+function renderBLAST(data, jobId) {
+  var el = getResultEl();
+  if (ACTIVE_TAB === 'blastn') document.getElementById('blastnJobIdLabel').textContent = '#' + jobId;
+  else document.getElementById('blastxJobIdLabel').textContent = '#' + jobId;
 
+  var hits = data.hits || [];
+  var tool = data.tool || ACTIVE_TAB;
+  var nQueries = data.n_queries || 1;
+
+  var h = '<div class="ok" style="font-weight:600;margin-bottom:12px">' + tool.toUpperCase() + ' complete &middot; ' + nQueries + ' quer' + (nQueries > 1 ? 'ies' : 'y') + ' &middot; ' + hits.length + ' hits</div>';
+
+  if (hits.length === 0) {
+    h += '<div style="color:#888;padding:16px">No significant hits found. The sequence may not have virus matches in NCBI nt/nr.</div>';
+  } else {
+    // Summary stats
+    h += '<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;font-size:12px;color:#555">';
+    h += '<span>Top hit: <b>' + escapeHtml(hits[0].title || hits[0].accession) + '</b></span>';
+    h += '<span>Best E-value: <b>' + escapeHtml(String(Math.min.apply(null, hits.map(function(x){return parseFloat(x.evalue)||Infinity})))) + '</b></span>';
+    h += '<span>Best identity: <b>' + Math.max.apply(null, hits.map(function(x){return x.identity||0})) + '%</b></span>';
+    h += '</div>';
+
+    // ── Graphic Summary ──
+    if (hits.length > 0) {
+      var qLen = Math.max.apply(null, hits.map(function(h){return parseInt(h.query_to)||0}));
+      if (qLen < 1) qLen = 1;
+      var barH = 14, gap = 2, padLeft = 60, padRight = 20, padTop = 24;
+      var svgW = 800, svgH = padTop + hits.length * (barH + gap) + 20;
+      h += '<h4 style="font-size:13px;color:#1a5276;margin:16px 0 8px">Graphic Summary <span style="font-size:11px;color:#888;font-weight:400">(query: ' + qLen + ' bp)</span></h4>';
+      h += '<div style="max-height:420px;overflow:auto;border:1px solid #eee;border-radius:4px">';
+      h += '<svg width="' + svgW + '" height="' + svgH + '" style="font-size:10px;font-family:Arial,sans-serif">';
+      // Scale
+      var scale = (svgW - padLeft - padRight) / qLen;
+      // Tick marks
+      h += '<line x1="' + padLeft + '" y1="' + padTop + '" x2="' + (svgW - padRight) + '" y2="' + padTop + '" stroke="#ccc" stroke-width="1"/>';
+      var tickStep = qLen > 1000 ? Math.ceil(qLen / 1000) * 200 : 100;
+      for (var pos = 0; pos <= qLen; pos += tickStep) {
+        var x = padLeft + pos * scale;
+        h += '<line x1="' + x + '" y1="' + padTop + '" x2="' + x + '" y2="' + (padTop + 4) + '" stroke="#999" stroke-width="1"/>';
+        h += '<text x="' + x + '" y="' + (padTop - 5) + '" text-anchor="middle" fill="#666" font-size="9">' + pos + '</text>';
+      }
+      // Query bar
+      h += '<rect x="' + padLeft + '" y="' + (padTop + 6) + '" width="' + (qLen * scale) + '" height="5" fill="#1a5276" rx="2"/>';
+      h += '<text x="' + (padLeft - 6) + '" y="' + (padTop + 6 + 11) + '" text-anchor="end" fill="#1a5276" font-size="10" font-weight="600">Query</text>';
+      // Hit bars
+      var y0 = padTop + 18;
+      hits.forEach(function(hit, i) {
+        var from = parseInt(hit.query_from) || 0;
+        var to = parseInt(hit.query_to) || 0;
+        if (to <= from) return;
+        var ident = parseFloat(hit.identity) || 0;
+        // Color: red (low) → blue (high)
+        var r, g, b;
+        if (ident < 50) { r = 220; g = 50; b = 50; }
+        else if (ident < 80) { var t = (ident - 50) / 30; r = Math.round(220 - t * 170); g = Math.round(50 + t * 70); b = Math.round(50 + t * 120); }
+        else if (ident < 95) { var t = (ident - 80) / 15; r = Math.round(50 - t * 20); g = Math.round(120 + t * 80); b = Math.round(170 + t * 80); }
+        else { r = 30; g = 30; b = 180; }
+        var color = 'rgb(' + r + ',' + g + ',' + b + ')';
+        var y = y0 + i * (barH + gap);
+        var x = padLeft + from * scale;
+        var w = Math.max(2, (to - from + 1) * scale);
+        h += '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + barH + '" fill="' + color + '" rx="2" opacity="0.85">';
+        h += '<title>' + escapeHtml(hit.accession) + ': ' + escapeHtml(hit.title) + ' [' + from + '-' + to + '] ident=' + ident + '%</title>';
+        h += '</rect>';
+        h += '<text x="' + (padLeft - 6) + '" y="' + (y + barH - 3) + '" text-anchor="end" fill="#555" font-size="9">#' + (i + 1) + '</text>';
+      });
+      h += '</svg></div>';
+    }
+
+    h += '<h4 style="font-size:13px;color:#1a5276;margin:16px 0 8px">Hit Table</h4>';
+    h += '<table class="tb"><thead><tr><th>#</th>' + (nQueries > 1 ? '<th>Query</th>' : '') + '<th>Accession</th><th>Description</th><th>Organism</th><th>Identity</th><th>Align Len</th><th>E-value</th><th>Bit Score</th><th style="width:60px">Aln</th></tr></thead><tbody>';
+    hits.forEach(function(hit, idx) {
+      var idParts = (hit.identity || 0).toString().split('.');
+      var idDisplay = idParts[0] + (idParts[1] ? '.' + idParts[1].substring(0,1) : '') + '%';
+      var queryCell = nQueries > 1 ? '<td style="font-size:10px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + escapeHtml(hit.query) + '">' + escapeHtml(hit.query) + '</td>' : '';
+      h += '<tr>'
+         + '<td>' + (idx + 1) + '</td>'
+         + queryCell
+         + '<td style="font-family:monospace;font-size:11px"><a href="https://www.ncbi.nlm.nih.gov/nuccore/' + escapeHtml(hit.accession) + '" target="_blank" style="color:#2e86c1">' + escapeHtml(hit.accession) + '</a></td>'
+         + '<td style="max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + escapeHtml(hit.title) + '">' + escapeHtml(hit.title) + '</td>'
+         + '<td style="font-style:italic;font-size:11px">' + escapeHtml(hit.sciname || '') + '</td>'
+         + '<td style="font-weight:600">' + idDisplay + '</td>'
+         + '<td>' + escapeHtml(hit.align_len) + '</td>'
+         + '<td style="font-family:monospace;font-size:11px">' + escapeHtml(hit.evalue) + '</td>'
+         + '<td>' + escapeHtml(hit.bit_score) + '</td>'
+         + '<td><button class="ex-btn aln-btn" style="font-size:10px" data-acc="' + escapeHtml(hit.accession) + '" data-title="' + escapeHtml(hit.title) + '" data-qf="' + (hit.query_from||0) + '" data-qt="' + (hit.query_to||0) + '" data-hf="' + (hit.hit_from||0) + '" data-ht="' + (hit.hit_to||0) + '" data-qseq="' + escapeHtml(hit.qseq||'') + '" data-hseq="' + escapeHtml(hit.hseq||'') + '" data-mid="' + escapeHtml(hit.midline||'') + '">View</button></td>'
+         + '</tr>';
+    });
+    h += '</tbody></table></div>';
+  }
+
+  el.innerHTML = h;
+  document.getElementById('goBtn').disabled = false;
+  document.getElementById('btnLabel').textContent = TAB_INFO[ACTIVE_TAB].btn;
+}
+
+function showAln(acc, title, qFrom, qTo, hFrom, hTo, qseq, hseq, mid) {
+  var qPad = ' '.repeat(String(qFrom).length);
+  var lines = [
+    '<span style="color:#66d9ef">Query </span><span style="color:#888">' + qFrom + '</span>  <span style="color:#a6e22e">' + escapeHtml(qseq) + '</span>  <span style="color:#888">' + qTo + '</span>',
+    '<span style="color:#888">       ' + qPad + '</span>  <span style="color:#888">' + escapeHtml(mid) + '</span>',
+    '<span style="color:#f92672">Sbjct </span><span style="color:#888">' + hFrom + '</span>  <span style="color:#a6e22e">' + escapeHtml(hseq) + '</span>  <span style="color:#888">' + hTo + '</span>'
+  ];
+  var html = '<div class="modal-overlay" onclick="closeAln(event)">'
+    + '<div class="modal-box" onclick="event.stopPropagation()">'
+    + '<div class="modal-hdr"><span>' + escapeHtml(acc) + '</span><button class="modal-close" onclick="closeAln()">&times;</button></div>'
+    + '<div class="modal-body"><div style="font-size:12px;color:#888;margin-bottom:8px">' + escapeHtml(title) + '</div>'
+    + '<div class="aln-view">' + lines.join('\n') + '</div>'
+    + '</div></div></div>';
+  var overlay = document.createElement('div');
+  overlay.id = 'aln-modal';
+  overlay.innerHTML = html;
+  document.body.appendChild(overlay);
+}
+
+function closeAln(e) {
+  if (e && e.target !== e.currentTarget) return;
+  var m = document.getElementById('aln-modal');
+  if (m) m.remove();
+}
+
+// ── Event delegation for View (alignment) buttons ──
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest('.aln-btn');
+  if (!btn) return;
+  e.preventDefault();
+  showAln(
+    btn.getAttribute('data-acc'),
+    btn.getAttribute('data-title'),
+    parseInt(btn.getAttribute('data-qf')) || 0,
+    parseInt(btn.getAttribute('data-qt')) || 0,
+    parseInt(btn.getAttribute('data-hf')) || 0,
+    parseInt(btn.getAttribute('data-ht')) || 0,
+    btn.getAttribute('data-qseq') || '',
+    btn.getAttribute('data-hseq') || '',
+    btn.getAttribute('data-mid') || ''
+  );
+});
+
+// ── Metabuli → CDD/BLAST 一键分析 ──
+async function analyzeContig(contigName, tool, speciesName) {
+  if (!CURRENT_METABULI_JOB) {
+    alert('No Metabuli result available. Please run Metabuli classification first.');
+    return;
+  }
+  // Fetch contig sequence
+  var resp = await fetch('/metabuli/contig_seq/' + CURRENT_METABULI_JOB + '/' + encodeURIComponent(contigName));
+  var data = await resp.json();
+  if (data.error) {
+    alert('Failed to get contig sequence: ' + data.error);
+    return;
+  }
+  // Switch tab
+  switchTab(tool);
+  // Fill input
+  document.getElementById('seqInput').value = data.fasta || ('>' + data.name + '\n' + data.sequence);
+  document.getElementById('fileInput').value = '';
+  // Store contig accession for GenBank lookup
+  _primerLastAccession = contigName;
+  // Primer: fill species name (NCBI taxon name for primer lookup)
+  if (tool === 'primer' && speciesName) {
+    document.getElementById('primerSpeciesName').value = speciesName;
+    document.getElementById('statusDiv').innerHTML = '<span style="font-size:12px;color:#1a5276">Sequence loaded for <b>' + escapeHtml(speciesName) + '</b>. Adjust parameters and click <b>Design</b>.</span>';
+    updateInputStatus();
+    return;
+  }
+  updateInputStatus();
+  // Auto-submit
+  document.getElementById('statusDiv').innerHTML = '<span class="warn" style="font-size:12px">Analyzing contig <b>' + escapeHtml(contigName) + '</b> with ' + tool.toUpperCase() + '...</span>';
+  setTimeout(function() { startJob(); }, 300);
+}
+
+// ── Event delegation for analyze buttons ──
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest('.ac-btn');
+  if (!btn) return;
+  var contig = btn.getAttribute('data-contig');
+  var tool = btn.getAttribute('data-tool');
+  if (contig && tool) {
+    e.preventDefault();
+    // For primer, use NCBI taxon name (data-taxon) for species lookup, fallback to ICTV species
+    var species = tool === 'primer' ? (btn.getAttribute('data-taxon') || btn.getAttribute('data-species') || '') : '';
+    analyzeContig(contig, tool, species);
+  }
+});
+
+
+// ── Primer Design renderer ──
+var _primerLastJobId = null;
+var _primerLastAccession = null;
+async function renderPrimer(data, jobId) {
+  var el = document.getElementById('primerResultContent');
+  document.getElementById('primerJobIdLabel').textContent = '#' + jobId;
+  _primerLastJobId = jobId;
+
+  var results = data.results;
+  // If status response doesn't include results, fetch from results endpoint
+  if (!results || !Array.isArray(results)) {
+    try {
+      var rr = await fetch('/metabuli/primer_results/' + jobId + '?format=json');
+      var rd = await rr.json();
+      results = rd.results || rd || [];
+    } catch(e) {
+      results = [];
+    }
+  }
+  var speciesName = data.species_name || '';
+  var designMode = data.design_mode || 'PCR';
+
+  // Fetch GenBank gene features
+  var gbFeatures = null, gbLen = 0;
+  var acc = _primerLastAccession;
+  if (acc) {
+    try {
+      var gbResp = await fetch('/metabuli/genbank/' + encodeURIComponent(acc));
+      var gbData = await gbResp.json();
+      if (gbData.features && gbData.features.length) {
+        gbFeatures = gbData.features;
+        gbLen = gbData.length || 0;
+      }
+    } catch(e) { console.log('GenBank fetch error:', e); }
+  }
+
+  if (!results || results.length === 0) {
+    el.innerHTML = '<div style="color:#e67e22;padding:16px">No primers designed. Try adjusting parameters or using different sequences.</div>';
+    document.getElementById('primerResultCard').style.display = 'block';
+    document.getElementById('goBtn').disabled = false;
+    document.getElementById('btnLabel').textContent = 'Design Primers';
+    return;
+  }
+
+  var h = '<div class="ok" style="font-weight:600;margin-bottom:12px">Primer design complete &middot; ' + results.length + ' primer pair' + (results.length > 1 ? 's' : '') + '</div>';
+
+  // ── Genome position SVG ──
+  var hasPositions = false;
+  for (var i = 0; i < results.length; i++) {
+    var fs = parseInt(results[i].Fwd_Start) || 0;
+    var rs = parseInt(results[i].Rev_Start) || 0;
+    if (fs > 0 && rs > 0) { hasPositions = true; break; }
+  }
+  // Use GenBank length if available, otherwise estimate from primer positions
+  if (hasPositions || gbFeatures) {
+    var maxPos = gbLen || 0;
+    if (!maxPos) {
+      for (var i = 0; i < results.length; i++) {
+        var rs2 = parseInt(results[i].Rev_Start) || 0;
+        if (rs2 > maxPos) maxPos = rs2;
+      }
+    }
+    var genomeLen = Math.max(maxPos + 200, 500);
+    var colors = ['#e03131','#1971c2','#2b8a3e','#e8590c','#862e9c','#c92a2a','#1864ab','#2f9e44','#d9480f','#9c36b5'];
+    var svgW = 760, padL = 55, padR = 60, barW = svgW - padL - padR;
+    var geneTrackY = 4 + results.length * 22;  // gene track below primers
+    var geneTrackH = gbFeatures ? 44 : 0;
+    var svgH = geneTrackY + geneTrackH + 40;
+    h += '<h4 style="font-size:13px;color:#1a5276;margin:12px 0 4px">Genome Position (approx. ' + genomeLen.toLocaleString() + ' bp)' + (gbFeatures ? ' <span style="font-size:11px;color:#888;font-weight:400">with GenBank annotation</span>' : '') + '</h4>';
+    h += '<div style="border:1px solid #eee;border-radius:4px;padding:8px;background:#fafafa;overflow-x:auto">';
+    h += '<svg width="' + svgW + '" height="' + svgH + '" style="font-size:10px;font-family:Consolas,monospace">';
+    // Scale bar
+    h += '<rect x="' + padL + '" y="' + (svgH - 16) + '" width="' + barW + '" height="6" rx="3" fill="#dee2e6" stroke="#adb5bd" stroke-width="1"/>';
+    for (var t = 0; t <= 1; t += 0.25) {
+      var tx = padL + t * barW;
+      h += '<line x1="' + tx + '" y1="' + (svgH - 20) + '" x2="' + tx + '" y2="' + (svgH - 10) + '" stroke="#868e96" stroke-width="1"/>';
+      h += '<text x="' + tx + '" y="' + (svgH - 2) + '" text-anchor="middle" fill="#495057">' + Math.round(t * genomeLen) + '</text>';
+    }
+    // Primer tracks
+    for (var i = 0; i < results.length; i++) {
+      var r = results[i];
+      var fs2 = parseInt(r.Fwd_Start) || 0;
+      var rs2 = parseInt(r.Rev_Start) || 0;
+      var fLen = (r.Fwd_Seq || '').length || 20;
+      var rLen = (r.Rev_Seq || '').length || 20;
+      if (fs2 <= 0 || rs2 <= 0) continue;
+      var col = colors[i % colors.length];
+      var y = 4 + i * 22;
+      var fLeft = padL + (fs2 / genomeLen) * barW;
+      var fW = Math.max((fLen / genomeLen) * barW, 3);
+      var rLeft = padL + (rs2 / genomeLen) * barW;
+      var rW = Math.max((rLen / genomeLen) * barW, 3);
+      var ampLeft = fLeft + fW, ampW = rLeft - ampLeft;
+      if (ampW > 0) h += '<rect x="' + ampLeft + '" y="' + (y + 5) + '" width="' + ampW + '" height="3" fill="' + col + '" opacity="0.3" rx="1"/>';
+      h += '<rect x="' + fLeft + '" y="' + y + '" width="' + fW + '" height="8" fill="' + col + '" opacity="0.85" rx="2"/>';
+      h += '<text x="' + Math.max(fLeft - 2, padL - 50) + '" y="' + (y + 7) + '" text-anchor="end" fill="' + col + '" font-weight="bold">F' + (i+1) + '</text>';
+      h += '<rect x="' + rLeft + '" y="' + y + '" width="' + rW + '" height="8" fill="' + col + '" opacity="0.55" rx="2"/>';
+      h += '<text x="' + (rLeft + rW + 3) + '" y="' + (y + 7) + '" fill="' + col + '" font-size="9">' + fs2 + '..' + (rs2 + rLen) + '</text>';
+    }
+    // Gene track from GenBank
+    if (gbFeatures) {
+      var gtY = geneTrackY + 6;
+      h += '<text x="' + (padL - 2) + '" y="' + (gtY + 5) + '" text-anchor="end" fill="#1a5276" font-size="10" font-weight="600">Genes</text>';
+      var typeColors = {'CDS': '#2e7d32', 'gene': '#1565c0', 'mat_peptide': '#e65100', "5'UTR": '#7b1fa2', "3'UTR": '#7b1fa2'};
+      var trackH = 16;
+      gbFeatures.forEach(function(f, fi) {
+        var fStart = padL + (f.start / genomeLen) * barW;
+        var fEnd = padL + (f.end / genomeLen) * barW;
+        var fW = Math.max(fEnd - fStart, 2);
+        var fColor = typeColors[f.type] || '#888';
+        var fY = gtY + (fi % 2) * (trackH + 4);  // stagger for space
+        h += '<rect x="' + fStart + '" y="' + fY + '" width="' + fW + '" height="' + trackH + '" fill="' + fColor + '" opacity="0.75" rx="2">';
+        h += '<title>' + escapeHtml(f.type + ': ' + f.label) + ' [' + f.start + '-' + f.end + ']</title>';
+        h += '</rect>';
+        // Label if wide enough
+        if (fW > 30) {
+          h += '<text x="' + (fStart + 3) + '" y="' + (fY + trackH - 4) + '" fill="#fff" font-size="8" font-weight="600">' + escapeHtml(f.label.substring(0, Math.floor(fW / 5))) + '</text>';
+        }
+      });
+    }
+    h += '</svg></div>';
+  }
+
+  // Table
+  h += '<div style="max-height:500px;overflow:auto;border:1px solid #eee;border-radius:4px;margin-top:12px">';
+  h += '<table class="tb"><thead><tr><th>#</th><th>Fwd Primer (5&#39;&rarr;3&#39;)</th><th>Tm</th><th>GC%</th><th>Rev Primer (5&#39;&rarr;3&#39;)</th><th>Tm</th><th>GC%</th><th>Product</th><th>Method</th><th>Score</th></tr></thead><tbody>';
+  for (var i = 0; i < results.length; i++) {
+    var r = results[i];
+    var fwd = r.Fwd_Seq || '';
+    var rev = r.Rev_Seq || '';
+    var prodVal = parseInt(r.Product) || 0;
+    var prod = prodVal > 0 ? (prodVal + ' bp') : '-';
+    var tmF = isFinite(parseFloat(r.Fwd_Tm)) ? parseFloat(r.Fwd_Tm).toFixed(1) : '-';
+    var tmR = isFinite(parseFloat(r.Rev_Tm)) ? parseFloat(r.Rev_Tm).toFixed(1) : '-';
+    var gcF = isFinite(parseFloat(r.GC_Fwd)) ? parseFloat(r.GC_Fwd).toFixed(1) + '%' : '-';
+    var gcR = isFinite(parseFloat(r.GC_Rev)) ? parseFloat(r.GC_Rev).toFixed(1) + '%' : '-';
+    var method = r.Method || '-';
+    var penalty = r.Penalty != null ? r.Penalty : '-';
+    h += '<tr><td>' + (i+1) + '</td>'
+       + '<td style="font-family:monospace;font-size:11px;word-break:break-all">' + escapeHtml(fwd) + '</td>'
+       + '<td>' + tmF + '</td><td>' + gcF + '</td>'
+       + '<td style="font-family:monospace;font-size:11px;word-break:break-all">' + escapeHtml(rev) + '</td>'
+       + '<td>' + tmR + '</td><td>' + gcR + '</td>'
+       + '<td>' + prod + '</td><td>' + method + '</td><td>' + penalty + '</td></tr>';
+    if (r.Probe_Seq) {
+      h += '<tr><td></td><td colspan="9" style="font-size:11px;color:#1971c2;font-family:monospace">Probe: ' + escapeHtml(r.Probe_Seq) + '</td></tr>';
+    }
+  }
+  h += '</tbody></table></div>';
+
+  // Download links
+  h += '<div style="display:flex;gap:8px;margin-top:12px">';
+  h += '<a href="/metabuli/primer_results/' + jobId + '?format=json" class="ex-btn" style="background:#e3f2fd;font-weight:600">JSON</a>';
+  h += '<a href="/metabuli/primer_results/' + jobId + '?format=tsv" class="ex-btn" style="background:#e8f5e9;font-weight:600">TSV</a>';
+  h += '<a href="/metabuli/primer_results/' + jobId + '?format=fasta" class="ex-btn" style="background:#fff3e0;font-weight:600">FASTA</a>';
+  h += '</div>';
+
+  // Link to primer database
+  if (speciesName) {
+    h += '<div style="margin-top:12px;padding:10px 14px;background:#f0f5fa;border-radius:6px;font-size:13px">';
+    h += '&#128270; <a href="/primers/search?q=' + encodeURIComponent(speciesName) + '" target="_blank" style="color:#1a5276;font-weight:600;text-decoration:none">View <b>' + escapeHtml(speciesName) + '</b> in Primer Database &#8594;</a>';
+    h += '</div>';
+  }
+
+  el.innerHTML = h;
+  document.getElementById('primerResultCard').style.display = 'block';
+  document.getElementById('goBtn').disabled = false;
+  document.getElementById('btnLabel').textContent = 'Design Primers';
+}
+
+
+// ── CDD renderer ──
+var CDD_COLORS = ['#1f77b4','#ff7f0e','#2ca02c','#d62728','#9467bd','#8c564b','#e377c2','#7f7f7f','#bcbd22','#17becf'];
+
+// ── JS self-test ──
+console.log('Metabuli page loaded, tab=' + ACTIVE_TAB);
+function renderCDD(data, jobId) {
+  var el = document.getElementById('cddResultContent');
+  document.getElementById('cddJobIdLabel').textContent = '#' + jobId;
+
+  var hits = data.hits || [];
+
+  var h = '<div class="ok" style="font-weight:600;margin-bottom:4px">CDD Domain Search complete &middot; ' + hits.length + ' domains found</div>';
+
+  if (hits.length === 0) {
+    h += '<div style="color:#888;padding:16px">No conserved domains detected.</div>';
+  } else {
+    // Domain architecture bar
+    var allFroms = hits.map(function(x){return parseInt(x.query_from)||0});
+    var allTos   = hits.map(function(x){return parseInt(x.query_to)||0});
+    var qLen = Math.max.apply(null, allTos.concat([1]));
+    h += '<h4 style="font-size:13px;color:#1a5276;margin:12px 0 4px">Domain Architecture <span style="font-size:11px;color:#888;font-weight:400">(' + qLen + ' aa)</span></h4>';
+    h += '<div class="domain-bar" style="position:relative">';
+    hits.forEach(function(hit, i) {
+      var from = parseInt(hit.query_from) || 0;
+      var to   = parseInt(hit.query_to) || 0;
+      var left = (from / qLen * 100).toFixed(1);
+      var width = Math.max(2, ((to - from + 1) / qLen * 100)).toFixed(1);
+      h += '<div class="domain-seg" style="left:' + left + '%;width:' + width + '%;background:' + CDD_COLORS[i % CDD_COLORS.length]
+         + '" title="' + escapeHtml(hit.short_name) + ': ' + escapeHtml(hit.description) + ' (E=' + escapeHtml(hit.evalue) + ')">'
+         + (parseFloat(width) > 5 ? escapeHtml(hit.short_name) : '') + '</div>';
+    });
+    h += '</div>';
+
+    h += '<h4 style="font-size:13px;color:#1a5276;margin:16px 0 8px">Domain Hits</h4>';
+    h += '<div style="max-height:400px;overflow:auto;border:1px solid #eee;border-radius:4px">';
+    h += '<table class="tb"><thead><tr><th>#</th><th>Accession</th><th>Short Name</th><th>E-value</th><th>Bit Score</th><th>From</th><th>To</th><th>Superfamily</th></tr></thead><tbody>';
+    hits.forEach(function(hit, i) {
+      h += '<tr>'
+         + '<td>' + (i + 1) + '</td>'
+         + '<td style="font-family:monospace;font-size:11px"><a href="https://www.ncbi.nlm.nih.gov/Structure/cdd/' + escapeHtml(hit.accession) + '" target="_blank" style="color:#2e86c1">' + escapeHtml(hit.accession) + '</a></td>'
+         + '<td style="font-weight:600">' + escapeHtml(hit.short_name) + '</td>'
+         + '<td style="font-family:monospace;font-size:11px">' + escapeHtml(hit.evalue) + '</td>'
+         + '<td>' + escapeHtml(hit.bit_score) + '</td>'
+         + '<td>' + escapeHtml(hit.query_from) + '</td>'
+         + '<td>' + escapeHtml(hit.query_to) + '</td>'
+         + '<td style="font-size:10px">' + escapeHtml(hit.superfamily || '-') + '</td>'
+         + '</tr>';
+    });
+    h += '</tbody></table></div>';
+  }
+
+  el.innerHTML = h;
+  document.getElementById('cddResultCard').style.display = 'block';
+  document.getElementById('goBtn').disabled = false;
+  document.getElementById('btnLabel').textContent = 'Domain Search';
+}
+
+// ── Sankey (same logic, adapted for tabbed layout) ──
 function limitSpeciesPerGenus(reportData, topN) {
-  // 保留每个属(genus)下 reads 最多的前 topN 个种(species)，其余种及其子节点剔除
   var parsed = reportData.map(function(r) {
     var trimmed = (r.name.trimStart ? r.name.trimStart() : r.name.replace(/^\s+/, ''));
     return {row: r, name: trimmed, rank: r.rank, count: parseFloat(r.count) || 0, depth: r.name.length - trimmed.length};
@@ -284,7 +937,7 @@ function limitSpeciesPerGenus(reportData, topN) {
   parsed.forEach(function(p, idx) {
     if (dropDepth !== null) { if (p.depth > dropDepth) return; else dropDepth = null; }
     if (p.rank === 'species') {
-      if (keep[idx]) out.push(p.row); else dropDepth = p.depth;  // 丢弃该种及其子树
+      if (keep[idx]) out.push(p.row); else dropDepth = p.depth;
     } else out.push(p.row);
   });
   return out;
@@ -297,9 +950,7 @@ function renderSankey(id, top5) {
   var nodes = src_data.map(function(r) {
     var nm = r.name, trimmed = nm.trimStart ? nm.trimStart() : nm.replace(/^\s+/, '');
     return {name: trimmed, rank: r.rank, count: parseFloat(r.count) || 1, depth: nm.length - trimmed.length};
-  }).filter(function(r) {
-    return r.rank !== 'no rank' || r.name === 'root' || r.name === 'unclassified';
-  });
+  }).filter(function(r) { return r.rank !== 'no rank' || r.name === 'root' || r.name === 'unclassified'; });
   var labels = [], srcs = [], tgts = [], vals = [], n2i = {}, stack = [];
   for (var i = 0; i < nodes.length; i++) {
     var n = nodes[i];
@@ -322,7 +973,7 @@ function renderSankey(id, top5) {
     var cm = {'root':'#d4d4d4','Viruses':'#e41a1c','Riboviria':'#377eb8','Orthornavirae':'#4daf4a','Kitrinoviricota':'#984ea3','Alsuviricetes':'#ff7f00','Martellivirales':'#a65628','Virgaviridae':'#f781bf'};
     Plotly.newPlot('sk-' + id, [{type: 'sankey', orientation: 'h', node: {pad: 20, thickness: 25, line: {color: 'black', width: 0.5}, label: labels, color: labels.map(function(l) { return cm[l] || '#2e86c1'; })}, link: {source: srcs, target: tgts, value: vals, color: 'rgba(46,134,193,0.15)'}}], {margin: {t: 10, b: 10, l: 10, r: 10}, font: {size: 11}}, {responsive: true});
   } else {
-    div.innerHTML = '<div style="color:#999;padding:20px">层级不足，无法绘制</div>';
+    div.innerHTML = '<div style="color:#999;padding:20px">Insufficient hierarchy levels for Sankey diagram</div>';
   }
 }
 
@@ -330,6 +981,69 @@ function toggleSankey(id) {
   var cb = document.getElementById('sk-top5-' + id);
   renderSankey(id, cb ? cb.checked : true);
 }
+
+// ── i18n ──
+
+// ── Virus Sequence Classification 表格排序 ──
+function sortVirusTable(tid, colIdx) {
+  var tbl = document.getElementById(tid);
+  if (!tbl || !tbl._vcData) return;
+  var data = tbl._vcData, keys = tbl._vcKeys, numCols = tbl._vcNum, RK = tbl._vcRK;
+  // 切换排序方向：同列 → 翻转，不同列 → 默认降序
+  if (tbl._sortCol === colIdx) {
+    tbl._sortDir = -tbl._sortDir;
+  } else {
+    tbl._sortCol = colIdx;
+    tbl._sortDir = -1; // 默认降序（大→小 / Z→A）
+  }
+  var key = keys[colIdx], dir = tbl._sortDir;
+  var isNum = !!numCols[key];
+  var sorted = data.slice().sort(function(a, b) {
+    var va = a[key], vb = b[key];
+    if (va == null || va === '') va = isNum ? -Infinity : '';
+    if (vb == null || vb === '') vb = isNum ? -Infinity : '';
+    if (isNum) { va = Number(va); vb = Number(vb); }
+    else { va = String(va).toLowerCase(); vb = String(vb).toLowerCase(); }
+    if (va < vb) return -1 * dir;
+    if (va > vb) return 1 * dir;
+    return 0;
+  });
+  // 重建 tbody
+  var tbody = '';
+  sorted.forEach(function(r) {
+    var nc = (Number(r.length) && Number(r.genus_avg_len) && Number(r.genus_avg_len) > 0 &&
+              (Number(r.length) / Number(r.genus_avg_len)) >= 0.8 &&
+              (Number(r.length) / Number(r.genus_avg_len)) <= 1.2);
+    tbody += '<tr' + (nc ? ' style="background:#e8f5e9"' : '') + '><td style="font-family:monospace;font-size:11px;word-break:break-all">' + escapeHtml(r.contig) + '</td>';
+    RK.forEach(function(k) {
+      var v = r[k] || '';
+      var strong = (k === 'genus' || k === 'species') ? ';font-weight:600' : '';
+      tbody += '<td style="white-space:nowrap' + strong + '">' + (v ? escapeHtml(v) : '<span style="color:#ccc">-</span>') + '</td>';
+    });
+    tbody += '<td' + (nc ? ' style="font-weight:700;color:#1b5e20"' : '') + '>' + escapeHtml(r.length) + '</td>';
+    var gal = r.genus_avg_len;
+    tbody += '<td style="text-align:right">' + (gal != null && gal !== '' ? Number(gal).toFixed(0) : '<span style="color:#ccc">-</span>') + '</td>';
+    tbody += '<td style="white-space:nowrap">'
+       + '<button class="ex-btn ac-btn" style="font-size:10px;background:#e3f2fd;color:#1565c0;border-color:#90caf9;margin:1px" data-contig="' + escapeHtml(r.contig) + '" data-tool="cdd">CDD</button>'
+       + '<button class="ex-btn ac-btn" style="font-size:10px;background:#e8f5e9;color:#2e7d32;border-color:#a5d6a7;margin:1px" data-contig="' + escapeHtml(r.contig) + '" data-tool="blastn">BLASTN</button>'
+       + '<button class="ex-btn ac-btn" style="font-size:10px;background:#fff3e0;color:#e65100;border-color:#ffcc80;margin:1px" data-contig="' + escapeHtml(r.contig) + '" data-tool="blastx">BLASTX</button>'
+       + '<button class="ex-btn ac-btn" style="font-size:10px;background:#f3e5f5;color:#7b1fa2;border-color:#ce93d8;margin:1px" data-contig="' + escapeHtml(r.contig) + '" data-tool="primer" data-species="' + escapeHtml(r.species||r.taxon||'') + '" data-taxon="' + escapeHtml(r.taxon||r.species||'') + '">Primer</button>'
+       + '</td></tr>';
+  });
+  tbl.querySelector('tbody').innerHTML = tbody;
+  // 更新表头箭头
+  var ths = tbl.querySelectorAll('thead th');
+  ths.forEach(function(th, i) {
+    var txt = th.textContent.replace(/ [▲▼]$/, '');
+    if (i === colIdx) {
+      th.textContent = txt + (dir === 1 ? ' ▲' : ' ▼');
+    } else {
+      th.textContent = txt;
+    }
+  });
+}
 </script>
+<script src="/reference/i18n.js?v=3"></script>
+<script>PVDB_i18n.init({navSelector:'.bar'});</script>
 </body>
 </html>

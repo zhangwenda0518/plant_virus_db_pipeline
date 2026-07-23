@@ -219,13 +219,13 @@ def design_primers(sequences, num_pairs=5, prod_min=250, prod_max=1000,
 
     # 单参考基因组兜底: 保守区无产出 → 对 Ref 序列全长相搜
     if not all_p:
-        all_p = _primer3_design(ref, 0, num_pairs*2, prod_min, prod_max, is_viroid=is_viroid) if PRIMER3_OK else _simple_design(ref, 0, num_pairs*2, prod_min, prod_max, is_viroid=is_viroid)
+        all_p = _primer3_design(ref, 0, num_pairs*4, prod_min, prod_max, is_viroid=is_viroid) if PRIMER3_OK else _simple_design(ref, 0, num_pairs*4, prod_min, prod_max, is_viroid=is_viroid)
 
     all_p.sort(key=lambda x: x.get("Penalty", 999))
     # 空间多样性过滤 (借鉴 varVAMP single mode):
     #   按 Penalty 排序, 贪婪选取非重叠扩增子, 确保引物分布在基因组不同区域
     diverse = []
-    overlap_min = prod_min // 4 if is_viroid else prod_min // 2
+    overlap_min = max(prod_min // 4, 60)  # 放宽间距以提高引物对产出
     for p in all_p:
         mid = (p.get("Fwd_Start", 0) + p.get("Rev_Start", 0)) / 2
         if all(abs(mid - (d.get("Fwd_Start", 0) + d.get("Rev_Start", 0)) / 2) >= overlap_min
@@ -275,7 +275,7 @@ def _primer3_design(seq, offset, n, pmin, pmax, is_viroid=False):
                 "Rev_Tm":round(res.get(f'PRIMER_RIGHT_{i}_TM',0),1),
                 "Product":res.get(f'PRIMER_PAIR_{i}_PRODUCT_SIZE',0),
                 "GC_Fwd":round(gc_fraction(f)*100,1),"GC_Rev":round(gc_fraction(r)*100,1),
-                "Penalty":round(res.get(f'PRIMER_PAIR_{i}_PENALTY',0),2),
+                "Penalty":round(res.get(f'PRIMER_PAIR_{i}_PENALTY',0),4),
                 "Method":"Primer3"})
         return out
     except Exception: return []
@@ -507,7 +507,7 @@ def _design_qpcr_core(seq, offset, n, amp_min, amp_max):
                 "Rev_Tm":round(r.get(f'PRIMER_RIGHT_{i}_TM',0),1),
                 "Product":r.get(f'PRIMER_PAIR_{i}_PRODUCT_SIZE',0),
                 "GC_Fwd":round(gc_fraction(f)*100,1),"GC_Rev":round(gc_fraction(rev)*100,1),
-                "Penalty":round(r.get(f'PRIMER_PAIR_{i}_PENALTY',0),2),
+                "Penalty":round(r.get(f'PRIMER_PAIR_{i}_PENALTY',0),4),
                 "Method":"Primer3_qPCR"})
     except Exception: pass
     return all_d
