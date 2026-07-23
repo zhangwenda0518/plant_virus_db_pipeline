@@ -809,7 +809,7 @@ async function renderPrimer(data, jobId) {
 
   // Table
   h += '<div style="max-height:500px;overflow:auto;border:1px solid #eee;border-radius:4px;margin-top:12px">';
-  h += '<table class="tb"><thead><tr><th>#</th><th>Fwd Primer (5&#39;&rarr;3&#39;)</th><th>Tm</th><th>GC%</th><th>Rev Primer (5&#39;&rarr;3&#39;)</th><th>Tm</th><th>GC%</th><th>Product</th><th>Method</th><th>Score</th></tr></thead><tbody>';
+  h += '<table class="tb"><thead><tr><th>#</th><th>Fwd Primer (5\'→3\')</th><th>Tm</th><th>GC%</th><th>Rev Primer (5\'→3\')</th><th>Tm</th><th>GC%</th><th>Product</th><th>Method</th><th>Score</th></tr></thead><tbody>';
   for (var i = 0; i < results.length; i++) {
     var r = results[i];
     var fwd = r.Fwd_Seq || '';
