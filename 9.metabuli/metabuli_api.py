@@ -6,7 +6,7 @@ import io
 from pathlib import Path
 from datetime import datetime
 from flask import Flask, request, jsonify, send_file, render_template_string, Response
-import sys as _sys; _sys.path.insert(0, '/opt/plant_virus_db/primer_design_server')
+import sys as _sys; _sys.path.insert(0, str(Path(__file__).parent / 'primer_design'))
 
 app = Flask(__name__)
 

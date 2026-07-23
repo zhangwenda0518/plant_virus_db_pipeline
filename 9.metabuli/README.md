@@ -154,15 +154,18 @@ sequenceDiagram
 ├── metabuli_api.py            # Flask 服务 (:5004)
 │                              #   - 异步 Metabuli 分类
 │                              #   - BLASTN/BLASTX/CDD 提交 + 轮询
-│                              #   - Primer 设计 (Primer3 + varVAMP)
-│                              #   - GenBank 特征解析 (_fetch_gb, _extract_features)
+│                              #   - Primer 设计 (import primer_design/)
+│                              #   - GenBank 特征提取 + NCBI 缓存
 │                              #   - taxid_lineage.tsv 内存缓存
 │                              #   - Job 管理 (2h 自动清理)
-├── metabuli_page.html         # 前端 SPA (~2200 行 JS)
+├── metabuli_page.html         # 前端 SPA (~2500 行 JS)
 │                              #   - 5 个分析标签页
 │                              #   - Plotly Sankey + Krona iframe
+│                              #   - 引物基因组位置 SVG + GenBank 基因轨道
 │                              #   - 快速填充示例 + 上传进度
-│                              #   - Primer 结果基因组位置 SVG
+├── primer_design/             # 引物设计引擎 (从 4.virus_primer 归档)
+│   ├── primer_design_service.py   # Web-facing wrapper + Job 管理
+│   └── step2_design_primers.py    # Primer3 + varVAMP 设计核心
 ├── build_taxid_lineage.py     # 生成 taxid→ICTV 8 级谱系表
 ├── taxid_lineage.tsv          # 预生成映射 (22,190 taxid, gitignore)
 ├── fetch_examples.py          # NCBI efetch 生成示例
