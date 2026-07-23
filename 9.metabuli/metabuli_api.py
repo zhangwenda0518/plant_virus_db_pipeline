@@ -519,7 +519,7 @@ def _classify(job_id, fasta_path):
     job["status"] = "running"
     try:
         subprocess.run([METABULI_BIN, "classify", str(fasta_path), METABULI_DB, str(outdir),
-            job_id, "--seq-mode","3", "--threads","2", "--max-ram","1", "--min-score","0.2"],
+            job_id, "--seq-mode","3", "--threads","2", "--max-ram","1"],
             capture_output=True, text=True, timeout=600)
         tsv = outdir / f"{job_id}_classifications.tsv"
         rept = outdir / f"{job_id}_report.tsv"
