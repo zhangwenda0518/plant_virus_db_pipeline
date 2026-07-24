@@ -2,6 +2,22 @@
 
 All notable changes to the Plant Virus Database Platform.
 
+## [2026-07-24] — Knowledge RAG 500 修复 + i18n v3 全站部署
+
+### Fixed
+- **Knowledge RAG /query 500 错误**: `_enrich_citations` 中 `CitationOut.authors` 期望 `list[str]` 但 DB 返回分号分隔 `str`; 新增 `_parse_authors()` 兼容两种类型
+- **Knowledge RAG 重启失败**: 未 `cd /opt` 导致 pydantic-settings 找不到 `.env.local`; USER.md 已更新重启命令
+- **i18n 切换按钮无效**: 9 个页面 (reference/photos/literature/te/explorer/submit/download/segmented/nonsegmented) 有 i18n.js 但无 `data-i18n` 属性, 已补全标题翻译
+
+### Changed
+- **i18n v3 轻量版**: 旧版文本节点匹配方案替换为 `data-i18n` 属性方案, 覆盖 23 个页面的导航/标题/卡片 UI 文本
+- 全站 HTML 中译英完成 (26 个文件)
+- portal 首页新增 Help & Documentation 和 Supplementary Resources 入口卡片
+
+### Added
+- `docs/resources.html`: 14 分类 100+ 公共数据库与工具资源整理页
+- nginx 路由: `/resources.html`, `/help/`
+
 ## [2026-07-23b] — README 全面更新 + 数据量同步
 
 ### Changed
