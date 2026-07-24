@@ -461,7 +461,7 @@ async function renderMetabuli(data, jobId) {
       h += '<div style="max-height:380px;overflow:auto;border:1px solid #eee;border-radius:4px">';
       h += '<table class="tb" id="' + tid + '"><thead><tr>';
       COL_LABELS.forEach(function(label, i) {
-        h += '<th style="cursor:pointer;user-select:none" data-ci="' + i + '" onclick="sortVirusTable(\'' + tid + '\',' + i + ')">' + label + '</th>';
+        h += '<th style="cursor:pointer;user-select:none;white-space:nowrap" data-ci="' + i + '" onclick="sortVirusTable(\'' + tid + '\',' + i + ')">' + label + '</th>';
       });
       h += '<th style="width:240px">Analyze</th></tr></thead><tbody>';
       h += _buildVirusTbody(vc);
