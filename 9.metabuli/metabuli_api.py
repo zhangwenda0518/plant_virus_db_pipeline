@@ -287,6 +287,8 @@ def _submit_blast(program, database, query_fasta, entrez_query=""):
     }
     if entrez_query:
         params["ENTREZ_QUERY"] = entrez_query
+    if program == "blastn":
+        params["MEGABLAST"] = "on"
     data = urllib.parse.urlencode(params).encode("ascii")
     req = urllib.request.Request(NCBI_BLAST_URL, data=data)
     with urllib.request.urlopen(req, timeout=60) as resp:
@@ -832,7 +834,7 @@ def blastx_search():
     """Submit nucleotide query for NCBI BLASTX (nr protein database)."""
     jid = uuid.uuid4().hex[:12]
     jobs[jid] = {"id": jid, "status": "queued", "created": datetime.now().isoformat(),
-                  "tool": "blastx", "program": "blastx", "database": "nr"}
+                  "tool": "blastx", "program": "blastx", "database": "nr_cluster_seq"}
     query_text = ""
     f = request.files.get("file")
     if f and f.filename:
@@ -846,7 +848,7 @@ def blastx_search():
         query_text = ">query\n" + query_text
     if len(query_text) > MAX_SIZE:
         return jsonify({"error": "Input >100MB"}), 400
-    threading.Thread(target=_blast_worker, args=(jid, query_text, "blastx", "nr"), daemon=True).start()
+    threading.Thread(target=_blast_worker, args=(jid, query_text, "blastx", "nr_cluster_seq"), daemon=True).start()
     return jsonify({"job_id": jid, "status": "queued", "tool": "blastx"})
 
 
