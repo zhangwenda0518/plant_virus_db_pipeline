@@ -213,6 +213,7 @@ function switchTab(tab) {
   document.getElementById('cddResultCard').style.display = 'none';
   document.getElementById('blastnResultCard').style.display = 'none';
   document.getElementById('blastxResultCard').style.display = 'none';
+  document.getElementById('primerResultCard').style.display = 'none';
   var cardMap = {metabuli:'resultCard', cdd:'cddResultCard', blastn:'blastnResultCard', blastx:'blastxResultCard', primer:'primerResultCard'};
   var target = cardMap[tab];
   if (target) document.getElementById(target).style.display = 'block';
