@@ -114,6 +114,18 @@ function updateSelectedCount() {
   document.getElementById('selectedCount').textContent = n > 0 ? n + ' selected' : '';
 }
 
+function copyToClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text);
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+  }
+}
+
 function exportSelected(fmt) {
   const rows = getSelected();
   if (!rows.length) {
@@ -122,7 +134,7 @@ function exportSelected(fmt) {
     const header = currentFields.join('\t');
     const body = allData.map(r => r.slice(1).join('\t')).join('\n');
     if (fmt === 'copy') {
-      navigator.clipboard.writeText(header + '\n' + body);
+      copyToClipboard(header + '\n' + body);
       return;
     }
     downloadBlob(header + '\n' + body, 'export.tsv', 'text/tab-separated-values');
@@ -132,7 +144,7 @@ function exportSelected(fmt) {
   const header = currentFields.join(sep);
   const body = rows.map(r => r.map(v => sep !== '\t' ? '"' + v.replace(/"/g, '""') + '"' : v).join(sep)).join('\n');
   if (fmt === 'copy') {
-    navigator.clipboard.writeText(header + '\n' + body);
+    copyToClipboard(header + '\n' + body);
     alert(rows.length + ' rows copied to clipboard');
     return;
   }
