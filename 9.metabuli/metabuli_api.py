@@ -805,10 +805,10 @@ def cdd_status(job_id):
 # ── BLASTN ──
 @app.route("/metabuli/blastn", methods=["POST"])
 def blastn_search():
-    """Submit nucleotide query for NCBI BLASTN (nt database, virus-restricted)."""
+    """Submit nucleotide query for NCBI BLASTN (nt database)."""
     jid = uuid.uuid4().hex[:12]
     jobs[jid] = {"id": jid, "status": "queued", "created": datetime.now().isoformat(),
-                  "tool": "blastn", "program": "blastn", "database": "core_nt"}
+                  "tool": "blastn", "program": "blastn", "database": "nt"}
     query_text = ""
     f = request.files.get("file")
     if f and f.filename:
@@ -822,17 +822,17 @@ def blastn_search():
         query_text = ">query\n" + query_text
     if len(query_text) > MAX_SIZE:
         return jsonify({"error": "Input >100MB"}), 400
-    threading.Thread(target=_blast_worker, args=(jid, query_text, "blastn", "core_nt"), daemon=True).start()
+    threading.Thread(target=_blast_worker, args=(jid, query_text, "blastn", "nt"), daemon=True).start()
     return jsonify({"job_id": jid, "status": "queued", "tool": "blastn"})
 
 
 # ── BLASTX ──
 @app.route("/metabuli/blastx", methods=["POST"])
 def blastx_search():
-    """Submit nucleotide query for NCBI BLASTX (nr protein database, virus-restricted)."""
+    """Submit nucleotide query for NCBI BLASTX (nr protein database)."""
     jid = uuid.uuid4().hex[:12]
     jobs[jid] = {"id": jid, "status": "queued", "created": datetime.now().isoformat(),
-                  "tool": "blastx", "program": "blastx", "database": "nr_cluster_seq"}
+                  "tool": "blastx", "program": "blastx", "database": "nr"}
     query_text = ""
     f = request.files.get("file")
     if f and f.filename:
@@ -846,7 +846,7 @@ def blastx_search():
         query_text = ">query\n" + query_text
     if len(query_text) > MAX_SIZE:
         return jsonify({"error": "Input >100MB"}), 400
-    threading.Thread(target=_blast_worker, args=(jid, query_text, "blastx", "nr_cluster_seq"), daemon=True).start()
+    threading.Thread(target=_blast_worker, args=(jid, query_text, "blastx", "nr"), daemon=True).start()
     return jsonify({"job_id": jid, "status": "queued", "tool": "blastx"})
 
 
