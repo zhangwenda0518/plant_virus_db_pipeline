@@ -20,8 +20,8 @@ jobs = {}
 # ── NCBI API endpoints & settings ──
 NCBI_BLAST_URL  = "https://blast.ncbi.nlm.nih.gov/Blast.cgi"
 NCBI_CDD_URL    = "https://www.ncbi.nlm.nih.gov/Structure/bwrpsb/bwrpsb.cgi"
-NCBI_BLAST_SLEEP = 3       # seconds between BLAST status polls
-NCBI_CDD_SLEEP   = 3       # seconds between CDD status polls
+NCBI_BLAST_SLEEP = 10      # seconds between BLAST status polls
+NCBI_CDD_SLEEP   = 10      # seconds between CDD status polls
 BLAST_TIMEOUT    = 3000    # max wait for BLAST
 CDD_TIMEOUT      = 3000    # max wait for CDD
 BLAST_HITLIST    = 50      # top hits
