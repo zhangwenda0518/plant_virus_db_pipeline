@@ -20,8 +20,8 @@ jobs = {}
 # ── NCBI API endpoints & settings ──
 NCBI_BLAST_URL  = "https://blast.ncbi.nlm.nih.gov/Blast.cgi"
 NCBI_CDD_URL    = "https://www.ncbi.nlm.nih.gov/Structure/bwrpsb/bwrpsb.cgi"
-NCBI_BLAST_SLEEP = 5       # seconds between BLAST status polls
-NCBI_CDD_SLEEP   = 5       # seconds between CDD status polls
+NCBI_BLAST_SLEEP = 3       # seconds between BLAST status polls
+NCBI_CDD_SLEEP   = 3       # seconds between CDD status polls
 BLAST_TIMEOUT    = 3000    # max wait for BLAST
 CDD_TIMEOUT      = 3000    # max wait for CDD
 BLAST_HITLIST    = 50      # top hits
@@ -585,12 +585,21 @@ def _blast_worker(job_id, query_text, program, database):
 
         # Submit all jobs
         tasks = []
+        max_rtoe = 30
         for i, (header, seq) in enumerate(seqs):
             fasta = f">{header}\n{seq}\n"
             rid, rtoe = _submit_blast(program, database, fasta, BLAST_ENTREZ)
             tasks.append({"idx": i, "header": header, "rid": rid, "rtoe": rtoe})
+            if rtoe > max_rtoe:
+                max_rtoe = rtoe
         job["rids"] = [t["rid"] for t in tasks]
         job["status"] = "running"
+        job["progress_msg"] = f"Submitted {len(tasks)} job(s), waiting (est. {max_rtoe}s)..."
+
+        # Wait for estimated time before polling (avoids wasted API calls & rate limiting)
+        wait_time = min(max_rtoe * 0.85, 120)  # cap at 2 min initial wait
+        if wait_time > 5:
+            time.sleep(wait_time)
 
         # Single sequence: poll directly. Multi: ThreadPool.
         all_hits = []
