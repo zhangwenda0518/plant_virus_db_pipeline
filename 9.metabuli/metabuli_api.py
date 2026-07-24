@@ -808,7 +808,7 @@ def blastn_search():
     """Submit nucleotide query for NCBI BLASTN (nt database)."""
     jid = uuid.uuid4().hex[:12]
     jobs[jid] = {"id": jid, "status": "queued", "created": datetime.now().isoformat(),
-                  "tool": "blastn", "program": "blastn", "database": "nt"}
+                  "tool": "blastn", "program": "blastn", "database": "core_nt"}
     query_text = ""
     f = request.files.get("file")
     if f and f.filename:
@@ -822,7 +822,7 @@ def blastn_search():
         query_text = ">query\n" + query_text
     if len(query_text) > MAX_SIZE:
         return jsonify({"error": "Input >100MB"}), 400
-    threading.Thread(target=_blast_worker, args=(jid, query_text, "blastn", "nt"), daemon=True).start()
+    threading.Thread(target=_blast_worker, args=(jid, query_text, "blastn", "core_nt"), daemon=True).start()
     return jsonify({"job_id": jid, "status": "queued", "tool": "blastn"})
 
 
