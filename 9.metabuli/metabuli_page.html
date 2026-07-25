@@ -407,9 +407,9 @@ async function renderMetabuli(data, jobId) {
     h += '<div style="font-size:12px;color:#555;margin-bottom:8px">Total <b>' + (vs.total_contigs || 0) + '</b> contigs, <b style="color:#27ae60">' + (vs.virus_contigs || 0) + '</b> classified as Virus</div>';
     if (vc.length) {
       var RK = ['realm','kingdom','phylum','class','order','family','genus','species'];
-      var COL_KEYS = ['contig'].concat(RK).concat(['length','score','e_value','genus_avg_len']);
-      var COL_LABELS = ['Contig','Realm','Kingdom','Phylum','Class','Order','Family','Genus','Species','Length','Score','E-value','Genus Avg Len'];
-      var NUM_COLS = {length:true, score:true, e_value:true, genus_avg_len:true};
+      var COL_KEYS = ['contig'].concat(RK).concat(['length','score','e_value','genus_avg_len','predicted_host','host_confidence']);
+      var COL_LABELS = ['Contig','Realm','Kingdom','Phylum','Class','Order','Family','Genus','Species','Length','Score','E-value','Genus Avg Len','Predicted Host','Confidence'];
+      var NUM_COLS = {length:true, score:true, e_value:true, genus_avg_len:true, host_score:true};
       
       function _nearComplete(len, avg) {
         if (!len || !avg) return false;
@@ -446,6 +446,12 @@ async function renderMetabuli(data, jobId) {
           tbody += '<td style="text-align:right;font-family:monospace;font-size:11px">' + evDisplay + '</td>';
           var gal = r.genus_avg_len;
           tbody += '<td style="text-align:right">' + (gal != null && gal !== '' ? Number(gal).toFixed(0) : '<span style="color:#ccc">-</span>') + '</td>';
+          // Predicted Host
+          var ph = r.predicted_host || '';
+          var hc = r.host_confidence || '';
+          var hcColor = hc === 'High' ? '#27ae60' : (hc === 'Medium' ? '#e67e22' : '#888');
+          tbody += '<td style="font-weight:600">' + (ph ? escapeHtml(ph) : '<span style="color:#ccc">-</span>') + '</td>';
+          tbody += '<td style="color:' + hcColor + ';font-weight:600;font-size:11px">' + (hc || '<span style="color:#ccc">-</span>') + '</td>';
           var sp = r.species || r.taxon || '';
           var tx = r.taxon || r.species || '';
           tbody += '<td style="white-space:nowrap">'
@@ -1052,6 +1058,12 @@ function sortVirusTable(tid, colIdx) {
     tbody += '<td style="text-align:right;font-family:monospace;font-size:11px">' + evDisplay2 + '</td>';
     var gal = r.genus_avg_len;
     tbody += '<td style="text-align:right">' + (gal != null && gal !== '' ? Number(gal).toFixed(0) : '<span style="color:#ccc">-</span>') + '</td>';
+    // Predicted Host
+    var ph3 = r.predicted_host || '';
+    var hc3 = r.host_confidence || '';
+    var hcColor3 = hc3 === 'High' ? '#27ae60' : (hc3 === 'Medium' ? '#e67e22' : '#888');
+    tbody += '<td style="font-weight:600">' + (ph3 ? escapeHtml(ph3) : '<span style="color:#ccc">-</span>') + '</td>';
+    tbody += '<td style="color:' + hcColor3 + ';font-weight:600;font-size:11px">' + (hc3 || '<span style="color:#ccc">-</span>') + '</td>';
     tbody += '<td style="white-space:nowrap">'
        + '<button class="ex-btn ac-btn" style="font-size:10px;background:#e3f2fd;color:#1565c0;border-color:#90caf9;margin:1px" data-contig="' + escapeHtml(r.contig) + '" data-tool="cdd">CDD</button>'
        + '<button class="ex-btn ac-btn" style="font-size:10px;background:#e8f5e9;color:#2e7d32;border-color:#a5d6a7;margin:1px" data-contig="' + escapeHtml(r.contig) + '" data-tool="blastn">BLASTN</button>'
