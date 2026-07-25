@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Metabuli Contig Classification API."""
 
-import os, json, uuid, time, subprocess, threading, shutil, re, urllib.request, urllib.parse, urllib.error, base64, csv
+import os, json, uuid, time, subprocess, threading, shutil, re, urllib.request, urllib.parse, urllib.error, base64
 import io
 from pathlib import Path
 from datetime import datetime
@@ -87,55 +87,6 @@ for _tid, _rec in TAXLIN.items():
 print(f"Taxid lineage: {len(TAXLIN)} entries")
 print(f"Genus lengths: {len(GENUS_LENS)} entries")
 print(f"ICTV→NCBI species map: {len(_ICTV2NCBI)} entries")
-
-# ── Host probability tables ──
-_HOST_PROB_DIR = Path(__file__).parent.parent / "5.host_classify" / "cross_analysis"
-
-def _load_host_probs(path, key_col):
-    """Load host probability TSV → {taxon: {Predicted_Host, Confidence_Level, Integrated_Confidence}}."""
-    lookup = {}
-    if not path.exists():
-        return lookup
-    with open(path, encoding="utf-8") as f:
-        reader = csv.DictReader(f, delimiter="\t")
-        for row in reader:
-            taxon = row.get(key_col, "").strip()
-            if not taxon:
-                continue
-            lookup[taxon] = {
-                "Predicted_Host": row.get("Predicted_Host", "Unknown"),
-                "Confidence_Level": row.get("Confidence_Level", "Unknown"),
-                "Integrated_Confidence": float(row.get("Integrated_Confidence", 0)),
-                "Total_Records": int(row.get("Total_Records", 0)),
-                "P_Max": float(row.get("P_Max", 0)),
-            }
-    return lookup
-
-_HOST_GEN = _load_host_probs(_HOST_PROB_DIR / "genus_host_probability.tsv", "Genus")
-_HOST_FAM = _load_host_probs(_HOST_PROB_DIR / "family_host_probability.tsv", "Family")
-_HOST_ORD = _load_host_probs(_HOST_PROB_DIR / "order_host_probability.tsv", "Order")
-_HOST_SP = {}  # species table too large (9MB), skip for now
-print(f"Host prob tables: Genus={len(_HOST_GEN)}, Family={len(_HOST_FAM)}, Order={len(_HOST_ORD)}")
-
-def _predict_host(species, genus, family, order):
-    """Cascade host prediction: Genus → Family → Order (Species skipped due to memory)."""
-    for lvl_name, taxon, lookup in [
-        ("Genus", genus, _HOST_GEN),
-        ("Family", family, _HOST_FAM),
-        ("Order", order, _HOST_ORD),
-    ]:
-        if taxon and taxon in lookup:
-            info = lookup[taxon]
-            return {
-                "predicted_host": info["Predicted_Host"],
-                "confidence": info["Confidence_Level"],
-                "confidence_score": round(info["Integrated_Confidence"], 3),
-                "level": lvl_name,
-                "records": info["Total_Records"],
-            }
-    return {"predicted_host": "Unknown", "confidence": "Unknown", "confidence_score": 0, "level": "None", "records": 0}
-
-import csv
 
 
 def _load_genus_lens(path, taxdir=None):
@@ -555,17 +506,6 @@ def _extract_virus(job_id, outdir, cls_path, fasta_path):
             row = {"contig": name, "taxid": taxid, "taxon": taxon, "length": length, "score": score, "e_value": evalue, "genus_avg_len": genus_avg}
             for r in RANKS:
                 row[r] = info.get(r, "")
-            # Host prediction
-            host = _predict_host(
-                info.get("species", ""),
-                info.get("genus", ""),
-                info.get("family", ""),
-                info.get("order", "")
-            )
-            row["predicted_host"] = host["predicted_host"]
-            row["host_confidence"] = host["confidence"]
-            row["host_score"] = host["confidence_score"]
-            row["host_level"] = host["level"]
             rows.append(row)
             seq = seqs.get(name)
             if seq:
