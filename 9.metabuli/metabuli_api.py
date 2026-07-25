@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Metabuli Contig Classification API."""
 
-import os, json, uuid, time, subprocess, threading, shutil, re, urllib.request, urllib.parse, urllib.error, base64
+import os, json, uuid, time, subprocess, threading, shutil, re, urllib.request, urllib.parse, urllib.error, base64, csv
 import io
 from pathlib import Path
 from datetime import datetime
