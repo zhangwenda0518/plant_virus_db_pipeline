@@ -111,16 +111,15 @@ def _load_host_probs(path, key_col):
             }
     return lookup
 
-_HOST_SP = _load_host_probs(_HOST_PROB_DIR / "species_host_probability.tsv", "Species")
 _HOST_GEN = _load_host_probs(_HOST_PROB_DIR / "genus_host_probability.tsv", "Genus")
 _HOST_FAM = _load_host_probs(_HOST_PROB_DIR / "family_host_probability.tsv", "Family")
 _HOST_ORD = _load_host_probs(_HOST_PROB_DIR / "order_host_probability.tsv", "Order")
-print(f"Host prob tables: Species={len(_HOST_SP)}, Genus={len(_HOST_GEN)}, Family={len(_HOST_FAM)}, Order={len(_HOST_ORD)}")
+_HOST_SP = {}  # species table too large (9MB), skip for now
+print(f"Host prob tables: Genus={len(_HOST_GEN)}, Family={len(_HOST_FAM)}, Order={len(_HOST_ORD)}")
 
 def _predict_host(species, genus, family, order):
-    """Cascade host prediction: Species → Genus → Family → Order."""
+    """Cascade host prediction: Genus → Family → Order (Species skipped due to memory)."""
     for lvl_name, taxon, lookup in [
-        ("Species", species, _HOST_SP),
         ("Genus", genus, _HOST_GEN),
         ("Family", family, _HOST_FAM),
         ("Order", order, _HOST_ORD),
