@@ -346,14 +346,16 @@ def _parse_blast_json(result):
             desc = desc_list[0] if desc_list else {}
             hsps = hit.get("hsps", [])
             best = hsps[0] if hsps else {}
+            align_len = best.get("align_len", 1) or 1
+            ident_count = best.get("identity", 0)
             hits.append({
                 "query": query_title,
                 "accession": desc.get("accession", ""),
                 "title": desc.get("title", ""),
                 "taxid": desc.get("taxid", ""),
                 "sciname": desc.get("sciname", ""),
-                "identity": best.get("identity", 0),
-                "align_len": best.get("align_len", 0),
+                "identity": round(ident_count / align_len * 100, 1) if align_len else 0,
+                "align_len": align_len,
                 "query_from": best.get("query_from", 0),
                 "query_to": best.get("query_to", 0),
                 "hit_from": best.get("hit_from", 0),
