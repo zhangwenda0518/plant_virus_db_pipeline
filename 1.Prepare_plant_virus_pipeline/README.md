@@ -204,6 +204,18 @@ LCA 诊断发现跨 TaxID 混合聚类簇 **787** 个，占总聚类簇数的比
 > | Kingdom | 5 | Phylum | 4 |
 > | Class | 3 | Suborder | 1 |
 
+> **图 4-1 `clusters.LCA_Distribution.png` 的生成方式**
+>
+> 由 `G2_vclust_cluster.py` 的 `plot_results()` 绘制（`run_all.sh` 第 513 行以 `--out_plot` 指定输出路径，默认值同名），输入是同一目录下的 `clusters_with_LCA.tsv`，列为 `Cluster_Rep / Total_Seqs / Unique_Taxids / Exact_LCA_Name / Exact_LCA_Rank / Std_LCA_Name / Std_LCA_Rank / Taxid_Breakdown`——每个跨 TaxID 混合簇一行，`Std_LCA_Rank` 是该簇全部 TaxID 共同谱系映射到的最近标准等级。
+>
+> 左图：`Std_LCA_Rank` 的簇数直方图（`sns.countplot`，viridis 配色，柱顶标注数值）；右图：各等级下 `Unique_Taxids` 的箱线图（灰色，`showfliers=False`）叠加抖动散点（`sns.stripplot`，alpha=0.7、size=6、jitter=True）。等级排序取 `value_counts()` 频次降序，x 轴标签旋转 45°。画布 `figsize=(15, 6)`、`dpi=300`、`bbox_inches='tight'`，成图约 4427×1737 px。**若该次运行没有跨 TaxID 混合簇，则跳过绘图**（脚本打印"✅ 无跨物种聚类，跳过LCA绘图"）。
+>
+> 文件名沿革：2026-03 的脚本输出名为 `LCA_Distribution.png`；2026-03-22 起改为与输入表同前缀的 `clusters.LCA_Distribution.png`。旧名文件不会自动删除，因此同一目录可能同时存在两个名字的同一张图。
+>
+> ⚠️ **引用前必须核对图与表的批次**：现存三批产物数字互不相同——① 服务器 `database/virus-db/virus-host/ncbi-virus2/{LCA_Distribution,clusters.LCA_Distribution}.png`（2026-03-21/22）对应 **2,248** 个混合簇（genus 1181 / species 631 / family 146 / acellular root 103 / subfamily 61 / realm 55 / order 25 / kingdom 21 / phylum 10 / class 8 / no rank 7），其 `Plant_virus_db/` 子目录副本对应 **1,299** 个；② 现行 G2 运行（2026-06-02）为 **569** 个混合簇（species 271 / genus 196 / family 39 / subfamily 19 / realm 17 / acellular root 14 / order 7 / kingdom 2 / class 2 / suborder 1 / phylum 1），见 `6.logs/G2-vclust聚类.log`。上面正文与表 4-5 的 787 个混合簇（species 317 / genus 280 …）最接近 `virus-host/ncbi-virus3/Plant_virus_db/`（2026-04-03，**791** 簇、species 320、genus 281；同目录 `refseq_replacement_log.tsv` **483** 行与正文"RefSeq 优先替换事件 483 次"完全一致，`final.cluster.ref.fasta` 11,936 条对正文 11,956、独特 TaxID 6,583 对 6,597），即表 4-5 出自这一代运行。**图 4-1 应取 ncbi-virus3 那一版 `clusters.LCA_Distribution.png`**（已留档于 `figures/lca_distribution/2026-04-03_ncbivirus3_clusters.LCA_Distribution_791clusters.png`），而不是 3 月的 2,248/1,299 版。
+>
+> 同节 11,956 条代表序列 / 6,597 个 TaxID 同样是历史口径：2026-06-02 运行日志为 8,465 条 / 5,817 个 TaxID，2026-07-07 的 `G-cluster/final.cluster.ref.fasta` 为 8,464 条，当前 `3.final-ref-virus.db/final.cluster.ref.fasta` 为 8,484 条。定稿前需统一这四个数字的来源批次。
+
 ### 4.6 基因预测与覆盖度评估
 
 利用 **pyrodigal-rv** (Larralde, 2022) 对最终 11,956 条参考基因组序列进行病毒基因预测。成功预测到 CDS 的序列 **11,847** 条 (91.1%，共 71,979 个 CDS)，未预测到基因的序列 1,183 条 (8.9%，可能为短序列片段、类病毒或非编码区域)。基因覆盖度分析表明：每基因组平均 CDS 数量为 5–6 个，平均基因覆盖度（单个基因平均长度 / 基因组长度）为 **53.3%**，平均总覆盖度（所有基因总长度 / 基因组长度）为 **84.6%**。该结果表明，未预测到基因的序列以类病毒（~300–400 bp）和短片段为主。

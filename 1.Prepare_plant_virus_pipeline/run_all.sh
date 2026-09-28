@@ -24,6 +24,9 @@ NCPU_ARG=""
 MMSEQS_THREADS_ARG=""
 TAXONKIT_BIN_ARG=""
 CHECK_ONLY=""
+AUDIT_ONLY=""          # --audit        : 只跑产物体检(只读)后退出, 不需要原始数据
+NO_AUDIT=""            # --no-audit     : 跑完不做体检
+STRICT_AUDIT=""        # --strict-audit : 体检出现 FAIL 时以非 0 退出码结束
 
 show_help() {
     cat << 'HELP'
@@ -87,6 +90,10 @@ show_help() {
 │   bash run_all.sh -e me@qq.com                                │
 │   bash run_all.sh -w /data/virus -e me@qq.com -k mykey -p 30  │
 │   bash run_all.sh --check                                     │
+│   bash run_all.sh --audit  -w /data/virus                     │
+│       ↑ 只跑产物体检(只读): 物种缺失/键分裂/缺段/计数为0 等    │
+│   bash run_all.sh --strict-audit -w /data/virus               │
+│       ↑ 体检 FAIL 时以非 0 退出码结束 (默认只提示)             │
 └──────────────────────────────────────────────────────────────┘
 HELP
     exit 0
@@ -96,6 +103,9 @@ while [[ $# -gt 0 ]]; do
     case "$1" in
         --help|-h)       show_help ;;
         --check)         CHECK_ONLY=1; shift ;;
+        --audit)         AUDIT_ONLY=1; shift ;;
+        --no-audit)      NO_AUDIT=1; shift ;;
+        --strict-audit)  STRICT_AUDIT=1; shift ;;
         -e|--email)      EMAIL_ARG="$2"; shift 2 ;;
         -k|--api-key)    API_KEY_ARG="$2"; shift 2 ;;
         -w|--work-dir)   WORK_DIR_ARG="$2"; shift 2 ;;
@@ -108,6 +118,37 @@ while [[ $# -gt 0 ]]; do
         *) echo "未知参数: $1 (使用 --help 查看帮助)"; exit 1 ;;
     esac
 done
+
+# ==================== 产物体检 (只读, 不改动任何数据) ====================
+# 报告写到 <work>/7.audit/<时间戳>/ ; 会自动与"上一次运行的快照"对比:
+# 整族消失的物种 / 重复 accession / 物种键分裂 / 缺段 / 计数静默为 0 等会显式列出。
+# 默认只提示不中断 (warn-only); 只有 --strict-audit 才让 FAIL 影响退出码。
+AUDIT_OUT=""
+_audit_msg(){ if [ -n "${LOG_DIR:-}" ] && [ -d "${LOG_DIR:-}" ]; then log "$*"; else echo "[audit] $*"; fi; }
+audit_report(){
+    local wd="$1" raw="$2"
+    local audit_root="$wd/7.audit"
+    local out="$audit_root/$(date +%Y%m%d_%H%M%S)"
+    mkdir -p "$out"
+    AUDIT_OUT="$out"
+    local args=(--work-dir "$wd" --out "$out" --auto-baseline-dir "$audit_root")
+    if [ -f "$raw/VMR_MSL41.v1.20260320.xlsx" ]; then args+=(--vmr "$raw/VMR_MSL41.v1.20260320.xlsx"); fi
+    if [ -f "$raw/genus_lens.tsv" ]; then args+=(--genus-lens "$raw/genus_lens.tsv"); fi
+    if [ -n "${STRICT_AUDIT:-}" ]; then args+=(--strict); fi
+    _audit_msg "▶ 产物体检(只读) → $out"
+    python "$BIN_DIR/lib/audit.py" "${args[@]}" | tee "$out/console.log"
+}
+
+# --audit: 只做体检, 放在 CONFIG 之前 —— 不需要原始数据/分类学库, 也不去 realpath 这些路径
+if [ "${AUDIT_ONLY:-0}" = "1" ]; then
+    BIN_DIR="$(cd "$(dirname "$0")" && pwd)"
+    if [ ! -f "$BIN_DIR/lib/audit.py" ]; then
+        echo "✗ 缺少 $BIN_DIR/lib/audit.py"; exit 1
+    fi
+    _A_WORK="${WORK_DIR_ARG:-${WORK_DIR:-$HOME/plant_virus_db}}"
+    _A_WORK="$(cd "$_A_WORK" 2>/dev/null && pwd || echo "$_A_WORK")"
+    if audit_report "$_A_WORK" "${RAW_DIR_ARG:-${RAW_DIR:-$_A_WORK/0.raw_data}}"; then exit 0; else exit 1; fi
+fi
 
 # ==================== CONFIG ====================
 # 优先级: 命令行参数 > 环境变量 > 默认值
@@ -595,6 +636,19 @@ python "$BIN_DIR/summarize_pipeline.py" --work-dir "$WORK_DIR" \
 log "✓ 总结报告已保存 → $LOG_DIR/pipeline_summary.txt"
 
 # ============================================================
+# 产物体检 (只读, 默认 warn-only)
+# ============================================================
+AUDIT_FAILED=""
+if [ -z "${NO_AUDIT:-}" ]; then
+    if audit_report "$WORK_DIR" "$RAW_DIR"; then
+        log "✓ 产物体检完成 (无 FAIL 项)"
+    else
+        AUDIT_FAILED=1
+        log "⚠ 产物体检发现 FAIL 项 — 详见 $AUDIT_OUT/audit_summary.md (加 --no-audit 可跳过)"
+    fi
+fi
+
+# ============================================================
 # 完成
 # ============================================================
 echo ""
@@ -611,4 +665,10 @@ echo "  序列:          $PLANT_DIR/G-cluster/Plant_Virus_Ref.fasta"
 echo "  覆盖度:        $PLANT_DIR/H-virus_genes/virus_genes_cov.tsv"
 echo "  LCA 分布:      $PLANT_DIR/G-cluster/clusters.LCA_Distribution.png"
 echo "  日志目录:      $LOG_DIR/"
+if [ -n "${AUDIT_OUT:-}" ]; then echo "  体检报告:      $AUDIT_OUT/audit_summary.md"; fi
 echo "============================================"
+
+# --strict-audit 时, 体检 FAIL 影响退出码 (默认不影响)
+if [ -n "${AUDIT_FAILED:-}" ] && [ -n "${STRICT_AUDIT:-}" ]; then
+    exit 1
+fi
