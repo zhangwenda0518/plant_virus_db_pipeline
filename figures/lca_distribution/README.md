@@ -45,8 +45,9 @@
 
 ## 注意
 
-`1.Prepare_plant_virus_pipeline/README.md` §4.5 正文与表 4-5 写的是 **787** 个混合簇（species 317 / genus 280 / family 88 …），与各批次都不完全相等，但**最接近 `ncbi-virus3`（2026-04-03）那一版**——该版同目录的 `refseq_replacement_log.tsv` 为 **483** 行，与正文"RefSeq 优先替换事件 483 次"完全一致，`final.cluster.ref.fasta` 11,936 条（正文 11,956）、独特 TaxID 6,583（正文 6,597）、`category_segment_conflict.tsv` 449 行（正文 446）。差异都在个位数，说明表 4-5 出自这一代流水线（可能是同批次的又一次运行）。
-因此**图 4-1 应使用 `2026-04-03_ncbivirus3_...791clusters.png` 这一版**，而不是 3 月的 2,248/1,299 版；3 月那两张是更早期的全量输入快照，簇数是 4 月版的约 2.8 倍。
+`1.Prepare_plant_virus_pipeline/README.md` §4.5 正文与表 4-5 写的是 **787** 个混合簇（species 317 / genus 280 / family 88 / realm 20 / acellular root 28 / subfamily 23 / no rank 10 / order 8 / kingdom 5 / phylum 4 / class 3 / suborder 1）。
+该数字与 **2026-05-10 的 test-db G-cluster 批次**（`plantvirus-db/plant_virus_db/test-db/2.plant-virus.db/G-cluster`，787 簇）**逐级完全一致**——即表 4-5 的直接出处（见文末「2026-09-28 补充」一节的确证过程；本节早前的"最接近 ncbi-virus3(791)"推断已作废）。
+因此**图 4-1 应使用 `2026-05-10_testdb_gcluster_clusters.LCA_Distribution_787clusters.png`**，而不是 3 月的 2,248/1,299 版（那两张是未净化全量 pull 的早期快照，簇数是其约 2.8 倍）。
 
 ## 复现
 
