@@ -27,6 +27,7 @@ CHECK_ONLY=""
 AUDIT_ONLY=""          # --audit        : 只跑产物体检(只读)后退出, 不需要原始数据
 NO_AUDIT=""            # --no-audit     : 跑完不做体检
 STRICT_AUDIT=""        # --strict-audit : 体检出现 FAIL 时以非 0 退出码结束
+FROM_STAGE=""          # --from F1      : 强制重跑该步骤及其后所有步骤
 
 show_help() {
     cat << 'HELP'
@@ -93,6 +94,8 @@ show_help() {
 │   bash run_all.sh --audit  -w /data/virus                     │
 │       ↑ 只跑产物体检(只读): 物种缺失/键分裂/缺段/计数为0 等    │
 │   bash run_all.sh --strict-audit -w /data/virus               │
+│   bash run_all.sh --from F1 -w /data/virus                    │
+│       ↑ 强制重跑 F1 及其后所有步骤 (增量更新后"触发去冗余")    │
 │       ↑ 体检 FAIL 时以非 0 退出码结束 (默认只提示)             │
 └──────────────────────────────────────────────────────────────┘
 HELP
@@ -106,6 +109,7 @@ while [[ $# -gt 0 ]]; do
         --audit)         AUDIT_ONLY=1; shift ;;
         --no-audit)      NO_AUDIT=1; shift ;;
         --strict-audit)  STRICT_AUDIT=1; shift ;;
+        --from)          FROM_STAGE="${2^^}"; shift 2 ;;
         -e|--email)      EMAIL_ARG="$2"; shift 2 ;;
         -k|--api-key)    API_KEY_ARG="$2"; shift 2 ;;
         -w|--work-dir)   WORK_DIR_ARG="$2"; shift 2 ;;
@@ -203,7 +207,23 @@ check(){
         exit 1
     fi
 }
+# --from <STEP>: 强制重跑该步骤及其后全部步骤（字母序 + 数字序比较；解析失败则保守跳过强制）
+_stage_rank(){ [[ "$1" =~ ^([A-Ga-g])([0-9]+) ]] && echo "${BASH_REMATCH[1]^^}${BASH_REMATCH[2]}" || echo ""; }
+_should_force(){
+    [ -n "${FROM_STAGE:-}" ] || return 1
+    local cur; cur="$(_stage_rank "$1")" || true
+    [ -n "$cur" ] || return 1
+    local cf="${FROM_STAGE:0:1}" cn="${FROM_STAGE:1}" uf="${cur:0:1}" un="${cur:1}"
+    case "$cn$un" in *[!0-9]*|"") return 1 ;; esac      # 非纯数字则不强制
+    if [ "$uf" \> "$cf" ]; then return 0; fi
+    if [ "$uf" = "$cf" ] && [ "$un" -ge "$cn" ]; then return 0; fi
+    return 1
+}
 done_or_skip(){
+    if _should_force "$2"; then
+        log "⟳ [$2] 命中 --from $FROM_STAGE, 强制重跑"
+        return 1
+    fi
     if [ -s "$1" ]; then
         log "⊙ 跳过 [$2] — 产物已存在"
         return 0
