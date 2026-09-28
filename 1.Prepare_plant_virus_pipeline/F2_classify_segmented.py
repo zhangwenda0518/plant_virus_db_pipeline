@@ -12,6 +12,19 @@
 """
 
 import polars as pl
+import os as _os
+import sys as _sys
+
+# ===== 护栏开关（只读保护，不新增删除/降级）=====
+# PVDB_GUARDS=0 可完全关闭，关闭后行为与本文件 2026-09-27 版一致。
+_GUARDS_ON = _os.environ.get("PVDB_GUARDS", "1") != "0"
+try:
+    _LIB = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "lib")
+    if _LIB not in _sys.path:
+        _sys.path.insert(0, _LIB)
+    from pvcore import write_tsv_safe as _write_tsv_safe
+except Exception:                                   # 缺库时不阻断主流程
+    _write_tsv_safe = None
 import argparse
 import time
 import os
@@ -139,6 +152,21 @@ def normalize_segment_names(df: pl.DataFrame) -> pl.DataFrame:
     return pl.concat([seg_df, non_seg_df], how="diagonal")
 
 
+def gene_rule_protection_expr(columns) -> pl.Expr:
+    """"基因级标题降级规则"的保护表达式：为 True 的记录不套用该规则。
+
+    保护对象 = RefSeq(NC_) 且 Nuc_Completeness=complete —— NCBI 对小型病毒/卫星的
+    RefSeq 标题本就写成 "gene, complete cds"，直接按标题降级会误伤完整参考序列
+    （实测 270 条：小麦矮缩病毒、Pistacia emaravirus 各节段、多种卫星）。
+    缺少 Nuc_Completeness 列时不保护（保守：不改变原有行为）。
+    PVDB_GUARDS=0 时返回 False（等价于关闭护栏）。
+    """
+    if not _GUARDS_ON or "Nuc_Completeness" not in columns or "Accession" not in columns:
+        return pl.lit(False)
+    return (pl.col("Accession").cast(pl.Utf8).str.starts_with("NC_")
+            & (pl.col("Nuc_Completeness").cast(pl.Utf8).str.to_lowercase() == "complete"))
+
+
 def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -> pl.DataFrame:
     print(f"⏳ 正在解析 VMR 表格 ({vmr_path})...")
     vmr_df = pl.read_csv(vmr_path, separator="\t", ignore_errors=True)
@@ -236,15 +264,32 @@ def two_tier_classifier(df: pl.DataFrame, vmr_path: str, taxid_pq: str = None) -
         ).then(pl.lit(True)).otherwise(pl.lit(False)).alias("Is_Segmented")
     )
 
+    # 护栏：RefSeq(NC_) 且 Nuc_Completeness=complete 的记录，不套用"基因级标题"降级规则。
+    # 实测该规则会误伤 270 条 NC_ 完整基因组/节段（小麦矮缩病毒、Pistacia emaravirus
+    # 各节段、多个卫星等）——NCBI 对小型病毒/卫星的 RefSeq 标题本就用 "gene, complete cds"
+    # 的写法。受保护记录改走下面的原逻辑，并会被写入 quarantine/ 供复核。
+    # 可用 PVDB_GUARDS=0 关闭（关闭后行为与 2026-09-27 版完全一致）。
+    _protect = gene_rule_protection_expr(df.columns)
+
     df = df.with_columns(
+        # 2026-09-27 修复: 基因级标题(泛 \bgene\b 信号, 含 "complete cds/gene(s)")与部分序列
+        # 必须在 Nuc_Completeness 字段之前判定 —— NCBI 上游字段会把 "complete cds" 标成
+        # complete, 旧逻辑把字段放第一优先导致 CDS_Fragment 检测器被短路,
+        # 344 条基因级记录曾借此混入 Complete。标题同时声明 complete genome 者不在此列。
+        # 2026-09-28 加固: 追加"RefSeq 完整基因组"护栏（见上），避免误伤完整参考序列。
         pl.when(
+            pl.col("title_lower").str.contains(r"(?i)complete\s+cds|complete\s+coding|complete\s+genes?\b|\bgene\b|\bgenes\b")
+            & ~pl.col("title_lower").str.contains(r"(?i)complete\s+genome|complete\s+sequence|complete\s+segment")
+            & ~_protect
+        ).then(pl.lit("CDS_Fragment"))
+        .when(pl.col("title_lower").str.contains(r"(?i)partial genome")).then(pl.lit("Partial_Genome"))
+        .when(
             (
-                pl.col("vmr_cov_lower").str.contains("complete") | 
-                (pl.col("Nuc_Completeness") == "complete") | 
+                pl.col("vmr_cov_lower").str.contains("complete") |
+                (pl.col("Nuc_Completeness") == "complete") |
                 pl.col("title_lower").str.contains(r"(?i)complete sequence|complete segment|complete genome")
             ) & ~pl.col("title_lower").str.contains(r"(?i)partial")
         ).then(pl.lit("Complete"))
-        .when(pl.col("title_lower").str.contains(r"(?i)partial genome")).then(pl.lit("Partial_Genome"))
         .when(pl.col("title_lower").str.contains(r"(?i)\bcds\b|\bgene\b|protein|polyprotein|glycoprotein|polymerase|replicase|capsid")).then(pl.lit("CDS_Fragment"))
         .otherwise(pl.lit("Other_Partial"))
         .alias("Completeness_Level")
@@ -421,6 +466,31 @@ def main():
     # =========================================================================
 
     clean_df.write_csv(os.path.join(out_path, "All_Classified_Virus_Info.tsv"), separator="\t")
+
+    # 护栏审计：把"因护栏而未降级"的记录单独留一份（只写报告，不改动分类结果）
+    if _GUARDS_ON and "Nuc_Completeness" in clean_df.columns:
+        _t = pl.col("GenBank_Title").cast(pl.Utf8).fill_null("").str.to_lowercase()
+        _would = (_t.str.contains(r"(?i)complete\s+cds|complete\s+coding|complete\s+genes?\b|\bgene\b|\bgenes\b")
+                  & ~_t.str.contains(r"(?i)complete\s+genome|complete\s+sequence|complete\s+segment"))
+        protected = clean_df.filter(
+            pl.col("Accession").cast(pl.Utf8).str.starts_with("NC_")
+            & (pl.col("Nuc_Completeness").cast(pl.Utf8).str.to_lowercase() == "complete")
+            & _would)
+        if protected.height:
+            qdir = os.path.join(out_path, "quarantine")
+            os.makedirs(qdir, exist_ok=True)
+            cols = [c for c in ("Accession", "Taxid", "Species_ICTV", "Segment", "Length",
+                                "Nuc_Completeness", "GenBank_Title") if c in protected.columns]
+            sub = protected.select(cols)
+            try:
+                if _write_tsv_safe:
+                    _write_tsv_safe(sub, os.path.join(qdir, "F2_refseq_complete_protected.tsv"))
+                else:
+                    sub.write_csv(os.path.join(qdir, "F2_refseq_complete_protected.tsv"), separator="\t")
+            except Exception as e:
+                print(f"  ⚠ 护栏报告写盘失败（不影响分类结果）: {e}")
+            print(f"  ⚠ 护栏：{protected.height} 条 RefSeq 完整基因组未套用基因级降级规则 "
+                  f"→ {qdir}/F2_refseq_complete_protected.tsv（复核用；PVDB_GUARDS=0 可关闭）")
 
     for cat in info_df["Category"].unique().to_list():
         clean_df.filter(pl.col("Category") == cat).write_csv(os.path.join(out_path, f"{cat}_Info.tsv"), separator="\t")

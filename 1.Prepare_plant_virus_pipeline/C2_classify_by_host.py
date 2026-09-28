@@ -66,19 +66,26 @@ def resolve_host_names_via_taxonkit(host_names: list, taxonkit_path: str) -> pl.
                     taxid_map.append({"Host_Name": name, "Host_Taxid": taxid})
                     valid_taxids.add(taxid)
                     
-        # 2. TaxID -> Lineage
+        # 2. TaxID -> 9字段定长谱系
+        #    2026-09-19 修复: 原先直接 `taxonkit lineage` 输出全量格式, 与 C1 主链路的
+        #    {d};{K};{p};{c};{o};{f};{g};{s};{t} 定长格式不一致 —— 这些补救记录进入
+        #    C4 后 _H_Kingdom=get(1)="Eukaryota"≠预期界, 被 L1 kingdom 检查整批删除。
+        #    与 C1 的 process_lineage 完全同管道, 保证格式一致。
         with tempfile.NamedTemporaryFile('w', delete=False) as f_taxids:
             f_taxids.write('\n'.join(list(valid_taxids)))
             taxids_file = f_taxids.name
-            
-        cmd2 = [taxonkit_path, "lineage", taxids_file]
-        res2 = subprocess.run(cmd2, capture_output=True, text=True)
-        
+
+        format_string = "{d};{K};{p};{c};{o};{f};{g};{s};{t}"
+        cmd2 = (f'taxonkit lineage -n -i 1 "{taxids_file}" | '
+                f'taxonkit reformat -I 1 -i 2 -f "{format_string}" -S')
+        res2 = subprocess.run(cmd2, shell=True, capture_output=True, text=True)
+
         lineage_map = {}
         for line in res2.stdout.splitlines():
             parts = line.split('\t')
-            if len(parts) >= 2:
-                lineage_map[parts[0].strip()] = parts[1].strip()
+            # 输出 4 列: taxid, 全量lineage, name, 9字段定长lineage
+            if len(parts) >= 4 and parts[3].strip():
+                lineage_map[parts[0].strip()] = parts[3].strip()
                 
         # 3. 组合结果
         final_mapping = []
@@ -98,17 +105,25 @@ def resolve_host_names_via_taxonkit(host_names: list, taxonkit_path: str) -> pl.
         if 'taxids_file' in locals() and os.path.exists(taxids_file): os.unlink(taxids_file)
 
 def apply_classification(df: pl.DataFrame, lineage_col: str) -> pl.DataFrame:
-    """终极细化版：基于 NCBI 谱系文本的标准正则归类"""
+    """基于 NCBI 谱系文本的标准正则归类。
+
+    2026-09-19 修正版（移植 B1 2026-09-16 补丁 + 词边界加固）：
+    - Plant 检查必须在 Animal 之前——TSWV 等由蓟马/蚜虫传播的植物病毒，
+      lineage 可能同时含 Viridiplantae（真宿主）与 Arthropoda（媒介昆虫），
+      Animal 先检会把植物病毒劫持成 Animal 而从植物库丢失。
+    - Homo/Sar 加词边界：避免 Homona（螟蛾属）→ Human、
+      Sarcina（细菌属）→ Protist 的子串误配。
+    """
     return df.with_columns(
-        pl.when(pl.col(lineage_col).str.contains("(?i)Homo sapiens|Homo|Human")).then(pl.lit("Human"))
-        .when(pl.col(lineage_col).str.contains("(?i)Metazoa|Animalia|Bos taurus|Sus scrofa|Macaca|vertebrate|invertebrate|Chordata|Arthropoda|Nematoda|Platyhelminthes")).then(pl.lit("Animal"))
-        .when(pl.col(lineage_col).str.contains("(?i)Viridiplantae|Plant|Embryophyta|Streptophyta|Tracheophyta")).then(pl.lit("Plant"))
-        .when(pl.col(lineage_col).str.contains("(?i)oomycetes|Oomycota|Peronosporomycetes|Phytophthora|Pythium|Plasmopara")).then(pl.lit("Oomycetes"))
-        .when(pl.col(lineage_col).str.contains("(?i)Fungi|Ascomycota|Basidiomycota|Chytridiomycota|Mucoromycota|Zygomycota")).then(pl.lit("Fungi"))
-        .when(pl.col(lineage_col).str.contains("(?i)Sar|Stramenopiles|Alveolata|Rhizaria|Amoebozoa|Excavata|protist|Ciliophora|Apicomplexa|Euglenozoa")).then(pl.lit("Protist"))
-        .when(pl.col(lineage_col).str.contains("(?i)Bacteria|Escherichia|Pseudomonadota|Firmicutes|Actinomycetota|Bacteroidota|Cyanobacteria|Proteobacteria")).then(pl.lit("Bacteria"))
-        .when(pl.col(lineage_col).str.contains("(?i)Archaea|Euryarchaeota|Crenarchaeota|Thermoproteota")).then(pl.lit("Archaea"))
-        .when(pl.col(lineage_col).str.contains("(?i)environmental|uncultured|metagenome|soil|water|marine|sewage|sludge|wastewater")).then(pl.lit("Environmental_NCBI"))
+        pl.when(pl.col(lineage_col).str.contains(r"(?i)\bHomo sapiens\b|\bHomo\b|\bHuman\b")).then(pl.lit("Human"))
+        .when(pl.col(lineage_col).str.contains(r"(?i)\bViridiplantae\b|\bPlant|\bEmbryophyta\b|\bStreptophyta\b|\bTracheophyta\b")).then(pl.lit("Plant"))
+        .when(pl.col(lineage_col).str.contains(r"(?i)Metazoa|Animalia|Bos taurus|Sus scrofa|Macaca|vertebrate|invertebrate|Chordata|Arthropoda|Nematoda|Platyhelminthes")).then(pl.lit("Animal"))
+        .when(pl.col(lineage_col).str.contains(r"(?i)oomycetes|Oomycota|Peronosporomycetes|Phytophthora|Pythium|Plasmopara")).then(pl.lit("Oomycetes"))
+        .when(pl.col(lineage_col).str.contains(r"(?i)\bFungi\b|Ascomycota|Basidiomycota|Chytridiomycota|Mucoromycota|Zygomycota")).then(pl.lit("Fungi"))
+        .when(pl.col(lineage_col).str.contains(r"(?i)\bSar\b|Stramenopiles|Alveolata|Rhizaria|Amoebozoa|Excavata|protist|Ciliophora|Apicomplexa|Euglenozoa")).then(pl.lit("Protist"))
+        .when(pl.col(lineage_col).str.contains(r"(?i)\bBacteria\b|Escherichia|Pseudomonadota|Firmicutes|Actinomycetota|Bacteroidota|Cyanobacteria|Proteobacteria")).then(pl.lit("Bacteria"))
+        .when(pl.col(lineage_col).str.contains(r"(?i)\bArchaea\b|Euryarchaeota|Crenarchaeota|Thermoproteota")).then(pl.lit("Archaea"))
+        .when(pl.col(lineage_col).str.contains(r"(?i)environmental|uncultured|metagenome|soil|water|marine|sewage|sludge|wastewater")).then(pl.lit("Environmental_NCBI"))
         .otherwise(pl.lit("Unknown"))
         .alias("Host_Category")
     )
@@ -142,7 +157,21 @@ def main():
     need_rescue_vhost = vhost_df.filter(pl.col("Host_Category") == "Unknown")
 
     # 内部 Virus_taxid 自救
-    taxid_mapping = has_info_vhost.select(["Virus_taxid", "Host_Name", "Host_Taxid", "Host_lineage", "Host_Category"]).drop_nulls("Virus_taxid").unique("Virus_taxid", keep="first")
+    # 2026-09-19 修复: 原 unique(keep="first") 依赖行序, 同病毒存在多条不同宿主记录
+    # (混合侵染/多宿主)时会任意取一条传播。改为组内多数投票, 票数相同时按
+    # (Host_Category, Host_Name) 字典序取最小, 保证确定性。
+    _maj_cat = (has_info_vhost
+                .filter(pl.col("Virus_taxid").is_not_null() & (pl.col("Virus_taxid") != ""))
+                .group_by(["Virus_taxid", "Host_Category"]).len()
+                .sort(["Virus_taxid", "len", "Host_Category"], descending=[False, True, False])
+                .unique(subset=["Virus_taxid"], keep="first")
+                .select(["Virus_taxid", "Host_Category"]))
+    taxid_mapping = (has_info_vhost
+                     .filter(pl.col("Virus_taxid").is_not_null() & (pl.col("Virus_taxid") != ""))
+                     .join(_maj_cat, on=["Virus_taxid", "Host_Category"], how="inner")
+                     .sort("Host_Name")
+                     .unique(subset=["Virus_taxid"], keep="first")
+                     .select(["Virus_taxid", "Host_Name", "Host_Taxid", "Host_lineage", "Host_Category"]))
     rescued_by_taxid = need_rescue_vhost.drop(["Host_Name", "Host_Taxid", "Host_lineage", "Host_Category"]).join(taxid_mapping, on="Virus_taxid", how="left")
     
     internal_rescued = rescued_by_taxid.filter(pl.col("Host_Category").is_not_null())
@@ -178,10 +207,16 @@ def main():
         brand_new_formatted = brand_new_accessions.with_columns([
             pl.col("Species").alias("Virus_Name"),
             pl.lit(None).cast(pl.Utf8).alias("Virus_taxid"),
+            # 2026-09-19 修复: 原来只拼 3 字段 "Family;Genus;Species", 下游 C4/C7 按
+            # 9 字段定长下标取值 (科=5/属=6/种=7) 全部落空 —— 这些 VHost 未收录的
+            # 全新 accession 因此进不了概率表, ICTV 交叉验证也失效。
+            # 现按 ICTV 排名对齐: realm~order(0-4) 留空, Family=5, Genus=6, Species=7,
+            # 末尾补 ";" 对齐 strain(8), 与 C1 的 9 字段格式完全一致。
             pl.concat_str([
-                pl.col("Family").fill_null(""), pl.lit(";"), 
-                pl.col("Genus").fill_null(""), pl.lit(";"), 
-                pl.col("Species").fill_null("")
+                pl.lit(";;;;;"),
+                pl.col("Family").fill_null(""), pl.lit(";"),
+                pl.col("Genus").fill_null(""), pl.lit(";"),
+                pl.col("Species").fill_null(""), pl.lit(";")
             ], separator="").alias("Virus_lineage")
         ]).select(["Accession", "Virus_Name", "Virus_taxid", "Virus_lineage", "Host_Name"])
 

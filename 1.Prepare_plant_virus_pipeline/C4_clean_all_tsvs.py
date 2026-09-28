@@ -117,6 +117,11 @@ ALGAL_GENERA = {"Micromonas", "Tetradesmus", "Tetraselmis", "Picochlorum",
 
 PROTIST_COLLISION_SPECIES = {"Orthotospovirus tomatomaculae", "Sagittaria virus A"}
 
+# 0. Known contaminant accessions — removed manually, must never re-enter the DB
+CONTAMINANT_ACCESSIONS = {
+    "HM107843.1",  # Rubber viroid India/2009 isolate KER1 — contamination
+}
+
 # =====================================================================
 # C4 Taxonomy Rule Dictionaries (Based on Deep Metagenomic Validations)
 # =====================================================================
@@ -253,6 +258,14 @@ def clean_one_file(input_path, output_path, category_name, miss_dir,
     df = add_parsed_cols(df)
     total = df.height
     removed_log = []
+
+    # L0: Known contaminant accessions (all categories)
+    if "Accession" in df.columns:
+        l0 = df.filter(pl.col("Accession").is_in(list(CONTAMINANT_ACCESSIONS)))
+        df = df.filter(~pl.col("Accession").is_in(list(CONTAMINANT_ACCESSIONS)))
+        removed_log.append(("L0_contaminant_accession", l0))
+        if l0.height > 0:
+            print(f"  L0: removed {l0.height} (contaminant accession)")
 
     # L1: Kingdom
     expected = CATEGORY_KINGDOM.get(category_name)

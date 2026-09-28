@@ -64,14 +64,37 @@ def analyze_dataframe(df: pl.DataFrame, step_name: str, num_samples: int):
     else:
         print("\n🎉 完美！当前数据集中没有任何空值。")
 
+def _majority_host_map(df: pl.DataFrame, key_col: str) -> pl.DataFrame:
+    """组内多数投票: 返回 key_col -> (多数 Host, 该 Host 对应的 Host_Taxid)。
+
+    2026-09-19 修复: 原先用 drop_nulls().first().over(key) 传播, 依赖行序,
+    同病毒存在多条不同宿主记录(混合侵染/多宿主)时会任意取一条; 且 Host 与
+    Host_Taxid 各自独立取 first(), 可能造成名/ID 错配。
+    现取组内出现次数最多的 Host (并列时取字典序最小, 保证确定性),
+    Host_Taxid 取该多数 Host 名下第一条非空记录, 两者保持成对一致。
+    """
+    has_host = df.filter(pl.col("Host").is_not_null() & (pl.col("Host") != ""))
+    maj = (has_host.group_by([key_col, "Host"]).len()
+           .sort([key_col, "len", "Host"], descending=[False, True, False])
+           .unique(subset=[key_col], keep="first")
+           .rename({"Host": "_imp_host"}))
+    maj_tax = (has_host.filter(pl.col("Host_Taxid").is_not_null() & (pl.col("Host_Taxid") != ""))
+               .join(maj.select([key_col, "_imp_host"]), on=key_col, how="inner")
+               .filter(pl.col("Host") == pl.col("_imp_host"))
+               .sort("Host_Taxid")
+               .unique(subset=[key_col], keep="first")
+               .select([key_col, "Host_Taxid"]).rename({"Host_Taxid": "_imp_taxid"}))
+    return maj.select([key_col, "_imp_host"]).join(maj_tax, on=key_col, how="left")
+
+
 def impute_missing_hosts(df: pl.DataFrame) -> pl.DataFrame:
-    """基于相同的 Taxid 或 Virus_Name 填补 Host 和 Host_Taxid"""
+    """基于相同的 Taxid 或 Virus_Name 填补 Host 和 Host_Taxid (组内多数投票版)"""
     print(f"\n{'='*60}")
-    print(f">>> 🪄 正在执行智能补全算法 (基于窗口函数)...")
+    print(f">>> 🪄 正在执行智能补全算法 (多数投票 + 名/ID 成对)...")
     print(f"{'='*60}")
-    
+
     start_time = time.time()
-    
+
     # 1. 规范化空值：将空白字符串、"-"、"NA" 统一转为 null，方便后续处理
     null_markers = ["", "-", "NA", "null", "N/A"]
     df = df.with_columns([
@@ -81,40 +104,24 @@ def impute_missing_hosts(df: pl.DataFrame) -> pl.DataFrame:
           .alias(c)
         for c in ["Host", "Host_Taxid"]
     ])
-    
-    # 2. 核心补全逻辑 A：基于 Taxid 分组补全
-    # 逻辑说明：在相同 Taxid 的组内，提取第一个非空的值，利用 coalesce 合并回去
-    df = df.with_columns([
-        pl.coalesce([
-            pl.col("Host"), 
-            pl.col("Host").drop_nulls().first().over("Taxid")
-        ]).alias("Host"),
-        
-        pl.coalesce([
-            pl.col("Host_Taxid"), 
-            pl.col("Host_Taxid").drop_nulls().first().over("Taxid")
-        ]).alias("Host_Taxid")
-    ])
-    
-    # 3. 核心补全逻辑 B：基于 Virus_Name 分组二次补全 (兜底防漏)
-    df = df.with_columns([
-        pl.coalesce([
-            pl.col("Host"), 
-            pl.col("Host").drop_nulls().first().over("Virus_Name")
-        ]).alias("Host"),
-        
-        pl.coalesce([
-            pl.col("Host_Taxid"), 
-            pl.col("Host_Taxid").drop_nulls().first().over("Virus_Name")
-        ]).alias("Host_Taxid")
-    ])
-    
+
+    # 2+3. 多数投票补全 (先按 Taxid 后按 Virus_Name 兜底; Host 与 Host_Taxid 成对补全,
+    #      防止名/ID 错配; 并列票取字典序最小, 保证确定性)
+    for key_col in ("Taxid", "Virus_Name"):
+        mapping = _majority_host_map(df, key_col)
+        df = (df.join(mapping, on=key_col, how="left")
+                .with_columns([
+                    pl.coalesce([pl.col("Host"), pl.col("_imp_host")]).alias("Host"),
+                    pl.coalesce([pl.col("Host_Taxid"), pl.col("_imp_taxid")]).alias("Host_Taxid"),
+                ])
+                .drop(["_imp_host", "_imp_taxid"]))
+
     # 将 null 还原为空白字符串 (保持与原数据集风格一致，可选)
     df = df.fill_null("")
-    
+
     elapsed = time.time() - start_time
     print(f"✅ 补全算法执行完毕！耗时: {elapsed:.2f} 秒")
-    
+
     return df
 
 def main():
