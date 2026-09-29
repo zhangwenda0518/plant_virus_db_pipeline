@@ -15,7 +15,7 @@ def parse_args():
     parser.add_argument("-m", "--meta_csv", default="AllNuclMetadata.csv", help="NCBI Virus 元数据文件路径")
     parser.add_argument("-t", "--taxid_tsv", default="~/database/taxonomy/nucl_gb.accession2taxid", help="NCBI Taxonomy 映射文件路径")
     parser.add_argument("-o", "--output", default="Plant_Virus_Info_Final.tsv", help="输出的最终结果 TSV 文件")
-    parser.add_argument("-k", "--api_key", default="80a47d7eae0bef204ccf4a2714c96bec8809", help="NCBI API Key (用于在线补充数据)")
+    parser.add_argument("-k", "--api_key", default=os.environ.get("PVDB_NCBI_API_KEY", "") or os.environ.get("NCBI_API_KEY", ""), help="NCBI API Key (用于在线补充数据)")
     return parser.parse_args()
 
 def ensure_parquet(file_path: str, sep: str, rename_dict: dict = None) -> str:

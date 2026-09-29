@@ -31,7 +31,7 @@ def parse_args():
     
     parser.add_argument(
         "-k", "--api_key", 
-        default="80a47d7eae0bef204ccf4a2714c96bec8809", 
+        default=os.environ.get("PVDB_NCBI_API_KEY", "") or os.environ.get("NCBI_API_KEY", ""), 
         help="[可选] NCBI API Key。提供后请求频率上限可提升至 10次/秒。\n"
              "       如果不填，将使用代码中默认的 API Key。"
     )
