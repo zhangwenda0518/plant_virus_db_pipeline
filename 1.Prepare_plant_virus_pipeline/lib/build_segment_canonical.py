@@ -38,34 +38,33 @@ import polars as pl                                       # noqa: E402
 TSV = "\t"
 # 标题里的节段记号：segment 9 / segment S1 / RNA3 / RNA5a / DNA-A / DNA A
 TITLE_SEG = re.compile(r"(?i)\b(?:segment|rna|dna)[\s\-_]*(-[a-z]\b|[a-z]\d{1,2}\b|\d{1,2}[a-z]?\b|[a-z]\b)")
-# 段标签解析：前缀 + 核心
-PARSE = re.compile(r"^(?P<pfx>DNA|RNA|S|M|L)?[\s\-_]*(?P<core>-?[A-Z]?\d{1,2}[A-Za-z]?)$", re.I)
-LETTER_ONLY = re.compile(r"^[LMSC]$", re.I)
+# 段标签文法（2026-09-28 扩充）：把此前落入 OTHER 的写法逐类识别，避免"认不出就放着"
+GRAMMAR = [
+    # (风格, 正则, 核心提取)
+    ("LETTER",   re.compile(r"^(?P<c>[LMSC])\s*[-_ ]?\s*(?:RNA|DNA)?$", re.I), lambda m: m.group("c").upper()),
+    ("DNA-U#",   re.compile(r"^(?:DNA|DNA[-_ ]?U)\s*[-_ ]?U\s*(?P<c>\d+[A-Za-z]?)\s*[*]?$", re.I), lambda m: "U" + m.group("c").upper()),
+    ("DNA#",     re.compile(r"^DNA\s*[-_ ]?\s*(?P<c>[A-Z]\d*[A-Za-z]?)\s*[*]?$", re.I), lambda m: m.group("c").upper()),
+    ("dsRNA#",   re.compile(r"^ds\s*RNA\s*[-_ ]?\s*(?P<c>\d{1,2}[A-Za-z]?)\s*$", re.I), lambda m: m.group("c").upper()),
+    ("RNA#",     re.compile(r"^RNA\s*[-_ ]?\s*(?P<c>\d{1,2}[A-Za-z]?)\s*$", re.I), lambda m: m.group("c").upper()),
+    ("S#",       re.compile(r"^S\s*[-_ ]?\s*(?P<c>\d{1,2}[A-Za-z]?)\s*$", re.I), lambda m: m.group("c").upper()),
+    ("SAT#",     re.compile(r"^Satellite\s*[-_ ]?\s*(?P<c>[A-Z0-9]+)\s*$", re.I), lambda m: m.group("c").upper()),
+    ("NUM#",     re.compile(r"^(?P<c>\d{1,2}[A-Za-z]?)\s*$", re.I), lambda m: m.group("c").upper()),
+]
 # 风格"具体度"排序：只允许平级或升级改写，禁止降级
-RANK = {"DNA#": 4, "LETTER": 4, "S#": 3, "RNA#": 3, "OTHER": 2, "NUM#": 1, "": 0}
+RANK = {"DNA-U#": 5, "SAT#": 5, "DNA#": 4, "LETTER": 4, "dsRNA#": 4,
+        "S#": 3, "RNA#": 3, "OTHER": 2, "NUM#": 1, "": 0}
 
 
 def parse_label(raw: str) -> tuple[str, str]:
-    """返回 (风格, 核心)。风格 ∈ {RNA#, S#, DNA-#, LETTER, NUM#, OTHER, ''}"""
+    """返回 (风格, 核心)。风格 ∈ {LETTER, DNA-U#, DNA#, dsRNA#, RNA#, S#, SAT#, NUM#, OTHER, ''}"""
     s = (raw or "").strip()
     if not s:
         return "", ""
-    if LETTER_ONLY.match(s):
-        return "LETTER", s.upper()
-    m = PARSE.match(s)
-    if not m:
-        return "OTHER", s
-    pfx = (m.group("pfx") or "").upper()
-    core = m.group("core").upper().replace("-", "")
-    if pfx == "DNA":
-        return "DNA#", core.lstrip("ABCDEFGHIJKLMNOPQRSTUVWXYZ") or core
-    if pfx == "S":
-        return "S#", core
-    if pfx == "RNA":
-        return "RNA#", core
-    if pfx == "M" or pfx == "L":
-        return "LETTER", pfx
-    return "NUM#", core          # 裸数字 3 / 10 / 5A
+    for style, rx, take in GRAMMAR:
+        m = rx.match(s)
+        if m:
+            return style, take(m)
+    return "OTHER", s
 
 
 def core_of(raw: str) -> str:

@@ -257,6 +257,29 @@ run(){
     log "✓ [$step] 完成 → $out"
 }
 
+# ==================== 规范层（物种名 / 节段名；只增列，不改原文件）====================
+# 物种名：VMR accession 锚点 → 别名 → 同科种加词；节段名：按物种内主导风格 + 不降级 + 信息不丢失。
+# 产物写入 <work>/7.canonical/ （<info>.canon.tsv 与 <info>.segnorm.tsv），原文件不动。
+# 失败只告警，不影响主流程与已产出的数据。
+canonicalize_ref(){
+    local info="$1" out="$WORK_DIR/7.canonical" cur="$1"
+    mkdir -p "$out"
+    if [ -n "${VMR_XLSX:-}" ] && [ -f "$VMR_XLSX" ]; then
+        if python "$BIN_DIR/lib/build_species_canonical.py" --info "$cur" --vmr "$VMR_XLSX" --out "$out" --apply >>"$out/canonical.log" 2>&1; then
+            local cand="$out/$(basename "$cur" .tsv).canon.tsv"
+            if [ -f "$cand" ]; then cur="$cand"; fi
+        else
+            _audit_msg "⚠ 物种名规范层失败(不影响主流程)，详见 $out/canonical.log"
+        fi
+    fi
+    if python "$BIN_DIR/lib/build_segment_canonical.py" --info "$cur" --out "$out" --apply >>"$out/canonical.log" 2>&1; then
+        _audit_msg "✓ 规范层产物 → $out/（物种名 + 节段名，只增列；复核后再替换正式 Info）"
+    else
+        _audit_msg "⚠ 节段名规范层失败(不影响主流程)，详见 $out/canonical.log"
+    fi
+    return 0
+}
+
 # ==================== 前置检查 ====================
 echo "============================================"
 echo "  植物病毒基因组数据库构建 Pipeline"
@@ -660,6 +683,11 @@ log "✓ 总结报告已保存 → $LOG_DIR/pipeline_summary.txt"
 # ============================================================
 AUDIT_FAILED=""
 if [ -z "${NO_AUDIT:-}" ]; then
+    # 规范层先跑（只增列），随后体检会一并核对
+    CANON_INFO=""
+    if [ -f "$REF_DIR/Plant_Virus_Ref.Info.tsv" ]; then CANON_INFO="$REF_DIR/Plant_Virus_Ref.Info.tsv"
+    elif [ -f "$REF_DIR/final.cluster.ref_info.tsv" ]; then CANON_INFO="$REF_DIR/final.cluster.ref_info.tsv"; fi
+    if [ -n "$CANON_INFO" ]; then canonicalize_ref "$CANON_INFO"; fi
     if audit_report "$WORK_DIR" "$RAW_DIR"; then
         log "✓ 产物体检完成 (无 FAIL 项)"
     else
