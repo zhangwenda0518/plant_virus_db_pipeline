@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Step 5: 植物病毒引物数据库 Web 界面
+Step 5: Plant Virus Primer Database Web Interface
 ========================================================================
 基于 Flask 的 Web 应用，提供:
 
   功能:
     1. 首页 — 数据库概览 + 快速搜索
-    2. 搜索页 — 按物种/属/科/类型/评分搜索引物
-    3. 物种详情页 — 某物种的所有引物 (含验证信息)
+    2. 搜索页 — 按Species/属/科/类型/Score搜索引物
+    3. Species详情页 — 某Species的所有引物 (含验证信息)
     4. 引物详情页 — 单对引物的完整信息 (序列/探针/验证)
     5. 批量下载 — 导出 FASTA/CSV
     6. API — JSON 接口供外部调用
@@ -57,8 +57,12 @@ SERVER_AI_CONFIG = _load_env()
 
 # 加载 ICTV 名称映射表 (内存缓存，避免每次请求读文件)
 NAME_MAP = {}
-_name_map_path = Path("/opt/plant_virus_db/plant_virus_db_pipeline/docs/data/name_mapping.tsv")
-if _name_map_path.exists():
+_name_map_candidates = (
+    Path("/opt/plant_virus_db/plant_virus_db_pipeline/docs/data/name_mapping.tsv"),
+    Path(__file__).resolve().parent.parent / "docs" / "data" / "name_mapping.tsv",
+)
+_name_map_path = next((p for p in _name_map_candidates if p.exists()), None)
+if _name_map_path:
     import csv as _csv
     with open(_name_map_path, encoding='utf-8') as f:
         for row in _csv.DictReader(f, delimiter='\t'):
@@ -81,6 +85,77 @@ def _expand_search_terms(query):
                 terms.append(v)
     return terms
 
+# ── /api/chat AI 助手：物种别名词典 + 站点事实表 + 本机 RAG 接口 ──
+SPECIES_ALIASES = None   # 延迟构建: {小写别名: ICTV 规范名}
+
+
+def _build_species_aliases():
+    global SPECIES_ALIASES
+    if SPECIES_ALIASES is None:
+        aliases = {}
+        for row in NAME_MAP.values():
+            canon = (row.get('ICTV_Name') or '').strip()
+            if not canon:
+                continue
+            for v in (canon, (row.get('Common_Name') or '').strip(),
+                      (row.get('Abbreviation') or '').strip()):
+                key = v.lower()
+                if len(key) < 3:
+                    continue
+                lst = aliases.setdefault(key, [])
+                if canon not in lst:
+                    lst.append(canon)
+        SPECIES_ALIASES = aliases
+    return SPECIES_ALIASES
+
+
+def _extract_species_from_message(msg, max_species=5):
+    """扫描消息里的物种名（拉丁名/通用名/缩写），n-gram 最长匹配优先。
+    返回 [(ICTV规范名, 用户原文)]；一个缩写对应多个物种时全部返回（如 CMV），
+    交由后续 DB 记录与 LLM 消歧。与触发词/语序无关，中英文均可。"""
+    import re as _re
+    aliases = _build_species_aliases()
+    if not aliases:
+        return []
+    tokens = _re.findall(r"[A-Za-z][A-Za-z0-9\-']*", msg)
+    low = [t.lower() for t in tokens]
+    n = len(low)
+    found, seen, i = [], set(), 0
+    while i < n:
+        hit = None
+        for w in range(min(6, n - i), 0, -1):
+            canons = aliases.get(' '.join(low[i:i + w]))
+            if canons:
+                hit = (w, canons)
+                break
+        if hit is None:
+            i += 1
+            continue
+        w, canons = hit
+        for canon in canons:
+            if canon not in seen:
+                seen.add(canon)
+                found.append((canon, ' '.join(tokens[i:i + w])))
+                if len(found) >= max_species:
+                    break
+        i += w
+    return found
+
+
+# 站点事实表（explorer / reference_db 分支用的真实数字，~7KB，随进程常驻）
+SITE_FACTS = {}
+for _facts_path in (Path("/opt/plant_virus_db/plant_virus_db_pipeline/docs/data/dashboard_stats.json"),
+                    Path(__file__).resolve().parent.parent / "docs" / "data" / "dashboard_stats.json"):
+    if _facts_path.exists():
+        try:
+            SITE_FACTS = json.loads(_facts_path.read_text(encoding='utf-8'))
+            break
+        except Exception:
+            pass
+
+# 本机知识库 RAG 检索接口（explorer / reference_db 分支接地用，纯检索不花 LLM）
+KB_SEARCH_URL = SERVER_AI_CONFIG.get('KB_SEARCH_URL', 'http://127.0.0.1:5002/search')
+
 # Flask 可能未安装
 try:
     from flask import Flask, request, jsonify, render_template_string, g, send_file
@@ -88,17 +163,24 @@ try:
 except ImportError:
     FLASK_AVAILABLE = False
 
+# Primer design service (optional, falls back gracefully)
+try:
+    from primer_design_service import DesignJobManager
+    DESIGN_SERVICE_AVAILABLE = True
+except ImportError:
+    DESIGN_SERVICE_AVAILABLE = False
+
 
 # ======================================================================
 # HTML 模板 (内嵌, 无需外部模板文件)
 # ======================================================================
 
 BASE_TEMPLATE = '''<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}植物病毒引物数据库{% endblock %}</title>
+    <title>{% block title %}Plant Virus Primer Database{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <style>
@@ -147,24 +229,29 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <i class="bi-virus"></i> PlantVirus Primer DB
+                Plant Virus DB
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/"><i class="bi-house"></i> 首页</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/search"><i class="bi-search"></i> 搜索</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/browse"><i class="bi-list"></i> 浏览</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/reference/"><i class="bi-database"></i> 参考库</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/explorer/"><i class="bi-graph-up"></i> 浏览器</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/virus/"><i class="bi-bug"></i> 病毒详情</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/vector/"><i class="bi-diagram-3"></i> 媒介</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/te/"><i class="bi-grid"></i> TE·EVE</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/metabuli/"><i class="bi-cpu"></i> Metabuli</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/literature/"><i class="bi-journal-text"></i> 文献</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/knowledge/"><i class="bi-chat-dots"></i> 知识</a></li>
+                                                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/reference/">Reference</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/photos/">Photos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/vector/">Vector</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/te/">TE & EVE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/genes/">Genes</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/primers/">Primers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/onekp/">OneKP</a></li>
+                    <li class="nav-item"><span class="nav-link sep-nav">|</span></li>
+                    <li class="nav-item"><a class="nav-link" href="/explorer/">Explorer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/metabuli/">Metabuli</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pamirdb/">PV-miRNA</a></li>
+                    <li class="nav-item"><span class="nav-link sep-nav">|</span></li>
+                    <li class="nav-item"><a class="nav-link" href="/literature/">Literature</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/knowledge/">Knowledge</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/resources.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/help/">Help</a></li>
                 </ul>
             </div>
         </div>
@@ -186,32 +273,32 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
     <script>
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(function() {
-                alert('已复制!');
+                alert('Copied!');
             });
         }
     </script>
     {% block scripts %}{% endblock %}
     <!-- AI Chat -->
-    <button id="ai-chat-btn" onclick="toggleChat()" title="AI助手">?</button>
+    <button id="ai-chat-btn" onclick="toggleChat()" title="AI Assistant">?</button>
     <div id="ai-chat-panel">
-        <div class="chat-header"><span>PrimerDB AI助手</span><div><button onclick="toggleSettings()" style="background:none;border:none;color:#fff;font-size:14px;cursor:pointer;margin-right:8px" title="设置">⚙</button><button onclick="toggleChat()">×</button></div></div>
+        <div class="chat-header"><span>PrimerDB AI Assistant</span><div><button onclick="toggleSettings()" style="background:none;border:none;color:#fff;font-size:14px;cursor:pointer;margin-right:8px" title="Settings">⚙</button><button onclick="toggleChat()">×</button></div></div>
         <div id="ai-settings-inline" style="display:none;padding:10px 12px;border-bottom:1px solid #eee;background:#f8f9fa">
             <div style="display:flex;gap:6px;flex-wrap:wrap">
                 <input id="ai-api-key" type="password" placeholder="API Key (sk-...)" style="flex:1;min-width:120px;padding:5px 8px;border:1px solid #dee2e6;border-radius:4px;font-size:11px">
                 <input id="ai-model" value="deepseek-chat" style="width:120px;padding:5px 8px;border:1px solid #dee2e6;border-radius:4px;font-size:11px">
-                <button onclick="saveAISettings()" style="padding:5px 10px;background:#667eea;color:#fff;border:none;border-radius:4px;font-size:11px;cursor:pointer">保存</button>
+                <button onclick="saveAISettings()" style="padding:5px 10px;background:#667eea;color:#fff;border:none;border-radius:4px;font-size:11px;cursor:pointer">Save</button>
             </div>
         </div>
         <div class="preset-qs" id="preset-qs">
-<button class="preset-q" onclick="askPreset('TSWV的最佳PCR引物有哪些？')">TSWV最佳PCR引物</button>
-<button class="preset-q" onclick="askPreset('推荐检测TMV的qPCR引物')">TMV的qPCR引物</button>
-<button class="preset-q" onclick="askPreset('比较PCR和qPCR引物的优缺点')">PCR vs qPCR对比</button>
-<button class="preset-q" onclick="askPreset('引物评分RECOMMENDED是什么意思？')">引物评分说明</button>
+<button class="preset-q" onclick="askPreset('Best PCR primers for TSWV?')">Best TSWV PCR Primers</button>
+<button class="preset-q" onclick="askPreset('Recommended qPCR primers for TMV')">TMV qPCR Primers</button>
+<button class="preset-q" onclick="askPreset('PCR vs qPCR comparison')">PCR vs qPCR</button>
+<button class="preset-q" onclick="askPreset('What does RECOMMENDED score mean?')">Scoring Guide</button>
 </div>
-        <div class="chat-msgs" id="chat-msgs"><div class="chat-msg system">你好！我是PrimerDB AI助手。可以直接点下方预设问题，或输入你的问题。</div></div>
+        <div class="chat-msgs" id="chat-msgs"><div class="chat-msg system">Hello! I am PrimerDB AI Assistant. Click a preset question below or type your own.</div></div>
         <div class="chat-input-row">
-            <input id="chat-input" placeholder="输入问题..." onkeydown="if(event.key==='Enter')sendMsg()">
-            <button onclick="sendMsg()">发送</button></div>
+            <input id="chat-input" placeholder="Type a question..." onkeydown="if(event.key==='Enter')sendMsg()">
+            <button onclick="sendMsg()">Send</button></div>
     </div>
     <script>
     var chatConv = [];
@@ -233,7 +320,7 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
         localStorage.setItem('ai_api_url', document.getElementById('ai-api-url').value);
         localStorage.setItem('ai_model', document.getElementById('ai-model').value);
         document.getElementById('ai-settings-inline').style.display = 'none';
-        addChatMsg('system', '设置已保存');
+        addChatMsg('system', 'Settings saved');
     }
     (function(){
         var k = localStorage.getItem('ai_api_key');
@@ -289,7 +376,7 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
             chatConv.push({role:'assistant', content:data.reply});
         } catch(e) {
             hideTyping();
-            addChatMsg('system', '请求失败: ' + e.message);
+            addChatMsg('system', 'Request failed: ' + e.message);
         }
     }
     </script>
@@ -302,19 +389,19 @@ INDEX_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', '''{
 <div class="row mt-4">
     <div class="col-12">
         <div class="p-5 mb-4 bg-success text-white rounded">
-            <h1><i class="bi-virus2"></i> 植物病毒引物数据库</h1>
+            <h1><i class="bi-virus2"></i> Plant Virus Primer Database</h1>
             <p class="lead">
-                为 {{ species_count }} 种植物病毒设计了 {{ primer_count }} 对 PCR/qPCR 引物，
-                覆盖植物病毒主要科属，支持保守区检测、简并引物和多重平铺扩增。
+                {{ primer_count }} PCR/qPCR primer pairs designed for {{ species_count }} plant virus species, 
+                Covering major plant virus families; supports conserved-region detection, degenerate primers, and tiled amplicon design.
             </p>
             <form action="/search" method="GET" class="row g-2">
                 <div class="col-md-8">
                     <input type="text" name="q" class="form-control form-control-lg"
-                           placeholder="输入病毒名称搜索... (例如: Tobacco Mosaic Virus, Potyvirus)">
+                           placeholder="Search by virus name... (e.g. Tobacco Mosaic Virus, Potyvirus)">
                 </div>
                 <div class="col-md-4">
                     <button type="submit" class="btn btn-light btn-lg w-100">
-                        <i class="bi-search"></i> 搜索引物
+                        <i class="bi-search"></i> Search Primers
                     </button>
                 </div>
             </form>
@@ -325,49 +412,49 @@ INDEX_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', '''{
 <div class="row g-4 mb-4">
     <div class="col-md-3"><div class="card card-stat bg-white">
             <div class="number text-warning">{{ families_count }}</div>
-            <div class="text-muted">病毒科</div>
+            <div class="text-muted">Virus Families</div>
         </div>
     </div>
     <div class="col-md-3"><div class="card card-stat bg-white">
             <div class="number text-primary">{{ species_count }}</div>
-            <div class="text-muted">病毒物种</div>
+            <div class="text-muted">Virus Species</div>
         </div>
     </div>
     <div class="col-md-3"><div class="card card-stat bg-white">
             <div class="number text-success">{{ primer_count }}</div>
-            <div class="text-muted">引物对</div>
+            <div class="text-muted">Primer Pairs</div>
         </div>
     </div>
     <div class="col-md-3"><div class="card card-stat bg-white">
             <div class="number text-info">{{ recommended_count }}</div>
-            <div class="text-muted">推荐引物</div>
+            <div class="text-muted">Recommended Primers</div>
         </div>
     </div>
 
 <div class="row mt-3">
     <div class="col-md-8">
         <div class="card mb-4">
-            <div class="card-header fw-bold"><i class="bi-lightning"></i> 快速入口</div>
+            <div class="card-header fw-bold"><i class="bi-lightning"></i> Quick Access</div>
             <div class="card-body">
                 <div class="row">
-                <div class="col-md-4"><h6>按引物类型</h6>
-                    <a href="/search?type=PCR" class="btn btn-outline-primary btn-sm d-block mb-1">PCR 常规检测</a>
-                    <a href="/search?type=qPCR" class="btn btn-outline-info btn-sm d-block mb-1">qPCR 荧光定量</a>
-                    <a href="/search?type=DEGENERATE" class="btn btn-outline-warning btn-sm d-block mb-1">简并引物</a>
-                    <a href="/search?type=TILED" class="btn btn-outline-secondary btn-sm d-block">全基因组平铺</a></div>
-                <div class="col-md-4"><h6>按评分</h6>
-                    <a href="/search?recommendation=RECOMMENDED" class="btn btn-outline-success btn-sm d-block mb-1">推荐使用 (>=80分)</a>
-                    <a href="/search?recommendation=USABLE" class="btn btn-outline-warning btn-sm d-block">可用 (60-79分)</a></div>
-                <div class="col-md-4"><h6>数据下载</h6>
-                    <a href="/download" class="btn btn-outline-dark btn-sm d-block mb-1">下载页面</a>
-                    <a href="/api/all_primers?format=csv" class="btn btn-outline-dark btn-sm d-block">导出全部 CSV</a></div>
+                <div class="col-md-4"><h6>By Primer Type</h6>
+                    <a href="/search?type=PCR" class="btn btn-outline-primary btn-sm d-block mb-1">PCR Detection</a>
+                    <a href="/search?type=qPCR" class="btn btn-outline-info btn-sm d-block mb-1">qPCR Real-time</a>
+                    <a href="/search?type=DEGENERATE" class="btn btn-outline-warning btn-sm d-block mb-1">Degenerate Primers</a>
+                    <a href="/search?type=TILED" class="btn btn-outline-secondary btn-sm d-block">Tiled Amplicons</a></div>
+                <div class="col-md-4"><h6>By Score</h6>
+                    <a href="/search?recommendation=RECOMMENDED" class="btn btn-outline-success btn-sm d-block mb-1">RECOMMENDED (≥80)</a>
+                    <a href="/search?recommendation=USABLE" class="btn btn-outline-warning btn-sm d-block">USABLE (60–79)</a></div>
+                <div class="col-md-4"><h6>Data Download</h6>
+                    <a href="/download" class="btn btn-outline-dark btn-sm d-block mb-1">Download Page</a>
+                    <a href="/api/all_primers?format=csv" class="btn btn-outline-dark btn-sm d-block">Export All CSV</a></div>
                 </div>
             </div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="card mb-4">
-            <div class="card-header fw-bold"><i class="bi-bar-chart"></i> 引物类型分布</div>
+            <div class="card-header fw-bold"><i class="bi-bar-chart"></i> Primer Type Distribution</div>
             <div class="card-body">
                 {% set type_counts = {'PCR':0,'qPCR':0,'DEGENERATE':0,'TILED':0} %}
                 {% for p in primers_for_stats %}{% set _ = type_counts.update({p.primer_type: type_counts.get(p.primer_type,0)+1}) %}{% endfor %}
@@ -388,10 +475,10 @@ INDEX_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', '''{
 </div>
 
 <div class="card mb-4 mt-3">
-    <div class="card-header fw-bold"><i class="bi-trophy"></i> 各类型评分最高物种 TOP5</div>
+    <div class="card-header fw-bold"><i class="bi-trophy"></i> Top 5 Species by Type &amp; Score</div>
     <div class="card-body">
         <div class="row">
-        {% set type_names = {'PCR':'PCR 常规检测','qPCR':'qPCR 荧光定量','DEGENERATE':'简并引物','TILED':'全基因组平铺'} %}
+        {% set type_names = {'PCR':'PCR Detection','qPCR':'qPCR Real-time','DEGENERATE':'Degenerate Primers','TILED':'Tiled Amplicons'} %}
         {% set type_colors = {'PCR':'#2b8a3e','qPCR':'#1971c2','DEGENERATE':'#e8590c','TILED':'#6741d9'} %}
         {% for t in ['PCR','qPCR','DEGENERATE','TILED'] %}
         <div class="col-md-3 mb-3">
@@ -413,36 +500,36 @@ INDEX_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', '''{
 
 
 SEARCH_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', '''{% block content %}
-<h2 class="mt-4"><i class="bi-search"></i> 搜索引物</h2>
+<h2 class="mt-4"><i class="bi-search"></i> Search Primers</h2>
 
 <form action="/search" method="GET" class="row g-3 mb-4 bg-light p-3 rounded">
     <div class="col-md-4">
-        <label class="form-label">病毒名称/物种</label>
+        <label class="form-label">Virus Name / Species</label>
         <input type="text" name="q" class="form-control" value="{{ query or '' }}"
-               placeholder="输入物种名、属名或科名">
+               placeholder="Enter species, genus, or family name">
     </div>
     <div class="col-md-2">
-        <label class="form-label">引物类型</label>
+        <label class="form-label">Primer Type</label>
         <select name="type" id="typeSelect" onchange="filterMethods()" class="form-select">
-            <option value="">全部</option>
+            <option value="">All</option>
             {% for t in ['PCR', 'qPCR', 'DEGENERATE', 'TILED'] %}
             <option value="{{ t }}" {% if type_filter == t %}selected{% endif %}>{{ t }}</option>
             {% endfor %}
         </select>
     </div>
     <div class="col-md-2">
-        <label class="form-label">设计工具</label>
+        <label class="form-label">Design Tool</label>
         <select name="method" id="methodSelect" class="form-select">
-            <option value="">全部</option>
+            <option value="">All</option>
             {% for m in ['Primer3','Simple_Thermo','Primer3_qPCR','IUPAC_Degenerate','varVAMP','Olivar','varVAMP_tiled','PrimerForge'] %}
             <option value="{{ m }}" {% if method_filter == m %}selected{% endif %}>{{ m }}</option>
             {% endfor %}
         </select>
     </div>
     <div class="col-md-2">
-        <label class="form-label">推荐级别</label>
+        <label class="form-label">Recommendation</label>
         <select name="recommendation" class="form-select">
-            <option value="">全部</option>
+            <option value="">All</option>
             {% for r in ['RECOMMENDED', 'USABLE', 'CAUTION', 'NOT_RECOMMENDED'] %}
             <option value="{{ r }}" {% if rec_filter == r %}selected{% endif %}>{{ r }}</option>
             {% endfor %}
@@ -450,27 +537,27 @@ SEARCH_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', '''
     </div>
     <div class="col-md-2 d-flex align-items-end">
         <button type="submit" class="btn btn-primary w-100">
-            <i class="bi-search"></i> 搜索
+            <i class="bi-search"></i> Search
         </button>
     </div>
 </form>
 
 {% if results %}
 <div class="alert alert-info">
-    找到 <strong>{{ total }}</strong> 对引物 (显示前 {{ results|length }} 对)
+    <strong>{{ total }}</strong> primer pairs found (showing first {{ results|length }})
 </div>
 
 <div class="table-responsive">
 <table class="table table-hover table-primer">
     <thead class="table-dark">
         <tr>
-            <th>物种</th>
-            <th>类型</th>
-            <th>正向引物 (5'→3')</th>
-            <th>反向引物 (5'→3')</th>
-            <th>产物</th>
-            <th>评分</th>
-            <th>操作</th>
+            <th>Species</th>
+            <th>Type</th>
+            <th>Forward (5'→3')</th>
+            <th>Reverse (5'→3')</th>
+            <th>Product</th>
+            <th>Score</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -482,10 +569,10 @@ SEARCH_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', '''
         </td>
         <td><span class="badge bg-{{ 'primary' if r.primer_type=='PCR' else 'info' if r.primer_type=='qPCR' else 'warning' }}">{{ r.primer_type }}</span></td>
         <td><span class="primer-seq">{{ r.fwd_sequence }}</span>
-            <button class="copy-btn btn btn-sm btn-outline-secondary" onclick="copyToClipboard('{{ r.fwd_sequence }}')" title="复制">📋</button>
+            <button class="copy-btn btn btn-sm btn-outline-secondary" onclick="copyToClipboard('{{ r.fwd_sequence }}')" title="Copy">📋</button>
         </td>
         <td><span class="primer-seq">{{ r.rev_sequence }}</span>
-            <button class="copy-btn btn btn-sm btn-outline-secondary" onclick="copyToClipboard('{{ r.rev_sequence }}')" title="复制">📋</button>
+            <button class="copy-btn btn btn-sm btn-outline-secondary" onclick="copyToClipboard('{{ r.rev_sequence }}')" title="Copy">📋</button>
         </td>
         <td>{{ r.product_size }}bp</td>
         <td>
@@ -494,7 +581,7 @@ SEARCH_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', '''
             </span>
         </td>
         <td>
-            <a href="/primer/{{ r.primer_id }}" class="btn btn-sm btn-outline-primary">详情</a>
+            <a href="/primer/{{ r.primer_id }}" class="btn btn-sm btn-outline-primary">Details</a>
             <a href="/api/primer/{{ r.primer_id }}?format=fasta" class="btn btn-sm btn-outline-success">FASTA</a>
         </td>
     </tr>
@@ -503,7 +590,7 @@ SEARCH_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', '''
 </table>
 </div>
 {% elif query or type_filter %}
-<div class="alert alert-warning">未找到匹配的引物</div>
+<div class="alert alert-warning">No matching primers found.</div>
 {% endif %}
 <script>
 var methodGroups = {Primer3:'PCR',Simple_Thermo:'PCR',Primer3_qPCR:'qPCR',IUPAC_Degenerate:'DEGENERATE',varVAMP:'DEGENERATE',Olivar:'TILED',varVAMP_tiled:'TILED',PrimerForge:'TILED'};
@@ -512,13 +599,13 @@ var methodGroups = {Primer3:'PCR',Simple_Thermo:'PCR',Primer3_qPCR:'qPCR',IUPAC_
   for (var i = 0; i < opts.length; i++) {
     if (opts[i].value) opts[i].setAttribute('data-type', methodGroups[opts[i].value] || '');
   }
-  // 页面加载时根据当前 type 过滤, 但保留已有的 method 选中值
+  // Filter by current type on page load, preserving existing method selection
   filterMethods(false);
 })();
 function filterMethods(resetVal) {
   var t = document.getElementById('typeSelect').value;
   var sel = document.getElementById('methodSelect');
-  if (resetVal !== false) sel.value = '';  // 用户切换类型时才重置
+  if (resetVal !== false) sel.value = '';  // Reset only when user switches type
   for (var i = 0; i < sel.options.length; i++) {
     var ok = !t || sel.options[i].getAttribute('data-type') === t || !sel.options[i].value;
     sel.options[i].disabled = !ok;
@@ -531,29 +618,29 @@ function filterMethods(resetVal) {
 SPECIES_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', '''{% block content %}
 <h2 class="mt-4"><i class="bi-virus"></i> {{ species }}</h2>
 <p class="text-muted">
-    {% if taxonomy.genus %}属: <strong>{{ taxonomy.genus }}</strong> |{% endif %}
-    {% if taxonomy.family %}科: <strong>{{ taxonomy.family }}</strong> |{% endif %}
-    优先级: <span class="badge bg-{{ 'danger' if taxonomy.priority=='HIGH' else 'warning' if taxonomy.priority=='MEDIUM' else 'secondary' }}">{{ taxonomy.priority }}</span>
+    {% if taxonomy.genus %}Genus: <strong>{{ taxonomy.genus }}</strong> |{% endif %}
+    {% if taxonomy.family %}Family: <strong>{{ taxonomy.family }}</strong> |{% endif %}
+    Priority: <span class="badge bg-{{ 'danger' if taxonomy.priority=='HIGH' else 'warning' if taxonomy.priority=='MEDIUM' else 'secondary' }}">{{ taxonomy.priority }}</span>
 </p>
 
 <div class="row g-3 mb-4">
     <div class="col-md-3">
         <div class="card text-center"><div class="card-body">
             <h3 class="text-primary">{{ primers|length if primers else 0 }}</h3>
-            <small class="text-muted">引物对</small>
+            <small class="text-muted">Primer Pairs</small>
         </div></div>
     </div>
     <div class="col-md-3">
         <div class="card text-center"><div class="card-body">
             <h3 class="text-success">{{ recommended_count }}</h3>
-            <small class="text-muted">推荐引物</small>
+            <small class="text-muted">Recommended</small>
         </div></div>
     </div>
     {% if est_genome_len > 0 %}
     <div class="col-md-3">
         <div class="card text-center"><div class="card-body">
             <h3 class="text-info">{{ est_genome_len }}</h3>
-            <small class="text-muted">基因组长度 (bp)</small>
+            <small class="text-muted">Genome Length (bp)</small>
         </div></div>
     </div>
     {% endif %}
@@ -561,7 +648,7 @@ SPECIES_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', ''
 
 {% if est_genome_len > 0 %}
 <div class="card mb-3"><div class="card-body">
-    <h5>基因组引物覆盖图 ({{ est_genome_len }} bp)</h5>
+    <h5>Genome Primer Coverage Map ({{ est_genome_len }} bp)</h5>
     <div id="genome-viz-container" style="overflow-x:auto;max-width:100%">
     <div id="genome-viz-inner" style="min-width:600px">
     {% set types = ['PCR','qPCR','DEGENERATE','TILED'] %}
@@ -578,7 +665,7 @@ SPECIES_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', ''
         {% set mlc = {'Olivar':'#e8d9ff','varVAMP_tiled':'#d9ffe8','PrimerForge':'#ffe8d9'}.get(p.design_method, light_colors[t]) %}
         {% set raw_fp = (p.fwd_position or 0) | float %}
         {% set raw_rp = (p.rev_position or 0) | float %}
-        {# 类病毒环状拼接越界修正: 取模映射回真实基因组坐标 #}
+        {# Viroid circular assembly fix: wrap modulo to real genome coordinates #}
         {% set fp = raw_fp % est_genome_len if est_genome_len > 0 else raw_fp %}
         {% set rp_diff = raw_rp - raw_fp %}
         {% set rp = fp + rp_diff %}
@@ -618,10 +705,13 @@ SPECIES_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', ''
 
 <div class="btn-group mb-3">
     <a href="/api/species/{{ species | urlencode }}?format=fasta" class="btn btn-success">
-        <i class="bi-download"></i> 导出 FASTA
+        <i class="bi-download"></i> Export FASTA
     </a>
     <a href="/api/species/{{ species | urlencode }}?format=csv" class="btn btn-primary">
-        <i class="bi-download"></i> 导出 CSV
+        <i class="bi-download"></i> Export CSV
+    </a>
+    <a href="/primers/design" class="btn btn-warning" onclick="sessionStorage.setItem('designSpecies','{{ species }}'); return true;">
+        <i class="bi-pencil-square"></i> Design New Primers
     </a>
 </div>
 
@@ -653,24 +743,24 @@ SPECIES_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', ''
   {% set _ = tiled_by_method[m].append(p) %}
 {% endfor %}
 <div class="card mb-3"><div class="card-body">
-  <h5><i class="bi-puzzle"></i> 平铺方案 ({{ tiled_by_method|length }} 组)</h5>
+  <h5><i class="bi-puzzle"></i> Tiling Schemes ({{ tiled_by_method|length }} groups)</h5>
   {% for m, plist in tiled_by_method.items() %}
   <div style="border-left:3px solid #6741d9;padding-left:10px;margin-bottom:12px">
-    <strong>{{ m }}</strong>: {{ plist|length }} 扩增子
+    <strong>{{ m }}</strong>: {{ plist|length }} amplicons
     {% set bp = namespace(v=0) %}{% for p in plist %}{% set bp.v = bp.v + (p.product_size or 0) %}{% endfor %}
-    | 覆盖 {{ bp.v }} bp
-    {% if est_genome_len > 0 %}| {{ "%.0f"|format(bp.v / est_genome_len * 100) }}% 基因组{% endif %}
-    | 平均 {{ "%.0f"|format(bp.v / plist|length) if plist else '-' }} bp
+    | coverage {{ bp.v }} bp
+    {% if est_genome_len > 0 %}| {{ "%.0f"|format(bp.v / est_genome_len * 100) }}% genome{% endif %}
+    | avg {{ "%.0f"|format(bp.v / plist|length) if plist else '-' }} bp
     {% set best = plist|selectattr('overall_score')|map(attribute='overall_score')|list %}
-    {% if best %}| 评分 {{ "%.0f"|format(best|sum / best|length) }}{% endif %}
+    {% if best %}| Score {{ "%.0f"|format(best|sum / best|length) }}{% endif %}
   </div>
   {% endfor %}
 </div></div>
 {% endif %}
 <div class="table-responsive">
 <table class="table table-hover"><thead class="table-dark"><tr>
-  <th onclick="sortCol(0)"># ▼</th><th onclick="sortCol(1)">类型 ▼</th><th>正向引物</th><th>反向引物</th>
-  <th>探针</th><th onclick="sortCol(5)">位置 ▼</th><th onclick="sortColNum(6)">bp ▼</th><th onclick="sortColNum(7)">GC% ▼</th><th onclick="sortColNum(8)">评分 ▼</th><th>详情</th>
+  <th onclick="sortCol(0)"># ▼</th><th onclick="sortCol(1)">Type ▼</th><th>Forward</th><th>Reverse</th>
+  <th>Probe</th><th onclick="sortCol(5)">Position ▼</th><th onclick="sortColNum(6)">bp ▼</th><th onclick="sortColNum(7)">GC% ▼</th><th onclick="sortColNum(8)">Score ▼</th><th>Details</th>
 </tr></thead><tbody>
 {% for p in primers %}
   {% if tab_type=='all' or p.primer_type==tab_type %}
@@ -684,7 +774,7 @@ SPECIES_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', ''
     <td>{{ p.product_size }}</td>
     <td>{{ "%.0f"|format(p.gc_fwd or 0) }}/{{ "%.0f"|format(p.gc_rev or 0) }}%</td>
     <td><span class="score-badge {{ 'recommended' if p.recommendation in ('RECOMMENDED','PASS') else 'usable' if p.recommendation=='USABLE' else 'caution' if p.recommendation=='CAUTION' else 'not-recommended' }}">{{ "%.0f"|format(p.overall_score or 0) }}</span></td>
-    <td><a href="/primer/{{ p.primer_id }}" class="btn btn-sm btn-outline-primary">详情</a></td>
+    <td><a href="/primer/{{ p.primer_id }}" class="btn btn-sm btn-outline-primary">Details</a></td>
   </tr>
   {% endif %}
 {% endfor %}
@@ -734,36 +824,36 @@ function sortColNum(n) {
 }
 </script>
 {% else %}
-<div class="alert alert-warning">该物种暂无引物数据。请先运行引物设计流程。</div>
+<div class="alert alert-warning">No primer data for this species. Please run the primer design pipeline first.</div>
 {% endif %}
 {% endblock %}''')
 
 
 PRIMER_DETAIL_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', '''{% block content %}
-<h2 class="mt-4"><i class="bi-eye"></i> 引物详情</h2>
+<h2 class="mt-4"><i class="bi-eye"></i> Primer Details</h2>
 
 <div class="row">
     <div class="col-md-8">
         <div class="card mb-3">
-            <div class="card-header fw-bold">基本信息</div>
+            <div class="card-header fw-bold">Basic Information</div>
             <div class="card-body">
                 <table class="table table-sm">
-                    <tr><td width="150"><strong>物种</strong></td><td><a href="/species/{{ p.species_name | urlencode }}">{{ p.species_name }}</a></td></tr>
-                    <tr><td><strong>引物类型</strong></td><td><span class="badge bg-primary">{{ p.primer_type }}</span></td></tr>
-                    <tr><td><strong>对号</strong></td><td>#{{ p.pair_id }}</td></tr>
-                    <tr><td><strong>设计方法</strong></td><td>{{ p.design_method or 'N/A' }}</td></tr>
-                    <tr><td><strong>基因组大小</strong></td><td>{{ genome_len }} bp</td></tr>
+                    <tr><td width="150"><strong>Species</strong></td><td><a href="/species/{{ p.species_name | urlencode }}">{{ p.species_name }}</a></td></tr>
+                    <tr><td><strong>Primer Type</strong></td><td><span class="badge bg-primary">{{ p.primer_type }}</span></td></tr>
+                    <tr><td><strong>Pair #</strong></td><td>#{{ p.pair_id }}</td></tr>
+                    <tr><td><strong>Design Method</strong></td><td>{{ p.design_method or 'N/A' }}</td></tr>
+                    <tr><td><strong>Genome Size</strong></td><td>{{ genome_len }} bp</td></tr>
                     {% if (p.fwd_position or 0) > 0 and (p.rev_position or 0) > (p.fwd_position or 0) %}
-                    <tr><td><strong>引物位置</strong></td><td>Fwd: {{ p.fwd_position }} &mdash; Rev: {{ p.rev_position }}</td></tr>
+                    <tr><td><strong>Primer Position</strong></td><td>Fwd: {{ p.fwd_position }} &mdash; Rev: {{ p.rev_position }}</td></tr>
                     {% endif %}
-                    <tr><td><strong>产物大小</strong></td><td>{{ p.product_size }} bp</td></tr>
+                    <tr><td><strong>Product Size</strong></td><td>{{ p.product_size }} bp</td></tr>
                 </table>
             </div>
         </div>
 
         {% if genome_len > 0 and ((p.fwd_position or 0) > 0 or (p.product_size or 0) > 0) %}
         <div class="card mb-3">
-            <div class="card-header fw-bold">基因组位置</div>
+            <div class="card-header fw-bold">Genome Position</div>
             <div class="card-body">
                 <div style="position:relative;height:40px;background:#f5f5f5;border-radius:4px;border:1px solid #e0e0e0">
                     {% if (p.fwd_position or 0) > 0 %}
@@ -783,7 +873,7 @@ PRIMER_DETAIL_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %
                 </div>
                 <div style="display:flex;margin-top:4px;font-size:10px;color:#868e96;gap:8px">
                     <span><span style="color:#2b8a3e">&#9632;</span> Fwd</span>
-                    <span><span style="color:#1971c2">&#9632;</span> 扩增子</span>
+                    <span><span style="color:#1971c2">&#9632;</span> amplicons</span>
                     <span><span style="color:#e03131">&#9632;</span> Rev</span>
                 </div>
             </div>
@@ -791,80 +881,80 @@ PRIMER_DETAIL_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %
         {% endif %}
 
         <div class="card mb-3">
-            <div class="card-header fw-bold">引物序列</div>
+            <div class="card-header fw-bold">Primer Sequences</div>
             <div class="card-body">
-                <h6>正向引物 (Forward, 5'→3')</h6>
-                <div class="primer-seq p-3 mb-3">{{ p.fwd_sequence }} <button class="copy-btn btn btn-sm btn-outline-secondary float-end" onclick="copyToClipboard('{{ p.fwd_sequence }}')">复制</button></div>
+                <h6>Forward Primer (5'→3')</h6>
+                <div class="primer-seq p-3 mb-3">{{ p.fwd_sequence }} <button class="copy-btn btn btn-sm btn-outline-secondary float-end" onclick="copyToClipboard('{{ p.fwd_sequence }}')">Copy</button></div>
                 <div class="row">
-                    <div class="col">长度: {{ p.fwd_sequence|length }}bp</div>
+                    <div class="col">Length: {{ p.fwd_sequence|length }}bp</div>
                     <div class="col">Tm: {{ "%.1f"|format(p.fwd_tm or 0) }}°C</div>
                     <div class="col">GC: {{ "%.1f"|format(p.gc_fwd or 0) }}%</div>
                 </div>
 
                 <hr>
 
-                <h6>反向引物 (Reverse, 5'→3')</h6>
-                <div class="primer-seq p-3 mb-3">{{ p.rev_sequence }} <button class="copy-btn btn btn-sm btn-outline-secondary float-end" onclick="copyToClipboard('{{ p.rev_sequence }}')">复制</button></div>
+                <h6>Reverse Primer (5'→3')</h6>
+                <div class="primer-seq p-3 mb-3">{{ p.rev_sequence }} <button class="copy-btn btn btn-sm btn-outline-secondary float-end" onclick="copyToClipboard('{{ p.rev_sequence }}')">Copy</button></div>
                 <div class="row">
-                    <div class="col">长度: {{ p.rev_sequence|length }}bp</div>
+                    <div class="col">Length: {{ p.rev_sequence|length }}bp</div>
                     <div class="col">Tm: {{ "%.1f"|format(p.rev_tm or 0) }}°C</div>
                     <div class="col">GC: {{ "%.1f"|format(p.gc_rev or 0) }}%</div>
                 </div>
 
                 {% if p.probe_sequence %}
                 <hr>
-                <h6><i class="bi bi-pin"></i> TaqMan 探针</h6>
+                <h6><i class="bi bi-pin"></i> TaqMan Probe</h6>
                 <div class="probe-seq p-3 mb-2">{{ p.probe_sequence }}</div>
-                <small>探针 Tm: {{ "%.1f"|format(p.probe_tm or 0) }}°C</small>
+                <small>Probe Tm: {{ "%.1f"|format(p.probe_tm or 0) }}°C</small>
                 {% endif %}
             </div>
         </div>
 
         {% if v %}
         <div class="card mb-3">
-            <div class="card-header fw-bold">验证结果</div>
+            <div class="card-header fw-bold">Validation Results</div>
             <div class="card-body">
                 <h4 class="{{ 'recommended' if v.recommendation in ('RECOMMENDED','PASS') else 'usable' if v.recommendation=='USABLE' else 'text-danger' }}">
-                    {{ '%.0f'|format(v.overall_score or 0) }} 分 —
-                    {% if v.recommendation in ('RECOMMENDED','PASS') %}✅ 推荐使用
-                    {% elif v.recommendation == 'USABLE' %}⚠️ 可用
-                    {% elif v.recommendation == 'CAUTION' %}⚠️ 谨慎使用
-                    {% else %}❌ 不推荐{% endif %}
+                    {{ '%.0f'|format(v.overall_score or 0) }}  — 
+                    {% if v.recommendation in ('RECOMMENDED','PASS') %}✅ RECOMMENDED
+                    {% elif v.recommendation == 'USABLE' %}⚠️ USABLE
+                    {% elif v.recommendation == 'CAUTION' %}⚠️ CAUTION
+                    {% else %}❌ NOT RECOMMENDED{% endif %}
                 </h4>
 
-                <h6 class="mt-3">二聚体分析</h6>
+                <h6 class="mt-3">Dimer Analysis</h6>
                 {% set dimer_html = _dimer_viz_html(p.fwd_sequence, 'Fwd Self-Dimer') %}
                 {% if dimer_html %}<div class="mb-2">{{ dimer_html | safe }}</div>{% endif %}
                 {% set dimer_html = _dimer_viz_html(p.rev_sequence, 'Rev Self-Dimer') %}
                 {% if dimer_html %}<div class="mb-2">{{ dimer_html | safe }}</div>{% endif %}
                 <table class="table table-sm">
-                    <tr><td>自身二聚体 (Fwd)</td><td>{{ _dimer_bp(p.fwd_sequence) }}bp</td></tr>
-                    <tr><td>自身二聚体 (Rev)</td><td>{{ _dimer_bp(p.rev_sequence) }}bp</td></tr>
-                    <tr><td>交叉二聚体</td><td>{{ _cross_dimer_bp(p.fwd_sequence, p.rev_sequence) }}bp</td></tr>
-                    <tr class="{{ 'table-danger' if v.cross_dimer_3prime >= 3 else '' }}"><td><strong>3' 交叉二聚体</strong></td><td><strong>{{ v.cross_dimer_3prime }}bp</strong></td></tr>
+                    <tr><td>Self-Dimer (Fwd)</td><td>{{ _dimer_bp(p.fwd_sequence) }}bp</td></tr>
+                    <tr><td>Self-Dimer (Rev)</td><td>{{ _dimer_bp(p.rev_sequence) }}bp</td></tr>
+                    <tr><td>Cross-Dimer</td><td>{{ _cross_dimer_bp(p.fwd_sequence, p.rev_sequence) }}bp</td></tr>
+                    <tr class="{{ 'table-danger' if v.cross_dimer_3prime >= 3 else '' }}"><td><strong>3' Cross-Dimer</strong></td><td><strong>{{ v.cross_dimer_3prime }}bp</strong></td></tr>
                 </table>
                 {% if v.dimer_warning %}<div class="alert alert-warning">{{ v.dimer_warning }}</div>{% endif %}
 
                 {% if v.probe_hairpin_tm or v.probe_self_dimer_dg or v.probe_fwd_dimer_dg or v.probe_rev_dimer_dg or v.probe_warning %}
-                <h6 class="mt-3"><i class="bi-pin"></i> 探针验证 (qPCR)</h6>
+                <h6 class="mt-3"><i class="bi-pin"></i> Probe Validation (qPCR)</h6>
                 <table class="table table-sm">
-                    {% if v.probe_hairpin_tm %}<tr><td>探针发夹 Tm</td><td>{{ "%.1f"|format(v.probe_hairpin_tm) }}°C</td></tr>{% endif %}
-                    {% if v.probe_self_dimer_dg %}<tr><td>探针自二聚体 ΔG</td><td>{{ "%.1f"|format(v.probe_self_dimer_dg) }} kcal/mol</td></tr>{% endif %}
-                    {% if v.probe_fwd_dimer_dg %}<tr><td>探针-Fwd 交叉二聚体</td><td>{{ "%.1f"|format(v.probe_fwd_dimer_dg) }} kcal/mol</td></tr>{% endif %}
-                    {% if v.probe_rev_dimer_dg %}<tr><td>探针-Rev 交叉二聚体</td><td>{{ "%.1f"|format(v.probe_rev_dimer_dg) }} kcal/mol</td></tr>{% endif %}
-                    <tr class="{{ 'table-danger' if not v.probe_tm_diff_ok else '' }}"><td>探针-引物 Tm 差</td><td>{{ '✅ 合格' if v.probe_tm_diff_ok else '❌ 不合格 (需 5-10°C)' }}</td></tr>
+                    {% if v.probe_hairpin_tm %}<tr><td>Probe Hairpin Tm</td><td>{{ "%.1f"|format(v.probe_hairpin_tm) }}°C</td></tr>{% endif %}
+                    {% if v.probe_self_dimer_dg %}<tr><td>Probe Self-Dimer ΔG</td><td>{{ "%.1f"|format(v.probe_self_dimer_dg) }} kcal/mol</td></tr>{% endif %}
+                    {% if v.probe_fwd_dimer_dg %}<tr><td>Probe-Fwd Cross-Dimer</td><td>{{ "%.1f"|format(v.probe_fwd_dimer_dg) }} kcal/mol</td></tr>{% endif %}
+                    {% if v.probe_rev_dimer_dg %}<tr><td>Probe-Rev Cross-Dimer</td><td>{{ "%.1f"|format(v.probe_rev_dimer_dg) }} kcal/mol</td></tr>{% endif %}
+                    <tr class="{{ 'table-danger' if not v.probe_tm_diff_ok else '' }}"><td>Probe-Primer Tm Diff</td><td>{{ '✅ PASS' if v.probe_tm_diff_ok else '❌ FAIL (5–10°C required)' }}</td></tr>
                 </table>
                 {% if v.probe_warning %}<div class="alert alert-warning small">{{ v.probe_warning }}</div>{% endif %}
                 {% endif %}
 
                 {% if (v.coverage_avg or 0) > 0 %}
-                <h6 class="mt-3"><i class="bi-graph-up"></i> 覆盖度分析</h6>
+                <h6 class="mt-3"><i class="bi-graph-up"></i> Coverage Analysis</h6>
                 <table class="table table-sm">
-                    <tr><td>Fwd 覆盖度</td><td><span class="{{ 'text-success' if (v.fwd_coverage_pct or 0) >= 90 else 'text-warning' if (v.fwd_coverage_pct or 0) >= 70 else 'text-danger' }}">{{ "%.1f"|format(v.fwd_coverage_pct or 0) }}%</span> ({{ v.coverage_total_seqs }} 条序列)</td></tr>
-                    <tr><td>Rev 覆盖度</td><td><span class="{{ 'text-success' if (v.rev_coverage_pct or 0) >= 90 else 'text-warning' if (v.rev_coverage_pct or 0) >= 70 else 'text-danger' }}">{{ "%.1f"|format(v.rev_coverage_pct or 0) }}%</span></td></tr>
-                    <tr><td>平均覆盖度</td><td><strong>{{ "%.1f"|format(v.coverage_avg or 0) }}%</strong></td></tr>
-                    <tr><td>Fwd 3'端惩罚</td><td>{{ "%.1f"|format(v.fwd_3prime_penalty or 0) }}</td></tr>
-                    <tr><td>Rev 3'端惩罚</td><td>{{ "%.1f"|format(v.rev_3prime_penalty or 0) }}</td></tr>
+                    <tr><td>Fwd Coverage</td><td><span class="{{ 'text-success' if (v.fwd_coverage_pct or 0) >= 90 else 'text-warning' if (v.fwd_coverage_pct or 0) >= 70 else 'text-danger' }}">{{ "%.1f"|format(v.fwd_coverage_pct or 0) }}%</span> ({{ v.coverage_total_seqs }}  sequences)</td></tr>
+                    <tr><td>Rev Coverage</td><td><span class="{{ 'text-success' if (v.rev_coverage_pct or 0) >= 90 else 'text-warning' if (v.rev_coverage_pct or 0) >= 70 else 'text-danger' }}">{{ "%.1f"|format(v.rev_coverage_pct or 0) }}%</span></td></tr>
+                    <tr><td>avgCoverage</td><td><strong>{{ "%.1f"|format(v.coverage_avg or 0) }}%</strong></td></tr>
+                    <tr><td>Fwd 3' 3' Penalty</td><td>{{ "%.1f"|format(v.fwd_3prime_penalty or 0) }}</td></tr>
+                    <tr><td>Rev 3' 3' Penalty</td><td>{{ "%.1f"|format(v.rev_3prime_penalty or 0) }}</td></tr>
                 </table>
                 {% endif %}
             </div>
@@ -874,33 +964,33 @@ PRIMER_DETAIL_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %
 
     <div class="col-md-4">
         <div class="card mb-3">
-            <div class="card-header fw-bold">下载</div>
+            <div class="card-header fw-bold">Download</div>
             <div class="card-body">
-                <a href="/api/primer/{{ p.primer_id }}?format=fasta" class="btn btn-success w-100 mb-2">下载 FASTA</a>
-                <a href="/api/primer/{{ p.primer_id }}?format=json" class="btn btn-info w-100">下载 JSON</a>
+                <a href="/api/primer/{{ p.primer_id }}?format=fasta" class="btn btn-success w-100 mb-2">Download FASTA</a>
+                <a href="/api/primer/{{ p.primer_id }}?format=json" class="btn btn-info w-100">Download JSON</a>
             </div>
         </div>
         {% if v and ((v.blast_specificity_score or 0) > 0 or (v.blast_rev_target_hits or 0) > 0) %}
         <div class="card mb-3">
-            <div class="card-header fw-bold">BLAST 特异性</div>
+            <div class="card-header fw-bold">BLAST Specificity</div>
             <div class="card-body">
-                <p>特异性评分: <strong>{{ '%.1f'|format(v.blast_specificity_score or 0) }}%</strong></p>
+                <p>Specificity Score: <strong>{{ '%.1f'|format(v.blast_specificity_score or 0) }}%</strong></p>
                 <table class="table table-sm mb-2">
                     <tr><td></td><td><small>FWD</small></td><td><small>REV</small></td></tr>
-                    <tr><td>靶标命中</td><td>{{ v.blast_fwd_target_hits|default(0) }}</td><td>{{ v.blast_rev_target_hits|default(0) }}</td></tr>
-                    <tr><td>植物命中</td><td>{{ v.blast_fwd_plant_hits|default(0) }}</td><td>{{ v.blast_rev_plant_hits|default(0) }}</td></tr>
-                    <tr><td>其他命中</td><td>{{ v.blast_fwd_other_hits|default(0) }}</td><td>{{ v.blast_rev_other_hits|default(0) }}</td></tr>
+                    <tr><td>Target Hits</td><td>{{ v.blast_fwd_target_hits|default(0) }}</td><td>{{ v.blast_rev_target_hits|default(0) }}</td></tr>
+                    <tr><td>Plant Hits</td><td>{{ v.blast_fwd_plant_hits|default(0) }}</td><td>{{ v.blast_rev_plant_hits|default(0) }}</td></tr>
+                    <tr><td>Other Hits</td><td>{{ v.blast_fwd_other_hits|default(0) }}</td><td>{{ v.blast_rev_other_hits|default(0) }}</td></tr>
                 </table>
-                {% if v.blast_offtarget_top %}<p class="text-warning small">脱靶物种: {{ v.blast_offtarget_top[:120] }}</p>{% endif %}
+                {% if v.blast_offtarget_top %}<p class="text-warning small">Off-target:  {{ v.blast_offtarget_top[:120] }}</p>{% endif %}
             </div>
         </div>
         {% endif %}
 
         {% if epcr %}
         <div class="card mb-3">
-            <div class="card-header fw-bold"><i class="bi-diagram-3"></i> 电子PCR扩增子</div>
+            <div class="card-header fw-bold"><i class="bi-diagram-3"></i> In Silico PCR Amplicons</div>
             <div class="card-body" style="max-height:400px;overflow-y:auto">
-                <p class="small text-muted">方向相向 + 距离 ≤ {{ 5000 }}bp 的配对命中</p>
+                <p class="small text-muted">Paired hits with convergent orientation, distance ≤ {{ 5000 }}bp</p>
                 {% for a in epcr %}
                 <div style="border-left:3px solid {{ '#198754' if a.is_target else '#dc3545' if a.is_plant else '#6c757d' }};padding:4px 8px;margin:4px 0;font-size:12px">
                     <div style="display:flex;justify-content:space-between">
@@ -908,18 +998,18 @@ PRIMER_DETAIL_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %
                         <span style="font-weight:700;min-width:50px;text-align:right">{{ a.amp_len }}bp</span>
                     </div>
                     <div class="text-muted" style="font-size:10px;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ a.desc }}</div>
-                    <span class="badge bg-{{ 'success' if a.is_target else 'danger' if a.is_plant else 'secondary' }}" style="font-size:9px">{{ '靶标' if a.is_target else '植物' if a.is_plant else '其他' }}</span>
+                    <span class="badge bg-{{ 'success' if a.is_target else 'danger' if a.is_plant else 'secondary' }}" style="font-size:9px">{{ 'Target' if a.is_target else 'Plant' if a.is_plant else 'Other' }}</span>
                 </div>
                 {% endfor %}
-                {% if epcr|length >= 50 %}<p class="small text-muted mt-1">仅显示前50条</p>{% endif %}
+                {% if epcr|length >= 50 %}<p class="small text-muted mt-1">Showing first 50 only</p>{% endif %}
             </div>
         </div>
         {% endif %}
         <div class="card">
-            <div class="card-header fw-bold">相关引物</div>
+            <div class="card-header fw-bold">Related Primers</div>
             <div class="card-body">
-                <p class="text-muted">同一物种的其他引物对</p>
-                <a href="/species/{{ p.species_name | urlencode }}" class="btn btn-outline-primary btn-sm">查看全部 →</a>
+                <p class="text-muted">Other primer pairs for this species</p>
+                <a href="/species/{{ p.species_name | urlencode }}" class="btn btn-outline-primary btn-sm">View All →</a>
             </div>
         </div>
     </div>
@@ -928,11 +1018,11 @@ PRIMER_DETAIL_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %
 
 
 BROWSE_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', '''{% block content %}
-<h2 class="mt-4"><i class="bi-list"></i> 浏览物种</h2>
+<h2 class="mt-4"><i class="bi-list"></i> Browse Species</h2>
 
 <div class="row mb-3">
     <div class="col-md-4">
-        <input type="text" class="form-control" id="filterInput" placeholder="过滤物种名...">
+        <input type="text" class="form-control" id="filterInput" placeholder="Filter species name...">
     </div>
 </div>
 
@@ -940,7 +1030,7 @@ BROWSE_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', '''
 <table class="table table-hover" id="speciesTable">
     <thead class="table-dark">
         <tr>
-            <th>物种</th><th>属</th><th>科</th><th>优先级</th><th>引物数</th><th>平均分</th>
+            <th>Species</th><th>Genus</th><th>Family</th><th>Priority</th><th>Primers</th><th>Avg Score</th>
         </tr>
     </thead>
     <tbody>
@@ -961,7 +1051,354 @@ BROWSE_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', '''
 
 
 # ======================================================================
-# Flask 应用
+
+DESIGN_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', r'''{% block content %}
+<h2 class="mt-4"><i class="bi-pencil-square"></i> Primer Design</h2>
+<p class="text-muted">Upload a FASTA file or paste sequences to design PCR/qPCR primers online.</p>
+
+<div class="row g-3 mb-3">
+    <!-- Left: Upload FASTA File -->
+    <div class="col-md-6">
+        <div class="card h-100"><div class="card-body">
+            <h5><i class="bi-file-earmark-arrow-up"></i> Upload FASTA File</h5>
+            <div class="mb-3">
+                <label class="form-label">Select FASTA file (.fa / .fasta / .fna)</label>
+                <input type="file" id="fastaFileInput" class="form-control" accept=".fa,.fasta,.fna,.txt">
+            </div>
+            <button type="button" class="btn btn-outline-info btn-sm" onclick="loadExampleFasta()">
+                <i class="bi-lightbulb"></i> Load TMV Example FASTA
+            </button>
+            <div class="form-text mt-1" id="fileInfo"></div>
+        </div></div>
+    </div>
+
+    <!-- Right: Paste Sequences -->
+    <div class="col-md-6">
+        <div class="card h-100"><div class="card-body">
+            <h5><i class="bi-clipboard"></i> Paste Sequences</h5>
+            <textarea id="pasteSeqInput" class="form-control font-monospace" rows="8"
+                style="font-size:13px; resize:vertical;"
+                placeholder=">seq1&#10;ATGCGTACGTAGCTAGCTAGCATCGATCGTAGCTAGCTAGCTAGCTAGC&#10;>seq2&#10;ATGCGTACGTAGCTAGCATCGATCGTAGCTAGCTAGCTAGCTAGCTGA&#10;&#10;Supports FASTA format; plain sequences are auto-wrapped to FASTA"></textarea>
+            <div class="mt-2 d-flex justify-content-between align-items-center">
+                <small id="pasteCharCount" class="text-muted">0  bp, 0  seqs</small>
+                <button type="button" class="btn btn-outline-info btn-sm" onclick="loadExamplePaste()">
+                    <i class="bi-lightbulb"></i> Load TMV Example Sequence
+                </button>
+            </div>
+        </div></div>
+    </div>
+</div>
+
+<!-- Design Parameters -->
+<div class="card mb-3"><div class="card-body">
+    <div class="row g-3 align-items-end">
+        <div class="col-md-3">
+            <label class="form-label">Species Name (optional)</label>
+            <input type="text" id="speciesNameInput" class="form-control" placeholder="e.g. Tobacco mosaic virus">
+        </div>
+        <div class="col-md-2">
+            <label class="form-label">Design Mode</label>
+            <select id="designModeSelect" class="form-select">
+                <option value="PCR">PCR Detection</option>
+                <option value="qPCR">qPCR Real-time (+Probe)</option>
+                <option value="DEGENERATE">Degenerate Primers (varVAMP)</option>
+                <option value="TILED">Tiled Amplicons (Olivar)</option>
+            </select>
+        </div>
+        <div class="col-md-1">
+            <label class="form-label">Primer Pairs</label>
+            <input type="number" id="numPairsInput" class="form-control" value="5" min="1" max="20">
+        </div>
+        <div class="col-md-1">
+            <label class="form-label">Prod Min</label>
+            <input type="number" id="prodMinInput" class="form-control" value="250" min="60" max="2000">
+        </div>
+        <div class="col-md-1">
+            <label class="form-label">Prod Max</label>
+            <input type="number" id="prodMaxInput" class="form-control" value="1000" min="80" max="5000">
+        </div>
+        <div class="col-md-4 d-flex">
+            <button type="button" class="btn btn-primary w-100 btn-lg" id="designBtn" onclick="submitDesign()">
+                <i class="bi-rocket-takeoff"></i> Start Design
+            </button>
+        </div>
+    </div>
+</div></div>
+
+<!-- Results -->
+<div id="designStatusArea" style="display:none"></div>
+<div id="designResultsArea"></div>
+
+<script>
+// ── TMV Example Sequence ──
+var TMV_EXAMPLE = ">TMV_example|Tobacco_mosaic_virus_complete_genome" + "\n" +
+    "GTATTTTTACAACAATTACCAACAACAACAAACAACAAACAACATTACAATTACTA" + "\n" +
+    "TTTACAATTACAATGGCTTACACTAGATCAGCAATCGAGTTTCAAAATCAACAAGAA" + "\n" +
+    "TCGACTACCTCTGCATCCGCCGGTTACGTGTCCAACGTTAGACAAGCCAACACGGCT" + "\n" +
+    "ATCCAGCAGACTATAGCTAATCTACTCAACACTATCCGTGCTAACAACGCTAGCCAG" + "\n" +
+    "TCAGAGTCAGCCTCTTTGTCAAGCGCTGACTACGAGACACTTCCTAACCCAAACCCA" + "\n" +
+    "AAGCCCCCAACAATGAAGAGGCTCCTAACACTATCCTTTGAATCTGTACGCTCATGG" + "\n" +
+    "TATGATGTAGATAATCCTACTAATCCTTTGTCAACTGACGATCCCGAGTTACTGTCT" + "\n" +
+    "AAGGCGGTTGCTGATATGTGTGCTTCTGGTGACGCAATATCTGAATCAGATGAGTTC" + "\n" +
+    "ATAGATGCAGTTCTCATTGCTGCGGCATTCCCTTCGTACTTCGTAAAATTCTCACTT" + "\n" +
+    "CGTTTTAGAAGTCTCATATCTAAATTGATATCTCCTGCGAGGTTTGGACCTAAGGTT" + "\n" +
+    "ATTAGAGAGTTTGAGAATTCAGTCGTTT" + "\n" +
+    ">TMV_CP|capsid_protein_gene" + "\n" +
+    "ATGTCTTACAGTATCACTACTCCATCTCAGTTCGTGTTCTTGTCATCAGCGTGGGCC" + "\n" +
+    "GACCCAATAGAGTTAATTAATTTATGTACTAATGCCTTAGGAAATCAGTTTCAAACA" + "\n" +
+    "CAACAAGCTCGAACTGTCGTTCAAAGACAATTCAGTGAGTGGAAACCTTCACCAGGT" + "\n" +
+    "TCGACGGTGCGTTTTCCTGACAGTGACTTCAAGGTCTTATCTGATTCGACCGCCGCT" + "\n" +
+    "TCGTATATACACACCAATACCATAGTCGAGATACAGTCCGCATCAGGAATCTACAAC" + "\n" +
+    "CAGAATGCTATTTTGGACGTGTTCAATACTGGAAGTCA";
+
+function loadExamplePaste() {
+    document.getElementById('pasteSeqInput').value = TMV_EXAMPLE;
+    updatePasteCount();
+}
+function loadExampleFasta() {
+    // Create a Blob and programmatically set it as the file
+    document.getElementById('speciesNameInput').value = 'Tobacco mosaic virus (TMV)';
+    var blob = new Blob([TMV_EXAMPLE], {type: 'text/plain'});
+    var file = new File([blob], 'TMV_example.fasta', {type: 'text/plain'});
+    var dt = new DataTransfer();
+    dt.items.add(file);
+    document.getElementById('fastaFileInput').files = dt.files;
+    document.getElementById('fileInfo').textContent = 'TMV_example.fasta (\u5df2\u52a0\u8f7d\u793a\u4f8b)';
+}
+
+// Paste char counter
+function updatePasteCount() {
+    var raw = document.getElementById('pasteSeqInput').value;
+    var clean = raw.replace(/[^ATGCatgc]/g, '');
+    var nSeqs = (raw.match(/^>/gm) || []).length || (raw.trim() ? 1 : 0);
+    document.getElementById('pasteCharCount').textContent = (clean.length || 0) + ' \u78b1\u57fa, ' + nSeqs + ' \u6761\u5e8f\u5217';
+}
+document.getElementById('pasteSeqInput').addEventListener('input', updatePasteCount);
+
+// File input info
+document.getElementById('fastaFileInput').addEventListener('change', function() {
+    var f = this.files[0];
+    document.getElementById('fileInfo').textContent = f ? (f.name + ' (' + (f.size/1024).toFixed(1) + ' KB)') : '';
+});
+
+var _lastJobId = null;
+
+// ── Submit Design ──
+async function submitDesign() {
+    var btn = document.getElementById('designBtn');
+    var status = document.getElementById('designStatusArea');
+    var mode = document.getElementById('designModeSelect').value;
+    var speciesName = document.getElementById('speciesNameInput').value.trim();
+    var numPairs = document.getElementById('numPairsInput').value;
+    var prodMin = document.getElementById('prodMinInput').value;
+    var prodMax = document.getElementById('prodMaxInput').value;
+
+    var form = new FormData();
+    form.append('species_name', speciesName);
+    form.append('mode', mode);
+    form.append('num_pairs', numPairs);
+    form.append('prod_min', prodMin);
+    form.append('prod_max', prodMax);
+
+    // Determine input source
+    var pasteSeq = document.getElementById('pasteSeqInput').value.trim();
+    var fileInput = document.getElementById('fastaFileInput');
+    var file = fileInput.files[0];
+
+    if (pasteSeq) {
+        // Paste mode: wrap as FASTA if needed
+        if (!pasteSeq.startsWith('>')) {
+            pasteSeq = '>seq1' + "\n" + pasteSeq.replace(/\s+/g, "\n").replace(/(.{60})/g, "$1\n");
+        }
+        var blob = new Blob([pasteSeq], {type: 'text/plain'});
+        form.append('fasta', blob, 'pasted.fasta');
+    } else if (file) {
+        form.append('fasta', file);
+    } else {
+        status.style.display = 'block';
+        status.innerHTML = '<div class="alert alert-warning">\u8bf7\u4e0a\u4f20FASTA\u6587\u4ef6\u6216\u7c98\u8d34\u5e8f\u5217\u3002</div>';
+        return;
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> \u63d0\u4ea4\u4e2d...';
+    status.style.display = 'block';
+    status.innerHTML = '<div class="alert alert-info"><div class="spinner-border spinner-border-sm"></div> \u6b63\u5728\u63d0\u4ea4\u8bbe\u8ba1\u4efb\u52a1...</div>';
+
+    try {
+        var resp = await fetch('/api/design/upload', {method: 'POST', body: form});
+        var data = await resp.json();
+        if (data.error) {
+            status.innerHTML = '<div class="alert alert-danger">' + data.error + '</div>';
+            btn.disabled = false;
+            btn.innerHTML = '<i class="bi-rocket-takeoff"></i> \u5f00\u59cb\u8bbe\u8ba1';
+        } else {
+            status.innerHTML = '<div class="alert alert-info"><div class="spinner-border spinner-border-sm"></div> \u4efb\u52a1 <code>' + data.job_id + '</code> \u5df2\u63d0\u4ea4\uff0c\u6b63\u5728\u8bbe\u8ba1\u4e2d...</div>';
+            startPolling(data.job_id, speciesName || 'custom_input', mode);
+        }
+    } catch(err) {
+        status.innerHTML = '<div class="alert alert-danger">\u7f51\u7edc\u9519\u8bef: ' + err.message + '</div>';
+        btn.disabled = false;
+        btn.innerHTML = '<i class="bi-rocket-takeoff"></i> \u5f00\u59cb\u8bbe\u8ba1';
+    }
+}
+
+// ── Poll ──
+function startPolling(jobId, speciesName, designMode) {
+    var status = document.getElementById('designStatusArea');
+    var results = document.getElementById('designResultsArea');
+    var iv = setInterval(async function() {
+        try {
+            var r = await fetch('/api/design/status/' + jobId);
+            var d = await r.json();
+            if (d.status === 'completed') {
+                clearInterval(iv);
+                _lastJobId = jobId;
+                try {
+                    var rr = await fetch('/api/design/results/' + jobId + '?format=json');
+                    var res = await rr.json();
+                    if (res.error) {
+                        status.innerHTML = '<div class="alert alert-danger">' + res.error + '</div>';
+                    } else {
+                        status.innerHTML = '<div class="alert alert-success"><i class="bi-check-circle"></i> \u8bbe\u8ba1\u5b8c\u6210! <strong>' + (res.length || 0) + '</strong> \u5bf9\u5f15\u7269</div>';
+                        results.innerHTML = buildResultsTable(res, speciesName || d.species_name, designMode || d.design_mode);
+                    }
+                } catch(e2) {
+                    status.innerHTML = '<div class="alert alert-warning">\u8bbe\u8ba1\u5b8c\u6210\u4f46\u83b7\u53d6\u7ed3\u679c\u5931\u8d25: ' + e2.message + '</div>';
+                }
+                var btn = document.getElementById('designBtn');
+                btn.disabled = false;
+                btn.innerHTML = '<i class="bi-rocket-takeoff"></i> \u5f00\u59cb\u8bbe\u8ba1';
+            } else if (d.status === 'failed') {
+                clearInterval(iv);
+                status.innerHTML = '<div class="alert alert-danger"><i class="bi-exclamation-triangle"></i> \u8bbe\u8ba1\u5931\u8d25: ' + (d.error || '\u672a\u77e5\u9519\u8bef') + '</div>';
+                var btn = document.getElementById('designBtn');
+                btn.disabled = false;
+                btn.innerHTML = '<i class="bi-rocket-takeoff"></i> \u5f00\u59cb\u8bbe\u8ba1';
+            } else {
+                status.innerHTML = '<div class="alert alert-info"><div class="spinner-border spinner-border-sm"></div> ' + (d.progress_msg || '\u8bbe\u8ba1\u4e2d...') + ' (' + (d.progress_pct || 0) + '%)</div>';
+            }
+        } catch(e) { clearInterval(iv); }
+    }, 3000);
+}
+
+// ── Build Results Table ──
+function buildResultsTable(results, speciesName, designMode) {
+    if (!results || results.length === 0) {
+        return '<div class="alert alert-warning">\u672a\u8bbe\u8ba1\u51fa\u5f15\u7269\uff0c\u8bf7\u5c1d\u8bd5\u8c03\u6574\u53c2\u6570\u6216\u4f7f\u7528\u5176\u4ed6\u5e8f\u5217\u3002</div>';
+    }
+
+    // ── SVG \u57fa\u56e0\u7ec4\u4f4d\u7f6e\u56fe ──
+    var genomeViz = '';
+    var hasPositions = false;
+    for (var i = 0; i < results.length; i++) {
+        var fs = parseInt(results[i].Fwd_Start) || 0;
+        var rs = parseInt(results[i].Rev_Start) || 0;
+        if (fs > 0 && rs > 0) { hasPositions = true; break; }
+    }
+    if (hasPositions) {
+        var maxPos = 0;
+        for (var i = 0; i < results.length; i++) {
+            var rs2 = parseInt(results[i].Rev_Start) || 0;
+            if (rs2 > maxPos) maxPos = rs2;
+        }
+        var genomeLen = Math.max(maxPos + 200, 500);
+        var colors = ['#e03131','#1971c2','#2b8a3e','#e8590c','#862e9c','#c92a2a','#1864ab','#2f9e44','#d9480f','#9c36b5'];
+        var svgW = 780, svgH = 22 * results.length + 40, padL = 55, padR = 60, barW = svgW - padL - padR;
+        genomeViz = '<div class="mt-2 mb-3 p-2 bg-light rounded"><strong><i class="bi-diagram-3"></i> \u5f15\u7269\u7ed3\u5408\u4f4d\u7f6e (\u57fa\u56e0\u7ec4 ~' + genomeLen.toLocaleString() + ' bp)</strong>';
+        genomeViz += '<svg width="100%" viewBox="0 0 ' + svgW + ' ' + svgH + '" style="max-width:820px; font-family:Consolas,monospace; font-size:11px;">';
+        genomeViz += '<rect x="' + padL + '" y="' + (svgH - 16) + '" width="' + barW + '" height="6" rx="3" fill="#dee2e6" stroke="#adb5bd" stroke-width="1"/>';
+        for (var t = 0; t <= 1; t += 0.25) {
+            var tx = padL + t * barW;
+            genomeViz += '<line x1="' + tx + '" y1="' + (svgH - 20) + '" x2="' + tx + '" y2="' + (svgH - 10) + '" stroke="#868e96" stroke-width="1"/>';
+            genomeViz += '<text x="' + tx + '" y="' + (svgH - 2) + '" text-anchor="middle" fill="#495057">' + Math.round(t * genomeLen) + '</text>';
+        }
+        for (var i = 0; i < results.length; i++) {
+            var r = results[i];
+            var fs2 = parseInt(r.Fwd_Start) || 0;
+            var rs2 = parseInt(r.Rev_Start) || 0;
+            var fLen = (r.Fwd_Seq || '').length || 20;
+            var rLen = (r.Rev_Seq || '').length || 20;
+            if (fs2 <= 0 || rs2 <= 0) continue;
+            var col = colors[i % colors.length];
+            var y = 4 + i * 22;
+            var fLeft = padL + (fs2 / genomeLen) * barW;
+            var fW = Math.max((fLen / genomeLen) * barW, 3);
+            var rLeft = padL + (rs2 / genomeLen) * barW;
+            var rW = Math.max((rLen / genomeLen) * barW, 3);
+            var ampLeft = fLeft + fW;
+            var ampW = rLeft - (fLeft + fW);
+            if (ampW > 0) {
+                genomeViz += '<rect x="' + ampLeft + '" y="' + (y + 5) + '" width="' + ampW + '" height="3" fill="' + col + '" opacity="0.3" rx="1"/>';
+            }
+            genomeViz += '<rect x="' + fLeft + '" y="' + y + '" width="' + fW + '" height="8" fill="' + col + '" opacity="0.85" rx="2"/>';
+            genomeViz += '<text x="' + Math.max(fLeft - 2, padL - 50) + '" y="' + (y + 7) + '" text-anchor="end" fill="' + col + '" font-weight="bold">F' + (i+1) + '</text>';
+            genomeViz += '<rect x="' + rLeft + '" y="' + y + '" width="' + rW + '" height="8" fill="' + col + '" opacity="0.55" rx="2"/>';
+            genomeViz += '<text x="' + (rLeft + rW + 3) + '" y="' + (y + 7) + '" fill="' + col + '" font-size="9">' + fs2 + '..' + (rs2 + rLen) + '</text>';
+        }
+        genomeViz += '</svg></div>';
+    }
+
+    // ── \u8868\u683c ──
+    var h = '<div class="card mt-3"><div class="card-header"><strong><i class="bi-clipboard-check"></i> \u8bbe\u8ba1\u7ed3\u679c</strong>';
+    h += ' <span class="badge bg-primary">' + (designMode || '') + '</span>';
+    h += ' <small class="text-muted ms-2">' + (speciesName || '') + '</small>';
+    h += ' <span class="float-end">';
+    h += '<button class="btn btn-sm btn-outline-info me-1" onclick="downloadResults(\'json\')">JSON</button>';
+    h += '<button class="btn btn-sm btn-outline-success me-1" onclick="downloadResults(\'tsv\')">TSV</button>';
+    h += '<button class="btn btn-sm btn-outline-primary" onclick="downloadResults(\'fasta\')">FASTA</button>';
+    h += '</span></div><div class="card-body">';
+    h += genomeViz;
+    h += '<div class="table-responsive"><table class="table table-hover table-sm">';
+    h += '<thead class="table-dark"><tr><th>#</th><th>\u6b63\u5411\u5f15\u7269 (5\'→3\')</th><th>Tm</th><th>GC%</th><th>\u53cd\u5411\u5f15\u7269 (5\'→3\')</th><th>Tm</th><th>GC%</th><th>\u4ea7\u7269</th><th>\u65b9\u6cd5</th><th>\u8bc4\u5206</th></tr></thead><tbody>';
+    for (var i = 0; i < results.length; i++) {
+        var r = results[i];
+        var fwd = r.Fwd_Seq || '';
+        var rev = r.Rev_Seq || '';
+        var prodVal = parseInt(r.Product) || 0;
+        var prod = prodVal > 0 ? (prodVal + ' bp') : '\u2014';
+        var tmF = isFinite(parseFloat(r.Fwd_Tm)) ? parseFloat(r.Fwd_Tm).toFixed(1) : '\u2014';
+        var tmR = isFinite(parseFloat(r.Rev_Tm)) ? parseFloat(r.Rev_Tm).toFixed(1) : '\u2014';
+        var gcF = isFinite(parseFloat(r.GC_Fwd)) ? parseFloat(r.GC_Fwd).toFixed(1) + '%' : '\u2014';
+        var gcR = isFinite(parseFloat(r.GC_Rev)) ? parseFloat(r.GC_Rev).toFixed(1) + '%' : '\u2014';
+        var method = r.Method || '\u2014';
+        var penalty = r.Penalty != null ? r.Penalty : '\u2014';
+        var probe = r.Probe_Seq || '';
+        h += '<tr><td>' + (i + 1) + '</td>';
+        h += '<td><span class="primer-seq">' + fwd + '</span></td>';
+        h += '<td>' + tmF + '</td><td>' + gcF + '</td>';
+        h += '<td><span class="primer-seq">' + rev + '</span></td>';
+        h += '<td>' + tmR + '</td><td>' + gcR + '</td>';
+        h += '<td>' + prod + '</td><td>' + method + '</td>';
+        h += '<td>' + penalty + '</td></tr>';
+        if (probe) {
+            h += '<tr><td></td><td colspan="9"><span class="probe-seq">\u63a2\u9488: ' + probe + '</span></td></tr>';
+        }
+    }
+    h += '</tbody></table></div></div></div>';
+    return h;
+}
+
+// ── \u4e0b\u8f7d ──
+function downloadResults(fmt) {
+    if (_lastJobId) window.open('/api/design/results/' + _lastJobId + '?format=' + fmt, '_blank');
+}
+
+// ── Auto-load job from URL param ──
+(function() {
+    var params = new URLSearchParams(window.location.search);
+    var jid = params.get('job_id');
+    if (jid) {
+        var status = document.getElementById('designStatusArea');
+        status.style.display = 'block';
+        status.innerHTML = '<div class="alert alert-info"><div class="spinner-border spinner-border-sm"></div> \u52a0\u8f7d\u4efb\u52a1 <code>' + jid + '</code>...</div>';
+        startPolling(jid, '', '');
+    }
+})();
+</script>
+{% endblock %}''')
+
+
 # ======================================================================
 
 def get_db():
@@ -1024,7 +1461,7 @@ def create_app():
         return best
 
     def _cross_dimer_bp(fwd, rev):
-        """计算交叉二聚体最长匹配bp数"""
+        """计算Cross-Dimer最长匹配bp数"""
         from Bio.Seq import Seq
         rc_rev = str(Seq(rev).reverse_complement())
         best = 0
@@ -1035,6 +1472,17 @@ def create_app():
 
     app.jinja_env.globals['_dimer_bp'] = _dimer_bp
     app.jinja_env.globals['_cross_dimer_bp'] = _cross_dimer_bp
+
+    # ── Primer Design Service ──
+    design_mgr = None
+    if DESIGN_SERVICE_AVAILABLE:
+        from pathlib import Path as _Path
+        design_mgr = DesignJobManager(
+            jobs_dir=_Path("design_jobs"),
+            species_fasta_dir=_Path("split_species/species")
+        )
+    app.config['design_mgr'] = design_mgr
+
 
     # ========== 首页 ==========
     @app.route('/')
@@ -1054,7 +1502,7 @@ def create_app():
         c.execute('SELECT COUNT(DISTINCT family) FROM taxonomy WHERE family != ""')
         families_count = c.fetchone()[0]
 
-        # 每种类型的 TOP5 物种
+        # 每种类型的 TOP5 Species
         top_by_type = {}
         for ptype in ['PCR','qPCR','DEGENERATE','TILED']:
             c.execute('''
@@ -1158,7 +1606,7 @@ def create_app():
             results=results, total=total, year=datetime.now().year
         )
 
-    # ========== 物种详情 ==========
+    # ========== Species详情 ==========
     @app.route('/species/<path:species>')
     def species_detail(species):
         from urllib.parse import unquote
@@ -1192,7 +1640,7 @@ def create_app():
             if (d.get('tile_id') or 0) > max_tile:
                 max_tile = d['tile_id']
 
-        # 基因组长度估计
+        # genome长度估计
         est_genome_len = int(taxonomy.get('genome_length', 0) or 0)
 
         return render_template_string(SPECIES_TEMPLATE,
@@ -1202,12 +1650,12 @@ def create_app():
             year=datetime.now().year
         )
 
-    # ========== 电子PCR扩增子计算 ==========
+    # ========== In Silico PCR Amplicons计算 ==========
     BLAST_DIR = Path("designed_primers/blast")
     MAX_EPCR_AMP_LEN = 5000
 
     def _compute_epcr_amplicons(species, ptype, pair_id):
-        """从 BLAST CSV 中提取配对扩增子（方向相向 + 距离 ≤ 5000bp）"""
+        """从 BLAST CSV 中提取配对amplicons（方向相向 + 距离 ≤ 5000bp）"""
         amplicons = []
         if not BLAST_DIR.exists():
             return amplicons
@@ -1219,7 +1667,7 @@ def create_app():
             return amplicons
 
         try:
-            # 读取所有匹配的CSV，找到属于此引物对的命中
+            # 读取所有匹配的CSV，找到属于此Primer Pairs的命中
             import pandas as _pd
             all_hits = []
             for cf in csv_files:
@@ -1243,7 +1691,7 @@ def create_app():
                 sid = h['Hit_ID']
                 rev_by_seq.setdefault(sid, []).append(h)
 
-            # 找配对扩增子
+            # 找配对amplicons
             for sid in set(fwd_by_seq.keys()) & set(rev_by_seq.keys()):
                 if sid in {'nan', 'None', ''}: continue
                 for _, fh in fwd_by_seq[sid].iterrows():
@@ -1251,7 +1699,7 @@ def create_app():
                         f_plus = fh['Sstart'] < fh['Send']
                         r_plus = rh['Sstart'] < rh['Send']
                         if f_plus == r_plus:
-                            continue  # 同向 → 无法扩增
+                            continue  # Same direction → cannot amplify
                         coords = [fh['Sstart'], fh['Send'], rh['Sstart'], rh['Send']]
                         amp_len = max(coords) - min(coords)
                         if amp_len > MAX_EPCR_AMP_LEN:
@@ -1288,7 +1736,7 @@ def create_app():
         c.execute('SELECT * FROM primers WHERE primer_id = ?', (primer_id,))
         p_row = c.fetchone()
         if not p_row:
-            return "引物未找到", 404
+            return "Primer not found", 404
 
         c.execute('SELECT * FROM validation WHERE primer_id = ?', (primer_id,))
         v_row = c.fetchone()
@@ -1296,13 +1744,13 @@ def create_app():
         p = dict(p_row)
         v = dict(v_row) if v_row else None
 
-        # 基因组长度
+        # genome长度
         c.execute('SELECT genome_length FROM taxonomy WHERE species_name = ?',
                   (p.get('species_name', ''),))
         tax_row = c.fetchone()
         genome_len = tax_row['genome_length'] if tax_row else 0
 
-        # 电子PCR扩增子
+        # In Silico PCR Amplicons
         epcr = _compute_epcr_amplicons(
             p.get('species_name', ''), p.get('primer_type', ''), p.get('pair_id', '')
         )
@@ -1340,30 +1788,30 @@ def create_app():
         return render_template_string(BASE_TEMPLATE.replace(
             '{% block content %}{% endblock %}',
             '''{% block content %}
-            <h2 class="mt-4"><i class="bi-download"></i> 数据下载</h2>
+            <h2 class="mt-4"><i class="bi-download"></i> Data Download</h2>
             <div class="row g-4 mt-2">
                 <div class="col-md-4">
                     <div class="card"><div class="card-body text-center">
                         <i class="bi-filetype-fasta" style="font-size:3em;color:#198754"></i>
-                        <h5 class="mt-2">全部引物 FASTA</h5>
-                        <p class="text-muted">所有推荐引物的 FASTA 格式</p>
-                        <a href="/api/all_primers?format=fasta" class="btn btn-success">下载</a>
+                        <h5 class="mt-2">All Primers FASTA</h5>
+                        <p class="text-muted">FASTA format of all recommended primers</p>
+                        <a href="/api/all_primers?format=fasta" class="btn btn-success">Download</a>
                     </div></div>
                 </div>
                 <div class="col-md-4">
                     <div class="card"><div class="card-body text-center">
                         <i class="bi-filetype-csv" style="font-size:3em;color:#0d6efd"></i>
-                        <h5 class="mt-2">引物列表 CSV</h5>
-                        <p class="text-muted">完整引物信息表格</p>
-                        <a href="/api/all_primers?format=csv" class="btn btn-primary">下载</a>
+                        <h5 class="mt-2">Primer List CSV</h5>
+                        <p class="text-muted">Complete primer info table</p>
+                        <a href="/api/all_primers?format=csv" class="btn btn-primary">Download</a>
                     </div></div>
                 </div>
                 <div class="col-md-4">
                     <div class="card"><div class="card-body text-center">
                         <i class="bi-database" style="font-size:3em;color:#6f42c1"></i>
-                        <h5 class="mt-2">SQLite 数据库</h5>
-                        <p class="text-muted">完整数据库文件</p>
-                        <a href="/api/database" class="btn btn-secondary">下载</a>
+                        <h5 class="mt-2">SQLite Database</h5>
+                        <p class="text-muted">Full database file</p>
+                        <a href="/api/database" class="btn btn-secondary">Download</a>
                     </div></div>
                 </div>
             </div>
@@ -1377,13 +1825,13 @@ def create_app():
             "name": "PlantVirus Primer DB API",
             "version": "1.0.0",
             "endpoints": {
-                "/api/species/<name>": "按物种获取引物 (支持 ?format=json|fasta|csv)",
-                "/api/primer/<id>": "按 ID 获取引物详情 (支持 ?format=json|fasta)",
-                "/api/search": "搜索引物 (?q=关键词&type=PCR&recommendation=RECOMMENDED)",
-                "/api/all_primers": "获取全部引物 (?format=csv|fasta&recommendation=RECOMMENDED)",
-                "/api/stats": "获取数据库统计信息",
-                "/api/database": "下载 SQLite 数据库文件",
-                "/api/taxonomy/<name>": "获取分类学信息"
+                "/api/species/<name>": "Get primers by species (supports ?format=json|fasta|csv)",
+                "/api/primer/<id>": "Get primer details by ID (supports ?format=json|fasta)",
+                "/api/search": "Search primers (?q=keyword&type=PCR&recommendation=RECOMMENDED)",
+                "/api/all_primers": "Get all primers (?format=csv|fasta&recommendation=RECOMMENDED)",
+                "/api/stats": "Get database statistics",
+                "/api/database": "Download SQLite Database file",
+                "/api/taxonomy/<name>": "Get taxonomy information"
             }
         })
 
@@ -1557,7 +2005,7 @@ def create_app():
                 'Content-Disposition': 'attachment; filename=all_plant_virus_primers.csv'
             }
 
-        return jsonify(results[:500])  # JSON 限制 500 条
+        return jsonify(results[:500])  # JSON limit 500 records
 
     @app.route('/api/stats')
     def api_stats():
@@ -1628,13 +2076,13 @@ def create_app():
             model = SERVER_AI_CONFIG.get("AI_MODEL", model)
 
         if not user_msg or not api_key:
-            return jsonify({"reply": "未配置API Key。请点击 ⚙ 设置，或联系管理员在服务器配置。"})
+            return jsonify({"reply": "API Key not configured. Click ⚙ to set, or contact admin for server-side config."})
 
         context = data.get('context', 'primers')
         db = get_db()
         c = db.cursor()
 
-        # 构建不同数据库的上下文
+        # Real-time stats injected into the AI context
         c.execute('SELECT COUNT(*) FROM primers')
         total_primers = c.fetchone()[0]
         c.execute('SELECT COUNT(DISTINCT species_name) FROM primers')
@@ -1643,114 +2091,136 @@ def create_app():
         type_stats = dict(c.fetchall())
         c.execute('SELECT recommendation, COUNT(*) FROM validation GROUP BY recommendation')
         rec_stats = dict(c.fetchall())
+        c.execute('SELECT COUNT(*) FROM taxonomy')
+        total_tax_species = c.fetchone()[0]
+        c.execute('SELECT COUNT(DISTINCT family) FROM taxonomy')
+        total_tax_families = c.fetchone()[0]
+
+        # Species intent: scan the message against the NAME_MAP alias dictionary
+        # (Latin names / common names / acronyms), resolve each hit to its ICTV
+        # canonical name, then pull that species' records from the DB. Replaces the
+        # old trigger-word regex, which missed most phrasings in either language and
+        # silently degraded to "no database context" whenever species had been
+        # migrated to canonical names.
+        extra_info = ""
+        try:
+            for canon, matched in _extract_species_from_message(user_msg):
+                c.execute("SELECT species_name, genus, family, genome_length FROM taxonomy WHERE species_name = ? LIMIT 1", (canon,))
+                row = c.fetchone()
+                if row is None:
+                    c.execute("SELECT species_name, genus, family, genome_length FROM taxonomy WHERE species_name LIKE ? LIMIT 1", (f'%{canon}%',))
+                    row = c.fetchone()
+                if row is None:
+                    continue
+                r = dict(row)
+                sp = r['species_name']
+                if not extra_info:
+                    extra_info = "\n\n[Species records resolved from the user's message — answer from these]:\n"
+                extra_info += f'- DB species: {sp}'
+                if sp != canon:
+                    extra_info += f' (canonical form of "{matched}")'
+                else:
+                    extra_info += f' (user wrote: "{matched}")'
+                extra_info += f' | {r.get("genus") or "genus n/a"} / {r.get("family") or "family n/a"} | genome {r.get("genome_length") or "?"} nt\n'
+                c.execute("SELECT primer_type, COUNT(*) as cnt FROM primers WHERE species_name=? GROUP BY primer_type", (sp,))
+                pt = dict(c.fetchall())
+                c.execute("SELECT recommendation, COUNT(*) FROM validation v JOIN primers p USING(primer_id) WHERE p.species_name=? GROUP BY recommendation", (sp,))
+                rt = dict(c.fetchall())
+                extra_info += f"  Primer types: {pt}; Score distribution: {rt}\n"
+                c.execute('''SELECT p.primer_type, p.fwd_sequence, p.rev_sequence, p.probe_sequence,
+                                    p.product_size, p.gc_fwd, p.gc_rev, p.design_method,
+                                    v.overall_score, v.recommendation
+                             FROM primers p JOIN validation v USING(primer_id)
+                             WHERE p.species_name=? ORDER BY v.overall_score DESC LIMIT 5''', (sp,))
+                for t in [dict(x) for x in c.fetchall()]:
+                    extra_info += f"    [{t['primer_type']}] Fwd={t['fwd_sequence']} Rev={t['rev_sequence']}"
+                    if t.get('probe_sequence'): extra_info += f" Probe={t['probe_sequence']}"
+                    extra_info += f" | {t['product_size']}bp | GC={t.get('gc_fwd','')}/{t.get('gc_rev','')} | Score={t['overall_score']} {t['recommendation']}\n"
+        except Exception as e:
+            app.logger.warning("[api/chat] species lookup failed: %s", e)
+
+        # Knowledge-base grounding for explorer / reference_db contexts: retrieval
+        # only from the local RAG service (no extra LLM call, safe to fail).
+        kb_info = ""
+        if context in ('explorer', 'reference_db'):
+            try:
+                rr = requests.get(KB_SEARCH_URL, params={"q": user_msg, "limit": 3}, timeout=8)
+                if rr.status_code == 200:
+                    items = (rr.json() or {}).get("results") or []
+                    if items:
+                        kb_info = "\n\n[Knowledge base fragments — ground virus-biology answers in these and cite the [SOURCE]]:\n"
+                        for k, it in enumerate(items, 1):
+                            kb_info += f"[{k}] ({it.get('source', '')}) {it.get('title', '')}: {(it.get('text') or '')[:600]}\n"
+            except Exception as e:
+                app.logger.warning("[api/chat] KB retrieval failed: %s", e)
 
         if context == 'reference_db':
-            db_context = f"""你是植物病毒参考数据库(Plant Virus Reference Database)的AI助手。
-数据库包含来自NCBI GenBank和ICTV VMR MSL41的全部植物病毒序列数据，共约198,885条记录，覆盖6,176个物种。
+            db_context = f"""You are the AI assistant for the Plant Virus Reference Database. The full reference set holds ~199k plant-virus sequences (NCBI GenBank + RefSeq, deduplicated at 95% identity to ~8,465 non-redundant sequences) covering ~6,200 species per ICTV VMR.
+Real-time canonical species table on this server: {total_tax_species} species in {total_tax_families} families; primer layer: {total_primers} primer pairs covering {total_species} species.
 
-你可以帮用户:
-1. 回答植物病毒分类学问题 (Realm/Kingdom/Phylum/Class/Order/Family/Genus/Species)
-2. 解释分节段病毒(Segmented)和非分节段病毒(Non-Segmented)的区别
-3. 提供病毒宿主信息查询引导
-4. 解释基因组类型 (dsDNA/ssDNA/dsRNA/ssRNA+/ssRNA-等)
-5. 说明数据库构建方法和数据来源
+You can help users with:
+1. Answering plant virus taxonomy questions (Realm/Kingdom/Phylum/Class/Order/Family/Genus/Species)
+2. Explaining the difference between segmented and non-segmented viruses
+3. Guiding virus host information queries
+4. Explaining genome types (dsDNA/ssDNA/dsRNA/ssRNA+/ssRNA-, etc.)
+5. Describing the database construction method and data sources
 
-注意：
-- 本数据库按95%序列相似度去冗余，非冗余参考集约8,465条序列
-- 如果用户需要具体序列或引物，请引导他们到Primers数据库(/primers/)
-- 如果用户需要可视化分析，请引导他们到Explorer(/explorer/)
-- 保持回复简洁，200字以内"""
+Notes:
+- Species are stored under ICTV canonical binomials (e.g. "Tomato yellow leaf curl virus" → "Begomovirus coheni"); common names/acronyms in the user's message are resolved automatically and matching DB records are attached below when found.
+- If knowledge base fragments are attached below, ground biology answers in them and cite the sources; if they are insufficient, say so instead of fabricating.
+- If users need specific sequences or primers, guide them to the Primers database (/primers/); for visual analysis, Explorer (/explorer/); for literature, Knowledge Base (/knowledge/).
+- Keep replies concise, under 200 words"""
         elif context == 'explorer':
-            db_context = f"""你是植物病毒时空探索器(Plant Virus Explorer)的AI助手。
-探索器提供198,885条病毒序列的交互式可视化分析，覆盖6,176个物种，91个国家的采集数据。
+            kpis = ((SITE_FACTS.get('full') or {}).get('kpis') or {}) if SITE_FACTS else {}
+            top_hosts = ((SITE_FACTS.get('full') or {}).get('topHosts') or []) if SITE_FACTS else []
+            hosts_txt = ', '.join(f"{h} ({c})" for h, c in top_hosts[:5]) or 'n/a'
+            db_context = f"""You are the AI assistant for the Plant Virus Explorer (spatiotemporal visualization of plant virus sequences).
+Site facts (precomputed from the full reference dataset): {kpis.get('sequences', '~199k')} sequences, {kpis.get('taxids', '~6.2k')} species, {kpis.get('families', '~49')} families; top hosts: {hosts_txt}.
+Real-time on this server: {total_tax_species} species / {total_tax_families} families in the canonical species table; {total_primers} primer pairs covering {total_species} species, by type {type_stats}.
 
-你可以帮用户:
-1. 解释如何使用探索器的各项功能
-2. 解读时空分布图和CP基因变异分析
-3. 解答病毒多样性、宿主分布相关问题
-4. 提供数据筛选和导出的指导
+You can help users with:
+1. Explaining how to use the Explorer's features
+2. Interpreting spatiotemporal distribution maps and CP gene variation analysis
+3. Answering questions about virus diversity and host distribution
+4. Providing guidance on data filtering and export
 
-引物数据库统计:
-- 总引物对: {total_primers}, 覆盖物种: {total_species}
-- 类型: {type_stats}
-- 评分: {rec_stats}
-
-注意：
-- 探索器加载了完整的Plant_Virus_Full.fasta (377MB)用于序列比对
-- 如需要具体引物信息，请引导用户到Primers数据库(/primers/)
-- 如需要查看原始数据表，请引导到Reference DB(/reference/)
-- 保持回复简洁，200字以内"""
+Notes:
+- Data boundary: interactive queries (maps, BLAST/alignment, CP variation) run inside the Explorer pages themselves; you answer from the stats above and any knowledge base fragments attached below.
+- If knowledge base fragments are attached below, ground biology answers in them and cite the sources; otherwise say when you are not certain.
+- If users need specific primer information, guide them to Primers (/primers/); for raw data tables, Reference DB (/reference/).
+- Keep replies concise, under 200 words"""
         else:
-            db_context = f"""你是植物病毒引物数据库(PrimerDB)的AI助手。你可以访问以下实时数据:
-- 总引物对: {total_primers}
-- 总物种: {total_species}
-- 按类型: {type_stats}
-- 按评分: {rec_stats}
+            db_context = f"""You are the AI assistant for the Plant Virus Primer Database (PrimerDB). You have access to the following real-time data:
+- Total primer pairs: {total_primers}
+- Total species: {total_species}
+- By type: {type_stats}
+- By score: {rec_stats}
 
-你可以帮用户:
-1. 搜索特定物种的引物 (用URL /search?q=物种名)
-2. 比较不同引物类型的优劣
-3. 解释验证评分含义 (RECOMMENDED>=80, USABLE 60-79, NOT_RECOMMENDED<60)
-4. 推荐针对特定病毒的最佳引物
-5. 解答引物设计相关问题
+You can help users with:
+1. Searching for primers for a specific species (use URL /search?q=species_name)
+2. Comparing advantages of different primer types
+3. Explaining validation score meanings (RECOMMENDED>=80, USABLE 60-79, NOT_RECOMMENDED<60)
+4. Recommending best primers for specific viruses
+5. Answering primer design questions
 
-回复格式要求:
-1. 不用Markdown表格，用简洁的纯文本列表。每条引物一行。
-2. Top5引物直接给序列: "[类型] Fwd:XXX Rev:XXX | 产物bp | 评分XX"
-3. 分析引物时只列关键指标: Tm/GC/二聚体/特异性，每对引物不超过3行。
-4. 保持回复简洁，控制在300字以内。
-5. 如果extra_info中有序列，必须逐条列出全部序列，不得省略。
-数据库通过SQLite访问，schema为: taxonomy(species_name,genus,family), primers(primer_id,species_name,primer_type,fwd_sequence,rev_sequence,probe_sequence,product_size,design_method), validation(primer_id,overall_score,recommendation,probe_warning)。
+Notes:
+- Species are stored under ICTV canonical binomials (e.g. "Tomato yellow leaf curl virus" → "Begomovirus coheni"). When species records are attached after the user's message, answer from them directly and mention the canonical name used.
 
-查询示例sql:
-- 查找物种: SELECT * FROM taxonomy WHERE species_name LIKE '%XXX%'
-- 某物种引物统计: SELECT primer_type, COUNT(*) FROM primers WHERE species_name='XXX' GROUP BY primer_type
-- 某物种最佳引物: SELECT p.*, v.overall_score FROM primers p JOIN validation v USING(primer_id) WHERE p.species_name='XXX' ORDER BY v.overall_score DESC LIMIT 5"""
+Reply format requirements:
+1. No Markdown tables; use concise plain-text lists. One primer per line.
+2. For Top 5 primers, give sequences directly: "[Type] Fwd:XXX Rev:XXX | Product bp | Score XX"
+3. When analyzing primers, list only key metrics: Tm/GC/dimers/specificity, no more than 3 lines per primer pair.
+4. Keep replies concise, under 300 words.
+5. If species records with primer sequences are attached after the user's message, list ALL sequences without omission.
 
-        # 解析用户意图，执行数据库查询
-        import re
-        extra_info = ""
-        # 更宽的物种匹配: 支持缩写和部分名
-        sp_match = re.search(r'(?:查询|搜索|查看|物种|病毒|最佳|推荐|引物|primers?.*(?:for|of)?)\s*[：:]?\s*["\']?([A-Za-z][A-Za-z\s\.\-]+(?:virus|viroid|mosaic|leaf|curl|spot|wilt|yellow|mottle|streak|ringspot|blotch|dwarf|bunchy|rosette|satellite|alpha|beta|gamma)[A-Za-z\s\.\-]*)', user_msg, re.I)
-        if not sp_match:
-            # 也匹配常见缩写如 pstvd, tmv, cmv 等
-            sp_match = re.search(r'(?:查询|搜索|查看|物种|病毒|最佳|推荐|引物|primers?)\s*[：:]?\s*["\']?([A-Za-z]{2,8}(?:[\s\-][A-Za-z]{2,8})?)', user_msg, re.I)
-        if sp_match:
-            sp_name = sp_match.group(1).strip()
-            try:
-                c.execute("SELECT species_name, genus, family, genome_length FROM taxonomy WHERE species_name LIKE ? LIMIT 5", (f'%{sp_name}%',))
-                rows = [dict(r) for r in c.fetchall()]
-                if rows:
-                    extra_info = f"\n\n找到以下物种:\n"
-                    for r in rows:
-                        sp = r['species_name']
-                        c.execute("SELECT primer_type, COUNT(*) as cnt FROM primers WHERE species_name=? GROUP BY primer_type", (sp,))
-                        pt = dict(c.fetchall())
-                        c.execute("SELECT recommendation, COUNT(*) FROM validation v JOIN primers p USING(primer_id) WHERE p.species_name=? GROUP BY recommendation", (sp,))
-                        rt = dict(c.fetchall())
-                        extra_info += f"- {sp} ({r.get('genus','')}): {pt}, 评分分布: {rt}\n"
-                        # 查 top 5 引物含完整序列
-                        c.execute('''SELECT p.primer_type, p.fwd_sequence, p.rev_sequence, p.probe_sequence,
-                                            p.product_size, p.gc_fwd, p.gc_rev, p.design_method,
-                                            v.overall_score, v.recommendation
-                                     FROM primers p JOIN validation v USING(primer_id)
-                                     WHERE p.species_name=? ORDER BY v.overall_score DESC LIMIT 5''', (sp,))
-                        top5 = [dict(r2) for r2 in c.fetchall()]
-                        if top5:
-                            extra_info += "  Top5引物:\n"
-                            for t in top5:
-                                extra_info += f"    [{t['primer_type']}] Fwd={t['fwd_sequence']} Rev={t['rev_sequence']}"
-                                if t.get('probe_sequence'): extra_info += f" Probe={t['probe_sequence']}"
-                                extra_info += f" | {t['product_size']}bp | GC={t.get('gc_fwd','')}/{t.get('gc_rev','')} | 评分={t['overall_score']} {t['recommendation']}\n"
-            except Exception:
-                pass
+The database is accessed via SQLite with schema: taxonomy(species_name,genus,family), primers(primer_id,species_name,primer_type,fwd_sequence,rev_sequence,probe_sequence,product_size,design_method), validation(primer_id,overall_score,recommendation,probe_warning)."""
 
         messages = [
             {"role": "system", "content": db_context},
         ]
         for item in conversation[-10:]:
             messages.append(item)
-        messages.append({"role": "user", "content": user_msg + extra_info})
+        messages.append({"role": "user", "content": user_msg + extra_info + kb_info})
 
         try:
             resp = requests.post(api_url, json={
@@ -1763,31 +2233,34 @@ def create_app():
             if resp.status_code == 200:
                 reply = resp.json()['choices'][0]['message']['content']
             else:
-                reply = f"API 错误 ({resp.status_code}): {resp.text[:200]}"
+                reply = f"API Error ({resp.status_code}): {resp.text[:200]}"
         except Exception as e:
-            reply = f"连接失败: {str(e)[:200]}"
+            reply = f"Connection failed: {str(e)[:200]}"
 
         return jsonify({"reply": reply})
+
+
+    # ── Design routes moved to /metabuli/primer_design ──
 
     return app
 
 
 def main():
     global DB_PATH
-    parser = argparse.ArgumentParser(description="启动植物病毒引物数据库 Web 服务器")
-    parser.add_argument("--host", default="0.0.0.0", help="监听地址")
-    parser.add_argument("--port", type=int, default=5000, help="监听端口")
-    parser.add_argument("--debug", action="store_true", help="调试模式")
-    parser.add_argument("--db", default=str(DB_PATH), help="SQLite 数据库路径")
+    parser = argparse.ArgumentParser(description="Start Plant Virus Primer Database Web Server")
+    parser.add_argument("--host", default="0.0.0.0", help="Listen address")
+    parser.add_argument("--port", type=int, default=5000, help="Listen port")
+    parser.add_argument("--debug", action="store_true", help="Debug mode")
+    parser.add_argument("--db", default=str(DB_PATH), help="SQLite database path")
     args = parser.parse_args()
     DB_PATH = Path(args.db)
 
     if not DB_PATH.exists():
-        print(f"⚠ 数据库不存在: {DB_PATH}")
-        print("  请先运行: python step4_build_database.py")
-        print("  或使用 --db 指定已有数据库路径")
-        print("\n  将以空数据库模式启动 (功能受限)...")
-        # 创建空数据库
+        print(f"⚠ Database not found: {DB_PATH}")
+        print("  Run first: python step4_build_database.py")
+        print("  Or use --db to specify existing database path")
+        print("\n  Starting in empty-database mode (limited functionality)...")
+        # Create empty database
         conn = sqlite3.connect(str(DB_PATH))
         conn.close()
 
@@ -1795,23 +2268,23 @@ def main():
 
     print(f"""
 ╔══════════════════════════════════════════════════════════════╗
-║          植物病毒引物数据库 Web 服务器                          ║
+║          Plant Virus Primer Database Web Server              ║
 ║                                                              ║
 ║  URL: http://localhost:{args.port}                              ║
 ║  API: http://localhost:{args.port}/api/                         ║
 ║                                                              ║
-║  页面:                                                        ║
-║    /           — 首页 (概览 + 快速搜索)                         ║
-║    /search     — 搜索引物                                     ║
-║    /browse     — 浏览物种列表                                  ║
-║    /species/X  — 物种详情 + 引物列表                            ║
-║    /primer/ID  — 引物详情 + 验证结果                            ║
-║    /download   — 下载数据                                     ║
+║  Pages:                                                       ║
+║    /           — Home (overview + quick search)               ║
+║    /search     — Search primers                              ║
+║    /browse     — Browse species list                         ║
+║    /species/X  — Species detail + primer list                ║
+║    /primer/ID  — Primer detail + validation results          ║
+║    /download   — Download data                               ║
 ║                                                              ║
 ║  API:                                                        ║
 ║    /api/species/<name>?format=json|fasta|csv                   ║
 ║    /api/primer/<id>?format=json|fasta                         ║
-║    /api/search?q=<关键词>&type=PCR&recommendation=RECOMMENDED  ║
+║    /api/search?q=<keyword>&type=PCR&recommendation=RECOMMENDED ║
 ║    /api/all_primers?format=csv|fasta                          ║
 ║    /api/stats                                                ║
 ║    /api/database                                             ║
