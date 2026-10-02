@@ -193,66 +193,81 @@ class PlantVirusKnowledgeBase:
     def _load_papers(self, base: Path):
         """加载文献追踪模块的论文摘要（Papers 源，带 DOI/PMID/物种标注）。
 
-        两个来源，按 PMID 去重（web/data 是周更的现行库，优先级高）：
+        三个来源，按 PMID/标题去重（先加载的优先）：
           data_17cats/ — 2019-2026 近期文献全集备份（8.8k 篇，97% 带病毒/宿主标注）
-          web/data/    — 现行文献库（1941-2026，每周更新）
+          web/data/    — 现行文献库年份文件（1941-2026，每周更新）
+          papers.json  — 文献管线全量合并库（2026-09-28 重构后文献主体在此，
+                         年份文件只留现行精选集；此来源补齐长尾，条目自带 year）
         """
         lit_root = base.parent / "7.literature_tracker" / "web"
-        dirs = [lit_root / "data_17cats", lit_root / "data"]
         seen_pmid = set()
         seen_key = set()
         n0 = len(self._docs)
-        for dpath in dirs:
+        for dpath in (lit_root / "data_17cats", lit_root / "data"):
             if not dpath.exists():
                 print(f"  Papers not found: {dpath}")
                 continue
             added = 0
             for f in sorted(dpath.glob("*.json")):
-                name = f.stem
-                if dpath.name == "data" and not re.fullmatch(r"[12][09]\d\d", name):
-                    continue  # 现行库只取年份文件；17cats 目录同理由 glob 限制
-                if not re.fullmatch(r"[12][09]\d\d", name):
-                    continue
-                year = name
+                if not re.fullmatch(r"[12][09]\d\d", f.stem):
+                    continue  # 只取年份文件（data.json/index.json/monthly 等不读）
                 try:
                     d = json.loads(f.read_text(encoding="utf-8"))
                 except Exception:
                     continue
                 papers = d if isinstance(d, list) else d.get("papers", [])
-                for p in papers:
-                    if not isinstance(p, dict):
-                        continue
-                    pmid = str(p.get("pmid") or "").strip()
-                    title = (p.get("title") or "").strip()
-                    abstract = (p.get("abstract") or "").strip()
-                    if not title and not abstract:
-                        continue
-                    key = pmid or f"t:{title.lower()[:80]}"
-                    if key in seen_pmid or key in seen_key:
-                        continue  # 先加载的目录优先
-                    seen_key.add(key)
-                    if pmid:
-                        seen_pmid.add(pmid)
-                    meta = []
-                    for k, label in (("journal", "Journal"), ("virus_name", "Virus"),
-                                     ("host_plant", "Host"), ("first_author", "First author")):
-                        v = (p.get(k) or "").strip()
-                        if v:
-                            meta.append(f"{label}: {v}")
-                    sp = (p.get("associated_species") or "").strip()
-                    if sp and not (p.get("virus_name") or "").strip():
-                        meta.append(f"Virus: {sp[:200]}")
-                    text = "\n".join(meta + ["", (abstract or title)[:5000]])
-                    self._docs.append({
-                        "source": "Papers", "path": str(f),
-                        "title": (title[:140] or f"Paper PMID {p.get('pmid', '?')}"),
-                        "summary": "", "text": text[:6000], "type": "paper",
-                        "doi": (p.get("doi") or "").strip(),
-                        "pmid": pmid,
-                        "year": year,
-                    })
-                    added += 1
+                added += self._add_papers(papers, f.stem, str(f), seen_pmid, seen_key)
             print(f"  Papers[{dpath.name}]: +{added} docs (cum {len(self._docs)-n0})")
+        for ppath in (lit_root.parent / "papers.json",
+                      lit_root.parent / "data" / "papers.json"):
+            if ppath.exists():
+                try:
+                    d = json.loads(ppath.read_text(encoding="utf-8"))
+                except Exception as e:
+                    print(f"  Papers[{ppath.name}] error: {e}")
+                    break
+                papers = d if isinstance(d, list) else d.get("papers", [])
+                added = self._add_papers(papers, "", str(ppath), seen_pmid, seen_key)
+                print(f"  Papers[{ppath.name}]: +{added} docs (cum {len(self._docs)-n0})")
+                break
+
+    def _add_papers(self, papers, default_year, src_path, seen_pmid, seen_key) -> int:
+        """把论文列表并入 _docs（按 PMID/标题去重，先加载的来源优先），返回新增篇数。"""
+        added = 0
+        for p in papers:
+            if not isinstance(p, dict):
+                continue
+            pmid = str(p.get("pmid") or "").strip()
+            title = (p.get("title") or "").strip()
+            abstract = (p.get("abstract") or "").strip()
+            if not title and not abstract:
+                continue
+            key = pmid or f"t:{title.lower()[:80]}"
+            if key in seen_pmid or key in seen_key:
+                continue
+            seen_key.add(key)
+            if pmid:
+                seen_pmid.add(pmid)
+            meta = []
+            for k, label in (("journal", "Journal"), ("virus_name", "Virus"),
+                             ("host_plant", "Host"), ("first_author", "First author")):
+                v = (p.get(k) or "").strip()
+                if v:
+                    meta.append(f"{label}: {v}")
+            sp = (p.get("associated_species") or "").strip()
+            if sp and not (p.get("virus_name") or "").strip():
+                meta.append(f"Virus: {sp[:200]}")
+            text = "\n".join(meta + ["", (abstract or title)[:5000]])
+            self._docs.append({
+                "source": "Papers", "path": src_path,
+                "title": (title[:140] or f"Paper PMID {p.get('pmid', '?')}"),
+                "summary": "", "text": text[:6000], "type": "paper",
+                "doi": (p.get("doi") or "").strip(),
+                "pmid": pmid,
+                "year": str(p.get("year") or default_year),
+            })
+            added += 1
+        return added
 
     def _load_antivirals(self, base: Path):
         """加载抗病毒物质聚合文档（kg inhibited_by 三元组聚合，见 build_antivirals.py）。"""
