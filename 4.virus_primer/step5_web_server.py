@@ -117,7 +117,7 @@ def _extract_species_from_message(msg, max_species=5):
     aliases = _build_species_aliases()
     if not aliases:
         return []
-    tokens = _re.findall(r"[A-Za-z][A-Za-z0-9\-']*", msg)
+    tokens = _re.findall(r"[A-Za-z0-9][A-Za-z0-9\-']*", msg)  # 首字符允许数字：Coptis virus 1 等名字以数字结尾
     low = [t.lower() for t in tokens]
     n = len(low)
     found, seen, i = [], set(), 0

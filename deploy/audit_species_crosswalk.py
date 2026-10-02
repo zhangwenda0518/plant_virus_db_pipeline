@@ -169,6 +169,8 @@ def main():
     ap.add_argument("--out", default=None, help="交叉表输出路径（默认 docs/data/species_crosswalk.tsv）")
     ap.add_argument("--strict", action="store_true", help="有关键缺口时退出码 1")
     ap.add_argument("--migrate", action="store_true", help="给 primer taxonomy 补 taxid 列并回填（先备份）")
+    ap.add_argument("--add-aliases", action="store_true",
+                    help="把参考层 NCBI 名/规范名补进 name_mapping.tsv（C 类修复，追加不覆盖）")
     args = ap.parse_args()
     root = args.root
 
@@ -179,6 +181,57 @@ def main():
     primer = load_primer(root, args.primer_db)
     vector = load_vector(root, bridges)
     media = load_photos(root, bridges)
+
+    # 上一轮交叉表：origin=legacy 的遗留物种继续立档；首次见到的未解释物种
+    # 本轮自动立档（origin=legacy_primer_db），之后 B 类只报"新出现、未甄别"的
+    prev_cross = {}
+    prev_p = first_existing(root, "docs/data/species_crosswalk.tsv")
+    if prev_p and prev_p.exists():
+        with open(prev_p, encoding="utf-8") as f:
+            for r in csv.DictReader(f, delimiter="\t"):
+                prev_cross[r["ictv_name"]] = r
+    prev_legacy = {n for n, r in prev_cross.items()
+                   if r.get("origin") == "legacy_primer_db"}
+    unexplained = set()
+    if primer:
+        unexplained = {n for n in primer["taxonomy"] if n not in ref}
+    legacy_known = {n for n in prev_legacy
+                    if primer and n in primer["taxonomy"]} | unexplained
+    new_unarchived = sorted(unexplained - set(prev_cross)) if primer else []
+    if primer:
+        legacy_known = {n for n in legacy_known
+                        if n in primer["taxonomy"] and n not in ref}
+
+    # C 类修复：参考层 NCBI 名/规范名/遗留物种名补进 name_mapping（追加，不覆盖）
+    if args.add_aliases:
+        alias_p = first_existing(root, "docs/data/name_mapping.tsv")
+        existing = set(name_map)
+        add = []
+
+        def _add_row(key, ictv, common):
+            k = (key or "").strip().lower()
+            if len(k) >= 3 and k not in existing:
+                existing.add(k)
+                add.append({"Lookup_Key": k, "ICTV_Name": ictv,
+                            "Common_Name": common, "Abbreviation": ""})
+
+        for ictv, s in ref.items():
+            for n in s["ncbi"]:
+                _add_row(n, ictv, n)
+            _add_row(ictv, ictv, ictv)
+        for n in legacy_known:
+            _add_row(n, n, n)
+        if add and alias_p:
+            with open(alias_p, "a", encoding="utf-8", newline="") as f:
+                w = csv.DictWriter(f, fieldnames=["Lookup_Key", "ICTV_Name",
+                                                  "Common_Name", "Abbreviation"],
+                                   delimiter="\t")
+                w.writerows(add)
+            print(f"[add-aliases] name_mapping.tsv 追加 {len(add)} 行 -> {alias_p}")
+        elif not add:
+            print("[add-aliases] 无需追加（别名已全覆盖）")
+        for r in add:
+            name_map[r["Lookup_Key"]] = r
 
     # 名字型库（引物库在 taxid 迁移前）按规范名直接比对；未命中再走别名桥
     def primer_state(ictv):
@@ -193,7 +246,7 @@ def main():
                 return (True, primer["primers"].get(a, 0), tax[a] or "")
         return (False, 0, "")
 
-    rows, missing_primer, missing_ref, no_alias = [], [], [], []
+    rows, missing_primer, no_alias = [], [], []
     for ictv, s in sorted(ref.items()):
         in_tax, n_prim, taxid_col = primer_state(ictv)
         taxids = ";".join(sorted(s["taxids"]))
@@ -209,13 +262,36 @@ def main():
             "in_vector_db": int(ictv in vector),
             "in_photo_db": int(ictv in media["photos"]),
             "in_symptom_db": int(ictv in media["symptoms"]),
+            "origin": "reference",
         })
         if s["complete"] > 0 and not in_tax:
             missing_primer.append((ictv, s["complete"], n_prim))
         if ictv not in name_map and ictv.lower() not in name_map:
             no_alias.append(ictv)
+    # 遗留物种立档（参考层已无、引物数据保留，origin=legacy_primer_db）
+    for ictv in sorted(legacy_known):
+        in_tax, n_prim, taxid_col = primer_state(ictv)
+        prev = prev_cross.get(ictv, {})
+        rows.append({
+            "ictv_name": ictv,
+            "taxids": prev.get("taxids", ""),
+            "ncbi_names": prev.get("ncbi_names", ""),
+            "ref_records": prev.get("ref_records", "0"),
+            "ref_complete": prev.get("ref_complete", "0"),
+            "in_primer_taxonomy": int(in_tax),
+            "primers_count": n_prim,
+            "taxid_in_primer_db": taxid_col,
+            "in_vector_db": int(ictv in vector),
+            "in_photo_db": int(ictv in media["photos"]),
+            "in_symptom_db": int(ictv in media["symptoms"]),
+            "origin": "legacy_primer_db",
+        })
+        if ictv not in name_map and ictv.lower() not in name_map:
+            no_alias.append(ictv)
     if primer:
-        missing_ref = sorted(n for n in primer["taxonomy"] if n not in ref and n != "None")
+        # B 类 = 引物库里既不在参考层、也未在遗留档案中立档的未知物种
+        known = set(ref) | legacy_known
+        missing_ref = sorted(n for n in primer["taxonomy"] if n not in known)
 
     # ---- 交叉表落盘 ----
     out = Path(args.out) if args.out else first_existing(root, "docs/data")
