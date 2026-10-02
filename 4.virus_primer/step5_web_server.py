@@ -156,6 +156,164 @@ for _facts_path in (Path("/opt/plant_virus_db/plant_virus_db_pipeline/docs/data/
 # 本机知识库 RAG 检索接口（explorer / reference_db 分支接地用，纯检索不花 LLM）
 KB_SEARCH_URL = SERVER_AI_CONFIG.get('KB_SEARCH_URL', 'http://127.0.0.1:5002/search')
 
+
+# ── 跨库取数：媒介-宿主库（8.plant-insect）+ 症状照片库（docs/data）──
+def _pipeline_candidates(rel):
+    return (Path("/opt/plant_virus_db/plant_virus_db_pipeline") / rel,
+            Path(__file__).resolve().parent.parent / rel)
+
+_VECTOR_INDEX = None
+_PHOTO_INDEX = None
+_SYMPTOM_INDEX = None
+
+
+def _bridge_canonical(name):
+    """俗名/别名 → ICTV 规范名（走别名词典，取首个命中）。"""
+    lst = _build_species_aliases().get((name or '').strip().lower())
+    return lst[0] if lst else None
+
+
+def _canon_of(name):
+    """词典直接命中失败时退回 n-gram 扫描（如 'Alfamovirus AMV' → AMV → Alfalfa mosaic virus）。"""
+    canon = _bridge_canonical(name)
+    if canon:
+        return canon
+    ext = _extract_species_from_message(name or '', 1)
+    return ext[0][0] if ext else None
+
+
+def _build_vector_index():
+    global _VECTOR_INDEX
+    if _VECTOR_INDEX is None:
+        _VECTOR_INDEX = {}
+        for p in _pipeline_candidates("8.plant-insect/virus_vector_merged.json"):
+            if not p.exists():
+                continue
+            try:
+                d = json.loads(p.read_text(encoding='utf-8'))
+            except Exception:
+                continue
+            for v in d.get('viruses') or []:
+                names = [v.get('ictv_name') or '', v.get('canonical_name') or '']
+                names += list(v.get('matched_names') or [])
+                for nm in names:
+                    canon = _bridge_canonical(nm)
+                    if canon:
+                        _VECTOR_INDEX.setdefault(canon, v)
+            break
+    return _VECTOR_INDEX
+
+
+def _build_media_indexes():
+    global _PHOTO_INDEX, _SYMPTOM_INDEX
+    if _PHOTO_INDEX is not None:
+        return
+    _PHOTO_INDEX, _SYMPTOM_INDEX = {}, {}
+    for p in _pipeline_candidates("docs/data/unified_gallery.json"):
+        if p.exists():
+            try:
+                items = json.loads(p.read_text(encoding='utf-8'))
+            except Exception:
+                items = []
+            for it in items or []:
+                canon = _canon_of((it.get('virus_ictv') or '') or (it.get('virus') or ''))
+                if not canon:
+                    continue
+                lst = _PHOTO_INDEX.setdefault(canon, [])
+                if len(lst) < 3:
+                    lst.append({'thumb': (it.get('thumb') or '').strip(),
+                                'full': (it.get('full') or '').strip(),
+                                'caption': (it.get('capt') or it.get('caption') or '').strip()[:120]})
+            break
+    for p in _pipeline_candidates("docs/data/symptom_table.json"):
+        if p.exists():
+            try:
+                items = json.loads(p.read_text(encoding='utf-8'))
+            except Exception:
+                items = []
+            for it in items or []:
+                canon = _canon_of(it.get('virus') or '')
+                s = (it.get('symptoms_std') or it.get('symptoms') or '').strip()
+                if not canon or not s:
+                    continue
+                host = (it.get('host_latin') or '').strip()
+                entry = s + ((' (host: ' + host + ')') if host else '')
+                lst = _SYMPTOM_INDEX.setdefault(canon, [])
+                if entry not in lst and len(lst) < 4:
+                    lst.append(entry)
+            break
+
+
+def _cross_db_info(canons, base, zh=False):
+    """媒介-宿主 + 症状照片 + 站内深链，一次取齐供 AI 回填。"""
+    import re as _re
+    from urllib.parse import quote as _q
+    vidx = _build_vector_index()
+    _build_media_indexes()
+    lines = []
+    for c in canons[:3]:
+        v = vidx.get(c)
+        if v:
+            vectors, modes, hosts, dois = [], [], [], []
+            for r in (v.get('relationships') or [])[:10]:
+                for key, bag, cap in (('vector', vectors, 6), ('host', hosts, 5)):
+                    val = (r.get(key) or '').strip()
+                    if val and val not in bag and len(bag) < cap:
+                        bag.append(val)
+                m = (r.get('transmission_mode') or r.get('transmission_category') or '').strip()
+                if m and m not in modes and len(modes) < 3:
+                    modes.append(m)
+                for dk in ('doi_insect', 'doi_transmission'):
+                    for one in _re.split(r'[;；,，\s]+', (r.get(dk) or '').strip()):
+                        if one.startswith('http') and one not in dois and len(dois) < 2:
+                            dois.append(one)
+            seg = f"- {'媒介-宿主库' if zh else 'Vector-host DB'} | {c}"
+            ictv = (v.get('ictv_name') or '').strip()
+            if ictv and ictv != c:
+                seg += f" ({ictv})"
+            lines.append(seg + ":")
+            if vectors:
+                lines.append(f"  {'传播介体' if zh else 'vectors'}: {'; '.join(vectors)}")
+            if modes:
+                lines.append(f"  {'传播方式' if zh else 'transmission'}: {'; '.join(modes)}")
+            if hosts:
+                lines.append(f"  {'宿主(部分)' if zh else 'hosts (examples)'}: {'; '.join(hosts)}")
+            if dois:
+                lines.append(f"  {'证据' if zh else 'evidence'}: {'; '.join(dois)}")
+        photos = _PHOTO_INDEX.get(c) or []
+        sympt = _SYMPTOM_INDEX.get(c) or []
+        if photos or sympt:
+            lines.append(f"- {'症状照片库' if zh else 'Symptom records'} | {c}:")
+            for ph in photos[:2]:
+                url = ph['thumb']
+                if url and not url.startswith('http'):
+                    url = base + '/' + url.lstrip('/')
+                if url:
+                    lines.append(f"  {'照片' if zh else 'photo'}: {url}"
+                                 + (f" ({ph['caption']})" if ph['caption'] else ''))
+            if sympt:
+                lines.append(f"  {'典型症状' if zh else 'typical symptoms'}: {' | '.join(sympt[:3])}")
+    if canons:
+        q = _q(canons[0])
+        links = [('引物检索', 'Primers search', f'{base}/primers/search?q={q}'),
+                 ('物种页', 'Species page', f'{base}/species/{q}'),
+                 ('时空探索器', 'Explorer profile', f'{base}/explorer/?profile={q}'),
+                 ('媒介库', 'Vector-host DB', f'{base}/vector/'),
+                 ('症状照片', 'Symptom photos', f'{base}/photos/'),
+                 ('知识库', 'Knowledge base', f'{base}/knowledge/')]
+        if zh:
+            lines.append("- 站内深链（回答末尾请附“相关页面直达：”一节，逐字列出以下网址）:")
+            lines += [f"  {a}: {u}" for a, _, u in links]
+        else:
+            lines.append("- Deep links (end your reply with a 'Relevant pages:' section quoting these URLs verbatim):")
+            lines += [f"  {b}: {u}" for _, b, u in links]
+    if not lines:
+        return ""
+    head = ("\n\n【跨库记录——请与引物/知识数据一并引用】:\n" if zh
+            else "\n\n[Cross-database records — cite these alongside the primers/knowledge data]:\n")
+    return head + "\n".join(lines) + "\n"
+
+
 # Flask 可能未安装
 try:
     from flask import Flask, request, jsonify, render_template_string, g, send_file
@@ -333,7 +491,10 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
     function addChatMsg(role, text) {
         var div = document.createElement('div');
         div.className = 'chat-msg ' + role;
-        div.textContent = text;
+        var safe = String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        var urlRe = new RegExp('(https?:)(//[^ <>]+)', 'g');
+        safe = safe.replace(urlRe, '<a href="$1$2" target="_blank" rel="noopener">$1$2</a>');
+        div.innerHTML = safe.split(String.fromCharCode(10)).join('<br>');
         document.getElementById('chat-msgs').appendChild(div);
         document.getElementById('chat-msgs').scrollTop = document.getElementById('chat-msgs').scrollHeight;
     }
@@ -2103,8 +2264,10 @@ def create_app():
         # silently degraded to "no database context" whenever species had been
         # migrated to canonical names.
         extra_info = ""
+        canon_list = []
         try:
             for canon, matched in _extract_species_from_message(user_msg):
+                canon_list.append(canon)
                 c.execute("SELECT species_name, genus, family, genome_length FROM taxonomy WHERE species_name = ? LIMIT 1", (canon,))
                 row = c.fetchone()
                 if row is None:
@@ -2139,20 +2302,27 @@ def create_app():
         except Exception as e:
             app.logger.warning("[api/chat] species lookup failed: %s", e)
 
+        # 跨库取数：媒介-宿主 + 症状照片 + 站内深链（解析到物种时附加）
+        xlib_info = ""
+        if canon_list:
+            try:
+                xlib_info = _cross_db_info(canon_list, request.host_url.rstrip('/'), zh=False)
+            except Exception as e:
+                app.logger.warning("[api/chat] cross-db lookup failed: %s", e)
+
         # Knowledge-base grounding for explorer / reference_db contexts: retrieval
         # only from the local RAG service (no extra LLM call, safe to fail).
         kb_info = ""
-        if context in ('explorer', 'reference_db'):
-            try:
-                rr = requests.get(KB_SEARCH_URL, params={"q": user_msg, "limit": 3}, timeout=8)
-                if rr.status_code == 200:
-                    items = (rr.json() or {}).get("results") or []
-                    if items:
-                        kb_info = "\n\n[Knowledge base fragments — ground virus-biology answers in these and cite the [SOURCE]]:\n"
-                        for k, it in enumerate(items, 1):
-                            kb_info += f"[{k}] ({it.get('source', '')}) {it.get('title', '')}: {(it.get('text') or '')[:600]}\n"
-            except Exception as e:
-                app.logger.warning("[api/chat] KB retrieval failed: %s", e)
+        try:
+            rr = requests.get(KB_SEARCH_URL, params={"q": user_msg, "limit": 3}, timeout=8)
+            if rr.status_code == 200:
+                items = (rr.json() or {}).get("results") or []
+                if items:
+                    kb_info = "\n\n[Knowledge base fragments — ground virus-biology answers in these and cite the [SOURCE]]:\n"
+                    for k, it in enumerate(items, 1):
+                        kb_info += f"[{k}] ({it.get('source', '')}) {it.get('title', '')}: {(it.get('text') or '')[:600]}\n"
+        except Exception as e:
+            app.logger.warning("[api/chat] KB retrieval failed: %s", e)
 
         if context == 'reference_db':
             db_context = f"""You are the AI assistant for the Plant Virus Reference Database. The full reference set holds ~199k plant-virus sequences (NCBI GenBank + RefSeq, deduplicated at 95% identity to ~8,465 non-redundant sequences) covering ~6,200 species per ICTV VMR.
@@ -2168,6 +2338,7 @@ You can help users with:
 Notes:
 - Species are stored under ICTV canonical binomials (e.g. "Tomato yellow leaf curl virus" → "Begomovirus coheni"); common names/acronyms in the user's message are resolved automatically and matching DB records are attached below when found.
 - If knowledge base fragments are attached below, ground biology answers in them and cite the sources; if they are insufficient, say so instead of fabricating.
+- Cross-database records (vector-host, symptom photos) and deep links may also be attached; use them the same way and end with the "Relevant pages:" section.
 - If users need specific sequences or primers, guide them to the Primers database (/primers/); for visual analysis, Explorer (/explorer/); for literature, Knowledge Base (/knowledge/).
 - Keep replies concise, under 200 words"""
         elif context == 'explorer':
@@ -2187,6 +2358,7 @@ You can help users with:
 Notes:
 - Data boundary: interactive queries (maps, BLAST/alignment, CP variation) run inside the Explorer pages themselves; you answer from the stats above and any knowledge base fragments attached below.
 - If knowledge base fragments are attached below, ground biology answers in them and cite the sources; otherwise say when you are not certain.
+- Cross-database records (vector-host, symptom photos) and deep links may also be attached; use them the same way and end with the "Relevant pages:" section.
 - If users need specific primer information, guide them to Primers (/primers/); for raw data tables, Reference DB (/reference/).
 - Keep replies concise, under 200 words"""
         else:
@@ -2205,6 +2377,7 @@ You can help users with:
 
 Notes:
 - Species are stored under ICTV canonical binomials (e.g. "Tomato yellow leaf curl virus" → "Begomovirus coheni"). When species records are attached after the user's message, answer from them directly and mention the canonical name used.
+- Vector-host relationships, symptom photos and deep links are also attached when a species is resolved: weave relevant ones into the answer and end with a "Relevant pages:" section quoting the provided URLs verbatim.
 
 Reply format requirements:
 1. No Markdown tables; use concise plain-text lists. One primer per line.
@@ -2220,7 +2393,7 @@ The database is accessed via SQLite with schema: taxonomy(species_name,genus,fam
         ]
         for item in conversation[-10:]:
             messages.append(item)
-        messages.append({"role": "user", "content": user_msg + extra_info + kb_info})
+        messages.append({"role": "user", "content": user_msg + extra_info + xlib_info + kb_info})
 
         try:
             resp = requests.post(api_url, json={
