@@ -1408,7 +1408,7 @@ def main():
             seg = desc.split("|segment=")[1].split('|')[0].strip() if "|segment=" in desc else ""
             records.append({'acc':rec.id, 'seq':str(rec.seq).upper(),
                 'family':family, 'genus':genus, 'segment':seg})
-        if records: species_map[sp_name] = records
+        if records: species_map.setdefault(sp_name, []).extend(records)  # 多节段分文件时合并，勿覆盖
 
     items = list(species_map.items())
     if args.species: items = [(n,r) for n,r in items if args.species.lower() in n.lower()]
