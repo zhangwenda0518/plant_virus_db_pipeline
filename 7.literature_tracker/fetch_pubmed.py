@@ -9,41 +9,132 @@ from urllib.parse import urlencode
 from xml.etree import ElementTree as ET
 
 BASE = Path(os.path.dirname(os.path.abspath(__file__)))
-DEFAULT_OUT = BASE / "papers.json"
 
-# Single source of truth: import categories from config.py
+# Single source of truth: import categories + master DB path from config.py
 sys.path.insert(0, str(BASE))
-from config import QUERY_CATEGORIES
+from config import QUERY_CATEGORIES, PAPERS_JSON
+
+DEFAULT_OUT = PAPERS_JSON  # aligned with config.py master DB: data/papers.json
+
+# Retry-exhausted query/batch failures are appended here (never a silent []).
+FAILURES_TSV = BASE / "data" / "fetch_failures.tsv"
+
+# ESearch will not return more ids than this per query term (retstart+retmax cap).
+HARD_MAX_RESULTS = 10000
 
 
-def esearch(query, max_results=50, days=90, api_key="", start_date=None, end_date=None):
-    """POST-based ESearch. If start_date/end_date given (YYYY-MM-DD), use them; else last `days`."""
+def _clean_cell(value, limit: int = 300) -> str:
+    s = str(value if value is not None else "")
+    for ch in ("\t", "\n", "\r"):
+        s = s.replace(ch, " ")
+    return s.strip()[:limit]
+
+
+def _log_fetch_failure(stage: str, query: str, reason: str):
+    """Append a fetch failure to data/fetch_failures.tsv instead of losing it."""
+    path = Path(FAILURES_TSV)
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        new_file = not path.exists()
+        with open(path, "a", encoding="utf-8", newline="") as f:
+            if new_file:
+                f.write("time\tstage\tquery\treason\n")
+            f.write(f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\t"
+                    f"{_clean_cell(stage, 40)}\t{_clean_cell(query, 300)}\t"
+                    f"{_clean_cell(reason, 300)}\n")
+        print(f"    [WARN] fetch failure logged to {path.name}: "
+              f"{stage} — {_clean_cell(reason, 120)}")
+    except Exception as e:
+        print(f"    [WARN] could not write {path}: {e}")
+
+
+def _date_window_clause(mindate: str, maxdate: str) -> str:
+    """(pdat OR edat) window written in PubMed query syntax.
+
+    `pdat` (publication date) alone misses records that only entered PubMed during
+    the window (ahead-of-print / late-indexed items), which is exactly the
+    incremental-fetch gap. `edat` is the Entrez date (when the record was added).
+    """
+    return f"({mindate}:{maxdate}[pdat] OR {mindate}:{maxdate}[edat])"
+
+
+def esearch(query, max_results=50, days=90, api_key="", start_date=None, end_date=None,
+            retstart=0):
+    """POST-based ESearch. If start_date/end_date given (YYYY-MM-DD), use them; else last `days`.
+
+    The window is applied as a (pdat OR edat) term — see `_date_window_clause`.
+    NOTE: datetime.now() uses the server's LOCAL timezone, so the window depends on
+    the host clock/TZ (a UTC-hosted cron can lag/lead the local day by up to 24h;
+    acceptable because the weekly run re-scans 7 days).
+    """
     if start_date:
         mindate = start_date.replace("-", "/")
+        # Default end date = server-local today (timezone-dependent, see docstring).
         maxdate = (end_date or datetime.now().strftime("%Y-%m-%d")).replace("-", "/")
     else:
+        # Server-local "now" (timezone-dependent, see docstring).
         mindate = (datetime.now() - timedelta(days=days)).strftime("%Y/%m/%d")
         maxdate = datetime.now().strftime("%Y/%m/%d")
-    params = {"db": "pubmed", "term": query, "retmax": max_results, "retmode": "xml",
-              "sort": "date", "mindate": mindate, "maxdate": maxdate, "datetype": "pdat"}
+    term = f"({query}) AND {_date_window_clause(mindate, maxdate)}"
+    params = {"db": "pubmed", "term": term, "retmax": max_results, "retstart": retstart,
+              "retmode": "xml", "sort": "date"}
     if api_key:
         params["api_key"] = api_key
     req = Request("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
                   data=urlencode(params).encode(),
                   headers={"User-Agent": "PlantVirusDB/1.0 (x@x.com)"})
+    last_err = "unknown error"
     for attempt in range(3):
         try:
             with urlopen(req, timeout=30) as resp:
                 tree = ET.parse(resp)
                 return [e.text for e in tree.findall(".//Id")], int(tree.findtext(".//Count") or 0)
         except Exception as e:
+            last_err = f"{type(e).__name__}: {e}"
             if attempt < 2:
                 time.sleep(2 ** attempt)
+    _log_fetch_failure("esearch", query, last_err)
     return [], 0
 
 
-def efetch(pmids, api_key=""):
-    """POST-based EFetch."""
+def esearch_paged(query, max_results=50, days=90, api_key="", start_date=None,
+                  end_date=None, hard_limit=HARD_MAX_RESULTS):
+    """ESearch with retstart pagination; returns (pmids, total_count).
+
+    A single ESearch returns at most `retmax` ids; without pagination everything
+    past the first page was silently dropped (historical logs: 104 papers lost).
+    Fetches up to min(count, hard_limit) ids, warning on the first page when
+    count > retmax.
+    """
+    ids, count = esearch(query, max_results=max_results, days=days, api_key=api_key,
+                         start_date=start_date, end_date=end_date, retstart=0)
+    if count > max_results:
+        print(f"    [page] {count} hits > retmax {max_results}; paging up to "
+              f"{min(count, hard_limit)} (hard cap {hard_limit})")
+    target = min(count, hard_limit) if count else len(ids)
+    fetched = list(ids)
+    seen = set(ids)
+    start = len(ids)
+    while len(fetched) < target and ids:
+        page, _ = esearch(query, max_results=max_results, days=days, api_key=api_key,
+                          start_date=start_date, end_date=end_date, retstart=start)
+        if not page:
+            break
+        for pmid in page:
+            if pmid not in seen:
+                seen.add(pmid)
+                fetched.append(pmid)
+        start += len(page)
+        time.sleep(0.5)  # NCBI rate limit between pages
+    if len(fetched) < target:
+        msg = f"pagination incomplete: {len(fetched)}/{target} ids (count={count})"
+        print(f"    [WARN] {msg}")
+        _log_fetch_failure("esearch_page", query, msg)
+    return fetched[:target], count
+
+
+def efetch(pmids, api_key="", context=""):
+    """POST-based EFetch. Retry exhaustion is logged (not silently swallowed)."""
     if not pmids:
         return []
     params = {"db": "pubmed", "id": ",".join(pmids), "retmode": "xml"}
@@ -52,11 +143,13 @@ def efetch(pmids, api_key=""):
     req = Request("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
                   data=urlencode(params).encode(),
                   headers={"User-Agent": "PlantVirusDB/1.0 (x@x.com)"})
+    last_err = "unknown error"
     for attempt in range(3):
         try:
             with urlopen(req, timeout=60) as resp:
                 tree = ET.parse(resp)
         except Exception as e:
+            last_err = f"{type(e).__name__}: {e}"
             if attempt < 2:
                 time.sleep(3 ** attempt)
             continue
@@ -100,6 +193,8 @@ def efetch(pmids, api_key=""):
             except Exception:
                 continue
         return articles
+    _log_fetch_failure("efetch", context or (",".join(pmids[:5]) + ("..." if len(pmids) > 5 else "")),
+                       last_err)
     return []
 
 
@@ -159,9 +254,9 @@ def main():
         print(f"Category: {cat_name} ({len(queries)} queries)")
         cat_pmids = set()
         for q in queries:
-            pmids, count = esearch(q, max_results=args.max_per_query, days=args.days,
-                                   api_key=args.api_key,
-                                   start_date=args.start_date, end_date=args.end_date)
+            pmids, count = esearch_paged(q, max_results=args.max_per_query, days=args.days,
+                                         api_key=args.api_key,
+                                         start_date=args.start_date, end_date=args.end_date)
             for pmid in pmids:
                 if pmid not in cat_pmids:
                     cat_pmids.add(pmid)
@@ -177,7 +272,8 @@ def main():
         if new_pmids:
             for i in range(0, len(new_pmids), 100):
                 batch = new_pmids[i:i+100]
-                articles = efetch(batch, api_key=args.api_key)
+                articles = efetch(batch, api_key=args.api_key,
+                                  context=f"{cat_name}: {new_pmids[0]}..{new_pmids[-1]}")
                 for art in articles:
                     art["categories"] = [all_pmids_category.get(art["pmid"], cat_name)]
                     new_articles.append(art)

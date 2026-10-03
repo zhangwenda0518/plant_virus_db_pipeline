@@ -33,9 +33,21 @@ def dedup_key(paper: dict) -> Optional[str]:
     return None
 
 
+def _is_blank(value) -> bool:
+    """True for values that carry no information (None, '', 0 — e.g. unknown year)."""
+    return value is None or value == "" or value == 0
+
+
 def merge_paper(existing: dict, new: dict) -> dict:
     """Merge new paper into existing, keeping richer data."""
     merged = dict(new)
+    # Identity/date fields: an existing non-empty value always wins. `merged` is
+    # seeded from `new`, so a re-fetch that lacks year/pub_date/added_date/
+    # first_author used to blank out the master record (audit D4).
+    for field in ("year", "pub_date", "added_date", "first_author"):
+        old_val = existing.get(field)
+        if not _is_blank(old_val):
+            merged[field] = old_val
     for field in ("abstract", "authors", "journal", "doi", "mesh_terms", "keywords"):
         new_val = new.get(field, "")
         old_val = existing.get(field, "")
@@ -59,4 +71,8 @@ def merge_paper(existing: dict, new: dict) -> dict:
             merged[ai_field] = existing[ai_field]
     if existing.get("ai_done") and not new.get("ai_done"):
         merged["ai_done"] = True
+    # Keep the last summarization failure marker: it is cleared only by a later
+    # successful summarize run (summarize_papers pops it), not by a re-fetch.
+    if existing.get("ai_error") and not new.get("ai_error"):
+        merged["ai_error"] = existing["ai_error"]
     return merged

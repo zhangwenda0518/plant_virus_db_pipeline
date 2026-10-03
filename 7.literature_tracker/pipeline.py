@@ -24,6 +24,7 @@ from config import (
 )
 from dedup import dedup_key, merge_paper
 from build_data import build
+from summarize_papers import select_pending_papers, is_pending_for_ai  # noqa: F401 (re-exported)
 
 
 # ── Fetch ──
@@ -153,7 +154,11 @@ def _run_fetch_preprints(days: int) -> list:
 def cmd_summarize(args):
     """Generate AI summaries."""
     from summarize_papers import summarize_papers
-    out_path = args.output or str(PAPERS_JSON)
+    _out = Path(args.output or PAPERS_JSON).resolve()
+    _base = Path(__file__).resolve().parent
+    if _base not in _out.parents and _out != PAPERS_JSON.resolve():
+        raise SystemExit("--output must stay inside the literature_tracker directory")
+    out_path = str(_out)
 
     if not args.input and not Path(args.input).exists() if args.input else not PAPERS_JSON.exists():
         print("No papers.json found. Run 'fetch' first.")
@@ -167,12 +172,30 @@ def cmd_summarize(args):
     if args.pmids:
         pmid_set = set(args.pmids)
         papers = [p for p in papers if p.get("pmid") in pmid_set]
-    if args.max_papers:
-        papers = sorted(papers, key=lambda x: x.get("year", 0) or 0, reverse=True)
-        papers = papers[:args.max_papers]
+    elif args.max_papers:
+        if args.force:
+            # Forced re-summarization: cap applies to the newest papers.
+            papers = sorted(papers, key=lambda x: (x.get("year", 0) or 0,
+                                                   x.get("pub_date", "") or ""),
+                            reverse=True)
+            papers = papers[:args.max_papers]
+        else:
+            # Pending-first: year-sorted truncation picked mostly ai_done papers.
+            papers = select_pending_papers(papers, limit=args.max_papers)
+            if not papers:
+                print("No pending papers (need: ai_done falsy + abstract + PMID) "
+                      "— nothing to summarize.")
 
     summarize_papers(papers, force=args.force)
-    data["papers"] = papers
+    # 合并回全量主库：`papers` 可能是过滤后的子集（pmids/max_papers），
+    # 直接整体回写会把 papers.json 截断成子集（周任务曾因此蚕食主库）。
+    if len(papers) != len(data.get("papers", [])):
+        def _key(p):
+            return p.get("pmid") or p.get("doi") or (p.get("title") or "").lower()
+        updated = {_key(p): p for p in papers if _key(p)}
+        data["papers"] = [updated.get(_key(p), p) for p in data.get("papers", [])]
+    else:
+        data["papers"] = papers
 
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -197,19 +220,35 @@ def cmd_auto(args):
     print(f"=== AUTO: fetch({days}d) + summarize + build ===\n")
 
     cmd_fetch(args)
+    # Ensure build args exist on auto namespace (defaults)
+    if not hasattr(args, 'no_daily'):
+        args.no_daily = False
+    if not hasattr(args, 'journal_filter'):
+        args.journal_filter = False
+    if not hasattr(args, 'ai_verified'):
+        args.ai_verified = False
     cmd_build(args)
 
-    # Summarize newly added papers
+    # Summarize newly added papers.
+    # Pending is selected HERE (ai_done falsy + abstract + PMID), and only the
+    # resulting count is passed down as the cap: previously the pending list was
+    # computed and then thrown away by cmd_summarize's "newest year" truncation
+    # over the whole master, so every weekly run summarized 0 papers (audit D4).
     if PAPERS_JSON.exists():
         with open(PAPERS_JSON, encoding="utf-8") as f:
             data = json.load(f)
-        pending = [p for p in data.get("papers", [])
-                   if not p.get("ai_done") and p.get("added_date")]
+        pending = select_pending_papers(data.get("papers", []))
         if pending:
-            print(f"\nSummarizing {len(pending)} new papers...")
+            print(f"\nSummarizing {len(pending)} pending papers (no AI summary yet)...")
             args.max_papers = len(pending)
+            args.output = None
+            args.input = None
+            args.pmids = None
+            args.force = False
             cmd_summarize(args)
             cmd_build(args)
+        else:
+            print("\nNo pending papers to summarize.")
 
     print(f"\nDone.")
 
@@ -364,7 +403,9 @@ Examples:
     p_summ.add_argument("--input", default=None)
     p_summ.add_argument("--output", default=None)
     p_summ.add_argument("--force", action="store_true")
-    p_summ.add_argument("--max-papers", type=int, default=None)
+    p_summ.add_argument("--max-papers", type=int, default=None,
+                        help="Cap the run at N pending papers (ai_done falsy + abstract + PMID); "
+                             "with --force, cap the newest N papers instead")
     p_summ.add_argument("--model", default=None)
     p_summ.add_argument("--pmids", nargs="+", default=None)
     p_summ.set_defaults(func=cmd_summarize)

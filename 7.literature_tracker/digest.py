@@ -43,13 +43,40 @@ def _top_papers(papers: list, n: int = 10) -> list:
     def score(p):
         lvl = {"high": 3, "medium": 2, "low": 1}.get(p.get("relevance_level", "low"), 1)
         jq = {"high": 3, "medium": 2, "other": 1}.get(p.get("journal_quality", "other"), 1)
-        return lvl * 10 + jq
+        has_virus = 50 if (p.get("virus_name") and p.get("virus_name") != "未提及") else 0
+        return lvl * 10 + jq + has_virus
     ranked = sorted(papers, key=score, reverse=True)[:n]
     fields = ["pmid", "doi", "title", "abstract", "journal", "year", "pub_date",
               "authors", "first_author", "categories",
               "virus_name", "taxonomy", "host_plant", "location", "results",
-              "relevance_level", "journal_quality", "source"]
+              "relevance_level", "journal_quality", "source",
+              "ai_done", "overview", "symptoms", "vector", "methods",
+              "discussion", "is_review", "transmission", "sample_date"]
     return [{k: p.get(k, "") for k in fields} for p in ranked]
+
+
+def _merge_index(index_path: Path, new_rows: list, key: str) -> list:
+    """Upsert `new_rows` into the existing index.json and write it back.
+
+    Rows from previous runs are preserved (a partial run must never truncate the
+    archive); this run's rows win on conflict. Returns the merged, sorted list.
+    """
+    merged = {}
+    if index_path.exists():
+        try:
+            with open(index_path, encoding="utf-8") as f:
+                for row in json.load(f):
+                    if isinstance(row, dict) and row.get(key):
+                        merged[row[key]] = row
+        except Exception as e:
+            print(f"  WARNING: could not read existing {index_path} ({e}); "
+                  f"it will be rebuilt from this run only")
+    for row in new_rows:
+        merged[row[key]] = row
+    out = sorted(merged.values(), key=lambda x: x.get(key, ""), reverse=True)
+    with open(index_path, "w", encoding="utf-8") as f:
+        json.dump(out, f, ensure_ascii=False, indent=2)
+    return out
 
 
 def build_weekly(weeks_back: int = 8, use_ai: bool = True, since: str = "2024-01-01"):
@@ -92,13 +119,18 @@ def build_weekly(weeks_back: int = 8, use_ai: bool = True, since: str = "2024-01
         target_weeks = all_weeks  # all weeks since cutoff (historical backfill)
 
     index = []
+    today = date.today()
     for wk in target_weeks:
         wp = by_week.get(wk, [])
         if not wp:
             continue
         year, wknum = int(wk[:4]), int(wk[6:])
-        wk_start = date.fromisocalendar(year, wknum, 1)
-        wk_end = date.fromisocalendar(year, wknum, 7)
+        # Skip weeks that haven't ended yet or are in the future
+        jan4 = date(year, 1, 4)
+        wk_start = jan4 - timedelta(days=jan4.isoweekday() - 1) + timedelta(weeks=wknum - 1)
+        wk_end = wk_start + timedelta(days=6)
+        if wk_end > today:
+            continue
 
         cat_counts = Counter()
         for p in wp:
@@ -128,9 +160,13 @@ def build_weekly(weeks_back: int = 8, use_ai: bool = True, since: str = "2024-01
         index.append({"week": wk, "start": digest["start"], "end": digest["end"],
                       "count": len(wp), "file": f"{wk}.json"})
 
-    with open(WEEKLY_DIR / "index.json", "w", encoding="utf-8") as f:
-        json.dump(index, f, ensure_ascii=False, indent=2)
-    print(f"Weekly: {len(index)} digests written to {WEEKLY_DIR}")
+    # Upsert this run's weeks into the existing index instead of overwriting it.
+    # An incremental run (--weeks-back 8, the weekly cron) used to rewrite
+    # index.json with only the weeks it processed, truncating the full weekly
+    # archive (140+ entries) down to ≤8 (audit D4, 2026-10-03).
+    index = _merge_index(WEEKLY_DIR / "index.json", index, key="week")
+    print(f"Weekly: {len(target_weeks)} weeks processed, index.json now has "
+          f"{len(index)} entries")
 
 
 def build_monthly(start: str = "2020-01", end: str = None, use_ai: bool = True):
@@ -189,9 +225,9 @@ def build_monthly(start: str = "2020-01", end: str = None, use_ai: bool = True):
         else:
             cur_m += 1
 
-    with open(MONTHLY_DIR / "index.json", "w", encoding="utf-8") as f:
-        json.dump(index, f, ensure_ascii=False, indent=2)
-    print(f"Monthly: {len(index)} digests written to {MONTHLY_DIR}")
+    # Same upsert rule as weekly: a partial month range must not truncate the archive.
+    index = _merge_index(MONTHLY_DIR / "index.json", index, key="month")
+    print(f"Monthly: {len(index)} digests in {MONTHLY_DIR}")
 
 
 def main():
