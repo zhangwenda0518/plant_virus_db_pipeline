@@ -2,8 +2,9 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Plant Virus DB — Help & Documentation</title>
+<title data-i18n="Plant Virus DB — Help & Documentation|植物病毒数据库 — 帮助与文档">Plant Virus DB — Help & Documentation</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;line-height:1.7}
@@ -32,26 +33,29 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
 <body>
 
 <nav>
-  <a href="/" class="brand" data-i18n="Plant Virus DB|植物病毒库">Plant Virus DB</a>
+  <a href="/" class="brand" data-i18n="Plant Virus DB|植物病毒数据库">Plant Virus DB</a>
   <span class="sep">|</span>
-  <a href="/reference/" data-i18n="Reference|参考库">Reference</a>
-  <a href="/primers/" data-i18n="Primers|引物">Primers</a>
-  <a href="/photos/" data-i18n="Photos|照片">Photos</a>
+  <a href="/reference/" data-i18n="Reference|参考数据库">Reference</a>
+  <a href="/photos/" data-i18n="Photos|症状照片">Photos</a>
+  <a href="/relations/" data-i18n="Relations|媒介-宿主关系">Relations</a>
+  <a href="/eve/" data-i18n="EVE|内源病毒元件">EVE</a>
   <a href="/vector/" data-i18n="Vector|媒介">Vector</a>
-  <a href="/te/" data-i18n="TE·EVE|转座子">TE·EVE</a>
   <a href="/genes/" data-i18n="Genes|基因">Genes</a>
+  <a href="/primers/" data-i18n="Primers|引物">Primers</a>
+  <a href="/onekp/" data-i18n="OneKP|1KP 病毒组">OneKP</a>
   <span class="sep">|</span>
-  <a href="/metabuli/" data-i18n="Metabuli|分类">Metabuli</a>
-  <a href="/explorer/" data-i18n="Explorer|浏览器">Explorer</a>
-  <a href="/pamirdb/" data-i18n="PV-miRNA|预测">PV-miRNA</a>
+  <a href="/explorer/" data-i18n="Explorer|病毒浏览器">Explorer</a>
+  <a href="/metabuli/" data-i18n="Metabuli|宏基因组分类">Metabuli</a>
+  <a href="/pamirdb/"  data-i18n="PV-miRNA|PV-miRNA 预测">PV-miRNA</a>
+  <a href="/phylo/" data-i18n="Phylo|进化关系">Phylo</a>
   <span class="sep">|</span>
-  <a href="/literature/" data-i18n="Literature|文献">Literature</a>
-  <a href="/knowledge/" data-i18n="Knowledge|知识">Knowledge</a>
-  <span class="spacer"></span>
+  <a href="/literature/" data-i18n="Literature|文献追踪">Literature</a>
+  <a href="/knowledge/" data-i18n="Knowledge|知识库问答">Knowledge</a>
+  <a href="/resources.html" data-i18n="Resources|资源">Resources</a>
   <a href="/help/" class="on" data-i18n="Help|帮助">Help</a>
-</nav>
-
-<div class="hero">
+  <span class="spacer"></span>
+  <span class="badge" id="nav-stats">Loading...</span>
+</nav><div class="hero">
   <h1>Help & Documentation</h1>
   <p>Plant Virus Database Platform user guides — how to use each module, what data is available, and common workflows.</p>
 </div>
@@ -63,54 +67,66 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
     <a class="card" href="/help/reference.html">
       <h3>Reference DB</h3>
       <div class="path">/reference/</div>
-      <p>Curated plant virus reference sequences from NCBI GenBank, cross-referenced with ICTV VMR MSL41. 199K sequences, 6,182 species.</p>
+      <p>Curated plant virus reference sequences from NCBI GenBank, cross-referenced with ICTV VMR MSL41. 12,159 reference sequences, 4,840 species.</p>
       <div class="topics"><span>search</span><span>download FASTA</span><span>segmented/non-segmented</span><span>genome visualization</span></div>
+    </a>
+    <a class="card" href="/help/photos.html">
+      <h3>Symptom Photos</h3>
+      <div class="path">/photos/</div>
+      <p>2,854 curated symptom photos from EPPO, DPV, books and research papers (DOI-linked, AI-screened). Filter by host plant, tissue type, symptom, and photo position.</p>
+      <div class="topics"><span>filter by host</span><span>tissue type</span><span>symptom type</span><span>multi-source</span></div>
+    </a>
+    <a class="card" href="/help/relations.html">
+      <h3>Virus&ndash;Vector&ndash;Host Relations</h3>
+      <div class="path">/relations/</div>
+      <p>Every relationship view in one place: host&ndash;virus association Sankey, virus&ndash;host network, vector&ndash;virus&ndash;host triplet network, and the vector &amp; evidence library. 14,791 pairs from 199,070 GenBank accessions, 1,806 vector records.</p>
+      <div class="topics"><span>Sankey</span><span>network graphs</span><span>drill-down</span><span>PNG/CSV export</span></div>
+    </a>
+    <a class="card" href="/help/eve.html">
+      <h3>Plant EVE Landscape</h3>
+      <div class="path">/eve/</div>
+      <p>Endogenous viral elements across 1,527 plant genomes and 284 host families &mdash; 150,136 decontaminated loci. Eight linked perspectives: virus taxa, host families, DNA/RNA duality, matrix, ancient infection, amplification, RT phylogeny, QC.</p>
+      <div class="topics"><span>8 perspectives</span><span>genome-type filter</span><span>RT phylogeny</span><span>cases &amp; QC</span></div>
+    </a>
+    <a class="card" href="/help/vector.html">
+      <h3>Vector&ndash;Host DB</h3>
+      <div class="path">/vector/</div>
+      <p>Insect vector and plant host interaction database. 1,806 virus-vector-host records with transmission mode and host range.</p>
+      <div class="topics"><span>vector taxonomy</span><span>transmission mode</span><span>host range</span></div>
+    </a>
+    <a class="card" href="/help/genes.html">
+      <h3>Resistance Genes & sRNAs</h3>
+      <div class="path">/genes/</div>
+      <p>RefPlantNLR 415 NLRs + 11,780 sRNA pathway genes + 3,996 UPS components + 83,166 miRNAs + 322K vsiRNAs + 59 antiviral NLR effectors.</p>
+      <div class="topics"><span>NLR browser</span><span>sRNA genes</span><span>miRNA</span><span>vsiRNA</span></div>
     </a>
     <a class="card" href="/help/primers.html">
       <h3>Primer Database</h3>
       <div class="path">/primers/</div>
-      <p>57,072 PCR/qPCR primer pairs for 4,789 plant virus species. Includes degenerate primers and whole-genome tiling designs.</p>
-      <div class="topics"><span>PCR primers</span><span>qPCR</span><span>degenerate</span><span>tiled amplicons</span><span>BLAST validation</span></div>
+      <p>103,642 designed PCR/qPCR primer pairs for 4,789 plant virus species. Includes degenerate primers and whole-genome tiling designs.</p>
+      <div class="topics"><span>PCR primers</span><span>qPCR</span><span>degenerate</span><span>tiled amplicons</span></div>
     </a>
-    <a class="card" href="/help/photos.html">
-      <h3>Symptom Gallery</h3>
-      <div class="path">/photos/</div>
-      <p>2,757 plant virus symptom photos from EPPO Global Database. Filter by host plant, tissue type, symptom, and photo position.</p>
-      <div class="topics"><span>filter by host</span><span>tissue type</span><span>symptom type</span></div>
-    </a>
-    <a class="card" href="/help/vector.html">
-      <h3>Vector-Host DB</h3>
-      <div class="path">/vector/</div>
-      <p>Insect vector and plant host interaction database. 1,806 virus-vector-host pairs with transmission mode, acquisition/inoculation periods.</p>
-      <div class="topics"><span>vector taxonomy</span><span>transmission mode</span><span>host range</span></div>
-    </a>
-    <a class="card" href="/help/te_eve.html">
-      <h3>TE & EVE</h3>
-      <div class="path">/te/</div>
-      <p>Plant transposable elements and endogenous viral elements from U-RVDB v32.0, clustered with MMseqs2 at 98% identity.</p>
-      <div class="topics"><span>transposons</span><span>EVEs</span><span>MMseqs2 clustering</span></div>
-    </a>
-    <a class="card" href="/help/genes.html">
-      <h3>Immune & sRNA Gene Atlas</h3>
-      <div class="path">/genes/</div>
-      <p>RefPlantNLR 415 NLRs + 11,780 sRNA pathway genes + 3,996 UPS components + 83,166 miRNAs + 322K vsiRNAs + 59 antiviral NLR effectors.</p>
-      <div class="topics"><span>NLR browser</span><span>sRNA genes</span><span>miRNA</span><span>vsiRNA</span></div>
+    <a class="card" href="/help/onekp.html">
+      <h3>1KP Virome</h3>
+      <div class="path">/onekp/</div>
+      <p>Virus detection across 1,341 plant transcriptomes from the OneKP project. 96 virus species (118 high-confidence detections) with interactive coverage and prevalence analysis.</p>
+      <div class="topics"><span>transcriptomes</span><span>coverage</span><span>prevalence</span></div>
     </a>
   </div>
 
   <div class="sec">🔬 Analysis Tools</div>
   <div class="grid">
+    <a class="card" href="/help/explorer.html">
+      <h3>Virus Explorer</h3>
+      <div class="path">/explorer/</div>
+      <p>Interactive Dash-based explorer with 7 linked panels: timeline, global map, genome viewer, taxonomy tree, and sequence alignment.</p>
+      <div class="topics"><span>timeline</span><span>world map</span><span>genome browser</span><span>taxonomy tree</span></div>
+    </a>
     <a class="card" href="/help/metabuli.html">
       <h3>Metabuli</h3>
       <div class="path">/metabuli/</div>
       <p>Metagenomic virus classifier. Upload FASTQ reads or assembled contigs, get taxonomic classification with Krona/Sankey visualization.</p>
       <div class="topics"><span>FASTQ upload</span><span>contig classification</span><span>8-rank taxonomy</span><span>Krona plot</span></div>
-    </a>
-    <a class="card" href="/help/explorer.html">
-      <h3>Virus Explorer</h3>
-      <div class="path">/explorer/</div>
-      <p>Interactive Dash-based explorer with 7 panels: timeline, global map, genome viewer, taxonomy tree, and sequence alignment.</p>
-      <div class="topics"><span>timeline</span><span>world map</span><span>genome browser</span><span>taxonomy tree</span></div>
     </a>
     <a class="card" href="/help/pamirdb.html">
       <h3>PV-miRNA (PAmiRDB)</h3>
@@ -118,21 +134,27 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
       <p>miRNA-virus target prediction workbench. 3-algorithm consensus (miRanda + psRNATarget + RNAhybrid). 402 plant species × 42 virus species.</p>
       <div class="topics"><span>Sankey diagram</span><span>network graph</span><span>position map</span><span>consensus tier</span></div>
     </a>
+    <a class="card" href="/help/phylo.html">
+      <h3>Virus Phylogeny</h3>
+      <div class="path">/phylo/ &middot; /phylo/molecular/</div>
+      <p>Two complementary views: the ICTV MSL41 taxonomy tree (48 families, 214 genera, 2,684 species) with an optional grey non-plant backbone, and 38 official ICTV molecular trees with branch lengths and support values.</p>
+      <div class="topics"><span>taxonomy tree</span><span>circular layout</span><span>molecular trees</span><span>support filter</span></div>
+    </a>
   </div>
 
-  <div class="sec">📡 Knowledge & Communication</div>
+  <div class="sec">💬 Knowledge & Support</div>
   <div class="grid">
     <a class="card" href="/help/literature.html">
       <h3>Literature Tracker</h3>
       <div class="path">/literature/</div>
-      <p>Automated PubMed monitoring — daily/weekly plant virus paper discovery, AI-generated Chinese summaries, 6,575 papers tracked.</p>
+      <p>Automated PubMed monitoring — daily/weekly plant virus paper discovery, AI-generated summaries, 33,000+ papers across 9 categories.</p>
       <div class="topics"><span>daily updates</span><span>AI summaries</span><span>category filter</span><span>search</span></div>
     </a>
     <a class="card" href="/help/knowledge.html">
       <h3>Knowledge RAG</h3>
       <div class="path">/knowledge/</div>
-      <p>DPV + viroidDB backed AI Q&A assistant. Ask plant virology questions in natural language, get referenced answers.</p>
-      <div class="topics"><span>natural language Q&A</span><span>DPV database</span><span>viroidDB</span><span>cited sources</span></div>
+      <p>DPV + ViroidDB backed AI Q&A assistant. Ask plant virology questions in natural language, get referenced answers.</p>
+      <div class="topics"><span>natural language Q&A</span><span>DPV database</span><span>ViroidDB</span><span>cited sources</span></div>
     </a>
     <a class="card" href="/resources.html">
       <h3>📑 Supplementary Resources</h3>
@@ -146,5 +168,12 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
 
 <footer data-i18n="Plant Virus Database Platform|植物病毒数据库平台">Plant Virus Database Platform · Help Documentation</footer>
 <script src="/i18n.js"></script>
+<script>
+fetch('/reference/data/site_stats.json').then(function(r){return r.json()}).then(function(d){
+  var el=document.getElementById('nav-stats');
+  if(el&&d.reference_records!=null&&d.papers_tracked!=null)
+    el.textContent=Number(d.reference_records).toLocaleString()+' refs · '+Number(d.papers_tracked).toLocaleString()+' papers';
+}).catch(function(){var el=document.getElementById('nav-stats');if(el)el.style.display='none';});
+</script>
 </body>
 </html>
