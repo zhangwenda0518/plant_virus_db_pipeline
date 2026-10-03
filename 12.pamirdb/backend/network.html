@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAmiRDB — miRNA ⇄ Viral Protein Interactions</title>
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f6fa; color: #2c3e50;
+  }
+  header {
+    background: linear-gradient(135deg, #1a5276 0%, #2c3e50 100%);
+    color: white; padding: 22px 40px; text-align: center;
+  }
+  header h1 { font-size: 1.5rem; font-weight: 700; }
+  header p  { font-size: 0.82rem; opacity: 0.8; margin-top: 4px; }
+  .stats-bar {
+    display: flex; justify-content: center; gap: 40px;
+    background: white; padding: 14px 20px;
+    border-bottom: 1px solid #e0e0e0; flex-wrap: wrap;
+  }
+  .stat { text-align: center; }
+  .stat .num { font-size: 1.4rem; font-weight: 800; color: #1a5276; }
+  .stat .lbl { font-size: 0.72rem; color: #7f8c8d; text-transform: uppercase; letter-spacing: 0.5px; }
+  .container { max-width: 1560px; margin: 0 auto; padding: 20px 16px; }
+  .chart-box {
+    background: white; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    margin-bottom: 24px; overflow: hidden;
+  }
+  .chart-box h2 {
+    font-size: 1rem; padding: 14px 22px;
+    border-bottom: 1px solid #eee; font-weight: 600;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .chart-box h2 .badge {
+    font-size: 0.68rem; background: #1a5276; color: #fff;
+    padding: 2px 10px; border-radius: 10px; font-weight: 500;
+  }
+  .chart-sankey  { width: 100%; height: 780px; }
+  .chart-chord   { width: 100%; height: 900px; }
+  .chart-matrix  { width: 100%; height: 600px; }
+  footer { text-align: center; padding: 18px; color: #95a5a6; font-size: 0.75rem; }
+  .legend-row {
+    display: flex; justify-content: center; gap: 26px;
+    padding: 6px 20px 14px; flex-wrap: wrap;
+  }
+  .legend-row .dot {
+    display: inline-block; width: 10px; height: 10px; border-radius: 3px;
+    margin-right: 5px; vertical-align: middle;
+  }
+  .legend-row span { font-size: 0.78rem; }
+  .tab-bar {
+    display: flex; gap: 0; padding: 0 22px;
+    border-bottom: 1px solid #eee;
+  }
+  .tab-bar button {
+    border: none; background: none; padding: 10px 18px;
+    font-size: 0.82rem; cursor: pointer; color: #888;
+    border-bottom: 2px solid transparent; transition: all 0.15s;
+  }
+  .tab-bar button.active {
+    color: #1a5276; border-bottom-color: #1a5276; font-weight: 600;
+  }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>PAmiRDB — miRNA ⇄ Viral Protein Interaction Network</h1>
+  <p>Each link = predicted targeting (psRNATarget + RNAhybrid + RNA22 + TAPIR consensus) · Hover for full sequence &amp; detail</p>
+</header>
+
+<div class="stats-bar">
+  <div class="stat"><div class="num" id="stat-mirnas">-</div><div class="lbl">Plant miRNAs</div></div>
+  <div class="stat"><div class="num" id="stat-proteins">-</div><div class="lbl">Viral Protein Targets</div></div>
+  <div class="stat"><div class="num" id="stat-links">-</div><div class="lbl">Interactions</div></div>
+  <div class="stat"><div class="num" id="stat-viruses">-</div><div class="lbl">Viruses</div></div>
+</div>
+
+<div class="container">
+
+  <!-- ═══ SANKEY ═══ -->
+  <div class="chart-box">
+    <h2><span class="badge">SANKEY</span> miRNA Sequence → Viral Protein @ Virus</h2>
+    <div id="sankey" class="chart-sankey"></div>
+    <div class="legend-row">
+      <span><span class="dot" style="background:#e74c3c;"></span>Intergenic</span>
+      <span><span class="dot" style="background:#3498db;"></span>V2 Movement Protein</span>
+      <span style="color:#ccc;">|</span>
+      <span><span class="dot" style="background:#f39c12;"></span>Geminiviridae</span>
+      <span><span class="dot" style="background:#2ecc71;"></span>Potyviridae</span>
+    </div>
+  </div>
+
+  <!-- ═══ 网络图 + MATRIX (tabbed) ═══ -->
+  <div class="chart-box">
+    <h2><span class="badge">GRAPH</span> miRNA ↔ Viral Protein connectivity</h2>
+    <div class="tab-bar">
+      <button class="active" onclick="switchTab('chord')">网络图</button>
+      <button onclick="switchTab('matrix')">Matrix / Heatmap</button>
+    </div>
+    <div id="panel-chord" class="tab-panel active">
+      <div id="chord" class="chart-chord"></div>
+    </div>
+    <div id="panel-matrix" class="tab-panel">
+      <div id="matrix" class="chart-matrix"></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>PAmiRDB · Top 80 miRNA-protein connections (from 11,006 live predictions) · psRNATarget + RNAhybrid + RNA22 + TAPIR</footer>
+
+<script>
+// ═══════════════ EMBEDDED DATA ═══════════════
+const RAW = [{"mirna_id": "ath-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "Soybean mosaic virus", "family": "potyviridae", "protein_virus": "Intergenic @ Soybean mosaic virus", "count": 1}, {"mirna_id": "ath-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "ath-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Arabidopsis thaliana", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "ath-miR159b", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUU", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "Soybean mosaic virus", "family": "potyviridae", "protein_virus": "Intergenic @ Soybean mosaic virus", "count": 1}, {"mirna_id": "ath-miR159b", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUU", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "ath-miR159b", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUU", "species": "Arabidopsis thaliana", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "ath-miR166a-5p", "mirna_seq": "GGAAUGUUGUCUGGCUCGAGG", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "Potato virus Y", "family": "potyviridae", "protein_virus": "Intergenic @ Potato virus Y", "count": 1}, {"mirna_id": "ath-miR166a-5p", "mirna_seq": "GGAAUGUUGUCUGGCUCGAGG", "species": "Arabidopsis thaliana", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "ath-miR168a-5p", "mirna_seq": "UCGCUUGGUGCAGAUCGGGAC", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "Mungbean yellow mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ Mungbean yellow mosaic virus", "count": 1}, {"mirna_id": "ath-miR170-5p", "mirna_seq": "UGAUUGAGCCGUGUCAAUAUC", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "Plum pox virus", "family": "potyviridae", "protein_virus": "Intergenic @ Plum pox virus", "count": 1}, {"mirna_id": "ath-miR170-5p", "mirna_seq": "UGAUUGAGCCGUGUCAAUAUC", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "ath-miR390a-5p", "mirna_seq": "AGCUCAGGAGGGAUAGCGCC", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "Intergenic @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "ath-miR393a-5p", "mirna_seq": "UCCAAAGGGAUCGCAUUGAUC", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}, {"mirna_id": "ath-miR393a-5p", "mirna_seq": "UCCAAAGGGAUCGCAUUGAUC", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "ath-miR394a", "mirna_seq": "UUGGCAUUCUGUCCACCUCC", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "Intergenic @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "ath-miR395a", "mirna_seq": "CUGAAGUGUUUGGGGGAACUC", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}, {"mirna_id": "ath-miR395a", "mirna_seq": "CUGAAGUGUUUGGGGGAACUC", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "Soybean mosaic virus", "family": "potyviridae", "protein_virus": "Intergenic @ Soybean mosaic virus", "count": 1}, {"mirna_id": "ath-miR395a", "mirna_seq": "CUGAAGUGUUUGGGGGAACUC", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "Intergenic @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "ath-miR397a", "mirna_seq": "UCAUUGAGUGCAGCGUUGAUG", "species": "Arabidopsis thaliana", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "ath-miR398a-5p", "mirna_seq": "GGGGCGAUCUGAGAACACACG", "species": "Arabidopsis thaliana", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "ath-miR399a", "mirna_seq": "UGCCAAAGGAGAAUUGCCCCG", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}, {"mirna_id": "ath-miR408-5p", "mirna_seq": "CGGGGAACAGGCAGAGCAUGG", "species": "Arabidopsis thaliana", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}, {"mirna_id": "gma-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Glycine max", "target_protein": "Intergenic", "virus_name": "Soybean mosaic virus", "family": "potyviridae", "protein_virus": "Intergenic @ Soybean mosaic virus", "count": 1}, {"mirna_id": "gma-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Glycine max", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "gma-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Glycine max", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "gma-miR168a", "mirna_seq": "UCGCUUGGUGCAGAUCGGGAC", "species": "Glycine max", "target_protein": "Intergenic", "virus_name": "Mungbean yellow mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ Mungbean yellow mosaic virus", "count": 1}, {"mirna_id": "gma-miR390a", "mirna_seq": "AGCUCAGGAGGGAUAGCGCC", "species": "Glycine max", "target_protein": "Intergenic", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "Intergenic @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "gma-miR393a", "mirna_seq": "UCCAAAGGGAUCGCAUUGAUC", "species": "Glycine max", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}, {"mirna_id": "gma-miR393a", "mirna_seq": "UCCAAAGGGAUCGCAUUGAUC", "species": "Glycine max", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "gma-miR397a", "mirna_seq": "UCAUUGAGUGCAGCGUUGAUG", "species": "Glycine max", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "gma-miR398a", "mirna_seq": "UGUGUUCUCAGGUCGCCCCUG", "species": "Glycine max", "target_protein": "Intergenic", "virus_name": "Potato virus Y", "family": "potyviridae", "protein_virus": "Intergenic @ Potato virus Y", "count": 1}, {"mirna_id": "gma-miR398a", "mirna_seq": "UGUGUUCUCAGGUCGCCCCUG", "species": "Glycine max", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "gma-miR398a", "mirna_seq": "UGUGUUCUCAGGUCGCCCCUG", "species": "Glycine max", "target_protein": "Intergenic", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "Intergenic @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "gma-miR399a", "mirna_seq": "UGCCAAAGGAGAAUUGCCCCG", "species": "Glycine max", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}, {"mirna_id": "osa-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUG", "species": "Oryza sativa", "target_protein": "Intergenic", "virus_name": "Soybean mosaic virus", "family": "potyviridae", "protein_virus": "Intergenic @ Soybean mosaic virus", "count": 1}, {"mirna_id": "osa-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUG", "species": "Oryza sativa", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "osa-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUG", "species": "Oryza sativa", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "osa-miR168a", "mirna_seq": "UCGCUUGGUGCAGAUCGGGAC", "species": "Oryza sativa", "target_protein": "Intergenic", "virus_name": "Mungbean yellow mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ Mungbean yellow mosaic virus", "count": 1}, {"mirna_id": "osa-miR390a", "mirna_seq": "AGCUCAGGAGGGAUAGCGCC", "species": "Oryza sativa", "target_protein": "Intergenic", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "Intergenic @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "osa-miR393a", "mirna_seq": "UCCAAAGGGAUCGCAUUGAUC", "species": "Oryza sativa", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}, {"mirna_id": "osa-miR393a", "mirna_seq": "UCCAAAGGGAUCGCAUUGAUC", "species": "Oryza sativa", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "osa-miR395a", "mirna_seq": "CUGAAGUGUUUGGGGGAACUC", "species": "Oryza sativa", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}, {"mirna_id": "osa-miR395a", "mirna_seq": "CUGAAGUGUUUGGGGGAACUC", "species": "Oryza sativa", "target_protein": "Intergenic", "virus_name": "Soybean mosaic virus", "family": "potyviridae", "protein_virus": "Intergenic @ Soybean mosaic virus", "count": 1}, {"mirna_id": "osa-miR395a", "mirna_seq": "CUGAAGUGUUUGGGGGAACUC", "species": "Oryza sativa", "target_protein": "Intergenic", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "Intergenic @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "osa-miR397a", "mirna_seq": "UCAUUGAGUGCAGCGUUGAUG", "species": "Oryza sativa", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "osa-miR398a", "mirna_seq": "UGUGUUCUCAGGUCGCCCCCG", "species": "Oryza sativa", "target_protein": "Intergenic", "virus_name": "Potato virus Y", "family": "potyviridae", "protein_virus": "Intergenic @ Potato virus Y", "count": 1}, {"mirna_id": "osa-miR398a", "mirna_seq": "UGUGUUCUCAGGUCGCCCCCG", "species": "Oryza sativa", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "osa-miR399a", "mirna_seq": "UGCCAAAGGAGAAUUGCCCCG", "species": "Oryza sativa", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}, {"mirna_id": "sbi-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Sorghum bicolor", "target_protein": "Intergenic", "virus_name": "Soybean mosaic virus", "family": "potyviridae", "protein_virus": "Intergenic @ Soybean mosaic virus", "count": 1}, {"mirna_id": "sbi-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Sorghum bicolor", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "sbi-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Sorghum bicolor", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "sbi-miR168a", "mirna_seq": "UCGCUUGGUGCAGAUCGGGAC", "species": "Sorghum bicolor", "target_protein": "Intergenic", "virus_name": "Mungbean yellow mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ Mungbean yellow mosaic virus", "count": 1}, {"mirna_id": "sbi-miR390a", "mirna_seq": "AGCUCAGGAGGGAUAGCGCC", "species": "Sorghum bicolor", "target_protein": "Intergenic", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "Intergenic @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "sbi-miR393a", "mirna_seq": "UCCAAAGGGAUCGCAUUGAUC", "species": "Sorghum bicolor", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}, {"mirna_id": "sbi-miR393a", "mirna_seq": "UCCAAAGGGAUCGCAUUGAUC", "species": "Sorghum bicolor", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "sbi-miR397a", "mirna_seq": "UCAUUGAGUGCAGCGUUGAUG", "species": "Sorghum bicolor", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "sbi-miR398a", "mirna_seq": "UGUGUUCUCAGGUCGCCCCCG", "species": "Sorghum bicolor", "target_protein": "Intergenic", "virus_name": "Potato virus Y", "family": "potyviridae", "protein_virus": "Intergenic @ Potato virus Y", "count": 1}, {"mirna_id": "sbi-miR398a", "mirna_seq": "UGUGUUCUCAGGUCGCCCCCG", "species": "Sorghum bicolor", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "sbi-miR399a", "mirna_seq": "UGCCAAAGGAGAAUUGCCCCG", "species": "Sorghum bicolor", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}, {"mirna_id": "sly-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Solanum lycopersicum", "target_protein": "Intergenic", "virus_name": "Soybean mosaic virus", "family": "potyviridae", "protein_virus": "Intergenic @ Soybean mosaic virus", "count": 1}, {"mirna_id": "sly-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Solanum lycopersicum", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "sly-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Solanum lycopersicum", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "sly-miR168a", "mirna_seq": "UCGCUUGGUGCAGAUCGGGAC", "species": "Solanum lycopersicum", "target_protein": "Intergenic", "virus_name": "Mungbean yellow mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ Mungbean yellow mosaic virus", "count": 1}, {"mirna_id": "sly-miR390a", "mirna_seq": "AGCUCAGGAGGGAUAGCGCC", "species": "Solanum lycopersicum", "target_protein": "Intergenic", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "Intergenic @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "sly-miR393a", "mirna_seq": "UCCAAAGGGAUCGCAUUGAUC", "species": "Solanum lycopersicum", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}, {"mirna_id": "sly-miR393a", "mirna_seq": "UCCAAAGGGAUCGCAUUGAUC", "species": "Solanum lycopersicum", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "sly-miR397a", "mirna_seq": "UCAUUGAGUGCAGCGUUGAUG", "species": "Solanum lycopersicum", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "sly-miR398a", "mirna_seq": "UGUGUUCUCAGGUCGCCCCCG", "species": "Solanum lycopersicum", "target_protein": "Intergenic", "virus_name": "Potato virus Y", "family": "potyviridae", "protein_virus": "Intergenic @ Potato virus Y", "count": 1}, {"mirna_id": "sly-miR398a", "mirna_seq": "UGUGUUCUCAGGUCGCCCCCG", "species": "Solanum lycopersicum", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "sly-miR399a", "mirna_seq": "UGCCAAAGGAGAAUUGCCCCG", "species": "Solanum lycopersicum", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}, {"mirna_id": "vvi-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Vitis vinifera", "target_protein": "Intergenic", "virus_name": "Soybean mosaic virus", "family": "potyviridae", "protein_virus": "Intergenic @ Soybean mosaic virus", "count": 1}, {"mirna_id": "vvi-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Vitis vinifera", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "vvi-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Vitis vinifera", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "vvi-miR168a", "mirna_seq": "UCGCUUGGUGCAGAUCGGGAC", "species": "Vitis vinifera", "target_protein": "Intergenic", "virus_name": "Mungbean yellow mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ Mungbean yellow mosaic virus", "count": 1}, {"mirna_id": "vvi-miR390a", "mirna_seq": "AGCUCAGGAGGGAUAGCGCC", "species": "Vitis vinifera", "target_protein": "Intergenic", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "Intergenic @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "vvi-miR393a", "mirna_seq": "UCCAAAGGGAUCGCAUUGAUC", "species": "Vitis vinifera", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}, {"mirna_id": "vvi-miR393a", "mirna_seq": "UCCAAAGGGAUCGCAUUGAUC", "species": "Vitis vinifera", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "vvi-miR397a", "mirna_seq": "UCAUUGAGUGCAGCGUUGAUG", "species": "Vitis vinifera", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "vvi-miR398a", "mirna_seq": "UGUGUUCUCAGGUCGCCCCCG", "species": "Vitis vinifera", "target_protein": "Intergenic", "virus_name": "Potato virus Y", "family": "potyviridae", "protein_virus": "Intergenic @ Potato virus Y", "count": 1}, {"mirna_id": "vvi-miR398a", "mirna_seq": "UGUGUUCUCAGGUCGCCCCCG", "species": "Vitis vinifera", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "vvi-miR399a", "mirna_seq": "UGCCAAAGGAGAAUUGCCCCG", "species": "Vitis vinifera", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}, {"mirna_id": "zma-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Zea mays", "target_protein": "Intergenic", "virus_name": "Soybean mosaic virus", "family": "potyviridae", "protein_virus": "Intergenic @ Soybean mosaic virus", "count": 1}, {"mirna_id": "zma-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Zea mays", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "zma-miR159a", "mirna_seq": "UUUGGAUUGAAGGGAGCUCUA", "species": "Zea mays", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "zma-miR168a", "mirna_seq": "UCGCUUGGUGCAGAUCGGGAC", "species": "Zea mays", "target_protein": "Intergenic", "virus_name": "Mungbean yellow mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ Mungbean yellow mosaic virus", "count": 1}, {"mirna_id": "zma-miR390a", "mirna_seq": "AGCUCAGGAGGGAUAGCGCC", "species": "Zea mays", "target_protein": "Intergenic", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "Intergenic @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "zma-miR393a", "mirna_seq": "UCCAAAGGGAUCGCAUUGAUC", "species": "Zea mays", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}, {"mirna_id": "zma-miR393a", "mirna_seq": "UCCAAAGGGAUCGCAUUGAUC", "species": "Zea mays", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "zma-miR397a", "mirna_seq": "UCAUUGAGUGCAGCGUUGAUG", "species": "Zea mays", "target_protein": "V2:Movement protein (MP)", "virus_name": "Tomato yellow leaf curl virus - Iran", "family": "geminiviridae", "protein_virus": "V2:Movement protein (MP) @ Tomato yellow leaf curl virus - Iran", "count": 1}, {"mirna_id": "zma-miR398a", "mirna_seq": "UGUGUUCUCAGGUCGCCCCCG", "species": "Zea mays", "target_protein": "Intergenic", "virus_name": "Potato virus Y", "family": "potyviridae", "protein_virus": "Intergenic @ Potato virus Y", "count": 1}, {"mirna_id": "zma-miR398a", "mirna_seq": "UGUGUUCUCAGGUCGCCCCCG", "species": "Zea mays", "target_protein": "Intergenic", "virus_name": "Tobacco etch virus", "family": "potyviridae", "protein_virus": "Intergenic @ Tobacco etch virus", "count": 1}, {"mirna_id": "zma-miR399a", "mirna_seq": "UGCCAAAGGAGAAUUGCCCCG", "species": "Zea mays", "target_protein": "Intergenic", "virus_name": "African cassava mosaic virus", "family": "geminiviridae", "protein_virus": "Intergenic @ African cassava mosaic virus", "count": 1}];
+
+// Build maps
+const mirnaMap = new Map();
+const proteinMap = new Map();
+const links = [];
+for (const d of RAW) {
+  if (!mirnaMap.has(d.mirna_id)) {
+    mirnaMap.set(d.mirna_id, { seq: d.mirna_seq, species: d.species });
+  }
+  if (!proteinMap.has(d.protein_virus)) {
+    proteinMap.set(d.protein_virus, {
+      protein: d.target_protein, virus: d.virus_name, family: d.family
+    });
+  }
+  links.push({ source: d.mirna_id, target: d.protein_virus, value: d.count });
+}
+
+document.getElementById('stat-mirnas').textContent  = mirnaMap.size;
+document.getElementById('stat-proteins').textContent = proteinMap.size;
+document.getElementById('stat-links').textContent    = links.length;
+document.getElementById('stat-viruses').textContent  = new Set(RAW.map(d=>d.virus_name)).size;
+
+// Sort miRNAs by species, proteins by family+name
+const mirnaIds = [...mirnaMap.keys()].sort((a,b) => {
+  const sa = mirnaMap.get(a).species, sb = mirnaMap.get(b).species;
+  if (sa !== sb) return sa.localeCompare(sb);
+  return a.localeCompare(b);
+});
+const proteinLabels = [...proteinMap.keys()].sort((a,b) => {
+  const fa = proteinMap.get(a).family, fb = proteinMap.get(b).family;
+  if (fa !== fb) return fa.localeCompare(fb);
+  return a.localeCompare(b);
+});
+
+function shortProtein(label) {
+  const parts = label.split(' @ ');
+  const prot = parts[0], virus = parts[1] || '';
+  const vs = virus
+    .replace('Tomato yellow leaf curl virus - Iran','TYLCV-IR')
+    .replace('Tobacco etch virus','TEV')
+    .replace('Soybean mosaic virus','SMV')
+    .replace('Potato virus Y','PVY')
+    .replace('Mungbean yellow mosaic virus','MYMV')
+    .replace('African cassava mosaic virus','ACMV')
+    .replace('Plum pox virus','PPV');
+  return prot.replace('V2:Movement protein (MP)','V2(MP)') + ' @ ' + vs;
+}
+
+const SPC = {
+  'Arabidopsis thaliana':'#2ecc71','Oryza sativa':'#1abc9c','Glycine max':'#27ae60',
+  'Sorghum bicolor':'#16a085','Solanum lycopersicum':'#e74c3c','Vitis vinifera':'#9b59b6',
+  'Zea mays':'#f39c12',
+};
+function cSpecies(sp) { return SPC[sp] || '#7f8c8d'; }
+function cProtein(prot) { return prot.includes('V2')||prot.includes('Movement')?'#3498db':'#e74c3c'; }
+function cFamily(fam) { return fam==='geminiviridae'?'#f39c12':fam==='potyviridae'?'#2ecc71':'#95a5a6'; }
+
+// ═══ SANKEY ═══
+(function(){
+  const nodes=[], idx=new Map();
+  for (const m of mirnaIds) {
+    idx.set(m, nodes.length);
+    const i=mirnaMap.get(m);
+    nodes.push({name:m, itemStyle:{color:cSpecies(i.species)},
+      detail:'Species: '+i.species+'\nSeq: '+i.seq});
+  }
+  for (const p of proteinLabels) {
+    idx.set(p, nodes.length);
+    const i=proteinMap.get(p);
+    nodes.push({name:shortProtein(p), itemStyle:{color:cProtein(i.protein)},
+      detail:'Full: '+p+'\nFamily: '+i.family});
+  }
+  const c=echarts.init(document.getElementById('sankey'));
+  c.setOption({
+    tooltip:{trigger:'item',formatter:function(p){
+      if(p.dataType==='edge'){
+        const s=nodes[p.data.source],t=nodes[p.data.target];
+        return '<b>'+s.name+'</b> → <b>'+t.name+'</b><br/>'+(s.detail||'')+'<br/>'+(t.detail||'');
+      }
+      return '<b>'+p.name+'</b><br/>'+(p.data.detail||'');
+    }},
+    series:[{type:'sankey',layout:'none',emphasis:{focus:'adjacency'},
+      nodeAlign:'left',layoutIterations:32,data:nodes,
+      links:links.map(l=>({source:idx.get(l.source),target:idx.get(l.target),value:l.value})),
+      label:{fontSize:9,color:'#333'},lineStyle:{color:'source',curveness:0.5,opacity:0.35}}]
+  });
+  window.addEventListener('resize',()=>c.resize());
+})();
+
+// ═══ 网络图 (graph force layout) ═══
+(function(){
+  // Nodes: miRNAs first, then proteins — all placed on a circle
+  var graphNodes = [];
+  for (var _i=0; _i<mirnaIds.length; _i++) {
+    var m=mirnaIds[_i], info=mirnaMap.get(m);
+    graphNodes.push({
+      id: m, name: m, symbolSize: 4, category: 0,
+      itemStyle: { color: cSpecies(info.species) },
+      _full: 'Species: '+info.species+'\nSeq: '+info.seq
+    });
+  }
+  for (var _j=0; _j<proteinLabels.length; _j++) {
+    var p=proteinLabels[_j], label=shortProtein(p), info=proteinMap.get(p);
+    graphNodes.push({
+      id: label, name: label, symbolSize: 10, category: 1,
+      itemStyle: { color: cFamily(info.family) },
+      _full: 'Full: '+p+'\nFamily: '+info.family+'\nType: '+info.protein
+    });
+  }
+
+  // Edges
+  var graphLinks = links.map(function(l) {
+    return {
+      source: l.source,
+      target: shortProtein(l.target),
+      lineStyle: { color: cSpecies(mirnaMap.get(l.source).species), opacity: 0.35, width: 0.8 }
+    };
+  });
+
+  var c = echarts.init(document.getElementById('chord'));
+  c.setOption({
+    tooltip: {
+      formatter: function(p) {
+        if (p.dataType === 'node') return '<b>'+p.name+'</b><br/>'+(p.data._full||'');
+        return '<b>'+p.data.source+'</b> \u21C4 <b>'+p.data.target+'</b>';
+      }
+    },
+    legend: [
+      { data: [{name:'miRNA (plant)',icon:'circle',itemStyle:{color:'#27ae60'}}],
+        orient:'vertical',left:10,top:20,textStyle:{fontSize:11} },
+      { data: [{name:'Viral Protein',icon:'circle',itemStyle:{color:'#e74c3c'}}],
+        orient:'vertical',left:10,top:55,textStyle:{fontSize:11} }
+    ],
+    series: [{
+      type: 'graph',
+      layout: 'force',
+      roam: true,
+      force: { repulsion: 200, edgeLength: [80, 200], gravity: 0.05,
+               layoutAnimation: true },
+      data: graphNodes,
+      links: graphLinks,
+      categories: [
+        { name: 'miRNA (plant)', itemStyle: { color: '#27ae60' } },
+        { name: 'Viral Protein',   itemStyle: { color: '#e74c3c' } }
+      ],
+      label: { show: true, fontSize: 7, position: 'right', formatter: '{b}' },
+      lineStyle: { opacity: 0.3, curveness: 0.2 },
+      emphasis: { focus: 'adjacency',
+        lineStyle: { opacity: 0.8, width: 2.5 },
+        itemStyle: { borderWidth: 2, borderColor: '#333' }
+      }
+    }]
+  });
+  window.addEventListener('resize', function() { c.resize(); });
+})();
+
+// ═══ MATRIX HEATMAP ═══
+(function(){
+  const mirnaLabels = mirnaIds;
+  const protLabels  = proteinLabels.map(shortProtein);
+  const data=[];
+  const linkMap=new Map();
+  for (const l of links) linkMap.set(l.source+'|||'+l.target, l.value);
+
+  for (let i=0;i<mirnaLabels.length;i++) {
+    for (let j=0;j<protLabels.length;j++) {
+      const v=linkMap.get(mirnaLabels[i]+'|||'+proteinLabels[j])||0;
+      if (v>0) data.push([j,i,v]); // x=protein, y=miRNA
+    }
+  }
+
+  const c=echarts.init(document.getElementById('matrix'));
+  c.setOption({
+    tooltip:{formatter:function(p){
+      return '<b>'+mirnaLabels[p.data[1]]+'</b> ⇄ <b>'+protLabels[p.data[0]]+'</b><br/>Interactions: '+p.data[2];
+    }},
+    grid:{left:160,right:40,top:10,bottom:100},
+    xAxis:{type:'category',data:protLabels,axisLabel:{rotate:30,fontSize:10,interval:0},position:'bottom'},
+    yAxis:{type:'category',data:mirnaLabels,axisLabel:{fontSize:8,interval:0},
+      inverse:true},
+    visualMap:{min:0,max:1,calculable:false,
+      inRange:{color:['#f5f5f5','#ff7675']},show:false},
+    series:[{type:'heatmap',data:data,
+      label:{show:true,fontSize:10,fontWeight:'bold',color:'#2c3e50'},
+      emphasis:{itemStyle:{shadowBlur:8,shadowColor:'rgba(0,0,0,0.3)'}}}]
+  });
+  window.addEventListener('resize',()=>c.resize());
+})();
+
+// ═══ Tab switch ═══
+function switchTab(name) {
+  document.querySelectorAll('.tab-bar button').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('panel-'+name).classList.add('active');
+  if (name==='chord') echarts.getInstanceByDom(document.getElementById('chord')).resize();
+  if (name==='matrix') echarts.getInstanceByDom(document.getElementById('matrix')).resize();
+}
+</script>
+</body>
+</html>

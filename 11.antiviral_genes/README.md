@@ -15,8 +15,8 @@ flowchart TB
         NCBI_NLR["NCBI Gene/Protein<br/>NLR 免疫受体"]
         NCBI_SRNA["NCBI Gene/Protein<br/>sRNA 通路<br/>AGO/DCL/RDR/DRB/SGS3/HEN1<br/>11,780 基因"]
         NCBI_UPS["NCBI Gene/Protein<br/>UPS 系统<br/>E1/E2/E3/F-box/BTB/Cullin<br/>3,996 基因"]
-        MIRBASE["miRBase + PlantRG<br/>83,166 miRNA 序列<br/>837 物种"]
-        PVSIRNA["PVsiRNAdb<br/>322,214 vsiRNA 条目<br/>12 种植物"]
+        MIRBASE["miRBase + PlantRG + NCBI<br/>83,166 miRNA 序列<br/>799 物种"]
+        PVSIRNA["PVsiRNAdb<br/>322,214 vsiRNA 条目<br/>12 种植物 / 20 种病毒"]
         LIT["文献验证<br/>59 条抗病毒 NLR 效应子"]
     end
 
@@ -49,10 +49,14 @@ flowchart TB
 | NLR 免疫受体 | 415 | RefPlantNLR | 73 物种, 含结构域注释 |
 | sRNA 通路基因 | 11,780 | NCBI | AGO/DCL/RDR/DRB/SGS3/HEN1 |
 | UPS 泛素系统基因 | 3,996 | NCBI | E1/E2/E3/F-box/BTB/Cullin/Proteasome |
-| miRNA 序列 | 83,166 | miRBase + PlantRG + NCBI | 837 物种 |
-| vsiRNA 记录 | 322,214 | PVsiRNAdb | 12 种植物, 33.6 MB |
+| miRNA 序列 | 83,166 | miRBase + PlantRG + NCBI | 799 物种（miRNA_final_stats.json 口径：种内去重、跨物种保留） |
+| vsiRNA 记录 | 322,214 | PVsiRNAdb | 12 种植物 / 19 个病毒条目（GfkV+GRSPaV、MCMV+SCMV 两个混合条目拆分为 20 种病毒）, 33.1 MB |
 | 抗病毒 NLR 效应子 | 59 | 文献验证 | 人工整理 |
 | **合计** | **16,191** | — | 基因总数 |
+
+> 注：sRNA/UPS 基因表中的 `validated` 字段为 **NCBI 收录标记（V）**（RefSeq/validated 状态），
+> 不代表实验验证；仅 RefPlantNLR 的 415 条 NLR 为人工校验集。别名/条目数随数据文件实时统计
+> （vsiRNA 行数、物种数由 `data/pvsirnadb_vsirna.tsv` 实测，miRNA 由 `data/miRNA_final_stats.json` 提供）。
 
 ---
 
@@ -96,7 +100,7 @@ python fix_nlr_ids.py              # NLR 基因 ID 规范化 + 物种映射
 python fix_nlr_species.py          # 物种名清理
 python build_references.py         # → gene_references.json
 python build_ups_references.py     # → ups_references.json
-python scrape_pvsirnadb.py         # PVsiRNAdb 爬取 (Playwright) → 33.6 MB
+python scrape_pvsirnadb.py         # PVsiRNAdb 爬取 (Playwright, 按 ID 去重+跳过占位行) → 33.1 MB
 python count_mirna.py              # miRNA 序列计数 + 种内去重 → 83K seqs
 ```
 
@@ -119,7 +123,7 @@ python build_gene_browser.py       # → gene_browser.html + data/gene_data.js (
 | `refplant_domains.json` | — | 每个基因 GFF3 结构域注释 |
 | `antiviral_nlr_validated.json` | — | 59 条验证的抗病毒 NLR |
 | `miRNA_all_combined.fa` | 4.9 MB | 合并 miRNA 序列 |
-| `pvsirnadb_vsirna.tsv` | 33.6 MB | 每种病毒的 siRNA 记录 |
+| `pvsirnadb_vsirna.tsv` | 33.1 MB | 每种病毒的 siRNA 记录（已去重复/垃圾行，322,214 行） |
 | `plant_UPS_proteins.fasta` | ~2 MB | 全部 UPS 蛋白序列 |
 | `gene_references.json` | — | 验证参考文献 |
 | `ups_references.json` | — | UPS 家族参考文献 |

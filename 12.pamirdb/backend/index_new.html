@@ -1,0 +1,2234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PAmiRDB — Plant Antiviral miRNA Prediction Workbench</title>
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+/* ECharts containers */
+.echart-box{width:100%;height:280px;overflow:hidden}
+.echart-box.small{height:280px}
+:root{
+  --green:#2c6e49;--green-l:#d4edda;--green-d:#1a4a30;
+  --blue:#3498db;--blue-l:#dbeeff;
+  --orange:#e67e22;--red:#e74c3c;--purple:#8e44ad;
+  --gray:#7f8c8d;--bg:#f0f2f5;--card:#fff;--border:#e0e0e0;
+  --text:#2c3e50;--r:8px;--sh:0 1px 4px rgba(0,0,0,.07)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);font-size:13px}
+
+/* NAV */
+nav{background:linear-gradient(135deg,#1a3a5c,var(--green));color:#fff;height:46px;display:flex;align-items:center;padding:0 16px;gap:4px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+nav .brand{font-weight:700;font-size:15px;margin-right:12px;letter-spacing:.5px}
+nav .brand span{color:#7dcea0}
+nav a{color:rgba(255,255,255,.75);text-decoration:none;padding:5px 11px;border-radius:4px;font-size:12px;transition:.15s}
+nav a:hover,nav a.on{color:#fff;background:rgba(255,255,255,.15)}
+nav .sep{color:rgba(255,255,255,.25);margin:0 2px;font-size:14px;user-select:none}
+nav .spacer{flex:1}
+nav .badge{background:rgba(255,255,255,.15);color:#fff;font-size:10px;padding:2px 7px;border-radius:10px}
+
+/* LAYOUT */
+.workbench{display:flex;height:calc(100vh - 46px);overflow:hidden}
+.panel-l{width:380px;min-width:300px;flex-shrink:0;display:flex;flex-direction:column;background:#fff;border-right:1px solid var(--border);overflow:hidden}
+.panel-l-scroll{flex:1;overflow-y:auto;padding:14px}
+.panel-r{flex:1;overflow-y:auto;background:var(--bg);padding:16px}
+
+/* CARD */
+.card{background:var(--card);border-radius:var(--r);padding:14px;margin-bottom:10px;box-shadow:var(--sh);border:1px solid var(--border)}
+.card-head{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #f0f0f0}
+.card-head h3{font-size:12px;font-weight:700;flex:1}
+.step-badge{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0}
+.s1{background:var(--green)} .s2{background:var(--blue)} .s3{background:var(--orange)}
+
+/* FIELDS */
+.row{margin-bottom:8px}
+label.lbl{display:block;font-size:10px;font-weight:600;color:#555;margin-bottom:3px;text-transform:uppercase;letter-spacing:.3px}
+select,input,textarea{width:100%;padding:7px 9px;border:1px solid #d0d5dd;border-radius:5px;font-size:12px;font-family:inherit;background:#fff;transition:.15s}
+select:focus,input:focus,textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(44,110,73,.1)}
+textarea{font-family:Consolas,monospace;resize:vertical;min-height:46px}
+.hint{font-size:10px;color:var(--gray);margin-top:2px}
+.seq-meta{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap}
+.seq-meta span{font-size:10px;padding:2px 6px;background:#f0f4f0;border-radius:3px;color:var(--green)}
+
+/* MODE TOGGLE */
+.mode-row{display:flex;border-radius:5px;overflow:hidden;border:1px solid #d0d5dd;margin-bottom:8px}
+.mode-btn{flex:1;text-align:center;padding:5px;font-size:11px;cursor:pointer;background:#f8f9fa;border:none;transition:.15s;font-weight:500}
+.mode-btn.on{background:var(--blue);color:#fff}
+.mode-btn.on.green{background:var(--green)}
+
+/* MIRNA LIST */
+.mirna-list{display:flex;flex-direction:column;gap:5px;max-height:200px;overflow-y:auto;margin-top:6px}
+.mirna-item{display:flex;align-items:center;gap:6px;padding:5px 8px;border:1px solid var(--border);border-radius:5px;background:#f9fafb;font-size:11px}
+.mirna-item .seq{font-family:Consolas,monospace;color:#444;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mirna-item .rm{cursor:pointer;color:var(--red);font-size:14px;padding:0 3px;line-height:1;border:none;background:none}
+.mirna-item .lbl2{font-weight:600;color:var(--green);min-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.add-btn{display:flex;align-items:center;justify-content:center;gap:4px;width:100%;padding:6px;border:1px dashed var(--green);border-radius:5px;color:var(--green);background:none;cursor:pointer;font-size:11px;font-weight:600;transition:.15s;margin-top:4px}
+.add-btn:hover{background:var(--green-l)}
+
+/* ALGORITHM CHECKBOXES */
+.algo-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:4px}
+.algo-chk{display:flex;align-items:center;gap:5px;padding:5px 8px;border:1px solid var(--border);border-radius:5px;cursor:pointer;font-size:11px;transition:.15s;user-select:none}
+.algo-chk:hover{background:#f0f4f0}
+.algo-chk input{accent-color:var(--green);width:13px;height:13px;flex-shrink:0}
+.algo-chk.locked{opacity:.6;cursor:default}
+.algo-tag{font-size:9px;padding:1px 5px;border-radius:8px;margin-left:auto;font-weight:600}
+.tag-plant{background:#d4edda;color:#2c6e49}
+.tag-energy{background:#cce5ff;color:#004085}
+.tag-ann{background:#fff3cd;color:#856404}
+
+/* TIER FILTER */
+.tier-row{display:flex;gap:4px;margin-bottom:8px}
+.tier-btn{flex:1;padding:5px;font-size:11px;border-radius:5px;border:1px solid var(--border);background:#f8f9fa;cursor:pointer;font-weight:600;text-align:center;transition:.15s}
+.tier-btn.on.strict{background:#e74c3c;color:#fff;border-color:#e74c3c}
+.tier-btn.on.moderate{background:#e67e22;color:#fff;border-color:#e67e22}
+.tier-btn.on.loose{background:#2c6e49;color:#fff;border-color:#2c6e49}
+.tier-btn.on.any{background:#555;color:#fff;border-color:#555}
+
+/* THRESHOLD CONTROLS */
+.thresh-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.thresh-item label{font-size:10px;font-weight:600;color:#555;display:block;margin-bottom:2px}
+.thresh-item input{padding:5px 8px;font-size:11px}
+
+/* RUN BUTTON */
+.run-bar{padding:10px 14px;background:#fff;border-top:1px solid var(--border)}
+.btn-run{display:block;width:100%;padding:12px;font-size:14px;font-weight:700;background:linear-gradient(135deg,var(--green),#1abc9c);color:#fff;border:none;border-radius:var(--r);cursor:pointer;transition:.2s;letter-spacing:.3px}
+.btn-run:disabled{opacity:.3;cursor:not-allowed}
+.btn-run:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 12px rgba(44,110,73,.3)}
+.run-note{font-size:10px;color:var(--gray);text-align:center;margin-top:5px}
+
+/* RESULT PANEL */
+.r-empty{text-align:center;padding:40px 20px;color:var(--gray)}
+.r-empty .icon{font-size:52px;margin-bottom:12px}
+
+/* EXAMPLE CARDS */
+.ex-card{background:#f0f7f0;border:1px solid #c8ddc8;border-radius:8px;padding:10px 14px;cursor:pointer;min-width:160px;text-align:left;transition:all .15s}
+.ex-card:hover{background:#e0f2e0;border-color:var(--green);box-shadow:0 2px 6px rgba(44,110,73,.15)}
+.ex-title{font-weight:700;font-size:12px;color:var(--green);margin-bottom:2px}
+.ex-sub{font-size:10px;color:#888}
+
+/* BATCH TABLE */
+.batch-bar{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.batch-bar h2{font-size:14px;font-weight:700;flex:1}
+.f-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.f-sel{padding:5px 8px;border:1px solid var(--border);border-radius:5px;font-size:11px;background:#fff}
+.f-inp{padding:5px 8px;border:1px solid var(--border);border-radius:5px;font-size:11px;width:90px}
+.f-btn{padding:5px 10px;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer;border:none;background:var(--green);color:#fff}
+
+.r-table{width:100%;border-collapse:collapse;font-size:11px;background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);border:1px solid var(--border)}
+.r-table th{background:#f5f7fa;padding:8px 10px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:#555;border-bottom:2px solid var(--border);cursor:pointer;white-space:nowrap}
+.r-table th:hover{background:#eef0f4}
+.r-table th .sort-icon{color:#bbb;margin-left:3px}
+.r-table td{padding:7px 10px;border-bottom:1px solid #f5f5f5;vertical-align:middle}
+.r-table tr:last-child td{border-bottom:none}
+.r-table tr:hover td{background:#f9fcff}
+.r-table tr.active td{background:#e8f4ea}
+.badge-c{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:700;white-space:nowrap}
+.c-none{background:#eee;color:#888}
+.c-low{background:#fff3cd;color:#856404}
+.c-medium{background:#d1ecf1;color:#0c5460}
+.c-high{background:#d4edda;color:#155724}
+.c-vhigh{background:#1a4a30;color:#fff}
+.aln-mini{font-family:Consolas,monospace;font-size:10px;color:#555;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer}
+.seed-ok{color:var(--green);font-weight:700}
+.seed-no{color:var(--red)}
+.stat-chip{text-align:center;padding:8px 14px;background:#f8f9fa;border:1px solid var(--border);border-radius:var(--r)}
+.stat-chip .sc-v{font-size:18px;font-weight:700;color:var(--green);display:block}
+.stat-chip .sc-l{font-size:9px;color:var(--gray)}
+
+/* DETAIL PANEL */
+.detail-card{background:#fff;border-radius:var(--r);padding:16px;box-shadow:var(--sh);border:1px solid var(--border);margin-top:12px}
+.score-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-bottom:14px}
+.s-item{text-align:center;padding:10px;border-radius:var(--r);background:#f8f9fa;border:1px solid var(--border)}
+.s-item .v{font-size:17px;font-weight:700;color:var(--green)}
+.s-item .l{font-size:9px;color:var(--gray);margin-top:2px}
+.s-item.span-all{grid-column:1/-1;background:var(--green-l);border-color:#b8ddc4}
+.s-item.span-all .v{font-size:13px}
+
+/* TABS */
+.tabs{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:12px}
+.tab-btn{padding:7px 14px;font-size:12px;cursor:pointer;border:none;background:none;color:var(--gray);border-bottom:2px solid transparent;margin-bottom:-2px;font-weight:500;transition:.15s}
+.tab-btn.on{color:var(--green);font-weight:700;border-bottom-color:var(--green)}
+.tab-pane{display:none}
+.tab-pane.on{display:block}
+
+/* ALIGNMENT */
+.aln-wrap{background:#0d1117;color:#c9d1d9;font-family:Consolas,monospace;font-size:13px;line-height:2;padding:16px 20px;border-radius:var(--r);overflow-x:auto;white-space:pre;letter-spacing:1.5px}
+.a-wc{color:#56d364;font-weight:700}
+.a-wo{color:#e3b341;font-weight:700}
+.a-mm{color:#f85149;font-weight:700}
+.a-gp{color:#8b949e}
+.a-seed{text-decoration:underline;text-decoration-color:#f1c40f;text-underline-offset:3px}
+.pos-label{color:#6e7681;font-size:11px;letter-spacing:0}
+
+/* ALGO TABLE */
+.algo-tbl{width:100%;border-collapse:collapse;font-size:11px}
+.algo-tbl th{background:#f5f7fa;padding:7px 10px;text-align:left;border-bottom:2px solid var(--border);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;color:#555}
+.algo-tbl td{padding:6px 10px;border-bottom:1px solid #f0f0f0}
+.pass{color:var(--green);font-weight:700}
+.fail{color:var(--gray)}
+
+/* POSITION MAP SVG */
+.pos-map{background:#fff;border-radius:var(--r);padding:14px;border:1px solid var(--border)}
+.pos-map h4{font-size:11px;font-weight:700;margin-bottom:10px;color:#555}
+
+/* DUPLEX STRUCTURE */
+.duplex-wrap{background:#0d1117;border-radius:var(--r);padding:14px 16px;overflow-x:auto;margin-bottom:10px}
+.duplex-wrap h4{font-size:10px;font-weight:700;color:#8b949e;letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px}
+.duplex-legend{display:flex;gap:14px;margin-top:8px;flex-wrap:wrap}
+.duplex-legend span{font-size:9px;color:#8b949e;display:flex;align-items:center;gap:4px}
+
+/* EXPORT */
+.export-row{display:flex;gap:8px;margin-top:10px}
+.exp-btn{padding:6px 14px;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer;border:1px solid var(--border);background:#f8f9fa;transition:.15s}
+.exp-btn:hover{background:var(--green-l);border-color:var(--green);color:var(--green)}
+
+/* RESPONSIVE */
+@media(max-width:840px){.workbench{flex-direction:column}.panel-l{width:100%;min-width:0;max-height:55vh}.panel-r{border-top:1px solid var(--border)}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="brand">Plant Virus DB</a>
+  <span class="sep">|</span>
+  <a href="/reference/">Reference</a>
+  <a href="/photos/">Photos</a>
+  <a href="/vector/">Vector</a>
+  <a href="/te/">TE & EVE</a>
+  <a href="/genes/">Genes</a>
+  <a href="/primers/">Primers</a>
+  <a href="/onekp/">OneKP</a>
+  <span class="sep">|</span>
+  <a href="/explorer/">Explorer</a>
+  <a href="/metabuli/">Metabuli</a>
+  <a href="/pamirdb/" class="on">PV-miRNA</a>
+  <span class="sep">|</span>
+  <a href="/literature/">Literature</a>
+  <a href="/knowledge/">Knowledge</a>
+  <a href="/resources.html">Resources</a>
+  <a href="/help/">Help</a>
+  <span class="spacer"></span>
+  <span class="badge" id="nav-stats">Loading...</span>
+</nav><div class="workbench">
+
+<!-- ===== LEFT INPUT PANEL ===== -->
+<div class="panel-l">
+<div class="panel-l-scroll">
+
+<!-- STEP 1: miRNA -->
+<div class="card">
+<div class="card-head">
+  <span class="step-badge s1">1</span>
+  <h3>miRNA Input</h3>
+  <span style="font-size:10px;color:var(--gray)" id="mirna-total-badge"></span>
+</div>
+
+<div class="mode-row">
+  <button class="mode-btn on green" id="mr-db-btn" onclick="setMirnaMode('db')">Database</button>
+  <button class="mode-btn" id="mr-custom-btn" onclick="setMirnaMode('custom')">Custom / Paste</button>
+</div>
+
+<!-- DB mode -->
+<div id="mr-db-panel">
+  <div class="row">
+    <label class="lbl">Family</label>
+    <select id="sel-mfam" onchange="onMirnaFamilyChange()">
+      <option value="">-- All families --</option>
+    </select>
+  </div>
+  <div class="row" id="mr-genus-row" style="display:none">
+    <label class="lbl">Genus <span id="mr-genus-lbl" style="font-weight:400;color:var(--gray)"></span></label>
+    <select id="sel-mgen" onchange="onMirnaGenusChange()">
+      <option value="">-- All genera --</option>
+    </select>
+  </div>
+  <div class="row">
+    <label class="lbl">Species <span id="mr-sp-lbl" style="font-weight:400;color:var(--gray)"></span></label>
+    <div style="display:flex;gap:4px">
+      <select id="sel-sp" onchange="onSpeciesChange()" style="flex:1">
+        <option value="">-- Choose species --</option>
+      </select>
+      <button onclick="addAllFilteredSpecies()" style="padding:5px 8px;border-radius:5px;background:#3498db;color:#fff;border:none;cursor:pointer;font-size:10px;white-space:nowrap;font-weight:600" title="Add all miRNAs for all species in current family/genus filter">+ All Spp.</button>
+    </div>
+  </div>
+  <div class="row" id="mr-db-row2" style="display:none">
+    <label class="lbl">miRNA <span id="mr-count-lbl" style="font-weight:400;color:var(--gray)"></span></label>
+    <div style="display:flex;gap:4px">
+      <input id="mr-search" placeholder="Search miRNA ID..." oninput="filterMirnaList()" style="flex:1">
+      <button onclick="addSelectedMirnas()" style="padding:5px 10px;border-radius:5px;background:var(--green);color:#fff;border:none;cursor:pointer;font-size:11px;font-weight:700">+ Add</button>
+      <button id="btn-add-all" onclick="addAllToQueue()" style="padding:5px 8px;border-radius:5px;background:#1abc9c;color:#fff;border:none;cursor:pointer;font-size:11px;white-space:nowrap" title="Add all miRNAs for this species">+ All</button>
+    </div>
+    <div id="mr-db-list" style="max-height:150px;overflow-y:auto;margin-top:5px;border:1px solid var(--border);border-radius:5px;background:#fafafa"></div>
+  </div>
+</div>
+
+<!-- Custom mode -->
+<div id="mr-custom-panel" style="display:none">
+  <div class="row">
+    <label class="lbl">Paste sequences (FASTA or plain, one per line)</label>
+    <textarea id="mr-custom-txt" rows="4" placeholder=">mirna1&#10;UGAGGUAGUAGGUUGUAUAGUU&#10;>mirna2&#10;UCCCUGAGACCCUAACUUGUGA&#10;&#10;or just sequences, one per line" oninput="parsePastedMirnas()"></textarea>
+    <div class="hint">Supports FASTA format or plain sequences (min 15 nt each)</div>
+  </div>
+</div>
+
+<!-- Queued miRNA list -->
+<div id="mirna-queue-wrap" style="display:none;margin-top:8px">
+  <label class="lbl">Queued miRNAs <span id="q-count"></span></label>
+  <div class="mirna-list" id="mirna-queue"></div>
+  <button class="add-btn" onclick="clearMirnaQueue()">✕ Clear all</button>
+</div>
+</div>
+
+<!-- STEP 2: Virus Target -->
+<div class="card">
+<div class="card-head">
+  <span class="step-badge s2">2</span>
+  <h3>Virus Target</h3>
+</div>
+
+<div class="mode-row">
+  <button class="mode-btn on" id="vr-db-btn" onclick="setVirusMode('db')">From Database</button>
+  <button class="mode-btn" id="vr-cus-btn" onclick="setVirusMode('custom')">Custom Sequence</button>
+</div>
+
+<!-- DB virus -->
+<div id="vr-db-panel">
+  <div class="row">
+    <label class="lbl">Virus Family</label>
+    <select id="sel-vf" onchange="onFamilyChange()"><option value="">-- All families --</option></select>
+  </div>
+  <div class="row" id="vr-genus-row" style="display:none">
+    <label class="lbl">Genus <span id="vr-genus-lbl" style="font-weight:400;color:var(--gray)"></span></label>
+    <select id="sel-vg" onchange="onGenusChange()"><option value="">-- All genera --</option></select>
+  </div>
+  <div class="row" id="vr-search-row" style="display:none">
+    <label class="lbl">Search Virus <span id="vr-total-lbl" style="font-weight:400;color:var(--gray)"></span></label>
+    <div style="display:flex;gap:4px">
+      <input id="vr-search" placeholder="Type name or accession..." oninput="onVirusSearch()" style="flex:1">
+      <button onclick="addAllFilteredViruses()" style="padding:5px 8px;border-radius:5px;background:#3498db;color:#fff;border:none;cursor:pointer;font-size:10px;white-space:nowrap;font-weight:600" title="Add all viruses in current family/genus filter">+ All</button>
+      <button onclick="clearVirusSearch()" style="padding:5px 8px;border-radius:5px;border:1px solid var(--border);background:#f8f9fa;cursor:pointer;font-size:11px">✕</button>
+    </div>
+    <div id="vr-search-list" style="max-height:160px;overflow-y:auto;margin-top:5px;border:1px solid var(--border);border-radius:5px;background:#fafafa;display:none"></div>
+  </div>
+  <!-- Selected viruses chips -->
+  <div id="vr-chips" style="display:none;margin-top:4px;display:flex;flex-wrap:wrap;gap:4px"></div>
+  <div id="virus-meta" style="display:none;font-size:10px;color:var(--gray);margin-bottom:6px;padding:6px 8px;background:#f0f4f0;border-radius:5px;border:1px solid #c8ddc8"></div>
+  <div class="row" id="vr-seq-row" style="display:none">
+    <label class="lbl">Target Sequence <span id="vr-src" style="font-weight:400"></span></label>
+    <textarea id="txt-vr" rows="2" placeholder="Virus sequence loads automatically" readonly></textarea>
+    <div class="seq-meta" id="vr-meta"></div>
+  </div>
+</div>
+
+<!-- Custom virus -->
+<div id="vr-cus-panel" style="display:none">
+  <div class="row">
+    <label class="lbl">Target Name</label>
+    <input id="vr-cus-name" placeholder="e.g. Custom virus fragment">
+  </div>
+  <div class="row">
+    <label class="lbl">Target Sequence</label>
+    <textarea id="vr-cus-seq" rows="3" placeholder="Paste RNA/DNA sequence (A,C,G,T,U)" oninput="onCusVirusInput()"></textarea>
+    <div class="seq-meta" id="vr-cus-meta"></div>
+  </div>
+</div>
+</div>
+
+<!-- STEP 3: Prediction Settings -->
+<div class="card">
+<div class="card-head">
+  <span class="step-badge s3">3</span>
+  <h3>Prediction Settings</h3>
+</div>
+
+<div class="row">
+  <label class="lbl">Prediction layers</label>
+  <div class="algo-grid">
+    <label class="algo-chk locked" title="Core alignment layer is required">
+      <input type="checkbox" id="alg-miranda" checked disabled>
+      SW-DP 自研比对 <span class="algo-tag tag-ann">Required</span>
+    </label>
+    <label class="algo-chk">
+      <input type="checkbox" id="alg-psrna" checked>
+      启发式复核 <span class="algo-tag tag-plant">Local</span>
+    </label>
+    <label class="algo-chk">
+      <input type="checkbox" id="alg-rnahybrid" checked>
+      MFE 启发式 <span class="algo-tag tag-energy">Local</span>
+    </label>
+    <label class="algo-chk">
+      <input type="checkbox" id="alg-rna22">
+      模式启发式 <span class="algo-tag tag-ann">Local</span>
+    </label>
+    <label class="algo-chk">
+      <input type="checkbox" id="alg-tapir">
+      可及性启发式 <span class="algo-tag tag-plant">Local</span>
+    </label>
+    <label class="algo-chk">
+      <input type="checkbox" id="alg-psrobot">
+      规则启发式 <span class="algo-tag tag-plant">Local</span>
+    </label>
+  </div>
+  <p style="font-size:10px;color:#999;margin-top:6px">自研比对 + 启发式复核（非 miRanda/psRNATarget/RNAhybrid 等外部工具）</p>
+</div>
+
+<div class="row" style="margin-top:10px">
+  <label class="lbl">Filter Preset</label>
+  <div class="tier-row">
+    <div class="tier-btn on any" id="tier-any" onclick="setTier('any')">Any</div>
+    <div class="tier-btn loose" id="tier-loose" onclick="setTier('loose')">Loose</div>
+    <div class="tier-btn moderate" id="tier-moderate" onclick="setTier('moderate')">Moderate</div>
+    <div class="tier-btn strict" id="tier-strict" onclick="setTier('strict')">Strict</div>
+  </div>
+</div>
+
+<div class="row">
+  <label class="lbl">Thresholds <span style="font-weight:400;color:var(--gray)">(auto-set by preset)</span></label>
+  <div class="thresh-grid">
+    <div class="thresh-item">
+      <label>Max Energy (kcal/mol)</label>
+      <input type="number" id="thr-energy" value="-10" step="1" min="-100" max="0">
+    </div>
+    <div class="thresh-item">
+      <label>Min Identity (%)</label>
+      <input type="number" id="thr-identity" value="60" step="5" min="0" max="100">
+    </div>
+    <div class="thresh-item">
+      <label>Max Mismatches</label>
+      <input type="number" id="thr-mm" value="5" step="1" min="0" max="10">
+    </div>
+    <div class="thresh-item">
+      <label>Seed (pos 2-8)</label>
+      <select id="thr-seed">
+        <option value="">Any</option>
+        <option value="1">Perfect WC</option>
+      </select>
+    </div>
+  </div>
+</div>
+</div>
+
+</div><!-- end scroll -->
+
+<div class="run-bar">
+  <button class="btn-run" id="btn-run" disabled onclick="runSearch()">▶ Run Analysis</button>
+  <div class="run-note" id="run-note">Add miRNA and select a virus target to begin</div>
+</div>
+</div><!-- end panel-l -->
+
+<!-- ===== RIGHT RESULT PANEL ===== -->
+<div class="panel-r" id="panel-r">
+
+<!-- Empty state -->
+<div class="r-empty" id="r-empty">
+  <div class="icon">🧬</div>
+  <p style="font-weight:600;margin-bottom:8px">PAmiRDB Prediction Workbench</p>
+  <p style="font-size:12px;margin-bottom:14px">Select a miRNA from the database (or paste custom), then paste the virus genome sequence and click <b>Run Analysis</b> for real-time binding site prediction.</p>
+  <div style="font-size:11px;font-weight:600;color:#555;margin-bottom:8px;text-align:left">Try an example:</div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+    <div class="ex-card" onclick="loadExample(0)">
+      <div class="ex-title">4 miRNAs → CMV RNA3</div>
+      <div class="ex-sub">miR156,miR482 · bromoviridae · 2217bp · 2 CDS</div>
+    </div>
+    <div class="ex-card" onclick="loadExample(1)">
+      <div class="ex-title">3 miRNAs → TYLCV-IR</div>
+      <div class="ex-sub">miR156,miR482 · geminiviridae</div>
+    </div>
+    <div class="ex-card" onclick="loadExample(2)">
+      <div class="ex-title">3 miRNAs → ACMV</div>
+      <div class="ex-sub">miR156,miR399,miR160 · geminiviridae</div>
+    </div>
+    <div class="ex-card" onclick="loadExample(3)">
+      <div class="ex-title">8 miRNAs → MYMV</div>
+      <div class="ex-sub">miR5300,miR395,miR169 · geminiviridae</div>
+    </div>
+    <div class="ex-card" onclick="loadExample(4)">
+      <div class="ex-title">3 miRNAs → CEVd</div>
+      <div class="ex-sub">miR156,miR399,miR398 · pospiviroidae</div>
+    </div>
+  </div>
+  <p style="font-size:10px;margin-top:14px;color:#aaa">11,006 pre-computed predictions (v7) · 自研比对 + 启发式复核（非外部工具） · host-filtered</p>
+</div>
+
+<!-- Progress -->
+<div id="r-progress" style="display:none;text-align:center;padding:40px 20px">
+  <div style="font-size:24px;margin-bottom:10px">⚙️</div>
+  <p style="font-weight:600;margin-bottom:6px" id="prog-title">Running prediction...</p>
+  <div style="background:#e0e0e0;border-radius:10px;height:6px;overflow:hidden;max-width:300px;margin:0 auto">
+    <div id="prog-bar" style="height:100%;background:linear-gradient(90deg,var(--green),#1abc9c);width:0%;transition:width .3s;border-radius:10px"></div>
+  </div>
+  <p style="font-size:11px;color:var(--gray);margin-top:8px" id="prog-msg"></p>
+</div>
+
+<!-- Batch results -->
+<div id="r-results" style="display:none">
+  <div class="batch-bar">
+    <h2 id="r-title">Prediction Results</h2>
+    <div class="export-row" style="margin-top:0">
+      <button class="exp-btn" onclick="exportCSV()">⬇ CSV</button>
+      <button class="exp-btn" onclick="exportJSON()">⬇ JSON</button>
+    </div>
+  </div>
+
+  <!-- Result filters row -->
+  <div class="f-row" style="margin-bottom:10px;padding:10px;background:#fff;border-radius:var(--r);border:1px solid var(--border)">
+    <span style="font-size:11px;font-weight:600;color:#555">Filter:</span>
+    <select class="f-sel" id="f-tier" onchange="applyFilters()">
+      <option value="">Any confidence</option>
+      <option value="VHIGH">VERY HIGH</option>
+      <option value="HIGH">HIGH</option>
+      <option value="MEDIUM">MEDIUM+</option>
+      <option value="LOW">LOW+</option>
+    </select>
+    <select class="f-sel" id="f-seed" onchange="applyFilters()">
+      <option value="">Any seed</option>
+      <option value="1">Seed OK</option>
+    </select>
+    <input class="f-inp" id="f-energy" placeholder="Energy ≤" type="number" step="1" onchange="applyFilters()">
+    <input class="f-inp" id="f-identity" placeholder="Identity ≥%" type="number" step="5" onchange="applyFilters()">
+    <input class="f-inp" id="f-mm" placeholder="Mismatch ≤" type="number" step="1" onchange="applyFilters()">
+    <input class="f-inp" id="f-search" placeholder="Search miRNA..." style="width:110px" oninput="applyFilters()">
+    <button class="f-btn" onclick="resetFilters()">Reset</button>
+    <span style="font-size:11px;color:var(--gray);margin-left:4px" id="f-count"></span>
+  </div>
+
+  <!-- Results summary dashboard -->
+  <div id="r-dashboard" style="display:none"></div>
+
+  <!-- Sankey + Network Graph: side by side -->
+  <div id="r-diagrams" style="display:none;gap:12px">
+    <div id="r-sankey" style="flex:1;min-width:0"></div>
+    <div id="r-graph" style="flex:1;min-width:0"></div>
+  </div>
+
+  <table class="r-table" id="r-table">
+    <thead>
+      <tr>
+        <th onclick="sortBy('mirna_id')">miRNA <span class="sort-icon">↕</span></th>
+        <th onclick="sortBy('consensus_level')">Confidence <span class="sort-icon">↕</span></th>
+        <th onclick="sortBy('best_energy')">Energy <span class="sort-icon">↕</span></th>
+        <th onclick="sortBy('best_identity')">Identity <span class="sort-icon">↕</span></th>
+        <th onclick="sortBy('num_mismatches')">MM <span class="sort-icon">↕</span></th>
+        <th onclick="sortBy('seed_perfect_wc')">Seed <span class="sort-icon">↕</span></th>
+        <th>Layers</th>
+        <th onclick="sortBy('target_gene')">Target Gene</th>
+        <th>Detail</th>
+      </tr>
+    </thead>
+    <tbody id="r-tbody"></tbody>
+  </table>
+  
+  <!-- Pagination -->
+  <div id="r-pager" style="display:none;justify-content:center;align-items:center;gap:6px;padding:10px 0;flex-wrap:wrap">
+    <button onclick="goPage(1)" style="padding:3px 8px;border:1px solid var(--border);border-radius:4px;background:#fff;cursor:pointer;font-size:11px">« First</button>
+    <button onclick="goPage(S.page-1)" style="padding:3px 10px;border:1px solid var(--border);border-radius:4px;background:#fff;cursor:pointer;font-size:11px">‹ Prev</button>
+    <span id="r-page-info" style="font-size:11px;color:#555;min-width:80px;text-align:center"></span>
+    <button onclick="goPage(S.page+1)" style="padding:3px 10px;border:1px solid var(--border);border-radius:4px;background:#fff;cursor:pointer;font-size:11px">Next ›</button>
+    <button onclick="goPage(999)" style="padding:3px 8px;border:1px solid var(--border);border-radius:4px;background:#fff;cursor:pointer;font-size:11px">Last »</button>
+  </div>
+
+  <!-- Detail panel -->
+  <div id="r-detail" style="display:none">
+    <div class="detail-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+        <h3 style="font-size:13px;font-weight:700;flex:1" id="det-title">Detail</h3>
+        <button onclick="closeDetail()" style="border:none;background:none;font-size:18px;cursor:pointer;color:var(--gray)">✕</button>
+      </div>
+      <div class="score-grid" id="det-scores"></div>
+      <div class="tabs">
+        <button class="tab-btn on" onclick="showTab('aln')">Alignment</button>
+        <button class="tab-btn" onclick="showTab('algos')">Layers</button>
+        <button class="tab-btn" onclick="showTab('map')">Position Map</button>
+        <button class="tab-btn" onclick="showTab('struct')">miRNA Structure</button>
+      </div>
+      <div class="tab-pane on" id="tab-aln"></div>
+      <div class="tab-pane" id="tab-algos"></div>
+      <div class="tab-pane" id="tab-map"></div>
+      <div class="tab-pane" id="tab-struct"></div>
+    </div>
+  </div>
+
+</div><!-- end r-results -->
+</div><!-- end panel-r -->
+</div><!-- end workbench -->
+
+<script>
+// =====================
+//  STATE
+// =====================
+var S = {
+  mirnaMode: 'db',
+  virusMode: 'db',
+  mirnaQueue: [],       // [{id, seq}]
+  virus: {id:null, seq:null, name:null, family:null, genes:[]},
+  selectedViruses: [],  // [{id, seq, name, family, genes}]
+  tier: 'any',
+  results: [],          // raw results from server
+  filtered: [],         // after applyFilters
+  sortCol: 'best_energy',
+  sortAsc: true,
+  speciesData: [],      // from /api/mirna_tree or /api/species
+  mirnaBySpecies: {},   // code -> [{id, seq, len}]
+  currentSpecies: null
+};
+
+// =====================
+//  INIT
+// =====================
+(function init(){
+  // Load stats
+  api('/pamirdb/api/stats').then(function(d){
+    document.getElementById('nav-stats').textContent =
+      (d.total_mirnas||0) + ' miRNAs · ' + (d.total_viruses||0) + ' viruses · ' + (d.total_predictions||0) + ' predictions';
+  }).catch(function(){
+    api('/api/stats').then(function(d){
+      document.getElementById('nav-stats').textContent =
+        (d.total_mirnas||0) + ' miRNAs · ' + (d.total_viruses||0) + ' viruses · ' + (d.total_predictions||0) + ' predictions';
+    }).catch(function(){});
+  });
+
+  // Load plant families
+  api('/pamirdb/api/mirna_families').then(function(list){
+    var sel = document.getElementById('sel-mfam');
+    list.forEach(function(f){
+      sel.innerHTML += '<option value="'+f.family+'">'+f.family+' ('+f.species_count+' spp)</option>';
+    });
+  }).catch(function(){});
+  // Preload species
+  api('/pamirdb/api/species').then(function(list){
+    S._allSpecies = list;
+    var sel = document.getElementById('sel-sp');
+    list.forEach(function(s){
+      sel.innerHTML += '<option value="'+s.code+'">'+s.name+' ('+s.count+')</option>';
+    });
+    document.getElementById('mirna-total-badge').textContent =
+      list.reduce(function(a,b){return a+b.count},0) + ' total';
+  }).catch(function(){});
+
+  // Load virus families from /api/families (all families with counts)
+  api('/pamirdb/api/families').then(function(list){
+    var sel = document.getElementById('sel-vf');
+    list.forEach(function(f){
+      sel.innerHTML += '<option value="'+f.family+'">'+f.family+' ('+f.count+')</option>';
+    });
+  }).catch(function(){
+    // fallback: derive from default virus list
+    api('/pamirdb/api/viruses').then(function(d){
+      var fams={};
+      (d.viruses||[]).forEach(function(v){ if(v.family) fams[v.family]=1; });
+      var sel = document.getElementById('sel-vf');
+      Object.keys(fams).sort().forEach(function(f){
+        sel.innerHTML += '<option value="'+f+'">'+f+'</option>';
+      });
+    }).catch(function(){});
+  });
+})();
+
+// =====================
+//  UTILITY
+// =====================
+function api(url, opts){ return fetch(url, opts||{}).then(function(r){return r.json()}); }
+
+function handleErr(e){
+  document.getElementById('r-progress').style.display = 'none';
+  document.getElementById('r-results').style.display = '';
+  document.getElementById('r-title').innerHTML = '<span style="color:#e74c3c">Error</span>';
+  document.getElementById('r-tbody').innerHTML =
+    '<tr><td colspan="9" style="text-align:center;padding:30px;color:#e74c3c">'+
+    (e && e.message ? e.message : String(e)) +'</td></tr>';
+  document.getElementById('f-count').textContent = '0 results';
+}
+
+// =====================
+//  MIRNA INPUT
+// =====================
+function setMirnaMode(m){
+  S.mirnaMode = m;
+  document.getElementById('mr-db-btn').className = m==='db' ? 'mode-btn on green' : 'mode-btn';
+  document.getElementById('mr-custom-btn').className = m==='custom' ? 'mode-btn on' : 'mode-btn';
+  document.getElementById('mr-db-panel').style.display = m==='db' ? '' : 'none';
+  document.getElementById('mr-custom-panel').style.display = m==='custom' ? '' : 'none';
+  checkReady();
+}
+
+function onMirnaFamilyChange(){
+  var fam = document.getElementById('sel-mfam').value;
+  var genSel = document.getElementById('sel-mgen');
+  var spSel = document.getElementById('sel-sp');
+  genSel.innerHTML = '<option value="">-- All genera --</option>';
+  spSel.innerHTML = '<option value="">-- Choose species --</option>';
+  document.getElementById('mr-genus-row').style.display = 'none';
+  document.getElementById('mr-db-row2').style.display = 'none';
+  if(!fam){
+    // Show all species
+    (S._allSpecies||[]).forEach(function(s){
+      spSel.innerHTML += '<option value=\"'+s.code+'\">'+s.name+' ('+s.count+')</option>';
+    });
+    document.getElementById('mr-sp-lbl').textContent = '';
+    return;
+  }
+  // Load genera for this family
+  api('/pamirdb/api/mirna_genera?family='+encodeURIComponent(fam)).then(function(list){
+    if(list && list.length > 0){
+      list.forEach(function(g){
+        genSel.innerHTML += '<option value=\"'+g.genus+'\">'+g.genus+' ('+g.species_count+' spp)</option>';
+      });
+      document.getElementById('mr-genus-row').style.display = '';
+      document.getElementById('mr-genus-lbl').textContent = '('+list.length+' genera)';
+    }
+  }).catch(function(){});
+  // Filter species by family
+  api('/pamirdb/api/species?family='+encodeURIComponent(fam)).then(function(list){
+    list.forEach(function(s){
+      spSel.innerHTML += '<option value=\"'+s.code+'\">'+s.name+' ('+s.count+')</option>';
+    });
+    document.getElementById('mr-sp-lbl').textContent = '('+list.length+' spp)';
+  }).catch(function(){});
+  S.currentSpecies = '';
+  S.mirnaBySpecies = {};
+}
+
+function onMirnaGenusChange(){
+  var fam = document.getElementById('sel-mfam').value;
+  var genus = document.getElementById('sel-mgen').value;
+  var spSel = document.getElementById('sel-sp');
+  spSel.innerHTML = '<option value="">-- Choose species --</option>';
+  document.getElementById('mr-db-row2').style.display = 'none';
+  if(!genus){
+    onMirnaFamilyChange(); return;
+  }
+  // Filter species by family+genus
+  var url = '/pamirdb/api/species?family='+encodeURIComponent(fam)+'&genus='+encodeURIComponent(genus);
+  api(url).then(function(list){
+    list.forEach(function(s){
+      spSel.innerHTML += '<option value=\"'+s.code+'\">'+s.name+' ('+s.count+')</option>';
+    });
+    document.getElementById('mr-sp-lbl').textContent = '('+list.length+' spp)';
+  }).catch(function(){});
+  S.currentSpecies = '';
+  S.mirnaBySpecies = {};
+}
+
+function onSpeciesChange(){
+  var code = document.getElementById('sel-sp').value;
+  S.currentSpecies = code;
+  var row2 = document.getElementById('mr-db-row2');
+  var listEl = document.getElementById('mr-db-list');
+  listEl.innerHTML = '';
+  if(!code){ row2.style.display='none'; return; }
+  row2.style.display = '';
+  // Load miRNAs for this species
+  api('/pamirdb/api/mirnas_by_species?species='+encodeURIComponent(code)).then(function(list){
+    S.mirnaBySpecies[code] = list;
+    document.getElementById('mr-count-lbl').textContent = '('+list.length+' available)';
+    renderMirnaPickList(list, '');
+  }).catch(function(){
+    document.getElementById('mr-count-lbl').textContent = '(failed to load)';
+  });
+}
+
+function filterMirnaList(){
+  var kw = document.getElementById('mr-search').value.trim().toLowerCase();
+  var mirnas = S.mirnaBySpecies[S.currentSpecies] || [];
+  renderMirnaPickList(mirnas, kw);
+}
+
+function renderMirnaPickList(mirnas, kw){
+  var listEl = document.getElementById('mr-db-list');
+  var shown = kw ? mirnas.filter(function(m){ return m.id.toLowerCase().indexOf(kw)>=0; }) : mirnas;
+  shown = shown.slice(0, 80);
+  listEl.innerHTML = shown.map(function(m){
+    return '<div class="mirna-pick-item" style="padding:4px 8px;cursor:pointer;font-size:11px;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;gap:6px" onclick="quickAddMirna(\''+m.id+'\',\''+m.seq+'\')" title="Click to add">'
+      +'<span style="font-weight:600;color:var(--green);min-width:30px">+</span>'
+      +'<span style="flex:1">'+m.id+'</span>'
+      +'<span style="font-family:Consolas,monospace;font-size:10px;color:#888;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+m.seq+'</span>'
+      +'<span style="font-size:10px;color:#aaa">'+m.len+'nt</span>'
+      +'</div>';
+  }).join('');
+  if(shown.length === 0) listEl.innerHTML = '<div style="padding:8px;color:var(--gray);font-size:11px;text-align:center">No match</div>';
+}
+
+function quickAddMirna(id, seq){
+  addToQueue(id, seq);
+}
+
+function addSelectedMirnas(){
+  var kw = document.getElementById('mr-search').value.trim();
+  if(!S.currentSpecies) return;
+  var mirnas = S.mirnaBySpecies[S.currentSpecies] || [];
+  var matches = kw ? mirnas.filter(function(m){ return m.id.toLowerCase().indexOf(kw.toLowerCase())>=0; }) : [];
+  if(matches.length === 1){ addToQueue(matches[0].id, matches[0].seq); return; }
+  if(kw && matches.length > 0 && matches.length <= 10){
+    matches.forEach(function(m){ addToQueue(m.id, m.seq); });
+  }
+}
+
+function parsePastedMirnas(){
+  var txt = document.getElementById('mr-custom-txt').value;
+  var lines = txt.split('\n');
+  var curId = null, curSeq = '';
+  var parsed = [];
+  lines.forEach(function(line){
+    line = line.trim();
+    if(!line) return;
+    if(line.startsWith('>')){
+      if(curSeq.length >= 15) parsed.push({id: curId||('mirna'+(parsed.length+1)), seq: curSeq.toUpperCase().replace(/T/g,'U')});
+      curId = line.slice(1).split(/\s/)[0];
+      curSeq = '';
+    } else if(/^[ACGTUacgtu]+$/.test(line)){
+      curSeq += line;
+      if(!curId){ // plain sequence
+        if(curSeq.length >= 15){
+          parsed.push({id: 'mirna'+(parsed.length+1), seq: curSeq.toUpperCase().replace(/T/g,'U')});
+          curSeq = ''; curId = null;
+        }
+      }
+    }
+  });
+  if(curSeq.length >= 15) parsed.push({id: curId||('mirna'+(parsed.length+1)), seq: curSeq.toUpperCase().replace(/T/g,'U')});
+  // Replace queue with parsed
+  S.mirnaQueue = [];
+  parsed.forEach(function(p){ addToQueue(p.id, p.seq, true); });
+  renderQueue();
+  checkReady();
+}
+
+function addToQueue(id, seq, silent){
+  seq = (seq||'').trim().toUpperCase().replace(/T/g,'U');
+  if(seq.length < 15) return;
+  if(S.mirnaQueue.find(function(m){ return m.id===id; })) return;
+  S.mirnaQueue.push({id: id, seq: seq});
+  if(!silent){ renderQueue(); checkReady(); }
+}
+
+function clearMirnaQueue(){
+  S.mirnaQueue = [];
+  renderQueue();
+  checkReady();
+}
+
+function removeMirna(idx){
+  S.mirnaQueue.splice(idx, 1);
+  renderQueue();
+  checkReady();
+}
+
+function renderQueue(){
+  var wrap = document.getElementById('mirna-queue-wrap');
+  var el = document.getElementById('mirna-queue');
+  document.getElementById('q-count').textContent = '('+S.mirnaQueue.length+' / 20)';
+  if(S.mirnaQueue.length === 0){ wrap.style.display='none'; return; }
+  wrap.style.display = '';
+  el.innerHTML = S.mirnaQueue.map(function(m,i){
+    return '<div class="mirna-item">'
+      +'<span class="lbl2">'+m.id+'</span>'
+      +'<span class="seq">'+m.seq+'</span>'
+      +'<span style="font-size:10px;color:#aaa;white-space:nowrap">'+m.seq.length+'nt</span>'
+      +'<button class="rm" onclick="removeMirna('+i+')">✕</button>'
+      +'</div>';
+  }).join('');
+}
+
+// =====================
+//  VIRUS INPUT
+// =====================
+function setVirusMode(m){
+  S.virusMode = m;
+  document.getElementById('vr-db-btn').className = m==='db' ? 'mode-btn on' : 'mode-btn';
+  document.getElementById('vr-cus-btn').className = m==='custom' ? 'mode-btn on' : 'mode-btn';
+  document.getElementById('vr-db-panel').style.display = m==='db' ? '' : 'none';
+  document.getElementById('vr-cus-panel').style.display = m==='custom' ? '' : 'none';
+  checkReady();
+}
+
+var _virusSearchTimer = null;
+var _currentFamily = '';
+var _currentGenus = '';
+
+function onFamilyChange(){
+  var fam = document.getElementById('sel-vf').value;
+  _currentFamily = fam;
+  _currentGenus = '';
+  S.virus = {id:null, seq:null, name:null, family:null};
+  document.getElementById('virus-meta').style.display = 'none';
+  document.getElementById('vr-seq-row').style.display = 'none';
+  document.getElementById('vr-search-list').style.display = 'none';
+  document.getElementById('vr-search').value = '';
+
+  // Reset genus dropdown
+  var genSel = document.getElementById('sel-vg');
+  genSel.innerHTML = '<option value="">-- All genera --</option>';
+  document.getElementById('vr-genus-row').style.display = 'none';
+
+  if(!fam){
+    document.getElementById('vr-search-row').style.display = 'none';
+    return;
+  }
+
+  // Load genera for this family
+  api('/pamirdb/api/genera?family='+encodeURIComponent(fam)).then(function(list){
+    if(list && list.length > 1){
+      list.forEach(function(g){
+        genSel.innerHTML += '<option value="'+g.genus+'">'+g.genus+' ('+g.count+')</option>';
+      });
+      document.getElementById('vr-genus-row').style.display = '';
+      document.getElementById('vr-genus-lbl').textContent = '('+list.length+' genera)';
+    }
+  }).catch(function(){});
+
+  // Show search row, load first page to get total count
+  document.getElementById('vr-search-row').style.display = '';
+  document.getElementById('vr-total-lbl').textContent = 'loading...';
+  api('/pamirdb/api/viruses?family='+encodeURIComponent(fam)+'&limit=1').then(function(d){
+    var total = d.total || 0;
+    document.getElementById('vr-total-lbl').textContent = '('+total+' viruses — type to search)';
+    // Auto-load if small family
+    if(total <= 80){
+      _loadVirusList('', fam, '');
+    }
+  });
+  checkReady();
+}
+
+function onGenusChange(){
+  var genus = document.getElementById('sel-vg').value;
+  _currentGenus = genus;
+  S.virus = {id:null, seq:null, name:null, family:null};
+  document.getElementById('virus-meta').style.display = 'none';
+  document.getElementById('vr-seq-row').style.display = 'none';
+  document.getElementById('vr-search').value = '';
+
+  // Update total count for genus
+  var url = '/pamirdb/api/viruses?limit=1';
+  if(_currentFamily) url += '&family='+encodeURIComponent(_currentFamily);
+  if(genus) url += '&genus='+encodeURIComponent(genus);
+  api(url).then(function(d){
+    var total = d.total || 0;
+    document.getElementById('vr-total-lbl').textContent = '('+total+' viruses)';
+    // Auto-load if ≤80 or genus selected
+    if(total <= 80 || genus){
+      _loadVirusList('', _currentFamily, genus);
+    } else {
+      document.getElementById('vr-search-list').style.display = 'none';
+    }
+  });
+  checkReady();
+}
+
+function onVirusSearch(){
+  clearTimeout(_virusSearchTimer);
+  var kw = document.getElementById('vr-search').value.trim();
+  if(kw.length === 0){
+    document.getElementById('vr-search-list').style.display = 'none';
+    return;
+  }
+  if(kw.length < 2) return;
+  _virusSearchTimer = setTimeout(function(){ _loadVirusList(kw, _currentFamily, _currentGenus); }, 300);
+}
+
+function _loadVirusList(kw, fam, genus){
+  var url = '/pamirdb/api/viruses?limit=60';
+  if(fam)   url += '&family='+encodeURIComponent(fam);
+  if(genus) url += '&genus='+encodeURIComponent(genus);
+  if(kw)    url += '&search='+encodeURIComponent(kw);
+  var listEl = document.getElementById('vr-search-list');
+  listEl.innerHTML = '<div style="padding:8px;font-size:11px;color:var(--gray)">Searching...</div>';
+  listEl.style.display = '';
+  api(url).then(function(d){
+    var viruses = d.viruses || [];
+    if(viruses.length === 0){
+      listEl.innerHTML = '<div style="padding:8px;font-size:11px;color:var(--gray);text-align:center">No match</div>';
+      return;
+    }
+    listEl.innerHTML = viruses.map(function(v){
+      return '<div class="virus-pick-item" style="padding:5px 8px;cursor:pointer;font-size:11px;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;gap:6px" onclick="selectVirus(\''+v.virus_id+'\',\''+escAttr(v.name)+'\',\''+v.family+'\','+v.genome_length+')">'
+        +'<span style="font-weight:600;color:var(--blue);min-width:20px">▶</span>'
+        +'<span style="flex:1">'+v.name+'</span>'
+        +'<span style="font-size:10px;color:#aaa;white-space:nowrap">'+v.genome_length+' bp</span>'
+        +'</div>';
+    }).join('');
+    if(d.total > 60){
+      listEl.innerHTML += '<div style="padding:5px 8px;font-size:10px;color:var(--gray);text-align:center">Showing 60 of '+d.total+' — refine search</div>';
+    }
+  });
+}
+
+function escAttr(s){ return (s||'').replace(/'/g,'&apos;').replace(/"/g,'&quot;'); }
+
+function selectVirus(vid, vname, vfam, vlen){
+  document.getElementById('vr-search').value = vname;
+  document.getElementById('vr-search-list').style.display = 'none';
+
+  api('/pamirdb/api/virus/'+encodeURIComponent(vid)).then(function(d){
+    var v = {id:d.virus_id, seq:d.sequence||'', name:d.name, family:d.family, genus:d.genus||'', genes:d.genes||[], genome_length:d.genome_length||0};
+    // Check if already selected
+    var exists = S.selectedViruses.some(function(x){ return x.id === v.id; });
+    if(!exists){
+      S.selectedViruses.push(v);
+      renderVirusChips();
+    }
+    S.virus = S.selectedViruses[0];  // backward compat
+    var infoStr = '<b>'+d.name+'</b> &nbsp;|&nbsp; '+(d.family||'—')+(d.genus?' / '+d.genus:'')+' &nbsp;|&nbsp; '+d.genome_length+' bp';
+    infoStr += d.sequence && d.sequence.length > 10 ? '' : ' &nbsp;<span style="color:var(--orange)">⚠ No sequence</span>';
+    document.getElementById('virus-meta').innerHTML = infoStr;
+    document.getElementById('virus-meta').style.display = '';
+    var s = d.sequence||'';
+    if(s.length > 0){
+      document.getElementById('vr-seq-row').style.display = '';
+      document.getElementById('txt-vr').value = s;
+      document.getElementById('vr-src').textContent = '(DB)';
+      document.getElementById('vr-meta').innerHTML =
+        '<span>'+s.length+' nt</span><span>GC: '+gcPct(s)+'%</span>';
+    }
+    checkReady();
+  });
+}
+
+function addAllFilteredViruses(){
+  var fam = document.getElementById('sel-vf').value;
+  var genus = document.getElementById('sel-vg').value;
+  if(!fam && !genus){ alert('Select a family or genus first'); return; }
+  var url = '/pamirdb/api/viruses?limit=500';
+  if(fam) url += '&family='+encodeURIComponent(fam);
+  if(genus) url += '&genus='+encodeURIComponent(genus);
+  api(url).then(function(d){
+    var viruses = d.viruses || [];
+    if(!viruses.length){ alert('No viruses found'); return; }
+    var count = S.selectedViruses.length;
+    if(count > 0 && !confirm('Add '+viruses.length+' viruses? Currently have '+count+' selected. Continue?')) return;
+    viruses.forEach(function(v){
+      var exists = S.selectedViruses.some(function(x){ return x.id === v.virus_id; });
+      if(!exists){
+        S.selectedViruses.push({id:v.virus_id, name:v.name, family:v.family||fam, genus:v.genus||genus, seq:'', genes:[], genome_length:v.genome_length||0});
+      }
+    });
+    renderVirusChips();
+    checkReady();
+  }).catch(function(e){ alert('Failed: '+e); });
+}
+
+function clearVirusSearch(){
+  document.getElementById('vr-search').value = '';
+  document.getElementById('vr-search-list').style.display = 'none';
+  S.selectedViruses = [];
+  S.virus = {id:null, seq:null, name:null, family:null, genes:[]};
+  renderVirusChips();
+  document.getElementById('virus-meta').style.display = 'none';
+  document.getElementById('vr-seq-row').style.display = 'none';
+  checkReady();
+}
+
+function onCusVirusInput(){
+  var seq = document.getElementById('vr-cus-seq').value.trim().toUpperCase().replace(/T/g,'U');
+  var name = document.getElementById('vr-cus-name').value.trim() || 'Custom target';
+  S.virus = {id:'custom', seq:seq, name:name, family:''};
+  document.getElementById('vr-cus-meta').innerHTML = seq.length ?
+    '<span>'+seq.length+' nt</span><span>GC: '+gcPct(seq)+'%</span>' : '';
+  checkReady();
+}
+
+function gcPct(s){ var g=(s.match(/[GC]/g)||[]).length; return s.length?Math.round(g/s.length*100):0; }
+
+// =====================
+//  ALGORITHM SELECTION
+// =====================
+function getAlgorithms(){
+  var algs = ['miranda'];
+  if(document.getElementById('alg-psrna').checked) algs.push('psrna');
+  if(document.getElementById('alg-rnahybrid').checked) algs.push('rnahybrid');
+  if(document.getElementById('alg-rna22').checked) algs.push('rna22');
+  if(document.getElementById('alg-tapir').checked) algs.push('tapir');
+  if(document.getElementById('alg-psrobot').checked) algs.push('psrobot');
+  return algs;
+}
+
+// =====================
+//  TIER FILTER
+// =====================
+function setTier(t){
+  S.tier = t;
+  ['any','loose','moderate','strict'].forEach(function(x){
+    document.getElementById('tier-'+x).className = 'tier-btn'+( x===t ? ' on '+x : ' '+x);
+  });
+  var presets = {any:{e:null,id:null,mm:null}, loose:{e:-10,id:60,mm:5}, moderate:{e:-15,id:75,mm:3}, strict:{e:-20,id:85,mm:1}};
+  var p = presets[t];
+  if(p.e!==null) document.getElementById('thr-energy').value = p.e;
+  if(p.id!==null) document.getElementById('thr-identity').value = p.id;
+  if(p.mm!==null) document.getElementById('thr-mm').value = p.mm;
+}
+
+// =====================
+//  READY CHECK
+// =====================
+function checkReady(){
+  var hasMirna = S.mirnaQueue.length > 0;
+  // Allow DB viruses (id set even without sequence) OR viruses with sequence
+  var hasVirus = (S.selectedViruses && S.selectedViruses.length > 0)
+              || (S.virus && S.virus.id && S.virus.id !== 'custom')
+              || (S.virus && S.virus.seq && S.virus.seq.length >= 20);
+  var btn = document.getElementById('btn-run');
+  btn.disabled = !(hasMirna && hasVirus);
+  var note = '';
+  if(!hasMirna) note = 'Add at least one miRNA to the queue';
+  else if(!hasVirus) note = 'Select a virus target';
+  else{
+    var vcount = S.selectedViruses && S.selectedViruses.length > 1
+      ? S.selectedViruses.length+' viruses'
+      : (S.virus.name||'Custom');
+    var hasSeq = (S.selectedViruses||[]).some(function(v){ return v.seq&&v.seq.length>=20; })
+              || (S.virus&&S.virus.seq&&S.virus.seq.length>=20)
+              || S.virusMode==='custom';
+    note = S.mirnaQueue.length+' miRNA(s) × '+vcount+' — '+(hasSeq?'scan ready':'paste virus seq to scan');
+  }
+  document.getElementById('run-note').textContent = note;
+}
+
+// =====================
+//  EXAMPLES
+// =====================
+var EXAMPLES = [
+  { mirnas:[
+      {id:'stu-miR156a-5p', seq:'UGACAGAAGAGAGUGAGCAC'},
+      {id:'gma-miR482a-3p', seq:'UUUCCUAUUCCACCCAUUCCUA'},
+      {id:'mtr-miR156a', seq:'UGACAGAAGAGAGUGAGCAC'},
+      {id:'ath-miR156a-5p', seq:'UGACAGAAGAGAGUGAGCAC'}
+    ], label:'4 miRNAs → CMV RNA3',
+    virus_id:'CMV_RNA3', virus_name:'Cucumber mosaic virus RNA3', virus_family:'bromoviridae' },
+  { mirnas:[
+      {id:'stu-miR156a-5p', seq:'UGACAGAAGAGAGUGAGCAC'},
+      {id:'gma-miR482a-3p', seq:'UUUCCUAUUCCACCCAUUCCUA'},
+      {id:'mtr-miR156a', seq:'UGACAGAAGAGAGUGAGCAC'}
+    ], label:'3 miRNAs → TYLCV-IR',
+    virus_id:'TYLCV-IR', virus_name:'Tomato yellow leaf curl virus - Iran', virus_family:'geminiviridae' },
+  { mirnas:[
+      {id:'ath-miR156a-5p', seq:'UGACAGAAGAGAGUGAGCAC'},
+      {id:'ath-miR399a', seq:'UGCCAAAGGAGAAUUGCCCCG'},
+      {id:'ath-miR160a-5p', seq:'UGCCUGGCUCCCUGUAUGCCA'}
+    ], label:'3 miRNAs → ACMV',
+    virus_id:'ACMV', virus_name:'African cassava mosaic virus', virus_family:'geminiviridae' },
+  { mirnas:[
+      {id:'Solanum_melongena-miR5300-3p', seq:'UGGGAUGCUUUGGUUGGGAAAG'},
+      {id:'lja-miR395-3p', seq:'ACUGUUGAGGGGAACUCUAGGAGC'},
+      {id:'Chenopodium_quinoa-miR169n-3p', seq:'GGCAGUCUCCGAGGCUAAC'},
+      {id:'Arabidopsis_thaliana-miR4228-5p_v30', seq:'AGCAGCCUCUGCUUUGCUGCC'},
+      {id:'Phaseolus_vulgaris-miRN11-5p_v1', seq:'AAGAGGAGAGAGAAGGAGACA'},
+      {id:'Arabidopsis_thaliana-miR4228-5p_v55', seq:'AGCAGCCUCUGCUUUGCUGCC'},
+      {id:'Solanum_pimpinellifolium-miRN1-5p', seq:'GGCGCGGCGGCACGGAUGGCAA'},
+      {id:'mdo-miR-128a-5p', seq:'GGGGCCGUUACACUGUCAGAGA'}
+    ], label:'8 miRNAs → MYMV',
+    virus_id:'MYMV', virus_name:'Mungbean yellow mosaic virus', virus_family:'geminiviridae' },
+  { mirnas:[
+      {id:'ath-miR156a-5p', seq:'UGACAGAAGAGAGUGAGCAC'},
+      {id:'ath-miR399a', seq:'UGCCAAAGGAGAAUUGCCCCG'},
+      {id:'sly-miR398', seq:'UGUGUUCUCAGGUCGCCCCUG'}
+    ], label:'3 miRNAs → CEVd',
+    virus_id:'Citrus_exocortis_viroid', virus_name:'Citrus exocortis viroid', virus_family:'pospiviroidae' },
+];
+
+function loadExample(idx){
+  var ex = EXAMPLES[idx];
+  // Queue miRNAs with hardcoded sequences
+  S.mirnaQueue = ex.mirnas.map(function(m){return {id:m.id, seq:m.seq};});
+  renderQueue();
+  // Set virus
+  S.selectedViruses = [{id:ex.virus_id, name:ex.virus_name, family:ex.virus_family, seq:'', genes:[], genome_length:0}];
+  renderVirusChips();
+  S.virus = S.selectedViruses[0];
+  document.getElementById('virus-meta').innerHTML = '<b>'+ex.virus_name+'</b> &nbsp;|&nbsp; '+ex.virus_family+' &nbsp;<span style="color:var(--gray)">loading…</span>';
+  document.getElementById('virus-meta').style.display = '';
+  // Fetch real virus data (genes + sequence + genome_length) for position map
+  api('/pamirdb/api/virus/'+encodeURIComponent(ex.virus_id)).then(function(d){
+    var v = {id:d.virus_id, seq:d.sequence||'', name:d.name, family:d.family,
+             genus:d.genus||'', genes:d.genes||[], genome_length:d.genome_length||0};
+    S.selectedViruses = [v];
+    S.virus = v;
+    renderVirusChips();
+    document.getElementById('virus-meta').innerHTML =
+      '<b>'+d.name+'</b> &nbsp;|&nbsp; '+(d.family||'—')+(d.genus?' / '+d.genus:'')+' &nbsp;|&nbsp; '+d.genome_length+' bp';
+    checkReady();
+    runSearch();
+  }).catch(function(){
+    checkReady();
+    runSearch();
+  });  // Show placeholder while fetching virus detail
+  S.selectedViruses = [{id:ex.virus_id, name:ex.virus_name, family:ex.virus_family, seq:'', genes:[], genome_length:0}];
+  renderVirusChips();
+  S.virus = S.selectedViruses[0];
+  document.getElementById('virus-meta').innerHTML = '<b>'+ex.virus_name+'</b> &nbsp;|&nbsp; '+ex.virus_family+' &nbsp;<span style="color:var(--gray)">loading…</span>';
+  document.getElementById('virus-meta').style.display = '';
+  // Fetch real virus data (genes + sequence + genome_length) for position map
+  api('/pamirdb/api/virus/'+encodeURIComponent(ex.virus_id)).then(function(d){
+    var v = {id:d.virus_id, seq:d.sequence||'', name:d.name, family:d.family,
+             genus:d.genus||'', genes:d.genes||[], genome_length:d.genome_length||0};
+    S.selectedViruses = [v];
+    S.virus = v;
+    renderVirusChips();
+    document.getElementById('virus-meta').innerHTML =
+      '<b>'+d.name+'</b> &nbsp;|&nbsp; '+(d.family||'—')+(d.genus?' / '+d.genus:'')+' &nbsp;|&nbsp; '+d.genome_length+' bp';
+    checkReady();
+    runSearch();
+  }).catch(function(){
+    // fallback if API fails
+    checkReady();
+    runSearch();
+  });
+}
+
+// =====================
+//  SELECT ALL miRNA
+// =====================
+function addAllFilteredSpecies(){
+  var fam = document.getElementById('sel-mfam').value;
+  var genus = document.getElementById('sel-mgen').value;
+  var spSel = document.getElementById('sel-sp');
+  var speciesCodes = [];
+  for(var i=0;i<spSel.options.length;i++){
+    if(spSel.options[i].value) speciesCodes.push(spSel.options[i].value);
+  }
+  if(!speciesCodes.length){ alert('No species in current filter'); return; }
+  var total = S.mirnaQueue.length;
+  if(total > 0 && !confirm('Add all miRNAs from '+speciesCodes.length+' species? Queue already has '+total+' miRNAs. Continue?')) return;
+
+  var loaded = 0;
+  var btn = document.getElementById('btn-add-all');
+  btn.disabled = true;
+  btn.textContent = '...';
+
+  function loadNext(i){
+    if(i >= speciesCodes.length){
+      btn.disabled = false; btn.textContent = '+ All';
+      renderQueue(); checkReady();
+      if(loaded > 0) alert('Added '+loaded+' miRNAs from '+speciesCodes.length+' species');
+      return;
+    }
+    api('/pamirdb/api/mirnas_by_species?species='+encodeURIComponent(speciesCodes[i])).then(function(list){
+      list.forEach(function(m){
+        if(!S.mirnaQueue.some(function(q){return q.id===m.id;})){
+          S.mirnaQueue.push({id:m.id, seq:m.seq}); loaded++;
+        }
+      });
+      if((i+1)%5===0){ renderQueue(); }
+      loadNext(i+1);
+    }).catch(function(){ loadNext(i+1); });
+  }
+  loadNext(0);
+}
+
+function addAllToQueue(){
+  var mirnas = S.mirnaBySpecies[S.currentSpecies] || [];
+  var added = 0;
+  mirnas.forEach(function(m){
+    var exists = S.mirnaQueue.some(function(q){ return q.id === m.id; });
+    if(!exists){
+      S.mirnaQueue.push({id:m.id, seq:m.seq});
+      added++;
+    }
+  });
+  renderQueue();
+  checkReady();
+  var lbl = document.getElementById('mr-count-lbl');
+  if(lbl) lbl.textContent = '('+mirnas.length+' available — added '+added+', queue: '+S.mirnaQueue.length+')';
+}
+
+// =====================
+//  MULTI-SELECT VIRUS
+// =====================
+if(!S.selectedViruses) S.selectedViruses = [];
+
+function renderVirusChips(){
+  var el = document.getElementById('vr-chips');
+  if(!el) return;
+  if(S.selectedViruses.length === 0){ el.style.display='none'; return; }
+  el.style.display = 'flex';
+  el.innerHTML = S.selectedViruses.map(function(v, i){
+    return '<span style="display:inline-flex;align-items:center;gap:4px;padding:3px 8px;background:#e8f5e9;border:1px solid #a5d6a7;border-radius:12px;font-size:10px">'
+      +'<b style="color:var(--green)">'+v.name.split(',')[0].slice(0,30)+'</b>'
+      +' <span style="color:#888">'+v.family+'</span>'
+      +' <span onclick="removeVirus('+i+')" style="cursor:pointer;color:#c33;margin-left:2px;font-weight:700">×</span>'
+      +'</span>';
+  }).join('');
+  S.virus = S.selectedViruses[0];  // backward compat - use first
+}
+
+function removeVirus(idx){
+  S.selectedViruses.splice(idx, 1);
+  renderVirusChips();
+  if(S.selectedViruses.length === 0){
+    S.virus = {id:null, seq:null, name:null, family:null, genes:[]};
+    document.getElementById('virus-meta').style.display = 'none';
+  }
+  checkReady();
+}
+
+// =====================
+//  RUN ANALYSIS (real-time scan only)
+// =====================
+function runSearch(){
+  if(document.getElementById('btn-run').disabled) return;
+  document.getElementById('btn-run').disabled = true;
+  document.getElementById('r-empty').style.display = 'none';
+  document.getElementById('r-results').style.display = 'none';
+  document.getElementById('r-detail').style.display = 'none';
+  document.getElementById('r-dashboard').style.display = 'none';
+  
+  document.getElementById('r-diagrams').style.display = 'none';
+  document.getElementById('r-progress').style.display = '';
+
+  var viruses = S.selectedViruses.length > 0 ? S.selectedViruses
+              : (S.virus && S.virus.id ? [S.virus] : []);
+
+  _runScanMode(viruses);
+}
+
+// ── Real-time sliding-window alignment ───────────────────────────
+function _runScanMode(viruses){
+  var queue = S.mirnaQueue;
+  var tier  = S.tier === 'any' ? 'moderate' : S.tier.toLowerCase();
+  var total = queue.length * viruses.length;
+  var done  = 0;
+
+  document.getElementById('prog-title').textContent =
+    'Running real-time analysis: '+queue.length+' miRNA(s) × '+viruses.length+' virus(es)...';
+  document.getElementById('prog-bar').style.width = '5%';
+
+  var promises = [];
+  queue.forEach(function(m){
+    viruses.forEach(function(v){
+      var body = {
+        mirna_id: m.id, mirna_seq: m.seq,
+        virus_id: v.id, virus_seq: v.seq||'',
+        virus_name: v.name||v.id, virus_family: v.family||'',
+        tier: tier, limit: 50
+      };
+      var p = fetch('/pamirdb/api/scan', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify(body)
+      }).then(function(r){ return r.json(); }).then(function(d){
+        done++;
+        document.getElementById('prog-bar').style.width =
+          Math.min(95, Math.round(done/total*90)+5)+'%';
+        if(d.no_sequence){
+          // 无 genomeSequence → 回退到预计算Database
+          return _dbFallback(m.id, v);
+        }
+        if(d.error){ return []; }
+        return (d.results||[]).map(function(r){
+          r._virus_name   = v.name||v.id;
+          r._virus_family = v.family||'';
+          return r;
+        });
+      }).catch(function(){ return []; });
+      promises.push(p);
+    });
+  });
+
+  Promise.all(promises).then(function(allChunks){
+    var combined = [].concat.apply([], allChunks).map(normalizeScanResult);
+    combined.sort(function(a,b){ return (a.best_energy||0)-(b.best_energy||0); });
+    S.results = combined;
+    document.getElementById('prog-bar').style.width = '100%';
+    setTimeout(function(){ showScanResults(viruses, queue.length); }, 300);
+  }).catch(function(e){ handleErr(e); })
+  .finally(function(){
+    document.getElementById('btn-run').disabled = false;
+    document.getElementById('r-progress').style.display = 'none';
+    checkReady();
+  });
+}
+
+function normalizeScanResult(r){
+  if (!r.consensus_level) r.consensus_level = 'LOW';
+  r.num_algorithms  = r.num_algorithms  || 1;
+  // Scan mode = the single local SW-DP engine only ("3 algorithms" was wrong).
+  r.total_algorithms = 1;
+  r._scan_mode = true;
+  r.best_energy    = r.best_energy    || r.energy   || 0;
+  r.best_identity  = r.best_identity  || r.identity || 0;
+  r.seed_perfect_wc = r.seed_perfect_wc || (r.seed_perfect ? 7 : 0);
+  r.virus_name        = r.virus_name        || r._virus_name || '';
+  r.target_virus_name = r.target_virus_name || r.virus_name;
+  r.miranda_score  = r.miranda_score  || r.score        || 0;
+  r.miranda_energy = r.miranda_energy || r.best_energy  || 0;
+  r.consensus_detail = honestAlgos(r.consensus_detail || 'custom SW-DP (scan)');
+  r.mirna_seq = r.mirna_seq || '';
+  return r;
+}
+
+// 无 genomeSequence时回退查预计算Database
+function _dbFallback(mirna_id, v){
+  var url = '/pamirdb/api/search?mirna_id='+encodeURIComponent(mirna_id)
+          +'&virus_id='+encodeURIComponent(v.id)+'&limit=100';
+  return api(url).then(function(d){
+    return (d.results||[]).map(function(r){
+      r._virus_name   = v.name||v.id;
+      r._virus_family = v.family||'';
+      r._from_db      = true;
+      // DB Results已有 best_energy/best_identity，alignment 字段名统一
+      r.alignment = r.alignment || r.miranda_alignment || '';
+      return r;
+    });
+  }).catch(function(){ return []; });
+}
+
+function showScanResults(viruses, numMirnas){
+  document.getElementById('r-progress').style.display = 'none';
+  document.getElementById('r-results').style.display = '';
+  var badge = '<span style="background:#27ae60;color:#fff;padding:1px 7px;border-radius:4px;font-size:11px;margin-left:8px">REAL-TIME SCAN</span>';
+  document.getElementById('r-title').innerHTML =
+    'Results: <b>'+S.results.length+'</b> binding site(s) — '+numMirnas+' miRNA(s) × '+viruses.length+' virus(es)'+badge;
+  if(S.results.length === 0){
+    var tier = S.tier === 'any' ? 'moderate' : S.tier;
+    document.getElementById('r-tbody').innerHTML =
+      '<tr><td colspan="9" style="text-align:center;padding:30px;color:var(--gray)">'
+      +'No binding sites found at tier <b>'+tier+'</b>.<br>'
+      +'<small>Try a looser filter tier, or paste the virus genome in the Custom input box.</small>'
+      +'</td></tr>';
+    document.getElementById('f-count').textContent = '0 results';
+    return;
+  }
+  applyFilters();
+}
+
+function runPrediction(){ runSearch(); }
+
+var CONS_ORDER = {NONE:0,LOW:1,'LOW+':2,MEDIUM:3,'MEDIUM+':4,HIGH:5,'HIGH+':6,'VERY HIGH':7};
+
+function consClass(c){
+  if(!c||c==='NONE') return 'c-none';
+  if(c.indexOf('VERY')>=0) return 'c-vhigh';
+  if(c.indexOf('HIGH')>=0) return 'c-high';
+  if(c.indexOf('MEDIUM')>=0) return 'c-medium';
+  return 'c-low';
+}
+
+function applyFilters(){
+  var fTier  = document.getElementById('f-tier').value;
+  var fSeed  = document.getElementById('f-seed').value;
+  var fE     = parseFloat(document.getElementById('f-energy').value);
+  var fId    = parseFloat(document.getElementById('f-identity').value);
+  var fMm    = parseInt(document.getElementById('f-mm').value);
+  var fSearch= document.getElementById('f-search').value.toLowerCase().trim();
+
+  var MIN_TIER = {VHIGH:7,HIGH:5,MEDIUM:3,LOW:1};
+
+  S.filtered = S.results.filter(function(r){
+    if(fTier && (CONS_ORDER[r.consensus_level]||0) < (MIN_TIER[fTier]||0)) return false;
+    if(fSeed==='1' && !r.seed_perfect_wc) return false;
+    if(!isNaN(fE) && (r.best_energy||0) > fE) return false;
+    if(!isNaN(fId) && (r.best_identity||0) < fId) return false;
+    if(!isNaN(fMm) && (r.num_mismatches||0) > fMm) return false;
+    if(fSearch && (r.mirna_id||'').toLowerCase().indexOf(fSearch)<0) return false;
+    return true;
+  });
+  S.page = 1;
+  sortResults();
+}
+
+function sortBy(col){
+  if(S.sortCol === col) S.sortAsc = !S.sortAsc;
+  else { S.sortCol = col; S.sortAsc = col !== 'best_energy'; }
+  S.page = 1;
+  sortResults();
+}
+
+function sortResults(){
+  var col = S.sortCol, asc = S.sortAsc;
+  S.filtered.sort(function(a,b){
+    var av = a[col], bv = b[col];
+    if(col==='consensus_level'){ av=CONS_ORDER[av]||0; bv=CONS_ORDER[bv]||0; }
+    if(av==null) av = asc ? Infinity : -Infinity;
+    if(bv==null) bv = asc ? Infinity : -Infinity;
+    return asc ? (av > bv ? 1 : av < bv ? -1 : 0) : (av < bv ? 1 : av > bv ? -1 : 0);
+  });
+  renderTable();
+}
+
+function renderTable(){
+  S.page = S.page || 1;
+  S.pageSize = 20;
+  var total = S.filtered.length;
+  var totalPages = Math.ceil(total / S.pageSize);
+  if(S.page > totalPages) S.page = totalPages;
+  if(S.page < 1) S.page = 1;
+  var start = (S.page - 1) * S.pageSize;
+  var pageItems = S.filtered.slice(start, start + S.pageSize);
+  
+  document.getElementById('f-count').textContent = total +' / '+S.results.length+' results (page '+S.page+'/'+totalPages+')';
+  var tbody = document.getElementById('r-tbody');
+  if(S.filtered.length === 0){
+    tbody.innerHTML = '<tr><td colspan="9" style="text-align:center;padding:20px;color:var(--gray)">No results match current filters</td></tr>';
+    document.getElementById('r-dashboard').style.display = 'none';
+    
+    document.getElementById('r-diagrams').style.display = 'none';
+    return;
+  }
+  tbody.innerHTML = pageItems.map(function(r,i){
+    var realIdx = start + i;
+    var cLevel = r.consensus_level || 'NONE';
+    var algoStr = honestAlgos(r.consensus_detail) || 'custom SW-DP';
+    var geneStr = (r.target_gene||'').replace(/:.+/,'') || r.targeting_status || '-';
+    return '<tr onclick="showDetail('+realIdx+')" style="cursor:pointer">'
+      +'<td style="font-weight:600;color:var(--green)">'+r.mirna_id+'</td>'
+      +'<td><span class="badge-c '+consClass(cLevel)+'">'+cLevel+'</span></td>'
+      +'<td>'+(r.best_energy!=null?r.best_energy.toFixed(1):'-')+'</td>'
+      +'<td>'+(r.best_identity!=null?r.best_identity.toFixed(0)+'%':'-')+'</td>'
+      +'<td>'+(r.num_mismatches!=null?r.num_mismatches:'-')+'</td>'
+      +'<td class="'+(r.seed_perfect_wc?'seed-ok':'seed-no')+'">'+(r.seed_perfect_wc!=null?r.seed_perfect_wc+'/7':'-')+'</td>'
+      +'<td style="font-size:10px;color:#555">'+escHtml(algoStr)+'</td>'
+      +'<td style="font-size:10px;font-weight:600;color:'+(geneStr==='Intergenic'?'#999':geneStr==='-'?'#ccc':'#e67e22')+'">'+escHtml(geneStr)+'</td>'
+      +'<td><button onclick="event.stopPropagation();showDetail('+realIdx+')" style="padding:3px 8px;font-size:10px;border:1px solid var(--green);background:none;color:var(--green);border-radius:4px;cursor:pointer">View</button></td>'
+      +'</tr>';
+  }).join('');
+  renderDashboard();
+  renderSankey();
+  renderNetworkGraph();
+  
+  // Pagination controls
+  var pager = document.getElementById('r-pager');
+  if(totalPages > 1){
+    pager.style.display = 'flex';
+    document.getElementById('r-page-info').textContent = 'Page '+S.page+' of '+totalPages;
+    // Disable first/prev on page 1
+    pager.querySelectorAll('button')[0].disabled = (S.page <= 1);
+    pager.querySelectorAll('button')[1].disabled = (S.page <= 1);
+    pager.querySelectorAll('button')[2].disabled = (S.page >= totalPages);
+    pager.querySelectorAll('button')[3].disabled = (S.page >= totalPages);
+  } else {
+    pager.style.display = 'none';
+  }
+}
+
+function goPage(p){
+  var totalPages = Math.ceil(S.filtered.length / S.pageSize);
+  if(p === 999) p = totalPages;
+  p = Math.max(1, Math.min(totalPages, p));
+  S.page = p;
+  renderTable();
+  // Scroll to table
+  document.getElementById('r-table').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// =====================
+//  SANKEY DIAGRAM
+// =====================
+function extractSpeciesName(mid){
+  if(!mid) return 'Unknown';
+  // Standard miRBase: "Glycine_max-miR169z-3p" → "Glycine max"
+  var m=mid.match(/^([A-Za-z][a-z]*(?:[_][a-z]+)?)-mi[rR]/);
+  if(m) return m[1].replace(/_/g,' ');
+  var p=mid.split('-');
+  return (p.length>=2?p[0]+'_'+p[1]:p[0]).replace(/_/g,' ').slice(0,22);
+}
+
+function shortenVName(v){
+  if(!v) return '';
+  var abbr={
+    'Tomato yellow leaf curl virus':'TYLCV',
+    'Mungbean yellow mosaic India virus':'MYMIV',
+    'Mungbean yellow mosaic virus':'MYMV',
+    'African cassava mosaic virus':'ACMV',
+    'Bean golden mosaic virus':'BGMV',
+    'Mungbean yellow mosaic old virus':'MYMOV',
+    'Tomato leaf curl New Delhi virus':'ToLCNDV'
+  };
+  if(abbr[v]) return abbr[v];
+  return v.replace(/ virus$/i,'').slice(0,26);
+}
+
+function renderDashboard(){
+  var el=document.getElementById('r-dashboard');
+  if(!S.filtered||!S.filtered.length){el.style.display='none';return;}
+  var data=S.filtered;
+  var n=data.length;
+
+  // ---- aggregate ----
+  var totalEnergy=0, totalId=0, eCount=0, idCount=0;
+  var species={}, proteins={}, consensus={};
+  data.forEach(function(r){
+    if(r.best_energy!=null){totalEnergy+=r.best_energy;eCount++;}
+    if(r.best_identity!=null){totalId+=r.best_identity;idCount++;}
+    var sp=r.mirna_id; if(sp) species[sp]=(species[sp]||0)+1;
+    var gene=(r.target_gene||'').trim();
+    var prot=gene?gene.replace(/:.*$/,'').trim():'Intergenic';
+    proteins[prot]=(proteins[prot]||0)+1;
+    var cl=r.consensus_level||'NONE'; consensus[cl]=(consensus[cl]||0)+1;
+  });
+  var avgE=eCount?totalEnergy/eCount:0;
+  var avgId=idCount?totalId/idCount:0;
+  var nSp=Object.keys(species).length;
+  var nPr=Object.keys(proteins).length;
+
+  // ---- stats strip ----
+  var stats='<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">'
+    +'<div class="stat-chip"><span class="sc-v">'+n+'</span><span class="sc-l">Total Hits</span></div>'
+    +'<div class="stat-chip"><span class="sc-v">'+avgE.toFixed(1)+'</span><span class="sc-l">Avg Energy (kcal/mol)</span></div>'
+    +'<div class="stat-chip"><span class="sc-v">'+avgId.toFixed(1)+'%</span><span class="sc-l">Avg Identity</span></div>'
+    +'<div class="stat-chip"><span class="sc-v">'+nSp+'</span><span class="sc-l">Plant Species</span></div>'
+    +'<div class="stat-chip"><span class="sc-v">'+nPr+'</span><span class="sc-l">Viral Proteins</span></div>'
+    +'</div>';
+
+  // ---- assemble (stats only) ----
+  el.innerHTML=stats;
+  el.style.display='';
+}
+
+function renderSankey(){
+  var el=document.getElementById('r-sankey');
+  if(!S.filtered||!S.filtered.length){el.style.display='none';return;}
+
+  var lmap={};
+  S.filtered.forEach(function(r){
+    var sp=r.mirna_id;
+    var gene=(r.target_gene||'').trim();
+    var prot=gene?gene.replace(/:.*$/,'').trim():'Intergenic';
+    if(!sp||!prot) return;
+    var k=sp+''+prot;
+    if(!lmap[k]) lmap[k]={s:sp,t:prot,n:0};
+    lmap[k].n++;
+  });
+  var links=Object.values(lmap);
+  if(!links.length){el.style.display='none';return;}
+
+  var st={},tt={};
+  links.forEach(function(l){st[l.s]=(st[l.s]||0)+l.n;tt[l.t]=(tt[l.t]||0)+l.n;});
+  var sN=Object.keys(st).sort(function(a,b){return st[b]-st[a];}).slice(0,30);
+  var tN=Object.keys(tt).sort(function(a,b){return tt[b]-tt[a];}).slice(0,30);
+
+  var nodes=[],idx={};
+  // Color palette for species (Sankey)
+  var speciesColors={};
+  var palette=['#2c6e49','#1a5276','#8e44ad','#c0392b','#d35400','#16a085','#2980b9','#e67e22','#27ae60','#9b59b6','#f39c12','#1abc9c','#e74c3c','#3498db','#2ecc71','#e91e63'];
+  var pi=0;
+  sN.forEach(function(n){
+    var parts=n.split('-');
+    var sp=parts.length>=3?parts[0]+'-'+parts[1]:parts[0];
+    if(!speciesColors[sp]){speciesColors[sp]=palette[pi%palette.length];pi++;}
+    var col=speciesColors[sp];
+    idx[n]=nodes.length;
+    nodes.push({name:n,itemStyle:{color:col}});
+  });
+  var protColors={};
+  pi=0;
+  tN.forEach(function(n){
+    if(!protColors[n]){protColors[n]=palette[pi%palette.length];pi++;}
+    var col=protColors[n];
+    idx[n]=nodes.length;
+    nodes.push({name:n,itemStyle:{color:col}});
+  });
+  // Also color links by source species
+  var linkColors={};
+  sN.forEach(function(n){var parts=n.split('-'); var sp=parts.length>=3?parts[0]+'-'+parts[1]:parts[0]; linkColors[n]=speciesColors[sp]||'#2c6e49';});
+
+  var sankeyLinks=links.filter(function(l){return sN.indexOf(l.s)>=0&&tN.indexOf(l.t)>=0;})
+    .map(function(l){return {source:idx[l.s],target:idx[l.t],value:l.n};});
+
+  el.innerHTML='<div class="card" style="padding:8px 10px">'
+    +'<h3 style="font-size:10px;font-weight:700;color:var(--green);margin-bottom:6px">miRNA → Viral Protein Sankey</h3>'
+    +'<div id="r-sankey-chart" class="echart-box" style="height:280px"></div>'
+    +'</div>';
+
+  var c=echarts.init(document.getElementById('r-sankey-chart'));
+  c.setOption({
+    tooltip:{trigger:'item',triggerOn:'mousemove'},
+    series:[{type:'sankey',nodeWidth:24,nodeGap:20,emphasis:{focus:'adjacency'},
+      nodeAlign:'left',layoutIterations:32,data:nodes,links:sankeyLinks,
+      label:{fontSize:9,color:'#333'},lineStyle:{color:'source',curveness:0.5,opacity:0.3}}]
+  });
+  window.addEventListener('resize',function(){c.resize();});
+  // Mousewheel zoom for Sankey (only when mouse over chart)
+  (function(chartDom){
+    var scale=1, minS=0.6, maxS=3;
+    chartDom.addEventListener('wheel',function(e){
+      if(!chartDom.matches(':hover')) return;
+      e.preventDefault();
+      e.stopPropagation();
+      var delta=e.deltaY>0?0.9:1.1;
+      scale=Math.max(minS,Math.min(maxS,scale*delta));
+      chartDom.style.transform='scale('+scale+')';
+      chartDom.style.transformOrigin='top center';
+      chartDom.style.transition='transform 0.1s ease-out';
+    },{passive:false});
+  })(document.getElementById('r-sankey-chart'));
+  document.getElementById('r-diagrams').style.display='flex';
+  el.style.display='';
+  setTimeout(function(){c.resize();},100);
+}
+
+function renderNetworkGraph(){
+  var el=document.getElementById('r-graph');
+  if(!S.filtered||!S.filtered.length){el.style.display='none';return;}
+
+  var lmap={};
+  S.filtered.forEach(function(r){
+    var sp=r.mirna_id;
+    var gene=(r.target_gene||'').trim();
+    var prot=gene?gene.replace(/:.*$/,'').trim():'Intergenic';
+    if(!sp||!prot) return;
+    var k=sp+''+prot;
+    if(!lmap[k]) lmap[k]={s:sp,t:prot,n:0};
+    lmap[k].n++;
+  });
+  var links=Object.values(lmap);
+  if(!links.length){el.style.display='none';return;}
+
+  var st={},tt={};
+  links.forEach(function(l){st[l.s]=(st[l.s]||0)+l.n;tt[l.t]=(tt[l.t]||0)+l.n;});
+  var sN=Object.keys(st).sort(function(a,b){return st[b]-st[a];}).slice(0,30);
+  var tN=Object.keys(tt).sort(function(a,b){return tt[b]-tt[a];}).slice(0,30);
+
+  var graphNodes=[];
+  sN.forEach(function(n){
+    graphNodes.push({id:n,name:n,symbolSize:Math.min(8+st[n]*2,28),category:0,
+      itemStyle:{color:'#2c6e49'}});
+  });
+  tN.forEach(function(n){
+    graphNodes.push({id:n,name:n,symbolSize:Math.min(8+tt[n]*2,28),category:1,
+      itemStyle:{color:'#e74c3c'}});
+  });
+
+  var graphLinks=links.filter(function(l){return sN.indexOf(l.s)>=0&&tN.indexOf(l.t)>=0;})
+    .map(function(l){return {source:l.s,target:l.t,
+      lineStyle:{color:'#2c6e49',opacity:0.25,width:Math.min(l.n*0.8,4)}};});
+
+  el.innerHTML='<div class="card" style="padding:8px 10px">'
+    +'<h3 style="font-size:10px;font-weight:700;color:var(--orange);margin-bottom:6px">miRNA ↔ Viral Protein 网络图</h3>'
+    +'<div id="r-graph-chart" class="echart-box" style="height:280px"></div>'
+    +'</div>';
+
+  var c=echarts.init(document.getElementById('r-graph-chart'));
+  c.setOption({
+    tooltip:{formatter:function(p){
+      if(p.dataType==='node') return '<b>'+p.name+'</b>';
+      return '<b>'+p.data.source+'</b> ⇄ <b>'+p.data.target+'</b>';
+    }},
+    legend:[
+      {data:[{name:'miRNA',icon:'circle',itemStyle:{color:'#2c6e49'}}],orient:'vertical',left:8,top:8,textStyle:{fontSize:10}},
+      {data:[{name:'Viral Protein',icon:'circle',itemStyle:{color:'#e74c3c'}}],orient:'vertical',left:8,top:40,textStyle:{fontSize:10}}
+    ],
+    series:[{type:'graph',layout:'force',roam:true,draggable:true,
+      force:{repulsion:300,edgeLength:[60,200],gravity:0.08,layoutAnimation:true},
+      data:graphNodes,links:graphLinks,
+      categories:[
+        {name:'miRNA',itemStyle:{color:'#2c6e49'}},
+        {name:'Viral Protein',itemStyle:{color:'#e74c3c'}}
+      ],
+      label:{show:true,fontSize:9,position:'right',color:'#333'},
+      lineStyle:{opacity:0.2,curveness:0.2},
+      emphasis:{focus:'adjacency',lineStyle:{opacity:0.8,width:2.5}}
+    }]
+  });
+  window.addEventListener('resize',function(){c.resize();});
+  // Mousewheel zoom for Sankey (only when mouse over chart)
+  (function(chartDom){
+    var scale=1, minS=0.6, maxS=3;
+    chartDom.addEventListener('wheel',function(e){
+      if(!chartDom.matches(':hover')) return;
+      e.preventDefault();
+      e.stopPropagation();
+      var delta=e.deltaY>0?0.9:1.1;
+      scale=Math.max(minS,Math.min(maxS,scale*delta));
+      chartDom.style.transform='scale('+scale+')';
+      chartDom.style.transformOrigin='top center';
+      chartDom.style.transition='transform 0.1s ease-out';
+    },{passive:false});
+  })(document.getElementById('r-sankey-chart'));
+  document.getElementById('r-diagrams').style.display='flex';
+  el.style.display='';
+  setTimeout(function(){c.resize();},100);
+}
+
+function resetFilters(){
+  var d=document.getElementById('r-graph-chart');
+  var b=document.getElementById('chord-toggle');
+  if(!d||!b) return;
+  if(d.style.display==='none'){d.style.display='';b.textContent='Hide';}
+  else{d.style.display='none';b.textContent='Show';}
+}
+
+function resetFilters(){
+  document.getElementById('f-tier').value='';
+  document.getElementById('f-seed').value='';
+  document.getElementById('f-energy').value='';
+  document.getElementById('f-identity').value='';
+  document.getElementById('f-mm').value='';
+  document.getElementById('f-search').value='';
+  applyFilters();
+}
+
+// =====================
+//  DETAIL VIEW
+// =====================
+function showDetail(idx){
+  try{
+  var r = S.filtered[idx];
+  if(!r) return;
+  document.querySelectorAll('#r-tbody tr').forEach(function(tr,i){ tr.className = i===idx?'active':''; });
+  document.getElementById('r-detail').style.display = '';
+  document.getElementById('det-title').textContent = r.mirna_id + ' → ' + (r.target_virus_name||S.virus.name||'target');
+
+  // Score grid
+  var cLevel = r.consensus_level||'NONE';
+  document.getElementById('det-scores').innerHTML =
+    '<div class="s-item span-all"><div class="v"><span class="badge-c '+consClass(cLevel)+'">'+cLevel+'</span>&nbsp; '+
+    (r.num_algorithms||0)+'/'+(r.total_algorithms||1)+' local layers passed</div><div class="l">'+escHtml(honestAlgos(r.consensus_detail||''))+' · '+(r.in_vsirna_hotspot?'In vsiRNA hotspot':'No vsiRNA hotspot')+'</div></div>'+
+    scoreItem(r.best_energy!=null?r.best_energy.toFixed(1)+' kcal/mol':'-','Energy (MFE)')+
+    scoreItem(r.seed_perfect_wc!=null?r.seed_perfect_wc+'/7 WC':'-','Seed Quality')+
+    scoreItem(r.best_identity!=null?r.best_identity.toFixed(1)+'%':'-','Identity')+
+    scoreItem(r.num_mismatches!=null?r.num_mismatches:'-','Mismatches')+
+    scoreItem(r.miranda_score!=null?r.miranda_score.toFixed(0):'-','SW-DP Score')+
+    (r.experimentally_validated ? scoreItem('✓','Exp. Validated') : '')+
+    (r.target_gene ? '<div class="s-item"><div class="k">Target Gene</div><div class="v">'+escHtml(r.target_gene)+'</div></div>' : '')+
+    (r.target_product ? '<div class="s-item"><div class="k">Protein Product</div><div class="v">'+escHtml(r.target_product)+'</div></div>' : '')+
+    (r.targeting_status ? '<div class="s-item"><div class="k">Targeting</div><div class="v"><span class="badge-c '+(r.targeting_status==='within_cds'?'green':r.targeting_status==='within_ncr'?'blue':'gray')+'">'+escHtml(r.targeting_status)+'</span></div></div>' : '');
+
+  // Alignment tab
+  document.getElementById('tab-aln').innerHTML = r.alignment ?
+    renderDuplexSVG(r.alignment) + '<div class="aln-wrap">'+renderAlnHTML(r.alignment)+'</div>' :
+    '<p style="color:var(--gray);padding:20px;text-align:center">No alignment data</p>';
+
+  // Algorithms tab
+  document.getElementById('tab-algos').innerHTML = renderAlgoTable(r);
+
+  // Position map tab
+  document.getElementById('tab-map').innerHTML = renderPosMap(r);
+
+  // miRNA secondary structure tab
+  document.getElementById('tab-struct').innerHTML = rendermiRNAStructSVG(r.mirna_seq||r.mirna_id||'', r.mirna_id||'');
+
+  showTab('aln');
+  document.getElementById('r-detail').scrollIntoView({behavior:'smooth',block:'nearest'});
+  }catch(e){
+    document.getElementById('det-scores').innerHTML = '<div style="color:#e74c3c;padding:10px;background:#fde8e8;border-radius:6px;margin-bottom:8px"><b>Error:</b> '+escHtml(String(e.message||e))+'</div>';
+  }
+}
+
+function scoreItem(v, l){ return '<div class="s-item"><div class="v">'+v+'</div><div class="l">'+l+'</div></div>'; }
+
+function closeDetail(){
+  document.getElementById('r-detail').style.display = 'none';
+  document.querySelectorAll('#r-tbody tr').forEach(function(tr){ tr.className=''; });
+}
+
+function showTab(t){
+  ['aln','algos','map','struct'].forEach(function(x){
+    document.getElementById('tab-'+x).className = x===t?'tab-pane on':'tab-pane';
+  });
+  document.querySelectorAll('.tab-btn').forEach(function(b,i){
+    b.className = (['aln','algos','map','struct'][i]===t) ? 'tab-btn on' : 'tab-btn';
+  });
+}
+
+// =====================
+//  DUPLEX STRUCTURE SVG
+// =====================
+function renderDuplexSVG(aln){
+  var lines = aln.split('\n');
+  if(lines.length < 3) return '';
+  var mCore = lines[0].replace(/^miRNA\s+5'\s*/,'').replace(/\s*3'$/,'');
+  var pCore = lines[1].replace(/^\s+/,'');
+  var tCore = lines[2].replace(/^target\s+3'\s*/,'').replace(/\s*5'$/,'');
+  // Pad to same length
+  var L = Math.max(mCore.length, pCore.length, tCore.length);
+  while(mCore.length < L) mCore += ' ';
+  while(pCore.length < L) pCore += ' ';
+  while(tCore.length < L) tCore += ' ';
+
+  var CELL = 20;  // px per column
+  var PAD_L = 52; // left pad for label
+  var B = 8;      // circle radius
+  var W = PAD_L + L*CELL + 24;
+  var H = 98;
+  // Rows: miRNA y=14, connectors y=24-54, target y=64, numbers y=78
+  var baseFill = {'A':'#e74c3c','U':'#3498db','G':'#27ae60','C':'#e67e22','T':'#3498db'};
+
+  // Find seed columns (miRNA pos 2-8)
+  var mPos = 0; var seedX1=-1; var seedX2=-1;
+  for(var i=0;i<L;i++){
+    var c = mCore[i];
+    if(c && c!=='-' && c!==' '){
+      mPos++;
+      if(mPos===2) seedX1 = PAD_L + i*CELL;
+      if(mPos===8) seedX2 = PAD_L + (i+1)*CELL;
+    }
+  }
+
+  var bg = ''; var circles = ''; var connectors = ''; var posNums = '';
+
+  // Seed highlight band
+  if(seedX1>=0 && seedX2>seedX1){
+    bg = '<rect x="'+seedX1+'" y="4" width="'+(seedX2-seedX1)+'" height="72" fill="rgba(241,196,15,0.08)" rx="3"/>'
+       + '<rect x="'+seedX1+'" y="4" width="'+(seedX2-seedX1)+'" height="72" fill="none" stroke="rgba(241,196,15,0.35)" stroke-width="1" rx="3" stroke-dasharray="3,2"/>';
+  }
+
+  mPos = 0;
+  for(var i=0;i<L;i++){
+    var cx = PAD_L + i*CELL + CELL/2;
+    var mc = (mCore[i]||' ').toUpperCase().replace('T','U');
+    var tc = (tCore[i]||' ').toUpperCase().replace('T','U');
+    var pc = pCore[i]||' ';
+
+    // miRNA circle (y=14)
+    if(mc!=='-' && mc!==' '){
+      var col = baseFill[mc]||'#888';
+      circles += '<circle cx="'+cx+'" cy="14" r="'+B+'" fill="'+col+'"/>'
+               + '<text x="'+cx+'" y="18" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">'+mc+'</text>';
+      mPos++;
+    } else if(mc==='-'){
+      circles += '<text x="'+cx+'" y="18" text-anchor="middle" font-size="11" fill="#555">–</text>';
+    }
+
+    // Target circle (y=64)
+    if(tc!=='-' && tc!==' '){
+      var col2 = baseFill[tc]||'#888';
+      circles += '<circle cx="'+cx+'" cy="64" r="'+B+'" fill="'+col2+'"/>'
+               + '<text x="'+cx+'" y="68" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">'+tc+'</text>';
+    } else if(tc==='-'){
+      circles += '<text x="'+cx+'" y="68" text-anchor="middle" font-size="11" fill="#555">–</text>';
+    }
+
+    // Connector
+    if(pc==='|'){
+      connectors += '<line x1="'+cx+'" y1="23" x2="'+cx+'" y2="55" stroke="#27ae60" stroke-width="1.5"/>';
+    } else if(pc===':'){
+      connectors += '<line x1="'+cx+'" y1="23" x2="'+cx+'" y2="55" stroke="#e67e22" stroke-width="1.5" stroke-dasharray="2.5,2"/>';
+    } else if(pc==='.'){
+      connectors += '<line x1="'+(cx-3)+'" y1="30" x2="'+(cx+3)+'" y2="48" stroke="#e74c3c" stroke-width="1.5"/>'
+                  + '<line x1="'+(cx+3)+'" y1="30" x2="'+(cx-3)+'" y2="48" stroke="#e74c3c" stroke-width="1.5"/>';
+    }
+
+    // Position number (every 5)
+    if(mc!=='-' && mc!==' ' && mPos%5===0){
+      posNums += '<text x="'+cx+'" y="86" text-anchor="middle" font-size="8" fill="#555">'+mPos+'</text>';
+    }
+  }
+
+  // Axis labels
+  var labels = '<text x="2" y="18" font-size="9" fill="#8b949e" font-family="monospace">5\'</text>'
+             + '<text x="'+(W-10)+'" y="18" text-anchor="end" font-size="9" fill="#8b949e" font-family="monospace">3\'</text>'
+             + '<text x="2" y="38" font-size="8" fill="#6e7681">miRNA</text>'
+             + '<text x="2" y="52" font-size="8" fill="#6e7681">target</text>'
+             + '<text x="2" y="68" font-size="9" fill="#8b949e" font-family="monospace">3\'</text>'
+             + '<text x="'+(W-10)+'" y="68" text-anchor="end" font-size="9" fill="#8b949e" font-family="monospace">5\'</text>';
+
+  var svg = '<svg width="'+W+'" height="'+H+'" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;display:block">'
+    + '<rect width="'+W+'" height="'+H+'" fill="#0d1117"/>'
+    + bg + connectors + circles + labels + posNums
+    + '</svg>';
+
+  return '<div class="duplex-wrap">'
+    + '<h4>miRNA : Target Duplex Structure</h4>'
+    + svg
+    + '<div class="duplex-legend">'
+    + '<span><svg width="12" height="10"><line x1="6" y1="0" x2="6" y2="10" stroke="#27ae60" stroke-width="2"/></svg>Watson-Crick</span>'
+    + '<span><svg width="12" height="10"><line x1="6" y1="0" x2="6" y2="10" stroke="#e67e22" stroke-width="2" stroke-dasharray="2,1.5"/></svg>Wobble (G:U)</span>'
+    + '<span><svg width="12" height="10"><line x1="2" y1="0" x2="10" y2="10" stroke="#e74c3c" stroke-width="2"/><line x1="10" y1="0" x2="2" y2="10" stroke="#e74c3c" stroke-width="2"/></svg>Mismatch</span>'
+    + '<span><svg width="12" height="10"><rect x="2" y="0" width="8" height="10" fill="rgba(241,196,15,0.25)" stroke="rgba(241,196,15,0.6)" stroke-width="1"/></svg>Seed region (2–8)</span>'
+    + '</div></div>';
+}
+
+// =====================
+//  ALIGNMENT RENDERER
+// =====================
+function renderAlnHTML(aln){
+  var lines = aln.split('\n');
+  if(lines.length < 3) return escHtml(aln);
+  var ml = lines[0]; var pipe = lines[1]; var tl = lines[2];
+  // Strip labels
+  var mCore = ml.replace(/^miRNA\s+5'\s*/,'').replace(/\s*3'$/,'');
+  var pCore = pipe.replace(/^\s+/,'');
+  var tCore = tl.replace(/^target\s+3'\s*/,'').replace(/\s*5'$/,'');
+
+  function colorLine(seq, pipes, isMirna){
+    var pos = 0; var html = '';
+    for(var i=0;i<seq.length;i++){
+      var c = seq[i];
+      if(c==='-'){ html += '<span class="a-gp">'+c+'</span>'; continue; }
+      pos++;
+      var p = pipes[i]||' ';
+      var cls = p==='|' ? 'a-wc' : p===':' ? 'a-wo' : p==='.' ? 'a-mm' : '';
+      var seedCls = (isMirna && pos>=2 && pos<=8) ? ' a-seed' : '';
+      html += '<span class="'+cls+seedCls+'">'+c+'</span>';
+    }
+    return html;
+  }
+
+  var mHtml = colorLine(mCore, pCore, true);
+  var tHtml = colorLine(tCore, pCore, false);
+  var pHtml = '';
+  for(var k=0;k<pCore.length;k++){
+    pHtml += pCore[k]==='|' ? '<span class="a-wc">|</span>' : pCore[k]===':' ? '<span class="a-wo">:</span>' : pCore[k];
+  }
+  return "miRNA  5' "+mHtml+" 3'\n"+"       " + pHtml+"\ntarget 3' "+tHtml+" 5'";
+}
+
+function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// Map legacy (tool-named) consensus_detail strings coming from the pre-2026-10
+// predictions to the honest layer names actually implemented locally. The
+// stored data still carries the old strings until the v7 pipeline is re-run.
+function honestAlgos(s){
+  if(!s) return '';
+  return String(s)
+    .replace(/miRanda/g, 'custom SW-DP')
+    .replace(/psRNATarget/g, 'local heuristic recheck')
+    .replace(/RNAhybrid/g, 'local MFE heuristic')
+    .replace(/RNA22/g, 'local pattern heuristic')
+    .replace(/TAPIR/g, 'local accessibility heuristic')
+    .replace(/psRobot/g, 'local rule-based heuristic');
+}
+
+// =====================
+//  ALGORITHM TABLE
+// =====================
+function renderAlgoTable(r){
+  // 2026-10-03: labels reflect the ACTUAL local layers (the score fields keep
+  // their historical names for API compatibility, but they are not external tools).
+  var rows = [
+    ['SW-DP 自研比对',      r.miranda_score,    'Score: '+(r.miranda_score!=null?r.miranda_score.toFixed(0):'N/A')+', Energy: '+(r.miranda_energy!=null?r.miranda_energy.toFixed(1):'N/A')+', Identity: '+(r.best_identity!=null?r.best_identity.toFixed(1)+'%':'N/A')],
+    ['启发式复核 (本地)',   r.psrna_score,      'Score: '+(r.psrna_score!=null?r.psrna_score.toFixed(2):'N/A')+', Expectation: '+(r.psrna_expectation!=null?r.psrna_expectation.toFixed(2):'N/A')],
+    ['MFE 启发式 (本地)',   r.rnahybrid_mfe,    'MFE: '+(r.rnahybrid_mfe!=null?r.rnahybrid_mfe.toFixed(1):'N/A')+', Seed WC: '+(r.rnahybrid_seed!=null?(r.rnahybrid_seed?'OK':'NO'):'N/A')],
+    ['模式启发式 (本地)',   r.rna22_score,      'Score: '+(r.rna22_score!=null?r.rna22_score:'N/A')],
+    ['可及性启发式 (本地)', r.tapir_score,      'Score: '+(r.tapir_score!=null?r.tapir_score:'N/A')],
+    ['规则启发式 (本地)',   r.psrobot_score,    'Score: '+(r.psrobot_score!=null?r.psrobot_score:'N/A')]
+  ];
+  return '<p style="font-size:10px;color:#999;margin:0 0 6px">自研比对 + 启发式复核（非 miRanda/psRNATarget/RNAhybrid 等外部工具）</p>'+
+    '<table class="algo-tbl"><thead><tr><th>Layer (local)</th><th>Status</th><th>Key Metrics</th></tr></thead><tbody>'+
+    rows.map(function(row){
+      var cls = row[1]==null ? 'fail' : (row[1] ? 'pass' : 'fail');
+      var status = row[1]==null ? 'SKIP' : (row[1] ? 'PASS' : 'FAIL');
+      return '<tr><td>'+row[0]+'</td><td class="'+cls+'">'+status+'</td><td style="color:#555">'+row[2]+'</td></tr>';
+    }).join('')+'</tbody></table>';
+}
+
+// =====================
+//  miRNA SECONDARY STRUCTURE (Nussinov arc diagram)
+// =====================
+function canPairRNA(a, b){
+  a=a.toUpperCase().replace('T','U'); b=b.toUpperCase().replace('T','U');
+  if((a==='G'&&b==='U')||(a==='U'&&b==='G')) return true;
+  return ({A:'U',U:'A',G:'C',C:'G'})[a]===b;
+}
+
+function nussinovFold(seq){
+  seq=seq.toUpperCase().replace(/T/g,'U');
+  var n=seq.length;
+  var dp=[];
+  for(var i=0;i<n;i++){dp[i]=[];for(var j=0;j<n;j++)dp[i][j]=0;}
+  for(var d=4;d<n;d++){
+    for(var i=0;i<n-d;i++){
+      var j=i+d;
+      dp[i][j]=Math.max(dp[i+1>=n?n-1:i+1][j]||0, i>0?0:0, (i+1<n?dp[i+1][j]:0)); // i unpaired
+      dp[i][j]=Math.max(dp[i][j], dp[i][j-1>=0?j-1:0]||0); // j unpaired
+      if(canPairRNA(seq[i],seq[j]))
+        dp[i][j]=Math.max(dp[i][j], (i+1<=j-1?dp[i+1][j-1]:0)+1);
+      for(var k=i+1;k<j;k++)
+        dp[i][j]=Math.max(dp[i][j], (dp[i][k]||0)+(dp[k+1]&&dp[k+1][j]?dp[k+1][j]:0));
+    }
+  }
+  var pairs={};
+  function tb(i,j){
+    if(i>=j||!dp[i]||dp[i][j]===0) return;
+    if(i+1<=j&&(dp[i+1]&&dp[i+1][j]||0)===dp[i][j]){tb(i+1,j);return;}
+    if((dp[i][j-1]||0)===dp[i][j]){tb(i,j-1);return;}
+    if(canPairRNA(seq[i],seq[j])){
+      var inner=(i+1<=j-1&&dp[i+1]&&dp[i+1][j-1])?dp[i+1][j-1]:0;
+      if(inner+1===dp[i][j]){pairs[i]=j;pairs[j]=i;tb(i+1,j-1);return;}
+    }
+    for(var k=i+1;k<j;k++){
+      if(((dp[i][k]||0)+(dp[k+1]&&dp[k+1][j]?dp[k+1][j]:0))===dp[i][j]){
+        tb(i,k);tb(k+1,j);return;
+      }
+    }
+  }
+  if(n>1) tb(0,n-1);
+  return pairs;
+}
+
+function rendermiRNAStructSVG(seq, mirna_id){
+  if(!seq||seq.length<8){
+    return '<p style="color:var(--gray);padding:20px;text-align:center">No miRNA sequence available</p>';
+  }
+  seq=seq.toUpperCase().replace(/T/g,'U');
+  var n=seq.length;
+  var pairs=nussinovFold(seq);
+  var numPairs=Object.keys(pairs).length/2|0;
+
+  // Arc diagram layout
+  var CELL=22,PAD_L=28,PAD_R=20,seqY=100,arcMaxH=78;
+  var W=PAD_L+n*CELL+PAD_R;
+  var H=140;
+  var bFill={A:'#e74c3c',U:'#3498db',G:'#27ae60',C:'#e67e22'};
+
+  // Draw arcs (i < j only, no duplicates)
+  var arcs='';
+  for(var i=0;i<n;i++){
+    if(pairs[i]!==undefined&&i<pairs[i]){
+      var j=pairs[i];
+      var xi=PAD_L+i*CELL+CELL/2;
+      var xj=PAD_L+j*CELL+CELL/2;
+      var arcH=Math.min((j-i)*CELL*0.3,arcMaxH);
+      var mx=(xi+xj)/2, cy=seqY-arcH;
+      arcs+='<path d="M '+xi+' '+(seqY-10)+' Q '+mx.toFixed(1)+' '+cy.toFixed(1)+' '+xj+' '+(seqY-10)+'" '
+          +'fill="none" stroke="#2c6e49" stroke-width="1.8" stroke-opacity="0.65" stroke-linecap="round"/>';
+    }
+  }
+
+  // Base circles + labels
+  var circles='',posNums='';
+  for(var i=0;i<n;i++){
+    var cx=PAD_L+i*CELL+CELL/2;
+    var base=seq[i];
+    var col=bFill[base]||'#888';
+    var isPaired=pairs[i]!==undefined;
+    circles+='<circle cx="'+cx+'" cy="'+seqY+'" r="9" fill="'+col+'" opacity="'+(isPaired?'1':'0.55')+'"/>';
+    circles+='<text x="'+cx+'" y="'+(seqY+4)+'" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">'+base+'</text>';
+    if(i===0||(i+1)%5===0||i===n-1){
+      posNums+='<text x="'+cx+'" y="'+(seqY+22)+'" text-anchor="middle" font-size="8" fill="#aaa">'+(i+1)+'</text>';
+    }
+  }
+
+  // 5′ 3′ labels
+  var ends='<text x="'+(PAD_L-6)+'" y="'+(seqY+4)+'" text-anchor="end" font-size="9" fill="#aaa" font-style="italic">5\'</text>'
+          +'<text x="'+(PAD_L+n*CELL+6)+'" y="'+(seqY+4)+'" text-anchor="start" font-size="9" fill="#aaa" font-style="italic">3\'</text>';
+
+  // Title line
+  var gcN=(seq.match(/[GC]/g)||[]).length;
+  var info='<text x="'+PAD_L+'" y="14" font-size="9" fill="#8b949e">'+seq.length+' nt &nbsp;&middot;&nbsp; GC: '+(gcN/n*100).toFixed(0)+'% &nbsp;&middot;&nbsp; '+numPairs+' base pairs (Nussinov MBP)</text>';
+
+  var svg='<svg width="'+W+'" height="'+H+'" xmlns="http://www.w3.org/2000/svg" style="font-family:sans-serif;max-width:100%;display:block">'
+    +info+arcs+circles+posNums+ends+'</svg>';
+
+  // Dot-bracket
+  var db='';
+  for(var i=0;i<n;i++) db+=(pairs[i]===undefined?'.':(i<pairs[i]?'(':')'));
+
+  return '<div style="background:#0d1117;border-radius:var(--r);padding:14px 16px;overflow-x:auto">'
+    +'<div style="font-size:10px;font-weight:700;color:#8b949e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">'
+    +(mirna_id||'miRNA')+' &mdash; Secondary Structure Arc Diagram</div>'
+    +'<div style="overflow-x:auto">'+svg+'</div>'
+    +'<div style="margin-top:10px;font-family:Consolas,monospace;font-size:11px;white-space:nowrap;overflow-x:auto">'
+    +'<span style="color:#e67e22">5\'</span><span style="color:#58a6ff"> '+seq+' </span><span style="color:#e67e22">3\'</span><br>'
+    +'<span style="color:#555">   </span><span style="color:#7ee787"> '+db+'</span>'
+    +'</div>'
+    +'<div style="margin-top:10px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">'
+    +'<span style="font-size:9px;color:#8b949e"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#e74c3c;vertical-align:middle;margin-right:3px"></span>A</span>'
+    +'<span style="font-size:9px;color:#8b949e"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#3498db;vertical-align:middle;margin-right:3px"></span>U</span>'
+    +'<span style="font-size:9px;color:#8b949e"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#27ae60;vertical-align:middle;margin-right:3px"></span>G</span>'
+    +'<span style="font-size:9px;color:#8b949e"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#e67e22;vertical-align:middle;margin-right:3px"></span>C</span>'
+    +'<span style="font-size:9px;color:#555;margin-left:8px">Bright = paired &nbsp; Faint = unpaired &nbsp;&middot;&nbsp; Arcs = predicted base pairs</span>'
+    +'</div>'
+    +'</div>';
+}
+
+// =====================
+//  POSITION MAP (SVG)
+// =====================
+function renderPosMap(r){
+  var tLen = S.virus.genome_length || (S.virus.seq||'').length || r.genome_length || 1;
+  var tStart = r.target_start || 0;
+  var tEnd = r.target_end || 0;
+  if(tStart===0 && tEnd===0 && tLen<=1) return '<p style="color:var(--gray);padding:20px;text-align:center">Position data not available for custom targets</p>';
+
+  var W = 580; var PAD = 44;
+  var genes = S.virus.genes || [];
+  var hasGenes = genes.length > 0;
+  var H = hasGenes ? 130 : 90;
+  var genomeY = hasGenes ? 68 : 42;
+  var innerW = W - PAD*2;
+
+  // Gene color by product keyword
+  function geneColor(product){
+    var p = (product||'').toLowerCase();
+    if(p.indexOf('coat') >=0 || p.indexOf(' cp') >=0) return '#d4edda';
+    if(p.indexOf('rep') >=0 || p.indexOf('replication') >=0) return '#cce5ff';
+    if(p.indexOf('movement') >=0 || p.indexOf(' mp') >=0) return '#fff3cd';
+    if(p.indexOf('rna-dep') >=0 || p.indexOf('polymerase') >=0 || p.indexOf('rdrp') >=0) return '#e2d9f3';
+    if(p.indexOf('protease') >=0 || p.indexOf('pro') >=0) return '#f8d7da';
+    if(p.indexOf('helicase') >=0 || p.indexOf('ci') >=0) return '#fce4ec';
+    return '#eeeeee';
+  }
+
+  // Deduplicate genes: prefer named products over 'unknown'
+  var dedupGenes = [];
+  var seenKey = {};
+  genes.forEach(function(g){
+    var key = g.start+'_'+g.end;
+    if(!seenKey[key] || (seenKey[key] === 'unknown' && g.product && g.product !== 'unknown')){
+      seenKey[key] = g.product || 'unknown';
+      // Replace existing entry with better product name
+      dedupGenes = dedupGenes.filter(function(x){ return !(x.start===g.start && x.end===g.end); });
+      dedupGenes.push(g);
+    }
+  });
+
+  // Draw gene track
+  var geneRects = '';
+  if(hasGenes){
+    geneRects = dedupGenes.map(function(g){
+      var gx = PAD + Math.round((g.start-1)/tLen*innerW);
+      var gw = Math.max(Math.round((g.end-g.start)/tLen*innerW), 6);
+      var col = geneColor(g.product);
+      var label = (g.product||g.gene||'').replace(/protein|polymerase|RNA-dependent /gi,'').trim().slice(0,14);
+      return '<rect x="'+gx+'" y="26" width="'+gw+'" height="16" fill="'+col+'" stroke="#aaa" stroke-width="0.5" rx="2"/>'
+        +'<text x="'+(gx+gw/2)+'" y="38" text-anchor="middle" font-size="7.5" fill="#444" clip-path="url(#clip-g)">'+label+'</text>';
+    }).join('');
+    geneRects = '<defs><clipPath id="clip-g"><rect x="'+PAD+'" y="26" width="'+innerW+'" height="16"/></clipPath></defs>' + geneRects;
+    geneRects += '<text x="'+(PAD-4)+'" y="38" text-anchor="end" font-size="9" fill="#888">genes</text>';
+  }
+
+  var x1 = PAD + Math.round(Math.max(tStart-1,0)/tLen*innerW);
+  var x2 = PAD + Math.round(tEnd/tLen*innerW);
+  var bw = Math.max(x2-x1, 10);
+  // Clamp to SVG bounds
+  x1 = Math.max(x1, PAD); x2 = Math.min(x2, PAD+innerW);
+
+  var svg = '<svg width="'+W+'" height="'+H+'" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">'
+    + geneRects
+    // Genome backbone
+    +'<rect x="'+PAD+'" y="'+(genomeY+1)+'" width="'+innerW+'" height="4" fill="#d0d0d0" rx="2"/>'
+    +'<text x="'+(PAD-4)+'" y="'+(genomeY+5)+'" text-anchor="end" font-size="9" fill="#888">genome</text>'
+    // Binding site
+    +'<rect x="'+x1+'" y="'+(genomeY-8)+'" width="'+bw+'" height="20" fill="rgba(44,110,73,0.3)" stroke="#2c6e49" stroke-width="1.5" rx="2"/>'
+    +'<text x="'+(x1+bw/2)+'" y="'+(genomeY-11)+'" text-anchor="middle" font-size="9" fill="#2c6e49" font-weight="bold">▼</text>'
+    // Position annotation below genome
+    +'<line x1="'+(x1+bw/2)+'" y1="'+(genomeY+5)+'" x2="'+(x1+bw/2)+'" y2="'+(genomeY+16)+'" stroke="#2c6e49" stroke-width="1" stroke-dasharray="2,2"/>'
+    +'<text x="'+(x1+bw/2)+'" y="'+(genomeY+26)+'" text-anchor="middle" font-size="8.5" fill="#2c6e49" font-weight="600">'+tStart+'–'+tEnd+' nt</text>'
+    // Scale ticks and labels
+    +'<line x1="'+PAD+'" y1="'+(genomeY+5)+'" x2="'+PAD+'" y2="'+(genomeY+9)+'" stroke="#ccc" stroke-width="1"/>'
+    +'<line x1="'+(PAD+innerW/2)+'" y1="'+(genomeY+5)+'" x2="'+(PAD+innerW/2)+'" y2="'+(genomeY+9)+'" stroke="#ccc" stroke-width="1"/>'
+    +'<line x1="'+(PAD+innerW)+'" y1="'+(genomeY+5)+'" x2="'+(PAD+innerW)+'" y2="'+(genomeY+9)+'" stroke="#ccc" stroke-width="1"/>'
+    +'<text x="'+PAD+'" y="'+(H-10)+'" font-size="8" fill="#aaa">1</text>'
+    +'<text x="'+(PAD+innerW/2)+'" y="'+(H-10)+'" text-anchor="middle" font-size="8" fill="#aaa">'+Math.round(tLen/2)+'</text>'
+    +'<text x="'+(PAD+innerW)+'" y="'+(H-10)+'" text-anchor="end" font-size="8" fill="#aaa">'+tLen+' bp</text>'
+    +'</svg>';
+
+  return '<div class="pos-map"><h4>Binding Site Position on Target Genome</h4>'+svg+'</div>';
+}
+
+// =====================
+//  EXPORT
+// =====================
+function exportCSV(){
+  var rows = [['miRNA_ID','Consensus','Energy','Identity%','Mismatches','Seed_WC','Algos_pass','Target_start','Target_end','miRanda_score','Validated']];
+  S.filtered.forEach(function(r){
+    rows.push([r.mirna_id,r.consensus_level||'NONE',r.best_energy||'',r.best_identity||'',r.num_mismatches||'',r.seed_perfect_wc||'',r.num_algorithms||'',r.target_start||'',r.target_end||'',r.miranda_score||'',r.experimentally_validated?'YES':'NO']);
+  });
+  var csv = rows.map(function(r){return r.join(',')}).join('\n');
+  var blob = new Blob([csv],{type:'text/csv'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'pamirdb_prediction.csv';
+  a.click();
+}
+
+function exportJSON(){
+  var blob = new Blob([JSON.stringify(S.filtered,null,2)],{type:'application/json'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'pamirdb_prediction.json';
+  a.click();
+}
+</script>
+</body>
+</html>

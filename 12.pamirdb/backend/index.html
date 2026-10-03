@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PAmiRDB - Plant Antiviral miRNA Target Predictor</title>
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f5f7fa;color:#333}
+nav{background:#1a3a5c;color:#fff;padding:0 20px;height:44px;display:flex;align-items:center;font-weight:600;font-size:14px}
+.container{max-width:900px;margin:0 auto;padding:20px}
+.card{background:#fff;border-radius:8px;padding:18px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+h2{font-size:15px;color:#1a3a5c;margin-bottom:10px}
+textarea{width:100%;padding:8px;border:1px solid #ccc;border-radius:4px;font-family:monospace;font-size:12px;min-height:44px}
+select{padding:6px;border:1px solid #ccc;border-radius:4px;font-size:12px}
+.btn{display:inline-block;padding:8px 20px;background:#2c6e49;color:#fff;border:none;border-radius:4px;cursor:pointer;font-weight:600;font-size:13px}
+.btn:disabled{opacity:.3;cursor:not-allowed}
+.example{padding:4px 10px;background:#e8f0eb;border:1px solid #b8d4c0;border-radius:3px;cursor:pointer;font-size:11px;margin:2px 4px 2px 0}
+.aln{background:#1a1a2e;color:#eee;font-family:monospace;font-size:12px;padding:14px;border-radius:6px;overflow-x:auto;white-space:pre;line-height:1.8}
+.aln .wc{background:#27ae60;color:#fff;padding:0 2px;border-radius:2px}
+.aln .wo{background:#e67e22;color:#fff;padding:0 2px;border-radius:2px}
+.aln .mm{background:#e74c3c;color:#fff;padding:0 2px;border-radius:2px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#f8f9fa;padding:8px;text-align:left;border-bottom:2px solid #ccc}
+td{padding:6px 8px;border-bottom:1px solid #f0f0f0}
+</style>
+</head>
+<body>
+<nav>PAmiRDB - Plant Antiviral miRNA Target Predictor</nav>
+<div class="container">
+
+<div class="card">
+<h2>miRNA Sequence</h2>
+<div style="display:flex;gap:8px;margin-bottom:6px">
+<select id="sel-sp" onchange="onSp()"><option value="">Species (Top 200)</option></select>
+<select id="sel-mr" onchange="onMr()"><option value="">miRNA</option></select>
+</div>
+<div style="margin-bottom:8px">
+<button class="example" onclick="document.getElementById('ms').value='UUUGGAUUGAAGGGAGCUCUA'">ath-miR159a</button>
+<button class="example" onclick="document.getElementById('ms').value='CUGCACUGCCUCUUCCCUGGC'">osa-miR408</button>
+<button class="example" onclick="document.getElementById('ms').value='UGACAGAAGAGAGUGAGCAC'">ath-miR156a</button>
+</div>
+<textarea id="ms" rows="2" placeholder="Select or paste miRNA sequence..."></textarea>
+</div>
+
+<div class="card">
+<h2>Target Virus Sequence</h2>
+<div style="display:flex;gap:8px;margin-bottom:6px">
+<select id="sel-vf" onchange="onVf()"><option value="">Virus Family</option><option>geminiviridae</option><option>potyviridae</option></select>
+<select id="sel-vr" onchange="onVr()"><option value="">Virus</option></select>
+</div>
+<button class="example" onclick="document.getElementById('ts').value='TAATATTACCGGATGGCCGCGCGATTTTTTTGGGTGTTCCGTGCCTTTCTTTATATATACTCCTCTAAACTTTTAATGGTATTCAATCGTTATTAATTGGTAAAGCGCAAATTGAATCAAAATCTAAACGTTCTCCGTTCAAATTTACTTGTTACCAATACATTATTATTTCCCTCCCAATTCT'">TYLCV (2774bp)</button>
+<textarea id="ts" rows="3" placeholder="Select or paste virus sequence..."></textarea>
+</div>
+
+<button class="btn" id="run" onclick="doRun()">Run Prediction</button>
+<span id="status" style="margin-left:10px;font-size:12px;color:#999"></span>
+
+<div id="results" style="display:none;margin-top:16px"></div>
+
+<div id="analysis-sections" style="display:none;margin-top:16px">
+<div class="card" id="target-card" style="display:none">
+<h2>Gene Targets for This miRNA</h2>
+<div id="target-chart" style="width:100%;height:350px"></div>
+</div>
+</div>
+
+</div>
+
+<script>
+// Species -> miRNA cascade
+var _mcache={};
+(function(){fetch("/pamirdb/api/species").then(function(r){return r.json()}).then(function(d){var s=document.getElementById("sel-sp");d.slice(0,200).forEach(function(x){s.innerHTML+='<option value='+x.code+'>'+x.name+' ('+x.count+')</option>'})})})();
+function onSp(){var sp=document.getElementById("sel-sp").value;var s=document.getElementById("sel-mr");if(!sp){s.innerHTML='<option>miRNA</option>';return}if(_mcache[sp]){fillMr(sp);return}s.innerHTML='<option>Loading...</option>';fetch("/pamirdb/api/mirnas?species="+sp).then(function(r){return r.json()}).then(function(d){_mcache[sp]=d.mirnas||[];fillMr(sp)})}
+function fillMr(sp){var s=document.getElementById("sel-mr");s.innerHTML='<option>choose</option>';(_mcache[sp]||[]).forEach(function(m){s.innerHTML+='<option value='+m.mirna_id+' data-seq='+m.sequence+'>'+m.mirna_id+'</option>'})}
+function onMr(){var o=document.getElementById("sel-mr").options[document.getElementById("sel-mr").selectedIndex];var seq=o?o.getAttribute("data-seq"):"";if(seq)document.getElementById("ms").value=seq}
+
+// Family -> Virus cascade
+var _vcache={};
+function onVf(){var f=document.getElementById("sel-vf").value;var s=document.getElementById("sel-vr");if(!f){s.innerHTML='<option>Virus</option>';return}if(_vcache[f]){fillVr(f);return}s.innerHTML='<option>Loading...</option>';fetch("/pamirdb/api/viruses?family="+f).then(function(r){return r.json()}).then(function(d){_vcache[f]=(d.viruses||[]).slice(0,200);fillVr(f)})}
+function fillVr(f){var s=document.getElementById("sel-vr");s.innerHTML='<option>choose</option>';(_vcache[f]||[]).forEach(function(v){s.innerHTML+='<option value='+v.virus_id+'>'+v.name+'</option>'})}
+function onVr(){var vid=document.getElementById("sel-vr").value;if(!vid)return;fetch("/pamirdb/api/virus/"+encodeURIComponent(vid)).then(function(r){return r.json()}).then(function(d){if(d.sequence)document.getElementById("ts").value=d.sequence})}
+
+// Map legacy tool-named consensus_detail strings (pre-2026-10 data) to the
+// honest local layer names; the prediction engine is a single self-built
+// SW-DP + heuristic pipeline, not miRanda/psRNATarget/RNAhybrid.
+function honestAlgos(s){
+  if(!s) return '';
+  return String(s)
+    .replace(/miRanda/g, 'custom SW-DP')
+    .replace(/psRNATarget/g, 'local heuristic recheck')
+    .replace(/RNAhybrid/g, 'local MFE heuristic')
+    .replace(/RNA22/g, 'local pattern heuristic')
+    .replace(/TAPIR/g, 'local accessibility heuristic')
+    .replace(/psRobot/g, 'local rule-based heuristic');
+}
+
+function doRun(){
+  var m=document.getElementById("ms").value.trim().toUpperCase().replace(/T/g,"U");
+  var t=document.getElementById("ts").value.trim().toUpperCase().replace(/T/g,"U");
+  if(m.length<15||t.length<20){ alert("Both sequences required (miRNA >= 15nt, target >= 20nt)"); return; }
+  document.getElementById("run").disabled=true;
+  document.getElementById("status").textContent="Running...";
+  fetch("/pamirdb/api/predict",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({mirna_id:"user",mirna_seq:m,target_seq:t,target_name:"Custom"})})
+  .then(function(r){return r.json()})
+  .then(function(d){
+    document.getElementById("results").style.display="block";
+    document.getElementById("results").innerHTML=
+      '<div class="card"><h2>Result: '+(d.consensus_level||"NO HIT")+'</h2>'+
+      '<p>'+honestAlgos(d.consensus_detail||"")+' ('+(d.num_algorithms||0)+' local layers)</p>'+
+      '<table style="margin-top:8px">'+
+      '<tr><td>Energy</td><td style="color:#27ae60;font-weight:600">'+(d.best_energy!=null?d.best_energy.toFixed(1):"-")+' kcal/mol</td>'+
+      '<td>Seed Quality</td><td>'+(d.seed_quality_score||0)+'/100</td>'+
+      '<td>Identity</td><td>'+(d.best_identity!=null?d.best_identity.toFixed(0)+"%":"-")+'</td></tr>'+
+      '<tr><td>Seed WC</td><td>'+(d.seed_perfect_wc||0)+'/7</td>'+
+      '<td>Seed Wobble</td><td>'+(d.seed_wobble_count||0)+'/7</td>'+
+      '<td>Mismatches</td><td>'+(d.num_mismatches!=null?d.num_mismatches:"-")+'</td></tr></table></div>'+
+      (d.alignment?'<div class="card"><h2>Alignment</h2><div class="aln">'+alnColor(d.alignment)+'</div></div>':'');
+    document.getElementById("run").disabled=false;
+    document.getElementById("status").textContent="";
+    showGeneTargets(d);
+  }).catch(function(e){
+
+function showGeneTargets(d){
+  var mid = d.mirna_id || "user";
+  fetch("/pamirdb/api/network/detail?type=mirna&id="+encodeURIComponent(mid)).then(function(r){return r.json()}).then(function(data){
+    if(!data||!data.length) return;
+    document.getElementById("target-card").style.display="block";
+    var n=[],m={},cols=["#2c6e49","#27ae60","#1abc9c","#3498db","#8e44ad","#e67e22","#e74c3c"];
+    data.forEach(function(x){if(!m[x.source]){m[x.source]=n.length;n.push({name:x.source,itemStyle:{color:cols[m[x.source]%7]}})}if(!m[x.target]){m[x.target]=n.length;n.push({name:x.target,itemStyle:{color:cols[m[x.target]%7]}})} });
+    var e=echarts.init(document.getElementById("target-chart"));
+    e.setOption({tooltip:{},series:[{type:"sankey",layout:"none",data:n,links:data.map(function(x){return{source:m[x.source],target:m[x.target],value:x.count}}),emphasis:{focus:"adjacency"},lineStyle:{color:"gradient",curveness:0.5},label:{fontSize:9}}]});
+  });
+}
+    document.getElementById("status").textContent="Error: "+e;
+    document.getElementById("run").disabled=false;
+  });
+}
+
+function loadAll(){ loadNetwork(); loadCharts(); loadDB(); }
+function alnColor(s){
+  var l=s.split("\n"); if(l.length<3) return s;
+  var m=l[0].replace("miRNA  5' ","").replace(" 3'","").trim();
+  var p=l[1].trim();
+  var t=l[2].replace("target 3' ","").replace(" 5'","").trim();
+  var mh="",th="";
+  for(var i=0;i<m.length;i++){
+    if(m[i]!="-"){var c=p[i]==="|"?"wc":(p[i]===":"?"wo":(p[i]==="."?"mm":""));mh+='<span class="'+c+'">'+m[i]+'</span>'}else mh+="-";
+  }
+  for(var j=0;j<t.length;j++){
+    if(t[j]!="-"){var c2=p[j]==="|"?"wc":(p[j]===":"?"wo":(p[j]==="."?"mm":""));th+='<span class="'+c2+'">'+t[j]+'</span>'}else th+="-";
+  }
+  return "miRNA  5' "+mh+" 3'\n         "+p.split("").map(function(x,i){var c3=x==="|"?"wc":(x===":"?"wo":"");return'<span class="'+c3+'">'+x+'</span>'}).join("")+"\ntarget 3' "+th+" 5'";
+}
+</script>
+</body>
+</html>

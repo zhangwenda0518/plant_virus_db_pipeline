@@ -1,200 +1,87 @@
 # 12. PV-miRNA — 植物抗病毒 miRNA 预测工作台
 
-> 三算法共识 (miRanda + psRNATarget + RNAhybrid) 植物病毒 miRNA 靶标预测。交互式 Sankey/Chord/Heatmap 可视化。402 物种 × 42 病毒, 83,166 miRNA 索引。
+> 基于自定义 Smith-Waterman 比对引擎的植物病毒 miRNA 靶标预测。Python stdlib HTTPServer + SQLite。7 物种原型。
 
 **Live**: http://39.106.101.94/pamirdb/
-
-> 原名: PAmiRDB — Plant Antiviral miRNA Prediction Database
 
 ---
 
 ## 架构
 
-```mermaid
-flowchart TB
-    subgraph Sources["数据源"]
-        MIRBASE["miRBase<br/>成熟 miRNA 序列"]
-        VIRUS["病毒基因组<br/>42 种植物病毒"]
-        HOST["病毒-宿主关联<br/>NCBI/KEGG/ICTV"]
-    end
-
-    subgraph Pipeline["预测管线"]
-        DOWNLOAD["download_data.py<br/>数据下载"]
-        MIRANDA["miRanda<br/>序列互补 + 自由能"]
-        PSRNAT["psRNATarget<br/>植物特异性<br/>错配罚分"]
-        RNAH["RNAhybrid<br/>最小自由能<br/>杂交预测"]
-        CONSENSUS["consensus.py<br/>三算法共识评分<br/>STRICT/MODERATE/LOOSE"]
-        ANNOTATE["annotate_predictions.py<br/>基因注释"]
-        BUILD["build_web_data.py<br/>→ JS 数据文件"]
-    end
-
-    subgraph Web["Web 界面"]
-        SPA["index_new.html<br/>SPA 主页面"]
-        SANKEY["Sankey 图<br/>miRNA → 病毒蛋白流"]
-        CHORD["Chord 图<br/>环状互作网络"]
-        HEATMAP["Heatmap<br/>miRNA × 蛋白密度矩阵"]
-        TABLE["结果表<br/>分页 + 分级标记"]
-    end
-
-    Sources --> DOWNLOAD
-    DOWNLOAD --> MIRANDA
-    DOWNLOAD --> PSRNAT
-    DOWNLOAD --> RNAH
-    MIRANDA --> CONSENSUS
-    PSRNAT --> CONSENSUS
-    RNAH --> CONSENSUS
-    CONSENSUS --> ANNOTATE
-    ANNOTATE --> BUILD
-    BUILD --> SPA
-    SPA --> SANKEY
-    SPA --> CHORD
-    SPA --> HEATMAP
-    SPA --> TABLE
-
-    style Sources fill:#e8eaf6
-    style Pipeline fill:#fff3e0
-    style Web fill:#e8f5e9
+```
+12.pamirdb/
+├── run.py                     # 管线启动器
+├── run_v7.sh                  # 生产部署脚本
+├── backend/
+│   └── server.py              # Python stdlib HTTP 服务 (:8000)
+├── scripts/
+│   ├── alignment.py           # ★ 核心: 自定义 Smith-Waterman 比对引擎
+│   ├── pipeline.py            # 批量预测管线
+│   ├── virus_genes.py         # 病毒蛋白 CDS 坐标 + 注释
+│   ├── download_data.py       # 数据获取 (miRBase + 病毒基因组)
+│   └── ...
+├── data/
+│   ├── pamirdb.sqlite         # SQLite 数据库 (WAL 模式)
+│   ├── predictions.json       # 预测结果
+│   ├── mirna/                 # miRNA 序列 (plant_mirnas.json)
+│   └── virus_genomes/         # 病毒基因组 (viruses.fasta + viruses.json)
+└── figures/
 ```
 
----
+## 核心预测引擎
 
-## 三算法共识
+`scripts/alignment.py` 实现了自定义的 Smith-Waterman 式动态规划比对引擎，**不调用 miRanda/psRNATarget/RNAhybrid 等外部工具**。
 
-| 算法 | 方法 | 适用场景 |
-|:-----|:-----|:---------|
-| **miRanda** | 序列互补 + 自由能评分 | 通用 miRNA 靶标预测 |
-| **psRNATarget** | 植物特异性错配罚分模型 | 植物 miRNA 靶标优化 |
-| **RNAhybrid** | 最小自由能 (MFE) 杂交 | RNA-RNA 二级结构预测 |
+- **碱基对得分**: WC 配对 (A:U, G:C) = +5, wobble (G:U) = +2, 错配 = -3
+- **空位罚分**: gap_open = -9, gap_extend = -4
+- **Seed 区检查**: miRNA 位置 2-8 必须全部为 WC 或 wobble 配对
+- **可选约束**: `required_positions` (指定位置必须配对), `check_au_positions` (指定位置必须为 A/U)
+- **输出字段**: 20 字段, 含 similarity (WC+wobble 占比), target_protein (命中病毒蛋白), matching_status (Withinmatch/Overlapping), position_binding (每个位置的 WC/wobble/mismatch/gap 状态)
 
-### 共识分级
+## 批量预测
 
-| 等级 | 标准 | 颜色 |
-|:-----|:-----|:----:|
-| **STRICT** | 3/3 算法一致, 强种子配对, 低 MFE | 🟢 绿色 |
-| **MODERATE** | 2/3 算法一致, 中等种子配对 | 🟡 黄/橙 |
-| **LOOSE** | 1/3 算法一致, 弱种子配对 | 🔴 红色 |
+`scripts/pipeline.py` 对所有 miRNA × 病毒基因组组合做笛卡尔积遍历, 每 200 对输出进度。通过 `align_mirna_to_target()` 调用比对引擎, 仅保留 `passes_filters=True` 的结果。按物种和病毒科输出统计摘要。
 
----
+## 病毒蛋白注释
 
-## 预测管线
+`scripts/virus_genes.py` 维护 `VIRUS_GENES` 字典, 记录每种病毒 CDS 的坐标区间和产物名称。`get_target_gene(virus_id, start, end)` 通过区间匹配判定 miRNA 靶向的是哪个病毒蛋白 (CP/RdRp/MP 等), 同时判定 matching_status。
 
-```bash
-# 1. 数据下载
-python scripts/download_data.py         # miRBase + 病毒基因组
+## Web 后端
 
-# 2. 三算法预测
-python scripts/consensus.py             # 共识评分 (STRICT/MODERATE/LOOSE)
-python scripts/annotate_predictions.py  # 基因注释
+`backend/server.py` — Python 标准库 `http.server.HTTPServer` + `BaseHTTPRequestHandler` 实现的纯 stdlib HTTP 服务器。首次启动自动建 SQLite 数据库 (WAL 模式, 四表: mirnas/viruses/virus_hosts/predictions), 空库时从 JSON/CSV/FASTA 自动导入。查询支持按 miRNA ID/物种/病毒 ID/病毒科/靶标蛋白分页筛选。
 
-# 3. Web 数据生成
-python scripts/build_web_data.py        # → data/web/*.js
-
-# 4. 启动服务
-python run.py                           # :8000
-python run.py --pipeline                # 仅管线, 不启动服务
-python run.py --all                     # 全流程 (管线 + 服务)
-python run_v7.sh                        # v7 生产部署脚本
-```
-
----
-
-## Web 界面
-
-SPA (`index_new.html`) 提供:
-
-1. **物种/miRNA 选择**: 按分类科/属筛选, 选择单个 miRNA
-2. **病毒靶标选择**: 选择目标病毒基因组或自定义序列
-3. **算法配置**: 选择算法组合, 调整能量/种子阈值
-4. **结果表**: 分页结果, 分级标记, 共识等级, 基因靶标
-5. **可视化**:
-   - **Sankey 图**: miRNA → 病毒蛋白流量 (共识颜色编码)
-   - **Chord 图**: 环状 miRNA ↔ 病毒蛋白互作网络
-   - **Heatmap**: miRNA × 病毒蛋白互作密度矩阵
-
----
-
-## 数据统计
+## 数据量
 
 | 指标 | 数值 |
 |:-----|:----:|
-| 覆盖植物物种 | 402 |
-| 覆盖病毒物种 | 42 |
-| miRNA 索引 | 83,166 |
-| v7 注释预测 | 1,706 |
-| 数据库格式 | SQLite |
+| 原型植物物种 | 7 (拟南芥/大豆/水稻/高粱/番茄/葡萄/玉米) |
+| miRNA 预测查询集 | 80,783 (来自 11.antiviral_genes 的 799 物种; 已剔除 2,414 条 NR_* 前体与 2,403 条 >50 nt 序列, 见 `data/mirna/plant_mirnas_full_stats.json`) |
+| 预测算法 | 自定义 Smith-Waterman (非 miRanda/psRNATarget/RNAhybrid) |
+| 数据库格式 | SQLite (pamirdb.sqlite) |
 
----
+## 方法与诚实性说明（2026-10-03 修订）
 
-## 文件结构
+- **引擎构成（非多工具共识）**：全部预测由单一自研引擎产生——Smith-Waterman 式 DP 比对（`scripts/alignment.py`，`consensus_detail` 中记为 `custom SW-DP`）+ 本地启发式复核层（`local heuristic recheck` / `local MFE heuristic` 等）。**不调用 miRanda / psRNATarget / RNAhybrid / RNA22 / TAPIR / psRobot**；`miranda_*` / `psrna_*` / `rnahybrid_*` 只是 API/数据库的历史字段名，前端展示文案已改为"自研比对 + 启发式复核（非外部工具）"。
+- **能量字段与 ViennaRNA**：`alignment.py::_estimate_energy` 在检测到 Python `RNA` 模块（ViennaRNA）时用其 MFE，否则退回自建最近邻近似。因此 `energy` / `rnahybrid_mfe` 的绝对数值**依赖运行环境**，且当前不记录 ViennaRNA 版本（也未在任何 manifest 中固定），跨环境比较能量值前请先确认该依赖是否安装及其版本。
+- **预测集过滤**：查询集排除 NCBI `NR_*` 前体记录与 >50 nt 序列；比对结果加总 gap 上限 `MAX_GAPS=10`（超出不入结果，历史数据中的 30-gap"最强互作"属于旧版漏洞产物）；病毒序列超过 `SEQ_MAX_LEN=15000` 时截断并逐条告警、汇总到 `data/truncated_viruses.tsv`（预期 91 条）。
+- **验证集口径**：`validation_amirna.py` 的候选表混合了实验证据与 in-silico 预测；仅 `experimental=True` 的条目会置 `validated=True`（前端显示 "Exp. Validated"），预测类条目标注 `in-silico prediction`，无法溯源的条目（原 `*_2025` 占位 PMID）已移除假 PMID 并标注 `unverified`。
+- **存量数据**：`data/predictions_v7_annotated.json` 与线上 SQLite 中的 11,006 条预测生成于上述修复之前（含前体命中、>10 gap 命中、旧 `miRanda+psRNATarget+RNAhybrid` 字样），**需重跑 v7 管线后才会采用新口径**。
+- **病毒 ID 链接**：预测的 `target_virus_id` 为 GenBank accession，服务启动时会从 `viruses_full.json` 建立 accession 补充索引（annotation 表优先，accession 回落），/api/scan 与 family 字段由此修复。
 
+## 快速开始
+
+```bash
+python run.py                    # :8000
+python run.py --pipeline         # 仅运行预测管线
+python run.py --all              # 管线 + 服务
+bash run_v7.sh                   # v7 生产部署
 ```
-12.pamirdb/
-├── run.py                     # 管线启动器 (--pipeline / --all / --port)
-├── run_v7.sh                  # v7 生产部署脚本
-├── backend/                   # 后端
-│   ├── server.py              # 生产 HTTP 服务 (:8000, /pamirdb/)
-│   ├── server_deploy.py       # 替代部署服务
-│   ├── index.html             # Database Browse 页面
-│   ├── index_new.html         # Prediction Workbench 主 SPA
-│   └── network.html           # 独立网络可视化
-├── scripts/                   # 管线脚本 (53 文件)
-│   ├── database.py            # SQLite schema + 查询
-│   ├── download_data.py       # 数据获取 (miRBase, 病毒基因组)
-│   ├── consensus.py           # 三算法共识评分
-│   ├── annotate_predictions.py # 预测注释管线
-│   ├── build_web_data.py      # 生成 JS 数据
-│   ├── alignment.py           # miRNA-target 比对
-│   ├── circos_network.py      # 环状网络图
-│   ├── audit.py               # 预测质量审计
-│   └── ...                    # 辅助脚本
-├── data/                      # 数据
-│   ├── pamirdb.sqlite         # 主数据库
-│   ├── predictions.json       # 预测结果 (v7 注释)
-│   ├── mirna/                 # miRNA 序列
-│   ├── virus_genomes/         # 病毒基因组 FASTA
-│   └── web/                   # Web 前端数据 (JS)
-├── figures/                   # 生成图表
-├── nginx_pamirdb.conf         # Nginx 配置
-└── pam_nginx_snippet.conf     # 替代 Nginx 片段
-```
-
----
-
-## 版本历史
-
-| 版本 | 关键变更 |
-|:-----|:---------|
-| v3 | 初始三算法管线 |
-| v5 | 共识分级系统 |
-| v7 | 注释预测 + Sankey/Chord/Heatmap 可视化 + 扩展物种覆盖 |
-
----
 
 ## 部署
 
 | 项目 | 配置 |
 |:-----|:-----|
+| **服务类型** | Python stdlib HTTPServer (非 FastAPI/Uvicorn) |
 | **systemd** | `pamirdb.service` → :8000 |
 | **Nginx** | `/pamirdb/` → proxy_pass `http://127.0.0.1:8000/` |
-| **服务入口** | `backend/server.py` (加载 `index_new.html` 为主页) |
-| **缓存** | HTML 在服务启动时加载, 修改后需重启 |
-
-### 本地开发
-
-```bash
-python run.py --port 8080
-# → http://localhost:8080/
-```
-
----
-
-## 核心脚本速查
-
-| 脚本 | 功能 |
-|:-----|:-----|
-| `scripts/database.py` | SQLite schema (species, mirnas, viruses, predictions, consensus) |
-| `scripts/download_data.py` | 获取 miRBase mature.fa + 病毒基因组 |
-| `scripts/consensus.py` | 合并 miRanda/psRNATarget/RNAhybrid 为分级评分 |
-| `scripts/annotate_predictions.py` | 添加基因名和蛋白产物到预测记录 |
-| `scripts/build_web_data.py` | 导出预测为 JS 变量供 Web 渲染 |
-| `scripts/audit.py` | 预测质量验证检查 |
+| **数据库** | SQLite WAL 模式, 启动时自动建表/导入 |

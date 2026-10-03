@@ -1,0 +1,139 @@
+{
+  "total_species": 799,
+  "total_miRNAs": 83166,
+  "sources": {
+    "plantrg_json": 47775,
+    "plantrg_fasta": 25556,
+    "mirbase": 7452,
+    "ncbi": 2383
+  },
+  "species_by_source": {
+    "plantrg": 780,
+    "mirbase": 54,
+    "ncbi": 11,
+    "ncbi_gene_records": 49,
+    "combined": 799
+  },
+  "top_species": [
+    [
+      "Glycine_max",
+      1763
+    ],
+    [
+      "Malus_domestica",
+      1650
+    ],
+    [
+      "Oryza_sativa",
+      1277
+    ],
+    [
+      "Populus_trichocarpa",
+      997
+    ],
+    [
+      "Brachypodium_distachyon",
+      978
+    ],
+    [
+      "Triticum_aestivum",
+      952
+    ],
+    [
+      "Arabidopsis_thaliana",
+      877
+    ],
+    [
+      "Zea_mays",
+      851
+    ],
+    [
+      "Solanum_tuberosum",
+      850
+    ],
+    [
+      "Medicago_truncatula",
+      827
+    ],
+    [
+      "Theobroma_cacao",
+      718
+    ],
+    [
+      "Solanum_lycopersicum",
+      681
+    ],
+    [
+      "Ginkgo_biloba",
+      666
+    ],
+    [
+      "Gossypium_hirsutum",
+      639
+    ],
+    [
+      "Nicotiana_tabacum",
+      619
+    ],
+    [
+      "Gossypium_arboreum",
+      615
+    ],
+    [
+      "Glycine_soja",
+      606
+    ],
+    [
+      "Citrus_sinensis",
+      585
+    ],
+    [
+      "Gossypium_barbadense",
+      579
+    ],
+    [
+      "Vitis_vinifera",
+      577
+    ],
+    [
+      "Gossypium_raimondii",
+      525
+    ],
+    [
+      "Helianthus_annuus",
+      508
+    ],
+    [
+      "Brassica_napus",
+      499
+    ],
+    [
+      "Arabidopsis_lyrata",
+      483
+    ],
+    [
+      "Asparagus_officinalis",
+      476
+    ],
+    [
+      "Oryza_glaberrima",
+      475
+    ],
+    [
+      "Triticum_urartu",
+      471
+    ],
+    [
+      "Nicotiana_benthamiana",
+      424
+    ],
+    [
+      "Chrysanthemum_nankingense",
+      420
+    ],
+    [
+      "Capsicum_annuum",
+      414
+    ]
+  ]
+}
