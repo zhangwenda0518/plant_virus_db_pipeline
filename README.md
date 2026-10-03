@@ -20,8 +20,9 @@ plant_virus_db_pipeline/
 ├── 10.virus_photos/                  # 四源病毒症状照片图库 (925 张) (/photos/)
 ├── 11.antiviral_genes/               # 植物免疫基因图谱 (NLR/sRNA/UPS/miRNA) (/genes/)
 ├── 12.pamirdb/                       # 植物抗病毒 miRNA 三算法共识预测 (/pamirdb/)
-├── _archived_13.virus_profile/        # [已归档] 单病毒详情页 (功能已融入 explorer)
-├── docs/                             # Nginx 静态站 (/ /reference/ /te/ /photos/ /genes/ /pamirdb/)
+├── 13.onekp_virus/                   # 1KP 转录组病毒 Dashboard (/onekp/)
+├── archive/                          # [归档] 历史一次性脚本 + 单病毒详情页 (git 忽略)
+├── docs/                             # Nginx 静态站 (/ /reference/ /eve/ /photos/ /genes/ /pamirdb/)
 │   ├── index.html                    #   统一门户首页 → /
 │   ├── reference_index.html          #   参考数据库首页 → /reference/
 │   ├── photos.html                   #   症状图库 → /photos/
@@ -29,11 +30,11 @@ plant_virus_db_pipeline/
 │   ├── data/                         #   参考序列 FASTA/TSV + 图片
 │   ├── literature/                   #   文献追踪静态文件
 │   ├── primers/                      #   引物 JSON 数据 (7,193 物种)
-│   └── te/                           #   TE & EVE 转座子数据库 → /te/
+│   └── eve/                          #   植物界 EVE 全景 → /eve/
 ├── config.py                         # 统一项目配置 (PIPELINE_OUTPUTS / PRIMER_OUTPUTS / HOST_OUTPUTS)
 ├── pixi.toml                         # 跨平台包管理 (conda-forge + PyPI)
-├── deploy.sh                         # 服务器一键部署
-├── run_all.sh                        # 流水线全阶段入口
+├── run_all.sh                        # [已废弃] 2026-07-07 过期副本；流水线入口请用
+│                                     #   1.Prepare_plant_virus_pipeline/run_all.sh
 └── requirements.txt                  # Python 依赖
 ```
 
@@ -46,7 +47,7 @@ plant_virus_db_pipeline/
 | `/explorer/` | **数据浏览器** | Dash + Plotly | 时空演变/全基因组变异/媒介传播网络/病毒档案/内嵌 AI 助手 |
 | `/primers/` | **引物数据库** | Flask | 103,642 对引物 (PCR/qPCR/LAMP/Tiled/Degenerate), REST API, 在线设计, AI 问答 |
 | `/vector/` | **媒介-宿主库** | Flask | VH + WUR 三维传播 facet 检索, Sankey/Heatmap/Chord 可视化 |
-| `/te/` | **TE & EVE** | 静态 HTML | 植物转座子/内源性病毒元件 (LTR/ENRV/ERV), 6 个 FASTA 下载 |
+| `/eve/` | **植物界 EVE 全景** | 静态 HTML | 1,527 基因组 / 284 宿主科, 150,136 个去污染 EVE 位点, 8 视角交互 |
 | `/metabuli/` | **宏基因组分类** | Flask | contig 分类 (8 级)/Krona/Sankey/引物设计/GenBank 基因可视化/CDD/BLAST 验证 |
 | `/photos/` | **症状图库** | 静态 HTML/JS | EPPO/DPV/Book/PDF 四来源, Gallery/Dashboard/Table 三视图 |
 | `/genes/` | **基因图谱** | 静态 HTML/JS | NLR (415)/sRNA (11,780)/UPS (3,996)/miRNA (83,166) 四标签 |
@@ -60,7 +61,7 @@ plant_virus_db_pipeline/
 - ICTV VMR MSL41 病毒分类学权威
 - KEGG Virus-Host DB 文献溯源的病毒-宿主关联
 - WUR Plant Virus Transmission Database (library.wur.nl)
-- U-RVDB v32.0 植物转座子/内源性病毒数据库
+- U-RVDB v32.0 植物转座子/内源性病毒数据库 (TE 模块 2026-09-23 已下线)
 - NCBI PubMed / bioRxiv / Crossref / OpenAlex 文献
 - DPV (Descriptions of Plant Viruses) + viroidDB
 - EPPO Global Database 病害症状照片
@@ -69,11 +70,14 @@ plant_virus_db_pipeline/
 
 ## 数据量
 
+> 下列数字与 `docs/data/DATA_VERSION` 保持一致；如有出入，**以 `docs/data/DATA_VERSION` 为准**
+>（该文件由流水线维护，是唯一的数字来源；本表改为不与其冲突的口径）。
+
 | 类别 | 数值 | 说明 |
 |:-----|:----:|:-----|
-| 参考基因组 (非冗余) | 8,465 | Plant_Virus_Ref.fasta, 98% ANI 聚类 |
-| 病毒物种 | 6,182 | ICTV MSL41 覆盖 |
-| 全量序列 | ~199K | Plant_Virus_Full.fasta (377 MB) |
+| 参考基因组 (非冗余) | 9,022 | Plant_Virus_Ref.fasta, 98% ANI 聚类 (DATA_VERSION CLUSTER_COUNT) |
+| 病毒物种 | 5,173 | ICTV MSL41 覆盖 (DATA_VERSION SPECIES_COUNT) |
+| 全量序列 | 211,132 | Plant_Virus_Full.fasta (410 MB) (DATA_VERSION RECORDS_PLANT) |
 | 有媒介-宿主关系的病毒 | 1,806 | VH + WUR 整合 |
 | 病毒-媒介-宿主三元组 | 1,375 | 实验验证 + 文献追踪 |
 | WUR 病毒传播记录 | 1,654 | 全渠道传播模式 |
@@ -82,7 +86,8 @@ plant_virus_db_pipeline/
 | 精选文献 | 7,099 | PubMed + bioRxiv + Crossref + OpenAlex |
 | RAG 知识库论文 | 60,000+ | 全文向量化, ~50K chunks |
 | 病毒症状照片 | 925 | EPPO/DPV/PDF/Book 四来源 |
-| TE 转座子 | 10,537 | LTR 反转录转座子 (U-RVDB v32.0) |
+| TE 转座子 | 10,537 | LTR 反转录转座子 (U-RVDB v32.0)【模块 2026-09-23 已下线】 |
+| EVE 位点 | 150,136 | 植物界 EVE 全库 (1,527 基因组 / 284 宿主科, phiX174 去污染后) |
 | NLR 免疫受体 | 415 | RefPlantNLR, 73 物种 |
 | sRNA 通路基因 | 11,780 | AGO/DCL/RDR/DRB/SGS3/HEN1 |
 | UPS 泛素系统基因 | 3,996 | E1/E2/E3/F-box/BTB/Cullin/Proteasome |

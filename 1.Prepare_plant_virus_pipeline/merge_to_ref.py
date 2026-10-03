@@ -154,6 +154,8 @@ for tid in ref_taxids:
             row["Category"] = row.get("Category") or "Segmented_Complete"
             new_rows.append(dict(row)); topup += 1
     else:
+        # 2026-10-03 体检修复: 旧实现只追加 old_best(或 new_best) 一条, 同 TaxID 其余行被
+        # 静默丢弃(与节段分支"只增不删"不一致, 且丢行不进日志)。现在保留全部旧行。
         if rank_record(new_best) > rank_record(old_best):
             nb = dict(new_best)
             # 注释列继承: 全量集记录无 VMR/Category 列, 而被替换的旧行已带注释 ——
@@ -166,8 +168,8 @@ for tid in ref_taxids:
                 nb["Category"] = (("Segmented_" if is_segmented_rec(nb) else "NonSegmented_")
                                   + ("Complete" if effective_completeness(nb) == "complete" else "Other_Partial"))
             new_rows.append(nb); replaced += 1
-        else:
-            new_rows.append(dict(old_best)); kept += 1
+        for row in old_recs.iter_rows(named=True):
+            new_rows.append(dict(row)); kept += 1
 
 # Process new taxids
 new_taxids = set(new_to_ref["Taxid"].drop_nulls().cast(pl.Utf8).unique().to_list()) - ref_taxids
@@ -188,6 +190,16 @@ for tid in new_taxids:
         new_rows.append(best); added += 1
 
 print(f"Kept: {kept}  Replaced: {replaced}  Added: {added}  SegmentTopUp: {topup}  Total: {len(new_rows)}")
+
+# 2026-10-03 体检修复: 输出行数 vs 输入行数对账 (丢行必须显式暴露, 不得静默)
+_expected_total = ref.height + replaced + added + topup
+if len(new_rows) != _expected_total:
+    print(f"⚠️ 对账不一致: 输出 {len(new_rows):,} 行 != Ref输入 {ref.height:,} "
+          f"+ 替换 {replaced} + 新增 {added} + 补段 {topup} = {_expected_total:,}")
+else:
+    print(f"✅ 对账: Ref输入 {ref.height:,} 行 + 替换 {replaced} + 新增 {added} + "
+          f"补段 {topup} → 输出 {len(new_rows):,} 行 (丢行 0)")
+print(f"   候选池: Full {full.height:,} 行中 Ref 未收录 {new_to_ref.height:,} 行")
 
 # Align schema and write
 ref_cols = list(ref.columns)

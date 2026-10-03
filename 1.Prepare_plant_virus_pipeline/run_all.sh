@@ -458,7 +458,8 @@ run "E1-提取元数据" "$PLANT_DIR/E-metadata/Plant_Virus_Info.tsv" \
         -i "$PLANT_DIR/D-sequences/plant.virus.id" \
         -m "$ALLNUCL_CSV" \
         -t "$TAXID_DB" \
-        -o "$PLANT_DIR/E-metadata/Plant_Virus_Info.tsv"
+        -o "$PLANT_DIR/E-metadata/Plant_Virus_Info.tsv" \
+        -k "$API_KEY"
 
 run "E2-获取拓扑结构" "$PLANT_DIR/E-metadata/Plant_Virus_Topology_Molecule_Type.info.tsv" \
     python "$BIN_DIR/E2_fetch_topology.py" \

@@ -7,7 +7,8 @@ U1: PlantVirusDB 增量更新引擎 (v2)
 
   1. 病毒数据获取 — PDAT + MDAT 双日期覆盖 + 分类树变动检测
   2. 植物病毒分离 — 五层漏斗: 已知TaxID → NCBI宿主lineage → 祖先分类 → ICTV → 关键词
-  3. 新分类病毒更新 — taxdump差分 → 新viral taxid检测 → 祖先判定 → merged/deleted处理
+  3. 新分类病毒更新 — taxdump差分 → 新viral taxid检测 → 祖先判定 →
+     merged taxid 在主表 Taxid 列上重映射到新值 / delnodes 命中的行写入 watchlist
 
 架构:
   ┌─────────────────────────────────────────────────────┐
@@ -31,9 +32,15 @@ U1: PlantVirusDB 增量更新引擎 (v2)
                          ▼
   ┌─────────────────────────────────────────────────────┐
   │  Phase 3: 数据库合并                                │
-  │    FASTA + TSV 追加 → merged 更新 → delnodes 标记   │
-  │    → 新 taxid 补 lineage → watchlist 输出           │
+  │    FASTA + TSV 追加 → merged Taxid 重映射(主表整列) │
+  │    → delnodes 命中行写 watchlist → 新 taxid 补 lineage│
   └─────────────────────────────────────────────────────┘
+
+失败与状态纪律 (2026-10-03 体检修复):
+  - 任一批次失败 (宿主判定 / 序列下载) 的 accession 记入内存清单, 结束时落盘
+    docs/data/incremental_failed_<date>.tsv; 本轮 errors != 0 时绝不推进
+    last_sync_date 并以非零退出码退出, 避免"网络抖动丢一批且窗口永不重扫"。
+  - --dry-run 零副作用: 不写 state / 不写 DATA_VERSION / 不写失败清单。
 """
 
 import os
@@ -81,40 +88,55 @@ PLANT_LINEAGE_PATTERN = re.compile(
 )
 
 # ── 已知植物病毒科/属 TaxID (用于祖先判定 L3) ────────────
-# 从 ICTV VMR + NCBI Taxonomy 提取
+# 2026-10-03 体检修复: 旧表 27 个值经 NCBI Taxonomy 实查大面积错误(39733 实为
+# Astroviridae、39502-39506 实为植物属种、1922214 实为灭绝哺乳动物 Bootherium 等),
+# 曾让动物/昆虫病毒拿"植物通行证"入库。本表已用 NCBI E-utilities
+# (esearch <名>[SCIN] + efetch, tool=PVDB_audit, 间隔 ≥0.4s) 逐条重查重写;
+# 每行标注 verified 2026-10-03。查询方法见 AUDIT_REPORT_20261003.md D2 节。
+# 原则: ① 整科含动物病毒者(呼肠孤/弹状/白纤/泛生)只收 NCBI 已核验的植物感染属/亚科;
+#       ② 查不到可靠 taxid 的条目一律删除并在末尾注明原因, 不猜。
 KNOWN_PLANT_VIRUS_FAMILIES = {
     # (+)ssRNA
-    39729,   # Potyviridae
-    39730,   # Secoviridae
-    39731,   # Tombusviridae
-    39506,   # Bromoviridae
-    39505,   # Closteroviridae
-    39504,   # Luteoviridae
-    39503,   # Tymoviridae
-    39502,   # Comoviridae → now Secoviridae but keep for legacy
-    675069,  # Virgaviridae
-    675070,  # Benyviridae
-    1986707, # Kitaviridae
-    1986708, # Mayoviridae
+    39729,    # Potyviridae                              verified 2026-10-03
+    675072,   # Secoviridae       (旧 39730 实为 Rymovirus)          verified 2026-10-03
+    39738,    # Tombusviridae     (旧 39731 实为 Bymovirus)           verified 2026-10-03
+    39740,    # Bromoviridae      (旧 39506 实为 Dasylirion texanum)  verified 2026-10-03
+    69973,    # Closteroviridae   (旧 39505 实为 Dasylirion wheeleri) verified 2026-10-03
+    2169577,  # Solemoviridae     (承接 ICTV 2021 已撤销的 Luteoviridae;
+              #                    旧 39504 实为 Dasylirion)           verified 2026-10-03
+    249184,   # Tymoviridae       (旧 39503 实为 Dracaena reflexa)     verified 2026-10-03
+    675071,   # Virgaviridae      (旧 675069 实为 unclassified Betaflexiviridae) verified 2026-10-03
+    1513233,  # Benyviridae       (旧 675070 实为 Cilevirus)          verified 2026-10-03
+    2560061,  # Kitaviridae       (旧 1986707 实为 Flavobacteriaceae bacterium) verified 2026-10-03
+    2732890,  # Mayoviridae       (旧 1986708 实为 Flavobacteriaceae bacterium) verified 2026-10-03
     # (-)ssRNA
-    1980417, # Aspiviridae
-    1980418, # Fimoviridae
-    1980419, # Tospoviridae
-    1980420, # Phenuiviridae (part)
-    1980421, # Rhabdoviridae (plant-infecting genera)
-    # dsRNA
-    39733,   # Reoviridae (plant-infecting genera)
-    39732,   # Partitiviridae
-    39734,   # Totiviridae (some plant)
-    1922214, # Amalgaviridae
+    568247,   # Aspiviridae       (旧 1980417 实为 Phasmaviridae 动物病毒) verified 2026-10-03
+    1980412,  # Fimoviridae       (旧 1980418 实为 Phenuiviridae)     verified 2026-10-03
+    1980419,  # Tospoviridae                                        verified 2026-10-03
+    12329,    # Tenuivirus        (Phenuiviridae 植物感染属; 旧 1980420 实为 Goukovirus) verified 2026-10-03
+    2560118,  # Coguvirus         (Phenuiviridae 植物感染属)          verified 2026-10-03
+    2842408,  # Betarhabdovirinae (Rhabdoviridae 植物感染亚科, 含 Alphanucleo-/
+              #                    Betanucleo-/Gammanucleo-/Deltanucleorhabdovirus,
+              #                    Dichorhavirus, Varicosavirus 等;
+              #                    旧 1980421 实为 Phasivirus)         verified 2026-10-03
+    # dsRNA (Reoviridae 已撤销 → Reovirales; 植物感染属分散在 2 个新科, 只收属)
+    10985,    # Phytoreovirus     (Sedoreoviridae)                  verified 2026-10-03
+    10992,    # Oryzavirus        (Spinareoviridae)                  verified 2026-10-03
+    10988,    # Fijivirus         (Spinareoviridae)                  verified 2026-10-03
+    11012,    # Partitiviridae    (科内亦有真菌病毒, 后续可细化到植物感染属) verified 2026-10-03
+    1511860,  # Amalgaviridae     (旧 1922214 实为 Bootherium 灭绝哺乳动物) verified 2026-10-03
     # ssDNA
-    10811,   # Geminiviridae
-    10813,   # Nanoviridae
+    10811,    # Geminiviridae                                       verified 2026-10-03
+    251095,   # Nanoviridae       (旧 10813 实为 Curtovirus)          verified 2026-10-03
     # dsDNA (RT)
-    186533,  # Caulimoviridae
-    # Viroids
-    12884,   # Pospiviroidae
-    185752,  # Avsunviroidae
+    186534,   # Caulimoviridae    (旧 186533 实为 Cavemovirus)        verified 2026-10-03
+    # Viroids (类病毒)
+    185751,   # Pospiviroidae     (旧 12884 在 taxonomy 无对应节点)   verified 2026-10-03
+    185752,   # Avsunviroidae                                       verified 2026-10-03
+    # ── 2026-10-03 删除条目 (查无可靠节点/已合并, 不猜) ──
+    #   39502 Comoviridae  → NCBI 同义重定向 Secoviridae 675072 (表内已有, 不再重复)
+    #   39734 Totiviridae  → 科已重组为 Orthototiviridae 3152141 (真菌/原生动物);
+    #                        植物相关 totivirus 在 NCBI 无受控节点
 }
 
 # 不含植物的病毒科: 过滤用
@@ -147,6 +169,35 @@ def parse_args():
     p.add_argument("--api-key", default=DEFAULT_API_KEY)
     p.add_argument("--output-dir", default=None)
     return p.parse_args()
+
+
+# ═══════════════════════════════════════════════════════════
+#  失败清单 (2026-10-03 体检修复: 批次失败不得静默丢数据)
+# ═══════════════════════════════════════════════════════════
+
+_FAILED_ACCESSIONS: list[dict] = []
+
+
+def _record_failed_accessions(accessions, stage: str, error) -> None:
+    """登记一批失败请求的 accession (阶段 + 错误摘要), 供结束统一落盘"""
+    err = str(error).replace("\t", " ").replace("\n", " ")[:300]
+    for a in accessions:
+        _FAILED_ACCESSIONS.append({"accession": str(a), "stage": stage, "error": err})
+
+
+def failed_count() -> int:
+    return len(_FAILED_ACCESSIONS)
+
+
+def write_failed_accessions(sync_date: str) -> str:
+    """把本轮失败清单落盘 docs/data/incremental_failed_<date>.tsv, 返回路径"""
+    os.makedirs(DATA_DIR, exist_ok=True)
+    path = os.path.join(DATA_DIR, f"incremental_failed_{sync_date}.tsv")
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("accession\tstage\terror\n")
+        for r in _FAILED_ACCESSIONS:
+            f.write(f"{r['accession']}\t{r['stage']}\t{r['error']}\n")
+    return path
 
 
 # ═══════════════════════════════════════════════════════════
@@ -260,8 +311,11 @@ def detect_new_viral_taxids(nodes: dict, known_viral_taxids: set[str]) -> list[s
     return new_taxids
 
 
-def taxonomy_sync(api_key: str) -> dict:
-    """Phase 0: NCBI Taxonomy 同步, 返回变更摘要"""
+def taxonomy_sync(api_key: str, dry_run: bool = False) -> dict:
+    """Phase 0: NCBI Taxonomy 同步, 返回变更摘要
+
+    dry_run=True 时只做检测与打印, 不写 state (--dry-run 零副作用)。
+    """
     print("\n" + "─" * 60)
     print("📚 Phase 0: NCBI Taxonomy 同步")
     print("─" * 60)
@@ -310,11 +364,14 @@ def taxonomy_sync(api_key: str) -> dict:
             known_viral.add(tid)
 
     if new_viral:
-        # 更新状态
-        all_known = known_viral | set(new_viral)
-        state['known_viral_taxids'] = list(all_known)
-        state['taxonomy_last_sync'] = datetime.now().strftime("%Y-%m-%d")
-        save_state(state)
+        # 更新状态 (2026-10-03: dry-run 不得写 state)
+        if dry_run:
+            print(f"   👁 [预览] 将登记 {len(new_viral)} 个新病毒 taxid (dry-run 未写 state)")
+        else:
+            all_known = known_viral | set(new_viral)
+            state['known_viral_taxids'] = list(all_known)
+            state['taxonomy_last_sync'] = datetime.now().strftime("%Y-%m-%d")
+            save_state(state)
 
     return result
 
@@ -859,8 +916,11 @@ def host_resolution(accessions: list[str], api_key: str,
             )
         except Exception as e:
             stats["errors"] += len(batch)
+            # 2026-10-03 修复: 失败批次的 accession 必须记账, 否则 last_sync_date 前移后
+            # 该批(≤500 条)永久丢失 —— 落盘失败清单并阻止本轮推进同步日期
+            _record_failed_accessions(batch, "host_resolution", e)
             progress = min(i + BATCH_SIZE, total)
-            print(f"   [{progress}/{total}] ⚠ 批次失败, 跳过")
+            print(f"   [{progress}/{total}] ⚠ 批次失败, 已记入失败清单: {e}")
             time.sleep(REQUEST_DELAY)
             continue
 
@@ -1189,7 +1249,8 @@ def _build_taxid_lookup(info_path: str) -> dict[str, dict]:
 
 
 def database_merge(plant_records: list[dict], api_key: str,
-                   output_dir: str, taxsyn_result: dict) -> dict:
+                   output_dir: str, taxsyn_result: dict,
+                   skip_merged_check: bool = False) -> dict:
     """
     Phase 3: 下载序列 → LOCUS 解析 → taxid 继承 → taxonkit lineage → 追加入库
     """
@@ -1202,7 +1263,7 @@ def database_merge(plant_records: list[dict], api_key: str,
     full_info = PIPELINE_OUTPUTS["full_tsv"]
 
     result = {"new_fasta": 0, "new_tsv": 0, "merged_updated": 0, "deleted_marked": 0,
-              "known_inherited": 0, "new_taxonkit": 0}
+              "known_inherited": 0, "new_taxonkit": 0, "deferred_download": 0}
 
     # ── 下载 FASTA + GenBank (一并获取, 用于 LOCUS 解析) ──
     accessions = [r.get("accession", r.get("version", "")) for r in plant_records]
@@ -1214,17 +1275,25 @@ def database_merge(plant_records: list[dict], api_key: str,
     all_gb_text = ""
     for i in range(0, len(accessions), BATCH_SIZE):
         batch = accessions[i:i + BATCH_SIZE]
+        # 2026-10-03 修复: FASTA 与 GenBank 分两段各自重试/记账, 失败批次的
+        # accession 写入失败清单并在本轮暂缓入库(否则重跑时被"已存在"去重跳过,
+        # 序列永久缺失)
         try:
             all_fasta += _efetch_post(
                 {"db": "nucleotide", "id": ",".join(batch),
                  "rettype": "fasta", "retmode": "text"}, api_key, timeout=300
             )
+        except Exception as e:
+            _record_failed_accessions(batch, "sequence_download_fasta", e)
+            print(f"   ⚠ 批次 {i//BATCH_SIZE+1} FASTA 失败: {e}")
+        try:
             all_gb_text += _efetch_post(
                 {"db": "nucleotide", "id": ",".join(batch),
                  "rettype": "gb", "retmode": "text"}, api_key, timeout=300
             )
         except Exception as e:
-            print(f"   ⚠ 批次 {i//BATCH_SIZE+1} 失败: {e}")
+            _record_failed_accessions(batch, "sequence_download_genbank", e)
+            print(f"   ⚠ 批次 {i//BATCH_SIZE+1} GenBank 失败: {e}")
         time.sleep(REQUEST_DELAY)
 
     with open(fasta_path, 'w', encoding='utf-8') as f:
@@ -1359,6 +1428,15 @@ def database_merge(plant_records: list[dict], api_key: str,
     acc_list = df["Accession"].to_list()
     acc_norm = [a.split(".")[0] for a in acc_list]
     new_accs = {n for n in acc_norm if n not in existing_accs}
+
+    # 2026-10-03: 下载失败的 accession 本轮暂缓入库(缺口由下轮同窗口重跑补齐)
+    dl_failed_norm = {r["accession"].split(".")[0] for r in _FAILED_ACCESSIONS
+                      if r["stage"].startswith("sequence_download")}
+    deferred = new_accs & dl_failed_norm
+    if deferred:
+        new_accs -= dl_failed_norm
+        print(f"   ⚠ {len(deferred)} 条因下载失败本轮暂缓入库, 待下轮重跑补入")
+        result["deferred_download"] = len(deferred)
     result["new_tsv"] = len(new_accs)
 
     if new_accs:
@@ -1376,31 +1454,51 @@ def database_merge(plant_records: list[dict], api_key: str,
         # 追加 TSV (按归一化 accession 选出真正新增的行)
         new_df = df.filter(pl.Series("keep", [n in new_accs for n in acc_norm]))
         existing_df = pl.read_csv(full_info, separator='\t', infer_schema_length=0)
-        combined = pl.concat([existing_df, new_df.drop("keep")], how="diagonal")
+        # 2026-10-03: DataFrame.filter(Series) 只做行掩码, 不会把 "keep" 物化成列,
+        # 旧代码 .drop("keep") 在任何有新序列的轮次都会 ColumnNotFoundError 崩溃
+        combined = pl.concat([existing_df, new_df], how="diagonal")
         combined.write_csv(full_info, separator='\t')
         print(f"   ✅ FASTA +{appended} 条, TSV +{len(new_accs)} 条")
     else:
         print(f"   所有记录已存在, 无新增")
 
-    # ── 处理 merged taxids ─────────────────────────────
+    # ── 处理 merged / delnodes taxids ──────────────────
+    # 2026-10-03 修复: 旧实现拿 accession 集合与 taxid 比较(恒不命中)且只打印计数。
+    # 现在: merged → 在「本轮新增行 + 主表」的 Taxid 列上真实重映射为新 taxid
+    #       (整列读改写, polars); delnodes 命中的行写入 WATCHLIST_FILE 供人工处置。
     merged = taxsyn_result.get('merged', {})
     deleted = taxsyn_result.get('deleted', set())
 
-    if merged and os.path.exists(full_info):
-        # 更新现有数据中已被合并的 taxid
-        merged_updates = 0
-        for old_tid, new_tid in merged.items():
-            if old_tid in existing_accs or old_tid in new_accs:
-                # 这里需要更新 Info.tsv 中的 Taxid 列
-                # 简化处理: 追加一条 merge 记录到日志
-                merged_updates += 1
-        result["merged_updated"] = merged_updates
-        if merged_updates > 0:
-            print(f"   🔄 检测到 {merged_updates} 个 taxid 被合并")
+    if skip_merged_check:
+        print("   ⏭ --skip-merged-check: 跳过 merged/delnodes 处理")
+        merged, deleted = {}, set()
 
-    if deleted:
-        result["deleted_marked"] = len(deleted)
-        print(f"   🗑 检测到 {len(deleted)} 个 taxid 被删除 (未自动修改数据库)")
+    if merged and os.path.exists(full_info):
+        fdf = pl.read_csv(full_info, separator='\t', infer_schema_length=0)
+        if "Taxid" in fdf.columns:
+            old_col = [str(t).strip() for t in fdf["Taxid"].to_list()]
+            new_col = [merged.get(t, t) for t in old_col]
+            merged_updates = sum(1 for a, b in zip(old_col, new_col) if a != b)
+            if merged_updates:
+                fdf = fdf.with_columns(pl.Series("Taxid", new_col))
+                fdf.write_csv(full_info, separator='\t')
+            result["merged_updated"] = merged_updates
+            print(f"   🔄 Taxid 合并重映射: {merged_updates} 行 (主表 Taxid 列)")
+        else:
+            print("   ⚠ 主表缺少 Taxid 列, merged 重映射跳过")
+
+    deleted_hits = []
+    if deleted and os.path.exists(full_info):
+        fdf = pl.read_csv(full_info, separator='\t', infer_schema_length=0)
+        if "Taxid" in fdf.columns:
+            for tid, acc in zip(fdf["Taxid"].to_list(), fdf["Accession"].to_list()):
+                t = str(tid).strip()
+                if t in deleted:
+                    deleted_hits.append((t, str(acc).strip()))
+        result["deleted_marked"] = len(deleted_hits)
+        if deleted_hits:
+            print(f"   🗑 delnodes 命中主表 {len(deleted_hits)} 行 → 写入 watchlist "
+                  f"(未自动删行, 待人工处置)")
 
     # ── fasta/info 同步护栏 ────────────────────────────
     # 2026-10-03: 曾发生 info 删行而 fasta 留序列的事故(1,747 条噬菌体孤儿序列)。
@@ -1422,17 +1520,31 @@ def database_merge(plant_records: list[dict], api_key: str,
         print(f"   ⚠️ 同步检查失败: {type(e).__name__}: {e}")
 
     # ── 更新 watchlist ────────────────────────────────
-    _update_watchlist(new_accs, taxsyn_result)
+    _update_watchlist(new_accs, taxsyn_result, deleted_hits=deleted_hits)
 
     return result
 
 
-def _update_watchlist(new_accs: set[str], taxsyn_result: dict):
-    """更新观察列表: 新 taxid 但无宿主信息"""
-    # 简化实现: 对无 host 信息的记录输出日志
-    watchlist_path = WATCHLIST_FILE
-    # 此处可以记录无宿主信息的 taxid
-    pass
+def _update_watchlist(new_accs: set[str], taxsyn_result: dict,
+                      deleted_hits: list | None = None):
+    """更新观察列表 WATCHLIST_FILE (delnodes 命中行, taxid+accession+原因+日期)。
+
+    2026-10-03 修复: 旧实现是 `pass` 空壳, delnodes 只打印计数不落盘。
+    """
+    rows = []
+    today = datetime.now().strftime("%Y-%m-%d")
+    for tid, acc in (deleted_hits or []):
+        rows.append((str(tid), str(acc), "delnodes", today))
+    if not rows:
+        return
+    os.makedirs(os.path.dirname(WATCHLIST_FILE), exist_ok=True)
+    write_header = not os.path.exists(WATCHLIST_FILE)
+    with open(WATCHLIST_FILE, "a", encoding="utf-8") as f:
+        if write_header:
+            f.write("taxid\taccession\treason\tdetected_date\n")
+        for r in rows:
+            f.write("\t".join(r) + "\n")
+    print(f"   📝 watchlist 追加 {len(rows)} 行 → {WATCHLIST_FILE}")
 
 
 # ═══════════════════════════════════════════════════════════
@@ -1470,6 +1582,24 @@ def get_last_sync_date() -> str | None:
     return None
 
 
+def read_records_total() -> int:
+    """读取 DATA_VERSION 中现有 RECORDS_TOTAL (缺失/非法/负值 → 0)。
+
+    2026-10-03: 旧空结果路径写 update_version(0, -1, until) 曾把 -1 写进
+    DATA_VERSION, 站点版本徽标显示 "-1 records"; 空轮次必须保持既有总数。
+    """
+    if os.path.exists(VERSION_FILE):
+        with open(VERSION_FILE, encoding='utf-8') as f:
+            for line in f:
+                if line.startswith("RECORDS_TOTAL="):
+                    try:
+                        v = int(line.split("=", 1)[1].strip())
+                        return v if v > 0 else 0
+                    except ValueError:
+                        return 0
+    return 0
+
+
 def update_version(new_count: int, total_records: int, sync_date: str):
     v = {}
     if os.path.exists(VERSION_FILE):
@@ -1493,9 +1623,30 @@ def update_version(new_count: int, total_records: int, sync_date: str):
 #  main
 # ═══════════════════════════════════════════════════════════
 
+def _abort_on_failures(since: str, until: str, dry_run: bool) -> None:
+    """本轮存在失败批次: 不推进 last_sync_date, 非零退出并打印重跑指引 (2026-10-03)。"""
+    n = failed_count()
+    print("\n" + "═" * 60)
+    print(f"❌ 本轮有 {n} 条 accession 处理失败 — 已阻止 last_sync_date 前移")
+    print("═" * 60)
+    if dry_run:
+        print("   (dry-run 预览: 未写入失败清单)")
+    else:
+        try:
+            path = write_failed_accessions(until)
+            print(f"   📄 失败清单: {path}")
+        except Exception as e:  # noqa: BLE001
+            print(f"   ⚠ 失败清单落盘失败: {type(e).__name__}: {e}")
+    print(f"   同步日期保持: {since} (未推进到 {until})")
+    print(f"   重跑指引: 网络/NCBI 恢复后执行同一窗口重跑即可补齐缺口:")
+    print(f"     python {os.path.basename(__file__)} --since {since} --until {until}")
+    sys.exit(2)
+
+
 def main():
     args = parse_args()
     start_time = time.time()
+    _FAILED_ACCESSIONS.clear()
 
     since = args.since or get_last_sync_date()
     if not since:
@@ -1517,7 +1668,7 @@ def main():
 
     # ── Phase 0: Taxonomy 同步 ─────────────────────────
     if not args.skip_taxonomy:
-        taxsyn_result = taxonomy_sync(args.api_key)
+        taxsyn_result = taxonomy_sync(args.api_key, dry_run=args.dry_run)
     else:
         taxsyn_result = {'nodes': {}, 'merged': {}, 'deleted': set(), 'new_viral_taxids': []}
 
@@ -1526,7 +1677,10 @@ def main():
 
     if not accessions:
         print("\n✅ 无新增病毒序列")
-        update_version(0, -1, until)
+        if not args.dry_run:
+            update_version(0, read_records_total(), until)
+        else:
+            print("   👁 [预览] 未写 state / DATA_VERSION")
         return
 
     # ── Phase 2: 植物病毒判定 ─────────────────────────
@@ -1534,11 +1688,18 @@ def main():
 
     if not plant_records:
         print("\n✅ 无新增植物病毒")
+        if args.dry_run:
+            if failed_count():
+                _abort_on_failures(since, until, dry_run=True)
+            print("   👁 [预览] 未写 state / DATA_VERSION")
+            return
+        if failed_count():
+            _abort_on_failures(since, until, dry_run=False)
         state = load_state()
         state["last_sync_date"] = until
         state["total_runs"] += 1
         save_state(state)
-        update_version(0, -1, until)
+        update_version(0, read_records_total(), until)
         return
 
     # ── Phase 3: 数据库合并 ───────────────────────────
@@ -1548,20 +1709,20 @@ def main():
             print(f"   {rec.get('accession','?'):18s} host={rec.get('host','?')}")
         if len(plant_records) > 10:
             print(f"   ... 还有 {len(plant_records)-10} 条")
+        if failed_count():
+            _abort_on_failures(since, until, dry_run=True)
+        print(f"   👁 [预览] 未写 state / DATA_VERSION / 失败清单")
         return
 
-    merge_result = database_merge(plant_records, args.api_key, output_dir, taxsyn_result)
+    merge_result = database_merge(plant_records, args.api_key, output_dir, taxsyn_result,
+                                  skip_merged_check=args.skip_merged_check)
+
+    # ── 失败闸门 (2026-10-03): 有失败批次绝不推进 last_sync_date ──
+    if failed_count():
+        _abort_on_failures(since, until, dry_run=False)
 
     # ── 更新状态 ───────────────────────────────────────
-    old_total = 0
-    if os.path.exists(VERSION_FILE):
-        with open(VERSION_FILE, encoding='utf-8') as f:
-            for line in f:
-                if line.startswith("RECORDS_TOTAL="):
-                    try:
-                        old_total = int(line.split("=", 1)[1].strip())
-                    except:
-                        pass
+    old_total = read_records_total()
 
     new_total = old_total + merge_result["new_tsv"]
     update_version(merge_result["new_tsv"], new_total, until)
@@ -1583,8 +1744,10 @@ def main():
     print(f"   实际写入:       {merge_result['new_fasta']} FASTA + {merge_result['new_tsv']} TSV")
     print(f"   已知继承元数据:  {merge_result.get('known_inherited', 0)}")
     print(f"   taxonkit补全:   {merge_result.get('new_taxonkit', 0)}")
-    print(f"   Taxid合并:      {merge_result['merged_updated']}")
-    print(f"   Taxid删除:      {merge_result['deleted_marked']}")
+    print(f"   Taxid合并重映射: {merge_result['merged_updated']} (主表 Taxid 列)")
+    print(f"   delnodes命中:   {merge_result['deleted_marked']} (已写 watchlist)")
+    if merge_result.get("deferred_download"):
+        print(f"   下载失败暂缓:   {merge_result['deferred_download']} 条 (下轮同窗口重跑补入)")
     print(f"   数据库总量:      {new_total:,}")
     print(f"   耗时:           {elapsed:.0f}s")
     print(f"\n💡 增量完成。触发去冗余: cd 1.Prepare_plant_virus_pipeline && bash run_all.sh --from F1   # 需在仓库内执行(该参数会强制重跑 F1 及其后步骤)")

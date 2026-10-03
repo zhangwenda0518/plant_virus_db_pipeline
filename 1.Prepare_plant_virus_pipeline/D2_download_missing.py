@@ -110,11 +110,16 @@ def download_missing_fasta():
     print(f"🚀 启动 NCBI 原生高频下载引擎")
     print(f"📊 待下载序列总数 : {total} 条")
     print(f"📦 批量请求大小   : 每次 {args.chunk_size} 条")
-    print(f"🔑 API Key        : {args.api_key[:8]}********")
+    # 2026-10-03 体检修复: 不再回显 api_key 前缀(日志泄露面)
+    print(f"🔑 API Key        : {'已配置' if args.api_key else '未配置'}")
     print("==========================================================")
 
     success_count = 0
     fail_count = 0
+    # 2026-10-03 体检修复: 逐批对账 —— 实际返回的 accession vs 请求, 缺失落盘
+    missing_all = []
+    out_dir = os.path.dirname(os.path.abspath(args.output)) or "."
+    failed_path = os.path.join(out_dir, "failed_accessions.txt")
 
     with open(args.output, open_mode, encoding="utf-8") as out_f:
         for i in range(0, total, args.chunk_size):
@@ -146,9 +151,18 @@ def download_missing_fasta():
                             if not fasta_data.endswith('\n'):
                                 out_f.write('\n')
                                 
+                            # 对账: 解析实际返回的 accession 集合
+                            returned = {ln[1:].split()[0].split(".")[0]
+                                        for ln in fasta_data.splitlines()
+                                        if ln.startswith(">")}
+                            missing = [a for a in chunk if a.split(".")[0] not in returned]
+                            missing_all.extend(missing)
+                            got = len(chunk) - len(missing)
+
                             chunk_success = True
-                            success_count += len(chunk)
-                            print(f"   ✅ 进度: [ {success_count} / {total} ] - 成功下载 {len(chunk)} 条。")
+                            success_count += got
+                            note = f" (对账缺失 {len(missing)} 条)" if missing else ""
+                            print(f"   ✅ 进度: [ {success_count} / {total} ] - 成功下载 {got}/{len(chunk)} 条{note}")
                             break
                         else:
                             # 如果返回的不是 FASTA，抛出异常以触发重试
@@ -163,16 +177,25 @@ def download_missing_fasta():
             if not chunk_success:
                 print(f"   ❌ [极其罕见] 该批次彻底失败 (从 {chunk[0]} 等 {len(chunk)} 条)。它们可能已被 NCBI 永久移除。")
                 fail_count += len(chunk)
+                missing_all.extend(chunk)
 
             # API 速率保护：有 API Key 时，NCBI 允许 10次请求/秒。
             # 为了极端稳定，我们每批次间只停顿 0.3 秒，完全不构成压力。
             time.sleep(0.3)
 
+    missing_unique = list(dict.fromkeys(missing_all))
     print("==========================================================")
     print(f"🎉 跑批任务全部结束！")
     print(f"✅ 成功下载 : {success_count} 条")
     if fail_count > 0:
         print(f"❌ 失败记录 : {fail_count} 条 (大概率是 NCBI 端由于测序错误等原因废弃了该记录)")
+    if missing_unique:
+        with open(failed_path, "w", encoding="utf-8") as mf:
+            for a in missing_unique:
+                mf.write(a + "\n")
+        print(f"⚠ 对账缺失 : {len(missing_unique)} 条 (请求未被返回) → {failed_path}")
+    else:
+        print(f"✅ 对账     : 请求的 accession 已全部返回")
     print(f"📁 结果已存 : {args.output}")
     print("==========================================================")
 

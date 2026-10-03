@@ -182,10 +182,11 @@ def main():
     if not args.clusters:
         print("[2/10] 执行 vclust 聚类 ...")
         args.clusters = "vclust_auto_clusters.tsv"
+        # 2026-10-03 体检修复: shell=True 下所有路径/参数必须加双引号, 防止空格/特殊字符注入
         try:
-            subprocess.run(f"vclust prefilter -i {args.fasta} -o fltr.txt --min-ident {args.ani}", shell=True, check=True)
-            subprocess.run(f"vclust align -i {args.fasta} -o ani.tsv --filter fltr.txt --out-ani {args.ani} --out-qcov {args.qcov}", shell=True, check=True)
-            subprocess.run(f"vclust cluster -i ani.tsv -o {args.clusters} --ids ani.ids.tsv --algorithm cd-hit --metric ani --ani {args.ani} --qcov {args.qcov} --out-repr", shell=True, check=True)
+            subprocess.run(f'vclust prefilter -i "{args.fasta}" -o "fltr.txt" --min-ident "{args.ani}"', shell=True, check=True)
+            subprocess.run(f'vclust align -i "{args.fasta}" -o "ani.tsv" --filter "fltr.txt" --out-ani "{args.ani}" --out-qcov "{args.qcov}"', shell=True, check=True)
+            subprocess.run(f'vclust cluster -i "ani.tsv" -o "{args.clusters}" --ids "ani.ids.tsv" --algorithm cd-hit --metric ani --ani "{args.ani}" --qcov "{args.qcov}" --out-repr', shell=True, check=True)
         except subprocess.CalledProcessError as e:
             sys.exit(f"❌ vclust 运行失败: {e}")
     else:

@@ -5,6 +5,7 @@ import argparse
 import csv
 import sys
 import os
+import time
 from Bio import Entrez, SeqIO
 
 def main():
@@ -46,6 +47,10 @@ def main():
 
     print(f"✅ 成功读取 {len(acc_list)} 个 Accession 号，准备开始下载...\n")
 
+    # 2026-10-03 体检修复: 每批 3 次指数退避重试; 请求未返回的 accession 落盘
+    # missing_topology.tsv (旧实现单次 try 失败即静默丢整批, 无任何清单)
+    missing_rows = []   # (accession, reason)
+
     # 5. 打开输出文件并准备抓取
     with open(args.output, "w", encoding="utf-8", newline="") as out_f:
         writer = csv.writer(out_f, delimiter="\t")
@@ -57,28 +62,62 @@ def main():
             batch = acc_list[i : i + args.batch]
             end_idx = min(i + args.batch, len(acc_list))
             print(f"⏳ 正在处理第 {i+1} 到 {end_idx} 条序列...")
-            
-            try:
-                # 核心抓取代码：下载 GenBank 格式并解析
-                handle = Entrez.efetch(db="nuccore", id=batch, rettype="gb", retmode="text")
-                records = SeqIO.parse(handle, "genbank")
-                
-                # 遍历并提取所需的 5 个字段
-                for record in records:
-                    acc = record.id
-                    title = record.description
-                    length = len(record)  # 【修改处】直接获取纯数字，不加千位分隔符
-                    topology = record.annotations.get("topology", "unknown")
-                    mol_type = record.annotations.get("molecule_type", "unknown")
-                    
-                    writer.writerow([acc, title, length, topology, mol_type])
-                
-                handle.close()
-            except Exception as e:
-                print(f"⚠️ 抓取该批次时发生网络或解析错误: {e}")
+
+            batch_rows = {}   # base_acc -> 行 (重试不重复写)
+            err = None
+            for attempt in range(1, 4):
+                try:
+                    # 核心抓取代码：下载 GenBank 格式并解析
+                    handle = Entrez.efetch(db="nuccore", id=batch, rettype="gb", retmode="text")
+                    records = SeqIO.parse(handle, "genbank")
+
+                    attempt_rows = {}
+                    # 遍历并提取所需的 5 个字段
+                    for record in records:
+                        acc = record.id
+                        title = record.description
+                        length = len(record)  # 【修改处】直接获取纯数字，不加千位分隔符
+                        topology = record.annotations.get("topology", "unknown")
+                        mol_type = record.annotations.get("molecule_type", "unknown")
+                        attempt_rows[str(acc).split(".")[0]] = [acc, title, length, topology, mol_type]
+
+                    handle.close()
+                    batch_rows = attempt_rows
+                    err = None
+                    break
+                except Exception as e:
+                    err = e
+                    print(f"   ⚠ 抓取失败 (第 {attempt}/3 次): {e}")
+                    if attempt < 3:
+                        backoff = 2 ** attempt
+                        print(f"   ⏳ {backoff}s 后重试...")
+                        time.sleep(backoff)
+            if err is not None:
                 print("➡️ 提示：请检查网络连接或 Accession 号是否拼写正确。")
 
+            for row in batch_rows.values():
+                writer.writerow(row)
+
+            # 对账: 请求的 accession vs 实际写出的
+            for a in batch:
+                if a.split(".")[0] not in batch_rows:
+                    reason = f"fetch_error: {err}" if err is not None else "not_returned_by_ncbi"
+                    missing_rows.append((a, str(reason).replace("\t", " ").replace("\n", " ")[:200]))
+
+            # NCBI 无 key 限 3 req/s, 批次间限速
+            time.sleep(0.4)
+
     print(f"\n🎉 全部提取完成！结果已保存至: {os.path.abspath(args.output)}")
+
+    if missing_rows:
+        failed_dest = os.path.join(
+            os.path.dirname(os.path.abspath(args.output)) or ".", "missing_topology.tsv")
+        with open(failed_dest, "w", encoding="utf-8") as f:
+            f.write("accession\treason\n")
+            for a, r in missing_rows:
+                f.write(f"{a}\t{r}\n")
+        print(f"⚠️ 缺失清单: {len(missing_rows)} 条请求未被返回 → {failed_dest}")
+        print("⚠️ 存在缺失记录, 请按该清单重跑补齐 (未自动删除任何输入)")
 
 if __name__ == "__main__":
     main()

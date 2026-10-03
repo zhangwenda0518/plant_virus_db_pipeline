@@ -58,8 +58,9 @@ def main():
     print(f"\n📊 数据集总行数 (Total Rows): {total_rows:,}\n")
     
     if total_rows == 0:
-        print("[!] 警告: 数据集为空！")
-        sys.exit(0)
+        # 2026-10-03 体检修复: 空数据集是上游失败信号, 不得 exit 0 假成功
+        print(f"[!] 错误: 数据集为空 (0 行) — 上游过滤/下载环节可能失败, 检查不通过")
+        sys.exit(1)
 
     # 2. 计算统计指标 & 收集空值样本
     results = []

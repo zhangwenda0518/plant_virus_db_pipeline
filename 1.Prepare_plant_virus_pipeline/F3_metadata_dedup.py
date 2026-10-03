@@ -68,6 +68,26 @@ def main():
     df = df.with_columns(
         pl.col(seg_col).fill_null("").cast(pl.Utf8).alias("Raw_Segment")
     )
+
+    # 2026-10-03 体检修复: Taxid 为 null/空 的行会被下面的瀑布流过滤静默剔除
+    # (polars is_in 对 null 传播 null, filter 直接丢行) —— 单独计数并落盘审计,
+    # 不再无声消失。
+    if "Taxid" in df.columns:
+        _taxid_empty = (
+            pl.col("Taxid").cast(pl.Utf8).fill_null("").str.strip_chars() == ""
+        )
+        null_taxid_df = df.filter(_taxid_empty)
+    else:
+        null_taxid_df = df
+    if null_taxid_df.height:
+        _drop_cols = [c for c in ("Accession", "Base_Accession", "Taxid",
+                                  "Species_NCBI", "GenBank_Title", "Category")
+                      if c in null_taxid_df.columns]
+        _drop_path = os.path.join(args.out_dir, "dropped_null_taxid.tsv")
+        null_taxid_df.select(_drop_cols).write_csv(_drop_path, separator="\t")
+        print(f"⚠️ Taxid 为空的行: {null_taxid_df.height:,} 条 (不参与去冗余) → {_drop_path}")
+    else:
+        print("✅ Taxid 为空的行: 0 条")
     
     # 优先级定义
     ns_prio = [
