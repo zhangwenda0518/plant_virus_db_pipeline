@@ -563,7 +563,8 @@ def _batch_local_blast(tasks, db_path, threads=4, batch_size=5000, jobs=1, check
         try:
             ckpt = json.loads(ckpt_file.read_text())
             completed = set(ckpt.get("completed_batches", []))
-            all_results = {int(k): v for k, v in ckpt.get("results", {}).items()}
+            # 任务 key 为字符串 (稳定行键); 旧版 int(k) 遇字符串 key 会异常 → 整批结果被静默丢弃
+            all_results = {str(k): v for k, v in ckpt.get("results", {}).items()}
             print(f"  [断点续跑] 已完成 {len(completed)}/{num_batches}", flush=True)
         except Exception:
             pass
@@ -626,6 +627,28 @@ def _batch_local_blast(tasks, db_path, threads=4, batch_size=5000, jobs=1, check
 # ============================================================================
 # 6. 综合评分 (0-100)
 # ============================================================================
+
+def _as_float(val, default=0.0):
+    """稳健转 float: 兼容 None / 空串 / 数值; 失败返回 default"""
+    if val is None or val == '':
+        return default
+    try:
+        return float(val)
+    except (TypeError, ValueError):
+        return default
+
+
+def _primer_row_key(row, idx):
+    """稳定唯一行键: {物种名[:40]}_{类型}_{全表行号}
+
+    用于任务生成 / 结果 map / 回写三处对齐 (P0-1), 避免复跑时用过滤子集下标
+    给全表套结果导致整体错位。同时用作 BLAST 缓存文件名与 blastn qseqid 前缀,
+    因此需做文件名/FASTA 安全替换 (空格、斜杠、冒号)。"""
+    sp = str(row.get('Species', 'unknown') or 'unknown')
+    sp_safe = sp.replace(' ', '_').replace('/', '_').replace(':', '_')[:40]
+    ptype = str(row.get('Type', 'PCR') or 'PCR').replace(' ', '_')
+    return f"{sp_safe}_{ptype}_{idx}"
+
 
 def _compute_score(dimer, blast, gc_tm, thermo=None, probe_val=None, ptype="", cov=None):
     """综合评分: 100 起扣 (借鉴 PCR_strainer + varVAMP + qprimer_designer)"""
@@ -809,19 +832,23 @@ _CACHE_KEY = None
 _CACHE_SEQS = []
 
 def _resolve_target_seqs(row, species_dir):
-    """动态加载引物所属物种的靶标序列, 支持分节段病毒, 带单物种缓存"""
+    """动态加载引物所属物种的靶标序列, 支持分节段病毒, 带单物种缓存
+
+    文件名规则必须与 step1 write_per_species 完全一致 (P1-7):
+      - 物种名: 替换 '/', ' ', ':' 后截断 80 字符
+      - 节段文件: 物种名截断 60 + '_' + segment 后替换 '/', 再整体截断 80
+    """
     global _CACHE_KEY, _CACHE_SEQS
     species = str(row.get('Species', '')).strip()
     segment = str(row.get('Segment', '')).strip()
     if not species or species.lower() in ('', 'unknown', 'nan'):
         return []
-    safe_sp = species.replace('/', '_').replace(' ', '_').replace(':', '_')
-    # 节段病毒: step1 将物种名截断到60字符 + _segment (对齐 step1 write_per_species)
+    safe_sp = species.replace('/', '_').replace(' ', '_').replace(':', '_')[:80]
+    # 节段病毒: 与 step1 相同的截断/替换规则生成期望文件名
     if segment:
-        safe_sp = safe_sp[:60]
-        fa_file = species_dir / f"{safe_sp}_{segment}.fasta"
+        seg_safe = f"{safe_sp[:60]}_{segment}".replace('/', '_')[:80]
+        fa_file = species_dir / f"{seg_safe}.fasta"
     else:
-        safe_sp = safe_sp[:80]
         fa_file = species_dir / f"{safe_sp}.fasta"
 
     key = (safe_sp, segment)
@@ -884,9 +911,14 @@ def validate_single_primer(row, blast_info=None, sp_seqs=None):
     result = {
         "GC_Fwd_Verified": gc_tm["GC_Fwd"], "GC_Rev_Verified": gc_tm["GC_Rev"],
         "Tm_Fwd_Verified": gc_tm["Tm_Fwd"], "Tm_Rev_Verified": gc_tm["Tm_Rev"],
-        "Self_Dimer_Fwd": dimer["self_fwd_struct"],
-        "Self_Dimer_Rev": dimer["self_rev_struct"],
-        "Cross_Dimer": dimer["cross_struct"],
+        # 数值 dG (kcal/mol) — 旧版误存 primer3 对象 repr, 导致 step4 入库恒 0 (P0-4)
+        "Self_Dimer_Fwd": round(float(dimer.get("self_fwd_dg", 0) or 0), 2),
+        "Self_Dimer_Rev": round(float(dimer.get("self_rev_dg", 0) or 0), 2),
+        "Cross_Dimer": round(float(dimer.get("cross_dg", 0) or 0), 2),
+        # 二聚体结构文本另存, 不占用数值列
+        "Self_Dimer_Fwd_Struct": dimer.get("self_fwd_struct", ""),
+        "Self_Dimer_Rev_Struct": dimer.get("self_rev_struct", ""),
+        "Cross_Dimer_Struct": dimer.get("cross_struct", ""),
         "Dimer_Warning": _dimer_warning_text(dimer),
         "Validation_Score": score,
         "Validation_Status": rec,
@@ -992,8 +1024,10 @@ def main():
         sort_cols = ['Species']
         if 'Segment' in primers.columns:
             sort_cols.append('Segment')
-        primers = primers.sort(sort_cols)
-        print(f"  已按 {', '.join(sort_cols)} 排序 (缓存加速)")
+        # maintain_order=True: polars 默认不稳定排序会打乱同物种行序,
+        # 行键/ BLAST 缓存文件名 / Phase-1 检查点跨运行会因此失配重算
+        primers = primers.sort(sort_cols, maintain_order=True)
+        print(f"  已按 {', '.join(sort_cols)} 排序 (缓存加速, 稳定排序)")
 
     # 检查已验证结果
     validated = None
@@ -1001,36 +1035,59 @@ def main():
         try:
             validated = pl.read_csv(output_tsv, separator='\t', ignore_errors=True)
             print(f"→ 已有验证结果: {len(validated)} 对")
+            if len(validated) == 0:
+                # 空输出文件 (上次运行中断) 不能当复跑基准, 否则整表被清空
+                print("  ⚠ 已有输出为空文件, 按全新运行处理")
+                validated = None
         except Exception:
             validated = None
 
-    # 筛选需验证的引物: 推荐 + 可用
-    if validated is not None and 'Recommendation' in validated.columns:
-        to_validate = validated.filter(pl.col('Recommendation').is_in(['RECOMMENDED', 'USABLE', 'CAUTION']))
-        print(f"→ 已有验证结果, 加载跳过...")
+    # ─── 稳定行键: 任务生成 / 结果 map / 回写三处全部按 key 对齐 (P0-1) ───
+    # 旧版复跑时用"过滤子集下标"给全表套结果 → 整体错位 (张冠李戴写回 TSV)
+    if validated is not None:
+        all_rows = validated.to_dicts()
+        if len(all_rows) != len(primers):
+            print(f"  ⚠ 输入 {len(primers)} 行 / 已有验证输出 {len(all_rows)} 行: 以已有输出为基准, "
+                  f"输入中未进入输出的行本次不处理 (需全量重跑请删除/改名输出文件)")
     else:
-        to_validate = primers
+        all_rows = primers.to_dicts()
+    all_keys = [_primer_row_key(r, i) for i, r in enumerate(all_rows)]
+    key_to_pos = {k: i for i, k in enumerate(all_keys)}
+
+    # 筛选需验证的引物: 推荐 + 可用
+    # 注: UNVALIDATED (--skip-blast 输出) 也纳入复跑, 否则补跑完整验证时会被整体跳过
+    if validated is not None and 'Recommendation' in validated.columns:
+        sel_idx = [i for i, r in enumerate(all_rows)
+                   if str(r.get('Recommendation', '') or '').strip()
+                   in ('RECOMMENDED', 'USABLE', 'CAUTION', 'UNVALIDATED')]
+        print(f"→ 已有验证结果: 复跑 {len(sel_idx)}/{len(all_rows)} 对 (按稳定 key 回写)")
+    else:
+        sel_idx = list(range(len(all_rows)))
+    rows = [all_rows[i] for i in sel_idx]
+    row_keys = [all_keys[i] for i in sel_idx]
 
     # ─── 阶段 1: 序列层面验证 ───
     print(f"\n{'='*60}")
     print(f"  阶段 1/2: 序列层面验证")
-    print(f"  引物: {len(to_validate)} 对 | 二聚体: {'primer3' if PRIMER3_OK else 'fallback'}"
+    print(f"  引物: {len(rows)} 对 | 二聚体: {'primer3' if PRIMER3_OK else 'fallback'}"
           + (f" | 覆盖度: 物种内缓存" if species_dir else " | 覆盖度: 全局/跳过"))
     print(f"{'='*60}")
 
     blast_dir = output_tsv.parent / "blast"
     blast_dir.mkdir(parents=True, exist_ok=True)
 
-    # Phase 1 断点续传: 检查 parquet 检查点
-    rows = to_validate.to_dicts()
+    # Phase 1 断点续传: 检查 parquet 检查点 (行键必须完全一致才可用, 防错位)
     val_results = []
     phase1_ckpt = blast_dir / "phase1_checkpoint.parquet"
     if phase1_ckpt.exists():
         try:
             ckpt_df = pl.read_parquet(phase1_ckpt)
-            if len(ckpt_df) == len(rows):
+            ckpt_keys = ckpt_df['_key'].to_list() if '_key' in ckpt_df.columns else []
+            if len(ckpt_df) == len(rows) and ckpt_keys == row_keys:
                 print(f"  ✓ 从检查点恢复 Phase 1 ({len(ckpt_df)} 对), 跳过全部子步骤")
                 val_results = ckpt_df.to_dicts()
+            else:
+                print("  ⚠ Phase 1 检查点与当前输入行键不一致, 重新计算")
         except Exception:
             pass
 
@@ -1139,13 +1196,17 @@ def main():
             val = {
                 "GC_Fwd_Verified": gc_tm.get("GC_Fwd",0), "GC_Rev_Verified": gc_tm.get("GC_Rev",0),
                 "Tm_Fwd_Verified": gc_tm.get("Tm_Fwd",0), "Tm_Rev_Verified": gc_tm.get("Tm_Rev",0),
-                "Self_Dimer_Fwd": dimer.get("self_fwd_struct",""),
-                "Self_Dimer_Rev": dimer.get("self_rev_struct",""),
-                "Cross_Dimer": dimer.get("cross_struct",""),
+                # 数值 dG (kcal/mol) — 与 _compute_score 的 self_fwd_dg/self_rev_dg/cross_dg 键对齐 (P0-3/P0-4)
+                "Self_Dimer_Fwd": round(_as_float(dimer.get("self_fwd_dg")), 2),
+                "Self_Dimer_Rev": round(_as_float(dimer.get("self_rev_dg")), 2),
+                "Cross_Dimer": round(_as_float(dimer.get("cross_dg")), 2),
+                "Self_Dimer_Fwd_Struct": dimer.get("self_fwd_struct",""),
+                "Self_Dimer_Rev_Struct": dimer.get("self_rev_struct",""),
+                "Cross_Dimer_Struct": dimer.get("cross_struct",""),
                 "Dimer_Warning": _dimer_warning_text(dimer),
                 "Validation_Score": score, "Validation_Status": rec,
                 "Recommendation": rec, "Validated_At": datetime.now().isoformat(),
-                "_idx": idx4
+                "_key": row_keys[idx4]
             }
             if probe_val: val.update(probe_val)
             if cov: val.update(cov)
@@ -1158,15 +1219,20 @@ def main():
     pl.DataFrame(val_results).write_parquet(phase1_ckpt)
     print(f"  → Phase 1 检查点: {phase1_ckpt}")
 
-    # 合并验证字段到引物表
-    val_df = pl.DataFrame(val_results) if val_results else pl.DataFrame()
-    if '_idx' in val_df.columns:
-        val_df = val_df.drop('_idx')
-
-    if validated is not None:
-        all_rows = validated.to_dicts()
-    else:
-        all_rows = to_validate.to_dicts()
+    # 合并验证字段到引物表 (按稳定 key 对齐回写; 旧版 val_df 构造后无引用 → 验证列全丢, P0-2)
+    merged_n = 0
+    for j, v in enumerate(val_results):
+        key = v.get('_key') or (row_keys[j] if j < len(row_keys) else None)
+        pos = key_to_pos.get(key) if key is not None else None
+        if pos is None:
+            print(f"  ⚠ 验证结果无法对齐到输出行 (key={key}), 跳过")
+            continue
+        tgt = all_rows[pos]
+        for k, val_v in v.items():
+            if k != '_key':
+                tgt[k] = val_v
+        merged_n += 1
+    print(f"  → 验证列已合并: {merged_n} 对")
 
     # ─── 阶段 2: BLAST 特异性验证 ───
     blast_results_map = {}
@@ -1176,11 +1242,11 @@ def main():
         print(f"  数据库: {BLAST_DB}")
         print(f"{'='*60}")
 
-        # 构建批量任务
+        # 构建批量任务 (任务 key = 稳定行键, 与结果 map / 回写同一套 key)
         batch_tasks = []
         for i, row in enumerate(rows):
-            sp = str(row.get('Species', 'unknown'))
-            pid = f"{sp.replace(' ', '_').replace('/', '_')[:40]}_{row.get('Type', 'PCR')}_{i}"
+            key = row_keys[i]
+            pid = key
             cached_csv = blast_dir / f"blast_{pid}.csv"
             if cached_csv.exists():
                 try:
@@ -1197,7 +1263,7 @@ def main():
                     f_all_plant = f_plant + r_plant
                     spec = round(min(f_target, r_target) / max(min(len(f_h), len(r_h)), 1) * 100, 1)
                     pr = "HIGH" if f_all_plant >= 5 else ("MEDIUM" if f_all_plant >= 2 else ("LOW" if f_all_plant > 0 else "NONE"))
-                    blast_results_map[i] = {
+                    blast_results_map[key] = {
                         "BLAST_Fwd_TargetHits": f_target, "BLAST_Fwd_PlantHits": f_plant,
                         "BLAST_Fwd_OtherHits": f_other,
                         "BLAST_Rev_TargetHits": r_target, "BLAST_Rev_PlantHits": r_plant,
@@ -1208,7 +1274,7 @@ def main():
                     continue
                 except Exception:
                     pass
-            batch_tasks.append((i, str(row.get("Fwd_Seq", "")), str(row.get("Rev_Seq", "")),
+            batch_tasks.append((key, str(row.get("Fwd_Seq", "")), str(row.get("Rev_Seq", "")),
                                str(row.get("Species", "")), blast_dir, pid))
 
         print(f"  BLAST 缓存: {len(blast_results_map)} 对, 需计算: {len(batch_tasks)} 对")
@@ -1244,55 +1310,55 @@ def main():
         if TQDM_OK:
             rpbar = tqdm(total=len(all_rows), desc="  综合评分", unit="对",
                           bar_format='{l_bar}{bar:40}{r_bar}')
+        # 稳定 key → Phase1 结果下标 (替代旧版子集下标, 防错位)
+        key_to_vidx = {k: j for j, k in enumerate(row_keys)}
         ri = 0
-        for i in range(len(all_rows)):
+        for i, row in enumerate(all_rows):
             ri += 1
-            if i in blast_results_map:
-                bi = blast_results_map[i]
-                dimer = {}
-                if i < len(val_results):
-                    dv = val_results[i]
-                    dimer = {k: dv[k] for k in ['self_fwd_dg', 'self_rev_dg', 'cross_dg'] if k in dv and dv[k]}
-                gc_tm = {}
-                row = all_rows[i]
-                gc_tm = {
-                    'GC_Fwd': float(row.get('GC_Fwd', 0) or 0),
-                    'GC_Rev': float(row.get('GC_Rev', 0) or 0),
-                    'Tm_Fwd': float(row.get('Fwd_Tm', 0) or 0),
-                    'Tm_Rev': float(row.get('Rev_Tm', 0) or 0)
+            key = all_keys[i]
+            if key in blast_results_map:
+                bi = blast_results_map[key]
+                vj = key_to_vidx.get(key)
+                dv = val_results[vj] if vj is not None and vj < len(val_results) else {}
+                # 二聚体数值 dG (kcal/mol): 与 _compute_score 的 self_*_dg 键对齐, 让 -30 惩罚真正生效 (P0-3)
+                dimer = {
+                    'self_fwd_dg': _as_float(dv.get('Self_Dimer_Fwd')),
+                    'self_rev_dg': _as_float(dv.get('Self_Dimer_Rev')),
+                    'cross_dg': _as_float(dv.get('Cross_Dimer')),
                 }
-                # 提取探针验证 + 类型信息 (P0-2)
+                gc_tm = {
+                    'GC_Fwd': _as_float(row.get('GC_Fwd')),
+                    'GC_Rev': _as_float(row.get('GC_Rev')),
+                    'Tm_Fwd': _as_float(row.get('Fwd_Tm')),
+                    'Tm_Rev': _as_float(row.get('Rev_Tm'))
+                }
+                # 提取探针验证 + 覆盖度 (同一 key 对应的验证结果)
                 probe_val = {}
                 ptype = str(row.get('Type', ''))
-                if i < len(val_results):
-                    pv = val_results[i]
-                    if pv.get('Probe_Hairpin_Tm') is not None:
-                        probe_val = {k: pv[k] for k in [
-                            'Probe_Hairpin_Tm','Probe_Self_Dimer_dG',
-                            'Probe_Fwd_Dimer_dG','Probe_Rev_Dimer_dG',
-                            'Probe_Tm_Diff_Ok','Probe_Warning'
-                        ] if k in pv}
-                # 提取覆盖度数据
+                if dv.get('Probe_Hairpin_Tm') is not None:
+                    probe_val = {k: dv[k] for k in [
+                        'Probe_Hairpin_Tm','Probe_Self_Dimer_dG',
+                        'Probe_Fwd_Dimer_dG','Probe_Rev_Dimer_dG',
+                        'Probe_Tm_Diff_Ok','Probe_Warning'
+                    ] if k in dv}
                 cov_data = {}
-                if i < len(val_results):
-                    cv = val_results[i]
-                    if cv.get('Coverage_Avg') is not None:
-                        cov_data = {k: cv[k] for k in [
-                            'Fwd_Coverage_Pct','Rev_Coverage_Pct',
-                            'Fwd_3Prime_Penalty','Rev_3Prime_Penalty',
-                            'Coverage_Avg','Coverage_Total_Seqs'
-                        ] if k in cv}
+                if dv.get('Coverage_Avg') is not None:
+                    cov_data = {k: dv[k] for k in [
+                        'Fwd_Coverage_Pct','Rev_Coverage_Pct',
+                        'Fwd_3Prime_Penalty','Rev_3Prime_Penalty',
+                        'Coverage_Avg','Coverage_Total_Seqs'
+                    ] if k in dv}
                 new_score = _compute_score(dimer, bi, gc_tm, probe_val=probe_val, ptype=ptype, cov=cov_data)
                 new_rec = _get_recommendation(new_score, bi)
-                all_rows[i]['Validation_Score'] = new_score
-                all_rows[i]['Recommendation'] = new_rec
+                row['Validation_Score'] = new_score
+                row['Recommendation'] = new_rec
                 # 合并 BLAST 字段
                 for k, v in bi.items():
                     if k.startswith('BLAST_'):
-                        all_rows[i][k] = v
+                        row[k] = v
                 # 合并覆盖度字段
                 for k, v in cov_data.items():
-                    all_rows[i][k] = v
+                    row[k] = v
             if rpbar:
                 rpbar.update(1)
             elif ri % 10000 == 0:
@@ -1300,6 +1366,21 @@ def main():
         if rpbar:
             rpbar.close()
         print(f"  ✓ 综合评分完成")
+
+    # ─── P1-2: BLAST 被跳过时报明"未完整验证", 但保留验证列 (防 step4 读不到列) ───
+    if args.skip_blast or args.quick or not BLAST_DB:
+        print("\n  ⚠ 未执行 BLAST 特异性验证 (--skip-blast/--quick 或未提供 --blast-db)")
+        print("    → Validation_Score=0 / Recommendation='UNVALIDATED' (未经完整验证, 不冒充已验证)")
+        print("    → GC/Tm、二聚体、覆盖度等序列层面字段已保留; 补齐 BLAST 请重跑 step3")
+        for row in all_rows:
+            if row.get('Validation_Score') is None or 'Validation_Score' not in row:
+                row['Validation_Score'] = 0
+            if row.get('Recommendation') in (None, '') or 'Recommendation' not in row:
+                row['Recommendation'] = 'UNVALIDATED'
+        for pos in sel_idx:
+            all_rows[pos]['Validation_Score'] = 0
+            all_rows[pos]['Recommendation'] = 'UNVALIDATED'
+            all_rows[pos]['Validation_Status'] = 'UNVALIDATED'
 
     # ─── 输出 ───
     print(f"\n→ 写入: {output_tsv}")

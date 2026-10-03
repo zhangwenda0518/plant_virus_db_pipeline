@@ -18,6 +18,9 @@ $null
 3.virus_explorer/.cache/
 .cache/
 
+# 体检修复的本地备份（不入库）
+*.bak.2026*
+
 # Office temp lock files
 ~$*
 

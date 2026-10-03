@@ -64,7 +64,9 @@ echo -e "  ${GREEN}✓${NC} logs/ 已创建"
 
 # ── 4. 注册 systemd 服务 ────────────────────────────
 echo -e "${YELLOW}[4/6] 注册 systemd 服务...${NC}"
-cp /opt/virus_explorer/plant-virus-explorer.service /etc/systemd/system/
+# 单元文件名与仓库/README 保持一致：virus-explorer.service
+# （2026-10-03 审计 P1 对齐：旧脚本误写 plant-virus-explorer.service，仓库无此文件，cp/systemctl 必失败）
+cp /opt/virus_explorer/virus-explorer.service /etc/systemd/system/
 systemctl daemon-reload
 echo -e "  ${GREEN}✓${NC} 服务已注册"
 
@@ -82,13 +84,13 @@ fi
 
 # ── 6. 启动服务 ─────────────────────────────────────
 echo -e "${YELLOW}[6/6] 启动服务...${NC}"
-systemctl enable plant-virus-explorer
-systemctl restart plant-virus-explorer
+systemctl enable virus-explorer
+systemctl restart virus-explorer
 sleep 3
-if systemctl is-active --quiet plant-virus-explorer; then
+if systemctl is-active --quiet virus-explorer; then
     echo -e "  ${GREEN}✓${NC} 服务运行中"
 else
-    echo -e "  ${RED}✗${NC} 服务启动失败，查看日志: journalctl -u plant-virus-explorer -n 50"
+    echo -e "  ${RED}✗${NC} 服务启动失败，查看日志: journalctl -u virus-explorer -n 50"
 fi
 
 echo ""
@@ -97,9 +99,9 @@ echo -e "${GREEN}  部署完成！${NC}"
 echo -e "${GREEN}============================================${NC}"
 echo ""
 echo "  访问地址:  http://39.106.101.94"
-echo "  服务状态:  systemctl status plant-virus-explorer"
-echo "  查看日志:  journalctl -u plant-virus-explorer -f"
-echo "  重启服务:  systemctl restart plant-virus-explorer"
+echo "  服务状态:  systemctl status virus-explorer"
+echo "  查看日志:  journalctl -u virus-explorer -f"
+echo "  重启服务:  systemctl restart virus-explorer"
 echo ""
 echo "  确保阿里云安全组和宝塔防火墙已放行端口 80"
 echo ""

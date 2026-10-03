@@ -701,9 +701,10 @@ def _degenerate_properties(seq):
     min_gc = sum(iupac_gc_bounds.get(c, (0,0))[0] for c in seq)
     max_gc = sum(iupac_gc_bounds.get(c, (0,0))[1] for c in seq)
     L = max(len(seq), 1)
-    # Wallace Tm 范围: 2°C×(A+T) + 4°C×(G+C)
-    min_tm = 2 * (L - max_gc) + 4 * max_gc
-    max_tm = 2 * (L - min_gc) + 4 * min_gc
+    # Wallace Tm 范围: Tm = 2°C×(A+T) + 4°C×(G+C) = 2L + 2×GC
+    # GC 越多 Tm 越高 → 最小 Tm 用 min_gc, 最大 Tm 用 max_gc (旧版两者互换 → 倒挂)
+    min_tm = 2 * (L - min_gc) + 4 * min_gc
+    max_tm = 2 * (L - max_gc) + 4 * max_gc
     return {
         "min_gc": round(min_gc / L * 100, 1),
         "max_gc": round(max_gc / L * 100, 1),
@@ -887,7 +888,8 @@ def _filter_by_exclusion(primers, exclude_seqs):
             for start in range(win_start, min(idx+1, ex_len-plen+1)):
                 window = ex_seq[start:start+plen]
                 try:
-                    if p3.calc_heterodimer(primer, window).dg < -9: return True
+                    # primer3 返回 cal/mol: -9 kcal/mol = -9000 cal/mol (与上方 364/393/860 行同口径)
+                    if p3.calc_heterodimer(primer, window).dg < -9000: return True
                 except: continue
             pos = idx + 1
         return False
@@ -913,6 +915,40 @@ def _primerforge_tiled_available():
 def _safe_float(val, default=99.0):
     try: return float(val)
     except: return default
+
+def _missing_num(val):
+    """True = 数值列缺失/无效 (空串 或 ≤0; 简并范围串如 '55.0-63.0' 视为有效)"""
+    s = str(val if val is not None else '').strip()
+    if not s:
+        return True
+    try:
+        return float(s) <= 0
+    except ValueError:
+        return False
+
+def _fill_missing_tm_gc(row):
+    """P1-9: 补齐缺失的 Fwd_Tm/Rev_Tm/GC_Fwd/GC_Rev。
+
+    varVAMP_tiled / PrimerForge / Olivar 路径不产出 Tm/GC (~42% 引物)。
+    补齐策略: Tm 优先 primer3.calc_tm (try 保护); GC 按 A/T/G/C 碱基组成计算。
+    只补缺失值, 不覆盖已有值; primer3 失败则维持原状。"""
+    for tm_col, seq_col in (("Fwd_Tm", "Fwd_Seq"), ("Rev_Tm", "Rev_Seq")):
+        seq = str(row.get(seq_col, "") or "").strip().upper()
+        if not seq or not _missing_num(row.get(tm_col)):
+            continue
+        if PRIMER3_OK:
+            try:
+                row[tm_col] = str(round(float(primer3.calc_tm(seq)), 1))
+            except Exception:
+                pass
+    for gc_col, seq_col in (("GC_Fwd", "Fwd_Seq"), ("GC_Rev", "Rev_Seq")):
+        seq = str(row.get(seq_col, "") or "").strip().upper()
+        if not seq or not _missing_num(row.get(gc_col)):
+            continue
+        acgt = sum(1 for c in seq if c in "ATGC")
+        if acgt:
+            row[gc_col] = str(round((seq.count("G") + seq.count("C")) / acgt * 100, 1))
+    return row
 
 def _run_varvamp(seqs, sp, segment, args, pre_aligned=None):
     import tempfile, shutil, subprocess, csv as _csv
@@ -1468,6 +1504,7 @@ def main():
                 elif c in ("Fwd_Degeneracy","Rev_Degeneracy","Total_Degeneracy"): v = str(v) if v != "" else ""
                 elif c == "Pair_ID": v = str(v) if v else f"P{idx+1:05d}"
                 row[c] = str(v) if v != "" else ""
+            _fill_missing_tm_gc(row)  # P1-9: 补齐缺失 Tm/GC
             norm.append(row)
         df = pl.DataFrame(norm)
         df.write_csv(out_tsv, separator='\t')

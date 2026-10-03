@@ -1,0 +1,16 @@
+[Unit]
+Description=Virus Explorer Dash Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/plant_virus_db/plant_virus_db_pipeline/3.virus_explorer
+ExecStart=/usr/local/bin/gunicorn --preload -w 1 --threads 2 -b 127.0.0.1:8050 app:server --timeout 300 --graceful-timeout 60 --access-logfile /var/log/virus-explorer-access.log --error-logfile /var/log/virus-explorer-error.log --log-level info
+Restart=always
+RestartSec=10
+StandardOutput=append:/var/log/virus-explorer.log
+StandardError=append:/var/log/virus-explorer.log
+
+[Install]
+WantedBy=multi-user.target

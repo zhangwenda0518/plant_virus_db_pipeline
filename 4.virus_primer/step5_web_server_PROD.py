@@ -55,6 +55,12 @@ def _load_env(paths=None):
 
 SERVER_AI_CONFIG = _load_env()
 
+# ── /api/chat 安全常量 (P0-5) ──
+# LLM 端点由服务端固定为 DeepSeek 官方地址: 客户端传入的 api_url 一律忽略 (防 SSRF);
+# key 由浏览器用户自备, 服务器不再提供/回退任何 key。
+DEEPSEEK_CHAT_API_URL = "https://api.deepseek.com/v1/chat/completions"
+MAX_CHAT_MSG_BYTES = 32 * 1024  # 单条消息长度上限 32KB
+
 # 加载 ICTV 名称映射表 (内存缓存，避免每次请求读文件)
 NAME_MAP = {}
 _name_map_candidates = (
@@ -469,7 +475,6 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
     }
     function saveAISettings() {
         localStorage.setItem('ai_api_key', document.getElementById('ai-api-key').value);
-        localStorage.setItem('ai_api_url', document.getElementById('ai-api-url').value);
         localStorage.setItem('ai_model', document.getElementById('ai-model').value);
         document.getElementById('ai-settings-inline').style.display = 'none';
         addChatMsg('system', '设置已保存');
@@ -477,8 +482,6 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
     (function(){
         var k = localStorage.getItem('ai_api_key');
         if(k) document.getElementById('ai-api-key').value = k;
-        var u = localStorage.getItem('ai_api_url');
-        if(u) document.getElementById('ai-api-url').value = u;
         var m = localStorage.getItem('ai_model');
         if(m) document.getElementById('ai-model').value = m;
     })();
@@ -511,7 +514,7 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
         inp.value = '';
         chatConv.push({role:'user', content:msg});
         var key = localStorage.getItem('ai_api_key') || '';
-        // Server-side key will be used if no local key
+        // 未填自有 key 时服务端返回 401 提示 (服务器不再提供 key)
         showTyping();
         try {
             var resp = await fetch('/api/chat', {
@@ -520,7 +523,6 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
                 body:JSON.stringify({
                     message: msg,
                     api_key: key,
-                    api_url: localStorage.getItem('ai_api_url')||'https://api.deepseek.com/v1/chat/completions',
                     model: localStorage.getItem('ai_model')||'deepseek-chat',
                     conversation: chatConv.slice(-8)
                 })
@@ -2436,21 +2438,19 @@ def create_app():
         import requests
         data = request.get_json(force=True)
         user_msg = data.get('message', '').strip()
-        api_key = data.get('api_key', '').strip()
-        api_url = data.get('api_url', 'https://api.deepseek.com/v1/chat/completions').strip()
-        model = data.get('model', 'deepseek-chat').strip()
+        api_key = str(data.get('api_key', '') or '').strip()
+        # 安全修复 (P0-5): api_url 由服务端固定, 忽略客户端传入 (防 SSRF);
+        # 不再回退服务器 key, key 必须由调用方 (浏览器用户) 自备
+        api_url = DEEPSEEK_CHAT_API_URL
+        model = str(data.get('model', 'deepseek-chat') or 'deepseek-chat').strip()
         conversation = data.get('conversation', [])
 
-        # 使用用户提供的 key，或服务器预配置的 key
-        if not api_key:
-            api_key = SERVER_AI_CONFIG.get("AI_API_KEY", "")
-        if not api_url or api_url == "https://api.deepseek.com/v1/chat/completions":
-            api_url = SERVER_AI_CONFIG.get("AI_API_URL", api_url)
         if not model or model == "deepseek-chat":
             model = SERVER_AI_CONFIG.get("AI_MODEL", model)
-
+        if len(user_msg.encode('utf-8', errors='ignore')) > MAX_CHAT_MSG_BYTES:
+            return jsonify({"reply": f"消息过长 (上限 {MAX_CHAT_MSG_BYTES // 1024} KB)。"}), 413
         if not user_msg or not api_key:
-            return jsonify({"reply": "未配置API Key。请点击 ⚙ 设置，或联系管理员在服务器配置。"})
+            return jsonify({"reply": "未配置API Key。请点击 ⚙ 填入你自己的 DeepSeek API Key (服务器不再提供 key)。"}), 401
 
         context = data.get('context', 'primers')
         db = get_db()

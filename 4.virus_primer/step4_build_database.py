@@ -19,6 +19,7 @@ Step 4: 构建引物数据库 + 搜索 API
 
 import argparse
 import os
+import re
 import sys
 import json
 import sqlite3
@@ -371,10 +372,33 @@ def _to_float(val, default=0.0):
 
 
 def _to_int(val, default=0):
-    try:
-        return int(val)
-    except (ValueError, TypeError):
+    """稳健转整数: 兼容 float (dG, 四舍五入) / 纯数字字符串 / 旧版残留的 primer3 repr
+    (如 '<primer3.bindings.ThermoResult object ... dg=-8.7 ...>')。
+    注意: 旧版用 int() 直转 repr 字符串 → 抛异常 → 二聚体列恒 0 (P0-4)。"""
+    if val is None or isinstance(val, bool):
+        return int(val) if isinstance(val, bool) else default
+    if isinstance(val, int):
+        return val
+    if isinstance(val, float):
+        if val != val:  # NaN
+            return default
+        return int(round(val))
+    s = str(val).strip()
+    if not s:
         return default
+    try:
+        return int(round(float(s)))
+    except (ValueError, TypeError):
+        pass
+    # 旧版 primer3 repr 兜底: 只认 'dg=' 明确指出的数值, 不用普通数字正则
+    # (否则会把对象地址 0x0000... 里的数字误当 dG)
+    m = re.search(r'dg\s*[=:]\s*([-+]?\d+(?:\.\d+)?)', s, re.I)
+    if m:
+        try:
+            return int(round(float(m.group(1))))
+        except (ValueError, TypeError):
+            pass
+    return default
 
 
 def optimize_database(db_path: Path):
