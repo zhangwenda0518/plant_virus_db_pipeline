@@ -1,0 +1,17 @@
+[Unit]
+Description=1KP Virome Dashboard (Dash)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/plant_virus_db/plant_virus_db_pipeline/13.onekp_virus
+Environment=PORT=8051
+ExecStart=/usr/bin/python3.8 /opt/plant_virus_db/plant_virus_db_pipeline/13.onekp_virus/onekp_app.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/var/log/onekp-dashboard.log
+StandardError=append:/var/log/onekp-dashboard.log
+
+[Install]
+WantedBy=multi-user.target

@@ -290,12 +290,16 @@ class VirusDBBuilder:
             prot_id_file = self.work_dir / f"{self.db_prefix}.prot.id"
             prot_id_nucl = self.work_dir / f"{self.db_prefix}.prot.nucl.id"  # 提取的核酸 Accession
             # 检测蛋白 ID 格式: pyrodigal 产出的 >NC_116488.1_1 # 77 # ...
+            # 【P1 修复】统一使用 _is_pyrodigal_format() (re.search(r'_\d+$') 判定),
+            # 旧写法 ('_' in id and '.' in id) 会把 YP_009508235.1 这类常规蛋白
+            # Accession 误判为基因预测格式, 转去核酸表查蛋白 ID → 空映射且无告警。
+            is_pyrodigal = self._is_pyrodigal_format()
+            self.prot_is_pyrodigal = is_pyrodigal
             use_nucl_map = False
             if not self.protid2taxid.exists():
                 tqdm.write("⏳ 正在生成蛋白 ProtID 映射...")
                 run_cmd(f"grep '>' {self.prot_fasta} | sed 's/>//;s/ .*//' > {prot_id_file}", self.logger)
-                first_id = open(prot_id_file).readline().strip()
-                if '#' in first_id or ('_' in first_id and '.' in first_id):
+                if is_pyrodigal:
                     tqdm.write("   🔍 检测到基因预测格式蛋白 ID, 提取核酸 Accession 并用 nucl_gb 映射...")
                     # 提取 NC_116488.1_1 → NC_116488.1 (去掉最后的 _数字)
                     awk_nucl = r"""sed 's/_[0-9]*$//' """
@@ -308,7 +312,6 @@ class VirusDBBuilder:
                     awk_join = r"""awk -F'\t' 'NR==FNR {tax[$1]=$2; next} {acc=$0; sub(/_[0-9]*$/, "", acc); if(acc in tax) print $0 "\t" tax[acc]}' """
                     run_cmd(f"{awk_join} {tmp_map} {prot_id_file} > {self.protid2taxid}", self.logger)
                     use_nucl_map = True
-                    self.prot_is_pyrodigal = True
                 else:
                     self.logger.info("检测到常规蛋白 ID 格式, 使用 prot.accession2taxid 映射")
                     acc2tax_map = self.prot_acc2tax
@@ -334,20 +337,82 @@ class VirusDBBuilder:
 
         if not self.combined_tax.exists():
             run_cmd(f"make_ktaxonomy.py --nodes {nodes} --names {names} --seqid2taxid {self.combined_map} -o {self.combined_tax}", self.logger)
-        
+
+        # ── 【P1 对账】映射表生成后校验覆盖率 (输入 FASTA ID 数 vs 映射命中数, <95% 告警) ──
+        if self.nuc_fasta:
+            self._audit_id_map_coverage(self.nuc_fasta, self.work_dir / f"{self.db_prefix}.nuc.id", self.seqid2taxid, "nuc")
+        if self.prot_fasta:
+            self._audit_id_map_coverage(self.prot_fasta, self.work_dir / f"{self.db_prefix}.prot.id", self.protid2taxid, "prot")
+
         self.logger.info("✅ 基因组规范化及映射表生成全部完成！")
 
     # ────────────────────────────────────────────────────────────
     # Step 3: 数据库构建调度机制 (配 tqdm 优雅显示)
     # ────────────────────────────────────────────────────────────
     def _is_pyrodigal_format(self) -> bool:
-        """检测蛋白 FASTA 是否来自 pyrodigal 基因预测 (ID 含 _基因编号 或 # 分隔符)"""
+        """检测蛋白 FASTA 是否来自 pyrodigal 基因预测 (ID 含 _基因编号 或 # 分隔符)
+
+        判定只看首个 header 的 ID 字段 (第一个空白分隔 token), 不看描述部分,
+        避免 ">YP_009508235.1 hypothetical # ..." 这类常规 ID + 描述被误判。
+        """
         if not self.prot_fasta or not self.prot_fasta.exists():
             return False
         with open(self.prot_fasta) as f:
             first = f.readline().strip()
-        # pyrodigal 格式: >NC_116488.1_1 (含 _数字后缀) 或原始 >NC_116488.1_1 # 77 # ...
-        return '#' in first or bool(re.search(r'_\d+$', first.split()[0].lstrip('>')))
+        if not first:
+            return False
+        first_token = first.split()[0].lstrip('>')
+        # pyrodigal 格式: >NC_116488.1_1 (含 _数字后缀) 或 >NC_116488.1_1 # 77 # ...
+        return '#' in first_token or bool(re.search(r'_\d+$', first_token))
+
+    def _audit_id_map_coverage(self, fasta: Path, id_file: Path, map_file: Path, mol_type: str):
+        """【P1 对账】输入 FASTA 的 ID 数 vs 映射表命中数。
+
+        覆盖率 <95% 时打 WARNING (含数字), 并把未命中 ID 清单落盘
+        <db_prefix>.<mol_type>.unmapped_ids.txt, 供人工排查 (上游 accession 版本不符、
+        描述未剥离、表选错等)。
+        """
+        if not map_file.exists():
+            return
+        total_ids, mapped_ids = set(), set()
+        if id_file.exists():
+            with open(id_file, encoding="utf-8", errors="replace") as fh:
+                for line in fh:
+                    tok = line.strip().split()
+                    if tok:
+                        total_ids.add(tok[0])
+        else:
+            # 回退: 直接从 FASTA 统计 header 首个 token (与映射查询口径一致)
+            with open(fasta, encoding="utf-8", errors="replace") as fh:
+                for line in fh:
+                    if line.startswith(">"):
+                        tok = line[1:].strip().split()
+                        if tok:
+                            total_ids.add(tok[0])
+        with open(map_file, encoding="utf-8", errors="replace") as fh:
+            for line in fh:
+                tok = line.rstrip("\n").split("\t")
+                if tok and tok[0].strip():
+                    mapped_ids.add(tok[0].strip())
+        if not total_ids:
+            return
+
+        hit = total_ids & mapped_ids
+        cov = len(hit) / len(total_ids) * 100.0
+        missing = sorted(total_ids - mapped_ids)
+        missing_file = self.work_dir / f"{self.db_prefix}.{mol_type.lower()}.unmapped_ids.txt"
+        if missing:
+            with open(missing_file, "w", encoding="utf-8") as fh:
+                fh.write("\n".join(missing) + "\n")
+
+        detail = f"{mol_type} ID→TaxID 映射覆盖率: {len(hit)}/{len(total_ids)} 条 ({cov:.2f}%)"
+        if cov < 95.0:
+            self.logger.warning(f"⚠️ {detail} 低于 95%! 未命中 {len(missing)} 个 ID, 清单已落盘: {missing_file}")
+            tqdm.write(f"   ⚠️ {detail} [低于 95%], 未命中 {len(missing)} 个 -> {missing_file.name}")
+        elif missing:
+            self.logger.info(f"✅ {detail}; 未命中 {len(missing)} 个 ID, 清单: {missing_file}")
+        else:
+            self.logger.info(f"✅ {detail}")
 
     def _build_with_stats(self, db_name: str, build_func) -> BuildStats:
         stat = BuildStats(db_name=db_name)
@@ -538,8 +603,24 @@ class VirusDBBuilder:
         db_dir.mkdir(parents=True, exist_ok=True)
         safe_symlink(self.tax_dir, db_dir / "taxonomy", self.logger)
         kaiju_fasta = self.work_dir / f"{self.db_prefix}.prot.kaiju.fasta"
+        kaiju_unmapped = self.work_dir / f"{self.db_prefix}.kaiju.unmapped_ids.txt"
         if not kaiju_fasta.exists():
-            run_cmd(f"awk 'NR==FNR {{if(NR>0) map[$1]=$2; next}} /^>/ {{id=substr($0,2); if(id in map) print \">\" id \"_\" map[id]; else print $0; next}} {{print}}' {self.protid2taxid} {self.prot_fasta} > {kaiju_fasta}", self.logger)
+            # 【P1 修复】header 可能带描述 (>ID description): 必须先截掉描述再查表,
+            # 否则整行 "ID description" 都不在映射表中, TaxID 注入会静默失效 (sub(/[ \t].*/, "", id))。
+            awk_kaiju = r"""awk 'NR==FNR {map[$1]=$2; next} /^>/ {id=substr($0,2); sub(/[ \t].*/, "", id); if(id in map) print ">" id "_" map[id]; else print $0; next} {print}' """
+            run_cmd(f"{awk_kaiju} {self.protid2taxid} {self.prot_fasta} > {kaiju_fasta}", self.logger)
+            # 对账: 收集查不到 TaxID 的蛋白 ID (与上面同口径: 先截描述再查表)
+            awk_miss = r"""awk 'NR==FNR {map[$1]=1; next} /^>/ {id=substr($0,2); sub(/[ \t].*/, "", id); if(!(id in map)) print id}' """
+            run_cmd(f"{awk_miss} {self.protid2taxid} {self.prot_fasta} > {kaiju_unmapped}", self.logger)
+            if kaiju_unmapped.exists():
+                with open(kaiju_unmapped, encoding="utf-8", errors="replace") as fh:
+                    miss_ids = [ln.strip() for ln in fh if ln.strip()]
+                if miss_ids:
+                    samples = ", ".join(miss_ids[:5])
+                    self.logger.warning(
+                        f"⚠️ kaiju: {len(miss_ids)} 个蛋白 ID 在 protid2taxid 中无 TaxID, 未注入 TaxID "
+                        f"(样例: {samples}; 完整清单: {kaiju_unmapped})")
+                    tqdm.write(f"   ⚠️ kaiju: {len(miss_ids)} 个蛋白 ID 无 TaxID 映射 (样例: {samples}) -> {kaiju_unmapped.name}")
         kaiju_prefix = self.work_dir / f"{self.db_prefix}.kaiju"
         run_cmd(f"kaiju-mkbwt -n {self.threads} -a protein -o {kaiju_prefix} {kaiju_fasta}", self.logger)
         run_cmd(f"kaiju-mkfmi {kaiju_prefix}", self.logger)
@@ -602,7 +683,11 @@ class VirusDBBuilder:
         # CAT 需要 accession.version\ttaxid 格式的头行
         cat_taxmap = self.work_dir / f"{self.db_prefix}.cat.taxmap"
         if not cat_taxmap.exists():
-            run_cmd(f"sed '1i\\\accession.version\\ttaxid' {self.protid2taxid} > {cat_taxmap}", self.logger)
+            # 【P0 修复】旧写法 sed '1i\\\accession.version\\ttaxid' 经 Python 转义求值后
+            # 变成 "sed '1i\<BEL>ccession.version<TAB>taxid'" (\a→BEL 且吃掉 'a'), 表头损坏,
+            # CAT_pack prepare 解析 acc2tax 首行 (line.index('accession.version')) 直接崩溃。
+            # 改用 printf: f-string 中 \\t/\\n 生成 shell 可见的 \t/\n 转义, printf 再展开为真实制表符/换行。
+            run_cmd(f"{{ printf 'accession.version\\ttaxid\\n'; cat {self.protid2taxid}; }} > {cat_taxmap}", self.logger)
         run_cmd(f"CAT_pack prepare --db_fasta {self.prot_fasta} --names {self.tax_dir}/names.dmp --nodes {self.tax_dir}/nodes.dmp --acc2tax {cat_taxmap} --db_dir {db_dir}", self.logger)
 
     def print_report(self):
