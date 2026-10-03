@@ -1,0 +1,17 @@
+#!/bin/sh
+# pre-commit 密钥扫描 (2026-10-03 体检后加装)
+# 用法：git config core.hooksPath .githooks  （仓库根执行一次即可）
+# 命中即拒绝提交；确需提交命中内容时用 git commit --no-verify（请三思）
+staged=$(git diff --cached --name-only --diff-filter=ACM)
+[ -z "$staged" ] && exit 0
+
+hits=$(git diff --cached --diff-filter=ACM -U0 | grep '^+' | python scripts/check_secrets.py 2>/dev/null)
+if [ -n "$hits" ]; then
+    echo ""
+    echo "✗ pre-commit 密钥扫描命中，提交被拒绝："
+    echo "$hits"
+    echo ""
+    echo "处理方式：把密钥改为环境变量读取（os.environ.get / \${VAR:-}），或 git commit --no-verify 强行提交（不建议）"
+    exit 1
+fi
+exit 0

@@ -62,3 +62,66 @@ get_plant_virus_data_pipeline/
 # 备份/归档目录 (勿入库)
 **/archive/
 **/backup/
+
+# RVPSD plant structure subset (one-off acquisition, 2026-09-28) — large data not in git
+oneoff_scripts/rvpsd_fetch/foldseek_db/
+oneoff_scripts/rvpsd_fetch/structures_plant/
+oneoff_scripts/rvpsd_fetch/artifact_download/
+oneoff_scripts/rvpsd_fetch/*.zip
+oneoff_scripts/rvpsd_fetch/*.sql
+oneoff_scripts/rvpsd_fetch/*.fasta
+oneoff_scripts/rvpsd_fetch/rvpsd_all.tsv
+oneoff_scripts/rvpsd_fetch/rvpsd_clean.tsv
+oneoff_scripts/rvpsd_fetch/plant_subset.tsv
+oneoff_scripts/rvpsd_fetch/plant_subset_probable.tsv
+oneoff_scripts/rvpsd_fetch/smoke_test_trace.png
+
+# 14.rvpsd_structures — CA-trace 结构数据（614MB 不入库，脚本与前端入库）
+14.rvpsd_structures/webapp/structures/
+14.rvpsd_structures/webapp/structures_fullatom/
+
+# 14.rvpsd_structures — VAD 补充批次（Sci Adv 2025, 2,033 单体 + 2,009 二聚体，大文件不入库）
+14.rvpsd_structures/webapp/structures_vad/
+14.rvpsd_structures/webapp/structures_vad_dimers/
+
+# oneoff_scripts/vad_fetch — VAD 采集工作区（源数据/缓存不入库，清单与脚本入库）
+oneoff_scripts/vad_fetch/Dataset_s1.xlsx
+oneoff_scripts/vad_fetch/vad_seqs.fasta
+oneoff_scripts/vad_fetch/*.parts/
+oneoff_scripts/vad_fetch/local_fulllength_seqs.json
+
+# 15.uniprot_plant_virus_structures — PDB 实验结构 + AFDB 官方模型（约 1.0GB 不入库；
+# 入库：README、UniProt 全量清单、pdb/afdb 链接表、SIFTS 联表、结构总索引、下载 manifest）
+15.uniprot_plant_virus_structures/structures_pdb/*.cif
+15.uniprot_plant_virus_structures/structures_alphafold/*.cif
+15.uniprot_plant_virus_structures/_work*
+15.uniprot_plant_virus_structures/pdb_chain_uniprot.tsv.gz
+
+# ── 安全边界 (2026-10-03 体检后补录)：工具状态目录可能缓存工作区快照（含密钥副本），严禁入库 ──
+.mimosa/
+.claude/
+.wisp/
+.workbuddy-ai/
+.tools/
+.tmp_*/
+.zcode/
+
+# 根目录大体积工作区（锚定根，避免误伤子模块同名目录；pixi.toml/lock 反而应入库）
+/uploads/
+/runs/
+/results/
+/data/
+/analysis/
+/dsRNAmax/
+/rdp_analysis/
+/paper_dl/
+/paper_dl_packed/
+/paper_dl_stage/
+/paper_dl_tmp/
+*.live_*.png
+
+# oneoff_scripts：默认忽略，但 15 号模块声明入库的脚本目录除外
+/oneoff_scripts/*
+!/oneoff_scripts/uniprot_pdb_fetch/
+!/oneoff_scripts/_bench_b1_20260919/
+

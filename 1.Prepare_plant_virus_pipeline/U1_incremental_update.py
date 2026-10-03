@@ -66,8 +66,9 @@ WATCHLIST_FILE  = os.path.join(DATA_DIR, "watchlist_new_taxids.tsv")
 
 NCBI_BASE       = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 NCBI_FTP_TAX    = "https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz"
-DEFAULT_EMAIL   = "plantvirusdb@example.com"
-DEFAULT_API_KEY = "80a47d7eae0bef204ccf4a2714c96bec8809"
+# 凭据一律走环境变量（历史明文 key 已泄露并于 2026-10-03 吊销，严禁再硬编码）
+DEFAULT_EMAIL   = os.environ.get("NCBI_EMAIL", "")
+DEFAULT_API_KEY = os.environ.get("NCBI_API_KEY", "")
 MAX_RETRIES     = 5
 REQUEST_DELAY   = 0.12
 BATCH_SIZE      = 500
@@ -1293,15 +1294,14 @@ def database_merge(plant_records: list[dict], api_key: str,
             result["known_inherited"] += 1
         elif tid in lineage_map:
             family = _extract_family_from_lineage(lineage_map[tid])
-            species_ictv = "PENDING_VMR"
-            if not segment:
-                segment = "PENDING_CLASSIFY"
+            # 2026-10-03: 不再写 PENDING_VMR/PENDING_CLASSIFY 占位符(会原样暴露给
+            # 网站用户), 回退 NCBI 名; 段名未知留空, 由 lib/build_segment_canonical.py 规范层补
+            if not species_ictv:
+                species_ictv = rec.get("organism", "") or ""
             result["new_taxonkit"] += 1
         elif tid and tid not in known_taxids:
-            # taxonkit 也没拿到 → 全标记待补
-            species_ictv = "PENDING_VMR"
-            if not segment:
-                segment = "PENDING_CLASSIFY"
+            # taxonkit 也没拿到 → 同样回退 NCBI 名, 段留空
+            species_ictv = rec.get("organism", "") or ""
 
         rows.append({
             "Accession": acc,
@@ -1324,7 +1324,12 @@ def database_merge(plant_records: list[dict], api_key: str,
             "Collection_Date": rec.get("collection_date", ""),
             "Release_Date": release_date,
             "NCBI_Status": "",
+            "Segment_std": "",   # 2026-10-03: 保持 21 列 schema, 由规范层统一计算
         })
+
+    # 2026-10-03: None → "" (老 polars 会把 null 渲染成字面量 "None" 污染全库;
+    # rec.get(key, "") 的默认值只在键缺失时生效, 键存在但值为 None 时仍返回 None)
+    rows = [{k: ("" if v is None else str(v)) for k, v in r.items()} for r in rows]
 
     df = pl.DataFrame(rows)
 
@@ -1344,12 +1349,16 @@ def database_merge(plant_records: list[dict], api_key: str,
         print(f"      {col:20s}: {cnt}/{len(rows)} ({pct:.0f}%)")
 
     # ── 去重追加 FASTA ─────────────────────────────────
+    # 2026-10-03: 版本号归一去重(历史 bug: esearch 返回无版本号 accession, 与库内
+    # 带版本号的同条记录互不认识 → 同一序列被重复追加 208 次)
     existing_accs = set()
     if os.path.exists(full_info):
         edf = pl.read_csv(full_info, separator='\t', infer_schema_length=0)
-        existing_accs = set(edf["Accession"].to_list())
+        existing_accs = {a.split(".")[0] for a in edf["Accession"].to_list()}
 
-    new_accs = set(df["Accession"].to_list()) - existing_accs
+    acc_list = df["Accession"].to_list()
+    acc_norm = [a.split(".")[0] for a in acc_list]
+    new_accs = {n for n in acc_norm if n not in existing_accs}
     result["new_tsv"] = len(new_accs)
 
     if new_accs:
@@ -1357,19 +1366,17 @@ def database_merge(plant_records: list[dict], api_key: str,
         appended = 0
         with open(full_fasta, 'a', encoding='utf-8') as dst:
             for header, seq in fasta_records:
-                acc = header.split()[0].split('.')[0]
-                full_acc = header.split()[0]
-                if acc in new_accs or full_acc in new_accs:
+                if header.split()[0].split(".")[0] in new_accs:
                     dst.write(f">{header}\n")
                     for j in range(0, len(seq), 70):
                         dst.write(seq[j:j+70] + '\n')
                     appended += 1
         result["new_fasta"] = appended
 
-        # 追加 TSV
-        new_df = df.filter(pl.col("Accession").is_in(new_accs))
+        # 追加 TSV (按归一化 accession 选出真正新增的行)
+        new_df = df.filter(pl.Series("keep", [n in new_accs for n in acc_norm]))
         existing_df = pl.read_csv(full_info, separator='\t', infer_schema_length=0)
-        combined = pl.concat([existing_df, new_df], how="diagonal")
+        combined = pl.concat([existing_df, new_df.drop("keep")], how="diagonal")
         combined.write_csv(full_info, separator='\t')
         print(f"   ✅ FASTA +{appended} 条, TSV +{len(new_accs)} 条")
     else:
@@ -1394,6 +1401,25 @@ def database_merge(plant_records: list[dict], api_key: str,
     if deleted:
         result["deleted_marked"] = len(deleted)
         print(f"   🗑 检测到 {len(deleted)} 个 taxid 被删除 (未自动修改数据库)")
+
+    # ── fasta/info 同步护栏 ────────────────────────────
+    # 2026-10-03: 曾发生 info 删行而 fasta 留序列的事故(1,747 条噬菌体孤儿序列)。
+    # 每次合并后强制对账, 不同步时写 sync_check.txt 供人工处理。
+    try:
+        merged_accs = {a.split(".")[0] for a in
+                       pl.read_csv(full_info, separator='\t', infer_schema_length=0)["Accession"].to_list()}
+        fa_norms = {h.split()[0].split(".")[0] for h, _ in _read_fasta_records(full_fasta)}
+        orphans = fa_norms - merged_accs
+        seqless = merged_accs - fa_norms
+        if orphans or seqless:
+            print(f"   ⚠️ fasta/info 不同步: 孤儿序列 {len(orphans)} 条, 无序列行 {len(seqless)} 条")
+            with open(os.path.join(output_dir, "sync_check.txt"), "w") as f:
+                f.write("fasta_only(no info)\n" + "\n".join(sorted(orphans)) +
+                        "\n\ninfo_only(no fasta)\n" + "\n".join(sorted(seqless)) + "\n")
+        else:
+            print("   ✅ fasta/info 完全同步")
+    except Exception as e:
+        print(f"   ⚠️ 同步检查失败: {type(e).__name__}: {e}")
 
     # ── 更新 watchlist ────────────────────────────────
     _update_watchlist(new_accs, taxsyn_result)

@@ -76,7 +76,14 @@ def get_version_string() -> str:
     v = load_version()
     if not v:
         return "Unknown"
-    return f"{v.get('VERSION', '?')} | {v.get('SOURCE_ICTV', '?')} | {v.get('RECORDS_TOTAL', '?')} records"
+    total = v.get('RECORDS_TOTAL', '?')
+    # 2026-10-03 体检修复：增量引擎空批次曾把 -1 写进版本文件，负值不得对外渲染
+    try:
+        if int(total) < 0:
+            total = "n/a (RECORDS_TOTAL 未统计)"
+    except (TypeError, ValueError):
+        pass
+    return f"{v.get('VERSION', '?')} | {v.get('SOURCE_ICTV', '?')} | {total} records"
 
 
 # ── 辅助: 验证关键文件存在 ──────────────────────────────
