@@ -20,7 +20,9 @@ Virus Explorer 的「媒介传播」标签页直接读取：
     **模糊匹配不自动合并**，只作为人工建议写入 review.tsv，避免把 GPV/RPV 等
     不同病毒错并。
   * VH 三元组按 (vector, host, transmission_mode) 去重。
-  * 冲突仅标 family_mismatch（VH.family ≠ WUR.family），且只在高置信匹配上比较。
+  * 冲突仅标 family_mismatch（VH.family ≠ WUR.family），且只在高置信匹配上比较；
+    冲突明细写入 conflict_details["family_mismatch"]，保留首次 family，不静默覆盖。
+  * 同名多条 WUR 记录合并: refs 去重、ref_count 仅在有新增 refs 时叠加。
 """
 
 import csv
@@ -286,26 +288,80 @@ def match_wur(wur_rows, viruses, vh_index, canon):
     return review
 
 
+def _ref_key(r: dict):
+    """refs 去重键: doi 优先, 退化用 title (都归一化)。"""
+    return (norm(r.get("doi", "")), norm(r.get("title", "")))
+
+
+def _merge_refs(old_refs: list, new_refs: list) -> list:
+    """refs 合并去重 (旧串内部重复也一并压缩), 保持出现顺序。"""
+    merged, seen = [], set()
+    for r in list(old_refs or []) + list(new_refs or []):
+        key = _ref_key(r)
+        if key in seen:
+            continue
+        seen.add(key)
+        merged.append(r)
+    return merged
+
+
 def _attach_wur(v: dict, w: dict, confidence: str):
-    """挂 WUR 补充信息，计算 family_mismatch 冲突。"""
+    """挂 WUR 补充信息。同名多条 WUR 记录时【合并】而非覆盖:
+      * refs 去重合并; ref_count 仅在确有新增 refs 时叠加 (整行重复不重复计数);
+      * vector_label / transmission_notes 保留首次非空值;
+      * family 保留首次值 (VH 优先; WUR-only 取首条 WUR), 冲突写入
+        conflict_details["family_mismatch"] 明细列表, 不静默覆盖。
+    """
     v["matched_names"].add(w["name"])
-    v["wur"] = {
-        "vector_label": w["vector_label"],
-        "transmission_notes": w["transmission_notes"],
-        "ref_count": w["ref_count"],
-        "refs": w["refs"],
-        "match_confidence": confidence,
-    }
-    # WUR 独有的两个正交维度: 传播途径 + 粗媒介类别
-    v["transmission_routes"] = w.get("routes", [])
-    v["vector_categories"] = w.get("vector_categories", [])
+    existing = v.get("wur")
+    if existing is None:
+        v["wur"] = {
+            "vector_label": w["vector_label"],
+            "transmission_notes": w["transmission_notes"],
+            "ref_count": w["ref_count"],
+            "refs": list(w.get("refs") or []),
+            "match_confidence": confidence,
+            "merged_wur_names": [w["name"]],
+        }
+    else:
+        # 真正新增的 refs 键数 (以旧键集合为准; 压缩旧内部重复不算新增)
+        old_keys = {_ref_key(r) for r in (existing.get("refs") or [])}
+        existing["refs"] = _merge_refs(existing.get("refs"), w.get("refs"))
+        added = len({_ref_key(r) for r in existing["refs"]} - old_keys)
+        existing["ref_count"] = (existing.get("ref_count", 0) + w["ref_count"]) if added > 0 \
+            else max(existing.get("ref_count", 0), w["ref_count"])
+        if not existing.get("vector_label") and w["vector_label"]:
+            existing["vector_label"] = w["vector_label"]
+        if not existing.get("transmission_notes") and w["transmission_notes"]:
+            existing["transmission_notes"] = w["transmission_notes"]
+        names = existing.setdefault("merged_wur_names", [w["name"]])
+        if w["name"] not in names:
+            names.append(w["name"])
+        if existing.get("match_confidence") != confidence:
+            existing["match_confidence"] = "mixed"  # 前端非 low 一律按 high 徽章渲染
+    # WUR 独有的两个正交维度: 传播途径 + 粗媒介类别 (同名多条时并集)
+    v["transmission_routes"] = sorted(set(v.get("transmission_routes", [])) | set(w.get("routes", [])))
+    v["vector_categories"] = sorted(set(v.get("vector_categories", [])) | set(w.get("vector_categories", [])))
     if v.get("family") and w["family"] and norm(v["family"]) != norm(w["family"]):
         flags = set(v.get("conflict_flags", []))
         flags.add("family_mismatch")
         v["conflict_flags"] = sorted(flags)
+        details = v.setdefault("conflict_details", {}).setdefault("family_mismatch", [])
+        detail = {"wur_name": w["name"], "kept_family": v["family"], "wur_family": w["family"]}
+        if detail not in details:
+            details.append(detail)
 
 
 # ── 组装输出 ────────────────────────────────────────────────────
+def _clean_values(values) -> list:
+    """去重排序, 并剔除空值与 'NA' 占位 (与 transmission_modes 既有过滤口径一致;
+    审计修复: 原 hosts 未过滤 'NA', 86 个病毒的主机列表把 'NA' 当真实宿主)。"""
+    out = {str(v).strip() for v in values if v is not None}
+    out.discard("")
+    out.discard("NA")
+    return sorted(out)
+
+
 def finalize(v: dict) -> dict:
     rels = v["relationships"]
     has_vh = not v.get("_wur_only", False)
@@ -328,15 +384,16 @@ def finalize(v: dict) -> dict:
         "lineage": v["lineage"],
         "sources": sources,
         "relationships": rels,
-        "vectors": sorted({r["vector"] for r in rels if r["vector"]}),
-        "hosts": sorted({r["host"] for r in rels if r["host"]}),
-        "vector_orders": sorted({r["vector_order"] for r in rels if r["vector_order"]}),
-        "transmission_modes": sorted({r["transmission_mode"] for r in rels if r["transmission_mode"] and r["transmission_mode"] != "NA"}),
+        "vectors": _clean_values(r["vector"] for r in rels),
+        "hosts": _clean_values(r["host"] for r in rels),
+        "vector_orders": _clean_values(r["vector_order"] for r in rels),
+        "transmission_modes": _clean_values(r["transmission_mode"] for r in rels),
         "transmission_categories": sorted({r["transmission_category"] for r in rels if r["transmission_category"] != "Unknown"}),
         "transmission_routes": v.get("transmission_routes", []),
         "vector_categories": v.get("vector_categories", []),
         "wur": v.get("wur"),
         "conflict_flags": v.get("conflict_flags", []),
+        "conflict_details": v.get("conflict_details", {}),
     }
 
 

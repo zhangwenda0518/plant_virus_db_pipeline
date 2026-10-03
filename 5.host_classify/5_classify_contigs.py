@@ -19,32 +19,58 @@ Usage:
   python C9_classify_contigs.py -i ACVirus_results/step4_classification_eval.acvirus/final_result.tsv -f contigs.fasta -o classified/
 """
 import polars as pl
-import os, argparse, csv
+import os, argparse, csv, math
 from collections import defaultdict
 
-CORE_CATS = ["Plant", "Insecta", "Arachnida", "Fungi",
-             "Bacteria", "Animal_other", "Aves", "Oomycetes",
-             "Protist", "Archaea", "Human"]
+# 注: 原 CORE_CATS 常量在本文件中从未被任何函数引用 (死代码), 2026-10-03 删除。
+# 分类只依赖 --prob_dir 下的四级概率表 (由 3_host_probability.py 生成)。
+
+
+def _to_float(value, default=0.0):
+    """概率表数值列容错: 空串/NA/None/NaN 一律回退 default。
+    审计修复: 原 float(row.get('Integrated_Confidence', 0)) 对空值直接抛 ValueError 崩溃。"""
+    try:
+        f = float(str(value).strip() or default)
+    except (TypeError, ValueError):
+        return default
+    if math.isnan(f) or math.isinf(f):
+        return default
+    return f
+
+
+def _to_int(value, default=0):
+    return int(_to_float(value, default))
 
 
 def load_prob_table(path, key_col="Family"):
-    """Load a probability lookup table, return {taxon: {predicted_host, confidence, ...}}."""
+    """Load a probability lookup table, return {taxon: {predicted_host, confidence, ...}}.
+
+    数值列 (Integrated_Confidence/Total_Records/P_Max) 空值回退 0 并计数告警, 不中断。
+    """
     if not os.path.exists(path):
         return {}
     lookup = {}
+    n_bad = 0
     with open(path, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter='\t')
         for row in reader:
             taxon = row.get(key_col, '').strip()
             if not taxon:
                 continue
+            ic_raw = (row.get('Integrated_Confidence') or '').strip()
+            tr_raw = (row.get('Total_Records') or '').strip()
+            pm_raw = (row.get('P_Max') or '').strip()
+            if any(v in ('', 'NA', 'NaN', 'nan', 'null') for v in (ic_raw, tr_raw, pm_raw)):
+                n_bad += 1
             lookup[taxon] = {
                 'Predicted_Host': row.get('Predicted_Host', 'Unknown'),
                 'Confidence_Level': row.get('Confidence_Level', 'Unknown'),
-                'Integrated_Confidence': float(row.get('Integrated_Confidence', 0)),
-                'Total_Records': int(row.get('Total_Records', 0)),
-                'P_Max': float(row.get('P_Max', 0)),
+                'Integrated_Confidence': _to_float(ic_raw, 0.0),
+                'Total_Records': _to_int(tr_raw, 0),
+                'P_Max': _to_float(pm_raw, 0.0),
             }
+    if n_bad:
+        print(f"  [warn] {path}: {n_bad} 行含空/NA 数值列, 已回退为 0 (未中断)")
     return lookup
 
 

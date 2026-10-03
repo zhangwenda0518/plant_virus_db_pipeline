@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Virus-Vector-Host</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<html lang="en"><head><meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon-aphid.svg"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Virus-Vector-Host</title>
+<link href="/lib/bootstrap.min.css" rel="stylesheet">
+<script src="/lib/plotly.min.js"></script>
 <style>
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;margin:0}
-nav{background:#1a5276;display:flex;align-items:center;padding:0 24px;height:52px}
-nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 18px;font-size:14px}
-nav a:hover{background:rgba(255,255,255,.15);color:#fff}
-nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:8px;padding:0}
+
+
+
+
 .hero{background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;padding:24px;margin-bottom:20px}
 .hero h1{margin:0;font-size:20px}.hero p{margin:4px 0 0;opacity:.85;font-size:13px}
 .main{max-width:1400px;margin:0 auto;padding:16px}
@@ -55,64 +56,144 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 .chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:12px}
 .chart-card{background:#fff;border-radius:8px;padding:6px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
 .chart-full{grid-column:1/-1}
+
+
+nav{background:#1a5276;padding:0}
+nav .top-row{display:flex;align-items:center;padding:0 16px;height:40px}
+nav .top-row a{color:rgba(255,255,255,0.78);font-size:13px;text-decoration:none;padding:0 8px;white-space:nowrap}
+nav .top-row a:hover{color:#fff}
+nav .top-row a.active{color:#fff;font-weight:600}
+nav .top-row .brand{color:#fff;font-weight:700;font-size:15px;padding-right:10px}
+nav .top-row .sep{color:rgba(255,255,255,0.18);padding:0 2px;user-select:none}
+nav .sub-row{display:flex;align-items:center;padding:0 16px;height:32px;background:rgba(0,0,0,0.15)}
+nav .sub-row a{color:rgba(255,255,255,0.7);font-size:12px;text-decoration:none;padding:0 14px;white-space:nowrap}
+nav .sub-row a:hover,nav .sub-row a.active{color:#fff;font-weight:600}
+/* ── 横向滚动关进各自的容器里 ───────────────────────────
+ * 顶栏那一排 16 个 nowrap 链接的自然宽度是 1132px，而 overflow 原来是
+ * visible：视口窄于它时，整份文档被撑到 1132px 宽，整页（hero、统计卡、
+ * 表格）一起跟着左右晃，一碰就划出半边屏幕。7 列 / 9 列的表格同样比窄屏宽。
+ * 现在让顶栏自己横向滚、表格外套一层 overflow-x:auto 的裹层 —— 滚动只在
+ * 各自的容器里发生，文档宽度始终等于视口。内容放得下时这两条都不产生滚动
+ * 条，桌面观感一个字节不动；滚动条的显隐见下面的 @media。 */
+nav .top-row,nav .sub-row{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+.table-wrap{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+  background:#fff;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+/* ≤720px：触屏上滚动条是噪声，手势才是正道，藏掉；同时收紧留白、
+   表格保持 7 列可读宽度（680px），放不下的列在裹层里横滚 */
+@media (max-width:720px){
+  nav .top-row,nav .sub-row,.table-wrap{scrollbar-width:none}
+  nav .top-row::-webkit-scrollbar,nav .sub-row::-webkit-scrollbar,
+  .table-wrap::-webkit-scrollbar{display:none}
+  .table-wrap table{min-width:680px;width:max-content}
+  /* 滚动条藏了, 就得有别的线索告诉用户"右边还有": 裹层右缘压一条渐隐。
+     mask 挂在 overflow 容器自身上, 坐标跟着容器边框走而不跟着内容滚动,
+     所以手指划动时这条渐隐钉在原位, 不会跟着表格一起跑。
+     右侧留出来是为了最后一行滚到底时右边缘不被削掉一截。 */
+  .table-wrap{-webkit-mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 22px),rgba(0,0,0,.25) calc(100% - 8px),transparent 100%);
+              mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 22px),rgba(0,0,0,.25) calc(100% - 8px),transparent 100%)}
+  .hero{padding:16px}
+  .main{padding:10px}
+}
 </style></head><body>
-<nav><a class="brand" href="/">Plant Virus DB</a><a href="/reference/">参考库</a><a href="/explorer/">浏览器</a><a href="/virus/">病毒详情</a><a href="/primers/">引物</a><a href="/vector/" style="color:#fff;font-weight:600">媒介</a><a href="/te/">TE·EVE</a><a href="/metabuli/">Metabuli</a><a href="/literature/">文献</a><a href="/knowledge/">知识</a></nav>
+<nav>
+  <div class="top-row">
+    <a class="brand" href="/">Plant Virus DB</a>
+    <span class="sep">|</span>
+    <a href="/reference/">Reference</a>
+  <a href="/virus/">Virus Profile</a>
+    <a href="/photos/">Photos</a>
+    <a href="/vector/" class="active">Vector</a>
+    <a href="/te/">TE &amp; EVE</a>
+    <a href="/genes/">Genes</a>
+    <a href="/primers/">Primers</a>
+    <a href="/onekp/">OneKP</a>
+    <span class="sep">|</span>
+    <a href="/explorer/">Explorer</a>
+    <a href="/metabuli/">Metabuli</a>
+    <a href="/pamirdb/">PV-miRNA</a>
+    <span class="sep">|</span>
+    <a href="/literature/">Literature</a>
+    <a href="/knowledge/">Knowledge</a>
+    <a href="/resources.html">Resources</a>
+    <a href="/help/">Help</a>
+  </div>
+</nav>
 <div class="hero"><h1>Virus-Vector-Host Database</h1><p>{{total}} records: {{families}} virus families, {{viruses}} viruses, {{vectors}} vectors, {{hosts}} host plants | WUR: {{wur_count}} references</p></div>
 <div class="main">
+{% if data_missing %}
+<div style="background:#fdecea;color:#b71c1c;border:1px solid #f5c6cb;border-radius:6px;padding:10px 14px;margin-bottom:12px;font-size:13px;font-weight:600">
+&#9888; 合并数据文件缺失（virus_vector_merged.json 未生成）— Integrated Cards 视图为空。请先在 8.plant-insect/ 运行：python build_vector_db.py
+</div>
+{% endif %}
 
 <div style="margin-bottom:12px">
 <button class="tab-btn active" id="tb-vh" onclick="showTab('vh')">Vector-Host ({{total}})</button>
 <button class="tab-btn" id="tb-wur" onclick="showTab('wur')">WUR Database ({{wur_count}})</button>
 <button class="tab-btn" id="tb-int" onclick="showTab('int')">Integrated Cards</button>
+<button class="tab-btn" id="tb-lit" onclick="showTab('lit')">Literature ({{lit_edges}})</button>
 </div>
 
 <div id="tab-int" style="display:none">
-<div class="chart-panel"><button class="chart-toggle" onclick="toggleCharts('int')">&#128202; 图表概览（随筛选联动） ▾</button>
-<div id="charts-int" class="chart-grid">
+<div class="chart-panel"><button class="chart-toggle" onclick="toggleCharts('int')" data-chart="int">&#128202; Charts Overview (linked to filters) ▸</button>
+<div id="charts-int" class="chart-grid" style="display:none">
 <div class="chart-card"><div id="ch-int-source" style="width:100%;height:320px"></div></div>
 <div class="chart-card"><div id="ch-int-vcat" style="width:100%;height:320px"></div></div>
 <div class="chart-card"><div id="ch-int-routes" style="width:100%;height:320px"></div></div>
 <div class="chart-card chart-full"><div id="ch-int-heat" style="width:100%;height:360px"></div></div>
 </div></div>
 <div style="background:#fff;border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:12px;color:#555;box-shadow:0 1px 3px rgba(0,0,0,.04)">
-预合并数据库 <b>{{m_total}}</b> 个病毒 &middot; 两源都有 <b style="color:#1565c0">{{m_both}}</b> &middot; 仅 VH <b style="color:#00695c">{{m_vh_only}}</b> &middot; 仅 WUR <b style="color:#6a1b9a">{{m_wur_only}}</b> &middot; family 冲突 <b style="color:#c62828">{{m_conflicts}}</b>
+Merged Database <b>{{m_total}}</b>  viruses &middot;  in both sources <b style="color:#1565c0">{{m_both}}</b> &middot; VH Only <b style="color:#00695c">{{m_vh_only}}</b> &middot; WUR Only <b style="color:#6a1b9a">{{m_wur_only}}</b> &middot; family conflicts <b style="color:#c62828">{{m_conflicts}}</b>
 </div>
 <div class="toolbar"><input id="iq" placeholder="Search virus, vector, host..." oninput="ipage=1;renderInt()"><select id="isrc" onchange="ipage=1;renderInt()"><option value="">All sources</option><option value="both">Both (VH+WUR)</option><option value="vh">VH only</option><option value="wur">WUR only</option><option value="conflict">Has conflict</option></select><select id="ips" onchange="renderInt()"><option value="20">20/page</option><option value="50">50/page</option><option value="100">100/page</option></select></div>
-<div class="toolbar" style="margin-top:-8px"><select id="iroute" onchange="ipage=1;renderInt()"><option value="">全部传播途径 (WUR)</option></select><select id="ivcat" onchange="ipage=1;renderInt()"><option value="">全部媒介类别 (WUR)</option></select><select id="imech" onchange="ipage=1;renderInt()"><option value="">全部昆虫机制 (VIP)</option></select></div>
+<div class="toolbar" style="margin-top:-8px"><select id="iroute" onchange="ipage=1;renderInt()"><option value="">All Transmission Routes (WUR)</option></select><select id="ivcat" onchange="ipage=1;renderInt()"><option value="">All Vector Categories (WUR)</option></select><select id="imech" onchange="ipage=1;renderInt()"><option value="">All Insect Mechanisms (VIP)</option></select></div>
 <div id="int-cards"></div>
 <div class="pagination" id="int-pager"></div>
 </div>
 
 <div id="tab-vh">
-<div class="chart-panel"><button class="chart-toggle" onclick="toggleCharts('vh')">&#128202; 图表概览 ▾</button>
-<div id="charts-vh" class="chart-grid">
+<div class="chart-panel"><button class="chart-toggle" onclick="toggleCharts('vh')" data-chart="vh">&#128202; Charts ▸</button>
+<div id="charts-vh" class="chart-grid" style="display:none">
 <div class="chart-card chart-full"><div id="ch-vh-sankey" style="width:100%;height:720px"></div></div>
 <div class="chart-card"><div id="ch-vh-topvec" style="width:100%;height:360px"></div></div>
 <div class="chart-card"><div id="ch-vh-mech" style="width:100%;height:360px"></div></div>
 <div class="chart-card"><div id="ch-vh-assoc" style="width:100%;height:360px"></div></div>
 </div></div>
 <div class="toolbar"><input id="q" placeholder="Search virus, vector, or host..." oninput="renderVH()"><select id="vf" onchange="renderVH()"><option value="">All Virus Families</option></select><select id="vo" onchange="renderVH()"><option value="">All Vector Orders</option></select><select id="ps" onchange="renderVH()"><option value="25">25/page</option><option value="50">50/page</option><option value="100">100/page</option></select></div>
-<table><thead><tr><th>Family</th><th>Genus</th><th>Virus Name</th><th>Vector</th><th>Host</th><th>Transmission</th><th>Detail</th></tr></thead><tbody id="vh-tbody"></tbody></table>
+<div class="table-wrap"><table><thead><tr><th>Family</th><th>Genus</th><th>Virus Name</th><th>Vector</th><th>Host</th><th>Transmission</th><th>Detail</th></tr></thead><tbody id="vh-tbody"></tbody></table></div>
 <div class="pagination" id="vh-pager"></div></div>
 
 <div id="tab-wur" style="display:none">
-<div class="chart-panel"><button class="chart-toggle" onclick="toggleCharts('wur')">&#128202; 图表概览 ▾</button>
-<div id="charts-wur" class="chart-grid">
+<div class="chart-panel"><button class="chart-toggle" onclick="toggleCharts('wur')" data-chart="wur">&#128202; Charts ▸</button>
+<div id="charts-wur" class="chart-grid" style="display:none">
 <div class="chart-card"><div id="ch-wur-org" style="width:100%;height:380px"></div></div>
 <div class="chart-card"><div id="ch-wur-modes" style="width:100%;height:380px"></div></div>
 <div class="chart-card"><div id="ch-wur-means" style="width:100%;height:380px"></div></div>
 </div></div>
 <div class="toolbar"><input id="wq" placeholder="Search virus name, family, genus..." oninput="renderWUR()"><select id="wps" onchange="renderWUR()"><option value="50">50/page</option><option value="100">100/page</option><option value="200">200/page</option></select></div>
-<table><thead><tr><th>#</th><th>Virus Name</th><th>Family</th><th>Genus</th><th>Vector organisms</th><th>Vector</th><th>Modes of transmission</th><th>Means</th><th>来源</th></tr></thead><tbody id="wur-tbody"></tbody></table>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Virus Name</th><th>Family</th><th>Genus</th><th>Vector organisms</th><th>Vector</th><th>Modes of transmission</th><th>Means</th><th>Source</th></tr></thead><tbody id="wur-tbody"></tbody></table></div>
 <div class="pagination" id="wur-pager"></div></div>
+
+<div id="tab-lit" style="display:none">
+<div style="background:#fff;border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:12px;color:#555;box-shadow:0 1px 3px rgba(0,0,0,.04)">
+Literature-mined edges <b>{{lit_edges}}</b> &middot; viruses <b>{{lit_viruses}}</b> &middot; from <b>{{lit_papers}}</b> papers &middot; extracted from abstracts (AI triple extraction, every edge carries its evidence quote and DOI)
+</div>
+<div class="toolbar"><input id="lq" placeholder="Search virus, vector, host, evidence..." oninput="lpage=1;renderLit()"><select id="lrel" onchange="lpage=1;renderLit()"><option value="">All relations</option><option value="transmitted_by">transmitted_by (vector)</option><option value="infects_host">infects_host (host plant)</option></select><select id="lps" onchange="renderLit()"><option value="25">25/page</option><option value="50">50/page</option><option value="100">100/page</option></select></div>
+<div class="table-wrap"><table><thead><tr><th>Virus</th><th>Relation</th><th>Target</th><th>Papers</th><th>Evidence (abstract quote)</th><th>Year</th><th>Source</th></tr></thead><tbody id="lit-tbody"></tbody></table></div>
+<div class="pagination" id="lit-pager"></div></div>
 
 </div>
 <script>
-var VH={{json_vh|safe}},WUR={{json_wur|safe}},MERGED={{json_merged|safe}},page=1,wpage=1,ipage=1;
+var VH={{json_vh|safe}},WUR={{json_wur|safe}},MERGED={{json_merged|safe}},LIT={{json_lit|safe}},NTMAP={{json_nmap|safe}},page=1,wpage=1,ipage=1,lpage=1;
+function profName(n){return NTMAP[n]||null}
+function profLinkHtml(name){
+  var bin=profName(name);var disp=esc(name);
+  if(bin)return '<strong><a href="/explorer/?profile='+encodeURIComponent(bin)+'" target="_blank" style="color:#1a5276" title="ICTV: '+esc(bin)+'">'+disp+'</a></strong>';
+  return '<strong>'+disp+'</strong>';
+}
 
 function esc(t){return String(t||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 function pager(cur,pages,fn){
- if(pages<=1)return pages===1?'<span class="pinfo">共 1 页</span>':'';
+ if(pages<=1)return pages===1?'<span class="pinfo">共 1  pages</span>':'';
  var b=[];
  function mk(p,lab,act,dis){return '<button class="'+(act?'active':'')+'"'+(dis?' disabled':'')+' onclick="'+fn+'('+p+')">'+lab+'</button>'}
  b.push(mk(1,'«',false,cur<=1));
@@ -129,10 +210,13 @@ function showTab(t){
  document.getElementById('tab-vh').style.display=t==='vh'?'block':'none';
  document.getElementById('tab-wur').style.display=t==='wur'?'block':'none';
  document.getElementById('tab-int').style.display=t==='int'?'block':'none';
+ document.getElementById('tab-lit').style.display=t==='lit'?'block':'none';
  document.getElementById('tb-vh').className='tab-btn'+(t==='vh'?' active':'');
  document.getElementById('tb-wur').className='tab-btn'+(t==='wur'?' active':'');
  document.getElementById('tb-int').className='tab-btn'+(t==='int'?' active':'');
+ document.getElementById('tb-lit').className='tab-btn'+(t==='lit'?' active':'');
  if(t==='int')renderInt();
+ if(t==='lit'&&!window._litDrawn){renderLit();window._litDrawn=true}
  setTimeout(function(){
   if(t==='vh'){if(!chartsDrawn.vh){renderVHCharts();chartsDrawn.vh=true}else resizeTabCharts('vh')}
   else if(t==='wur'){if(!chartsDrawn.wur){renderWURCharts();chartsDrawn.wur=true}else resizeTabCharts('wur')}
@@ -148,7 +232,7 @@ function toggleDetail(i){
 // ── 图表 (Plotly) ──────────────────────────────────────────
 var chartsDrawn={vh:false,wur:false};
 var PCFG={responsive:true,displayModeBar:false};
-function toggleCharts(id){var g=document.getElementById('charts-'+id);var show=g.style.display==='none';g.style.display=show?'grid':'none';if(show)setTimeout(function(){resizeTabCharts(id)},30);}
+function toggleCharts(id){var g=document.getElementById('charts-'+id);var show=g.style.display==='none';g.style.display=show?'grid':'none';var b=document.querySelector('.chart-toggle[data-chart=\"'+id+'\"]');if(b)b.innerHTML=b.innerHTML.replace(show?'▸':'▾',show?'▾':'▸');if(show)setTimeout(function(){resizeTabCharts(id)},30);}
 function resizeTabCharts(t){
  var ids={vh:['ch-vh-sankey','ch-vh-topvec','ch-vh-mech','ch-vh-assoc'],wur:['ch-wur-org','ch-wur-modes','ch-wur-means'],int:['ch-int-source','ch-int-vcat','ch-int-routes','ch-int-heat']};
  (ids[t]||[]).forEach(function(id){var el=document.getElementById(id);if(el&&el.data)Plotly.Plots.resize(el)});
@@ -174,14 +258,14 @@ var MECH_MAP={
 function mechLabel(m){m=(m||'').trim();return MECH_MAP[m]||(m&&m!=='NA'?m:null)}
 function vhSankey(){
  var cols=[
-  {f:function(r){return r['Virus Family']},cap:12,other:'其他病毒科',color:'#e03131'},
-  {f:function(r){return r['Virus Genus']},cap:15,other:'其他病毒属',color:'#fa5252'},
-  {f:function(r){return r['Virus Name']},cap:15,other:'其他病毒种',color:'#f59f00'},
-  {f:function(r){return r['Vector Family']},cap:12,other:'其他媒介科',color:'#12b886'},
-  {f:function(r){return r['Vector Genus']},cap:15,other:'其他媒介属',color:'#15aabf'},
-  {f:function(r){return r['Vector']},cap:15,other:'其他媒介种',color:'#4c6ef5'},
+  {f:function(r){return r['Virus Family']},cap:12,other:'其他Virus Families',color:'#e03131'},
+  {f:function(r){return r['Virus Genus']},cap:15,other:'其他VirusGenus',color:'#fa5252'},
+  {f:function(r){return r['Virus Name']},cap:15,other:'其他Virus种',color:'#f59f00'},
+  {f:function(r){return r['Vector Family']},cap:12,other:'其他VectorFamily',color:'#12b886'},
+  {f:function(r){return r['Vector Genus']},cap:15,other:'其他VectorGenus',color:'#15aabf'},
+  {f:function(r){return r['Vector']},cap:15,other:'其他Vector种',color:'#4c6ef5'},
   {f:function(r){return mechLabel(r['Virus Transmission Mode'])||'未知机制'},cap:8,other:'其他机制',color:'#7048e8'},
-  {f:function(r){return r['Virus Host']},cap:15,other:'其他宿主',color:'#6a1b9a'}
+  {f:function(r){return r['Virus Host']},cap:15,other:'其他Host',color:'#6a1b9a'}
  ];
  var keep=cols.map(function(c){return new Set(topN(countBy(VH,function(r){return (c.f(r)||'').trim()||null}),c.cap))});
  function cellVal(r,i){var v=(cols[i].f(r)||'').trim();return (v&&keep[i].has(v))?v:cols[i].other}
@@ -196,7 +280,7 @@ function vhSankey(){
   var i=parseInt(k.charAt(0),10),p=k.slice(2).split('\u0001');
   src.push(ni(i,p[0],cols[i].color));tgt.push(ni(i+1,p[1],cols[i+1].color));vals.push(links[k]);
  });
- Plotly.react('ch-vh-sankey',[{type:'sankey',orientation:'h',node:{label:labels,color:colors,pad:7,thickness:11,line:{color:'rgba(0,0,0,.15)',width:.5}},link:{source:src,target:tgt,value:vals,color:'rgba(150,150,150,.22)'}}],{margin:{l:6,r:6,t:26,b:6},title:{text:'病毒科→属→种 → 媒介科→属→种 → 传毒机制 → 宿主植物',font:{size:12},x:0},font:{size:8}},PCFG);
+ Plotly.react('ch-vh-sankey',[{type:'sankey',orientation:'h',node:{label:labels,color:colors,pad:7,thickness:11,line:{color:'rgba(0,0,0,.15)',width:.5}},link:{source:src,target:tgt,value:vals,color:'rgba(150,150,150,.22)'}}],{margin:{l:6,r:6,t:26,b:6},title:{text:'Virus Families→Genus→种 → VectorFamily→Genus→种 → 传毒机制 → Host植物',font:{size:12},x:0},font:{size:8}},PCFG);
 }
 function vhAssoc(){
  var cell={},Y={},X={};
@@ -206,19 +290,19 @@ function vhAssoc(){
  });
  var xk=Object.keys(X),yk=topN(Y,14).reverse();
  var z=yk.map(function(vf){return xk.map(function(m){return cell[vf+'\u0001'+m]||0})});
- Plotly.react('ch-vh-assoc',[{type:'heatmap',x:xk,y:yk,z:z,colorscale:'YlOrRd',hoverongaps:false}],{margin:{l:10,r:10,t:26,b:90},title:{text:'媒介科 × 传毒机制（记录数）',font:{size:12},x:0},xaxis:{automargin:true,tickangle:-30,tickfont:{size:9}},yaxis:{automargin:true,tickfont:{size:9}}},PCFG);
+ Plotly.react('ch-vh-assoc',[{type:'heatmap',x:xk,y:yk,z:z,colorscale:'YlOrRd',hoverongaps:false}],{margin:{l:10,r:10,t:26,b:90},title:{text:'VectorFamily × 传毒机制（记录数）',font:{size:12},x:0},xaxis:{automargin:true,tickangle:-30,tickfont:{size:9}},yaxis:{automargin:true,tickfont:{size:9}}},PCFG);
 }
 function renderVHCharts(){
  vhSankey();
- barH('ch-vh-topvec',countBy(VH,function(r){return (r['Vector']||'').trim()||null}),'Top 15 媒介种','#c62828',15);
- donut('ch-vh-mech',countBy(VH,function(r){return mechLabel(r['Virus Transmission Mode'])}),'昆虫传毒机制');
+ barH('ch-vh-topvec',countBy(VH,function(r){return (r['Vector']||'').trim()||null}),'Top 15 Vector种','#c62828',15);
+ donut('ch-vh-mech',countBy(VH,function(r){return mechLabel(r['Virus Transmission Mode'])}),'Insect 传毒机制');
  vhAssoc();
 }
 function renderWURCharts(){
- barH('ch-wur-org',countBy(WUR,function(r){return (r.vector_org||'').trim()||null}),'媒介类别 Vector organisms','#0277bd',20);
+ barH('ch-wur-org',countBy(WUR,function(r){return (r.vector_org||'').trim()||null}),'VectorCategory Vector organisms','#0277bd',20);
  var routes={};
  WUR.forEach(function(r){(r.modes||'').split(/[;,]/).forEach(function(m){m=m.trim().toLowerCase();if(m)routes[m]=(routes[m]||0)+1})});
- barH('ch-wur-modes',routes,'传播途径 Modes（多值）','#2e7d32',10);
+ barH('ch-wur-modes',routes,'TransmissionMeans Modes（多值）','#2e7d32',10);
  var meth={};
  WUR.forEach(function(r){
   if(!Array.isArray(r.refs))return;
@@ -226,14 +310,14 @@ function renderWURCharts(){
   var uniq={};splitMeans(means).methods.forEach(function(m){var k=m.trim().toLowerCase();if(k)uniq[k]=1});
   Object.keys(uniq).forEach(function(k){meth[k]=(meth[k]||0)+1});
  });
- barH('ch-wur-means',meth,'具体传播方式 Means（top 15）','#e65100',15);
+ barH('ch-wur-means',meth,'具体Modes of transmission Means（top 15）','#e65100',15);
 }
 function renderIntCharts(d){
- var src={'Both':0,'仅 VH':0,'仅 WUR':0};
- d.forEach(function(v){if(v.sources.length>1)src['Both']++;else if(v.sources[0]==='VH')src['仅 VH']++;else src['仅 WUR']++});
- donut('ch-int-source',src,'来源占比（'+d.length+' 病毒）');
- barH('ch-int-vcat',countMulti(d,function(v){return v.vector_categories||[]}),'媒介类别（WUR, 多值）','#0277bd',15);
- barH('ch-int-routes',countMulti(d,function(v){return v.transmission_routes||[]}),'传播途径（WUR, 多值）','#2e7d32',10);
+ var src={'Both':0,'VH Only':0,'WUR Only':0};
+ d.forEach(function(v){if(v.sources.length>1)src['Both']++;else if(v.sources[0]==='VH')src['VH Only']++;else src['WUR Only']++});
+ donut('ch-int-source',src,'Source占比（'+d.length+' Virus）');
+ barH('ch-int-vcat',countMulti(d,function(v){return v.vector_categories||[]}),'VectorCategory（WUR, 多值）','#0277bd',15);
+ barH('ch-int-routes',countMulti(d,function(v){return v.transmission_routes||[]}),'TransmissionMeans（WUR, 多值）','#2e7d32',10);
  var cats={},mechs={},cell={};
  d.forEach(function(v){
   var vc=v.vector_categories||[],tc=v.transmission_categories||[];
@@ -242,7 +326,7 @@ function renderIntCharts(d){
  });
  var X=topN(cats,12),Y=Object.keys(mechs);
  var z=Y.map(function(m){return X.map(function(c){return cell[c+'\u0001'+m]||0})});
- Plotly.react('ch-int-heat',[{type:'heatmap',x:X,y:Y,z:z,colorscale:'Blues',hoverongaps:false,showscale:true}],{margin:{l:10,r:10,t:26,b:90},title:{text:'媒介类别 × 昆虫机制（同时具备的病毒数）',font:{size:12},x:0},xaxis:{automargin:true,tickangle:-40,tickfont:{size:9}},yaxis:{automargin:true,tickfont:{size:9}}},PCFG);
+ Plotly.react('ch-int-heat',[{type:'heatmap',x:X,y:Y,z:z,colorscale:'Blues',hoverongaps:false,showscale:true}],{margin:{l:10,r:10,t:26,b:90},title:{text:'VectorCategory × Insect Mechanisms（同时具备 Virus数）',font:{size:12},x:0},xaxis:{automargin:true,tickangle:-40,tickfont:{size:9}},yaxis:{automargin:true,tickfont:{size:9}}},PCFG);
 }
 var _intChartTimer=null;
 function renderVH(){
@@ -255,7 +339,7 @@ function renderVH(){
  var start=(page-1)*ps,chunk=d.slice(start,start+ps);
  var h='';chunk.forEach(function(r,i){
   var idx=start+i;
-  h+='<tr><td><span class=\"badge b-v\">'+esc(r['Virus Family'])+'</span></td><td>'+esc(r['Virus Genus'])+'</td><td><strong><a href=\"/virus/'+encodeURIComponent(r['Virus Name'])+'\" style=\"color:#1a5276\">'+esc(r['Virus Name'])+'</a></strong></td><td><span class=\"badge b-i\">'+esc(r['Vector'])+'</span></td><td><span class=\"badge b-p\">'+esc(r['Virus Host'])+'</span></td><td style=\"font-size:12px\">'+esc(r['Virus Transmission Mode']||'')+'</td><td><span class=\"toggle-link\" id=\"t'+idx+'\" onclick=\"toggleDetail('+idx+')\">Detail</span></td></tr>';
+  h+='<tr><td><span class=\"badge b-v\">'+esc(r['Virus Family'])+'</span></td><td>'+esc(r['Virus Genus'])+'</td><td>'+profLinkHtml(r['Virus Name'])+'</td><td><span class=\"badge b-i\">'+esc(r['Vector'])+'</span></td><td><span class=\"badge b-p\">'+esc(r['Virus Host'])+'</span></td><td style=\"font-size:12px\">'+esc(r['Virus Transmission Mode']||'')+'</td><td><span class=\"toggle-link\" id=\"t'+idx+'\" onclick=\"toggleDetail('+idx+')\">Detail</span></td></tr>';
   h+='<tr class=\"detail-row\" id=\"d'+idx+'\"><td colspan=\"7\"><b>Lineage:</b> '+esc(r['Lineage']||'')+'<br><b>DOI (Insect):</b> <a class=\"doi-link\" href=\"'+esc(r['DOI for Validation Virus-Insect Relationships']||'')+'\" target=\"_blank\">'+esc((r['DOI for Validation Virus-Insect Relationships']||'').substring(0,60))+'</a><br><b>DOI (Transmission):</b> <a class=\"doi-link\" href=\"'+esc(r['DOI for Validation Virus Transmission Mode']||'')+'\" target=\"_blank\">'+esc((r['DOI for Validation Virus Transmission Mode']||'').substring(0,60))+'</a><br><b>TaxIDs:</b> Virus='+esc(r['Virus TaxID']||'')+', Vector='+esc(r['Vector TaxID']||'')+', Host='+esc(r['Host TaxID']||'')+'</td></tr>';
  });
  document.getElementById('vh-tbody').innerHTML=h||'<tr><td colspan=7 style=\"text-align:center;padding:40px;color:#999\">No results</td></tr>';
@@ -263,8 +347,34 @@ function renderVH(){
  document.getElementById('vh-pager').innerHTML=pg
 }
 function goPage(p){page=p;renderVH();window.scrollTo(0,0)}
+function renderLit(){
+ var d=(LIT.edges||[]).slice(),q=(document.getElementById('lq').value||'').toLowerCase();
+ var rel=document.getElementById('lrel').value;
+ if(rel)d=d.filter(function(r){return r.relation===rel});
+ if(q)d=d.filter(function(r){return (r.virus+' '+r.relation+' '+r.target+' '+(r.evidence||'')).toLowerCase().indexOf(q)>=0});
+ var ps=parseInt(document.getElementById('lps').value)||25;
+ var pages=Math.ceil(d.length/ps);if(lpage>pages)lpage=Math.max(1,pages);
+ var start=(lpage-1)*ps,chunk=d.slice(start,start+ps);
+ var h='';chunk.forEach(function(r){
+  var isVec=r.relation==='transmitted_by';
+  var badge=isVec?'<span class="badge b-i">'+esc(r.target)+'</span>':'<span class="badge b-p">'+esc(r.target)+'</span>';
+  var src='';
+  if(r.doi)src='<a class="doi-link" href="https://doi.org/'+encodeURIComponent(r.doi)+'" target="_blank">DOI</a>';
+  else if(r.pmid)src='<a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/'+encodeURIComponent(r.pmid)+'/" target="_blank">PMID</a>';
+  h+='<tr><td>'+profLinkHtml(r.virus)+'</td>'
+   +'<td style="font-family:monospace;font-size:12px;color:'+(isVec?'#1565c0':'#00695c')+'">'+r.relation+'</td>'
+   +'<td>'+badge+'</td>'
+   +'<td style="text-align:center">'+r.n_papers+'</td>'
+   +'<td style="font-size:12px;color:#666;max-width:380px"><i>&ldquo;'+esc(r.evidence||'')+'&rdquo;</i></td>'
+   +'<td>'+esc(r.year||'')+'</td>'
+   +'<td>'+src+'</td></tr>';
+ });
+ document.getElementById('lit-tbody').innerHTML=h||'<tr><td colspan=7 style="text-align:center;padding:40px;color:#999">No results</td></tr>';
+ document.getElementById('lit-pager').innerHTML=pager(lpage,pages,'goLitPage');
+}
+function goLitPage(p){lpage=p;renderLit();window.scrollTo(0,0)}
 function splitMeans(means){
- // 把每条「Vector or means」按逗号/分号切分, 逐段分到 Vector(媒介昆虫 二名法) 与 Means(传播方式)
+ // 把Each 「Vector or means」按逗号/分号切分, 逐段分到 Vector(VectorInsect  二名法) and Means(Modes of transmission)
  var LATIN=/^([A-Z][a-z]+ [a-z]{2,}|[A-Z]\.\s*[a-z]{2,})/;
  var METHOD=/transmissible|graft|propagation|cutting|sucker|mechanical|division|borne|\bsap\b|\bsoil\b|\bwater\b|biolistic|inoculat|contact|pollen|vegetative|dodder|tuber|spread|unknown|reported|\bseed|clump|not\b|means/i;
  var vectors=[],methods=[];
@@ -329,37 +439,38 @@ function renderInt(){
   });
   if(r.wur&&r.wur.match_confidence)badges.push('<span class=\"vtag vt-conf-'+(r.wur.match_confidence==='low'?'low':'high')+'\">WUR '+esc(r.wur.match_confidence)+'</span>');
   if(r.conflict_flags&&r.conflict_flags.length)badges.push('<span class=\"vtag vt-conflict\">&#9888; '+r.conflict_flags.map(esc).join(', ')+'</span>');
-  h+='<div class=\"vcard\"><div class=\"vname\"><a href=\"/virus/'+encodeURIComponent(r.canonical_name)+'\" style=\"color:#1a5276\">'+esc(r.canonical_name)+'</a> '+badges.join(' ')+'</div>';
+  var pbin=profName(r.canonical_name)||(r.ictv_name||null);
+  h+='<div class=\"vcard\"><div class=\"vname\">'+(pbin?"<a href=\"/explorer/?profile="+encodeURIComponent(pbin)+"\" target=\"_blank\" style=\"color:#1a5276\" title=\"ICTV: "+esc(pbin)+"\">"+esc(r.canonical_name)+"</a>":'<strong>'+esc(r.canonical_name)+'</strong>')+' '+badges.join(' ')+'</div>';
   h+='<div class=\"vrow\">';
   if(r.family)h+='<span class=\"vtag vt-family\">'+esc(r.family)+'</span>';
   if(r.genus)h+='<span class=\"vtag vt-genus\">'+esc(r.genus)+'</span>';
   if(r.taxid)h+='<span class=\"vtag vt-source\">TaxID '+esc(r.taxid)+'</span>';
   h+='</div>';
-  // 三维传播: 途径(WUR) · 媒介类别(WUR) · 昆虫机制(VH)
+  // 三维Transmission: Means(WUR) · VectorCategory(WUR) · Insect Mechanisms(VH)
   function axisRow(label,arr,cls){
    if(!arr||!arr.length)return '';
    var s='<div style=\"margin:2px 0\"><span style=\"color:#888;font-size:10px;min-width:60px;display:inline-block\">'+label+'</span>';
    arr.forEach(function(t){s+='<span class=\"vtag '+cls+'\">'+esc(t)+'</span>'});
    return s+'</div>';
   }
-  var axes=axisRow('途径',r.transmission_routes,'vt-route')+axisRow('媒介类别',r.vector_categories,'vt-vcat')+axisRow('昆虫机制',r.transmission_categories,'vt-trans');
+  var axes=axisRow('Means',r.transmission_routes,'vt-route')+axisRow('VectorCategory',r.vector_categories,'vt-vcat')+axisRow('Insect Mechanisms',r.transmission_categories,'vt-trans');
   if(axes)h+=axes;
-  // VH 结构化关系（去重三元组）
+  // VH 结构化 relationship（去重三元组）
   if(r.relationships&&r.relationships.length){
-   h+='<div class=\"vdetail\"><b>媒介-宿主关系 ('+r.relationships.length+'):</b><br>';
+   h+='<div class=\"vdetail\"><b>Vector-Host Relations ('+r.relationships.length+'):</b><br>';
    r.relationships.slice(0,8).forEach(function(x){
     h+='&#128027; <b>'+esc(x.vector||'?')+'</b>'+(x.vector_order?' ('+esc(x.vector_order)+')':'')+' &rarr; &#127807; '+esc(x.host||'?')+(x.transmission_category&&x.transmission_category!=='Unknown'?' <span class=\"vtag vt-path\">'+esc(x.transmission_category)+'</span>':'')+'<br>';
    });
-   if(r.relationships.length>8)h+='<span style=\"color:#888\">… 其余 '+(r.relationships.length-8)+' 条见明细</span><br>';
+   if(r.relationships.length>8)h+='<span style=\"color:#888\">… remaining '+(r.relationships.length-8)+' records see details</span><br>';
    h+='</div>';
   }
   // WUR 补充
   if(r.wur){
    h+='<div class=\"vdetail\">';
-   if(r.wur.vector_label)h+='<b>WUR 媒介:</b> '+esc(r.wur.vector_label)+' ';
-   if(r.wur.ref_count)h+='<b>参考文献:</b> '+r.wur.ref_count+' 篇';
+   if(r.wur.vector_label)h+='<b>WUR Vector:</b> '+esc(r.wur.vector_label)+' ';
+   if(r.wur.ref_count)h+='<b>References:</b> '+r.wur.ref_count+' 篇';
    if(r.wur.refs&&r.wur.refs.length){
-    h+='<div style=\"margin-top:6px\"><b>文献 &amp; 各自传播方式:</b>';
+    h+='<div style=\"margin-top:6px\"><b>Literature &amp; 各自Modes of transmission:</b>';
     r.wur.refs.slice(0,6).forEach(function(rf){
      var t=rf.title||'';
      var link=rf.doi?'<a class=\"doi-link\" href=\"'+esc(rf.doi)+'\" target=\"_blank\">'+esc(t)+'</a>':esc(t);
@@ -368,7 +479,7 @@ function renderInt(){
      if(rf.citation)h+='<br><span style=\"color:#999;font-size:11px\">'+esc(rf.citation)+'</span>';
      h+='</div>';
     });
-    if(r.wur.refs.length>6)h+='<div style=\"color:#888;font-size:11px\">… 其余 '+(r.wur.refs.length-6)+' 篇</div>';
+    if(r.wur.refs.length>6)h+='<div style=\"color:#888;font-size:11px\">… remaining '+(r.wur.refs.length-6)+' 篇</div>';
     h+='</div>';
    }
    h+='</div>';
@@ -410,5 +521,5 @@ function populateFacets(){
   var t=document.getElementById('tab-vh').style.display!=='none'?'vh':(document.getElementById('tab-wur').style.display!=='none'?'wur':'int');
   resizeTabCharts(t);
  },200)});
-})();
-</script></body></html>
+ })();
+ </script><script src="/reference/i18n.js"></script><script>PVDB_i18n.init({navSelector:'nav'});</script></body></html>

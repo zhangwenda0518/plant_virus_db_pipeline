@@ -14,19 +14,22 @@ import polars as pl
 import os, argparse, csv, math
 from collections import defaultdict
 
-# Categories detected from input directory. Exclude Unknown/Environmental_NCBI/cross_species/miss.
-_CAT_SKIP = {"Unknown", "Environmental_NCBI", "cross_species", "miss", "All_Processed_Records", "Animal"}
+# 类别口径常量统一定义在 1_cross_kingdom_overlap.py, 本脚本按 __file__ 路径加载复用
+# (Unknown/Environmental_NCBI/Algae 非宿主界; Animal 是 C3b 拆分前聚合父类;
+#  cross_species/miss 为衍生目录 —— 全部不进入概率表, 与 1_/2_ 保持一致)。
+import importlib.util as _ilu
+from pathlib import Path as _Path
+_spec = _ilu.spec_from_file_location(
+    "c5_cross_kingdom_overlap", _Path(__file__).resolve().parent / "1_cross_kingdom_overlap.py")
+_c5 = _ilu.module_from_spec(_spec)
+_spec.loader.exec_module(_c5)
+CATEGORIES_SKIP = _c5.CATEGORIES_SKIP
+_is_category_file = _c5.is_category_file
 
 
 def detect_categories(input_dir):
-    """Auto-detect host categories from *.tsv files in input_dir."""
-    cats = []
-    for f in sorted(os.listdir(input_dir)):
-        if f.endswith('.tsv'):
-            cat = f.replace('.tsv', '')
-            if cat not in _CAT_SKIP:
-                cats.append(cat)
-    return cats
+    """Auto-detect host categories from *.tsv files in input_dir (统一口径)."""
+    return [f[:-4] for f in sorted(os.listdir(input_dir)) if _is_category_file(f)]
 
 
 def parse_and_load_counts(input_dir, level_col, core_cats):

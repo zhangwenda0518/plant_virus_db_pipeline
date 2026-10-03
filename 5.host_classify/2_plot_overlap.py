@@ -1,22 +1,42 @@
 # -*- coding: utf-8 -*-
 """
-C6: Deep Evolutionary Cross-kingdom visualization (Realm to Genus).
+C6: Deep evolutionary cross-kingdom visualization (Realm to Species).
 
 Biological Rules:
-  1. All taxonomic levels INCLUDED (C4 handles cross-kingdom cleaning).
-  2. HVT families EXCLUDED (Mitoviridae, Partitiviridae, etc.) to reveal true homology.
+  1. All taxonomic levels (8 级 Realm→Species) 均纳入绘图 (C4 已做跨界清洗).
+  2. HVT 家族默认【不排除】；加 --exclude-hvt 才真正按 HVT_FAMS 过滤，
+     且图题会如实注明 "[HVT families excluded]"。默认图题不含任何未执行的声明。
+
+类别口径 (与 1_/3_ 号脚本共享 CATEGORIES_SKIP):
+  Unknown / Environmental_NCBI / Algae 是来源或非宿主界标记，Animal 是 C3b
+  拆分前的聚合父类 (参与会双重计数)，cross_species / miss 为衍生目录 ——
+  以上均不参与 "其他宿主界" 枚举。
 
 Outputs:
   1. Grouped Bar Chart (evolutionary divergence).
   2. UpSet Matrices (.csv) for R ComplexUpset.
 
 Usage:
-  python C6_plot_cross_kingdom.py -i classified_clean/ -o cross_analysis/ -s Plant
+  python 2_plot_overlap.py -i classified_clean/ -o cross_analysis/ -s Plant
+  python 2_plot_overlap.py -i classified_clean/ -o cross_analysis/ -s Plant --exclude-hvt
 """
 import polars as pl
 import os, argparse
 import numpy as np
 import matplotlib.pyplot as plt
+
+# 与 1_/3_ 号脚本共用的口径常量。模块名以数字开头无法直接 import，
+# 且本文件可能从任意 cwd 启动，故按 __file__ 路径加载。
+import importlib.util as _ilu
+from pathlib import Path as _Path
+_spec = _ilu.spec_from_file_location(
+    "c5_cross_kingdom_overlap", _Path(__file__).resolve().parent / "1_cross_kingdom_overlap.py")
+_c5 = _ilu.module_from_spec(_spec)
+_spec.loader.exec_module(_c5)
+CATEGORIES_SKIP = _c5.CATEGORIES_SKIP
+META_FILE_PREFIXES = _c5.META_FILE_PREFIXES
+HVT_FAMS = _c5.HVT_FAMS
+_is_category_file = _c5.is_category_file
 
 TAXA_LEVELS = {
     "Realm": 0, "Kingdom": 1, "Phylum": 2, "Class": 3,
@@ -26,8 +46,8 @@ LEVEL_ORDER = list(TAXA_LEVELS.keys())
 # Upset matrices: exclude Species (vector/diet transit noise)
 UPSET_LEVELS = ["Realm", "Kingdom", "Phylum", "Class", "Order", "Family", "Genus"]
 
-EXCLUDE_FAMS = set()  # C4 has already cleaned the data; no additional filtering needed
-SKIP = {"All_Processed_Records", "Summary_Counts", "Task1_", "Task2_", "Plant_Virus_"}
+# 默认不过滤任何家族; 仅当 --exclude-hvt 打开时由 main() 置为 HVT_FAMS。
+EXCLUDE_FAMS = set()
 
 
 def load_taxa(path):
@@ -51,7 +71,7 @@ def collect_overlap(input_dir, source):
     upset_data = {lvl: {} for lvl in UPSET_LEVELS}
 
     for f in sorted(os.listdir(input_dir)):
-        if not f.endswith('.tsv') or any(p in f for p in SKIP):
+        if not _is_category_file(f):
             continue
         cat = f.replace('.tsv', '')
         if cat == source:
@@ -67,7 +87,7 @@ def collect_overlap(input_dir, source):
     return overlap_data, upset_data
 
 
-def plot_grouped_bar(overlap_data, output_path, source):
+def plot_grouped_bar(overlap_data, output_path, source, exclude_hvt=False):
     """Grouped bar chart: shared taxa count drops sharply with taxonomic refinement."""
     valid_cats = [c for c in overlap_data if overlap_data[c].get("Realm", 0) > 0]
     valid_cats.sort()
@@ -90,7 +110,10 @@ def plot_grouped_bar(overlap_data, output_path, source):
     ax.set_xticks(x)
     ax.set_xticklabels(LEVEL_ORDER, fontsize=12)
     ax.set_ylabel("Shared Taxa Count", fontsize=12, fontweight='bold')
-    ax.set_title(f"{source} Evolutionary Overlap (Species & HVT Excluded)", fontsize=15, fontweight='bold')
+    # 图题如实描述: 全部 8 级均参与; 仅 --exclude-hvt 真正过滤后才声明排除
+    hvt_note = " (HVT families excluded)" if exclude_hvt else ""
+    ax.set_title(f"{source} Cross-Kingdom Evolutionary Overlap (Realm→Species){hvt_note}",
+                 fontsize=15, fontweight='bold')
     ax.legend(title="Target", bbox_to_anchor=(1.01, 1), loc='upper left', fontsize=9)
     ax.grid(axis='y', linestyle='--', alpha=0.4)
     ax.spines['top'].set_visible(False)
@@ -129,7 +152,7 @@ def compute_exclusive_vs_shared(input_dir, source):
     other_taxa = {lvl: set() for lvl in LEVEL_ORDER}
     for f in sorted(os.listdir(input_dir)):
         cat = f.replace('.tsv', '')
-        if not f.endswith('.tsv') or cat == source or any(p in f for p in SKIP):
+        if not _is_category_file(f) or cat == source:
             continue
         df_c = load_taxa(os.path.join(input_dir, f))
         for lvl in LEVEL_ORDER:
@@ -233,7 +256,7 @@ def compute_all_exclusive(input_dir):
     return all_exclusive, cat_taxa
 
 
-def plot_all_exclusive(all_exclusive, cat_taxa, output_path):
+def plot_all_exclusive(all_exclusive, cat_taxa, output_path, exclude_hvt=False):
     """Heatmap-style grouped bar: exclusive taxa per category at each level."""
     import matplotlib
     matplotlib.use('Agg')
@@ -241,6 +264,7 @@ def plot_all_exclusive(all_exclusive, cat_taxa, output_path):
 
     cats = sorted(all_exclusive.keys())
     levels_show = ["Realm", "Kingdom", "Phylum", "Class", "Order", "Family", "Genus"]
+    hvt_note = " (HVT families excluded)" if exclude_hvt else ""
 
     fig, ax = plt.subplots(figsize=(16, 8))
     x = np.arange(len(cats))
@@ -261,7 +285,9 @@ def plot_all_exclusive(all_exclusive, cat_taxa, output_path):
     ax.set_xticks(x)
     ax.set_xticklabels(cats, fontsize=10)
     ax.set_ylabel("Number of Exclusive Taxa", fontsize=12, fontweight='bold')
-    ax.set_title("Virus Taxa Exclusive to Each Host Category (HVT Families Excluded)", fontsize=14, fontweight='bold')
+    # 图题如实描述: 只有 --exclude-hvt 真正过滤后才声明排除
+    ax.set_title(f"Virus Taxa Exclusive to Each Host Category{hvt_note}",
+                 fontsize=14, fontweight='bold')
     ax.legend(title="Taxonomic Level", fontsize=7, ncol=4, loc='upper right')
     ax.grid(axis='y', linestyle='--', alpha=0.3)
     ax.spines['top'].set_visible(False); ax.spines['right'].set_visible(False)
@@ -272,7 +298,7 @@ def plot_all_exclusive(all_exclusive, cat_taxa, output_path):
 
     # Print detailed table
     print(f"\n{'='*80}")
-    print(f"EXCLUSIVE TAXA PER CATEGORY (HVT excluded)")
+    print(f"EXCLUSIVE TAXA PER CATEGORY{hvt_note}")
     print(f"{'='*80}")
     header = f"{'Category':16s}"
     for lvl in levels_show:
@@ -298,20 +324,29 @@ def plot_all_exclusive(all_exclusive, cat_taxa, output_path):
 
 
 def main():
+    global EXCLUDE_FAMS
     p = argparse.ArgumentParser()
     p.add_argument("-i", "--input_dir", default="classified_clean/")
     p.add_argument("-o", "--output_dir", default="cross_analysis/")
     p.add_argument("-s", "--source", default="Plant")
+    p.add_argument("--exclude-hvt", action="store_true",
+                   help="真正按 HVT 家族过滤 (Mitoviridae/Partitiviridae/Endornaviridae/"
+                        "Botourmiaviridae/Narnaviridae) 后再统计绘图; 默认关闭, 图题不含'排除'声明")
     args = p.parse_args()
+
+    # HVT 排除开关: 默认关; 开了才过滤, 且图题注明 (避免图题与实现不符)
+    EXCLUDE_FAMS = set(HVT_FAMS) if args.exclude_hvt else set()
 
     os.makedirs(args.output_dir, exist_ok=True)
     print(f"Deep homology analysis: {args.source}")
+    print(f"  HVT exclusion: {'ON -> ' + ', '.join(sorted(EXCLUDE_FAMS)) if EXCLUDE_FAMS else 'OFF (default, titles state no exclusion)'}")
+    print(f"  Category skip (shared constant): {', '.join(sorted(CATEGORIES_SKIP))}")
 
     overlap_data, upset_data = collect_overlap(args.input_dir, args.source)
 
     plot_grouped_bar(overlap_data,
                      os.path.join(args.output_dir, f"{args.source}_evolutionary_bar.pdf"),
-                     args.source)
+                     args.source, exclude_hvt=args.exclude_hvt)
     export_upset_matrices(upset_data, args.output_dir, args.source)
 
     # Exclusive vs Shared (Plant only)
@@ -323,7 +358,8 @@ def main():
     # All-category exclusive analysis
     all_exclusive, cat_taxa = compute_all_exclusive(args.input_dir)
     plot_all_exclusive(all_exclusive, cat_taxa,
-                       os.path.join(args.output_dir, "all_categories_exclusive.pdf"))
+                       os.path.join(args.output_dir, "all_categories_exclusive.pdf"),
+                       exclude_hvt=args.exclude_hvt)
 
     # Print table
     print(f"\n{'='*60}")

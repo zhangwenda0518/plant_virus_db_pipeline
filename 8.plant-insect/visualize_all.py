@@ -2,6 +2,7 @@
 植物病毒-媒介-宿主 数据可视化
 4张出版级图表
 """
+import os
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -30,7 +31,8 @@ plt.rcParams.update({
     'savefig.pad_inches': 0.1,
 })
 
-OUT = r'D:\桌面\C-host_classify\plant_virus_db_pipeline\8.plant-insect'
+# 输出目录 = 本脚本所在目录 (审计修复: 原为硬编码绝对 Windows 路径)
+OUT = os.path.dirname(os.path.abspath(__file__))
 
 # ── 配色 ───────────────────────────────────
 # Colorblind-friendly (Wong, 2011)
@@ -51,9 +53,22 @@ FAMILY_PALETTE = {
 }
 
 # ── 加载数据 ─────────────────────────────────
+def _strip_quotes(df):
+    """WUR TSV 当前批次为全字段加引号的导出 (refs 列含不平衡引号, 故用 quoting=3
+    读取, 此时引号会残留在列名与值里)。统一剥掉首尾引号, 兼容带/不带引号两种导出。
+    注: 2026-10-03 复跑发现 fig4 因此前未剥引号一直 KeyError: 'family' 静默缺失。"""
+    df.columns = [str(c).strip('"') for c in df.columns]
+    for c in df.columns:
+        try:
+            df[c] = df[c].str.strip('"')   # 字符串列 (含 pandas 3.0 Arrow 后端) 才会成功
+        except (AttributeError, TypeError):
+            continue
+    return df
+
+
 def load_data():
     vvh = pd.read_csv(f'{OUT}/virus_vector_host.tsv', sep='\t')
-    wur = pd.read_csv(f'{OUT}/wur_virus_full.tsv', sep='\t', quoting=3)  # QUOTE_NONE
+    wur = _strip_quotes(pd.read_csv(f'{OUT}/wur_virus_full.tsv', sep='\t', quoting=3))  # QUOTE_NONE
     return vvh, wur
 
 

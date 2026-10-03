@@ -108,6 +108,9 @@ def main():
             idx.write(f"{'─'*45}\n{cat}  —  {cdf.height:,} contigs\n{'─'*45}\n")
 
             fam_counts = cdf.group_by("Family").len().sort("len", descending=True)
+            # 小家族序列先累积, 本 category 循环结束后一次性写出 (覆盖写 → 幂等)
+            other_fam_accs = set()
+            other_fam_lines = []
 
             for fr in fam_counts.iter_rows(named=True):
                 fam = str(fr["Family"]).strip() if fr["Family"] else "NA"
@@ -155,13 +158,22 @@ def main():
                     idx.write(f"  {fam:40s} {fn:>8,d} contigs, {fcd['Genus'].n_unique()} genera\n")
 
                 else:
-                    # Small family → merge into _other_families
-                    odir = os.path.join(cat_dir, "_other_families")
-                    os.makedirs(odir, exist_ok=True)
-                    fam_accs = set(fcd["contig_id"].to_list())
-                    write_fasta(seqs, fam_accs, os.path.join(odir, "other.fasta"))
-                    with open(os.path.join(odir, "other_summary.txt"), 'a') as sf:
-                        sf.write(f"  {fam:40s} {fn:>8,d}\n")
+                    # Small family → 累积, 循环外统一并入 _other_families
+                    other_fam_accs |= set(fcd["contig_id"].to_list())
+                    other_fam_lines.append(f"  {fam:40s} {fn:>8,d}\n")
+
+            # 小家族合并输出 (审计修复 2026-10-03):
+            #   * 原摘要 'a' 追加写 → 重跑时重复累积, 改为循环结束后一次覆盖写;
+            #   * 原循环内 write_fasta('w') 每个小家族互相覆盖, 只剩最后一个家族 →
+            #     改为累积全部 acs 后一次写出。
+            if other_fam_accs:
+                odir = os.path.join(cat_dir, "_other_families")
+                os.makedirs(odir, exist_ok=True)
+                write_fasta(seqs, other_fam_accs, os.path.join(odir, "other.fasta"))
+                with open(os.path.join(odir, "other_summary.txt"), 'w') as sf:
+                    sf.write(f"Small families merged into _other_families "
+                             f"(min_family={args.min_family}):\n")
+                    sf.writelines(other_fam_lines)
 
             idx.write("\n")
 

@@ -16,6 +16,38 @@ TAXA_LEVELS = {
 }
 LEVEL_ORDER = list(TAXA_LEVELS.keys())
 
+# =====================================================================
+# 跨脚本共用常量 (本文件为唯一定义处, 被 2_plot_overlap.py / 3_host_probability.py
+# 以 importlib 按路径加载导入, 保证"其他宿主界"枚举口径三处一致)
+# =====================================================================
+# 非宿主界的"类别"文件: Unknown / Environmental_NCBI / Algae 是来源或非宿主界标记,
+# 参与"其他宿主界"枚举会系统性虚高; cross_species / miss 是衍生目录;
+# Animal 是 C3b 拆分 (Aves/Mammalia/Animal_other/Human) 前的聚合父类, 参与会双重计数。
+CATEGORIES_SKIP = {
+    "Unknown", "Environmental_NCBI", "Algae",
+    "cross_species", "miss", "Animal",
+}
+# 步骤产物/汇总文件 (按类别名前缀匹配, 不是宿主类别)
+META_FILE_PREFIXES = ("All_Processed_Records", "Summary_Counts", "Task1_", "Task2_", "Plant_Virus_")
+
+# HVT (high vector transmission) 家族: 跨宿主界传播/共进化噪声源,
+# 供 2_plot_overlap.py --exclude-hvt 开关使用 (默认不过滤)。
+HVT_FAMS = {"Mitoviridae", "Partitiviridae", "Endornaviridae", "Botourmiaviridae", "Narnaviridae"}
+
+# 宿主属名碰撞清单 (病毒名中的属名 = 植物/昆虫宿主属名, 需人工判为碰撞而非真实跨界)。
+# 来源: 上游 C4_clean_all_tsvs.py:110-111 GENUS_COLLISIONS (含 Acharia, 2026-10-03 同步)。
+COLLISION_GENERA = {"Coelogyne", "Mansonia", "Charybdis", "Paphia", "Epiphyllum", "Acharia"}
+
+
+def is_category_file(fname: str) -> bool:
+    """判断 *.tsv 是否为可分析的宿主类别文件 (排除衍生目录与步骤产物)。"""
+    if not fname.endswith('.tsv'):
+        return False
+    base = fname[:-4]
+    if base in CATEGORIES_SKIP:
+        return False
+    return not any(base.startswith(p) for p in META_FILE_PREFIXES)
+
 
 def load_taxa(path):
     """Load all 8 virus taxonomic levels from a TSV file."""
@@ -32,7 +64,7 @@ def load_taxa(path):
     return df.with_columns(exprs)
 
 
-SKIP = {"All_Processed_Records", "Summary_Counts", "Task1_", "Task2_", "Plant_Virus_"}
+SKIP = CATEGORIES_SKIP  # 向后兼容别名; 新代码请直接用 is_category_file() / CATEGORIES_SKIP
 
 
 def main():
@@ -46,9 +78,8 @@ def main():
     detail_dir = os.path.join(args.output_dir, "cross_details")
     os.makedirs(detail_dir, exist_ok=True)
 
-    # Find category files
-    tsv_files = sorted(f for f in os.listdir(args.input_dir)
-                       if f.endswith('.tsv') and not any(p in f for p in SKIP))
+    # Find category files (统一口径: 排除 Unknown/Environmental_NCBI/Algae/Animal 等非宿主界类别)
+    tsv_files = sorted(f for f in os.listdir(args.input_dir) if is_category_file(f))
     print(f"Categories: {len(tsv_files)}")
 
     # Load source taxa at all levels
@@ -92,9 +123,10 @@ def main():
             print(f" {n:>8d}", end="")
         print()
 
-    # Species-level detail with classification
-    cross_fams = {"Mitoviridae", "Partitiviridae", "Endornaviridae", "Botourmiaviridae", "Narnaviridae"}
-    collision_gens = {"Coelogyne", "Mansonia", "Charybdis", "Paphia", "Epiphyllum"}
+    # 分类阈值使用模块级常量 (HVT_FAMS / COLLISION_GENERA, 供 2/3 号脚本共享)：
+    # HVT 家族 = 跨宿主界共进化噪声; 碰撞属 = 属名撞名的假跨界
+    cross_fams = HVT_FAMS
+    collision_gens = COLLISION_GENERA
 
     # Host genera from source
     hp = pl.col("Host_lineage") + ";;;;;;;;"
