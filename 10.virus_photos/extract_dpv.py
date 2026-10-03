@@ -5,7 +5,7 @@ import os, re, json, pathlib
 DPV_DIR = pathlib.Path(r"D:/桌面/NEBLab/rag-db/dpv_database")
 MD_DIR = DPV_DIR / "md"
 IMG_DIR = DPV_DIR / "images"
-OUT_JSON = pathlib.Path(r"D:/桌面/C-host_classify/plant_virus_db_pipeline/docs/data/dpv_gallery.json")
+OUT_JSON = pathlib.Path(__file__).resolve().parent.parent / "docs/data/dpv_gallery.json"
 
 # 症状关键词 (图片描述含这些词 → 症状图)
 SYMPTOM_KEYWORDS = [

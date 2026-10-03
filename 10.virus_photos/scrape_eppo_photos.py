@@ -11,6 +11,8 @@ LIST = f"{BASE}/photos/virus"
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("-o", "--output", default="eppo_virus_photos.tsv")
+    p.add_argument("--failed-out", default="eppo_failed_pages.tsv",
+                   help="导航失败的 taxon 清单 (taxon/virus/url/错误)")
     p.add_argument("--delay", type=float, default=2.0)
     p.add_argument("--limit", type=int, default=0)
     p.add_argument("--start", type=int, default=0)
@@ -46,15 +48,27 @@ def main():
 
         # [2] Scrape each virus
         all_photos = []
+        failed_pages = []   # (taxon, virus_name, url, error)：导航失败 → 跳过，防照片错配
         for i, (code, name) in enumerate(viruses):
             url = f"{BASE}/taxon/{code}/photos"
             print(f"[{i+1}/{len(viruses)}] {code} {name[:50]}")
+            nav_ok = False
             try:
                 page.goto(url, wait_until="networkidle", timeout=30000)
+                nav_ok = True
                 page.wait_for_timeout(1500)
                 page.wait_for_selector("#portfolio img[src*='/pics/']", timeout=10000)
-            except:
-                pass
+            except Exception as e:
+                err = f"{type(e).__name__}: {e}".replace("\t", " ").replace("\n", " ")[:300]
+                if not nav_ok:
+                    # goto 失败 → 当前 DOM 仍是上一个 taxon 的页面，
+                    # 继续采集会把照片静默错配到别的病毒（审计 D4 P0）→ 跳过并记失败清单
+                    print(f"  ! SKIP (navigation failed, no photos collected): {err}")
+                    failed_pages.append((code, name, url, err))
+                    time.sleep(args.delay)
+                    continue
+                # 页面已正确加载、只是没有图集元素（如该 taxon 无照片）→ 可安全继续
+                print(f"  (no photo elements: {err})")
 
             items = page.query_selector_all("#portfolio .element")
             photos = []
@@ -103,6 +117,16 @@ def main():
 
         browser.close()
 
+    # 失败清单：始终写出（含表头），避免上一次运行的旧清单造成误读
+    with open(args.failed_out, "w", encoding="utf-8", newline="") as f:
+        f.write("taxon\tvirus_name\turl\terror\n")
+        for code, name, url, err in failed_pages:
+            f.write(f"{code}\t{name}\t{url}\t{err}\n")
+    if failed_pages:
+        print(f"\n[!] 导航失败 {len(failed_pages)} 个 taxon（已跳过，见 {args.failed_out}）:")
+        for code, name, url, err in failed_pages[:20]:
+            print(f"    {code} {name[:40]} — {err[:100]}")
+
     if all_photos:
         df = pl.DataFrame(all_photos)
         df.write_csv(args.output, separator='\t')
@@ -111,6 +135,7 @@ def main():
         print(f"\nDone: {len(all_photos)} photos -> {args.output}")
         print(f"  Viruses: {len(set(x['eppo_code'] for x in all_photos))}")
         print(f"  With caption: {nc}, With photographer: {np_}")
+    print(f"  Failed taxa (navigation): {len(failed_pages)} -> {args.failed_out}")
 
 
 if __name__ == "__main__":

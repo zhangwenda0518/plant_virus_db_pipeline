@@ -3,6 +3,7 @@
 
 import os, json, uuid, time, subprocess, threading, shutil, re, urllib.request, urllib.parse, urllib.error, base64
 import io
+import queue as _queue
 from pathlib import Path
 from datetime import datetime
 from flask import Flask, request, jsonify, send_file, render_template_string, Response
@@ -12,10 +13,98 @@ app = Flask(__name__)
 
 METABULI_BIN = "/usr/local/bin/metabuli"
 METABULI_DB = "/opt/plant_virus_db/ref.virus.build.metabuli_db"
+KUNPENG_BIN = "/opt/kunpeng/kp_centos7"
+KUNPENG_DB = "/opt/kunpeng/kp_db"
 JOBS_DIR = Path("/opt/plant_virus_db/metabuli_jobs")
 MAX_SIZE = 100 * 1024 * 1024
 os.makedirs(JOBS_DIR, exist_ok=True)
 jobs = {}
+
+# ── Task queue & history (task center) ──
+# Metabuli classification is CPU/RAM heavy → strictly one at a time, rest queue up.
+CLASSIFY_QUEUE = _queue.Queue()
+CLASSIFY_CURRENT = {"id": None}
+HISTORY_FILE = JOBS_DIR / "task_history.jsonl"
+HISTORY_WINDOW_SEC = 3600  # task center keeps the last hour
+JOB_TTL_SEC = 7200         # job 目录/内存条目保留 2h（成功与失败/超时一致，避免无界增长）
+
+
+def _cleanup_job_after(job_id, delay=JOB_TTL_SEC):
+    """延迟回收：删除 job 目录并把 job 移出内存表（daemon 线程，进程退出即随之结束）。
+
+    成功、失败、超时三条路径都必须调用，否则超时/失败的 job 目录与 jobs 条目
+    永不回收（磁盘/内存无界增长，审计 S5）。
+    """
+    def _c():
+        time.sleep(delay)
+        d = JOBS_DIR / job_id
+        if d.exists():
+            shutil.rmtree(d, ignore_errors=True)
+        jobs.pop(job_id, None)
+    threading.Thread(target=_c, daemon=True).start()
+
+
+def _discard_input(fasta_path):
+    """失败/超时后立即删除输入 FASTA（输出目录留给用户查看，2h 后统一回收）。"""
+    try:
+        if fasta_path is not None and Path(fasta_path).exists():
+            Path(fasta_path).unlink()
+    except Exception:
+        pass
+
+
+def _hist_append(rec):
+    try:
+        with open(HISTORY_FILE, "a", encoding="utf-8") as f:
+            f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    except Exception:
+        pass
+
+
+def _hist_record(job, event):
+    _hist_append({
+        "id": job.get("id", ""), "tool": job.get("tool", "metabuli"),
+        "filename": job.get("filename", ""), "size": job.get("size", 0),
+        "status": job.get("status", ""), "event": event,
+        "error": (job.get("error") or "")[:200],
+        "ts": datetime.now().isoformat(timespec="seconds"),
+    })
+
+
+def _queue_snapshot():
+    """当前排队中的任务 id 列表（按顺序）。"""
+    try:
+        return [x["jid"] for x in list(CLASSIFY_QUEUE.queue)]
+    except Exception:
+        return []
+
+
+def _classify_worker():
+    while True:
+        item = CLASSIFY_QUEUE.get()
+        if item is None:
+            return
+        jid, fp, kind = item["jid"], item["fp"], item.get("kind", "classify")
+        job = jobs.get(jid)
+        if job is None:
+            CLASSIFY_QUEUE.task_done()
+            continue
+        CLASSIFY_CURRENT["id"] = jid
+        job["status"] = "running"
+        job["started"] = datetime.now().isoformat(timespec="seconds")
+        _hist_record(job, "start")
+        try:
+            if kind == "local_blast":
+                _local_blast(jid, fp)
+            else:
+                _classify(jid, fp)
+        finally:
+            CLASSIFY_CURRENT["id"] = None
+            _hist_record(job, "finish")
+            CLASSIFY_QUEUE.task_done()
+
+
+threading.Thread(target=_classify_worker, daemon=True).start()
 
 # ── NCBI API endpoints & settings ──
 NCBI_BLAST_URL  = "https://blast.ncbi.nlm.nih.gov/Blast.cgi"
@@ -25,7 +114,25 @@ NCBI_CDD_SLEEP   = 10      # seconds between CDD status polls
 BLAST_TIMEOUT    = 3000    # max wait for BLAST
 CDD_TIMEOUT      = 3000    # max wait for CDD
 BLAST_HITLIST    = 50      # top hits
-BLAST_ENTREZ     = ""  # no restriction (user requested)
+BLAST_ENTREZ     = ""  # 不加病毒 Entrez 限定：BLASTN/BLASTX 检索完整 core_nt / nr_cluster_seq 库（与 README 描述一致）
+
+# NCBI 合规：自动化提交必须带 tool 与有效联系邮箱（S2/S5）
+NCBI_TOOL        = "PVDB-metabuli"
+NCBI_EMAIL       = os.environ.get("NCBI_EMAIL", "").strip()
+_NCBI_EMAIL_WARNED = False
+
+
+def _warn_missing_ncbi_email():
+    """NCBI_EMAIL 未设置时只打一次警告（避免刷屏）。"""
+    global _NCBI_EMAIL_WARNED
+    if not _NCBI_EMAIL_WARNED:
+        print("[WARN] 环境变量 NCBI_EMAIL 未设置：提交给 NCBI 的请求只有 tool=%s、"
+              "无联系邮箱；NCBI 政策要求自动化访问提供可联系的 email。" % NCBI_TOOL)
+        _NCBI_EMAIL_WARNED = True
+
+
+if not NCBI_EMAIL:
+    _warn_missing_ncbi_email()
 
 # 标准病毒分类 8 级 (域界门纲目科属种)
 RANKS = ["realm", "kingdom", "phylum", "class", "order", "family", "genus", "species"]
@@ -87,6 +194,52 @@ for _tid, _rec in TAXLIN.items():
 print(f"Taxid lineage: {len(TAXLIN)} entries")
 print(f"Genus lengths: {len(GENUS_LENS)} entries")
 print(f"ICTV→NCBI species map: {len(_ICTV2NCBI)} entries")
+
+
+def _load_taxid2ncbi(path):
+    """Taxid → NCBI 名（取自 Plant_Virus_Ref.Info.tsv 的 Species_NCBI 列）。
+
+    比 _ICTV2NCBI 的「最短 sciname」启发式可靠：后者会因为 ICTV 双名法名恰好更短
+    （如 'Tobamovirus tabaci' 17 字 < 'Tobacco mosaic virus' 19 字）而选中双名法名。
+
+    注意：这一列是「该 accession 的 NCBI 名」，株系级 accession 给的就是株系名
+    （如 AM183114.1 → taxid 367797 → 'Cucumber mosaic virus (strain Pl-1)'）。
+    这是事实而非噪声，且与同行的 taxid 列自洽。
+
+    实测 Taxid→Species_NCBI 唯一（6,503 个 taxid 零冲突），故无需票选。
+    """
+    m = {}
+    if not path.exists():
+        return m
+    with open(path, encoding="utf-8", errors="replace") as f:
+        header = f.readline().rstrip("\n").split("\t")
+        try:
+            it = header.index("Taxid")
+            inb = header.index("Species_NCBI")
+        except ValueError:
+            return m
+        need = max(it, inb)
+        for line in f:
+            p = line.rstrip("\n").split("\t")
+            if len(p) <= need:
+                continue
+            t, n = p[it].strip(), p[inb].strip()
+            if t and n and t not in m:   # 唯一，先到先得即可（有冲突时行为仍是确定的）
+                m[t] = n
+    return m
+
+
+REF_INFO_TSV = Path("/opt/plant_virus_db/plant_virus_db_pipeline/docs/data/Plant_Virus_Ref.Info.tsv")
+TAXID2NCBI = _load_taxid2ncbi(REF_INFO_TSV)
+print(f"Taxid→NCBI species map: {len(TAXID2NCBI)} entries")
+
+
+def _ncbi_name_for(taxid, fallback=""):
+    """该 contig 的 NCBI 名：
+       ① Ref 表里该 taxid 的 Species_NCBI（精选，优先）；
+       ② 退化到 taxid_lineage.tsv 的 sciname（该 taxid 在 NCBI 的学名原文）。
+    """
+    return TAXID2NCBI.get(str(taxid), "") or fallback
 
 
 def _load_genus_lens(path, taxdir=None):
@@ -274,7 +427,10 @@ def _read_fasta(path_or_text, is_path=True):
 
 # ── NCBI BLAST submit + poll ──
 def _submit_blast(program, database, query_fasta, entrez_query=""):
-    """Submit BLAST job → (rid, rtoe). rtoe is estimated seconds."""
+    """Submit BLAST job → (rid, rtoe). rtoe is estimated seconds.
+
+    NCBI 合规：必须携带 tool；email 取自环境变量 NCBI_EMAIL，未设置则省略并告警。
+    """
     params = {
         "CMD": "Put",
         "PROGRAM": program,
@@ -284,7 +440,12 @@ def _submit_blast(program, database, query_fasta, entrez_query=""):
         "HITLIST_SIZE": str(BLAST_HITLIST),
         "ALIGNMENTS": str(BLAST_HITLIST),
         "DESCRIPTIONS": str(BLAST_HITLIST),
+        "tool": NCBI_TOOL,
     }
+    if NCBI_EMAIL:
+        params["email"] = NCBI_EMAIL
+    else:
+        _warn_missing_ncbi_email()
     if entrez_query:
         params["ENTREZ_QUERY"] = entrez_query
     if program == "blastn":
@@ -435,7 +596,16 @@ def _read_cdd_tag(text, tag):
 
 
 def _parse_cdd_hits(text):
-    """Parse Batch CD-Search tab-separated hits table → list of dicts."""
+    """Parse Batch CD-Search tab-separated hits table → list of dicts.
+
+    实测表头（2026-10，tdata=hits & dmode=rep & qdefl=cddefl=true）：
+      Query  Hit type  PSSM-ID  From  To  E-Value  Bitscore  Accession
+      Short name  Incomplete  Superfamily  Definition
+    注意两处易错字段：
+      · 域描述在 Definition 列（由 cddefl=true 追加）；Incomplete 只是 N/C/NC 残缺标记，
+        旧代码把 Incomplete 当 description 属字段错配（审计 D4/复审）。
+      · bit score 列表头是 "Bitscore"（无空格），旧代码只查 "Bit score" 会恒空。
+    """
     hits = []
     lines = text.splitlines()
     # Find the header line "Query\tHit type\t..."
@@ -447,6 +617,7 @@ def _parse_cdd_hits(text):
     if header_idx is None:
         return hits
     headers = lines[header_idx].split("\t")
+    n_head = len(headers)
     for line in lines[header_idx + 1:]:
         if not line.strip() or line.startswith("#"):
             continue
@@ -455,17 +626,23 @@ def _parse_cdd_hits(text):
             continue
         row = {}
         for j, h in enumerate(headers):
-            row[h.strip()] = parts[j].strip() if j < len(parts) else ""
-        # Normalize field names for frontend
+            name = h.strip()
+            if j == n_head - 1:
+                # 末列（Definition）是自由文本，若含制表符则并回该列
+                row[name] = "\t".join(parts[j:]).strip()
+            else:
+                row[name] = parts[j].strip() if j < len(parts) else ""
+        # Normalize field names for frontend（按实际表头取值，不靠列序）
         hits.append({
             "query": row.get("Query", ""),
             "hit_type": row.get("Hit type", ""),
             "pssm_id": row.get("PSSM-ID", ""),
             "accession": row.get("Accession", ""),
             "short_name": row.get("Short name", ""),
-            "description": row.get("Incomplete", ""),
+            "description": row.get("Definition", ""),   # 真正的域描述列
+            "incomplete": row.get("Incomplete", ""),    # N/C/NC = 残缺命中
             "evalue": row.get("E-Value", ""),
-            "bit_score": row.get("Bit score", ""),
+            "bit_score": row.get("Bitscore", "") or row.get("Bit score", ""),
             "query_from": row.get("From", ""),
             "query_to": row.get("To", ""),
             "superfamily": row.get("Superfamily", ""),
@@ -494,7 +671,7 @@ def _extract_virus(job_id, outdir, cls_path, fasta_path):
     vfa = outdir / f"{job_id}_virus_sequences.fasta"
     rows = []
     with open(vtsv, "w", encoding="utf-8") as ft, open(vfa, "w", encoding="utf-8") as fa:
-        ft.write("contig\ttaxid\ttaxon\t" + "\t".join(RANKS) + "\tlength\tscore\te_value\tgenus_avg_len\n")
+        ft.write("contig\ttaxid\ttaxon\t" + "\t".join(RANKS) + "\tncbi_name\tlength\tscore\te_value\tgenus_avg_len\n")
         for name, taxid, length, score, evalue in contigs:
             info = TAXLIN.get(taxid, {})
             taxon_raw = info.get("sciname", "")
@@ -502,10 +679,13 @@ def _extract_virus(job_id, outdir, cls_path, fasta_path):
             # Use species-level NCBI name (strip strain/isolate if available)
             taxon = _ICTV2NCBI.get(ictv_species, taxon_raw) if ictv_species else taxon_raw
             rankvals = [info.get(r, "") for r in RANKS]
+            # 该 contig 的 NCBI 名：Ref 表精选 Species_NCBI 优先，退化到 sciname
+            ncbi_name = _ncbi_name_for(taxid, taxon_raw)
             genus_name = info.get("genus", "")
             genus_avg = _lookup_genus_avg_len(genus_name)
-            ft.write("\t".join([name, taxid, taxon] + rankvals + [length, score, evalue, str(genus_avg)]) + "\n")
-            row = {"contig": name, "taxid": taxid, "taxon": taxon, "length": length, "score": score, "e_value": evalue, "genus_avg_len": genus_avg}
+            ft.write("\t".join([name, taxid, taxon] + rankvals + [ncbi_name, length, score, evalue, str(genus_avg)]) + "\n")
+            row = {"contig": name, "taxid": taxid, "taxon": taxon, "ncbi_name": ncbi_name,
+                   "length": length, "score": score, "e_value": evalue, "genus_avg_len": genus_avg}
             for r in RANKS:
                 row[r] = info.get(r, "")
             rows.append(row)
@@ -515,7 +695,97 @@ def _extract_virus(job_id, outdir, cls_path, fasta_path):
                 fa.write(f">{name} taxid={taxid} taxon={taxon.replace(' ', '_')} lineage={lineage}\n{_wrap(seq)}\n")
     return str(vfa), str(vtsv), len(contigs), n_total, rows
 
+def _classify_kunpeng(job_id, fasta_path):
+    """Kun-Peng 分类引擎（快、低内存；输出转成 metabuli 兼容结构）。"""
+    job = jobs.get(job_id)
+    if not job: return
+    jobdir = JOBS_DIR / job_id
+    outdir = jobdir / "output"
+    chunk = jobdir / "chunk"
+    os.makedirs(outdir, exist_ok=True)
+    os.makedirs(chunk, exist_ok=True)
+    job["status"] = "running"
+    try:
+        subprocess.run([KUNPENG_BIN, "classify", "--db", KUNPENG_DB,
+                        "--chunk-dir", str(chunk), "--output-dir", str(outdir),
+                        "-p", "3", str(fasta_path)],
+                       capture_output=True, text=True, timeout=600)
+        out_txt = next(iter(sorted(outdir.glob("output_*.txt"))), None)
+        krep = next(iter(sorted(outdir.glob("*.kreport2"))), None)
+        tsv = outdir / f"{job_id}_classifications.tsv"
+        rept = outdir / f"{job_id}_report.tsv"
+        # 转 metabuli 兼容 classifications.tsv（8列: C, name, taxid, len, score, evalue, rank, lineage）
+        n_cls = 0
+        with open(tsv, "w", encoding="utf-8") as ft:
+            ft.write("# Classification of sequences (kun-peng engine)\n")
+            if out_txt:
+                for line in open(out_txt, encoding="utf-8", errors="replace"):
+                    p = line.rstrip("\n").split("\t")
+                    if len(p) < 5:
+                        continue
+                    classified = "1" if p[0] == "C" else "0"
+                    name, taxid, length = p[1], p[2], p[3]
+                    info = TAXLIN.get(taxid, {})
+                    rank = "species" if taxid != "0" else ""
+                    lineage = ";".join(v for v in (info.get(r, "") for r in RANKS) if v)
+                    ft.write("\t".join([classified, name, taxid, length, "0", "0", rank, lineage]) + "\n")
+                    if classified == "1":
+                        n_cls += 1
+        # kreport2 -> report.tsv（列序与 metabuli report 一致）
+        if krep:
+            with open(rept, "w", encoding="utf-8") as fr, open(krep, encoding="utf-8", errors="replace") as fk:
+                for line in fk:
+                    p = line.rstrip("\n").split("\t")
+                    if len(p) >= 6:
+                        fr.write("\t".join(p[:6]) + "\n")
+        ok = tsv.exists() or rept.exists()
+        job["status"] = "done" if ok else "no_result"
+        job["finished"] = datetime.now().isoformat(timespec="seconds")
+        job["files"] = {"classifications": str(tsv) if tsv.exists() else None,
+            "report": str(rept) if rept.exists() else None,
+            "krona": None}
+        if rept.exists():
+            top = []
+            with open(rept) as f:
+                for line in f:
+                    if line.startswith("#") or not line.strip(): continue
+                    p = line.strip().split("\t")
+                    if len(p) >= 6: top.append({"proportion":p[0],"count":p[1],"taxon_count":p[2],"rank":p[3],"taxid":p[4],"name":p[5]})
+                    if len(top) >= 15: break
+            job["summary"] = top
+        if tsv.exists():
+            try:
+                vfa, vtsv, n_virus, n_total, vrows = _extract_virus(job_id, outdir, tsv, fasta_path)
+                job["files"]["virus_fasta"] = vfa if n_virus > 0 else None
+                job["files"]["virus_tsv"] = vtsv if n_virus > 0 else None
+                job["virus_summary"] = {"virus_contigs": n_virus, "total_contigs": n_total}
+                job["virus_contigs"] = vrows[:5000]
+            except Exception as e:
+                job["virus_error"] = str(e)
+        try:
+            if fasta_path.exists():
+                job["sequences"] = _parse_fasta(fasta_path)
+        except Exception:
+            job["sequences"] = {}
+        _discard_input(fasta_path)
+        _cleanup_job_after(job_id)          # 成功路径：2h 后回收 job 目录 + 内存条目
+    except subprocess.TimeoutExpired:
+        job["status"] = "timeout"
+        job["finished"] = datetime.now().isoformat(timespec="seconds")
+        _discard_input(fasta_path)          # 超时：立即删输入，2h 后回收 job 目录（审计 S5）
+        _cleanup_job_after(job_id)
+    except Exception as e:
+        job["status"] = "failed"
+        job["error"] = str(e)
+        job["finished"] = datetime.now().isoformat(timespec="seconds")
+        _discard_input(fasta_path)          # 失败：立即删输入，2h 后回收 job 目录（审计 S5）
+        _cleanup_job_after(job_id)
+
+
 def _classify(job_id, fasta_path):
+    engine = os.environ.get("CLASSIFY_ENGINE", "metabuli")
+    if engine == "kunpeng":
+        return _classify_kunpeng(job_id, fasta_path)
     job = jobs.get(job_id)
     if not job: return
     outdir = JOBS_DIR / job_id / "output"
@@ -530,6 +800,7 @@ def _classify(job_id, fasta_path):
         kr = outdir / f"{job_id}_krona.html"
         ok = tsv.exists() or rept.exists()
         job["status"] = "done" if ok else "no_result"
+        job["finished"] = datetime.now().isoformat(timespec="seconds")
         job["files"] = {"classifications": str(tsv) if tsv.exists() else None,
             "report": str(rept) if rept.exists() else None,
             "krona": str(kr) if kr.exists() else None}
@@ -558,18 +829,19 @@ def _classify(job_id, fasta_path):
                 job["sequences"] = _parse_fasta(fasta_path)
         except Exception:
             job["sequences"] = {}
-        if fasta_path.exists(): fasta_path.unlink()
-        def _c():
-            time.sleep(7200)
-            d = JOBS_DIR / job_id
-            if d.exists(): shutil.rmtree(d, ignore_errors=True)
-            jobs.pop(job_id, None)
-        threading.Thread(target=_c, daemon=True).start()
+        _discard_input(fasta_path)
+        _cleanup_job_after(job_id)          # 成功路径：2h 后回收 job 目录 + 内存条目
     except subprocess.TimeoutExpired:
         job["status"] = "timeout"
+        job["finished"] = datetime.now().isoformat(timespec="seconds")
+        _discard_input(fasta_path)          # 超时：立即删输入，2h 后回收 job 目录（审计 S5）
+        _cleanup_job_after(job_id)
     except Exception as e:
         job["status"] = "failed"
         job["error"] = str(e)
+        job["finished"] = datetime.now().isoformat(timespec="seconds")
+        _discard_input(fasta_path)          # 失败：立即删输入，2h 后回收 job 目录（审计 S5）
+        _cleanup_job_after(job_id)
 
 
 # ── BLAST worker (blastn / blastx) ──
@@ -579,6 +851,7 @@ def _blast_worker(job_id, query_text, program, database):
     if not job:
         return
     job["status"] = "submitting"
+    job["started"] = datetime.now().isoformat(timespec="seconds")
     try:
         seqs = _read_fasta(query_text, is_path=False)
         if not seqs:
@@ -628,19 +901,16 @@ def _blast_worker(job_id, query_text, program, database):
                         all_hits.append({"query": t["header"], "error": str(e), "accession": "", "title": "BLAST failed", "evalue": "", "identity": 0, "align_len": 0, "bit_score": 0})
         all_hits.sort(key=lambda h: float(h.get("evalue") or "999"))
         job["status"] = "done"
+        job["finished"] = datetime.now().isoformat(timespec="seconds")
         job["hits"] = all_hits
         job["hit_count"] = len(all_hits)
     except Exception as e:
         job["status"] = "failed"
         job["error"] = str(e)
+        job["finished"] = datetime.now().isoformat(timespec="seconds")
     finally:
-        def _c():
-            time.sleep(7200)
-            d = JOBS_DIR / job_id
-            if d.exists():
-                shutil.rmtree(d, ignore_errors=True)
-            jobs.pop(job_id, None)
-        threading.Thread(target=_c, daemon=True).start()
+        _hist_record(job, "finish")
+        _cleanup_job_after(job_id)
 
 
 # ── CDD worker ──
@@ -650,6 +920,7 @@ def _cdd_worker(job_id, query_text):
     if not job:
         return
     job["status"] = "submitting"
+    job["started"] = datetime.now().isoformat(timespec="seconds")
     try:
         # If nucleotide, translate to 6-frame protein
         seqs = _read_fasta(query_text, is_path=False)
@@ -668,28 +939,147 @@ def _cdd_worker(job_id, query_text):
         job["status"] = "running"
         hits, _ = _poll_cdd(cdsid)
         job["status"] = "done"
+        job["finished"] = datetime.now().isoformat(timespec="seconds")
         job["hits"] = hits
         job["hit_count"] = len(hits)
     except Exception as e:
         job["status"] = "failed"
         job["error"] = str(e)
+        job["finished"] = datetime.now().isoformat(timespec="seconds")
     finally:
-        def _c():
-            time.sleep(7200)
-            d = JOBS_DIR / job_id
-            if d.exists():
-                shutil.rmtree(d, ignore_errors=True)
-            jobs.pop(job_id, None)
-        threading.Thread(target=_c, daemon=True).start()
+        _hist_record(job, "finish")
+        _cleanup_job_after(job_id)
 
 def _start(content, fname):
     jid = uuid.uuid4().hex[:12]
     jd = JOBS_DIR / jid; os.makedirs(jd, exist_ok=True)
     fp = jd / "input.fasta"; fp.write_bytes(content)
-    jobs[jid] = {"id":jid, "status":"queued", "created":datetime.now().isoformat(),
-        "filename":fname, "size":len(content), "files":{}}
-    threading.Thread(target=_classify, args=(jid, fp), daemon=True).start()
+    jobs[jid] = {"id":jid, "status":"queued", "created":datetime.now().isoformat(timespec="seconds"),
+        "filename":fname, "size":len(content), "files":{}, "tool":"metabuli"}
+    _hist_record(jobs[jid], "submit")
+    CLASSIFY_QUEUE.put({"jid": jid, "fp": fp, "kind": "classify"})
     return jsonify({"job_id":jid, "status":"queued"})
+
+
+# ── Local BLAST against the platform reference DB ──
+BLASTN_BIN = next((p for p in ("/opt/miniconda3/bin/blastn", "/usr/local/bin/blastn")
+                   if os.path.exists(p)), "blastn")
+BLAST_DB = "/opt/plant_virus_db/blast_db/plant_virus_ref"
+_REF_INFO = None
+
+
+def _load_ref_info():
+    """Accession → 精选元数据（物种/科/属/宿主等），供本地 BLAST 结果增强。"""
+    global _REF_INFO
+    if _REF_INFO is not None:
+        return _REF_INFO
+    info = {}
+    path = Path("/opt/plant_virus_db/plant_virus_db_pipeline/docs/data/Plant_Virus_Ref.Info.tsv")
+    cols = {}
+    if path.exists():
+        with open(path, encoding="utf-8", errors="replace") as f:
+            header = f.readline().rstrip("\n").split("\t")
+            want = {"Species_ICTV": "species", "Species_NCBI": "species_ncbi",
+                    "VMR_Family": "family", "VMR_Genus": "genus", "Host": "host",
+                    "Segment": "segment", "Length": "length", "GenBank_Title": "title"}
+            cols = {i: want[h] for i, h in enumerate(header) if h in want}
+            for line in f:
+                p = line.rstrip("\n").split("\t")
+                if not p or not p[0]:
+                    continue
+                info[p[0]] = {name: (p[i] if i < len(p) else "") for i, name in cols.items()}
+    _REF_INFO = info
+    print(f"Ref info: {len(info)} accessions loaded")
+    return info
+
+
+def _local_blast(job_id, fasta_path):
+    """对平台自有参考库跑 blastn（串行队列内执行）。"""
+    job = jobs.get(job_id)
+    if not job:
+        return
+    outdir = JOBS_DIR / job_id
+    out_tsv = outdir / f"{job_id}_local_blast.tsv"
+    try:
+        cmd = [BLASTN_BIN, "-query", str(fasta_path), "-db", BLAST_DB,
+               "-outfmt", "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen slen",
+               "-max_target_seqs", "20", "-evalue", "1e-5",
+               "-num_threads", "2", "-out", str(out_tsv)]
+        subprocess.run(cmd, capture_output=True, text=True, timeout=600)
+        ref_info = _load_ref_info()
+        hits = []
+        if out_tsv.exists():
+            with open(out_tsv, encoding="utf-8", errors="replace") as f:
+                for line in f:
+                    p = line.rstrip("\n").split("\t")
+                    if len(p) < 14:
+                        continue
+                    acc = p[1].split(".")[0]
+                    meta = ref_info.get(p[1]) or ref_info.get(acc) or {}
+                    qcov = 0
+                    try:
+                        qcov = round((int(p[7]) - int(p[6]) + 1) / int(p[12]) * 100)
+                    except Exception:
+                        pass
+                    hits.append({
+                        "query": p[0], "accession": p[1],
+                        "species": meta.get("species", "") or meta.get("species_ncbi", ""),
+                        "family": meta.get("family", ""), "genus": meta.get("genus", ""),
+                        "host": meta.get("host", ""), "segment": meta.get("segment", ""),
+                        "identity": float(p[2]) if p[2] else 0,
+                        "align_len": int(p[3]) if p[3] else 0,
+                        "evalue": p[10], "bit_score": float(p[11]) if p[11] else 0,
+                        "query_cov": qcov, "subject_len": p[13],
+                    })
+        hits.sort(key=lambda h: (-h["bit_score"], h["evalue"]))
+        job["hits"] = hits[:1000]
+        job["hit_count"] = len(hits)
+        job["files"]["local_blast_tsv"] = str(out_tsv)
+        job["status"] = "done"
+        job["finished"] = datetime.now().isoformat(timespec="seconds")
+    except subprocess.TimeoutExpired:
+        job["status"] = "timeout"
+        job["finished"] = datetime.now().isoformat(timespec="seconds")
+    except Exception as e:
+        job["status"] = "failed"
+        job["error"] = str(e)
+        job["finished"] = datetime.now().isoformat(timespec="seconds")
+    finally:
+        if fasta_path.exists():
+            fasta_path.unlink()
+        _cleanup_job_after(job_id)
+
+
+@app.route("/metabuli/local_blast", methods=["POST"])
+def local_blast():
+    if not os.path.exists(BLAST_DB + ".nhr"):
+        return jsonify({"error": "Local BLAST database is not built yet"}), 503
+    f = request.files.get("file")
+    if f and f.filename and f.filename.lower().endswith((".fasta", ".fa", ".fna", ".faa", ".txt")):
+        c = f.read()
+        if len(c) > MAX_SIZE:
+            return jsonify({"error": "File >100MB"}), 400
+    else:
+        data = request.get_json(silent=True) or {}
+        seq = data.get("sequence", "").strip()
+        if not seq:
+            return jsonify({"error": "No input"}), 400
+        if not seq.startswith(">"):
+            return jsonify({"error": "Must start with >"}), 400
+        if len(seq) > MAX_SIZE:
+            return jsonify({"error": "Input >100MB"}), 400
+        c = seq.encode()
+    jid = uuid.uuid4().hex[:12]
+    jd = JOBS_DIR / jid
+    os.makedirs(jd, exist_ok=True)
+    fp = jd / "input.fasta"
+    fp.write_bytes(c)
+    jobs[jid] = {"id": jid, "status": "queued", "created": datetime.now().isoformat(timespec="seconds"),
+                 "filename": (f.filename if f and f.filename else "pasted.fasta"),
+                 "size": len(c), "files": {}, "tool": "local_blast"}
+    _hist_record(jobs[jid], "submit")
+    CLASSIFY_QUEUE.put({"jid": jid, "fp": fp, "kind": "local_blast"})
+    return jsonify({"job_id": jid, "status": "queued", "tool": "local_blast"})
 
 @app.route("/metabuli/classify", methods=["POST"])
 def classify():
@@ -709,7 +1099,15 @@ def classify():
 @app.route("/metabuli/status/<job_id>")
 def status(job_id):
     j = jobs.get(job_id)
-    return jsonify(j) if j else (jsonify({"error":"Not found"}), 404)
+    if not j:
+        return jsonify({"error": "Not found"}), 404
+    if j.get("status") == "queued":
+        ids = _queue_snapshot()
+        if job_id in ids:
+            j["queue_pos"] = ids.index(job_id) + 1
+        if CLASSIFY_CURRENT["id"]:
+            j["queue_running"] = CLASSIFY_CURRENT["id"]
+    return jsonify(j)
 
 @app.route("/metabuli/classifications/<job_id>")
 def classifications_json(job_id):
@@ -790,8 +1188,9 @@ def download(job_id, ftype):
 def cdd_search():
     """Submit protein (or nucleotide → auto-translated) for NCBI CD-Search."""
     jid = uuid.uuid4().hex[:12]
-    jobs[jid] = {"id": jid, "status": "queued", "created": datetime.now().isoformat(),
+    jobs[jid] = {"id": jid, "status": "queued", "created": datetime.now().isoformat(timespec="seconds"),
                   "tool": "cdd"}
+    _hist_record(jobs[jid], "submit")
     query_text = ""
     f = request.files.get("file")
     if f and f.filename:
@@ -820,8 +1219,9 @@ def cdd_status(job_id):
 def blastn_search():
     """Submit nucleotide query for NCBI BLASTN (nt database)."""
     jid = uuid.uuid4().hex[:12]
-    jobs[jid] = {"id": jid, "status": "queued", "created": datetime.now().isoformat(),
+    jobs[jid] = {"id": jid, "status": "queued", "created": datetime.now().isoformat(timespec="seconds"),
                   "tool": "blastn", "program": "blastn", "database": "core_nt"}
+    _hist_record(jobs[jid], "submit")
     query_text = ""
     f = request.files.get("file")
     if f and f.filename:
@@ -844,8 +1244,9 @@ def blastn_search():
 def blastx_search():
     """Submit nucleotide query for NCBI BLASTX (nr protein database)."""
     jid = uuid.uuid4().hex[:12]
-    jobs[jid] = {"id": jid, "status": "queued", "created": datetime.now().isoformat(),
+    jobs[jid] = {"id": jid, "status": "queued", "created": datetime.now().isoformat(timespec="seconds"),
                   "tool": "blastx", "program": "blastx", "database": "nr_cluster_seq"}
+    _hist_record(jobs[jid], "submit")
     query_text = ""
     f = request.files.get("file")
     if f and f.filename:
@@ -867,6 +1268,52 @@ def blastx_search():
 def blast_status(job_id):
     j = jobs.get(job_id)
     return jsonify(j) if j else (jsonify({"error": "Not found"}), 404)
+
+
+# ── Task Center ──
+@app.route("/metabuli/tasks")
+def tasks_center():
+    """任务中心：当前运行 / 排队中 / 近 1 小时历史任务。"""
+    cur_id = CLASSIFY_CURRENT["id"]
+    cur = jobs.get(cur_id) if cur_id else None
+
+    def _summ(j, pos=None):
+        return {"id": j.get("id", ""), "tool": j.get("tool", "metabuli"),
+                "filename": j.get("filename", ""), "size": j.get("size", 0),
+                "status": j.get("status", ""), "created": j.get("created", ""),
+                "started": j.get("started", ""), "finished": j.get("finished", ""),
+                "queue_pos": pos, "error": (j.get("error") or "")[:200]}
+
+    queued = []
+    for pos, jid in enumerate(_queue_snapshot(), 1):
+        j = jobs.get(jid)
+        if j:
+            queued.append(_summ(j, pos))
+
+    seen = {}
+    cutoff = time.time() - HISTORY_WINDOW_SEC
+    if HISTORY_FILE.exists():
+        try:
+            with open(HISTORY_FILE, encoding="utf-8") as f:
+                for line in f:
+                    try:
+                        rec = json.loads(line)
+                    except Exception:
+                        continue
+                    try:
+                        ts = datetime.fromisoformat(rec["ts"]).timestamp()
+                    except Exception:
+                        continue
+                    if ts < cutoff:
+                        continue
+                    key = rec.get("id") or rec.get("ts")
+                    seen[key] = rec
+        except Exception:
+            pass
+    history = sorted(seen.values(), key=lambda r: r["ts"], reverse=True)
+    return jsonify({"current": _summ(cur) if cur else None,
+                    "queue_length": len(queued), "queued": queued,
+                    "history": history})
 
 # Separate HTML file for cleaner maintenance
 HTML_FILE = Path(__file__).parent / "metabuli_page.html"
@@ -897,16 +1344,32 @@ _primer_mgr = _DesignJobManager(
     jobs_dir=Path("/opt/plant_virus_db/metabuli_jobs/primer_design"),
     species_fasta_dir=Path("/opt/plant_virus_db/primer_design_server/split_species/species")
 )
+_primer_hist_done = set()
 
 @app.route("/metabuli/primer_design", methods=["POST"])
 def primer_design():
+    def _clamp_int(raw, default, lo, hi):
+        """表单 int 参数：解析失败回落默认值，并夹到 [lo, hi]（审计：参数健壮性）。"""
+        try:
+            v = int(str(raw).strip())
+        except (TypeError, ValueError):
+            try:
+                v = int(default)
+            except (TypeError, ValueError):
+                v = lo
+        return max(lo, min(hi, v))
+
     try:
         seqs = None
         species_name = request.form.get("species_name", "").strip()
         mode = request.form.get("mode", "PCR").strip()
-        num_pairs = int(request.form.get("num_pairs", "5"))
-        prod_min = int(request.form.get("prod_min", "250"))
-        prod_max = int(request.form.get("prod_max", "1000"))
+        num_pairs = _clamp_int(request.form.get("num_pairs", "5"), 5, 1, 50)
+        prod_min = _clamp_int(request.form.get("prod_min", "250"), 250, 50, 20000)
+        prod_max = _clamp_int(request.form.get("prod_max", "1000"), 1000, 50, 20000)
+        if prod_max <= prod_min:
+            prod_max = prod_min + 1
+        mode = {"PCR": "PCR", "QPCR": "qPCR",
+                "DEGENERATE": "DEGENERATE", "TILED": "TILED"}.get(mode.upper(), "PCR")
         if "file" in request.files:
             f = request.files["file"]
             raw = f.read().decode("utf-8", errors="replace")
@@ -921,6 +1384,9 @@ def primer_design():
         job_id = _primer_mgr.submit(sequences=seqs, species_name=species_name or "custom_input",
                                      design_mode=mode, num_pairs=num_pairs,
                                      prod_min=prod_min, prod_max=prod_max)
+        _hist_append({"id": job_id, "tool": "primer", "filename": species_name or "custom_input",
+                      "size": 0, "status": "queued", "event": "submit", "error": "",
+                      "ts": datetime.now().isoformat(timespec="seconds")})
         return jsonify({"job_id": job_id})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -930,6 +1396,13 @@ def primer_status(job_id):
     s = _primer_mgr.status(job_id)
     if not s:
         return jsonify({"status": "not_found"}), 404
+    st = s.get("status")
+    if job_id not in _primer_hist_done and st in ("completed", "failed"):
+        _primer_hist_done.add(job_id)
+        _hist_append({"id": job_id, "tool": "primer", "filename": s.get("species_name", ""),
+                      "size": 0, "status": "done" if st == "completed" else "failed",
+                      "event": "finish", "error": (s.get("error") or "")[:200],
+                      "ts": datetime.now().isoformat(timespec="seconds")})
     result = {"status": "done" if s["status"] == "completed" else
                        "running" if s["status"] in ("pending", "running") else
                        "failed",
@@ -994,7 +1467,11 @@ def _fetch_gb(accession):
             return SeqIO.read(f, "genbank")
     try:
         from Bio import Entrez, SeqIO
-        Entrez.email = "plantvirusdb@example.com"
+        # NCBI 合规：只用真实可联系邮箱（环境变量 NCBI_EMAIL），不再写假邮箱
+        Entrez.email = NCBI_EMAIL
+        Entrez.tool = NCBI_TOOL
+        if not Entrez.email:
+            _warn_missing_ncbi_email()
         handle = Entrez.efetch(db="nucleotide", id=accession, rettype="gb", retmode="text")
         record = SeqIO.read(handle, "genbank")
         handle.close()

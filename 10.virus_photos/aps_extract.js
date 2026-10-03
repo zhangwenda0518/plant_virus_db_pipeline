@@ -1,17 +1,17 @@
 /**
- * APS Image Database — 浏览器 Console 提取脚本
+ * APS Image Database — Explorer Console 提取脚本
  *
  * 用法:
- * 1. 浏览器打开 https://imagedatabase.apsnet.org/ 并登录
- * 2. 搜索/筛选到你要的图片 (如搜索 "virus" 或选 Category: Viruses)
+ * 1. Explorer打开 https://imagedatabase.apsnet.org/ 并登录
+ * 2. Search/筛选到你要 图片 (如Search "virus" 或选 Category: Viruses)
  * 3. F12 打开 Console, 粘贴运行此脚本
- * 4. 自动翻页收集所有图片数据, 完成后下载 TSV
+ * 4. 自动翻 pages收集All 图片数据, 完成后Download TSV
  */
 
 (async function extractAPS() {
   const results = [];
   const MAX_PAGES = 100; // 安全上限
-  const DELAY = 1500;    // 页面间延迟 (ms)
+  const DELAY = 1500;    //  pages面间延迟 (ms)
 
   function parseImageCard(card) {
     const img = card.querySelector('img');
@@ -73,7 +73,7 @@
     // Look for "Next" or ">" pagination link
     const links = document.querySelectorAll('a');
     for (const a of links) {
-      if (a.textContent.match(/Next|>|»|下一页/) && a.href) return a;
+      if (a.textContent.match(/Next|>|»|Next/) && a.href) return a;
     }
     // Try numbered page links
     const currentPageEl = document.querySelector('.current-page, .active-page, [class*="current"]');

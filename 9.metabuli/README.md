@@ -23,8 +23,8 @@ flowchart TB
     subgraph Verify["五大分析标签"]
         METABULI_TAB["① Metabuli<br/>k-mer 8 级分类<br/>Sankey + Krona + VSC 表"]
         CDD_TAB["② CDD<br/>NCBI Conserved Domain<br/>6-frame 翻译<br/>蛋白域架构"]
-        BLASTN_TAB["③ BLASTN<br/>NCBI nt 核酸比对<br/>Virus-restricted"]
-        BLASTX_TAB["④ BLASTX<br/>NCBI nr 蛋白比对<br/>远缘病毒检测"]
+        BLASTN_TAB["③ BLASTN<br/>NCBI core_nt 核酸比对<br/>完整 nt 库（无病毒限定）"]
+        BLASTX_TAB["④ BLASTX<br/>NCBI nr 蛋白比对<br/>完整 nr 库<br/>远缘病毒检测"]
         PRIMER_TAB["⑤ Primer<br/>Primer3 + varVAMP<br/>一键引物设计<br/>+ GenBank 基因可视化"]
     end
 
@@ -81,13 +81,14 @@ flowchart TB
 ### ③ BLASTN — 核酸比对
 
 - 对选中的 contig 提交 NCBI BLASTN
-- 数据库: NCBI nt (Virus-restricted)
+- 数据库: NCBI **完整 nt 库**（`core_nt`）——**未加病毒 Entrez 限定**（代码 `BLAST_ENTREZ=""`，`metabuli_api.py`），结果可能命中非病毒序列，需自行判读
 - Top 50 hits, 含 accession/description/identity/coverage/e-value
+- 提交携带 `tool=PVDB-metabuli`；联系邮箱取自环境变量 `NCBI_EMAIL`（未设置时只带 tool 并打警告日志）
 
 ### ④ BLASTX — 翻译蛋白比对
 
 - 6-frame 翻译后对 NCBI nr 进行 BLASTX
-- 数据库: NCBI nr (Virus-restricted)
+- 数据库: NCBI **完整 nr 库**（`nr_cluster_seq`），同样**未加病毒限定**（`BLAST_ENTREZ=""`）
 - 远缘病毒检测: 蛋白比对灵敏度优于核酸
 
 ### ⑤ Primer — 引物设计 ✨ NEW (2026-07-23)
@@ -204,8 +205,8 @@ sequenceDiagram
 | 最大输入 | 100 MB | 可配置 `MAX_SIZE` |
 | 分类耗时 | 3-5 分钟 | 典型输入大小 |
 | 数据库 taxid | 22,190 | 覆盖 ICTV 全部病毒分类单元 |
-| Job 保留时间 | 2 小时 | 自动清理 |
-| BLAST/CDD 等待 | ≤ 5 分钟 | 轮询间隔 5s |
+| Job 保留时间 | 2 小时 | 自动清理（成功/失败/超时一致） |
+| BLAST/CDD 等待 | ≤ 50 分钟 | 轮询间隔 10s（`BLAST_TIMEOUT=CDD_TIMEOUT=3000s`） |
 | GenBank 缓存 | 持久化 | 按 accession 存储 .gb 文件 |
 
 ---
@@ -243,6 +244,13 @@ python metabuli_api.py         # :5004
 | **内存** | ~500 MB (分类进程 + taxlin 缓存) |
 | **磁盘** | 910 MB (Metabuli DB) + ~50 MB (Job 临时文件) |
 | **Python** | 3.10+, sys.path 需含 `/opt/plant_virus_db/primer_design_server` |
+| **环境变量** | `NCBI_EMAIL`（NCBI 提交/Entrez 联系邮箱，政策要求真实可联系；未设置时请求只带 `tool=PVDB-metabuli` 并打警告日志） |
+
+> ⚠️ **安全边界（重要）**：本服务自身**无任何鉴权**——classify / blastn / blastx / cdd /
+> primer_design 等 POST 接口对可达网络开放（:5004，`host="0.0.0.0"`），存在算力白嫖、
+> 以服务器名义向 NCBI 提交任务、以及 Job 目录被反复写入的滥用面。
+> **必须依赖 nginx 层限流（`limit_req` / `limit_conn`）、来源 IP 白名单或网络隔离**，
+> 不要把 :5004 直接暴露到公网；`NCBI_EMAIL` 需设为真实可联系邮箱（NCBI 政策要求）。
 
 ## 最近修复 (2026-07-23)
 

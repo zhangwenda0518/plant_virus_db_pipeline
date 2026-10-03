@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Metabuli — Virus Sequence Analysis</title>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<link href="/lib/bootstrap.min.css" rel="stylesheet">
+<script src="/lib/plotly.min.js"></script>
 <style>
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;margin:0}
 .bar{background:#1a5276;display:flex;align-items:center;padding:0 24px;height:52px}
@@ -60,6 +61,7 @@ table.tb tr:hover{background:#f8fbff}
   <a class="brand" href="/">Plant Virus DB</a>
   <span class="sep">|</span>
   <a href="/reference/">Reference</a>
+  <a href="/virus/">Virus Profile</a>
   <a href="/photos/">Photos</a>
   <a href="/te/">TE·EVE</a>
   <a href="/vector/">Vector</a>
@@ -84,7 +86,9 @@ table.tb tr:hover{background:#f8fbff}
   <button data-tab="cdd" onclick="switchTab('cdd')">CDD <span class="tab-badge">domain</span></button>
   <button data-tab="blastn" onclick="switchTab('blastn')">BLASTN <span class="tab-badge">nt→nt</span></button>
   <button data-tab="blastx" onclick="switchTab('blastx')">BLASTX <span class="tab-badge">nt→aa</span></button>
+  <button data-tab="localblast" onclick="switchTab('localblast')">DB BLAST <span class="tab-badge">local</span></button>
   <button data-tab="primer" onclick="switchTab('primer')">Primer <span class="tab-badge">design</span></button>
+  <button data-tab="tasks" onclick="switchTab('tasks')">Tasks <span class="tab-badge">center</span></button>
 </div>
 
 <div class="main">
@@ -174,6 +178,16 @@ table.tb tr:hover{background:#f8fbff}
   <div id="blastxResultContent"></div>
 </div>
 
+<div class="c" id="localBlastResultCard" style="display:none">
+  <h3>Local DB BLAST Hits <span id="localBlastJobIdLabel" style="font-size:11px;color:#888"></span></h3>
+  <div id="localBlastResultContent"></div>
+</div>
+
+<div class="c" id="tasksCard" style="display:none">
+  <h3>Task Center <span style="font-size:11px;color:#888;font-weight:400">live queue &middot; last-1-hour history &middot; auto-refresh 5s</span></h3>
+  <div id="tasksContent" style="font-size:13px"><div style="color:#888">Loading&hellip;</div></div>
+</div>
+
 </div>
 
 <script>
@@ -195,7 +209,11 @@ var TAB_INFO = {
   primer:    { hero: "Primer Design — design PCR/qPCR primers from your sequences using Primer3",
               hint: "FASTA nucleotide sequence(s) for primer design", btn: "Design Primers", route: "/metabuli/primer_design", poll: "/metabuli/primer_status/", label: "Design" },
   blastx:    { hero: "BLASTX — translated nucleotide-to-protein similarity search against NCBI nr",
-              hint: "FASTA nucleotide sequence", btn: "BLASTX Search", route: "/metabuli/blastx", poll: "/metabuli/blast_status/", label: "BLASTX" }
+              hint: "FASTA nucleotide sequence", btn: "BLASTX Search", route: "/metabuli/blastx", poll: "/metabuli/blast_status/", label: "BLASTX" },
+  localblast: { hero: "DB BLAST — search your sequence against THIS platform's 12,184 curated plant virus reference genomes (local, fast, no queue at NCBI)",
+              hint: "FASTA nucleotide sequence(s)", btn: "Search Local DB", route: "/metabuli/local_blast", poll: "/metabuli/blast_status/", label: "DB BLAST" },
+  tasks:     { hero: "Task Center — current job, queue, and history of the last hour",
+              hint: "", btn: "Run", route: "", poll: "", label: "Run" }
 };
 
 function switchTab(tab) {
@@ -213,12 +231,17 @@ function switchTab(tab) {
   document.getElementById('cddResultCard').style.display = 'none';
   document.getElementById('blastnResultCard').style.display = 'none';
   document.getElementById('blastxResultCard').style.display = 'none';
+  document.getElementById('localBlastResultCard').style.display = 'none';
   document.getElementById('primerResultCard').style.display = 'none';
-  var cardMap = {metabuli:'resultCard', cdd:'cddResultCard', blastn:'blastnResultCard', blastx:'blastxResultCard', primer:'primerResultCard'};
+  document.getElementById('tasksCard').style.display = 'none';
+  document.getElementById('inputCard').style.display = (tab === 'tasks') ? 'none' : 'block';
+  document.getElementById('submitCard').style.display = (tab === 'tasks') ? 'none' : 'block';
+  var cardMap = {metabuli:'resultCard', cdd:'cddResultCard', blastn:'blastnResultCard', blastx:'blastxResultCard', localblast:'localBlastResultCard', primer:'primerResultCard', tasks:'tasksCard'};
   var target = cardMap[tab];
   if (target) document.getElementById(target).style.display = 'block';
   document.getElementById('statusDiv').innerHTML = '';
   document.getElementById('primerParamsCard').style.display = (tab === 'primer') ? 'block' : 'none';
+  if (tab === 'tasks') refreshTasks();
 }
 
 // ── Helpers ──
@@ -327,7 +350,17 @@ async function pollJob(jobId) {
       }
       // Progress bar
       var pct = Math.min(90, (data.status === 'submitting' ? 15 : i * 3));
-      var label = data.status === 'submitting' ? 'Submitted to NCBI...' : 'Running...';
+      var label;
+      if (data.status === 'queued') {
+        pct = 8;
+        label = data.queue_pos ? ('Queued — position #' + data.queue_pos) : 'Queued...';
+      } else if (data.status === 'submitting') {
+        label = 'Submitted to NCBI...';
+      } else if (data.status === 'running' && data.progress_msg) {
+        label = data.progress_msg;
+      } else {
+        label = 'Running...';
+      }
       getResultEl().innerHTML = '<div class="progress"><div class="progress-bar" style="width:' + pct + '%">' + label + '</div></div>';
       document.getElementById('goBtn').disabled = false;
       document.getElementById('btnLabel').textContent = TAB_INFO[ACTIVE_TAB].btn;
@@ -342,8 +375,78 @@ function getResultEl() {
     case 'cdd':    document.getElementById('cddResultCard').style.display = 'block'; return document.getElementById('cddResultContent');
     case 'blastn': document.getElementById('blastnResultCard').style.display = 'block'; return document.getElementById('blastnResultContent');
     case 'blastx': document.getElementById('blastxResultCard').style.display = 'block'; return document.getElementById('blastxResultContent');
+    case 'localblast': document.getElementById('localBlastResultCard').style.display = 'block'; return document.getElementById('localBlastResultContent');
     case 'primer': document.getElementById('primerResultCard').style.display = 'block'; return document.getElementById('primerResultContent');
     default:       document.getElementById('resultCard').style.display = 'block'; return document.getElementById('resultContent');
+  }
+}
+
+// ── Task Center ──
+setInterval(function () { if (ACTIVE_TAB === 'tasks') refreshTasks(); }, 5000);
+var _statusBadge = function (s) {
+  var map = {queued:['#fff3e0','#e65100','QUEUED'], running:['#e3f2fd','#1565c0','RUNNING'],
+             submitting:['#e3f2fd','#1565c0','SUBMITTED'], done:['#e8f5e9','#2e7d32','DONE'],
+             no_result:['#eceff1','#546e7a','NO RESULT'], failed:['#ffebee','#c62828','FAILED'],
+             timeout:['#ffebee','#c62828','TIMEOUT']};
+  var m = map[s] || ['#eceff1','#546e7a',(s||'').toUpperCase()];
+  return '<span style="background:' + m[0] + ';color:' + m[1] + ';padding:1px 8px;border-radius:3px;font-size:10px;font-weight:700">' + m[2] + '</span>';
+};
+var _toolBadge = function (t) {
+  var names = {metabuli:'Metabuli', cdd:'CDD', blastn:'BLASTN', blastx:'BLASTX', primer:'Primer', local_blast:'DB BLAST'};
+  return '<b>' + (names[t] || t || 'Job') + '</b>';
+};
+var _fmtSize = function (n) {
+  if (!n) return '';
+  if (n > 1048576) return (n/1048576).toFixed(1) + ' MB';
+  if (n > 1024) return (n/1024).toFixed(1) + ' KB';
+  return n + ' B';
+};
+var _fmtTime = function (iso) { return iso ? String(iso).replace('T', ' ') : ''; };
+
+async function refreshTasks() {
+  var el = document.getElementById('tasksContent');
+  if (!el) return;
+  try {
+    var r = await fetch('/metabuli/tasks');
+    var d = await r.json();
+    var h = '';
+    h += '<h4 style="margin:8px 0 6px;font-size:13px;color:#1a5276">&#9654; Current</h4>';
+    if (d.current) {
+      var c = d.current;
+      h += '<div style="padding:8px 12px;border-left:3px solid #2e86c1;background:#f4f9fd;margin-bottom:10px">'
+         + _toolBadge(c.tool) + ' ' + _statusBadge(c.status) + ' <code>' + escapeHtml(c.id) + '</code> '
+         + escapeHtml(c.filename) + (_fmtSize(c.size) ? ' (' + _fmtSize(c.size) + ')' : '')
+         + '<div style="font-size:11px;color:#888">started ' + _fmtTime(c.started) + '</div></div>';
+    } else {
+      h += '<div style="color:#999;margin-bottom:10px">No job running</div>';
+    }
+    h += '<h4 style="margin:8px 0 6px;font-size:13px;color:#1a5276">&#8987; Queue (' + (d.queue_length || 0) + ')</h4>';
+    if (d.queued && d.queued.length) {
+      h += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
+      d.queued.forEach(function (q, i) {
+        h += '<tr style="border-bottom:1px solid #eee"><td style="padding:4px 8px;width:34px">#' + (i+1) + '</td>'
+           + '<td style="padding:4px 8px">' + _toolBadge(q.tool) + '</td>'
+           + '<td style="padding:4px 8px">' + escapeHtml(q.filename) + '</td>'
+           + '<td style="padding:4px 8px">' + _statusBadge(q.status) + '</td>'
+           + '<td style="padding:4px 8px;color:#888">' + _fmtTime(q.created) + '</td></tr>';
+      });
+      h += '</table>';
+    } else { h += '<div style="color:#999;margin-bottom:10px">Queue is empty</div>'; }
+    h += '<h4 style="margin:12px 0 6px;font-size:13px;color:#1a5276">&#128337; History (last hour)</h4>';
+    if (d.history && d.history.length) {
+      h += '<table style="width:100%;border-collapse:collapse;font-size:12px"><tr style="color:#888;text-align:left"><th style="padding:4px 8px">Time</th><th style="padding:4px 8px">Tool</th><th style="padding:4px 8px">Input</th><th style="padding:4px 8px">Status</th><th style="padding:4px 8px">Job ID</th></tr>';
+      d.history.forEach(function (r2) {
+        h += '<tr style="border-bottom:1px solid #f0f0f0"><td style="padding:4px 8px;white-space:nowrap">' + _fmtTime(r2.ts) + '</td>'
+           + '<td style="padding:4px 8px">' + _toolBadge(r2.tool) + '</td>'
+           + '<td style="padding:4px 8px;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + escapeHtml(r2.filename) + '</td>'
+           + '<td style="padding:4px 8px">' + _statusBadge(r2.status) + '</td>'
+           + '<td style="padding:4px 8px"><code>' + escapeHtml(r2.id) + '</code></td></tr>';
+      });
+      h += '</table>';
+    } else { h += '<div style="color:#999">No jobs in the last hour</div>'; }
+    el.innerHTML = h;
+  } catch (e) {
+    el.innerHTML = '<div style="color:#c62828">Failed to load tasks: ' + e.message + '</div>';
   }
 }
 
@@ -351,8 +454,39 @@ function getResultEl() {
 function renderResult(data, jobId) {
   if (ACTIVE_TAB === 'cdd') return renderCDD(data, jobId);
   if (ACTIVE_TAB === 'blastn' || ACTIVE_TAB === 'blastx') return renderBLAST(data, jobId);
+  if (ACTIVE_TAB === 'localblast') return renderLocalBlast(data, jobId);
   if (ACTIVE_TAB === 'primer') return renderPrimer(data, jobId);
   return renderMetabuli(data, jobId);
+}
+
+// ── Local DB BLAST renderer ──
+function renderLocalBlast(data, jobId) {
+  var el = document.getElementById('localBlastResultContent');
+  document.getElementById('localBlastJobIdLabel').textContent = 'job ' + jobId;
+  if (!data.hits || !data.hits.length) {
+    el.innerHTML = '<span style="color:#999">No hits found (E-value &lt; 1e-5). Your sequence may not be a plant virus, or is too short/divergent.</span>';
+    return;
+  }
+  var h = '<div style="font-size:12px;color:#555;margin-bottom:8px">' + data.hits.length + ' hit(s) against the platform reference database (12,184 genomes). ' +
+          '<a href="/metabuli/download/' + jobId + '/local_blast_tsv" style="color:#2e86c1">Download TSV</a></div>';
+  h += '<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px">';
+  h += '<tr style="border-bottom:2px solid #1a5276;text-align:left;color:#1a5276"><th style="padding:6px 8px">Query</th><th style="padding:6px 8px">Accession</th><th style="padding:6px 8px">Species (ICTV)</th><th style="padding:6px 8px">Family / Genus</th><th style="padding:6px 8px">Host</th><th style="padding:6px 8px">Identity</th><th style="padding:6px 8px">Cov%</th><th style="padding:6px 8px">E-value</th><th style="padding:6px 8px">Bits</th></tr>';
+  data.hits.slice(0, 200).forEach(function (hit) {
+    var idCol = hit.identity >= 95 ? '#2e7d32' : (hit.identity >= 80 ? '#e65100' : '#999');
+    h += '<tr style="border-bottom:1px solid #eee">'
+       + '<td style="padding:5px 8px;font-family:monospace">' + escapeHtml(hit.query) + '</td>'
+       + '<td style="padding:5px 8px"><a href="https://www.ncbi.nlm.nih.gov/nuccore/' + encodeURIComponent(hit.accession) + '" target="_blank" style="color:#2e86c1">' + escapeHtml(hit.accession) + '</a></td>'
+       + '<td style="padding:5px 8px"><i>' + escapeHtml(hit.species || hit.species_ncbi || '-') + '</i>' + (hit.segment ? ' <span style="color:#888">(' + escapeHtml(hit.segment) + ')</span>' : '') + '</td>'
+       + '<td style="padding:5px 8px;font-size:11px">' + escapeHtml(hit.family || '-') + '<br><span style="color:#888">' + escapeHtml(hit.genus || '') + '</span></td>'
+       + '<td style="padding:5px 8px;font-size:11px;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="' + escapeHtml(hit.host || '') + '">' + escapeHtml(hit.host || '-') + '</td>'
+       + '<td style="padding:5px 8px;font-weight:700;color:' + idCol + '">' + hit.identity.toFixed(1) + '%</td>'
+       + '<td style="padding:5px 8px">' + hit.query_cov + '</td>'
+       + '<td style="padding:5px 8px;font-family:monospace">' + escapeHtml(String(hit.evalue)) + '</td>'
+       + '<td style="padding:5px 8px">' + hit.bit_score.toFixed(0) + '</td></tr>';
+  });
+  h += '</table></div>';
+  if (data.hits.length > 200) h += '<div style="font-size:11px;color:#888;margin-top:6px">Showing top 200 of ' + data.hits.length + ' — download TSV for full results.</div>';
+  el.innerHTML = h;
 }
 
 // ── Metabuli renderer (existing logic, adapted) ──
@@ -407,8 +541,8 @@ async function renderMetabuli(data, jobId) {
     h += '<div style="font-size:12px;color:#555;margin-bottom:8px">Total <b>' + (vs.total_contigs || 0) + '</b> contigs, <b style="color:#27ae60">' + (vs.virus_contigs || 0) + '</b> classified as Virus</div>';
     if (vc.length) {
       var RK = ['realm','kingdom','phylum','class','order','family','genus','species'];
-      var COL_KEYS = ['contig'].concat(RK).concat(['length','score','e_value','genus_avg_len']);
-      var COL_LABELS = ['Contig','Realm','Kingdom','Phylum','Class','Order','Family','Genus','Species','Length','Score','E-value','Genus Avg Len'];
+      var COL_KEYS = ['contig'].concat(RK).concat(['ncbi_name','length','score','e_value','genus_avg_len']);
+      var COL_LABELS = ['Contig','Realm','Kingdom','Phylum','Class','Order','Family','Genus','Species','NCBI Name','Length','Score','E-value','Genus Avg Len'];
       var NUM_COLS = {length:true, score:true, e_value:true, genus_avg_len:true};
       
       function _nearComplete(len, avg) {
@@ -430,6 +564,8 @@ async function renderMetabuli(data, jobId) {
             var strong = (k === 'genus' || k === 'species') ? ';font-weight:600' : '';
             tbody += '<td style="white-space:nowrap' + strong + '">' + (v ? escapeHtml(v) : '<span style="color:#ccc">-</span>') + '</td>';
           });
+          // NCBI 名（紧跟 Species；Ref 表精选物种名优先，退化到该 taxid 的 NCBI 学名）
+          tbody += '<td style="white-space:nowrap;font-weight:600">' + (r.ncbi_name ? escapeHtml(r.ncbi_name) : '<span style="color:#ccc">-</span>') + '</td>';
           tbody += '<td' + (nc ? ' style="font-weight:700;color:#1b5e20"' : '') + '>' + escapeHtml(r.length) + '</td>';
           // Score: format to 4 decimal places if present
           var sc = r.score;
@@ -875,6 +1011,9 @@ var CDD_COLORS = ['#1f77b4','#ff7f0e','#2ca02c','#d62728','#9467bd','#8c564b','#
 
 // ── JS self-test ──
 console.log('Metabuli page loaded, tab=' + ACTIVE_TAB);
+// CDD 的 hit.description 现取自 Batch CD-Search 的 Definition 列（长段自由文本），
+// tooltip 里截断显示；Incomplete（N/C/NC）只是残缺命中标记，不再是描述字段。
+function cddShort(s, n) { s = String(s || ''); return s.length > n ? s.slice(0, n - 1) + '\u2026' : s; }
 function renderCDD(data, jobId) {
   var el = document.getElementById('cddResultContent');
   document.getElementById('cddJobIdLabel').textContent = '#' + jobId;
@@ -898,7 +1037,7 @@ function renderCDD(data, jobId) {
       var left = (from / qLen * 100).toFixed(1);
       var width = Math.max(2, ((to - from + 1) / qLen * 100)).toFixed(1);
       h += '<div class="domain-seg" style="left:' + left + '%;width:' + width + '%;background:' + CDD_COLORS[i % CDD_COLORS.length]
-         + '" title="' + escapeHtml(hit.short_name) + ': ' + escapeHtml(hit.description) + ' (E=' + escapeHtml(hit.evalue) + ')">'
+         + '" title="' + escapeHtml(hit.short_name) + (hit.description ? (': ' + escapeHtml(cddShort(hit.description, 200))) : '') + ' (E=' + escapeHtml(hit.evalue) + ')' + (hit.incomplete && hit.incomplete !== '-' ? ' [' + escapeHtml(hit.incomplete) + ']' : '') + '">'
          + (parseFloat(width) > 5 ? escapeHtml(hit.short_name) : '') + '</div>';
     });
     h += '</div>';
@@ -1036,6 +1175,8 @@ function sortVirusTable(tid, colIdx) {
       var strong = (k === 'genus' || k === 'species') ? ';font-weight:600' : '';
       tbody += '<td style="white-space:nowrap' + strong + '">' + (v ? escapeHtml(v) : '<span style="color:#ccc">-</span>') + '</td>';
     });
+    // NCBI 名（紧跟 Species；与 _buildVirusTbody 保持同序，否则点表头排序会串列）
+    tbody += '<td style="white-space:nowrap;font-weight:600">' + (r.ncbi_name ? escapeHtml(r.ncbi_name) : '<span style="color:#ccc">-</span>') + '</td>';
     tbody += '<td' + (nc ? ' style="font-weight:700;color:#1b5e20"' : '') + '>' + escapeHtml(r.length) + '</td>';
     // Score
     var sc2 = r.score;

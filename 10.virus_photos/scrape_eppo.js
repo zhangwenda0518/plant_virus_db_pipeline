@@ -1,5 +1,5 @@
 /**
- * EPPO 植物病毒图片爬虫 — Puppeteer 版
+ * EPPO Plant Virus图片爬虫 — Puppeteer 版
  *
  * Usage:
  *   node scrape_eppo.js --limit 5 --delay 2000 -o eppo_photos.tsv
@@ -49,13 +49,16 @@ async function main() {
 
   // Step 2: Scrape each virus photo page
   const allPhotos = [];
+  const failedPages = [];   // { eppo_code, virus_name, url, error }：导航失败 → 跳过，防照片错配
   for (let i = 0; i < toProcess.length; i++) {
     const v = toProcess[i];
     const url = `${BASE}/taxon/${v.eppo_code}/photos`;
     console.log(`[${i+1}/${toProcess.length}] ${v.eppo_code} — ${v.virus_name.slice(0,60)}`);
 
+    let navOk = false;
     try {
       await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+      navOk = true;
       await sleep(1500);
 
       const photos = await page.evaluate((baseUrl) => {
@@ -101,6 +104,16 @@ async function main() {
         console.log(`               ${p.photographer || '(no photographer)'}`);
       }
     } catch (e) {
+      if (!navOk) {
+        // goto 失败 → 当前 DOM 还是上一个 taxon 的页面，继续采集会静默错配照片（审计 D4 P0）
+        console.log(`  ! SKIP (navigation failed, no photos collected): ${e.message}`);
+        failedPages.push({
+          eppo_code: v.eppo_code, virus_name: v.virus_name, url,
+          error: String(e.message || e).replace(/\t/g, ' ').replace(/\n/g, ' ')
+        });
+        await sleep(delay);
+        continue;
+      }
       console.log(`  ! Error: ${e.message}`);
     }
     await sleep(delay);
@@ -108,6 +121,7 @@ async function main() {
 
   // Write TSV
   const fs = require('fs');
+  const path = require('path');
   const header = 'eppo_code\tvirus_name\tphoto_id\tthumb_url\tfull_url\tcaption\tphotographer\tphoto_page\n';
   const rows = allPhotos.map(p =>
     [p.eppo_code, p.virus_name, p.photo_id, p.thumb_url, p.full_url, p.caption, p.photographer, p.photo_page]
@@ -118,10 +132,24 @@ async function main() {
   fs.writeFileSync(output, header + rows, 'utf-8');
   console.log(`\nDone: ${allPhotos.length} photos -> ${output}`);
 
+  // 失败清单：始终写出（含表头），重跑时可据此补采
+  const failedOut = path.join(path.dirname(output), 'eppo_failed_pages.tsv');
+  const failedRows = failedPages.map(p =>
+    [p.eppo_code, p.virus_name, p.url, p.error]
+      .map(v => (v || '').replace(/\t/g, ' ').replace(/\n/g, ' '))
+      .join('\t')
+  ).join('\n');
+  fs.writeFileSync(failedOut, 'taxon\tvirus_name\turl\terror\n' + failedRows + (failedRows ? '\n' : ''), 'utf-8');
+  if (failedPages.length) {
+    console.log(`  [!] navigation failed: ${failedPages.length} taxa -> ${failedOut}`);
+    failedPages.slice(0, 20).forEach(p => console.log(`      ${p.eppo_code} ${p.virus_name.slice(0,40)} — ${p.error.slice(0,100)}`));
+  }
+
   const nCap = allPhotos.filter(p => p.caption).length;
   const nPhot = allPhotos.filter(p => p.photographer).length;
   console.log(`  Viruses: ${new Set(allPhotos.map(p => p.eppo_code)).size}`);
   console.log(`  With caption: ${nCap}, With photographer: ${nPhot}`);
+  console.log(`  Failed taxa (navigation): ${failedPages.length}`);
 
   await browser.close();
 }
