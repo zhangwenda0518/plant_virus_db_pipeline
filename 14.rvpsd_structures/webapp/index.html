@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>植物病毒蛋白 3D 结构</title>
+<link rel="stylesheet" href="./vendor/pdbe-molstar-light-3.11.0.css">
+<style>
+  :root {
+    --bg: #f5f7fa; --panel: #ffffff; --line: #dde3ea;
+    --ink: #1f2d3d; --muted: #7a8699; --accent: #2b6cb0; --accent-soft: #e8f0fa;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Segoe UI", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--ink); height: 100vh; display: flex; flex-direction: column; }
+
+  header { background: #16324f; color: #fff; padding: 8px 20px; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+  header h1 { font-size: 16px; font-weight: 600; }
+  header .stat { font-size: 12px; color: #b8c9db; }
+  header .src { font-size: 11px; color: #8fa8c0; margin-left: auto; }
+  header .src a { color: #b8d4f0; }
+
+  #layout { flex: 1; display: flex; min-height: 0; }
+  #side { width: 300px; background: var(--panel); border-right: 1px solid var(--line); display: flex; flex-direction: column; }
+  #searchBox { padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  #search { width: 100%; padding: 7px 10px; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; outline: none; }
+  #search:focus { border-color: var(--accent); }
+  #spList { flex: 1; overflow-y: auto; }
+  .spItem { padding: 7px 12px; cursor: pointer; border-bottom: 1px solid #f0f3f7; }
+  .spItem:hover { background: var(--accent-soft); }
+  .spItem.active { background: var(--accent-soft); border-left: 3px solid var(--accent); }
+  .spItem .nm { font-size: 12.5px; font-weight: 600; }
+  .spItem .meta { font-size: 11px; color: var(--muted); margin-top: 2px; display: flex; gap: 8px; }
+  .spItem .cnt { background: #e4ebf3; color: #4a6b8f; border-radius: 8px; padding: 0 6px; font-size: 10px; }
+
+  #main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  #toolbar { background: var(--panel); border-bottom: 1px solid var(--line); padding: 6px 14px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  #toolbar label { font-size: 12px; color: var(--muted); }
+  #protSel { max-width: 460px; padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; font-size: 12.5px; background: #fff; }
+  #infoLine { font-size: 12px; color: var(--muted); }
+  #infoLine b { color: var(--ink); }
+  .plddt-hi { color: #157a3a; font-weight: 600; }
+  .plddt-mid { color: #b8860b; font-weight: 600; }
+  .plddt-lo { color: #b03a2e; font-weight: 600; }
+
+  /* PDBe Molstar 全 UI 容器：左面板+序列条+右侧工具都渲染在此 */
+  #viewer { flex: 1; position: relative; min-height: 0; background: #fff; }
+  #viewer .placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px; z-index: 1; pointer-events: none; }
+
+  #note { padding: 5px 14px; font-size: 11px; color: var(--muted); background: var(--panel); border-top: 1px solid var(--line); }
+  #note a { color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1>植物病毒蛋白 3D 结构 · Molstar 完整版</h1>
+  <span class="stat" id="statLine"></span>
+  <span class="src">结构来源：<a href="https://doi.org/10.1002/imo2.70120" target="_blank">RVPSD (Yang et al., iMetaOmics 2026)</a>，AlphaFold2，CC-BY 4.0 · 查看器 <a href="https://github.com/PDBeurope/pdbe-molstar" target="_blank">PDBe Molstar 3.11.0 (Apache-2.0)</a>，与 RVPSD 同款 · 补充批次：<a href="./vad.html" target="_blank">VAD 植物病毒结构 (Sci Adv 2025)</a></span>
+</header>
+
+<div id="layout">
+  <div id="side">
+    <div id="searchBox"><input id="search" placeholder="搜索物种 / 科名…" autocomplete="off"></div>
+    <div id="spList"></div>
+  </div>
+  <div id="main">
+    <div id="toolbar">
+      <label>蛋白：</label>
+      <select id="protSel" disabled><option>请先选择物种</option></select>
+      <span id="infoLine">左侧选择一个物种开始浏览（建议 Chrome/Edge 并开启硬件加速）</span>
+    </div>
+    <div id="viewer"><div class="placeholder" id="ph">未加载结构</div></div>
+  </div>
+</div>
+
+<div id="note">
+  与 RVPSD 相同的查看器与配色（cartoon + secondary-structure 洋红/黄主题，alphafoldView）。
+  全原子模型优先；CA-trace 骨架自动回退轻量查看器。
+  数据：<a href="https://doi.org/10.1002/imo2.70120" target="_blank">Yang et al. 2026</a> · CC-BY 4.0 ·
+  另有 <a href="https://doi.org/10.1126/sciadv.adz8560" target="_blank">VAD (Sci Adv 2025)</a> 补充批次（本地缺失的植物病毒蛋白结构，含同源二聚体）见 <a href="./vad.html">vad.html</a>
+</div>
+
+<script src="./vendor/3Dmol-min.js"></script>
+<script src="./vendor/pdbe-molstar-plugin-3.11.0.js"></script>
+<script>
+const DATA_URL = './data/structures_index.json';
+const PDB_FA_BASE = './structures_fullatom/';
+const PDB_CA_BASE = './structures/';
+let INDEX = null, viewerInstance = null, glviewer = null, current = null, FA_MAP = null;
+
+const $ = (s) => document.querySelector(s);
+const plddtCls = (v) => v == null ? '' : (v >= 85 ? 'plddt-hi' : v >= 70 ? 'plddt-mid' : 'plddt-lo');
+
+// ---------- PDBe Molstar 流程（1:1 复刻 RVPSD Virus 组件） ----------
+function waitPlugin(instance, timeoutMs = 10000) {
+  return new Promise((resolve, reject) => {
+    const t0 = Date.now();
+    (function poll() {
+      if (instance && instance.plugin) return resolve(instance.plugin);
+      if (Date.now() - t0 > timeoutMs) return reject(new Error('viewer 初始化超时'));
+      setTimeout(poll, 100);
+    })();
+  });
+}
+
+async function initMolstar(container, pdbUrl) {
+  // 与 RVPSD 相同的 render 选项（ alphafoldView / 白底 / 左面板 / 关闭对称注释 ）
+  viewerInstance = new PDBeMolstarPlugin();
+  viewerInstance.render(container, {
+    alphafoldView: true,
+    bgColor: { r: 255, g: 255, b: 255 },
+    leftPanel: true,
+    rightPanel: true,
+    landscape: true,
+    sequencePanel: true,
+    validationAnnotation: true,
+    domainAnnotation: true,
+    symmetryAnnotation: false,
+    hideControls: false
+  });
+  const ctx = await waitPlugin(viewerInstance);
+  // 与 RVPSD 相同的手动加载链：download → parseTrajectory('pdb') → createModel → createStructure → cartoon/secondary-structure
+  const data = await ctx.builders.data.download({ url: pdbUrl, isBinary: false });
+  const traj = await ctx.builders.structure.parseTrajectory(data, 'pdb');
+  const model = await ctx.builders.structure.createModel(traj);
+  const struct = await ctx.builders.structure.createStructure(model, {});
+  await ctx.builders.structure.representation.addRepresentation(struct,
+    { type: 'cartoon', color: 'secondary-structure' });
+  return 'molstar';
+}
+
+async function init3Dmol(container, pdbUrl) {
+  const resp = await fetch(pdbUrl);
+  if (!resp.ok) throw new Error('HTTP ' + resp.status);
+  const text = await resp.text();
+  container.innerHTML = '';
+  glviewer = $3Dmol.createViewer(container, { backgroundColor: '#f5f7fa' });
+  glviewer.addModel(text, 'pdb');
+  glviewer.setStyle({}, { sphere: { radius: 0.55, color: '#4a7ebb' } });
+  const xyz = glviewer.selectedAtoms({}).map(a => [a.x, a.y, a.z]);
+  for (let i = 0; i + 1 < xyz.length; i++) {
+    glviewer.addLine({
+      start: { x: xyz[i][0], y: xyz[i][1], z: xyz[i][2] },
+      end: { x: xyz[i + 1][0], y: xyz[i + 1][1], z: xyz[i + 1][2] },
+      style: { color: '#4a7ebb', width: 2 }
+    });
+  }
+  glviewer.zoomTo();
+  glviewer.render();
+  return '3dmol';
+}
+
+async function initViewer(container, p) {
+  container.innerHTML = '<div class="placeholder">结构加载中…</div>';
+  const fas = encodeURIComponent(p.fas) + '.pdb';
+  if (FA_MAP === null) {
+    try { FA_MAP = await (await fetch('./data/fullatom_map.json')).json(); }
+    catch (e) { FA_MAP = {}; }
+  }
+  try {
+    const faDir = FA_MAP[p.fas];
+    if (faDir) {
+      return await initMolstar(container, './' + faDir + '/' + fas);
+    }
+    const r = await fetch(PDB_CA_BASE + fas, { method: 'HEAD' });
+    if (r.ok) {
+      container.innerHTML = '<div class="placeholder">该蛋白仅有 CA-trace 骨架，使用轻量查看器…</div>';
+      return await init3Dmol(container, PDB_CA_BASE + fas);
+    }
+    throw new Error('该蛋白暂无结构文件');
+  } catch (err) {
+    container.innerHTML = '<div class="placeholder">结构加载失败：' +
+      String(err && err.message || err) + '</div>';
+    return null;
+  }
+}
+
+// ---------- 物种浏览（与 index.html 相同） ----------
+function selectSpecies(sp) {
+  current = sp;
+  document.querySelectorAll('.spItem').forEach(el => el.classList.remove('active'));
+  const el = document.querySelector(`.spItem[data-nm="${CSS.escape(sp.name)}"]`);
+  if (el) { el.classList.add('active'); el.scrollIntoView({ block: 'nearest' }); }
+
+  const sel = $('#protSel');
+  sel.innerHTML = '';
+  const sorted = [...sp.proteins].sort((a, b) => (b.plddt ?? -1) - (a.plddt ?? -1));
+  for (const p of sorted) {
+    const o = document.createElement('option');
+    o.value = p.fas;
+    o.textContent = `${p.acc} · ${p.product} · pLDDT ${p.plddt ?? '—'}`;
+    sel.appendChild(o);
+  }
+  sel.disabled = false;
+  loadProtein(sorted[0]);
+}
+
+async function loadProtein(p) {
+  if (!p) return;
+  const cls = plddtCls(p.plddt);
+  const ncbi = p.acc ? ` · <a href="https://www.ncbi.nlm.nih.gov/protein/${p.acc}" target="_blank">NCBI ${p.acc}</a>` : '';
+  $('#infoLine').innerHTML =
+    `<b>${current.name}</b> — ${p.product}${ncbi} · ` +
+    `平均 pLDDT: <span class="${cls}">${p.plddt ?? '无记录'}</span>` +
+    (p.host ? ` · 宿主: ${p.host.replace(/_/g, ' ')}` : '') +
+    ' · <span id="modeLine">加载中…</span>';
+  const engine = await initViewer($('#viewer'), p);
+  const ml = document.getElementById('modeLine');
+  if (ml) ml.textContent = engine === 'molstar' ? 'Molstar 全原子' :
+                           engine === '3dmol' ? 'CA-trace 骨架' : '';
+}
+
+function renderList(keyword) {
+  const list = $('#spList');
+  list.innerHTML = '';
+  const kw = (keyword || '').trim().toLowerCase();
+  const items = INDEX.species.filter(sp =>
+    !kw || sp.name.toLowerCase().includes(kw) || sp.family.toLowerCase().includes(kw) ||
+    (sp.abbrev || '').toLowerCase().includes(kw));
+  const frag = document.createDocumentFragment();
+  for (const sp of items.slice(0, 400)) {
+    const d = document.createElement('div');
+    d.className = 'spItem' + (current && current.name === sp.name ? ' active' : '');
+    d.dataset.nm = sp.name;
+    d.innerHTML = `<div class="nm">${sp.name}</div>
+      <div class="meta"><span>${sp.family || '—'}</span><span class="cnt">${sp.count} 蛋白</span></div>`;
+    d.addEventListener('click', () => selectSpecies(sp));
+    frag.appendChild(d);
+  }
+  if (!items.length) list.innerHTML = '<div style="padding:14px;font-size:12px;color:#7a8699">无匹配物种</div>';
+  list.appendChild(frag);
+}
+
+fetch(DATA_URL).then(r => r.json()).then(idx => {
+  INDEX = idx;
+  $('#statLine').textContent = `${idx.count_species} 个植物病毒种 · ${idx.count_proteins} 个蛋白结构`;
+  renderList('');
+  $('#search').addEventListener('input', (e) => renderList(e.target.value));
+  $('#protSel').addEventListener('change', (e) => {
+    const p = current.proteins.find(x => x.fas === e.target.value);
+    loadProtein(p);
+  });
+});
+</script>
+</body>
+</html>

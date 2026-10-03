@@ -79,6 +79,10 @@ oneoff_scripts/rvpsd_fetch/smoke_test_trace.png
 # 14.rvpsd_structures — CA-trace 结构数据（614MB 不入库，脚本与前端入库）
 14.rvpsd_structures/webapp/structures/
 14.rvpsd_structures/webapp/structures_fullatom/
+14.rvpsd_structures/webapp/structures_fullatom_afdb/
+14.rvpsd_structures/webapp/structures_fullatom_candidates/
+14.rvpsd_structures/webapp/structures_fullatom_domains/
+14.rvpsd_structures/webapp/structures_fullatom_vp/
 
 # 14.rvpsd_structures — VAD 补充批次（Sci Adv 2025, 2,033 单体 + 2,009 二聚体，大文件不入库）
 14.rvpsd_structures/webapp/structures_vad/
@@ -119,6 +123,9 @@ oneoff_scripts/vad_fetch/local_fulllength_seqs.json
 /paper_dl_stage/
 /paper_dl_tmp/
 *.live_*.png
+
+# 14.rvpsd_structures — 95MB 无引用归档（webapp 内无任何 HTML 引用它，禁止入库）
+14.rvpsd_structures/webapp/vp_byacc.tar.gz
 
 # oneoff_scripts：默认忽略，但 15 号模块声明入库的脚本目录除外
 /oneoff_scripts/*

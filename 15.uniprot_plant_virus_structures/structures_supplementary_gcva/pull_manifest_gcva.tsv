@@ -1,0 +1,7 @@
+gene	protein_id	product	file	atoms	mean_pLDDT	pct_ge90	pct_70_90	pct_50_70	pct_lt50	source
+N	WRO64935.1	nucleocapsid	GCVA_OR489165_N_WRO64935.1.cif	3969	80.8	33.0	48.8	12.5	5.7	AlphaFold3 (alphafoldserver, model_0, 2025-04)
+P	WRO64936.1	phosphoprotein	GCVA_OR489165_P_WRO64936.1.cif	4089	55.0	8.4	14.6	29.7	47.2	AlphaFold3 (alphafoldserver, model_0, 2025-04)
+P4	WRO64937.1	P4 protein	GCVA_OR489165_P4_WRO64937.1.cif	1892	49.8	0.0	24.7	23.3	52.1	AlphaFold3 (alphafoldserver, model_0, 2025-04)
+M	WRO64938.1	matrix protein	GCVA_OR489165_M_WRO64938.1.cif	2287	37.8	0.0	0.7	17.8	81.5	AlphaFold3 (alphafoldserver, model_0, 2025-04)
+G	WRO64939.1	glycoprotein	GCVA_OR489165_G_WRO64939.1.cif	1707	47.4	0.0	0.0	35.3	64.7	AlphaFold3 (alphafoldserver, model_0, 2025-04)
+L	WRO64940.1	polymerase	GCVA_OR489165_L_WRO64940.1.cif	18248	77.3	22.7	51.8	17.1	8.4	AlphaFold3 (alphafoldserver, model_0, 2025-04)

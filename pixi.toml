@@ -1,0 +1,63 @@
+[workspace]
+name = "plant_virus_primer_db"
+version = "2.0.0"
+description = "Plant Virus Primer Database — web server + on-demand primer design"
+channels = ["conda-forge", "bioconda"]
+platforms = ["linux-64", "win-64"]
+
+# ═══════════════════════════════════════════════════════
+# 全平台通用 Python 包 (conda-forge)
+# ═══════════════════════════════════════════════════════
+[dependencies]
+python = ">=3.10,<3.13"
+biopython = ">=1.83"
+polars = ">=1.0.0"
+flask = ">=3.0.0"
+requests = ">=2.31.0"
+matplotlib = ">=3.11.1,<4"
+
+# ═══════════════════════════════════════════════════════
+# PyPI only (conda 没有)
+# ═══════════════════════════════════════════════════════
+[pypi-dependencies]
+primer3-py = ">=2.0.0"
+
+# ═══════════════════════════════════════════════════════
+# Linux 专属 (服务器)
+# ═══════════════════════════════════════════════════════
+[target.linux-64.dependencies]
+gunicorn = ">=22.0.0"
+primer3 = ">=2.6.0"
+mafft = ">=7.520"
+blast = ">=2.15.0"
+vsearch = ">=2.28.0"
+
+# ═══════════════════════════════════════════════════════
+# Windows 专属 (本地开发/测试)
+# ═══════════════════════════════════════════════════════
+[target.win-64.dependencies]
+waitress = ">=3.0.0"
+
+# ═══════════════════════════════════════════════════════
+# 任务
+# ═══════════════════════════════════════════════════════
+[tasks]
+web = "python 4.virus_primer/step5_web_server.py --host 0.0.0.0 --port 5000"
+test-design = { cmd = "python -c \"from primer_design_service import DesignJobManager; print('Design service OK')\"", cwd = "4.virus_primer" }
+
+[target.linux-64.tasks]
+web-prod = { cmd = "gunicorn -w 4 -b 0.0.0.0:5000 --chdir 4.virus_primer step5_web_server:app", description = "生产模式启动" }
+pipeline = { cmd = "bash 4.virus_primer/run_all_steps.sh", description = "一键运行 step1→step5" }
+
+[target.win-64.tasks]
+web-win = { cmd = "python 4.virus_primer/step5_web_server.py --host 127.0.0.1 --port 5000 --debug", description = "Windows 开发模式" }
+
+[feature.dev.dependencies]
+pytest = ">=8.0.0"
+
+[feature.dev.tasks]
+test = { cmd = "pytest 4.virus_primer/ -v --tb=short", description = "运行测试" }
+
+[environments]
+default = { solve-group = "default" }
+dev = { features = ["dev"], solve-group = "default" }

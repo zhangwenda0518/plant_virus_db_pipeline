@@ -1,0 +1,414 @@
+organism	n_proteins	n_pdb	n_afdb	n_rvpsd	n_own_structure	n_bfvd_only	n_any	n_none	own_pct	any_pct
+Tomato spotted wilt virus (TSWV)	383	5	5	3	13	354	357	26	3.4	93.2
+Grapevine fanleaf virus (GFLV)	367	1	8	20	27	340	347	20	7.4	94.6
+Turnip mosaic virus (strain Japanese) (TuMV)	208	2	0	7	8	77	83	125	3.8	39.9
+Rice black streaked dwarf virus (RBSDV)	207	1	14	18	19	207	207	0	9.2	100.0
+Potato leafroll virus (PLrV)	169	0	3	5	8	169	169	0	4.7	100.0
+Potato virus X (PVX)	108	0	3	4	7	108	108	0	6.5	100.0
+Banana bunchy top virus (BBTV)	106	0	6	0	6	105	105	1	5.7	99.1
+Barley yellow mosaic virus (BaYMV)	81	0	7	0	7	63	63	18	8.6	77.8
+Maize dwarf mosaic virus (MDMV)	76	0	1	4	4	70	71	5	5.3	93.4
+Tomato yellow leaf curl Sardinia virus (TYLCSV)	76	1	2	0	3	76	76	0	3.9	100.0
+Blueberry scorch virus (BBScV)	74	0	1	4	4	74	74	0	5.4	100.0
+Potato virus A (PVA)	72	2	0	3	4	20	22	50	5.6	30.6
+Tomato yellow leaf curl virus (strain Israel) (TYLCV)	71	0	0	0	0	71	71	0	0.0	100.0
+Papaya ringspot virus (strain W)	68	0	0	1	1	65	66	2	1.5	97.1
+Arabis mosaic virus (ArMV)	64	0	3	11	13	59	62	2	20.3	96.9
+Barley yellow dwarf virus (isolate PAV) (BYDV)	61	0	2	8	9	61	61	0	14.8	100.0
+Tomato spotted wilt virus (strain SA-05) (TSWV) (Groundnut ringspot virus)	60	0	3	4	7	58	58	2	11.7	96.7
+Maize stripe virus (MStV)	57	0	2	9	10	47	47	10	17.5	82.5
+Bean yellow mosaic virus	51	0	0	9	9	21	24	27	17.6	47.1
+Fiji disease virus (FDV)	49	0	2	4	6	49	49	0	12.2	100.0
+Chrysanthemum virus B (CVB)	47	0	1	8	9	45	46	1	19.1	97.9
+Melon necrotic spot virus (MNSV)	47	1	0	6	6	47	47	0	12.8	100.0
+Lily symptomless virus (LSV)	45	0	2	6	8	45	45	0	17.8	100.0
+Carnation mottle virus (CarMV)	45	1	2	5	6	45	45	0	13.3	100.0
+Barley stripe mosaic virus (BSMV)	41	1	7	16	20	41	41	0	48.8	100.0
+Ribgrass mosaic virus (RMV)	35	0	1	4	4	35	35	0	11.4	100.0
+Plantago asiatica mosaic potexvirus (P1AMV)	34	1	2	5	7	34	34	0	20.6	100.0
+Tomato spotted wilt virus (strain Brazilian Br-03) (TSWV) (Tomato chlorotic spot virus)	31	0	1	2	3	29	30	1	9.7	96.8
+Rice gall dwarf virus (RGDV)	28	0	16	19	22	28	28	0	78.6	100.0
+Maize rough dwarf virus (MRDV)	28	0	14	14	15	28	28	0	53.6	100.0
+Tobacco mild green mosaic virus (TMGMV) (TMV strain U2)	27	1	2	3	5	27	27	0	18.5	100.0
+Indian cassava mosaic virus (ICMV)	27	0	0	0	0	27	27	0	0.0	100.0
+Turnip yellow mosaic virus	26	2	2	4	6	26	26	0	23.1	100.0
+Tobacco etch virus (TEV)	25	2	1	2	4	18	20	5	16.0	80.0
+Soil-borne wheat mosaic virus (SBWMV)	25	0	1	0	1	25	25	0	4.0	100.0
+Pea enation mosaic virus-2 (PEMV-2)	24	0	2	6	7	24	24	0	29.2	100.0
+Carnation Italian ringspot virus (CIRV)	24	1	0	6	6	24	24	0	25.0	100.0
+Squash leaf curl virus (SLCV)	24	0	1	0	1	24	24	0	4.2	100.0
+Pea enation mosaic virus-1 (PEMV-1)	23	0	4	5	9	23	23	0	39.1	100.0
+Bean leafroll virus (BLRV)	23	0	1	4	4	23	23	0	17.4	100.0
+Blackcurrant reversion association virus (BRAV)	22	0	4	2	5	21	21	1	22.7	95.5
+Tobacco ringspot virus (TobRV) (TRSV)	22	1	2	0	3	20	20	2	13.6	90.9
+Cowpea chlorotic mottle virus (CCMV)	20	1	0	4	4	20	20	0	20.0	100.0
+Broad bean wilt virus 1 (BBWV-1)	20	0	0	4	4	20	20	0	20.0	100.0
+Pepper mottle virus (PeMV)	20	0	0	2	2	3	4	16	10.0	20.0
+Brome mosaic virus (BMV)	19	2	3	4	5	19	19	0	26.3	100.0
+Tomato aspermy virus (TAV)	18	2	1	6	7	17	18	0	38.9	100.0
+Subterranean clover stunt virus (SCSV)	18	0	2	0	2	18	18	0	11.1	100.0
+Tomato yellow leaf curl China virus (TYLCCNV)	18	0	0	0	0	18	18	0	0.0	100.0
+Tobacco necrosis virus (strain D) (TNV-D)	17	0	3	7	7	17	17	0	41.2	100.0
+Barley yellow dwarf virus (isolate MAV) (BYDV)	17	0	1	6	6	17	17	0	35.3	100.0
+Lettuce necrotic yellows virus (LNYV)	17	0	1	0	1	17	17	0	5.9	100.0
+Watermelon silver mottle virus (WSMoV)	16	0	0	6	6	12	15	1	37.5	93.8
+Helenium virus S (HelVS)	16	0	1	2	3	14	14	2	18.8	87.5
+Clover yellow vein virus	16	0	1	1	2	13	13	3	12.5	81.2
+Foxtail mosaic virus	15	0	3	5	6	15	15	0	40.0	100.0
+Southern tomato virus (STV)	15	0	2	4	5	15	15	0	33.3	100.0
+Youcai mosaic virus (YoMV)	15	0	1	3	4	15	15	0	26.7	100.0
+Raspberry bushy dwarf virus (RBDV)	15	0	1	0	1	15	15	0	6.7	100.0
+Rice yellow stunt virus (RYSV) (Rice transitory yellowing virus)	14	0	14	7	14	14	14	0	100.0	100.0
+Southern cowpea mosaic virus (SCPMV) (Southern bean mosaic virus (strain cowpea))	14	1	5	6	9	14	14	0	64.3	100.0
+Tobacco necrosis virus (strain A) (TNV-A)	14	0	1	8	8	14	14	0	57.1	100.0
+Cereal yellow dwarf virus (isolate RPV) (BYDV)	14	0	0	6	6	14	14	0	42.9	100.0
+Maize chlorotic mottle virus (MCMV)	14	1	1	0	2	14	14	0	14.3	100.0
+Cabbage leaf curl virus (isolate Jamaica) (CaLCuV)	14	0	0	0	0	14	14	0	0.0	100.0
+Grapevine leafroll-associated virus 3 (isolate United States/NY1) (GLRaV-3) (Grapevine leafroll-associated closterovirus (isolate 109))	13	0	8	13	13	11	13	0	100.0	100.0
+Rice dwarf virus (isolate Fujian) (RDV)	13	0	13	12	13	13	13	0	100.0	100.0
+Clover yellow mosaic virus (CYMV)	13	0	2	11	11	13	13	0	84.6	100.0
+Pea early browning virus	13	0	4	8	9	13	13	0	69.2	100.0
+Strawberry mild yellow edge-associated virus (SMYEaV)	13	0	3	6	7	13	13	0	53.8	100.0
+Impatiens necrotic spot virus (INSV)	13	0	2	4	4	13	13	0	30.8	100.0
+Cycas necrotic stunt virus (CNSV)	13	0	1	3	4	9	10	3	30.8	76.9
+Rice ragged stunt virus (isolate Thailand) (RRSV)	12	0	12	11	12	12	12	0	100.0	100.0
+Citrus tristeza virus (isolate T36) (CTV)	12	0	6	12	12	11	12	0	100.0	100.0
+Fiji disease virus (isolate Sugarcane) (FDV)	12	0	11	12	12	12	12	0	100.0	100.0
+Rice dwarf virus (RDV)	12	0	4	7	8	12	12	0	66.7	100.0
+Rice dwarf virus (isolate Akita) (RDV)	11	2	1	6	6	11	11	0	54.5	100.0
+Rice hoja blanca virus (strain cr) (RHBV) (Rice hoja blanca virus (strain Costa Rica))	11	1	1	0	2	11	11	0	18.2	100.0
+Papaya mosaic potexvirus (PMV)	10	1	3	6	7	10	10	0	70.0	100.0
+Cucumber necrosis virus (CNV)	10	1	0	5	5	10	10	0	50.0	100.0
+Wound tumor virus (WTV)	10	0	4	0	4	10	10	0	40.0	100.0
+Ornithogalum mosaic virus	10	0	0	2	2	5	6	4	20.0	60.0
+Beet mosaic virus (BtMV)	10	0	0	1	1	6	7	3	10.0	70.0
+Flock house virus (FHV)	9	3	9	0	9	9	9	0	100.0	100.0
+Beet necrotic yellow vein virus (isolate Japan/S) (BNYVV)	9	0	4	9	9	8	9	0	100.0	100.0
+Lettuce infectious yellows virus (isolate United States/92) (LIYV)	9	0	3	8	9	8	9	0	100.0	100.0
+Carnation etched ring virus (CERV)	9	0	2	6	7	9	9	0	77.8	100.0
+Soybean chlorotic mottle virus	9	0	7	5	7	9	9	0	77.8	100.0
+Lily virus X	9	0	3	6	7	9	9	0	77.8	100.0
+Odontoglossum ringspot virus (isolate Korean Cy) (ORSV-Cy)	9	0	0	5	5	9	9	0	55.6	100.0
+European mountain ash ringspot-associated virus (isolate Sorbus aucuparia) (EMARAV)	9	0	0	4	4	8	9	0	44.4	100.0
+Lettuce infectious yellows virus (LIYV)	9	0	3	0	3	9	9	0	33.3	100.0
+Potato leafroll virus (strain Potato/Scotland/strain 1/1984) (PLrV)	9	2	0	0	2	9	9	0	22.2	100.0
+Bean golden yellow mosaic virus (isolate Puerto Rico-Japan) (BGYMV)	9	0	2	0	2	9	9	0	22.2	100.0
+Beet yellows virus (isolate Ukraine) (BYV) (Sugar beet yellows virus)	8	1	1	8	8	7	8	0	100.0	100.0
+Northern cereal mosaic virus (NCMV)	8	0	8	8	8	8	8	0	100.0	100.0
+Potato aucuba mosaic virus (PAMV)	8	0	3	6	7	8	8	0	87.5	100.0
+Cassava vein mosaic virus (CsVMV)	8	0	3	6	6	8	8	0	75.0	100.0
+Cauliflower mosaic virus (strain D/H) (CaMV)	8	0	1	5	5	8	8	0	62.5	100.0
+Faba bean necrotic yellows virus (isolate Syrian SV292-88) (FBNYV)	8	1	1	0	2	8	8	0	25.0	100.0
+African cassava mosaic virus (isolate West Kenyan 844) (ACMV) (Cassava latent virus (isolate West Kenyan 844))	8	1	0	0	1	8	8	0	12.5	100.0
+Faba bean necrotic yellows virus (isolate Egyptian EV1-93) (FBNYV)	8	0	0	0	0	8	8	0	0.0	100.0
+Potato leafroll virus (strain Potato/Netherlands/Wageningen/1989) (PLrV)	8	0	0	0	0	8	8	0	0.0	100.0
+African cassava mosaic virus (isolate Nigerian) (ACMV) (Cassava latent virus (isolate Nigerian))	8	0	0	0	0	8	8	0	0.0	100.0
+Milk vetch dwarf virus (isolate N) (MDV)	8	0	0	0	0	8	8	0	0.0	100.0
+Mungbean yellow mosaic virus (strain Vigna) (MYMV)	8	0	0	0	0	8	8	0	0.0	100.0
+Rice stripe virus (isolate T) (RSV)	7	1	0	7	7	6	7	0	100.0	100.0
+Peanut clump virus (isolate 87/TGTA2) (PCV)	7	0	1	7	7	7	7	0	100.0	100.0
+Figwort mosaic virus (strain DxS) (FMV)	7	0	3	7	7	7	7	0	100.0	100.0
+Mirafiori lettuce virus (isolate Lettuce/Netherlands/LS301-O) (MiLV) (Mirafiori lettuce big-vein virus)	7	0	1	7	7	6	7	0	100.0	100.0
+Turnip yellows virus (isolate FL-1) (TuYV) (BWYV-FL1)	7	2	1	6	6	7	7	0	85.7	100.0
+Potato mop-top virus (isolate Potato/Sweden/Sw) (PMTV)	7	0	2	6	6	7	7	0	85.7	100.0
+Artichoke mottled crinkle virus (AMCV)	7	0	0	6	6	7	7	0	85.7	100.0
+Cestrum yellow leaf curling virus (CmYLCV)	7	0	4	0	4	7	7	0	57.1	100.0
+Turnip vein-clearing virus (TVCV)	7	0	0	3	3	7	7	0	42.9	100.0
+Potato virus Y (strain N) (PVY)	7	1	1	0	2	3	4	3	28.6	57.1
+Beet curly top virus (strain California/Logan) (BCTV)	7	0	1	0	1	7	7	0	14.3	100.0
+Tomato golden mosaic virus (strain Yellow vein) (TGMV)	7	0	0	0	0	7	7	0	0.0	100.0
+Bean golden yellow mosaic virus (isolate Puerto Rico) (BGYMV) (Bean golden mosaic virus (isolate Puerto Rico))	7	0	0	0	0	7	7	0	0.0	100.0
+Abutilon mosaic virus (isolate West India) (AbMV)	7	0	0	0	0	7	7	0	0.0	100.0
+Potato yellow mosaic virus (isolate Venezuela) (PYMV)	7	0	0	0	0	7	7	0	0.0	100.0
+Tomato leaf curl virus (strain Australia) (ToLCV)	7	0	0	0	0	7	7	0	0.0	100.0
+Pepper huasteco yellow vein virus (PHYVV) (Pepper huasteco virus)	7	0	0	0	0	7	7	0	0.0	100.0
+Banana bunchy top virus (isolate Autralia) (BBTV)	7	0	0	0	0	7	7	0	0.0	100.0
+Potato virus M (strain Russian) (PVM)	6	0	0	6	6	6	6	0	100.0	100.0
+Lettuce necrotic yellows virus (isolate 318) (LNYV)	6	1	6	6	6	5	6	0	100.0	100.0
+Lolium latent virus (isolate Lolium/USA/US1/-) (LoLV)	6	0	4	6	6	6	6	0	100.0	100.0
+Narcissus mosaic virus (NMV)	6	0	2	6	6	6	6	0	100.0	100.0
+Sonchus yellow net virus (SYNV)	6	0	6	6	6	5	6	0	100.0	100.0
+Taro vein chlorosis virus (TAVCV)	6	0	5	6	6	6	6	0	100.0	100.0
+Maize mosaic virus (isolate Maize/United States/Reed/2005) (MMV)	6	0	5	6	6	6	6	0	100.0	100.0
+Lettuce big-vein associated virus (isolate Japan/Kagawa) (LBVaV)	6	0	6	6	6	5	6	0	100.0	100.0
+Indian citrus ringspot virus (isolate Kinnow mandarin/India/K1/1996) (ICRSV)	6	0	1	6	6	6	6	0	100.0	100.0
+Tobacco rattle virus (isolate PpK20) (TRV)	6	0	3	6	6	6	6	0	100.0	100.0
+Shallot virus X (ShVX)	6	0	0	6	6	6	6	0	100.0	100.0
+Citrus leprosis virus C (isolate Citrus sinesis/Brazil/Cordeiropolis/2003) (CiLV-C)	6	0	0	6	6	5	6	0	100.0	100.0
+Olive latent virus 2 (isolate Italy) (OLV-2)	6	0	6	5	6	6	6	0	100.0	100.0
+Broad bean mottle virus	6	0	1	5	5	6	6	0	83.3	100.0
+Cymbidium ringspot virus (CymRSV)	6	0	0	5	5	6	6	0	83.3	100.0
+Pear latent virus (PeLV)	6	0	0	5	5	6	6	0	83.3	100.0
+Erysimum latent virus (ELV)	6	0	1	3	4	6	6	0	66.7	100.0
+Physalis mottle virus (PhMV) (Belladonna mottle virus-Iowa)	6	1	0	4	4	6	6	0	66.7	100.0
+Rice dwarf virus (isolate O) (RDV)	6	2	0	2	4	6	6	0	66.7	100.0
+Cauliflower mosaic virus (strain Strasbourg) (CaMV)	6	1	1	1	3	6	6	0	50.0	100.0
+Cauliflower mosaic virus (strain NY8153) (CaMV)	6	0	0	3	3	6	6	0	50.0	100.0
+Subterranean clover stunt virus (strain F) (SCSV)	6	0	2	0	2	6	6	0	33.3	100.0
+Potato virus S (strain Peruvian)	6	0	0	2	2	6	6	0	33.3	100.0
+Cucumber mosaic virus (strain Q) (CMV)	6	0	0	1	1	6	6	0	16.7	100.0
+Barley yellow dwarf virus (isolate P-PAV) (BYDV)	6	0	0	1	1	6	6	0	16.7	100.0
+Tomato pseudo-curly top virus (TPCTV)	6	0	1	0	1	6	6	0	16.7	100.0
+Tomato mottle virus (isolate Florida) (ToMoV)	6	0	0	0	0	6	6	0	0.0	100.0
+Tomato yellow leaf curl Sardinia virus (isolate Spain-2) (TYLCSV)	6	0	0	0	0	6	6	0	0.0	100.0
+Cauliflower mosaic virus (strain CM-1841) (CaMV)	6	0	0	0	0	6	6	0	0.0	100.0
+Tomato yellow leaf curl Sardinia virus (isolate Spain-1) (TYLCSV)	6	0	0	0	0	6	6	0	0.0	100.0
+Cauliflower mosaic virus (strain BBC) (CaMV)	6	0	0	0	0	6	6	0	0.0	100.0
+Pea enation mosaic virus-1 (strain WSG) (PEMV-1)	5	0	1	5	5	5	5	0	100.0	100.0
+Turnip crinkle virus (TCV)	5	2	0	4	5	5	5	0	100.0	100.0
+Cucumber mosaic virus (strain FNY) (CMV)	5	2	0	4	5	5	5	0	100.0	100.0
+Potato virus X (strain X3) (PVX)	5	1	0	5	5	5	5	0	100.0	100.0
+Soil-borne wheat mosaic virus (strain United States/Nebraska/1981) (SBWMV)	5	0	1	5	5	5	5	0	100.0	100.0
+White clover mosaic virus (strain M) (WCMV)	5	0	1	5	5	5	5	0	100.0	100.0
+Maize chlorotic mottle virus (isolate United States/Kansas/1987) (MCMV)	5	0	2	5	5	5	5	0	100.0	100.0
+Panicum mosaic virus (strain United States/Kansas 109S) (PMV)	5	1	1	5	5	5	5	0	100.0	100.0
+Tobacco streak virus (strain WC) (TSV)	5	0	0	5	5	5	5	0	100.0	100.0
+Grapevine virus A (isolate Is 151) (GVA)	5	0	1	5	5	5	5	0	100.0	100.0
+Tobacco rattle virus (strain CAM)	5	0	1	5	5	5	5	0	100.0	100.0
+Paprika mild mottle virus (PaMMV)	5	0	0	5	5	5	5	0	100.0	100.0
+Galinsoga mosaic virus (GaMV)	5	0	2	5	5	5	5	0	100.0	100.0
+Pelargonium necrotic spot virus (PeNSV)	5	0	0	5	5	5	5	0	100.0	100.0
+Maize necrotic streak virus (MNeSV)	5	0	2	5	5	5	5	0	100.0	100.0
+Tomato spotted wilt virus (strain Brazilian Br-01) (TSWV)	5	1	0	4	4	4	5	0	80.0	100.0
+Apple stem pitting virus (isolate PA66) (ASPV)	5	0	0	4	4	4	4	1	80.0	80.0
+Andean potato mottle virus (APMV)	5	0	1	3	4	5	5	0	80.0	100.0
+Carnation latent virus (CLV)	5	0	0	3	3	5	5	0	60.0	100.0
+Tobacco vein mottling virus (TVMV)	5	1	1	0	2	3	4	1	40.0	80.0
+Grapevine chrome mosaic virus (GCMV) (Hungarian grapevine chrome mosaic virus)	5	0	1	2	2	4	5	0	40.0	100.0
+Beet ringspot virus (BRSV) (Tomato black ring virus (strain S))	5	0	0	2	2	3	4	1	40.0	80.0
+Miscanthus streak virus (isolate 91) (MiSV)	5	0	2	0	2	5	5	0	40.0	100.0
+White clover mosaic virus (strain O) (WCMV)	5	0	0	2	2	5	5	0	40.0	100.0
+Potato virus X (strain CP) (PVX)	5	0	0	2	2	5	5	0	40.0	100.0
+Maize streak virus genotype A (isolate South Africa) (MSV)	5	0	1	0	1	5	5	0	20.0	100.0
+Cucumber mosaic virus (strain NT9) (CMV)	5	0	1	0	1	5	5	0	20.0	100.0
+Potato virus X (strain HB) (PVX)	5	0	0	1	1	5	5	0	20.0	100.0
+Cucumber mosaic virus (strain Ixora) (CMV)	5	0	0	1	1	5	5	0	20.0	100.0
+Bean yellow dwarf virus (BeYDV)	5	0	0	0	0	5	5	0	0.0	100.0
+Maize streak virus genotype B (isolate Tas) (MSV)	5	0	0	0	0	5	5	0	0.0	100.0
+Rice tungro bacilliform virus (isolate Philippines) (RTBV)	4	0	3	3	4	4	4	0	100.0	100.0
+Tomato ringspot virus (isolate raspberry) (ToRSV)	4	0	2	4	4	3	4	0	100.0	100.0
+Cocksfoot mottle virus (isolate Dactylis glomerata/Norway/CfMV-NO/1995) (CfMV)	4	0	1	4	4	4	4	0	100.0	100.0
+Poinsettia latent virus (isolate Euphorbia pulcherrima/Germany/Siepen/2005) (PnLV) (Poinsettia cryptic virus)	4	0	2	4	4	4	4	0	100.0	100.0
+Grapevine fleck virus (isolate Italy/MT48) (GFkV)	4	0	2	4	4	4	4	0	100.0	100.0
+Tomato bushy stunt virus (strain Cherry) (TBSV)	4	1	0	4	4	4	4	0	100.0	100.0
+Carnation ringspot virus (isolate Lommel) (CRSV)	4	0	2	4	4	4	4	0	100.0	100.0
+Citrus psorosis virus (isolate Spain/P-121) (CPsV) (Citrus ringspot virus)	4	0	0	4	4	3	4	0	100.0	100.0
+Pelargonium zonate spot virus (isolate Tomato/Italy/1982) (PZSV) (Pelargonium zonate spot virus (isolate Tomato))	4	0	1	4	4	4	4	0	100.0	100.0
+Red clover necrotic mosaic virus (RCNMV)	4	1	0	3	3	4	4	0	75.0	100.0
+Tobacco rattle virus (strain TCM)	4	0	1	2	3	4	4	0	75.0	100.0
+Tobacco rattle virus (strain PSG)	4	0	1	3	3	4	4	0	75.0	100.0
+Poplar mosaic virus (isolate ATCC Pv275) (PMV)	4	0	0	3	3	4	4	0	75.0	100.0
+Nicotiana velutina mosaic virus (NvMV)	4	0	3	0	3	4	4	0	75.0	100.0
+Red clover mottle virus (RCMV)	4	0	0	2	2	4	4	0	50.0	100.0
+Wheat dwarf virus (isolate Sweden) (WDV)	4	1	0	0	1	4	4	0	25.0	100.0
+Maize streak virus genotype A (isolate Nigeria) (MSV)	4	1	0	0	1	4	4	0	25.0	100.0
+Peanut stunt virus (strain J) (PSV)	4	0	0	1	1	4	4	0	25.0	100.0
+Southern bean mosaic virus (isolate Bean/United States/Arkansas) (SBMV)	4	0	0	0	0	4	4	0	0.0	100.0
+Odontoglossum ringspot virus (isolate Singapore 1) (ORSV)	4	0	0	0	0	4	4	0	0.0	100.0
+Maize streak virus genotype C (isolate Set) (MSV)	4	0	0	0	0	4	4	0	0.0	100.0
+Maize streak virus genotype A (isolate Kenya) (MSV)	4	0	0	0	0	4	4	0	0.0	100.0
+Panicum streak virus (isolate Kenya) (PanSV)	4	0	0	0	0	4	4	0	0.0	100.0
+Tobacco yellow dwarf virus (strain Australia) (TYDV)	4	0	0	0	0	4	4	0	0.0	100.0
+Sugarcane streak virus (isolate South Africa) (SSV) (Sugarcane streak virus (isolate Natal))	4	0	0	0	0	4	4	0	0.0	100.0
+Maize streak virus genotype D (isolate Raw) (MSV)	4	0	0	0	0	4	4	0	0.0	100.0
+Maize streak virus genotype E (isolate Pat) (MSV)	4	0	0	0	0	4	4	0	0.0	100.0
+Beet western yellows virus (isolate GB1) (BWYV)	4	0	0	0	0	4	4	0	0.0	100.0
+Cucumber mosaic virus (strain Y) (CMV)	4	0	0	0	0	4	4	0	0.0	100.0
+Carnation mottle virus (isolate China/Shanghai) (CarMV)	4	0	0	0	0	4	4	0	0.0	100.0
+Rice stripe virus (isolate M) (RSV)	4	0	0	0	0	4	4	0	0.0	100.0
+Pothos latent virus (isolate Pigeonpea/India) (PoLV)	4	0	0	0	0	4	4	0	0.0	100.0
+Pepper mild mottle virus (strain Spain) (PMMV-S)	3	0	0	3	3	3	3	0	100.0	100.0
+Sunn-hemp mosaic virus (SHMV) (TMV strain cowpea)	3	0	1	3	3	3	3	0	100.0	100.0
+Tobamovirus Ob	3	0	0	3	3	3	3	0	100.0	100.0
+Tomato brown rugose fruit virus (isolate TOBRFV/Tomato/Jordan/Tom1-Jo/2015) (ToBRFV)	3	0	0	3	3	3	3	0	100.0	100.0
+Commelina yellow mottle virus (CoYMV)	3	0	1	3	3	3	3	0	100.0	100.0
+Eggplant mosaic virus	3	0	0	3	3	3	3	0	100.0	100.0
+Ononis yellow mosaic virus	3	0	0	3	3	3	3	0	100.0	100.0
+Apple chlorotic leaf spot virus (isolate plum P863) (ACLSV)	3	0	0	3	3	3	3	0	100.0	100.0
+Kennedya yellow mosaic virus (strain Jervis bay) (KYMV)	3	0	0	3	3	3	3	0	100.0	100.0
+Cucumber green mottle mosaic virus (strain watermelon SH) (CGMMV)	3	1	0	3	3	3	3	0	100.0	100.0
+Groundnut rosette virus (strain MC1) (GRV)	3	0	0	3	3	3	3	0	100.0	100.0
+Citrus leaf blotch virus (isolate Nagami kumquat/France/SRA-153/1984) (CLBV)	3	0	0	3	3	3	3	0	100.0	100.0
+Raspberry bushy dwarf virus (isolate Malling Jewel raspberry/R15) (RBDV)	3	0	3	3	3	3	3	0	100.0	100.0
+Ourmia melon virus (isolate Melon/Iran/VE9) (OuMV)	3	0	2	3	3	3	3	0	100.0	100.0
+Oat chlorotic stunt virus (isolate United Kingdom) (OCSV)	3	0	2	3	3	3	3	0	100.0	100.0
+Tobacco mosaic virus (strain vulgare) (TMV) (Tobacco mosaic virus (strain U1))	3	1	0	1	2	3	3	0	66.7	100.0
+Cowpea mosaic virus (strain SB) (CPMV)	3	1	1	0	2	3	3	0	66.7	100.0
+Belladonna mottle virus (BMDV)	3	0	1	2	2	3	3	0	66.7	100.0
+Wound tumor virus (strain NJ) (WTV)	3	0	2	0	2	3	3	0	66.7	100.0
+Satsuma dwarf virus (SDV)	3	0	1	1	2	3	3	0	66.7	100.0
+Pelargonium zonate spot virus (PZSV)	3	0	2	0	2	3	3	0	66.7	100.0
+Tomato mosaic virus (strain L) (ToMV) (TMV strain tomato)	3	1	0	0	1	3	3	0	33.3	100.0
+Turnip yellow mosaic virus (isolate Australia)	3	1	0	0	1	3	3	0	33.3	100.0
+Tobacco mosaic virus (strain Rakkyo) (TMV-R)	3	0	0	1	1	3	3	0	33.3	100.0
+Tomato bushy stunt virus (strain BS-3) (TBSV)	3	1	0	0	1	3	3	0	33.3	100.0
+Apple chlorotic leaf spot virus (isolate apple) (ACLSV)	3	0	0	1	1	3	3	0	33.3	100.0
+Cucumber green mottle mosaic virus (strain watermelon W) (CGMMV)	3	1	0	0	1	3	3	0	33.3	100.0
+Cymbidium mosaic virus (strain Singapore)	3	0	0	1	1	3	3	0	33.3	100.0
+Pepper mild mottle virus (strain Japan) (PMMV-J)	3	0	0	0	0	3	3	0	0.0	100.0
+Tomato mosaic virus (strain Kazakh K2) (ToMV) (TMV strain K2)	3	0	0	0	0	3	3	0	0.0	100.0
+Tomato mosaic virus (strain Kazakh K1) (ToMV) (TMV strain K1)	3	0	0	0	0	3	3	0	0.0	100.0
+Tomato mosaic virus (strain S-1) (ToMV)	3	0	0	0	0	3	3	0	0.0	100.0
+Tomato torrado virus (isolate Solanum lycopersicum/Spain/PRIToTV0301/-) (ToTV)	3	0	0	0	0	2	2	1	0.0	66.7
+Tobacco mosaic virus (strain OM) (TMV)	3	0	0	0	0	3	3	0	0.0	100.0
+Tobacco rattle virus (strain SYM)	3	0	0	0	0	3	3	0	0.0	100.0
+Chloris striate mosaic virus (CSMV)	3	0	0	0	0	3	3	0	0.0	100.0
+Tobacco mosaic virus (strain Korean NC 82) (TMV)	3	0	0	0	0	3	3	0	0.0	100.0
+Tobacco mosaic virus (strain B935A) (TMV)	3	0	0	0	0	3	3	0	0.0	100.0
+Cucumber mosaic virus (strain O) (CMV)	3	0	0	0	0	3	3	0	0.0	100.0
+Cucumber mosaic virus (strain Iizuka) (CMV)	3	0	0	0	0	3	3	0	0.0	100.0
+Cucumber mosaic virus (strain As) (CMV)	3	0	0	0	0	3	3	0	0.0	100.0
+Potato virus X (strain Xc) (PVX)	3	0	0	0	0	3	3	0	0.0	100.0
+Cauliflower mosaic virus (strain W260) (CaMV)	3	0	0	0	0	3	3	0	0.0	100.0
+Cucumber mosaic virus (strain Kor) (CMV)	3	0	0	0	0	3	3	0	0.0	100.0
+Tobacco rattle virus (strain PLB)	3	0	0	0	0	3	3	0	0.0	100.0
+Apple stem grooving virus (strain P-209) (ASGV)	2	0	1	2	2	1	2	0	100.0	100.0
+Turnip mosaic virus (strain Quebec) (TuMV)	2	0	1	1	2	1	2	0	100.0	100.0
+Maize rayado fino virus (isolate Costa Rica/Guapiles) (MRFV)	2	1	0	2	2	1	2	0	100.0	100.0
+Raspberry ringspot virus (strain cherry) (RpRSV)	2	0	1	2	2	1	2	0	100.0	100.0
+Arabis mosaic virus (isolate NW) (ArMV)	2	0	1	1	2	1	2	0	100.0	100.0
+Satsuma dwarf virus (isolate Satsuma mandarin/Japan/S-58/1977) (SDV)	2	0	2	0	2	1	2	0	100.0	100.0
+White clover cryptic virus 1 (isolate Boccardo/2004) (WCCV-1)	2	0	1	2	2	2	2	0	100.0	100.0
+Satellite tobacco mosaic virus (STMV)	2	1	1	2	2	2	2	0	100.0	100.0
+Beet necrotic yellow vein mosaic virus (isolate Yugoslavia/G1) (BNYVV)	2	0	1	2	2	2	2	0	100.0	100.0
+Satellite panicum mosaic virus (SPMV)	2	1	2	2	2	2	2	0	100.0	100.0
+Gloriosa stripe mosaic virus (GSMV)	2	0	0	1	1	1	2	0	50.0	100.0
+Plum pox potyvirus (strain D) (PPV)	2	0	0	1	1	1	2	0	50.0	100.0
+Soybean mosaic virus (strain N) (SMV)	2	0	0	1	1	1	2	0	50.0	100.0
+Bean-pod mottle virus (strain Kentucky G7) (BPMV)	2	1	0	1	1	2	2	0	50.0	100.0
+Barley mild mosaic virus (strain Na1) (BaMMV)	2	0	1	0	1	1	1	1	50.0	50.0
+Pepper mottle virus (isolate California) (PeMV) (PepMoV C)	2	1	0	1	1	1	2	0	50.0	100.0
+Barley yellow mosaic virus (isolate China/Yancheng/1998) (BaYMV)	2	0	1	0	1	1	2	0	50.0	100.0
+Barley mild mosaic virus (strain UK-F) (BaMMV)	2	0	1	1	1	1	1	1	50.0	50.0
+Potato virus Y (strain O) (PVY)	2	0	0	1	1	1	1	1	50.0	50.0
+Potato virus Y (strain C) (PVY) (Potato virus C)	2	0	0	1	1	1	1	1	50.0	50.0
+Apple stem grooving virus (strain Korea) (ASGV)	2	0	0	1	1	1	2	0	50.0	100.0
+Cowpea mosaic virus (CPMV)	2	0	1	0	1	2	2	0	50.0	100.0
+Cherry rasp leaf virus (CRLV)	2	0	0	1	1	1	2	0	50.0	100.0
+Alfalfa mosaic virus (strain YSMV)	2	1	0	0	1	2	2	0	50.0	100.0
+Tomato bushy stunt virus (strain B8) (TBSV)	2	0	0	1	1	2	2	0	50.0	100.0
+Tomato bushy stunt virus (strain Ja9) (TBSV)	2	1	0	0	1	2	2	0	50.0	100.0
+Zucchini yellow mosaic virus (strain Singapore) (ZYMV)	2	0	0	0	0	1	1	1	0.0	50.0
+Peanut mottle virus (strain M)	2	0	0	0	0	1	1	1	0.0	50.0
+Plum pox potyvirus (isolate NAT) (PPV)	2	0	0	0	0	1	1	1	0.0	50.0
+Zucchini yellow mosaic virus (strain California) (ZYMV)	2	0	0	0	0	1	1	1	0.0	50.0
+Turnip yellow mosaic virus (isolate TYMC)	2	0	0	0	0	2	2	0	0.0	100.0
+Pea seed-borne mosaic virus (strain DPD1)	2	0	0	0	0	1	1	1	0.0	50.0
+Cowpea severe mosaic virus (strain DG) (CPSMV)	2	0	0	0	0	2	2	0	0.0	100.0
+Lettuce mosaic virus (strain 0 / isolate French) (LMV)	2	0	0	0	0	1	1	1	0.0	50.0
+Lettuce mosaic virus (strain E) (LMV)	2	0	0	0	0	1	1	1	0.0	50.0
+Barley yellow mosaic virus (strain Japanese II-1) (BaYMV)	2	0	0	0	0	1	1	1	0.0	50.0
+Plum pox potyvirus (strain El amar) (PPV)	2	0	0	0	0	1	1	1	0.0	50.0
+Papaya ringspot virus (strain P / mutant HA)	2	0	0	0	0	1	1	1	0.0	50.0
+Potato virus Y (strain Hungarian) (PVY)	2	0	0	0	0	1	1	1	0.0	50.0
+Barley yellow mosaic virus (isolate Germany) (BaYMV)	2	0	0	0	0	1	1	1	0.0	50.0
+Bean common mosaic necrosis virus (strain NL-3) (BCMNV) (Bean common mosaic virus serotype A (strain NL-3))	2	0	0	0	0	1	1	1	0.0	50.0
+Cherry rasp leaf virus (isolate Potato/United States) (CRLV)	2	0	0	0	0	1	1	1	0.0	50.0
+Broad bean wilt virus 1 (strain Spinach/United States/ATCC PV-132/1963) (BBWV-1)	2	0	0	0	0	2	2	0	0.0	100.0
+Plum pox potyvirus (strain SK 68) (PPV)	2	0	0	0	0	1	1	1	0.0	50.0
+Zucchini yellow mosaic virus (strain Reunion Island) (ZYMV)	2	0	0	0	0	1	1	1	0.0	50.0
+Soybean mosaic virus (strain G2) (SMV)	2	0	0	0	0	1	1	1	0.0	50.0
+Alfalfa mosaic virus (strain 425 / isolate Leiden)	2	0	0	0	0	2	2	0	0.0	100.0
+Tomato black ring virus (strain MJ) (TBRV)	2	0	0	0	0	1	1	1	0.0	50.0
+Odontoglossum ringspot virus (isolate Japan) (ORSV)	2	0	0	0	0	2	2	0	0.0	100.0
+Alfalfa mosaic virus (strain Strasbourg)	2	0	0	0	0	2	2	0	0.0	100.0
+Potato leafroll virus (strain Potato/Canada/Rowhani/1979) (PLrV)	2	0	0	0	0	2	2	0	0.0	100.0
+Cucumber mosaic virus (strain Kin) (CMV)	2	0	0	0	0	2	2	0	0.0	100.0
+Cucumber mosaic virus (strain C7-2) (CMV)	2	0	0	0	0	2	2	0	0.0	100.0
+Cucumber mosaic virus (strain S) (CMV)	2	0	0	0	0	2	2	0	0.0	100.0
+Cauliflower mosaic virus (strain PV147) (CaMV)	2	0	0	0	0	2	2	0	0.0	100.0
+Tomato spotted wilt virus (strain Bulgarian L3) (TSWV)	2	0	0	0	0	2	2	0	0.0	100.0
+Tomato bushy stunt virus (strain A23) (TBSV)	2	0	0	0	0	2	2	0	0.0	100.0
+Tomato bushy stunt virus (strain type) (TBSV)	2	0	0	0	0	2	2	0	0.0	100.0
+Tomato bushy stunt virus (strain Ja6) (TBSV)	2	0	0	0	0	2	2	0	0.0	100.0
+Cucumber mosaic virus (strain M) (CMV)	2	0	0	0	0	2	2	0	0.0	100.0
+Potato virus M (strain German) (PVM)	2	0	0	0	0	2	2	0	0.0	100.0
+Cucumber mosaic virus (strain N) (CMV)	2	0	0	0	0	2	2	0	0.0	100.0
+Cucumber mosaic virus (strain FT) (CMV)	2	0	0	0	0	2	2	0	0.0	100.0
+Cucumber mosaic virus (strain Pepo) (CMV)	2	0	0	0	0	2	2	0	0.0	100.0
+Cucumber mosaic virus (strain CS) (CMV)	2	0	0	0	0	2	2	0	0.0	100.0
+Cucumber mosaic virus (strain M48) (CMV)	2	0	0	0	0	2	2	0	0.0	100.0
+Cucumber mosaic virus (strain Trk7) (CMV)	2	0	0	0	0	2	2	0	0.0	100.0
+Blackberry virus Y (isolate Blackberry plant/USA:Arkansas/C3ARK/2005) (BVY)	1	0	1	1	1	0	1	0	100.0	100.0
+Ryegrass mosaic virus (isolate Denmark/Danish) (RGMV)	1	0	0	1	1	0	1	0	100.0	100.0
+Sweet potato mild mottle virus (isolate Salazar) (SPMMV)	1	0	0	1	1	0	1	0	100.0	100.0
+Parsnip yellow fleck virus (isolate P-121) (PYFV)	1	0	1	1	1	0	1	0	100.0	100.0
+Brome streak virus (strain 11-Cal) (BStV) (Brome streak mosaic rymovirus)	1	0	1	1	1	0	1	0	100.0	100.0
+Rice tungro spherical virus (strain A) (RTSV) (Rice tungro spherical waikavirus)	1	0	1	1	1	0	1	0	100.0	100.0
+Squash mosaic virus (strain melon) (SqMV)	1	0	0	1	1	1	1	0	100.0	100.0
+Brome streak virus (strain German) (BStV) (Brome streak mosaic rymovirus)	1	0	0	1	1	1	1	0	100.0	100.0
+Ribgrass mosaic virus (strain Hr) (RMV) (TMV strain Holmes ribgrass)	1	1	0	0	1	1	1	0	100.0	100.0
+Satellite tobacco necrosis virus 1	1	1	1	1	1	1	1	0	100.0	100.0
+Potato virus Y (strain Yo) (PVY)	1	0	0	1	1	1	1	0	100.0	100.0
+Barley mild mosaic virus (strain ASL) (BaMMV)	1	0	0	1	1	1	1	0	100.0	100.0
+Vicia faba endornavirus (VfEV)	1	0	1	0	1	0	1	0	100.0	100.0
+Cauliflower mosaic virus (strain S-Japan) (CaMV)	1	0	0	1	1	1	1	0	100.0	100.0
+Cauliflower mosaic virus (strain Bari 1) (CaMV)	1	0	0	1	1	1	1	0	100.0	100.0
+Cacao yellow mosaic virus	1	0	0	1	1	1	1	0	100.0	100.0
+Cauliflower mosaic virus (strain D4) (CaMV)	1	0	0	1	1	1	1	0	100.0	100.0
+Tamarillo mosaic virus	1	0	0	1	1	1	1	0	100.0	100.0
+Oryza sativa endornavirus (isolate Japan/1995) (OsEV)	1	0	0	1	1	0	1	0	100.0	100.0
+Arabis mosaic virus (isolate Syrah) (ArMV)	1	0	1	1	1	1	1	0	100.0	100.0
+Satellite tobacco necrosis virus 2	1	0	0	1	1	1	1	0	100.0	100.0
+Maize white line mosaic Satellite virus (MWLMV) (Satellite maize white line mosaic virus)	1	0	1	1	1	1	1	0	100.0	100.0
+Satellite St. Augustine decline virus (SSADV)	1	0	1	0	1	1	1	0	100.0	100.0
+Triticum mosaic virus (isolate Triticum aestivum/United States/U06-123/2006) (TriMV)	1	0	0	0	0	0	0	1	0.0	0.0
+Plum pox potyvirus (strain Rankovic) (PPV)	1	0	0	0	0	0	0	1	0.0	0.0
+Rice tungro spherical virus (strain Vt6) (RTSV) (Rice tungro spherical waikavirus)	1	0	0	0	0	0	0	1	0.0	0.0
+Triticum mosaic virus	1	0	0	0	0	0	0	1	0.0	0.0
+Watermelon mosaic virus II (isolate USA)	1	0	0	0	0	1	1	0	0.0	100.0
+Petunia vein clearing virus (isolate Hohn) (PVCV)	1	0	0	0	0	0	0	1	0.0	0.0
+Petunia vein clearing virus (isolate Shepherd) (PVCV)	1	0	0	0	0	0	0	1	0.0	0.0
+Tomato spotted wilt virus (strain Regular2A) (TSWV)	1	0	0	0	0	1	1	0	0.0	100.0
+Tomato spotted wilt virus (isolate D) (TSWV)	1	0	0	0	0	1	1	0	0.0	100.0
+Tobacco mosaic virus (strain Dahlemense) (TMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Papaya ringspot virus (strain P / mutant HA 5-1)	1	0	0	0	0	1	1	0	0.0	100.0
+Watermelon mosaic virus II (isolate Australia)	1	0	0	0	0	1	1	0	0.0	100.0
+Potato virus Y (strain Chinese) (PVY)	1	0	0	0	0	1	1	0	0.0	100.0
+Cucumber mosaic virus (strain C) (CMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Cucumber mosaic virus (strain WL) (CMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Sugarcane mosaic virus (strain SC)	1	0	0	0	0	1	1	0	0.0	100.0
+Raspberry ringspot virus (strain S) (RpRSV)	1	0	0	0	0	1	1	0	0.0	100.0
+Tobacco mosaic virus (strain O) (TMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Tobacco mosaic virus (strain Kokubu) (TMV)	1	0	0	0	0	1	1	0	0.0	100.0
+High plains virus (isolate Idaho 97)	1	0	0	0	0	1	1	0	0.0	100.0
+High plains virus (isolate Colorado 96)	1	0	0	0	0	1	1	0	0.0	100.0
+High plains virus (isolate Utah 96)	1	0	0	0	0	1	1	0	0.0	100.0
+Wheat yellow head virus (WYHV)	1	0	0	0	0	1	1	0	0.0	100.0
+Cucumber mosaic virus (strain FC) (CMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Cucumber mosaic virus (strain P6) (CMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Rice dwarf virus (isolate S) (RDV)	1	0	0	0	0	1	1	0	0.0	100.0
+Watermelon mosaic virus II (isolate Tonga) (Vanilla necrosis potyvirus) (VNV)	1	0	0	0	0	1	1	0	0.0	100.0
+Grapevine fanleaf virus (isolate NW) (GFLV)	1	0	0	0	0	1	1	0	0.0	100.0
+Cucumber mosaic virus (strain E5) (CMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Tobacco mosaic virus (strain ER) (TMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Tobacco mosaic virus (strain 06) (TMV-06)	1	0	0	0	0	1	1	0	0.0	100.0
+Tomato spotted wilt virus (strain Hawaiian) (TSWV)	1	0	0	0	0	1	1	0	0.0	100.0
+Tomato mosaic virus (strain LIIa) (ToMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Tomato mosaic virus (strain LII) (ToMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Potato virus X (strain UK3) (PVX)	1	0	0	0	0	1	1	0	0.0	100.0
+Passionfruit woodiness virus (strain Mild) (PWV)	1	0	0	0	0	1	1	0	0.0	100.0
+Passionfruit woodiness virus (strain Severe) (PWV)	1	0	0	0	0	1	1	0	0.0	100.0
+Passionfruit woodiness virus (strain Tip Blight) (PWV)	1	0	0	0	0	1	1	0	0.0	100.0
+Cucumber mosaic virus (strain I17F) (CMV)	1	0	0	0	0	1	1	0	0.0	100.0
+High plains virus (isolate Kansas 96)	1	0	0	0	0	1	1	0	0.0	100.0
+Nigerian sorghum potyvirus (Dawa mosaic virus)	1	0	0	0	0	1	1	0	0.0	100.0
+High plains virus (isolate Texas 96)	1	0	0	0	0	1	1	0	0.0	100.0
+High plains virus (isolate Kansas 2004)	1	0	0	0	0	1	1	0	0.0	100.0
+Cucumber mosaic virus (strain DKRD) (CMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Cucumber mosaic virus (strain Banana) (CMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Cucumber mosaic virus (strain B) (CMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Cucumber mosaic virus (strain MB-8) (CMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Tomato mosaic virus (strain Korean) (ToMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Pepper mild mottle virus (strain Italian) (PMMV-I)	1	0	0	0	0	1	1	0	0.0	100.0
+Cucumber mosaic virus (strain K) (CMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Subterranean clover stunt virus (strain J) (SCSV)	1	0	0	0	0	1	1	0	0.0	100.0
+Milk vetch dwarf virus (isolate 9) (MDV)	1	0	0	0	0	1	1	0	0.0	100.0
+Pepper mild mottle virus (strain P0) (PMMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Pepper mild mottle virus (strain P1) (PMMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Pepper mild mottle virus (strain P2) (PMMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Ribgrass mosaic virus (strain CAB) (RMV)	1	0	0	0	0	1	1	0	0.0	100.0
+Beet necrotic yellow vein mosaic virus (isolate France/F2) (BNYVV)	1	0	0	0	0	1	1	0	0.0	100.0
+Tomato black ring virus (strain E) (TBRV)	1	0	0	0	0	1	1	0	0.0	100.0
+Tomato black ring virus (strain L) (TBRV)	1	0	0	0	0	1	1	0	0.0	100.0
+Rice ragged stunt virus (RRSV)	1	0	0	0	0	1	1	0	0.0	100.0
