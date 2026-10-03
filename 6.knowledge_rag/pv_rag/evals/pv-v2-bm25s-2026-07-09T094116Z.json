@@ -1,0 +1,1400 @@
+{
+  "eval_set_version": "pv-v2-2026-07-09",
+  "sprint_label": "pv-v2-bm25s",
+  "timestamp_utc": "2026-07-09T09:41:16Z",
+  "cases": [
+    {
+      "case_id": "pv-qa-001",
+      "question": "What is the host range of cucumber mosaic virus?",
+      "answer": "Cucumber mosaic virus (CMV) has an exceptionally broad host range, typically cited as spanning more than 1,000 to 1,200 plant species across over 100 families of both dicotyledonous and monocotyledonous angiosperms [1,2,4,5]. It is considered the widest host range of any known plant virus [1,4]. The host range includes a wide diversity of agricultural crops, ornamentals, weeds, and wild plants [2,5].\n\nRepresentative hosts documented in the fragments include:\n- **Diagnostic indicator species**: *Beta vulgaris*, *Chenopodium amaranticolor*, *Chenopodium quinoa*, *Cucumis sativus* (cucumber), *Cucurbita* spp. (zucchini, squash), and *Lycopersicon* (tomato) [1].\n- **Crops**: cucumber, melon, watermelon, pumpkin, chayote, angled luffa, bitter melon [6], soybean, pea, eggplant, tobacco, broad bean, lettuce, and squash [4].\n- **Ornamentals and novel hosts**: *Odontonema cuspidatum* (firespike) and *Psychotria punctata* (dotted wild coffee) identified in Florida [2].\n- **Weeds and wild plants**: *Arctium lappa* (greater burdock), *Crepis biennis* (rough hawksbeard), *Geum urbanum* (wood avens), *Lactuca serriola* (prickly lettuce), *Medicago lupulina* (black medick), *Rumex obtusifolius* (bitter dock), *Sonchus arvensis* (field sowthistle), *Trifolium repens* (white clover), and *Viola alba* (white violet) in Slovakia [5].\n\nCollectively, these fragments confirm that CMV infects an extremely diverse set of hosts across many geographic regions, contributing to its global importance [3,4,5].",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 43.97427600000083,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-qa-001",
+          "claim": "(zucchini, squash), and *Lycopersicon* (tomato) [1].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": " et al., 1984](#ref183))\nis due to the presence of satellite RNAs that induce necrosis in this host plant.\n\n## Host Range and Symptomatology\nCMV has the widest host range for any plant virus, includin",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the claim is supported by the chunk. The claim is: \"(zucchini, squash), and *Lycopersic"
+        },
+        {
+          "case_id": "pv-qa-001",
+          "claim": "- **Crops**: cucumber, melon, watermelon, pumpkin, chayote, angled luffa, bitter melon [6], soybean, pea, eggplant, tobacco, broad bean, lettuce, and squash [4].",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "Cucumber mosaic virus (CMV) is an important pathogen in agricultural crops which is spread throughout the world with a wide host range. In Indonesia, CMV is also an important pathogen that infect vari",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: \"evaluate whether a cited literature chunk actually supports a claim.\"\n\nCLAIM: \"- **Crops**: cucumber, mel"
+        },
+        {
+          "case_id": "pv-qa-001",
+          "claim": "- **Crops**: cucumber, melon, watermelon, pumpkin, chayote, angled luffa, bitter melon [6], soybean, pea, eggplant, tobacco, broad bean, lettuce, and squash [4].",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "UNLABELLED: Cucumber mosaic virus (CMV) has the widest host range (> 1000 plant species) of any known plant virus, a large number of vector species, and a wide geographical distribution. A survey was ",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the CHUNK supports the CLAIM.\n\nCLAIM: a list of crops: cucumber, melon, watermelon, pum"
+        },
+        {
+          "case_id": "pv-qa-001",
+          "claim": "- **Ornamentals and novel hosts**: *Odontonema cuspidatum* (firespike) and *Psychotria punctata* (dotted wild coffee) identified in Florida [2].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Cucumber mosaic virus (CMV) has a reported host range of 750 to 1,200 species (2,3) that includes weeds, wild plants, crops, and ornamentals. Two new CMV hosts were recently identified in Florida. In ",
+          "verdict": "supported",
+          "rationale": "The chunk explicitly states Odontonema cuspidatum and Psychotria punctata were identified as new CMV hosts in Florida."
+        },
+        {
+          "case_id": "pv-qa-001",
+          "claim": "- **Weeds and wild plants**: *Arctium lappa* (greater burdock), *Crepis biennis* (rough hawksbeard), *Geum urbanum* (wood avens), *Lactuca serriola* (prickly lettuce), *Medicago lupulina* (black medick), *Rumex obtusifolius* (bitter dock), *Sonchus arvensis* (field sowthistle), *Trifolium repens* (white clover), and *Viola alba* (white violet) in Slovakia [5].",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "Cucumber mosaic virus (Bromoviridae) is a worldwide widespread pathogen affecting more than 1200 plant species. Although more attention is paid to CMV research on agricultural crops, vegetables or orn",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim.\n\nThe claim is a list of weeds and wild plants, with scien"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-qa-002",
+      "question": "How does rice stripe virus overwinter in temperate regions?",
+      "answer": "Based on the provided data fragments, Rice stripe virus (RSV) is a member of the genus *Tenuivirus* and the causative agent of rice stripe disease, a severe disease of rice in temperate and subtropical East Asia [1][2]. It is persistently transmitted in a circulative-propagative manner mainly by the small brown planthopper, *Laodelphax striatellus* [1][2][6].  \n\nThe fragments do not contain an explicit description of how RSV overwinters. However, one study title indicates a quantitative analysis of RSV in a **transovarial transmission cycle** during the development and reproduction of *L. striatellus* [3]. Transovarial passage allows the virus to be passed from an infected female vector to her offspring via the eggs. In temperate regions, *L. striatellus* overwinters as diapausing nymphs or eggs, so transovarial transmission very likely enables RSV to persist across winter within the vector population. Additionally, fragment [5] documents long-distance migration of *L. striatellus* from eastern China to Japan and Korea, which contributes to disease epidemics; this does not exclude local overwintering but suggests that both overwintering vectors and immigrant vectors can serve as sources of primary inoculum in spring.  \n\nIn summary, while the available fragments do not directly state the overwintering mechanism, the documented transovarial transmission [3] combined with the known overwintering habits of the planthopper vector imply that RSV overwinters in vector eggs or nymphs in temperate regions.",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 32.95142119999946,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-qa-002",
+          "claim": "Based on the provided data fragments, Rice stripe virus (RSV) is a member of the genus *Tenuivirus* and the causative agent of rice stripe disease, a severe disease of rice in temperate and subtropical East Asia [1][2].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "e stripe virus (RSV), a member of the genus Tenuivirus, causes rice stripe disease, one of the most notorious rice diseases in temperate and subtropical East Asia (Toriyama, 1986). RSV is transmitted ",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk directly states that RSV is a member of the genus Tenuivirus and causes"
+        },
+        {
+          "case_id": "pv-qa-002",
+          "claim": "Based on the provided data fragments, Rice stripe virus (RSV) is a member of the genus *Tenuivirus* and the causative agent of rice stripe disease, a severe disease of rice in temperate and subtropical East Asia [1][2].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Rice stripe disease caused by Rice stripe virus (RSV) is one of the most devastating plant viruses of rice and causes enormous losses in production. RSV is transmitted from plant to plant by the small",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim: \"Based on the provided data fragments, Rice st"
+        },
+        {
+          "case_id": "pv-qa-002",
+          "claim": "It is persistently transmitted in a circulative-propagative manner mainly by the small brown planthopper, *Laodelphax striatellus* [1][2][6].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "e stripe virus (RSV), a member of the genus Tenuivirus, causes rice stripe disease, one of the most notorious rice diseases in temperate and subtropical East Asia (Toriyama, 1986). RSV is transmitted ",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly states that RSV is transmitted mainly by the small brown pla"
+        },
+        {
+          "case_id": "pv-qa-002",
+          "claim": "It is persistently transmitted in a circulative-propagative manner mainly by the small brown planthopper, *Laodelphax striatellus* [1][2][6].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Rice stripe disease caused by Rice stripe virus (RSV) is one of the most devastating plant viruses of rice and causes enormous losses in production. RSV is transmitted from plant to plant by the small",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the given CLAIM is supported by the CHUNK.\n\nCLAIM: \"It is persistently transmitted in a"
+        },
+        {
+          "case_id": "pv-qa-002",
+          "claim": "It is persistently transmitted in a circulative-propagative manner mainly by the small brown planthopper, *Laodelphax striatellus* [1][2][6].",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "Vector: Planthopper; Transmission: Sap transmissible; Laodelphax striatellus; Unkanodes sapporona, U. (Ribautodephax) albifascia; Terthron albovittatus; Nephotettix virescens (eff.), N. cincticeps (le",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the chunk supports the claim. The claim says: \"It is persistently transmitted in a circulati"
+        },
+        {
+          "case_id": "pv-qa-002",
+          "claim": "striatellus* [3].",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Quantitative analysis of Rice stripe virus in a transovarial transmission cycle during the development and reproduction of its vector, Laodelphax striatellus",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are given a claim: \"striatellus* [3].\" This claim seems odd; it's just a species name with an asterisk and a citation"
+        },
+        {
+          "case_id": "pv-qa-002",
+          "claim": "Additionally, fragment [5] documents long-distance migration of *L.",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "This review examines recent studies of the migration of three rice planthoppers, Laodelphax striatellus, Sogatella furcifera, and Nilaparvata lugens, in East Asia. Laodelphax striatellus has recently ",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim: \"Additionally, fragment [5] documents long-distance migra"
+        },
+        {
+          "case_id": "pv-qa-002",
+          "claim": "In summary, while the available fragments do not directly state the overwintering mechanism, the documented transovarial transmission [3] combined with the known overwintering habits of the planthopper vector imply that RSV overwinters in vector eggs or nymphs in temperate regions.",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Quantitative analysis of Rice stripe virus in a transovarial transmission cycle during the development and reproduction of its vector, Laodelphax striatellus",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are given a claim and a chunk. Need to evaluate if the chunk supports the claim.\n\nClaim: \"In summary, while the avail"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-qa-003",
+      "question": "Describe the capsid structure of tobacco necrosis virus",
+      "answer": "Upon reviewing the provided data fragments, none contain information about the capsid structure of tobacco necrosis virus. The fragments cover various other plant viruses—tobacco etch potyvirus [1][3], a geminivirus [2], broad bean stain virus [4], arabis mosaic virus [5], tobacco streak virus [6], and a general review on capsid architecture [7]—but do not mention tobacco necrosis virus. Therefore, a description of its capsid structure cannot be given based on the available sources.",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 13.867498599996907,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-qa-003",
+          "claim": "The fragments cover various other plant viruses—tobacco etch potyvirus [1][3], a geminivirus [2], broad bean stain virus [4], arabis mosaic virus [5], tobacco streak virus [6], and a general review on capsid architecture [7]—but do not mention tobacco necrosis virus.",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Distinct functions of capsid protein in assembly and movement of tobacco etch potyvirus in plants.",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: evaluate whether CHUNK supports CLAIM. The claim is: \"The fragments cover various other plant viruses—toba"
+        },
+        {
+          "case_id": "pv-qa-003",
+          "claim": "The fragments cover various other plant viruses—tobacco etch potyvirus [1][3], a geminivirus [2], broad bean stain virus [4], arabis mosaic virus [5], tobacco streak virus [6], and a general review on capsid architecture [7]—but do not mention tobacco necrosis virus.",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Capsid Protein Determinants Involved in Cell-to-Cell and Long Distance Movement of Tobacco Etch Potyvirus",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are evaluating whether a chunk supports a claim. The claim states that the fragments cover various plant viruses incl"
+        },
+        {
+          "case_id": "pv-qa-003",
+          "claim": "The fragments cover various other plant viruses—tobacco etch potyvirus [1][3], a geminivirus [2], broad bean stain virus [4], arabis mosaic virus [5], tobacco streak virus [6], and a general review on capsid architecture [7]—but do not mention tobacco necrosis virus.",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Near-Atomic Resolution Structure of a Plant Geminivirus Determined by Electron Cryomicroscopy",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We need to evaluate whether the chunk supports the claim. The claim is: \"The fragments cover various other plant viruses"
+        },
+        {
+          "case_id": "pv-qa-003",
+          "claim": "The fragments cover various other plant viruses—tobacco etch potyvirus [1][3], a geminivirus [2], broad bean stain virus [4], arabis mosaic virus [5], tobacco streak virus [6], and a general review on capsid architecture [7]—but do not mention tobacco necrosis virus.",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "The cryo-electron microscopy structure of Broad Bean Stain Virus suggests a common capsid assembly mechanism among comoviruses",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: evaluate whether CHUNK supports the CLAIM. The claim lists various plant viruses mentioned in fragments: t"
+        },
+        {
+          "case_id": "pv-qa-003",
+          "claim": "The fragments cover various other plant viruses—tobacco etch potyvirus [1][3], a geminivirus [2], broad bean stain virus [4], arabis mosaic virus [5], tobacco streak virus [6], and a general review on capsid architecture [7]—but do not mention tobacco necrosis virus.",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "The backbone model of the Arabis mosaic virus reveals new insights into functional domains of Nepovirus capsid",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the cited literature chunk supports the claim. The claim says the fragments cover vario"
+        },
+        {
+          "case_id": "pv-qa-003",
+          "claim": "The fragments cover various other plant viruses—tobacco etch potyvirus [1][3], a geminivirus [2], broad bean stain virus [4], arabis mosaic virus [5], tobacco streak virus [6], and a general review on capsid architecture [7]—but do not mention tobacco necrosis virus.",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "Structural studies on tobacco streak virus coat protein: Insights into the pleomorphic nature of ilarviruses",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are given a claim and a chunk. The claim says: \"The fragments cover various other plant viruses—tobacco etch potyviru"
+        },
+        {
+          "case_id": "pv-qa-003",
+          "claim": "The fragments cover various other plant viruses—tobacco etch potyvirus [1][3], a geminivirus [2], broad bean stain virus [4], arabis mosaic virus [5], tobacco streak virus [6], and a general review on capsid architecture [7]—but do not mention tobacco necrosis virus.",
+          "chunk_number": 7,
+          "chunk_text_excerpt": "Architecture of important plant viruses: the role of capsid protein—its assembly and architecture",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are given a claim and a chunk. The claim states that the fragments cover various plant viruses, but do not mention to"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-qa-004",
+      "question": "番茄斑萎病毒在辣椒上的典型症状有哪些？",
+      "answer": "根据现有数据片段，番茄斑萎病毒（TSWV）在辣椒上的典型症状可归纳如下：\n\n**叶片症状**\n- 叶片上出现褪绿和坏死斑点、环斑 [1]。\n- 叶片呈古铜色（bronzing）[1]。\n- 可能出现花叶症状，随后发展为坏死 [3]。\n- 叶片丛生（rosetted leaves）[4]。\n- 严重时可导致萎蔫 [3]。\n\n**果实症状**\n- 果实表面出现同心环纹 [1][4]。\n- 不规则的褪绿斑块 [1]。\n- 果实畸形、发育不均匀、成熟不一致 [1][4]。\n- 果皮褐变，出现“钉头”状症状（nail head symptoms）[4]。\n\n**全株症状**\n- 植株矮化（stunting）[4]。\n- 叶柄和茎上出现褪绿与坏死斑点、环斑，以及顶端坏死 [1]。\n\n这些症状在多国报道的田间或温室辣椒自然发病中均被记录 [1][3][4]。",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 17.15766490000533,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-qa-004",
+          "claim": "根据现有数据片段，番茄斑萎病毒（TSWV）在辣椒上的典型症状可归纳如下：\n\n**叶片症状**\n- 叶片上出现褪绿和坏死斑点、环斑 [1]。",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "In the Dominican Republic, green bell pepper (Capsicum annuum L.) and tomato (Solanum lycopersicum L.) are widely cultivated under protected greenhouse conditions as high value commercial crops for ex",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly describes chlorotic and"
+        },
+        {
+          "case_id": "pv-qa-004",
+          "claim": "- 叶片呈古铜色（bronzing）[1]。",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "In the Dominican Republic, green bell pepper (Capsicum annuum L.) and tomato (Solanum lycopersicum L.) are widely cultivated under protected greenhouse conditions as high value commercial crops for ex",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the CLAIM \"叶片呈古铜色（bronzing）[1].\" is supported by the CHUNK.\n\nThe claim is simply \"leave"
+        },
+        {
+          "case_id": "pv-qa-004",
+          "claim": "- 可能出现花叶症状，随后发展为坏死 [3]。",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "(TSWV) was first reported in 2004 from paprika in South Korea (Kim et al., 2004), where it is currently widespread. TSWV infections were reported in chili pepper, tomato, weeds, and ornamental plant s",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We need to evaluate the claim: \"可能出现花叶症状，随后发展为坏死 [3].\" which translates to \"Mosaic symptoms may appear, followed by necr"
+        },
+        {
+          "case_id": "pv-qa-004",
+          "claim": "- 叶片丛生（rosetted leaves）[4]。",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Surveys were conducted to determine the occurrence and distribution of tospovirus affecting bell pepper in Solan district of Himachal Pradesh during 2009 and 2010.Bell pepper crop was more affected es",
+          "verdict": "supported",
+          "rationale": "The chunk explicitly lists 'rosetted leaves' as one of the observed symptoms in bell pepper plants affected by tospovirus."
+        },
+        {
+          "case_id": "pv-qa-004",
+          "claim": "- 严重时可导致萎蔫 [3]。",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "(TSWV) was first reported in 2004 from paprika in South Korea (Kim et al., 2004), where it is currently widespread. TSWV infections were reported in chili pepper, tomato, weeds, and ornamental plant s",
+          "verdict": "supported",
+          "rationale": "The chunk explicitly mentions that infected chili peppers showed wilting, directly supporting the claim."
+        },
+        {
+          "case_id": "pv-qa-004",
+          "claim": "**果实症状**\n- 果实表面出现同心环纹 [1][4]。",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "In the Dominican Republic, green bell pepper (Capsicum annuum L.) and tomato (Solanum lycopersicum L.) are widely cultivated under protected greenhouse conditions as high value commercial crops for ex",
+          "verdict": "supported",
+          "rationale": "The chunk explicitly mentions that fruits on symptomatic plants showed concentric rings, directly matching the claim about 同心环纹."
+        },
+        {
+          "case_id": "pv-qa-004",
+          "claim": "**果实症状**\n- 果实表面出现同心环纹 [1][4]。",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Surveys were conducted to determine the occurrence and distribution of tospovirus affecting bell pepper in Solan district of Himachal Pradesh during 2009 and 2010.Bell pepper crop was more affected es",
+          "verdict": "not_supported",
+          "rationale": "The chunk mentions leaves with concentric rings but fruit symptoms are described as misshapen with browning and nail head symptoms, with no reference to concentric rings on the fruit surface."
+        },
+        {
+          "case_id": "pv-qa-004",
+          "claim": "- 不规则的褪绿斑块 [1]。",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "In the Dominican Republic, green bell pepper (Capsicum annuum L.) and tomato (Solanum lycopersicum L.) are widely cultivated under protected greenhouse conditions as high value commercial crops for ex",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \""
+        },
+        {
+          "case_id": "pv-qa-004",
+          "claim": "- 果实畸形、发育不均匀、成熟不一致 [1][4]。",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "In the Dominican Republic, green bell pepper (Capsicum annuum L.) and tomato (Solanum lycopersicum L.) are widely cultivated under protected greenhouse conditions as high value commercial crops for ex",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly states that fruits showed deformation and uneven maturation "
+        },
+        {
+          "case_id": "pv-qa-004",
+          "claim": "- 果实畸形、发育不均匀、成熟不一致 [1][4]。",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Surveys were conducted to determine the occurrence and distribution of tospovirus affecting bell pepper in Solan district of Himachal Pradesh during 2009 and 2010.Bell pepper crop was more affected es",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the CHUNK supports the CLAIM. The claim is: \"果实畸形、发育不均匀、成熟不一致\" (which translates to \"fr"
+        },
+        {
+          "case_id": "pv-qa-004",
+          "claim": "- 果皮褐变，出现“钉头”状症状（nail head symptoms）[4]。",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Surveys were conducted to determine the occurrence and distribution of tospovirus affecting bell pepper in Solan district of Himachal Pradesh during 2009 and 2010.Bell pepper crop was more affected es",
+          "verdict": "supported",
+          "rationale": "The chunk explicitly states that infected bell pepper fruits showed browning and nail head symptoms, directly matching the claim."
+        },
+        {
+          "case_id": "pv-qa-004",
+          "claim": "**全株症状**\n- 植株矮化（stunting）[4]。",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Surveys were conducted to determine the occurrence and distribution of tospovirus affecting bell pepper in Solan district of Himachal Pradesh during 2009 and 2010.Bell pepper crop was more affected es",
+          "verdict": "supported",
+          "rationale": "The chunk explicitly mentions 'plant stunting' as a symptom observed under field conditions, directly supporting the claim of stunting."
+        },
+        {
+          "case_id": "pv-qa-004",
+          "claim": "- 叶柄和茎上出现褪绿与坏死斑点、环斑，以及顶端坏死 [1]。",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "In the Dominican Republic, green bell pepper (Capsicum annuum L.) and tomato (Solanum lycopersicum L.) are widely cultivated under protected greenhouse conditions as high value commercial crops for ex",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: \"Evaluate whether a cited literature chunk actually supports a claim.\" Given a CLAIM and a CHUNK. The clai"
+        },
+        {
+          "case_id": "pv-qa-004",
+          "claim": "这些症状在多国报道的田间或温室辣椒自然发病中均被记录 [1][3][4]。",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "In the Dominican Republic, green bell pepper (Capsicum annuum L.) and tomato (Solanum lycopersicum L.) are widely cultivated under protected greenhouse conditions as high value commercial crops for ex",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the CHUNK supports the CLAIM. The CLAIM is: \"这些症状在多国报道的田间或温室辣椒自然发病中均被记录 [1][3][4].\" Tra"
+        },
+        {
+          "case_id": "pv-qa-004",
+          "claim": "这些症状在多国报道的田间或温室辣椒自然发病中均被记录 [1][3][4]。",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "(TSWV) was first reported in 2004 from paprika in South Korea (Kim et al., 2004), where it is currently widespread. TSWV infections were reported in chili pepper, tomato, weeds, and ornamental plant s",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We need to evaluate if the given CHUNK supports the CLAIM: \"这些症状在多国报道的田间或温室辣椒自然发病中均被记录 [1][3][4].\" The claim is in Chine"
+        },
+        {
+          "case_id": "pv-qa-004",
+          "claim": "这些症状在多国报道的田间或温室辣椒自然发病中均被记录 [1][3][4]。",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Surveys were conducted to determine the occurrence and distribution of tospovirus affecting bell pepper in Solan district of Himachal Pradesh during 2009 and 2010.Bell pepper crop was more affected es",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are given a claim and a chunk. The claim is: \"这些症状在多国报道的田间或温室辣椒自然发病中均被记录 [1][3][4]。\" which translates to \"These sympt"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-qa-005",
+      "question": "What is the particle morphology of tobamoviruses?",
+      "answer": "Tobamovirus particles are non-enveloped, rigid rods with a straight morphology [1][2]. Transmission electron microscopy of purified virions from a tomato‑infecting isolate revealed an average length of approximately 235 ± 123 nm (with most particles ~300 nm) and a width of 18 nm [1]. In a different study of cucurbit‑infecting tobamoviruses, virions were also described as rod‑shaped, ~300 nm long, but with a reported diameter of 28–30 nm [2]. These structural features are consistent with the typical rigid‑rod morphology of the genus *Tobamovirus* [1].",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 19.465366799995536,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-qa-005",
+          "claim": "Tobamovirus particles are non-enveloped, rigid rods with a straight morphology [1][2].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "l fruit occurred on symptomatic plants (Fig 1 and S2 Fig). The naturally infected\ntomato plants were collected for laboratory analysis to identify the disease-causing agent. Viral\nparticles purified f",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\":"
+        },
+        {
+          "case_id": "pv-qa-005",
+          "claim": "Tobamovirus particles are non-enveloped, rigid rods with a straight morphology [1][2].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Most of the cucurbits diseases in Indonesia are caused by plant viruses. Tobamovirus is one of the viral genera recently infected cucurbits. The members of cucurbits-infecting Tobamovirus are Cucumber",
+          "verdict": "supported",
+          "rationale": "The chunk explicitly describes the virions as 'rod-shaped and not enveloped' and 'straight', directly supporting the claim."
+        },
+        {
+          "case_id": "pv-qa-005",
+          "claim": "Transmission electron microscopy of purified virions from a tomato‑infecting isolate revealed an average length of approximately 235 ± 123 nm (with most particles ~300 nm) and a width of 18 nm [1].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "l fruit occurred on symptomatic plants (Fig 1 and S2 Fig). The naturally infected\ntomato plants were collected for laboratory analysis to identify the disease-causing agent. Viral\nparticles purified f",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the chunk supports the claim. The claim says: \"Transmission electron microscopy of purified "
+        },
+        {
+          "case_id": "pv-qa-005",
+          "claim": "In a different study of cucurbit‑infecting tobamoviruses, virions were also described as rod‑shaped, ~300 nm long, but with a reported diameter of 28–30 nm [2].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Most of the cucurbits diseases in Indonesia are caused by plant viruses. Tobamovirus is one of the viral genera recently infected cucurbits. The members of cucurbits-infecting Tobamovirus are Cucumber",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\":"
+        },
+        {
+          "case_id": "pv-qa-005",
+          "claim": "These structural features are consistent with the typical rigid‑rod morphology of the genus *Tobamovirus* [1].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "l fruit occurred on symptomatic plants (Fig 1 and S2 Fig). The naturally infected\ntomato plants were collected for laboratory analysis to identify the disease-causing agent. Viral\nparticles purified f",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly states that a rigid rod-like form resembling the Tobamovirus"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-qa-refuse-001",
+      "question": "What is the effect of climate change on sugarcane mosaic virus incidence in Brazil?",
+      "answer": "After reviewing the provided data fragments, **no specific information was found that directly addresses the effect of climate change on the incidence of Sugarcane mosaic virus (SCMV) in Brazil**.  \n\n- Fragment [1] reports the molecular detection of SCMV causing mosaic disease in maize and sorghum in Brazil, confirming the virus’s presence, but does not discuss climate-related factors or changes in incidence.  \n- Fragment [2] analyzes the potential impact of climate change on whiteflies and the spread of viruses they vector, but SCMV is primarily transmitted by aphids in a non‑persistent manner, making that discussion not directly applicable.  \n- Fragment [7] presents a broad overview of challenges and opportunities for plant viruses under climate change, but the fragment’s title alone contains no details about SCMV, sugarcane, or Brazil, so it cannot be linked to the specific question.  \n\nBecause no fragment provides data on how climate change may influence SCMV incidence, prevalence, or distribution in Brazil, it is not possible to formulate a substantiated answer from this database.",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 22.66715889999614,
+      "expected_coverage": "no",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-qa-refuse-001",
+          "claim": "- Fragment [1] reports the molecular detection of SCMV causing mosaic disease in maize and sorghum in Brazil, confirming the virus’s presence, but does not discuss climate-related factors or changes in incidence.",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Molecular detection of the Sugarcane Mosaic Virus causing mosaic disease in maize and sorghum in Brazil.",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim states: \"Fragment [1] reports the molecular det"
+        },
+        {
+          "case_id": "pv-qa-refuse-001",
+          "claim": "- Fragment [2] analyzes the potential impact of climate change on whiteflies and the spread of viruses they vector, but SCMV is primarily transmitted by aphids in a non‑persistent manner, making that discussion not directly applicable.",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Potential impact of climate change on whiteflies and implications for the spread of vectored viruses",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the CHUNK supports the CLAIM. The CLAIM says: \"Fragment [2] analyzes the potential impa"
+        },
+        {
+          "case_id": "pv-qa-refuse-001",
+          "claim": "- Fragment [7] presents a broad overview of challenges and opportunities for plant viruses under climate change, but the fragment’s title alone contains no details about SCMV, sugarcane, or Brazil, so it cannot be linked to the specific question.",
+          "chunk_number": 7,
+          "chunk_text_excerpt": "Challenges and opportunities for plant viruses under a climate change scenario",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the CHUNK supports the CLAIM. The CLAIM says that Fragment [7] presents a broad overvie"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-qa-refuse-002",
+      "question": "Compare the economic losses caused by potato virus Y in China versus Peru from 2018 to 2023",
+      "answer": "Based on the provided data fragments, no information is available regarding economic losses caused by Potato virus Y (PVY) in China or Peru during the period 2018–2023.\n\nThe fragments discuss PVY incidence in Pakistan [1], economic losses in Europe (Switzerland and the European Union) between 2004 and 2017 [2], and occurrence in Brazil [7], but none contain any data for China or Peru. Therefore, a comparison cannot be made using the supplied sources.",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 12.826349999995728,
+      "expected_coverage": "no",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-qa-refuse-002",
+          "claim": "The fragments discuss PVY incidence in Pakistan [1], economic losses in Europe (Switzerland and the European Union) between 2004 and 2017 [2], and occurrence in Brazil [7], but none contain any data for China or Peru.",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Potato virus Y (PVY) occupied fifth position among the economically damaging plant viruses in the world and its increasing incidence achieved an evolving concern for potato (Solanum tuberosum L.) crop",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim is about the fragments discussing PVY incidence"
+        },
+        {
+          "case_id": "pv-qa-refuse-002",
+          "claim": "The fragments discuss PVY incidence in Pakistan [1], economic losses in Europe (Switzerland and the European Union) between 2004 and 2017 [2], and occurrence in Brazil [7], but none contain any data for China or Peru.",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Abstract As the fourth most prevalent food crop, potato is very important in the global economy, but it is affected by numerous pests, and by many bacterial, viral and fungal diseases. Among these dis",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate the claim against the chunk. The claim says: \"The fragments discuss PVY incidence in Pakistan ["
+        },
+        {
+          "case_id": "pv-qa-refuse-002",
+          "claim": "The fragments discuss PVY incidence in Pakistan [1], economic losses in Europe (Switzerland and the European Union) between 2004 and 2017 [2], and occurrence in Brazil [7], but none contain any data for China or Peru.",
+          "chunk_number": 7,
+          "chunk_text_excerpt": "Ocurrence of potato virus Y on potato crops in São Paulo state and effects of virus infection on tuber production and plant emergence",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the CLAIM. The CLAIM is about fragments discussing PVY incidence in "
+        }
+      ]
+    },
+    {
+      "case_id": "pv-qa-refuse-003",
+      "question": "What plant viruses infect cassava in sub-Saharan Africa and what are the exact nucleotide sequences of their coat protein genes?",
+      "answer": "The plant viruses reported to infect cassava in sub-Saharan Africa, based on the provided fragments, include:\n\n- **Cassava mosaic begomoviruses (family *Geminiviridae*)**: African cassava mosaic virus (ACMV), East African cassava mosaic virus (EACMV) [1], and East African cassava mosaic Cameroon virus (EACMCV) [4].\n- **Cassava brown streak ipomoviruses (family *Potyviridae*)**: Cassava brown streak virus (CBSV) and Ugandan cassava brown streak virus (UCBSV) [2,3,7].\n\nRegarding the exact nucleotide sequences of their coat protein genes, the data fragments **do not provide the complete sequence data**. Only the following partial information is available:\n\n- Partial coat protein gene sequences of **ACMV** from Nigeria (620 bp) were deposited under GenBank accessions MZ507578 (Okpoma isolate), MZ507579 (Ababene isolate), and MZ507580 (Idundu isolate) [1]. The actual nucleotide strings are not given in the fragments.\n- A partial coat protein gene sequence of **EACMV** (554 bp, Ovonum isolate) is mentioned, but no accession number or sequence is provided within the fragment [1].\n- No coat protein gene sequences of EACMCV, CBSV, or UCBSV appear in the supplied data [2,3,4,5,6,7].\n\nTherefore, the exact nucleotide sequences of the coat protein genes cannot be reconstructed from the available fragments. The accessions above can be used to retrieve the partial sequences from public databases.",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 39.20530619999772,
+      "expected_coverage": "no",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-qa-refuse-003",
+          "claim": "The plant viruses reported to infect cassava in sub-Saharan Africa, based on the provided fragments, include:\n\n- **Cassava mosaic begomoviruses (family *Geminiviridae*)**: African cassava mosaic virus (ACMV), East African cassava mosaic virus (EACMV) [1], and East African cassava mosaic Cameroon virus (EACMCV) [4].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Cassava (Manihot esculenta Crantz) is a major root crop in sub-Saharan Africa, including Cross River State, Nigeria, where the crop is cultivated as a staple food in many communities. Cassava mosaic b",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the chunk supports the claim. The claim lists plant viruses infecting cassava in sub-Saharan"
+        },
+        {
+          "case_id": "pv-qa-refuse-003",
+          "claim": "The plant viruses reported to infect cassava in sub-Saharan Africa, based on the provided fragments, include:\n\n- **Cassava mosaic begomoviruses (family *Geminiviridae*)**: African cassava mosaic virus (ACMV), East African cassava mosaic virus (EACMV) [1], and East African cassava mosaic Cameroon virus (EACMCV) [4].",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Cassava mosaic disease (CMD), caused by an array of is the most economically important viral disease of cassava in sub-Saharan Africa. The most frequently reported in West Africa are African cassava m",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether a claim is supported by a chunk. The claim is a list of plant viruses reported to infec"
+        },
+        {
+          "case_id": "pv-qa-refuse-003",
+          "claim": "Only the following partial information is available:\n\n- Partial coat protein gene sequences of **ACMV** from Nigeria (620 bp) were deposited under GenBank accessions MZ507578 (Okpoma isolate), MZ507579 (Ababene isolate), and MZ507580 (Idundu isolate) [1].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Cassava (Manihot esculenta Crantz) is a major root crop in sub-Saharan Africa, including Cross River State, Nigeria, where the crop is cultivated as a staple food in many communities. Cassava mosaic b",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the claim is supported by the chunk.\n\nClaim: \"Only the following partial information is"
+        },
+        {
+          "case_id": "pv-qa-refuse-003",
+          "claim": "- A partial coat protein gene sequence of **EACMV** (554 bp, Ovonum isolate) is mentioned, but no accession number or sequence is provided within the fragment [1].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Cassava (Manihot esculenta Crantz) is a major root crop in sub-Saharan Africa, including Cross River State, Nigeria, where the crop is cultivated as a staple food in many communities. Cassava mosaic b",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: \"You evaluate whether a cited literature chunk actually supports a claim.\"\n\nGiven:\n- CLAIM: \"A partial coa"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-plan-001",
+      "question": "设计一个针对柑橘黄龙病媒介昆虫柑橘木虱的综合管理方案",
+      "answer": "基于现有数据片段，柑橘木虱（*Diaphorina citri*）的综合管理方案可整合以下策略。请注意，片段主要涵盖化学、生物及分子生物学层面的研究，一个完整的综合管理方案还应包括栽培管理等环节（如种植无病苗木、移除病树等[1]），但以下重点归纳了片段中具体探讨的技术手段。\n\n**1. 植物抗性诱导与行为调控**\n可通过外源施用植物信号分子来改变柑橘挥发物排放，从而干扰木虱的寄主搜寻行为。研究表明，叶面喷施茉莉酸甲酯（与诱导系统抗性途径相关）或水杨酸（与系统获得性抗性途径成分相关）能诱导柑橘叶片释放防御相关挥发物，并影响柑橘木虱的聚集行为 [3]。这为开发基于挥发物的行为调节剂提供了可能。\n\n**2. 生物防治**\n目前已有研究评估利用捕食性螨作为控制柑橘木虱的潜在生物防治剂 [4]。引入并保护天敌是降低木虱种群密度的可选策略。\n\n**3. 化学防治的改进**\n*   在杀虫剂应用上，研究发现相比频繁使用化学农药，将园艺矿物油整合进防治方案能改善效果。在马来西亚砂拉越的田间试验中，使用nC24园艺矿物油以及此后的三年内，黄龙病（经由聚合酶链式反应检测）感染率为11.4%，低于未喷洒对照组的42.2%，也低于部分传统农药轮换方案（如三唑磷/氯氰菊酯/毒死蜱）的22.7% [7]。这表明选择性使用矿物油并辅以精准施药，可在一定程度上延缓病害扩散。\n\n**4. 新兴分子防治策略**\n*   **基因沉默技术**：利用基于柑橘衰退病毒的植物介导RNA干扰技术，沉默柑橘木虱体内的组织蛋白酶B和L基因。此方法可干扰雌虫的卵巢发育，为限制黄龙病传播提供了新思路 [5]。\n*   **分子靶标开发**：对柑橘木虱基因组中的V-型ATP合酶亚基进行鉴定与注释，是开发定向害虫管理策略的关键步骤，有助于未来创制作用于特定分子靶标的新型药物 [6]。同时，改进的基因组注释也为理解昆虫-病原互作、发展分子防控方法奠定了基础 [2]。\n\n**方案局限性说明**\n现有片段未能提供所有必需措施的具体参数。例如，片段[4]仅提及捕食螨具有生防潜力，但未提供其田间释放应用的具体效果数据；片段[3]对植物信号分子的研究属于基础机制探索，尚未形成可直接推广的田间操作规程。此外，片断中未包含关于营养管理、栽种期和抗性品种等其他综合管理核心要素的信息。",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 31.68639930000063,
+      "expected_coverage": "partial",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-plan-001",
+          "claim": "请注意，片段主要涵盖化学、生物及分子生物学层面的研究，一个完整的综合管理方案还应包括栽培管理等环节（如种植无病苗木、移除病树等[1]），但以下重点归纳了片段中具体探讨的技术手段。",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "The Asian citrus psyllid (ACP), Diaphorina citri Kuwayama, transmits ‘Candidatus Liberibacter asiaticus’ (CLas), a phloem-limited bacterium associated with the severe Asian form of huanglongbing (HLB)",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the CHUNK supports the CLAIM.\n\nCLAIM: \"请注意，片段主要涵盖化学、生物及分子生物学层面的研究，一个完整的综合管理方案还应包括栽培管理等环"
+        },
+        {
+          "case_id": "pv-plan-001",
+          "claim": "研究表明，叶面喷施茉莉酸甲酯（与诱导系统抗性途径相关）或水杨酸（与系统获得性抗性途径成分相关）能诱导柑橘叶片释放防御相关挥发物，并影响柑橘木虱的聚集行为 [3]。",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Huanglongbing, also known as citrus greening, is a destructive disease that threatens citrus production worldwide. It is putatively caused by the phloem-limited bacterium Candidatus Liberibacter asiat",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the CHUNK supports the CLAIM. The CLAIM: \"研究表明，叶面喷施茉莉酸甲酯（与诱导系统抗性途径相关）或水杨酸（与系统获得性抗性途径成分相关）能诱导"
+        },
+        {
+          "case_id": "pv-plan-001",
+          "claim": "生物防治**\n目前已有研究评估利用捕食性螨作为控制柑橘木虱的潜在生物防治剂 [4]。",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "A predatory mite as potential biological control agent of Diaphorina citri",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk title directly states the evaluation of a"
+        },
+        {
+          "case_id": "pv-plan-001",
+          "claim": "7% [7]。",
+          "chunk_number": 7,
+          "chunk_text_excerpt": "Aspects of the incidence and spread of the citrus disease huanglongbing (HLB) in relation to the vector Diaphorina citri population fluctuation were studied from January 1999 to December 2001 seasons ",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: \"You evaluate whether a cited literature chunk actually supports a claim.\" Given CLAIM: \"7% [7]。\" and CHUN"
+        },
+        {
+          "case_id": "pv-plan-001",
+          "claim": "此方法可干扰雌虫的卵巢发育，为限制黄龙病传播提供了新思路 [5]。",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "that limits the spread of HLB.",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"not_supported\", \""
+        },
+        {
+          "case_id": "pv-plan-001",
+          "claim": "*   **分子靶标开发**：对柑橘木虱基因组中的V-型ATP合酶亚基进行鉴定与注释，是开发定向害虫管理策略的关键步骤，有助于未来创制作用于特定分子靶标的新型药物 [6]。",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "genome is a critical step towards developing directed pest management strategies to reduce the spread of HLB throughout the citrus industry.",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether a chunk supports a claim. The claim is about molecular target development: identifying "
+        },
+        {
+          "case_id": "pv-plan-001",
+          "claim": "同时，改进的基因组注释也为理解昆虫-病原互作、发展分子防控方法奠定了基础 [2]。",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "ABSTRACT The Asian citrus psyllid ( Diaphorina citri Kuwayama) is the insect vector of the bacterium Candidatus Liberibacter asiaticus (CLas), the pathogen associated with citrus Huanglongbing (HLB, c",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim is: \"同时，改进的基因组注释也为理解昆虫-病原互作、发展分子防控方法奠定了基础 [2].\""
+        },
+        {
+          "case_id": "pv-plan-001",
+          "claim": "例如，片段[4]仅提及捕食螨具有生防潜力，但未提供其田间释放应用的具体效果数据；片段[3]对植物信号分子的研究属于基础机制探索，尚未形成可直接推广的田间操作规程。",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "A predatory mite as potential biological control agent of Diaphorina citri",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the claim is supported by the chunk. The claim says: \"例如，片段[4]仅提及捕食螨具有生防潜力，但未提供其田间释放应用的具体效果数"
+        },
+        {
+          "case_id": "pv-plan-001",
+          "claim": "例如，片段[4]仅提及捕食螨具有生防潜力，但未提供其田间释放应用的具体效果数据；片段[3]对植物信号分子的研究属于基础机制探索，尚未形成可直接推广的田间操作规程。",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Huanglongbing, also known as citrus greening, is a destructive disease that threatens citrus production worldwide. It is putatively caused by the phloem-limited bacterium Candidatus Liberibacter asiat",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the CHUNK supports the CLAIM. Let's break it down.\n\nCLAIM: \"例如，片段[4]仅提及捕食螨具有生防潜力，但未提供其田"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-plan-002",
+      "question": "Propose a surveillance system for early detection of emerging plant viruses in greenhouse tomato production",
+      "answer": "Based on the provided literature titles, a surveillance system for early detection of emerging viruses in greenhouse tomato production can be proposed that integrates several modern approaches. The system should combine automated symptom recognition, rapid pathogen identification, and robust management protocols, as suggested by the following fragments:\n\n*   **Automated visual surveillance:** Deploy deep-learning-based imaging systems for automatic and reliable detection of tomato begomovirus infections, enabling real-time, non-invasive monitoring of symptom onset [2]. This can be extended to other emerging threats with appropriate model training.\n*   **Rapid and affordable diagnostics:** Incorporate low-cost, high-throughput identification methods such as VIRFAST to achieve faster and cheaper confirmation of novel or unexpected viral agents [4]. On-site testing reduces turnaround time, critical for containment.\n*   **Cutting-edge detection technologies:** Utilize the latest advancements in virus detection, including molecular and serological techniques tailored for greenhouse environments, to screen both symptomatic and asymptomatic plants, with special attention to vegetatively propagated material [5, 6].\n*   **Knowledge-based management and mitigation:** Integrate findings from projects focused on emerging viral diseases in tomatoes (e.g., VIRTIGATION) to establish durable disease management strategies that are triggered immediately upon detection [3].\n*   **Targeted monitoring of high-risk hosts:** Focus surveillance efforts on solanaceous crops, which are known reservoirs of emerging and re-emerging viral diseases, and adopt proven strategies for detection and eradication specifically developed for this plant family [7].\n*   **Unknown pathogen preparedness:** Maintain a component for investigation of mystery virus sources, applying generic detection methods (e.g., high-throughput sequencing) to identify completely novel agents not covered by existing assays [1].\n\nUnfortunately, the database fragments consisted only of titles, without detailed protocols or study outcomes. Therefore, this proposal outlines a conceptual framework derived from the themes of these works, rather than a fully specified operational manual.",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 31.62110279999615,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-plan-002",
+          "claim": "The system should combine automated symptom recognition, rapid pathogen identification, and robust management protocols, as suggested by the following fragments:\n\n*   **Automated visual surveillance:** Deploy deep-learning-based imaging systems for automatic and reliable detection of tomato begomovirus infections, enabling real-time, non-invasive monitoring of symptom onset [2].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Deep learning aided automatic and reliable detection of tomato begomovirus infections in plants",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly"
+        },
+        {
+          "case_id": "pv-plan-002",
+          "claim": "*   **Rapid and affordable diagnostics:** Incorporate low-cost, high-throughput identification methods such as VIRFAST to achieve faster and cheaper confirmation of novel or unexpected viral agents [4].",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "VIRFAST: Faster, cheaper identification of emerging plant virus problems",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The"
+        },
+        {
+          "case_id": "pv-plan-002",
+          "claim": ", VIRTIGATION) to establish durable disease management strategies that are triggered immediately upon detection [3].",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "KB34-2A-6. Emerging viral diseases in tomatoes and cucurbits : implementation of mitigation strategies for durable disease management (VIRTIGATION)",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim: \", VIRTIGATION) to establish durable disease m"
+        },
+        {
+          "case_id": "pv-plan-002",
+          "claim": "*   **Targeted monitoring of high-risk hosts:** Focus surveillance efforts on solanaceous crops, which are known reservoirs of emerging and re-emerging viral diseases, and adopt proven strategies for detection and eradication specifically developed for this plant family [7].",
+          "chunk_number": 7,
+          "chunk_text_excerpt": "Emerging and Reemerging Viral Diseases of Solanaceous Crops and Management Strategies for Detection and Eradication",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: evaluate whether the chunk supports the claim. The claim says: \"Targeted monitoring of high-risk hosts: Fo"
+        },
+        {
+          "case_id": "pv-plan-002",
+          "claim": ", high-throughput sequencing) to identify completely novel agents not covered by existing assays [1].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Detection and Management of New and Emerging Mystery Plant Virus Sources",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: evaluate whether a cited literature chunk supports a claim. The claim is: \", high-throughput sequencing) t"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-plan-003",
+      "question": "How to develop a virus-free seed potato certification program?",
+      "answer": "Developing a virus‑free seed potato certification program involves a systematic integration of tissue‑culture‑based sanitation, rigorous virus testing, protected multiplication, and field‑scale production under official inspection standards. The following components can be derived from the provided data fragments:\n\n1. **Source material selection and sanitation**  \n   Start with high‑quality, true‑to‑type cultivars [1]. Excise shoot apical meristems to eliminate viruses, optionally combining thermotherapy or the antiviral ribavirin to improve virus eradication rates [2][3].\n\n2. **Virus indexing and clone selection**  \n   Screen regenerated plantlets by ELISA (e.g., DAS‑ELISA) for the major potato viruses: PLRV, PVS, PVX, PVY, PVA, and PVM [2][3]. Retain only virus‑free clones for further multiplication [1][3].\n\n3. **In‑vitro multiplication of nuclear stock**  \n   Maintain and rapidly propagate virus‑free plantlets on modified MS medium via single‑node cuttings under controlled conditions (20–21 °C, 16 h photoperiod) [2][3]. This provides a continuous supply of pathogen‑free starting material throughout the year [5].\n\n4. **Pre‑basic seed production in protected facilities**  \n   Transplant virus‑free in‑vitro plantlets into sterile substrate inside aphid‑proof glasshouses or screen houses [2]. Produce pre‑basic minitubers in these quarantined environments, with seasonal planting (e.g., autumn and spring) [1][2]. Aeroponic systems may also be used to increase multiplication rates while maintaining health status [5].\n\n5. **Staged field multiplication with official certification**  \n   Move pre‑basic seeds to isolated fields for further generation increases (basic seeds, then certified seeds) [1], always applying mandatory phytosanitary roguings at optimally early growth stages to remove any infected plants [6]. Protect crops from vectors (especially aphids) through insecticide applications and physical isolation [6].\n\n6. **Adoption of a formal certification scheme**  \n   Base the program on an established standard such as the EPPO certification scheme (PM 4/28) [4]. National authorities may adapt the scheme by tightening tolerances, adding virus tests, or modifying roguing intervals to match local virus pressure, as has been advocated in Ukraine for PVY management [6].\n\n7. **Continuous quality assurance and regulatory updating**  \n   Implement routine ELISA testing of leaf samples at each multiplication stage [2][3]. Periodically review and revise certification documentation to reflect evolving epidemiological situations, such as shifts in virus strain prevalence [6].\n\nIn summary, a robust virus‑free seed potato certification program builds on meristem‑based sanitation, sensitive indexing, protected early‑generation production, and field‑scale multiplication governed by an officially recognized certification framework that mandates inspections, testing, and vector control.",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 48.11861489999865,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-plan-003",
+          "claim": "**Source material selection and sanitation**  \n   Start with high‑quality, true‑to‑type cultivars [1].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": " by SPLV,up to 60. 22%. In order to prevent and cure virus disease,improve the yield and quality of sweet potato,the preferred method was producing virus-free sweet potato obtained from sweet potato s",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are given a claim and a chunk. The claim: \"Source material selection and sanitation – Start with high‑quality, true‑t"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "Excise shoot apical meristems to eliminate viruses, optionally combining thermotherapy or the antiviral ribavirin to improve virus eradication rates [2][3].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Pre-basic seed potatoes are disease free potato minitubers produced by transplanting pathogen free in vitro potato plantlets under protected condition in aphid-proof glasshouse and/or screen house. Do",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: \"You evaluate whether a cited literature chunk actually supports a claim. Given CLAIM and CHUNK. Decide on"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "Excise shoot apical meristems to eliminate viruses, optionally combining thermotherapy or the antiviral ribavirin to improve virus eradication rates [2][3].",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Potatoes a high susceptibility to viral, bacterial and fungal diseases impose production of virus free material for healthy seed production since plant viruses are pathogens that cannot be destroyed b",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim: \"Excise shoot apical meristems to eliminate vi"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": ", DAS‑ELISA) for the major potato viruses: PLRV, PVS, PVX, PVY, PVA, and PVM [2][3].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Pre-basic seed potatoes are disease free potato minitubers produced by transplanting pathogen free in vitro potato plantlets under protected condition in aphid-proof glasshouse and/or screen house. Do",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: \"You evaluate whether a cited literature chunk actually supports a claim.\" The claim is: \", DAS‑ELISA) for"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": ", DAS‑ELISA) for the major potato viruses: PLRV, PVS, PVX, PVY, PVA, and PVM [2][3].",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Potatoes a high susceptibility to viral, bacterial and fungal diseases impose production of virus free material for healthy seed production since plant viruses are pathogens that cannot be destroyed b",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are given a claim: \"DAS-ELISA) for the major potato viruses: PLRV, PVS, PVX, PVY, PVA, and PVM [2][3].\" This appears "
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "Retain only virus‑free clones for further multiplication [1][3].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": " by SPLV,up to 60. 22%. In order to prevent and cure virus disease,improve the yield and quality of sweet potato,the preferred method was producing virus-free sweet potato obtained from sweet potato s",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are evaluating whether the claim \"Retain only virus‑free clones for further multiplication [1][3].\" is supported by t"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "Retain only virus‑free clones for further multiplication [1][3].",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Potatoes a high susceptibility to viral, bacterial and fungal diseases impose production of virus free material for healthy seed production since plant viruses are pathogens that cannot be destroyed b",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly states that virus-free individuals were subcultured on fresh"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "**In‑vitro multiplication of nuclear stock**  \n   Maintain and rapidly propagate virus‑free plantlets on modified MS medium via single‑node cuttings under controlled conditions (20–21 °C, 16 h photoperiod) [2][3].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Pre-basic seed potatoes are disease free potato minitubers produced by transplanting pathogen free in vitro potato plantlets under protected condition in aphid-proof glasshouse and/or screen house. Do",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the chunk supports the claim. The claim is about \"In‑vitro multiplication of nuclear stock\" "
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "**In‑vitro multiplication of nuclear stock**  \n   Maintain and rapidly propagate virus‑free plantlets on modified MS medium via single‑node cuttings under controlled conditions (20–21 °C, 16 h photoperiod) [2][3].",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Potatoes a high susceptibility to viral, bacterial and fungal diseases impose production of virus free material for healthy seed production since plant viruses are pathogens that cannot be destroyed b",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the chunk supports the claim. The claim is about in-vitro multiplication of nuclear stock: m"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "This provides a continuous supply of pathogen‑free starting material throughout the year [5].",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "High yielding varieties and sound planting materials are prerequisites for sound seed potato production. Low multiplication rate, high seed (tuber) rate, dynamic amassing of degenerative infections, p",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the claim is supported by the chunk.\n\nClaim: \"This provides a continuous supply of pathogen‑"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "**Pre‑basic seed production in protected facilities**  \n   Transplant virus‑free in‑vitro plantlets into sterile substrate inside aphid‑proof glasshouses or screen houses [2].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Pre-basic seed potatoes are disease free potato minitubers produced by transplanting pathogen free in vitro potato plantlets under protected condition in aphid-proof glasshouse and/or screen house. Do",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly states pre-basic seed potatoes are produced by transplanting"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": ", autumn and spring) [1][2].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": " by SPLV,up to 60. 22%. In order to prevent and cure virus disease,improve the yield and quality of sweet potato,the preferred method was producing virus-free sweet potato obtained from sweet potato s",
+          "verdict": "not_supported",
+          "rationale": "The chunk discusses virus-free sweet potato production methods and mentions nothing about seasons like autumn or spring, so it does not support the claim fragment."
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": ", autumn and spring) [1][2].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Pre-basic seed potatoes are disease free potato minitubers produced by transplanting pathogen free in vitro potato plantlets under protected condition in aphid-proof glasshouse and/or screen house. Do",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether a chunk supports a claim.\n\nThe claim is: \", autumn and spring) [1][2].\" This seems trun"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "Aeroponic systems may also be used to increase multiplication rates while maintaining health status [5].",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "High yielding varieties and sound planting materials are prerequisites for sound seed potato production. Low multiplication rate, high seed (tuber) rate, dynamic amassing of degenerative infections, p",
+          "verdict": "not_supported",
+          "rationale": "The chunk discusses tissue culture and meristem culture for virus-free plant multiplication, but makes no mention of aeroponic systems."
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "**Staged field multiplication with official certification**  \n   Move pre‑basic seeds to isolated fields for further generation increases (basic seeds, then certified seeds) [1], always applying mandatory phytosanitary roguings at optimally early growth stages to remove any infected plants [6].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": " by SPLV,up to 60. 22%. In order to prevent and cure virus disease,improve the yield and quality of sweet potato,the preferred method was producing virus-free sweet potato obtained from sweet potato s",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim is about staged field multiplication with offic"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "**Staged field multiplication with official certification**  \n   Move pre‑basic seeds to isolated fields for further generation increases (basic seeds, then certified seeds) [1], always applying mandatory phytosanitary roguings at optimally early growth stages to remove any infected plants [6].",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "PVY, the return to the seed production system of mandatory phytosanitary cleanings in optimally early periods with the aim of the maximum possible removal of infection and high-quality protection from",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"partial\", \"rationale\": \"The chunk supports mandatory early phytosanitary cleanings but"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "Protect crops from vectors (especially aphids) through insecticide applications and physical isolation [6].",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "PVY, the return to the seed production system of mandatory phytosanitary cleanings in optimally early periods with the aim of the maximum possible removal of infection and high-quality protection from",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are given a claim: \"Protect crops from vectors (especially aphids) through insecticide applications and physical isol"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "**Adoption of a formal certification scheme**  \n   Base the program on an established standard such as the EPPO certification scheme (PM 4/28) [4].",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "This Standard describes the production of certified seed potatoes.It is intended to be used by National Plant Protection Organizations (NPPOs) and official organi zations in charge of certification, l",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: \"You evaluate whether a cited literature chunk actually supports a claim.\"\n\nClaim: \"**Adoption of a formal"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "National authorities may adapt the scheme by tightening tolerances, adding virus tests, or modifying roguing intervals to match local virus pressure, as has been advocated in Ukraine for PVY management [6].",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "PVY, the return to the seed production system of mandatory phytosanitary cleanings in optimally early periods with the aim of the maximum possible removal of infection and high-quality protection from",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim says: \"National authorities may adapt the schem"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "**Continuous quality assurance and regulatory updating**  \n   Implement routine ELISA testing of leaf samples at each multiplication stage [2][3].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Pre-basic seed potatoes are disease free potato minitubers produced by transplanting pathogen free in vitro potato plantlets under protected condition in aphid-proof glasshouse and/or screen house. Do",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the chunk supports the claim. The claim is: \"Continuous quality assurance and regulatory upd"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "**Continuous quality assurance and regulatory updating**  \n   Implement routine ELISA testing of leaf samples at each multiplication stage [2][3].",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Potatoes a high susceptibility to viral, bacterial and fungal diseases impose production of virus free material for healthy seed production since plant viruses are pathogens that cannot be destroyed b",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the claim is supported by the chunk.\n\nClaim: \"Continuous quality assurance and regulato"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "Periodically review and revise certification documentation to reflect evolving epidemiological situations, such as shifts in virus strain prevalence [6].",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "PVY, the return to the seed production system of mandatory phytosanitary cleanings in optimally early periods with the aim of the maximum possible removal of infection and high-quality protection from",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the chunk supports the claim. The claim: \"Periodically review and revise certification docum"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-plan-004",
+      "question": "制定一个水稻条纹叶枯病的区域性监测预警与应急防控预案",
+      "answer": "基于提供的数据片段，制定水稻条纹叶枯病的区域性监测预警与应急防控预案，重点围绕媒介监视、精准药剂干预和综合防治措施展开。由于片段未提供该病毒的完整分类学信息，此处仅以病原名称 Rice stripe virus (RSV) 及相关研究结论为依据。\n\n### 1. 监测预警体系\n媒介昆虫灰飞虱（*Laodelphax striatellus*）的种群动态与水稻条纹叶枯病的暴发高度同步，因此监控灰飞虱是预警核心 [3]。应搭建区域性空中捕虫网（aerial net traps），在灰飞虱迁飞季节系统调查其迁入量，并实时检测其体内 RSV 的带毒率 [3]。研究显示，在一次大量迁飞事件中捕获的 1,217 头灰飞虱中，RSV 带毒率为 7.7%，这为判定发病风险提供了定量依据 [3]。通过连续监测带毒率和迁飞峰次，可以结合气候与水稻生育期发出分级预警。\n\n### 2. 应急防控行动方案\n一旦空中捕虫网监测到灰飞虱大量迁入且带毒率超过预警阈值，立即启动应急",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 55.77657259999978,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-plan-004",
+          "claim": "监测预警体系\n媒介昆虫灰飞虱（*Laodelphax striatellus*）的种群动态与水稻条纹叶枯病的暴发高度同步，因此监控灰飞虱是预警核心 [3]。",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "애멸구는 벼 생산에 있어서 흡즙에 의한 피해를 일으킬 뿐 아니라 벼줄무늬잎마름바이러스를 매개하는 매우 중요한 해충이다. 벼줄무늬잎마름병의 발생은 애멸구 발생과 매우 일치하므로 벼 농사에 벼줄무늬잎마름병 예방에 애멸구 관리가 매우 중요하다. 본 연구는 2011년 6월 충남 태안읍 근흥면 고남면 일대에 설치된 공중포충만을 이용하여 애멸구의 이동 및 바이러스 보",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim is in Chinese, but we can understand: \"监测预警体系 媒"
+        },
+        {
+          "case_id": "pv-plan-004",
+          "claim": "应搭建区域性空中捕虫网（aerial net traps），在灰飞虱迁飞季节系统调查其迁入量，并实时检测其体内 RSV 的带毒率 [3]。",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "애멸구는 벼 생산에 있어서 흡즙에 의한 피해를 일으킬 뿐 아니라 벼줄무늬잎마름바이러스를 매개하는 매우 중요한 해충이다. 벼줄무늬잎마름병의 발생은 애멸구 발생과 매우 일치하므로 벼 농사에 벼줄무늬잎마름병 예방에 애멸구 관리가 매우 중요하다. 본 연구는 2011년 6월 충남 태안읍 근흥면 고남면 일대에 설치된 공중포충만을 이용하여 애멸구의 이동 및 바이러스 보",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are given a claim and a chunk. The claim is in Chinese: \"应搭建区域性空中捕虫网（aerial net traps），在灰飞虱迁飞季节系统调查其迁入量，并实时检测其体内 RSV "
+        },
+        {
+          "case_id": "pv-plan-004",
+          "claim": "7%，这为判定发病风险提供了定量依据 [3]。",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "애멸구는 벼 생산에 있어서 흡즙에 의한 피해를 일으킬 뿐 아니라 벼줄무늬잎마름바이러스를 매개하는 매우 중요한 해충이다. 벼줄무늬잎마름병의 발생은 애멸구 발생과 매우 일치하므로 벼 농사에 벼줄무늬잎마름병 예방에 애멸구 관리가 매우 중요하다. 본 연구는 2011년 6월 충남 태안읍 근흥면 고남면 일대에 설치된 공중포충만을 이용하여 애멸구의 이동 및 바이러스 보",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the chunk supports the claim. The claim: \"7%，这为判定发病风险提供了定量依据 [3]。\" This seems to be from a C"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-plan-005",
+      "question": "Design integrated management strategies for banana bunchy top virus in smallholder farming systems",
+      "answer": "The provided data fragments consist solely of publication titles; they contain no detailed information on banana bunchy top virus (BBTV), its biology, transmission, host range, or any specific management practices. Fragment [3] merely indicates the existence of a resource titled “Banana bunchy top virus and the bunchy top disease,” while fragments [1,2,4–7] refer to general topics in plant virus management without offering concrete strategies. Consequently, the database does not supply the substantive evidence required to design integrated management strategies for BBTV in smallholder farming systems. Any attempt to formulate such strategies would require fabricating facts, which is not permitted. Therefore, I must state that relevant information is not found in the provided fragments.",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 20.842384600000514,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-plan-005",
+          "claim": "Fragment [3] merely indicates the existence of a resource titled “Banana bunchy top virus and the bunchy top disease,” while fragments [1,2,4–7] refer to general topics in plant virus management without offering concrete strategies.",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Banana bunchy top virus and the bunchy top disease",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the claim is supported by the chunk. The chunk is just \"Banana bunchy top virus and the"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-meta-001",
+      "question": "这个数据库目前收录了多少种植物病毒？",
+      "answer": "根据片段[2]中描述的 **Plant Virus Database (PVD)**，该数据库目前收录了 **3,206 种植物病毒**（virus species），并记录了 9,604 条病毒-植物寄主互作关系。这个数量是其之前植物病毒数据库报告数量的两倍以上[2]。\n\n数据片段中也提到了其他相关数据库的规模，可供参考：\n- **DPV 数据库**（Descriptions of Plant Viruses）包含超过 400 个病毒描述条目（并非独立病毒种数）[1]。\n- **植物病毒传播数据库**（plant virus transmissions database）收录了超过 1,600 种植物病毒的传播方式与介体信息[3]。\n- **PAmiRDB** 涉及约 500 种病毒（主要为双生病毒科和马铃薯Y病毒科）与植物 miRNA 的互作预测[4]。\n- **PVsiRNAdb** 则侧重于病毒来源的小干扰 RNA（vsiRNA）序列，收录了 282,549 条唯一序列，但并不直接统计病毒种数[5]。\n\n因此，若问题指向的是以物种多样性为核心的综合性植物病毒数据库，则答案是 **3,206 种**[2]。",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 20.388515099999495,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-meta-001",
+          "claim": "根据片段[2]中描述的 **Plant Virus Database (PVD)**，该数据库目前收录了 **3,206 种植物病毒**（virus species），并记录了 9,604 条病毒-植物寄主互作关系。",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Abstract Plant viruses cause huge damage to commercial crops, yet the studies towards plant viruses are limited and the diversity of plant viruses are under-estimated yet. This study built an up-to-da",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim says: \"根据片段[2]中描述的 Plant Virus Database (PVD)，该"
+        },
+        {
+          "case_id": "pv-meta-001",
+          "claim": "这个数量是其之前植物病毒数据库报告数量的两倍以上[2]。",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Abstract Plant viruses cause huge damage to commercial crops, yet the studies towards plant viruses are limited and the diversity of plant viruses are under-estimated yet. This study built an up-to-da",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly states that the PVD contained 3,206"
+        },
+        {
+          "case_id": "pv-meta-001",
+          "claim": "数据片段中也提到了其他相关数据库的规模，可供参考：\n- **DPV 数据库**（Descriptions of Plant Viruses）包含超过 400 个病毒描述条目（并非独立病毒种数）[1]。",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "At the beginning of 2022, Annals of Applied Biology launched the Descriptions of Plant Viruses (DPV) article series with the primary goal of feeding the DPV database (https://www.dpvweb.net/dpv) with ",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly states"
+        },
+        {
+          "case_id": "pv-meta-001",
+          "claim": "- **植物病毒传播数据库**（plant virus transmissions database）收录了超过 1,600 种植物病毒的传播方式与介体信息[3]。",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Plant viruses are transmitted mechanically or by vegetative propagation, and by vectors such as arthropods, fungi, nematodes, or parasitic plants. Sources to access available information regarding pla",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly states the database provides access to modes of transmission"
+        },
+        {
+          "case_id": "pv-meta-001",
+          "claim": "- **PAmiRDB** 涉及约 500 种病毒（主要为双生病毒科和马铃薯Y病毒科）与植物 miRNA 的互作预测[4]。",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "e current version of PAmiRDB includes more than 2600 plant miRNAs and their specific interactions with corresponding targets in approximately 500 viral species (predominantly from the major plant-infe",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly states interactions with about"
+        },
+        {
+          "case_id": "pv-meta-001",
+          "claim": "- **PVsiRNAdb** 则侧重于病毒来源的小干扰 RNA（vsiRNA）序列，收录了 282,549 条唯一序列，但并不直接统计病毒种数[5]。",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "ted by exhaustive data mining of published literature so far. This database contains a total of 322 214 entries and 282 549 unique sequences of vsiRNAs. In PVsiRNAdb, detailed and comprehensive inform",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the chunk supports the claim. The claim is: \"PVsiRNAdb 则侧重于病毒来源的小干扰 RNA（vsiRNA）序列，收录了 282,54"
+        },
+        {
+          "case_id": "pv-meta-001",
+          "claim": "因此，若问题指向的是以物种多样性为核心的综合性植物病毒数据库，则答案是 **3,206 种**[2]。",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Abstract Plant viruses cause huge damage to commercial crops, yet the studies towards plant viruses are limited and the diversity of plant viruses are under-estimated yet. This study built an up-to-da",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the given chunk supports the claim. The claim: \"因此，若问题指向的是以物种多样性为核心的综合性植物病毒数据库，则答案是 **3"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-meta-002",
+      "question": "What data sources does this system use?",
+      "answer": "The provided fragments do not describe a single, specific “system” but instead review multiple epidemiological surveillance and research studies that each utilize different data sources. Based on the fragments, the following data sources are mentioned:\n\n- Government officials, institutional service data, IoT-generated data, online media, and open data [1]  \n- Electronic health records (EHR), web data, climatic data, micro-blogs, and historical disease activity synchronicities [2]  \n- Traditional influenza surveillance (ILINet) and next-generation sources (BioSense 2.0, Google Flu Trends) [3]  \n- Australian Institute of Health and Welfare survey data (National Drug Strategy Household Survey) [5]  \n- Digital data sources such as mobile, social, and real-time streams [6]  \n- New York City 311 open data [7]  \n\nFragment [4] is only a title and provides no specific data source details. Overall, the utilized sources range from conventional public health reporting and administrative records to novel digital, web, and sensor-based streams.",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 29.120369700001902,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-meta-002",
+          "claim": "Based on the fragments, the following data sources are mentioned:\n\n- Government officials, institutional service data, IoT-generated data, online media, and open data [1]  \n- Electronic health records (EHR), web data, climatic data, micro-blogs, and historical disease activity synchronicities [2]  \n- Traditional influenza surveillance (ILINet) and next-generation sources (BioSense 2.",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "o solve issues regarding the pandemic. The data sources used in previous studies were also presented and they consist of government officials, institutional service, IoT generated, online media, and o",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim lists data sources: \"Government officials, inst"
+        },
+        {
+          "case_id": "pv-meta-002",
+          "claim": "Based on the fragments, the following data sources are mentioned:\n\n- Government officials, institutional service data, IoT-generated data, online media, and open data [1]  \n- Electronic health records (EHR), web data, climatic data, micro-blogs, and historical disease activity synchronicities [2]  \n- Traditional influenza surveillance (ILINet) and next-generation sources (BioSense 2.",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "ro-blogs, electronic health records data, and historical disease activity synchronicities across regions. Our results show that all data sources contribute to improving influenza surveillance and that",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the chunk supports the claim. The claim is: \"Based on the fragments, the following data sour"
+        },
+        {
+          "case_id": "pv-meta-002",
+          "claim": "0, Google Flu Trends) [3]  \n- Australian Institute of Health and Welfare survey data (National Drug Strategy Household Survey) [5]  \n- Digital data sources such as mobile, social, and real-time streams [6]  \n- New York City 311 open data [7]  \n\nFragment [4] is only a title and provides no specific data source details.",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "rds data into surveillance systems seek to improve the timeliness, coverage, and accuracy of outbreak detection and situational awareness. Here, we use a flexible statistical framework for integrating",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the claim is supported by the chunk. The claim lists some data sources: Google Flu Tren"
+        },
+        {
+          "case_id": "pv-meta-002",
+          "claim": "0, Google Flu Trends) [3]  \n- Australian Institute of Health and Welfare survey data (National Drug Strategy Household Survey) [5]  \n- Digital data sources such as mobile, social, and real-time streams [6]  \n- New York City 311 open data [7]  \n\nFragment [4] is only a title and provides no specific data source details.",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "The data that support the findings of this study are available from Australian Institute of Health and Welfare. Restrictions apply to the availability of these data, which were used under license for ",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim is a bullet-point list of sources: \"0, Google F"
+        },
+        {
+          "case_id": "pv-meta-002",
+          "claim": "0, Google Flu Trends) [3]  \n- Australian Institute of Health and Welfare survey data (National Drug Strategy Household Survey) [5]  \n- Digital data sources such as mobile, social, and real-time streams [6]  \n- New York City 311 open data [7]  \n\nFragment [4] is only a title and provides no specific data source details.",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "Mobile, social, real-time: the ongoing revolution in the way people communicate has given rise to a new kind of epidemiology. Digital data sources, when harnessed appropriately, can provide local and ",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly mentions mobile, social, real-time, and digital data sources"
+        },
+        {
+          "case_id": "pv-meta-002",
+          "claim": "0, Google Flu Trends) [3]  \n- Australian Institute of Health and Welfare survey data (National Drug Strategy Household Survey) [5]  \n- Digital data sources such as mobile, social, and real-time streams [6]  \n- New York City 311 open data [7]  \n\nFragment [4] is only a title and provides no specific data source details.",
+          "chunk_number": 7,
+          "chunk_text_excerpt": "Trends in COVID-19 School Related Inquiries Using 311 New York City Open Data",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim states:\n\n\"Fragment [4] is only a title and prov"
+        },
+        {
+          "case_id": "pv-meta-002",
+          "claim": "0, Google Flu Trends) [3]  \n- Australian Institute of Health and Welfare survey data (National Drug Strategy Household Survey) [5]  \n- Digital data sources such as mobile, social, and real-time streams [6]  \n- New York City 311 open data [7]  \n\nFragment [4] is only a title and provides no specific data source details.",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Multi-source sensor based urban habitat and resident health sensing: A case study of Wuhan, China",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: evaluate whether the chunk supports the claim. The claim states: \"0, Google Flu Trends) [3] - Australian I"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-meta-003",
+      "question": "你使用的底层大模型是什么？",
+      "answer": "数据库中未找到与“底层大模型”相关的信息。所提供的片段均为植物病毒、昆虫生物学和植物分子生物学领域的学术论文标题，不涉及任何人工智能模型或系统架构的讨论。",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 8.647383499999705,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": []
+    },
+    {
+      "case_id": "pv-hybrid-001",
+      "question": "What insecticides are effective against Bemisia tabaci for TYLCV management?",
+      "answer": "Several insecticides have demonstrated efficacy in managing *Bemisia tabaci* and suppressing Tomato yellow leaf curl virus (TYLCV) transmission, as evidenced by experimental and monitoring data.\n\n**Systemic insecticides with direct virus suppression evidence**\n- **Flupyradifurone** (butenolide): Foliar application at recommended rates suppressed TYLCV transmission under high virus pressure, comparable to thiamethoxam [3]. In greenhouse trials, it provided residual protection, with lower virus symptom expression when applied 3–14 days before inoculation [4]. It is also used in soil-applied combinations for early-season management [1].\n- **Cyantraniliprole** (diamide): Soil application as a systemic material, combined with foliar treatments of other modes of action, contributed to virus suppression [1]. It showed efficacy across whitefly biotypes, though sensitivity varies [6]. It was among the materials nearing registration that reduced TYLCV symptoms in caged trials [4].\n- **Sulfoxaflor** (sulfoximine): Alters whitefly settling and feeding behavior, virtually eliminating TYLCV transmission in laboratory assays [5]. It was also effective in greenhouse evaluations [4].\n- **Pyrifluquinazon** (pyridine azomethine): Foliar translaminar material used in combination strategies [1] and tested for residual suppression of TYLCV symptoms [4].\n\n**Other insecticides with noted efficacy against whitefly and/or TYLCV**\n- **Neonicotinoids**: Thiamethoxam has been used as a standard for TYLCV transmission inhibition [3], though field resistance has been monitored in Florida [2]. Imidacloprid ingestion showed higher susceptibility in TYLCV-viruliferous whiteflies compared to non-viruliferous ones [7], suggesting possible enhanced control. Dinotefuran and acetamiprid are also employed [1,2,6], but resistance limits their reliability [2].\n- **Insect growth regulators**: Buprofezin, tested for nymphal control via bioassay, is part of resistance monitoring programs [2,6], but direct TYLCV transmission data are not provided here.\n- **Pyrethroid combinations**: A zeta-cypermethrin/bifenthrin combination was evaluated alongside newer chemistries [4], though resistance to bifenthrin has been documented [2].\n- **Other**: Pymetrozine showed residual activity against virus symptom development in greenhouse trials [4].\n\nThese findings highlight that flupyradifurone, cyantraniliprole, and sulfoxaflor are among the most consistently effective newer options for integrated TYLCV management, often used in rotation or combination to mitigate resistance risk [1,2,6].",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 37.01367670000036,
+      "expected_coverage": "partial",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "**Systemic insecticides with direct virus suppression evidence**\n- **Flupyradifurone** (butenolide): Foliar application at recommended rates suppressed TYLCV transmission under high virus pressure, comparable to thiamethoxam [3].",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "BACKGROUND: The cotton whitefly Bemisia tabaci (Gennadius) is among the most important pests of numerous crops and a vector of more than 100 plant viruses, causing significant crop losses worldwide. M",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the CHUNK supports the CLAIM. The CLAIM states: \"Systemic insecticides with direct viru"
+        },
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "In greenhouse trials, it provided residual protection, with lower virus symptom expression when applied 3–14 days before inoculation [4].",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Greenhouse studies using a randomized complete block design were carried out to evaluate the effect of six insecticides on transmission of Tomato yellow leaf curl virus (TYLCV) by the silverleaf white",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim: \"In greenhouse trials, it provided residual pr"
+        },
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "It is also used in soil-applied combinations for early-season management [1].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Management of Tomato yellow leaf curl virus (TYLCV) in Florida tomato involves destroying inoculum sources, using reflective mulches to repel the vector, growing TYLCV-tolerant varieties, and using in",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: \"You evaluate whether a cited literature chunk actually supports a claim. Given CLAIM and CHUNK, decide su"
+        },
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "- **Cyantraniliprole** (diamide): Soil application as a systemic material, combined with foliar treatments of other modes of action, contributed to virus suppression [1].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Management of Tomato yellow leaf curl virus (TYLCV) in Florida tomato involves destroying inoculum sources, using reflective mulches to repel the vector, growing TYLCV-tolerant varieties, and using in",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We need to evaluate the claim: \"Cyantraniliprole (diamide): Soil application as a systemic material, combined with folia"
+        },
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "It showed efficacy across whitefly biotypes, though sensitivity varies [6].",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "Whitefly biotypes B and Q are the two most damaging members of the Bemisia tabaci (Hemiptera: Aleyrodidae) species complex. Control of B. tabaci (and especially of Q) has been impaired by resistance t",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: \"evaluate whether a cited literature chunk actually supports a claim.\" The claim is: \"It showed efficacy a"
+        },
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "It was among the materials nearing registration that reduced TYLCV symptoms in caged trials [4].",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Greenhouse studies using a randomized complete block design were carried out to evaluate the effect of six insecticides on transmission of Tomato yellow leaf curl virus (TYLCV) by the silverleaf white",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim: \"It was among the materials nearing registrati"
+        },
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "- **Sulfoxaflor** (sulfoximine): Alters whitefly settling and feeding behavior, virtually eliminating TYLCV transmission in laboratory assays [5].",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "Many damaging agricultural pests can, in addition to their direct feeding damage, acquire and transmit plant pathogens. Bemisia tabaci Gennadius (Hemiptera: Aleyrodidae) is considered a 'supervector' ",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the CHUNK supports the CLAIM. \n\nCLAIM: \"Sulfoxaflor (sulfoximine): Alters whitefly sett"
+        },
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "It was also effective in greenhouse evaluations [4].",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Greenhouse studies using a randomized complete block design were carried out to evaluate the effect of six insecticides on transmission of Tomato yellow leaf curl virus (TYLCV) by the silverleaf white",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim: \"It was also effective in greenhouse evaluations [4].\" Th"
+        },
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "- **Pyrifluquinazon** (pyridine azomethine): Foliar translaminar material used in combination strategies [1] and tested for residual suppression of TYLCV symptoms [4].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Management of Tomato yellow leaf curl virus (TYLCV) in Florida tomato involves destroying inoculum sources, using reflective mulches to repel the vector, growing TYLCV-tolerant varieties, and using in",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the claim is supported by the chunk. \n\nClaim: \"Pyrifluquinazon (pyridine azomethine): Foliar"
+        },
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "- **Pyrifluquinazon** (pyridine azomethine): Foliar translaminar material used in combination strategies [1] and tested for residual suppression of TYLCV symptoms [4].",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Greenhouse studies using a randomized complete block design were carried out to evaluate the effect of six insecticides on transmission of Tomato yellow leaf curl virus (TYLCV) by the silverleaf white",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim states that Pyrifluquinazon (pyridine azomethin"
+        },
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "**Other insecticides with noted efficacy against whitefly and/or TYLCV**\n- **Neonicotinoids**: Thiamethoxam has been used as a standard for TYLCV transmission inhibition [3], though field resistance has been monitored in Florida [2].",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "BACKGROUND: The cotton whitefly Bemisia tabaci (Gennadius) is among the most important pests of numerous crops and a vector of more than 100 plant viruses, causing significant crop losses worldwide. M",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the cited chunk supports the claim. The claim is a bullet point under \"Other insecticid"
+        },
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "**Other insecticides with noted efficacy against whitefly and/or TYLCV**\n- **Neonicotinoids**: Thiamethoxam has been used as a standard for TYLCV transmission inhibition [3], though field resistance has been monitored in Florida [2].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Biotype B of the sweetpotato whitefly (SPWF), Bemisia tabaci (Gennadius) (also known as the silverleaf whitefly, B. argentifolii Bellows & Perring), is the key pest of tomatoes in south Florida, prima",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether a cited literature chunk supports a claim. We have:\n\nCLAIM: \n\"**Other insecticides with"
+        },
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "Imidacloprid ingestion showed higher susceptibility in TYLCV-viruliferous whiteflies compared to non-viruliferous ones [7], suggesting possible enhanced control.",
+          "chunk_number": 7,
+          "chunk_text_excerpt": "The sweetpotato whitefly Bemisia tabaci (Hemiptera: Aleyrodidae) is a disastrous pest in horticultural plants worldwide. B. tabaci is a species complex including at least 24 biotypes in the world. In ",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly states that TYLCV-viruliferous whiteflies were more suscepti"
+        },
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "Dinotefuran and acetamiprid are also employed [1,2,6], but resistance limits their reliability [2].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Biotype B of the sweetpotato whitefly (SPWF), Bemisia tabaci (Gennadius) (also known as the silverleaf whitefly, B. argentifolii Bellows & Perring), is the key pest of tomatoes in south Florida, prima",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: \"You evaluate whether a cited literature chunk actually supports a claim.\" The claim is: \"Dinotefuran and "
+        },
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "- **Pyrethroid combinations**: A zeta-cypermethrin/bifenthrin combination was evaluated alongside newer chemistries [4], though resistance to bifenthrin has been documented [2].",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Greenhouse studies using a randomized complete block design were carried out to evaluate the effect of six insecticides on transmission of Tomato yellow leaf curl virus (TYLCV) by the silverleaf white",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are given a claim and a chunk. We need to evaluate whether the chunk supports the claim.\n\nClaim: \"- **Pyrethroid comb"
+        },
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "- **Pyrethroid combinations**: A zeta-cypermethrin/bifenthrin combination was evaluated alongside newer chemistries [4], though resistance to bifenthrin has been documented [2].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Biotype B of the sweetpotato whitefly (SPWF), Bemisia tabaci (Gennadius) (also known as the silverleaf whitefly, B. argentifolii Bellows & Perring), is the key pest of tomatoes in south Florida, prima",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the cited chunk supports the given claim. The claim: \"**Pyrethroid combinations**: A ze"
+        },
+        {
+          "case_id": "pv-hybrid-001",
+          "claim": "- **Other**: Pymetrozine showed residual activity against virus symptom development in greenhouse trials [4].",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Greenhouse studies using a randomized complete block design were carried out to evaluate the effect of six insecticides on transmission of Tomato yellow leaf curl virus (TYLCV) by the silverleaf white",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the claim is supported by the chunk. The claim says: \"Pymetrozine showed residual activ"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-hybrid-002",
+      "question": "I detected a virus in my tomato field with yellow curling leaves and stunted growth. What virus could it be and how should I confirm?",
+      "answer": "The symptoms you describe—yellow curling leaves and stunted growth—are characteristic of tomato leaf curl diseases caused by begomoviruses. The most likely culprits are **Tomato yellow leaf curl virus (TYLCV)** [3], **Tomato leaf curl virus (ToLCV)** [1], and **Tomato leaf curl New Delhi virus (ToLCNDV)** [6]. Other begomoviruses, such as Chilli leaf curl virus, Croton yellow vein mosaic virus [5], Squash leaf curl virus, and Watermelon chlorotic stunt virus, have also been associated with similar symptoms in tomato [2]. All these viruses are transmitted by the whitefly *Bemisia tabaci* [2][6].\n\nTo confirm the identity of the virus, the following molecular and morphological methods are recommended (based on the provided studies):\n\n1.  **Sample collection and DNA extraction:** Collect symptomatic leaves and extract total DNA using a CTAB method or a total nucleic acid extraction protocol [5][2][1].\n2.  **PCR amplification:** Perform polymerase chain reaction (PCR) with **begomovirus-specific primers**. Useful options include:\n    *   Degenerate primers targeting the coat protein (CP) gene (e.g., “BGCP” primers) [1].\n    *   Group-specific CP primers for begomoviruses [5].\n    *   Primer pairs like RUGEMF1/RUGEMR1, which amplify a fragment of ToLCNDV [6].\n    *   Species-specific primers for TYLCV when that is the primary suspect [4].\n3.  **Rolling circle amplification (RCA) (optional):** To enrich circular viral DNA for better detection, especially for direct sequencing, total DNA can be subjected to RCA followed by restriction digestion and PCR [1].\n4.  **Sequencing and phylogenetic analysis:** Sequence the PCR amplicons and compare them with known virus sequences in databases (e.g., using BLAST) to determine the exact species and strain [1][5][6].\n5.  **Transmission electron microscopy (TEM):** Observation of leaf dips or purified preparations may reveal twin geminate particles (approximately 30 × 20 nm), which are typical for geminiviruses [6].\n6.  **Whitefly transmission tests:** The virus can be maintained and transmitted to healthy tomato seedlings using non-viruliferous whiteflies to confirm that the symptoms are caused by a whitefly-transmissible agent [2].\n\nNote that mixed infections can occur (e.g., TYLCV co-infecting with a tobamovirus) [4]; if symptoms are atypical or molecular tests for a single virus are negative, broad-spectrum or multiplex testing may be needed.",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 45.19997560000047,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": "The most likely culprits are **Tomato yellow leaf curl virus (TYLCV)** [3], **Tomato leaf curl virus (ToLCV)** [1], and **Tomato leaf curl New Delhi virus (ToLCNDV)** [6].",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "DPV No: 368 August 1999\n\n## Main Diseases\nThe virus induces the yellow leaf curl disease in tomato.\nInfected plants are severely stunted. The leaves are small, curled and chlorotic.\nThose leaflets tha",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: \"You evaluate whether a cited literature chunk actually supports a claim.\" The claim is: \"The most likely "
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": "The most likely culprits are **Tomato yellow leaf curl virus (TYLCV)** [3], **Tomato leaf curl virus (ToLCV)** [1], and **Tomato leaf curl New Delhi virus (ToLCNDV)** [6].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Tomato leaf curl virus disease (ToLCVD) is one of the major causes for maximum yield loss of tomato. This disease is caused by tomato leaf curl viruses (ToLCV) belongs to the genus Begomovirus. The in",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the CHUNK supports the CLAIM. The CLAIM states: \"The most likely culprits are Tomato ye"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": "The most likely culprits are **Tomato yellow leaf curl virus (TYLCV)** [3], **Tomato leaf curl virus (ToLCV)** [1], and **Tomato leaf curl New Delhi virus (ToLCNDV)** [6].",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "Abstract Tomato leaf curl disease is a serious constraint to tomato cultivation across the globe. The disease is characterized by leaf curling, crinkling, stunting and puckering with the drastic reduc",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether a chunk supports a claim.\n\nClaim: \"The most likely culprits are Tomato yellow leaf curl"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": "Other begomoviruses, such as Chilli leaf curl virus, Croton yellow vein mosaic virus [5], Squash leaf curl virus, and Watermelon chlorotic stunt virus, have also been associated with similar symptoms in tomato [2].",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "During survey, tomato leaf samples showing leaf curl symptoms were collected from different tomato fields of Dharwad, Haveri and Kolar districts. Total nucleic acid extraction was carried out by cetyl",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: evaluate whether the chunk supports the claim. The claim: \"Other begomoviruses, such as Chilli leaf curl v"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": "Other begomoviruses, such as Chilli leaf curl virus, Croton yellow vein mosaic virus [5], Squash leaf curl virus, and Watermelon chlorotic stunt virus, have also been associated with similar symptoms in tomato [2].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Tomato (Solanum lycopersicum Mill.) is one of the most economically important vegetable crops in Jordan. Tomato cultivation in many countries in the Mediterranean basin is affected by several virus sp",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the CHUNK supports the CLAIM. The CLAIM states: \"Other begomoviruses, such as Chilli le"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": "All these viruses are transmitted by the whitefly *Bemisia tabaci* [2][6].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Tomato (Solanum lycopersicum Mill.) is one of the most economically important vegetable crops in Jordan. Tomato cultivation in many countries in the Mediterranean basin is affected by several virus sp",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim is: \"All these viruses are transmitted by the w"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": "All these viruses are transmitted by the whitefly *Bemisia tabaci* [2][6].",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "Abstract Tomato leaf curl disease is a serious constraint to tomato cultivation across the globe. The disease is characterized by leaf curling, crinkling, stunting and puckering with the drastic reduc",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate a claim against a chunk. The claim: \"All these viruses are transmitted by the whitefly *Bemisia"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": "**Sample collection and DNA extraction:** Collect symptomatic leaves and extract total DNA using a CTAB method or a total nucleic acid extraction protocol [5][2][1].",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "During survey, tomato leaf samples showing leaf curl symptoms were collected from different tomato fields of Dharwad, Haveri and Kolar districts. Total nucleic acid extraction was carried out by cetyl",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk describes collecting symptomatic tomato leaves and extracting total nuc"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": "**Sample collection and DNA extraction:** Collect symptomatic leaves and extract total DNA using a CTAB method or a total nucleic acid extraction protocol [5][2][1].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Tomato (Solanum lycopersicum Mill.) is one of the most economically important vegetable crops in Jordan. Tomato cultivation in many countries in the Mediterranean basin is affected by several virus sp",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether a chunk supports a claim. The claim is: \"**Sample collection and DNA extraction:** Coll"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": "**Sample collection and DNA extraction:** Collect symptomatic leaves and extract total DNA using a CTAB method or a total nucleic acid extraction protocol [5][2][1].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Tomato leaf curl virus disease (ToLCVD) is one of the major causes for maximum yield loss of tomato. This disease is caused by tomato leaf curl viruses (ToLCV) belongs to the genus Begomovirus. The in",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: evaluate whether the chunk supports the claim. The claim: \"**Sample collection and DNA extraction:** Colle"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": ", “BGCP” primers) [1].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Tomato leaf curl virus disease (ToLCVD) is one of the major causes for maximum yield loss of tomato. This disease is caused by tomato leaf curl viruses (ToLCV) belongs to the genus Begomovirus. The in",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim is just a fragment: \", “BGCP” primers) [1].\" Th"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": "*   Group-specific CP primers for begomoviruses [5].",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "During survey, tomato leaf samples showing leaf curl symptoms were collected from different tomato fields of Dharwad, Haveri and Kolar districts. Total nucleic acid extraction was carried out by cetyl",
+          "verdict": "supported",
+          "rationale": "The chunk explicitly states the use of 'Begomovirus group specific coat protein primers', which directly matches the claim about group-specific CP primers for begomoviruses."
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": "*   Primer pairs like RUGEMF1/RUGEMR1, which amplify a fragment of ToLCNDV [6].",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "Abstract Tomato leaf curl disease is a serious constraint to tomato cultivation across the globe. The disease is characterized by leaf curling, crinkling, stunting and puckering with the drastic reduc",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim.\n\nClaim: \"Primer pairs like RUGEMF1/RUGEMR1, which amplify"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": "*   Species-specific primers for TYLCV when that is the primary suspect [4].",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Florida is a leading producer of fresh-market tomatoes (Solanum lycopersicum) in the US, a $262 million industry for the state. In October 2019, eight tomato plants showing chlorotic, cupped leaves an",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are given a claim and a chunk. The claim is: \"Species-specific primers for TYLCV when that is the primary suspect [4]"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": "**Rolling circle amplification (RCA) (optional):** To enrich circular viral DNA for better detection, especially for direct sequencing, total DNA can be subjected to RCA followed by restriction digestion and PCR [1].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Tomato leaf curl virus disease (ToLCVD) is one of the major causes for maximum yield loss of tomato. This disease is caused by tomato leaf curl viruses (ToLCV) belongs to the genus Begomovirus. The in",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly describes using RCA on total DNA, followed by restriction"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": ", using BLAST) to determine the exact species and strain [1][5][6].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Tomato leaf curl virus disease (ToLCVD) is one of the major causes for maximum yield loss of tomato. This disease is caused by tomato leaf curl viruses (ToLCV) belongs to the genus Begomovirus. The in",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": ", using BLAST) to determine the exact species and strain [1][5][6].",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "During survey, tomato leaf samples showing leaf curl symptoms were collected from different tomato fields of Dharwad, Haveri and Kolar districts. Total nucleic acid extraction was carried out by cetyl",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We need to evaluate if the chunk supports the claim: \"using BLAST) to determine the exact species and strain [1][5][6].\""
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": ", using BLAST) to determine the exact species and strain [1][5][6].",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "Abstract Tomato leaf curl disease is a serious constraint to tomato cultivation across the globe. The disease is characterized by leaf curling, crinkling, stunting and puckering with the drastic reduc",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate a claim and a chunk.\n\nClaim: \", using BLAST) to determine the exact species and strain [1][5][6"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": "**Transmission electron microscopy (TEM):** Observation of leaf dips or purified preparations may reveal twin geminate particles (approximately 30 × 20 nm), which are typical for geminiviruses [6].",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "Abstract Tomato leaf curl disease is a serious constraint to tomato cultivation across the globe. The disease is characterized by leaf curling, crinkling, stunting and puckering with the drastic reduc",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the claim is supported by the chunk.\n\nClaim: \"Transmission electron microscopy (TEM): Observ"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": "**Whitefly transmission tests:** The virus can be maintained and transmitted to healthy tomato seedlings using non-viruliferous whiteflies to confirm that the symptoms are caused by a whitefly-transmissible agent [2].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Tomato (Solanum lycopersicum Mill.) is one of the most economically important vegetable crops in Jordan. Tomato cultivation in many countries in the Mediterranean basin is affected by several virus sp",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim states: \"The virus can be maintained and transm"
+        },
+        {
+          "case_id": "pv-hybrid-002",
+          "claim": ", TYLCV co-infecting with a tobamovirus) [4]; if symptoms are atypical or molecular tests for a single virus are negative, broad-spectrum or multiplex testing may be needed.",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Florida is a leading producer of fresh-market tomatoes (Solanum lycopersicum) in the US, a $262 million industry for the state. In October 2019, eight tomato plants showing chlorotic, cupped leaves an",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: evaluate if the chunk supports the claim.\n\nThe claim is: \"TYLCV co-infecting with a tobamovirus) [4]; if s"
+        }
+      ]
+    }
+  ],
+  "metrics": {
+    "n_cases": 18,
+    "n_errors": 0,
+    "citation_validity_rate": 1.0,
+    "answered_rate": 1.0,
+    "expected_yes_answered_rate": 1.0,
+    "expected_no_refused_rate": 0.0,
+    "avg_citations_per_answer": 7.0,
+    "avg_chunks_retrieved": 7.0,
+    "latency_p50": 29.120369700001902,
+    "latency_p95": 48.11861489999865,
+    "n_judgments": 11,
+    "citation_supported_rate": 0.7272727272727273,
+    "citation_partial_rate": 0.0,
+    "citation_not_supported_rate": 0.2727272727272727
+  }
+}

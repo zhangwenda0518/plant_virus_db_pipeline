@@ -1,0 +1,46 @@
+{
+  "version": "pv-planning-v1",
+  "description": "Planning-type questions to verify task routing (PLANNING mode)",
+  "cases": [
+    {
+      "id": "pv-plan-001",
+      "text": "设计一个番茄黄化曲叶病毒的田间综合防控方案",
+      "language": "zh",
+      "difficulty": "medium",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes"
+    },
+    {
+      "id": "pv-plan-002",
+      "text": "How to design a management strategy for maize lethal necrosis disease in East Africa?",
+      "language": "en",
+      "difficulty": "medium",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes"
+    },
+    {
+      "id": "pv-plan-003",
+      "text": "制定一个植物病毒田间快速检测与监测的技术方案",
+      "language": "zh",
+      "difficulty": "medium",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes"
+    },
+    {
+      "id": "pv-plan-004",
+      "text": "制定植物病毒检疫措施以防止外来病毒传入",
+      "language": "zh",
+      "difficulty": "hard",
+      "source": "handwritten",
+      "corpus_coverage_expected": "partial"
+    },
+    {
+      "id": "pv-plan-005",
+      "text": "Propose an integrated pest management plan to control whitefly-transmitted geminiviruses in tomato crops",
+      "language": "en",
+      "difficulty": "medium",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes"
+    }
+  ]
+}

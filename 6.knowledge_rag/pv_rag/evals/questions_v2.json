@@ -1,0 +1,161 @@
+{
+  "version": "pv-v2-2026-07-09",
+  "description": "Extended eval set covering QA(refusal included), PLANNING(diverse), META queries",
+  "cases": [
+    {
+      "id": "pv-qa-001",
+      "text": "What is the host range of cucumber mosaic virus?",
+      "language": "en",
+      "difficulty": "easy",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes",
+      "notes": "CMV is well-documented in ICTV and literature"
+    },
+    {
+      "id": "pv-qa-002",
+      "text": "How does rice stripe virus overwinter in temperate regions?",
+      "language": "en",
+      "difficulty": "medium",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes",
+      "notes": "RSV overwintering should be in literature"
+    },
+    {
+      "id": "pv-qa-003",
+      "text": "Describe the capsid structure of tobacco necrosis virus",
+      "language": "en",
+      "difficulty": "hard",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes"
+    },
+    {
+      "id": "pv-qa-004",
+      "text": "番茄斑萎病毒在辣椒上的典型症状有哪些？",
+      "language": "zh",
+      "difficulty": "medium",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes"
+    },
+    {
+      "id": "pv-qa-005",
+      "text": "What is the particle morphology of tobamoviruses?",
+      "language": "en",
+      "difficulty": "easy",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes"
+    },
+    {
+      "id": "pv-qa-refuse-001",
+      "text": "What is the effect of climate change on sugarcane mosaic virus incidence in Brazil?",
+      "language": "en",
+      "difficulty": "hard",
+      "source": "handwritten",
+      "corpus_coverage_expected": "no",
+      "notes": "Overly specific geographic + climate combo, should trigger refusal"
+    },
+    {
+      "id": "pv-qa-refuse-002",
+      "text": "Compare the economic losses caused by potato virus Y in China versus Peru from 2018 to 2023",
+      "language": "en",
+      "difficulty": "hard",
+      "source": "handwritten",
+      "corpus_coverage_expected": "no",
+      "notes": "Specific economic comparison unlikely in corpus"
+    },
+    {
+      "id": "pv-qa-refuse-003",
+      "text": "What plant viruses infect cassava in sub-Saharan Africa and what are the exact nucleotide sequences of their coat protein genes?",
+      "language": "en",
+      "difficulty": "hard",
+      "source": "handwritten",
+      "corpus_coverage_expected": "no",
+      "notes": "Asking for exact nucleotide sequences — should refuse or answer partially"
+    },
+    {
+      "id": "pv-plan-001",
+      "text": "设计一个针对柑橘黄龙病媒介昆虫柑橘木虱的综合管理方案",
+      "language": "zh",
+      "difficulty": "hard",
+      "source": "handwritten",
+      "corpus_coverage_expected": "partial",
+      "notes": "Citrus greening vector management — partial coverage expected"
+    },
+    {
+      "id": "pv-plan-002",
+      "text": "Propose a surveillance system for early detection of emerging plant viruses in greenhouse tomato production",
+      "language": "en",
+      "difficulty": "medium",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes"
+    },
+    {
+      "id": "pv-plan-003",
+      "text": "How to develop a virus-free seed potato certification program?",
+      "language": "en",
+      "difficulty": "medium",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes"
+    },
+    {
+      "id": "pv-plan-004",
+      "text": "制定一个水稻条纹叶枯病的区域性监测预警与应急防控预案",
+      "language": "zh",
+      "difficulty": "hard",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes"
+    },
+    {
+      "id": "pv-plan-005",
+      "text": "Design integrated management strategies for banana bunchy top virus in smallholder farming systems",
+      "language": "en",
+      "difficulty": "medium",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes"
+    },
+    {
+      "id": "pv-meta-001",
+      "text": "这个数据库目前收录了多少种植物病毒？",
+      "language": "zh",
+      "difficulty": "easy",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes",
+      "notes": "Should return live PG stats, 0 LLM calls"
+    },
+    {
+      "id": "pv-meta-002",
+      "text": "What data sources does this system use?",
+      "language": "en",
+      "difficulty": "easy",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes",
+      "notes": "Should list ICTV/ViralZone/NCBI/OpenAlex/PubMed"
+    },
+    {
+      "id": "pv-meta-003",
+      "text": "你使用的底层大模型是什么？",
+      "language": "zh",
+      "difficulty": "easy",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes",
+      "notes": "Should return identity template"
+    },
+    {
+      "id": "pv-hybrid-001",
+      "text": "What insecticides are effective against Bemisia tabaci for TYLCV management?",
+      "language": "en",
+      "difficulty": "medium",
+      "source": "handwritten",
+      "corpus_coverage_expected": "partial",
+      "notes": "Tests QA→PLANNING boundary — insecticide info may be in abstracts"
+    },
+    {
+      "id": "pv-hybrid-002",
+      "text": "I detected a virus in my tomato field with yellow curling leaves and stunted growth. What virus could it be and how should I confirm?",
+      "language": "en",
+      "difficulty": "medium",
+      "source": "handwritten",
+      "corpus_coverage_expected": "yes",
+      "notes": "Real-world diagnostic scenario — tests QA synthesis"
+    }
+  ]
+}

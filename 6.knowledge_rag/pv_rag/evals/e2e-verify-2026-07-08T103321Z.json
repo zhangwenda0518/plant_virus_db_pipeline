@@ -1,0 +1,60 @@
+{
+  "eval_set_version": "e2e-test",
+  "sprint_label": "e2e-verify",
+  "timestamp_utc": "2026-07-08T10:33:21Z",
+  "cases": [
+    {
+      "case_id": "e2e-test",
+      "question": "What is tomato yellow leaf curl virus?",
+      "answer": "The provided data fragments are genome sequence records for isolates of **Tomato yellow leaf curl virus** (TYLCV). Specifically, they include the complete genome of isolates from Almeria [1], Thailand (Y72) [2], and China (YN72) [3]. These records confirm that TYLCV is a plant virus for which full genomic sequences have been obtained from different geographic locations. However, the fragments do not contain further biological information (e.g., taxonomy, host range, symptoms, or transmission). Therefore, a detailed description of the virus cannot be constructed from these data alone.",
+      "citation_valid": true,
+      "citations_count": 3,
+      "chunks_retrieved": 3,
+      "latency_seconds": 13.539603999932297,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "e2e-test",
+          "claim": "Specifically, they include the complete genome of isolates from Almeria [1], Thailand (Y72) [2], and China (YN72) [3].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Tomato yellow leaf curl virus-[Almeria] complete genome, isolate Almeria",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the chunk supports the claim. The claim is: \"Specifically, they include the complete genome "
+        },
+        {
+          "case_id": "e2e-test",
+          "claim": "Specifically, they include the complete genome of isolates from Almeria [1], Thailand (Y72) [2], and China (YN72) [3].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Tomato yellow leaf curl Thailand virus-[Y72] complete genome, isolate Y72",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate: \"Specifically, they include the complete genome of isolates from Almeria [1], Thailand (Y72) ["
+        },
+        {
+          "case_id": "e2e-test",
+          "claim": "Specifically, they include the complete genome of isolates from Almeria [1], Thailand (Y72) [2], and China (YN72) [3].",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Tomato yellow leaf curl China virus-[YN72], complete genome",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the chunk supports the claim. The claim mentions \"Specifically, they include the complete ge"
+        }
+      ]
+    }
+  ],
+  "metrics": {
+    "n_cases": 1,
+    "n_errors": 0,
+    "citation_validity_rate": 1.0,
+    "answered_rate": 1.0,
+    "expected_yes_answered_rate": 1.0,
+    "expected_no_refused_rate": 0.0,
+    "avg_citations_per_answer": 3.0,
+    "avg_chunks_retrieved": 3.0,
+    "latency_p50": 13.539603999932297,
+    "latency_p95": 13.539603999932297,
+    "n_judgments": 0,
+    "citation_supported_rate": 0.0,
+    "citation_partial_rate": 0.0,
+    "citation_not_supported_rate": 0.0
+  }
+}

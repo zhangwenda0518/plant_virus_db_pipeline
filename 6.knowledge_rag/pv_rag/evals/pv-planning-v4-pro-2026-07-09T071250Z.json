@@ -1,0 +1,336 @@
+{
+  "eval_set_version": "pv-planning-v1",
+  "sprint_label": "pv-planning-v4-pro",
+  "timestamp_utc": "2026-07-09T07:12:50Z",
+  "cases": [
+    {
+      "case_id": "pv-plan-001",
+      "question": "设计一个番茄黄化曲叶病毒的田间综合防控方案",
+      "answer": "基于您提供的科研数据片段，可以整合出一个针对番茄黄化曲叶病毒（Tomato yellow leaf curl virus, TYLCV）及相关病毒的田间综合防控方案。方案应着重于媒介昆虫控制、病毒诊断、抗病性利用及栽培管理策略。\n\n**综合防控方案设计如下：**\n\n1.  **强化监测与准确诊断**\n    田间防控的首要步骤是明确病原种类，因为入侵性重组病毒的出现给传统诊断和病害管理带来了挑战 [6]。在中国，已发现与番茄黄化曲叶病相关的多个不同病毒种，如番茄黄化曲叶云南病毒（Tomato yellow leaf curl Yunnan virus）[5] 和从植物与粉虱中分离出的番茄黄化曲叶楚雄病毒（Tomato yellow leaf curl Chuxiong virus），后者具有独特的症状决定因子 [7]。准确的病毒鉴定是选择针对性防控措施的基础。\n\n2.  **媒介昆虫综合管理**\n    烟粉虱是该类病毒的主要传播媒介 [3, 7]。控虫是防病的关键。\n    *   **生物防治**：可以利用昆虫病原真菌感染带毒的烟粉虱，从而控制番茄黄化曲叶病毒的传播 [3]。\n    *   **物理防控**：使用防虫网、银色地膜趋避烟粉虱等措施。\n    *   **化学防控**：必要时，在苗期和定植初期使用化学杀虫剂压低烟粉虱种群数量。\n\n3.  **优化栽培管理**\n    *   **集成方法应用**：已有研究评估了多种集成方法以减少双生病毒番茄黄化曲叶病毒的发生 [1]，这提示应将多种农艺措施组合使用。\n    *   **田间卫生**：及时清除田间及周边的病株和杂草，减少病毒和虫源。\n    *   **轮作与间作**：避免与茄科作物连作，可探索种植非寄主植物作为屏障。\n\n4.  **培育与选用抗病品种**\n    面对病毒的重组变异 [6] 和新病毒的发现 [5, 7]，筛选和培育对不同病毒种或株系具有广谱抗性的番茄品种是持久有效的方法。\n\n5.  **探索新型补充策略**\n    虽然抗病毒疫苗或药剂在片段中未被提及，但文献中关于病毒症状决定因子和转录后基因沉默抑制子的研究 [7] 表明，这些病毒的功能基因是未来开发新型防控技术（如RNA干扰、基因编辑）的潜在靶标。\n\n**请注意**：数据库片段中亦提到针对**番茄曲叶新德里病毒**（Tomato leaf curl New Delhi virus）的可持续管理策略 [2] 和番茄黄化曲叶病毒农杆菌接种方法 [4]，这些属于双生病毒科其他病毒或实验室技术，其防控逻辑（如媒介管理、栽培管理）可作为参考，但不能直接等同于番茄黄化曲叶病毒的田间防治措施。",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 44.81367239999963,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-plan-001",
+          "claim": "**强化监测与准确诊断**\n    田间防控的首要步骤是明确病原种类，因为入侵性重组病毒的出现给传统诊断和病害管理带来了挑战 [6]。",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "Invasive tomato yellow leaf curl virus recombinants challenge virus diagnosis and disease management",
+          "verdict": "supported",
+          "rationale": "The chunk explicitly states that invasive recombinant viruses challenge diagnosis and management, directly supporting the claim that identifying pathogens is necessary due to such challenges."
+        },
+        {
+          "case_id": "pv-plan-001",
+          "claim": "在中国，已发现与番茄黄化曲叶病相关的多个不同病毒种，如番茄黄化曲叶云南病毒（Tomato yellow leaf curl Yunnan virus）[5] 和从植物与粉虱中分离出的番茄黄化曲叶楚雄病毒（Tomato yellow leaf curl Chuxiong virus），后者具有独特的症状决定因子 [7]。",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "TOMATO YELLOW LEAF CURL YUNNAN VIRUS, A NEW BEGOMOVIRUS SPECIES ASSOCIATED WITH TOMATO YELLOW LEAF CURL DISEASE IN CHINA",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim states that in China, multiple different virus "
+        },
+        {
+          "case_id": "pv-plan-001",
+          "claim": "在中国，已发现与番茄黄化曲叶病相关的多个不同病毒种，如番茄黄化曲叶云南病毒（Tomato yellow leaf curl Yunnan virus）[5] 和从植物与粉虱中分离出的番茄黄化曲叶楚雄病毒（Tomato yellow leaf curl Chuxiong virus），后者具有独特的症状决定因子 [7]。",
+          "chunk_number": 7,
+          "chunk_text_excerpt": "Distinct tomato yellow leaf curl Chuxiong virus isolated from whiteflies and plants in China and its symptom determinant and suppressor of post-transcriptional gene silencing",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly states that the virus was"
+        },
+        {
+          "case_id": "pv-plan-001",
+          "claim": "*   **生物防治**：可以利用昆虫病原真菌感染带毒的烟粉虱，从而控制番茄黄化曲叶病毒的传播 [3]。",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "The roles of entomopathogenic fungal infection of viruliferous whiteflies in controlling tomato yellow leaf curl virus",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the chunk supports the claim. The claim states: \"生物防治：可以利用昆虫病原真菌感染带毒的烟粉虱，从而控制番茄黄化曲叶病毒的传播 [3]"
+        },
+        {
+          "case_id": "pv-plan-001",
+          "claim": "**优化栽培管理**\n    *   **集成方法应用**：已有研究评估了多种集成方法以减少双生病毒番茄黄化曲叶病毒的发生 [1]，这提示应将多种农艺措施组合使用。",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Evaluated some integration methods to reduction of Begomovirus Tomato Yellow Leaf Curl Virus",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim is: \"优化栽培管理\" with subpoint \"集成方法应用：已有研究评估了多种集成方"
+        },
+        {
+          "case_id": "pv-plan-001",
+          "claim": "**培育与选用抗病品种**\n    面对病毒的重组变异 [6] 和新病毒的发现 [5, 7]，筛选和培育对不同病毒种或株系具有广谱抗性的番茄品种是持久有效的方法。",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "Invasive tomato yellow leaf curl virus recombinants challenge virus diagnosis and disease management",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. Let's read carefully.\n\nClaim: \"培育与选用抗病品种\" (Cultivate and "
+        },
+        {
+          "case_id": "pv-plan-001",
+          "claim": "**探索新型补充策略**\n    虽然抗病毒疫苗或药剂在片段中未被提及，但文献中关于病毒症状决定因子和转录后基因沉默抑制子的研究 [7] 表明，这些病毒的功能基因是未来开发新型防控技术（如RNA干扰、基因编辑）的潜在靶标。",
+          "chunk_number": 7,
+          "chunk_text_excerpt": "Distinct tomato yellow leaf curl Chuxiong virus isolated from whiteflies and plants in China and its symptom determinant and suppressor of post-transcriptional gene silencing",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the chunk supports the claim. The claim says that research about virus symptom determinants "
+        },
+        {
+          "case_id": "pv-plan-001",
+          "claim": "**请注意**：数据库片段中亦提到针对**番茄曲叶新德里病毒**（Tomato leaf curl New Delhi virus）的可持续管理策略 [2] 和番茄黄化曲叶病毒农杆菌接种方法 [4]，这些属于双生病毒科其他病毒或实验室技术，其防控逻辑（如媒介管理、栽培管理）可作为参考，但不能直接等同于番茄黄化曲叶病毒的田间防治措施。",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Sustainable Strategies for the Management of Tomato Leaf Curl New Delhi Virus",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate the claim against the chunk. The claim is: \"**请注意**：数据库片段中亦提到针对**番茄曲叶新德里病毒**（Tomato leaf curl N"
+        },
+        {
+          "case_id": "pv-plan-001",
+          "claim": "**请注意**：数据库片段中亦提到针对**番茄曲叶新德里病毒**（Tomato leaf curl New Delhi virus）的可持续管理策略 [2] 和番茄黄化曲叶病毒农杆菌接种方法 [4]，这些属于双生病毒科其他病毒或实验室技术，其防控逻辑（如媒介管理、栽培管理）可作为参考，但不能直接等同于番茄黄化曲叶病毒的田间防治措施。",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "A simple, efficient agroinoculation soaking procedure for Tomato yellow leaf curl virus",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim is a complex note in Chinese. Let's translate a"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-plan-002",
+      "question": "How to design a management strategy for maize lethal necrosis disease in East Africa?",
+      "answer": "Designing a management strategy for maize lethal necrosis (MLN) in East Africa requires an integrated approach that targets the synergistic co-infection by maize chlorotic mottle virus (MCMV) and a potyvirus (commonly sugarcane mosaic virus, SCMV) [1,2,3,4,6,7]. The following components, drawn from research and field experience, are essential:\n\n1. **Deployment of resistant/tolerant varieties:** Fast-track development and release of maize hybrids with tolerance or resistance to MLN, adapted to African genetic backgrounds. Intensive germplasm screening has been a cornerstone of CIMMYT-led efforts [1,5,6].\n\n2. **Clean seed and planting material:** Use certified, virus-free seed to eliminate seedborne transmission of MCMV and potyviruses [2,3]. For resource-rich farmers, combining clean seed with insect control can provide good disease suppression [3].\n\n3. **Vector management:** Reduce insect vector populations to limit primary and secondary virus spread [3]. The specific vectors are not detailed in the fragments, but control measures against the relevant insects are recommended.\n\n4. **Cultural practices:** Implement crop rotation and rigorous roguing (removal of symptomatic plants) to reduce inoculum sources, especially on smallholder farms where insecticide use may be limited [2,3]. Sanitation and quarantine measures at farm and regional levels further curtail introduction and spread [2].\n\n5. **Accurate diagnostics and surveillance:** Rely on laboratory methods (ELISA, PCR, next-generation sequencing) rather than symptoms alone, as visual symptoms can mimic nutrient deficiencies or other diseases [2,4,7]. Establish regional monitoring and surveillance networks to track disease incidence and guide timely interventions [1].\n\n6. **Coordinated community and area-wide action:** Disease models indicate that management must be synchronized over large areas to be effective; isolated efforts are undermined by exogenous virus sources [3]. Farmer cooperation and coordination are critical for success.\n\n7. **Capacity building and institutional support:** Train public and private sector stakeholders in MLN diagnostics and management protocols, and strengthen quarantine enforcement to prevent transboundary movement of infected material [1,2].\n\nCombining host resistance, cultural controls, vector suppression, and institutional coordination offers the best prospect for reducing the devastating yield losses—up to 90%—associated with MLN in East Africa [2,4,6].",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 32.928707699997176,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-plan-002",
+          "claim": "For resource-rich farmers, combining clean seed with insect control can provide good disease suppression [3].",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Maize lethal necrosis (MLN) has emerged as a serious threat to food security in sub-Saharan Africa. MLN is caused by coinfection with two viruses, Maize chlorotic mottle virus and a potyvirus, often S",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\","
+        },
+        {
+          "case_id": "pv-plan-002",
+          "claim": "**Vector management:** Reduce insect vector populations to limit primary and secondary virus spread [3].",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Maize lethal necrosis (MLN) has emerged as a serious threat to food security in sub-Saharan Africa. MLN is caused by coinfection with two viruses, Maize chlorotic mottle virus and a potyvirus, often S",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate a claim against a chunk. The claim is: \"Vector management: Reduce insect vector populations to "
+        },
+        {
+          "case_id": "pv-plan-002",
+          "claim": "Sanitation and quarantine measures at farm and regional levels further curtail introduction and spread [2].",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Maize Lethal Necrotic Disease (MLND) is a new disease in East Africa, first reported in Kenya in 2011 and then spread to Tanzania, Uganda and Rwanda. The disease is caused by Maize Chlorotic Mottle Vi",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\""
+        },
+        {
+          "case_id": "pv-plan-002",
+          "claim": "Establish regional monitoring and surveillance networks to track disease incidence and guide timely interventions [1].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Maize lethal necrosis (MLN), a complex viral disease, emerged as a serious threat to maize production and the livelihoods of smallholders in eastern Africa since 2011, primarily due to the introductio",
+          "verdict": "supported",
+          "rationale": "The chunk explicitly describes MLN monitoring and surveillance across sub-Saharan Africa as part of the implemented strategy, directly supporting the claim about establishing regional monitoring networks."
+        },
+        {
+          "case_id": "pv-plan-002",
+          "claim": "**Coordinated community and area-wide action:** Disease models indicate that management must be synchronized over large areas to be effective; isolated efforts are undermined by exogenous virus sources [3].",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Maize lethal necrosis (MLN) has emerged as a serious threat to food security in sub-Saharan Africa. MLN is caused by coinfection with two viruses, Maize chlorotic mottle virus and a potyvirus, often S",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are given a claim and a chunk. The claim states: \"Coordinated community and area-wide action: Disease models indicate"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-plan-003",
+      "question": "制定一个植物病毒田间快速检测与监测的技术方案",
+      "answer": "好的，根据所提供的数据片段，我为您制定以下植物病毒田间快速检测与监测的技术方案。本方案完全基于您提供的七篇文献标题所反映的技术方法进行构建。\n\n### 植物病毒田间快速检测与监测技术方案\n\n**总体思路**\n\n本方案旨在整合快速、灵敏、低成本且适用于田间部署的检测技术，构建一个层次化的植物病毒检测与监测体系。方案的制定依据了当前植物病毒检测领域的最新进展，涵盖了从初筛到确证的多种方法 [1, 2, 3]。\n\n---\n\n#### 一、 现场快速初筛（田间一线应用）\n\n此层级的核心在于“快速”与“便捷”，用于在田间直接对疑似病株进行大规模筛查，以快速获取结果并做出初步决策。\n\n*   **首选技术：环介导等温扩增技术 (LAMP)**\n    *   **依据：** 据文献报道，LAMP技术已在多种作物中实现了对植物病毒的快速检测，且其方法不断优化 [7]。该技术因无需热循环仪，在恒温条件下即可完成反应，非常适合田间现场操作 [7]。\n    *   **应用策略：** 针对本地区流行或检疫性病毒，预先设计特异性引物并制成冻干粉或预混液形式的快速检测试剂盒。田间操作人员只需进行简单的核酸粗提取，加入试剂后，使用便携式恒温装置（如水浴锅或甚至体温）即可进行反应，结果可通过肉眼观察颜色变化或使用便携式荧光读取器进行判读。\n\n*   **辅助技术：直接酶联免疫吸附测定 (ELISA)**\n    *   **依据：** 直接ELISA是植物病毒检测的经典方法之一 [4]。尽管灵敏度可能略低于核酸检测，但其稳定性好，非常适合对症状明显的典型样品进行大批量筛查，或对LAMP阳性结果进行现场复核。\n    *   **应用策略：** 开发针对特定病毒的抗体包被的试纸条或微孔板。田间操作时，将植物汁液与缓冲液混合后直接上样，通过颜色反应目视判读结果，无需复杂仪器。\n\n#### 二、 高通量早期预警与精准鉴定（区域监测网络）\n\n此层级用于对无症状或潜伏侵染的植物材料（尤其是营养繁殖作物）进行大规模监测，以及时发现新的病毒问题和进行早期预警。\n\n*   **核心策略：高通量测序与快速鉴定流程 (VIRFAST)**\n    *   **依据：** 针对新发病毒问题的快速鉴定，有研究提出了“更快、更便宜”的策略 [6]。此方法不依赖于对病毒的先验知识，能够发现已知和新发的病毒。\n    *   **应用策略：** 在重点监测区域定期采集疑似或无症状样品，提取总核酸后进行高通量测序。利用生物信息学流程快速分析数据，鉴定已知病毒并挖掘潜在的新病毒序列。该流程旨在降低成本、缩短时间，以实现对田间新发病毒问题的快速识别和预警 [6]。\n\n#### 三、 综合性监测与防控体系整合\n\n一个完整的方案不仅依赖于检测技术本身，还需将多种技术整合并融入到作物生产体系中。\n\n*   **重点关注对象：营养繁殖作物**\n    *   **依据:** 有研究专门探讨了在营养繁殖作物中应用先进检测技术 [2]。此类作物（如马铃薯、甘薯、果树等）病毒易随繁殖材料积累和远距离传播，是监测的重中之重。\n    *   **策略:** 在种苗/种薯繁育基地，严格采用LAMP或ELISA技术对所有母株和繁殖材料进行逐批检测，确保源头无毒。在商品生产田，结合高通量测序技术进行年度健康普查。\n\n*   **多技术联合诊断**\n    *   **依据：** 植物病毒检测方法包含多种分析、检测与诊断技术 [5]。没有单一技术能解决所有问题。\n    *   **策略：**\n        1.  **初筛与确证结合：** 田间LAMP/ELISA筛查出的阳性样品，需抽取部分代表样品送至实验室，用另一种原理的方法（如RT-qPCR）进行确证 [5]。\n        2.  **广谱与特异结合：** 利用高通量测序进行广谱性监测，发现新问题 [6]；根据测序结果开发特异性LAMP/ELISA方法，用于后续的田间定向筛查 [7]。\n        3.  **检测与诊断结合：** 检测结果是数据，诊断是综合判断。应将检测结果与田间症状、介体昆虫发生情况、气象数据等结合，对病毒病的发生趋势做出综合诊断和预测 [3, 5]。\n\n通过本方案的实施，可构建起一个“从田间到实验室再到田间”的闭合反馈系统，实现对植物病毒病的“早发现、早预警、早应对”。",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 43.45095859999856,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-plan-003",
+          "claim": "*   **首选技术：环介导等温扩增技术 (LAMP)**\n    *   **依据：** 据文献报道，LAMP技术已在多种作物中实现了对植物病毒的快速检测，且其方法不断优化 [7]。",
+          "chunk_number": 7,
+          "chunk_text_excerpt": "Advancements in the loop-mediated isothermal amplification technique for the rapid detection of plant viruses in various crops",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: evaluate whether the chunk supports the claim. The claim: \"首选技术：环介导等温扩增技术 (LAMP) 依据：据文献报道，LAMP技术已在多种作物中实现了"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "该技术因无需热循环仪，在恒温条件下即可完成反应，非常适合田间现场操作 [7]。",
+          "chunk_number": 7,
+          "chunk_text_excerpt": "Advancements in the loop-mediated isothermal amplification technique for the rapid detection of plant viruses in various crops",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: \"该技术因无需热循环仪，在恒温条件下即可完成反应，非常适合田间现场操作 [7].\" The chunk is: \"Advancements in the loop-mediated isothermal ampl"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "*   **辅助技术：直接酶联免疫吸附测定 (ELISA)**\n    *   **依据：** 直接ELISA是植物病毒检测的经典方法之一 [4]。",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Direct Enzyme-Linked Immunosorbent Assay (ELISA) for Detection of Plant Viruses",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the chunk supports the claim. The claim is: \"辅助技术：直接酶联免疫吸附测定 (ELISA)\" and \"依据： 直接ELISA是"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "*   **核心策略：高通量测序与快速鉴定流程 (VIRFAST)**\n    *   **依据：** 针对新发病毒问题的快速鉴定，有研究提出了“更快、更便宜”的策略 [6]。",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "VIRFAST: Faster, cheaper identification of emerging plant virus problems",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly states the name of the"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "该流程旨在降低成本、缩短时间，以实现对田间新发病毒问题的快速识别和预警 [6]。",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "VIRFAST: Faster, cheaper identification of emerging plant virus problems",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: {\"verdict\": \"supported\", \"rationale\": \"The chunk explicitly states 'Faster, cheaper identification', which directly supp"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "*   **重点关注对象：营养繁殖作物**\n    *   **依据:** 有研究专门探讨了在营养繁殖作物中应用先进检测技术 [2]。",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Cutting-Edge Technologies for Detection of Plant Viruses in Vegetatively Propagated Crop Plants",
+          "verdict": "supported",
+          "rationale": "The chunk directly states that cutting-edge technologies are applied for detection in vegetatively propagated crop plants, which fully supports the claim."
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "*   **多技术联合诊断**\n    *   **依据：** 植物病毒检测方法包含多种分析、检测与诊断技术 [5]。",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "Assay, Detection, and Diagnosis of Plant Viruses",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked: evaluate whether the chunk supports the claim. Claim: \"多技术联合诊断\" (multi-technique combined diagnosis) with "
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "**初筛与确证结合：** 田间LAMP/ELISA筛查出的阳性样品，需抽取部分代表样品送至实验室，用另一种原理的方法（如RT-qPCR）进行确证 [5]。",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "Assay, Detection, and Diagnosis of Plant Viruses",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the CHUNK supports the CLAIM.\n\nCLAIM: \"初筛与确证结合： 田间LAMP/ELISA筛查出的阳性样品，需抽取部分代表样品送至实验室，用另一"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "**广谱与特异结合：** 利用高通量测序进行广谱性监测，发现新问题 [6]；根据测序结果开发特异性LAMP/ELISA方法，用于后续的田间定向筛查 [7]。",
+          "chunk_number": 6,
+          "chunk_text_excerpt": "VIRFAST: Faster, cheaper identification of emerging plant virus problems",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We need to evaluate if the chunk supports the claim. The claim is about \"broad-spectrum and specific binding: using high"
+        },
+        {
+          "case_id": "pv-plan-003",
+          "claim": "**广谱与特异结合：** 利用高通量测序进行广谱性监测，发现新问题 [6]；根据测序结果开发特异性LAMP/ELISA方法，用于后续的田间定向筛查 [7]。",
+          "chunk_number": 7,
+          "chunk_text_excerpt": "Advancements in the loop-mediated isothermal amplification technique for the rapid detection of plant viruses in various crops",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the CHUNK supports the CLAIM. The CLAIM is a sentence from a generated answer: \"**广谱与特异"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-plan-004",
+      "question": "制定植物病毒检疫措施以防止外来病毒传入",
+      "answer": "根据所提供的数据片段，无法制定具体的植物病毒检疫措施。这些片段仅提供了相关文献的标题，而非详细内容，因此不包含可支撑具体措施描述的实质信息。\n\n不过，这些标题勾勒出了检疫措施所涵盖的若干关键议题：\n- **排除与认证**：多篇文献聚焦于通过认证和检疫计划来排除或消除植物病毒，以确保生物安全 [1][2][5]。\n- **风险评估与生物安全**：一篇文献专门讨论在防控新发植物病毒时的风险评估和生物安全考量 [3]。\n- **一般性防控手段**：另有一篇可能综述了植物病毒的多种防控手段，检疫属于其中一环 [4]。\n\n由于片段中缺乏关于特定检疫流程、检测技术、风险分析模型或实际操作规范的具体描述，任何进一步的措施细节均无法从现有数据中得出。若需制定具体措施，必须获取这些文献的全文以提取实质性内容。",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 21.323006599996006,
+      "expected_coverage": "partial",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-plan-004",
+          "claim": "不过，这些标题勾勒出了检疫措施所涵盖的若干关键议题：\n- **排除与认证**：多篇文献聚焦于通过认证和检疫计划来排除或消除植物病毒，以确保生物安全 [1][2][5]。",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Exclusion of plant viruses by certification and quarantine programs",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We need to evaluate whether the chunk supports the claim. The claim says: \"不过，这些标题勾勒出了检疫措施所涵盖的若干关键议题：\n- **排除与认证**：多篇文献聚焦"
+        },
+        {
+          "case_id": "pv-plan-004",
+          "claim": "不过，这些标题勾勒出了检疫措施所涵盖的若干关键议题：\n- **排除与认证**：多篇文献聚焦于通过认证和检疫计划来排除或消除植物病毒，以确保生物安全 [1][2][5]。",
+          "chunk_number": 2,
+          "chunk_text_excerpt": "Elimination of plant viruses by certification and quarantine for ensuring biosecurity",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the chunk supports the claim.\n\nClaim: \"不过，这些标题勾勒出了检疫措施所涵盖的若干关键议题：- **排除与认证**：多篇文献聚焦于通过认证和检疫计"
+        },
+        {
+          "case_id": "pv-plan-004",
+          "claim": "不过，这些标题勾勒出了检疫措施所涵盖的若干关键议题：\n- **排除与认证**：多篇文献聚焦于通过认证和检疫计划来排除或消除植物病毒，以确保生物安全 [1][2][5]。",
+          "chunk_number": 5,
+          "chunk_text_excerpt": "Exclusion of Plant Viruses for Ensuring Biosecurity",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the CHUNK supports the CLAIM. The CLAIM states: \"不过，这些标题勾勒出了检疫措施所涵盖的若干关键议题： - **排除与认证**"
+        },
+        {
+          "case_id": "pv-plan-004",
+          "claim": "- **风险评估与生物安全**：一篇文献专门讨论在防控新发植物病毒时的风险评估和生物安全考量 [3]。",
+          "chunk_number": 3,
+          "chunk_text_excerpt": "Risk Assessment and Biosecurity Considerations in Control of Emergent Plant Viruses",
+          "verdict": "supported",
+          "rationale": "The chunk text is a title that exactly matches the described topic of the literature, directly supporting the claim."
+        },
+        {
+          "case_id": "pv-plan-004",
+          "claim": "- **一般性防控手段**：另有一篇可能综述了植物病毒的多种防控手段，检疫属于其中一环 [4]。",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "Means of Control of Plant Viruses",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate whether the cited literature chunk supports the claim. The claim is: \"一般性防控手段：另有一篇可能综述了植物病毒的多种防"
+        }
+      ]
+    },
+    {
+      "case_id": "pv-plan-005",
+      "question": "Propose an integrated pest management plan to control whitefly-transmitted geminiviruses in tomato crops",
+      "answer": "An effective integrated pest management (IPM) plan against whitefly-transmitted geminiviruses in tomato, specifically *Tomato yellow leaf curl virus* (TYLCV, family *Geminiviridae*, genus *Begomovirus*), should combine cultural, biological, and knowledge-driven tactics based on the following evidence:\n\n1. **Crop-free periods** – Implementing host-free intervals between tomato crops can significantly reduce begomovirus inoculum and whitefly vector populations, thereby lowering disease incidence [1].\n2. **Biological control with entomopathogenic fungi** – Treating viruliferous whiteflies with entomopathogenic fungi (e.g., *Beauveria bassiana* or *Metarhizium* spp.) decreases vector survival and virus transmission, offering a targeted biocontrol component [4].\n3. **Vector management informed by transmission biology** – Understanding the mechanisms that determine TYLCV transmission efficiency (acquisition, retention, inoculation by *Bemisia tabaci*) allows precise timing of interventions—for instance, targeting adult whiteflies before they can transmit the single-component circular ssDNA virus [2,7].\n4. **Integration of multiple tactics** – Reviews of open-field and general whitefly-transmitted virus management emphasize combining cultural practices (weed removal, reflective mulches, resistant/tolerant varieties where available), biological agents, and selective insecticides within a coordinated framework to delay resistance and achieve sustainable suppression [3,6].\n\nThese components together form a science-based IPM strategy that disrupts the virus–vector–host cycle at multiple stages.",
+      "citation_valid": true,
+      "citations_count": 7,
+      "chunks_retrieved": 7,
+      "latency_seconds": 29.948592200002167,
+      "expected_coverage": "yes",
+      "error": null,
+      "judgments": [
+        {
+          "case_id": "pv-plan-005",
+          "claim": "**Crop-free periods** – Implementing host-free intervals between tomato crops can significantly reduce begomovirus inoculum and whitefly vector populations, thereby lowering disease incidence [1].",
+          "chunk_number": 1,
+          "chunk_text_excerpt": "Integrated Pest Management of Whitefly Crop: Free Periods Can Reduce Begomovirus Transmission in Tomato",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are asked to evaluate if the chunk supports the claim. The claim is: \"Crop-free periods – Implementing host-free inte"
+        },
+        {
+          "case_id": "pv-plan-005",
+          "claim": ") decreases vector survival and virus transmission, offering a targeted biocontrol component [4].",
+          "chunk_number": 4,
+          "chunk_text_excerpt": "The roles of entomopathogenic fungal infection of viruliferous whiteflies in controlling tomato yellow leaf curl virus",
+          "verdict": "judge_error",
+          "rationale": "non-JSON response: We are given a claim: \") decreases vector survival and virus transmission, offering a targeted biocontrol component [4]."
+        }
+      ]
+    }
+  ],
+  "metrics": {
+    "n_cases": 5,
+    "n_errors": 0,
+    "citation_validity_rate": 1.0,
+    "answered_rate": 0.8,
+    "expected_yes_answered_rate": 1.0,
+    "expected_no_refused_rate": 0.0,
+    "avg_citations_per_answer": 7.0,
+    "avg_chunks_retrieved": 7.0,
+    "latency_p50": 32.928707699997176,
+    "latency_p95": 44.81367239999963,
+    "n_judgments": 4,
+    "citation_supported_rate": 1.0,
+    "citation_partial_rate": 0.0,
+    "citation_not_supported_rate": 0.0
+  }
+}

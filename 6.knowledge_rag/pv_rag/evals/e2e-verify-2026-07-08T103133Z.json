@@ -1,0 +1,35 @@
+{
+  "eval_set_version": "e2e-test",
+  "sprint_label": "e2e-verify",
+  "timestamp_utc": "2026-07-08T10:31:33Z",
+  "cases": [
+    {
+      "case_id": "e2e-test",
+      "question": "What is tomato yellow leaf curl virus?",
+      "answer": "",
+      "citation_valid": false,
+      "citations_count": 0,
+      "chunks_retrieved": 0,
+      "latency_seconds": 16.669397699995898,
+      "expected_coverage": "yes",
+      "error": "RetryError: RetryError[<Future at 0x26fd8d7fa10 state=finished raised HTTPStatusError>]",
+      "judgments": []
+    }
+  ],
+  "metrics": {
+    "n_cases": 1,
+    "n_errors": 1,
+    "citation_validity_rate": 0.0,
+    "answered_rate": 0.0,
+    "expected_yes_answered_rate": 0.0,
+    "expected_no_refused_rate": 0.0,
+    "avg_citations_per_answer": 0.0,
+    "avg_chunks_retrieved": 0.0,
+    "latency_p50": 0.0,
+    "latency_p95": 0.0,
+    "n_judgments": 0,
+    "citation_supported_rate": 0.0,
+    "citation_partial_rate": 0.0,
+    "citation_not_supported_rate": 0.0
+  }
+}

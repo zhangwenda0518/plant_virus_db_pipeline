@@ -22,6 +22,16 @@ from pathlib import Path
 from typing import Optional
 from collections import Counter, defaultdict
 
+# ---- document truncation limit ---------------------------------------------
+# 单文档正文进入索引/LLM 上下文的上限（字符）。旧版硬编码 text[:12000] 会把
+# ICTV/DPV 长报告系统性截断（审计实测 ICTV 正文丢失约 83%，症状/传播/检测
+# 等靠后的段落整段检索不到）。默认提高到 60000；需要收紧内存占用时用
+# 环境变量 KB_DOC_MAX_CHARS 覆盖。
+try:
+    KB_DOC_MAX_CHARS = int(os.environ.get("KB_DOC_MAX_CHARS", "60000"))
+except ValueError:
+    KB_DOC_MAX_CHARS = 60000
+
 # ---- tokenisation ----------------------------------------------------------
 
 STOPWORDS = set("""
@@ -150,7 +160,9 @@ class PlantVirusKnowledgeBase:
             self._docs.append({
                 "source": "ICTV", "path": str(f), "title": f.stem,
                 "summary": lines[0][:200] if lines else "",
-                "text": text[:12000], "type": "taxonomy",
+                # 截断会系统性丢失 ICTV 长文内容（靠后的症状/传播/检测段落）；
+                # 上限由 KB_DOC_MAX_CHARS 控制（默认 60000），不要改回小常数。
+                "text": text[:KB_DOC_MAX_CHARS], "type": "taxonomy",
             })
         print(f"  ICTV: {len(self._docs) - n0} docs")
 
@@ -164,7 +176,9 @@ class PlantVirusKnowledgeBase:
             self._docs.append({
                 "source": "DPV", "path": str(f),
                 "title": f.stem.replace("_", " "),
-                "summary": "", "text": text[:12000], "type": "plant_virus",
+                # 同 ICTV：截断会系统性丢失 DPV 长描述的后半部分；
+                # 上限由 KB_DOC_MAX_CHARS 控制（默认 60000）。
+                "summary": "", "text": text[:KB_DOC_MAX_CHARS], "type": "plant_virus",
             })
         print(f"  DPV: {len(self._docs) - n0} docs")
 

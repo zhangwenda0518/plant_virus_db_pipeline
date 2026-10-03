@@ -1,13 +1,37 @@
 #!/usr/bin/env python3
 """Plant Virus Knowledge RAG — Flask API + Web UI"""
 
-import os, json, re, sys, uuid, sqlite3
+import os, json, re, sys, uuid, sqlite3, urllib.parse
 from pathlib import Path
 from flask import Flask, request, jsonify, render_template_string, g
 from retriever import get_kb, PlantVirusKnowledgeBase
 
 app = Flask(__name__)
 kb = None
+
+# ---- 安全护栏 ----
+# SSRF：LLM 端点只允许 DeepSeek 官方主机（客户端传入 base_url/api_url 时同样校验）。
+# 注意不能只做 startswith("https://api.deepseek.com")——"https://api.deepseek.com.evil.com"
+# 也能通过；必须解析 URL 并严格比对 hostname（顺带挡掉 userinfo 伪造 "https://api.deepseek.com@evil.com"）。
+ALLOWED_LLM_HOSTNAME = "api.deepseek.com"
+DEFAULT_LLM_URL = "https://api.deepseek.com/v1/chat/completions"
+MAX_QUERY_CHARS = 32 * 1024   # 单次输入长度上限（含 /query 与 /search）
+MAX_API_KEY_CHARS = 512
+
+
+def _llm_url_allowed(url: str) -> bool:
+    """仅允许 https、hostname 严格等于 api.deepseek.com 且端口为 443/缺省的端点。"""
+    try:
+        p = urllib.parse.urlsplit(str(url))
+    except Exception:
+        return False
+    if p.scheme != "https" or (p.hostname or "").lower() != ALLOWED_LLM_HOSTNAME:
+        return False
+    try:
+        port = p.port
+    except ValueError:
+        return False
+    return port in (None, 443)
 
 def _init_kb():
     global kb
@@ -60,7 +84,9 @@ def _ensure_client():
 @app.after_request
 def _set_cid_cookie(resp):
     if getattr(g, "new_cid", None):
-        resp.set_cookie("pvdb_cid", g.new_cid, max_age=10 * 365 * 24 * 3600, samesite="Lax")
+        # httponly: 会话标识不暴露给前端 JS（降低 XSS 后会话被顶替的风险）
+        resp.set_cookie("pvdb_cid", g.new_cid, max_age=10 * 365 * 24 * 3600,
+                        samesite="Lax", httponly=True)
     return resp
 
 
@@ -109,9 +135,15 @@ Answer in the same language as the question (English question → English answer
 @app.route("/query", methods=["POST"])
 def query():
     data = request.get_json(force=True)
-    q = data.get("query", "").strip()
+    q = str(data.get("query") or "").strip()
     conv_id = (data.get("conversation_id") or "").strip()
     if not q: return jsonify({"error": "query required"}), 400
+    if len(q) > MAX_QUERY_CHARS:
+        return jsonify({"error": f"query too long (max {MAX_QUERY_CHARS} chars)"}), 400
+    user_key = str(data.get("api_key") or "")
+    if len(user_key) > MAX_API_KEY_CHARS:
+        return jsonify({"error": "api_key too long"}), 400
+    conv_id = conv_id[:64]
     kb = _init_kb()
     cid = _ensure_client()
     # 会话：无效/他人的 conv_id 一律视为新开会话
@@ -148,9 +180,17 @@ def query():
     ctx = "\n\n".join(fragments)
     env = _load_env()
     api_key = env.get("AI_API_KEY", "")
-    api_url = env.get("AI_API_URL", "https://api.deepseek.com/v1/chat/completions")
+    api_url = env.get("AI_API_URL", DEFAULT_LLM_URL)
     model = env.get("AI_MODEL", "deepseek-chat")
-    user_key = data.get("api_key", "")
+    # SSRF 护栏：客户端可传 base_url/api_url，但只允许 DeepSeek 官方前缀，
+    # 否则 400 拒绝（服务端不再代访任意 URL）；env 配置的白名单外端点同样拒绝。
+    req_url = str(data.get("base_url") or data.get("api_url") or "").strip()
+    if req_url:
+        if not _llm_url_allowed(req_url):
+            return jsonify({"error": "base_url not allowed (only https://api.deepseek.com)"}), 400
+        api_url = req_url
+    elif not _llm_url_allowed(api_url):
+        return jsonify({"error": "AI_API_URL outside allow-list (https://api.deepseek.com)"}), 500
     if not api_key and not user_key:
         return jsonify({"answer": "API key not configured.", "sources": [{"title": r["title"], "source": r["source"]} for r in results], "fragments": fragments, "query": q})
     try:
@@ -230,8 +270,14 @@ def conversations_delete(conv_id):
 @app.route("/search", methods=["GET"])
 def search():
     q = request.args.get("q", "").strip()
-    limit = min(int(request.args.get("limit", 10)), 20)
     if not q: return jsonify({"error": "q required"}), 400
+    if len(q) > MAX_QUERY_CHARS:
+        return jsonify({"error": f"q too long (max {MAX_QUERY_CHARS} chars)"}), 400
+    try:
+        limit = int(request.args.get("limit", 10))
+    except (TypeError, ValueError):
+        limit = 10
+    limit = max(1, min(limit, 20))  # int 守卫 + 上限 20
     kb = _init_kb()
     passages = kb.search(q, top_k=24, per_doc_limit=2) or kb.search_full_text(q, top_k=limit)
     # 段落聚合回文档级（保留最佳段落文本）
@@ -335,14 +381,15 @@ footer a{color:rgba(255,255,255,.9)}
 </div></div></div>
 <footer>Plant Virus Knowledge Base | ICTV + DPV + ViroidDB | <a href="/reference/">Reference DB</a> &middot; <a href="/primers/">Primers</a> &middot; <a href="/explorer/">Explorer</a></footer>
 <script>
-function esc(t){return t.replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>')}
-async function S(){const q=document.getElementById('q').value.trim();if(!q)return;document.getElementById('E').style.display='none';document.getElementById('R').innerHTML='<div class="emp"><div class="spinner-border text-primary mb-2"></div><div>Searching...</div></div>';try{const r=await fetch('/knowledge/search?q='+encodeURIComponent(q)+'&limit=10');const d=await r.json();if(!d.results||!d.results.length){document.getElementById('R').innerHTML='<div class="emp"><div class="ic">&#128533;</div><div>No results for "'+q+'"</div></div>';return}let h='<h5 style="margin:0 0 14px;font-size:15px;color:#555">'+d.count+' results</h5>';d.results.forEach((r,i)=>{const s=r.text.substring(0,220);const more=r.text.length>220;let m='',st='';if(r.source==='ICTV')st='t-ictv';else if(r.source==='DPV')st='t-dpv';else if(r.source==='Papers')st='t-pap';else st='t-vdb';if(r.fields){if(r.fields.Family)m+='<span class="t-fam">'+r.fields.Family+'</span>';if(r.fields.Genus)m+='<span class="t-gen">'+r.fields.Genus+'</span>';if(r.fields.Acronym)m+='<span class="t-acr">'+r.fields.Acronym+'</span>'}if(r.source==='Papers'&&r.year)m+='<span class="t-pap">'+r.year+'</span>';h+='<div class="r-card"><div class="r-src"><span class="'+st+'" style="padding:1px 6px;border-radius:3px;font-size:10px">'+r.source+'</span>'+(r.source==='Papers'?' <span style="font-size:11px;color:#999">'+(r.url?'<a href="'+r.url+'" target="_blank" style="color:#2e86c1">'+(r.doi||r.pmid||'source')+'</a> ':'' )+'</span>':'')+'</div><div class="r-title">'+(r.source==='Papers'?esc(r.title):r.title)+'</div>';if(m)h+='<div class="r-meta">'+m+'</div>';h+='<div class="r-text" id="t'+i+'">'+esc(s)+'</div>';if(more){h+='<span class="r-tog" onclick="T('+i+')" id="g'+i+'">Show more</span><div style="display:none" id="f'+i+'">'+esc(r.text.substring(220))+'</div>'}h+='</div>'});document.getElementById('R').innerHTML=h}catch(e){document.getElementById('R').innerHTML='<div class="emp"><div>Error: '+e.message+'</div></div>'}}
+function esc(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;')}
+function escBr(t){return esc(t).replace(/\n/g,'<br>')}
+async function S(){const q=document.getElementById('q').value.trim();if(!q)return;document.getElementById('E').style.display='none';document.getElementById('R').innerHTML='<div class="emp"><div class="spinner-border text-primary mb-2"></div><div>Searching...</div></div>';try{const r=await fetch('/knowledge/search?q='+encodeURIComponent(q)+'&limit=10');const d=await r.json();if(!d.results||!d.results.length){document.getElementById('R').innerHTML='<div class="emp"><div class="ic">&#128533;</div><div>No results for "'+esc(q)+'"</div></div>';return}let h='<h5 style="margin:0 0 14px;font-size:15px;color:#555">'+d.count+' results</h5>';d.results.forEach((r,i)=>{const s=r.text.substring(0,220);const more=r.text.length>220;let m='',st='';if(r.source==='ICTV')st='t-ictv';else if(r.source==='DPV')st='t-dpv';else if(r.source==='Papers')st='t-pap';else st='t-vdb';if(r.fields){if(r.fields.Family)m+='<span class="t-fam">'+esc(r.fields.Family)+'</span>';if(r.fields.Genus)m+='<span class="t-gen">'+esc(r.fields.Genus)+'</span>';if(r.fields.Acronym)m+='<span class="t-acr">'+esc(r.fields.Acronym)+'</span>'}if(r.source==='Papers'&&r.year)m+='<span class="t-pap">'+esc(r.year)+'</span>';h+='<div class="r-card"><div class="r-src"><span class="'+st+'" style="padding:1px 6px;border-radius:3px;font-size:10px">'+esc(r.source)+'</span>'+(r.source==='Papers'?' <span style="font-size:11px;color:#999">'+(r.url?'<a href="'+esc(r.url)+'" target="_blank" style="color:#2e86c1">'+esc(r.doi||r.pmid||'source')+'</a> ':'' )+'</span>':'')+'</div><div class="r-title">'+esc(r.title)+'</div>';if(m)h+='<div class="r-meta">'+m+'</div>';h+='<div class="r-text" id="t'+i+'">'+escBr(s)+'</div>';if(more){h+='<span class="r-tog" onclick="T('+i+')" id="g'+i+'">Show more</span><div style="display:none" id="f'+i+'">'+escBr(r.text.substring(220))+'</div>'}h+='</div>'});document.getElementById('R').innerHTML=h}catch(e){document.getElementById('R').innerHTML='<div class="emp"><div>Error: '+esc(e.message)+'</div></div>'}}
 function T(i){const e=document.getElementById('t'+i),f=document.getElementById('f'+i),g=document.getElementById('g'+i);if(e.classList.contains('exp')){e.classList.remove('exp');e.style.maxHeight='100px';f.style.display='none';g.textContent='Show more'}else{e.classList.add('exp');e.style.maxHeight='none';f.style.display='block';g.textContent='Show less'}}
 function Q(q){document.getElementById('q').value=q;S()}
 var CONV_ID=null,MSGS=[];
-function mdLite(t){return String(t).replace(/^#{1,6}\s*(.+)$/gm,'<b>$1</b>').replace(/^#{1,6}\s*/gm,'').replace(/\*\*([^*]+)\*\*/g,'$1').replace(/(^|\n)[-*]\s/g,'$1&#8226; ')}
-function renderThread(){const o=document.getElementById('AO');if(!MSGS.length){o.innerHTML='<span style="color:#999">Ask about any plant virus &mdash; taxonomy, host range, transmission, symptoms, genome structure... History is saved in your browser.</span>';return}o.innerHTML=MSGS.map(m=>'<div class="'+(m.role==='user'?'m-user':'m-ai')+'">'+(m.role==='user'?esc(m.content):mdLite(m.content).replace(/\[(\d+)\]/g,'<span class="cit">[$1]</span>'))+'</div>').join('');o.scrollTop=o.scrollHeight}
-function showSourcesL(sources){if(!sources||!sources.length)return;document.getElementById('SC').style.display='block';document.getElementById('SL').innerHTML=sources.map(s=>'<div style="margin:4px 0">['+s.source+'] '+esc(s.title)+(s.url?' <a href="'+s.url+'" target="_blank" style="color:#2e86c1;font-size:11px">'+(s.year?s.year+' ':'')+'source</a>':'')+'</div>').join('')}
+function mdLite(t){var s=esc(t);s=s.replace(/^#{1,6}\s*(.+)$/gm,'<b>$1</b>').replace(/^#{1,6}\s*/gm,'').replace(/\*\*([^*]+)\*\*/g,'$1').replace(/(^|\n)[-*]\s/g,'$1&#8226; ');return s.replace(/\n/g,'<br>')}
+function renderThread(){const o=document.getElementById('AO');if(!MSGS.length){o.innerHTML='<span style="color:#999">Ask about any plant virus &mdash; taxonomy, host range, transmission, symptoms, genome structure... History is saved in your browser.</span>';return}o.innerHTML=MSGS.map(m=>'<div class="'+(m.role==='user'?'m-user':'m-ai')+'">'+(m.role==='user'?escBr(m.content):mdLite(m.content).replace(/\[(\d+)\]/g,'<span class="cit">[$1]</span>'))+'</div>').join('');o.scrollTop=o.scrollHeight}
+function showSourcesL(sources){if(!sources||!sources.length)return;document.getElementById('SC').style.display='block';document.getElementById('SL').innerHTML=sources.map(s=>'<div style="margin:4px 0">['+esc(s.source)+'] '+esc(s.title)+(s.url?' <a href="'+esc(s.url)+'" target="_blank" style="color:#2e86c1;font-size:11px">'+esc(s.year?s.year+' ':'')+'source</a>':'')+'</div>').join('')}
 function refreshConvs(){fetch('/knowledge/conversations').then(r=>r.json()).then(d=>{const list=d.conversations||[];document.getElementById('convList').innerHTML=list.length?list.map(c=>'<span class="conv-chip" onclick="loadConv(\''+c.id+'\')" title="'+esc(c.title)+'">'+esc(c.title.length>18?c.title.slice(0,18)+'…':c.title)+'<b onclick="event.stopPropagation();delConv(\''+c.id+'\')">×</b></span>').join(''):'<span style="color:#aaa">No history yet</span>'}).catch(function(){})}
 function newChat(){CONV_ID=null;MSGS=[];renderThread()}
 function loadConv(id){fetch('/knowledge/conversations/'+id).then(r=>r.json()).then(d=>{if(d.error)return;CONV_ID=id;MSGS=(d.messages||[]).map(m=>({role:m.role,content:m.content}));renderThread();const last=[...(d.messages||[])].reverse().find(m=>m.sources);if(last)showSourcesL(last.sources)}).catch(function(){})}
