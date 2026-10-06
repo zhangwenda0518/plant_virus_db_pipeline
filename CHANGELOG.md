@@ -2,6 +2,22 @@
 
 All notable changes to the Plant Virus Database Platform.
 
+## [2026-10-07] — 上线验证抓出 webapp 渲染双 bug + /uniprot3d/ 入口重构
+
+浏览器实测（非 HTTP 200 口径）发现并修复三个问题，均已上线复核：
+- **stats.html / viewer.html 数据解构 bug**：`loadJSON` 返回 Promise.all 数组，
+  两页却按单对象使用（`.then(S=>` / `.then(list=>`），导致统计面板全 undefined/NaN、
+  查看器永远"未知 accession"。修复为 `.then(([S])=>` / `.then(([list])=>`。
+  （此前所有验证只查过端点状态码，从未真正渲染——index.html 解构正确，一直正常。）
+- **nginx /uniprot3d/ 根路径服务方式重构**：原 `index webapp/index.html` 直服方式下
+  浏览器地址在模块根，页面相对引用（common.js、data/*.json）解析到根路径 404，
+  首页成空壳。改为入口 301 到 /uniprot3d/webapp/ + 专用 alias location；
+  viewer 的 ../structures_* 相对路径由模块根 location 继续承接。
+- 提醒：webapp 静态资源带 `expires 10m`，更新 HTML 后浏览器可能用缓存，
+  验证需强刷或带查询参数。
+- 线上复核（浏览器截图 + DOM 计数）：总览 8 卡/14 行组合条形图/检索表、统计面板
+  8 卡/3 段环形图/缺口表(合计 365)/组合明细 20 行/台账 6 行，账目与索引一致。
+
 ## [2026-10-07] — /uniprot3d/ 轻量上线（39.106.101.94）
 
 - 15 号结构站（webapp 三页 + structures_index.tsv + virus_coverage.tsv）与门户增量

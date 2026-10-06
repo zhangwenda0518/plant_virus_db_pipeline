@@ -31,7 +31,7 @@ document.getElementById('title').textContent = acc;
 
 // 可用来源由数据决定
 let availability = {};
-loadJSON(['data/proteins.json']).then(list=>{
+loadJSON(['data/proteins.json']).then(([list])=>{
   const r = list.find(x=>x.a===acc);
   if(!r){ document.getElementById('info').textContent='未知 accession'; return; }
   availability = {

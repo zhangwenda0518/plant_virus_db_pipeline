@@ -63,7 +63,7 @@
 
 <script src="common.js"></script>
 <script>
-loadJSON(['data/stats.json']).then(S=>{
+loadJSON(['data/stats.json']).then(([S])=>{
  document.getElementById('meta').textContent = `UniProt ${S.uniprot_release} · 构建于 ${S.built}`;
  document.getElementById('cards').innerHTML=[
   ['蛋白总数',S.proteins,''],['物种(毒株)',S.species,''],
