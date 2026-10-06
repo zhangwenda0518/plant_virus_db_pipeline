@@ -2,6 +2,21 @@
 
 All notable changes to the Plant Virus Database Platform.
 
+## [2026-10-07] — /uniprot3d/ 轻量上线（39.106.101.94）
+
+- 15 号结构站（webapp 三页 + structures_index.tsv + virus_coverage.tsv）与门户增量
+  （docs/index.html 含新模块入口 + help/ 全套含 fold.html）已部署到阿里云，
+  nginx conf 差量插入 uniprot3d 四个 location（模块根 alias + colabfold_input/ 与
+  *.db|log|tmp 屏蔽 404）+ webapp 裸目录 301 收口到根；旧 conf 备份为
+  plant-virus.conf.bak_20261007_uniprot3d。
+- 线上验证：/uniprot3d/、stats.html、viewer.html、三个数据 JSON、索引 TSV 全 200；
+  运行期产物 404；14 个既有模块回归全 200；门户首页出现 /uniprot3d/webapp/ 入口。
+- 边界：554MB PDB + 182MB cif 结构文件未上传（用户选择轻量先上线），线上 3D 查看器
+  点开具体结构会 404，补传即恢复；fold_web (16) 按设计不公网暴露（无鉴权），
+  走 SSH 隧道在 GPU 服务器使用。
+- deploy/nginx_full.conf（含全部 location 的配置 source of truth）与
+  deploy/check_site_routes.py（docs 根相对链接线上缺口扫描器）首次入库。
+
 ## [2026-10-06] — fold_web/webapp/Foldify 全链路复验：修复 Foldify 导出 500 + 沙箱回归测试
 
 - 沙箱端到端回归测试新增 `16.fold_web/smoke_sandbox.py`（11 项断言）：临时模块副本 +

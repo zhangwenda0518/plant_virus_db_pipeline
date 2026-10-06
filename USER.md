@@ -32,6 +32,8 @@ Asia/Shanghai (服务器北京时间)
 | `/vector/` | Flask :5005 (vector-host.service) | 8.plant-insect/api_server.py + vector_page.html (启动时读入, 改完需重启) |
 | `/knowledge/` | uvicorn pv_rag :5002 (nohup, 非 systemd) | **/opt/src/plant_virus_rag/** (editable install), UI 在 api/routes/ui.py |
 | `/explorer/` | Dash :8050 (virus-explorer.service) | (无导航条, 暂未加 i18n) |
+| `/uniprot3d/` | nginx 静态 (conf.d/plant-virus.conf 2026-10-07 新增) | 15.uniprot_plant_virus_structures/（轻量上线：webapp+索引 TSV；554MB PDB/182MB cif 结构文件未上传，3D 查看器点开结构会 404，补传后即恢复；运行期产物 colabfold_input/ 与 *.db 已屏蔽 404） |
+| fold_web (16) | 刻意不公网暴露（无鉴权=开放任意预测提交） | GPU 服务器本地跑，远程走 `ssh -L 8800:127.0.0.1:8800` 隧道 |
 
 ### 常用操作
 - 重启服务: `systemctl restart primer-web vector-host metabuli-api literature-tracker`
