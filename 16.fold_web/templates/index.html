@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>植物病毒蛋白结构批量预测平台 · fold_web</title>
+<style>
+ :root{
+  --bg:#f6f7f9; --panel:#fff; --line:#e3e6ea; --ink:#222; --mut:#67707d;
+  --brand:#1a3c6e; --brand2:#1a73e8; --ok:#188038; --warn:#b06000; --err:#c5221f; --idle:#67707d;
+  --radius:10px;
+ }
+ *{box-sizing:border-box}
+ body{font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;margin:0;background:var(--bg);color:var(--ink)}
+ button{font-family:inherit}
+ /* ---- 顶栏 ---- */
+ header{position:sticky;top:0;z-index:30;background:var(--brand);color:#fff;padding:10px 20px;
+   display:flex;align-items:center;gap:14px;flex-wrap:wrap;box-shadow:0 1px 6px rgba(0,0,0,.18)}
+ header h1{font-size:17px;margin:0;font-weight:600}
+ header h1 small{font-weight:400;opacity:.75;font-size:12px;margin-left:6px}
+ .qbadge{display:inline-flex;align-items:center;gap:6px;font-size:12px;background:rgba(255,255,255,.14);
+   border-radius:999px;padding:3px 10px}
+ .qbadge .dot{width:8px;height:8px;border-radius:50%;background:#9aa7b4}
+ .qbadge.live .dot{background:#7de2a6;animation:pulse 1.6s infinite}
+ .qbadge.live .dot.busy{background:#f9ab00}
+ @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+ .hctl{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:12px;flex-wrap:wrap}
+ .hctl label{display:inline-flex;gap:5px;align-items:center;cursor:pointer}
+ .hctl select{border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.12);color:#fff;
+   border-radius:6px;padding:2px 6px;font-size:12px}
+ .hctl select option{color:#222}
+ .hbtn{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.35);
+   border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer}
+ .hbtn:hover{background:rgba(255,255,255,.25)}
+ #updated{font-size:11px;opacity:.7}
+ /* ---- 布局 ---- */
+ .wrap{max-width:1180px;margin:18px auto;padding:0 16px}
+ h2{font-size:15px;margin:24px 0 8px;color:var(--brand);display:flex;align-items:baseline;gap:8px}
+ h2 .hint{font-size:12px;color:var(--mut);font-weight:400}
+ .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+ .msg{font-size:13px;min-height:18px;margin-top:8px}
+ .msg.err{color:var(--err)} .msg.ok{color:var(--ok)}
+ #offline{display:none;background:#fdecea;border:1px solid #f5c6c0;color:#9c1f16;border-radius:8px;
+   padding:8px 14px;font-size:13px;margin-bottom:14px}
+ /* ---- 统计卡 ---- */
+ .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:10px}
+ .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;min-width:0}
+ .card b{font-size:23px;display:block;font-variant-numeric:tabular-nums}
+ .card span{color:var(--mut);font-size:12px;display:block;overflow-wrap:anywhere}
+ .card .track{height:4px;background:#eef1f4;border-radius:2px;margin-top:8px;overflow:hidden}
+ .card .fill{height:100%;background:var(--brand2);border-radius:2px;transition:width .6s}
+ .card.g b{color:var(--ok)} .card.o b{color:var(--warn)}
+ /* ---- 表单 ---- */
+ textarea{width:100%;height:110px;font-family:Consolas,Menlo,monospace;font-size:12.5px;border:1px solid #ccd2d9;
+   border-radius:8px;padding:8px 10px;resize:vertical;color:var(--ink)}
+ textarea:focus-visible,button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{
+   outline:2px solid var(--brand2);outline-offset:1px}
+ .chips{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--mut);margin-top:6px}
+ .chip{background:#eef1f4;border-radius:999px;padding:2px 10px}
+ .chip.bad{background:#fdecea;color:#9c1f16}
+ .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:10px}
+ .btn{padding:7px 16px;border:1px solid var(--brand2);background:var(--brand2);color:#fff;
+   border-radius:7px;cursor:pointer;font-size:13px}
+ .btn:hover:not(:disabled){background:#1565c8}
+ .btn:disabled{opacity:.45;cursor:not-allowed}
+ .btn.ghost{background:#fff;color:var(--brand2)}
+ .btn.ghost:hover:not(:disabled){background:#e8f0fe}
+ .btn.danger{border-color:#d93025;background:#fff;color:#d93025}
+ .btn.danger:hover:not(:disabled){background:#fce8e6}
+ .btn.sm{padding:3px 10px;font-size:12px;border-radius:6px}
+ /* ---- 上传区 ---- */
+ .ups{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+ @media(max-width:820px){.ups{grid-template-columns:1fr}}
+ .up{border:1.5px dashed #b9c4d0;border-radius:var(--radius);padding:18px;text-align:center;cursor:pointer;
+   transition:border-color .15s,background .15s}
+ .up:hover,.up.drag{border-color:var(--brand2);background:#f0f6ff}
+ .up input[type=file]{display:none}
+ .up .t{font-size:13.5px;color:var(--brand);font-weight:600}
+ .up .d{font-size:12px;color:var(--mut);margin-top:4px;line-height:1.6}
+ .up .fileinfo{font-size:12px;color:var(--ink);margin-top:8px;min-height:16px}
+ .progress{height:6px;background:#eef1f4;border-radius:3px;overflow:hidden;margin-top:8px;display:none}
+ .progress .fill{height:100%;width:0;background:var(--brand2);transition:width .2s}
+ .foldify-note{font-size:12px;color:var(--mut);line-height:1.7;margin-top:8px}
+ /* ---- 任务表 ---- */
+ .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+ .fbtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 14px;font-size:12.5px;
+   cursor:pointer;color:var(--mut)}
+ .fbtn.on{background:var(--brand);border-color:var(--brand);color:#fff}
+ .fbtn b{font-weight:600}
+ .twrap{overflow-x:auto}
+ table{border-collapse:collapse;width:100%;font-size:13px;background:#fff;min-width:760px}
+ th,td{border-bottom:1px solid #e8ebee;padding:7px 10px;text-align:left;white-space:nowrap;vertical-align:middle}
+ th{background:#eef1f4;font-weight:600;position:sticky;top:0}
+ tbody tr:hover td{background:#f5f9ff}
+ .st{display:inline-flex;align-items:center;gap:6px}
+ .st .dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto}
+ .st-done{color:var(--ok)} .st-done .dot{background:var(--ok)}
+ .st-error{color:var(--err)} .st-error .dot{background:var(--err)}
+ .st-running,.st-collecting,.st-ingesting{color:var(--warn)} .st-running .dot,.st-collecting .dot,.st-ingesting .dot{background:#f9ab00;animation:pulse 1.4s infinite}
+ .st-queued{color:var(--idle)} .st-queued .dot{background:var(--idle)}
+ .pbar{display:inline-flex;align-items:center;gap:8px}
+ .pbar .track{width:90px;height:6px;background:#eef1f4;border-radius:3px;overflow:hidden}
+ .pbar .fill{height:100%;background:var(--brand2)}
+ .pbar .num{font-variant-numeric:tabular-nums;font-size:12px;color:var(--mut)}
+ .empty td{text-align:center;color:var(--mut);padding:26px 10px;white-space:normal}
+ .act{display:inline-flex;gap:6px}
+ /* ---- 日志 ---- */
+ #logpanel{display:none;margin-top:12px}
+ #logpanel .bar{display:flex;align-items:center;gap:12px;margin-bottom:8px;font-size:13px;flex-wrap:wrap}
+ #logpanel .bar label{display:inline-flex;gap:5px;align-items:center;cursor:pointer;font-size:12.5px;color:var(--mut)}
+ pre#log{background:#10151d;color:#c9e3ff;font-size:11.5px;line-height:1.55;height:300px;overflow:auto;
+   padding:10px 12px;border-radius:8px;margin:0;white-space:pre-wrap;word-break:break-all}
+ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:22px;line-height:1.8}
+ /* ---- toast ---- */
+ #toasts{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:8px;z-index:50}
+ .toast{background:#243244;color:#fff;font-size:13px;border-radius:8px;padding:9px 14px;box-shadow:0 4px 14px rgba(0,0,0,.25);
+   opacity:0;transform:translateY(6px);transition:.25s}
+ .toast.show{opacity:1;transform:none}
+ .toast.err{background:#8c2018}
+ @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+ @media(max-width:640px){
+   header h1 small{display:none}          /* 窄屏收起副标题，避免标题截断 */
+   .wrap{padding:0 10px}
+ }
+</style>
+</head>
+<body>
+
+<header>
+ <h1>植物病毒蛋白结构批量预测平台<small>ColabFold · 收集 → 预测 → 整理 → 入库</small></h1>
+ <span class="qbadge" id="qbadge" role="status" aria-live="polite"><span class="dot"></span><span id="qtext">连接中…</span></span>
+ <div class="hctl">
+  <label><input type="checkbox" id="auto" checked> 自动刷新</label>
+  <select id="interval" aria-label="刷新间隔">
+   <option value="3000">3 秒</option><option value="5000" selected>5 秒</option>
+   <option value="10000">10 秒</option><option value="30000">30 秒</option>
+  </select>
+  <button class="hbtn" id="refresh-now">立即刷新</button>
+  <span id="updated"></span>
+ </div>
+</header>
+
+<div class="wrap">
+ <div id="offline" role="alert">⚠ 无法连接服务（/api 请求失败）—— 请确认 app.py 正在运行；自动重试中。</div>
+
+ <h2>结构覆盖率 <span class="hint">数据来自 15 模块 structures_index，入库后实时刷新</span></h2>
+ <div class="cards" id="stats" aria-busy="true"></div>
+
+ <h2>新建任务 <span class="hint">自动收集 → 预测 → 入库</span></h2>
+ <div class="panel">
+  <label for="accs" style="font-size:13px;color:var(--mut)">粘贴 UniProt accession（逗号 / 空格 / 换行分隔）：</label>
+  <textarea id="accs" placeholder="P03567&#10;O39521&#10;Q91PP5 ..." spellcheck="false"></textarea>
+  <div class="chips" id="accschips" aria-live="polite"></div>
+  <div class="row">
+   <button class="btn" id="submit-accs" disabled>提交预测任务</button>
+   <button class="btn ghost" id="fill-pending">填入全部待预测</button>
+   <button class="btn ghost" id="clear-accs">清空</button>
+  </div>
+  <div class="msg" id="msg1" aria-live="polite"></div>
+ </div>
+
+ <h2>手动上传</h2>
+ <div class="ups">
+  <div class="up" id="zone-fa" tabindex="0" role="button" aria-label="上传 FASTA 文件建立预测任务">
+   <input type="file" id="fa" accept=".fa,.fasta,.txt">
+   <div class="t">① 上传 FASTA 建立预测任务</div>
+   <div class="d">自行准备序列，标题行用 accession<br>点击选择或拖拽文件到此处</div>
+   <div class="fileinfo" id="fa-info"></div>
+   <div class="progress" id="fa-prog"><div class="fill"></div></div>
+   <div class="row" style="justify-content:center"><button class="btn ghost sm" id="btn-fa" disabled>上传并预测</button></div>
+   <div class="msg" id="msg2" aria-live="polite"></div>
+  </div>
+  <div class="up" id="zone-zip" tabindex="0" role="button" aria-label="上传 ColabFold 结果 ZIP 入库">
+   <input type="file" id="zip" accept=".zip">
+   <div class="t">② 上传 ColabFold 结果 ZIP</div>
+   <div class="d">输出目录打包，直接整理入库（sources += SELF）<br>点击选择或拖拽文件到此处</div>
+   <div class="fileinfo" id="zip-info"></div>
+   <div class="progress" id="zip-prog"><div class="fill"></div></div>
+   <div class="row" style="justify-content:center"><button class="btn ghost sm" id="btn-zip" disabled>上传结果入库</button></div>
+   <div class="msg" id="msg3" aria-live="polite"></div>
+  </div>
+ </div>
+
+ <h2>Foldify 手动通道导出</h2>
+ <div class="panel">
+  <div class="row" style="margin-top:0">
+   <a class="btn ghost" id="foldify-link" href="/api/export/foldify?max=1000">下载导出 ZIP</a>
+   <label style="font-size:12.5px;color:var(--mut)">条数上限
+    <select id="foldify-max" aria-label="Foldify 导出条数上限">
+     <option value="500">500</option><option value="1000" selected>1,000</option>
+     <option value="2000">2,000</option><option value="5000">5,000</option>
+    </select>
+   </label>
+  </div>
+  <p class="foldify-note">≤600aa 待预测序列分块打包（100 条/块 + manifest）。Foldify 免费无登录但无 API、并发 5，
+  仅适合人工小批量补漏；批量主体仍走本地 ColabFold。导出需同步拉取 UniProt 序列，序列多时请耐心等待。</p>
+ </div>
+
+ <h2>任务队列</h2>
+ <div class="panel">
+  <div class="filters" id="filters" role="group" aria-label="任务状态过滤"></div>
+  <div class="twrap">
+   <table id="jobs" aria-label="任务队列">
+    <thead><tr><th>ID</th><th>类型</th><th>状态</th><th>进度</th><th>信息</th><th>创建</th><th>操作</th></tr></thead>
+    <tbody></tbody>
+   </table>
+  </div>
+  <div id="logpanel">
+   <div class="bar">
+    <b id="logtitle">任务日志</b>
+    <label><input type="checkbox" id="follow" checked> 跟随滚动</label>
+    <button class="btn ghost sm" id="copy-log">复制日志</button>
+    <button class="btn ghost sm" id="close-log">关闭 (Esc)</button>
+   </div>
+   <pre id="log" tabindex="0" aria-label="任务日志内容"></pre>
+  </div>
+ </div>
+</div>
+
+<footer>内部工具 · 默认仅监听 127.0.0.1（公网暴露请自备 nginx + 认证）<br>
+ 入库结果可在 15 模块 webapp 的 3D 查看器中查看（structures_selffold 通道）</footer>
+
+<div id="toasts" aria-live="polite"></div>
+
+<script>
+'use strict';
+/* ---------- 基础工具 ---------- */
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ACC_RE = /^[OPQ][0-9][A-Z0-9]{3}[0-9]$|^[A-NR-Z][0-9]([A-Z][A-Z0-9]{2}){1,2}[0-9]$/;
+const fmtKB = n => n >= 1073741824 ? (n/1073741824).toFixed(2)+' GB' : n >= 1048576 ? (n/1048576).toFixed(1)+' MB' : (n/1024).toFixed(0)+' KB';
+function relTime(iso){
+  if(!iso) return '';
+  const d = new Date(iso), s = (Date.now()-d.getTime())/1000;
+  if(isNaN(s)) return iso;
+  if(s < 60) return '刚刚';
+  if(s < 3600) return Math.floor(s/60)+' 分钟前';
+  if(s < 86400) return Math.floor(s/3600)+' 小时前';
+  return Math.floor(s/86400)+' 天前';
+}
+function toast(text, isErr){
+  const t = document.createElement('div');
+  t.className = 'toast'+(isErr?' err':''); t.textContent = text;
+  $('toasts').appendChild(t);
+  requestAnimationFrame(()=>t.classList.add('show'));
+  setTimeout(()=>{t.classList.remove('show'); setTimeout(()=>t.remove(), 300)}, 4000);
+}
+async function jget(u){
+  const r = await fetch(u);
+  if(!r.ok) throw new Error('HTTP '+r.status);
+  return r.json();
+}
+
+/* ---------- 状态轮询 ---------- */
+let STATS = null, JOBS = [], filter = 'all', offline = false;
+let timer = null;
+
+function schedule(){
+  if(timer) clearInterval(timer);
+  if($('auto').checked) timer = setInterval(refresh, +$('interval').value);
+}
+$('auto').addEventListener('change', schedule);
+$('interval').addEventListener('change', schedule);
+$('refresh-now').addEventListener('click', refresh);
+
+async function refresh(){
+  try{
+    const [s, jobs] = await Promise.all([jget('/api/stats'), jget('/api/jobs?limit=200')]);
+    STATS = s; JOBS = jobs;
+    setOffline(false);
+    renderStats(); renderJobs();
+    $('updated').textContent = '更新于 ' + new Date().toLocaleTimeString();
+  }catch(e){ setOffline(true); }
+}
+function setOffline(v){
+  if(v === offline) return;
+  offline = v;
+  $('offline').style.display = v ? 'block' : 'none';
+  const b = $('qbadge');
+  b.classList.toggle('live', !v);
+  $('qtext').textContent = v ? '服务不可达' : '队列在线';
+}
+
+/* ---------- 覆盖率 ---------- */
+function statCard(label, val, cls, pct){
+  const bar = pct != null ? `<div class="track"><div class="fill" style="width:${pct.toFixed(1)}%"></div></div>` : '';
+  return `<div class="card ${cls||''}"><b>${val}</b><span>${esc(label)}</span>${bar}</div>`;
+}
+function renderStats(){
+  const s = STATS, N = s.proteins || 0;
+  const ownPct = N ? 100*s.own/N : 0, anyPct = N ? 100*s.any/N : 0;
+  $('stats').innerHTML =
+    statCard('蛋白总数', N, '') +
+    statCard(`自身结构 (${ownPct.toFixed(1)}%)`, s.own, 'g', ownPct) +
+    statCard('缺自身结构', s.own_missing, 'o') +
+    statCard(`含 BFVD 同源 (${anyPct.toFixed(1)}%)`, s.any, '', anyPct) +
+    statCard('病毒物种(毒株)', s.species, '') +
+    statCard('物种 100% 完整', s.species_full_own, 'g') +
+    statCard('物种零覆盖(任一来源)', s.species_zero_any, 'o');
+  $('stats').setAttribute('aria-busy','false');
+  const p = $('fill-pending');
+  p.textContent = `填入全部待预测（${(s.own_missing ?? 0).toLocaleString()} 条）`;
+}
+
+/* ---------- 队列表 ---------- */
+const ACTIVE = new Set(['queued','collecting','running','ingesting']);
+function jobGroup(j){ return ACTIVE.has(j.status) ? 'active' : j.status === 'done' ? 'done' : j.status === 'error' ? 'error' : 'other'; }
+function renderJobs(){
+  const counts = {all: JOBS.length, active:0, done:0, error:0};
+  JOBS.forEach(j => counts[jobGroup(j)] !== undefined && counts[jobGroup(j)]++);
+  const defs = [['all','全部'],['active','进行中'],['done','已完成'],['error','失败']];
+  $('filters').innerHTML = defs.map(([k,l]) =>
+    `<button class="fbtn${filter===k?' on':''}" data-f="${k}">${l} <b>${counts[k]}</b></button>`).join('');
+  $('filters').querySelectorAll('button').forEach(b => b.onclick = () => { filter = b.dataset.f; renderJobs(); });
+  const qbadge = $('qbadge');
+  qbadge.querySelector('.dot').classList.toggle('busy', counts.active > 0);
+  $('qtext').textContent = offline ? '服务不可达' : (counts.active > 0 ? `运行中（${counts.active} 个任务）` : '队列空闲');
+  const rows = JOBS.filter(j => filter === 'all' || jobGroup(j) === filter);
+  const body = $('jobs').querySelector('tbody');
+  if(!rows.length){
+    body.innerHTML = `<tr class="empty"><td colspan="7">${
+      JOBS.length ? '当前过滤条件下没有任务。' : '还没有任务——粘贴 accession 或上传 FASTA 创建第一个预测任务。'}</td></tr>`;
+    return;
+  }
+  body.innerHTML = rows.map(j => {
+    const pct = j.total ? Math.min(100, 100*j.progress/j.total) : 0;
+    const acts = [`<button class="btn ghost sm" data-act="log" data-id="${j.id}">日志</button>`];
+    if(j.status === 'error') acts.push(`<button class="btn ghost sm" data-act="retry" data-id="${j.id}">重试</button>`);
+    if(j.status === 'done' || j.status === 'error') acts.push(`<button class="btn danger sm" data-act="del" data-id="${j.id}">删除</button>`);
+    return `<tr><td>#${j.id}</td><td>${esc(j.kind)}</td>`+
+      `<td class="st st-${esc(j.status)}"><span class="dot"></span>${esc(j.status)}</td>`+
+      `<td>${j.total ? `<span class="pbar"><span class="track"><span class="fill" style="width:${pct.toFixed(0)}%"></span></span><span class="num">${j.progress}/${j.total}</span></span>` : (j.progress||'-')}</td>`+
+      `<td style="white-space:normal;min-width:180px;max-width:340px">${esc(j.message||'')}</td>`+
+      `<td title="${esc(j.created||'')}">${relTime(j.created)}</td>`+
+      `<td><span class="act">${acts.join('')}</span></td></tr>`;
+  }).join('');
+  body.querySelectorAll('button[data-act]').forEach(b => b.onclick = () => act(b.dataset.act, +b.dataset.id));
+}
+async function act(a, id){
+  try{
+    if(a === 'log'){ openLog(id); return; }
+    if(a === 'retry'){
+      const r = await fetch(`/api/job/${id}/retry`, {method:'POST'});
+      const d = await r.json();
+      if(d.error){ toast('重试失败：'+d.error, true); return; }
+      toast(`已重新排队为任务 #${d.job_id}`);
+    } else if(a === 'del'){
+      const r = await fetch(`/api/job/${id}`, {method:'DELETE'});
+      const d = await r.json();
+      if(d.error){ toast('删除失败：'+d.error, true); return; }
+      if(logJobId === id) closeLog();
+      toast(`任务 #${id} 已删除`);
+    }
+    refresh();
+  }catch(e){ toast('请求失败：'+e.message, true); }
+}
+
+/* ---------- 新建任务 ---------- */
+function parseAccs(){
+  const raw = $('accs').value.split(/[\s,;]+/).map(s => s.trim().toUpperCase()).filter(Boolean);
+  const uniq = [...new Set(raw)];
+  const bad = uniq.filter(a => !ACC_RE.test(a));
+  return {raw, uniq, bad};
+}
+function accsPreview(){
+  const {raw, uniq, bad} = parseAccs();
+  const chips = [];
+  chips.push(`<span class="chip">解析 ${raw.length} 条</span>`);
+  if(uniq.length !== raw.length) chips.push(`<span class="chip">去重后 ${uniq.length} 条</span>`);
+  if(bad.length) chips.push(`<span class="chip bad">非法格式 ${bad.length} 条：${esc(bad.slice(0,3).join('、'))}${bad.length>3?'…':''}</span>`);
+  $('accschips').innerHTML = chips.join('');
+  $('submit-accs').disabled = uniq.length - bad.length === 0;
+}
+$('accs').addEventListener('input', accsPreview);
+$('clear-accs').onclick = () => { $('accs').value = ''; accsPreview(); $('msg1').textContent = ''; };
+$('fill-pending').onclick = async () => {
+  try{
+    const n = STATS ? STATS.own_missing : null;
+    if(n && n > 500 && !confirm(`待预测清单共 ${n.toLocaleString()} 条，全部填入并提交将是一个非常长的预测任务。\n仍要填入吗？`)) return;
+    const r = await fetch('/pending_accessions.txt');
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    $('accs').value = (await r.text()).trim();
+    accsPreview();
+    toast('已填入待预测清单');
+  }catch(e){ $('msg1').textContent = '读取 pending 失败：' + e.message; $('msg1').className = 'msg err'; }
+};
+$('submit-accs').onclick = async () => {
+  const {uniq, bad} = parseAccs();
+  const ok = uniq.filter(a => ACC_RE.test(a));
+  if(!ok.length) return;
+  $('msg1').textContent = ''; $('submit-accs').disabled = true;
+  try{
+    const r = await fetch('/api/job/new', {method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({accessions: ok.join('\n')})});
+    const d = await r.json();
+    if(d.error){ $('msg1').textContent = '错误：' + d.error; $('msg1').className = 'msg err'; }
+    else{
+      $('msg1').textContent = `已提交任务 #${d.job_id}（${d.n} 条）`;
+      $('msg1').className = 'msg ok';
+      $('accs').value = ''; accsPreview();
+      toast(`任务 #${d.job_id} 已提交（${d.n} 条）`);
+    }
+  }catch(e){ $('msg1').textContent = '提交失败：' + e.message; $('msg1').className = 'msg err'; }
+  $('submit-accs').disabled = false;
+  refresh();
+};
+
+/* ---------- 上传（拖拽 + 进度） ---------- */
+function bindZone(zoneId, inputId, infoId, btnId, validate){
+  const zone = $(zoneId), input = $(inputId), info = $(infoId), btn = $(btnId);
+  zone.addEventListener('click', e => { if(e.target.tagName !== 'BUTTON') input.click(); });
+  zone.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); input.click(); } });
+  ['dragover','dragenter'].forEach(ev => zone.addEventListener(ev, e => { e.preventDefault(); zone.classList.add('drag'); }));
+  ['dragleave','drop'].forEach(ev => zone.addEventListener(ev, e => { e.preventDefault(); zone.classList.remove('drag'); }));
+  zone.addEventListener('drop', e => { if(e.dataTransfer.files.length){ input.files = e.dataTransfer.files; onpick(); } });
+  input.addEventListener('change', onpick);
+  function onpick(){
+    const f = input.files[0];
+    info.textContent = ''; btn.disabled = true;
+    if(!f) return;
+    const err = validate(f);
+    if(err){ info.innerHTML = `<span style="color:var(--err)">${esc(f.name)} · ${fmtKB(f.size)} — ${esc(err)}</span>`; return; }
+    let extra = '';
+    if(/\.(fa|fasta|txt)$/i.test(f.name)){
+      const reader = new FileReader();
+      reader.onload = () => { const n = (String(reader.result).match(/^>/gm) || []).length; info.textContent += ` · ${n} 条序列`; };
+      reader.readAsText(f.slice(0, 8*1048576));
+    }
+    info.textContent = `${f.name} · ${fmtKB(f.size)}` + extra;
+    btn.disabled = false;
+  }
+  return btn;
+}
+function xhrUpload(url, file, progId, msgId, done){
+  const fd = new FormData(); fd.append('file', file);
+  const prog = $(progId), fill = prog.querySelector('.fill');
+  prog.style.display = 'block'; fill.style.width = '0';
+  const x = new XMLHttpRequest();
+  x.open('POST', url);
+  x.upload.onprogress = e => { if(e.lengthComputable) fill.style.width = (100*e.loaded/e.total).toFixed(0)+'%'; };
+  x.onload = () => {
+    prog.style.display = 'none';
+    let d = {}; try{ d = JSON.parse(x.responseText); }catch(_){}
+    if(x.status !== 200 || d.error){ $(msgId).textContent = '错误：' + (d.error || 'HTTP ' + x.status); $(msgId).className = 'msg err'; }
+    else{ $(msgId).textContent = `已提交任务 #${d.job_id}`; $(msgId).className = 'msg ok'; toast(`任务 #${d.job_id} 已提交`); }
+    done();
+  };
+  x.onerror = () => { prog.style.display = 'none'; $(msgId).textContent = '上传失败（网络错误）'; $(msgId).className = 'msg err'; done(); };
+  x.send(fd);
+}
+const btnFa = bindZone('zone-fa','fa','fa-info','btn-fa', f =>
+  /\.(fa|fasta|txt)$/i.test(f.name) ? null : '需要 .fa / .fasta / .txt 文件');
+btnFa.onclick = () => { $('msg2').textContent=''; xhrUpload('/api/job/upload_fasta', $('fa').files[0], 'fa-prog', 'msg2', refresh); };
+const btnZip = bindZone('zone-zip','zip','zip-info','btn-zip', f =>
+  /\.zip$/i.test(f.name) ? (f.size > 2*1024**3 ? '超过 2GB 上限' : null) : '需要 .zip 文件');
+btnZip.onclick = () => { $('msg3').textContent=''; xhrUpload('/api/job/upload_results', $('zip').files[0], 'zip-prog', 'msg3', refresh); };
+
+/* ---------- Foldify 导出 ---------- */
+$('foldify-max').addEventListener('change', () => {
+  $('foldify-link').href = '/api/export/foldify?max=' + $('foldify-max').value;
+});
+
+/* ---------- 日志面板 ---------- */
+let logJobId = null, logTimer = null;
+async function pullLog(){
+  if(logJobId == null) return;
+  try{
+    const d = await jget(`/api/job/${logJobId}/log`);
+    const el = $('log');
+    const atBottom = el.scrollHeight - el.scrollTop - el.clientHeight < 30;
+    el.textContent = d.log || '(暂无日志)';
+    if($('follow').checked && atBottom) el.scrollTop = el.scrollHeight;
+    if(d.status && !ACTIVE.has(d.status) && logTimer){ clearInterval(logTimer); logTimer = null; }
+  }catch(_){}
+}
+function openLog(id){
+  logJobId = id;
+  $('logtitle').textContent = `任务 #${id} 日志`;
+  $('logpanel').style.display = 'block';
+  $('log').textContent = '加载中…';
+  pullLog();
+  if(logTimer) clearInterval(logTimer);
+  logTimer = setInterval(pullLog, 3000);
+  $('log').focus();
+}
+function closeLog(){
+  logJobId = null;
+  if(logTimer){ clearInterval(logTimer); logTimer = null; }
+  $('logpanel').style.display = 'none';
+}
+$('close-log').onclick = closeLog;
+$('copy-log').onclick = async () => {
+  try{ await navigator.clipboard.writeText($('log').textContent); toast('日志已复制'); }
+  catch(_){ toast('复制失败（浏览器未授权剪贴板）', true); }
+};
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && logJobId != null) closeLog(); });
+
+/* ---------- 启动 ---------- */
+refresh(); schedule();
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>3D 查看器 · 植物病毒蛋白结构模块</title>
+<style>
+ body{font-family:"Microsoft YaHei",sans-serif;margin:0;background:#111;color:#eee}
+ #top{padding:10px 16px;background:#1a3c6e;display:flex;gap:14px;align-items:center}
+ #top a{color:#cfe0ff;text-decoration:none;font-size:13px}
+ #top b{font-size:15px} #srcs button{padding:3px 10px;border:1px solid #9db4d8;background:transparent;
+   color:#cfe0ff;border-radius:5px;cursor:pointer;font-size:12px}
+ #srcs button.on{background:#fff;color:#1a3c6e}
+ #viewer{position:fixed;inset:52px 0 0 0}
+ #info{position:fixed;right:14px;top:62px;background:rgba(20,30,50,.85);padding:8px 12px;border-radius:8px;font-size:12px;line-height:1.7}
+</style>
+</head>
+<body>
+<div id="top">
+ <a href="index.html">← 总览</a><b id="title"></b>
+ <span id="srcs"></span>
+ <span style="margin-left:auto;font-size:12px;color:#9db4d8">3Dmol.js · 滚轮缩放 / 左键旋转 / 右键平移</span>
+</div>
+<div id="viewer"></div>
+<div id="info"></div>
+<script src="vendor/3Dmol-min.js"></script>
+<script src="common.js"></script>
+<script>
+const qs = new URLSearchParams(location.search);
+const acc = qs.get('acc')||'';
+document.getElementById('title').textContent = acc;
+
+// 可用来源由数据决定
+let availability = {};
+loadJSON(['data/proteins.json']).then(list=>{
+  const r = list.find(x=>x.a===acc);
+  if(!r){ document.getElementById('info').textContent='未知 accession'; return; }
+  availability = {
+    pdb: r.p ? {label:'PDB '+r.p.split(';')[0], url:'../structures_pdb/'+r.p.split(';')[0]+'.cif'} : null,
+    af:  r.af? {label:'AFDB 预测', url:'../structures_alphafold/'+r.af} : null,
+    self:r.sf? {label:'自建折叠', url:'../structures_selffold/'+r.sf} : null,
+  };
+  const preferred = qs.get('src') && availability[qs.get('src')] ? qs.get('src')
+                  : (availability.pdb?'pdb':(availability.self?'self':(availability.af?'af':null)));
+  const bar = document.getElementById('srcs');
+  bar.innerHTML = Object.entries(availability).map(([k,v])=>
+    `<button data-k="${k}" class="${k===preferred?'on':''}" ${v?'':'disabled'}>${v?v.label:'—'}</button>`).join(' ');
+  bar.querySelectorAll('button').forEach(b=>b.onclick=()=>load(b.dataset.k));
+  document.getElementById('info').innerHTML =
+    `${esc(r.o)}<br>长度 ${r.L} · 来源: ${r.s.join(', ')||'无'}<br>BFVD 簇: ${esc(r.bf||'-')}`;
+  if(preferred) load(preferred);
+  else document.getElementById('info').innerHTML += '<br><b>该蛋白本地无结构文件</b>';
+});
+
+let viewer = null;
+function load(kind){
+  const v = availability[kind]; if(!v) return;
+  bar_on(kind);
+  const box = document.getElementById('viewer');
+  box.innerHTML = '';
+  viewer = $3Dmol.createViewer(box, {backgroundColor:'#111111'});
+  fetch(v.url).then(r=>{ if(!r.ok) throw new Error(r.status); return r.text(); }).then(text=>{
+    const fmt = v.url.endsWith('.pdb') ? 'pdb' : 'cif';
+    viewer.addModel(text, fmt);
+    viewer.setStyle({}, {cartoon:{color:'spectrum'}});
+    if(kind==='af'||kind==='self'){ // 预测模型按 pLDDT(B因子) 四段着色
+      viewer.setStyle({}, {cartoon:{colorscheme:{prop:'b', gradient:'roygb', min:50, max:90}}});
+    }
+    viewer.zoomTo(); viewer.render(); viewer.zoom(1.2);
+  }).catch(e=>{ box.innerHTML =
+    `<div style="padding:40px;color:#f88">加载失败: ${v.url}<br>${e.message}<br>
+     提示：需从模块根目录启动静态服务（python -m http.server），而非 webapp/ 内部。</div>`; });
+}
+function bar_on(kind){
+  document.querySelectorAll('#srcs button').forEach(b=>b.classList.toggle('on', b.dataset.k===kind));
+}
+</script>
+</body>
+</html>

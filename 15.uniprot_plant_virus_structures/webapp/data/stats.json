@@ -1,0 +1,53 @@
+{
+ "built": "2026-10-03T17:42:01",
+ "uniprot_release": "2026_03",
+ "query": "(taxonomy_id:10239) AND virus_host_id:33090 AND virus_host_id:35493",
+ "proteins": 4810,
+ "species": 413,
+ "reviewed": 1274,
+ "own": 1112,
+ "any": 4445,
+ "none": 365,
+ "own_pct": 23.1,
+ "any_pct": 92.4,
+ "by_src": {
+  "BFVD": 4366,
+  "RVPSD": 910,
+  "AFDB": 435,
+  "PDB": 80
+ },
+ "combos": {
+  "BFVD 同源(簇代表)": 3333,
+  "BFVD,RVPSD": 548,
+  "无任何结构": 365,
+  "AFDB,BFVD,RVPSD": 258,
+  "AFDB,BFVD": 158,
+  "RVPSD AF2": 57,
+  "BFVD,PDB": 31,
+  "BFVD,PDB,RVPSD": 30,
+  "AFDB,RVPSD": 8,
+  "PDB 实验结构": 6,
+  "PDB,RVPSD": 5,
+  "AFDB,BFVD,PDB": 4,
+  "AFDB,BFVD,PDB,RVPSD": 4,
+  "AFDB 自身预测": 3
+ },
+ "species_full_own": 100,
+ "species_partial_own": 158,
+ "species_zero_own": 155,
+ "species_any": 258,
+ "pending": {
+  "P1-reviewed(≤2700aa)": 14,
+  "P2-unreviewed(≤2700aa)": 47,
+  "P3-多聚蛋白(>2700aa,需切分)": 304,
+  "P4-极小(<50aa)": 0
+ },
+ "pipeline_notes": {
+  "sifts_delta": 4,
+  "afdb_probe": "435 hit / 4,375 miss（4,810 全探测）",
+  "bfvd_hit": 4366,
+  "rvpsd_bridge": "GenBank ProteinId 精确桥接 9,122 对",
+  "removed_alga": "1,993 条 / 8 物种（removed_green_alga_viruses.tsv）",
+  "gcva_batch": 6
+ }
+}

@@ -53,6 +53,8 @@ MpV-SP1 243 等，与陆生组零重叠），已整体剔除并留档
 | `structures_supplementary_gcva/pull_manifest_gcva.tsv` | GCVA 批次 manifest（含 pLDDT 统计） |
 | `pending_prediction.tsv` | 四路皆无结构的 **365** 条蛋白（P1–P3 优先级分层，主体是多聚蛋白） |
 | `pending_prediction_bfvd_only.tsv` | 仅 BFVD（同源模型级）覆盖的 3,333 条，自身折叠按需 |
+| `webapp/` | **自包含静态站**：总览 dashboard + 统计面板 + 蛋白/病毒检索 + 3Dmol 查看器 |
+| `webapp/data/` | 页面数据（build_data.py 从 structures_index / virus_coverage 生成，幂等） |
 
 结构本体约 0.74 GB、SIFTS 源表 `pdb_chain_uniprot.tsv.gz` 均已 gitignore；
 清单 / 联表 / 总索引 / 剔除留档 / manifest / README / 脚本入库。
@@ -166,3 +168,45 @@ python bfvd_lookup.py
 - AFDB 模型自带 pLDDT/B-factor 通道，**<70 区域仅作示意**；多域相对取向看 PAE 不看 pLDDT。
 - 与 `14.rvpsd_structures` 的分工：定量/展示优先用本模块的**实验结构**；无实验结构的蛋白
   用 AFDB 现役模型（本模块）或 RVPSD AF2 模型（14 模块，覆盖更广：17,918 蛋白）。
+
+## 七、webapp 页面（2026-10-03 新增；2026-10-04 修复 viewer 致命 bug + 公网路由）
+
+```bash
+# 必须从模块根目录起服务（查看器要直接读 structures_pdb/ 等）
+cd 15.uniprot_plant_virus_structures
+python -m http.server 8801
+# 浏览器: http://127.0.0.1:8801/webapp/          （nginx 亦可整模块根挂载）
+```
+
+公网部署（nginx，已写入 `deploy/nginx_full.conf`，线上加到
+`/etc/nginx/conf.d/plant-virus.conf` 即生效）：
+
+```nginx
+location = /uniprot3d { return 301 /uniprot3d/; }
+location /uniprot3d/ {
+    alias /opt/plant_virus_db/plant_virus_db_pipeline/15.uniprot_plant_virus_structures/;
+    index webapp/index.html;      # 挂模块根：viewer 的 ../structures_* 相对路径才能通
+}
+location ^~ /uniprot3d/colabfold_input/ { return 404; }   # 运行期产物不暴露
+location ~* ^/uniprot3d/.*\.(db|log|tmp)$ { return 404; }
+```
+
+门户入口卡片（`docs/index.html` Data Resources 区 → `/uniprot3d/webapp/`）与
+帮助页（`docs/help/uniprot3d.html`）均已就位。
+
+2026-10-04 修复：`webapp/viewer.html` 引用了未定义的 `esc()`（只在 index.html 里定义过）
+导致 ReferenceError 中断脚本、**3D 查看器整页无法加载**——三页已统一改用共享
+`webapp/common.js`（esc / 页面级错误横幅 / loadJSON），并补充键盘可达性
+（蛋白行 Tab+Enter 打开详情、Esc 关闭）。
+
+| 页面 | 内容 |
+|:--|:--|
+| `webapp/index.html` | 总览 dashboard（指标卡 + 来源组合条形图）+ 蛋白检索（点行出详情/外部链接/3D 入口）+ 病毒级覆盖表 |
+| `webapp/stats.html` | **统计面板**：物种完整率环形图、来源组合与单源命中明细、待预测缺口分层、管线台账（SIFTS/AFDB/BFVD/剔除/GCVA） |
+| `webapp/viewer.html` | 3Dmol 查看器（?acc=&src=pdb/af/self），AF/自建模型按 pLDDT 四段着色 |
+| `webapp/common.js` | 三页公共工具：HTML 转义 / 数据加载失败横幅（2026-10-04 新增） |
+
+数据刷新：数据源（structures_index.tsv 等）变更后重跑 `webapp/build_data.py` 即可，幂等。
+
+外部预测通道：蛋白详情面板含 **Foldify**（免费在线 AF3/AF2/ColabFold/OmegaFold/ESMFold，
+≤600aa 人工提交）直达链接；批量导出入口在 16.fold_web 平台（`/api/export/foldify`）。

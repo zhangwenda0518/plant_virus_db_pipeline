@@ -101,6 +101,11 @@ oneoff_scripts/vad_fetch/local_fulllength_seqs.json
 # 入库：README、UniProt 全量清单、pdb/afdb 链接表、SIFTS 联表、结构总索引、下载 manifest）
 15.uniprot_plant_virus_structures/structures_pdb/*.cif
 15.uniprot_plant_virus_structures/structures_alphafold/*.cif
+15.uniprot_plant_virus_structures/structures_selffold/
+15.uniprot_plant_virus_structures/colabfold_input/batch_normal/
+15.uniprot_plant_virus_structures/colabfold_input/jobs/
+15.uniprot_plant_virus_structures/colabfold_input/*.db
+15.uniprot_plant_virus_structures/alphafast_input/json/
 15.uniprot_plant_virus_structures/_work*
 15.uniprot_plant_virus_structures/pdb_chain_uniprot.tsv.gz
 
@@ -134,5 +139,8 @@ oneoff_scripts/vad_fetch/local_fulllength_seqs.json
 /oneoff_scripts/*
 !/oneoff_scripts/uniprot_pdb_fetch/
 !/oneoff_scripts/_bench_b1_20260919/
+
+# 16.fold_web — AF3/AlphaFast 模型权重（973MB，Google 直链可随时重下，不入库）
+16.fold_web/models/
 
 8.plant-insect/vector_srv.log
