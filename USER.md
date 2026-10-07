@@ -33,7 +33,7 @@ Asia/Shanghai (服务器北京时间)
 | `/knowledge/` | uvicorn pv_rag :5002 (nohup, 非 systemd) | **/opt/src/plant_virus_rag/** (editable install), UI 在 api/routes/ui.py |
 | `/explorer/` | Dash :8050 (virus-explorer.service) | (无导航条, 暂未加 i18n) |
 | `/uniprot3d/` | nginx 静态 (conf.d/plant-virus.conf 2026-10-07 新增) | 15.uniprot_plant_virus_structures/（轻量上线：webapp+索引 TSV；554MB PDB/182MB cif 结构文件未上传，3D 查看器点开结构会 404，补传后即恢复；运行期产物 colabfold_input/ 与 *.db 已屏蔽 404） |
-| fold_web (16) | 刻意不公网暴露（无鉴权=开放任意预测提交） | GPU 服务器本地跑，远程走 `ssh -L 8800:127.0.0.1:8800` 隧道 |
+| fold_web (16) | 2026-10-07 有限上线：`/foldweb/`（nginx Basic Auth，凭据在本地密码管理器，严禁入库）+ GPU 服务器本地 8800（SSH 隧道） | 服务器为**无 GPU 模式**：自动预测禁用（no_gpu_predict.sh 提示改走上传通道），上传结果入库/Foldify 导出/统计可用；systemd 服务 `foldweb.service`；入库后需在服务器重跑 `webapp/build_data.py` 刷新线上页面 |
 
 ### 常用操作
 - 重启服务: `systemctl restart primer-web vector-host metabuli-api literature-tracker`

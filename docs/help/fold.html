@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title data-i18n="Batch Folding Queue — Help|批量折叠队列 — 帮助">Batch Folding Queue — Help</title>
+<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;line-height:1.8}nav{background:linear-gradient(135deg,#1a3a5c,#2c6e49);color:#fff;height:46px;display:flex;align-items:center;padding:0 16px;gap:4px;position:sticky;top:0;z-index:100}nav .brand{font-weight:700;font-size:15px;margin-right:12px;color:#fff;text-decoration:none}nav a{color:rgba(255,255,255,.75);text-decoration:none;padding:5px 11px;border-radius:4px;font-size:12px}nav a:hover,nav a.on{color:#fff;background:rgba(255,255,255,.15)}nav .sep{color:rgba(255,255,255,.25);margin:0 2px;font-size:14px}nav .spacer{flex:1}.hero{background:linear-gradient(135deg,#134e6f,#2c6e49);color:#fff;padding:32px 24px;text-align:center}.hero h1{font-size:24px}.hero p{font-size:13px;opacity:.85;margin-top:4px}.wrap{max-width:900px;margin:0 auto;padding:24px 20px}h2{font-size:18px;color:#1a5276;margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid #e8f4ea}h3{font-size:15px;color:#2c6e49;margin:18px 0 6px}p{font-size:14px;color:#444;margin-bottom:10px}ol,ul{margin:8px 0 12px 20px;font-size:14px;color:#444}li{margin-bottom:4px}code{background:#e8f4ea;padding:1px 5px;border-radius:3px;font-size:13px}.tip{background:#e8f4ea;border-left:3px solid #2c6e49;padding:10px 14px;margin:12px 0;border-radius:4px;font-size:13px}table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}th{background:#e8f4ea;padding:8px;text-align:left}td{padding:8px;border-bottom:1px solid #eee}footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}</style></head><body>
+<nav>
+  <a href="/" class="brand" data-i18n="Plant Virus DB|植物病毒数据库">Plant Virus DB</a>
+  <a href="/reference/" data-i18n="Reference|参考数据库">Reference</a>
+  <a href="/photos/" data-i18n="Photos|症状照片">Photos</a>
+  <a href="/relations/" data-i18n="Relations|媒介-宿主关系">Relations</a>
+  <a href="/eve/" data-i18n="EVE|内源病毒元件">EVE</a>
+  <a href="/vector/" data-i18n="Vector|媒介">Vector</a>
+  <a href="/genes/" data-i18n="Genes|基因">Genes</a>
+  <a href="/primers/" data-i18n="Primers|引物">Primers</a>
+  <a href="/onekp/" data-i18n="OneKP|1KP 病毒组">OneKP</a>
+  <span class="sep">|</span>
+  <a href="/explorer/" data-i18n="Explorer|病毒浏览器">Explorer</a>
+  <a href="/metabuli/" data-i18n="Metabuli|宏基因组分类">Metabuli</a>
+  <a href="/pamirdb/" data-i18n="PV-miRNA|PV-miRNA 预测">PV-miRNA</a>
+  <a href="/phylo/" data-i18n="Phylo|进化关系">Phylo</a>
+  <span class="sep">|</span>
+  <a href="/literature/" data-i18n="Literature|文献追踪">Literature</a>
+  <a href="/knowledge/" data-i18n="Knowledge|知识库问答">Knowledge</a>
+  <a href="/resources.html" data-i18n="Resources|资源">Resources</a>
+  <a href="/help/" data-i18n="Help|帮助">Help</a>
+</nav>
+<div class="hero"><h1 data-i18n="Batch Folding Queue (fold_web)|批量折叠队列 (fold_web)">Batch Folding Queue (fold_web)</h1><p>ColabFold console: collect → predict → ingest, for the UniProt Structure Atlas</p></div>
+
+<div class="wrap">
+
+<h2>What it is</h2>
+<p>An <b>operations console</b> (module <code>16.fold_web</code>) that closes the structure-coverage gap of the <a href="/help/uniprot3d.html" style="color:#1a5276">UniProt Structure Atlas</a>. It drives a single-worker job queue: <b>collect</b> (fetch FASTA from UniProt by accession) &rarr; <b>predict</b> (<code>colabfold_batch</code> subprocess) &rarr; <b>ingest</b> (best rank_001 model + mean pLDDT check) &rarr; <b>index update</b> (<code>structures_index.tsv</code> sources += <code>SELF</code>, model saved to <code>structures_selffold/</code>). Manual channels: upload FASTA, or upload a ColabFold results ZIP to ingest directly.</p>
+<div class="tip"><b>Where it runs (two deployments, 2026-10-07):</b> &nbsp;
+&#9312; <b>GPU server (full mode)</b> &mdash; all four stages live; bind <code>127.0.0.1:8800</code>, reach it via SSH forwarding <code>ssh -L 8800:127.0.0.1:8800 &lt;gpu-server&gt;</code>. &nbsp;
+&#9313; <b>39.106.101.94 (no-GPU mode, limited launch)</b> &mdash; <a href="http://39.106.101.94/foldweb/" style="color:#1a5276">http://39.106.101.94/foldweb/</a> behind Basic Auth (credentials in the local password manager). The <b>predict stage is disabled</b> there (no GPU; jobs fail with a notice), while <b>upload-results ZIP / Foldify export / coverage stats</b> work. After ingesting there, rerun <code>webapp/build_data.py</code> on the server so the online Atlas pages pick up the new coverage.</div>
+
+<h2 data-i18n="Quick Start|快速开始">Quick Start</h2>
+<ol>
+  <li><b>Coverage panel</b> (top) refreshes live: own-structure %, BFVD homolog %, per-species completeness</li>
+  <li><b>New job</b>: paste UniProt accessions (comma/space/newline separated). The input box validates format and de-duplicates as you type. "填入全部待预测" loads the full pending list (3,698 proteins) after a confirmation</li>
+  <li><b>Upload FASTA</b>: bring-your-own sequences (title line must be the accession); drag-and-drop supported, upload progress shown</li>
+  <li><b>Upload results ZIP</b>: ran ColabFold elsewhere (or via Foldify)? Pack the output directory and ingest directly</li>
+  <li><b>Job table</b>: filter by status (running / done / failed), follow per-job logs (auto-scroll), retry failed jobs, delete finished ones</li>
+</ol>
+
+<h2>Foldify manual channel</h2>
+<p>For small top-ups without the GPU box: the export button packages pending &le;600 aa sequences into 100-per-file FASTA blocks with a manifest. Submit them manually at <a href="https://foldify-open.cloud.e-infra.cz/" style="color:#1a5276">Foldify</a> (free, no login, concurrency 5, no API), then upload the resulting ZIP back here. <b>Do not automate bulk submissions</b> against Foldify &mdash; fair-use limits; the bulk (3,394 proteins) belongs on local ColabFold.</p>
+
+<h2>Scope &amp; limits</h2>
+<table>
+<tr><th>Case</th><th>Guidance</th></tr>
+<tr><td>304 polyproteins &gt;2,700 aa</td><td>Not folded directly; split into domains first (list in <code>colabfold_input/batch_polyprotein/</code>). AF3 token budget can take the longest (3,471 aa) if you accept the cost &mdash; see the AlphaFast channel in the module README</td></tr>
+<tr><td>~55 proteins &lt;50 aa</td><td>Runnable but of limited reference value</td></tr>
+<tr><td>Job logs &amp; workdirs</td><td>Kept under <code>colabfold_input/jobs/</code>; the queue database is <code>colabfold_input/fold_jobs.db</code> (SQLite). Delete jobs in the UI removes the record, not the files</td></tr>
+</table>
+
+<h2>Configuration (environment variables)</h2>
+<ul>
+  <li><code>FOLDWEB_MODULE_DIR</code> &mdash; data module root (default <code>../15.uniprot_plant_virus_structures</code>)</li>
+  <li><code>FOLDWEB_PREDICT_CMD</code> &mdash; predict command template with <code>{input}</code>/<code>{output}</code> placeholders (default uses <code>colabfold_batch --msa-mode mmseqs2_uniref_env --num-models 3 --num-recycle 3 --model-type alphafold2_ptm --rank plddt</code>)</li>
+  <li><code>FOLDWEB_HOST</code> / <code>FOLDWEB_PORT</code> &mdash; bind address (default <code>127.0.0.1:8800</code>)</li>
+</ul>
+
+</div>
+<footer>Plant Virus Database Platform · 植物病毒数据库平台</footer>
+</body></html>

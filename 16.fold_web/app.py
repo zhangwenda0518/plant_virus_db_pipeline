@@ -73,7 +73,10 @@ def api_job_delete(job_id):
 @app.route("/api/job/new", methods=["POST"])
 def api_job_new():
     d = request.get_json(silent=True) or {}
-    accs = [a.strip().upper() for a in re.split(r"[\s,;]+", d.get("accessions", "")) if a.strip()]
+    raw = d.get("accessions", "")
+    if isinstance(raw, (list, tuple)):    # 容错：数组也收（API 调用方常见形状），join 成文本
+        raw = " ".join(map(str, raw))
+    accs = [a.strip().upper() for a in re.split(r"[\s,;]+", str(raw)) if a.strip()]
     accs = list(dict.fromkeys(accs))
     if not accs:
         return jsonify({"error": "accessions 为空"}), 400

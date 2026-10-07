@@ -121,12 +121,15 @@ def fetch_fasta_map(accs, log=print):
             for attempt in range(5):
                 # 每次尝试前清空临时文件：失败重试时避免把上一块残留当成本块结果
                 open(tmppath, "w").close()
-                rc = subprocess.run(["curl", "-s", "--compressed", "--retry", "3",
-                                     "--retry-all-errors", "--max-time", "600",
-                                     "-o", tmppath, url]).returncode
-                if rc == 0:
+                p = subprocess.run(["curl", "-sS", "-L", "--compressed", "--retry", "3",
+                                    "--max-time", "600",
+                                    "-o", tmppath, url], capture_output=True, text=True)
+                # rc=0 且文件非空才算成功：空 body（被吞掉的失败）一律重试
+                if p.returncode == 0 and os.path.getsize(tmppath) > 0:
                     ok = True
                     break
+                log(f"WARN chunk {i // CH + 1} attempt {attempt + 1}: "
+                    f"curl rc={p.returncode} {((p.stderr or '').strip() or 'no stderr')[:200]}")
                 time.sleep(3 * (attempt + 1))
             if not ok:
                 log(f"WARN chunk {i // CH + 1}: curl 5 次重试后仍失败，跳过 {len(chunk)} 条")

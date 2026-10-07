@@ -2,6 +2,52 @@
 
 All notable changes to the Plant Virus Database Platform.
 
+## [2026-10-07] — fold_web 有限上线 /foldweb/（Basic Auth，无 GPU 模式）+ curl 兼容修复
+
+- **决策变更**（应用户要求，原"刻意不反代"作废）：16.fold_web 部署到 39.106.101.94，
+  nginx `/foldweb/` 反代 127.0.0.1:8800 并加 Basic Auth（凭据在本地密码管理器，
+  严禁入库）；ZIP 上传上限收紧 2G（服务器磁盘余量小）；systemd 服务 `foldweb.service`
+  常驻。Foldify 本就是在线服务，无需部署，webapp/help 已有入口与链接。
+- **无 GPU 模式**：`FOLDWEB_PREDICT_CMD` 指向 `no_gpu_predict.sh`（中文提示改走
+  上传结果入库通道，实测日志可见）；上传结果入库 / Foldify 导出 / 覆盖统计可用。
+  服务器入库后需重跑 `webapp/build_data.py` 刷新线上 Atlas 页面。
+- **修 3 个部署期 bug**：①服务器无 `colabfold_input/` 目录致 SQLite 建库 500（补 mkdir）；
+  ②`/api/job/new` 对数组 payload 500（容错为 400/收下，API 调用方常见形状）；
+  ③**服务器 curl 过旧不认识 `--retry-all-errors`**（7.71.0+ 才有）致收集 5 连败且
+  `-s` 吞掉报错——foldcore 去掉该参数、curl 加 `-sS -L`、rc+stderr 记入任务日志、
+  空 body 也判失败重试。
+- 部署校验：公网无凭据 401 / 带凭据 200；stats API 账目正确；测试任务收集→无 GPU
+  提示→error 全链路实测后清理。help/fold.html 双部署说明更新。
+
+## [2026-10-07] — 口径对齐：新建 17.genome_proteome（9,022 基因组蛋白宇宙）+ 超算批量管线跑通
+
+**用户点破口径错位**：15 模块的 4,810 条蛋白是 UniProt 收录口径（模式毒株），与 2 号模块
+9,022 条病毒基因组不是一套体系；建库输入口径实为 72,691 蛋白（2026-05 批次）。从基因组
+重建蛋白宇宙（新模块 `17.genome_proteome/`）：
+
+- **蛋白全库**：9,022 accession 经 NCBI `efetch rettype=fasta_cds_aa` 批量拉取官方注释蛋白
+  **29,059 条**（覆盖 8,091 基因组；其余 ~480 条为类病毒/无注释记录，不编码蛋白——
+  12 个"失败"批实为 LC/AJ/AF 等类病毒 accession，生物学正确）。
+  `docs/data/Plant_Virus_proteins.faa`；脚本 `oneoff_scripts/pv_proteome/fetch_all_proteins.py`。
+- **聚类去冗余**：MMseqs2 easy-cluster 50% id/cov 0.8 → **11,017 结构代表**（90% 档
+  20,550 几乎不省）。产物回传 `17.genome_proteome/`。
+- **五路结构对账**：RVPSD 直配 675（protein_id↔GenBank 文件名；全库实点核对 24,606 条，
+  VAD 新批次对植物病毒增量为 0）；PDB/AFDB/BFVD 经 UniProt 继承（代表 vs UniProt 4,810
+  序列比对 ≥90% id，仅 320 代表可映射——基因组宇宙远大于 UniProt 模式株）。**有结构代表
+  969（8.8%），缺口 10,048 代表**。明细 `17.genome_proteome/coverage_report.tsv`。
+- **hx 站批量管线修复跑通**：SFTP 上传的 Windows 反斜杠文件名炸弹（posixpath.basename
+  对 `D:/…/json\X.json` 失效）导致 Stage2 全灭 + MSA 白算 5 小时；远端 Python 改名修复，
+  worker 池 v4（领任务制+断点续跑+增量复用 MSA+triton 失败自动换 cutlass）重提，
+  首条 2303aa（A0A059WRQ4）复用 MSA+推理 18.4 分钟出 cif（ranking_score 0.51，
+  已回传 structures_selffold/）。提交数上限逼出 worker 架构（365 任务只占 6 名额）。
+- **昆山 4090 Notebook 实测**：SSH 网关转发需容器重启才建立；mmseqs-linux-gpu（CUDA
+  build）部署跑通、结果正确（166 命中），但 **CPU 格式库无 GPU 索引生成入口（createindex
+  --gpu 不识别），流式搬运 IO 拖死（286aa 777s），无速度优势 → 实例关机止损**。GPU-MSA
+  正路 = Modal Option A（RomeroLab 托管 1.2TB prebuilt GPU 索引，--msa-only 端点国内实测
+  可达，估 $0.1-0.5/条，需国际卡）或 hx 提额。
+- 10,048 缺口预算：hx 现状 1 worker ~279 天；提额 128 核（8 worker）~35 天；
+  提额+Modal MSA ~15-18 天。`17.genome_proteome/README.md` 有完整预算表。
+
 ## [2026-10-07] — 上线验证抓出 webapp 渲染双 bug + /uniprot3d/ 入口重构
 
 浏览器实测（非 HTTP 200 口径）发现并修复三个问题，均已上线复核：
