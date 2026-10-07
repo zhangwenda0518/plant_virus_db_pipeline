@@ -38,10 +38,32 @@
 </head>
 <body>
 <header><h1>植物病毒蛋白结构模块</h1>
- <a href="index.html">总览</a><a href="stats.html">统计面板</a><a href="../colabfold_input/" hidden></a>
+ <a href="index.html">总览</a><a href="stats.html">统计面板</a><a href="#" id="nav-foldweb">预测平台 ↗</a><a href="../colabfold_input/" hidden></a>
  <span style="margin-left:auto;font-size:12px;color:#9db4d8" id="meta"></span></header>
 <div class="wrap">
  <div class="cards" id="cards"></div>
+
+ <div class="panel" style="margin-top:14px">
+  <b style="font-size:14px;color:#1a3c6e">蛋白结构预测管线（缺口 3,698 条怎么补）</b>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin-top:8px;font-size:12.5px;line-height:1.7">
+   <div style="border:1px solid #e3e6ea;border-radius:8px;padding:10px">
+    <b>① 本地批量（主力）</b><br>ColabFold 平台：收集→预测→整理→入库全自动；
+    也收手动上传 FASTA / 结果 ZIP。<br>
+    <a id="foldweb-link" href="http://127.0.0.1:8800" style="color:#1967d2;font-weight:bold">打开预测平台 →</a>
+    <span style="color:#888">仅本机/GPU 服务器内网可用，公网不开放</span>
+   </div>
+   <div style="border:1px solid #e3e6ea;border-radius:8px;padding:10px">
+    <b>② Foldify 在线补漏</b><br>免费 AF3/AF2/OmegaFold/ESMFold 多模型；
+    ≤600aa、并发 5，人工逐条提交。<br>
+    <a href="https://foldify-open.cloud.e-infra.cz/" target="_blank" style="color:#1967d2;font-weight:bold">打开 Foldify →</a>
+    <span style="color:#888">≤600aa 清单用预测平台首页的「Foldify 导出 ZIP」</span>
+   </div>
+   <div style="border:1px solid #e3e6ea;border-radius:8px;padding:10px">
+    <b>③ 多聚蛋白 304 条</b><br>&gt;2,700aa 超模型 token 预算，需先结构域切分再进①/②。<br>
+    <span style="color:#888">清单：colabfold_input/batch_polyprotein/polyprotein_list.tsv</span>
+   </div>
+  </div>
+ </div>
 
  <h2>结构来源组合（每蛋白计一次）</h2>
  <div class="panel" id="combos"></div>
@@ -130,6 +152,10 @@ function detail(acc){
        style="color:#888;font-size:12px;background:none;border:none;cursor:pointer;padding:0">关闭（Esc）</button>`;
   document.getElementById('detail').style.display='block';
 }
+// 预测平台链接按访问主机自适应：本机开 8801 时指 127.0.0.1:8800，内网访问指内网 IP:8800
+(function(){ const u='http://'+(location.hostname||'127.0.0.1')+':8800';
+  document.getElementById('foldweb-link').href=u;
+  document.getElementById('nav-foldweb').href=u; })();
 init().catch(()=>{});
 document.addEventListener('keydown', e=>{
   if(e.key==='Escape'){ document.getElementById('detail').style.display='none'; }
