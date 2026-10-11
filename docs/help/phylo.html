@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title data-i18n="Virus Phylogeny — Help|病毒进化关系 — 帮助">Virus Phylogeny — Help</title>
+<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;line-height:1.8}nav{background:linear-gradient(135deg,#1a3a5c,#2c6e49);color:#fff;height:46px;display:flex;align-items:center;padding:0 16px;gap:4px;position:sticky;top:0;z-index:100}nav .brand{font-weight:700;font-size:15px;margin-right:12px;color:#fff;text-decoration:none}nav a{color:rgba(255,255,255,.75);text-decoration:none;padding:5px 11px;border-radius:4px;font-size:12px}nav a:hover,nav a.on{color:#fff;background:rgba(255,255,255,.15)}nav .sep{color:rgba(255,255,255,.25);margin:0 2px;font-size:14px;user-select:none}nav .spacer{flex:1}.hero{background:linear-gradient(135deg,#134e6f,#2c6e49);color:#fff;padding:32px 24px;text-align:center}.hero h1{font-size:24px}.hero p{font-size:13px;opacity:.85;margin-top:4px}.wrap{max-width:900px;margin:0 auto;padding:24px 20px}h2{font-size:18px;color:#1a5276;margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid #e8f4ea}h3{font-size:15px;color:#2c6e49;margin:18px 0 6px}p{font-size:14px;color:#444;margin-bottom:10px}ol,ul{margin:8px 0 12px 20px;font-size:14px;color:#444}li{margin-bottom:4px}code{background:#e8f4ea;padding:1px 5px;border-radius:3px;font-size:13px}.tip{background:#e8f4ea;border-left:3px solid #2c6e49;padding:10px 14px;margin:12px 0;border-radius:4px;font-size:13px}footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}</style></head><body>
+<nav>
+  <a href="/" class="brand" data-i18n="Plant Virus DB|植物病毒数据库">Plant Virus DB</a>
+  <span class="sep">|</span>
+  <a href="/reference/" data-i18n="Reference|参考数据库">Reference</a>
+  <a href="/photos/" data-i18n="Photos|症状照片">Photos</a>
+  <a href="/relations/" data-i18n="Relations|媒介-宿主关系">Relations</a>
+  <a href="/eve/" data-i18n="EVE|内源病毒元件">EVE</a>
+  <a href="/vector/" data-i18n="Vector|媒介">Vector</a>
+  <a href="/genes/" data-i18n="Genes|基因">Genes</a>
+  <a href="/primers/" data-i18n="Primers|引物">Primers</a>
+  <a href="/onekp/" data-i18n="OneKP|1KP 病毒组">OneKP</a>
+  <span class="sep">|</span>
+  <a href="/explorer/" data-i18n="Explorer|病毒浏览器">Explorer</a>
+  <a href="/metabuli/" data-i18n="Metabuli|宏基因组分类">Metabuli</a>
+  <a href="/pamirdb/"  data-i18n="PV-miRNA|PV-miRNA 预测">PV-miRNA</a>
+  <a href="/phylo/" class="on" data-i18n="Phylo|进化关系">Phylo</a>
+  <span class="sep">|</span>
+  <a href="/literature/" data-i18n="Literature|文献追踪">Literature</a>
+  <a href="/knowledge/" data-i18n="Knowledge|知识库问答">Knowledge</a>
+  <a href="/resources.html" data-i18n="Resources|资源">Resources</a>
+  <a href="/help/" data-i18n="Help|帮助">Help</a>
+</nav>
+<div class="hero"><h1 data-i18n="Virus Phylogeny|病毒进化关系">Virus Phylogeny</h1><p>The ICTV MSL41 taxonomy tree and the official ICTV molecular trees — two complementary views</p></div>
+
+<div style="max-width:900px;margin:0 auto;padding:0 20px 16px">
+  <img src="/help/images/phylo.png" alt="Taxonomy tree" style="width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);border:1px solid #d0d8e0">
+  <p style="text-align:center;font-size:12px;color:#888;margin-bottom:12px">Taxonomy tree — rectangular layout, expanded to family level</p>
+  <img src="/help/images/phylo_molecular.png" alt="ICTV molecular trees" style="width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);border:1px solid #d0d8e0">
+  <p style="text-align:center;font-size:12px;color:#888;margin-top:6px">ICTV molecular trees — Alphaflexiviridae Fig. 3 phylogram with support values</p>
+</div>
+
+<div class="wrap">
+
+<h2>Overview</h2>
+<p>The Phylogeny module offers two views of plant virus evolutionary relationships on <b>one page</b> (<code>/phylo/</code>, tab switcher in the top bar) that use <b>different conventions</b>: the taxonomy tree shows set nesting (who contains whom), while the molecular trees are sequence-inferred and usually built from a single gene region, not the whole family.</p>
+
+<h3>Taxonomy tree — <code>/phylo/</code> (default tab)</h3>
+<p>The ICTV MSL41 hierarchy: <b>48 plant virus families, 214 genera, 2,684 species</b> (2,997 taxa shown at family level).</p>
+<ul>
+  <li><b>Expand to</b> Family / Genus / Species — switch the depth the tree is drawn at; the default keeps the whole tree readable</li>
+  <li><b>Search</b> by family, genus or species; scientific names and common abbreviations (CMV, TSWV, …) are supported</li>
+  <li><b>Non-plant viruses</b> — adds the grey backbone of realm/kingdom/phylum/class/order nodes that share an order with a plant virus, plus the 73 non-plant families inside those orders; they are dead ends and cannot be expanded</li>
+  <li><b>Species labels</b> and <b>colour by family</b> display toggles; <b>Rectangular / Circular</b> layout switch</li>
+  <li><b>Reset / Collapse / PNG</b> actions; the sidebar family list shows species counts per family (Geminiviridae 558, Potyviridae 264, …)</li>
+</ul>
+
+<h3>ICTV molecular trees — <code>/phylo/</code> “Molecular trees” tab (old <code>/phylo/molecular/</code> redirects here with parameters)</h3>
+<p>Official maximum-likelihood phylogenies released by ICTV Report chapters: <b>25 families, 38 trees, 3,341 sequences</b> (36/38 strictly bifurcating). These are the published chapter figures (Fig&nbsp;1–Fig&nbsp;6), <b>not</b> species-complete family phylogenies: tip sets are often far smaller than the family's species list, can be gene fragments or protein accessions, and may include sequences from other families used as outgroups. Read the family label as "which chapter published this figure", not "every tip belongs to this family".</p>
+<ul>
+  <li><b>Dataset</b> — pick a family, then a figure; each tree is the figure published in the corresponding ICTV Report chapter</li>
+  <li><b>Support filter</b> — collapse clades below a support threshold; nodes without a support value are always kept</li>
+  <li><b>Display</b> — scale by branch length, show support values, tip labels, colour tips by genus; Phylogram / Circular layouts</li>
+  <li><b>Find taxon</b> — marks every tip whose name matches and reports the smallest clade containing them all</li>
+  <li><b>Fit width / Reset / PNG</b> actions; genus is mapped from ICTV MSL41 (family-constrained) since the tree files carry no taxonomic ranks</li>
+</ul>
+
+<div class="tip"><b>Tip</b>: Use the taxonomy tree to answer "which family does this species belong to, and what else is in its order"; use the molecular trees to answer "how are these species related by sequence". When a species is missing from a molecular tree, it simply was not a tip in that chapter's figure — check the per-family index linked at the top of the molecular tree page.</div>
+
+</div>
+<footer data-i18n="Plant Virus Database Platform|植物病毒数据库平台">Plant Virus Database Platform · Help</footer>
+<script src="/i18n.js"></script>
+</body></html>

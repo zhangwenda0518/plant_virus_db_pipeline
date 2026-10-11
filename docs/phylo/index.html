@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<!-- title 由底部标签页控制器按当前视图动态设置（分类树 / 分子树各有一个标题），
+     因此这里不带 data-i18n —— 否则 i18n.js 在 DOMContentLoaded 会覆写控制器设好的标题 -->
+<title>Virus Phylogeny</title>
+<meta name="description" content="Plant virus taxonomy tree from ICTV MSL41 — 48 families, 214 genera, 2,684 species. 基于 ICTV MSL41 的植物病毒分类学进化关系树。">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;overflow-x:hidden}
+
+nav.topbar{background:linear-gradient(135deg,#134e6f 0%,#1a5276 55%,#2e86c1 100%);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 20px;flex-wrap:wrap}
+nav.topbar .brand{font-size:17px;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+nav.topbar .brand a{color:#fff;text-decoration:none}
+nav.topbar .sep{opacity:.35}
+nav.topbar .subtitle{font-size:13px;opacity:.92;font-weight:600;white-space:nowrap}
+nav.topbar .stats{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+nav.topbar .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:3px 10px;font-size:11.5px;white-space:nowrap}
+nav.topbar .chip b{font-weight:700}
+nav.topbar .xlink{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);border-radius:14px;padding:3px 11px;font-size:11.5px;color:#fff;text-decoration:none;white-space:nowrap}
+nav.topbar .xlink:hover{background:rgba(255,255,255,.32)}
+
+.layout{display:flex;gap:14px;padding:14px 16px;align-items:stretch;max-width:1760px;margin:0 auto}
+.panel{background:#fff;border:1px solid #eef2f5;border-radius:14px;box-shadow:0 2px 10px rgba(20,60,90,.06)}
+aside.controls{width:286px;flex-shrink:0;padding:14px;display:flex;flex-direction:column;gap:14px;max-height:calc(100vh - 130px);overflow-y:auto;position:sticky;top:14px}
+section.chartcol{flex:1;min-width:0;display:flex;flex-direction:column;gap:12px}
+aside.detail{width:340px;flex-shrink:0;padding:14px;max-height:calc(100vh - 130px);overflow-y:auto;position:sticky;top:14px;display:none}
+aside.detail.open{display:block}
+@media(max-width:1150px){aside.detail{position:static;max-height:none;width:100%}.layout{flex-direction:column}aside.controls{position:static;max-height:none;width:100%}}
+
+.ctl-title{font-size:12px;font-weight:700;color:#8a99a8;letter-spacing:.6px;border-left:3px solid #2e86c1;padding-left:8px;margin:2px 0 8px}
+select{width:100%;padding:6px 8px;border:1px solid #d5dde5;border-radius:8px;font-size:12.5px;background:#fff;color:#2c3e50;outline:none}
+select:focus{border-color:#2e86c1}
+label.tgl{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#3c4b5b;cursor:pointer;padding:3px 0;user-select:none}
+label.tgl input{accent-color:#2e86c1;width:15px;height:15px}
+.hint{font-size:11px;color:#95a5b5;line-height:1.6}
+.searchwrap{position:relative}
+#search{width:100%;padding:8px 10px;border:1px solid #d5dde5;border-radius:8px;font-size:12.5px;outline:none}
+#search:focus{border-color:#2e86c1;box-shadow:0 0 0 3px rgba(46,134,193,.12)}
+#searchdrop{position:absolute;top:calc(100% + 4px);left:0;right:0;background:#fff;border:1px solid #dfe7ee;border-radius:10px;box-shadow:0 10px 30px rgba(20,60,90,.15);z-index:50;max-height:340px;overflow-y:auto;display:none}
+.sitem{padding:7px 10px;font-size:12px;cursor:pointer;display:flex;gap:8px;align-items:center;border-bottom:1px solid #f3f6f9}
+.sitem:last-child{border-bottom:none}
+.sitem:hover{background:#eef5fa}
+.sitem .badge{flex-shrink:0;font-size:10px;border-radius:8px;padding:1px 7px;font-weight:600}
+.badge.r-species{background:#e8f1fb;color:#1f618d}
+.badge.r-genus{background:#eafaf1;color:#1e8449}
+.badge.r-family{background:#f4ecf7;color:#7d3c98}
+.badge.r-order{background:#fdf2e9;color:#b9770e}
+.badge.r-class,.badge.r-phylum,.badge.r-kingdom,.badge.r-realm{background:#eef2f5;color:#5d6d7e}
+.sitem .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sitem .ct{font-size:10.5px;color:#a5b1bd;flex-shrink:0}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap}
+button.act{flex:1;min-width:72px;padding:7px 10px;border:1px solid #d5dde5;background:#fff;color:#3c4b5b;border-radius:8px;font-size:12px;cursor:pointer;transition:.15s;white-space:nowrap}
+button.act:hover{border-color:#2e86c1;color:#1a5276;background:#eef5fa}
+button.act.primary{background:#2e86c1;border-color:#2e86c1;color:#fff}
+button.act.primary:hover{background:#1a5276}
+
+#legend{display:flex;flex-direction:column;gap:2px;max-height:232px;overflow-y:auto;padding-right:2px}
+.lg{display:flex;align-items:center;gap:7px;font-size:11.5px;cursor:pointer;padding:2px 4px;border-radius:6px;transition:.12s}
+.lg:hover{background:#eef5fa}
+.lg.off{opacity:.3}
+.lg .sw{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.lg .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lg .ct{color:#a5b1bd;font-size:10.5px;flex-shrink:0}
+
+.chart-head{display:flex;align-items:center;gap:10px;padding:10px 16px 0;flex-wrap:wrap}
+.chart-head .t{font-size:14px;font-weight:700;color:#1a5276}
+.chart-head .mode{margin-left:auto;display:flex;border:1px solid #d5dde5;border-radius:9px;overflow:hidden}
+.chart-head .mode button{border:none;background:#fff;padding:6px 14px;font-size:12px;cursor:pointer;color:#3c4b5b}
+.chart-head .mode button.on{background:#2e86c1;color:#fff}
+#chart,#mchart{width:100%;height:calc(100vh - 235px);min-height:520px}
+@media(max-width:1150px){#chart,#mchart{height:620px}}
+.loading{padding:80px 20px;text-align:center;color:#7b8a99;font-size:14px}
+.spinner{width:34px;height:34px;border:3px solid #e3ecf3;border-top-color:#2e86c1;border-radius:50%;margin:0 auto 14px;animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+#detail .dt{font-size:15px;font-weight:700;color:#1a5276;line-height:1.45;word-break:break-word;font-style:italic}
+#detail .sub{font-size:11.5px;color:#8a99a8;margin:3px 0 10px}
+#detail .kv{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+#detail .kv .c{background:#f7fafc;border:1px solid #eef2f5;border-radius:10px;padding:8px 10px}
+#detail .kv .c .l{font-size:10.5px;color:#95a5b5;letter-spacing:.3px}
+#detail .kv .c .v{font-size:15px;font-weight:700;color:#1a5276;line-height:1.3}
+.pathrow{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px}
+.pchip{font-size:11px;background:#eef5fa;border:1px solid #d5e6f2;color:#1a5276;border-radius:10px;padding:2px 8px;cursor:pointer}
+.pchip:hover{background:#1a5276;color:#fff}
+.pchip.cur{background:#2e86c1;color:#fff;border-color:#2e86c1;font-weight:600}
+.tag{display:inline-block;font-size:10.5px;border-radius:9px;padding:2px 8px;margin:0 4px 4px 0;font-weight:600}
+.tag.plant{background:#eafaf1;color:#1e8449}
+.tag.nonplant{background:#f1f3f5;color:#7b8a99}
+.tag.gray{background:#f8f9fa;color:#95a5b5}
+.note{font-size:11.5px;color:#7b8a99;line-height:1.7;background:#f7fafc;border:1px solid #eef2f5;border-radius:10px;padding:9px 11px}
+.emptyhint{font-size:12.5px;color:#a5b1bd;text-align:center;padding:30px 10px;line-height:1.9}
+
+footer{max-width:1760px;margin:0 auto;padding:6px 20px 26px;font-size:11.5px;color:#95a5b5;line-height:1.8}
+footer a{color:#2e86c1;text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer code{background:#eef2f5;border-radius:4px;padding:1px 5px;font-size:11px;color:#5d6d7e}
+
+/* —— 顶栏视图标签页（分类树 / 分子树 合并为单页） —— */
+[hidden]{display:none!important}
+nav.topbar .viewtabs{display:flex;border:1px solid rgba(255,255,255,.32);border-radius:9px;overflow:hidden;flex-shrink:0}
+nav.topbar .viewtabs button{border:none;background:transparent;color:#fff;padding:5px 13px;font-size:12.5px;cursor:pointer;opacity:.72;transition:.15s;white-space:nowrap}
+nav.topbar .viewtabs button:hover{opacity:.95}
+nav.topbar .viewtabs button.on{background:rgba(255,255,255,.93);color:#134e6f;font-weight:700;opacity:1}
+
+/* —— 分子树视图（原 /phylo/molecular/，元素 id 统一加 m 前缀，样式取自原页） —— */
+#viewMol aside.controls{width:292px}
+@media(max-width:1250px){#viewMol aside.detail{position:static;max-height:none;width:100%}}
+#mdetail .dt{font-size:14px}
+#mdetail .kv .c .v{font-size:14px}
+#msearch{width:100%;padding:8px 10px;border:1px solid #d5dde5;border-radius:8px;font-size:12.5px;outline:none}
+#msearch:focus{border-color:#2e86c1;box-shadow:0 0 0 3px rgba(46,134,193,.12)}
+input[type=range]{width:100%;accent-color:#2e86c1}
+.notice{max-width:1760px;margin:12px auto 0;padding:0 16px}
+.notice .in{display:flex;gap:11px;align-items:flex-start;background:#fdf7e6;border:1px solid #f0e2bb;border-left:4px solid #d9a520;border-radius:12px;padding:11px 14px}
+.notice .mk{flex-shrink:0;width:19px;height:19px;border-radius:50%;background:#d9a520;color:#fff;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.notice .tx{font-size:12.5px;line-height:1.75;color:#6d5618}
+.notice .tx b{color:#8a6a12}
+.notice .tx a{color:#1a5276;font-weight:600;text-decoration:none;white-space:nowrap}
+.notice .tx a:hover{text-decoration:underline}
+.ctl-title.row{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.ctl-title.row a{font-size:11px;font-weight:600;color:#2e86c1;text-decoration:none;letter-spacing:0;white-space:nowrap}
+.ctl-title.row a:hover{text-decoration:underline}
+.memlist{font-size:11.5px;line-height:1.75;max-height:340px;overflow-y:auto;border:1px solid #eef2f5;border-radius:10px;padding:8px 10px;background:#fff}
+.memlist .mi{display:flex;gap:6px;padding:2px 0;border-bottom:1px solid #f6f9fb}
+.memlist .mi:last-child{border-bottom:none}
+.memlist .acc{color:#a5b1bd;font-size:10.5px;flex-shrink:0;font-family:ui-monospace,Menlo,Consolas,monospace}
+.memlist .sp{flex:1;min-width:0;word-break:break-word}
+.gl{display:flex;flex-wrap:wrap;gap:5px 13px;align-items:center;padding:9px 14px;border-bottom:1px solid #eef2f5;background:#fbfdfe;font-size:11.5px;line-height:1.6}
+.gl .gi{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;color:#3c4b5b}
+.gl .sw{width:10px;height:10px;border-radius:50%;flex-shrink:0;border:1px solid rgba(0,0,0,.1)}
+.gl .gi b{font-weight:600;color:#1a5276}
+.gl .gi i{font-style:normal;color:#95a5b5}
+.gl .gsep{flex-basis:100%;height:0;margin:0}
+.gl .gnote{color:#95a5b5;font-size:11px;line-height:1.65}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="brand"><a href="/" data-i18n="Plant Virus DB|植物病毒数据库">Plant Virus DB</a></div>
+  <span class="sep">|</span>
+  <div class="subtitle" data-i18n="Virus Phylogeny|病毒进化关系">Virus Phylogeny</div>
+  <div class="viewtabs">
+    <button id="tabTax" class="on" data-i18n="Taxonomy tree|分类树">Taxonomy tree</button>
+    <button id="tabMol" data-i18n="Molecular trees|分子树">Molecular trees</button>
+  </div>
+  <div class="stats">
+    <span id="taxStats" style="display:flex;gap:8px;flex-wrap:wrap">
+      <span class="chip"><b id="s-fam">–</b> <span data-i18n="plant families|植物病毒科">plant families</span></span>
+      <span class="chip"><b id="s-gen">–</b> <span data-i18n="genera|属">genera</span></span>
+      <span class="chip"><b id="s-sp">–</b> <span data-i18n="species|种">species</span></span>
+      <span class="chip"><b id="s-all">–</b> <span data-i18n="taxa shown|展示分类单元">taxa shown</span></span>
+    </span>
+    <span id="molStats" style="display:none;gap:8px;flex-wrap:wrap">
+      <span class="chip"><b id="ms-fam">–</b> <span data-i18n="families|科">families</span></span>
+      <span class="chip"><b id="ms-tree">–</b> <span data-i18n="trees|棵树">trees</span></span>
+      <span class="chip"><b id="ms-leaf">–</b> <span data-i18n="sequences|序列">sequences</span></span>
+      <span class="chip"><b id="ms-bin">–</b> <span data-i18n="strictly bifurcating|严格二分叉">strictly bifurcating</span></span>
+    </span>
+  </div>
+</nav>
+
+<div id="viewTax">
+<div class="layout">
+
+  <aside class="controls panel">
+    <div>
+      <div class="ctl-title" data-i18n="SEARCH|搜索">SEARCH</div>
+      <div class="searchwrap">
+        <input id="search" type="text" autocomplete="off" placeholder="Family / genus / species…" data-i18n-ph="Family / genus / species…|科 / 属 / 种名…">
+        <div id="searchdrop"></div>
+      </div>
+      <div class="hint" style="margin-top:6px" data-i18n="Scientific names and common abbreviations (CMV, TSWV…).|支持学名与常用缩写（CMV、TSWV…）。">Scientific names and common abbreviations (CMV, TSWV…).</div>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="EXPAND TO|展开至">EXPAND TO</div>
+      <select id="depth">
+        <option value="5" data-i18n="Order|目">Order</option>
+        <option value="6" selected data-i18n="Family|科">Family</option>
+        <option value="7" data-i18n="Genus|属">Genus</option>
+        <option value="8" data-i18n="Species|种">Species</option>
+      </select>
+      <div class="hint" style="margin-top:6px" data-i18n="Family level keeps the whole tree readable; switch to Genus/Species and zoom in for detail.|「科」层可看清全树；切到「属/种」后请放大查看细节。">Family level keeps the whole tree readable; switch to Genus/Species and zoom in for detail.</div>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="DISPLAY|显示">DISPLAY</div>
+      <label class="tgl"><input type="checkbox" id="showGray"><span data-i18n="Non-plant viruses|非植物病毒">Non-plant viruses</span></label>
+      <label class="tgl"><input type="checkbox" id="showSpLabel"><span data-i18n="Species labels|显示种名标签">Species labels</span></label>
+      <label class="tgl"><input type="checkbox" id="showColor" checked><span data-i18n="Colour by family|按科着色">Colour by family</span></label>
+      <div class="hint" style="margin-top:6px" data-i18n="Off by default — only plant viruses are drawn. Turning it on adds the grey backbone: the realm/kingdom/phylum/class/order nodes that share a higher rank with plant viruses, plus non-plant species inside mixed genera. They are dead ends and cannot be expanded.|默认关闭，只画植物病毒。打开后补上灰色骨架：与植物病毒同处更高层级的域/界/门/纲/目，以及混合属里的非植物种。它们是死端，不能展开。">Off by default — only plant viruses are drawn. Turning it on adds the grey backbone: the realm/kingdom/phylum/class/order nodes that share a higher rank with plant viruses, plus non-plant species inside mixed genera. They are dead ends and cannot be expanded.</div>
+    </div>
+
+    <div class="btnrow">
+      <button class="act" id="btnReset" data-i18n="Reset|重置">Reset</button>
+      <button class="act" id="btnFit" data-i18n="Collapse|收起">Collapse</button>
+      <button class="act primary" id="btnPng" data-i18n="PNG|导出PNG">PNG</button>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="PLANT VIRUS FAMILIES|植物病毒科">PLANT VIRUS FAMILIES</div>
+      <div id="legend"></div>
+      <div class="hint" style="margin-top:6px" data-i18n="Click a family to isolate it. Non-plant nodes, when shown, are grey and cannot be expanded.|点击科名可单独查看该科。非植物节点（若显示）为灰色，不可展开。">Click a family to isolate it. Non-plant nodes, when shown, are grey and cannot be expanded.</div>
+    </div>
+  </aside>
+
+  <section class="chartcol">
+    <div class="panel" style="overflow:hidden">
+      <div class="chart-head">
+        <div class="t" data-i18n="Plant virus taxonomy tree|植物病毒分类学进化树">Plant virus taxonomy tree</div>
+        <div class="mode">
+          <button id="mOrtho" class="on" data-i18n="Rectangular|矩形">Rectangular</button>
+          <button id="mRadial" data-i18n="Circular|圆形">Circular</button>
+        </div>
+      </div>
+      <div id="loading" class="loading"><div class="spinner"></div><span data-i18n="Loading taxonomy tree…|正在加载分类树…">Loading taxonomy tree…</span></div>
+      <div id="chart" style="display:none"></div>
+    </div>
+  </section>
+
+  <aside class="detail panel" id="detail">
+    <div class="ctl-title" data-i18n="DETAIL|详情">DETAIL</div>
+    <div id="detailBody"></div>
+  </aside>
+
+</div>
+</div>
+
+<div id="viewMol" hidden>
+
+<div class="notice">
+  <div class="in">
+    <div class="mk">!</div>
+    <div class="tx">
+      <span data-i18n="Important — these trees are the figures published in ICTV Report chapters (Fig1–Fig6), not species-complete family phylogenies. Tip sets are often far smaller than the family's species list, can be gene fragments or protein accessions, and may include sequences from other families used as outgroups. Read the family label as 'which chapter published this figure', not 'all tips belong to this family'.|重要 —— 这些树是 ICTV 报告章节正文的插图（Fig1–Fig6），不是覆盖全科的物种树。叶集合常常远小于该科物种表，可能是基因片段或蛋白登录号，也可能含别的科作为外群的序列。请把「科标签」读作「哪一章发表了这张图」，而不是「所有叶都属于这个科」。">Important — these trees are the figures published in ICTV Report chapters (Fig1–Fig6), not species-complete family phylogenies. Tip sets are often far smaller than the family's species list, can be gene fragments or protein accessions, and may include sequences from other families used as outgroups. Read the family label as 'which chapter published this figure', not 'all tips belong to this family'.</span>
+      <a href="/phylo/molecular/families/" data-i18n="See the per-family index →|查看按科索引 →">See the per-family index →</a>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+
+  <aside class="controls panel">
+    <div>
+      <div class="ctl-title row"><span data-i18n="DATASET|数据集">DATASET</span><a href="/phylo/molecular/families/" data-i18n="All families →|全部科 →">All families →</a></div>
+      <select id="mfamSel"></select>
+      <div style="height:8px"></div>
+      <select id="mtreeSel"></select>
+      <div class="hint" style="margin-top:6px" data-i18n="Each tree is the figure published in the corresponding ICTV Report chapter.|每棵树对应 ICTV 报告章节中的一张插图。">Each tree is the figure published in the corresponding ICTV Report chapter.</div>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="SUPPORT FILTER|支持度过滤">SUPPORT FILTER</div>
+      <input type="range" id="msupRange" min="0" max="100" step="5" value="0">
+      <div class="hint"><span data-i18n="Collapse clades below|低于此值合并">Collapse clades below</span>: <b id="msupVal">0</b>%</div>
+      <div class="hint" style="margin-top:4px" data-i18n="Nodes without a support value are always kept.|无支持度标注的节点一律保留。">Nodes without a support value are always kept.</div>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="DISPLAY|显示">DISPLAY</div>
+      <label class="tgl"><input type="checkbox" id="museBL" checked><span data-i18n="Scale by branch length|按枝长比例">Scale by branch length</span></label>
+      <label class="tgl"><input type="checkbox" id="mshowSup" checked><span data-i18n="Support values|显示支持度">Support values</span></label>
+      <label class="tgl"><input type="checkbox" id="mshowTip" checked><span data-i18n="Tip labels|显示末端标签">Tip labels</span></label>
+      <label class="tgl" id="mcolorGenusWrap"><input type="checkbox" id="mcolorGenus" checked><span data-i18n="Colour tips by genus|末端按属着色">Colour tips by genus</span></label>
+    </div>
+
+    <div class="btnrow">
+      <button class="act" id="mbtnFit" data-i18n="Fit width|适应宽度">Fit width</button>
+      <button class="act" id="mbtnReset" data-i18n="Reset|重置">Reset</button>
+      <button class="act primary" id="mbtnPng" data-i18n="PNG|导出PNG">PNG</button>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="FIND TAXON|查找序列">FIND TAXON</div>
+      <div class="searchwrap">
+        <input id="msearch" type="text" autocomplete="off" placeholder="accession / species…" data-i18n-ph="accession / species…|登录号 / 物种名…">
+      </div>
+      <div class="hint" style="margin-top:6px" data-i18n="Marks every tip whose name matches, and reports the smallest clade containing them all.|标出所有命中的末端，并给出包含它们的最小分支。">Marks every tip whose name matches, and reports the smallest clade containing them all.</div>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="ABOUT THIS PAGE|关于本页">ABOUT THIS PAGE</div>
+      <div class="note" data-i18n="These are official molecular phylogenies (maximum-likelihood trees) released by ICTV Report chapters — branch lengths are substitutions per site, and node labels are support values. This is a different thing from the taxonomy tree: here every node is a real split inferred from sequences.|本页是 ICTV 报告章节官方发布的分子系统发育树（最大似然树）——枝长为每位点替换数，节点标注为支持度。它与分类学树不是一回事：这里的每个节点都是由序列推断出的真实分化事件。">These are official molecular phylogenies (maximum-likelihood trees) released by ICTV Report chapters — branch lengths are substitutions per site, and node labels are support values. This is a different thing from the taxonomy tree: here every node is a real split inferred from sequences.</div>
+    </div>
+  </aside>
+
+  <section class="chartcol">
+    <div class="panel" style="overflow:hidden">
+      <div class="chart-head">
+        <div class="t" id="mchartTitle" data-i18n="Molecular phylogeny|分子系统发育树">Molecular phylogeny</div>
+        <div class="mode">
+          <button id="mModePhylo" class="on" data-i18n="Phylogram|枝长树">Phylogram</button>
+          <button id="mModeRadial" data-i18n="Circular|环形">Circular</button>
+        </div>
+      </div>
+      <div id="mgenusLegend" class="gl" style="display:none"></div>
+      <div id="mloading" class="loading"><div class="spinner"></div><span data-i18n="Loading ICTV trees…|正在加载 ICTV 树文件…">Loading ICTV trees…</span></div>
+      <div id="mchart" style="display:none"></div>
+    </div>
+  </section>
+
+  <aside class="detail panel" id="mdetail">
+    <div class="ctl-title" data-i18n="DETAIL|详情">DETAIL</div>
+    <div id="mdetailBody"></div>
+  </aside>
+
+</div>
+</div>
+
+<footer>
+  <div>
+    <span data-i18n="Taxonomy source|分类数据来源">Taxonomy source</span>:
+    <b>ICTV Master Species List 2025 MSL41 v1</b> —
+    17,554 species / 427 families across all realms.
+    <span data-i18n="Plant-virus assignment|植物病毒判定">Plant-virus assignment</span>:
+    <b>ICTV VMR</b> <code>Host source</code>
+    (<span data-i18n="species-level, cleaned by family blacklist|种级判定 + 科级黑名单">species-level, cleaned by family blacklist</span>).
+  </div>
+  <div style="margin-top:5px">
+    <span data-i18n="Molecular trees|分子树">Molecular trees</span>:
+    <b>ICTV Report chapter resources</b> —
+    <a href="https://ictv.global/report" target="_blank" rel="noopener">ictv.global/report</a>.
+    <span data-i18n="Files were scraped from each family's Resources page and parsed locally with a stdlib Newick reader.|文件由各科 Resources 页抓取，本地用标准库 Newick 解析器解析。">Files were scraped from each family's Resources page and parsed locally with a stdlib Newick reader.</span>
+    <span data-i18n="Tip labels are shortened for display (accession and gene/genome boilerplate stripped); hover a tip for the full original name.|末端标签为显示做了精简（去掉登录号与基因/基因组套话），悬停可见原始全名。">Tip labels are shortened for display (accession and gene/genome boilerplate stripped); hover a tip for the full original name.</span>
+    <span data-i18n="Genus|属">Genus</span>:
+    <span data-i18n="mapped from ICTV MSL41 (accession / abbreviation match, constrained to the same family) — the tree files themselves carry no taxonomic ranks. Unmapped tips are greyed out, never guessed.|由 ICTV MSL41 映射得到（按登录号或缩写匹配，并约束在同一科内）—— 树文件本身不含任何分类阶元。未映射的末端显式标灰，不做猜测。">mapped from ICTV MSL41 (accession / abbreviation match, constrained to the same family) — the tree files themselves carry no taxonomic ranks. Unmapped tips are greyed out, never guessed.</span>
+  </div>
+  <div style="margin-top:5px">
+    <span data-i18n="Note: the taxonomy tree is a taxonomic hierarchy, not a molecular phylogeny — its branch lengths carry no evolutionary distance; switch to the Molecular trees tab for real distances.|说明：「分类树」标签页是分类学层级，不是分子系统发育树 —— 分支长度不代表进化距离；需要真实进化距离请切到「分子树」标签页。">Note: the taxonomy tree is a taxonomic hierarchy, not a molecular phylogeny — its branch lengths carry no evolutionary distance; switch to the Molecular trees tab for real distances.</span>
+  </div>
+  <div style="margin-top:5px">
+    <span data-i18n="Rebuild with|重建命令">Rebuild with</span>:
+    <span data-i18n="taxonomy|分类树">taxonomy</span> <code>python build_taxonomy.py</code>
+    &nbsp;·&nbsp;
+    <span data-i18n="molecular|分子树">molecular</span> <code>python fetch_ictv_trees.py --discover &amp;&amp; python fetch_ictv_trees.py --download &amp;&amp; python build_molecular.py &amp;&amp; python build_genus_map.py</code>
+    &nbsp;·&nbsp;
+    <a href="/phylo/molecular/families/" data-i18n="Per-family index →|按科索引 →">Per-family index →</a>
+  </div>
+</footer>
+
+<script src="echarts.min.js"></script>
+<script src="/i18n.js"></script>
+<script>
+(function () {
+'use strict';
+
+var RANK_ORDER = {root:0, realm:1, kingdom:2, phylum:3, class:4, order:5, family:6, genus:7, species:8};
+var RANK_CN = {root:'根', realm:'域', kingdom:'界', phylum:'门', class:'纲', order:'目', family:'科', genus:'属', species:'种'};
+var RANK_EN = {root:'root', realm:'realm', kingdom:'kingdom', phylum:'phylum', class:'class', order:'order', family:'family', genus:'genus', species:'species'};
+
+var GREY      = '#c3cbd4';   // 非植物病毒
+var GREY_DIM  = '#e6eaee';   // 高亮时被压暗的其他科
+var BACKBONE  = '#7c8b9a';   // 域/界/门/纲/目 骨架节点
+var MONO      = '#2e86c1';   // 关闭"按科着色"时的统一色
+
+var TREE = null, CHART = null, FAM_COLOR = {}, FAM_LIST = [], INDEX = {}, HIGHLIGHT = null;
+var LAST_LAYOUT = null;    // 上一次渲染用的布局，用于判断是否需要先 clear()
+var LAST_NONPLANT = null;  // 上一次渲染时「非植物病毒分支」是否可见（同样改变节点/边集合）
+var STASH = [];            // 被隐藏的非植物病毒子树 {parent,index,child}，用于原样放回
+
+// ── 颜色：黄金角 HSL，保证相邻科色相拉开 ──────────────────
+function assignColors(fams) {
+  fams.sort(function (a, b) { return b.count - a.count; });
+  fams.forEach(function (f, i) {
+    var hue = (i * 137.508) % 360;
+    var light = 44 + (i % 3) * 6;              // 44 / 50 / 56
+    f.color = 'hsl(' + hue.toFixed(1) + ',60%,' + light + '%)';
+    FAM_COLOR[f.name] = f.color;
+  });
+  return fams;
+}
+
+// ── JSON -> ECharts 节点（带路径，便于点击回查谱系） ──────
+function toEcharts(node, inherited, path) {
+  var rank = node.r;
+  var isPlant = (node.pc || 0) > 0;
+  var color, c = inherited;
+
+  if (rank === 'family') {
+    c = FAM_COLOR[node.n] || GREY;
+    color = isPlant ? c : GREY;
+  } else if (rank === 'genus') {
+    color = isPlant ? (c || GREY) : GREY;
+  } else if (rank === 'species') {
+    color = node.p ? (c || GREY) : GREY;
+  } else {
+    color = BACKBONE;                           // realm..order
+  }
+
+  var out = {
+    name: node.n,
+    value: node.pc || 0,
+    rank: rank,
+    plant: node.p || 0,
+    genome: node.g || '',
+    ictvId: node.ic || '',
+    plantCount: node.pc || 0,
+    allCount: 0,
+    _path: path,
+    itemStyle: { color: color },
+    children: null
+  };
+  if (node.ch && node.ch.length) {
+    out.children = [];
+    for (var i = 0; i < node.ch.length; i++) {
+      out.children.push(toEcharts(node.ch[i], c, path.concat([node.n])));
+    }
+  } else {
+    delete out.children;
+  }
+  return out;
+}
+
+function countAll(n) {
+  if (n.rank === 'species') { n.allCount = 1; return 1; }
+  var t = 0;
+  if (n.children) for (var i = 0; i < n.children.length; i++) t += countAll(n.children[i]);
+  n.allCount = t;
+  return t;
+}
+
+function buildIndex(n) {
+  var k = n.name.toLowerCase();
+  (INDEX[k] || (INDEX[k] = [])).push(n);
+  if (n.children) for (var i = 0; i < n.children.length; i++) buildIndex(n.children[i]);
+}
+
+// ── 统一着色（所有开关都走这里，避免状态漂移） ─────────────
+function recolor(n, famColor) {
+  var byFam = document.getElementById('showColor').checked;
+  var c = famColor;
+  var rank = n.rank;
+
+  if (rank === 'family') {
+    if (HIGHLIGHT && n.name !== HIGHLIGHT) c = GREY_DIM;
+    else c = byFam ? (FAM_COLOR[n.name] || GREY) : MONO;
+  }
+  if (rank === 'species') {
+    n.itemStyle.color = n.plant ? (c || GREY) : GREY;
+  } else if (rank === 'family' || rank === 'genus') {
+    n.itemStyle.color = n.plantCount > 0 ? c : GREY;
+  } else {
+    n.itemStyle.color = BACKBONE;
+  }
+  if (n.children) for (var i = 0; i < n.children.length; i++) recolor(n.children[i], c);
+}
+
+// ── 展开深度 ───────────────────────────────────────────────
+function applyDepth(n, maxRank) {
+  if (n.children && n.children.length) {
+    n.collapsed = (RANK_ORDER[n.rank] || 0) >= maxRank;
+    for (var i = 0; i < n.children.length; i++) applyDepth(n.children[i], maxRank);
+  }
+}
+
+function expandTo(node) {
+  // 沿 _path 逐级展开
+  var cur = TREE;
+  cur.collapsed = false;
+  for (var i = 0; i < node._path.length; i++) {
+    if (!cur.children) return;
+    var hit = null;
+    for (var j = 0; j < cur.children.length; j++) {
+      if (cur.children[j].name === node._path[i]) { hit = cur.children[j]; break; }
+    }
+    if (!hit) return;
+    hit.collapsed = false;
+    cur = hit;
+  }
+  if (cur.children) {
+    for (var k = 0; k < cur.children.length; k++) {
+      if (cur.children[k].name === node.name) { cur.children[k].collapsed = false; break; }
+    }
+  }
+}
+
+// ── 非植物病毒分支：就地摘除 / 原样放回 ─────────────────────
+// 口径（2026-09-22 与老师确认）：默认**只显示植物病毒**。
+// 本库里非植物病毒节点分布在两处：
+//   · 域/界/门/纲/目 五级，共 148 个（域 8 / 界 8 / 门 15 / 纲 34 / 目 83）。
+//     它们**全是死端** —— 83 个目没有子节点，所以点了也展不开（构建期在目级停止展开）。
+//   · 混合属里的 232 个非植物种。
+// 科、属两级**不存在** pc==0 的节点：build_taxonomy.py 的 prune() 已把无植物种的科/属剪掉。
+//
+// 为什么用「就地摘除 + STASH 记原位置」而不是「每次渲染克隆一棵裁剪树」：
+//   ① ECharts 的 tree 展开/折叠是**直接改数据对象**上的 collapsed。若传给它的是一棵克隆树，
+//      用户展开的状态会在下一次 render() 时丢掉（旧版 stripGrey 每次 buildOption 都克隆，正是这个毛病）。
+//   ② 就地摘除后 TREE 仍是唯一数据源，recolor / applyDepth / expandTo / INDEX / 详情面板全都不用改。
+// 放回时必须**倒序** splice：同一父节点内是倒着摘的，倒着放回索引才与摘除前一致。
+function setNonPlantVisible(on) {
+  if (!TREE) return;
+  var d = parseInt(document.getElementById('depth').value, 10) || 6;
+  if (on) {
+    for (var i = STASH.length - 1; i >= 0; i--) {
+      var s = STASH[i];
+      if (!s.parent.children) s.parent.children = [];
+      s.parent.children.splice(s.index, 0, s.child);
+      // 摘下来这段时间里深度/配色可能被改过（遍历不到它们），放回时按当前状态补一遍
+      applyDepth(s.child, d);
+      recolor(s.child, null);
+    }
+    STASH = [];
+  } else {
+    (function walk(n) {
+      if (!n.children) return;
+      for (var i = n.children.length - 1; i >= 0; i--) {
+        var c = n.children[i];
+        if (c.plantCount > 0) { walk(c); continue; }
+        STASH.push({ parent: n, index: i, child: c });
+        n.children.splice(i, 1);
+      }
+      if (!n.children.length) delete n.children;   // 与 toEcharts 的写法保持一致
+    })(TREE);
+  }
+}
+
+// 可见节点数 —— 顶栏 "taxa shown" 要跟着开关走，否则会一直显示全量
+function updateStats() {
+  var n = 0;
+  (function walk(x) {
+    n++;
+    if (x.children) for (var i = 0; i < x.children.length; i++) walk(x.children[i]);
+  })(TREE);
+  document.getElementById('s-all').textContent = n.toLocaleString();
+}
+
+// 开关的统一入口：先改树，再刷统计。必须在下一次 render() 之前调用。
+function applyNonPlant() {
+  setNonPlantVisible(document.getElementById('showGray').checked);
+  updateStats();
+}
+
+// ── 图表配置 ───────────────────────────────────────────────
+function buildOption() {
+  var radial = document.getElementById('layoutMode') && document.getElementById('layoutMode').value === 'radial';
+  radial = document.querySelector('.chart-head .mode button.on').id === 'mRadial';
+  // 非植物病毒分支已由 applyNonPlant() 直接在 TREE 上摘掉/放回，这里不再克隆 ——
+  // 克隆会让 ECharts 的展开状态在下一次 render() 时丢失（旧版 stripGrey 的问题）。
+  var data = TREE;
+
+  return {
+    animationDuration: 420,
+    animationDurationUpdate: 340,
+    tooltip: {
+      trigger: 'item', triggerOn: 'mousemove', confine: true,
+      backgroundColor: 'rgba(255,255,255,.97)', borderColor: '#d5e6f2', borderWidth: 1,
+      padding: [8, 11], textStyle: { color: '#2c3e50', fontSize: 12 },
+      extraCssText: 'box-shadow:0 6px 22px rgba(20,60,90,.16);border-radius:9px;',
+      formatter: function (p) {
+        var d = p.data;
+        var s = '<b style="font-style:italic">' + p.name + '</b>';
+        s += '<br><span style="color:#8a99a8">' + (RANK_CN[d.rank] || d.rank) + ' / ' + (RANK_EN[d.rank] || d.rank) + '</span>';
+        if (d.rank === 'species') {
+          s += '<br>' + (d.plant ? '<span style="color:#1e8449">植物病毒 plant virus</span>' : '<span style="color:#95a5b5">非植物病毒 non-plant</span>');
+        } else {
+          s += '<br>植物病毒种 <b>' + d.plantCount + '</b> / 全部 ' + d.allCount;
+        }
+        if (d.genome) s += '<br>基因组 ' + d.genome;
+        return s;
+      }
+    },
+    series: [{
+      type: 'tree',
+      data: [data],
+      layout: radial ? 'radial' : 'orthogonal',
+      orient: 'LR',
+      top: '2%', bottom: '2%', left: radial ? '6%' : '10%', right: radial ? '6%' : '22%',
+      symbol: 'circle',
+      symbolSize: function (v, p) {
+        var r = p.data.rank;
+        if (r === 'species') return 5;
+        if (r === 'genus') return 7;
+        if (r === 'family') return 13;
+        if (r === 'order') return 10;
+        return 8;
+      },
+      initialTreeDepth: -1,
+      roam: true,
+      expandAndCollapse: true,
+      edgeShape: radial ? 'curve' : 'polyline',
+      edgeForkPosition: '58%',
+      lineStyle: { color: '#ccd8e2', width: 1, curveness: radial ? 0.5 : 0 },
+      itemStyle: { borderColor: '#fff', borderWidth: 1 },
+      label: {
+        position: radial ? 'top' : 'left',
+        distance: 5,
+        verticalAlign: 'middle',
+        align: radial ? 'center' : 'right',
+        fontSize: radial ? 10 : 11.5,
+        color: '#2c3e50',
+        formatter: nodeLabel
+      },
+      leaves: {
+        label: {
+          position: radial ? 'top' : 'right',
+          verticalAlign: 'middle',
+          align: radial ? 'center' : 'left',
+          fontSize: radial ? 9 : 11,
+          color: '#3c4b5b',
+          formatter: nodeLabel
+        }
+      },
+      emphasis: { focus: 'descendant', blurScope: 'coordinateSystem' }
+    }]
+  };
+}
+
+function nodeLabel(p) {
+  if (p.data.rank === 'species' && !document.getElementById('showSpLabel').checked) return '';
+  return p.name;
+}
+
+// 可见叶子数 —— 决定画布需要多高才不会让标签叠在一起。
+// 隐藏时非植物分支已从 TREE 上摘除，这里不必再额外判断。
+function visibleLeaves() {
+  var n = 0;
+  (function walk(x) {
+    if (x.collapsed || !x.children || !x.children.length) { n++; return; }
+    for (var i = 0; i < x.children.length; i++) walk(x.children[i]);
+  })(TREE);
+  return n;
+}
+
+// 正交布局会把叶子均匀铺满容器高度：叶子多就必须把画布撑高，
+// 否则几百个科会压成一条线。上限 14000px（超出则靠 roam 缩放查看）。
+// 径向布局是按容器内接方形铺开的，撑高反而让圆偏在一角，故保持视口高度。
+function autoHeight() {
+  var el = document.getElementById('chart');
+  var radial = document.getElementById('mRadial').classList.contains('on');
+  var base = Math.max(520, window.innerHeight - 235);
+  var h;
+  if (radial) {
+    h = Math.max(600, base);
+  } else {
+    h = Math.min(Math.max(base, visibleLeaves() * 15 + 90), 14000);
+  }
+  if (el.style.height !== h + 'px') {
+    el.style.height = h + 'px';
+    if (CHART) CHART.resize();
+  }
+}
+
+function render() {
+  autoHeight();
+  var lay = document.getElementById('mRadial').classList.contains('on') ? 'radial' : 'orthogonal';
+  var np  = document.getElementById('showGray').checked ? 1 : 0;
+  // 结构性变化时必须先 clear()，只靠 notMerge 不够。
+  // 原因（2026-09-22 用真浏览器逐层验证）：ECharts 的 tree 视图是**增量更新**的，
+  // 切换 layout 时正交布局下已存在的那些边**不会重建**，而是保留旧的 orthogonal 形状
+  // （shape 里带 parentPoint / childPoints / forkPosition）。于是切到径向后，
+  // 旧的矩形枝仍然画在画布上，与新圆环叠加 —— 就是那个"环里还有矩形线"的现象。
+  // 实测证据：切换后 displayList 里 247 条边中有 114 条仍是 orthogonal 形状；
+  //   只改 layout 渲染 → 与"从未渲染过正交"相差 1.0042% 像素；
+  //   先 clear() 再 setOption → 相差 0.0000%（逐像素一致）。
+  // 「非植物病毒分支」开关同样会增删节点与边，属于结构性变化，一并 clear()。
+  // 只在结构性变化时 clear，避免影响深度/配色等其他控件的行为。
+  if (LAST_LAYOUT !== null && (LAST_LAYOUT !== lay || LAST_NONPLANT !== np)) CHART.clear();
+  LAST_LAYOUT = lay;
+  LAST_NONPLANT = np;
+  CHART.setOption(buildOption(), { notMerge: true });
+}
+
+// ── 详情面板 ───────────────────────────────────────────────
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+    return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c];
+  });
+}
+
+function showDetail(d) {
+  var isPlant = (d.plantCount || 0) > 0;
+  var h = '';
+  h += '<div class="dt">' + esc(d.name) + '</div>';
+  h += '<div class="sub">' + (RANK_CN[d.rank] || d.rank) + ' · ' + (RANK_EN[d.rank] || d.rank) + '</div>';
+
+  h += '<div style="margin-bottom:10px">';
+  if (d.rank === 'species') {
+    h += d.plant ? '<span class="tag plant">植物病毒 Plant virus</span>'
+                 : '<span class="tag nonplant">非植物病毒 Non-plant</span>';
+  } else if (isPlant) {
+    h += '<span class="tag plant">植物病毒分支 Plant branch</span>';
+  } else {
+    h += '<span class="tag gray">非植物病毒骨架 Non-plant backbone</span>';
+  }
+  h += '</div>';
+
+  h += '<div class="kv">';
+  h += '<div class="c"><div class="l">植物病毒种 Plant spp.</div><div class="v">' + (d.plantCount || 0) + '</div></div>';
+  h += '<div class="c"><div class="l">全部种 All spp.</div><div class="v">' + (d.allCount || (d.rank === 'species' ? 1 : 0)) + '</div></div>';
+  if (d.genome) h += '<div class="c" style="grid-column:1/-1"><div class="l">基因组 Genome</div><div class="v" style="font-size:13px">' + esc(d.genome) + '</div></div>';
+  if (d.ictvId) h += '<div class="c" style="grid-column:1/-1"><div class="l">ICTV ID</div><div class="v" style="font-size:12.5px;font-weight:500">' + esc(d.ictvId) + '</div></div>';
+  h += '</div>';
+
+  if (d._path && d._path.length) {
+    h += '<div class="ctl-title" style="margin-top:4px">谱系 Lineage</div><div class="pathrow">';
+    for (var i = 0; i < d._path.length; i++) {
+      h += '<span class="pchip" data-locate="' + esc(d._path[i]) + '">' + esc(d._path[i]) + '</span>';
+    }
+    h += '<span class="pchip cur">' + esc(d.name) + '</span></div>';
+  }
+
+  if (d.rank === 'family' && FAM_COLOR[d.name]) {
+    h += '<div class="btnrow" style="margin-bottom:10px"><button class="act" data-hl="' + esc(d.name) + '">' +
+         (HIGHLIGHT === d.name ? '取消高亮 Clear' : '高亮该科 Highlight') + '</button></div>';
+  }
+
+  if (!isPlant && d.rank !== 'species') {
+    h += '<div class="note">该分支不含植物病毒，在树中仅作灰色骨架展示、不向下展开。<br>' +
+         'This branch contains no plant virus; shown as a grey backbone and not expanded.</div>';
+  }
+
+  document.getElementById('detailBody').innerHTML = h;
+  document.getElementById('detail').classList.add('open');
+
+  document.getElementById('detailBody').querySelectorAll('[data-locate]').forEach(function (el) {
+    el.addEventListener('click', function () { locate(el.getAttribute('data-locate')); });
+  });
+  var hb = document.getElementById('detailBody').querySelector('[data-hl]');
+  if (hb) hb.addEventListener('click', function () { toggleFamily(hb.getAttribute('data-hl')); });
+}
+
+function clearDetail() {
+  document.getElementById('detailBody').innerHTML =
+    '<div class="emptyhint">点击树中的任意节点查看详情。<br>Click any node in the tree to inspect it.</div>';
+  document.getElementById('detail').classList.remove('open');
+}
+
+// ── 高亮某一科 ─────────────────────────────────────────────
+function toggleFamily(fam) {
+  HIGHLIGHT = (HIGHLIGHT === fam) ? null : fam;
+  renderLegend();
+  recolor(TREE, null);
+  render();
+  if (HIGHLIGHT) {
+    var arr = INDEX[fam.toLowerCase()];
+    if (arr) for (var i = 0; i < arr.length; i++) {
+      if (arr[i].rank === 'family') { expandTo(arr[i]); showDetail(arr[i]); break; }
+    }
+  }
+}
+
+function renderLegend() {
+  var h = '';
+  for (var i = 0; i < FAM_LIST.length; i++) {
+    var f = FAM_LIST[i];
+    var off = HIGHLIGHT && HIGHLIGHT !== f.name;
+    h += '<div class="lg' + (off ? ' off' : '') + '" data-fam="' + esc(f.name) + '">' +
+         '<span class="sw" style="background:' + f.color + '"></span>' +
+         '<span class="nm">' + esc(f.name) + '</span><span class="ct">' + f.count + '</span></div>';
+  }
+  var box = document.getElementById('legend');
+  box.innerHTML = h;
+  box.querySelectorAll('.lg').forEach(function (el) {
+    el.addEventListener('click', function () { toggleFamily(el.getAttribute('data-fam')); });
+  });
+}
+
+// ── 搜索 ───────────────────────────────────────────────────
+var NAME_MAP = null;
+function loadNameMap() {
+  if (NAME_MAP) return Promise.resolve(NAME_MAP);
+  return fetch('/reference/data/name_mapping.tsv')
+    .then(function (r) { return r.ok ? r.text() : ''; })
+    .then(function (t) {
+      var m = {};
+      if (t) {
+        var lines = t.split('\n');
+        for (var i = 1; i < lines.length; i++) {
+          var p = lines[i].split('\t');
+          if (p.length >= 2 && p[0].trim() && p[1].trim()) m[p[0].trim().toLowerCase()] = p[1].trim();
+        }
+      }
+      NAME_MAP = m; return m;
+    })
+    .catch(function () { NAME_MAP = {}; return NAME_MAP; });
+}
+
+function search(q) {
+  q = (q || '').trim().toLowerCase();
+  var drop = document.getElementById('searchdrop');
+  if (!q) { drop.style.display = 'none'; return; }
+
+  var hits = [];
+  for (var k in INDEX) {
+    if (k.indexOf(q) === 0) {
+      var a = INDEX[k];
+      for (var i = 0; i < a.length; i++) if (a[i].rank !== 'species') hits.push(a[i]);
+    }
+    if (hits.length > 50) break;
+  }
+  if (hits.length < 10) {
+    for (var k2 in INDEX) {
+      if (k2.indexOf(q) > 0) {
+        var b = INDEX[k2];
+        for (var j = 0; j < b.length; j++) if (b[j].rank !== 'species') hits.push(b[j]);
+      }
+      if (hits.length > 30) break;
+    }
+  }
+  loadNameMap().then(function (m) {
+    var mapped = m[q];
+    if (mapped && INDEX[mapped.toLowerCase()]) {
+      var c = INDEX[mapped.toLowerCase()];
+      for (var i2 = c.length - 1; i2 >= 0; i2--) hits.unshift(c[i2]);
+    }
+    paintHits(hits);
+  });
+}
+
+function paintHits(hits) {
+  var drop = document.getElementById('searchdrop');
+  var seen = {}, uniq = [];
+  for (var i = 0; i < hits.length; i++) {
+    var k = hits[i].name + '|' + hits[i].rank;
+    if (!seen[k]) { seen[k] = 1; uniq.push(hits[i]); }
+    if (uniq.length >= 40) break;
+  }
+  if (!uniq.length) {
+    drop.innerHTML = '<div class="sitem" style="color:#a5b1bd;cursor:default">无匹配 / no match</div>';
+    drop.style.display = 'block'; return;
+  }
+  uniq.sort(function (a, b) { return (b.plantCount || 0) - (a.plantCount || 0); });
+  var h = '';
+  for (var j = 0; j < uniq.length; j++) {
+    var n = uniq[j];
+    h += '<div class="sitem" data-name="' + esc(n.name) + '">' +
+         '<span class="badge r-' + n.rank + '">' + (RANK_CN[n.rank] || n.rank) + '</span>' +
+         '<span class="nm">' + esc(n.name) + '</span><span class="ct">' + (n.plantCount || 0) + '</span></div>';
+  }
+  drop.innerHTML = h;
+  drop.style.display = 'block';
+  drop.querySelectorAll('.sitem[data-name]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      drop.style.display = 'none';
+      document.getElementById('search').value = el.getAttribute('data-name');
+      locate(el.getAttribute('data-name'));
+    });
+  });
+}
+
+function locate(name) {
+  var arr = INDEX[name.toLowerCase()];
+  if (!arr || !arr.length) return;
+  var best = arr[0];
+  for (var i = 0; i < arr.length; i++) if ((arr[i].plantCount || 0) > 0) { best = arr[i]; break; }
+  // 目标是非植物病毒分支、而该分支当前被隐藏时，先把开关打开再定位 ——
+  // 否则 expandTo() 在树上根本找不到这个节点，用户搜了却什么也没发生。
+  if (!(best.plantCount > 0) && !document.getElementById('showGray').checked) {
+    document.getElementById('showGray').checked = true;
+    applyNonPlant();
+  }
+  expandTo(best);
+  render();
+  showDetail(best);
+}
+
+// ── 导出 ───────────────────────────────────────────────────
+function exportPng() {
+  var url = CHART.getDataURL({ type: 'png', pixelRatio: 2, backgroundColor: '#fff' });
+  var a = document.createElement('a');
+  a.href = url; a.download = 'plant_virus_taxonomy_tree.png';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+
+// ── URL 参数：?layout=radial&depth=7&gray=0&color=0&q=Geminiviridae ──
+function applyUrlParams() {
+  var p = new URLSearchParams(location.search);
+  var need = false;
+
+  var lay = p.get('layout');
+  if (lay === 'radial' || lay === 'orthogonal') {
+    document.getElementById('mOrtho').classList.toggle('on', lay === 'orthogonal');
+    document.getElementById('mRadial').classList.toggle('on', lay === 'radial');
+    need = true;
+  }
+  var dep = parseInt(p.get('depth') || '', 10);
+  if (dep >= 5 && dep <= 8) {
+    document.getElementById('depth').value = String(dep);
+    applyDepth(TREE, dep);
+    need = true;
+  }
+  if (p.get('gray') === '0' || p.get('gray') === '1') {
+    // gray 默认 0（不显示非植物病毒分支）；1 = 显示，0 = 不显示，两种都接受。
+    // 必须在 render() 之前改树，否则渲染出来的还是旧结构。
+    document.getElementById('showGray').checked = (p.get('gray') === '1');
+    applyNonPlant();
+    need = true;
+  }
+  if (p.get('color') === '0') { document.getElementById('showColor').checked = false; recolor(TREE, null); need = true; }
+
+  if (need) render();
+
+  var q = p.get('q');
+  if (q) setTimeout(function () { locate(q); }, 150);
+}
+
+// ── 启动 ───────────────────────────────────────────────────
+function boot() {
+  fetch('taxonomy_tree.json')
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      TREE = toEcharts(d.tree, null, []);
+      countAll(TREE);
+      buildIndex(TREE);
+
+      var fams = [];
+      (function walk(n) {
+        if (n.rank === 'family' && n.plantCount > 0) fams.push({ name: n.name, count: n.plantCount });
+        if (n.children) for (var i = 0; i < n.children.length; i++) walk(n.children[i]);
+      })(TREE);
+      FAM_LIST = assignColors(fams);
+
+      renderLegend();
+      document.getElementById('s-fam').textContent = d.meta.plant_families;
+      document.getElementById('s-gen').textContent = d.meta.plant_genera;
+      document.getElementById('s-sp').textContent = d.meta.plant_species.toLocaleString();
+      // "taxa shown" 由 updateStats() 维护 —— 它必须跟着「非植物病毒分支」开关走
+
+      document.getElementById('loading').style.display = 'none';
+      var el = document.getElementById('chart');
+      el.style.display = 'block';
+      CHART = echarts.init(el, null, { renderer: 'canvas' });
+      // 给顶栏标签页控制器用：分子树标签页激活期间本视图是 display:none，
+      // 切回来时容器尺寸已失效，必须显式 resize（autoHeight 先按当前控件态定高）。
+      window.PV = window.PV || {};
+      window.PV.taxChart = CHART;
+      window.PV.taxShow = function () { autoHeight(); CHART.resize(); };
+      applyDepth(TREE, 6);
+      recolor(TREE, null);
+      applyNonPlant();          // 默认隐藏非植物病毒分支（开关在 HTML 里默认不勾选）
+      render();
+      window.addEventListener('resize', function () { autoHeight(); });
+
+      CHART.on('click', function (p) {
+        if (!p.data || !p.data.rank) return;
+        showDetail(p.data);
+      });
+
+      clearDetail();
+      applyUrlParams();
+    })
+    .catch(function (e) {
+      document.getElementById('loading').innerHTML =
+        '<div style="color:#c0392b">加载失败 Failed to load taxonomy_tree.json<br><small>' + esc(e.message) + '</small></div>';
+    });
+}
+
+// ── 控件 ───────────────────────────────────────────────────
+function setLayout(v) {
+  document.getElementById('mOrtho').classList.toggle('on', v === 'orthogonal');
+  document.getElementById('mRadial').classList.toggle('on', v === 'radial');
+  if (CHART) render();
+}
+
+function wire() {
+  var s = document.getElementById('search'), timer = null;
+  s.addEventListener('input', function () {
+    clearTimeout(timer);
+    timer = setTimeout(function () { search(s.value); }, 160);
+  });
+  s.addEventListener('focus', function () { loadNameMap(); });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.searchwrap')) document.getElementById('searchdrop').style.display = 'none';
+  });
+
+  document.getElementById('mOrtho').addEventListener('click', function () { setLayout('orthogonal'); });
+  document.getElementById('mRadial').addEventListener('click', function () { setLayout('radial'); });
+
+  document.getElementById('depth').addEventListener('change', function (e) {
+    if (!TREE) return;
+    applyDepth(TREE, parseInt(e.target.value, 10));
+    render();
+  });
+  document.getElementById('showGray').addEventListener('change', function () {
+    if (!CHART) return;
+    applyNonPlant();   // 先在树上摘除/放回，再渲染 —— 顺序反了会渲染出旧结构
+    render();
+  });
+  document.getElementById('showSpLabel').addEventListener('change', function () { if (CHART) render(); });
+  document.getElementById('showColor').addEventListener('change', function () {
+    if (!CHART) return;
+    recolor(TREE, null);
+    render();
+  });
+
+  document.getElementById('btnReset').addEventListener('click', function () {
+    HIGHLIGHT = null;
+    renderLegend();
+    applyDepth(TREE, 6);
+    document.getElementById("depth").value = "6";
+    document.getElementById('showGray').checked = false;
+    document.getElementById('showSpLabel').checked = false;
+    document.getElementById('showColor').checked = true;
+    recolor(TREE, null);
+    // 顺序要紧：applyNonPlant() 会改树，而 setLayout() 内部会直接 render()。
+    // 若先 setLayout，render() 会在"树已裁剪但签名未变"的瞬间跑一次，
+    // 于是不触发 clear()，增量更新又会留下旧边。
+    applyNonPlant();
+    setLayout('orthogonal');
+    render();
+    clearDetail();
+  });
+  document.getElementById('btnFit').addEventListener('click', function () {
+    if (!TREE) return;
+    applyDepth(TREE, 5);
+    document.getElementById('depth').value = '5';
+    render();
+  });
+  document.getElementById('btnPng').addEventListener('click', exportPng);
+}
+
+// i18n.js 只替换 textContent，placeholder 需要单独处理
+function fixPlaceholders() {
+  var el = document.getElementById('search');
+  var spec = el.getAttribute('data-i18n-ph');
+  if (!spec) return;
+  var lang = (window.PVDB_i18n && window.PVDB_i18n.lang && window.PVDB_i18n.lang()) || 'en';
+  var parts = spec.split('|');
+  el.placeholder = (lang === 'zh' ? parts[1] : parts[0]) || el.placeholder;
+  // 语言按钮的 id 随 i18n.js 版本变动（v3 用 pvdb-i18n-btn，v4 用 pvdb-lang-btn），
+  // 且按钮由 i18n.js 在运行时注入 —— 用文档级委托、两个 id 都认，与注入时机无关。
+  if (!document._phBound) {
+    document._phBound = true;
+    document.addEventListener('click', function (e) {
+      var id = (e.target && e.target.id) || '';
+      if (id === 'pvdb-lang-btn' || id === 'pvdb-i18n-btn') setTimeout(fixPlaceholders, 0);
+    }, true);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  wire();
+  boot();
+  setTimeout(fixPlaceholders, 80);
+});
+})();
+</script>
+
+<!-- 「分子树」视图脚本（原 /phylo/molecular/index.html 内联脚本抽出，见文件头注释） -->
+<script src="molecular_viewer.js"></script>
+
+<!-- 顶栏标签页控制器：分类树 / 分子树 单页切换 -->
+<script>
+(function () {
+'use strict';
+var PV = window.PV = window.PV || {};
+var tabTax = document.getElementById('tabTax');
+var tabMol = document.getElementById('tabMol');
+var viewTax = document.getElementById('viewTax');
+var viewMol = document.getElementById('viewMol');
+var taxStats = document.getElementById('taxStats');
+var molStats = document.getElementById('molStats');
+
+var TITLES = {
+  tax: ['Virus Phylogeny', '病毒进化关系'],
+  mol: ['ICTV Molecular Trees', 'ICTV 分子进化树']
+};
+
+function lang() {
+  return (window.PVDB_i18n && window.PVDB_i18n.lang && window.PVDB_i18n.lang()) || 'en';
+}
+function applyTitle(v) {
+  var t = TITLES[v];
+  document.title = (lang() === 'zh' ? t[1] : t[0]) || t[0];
+}
+function activeView() { return viewMol.hidden ? 'tax' : 'mol'; }
+
+function show(v) {
+  var mol = (v === 'mol');
+  viewTax.hidden = mol;
+  viewMol.hidden = !mol;
+  tabTax.classList.toggle('on', !mol);
+  tabMol.classList.toggle('on', mol);
+  taxStats.style.display = mol ? 'none' : 'flex';
+  molStats.style.display = mol ? 'flex' : 'none';
+  applyTitle(v);
+  // 视图写进 URL（replaceState，不产生历史记录），刷新/分享直达同一视图
+  var p = new URLSearchParams(location.search);
+  if (mol) p.set('view', 'molecular'); else p.delete('view');
+  var qs = p.toString();
+  history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+  if (mol) {
+    // 数据未就绪时只登记意愿（见 molecular_viewer.js 的 PV.molStart）
+    if (PV.molStart) PV.molStart();
+  } else if (PV.taxShow) {
+    // 分类树容器刚从 display:none 恢复，尺寸已失效，必须 resize
+    PV.taxShow();
+  }
+}
+
+tabTax.addEventListener('click', function () { show('tax'); });
+tabMol.addEventListener('click', function () { show('mol'); });
+
+// 语言切换后标题跟随。优先用 i18n.js 的官方钩子；文档级委托是兜底
+// （i18n.js 按钮由运行时注入，id 随版本变动，与页面其他处的写法一致）。
+window.PVDB_onLangChange = function () { applyTitle(activeView()); };
+document.addEventListener('click', function (e) {
+  var id = (e.target && e.target.id) || '';
+  if (id === 'pvdb-lang-btn' || id === 'pvdb-i18n-btn') {
+    setTimeout(function () { applyTitle(activeView()); }, 0);
+  }
+}, true);
+
+// i18n.js 在 DOMContentLoaded 会先跑 apply()（注册在前、先触发）；
+// 这里后跑一次，保证初始落地视图的标题不被 <title> 的默认文案盖回去。
+document.addEventListener('DOMContentLoaded', function () { applyTitle(activeView()); });
+
+// 直达：?view=molecular（或 #molecular）落到分子树标签页；
+// 旧地址 /phylo/molecular/ 的跳转页也带此参数进来
+var v = new URLSearchParams(location.search).get('view');
+if (v === 'molecular' || location.hash === '#molecular') show('mol');
+})();
+</script>
+</body>
+</html>

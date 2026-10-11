@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title data-i18n="ICTV Molecular Trees — Families|ICTV 分子进化树 — 按科索引">ICTV Molecular Trees — Families</title>
+<meta name="description" content="Per-family index of the official maximum-likelihood phylogenies published by ICTV Report chapters for plant virus families. ICTV 官方分子系统发育树的按科索引。">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;overflow-x:hidden}
+
+nav.topbar{background:linear-gradient(135deg,#134e6f 0%,#1a5276 55%,#2e86c1 100%);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 20px;flex-wrap:wrap}
+nav.topbar .brand{font-size:17px;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+nav.topbar .brand a{color:#fff;text-decoration:none}
+nav.topbar .sep{opacity:.35}
+nav.topbar .subtitle{font-size:13px;opacity:.92;font-weight:600;white-space:nowrap}
+nav.topbar .stats{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+nav.topbar .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:3px 10px;font-size:11.5px;white-space:nowrap}
+nav.topbar .chip b{font-weight:700}
+
+.panel{background:#fff;border:1px solid #eef2f5;border-radius:14px;box-shadow:0 2px 10px rgba(20,60,90,.06)}
+
+.notice{max-width:1660px;margin:12px auto 0;padding:0 16px}
+.notice .in{display:flex;gap:11px;align-items:flex-start;background:#fdf7e6;border:1px solid #f0e2bb;border-left:4px solid #d9a520;border-radius:12px;padding:11px 14px}
+.notice .mk{flex-shrink:0;width:19px;height:19px;border-radius:50%;background:#d9a520;color:#fff;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.notice .tx{font-size:12.5px;line-height:1.75;color:#6d5618}
+.notice .tx a{color:#1a5276;font-weight:600;text-decoration:none;white-space:nowrap;margin-left:6px}
+.notice .tx a:hover{text-decoration:underline}
+
+.wrap{max-width:1660px;margin:0 auto;padding:14px 16px 0}
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px 14px;margin-bottom:14px}
+.toolbar .lbl{font-size:11px;font-weight:700;color:#8a99a8;letter-spacing:.6px}
+.toolbar select{padding:6px 9px;border:1px solid #d5dde5;border-radius:8px;font-size:12.5px;background:#fff;color:#2c3e50;outline:none}
+.toolbar select:focus{border-color:#2e86c1}
+.toolbar input[type=text]{flex:1;min-width:180px;padding:7px 10px;border:1px solid #d5dde5;border-radius:8px;font-size:12.5px;outline:none}
+.toolbar input[type=text]:focus{border-color:#2e86c1;box-shadow:0 0 0 3px rgba(46,134,193,.12)}
+.toolbar label.tgl{display:flex;align-items:center;gap:6px;font-size:12.5px;color:#3c4b5b;cursor:pointer;user-select:none;white-space:nowrap}
+.toolbar label.tgl input{accent-color:#2e86c1;width:15px;height:15px}
+.toolbar .cnt{margin-left:auto;font-size:11.5px;color:#95a5b5;white-space:nowrap}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(302px,1fr));gap:14px;padding-bottom:8px}
+
+.card{padding:13px 14px 12px;display:flex;flex-direction:column;gap:9px}
+.card .chead{display:flex;align-items:baseline;gap:8px}
+.card .chead h3{margin:0;font-size:14.5px;font-weight:700;color:#1a5276;line-height:1.3;word-break:break-word}
+.card .chead .nt{margin-left:auto;font-size:11px;color:#8a99a8;background:#f2f6f9;border-radius:9px;padding:2px 8px;white-space:nowrap;flex-shrink:0}
+.card .sub{font-size:11px;color:#95a5b5;font-family:ui-monospace,Menlo,Consolas,monospace;margin-top:-4px}
+
+.figs{display:flex;gap:5px;flex-wrap:wrap}
+.figs .fig{border:1px solid #d5dde5;background:#fff;color:#5d6d7e;border-radius:7px;padding:2px 8px;font-size:11px;cursor:pointer;transition:.15s}
+.figs .fig:hover{border-color:#2e86c1;color:#1a5276;background:#eef5fa}
+.figs .fig.on{background:#2e86c1;border-color:#2e86c1;color:#fff}
+
+.spark{background:#f8fbfd;border:1px solid #eef2f5;border-radius:10px;padding:5px 6px}
+.spark svg{width:100%;height:46px;display:block}
+.tipinfo{font-size:11px;color:#8a99a8;margin-top:-4px}
+
+.mets{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.mets .m{background:#f7fafc;border:1px solid #eef2f5;border-radius:9px;padding:6px 9px}
+.mets .m .l{display:block;font-size:10px;color:#95a5b5;letter-spacing:.2px;line-height:1.3}
+.mets .m .v{display:block;font-size:13.5px;font-weight:700;color:#1a5276;line-height:1.35}
+.mets .m .v .r{font-size:10.5px;font-weight:400;color:#95a5b5;margin-left:3px}
+
+.flags{display:flex;gap:5px;flex-wrap:wrap}
+.flags .f{font-size:10.5px;border-radius:8px;padding:2px 8px;white-space:nowrap}
+.f.warn{background:#fdf7e6;border:1px solid #f0e2bb;color:#8a6a12}
+.f.bad{background:#fdeceb;border:1px solid #f6d4d1;color:#a33b32}
+.f.ok{background:#eaf6f0;border:1px solid #d3ece0;color:#1e6b4e}
+
+.caveat{font-size:10.5px;color:#a5b1bd;line-height:1.55;border-left:2px solid #eef2f5;padding-left:8px}
+
+.go{margin-top:auto;display:block;text-align:center;background:#2e86c1;color:#fff;text-decoration:none;border-radius:9px;padding:7px 10px;font-size:12.5px;font-weight:600;transition:.15s}
+.go:hover{background:#1a5276}
+
+.emptyhint{font-size:13px;color:#a5b1bd;text-align:center;padding:60px 10px;line-height:1.9;grid-column:1/-1}
+.loading{padding:70px 20px;text-align:center;color:#7b8a99;font-size:14px}
+.spinner{width:34px;height:34px;border:3px solid #e3ecf3;border-top-color:#2e86c1;border-radius:50%;margin:0 auto 14px;animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+footer{max-width:1660px;margin:0 auto;padding:16px 20px 30px;font-size:11.5px;color:#95a5b5;line-height:1.8}
+footer a{color:#2e86c1;text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer code{background:#eef2f5;border-radius:4px;padding:1px 5px;font-size:11px;color:#5d6d7e}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="brand"><a href="/" data-i18n="Plant Virus DB|植物病毒数据库">Plant Virus DB</a></div>
+  <span class="sep">|</span>
+  <div class="subtitle" data-i18n="ICTV Molecular Trees — Families|ICTV 分子进化树 — 按科索引">ICTV Molecular Trees — Families</div>
+  <div class="stats">
+    <div class="chip"><b id="s-fam">–</b> <span data-i18n="families|科">families</span></div>
+    <div class="chip"><b id="s-tree">–</b> <span data-i18n="trees|棵树">trees</span></div>
+    <div class="chip"><b id="s-leaf">–</b> <span data-i18n="tips|末端">tips</span></div>
+    <div class="chip"><b id="s-cross">–</b> <span data-i18n="cross-family accessions|跨科登录号">cross-family accessions</span></div>
+    <div class="chip"><b id="s-ph">–</b> <span data-i18n="placeholder names|占位符叶名">placeholder names</span></div>
+  </div>
+</nav>
+
+<div class="notice">
+  <div class="in">
+    <div class="mk">!</div>
+    <div class="tx">
+      <span data-i18n="Every card below is one family's set of ICTV Report figures (Fig1–Fig6) — not a species-complete family phylogeny. Tip counts are often far smaller than the family's species list, tips can be gene fragments or protein accessions, and some trees contain sequences from other families used as outgroups (see the cross-family flags).|下面每张卡片是某个科在 ICTV 报告里的插图集合（Fig1–Fig6），不是覆盖全科的物种树。叶数常常远小于该科物种表，叶可能是基因片段或蛋白登录号，有些树还含别的科作为外群的序列（见卡片上的跨科标记）。">Every card below is one family's set of ICTV Report figures (Fig1–Fig6) — not a species-complete family phylogeny. Tip counts are often far smaller than the family's species list, tips can be gene fragments or protein accessions, and some trees contain sequences from other families used as outgroups (see the cross-family flags).</span>
+      <a href="/phylo/?view=molecular" data-i18n="Open the tree viewer →|打开树查看器 →">Open the tree viewer →</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="toolbar panel">
+    <span class="lbl" data-i18n="SORT|排序">SORT</span>
+    <select id="sort">
+      <option value="leaves" data-i18n="Tips on tree|树上叶数">Tips on tree</option>
+      <option value="species" data-i18n="MSL species|MSL 物种数">MSL species</option>
+      <option value="ratio" data-i18n="Tips ÷ species (low first)|叶数 ÷ 物种数（低者在前）">Tips ÷ species (low first)</option>
+      <option value="cross" data-i18n="Cross-family accessions|跨科登录号">Cross-family accessions</option>
+      <option value="name" data-i18n="Family name|科名">Family name</option>
+    </select>
+    <input id="q" type="text" autocomplete="off" placeholder="Filter family name…" data-i18n-ph="Filter family name…|按科名筛选…">
+    <label class="tgl"><input type="checkbox" id="crossOnly"><span data-i18n="Cross-family sequences only|只看含跨科序列的科">Cross-family sequences only</span></label>
+    <label class="tgl"><input type="checkbox" id="nosupOnly"><span data-i18n="No support values only|只看无支持度标注的">No support values only</span></label>
+    <span class="cnt"><b id="n">–</b> <span data-i18n="shown|个">shown</span></span>
+  </div>
+
+  <div id="loading" class="loading"><div class="spinner"></div><span data-i18n="Loading family index…|正在加载按科索引…">Loading family index…</span></div>
+  <div class="grid" id="grid" style="display:none"></div>
+</div>
+
+<footer>
+  <div>
+    <span data-i18n="Source|数据来源">Source</span>:
+    <b>ICTV Report chapter resources</b> —
+    <a href="https://ictv.global/report" target="_blank" rel="noopener">ictv.global/report</a>.
+    <span data-i18n="Species and genus counts come from ICTV MSL41; tip counts come from the trees themselves — the two are not the same measure.|物种数与属数取自 ICTV MSL41，叶数取自树文件本身 —— 两者不是同一个口径。">Species and genus counts come from ICTV MSL41; tip counts come from the trees themselves — the two are not the same measure.</span>
+  </div>
+  <div style="margin-top:5px">
+    <span data-i18n="Sparklines show topology only (equal-depth layout, not to scale).|缩略图只反映拓扑形状（等深布局，不按枝长比例）。">Sparklines show topology only (equal-depth layout, not to scale).</span>
+    <span data-i18n="Rebuild with|重建命令">Rebuild with</span>:
+    <code>python build_family_index.py</code>
+  </div>
+  <div style="margin-top:5px">
+    <a href="/phylo/?view=molecular" data-i18n="Tree viewer →|树查看器 →">Tree viewer →</a>
+    &nbsp;·&nbsp;
+    <a href="/phylo/" data-i18n="Taxonomy tree →|分类学树 →">Taxonomy tree →</a>
+    &nbsp;·&nbsp;
+    <a href="/" data-i18n="← Plant Virus DB|← 植物病毒数据库">← Plant Virus DB</a>
+  </div>
+</footer>
+
+<script src="/i18n.js"></script>
+<script>
+var DATA = null, BYFAM = {}, BOX = '0 0 100 34';
+
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function lang(){ return (localStorage.getItem('pvdb_lang') || 'en') === 'zh' ? 'zh' : 'en'; }
+function T(en, zh){ return lang() === 'zh' ? zh : en; }
+function fmt(n){ return (n == null) ? '–' : Number(n).toLocaleString(); }
+function pct(x){ return (x * 100).toFixed(0) + '%'; }
+
+function sortedTrees(f){
+  return f.trees.slice().sort(function(a, b){ return b.leaves - a.leaves; });
+}
+
+function viewerURL(fam, id){
+  return '/phylo/?view=molecular&family=' + encodeURIComponent(fam) + '&tree=' + encodeURIComponent(id);
+}
+
+function cardHTML(f){
+  var ts = sortedTrees(f);
+  var t0 = ts[0];
+  var h = '<div class="card panel" data-fam="' + esc(f.family) + '">';
+
+  h += '<div class="chead"><h3>' + esc(f.family) + '</h3><span class="nt">' +
+       f.nTrees + ' ' + T(f.nTrees > 1 ? 'trees' : 'tree', f.nTrees > 1 ? '棵树' : '棵树') + '</span></div>';
+  h += '<div class="sub">' + esc((f.genomes || []).join(' · ') || '–') + '</div>';
+
+  h += '<div class="figs">';
+  for (var i = 0; i < ts.length; i++) {
+    h += '<button class="fig' + (i === 0 ? ' on' : '') + '" data-i="' + i + '">Fig' +
+         esc(ts[i].fig || '–') + '</button>';
+  }
+  h += '</div>';
+
+  h += '<div class="spark"><svg viewBox="' + BOX + '" preserveAspectRatio="none" aria-hidden="true">' +
+       '<path class="p" d="' + t0.spark + '" fill="none" stroke="#2e86c1" stroke-width="1" ' +
+       'vector-effect="non-scaling-stroke" stroke-linecap="round"/></svg></div>';
+  h += '<div class="tipinfo">' + tipInfo(t0) + '</div>';
+
+  h += '<div class="mets">';
+  h += met('MSL species', T('MSL species', 'MSL 物种数'), fmt(f.mslSpecies));
+  h += met('Tips', T('Tips on tree', '树上叶数'),
+           fmt(f.leaves) + (f.leafToSpecies != null
+             ? '<span class="r">×' + f.leafToSpecies.toFixed(2) + '</span>' : ''));
+  h += met('Bin', T('Strictly bifurcating', '严格二分叉'), f.binaryTrees + '/' + f.nTrees);
+  h += met('Sup', T('Support coverage', '支持度覆盖'), f.treesWithSupport ? pct(f.supportCoverage) : T('none', '无'));
+  h += met('BL', T('Max branch length', '最大枝长'), f.blMax ? f.blMax.toFixed(2) : '–');
+  h += met('Gen', T('Genera (MSL)', '属数 (MSL)'), fmt(f.mslGenera));
+  h += '</div>';
+
+  var flags = [];
+  if (f.treesWithSupport === 0) {
+    flags.push(chip('bad', T('no support values', '无支持度'),
+      T('These trees carry no node support annotations at all.',
+        '这些树完全没有节点支持度标注。')));
+  }
+  if (f.phN > 0) {
+    flags.push(chip('bad', T('placeholder names ×', '占位符叶名 ×') + f.phN,
+      T('ICTV could not resolve these accessions; the tip name literally reads ACCESSION NOT ON SPREADSHEET / FORMAT NOT RECOGNISED.',
+        'ICTV 未能解析这些登录号，叶名本身就是 ACCESSION NOT ON SPREADSHEET / FORMAT NOT RECOGNISED。')));
+  }
+  if (f.crossAcc > 0) {
+    flags.push(chip('warn', T('cross-family ×', '含跨科 ×') + f.crossAcc,
+      T('Accessions in these trees also appear in another family\u2019s tree — i.e. outgroups from other families.',
+        '这些树里的登录号也出现在别的科的树里 —— 即含来自别的科的外群。')));
+  }
+  if (f.fragN > 0 && f.fragN >= f.leaves * 0.5) {
+    flags.push(chip('warn', T('fragments, not full genomes', '片段，非全长'),
+      T('Most tip names carry a fragment length (e.g. _688_bp), so this tree was built on gene fragments rather than full genomes.',
+        '多数叶名带片段长度标记（如 _688_bp），说明这棵树建在基因片段上，不是全长基因组。')));
+  }
+  if (f.leafToSpecies != null && f.leafToSpecies < 0.5) {
+    flags.push(chip('warn', T('tips ≪ species', '叶数 ≪ 物种数'),
+      T('The tree has far fewer tips than the family has species — it is a figure, not a species-complete tree.',
+        '树上叶数远少于该科物种数 —— 它是插图，不是覆盖全科的树。')));
+  } else if (f.leafToSpecies != null && f.leafToSpecies > 2) {
+    flags.push(chip('warn', T('tips ≫ species', '叶数 ≫ 物种数'),
+      T('More tips than species: tips are individual sequences/strains/isolates, not species. The two counts are not the same measure.',
+        '叶数多于物种数：叶是个体序列/株系/分离物，不是物种。两者不是同一个口径。')));
+  }
+  h += flags.length ? '<div class="flags">' + flags.join('') + '</div>' : '';
+
+  h += '<div class="caveat">' + T('ICTV chapter figure — not a family-complete species tree.',
+                                  'ICTV 章节插图 —— 不是覆盖全科的物种树。') + '</div>';
+
+  h += '<a class="go" href="' + viewerURL(f.family, t0.id) + '">' +
+       T('Open tree →', '打开进化树 →') + '</a>';
+  h += '</div>';
+  return h;
+}
+
+function met(k, label, val){
+  return '<div class="m"><span class="l">' + esc(label) + '</span><span class="v">' + val + '</span></div>';
+}
+
+function chip(kind, text, title){
+  return '<span class="f ' + kind + '" title="' + esc(title) + '">' + esc(text) + '</span>';
+}
+
+function tipInfo(t){
+  var bits = [fmt(t.leaves) + ' ' + T('tips', '末端')];
+  bits.push(t.supportN ? t.supportN + ' ' + T('support values', '个支持度标注')
+                       : T('no support values', '无支持度标注'));
+  if (t.crossAcc > 0) bits.push(T('cross-family ×', '跨科 ×') + t.crossAcc);
+  if (t.fragN > 0) bits.push(t.fragN + ' ' + T('fragment tips', '个片段叶'));
+  if (t.phN > 0) bits.push(t.phN + ' ' + T('placeholder names', '个占位符叶名'));
+  return esc(bits.join(' · '));
+}
+
+function render(){
+  if (!DATA) return;
+  var q = ($('q').value || '').trim().toLowerCase();
+  var crossOnly = $('crossOnly').checked;
+  var nosupOnly = $('nosupOnly').checked;
+
+  var list = DATA.families.filter(function(f){
+    if (crossOnly && !f.crossAcc) return false;
+    if (nosupOnly && f.treesWithSupport) return false;
+    if (q && f.family.toLowerCase().indexOf(q) < 0) return false;
+    return true;
+  });
+
+  var s = $('sort').value;
+  list.sort(function(a, b){
+    if (s === 'name') return a.family < b.family ? -1 : (a.family > b.family ? 1 : 0);
+    if (s === 'species') return b.mslSpecies - a.mslSpecies;
+    if (s === 'cross') return b.crossAcc - a.crossAcc;
+    if (s === 'ratio') {
+      var ra = (a.leafToSpecies == null) ? 1e9 : a.leafToSpecies;
+      var rb = (b.leafToSpecies == null) ? 1e9 : b.leafToSpecies;
+      return ra - rb;
+    }
+    return b.leaves - a.leaves;
+  });
+
+  $('grid').innerHTML = list.length
+    ? list.map(cardHTML).join('')
+    : '<div class="emptyhint">' + T('No family matches the current filter.', '没有符合条件的科。') + '</div>';
+  $('n').textContent = list.length;
+}
+
+function boot(){
+  fetch('family_index.json').then(function(r){ return r.json(); }).then(function(d){
+    DATA = d;
+    BYFAM = {};
+    d.families.forEach(function(f){ BYFAM[f.family] = f; });
+    $('s-fam').textContent = d.meta.families;
+    $('s-tree').textContent = d.meta.trees;
+    $('s-leaf').textContent = fmt(d.meta.leaves);
+    $('s-cross').textContent = d.meta.crossAccessions;
+    $('s-ph').textContent = d.meta.placeholderTips;
+    $('loading').style.display = 'none';
+    $('grid').style.display = 'grid';
+    render();
+  }).catch(function(e){
+    $('loading').innerHTML = '<div style="color:#a33b32">' +
+      T('Failed to load family_index.json — ', '加载 family_index.json 失败 —— ') + esc(e) + '</div>';
+  });
+}
+
+$('grid').addEventListener('click', function(e){
+  var b = e.target.closest('.fig');
+  if (!b) return;
+  var card = b.closest('.card');
+  var f = BYFAM[card.getAttribute('data-fam')];
+  if (!f) return;
+  var ts = sortedTrees(f);
+  var t = ts[+b.getAttribute('data-i')];
+  if (!t) return;
+  card.querySelector('.spark .p').setAttribute('d', t.spark);
+  var chips = card.querySelectorAll('.fig');
+  for (var i = 0; i < chips.length; i++) chips[i].classList.remove('on');
+  b.classList.add('on');
+  card.querySelector('.tipinfo').textContent = tipInfo(t);
+  card.querySelector('.go').href = viewerURL(f.family, t.id);
+});
+
+$('q').addEventListener('input', render);
+$('sort').addEventListener('change', render);
+$('crossOnly').addEventListener('change', render);
+$('nosupOnly').addEventListener('change', render);
+$('q').setAttribute('placeholder', T('Filter family name…', '按科名筛选…'));
+
+boot();
+
+var lastLang = lang();
+setInterval(function(){
+  var cur = lang();
+  if (cur !== lastLang) {
+    lastLang = cur;
+    $('q').setAttribute('placeholder', T('Filter family name…', '按科名筛选…'));
+    render();
+  }
+}, 400);
+document.addEventListener('click', function(e){
+  var id = (e.target && e.target.id) || '';
+  if (id === 'pvdb-i18n-btn' || id === 'pvdb-lang-btn') {
+    setTimeout(function(){
+      $('q').setAttribute('placeholder', T('Filter family name…', '按科名筛选…'));
+      render();
+    }, 80);
+  }
+}, true);
+</script>
+</body>
+</html>

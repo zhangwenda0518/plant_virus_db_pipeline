@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Redirecting… / 正在跳转…</title>
+<link rel="canonical" href="/phylo/?view=molecular">
+<!-- 2026-10-11：本页已并入 /phylo/ 单页（顶栏「分类树 / 分子树」标签页）。
+     旧地址与旧参数（?family=…&tree=…&mode=…&sup=…&bl=…&q=…）原样带过去，
+     由 /phylo/ 的分子树视图按原逻辑消费。 -->
+<script>
+(function () {
+  var q = location.search ? location.search.substring(1) : '';
+  location.replace('/phylo/?view=molecular' + (q ? '&' + q : '') + location.hash);
+})();
+</script>
+<meta http-equiv="refresh" content="0;url=/phylo/?view=molecular">
+</head>
+<body>
+<p>This page has merged into the <a href="/phylo/?view=molecular">Molecular trees tab of /phylo/</a>. Redirecting…</p>
+<p>本页已并入 <a href="/phylo/?view=molecular">/phylo/ 的「分子树」标签页</a>，正在跳转…</p>
+</body>
+</html>
