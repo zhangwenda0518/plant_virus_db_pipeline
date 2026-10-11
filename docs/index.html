@@ -3,6 +3,18 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title data-i18n="Plant Virus Database Platform|植物病毒数据库平台">Plant Virus Database Platform</title>
 <meta name="description" content="Plant Virus Database Platform - curated plant virus reference sequences, symptom photos, vector-host associations, primers, metagenomic classification and AI knowledge services.">
+<!-- 预取 Explorer (Dash) 首屏大体积 JS（约 2.1MB，占首载 95%）：用户在首页浏览时后台下载，
+     点进 /explorer/ 即近乎秒开。带版本号 m*xxx* 的文件在服务器升级 dash 后会失效，失效仅浪费
+     一次 404 请求、无副作用；升级后可用 explorer 页面源码里的新文件名替换更新。 -->
+<link rel="prefetch" href="/explorer/_dash-component-suites/plotly/package_data/plotly.min.js" as="script">
+<link rel="prefetch" href="/explorer/_dash-component-suites/dash_mantine_components/dash_mantine_components.v2_8_0m1782826061.js" as="script">
+<link rel="prefetch" href="/explorer/_dash-component-suites/dash/dash_table/async-table.js" as="script">
+<link rel="prefetch" href="/explorer/_dash-component-suites/dash/dcc/dash_core_components.v4_3_0m1784665594.js" as="script">
+<link rel="prefetch" href="/explorer/_dash-component-suites/dash/dash-renderer/build/dash_renderer.v4_3_0m1784665594.min.js" as="script">
+<link rel="prefetch" href="/explorer/_dash-component-suites/dash/deps/react-dom@18.v4_3_0m1784665594.3.1.min.js" as="script">
+<link rel="prefetch" href="/explorer/_dash-component-suites/dash/dash_table/async-highlight.js" as="script">
+<link rel="prefetch" href="/explorer/_dash-component-suites/dash/deps/polyfill@7.v4_3_0m1784665594.12.1.min.js" as="script">
+<link rel="prefetch" href="/explorer/_dash-component-suites/dash/dcc/dash_core_components-shared.v4_3_0m1784665594.js" as="script">
 <style>
 *{box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;margin:0;background:#f4f6f8;color:#2c3e50}
@@ -33,6 +45,10 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
 .mapbox .ph{color:#8a99a8;font-size:12.5px;line-height:1.9}
 .mapbox .ph b{color:#1a5276}
 .mapbox img,.mapbox iframe,.mapbox canvas{max-width:100%;height:auto}
+.vmap{width:100%;height:380px}
+@media(max-width:700px){.vmap{height:260px}}
+.mapmeta{margin-top:10px;font-size:12px;color:#8a99a8}
+.mapmeta b{color:#1a5276;font-weight:700}
 </style></head><body>
 
 <div class="hero">
@@ -56,10 +72,10 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
     <a class="card" href="/photos/"><div class="ic">&#127807;</div><h3 data-i18n="Symptom Photos|症状照片">Symptom Photos</h3><div class="path">/photos/</div><p>2,854 curated symptom photos from EPPO, DPV, books and research papers (DOI-linked, AI-screened). Filter by host, bilingual symptom, and photo position.</p><div class="go">&#8594;  </div></a>
     <a class="card" href="/relations/"><div class="ic">&#128279;</div><h3 data-i18n="Virus&ndash;Vector&ndash;Host Relations|病毒-媒介-宿主关系">Virus&ndash;Vector&ndash;Host Relations</h3><div class="path">/relations/</div><p>All four relationship views in one place: host&ndash;virus association Sankey, virus&ndash;host and vector&ndash;virus&ndash;host networks, and literature-backed vector&ndash;host tables. 14,791 virus&ndash;host pairs from 199,070 GenBank accessions, plus 1,806 vector records.</p><div class="go">&#8594;  </div></a>
     <a class="card" href="/eve/"><div class="ic">&#127760;</div><h3 data-i18n="Plant EVE Landscape|植物 EVE 全景">Plant EVE Landscape</h3><div class="path">/eve/</div><p>Endogenous viral elements across 1,527 plant genomes and 284 host families &mdash; <b>150,136</b> loci. Eight linked views: virus family, host family, DNA/RNA type, family&times;host matrix, ancient infection, amplification dynamics, RT phylogeny and QC.</p><div class="go">&#8594;  </div></a>
-    <a class="card" href="/genes/gene_browser.html"><div class="ic">&#129516;</div><h3 data-i18n="Resistance Genes &amp; sRNAs|抗性基因与sRNA">Resistance Genes &amp; sRNAs</h3><div class="path">/genes/</div><p>RefPlantNLR 415 NLRs + 11,780 sRNA genes + 3,996 UPS + 83,166 miRNAs. Integrated plant immune gene atlas.</p><div class="go">&#8594;  </div></a>
+    <a class="card" href="/genes/index.html"><div class="ic">&#129516;</div><h3 data-i18n="Resistance Genes &amp; sRNAs|抗性基因与sRNA">Resistance Genes &amp; sRNAs</h3><div class="path">/genes/</div><p>RefPlantNLR 415 NLRs + 11,780 sRNA genes + 3,996 UPS + 83,166 miRNAs. Integrated plant immune gene atlas.</p><div class="go">&#8594;  </div></a>
     <a class="card" href="/primers/"><div class="ic">&#129514;</div><h3 data-i18n="Primer Database|引物数据库">Primer Database</h3><div class="path">/primers/</div><p>103,642 designed PCR/qPCR primer pairs covering 4,789 plant virus species. Designed with Primer3, varVAMP and Olivar (tiling).</p><div class="go">&#8594;  </div></a>
     <a class="card" href="/onekp/"><div class="ic">&#127793;</div><h3 data-i18n="1KP Virome|1KP病毒组">1KP Virome</h3><div class="path">/onekp/</div><p>Virus detection across 1,341 plant transcriptomes. 96 virus species (118 high-confidence detections), interactive coverage and prevalence analysis.</p><div class="go">&#8594;  </div></a>
-    <a class="card" href="/structures3d/"><div class="ic">&#129482;</div><h3 data-i18n="Protein Structure|蛋白结构">Protein Structure</h3><div class="path">/structures3d/</div><p>AlphaFold2-predicted 3D structures of plant virus proteins &mdash; <b>17,918</b> full-atom models across <b>1,832</b> species, with domain annotation. Browse by species and protein, then view the model in the Molstar viewer.</p><div class="go">&#8594;  </div></a>
+    <a class="card" href="/structures3d/"><div class="ic">&#129482;</div><h3 data-i18n="Protein Structure|蛋白结构">Protein Structure</h3><div class="path">/structures3d/</div><p data-i18n="53,240 structures across 4,252 species &mdash; RVPSD AF2, VAD, our AlphaFold3 pipeline and Modeller homology models, with source filters, coverage atlas and a Molstar viewer.|53,240 个结构 · 4,252 个物种 &mdash; 整合 RVPSD AF2、VAD、自有 AlphaFold3 推理与 Modeller 同源建模，来源可筛选，附覆盖总账与 Molstar 3D 查看。">53,240 structures across 4,252 species &mdash; RVPSD AF2, VAD, our AlphaFold3 pipeline and Modeller homology models, with source filters, coverage atlas and a Molstar viewer.</p><div class="go">&#8594;  </div></a>
   </div>
 
   <div class="sec">&#128300; Analysis Tools</div>
@@ -67,7 +83,7 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
     <a class="card" href="/explorer/"><div class="ic">&#128202;</div><h3 data-i18n="Virus Explorer|病毒浏览器">Virus Explorer</h3><div class="path">/explorer/</div><p>Interactive Dash-based explorer: 5D linked filtering, timeline, global map, genome viewer, taxonomy tree, MSA viewer — click through to each virus's full profile (taxonomy, genome plots, hosts, vectors, primers, photos).</p><div class="go">&#8594;  </div></a>
     <a class="card" href="/metabuli/"><div class="ic">&#129515;</div><h3 data-i18n="Metabuli|宏基因组分类">Metabuli</h3><div class="path">/metabuli/</div><p>Upload contigs for plant virus metagenomic classification. 8-rank taxonomy, BLASTN/BLASTX/CDD validation, Krona/Sankey viz.</p><div class="go">&#8594;  </div></a>
     <a class="card" href="/pamirdb/"><div class="ic">&#127919;</div><h3 data-i18n="PV-miRNA|PV-miRNA预测">PV-miRNA</h3><div class="path">/pamirdb/</div><p>Plant virus miRNA target prediction. 3-algorithm consensus (miRanda + psRNATarget + RNAhybrid), 402 plants x 42 viruses.</p><div class="go">&#8594;  </div></a>
-    <a class="card" href="/phylo/"><div class="ic">&#127794;</div><h3 data-i18n="Virus Phylogeny|病毒进化关系">Virus Phylogeny</h3><div class="path">/phylo/ &middot; /phylo/molecular/</div><p>Two complementary views of plant virus evolution: the <b>ICTV MSL41 taxonomy tree</b> (set nesting, no branch lengths) and <b>official molecular trees</b> from ICTV Report chapters (maximum-likelihood, real branch lengths and support values).</p><div class="go">&#8594;  </div></a>
+    <a class="card" href="/phylo/"><div class="ic">&#127794;</div><h3 data-i18n="Virus Phylogeny|病毒进化关系">Virus Phylogeny</h3><div class="path">/phylo/（one page · two tabs）</div><p>Two complementary views on <b>one page</b> (tab switcher): the <b>ICTV MSL41 taxonomy tree</b> (set nesting, no branch lengths) and <b>official molecular trees</b> from ICTV Report chapters (maximum-likelihood, real branch lengths and support values).</p><div class="go">&#8594;  </div></a>
   </div>
         
   <div class="sec">&#128172; Knowledge &amp; Support</div>
@@ -80,23 +96,99 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
 
 </div>
 
-<footer data-i18n="Plant Virus Database Platform|植物病毒数据库平台">Plant Virus Database Platform · 植物病毒数据库平台</footer>
-
-<!-- ============ ClustrMaps 访客地图（首页专用） ============
-     待接入：把下面 script 的 src 换成 ClustrMaps 面板生成的代码。
-     注册网址：https://clustrmaps.com/
-     步骤：注册/登录 → 填站点地址 http://39.106.101.94 → 选样式(Flat map / 3D globe)
-          → 复制以 <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=XXXX"></script> 开头的整段
-          → 替换下面那一行（注意保留 data-i18n，切勿删掉）
-     替换后本页无需其它改动；d= 参数就是绑定域名的凭证，仅对本站点有效。
+<!-- ============ 访客地图（首页专用，自建） ============
+     数据源：服务器 nginx 访问日志 -> /opt/plant_virus_db/visitor_stats/visitor_map.json
+     口径：仅统计「疑似真人访客」——浏览器 UA + 加载过静态资源 + 非云机房网段 + 404 占比正常；
+           地理信息来自离线库 ip2region，只到「国家/地区」粒度，不涉及 IP。
+     依赖：/data/world.json（世界地图边界）、/lib/echarts.min.js
      ============================================================ -->
 <div class="mapsec">
   <div class="sec" data-i18n="Visitor Map|访客地图">&#127757; Visitor Map</div>
   <div class="mapbox">
-    <span id="clustrmaps-slot" data-i18n="Loading visitor map…|访客地图加载中…">Loading visitor map…</span>
-    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=REPLACE_WITH_YOUR_D_PARAM" data-i18n="Visitor Map|访客地图"></script>
+    <div id="visitor-map" class="vmap"></div>
+    <div class="mapmeta">
+      <span data-i18n="Unique visitors|独立访客">Unique visitors</span>: <b id="vm-uv">&mdash;</b>
+      &nbsp;&middot;&nbsp;
+      <span data-i18n="Countries / regions|国家 / 地区">Countries / regions</span>: <b id="vm-ct">&mdash;</b>
+      &nbsp;&middot;&nbsp;
+      <span data-i18n="Updated|更新于">Updated</span>: <span id="vm-ts">&mdash;</span>
+    </div>
   </div>
-</div><script src="/i18n.js"></script>
+</div>
+
+<footer data-i18n="Plant Virus Database Platform|植物病毒数据库平台">Plant Virus Database Platform · 植物病毒数据库平台</footer>
+<script src="/i18n.js"></script>
+<script src="/lib/echarts.min.js"></script>
+<script>
+(function () {
+  var el = document.getElementById('visitor-map');
+  if (!el || !window.echarts) return;
+  function zh() {
+    try { return window.PVDB_i18n ? window.PVDB_i18n.lang() === 'zh' : false; } catch (e) { return false; }
+  }
+  var chart = null;
+  function build(world, stats) {
+    echarts.registerMap('world', world);
+    chart = echarts.init(el);
+    var vals = stats.data.map(function (d) { return d.value; });
+    var maxV = Math.max.apply(null, vals.concat([1]));
+    chart.setOption({
+      tooltip: {
+        trigger: 'item',
+        formatter: function (p) {
+          var v = (p.value == null || isNaN(p.value)) ? 0 : p.value;
+          return p.name + ' \u2014 ' + v;
+        }
+      },
+      visualMap: {
+        min: 0, max: maxV, left: 12, bottom: 8,
+        text: zh() ? ['\u591a', '\u5c11'] : ['High', 'Low'],
+        calculable: true, itemWidth: 12, itemHeight: 90,
+        textStyle: { color: '#8a99a8', fontSize: 11 },
+        inRange: { color: ['#eaf4fa', '#a9d0e9', '#4a9ed0', '#2e86c1', '#1a5276'] }
+      },
+      series: [{
+        type: 'map', map: 'world', roam: false, zoom: 1.15,
+        itemStyle: { areaColor: '#f2f7fb', borderColor: '#dbe8f0', borderWidth: 0.6 },
+        emphasis: {
+          itemStyle: { areaColor: '#ffd9b3', borderColor: '#2e86c1' },
+          label: { show: true, color: '#1a5276', fontSize: 11 }
+        },
+        select: { disabled: true },
+        data: stats.data
+      }]
+    });
+    window.addEventListener('resize', function () { if (chart) chart.resize(); });
+  }
+  function setMeta(stats) {
+    var uv = document.getElementById('vm-uv');
+    var ct = document.getElementById('vm-ct');
+    var ts = document.getElementById('vm-ts');
+    if (uv) uv.textContent = stats.unique_visitors;
+    if (ct) ct.textContent = stats.countries;
+    if (ts) ts.textContent = stats.generated_at;
+  }
+  Promise.all([
+    fetch('/data/world.json').then(function (r) { return r.json(); }),
+    fetch('/data/visitor_map.json').then(function (r) { return r.json(); })
+  ]).then(function (res) {
+    build(res[0], res[1]);
+    setMeta(res[1]);
+  }).catch(function () {
+    el.innerHTML = '<div class="ph">' +
+      (zh() ? '\u8bbf\u5ba2\u5730\u56fe\u6570\u636e\u6682\u4e0d\u53ef\u7528' : 'Visitor map data unavailable') +
+      '</div>';
+  });
+  // 语言切换时同步更新图例文字
+  var prevHook = window.PVDB_onLangChange;
+  window.PVDB_onLangChange = function (l) {
+    if (typeof prevHook === 'function') { try { prevHook(l); } catch (e) {} }
+    if (chart) {
+      chart.setOption({ visualMap: { text: (l === 'zh' ? ['\u591a', '\u5c11'] : ['High', 'Low']) } });
+    }
+  };
+})();
+</script>
 <script>
 fetch('/reference/data/site_stats.json').then(function(r){return r.json()}).then(function(d){
   ['reference_records','symptom_photos','vector_host_pairs','papers_tracked','onekp_samples'].forEach(function(k){
