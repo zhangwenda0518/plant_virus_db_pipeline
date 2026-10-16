@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title data-i18n="Host–Virus Associations|宿主-病毒关联分析">Host–Virus Associations</title>
+<meta name="description" content="Interactive virus taxonomy × host taxonomy association explorer — drill from order to species with a click-through Sankey diagram. 病毒目科属种与植物目科属种的层层递进关联分析。">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;overflow-x:hidden}
+
+/* ── top bar ── */
+nav.topbar{background:linear-gradient(135deg,#134e6f 0%,#1a5276 55%,#2e86c1 100%);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 20px;flex-wrap:wrap}
+nav.topbar .brand{font-size:17px;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+nav.topbar .brand a{color:#fff;text-decoration:none}
+nav.topbar .sep{opacity:.35}
+nav.topbar .subtitle{font-size:13px;opacity:.92;font-weight:600;white-space:nowrap}
+nav.topbar .stats{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+nav.topbar .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:3px 10px;font-size:11.5px;white-space:nowrap}
+nav.topbar .chip b{font-weight:700}
+
+/* ── layout ── */
+.layout{display:flex;gap:14px;padding:14px 16px;align-items:stretch;max-width:1760px;margin:0 auto}
+.panel{background:#fff;border:1px solid #eef2f5;border-radius:14px;box-shadow:0 2px 10px rgba(20,60,90,.06)}
+aside.controls{width:280px;flex-shrink:0;padding:14px;display:flex;flex-direction:column;gap:14px;max-height:calc(100vh - 130px);overflow-y:auto;position:sticky;top:14px}
+section.chartcol{flex:1;min-width:0;display:flex;flex-direction:column;gap:12px}
+aside.detail{width:330px;flex-shrink:0;padding:14px;max-height:calc(100vh - 130px);overflow-y:auto;position:sticky;top:14px;display:none}
+aside.detail.open{display:block}
+@media(max-width:1150px){aside.detail{position:static;max-height:none;width:100%}.layout{flex-direction:column}aside.controls{position:static;max-height:none;width:100%}}
+
+/* ── controls ── */
+.ctl-title{font-size:12px;font-weight:700;color:#8a99a8;letter-spacing:.6px;border-left:3px solid #2e86c1;padding-left:8px;margin:2px 0 8px}
+.crumbs{display:flex;flex-direction:column;gap:8px}
+.crumbrow{font-size:12px;line-height:1.9}
+.crumbrow .lab{font-weight:700;color:#1a5276;margin-right:4px}
+.crumb{display:inline-block;background:#eef5fa;border:1px solid #d5e6f2;color:#1a5276;border-radius:12px;padding:1px 9px;margin:2px 3px 2px 0;font-size:11.5px;cursor:pointer;transition:.15s;max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle}
+.crumb:hover{background:#1a5276;color:#fff;border-color:#1a5276}
+.crumb.root{background:#f4f6f8;color:#7b8a99;border-color:#e2e8ee}
+.crumb.last{background:#2e86c1;color:#fff;border-color:#2e86c1;font-weight:600}
+.crumb.leaf{cursor:default}
+.crumb.leaf:hover{background:#2e86c1}
+
+select,.sel{width:100%;padding:6px 8px;border:1px solid #d5dde5;border-radius:8px;font-size:12.5px;background:#fff;color:#2c3e50;outline:none}
+select:focus{border-color:#2e86c1}
+.row2{display:flex;gap:8px}
+.row2>*{flex:1}
+label.tgl{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#3c4b5b;cursor:pointer;padding:3px 0;user-select:none}
+label.tgl input{accent-color:#2e86c1;width:15px;height:15px}
+.hint{font-size:11px;color:#95a5b5;line-height:1.6}
+.searchwrap{position:relative}
+#search{width:100%;padding:8px 10px;border:1px solid #d5dde5;border-radius:8px;font-size:12.5px;outline:none}
+#search:focus{border-color:#2e86c1;box-shadow:0 0 0 3px rgba(46,134,193,.12)}
+#searchdrop{position:absolute;top:calc(100% + 4px);left:0;right:0;background:#fff;border:1px solid #dfe7ee;border-radius:10px;box-shadow:0 10px 30px rgba(20,60,90,.15);z-index:50;max-height:320px;overflow-y:auto;display:none}
+.sitem{padding:7px 10px;font-size:12px;cursor:pointer;display:flex;gap:8px;align-items:center;border-bottom:1px solid #f3f6f9}
+.sitem:last-child{border-bottom:none}
+.sitem:hover{background:#eef5fa}
+.sitem .badge{flex-shrink:0;font-size:10px;border-radius:8px;padding:1px 7px;font-weight:600}
+.badge.vsp{background:#e8f1fb;color:#1f618d}.badge.vgen{background:#eafaf1;color:#1e8449}
+.badge.vfam{background:#f4ecf7;color:#7d3c98}.badge.vord{background:#fdf2e9;color:#b9770e}
+.badge.hsp{background:#e8f8f0;color:#196f3d}.badge.hgen{background:#fef9e7;color:#9a7d0a}
+.badge.hfam{background:#fbeee9;color:#af601a}.badge.hord{background:#e9f7ef;color:#186a3b}
+.sitem .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap}
+button.act{flex:1;min-width:72px;padding:7px 10px;border:1px solid #d5dde5;background:#fff;color:#3c4b5b;border-radius:8px;font-size:12px;cursor:pointer;transition:.15s;white-space:nowrap}
+button.act:hover{border-color:#2e86c1;color:#1a5276;background:#eef5fa}
+button.act.primary{background:#2e86c1;border-color:#2e86c1;color:#fff}
+button.act.primary:hover{background:#1a5276}
+.legend{font-size:11px;color:#7b8a99;line-height:1.7}
+.legend .sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:baseline}
+
+/* ── chart ── */
+.chart-head{display:flex;align-items:center;gap:10px;padding:10px 16px 0;flex-wrap:wrap}
+.chart-head .t{font-size:14px;font-weight:700;color:#1a5276}
+.chart-head .mode{margin-left:auto;display:flex;border:1px solid #d5dde5;border-radius:9px;overflow:hidden}
+.chart-head .mode button{border:none;background:#fff;padding:6px 14px;font-size:12px;cursor:pointer;color:#3c4b5b}
+.chart-head .mode button.on{background:#2e86c1;color:#fff}
+#chart{width:100%;height:calc(100vh - 235px);min-height:480px}
+@media(max-width:1150px){#chart{height:560px}}
+#empty{display:none;padding:60px 20px;text-align:center;color:#95a5b5;font-size:14px}
+.loading{padding:80px 20px;text-align:center;color:#7b8a99;font-size:14px}
+.spinner{width:34px;height:34px;border:3px solid #e3ecf3;border-top-color:#2e86c1;border-radius:50%;margin:0 auto 14px;animation:spin 0.9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── detail panel ── */
+#detail .dt{font-size:14px;font-weight:700;color:#1a5276;line-height:1.5;word-break:break-word}
+#detail .sub{font-size:11.5px;color:#8a99a8;margin:2px 0 10px}
+#detail .kv{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+#detail .kv .c{background:#f7fafc;border:1px solid #eef2f5;border-radius:10px;padding:8px 10px}
+#detail .kv .c b{display:block;font-size:16px;color:#1a5276}
+#detail .kv .c span{font-size:10.5px;color:#95a5b5}
+#detail h4{margin:12px 0 6px;font-size:12px;color:#8a99a8;letter-spacing:.5px}
+.linkrow{display:flex;align-items:center;gap:8px;padding:4px 6px;border-radius:8px;cursor:pointer;font-size:12px}
+.linkrow:hover{background:#eef5fa}
+.linkrow .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.linkrow .v{color:#7b8a99;font-size:11px;flex-shrink:0}
+.barwrap{height:5px;background:#eef2f5;border-radius:3px;overflow:hidden;flex-shrink:0;width:52px}
+.barwrap i{display:block;height:100%;border-radius:3px}
+#detail .backlink{font-size:11.5px;color:#2e86c1;cursor:pointer;text-decoration:none}
+#detail .ext{margin-top:12px;padding-top:10px;border-top:1px dashed #e2e8ee;font-size:11.5px}
+#detail .ext a{color:#2e86c1;text-decoration:none}
+
+/* ── footer ── */
+/* 左边 76px / 下边 64px 是给左下角那颗浮动语言按钮留的位置, 按钮已收进顶栏, 不再需要 */
+footer{max-width:1760px;margin:0 auto;padding:10px 20px 24px;font-size:11.5px;color:#95a5b5;line-height:1.8}
+</style>
+</head>
+<body>
+<script src="/lib/site-nav.js?v=2"></script>
+
+<nav class="topbar">  <div class="subtitle" data-i18n="Host–Virus Associations|宿主-病毒关联分析">Host–Virus Associations</div>
+  <div class="stats">
+    <span class="chip"><b id="st-seq">–</b> <span data-i18n="sequences|序列">sequences</span></span>
+    <span class="chip"><b id="st-vsp">–</b> <span data-i18n="virus species|病毒种">virus species</span></span>
+    <span class="chip"><b id="st-hsp">–</b> <span data-i18n="host taxa|宿主分类群">host taxa</span></span>
+    <span class="chip"><b id="st-pair">–</b> <span data-i18n="associations|关联对">associations</span></span>
+  </div>
+</nav>
+
+<div class="layout">
+
+  <aside class="controls panel">
+    <div>
+      <div class="ctl-title" data-i18n="SEARCH|检索">SEARCH</div>
+      <div class="searchwrap">
+        <input id="search" autocomplete="off" placeholder="">
+        <div id="searchdrop"></div>
+      </div>
+      <div class="hint" style="margin-top:5px" data-i18n="Virus or host, any rank; abbreviations (TSWV, CMV…) supported via alias table.|支持病毒/宿主任意阶元与常用名、缩写（TSWV、CMV 等，首次搜索时加载别名表）。">
+        Virus or host, any rank; abbreviations (TSWV, CMV…) supported.
+      </div>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="DRILL PATH|下钻路径">DRILL PATH</div>
+      <div class="crumbs">
+        <div class="crumbrow" id="crumb-v"></div>
+        <div class="crumbrow" id="crumb-h"></div>
+      </div>
+      <div class="hint" style="margin-top:4px" data-i18n="Click a node in the Sankey to drill one level deeper (order → family → genus → species). Click a crumb to go back.|点击桑基图节点向下一层（目→科→属→种），点击路径标签回退。">
+        Click a node to drill deeper; click a crumb to go back.
+      </div>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="FILTERS|筛选">FILTERS</div>
+      <label class="tgl"><input type="checkbox" id="f-plantonly" checked><span data-i18n="Plant hosts only (incl. algae)|仅植物宿主（含藻类）">Plant hosts only (incl. algae)</span></label>
+      <label class="tgl"><input type="checkbox" id="f-unknown"><span data-i18n="Include records without host annotation|包含未标注宿主的记录">Include records without host annotation</span></label>
+      <div style="margin-top:8px">
+        <select id="f-topn">
+          <option value="10">Top 10</option>
+          <option value="15" selected>Top 15</option>
+          <option value="20">Top 20</option>
+          <option value="25">Top 25</option>
+          <option value="30">Top 30</option>
+        </select>
+      </div>
+      <div class="hint" style="margin-top:4px" data-i18n="Nodes beyond Top-N are merged into “Other”.|超出 Top-N 的节点合并为「其他」。">Nodes beyond Top-N are merged into “Other”.</div>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="EXPORT|导出">EXPORT</div>
+      <div class="btnrow">
+        <button class="act" id="btn-png">PNG</button>
+        <button class="act" id="btn-csv">CSV</button>
+        <button class="act" id="btn-reset">↺ <span data-i18n="Reset|重置">Reset</span></button>
+      </div>
+    </div>
+
+    <div class="legend">
+      <div><span class="sw" style="background:#2e86c1"></span><span data-i18n="Virus taxa (drill: order → family → genus → species)|病毒分类群（下钻：目→科→属→种）">Virus taxa</span></div>
+      <div><span class="sw" style="background:#27ae60"></span><span data-i18n="Host taxa (drill: kingdom → order → family → genus → species)|宿主分类群（下钻：界→目→科→属→种）">Host taxa</span></div>
+      <div><span class="sw" style="background:#c9d6e2"></span><span data-i18n="Link width = number of GenBank accessions|连线宽度 = GenBank 序列条数">Link width = accession count</span></div>
+    </div>
+  </aside>
+
+  <section class="chartcol panel">
+    <div class="chart-head">
+      <div class="t" id="view-title">All viruses ↔ All hosts</div>
+      <div class="mode">
+        <button id="mode-v2h" class="on" data-i18n="Virus → Host|病毒 → 宿主">Virus → Host</button>
+        <button id="mode-h2v" data-i18n="Host → Virus|宿主 → 病毒">Host → Virus</button>
+      </div>
+    </div>
+    <div id="chart"><div class="loading"><div class="spinner"></div><span data-i18n="Loading association data (211,132 records)…|正在加载关联数据（211,132 条记录）…">Loading association data…</span></div></div>
+    <div id="empty"></div>
+  </section>
+
+  <aside class="detail panel" id="detail"></aside>
+
+</div>
+
+<footer>
+  <span data-i18n="Data: GenBank accessions in Plant_Virus_Full database, host lineages resolved via NCBI Taxonomy (ICTV-synced). Counts are accession (sequence) numbers, not literature-confirmed host ranges. Virus taxonomy follows NCBI/ICTV Latinized binomials (MSL40+).|数据：Plant_Virus_Full 数据库中的 GenBank 序列，宿主谱系经 NCBI Taxonomy（与 ICTV 同步）解析。计数为序列条数，不等同于文献证实的宿主范围；病毒名称采用 ICTV 拉丁化双名（MSL40+）。">
+    Data: GenBank accessions in Plant_Virus_Full database, host lineages resolved via NCBI Taxonomy.
+  </span>
+  <div id="ft-meta"></div>
+</footer>
+
+<script src="echarts.min.js"></script>
+<script src="/i18n.js"></script>
+<script>
+/* i18n.js 的 injectToggle() 把语言按钮做成左下角 position:fixed 的 44px 圆圈。
+   在桑基这种通栏画布上躲不开: 实测 390px 下压住画布左上 44×38px、768px 压 44×44px
+   (画布满宽, 加 padding 只是把按钮推到图形中间, 更糟)。收进顶栏 .stats, 和旁边 chip 一致。
+   直接重写 style.cssText 而不是加 class: 宽高/圆角/定位都是内联样式, 样式表盖不过去。
+   onclick 是属性赋值, 移节点不丢; apply() 只改 textContent/title, 也不受影响。 */
+(function () {
+  function adopt() {
+    var b = document.getElementById('pvdb-lang-btn');
+    var host = document.querySelector('nav.topbar .stats');
+    if (!b || !host || b.parentNode === host) return !!b;
+    b.style.cssText = 'position:static;width:auto;height:auto;min-width:52px;'
+      + 'padding:3px 10px;border-radius:14px;font-size:11.5px;font-weight:600;line-height:1.5;'
+      + 'background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);'
+      + 'color:#fff;box-shadow:none;cursor:pointer;font-family:inherit;'
+      + 'display:inline-flex;align-items:center;justify-content:center;white-space:nowrap';
+    host.appendChild(b);
+    return true;
+  }
+  /* i18n.js 在 DOMContentLoaded 里注入, 而本脚本在它之后注册同一事件, 所以轮询只是兜底 */
+  function go() {
+    if (adopt()) return;
+    var n = 0, t = setInterval(function () { if (adopt() || ++n > 50) clearInterval(t); }, 80);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go);
+  else go();
+})();
+</script>
+<script>
+'use strict';
+/* ================================================================
+ * Host–Virus Taxonomy Associations — click-through Sankey explorer
+ * Data: associations.json (built by build_associations.py)
+ *   vtax: virus species → [order, family, genus]           (levels 0-2, species = key)
+ *   htax: host leaf     → [kingdom, order, family, genus]  (levels 0-3, species = key)
+ *   pairs: [virus species, host leaf, accession count]
+ * ================================================================ */
+
+const V_LEVELS = ['order', 'family', 'genus', 'species'];
+const H_LEVELS = ['order', 'family', 'genus', 'species'];   // kingdom stays a filter, not a Sankey level
+const VMAX = V_LEVELS.length - 1;   // 3
+const HMAX = H_LEVELS.length - 1;   // 3
+const OTHER = '\u0002other';        // internal node id for the "Other" bucket (must not contain the \u0001 link-key delimiter)
+
+const state = {
+  vpath: [],            // drilled virus ancestors, index i = level i
+  hpath: [],            // drilled host ancestors
+  plantOnly: true,
+  showUnknown: false,
+  topN: 15,
+  h2v: false,           // swap columns visually
+  sel: null             // current selection {kind:'node'|'edge', ...}
+};
+
+let DATA = null;        // {meta, vtax, htax, pairs}
+let ALIAS = null;       // lazy-loaded alias map: lower alias → ICTV/NCBI name
+let chart = null;
+
+/* ── i18n helpers (sync with site pvdb_lang) ── */
+function lang() { return (localStorage.getItem('pvdb_lang') || 'en') === 'zh' ? 'zh' : 'en'; }
+const L = {
+  allViruses:   {en:'All viruses', zh:'全部病毒'},
+  allHosts:     {en:'All hosts', zh:'全部宿主'},
+  order:        {en:'Order', zh:'目'}, family: {en:'Family', zh:'科'},
+  genus:        {en:'Genus', zh:'属'}, species:{en:'Species', zh:'种'},
+  kingdom:      {en:'Kingdom', zh:'界'},
+  sequences:    {en:'sequences', zh:'条序列'},
+  vsp:          {en:'virus species', zh:'个病毒种'},
+  partners:     {en:'linked taxa', zh:'个关联分类群'},
+  share:        {en:'share of current view', zh:'占当前视图'},
+  topV:         {en:'Top virus species', zh:'主要病毒种'},
+  topH:         {en:'Top hosts', zh:'主要宿主'},
+  clickDrill:   {en:'click to drill down', zh:'点击下钻'},
+  clickLeaf:    {en:'leaf level — see details', zh:'已到种级 — 见详情'},
+  flow:         {en:'Association flow', zh:'关联流'},
+  otherTip:     {en:'Merged small nodes — raise Top-N to expand', zh:'合并的小节点 — 调大 Top-N 可展开'},
+  noData:       {en:'No associations match the current filters.', zh:'当前筛选条件下无关联数据。'},
+  plant:        {en:'Plant', zh:'植物'}, algae:{en:'Algae', zh:'藻类'},
+  fungi:        {en:'Fungi', zh:'真菌'}, animal:{en:'Animal', zh:'动物'},
+  human:        {en:'Human', zh:'人类'}, bacteria:{en:'Bacteria', zh:'细菌'},
+  archaea:      {en:'Archaea', zh:'古菌'}, unknown:{en:'Unknown', zh:'未知'},
+  other:        {en:'Other', zh:'其他'},
+  unknownHost:  {en:'(host not annotated)', zh:'（未标注宿主）'},
+  noOrder:      {en:'(no order)', zh:'（未定目）'},
+  noFamily:     {en:'(no family)', zh:'（未定科）'},
+  noGenus:      {en:'(no genus)', zh:'（未定属）'},
+  unresolved:   {en:'Unresolved host name', zh:'未解析宿主名'},
+  virusSide:    {en:'Virus', zh:'病毒'}, hostSide:{en:'Host', zh:'宿主'},
+  drillTo:      {en:'Drill into', zh:'下钻到'},
+  ncbi:         {en:'NCBI Taxonomy', zh:'NCBI 分类库'},
+  explorer:     {en:'Virus Explorer', zh:'病毒浏览器'},
+  searching:    {en:'Loading alias table…', zh:'别名表加载中…'},
+  noMatch:      {en:'No match', zh:'无匹配'},
+  viewAll:      {en:'All', zh:'全部'}
+};
+function t(key) { const o = L[key]; return o ? o[lang()] : key; }
+
+const KINGDOM_KEY = {Plant:'plant', Algae:'algae', Fungi:'fungi', Animal:'animal', Human:'human',
+                     Bacteria:'bacteria', Archaea:'archaea', Unknown:'unknown', Other:'other'};
+function kLabel(k) { return t(KINGDOM_KEY[k] || 'other'); }
+
+const RANK_KEY = {order:'order', family:'family', genus:'genus', species:'species', kingdom:'kingdom'};
+function rankLabel(r) { return t(RANK_KEY[r] || r); }
+
+function prettyName(name, side, level) {
+  if (!name) return '·';
+  if (name === OTHER) return t('other');
+  if (name === '(unknown host)') return t('unknownHost');
+  if (name.startsWith('Unresolved: ')) return t('unresolved') + ': ' + name.slice(12);
+  if (name === '(no order)') return t('noOrder');
+  if (name === '(no family)') return t('noFamily');
+  if (name === '(no genus)') return t('noGenus');
+  return name;
+}
+
+/* ── palettes ── */
+const V_PAL = ['#2e86c1','#5dade2','#48c9b0','#16a085','#7d3c98','#af7ac5','#34495e','#117a65',
+               '#2874a6','#85c1e9','#76448a','#d2b4de','#0e6655','#487092','#5499c7','#a569bd'];
+const H_PAL = ['#27ae60','#58d68d','#82c91e','#f4b400','#e67e22','#d4ac0d','#145a32','#b7950b',
+               '#229954','#7dce60','#9ccc16','#f5b041','#ca6f1e','#1e8449','#a9dfbf','#d68910'];
+function hashStr(s) { let h = 0; for (let i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) | 0; } return Math.abs(h); }
+function shade(hex, f) { // f<1 darken, f>1 lighten
+  const n = parseInt(hex.slice(1), 16);
+  let r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+  r = Math.max(0, Math.min(255, Math.round(f > 1 ? r + (255 - r) * (f - 1) : r * f)));
+  g = Math.max(0, Math.min(255, Math.round(f > 1 ? g + (255 - g) * (f - 1) : g * f)));
+  b = Math.max(0, Math.min(255, Math.round(f > 1 ? b + (255 - b) * (f - 1) : b * f)));
+  return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+function nodeColor(side, name, level) {
+  if (name === OTHER) return side === 'v' ? '#b8c6d4' : '#c3d9c8';
+  if (level === 0) {
+    const pal = side === 'v' ? V_PAL : H_PAL;
+    return pal[hashStr(name) % pal.length];
+  }
+  const base = nodeColor(side, name, 0);
+  return shade(base, 1 + level * 0.22);
+}
+
+/* ── static name indexes for search ── */
+let V_INDEX = null, H_INDEX = null;    // name → {rank, isLeaf}
+let V_UP = null, H_UP = null;          // ancestors for non-species taxa: 'G:x'→[...], 'F:x'→[...]
+function buildIndexes() {
+  V_INDEX = new Map(); H_INDEX = new Map();
+  V_UP = new Map(); H_UP = new Map();
+  for (const v of Object.keys(DATA.vtax)) {
+    const r = DATA.vtax[v];
+    if (!V_INDEX.has(r[0])) V_INDEX.set(r[0], {rank:'order', isLeaf:false});
+    if (!V_INDEX.has(r[1])) V_INDEX.set(r[1], {rank:'family', isLeaf:false});
+    if (!V_INDEX.has(r[2])) V_INDEX.set(r[2], {rank:'genus', isLeaf:false});
+    V_INDEX.set(v, {rank:'species', isLeaf:true});
+    const gk = 'G:' + r[2], fk = 'F:' + r[1];
+    if (!V_UP.has(gk)) V_UP.set(gk, [r[0], r[1]]);
+    if (!V_UP.has(fk)) V_UP.set(fk, [r[0]]);
+  }
+  for (const h of Object.keys(DATA.htax)) {
+    const r = DATA.htax[h];
+    if (r[1] && !H_INDEX.has(r[1])) H_INDEX.set(r[1], {rank:'order', isLeaf:false});
+    if (r[2] && !H_INDEX.has(r[2])) H_INDEX.set(r[2], {rank:'family', isLeaf:false});
+    if (r[3] && !H_INDEX.has(r[3])) H_INDEX.set(r[3], {rank:'genus', isLeaf:false});
+    H_INDEX.set(h, {rank:'species', isLeaf:true});
+    const gk = 'G:' + r[3], fk = 'F:' + r[2];
+    if (r[3] && !H_UP.has(gk)) H_UP.set(gk, [r[1], r[2]]);
+    if (r[2] && !H_UP.has(fk)) H_UP.set(fk, [r[1]]);
+  }
+}
+
+/* host rank at Sankey level L (0..3) — htax stores [kingdom, order, family, genus], leaf = key */
+function hrank(ht, L, leaf) {
+  if (L >= HMAX) return leaf;
+  return ht[L + 1] || ['(no order)', '(no family)', '(no genus)'][L];
+}
+
+/* ── core aggregation: filter pairs by context → two columns + links ── */
+function aggregate() {
+  const Lv = state.vpath.length, Lh = state.hpath.length;
+  const link = new Map();          // 'v\u0001h' → count
+  const vTot = new Map(), hTot = new Map();
+  let seqs = 0;
+  const vSp = new Set(), hLe = new Set();
+
+  for (let i = 0; i < DATA.pairs.length; i++) {
+    const v = DATA.pairs[i][0], h = DATA.pairs[i][1], c = DATA.pairs[i][2];
+    const vt = DATA.vtax[v] || ['','',''];
+    const ht = DATA.htax[h] || ['Unknown','','',''];
+
+    // host filters
+    if (state.plantOnly && ht[0] !== 'Plant' && ht[0] !== 'Algae') continue;
+    const isUnknownHost = (h === '(unknown host)' || h.startsWith('Unresolved: '));
+    if (isUnknownHost && !state.showUnknown) continue;
+
+    // context match (virus level 3 is the species key itself, not a lineage column)
+    let ok = true;
+    for (let j = 0; j < Lv; j++) {
+      const actual = j >= VMAX ? v : vt[j];
+      if (actual !== state.vpath[j]) { ok = false; break; }
+    }
+    if (ok) for (let j = 0; j < Lh; j++) if (hrank(ht, j, h) !== state.hpath[j]) { ok = false; break; }
+    if (!ok) continue;
+
+    const vn = Lv <= VMAX - 1 ? vt[Lv] : v;      // column node at current level
+    const hn = hrank(ht, Lh, h);
+    const key = vn + '\u0001' + hn;
+    link.set(key, (link.get(key) || 0) + c);
+    vTot.set(vn, (vTot.get(vn) || 0) + c);
+    hTot.set(hn, (hTot.get(hn) || 0) + c);
+    seqs += c;
+    vSp.add(v); hLe.add(h);
+  }
+  return {link, vTot, hTot, seqs, vSp, hLe, Lv, Lh};
+}
+
+/* keep topN per column, merge rest into OTHER (recompute link values among kept) */
+function topNize(agg) {
+  const topOf = (tot) => {
+    const arr = [...tot.entries()].sort((a, b) => b[1] - a[1]);
+    const keep = new Set(arr.slice(0, state.topN).map(x => x[0]));
+    const otherVal = arr.slice(state.topN).reduce((s, x) => s + x[1], 0);
+    return {kept: arr.slice(0, state.topN), keep, otherVal};
+  };
+  const vk = topOf(agg.vTot), hk = topOf(agg.hTot);
+  const merged = new Map();
+  for (const [key, c] of agg.link) {
+    let [v, h] = key.split('\u0001');
+    if (!vk.keep.has(v)) v = OTHER;
+    if (!hk.keep.has(h)) h = OTHER;
+    const k2 = v + '\u0001' + h;
+    merged.set(k2, (merged.get(k2) || 0) + c);
+  }
+  return {links: merged, vk, hk};
+}
+
+/* ── 桑基图两侧留白跟着画布宽度走 ─────────────────────────
+ * 左列节点的标签朝右画、右列节点的标签朝左画，两组标签全落在两列之间的
+ * 那条带子里，带子宽 = 画布宽 − 左留白 − 右留白 − 两列节点宽(26)。
+ * 原来写死 right:150，可右列标签是朝左画的，那 150px 自始至终没用到 ——
+ * 画布窄到 322px 时带子只剩 126px，而两组标签各要 70~90px，于是压在一起
+ * （实测 322px 下默认视图就有 7 对重叠）。窄画布收紧留白，两列节点往两边
+ * 分开，把带子还给标签；宽屏维持原值，桌面观感不变。 */
+function sankeyGutter(w) {
+  if (w >= 700) return {left: 20, right: 150};
+  if (w >= 420) return {left: 12, right: 24};
+  return {left: 6, right: 6};
+}
+let lastGutter = {left: 20, right: 150};
+
+/* ── render ── */
+let currentAgg = null, currentNodes = null;
+function render() {
+  if (!DATA) return;
+  const agg = aggregate();
+  currentAgg = agg;
+  const {links, vk, hk} = topNize(agg);
+
+  // nodes
+  const nodes = [], nodeSet = new Set();
+  const addNode = (side, name, level, value, drillable) => {
+    const id = (side === 'v' ? 'V:' : 'H:') + name;
+    if (nodeSet.has(id)) return;
+    nodeSet.add(id);
+    nodes.push({
+      id, name: id, value,
+      itemStyle: {color: nodeColor(side, name, level)},
+      label: {show: true, position: side === 'v' ? 'right' : 'left',
+              formatter: () => prettyName(name, side, level),
+              color: '#2c3e50', fontSize: 11},
+      _meta: {side, raw: name, level, drillable}
+    });
+  };
+  for (const [name, val] of vk.kept) addNode('v', name, agg.Lv, val, agg.Lv < VMAX);
+  if (vk.otherVal > 0) addNode('v', OTHER, agg.Lv, vk.otherVal, false);
+  for (const [name, val] of hk.kept) addNode('h', name, agg.Lh, val, agg.Lh < HMAX);
+  if (hk.otherVal > 0) addNode('h', OTHER, agg.Lh, hk.otherVal, false);
+
+  const elinks = [];
+  for (const [key, c] of links) {
+    const [v, h] = key.split('\u0001');
+    if (v === OTHER && h === OTHER) continue;
+    elinks.push({source: 'V:' + v, target: 'H:' + h, value: c});
+  }
+  currentNodes = nodes;
+
+  // view title
+  const vp = state.vpath.length ? prettyName(state.vpath[state.vpath.length - 1], 'v') : t('allViruses');
+  const hp = state.hpath.length ? prettyName(state.hpath[state.hpath.length - 1], 'h') : t('allHosts');
+  document.getElementById('view-title').textContent = vp + '  ↔  ' + hp;
+
+  drawCrumbs();
+  drawDetail();
+
+  const emptyEl = document.getElementById('empty');
+  const chartEl = document.getElementById('chart');
+  if (!elinks.length || agg.seqs === 0) {
+    chartEl.style.display = 'none';
+    emptyEl.style.display = 'block';
+    emptyEl.innerHTML = '<div style="font-size:34px;margin-bottom:10px">🔍</div>' + t('noData');
+    return;
+  }
+  chartEl.style.display = 'block';
+  emptyEl.style.display = 'none';
+
+  const maxNodes = Math.max(vk.kept.length + (vk.otherVal > 0 ? 1 : 0), hk.kept.length + (hk.otherVal > 0 ? 1 : 0));
+  const h = Math.max(500, Math.min(1150, 46 * maxNodes + 80));
+  chartEl.style.height = h + 'px';
+  // ECharts 只在 resize() 时重读容器高度。改了 style.height 必须显式同步一次，否则画布
+  // 停在初始化时量到的高度（实测窄屏 560、宽屏 665），图下方白掉一截，而且下面的 nodeGap
+  // 是按 h 算的，公式和真实排版空间对不上。
+  if (chart) chart.resize();
+  lastGutter = sankeyGutter(chartEl.clientWidth || 900);
+  /* 节点间隙跟着节点数走。桑基按数值比例分配节点高度，极小值的节点只剩一两像素，
+   * 标签却仍是 11px 一行，两条这样的薄片挤在一个 10px 的间隙里就会咬在一起
+   * （下钻到只剩几行时最明显）。节点越少、每条分到的垂直空间越大，就把间隙放大到
+   * 容得下一行标签；节点多时仍是 10px，默认视图的分毫不动。 */
+  const nodeGap = Math.min(18, Math.max(10, Math.round((h - 38) / Math.max(maxNodes, 1) * 0.21)));
+
+  const nodesByV = state.h2v;   // when swapped, put host left
+  const seriesNodes = nodes.map(n => {
+    const m = n._meta;
+    const sideName = m.side === 'v' ? 'v' : 'h';
+    const leftSide = nodesByV ? (sideName === 'h') : (sideName === 'v');
+    return {
+      name: n.name, value: n.value,
+      itemStyle: n.itemStyle,
+      label: {show: true, position: leftSide ? 'right' : 'left',
+              formatter: prettyName(m.raw, m.side, m.level),
+              color: '#2c3e50', fontSize: 11},
+      _meta: n._meta
+    };
+  });
+  const seriesLinks = elinks.map(e => nodesByV ? {source: e.target, target: e.source, value: e.value}
+                                               : {source: e.source, target: e.target, value: e.value});
+
+  chart.setOption({
+    animationDuration: 420,
+    tooltip: {
+      trigger: 'item', confine: true,
+      backgroundColor: 'rgba(255,255,255,.97)', borderColor: '#d5e6f2',
+      textStyle: {color: '#2c3e50', fontSize: 12},
+      extraCssText: 'box-shadow:0 6px 20px rgba(20,60,90,.15);max-width:340px;',
+      formatter: (p) => {
+        if (p.dataType === 'edge') {
+          const src = p.data.source.split(':').slice(1).join(':');
+          const tgt = p.data.target.split(':').slice(1).join(':');
+          const share = agg.seqs ? (100 * p.value / agg.seqs).toFixed(1) : 0;
+          return '<b>' + prettyName(src) + '</b>  ↔  <b>' + prettyName(tgt) + '</b><br>' +
+                 p.value.toLocaleString() + ' ' + t('sequences') + ' · ' + share + '% ' + t('share');
+        }
+        const m = p.data._meta;
+        if (m.raw === OTHER) return '<b>' + t('other') + '</b><br>' + p.value.toLocaleString() + ' ' + t('sequences') + '<br><span style="color:#95a5b5">' + t('otherTip') + '</span>';
+        const share = agg.seqs ? (100 * p.value / agg.seqs).toFixed(1) : 0;
+        return '<b>' + prettyName(m.raw, m.side, m.level) + '</b><br>' +
+               rankLabel(m.side === 'v' ? V_LEVELS[m.level] : H_LEVELS[m.level]) +
+               ' · ' + (m.side === 'v' ? t('virusSide') : t('hostSide')) + '<br>' +
+               p.value.toLocaleString() + ' ' + t('sequences') + ' · ' + share + '% ' + t('share');
+      }
+    },
+    series: [{
+      type: 'sankey',
+      left: lastGutter.left, right: lastGutter.right, top: 8, bottom: 30,
+      nodeWidth: 13, nodeGap: nodeGap,
+      nodeAlign: 'justify',
+      layoutIterations: 0,
+      emphasis: {focus: 'adjacency', lineStyle: {opacity: 0.75}},
+      data: seriesNodes,
+      links: seriesLinks,
+      lineStyle: {color: 'gradient', opacity: 0.32, curveness: 0.52},
+      itemStyle: {borderWidth: 0, borderRadius: 3}
+    }]
+  }, true);
+}
+
+/* ── breadcrumbs ── */
+function crumbHtml(side) {
+  const path = side === 'v' ? state.vpath : state.hpath;
+  const levels = side === 'v' ? V_LEVELS : H_LEVELS;
+  const maxL = side === 'v' ? VMAX : HMAX;
+  let html = '<span class="lab">' + (side === 'v' ? '🦠 ' + t('virusSide') : '🌿 ' + t('hostSide')) + '</span>';
+  html += '<span class="crumb root' + (path.length === 0 ? ' last' : '') + '" onclick="drillTo(\'' + side + '\',-1)">' + (side === 'v' ? t('allViruses') : t('allHosts')) + '</span>';
+  for (let i = 0; i < path.length; i++) {
+    const isLast = i === path.length - 1;
+    const isLeaf = i === maxL;
+    html += ' <span style="color:#b3c2cf">→</span> <span class="crumb' + (isLast ? ' last' : '') + (isLeaf ? ' leaf' : '') +
+            '" onclick="drillTo(\'' + side + '\',' + i + ')" title="' + rankLabel(levels[i]) + '">' +
+            prettyName(path[i], side, i) + '</span>';
+  }
+  if (path.length <= maxL) {
+    html += ' <span style="color:#b3c2cf">→</span> <span style="font-size:11px;color:#95a5b5">' + rankLabel(levels[path.length]) + (path.length < maxL ? ' ▾' : '') + '</span>';
+  }
+  return html;
+}
+function drawCrumbs() {
+  document.getElementById('crumb-v').innerHTML = crumbHtml('v');
+  document.getElementById('crumb-h').innerHTML = crumbHtml('h');
+}
+
+/* drill / navigate */
+function drillTo(side, idx) {
+  if (side === 'v') state.vpath = idx < 0 ? [] : state.vpath.slice(0, idx + 1);
+  else state.hpath = idx < 0 ? [] : state.hpath.slice(0, idx + 1);
+  state.sel = null;
+  render();
+}
+window.drillTo = drillTo;
+
+/* ── detail panel ── */
+function partnersFor(side, raw, level) {
+  // partners of a node at `level` on `side`, under its own context (myPath[0..level-1] + raw)
+  // aggregated at the opposite column's current level
+  const myPath = side === 'v' ? state.vpath : state.hpath;
+  const otherPath = side === 'v' ? state.hpath : state.vpath;
+  const m = new Map();
+  for (let i = 0; i < DATA.pairs.length; i++) {
+    const v = DATA.pairs[i][0], h = DATA.pairs[i][1], c = DATA.pairs[i][2];
+    const vt = DATA.vtax[v] || ['','',''];
+    const ht = DATA.htax[h] || ['Unknown','','',''];
+    if (state.plantOnly && ht[0] !== 'Plant' && ht[0] !== 'Algae') continue;
+    if ((h === '(unknown host)' || h.startsWith('Unresolved: ')) && !state.showUnknown) continue;
+    const myRankAt = (j) => (side === 'v' ? (j >= VMAX ? v : vt[j]) : hrank(ht, j, h));
+    const otherRankAt = (j) => (side === 'v' ? hrank(ht, j, h) : (j >= VMAX ? v : vt[j]));
+    let ok = true;
+    for (let j = 0; j < level; j++) if (myRankAt(j) !== myPath[j]) { ok = false; break; }
+    if (ok) ok = myRankAt(level) === raw;
+    if (ok) for (let j = 0; j < otherPath.length; j++) if (otherRankAt(j) !== otherPath[j]) { ok = false; break; }
+    if (!ok) continue;
+    const p = otherRankAt(otherPath.length);
+    m.set(p, (m.get(p) || 0) + c);
+  }
+  return [...m.entries()].sort((a, b) => b[1] - a[1]);
+}
+
+function speciesInContext(agg, which) {
+  // top species (virus or host) inside current context
+  const Lv = agg.Lv, Lh = agg.Lh;
+  const m = new Map();
+  for (let i = 0; i < DATA.pairs.length; i++) {
+    const v = DATA.pairs[i][0], h = DATA.pairs[i][1], c = DATA.pairs[i][2];
+    const vt = DATA.vtax[v] || ['','',''];
+    const ht = DATA.htax[h] || ['Unknown','','',''];
+    if (state.plantOnly && ht[0] !== 'Plant' && ht[0] !== 'Algae') continue;
+    if ((h === '(unknown host)' || h.startsWith('Unresolved: ')) && !state.showUnknown) continue;
+    let ok = true;
+    for (let j = 0; j < Lv; j++) {
+      const actual = j >= VMAX ? v : vt[j];
+      if (actual !== state.vpath[j]) { ok = false; break; }
+    }
+    if (ok) for (let j = 0; j < Lh; j++) if (hrank(ht, j, h) !== state.hpath[j]) { ok = false; break; }
+    if (!ok) continue;
+    const key = which === 'v' ? v : h;
+    m.set(key, (m.get(key) || 0) + c);
+  }
+  return [...m.entries()].sort((a, b) => b[1] - a[1]);
+}
+
+function kvCard(val, label) { return '<div class="c"><b>' + val + '</b><span>' + label + '</span></div>'; }
+
+function linkRows(rows, side, agg) {
+  const maxv = rows.length ? rows[0][1] : 1;
+  const otherSide = side === 'v' ? 'h' : 'v';
+  return rows.slice(0, 14).map(([name, c]) => {
+    const lvl = side === 'v' ? agg.Lv : agg.Lh;
+    const barC = nodeColor(side === 'v' ? 'h' : 'v', name, side === 'v' ? agg.Lh : agg.Lv);
+    return '<div class="linkrow" onclick="drillPartner(\'' + otherSide + '\',\'' + encodeURIComponent(name) + '\')">' +
+           '<span class="nm" title="' + name.replace(/"/g, '&quot;') + '">' + prettyName(name) + '</span>' +
+           '<span class="barwrap"><i style="width:' + Math.max(4, 100 * c / maxv) + '%;background:' + barC + '"></i></span>' +
+           '<span class="v">' + c.toLocaleString() + '</span></div>';
+  }).join('');
+}
+
+window.drillPartner = function(side, enc) {
+  const name = decodeURIComponent(enc);
+  if (name === OTHER) return;
+  const path = side === 'v' ? state.vpath : state.hpath;
+  const maxL = side === 'v' ? VMAX : HMAX;
+  if (path.length >= maxL) return;
+  path.push(name);
+  state.sel = null;
+  render();
+};
+
+function showNodeDetail(raw, side, level, value) {
+  const agg = currentAgg;
+  const partners = partnersFor(side, raw, level);
+  const spTop = speciesInContext(agg, side);
+  const levels = side === 'v' ? V_LEVELS : H_LEVELS;
+  const rank = levels[Math.min(level, levels.length - 1)];
+  let html = '';
+  html += '<div class="dt">' + (side === 'v' ? '🦠 ' : '🌿 ') + prettyName(raw, side, level) + '</div>';
+  html += '<div class="sub">' + rankLabel(rank) + ' · ' + (side === 'v' ? t('virusSide') : t('hostSide')) + '</div>';
+  html += '<div class="kv">' +
+          kvCard(value.toLocaleString(), t('sequences')) +
+          kvCard(partners.length, t('partners')) +
+          '</div>';
+  html += '<h4>' + t('clickDrill') + ' →</h4>';
+  if (partners.length) html += linkRows(partners, side, agg);
+  else html += '<div class="hint">—</div>';
+  if (spTop.length && level >= 1) {
+    html += '<h4>' + (side === 'v' ? t('topV') : t('topH')) + '</h4>';
+    const maxv = spTop[0][1];
+    html += spTop.slice(0, 8).map(([n, c]) => {
+      const it = side === 'v' ? DATA.vtax[n] : DATA.htax[n];
+      const sub = side === 'v' ? (it ? it[1] : '') : (it ? it[2] : '');
+      return '<div class="linkrow" style="cursor:default"><span class="nm" title="' + n.replace(/"/g, '&quot;') + '">' + n + (sub ? ' <span style="color:#95a5b5;font-size:10px">' + sub + '</span>' : '') + '</span>' +
+             '<span class="barwrap"><i style="width:' + Math.max(4, 100 * c / maxv) + '%;background:' + (side === 'v' ? '#5dade2' : '#58d68d') + '"></i></span>' +
+             '<span class="v">' + c.toLocaleString() + '</span></div>';
+    }).join('');
+  }
+  if (side === 'v' && /^[A-Z]/.test(raw) && !raw.startsWith('(')) {
+    html += '<div class="ext"><a href="https://www.ncbi.nlm.nih.gov/search/?term=' + encodeURIComponent(raw) + '" target="_blank" rel="noopener">🔗 ' + t('ncbi') + '</a>' +
+            ' &nbsp; <a href="/explorer/" target="_blank">' + t('explorer') + ' →</a></div>';
+  }
+  const d = document.getElementById('detail');
+  d.innerHTML = html;
+  d.classList.add('open');
+}
+
+function showEdgeDetail(srcRaw, dstRaw, value) {
+  // src/dst in display order (virus, host) regardless of orientation
+  let html = '';
+  html += '<div class="dt">' + prettyName(srcRaw, 'v') + '</div>';
+  html += '<div style="text-align:center;font-size:16px;color:#2e86c1;margin:2px 0">⇅</div>';
+  html += '<div class="dt">🌿 ' + prettyName(dstRaw, 'h') + '</div>';
+  html += '<div class="sub">' + t('flow') + '</div>';
+  html += '<div class="kv">' +
+          kvCard(value.toLocaleString(), t('sequences')) +
+          kvCard(currentAgg.seqs ? (100 * value / currentAgg.seqs).toFixed(1) + '%' : '–', t('share')) +
+          '</div>';
+  const d = document.getElementById('detail');
+  d.innerHTML = html;
+  d.classList.add('open');
+}
+
+function drawDetail() {
+  if (!state.sel) { document.getElementById('detail').classList.remove('open'); return; }
+  if (state.sel.kind === 'node') showNodeDetail(state.sel.raw, state.sel.side, state.sel.level, state.sel.value);
+  else showEdgeDetail(state.sel.v, state.sel.h, state.sel.value);
+}
+
+/* ── chart events ── */
+function bindChartEvents() {
+  chart.on('click', (p) => {
+    if (p.dataType === 'edge') {
+      let vs = p.data.source.split(':').slice(1).join(':');
+      let hs = p.data.target.split(':').slice(1).join(':');
+      if (state.h2v) [vs, hs] = [hs, vs];
+      state.sel = {kind: 'edge', v: vs, h: hs, value: p.value};
+      drawDetail();
+      return;
+    }
+    const m = p.data._meta;
+    if (!m) return;
+    if (m.raw === OTHER) return;                     // merged bucket — not drillable
+    const maxL = m.side === 'v' ? VMAX : HMAX;
+    state.sel = {kind: 'node', raw: m.raw, side: m.side, level: m.level, value: p.value};
+    if (m.level < maxL) {
+      if (m.side === 'v') { state.vpath = state.vpath.slice(0, m.level); state.vpath.push(m.raw); }
+      else { state.hpath = state.hpath.slice(0, m.level); state.hpath.push(m.raw); }
+      render();
+    } else {
+      drawDetail();
+    }
+  });
+}
+
+/* ── search ── */
+let ALIAS_PROMISE = null;
+function ensureAlias() {
+  if (!ALIAS_PROMISE) {
+    ALIAS_PROMISE = fetch('/reference/data/name_mapping.tsv')
+      .then(r => r.ok ? r.text() : '')
+      .then(txt => {
+        const m = new Map();
+        const lowerKeys = new Map();
+        for (const k of V_INDEX.keys()) lowerKeys.set(k.toLowerCase(), k);
+        const lines = txt.split('\n');
+        for (let i = 1; i < lines.length; i++) {
+          const cols = lines[i].split('\t');
+          if (cols.length < 4) continue;
+          // alias → a virus index key; ICTV Latin name preferred, NCBI vernacular as fallback
+          const tgt = lowerKeys.get(cols[1].trim().toLowerCase()) || lowerKeys.get(cols[2].trim().toLowerCase());
+          if (!tgt) continue;
+          const alts = [cols[2], cols[3], cols[1], cols[0]];
+          for (const a of alts) {
+            const a2 = a.trim().toLowerCase();
+            if (a2 && !m.has(a2)) m.set(a2, tgt);
+          }
+        }
+        ALIAS = m;
+      })
+      .catch(() => { /* offline: plain search still works */ });
+  }
+  return ALIAS_PROMISE;
+}
+
+function pathForVirus(name) {
+  if (DATA.vtax[name]) return {path: [DATA.vtax[name][0], DATA.vtax[name][1], DATA.vtax[name][2], name]};
+  const info = V_INDEX.get(name);
+  if (!info) return null;
+  if (info.rank === 'genus') { const up = V_UP.get('G:' + name); return up ? {path: [up[0], up[1], name]} : null; }
+  if (info.rank === 'family') { const up = V_UP.get('F:' + name); return up ? {path: [up[0], name]} : null; }
+  if (info.rank === 'order') return {path: [name]};
+  return null;
+}
+function pathForHost(name) {
+  if (DATA.htax[name]) {
+    const r = DATA.htax[name];
+    const p = [r[1], r[2], r[3]].filter(x => x && !x.startsWith('('));
+    if (!p.includes(name)) p.push(name);
+    return {path: p};
+  }
+  const info = H_INDEX.get(name);
+  if (!info) return null;
+  if (info.rank === 'genus') { const up = H_UP.get('G:' + name); return up ? {path: [up[0], up[1], name]} : null; }
+  if (info.rank === 'family') { const up = H_UP.get('F:' + name); return up ? {path: [up[0], name]} : null; }
+  if (info.rank === 'order') return {path: [name]};
+  return null;
+}
+
+function runSearch(q) {
+  q = q.trim().toLowerCase();
+  if (!q) return;
+  const results = [];
+  const rankOrd = {order:0, family:1, genus:2, species:3, kingdom:0};
+  // alias jump
+  if (ALIAS && ALIAS.has(q)) {
+    const tgt = ALIAS.get(q);
+    if (V_INDEX.has(tgt)) results.push({name: tgt, kind: 'v' + (V_INDEX.get(tgt).isLeaf ? 'sp' : V_INDEX.get(tgt).rank[0]), label: tgt + '  (= ' + q + ')', isAlias: true, rank: V_INDEX.get(tgt).rank});
+  }
+  for (const [name, info] of V_INDEX) {
+    const nl = name.toLowerCase();
+    let hit = null;
+    if (nl === q) hit = 0; else if (nl.startsWith(q)) hit = 1; else if (nl.includes(q)) hit = 2;
+    if (hit === null) continue;
+    results.push({name, kind: 'v' + (info.isLeaf ? 'sp' : rankOrd[info.rank] === 0 ? 'ord' : info.rank === 'family' ? 'fam' : 'gen'), label: name, rank: info.rank, isLeaf: info.isLeaf, pri: hit});
+  }
+  for (const [name, info] of H_INDEX) {
+    const nl = name.toLowerCase();
+    let hit = null;
+    if (nl === q) hit = 0; else if (nl.startsWith(q)) hit = 1; else if (nl.includes(q)) hit = 2;
+    if (hit === null) continue;
+    results.push({name, kind: 'h' + (info.isLeaf ? 'sp' : info.rank === 'order' ? 'ord' : info.rank === 'family' ? 'fam' : 'gen'), label: name, rank: info.rank, isLeaf: info.isLeaf, pri: hit});
+  }
+  results.sort((a, b) => (a.pri - b.pri) || a.name.length - b.name.length);
+  showDrop(results.slice(0, 24));
+}
+
+function showDrop(items) {
+  const drop = document.getElementById('searchdrop');
+  if (!items.length) {
+    drop.innerHTML = '<div class="sitem" style="color:#95a5b5;cursor:default">' + t('noMatch') + '</div>';
+    drop.style.display = 'block';
+    return;
+  }
+  const KIND_CLS = {vsp:'vsp', vord:'vord', vfam:'vfam', vgen:'vgen', hsp:'hsp', hord:'hord', hfam:'hfam', hgen:'hgen'};
+  const KIND_LAB = {
+    vsp:{en:'virus sp.', zh:'病毒种'}, vgen:{en:'genus', zh:'病毒属'}, vfam:{en:'family', zh:'病毒科'}, vord:{en:'order', zh:'病毒目'},
+    hsp:{en:'host sp.', zh:'宿主种'}, hgen:{en:'genus', zh:'宿主属'}, hfam:{en:'family', zh:'宿主科'}, hord:{en:'order', zh:'宿主目'}
+  };
+  drop.innerHTML = items.map((it, i) => {
+    const idx = it.isAlias ? items.findIndex(x => x.name === it.name && x.isAlias) : i;
+    return '<div class="sitem" data-i="' + i + '"><span class="badge ' + (KIND_CLS[it.kind] || 'vsp') + '">' + KIND_LAB[it.kind][lang()] + '</span><span class="nm">' + it.label + '</span></div>';
+  }).join('');
+  drop.style.display = 'block';
+  drop.querySelectorAll('.sitem').forEach((el) => {
+    el.addEventListener('click', () => jumpTo(items[parseInt(el.dataset.i)]));
+  });
+}
+
+function jumpTo(item) {
+  document.getElementById('searchdrop').style.display = 'none';
+  if (item.kind[0] === 'v') {
+    const p = pathForVirus(item.name);
+    if (p) state.vpath = p.path;
+  } else {
+    const p = pathForHost(item.name);
+    if (p) state.hpath = p.path;
+  }
+  state.sel = null;
+  render();
+}
+
+/* ── exports ── */
+function exportPNG() {
+  if (!chart) return;
+  const a = document.createElement('a');
+  a.href = chart.getDataURL({pixelRatio: 2.5, backgroundColor: '#fff'});
+  a.download = 'host-virus_association_sankey.png';
+  a.click();
+}
+function exportCSV() {
+  if (!currentAgg) return;
+  const {links} = topNize(currentAgg);
+  const rows = ['virus_' + V_LEVELS[Math.min(currentAgg.Lv, 3)] + '\thost_' + H_LEVELS[Math.min(currentAgg.Lh, 4)] + '\taccessions'];
+  for (const [key, c] of [...links.entries()].sort((a, b) => b[1] - a[1])) {
+    let [v, h] = key.split('\u0001');
+    if (state.h2v) [v, h] = [h, v];
+    rows.push(prettyName(v) + '\t' + prettyName(h) + '\t' + c);
+  }
+  const blob = new Blob(['\ufeff' + rows.join('\n')], {type: 'text/csv'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'host-virus_association_view.csv';
+  a.click();
+}
+
+/* ── boot ── */
+function initUI() {
+  chart = echarts.init(document.getElementById('chart'), null, {renderer: 'canvas'});
+  window.__dbg = {chart: () => chart, state, DATA: () => DATA, currentAgg: () => currentAgg};
+
+  document.getElementById('f-plantonly').addEventListener('change', (e) => { state.plantOnly = e.target.checked; render(); });
+  document.getElementById('f-unknown').addEventListener('change', (e) => { state.showUnknown = e.target.checked; render(); });
+  document.getElementById('f-topn').addEventListener('change', (e) => { state.topN = parseInt(e.target.value); render(); });
+  document.getElementById('btn-png').addEventListener('click', exportPNG);
+  document.getElementById('btn-csv').addEventListener('click', exportCSV);
+  document.getElementById('btn-reset').addEventListener('click', () => {
+    state.vpath = []; state.hpath = []; state.sel = null;
+    document.getElementById('f-plantonly').checked = true; state.plantOnly = true;
+    document.getElementById('f-unknown').checked = false; state.showUnknown = false;
+    render();
+  });
+  const mv = document.getElementById('mode-v2h'), mh = document.getElementById('mode-h2v');
+  mv.addEventListener('click', () => { state.h2v = false; mv.classList.add('on'); mh.classList.remove('on'); render(); });
+  mh.addEventListener('click', () => { state.h2v = true; mh.classList.add('on'); mv.classList.remove('on'); render(); });
+
+  bindChartEvents();
+
+  const inp = document.getElementById('search');
+  const drop = document.getElementById('searchdrop');
+  let deb = null;
+  const searchNow = () => { const q = inp.value.trim(); if (q.length >= 1) runSearch(q); else drop.style.display = 'none'; };
+  inp.addEventListener('input', () => {
+    clearTimeout(deb);
+    deb = setTimeout(() => ensureAlias().then(searchNow), 180);
+  });
+  inp.addEventListener('focus', () => { ensureAlias().then(() => { if (inp.value.trim()) searchNow(); }); });
+  inp.setAttribute('placeholder', lang() === 'zh' ? '搜索病毒 / 宿主，如 TSWV、CMV' : 'Search virus / host (TSWV, CMV…)');
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.searchwrap')) drop.style.display = 'none';
+  });
+
+  // ECharts 只在 window.resize 时重读容器尺寸，可详情面板展开、语言切换这些改动只动 CSS、
+  // 不动窗口，画布就会留着旧尺寸：实测 1440px 下选中节点后容器由 1112 缩到 768，桑基仍按
+  // 1112 排版，右列标签整个被切在面板外。所以除窗口事件外，再用 ResizeObserver 盯住容器本身。
+  // 画布宽度换了档位就重排桑基：窄画布收紧留白，两组标签才不至于压在一起。
+  let lastBoxKey = '';
+  function syncChartSize() {
+    const el = document.getElementById('chart');
+    const key = el.clientWidth + 'x' + el.clientHeight;
+    if (key === lastBoxKey) return;
+    lastBoxKey = key;
+    if (!chart) return;
+    chart.resize();
+    const opt = chart.getOption();
+    if (!opt.series || !opt.series.length) return;
+    const g = sankeyGutter(el.clientWidth || 900);
+    if (g.left !== lastGutter.left || g.right !== lastGutter.right) {
+      lastGutter = g;
+      chart.setOption({series: [{left: g.left, right: g.right}]});
+    }
+  }
+  window.addEventListener('resize', syncChartSize);
+  if (typeof ResizeObserver === 'function') {
+    new ResizeObserver(syncChartSize).observe(document.getElementById('chart'));
+  }
+  // re-render dynamic texts when the site language toggles (i18n button id varies by i18n.js version)
+  let lastLang = lang();
+  setInterval(() => {
+    const cur = lang();
+    if (cur !== lastLang) {
+      lastLang = cur;
+      inp.setAttribute('placeholder', cur === 'zh' ? '搜索病毒 / 宿主，如 TSWV、CMV' : 'Search virus / host (TSWV, CMV…)');
+      if (DATA) render();
+    }
+  }, 400);
+  document.addEventListener('click', (e) => {
+    const id = e.target.id || '';
+    if (id === 'pvdb-i18n-btn' || id === 'pvdb-lang-btn') {
+      setTimeout(() => {
+        inp.setAttribute('placeholder', lang() === 'zh' ? '搜索病毒 / 宿主，如 TSWV、CMV' : 'Search virus / host (TSWV, CMV…)');
+        if (DATA) render();
+      }, 80);
+    }
+  }, true);
+}
+
+function fillStats() {
+  const s = DATA.meta.stats;
+  const plantSeqs = DATA.pairs.reduce((acc, p) => {
+    const ht = DATA.htax[p[1]] || ['Unknown'];
+    if (!state.plantOnly || ht[0] === 'Plant' || ht[0] === 'Algae') return acc + p[2];
+    return acc;
+  }, 0);
+  document.getElementById('st-seq').textContent = plantSeqs.toLocaleString();
+  document.getElementById('st-vsp').textContent = s.virus_species.toLocaleString();
+  document.getElementById('st-hsp').textContent = s.plant_host_leaves.toLocaleString();
+  document.getElementById('st-pair').textContent = s.pairs.toLocaleString();
+  document.getElementById('ft-meta').textContent = 'build ' + DATA.meta.generated + ' · ' + DATA.meta.source;
+}
+
+fetch('associations.json')
+  .then(r => r.json())
+  .then(d => {
+    DATA = d;
+    buildIndexes();
+    initUI();
+    fillStats();
+    render();
+  })
+  .catch(err => {
+    document.getElementById('chart').innerHTML =
+      '<div class="loading" style="color:#c0392b">Failed to load associations.json — ' + err.message + '</div>';
+  });
+</script>
+<script src="/lib/ai-assistant.js?v=2" data-context="vector" defer></script>
+</body>
+</html>

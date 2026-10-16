@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title data-i18n="Virus–Vector–Host Relations|病毒-媒介-宿主关系">Virus–Vector–Host Relations</title>
+<meta name="description" content="One entry point for every plant virus relationship view: the host–virus association Sankey, the virus–host and vector–virus–host interaction networks, and the vector–host association database with literature evidence. 病毒–宿主关联桑基图、互作网络与媒介宿主文献库的统一入口。">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;min-height:100vh;display:flex;flex-direction:column}
+
+/* ── top bar ── */
+nav.topbar{background:linear-gradient(135deg,#134e6f 0%,#1a5276 55%,#2e86c1 100%);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 20px;flex-wrap:wrap}
+nav.topbar .brand{font-size:17px;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+nav.topbar .brand a{color:#fff;text-decoration:none}
+nav.topbar .sep{opacity:.35}
+nav.topbar .subtitle{font-size:13px;opacity:.92;font-weight:600;white-space:nowrap}
+nav.topbar .stats{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+nav.topbar .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:3px 10px;font-size:11.5px;white-space:nowrap}
+nav.topbar .chip b{font-weight:700}
+
+/* ── head row: current view description + escape hatch ── */
+.head{display:flex;align-items:flex-start;gap:14px;padding:12px 16px 8px;width:100%;max-width:1760px;margin:0 auto}
+.head .desc{flex:1;min-width:0;font-size:12.5px;color:#5a6b7b;line-height:1.7}
+.head .desc b{color:#1a5276}
+.head .desc .from{color:#8a99a8}
+.head .desc .from a{color:#2e86c1;text-decoration:none;font-family:'SF Mono',Consolas,monospace;font-size:11.5px}
+.head .desc .from a:hover{text-decoration:underline}
+.acts{display:flex;gap:8px;flex-shrink:0;padding-top:1px}
+button.act{background:#fff;border:1px solid #dceaf3;border-radius:9px;padding:6px 12px;font-size:12.5px;font-weight:600;color:#1a5276;cursor:pointer;transition:.15s;white-space:nowrap}
+button.act:hover{background:#e3f0f9;border-color:#bcd8e8;color:#2e86c1}
+/* 语言按钮：i18n.js 默认往 body 末尾塞一颗 fixed 在左下角的 44px 圆按钮，在外壳里
+   正好压在 iframe 的内容上——实测 390px 盖住检索框 hint 的第二行、768px 盖住图表
+   头上的 "Node labels" 开关和视图标题。收进 .acts 跟"新窗口打开"并排就没了。 */
+button.act.langtab{min-width:54px;padding:6px 10px;text-align:center}
+
+/* ── view switcher ── */
+.strip{display:flex;gap:9px;padding:0 16px 11px;width:100%;max-width:1760px;margin:0 auto}
+.strip button.vtab{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:2px;align-items:flex-start;text-align:left;background:#fff;border:1px solid #eef2f5;border-radius:11px;padding:9px 12px;cursor:pointer;box-shadow:0 2px 10px rgba(20,60,90,.05);transition:.18s}
+.strip button.vtab:hover{border-color:#bcd8e8;transform:translateY(-2px)}
+.strip button.vtab.on{background:linear-gradient(135deg,#1a5276,#2e86c1);border-color:transparent;color:#fff;box-shadow:0 4px 14px rgba(26,82,118,.28)}
+.strip button.vtab .t{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.strip button.vtab .s{font-size:11px;opacity:.72;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+
+/* ── stage: one iframe at a time (plus the previous one, kept warm) ──
+ * 高度不做死：iframe 长多少、舞台就多高（fitFrame 量出来写进来），
+ * 于是整页滚而不是在框里套一层小滚动条。量到之前用 min-height 兜底。 */
+.stage{flex:none;height:auto;min-height:min(74vh,700px);position:relative;margin:0 16px 8px;background:#fff;border:1px solid #eef2f5;border-radius:14px;box-shadow:0 2px 10px rgba(20,60,90,.06);overflow:hidden}
+.stage iframe{position:absolute;left:0;top:0;width:100%;border:0;display:block;background:#fff}
+.mask{position:absolute;left:0;top:0;right:0;bottom:0;display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;background:#f4f6f8;color:#7b8a99;font-size:13px;z-index:5}
+.mask .spinner{width:26px;height:26px;border:3px solid #dceaf3;border-top-color:#2e86c1;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.foot{padding:0 16px 12px;width:100%;max-width:1760px;margin:0 auto;font-size:11.5px;color:#9aa7b4;line-height:1.7}
+.foot a{color:#2e86c1;text-decoration:none}
+.foot a:hover{text-decoration:underline}
+
+/* 窄屏：四周留白让给 iframe，切换器折行 */
+@media(max-width:900px){
+  /* 手机上一行放不下就别省略号，两行也读得完 */
+  .strip button.vtab .t,.strip button.vtab .s{white-space:normal;overflow:visible;text-overflow:clip}
+  .strip button.vtab .t{font-size:12.5px}
+  .strip{flex-wrap:wrap}
+  .strip button.vtab{flex:1 1 calc(50% - 5px)}
+  .head{flex-direction:column;gap:8px}
+  .acts{align-self:flex-end}
+}
+@media(max-height:560px){.foot{display:none}}
+</style>
+</head>
+<body>
+<script src="/lib/site-nav.js?v=2"></script>
+
+<nav class="topbar">  <div class="subtitle" data-i18n="Virus–Vector–Host Relations|病毒-媒介-宿主关系">Virus–Vector–Host Relations</div>
+  <div class="stats">
+    <span class="chip"><b>15,197</b> <span data-i18n="virus–host pairs|病毒-宿主对">virus–host pairs</span></span>
+    <span class="chip"><b>1,803</b> <span data-i18n="vector records|媒介记录">vector records</span></span>
+    <span class="chip"><b>1,375</b> <span data-i18n="validated triplets|验证三元组">validated triplets</span></span>
+  </div>
+</nav>
+
+<div class="head">
+  <div class="desc" id="vdesc"></div>
+  <div class="acts">
+    <button class="act" id="btn-open" data-i18n="⤢ Open in new tab|⤢ 在新标签打开">⤢ Open in new tab</button>
+  </div>
+</div>
+
+<div class="strip" id="strip"></div>
+
+<div class="stage" id="stage">
+  <div class="mask" id="mask"><div class="spinner"></div><span id="mask-text">Loading…</span></div>
+</div>
+
+<div class="foot" id="vfoot"></div>
+
+<script src="/i18n.js"></script>
+<script>
+'use strict';
+/* ================================================================
+ * 病毒–媒介–宿主关系总览：把三个源页面嵌在同一个外壳里
+ *   #sankey  /association/            桑基图逐级下钻（15,197 对关联）
+ *   #graph   /network/                病毒–宿主力导向网络（211,132 条序列）
+ *   #tvh     /network/#tvh            媒介–病毒–宿主三元组网络（1,375 组）
+ *   #vector  /vector/                 媒介–宿主分面检索 + 文献证据原文
+ *
+ * 两个设计点：
+ * 1) iframe 懒加载，且最多同时保留 2 个（当前 + 上一个）：/vector/ 单页 8.3MB，
+ *    四个全留着内存受不了；留一个"上一个"是为了来回切换时不丢已下钻的状态。
+ * 2) 外层只做壳：所有页面自身一行未改，/network/ 只补了 #tvh hash 深链。
+ *    外壳只往 iframe 里注入一条样式——藏掉内嵌页自己那条导航条、那颗语言按钮，
+ *    以及 /network/ 自带的 vh/tvh 标签条（见 muteInnerChrome）——免得跟外壳的
+ *    顶栏和视图标签条叠成「两个导航栏」「两排同样的标签」。
+ * ================================================================ */
+
+var VIEWS = {
+  sankey: {
+    url: '/association/',
+    icon: '▤',
+    t: {en: 'Association flow', zh: '关联流'},
+    s: {en: 'Sankey, order → species', zh: '桑基图 · 目 → 种逐级下钻'},
+    d: {
+      en: 'Virus taxonomy (order → family → genus → species) on the left, plant host taxonomy on the right, every link one virus–host association. Built from <b>211,132</b> GenBank accessions → <b>15,197</b> associations, <b>5,134</b> virus species × <b>3,702</b> host species. Click a node to pin it as the filter for the next level down; plant-only and "unknown host" switches are in the sidebar.',
+      zh: '左侧病毒分类（目→科→属→种）、右侧植物宿主分类，每条连线是一对病毒–宿主关联。由 <b>211,132</b> 条 GenBank 序列汇总出 <b>15,197</b> 对关联、<b>5,134</b> 种病毒 × <b>3,702</b> 种宿主。点节点即可把它固定为下一层的筛选条件；"仅植物宿主""含未鉴定宿主"开关在左侧栏。'
+    }
+  },
+  graph: {
+    url: '/network/',
+    icon: '✳',
+    t: {en: 'Virus – host network', zh: '病毒–宿主网络'},
+    s: {en: 'Force-directed, all plant viruses', zh: '力导向图 · 全部植物病毒'},
+    d: {
+      en: 'Force-directed graph of the whole virus–host space: nodes are taxa, edges are GenBank co-occurrence, thickness is sequence count. <b>211,132</b> accessions → <b>15,197</b> associations. Double-click a node to focus its ego network, then keep walking up and down the taxonomy with the breadcrumb. Filters: rank ladder, host type, search by abbreviation (TSWV, CMV…) or ICTV name.',
+      zh: '整张病毒–宿主空间的力导向图：节点是分类单元、边是 GenBank 共现关系、粗细是序列条数，覆盖 <b>211,132</b> 条序列、<b>15,197</b> 对关联。双击节点聚焦它的自我网络，再用面包屑沿分类上上下下。筛选：阶元阶梯、宿主类型、支持缩写（TSWV、CMV）与 ICTV 学名检索。'
+    }
+  },
+  tvh: {
+    url: '/network/#tvh',
+    icon: '◈',
+    t: {en: 'Vector – virus – host network', zh: '媒介–病毒–宿主网络'},
+    s: {en: '1,375 validated triplets', zh: '1,375 组文献验证三元组'},
+    d: {
+      en: 'The same graph engine, fed by literature-validated triplets instead of GenBank co-occurrence: <b>1,375</b> virus–vector–host triplets (<b>100</b> vectors × <b>447</b> viruses × <b>380</b> hosts), each edge carrying its transmission mode, with <b>120</b> of them virus–vector only. Edge style distinguishes non-persistent / semi-persistent / persistent propagation and the mode recorded in the paper.',
+      zh: '同一个图引擎，数据源换成文献验证的三元组：<b>1,375</b> 组病毒–媒介–宿主关系（<b>100</b> 种媒介 × <b>447</b> 种病毒 × <b>380</b> 种宿主），每条边带传毒机制，其中 <b>120</b> 组只验证了病毒–媒介关系。连线样式区分非持久性／半持久性／持久性增殖型，以及文献记录的传毒方式。'
+    }
+  },
+  vector: {
+    url: '/vector/',
+    icon: '▦',
+    t: {en: 'Vector & evidence library', zh: '媒介与文献库'},
+    s: {en: '1,803 records, faceted tables', zh: '1,803 条记录 · 分面表格'},
+    d: {
+      en: 'The tabular, source-level view: <b>1,803</b> virus–vector–host entries merged from WUR and VHDB, with transmission mode, acquisition and inoculation periods, plus a literature tab giving the original evidence sentence, year and source for each relation. Of these, <b>1,375</b> experiment-validated triplets feed the network view above, so the two figures differ by design.',
+      zh: '面向检索的表格视图：WUR 与 VHDB 双源合并的 <b>1,803</b> 条病毒–媒介–宿主记录，含传毒方式、获毒取食期与接种传毒期；"文献"标签给每条关系附上证据原文、年份与出处。其中 <b>1,375</b> 组实验验证三元组构成上面网络图的数据源，两个数字口径不同，并不是对不上。'
+    }
+  }
+};
+var ORDER = ['sankey', 'graph', 'tvh', 'vector'];
+var DEFAULT_KEY = 'sankey';
+
+/* data-i18n 只能放纯文本（i18n.js 用 textContent 覆盖，标签会被当字面量显示），
+   所以带链接的页脚在这里按语言渲染。 */
+var FOOT = {
+  en: 'Four views on one page: <a href="/association/">/association/</a> · <a href="/network/">/network/</a> · the Vector &amp; evidence library (the former <a href="/vector/">/vector/</a> app, now merged here — old links land on this view; add <code>?full=1</code> for the standalone full-screen table). Network Tab 1 counts GenBank accessions, not literature-confirmed host ranges.',
+  zh: '四个视图合在同一页：<a href="/association/">/association/</a> · <a href="/network/">/network/</a> · 媒介与文献库（原 <a href="/vector/">/vector/</a> 已并入本页，旧链接会落到这个视图；加 <code>?full=1</code> 可打开独立全屏表格）。网络图 Tab 1 的计数是 GenBank 序列条数，不等于文献证实的宿主范围。'
+};
+
+var stage = document.getElementById('stage');
+var mask = document.getElementById('mask');
+var maskText = document.getElementById('mask-text');
+var strip = document.getElementById('strip');
+var vdesc = document.getElementById('vdesc');
+var current = null;
+var live = {};        // key -> iframe（最多 2 个）
+var recent = [];      // 挂载顺序，最后一个就是 current
+var maskTimer = null;
+
+function lang() {
+  try { if (window.PVDB_i18n && PVDB_i18n.lang) return PVDB_i18n.lang(); } catch (e) { /* noop */ }
+  return localStorage.getItem('pvdb_lang') || 'en';
+}
+function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+/* i18n.js 给每一页都注入一颗 fixed 左下角的语言按钮。外壳里这一颗会压在 iframe 的
+   内容上（实测见 CSS 注释），iframe 里各自那一颗又跟它重复 —— 所以：外壳的收进
+   .acts 改成普通按钮，整页只剩这一个；iframe 里的连同它自己那条导航条一起藏掉
+   （muteInnerChrome，见下）。 */
+var acts = document.querySelector('.acts');
+function adoptLangBtn() {
+  var b = document.getElementById('pvdb-lang-btn') || document.getElementById('pvdb-i18n-btn');
+  if (!b || b.dataset.adopted || !acts) return false;
+  b.dataset.adopted = '1';
+  b.removeAttribute('style');          // 去掉 fixed/left/bottom，位置改由 .acts 排
+  b.className = 'act langtab';
+  b.type = 'button';
+  /* 外壳自己这颗按钮点完**同步**重绘，不等下面那个 400ms 轮询。
+     两个坑：① iframe 里的力导向图占着主线程，轮询会被推迟到 3–16 秒；
+     ② 连 setTimeout(0) 都会被推迟（实测仍要 3.3 s），所以不能延后执行。
+     i18n.js 的 onclick 是本函数之前设的 DOM0 处理器，包装它再重绘，顺序才有保证。 */
+  var prevClick = b.onclick;
+  b.onclick = function () {
+    if (prevClick) prevClick.call(this);   // i18n 的 setLang()
+    repaintForLang();
+  };
+  acts.appendChild(b);
+  return true;
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', adoptLangBtn);
+else adoptLangBtn();
+setTimeout(adoptLangBtn, 80);          // i18n 注入晚一拍时的兜底
+
+/* 嵌进来的页面自带两样「页面级」的外壳，放在外壳页里都是重复的：
+   ① 一颗 floating 语言按钮（在它自己文档左下角）——语言统一由外壳 .acts 里那颗切
+      （localStorage 同源共享，各页自己的 400ms 轮询会跟上并重绘）；
+   ② 它自己那条深蓝导航条——/association/、/network/ 是 nav.topbar，/vector/ 是一套
+      带 .top-row/.sub-row 的全站导航条。外壳顶部已经有一条，两条叠着就是「两个
+      导航栏」。三个源页的 nav 都恰好是 body 的直接子级、且全页仅此一个（实测
+      2026-09-30），所以 body>nav 能精确命中，不会碰到 .controls/.detail 里的东西。
+   ③ /network/ 自己那条 vh/tvh 标签条（body>.tabs）——外壳 .strip 里的 graph/tvh
+      就是这两项，摆在一起同一组名字出现两次。全站只有 /network/ 有 .tabs，
+      /association/ 与 /vector/ 都没有（实测），所以 body>.tabs 也只命中它。
+   load 之后才注样式——按钮是各页 DOMContentLoaded 时才建的。 */
+function muteInnerChrome(f) {
+  try {
+    var d = f.contentDocument;
+    if (!d || d.getElementById('pvdb-hub-chrome-mute')) return;
+    var s = d.createElement('style');
+    s.id = 'pvdb-hub-chrome-mute';
+    s.textContent = '#pvdb-lang-btn,#pvdb-i18n-btn{display:none!important}' +
+                    'body>nav{display:none!important}' +
+                    /* /network/ 自带一条 vh/tvh 标签条（body>.tabs），与外壳 .strip
+                       里的 graph/tvh 两项重复显示同一组名字 → 一并藏掉。
+                       只 display:none，节点还在 DOM 里，它自己那套
+                       #tab-vh/#tab-evh 的点击绑定不受影响；独立访问 /network/
+                       时也不会变（这条样式只有外壳会注入）。 */
+                    'body>.tabs{display:none!important}' +
+                    /* /network/ 的画布是 min-height:clamp(0px,calc(100vh - 228px),480px)，
+                       而 100vh 在这里是 **iframe 视口**高度 —— 在外壳里自指，藏掉自带
+                       标签条后会收敛到 363px（它自己设计的上限是 480）。钉回上限，
+                       免得嵌进来主图变小。只在外壳注入，独立访问 /network/ 不受影响。 */
+                    '#chart{min-height:480px!important}' +
+                    /* 2026-10-13: /vector/ 并入本页 —— 内嵌时藏掉它自己的蓝色大标题
+                       （Virus-Vector-Host Database hero），免得页中页、双标题双计数；
+                       独立访问 /vector/?full=1 不受影响（这条样式只有外壳会注入）。 */
+                    '.hero{display:none!important}';
+    (d.head || d.documentElement).appendChild(s);
+  } catch (e) { /* 跨域或还没就绪，跳过 */ }
+}
+
+function paintStrip() {
+  var zh = lang() === 'zh';
+  strip.innerHTML = '';
+  ORDER.forEach(function (k) {
+    var v = VIEWS[k];
+    var b = document.createElement('button');
+    b.className = 'vtab' + (k === current ? ' on' : '');
+    b.type = 'button';
+    b.dataset.view = k;
+    b.setAttribute('aria-pressed', k === current ? 'true' : 'false');
+    b.innerHTML = '<span class="t">' + (zh ? esc(v.t.zh) : esc(v.t.en)) +
+                  '</span><span class="s">' + (zh ? esc(v.s.zh) : esc(v.s.en)) + '</span>';
+    b.addEventListener('click', function () { show(k, true); });
+    strip.appendChild(b);
+  });
+}
+
+function paintDesc() {
+  var v = VIEWS[current];
+  var zh = lang() === 'zh';
+  /* 这里原来链到独立路由（/association/ 之类）。四个视图现在是本页的子页面，
+     独立路由不该再摆到台面上，所以改成「本页直达」锚点 —— 可右键复制地址，
+     点它也不会离开本页。 */
+  vdesc.innerHTML = v.d[zh ? 'zh' : 'en'] +
+    ' <span class="from">— ' + (zh ? '本页直达' : 'permalink') +
+    ' <a href="#' + current + '">' + esc(location.pathname + '#' + current) + '</a></span>';
+}
+
+/* 四个视图各是一个子页面 —— 各自有独立的 document.title，这样把 #graph 分享出去、
+   或者收藏成书签，标签页上写的是「Virus – host network」而不是笼统的总标题。
+   注意 <title> 也带 data-i18n，i18n.js 的 apply() 会 textContent 覆盖它，
+   所以这里必须**连属性一起改写**，否则切语言时标题会被打回固定值。 */
+function paintTitle() {
+  var v = VIEWS[current];
+  var zh = lang() === 'zh';
+  var t = document.querySelector('title');
+  if (!t) return;
+  var EN = ' · Virus–Vector–Host Relations', ZH = ' · 病毒-媒介-宿主关系';
+  t.setAttribute('data-i18n', v.t.en + EN + '|' + v.t.zh + ZH);
+  document.title = (zh ? v.t.zh : v.t.en) + (zh ? ZH : EN);
+}
+
+function paintFoot() {
+  document.getElementById('vfoot').innerHTML = FOOT[lang() === 'zh' ? 'zh' : 'en'];
+}
+
+/* ── iframe 跟嵌入页内容等高 ─────────────────────────────
+ * 外壳不定死高度：iframe 里的文档多高、舞台就多高，于是整页滚，
+ * 而不是在几百像素的框里再套一层小滚动条——定高的做法会把桑基图
+ * 从中间截断，中文标签一高就截得更深。
+ * 三个源页的文档高度与 iframe 窗口多高无关（实测：窗口 684/900/
+ * 1200/1600 四个档位下文档恒为 1058px），所以量一次就收敛，
+ * 不会出现"越撑越高"。换视图、切语言、改窗口都会让高度变，
+ * 挂轮询兜底；差不到 16px 就不再写，免得来回抖。 */
+function fitFrame(f) {
+  if (!f) return;
+  var h;
+  try {
+    var d = f.contentDocument;
+    if (!d || !d.documentElement) return;
+    /* 量 body 而不是 documentElement：后者的 scrollHeight 会被**钳在 iframe
+       当前高度**上（内容比窗口矮时它返回窗口高度），于是分配高度只增不减 ——
+       /vector/ 藏掉内嵌 nav 后内层矮了 40px 却收不回去，底部留一条空白；
+       /network/ 则会停在半成品的偏小值上压出内滚动条。body.scrollHeight
+       不受这个钳制，量到的是真实内容高度（实测四个视图都与「所有非 fixed
+       子元素 bottom 的最大值」逐像素一致）。 */
+    h = (d.body || d.documentElement).scrollHeight;
+  } catch (e) { return; }        // 跨域就保持现状
+  if (h < 60) return;
+  h = Math.min(h, 6000);
+  if (Math.abs(h - parseFloat(f.style.height || '0')) < 16) return;
+  f.style.height = h + 'px';
+  f.dataset.h = h;               // 切回来时直接用，不用等下一帧量
+  if (live[current] === f) {
+    /* .stage 有 min-height:min(74vh,700px)（量到之前防塌），而 CSS 的
+       min-height 会**盖掉** inline height —— 内嵌页比它矮时（实测 /network/
+       藏掉自带标签条后 573px < 666px）就会在 iframe 底下留一条空白。
+       量到了就把它撤掉，高度完全交给 height 定。 */
+    stage.style.height = h + 'px';
+    stage.style.minHeight = '0';
+  }
+}
+
+function fitAll() {
+  Object.keys(live).forEach(function (k) { fitFrame(live[k]); });
+}
+
+setInterval(fitAll, 400);
+window.addEventListener('resize', fitAll);
+
+function show(key, push) {
+  if (!VIEWS[key]) key = DEFAULT_KEY;
+  current = key;
+
+  // hide every warm frame except the one we want.
+  // 只切 visibility，不切 display：/network/ 画在 canvas 上，
+  // display:none 子树里的 canvas 后备存储会被浏览器丢掉，切回来就白了。
+  Object.keys(live).forEach(function (k) {
+    live[k].style.visibility = (k === key) ? 'visible' : 'hidden';
+  });
+  // 舞台高度跟着这一帧走：量过的直接拿来（不会先塌一下再弹开），
+  // 没量过的新页面先回到 CSS 的 min-height，等 load 后 fitFrame 补
+  var knownH = live[key] && live[key].dataset.h;
+  stage.style.height = knownH ? knownH + 'px' : '';
+  stage.style.minHeight = knownH ? '0' : '';   // 没量过就交回 CSS 防塌
+
+  if (!live[key]) {
+    var f = document.createElement('iframe');
+    // 深链透传：外壳 URL 的 ?virus=&host= 等参数转发进 vector 视图；
+    // vector 页顶层打开会自动并入本壳（仅 ?full=1 保留独立视图），iframe 内嵌需显式带 full=1
+    var _vq = '';
+    if (key === 'vector' && location.search.length > 1) {
+      _vq = (VIEWS[key].url.indexOf('?') >= 0 ? '&' : '?') + 'full=1&' + location.search.substring(1);
+    }
+    f.src = VIEWS[key].url + _vq;
+    f.title = VIEWS[key].t[lang() === 'zh' ? 'zh' : 'en'];
+    f.setAttribute('allow', 'fullscreen');
+    f.addEventListener('load', function () {
+      clearTimeout(maskTimer);
+      if (current === key) mask.style.display = 'none';
+      muteInnerChrome(f);
+      fitFrame(f);
+    });
+    stage.appendChild(f);
+    live[key] = f;
+    /* 这一页可能是 8.3MB 的 /vector/，mask 撑到 load 为止；
+       load 迟迟不来（请求挂死）也不能把人困在遮罩后面 */
+    maskText.textContent = (lang() === 'zh' ? '正在加载 ' : 'Loading ') + VIEWS[key].s[lang() === 'zh' ? 'zh' : 'en'] + '…';
+    mask.style.display = 'flex';
+    clearTimeout(maskTimer);
+    maskTimer = setTimeout(function () { mask.style.display = 'none'; }, 25000);
+  } else {
+    clearTimeout(maskTimer);
+    mask.style.display = 'none';   // 热着的 frame，直接可见
+  }
+  // 重复点当前视图会把 recent 顶出重复项，"留两个"就只剩一个不同的 frame
+  recent = recent.filter(function (k) { return live[k] && k !== key; });
+  recent.push(key);
+
+  // keep current + previous warm, unmount the rest
+  var keep = recent.slice(-2);
+  recent.forEach(function (k) {
+    if (keep.indexOf(k) === -1) { live[k].remove(); delete live[k]; }
+  });
+  recent = keep;
+
+  if (push) {
+    try { location.hash = key; } catch (e) { /* noop */ }
+  }
+  paintStrip();
+  paintDesc();
+  paintTitle();
+  paintFoot();
+  document.getElementById('btn-open').dataset.target = key;
+  syncNav(key);
+}
+/* 2026-10-13: Vector 已并入本页 —— 全局导航高亮跟视图走：只有 #vector 视图
+   点亮 Vector；其它视图清掉（含 i18n.js markActive 按前缀误加的 .active）。 */
+function syncNav(key){
+  var nav = document.getElementById('pvdb-nav');
+  if(!nav) return;
+  var links = nav.querySelectorAll('a');
+  for(var i=0;i<links.length;i++) links[i].classList.remove('on','active');
+  if(key==='vector'){
+    var v = nav.querySelector('a[href="/relations/#vector"]');
+    if(v) v.classList.add('on');
+  }
+}
+document.addEventListener('DOMContentLoaded', function(){ syncNav(current); });
+
+/* 语言跟随站点（localStorage 同源共享，iframe 内也读同一份）。
+   语言一变就整体重绘：外壳文案 + 每个 iframe 的标题与内文。 */
+function repaintForLang() {
+  lastLang = lang();
+  paintStrip();
+  paintDesc();
+  paintTitle();
+  paintFoot();
+  Object.keys(live).forEach(function (k) {
+    live[k].title = VIEWS[k].t[lastLang === 'zh' ? 'zh' : 'en'];
+    // 顺手让嵌进来的页面立刻换语言，不用等它自己那 400ms 轮询
+    try { live[k].contentWindow.PVDB_i18n && live[k].contentWindow.PVDB_i18n.apply(); } catch (e) { /* noop */ }
+  });
+}
+var lastLang = lang();
+/* 轮询是兜底（语言可能被 iframe 内那颗按钮改掉）。注意它会被 iframe 里的
+   力导向图拖慢，所以外壳自己那颗按钮不走这里，见 adoptLangBtn()。 */
+setInterval(function () { if (lang() !== lastLang) repaintForLang(); }, 400);
+
+document.getElementById('btn-open').addEventListener('click', function () {
+  var k = this.dataset.target || DEFAULT_KEY;
+  /* 打开本页的对应子页面，而不是独立路由 */
+  window.open(location.pathname + '#' + k, '_blank', 'noopener');
+});
+
+window.addEventListener('hashchange', function () {
+  var k = (location.hash || '').replace('#', '');
+  if (VIEWS[k] && k !== current) show(k, false);
+});
+
+/* 入口：hash 决定视图，没有就落默认视图（不写 hash，保持地址干净） */
+(function boot() {
+  var k = (location.hash || '').replace('#', '');
+  show(VIEWS[k] ? k : DEFAULT_KEY, false);
+})();
+</script>
+<script src="/lib/ai-assistant.js?v=2" data-context="vector" defer></script>
+</body>
+</html>

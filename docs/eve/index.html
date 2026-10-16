@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title data-i18n="Plant EVE Landscape|植物内源病毒元件全景">Plant EVE Landscape</title>
+<meta name="description" content="Kingdom-scale landscape of endogenous viral elements (EVEs) in 1,527 plant genomes — 150,136 decontaminated loci across 284 host families, with virus-family, host-family, DNA/RNA, amplification and RT-phylogeny perspectives. 植物界内源病毒元件全库分析。">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;overflow-x:hidden}
+
+/* ── top bar ── */
+nav.topbar{background:linear-gradient(135deg,#134e6f 0%,#1a5276 55%,#2e86c1 100%);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 20px;flex-wrap:wrap}
+nav.topbar .brand{font-size:17px;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+nav.topbar .brand a{color:#fff;text-decoration:none}
+nav.topbar .sep{opacity:.35}
+nav.topbar .subtitle{font-size:13px;opacity:.92;font-weight:600;white-space:nowrap}
+nav.topbar .stats{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+nav.topbar .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:3px 10px;font-size:11.5px;white-space:nowrap}
+nav.topbar .chip b{font-weight:700}
+
+/* ── layout ── */
+.layout{display:flex;gap:14px;padding:14px 16px;align-items:stretch;max-width:1760px;margin:0 auto}
+.panel{background:#fff;border:1px solid #eef2f5;border-radius:14px;box-shadow:0 2px 10px rgba(20,60,90,.06)}
+aside.controls{width:288px;flex-shrink:0;padding:14px;display:flex;flex-direction:column;gap:14px;max-height:calc(100vh - 130px);overflow-y:auto;position:sticky;top:14px}
+section.chartcol{flex:1;min-width:0;display:flex;flex-direction:column;gap:12px}
+aside.detail{width:330px;flex-shrink:0;padding:14px;max-height:calc(100vh - 130px);overflow-y:auto;position:sticky;top:14px;display:none}
+aside.detail.open{display:block}
+@media(max-width:1150px){aside.detail{position:static;max-height:none;width:100%}.layout{flex-direction:column}aside.controls{position:static;max-height:none;width:100%}}
+
+/* ── controls ── */
+.ctl-title{font-size:12px;font-weight:700;color:#8a99a8;letter-spacing:.6px;border-left:3px solid #2e86c1;padding-left:8px;margin:2px 0 8px}
+.viewlist{display:flex;flex-direction:column;gap:5px}
+.viewlist button{text-align:left;padding:7px 10px;border:1px solid #e2e8ee;background:#fff;color:#3c4b5b;border-radius:9px;font-size:12.5px;cursor:pointer;transition:.15s;display:flex;align-items:center;gap:8px}
+.viewlist button:hover{border-color:#2e86c1;background:#eef5fa}
+.viewlist button.on{background:#2e86c1;border-color:#2e86c1;color:#fff;font-weight:600}
+.viewlist button .ic{width:16px;text-align:center;opacity:.85;font-size:13px}
+select,.sel{width:100%;padding:6px 8px;border:1px solid #d5dde5;border-radius:8px;font-size:12.5px;background:#fff;color:#2c3e50;outline:none}
+select:focus{border-color:#2e86c1}
+.chk{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#3c4b5b;cursor:pointer;padding:2.5px 0;user-select:none}
+.chk input{accent-color:#2e86c1;width:14px;height:14px;flex-shrink:0}
+.chk .sw{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.hint{font-size:11px;color:#95a5b5;line-height:1.6}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap}
+button.act{flex:1;min-width:66px;padding:7px 10px;border:1px solid #d5dde5;background:#fff;color:#3c4b5b;border-radius:8px;font-size:12px;cursor:pointer;transition:.15s;white-space:nowrap}
+button.act:hover{border-color:#2e86c1;color:#1a5276;background:#eef5fa}
+button.act.primary{background:#2e86c1;border-color:#2e86c1;color:#fff}
+.legend{font-size:11px;color:#7b8a99;line-height:1.75}
+.legend .sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:baseline}
+
+/* ── chart ── */
+.chart-head{display:flex;align-items:flex-start;gap:10px;padding:12px 16px 0;flex-wrap:wrap}
+.chart-head .t{font-size:15px;font-weight:700;color:#1a5276;line-height:1.4}
+.chart-head .st{font-size:11.5px;color:#8a99a8;margin-top:2px;line-height:1.5}
+.chart-head .mode{margin-left:auto;display:flex;border:1px solid #d5dde5;border-radius:9px;overflow:hidden;flex-wrap:wrap}
+.chart-head .mode button{border:none;background:#fff;padding:6px 13px;font-size:12px;cursor:pointer;color:#3c4b5b}
+.chart-head .mode button.on{background:#2e86c1;color:#fff}
+#chart{width:100%;height:calc(100vh - 265px);min-height:460px}
+@media(max-width:1150px){#chart{height:560px}}
+#notes{padding:0 16px 14px;font-size:11.5px;color:#8a99a8;line-height:1.75}
+#notes b{color:#5a6b7b}
+.loading{padding:80px 20px;text-align:center;color:#7b8a99;font-size:14px}
+.spinner{width:34px;height:34px;border:3px solid #e3ecf3;border-top-color:#2e86c1;border-radius:50%;margin:0 auto 14px;animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── detail panel ── */
+#detail .dt{font-size:14px;font-weight:700;color:#1a5276;line-height:1.5;word-break:break-word}
+#detail .sub{font-size:11.5px;color:#8a99a8;margin:3px 0 10px}
+#detail .kv{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+#detail .kv .c{background:#f7fafc;border:1px solid #eef2f5;border-radius:10px;padding:8px 10px}
+#detail .kv .c b{display:block;font-size:16px;color:#1a5276}
+#detail .kv .c span{font-size:10.5px;color:#95a5b5}
+#detail h4{margin:12px 0 6px;font-size:12px;color:#8a99a8;letter-spacing:.5px}
+.linkrow{display:flex;align-items:center;gap:8px;padding:4px 6px;border-radius:8px;cursor:pointer;font-size:12px}
+.linkrow:hover{background:#eef5fa}
+.linkrow .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.linkrow .v{color:#7b8a99;font-size:11px;flex-shrink:0}
+.barwrap{height:5px;background:#eef2f5;border-radius:3px;overflow:hidden;flex-shrink:0;width:50px}
+.barwrap i{display:block;height:100%;border-radius:3px}
+#detail .backlink{font-size:11.5px;color:#2e86c1;cursor:pointer;text-decoration:none}
+
+/* ── footer ── */
+footer{max-width:1760px;margin:0 auto;padding:10px 20px 24px;font-size:11.5px;color:#95a5b5;line-height:1.85}
+footer a{color:#2e86c1;text-decoration:none}
+</style>
+</head>
+<body>
+<script src="/lib/site-nav.js?v=2"></script>
+
+<nav class="topbar">  <div class="subtitle" data-i18n="Plant EVE Landscape|植物 EVE 全景">Plant EVE Landscape</div>
+  <div class="stats">
+    <span class="chip"><b id="st-loci">–</b> <span data-i18n="EVE loci|EVE 位点">EVE loci</span></span>
+    <span class="chip" title="1,527 plant genomes were screened; 1,400 of them carry at least one decontaminated EVE locus. | 共筛查 1,527 个植物基因组，其中 1,400 个至少含 1 个去污染后的 EVE 位点。"><b id="st-gen">–</b> <span data-i18n="genomes with EVE|有 EVE 的基因组">genomes with EVE</span></span>
+    <span class="chip"><b id="st-hf">–</b> <span data-i18n="host families|宿主科">host families</span></span>
+    <span class="chip"><b id="st-ratio">–</b> <span data-i18n="DNA : RNA|DNA : RNA">DNA : RNA</span></span>
+  </div>
+</nav>
+
+<div class="layout">
+
+  <aside class="controls panel">
+    <div>
+      <div class="ctl-title" data-i18n="PERSPECTIVE|分析视角">PERSPECTIVE</div>
+      <div class="viewlist" id="viewlist"></div>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="GENOME TYPE|基因组类型">GENOME TYPE</div>
+      <div id="ftype"></div>
+      <div class="hint" style="margin-top:5px" data-i18n="Uncheck to exclude a genome type from every view.|取消勾选即从所有视角中排除该类型。">Uncheck to exclude a genome type.</div>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="HOST GROUP|宿主类群">HOST GROUP</div>
+      <div id="fgroup"></div>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="TOP N|显示条数">TOP N</div>
+      <select id="topn">
+        <option value="10">Top 10</option>
+        <option value="15">Top 15</option>
+        <option value="20" selected>Top 20</option>
+        <option value="30">Top 30</option>
+        <option value="50">Top 50</option>
+      </select>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="EXPORT|导出">EXPORT</div>
+      <div class="btnrow">
+        <button class="act" id="btnPng">PNG</button>
+        <button class="act" id="btnCsv">CSV</button>
+        <button class="act" id="btnReset">↺ <span data-i18n="Reset|重置">Reset</span></button>
+      </div>
+    </div>
+
+    <div class="legend" id="legend"></div>
+  </aside>
+
+  <section class="chartcol panel">
+    <div class="chart-head">
+      <div>
+        <div class="t" id="viewTitle">–</div>
+        <div class="st" id="viewSub"></div>
+      </div>
+      <div class="mode" id="submodes"></div>
+    </div>
+    <div id="chart"><div class="loading"><div class="spinner"></div><span data-i18n="Loading EVE landscape data…|正在加载 EVE 全景数据…">Loading data…</span></div></div>
+    <div id="notes"></div>
+  </section>
+
+  <aside class="detail panel" id="detail"></aside>
+
+</div>
+
+<footer>
+  <div id="ftText" data-i18n="Kingdom-scale survey of endogenous viral elements in plant genomes: 1,527 plant genomes screened (three-stage diamond/RVDB pipeline), 150,136 decontaminated viral_supported loci across 284 host families. Raw total before decontamination was 205,873; 55,737 (27%) were phiX174 library spike-in contamination concentrated in a single assembly and were removed genome-wide. Counts are loci (integration sites), not unique viruses.|植物基因组内源病毒元件全库调查：筛查 1,527 个植物基因组（三阶段 diamond/RVDB 流程），去污染后 150,136 个 viral_supported 位点，覆盖 284 个宿主科。去污染前原始总量 205,873，其中 55,737（27%）为集中于单一组装体的 phiX174 建库内参污染，已按基因组整体剔除。计数单位为位点（整合位点），不等同于病毒种数。">
+    Kingdom-scale survey of endogenous viral elements in plant genomes.
+  </div>
+  <div id="ftMeta" style="margin-top:6px"></div>
+</footer>
+
+<script src="echarts.min.js"></script>
+<script src="/i18n.js"></script>
+<script>
+/* i18n.js injects a fixed 44px language button at bottom-left, which lands on
+   top of the footer. Adopt it into the top-bar chips (same as docs/association/). */
+(function () {
+  function adopt() {
+    var b = document.getElementById('pvdb-lang-btn');
+    var host = document.querySelector('nav.topbar .stats');
+    if (!b || !host || b.parentNode === host) return !!b;
+    b.style.cssText = 'position:static;width:auto;height:auto;min-width:52px;'
+      + 'padding:3px 10px;border-radius:14px;font-size:11.5px;font-weight:600;line-height:1.5;'
+      + 'background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);'
+      + 'color:#fff;box-shadow:none;cursor:pointer;font-family:inherit;'
+      + 'display:inline-flex;align-items:center;justify-content:center;white-space:nowrap';
+    host.appendChild(b);
+    return true;
+  }
+  function go() {
+    if (adopt()) return;
+    var n = 0, t = setInterval(function () { if (adopt() || ++n > 50) clearInterval(t); }, 80);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go);
+  else go();
+})();
+</script>
+<script>
+/* ============================================================
+ * Plant EVE Landscape — /eve/
+ * Data: docs/eve/data/{eve_landscape,eve_dynamics,eve_phylo}.json
+ * Built by docs/eve/build_eve_data.py on the analysis server (246).
+ * ============================================================ */
+(function () {
+'use strict';
+
+function T(en, zh) {
+  return (window.PVDB_i18n && PVDB_i18n.lang() === 'zh') ? zh : en;
+}
+
+/* ---------- palette ---------- */
+var VCOL = {
+  'dsDNA-RT': '#7d3c98', 'ssDNA': '#2980b9', 'dsDNA': '#16a085',
+  'dsRNA': '#e67e22', 'ssRNA+': '#c0392b', 'ssRNA-': '#d35400',
+  'phage': '#95a5a6', 'unclassified': '#c9d6e2'
+};
+var VLAB = {};
+function relabelV() {
+  VLAB = {
+    'dsDNA-RT': T('dsDNA-RT (pararetrovirus)', 'dsDNA-RT（副逆转录）'),
+    'ssDNA': 'ssDNA', 'dsDNA': 'dsDNA', 'dsRNA': 'dsRNA',
+    'ssRNA+': 'ssRNA+', 'ssRNA-': 'ssRNA-',
+    'phage': T('phage (bacterial)', '噬菌体'),
+    'unclassified': T('unclassified', '未细分')
+  };
+}
+var GCOL = {
+  algae: '#16a085', bryophyte: '#27ae60', fern: '#2ecc71', gymnosperm: '#00695c',
+  basal_angiosperm: '#9b59b6', magnoliid: '#e74c3c', monocot: '#e67e22',
+  eudicot: '#2980b9', unknown: '#bdc3c7'
+};
+var DNA_T = { 'dsDNA-RT': 1, 'ssDNA': 1, 'dsDNA': 1 };
+var RNA_T = { 'dsRNA': 1, 'ssRNA+': 1, 'ssRNA-': 1 };
+var GLAB = {};
+function relabelG() {
+  GLAB = {
+    algae: T('Algae', '藻类'), bryophyte: T('Bryophytes', '苔藓'),
+    fern: T('Ferns & allies', '蕨类及近缘'), gymnosperm: T('Gymnosperms', '裸子植物'),
+    basal_angiosperm: T('Basal angiosperms', '基部被子植物'),
+    magnoliid: T('Magnoliids', '木兰类'), monocot: T('Monocots', '单子叶'),
+    eudicot: T('Eudicots', '真双子叶'), unknown: T('Unplaced', '未定位')
+  };
+}
+
+/* ---------- views ---------- */
+var VIEWS = [
+  { id: 'virus', ic: '◉', en: 'Virus taxa', zh: '病毒类群' },
+  { id: 'host',  ic: '❖', en: 'Host families', zh: '宿主科' },
+  { id: 'dnarna', ic: '◐', en: 'DNA / RNA duality', zh: 'DNA / RNA 二重性' },
+  { id: 'matrix', ic: '▦', en: 'Virus × host matrix', zh: '病毒 × 宿主矩阵' },
+  { id: 'past',  ic: '◑', en: 'Past vs present', zh: '古今对照' },
+  { id: 'amp',   ic: '◈', en: 'Amplification dynamics', zh: '扩增动力学' },
+  { id: 'tree',  ic: '⑂', en: 'RT phylogeny', zh: 'RT 系统发育' },
+  { id: 'qc',    ic: '✚', en: 'Cases & QC', zh: '案例与质控' }
+];
+
+/* ---------- state ---------- */
+var S = {
+  view: 'virus', topn: 20,
+  offType: {}, offGroup: {}, sub: 0
+};
+var D = {};                 // loaded json
+var CH = null;              // echarts instance
+var LAST = null;            // last rendered option (for CSV export)
+
+/* ---------- boot ---------- */
+function qs(k) { var m = location.search.match(new RegExp('[?&]' + k + '=([^&]*)')); return m ? decodeURIComponent(m[1]) : null; }
+
+Promise.all([
+  fetch('data/eve_landscape.json').then(function (r) { return r.json(); }),
+  fetch('data/eve_dynamics.json').then(function (r) { return r.json(); }),
+  fetch('data/eve_phylo.json').then(function (r) { return r.json(); })
+]).then(function (a) {
+  D.land = a[0]; D.dyn = a[1]; D.phy = a[2];
+  init();
+}).catch(function (e) {
+  document.getElementById('chart').innerHTML =
+    '<div class="loading" style="color:#c0392b">Failed to load data: ' + e + '</div>';
+});
+
+function init() {
+  relabelV(); relabelG();
+  var ov = D.land.overview;
+  document.getElementById('st-loci').textContent = fmt(ov.loci);
+  document.getElementById('st-gen').textContent = fmt(ov.genomes);
+  document.getElementById('st-hf').textContent = fmt(ov.host_families);
+  document.getElementById('st-ratio').textContent = D.land.dna_rna.ratio + ' : 1';
+  document.getElementById('ftMeta').textContent =
+    T('Dataset frozen 2026-09-23 · tier1 ' + fmt(ov.loci_tier1) + ' + tier2 ' + fmt(ov.loci_tier2) +
+      ' = ' + fmt(ov.loci) + ' loci · raw incl. phiX ' + fmt(ov.loci_raw) + ' · phiX removed ' + fmt(ov.phix_loci),
+      '数据集冻结于 2026-09-23 · tier1 ' + fmt(ov.loci_tier1) + ' + tier2 ' + fmt(ov.loci_tier2) +
+      ' = ' + fmt(ov.loci) + ' 位点 · 含 phiX 原始 ' + fmt(ov.loci_raw) + ' · 已剔 phiX ' + fmt(ov.phix_loci));
+
+  buildViewList(); buildFilters();
+  var v = qs('view'); if (v && VIEWS.some(function (x) { return x.id === v; })) S.view = v;
+  var n = qs('topn'); if (n) { S.topn = +n; document.getElementById('topn').value = n; }
+  var off = qs('off'); if (off) off.split(',').forEach(function (k) { S.offType[k] = 1; });
+  var offg = qs('offg'); if (offg) offg.split(',').forEach(function (k) { S.offGroup[k] = 1; });
+
+  CH = echarts.init(document.getElementById('chart'));
+  window.addEventListener('resize', function () { CH.resize(); });
+  CH.on('click', onChartClick);
+
+  document.getElementById('topn').addEventListener('change', function () {
+    S.topn = +this.value; render();
+  });
+  document.getElementById('btnPng').addEventListener('click', exportPng);
+  document.getElementById('btnCsv').addEventListener('click', exportCsv);
+  document.getElementById('btnReset').addEventListener('click', resetAll);
+  document.addEventListener('click', function (e) {
+    if (e.target.closest && e.target.closest('#pvdb-lang-btn')) {
+      setTimeout(function () { relabelV(); relabelG(); buildViewList(); buildFilters(); render(); }, 90);
+    }
+  });
+  render();
+}
+
+function buildViewList() {
+  var box = document.getElementById('viewlist');
+  box.innerHTML = '';
+  VIEWS.forEach(function (v) {
+    var b = document.createElement('button');
+    b.dataset.view = v.id;
+    b.innerHTML = '<span class="ic">' + v.ic + '</span><span>' + T(v.en, v.zh) + '</span>';
+    b.addEventListener('click', function () { S.view = v.id; S.sub = 0; render(); });
+    box.appendChild(b);
+  });
+}
+
+function buildFilters() {
+  var ft = document.getElementById('ftype'), fg = document.getElementById('fgroup');
+  ft.innerHTML = ''; fg.innerHTML = '';
+  var seenT = {};
+  D.land.dna_rna.by_type.forEach(function (t) {
+    if (seenT[t.t]) return; seenT[t.t] = 1;
+    ft.appendChild(chk(t.t, VCOL[t.t] || '#c9d6e2', VLAB[t.t] || t.t, S.offType, 'type'));
+  });
+  D.land.group_order.forEach(function (g) {
+    var n = D.land.host_families.filter(function (h) { return h.grp === g; }).length;
+    if (!n) return;
+    fg.appendChild(chk(g, GCOL[g] || '#bdc3c7', (GLAB[g] || g) + ' (' + n + ')', S.offGroup, 'group'));
+  });
+}
+function chk(key, col, label, store, kind) {
+  var l = document.createElement('label');
+  l.className = 'chk';
+  var i = document.createElement('input');
+  i.type = 'checkbox'; i.checked = !store[key];
+  i.addEventListener('change', function () {
+    if (this.checked) delete store[key]; else store[key] = 1;
+    render();
+  });
+  var sw = document.createElement('span');
+  sw.className = 'sw'; sw.style.background = col;
+  var sp = document.createElement('span'); sp.textContent = label;
+  l.appendChild(i); l.appendChild(sw); l.appendChild(sp);
+  return l;
+}
+
+/* ---------- filtering helpers ---------- */
+function typeOn(t) { return !S.offType[t]; }
+function groupOn(g) { return !S.offGroup[g]; }
+function vTaxa() {
+  return D.land.virus_taxa.filter(function (t) { return typeOn(t.t); });
+}
+function hFams() {
+  return D.land.host_families.filter(function (h) { return groupOn(h.grp); });
+}
+
+function render() {
+  var vl = document.querySelectorAll('#viewlist button');
+  for (var i = 0; i < vl.length; i++) vl[i].classList.toggle('on', vl[i].dataset.view === S.view);
+  var V = VIEWS.filter(function (x) { return x.id === S.view; })[0];
+  document.getElementById('viewTitle').textContent = T(V.en, V.zh);
+  var sub = document.getElementById('submodes'); sub.innerHTML = '';
+  CH.clear();
+  ({ virus: rVirus, host: rHost, dnarna: rDnaRna, matrix: rMatrix,
+     past: rPast, amp: rAmp, tree: rTree, qc: rQc }[S.view])();
+}
+
+function modeBtns(items, cur, cb) {
+  var sub = document.getElementById('submodes'); sub.innerHTML = '';
+  items.forEach(function (it, i) {
+    var b = document.createElement('button');
+    b.textContent = T(it[0], it[1]);
+    if (i === cur) b.className = 'on';
+    b.addEventListener('click', function () { S.sub = i; cb(i); });
+    sub.appendChild(b);
+  });
+}
+
+function setSub(txt) { document.getElementById('viewSub').textContent = txt; }
+function setNotes(html) { document.getElementById('notes').innerHTML = html; }
+function setLegend(items) {
+  document.getElementById('legend').innerHTML = items.map(function (i) {
+    return '<div><span class="sw" style="background:' + i[1] + '"></span>' + i[0] + '</div>';
+  }).join('');
+}
+
+/* ============================================================
+ * VIEW 1 — virus taxa
+ * ============================================================ */
+function rVirus() {
+  modeBtns([['All hits', '全部命中'], ['Identified families', '可辨识病毒科']], S.sub, function () { rVirus(); });
+  var all = S.sub === 0;
+  var taxa = vTaxa().filter(function (t) { return all || (t.t !== 'phage' && t.t !== 'unclassified'); });
+  taxa = taxa.slice(0, all ? 26 : 40).sort(function (a, b) { return a.l - b.l; });
+  var tot = D.land.overview.loci;
+  setSub(T(taxa.length + ' viral taxa · ' + fmt(taxa.reduce(function (s, t) { return s + t.l; }, 0)) + ' loci',
+           taxa.length + ' 个病毒类群 · ' + fmt(taxa.reduce(function (s, t) { return s + t.l; }, 0)) + ' 位点'));
+  CH.setOption({
+    grid: { left: 150, right: 90, top: 14, bottom: 26 },
+    tooltip: {
+      trigger: 'axis', axisPointer: { type: 'shadow' },
+      formatter: function (p) {
+        var t = taxa[p[0].dataIndex];
+        return '<b>' + t.n + '</b><br>' + VLAB[t.t] + '<br>' +
+          fmt(t.l) + T(' loci (', ' 位点（') + (100 * t.l / tot).toFixed(2) + '%)<br>' +
+          fmt(t.g) + T(' genomes', ' 个基因组') + '<br>' +
+          t.hf + T(' host families', ' 个宿主科');
+      }
+    },
+    xAxis: { type: 'log', name: T('loci (log)', '位点（对数）'), nameLocation: 'middle', nameGap: 26, axisLabel: { fontSize: 10 } },
+    yAxis: { type: 'category', data: taxa.map(function (t) { return t.n; }), axisLabel: { fontSize: 10.5 } },
+    series: [{
+      type: 'bar', data: taxa.map(function (t) {
+        return { value: t.l, itemStyle: { color: VCOL[t.t] || '#c9d6e2', borderRadius: [0, 3, 3, 0] } };
+      }),
+      barMaxWidth: 15,
+      label: { show: true, position: 'right', fontSize: 10, color: '#7b8a99', formatter: function (p) { return fmt(p.value); } }
+    }]
+  }, true);
+  setLegend(D.land.dna_rna.by_type.map(function (t) { return [VLAB[t.t] || t.t, VCOL[t.t] || '#c9d6e2']; }));
+  setNotes(T(
+    '<b>Read me:</b> counts are integration loci, not virus species. <b>Other_viral</b> (93,226) are hits that resolved no further than "virus" in RVDB; <b>Phage</b> (16,836) are bacterial-virus-like, dominated by a few assemblies. Excluding both, <b>' + fmt(D.land.overview.identified_family_loci) + '</b> loci fall in an identifiable virus family — Caulimoviridae alone accounts for 92%.',
+    '<b>阅读说明：</b>计数单位为整合位点，非病毒种数。<b>Other_viral</b>（93,226）为 RVDB 中未能细分到科的病毒命中；<b>Phage</b>（16,836）为噬菌体类，集中于少数组装体。剔除二者后，<b>' + fmt(D.land.overview.identified_family_loci) + '</b> 个位点可归入明确病毒科——其中花椰菜病毒科独占 92%。'));
+}
+
+/* ============================================================
+ * VIEW 2 — host families
+ * ============================================================ */
+function rHost() {
+  modeBtns([['By loci', '按位点数'], ['By genomes', '按基因组数'], ['RNA EVE', 'RNA EVE'], ['Caulimoviridae', '花椰菜科']], S.sub, function () { rHost(); });
+  var key = ['l', 'g', 'rna', 'cauli'][S.sub];
+  var arr = hFams().slice().sort(function (a, b) { return b[key] - a[key]; }).slice(0, S.topn);
+  arr = arr.slice().reverse();
+  setSub(T('Top ' + arr.length + ' of ' + hFams().length + ' host families',
+           '共 ' + hFams().length + ' 个宿主科，显示前 ' + arr.length));
+  CH.setOption({
+    grid: { left: 128, right: 90, top: 12, bottom: 26 },
+    tooltip: {
+      trigger: 'axis', axisPointer: { type: 'shadow' },
+      formatter: function (p) {
+        var h = arr[p[0].dataIndex];
+        var s = '<b>' + h.n + '</b> · ' + (GLAB[h.grp] || h.grp) + (h.ord ? ' (' + h.ord + ')' : '') + '<br>' +
+          fmt(h.l) + T(' loci · ', ' 位点 · ') + fmt(h.g) + T(' genomes', ' 基因组') + '<br>' +
+          T('RNA EVE: ', 'RNA EVE：') + fmt(h.rna) + T(' · Caulimoviridae: ', ' · 花椰菜科：') + fmt(h.cauli) + '<br>';
+        s += h.vt.slice(0, 4).map(function (v) { return '&nbsp;· ' + v[0] + ' ' + fmt(v[1]); }).join('<br>');
+        return s;
+      }
+    },
+    xAxis: { type: 'log', name: T('loci (log)', '位点（对数）'), nameLocation: 'middle', nameGap: 26, axisLabel: { fontSize: 10 } },
+    yAxis: { type: 'category', data: arr.map(function (h) { return h.n; }), axisLabel: { fontSize: 10.5 } },
+    series: [{
+      type: 'bar', barMaxWidth: 15,
+      data: arr.map(function (h) {
+        return { value: h[key], itemStyle: { color: GCOL[h.grp] || '#bdc3c7', borderRadius: [0, 3, 3, 0] } };
+      }),
+      label: { show: true, position: 'right', fontSize: 10, color: '#7b8a99', formatter: function (p) { return fmt(p.value); } }
+    }]
+  }, true);
+  setLegend(D.land.group_order.filter(function (g) {
+    return D.land.host_families.some(function (h) { return h.grp === g; });
+  }).map(function (g) { return [GLAB[g] || g, GCOL[g]]; }));
+  setNotes(T(
+    '<b>Colour = host plant group</b> (algae → eudicot, evolutionary order). Caulimoviridae EVEs concentrate in eudicots — Solanaceae alone holds 19,837 loci (98% of its genomes positive). Poaceae (grasses) is conspicuously low, matching the literature. The <b>RNA EVE</b> tab re-ranks the same families by RNA-virus loci: the leaders become Poaceae, Porellaceae and Gentianaceae (see Cases &amp; QC).',
+    '<b>颜色 = 宿主植物类群</b>（藻类 → 真双子叶，按演化顺序）。花椰菜科 EVE 高度富集于真双子叶——仅茄科即 19,837 位点（其 98% 基因组阳性）；禾本科显著偏低，与文献一致。<b>RNA EVE</b> 标签按 RNA 病毒位点重排同一批科：领先者变为四数木科、桫椤科等小科（见「案例与质控」）。'));
+}
+
+/* ============================================================
+ * VIEW 3 — DNA / RNA duality
+ * ============================================================ */
+function rDnaRna() {
+  modeBtns([['All hits', '全部命中'], ['Identified families only', '仅可辨识病毒科']], S.sub, function () { rDnaRna(); });
+  var dr = D.land.dna_rna;
+  var bt = dr.by_type.filter(function (t) {
+    if (!typeOn(t.t)) return false;
+    if (S.sub === 1 && (t.t === 'phage' || t.t === 'unclassified')) return false;
+    return true;
+  });
+  var dnaSum = 0, rnaSum = 0, totSum = 0;
+  bt.forEach(function (t) {
+    totSum += t.l;
+    if (DNA_T[t.t]) dnaSum += t.l;
+    if (RNA_T[t.t]) rnaSum += t.l;
+  });
+  setSub(T('DNA ' + fmt(dnaSum) + ' : RNA ' + fmt(rnaSum) + '  (' + (rnaSum ? (dnaSum / rnaSum).toFixed(1) : '–') + ' : 1)  ·  ' + fmt(totSum) + ' loci shown',
+           'DNA ' + fmt(dnaSum) + ' : RNA ' + fmt(rnaSum) + '（' + (rnaSum ? (dnaSum / rnaSum).toFixed(1) : '–') + ' : 1）· 显示 ' + fmt(totSum) + ' 位点'));
+  var pie = bt.map(function (t) {
+    return { name: VLAB[t.t] || t.t, value: t.l, itemStyle: { color: VCOL[t.t] || '#c9d6e2' } };
+  });
+  CH.setOption({
+    tooltip: {
+      formatter: function (p) {
+        if (p.seriesType === 'pie') return p.name + '<br>' + fmt(p.value) + T(' loci (', ' 位点（') + p.percent + '%)';
+        return p.name + '<br>' + fmt(p.value) + T(' loci', ' 位点');
+      }
+    },
+    series: [
+      {
+        type: 'pie', radius: ['38%', '66%'], center: ['26%', '52%'], data: pie,
+        label: { fontSize: 10.5, formatter: function (p) { return p.percent >= 3 ? p.name + ' ' + p.percent + '%' : ''; } },
+        labelLine: { length: 8, length2: 8 }
+      },
+      {
+        type: 'bar', barMaxWidth: 16,
+        data: bt.slice().reverse().map(function (t) {
+          return { value: t.l, itemStyle: { color: VCOL[t.t] || '#c9d6e2', borderRadius: [0, 3, 3, 0] } };
+        }),
+        label: { show: true, position: 'right', fontSize: 10, color: '#7b8a99', formatter: function (p) { return fmt(p.value); } }
+      }
+    ],
+    xAxis: [{ type: 'value', name: T('loci', '位点'), axisLabel: { fontSize: 10 }, splitLine: { lineStyle: { color: '#f0f4f7' } } }],
+    yAxis: [{ type: 'category', data: bt.slice().reverse().map(function (t) { return VLAB[t.t] || t.t; }), axisLabel: { fontSize: 10.5 } }],
+    grid: { left: '52%', right: 110, top: 22, bottom: 30 }
+  }, true);
+  // pie + bar are emitted in a single setOption above; a second setOption
+  // would overwrite series[0] (the pie) under ECharts' merge semantics.
+  setLegend(bt.map(function (t) { return [VLAB[t.t] || t.t, VCOL[t.t] || '#c9d6e2']; }));
+  setNotes(T(
+    '<b>The central result.</b> Plant genomes internalise DNA viruses ~29 times more often than RNA viruses. Caulimoviridae (dsDNA-RT pararetroviruses) alone contribute 36,781 loci — they replicate through an RNA intermediate and produce integrational DNA, so endogenisation is a natural by-product of their cycle. RNA viruses (dsRNA + ssRNA+ + ssRNA-, ' + fmt(dr.rna) + ' loci) lack an integration route and stay rare. The RNA side is dominated by Partitiviridae, Amalgaviridae and Betaflexiviridae.',
+    '<b>核心结论。</b>植物基因组内源化 DNA 病毒的频率约为 RNA 病毒的 29 倍。仅花椰菜病毒科（dsDNA-RT 副逆转录病毒）即贡献 36,781 位点——其复制经 RNA 中间体并产生整合型 DNA，内源化是复制周期的自然副产物；而 RNA 病毒（dsRNA + ssRNA+ + ssRNA-，共 ' + fmt(dr.rna) + ' 位点）缺乏整合途径，始终稀少，且以双分体病毒科、苜蓿花叶病毒科、马铃薯X病毒科类为主。'));
+}
+
+/* ============================================================
+ * VIEW 4 — virus × host matrix
+ * ============================================================ */
+function rMatrix() {
+  modeBtns([['Family × host family', '科 × 宿主科'], ['Caulimoviridae genus × host', '花椰菜科属 × 宿主']], S.sub, function () { rMatrix(); });
+  if (S.sub === 0) matrixFamHost(); else matrixGenusHost();
+}
+function matrixFamHost() {
+  var M = D.land.matrix_host_virus;
+  var viruses = M.viruses.filter(function (v) { return typeOn((D.land.virus_taxa.filter(function (t) { return t.n === v; })[0] || {}).t); }).slice().reverse();
+  var hosts = M.hosts.filter(function (h) {
+    var hh = D.land.host_families.filter(function (x) { return x.n === h; })[0];
+    return hh && groupOn(hh.grp);
+  }).slice(0, 40);
+  var hi = {}, vi = {};
+  hosts.forEach(function (h, i) { hi[h] = i; });
+  viruses.forEach(function (v, i) { vi[v] = i; });
+  var cells = M.cells.filter(function (c) { return hi[M.hosts[c[0]]] !== undefined && vi[M.viruses[c[1]]] !== undefined; })
+    .map(function (c) { return { value: [hi[M.hosts[c[0]]], vi[M.viruses[c[1]]], Math.log10(c[2] + 1)], n: c[2] }; });
+  var mxLog = Math.max.apply(null, cells.map(function (c) { return c.value[2]; }));
+  var mx = Math.max.apply(null, cells.map(function (c) { return c.n; }));
+  setSub(T(cells.length + ' non-empty cells · max ' + fmt(mx) + ' · log colour scale',
+           cells.length + ' 个非空格 · 最大 ' + fmt(mx) + ' · 对数色阶'));
+  CH.setOption({
+    tooltip: {
+      formatter: function (p) {
+        return '<b>' + viruses[p.value[1]] + '</b><br>' + hosts[p.value[0]] + '<br>' + fmt(p.data.n) + T(' loci', ' 位点');
+      }
+    },
+    grid: { left: 128, right: 20, top: 12, bottom: 110 },
+    xAxis: { type: 'category', data: hosts, axisLabel: { rotate: 90, fontSize: 9.5 }, splitArea: { show: true } },
+    yAxis: { type: 'category', data: viruses, axisLabel: { fontSize: 10 }, splitArea: { show: true } },
+    visualMap: {
+      min: 0, max: mxLog, calculable: true, orient: 'horizontal', left: 'center', bottom: 0,
+      inRange: { color: ['#f2f7fb', '#a9cce3', '#2e86c1', '#1a5276', '#0d2b3e'] },
+      textStyle: { fontSize: 10 },
+      formatter: function (v) { return fmt(Math.round(Math.pow(10, v) - 1)); }
+    },
+    series: [{
+      type: 'heatmap', data: cells, progressive: 2000,
+      emphasis: { itemStyle: { borderColor: '#1a5276', borderWidth: 1 } }
+    }]
+  }, true);
+  setLegend([T('cell colour = loci (log-ish scale)', '格色 = 位点数'), T('rows = viral family, columns = host family', '行 = 病毒科，列 = 宿主科')].map(function (x) { return [x, '#2e86c1']; }));
+  setNotes(T(
+    '<b>Reading the matrix.</b> Columns are ordered by total loci. The bright band is Caulimoviridae across eudicots (Solanaceae, Fabaceae, Asteraceae…). Geminiviridae (ssDNA) and the dsRNA families appear only as scattered dots — their host ranges are narrow and their counts two orders of magnitude smaller.',
+    '<b>矩阵读法。</b>列按位点总量排序。最亮的横带是花椰菜科横跨真双子叶各科（茄科、豆科、菊科等）；双生病毒科（ssDNA）与各 dsRNA 科仅呈零星点状——宿主范围窄，计数低两个数量级。'));
+}
+function matrixGenusHost() {
+  var M = D.land.matrix_taxon_host;
+  var taxa = M.taxa.filter(function (t) { return typeOn(M.ttype[t]); }).slice().reverse();
+  var taxaLabel = taxa.map(function (t) { return t.replace(/^family:/, ''); });
+  var hosts = M.hosts.filter(function (h) {
+    var hh = D.land.host_families.filter(function (x) { return x.n === h; })[0];
+    return hh && groupOn(hh.grp);
+  });
+  var ti = {}, hi = {};
+  taxa.forEach(function (t, i) { ti[t] = i; });
+  hosts.forEach(function (h, i) { hi[h] = i; });
+  var cells = M.cells.filter(function (c) { return ti[M.taxa[c[0]]] !== undefined && hi[M.hosts[c[1]]] !== undefined; })
+    .map(function (c) { return { value: [hi[M.hosts[c[1]]], ti[M.taxa[c[0]]], Math.log10(c[2] + 1)], n: c[2] }; });
+  var mxLog = Math.max.apply(null, cells.map(function (c) { return c.value[2]; }));
+  var mx = Math.max.apply(null, cells.map(function (c) { return c.n; }));
+  setSub(T(taxa.length + ' taxa × ' + hosts.length + ' host families', taxa.length + ' 个类群 × ' + hosts.length + ' 个宿主科'));
+  CH.setOption({
+    tooltip: {
+      formatter: function (p) { return '<b>' + taxaLabel[p.value[1]] + '</b><br>' + hosts[p.value[0]] + '<br>' + fmt(p.data.n) + T(' loci', ' 位点'); }
+    },
+    grid: { left: 128, right: 20, top: 12, bottom: 110 },
+    xAxis: { type: 'category', data: hosts, axisLabel: { rotate: 90, fontSize: 9.5 }, splitArea: { show: true } },
+    yAxis: { type: 'category', data: taxaLabel, axisLabel: { fontSize: 10 }, splitArea: { show: true } },
+    visualMap: { min: 0, max: mxLog, calculable: true, orient: 'horizontal', left: 'center', bottom: 0, inRange: { color: ['#fdf3f0', '#f5b7a8', '#e07a5f', '#a93226', '#641e16'] }, textStyle: { fontSize: 10 }, formatter: function (v) { return fmt(Math.round(Math.pow(10, v) - 1)); } },
+    series: [{ type: 'heatmap', data: cells, progressive: 2000, emphasis: { itemStyle: { borderColor: '#7d3c98', borderWidth: 1 } } }]
+  }, true);
+  setLegend([[T('genus-level Caulimoviridae (loci)', '花椰菜科属级（位点）'), '#c0392b']]);
+  setNotes(T(
+    '<b>Broad vs narrow host range.</b> Unresolved Caulimoviridae and Caulimovirus span 94–106 host families (recurrent cross-family movement / HVT), whereas <b>Petuvirus (PVCV)</b> is confined to 8 families with 87% of its 952 loci in Solanaceae — the signature of host-specific vertical inheritance. Capulavirus concentrates in Rutaceae, Tungrovirus in Scrophulariaceae.',
+    '<b>广宿主 vs 窄宿主。</b>未细分的花椰菜科与 Caulimovirus 跨越 94–106 个宿主科（提示反复跨科转移/HVT）；而 <b>Petuvirus (PVCV)</b> 仅局限于 8 个科、其 953 个位点中 87% 落在茄科——典型的宿主特异垂直遗传特征。Capulavirus 集中于芸香科，Tungrovirus 集中于玄参科。'));
+}
+
+/* ============================================================
+ * VIEW 5 — past vs present
+ * ============================================================ */
+function rPast() {
+  var qc = { both: '#2980b9', virus_only: '#e67e22', eve_only: '#7d3c98', neither: '#bdc3c7' };
+  var ql = { both: T('both EVE & extant', 'EVE 与现存病毒皆有'), virus_only: T('extant virus only', '仅现存病毒'), eve_only: T('EVE only (ancient)', '仅 EVE（古代感染）'), neither: 'neither' };
+  var pts = D.dyn.past_present.filter(function (r) {
+    return r.eve > 0 || r.ext > 0;
+  });
+  var data = pts.map(function (r) {
+    return { value: [Math.max(r.ext, 0.5), Math.max(r.eve, 0.5)], name: r.n, q: r.q, rna: r.rna, g: r.g,
+             itemStyle: { color: qc[r.q] || '#bdc3c7', opacity: .78 } };
+  });
+  var quad = D.dyn.quadrants;
+  setSub(T(quad.both + ' both · ' + quad.eve_only + ' EVE-only · ' + quad.virus_only + ' virus-only',
+           quad.both + ' 两者皆有 · ' + quad.eve_only + ' 仅 EVE · ' + quad.virus_only + ' 仅现存病毒'));
+  CH.setOption({
+    grid: { left: 76, right: 30, top: 20, bottom: 52 },
+    tooltip: {
+      formatter: function (p) {
+        return '<b>' + p.data.name + '</b><br>' + ql[p.data.q] + '<br>' +
+          T('EVE loci: ', 'EVE 位点：') + fmt(p.data.value[1] < 1 ? 0 : p.data.value[1]) + '<br>' +
+          T('extant virus records: ', '现存病毒记录：') + fmt(p.data.value[0] < 1 ? 0 : p.data.value[0]) + '<br>' +
+          T('RNA EVE: ', 'RNA EVE：') + p.data.rna;
+      }
+    },
+    xAxis: { type: 'log', name: T('extant virus records in this family', '该科现存病毒记录数'), nameLocation: 'middle', nameGap: 30, axisLabel: { fontSize: 10 }, splitLine: { lineStyle: { color: '#f0f4f7' } } },
+    yAxis: { type: 'log', name: T('EVE loci', 'EVE 位点'), nameLocation: 'middle', nameGap: 44, axisLabel: { fontSize: 10 }, splitLine: { lineStyle: { color: '#f0f4f7' } } },
+    series: [{
+      type: 'scatter', data: data, symbolSize: 9,
+      emphasis: { itemStyle: { borderColor: '#1a5276', borderWidth: 1.5 } },
+      markLine: { silent: true, symbol: 'none', label: { show: false }, lineStyle: { color: '#cfd8e0', type: 'dashed' }, data: [{ xAxis: 0.5 }, { yAxis: 0.5 }] }
+    }]
+  }, true);
+  setLegend([[ql.both, qc.both], [ql.eve_only, qc.eve_only], [ql.virus_only, qc.virus_only], [ql.neither, qc.neither]]);
+  setNotes(T(
+    '<b>Ancient infections that left no extant relative.</b> Families above the dashed line carry EVEs but few or no sampled extant viruses — Elaeagnaceae (4,362 loci), Taxaceae (2,985), Potamogetonaceae (2,674), the moss <b>Fontinalaceae</b> (2,228, of which 30 are RNA) and the cycad Cycadaceae. Caveat: the extant side is a sampled set — 1,258 species-level records did not resolve to a host family, so treat "EVE-only" as a candidate list, not proof of extinction.',
+    '<b>留下 EVE 却无现存近缘的古代感染。</b>虚线上方的科携带 EVE 但现存病毒采样稀少或无：胡颓子科（4,362 位点）、红豆杉科（2,985）、眼子菜科（2,674）、苔藓 <b>水藓科</b>（2,228，其中 30 为 RNA）、苏铁科。注意：现存侧为采样集合，尚有 1,258 条物种级记录未能解析到科，故「仅 EVE」应视为候选清单，而非灭绝证据。'));
+}
+
+/* ============================================================
+ * VIEW 6 — amplification dynamics
+ * ============================================================ */
+function rAmp() {
+  var A = D.dyn.amplification;
+  var order = ['1', '2-4', '5-9', '10-19', '20-49', '50-99', '100-199', '200+'];
+  var cols = ['#d6e6f2', '#a9cce3', '#7fb3d5', '#5499c7', '#2e86c1', '#1f618d', '#1a5276', '#0d2b3e'];
+  setSub(T(A.n_clusters + ' clusters · largest ' + A.max_cluster + ' copies', A.n_clusters + ' 个簇 · 最大 ' + A.max_cluster + ' 拷贝'));
+  CH.setOption({
+    tooltip: { trigger: 'axis' },
+    grid: [
+      { left: 66, right: 44, top: 34, height: '34%' },
+      { left: 66, right: 44, top: '58%', height: '28%' }
+    ],
+    xAxis: [
+      { gridIndex: 0, type: 'category', data: order, axisLabel: { fontSize: 10 }, name: T('cluster size (copies)', '簇大小（拷贝数）'), nameLocation: 'middle', nameGap: 24 },
+      { gridIndex: 1, type: 'log', name: T('genome size (bp)', '基因组大小 (bp)'), axisLabel: { fontSize: 10 }, splitLine: { lineStyle: { color: '#f0f4f7' } } }
+    ],
+    yAxis: [
+      { gridIndex: 0, type: 'log', name: T('clusters', '簇数'), axisLabel: { fontSize: 10 } },
+      { gridIndex: 1, type: 'log', name: T('EVE loci', 'EVE 位点'), axisLabel: { fontSize: 10 }, splitLine: { lineStyle: { color: '#f0f4f7' } } }
+    ],
+    series: [
+      {
+        type: 'bar', xAxisIndex: 0, yAxisIndex: 0, barMaxWidth: 34,
+        data: order.map(function (k, i) { return { value: A.bins[k] || 0, itemStyle: { color: cols[i], borderRadius: [3, 3, 0, 0] } }; }),
+        label: { show: true, position: 'top', fontSize: 9.5, color: '#7b8a99' }
+      },
+      {
+        type: 'scatter', xAxisIndex: 1, yAxisIndex: 1, symbolSize: 6,
+        data: D.dyn.genomes.filter(function (g) { return g.s > 0 && g.e > 0 && groupOn(g.p); })
+          .map(function (g) { return { value: [g.s, g.e], name: g.g, fam: g.f, p: g.p, itemStyle: { color: GCOL[g.p] || '#bdc3c7', opacity: .7 } }; }),
+        emphasis: { itemStyle: { borderColor: '#1a5276', borderWidth: 1.5 } }
+      }
+    ]
+  }, true);
+  setLegend([[T('cluster-size spectrum (all 9,864 clusters)', '簇大小谱（全部 9,864 簇）'), '#2e86c1'], [T('per-genome scatter, coloured by host group', '每基因组散点，按宿主类群着色'), '#00695c']]);
+  setNotes(T(
+    '<b>Most EVEs stay low-copy; a few explode.</b> The 15,292 loci of the top-20 Caulimoviridae-rich genomes collapse into 9,864 clusters at 95% identity; 52 clusters hold ≥10 copies and the largest holds 217. Below, EVE count rises with genome size (Spearman rho = 0.349, n = 1,401) — bigger genomes tolerate more parasitic sequence. Gymnosperms (dark green) sit top-right: huge genomes, huge element oceans.',
+    '<b>多数 EVE 保持低拷贝，少数爆发式扩增。</b>花椰菜科最富集的前 20 个基因组的 15,292 个位点，在 95% identity 下聚成 9,864 簇；≥10 拷贝的大簇 52 个，最大单簇 217 拷贝。下图中 EVE 数随基因组增大而增加（Spearman rho = 0.349，n = 1,401）——大基因组能容忍更多寄生序列。裸子植物（深绿）位于右上：巨大基因组、巨大元件海洋。'));
+}
+
+/* ============================================================
+ * VIEW 7 — RT phylogeny
+ * ============================================================ */
+var NWK_CACHE = null;
+function parseNewick(s) {
+  if (NWK_CACHE) return NWK_CACHE;
+  var i = 0;
+  function skip() { while (i < s.length && (s[i] === ' ' || s[i] === '\n' || s[i] === '\r')) i++; }
+  function parse() {
+    skip();
+    var node = { name: '' };
+    if (s[i] === '(') {
+      i++; node.children = [];
+      for (;;) {
+        node.children.push(parse());
+        skip();
+        if (s[i] === ',') { i++; continue; }
+        if (s[i] === ')') { i++; break; }
+        break;
+      }
+    }
+    skip();
+    if (s[i] === '[') { while (i < s.length && s[i] !== ']') i++; i++; }
+    var st = i;
+    while (i < s.length && ':,()'.indexOf(s[i]) < 0) i++;
+    node.name = s.slice(st, i).trim();
+    if (s[i] === ':') {
+      i++; var a = i;
+      while (i < s.length && ',)'.indexOf(s[i]) < 0) i++;
+      node.length = parseFloat(s.slice(a, i)) || 0;
+    }
+    return node;
+  }
+  NWK_CACHE = parse();
+  return NWK_CACHE;
+}
+function famOf(leaf) {
+  var g = leaf.split('|')[0];
+  var h = D.land.host_families.filter(function (x) { return x.n === g; })[0];
+  return null;
+}
+function rTree() {
+  var root = parseNewick(D.phy.tree_newick);
+  var famByGenome = {};
+  D.land.host_families.forEach(function (h) { famByGenome[h.n] = h; });
+  // build genome -> family via per-genome data (dynamics.genomes has g/f/p)
+  var g2f = {};
+  D.dyn.genomes.forEach(function (g) { g2f[g.g] = g; });
+
+  var leaves = 0, maxDepth = 0;
+  function walk(n, d) {
+    if (d > maxDepth) maxDepth = d;
+    if (!n.children) { leaves++; return; }
+    n.children.forEach(function (c) { walk(c, d + 1); });
+  }
+  walk(root, 0);
+
+  function decorate(n) {
+    var isLeaf = !n.children;
+    var node = { name: n.name };
+    if (isLeaf) {
+      var genome = n.name.split('|')[0];
+      var info = g2f[genome];
+      var isRef = n.name.indexOf('REF_') === 0;
+      var col = isRef ? '#c0392b' : (info && GCOL[info.p] ? GCOL[info.p] : '#bdc3c7');
+      var short = n.name.length > 34 ? n.name.slice(0, 33) + '…' : n.name;
+      node.value = n.length || 0.001;
+      node.itemStyle = { color: col, borderColor: col };
+      node.label = { show: true, fontSize: 8.5, color: isRef ? '#c0392b' : '#5a6b7b', formatter: short };
+      node._leaf = true;
+    } else {
+      node.value = n.length || 0.001;
+      node.itemStyle = { color: '#b8c6d4', borderColor: '#b8c6d4' };
+      node.label = { show: false };
+    }
+    if (n.children) node.children = n.children.map(decorate);
+    return node;
+  }
+  var tree = decorate(root);
+  var H = Math.max(520, leaves * 13);
+  var el = document.getElementById('chart');
+  el.style.height = H + 'px';
+  CH.resize();
+  setSub(T(leaves + ' tips (' + (leaves - 19) + ' EVE + 19 reference) · ML tree on the Pfam RVT_1 domain',
+           leaves + ' 个叶（' + (leaves - 19) + ' EVE + 19 参考）· Pfam RVT_1 域的最大似然树'));
+  CH.setOption({
+    tooltip: {
+      formatter: function (p) {
+        var nm = p.data.name || '';
+        if (nm.indexOf('REF_') === 0) return '<b>' + nm.replace('REF_', '').replace(/_/g, ' ') + '</b><br>' + T('reference virus', '参考病毒');
+        var genome = nm.split('|')[0], info = g2f[genome];
+        return '<b>' + genome + '</b><br>' + (info ? (info.f || '') + (info.p ? ' · ' + (GLAB[info.p] || info.p) : '') : '');
+      }
+    },
+    series: [{
+      type: 'tree', data: [tree], orient: 'LR', layout: 'orthogonal',
+      top: 8, bottom: 8, left: 130, right: 210,
+      symbol: 'circle', symbolSize: 4.5,
+      initialTreeDepth: -1,
+      expandAndCollapse: false,
+      roam: true,
+      lineStyle: { color: '#c8d6e2', width: .8 },
+      leaves: { label: { position: 'right' } }
+    }]
+  }, true);
+  var same = D.phy.tree_neighbor_same, tot = D.phy.tree_neighbor_total, ref = D.phy.tree_neighbor_ref;
+  setLegend([[T('tip colour = host plant group', '叶色 = 宿主植物类群'), '#00695c'],
+             [T('red = reference virus', '红色 = 参考病毒'), '#c0392b'],
+             [T('nearest neighbour same host family: ' + same + '/' + tot + ' (' + (100 * same / tot).toFixed(1) + '%)', '最近邻同宿主科：' + same + '/' + tot + '（' + (100 * same / tot).toFixed(1) + '%）'), '#2e86c1'],
+             [T('sequence-level nearest reference, same family: ' + D.phy.nearest_ref_same_family + '/' + (D.phy.nearest_ref_same_family + D.phy.nearest_ref_diff_family), '序列级最近参考同科：' + D.phy.nearest_ref_same_family + '/' + (D.phy.nearest_ref_same_family + D.phy.nearest_ref_diff_family)), '#7d3c98']]);
+  setNotes(T(
+    '<b>Scroll / drag / zoom the tree</b> (269 tips; topological layout, branch lengths not to scale). ' +
+    '<b>Two different questions, two different answers.</b> On the tree, <b>' + same + '/' + tot + ' (' + (100 * same / tot).toFixed(1) + '%)</b> of EVEs sit nearest to another EVE from the <b>same</b> host family — a clear signal of vertical, host-linked inheritance (some pairs have distance 0, i.e. near-identical copies). But when each EVE is instead matched to the nearest <b>extant reference virus</b> by sequence, only <b>' + D.phy.nearest_ref_same_family + '/' + (D.phy.nearest_ref_same_family + D.phy.nearest_ref_diff_family) + ' (' + (100 * D.phy.nearest_ref_same_family / (D.phy.nearest_ref_same_family + D.phy.nearest_ref_diff_family)).toFixed(1) + '%)</b> stay within the family — partly genuine host jumping, partly reference-panel bias: 19 reference viruses are mostly crop viruses, and <b>Cauliflower mosaic virus alone is the nearest reference for 920 EVEs</b>.',
+    '<b>两个问题，两个答案。</b>在树上，<b>' + same + '/' + tot + '（' + (100 * same / tot).toFixed(1) + '%）</b>的 EVE 其最近邻是<b>同宿主科</b>的另一条 EVE——垂直、宿主连锁遗传的明确信号（部分配对树距离为 0，即近乎相同的拷贝）。但若改为按序列匹配<b>现存参考病毒</b>，仅 <b>' + D.phy.nearest_ref_same_family + '/' + (D.phy.nearest_ref_same_family + D.phy.nearest_ref_diff_family) + '（' + (100 * D.phy.nearest_ref_same_family / (D.phy.nearest_ref_same_family + D.phy.nearest_ref_diff_family)).toFixed(1) + '%）</b>落在同科——这既有真实的宿主跳跃，也含参考面板偏倚：21 个参考病毒多为农作物病毒，仅<b>花椰菜花叶病毒一种就当了 920 条 EVE 的最近参考</b>。'));
+}
+function rTreeReset() { var el = document.getElementById('chart'); el.style.height = ''; }
+
+/* ============================================================
+ * VIEW 8 — cases & QC
+ * ============================================================ */
+function rQc() {
+  var C = D.phy.cases, q = D.phy.qc_phix, v = D.phy.viroid;
+  var A = C.Datisca_glomerata, B = C.Alsophila_spinulosa;
+  setSub(T('High-confidence RNA EVE cases · phiX174 contamination · viroids',
+           '高置信 RNA EVE 案例 · phiX174 污染 · 类病毒'));
+  var qcSorted = q.slice().sort(function (a, b) { return b.phi - a.phi; }).slice(0, 8).reverse();
+  CH.setOption({
+    tooltip: { trigger: 'axis' },
+    grid: [
+      { left: 150, right: 90, top: '3%', height: '14.2%' },
+      { left: 150, right: 90, top: '21.2%', height: '56.7%' },
+      { left: 150, right: 90, top: '81.9%', height: '14.2%' }
+    ],
+    xAxis: [
+      { gridIndex: 0, type: 'log', name: T('loci (log)', '位点（对数）'), axisLabel: { fontSize: 10 } },
+      { gridIndex: 1, type: 'value', axisLabel: { fontSize: 10, formatter: '{value}%' } },
+      { gridIndex: 2, type: 'value', axisLabel: { fontSize: 10 } }
+    ],
+    yAxis: [
+      { gridIndex: 0, type: 'category', data: [A.family + ' (Datisca)', B.family + ' (Alsophila)'], axisLabel: { fontSize: 10 } },
+      { gridIndex: 1, type: 'category', data: qcSorted.map(function (x) { return x.g; }), axisLabel: { fontSize: 9.5 } },
+      { gridIndex: 2, type: 'category', data: [T('CEVd-like', 'CEVd 样'), T('other viroids', '其他类病毒')], axisLabel: { fontSize: 10 } }
+    ],
+    series: [
+      {
+        type: 'bar', xAxisIndex: 0, yAxisIndex: 0, barMaxWidth: 26,
+        data: [
+          { value: A.loci, itemStyle: { color: '#7d3c98', borderRadius: [0, 3, 3, 0] } },
+          { value: B.loci, itemStyle: { color: '#7d3c98', borderRadius: [0, 3, 3, 0] } }
+        ],
+        label: { show: true, position: 'right', fontSize: 10, color: '#7b8a99', formatter: function (p) { return p.value + T(' loci', ' 位点'); } }
+      },
+      {
+        type: 'bar', xAxisIndex: 1, yAxisIndex: 1, barMaxWidth: 20,
+        data: qcSorted.map(function (x) { return { value: x.pct, itemStyle: { color: x.pct > 50 ? '#c0392b' : '#e67e22', borderRadius: [0, 3, 3, 0] } }; }),
+        label: { show: true, position: 'right', fontSize: 9.5, color: '#7b8a99', formatter: function (p) { return p.value + '%'; } }
+      },
+      {
+        type: 'bar', xAxisIndex: 2, yAxisIndex: 2, barMaxWidth: 22,
+        data: [
+          { value: v.length ? v[0].n : 0, itemStyle: { color: '#16a085', borderRadius: [0, 3, 3, 0] } },
+          { value: v.slice(1).reduce(function (s, x) { return s + x.n; }, 0), itemStyle: { color: '#bdc3c7', borderRadius: [0, 3, 3, 0] } }
+        ],
+        label: { show: true, position: 'right', fontSize: 10, color: '#7b8a99' }
+      }
+    ]
+  }, true);
+  setLegend([[T('RNA EVE case loci (single viral family dominates, most with complete ORF)', 'RNA EVE 案例位点（单一病毒类群主导，多数含完整 ORF）'), '#7d3c98'],
+             [T('phiX174 spike-in share of viral_supported loci', 'phiX174 内参占 viral_supported 位点比例'), '#c0392b'],
+             [T('viroid-screening genomes', '类病毒筛查基因组数'), '#16a085']]);
+  setNotes(T(
+    '<b>Cases.</b> <i>Datisca glomerata</i> (Datiscaceae): 23 RNA EVE loci, 22 of them unclassified Betaflexiviridae, 14 with a complete ORF (≥60 aa). <i>Alsophila spinulosa</i> (Cyatheaceae, tree fern): 19 loci, 15 Mitoviridae, 16 with a complete ORF. Single-family dominance plus a high complete-ORF fraction is what a real integration looks like, not a fragmented false positive.<br><b>phiX174.</b> One assembly (<i>Abies alba</i>) contributed 55,725 of the 55,737 contaminating loci (94.1% of its own calls) — an Illumina library spike-in. Removed genome-wide; the remaining genomes carry 1–3 loci each.<br><b>Viroids.</b> A CEVd-like signal appears in 1,374/1,526 genomes (90%), but most of it falls in soft-masked repeats and its identity does not decay across distant hosts — more consistent with a repetitive element than with an endogenous viroid. Whether CEVd itself is present stays an <b>open question</b>, flagged as such.',
+    '<b>案例。</b><i>Datisca glomerata</i>（四数木科）：23 个 RNA EVE 位点，其中 22 个为未细分 Betaflexiviridae，14 个含完整 ORF（≥60 aa）。<i>Alsophila spinulosa</i>（桫椤科，树蕨）：19 个位点，15 个为 Mitoviridae，16 个含完整 ORF。单一病毒类群主导 + 高比例完整 ORF，正是真实整合的特征，而非碎片化假阳性。<br><b>phiX174。</b>单一组装体（<i>Abies alba</i>）贡献了 55,737 个污染位点中的 55,725 个（占其自身判定的 94.1%）——属 Illumina 建库内参，已按基因组整体剔除；其余基因组各仅 1–3 个位点。<br><b>类病毒。</b>CEVd 样信号见于 1,374/1,526 个基因组（90%），但其中大部分落在 soft-mask 重复区，且跨远缘宿主 identity 不衰减——更符合重复元件特征而非内源化类病毒。CEVd 本身是否存在于植物基因组内，仍是<b>开放问题</b>，此处如实标注。'));
+}
+
+/* ---------- interactions ---------- */
+function onChartClick(p) {
+  var d = document.getElementById('detail');
+  var html = '';
+  if (S.view === 'virus' && p.componentSubType === 'bar' && p.dataIndex != null) {
+    var taxa = vTaxa().filter(function (t) { return S.sub === 0 || (t.t !== 'phage' && t.t !== 'unclassified'); });
+    var t = taxa.slice(0, S.sub === 0 ? 26 : 40).sort(function (a, b) { return a.l - b.l; })[p.dataIndex];
+    if (t) html = detailTaxon(t);
+  } else if (S.view === 'host' && p.componentSubType === 'bar' && p.dataIndex != null) {
+    var key = ['l', 'g', 'rna', 'cauli'][S.sub];
+    var arr = hFams().slice().sort(function (a, b) { return b[key] - a[key]; }).slice(0, S.topn).reverse();
+    var h = arr[p.dataIndex];
+    if (h) html = detailHost(h);
+  }
+  if (html) { d.innerHTML = html; d.classList.add('open'); }
+}
+
+function detailTaxon(t) {
+  var tot = D.land.overview.loci;
+  var rows = t.top.map(function (x) {
+    return '<div class="linkrow"><span class="nm">' + x[0] + '</span><span class="v">' + fmt(x[1]) + '</span></div>';
+  }).join('');
+  return '<div class="dt">' + t.n + '</div>' +
+    '<div class="sub">' + (VLAB[t.t] || t.t) + '</div>' +
+    '<div class="kv"><div class="c"><b>' + fmt(t.l) + '</b><span>' + T('loci', '位点') + '</span></div>' +
+    '<div class="c"><b>' + (100 * t.l / tot).toFixed(2) + '%</b><span>' + T('of all loci', '占全部位点') + '</span></div>' +
+    '<div class="c"><b>' + fmt(t.g) + '</b><span>' + T('genomes', '基因组') + '</span></div>' +
+    '<div class="c"><b>' + t.hf + '</b><span>' + T('host families', '宿主科') + '</span></div></div>' +
+    '<h4>' + T('TOP HOST FAMILIES', '主要宿主科') + '</h4>' + rows;
+}
+function detailHost(h) {
+  var maxv = h.vt.length ? h.vt[0][1] : 1;
+  var rows = h.vt.map(function (x) {
+    var w = Math.round(100 * x[1] / maxv);
+    return '<div class="linkrow"><span class="nm">' + x[0] + '</span>' +
+      '<span class="barwrap"><i style="width:' + w + '%;background:#2e86c1"></i></span>' +
+      '<span class="v">' + fmt(x[1]) + '</span></div>';
+  }).join('');
+  return '<div class="dt">' + h.n + '</div>' +
+    '<div class="sub">' + (GLAB[h.grp] || h.grp) + (h.ord ? ' · ' + h.ord : '') + '</div>' +
+    '<div class="kv"><div class="c"><b>' + fmt(h.l) + '</b><span>' + T('loci', '位点') + '</span></div>' +
+    '<div class="c"><b>' + fmt(h.g) + '</b><span>' + T('genomes', '基因组') + '</span></div>' +
+    '<div class="c"><b>' + fmt(h.rna) + '</b><span>' + T('RNA EVE', 'RNA EVE') + '</span></div>' +
+    '<div class="c"><b>' + fmt(h.cauli) + '</b><span>Caulimoviridae</span></div></div>' +
+    '<h4>' + T('VIRUS FAMILIES', '病毒科构成') + '</h4>' + rows;
+}
+
+/* ---------- export ---------- */
+function exportPng() {
+  if (!CH) return;
+  var url = CH.getDataURL({ type: 'png', pixelRatio: 2, backgroundColor: '#fff' });
+  var a = document.createElement('a');
+  a.href = url; a.download = 'eve_' + S.view + '.png';
+  document.body.appendChild(a); a.click(); a.remove();
+}
+function exportCsv() {
+  var rows = [], name = 'eve_' + S.view + '.csv';
+  if (S.view === 'virus') {
+    rows.push(['viral_taxon', 'genome_type', 'loci', 'genomes', 'host_families']);
+    vTaxa().forEach(function (t) { rows.push([t.n, t.t, t.l, t.g, t.hf]); });
+  } else if (S.view === 'host') {
+    rows.push(['host_family', 'plant_group', 'order', 'loci', 'genomes', 'rna_eve', 'caulimoviridae']);
+    hFams().forEach(function (h) { rows.push([h.n, h.grp, h.ord, h.l, h.g, h.rna, h.cauli]); });
+  } else if (S.view === 'dnarna') {
+    rows.push(['genome_type', 'loci', 'genomes', 'families']);
+    D.land.dna_rna.by_type.forEach(function (t) { rows.push([t.t, t.l, t.g, (t.f || []).join(';')]); });
+  } else if (S.view === 'past') {
+    rows.push(['host_family', 'quadrant', 'eve_loci', 'rna_eve', 'caulimoviridae', 'eve_genomes', 'extant_records']);
+    D.dyn.past_present.forEach(function (r) { rows.push([r.n, r.q, r.eve, r.rna, r.cauli, r.g, r.ext]); });
+  } else if (S.view === 'amp') {
+    rows.push(['cluster_size_bin', 'n_clusters']);
+    Object.keys(D.dyn.amplification.bins).forEach(function (k) { rows.push([k, D.dyn.amplification.bins[k]]); });
+  } else if (S.view === 'tree') {
+    rows.push(['metric', 'value']);
+    rows.push(['tips', D.phy.n_leaves]);
+    rows.push(['nearest_same_host_family', D.phy.tree_neighbor_same]);
+    rows.push(['nearest_total', D.phy.tree_neighbor_total]);
+    rows.push(['seq_nearest_ref_same_family', D.phy.nearest_ref_same_family]);
+    rows.push(['seq_nearest_ref_total', D.phy.nearest_ref_same_family + D.phy.nearest_ref_diff_family]);
+  } else {
+    rows.push(['host_family', 'loci']);
+    D.land.host_families.forEach(function (h) { rows.push([h.n, h.l]); });
+  }
+  var csv = rows.map(function (r) { return r.map(function (c) { return '"' + String(c).replace(/"/g, '""') + '"'; }).join(','); }).join('\n');
+  var blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function () { URL.revokeObjectURL(a.href); }, 3000);
+}
+function resetAll() {
+  S.offType = {}; S.offGroup = {}; S.sub = 0; S.topn = 20;
+  document.getElementById('topn').value = '20';
+  buildFilters();
+  render();
+}
+
+/* ---------- utils ---------- */
+function fmt(n) {
+  if (n == null) return '–';
+  return Number(n).toLocaleString('en-US');
+}
+})();
+</script>
+<script src="/lib/ai-assistant.js?v=2" data-context="hub" defer></script>
+</body>
+</html>

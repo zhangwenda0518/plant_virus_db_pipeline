@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title data-i18n="Interaction Networks|互作网络图谱">Interaction Networks</title>
+<meta name="description" content="Interactive force-directed networks of plant viruses, hosts and insect vectors — virus–host association network and literature-validated virus–vector–host network. 植物病毒-宿主-媒介互作网络图谱。">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+/* 页面是一列: 顶栏 / 标签 / 布局 / 页脚。height:100vh 而不是 min-height —— min-height 只给
+   "至少这么高", 下面 .layout 是 flex:1, 侧栏 max-height:100% 拿不到确定高度就不生效, 于是
+   侧栏内容(816px)把整行撑开, 页脚被顶出视口, 页面凭空多出一条滚动条。给了确定高度后,
+   画布吃掉剩余空间; 视口矮到画布 min-height 兜不住时溢出照常由视口滚动, 不会切掉内容。 */
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;overflow-x:hidden;height:100vh;display:flex;flex-direction:column}
+
+/* ── top bar ── */
+nav.topbar{background:linear-gradient(135deg,#134e6f 0%,#1a5276 55%,#2e86c1 100%);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 20px;flex-wrap:wrap;flex-shrink:0}
+nav.topbar .brand{font-size:17px;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+nav.topbar .brand a{color:#fff;text-decoration:none}
+nav.topbar .sep{opacity:.35}
+nav.topbar .subtitle{font-size:13px;opacity:.92;font-weight:600;white-space:nowrap}
+nav.topbar .stats{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+/* 统计 chip 自己一个盒子: fillStats() 用 innerHTML 重建它们，而语言按钮也挂在 .stats 下，
+   不分开的话按钮会被一起冲掉（relocateLangBtn 只能搬现存节点，重建不出一个来）。
+   display:contents 让这层壳子在 flex 里透明，chip 仍按 .stats 的子元素排布。 */
+nav.topbar #statbar{display:contents}
+nav.topbar .chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:3px 10px;font-size:11.5px;white-space:nowrap}
+nav.topbar .chip b{font-weight:700}
+
+/* ── tabs ── */
+.tabs{display:flex;gap:6px;max-width:1760px;margin:12px auto 0;padding:0 16px;flex-shrink:0}
+.tabs button{flex:1;max-width:360px;border:1px solid #e2e8ee;border-bottom:none;background:#eef2f6;color:#5d6d7e;padding:10px 16px;font-size:13px;font-weight:600;cursor:pointer;border-radius:12px 12px 0 0;transition:.15s;line-height:1.5}
+.tabs button small{display:block;font-weight:400;font-size:11px;opacity:.8;margin-top:2px}
+.tabs button.on{background:#fff;color:#1a5276;border-color:#eef2f5;box-shadow:0 -2px 8px rgba(20,60,90,.05)}
+.tabs button:hover:not(.on){background:#e4ebf1}
+
+/* ── layout ── */
+.layout{display:flex;gap:14px;padding:0 16px 14px;align-items:stretch;max-width:1760px;margin:0 auto;flex:1 1 auto;min-height:0}
+.panel{background:#fff;border:1px solid #eef2f5;border-radius:14px;box-shadow:0 2px 10px rgba(20,60,90,.06)}
+/* 侧栏自己滚(画布要占满高度)。滚动条必须看得见: 看不见滚动条时, 卡片底边把一个控件切成
+   半截, 看起来像渲染坏了而不是"下面还有"。 */
+aside.controls{width:288px;flex-shrink:0;padding:14px;display:flex;flex-direction:column;gap:12px;max-height:100%;overflow-y:auto;position:sticky;top:14px;scrollbar-width:thin;scrollbar-color:#c9d6e2 transparent}
+aside.controls::-webkit-scrollbar{width:8px}
+aside.controls::-webkit-scrollbar-thumb{background:#c9d6e2;border-radius:4px}
+aside.controls::-webkit-scrollbar-thumb:hover{background:#aebdd0}
+aside.controls::-webkit-scrollbar-track{background:transparent}
+section.chartcol{flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:8px;border-radius:0 14px 14px 14px}
+aside.detail{width:336px;flex-shrink:0;padding:14px;max-height:100%;overflow-y:auto;position:sticky;top:14px;display:none}
+aside.detail.open{display:block}
+/* ≤1150px 时布局变成一列(控件在上、画布在下)。这时必须把 body 的 height:100vh 撤掉:
+   控件一栏实测 604px(768 宽)/771px(390 宽), 画布 min-height 又要 480px, 加起来超过 body
+   给 .layout 的确定高度, 画布就溢出版心 —— 实测 768×1024 下 footer 位于 y=870 而画布铺到
+   y=1184, 灰色脚注整段压在图上, 页面上既像渲染坏了一样。改成 auto+min-height 后整页按内容
+   增高、靠页滚到达, 和下面 @media(max-height:910px) 是同一个取舍。窄屏本来已经
+   max-height:none, 侧栏不靠 body 的确定高度, 撤掉没有副作用。 */
+@media(max-width:1150px){body{height:auto;min-height:100vh}aside.detail{position:static;max-height:none;width:100%}.layout{flex-direction:column}aside.controls{position:static;max-height:none;width:100%}}
+/* 视口矮的时候(1366×768 一类)tab2 的侧栏要 640px, 而可给它的只剩 ~505px: 硬锁在一屏内,
+   最后那个控件就会被卡片底边切成半截。阈值 910 是实测溢出的临界点(client ≈ 视口高 - 263,
+   tab2 需 640) —— 低于它整页改为滚动, 控件靠页滚到达, 不存在被裁的可能。 */
+@media(max-height:910px){
+  body{height:auto;min-height:100vh}
+  aside.controls,aside.detail{position:static;max-height:none}
+}
+
+/* ── controls ── */
+.ctl-title{font-size:12px;font-weight:700;color:#8a99a8;letter-spacing:.6px;border-left:3px solid #2e86c1;padding-left:8px;margin:2px 0 8px}
+.searchwrap{position:relative}
+#search{width:100%;padding:8px 10px;border:1px solid #d5dde5;border-radius:8px;font-size:12.5px;outline:none}
+#search:focus{border-color:#2e86c1;box-shadow:0 0 0 3px rgba(46,134,193,.12)}
+#searchdrop{position:absolute;top:calc(100% + 4px);left:0;right:0;background:#fff;border:1px solid #dfe7ee;border-radius:10px;box-shadow:0 10px 30px rgba(20,60,90,.15);z-index:50;max-height:320px;overflow-y:auto;display:none}
+.sitem{padding:7px 10px;font-size:12px;cursor:pointer;display:flex;gap:8px;align-items:center;border-bottom:1px solid #f3f6f9}
+.sitem:last-child{border-bottom:none}
+.sitem:hover{background:#eef5fa}
+.sitem .badge{flex-shrink:0;font-size:10px;border-radius:8px;padding:1px 7px;font-weight:600}
+.badge.v{background:#fdecea;color:#b03a2e}.badge.h{background:#e9f7ef;color:#1e8449}.badge.e{background:#eceffc;color:#4a5bb5}
+.sitem .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hint{font-size:11px;color:#95a5b5;line-height:1.6}
+select{width:100%;padding:6px 8px;border:1px solid #d5dde5;border-radius:8px;font-size:12.5px;background:#fff;color:#2c3e50;outline:none}
+select:focus{border-color:#2e86c1}
+label.tgl{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#3c4b5b;cursor:pointer;padding:3px 0;user-select:none}
+label.tgl input{accent-color:#2e86c1;width:15px;height:15px}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap}
+button.act{flex:1;min-width:70px;padding:7px 10px;border:1px solid #d5dde5;background:#fff;color:#3c4b5b;border-radius:8px;font-size:12px;cursor:pointer;transition:.15s;white-space:nowrap}
+button.act:hover{border-color:#2e86c1;color:#1a5276;background:#eef5fa}
+input[type=range]{width:100%;accent-color:#2e86c1}
+/* 传播机制筛选: 全名最长 49 字符, 一行放不下, 六个竖着排要吃掉 200px 以上, 窄一点的屏上
+   能把下方 "LAYOUT" 整块顶出可视区。短名两列排, 全称挂 title 不计入高度。 */
+.modegrid{display:grid;grid-template-columns:1fr 1fr;gap:2px 10px;align-items:start}
+.modechk{display:flex;align-items:flex-start;gap:5px;font-size:11.5px;color:#3c4b5b;cursor:pointer;padding:2px 0;line-height:1.45;min-width:0}
+.modechk input{accent-color:#5c6bc0;margin-top:2px;flex-shrink:0}
+.modechk span{min-width:0}
+/* 阶元行: 标题和下拉同一行。竖着放(hint 占一整行)时 tab2 三行要 165px, 侧栏矮一屏就溢出。 */
+.rankrow{display:flex;align-items:center;gap:8px}
+.rankrow .k{font-size:11px;color:#8a99a8;white-space:nowrap;flex-shrink:0}
+.rankrow select{flex:1;min-width:0}
+/* 两个短控件并排: 权重滑杆 + TopN 下拉、斥力 + 连线长度, 各占一半宽 */
+.frow2{display:flex;align-items:flex-end;gap:10px;margin-top:2px}
+.frow2>.c{flex:1;min-width:0}
+.frow2>.c.w{flex:1.2}
+/* 颜色图例跟着图走: 放进左侧滚动面板时, tab2 的三排阶元加 6 个媒介模式筛选
+   会把图例挤到视口外, 而它解释的正是旁边画布里的颜色 */.legendbar{display:flex;align-items:center;gap:4px 12px;flex-wrap:wrap;font-size:11px;color:#7b8a99;padding:1px 16px 7px}
+.legendbar .it{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.legendbar .sep{width:1px;height:11px;background:#e6ecf1;flex-shrink:0}
+.legendbar .note{color:#9fb0bd}
+.legendbar .sw{display:inline-block;width:9px;height:9px;border-radius:2px;flex-shrink:0}
+.legendbar .ln{display:inline-block;width:16px;height:0;border-top:3px solid;flex-shrink:0}
+/* 这里原来有 @media(max-width:900px){.legendbar{padding-left:70px}}：左下角那颗 floating
+   语言按钮(left:18px、44px 宽)在 390px 首屏正好压住图例第一项的左上角，右让 70px 才越过它。
+   按钮现已收进顶栏 .stats，挡不到图例了，缩进也就撤了，否则图例会跟上面的 chart-head 错位。 */
+
+/* ── chart ── */
+.chart-head{display:flex;align-items:center;gap:10px;padding:12px 16px 0;flex-wrap:wrap}
+.chart-head .t{font-size:14px;font-weight:700;color:#1a5276}
+.chart-head .tip{font-size:11px;color:#95a5b5}
+.chart-head .headact{margin-left:auto;display:flex;gap:6px;flex-shrink:0}
+.chart-head .headact button.act{flex:none;min-width:0;padding:5px 11px;font-size:11.5px}
+/* 标签档位放在图头上: 它决定的是"画布上出现多少名字", 跟紧挨着的 PNG/CSV 是同一类视图开关,
+   放在侧栏里会被 tab2 的长筛选卡挤到裁剪线以下 */
+.chart-head .lblctl{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.chart-head .lblctl .k{font-size:11px;color:#8a99a8;white-space:nowrap}
+.chart-head .lblctl select{min-width:92px}
+.focusbar{display:flex;align-items:center;gap:5px;flex-wrap:wrap;font-size:11.5px;color:#5d6d7e;padding:6px 16px 10px}
+.focusbar .lab{font-weight:700;color:#b03a2e}
+.fcrumb{background:#fdecea;border:1px solid #f5c6c0;color:#b03a2e;border-radius:12px;padding:1px 9px;cursor:pointer;font-size:11px;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fcrumb:hover{background:#b03a2e;color:#fff;border-color:#b03a2e}
+.fcrumb.last{background:#b03a2e;color:#fff;font-weight:600;cursor:default}
+.fhint{color:#a8b6c2;font-size:10.5px;margin-left:2px;white-space:nowrap}
+/* 页面是 100vh 的纵向弹性列(见 body), 画布吃掉 topbar/tabs/页脚之外剩下的全部高度:
+   早先写死 calc(100vh - 320px) 时, 页脚会被顶到视口外, 整页多出一条滚动条。 */
+/* 画布下限必须跟着视口收。写死 min-height:480 时窗口一矮(实测 1440x620)画布被顶着不缩,
+   底部多出 27px 压到页脚上, 还顶出整页滚动。改成按剩余高度给下限: 空间够就 480,
+   不够就 calc(100vh - 228px) —— 画布永远吃不掉页脚, 也不会把图切掉。 */
+#chart{width:100%;flex:1 1 auto;min-height:clamp(0px,calc(100vh - 228px),480px);height:auto}
+#empty{display:none;padding:60px 20px;text-align:center;color:#95a5b5;font-size:14px}
+.loading{padding:80px 20px;text-align:center;color:#7b8a99;font-size:14px}
+.spinner{width:34px;height:34px;border:3px solid #e3ecf3;border-top-color:#2e86c1;border-radius:50%;margin:0 auto 14px;animation:spin 0.9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── detail panel ── */
+#detail .dt{font-size:14px;font-weight:700;color:#1a5276;line-height:1.5;word-break:break-word}
+#detail .sub{font-size:11.5px;color:#8a99a8;margin:2px 0 10px}
+#detail .kv{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+#detail .kv .c{background:#f7fafc;border:1px solid #eef2f5;border-radius:10px;padding:8px 10px}
+#detail .kv .c b{display:block;font-size:16px;color:#1a5276}
+#detail .kv .c span{font-size:10.5px;color:#95a5b5}
+#detail h4{margin:12px 0 6px;font-size:12px;color:#8a99a8;letter-spacing:.5px}
+.taxpath{font-size:11.5px;color:#5d6d7e;line-height:1.9;background:#f7fafc;border:1px solid #eef2f5;border-radius:10px;padding:8px 10px;margin-bottom:10px;word-break:break-word}
+.taxpath b{color:#1a5276}
+.linkrow{display:flex;align-items:center;gap:8px;padding:4px 6px;border-radius:8px;cursor:pointer;font-size:12px}
+.linkrow:hover{background:#eef5fa}
+.linkrow .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.linkrow .v{color:#7b8a99;font-size:11px;flex-shrink:0}
+.barwrap{height:5px;background:#eef2f5;border-radius:3px;overflow:hidden;flex-shrink:0;width:52px}
+.barwrap i{display:block;height:100%;border-radius:3px}
+#detail .backlink{font-size:11.5px;color:#2e86c1;cursor:pointer;text-decoration:none}
+#detail .ext{margin-top:12px;padding-top:10px;border-top:1px dashed #e2e8ee;font-size:11.5px}
+#detail .ext a{color:#2e86c1;text-decoration:none}
+.doiline{font-size:11px;color:#7b8a99;line-height:1.7;word-break:break-all}
+.doiline a{color:#2e86c1;text-decoration:none}
+.modetag{display:inline-block;background:#eceffc;color:#4a5bb5;border-radius:9px;padding:1px 8px;font-size:10.5px;margin:1px 3px 1px 0}
+
+/* ── footer ── */
+/* 左边 76px 是给左下角那颗浮动语言按钮留的位置，按钮已收进顶栏，不再需要 */
+footer{max-width:1760px;margin:0 auto;padding:8px 20px 16px;font-size:11.5px;color:#95a5b5;line-height:1.8;flex-shrink:0}
+</style>
+</head>
+<body>
+<script src="/lib/site-nav.js?v=2"></script>
+
+<nav class="topbar">  <div class="subtitle" data-i18n="Interaction Networks|互作网络图谱">Interaction Networks</div>
+  <div class="stats"><span id="statbar"></span></div>
+</nav>
+
+<div class="tabs">
+  <button id="tab-vh" class="on"><span data-i18n="Virus – Host Network|病毒–宿主网络">Virus – Host Network</span><small data-i18n="211,132 GenBank accessions · all plant viruses|211,132 条 GenBank 序列 · 全部植物病毒">211,132 GenBank accessions · all plant viruses</small></button>
+  <button id="tab-evh"><span data-i18n="Vector – Virus – Host Network|媒介–病毒–宿主网络">Vector – Virus – Host Network</span><small data-i18n="1,375 literature-validated triplets|1,375 条文献验证三元组">1,375 literature-validated triplets</small></button>
+</div>
+
+<div class="layout">
+
+  <aside class="controls panel">
+    <div>
+      <div class="ctl-title" data-i18n="SEARCH|检索">SEARCH</div>
+      <div class="searchwrap">
+        <input id="search" autocomplete="off" placeholder="">
+        <div id="searchdrop"></div>
+      </div>
+      <div class="hint" style="margin-top:5px" data-i18n="Any taxon of the active tab; abbreviations (TSWV, CMV…) and ICTV names are accepted.|当前标签页任意分类单元；支持缩写（TSWV、CMV）与 ICTV 学名。">
+        Any taxon of the active tab; abbreviations (TSWV, CMV…) and ICTV names accepted.
+      </div>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="TAXONOMY RANKS|分类阶元">TAXONOMY RANKS</div>
+      <div id="rank-rows"></div>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="FILTERS|筛选">FILTERS</div>
+      <div id="filter-box"></div>
+    </div>
+
+    <div>
+      <div class="ctl-title" data-i18n="LAYOUT|布局">LAYOUT</div>
+      <div class="frow2">
+        <div class="c w"><div class="hint" style="margin:0 0 2px" data-i18n="Repulsion|斥力">Repulsion</div>
+          <input type="range" id="ly-rep" min="20" max="400" step="10" value="120"></div>
+        <div class="c"><div class="hint" style="margin:0 0 2px" data-i18n="Edge length|连线长度">Edge length</div>
+          <input type="range" id="ly-edge" min="30" max="300" step="10" value="110"></div>
+      </div>
+    </div>
+  </aside>
+
+  <section class="chartcol panel">
+    <div class="chart-head">
+      <div class="t" id="view-title">–</div>
+      <div class="tip" id="view-tip"></div>
+      <div class="lblctl" id="labelctl"></div>
+      <div class="headact">
+        <button class="act" id="btn-png">PNG</button>
+        <button class="act" id="btn-csv">CSV</button>
+        <button class="act" id="btn-reset">↺ <span data-i18n="Reset|重置">Reset</span></button>
+      </div>
+    </div>
+    <div class="focusbar" id="focusbar-top" style="display:none"></div>
+    <div class="legendbar" id="legend-top"></div>
+    <div id="chart"><div class="loading"><div class="spinner"></div><span data-i18n="Loading network data…|正在加载网络数据…">Loading network data…</span></div></div>
+    <div id="empty"></div>
+  </section>
+
+  <aside class="detail panel" id="detail"></aside>
+
+</div>
+
+<footer>
+  <span id="ft-text"></span>
+  <div id="ft-meta"></div>
+  <div style="margin-top:6px">
+    <a href="/association/" style="color:#2e86c1;text-decoration:none" data-i18n="→ Host–virus association Sankey (drill order → species)|→ 宿主–病毒关联桑基图（目→种层层下钻）">→ Host–Virus association Sankey</a>
+    &nbsp;·&nbsp;
+    <a href="/vector/" style="color:#2e86c1;text-decoration:none" data-i18n="→ Vector–host association database (faceted search)|→ 媒介–宿主关联数据库（分面检索）">→ Vector–Host association database</a>
+  </div>
+</footer>
+
+<script src="echarts.min.js"></script>
+<script src="/i18n.js"></script>
+<script>
+/* i18n.js 的 injectToggle() 把语言按钮做成左下角 position:fixed 的 44px 圆圈。
+   在本页 768px 下压住画布 44×44px（力图画布满宽，加 padding 只会把按钮推进图形中间）。
+   收进顶栏 .stats，和旁边的统计 chip 长在一起。
+   直接重写 style.cssText 而不是加 class: 宽高/圆角/定位都是内联样式，样式表盖不过去。
+   chip 装在 #statbar 里单独重建，所以按钮不会被 fillStats() 的 innerHTML 冲掉。 */
+(function () {
+  function adopt() {
+    var b = document.getElementById('pvdb-lang-btn');
+    var host = document.querySelector('nav.topbar .stats');
+    if (!b || !host || b.parentNode === host) return !!b;
+    b.style.cssText = 'position:static;width:auto;height:auto;min-width:52px;'
+      + 'padding:3px 10px;border-radius:14px;font-size:11.5px;font-weight:600;line-height:1.5;'
+      + 'background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);'
+      + 'color:#fff;box-shadow:none;cursor:pointer;font-family:inherit;'
+      + 'display:inline-flex;align-items:center;justify-content:center;white-space:nowrap';
+    host.appendChild(b);
+    return true;
+  }
+  /* i18n.js 在 DOMContentLoaded 里注入，而本脚本在它之后注册同一事件，所以轮询只是兜底 */
+  function go() {
+    if (adopt()) return;
+    var n = 0, t = setInterval(function () { if (adopt() || ++n > 50) clearInterval(t); }, 80);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', go);
+  else go();
+})();
+</script>
+<script>
+'use strict';
+/* ================================================================
+ * Interaction Networks — force-directed virus / vector / host graphs
+ *   Tab 1  virus–host:        ../association/associations.json (GenBank accessions)
+ *   Tab 2  vector–virus–host: network.json (VIP-DB validated triplets)
+ * Interaction model
+ *   macroscopic: rank ladder (order → family → genus → species) + Top-N merge
+ *   microscopic: ego-network focus (double-click / click-to-walk) + breadcrumb
+ * ================================================================ */
+
+const V_LEVELS = ['order', 'family', 'genus', 'species'];
+const H_LEVELS = ['order', 'family', 'genus', 'species'];
+const E_LEVELS = ['order', 'family', 'genus'];
+const NO_RANK = ['(no order)', '(no family)', '(no genus)'];
+const DELIM = '\u0001';
+const OTHER = '\u0002other';
+/* 缩放上下限: fit 是按包围盒反算 zoom 的, 上限给 fit 用(用户滚轮放大上限更高, 由
+   scaleLimit 单独把 max 放到 ZOOM_USER_MAX)。下限必须足够小 —— 物种级上千个节点时 zoom 会
+   掉到 0.05 以下, 夹在 0.2 的话整张图会被撑得比画布大一圈。 */
+const ZOOM_MIN = 0.01, ZOOM_MAX = 4, ZOOM_USER_MAX = 12;
+const KINGDOMS = {Plant: 1, Algae: 1, Fungi: 1, Animal: 1, Other: 1, Unknown: 1};
+
+const PAL = {
+  v: ['#c0392b', '#cd6155', '#d98880', '#e6b0aa', '#b03a2e', '#a93226'],
+  h: ['#1e8449', '#28b463', '#52be80', '#7dcea0', '#239b56', '#186a3b'],
+  e: ['#4a5bb5', '#5c6bc0', '#7986cb', '#9fa8da', '#3f51b5', '#3949ab']
+};
+const SIDE_NAME = {v: 'Virus', h: 'Host', e: 'Vector'};
+const SIDE_CLS = {v: 'v', h: 'h', e: 'e'};
+const SIDE_ICON = {v: '🦠', h: '🌿', e: '🦟'};
+
+let A = null, N = null;        // associations.json / network.json
+let chart = null;
+let V1 = null, H1 = null;      // tab1 search indexes
+let VLINK = null, ELINK = null; // explorer deep-link name sets
+let ALIAS1 = null, ALIAS2 = null;
+let VGEN = null, EGEN = null;  // tab2 属级回退索引（v2/ve 以种名为键）
+let RIDX = null;               // tab2 目/科级索引：聚合视图默认显示属，但目/科节点同样要可搜索、可回退
+
+/* ── i18n ── */
+function lang() { return (localStorage.getItem('pvdb_lang') || 'en') === 'zh' ? 'zh' : 'en'; }
+const L = {
+  sequences:    {en: 'sequences', zh: '条序列'},
+  triplets:     {en: 'triplets', zh: '条三元组'},
+  partners:     {en: 'linked taxa', zh: '个关联节点'},
+  share:        {en: 'share in group', zh: '占同类节点'},
+  shareCenter:  {en: 'share of focused node', zh: '占聚焦节点'},
+  order:        {en: 'Order', zh: '目'}, family: {en: 'Family', zh: '科'},
+  genus:        {en: 'Genus', zh: '属'}, species: {en: 'Species', zh: '种'},
+  virusSide:    {en: 'Virus', zh: '病毒'}, hostSide: {en: 'Host', zh: '宿主'}, vecSide: {en: 'Vector', zh: '媒介'},
+  focusOn:      {en: 'Focus', zh: '聚焦'},
+  exitFocus:    {en: 'exit focus', zh: '退出聚焦'},
+  focusHint:    {en: 'click any node to walk one step · click a chip to go back',
+                 zh: '点击任意节点沿网络再走一步 · 点击路径标签回退'},
+  dblClick:     {en: 'double-click to focus ego-network', zh: '双击聚焦自我网络'},
+  clickWalk:    {en: 'click to walk one step', zh: '点击沿网络走一步'},
+  other:        {en: 'Other (merged)', zh: '其他（合并）'},
+  noData:       {en: 'No links match the current filters. Lower the minimum link weight or switch ranks.', zh: '当前筛选下没有连线。请降低最小权重或切换阶元。'},
+  noMatch:      {en: 'No match', zh: '无匹配'},
+  plantOnly:    {en: 'Plant hosts only (incl. algae)', zh: '仅植物宿主（含藻类）'},
+  minW:         {en: 'Min link weight', zh: '最小连线权重'},
+  topN:         {en: 'Top-N per side (rest merged)', zh: '每侧 Top-N（其余合并）'},
+  labels:       {en: 'Node labels', zh: '节点标签'},
+  all:          {en: 'All', zh: '全部'},
+  none:         {en: 'None', zh: '不显示'},
+  topNth:       {en: 'Top {n}', zh: '前 {n}'},
+  focusBtn:     {en: '⌖ Focus ego-network', zh: '⌖ 聚焦自我网络'},
+  openExplorer: {en: '↗ Open in Explorer (full record)', zh: '↗ 在 Explorer 中打开完整记录'},
+  topPartners:  {en: 'Top linked taxa', zh: '主要关联节点'},
+  modes:        {en: 'Transmission modes', zh: '传毒机制'},
+  evidence:     {en: 'Evidence (DOI)', zh: '证据（DOI）'},
+  modesFilter:  {en: 'Transmission mode filter', zh: '传毒机制筛选'},
+  seqChip:      {en: 'sequences', zh: '条序列'},
+  virusSpChip:  {en: 'virus species', zh: '病毒种'},
+  hostTaxaChip: {en: 'plant host taxa', zh: '植物宿主'},
+  pairChip:     {en: 'associations', zh: '关联对'},
+  tripletChip:  {en: 'validated triplets', zh: '验证三元组'},
+  virusChip:    {en: 'viruses', zh: '病毒'},
+  vectorChip:   {en: 'vectors', zh: '媒介'},
+  hostChip:     {en: 'hosts', zh: '宿主'},
+  plant:        {en: 'plant', zh: '植物'}, algae: {en: 'algae', zh: '藻类'},
+  fungi:        {en: 'fungi', zh: '真菌'}, animal: {en: 'animal', zh: '动物'},
+  otherKingdom: {en: 'other', zh: '其他'},
+  virusOrd:     {en: 'virus order', zh: '病毒目'}, virusFam: {en: 'virus family', zh: '病毒科'},
+  virusGen:     {en: 'virus genus', zh: '病毒属'}, virusSp: {en: 'virus species', zh: '病毒种'},
+  hostOrd:      {en: 'host order', zh: '宿主目'}, hostFam: {en: 'host family', zh: '宿主科'},
+  hostGen:      {en: 'host genus', zh: '宿主属'}, hostSp:      {en: 'host species', zh: '宿主种'},
+  vecOrd:       {en: 'vector order', zh: '媒介目'}, vecFam: {en: 'vector family', zh: '媒介科'},
+  vecGen:       {en: 'vector genus', zh: '媒介属'},
+};
+function t(key) { const o = L[key]; return o ? o[lang()] : key; }
+function kLabel(k) { return t({Plant: 'plant', Algae: 'algae', Fungi: 'fungi', Animal: 'animal'}[k] || 'otherKingdom'); }
+function hashStr(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return Math.abs(h); }
+function sideColor(side, name) { return PAL[side][hashStr(name) % PAL[side].length]; }
+function rankLabelOf(side, rank) {
+  if (side === 'v') return rank === 'species' ? t('virusSp') : rank === 'genus' ? t('virusGen') : rank === 'family' ? t('virusFam') : t('virusOrd');
+  if (side === 'h') return rank === 'species' ? t('hostSp') : rank === 'genus' ? t('hostGen') : rank === 'family' ? t('hostFam') : t('hostOrd');
+  return rank === 'genus' ? t('vecGen') : rank === 'family' ? t('vecFam') : t('vecOrd');
+}
+function displayName(raw, side) { return raw === OTHER ? t('other') : raw; }
+function unit(st) { return st.kind === 'vh' ? t('sequences') : t('triplets'); }
+
+/* ── tab state ── */
+function freshTab(kind) {
+  return {
+    kind,
+    vRank: 2,                        // index into V_LEVELS → virus genus
+    hRank: kind === 'vh' ? 1 : 2,    // tab1: host family · tab2: host genus
+    eRank: 2,                        // index into E_LEVELS → vector genus
+    minW: 1, topN: 500, labels: 'top',
+    plantOnly: true,
+    modeFilter: null,                // null = all transmission modes
+    focus: [],                       // [{id,label,side,raw}]
+    sel: null,
+    full: null,                      // {vN,hN,eN,links}
+    rep: 120, edge: 110,
+    hidden: {},
+    view: null
+  };
+}
+const TABS = {vh: freshTab('vh'), evh: freshTab('evh')};
+let currentTab = 'vh';
+function tab() { return TABS[currentTab]; }
+
+/* ── tab1 search indexes ── */
+function buildIndexes1() {
+  V1 = new Map(); H1 = new Map();
+  for (const sp in A.vtax) {
+    const r = A.vtax[sp];
+    if (r[0] && !r[0].startsWith('(')) addIdx(V1, r[0], 'order', [r[0]]);
+    if (r[1] && !r[1].startsWith('(')) addIdx(V1, r[1], 'family', [r[0], r[1]]);
+    if (r[2] && !r[2].startsWith('(')) addIdx(V1, r[2], 'genus', [r[0], r[1], r[2]]);
+    addIdx(V1, sp, 'species', [r[0], r[1], r[2], sp]);
+  }
+  for (const leaf in A.htax) {
+    const r = A.htax[leaf];
+    for (let i = 1; i <= 3; i++) {
+      if (r[i] && !r[i].startsWith('(')) addIdx(H1, r[i], H_LEVELS[i - 1], r.slice(0, i + 1));
+    }
+    addIdx(H1, leaf, 'species', r.concat([leaf]));
+  }
+}
+function addIdx(map, name, rank, path) {
+  let e = map.get(name);
+  if (!e) { e = {rank, path, isLeaf: rank === 'species'}; map.set(name, e); }
+  else if (rank === 'species') e.isLeaf = true;
+}
+
+/* tab2 属级回退索引：v2/ve 都以种名为键，而聚合视图的节点名是属名，
+   需要从属下任一种反查分类谱系（同属的目/科恒定）与 Explorer 深链双名。
+   这里刻意沿用 [目, 科, 属, 双名, 序列数] 的同形数组，下游代码无需区分。 */
+function buildGenusIndex() {
+  VGEN = new Map(); EGEN = new Map();
+  for (const sp in N.v2) {
+    const r = N.v2[sp], g = r[2];
+    if (!g) continue;
+    let e = VGEN.get(g);
+    if (!e) { e = [r[0], r[1], g, '', 0]; VGEN.set(g, e); }
+    if (!e[3]) e[3] = r[3] || '';
+    e[4] = (e[4] || 0) + (r[4] || 0);
+  }
+  for (const sp in N.ve) {
+    const r = N.ve[sp], g = r[2];
+    if (!g) continue;
+    if (!EGEN.has(g)) EGEN.set(g, [r[0], r[1], g, '']);
+  }
+}
+
+/* tab2 目/科级索引：同样沿用同形数组，空槽表示"该阶元就是这个名字本身"。
+   这样 nameAtRank 从属级节点上溯到目/科时不会拿到空字符串，搜索框也能命中
+   聚合视图上真实可见的目/科节点。 */
+function buildRankIndex() {
+  RIDX = {v: new Map(), e: new Map(), h: new Map()};
+  for (const sp in N.v2) {
+    const r = N.v2[sp];
+    if (r[0] && !RIDX.v.has(r[0])) RIDX.v.set(r[0], [r[0], '', '', '', r[4] || 0]);
+    if (r[1] && !RIDX.v.has(r[1])) RIDX.v.set(r[1], ['', r[1], '', '', r[4] || 0]);
+  }
+  for (const sp in N.ve) {
+    const r = N.ve[sp];
+    if (r[0] && !RIDX.e.has(r[0])) RIDX.e.set(r[0], [r[0], '', '']);
+    if (r[1] && !RIDX.e.has(r[1])) RIDX.e.set(r[1], ['', r[1], '']);
+  }
+  for (const k in N.h2) {
+    const r = N.h2[k];
+    if (r[1] && !RIDX.h.has(r[1])) RIDX.h.set(r[1], [r[0], r[1], '', '']);
+    if (r[2] && !RIDX.h.has(r[2])) RIDX.h.set(r[2], [r[0], '', r[2], '']);
+  }
+}
+
+/* 由同形数组反推这个名字本身的阶元；种名不在前三槽内，返回 null 交给调用方判定 */
+function rankFromEntry(side, e, name) {
+  if (side === 'h') {
+    for (let i = 1; i <= 3; i++) if (e[i] === name) return H_LEVELS[i - 1];
+    return null;
+  }
+  const lv = side === 'v' ? V_LEVELS : E_LEVELS;
+  for (let i = 0; i < 3; i++) if (e[i] === name) return lv[i];
+  return null;
+}
+
+/* ── aggregation (independent of minW — minW only hides links) ── */
+function aggVH(st) {
+  const vN = new Map(), hN = new Map(), links = new Map();
+  const lv = st.vRank, lh = st.hRank;
+  for (const p of A.pairs) {
+    const v = p[0], h = p[1], c = p[2];
+    const ht = A.htax[h] || ['Unknown'];
+    if (st.plantOnly && ht[0] !== 'Plant' && ht[0] !== 'Algae') continue;
+    const vt = A.vtax[v] || [];
+    const vv = lv >= 3 ? v : (vt[lv] && !vt[lv].startsWith('(') ? vt[lv] : NO_RANK[lv]);
+    const hh = lh >= 3 ? h : (ht[lh + 1] && !ht[lh + 1].startsWith('(') ? ht[lh + 1] : NO_RANK[lh]);
+    vN.set(vv, (vN.get(vv) || 0) + c);
+    hN.set(hh, (hN.get(hh) || 0) + c);
+    const k = 'V:' + vv + DELIM + 'H:' + hh;
+    links.set(k, (links.get(k) || 0) + c);
+  }
+  return {vN, hN, eN: null, links};
+}
+function aggEVH(st) {
+  const vN = new Map(), eN = new Map(), hN = new Map(), links = new Map();
+  const lv = st.vRank, le = st.eRank, lh = st.hRank;
+  const modes = st.modeFilter;
+  for (const tr of N.vh) {
+    const v = tr[0], e = tr[1], h = tr[2];
+    if (modes && !modes.has(N.modes[tr[3]])) continue;
+    const v2 = N.v2[v], ve = N.ve[e];
+    const vv = lv >= 3 ? v : (v2[lv] || '(unclassified)');
+    const ee = ve[le] || '(no rank)';
+    vN.set(vv, (vN.get(vv) || 0) + 1);
+    eN.set(ee, (eN.get(ee) || 0) + 1);
+    const k1 = 'V:' + vv + DELIM + 'E:' + ee;
+    links.set(k1, (links.get(k1) || 0) + 1);
+    if (h) {                       // 120 triplets are virus–vector only (no host recorded)
+      const h2 = N.h2[h];
+      const hh = lh >= 3 ? h : (h2[lh + 1] || NO_RANK[lh]);
+      hN.set(hh, (hN.get(hh) || 0) + 1);
+      const k2 = 'V:' + vv + DELIM + 'H:' + hh;
+      links.set(k2, (links.get(k2) || 0) + 1);
+    }
+  }
+  return {vN, eN, hN, links};
+}
+function aggregate(st) {
+  st.full = st.kind === 'vh' ? aggVH(st) : aggEVH(st);
+  st.focus = []; st.sel = null;
+  return st.full;
+}
+
+/* ── full view: rank ladder + Top-N merge ── */
+function buildView(st) {
+  const full = st.full;
+  const isVH = st.kind === 'vh';
+  const sides = isVH ? ['v', 'h'] : ['v', 'e', 'h'];
+  const maps = {v: full.vN, h: full.hN, e: full.eN};
+  const visible = [];
+  for (const [k, w] of full.links) if (w >= st.minW) visible.push([k, w]);
+  const present = {v: new Set(), h: new Set(), e: new Set()};
+  for (const [k] of visible) {
+    const i = k.indexOf(DELIM);
+    // 键形如 'V:<virus>\u0001H:<host>' → 左端取 k[0], 右端取分隔符后一字符
+    const aS = k[0] === 'V' ? 'v' : k[0] === 'H' ? 'h' : 'e';
+    const bS = k[i + 1] === 'V' ? 'v' : k[i + 1] === 'H' ? 'h' : 'e';
+    present[aS].add(k.slice(0, i));
+    present[bS].add(k.slice(i + 1));
+  }
+  // strength of visible nodes (drives size + share)
+  const val = {}, sum = {}, max = {};
+  for (const s of sides) {
+    val[s] = new Map(); sum[s] = 0; max[s] = 1;
+    for (const id of present[s]) {
+      const x = (maps[s] && maps[s].get(id.slice(2))) || 0;
+      val[s].set(id, x); sum[s] += x; if (x > max[s]) max[s] = x;
+    }
+  }
+  // Top-N merge per side
+  const kept = {}, otherVal = {};
+  for (const s of sides) {
+    const arr = [...val[s].entries()].sort((a, b) => b[1] - a[1]);
+    if (st.topN === 0 || arr.length <= st.topN) {
+      kept[s] = new Set(arr.map(x => x[0])); otherVal[s] = 0;
+    } else {
+      kept[s] = new Set(arr.slice(0, st.topN).map(x => x[0]));
+      otherVal[s] = arr.slice(st.topN).reduce((a, x) => a + x[1], 0);
+    }
+  }
+  const otherId = s => (s === 'v' ? 'V:' : s === 'h' ? 'H:' : 'E:') + OTHER;
+  const nodes = [], nodeSet = new Set();
+  const addNode = (side, id, value) => {
+    if (nodeSet.has(id)) return;
+    nodeSet.add(id);
+    const raw = id.slice(2);
+    nodes.push({
+      id, name: id, value,
+      symbolSize: raw === OTHER ? 12 : 8 + 30 * Math.sqrt(value / max[side]),
+      category: side === 'v' ? 0 : side === 'h' ? 1 : 2,
+      itemStyle: {color: raw === OTHER ? '#b2bec3' : sideColor(side, raw)},
+      _meta: {side, raw, value, rank: st[side + 'Rank'], other: raw === OTHER}
+    });
+  };
+  for (const s of sides) {
+    for (const [id, x] of val[s]) if (kept[s].has(id)) addNode(s, id, x);
+    if (otherVal[s] > 0) addNode(s, otherId(s), otherVal[s]);
+  }
+  // links: remap merged nodes onto OTHER, then re-aggregate
+  const linkAgg = new Map();
+  for (const [k, w] of visible) {
+    const i = k.indexOf(DELIM);
+    const aId = k.slice(0, i), bId = k.slice(i + 1);
+    const aS = aId[0] === 'V' ? 'v' : aId[0] === 'H' ? 'h' : 'e';
+    const bS = bId[0] === 'V' ? 'v' : bId[0] === 'H' ? 'h' : 'e';
+    const a = kept[aS].has(aId) ? aId : otherId(aS);
+    const b = kept[bS].has(bId) ? bId : otherId(bS);
+    if (a.slice(2) === OTHER && b.slice(2) === OTHER) continue;
+    const key = a + DELIM + b;
+    linkAgg.set(key, (linkAgg.get(key) || 0) + w);
+  }
+  const maxLink = Math.max(1, ...[...linkAgg.values()]);
+  const links = [];
+  for (const [key, w] of linkAgg) {
+    const i = key.indexOf(DELIM);
+    const aId = key.slice(0, i), bId = key.slice(i + 1);
+    if (!nodeSet.has(aId) || !nodeSet.has(bId)) continue;
+    const aS = aId[0] === 'V' ? 'v' : aId[0] === 'H' ? 'h' : 'e';
+    const bS = bId[0] === 'V' ? 'v' : bId[0] === 'H' ? 'h' : 'e';
+    const isVec = aS === 'e' || bS === 'e';
+    links.push({
+      source: aId, target: bId, value: w,
+      lineStyle: {
+        color: isVH ? '#c3ced9' : (isVec ? '#aeb8dd' : '#9fc5a9'),
+        width: Math.max(0.7, Math.min(4.5, 3.4 * Math.sqrt(w / maxLink))),
+        opacity: isVH ? 0.32 : 0.38, curveness: 0.12
+      },
+      _meta: {aSide: aS, bSide: bS, aRaw: aId.slice(2), bRaw: bId.slice(2), value: w}
+    });
+  }
+  return {nodes, links, sum, sides, focus: false};
+}
+
+/* ── focus (ego-network) view ── */
+function buildFocusView(st) {
+  const full = st.full;
+  const center = st.focus[st.focus.length - 1];
+  if (!center) return buildView(st);
+  const cid = center.id;
+  const nb = new Map();
+  for (const [k, w] of full.links) {
+    if (w < st.minW) continue;
+    const i = k.indexOf(DELIM);
+    const a = k.slice(0, i), b = k.slice(i + 1);
+    if (a === cid) nb.set(b, (nb.get(b) || 0) + w);
+    else if (b === cid) nb.set(a, (nb.get(a) || 0) + w);
+  }
+  const maps = {v: full.vN, h: full.hN, e: full.eN};
+  const cVal = (maps[center.side] && maps[center.side].get(center.raw)) || Math.max(1, ...[...nb.values()]);
+  const nodes = [], links = [];
+  const mkNode = (side, id, value, isCenter) => {
+    const raw = id.slice(2);
+    nodes.push({
+      id, name: id, value,
+      symbolSize: isCenter ? 36 : 9 + 26 * Math.sqrt(value / Math.max(1, cVal)),
+      category: side === 'v' ? 0 : side === 'h' ? 1 : 2,
+      itemStyle: isCenter
+        ? {color: sideColor(side, raw), borderColor: '#fff', borderWidth: 3, shadowBlur: 16, shadowColor: 'rgba(20,60,90,.4)'}
+        : {color: sideColor(side, raw)},
+      _meta: {side, raw, value, rank: st[side + 'Rank'], other: raw === OTHER, center: isCenter}
+    });
+  };
+  mkNode(center.side, cid, cVal, true);
+  for (const [id, w] of nb) mkNode(id[0] === 'V' ? 'v' : id[0] === 'H' ? 'h' : 'e', id, w, false);
+  const maxLink = Math.max(1, ...[...nb.values()]);
+  for (const [id, w] of nb) {
+    const isVec = id[0] === 'E' || cid[0] === 'E';
+    links.push({
+      source: cid, target: id, value: w,
+      lineStyle: {
+        color: st.kind === 'vh' ? '#c3ced9' : (isVec ? '#aeb8dd' : '#9fc5a9'),
+        width: Math.max(0.9, Math.min(5, 3.4 * Math.sqrt(w / maxLink))),
+        opacity: 0.45, curveness: 0.12
+      },
+      _meta: {
+        aSide: cid[0] === 'V' ? 'v' : cid[0] === 'H' ? 'h' : 'e',
+        bSide: id[0] === 'V' ? 'v' : id[0] === 'H' ? 'h' : 'e',
+        aRaw: cid.slice(2), bRaw: id.slice(2), value: w
+      }
+    });
+  }
+  return {nodes, links, focus: true, nbCount: nb.size, center: cid, centerVal: cVal};
+}
+
+/* ── 视图自适应 ── */
+/* 力导向布局会持续演化, 429 个节点很容易整体漂出画布被裁掉半边。这里等布局稳定后
+   按节点包围盒算一次 center/zoom, 让默认视图正好收在画布内; 用户手动漫游过就把
+   视角交还给用户, 不再自动纠正。 */
+let fitTimer = null, userRoamed = false, lastFitKey = '', lastHostWH = [0, 0];
+
+/* 画布宽度以 DOM 实测为准: 窗口 resize 未必在容器真正拿到宽度之后再来一次(页面刚 init
+   时容器可能还是 0 宽), chart.getWidth() 会一直停在旧值, 画布跟着缩没, 图上什么都不显示。 */
+function syncChartSize() {
+  if (!chart) return false;
+  const host = document.getElementById('chart');
+  if (!host) return false;
+  const w = host.clientWidth, h = host.clientHeight;
+  if (!w || !h) return false;
+  if (Math.abs(chart.getWidth() - w) > 1 || Math.abs(chart.getHeight() - h) > 1) {
+    chart.resize({width: w, height: h});
+  }
+  return true;
+}
+
+/* 尺寸真的变了才动手; 抖动几个像素不值得把用户调好的视角弹回去。
+   只有 0 宽 -> 正常宽度 这一种情况必须重新 render: 力导向布局是按画布尺寸撒点的,
+   在 0 宽的画布上算出来的布局是退化的(节点挤成一根竖线), 之后再怎么 fit 也救不回来。
+   其余尺寸变化(侧栏折叠、详情面板打开)只重新 fit 就够了, 位置还在, 不用重算布局。 */
+function onHostResized() {
+  if (!chart) return;
+  const host = document.getElementById('chart');
+  if (!host) return;
+  const w = host.clientWidth, h = host.clientHeight;
+  if (!w || !h) { lastHostWH = [w || 0, h || 0]; return; }
+  const wasDegenerate = !lastHostWH[0] || !lastHostWH[1];
+  const moved = Math.abs(w - lastHostWH[0]) > 8 || Math.abs(h - lastHostWH[1]) > 8;
+  lastHostWH = [w, h];
+  syncChartSize();
+  if (!moved) return;
+  if (wasDegenerate) render(); else scheduleFit();
+}
+
+/* 包围盒只按"节点圆心"算, 半径另外带出来: 圆是固定像素大的, 圆心却是数据单位, 把两者加
+   在同一个盒里等于让半径也乘了一遍 zoom。zoom 越小(节点越多)这个偏差越大, 力导向图上几百
+   个节点叠起来能差出上百像素, 最外一圈圆就是这么被画布切掉的。 */
+/* 标签是 position:'right' + distance 6 的像素字, 不随 zoom 缩放, 而 fit 原来只按
+   "圆心盒 + 固定 padR=78"算 —— 最右一列节点的长名(实测 Orthotospovirus 这一档, 11px 下
+   约 85px)整段探到画布外, 截图里就是名字缺尾巴。这里按当前真正显示的标签算一个最宽值,
+   fit 时折算成右边距; 名单在 render() 建 nodes 时一并更新。 */
+let LAST_LABELS = [];          // [{raw, side, center}] label.show 为真的节点
+let _labelCtx = null;
+function labelTextPx(txt, center) {
+  if (!_labelCtx) _labelCtx = document.createElement('canvas').getContext('2d');
+  // 字体串和 label 样式同款(只有粗细字号不同), 浏览器端解析出的才是同一份字形宽度
+  _labelCtx.font = (center ? '700 13px' : '400 11px') + ' sans-serif';
+  return _labelCtx.measureText(txt).width;
+}
+function maxLabelPx() {
+  if (!LAST_LABELS.length) return 0;
+  let mx = 0;
+  for (const n of LAST_LABELS) {
+    const w = labelTextPx(displayName(n.raw, n.side), n.center);
+    if (w > mx) mx = w;
+  }
+  return mx;
+}
+
+/* ---- 标签避让: 量真的, 别猜 -------------------------------------------------
+   分成两个问题, 各用一种手段:
+   1) 名字画在哪 —— ECharts 的自然位置其实很规矩: 关掉 labelLayout 之后实测 70 个标签, 水平
+      偏移恒等于 -1.25(描边半宽), 垂直偏移恒等于 0。麻烦全在它的 labelLayout.hideOverlap:
+      只保证"标签不压标签", 手段却是把标签整体推到别处再藏掉没处放的 —— 实测单标签最远被推
+      离自然位置 150px 以上。于是"这个字压没压到圆"变成不可预测的, 按自然位去躲必躲空。所以
+      render 里把 hideOverlap 关掉, 位置全部按自然位算。
+   2) 谁有名 —— 只看几何不设阈值挡不住: 密度最高的地方一个字压半屏。按 value 从大到小贪心,
+      撞上已占的标签盒、盖住枢纽圆(LBL_HUB_R 以上盖掉超过 LBL_HUB_COVER)、整段探出画布,
+      这个字就不显示; 聚焦中心永远有名。
+
+   还有两个量尺上的坑, 都是这条链上实测踩出来的:
+   ① 别用 tspan 父 text 的 style.x/y 去拼标签矩形 —— 那套锚点跟真正画出来的位置最多差 60px,
+      拿它算重叠等于闭着眼躲。正确做法是拿 tspan 自己的局部矩形, 套上 text 元素的计算变换
+      (applyTransform(par.getComputedTransform())): 这正是 ECharts 自己的 LabelManager 量标签
+      的方式, 出来的矩形跟圆说的是同一套画布像素。
+   ② 别用 chart.convertToPixel 取节点圆心。布局冻住之后它跟真正画出来的圆还差 5~12px(圆是
+      固定像素的, 换算走的是 view 坐标系)。圆心直接取 symbol 元素的 transform, 半径就是它的
+      缩放; 标签的宿主 symbol 通过 __hostTarget 一对一挂回去, 不用按名字猜。
+
+   最后一个坑最阴: 力导向的模拟器要磨几十帧才停, 降温途中节点一直在动。这时候任何把结论写回
+   option 的动作(setOption, 尤其是 render 那种 notMerge)都会把模拟器整个重启 —— 实测节点
+   位移一下跳回 500px 以上, 图上像被人猛拽一把, 接着再抖十几秒。所以降温期一轮都不能重画,
+   只能等: 等 symbol 位置连续几次一动不动(下面 labelFrozen), 才按真实矩形做最后一轮, 而且
+   这一轮也不碰 option —— 直接把要隐藏的标签 text 元素置 invisible, zr.refreshImmediately()
+   当场刷掉。 */
+/* 盖圆阈值: 10%。盖到圆就整段不摆 —— 这里的判据跟"谁画在上面"无关, coverFrac 量的是几何
+   重叠, 圆后画会啃掉标签、标签后画会糊住圆, 两种都得拦。阈值早先是 0.20, 实测有个名字被
+   12% 的圆啃成"Clayto"(标签 13.5px 高, 12% 就能啃掉一两个字); 逐档扫到 0.10: 九个状态
+   轮次里可见标签数、value 前 25 的带标签数跟 0.20 一模一样, 一个都没少, 而啃咬上限减半。 */
+const LBL_HUB_R = 11, LBL_HUB_COVER = 0.1;
+const LABEL_TICK = 420, LABEL_FREEZE_N = 4, LABEL_FREEZE_PX = 0.05, LABEL_SLOW_TICK = 1000;
+const LABEL_COOL_PX = 3;                     // 一轮里布局最多挪几个像素还算"凉了"
+const LABEL_PAD = 2;                         // 判标签互压时两边各留的余量(像素)
+let labelTimer = 0, labelSteps = 0, labelFrozenFor = 0, labelLastPx = null;
+let labelRoamed = false, labelSlow = false;
+let labelCooling = true;                     // 模拟器还在跑 → 这轮不摆任何字
+let labelLastLayout = null;                  // 数据坐标基线: 判"还在跑"只看它, 不受漫游缩放影响
+let labelHidden = new Set();
+let symMap = new Map();               // symbol 元素 → 节点, 只在 chartNodes/chartLabels 一轮内有效
+
+function rectsHit(a, b) {
+  return a.x < b.x + b.w && b.x < a.x + a.w && a.y < b.y + b.h && b.y < a.y + a.h;
+}
+/* 判重叠时给两边都留 LABEL_PAD 的余量。布局慢下来但还没停的时候一个 tick 仍能挪出两三个
+   像素, 正好压在矩形边上, 下一轮才藏 —— 不留余量的话这半帧里两个字是咬着的。 */
+function rectsHitPadded(a, b) {
+  const p = LABEL_PAD;
+  return a.x - p < b.x + b.w + p && b.x - p < a.x + a.w + p
+      && a.y - p < b.y + b.h + p && b.y - p < a.y + a.h + p;
+}
+function coverFrac(r, c) {          // 矩形 r 被圆 c 吃掉的比例(格点采样)
+  if (!(r.x < c.cx + c.r && c.cx - c.r < r.x + r.w && r.y < c.cy + c.r && c.cy - c.r < r.y + r.h)) return 0;
+  let hit = 0, tot = 0;
+  for (let gx = r.x + 0.5; gx < r.x + r.w; gx += 3) {
+    for (let gy = r.y + 0.5; gy < r.y + r.h; gy += 3) {
+      tot++;
+      if ((gx - c.cx) * (gx - c.cx) + (gy - c.cy) * (gy - c.cy) <= c.r * c.r) hit++;
+    }
+  }
+  return tot ? hit / tot : 0;
+}
+
+/* 图上每个节点此刻的画布坐标。布局坐标不能直接用 —— convertToPixel 跟真正画出来的圆差
+   5~12px, 而避让要躲的就是画出来的圆。所以直接读 symbol 元素: 它的 transform 第 0 项是缩放
+   (等于圆的像素半径), 第 4/5 项是画布坐标。顺带把 symbol → 节点 的对应攒下来, 标签那边靠
+   __hostTarget 反查, 不用按名字猜。 */
+function chartNodes() {
+  if (!chart) return [];
+  const out = [];
+  symMap.clear();
+  try {
+    const d = chart.getModel().getSeriesByIndex(0).getData();
+    for (let i = 0; i < d.count(); i++) {
+      const L = d.getItemLayout(i);
+      if (!L || !isFinite(L[0]) || !isFinite(L[1])) continue;
+      const grp = d.getItemGraphicEl(i);
+      const sym = grp && grp.childrenRef ? grp.childrenRef()[0] : null;
+      if (!sym || !sym.transform) continue;
+      const T = sym.transform, r = T[0];
+      if (!isFinite(r) || r <= 0) continue;
+      const it = d.getRawDataItem(i) || {};
+      const m = it._meta || {};
+      const n = {id: it.id, sym, cx: T[4], cy: T[5], r,
+                 lx: L[0], ly: L[1],
+                 v: d.get('value', i) || 0, center: !!m.center, txt: displayName(m.raw, m.side)};
+      out.push(n);
+      symMap.set(sym, n);
+    }
+  } catch (e) { /* 图表还没起来 */ }
+  return out;
+}
+
+/* 真的画出来的那些标签。矩形要拿 tspan 自己的局部矩形, 套上父 text 的计算变换 —— 这是 ECharts
+   LabelManager 量标签的方式, 出来的矩形跟上面那些圆说的是同一套画布像素; 直接拿父 text 的
+   x/y 拼最多能错开 60px。这里不筛 invisible/ignore: 隐藏只是把字变透明, 元素还在显示列表里、
+   位置还在更新, 恰恰要接着量, 不然藏过的字没有机会被恢复回来。归属走 __hostTarget, 一对一的。
+   图例、页头那些 tspan 形状跟节点标签不一样(ly/lh 对不上), 自动排除。 */
+function chartLabels() {
+  if (!chart) return [];
+  const out = [];
+  let dl;
+  try { dl = chart.getZr().storage.getDisplayList(); } catch (e) { return out; }
+  for (const el of dl) {
+    if (el.type !== 'tspan' || !el.style || el.style.text == null) continue;
+    let lr = null;
+    try { lr = el.getBoundingRect(); } catch (e) { continue; }
+    if (!lr || lr.width <= 0) continue;
+    const par = el.parent;
+    if (!par || par.type !== 'text') continue;
+    // 节点标签统一 ly=-6.75 lh=13.5; 图例、页头那些字形状不同, 排除
+    if (Math.abs(lr.y + 6.75) > 0.05 || Math.abs(lr.height - 13.5) > 0.05) continue;
+    let rect = null;
+    try {
+      rect = lr.clone();
+      rect.applyTransform(par.getComputedTransform());
+    } catch (e) { rect = null; }
+    if (!rect) continue;
+    // zrender 的 Rect 是 width/height, 别处统一按 w/h 算, 这里转成普通对象
+    const box = {x: rect.x, y: rect.y, w: rect.width, h: rect.height};
+    if (!(box.w > 0) || !(box.h > 0)) continue;
+    const host = par.__hostTarget;
+    const node = host && host.type === 'path' && symMap.has(host) ? symMap.get(host) : null;
+    out.push({el: par, rect: box, node, v: node ? node.v : 0, center: !!(node && node.center)});
+  }
+  return out;
+}
+
+/* 一轮避让。返回藏掉了几个字。只碰显示列表, 不碰 option。 */
+function polishLabels() {
+  if (!chart) return 0;
+  const st = tab();
+  if (st.labels === 'none') return 0;
+  const zr = chart.getZr();
+  const W = zr.getWidth(), H = zr.getHeight();
+  if (!W || !H) return 0;
+  const nodes = chartNodes();
+  const labs = chartLabels();
+  if (!labs.length) return 0;
+  for (const el of labelHidden) { try { el.invisible = false; } catch (e) { /* 上一帧的元素已回收 */ } }
+  labelHidden = new Set();
+  if (labelCooling) {                        // 模拟器还在跑: 一个都不摆
+    for (const L of labs) labelHidden.add(L.el);
+    for (const el of labelHidden) { try { el.invisible = true; } catch (e) { /* noop */ } }
+    zr.refreshImmediately();
+    return labelHidden.size;
+  }
+  const boxes = [];
+  labs.sort((a, b) => (b.center - a.center) || (b.v - a.v));
+  for (const L of labs) {
+    if (L.center) { boxes.push(L.rect); continue; }        // 聚焦中心先占住, 永远有名
+    let bad = L.rect.x + L.rect.w > W - 2 || L.rect.x < 1
+           || L.rect.y < 1 || L.rect.y + L.rect.h > H - 1; // 探出画布就整段没了, 不如不摆
+    if (!bad) for (const b of boxes) if (rectsHitPadded(L.rect, b)) { bad = true; break; }
+    if (!bad) for (const n of nodes) {
+      if (n.r < LBL_HUB_R) continue;
+      // LBL_HUB_COVER 是唯一口径来源: 页面用它砍, 量具也用它判, 两边不会各自漂移
+      if (coverFrac(L.rect, n) > LBL_HUB_COVER) { bad = true; break; }
+    }
+    if (bad) labelHidden.add(L.el); else boxes.push(L.rect);
+  }
+  if (labelHidden.size) {
+    for (const el of labelHidden) el.invisible = true;
+    zr.refreshImmediately();
+  }
+  return labelHidden.size;
+}
+
+/* 降温监视: 每 tick 量一遍全量节点像素位置, 连着 LABEL_FREEZE_N 次不动就算冻住了, 换慢档。
+   避让每一轮都做: 一轮实测只要 4~10ms, 攒着做的代价是"决策过期"—— 降温途中节点一直在动,
+   隔 2.5s 才判一次, 上一轮按旧位姿挑出来的字整体错开, 实测 1440px 下 2s 时有 112 对标签互相
+   压着、8s 还剩 4 对; 而且 symbol 的 transform 一直有零点几个像素的余动, frozenFor 在 1/3
+   之间来回跳, "冻住后收尾"那一轮根本等不到, 只剩每 6 个 tick 一次的机会在兜底。改成每轮都
+   判, 余动就只剩一个 tick 的量, 冻住之后判出来的就是最终结果。
+   手动漫游之后接着跑: 漫游只改 center/zoom —— 圆的大小是固定像素, 所以放大之后原来不压
+   圆的字可能就压上了, 得重新判一次。 */
+function labelWatchTick() {
+  if (!chart) { stopLabelWatch(); return; }
+  const nodes = chartNodes();
+  if (!nodes.length) return;
+  let mx = 0, sampled = false;
+  if (labelLastPx) {
+    if (labelLastPx.length === nodes.length) {
+      sampled = true;
+      for (let i = 0; i < nodes.length; i++) {
+        const dx = nodes[i].cx - labelLastPx[i][0], dy = nodes[i].cy - labelLastPx[i][1];
+        if (dx * dx + dy * dy > mx * mx) mx = Math.hypot(dx, dy);
+      }
+    } else {
+      labelLastPx = null;                       // 节点数变了是换了 tab/数据集, 重新取基线
+    }
+  }
+  if (!sampled) {
+    labelLastPx = nodes.map(n => [n.cx, n.cy]);  // 第一轮只取样, 不表决
+    return;
+  }
+  labelLastPx = nodes.map(n => [n.cx, n.cy]);
+  labelSteps++;
+  /* "还在跑"用数据坐标判, 不用 symbol 的 transform: 后者混着漫游的缩放平移, 用户一拖动
+     画面就整批位移, 拿它判会把漫游当成布局在跑、把字全藏掉。数据坐标只跟模拟器有关。
+     阈值给 3px/轮: 再小就是格子级的余动, 不影响认字; 再大就是一帧挪出去好几个字宽的动画,
+     这时候按位姿挑出来的字下一轮就全作废, 不如先不摆。 */
+  if (labelLastLayout && labelLastLayout.length === nodes.length) {
+    let d = 0;
+    for (let i = 0; i < nodes.length; i++) {
+      const dx = nodes[i].lx - labelLastLayout[i][0], dy = nodes[i].ly - labelLastLayout[i][1];
+      if (dx * dx + dy * dy > d * d) d = Math.hypot(dx, dy);
+    }
+    labelCooling = d > LABEL_COOL_PX;
+  }
+  labelLastLayout = nodes.map(n => [n.lx, n.ly]);
+  if (labelRoamed || mx > LABEL_FREEZE_PX) {
+    labelRoamed = false;
+    labelFrozenFor = 0;
+    if (labelSlow) labelSetSpeed(false);          // 又从冻住变回在跑, 回快档
+  } else {
+    labelFrozenFor++;
+    if (labelFrozenFor >= LABEL_FREEZE_N) {
+      labelSetSpeed(true);                        // 之后只盯漫游
+      labelFrozenFor = 0;
+    }
+  }
+  polishLabels();                                 // 每一轮都判, 别攒着
+}
+/* 快档盯着布局, 慢档只在冻住之后盯漫游。两边互斥, 换来换去只有一个 interval。 */
+function labelSetSpeed(slow) {
+  if (labelSlow === slow) return;
+  labelSlow = slow;
+  if (labelTimer) clearInterval(labelTimer);
+  labelTimer = setInterval(labelWatchTick, slow ? LABEL_SLOW_TICK : LABEL_TICK);
+}
+function stopLabelWatch() {
+  if (labelTimer) clearInterval(labelTimer);
+  labelTimer = 0; labelSteps = 0; labelFrozenFor = 0;
+  labelLastPx = null; labelRoamed = false; labelSlow = false;
+  labelCooling = true; labelLastLayout = null;
+}
+function startLabelWatch() {
+  stopLabelWatch();
+  labelTimer = setInterval(labelWatchTick, LABEL_TICK);
+}
+
+function graphBBox() {
+  if (!chart) return null;
+  try {
+    const d = chart.getModel().getSeriesByIndex(0).getData();
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity, n = 0, maxR = 0;
+    for (let i = 0; i < d.count(); i++) {
+      const L = d.getItemLayout(i);
+      if (!L || !isFinite(L[0]) || !isFinite(L[1])) continue;
+      const r = d.getItemVisual(i, 'symbolSize') || 0;
+      if (r > maxR) maxR = r;
+      n++;
+      if (L[0] < minX) minX = L[0]; if (L[0] > maxX) maxX = L[0];
+      if (L[1] < minY) minY = L[1]; if (L[1] > maxY) maxY = L[1];
+    }
+    if (!n) return null;
+    return {cx: (minX + maxX) / 2, cy: (minY + maxY) / 2, w: maxX - minX, h: maxY - minY, maxR};
+  } catch (e) { return null; }
+}
+
+/* ECharts 的坑: setOption 带 notMerge 时它把整个组件树都算"全新", tooltip 视图跟着销毁
+   重建(_ec_<id>_tooltip 换成新实例, 老实例 dispose 时 _tooltipContent.el 被置 null)。
+   可 tooltip 视图每 render 一次就挂个 _keepShow 定时器, 里头按老视图的引用调
+   manuallyShowTip, 只判了 chart.isDisposed()、没管视图已经换掉。于是鼠标停在图上
+   (定时器已挂)再双击节点触发 render, 定时器到点就往 el=null 的 ContentView 里写
+   innerHTML, 抛 TypeError。重设 option 之前先把悬着的定时器摘掉: 老视图没机会醒,
+   新视图 render 时自己会重新挂, tooltip 该在还在。 */
+function dropStaleTooltipTimer() {
+  if (!chart) return;
+  try {
+    const views = chart._componentsViews;
+    if (!views) return;
+    for (const v of views) {
+      if (!v || typeof v.__id !== 'string' || !v.__id.endsWith('_tooltip')) continue;
+      if (v._refreshUpdateTimeout != null) {
+        clearTimeout(v._refreshUpdateTimeout);
+        v._refreshUpdateTimeout = null;
+      }
+    }
+  } catch (e) { /* 摸不到内部字段就算了, 不影响主流程 */ }
+}
+
+function fitGraphView() {
+  if (!syncChartSize()) return;
+  const b = graphBBox();
+  if (!b) return;
+  const host = document.getElementById('chart');
+  const cw = host.clientWidth, ch = host.clientHeight;
+  if (!cw || !ch) return;
+  // 右侧多留一截: 标签(position:'right')是从圆心往右探出去的, 左边上下都不探
+  const padL = 38, padT = 38, padB = 38;
+  const padR = Math.max(78, maxLabelPx() + 34);
+  /* 闭合解, 一次到位。画出来的外框 = 圆心盒 × zoom + 两端的固定像素半径(圆不随 zoom 缩),
+     所以可得空间得先扣掉半径再除。早先写法按"圆心盒 ÷ 可得空间"算, 等于漏算 2×maxR
+     那 70 多像素 —— zoom 正好卡在临界值时, 最外一圈圆实打实被画布切掉(实测压在边上 7px)。
+     FIT_SAFE 再让一点: 力导向降温时包围盒会往上喘 1~2%, 不留这点余量下一口气就顶出去。*/
+  const zW = (cw - padL - padR - 2 * b.maxR) / Math.max(b.w, 1);
+  const zH = (ch - padT - padB - 2 * b.maxR) / Math.max(b.h, 1);
+  const z = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, Math.min(zW, zH) * FIT_SAFE));
+  dropStaleTooltipTimer();
+  chart.setOption({series: [{center: [b.cx, b.cy], zoom: z}]});
+}
+
+/* 力导向布局关掉 layoutAnimation 后, setOption 一返回就能拿到布局, 但 ECharts 并不会
+   就此收工: 之后几百毫秒里它还在继续降温收缩, 包围盒一次比一次小。只 fit 一次的话,
+   fit 用的是"还没缩完"的包围盒, 最外一圈节点连标签一起被画布切掉(实测有 30px 以上的
+   偏差)。所以 fit 得跟着布局多跑几轮, 包围盒不再变化就自动停。
+   render() 传 true: 换了阶元/标签页/聚焦层级, 视角必须重算;
+   容器尺寸变化那只传 undefined, 用户手动漫游过就不再擅自改视角。 */
+/* 自动 fit 是否还在跟着布局跑: 跑动期间视角(zoom/center)会变, 节点屏幕位置跟着动,
+   这时候去量像素或者点节点都会撞上移动靶。外部(自动化验收)等这个标志落下去再动手。 */
+/* 留白系数: 力导向图降温过程中会"呼吸"(包围盒上下几个百分点), 正好贴着画布边 fit 的话,
+   下一口气喘上来最外一圈圆就被划出道口子。所以按 96% 的可用空间算。 */
+const FIT_SAFE = 0.96;
+let fitChain = 0, lastFitSig = '', fitSettling = false;
+let lastW = 0, lastH = 0, lastCx = 0, lastCy = 0;
+function scheduleFit(force) {
+  clearTimeout(fitTimer);
+  // 用户一漫游就把视角交出去, 后面几轮也不再擅自改, 所以每轮都重新问一次
+  const alive = () => !!force || !userRoamed;
+  fitChain = 0;
+  fitSettling = true;
+  lastW = lastH = lastCx = lastCy = 0;
+  if (alive()) fitGraphView();
+  const done = () => { fitSettling = false; };
+  // 力度拉到顶的时候布局会连着膨胀十几秒(实测 rep=300 时包围盒高度还在往上爬),
+  // 早收工就等于拿一个"还没长完"的包围盒去 fit, 最外一圈节点连带标签被画布切掉。
+  // 所以不数轮数, 改成跟着收敛走: 包围盒还在变就继续 fit, 直到不变了或者到点为止。
+  const deadline = Date.now() + 20000;
+  const step = () => {
+    if (!alive()) { done(); return; }
+    const b = graphBBox();
+    if (!b) { done(); return; }
+    /* 力导向图永远不会真正静止, 永远在 1% 量级上呼吸。把这种抖动也当"布局还在变"的话,
+       fit 会一路跟到超时, 收敛标志迟迟不落。所以判个相对变化: 尺寸动了不到 1.5%、中心没
+       跑出 40 个数据单位, 就算它稳了。 */
+    const settled = lastW > 0
+      && Math.abs(b.w - lastW) / Math.max(b.w, 1) < 0.015
+      && Math.abs(b.h - lastH) / Math.max(b.h, 1) < 0.015
+      && Math.abs(b.cx - lastCx) < 40 && Math.abs(b.cy - lastCy) < 40;
+    if (settled) { done(); return; }
+    lastW = b.w; lastH = b.h; lastCx = b.cx; lastCy = b.cy;
+    fitGraphView();
+    if (Date.now() > deadline) { done(); return; }
+    const wait = [140, 240, 420, 700, 1200, 1400, 1400, 1400, 1400, 1400, 1400, 1400,
+                  1400, 1400, 1400, 1400, 1400, 1400][fitChain - 1] || 1400;
+    fitChain++;
+    fitTimer = setTimeout(step, wait);
+  };
+  fitTimer = setTimeout(step, 140);
+}
+
+/* ── render ── */
+function capturePositions() {
+  if (!chart) return null;
+  try {
+    const g = chart.getModel().getSeriesByIndex(0).getGraph();
+    const pos = {};
+    g.data.each(n => { const l = n.getLayout(); if (l && isFinite(l.x) && isFinite(l.y)) pos[n.id] = [l.x, l.y]; });
+    return pos;
+  } catch (e) { return null; }
+}
+
+function render() {
+  const st = tab();
+  if (!st.full) aggregate(st);
+  const view = st.focus.length ? buildFocusView(st) : buildView(st);
+  st.view = view;
+  // 只有换了阶元 / 标签页 / 聚焦层级才算"新视图", 才重新自适应; 拉动筛选、改标签
+  // 显示数量这些不该把用户已经调好的视角弹回去。
+  const fk = st.kind + '|' + st.vRank + '|' + st.eRank + '|' + st.hRank + '|' + st.focus.length;
+  if (fk !== lastFitKey) { lastFitKey = fk; userRoamed = false; }
+  drawFocusBar(st);
+  drawDetail(st);
+
+  const chartEl = document.getElementById('chart');
+  const emptyEl = document.getElementById('empty');
+  document.getElementById('view-title').textContent = viewTitle(st, view);
+  document.getElementById('view-tip').textContent = st.focus.length
+    ? (lang() === 'zh' ? '点击任意节点沿网络再走一步，点路径标签回退' : 'click any node to walk further · click a path chip to go back')
+    : (lang() === 'zh' ? '双击节点聚焦自我网络；单击查看详情' : 'double-click a node to focus its ego-network · click for details');
+
+  if (!view.links.length) {
+    chartEl.style.display = 'none';
+    emptyEl.style.display = 'block';
+    emptyEl.innerHTML = '<div style="font-size:34px;margin-bottom:10px">🕸️</div>' + t('noData');
+    chart && chart.clear();
+    return;
+  }
+  chartEl.style.display = 'block';
+  emptyEl.style.display = 'none';
+
+  const hidden = st.hidden;
+  const catNames = st.kind === 'vh' ? [t('virusSide'), t('hostSide')] : [t('virusSide'), t('hostSide'), t('vecSide')];
+  const name2side = {};
+  catNames.forEach((n, i) => { name2side[n] = st.kind === 'vh' ? ['v', 'h'][i] : ['v', 'h', 'e'][i]; });
+
+  let labelSet = null;
+  if (st.labels === 'top') {
+    labelSet = new Set([...view.nodes].sort((a, b) => b.value - a.value).slice(0, 70).map(n => n.id));
+  }
+  const pos = capturePositions();
+  const nodes = view.nodes
+    .filter(n => !hidden[n._meta.side])
+    .map(n => {
+      const m = n._meta;
+      // 'top' 先发前 70 大的候选, 'all' 全发; 真正砍谁等布局降温到位后由 polishLabels()
+      // 在显示列表上量着砍 —— 那时候写 option 会把力导向模拟器整个重启(见 polishLabels 注释)
+      let show;
+      if (m.center) show = true;
+      else if (st.labels === 'all') show = true;
+      else if (st.labels !== 'top') show = false;
+      else show = labelSet.has(n.id);
+      const d = {
+        id: n.id, name: n.id, value: n.value, category: n.category,
+        symbolSize: n.symbolSize, itemStyle: n.itemStyle,
+        label: {
+          show, position: 'right', distance: 6,
+          formatter: () => displayName(m.raw, m.side),
+          color: m.center ? '#b03a2e' : '#2c3e50',
+          fontSize: m.center ? 13 : 11,
+          fontWeight: m.center ? 700 : 400,
+          /* 白描边: 标签叠在线上、压在别的标签边缘时, 描边把字衬出来, 放大看也不会
+             把两个词读成一个。hideOverlap 拦掉整片重叠, 这层兜住"擦个边"的那种。 */
+          textBorderColor: 'rgba(255,255,255,.92)', textBorderWidth: 2.5
+        },
+        _meta: n._meta
+      };
+      if (pos && pos[n.id]) { d.x = pos[n.id][0]; d.y = pos[n.id][1]; }
+      return d;
+    });
+  const visibleIds = new Set(nodes.map(n => n.id));
+  const links = view.links
+    .filter(l => visibleIds.has(l.source) && visibleIds.has(l.target))
+    .map(l => ({source: l.source, target: l.target, value: l.value, lineStyle: l.lineStyle, _meta: l._meta}));
+
+  // fit 的右边距要用"当前真正显示的标签有多宽", 所以渲染完把名单留下(见 fitGraphView)
+  LAST_LABELS = nodes.filter(n => n.label && n.label.show)
+                    .map(n => ({raw: n._meta.raw, side: n._meta.side, center: !!n._meta.center}));
+
+  const selected = {};
+  catNames.forEach(n => { selected[n] = !hidden[name2side[n]]; });
+  syncChartSize();                                  // 布局要用到真实画布尺寸, 先同步
+  dropStaleTooltipTimer();                          // 换 tooltip 视图之前摘掉悬着的 _keepShow 定时器
+  chart.setOption({
+    animationDuration: pos ? 420 : 900,
+    tooltip: {
+      trigger: 'item', confine: true,
+      backgroundColor: 'rgba(255,255,255,.97)', borderColor: '#d5e6f2',
+      textStyle: {color: '#2c3e50', fontSize: 12},
+      extraCssText: 'box-shadow:0 6px 20px rgba(20,60,90,.15);max-width:340px;',
+      formatter: (p) => tooltipFormatter(p, st, view)
+    },
+    legend: {
+      data: catNames, selected,
+      textStyle: {fontSize: 11, color: '#5d6d7e'},
+      top: 2, left: 12, icon: 'circle', itemWidth: 10, itemHeight: 10
+    },
+    series: [{
+      type: 'graph', layout: 'force', roam: true, draggable: true,
+      categories: catNames.map(n => ({name: n, itemStyle: {color: PAL[name2side[n]][0]}})),
+      data: nodes, links: links,
+      force: {repulsion: st.rep, edgeLength: st.edge, gravity: 0.06, friction: 0.18, layoutAnimation: false},
+      emphasis: {focus: 'adjacency', scale: 1.12, lineStyle: {opacity: 0.7, width: 2.5}, label: {show: true}},
+      /* 标签防打架全部自己做(见 polishLabels): labelLayout.hideOverlap 只保证"标签不压
+         标签", 手段却是把标签整体挪到别处再藏掉没处放的 —— 实测单标签最远被推离自然位
+         置 150px 以上, 于是"标签不压圆"根本没法预测、也没法防。关掉它之后每个标签都死
+         在自然位置上(圆心右缘 + distance 6, 垂直居中对齐圆心), 圆形坐标和 label 矩形
+         用的是同一套像素, 贪心避让才算得准。 */
+      labelLayout: {hideOverlap: false},
+      scaleLimit: {min: ZOOM_MIN, max: ZOOM_USER_MAX},
+      lineStyle: {color: '#c3ced9', opacity: 0.3, curveness: 0.12},
+      edgeSymbol: ['none', 'none'],
+      cursor: 'pointer'
+    }]
+  }, true);
+  scheduleFit(true);                            // 新视图, 重新跟一轮布局降温
+  startLabelWatch();                            // 降温监视, 凉透了再判标签避让
+  /* 首帧就把字全收起来。不这么做的话, 到第一个 tick(420ms)甚至第一次 render 之前, ECharts
+     画的 70 个标签全按自然位叠在一起 —— 实测 1440px 上 96 对互压、390px 上 1800 对, 头一秒
+     就是一坨字。labelCooling 初值就是 true, 这一轮正好把它们的 invisible 都置上。 */
+  polishLabels();
+}
+
+function viewTitle(st, view) {
+  if (st.focus.length) {
+    const c = st.focus[st.focus.length - 1];
+    // 入栈时只存 raw/side, 标题也现拼: 面包屑会跟着语言更新, 这里不同步就成了两套语言
+    return t('focusOn') + ': ' + displayName(c.raw, c.side) + '  ·  ' + view.nbCount + ' ' + t('partners');
+  }
+  const r = (side, i) => i >= 3 ? t(side === 'v' ? 'virusSp' : 'hostSp') : rankLabelOf(side, side === 'v' ? V_LEVELS[i] : H_LEVELS[i]);
+  if (st.kind === 'vh') {
+    return r('v', st.vRank) + '  ↔  ' + r('h', st.hRank) +
+           '  ·  ' + view.nodes.length + ' nodes / ' + view.links.length + ' links';
+  }
+  return r('v', st.vRank) + '  ↔  ' + rankLabelOf('e', E_LEVELS[st.eRank]) + '  ↔  ' + r('h', st.hRank) +
+         '  ·  ' + view.nodes.length + ' nodes / ' + view.links.length + ' links';
+}
+
+function tooltipFormatter(p, st, view) {
+  if (p.dataType === 'edge') {
+    const m = p.data._meta;
+    if (!m) return '';
+    let html = '<b>' + displayName(m.aRaw, m.aSide) + '</b>  ↔  <b>' + displayName(m.bRaw, m.bSide) + '</b><br>' +
+               m.value.toLocaleString() + ' ' + unit(st);
+    if (st.kind === 'evh' && (m.aSide === 'e' || m.bSide === 'e')) {
+      const modes = modesOfEdge(st, m);
+      if (modes.length) html += '<br>' + modes.slice(0, 3).map(x => '<span class="modetag">' + x + '</span>').join('');
+    }
+    return html;
+  }
+  const m = p.data._meta;
+  if (!m) return '';
+  if (m.other) return '<b>' + t('other') + '</b><br>' + m.value.toLocaleString() + ' ' + unit(st);
+  const share = view.focus ? '' : ' · ' + (100 * m.value / (view.sum[m.side] || 1)).toFixed(1) + '% ' + t('share');
+  return '<b>' + displayName(m.raw, m.side) + '</b><br>' +
+         rankLabelOf(m.side, m.rank) + ' · ' + SIDE_NAME[m.side] + '<br>' +
+         m.value.toLocaleString() + ' ' + unit(st) + share +
+         '<br><span style="color:#95a5b5">' + (st.focus.length ? t('clickWalk') : t('dblClick')) + '</span>';
+}
+
+function modesOfEdge(st, m) {
+  const vName = m.aSide === 'v' ? m.aRaw : m.bSide === 'v' ? m.bRaw : null;
+  const eName = m.aSide === 'e' ? m.aRaw : m.bSide === 'e' ? m.bRaw : null;
+  if (!vName || !eName) return [];
+  const cnt = {};
+  for (const tr of N.vh) {
+    const vv = st.vRank >= 3 ? tr[0] : (N.v2[tr[0]][st.vRank] || '(unclassified)');
+    const ee = N.ve[tr[1]][st.eRank] || '(no rank)';
+    if (vv === vName && ee === eName) { const md = N.modes[tr[3]]; cnt[md] = (cnt[md] || 0) + 1; }
+  }
+  return Object.entries(cnt).sort((a, b) => b[1] - a[1]).map(x => x[0]);
+}
+function doisOfEdge(st, sel) {
+  const vName = sel.aSide === 'v' ? sel.aRaw : sel.bSide === 'v' ? sel.bRaw : null;
+  const eName = sel.aSide === 'e' ? sel.aRaw : sel.bSide === 'e' ? sel.bRaw : null;
+  if (!vName || !eName) return [];
+  const out = new Set();
+  for (const tr of N.vh) {
+    const vv = st.vRank >= 3 ? tr[0] : (N.v2[tr[0]][st.vRank] || '(unclassified)');
+    const ee = N.ve[tr[1]][st.eRank] || '(no rank)';
+    if (vv === vName && ee === eName && tr[4] && tr[4].length) {
+      for (const di of tr[4]) out.add(N.dois[di]);
+    }
+  }
+  return [...out];
+}
+function modesOfVirus(st, raw) {
+  const cnt = {};
+  for (const tr of N.vh) {
+    const vv = st.vRank >= 3 ? tr[0] : (N.v2[tr[0]][st.vRank] || '(unclassified)');
+    if (vv !== raw) continue;
+    const md = N.modes[tr[3]];
+    cnt[md] = (cnt[md] || 0) + 1;
+  }
+  return Object.entries(cnt).sort((a, b) => b[1] - a[1]);
+}
+
+/* ── focus path bar ── */
+function focusBarHtml(st) {
+  let html = '<span class="lab">' + t('focusOn') + ':</span>';
+  st.focus.forEach((f, i) => {
+    const last = i === st.focus.length - 1;
+    const nm = displayName(f.raw, f.side);
+    html += '<span class="fcrumb' + (last ? ' last' : '') + '" data-i="' + i + '" title="' + nm + '">' + nm + '</span>';
+    if (!last) html += '<span style="color:#b2bec3">›</span>';
+  });
+  html += '<span class="fcrumb" data-i="-1" style="background:#fff;border-color:#d5dde5;color:#5d6d7e">✕ ' + t('exitFocus') + '</span>';
+  // 操作提示跟着面包屑走: 左侧面板再放一份 FOCUS PATH 说明会把筛选控件挤出视口,
+  // 而这里才是用户找回退入口时视线所在的位置。
+  html += '<span class="fhint">' + t('focusHint') + '</span>';
+  return html;
+}
+function drawFocusBar(st) {
+  const top = document.getElementById('focusbar-top');
+  if (!st.focus.length) { top.style.display = 'none'; top.innerHTML = ''; return; }
+  top.style.display = 'flex'; top.innerHTML = focusBarHtml(st);
+  top.querySelectorAll('.fcrumb').forEach(c => {
+    c.addEventListener('click', () => {
+      const i = parseInt(c.dataset.i);
+      st.focus = i < 0 ? [] : st.focus.slice(0, i + 1);
+      st.sel = null;
+      render();
+    });
+  });
+}
+
+/* ── detail panel ── */
+function kvCard(val, label) { return '<div class="c"><b>' + val + '</b><span>' + label + '</span></div>'; }
+/* 详情面板里两处"每次重画都要跟着语言走"的片段: 分类路径(界名过 kLabel)和邻居行
+   (合并节点过 displayName)。st.sel 里只留原始数据, 这里现拼。 */
+function taxpathHtml(segs) {
+  if (!segs || !segs.length) return '';
+  const last = segs.length - 1;
+  return segs.map((x, i) => {
+    const lab = (i === 0 && KINGDOMS[x]) ? kLabel(x) : x;
+    return i === last ? '<b>' + lab + '</b>' : lab;
+  }).join(' › ');
+}
+function rowsHtmlOf(rows, maxNb) {
+  rows = rows || [];
+  if (!rows.length) return '<div class="hint">–</div>';
+  /* 分母认 mx, 别直接除 maxNb: 唯一调用方不传这个参数, 除 undefined 得到 NaN%, width
+     写成空串, 小横条于是全按 auto(=整条 52px)渲染 —— 一根根都一样长, 什么都没表示。
+     rows 已按权重降序, 故 mx 也就是该节点的全局最大邻居权重。 */
+  const mx = maxNb || Math.max(1, ...rows.map(r => r[1]));
+  return rows.map(([nid, w]) => {
+    const s = nid[0] === 'V' ? 'v' : nid[0] === 'H' ? 'h' : 'e';
+    const nr = nid.slice(2);
+    return '<div class="linkrow" data-id="' + nid + '"><span class="badge ' + SIDE_CLS[s] + '">' + SIDE_ICON[s] + '</span>' +
+           '<span class="nm" title="' + nr + '">' + displayName(nr, s) + '</span>' +
+           '<span class="barwrap"><i style="width:' + Math.round(100 * w / mx) + '%;background:' + sideColor(s, nr) + '"></i></span>' +
+           '<span class="v">' + w.toLocaleString() + '</span></div>';
+  }).join('');
+}
+function doiUrl(d) { return /^https?:\/\//.test(d) ? d : 'https://doi.org/' + d; }
+function doiLabel(d) { return d.replace(/^https?:\/\/doi\.org\//, ''); }
+
+function drawDetail(st) {
+  const el = document.getElementById('detail');
+  const sel = st.sel;
+  if (!sel) { el.classList.remove('open'); el.innerHTML = ''; return; }
+  el.classList.add('open');
+  if (sel.kind === 'edge') {
+    let html = '<div class="dt">' + displayName(sel.aRaw, sel.aSide) + '  ↔  ' + displayName(sel.bRaw, sel.bSide) + '</div>' +
+               '<div class="sub">' + rankLabelOf(sel.aSide, sel.aRank) + ' ↔ ' + rankLabelOf(sel.bSide, sel.bRank) + '</div>' +
+               '<div class="kv">' + kvCard(sel.value.toLocaleString(), unit(st)) + '</div>';
+    if (st.kind === 'evh' && (sel.aSide === 'e' || sel.bSide === 'e')) {
+      const modes = modesOfEdge(st, sel);
+      if (modes.length) {
+        html += '<h4>' + t('modes') + '</h4><div>' + modes.map(x => '<span class="modetag">' + x + '</span>').join('') + '</div>';
+        const dois = doisOfEdge(st, sel);
+        if (dois.length) {
+          const shown = Math.min(dois.length, 8);
+          html += '<h4>' + t('evidence') + (dois.length > shown ? ' · ' + shown + '/' + dois.length : '') + '</h4>' +
+                  dois.slice(0, shown).map(d =>
+                    '<div class="doiline">· <a href="' + doiUrl(d) + '" target="_blank" rel="noopener">' + doiLabel(d) + '</a></div>').join('');
+        }
+      }
+    }
+    html += '<div class="ext">' +
+            '<a class="backlink" onclick="__focusSide(\'' + sel.aSide + '\',\'' + escQ(sel.aRaw) + '\')">⌖ ' + t('focusOn') + ' ' + displayName(sel.aRaw, sel.aSide) + '</a><br>' +
+            '<a class="backlink" onclick="__focusSide(\'' + sel.bSide + '\',\'' + escQ(sel.bRaw) + '\')">⌖ ' + t('focusOn') + ' ' + displayName(sel.bRaw, sel.bSide) + '</a></div>';
+    el.innerHTML = html;
+    return;
+  }
+  const m = sel;
+  /* share 的默认含义是"占同类节点总强度"。聚焦态下整个视图只剩中心节点和它的一跳邻居,
+     st.view 没有 sum, 拿邻居量比更诚实: 占中心节点。分母拿不到时整张卡片去掉, 不填 '–'。 */
+  let shareCard = '';
+  if (st.view && st.view.focus && st.view.centerVal > 0) {
+    shareCard = kvCard((100 * m.value / st.view.centerVal).toFixed(1) + '%', t('shareCenter'));
+  } else if (st.view && !st.view.focus && st.view.sum && st.view.sum[m.side] > 0) {
+    shareCard = kvCard((100 * m.value / st.view.sum[m.side]).toFixed(1) + '%', t('share'));
+  }
+  const isCenter = st.focus.length && st.focus[st.focus.length - 1].id === m.id;
+  let html = '<div class="dt">' + displayName(m.raw, m.side) + '</div>' +
+             '<div class="sub">' + SIDE_NAME[m.side] + ' · ' + rankLabelOf(m.side, m.rank) + (isCenter ? ' · ' + t('focusOn') : '') + '</div>' +
+             '<div class="kv">' + kvCard(m.value.toLocaleString(), unit(st)) +
+             shareCard + kvCard(m.partners, t('partners')) + '</div>';
+  const taxpath = taxpathHtml(m.taxsegs);
+  if (taxpath) html += '<div class="taxpath">' + taxpath + '</div>';
+  if (m.acc) html += '<div class="kv" style="margin-top:-4px">' + kvCard(m.acc.toLocaleString(), 'GenBank ' + t('sequences')) + '</div>';
+  if (st.kind === 'evh' && m.side === 'v') {
+    const modes = modesOfVirus(st, m.raw);
+    if (modes.length) html += '<h4>' + t('modes') + '</h4><div>' + modes.map(x => '<span class="modetag">' + x[0] + ' ×' + x[1] + '</span>').join('') + '</div>';
+  }
+  html += '<h4>' + t('topPartners') + '</h4><div>' + rowsHtmlOf(m.rows) + '</div>';
+  html += '<div class="ext"><a class="backlink" onclick="__focusNode(\'' + m.id + '\')">' + t('focusBtn') + '</a>';
+  if (m.explorer) html += '<br><a href="/explorer/?profile=' + encodeURIComponent(m.explorer) + '" target="_blank" rel="noopener">' + t('openExplorer') + '</a>';
+  html += '</div>';
+  el.innerHTML = html;
+  el.querySelectorAll('.linkrow').forEach(row => {
+    row.addEventListener('click', () => focusNode(st, row.dataset.id));
+  });
+}
+function escQ(s) { return String(s).replace(/'/g, "\\'"); }
+
+function selectNode(st, id, valueOverride) {
+  const full = st.full;
+  const side = id[0] === 'V' ? 'v' : id[0] === 'H' ? 'h' : 'e';
+  const raw = id.slice(2);
+  const nMap = side === 'v' ? full.vN : side === 'h' ? full.hN : full.eN;
+  const value = valueOverride != null ? valueOverride : ((nMap && nMap.get(raw)) || 0);
+  const nb = new Map();
+  for (const [k, w] of full.links) {
+    if (w < st.minW) continue;
+    const i = k.indexOf(DELIM);
+    const a = k.slice(0, i), b = k.slice(i + 1);
+    if (a === id) nb.set(b, (nb.get(b) || 0) + w);
+    else if (b === id) nb.set(a, (nb.get(a) || 0) + w);
+  }
+  const rows = [...nb.entries()].sort((a, b) => b[1] - a[1]).slice(0, 14);
+  // rows/taxsegs 只存"跟语言无关"的原始数据, HTML 留到 drawDetail 现算:
+  // kLabel()/displayName() 都过 t(), 一旦在这里就把中文串烤进 st.sel, 切英文后面包屑
+  // 还写着"植物 › …"(界面其余部分已经是英文), 实测复现过。
+  let taxsegs = [], explorer = null, acc = 0, rank;
+  if (st.kind === 'vh') {
+    rank = st[side + 'Rank'] >= 3 ? 'species' : (side === 'v' ? V_LEVELS[st.vRank] : H_LEVELS[st.hRank]);
+    const info = side === 'v' ? V1.get(raw) : H1.get(raw);
+    if (info && info.path.length) taxsegs = info.path.filter(x => x && !x.startsWith('('));
+    if (side === 'v' && VLINK.has(raw)) explorer = raw;
+  } else {
+    if (side === 'v') {
+      const e2 = N.v2[raw] || (VGEN && VGEN.get(raw));
+      rank = st.vRank >= 3 ? 'species' : V_LEVELS[st.vRank];
+      if (e2) {
+        acc = e2[4] || 0;
+        taxsegs = [e2[0], e2[1], e2[2]].filter(Boolean);
+        if (e2[3] && e2[3] !== raw) taxsegs.push(e2[3]);
+        if (st.vRank >= 3) taxsegs.push(raw);
+        if (e2[3] && ELINK.has(e2[3])) explorer = e2[3];
+      }
+    } else if (side === 'e') {
+      const ev = N.ve[raw] || (EGEN && EGEN.get(raw));
+      rank = E_LEVELS[st.eRank];
+      if (ev) taxsegs = [ev[0], ev[1], raw].filter(Boolean);
+    } else {
+      const h2 = N.h2[raw] || (RIDX.h && RIDX.h.get(raw));
+      rank = st.hRank >= 3 ? 'species' : H_LEVELS[st.hRank];
+      if (h2) {
+        const p = [h2[0], h2[1], h2[2], h2[3]].filter(x => x && !x.startsWith('('));
+        if (st.hRank >= 3 && h2[3] !== raw) p.push(raw);
+        if (st.hRank < 3 && h2[3] !== raw && st.hRank === 2) p.push(raw);
+        taxsegs = p;
+      }
+    }
+  }
+  st.sel = {kind: 'node', id, side, raw, value, partners: nb.size, rows, taxsegs, explorer, acc, rank};
+}
+function selectEdge(st, lm) {
+  st.sel = {
+    kind: 'edge', aSide: lm.aSide, bSide: lm.bSide,
+    aRaw: lm.aRaw, bRaw: lm.bRaw, value: lm.value,
+    aRank: rankOfSide(st, lm.aSide), bRank: rankOfSide(st, lm.bSide)
+  };
+}
+function rankOfSide(st, side) {
+  if (side === 'v') return st.vRank >= 3 ? 'species' : V_LEVELS[st.vRank];
+  if (side === 'h') return st.hRank >= 3 ? 'species' : H_LEVELS[st.hRank];
+  return E_LEVELS[st.eRank];
+}
+
+/* ── focus ── */
+function hasNode(full, id) {
+  const side = id[0] === 'V' ? 'v' : id[0] === 'H' ? 'h' : 'e';
+  const m = side === 'v' ? full.vN : side === 'h' ? full.hN : full.eN;
+  return !!(m && m.has(id.slice(2)));
+}
+function focusNode(st, id) {
+  if (!id || !st.full || !hasNode(st.full, id)) return;
+  const side = id[0] === 'V' ? 'v' : id[0] === 'H' ? 'h' : 'e';
+  const raw = id.slice(2);
+  if (st.focus.length && st.focus[st.focus.length - 1].id === id) {
+    selectNode(st, id); drawDetail(st); return;
+  }
+  // label 不在入栈时算死: displayName 会过 t(), 中文栈切英文后路径条会残留"其他（合并）"。
+  // 只存 raw/side, 用的时候现拼。
+  st.focus.push({id, side, raw});
+  render();
+  selectNode(st, id);
+  drawDetail(st);
+}
+window.__focusNode = function (id) { focusNode(tab(), id); };
+window.__focusSide = function (side, raw) { focusNode(tab(), (side === 'v' ? 'V:' : side === 'h' ? 'H:' : 'E:') + raw); };
+
+/* ── chart events ── */
+/* 单击不能立刻展开详情: 双击聚焦时第一下单击会把详情面板撑开, 画布跟着变窄、力导向
+   视图重新 fit, 节点整体位移, 第二下就落在了别的位置上 —— dblclick 事件根本不会成对
+   触发, 聚焦功能等于废掉。所以单击动作统一押后, 一旦等来 dblclick 就撤掉。 */
+let clickTimer = null;
+function deferClick(fn) {
+  clearTimeout(clickTimer);
+  clickTimer = setTimeout(() => { clickTimer = null; fn(); }, 240);
+}
+
+function bindChartEvents() {
+  chart.on('click', (p) => {
+    const st = tab();
+    if (p.dataType === 'edge') {
+      if (p.data && p.data._meta) deferClick(() => { selectEdge(st, p.data._meta); drawDetail(st); });
+      return;
+    }
+    if (!p.data || !p.data._meta || p.data._meta.other) return;
+    if (st.focus.length) {                     // ego-view: click walks one step further
+      deferClick(() => { if (st.focus.length) focusNode(st, p.data.id); });
+    } else {
+      deferClick(() => { selectNode(st, p.data.id, p.data.value); drawDetail(st); });
+    }
+  });
+  chart.on('dblclick', (p) => {
+    clearTimeout(clickTimer); clickTimer = null;
+    const st = tab();
+    if (!p.data || !p.data._meta || p.data._meta.other) return;
+    if (!st.focus.length) focusNode(st, p.data.id);
+  });
+  chart.on('graphRoam', () => { userRoamed = true; fitSettling = false; clearTimeout(fitTimer); labelRoamed = true; });
+  chart.on('legendselectchanged', (e) => {
+    const st = tab();
+    const catNames = st.kind === 'vh' ? [t('virusSide'), t('hostSide')] : [t('virusSide'), t('hostSide'), t('vecSide')];
+    const name2side = {};
+    catNames.forEach((n, i) => { name2side[n] = st.kind === 'vh' ? ['v', 'h'][i] : ['v', 'h', 'e'][i]; });
+    st.hidden = {};
+    for (const k in e.selected) {
+      const s = name2side[k];
+      if (s && !e.selected[k]) st.hidden[s] = true;
+    }
+    render();
+  });
+}
+
+/* ── search ── */
+function runSearch(q) {
+  q = q.trim().toLowerCase();
+  const st = tab();
+  if (!q) return;
+  const results = [];
+  const push = (name, side, rank, pri, via) => results.push({name, side, rank, pri, via});
+  const scan = (obj, side) => {
+    for (const name of obj) {
+      const nl = name.toLowerCase();
+      let hit = null;
+      if (nl === q) hit = 0; else if (nl.startsWith(q)) hit = 1; else if (nl.includes(q)) hit = 2;
+      if (hit === null) continue;
+      push(name, side, null, hit, null);
+    }
+  };
+  if (st.kind === 'vh') {
+    if (ALIAS1.has(q)) {
+      const tgt = ALIAS1.get(q);
+      const info = V1.get(tgt);
+      if (info) push(tgt, 'v', info.rank, -1, q);
+      // 别名的值多半是种级病毒名（TSWV → Tomato spotted wilt virus），tab1 只聚到属，
+      // 直接跳会落空。上溯到属再给一条，靠 naturalRank 把阶元梯调到属
+      else if (A && A.vtax && A.vtax[tgt]) {
+        const g = A.vtax[tgt][2];
+        if (g && V1.has(g)) push(g, 'v', 'genus', -1, q);
+      }
+    }
+    scan(V1.keys(), 'v');
+    scan(H1.keys(), 'h');
+  } else {
+    if (ALIAS2.has(q)) {
+      const tgt = ALIAS2.get(q);
+      // alias2 的值都是 VH 病毒名（种级），自然阶元恒为 species
+      if (N.v2[tgt]) push(tgt, 'v', 'species', -1, q);
+      else if (A && A.vtax && A.vtax[tgt]) {
+        const g = A.vtax[tgt][2];
+        if (g && (VGEN ? VGEN.has(g) : false)) push(g, 'v', 'genus', -1, q);
+      }
+    }
+    scan(Object.keys(N.v2), 'v');
+    scan(Object.keys(N.ve), 'e');
+    scan(Object.keys(N.h2), 'h');
+    // 聚合视图的节点是目/科/属名，必须一并进索引，否则屏上可见的节点搜不到
+    if (VGEN) scan(VGEN.keys(), 'v');
+    if (EGEN) scan(EGEN.keys(), 'e');
+    if (RIDX) { scan(RIDX.v.keys(), 'v'); scan(RIDX.e.keys(), 'e'); scan(RIDX.h.keys(), 'h'); }
+  }
+  results.sort((a, b) => (a.pri - b.pri) || a.name.length - b.name.length);
+  showDrop(results.slice(0, 24));
+}
+/* 下拉挂在 position:fixed 上: 侧栏自己会滚动(overflow-y:auto), 下拉留在里面会被
+   滚动容器切掉一截 —— 视口越矮切得越多(实测 620px 高的窗口下 24 条结果少了 38px,
+   最后一条点不着)。改成按输入框的视口坐标定位, 高度按视口剩余空间收。 */
+function placeDrop() {
+  const drop = document.getElementById('searchdrop');
+  if (!drop || drop.style.display !== 'block') return;
+  const inp = document.getElementById('search');
+  if (!inp) return;
+  const r = inp.getBoundingClientRect();
+  const room = window.innerHeight - r.bottom - 18;
+  drop.style.position = 'fixed';
+  drop.style.left = Math.round(r.left) + 'px';
+  drop.style.top = Math.round(r.bottom + 4) + 'px';
+  drop.style.width = Math.round(r.width) + 'px';
+  drop.style.maxHeight = Math.max(140, Math.min(320, room)) + 'px';
+}
+function showDrop(items) {
+  const drop = document.getElementById('searchdrop');
+  if (!items.length) {
+    drop.innerHTML = '<div class="sitem" style="color:#95a5b5;cursor:default">' + t('noMatch') + '</div>';
+    drop.style.display = 'block';
+    placeDrop();
+    return;
+  }
+  drop.innerHTML = items.map((it, i) =>
+    '<div class="sitem" data-i="' + i + '"><span class="badge ' + SIDE_CLS[it.side] + '">' + SIDE_ICON[it.side] + '</span>' +
+    '<span class="nm" title="' + it.name + '">' + it.name + (it.via ? '  (= ' + it.via + ')' : '') + '</span></div>').join('');
+  drop.style.display = 'block';
+  placeDrop();
+  drop.querySelectorAll('.sitem').forEach(el => {
+    el.addEventListener('click', () => jumpTo(items[parseInt(el.dataset.i)]));
+  });
+}
+const RANK_ORD = {order: 0, family: 1, genus: 2, species: 3};
+
+/* 某个分类单元在指定阶元下的节点名（宿主/病毒的 path 首位是 kingdom，索引需 +1） */
+function nameAtRank(st, side, name, rankIdx) {
+  if (side === 'e') {
+    const ev = N.ve[name] || (EGEN && EGEN.get(name)) || (RIDX.e && RIDX.e.get(name));
+    if (ev) return (rankIdx === 2 ? ev[2] : ev[rankIdx]) || name;
+    return name;
+  }
+  if (rankIdx >= 3) return name;
+  if (st.kind === 'vh') {
+    const info = side === 'v' ? V1.get(name) : H1.get(name);
+    // tab1 的病毒侧只有属级节点，别名命中"番茄斑点萎蔫病毒"这种种名时 V1 查不到，
+    // 得回退到 vtax 的 [目,科,属] 上溯，否则跳过去的是一个不存在的节点
+    if (!info && side === 'v' && A && A.vtax && A.vtax[name]) {
+      return A.vtax[name][rankIdx] || name;
+    }
+    if (!info || !info.path) return name;
+    return side === 'v' ? (info.path[rankIdx] || name) : (info.path[rankIdx + 1] || name);
+  }
+  if (side === 'v') {
+    const e2 = N.v2[name] || (VGEN && VGEN.get(name)) || (RIDX.v && RIDX.v.get(name));
+    return e2 ? (e2[rankIdx] || name) : name;
+  }
+  // 宿主侧：[界, 目, 科, 属, taxid]，阶元索引需 +1
+  const h2 = N.h2[name] || (RIDX.h && RIDX.h.get(name));
+  return h2 ? (h2[rankIdx + 1] || name) : name;
+}
+
+/* 搜索命中的自然阶元（用于决定上调还是下调阶元梯） */
+function naturalRank(st, side, name) {
+  if (st.kind === 'vh') {
+    const info = side === 'v' ? V1.get(name) : H1.get(name);
+    return info ? info.rank : null;
+  }
+  if (side === 'v') {
+    if (N.v2[name]) return 'species';
+    const e = (VGEN && VGEN.get(name)) || (RIDX.v && RIDX.v.get(name));
+    return e ? (rankFromEntry('v', e, name) || 'genus') : null;
+  }
+  if (side === 'e') {
+    const ev = N.ve[name] || (EGEN && EGEN.get(name)) || (RIDX.e && RIDX.e.get(name));
+    if (!ev) return null;
+    return rankFromEntry('e', ev, name) || (ev[2] === name ? 'genus' : 'species');
+  }
+  const h2 = N.h2[name] || (RIDX.h && RIDX.h.get(name));
+  if (!h2) return null;
+  return rankFromEntry('h', h2, name) || (h2[3] === name ? 'genus' : 'species');
+}
+
+function jumpTo(item) {
+  document.getElementById('searchdrop').style.display = 'none';
+  const st = tab();
+  const side = item.side;
+  const levels = side === 'v' ? V_LEVELS : side === 'h' ? H_LEVELS : E_LEVELS;
+  const maxIdx = levels.length - 1;
+  const nat = item.rank || naturalRank(st, side, item.name);
+  const natIdx = (nat && RANK_ORD[nat] !== undefined) ? Math.min(RANK_ORD[nat], maxIdx) : Infinity;
+  const curIdx = st[side + 'Rank'];
+  // 目标比当前阶元粗 → 把梯子下调到目标阶元（目标即是节点）；
+  // 目标更细 → 保留当前阶元，把目标上溯到该阶元的名字（保持视图可读）
+  const rankIdx = natIdx <= curIdx ? natIdx : curIdx;
+  const name = rankIdx === natIdx && natIdx <= curIdx ? item.name : nameAtRank(st, side, item.name, rankIdx);
+  st[side + 'Rank'] = rankIdx;
+  st.minW = 1;
+  aggregate(st);
+  syncControls(st);
+  focusNode(st, (side === 'v' ? 'V:' : side === 'h' ? 'H:' : 'E:') + name);
+}
+
+/* ── exports ── */
+function exportPNG() {
+  if (!chart) return;
+  const a = document.createElement('a');
+  a.href = chart.getDataURL({pixelRatio: 2.5, backgroundColor: '#fff'});
+  a.download = (currentTab === 'vh' ? 'virus_host_network' : 'vector_virus_host_network') + '.png';
+  a.click();
+}
+function exportCSV() {
+  const st = tab();
+  if (!st.full) aggregate(st);
+  const view = st.focus.length ? buildFocusView(st) : buildView(st);
+  // 导出的名字走 displayName，合并节点显示为 OTHER 而不是内部哨兵字符
+  const nm = (id) => id.slice(2) === OTHER ? 'OTHER (merged)'
+    : displayName(id.slice(2), id[0] === 'V' ? 'v' : id[0] === 'H' ? 'h' : 'e');
+  const rows = [];
+  if (st.kind === 'vh') {
+    rows.push('virus_' + V_LEVELS[st.vRank] + '\thost_' + H_LEVELS[st.hRank] + '\taccessions');
+    for (const l of view.links) rows.push(nm(l.source) + '\t' + nm(l.target) + '\t' + l.value);
+  } else {
+    rows.push('virus\tvector\thost\ttriplets');
+    for (const l of view.links) {
+      const isVec = l.source[0] === 'E' || l.target[0] === 'E';
+      const v = l.source[0] === 'V' ? nm(l.source) : nm(l.target);
+      const o = l.source[0] === 'V' ? nm(l.target) : nm(l.source);
+      rows.push(isVec ? (v + '\t' + o + '\t\t' + l.value) : (v + '\t\t' + o + '\t' + l.value));
+    }
+  }
+  const blob = new Blob(['\ufeff' + rows.join('\n')], {type: 'text/csv'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = (currentTab === 'vh' ? 'virus_host_network' : 'vector_virus_host_network') + '_view.csv';
+  a.click();
+}
+
+/* ── controls ── */
+function syncControls(st) {
+  const rr = document.getElementById('rank-rows');
+  const sel = (id, levels, cur, side) =>
+    '<div class="rankrow"><span class="k">' + SIDE_ICON[side] + ' ' +
+    t(side === 'v' ? 'virusSide' : side === 'h' ? 'hostSide' : 'vecSide') + '</span>' +
+    '<select id="' + id + '">' + levels.map((lv, i) =>
+      '<option value="' + i + '"' + (i === cur ? ' selected' : '') + '>' + rankLabelOf(side, lv) + '</option>').join('') + '</select></div>';
+  let html = sel('r-v', V_LEVELS, st.vRank, 'v');
+  if (st.kind === 'vh') {
+    html += '<div style="height:6px"></div>' + sel('r-h', H_LEVELS, st.hRank, 'h');
+  } else {
+    html += '<div style="height:6px"></div>' + sel('r-e', E_LEVELS, st.eRank, 'e');
+    html += '<div style="height:6px"></div>' + sel('r-h', H_LEVELS, st.hRank, 'h');
+  }
+  rr.innerHTML = html;
+
+  const fb = document.getElementById('filter-box');
+  let fh = '';
+  if (st.kind === 'vh') {
+    fh += '<label class="tgl"><input type="checkbox" id="f-plantonly"' + (st.plantOnly ? ' checked' : '') + '><span>' + t('plantOnly') + '</span></label>';
+  } else {
+    const counts = {};
+    for (const tr of N.vh) { const m = N.modes[tr[3]]; counts[m] = (counts[m] || 0) + 1; }
+    fh += '<div class="hint" style="margin-bottom:3px">' + t('modesFilter') + '</div>';
+    fh += '<div class="modegrid">' + N.modes.map(m =>
+      '<label class="modechk" title="' + m.replace(/"/g, '&quot;') + '"><input type="checkbox" class="f-mode" value="' + m.replace(/"/g, '&quot;') + '"' +
+      (st.modeFilter === null || st.modeFilter.has(m) ? ' checked' : '') + '><span>' + m + ' · ' + (counts[m] || 0) + '</span></label>'
+    ).join('') + '</div>';
+  }
+  fh += '<div class="frow2">' +
+        '<div class="c w"><div class="hint" style="margin:0 0 2px">' + t('minW') + '</div>' +
+        '<input type="range" id="f-minw" min="1" max="' + (st.kind === 'vh' ? 30 : 12) + '" step="1" value="' + st.minW + '"></div>' +
+        '<div class="c"><div class="hint" style="margin:0 0 2px">' + t('topN') + '</div>' +
+        '<select id="f-topn">' + [100, 200, 300, 500, 0].map(v =>
+          '<option value="' + v + '"' + (v === st.topN ? ' selected' : '') + '>' +
+          (v === 0 ? t('all') : t('topNth').replace('{n}', v)) + '</option>').join('') + '</select></div></div>';
+  fb.innerHTML = fh;
+
+  /* 标签档位在 syncControls 里重建: 换语言时整个控件要被重画一遍, 所以 target 也在这里定死 */
+  document.getElementById('labelctl').innerHTML =
+    '<span class="k">' + t('labels') + '</span>' +
+    '<select id="f-labels">' + [['top', t('topNth').replace('{n}', 70)], ['all', t('all')], ['none', t('none')]].map(o =>
+      '<option value="' + o[0] + '"' + (o[0] === st.labels ? ' selected' : '') + '>' + o[1] + '</option>').join('') + '</select>';
+
+  document.getElementById('ly-rep').value = st.rep;
+  document.getElementById('ly-edge').value = st.edge;
+
+  const rv = document.getElementById('r-v'), rh = document.getElementById('r-h'), re = document.getElementById('r-e');
+  if (rv) rv.addEventListener('change', e => { st.vRank = parseInt(e.target.value); aggregate(st); syncControls(st); render(); });
+  if (rh) rh.addEventListener('change', e => { st.hRank = parseInt(e.target.value); aggregate(st); syncControls(st); render(); });
+  if (re) re.addEventListener('change', e => { st.eRank = parseInt(e.target.value); aggregate(st); syncControls(st); render(); });
+  const po = document.getElementById('f-plantonly');
+  if (po) po.addEventListener('change', e => { st.plantOnly = e.target.checked; aggregate(st); render(); });
+  document.querySelectorAll('.f-mode').forEach(cb => {
+    cb.addEventListener('change', () => {
+      const checked = [...document.querySelectorAll('.f-mode:checked')].map(x => x.value);
+      st.modeFilter = checked.length === N.modes.length ? null : new Set(checked);
+      aggregate(st);
+      render();
+    });
+  });
+  const mw = document.getElementById('f-minw');
+  if (mw) mw.addEventListener('input', e => { st.minW = parseInt(e.target.value); render(); });
+  const tn = document.getElementById('f-topn');
+  if (tn) tn.addEventListener('change', e => { st.topN = parseInt(e.target.value); render(); });
+  const lb = document.getElementById('f-labels');
+  if (lb) lb.addEventListener('change', e => { st.labels = e.target.value; render(); });
+  document.getElementById('ly-rep').oninput = e => { st.rep = parseInt(e.target.value); render(); };
+  document.getElementById('ly-edge').oninput = e => { st.edge = parseInt(e.target.value); render(); };
+
+  drawLegend(st);
+}
+function drawLegend(st) {
+  // 节点色块交给画布左上角那个可点击的 ECharts 图例(点了能整侧隐藏), 这里只补充
+  // 图例不会说的连线颜色与粗细含义, 不然同一份色键在屏上出现两遍。
+  const el = document.getElementById('legend-top');
+  const zh = lang() === 'zh';
+  const SEP = '<span class="sep"></span>';
+  let html;
+  if (st.kind === 'vh') {
+    html = '<span class="it"><span class="ln" style="border-color:#c3ced9"></span>' +
+           (zh ? '连线' : 'link') + '</span>' + SEP +
+           '<span class="it note">' + (zh ? '粗细 = 关联强度' : 'width = association strength') + '</span>' + SEP +
+           '<span class="it note">' + (zh ? '节点大小 = 序列条数' : 'node size = accession count') + '</span>';
+  } else {
+    html = '<span class="it"><span class="ln" style="border-color:#9fc5a9"></span>' +
+           (zh ? '病毒–宿主' : 'virus–host') + '</span>' +
+           '<span class="it"><span class="ln" style="border-color:#aeb8dd"></span>' +
+           (zh ? '病毒–媒介' : 'virus–vector') + '</span>' + SEP +
+           '<span class="it note">' + (zh ? '粗细 = 三元组数' : 'width = triplet count') + '</span>' + SEP +
+           '<span class="it note">' + (zh
+             ? '另 120 条仅验证病毒–媒介关系，只画媒介连线'
+             : '120 records are virus–vector only') + '</span>';
+  }
+  el.innerHTML = html;
+}
+
+/* ── stats / footer ── */
+function fillStats() {
+  const bar = document.getElementById('statbar');
+  if (currentTab === 'vh') {
+    const s = A.meta.stats;
+    bar.innerHTML =
+      '<span class="chip"><b>' + s.sequences.toLocaleString() + '</b> ' + t('seqChip') + '</span>' +
+      '<span class="chip"><b>' + s.virus_species.toLocaleString() + '</b> ' + t('virusSpChip') + '</span>' +
+      '<span class="chip"><b>' + s.plant_host_leaves.toLocaleString() + '</b> ' + t('hostTaxaChip') + '</span>' +
+      '<span class="chip"><b>' + s.pairs.toLocaleString() + '</b> ' + t('pairChip') + '</span>';
+  } else {
+    const s = N.meta.stats;
+    bar.innerHTML =
+      '<span class="chip"><b>' + s.vh_triplets.toLocaleString() + '</b> ' + t('tripletChip') + '</span>' +
+      '<span class="chip"><b>' + s.vh_viruses.toLocaleString() + '</b> ' + t('virusChip') + '</span>' +
+      '<span class="chip"><b>' + s.vh_vectors.toLocaleString() + '</b> ' + t('vectorChip') + '</span>' +
+      '<span class="chip"><b>' + s.vh_hosts.toLocaleString() + '</b> ' + t('hostChip') + '</span>';
+  }
+}
+function fillFooter() {
+  document.getElementById('ft-text').textContent = lang() === 'zh'
+    ? 'Tab 1：Plant_Virus_Full 数据库中 211,132 条 GenBank 序列的病毒–宿主共现网络，宿主谱系经 NCBI Taxonomy 解析；计数为序列条数，不等同于文献证实的宿主范围。Tab 2：VIP-DB 实验验证的病毒–媒介–宿主三元组（含传毒机制与 DOI），宿主谱系经 NCBI taxdump 解析；其中 120 条仅验证病毒–媒介关系。'
+    : 'Tab 1: virus–host co-occurrence network over 211,132 GenBank accessions of the Plant_Virus_Full database; host lineages resolved via NCBI Taxonomy — counts are sequence numbers, not literature-confirmed host ranges. Tab 2: VIP-DB experimentally validated virus–vector–host triplets with transmission modes and DOIs (host lineages via NCBI taxdump); 120 of them are virus–vector relationships only.';
+  document.getElementById('ft-meta').textContent = 'build ' +
+    (currentTab === 'vh' ? A.meta.generated : N.meta.generated) + ' · ' + N.meta.sources;
+}
+
+/* ── tab switching ── */
+function switchTab(kind) {
+  currentTab = kind;
+  document.getElementById('tab-vh').classList.toggle('on', kind === 'vh');
+  document.getElementById('tab-evh').classList.toggle('on', kind === 'evh');
+  const st = tab();
+  if (!st.full) aggregate(st);
+  syncControls(st);
+  fillStats();
+  fillFooter();
+  render();
+  // hash 深链：#tvh 直接落在媒介–病毒–宿主标签页（外链或嵌进外壳时用）。
+  // replaceState 不堆历史记录，嵌在 iframe 里也不会劫持外层页面的后退键；
+  // 没带 hash 的访问行为与从前完全一致。历史被禁用（个别 webview）时静默跳过。
+  try {
+    const want = kind === 'evh' ? '#tvh' : '';
+    if (location.hash !== want) {
+      history.replaceState(null, '', location.pathname + location.search + want);
+    }
+  } catch (e) { /* noop */ }
+}
+
+/* ── boot ── */
+/* 输入框内容宽只有 ~234px, 长了会被硬切而且 input 不出省略号(实测中文版超宽 46px、英文 62px,
+   屏幕上看只剩"…如 TSWV、Bemisi")。例子交给下面那行 hint, 占位符只留"搜什么"。 */
+function searchPlaceholder() {
+  return lang() === 'zh' ? '搜索病毒 / 媒介 / 宿主…'
+                         : 'Search virus / vector / host…';
+}
+function initUI() {
+  chart = echarts.init(document.getElementById('chart'), null, {renderer: 'canvas'});
+  window.__dbg = {chart: () => chart, TABS, A: () => A, N: () => N, cur: () => currentTab, view: () => tab().view, st: () => tab(), fit: () => fitSettling};
+  bindChartEvents();
+
+  document.getElementById('btn-png').addEventListener('click', exportPNG);
+  document.getElementById('btn-csv').addEventListener('click', exportCSV);
+  document.getElementById('btn-reset').addEventListener('click', () => {
+    const kind = currentTab;
+    TABS[kind] = freshTab(kind);
+    syncControls(TABS[kind]);
+    render();
+  });
+  document.getElementById('tab-vh').addEventListener('click', () => switchTab('vh'));
+  document.getElementById('tab-evh').addEventListener('click', () => switchTab('evh'));
+
+  const inp = document.getElementById('search');
+  const drop = document.getElementById('searchdrop');
+  let deb = null;
+  const searchNow = () => { const q = inp.value.trim(); if (q) runSearch(q); else drop.style.display = 'none'; };
+  inp.addEventListener('input', () => { clearTimeout(deb); deb = setTimeout(searchNow, 180); });
+  inp.addEventListener('focus', () => { if (inp.value.trim()) searchNow(); });
+  inp.setAttribute('placeholder', searchPlaceholder());
+  document.addEventListener('click', (e) => { if (!e.target.closest('.searchwrap')) drop.style.display = 'none'; });
+  // 下拉是 fixed 定位的, 页面一滚位置就飘, 得跟着输入框走(捕获段: 侧栏自己滚也要听)
+  window.addEventListener('scroll', placeDrop, true);
+  window.addEventListener('resize', placeDrop);
+  // 容器变宽(侧栏折叠、窗口拖动)不一定会触发 window resize。ResizeObserver 是正路,
+  // 但嵌入式 webview 里它的回调可能始终不触发, 所以再用一个低频轮询兜底: 只要容器尺寸
+  // 变了就同步画布, 宽高比变了不少且用户没手动拖过视图时重新自适应一次。
+  const chartHost = document.getElementById('chart');
+  window.addEventListener('resize', () => { syncChartSize(); chart && chart.resize(); });
+  if (window.ResizeObserver && chartHost) {
+    new ResizeObserver(() => onHostResized()).observe(chartHost);
+  }
+  setInterval(onHostResized, 400);
+
+  // language sync (i18n button id varies by i18n.js version)
+  let lastLang = lang();
+  setInterval(() => {
+    if (lang() !== lastLang) {
+      lastLang = lang();
+      inp.setAttribute('placeholder', searchPlaceholder());
+      syncControls(tab());
+      fillStats();
+      fillFooter();
+      render();
+    }
+  }, 400);
+  document.addEventListener('click', (e) => {
+    const id = e.target.id || '';
+    if (id === 'pvdb-i18n-btn' || id === 'pvdb-lang-btn') {
+      setTimeout(() => {
+        inp.setAttribute('placeholder', searchPlaceholder());
+        syncControls(tab());
+        fillStats();
+        fillFooter();
+        render();
+      }, 80);
+    }
+  }, true);
+}
+
+/* ── 启动 ── */
+Promise.all([
+  fetch('../association/associations.json').then(r => { if (!r.ok) throw new Error('associations.json ' + r.status); return r.json(); }),
+  fetch('network.json').then(r => { if (!r.ok) throw new Error('network.json ' + r.status); return r.json(); })
+]).then(([a, n]) => {
+  A = a; N = n;
+  buildIndexes1();
+  VLINK = new Set(n.vlink);
+  ELINK = new Set(n.elink || []);
+  // alias1/alias2 在 JSON 里是普通对象 {别名: 规范名}，转 Map 才能用 has/get
+  ALIAS1 = new Map(Object.entries(n.alias1 || {}));
+  ALIAS2 = new Map(Object.entries(n.alias2 || {}));
+  buildGenusIndex();
+  buildRankIndex();
+  initUI();
+  fillStats();
+  fillFooter();
+  // 带 #tvh 进来的（书签、外壳 iframe）落在第二个标签页，其余不变
+  switchTab(location.hash === '#tvh' ? 'evh' : 'vh');
+  // hash 是 switchTab 自己写的，后退/前进到另一个 hash 时也得跟上，
+  // 否则同文档跳转（不重载）只会换地址栏、标签页不动
+  window.addEventListener('hashchange', () => switchTab(location.hash === '#tvh' ? 'evh' : 'vh'));
+}).catch(err => {
+  document.getElementById('chart').innerHTML =
+    '<div class="loading" style="color:#c0392b">Failed to load data — ' + err.message + '</div>';
+});
+</script>
+<script src="/lib/ai-assistant.js?v=2" data-context="vector" defer></script>
+</body>
+</html>
