@@ -17,7 +17,7 @@ plant_virus_db_pipeline/
 ├── 7.literature_tracker/             # PubMed 文献自动追踪 + AI 摘要 + 每日报告 (/literature/)
 ├── 8.plant-insect/                   # 病毒-媒介-宿主关系库 (VH + WUR 整合) (/vector/)
 ├── 9.metabuli/                       # 宏基因组分类器 Web + 引物设计 + GenBank 可视化 (/metabuli/)
-├── 10.virus_photos/                  # 四源病毒症状照片图库 (925 张) (/photos/)
+├── 10.virus_photos/                  # 五源病毒症状照片图库 (2,975 张) (/photos/)
 ├── 11.antiviral_genes/               # 植物免疫基因图谱 (NLR/sRNA/UPS/miRNA) (/genes/)
 ├── 12.pamirdb/                       # 植物抗病毒 miRNA 三算法共识预测 (/pamirdb/)
 ├── 13.onekp_virus/                   # 1KP 转录组病毒 Dashboard (/onekp/)
@@ -45,13 +45,13 @@ plant_virus_db_pipeline/
 | `/` | **统一门户** | 静态 HTML | 12 模块入口卡片 |
 | `/reference/` | **参考数据库** | 静态 HTML/JS | 非冗余参考基因组下载/浏览/提交 (6 子页) |
 | `/explorer/` | **数据浏览器** | Dash + Plotly | 时空演变/全基因组变异/媒介传播网络/病毒档案/内嵌 AI 助手 |
-| `/primers/` | **引物数据库** | Flask | 103,642 对引物 (PCR/qPCR/LAMP/Tiled/Degenerate), REST API, 在线设计, AI 问答 |
+| `/primers/` | **引物数据库** | Flask | 83,830 对去重引物 / 4,789 物种 / 50 科（103,642 设计去重后，2026-10-16 全库验证合库上线）, REST API, 在线设计, AI 问答 |
 | `/vector/` | **媒介-宿主库** | Flask | VH + WUR 三维传播 facet 检索, Sankey/Heatmap/Chord 可视化 |
 | `/eve/` | **植物界 EVE 全景** | 静态 HTML | 1,527 基因组 / 284 宿主科, 150,136 个去污染 EVE 位点, 8 视角交互 |
 | `/metabuli/` | **宏基因组分类** | Flask | contig 分类 (8 级)/Krona/Sankey/引物设计/GenBank 基因可视化/CDD/BLAST 验证 |
 | `/photos/` | **症状图库** | 静态 HTML/JS | EPPO/DPV/Book/PDF 四来源, Gallery/Dashboard/Table 三视图 |
 | `/genes/` | **基因图谱** | 静态 HTML/JS | NLR (415)/sRNA (11,780)/UPS (3,996)/miRNA (83,166) 四标签 |
-| `/pamirdb/` | **PV-miRNA** | Python HTTP | miRNA 靶标预测: miRanda+psRNATarget+RNAhybrid 三算法共识 |
+| `/pamirdb/` | **PV-miRNA** | Python HTTP | miRNA 靶标预测: 自研 Smith-Waterman 引擎 + 本地启发式复核层（不调用外部工具，11,006 条预计算预测） |
 | `/literature/` | **文献追踪** | Flask | PubMed 自动追踪/手动 4 源检索/AI 摘要/趋势分析 |
 | `/knowledge/` | **知识库 RAG** | FastAPI + Qdrant | 60K+ 论文全文 + DPV + viroidDB, DeepSeek V4 Pro 驱动 |
 
@@ -76,16 +76,16 @@ plant_virus_db_pipeline/
 | 类别 | 数值 | 说明 |
 |:-----|:----:|:-----|
 | 参考基因组 (非冗余) | 9,022 | Plant_Virus_Ref.fasta, 98% ANI 聚类 (DATA_VERSION CLUSTER_COUNT) |
-| 病毒物种 | 5,173 | ICTV MSL41 覆盖 (DATA_VERSION SPECIES_COUNT) |
+| 病毒物种 | 5,147 | ICTV MSL41 覆盖 (DATA_VERSION SPECIES_COUNT; Species_ICTV 去重实算) |
 | 全量序列 | 211,132 | Plant_Virus_Full.fasta (410 MB) (DATA_VERSION RECORDS_PLANT) |
-| 有媒介-宿主关系的病毒 | 1,806 | VH + WUR 整合 |
+| 有媒介-宿主关系的病毒 | 1,803 | VH + WUR 整合（447 VH + 1,356 WUR-only） |
 | 病毒-媒介-宿主三元组 | 1,375 | 实验验证 + 文献追踪 |
 | WUR 病毒传播记录 | 1,654 | 全渠道传播模式 |
 | 本地基因组注释物种 | 4,726 | GenBank .gb 文件 |
-| 引物对总数 | 103,642 | PCR/qPCR/LAMP/Tiled/Degenerate, 覆盖 4,789 物种 |
-| 精选文献 | 7,099 | PubMed + bioRxiv + Crossref + OpenAlex |
-| RAG 知识库论文 | 60,000+ | 全文向量化, ~50K chunks |
-| 病毒症状照片 | 925 | EPPO/DPV/PDF/Book 四来源 |
+| 引物对总数 | 83,830（RECOMMENDED 66,891 / USABLE 15,345 / NOT_RECOMMENDED 1,594） | 103,642 设计去重后合库，覆盖 4,789 物种 / 50 科 |
+| 精选文献 | 6,525 | AI 精选（master 全库 33,325）；PubMed + bioRxiv + Crossref + OpenAlex |
+| RAG 知识库向量 | 193,277 | Qdrant vectors（DPV/ICTV/ViroidDB 全文分块, 2026-07 构建验证值） |
+| 病毒症状照片 | 2,975 | EPPO(925)/DPV(1,230)/Book(432)/PDF(360)/Open-i(28) 五来源 |
 | TE 转座子 | 10,537 | LTR 反转录转座子 (U-RVDB v32.0)【模块 2026-09-23 已下线】 |
 | EVE 位点 | 150,136 | 植物界 EVE 全库 (1,527 基因组 / 284 宿主科, phiX174 去污染后) |
 | NLR 免疫受体 | 415 | RefPlantNLR, 73 物种 |

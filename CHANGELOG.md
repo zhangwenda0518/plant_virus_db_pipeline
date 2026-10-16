@@ -2,6 +2,355 @@
 
 All notable changes to the Plant Virus Database Platform.
 
+## [2026-10-16] — 全站数字校对：卡片/统计与实际数据全面对齐（用户反馈"卡片显示和实际数量不符"）
+
+6 路并行只读审计 + 逐项实算修复。所有数字一律以当前数据产物为准（参考库 `Plant_Virus_Ref.Info.tsv`
+9,022 行 / Full 211,132 行，2026-10-03 批次；`docs/data/NUMBERS.md` 为单一事实来源）。
+
+**事实表与数据源（先刷源头，再改页面）**
+- 重跑 `docs/data/generate_dashboard_stats.py` → `dashboard_stats.json`（ref 8,465→**9,022**、
+  full 199,068→**211,132**，7 月旧快照退役）；`1.Prepare.../lib/render_numbers.py` 重出 `NUMBERS.md`。
+- `docs/data/site_stats.json` 重写：12,159→**9,022**、照片 2,854→**2,975**、媒介 1,806→**1,803**、
+  文献 6,525→**33,325**（master 口径）、物种 4,840→**5,147**（ICTV；NUMBERS 首次生成的 5,148 系 render_numbers 把 ragged 行 null 计入，已修并复核）。
+- **重建 `docs/association/associations.json`**：`build_associations.py` 先修崩点（新批次 TSV 含
+  2,655 行空/非法 Taxid，原样 `int()` 必崩 → 跳过并注释），重建后 meta=15,197 对 / 5,134 病毒种 /
+  3,702 宿主 / 208,477 可映射序列（旧 14,791/199,070 为 09-21 批次）；`docs/network/network.json`
+  连带重建（vh 1,375/447/100/380 不变，继承 meta 更新）。
+
+**首页 `docs/index.html`**：hero 五格全部改实数（9,022/2,975/1,803/33,325/1,341）；八张卡片文案改口径——
+参考库 9,022/5,147、照片 2,975、关系 15,197 对/211,132/1,803、引物 57,075/4,798/41,000 RECOMMENDED
+（原 103,642/4,789 是 6-30 静态导出，与线上库 57,075 两套批次）、结构卡改区间口径 53,000+/4,200+
+（原 53,240 出自未入 git 的 merged 索引且 AF3 文件不在仓库）、PV-miRNA 402×42→11,006 预测·799 植物·
+40 病毒科（402/42 全库无出处）、文献 33,325+6,525 AI-curated、RAG 229,184→**193,277** vectors
+（唯一有构建验证记录的值，见 pv_rag/README；TECHNICAL_REPORT 同步改）。
+
+**参考库各页**：reference_index 硬编码 199K/8.5K→211K/9.0K；table.js 199K→211K；download.html
+四条下载件记录数/列数/体积全改（9,022·29 列·3.1MB / 211,132·21 列·410MB·51MB）；help/reference
+199,499→9,022、6,182→5,147；help/index 与 help 各分页（照片/关系/媒介/基因/文献/PV-miRNA）同步。
+
+**关系模块**：relations/association/network 三页静态文案（211,132/15,197/5,134/3,702/1,803）——
+动态统计条此后直接读重建后的 JSON，自动正确。
+
+**EVE（docs/eve/）**：回填 `eve_landscape.json` 的 `host_families[].rna`（原全 0 → 按
+`eve_dynamics.past_present` 实际值，RNA 视图排序恢复，头部 Poaceae 147/Porellaceae 136/Gentianaceae
+110）；页内文案 4 处改实数（PVCV 953→952、未解析物种记录 801→1,258、top-20 位点 14,512→15,292、
+参考病毒 21→19）；"63.4% soft-mask" 无法从数据复现 → 改定性表述。
+
+**/genes/（抗性基因）**：docs 三页 837→**799** 物种（miRNA_final_stats 权威值，源目录 10-13 已改、
+docs 是旧拷贝）、"12 plant + 19 virus"→**20**；`docs/genes/data/` 数据件与标签对齐——pvsirnadb
+TSV 换干净版（327,012→322,214 行，去掉 4,797 重复+1 垃圾行）、7 个 sRNA 家族 TSV 按
+`all_genes_classified.json` 重切（4,019/631/1,951/1,190/29/131/3,829，原 served 件是另一批数据）、
+`pvsirnadb_embedded.json` 重生成（total 327,010→322,214）、all_genes_classified.json 同步源版。
+
+**结构模块**：atlas `build_data.py` 重跑（TSV 10-15 新增 142 条 SELF 后 stats.json 一直停在 10-03：
+own 1,112→**1,254**/26.1%、any 4,445→**4,587**/95.4%、真零 365→**223**、P3 304→**183**、by_src 补
+SELF=142）；横幅按 genome.json 改（91.6%→**92.2%**、26,604→**26,788**、2,455→**2,271**、
+986→**860** 代表簇）；修 `structures_index.tsv` 142 行 `selffold_model` 文件名缺 `ACC__ACC` 前缀
+（142 个 3D 查看器链接全 404 → 全部可解析），改后重跑 build_data.py 同步 proteins.json。
+
+**文献站**：`web/index.html` metric 条拆双口径——"Papers Indexed (master) 33,325" + 新增
+"AI-Curated Entries"（=index.json 动态求和 6,525），页头 33,325 与列表 6,525 不再互斥。
+另把 "AI Knowledge Assistant" 标签页四格硬编码统计（7,099/2,892/20,010/229,184，均无出处）
+整块换成可验证口径：33,325 master / 6,525 AI-curated / 193,277 Qdrant vectors；
+`docs/help/pamirdb.html` 的 402×42 同步改为 11,006 预测·799 植物·40 病毒科。
+
+**README**：根 README 与 4.virus_primer/README 引物数字加双口径标注（线上库 57,075/4,798 vs
+静态导出 103,642/4,789）。
+
+**遗留（本次不改，待定方向）**：① `structures_index_merged.json`（未入 git，10-11 建）已落后 142 条
+SELF，且无页面消费；② 引物线上库(57,075)与静态导出(103,642)两套批次未合一（需重跑 step3/step4）；
+③ PV-miRNA 首页"3-algorithm consensus"方法表述与模块自述（自研 SW-DP）矛盾，归 METHOD_STATUS
+待决；④ 文献 by_category 20 个旧标签未归一到 9 个配置类；⑤ literature web/data 年分片 14 个
+陈旧文件（合计 6,575 的出处）未清理。
+
+所有被替换的数据文件均留 `.bak_20261016` 同目录备份（nginx 对 `*_bak*` 返回 404，不会外露）。
+**全仓文档过时数字清理（2026-10-16 傍晚）**：审计报告类历史文档（AUDIT_REPORT_20261003 /
+AI_MODULE_DB_AUDIT_20261008 / INCREMENTAL_METRIC_AUDIT_20261007 等）按其时点记录原则不改，其余文档清点修正：
+
+- `docs/data/DATA_VERSION`：`SPECIES_COUNT` 5173→**5147**（该键无脚本写入属手维；以 Ref.Info.tsv
+  `Species_ICTV` 去重实算为准，`render_numbers.py` 的 null 计数 bug 修复后 NUMBERS.md 同值）。
+- 根 `README.md` 数据量表：物种 5,173→5,147、媒介-宿主病毒 1,806→**1,803**、精选文献 7,099→**6,525**
+  （注明 master 33,325）、"RAG 知识库论文 60,000+/50K chunks"→**193,277 Qdrant vectors**（有构建验证值的口径）、
+  照片 925→**2,975**（925 实为 EPPO 单源；五来源 EPPO 925/DPV 1,230/Book 432/PDF 360/Open-i 28）、
+  目录树 (925 张)→(2,975 张)。
+- `TECHNICAL_REPORT.md`：§1.2 表（8,465→9,022、6,182→5,147、引物 57,072→83,830 去重后、文献 7,099→6,525）、
+  §cluster_fasta ~8,465→9,022、§primers 57,072/4,799→83,830/4,789、§photos 四来源 925→五来源 2,975、
+  §pamirdb "402×42"→11,006 预测（799 植物×40 病毒科，自研引擎）、§vector 1,806→1,803；
+  export_primers_static.py 的"8,925 行"（实为字节数的旧误）删除计数。
+- `docs/README.md`（线上 /README.md 直接服务）：cluster_info ~8,465→9,022。
+- `docs/association/README.md` + `docs/network/README.md`：199,070/14,791/4,820/3,040 →
+  **211,132（208,477 可映射）/15,197/5,134/3,702**，与重建后的 associations.json meta 同源。
+- `15.uniprot_plant_virus_structures/README.md`：四路皆无 365(7.6%)→**223(4.6%)**、任一来源有结构
+  4,445(92.4%)→**4,587(95.4%)**、多聚蛋白 304→**183**（10-15 增 142 条 SELF 后口径，与重建 stats.json 一致）。
+- `16.fold_web/README.md`：待预测缺口 3,698→**3,556**。
+- `3.virus_explorer/README.md`：papers.json 7,099→**33,325**、媒介 1,806→1,803。
+- `7.literature_tracker/README.md`：精选文献总计 7,099→**6,525**（master 33,325）。
+- `4.virus_primer/README.md`：快照表下补当前线上库口径行（83,830 去重 / 按类型 / 验证分布）。
+- `1.Prepare_plant_virus_pipeline/README.md`：批次数字"定稿前需统一"悬案结案——发布口径 = 9,022/6,534
+  （DATA_VERSION + NUMBERS.md），8,465/8,464/8,484 标注为历史批次。
+- 不改的：AUDIT/METHOD_STATUS/SECURITY 等时点审计报告；`6.knowledge_rag/databases/` 语料正文；
+  各 `*.bak_*/.orig_*` 备份；CHANGELOG 历史条目。
+
+**引物库合一（2026-10-16 下午，用户拍板后执行）**：生产机仅 2核/3G 且无流水线资产 → 在本地
+20核/64G 跑通全链。`makeblastdb` 建病毒库（Plant_Virus_Full.fasta 211,132 序列，LMDB 需纯 ASCII 路径）；
+`step3`（修复版）对 2026-06-30 设计批次 103,642 对做 dimer+GC/Tm+病毒 BLAST 全量验证（按
+(物种,Fwd,Rev) 去重 → **83,830 对**；RECOMMENDED 66,891 / USABLE 15,345 / NOT_RECOMMENDED 1,594；
+植物脱靶与物种内覆盖度本次未跑——本批无 split_species FASTA，见遗留）；`step4` 建库
+（taxonomy 由导出 TSV 聚合生成 species_index.tsv，genome_length 从旧线上库回填 4,786 物种）。
+上传生产机换库（旧库备份 `primer_database.db.bak_premerge_20261016`），`primer-web` 重启后
+`/api/stats` = 83,830/4,789/50 ✓。首页/帮助页/README 引物数字全部同步为合并后口径，
+"静态导出 103,642" 双口径备注废除。
+
+
+
+## [2026-10-12] — 全站顶部导航统一为 /pamirdb/ 设计（site-nav.js 共享组件）
+
+此前站内并存 **4 种导航**：pamirdb 渐变版（46px，`linear-gradient(135deg,#1a3a5c,#2c6e49)`）、
+docs 主站深蓝版（`#1a5276`，52px）、genes 深蓝版（`#1a3a5c`，48px）、knowledge/literature 旧版
+（还带已停用的 `/virus/`、`/te/` 链接）；另有 10+ 页面（首页、结构子页、pamirdb 弦图页、foldweb 等）
+**完全没有导航**。统一到 /pamirdb/ 截图同款设计：
+
+- **新增共享组件 `docs/lib/site-nav.js`**（线上经 `/lib/site-nav.js` 分发）：注入 `#pvdb-nav`
+  渐变导航，条目与 pamirdb 完全一致（Reference/Photos/Vector/TE & EVE/Genes/Primers/OneKP ‖
+  Explorer/Metabuli/PV-miRNA ‖ Literature/Knowledge/Resources/Help）；CSS 全部以 `#pvdb-nav`
+  作用域书写，不与页面自身 `nav{}` 规则打架；自动按 URL 高亮当前栏目（`.on`/`.active` 双兼容，
+  与 `i18n.js` 的 markActive 同口径）；文案自带 `data-i18n` 双语标注；页面没引 i18n.js 时自动补载
+  （顺带获得全站中英浮钮）；支持 `data-badge` / `PVDB_nav.setBadge()` 右侧徽标。
+- **替换旧站点级导航（10 文件）**：photos、knowledge `api_server.py`(+pv_rag ui.py)、literature
+  `api_server.py`+`web/index.html`、vector_page、step5(DEV/PROD，Bootstrap 导航退役并去掉
+  `body padding-top` 补偿)、metabuli（`.bar` 即旧导航，连带样式清除）、pamirdb 旧版 index.html。
+- **Reference/Genes 模块页改为「全局导航 + 浅色 `nav.pvdb-subnav` 二级条」**（12 文件）：
+  reference_index/segmented/nonsegmented/submit/download、genes 三页、11.antiviral_genes 生成器
+  （build_index.py / build_gene_browser.py）同步改模板，重新生成不回退。
+- **保留局部 topbar/header、上方插入全局导航（16 文件）**：eve/relations/network/association/
+  phylo(含 molecular)、首页、structures3d 外壳+rvpsd/lite/vad、atlas index+viewer、foldweb、
+  pamirdb chord_compare/network、phylo/molecular/index.html（原漏网页面）。
+- **Dash 应用**：explorer（app.py + app_server.py）、onekp 的 `index_string` 在 `<body>` 后注入同一
+  `<script src="/lib/site-nav.js">`。
+- **附带修正**：pamirdb 基准页 `index_new.html` 的 TE & EVE 改指 `/eve/`（省一跳 301）；photos
+  灯箱与 metabuli 遮罩 z-index 提到 10010（原 200/999 会被 sticky 导航盖住）。
+- **[2026-10-13 追记] 去掉 topbar 双重品牌**：全局导航已含 "Plant Virus DB"，
+  relations/eve/network/association/phylo×2/structures3d 外壳共 7 处 `.topbar` 里的
+  品牌 div + 分隔符删除（备份 `*.orig_topbar_20261013` / 线上 `.bak_topbar_20261013`），
+  局部条只留模块副标题 + 统计芯片。
+- **[2026-10-13 追记] Dash 三应用删除旧内建导航头**：explorer `app.py`(+`app_server.py`)、
+  onekp `onekp_app.py` 的 `dmc.AppShellHeader`（旧深蓝导航，含已停用的 /virus/、/te/ 链接）
+  在全局导航上线后被顶到 sticky 导航下面不可见，但 Mantine 的 52px header 占位保留 →
+  /explorer/ 顶部出现一条空白带。删除 AppShellHeader 与 `header={"height":52}` 占位，
+  原头部独有的数据徽标（species/sequences/数据版本）改为正文顶部右对齐一条。
+  服务器备份 `.bak_dashhdr_20261013`，virus-explorer / onekp-dashboard 已重启。
+- **[2026-10-13 追记] structures3d 外壳藏子页全局导航**：外壳以 iframe 内嵌 atlas/rvpsd
+  子页，子页注入的 `#pvdb-nav` 会与外壳顶栏重复成三层条 → `muteInnerChrome()` 注入
+  `#pvdb-nav{display:none!important}`（子页单独打开不受影响），备份 `.bak_topnav_20261013`。
+- **[2026-10-13 追记] help/×18 + resources.html 收编进共享导航**：全站目检发现这 19 页
+  此前只统一了渐变**样式**、导航**条目**仍是旧集合（缺 OneKP / TE & EVE，分组竖线错位，
+  Help 被 spacer 挤到最右）→ 删除各自内联导航与 `nav{}` CSS，统一改挂
+  `/lib/site-nav.js`（备份 `.bak_navitems_20261013`）。此后全站导航条目只有
+  `docs/lib/site-nav.js` 一个出处。
+- **[2026-10-13 追记] 全站头部体检**：40 条线上路由结构扫描（HTTP 码 / 导航计数 /
+  品牌重复 / 残留旧标记）+ 20 余页浏览器目检（重复导航、空白占位带、高亮错误、
+  遮挡关系），除上述 help/resources 条目旧集合外无其它问题；`/species/` 裸路径 404
+  为历史行为（需带物种 ID），与本次无关。
+- **[2026-10-13 追记] 首页撤掉导航**：首页是 hero + 全模块卡片的落地页，顶部导航
+  冗余 → 移除注入（备份 `*.orig_homenav_20261013` / 线上 `.bak_homenav_20261013`）。
+  澄清 IA：`/reference/` 并非首页别名，nginx 为其配了独立 index，服务的是
+  Reference Database 仪表盘（reference_index.html，带全局导航 + 模块 subnav），
+  因此撤首页导航无连带影响。现状：首页=纯落地页；其余功能页=全局导航+模块条。
+- **[2026-10-13 追记] Vector 并入 /relations/ 单一入口**：`/relations/#vector`（媒介与
+  文献库视图，原为 iframe 内嵌 /vector/）与独立页 `/vector/` 合并为一个入口——
+  ① 全站导航 Vector 改指 `/relations/#vector`（site-nav.js + pamirdb 内联导航）；
+  ② `/vector/` 顶层直接访问自动 `location.replace('/relations/#vector')`，
+  `?full=1` 保留独立全屏表格，iframe 内嵌不受影响；
+  ③ relations 外壳 `muteInnerChrome` 增加藏内嵌页 `.hero`（消除页中页双标题与
+  1,806/1,375 双计数打架）；
+  ④ 外壳 `syncNav()` 跟视图同步全局导航高亮（仅 #vector 点亮 Vector，
+  其它视图清掉 i18n markActive 前缀误加的 .active），页脚文案同步改写。
+  备份 `*.orig_vmerg_20261013` / 线上 `.bak_vmerg_20261013`，vector-host 已重启。
+- **[2026-10-13 追记] site-nav.js 不缓存 + 全站 include 带 ?v=2**：导航单一出处化后
+  原 `/lib/` 的 `expires 7d` 会让存量访客最长 7 天拿不到新导航。nginx 增加精确
+  `location = /lib/site-nav.js { no-cache }`（conf 备份 `.bak_sitenav_20261013`，
+  本地 plant-virus.conf 镜像同步），全站 61 处 include 统一升 `?v=2`
+  （此后改导航须同步升版本号）。
+- **备份**：全部改动文件旁留 `*.orig_pamirdbnav`（与既往 `.orig_navall` 惯例一致）。
+
+**验收**：本地 `_probe/nav_test_server.py`（模拟 nginx 路径）+ 浏览器实测——首页/photos/genes/eve/
+structures3d-lite/reference_index 均正确渲染两层导航且当前栏目高亮；中文切换后导航翻译正常；
+help/resources 旧内联渐变导航回归无损；py 模板 10 个文件 `py_compile` 通过、site-nav.js
+`node --check` 通过。
+
+## [2026-10-08] — 后续调整 ②：`/structures3d/` 外壳「Atlas 单页化」（三标签 → 两标签）
+
+老师反馈：「Statistics panel / Coverage atlas 保留一个不就可以了嘛？…乱的很，重新设计规划」。
+诊断出的重复（全部消掉）：
+
+1. **同一排指标卡渲染两遍** —— `atlas/index.html` 8 张 vs `atlas/stats.html` 8 张，其中 **7 张逐字相同**；
+2. **外壳把子应用自己的导航做了两遍** —— 模块 15 本来就有「总览｜统计面板｜预测平台 ↗」，被 `muteInnerChrome()` 藏掉，又在外面重做；
+3. **外壳 chips 与子页读数逐项重复** —— `2,603 物种·20,950 模型` 与 `rvpsd.html` 自己那行一样；`4,810/92.4%/3,698` 与 Atlas 指标卡一样；
+4. **「预测管线」内容其实没删掉** —— 模块 15 总览页里就有一整块「蛋白结构预测管线（缺口 3,698 条怎么补）」；
+5. 外壳多一行「描述 + 本页直达锚点」，与标签副标题重复；
+6. 三标签视觉语言不统一，切换时整屏风格跳变；
+7. 藏 header 时丢掉了「预测平台 ↗」入口。
+
+**改动**：
+
+- **模块 15 `webapp/index.html` 重写为单页**：`stats.html` 的四节（完整率甜甜圈 / 缺口分层 / 来源组合明细 / 管线台账）全部并入；
+  header 由深蓝横条（与外壳顶栏撞色）改为**浅色 sticky**，页签换成**页内锚点条**
+  （总览 / 来源组合 / 蛋白检索 / 病毒级覆盖 / 缺口与完整率 / 管线台账），滚动时高亮当前小节。
+  指标卡由两页各 8 张合并为**唯一一份 9 张**（并集，加 `reviewed`）。
+- **`15…/webapp/stats.html` 退役**：本地 → `archive/_pending_delete_20261008/stats.html`（MANIFEST 登记，
+  md5 `b023a14f…`）；线上 → `_backup_20261008_structures3dhub/retired/stats.html`；URL 301 回 `atlas/`。
+- **外壳 `14…/webapp/index.html`**：3 标签 → **2 标签**（结构总览 / 3D 模型浏览）；`.strip` 卡片条并进
+  `nav.topbar`（深色栏上的胶囊按钮），`.head` 描述行整行删除、`acts` 并进 topbar，
+  4 颗 chips 删除 —— **顶栏从三条栏收成一条**。
+- **`muteInnerChrome()` 不再藏子页 `body>header`**：atlas 的 header 现在是「页名 + 页内锚点条」，
+  正是需要的第二层定位；只藏子页那颗浮动语言按钮。（rvpsd 的 header 本来就不藏。）
+- **旧深链兼容**：`#stats` 回落 atlas 并滚到「缺口与完整率」；新增 `#atlas/<section>` 复合形式；
+  `#pipeline` 仍优雅回落。
+- **nginx**：`/etc/nginx/conf.d/plant-virus.conf` 就地补丁（+`location = /structures3d/atlas/stats.html { return 301 /structures3d/atlas/; }`，
+  两处注释改「两标签」），备份 `plant-virus.conf.pre_singlepage`；`nginx -t` 通过后 reload。
+  镜像 `deploy/nginx_full.conf` 与线上该区段 md5 **完全一致**（`47f622b2d54fe8746fce1c737c15f349`）。
+
+**验收**：`_probe/check_structures3d_ui.py` 重写为 57 项（2 标签 / 顶栏无 chips / atlas header 不藏 /
+锚点条 6 项 / 详情面板仍在舞台内 / `#stats` 回落 / stats.html 301）。本地 staging **57/57**，线上 **57/57**。
+三个上传文件本地与线上 md5 逐字节一致（外壳 `ccd0584e…`、模块 15 index `d21271c4…`、common.js `da0f5be3…`）。
+
+**文档同步**：`docs/README.md`、`docs/help/index.html`、`docs/help/uniprot3d.html`、`docs/resources.html`、
+`docs/index.html`（首页卡片「four tabs」→「two tabs」—— 上一轮摘 pipeline 时漏改，本次一并修正）、
+`USER.md`、两个模块 README、`SECURITY_DEPLOY_20261008.md`、`deploy/nginx_full.conf`、`deploy/_new_conf_staging.conf`。
+
+---
+
+## [2026-10-08] — 后续调整：从 `/structures3d/` 摘除「预测管线」标签（Batch Folding Queue）
+
+**背景**：老师复核统一入口后判定 **Batch Folding Queue（`16.fold_web` 的 ColabFold 队列）没啥用**，
+从统一入口去掉。范围按老师选定 = **只去掉入口标签**，`/foldweb/` 服务与模块 16 一律不动。
+
+- **外壳四标签 → 三标签**（结构总览 / 统计面板 / 3D 模型浏览）：`14.rvpsd_structures/webapp/index.html`
+  删掉 `VIEWS.pipeline` 与 `ORDER` 里的 `'pipeline'`，同步改 meta description、注释与页脚文案
+  （"Four views, three original pages" → "Three views, two original pages"）。
+  **旧深链 `#pipeline` 优雅回落**到默认视图 atlas（`VIEWS[k] ? k : DEFAULT_KEY`），不白屏。
+- **`pipeline.html` 退役**：本地移入 `archive/_pending_delete_20261008/`（MANIFEST 已登记）；
+  线上移入 `_backup_20261008_structures3dhub/retired/`。内容页只是 `docs/help/fold.html`
+  去掉全站 `<nav>` 的副本，**原帮助页仍在，无内容损失**。
+- **`/help/fold.html` 撤销 301，恢复为独立帮助页**（由 nginx `location /help/` 提供）。
+  nginx 只删掉 `location = /help/fold.html { return 301 /structures3d/; }` 一条 + 改两处注释
+  （行数 379→379，location 行数不变；下载线上现版 → 本地打补丁 → 出 diff → 回传 → `nginx -t` → reload）。
+- **引用回改**：`docs/help/index.html` 的 Batch Folding Queue 卡改回 `href="/help/fold.html"`
+  （原先指向已不存在的 `#pipeline`）；`docs/index.html` 首页卡片、`docs/resources.html`
+  资源卡、`docs/help/uniprot3d.html` 正文里的「Folding pipeline 标签」表述一并去掉。
+- **文档同步**：`docs/README.md`（`/structures3d/` 改「三标签」；`/help/fold.html` 由 301 行改为普通页行）、
+  `USER.md`、`14.rvpsd_structures/README.md`（删 pipeline.html 行）、`deploy/nginx_full.conf` 与
+  `deploy/_new_conf_staging.conf` 镜像、`SECURITY_DEPLOY_20261008.md` 的注。
+- **验收**：验收脚本 `_probe/check_structures3d_ui.py` 断言改为 3 标签，并新增
+  「统一入口无 pipeline 按钮」「`#pipeline` 回落 atlas」「`/help/fold.html` 仍是带全站导航条的独立页」
+  三条探针。上传的 6 个文件**本地 md5 == 线上 md5**。
+
+## [2026-10-08] — 蛋白结构三页整合为 `/structures3d/` 统一入口（外壳 + 四标签）
+
+**背景**：`/help/fold.html`（折叠队列帮助）、`/uniprot3d/webapp/`（UniProt Structure Atlas）、
+`/structures3d/`（RVPSD Molstar 查看器）本是同一主题的三个分散页面。按老师决策整合为一个入口，
+**原三页逻辑零改动**（外壳 + 标签页 iframe，仿 `/relations/` 的做法）。
+
+- **新入口 `/structures3d/`**：`14.rvpsd_structures/webapp/index.html` 改为**外壳**，四标签 =
+  **结构总览**（`atlas/`）/ **统计面板**（`atlas/stats.html`）/ **3D 模型浏览**（`rvpsd.html`）/
+  **预测管线**（`pipeline.html`）。原 Molstar 查看器 `index.html` **改名**为 `rvpsd.html`（内容一行未改，
+  md5 `395c46b4…` 与改前逐字节相同）；`pipeline.html` = `docs/help/fold.html` 去掉全站 `<nav>`（判据：
+  把 NAV 加回必须逐字节还原）。`molstar.html` / `vad.html` 的内部回链 `./index.html` → `./rvpsd.html`
+  （否则子页会甩回外壳）。
+- **外壳两个设计点**：① 只做壳 —— 子页一行未改，外壳仅往 iframe 注入一条样式藏掉子页自己的标题栏与
+  语言按钮（`body>header`、`#pvdb-lang-btn`），免得叠成「两个导航栏」；② **高度刻意定死**（`.stage{flex:1}`），
+  与 `/relations/` 的「随内容撑高」相反 —— RVPSD 查看器自身 `height:100vh`（撑高会与 iframe 视口自指成
+  反馈环），Atlas 的 `#detail` 是 `position:fixed`（撑高后点表格下半部的行时面板跑到屏幕外）。
+- **多 iframe 保活**：只切 `visibility` 不切 `display`（WebGL canvas 后备存储会被丢），最多保留 2 个
+  （当前 + 上一个）。
+- **nginx**（`conf.d/plant-virus.conf`，location 66→70，行 359→379）：新增
+  `location /structures3d/atlas/`（直挂模块 15 的 webapp，**最长前缀优先**）、三个
+  `location /structures3d/structures_{pdb,alphafold,selffold}/`（Atlas 查看器按 `../structures_*`
+  相对路径读文件，故挂一级）、`build_data.py` 与 `colabfold_input/`、`*.db|log|tmp` 屏蔽 404。
+  **旧入口全部 301**：`/uniprot3d`、`/uniprot3d/`、`/uniprot3d/*`、`/help/fold.html` → `/structures3d/`。
+- **既有缺陷 A/B/C 一并补上**（老师选「全上」）：
+  - **A**：Atlas 查看器缺结构文件 → 补传 `proteins.json` 真正引用的 **78 个 PDB cif + 435 个 AFDB cif（398 MB）**；
+    `structures_selffold/` 被 0 条蛋白引用（`sf` 字段全空），暂不提供，fold_web 入库后自动生效。
+  - **B**：RVPSD 缺 `structures_fullatom_vp`/`_afdb` → 补传 **2,909 vpSAT + 260 AFDB 全原子 PDB**；
+    并补传新版 `fullatom_map.json`（**25,743 条**；旧版 22,574 条不含 vp/afdb，会让新版索引 3,032 条解析不到）。
+  - **C**：VAD 批次（1.25 GB）从未部署 → 补传 `structures_vad/` + `structures_vad_dimers/`。
+- **入口接线**：`docs/index.html` 把 RVPSD / Atlas / 折叠队列三张卡合成一张（首页入口卡片 18→16，
+  与 README 记的 16 重新一致）；`docs/help/index.html`、`docs/help/uniprot3d.html` 引用改指
+  `/structures3d/#atlas`、`/structures3d/#pipeline`。
+- **验收**：本地 + 线上 Playwright 各 **42/42 通过**（判据是**基线对照**「不引入新错误」而非「零错误」）；
+  线上数据抽样 `structures_fullatom`/`_domains`/`_candidates`/`_vp`/`_afdb` 各 100% 200、
+  `structures_pdb` 78/78、`structures_alphafold` 435/435；VAD 单体 200/200、二聚体 195/200
+  （缺的 5 条落在 24 条 VAD 未提供之内，自洽）；全站回归 24/24 = 200；旧入口 301 全部正确
+  （含 `/uniprot3d/structures_index.tsv`）。备份 `/opt/plant_virus_db/_backup_20261008_structures3dhub`。
+- **行尾纪律**：`14.rvpsd_structures/webapp/index.html` 与 `docs/index.html` 是 CRLF，其余 LF，
+  逐文件按原行尾写回并断言。
+- **顺带修正（口径）**：外壳顶部 chips、首页 `docs/index.html` 卡片、资源页 `docs/resources.html`
+  的 Protein Structure 卡、以及 `docs/help/uniprot3d.html` 正文，原写「**1,832** 种 / **17,918** 蛋白」，
+  是 2026-09-30 RVPSD-only 的旧数；2026-10-01 三源合并（RVPSD + vpSAT + AlphaFoldDB）后索引实为
+  **2,603 种 / 20,950 蛋白**（线上 `structures_index.json` 的 `count_species`/`count_proteins`），
+  而查看器自身早已按数据实时显示 2,603 —— **同一个页面上自相矛盾**。本次一并改正，并把资源页卡片
+  描述从「AlphaFold2 预测」改成四标签统一入口的合述。
+
+## [2026-10-08] — 部署 AI 模块安全加固（SSRF / 服务器 key 回退 / 匿名烧 key / 限流）
+
+**背景**：`AI_MODULE_DB_AUDIT_20261008.md` 审查发现——修复代码都在仓库里，但**线上从未部署**
+（本地=已修版、线上=未修版）。本次按老师三项决策上线。报告：`SECURITY_DEPLOY_20261008.md`。
+
+- **`/api/chat`（primer-web）P0-5 完整部署**：`api_url` 由服务端固定为 DeepSeek 官方地址
+  （忽略客户端传入 → 防 SSRF）；**取消服务器 key 回退**（无 key 返回 401，key 必须由浏览器用户自备）；
+  新增 32KB 单条消息长度守卫（413）；顺带修掉前端引用**线上不存在**的 `ai-api-url` 输入框导致的 null 抛错。
+  **不做整文件覆盖**——只打 6 处最小补丁，**保留线上 `/lib/` 自建静态库**（本地安全版把 bootstrap
+  换成了 jsdelivr CDN，属国内不可用回归，刻意不引入）。
+- **knowledge-rag**：部署 SSRF 护栏（`_llm_url_allowed`，严格比对 hostname 而非 `startswith`）、
+  输入长度上限、`httponly` 会话 cookie、搜索 `limit` int 守卫、前端 XSS 转义加固。
+- **literature-tracker**：部署 `require_api_token` / base_url 白名单 / body 上限 / papers.json 缓存 /
+  不回显异常堆栈。按决策 **不启用 token**（`LITERATURE_API_TOKEN` 留空 → 装饰器 no-op），
+  匿名烧 key 改由 nginx 限流兜底。
+- **nginx 限流**：新增 `limit_req_zone zone=pvdb_llm rate=30r/m`，对 `/knowledge/query` 与
+  `/literature/api/summarize/(paper|digest)` 两个**匿名可消耗服务器 key** 的端点限流
+  （`burst=10 nodelay`，429）。对照 `/knowledge/search` 未限流，证明定向不误伤。
+- **明文 key 移出**：`literature-tracker.service` 里的 `Environment="LLM_API_KEY=sk-a81b04…"`
+  改为 `EnvironmentFile=-/opt/plant_virus_db/literature-tracker.env`（**权限 600**）。
+  **⚠ 该 key 仍需老师在 DeepSeek 控制台轮换**（本报告仅移出明文，未轮换）。
+- **行尾纪律**：生产 step5/knowledge 是 LF、literature 是 CRLF，部署后**逐一复核行尾未变**。
+  补丁生成器初版因 `Path.write_text()` 在 Windows 做换行翻译而写出 CRLF，已改用**字节级 I/O** 修正。
+- **验证**：SSRF→400、无 key→401、超长→413、限流→429（且未限流端点不受影响）；
+  零回归 `/lib/bootstrap.min.css` 200、`/primers/` jsdelivr=0、knowledge/literature 均返回真实数据、
+  全站 23 个入口全部 200。三个 systemd 服务 active。生产运行时为 **Python 3.8**
+  （补丁已用 `ast.parse(feature_version=(3,8))` 校验）。
+
+## [2026-10-07] — 修正 `/reference/` 月度增量口径：并列展示「序列数」与「新分类单元数」（方案 C）
+
+**背景**：老师质疑 `/reference/` Monthly Incremental Update 的月度数字是「新增的已知病毒」还是
+「新病毒」。复核发现页面展示的 `new_plant`（120/2233/1899/807/783/455/1244）**两者都不是** ——
+它是实测值按 ~6.22% 等比缩放的派生值：数学上 `new_plant == floor(new_plant_raw × k)`，
+k 的唯一可行区间 `(0.0622133403, 0.0622172843)`（宽 4e-6）恰含 `7544/121256 = 0.06221548`，
+逐月精确复现；`round()` 无解。全仓库与线上**均无脚本产出该字段**，JSON 也不在 git 内。
+复核报告：`INCREMENTAL_METRIC_AUDIT_20261007.md`。
+
+- **数据链三方互证**（运行日志 / 逐月产物 TSV 行数 / JSON 字段完全一致）：
+  `scanned` = 去重后扫描数；`new_plant_raw` = 植物病毒命中（当月新入库植物病毒**序列条数**）；
+  `new_taxids` = 🆕 新发现植物病毒 TaxID（真正的「新病毒」口径）。
+  逐月 TSV `incremental_updates/<ts>/incremental_plant_viruses_info.tsv` 行数 =
+  1,930 / 35,902 / 30,524 / 12,984 / 12,601 / 7,319 / 19,996，逐月精确吻合。
+- **按老师决策（方案 C）改展示**：卡片并列显示「新增植物病毒序列」（主数字）+「N 个新分类单元」；
+  汇总改为 `121,256 new plant virus sequences · 400,917 total viruses scanned · 311 new plant virus taxa`；
+  区块底加口径脚注（sequences = 窗口内新入库记录；taxa = 此前未收录的分类单元）。中英双语
+  （新增运行时 `t()` 助手 + 注册 `PVDB_onLangChange` 钩子重建卡片）。
+- **JSON schema 变更**（`docs/data/incremental_status.json`，基线取**线上较新副本**）：
+  `new_plant_raw` → `new_plant_sequences`；删除派生字段 `new_plant` / `total_new_plant`(7544)
+  与冗余 `scanned_raw`；summary 原 `new_taxids: 226` 实为 `merge_to_ref` 的 "Added" 口径
+  （与逐月 🆕 不同），改名 `ref_added_taxids` 保留，另设 `total_new_taxids: 311`
+  （= 逐月求和，与卡片一致）。自洽校验：Σ序列 = 121,256 ✓、Σ扫描 = 400,917 ✓、Σtaxa = 311 ✓。
+- **顺带发现并记录**（未改数据）：summary 的 `total_new_plant`(7544) 与其逐月之和(7541) 本就差 3；
+  `new_taxids`(226) 与逐月之和(311) 口径不同却同名 —— 本次已分开命名。
+- **Verification**：`deploy/check_reference_incremental_ui.py`（Playwright，本地与线上**各跑一遍
+  17/17 通过、0 JS 错误**）；双语切换实测（EN/中文标签与汇总均正确）；`/reference/` 区域 5 页全 200；
+  线上 md5 与本地逐字节一致（`4f8dad9b…` / `9359c356…`）；两文件行尾保持 LF（CR=0）。
+  回退源：服务器 `docs/reference_index.html.bak_20261007.incrementalmetric` +
+  `docs/data/incremental_status.json.bak_20261007.incrementalmetric`
+  （改动前 md5 `0368ca73…` / `0a970667…`）。
+
 ## [2026-10-07] — fold_web 有限上线 /foldweb/（Basic Auth，无 GPU 模式）+ curl 兼容修复
 
 - **决策变更**（应用户要求，原"刻意不反代"作废）：16.fold_web 部署到 39.106.101.94，
@@ -47,6 +396,14 @@ All notable changes to the Plant Virus Database Platform.
   可达，估 $0.1-0.5/条，需国际卡）或 hx 提额。
 - 10,048 缺口预算：hx 现状 1 worker ~279 天；提额 128 核（8 worker）~35 天；
   提额+Modal MSA ~15-18 天。`17.genome_proteome/README.md` 有完整预算表。
+- **跨机分工架构端到端验证通过（10-07 深夜）**：4090 "GPU 慢"是共享盘 IO 假象——
+  库复制本地盘后 3059aa GPU search 仅 16s；**批量模式 365 条 vs small_bfd 一次 24 分钟**
+  （索引载入摊薄，vs hx CPU ~730 小时）。完整 MSA 链 `createdb→search(--gpu 1)→
+  result2msa(--msa-format-mode 5=A3M, 带 AF3 过滤参数)` 在 4090 跑通（Q0PIV3：11s+6s，
+  112 条 a3m）；自写组装器内嵌 `unpairedMsa` 生成 AF3 输入 JSON，回传 hx 站实测
+  **data pipeline 0 次搜索、9.88 秒完成（原 135 分钟）**，推理正常出 cif。新架构确立：
+  4090=MSA 工厂（批量 ~500 条/天），hx=推理工厂（1 worker ~70 条/天，提额 8 worker 后
+  与 MSA 产能匹配）；4090 撤销关机建议，转正为 MSA 工厂。
 
 ## [2026-10-07] — 上线验证抓出 webapp 渲染双 bug + /uniprot3d/ 入口重构
 
