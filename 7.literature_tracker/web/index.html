@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Plant Virus Literature Hub · Search &amp; Track</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+<script src="/lib/chart.umd.min.js"></script>
+<script src="/lib/xlsx.full.min.js"></script>
 <style>
 :root{
   --bg:#f5f5f5;--bg2:#eef2f5;--bg3:#e3ebf0;
@@ -22,13 +23,6 @@
 html{font-size:15px;scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.6}
 a{color:var(--blue2);text-decoration:none}a:hover{text-decoration:underline}
-
-nav{background:var(--blue);padding:0 24px;display:flex;align-items:center;height:52px;gap:4px;position:sticky;top:0;z-index:100}
-nav a{color:rgba(255,255,255,.8);padding:14px 18px;font-size:14px;border-radius:6px 6px 0 0;transition:.15s}
-nav a:hover,nav a.active{background:rgba(255,255,255,.15);color:#fff;text-decoration:none}
-nav .brand{font-weight:700;font-size:16px;color:#fff;padding:0 16px 0 0}
-nav .spacer{flex:1}
-nav .theme-btn{background:rgba(255,255,255,.12);border:none;color:rgba(255,255,255,.85);padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px}
 
 .wrap{max-width:1400px;margin:0 auto;padding:0 20px 50px}
 
@@ -109,26 +103,11 @@ footer a{color:var(--blue2)}
 
 @media(max-width:768px){.row2,.row21{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(3,1fr)}.charts{grid-template-columns:1fr}}
 
-nav .sep{color:rgba(255,255,255,0.18);padding:0 2px;user-select:none}
 </style>
 </head>
 <body>
-<nav>
-  <a class="brand" href="/">Plant Virus DB</a>
-  <span class="sep">|</span>
-  <a href="/reference/" >Reference</a>
-  <a href="/photos/" >Photos</a>
-  <a href="/te/" >TE·EVE</a>
-  <a href="/vector/" >Vector</a>
-  <span class="sep">|</span>
-  <a href="/explorer/" >Explorer</a>
-  <a href="/primers/" >Primers</a>
-  <a href="/metabuli/" >Metabuli</a>
-  <a href="/pamirdb/" >PAmiRDB</a>
-  <span class="sep">|</span>
-  <a href="/literature/" class="active">Literature</a>
-  <a href="/knowledge/" >Knowledge</a>
-</nav>
+<script src="/lib/site-nav.js?v=2"></script>
+
 
 <div class="hero">
   <div class="eyebrow">Literature Mining &amp; Tracking</div>
@@ -139,7 +118,8 @@ nav .sep{color:rgba(255,255,255,0.18);padding:0 2px;user-select:none}
 <div class="wrap">
 
 <div class="metrics" id="metrics">
-  <div class="met"><div class="val" id="mTotal">-</div><div class="lbl">Papers Tracked</div></div>
+  <div class="met"><div class="val" id="mTotal">-</div><div class="lbl">Papers Indexed (master)</div></div>
+  <div class="met"><div class="val" id="mCur">-</div><div class="lbl">AI-Curated Entries</div></div>
   <div class="met"><div class="val" id="mYear">-</div><div class="lbl">Years Covered</div></div>
   <div class="met"><div class="val" id="mAI">-</div><div class="lbl">AI Summarized</div></div>
   <div class="met"><div class="val" id="mCats">-</div><div class="lbl">Categories</div></div>
@@ -148,6 +128,7 @@ nav .sep{color:rgba(255,255,255,0.18);padding:0 2px;user-select:none}
 
 <div class="tabs">
   <div class="tab active" onclick="switchTab('knowledge')">AI Knowledge Assistant</div>
+  <div class="tab" onclick="switchTab('manual')">Manual Literature Search</div>
   <div class="tab" onclick="switchTab('weekly_track')">Weekly Track</div>
   <div class="tab" onclick="switchTab('weekly')">Weekly Digest</div>
   <div class="tab" onclick="switchTab('monthly')">Monthly Archive</div>
@@ -197,23 +178,18 @@ nav .sep{color:rgba(255,255,255,0.18);padding:0 2px;user-select:none}
 <!-- TAB: AI Knowledge Assistant -->
 <div id="tab-knowledge">
   <div class="card" style="background:var(--blue4);border-color:var(--blue3);margin-bottom:16px">
-    <strong style="color:var(--blue)">AI Knowledge Assistant</strong> — RAG-powered Q&amp;A + manual PubMed search
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:10px">
+    <strong style="color:var(--blue)">AI Knowledge Assistant</strong> — RAG-powered Q&amp;A over the curated plant virus knowledge base
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px">
       <div style="text-align:center;background:rgba(255,255,255,.6);padding:10px;border-radius:var(--r)">
-        <div style="font-size:20px;font-weight:700;color:var(--blue)">7,099</div>
+        <div style="font-size:20px;font-weight:700;color:var(--blue)">33,325</div>
+        <div style="font-size:10px;color:var(--ink3)">Papers Indexed (master)</div>
+      </div>
+      <div style="text-align:center;background:rgba(255,255,255,.6);padding:10px;border-radius:var(--r)">
+        <div style="font-size:20px;font-weight:700;color:var(--blue)">6,525</div>
         <div style="font-size:10px;color:var(--ink3)">Curated Papers (AI Verified)</div>
       </div>
       <div style="text-align:center;background:rgba(255,255,255,.6);padding:10px;border-radius:var(--r)">
-        <div style="font-size:20px;font-weight:700;color:var(--blue)">2,892</div>
-        <div style="font-size:10px;color:var(--ink3)">Structured Records</div>
-        <div style="font-size:9px;color:var(--ink3)">ICTV / NCBI / ViralZone</div>
-      </div>
-      <div style="text-align:center;background:rgba(255,255,255,.6);padding:10px;border-radius:var(--r)">
-        <div style="font-size:20px;font-weight:700;color:var(--blue)">20,010</div>
-        <div style="font-size:10px;color:var(--ink3)">Chunks</div>
-      </div>
-      <div style="text-align:center;background:rgba(255,255,255,.6);padding:10px;border-radius:var(--r)">
-        <div style="font-size:20px;font-weight:700;color:var(--blue)">229,184</div>
+        <div style="font-size:20px;font-weight:700;color:var(--blue)">193,277</div>
         <div style="font-size:10px;color:var(--ink3)">Qdrant Vectors</div>
       </div>
     </div>
@@ -245,8 +221,14 @@ nav .sep{color:rgba(255,255,255,0.18);padding:0 2px;user-select:none}
     <div id="ragAnswer" style="background:var(--bg);padding:16px;border-radius:var(--r);min-height:60px;white-space:pre-wrap;line-height:1.7;font-size:13px"></div>
     <div id="ragCitations" style="margin-top:10px"></div>
   </div>
+</div>
 
-  <!-- Manual Search -->
+<!-- TAB: Manual Literature Search -->
+<div id="tab-manual" style="display:none">
+  <div class="card" style="background:var(--blue4);border-color:var(--blue3);margin-bottom:16px">
+    <strong style="color:var(--blue)">Manual Literature Search</strong> — search PubMed / bioRxiv / Crossref / OpenAlex, with optional AI structured summaries
+    <span style="margin-left:16px;font-size:12px;color:var(--ink3)">Click <span class="btn ai sm" style="cursor:default">AI</span> on results to extract structured summaries</span>
+  </div>
   <div class="card">
     <h3><span class="section-num">S</span>Manual Literature Search</h3>
     <div class="row row2">
@@ -323,12 +305,13 @@ let searchResults=[], searchSummary='';
 (async function(){
   try{
     let sr=await fetch('data/stats.json');stats=await sr.json();
-    document.getElementById('mTotal').textContent=stats.total?.toLocaleString()||'0';
+    document.getElementById('mTotal').textContent=(stats.master_total||stats.total)?.toLocaleString()||'0';
     document.getElementById('mAI').textContent=stats.ai_summarized?.toLocaleString()||'0';
     document.getElementById('mCats').textContent=stats.by_category?Object.keys(stats.by_category).length:'-';
     document.getElementById('mUpdate').textContent=(stats.last_updated||'').substring(0,10);
     let yr=await fetch('data/index.json');let yi=await yr.json();
     document.getElementById('mYear').textContent=yi.length?yi[0].year+'-'+yi[yi.length-1].year:'-';
+    document.getElementById('mCur').textContent=yi.reduce((a,b)=>a+(b.count||0),0).toLocaleString();
     let sf=document.getElementById('sYear');
     yi.forEach(y=>{let o=document.createElement('option');o.value=y.year;o.textContent=y.year+' ('+y.count+')';sf.appendChild(o)});
     for(let y of yi){
@@ -518,7 +501,7 @@ function exportExcel(){
 let _loaded={weekly:false,monthly:false,historical:false,weekly_track:false,analysis:false};
 function switchTab(t){
   document.querySelectorAll('.tab').forEach(el=>{el.classList.toggle('active',el.textContent.trim().toLowerCase().includes(t.replace('_',' ')))});
-  ['track','weekly_track','weekly','monthly','historical','knowledge'].forEach(n=>{let el=document.getElementById('tab-'+n);if(el)el.style.display=n===t?'block':'none'});
+  ['track','weekly_track','weekly','monthly','historical','manual','knowledge'].forEach(n=>{let el=document.getElementById('tab-'+n);if(el)el.style.display=n===t?'block':'none'});
   if(t==='weekly_track'){_loaded.weekly_track=true;renderChipsWT();}
   if(t==='weekly'&&!_loaded.weekly){_loaded.weekly=true;loadWeekly()}
   if(t==='monthly'&&!_loaded.monthly){_loaded.monthly=true;loadMonthly()}
@@ -937,5 +920,6 @@ window.book=XLSX.utils.book_new();
 </script>
 <script src="/reference/i18n.js"></script>
 <script>PVDB_i18n.init({navSelector:'nav'});</script>
+<script src="/lib/ai-assistant.js?v=2" data-context="literature" defer></script>
 </body>
 </html>

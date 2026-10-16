@@ -1,6 +1,6 @@
 # 7. Literature Tracker — 植物病毒文献自动追踪系统
 
-> 多源文献抓取 → AI 结构化摘要 → 每日邮件报告 → Flask Web 浏览。7 类 PubMed 检索策略 + 4 源补充 (bioRxiv/arXiv/Crossref/OpenAlex)。
+> 多源文献抓取 → AI 结构化摘要 → 每日邮件报告 → Flask Web 浏览。9 类 PubMed 检索策略 + 4 源补充 (bioRxiv/arXiv/Crossref/OpenAlex)。
 
 **Live**: http://39.106.101.94/literature/
 
@@ -20,7 +20,7 @@ flowchart TB
 
     subgraph Pipeline["处理管线"]
         DEDUP["三级去重<br/>PMID → DOI → 标题 fuzz"]
-        DIGEST["AI 摘要<br/>DeepSeek V4 Flash<br/>结构化提取 8 字段"]
+        DIGEST["AI 摘要<br/>13 字段结构化提取"]
         BUILD["构建数据库<br/>papers.json<br/>增量更新 + 日期跟踪"]
     end
 
@@ -46,25 +46,20 @@ flowchart TB
 
 ---
 
-## CI 自动化流程
+## CLI 自动化
+
+`pipeline.py` 提供六种命令的 CLI 工具:
 
 ```
-systemd timer: literature-daily.timer
-    │
-    ├── 每日 08:00 UTC ──→ auto-paper-collecter/ (PubMed + Semantic Scholar)
-    │                           │
-    │                           ├── fetch_pubmed.py (7 类检索式)
-    │                           ├── fetch_preprints.py (arXiv + bioRxiv)
-    │                           └── fetch_linked_papers.py (accession 关联)
-    │
-    ├── dedup.py (PMID → DOI → 标题 fuzz 三级去重)
-    │
-    ├── digest.py (DeepSeek V4 Flash 逐篇生成 200 字中文摘要)
-    │
-    ├── build_data.py (合并 → papers.json, 增量更新)
-    │
-    └── paper-daily/ (Markdown → HTML 邮件, 发送至订阅列表)
+pipeline.py fetch       # 从指定 source 抓取论文 (keyword/elink/species/preprint)
+pipeline.py summarize   # AI 摘要待处理论文
+pipeline.py build       # 构建 Web 数据文件 (合并 + 去重 + 期刊质量 + 年度拆分)
+pipeline.py auto        # fetch → build → summarize → build
+pipeline.py stats       # 年份/类别统计
+pipeline.py historical  # 批量回溯 2020-2026
 ```
+
+各 fetch 子脚本通过 `subprocess.run()` 依次调用 (非并行), 输出临时 JSON 后通过 `dedup_key` + `merge_paper` 跨源合并去重。
 
 ---
 
@@ -72,8 +67,8 @@ systemd timer: literature-daily.timer
 
 | 指标 | 数值 |
 |:-----|:----:|
-| 精选文献总计 | 7,099 |
-| 结构化记录 (AI 摘要) | 2,892 |
+| 精选文献总计 | 6,525（master 全库 33,325） |
+| AI 摘要 (13 字段) | `summarize_papers.py` 按需生成 |
 | PubMed PDF 全文 | 8.25 GB (gitignore) |
 | 日/周/月报告 | cron 自动生成 |
 
@@ -90,17 +85,21 @@ systemd timer: literature-daily.timer
 
 ---
 
-## 7 类 PubMed 检索策略
+### 检索策略
 
-| 检索类别 | 聚焦方向 |
-|:---------|:---------|
-| **General** | 植物病毒综合文献 |
-| **Geminiviridae** | 双生病毒科 |
-| **Potyviridae** | 马铃薯Y病毒科 |
-| **Tospoviridae** | 番茄斑萎病毒科 |
-| **Closteroviridae** | 长线形病毒科 |
-| **Bromoviridae** | 雀麦花叶病毒科 |
-| **Virgaviridae** | 植物杆状病毒科 |
+PubMed 检索式由 `config.py` 的 `QUERY_CATEGORIES` 定义, **9 个主题类别**:
+
+| 类别 | 聚焦方向 |
+|:-----|:-----|
+| **New_Virus** | 新病毒发现 (novel virus, first report, complete genome + novel, viroid discovery) |
+| **Molecular_Characterization** | 基因组/分子特征 (complete genome, phylogenetic, recombination, RdRp/CP/MP 蛋白) |
+| **Detection_Methods** | 检测与诊断 (RT-PCR/qPCR/LAMP/RPA/ELISA/CRISPR, field-deployable) |
+| **Host_Virus_Interactions** | 宿主-病毒互作 (抗性/RNAi/HR/PCD/症状/易感基因) |
+| **Antiviral_Resistance_Genes** | 抗病毒基因与机制 (NLR/NBS-LRR/eIF4E/自噬/泛素/SA/JA/ET 信号) |
+| **Transmission_Epidemiology** | 传播与流行病学 (媒介/蚜虫/烟粉虱/蓟马/种传/流行病/暴发) |
+| **Control_Management** | 防控与管理 (交叉保护/弱毒株/生防/抗性品种育种) |
+| **Viral_Diversity_Ecology** | 病毒多样性与生态 (宏病毒组/HTS/NGS/sRNA-seq/进化/生态) |
+| **Biotechnology_Applications** | 生物技术应用 (VIGS/病毒载体/VLP/纳米/重组蛋白/瞬时表达) |
 
 ---
 
@@ -108,18 +107,25 @@ systemd timer: literature-daily.timer
 
 ### 论文 AI 摘要
 
-点击 `AI` 按钮 → 发送 title + abstract 到 DeepSeek → 结构化提取 8 字段:
+`summarize_papers.py` 通过 `_llm_call()` (urllib POST 到 OpenAI 兼容 API) 调用 LLM。系统提示词定义 **13 字段** 中文结构化提取:
 
 | 字段 | 内容 |
 |:-----|:-----|
-| 病毒 | 涉及的病毒种类 |
-| 宿主 | 宿主植物 |
-| 症状 | 病害症状描述 |
-| 媒介 | 传播媒介 |
-| 地点 | 研究/采样地点 |
-| 方法 | 关键技术方法 |
-| 结果 | 核心发现 |
-| 讨论 | 主要结论与意义 |
+| virus_name | 病毒名称 (含缩写) |
+| taxonomy | 分类地位 (目/科/属/种) |
+| symptoms | 植物症状 |
+| host_plant | 宿主植物 |
+| location | 采样地理位置 |
+| sample_date | 采样时间 |
+| vector | 传播媒介生物 |
+| transmission | 传播方式 |
+| overview | 研究概况 (≤80字) |
+| methods | 主要方法 (≤60字) |
+| results | 主要结果 (≤100字) |
+| discussion | 讨论要点 (≤80字) |
+| is_review | 综述/研究论文判定 |
+
+严格要求仅根据标题摘要提取, 不推测, 信息缺失填 "未提及"。返回严格 JSON。
 
 ### AI Digest
 

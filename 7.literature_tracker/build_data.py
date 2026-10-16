@@ -151,6 +151,7 @@ def build(from_daily: bool = True, journal_filter: bool = False, ai_verified: bo
     master.sort(key=lambda x: x.get("year", 0) or 0, reverse=True)
 
     # AI-verified filter: only keep papers with virus_name from Phase 2
+    master_total = len(master)
     if ai_verified:
         before = len(master)
         master = [p for p in master if p.get("virus_name") and p.get("virus_name") != "未提及"]
@@ -164,11 +165,16 @@ def build(from_daily: bool = True, journal_filter: bool = False, ai_verified: bo
         quality = journal_quality(jn, journals)
         pap.update(quality)
 
-    # Relevance scoring
-    print("[3/4] Computing relevance scores...")
+    # Relevance scoring + normalize categories to current 9-category config
+    print("[3/4] Computing relevance scores & normalizing categories...")
+    valid_cats = set(QUERY_CATEGORIES.keys())
     for pap in master:
         score_info = relevance_score(pap, QUERY_CATEGORIES)
         pap.update(score_info)
+        # Keep only categories from the current 9-category config
+        pap["categories"] = [c for c in pap.get("categories", []) if c in valid_cats]
+        if not pap["categories"]:
+            pap["categories"] = ["General"]
 
     # Stats
     years = defaultdict(int)
@@ -186,6 +192,7 @@ def build(from_daily: bool = True, journal_filter: bool = False, ai_verified: bo
 
     stats = {
         "total": len(master),
+        "master_total": master_total,  # --ai-verified 过滤前的全库总数（页面双口径用）
         "by_year": {k: years[k] for k in sorted(years.keys())},
         "by_category": dict(Counter(cat_counts).most_common(20)),
         "top_journals": Counter(journal_counts).most_common(30),
@@ -196,6 +203,14 @@ def build(from_daily: bool = True, journal_filter: bool = False, ai_verified: bo
     # Write output
     print("[4/4] Writing web data...")
     os.makedirs(WEB_DATA_DIR, exist_ok=True)
+
+    # Filter out papers with future years (data quality guard)
+    from datetime import date as _date
+    _current_year = _date.today().year
+    _before = len(master)
+    master = [p for p in master if (p.get("year") or 0) <= _current_year + 1]
+    if len(master) < _before:
+        print(f"  Filtered {_before - len(master)} papers with year > {_current_year + 1}")
 
     # Frontend-optimized fields
     web_fields = [
@@ -272,7 +287,7 @@ def build(from_daily: bool = True, journal_filter: bool = False, ai_verified: bo
             })
     milestones.sort(key=lambda x: x.get("date", ""), reverse=True)
     with open(WEB_DATA_DIR / "trend_milestones.json", "w", encoding="utf-8") as f:
-        json.dump(milestones[:200], f, ensure_ascii=False, indent=2)
+        json.dump(milestones, f, ensure_ascii=False, indent=2)
 
     print(f"\n  Master: {len(master)} papers total")
     print(f"  AI summarized: {stats['ai_summarized']}")

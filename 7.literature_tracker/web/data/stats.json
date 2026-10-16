@@ -1,151 +1,207 @@
 {
-  "total": 549,
+  "total": 6525,
+  "master_total": 33325,
   "by_year": {
-    "2023": 5,
-    "2024": 388,
-    "2025": 9,
-    "2026": 147
+    "1941": 1,
+    "1946": 1,
+    "1949": 1,
+    "1950": 1,
+    "1954": 1,
+    "1959": 2,
+    "1963": 2,
+    "1964": 3,
+    "1965": 2,
+    "1967": 2,
+    "1968": 1,
+    "1969": 1,
+    "1972": 1,
+    "1973": 1,
+    "1974": 1,
+    "1977": 4,
+    "1978": 2,
+    "1979": 1,
+    "1980": 3,
+    "1981": 6,
+    "1982": 8,
+    "1983": 4,
+    "1984": 1,
+    "1985": 4,
+    "1986": 7,
+    "1987": 10,
+    "1988": 10,
+    "1989": 7,
+    "1990": 16,
+    "1991": 20,
+    "1992": 15,
+    "1993": 24,
+    "1994": 16,
+    "1995": 26,
+    "1996": 31,
+    "1997": 28,
+    "1998": 30,
+    "1999": 41,
+    "2000": 70,
+    "2001": 89,
+    "2002": 67,
+    "2003": 70,
+    "2004": 109,
+    "2005": 114,
+    "2006": 103,
+    "2007": 145,
+    "2008": 172,
+    "2009": 169,
+    "2010": 206,
+    "2011": 184,
+    "2012": 220,
+    "2013": 261,
+    "2014": 307,
+    "2015": 242,
+    "2016": 213,
+    "2017": 288,
+    "2018": 269,
+    "2019": 274,
+    "2020": 371,
+    "2021": 368,
+    "2022": 398,
+    "2023": 367,
+    "2024": 358,
+    "2025": 447,
+    "2026": 308
   },
   "by_category": {
-    "New_Virus": 177,
-    "General": 104,
-    "Potyviridae": 71,
-    "Gemini_Begomo": 63,
-    "Tobamo_Virga": 57,
-    "Rhabdo_Reo_Fiji_Tenu": 46,
-    "Seco_Bromo_Tombus": 41,
-    "Tospo_Bunya": 25,
-    "Clostero_Beta": 16,
-    "Endorna_Parti_Amalga": 16,
-    "Luteo_Solemo": 15,
-    "Viroid": 11,
-    "Transmission_Epi": 8,
-    "Caulimo_Badna_Tungro": 8,
-    "Nanoviridae": 5,
-    "Methods_Resistance": 3
+    "New_Virus": 1809,
+    "Antiviral_Resistance_Genes": 1809,
+    "Host_Virus_Interactions": 1142,
+    "Molecular_Characterization": 920,
+    "Biotechnology_Applications": 862,
+    "Transmission_Epidemiology": 843,
+    "Control_Management": 766,
+    "Detection_Methods": 546,
+    "Viral_Diversity_Ecology": 346,
+    "General": 4
   },
   "top_journals": [
     [
-      "Frontiers in plant science",
-      33
-    ],
-    [
-      "MycoKeys",
-      28
-    ],
-    [
-      "Frontiers in microbiology",
-      27
-    ],
-    [
-      "Methods in molecular biology (Clifton, N.J.)",
-      27
+      "Plant disease",
+      822
     ],
     [
       "Archives of virology",
-      18
-    ],
-    [
-      "PhytoKeys",
-      18
+      567
     ],
     [
       "Viruses",
-      17
+      264
     ],
     [
       "Virology",
-      17
-    ],
-    [
-      "Plant disease",
-      15
-    ],
-    [
-      "Pest management science",
-      12
-    ],
-    [
-      "PloS one",
-      12
-    ],
-    [
-      "Zootaxa",
-      11
-    ],
-    [
-      "Plants (Basel, Switzerland)",
-      9
-    ],
-    [
-      "Virus evolution",
-      9
-    ],
-    [
-      "Molecular plant pathology",
-      8
+      171
     ],
     [
       "Virus research",
-      7
+      161
     ],
     [
-      "Scientific reports",
-      7
+      "Journal of virology",
+      160
     ],
     [
-      "PeerJ",
-      7
+      "Frontiers in plant science",
+      155
     ],
     [
-      "The New phytologist",
-      6
+      "Molecular plant pathology",
+      153
     ],
     [
-      "Current microbiology",
-      6
+      "PloS one",
+      139
     ],
     [
-      "Annals of botany",
-      6
+      "Frontiers in microbiology",
+      133
+    ],
+    [
+      "The Journal of general virology",
+      122
     ],
     [
       "Phytopathology",
-      5
+      118
     ],
     [
-      "3 Biotech",
-      5
+      "Journal of virological methods",
+      118
     ],
     [
-      "Insects",
-      5
+      "Plants (Basel, Switzerland)",
+      115
+    ],
+    [
+      "Scientific reports",
+      115
+    ],
+    [
+      "Methods in molecular biology (Clifton, N.J.)",
+      111
+    ],
+    [
+      "Molecular plant-microbe interactions : MPMI",
+      110
+    ],
+    [
+      "Virus genes",
+      97
     ],
     [
       "Journal of agricultural and food chemistry",
-      5
+      96
     ],
     [
-      "Journal of economic entomology",
-      5
+      "PLoS pathogens",
+      88
     ],
     [
-      "Biodiversity data journal",
-      5
+      "International journal of molecular sciences",
+      88
     ],
     [
-      "International journal of systematic and evolutionary microbiology",
-      5
+      "Virology journal",
+      77
     ],
     [
-      "Journal of fungi (Basel, Switzerland)",
-      5
+      "Pest management science",
+      75
     ],
     [
-      "International journal of biological macromolecules",
-      5
+      "Proceedings of the National Academy of Sciences of the United States of America",
+      75
+    ],
+    [
+      "The Plant journal : for cell and molecular biology",
+      72
+    ],
+    [
+      "Plant physiology",
+      71
+    ],
+    [
+      "Plant biotechnology journal",
+      70
+    ],
+    [
+      "BMC plant biology",
+      55
+    ],
+    [
+      "The New phytologist",
+      52
+    ],
+    [
+      "The Plant cell",
+      47
     ]
   ],
-  "ai_summarized": 0,
-  "last_updated": "2026-07-09 15:21:00"
+  "ai_summarized": 6525,
+  "last_updated": "2026-10-16 14:24:24"
 }

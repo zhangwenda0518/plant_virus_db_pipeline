@@ -1,29 +1,64 @@
 {
   "month": "2026-07",
-  "generated": "2026-07-09 14:49:24",
-  "total": 10,
+  "generated": "2026-07-13 02:59:42",
+  "total": 127,
   "by_category": {
-    "General": 4,
-    "Rhabdo_Reo_Fiji_Tenu": 2,
-    "Gemini_Begomo": 2,
-    "Seco_Bromo_Tombus": 1,
-    "Clostero_Beta": 1,
+    "Host_Virus_Interactions": 41,
+    "Control_Management": 40,
+    "Antiviral_Resistance_Genes": 29,
+    "Biotechnology_Applications": 10,
+    "Detection_Methods": 7,
+    "New_Virus": 5,
+    "Viral_Diversity_Ecology": 5,
+    "Transmission_Epidemiology": 4,
+    "Molecular_Characterization": 2,
     "Potyviridae": 1,
-    "Tospo_Bunya": 1,
-    "Luteo_Solemo": 1
+    "Seco_Bromo_Tombus": 1,
+    "General": 1,
+    "Gemini_Begomo": 1
   },
   "ai_summary": "",
   "top_papers": [
     {
-      "pmid": "42294678",
-      "doi": "10.1128/mbio.00221-26",
-      "title": "A viroid-like RNA can be transmitted among different ",
-      "journal": "mBio",
+      "pmid": "42030604",
+      "doi": "10.1016/j.virol.2026.110918",
+      "title": "Grapevine-associated picorna-like virus, an unusual virus identified in wine grapes (Vitis vinifera L.).",
+      "abstract": "A new picorna-like virus was identified in grapevines from a 21-year-old 'Tempanillo' block in eastern Oregon exhibiting leaf chlorosis and interveinal reddening, through the high-throughput sequencing (HTS) of the total RNA. This new virus was named grapevine-associated picorna-like virus (GaPLV). GaPLV has a monopartite, positive-sense, single-stranded RNA genome of 9021-nt, with a single open reading frame encoding a polyprotein that encompasses an RNA dependent RNA polymerase (RdRP), a helicase, a chymotrypsin-like protease, and three capsid proteins. The arrangement of these conserved domains in the polyprotein is so far unique among picorna-like viruses, with two structural (capsid) proteins in the N-terminal region, upstream of all other conserved domains, and one structural (capsid) domain close to the C-terminus of the polyprotein, downstream of the RdRP. In phylogenetic analysis, RdRP of GaPLV grouped inside the order Picornavirales, but outside of the known families of picorna-like viruses, at the base of the clade that includes Iflaviridae and Polycipivirdae. The presence of GaPLV in the original 'Tempranillo' samples was confirmed by RT-PCR amplifications and Sanger sequencing. Virus surveys conducted in 2023 and 2024 from five commercial vineyards in southwestern Idaho and eastern Oregon revealed GaPLV presence in six wine grape cultivars.",
+      "journal": "Virology",
       "year": 2026,
+      "pub_date": "2026-07-01",
+      "authors": "Reyes-Proaño Edison G; Gulyaeva Anastasia A; Orellana Gardenia E; Lee Jungmin; Koonin Eugene V; ... (+1)",
+      "first_author": "Reyes-Proaño Edison G",
       "categories": [
-        "General"
+        "New_Virus"
       ],
-      "summary_zh": "",
+      "virus_name": "Grapevine-associated picorna-like virus (GaPLV)",
+      "taxonomy": "未提及",
+      "host_plant": "葡萄 (Vitis vinifera L.)",
+      "location": "美国俄勒冈州东部",
+      "results": "GaPLV基因组结构独特，系统发育位于Picornavirales内但科外。",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42366920",
+      "doi": "10.1111/mpp.70302",
+      "title": "SLCMV-Encoded BC1 Protein Suppresses Photosynthesis by Disrupting Chloroplast Structure and Gene Expression.",
+      "abstract": "Sri Lankan cassava mosaic virus (SLCMV) is a highly destructive plant virus that poses a significant threat to cassava cultivation. It causes severe symptoms, including distinctive leaf mosaic patterns and stunted plant growth. Here, transcriptome sequencing revealed that SLCMV infection induced widespread transcriptional reprogramming, with 10,164 differentially expressed genes-6910 up-regulated and 3254 down-regulated. Notably, the down-regulated genes were primarily associated with plant chloroplast components and photosynthesis pathways. Reverse transcription-quantitative PCR analysis confirmed the suppression of key genes involved in photosystem I (PSI) and photosystem II (PSII). Further investigation revealed that SLCMV infection disrupted chloroplast ultrastructure and reduced total chlorophyll content, thereby inhibiting photosynthetic capacity in Nicotiana plants. Importantly, our findings highlighted the critical role of the SLCMV-encoded BC1 protein in repressing photosynthesis-related gene expression and attenuating overall photosynthetic activity. SLCMV-encoded movement protein BC1 down-regulates the expression of photosynthesis-related genes and disrupts chloroplast structure, ultimately leading to reduced photosynthetic activity.",
+      "journal": "Molecular plant pathology",
+      "year": 2026,
+      "pub_date": "2026-07-01",
+      "authors": "Ma Yu-Jiao; Zheng Chao; Chen Jian-Ping; Wang Xiao-Wei; Li Ping",
+      "first_author": "Ma Yu-Jiao",
+      "categories": [
+        "Molecular_Characterization"
+      ],
+      "virus_name": "Sri Lankan cassava mosaic virus",
+      "taxonomy": "未提及",
+      "host_plant": "",
+      "location": "",
+      "results": "",
       "relevance_level": "",
       "journal_quality": "",
       "source": ""
@@ -32,13 +67,111 @@
       "pmid": "42400157",
       "doi": "10.1016/j.xplc.2026.101979",
       "title": "Multiple-level regulation of a plant sterol methyltransferase during rice stripe virus infection.",
+      "abstract": "The plant sterol biosynthesis pathway is essential for the normal growth and development of plants, yet its relationship with plant virus infections remains poorly understood. In this study, we investigated the regulation of sterol methyltransferase 2 (SMT2), a key component of the plant sterol synthesis pathway, during rice stripe virus (RSV) infection. Our findings demonstrate that Nicotiana benthamiana SMT2 (NbSMT2) was regulated transcriptionally during RSV infection. Together with other sterol synthesis pathway proteins, namely sterol 4α-methyl oxidase 2 (SMO2) and sterol Δ(7)-reductase (DWF5), NbSMT2 acted as a positive regulator of RSV intercellular movement protein pc4 and facilitated virus movement. However, in response to RSV infection, NbSMT2 was polyubiquitinated and degraded through the ubiquitin-26S proteasome pathway mediated by the accumulation of reactive oxygen species (ROS), which conferred resistance to RSV. Additionally, NbSMT2 protein formed intercellular disulfide bonds to prevent complete degradation and maintain its protein pool. This study indicates that N. benthamiana appears to balance normal growth and development with antiviral through multiple regulatory mechanisms targeting NbSMT2.",
       "journal": "Plant communications",
       "year": 2026,
+      "pub_date": "2026-07-03",
+      "authors": "Liu Yu; Wang Yaqin; Li Chenyang; Yang Xiuling; Wu Jianxiang; ... (+1)",
+      "first_author": "Liu Yu",
       "categories": [
-        "General",
-        "Rhabdo_Reo_Fiji_Tenu"
+        "Antiviral_Resistance_Genes",
+        "Control_Management",
+        "Molecular_Characterization"
       ],
-      "summary_zh": "",
+      "virus_name": "水稻条纹病毒",
+      "taxonomy": "",
+      "host_plant": "本氏烟草",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41611980",
+      "doi": "10.1007/s12033-026-01555-4",
+      "title": "Detection Strategies for Begomoviruses: A Focus Review of Methods.",
+      "abstract": "Begomovirus, the largest genus within the family Geminiviridae, poses a significant threat to global agriculture, resulting in substantial economic losses across diverse cropping systems. The increasing incidence and geographic spread of begomoviruses are driven by both the emergence of novel viral strains and the adaptation of existing ones, complicating efforts to manage the disease effectively. Traditional techniques, such as PCR and ELISA, have long been the primary methods used for detecting begomoviruses. However, recent advancements have introduced modern detection techniques designed to improve speed and accuracy. Additionally, some techniques can also be applied in the field with commercial products, enhancing the practical efficiency of begomoviruses detection. This review summarizes the most used methods for begomoviruses detection and provides a comparative assessment of the strengths and limitations of each technique. Based on this, it will assist researchers in gaining a comprehensive overview of detection methods and their applications in studying this plant virus genus. Consequently, researchers can select the optimal detection method for their studies without expending excessive time and resources.",
+      "journal": "Molecular biotechnology",
+      "year": 2026,
+      "pub_date": "2026-07-01",
+      "authors": "Nguyen Nguyen Hoai; Luong Quynh Xuan Thi; Vo Thuy Thi Bich",
+      "first_author": "Nguyen Nguyen Hoai",
+      "categories": [
+        "Detection_Methods",
+        "Transmission_Epidemiology"
+      ],
+      "virus_name": "Begomoviruses",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42386000",
+      "doi": "10.1016/j.mimet.2026.107612",
+      "title": "Crude sap based colorimetric duplex RT-RPA assay for rapid detection of citrus yellow vein clearing virus and citrus yellow mottle-associated virus in citrus.",
+      "abstract": "Citrus yellow vein clearing virus (CYVCV) and citrus yellow mottle-associated virus (CiYMaV) frequently co-infect citrus, posing challenges for reliable diagnosis and certification systems. In this study, a duplex reverse transcription recombinase polymerase amplification (RT-RPA) assay was developed for the simultaneous detection of both viruses using crude leaf sap of citrus. The assay operates under isothermal conditions (40 °C, 25 min) and incorporates an endogenous internal control (Elongation factor 1α) to support assay reliability and reduce the likelihood of false-negative results. The duplex RT-RPA assay performed effectively with crude sap, enabling detection without the need for nucleic acid extraction. It specifically amplified CYVCV and CiYMaV without cross-reactivity with other citrus pathogens and showed performance comparable to duplex RT-PCR. A hydroxynaphthol blue (HNB)-based colorimetric format was further evaluated to allow visual identification of positive samples without electrophoresis, although it does not differentiate between the two viruses. Validation using citrus samples confirmed detection of both single and mixed infections, with results consistent with those obtained by duplex RT-PCR. Overall, the combined approach provides a rapid and simplified method for citrus virus detection and may be useful for routine screening and certification programs.",
+      "journal": "Journal of microbiological methods",
+      "year": 2026,
+      "pub_date": "2026-07-01",
+      "authors": "Kumar Rakesh; Rawat Abhinav; Kumari Sini; Srivastava Nishant; Diksha Damini; ... (+5)",
+      "first_author": "Kumar Rakesh",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "柑橘黄脉明脉病毒(CYVCV)和柑橘黄斑相关病毒(CiYMaV)",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "41662723",
+      "doi": "10.1094/PHYTO-10-25-0319-R",
+      "title": "Development of a Recombinase Polymerase Amplification-CRISPR/Cas12a Detection System for Cacao Mild Mosaic Virus.",
+      "abstract": "Plant viruses that cause minimal to no disease symptoms may not support readily detectable virus levels. Such viruses are of concern when they persist in plant germplasm collections or in breeding populations because they can provide an inoculum that can be spread and potentially cause outbreaks in susceptible plant species. The mealybug-transmitted cacao mild mosaic virus (CaMMV) causes symptomatic and asymptomatic infection of cacao trees that varies seasonally. The virus accumulates to low levels in leaves and petioles of at least some cacao genetic groups, which has confounded reliable CaMMV detection. Here, a multiplex recombinase polymerase amplification (RPA) assay was developed to increase the reliability of CaMMV detection. Three RPA primers were designed to amplify two regions of the movement protein (mp) gene of CaMMV, yielding fragments of 362 and 284 bp. To increase the detection sensitivity and specificity of CaMMV, two guide RNAs (20 bp) targeting both the CaMMV RPA amplicons were designed to activate Cas12a-mediated collateral cleavage of a fluorescent reporter. An RPA detection efficiency of 100% was achieved with respect to six known CaMMV mp variants, and the analytical sensitivity ranged from approximately 3 to 40 detectable CaMMV genomes. No signal was observed when cloned cacao-infecting badnavirus sequences or virus-free cacao were used as the template, indicating that this assay is highly specific for CaMMV.",
+      "journal": "Phytopathology",
+      "year": 2026,
+      "pub_date": "2026-07-01",
+      "authors": "De Silva Weligodage Heshani; Goenaga Ricardo; Gutierrez Osman A; Brown Judith K",
+      "first_author": "De Silva Weligodage Heshani",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "可可轻花叶病毒",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42419434",
+      "doi": "10.1016/j.jviromet.2026.115434",
+      "title": "Broadening the use of Virus-Mimicking Artificial Positive Controls in Plant Virus Diagnostics.",
+      "abstract": "Positive controls are essential for diagnostics yet access to high quality ones remains a persistent bottleneck for assay validation and quality control. Infected tissues are scarce or even regulated, whereas synthetic DNA fragments lack matrix effects and raise contamination risks. Here, we validate the Virus-Mimicking Artificial Positive Control (ViMAPC) platform for 18 viruses, demonstrating platform scalability across multiple virus taxa. ViMAPCs primarily use genus-matched surrogates and built-in size shifts to easily distinguish natural infections (true positives) from false positives due to contamination. Controls were generated via chimeric primer reverse transcription followed by end-point PCR using peer-reviewed protocols. All targets yielded expected amplicons with designed size differentiation and similar amplification behaviour to naturally infected material, with percent differences in amplicon intensity of ≤30%. Independent synthesis and validation in two laboratories achieved 100% success with design-to-use timelines of 4-5 days, demonstrating transferability for routine diagnostic workflows. By providing rapid, low-cost controls that mimic natural infection while remaining clearly identifiable, ViMAPCs enable robust diagnostic validation, contamination tracing, and cross-laboratory comparability, supporting diagnostic laboratories in rapid assay deployment for both newly discovered and quarantine viruses.",
+      "journal": "Journal of virological methods",
+      "year": 2026,
+      "pub_date": "2026-07-08",
+      "authors": "Atanda Habeeb Y; Osundahunsi Bolaji; Singh Shivani; Villamor Dan E; Tzanetakis Ioannis E",
+      "first_author": "Atanda Habeeb Y",
+      "categories": [
+        "Detection_Methods"
+      ],
+      "virus_name": "多种植物病毒（18种）",
+      "taxonomy": "",
+      "host_plant": "",
+      "location": "",
+      "results": "",
       "relevance_level": "",
       "journal_quality": "",
       "source": ""
@@ -47,70 +180,22 @@
       "pmid": "42410505",
       "doi": "10.1186/s12870-026-09448-z",
       "title": "Development of RT-RPA assays for rapid detection of mango-infecting viruses using high-throughput sequencing-derived genomic information.",
+      "abstract": "Plant viral diseases pose a major threat to perennial fruit crops, where infections often remain latent and persist over long periods, facilitating unnoticed spread through planting material. Recent advances in high-throughput sequencing (HTS) have greatly expanded knowledge of plant viral diversity and plant-virus interactions, including the identification of emerging and re-emerging viruses. However, translating virome-level discoveries into practical disease management tools remains a significant challenge, particularly for field-level surveillance and sustainable crop protection. Mango (Mangifera indica), a globally important fruit crop, exemplifies this gap, as virus infections are poorly correlated with visible symptoms and reliable on-site diagnostic tools are limited. In this study, HTS was employed to reconfirm the presence of mangifera indica latent virus (MiLV) and mangifera virus 1 (MaV-1) in mango plants and to generate validated genomic information for diagnostic assay development. Building on these data, reverse transcription-recombinase polymerase amplification (RT-RPA) assays were developed and optimized for rapid virus detection. The assays operated efficiently under isothermal conditions (40 °C) within 25 min. The MiLV RT-RPA assay enabled direct detection from crude leaf extracts without the need of RNA purification, whereas MaV-1 detection required purified RNA as template. Sensitivity analysis showed that the MiLV RT-RPA assay detected viral RNA up to 0.01 fg µl⁻¹ (equivalent to a 10⁻¹⁰ dilution of 100 ng µl⁻¹ RNA) and MaV-1 up to 0.1 ng µl⁻¹ showed complete concordance with RT-PCR (Cohen's K = 1.00). Validation using field-collected symptomatic and asymptomatic samples demonstrated complete concordance with conventional RT-PCR. The detection of both viruses in young grafted plants showed the potential role of vegetative propagation in virus dissemination and emphasizes the importance of screening both scion and rootstock materials. This study demonstrates how HTS-based insights into plant viral diversity can be effectively translated into rapid, field-deployable molecular diagnostics. The developed RT-RPA assays provide a practical tool for routine virus surveillance, certification of virus-free planting material, thereby contributing to improved stress resilience and sustainable mango production.",
       "journal": "BMC plant biology",
       "year": 2026,
+      "pub_date": "2026-07-06",
+      "authors": "Prajapati Malyaj R; Bhardwaj Pooja; Gehlot Jayesh; Singhal Pankhuri; Singh Deepak; ... (+3)",
+      "first_author": "Prajapati Malyaj R",
       "categories": [
-        "General"
+        "Control_Management",
+        "Detection_Methods",
+        "Viral_Diversity_Ecology"
       ],
-      "summary_zh": "",
-      "relevance_level": "",
-      "journal_quality": "",
-      "source": ""
-    },
-    {
-      "pmid": "42414904",
-      "doi": "10.1186/s12870-026-09453-2",
-      "title": "SatRNA-mediated exacerbation of disease symptoms in plants reduces virus transmission potential by aphids.",
-      "journal": "BMC plant biology",
-      "year": 2026,
-      "categories": [
-        "General",
-        "Seco_Bromo_Tombus"
-      ],
-      "summary_zh": "",
-      "relevance_level": "",
-      "journal_quality": "",
-      "source": ""
-    },
-    {
-      "pmid": "42409263",
-      "doi": "10.1016/j.mbs.2026.109765",
-      "title": "Intelligent machine learning solutions with Bayesian regularization backpropagation adaptive networks for differential systems of Maize streak virus diseases.",
-      "journal": "Mathematical biosciences",
-      "year": 2026,
-      "categories": [
-        "Gemini_Begomo"
-      ],
-      "summary_zh": "",
-      "relevance_level": "",
-      "journal_quality": "",
-      "source": ""
-    },
-    {
-      "pmid": "42412743",
-      "doi": "10.1371/journal.ppat.1014354",
-      "title": "Subversion of the salicylic acid signaling pathway by the bipartite begomoviral protein BV1 promotes virus infection and vector preference to virus-infected plants.",
-      "journal": "PLoS pathogens",
-      "year": 2026,
-      "categories": [
-        "Gemini_Begomo"
-      ],
-      "summary_zh": "",
-      "relevance_level": "",
-      "journal_quality": "",
-      "source": ""
-    },
-    {
-      "pmid": "42417722",
-      "doi": "10.1094/PDIS-04-25-0864-SR",
-      "title": "Multiplex RT-PCR for simultaneous detection of seven cucurbit viruses found in Florida cucurbits.",
-      "journal": "Plant disease",
-      "year": 2026,
-      "categories": [
-        "Clostero_Beta",
-        "Potyviridae"
-      ],
-      "summary_zh": "",
+      "virus_name": "芒果潜隐病毒（MiLV）和芒果病毒1号（MaV-1）",
+      "taxonomy": "",
+      "host_plant": "芒果",
+      "location": "",
+      "results": "",
       "relevance_level": "",
       "journal_quality": "",
       "source": ""
@@ -119,40 +204,90 @@
       "pmid": "42410685",
       "doi": "10.1094/PDIS-02-26-0339-RE",
       "title": "Harnessing wild peanut genetic resources for field resistance to tomato spotted wilt and late leaf spot diseases.",
+      "abstract": "Tomato spotted wilt virus (TSWV) and late leaf spot (LLS) are among the major constraints to peanut production. Cultivated peanut has narrow genetic bases and lacks strong sources of resistance. Wild species, on the other hand, harbor diverse and strong resistances to multiple pathogens. In this study, we evaluated advanced breeding lines carrying introgressions from multiple wild Arachis species (A. stenosperma, A. batizocoi, A. valida, and A. cardenasii) across three contrasting field environments and experimental designs in Georgia, USA using complementary incidence- and severity-based phenotyping. Genotype effects were highly significant for both diseases. Several wild-derived lines -particularly those from A. stenosperma ancestry- showed strong and stable TSWV resistance across environments. Interestingly, some lines lacking detectable wild segments also showed high resistance to TSWV, suggesting cryptic or undetected introgressions. LLS resistance was primarily associated with the characteristic A. cardenasii segments on A02 and A03, and lines stacking these introgressions consistently outperformed both cultivated parents and Georgia-06G, the most popular cultivar in the USA. Correlations between TSWV and LLS responses were weak, confirming genetic independence and emphasizing the need to screen both traits. A small subset of lines combined resistance to both diseases, and many also retained resistance loci to root-knot nematode (RKN), expanding their value as multi-trait donors. These findings demonstrate the power of wild introgression breeding for enhancing disease resistance and provide a foundation for deploying stacked alleles through marker-assisted and multi-environment selection.",
       "journal": "Plant disease",
       "year": 2026,
+      "pub_date": "2026-07-06",
+      "authors": "Maharjan Namrata; Culbreath Albert; Gonzales Maricel; Bertioli David; Leal-Bertioli Soraya",
+      "first_author": "Maharjan Namrata",
       "categories": [
-        "Tospo_Bunya"
+        "Host_Virus_Interactions"
       ],
-      "summary_zh": "",
+      "virus_name": "Tomato spotted wilt virus (TSWV)",
+      "taxonomy": "",
+      "host_plant": "花生 (peanut)",
+      "location": "",
+      "results": "",
       "relevance_level": "",
       "journal_quality": "",
       "source": ""
     },
     {
-      "pmid": "42410684",
-      "doi": "10.1094/PDIS-03-26-0527-RE",
-      "title": "Prevalence and diversity of yellow dwarf virus strains in Nebraska cereal crops.",
-      "journal": "Plant disease",
+      "pmid": "42414904",
+      "doi": "10.1186/s12870-026-09453-2",
+      "title": "SatRNA-mediated exacerbation of disease symptoms in plants reduces virus transmission potential by aphids.",
+      "abstract": "[BACKGROUND] Plant viruses have evolved adaptations that enable them to alter host cues, thereby facilitating their replication and efficient transmission by insect vectors. Satellite RNAs (satRNAs), which accompany certain plant RNA viruses and are dependent on them for replication and transmission, can change the progression of pathogenesis and the expression of disease symptoms. This study aimed to analyse how the change in the course of infection by satRNA (exacerbation or mitigation of pathogenesis) impacts the subsequent stages of virus transmission. We hypothesised that satRNAs influence insect behaviour toward infected plants depending on their effect on pathogenesis progress; specifically, a significant disease exacerbation reduces plant attractiveness to aphids, whereas symptom mitigation promotes attraction. [RESULTS] Using peanut stunt virus (PSV) and cucumber mosaic virus (CMV), and their satRNAs, which induce divergent infection symptoms on Nicotiana benthamiana or Solanum lycopersicum plants, olfactometry, electrical penetration graph (EPG) monitoring, virus acquisition and transmission by Myzus persicae were analysed. The results showed that satRNA, naturally associated with the helper virus, that alleviate disease symptoms caused the plants to be more attractive to the insect vectors. On the other hand, the presence of satRNAs leading to symptom exacerbation reduced plant attractiveness and discouraged phloem feeding. However, acquisition effects were host-dependent: while symptom-exacerbating satRNAs generally reduced acquisition, nc-satRNA markedly enhanced CMV acquisition from N. benthamiana. Moreover, virus transmission was significantly reduced only in S. lycopersicum. [CONCLUSIONS] These findings suggest that symptom-attenuating satRNAs have greater capacity to persist in the environment by limiting disease damage in host plants and maintaining plant attractiveness to aphid vectors, thereby facilitating virus acquisition and transmission. In contrast, symptom-exacerbating satRNA variants appear not only to diminish the number of cells available for viral replication due to severe symptoms but also to reduce plant palatability and to impair vector feeding and thus virus transmission, particularly in crop hosts such as S. lycopersicum, which may limit their environmental persistence. Together, these results underscore the epidemiological relevance of satRNA-mediated symptom modulation as a factor shaping virus spread in natural and agricultural settings.",
+      "journal": "BMC plant biology",
       "year": 2026,
+      "pub_date": "2026-07-07",
+      "authors": "Wrzesińska-Krupa Barbara; Frąckowiak Patryk; Budziszewska Marta; Strażyński Przemysław; Obrępalska-Stęplowska Aleksandra",
+      "first_author": "Wrzesińska-Krupa Barbara",
       "categories": [
-        "Luteo_Solemo"
+        "Host_Virus_Interactions",
+        "Transmission_Epidemiology"
       ],
-      "summary_zh": "",
+      "virus_name": "花生矮化病毒(PSV)和黄瓜花叶病毒(CMV)",
+      "taxonomy": "",
+      "host_plant": "本氏烟(Nicotiana benthamiana)和番茄(Solanum lycopersicum)",
+      "location": "",
+      "results": "",
       "relevance_level": "",
       "journal_quality": "",
       "source": ""
     },
     {
-      "pmid": "42177618",
-      "doi": "10.1016/j.molp.2026.05.012",
-      "title": "Plant viruses hijack and stabilize host ubiquitin-specific protease 14 to prevent viral protein degradation for efficient infection.",
-      "journal": "Molecular plant",
+      "pmid": "42308425",
+      "doi": "10.1021/acs.jafc.6c03165",
+      "title": "Indolylurea ",
+      "abstract": "The turnip mosaic virus (TuMV) is an RNA virus that poses a significant threat to crops. The coat protein (CP) plays a crucial role in the viral life cycle, including mediating host infection and cell-to-cell movement, which makes it an ideal target for antiviral drug development. In this study, a series of structurally diverse synthetic indolylureas were screened against TuMV CP using high-throughput methods such as isothermal titration calorimetry (ITC) and microscale thermophoresis (MST). This led to the identification of compound SST21, which exhibits a high affinity for TuMV CP. Further experiments revealed that SST21 also binds to other homologous coat proteins from the Potyvirus genus, suggesting its potential as a broad-spectrum antiviral agent. Through molecular docking and point-mutation validation, the H183A residue in TuMV CP was identified as a key site for SST21 binding. In vivo experiments demonstrated that SST21 exhibits superior antiviral activity compared with ningnanmycin. Transmission electron microscopy observations indicated that SST21 disrupts the viral particle integrity. Additionally, omics analysis and defense enzyme activity assays showed that this compound was also found to modulate the plant immune responses. Together, these findings provide new insights into and experimental evidence for the development of novel plant antiviral strategies.",
+      "journal": "Journal of agricultural and food chemistry",
       "year": 2026,
+      "pub_date": "2026-07-01",
+      "authors": "Cai Xiaobo; Yang Mengzhi; Ma Guangming; Wu Duanpu; Pu Xian; ... (+4)",
+      "first_author": "Cai Xiaobo",
       "categories": [
-        "Rhabdo_Reo_Fiji_Tenu"
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions",
+        "Potyviridae"
       ],
-      "summary_zh": "",
+      "virus_name": "turnip mosaic virus (TuMV)",
+      "taxonomy": "",
+      "host_plant": "未提及",
+      "location": "",
+      "results": "",
+      "relevance_level": "",
+      "journal_quality": "",
+      "source": ""
+    },
+    {
+      "pmid": "42154198",
+      "doi": "10.1007/s10265-026-01719-y",
+      "title": "ATP-dependent binding cassette transporter ClABCI6 promotes the expression of citrus yellow vein clearing virus via inhibiting salicylic acid pathway.",
+      "abstract": "ATP-dependent binding cassette (ABC) transporters constitute a class of proteins that utilize ATP hydrolysis to actively transport diverse substrates across cellular membranes and play crucial roles in various physiological processes in plants. However, the specific function of ABC transporters in plant antiviral defense remains poorly characterized. In this study, the homologous ABCI6 proteins originating from Citrus L. spp. showed high evolutionary conservation (higher than 75.82%). The expression of ClABCI6, the ABCI6 homologous gene in Eureka lemon (Citrus limon (L.) Osbeck), was significantly upregulated following infection with citrus yellow vein clearing virus (CYVCV). Further study showed that ClABCI6 localized specifically to the chloroplast and physically interacted with the RNA-dependent RNA polymerase domain (He-RdRp) of CYVCV using yeasts two-hybrid assays. In addition, ClABCI6 promoted the expression of He-RdRp and CYVCV, while concurrently suppressing the expression of salicylic acid (SA) pathway genes in lemon, thus facilitating viral proliferation. This study provides novel insights into the evolution and molecular function of ClABCI6, and reveals its response patterns to CYVCV-infection.",
+      "journal": "Journal of plant research",
+      "year": 2026,
+      "pub_date": "2026-07-01",
+      "authors": "Song Yaqin; Ge Wen; Lei Cuiyun; Li Yijie; Han Yang; ... (+5)",
+      "first_author": "Song Yaqin",
+      "categories": [
+        "Antiviral_Resistance_Genes",
+        "Host_Virus_Interactions"
+      ],
+      "virus_name": "柑橘黄化脉明病毒 (citrus yellow vein clearing virus, CYVCV)",
+      "taxonomy": "",
+      "host_plant": "柠檬（Eureka lemon, Citrus limon）",
+      "location": "",
+      "results": "",
       "relevance_level": "",
       "journal_quality": "",
       "source": ""
