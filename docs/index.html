@@ -52,21 +52,21 @@ img.gimg{width:46px;height:34px;object-fit:cover;border-radius:6px;flex:0 0 auto
 .topbar .stats .s b{display:block;font-size:17px;font-weight:700}
 .topbar .stats .s span{font-size:10px;opacity:.82}
 /* ---- 模块卡片：单屏网格，描述两行截断 ---- */
-.main{max-width:1500px;margin:14px auto 0;padding:0 18px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:11px}
-.card{background:#fff;border-radius:10px;padding:11px 13px;text-decoration:none;color:inherit;box-shadow:0 2px 8px rgba(20,60,90,.06);border:1px solid #eef2f5;transition:.15s;display:flex;flex-direction:column;overflow:hidden}
+.main{max-width:1500px;margin:10px auto 0;padding:0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.card{background:#fff;border-radius:10px;padding:13px 15px;text-decoration:none;color:inherit;box-shadow:0 2px 8px rgba(20,60,90,.06);border:1px solid #eef2f5;transition:.15s;display:flex;flex-direction:column;overflow:hidden}
 .card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(20,60,90,.13);border-color:#bcd8e8}
 .card .hd{display:flex;align-items:center;gap:8px}
-.card .ic{font-size:19px;flex:0 0 auto}
-.card h3{margin:0;font-size:13.5px;color:#1a5276;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.card .path{font-family:'SF Mono',Consolas,monospace;font-size:10.5px;color:#2e86c1;margin:4px 0 5px}
-.card p{margin:0;font-size:11.5px;line-height:1.5;color:#5a6b7b;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.card:hover p{-webkit-line-clamp:unset}
+.card .ic{font-size:20px;flex:0 0 auto}
+.card h3{margin:0;font-size:14px;color:#1a5276;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card .path{font-family:'SF Mono',Consolas,monospace;font-size:10.5px;color:#2e86c1;margin:5px 0 6px}
+.card p{margin:0;font-size:12px;line-height:1.6;color:#5a6b7b}
+.card .go{margin-top:auto;padding-top:8px;font-size:11.5px;color:#2e86c1;font-weight:600}
 /* ---- 原三分区标题（单屏紧凑版） ---- */
-.sec{margin:14px 0 9px;font-size:13px;color:#8a99a8;font-weight:600;letter-spacing:.5px;border-left:3px solid #2e86c1;padding-left:9px}
+.sec{margin:11px 0 8px;font-size:13px;color:#8a99a8;font-weight:600;letter-spacing:.5px;border-left:3px solid #2e86c1;padding-left:9px}
 .sec:first-child{margin-top:0}
 /* ---- 访客地图：折叠条，默认收起不占首屏 ---- */
-.mapd{max-width:1500px;margin:10px auto 0;padding:0 18px}
+.mapd{max-width:1500px;margin:7px auto 0;padding:0 18px}
 .mapd summary{cursor:pointer;list-style:none;background:#fff;border:1px solid #eef2f5;border-radius:10px;padding:9px 16px;font-size:12.5px;color:#1a5276;font-weight:600;box-shadow:0 2px 8px rgba(20,60,90,.06);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .mapd summary::-webkit-details-marker{display:none}
 .mapd summary .arr{color:#2e86c1;font-size:11px;transition:.2s}
@@ -80,7 +80,7 @@ img.gimg{width:46px;height:34px;object-fit:cover;border-radius:6px;flex:0 0 auto
 @media(max-width:700px){.vmap{height:250px}}
 .mapmeta{margin-top:10px;font-size:12px;color:#8a99a8}
 .mapmeta b{color:#1a5276;font-weight:700}
-footer{text-align:center;color:#9aa7b4;font-size:11px;padding:10px}
+footer{text-align:center;color:#9aa7b4;font-size:11px;padding:7px}
 </style></head><body>
 
 <header class="topbar">
@@ -101,30 +101,30 @@ footer{text-align:center;color:#9aa7b4;font-size:11px;padding:10px}
 <main class="main">
   <div class="sec">&#128218; <span data-i18n="Data Resources|数据资源">Data Resources</span></div>
   <div class="grid">
-    <a class="card" href="/reference/"><div class="hd"><span class="ic">&#128218;</span><h3 data-i18n="Reference DB|参考数据库">Reference DB</h3></div><div class="path">/reference/</div><p>Curated plant virus reference sequences from NCBI GenBank, cross-referenced with ICTV VMR MSL41. 9,022 curated reference sequences, 7-step QC pipeline.</p></a>
-    <a class="card" href="/photos/"><div class="hd"><span class="ic">&#127807;</span><h3 data-i18n="Symptom Photos|症状照片">Symptom Photos</h3></div><div class="path">/photos/</div><p>2,975 curated symptom photos from EPPO, DPV, books and research papers (DOI-linked, AI-screened). Filter by host, bilingual symptom, and photo position.</p></a>
-    <a class="card" href="/relations/"><div class="hd"><span class="ic">&#128279;</span><h3 data-i18n="Virus&ndash;Vector&ndash;Host Relations|病毒-媒介-宿主关系">Virus&ndash;Vector&ndash;Host Relations</h3></div><div class="path">/relations/</div><p>Four relationship views in one place: Sankey, networks and literature-backed vector&ndash;host tables. 15,197 virus&ndash;host pairs from 211,132 GenBank accessions.</p></a>
-    <a class="card" href="/eve/"><div class="hd"><span class="ic">&#127760;</span><h3 data-i18n="Plant EVE Landscape|植物 EVE 全景">Plant EVE Landscape</h3></div><div class="path">/eve/</div><p>Endogenous viral elements across 1,527 plant genomes and 284 host families &mdash; 150,136 loci, eight linked views.</p></a>
-    <a class="card" href="/genes/index.html"><div class="hd"><span class="ic">&#129516;</span><h3 data-i18n="Resistance Genes &amp; sRNAs|抗性基因与sRNA">Resistance Genes &amp; sRNAs</h3></div><div class="path">/genes/</div><p>RefPlantNLR 415 NLRs + 11,780 sRNA genes + 3,996 UPS + 83,166 miRNAs. Integrated plant immune gene atlas.</p></a>
-    <a class="card" href="/primers/"><div class="hd"><span class="ic">&#129514;</span><h3 data-i18n="Primer Database|引物数据库">Primer Database</h3></div><div class="path">/primers/</div><p>83,830 unique PCR/qPCR primer pairs covering 4,789 plant virus species, 66,891 rated RECOMMENDED. REST API included.</p></a>
-    <a class="card" href="/onekp/"><div class="hd"><span class="ic">&#127793;</span><h3 data-i18n="1KP Virome|1KP病毒组">1KP Virome</h3></div><div class="path">/onekp/</div><p>Virus detection across 1,341 plant transcriptomes. 96 virus species (118 high-confidence detections), interactive analysis.</p></a>
-    <a class="card" href="/structures3d/"><div class="hd"><span class="ic">&#129482;</span><h3 data-i18n="Protein Structure|蛋白结构">Protein Structure</h3></div><div class="path">/structures3d/</div><p data-i18n="53,000+ structures across 4,200+ species: RVPSD AF2, VAD, PDB/AFDB, AF3 pipeline, homology and self-fold models.|53,000+ 个结构 · 4,200+ 个物种：RVPSD AF2、VAD、PDB/AFDB、AF3 推理、同源与自折叠模型。">53,000+ structures across 4,200+ species: RVPSD AF2, VAD, PDB/AFDB, AF3 pipeline, homology and self-fold models.</p></a>
+    <a class="card" href="/reference/"><div class="hd"><span class="ic">&#128218;</span><h3 data-i18n="Reference DB|参考数据库">Reference DB</h3></div><div class="path">/reference/</div><p>Curated plant virus reference sequences from NCBI GenBank, cross-referenced with ICTV VMR MSL41. 9,022 curated reference sequences, 7-step QC pipeline.</p><div class="go">&#8594;</div></a>
+    <a class="card" href="/photos/"><div class="hd"><span class="ic">&#127807;</span><h3 data-i18n="Symptom Photos|症状照片">Symptom Photos</h3></div><div class="path">/photos/</div><p>2,975 curated symptom photos from EPPO, DPV, books and research papers (DOI-linked, AI-screened). Filter by host, bilingual symptom, and photo position.</p><div class="go">&#8594;</div></a>
+    <a class="card" href="/relations/"><div class="hd"><span class="ic">&#128279;</span><h3 data-i18n="Virus&ndash;Vector&ndash;Host Relations|病毒-媒介-宿主关系">Virus&ndash;Vector&ndash;Host Relations</h3></div><div class="path">/relations/</div><p>Four relationship views in one place: Sankey, networks and literature-backed vector&ndash;host tables. 15,197 virus&ndash;host pairs from 211,132 GenBank accessions.</p><div class="go">&#8594;</div></a>
+    <a class="card" href="/eve/"><div class="hd"><span class="ic">&#127760;</span><h3 data-i18n="Plant EVE Landscape|植物 EVE 全景">Plant EVE Landscape</h3></div><div class="path">/eve/</div><p>Endogenous viral elements across 1,527 plant genomes and 284 host families &mdash; 150,136 loci, eight linked views.</p><div class="go">&#8594;</div></a>
+    <a class="card" href="/genes/index.html"><div class="hd"><span class="ic">&#129516;</span><h3 data-i18n="Resistance Genes &amp; sRNAs|抗性基因与sRNA">Resistance Genes &amp; sRNAs</h3></div><div class="path">/genes/</div><p>RefPlantNLR 415 NLRs + 11,780 sRNA genes + 3,996 UPS + 83,166 miRNAs. Integrated plant immune gene atlas.</p><div class="go">&#8594;</div></a>
+    <a class="card" href="/primers/"><div class="hd"><span class="ic">&#129514;</span><h3 data-i18n="Primer Database|引物数据库">Primer Database</h3></div><div class="path">/primers/</div><p>83,830 unique PCR/qPCR primer pairs covering 4,789 plant virus species, 66,891 rated RECOMMENDED. REST API included.</p><div class="go">&#8594;</div></a>
+    <a class="card" href="/onekp/"><div class="hd"><span class="ic">&#127793;</span><h3 data-i18n="1KP Virome|1KP病毒组">1KP Virome</h3></div><div class="path">/onekp/</div><p>Virus detection across 1,341 plant transcriptomes. 96 virus species (118 high-confidence detections), interactive analysis.</p><div class="go">&#8594;</div></a>
+    <a class="card" href="/structures3d/"><div class="hd"><span class="ic">&#129482;</span><h3 data-i18n="Protein Structure|蛋白结构">Protein Structure</h3></div><div class="path">/structures3d/</div><p data-i18n="53,000+ structures across 4,200+ species: RVPSD AF2, VAD, PDB/AFDB, AF3 pipeline, homology and self-fold models.|53,000+ 个结构 · 4,200+ 个物种：RVPSD AF2、VAD、PDB/AFDB、AF3 推理、同源与自折叠模型。">53,000+ structures across 4,200+ species: RVPSD AF2, VAD, PDB/AFDB, AF3 pipeline, homology and self-fold models.</p><div class="go">&#8594;</div></a>
   </div>
 
   <div class="sec">&#128300; <span data-i18n="Analysis Tools|分析工具">Analysis Tools</span></div>
   <div class="grid">
-    <a class="card" href="/explorer/"><div class="hd"><span class="ic">&#128202;</span><h3 data-i18n="Virus Explorer|病毒浏览器">Virus Explorer</h3></div><div class="path">/explorer/</div><p>Interactive 5D linked filtering, timeline, global map, genome viewer and full virus profiles (taxonomy, hosts, vectors, primers, photos).</p></a>
-    <a class="card" href="/metabuli/"><div class="hd"><span class="ic">&#129515;</span><h3 data-i18n="Metabuli|宏基因组分类">Metabuli</h3></div><div class="path">/metabuli/</div><p>Upload contigs for plant virus metagenomic classification. 8-rank taxonomy, BLASTN/BLASTX/CDD validation, Krona/Sankey viz.</p></a>
-    <a class="card" href="/pamirdb/"><div class="hd"><span class="ic">&#127919;</span><h3 data-i18n="PV-miRNA|PV-miRNA预测">PV-miRNA</h3></div><div class="path">/pamirdb/</div><p>Plant virus miRNA target prediction, 11,006 pre-computed predictions across 799 plant species and 40 virus families.</p></a>
-    <a class="card" href="/phylo/"><div class="hd"><span class="ic">&#127794;</span><h3 data-i18n="Virus Phylogeny|病毒进化关系">Virus Phylogeny</h3></div><div class="path">/phylo/</div><p>Taxonomy tree + official molecular trees on one page (tab switcher), maximum-likelihood with real branch lengths and support values.</p></a>
+    <a class="card" href="/explorer/"><div class="hd"><span class="ic">&#128202;</span><h3 data-i18n="Virus Explorer|病毒浏览器">Virus Explorer</h3></div><div class="path">/explorer/</div><p>Interactive 5D linked filtering, timeline, global map, genome viewer and full virus profiles (taxonomy, hosts, vectors, primers, photos).</p><div class="go">&#8594;</div></a>
+    <a class="card" href="/metabuli/"><div class="hd"><span class="ic">&#129515;</span><h3 data-i18n="Metabuli|宏基因组分类">Metabuli</h3></div><div class="path">/metabuli/</div><p>Upload contigs for plant virus metagenomic classification. 8-rank taxonomy, BLASTN/BLASTX/CDD validation, Krona/Sankey viz.</p><div class="go">&#8594;</div></a>
+    <a class="card" href="/pamirdb/"><div class="hd"><span class="ic">&#127919;</span><h3 data-i18n="PV-miRNA|PV-miRNA预测">PV-miRNA</h3></div><div class="path">/pamirdb/</div><p>Plant virus miRNA target prediction, 11,006 pre-computed predictions across 799 plant species and 40 virus families.</p><div class="go">&#8594;</div></a>
+    <a class="card" href="/phylo/"><div class="hd"><span class="ic">&#127794;</span><h3 data-i18n="Virus Phylogeny|病毒进化关系">Virus Phylogeny</h3></div><div class="path">/phylo/</div><p>Taxonomy tree + official molecular trees on one page (tab switcher), maximum-likelihood with real branch lengths and support values.</p><div class="go">&#8594;</div></a>
   </div>
 
   <div class="sec">&#128172; <span data-i18n="Knowledge &amp; Support|知识与支持">Knowledge &amp; Support</span></div>
   <div class="grid">
-    <a class="card" href="/literature/"><div class="hd"><span class="ic">&#128240;</span><h3 data-i18n="Literature Tracker|文献追踪">Literature Tracker</h3></div><div class="path">/literature/</div><p>PubMed plant virus literature auto-tracking with AI summaries. 33,325 papers indexed across 9 categories, weekly updates.</p></a>
-    <a class="card" href="/knowledge/"><div class="hd"><span class="ic">&#128172;</span><h3 data-i18n="Knowledge RAG|知识库问答">Knowledge RAG</h3></div><div class="path">/knowledge/</div><p>Qdrant + LLM-backed AI Q&amp;A assistant on plant virology. 193,277 vectors citing DPV, ICTV, and ViroidDB.</p></a>
-    <a class="card" href="/resources.html"><div class="hd"><span class="ic">&#128269;</span><h3 data-i18n="Supplementary Resources|补充资源">Supplementary Resources</h3></div><div class="path">/resources.html</div><p>100+ curated public databases &amp; tools: sequences, hosts, vectors, metagenomics, primers, transcriptomes.</p></a>
-    <a class="card" href="/help/"><div class="hd"><span class="ic">&#128214;</span><h3 data-i18n="Help &amp; Documentation|帮助与文档">Help &amp; Documentation</h3></div><div class="path">/help/</div><p>User guides for all modules. Quick start tutorials, reference manuals, and troubleshooting tips.</p></a>
+    <a class="card" href="/literature/"><div class="hd"><span class="ic">&#128240;</span><h3 data-i18n="Literature Tracker|文献追踪">Literature Tracker</h3></div><div class="path">/literature/</div><p>PubMed plant virus literature auto-tracking with AI summaries. 33,325 papers indexed across 9 categories, weekly updates.</p><div class="go">&#8594;</div></a>
+    <a class="card" href="/knowledge/"><div class="hd"><span class="ic">&#128172;</span><h3 data-i18n="Knowledge RAG|知识库问答">Knowledge RAG</h3></div><div class="path">/knowledge/</div><p>Qdrant + LLM-backed AI Q&amp;A assistant on plant virology. 193,277 vectors citing DPV, ICTV, and ViroidDB.</p><div class="go">&#8594;</div></a>
+    <a class="card" href="/resources.html"><div class="hd"><span class="ic">&#128269;</span><h3 data-i18n="Supplementary Resources|补充资源">Supplementary Resources</h3></div><div class="path">/resources.html</div><p>100+ curated public databases &amp; tools: sequences, hosts, vectors, metagenomics, primers, transcriptomes.</p><div class="go">&#8594;</div></a>
+    <a class="card" href="/help/"><div class="hd"><span class="ic">&#128214;</span><h3 data-i18n="Help &amp; Documentation|帮助与文档">Help &amp; Documentation</h3></div><div class="path">/help/</div><p>User guides for all modules. Quick start tutorials, reference manuals, and troubleshooting tips.</p><div class="go">&#8594;</div></a>
   </div>
 </main>
 
