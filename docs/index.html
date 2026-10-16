@@ -49,12 +49,42 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
 @media(max-width:700px){.vmap{height:260px}}
 .mapmeta{margin-top:10px;font-size:12px;color:#8a99a8}
 .mapmeta b{color:#1a5276;font-weight:700}
+/* ---- 门户全局检索框（数据源 /data/global_search_index.json，focus 时懒加载） ---- */
+.gswrap{max-width:680px;margin:26px auto 0;position:relative;text-align:left}
+.gsbox{display:flex;align-items:center;background:#fff;border-radius:12px;padding:4px 10px 4px 14px;box-shadow:0 6px 24px rgba(10,40,70,.28)}
+.gsbox .gic{color:#8a99a8;font-size:17px;flex:0 0 auto}
+.gsbox input{flex:1;border:0;outline:0;font-size:15px;padding:11px 12px;color:#2c3e50;background:transparent;font-family:inherit;min-width:0}
+.gsbox kbd{font-family:inherit;font-size:11px;color:#9aa7b4;border:1px solid #e3e9ee;border-radius:5px;padding:2px 7px;background:#f6f9fb;white-space:nowrap}
+@media(max-width:600px){.gsbox kbd{display:none}}
+.gsres{position:absolute;left:0;right:0;top:calc(100% + 8px);background:#fff;border-radius:12px;box-shadow:0 14px 40px rgba(10,40,70,.30);max-height:min(540px,72vh);overflow-y:auto;display:none;z-index:60}
+.gsres.on{display:block}
+.gsitem{padding:10px 14px;border-bottom:1px solid #f1f5f8}
+.gsitem:hover,.gsitem.hl{background:#f2f7fb}
+.gsitem:last-child{border-bottom:0}
+a.gmain{display:block;text-decoration:none;color:inherit}
+.gmain .gl{display:flex;align-items:center;gap:8px}
+.gmain .gl b{font-size:14px;color:#1a3c5e;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gmain .gl b em{font-style:normal;color:#2e86c1}
+.gt{font-size:10px;font-weight:700;padding:2px 7px;border-radius:9px;color:#fff;flex:0 0 auto;letter-spacing:.3px}
+.gmain .gs{font-size:11.5px;color:#7a8a99;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gx{margin:5px 0 0 0;padding-left:2px;display:flex;gap:6px;flex-wrap:wrap}
+.gx a{font-size:10.5px;color:#2e86c1;background:#f2f7fb;border:1px solid #dceaf3;border-radius:8px;padding:2px 8px;text-decoration:none}
+.gx a:hover{background:#e3f0f9;border-color:#bcd8e8}
+img.gimg{width:46px;height:34px;object-fit:cover;border-radius:6px;flex:0 0 auto}
+.gsinfo{padding:14px;font-size:12.5px;color:#8a99a8;text-align:center}
+.gsinfo a{color:#2e86c1;text-decoration:none;background:#f2f7fb;border:1px solid #dceaf3;border-radius:8px;padding:2px 10px;margin:0 3px;display:inline-block}
+.gsinfo a:hover{background:#e3f0f9}
+.gsfoot{padding:7px 14px;font-size:10.5px;color:#9aa7b4;display:flex;justify-content:space-between;border-top:1px solid #f1f5f8;position:sticky;bottom:0;background:#fff}
 </style></head><body>
 
 <div class="hero">
   <h1 data-i18n="Plant Virus Database Platform|植物病毒数据库平台">Plant Virus Database Platform</h1>
   <div class="en" data-i18n="A Comprehensive Resource for Plant Virology Research|植物病毒学综合研究资源">A Comprehensive Resource for Plant Virology Research</div>
   <p>Data, tools, and knowledge — in one place. Browse curated reference sequences, symptom photos, vector-host networks and endogenous viral elements. Analyze with interactive explorer, primer designer, metagenomic classifier and miRNA target prediction. Stay current with AI-powered literature tracking and knowledge retrieval.</p>
+  <div class="gswrap">
+    <div class="gsbox"><span class="gic">&#128269;</span><input id="gsq" type="search" autocomplete="off" spellcheck="false" placeholder="Search viruses, structures, genes, primers, papers&hellip;" data-i18n-ph="Search viruses, structures, genes, primers, papers&hellip;|检索病毒、结构、基因、引物、文献&hellip;"><kbd>Enter &#8629;</kbd></div>
+    <div id="gsres" class="gsres"></div>
+  </div>
   <div class="stats">
     <div class="s"><b data-stat="reference_records">9,022</b><span data-i18n="Reference Records|参考序列">Reference Records</span></div>
     <div class="s"><b data-stat="symptom_photos">2,975</b><span data-i18n="Symptom Photos|症状照片">Symptom Photos</span></div>
@@ -198,4 +228,170 @@ fetch('/reference/data/site_stats.json').then(function(r){return r.json()}).then
 }).catch(function(){});
 </script>
 <script src="/lib/ai-assistant.js?v=2" data-context="hub" defer></script>
+<script>
+/* ── 门户全局检索：/data/global_search_index.json（build_global_index.py 产出）
+   懒加载（首次聚焦才拉取），纯前端打分；病毒类结果附各模块计数芯片直达深链。 ── */
+(function () {
+  var input = document.getElementById('gsq'), box = document.getElementById('gsres');
+  if (!input || !box) return;
+  var IDX = null, LOADING = false, ITEMS = [], HL = -1, TIMER = null, META = null;
+  var T = {
+    virus:    ['Virus|病毒',        '#2e86c1'],
+    family:   ['Family|科',         '#8e44ad'],
+    structure:['3D Structure|结构',  '#16a085'],
+    gene:     ['Gene|基因',         '#e67e22'],
+    paper:    ['Paper|文献',        '#7f8c8d'],
+    compound: ['Compound|化合物',   '#c0392b'],
+    host:     ['EVE Host|EVE宿主',  '#27ae60'],
+    photo:    ['Photos|照片',       '#f39c12'],
+    primer:   ['Primers|引物',      '#2980b9'],
+    pamir:    ['PV-miRNA|PV-miRNA', '#d35400'],
+    module:   ['Module|模块',       '#34495e']
+  };
+  var BOOST = {virus:15, family:12, module:10, structure:8, host:6, compound:5, pamir:4, gene:3, photo:2, primer:2, paper:1};
+  function zh() { try { return window.PVDB_i18n && window.PVDB_i18n.lang() === 'zh'; } catch (e) { return false; } }
+  function bi(p) { var i = p.indexOf('|'); return zh() ? (i >= 0 ? p.slice(i + 1) : p) : (i >= 0 ? p.slice(0, i) : p); }
+  function tt(t) { return bi((T[t] || T.module)[0]); }
+  function tc(t) { return (T[t] || T.module)[1]; }
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function fmt(n) { return Number(n).toLocaleString(); }
+
+  function load() {
+    if (IDX || LOADING) return;
+    LOADING = true;
+    showInfo(zh() ? '检索索引加载中…' : 'Loading search index…');
+    fetch('/data/global_search_index.json').then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.json();
+    }).then(function (d) {
+      META = d.meta || {};
+      IDX = (d.records || []).map(function (r) {
+        var pop = 0, k;
+        for (k in (r.c || {})) if (typeof r.c[k] === 'number') pop += r.c[k];
+        return {
+          t: r.t, n: r.n, s: r.s || '', u: r.u, c: r.c || null, x: r.x || null, img: r.img || '',
+          nl: r.n.toLowerCase(),
+          A: (r.a || []).map(function (s) { return String(s).toLowerCase(); }),
+          h: (r.n + ' ' + (r.a || []).join(' ')).toLowerCase(),
+          pop: Math.min(50, pop * 0.3)
+        };
+      });
+      LOADING = false;
+      hint();
+      if (input.value.trim()) run(input.value.trim());
+    }).catch(function () {
+      LOADING = false;
+      showInfo(zh() ? '索引加载失败，请稍后重试' : 'Failed to load search index');
+    });
+  }
+  function showInfo(html) { box.classList.add('on'); box.innerHTML = '<div class="gsinfo">' + html + '</div>'; }
+  function hint() {
+    var ex = ['TuMV', 'TSWV', 'AGO2', 'Solanaceae', 'Potyviridae'], h = '';
+    for (var i = 0; i < ex.length; i++) h += '<a href="#" data-q="' + ex[i] + '">' + ex[i] + '</a>';
+    showInfo((zh() ? '试试：' : 'Try: ') + h + '<div style="margin-top:6px;font-size:11px">' +
+      fmt(META.total || 0) + (zh() ? ' 条可检索条目' : ' searchable entries') + '</div>');
+  }
+
+  function score(r, q) {
+    var v = 0;
+    if (r.nl === q) v = 1000;
+    else if (r.nl.lastIndexOf(q, 0) === 0) v = 800;
+    else if (r.A.indexOf(q) >= 0) v = 760;
+    else if (r.A.some(function (a) { return a.lastIndexOf(q, 0) === 0; })) v = 700;
+    else if (r.nl.indexOf(q) >= 0) v = 500;
+    else if (r.h.indexOf(q) >= 0) v = 300;
+    if (!v) return 0;
+    return v + (BOOST[r.t] || 0) + r.pop;
+  }
+  function hl(n, q) {
+    var i = n.toLowerCase().indexOf(q);
+    if (i < 0) return esc(n);
+    return esc(n.slice(0, i)) + '<em>' + esc(n.slice(i, i + q.length)) + '</em>' + esc(n.slice(i + q.length));
+  }
+  function chip(txt, href) {
+    return '<a href="' + esc(href) + '" target="_blank" rel="noopener" onmousedown="event.stopPropagation()">' + txt + '</a>';
+  }
+  function row(r, q) {
+    var h = '<div class="gsitem" data-u="' + esc(r.u) + '"><a class="gmain" href="' + esc(r.u) + '">';
+    h += '<div class="gl">';
+    if (r.img) h += '<img class="gimg" src="' + esc(r.img) + '" loading="lazy" alt="">';
+    h += '<span class="gt" style="background:' + tc(r.t) + '">' + esc(tt(r.t)) + '</span>';
+    h += '<b>' + hl(r.n, q) + '</b></div>';
+    if (r.s) h += '<div class="gs">' + esc(r.s.length > 110 ? r.s.slice(0, 110) + '…' : r.s) + '</div>';
+    h += '</a>';
+    if (r.t === 'virus' && r.c) {
+      var x = '';
+      if (r.c.full) x += chip(fmt(r.c.full) + ' seqs', r.u);
+      if (r.c.primers) x += chip(fmt(r.c.primers) + ' primers', (r.x && r.x.primers) || '/primers/');
+      if (r.c.structures) x += chip(fmt(r.c.structures) + ' structures', '/structures3d/atlas/');
+      if (r.c.papers) x += chip(fmt(r.c.papers) + ' papers', '/literature/?search=' + encodeURIComponent(r.n));
+      if (r.c.photos) x += chip(fmt(r.c.photos) + ' photos', '/photos/?q=' + encodeURIComponent(r.n));
+      if (r.x && r.x.phylo) x += chip('phylo', r.x.phylo);
+      if (x) h += '<div class="gx">' + x + '</div>';
+    }
+    return h + '</div>';
+  }
+
+  function run(raw) {
+    if (!IDX) return;
+    var q = raw.trim().toLowerCase();
+    if (!q) { hint(); return; }
+    var scored = [], i, r, v;
+    for (i = 0; i < IDX.length; i++) {
+      v = score(IDX[i], q);
+      if (v) scored.push([v, IDX[i]]);
+    }
+    scored.sort(function (a, b) { return b[0] - a[0] || a[1].n.localeCompare(b[1].n); });
+    var total = scored.length;
+    ITEMS = scored.slice(0, 14).map(function (p) { return p[1]; });
+    HL = ITEMS.length ? 0 : -1;
+    if (!ITEMS.length) {
+      showInfo(zh() ? '没有匹配「' + esc(raw) + '」的结果' : 'No results for "' + esc(raw) + '"');
+      return;
+    }
+    var h = '';
+    for (i = 0; i < ITEMS.length; i++) h += row(ITEMS[i], q, i);
+    h += '<div class="gsfoot"><span>' + fmt(Math.min(14, total)) + ' / ' + fmt(total) + (zh() ? ' 条匹配' : ' matches') +
+      '</span><span>' + (zh() ? '↑↓ 选择 · Enter 打开 · Esc 关闭' : '\u2191\u2193 select \u00b7 Enter open \u00b7 Esc close') + '</span></div>';
+    box.classList.add('on');
+    box.innerHTML = h;
+    paint();
+  }
+  function paint() {
+    var els = box.querySelectorAll('.gsitem');
+    for (var i = 0; i < els.length; i++) els[i].classList.toggle('hl', i === HL);
+  }
+  function open(i) {
+    if (ITEMS[i]) window.location.href = ITEMS[i].u;
+  }
+
+  input.addEventListener('focus', load);
+  input.addEventListener('input', function () {
+    clearTimeout(TIMER);
+    TIMER = setTimeout(function () {
+      if (!IDX) { load(); return; }
+      run(input.value);
+    }, 120);
+  });
+  input.addEventListener('keydown', function (e) {
+    if (!box.classList.contains('on')) return;
+    if (e.key === 'ArrowDown') { e.preventDefault(); if (ITEMS.length) { HL = (HL + 1) % ITEMS.length; paint(); } }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); if (ITEMS.length) { HL = (HL - 1 + ITEMS.length) % ITEMS.length; paint(); } }
+    else if (e.key === 'Enter') { if (HL >= 0 && ITEMS[HL]) { e.preventDefault(); open(HL); } }
+    else if (e.key === 'Escape') { box.classList.remove('on'); input.blur(); }
+  });
+  box.addEventListener('mousedown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.button === 1) return; // 新标签打开走浏览器默认行为
+    var it = e.target.closest ? e.target.closest('.gsitem') : null;
+    if (it && !e.target.closest('.gx')) { e.preventDefault(); window.location.href = it.getAttribute('data-u'); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!box.contains(e.target) && e.target !== input) box.classList.remove('on');
+  });
+  box.addEventListener('click', function (e) {
+    var ex = e.target.closest ? e.target.closest('[data-q]') : null;
+    if (ex) { e.preventDefault(); input.value = ex.getAttribute('data-q'); run(input.value); input.focus(); }
+  });
+})();
+</script>
 </body></html>
