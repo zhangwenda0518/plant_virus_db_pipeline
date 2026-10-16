@@ -32,7 +32,7 @@ Asia/Shanghai (服务器北京时间)
 | `/vector/` | Flask :5005 (vector-host.service) | 8.plant-insect/api_server.py + vector_page.html (启动时读入, 改完需重启) |
 | `/knowledge/` | uvicorn pv_rag :5002 (nohup, 非 systemd) | **/opt/src/plant_virus_rag/** (editable install), UI 在 api/routes/ui.py |
 | `/explorer/` | Dash :8050 (virus-explorer.service) | (无导航条, 暂未加 i18n) |
-| `/uniprot3d/` | nginx 静态 (conf.d/plant-virus.conf 2026-10-07 新增) | 15.uniprot_plant_virus_structures/（轻量上线：webapp+索引 TSV；554MB PDB/182MB cif 结构文件未上传，3D 查看器点开结构会 404，补传后即恢复；运行期产物 colabfold_input/ 与 *.db 已屏蔽 404） |
+| `/structures3d/` | nginx 静态（2026-10-08 三页整合：原 `/structures3d/` + `/uniprot3d/*` + `/help/fold.html` 合一） | 统一入口外壳在 `14.rvpsd_structures/webapp/`（**两标签**：结构总览/3D 浏览；2026-10-08 单页化后「统计面板」并入结构总览一页）；`/structures3d/atlas/` 直挂 `15.uniprot_plant_virus_structures/webapp/`，其旧 `stats.html` 301 回 `atlas/`。旧 `/uniprot3d/` 301 至此（`/help/fold.html` 不并，独立保留）。结构文件**已补传**（PDB 78 + AFDB 435 个 cif，398 MB），Atlas 3D 查看器可正常打开；运行期产物 colabfold_input/ 与 *.db 屏蔽 404 |
 | fold_web (16) | 2026-10-07 有限上线：`/foldweb/`（nginx Basic Auth，凭据在本地密码管理器，严禁入库）+ GPU 服务器本地 8800（SSH 隧道） | 服务器为**无 GPU 模式**：自动预测禁用（no_gpu_predict.sh 提示改走上传通道），上传结果入库/Foldify 导出/统计可用；systemd 服务 `foldweb.service`；入库后需在服务器重跑 `webapp/build_data.py` 刷新线上页面 |
 
 ### 常用操作

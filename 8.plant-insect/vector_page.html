@@ -58,16 +58,6 @@ table th{background:#f5f5f5;padding:8px 12px;border:none}table td{padding:8px 12
 .chart-full{grid-column:1/-1}
 
 
-nav{background:#1a5276;padding:0}
-nav .top-row{display:flex;align-items:center;padding:0 16px;height:40px}
-nav .top-row a{color:rgba(255,255,255,0.78);font-size:13px;text-decoration:none;padding:0 8px;white-space:nowrap}
-nav .top-row a:hover{color:#fff}
-nav .top-row a.active{color:#fff;font-weight:600}
-nav .top-row .brand{color:#fff;font-weight:700;font-size:15px;padding-right:10px}
-nav .top-row .sep{color:rgba(255,255,255,0.18);padding:0 2px;user-select:none}
-nav .sub-row{display:flex;align-items:center;padding:0 16px;height:32px;background:rgba(0,0,0,0.15)}
-nav .sub-row a{color:rgba(255,255,255,0.7);font-size:12px;text-decoration:none;padding:0 14px;white-space:nowrap}
-nav .sub-row a:hover,nav .sub-row a.active{color:#fff;font-weight:600}
 /* ── 横向滚动关进各自的容器里 ───────────────────────────
  * 顶栏那一排 16 个 nowrap 链接的自然宽度是 1132px，而 overflow 原来是
  * visible：视口窄于它时，整份文档被撑到 1132px 宽，整页（hero、统计卡、
@@ -81,9 +71,6 @@ nav .top-row,nav .sub-row{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scr
 /* ≤720px：触屏上滚动条是噪声，手势才是正道，藏掉；同时收紧留白、
    表格保持 7 列可读宽度（680px），放不下的列在裹层里横滚 */
 @media (max-width:720px){
-  nav .top-row,nav .sub-row,.table-wrap{scrollbar-width:none}
-  nav .top-row::-webkit-scrollbar,nav .sub-row::-webkit-scrollbar,
-  .table-wrap::-webkit-scrollbar{display:none}
   .table-wrap table{min-width:680px;width:max-content}
   /* 滚动条藏了, 就得有别的线索告诉用户"右边还有": 裹层右缘压一条渐隐。
      mask 挂在 overflow 容器自身上, 坐标跟着容器边框走而不跟着内容滚动,
@@ -95,29 +82,8 @@ nav .top-row,nav .sub-row{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scr
   .main{padding:10px}
 }
 </style></head><body>
-<nav>
-  <div class="top-row">
-    <a class="brand" href="/">Plant Virus DB</a>
-    <span class="sep">|</span>
-    <a href="/reference/">Reference</a>
-  <a href="/virus/">Virus Profile</a>
-    <a href="/photos/">Photos</a>
-    <a href="/vector/" class="active">Vector</a>
-    <a href="/te/">TE &amp; EVE</a>
-    <a href="/genes/">Genes</a>
-    <a href="/primers/">Primers</a>
-    <a href="/onekp/">OneKP</a>
-    <span class="sep">|</span>
-    <a href="/explorer/">Explorer</a>
-    <a href="/metabuli/">Metabuli</a>
-    <a href="/pamirdb/">PV-miRNA</a>
-    <span class="sep">|</span>
-    <a href="/literature/">Literature</a>
-    <a href="/knowledge/">Knowledge</a>
-    <a href="/resources.html">Resources</a>
-    <a href="/help/">Help</a>
-  </div>
-</nav>
+<script src="/lib/site-nav.js?v=2"></script>
+
 <div class="hero"><h1>Virus-Vector-Host Database</h1><p>{{total}} records: {{families}} virus families, {{viruses}} viruses, {{vectors}} vectors, {{hosts}} host plants | WUR: {{wur_count}} references</p></div>
 <div class="main">
 {% if data_missing %}
@@ -514,6 +480,12 @@ function populateFacets(){
  [...vfs].sort().forEach(function(v){var o=document.createElement('option');o.value=v;o.textContent=v;vf.appendChild(o)});
  [...vos].sort().forEach(function(v){var o=document.createElement('option');o.value=v;o.textContent=v;vo.appendChild(o)});
  populateFacets();
+ // ── 深链 ?q=&virus=&host=：预填 VH 检索框（/relations/#vector 外壳经 iframe 透传）──
+ try{
+  var _qs=new URLSearchParams(location.search);
+  var _pre=[_qs.get('q'),_qs.get('virus'),_qs.get('host')].filter(Boolean).map(function(s){return s.trim();}).filter(Boolean);
+  if(_pre.length)document.getElementById('q').value=_pre.join(' ');
+ }catch(e){}
  renderVH();renderWUR();
  renderVHCharts();chartsDrawn.vh=true;   // VH 为默认可见 tab, 立即绘制
  var _rz=null;
@@ -522,4 +494,10 @@ function populateFacets(){
   resizeTabCharts(t);
  },200)});
  })();
- </script><script src="/reference/i18n.js"></script><script>PVDB_i18n.init({navSelector:'nav'});</script></body></html>
+ </script><script src="/reference/i18n.js"></script><script>PVDB_i18n.init({navSelector:'nav'});</script><script src="/lib/ai-assistant.js?v=2" data-context="vector" defer></script>
+<script>
+/* 2026-10-13: 本页已并入 /relations/#vector（外壳内嵌时不受影响）。
+   直接在顶层窗口打开时自动并入；?full=1 保留本页独立全屏视图。 */
+(function(){try{if(window.top===window.self&&!/[?&]full=1/.test(location.search))location.replace('/relations/#vector');}catch(e){}})();
+</script>
+</body></html>
