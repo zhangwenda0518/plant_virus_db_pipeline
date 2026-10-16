@@ -140,11 +140,9 @@ input[type=range]{width:100%;accent-color:#2e86c1}
 </style>
 </head>
 <body>
+<script src="/lib/site-nav.js?v=2"></script>
 
-<nav class="topbar">
-  <div class="brand"><a href="/" data-i18n="Plant Virus DB|植物病毒数据库">Plant Virus DB</a></div>
-  <span class="sep">|</span>
-  <div class="subtitle" data-i18n="Virus Phylogeny|病毒进化关系">Virus Phylogeny</div>
+<nav class="topbar">  <div class="subtitle" data-i18n="Virus Phylogeny|病毒进化关系">Virus Phylogeny</div>
   <div class="viewtabs">
     <button id="tabTax" class="on" data-i18n="Taxonomy tree|分类树">Taxonomy tree</button>
     <button id="tabMol" data-i18n="Molecular trees|分子树">Molecular trees</button>
@@ -1117,5 +1115,6 @@ var v = new URLSearchParams(location.search).get('view');
 if (v === 'molecular' || location.hash === '#molecular') show('mol');
 })();
 </script>
+<script src="/lib/ai-assistant.js?v=2" data-context="hub" defer></script>
 </body>
 </html>

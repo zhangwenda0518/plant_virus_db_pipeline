@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title data-i18n="Submit Virus — Plant Virus DB|提交病毒 — 植物病毒库">Submit Virus — Plant Virus DB</title>
+<title data-i18n="Submit Virus — Plant Virus DB|提交病毒 — 植物病毒数据库">Submit Virus — Plant Virus DB</title>
 <style>
+/* module subnav (2026-10 统一: 全站导航由共享脚本注入) */
+nav.pvdb-subnav{background:#fff;color:#2c3e50;display:flex;align-items:center;padding:0 24px;gap:2px;height:42px;border-bottom:1px solid #e3e8ee;position:sticky;top:46px;z-index:90;white-space:nowrap;overflow-x:auto;scrollbar-width:none}
+nav.pvdb-subnav::-webkit-scrollbar{display:none}
+nav.pvdb-subnav a{color:#4a5b6c;text-decoration:none;padding:4px 12px;font-size:12.5px;border-radius:4px;font-weight:600;flex-shrink:0}
+nav.pvdb-subnav a:hover{background:#eef4f0;color:#2c6e49}
+nav.pvdb-subnav a.on,nav.pvdb-subnav a.active{background:#2c6e49;color:#fff}
+
 *{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;padding:0;background:#f5f5f5;color:#333}
-nav{background:#1a5276;color:#fff;padding:0 24px;display:flex;align-items:center;gap:4px;height:52px;position:sticky;top:0;z-index:10}
-nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 18px;font-size:14px;border-radius:6px 6px 0 0}
-nav a:hover,nav a.active{background:rgba(255,255,255,.15);color:#fff}
-nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0}
 .main{max-width:900px;margin:30px auto;padding:0 20px}
 .card{background:#fff;padding:24px 28px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-bottom:20px}
 .card h2{margin:0 0 8px;font-size:20px;color:#1a5276}
@@ -34,78 +38,74 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px;padding:0
 .footer{text-align:center;padding:20px;color:#999;font-size:12px}
 .footer a{color:#2e86c1;text-decoration:none}
 .success{background:#d4edda;border:1px solid #c3e6cb;color:#155724;padding:12px 16px;border-radius:6px;margin-bottom:16px;display:none}
-#ai-chat-btn{position:fixed;bottom:24px;right:24px;width:48px;height:48px;background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;z-index:9999;box-shadow:0 4px 12px rgba(26,82,118,.4);transition:transform .2s}#ai-chat-btn:hover{transform:scale(1.1)}#ai-chat-panel{position:fixed;bottom:84px;right:24px;width:400px;max-height:520px;background:#fff;border:1px solid #dee2e6;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:9998;display:none;flex-direction:column;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif}.chat-header{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-bottom:1px solid #eee;border-radius:12px 12px 0 0;background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;font-weight:600;font-size:14px}.chat-header button{background:none;border:none;color:#fff;font-size:18px;cursor:pointer}.chat-msgs{flex:1;overflow-y:auto;padding:10px;max-height:360px}.chat-msg{margin:4px 0;padding:8px 12px;border-radius:10px;font-size:13px;line-height:1.5;max-width:85%;word-break:break-word}.chat-msg.user{background:#1a5276;color:#fff;margin-left:auto}.chat-msg.ai{background:#eaf2f8;color:#333}.chat-msg.system{background:#fff3cd;color:#856404;text-align:center;max-width:100%;font-size:11px}.chat-input-row{display:flex;gap:8px;padding:10px 12px;border-top:1px solid #eee}.chat-input-row input{flex:1;padding:8px 12px;border:1px solid #dee2e6;border-radius:20px;font-size:13px;outline:none}.chat-input-row button{padding:6px 16px;background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;border:none;border-radius:20px;font-size:13px;cursor:pointer}.ai-typing{display:flex;gap:4px;padding:8px 12px}.ai-typing span{width:6px;height:6px;background:#999;border-radius:50%;animation:aiBounce 1.4s infinite ease-in-out}.ai-typing span:nth-child(2){animation-delay:.2s}.ai-typing span:nth-child(3){animation-delay:.4s}.preset-qs{display:flex;flex-wrap:wrap;gap:4px;padding:6px 10px;border-bottom:1px solid #eee;background:#fafafa}.preset-q{background:#fff;border:1px solid #dee2e6;border-radius:14px;padding:3px 10px;font-size:11px;cursor:pointer;color:#555;white-space:nowrap;max-width:180px;overflow:hidden;text-overflow:ellipsis;transition:all .2s}.preset-q:hover{background:#1a5276;color:#fff;border-color:#1a5276}@keyframes aiBounce{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
 </style>
 </head>
 <body>
-<nav>
-  <a class="brand" href="index.html">Plant Virus DB</a>
-  <a href="index.html">Dashboard</a>
-  <a href="segmented.html">Segmented</a>
-  <a href="nonsegmented.html">Non‑Segmented</a>
-  <a href="submit.html" class="active">Submit</a>
-  <a href="photos.html">Photos</a>
-  <a href="download.html">Download</a>
-  <a href="/primers/">Primers</a>
-  <a href="/explorer/">Explorer</a>
+<script src="/lib/site-nav.js?v=2"></script>
+<nav class="pvdb-subnav">
+  <a href="/reference/" data-i18n="Dashboard|仪表盘">Dashboard</a>
+  <a href="/reference/segmented.html" data-i18n="Segmented|分节段">Segmented</a>
+  <a href="/reference/nonsegmented.html" data-i18n="Non-Segmented|非分节段">Non-Segmented</a>
+  <a href="/reference/submit.html" class="active" data-i18n="Submit|提交">Submit</a>
+  <a href="/reference/download.html" data-i18n="Download|下载">Download</a>
 </nav>
 <div class="main">
   <div class="success" id="success">Submitted! Redirecting to GitHub...</div>
   <div class="card">
     <h2 data-i18n="Submit Plant Virus Data|提交植物病毒数据">Submit Plant Virus Data</h2>
-    <p class="subtitle">New viruses → both <code>Plant_Virus_Full.Info.tsv</code> &amp; <code>Plant_Virus_Ref.Info.tsv</code>. Known viruses → only <code>Plant_Virus_Full.Info.tsv</code>. Submission creates a GitHub Issue for review.</p>
+    <p class="subtitle"><span data-i18n="New viruses → both|新病毒 → 同时写入">New viruses → both</span> <code>Plant_Virus_Full.Info.tsv</code><span data-i18n=" &amp; | 与 "> &amp; </span><code>Plant_Virus_Ref.Info.tsv</code><span data-i18n=". Known viruses → only|。已知病毒 → 仅写入">. Known viruses → only</span> <code>Plant_Virus_Full.Info.tsv</code><span data-i18n=". Submission creates a GitHub Issue for review.|。提交后会创建 GitHub Issue 供审核。">. Submission creates a GitHub Issue for review.</span></p>
     <form id="submitForm" onsubmit="return doSubmit()">
       <div class="row">
         <div class="field">
-          <label>Submission Type <span class="req">*</span></label>
+          <label><span data-i18n="Submission Type|提交类型">Submission Type</span> <span class="req">*</span></label>
           <div class="radio-group">
-            <label><input type="radio" name="submitType" value="new" checked> New Virus (→ both files)</label>
-            <label><input type="radio" name="submitType" value="known"> Known Virus (→ full only)</label>
+            <label><input type="radio" name="submitType" value="new" checked> <span data-i18n="New Virus (→ both files)|新病毒（→ 两个文件）">New Virus (→ both files)</span></label>
+            <label><input type="radio" name="submitType" value="known"> <span data-i18n="Known Virus (→ full only)|已知病毒（→ 仅完整库）">Known Virus (→ full only)</span></label>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="field"><label>Accession <span class="req">*</span></label><input type="text" id="acc" placeholder="NC_123456" required></div>
-        <div class="field"><label>TaxID</label><input type="text" id="taxid" placeholder="123456"></div>
+        <div class="field"><label><span data-i18n="Accession|登录号">Accession</span> <span class="req">*</span></label><input type="text" id="acc" placeholder="NC_123456" required></div>
+        <div class="field"><label data-i18n="TaxID|分类号 TaxID">TaxID</label><input type="text" id="taxid" placeholder="123456"></div>
       </div>
       <div class="row">
-        <div class="field"><label>Species NCBI</label><input type="text" id="spNCBI" placeholder="Tomato spotted wilt virus"></div>
-        <div class="field"><label>Species ICTV</label><input type="text" id="spICTV" placeholder="Orthotospovirus tomatomaculae"></div>
+        <div class="field"><label data-i18n="Species NCBI|NCBI 物种名">Species NCBI</label><input type="text" id="spNCBI" placeholder="Tomato spotted wilt virus"></div>
+        <div class="field"><label data-i18n="Species ICTV|ICTV 物种名">Species ICTV</label><input type="text" id="spICTV" placeholder="Orthotospovirus tomatomaculae"></div>
       </div>
       <div class="row">
-        <div class="field"><label>Family</label><input type="text" id="family" placeholder="Tospoviridae"></div>
-        <div class="field"><label>Genus</label><input type="text" id="genus" placeholder="Orthotospovirus"></div>
+        <div class="field"><label data-i18n="Family|科">Family</label><input type="text" id="family" placeholder="Tospoviridae"></div>
+        <div class="field"><label data-i18n="Genus|属">Genus</label><input type="text" id="genus" placeholder="Orthotospovirus"></div>
       </div>
       <div class="row">
-        <div class="field"><label>Segment</label><input type="text" id="segment" placeholder="RNA L / DNA-A / leave empty"></div>
-        <div class="field"><label>Sequence Type <span class="req">*</span></label>
+        <div class="field"><label data-i18n="Segment|片段">Segment</label><input type="text" id="segment" placeholder="RNA L / DNA-A / leave empty"></div>
+        <div class="field"><label><span data-i18n="Sequence Type|序列类型">Sequence Type</span> <span class="req">*</span></label>
           <select id="seqType"><option>RefSeq</option><option>GenBank</option><option>GenBank/ICTV</option></select></div>
       </div>
       <div class="row">
-        <div class="field"><label>Topology</label><select id="topology"><option>linear</option><option>circular</option></select></div>
-        <div class="field"><label>Molecule Type</label><input type="text" id="molType" placeholder="ssRNA(+) / dsDNA / ssDNA"></div>
+        <div class="field"><label data-i18n="Topology|拓扑结构">Topology</label><select id="topology"><option value="linear" data-i18n="linear|线性">linear</option><option value="circular" data-i18n="circular|环状">circular</option></select></div>
+        <div class="field"><label data-i18n="Molecule Type|分子类型">Molecule Type</label><input type="text" id="molType" placeholder="ssRNA(+) / dsDNA / ssDNA"></div>
       </div>
       <div class="row">
-        <div class="field"><label>Length (bp) <span class="req">*</span></label><input type="number" id="length" placeholder="8000" required></div>
-        <div class="field"><label>Nuc Completeness</label><select id="completeness"><option>complete</option><option>partial</option></select></div>
+        <div class="field"><label><span data-i18n="Length (bp)|长度（bp）">Length (bp)</span> <span class="req">*</span></label><input type="number" id="length" placeholder="8000" required></div>
+        <div class="field"><label data-i18n="Nuc Completeness|核酸完整度">Nuc Completeness</label><select id="completeness"><option value="complete" data-i18n="complete|完整">complete</option><option value="partial" data-i18n="partial|部分">partial</option></select></div>
       </div>
       <div class="row">
-        <div class="field"><label>Host</label><input type="text" id="host" placeholder="Solanum lycopersicum"></div>
-        <div class="field"><label>Geo Location</label><input type="text" id="geo" placeholder="China: Yunnan"></div>
+        <div class="field"><label data-i18n="Host|宿主">Host</label><input type="text" id="host" placeholder="Solanum lycopersicum"></div>
+        <div class="field"><label data-i18n="Geo Location|地理来源">Geo Location</label><input type="text" id="geo" placeholder="China: Yunnan"></div>
       </div>
       <div class="row">
-        <div class="field"><label>Collection Date</label><input type="text" id="collDate" placeholder="2023-05"></div>
-        <div class="field"><label>Release Date</label><input type="text" id="relDate" placeholder="2024-01-15"></div>
+        <div class="field"><label data-i18n="Collection Date|采集日期">Collection Date</label><input type="text" id="collDate" placeholder="2023-05"></div>
+        <div class="field"><label data-i18n="Release Date|发布日期">Release Date</label><input type="text" id="relDate" placeholder="2024-01-15"></div>
       </div>
       <div class="row">
-        <div class="field" style="flex:2"><label>GenBank Title</label><textarea id="title" rows="2" placeholder="Virus name isolate X, complete genome"></textarea></div>
+        <div class="field" style="flex:2"><label data-i18n="GenBank Title|GenBank 标题">GenBank Title</label><textarea id="title" rows="2" placeholder="Virus name isolate X, complete genome"></textarea></div>
       </div>
       <div class="row">
-        <div class="field" style="flex:2"><label>Additional Notes</label><textarea id="notes" rows="2" placeholder="Any additional information..."></textarea></div>
+        <div class="field" style="flex:2"><label data-i18n="Additional Notes|附加说明">Additional Notes</label><textarea id="notes" rows="2" placeholder="Any additional information..."></textarea></div>
       </div>
       <div class="btn-row">
-        <button type="button" class="btn btn-secondary" onclick="previewIssue()">Preview</button>
-        <button type="submit" class="btn btn-primary">Submit to GitHub</button>
+        <button type="button" class="btn btn-secondary" onclick="previewIssue()" data-i18n="Preview|预览">Preview</button>
+        <button type="submit" class="btn btn-primary" data-i18n="Submit to GitHub|提交到 GitHub">Submit to GitHub</button>
       </div>
       <div class="preview" id="preview"></div>
     </form>
@@ -171,38 +171,7 @@ function doSubmit() {
 }
 </script>
 
-<button id="ai-chat-btn" onclick="toggleChat()" title="AI Assistant">?</button>
-<div id="ai-chat-panel">
-<div class="chat-header"><span>RefDB AI Assistant</span><div><button onclick="toggleSettings()" style="background:none;border:none;color:#fff;font-size:14px;cursor:pointer;margin-right:8px" title="Settings">⚙</button><button onclick="toggleChat()">×</button></div></div>
-<div id="ai-settings-inline" style="display:none;padding:10px 12px;border-bottom:1px solid #eee;background:#f8f9fa">
-<div style="display:flex;gap:6px;flex-wrap:wrap">
-<input id="ai-api-key" type="password" placeholder="API Key (sk-...)" style="flex:1;min-width:120px;padding:5px 8px;border:1px solid #dee2e6;border-radius:4px;font-size:11px">
-<input id="ai-model" value="deepseek-chat" style="width:120px;padding:5px 8px;border:1px solid #dee2e6;border-radius:4px;font-size:11px">
-<button onclick="saveAISettings()" style="padding:5px 10px;background:#1a5276;color:#fff;border:none;border-radius:4px;font-size:11px;cursor:pointer">Save</button>
-</div></div>
-<div class="preset-qs" id="preset-qs">
-<button class="preset-q" onclick="askPreset('How many plant virus families? Largest ones?')">Plant Virus Family Classification</button>
-<button class="preset-q" onclick="askPreset('Segmented vs non-segmented viruses: differences?')">Segmented vs Non-segmented</button>
-<button class="preset-q" onclick="askPreset('Main host types of plant viruses?')">Virus Host Type</button>
-<button class="preset-q" onclick="askPreset('dsDNA vs ssRNA proportions in plants?')">Genome Type Distribution</button>
-</div>
-
-<div class="chat-msgs" id="chat-msgs"><div class="chat-msg system">Hello! I am the RefDB AI Assistant. Click a preset question below or type your own.</div></div>
-<div class="chat-input-row">
-<input id="chat-input" placeholder="Type a question..." onkeydown="if(event.key==='Enter')sendMsg()">
-<button onclick="sendMsg()">Send</button>
-</div></div>
-<script>
-var chatConv=[],chatOpen=false;function askPreset(q){document.getElementById("chat-input").value=q;sendMsg()}
-function toggleChat(){chatOpen=!chatOpen;document.getElementById("ai-chat-panel").style.display=chatOpen?"flex":"none"}
-function toggleSettings(){var p=document.getElementById("ai-settings-inline");p.style.display=p.style.display==="none"?"block":"none"}
-function saveAISettings(){localStorage.setItem("ai_api_key",document.getElementById("ai-api-key").value);localStorage.setItem("ai_model",document.getElementById("ai-model").value);document.getElementById("ai-settings-inline").style.display="none";addChatMsg("system","Settings saved")}
-(function(){var k=localStorage.getItem("ai_api_key");if(k)document.getElementById("ai-api-key").value=k;var m=localStorage.getItem("ai_model");if(m)document.getElementById("ai-model").value=m})();
-function addChatMsg(role,text){var d=document.createElement("div");d.className="chat-msg "+role;d.textContent=text;document.getElementById("chat-msgs").appendChild(d);document.getElementById("chat-msgs").scrollTop=document.getElementById("chat-msgs").scrollHeight}
-function showTyping(){var d=document.createElement("div");d.className="ai-typing";d.id="typing-indicator";d.innerHTML="<span></span><span></span><span></span>";document.getElementById("chat-msgs").appendChild(d)}
-function hideTyping(){var t=document.getElementById("typing-indicator");if(t)t.remove()}
-async function sendMsg(){var inp=document.getElementById("chat-input");var msg=inp.value.trim();if(!msg)return;addChatMsg("user",msg);inp.value="";chatConv.push({role:"user",content:msg});var key=localStorage.getItem("ai_api_key")||"";// Server keyshowTyping();try{var resp=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:msg,api_key:key,api_url:"https://api.deepseek.com/v1/chat/completions",model:localStorage.getItem("ai_model")||"deepseek-chat",conversation:chatConv.slice(-8),context:"reference_db"})});var data=await resp.json();hideTyping();addChatMsg("ai",data.reply);chatConv.push({role:"assistant",content:data.reply})}catch(e){hideTyping();addChatMsg("system","Request failed: "+e.message)}}
-</script>
+<script src="/lib/ai-assistant.js?v=2" data-context="reference_db" defer></script>
 
 <script src="/i18n.js"></script>
 

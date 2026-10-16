@@ -3,14 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title data-i18n="Symptom Gallery — Plant Virus DB|症状图库 — 植物病毒库">Symptom Gallery — Plant Virus DB</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<title data-i18n="Symptom Gallery — Plant Virus DB|症状图库 — 植物病毒数据库">Symptom Gallery — Plant Virus DB</title>
+<script src="/lib/chart.umd.min.js"></script>
 <style>
 *{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;padding:0;background:#f5f5f5;color:#333}
-nav{background:#1a5276;color:#fff;padding:0 24px;display:flex;align-items:center;gap:4px;height:52px;position:sticky;top:0;z-index:100}
-nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 18px;font-size:14px}
-nav a:hover,nav a.active{background:rgba(255,255,255,.15);color:#fff}
-nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px}
 .layout{display:flex;max-width:1600px;margin:0 auto}
 .sidebar{width:280px;background:#fff;padding:16px;border-right:1px solid #e0e0e0;position:sticky;top:52px;height:calc(100vh - 52px);overflow-y:auto}
 .sidebar h3{font-size:12px;color:#1a5276;margin:16px 0 6px;border-bottom:1px solid #eee;padding-bottom:4px}
@@ -48,7 +44,7 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px}
 .tag.host{background:#e8f5e9;color:#2e7d32}
 .tag.symp{background:#fce4ec;color:#c62828}
 .tag.part{background:#e3f2fd;color:#1565c0}
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:200;justify-content:center;align-items:center}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:10010;justify-content:center;align-items:center}
 .modal.on{display:flex}
 .modal img{max-width:90%;max-height:85vh;object-fit:contain}
 .modal .cls{position:absolute;top:20px;right:24px;color:#fff;font-size:32px;cursor:pointer}
@@ -59,37 +55,22 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:16px}
 .loading{text-align:center;padding:60px;color:#888}
 .footer{text-align:center;padding:16px;color:#999;font-size:12px}
 
-nav .sep{color:rgba(255,255,255,0.18);padding:0 2px;user-select:none}
 </style>
 </head>
 <body>
-<nav>
-  <a class="brand" href="/">Plant Virus DB</a>
-  <span class="sep">|</span>
-  <a href="/reference/" >Reference</a>
-  <a href="/photos/" class="active">Photos</a>
-  <a href="/te/" >TE·EVE</a>
-  <a href="/vector/" >Vector</a>
-  <span class="sep">|</span>
-  <a href="/explorer/" >Explorer</a>
-  <a href="/primers/" >Primers</a>
-  <a href="/metabuli/" >Metabuli</a>
-  <a href="/pamirdb/" >PAmiRDB</a>
-  <span class="sep">|</span>
-  <a href="/literature/" >Literature</a>
-  <a href="/knowledge/" >Knowledge</a>
-</nav>
+<script src="/lib/site-nav.js?v=2"></script>
+
 <div class="layout">
 <div class="sidebar">
-  <h3>SOURCE</h3>
+  <h3 data-i18n="SOURCE|来源">SOURCE</h3>
   <div style="display:flex;flex-wrap:wrap;gap:3px;margin-bottom:8px">
-    <button class="src-btn active" onclick="switchSrc('all')">All</button>
+    <button class="src-btn active" onclick="switchSrc('all')"><span data-i18n="All|全部">All</span></button>
     <button class="src-btn" onclick="switchSrc('eppo')">EPPO</button>
     <button class="src-btn" onclick="switchSrc('dpv')">DPV</button>
-    <button class="src-btn" onclick="switchSrc('book')">Book</button>
+    <button class="src-btn" onclick="switchSrc('book')"><span data-i18n="Book|书籍">Book</span></button>
     <button class="src-btn" onclick="switchSrc('pdf')">PDF</button>
   </div>
-  <h3>FILTER (multi-select)</h3>
+  <h3 data-i18n="FILTER (multi-select)|筛选（可多选）">FILTER (multi-select)</h3>
   <h3>Host <span style="font-weight:400;font-size:10px;color:#888" id="fHostsCnt"></span></h3>
   <div id="fHosts"></div>
   <h3>Symptom <span style="font-weight:400;font-size:10px;color:#888" id="fSympsCnt"></span></h3>
@@ -103,20 +84,20 @@ nav .sep{color:rgba(255,255,255,0.18);padding:0 2px;user-select:none}
   <div class="loading" id="load">Loading...</div>
   <div id="main" style="display:none">
     <div class="tabs">
-      <button class="tab active" onclick="showTab('dash')">Dashboard</button>
-      <button class="tab" onclick="showTab('gal')">Browse Gallery</button>
-      <button class="tab" onclick="showTab('sub')">Submit Correction</button>
-      <button class="tab" onclick="showTab('table')">Data Table</button>
+      <button class="tab active" onclick="showTab('dash')" data-i18n="Dashboard|仪表盘">Dashboard</button>
+      <button class="tab" onclick="showTab('gal')" data-i18n="Browse Gallery|浏览图库">Browse Gallery</button>
+      <button class="tab" onclick="showTab('sub')" data-i18n="Submit Correction|提交更正">Submit Correction</button>
+      <button class="tab" onclick="showTab('table')" data-i18n="Data Table|数据表">Data Table</button>
     </div>
     <div id="dash">
       <div class="kpis" id="kpis"></div>
       <div class="charts">
-        <div class="chart-card"><h4>Top Host Plants</h4><canvas id="cHosts"></canvas></div>
-        <div class="chart-card"><h4>Top Symptoms</h4><canvas id="cSymps"></canvas></div>
+        <div class="chart-card"><h4 data-i18n="Top Host Plants|主要宿主植物">Top Host Plants</h4><canvas id="cHosts"></canvas></div>
+        <div class="chart-card"><h4 data-i18n="Top Symptoms|主要症状">Top Symptoms</h4><canvas id="cSymps"></canvas></div>
       </div>
       <div class="charts">
-        <div class="chart-card"><h4>Tissues</h4><canvas id="cParts"></canvas></div>
-        <div class="chart-card"><h4>Top Viruses</h4><canvas id="cVirus"></canvas></div>
+        <div class="chart-card"><h4 data-i18n="Tissues|组织部位">Tissues</h4><canvas id="cParts"></canvas></div>
+        <div class="chart-card"><h4 data-i18n="Top Viruses|主要病毒">Top Viruses</h4><canvas id="cVirus"></canvas></div>
       </div>
     </div>
     <div id="gal" style="display:none">
@@ -129,23 +110,23 @@ nav .sep{color:rgba(255,255,255,0.18);padding:0 2px;user-select:none}
     </div>
     <div id="sub" style="display:none">
       <div style="max-width:600px;background:#fff;padding:24px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06)">
-        <h2 style="margin:0 0 16px;color:#1a5276">Submit Metadata Correction</h2>
-        <p style="font-size:13px;color:#888;margin-bottom:16px">Correct or supplement virus, host, symptom, and plant part information for photos in the gallery.</p>
+        <h2 style="margin:0 0 16px;color:#1a5276" data-i18n="Submit Metadata Correction|提交元数据更正">Submit Metadata Correction</h2>
+        <p style="font-size:13px;color:#888;margin-bottom:16px" data-i18n="Correct or supplement virus, host, symptom, and plant part information for photos in the gallery.|更正或补充图库照片的病毒、宿主、症状与植物部位信息。">Correct or supplement virus, host, symptom, and plant part information for photos in the gallery.</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 16px">
-          <div><label>EPPO Code</label><input id="subCode" placeholder="e.g. TSWV00" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
-          <div><label>Photo ID</label><input id="subPid" placeholder="e.g. 2555" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
-          <div><label>Virus (Latin) *</label><input id="subVirus" placeholder="Orthotospovirus tomatomaculae" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
-          <div><label>Host (Latin)</label><input id="subHost" placeholder="Solanum lycopersicum" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
-          <div><label>Symptoms</label><input id="subSymp" placeholder="mosaic, ring spot, necrosis" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
-          <div><label>Tissues</label><input id="subPart" placeholder="leaf, fruit" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
+          <div><label data-i18n="EPPO Code|EPPO 代码">EPPO Code</label><input id="subCode" placeholder="e.g. TSWV00" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
+          <div><label data-i18n="Photo ID|照片 ID">Photo ID</label><input id="subPid" placeholder="e.g. 2555" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
+          <div><label data-i18n="Virus (Latin) *|病毒（拉丁名） *">Virus (Latin) *</label><input id="subVirus" placeholder="Orthotospovirus tomatomaculae" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
+          <div><label data-i18n="Host (Latin)|宿主（拉丁名）">Host (Latin)</label><input id="subHost" placeholder="Solanum lycopersicum" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
+          <div><label data-i18n="Symptoms|症状">Symptoms</label><input id="subSymp" placeholder="mosaic, ring spot, necrosis" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
+          <div><label data-i18n="Tissues|组织部位">Tissues</label><input id="subPart" placeholder="leaf, fruit" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px"></div>
         </div>
-        <div style="margin-top:12px"><label>Notes</label><textarea id="subNotes" placeholder="Additional information..." style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px;min-height:60px;font-family:inherit"></textarea></div>
+        <div style="margin-top:12px"><label data-i18n="Notes|备注">Notes</label><textarea id="subNotes" placeholder="Additional information..." style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:13px;min-height:60px;font-family:inherit"></textarea></div>
         <button class="btn" onclick="submit()" style="margin-top:12px;padding:10px 32px">Submit to GitHub</button>
       </div>
     </div>
     <div id="table" style="display:none">
       <div class="topbar" style="background:#fff;padding:12px 16px;border-radius:8px 8px 0 0;margin-bottom:0;box-shadow:0 1px 3px rgba(0,0,0,.06)">
-        <h2 style="font-size:16px;color:#1a5276;margin:0">Symptoms Data Table</h2>
+        <h2 style="font-size:16px;color:#1a5276;margin:0" data-i18n="Symptoms Data Table|症状数据表">Symptoms Data Table</h2>
         <input class="search-box" id="tblSearch" placeholder="Search virus / host / symptom..." oninput="renderTable()" style="width:280px">
         <span id="tblCount" style="font-size:13px;color:#888"></span>
       </div>
@@ -187,8 +168,8 @@ async function switchSrc(src){
   AF={h:new Set,s:new Set,p:new Set,v:new Set};
   var vl={};D.forEach(function(d){var v=d.virus_latin||d.virus;if(v)vl[v]=(vl[v]||0)+1});var vla=Object.entries(vl).sort(function(a,b){return b[1]-a[1]}).slice(0,30);
   mkFilt('fHosts',cnt('hosts',30),'fHostsCnt');
-  mkFilt('fSymptoms',cnt('symptoms',25),'fSympsCnt');
-  mkFilt('fParts',cnt('parts',20),'fPartsCnt');
+  mkFilt('fSymptoms',cnt('symptoms_std',25),'fSympsCnt');
+  mkFilt('fParts',cnt('parts_std',20),'fPartsCnt');
   mkFilt('fViruses',vla,'fVirusCnt');
   buildDash();
   renderGal();
@@ -239,8 +220,8 @@ function buildDash(){
   try{
     document.getElementById('kpis').innerHTML=[
       ['Photos',D.length],['Virus Species',new Set(D.map(function(d){return d.virus_latin||d.virus})).size],
-      ['Hosts',cnt('hosts',999).length],['Symptoms',cnt('symptoms',999).length],
-      ['Parts',cnt('parts',999).length]
+      ['Hosts',cnt('hosts',999).length],['Symptoms',cnt('symptoms_std',999).length],
+      ['Parts',cnt('parts_std',999).length]
     ].map(function(a){return'<div class=kpi><div class=val>'+a[1].toLocaleString()+'</div><div class=lbl>'+a[0]+'</div></div>'}).join('');
 
     var C=['#2e86c1','#e74c3c','#27ae60','#f39c12','#8e44ad','#1abc9c','#e67e22','#2980b9'];
@@ -253,8 +234,8 @@ function buildDash(){
       new Chart(document.getElementById(el),{type:'doughnut',data:{labels:items.map(function(x){return x[0]}),datasets:[{data:items.map(function(x){return x[1]}),backgroundColor:colors}]}});
     }
     barH('cHosts',cnt('hosts',15),'#2e86c1');
-    barH('cSymps',cnt('symptoms',15),'#e74c3c');
-    pie('cParts',cnt('parts',8),C);
+    barH('cSymps',cnt('symptoms_std',15),'#e74c3c');
+    pie('cParts',cnt('parts_std',8),C);
     var vc={};D.forEach(function(d){var v=d.virus_latin||d.virus;if(v)vc[v]=(vc[v]||0)+1});var vt=Object.entries(vc).sort(function(a,b){return b[1]-a[1]}).slice(0,15);
     barH('cVirus',vt,'#27ae60');
   }catch(e){console.error(e)}
@@ -263,20 +244,21 @@ function buildDash(){
 function renderGal(){
   var q=(document.getElementById('search').value||'').toLowerCase();
   var rows=D.filter(function(d){
-    if(q&&d.virus.toLowerCase().indexOf(q)<0&&(d.caption||'').toLowerCase().indexOf(q)<0)return false;
+    if(q&&((d.virus||'')+(d.hosts||[]).join(' ')).toLowerCase().indexOf(q)<0&&(d.caption||'').toLowerCase().indexOf(q)<0)return false;
     if(AF.h.size){var hh=d.hosts_latin||d.hosts||[];if(!hh.some(function(x){return AF.h.has(typeof x==='object'?x.latin:x)}))return false;}
-    if(AF.s.size){var ss=d.symptoms||[];if(!ss.some(function(x){return AF.s.has(x)}))return false;}
-    if(AF.p.size){var pp=d.parts||[];if(!pp.some(function(x){return AF.p.has(x)}))return false;}
+    if(AF.s.size){var ss=d.symptoms_std||[];if(!ss.some(function(x){return AF.s.has(x)}))return false;}
+    if(AF.p.size){var pp=d.parts_std||[];if(!pp.some(function(x){return AF.p.has(x)}))return false;}
     if(AF.v.size){var vv=d.virus_latin||d.virus;if(!AF.v.has(vv))return false;}
     return true;
   });
   document.getElementById('countTxt').textContent=rows.length+' photos';
   document.getElementById('grid').innerHTML=rows.map(function(d){
     var vl=d.virus_latin&&d.virus_latin!==d.virus?d.virus_latin:d.virus;
+    if(!vl){var hh=(d.hosts||[]);vl=hh.length?('Host: '+hh[0]):'(virus not identified)'}
     var vc=d.virus_latin&&d.virus_latin!==d.virus?d.virus:'';
     var hs=(d.hosts_latin||d.hosts||[]).slice(0,3).map(function(h){var n=typeof h==='object'?h.latin:h;return'<span class=\"tag host\">'+n+'</span>'}).join('');
-    var ss=(d.symptoms||[]).slice(0,3).map(function(s){return'<span class=\"tag symp\">'+s+'</span>'}).join('');
-    var ps=(d.parts||[]).slice(0,2).map(function(p){return'<span class=\"tag part\">'+p+'</span>'}).join('');
+    var ss=(d.symptoms_std||[]).slice(0,3).map(function(s){return'<span class=\"tag symp\">'+s+'</span>'}).join('');
+    var ps=(d.parts_std||[]).slice(0,2).map(function(p){return'<span class=\"tag part\">'+p+'</span>'}).join('');
     return'<div class=card onclick=\"openImg(\''+d.full+'\',\''+(d.caption||'').replace(/'/g,'')+'\',\''+(d.virus||'').replace(/'/g,'')+'\')\"><img src=\"'+d.thumb+'\" loading=lazy><div class=info><b>'+vl+'</b>'+(vc?'<div style=font-size:10px;color:#999>'+vc+'</div>':'')+'<div class=cap>'+(d.caption||'')+'</div><div class=tags>'+hs+ss+ps+'</div></div></div>';
   }).join('');
 }
@@ -312,8 +294,8 @@ function submit(){
 (async function init(){
   try{
     var [gr,tr]=await Promise.all([
-      fetch('data/unified_gallery.json?v=3'),
-      fetch('data/symptom_table.json?v=1')
+      fetch('data/unified_gallery.json?v=9'),
+      fetch('data/symptom_table.json?v=7')
     ]);
     if(!gr.ok||!tr.ok)throw new Error('HTTP');
     Din=await gr.json();TABLE=await tr.json();
@@ -322,16 +304,33 @@ function submit(){
     srcCounts.all=Din.length;
     ['all','eppo','dpv','book','pdf'].forEach(function(s,i){
       var b=document.querySelectorAll('.src-btn')[i];
-      if(b&&srcCounts[s])b.innerHTML=b.innerHTML.replace(/<span.*/,'')+' <span class=\"cnt\">('+srcCounts[s]+')</span>';
+      if(b&&srcCounts[s])b.innerHTML=b.innerHTML.replace(/<span class=\"cnt\".*/,'')+'<span class=\"cnt\">('+srcCounts[s]+')</span>';
     });
     if(!D||!D.length)throw new Error('Empty');
     mkFilt('fHosts',cnt('hosts',30),'fHostsCnt');
-    mkFilt('fSymptoms',cnt('symptoms',25),'fSympsCnt');
-    mkFilt('fParts',cnt('parts',20),'fPartsCnt');
+    mkFilt('fSymptoms',cnt('symptoms_std',25),'fSympsCnt');
+    mkFilt('fParts',cnt('parts_std',20),'fPartsCnt');
     var vl={};D.forEach(function(d){var v=d.virus_latin||d.virus;if(v)vl[v]=(vl[v]||0)+1});var vla=Object.entries(vl).sort(function(a,b){return b[1]-a[1]}).slice(0,30);
     mkFilt('fViruses',vla,'fVirusCnt');
     buildDash();
     renderGal();
+    // ── 深链 ?q=<关键词>&host=<宿主>&virus=<病毒>：预填搜索框 / 激活侧栏过滤 ──
+    try{
+      var qs=new URLSearchParams(location.search);
+      var q=(qs.get('q')||'').trim(), hl=(qs.get('host')||'').trim(), vl=(qs.get('virus')||'').trim();
+      if(q)document.getElementById('search').value=q;
+      if(vl){
+        var vc=Array.prototype.find.call(document.querySelectorAll('#fViruses .filt'),function(s){return s.textContent.indexOf(vl)===0});
+        if(vc){vc.click();}
+        else{document.getElementById('search').value=(document.getElementById('search').value+' '+vl).trim();}
+      }
+      if(hl){
+        var hc=Array.prototype.find.call(document.querySelectorAll('#fHosts .filt'),function(s){return s.textContent.indexOf(hl)===0});
+        if(hc){hc.click();}
+        else{document.getElementById('search').value=(document.getElementById('search').value+' '+hl).trim();}
+      }
+      if(q||hl||vl)renderGal();
+    }catch(e){}
   }catch(e){
     document.getElementById('load').innerHTML='<p style=color:red>Error: '+e.message+'</p>';
     console.error(e);
@@ -348,14 +347,14 @@ function renderTable(){
   var data=TABLE;
   if(src)data=TABLE.filter(function(r){return r.source===src});
   var q=(document.getElementById('tblSearch').value||'').toLowerCase();
-  if(q)data=data.filter(function(r){return(r.virus||'').toLowerCase().indexOf(q)>=0||(r.host_cn||'').toLowerCase().indexOf(q)>=0||(r.symptoms||'').toLowerCase().indexOf(q)>=0});
+  if(q)data=data.filter(function(r){return(r.virus||'').toLowerCase().indexOf(q)>=0||(r.host_cn||'').toLowerCase().indexOf(q)>=0||(r.symptoms_std||r.symptoms||'').toLowerCase().indexOf(q)>=0});
   // Apply sidebar filters
   if(AF.h.size)data=data.filter(function(r){
     var hh=(r.host_cn||'')+';'+(r.host_latin||'');
     return Array.from(AF.h).some(function(f){return hh.toLowerCase().indexOf(f.toLowerCase())>=0});
   });
   if(AF.s.size)data=data.filter(function(r){
-    var ss=(r.symptoms||'').toLowerCase();
+    var ss=(r.symptoms_std||r.symptoms||'').toLowerCase();
     return Array.from(AF.s).some(function(f){return ss.indexOf(f.toLowerCase())>=0});
   });
   if(AF.p.size)data=data.filter(function(r){
@@ -398,5 +397,6 @@ function renderTable(){
 }
 </script>
 <script src="/i18n.js"></script>
+<script src="/lib/ai-assistant.js?v=2" data-context="hub" defer></script>
 </body>
 </html>
