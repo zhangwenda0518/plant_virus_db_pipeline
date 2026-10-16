@@ -450,7 +450,7 @@ app.index_string = '''<!DOCTYPE html>
 .preset-q:hover{background:#667eea;color:#fff;border-color:#667eea}
 </style>
 </head>
-<body>{%app_entry%}<footer>{%config%}{%scripts%}{%renderer%}</footer>
+<body><script src="/lib/site-nav.js?v=2"></script>{%app_entry%}<footer>{%config%}{%scripts%}{%renderer%}</footer>
 <button id="ai-chat-btn" onclick="toggleChat()" title="AI助手">?</button>
 <div id="ai-chat-panel">
 <div class="chat-header"><span>Explorer AI助手</span><div><button onclick="toggleSettings()" style="background:none;border:none;color:#fff;font-size:14px;cursor:pointer;margin-right:8px" title="设置">⚙</button><button onclick="toggleChat()">×</button></div></div>
@@ -933,52 +933,22 @@ app.layout = dmc.MantineProvider(
         "primaryColor": "blue",
     },
     children=dmc.AppShell(
-        header={"height": 52},
         padding="md",
         children=[
             dcc.Location(id="url", refresh=False),
 
-            # 统一导航栏(全平台 9 入口 + 品牌) — Python 3.6 兼容,避免布局内 define
-            dmc.AppShellHeader(
-                px="md",
-                style={"background": "#1a5276"},
-                children=dmc.Group(
-                    justify="space-between",
-                    h="100%",
-                    children=[
-                        dmc.Group(gap=0, children=[
-                            html.A("Plant Virus DB", href="/",
-                                   style={"color":"#fff","fontWeight":700,"fontSize":"16px","textDecoration":"none","padding":"14px 10px 14px 0"}),
-                            html.A("参考库", href="/reference/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.A("浏览器", href="/explorer/",
-                                   style={"color":"#fff","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"600"}),
-                            html.A("病毒详情", href="/virus/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.A("引物", href="/primers/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.Span("|", style={"color":"rgba(255,255,255,0.25)","padding":"14px 2px"}),
-                            html.A("媒介", href="/vector/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.A("TE·EVE", href="/te/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.A("Metabuli", href="/metabuli/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.Span("|", style={"color":"rgba(255,255,255,0.25)","padding":"14px 2px"}),
-                            html.A("文献", href="/literature/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.A("知识", href="/knowledge/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                        ]),
-                        dmc.Group(gap="xs", children=[
-                            dmc.Badge(str(N_SPECIES) + " species", color="gray", variant="filled"),
-                            dmc.Badge(str(len(df_global)) + " sequences", color="blue", variant="filled"),
-                            dmc.Badge(DATA_VERSION.split(" | ")[0] if " | " in DATA_VERSION else DATA_VERSION, color="green", variant="light")
-                        ])
-                    ]
-                )
-            ),
             # 看板分析主体
+            html.Div(
+                dmc.Group(
+                    justify="flex-end", gap="xs",
+                    children=[
+                        dmc.Badge(str(N_SPECIES) + " species", color="gray", variant="filled"),
+                        dmc.Badge(str(len(df_global)) + " sequences", color="blue", variant="filled"),
+                        dmc.Badge(DATA_VERSION.split(" | ")[0] if " | " in DATA_VERSION else DATA_VERSION, color="green", variant="light")
+                    ]
+                ),
+                style={"padding": "2px 6px 8px 0"},
+            ),
             dmc.AppShellMain(
                 children=dmc.Grid(
                     gutter="md",

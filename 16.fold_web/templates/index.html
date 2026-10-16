@@ -125,6 +125,7 @@
 </style>
 </head>
 <body>
+<script src="/lib/site-nav.js?v=2"></script>
 
 <header>
  <h1>植物病毒蛋白结构批量预测平台<small>ColabFold · 收集 → 预测 → 整理 → 入库</small></h1>
@@ -184,7 +185,7 @@
  <h2>Foldify 手动通道导出</h2>
  <div class="panel">
   <div class="row" style="margin-top:0">
-   <a class="btn ghost" id="foldify-link" href="/api/export/foldify?max=1000">下载导出 ZIP</a>
+   <a class="btn ghost" id="foldify-link" href="api/export/foldify?max=1000">下载导出 ZIP</a>
    <label style="font-size:12.5px;color:var(--mut)">条数上限
     <select id="foldify-max" aria-label="Foldify 导出条数上限">
      <option value="500">500</option><option value="1000" selected>1,000</option>
@@ -265,7 +266,7 @@ $('refresh-now').addEventListener('click', refresh);
 
 async function refresh(){
   try{
-    const [s, jobs] = await Promise.all([jget('/api/stats'), jget('/api/jobs?limit=200')]);
+    const [s, jobs] = await Promise.all([jget('api/stats'), jget('api/jobs?limit=200')]);
     STATS = s; JOBS = jobs;
     setOffline(false);
     renderStats(); renderJobs();
@@ -340,12 +341,12 @@ async function act(a, id){
   try{
     if(a === 'log'){ openLog(id); return; }
     if(a === 'retry'){
-      const r = await fetch(`/api/job/${id}/retry`, {method:'POST'});
+      const r = await fetch(`api/job/${id}/retry`, {method:'POST'});
       const d = await r.json();
       if(d.error){ toast('重试失败：'+d.error, true); return; }
       toast(`已重新排队为任务 #${d.job_id}`);
     } else if(a === 'del'){
-      const r = await fetch(`/api/job/${id}`, {method:'DELETE'});
+      const r = await fetch(`api/job/${id}`, {method:'DELETE'});
       const d = await r.json();
       if(d.error){ toast('删除失败：'+d.error, true); return; }
       if(logJobId === id) closeLog();
@@ -377,7 +378,7 @@ $('fill-pending').onclick = async () => {
   try{
     const n = STATS ? STATS.own_missing : null;
     if(n && n > 500 && !confirm(`待预测清单共 ${n.toLocaleString()} 条，全部填入并提交将是一个非常长的预测任务。\n仍要填入吗？`)) return;
-    const r = await fetch('/pending_accessions.txt');
+    const r = await fetch('pending_accessions.txt');
     if(!r.ok) throw new Error('HTTP ' + r.status);
     $('accs').value = (await r.text()).trim();
     accsPreview();
@@ -390,7 +391,7 @@ $('submit-accs').onclick = async () => {
   if(!ok.length) return;
   $('msg1').textContent = ''; $('submit-accs').disabled = true;
   try{
-    const r = await fetch('/api/job/new', {method:'POST', headers:{'Content-Type':'application/json'},
+    const r = await fetch('api/job/new', {method:'POST', headers:{'Content-Type':'application/json'},
       body: JSON.stringify({accessions: ok.join('\n')})});
     const d = await r.json();
     if(d.error){ $('msg1').textContent = '错误：' + d.error; $('msg1').className = 'msg err'; }
@@ -450,14 +451,14 @@ function xhrUpload(url, file, progId, msgId, done){
 }
 const btnFa = bindZone('zone-fa','fa','fa-info','btn-fa', f =>
   /\.(fa|fasta|txt)$/i.test(f.name) ? null : '需要 .fa / .fasta / .txt 文件');
-btnFa.onclick = () => { $('msg2').textContent=''; xhrUpload('/api/job/upload_fasta', $('fa').files[0], 'fa-prog', 'msg2', refresh); };
+btnFa.onclick = () => { $('msg2').textContent=''; xhrUpload('api/job/upload_fasta', $('fa').files[0], 'fa-prog', 'msg2', refresh); };
 const btnZip = bindZone('zone-zip','zip','zip-info','btn-zip', f =>
   /\.zip$/i.test(f.name) ? (f.size > 2*1024**3 ? '超过 2GB 上限' : null) : '需要 .zip 文件');
-btnZip.onclick = () => { $('msg3').textContent=''; xhrUpload('/api/job/upload_results', $('zip').files[0], 'zip-prog', 'msg3', refresh); };
+btnZip.onclick = () => { $('msg3').textContent=''; xhrUpload('api/job/upload_results', $('zip').files[0], 'zip-prog', 'msg3', refresh); };
 
 /* ---------- Foldify 导出 ---------- */
 $('foldify-max').addEventListener('change', () => {
-  $('foldify-link').href = '/api/export/foldify?max=' + $('foldify-max').value;
+  $('foldify-link').href = 'api/export/foldify?max=' + $('foldify-max').value;
 });
 
 /* ---------- 日志面板 ---------- */
@@ -465,7 +466,7 @@ let logJobId = null, logTimer = null;
 async function pullLog(){
   if(logJobId == null) return;
   try{
-    const d = await jget(`/api/job/${logJobId}/log`);
+    const d = await jget(`api/job/${logJobId}/log`);
     const el = $('log');
     const atBottom = el.scrollHeight - el.scrollTop - el.clientHeight < 30;
     el.textContent = d.log || '(暂无日志)';
@@ -498,5 +499,6 @@ document.addEventListener('keydown', e => { if(e.key === 'Escape' && logJobId !=
 /* ---------- 启动 ---------- */
 refresh(); schedule();
 </script>
+<script src="/lib/ai-assistant.js?v=2" data-context="fold" defer></script>
 </body>
 </html>

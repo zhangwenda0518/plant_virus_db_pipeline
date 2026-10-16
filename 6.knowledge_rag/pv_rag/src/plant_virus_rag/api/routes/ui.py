@@ -12,8 +12,6 @@ HTML_PAGE = r"""
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
 *{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;background:#f5f5f5;color:#333;margin:0}
-nav{background:#1a5276;display:flex;align-items:center;padding:0 24px;height:52px}
-nav .brand{font-weight:700;font-size:16px;color:#fff}
 .hero{background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;padding:32px 24px;margin-bottom:20px}
 .hero h1{margin:0;font-size:22px}.hero p{margin:6px 0 0;opacity:.85;font-size:13px}
 .main{max-width:900px;margin:0 auto;padding:0 16px}
@@ -37,7 +35,8 @@ nav .brand{font-weight:700;font-size:16px;color:#fff}
 </style>
 </head>
 <body>
-<nav><span class="brand">Plant Virus Knowledge Base</span></nav>
+<script src="/lib/site-nav.js?v=2"></script>
+
 <div class="hero"><h1>Plant Virus RAG</h1><p>33K papers (229K chunks) + DPV &amp; ICTV structured records. QA / Planning / Meta routing with DeepSeek V4 Pro reasoning.</p></div>
 <div class="main">
 <div class="sbar">

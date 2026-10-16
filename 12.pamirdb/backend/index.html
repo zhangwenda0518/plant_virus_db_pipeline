@@ -7,7 +7,6 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,sans-serif;background:#f5f7fa;color:#333}
-nav{background:#1a3a5c;color:#fff;padding:0 20px;height:44px;display:flex;align-items:center;font-weight:600;font-size:14px}
 .container{max-width:900px;margin:0 auto;padding:20px}
 .card{background:#fff;border-radius:8px;padding:18px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
 h2{font-size:15px;color:#1a3a5c;margin-bottom:10px}
@@ -26,7 +25,8 @@ td{padding:6px 8px;border-bottom:1px solid #f0f0f0}
 </style>
 </head>
 <body>
-<nav>PAmiRDB - Plant Antiviral miRNA Target Predictor</nav>
+<script src="/lib/site-nav.js?v=2"></script>
+
 <div class="container">
 
 <div class="card">
@@ -153,5 +153,6 @@ function alnColor(s){
   return "miRNA  5' "+mh+" 3'\n         "+p.split("").map(function(x,i){var c3=x==="|"?"wc":(x===":"?"wo":"");return'<span class="'+c3+'">'+x+'</span>'}).join("")+"\ntarget 3' "+th+" 5'";
 }
 </script>
+<script src="/lib/ai-assistant.js?v=2" data-context="pamirdb" defer></script>
 </body>
 </html>

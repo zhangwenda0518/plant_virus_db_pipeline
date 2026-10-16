@@ -1,245 +1,343 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>植物病毒蛋白 3D 结构</title>
-<link rel="stylesheet" href="./vendor/pdbe-molstar-light-3.11.0.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title data-i18n="Protein Structure — Plant Virus DB|蛋白结构 — 植物病毒数据库">Protein Structure — Plant Virus DB</title>
+<meta name="description" content="One entry point for every plant-virus protein structure view: the UniProt Structure Atlas (coverage reconciliation over 4,810 proteins, with per-species completeness and pending-prediction gap tiers) and the RVPSD + vpSAT + AlphaFoldDB 3D model browser (2,603 species / 20,950 full-atom models, Molstar viewer). UniProt 结构对账与 RVPSD 3D 模型浏览器的统一入口。">
 <style>
-  :root {
-    --bg: #f5f7fa; --panel: #ffffff; --line: #dde3ea;
-    --ink: #1f2d3d; --muted: #7a8699; --accent: #2b6cb0; --accent-soft: #e8f0fa;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: "Segoe UI", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--ink); height: 100vh; display: flex; flex-direction: column; }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;height:100vh;display:flex;flex-direction:column;overflow:hidden}
 
-  header { background: #16324f; color: #fff; padding: 8px 20px; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
-  header h1 { font-size: 16px; font-weight: 600; }
-  header .stat { font-size: 12px; color: #b8c9db; }
-  header .src { font-size: 11px; color: #8fa8c0; margin-left: auto; }
-  header .src a { color: #b8d4f0; }
+/* ── top bar：品牌 / 视图切换 / 操作区，收成一行 ──
+ * 2026-10-08 单页化：原来这里是「顶栏 chips + 描述行 + 视图卡片条」三条独立的栏，
+ * 其中 chips 与描述行都在复述子页自己的读数与文案 → 一并删掉，只留「切视图」这件事。 */
+nav.topbar{background:linear-gradient(135deg,#134e6f 0%,#1a5276 55%,#2e86c1 100%);color:#fff;display:flex;align-items:center;gap:12px;padding:9px 20px;flex-wrap:wrap;flex:none}
+nav.topbar .brand{font-size:16px;font-weight:700;letter-spacing:.3px;white-space:nowrap}
+nav.topbar .brand a{color:#fff;text-decoration:none}
+nav.topbar .sep{opacity:.35}
+nav.topbar .subtitle{font-size:12.5px;opacity:.92;font-weight:600;white-space:nowrap}
 
-  #layout { flex: 1; display: flex; min-height: 0; }
-  #side { width: 300px; background: var(--panel); border-right: 1px solid var(--line); display: flex; flex-direction: column; }
-  #searchBox { padding: 8px 10px; border-bottom: 1px solid var(--line); }
-  #search { width: 100%; padding: 7px 10px; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; outline: none; }
-  #search:focus { border-color: var(--accent); }
-  #spList { flex: 1; overflow-y: auto; }
-  .spItem { padding: 7px 12px; cursor: pointer; border-bottom: 1px solid #f0f3f7; }
-  .spItem:hover { background: var(--accent-soft); }
-  .spItem.active { background: var(--accent-soft); border-left: 3px solid var(--accent); }
-  .spItem .nm { font-size: 12.5px; font-weight: 600; }
-  .spItem .meta { font-size: 11px; color: var(--muted); margin-top: 2px; display: flex; gap: 8px; }
-  .spItem .cnt { background: #e4ebf3; color: #4a6b8f; border-radius: 8px; padding: 0 6px; font-size: 10px; }
+/* ── view switcher：做成深色栏上的胶囊按钮，不再单占一行 ── */
+.tabs{display:flex;gap:6px;margin-left:6px}
+.tabs button.vtab{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.24);border-radius:9px;color:#fff;padding:5px 14px;font-size:12.5px;font-weight:600;cursor:pointer;white-space:nowrap;transition:.15s}
+.tabs button.vtab:hover{background:rgba(255,255,255,.20)}
+.tabs button.vtab.on{background:#fff;color:#1a5276;border-color:#fff;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.18)}
 
-  #main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
-  #toolbar { background: var(--panel); border-bottom: 1px solid var(--line); padding: 6px 14px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-  #toolbar label { font-size: 12px; color: var(--muted); }
-  #protSel { max-width: 460px; padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; font-size: 12.5px; background: #fff; }
-  #infoLine { font-size: 12px; color: var(--muted); }
-  #infoLine b { color: var(--ink); }
-  .plddt-hi { color: #157a3a; font-weight: 600; }
-  .plddt-mid { color: #b8860b; font-weight: 600; }
-  .plddt-lo { color: #b03a2e; font-weight: 600; }
+/* ── acts：语言切换 + 新窗口打开，右对齐 ── */
+.acts{margin-left:auto;display:flex;gap:8px;flex-shrink:0}
+button.act{background:#fff;border:1px solid #dceaf3;border-radius:9px;padding:5px 12px;font-size:12.5px;font-weight:600;color:#1a5276;cursor:pointer;transition:.15s;white-space:nowrap}
+button.act:hover{background:#e3f0f9;border-color:#bcd8e8;color:#2e86c1}
+/* 语言按钮：i18n.js 默认往 body 末尾塞一颗 fixed 在左下角的 44px 圆按钮，在外壳里
+   正好压在 iframe 的内容上（/relations/ 实测三个宽度各压住 1936 px²）→ 收进 .acts
+   跟"新窗口打开"并排，iframe 内那颗 display:none。 */
+button.act.langtab{min-width:54px;padding:5px 10px;text-align:center}
 
-  /* PDBe Molstar 全 UI 容器：左面板+序列条+右侧工具都渲染在此 */
-  #viewer { flex: 1; position: relative; min-height: 0; background: #fff; }
-  #viewer .placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px; z-index: 1; pointer-events: none; }
+/* ── stage: one iframe at a time (plus the previous one, kept warm) ──
+ * ⚠ 高度**刻意定死**（与 /relations/ 的「随内容撑高」相反，理由见页内注释）：
+ *   ① RVPSD 查看器自身是 height:100vh 的应用，撑高会与 iframe 视口自指成反馈环；
+ *   ② Atlas 的蛋白详情面板是 position:fixed —— 撑高后它会被钉在 iframe 顶部，
+ *      点表格下半部的行时面板出现在屏幕外。
+ *   所以这里给一个视口高度，两个子应用各自在框内滚动（它们本来就是这么设计的）。 */
+.stage{flex:1 1 auto;min-height:0;position:relative;margin:10px 16px 8px;background:#fff;border:1px solid #eef2f5;border-radius:14px;box-shadow:0 2px 10px rgba(20,60,90,.06);overflow:hidden}
+.stage iframe{position:absolute;left:0;top:0;width:100%;height:100%;border:0;display:block;background:#fff}
+.mask{position:absolute;left:0;top:0;right:0;bottom:0;display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;background:#f4f6f8;color:#7b8a99;font-size:13px;z-index:5}
+.mask .spinner{width:26px;height:26px;border:3px solid #dceaf3;border-top-color:#2e86c1;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-  #note { padding: 5px 14px; font-size: 11px; color: var(--muted); background: var(--panel); border-top: 1px solid var(--line); }
-  #note a { color: var(--accent); }
+.foot{padding:0 16px 10px;width:100%;max-width:1760px;margin:0 auto;font-size:11.5px;color:#9aa7b4;line-height:1.7;flex:none}
+.foot a{color:#2e86c1;text-decoration:none}
+.foot a:hover{text-decoration:underline}
+
+/* 窄屏：副标题收起、切换器折行 */
+@media(max-width:900px){
+  nav.topbar .subtitle,nav.topbar .sep{display:none}
+  .tabs{flex-wrap:wrap;margin-left:0}
+}
+@media(max-height:560px){.foot{display:none}}
 </style>
 </head>
 <body>
-<header>
-  <h1>植物病毒蛋白 3D 结构 · Molstar 完整版</h1>
-  <span class="stat" id="statLine"></span>
-  <span class="src">结构来源：<a href="https://doi.org/10.1002/imo2.70120" target="_blank">RVPSD (Yang et al., iMetaOmics 2026)</a>，AlphaFold2，CC-BY 4.0 · 查看器 <a href="https://github.com/PDBeurope/pdbe-molstar" target="_blank">PDBe Molstar 3.11.0 (Apache-2.0)</a>，与 RVPSD 同款 · 补充批次：<a href="./vad.html" target="_blank">VAD 植物病毒结构 (Sci Adv 2025)</a></span>
-</header>
+<script src="/lib/site-nav.js?v=2"></script>
 
-<div id="layout">
-  <div id="side">
-    <div id="searchBox"><input id="search" placeholder="搜索物种 / 科名…" autocomplete="off"></div>
-    <div id="spList"></div>
+<nav class="topbar">  <div class="subtitle" data-i18n="Protein Structure|蛋白结构">Protein Structure</div>
+  <div class="tabs" id="strip"></div>
+  <div class="acts">
+    <button class="act" id="btn-open" data-i18n="&#10530; Open in new tab|&#10530; 在新标签打开">&#10530; Open in new tab</button>
   </div>
-  <div id="main">
-    <div id="toolbar">
-      <label>蛋白：</label>
-      <select id="protSel" disabled><option>请先选择物种</option></select>
-      <span id="infoLine">左侧选择一个物种开始浏览（建议 Chrome/Edge 并开启硬件加速）</span>
-    </div>
-    <div id="viewer"><div class="placeholder" id="ph">未加载结构</div></div>
-  </div>
+</nav>
+
+<div class="stage" id="stage">
+  <div class="mask" id="mask"><div class="spinner"></div><span id="mask-text">Loading…</span></div>
 </div>
 
-<div id="note">
-  与 RVPSD 相同的查看器与配色（cartoon + secondary-structure 洋红/黄主题，alphafoldView）。
-  全原子模型优先；CA-trace 骨架自动回退轻量查看器。
-  数据：<a href="https://doi.org/10.1002/imo2.70120" target="_blank">Yang et al. 2026</a> · CC-BY 4.0 ·
-  另有 <a href="https://doi.org/10.1126/sciadv.adz8560" target="_blank">VAD (Sci Adv 2025)</a> 补充批次（本地缺失的植物病毒蛋白结构，含同源二聚体）见 <a href="./vad.html">vad.html</a>
-</div>
+<div class="foot" id="vfoot"></div>
 
-<script src="./vendor/3Dmol-min.js"></script>
-<script src="./vendor/pdbe-molstar-plugin-3.11.0.js"></script>
+<script src="/i18n.js"></script>
 <script>
-const DATA_URL = './data/structures_index.json';
-const PDB_FA_BASE = './structures_fullatom/';
-const PDB_CA_BASE = './structures/';
-let INDEX = null, viewerInstance = null, glviewer = null, current = null, FA_MAP = null;
+'use strict';
+/* ================================================================
+ * 蛋白结构总入口：把原先分散的页面嵌在同一个外壳里
+ *   #atlas     atlas/        UniProt Structure Atlas —— 覆盖对账 + 完整率/缺口 + 蛋白检索
+ *                            + 病毒级覆盖 + 管线台账，全在一页，页内用锚点条定位
+ *   #browse    rvpsd.html    RVPSD + AlphaFold2 全原子模型浏览器（PDBe Molstar 完整版）
+ *
+ * 2026-10-08 单页化（老师反馈「Statistics panel / Coverage atlas 保留一个就行，乱得很」）：
+ *   原三标签里的前两个是同一模块的两页，指标卡 8 张里 7 张逐字相同 → 把 stats.html 的四节
+ *   并入 atlas 的 index.html，删掉 stats.html（旧 URL 301 到 atlas/）。外壳因此只剩两个
+ *   标签，且只做「切视图」一件事：顶栏不再复述子页的读数（chips）与文案（描述行），
+ *   那两行是当时「乱」的主要来源。
+ *
+ * 两个设计点：
+ * 1) 外层只做壳：子页面自身逻辑零改动（rvpsd.html 只是原 index.html 改名，相对路径
+ *    同级不变；atlas/ 由 nginx alias 直挂模块 15 的 webapp，不复制文件）。
+ *    外壳只往 iframe 里注入一条样式 —— 藏掉子页自己那颗浮动语言按钮（语言统一由外壳
+ *    .acts 里那颗切，localStorage 同源共享）。
+ *    ⚠ 子页自己的 body>header **不再藏**：rvpsd.html 的 header 是应用工具条；
+ *      atlas 的 header 现在是「页名 + 页内锚点条」，正是本页需要的第二层定位。
+ * 2) ⚠ 高度**定死**，与 /relations/ 的「随内容撑高」相反。原因见 CSS 里 .stage 的注释：
+ *    RVPSD 查看器自身 height:100vh（撑高会与 iframe 视口自指成反馈环），
+ *    Atlas 的蛋白详情面板是 position:fixed（撑高后会被钉在 iframe 顶部、点下半部
+ *    的行时面板跑到屏幕外）。所以两个子应用各自在框内滚动。
+ *    如果以后要改回「整页滚」，必须先解决上面这两条。
+ * ================================================================ */
 
-const $ = (s) => document.querySelector(s);
-const plddtCls = (v) => v == null ? '' : (v >= 85 ? 'plddt-hi' : v >= 70 ? 'plddt-mid' : 'plddt-lo');
-
-// ---------- PDBe Molstar 流程（1:1 复刻 RVPSD Virus 组件） ----------
-function waitPlugin(instance, timeoutMs = 10000) {
-  return new Promise((resolve, reject) => {
-    const t0 = Date.now();
-    (function poll() {
-      if (instance && instance.plugin) return resolve(instance.plugin);
-      if (Date.now() - t0 > timeoutMs) return reject(new Error('viewer 初始化超时'));
-      setTimeout(poll, 100);
-    })();
-  });
-}
-
-async function initMolstar(container, pdbUrl) {
-  // 与 RVPSD 相同的 render 选项（ alphafoldView / 白底 / 左面板 / 关闭对称注释 ）
-  viewerInstance = new PDBeMolstarPlugin();
-  viewerInstance.render(container, {
-    alphafoldView: true,
-    bgColor: { r: 255, g: 255, b: 255 },
-    leftPanel: true,
-    rightPanel: true,
-    landscape: true,
-    sequencePanel: true,
-    validationAnnotation: true,
-    domainAnnotation: true,
-    symmetryAnnotation: false,
-    hideControls: false
-  });
-  const ctx = await waitPlugin(viewerInstance);
-  // 与 RVPSD 相同的手动加载链：download → parseTrajectory('pdb') → createModel → createStructure → cartoon/secondary-structure
-  const data = await ctx.builders.data.download({ url: pdbUrl, isBinary: false });
-  const traj = await ctx.builders.structure.parseTrajectory(data, 'pdb');
-  const model = await ctx.builders.structure.createModel(traj);
-  const struct = await ctx.builders.structure.createStructure(model, {});
-  await ctx.builders.structure.representation.addRepresentation(struct,
-    { type: 'cartoon', color: 'secondary-structure' });
-  return 'molstar';
-}
-
-async function init3Dmol(container, pdbUrl) {
-  const resp = await fetch(pdbUrl);
-  if (!resp.ok) throw new Error('HTTP ' + resp.status);
-  const text = await resp.text();
-  container.innerHTML = '';
-  glviewer = $3Dmol.createViewer(container, { backgroundColor: '#f5f7fa' });
-  glviewer.addModel(text, 'pdb');
-  glviewer.setStyle({}, { sphere: { radius: 0.55, color: '#4a7ebb' } });
-  const xyz = glviewer.selectedAtoms({}).map(a => [a.x, a.y, a.z]);
-  for (let i = 0; i + 1 < xyz.length; i++) {
-    glviewer.addLine({
-      start: { x: xyz[i][0], y: xyz[i][1], z: xyz[i][2] },
-      end: { x: xyz[i + 1][0], y: xyz[i + 1][1], z: xyz[i + 1][2] },
-      style: { color: '#4a7ebb', width: 2 }
-    });
+var VIEWS = {
+  atlas: {
+    url: 'atlas/',
+    open: 'atlas/',
+    t: {en: 'Coverage atlas', zh: '结构总览'}
+  },
+  browse: {
+    url: 'rvpsd.html',
+    open: 'rvpsd.html',
+    t: {en: '3D structure library', zh: '3D 结构库'}
   }
-  glviewer.zoomTo();
-  glviewer.render();
-  return '3dmol';
+};
+var ORDER = ['atlas', 'browse'];
+var DEFAULT_KEY = 'atlas';
+
+/* 旧深链兼容：/structures3d/#stats 是单页化之前「统计面板」的地址，该页已并入 atlas，
+   所以落到 atlas 视图并滚到「缺口与完整率」那一节。hash 也支持 `#atlas/gap` 复合形式。 */
+var ALIAS = { stats: ['atlas', 'gap'] };
+
+/* data-i18n 只能放纯文本（i18n.js 用 textContent 覆盖，标签会被当字面量显示），
+   所以带链接的页脚在这里按语言渲染。 */
+var FOOT = {
+  en: 'Two views, two modules: the Atlas is <code>15.uniprot_plant_virus_structures/webapp/</code> (module 15, UniProt release <b>2026_03</b>; coverage reconciliation, per-species completeness and pending-prediction gap tiers on one page), and the model browser is <a href="rvpsd.html">rvpsd.html</a> (module 14, RVPSD Yang et al. 2026, CC-BY 4.0). Viewer: <a href="https://github.com/PDBeurope/pdbe-molstar" target="_blank">PDBe Molstar 3.11.0</a> (Apache-2.0) / <a href="https://github.com/3dmol/3Dmol.js" target="_blank">3Dmol.js</a> (BSD).',
+  zh: '两个视图来自两个模块：Atlas 在 <code>15.uniprot_plant_virus_structures/webapp/</code>（模块 15，UniProt 版本 <b>2026_03</b>；覆盖对账、物种级完整率、待预测缺口分层合并为一页），模型浏览器是 <a href="rvpsd.html">rvpsd.html</a>（模块 14，RVPSD Yang et al. 2026，CC-BY 4.0）。查看器：<a href="https://github.com/PDBeurope/pdbe-molstar" target="_blank">PDBe Molstar 3.11.0</a>（Apache-2.0）／<a href="https://github.com/3dmol/3Dmol.js" target="_blank">3Dmol.js</a>（BSD）。'
+};
+
+var stage = document.getElementById('stage');
+var mask = document.getElementById('mask');
+var maskText = document.getElementById('mask-text');
+var strip = document.getElementById('strip');
+var current = null;
+var live = {};        // key -> iframe（最多 2 个）
+var recent = [];      // 挂载顺序，最后一个就是 current
+var wantSec = {};     // key -> 载入后要滚到的页内锚点
+var maskTimer = null;
+
+function lang() {
+  try { if (window.PVDB_i18n && PVDB_i18n.lang) return PVDB_i18n.lang(); } catch (e) { /* noop */ }
+  return localStorage.getItem('pvdb_lang') || 'en';
 }
 
-async function initViewer(container, p) {
-  container.innerHTML = '<div class="placeholder">结构加载中…</div>';
-  const fas = encodeURIComponent(p.fas) + '.pdb';
-  if (FA_MAP === null) {
-    try { FA_MAP = await (await fetch('./data/fullatom_map.json')).json(); }
-    catch (e) { FA_MAP = {}; }
-  }
+/* i18n.js 给每一页都注入一颗 fixed 左下角的语言按钮。外壳里这一颗会压在 iframe 的
+   内容上，iframe 里各自那一颗又跟它重复 —— 所以：外壳的收进 .acts 改成普通按钮，
+   整页只剩这一个；iframe 里那一颗由 muteInnerChrome 藏掉。 */
+var acts = document.querySelector('.acts');
+function adoptLangBtn() {
+  var b = document.getElementById('pvdb-lang-btn') || document.getElementById('pvdb-i18n-btn');
+  if (!b || b.dataset.adopted || !acts) return false;
+  b.dataset.adopted = '1';
+  b.removeAttribute('style');          // 去掉 fixed/left/bottom，位置改由 .acts 排
+  b.className = 'act langtab';
+  b.type = 'button';
+  var orig = b.onclick;
+  b.onclick = function (ev) {
+    if (orig) { try { orig.call(this, ev); } catch (e) { /* noop */ } }
+    repaintForLang();                  // 外壳自己这颗按钮点完同步重绘，不等 400ms 轮询
+    return false;
+  };
+  acts.appendChild(b);                 // ⚠ 必须真的搬进 .acts，只去 style 会被 flex 拉成整行
+  return true;
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', adoptLangBtn);
+else adoptLangBtn();
+setTimeout(adoptLangBtn, 80);          // i18n 注入晚一拍时的兜底
+setTimeout(adoptLangBtn, 600);
+
+/* 嵌进来的页面自带一颗 floating 语言按钮（在它自己文档左下角）—— 语言统一由外壳
+   .acts 里那颗切（localStorage 同源共享），所以藏掉即可。
+   ⚠ 子页的 body>header **不藏**：
+      · rvpsd.html 的 header 是应用自己的工具条（物种/蛋白读数 + 来源署名），不是导航；
+      · atlas 的 header 现在是「页名 + 页内锚点条」，正是本页需要的第二层定位
+        （2026-10-08 单页化之前它是「总览｜统计面板｜预测平台 ↗」那条与外壳重复的
+        导航，所以当时藏掉；换成锚点条之后藏了反而丢掉页内导航）。
+   load 之后才注样式 —— 按钮是各页 DOMContentLoaded 时才建的。 */
+function muteInnerChrome(f) {
   try {
-    const faDir = FA_MAP[p.fas];
-    if (faDir) {
-      return await initMolstar(container, './' + faDir + '/' + fas);
-    }
-    const r = await fetch(PDB_CA_BASE + fas, { method: 'HEAD' });
-    if (r.ok) {
-      container.innerHTML = '<div class="placeholder">该蛋白仅有 CA-trace 骨架，使用轻量查看器…</div>';
-      return await init3Dmol(container, PDB_CA_BASE + fas);
-    }
-    throw new Error('该蛋白暂无结构文件');
-  } catch (err) {
-    container.innerHTML = '<div class="placeholder">结构加载失败：' +
-      String(err && err.message || err) + '</div>';
-    return null;
-  }
+    var d = f.contentDocument;
+    if (!d || d.getElementById('pvdb-hub-chrome-mute')) return;
+    var s = d.createElement('style');
+    s.id = 'pvdb-hub-chrome-mute';
+    s.textContent = '#pvdb-lang-btn,#pvdb-i18n-btn{display:none!important}' +
+                    /* 2026-10-13: 子页也注入了全站导航(#pvdb-nav)，外壳顶栏已有 →
+                       内嵌时藏掉；子页单独打开时不受影响 */
+                    '#pvdb-nav{display:none!important}';
+    (d.head || d.documentElement).appendChild(s);
+  } catch (e) { /* 跨域或还没就绪，跳过 */ }
 }
 
-// ---------- 物种浏览（与 index.html 相同） ----------
-function selectSpecies(sp) {
-  current = sp;
-  document.querySelectorAll('.spItem').forEach(el => el.classList.remove('active'));
-  const el = document.querySelector(`.spItem[data-nm="${CSS.escape(sp.name)}"]`);
-  if (el) { el.classList.add('active'); el.scrollIntoView({ block: 'nearest' }); }
-
-  const sel = $('#protSel');
-  sel.innerHTML = '';
-  const sorted = [...sp.proteins].sort((a, b) => (b.plddt ?? -1) - (a.plddt ?? -1));
-  for (const p of sorted) {
-    const o = document.createElement('option');
-    o.value = p.fas;
-    o.textContent = `${p.acc} · ${p.product} · pLDDT ${p.plddt ?? '—'}`;
-    sel.appendChild(o);
-  }
-  sel.disabled = false;
-  loadProtein(sorted[0]);
-}
-
-async function loadProtein(p) {
-  if (!p) return;
-  const cls = plddtCls(p.plddt);
-  const ncbi = p.acc ? ` · <a href="https://www.ncbi.nlm.nih.gov/protein/${p.acc}" target="_blank">NCBI ${p.acc}</a>` : '';
-  $('#infoLine').innerHTML =
-    `<b>${current.name}</b> — ${p.product}${ncbi} · ` +
-    `平均 pLDDT: <span class="${cls}">${p.plddt ?? '无记录'}</span>` +
-    (p.host ? ` · 宿主: ${p.host.replace(/_/g, ' ')}` : '') +
-    ' · <span id="modeLine">加载中…</span>';
-  const engine = await initViewer($('#viewer'), p);
-  const ml = document.getElementById('modeLine');
-  if (ml) ml.textContent = engine === 'molstar' ? 'Molstar 全原子' :
-                           engine === '3dmol' ? 'CA-trace 骨架' : '';
-}
-
-function renderList(keyword) {
-  const list = $('#spList');
-  list.innerHTML = '';
-  const kw = (keyword || '').trim().toLowerCase();
-  const items = INDEX.species.filter(sp =>
-    !kw || sp.name.toLowerCase().includes(kw) || sp.family.toLowerCase().includes(kw) ||
-    (sp.abbrev || '').toLowerCase().includes(kw));
-  const frag = document.createDocumentFragment();
-  for (const sp of items.slice(0, 400)) {
-    const d = document.createElement('div');
-    d.className = 'spItem' + (current && current.name === sp.name ? ' active' : '');
-    d.dataset.nm = sp.name;
-    d.innerHTML = `<div class="nm">${sp.name}</div>
-      <div class="meta"><span>${sp.family || '—'}</span><span class="cnt">${sp.count} 蛋白</span></div>`;
-    d.addEventListener('click', () => selectSpecies(sp));
-    frag.appendChild(d);
-  }
-  if (!items.length) list.innerHTML = '<div style="padding:14px;font-size:12px;color:#7a8699">无匹配物种</div>';
-  list.appendChild(frag);
-}
-
-fetch(DATA_URL).then(r => r.json()).then(idx => {
-  INDEX = idx;
-  $('#statLine').textContent = `${idx.count_species} 个植物病毒种 · ${idx.count_proteins} 个蛋白结构`;
-  renderList('');
-  $('#search').addEventListener('input', (e) => renderList(e.target.value));
-  $('#protSel').addEventListener('change', (e) => {
-    const p = current.proteins.find(x => x.fas === e.target.value);
-    loadProtein(p);
+function paintStrip() {
+  var zh = lang() === 'zh';
+  strip.innerHTML = '';
+  ORDER.forEach(function (k) {
+    var v = VIEWS[k];
+    var b = document.createElement('button');
+    b.className = 'vtab' + (k === current ? ' on' : '');
+    b.type = 'button';
+    b.dataset.view = k;
+    b.setAttribute('aria-pressed', k === current ? 'true' : 'false');
+    b.textContent = zh ? v.t.zh : v.t.en;
+    b.addEventListener('click', function () { show(k, true); });
+    strip.appendChild(b);
   });
+}
+
+/* 两个视图各是一个子页面 —— 各自有独立的 document.title，这样把 #browse 分享出去、
+   或者收藏成书签，标签页上写的是「3D model browser」而不是笼统的总标题。
+   注意 <title> 也带 data-i18n，i18n.js 的 apply() 会 textContent 覆盖它，
+   所以这里必须**连属性一起改写**，否则切语言时标题会被打回固定值。 */
+function paintTitle() {
+  var v = VIEWS[current];
+  var zh = lang() === 'zh';
+  var t = document.querySelector('title');
+  if (!t) return;
+  var EN = ' · Protein Structure — Plant Virus DB', ZH = ' · 蛋白结构 — 植物病毒数据库';
+  t.setAttribute('data-i18n', v.t.en + EN + '|' + v.t.zh + ZH);
+  document.title = (zh ? v.t.zh : v.t.en) + (zh ? ZH : EN);
+}
+
+function paintFoot() {
+  document.getElementById('vfoot').innerHTML = FOOT[lang() === 'zh' ? 'zh' : 'en'];
+}
+
+/* hash → {key, sec}：支持 #atlas、#browse、#atlas/gap（复合），以及旧深链 #stats。
+   未知 key（例如早已摘除的 #pipeline）优雅回落默认视图，不白屏。 */
+function parseHash() {
+  var h = (location.hash || '').replace(/^#/, '');
+  var parts = h.split('/');
+  var k = parts[0] || '', sec = parts[1] || null;
+  if (!VIEWS[k]) {
+    var al = ALIAS[k];
+    if (al) { k = al[0]; sec = sec || al[1]; }
+    else return { key: DEFAULT_KEY, sec: null };
+  }
+  return { key: k, sec: sec };
+}
+
+/* 页内锚点：iframe 载入后把它的 location.hash 设成目标小节（同文档导航，不触发重载）。 */
+function applySection(key) {
+  var sec = wantSec[key];
+  if (!sec) return;
+  delete wantSec[key];
+  try { live[key].contentWindow.location.hash = sec; } catch (e) { /* noop */ }
+}
+
+function show(key, push, sec) {
+  if (!VIEWS[key]) key = DEFAULT_KEY;
+  current = key;
+  if (sec) wantSec[key] = sec;
+
+  // hide every warm frame except the one we want.
+  // 只切 visibility，不切 display：rvpsd.html 的 Molstar 画在 WebGL canvas 上，
+  // display:none 子树里的 canvas 后备存储会被浏览器丢掉，切回来就白了。
+  Object.keys(live).forEach(function (k) {
+    live[k].style.visibility = (k === key) ? 'visible' : 'hidden';
+  });
+
+  if (!live[key]) {
+    var f = document.createElement('iframe');
+    f.src = VIEWS[key].url;
+    f.title = VIEWS[key].t[lang() === 'zh' ? 'zh' : 'en'];
+    f.setAttribute('allow', 'fullscreen');
+    f.addEventListener('load', function () {
+      clearTimeout(maskTimer);
+      if (current === key) mask.style.display = 'none';
+      muteInnerChrome(f);
+      applySection(key);
+    });
+    stage.appendChild(f);
+    live[key] = f;
+    /* mask 撑到 load 为止；load 迟迟不来（请求挂死）也不能把人困在遮罩后面 */
+    maskText.textContent = (lang() === 'zh' ? '正在加载 ' : 'Loading ') +
+      VIEWS[key].t[lang() === 'zh' ? 'zh' : 'en'] + '…';
+    mask.style.display = 'flex';
+    clearTimeout(maskTimer);
+    maskTimer = setTimeout(function () { mask.style.display = 'none'; }, 25000);
+  } else {
+    clearTimeout(maskTimer);
+    mask.style.display = 'none';   // 热着的 frame，直接可见
+    applySection(key);
+  }
+  // 重复点当前视图会把 recent 顶出重复项，「留两个」就只剩一个不同的 frame
+  recent = recent.filter(function (k) { return live[k] && k !== key; });
+  recent.push(key);
+
+  // keep current + previous warm, unmount the rest
+  var keep = recent.slice(-2);
+  recent.forEach(function (k) {
+    if (keep.indexOf(k) === -1) { live[k].remove(); delete live[k]; }
+  });
+  recent = keep;
+
+  if (push) {
+    try { location.hash = key; } catch (e) { /* noop */ }
+  }
+  paintStrip();
+  paintTitle();
+  paintFoot();
+  document.getElementById('btn-open').dataset.target = key;
+}
+
+/* 语言跟随站点（localStorage 同源共享，iframe 内也读同一份）。
+   语言一变就整体重绘：外壳文案 + 每个 iframe 的标题。
+   ⚠ 不往 iframe 里推 PVDB_i18n.apply() —— 子页（atlas / rvpsd）都是中文
+     单语、不载 /i18n.js，推了也没有对应词条，只会白刷一遍 DOM。 */
+function repaintForLang() {
+  lastLang = lang();
+  paintStrip();
+  paintTitle();
+  paintFoot();
+  Object.keys(live).forEach(function (k) {
+    live[k].title = VIEWS[k].t[lastLang === 'zh' ? 'zh' : 'en'];
+  });
+}
+var lastLang = lang();
+/* 轮询是兜底（语言可能被 iframe 内那颗按钮改掉）。 */
+setInterval(function () { if (lang() !== lastLang) repaintForLang(); }, 400);
+
+document.getElementById('btn-open').addEventListener('click', function () {
+  var k = this.dataset.target || DEFAULT_KEY;
+  /* 打开本视图对应的子页面，而不是外壳本身 */
+  window.open(VIEWS[k].open, '_blank', 'noopener');
 });
+
+window.addEventListener('hashchange', function () {
+  var p = parseHash();
+  if (p.key !== current || p.sec) show(p.key, false, p.sec);
+});
+
+/* 入口：hash 决定视图（可带 /小节），没有就落默认视图（不写 hash，保持地址干净） */
+(function boot() {
+  var p = parseHash();
+  show(p.key, false, p.sec);
+})();
 </script>
+<script src="/lib/ai-assistant.js?v=2" data-context="structures" defer></script>
 </body>
 </html>

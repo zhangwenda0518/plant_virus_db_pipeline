@@ -9,9 +9,10 @@
 | 路径 | 说明 |
 |---|---|
 | `webapp/` | **自包含静态站**（nginx 可直接挂载）：演示页 + 数据 + 查看器 |
-| `webapp/index.html` | **主页面 = PDBe Molstar 完整复刻版**（与 RVPSD 同款全 UI：序列条/Structure Tools/Quick Styles；全原子走 Molstar cartoon secondary-structure 配色，CA-trace 自动切 3Dmol 骨架） |
+| `webapp/index.html` | **蛋白结构总入口外壳**（2026-10-08 三页整合 → 同日「单页化」后为**两标签** = 结构总览 / 3D 模型浏览）：子页以 iframe 嵌入、逻辑零改动；顶栏只有品牌 + 两个胶囊标签 + 操作区（原先的 chips 与描述行因与子页读数重复已删） |
+| `webapp/rvpsd.html` | **RVPSD Molstar 完整复刻版**（= 原 `index.html` 改名，内容一行未改；与 RVPSD 同款全 UI：序列条/Structure Tools/Quick Styles；全原子走 Molstar cartoon secondary-structure 配色，CA-trace 自动切 3Dmol 骨架） |
 | `webapp/lite.html` | 轻量备用版：3Dmol.js（全原子 pLDDT 四色 cartoon 优先，CA-trace 兜底），低配设备/主页面异常时使用 |
-| `webapp/data/structures_index.json` | 1,832 物种 / 17,918 蛋白索引（名称、科、pLDDT、宿主、文件映射） |
+| `webapp/data/structures_index.json` | **2,603 物种 / 20,950 蛋白索引**（名称、科、pLDDT、宿主、文件映射；2026-10-01 三源合并 RVPSD+vpSAT+AFDB 后的口径） |
 | `webapp/structures/` | 17,918 个 CA-trace PDB（614 MB，gitignore，不入库） |
 | `webapp/structures_fullatom/` | **14,843 个全原子 PDB（3.87 GB）**，权威植物病毒清单的完整 AlphaFold2 模型 |
 | `webapp/structures_fullatom/pull_manifest_fullatom.tsv` | 下载清单（`accession / file / status / ts`） |
@@ -21,7 +22,7 @@
 | `webapp/structures_fullatom_candidates/pull_manifest_fullatom.tsv` | 候选下载清单 |
 | `webapp/structures_fullatom_domains/` | **3,250 个全原子 PDB（589 MB）**，结构域切片 / foldseek 衍生条目的全原子模型 |
 | `webapp/structures_fullatom_domains/pull_manifest_fullatom.tsv` | 切片下载清单 |
-| `webapp/vad.html` | **VAD 补充批次专用页**：本地缺失的植物病毒蛋白结构 + RVPSD 已有蛋白的 VAD 对照版（单体/同源二聚体切换、双版本 pLDDT 对比），入口已挂在 index.html 页眉 |
+| `webapp/vad.html` | **VAD 补充批次专用页**：本地缺失的植物病毒蛋白结构 + RVPSD 已有蛋白的 VAD 对照版（单体/同源二聚体切换、双版本 pLDDT 对比），入口已挂在 rvpsd.html 页眉 |
 | `webapp/data/vad_index.json` | VAD 批次索引：328 病毒种 / 2,033 蛋白（含病毒 taxid、谱系、宿主、陆生/绿藻标签、二聚体可用性、RVPSD 对照映射） |
 | `webapp/structures_vad/` | **2,033 个全原子 PDB（450 MB）**，VAD 单体模型 = VAD 植物病毒全量（1,768 缺失补充 + 265 对照版） |
 | `webapp/structures_vad/pull_manifest_vad.tsv` | VAD 单体下载清单 |
@@ -142,11 +143,11 @@ hit = 4,424    miss = 0    skip = 0    fail = 0
   ③ **AlphaFold DB**（DeepMind 官方）260 条。合并后索引 **2,603 物种 / 20,950 蛋白**
   （fullatom_map 25,743 条）。实测：vpSAT 独有的双生病毒蛋白（DNA 病毒）在
   Molstar 中以 secondary-structure 配色正常渲染。
-- **查看器现为双层级**：`data/fullatom_map.json`（22,574 条 fas→目录索引）
+- **查看器现为双层级**：`data/fullatom_map.json`（**25,743 条** fas→目录索引；2026-10-08 补传新版，旧版 22,574 条不含 vp/afdb）
   覆盖三个全原子目录，命中即 **cartoon 全原子渲染**（B-factor = 逐残基
   pLDDT，molstar 页）或 pLDDT 四色 cartoon（lite 页）；未命中自动回退
   CA-trace（α-碳小球 + 相邻残基连线）。信息行实时标注「结构」类型。
-- **index.html 为 RVPSD 完整复刻**（2026-09-29 实测通过，序列条 + 右侧
+- **rvpsd.html 为 RVPSD 完整复刻**（原 `index.html`；2026-09-29 实测通过，序列条 + 右侧
   Structure Tools 全部显示）：同一插件文件（PDBe Molstar 3.11.0）、同一
   render 选项集（alphafoldView / leftPanel / **rightPanel / landscape /
   sequencePanel / domainAnnotation** 四个面板开关缺一不可，漏掉即面板收起）、
@@ -170,10 +171,9 @@ hit = 4,424    miss = 0    skip = 0    fail = 0
 
 ## 部署
 
-**线上：<http://39.106.101.94/structures3d/>**（2026-09-30 上线；入口卡片在
-`docs/resources.html` 的 Data Resources 页，`/reference/resources.html` 同步可见）
+**线上：<http://39.106.101.94/structures3d/>**（2026-09-30 上线；2026-10-08 起是**蛋白结构统一入口**，外壳 + 三标签。入口卡片在 `docs/index.html` 的 Protein Structure 卡）
 
-nginx 片段（`/etc/nginx/conf.d/plant-virus.conf`，插在 `# ---- 7. Virus Vector Host ----` 之前）：
+nginx 片段（`/etc/nginx/conf.d/plant-virus.conf`）：
 
 ```nginx
 location = /structures3d { return 301 /structures3d/; }
@@ -182,6 +182,8 @@ location /structures3d/ {
     index index.html;
 }
 ```
+
+> 2026-10-08 三页整合后，`/structures3d/` 之下另有 `/structures3d/atlas/`（模块 15 的 webapp，= 统一入口的「结构总览」标签）与 `/structures3d/structures_{pdb,alphafold,selffold}/`（Atlas 查看器按 `../structures_*` 相对路径读文件，故挂一级）；旧 `/uniprot3d/*` 一律 301 到 `/structures3d/`。同日稍后「单页化」：原「统计面板」标签并入结构总览一页，`/structures3d/atlas/stats.html` 301 回 `atlas/`。完整片段见 `deploy/nginx_full.conf`。（`/help/fold.html` 曾一度也 301 过来，同日后续调整**已撤销** —— 该帮助页独立保留。）
 
 - `alias` 对子目录/深层路径天然有效，**不要加 `try_files`** —— `alias` + `try_files`
   会把 alias 值再拼一次完整 uri，子目录直接 404（同 `/phylo/molecular/` 的坑）。
@@ -202,6 +204,10 @@ location /structures3d/ {
 **实测线上体积**：`structures_fullatom` 3,899 MB + `_domains` 597 MB + `_candidates` 55 MB
 + 静态约 10 MB = **4,561 MB**，文件数 14,563 / 3,250 / 105，合计 **17,918**（`verify_server.py`）。
 
+> 上表是 **2026-09-30 RVPSD 一批**的上传口径。2026-10-08 三页整合时又补传了 `structures_fullatom_vp/`
+> （vpSAT 2,909）与 `structures_fullatom_afdb/`（AFDB 260）以及 VAD 两目录（2,033 + 2,009），
+> 并换上新版 `fullatom_map.json`（25,743 条）—— 线上实际体积已大于上表的 4,561 MB。
+
 覆盖性证明（`tmp_check_20260930/check_local_coverage.py`，6 条判据全 PASS）：
 索引 17,918 个 `fas` 在 `fullatom_map` 中命中率 **100%**，映射目录全部落在已上传的三个之内，
 本地文件 0 缺失，tar 清单 0 缺漏、0 多余；`fas` 含 `/ \ : * ? " < > |` 者 **0**
@@ -219,8 +225,8 @@ location /structures3d/ {
 
 ### 与 Explorer 集成（**尚未实现**）
 
-`index.html` 目前**不解析 URL 参数**（没有 `?species=&protein=` 入口），所以
-`dcc.Loading` + `html.Iframe` 指过去的做法需要先给 `index.html` 加 URL 参数支持。
+`rvpsd.html` 目前**不解析 URL 参数**（没有 `?species=&protein=` 入口），所以
+`dcc.Loading` + `html.Iframe` 指过去的做法需要先给 `rvpsd.html` 加 URL 参数支持。
 本轮按老师要求**未改 Explorer**。
 
 ## VAD 补充批次（structures_vad/ + structures_vad_dimers/，2026-10-01）
@@ -280,10 +286,10 @@ RVPSD 63.9），物种列表与下拉框用「RVPSD对照」标签区分。
 `rvpsd_fetch/verify_pdb_dir.py` 的 SEQRES 检查对它不适用，已用
 `vad_fetch/verify_vad.py` 专用校验。
 
-**前端**：`vad.html`（与 index.html 同款 PDBe Molstar 流程）+
+**前端**：`vad.html`（与 rvpsd.html 同款 PDBe Molstar 流程）+
 `data/vad_index.json`，支持单体/同源二聚体一键切换；物种列表带
 「陆生植物病毒 / 绿藻病毒」标签，可按宿主搜索，对照版蛋白带
-「RVPSD 已有·VAD 对照版」徽章与 pLDDT 对比。index.html 页眉加了入口链接。
+「RVPSD 已有·VAD 对照版」徽章与 pLDDT 对比。rvpsd.html 页眉加了入口链接。
 部署时除索引引用文件外，还需上传 `vad.html`、`vad_index.json` 与两个结构目录。
 
 序列级比对用的本地序列库与中间产物（`local_fulllength_seqs.json`、

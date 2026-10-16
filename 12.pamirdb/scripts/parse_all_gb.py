@@ -1,18 +1,42 @@
 #!/usr/bin/env python3
-"""Parse ALL GenBank .gb files from 3 directories to extract family/genus/species taxonomy."""
+"""Parse ALL GenBank .gb files from known directories to extract family/genus/species taxonomy."""
 import re, os, json, sqlite3
 from collections import defaultdict
+from pathlib import Path
 
-VIRUS_JSON = "/opt/pamirdb/data/virus_genomes/viruses.json"
-DB_PATH = "/opt/pamirdb/data/pamirdb.sqlite"
+PAMIRDB_DIR = Path(__file__).resolve().parents[1]
+DATA_DIR = PAMIRDB_DIR / "data"
+DB_PATH = DATA_DIR / "pamirdb.sqlite"
+
+
+def resolve_virus_json():
+    """viruses.json 是老版文件名；现行管线只有 viruses_annotated.json 时用它。"""
+    for name in ("viruses.json", "viruses_annotated.json"):
+        p = DATA_DIR / "virus_genomes" / name
+        if p.exists():
+            return p
+    return DATA_DIR / "virus_genomes" / "viruses.json"
+
+
+VIRUS_JSON = resolve_virus_json()
 
 FAMILY_PAT = re.compile(r'(\w+viridae)', re.IGNORECASE)
 GENUS_PAT = re.compile(r'(\w+virus)\b', re.IGNORECASE)
 
 
 def find_all_gb_files():
-    """Find all .gb files across all directories."""
-    dirs = [
+    """Find all .gb files across all directories.
+
+    来源目录优先级：$PAMIRDB_GB_DIRS（os.pathsep 分隔）> 仓库内候选 > 旧服务器路径。
+    缺失的目录直接跳过（与原行为一致）。
+    """
+    dirs = []
+    env = os.environ.get("PAMIRDB_GB_DIRS")
+    if env:
+        dirs += [d for d in env.split(os.pathsep) if d]
+    dirs += [
+        str(PAMIRDB_DIR / "genbank_records"),
+        str(PAMIRDB_DIR.parent / "data" / "genbank_records"),
         "/opt/plant_virus_db/plant_virus_db_pipeline/13.virus_profile/genbank_records",
         "/opt/plant_virus_db/plant_virus_db_pipeline/7.literature_tracker/genbank_records",
         "/opt/plant_virus_db/plant_virus_db_pipeline/genome_annotations",
@@ -122,6 +146,13 @@ def main():
     print('Phase 1: Scanning all GB files...')
     all_files = find_all_gb_files()
     print('Total .gb files: %d' % len(all_files))
+    if not all_files:
+        raise SystemExit(
+            'ERROR: 未找到任何 .gb 文件（原始 GenBank 记录已随 13.virus_profile 删除）。\n'
+            '  重新获取后用环境变量 PAMIRDB_GB_DIRS=<目录1%s目录2> 指定来源后重跑。' % os.pathsep
+        )
+    if not VIRUS_JSON.exists():
+        raise SystemExit('ERROR: 病毒库文件不存在: %s' % VIRUS_JSON)
 
     tax_map = {}
     dup_count = 0

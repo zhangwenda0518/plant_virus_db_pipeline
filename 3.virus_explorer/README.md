@@ -14,9 +14,9 @@ flowchart TB
         FULL["Full.Info.tsv<br/>199K 记录"]
         FASTA["Full.fasta<br/>377 MB"]
         CACHE["explorer_data.pkl<br/>406 MB 预计算缓存"]
-        VECTOR["virus_vector_merged.json<br/>1,806 病毒媒介数据"]
+        VECTOR["virus_vector_merged.json<br/>1,803 病毒媒介数据"]
         ANNO["genome_annotations/<br/>4,726 物种 GB 注释"]
-        PAPERS["papers.json<br/>7,099 文献"]
+        PAPERS["papers.json<br/>33,325 文献"]
         MAP["name_mapping.tsv<br/>NCBI↔ICTV"]
     end
 

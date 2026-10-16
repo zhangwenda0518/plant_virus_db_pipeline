@@ -453,53 +453,10 @@ app.index_string = '''<!DOCTYPE html>
 <html>
 <head>{%metas%}<title>{%title%}</title>{%favicon%}{%css%}
 <style>
-#ai-chat-btn{position:fixed;bottom:24px;right:24px;width:48px;height:48px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;z-index:9999;box-shadow:0 4px 12px rgba(102,126,234,.4);transition:transform .2s}
-#ai-chat-btn:hover{transform:scale(1.1)}
-#ai-chat-panel{position:fixed;bottom:84px;right:24px;width:400px;max-height:520px;background:#fff;border:1px solid #dee2e6;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:9998;display:none;flex-direction:column;font-family:Inter,sans-serif}
-.chat-header{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-bottom:1px solid #eee;border-radius:12px 12px 0 0;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;font-weight:600;font-size:14px}
-.chat-header button{background:none;border:none;color:#fff;font-size:18px;cursor:pointer}
-.chat-msgs{flex:1;overflow-y:auto;padding:10px;max-height:360px}
-.chat-msg{margin:4px 0;padding:8px 12px;border-radius:10px;font-size:13px;line-height:1.5;max-width:85%;word-break:break-word}
-.chat-msg.user{background:#667eea;color:#fff;margin-left:auto}
-.chat-msg.ai{background:#f0f0f5;color:#333}
-.chat-msg.system{background:#fff3cd;color:#856404;text-align:center;max-width:100%;font-size:11px}
-.chat-input-row{display:flex;gap:8px;padding:10px 12px;border-top:1px solid #eee}
-.chat-input-row input{flex:1;padding:8px 12px;border:1px solid #dee2e6;border-radius:20px;font-size:13px;outline:none}
-.chat-input-row button{padding:6px 16px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border:none;border-radius:20px;font-size:13px;cursor:pointer}
-.ai-typing{display:flex;gap:4px;padding:8px 12px}
-.ai-typing span{width:6px;height:6px;background:#999;border-radius:50%;animation:aiBounce 1.4s infinite ease-in-out}
-.ai-typing span:nth-child(2){animation-delay:.2s}.ai-typing span:nth-child(3){animation-delay:.4s}
-@keyframes aiBounce{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
-.preset-qs{display:flex;flex-wrap:wrap;gap:4px;padding:6px 10px;border-bottom:1px solid #eee;background:#fafafa}
-.preset-q{background:#fff;border:1px solid #dee2e6;border-radius:14px;padding:3px 10px;font-size:11px;cursor:pointer;color:#555;white-space:nowrap;max-width:180px;overflow:hidden;text-overflow:ellipsis;transition:all .2s}
-.preset-q:hover{background:#667eea;color:#fff;border-color:#667eea}
 </style>
 </head>
-<body>{%app_entry%}<footer>{%config%}{%scripts%}{%renderer%}</footer>
-<button id="ai-chat-btn" onclick="toggleChat()" title="AI Assistant">?</button>
-<div id="ai-chat-panel">
-<div class="chat-header"><span>Explorer AI Assistant</span><div><button onclick="toggleSettings()" style="background:none;border:none;color:#fff;font-size:14px;cursor:pointer;margin-right:8px" title="设置">⚙</button><button onclick="toggleChat()">×</button></div></div>
-<div id="ai-settings-inline" style="display:none;padding:10px 12px;border-bottom:1px solid #eee;background:#f8f9fa">
-<div style="display:flex;gap:6px;flex-wrap:wrap">
-<input id="ai-api-key" type="password" placeholder="API Key (sk-...)" style="flex:1;min-width:120px;padding:5px 8px;border:1px solid #dee2e6;border-radius:4px;font-size:11px">
-<input id="ai-model" value="deepseek-chat" style="width:120px;padding:5px 8px;border:1px solid #dee2e6;border-radius:4px;font-size:11px">
-<button onclick="saveAISettings()" style="padding:5px 10px;background:#667eea;color:#fff;border:none;border-radius:4px;font-size:11px;cursor:pointer">保存</button>
-</div></div>
-<div class="preset-qs"><button class="preset-q" onclick="askPreset('What features does this Explorer have? How do I use it?')">Explorer Features</button><button class="preset-q" onclick="askPreset('CP基因变异分析图怎么看？')">CP变异分析解读</button><button class="preset-q" onclick="askPreset('植物病毒在全球的分布有什么特点？')">全球分布特点</button><button class="preset-q" onclick="askPreset('如何筛选特定Country的病毒数据？')">数据筛选方法</button></div>
-<div class="chat-msgs" id="chat-msgs"><div class="chat-msg system">Hello! I'm the Explorer AI Assistant. Click a preset question below or type your own.</div></div>
-<div class="chat-input-row"><input id="chat-input" placeholder="Type your question..." onkeydown="if(event.key==='Enter')sendMsg()"><button onclick="sendMsg()">Send</button></div></div>
-<script>
-var chatConv=[],chatOpen=false;
-function askPreset(q){document.getElementById("chat-input").value=q;sendMsg()}
-function toggleChat(){chatOpen=!chatOpen;document.getElementById("ai-chat-panel").style.display=chatOpen?"flex":"none"}
-function toggleSettings(){var p=document.getElementById("ai-settings-inline");p.style.display=p.style.display==="none"?"block":"none"}
-function saveAISettings(){localStorage.setItem("ai_api_key",document.getElementById("ai-api-key").value);localStorage.setItem("ai_model",document.getElementById("ai-model").value);document.getElementById("ai-settings-inline").style.display="none";addChatMsg("system","设置已保存")}
-(function(){var k=localStorage.getItem("ai_api_key");if(k)document.getElementById("ai-api-key").value=k;var m=localStorage.getItem("ai_model");if(m)document.getElementById("ai-model").value=m})();
-function addChatMsg(role,text){var d=document.createElement("div");d.className="chat-msg "+role;d.textContent=text;document.getElementById("chat-msgs").appendChild(d);document.getElementById("chat-msgs").scrollTop=document.getElementById("chat-msgs").scrollHeight}
-function showTyping(){var d=document.createElement("div");d.className="ai-typing";d.id="typing-indicator";d.innerHTML="<span></span><span></span><span></span>";document.getElementById("chat-msgs").appendChild(d)}
-function hideTyping(){var t=document.getElementById("typing-indicator");if(t)t.remove()}
-async function sendMsg(){var inp=document.getElementById("chat-input");var msg=inp.value.trim();if(!msg)return;addChatMsg("user",msg);inp.value="";chatConv.push({role:"user",content:msg});var key=localStorage.getItem("ai_api_key")||"";showTyping();try{var resp=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:msg,api_key:key,api_url:"https://api.deepseek.com/v1/chat/completions",model:localStorage.getItem("ai_model")||"deepseek-chat",conversation:chatConv.slice(-8),context:"explorer"})});var data=await resp.json();hideTyping();addChatMsg("ai",data.reply);chatConv.push({role:"assistant",content:data.reply})}catch(e){hideTyping();addChatMsg("system","请求失败: "+e.message)}}
-</script>
+<body><script src="/lib/site-nav.js?v=2"></script>{%app_entry%}<footer>{%config%}{%scripts%}{%renderer%}</footer>
+<script src="/lib/ai-assistant.js?v=2" data-context="explorer" defer></script>
 <script src="/reference/i18n.js"></script>
 <script>setTimeout(function(){PVDB_i18n.init({navSelector:"nav"});},800);</script>
 </body>
@@ -880,7 +837,6 @@ app.layout = dmc.MantineProvider(
         "primaryColor": "blue",
     },
     children=dmc.AppShell(
-        header={"height": 52},
         padding="md",
         children=[
             dcc.Location(id="url", refresh=False),
@@ -890,60 +846,18 @@ app.layout = dmc.MantineProvider(
             dcc.Store(id="filtered-virus-counts"),
             dcc.Store(id="filtered-trends-agg"),
 
-            # Unified navbar (9 cross-platform entries + branding) — Python 3.6 compat, avoid define in layout
-            dmc.AppShellHeader(
-                px="md",
-                style={"background": "#1a5276"},
-                children=dmc.Group(
-                    justify="space-between",
-                    h="100%",
-                    children=[
-                        dmc.Group(gap=0, children=[
-                            html.A("Plant Virus DB", href="/",
-                                   style={"color":"#fff","fontWeight":700,"fontSize":"16px","textDecoration":"none","padding":"14px 10px 14px 0"}),
-                            html.A("Reference", href="/reference/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.A("Explorer", href="/explorer/",
-                                   style={"color":"#fff","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"600"}),
-                            html.Span("|", style={"color":"rgba(255,255,255,0.25)","padding":"14px 2px"}),
-                            html.A("Virus Profile", href="/virus/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.A("Photos", href="/photos/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.A("TE & EVE", href="/te/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.A("Vector", href="/vector/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.A("Genes", href="/genes/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.A("Primers", href="/primers/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.A("OneKP", href="/onekp/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.Span("|", style={"color":"rgba(255,255,255,0.25)","padding":"14px 2px"}),
-                            html.A("Metabuli", href="/metabuli/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.A("PV-miRNA", href="/pamirdb/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.Span("|", style={"color":"rgba(255,255,255,0.25)","padding":"14px 2px"}),
-                            html.A("Literature", href="/literature/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.A("Knowledge", href="/knowledge/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.A("Resources", href="/resources.html",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                            html.A("Help", href="/help/",
-                                   style={"color":"rgba(255,255,255,0.8)","fontSize":"13px","textDecoration":"none","padding":"14px 10px","fontWeight":"normal"}),
-                        ]),
-                        dmc.Group(gap="xs", children=[
-                            dmc.Badge(str(N_SPECIES) + " species", color="gray", variant="filled"),
-                            dmc.Badge(str(len(df_global)) + " sequences", color="blue", variant="filled"),
-                            dmc.Badge(DATA_VERSION.split(" | ")[0] if " | " in DATA_VERSION else DATA_VERSION, color="green", variant="light")
-                        ])
-                    ]
-                )
-            ),
             # Analysis Dashboard
+            html.Div(
+                dmc.Group(
+                    justify="flex-end", gap="xs",
+                    children=[
+                        dmc.Badge(str(N_SPECIES) + " species", color="gray", variant="filled"),
+                        dmc.Badge(str(len(df_global)) + " sequences", color="blue", variant="filled"),
+                        dmc.Badge(DATA_VERSION.split(" | ")[0] if " | " in DATA_VERSION else DATA_VERSION, color="green", variant="light")
+                    ]
+                ),
+                style={"padding": "2px 6px 8px 0"},
+            ),
             dmc.AppShellMain(
                 children=dmc.Grid(
                     gutter="md",
@@ -1029,7 +943,7 @@ app.layout = dmc.MantineProvider(
                                     dmc.Switch(
                                         id="filter-na",
                                         label="Exclude Records w/o Collection Date (NA)",
-                                        checked=False,
+                                        checked=True,
                                         mb="md"
                                     ),
 
@@ -1094,13 +1008,6 @@ app.layout = dmc.MantineProvider(
                                     dmc.Divider(my="md"),
 
                                     dmc.Button(
-                                        "📋 Virus Profiles (filtered)",
-                                        id="vp-link-btn", variant="outline",
-                                        color="indigo", fullWidth=True, radius="md", size="sm",
-                                        mb="8px",
-                                    ),
-
-                                    dmc.Button(
                                         "Apply Filters & Refresh Charts",
                                         id="query-btn",
                                         color="teal",
@@ -1124,7 +1031,7 @@ app.layout = dmc.MantineProvider(
                                 children=[
                                     dmc.Tabs(
                                         id="main-tabs",
-                                        value="table",
+                                        value="profile",
                                         children=[
                                             dmc.TabsList(
                                                 mb="md",
@@ -2236,9 +2143,10 @@ def _pick_display_default(ordered, current=None, valid=None):
      Output("vector-virus-select", "data"),
      Output("vector-virus-select", "value")],
     Input("filtered-virus-counts", "data"),
+    Input("url", "search"),
     prevent_initial_call=True,
 )
-def sync_display_virus_selectors(virus_counts):
+def sync_display_virus_selectors(virus_counts, search):
     ordered = _ordered_organism_counts(virus_counts)
     if not ordered:
         return [], [], [], [], [], [], [], []
@@ -2246,8 +2154,24 @@ def sync_display_virus_selectors(virus_counts):
     # Profile 只列参考库里确实有 Profile 的物种（NCBI 名 / ICTV 名均可命中）
     p_opts = [o for o in opts if _has_profile(o["value"])]
     p_valid = {o["value"] for o in p_opts}
+    # 深链 ?profile=<物种> 优先于「最丰富物种」默认值：selector 每次同步都检查 URL，
+    # 否则首载 filter 链路完成后的这次同步会把深链物种覆盖回默认值
+    from urllib.parse import parse_qs, unquote
+    req = None
+    if search:
+        req = parse_qs(search.lstrip("?")).get("profile", [None])[0]
+        if req:
+            req = unquote(req)
+            if not _has_profile(req):
+                req = None
+    if req:
+        p_default = [req]
+        if req not in p_valid:
+            p_opts = p_opts + [{"value": req, "label": req}]
+    else:
+        p_default = _pick_display_default(ordered, valid=p_valid)
     return (opts, _pick_display_default(ordered),
-            p_opts, _pick_display_default(ordered, valid=p_valid),
+            p_opts, p_default,
             opts, _pick_display_default(ordered),
             opts, _pick_display_default(ordered))
 
@@ -2339,28 +2263,14 @@ def _build_vector_sankey(rels, focus_names, max_viruses=22, max_hosts=25):
 
 
 
-# ── Virus Profiles 按钮：站内直接切换到 Virus Profile 标签（vp 独立页已并入）──
-@callback(
-    Output("main-tabs", "value"),
-    Output("profile-select", "value"),
-    Input("vp-link-btn", "n_clicks"),
-    State("virus-filter", "value"),
-    State("main-tabs", "value"),
-    prevent_initial_call=True,
-)
-def open_profile_tab(n, viruses, cur_tab):
-    if not n:
-        return cur_tab, no_update
-    # 取左栏筛选里第一个「参考库有 Profile」的物种；profile-select 现为多选（值为列表）
-    species = next((v for v in (viruses or []) if _has_profile(v)), None)
-    return "profile", ([species] if species else no_update)
-
 # ── 深链兼容: /explorer/?profile=<物种>（/virus/<物种> 重定向而来）──
+# （原「📋 Virus Profiles (filtered)」跳转按钮已删：Virus Profile 自 2026-10-11 起为默认标签，按钮冗余）
 @callback(
     Output("main-tabs", "value", allow_duplicate=True),
     Output("profile-select", "value", allow_duplicate=True),
     Input("url", "search"),
-    prevent_initial_call=True,
+    # "initial_duplicate"：首载触发（否则 ?profile= 硬加载不生效），同时满足 allow_duplicate 的约束
+    prevent_initial_call="initial_duplicate",
 )
 def parse_profile_deeplink(search):
     from urllib.parse import parse_qs, unquote

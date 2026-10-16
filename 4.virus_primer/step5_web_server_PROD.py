@@ -163,6 +163,34 @@ for _facts_path in (Path("/opt/plant_virus_db/plant_virus_db_pipeline/docs/data/
 # 本机知识库 RAG 检索接口（explorer / reference_db 分支接地用，纯检索不花 LLM）
 KB_SEARCH_URL = SERVER_AI_CONFIG.get('KB_SEARCH_URL', 'http://127.0.0.1:5002/search')
 
+# 文献追踪站（7.literature_tracker）实时统计：/api/chat 所有页面 persona 共享的
+# 站级事实，读 tracker 预生成的 stats.json（mtime 缓存，文件不变化就不重读）。
+_LIT_FACTS = {"mtime": None, "data": None}
+
+
+def _literature_facts():
+    try:
+        path = next(p for p in _pipeline_candidates("7.literature_tracker/web/data/stats.json") if p.exists())
+    except StopIteration:
+        return None
+    try:
+        mtime = path.stat().st_mtime
+        if _LIT_FACTS["mtime"] != mtime:
+            d = json.loads(path.read_text(encoding='utf-8'))
+            years = sorted(int(y) for y in (d.get("by_year") or {}))
+            _LIT_FACTS["data"] = {
+                "total": d.get("total", 0),
+                "year_min": years[0] if years else "?",
+                "year_max": years[-1] if years else "?",
+                "n_cat": len(d.get("by_category") or {}),
+                "ai_pct": round(100.0 * (d.get("ai_summarized") or 0) / d["total"], 1) if d.get("total") else 0,
+                "last_updated": d.get("last_updated", ""),
+            }
+            _LIT_FACTS["mtime"] = mtime
+        return _LIT_FACTS["data"]
+    except Exception:
+        return None
+
 
 # ── 跨库取数：媒介-宿主库（8.plant-insect）+ 症状照片库（docs/data）──
 def _pipeline_candidates(rel):
@@ -350,7 +378,7 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        body { padding-top: 60px; background-color: #f8f9fa; }
+        body { background-color: #f8f9fa; }
         .navbar-brand { font-weight: bold; }
         .primer-seq { font-family: 'Courier New', monospace; font-size: 14px;
                       background: #e9ecef; padding: 4px 8px; border-radius: 4px;
@@ -367,53 +395,11 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
         .copy-btn { cursor: pointer; font-size: 12px; }
         .probe-seq { font-family: 'Courier New', monospace; font-size: 13px;
                      background: #d1ecf1; padding: 3px 6px; border-radius: 4px; }
-        #ai-chat-btn {position:fixed;bottom:24px;right:24px;width:48px;height:48px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;z-index:9999;box-shadow:0 4px 12px rgba(102,126,234,.4);transition:transform .2s}
-        #ai-chat-btn:hover {transform:scale(1.1)}
-        #ai-chat-panel {position:fixed;bottom:84px;right:24px;width:420px;max-height:560px;background:#fff;border:1px solid #dee2e6;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:9998;display:none;flex-direction:column}
-        .chat-header {display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #eee;border-radius:12px 12px 0 0;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;font-weight:600;font-size:14px}
-        .chat-header button {background:none;border:none;color:#fff;font-size:18px;cursor:pointer}
-        .chat-msgs {flex:1;overflow-y:auto;padding:12px;max-height:380px}
-        .chat-msg {margin:6px 0;padding:8px 12px;border-radius:10px;font-size:13px;line-height:1.5;max-width:85%;word-break:break-word}
-        .chat-msg.user {background:#667eea;color:#fff;margin-left:auto}
-        .chat-msg.ai {background:#f0f0f5;color:#333}
-        .chat-msg.system {background:#fff3cd;color:#856404;text-align:center;max-width:100%;font-size:11px}
-        .chat-input-row {display:flex;gap:8px;padding:10px 12px;border-top:1px solid #eee}
-        .chat-input-row input {flex:1;padding:8px 12px;border:1px solid #dee2e6;border-radius:20px;font-size:13px;outline:none}
-        .chat-input-row button {padding:6px 16px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border:none;border-radius:20px;font-size:13px;cursor:pointer}
-        #ai-settings-inline input {outline:none}
-        .ai-typing {display:flex;gap:4px;padding:8px 12px}
-        .ai-typing span {width:6px;height:6px;background:#999;border-radius:50%;animation:aiBounce 1.4s infinite ease-in-out}
-        .ai-typing span:nth-child(2) {animation-delay:.2s}
-        .ai-typing span:nth-child(3) {animation-delay:.4s}
-        @keyframes aiBounce {0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
-        .preset-qs {display:flex;flex-wrap:wrap;gap:4px;padding:6px 10px;border-bottom:1px solid #eee;background:#fafafa}
-        .preset-q {background:#fff;border:1px solid #dee2e6;border-radius:14px;padding:3px 10px;font-size:11px;cursor:pointer;color:#555;white-space:nowrap;max-width:180px;overflow:hidden;text-overflow:ellipsis;transition:all .2s}
-        .preset-q:hover {background:#667eea;color:#fff;border-color:#667eea}
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <i class="bi-virus"></i> PlantVirus Primer DB
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/"><i class="bi-house"></i> 首页</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/search"><i class="bi-search"></i> 搜索</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/primers/design"><i class="bi-pencil-square"></i> 设计</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/browse"><i class="bi-list"></i> 浏览</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/api/"><i class="bi-code"></i> API</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/download"><i class="bi-download"></i> 下载</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/reference/" style="color:#81c784"><i class="bi-arrow-left-right"></i> Reference DB</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/explorer/" style="color:#64b5f6"><i class="bi-arrow-left-right"></i> Explorer</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<script src="/lib/site-nav.js?v=2"></script>
+    
 
     <div class="container">
         {% block content %}{% endblock %}
@@ -437,106 +423,7 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
     </script>
     {% block scripts %}{% endblock %}
     <!-- AI Chat -->
-    <button id="ai-chat-btn" onclick="toggleChat()" title="AI助手">?</button>
-    <div id="ai-chat-panel">
-        <div class="chat-header"><span>PrimerDB AI助手</span><div><button onclick="toggleSettings()" style="background:none;border:none;color:#fff;font-size:14px;cursor:pointer;margin-right:8px" title="设置">⚙</button><button onclick="toggleChat()">×</button></div></div>
-        <div id="ai-settings-inline" style="display:none;padding:10px 12px;border-bottom:1px solid #eee;background:#f8f9fa">
-            <div style="display:flex;gap:6px;flex-wrap:wrap">
-                <input id="ai-api-key" type="password" placeholder="API Key (sk-...)" style="flex:1;min-width:120px;padding:5px 8px;border:1px solid #dee2e6;border-radius:4px;font-size:11px">
-                <input id="ai-model" value="deepseek-chat" style="width:120px;padding:5px 8px;border:1px solid #dee2e6;border-radius:4px;font-size:11px">
-                <button onclick="saveAISettings()" style="padding:5px 10px;background:#667eea;color:#fff;border:none;border-radius:4px;font-size:11px;cursor:pointer">保存</button>
-            </div>
-        </div>
-        <div class="preset-qs" id="preset-qs">
-<button class="preset-q" onclick="askPreset('TSWV的最佳PCR引物有哪些？')">TSWV最佳PCR引物</button>
-<button class="preset-q" onclick="askPreset('推荐检测TMV的qPCR引物')">TMV的qPCR引物</button>
-<button class="preset-q" onclick="askPreset('比较PCR和qPCR引物的优缺点')">PCR vs qPCR对比</button>
-<button class="preset-q" onclick="askPreset('引物评分RECOMMENDED是什么意思？')">引物评分说明</button>
-</div>
-        <div class="chat-msgs" id="chat-msgs"><div class="chat-msg system">你好！我是PrimerDB AI助手。可以直接点下方预设问题，或输入你的问题。</div></div>
-        <div class="chat-input-row">
-            <input id="chat-input" placeholder="输入问题..." onkeydown="if(event.key==='Enter')sendMsg()">
-            <button onclick="sendMsg()">发送</button></div>
-    </div>
-    <script>
-    var chatConv = [];
-    var chatOpen = false;
-    function askPreset(q) {
-        document.getElementById('chat-input').value = q;
-        sendMsg();
-    }
-    function toggleChat() {
-        chatOpen = !chatOpen;
-        document.getElementById('ai-chat-panel').style.display = chatOpen ? 'flex' : 'none';
-    }
-    function toggleSettings() {
-        var p = document.getElementById('ai-settings-inline');
-        p.style.display = p.style.display === 'none' ? 'block' : 'none';
-    }
-    function saveAISettings() {
-        localStorage.setItem('ai_api_key', document.getElementById('ai-api-key').value);
-        localStorage.setItem('ai_model', document.getElementById('ai-model').value);
-        document.getElementById('ai-settings-inline').style.display = 'none';
-        addChatMsg('system', '设置已保存');
-    }
-    (function(){
-        var k = localStorage.getItem('ai_api_key');
-        if(k) document.getElementById('ai-api-key').value = k;
-        var m = localStorage.getItem('ai_model');
-        if(m) document.getElementById('ai-model').value = m;
-    })();
-    function addChatMsg(role, text) {
-        var div = document.createElement('div');
-        div.className = 'chat-msg ' + role;
-        var safe = String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        var urlRe = new RegExp('(https?:)(//[^ <>]+)', 'g');
-        safe = safe.replace(urlRe, '<a href="$1$2" target="_blank" rel="noopener">$1$2</a>');
-        div.innerHTML = safe.split(String.fromCharCode(10)).join('<br>');
-        document.getElementById('chat-msgs').appendChild(div);
-        document.getElementById('chat-msgs').scrollTop = document.getElementById('chat-msgs').scrollHeight;
-    }
-    function showTyping() {
-        var div = document.createElement('div');
-        div.className = 'ai-typing';
-        div.id = 'typing-indicator';
-        div.innerHTML = '<span></span><span></span><span></span>';
-        document.getElementById('chat-msgs').appendChild(div);
-    }
-    function hideTyping() {
-        var t = document.getElementById('typing-indicator');
-        if(t) t.remove();
-    }
-    async function sendMsg() {
-        var inp = document.getElementById('chat-input');
-        var msg = inp.value.trim();
-        if(!msg) return;
-        addChatMsg('user', msg);
-        inp.value = '';
-        chatConv.push({role:'user', content:msg});
-        var key = localStorage.getItem('ai_api_key') || '';
-        // 未填自有 key 时服务端返回 401 提示 (服务器不再提供 key)
-        showTyping();
-        try {
-            var resp = await fetch('/api/chat', {
-                method:'POST',
-                headers:{'Content-Type':'application/json'},
-                body:JSON.stringify({
-                    message: msg,
-                    api_key: key,
-                    model: localStorage.getItem('ai_model')||'deepseek-chat',
-                    conversation: chatConv.slice(-8)
-                })
-            });
-            var data = await resp.json();
-            hideTyping();
-            addChatMsg('ai', data.reply);
-            chatConv.push({role:'assistant', content:data.reply});
-        } catch(e) {
-            hideTyping();
-            addChatMsg('system', '请求失败: ' + e.message);
-        }
-    }
-    </script>
+    <script src="/lib/ai-assistant.js?v=2" data-context="primers" defer></script>
     <script src="/reference/i18n.js"></script>
     <script>PVDB_i18n.init({navSelector:'nav.navbar,.navbar'});</script>
 </body>
@@ -2439,8 +2326,10 @@ def create_app():
         data = request.get_json(force=True)
         user_msg = data.get('message', '').strip()
         api_key = str(data.get('api_key', '') or '').strip()
-        # 安全修复 (P0-5): api_url 由服务端固定, 忽略客户端传入 (防 SSRF);
-        # 不再回退服务器 key, key 必须由调用方 (浏览器用户) 自备
+        # 安全策略 (P0-5 演进, 2026-10-12): api_url 由服务端固定 (防 SSRF)。
+        # key 优先用浏览器用户自备的; 用户未带 key 时回退服务器 key (.env AI_API_KEY),
+        # 让全站统一悬浮窗开箱即用——与 /knowledge/query 同一信任级别, 由 nginx 对
+        # /api/chat 的 limit_req (pvdb_llm zone) 防刷。未配置服务器 key 时仍要求自备。
         api_url = DEEPSEEK_CHAT_API_URL
         model = str(data.get('model', 'deepseek-chat') or 'deepseek-chat').strip()
         conversation = data.get('conversation', [])
@@ -2449,8 +2338,11 @@ def create_app():
             model = SERVER_AI_CONFIG.get("AI_MODEL", model)
         if len(user_msg.encode('utf-8', errors='ignore')) > MAX_CHAT_MSG_BYTES:
             return jsonify({"reply": f"消息过长 (上限 {MAX_CHAT_MSG_BYTES // 1024} KB)。"}), 413
+        srv_key = str(SERVER_AI_CONFIG.get('AI_API_KEY', '') or '').strip()
+        if not api_key and srv_key:
+            api_key = srv_key
         if not user_msg or not api_key:
-            return jsonify({"reply": "未配置API Key。请点击 ⚙ 填入你自己的 DeepSeek API Key (服务器不再提供 key)。"}), 401
+            return jsonify({"reply": "服务器未配置 AI 服务，且未提供个人 API Key。可点击 ⚙ 填入你自己的 DeepSeek API Key（可选）。"}), 401
 
         context = data.get('context', 'primers')
         db = get_db()
@@ -2521,17 +2413,24 @@ def create_app():
             except Exception as e:
                 app.logger.warning("[api/chat] cross-db lookup failed: %s", e)
 
-        # 知识库接地（explorer / reference_db 分支）：只调本机 RAG 服务的纯检索
-        # 接口，不多花一次 LLM 调用，RAG 不可用时静默跳过。
+        # 知识库接地（所有页面 persona 通用）：只调本机 RAG 服务的纯检索接口，
+        # 不多花一次 LLM 调用，RAG 不可用时静默跳过。2026-10-12 升级：
+        # limit 3→8、摘录 600→900 字符，并附带来源链接/年份供模型引用——
+        # 与 /knowledge/query 同源的文档级 BM25 聚合检索。
         kb_info = ""
         try:
-            rr = requests.get(KB_SEARCH_URL, params={"q": user_msg, "limit": 3}, timeout=8)
+            rr = requests.get(KB_SEARCH_URL, params={"q": user_msg, "limit": 8}, timeout=8)
             if rr.status_code == 200:
                 items = (rr.json() or {}).get("results") or []
                 if items:
-                    kb_info = "\n\n[知识库检索片段——回答病毒学内容时请以这些片段为准并标注 [来源]]:\n"
+                    kb_info = "\n\n[知识库检索片段——回答病毒学内容时请以这些片段为准并标注来源]:\n"
                     for k, it in enumerate(items, 1):
-                        kb_info += f"[{k}] ({it.get('source', '')}) {it.get('title', '')}: {(it.get('text') or '')[:600]}\n"
+                        frag = f"[{k}] ({it.get('source', '')}) {it.get('title', '')}: {(it.get('text') or '')[:900]}"
+                        if it.get('url'):
+                            frag += f" [链接: {it['url']}]"
+                        elif it.get('year'):
+                            frag += f" [年份: {it['year']}]"
+                        kb_info += frag + "\n"
         except Exception as e:
             app.logger.warning("[api/chat] KB retrieval failed: %s", e)
 
@@ -2572,7 +2471,105 @@ def create_app():
 - 附有跨库记录（媒介-宿主、症状照片、站内深链）时同样引用使用，并在末尾附“相关页面直达：”一节。
 - 用户消息后附有含引物序列的物种记录时，直接列出引物（每对一行：[类型] Fwd/Rev、产物bp、评分）；需要进一步筛选或下载再引导到Primers数据库(/primers/)；原始数据表在Reference DB(/reference/)。
 - 保持回复简洁，200字以内"""
-        else:
+        elif context == 'knowledge':
+            db_context = f"""你是全站AI助手，当前位于植物病毒知识库页面（ICTV/DPV/ViroidDB/精选文献的检索 + AI 问答）。
+本服务器实时统计: {total_tax_species} 个物种 / {total_tax_families} 个科；{total_primers} 对引物覆盖 {total_species} 个物种。
+
+你可以帮用户:
+1. 基于下方附带的知识库片段回答植物病毒学问题
+2. 解释本页关键词检索与 AI 问答的用法区别
+3. 引导到更深的工具: 引物库 (/primers/)、探索器 (/explorer/)、文献追踪 (/literature/)
+
+注意：
+- 附有知识库检索片段时，病毒学内容请以片段为准并标注来源；片段不足时如实说明，不要编造。
+- 附有跨库记录（媒介-宿主、症状照片、站内深链）时同样引用使用，并在末尾附“相关页面直达：”一节。
+- 保持回复简洁，200字以内"""
+        elif context == 'literature':
+            db_context = f"""你是全站AI助手，当前位于文献追踪站页面（PubMed/arXiv/bioRxiv 植物病毒论文的周报/月报追踪）。
+本服务器实时统计: {total_tax_species} 个物种 / {total_tax_families} 个科；{total_primers} 对引物覆盖 {total_species} 个物种。
+
+你可以帮用户:
+1. 解释文献追踪站的功能与各标签页用法（Manual Search、Weekly Track、周报月报、趋势）
+2. 指导 PubMed 语法检索与 XLSX/JSON 导出（可对接分析流程）
+3. 病毒学问题引导到附带的检索片段，引物问题引导到引物库 (/primers/)
+
+注意：
+- 你无法凭记忆列出具体论文清单：请引导用户用页面上的标签/筛选查看实时列表；病毒学论断以下方附带的知识库片段为准并标注来源。
+- 附有跨库记录与深链时同样引用使用，并在末尾附“相关页面直达：”一节。
+- 保持回复简洁，200字以内"""
+        elif context == 'metabuli':
+            db_context = f"""你是全站AI助手，当前位于 Metabuli 分类页面（植物病毒序列的宏基因组分类）。
+本服务器实时统计: {total_tax_species} 个物种 / {total_tax_families} 个科。
+
+你可以帮用户:
+1. 解释宏基因组分类原理与输入文件准备（FASTA，上限110MB）
+2. 解读分类结果报告（分类层级、丰度、覆盖度）
+3. 引导各子功能（classify / BLASTn / BLASTx / 引物设计）
+
+注意：
+- 交互式任务在本页表单完成，你只负责解释与结果解读。
+- 病毒学论断以下方附带的知识库片段为准并标注来源。
+- 保持回复简洁，200字以内"""
+        elif context == 'vector':
+            db_context = f"""你是全站AI助手，当前位于媒介-宿主数据库页面（病毒-媒介-宿主关联数据，CABI/WUR 来源整理）。
+本服务器实时统计: {total_tax_species} 个物种 / {total_tax_families} 个科；用户消息解析到物种时会自动附上媒介-宿主记录。
+
+你可以帮用户:
+1. 查询某个病毒由哪些媒介传播、感染哪些宿主
+2. 解释传播生态（蚜虫、粉虱、甲虫、土传等）
+3. 引导到相关工具: 探索器 (/explorer/)、引物库 (/primers/)、症状照片 (/photos/)
+
+注意：
+- 媒介/宿主问题优先基于附带的跨库记录回答；没有时如实说明。
+- 病毒学论断以下方附带的知识库片段为准并标注来源。
+- 保持回复简洁，200字以内"""
+        elif context == 'onekp':
+            db_context = f"""你是全站AI助手，当前位于 1KP 病毒组面板（OneKP 项目 1,344 个植物转录组样本的病毒发现结果）。
+本服务器实时统计: {total_tax_species} 个物种 / {total_tax_families} 个科。
+
+你可以帮用户:
+1. 解释 1KP 病毒组数据集、样本覆盖与新病毒鉴定方法
+2. 解读面板图表与筛选器
+3. 引导到相关工具: 探索器 (/explorer/)、媒介-宿主 (/vector/)
+
+注意：
+- 病毒学论断以下方附带的知识库片段为准并标注来源；不足时如实说明。
+- 保持回复简洁，200字以内"""
+        elif context == 'pamirdb':
+            db_context = f"""你是全站AI助手，当前位于 PAmiRDB（植物病毒来源小RNA/miRNA数据库）。
+本服务器实时统计: {total_tax_species} 个物种 / {total_tax_families} 个科。
+
+你可以帮用户:
+1. 解释病毒来源 siRNA/miRNA 生物学与 PAmiRDB 的预测流程
+2. 引导检索、注释解读与数据下载
+3. 检测/验证问题引导到引物库 (/primers/) 与 Metabuli (/metabuli/)
+
+注意：
+- 病毒学论断以下方附带的知识库片段为准并标注来源。
+- 保持回复简洁，200字以内"""
+        elif context == 'structures':
+            db_context = f"""你是全站AI助手，当前位于蛋白结构查看页面（植物病毒蛋白 3D 结构: RVPSD 预测结构库与 UniProt 结构图谱）。
+本服务器实时统计: {total_tax_species} 个物种 / {total_tax_families} 个科。
+
+你可以帮用户:
+1. 解释结构预测（AlphaFold 类模型）与 MolStar 查看器的用法
+2. 引导检索、打开与下载 PDB 文件
+3. 序列层问题引导回参考库 (/reference/) 与探索器 (/explorer/)
+
+注意：
+- 蛋白生物学论断以下方附带的知识库片段为准并标注来源。
+- 保持回复简洁，200字以内"""
+        elif context == 'fold':
+            db_context = f"""你是全站AI助手，当前位于 Fold Web（结构预测任务管理: 上传结果入库、Foldify 导出、统计面板）。
+注意: 本服务器无 GPU——自动预测通道已禁用，请走"上传入库"通道。
+
+你可以帮用户:
+1. 解释上传/导入流程与结果库管理
+2. 解读折叠统计面板
+3. 结构查看引导到 /structures3d/ 与 /uniprot3d/
+
+注意：保持回复简洁，200字以内"""
+        elif context == 'primers':
             db_context = f"""你是植物病毒引物数据库(PrimerDB)的AI助手。你可以访问以下实时数据:
 - 总引物对: {total_primers}
 - 总物种: {total_species}
@@ -2597,6 +2594,26 @@ def create_app():
 4. 保持回复简洁，控制在300字以内。
 5. 用户消息后附带的物种记录里如有引物序列，必须逐条列出全部序列，不得省略。
 数据库通过SQLite访问，schema为: taxonomy(species_name,genus,family), primers(primer_id,species_name,primer_type,fwd_sequence,rev_sequence,probe_sequence,product_size,design_method), validation(primer_id,overall_score,recommendation,probe_warning)。"""
+        else:
+            # hub 兜底：首页/帮助/照片/资源等未单列 persona 的页面
+            db_context = f"""你是 PlantVirusDB（植物病毒学一站式站点）的全站AI助手，当前位于通用页面（首页/帮助/照片/资源/网络图/系统发育/EVE）。
+本站提供: 参考库 (/reference/, 约19.9万条序列, 约6,200个物种)、引物库 (/primers/, {total_primers} 对, 覆盖 {total_species} 个物种)、探索器 (/explorer/, 时空地图)、Metabuli (/metabuli/, 分类)、媒介-宿主 (/vector/)、照片 (/photos/)、基因图谱 (/genes/)、系统发育 (/phylo/)、EVE (/eve/)、结构 (/structures3d/, /uniprot3d/)、文献追踪 (/literature/)、知识库 (/knowledge/)。
+实时统计: 规范物种表 {total_tax_species} 个物种 / {total_tax_families} 个科。
+
+你可以帮用户:
+1. 指路: 根据用户的问题判断该用哪个子库，并给出直达 URL
+2. 基于附带的检索片段回答一般植物病毒学问题（标注来源；不确定时如实说明）
+3. 附有跨库记录（媒介-宿主、症状照片）时融入回答，并在末尾附“相关页面直达：”一节
+
+保持回复简洁，200字以内"""
+
+        # 2026-10-12: 文献追踪站实时统计注入——任何页面的 persona 都带上站级文献数字，
+        # 让悬浮窗答得了 "文献库有多少论文/是否还在更新" 这类全站问题。
+        lit = _literature_facts()
+        if lit:
+            db_context += (f"\n\n[全站文献追踪站 (Literature Hub, /literature/)]: 收录 {lit['total']} 篇论文 ({lit['year_min']}–{lit['year_max']})，"
+                           f"{lit['ai_pct']}% 已有 AI 摘要，覆盖 {lit['n_cat']} 个类别，最后更新 {lit['last_updated']}。"
+                           f"周报月报与手动 PubMed 检索见 /literature/。")
 
         messages = [
             {"role": "system", "content": db_context},

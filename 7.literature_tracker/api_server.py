@@ -118,10 +118,6 @@ PAGE = r'''<!DOCTYPE html>
 <link href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css" rel="stylesheet">
 <style>
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;color:#333;margin:0}
-nav{background:#1a5276;display:flex;align-items:center;padding:0 24px;height:52px}
-nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 18px;font-size:14px}
-nav a:hover{background:rgba(255,255,255,.15);color:#fff}
-nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:8px;padding:0}
 .hero{background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;padding:28px 24px;margin-bottom:20px}
 .hero h1{margin:0;font-size:22px}.hero p{margin:4px 0 0;opacity:.85;font-size:13px}
 .main{max-width:1400px;margin:0 auto;padding:0 16px}
@@ -141,7 +137,8 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:8px;padding:0}
 footer{background:#1a5276;color:rgba(255,255,255,.7);text-align:center;padding:14px;margin-top:40px;font-size:12px}
 footer a{color:rgba(255,255,255,.9)}
 </style></head><body>
-<nav><a class="brand" href="/">Plant Virus DB</a><a href="/reference/">参考库</a><a href="/explorer/">浏览器</a><a href="/primers/">引物</a><a href="/vector/">媒介</a><a href="/te/">TE·EVE</a><a href="/metabuli/">Metabuli</a><a href="/literature/" style="color:#fff;font-weight:600">文献</a><a href="/knowledge/">知识</a></nav>
+<script src="/lib/site-nav.js?v=2"></script>
+
 <div class="hero"><h1>Plant Virus Literature Tracker</h1><p>Auto-tracking recent plant virus papers from PubMed &middot; Updated daily</p></div>
 <div class="main">
 <div class="stats"><div class="stat"><div class="val" id="stat-total">{{total}}</div><div class="lbl">Papers Indexed</div></div><div class="stat"><div class="val green" id="stat-new">{{new_count}}</div><div class="lbl">New This Update</div></div><div class="stat"><div class="val">{{current_year}}</div><div class="lbl">Current Year</div></div><div class="stat"><div class="val">{{last_update}}</div><div class="lbl">Last Updated</div></div></div>

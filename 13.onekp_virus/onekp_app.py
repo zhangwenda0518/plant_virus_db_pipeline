@@ -155,6 +155,26 @@ app = dash.Dash(
     title="1KP Virome — PlantVirusDB",
     update_title=None,
 )
+# 全站统一 AI 悬浮窗（/api/chat 由 nginx 路由到引物服务后端）
+app.index_string = '''<!DOCTYPE html>
+<html>
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        {%favicon%}
+        {%css%}
+    </head>
+    <body>
+        <script src="/lib/site-nav.js?v=2"></script>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+        <script src="/lib/ai-assistant.js?v=2" data-context="onekp" defer></script>
+    </body>
+</html>'''
 server = app.server
 
 # ═══════════════════════════════════════════════════════════
@@ -179,42 +199,19 @@ app.layout = dmc.MantineProvider(
 
         # ── 导航栏 ──
         dmc.AppShell(
-            header={"height": 52},
             padding="md",
             children=[
-                dmc.AppShellHeader(
-                    px="md",
-                    style={"background": NAV_BG},
-                    children=dmc.Group(
-                        justify="space-between", h="100%",
+                html.Div(
+                    dmc.Group(
+                        justify="flex-end", gap="xs",
                         children=[
-                            dmc.Group(gap=0, children=[
-                                html.A("Plant Virus DB", href="/",
-                                       style={"color": "#fff", "fontWeight": 700, "fontSize": "16px",
-                                              "textDecoration": "none", "padding": "14px 10px 14px 0"}),
-                                html.A("1KP Virome", href="/onekp/",
-                                       style={"color": "#fff", "fontWeight": 600, "fontSize": "14px",
-                                              "textDecoration": "none", "padding": "14px 16px"}),
-                                html.Span("|", style={"color": "rgba(255,255,255,0.25)", "padding": "14px 2px"}),
-                                html.A("Explorer", href="/explorer/",
-                                       style={"color": "rgba(255,255,255,0.8)", "fontSize": "13px",
-                                              "textDecoration": "none", "padding": "14px 12px"}),
-                                html.A("Reference", href="/reference/",
-                                       style={"color": "rgba(255,255,255,0.8)", "fontSize": "13px",
-                                              "textDecoration": "none", "padding": "14px 12px"}),
-                                html.A("Primers", href="/primers/",
-                                       style={"color": "rgba(255,255,255,0.8)", "fontSize": "13px",
-                                              "textDecoration": "none", "padding": "14px 12px"}),
-                            ]),
-                            dmc.Group(gap="xs", children=[
-                                dmc.Badge("1,341 samples", color="gray", variant="filled"),
-                                dmc.Badge(f"{SUMMARY['virus_species_raw']} virus species", color="blue", variant="filled"),
-                                dmc.Badge("1KP Project", color="green", variant="light"),
-                            ]),
-                        ],
+                            dmc.Badge("1,341 samples", color="gray", variant="filled"),
+                            dmc.Badge(f"{SUMMARY['virus_species_raw']} virus species", color="blue", variant="filled"),
+                            dmc.Badge("1KP Project", color="green", variant="light"),
+                        ]
                     ),
+                    style={"padding": "2px 6px 8px 0"},
                 ),
-
                 dmc.AppShellMain(children=[
 
                     # ── Hero 区 ──

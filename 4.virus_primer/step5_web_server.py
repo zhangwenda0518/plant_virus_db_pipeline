@@ -162,6 +162,34 @@ for _facts_path in (Path("/opt/plant_virus_db/plant_virus_db_pipeline/docs/data/
 # 本机知识库 RAG 检索接口（explorer / reference_db 分支接地用，纯检索不花 LLM）
 KB_SEARCH_URL = SERVER_AI_CONFIG.get('KB_SEARCH_URL', 'http://127.0.0.1:5002/search')
 
+# 文献追踪站（7.literature_tracker）实时统计：/api/chat 所有页面 persona 共享的
+# 站级事实，读 tracker 预生成的 stats.json（mtime 缓存，文件不变化就不重读）。
+_LIT_FACTS = {"mtime": None, "data": None}
+
+
+def _literature_facts():
+    try:
+        path = next(p for p in _pipeline_candidates("7.literature_tracker/web/data/stats.json") if p.exists())
+    except StopIteration:
+        return None
+    try:
+        mtime = path.stat().st_mtime
+        if _LIT_FACTS["mtime"] != mtime:
+            d = json.loads(path.read_text(encoding='utf-8'))
+            years = sorted(int(y) for y in (d.get("by_year") or {}))
+            _LIT_FACTS["data"] = {
+                "total": d.get("total", 0),
+                "year_min": years[0] if years else "?",
+                "year_max": years[-1] if years else "?",
+                "n_cat": len(d.get("by_category") or {}),
+                "ai_pct": round(100.0 * (d.get("ai_summarized") or 0) / d["total"], 1) if d.get("total") else 0,
+                "last_updated": d.get("last_updated", ""),
+            }
+            _LIT_FACTS["mtime"] = mtime
+        return _LIT_FACTS["data"]
+    except Exception:
+        return None
+
 
 # ── 跨库取数：媒介-宿主库（8.plant-insect）+ 症状照片库（docs/data）──
 def _pipeline_candidates(rel):
@@ -345,11 +373,10 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Plant Virus Primer Database{% endblock %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="/lib/bootstrap-icons.css" rel="stylesheet">
     <style>
-        body { padding-top: 60px; background-color: #f8f9fa; }
-        .navbar-brand { font-weight: bold; }
+        body { background-color: #f8f9fa; }
         .primer-seq { font-family: 'Courier New', monospace; font-size: 14px;
                       background: #e9ecef; padding: 4px 8px; border-radius: 4px;
                       word-break: break-all; }
@@ -365,61 +392,11 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
         .copy-btn { cursor: pointer; font-size: 12px; }
         .probe-seq { font-family: 'Courier New', monospace; font-size: 13px;
                      background: #d1ecf1; padding: 3px 6px; border-radius: 4px; }
-        #ai-chat-btn {position:fixed;bottom:24px;right:24px;width:48px;height:48px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;z-index:9999;box-shadow:0 4px 12px rgba(102,126,234,.4);transition:transform .2s}
-        #ai-chat-btn:hover {transform:scale(1.1)}
-        #ai-chat-panel {position:fixed;bottom:84px;right:24px;width:420px;max-height:560px;background:#fff;border:1px solid #dee2e6;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);z-index:9998;display:none;flex-direction:column}
-        .chat-header {display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #eee;border-radius:12px 12px 0 0;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;font-weight:600;font-size:14px}
-        .chat-header button {background:none;border:none;color:#fff;font-size:18px;cursor:pointer}
-        .chat-msgs {flex:1;overflow-y:auto;padding:12px;max-height:380px}
-        .chat-msg {margin:6px 0;padding:8px 12px;border-radius:10px;font-size:13px;line-height:1.5;max-width:85%;word-break:break-word}
-        .chat-msg.user {background:#667eea;color:#fff;margin-left:auto}
-        .chat-msg.ai {background:#f0f0f5;color:#333}
-        .chat-msg.system {background:#fff3cd;color:#856404;text-align:center;max-width:100%;font-size:11px}
-        .chat-input-row {display:flex;gap:8px;padding:10px 12px;border-top:1px solid #eee}
-        .chat-input-row input {flex:1;padding:8px 12px;border:1px solid #dee2e6;border-radius:20px;font-size:13px;outline:none}
-        .chat-input-row button {padding:6px 16px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border:none;border-radius:20px;font-size:13px;cursor:pointer}
-        #ai-settings-inline input {outline:none}
-        .ai-typing {display:flex;gap:4px;padding:8px 12px}
-        .ai-typing span {width:6px;height:6px;background:#999;border-radius:50%;animation:aiBounce 1.4s infinite ease-in-out}
-        .ai-typing span:nth-child(2) {animation-delay:.2s}
-        .ai-typing span:nth-child(3) {animation-delay:.4s}
-        @keyframes aiBounce {0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
-        .preset-qs {display:flex;flex-wrap:wrap;gap:4px;padding:6px 10px;border-bottom:1px solid #eee;background:#fafafa}
-        .preset-q {background:#fff;border:1px solid #dee2e6;border-radius:14px;padding:3px 10px;font-size:11px;cursor:pointer;color:#555;white-space:nowrap;max-width:180px;overflow:hidden;text-overflow:ellipsis;transition:all .2s}
-        .preset-q:hover {background:#667eea;color:#fff;border-color:#667eea}
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                Plant Virus DB
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                                                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/reference/">Reference</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/photos/">Photos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/vector/">Vector</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/te/">TE & EVE</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/genes/">Genes</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="/primers/">Primers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/onekp/">OneKP</a></li>
-                    <li class="nav-item"><span class="nav-link sep-nav">|</span></li>
-                    <li class="nav-item"><a class="nav-link" href="/explorer/">Explorer</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/metabuli/">Metabuli</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/pamirdb/">PV-miRNA</a></li>
-                    <li class="nav-item"><span class="nav-link sep-nav">|</span></li>
-                    <li class="nav-item"><a class="nav-link" href="/literature/">Literature</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/knowledge/">Knowledge</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/resources.html">Resources</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/help/">Help</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<script src="/lib/site-nav.js?v=2"></script>
+    
 
     <div class="container">
         {% block content %}{% endblock %}
@@ -433,7 +410,7 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/bootstrap.bundle.min.js"></script>
     <script>
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(function() {
@@ -443,106 +420,7 @@ BASE_TEMPLATE = '''<!DOCTYPE html>
     </script>
     {% block scripts %}{% endblock %}
     <!-- AI Chat -->
-    <button id="ai-chat-btn" onclick="toggleChat()" title="AI Assistant">?</button>
-    <div id="ai-chat-panel">
-        <div class="chat-header"><span>PrimerDB AI Assistant</span><div><button onclick="toggleSettings()" style="background:none;border:none;color:#fff;font-size:14px;cursor:pointer;margin-right:8px" title="Settings">⚙</button><button onclick="toggleChat()">×</button></div></div>
-        <div id="ai-settings-inline" style="display:none;padding:10px 12px;border-bottom:1px solid #eee;background:#f8f9fa">
-            <div style="display:flex;gap:6px;flex-wrap:wrap">
-                <input id="ai-api-key" type="password" placeholder="API Key (sk-...)" style="flex:1;min-width:120px;padding:5px 8px;border:1px solid #dee2e6;border-radius:4px;font-size:11px">
-                <input id="ai-model" value="deepseek-chat" style="width:120px;padding:5px 8px;border:1px solid #dee2e6;border-radius:4px;font-size:11px">
-                <button onclick="saveAISettings()" style="padding:5px 10px;background:#667eea;color:#fff;border:none;border-radius:4px;font-size:11px;cursor:pointer">Save</button>
-            </div>
-        </div>
-        <div class="preset-qs" id="preset-qs">
-<button class="preset-q" onclick="askPreset('Best PCR primers for TSWV?')">Best TSWV PCR Primers</button>
-<button class="preset-q" onclick="askPreset('Recommended qPCR primers for TMV')">TMV qPCR Primers</button>
-<button class="preset-q" onclick="askPreset('PCR vs qPCR comparison')">PCR vs qPCR</button>
-<button class="preset-q" onclick="askPreset('What does RECOMMENDED score mean?')">Scoring Guide</button>
-</div>
-        <div class="chat-msgs" id="chat-msgs"><div class="chat-msg system">Hello! I am PrimerDB AI Assistant. Click a preset question below or type your own.</div></div>
-        <div class="chat-input-row">
-            <input id="chat-input" placeholder="Type a question..." onkeydown="if(event.key==='Enter')sendMsg()">
-            <button onclick="sendMsg()">Send</button></div>
-    </div>
-    <script>
-    var chatConv = [];
-    var chatOpen = false;
-    function askPreset(q) {
-        document.getElementById('chat-input').value = q;
-        sendMsg();
-    }
-    function toggleChat() {
-        chatOpen = !chatOpen;
-        document.getElementById('ai-chat-panel').style.display = chatOpen ? 'flex' : 'none';
-    }
-    function toggleSettings() {
-        var p = document.getElementById('ai-settings-inline');
-        p.style.display = p.style.display === 'none' ? 'block' : 'none';
-    }
-    function saveAISettings() {
-        localStorage.setItem('ai_api_key', document.getElementById('ai-api-key').value);
-        localStorage.setItem('ai_model', document.getElementById('ai-model').value);
-        document.getElementById('ai-settings-inline').style.display = 'none';
-        addChatMsg('system', 'Settings saved');
-    }
-    (function(){
-        var k = localStorage.getItem('ai_api_key');
-        if(k) document.getElementById('ai-api-key').value = k;
-        var m = localStorage.getItem('ai_model');
-        if(m) document.getElementById('ai-model').value = m;
-    })();
-    function addChatMsg(role, text) {
-        var div = document.createElement('div');
-        div.className = 'chat-msg ' + role;
-        var safe = String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        var urlRe = new RegExp('(https?:)(//[^ <>]+)', 'g');
-        safe = safe.replace(urlRe, '<a href="$1$2" target="_blank" rel="noopener">$1$2</a>');
-        div.innerHTML = safe.split(String.fromCharCode(10)).join('<br>');
-        document.getElementById('chat-msgs').appendChild(div);
-        document.getElementById('chat-msgs').scrollTop = document.getElementById('chat-msgs').scrollHeight;
-    }
-    function showTyping() {
-        var div = document.createElement('div');
-        div.className = 'ai-typing';
-        div.id = 'typing-indicator';
-        div.innerHTML = '<span></span><span></span><span></span>';
-        document.getElementById('chat-msgs').appendChild(div);
-    }
-    function hideTyping() {
-        var t = document.getElementById('typing-indicator');
-        if(t) t.remove();
-    }
-    async function sendMsg() {
-        var inp = document.getElementById('chat-input');
-        var msg = inp.value.trim();
-        if(!msg) return;
-        addChatMsg('user', msg);
-        inp.value = '';
-        chatConv.push({role:'user', content:msg});
-        var key = localStorage.getItem('ai_api_key') || '';
-        // 未填自有 key 时服务端返回 401 提示 (服务器不再提供 key)
-        showTyping();
-        try {
-            var resp = await fetch('/api/chat', {
-                method:'POST',
-                headers:{'Content-Type':'application/json'},
-                body:JSON.stringify({
-                    message: msg,
-                    api_key: key,
-                    model: localStorage.getItem('ai_model')||'deepseek-chat',
-                    conversation: chatConv.slice(-8)
-                })
-            });
-            var data = await resp.json();
-            hideTyping();
-            addChatMsg('ai', data.reply);
-            chatConv.push({role:'assistant', content:data.reply});
-        } catch(e) {
-            hideTyping();
-            addChatMsg('system', 'Request failed: ' + e.message);
-        }
-    }
-    </script>
+    <script src="/lib/ai-assistant.js?v=2" data-context="primers" defer></script>
 </body>
 </html>
 '''
@@ -873,7 +751,7 @@ SPECIES_TEMPLATE = BASE_TEMPLATE.replace('{% block content %}{% endblock %}', ''
     <a href="/api/species/{{ species | urlencode }}?format=csv" class="btn btn-primary">
         <i class="bi-download"></i> Export CSV
     </a>
-    <a href="/primers/design" class="btn btn-warning" onclick="sessionStorage.setItem('designSpecies','{{ species }}'); return true;">
+    <a href="/metabuli/?tab=primer&species={{ species | urlencode }}" class="btn btn-warning" onclick="sessionStorage.setItem('designSpecies','{{ species }}'); return true;">
         <i class="bi-pencil-square"></i> Design New Primers
     </a>
 </div>
@@ -2226,8 +2104,10 @@ def create_app():
         data = request.get_json(force=True)
         user_msg = data.get('message', '').strip()
         api_key = str(data.get('api_key', '') or '').strip()
-        # 安全修复 (P0-5): api_url 由服务端固定, 忽略客户端传入 (防 SSRF);
-        # 不再回退服务器 key, key 必须由调用方 (浏览器用户) 自备
+        # 安全策略 (P0-5 演进, 2026-10-12): api_url 由服务端固定 (防 SSRF)。
+        # key 优先用浏览器用户自备的; 用户未带 key 时回退服务器 key (.env AI_API_KEY),
+        # 让全站统一悬浮窗开箱即用——与 /knowledge/query 同一信任级别, 由 nginx 对
+        # /api/chat 的 limit_req (pvdb_llm zone) 防刷。未配置服务器 key 时仍要求自备。
         api_url = DEEPSEEK_CHAT_API_URL
         model = str(data.get('model', 'deepseek-chat') or 'deepseek-chat').strip()
         conversation = data.get('conversation', [])
@@ -2236,8 +2116,11 @@ def create_app():
             model = SERVER_AI_CONFIG.get("AI_MODEL", model)
         if len(user_msg.encode('utf-8', errors='ignore')) > MAX_CHAT_MSG_BYTES:
             return jsonify({"reply": f"Message too long (max {MAX_CHAT_MSG_BYTES // 1024} KB)."}), 413
+        srv_key = str(SERVER_AI_CONFIG.get('AI_API_KEY', '') or '').strip()
+        if not api_key and srv_key:
+            api_key = srv_key
         if not user_msg or not api_key:
-            return jsonify({"reply": "API Key not configured. Click ⚙ to set your own DeepSeek API key."}), 401
+            return jsonify({"reply": "AI service is not configured on the server and no personal API key was given. Click ⚙ to set your own DeepSeek API key (optional)."}), 401
 
         context = data.get('context', 'primers')
         db = get_db()
@@ -2310,17 +2193,25 @@ def create_app():
             except Exception as e:
                 app.logger.warning("[api/chat] cross-db lookup failed: %s", e)
 
-        # Knowledge-base grounding for explorer / reference_db contexts: retrieval
-        # only from the local RAG service (no extra LLM call, safe to fail).
+        # Knowledge-base grounding for every page persona: retrieval only from
+        # the local RAG service (no extra LLM call, safe to fail). 2026-10-12
+        # upgrade: limit 3→8, excerpt 600→900 chars, and attach the source link
+        # / year so the model can cite clickable references — this is the same
+        # doc-level BM25 aggregation that /knowledge/query feeds on.
         kb_info = ""
         try:
-            rr = requests.get(KB_SEARCH_URL, params={"q": user_msg, "limit": 3}, timeout=8)
+            rr = requests.get(KB_SEARCH_URL, params={"q": user_msg, "limit": 8}, timeout=8)
             if rr.status_code == 200:
                 items = (rr.json() or {}).get("results") or []
                 if items:
-                    kb_info = "\n\n[Knowledge base fragments — ground virus-biology answers in these and cite the [SOURCE]]:\n"
+                    kb_info = "\n\n[Knowledge base fragments — ground virus-biology answers in these and cite the sources]:\n"
                     for k, it in enumerate(items, 1):
-                        kb_info += f"[{k}] ({it.get('source', '')}) {it.get('title', '')}: {(it.get('text') or '')[:600]}\n"
+                        frag = f"[{k}] ({it.get('source', '')}) {it.get('title', '')}: {(it.get('text') or '')[:900]}"
+                        if it.get('url'):
+                            frag += f" [link: {it['url']}]"
+                        elif it.get('year'):
+                            frag += f" [year: {it['year']}]"
+                        kb_info += frag + "\n"
         except Exception as e:
             app.logger.warning("[api/chat] KB retrieval failed: %s", e)
 
@@ -2361,7 +2252,106 @@ Notes:
 - Cross-database records (vector-host, symptom photos) and deep links may also be attached; use them the same way and end with the "Relevant pages:" section.
 - When species records with primer sequences are attached after the user's message, list the primers directly (one per line: [Type] Fwd/Rev, product bp, score); only for further filtering or downloads point to Primers (/primers/); raw data tables are in Reference DB (/reference/).
 - Keep replies concise, under 200 words"""
-        else:
+        elif context == 'knowledge':
+            db_context = f"""You are the site-wide AI assistant, currently on the Plant Virus Knowledge Base page (retrieval + AI Q&A over ICTV/DPV/ViroidDB/curated literature).
+Real-time on this server: {total_tax_species} species / {total_tax_families} families; {total_primers} primer pairs covering {total_species} species.
+
+You can help users with:
+1. Answering plant virology questions grounded in the attached knowledge base fragments
+2. Explaining how to use keyword search vs AI Q&A on this page
+3. Guiding users to deeper tools: Primers (/primers/), Explorer (/explorer/), Literature (/literature/)
+
+Notes:
+- If knowledge base fragments are attached below, ground answers in them and cite the sources; if insufficient, say so instead of fabricating.
+- Cross-database records (vector-host, symptom photos) and deep links may also be attached; use them and end with the "Relevant pages:" section.
+- Keep replies concise, under 200 words"""
+        elif context == 'literature':
+            db_context = f"""You are the site-wide AI assistant, currently on the Literature Hub page (weekly/monthly tracking of plant virus papers across PubMed/arXiv/bioRxiv).
+Real-time on this server: {total_tax_species} species / {total_tax_families} families; {total_primers} primer pairs covering {total_species} species.
+
+You can help users with:
+1. Explaining what the Literature Hub tracks and how its tabs work (Manual Search, Weekly Track, Digests, Trends)
+2. Guiding manual PubMed-syntax searches and the XLSX/JSON export for pipelines
+3. Pointing virology questions to the attached knowledge base fragments, and primer questions to Primers (/primers/)
+
+Notes:
+- You cannot list exact papers from memory: guide users to the tabs/filters for live lists; ground biology claims in the attached knowledge base fragments and cite sources.
+- Cross-database records and deep links may also be attached; use them and end with the "Relevant pages:" section.
+- Keep replies concise, under 200 words"""
+        elif context == 'metabuli':
+            db_context = f"""You are the site-wide AI assistant, currently on the Metabuli classification page (metagenomic classification of plant virus sequences).
+Real-time on this server: {total_tax_species} species / {total_tax_families} families.
+
+You can help users with:
+1. Explaining metagenomic classification (Metabuli) and how to prepare input files (FASTA, ≤110MB)
+2. Interpreting classification reports (taxon levels, abundance, coverage)
+3. Guiding users between subtools (classify / BLASTn / BLASTx / primer design)
+
+Notes:
+- Interactive jobs run on this page's submission forms; you explain and interpret only.
+- Ground virus-biology claims in the attached knowledge base fragments and cite sources.
+- Keep replies concise, under 200 words"""
+        elif context == 'vector':
+            db_context = f"""You are the site-wide AI assistant, currently on the Vector-Host database page (virus–vector–host associations, curated from CABI/WUR sources).
+Real-time on this server: {total_tax_species} species / {total_tax_families} families; vector-host records are also attached automatically when a species is resolved from the user's message.
+
+You can help users with:
+1. Looking up which vectors transmit a virus and which hosts a virus infects
+2. Explaining transmission ecology (aphids, whiteflies, beetles, soil-borne, etc.)
+3. Guiding users to related tools: Explorer (/explorer/), Primers (/primers/), Photos (/photos/)
+
+Notes:
+- Answer vector/host questions from the attached cross-database records when present; otherwise say so.
+- Ground biology claims in the attached knowledge base fragments and cite sources.
+- Keep replies concise, under 200 words"""
+        elif context == 'onekp':
+            db_context = f"""You are the site-wide AI assistant, currently on the 1KP Virome Dashboard (virus discovery across 1,344 plant transcriptome samples from the OneKP project).
+Real-time on this server: {total_tax_species} species / {total_tax_families} families.
+
+You can help users with:
+1. Explaining the 1KP virome dataset, sample coverage and how novel viruses were identified
+2. Interpreting the dashboard's charts and filters
+3. Guiding users to related tools: Explorer (/explorer/), Vector-Host (/vector/)
+
+Notes:
+- Ground virus-biology claims in the attached knowledge base fragments and cite sources; if insufficient, say so.
+- Keep replies concise, under 200 words"""
+        elif context == 'pamirdb':
+            db_context = f"""You are the site-wide AI assistant, currently on PAmiRDB (plant virus-derived small RNA / miRNA database).
+Real-time on this server: {total_tax_species} species / {total_tax_families} families.
+
+You can help users with:
+1. Explaining virus-derived siRNA/miRNA biology and the prediction pipeline behind PAmiRDB
+2. Guiding searches, annotations and data downloads on this page
+3. Pointing detection/validation questions to Primers (/primers/) and Metabuli (/metabuli/)
+
+Notes:
+- Ground biology claims in the attached knowledge base fragments and cite sources.
+- Keep replies concise, under 200 words"""
+        elif context == 'structures':
+            db_context = f"""You are the site-wide AI assistant, currently on a protein structure viewer page (3D structures for plant virus proteins: RVPSD predicted structures and the UniProt structure atlas).
+Real-time on this server: {total_tax_species} species / {total_tax_families} families.
+
+You can help users with:
+1. Explaining structure prediction (AlphaFold-style models) and how to read MolStar viewers
+2. Guiding users to search, open and download PDB files
+3. Pointing sequence-level questions back to Reference DB (/reference/) and Explorer (/explorer/)
+
+Notes:
+- Ground protein-biology claims in the attached knowledge base fragments and cite sources.
+- Keep replies concise, under 200 words"""
+        elif context == 'fold':
+            db_context = f"""You are the site-wide AI assistant, currently on Fold Web (structure prediction task management: upload results to the library, Foldify export, statistics).
+Note: this server has no GPU — automatic prediction is disabled; use upload-to-library instead.
+
+You can help users with:
+1. Explaining the upload/import workflow and result library management
+2. Interpreting folding statistics panels
+3. Pointing structure viewing to /structures3d/ and /uniprot3d/
+
+Notes:
+- Keep replies concise, under 200 words"""
+        elif context == 'primers':
             db_context = f"""You are the AI assistant for the Plant Virus Primer Database (PrimerDB). You have access to the following real-time data:
 - Total primer pairs: {total_primers}
 - Total species: {total_species}
@@ -2387,6 +2377,26 @@ Reply format requirements:
 5. If species records with primer sequences are attached after the user's message, list ALL sequences without omission.
 
 The database is accessed via SQLite with schema: taxonomy(species_name,genus,family), primers(primer_id,species_name,primer_type,fwd_sequence,rev_sequence,probe_sequence,product_size,design_method), validation(primer_id,overall_score,recommendation,probe_warning)."""
+        else:
+            # hub 兜底：首页/帮助/照片/资源等未单列 persona 的页面
+            db_context = f"""You are the site-wide AI assistant for PlantVirusDB, a plant virology hub. You are currently on a general page (portal / help / photos / resources / networks / phylogeny / EVE).
+The hub offers: Reference DB (/reference/, ~199k sequences, ~6,200 species), Primers (/primers/, {total_primers} pairs, {total_species} species), Explorer (/explorer/, spatiotemporal maps), Metabuli (/metabuli/, classification), Vector-Host (/vector/), Photos (/photos/), Genes (/genes/), Phylogeny (/phylo/), EVE (/eve/), Structures (/structures3d/, /uniprot3d/), Literature (/literature/), Knowledge Base (/knowledge/).
+Real-time: {total_tax_species} species / {total_tax_families} families in the canonical table.
+
+You can help users with:
+1. Orienting users: which database answers their question, and the direct URL to it
+2. Answering general plant virology questions from the attached knowledge base fragments (cite sources; say when uncertain)
+3. Cross-database records (vector-host, symptom photos) may also be attached; use them and end with the "Relevant pages:" section.
+
+Keep replies concise, under 200 words"""
+
+        # 2026-10-12: 文献追踪站实时统计注入——任何页面的 persona 都带上站级文献数字，
+        # 让悬浮窗答得了 "文献库有多少论文/是否还在更新" 这类全站问题。
+        lit = _literature_facts()
+        if lit:
+            db_context += (f"\n\n[Site literature tracker (Literature Hub, /literature/)]: {lit['total']} papers ({lit['year_min']}–{lit['year_max']}), "
+                           f"{lit['ai_pct']}% with AI summaries across {lit['n_cat']} categories, last updated {lit['last_updated']}. "
+                           f"Weekly digests & manual PubMed search live at /literature/.")
 
         messages = [
             {"role": "system", "content": db_context},

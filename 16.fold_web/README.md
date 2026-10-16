@@ -78,7 +78,7 @@ python app.py                                      # 默认 127.0.0.1:8800
   收集→预测→入库→覆盖率联动、格式校验、ZIP 入库、pending 联动，全部通过；
   真实预测需部署到 GPU 服务器（见上）。
 - 待预测清单来源：`pending_prediction_bfvd_only.tsv`(3,333) + `pending_prediction.tsv`(365)
-  = 3,698 条；批量离线输入包另见 `15.uniprot_plant_virus_structures/colabfold_input/`。
+  = 3,556 条；批量离线输入包另见 `15.uniprot_plant_virus_structures/colabfold_input/`。
 - **304 条 >2,700 aa 多聚蛋白不在本平台直接预测范围**，需先结构域切分
   （清单：`colabfold_input/batch_polyprotein/polyprotein_list.tsv`）。
 - 约 55 条 <50 aa 极小蛋白可跑但结果参考价值有限。

@@ -313,10 +313,6 @@ def stats():
 PAGE = r'''<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Plant Virus Knowledge Base</title><link href="/lib/bootstrap.min.css" rel="stylesheet"><style>
 *{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;color:#333;margin:0}
-nav{background:#1a5276;display:flex;align-items:center;padding:0 12px;height:52px;position:sticky;top:0;z-index:10;white-space:nowrap;overflow-x:auto}
-nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:14px 10px;font-size:13px;border-radius:6px 6px 0 0;white-space:nowrap}
-nav a:hover,nav .active{background:rgba(255,255,255,.15);color:#fff}
-nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:8px;padding:0}
 .hero{background:linear-gradient(135deg,#1a5276,#2e86c1);color:#fff;padding:32px 24px;margin-bottom:20px}
 .hero h1{margin:0;font-size:22px}.hero p{margin:6px 0 0;opacity:.85;font-size:13px;max-width:700px}
 .main{max-width:1200px;margin:0 auto;padding:0 16px}
@@ -366,8 +362,8 @@ nav .brand{font-weight:700;font-size:16px;color:#fff;margin-right:8px;padding:0}
 footer{background:#1a5276;color:rgba(255,255,255,.7);text-align:center;padding:14px;margin-top:40px;font-size:12px}
 footer a{color:rgba(255,255,255,.9)}
 </style></head><body>
-<nav><a class="brand" href="/">Plant Virus DB</a><a href="/reference/">Reference</a>
-  <a href="/virus/">Virus Profile</a><a href="/photos/">Photos</a><a href="/vector/">Vector</a><a href="/eve/">EVE</a><a href="/genes/">Genes</a><a href="/primers/">Primers</a><a href="/onekp/">OneKP</a><a href="/explorer/">Explorer</a><a href="/metabuli/">Metabuli</a><a href="/pamirdb/">PV-miRNA</a><a href="/literature/">Literature</a><a href="/knowledge/" style="color:#fff;font-weight:600">Knowledge</a><a href="/resources.html">Resources</a><a href="/help/">Help</a></nav>
+<script src="/lib/site-nav.js?v=2"></script>
+
 <div class="hero"><h1>Plant Virus Knowledge Base</h1><p>ICTV (192) + DPV (363) + ViroidDB (9,691) + Literature ({{papers}} papers w/ abstracts) &mdash; knowledge retrieval and AI-powered Q&amp;A for plant virology research</p></div>
 <div class="main">
 <div class="stats"><div class="stat"><div class="val">{{total}}</div><div class="lbl">Documents</div></div><div class="stat"><div class="val">{{papers}}</div><div class="lbl">Research Papers</div></div><div class="stat"><div class="val">ICTV+DPV</div><div class="lbl">Taxonomy &amp; Descriptions</div></div></div>
@@ -395,8 +391,10 @@ function newChat(){CONV_ID=null;MSGS=[];renderThread()}
 function loadConv(id){fetch('/knowledge/conversations/'+id).then(r=>r.json()).then(d=>{if(d.error)return;CONV_ID=id;MSGS=(d.messages||[]).map(m=>({role:m.role,content:m.content}));renderThread();const last=[...(d.messages||[])].reverse().find(m=>m.sources);if(last)showSourcesL(last.sources)}).catch(function(){})}
 function delConv(id){fetch('/knowledge/conversations/'+id,{method:'DELETE'}).then(function(){refreshConvs();if(CONV_ID===id){CONV_ID=null;MSGS=[];renderThread()}}).catch(function(){})}
 refreshConvs();
+// ── 深链 ?q=<关键词> 自动检索、?aq=<问题> 自动 AI 问答（全局检索框用）──
+try{const _dqs=new URLSearchParams(location.search);const _q=_dqs.get('q');if(_q){document.getElementById('q').value=_q;S()}const _aq=_dqs.get('aq');if(_aq){document.getElementById('AQ').value=_aq;A()}}catch(e){}
 async function A(){const q=document.getElementById('AQ').value.trim();if(!q)return;document.getElementById('AQ').value='';MSGS.push({role:'user',content:q});renderThread();const o=document.getElementById('AO');o.scrollTop=o.scrollHeight;try{const r=await fetch('/knowledge/query',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:q,conversation_id:CONV_ID})});const d=await r.json();CONV_ID=d.conversation_id||CONV_ID;MSGS.push({role:'assistant',content:d.answer});renderThread();if(d.sources&&d.sources.length)showSourcesL(d.sources);refreshConvs()}catch(e){MSGS.push({role:'assistant',content:'Error: '+e.message});renderThread()}}
-</script></body></html>'''
+</script><script src="/lib/ai-assistant.js?v=2" data-context="knowledge" defer></script></body></html>'''
 
 @app.route("/")
 def index():

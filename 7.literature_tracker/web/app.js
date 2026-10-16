@@ -22,6 +22,18 @@ let _monthIndex={}, _trendChart=null;
     }
     let seen=new Set();papers=papers.filter(p=>{let k=p.pmid||p.doi||(p.title||'').substring(0,80);if(seen.has(k))return false;seen.add(k);return true});
   }catch(e){document.getElementById('latestPapers').innerHTML='<div class=empty>No data. Run <code>python pipeline.py auto --days 7</code> . </div>'}
+  // ── 深链 ?search=<关键词>&year=<年份>：直达检索标签页并预填（全局检索框用） ──
+  try{
+    let qs=new URLSearchParams(location.search);
+    let s=qs.get('search')||qs.get('q')||'';
+    let y=qs.get('year')||'';
+    if(s||y){
+      switchTab('search');
+      if(s)document.getElementById('sSearch').value=s;
+      if(y){let sf=document.getElementById('sYear');let o=[...sf.options].find(o=>o.value===y);if(o)sf.value=y;}
+      page=1;renderTrack();
+    }
+  }catch(e){}
 })();
 
 // ── Charts ──
