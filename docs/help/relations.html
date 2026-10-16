@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title data-i18n="Virus–Vector–Host Relations — Help|病毒-媒介-宿主关系 — 帮助">Virus–Vector–Host Relations — Help</title>
+<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;line-height:1.8}.hero{background:linear-gradient(135deg,#134e6f,#2c6e49);color:#fff;padding:32px 24px;text-align:center}.hero h1{font-size:24px}.hero p{font-size:13px;opacity:.85;margin-top:4px}.wrap{max-width:900px;margin:0 auto;padding:24px 20px}h2{font-size:18px;color:#1a5276;margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid #e8f4ea}h3{font-size:15px;color:#2c6e49;margin:18px 0 6px}p{font-size:14px;color:#444;margin-bottom:10px}ol,ul{margin:8px 0 12px 20px;font-size:14px;color:#444}li{margin-bottom:4px}code{background:#e8f4ea;padding:1px 5px;border-radius:3px;font-size:13px}.tip{background:#e8f4ea;border-left:3px solid #2c6e49;padding:10px 14px;margin:12px 0;border-radius:4px;font-size:13px}footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}</style></head><body>
+<script src="/lib/site-nav.js?v=2"></script>
+
+<div class="hero"><h1 data-i18n="Virus–Vector–Host Relations|病毒-媒介-宿主关系">Virus–Vector–Host Relations</h1><p>One entry point for every plant virus relationship view — association flow, networks, and the evidence library</p></div>
+
+<div style="max-width:900px;margin:0 auto;padding:0 20px 16px">
+  <img src="/help/images/relations.png" alt="Relations module — Association flow (Sankey)" style="width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.12);border:1px solid #d0d8e0">
+  <p style="text-align:center;font-size:12px;color:#888;margin-top:6px">Association flow — virus taxonomy (left) vs host taxonomy (right), 15,197 associations</p>
+</div>
+
+<div class="wrap">
+
+<h2>Overview</h2>
+<p>The Relations module gathers all four relationship views behind a single set of tabs. The underlying association data is built from <b>211,132 GenBank accessions</b> and resolves to <b>15,197 virus–host associations</b> covering <b>5,134 virus species</b> × <b>3,702 host species</b>. On top of that sit <b>1,803 vector records</b>, of which <b>1,375</b> carry a validated host and feed the vector–virus–host triplet network.</p>
+
+<h2>The Four Views</h2>
+<h3>1. Association flow (Sankey)</h3>
+<p>Virus taxonomy (order → family → genus → species) on the left, plant host taxonomy (kingdom → order → family → genus → species) on the right. Every ribbon is one virus–host association; link width equals the number of supporting GenBank accessions.</p>
+<h3>2. Virus–host network</h3>
+<p>A force-directed graph of all plant virus–host associations, for exploring which viruses cluster around which host lineages.</p>
+<h3>3. Vector–virus–host network</h3>
+<p>Triplet network of the 1,375 vector records that have a validated host, connecting vector species to the viruses they transmit and the plants they infect.</p>
+<h3>4. Vector &amp; evidence library</h3>
+<p>Focused tables of all 1,803 vector records with faceted filtering and the literature evidence behind each record.</p>
+
+<h2>Quick Start</h2>
+<ol>
+  <li>Open <code>/relations/</code> — you land on the Association flow Sankey</li>
+  <li>Use the <b>search box</b> to jump to a virus or host (abbreviations such as TSWV, CMV are supported via alias table)</li>
+  <li><b>Click a node</b> to drill one level deeper (order → family → genus → species); click a crumb in the drill path to go back</li>
+  <li>Toggle direction with <b>Virus → Host</b> / <b>Host → Virus</b>; switch what counts as "plant" with the sidebar filters</li>
+  <li>Export the current view with <b>PNG</b> or <b>CSV</b> buttons, or <b>Reset</b> to clear all drills</li>
+  <li>Switch views with the tabs at the top: Virus–host network, Vector–virus–host network, Vector &amp; evidence library</li>
+</ol>
+
+<h2>Filters</h2>
+<ul>
+  <li><b>Plant hosts only (incl. algae)</b> — default on; excludes associations to non-plant hosts</li>
+  <li><b>Include records without host annotation</b> — off by default; turn on to see viruses whose host is unknown</li>
+  <li><b>Top N</b> — nodes beyond the top N are merged into "Other" to keep the chart readable</li>
+</ul>
+
+<div class="tip"><b>Tip</b>: The Sankey answers "which virus groups infect which plant lineages"; the library view answers "what is the evidence for this single record". For a field isolate workflow, drill the Sankey down to genus, then jump to <code>/primers/</code> for detection primers of the candidate species.</div>
+
+</div>
+<footer data-i18n="Plant Virus Database Platform|植物病毒数据库平台">Plant Virus Database Platform · Help</footer>
+<script src="/i18n.js"></script>
+<script src="/lib/ai-assistant.js?v=2" data-context="hub" defer></script>
+</body></html>

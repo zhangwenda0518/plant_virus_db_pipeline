@@ -8,12 +8,6 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;background:#f4f6f8;color:#2c3e50;line-height:1.7}
-nav{background:linear-gradient(135deg,#1a3a5c,#2c6e49);color:#fff;height:46px;display:flex;align-items:center;padding:0 16px;gap:4px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.15)}
-nav .brand{font-weight:700;font-size:15px;margin-right:12px;letter-spacing:.5px;color:#fff;text-decoration:none}
-nav a{color:rgba(255,255,255,.75);text-decoration:none;padding:5px 11px;border-radius:4px;font-size:12px;transition:.15s}
-nav a:hover,nav a.on{color:#fff;background:rgba(255,255,255,.15)}
-nav .sep{color:rgba(255,255,255,.25);margin:0 2px;font-size:14px;user-select:none}
-nav .spacer{flex:1}
 .hero{background:linear-gradient(135deg,#134e6f,#2c6e49);color:#fff;padding:40px 24px 32px;text-align:center}
 .hero h1{font-size:28px;margin-bottom:6px}
 .hero p{font-size:14px;opacity:.85;max-width:700px;margin:0 auto}
@@ -31,31 +25,9 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
 </style>
 </head>
 <body>
+<script src="/lib/site-nav.js?v=2"></script>
 
-<nav>
-  <a href="/" class="brand" data-i18n="Plant Virus DB|植物病毒数据库">Plant Virus DB</a>
-  <span class="sep">|</span>
-  <a href="/reference/" data-i18n="Reference|参考数据库">Reference</a>
-  <a href="/photos/" data-i18n="Photos|症状照片">Photos</a>
-  <a href="/relations/" data-i18n="Relations|媒介-宿主关系">Relations</a>
-  <a href="/eve/" data-i18n="EVE|内源病毒元件">EVE</a>
-  <a href="/vector/" data-i18n="Vector|媒介">Vector</a>
-  <a href="/genes/" data-i18n="Genes|基因">Genes</a>
-  <a href="/primers/" data-i18n="Primers|引物">Primers</a>
-  <a href="/onekp/" data-i18n="OneKP|1KP 病毒组">OneKP</a>
-  <span class="sep">|</span>
-  <a href="/explorer/" data-i18n="Explorer|病毒浏览器">Explorer</a>
-  <a href="/metabuli/" data-i18n="Metabuli|宏基因组分类">Metabuli</a>
-  <a href="/pamirdb/"  data-i18n="PV-miRNA|PV-miRNA 预测">PV-miRNA</a>
-  <a href="/phylo/" data-i18n="Phylo|进化关系">Phylo</a>
-  <span class="sep">|</span>
-  <a href="/literature/" data-i18n="Literature|文献追踪">Literature</a>
-  <a href="/knowledge/" data-i18n="Knowledge|知识库问答">Knowledge</a>
-  <a href="/resources.html" data-i18n="Resources|资源">Resources</a>
-  <a href="/help/" class="on" data-i18n="Help|帮助">Help</a>
-  <span class="spacer"></span>
-  <span class="badge" id="nav-stats">Loading...</span>
-</nav><div class="hero">
+<div class="hero">
   <h1>Help & Documentation</h1>
   <p>Plant Virus Database Platform user guides — how to use each module, what data is available, and common workflows.</p>
 </div>
@@ -67,19 +39,19 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
     <a class="card" href="/help/reference.html">
       <h3>Reference DB</h3>
       <div class="path">/reference/</div>
-      <p>Curated plant virus reference sequences from NCBI GenBank, cross-referenced with ICTV VMR MSL41. 12,159 reference sequences, 4,840 species.</p>
+      <p>Curated plant virus reference sequences from NCBI GenBank, cross-referenced with ICTV VMR MSL41. 9,022 reference sequences, 5,147 species.</p>
       <div class="topics"><span>search</span><span>download FASTA</span><span>segmented/non-segmented</span><span>genome visualization</span></div>
     </a>
     <a class="card" href="/help/photos.html">
       <h3>Symptom Photos</h3>
       <div class="path">/photos/</div>
-      <p>2,854 curated symptom photos from EPPO, DPV, books and research papers (DOI-linked, AI-screened). Filter by host plant, tissue type, symptom, and photo position.</p>
+      <p>2,975 curated symptom photos from EPPO, DPV, books and research papers (DOI-linked, AI-screened). Filter by host plant, tissue type, symptom, and photo position.</p>
       <div class="topics"><span>filter by host</span><span>tissue type</span><span>symptom type</span><span>multi-source</span></div>
     </a>
     <a class="card" href="/help/relations.html">
       <h3>Virus&ndash;Vector&ndash;Host Relations</h3>
       <div class="path">/relations/</div>
-      <p>Every relationship view in one place: host&ndash;virus association Sankey, virus&ndash;host network, vector&ndash;virus&ndash;host triplet network, and the vector &amp; evidence library. 14,791 pairs from 199,070 GenBank accessions, 1,806 vector records.</p>
+      <p>Every relationship view in one place: host&ndash;virus association Sankey, virus&ndash;host network, vector&ndash;virus&ndash;host triplet network, and the vector &amp; evidence library. 15,197 pairs from 211,132 GenBank accessions, 1,803 vector records.</p>
       <div class="topics"><span>Sankey</span><span>network graphs</span><span>drill-down</span><span>PNG/CSV export</span></div>
     </a>
     <a class="card" href="/help/eve.html">
@@ -91,7 +63,7 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
     <a class="card" href="/help/vector.html">
       <h3>Vector&ndash;Host DB</h3>
       <div class="path">/vector/</div>
-      <p>Insect vector and plant host interaction database. 1,806 virus-vector-host records with transmission mode and host range.</p>
+      <p>Insect vector and plant host interaction database. 1,803 virus-vector-host records with transmission mode and host range.</p>
       <div class="topics"><span>vector taxonomy</span><span>transmission mode</span><span>host range</span></div>
     </a>
     <a class="card" href="/help/genes.html">
@@ -103,7 +75,7 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
     <a class="card" href="/help/primers.html">
       <h3>Primer Database</h3>
       <div class="path">/primers/</div>
-      <p>103,642 designed PCR/qPCR primer pairs for 4,789 plant virus species. Includes degenerate primers and whole-genome tiling designs.</p>
+      <p>83,830 unique PCR/qPCR primer pairs for 4,789 plant virus species (66,891 rated RECOMMENDED). Includes degenerate primers and whole-genome tiling designs.</p>
       <div class="topics"><span>PCR primers</span><span>qPCR</span><span>degenerate</span><span>tiled amplicons</span></div>
     </a>
     <a class="card" href="/help/onekp.html">
@@ -143,7 +115,7 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
     <a class="card" href="/help/pamirdb.html">
       <h3>PV-miRNA (PAmiRDB)</h3>
       <div class="path">/pamirdb/</div>
-      <p>miRNA-virus target prediction workbench. 3-algorithm consensus (miRanda + psRNATarget + RNAhybrid). 402 plant species × 42 virus species.</p>
+      <p>miRNA-virus target prediction workbench. Custom Smith-Waterman alignment engine with local heuristic recheck layers (no external tools). 11,006 predictions across 799 plant species and 40 virus families.</p>
       <div class="topics"><span>Sankey diagram</span><span>network graph</span><span>position map</span><span>consensus tier</span></div>
     </a>
     <a class="card" href="/help/phylo.html">
@@ -159,7 +131,7 @@ footer{text-align:center;color:#9aa7b4;font-size:12px;padding:24px}
     <a class="card" href="/help/literature.html">
       <h3>Literature Tracker</h3>
       <div class="path">/literature/</div>
-      <p>Automated PubMed monitoring — daily/weekly plant virus paper discovery, AI-generated summaries, 33,000+ papers across 9 categories.</p>
+      <p>Automated PubMed monitoring — daily/weekly plant virus paper discovery, AI-generated summaries, 33,325 papers indexed (6,525 AI-curated) across 9 categories.</p>
       <div class="topics"><span>daily updates</span><span>AI summaries</span><span>category filter</span><span>search</span></div>
     </a>
     <a class="card" href="/help/knowledge.html">
@@ -187,5 +159,6 @@ fetch('/reference/data/site_stats.json').then(function(r){return r.json()}).then
     el.textContent=Number(d.reference_records).toLocaleString()+' refs · '+Number(d.papers_tracked).toLocaleString()+' papers';
 }).catch(function(){var el=document.getElementById('nav-stats');if(el)el.style.display='none';});
 </script>
+<script src="/lib/ai-assistant.js?v=2" data-context="hub" defer></script>
 </body>
 </html>
