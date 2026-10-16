@@ -22,7 +22,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC
 /* ---- 顶栏：标题 + 全局检索 + 统计，单行放不下时自动换行 ---- */
 .topbar{background:linear-gradient(135deg,#134e6f 0%,#1a5276 45%,#2e86c1 100%);color:#fff;padding:16px 26px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .topbar h1{font-size:19px;margin:0;letter-spacing:.4px;white-space:nowrap}
-.gswrap{flex:1 1 420px;max-width:760px;min-width:260px;position:relative;text-align:left}
+.gswrap{flex:1 1 420px;max-width:900px;min-width:260px;position:relative;text-align:left}
 .gsbox{display:flex;align-items:center;background:#fff;border-radius:12px;padding:3px 10px 3px 14px;box-shadow:0 4px 18px rgba(10,40,70,.28)}
 .gsbox .gic{color:#8a99a8;font-size:17px;flex:0 0 auto}
 .gsbox input{flex:1;border:0;outline:0;font-size:15.5px;padding:12px;color:#2c3e50;background:transparent;font-family:inherit;min-width:0}
@@ -47,10 +47,12 @@ img.gimg{width:46px;height:34px;object-fit:cover;border-radius:6px;flex:0 0 auto
 .gsinfo a{color:#2e86c1;text-decoration:none;background:#f2f7fb;border:1px solid #dceaf3;border-radius:8px;padding:2px 10px;margin:0 3px;display:inline-block}
 .gsinfo a:hover{background:#e3f0f9}
 .gsfoot{padding:7px 14px;font-size:10.5px;color:#9aa7b4;display:flex;justify-content:space-between;border-top:1px solid #f1f5f8;position:sticky;bottom:0;background:#fff}
-.topbar .stats{display:flex;gap:26px;margin-left:auto;flex-wrap:wrap}
-.topbar .stats .s{text-align:center;min-width:64px}
-.topbar .stats .s b{display:block;font-size:23px;font-weight:700}
-.topbar .stats .s span{font-size:11px;opacity:.82}
+/* ---- 统计带：15 项平台口径，数据源 /data/platform_stats.json（月更自动刷新） ---- */
+.statband{background:#fff;border-bottom:1px solid #e8eef3;padding:9px 24px}
+.sbin{max-width:1500px;margin:0 auto;display:flex;gap:8px 30px;flex-wrap:wrap;justify-content:center}
+.sbin .chip{text-align:center;min-width:74px}
+.sbin .chip b{display:block;font-size:19px;color:#1a5276;font-weight:700}
+.sbin .chip span{font-size:10.5px;color:#8a99a8;white-space:nowrap}
 /* ---- 模块卡片：单屏网格，描述两行截断 ---- */
 .main{flex:1 1 auto;display:flex;flex-direction:column;justify-content:space-evenly;width:100%;max-width:1500px;margin:0 auto;padding:10px 24px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
@@ -94,14 +96,25 @@ footer{text-align:center;color:#9aa7b4;font-size:11px;padding:7px}
     <div class="gsbox"><span class="gic">&#128269;</span><input id="gsq" type="search" autocomplete="off" spellcheck="false" placeholder="Search viruses, structures, genes, primers, papers&hellip;" data-i18n-ph="Search viruses, structures, genes, primers, papers&hellip;|检索病毒、结构、基因、引物、文献&hellip;"><kbd>Enter &#8629;</kbd></div>
     <div id="gsres" class="gsres"></div>
   </div>
-  <div class="stats">
-    <div class="s"><b data-stat="reference_records">9,022</b><span data-i18n="Reference Records|参考序列">Reference Records</span></div>
-    <div class="s"><b data-stat="symptom_photos">2,975</b><span data-i18n="Symptom Photos|症状照片">Symptom Photos</span></div>
-    <div class="s"><b data-stat="vector_host_pairs">1,803</b><span data-i18n="Vector-Host Pairs|媒介-宿主对">Vector-Host Pairs</span></div>
-    <div class="s"><b data-stat="papers_tracked">33,325</b><span data-i18n="Papers Tracked|追踪文献">Papers Tracked</span></div>
-    <div class="s"><b data-stat="onekp_samples">1,341</b><span data-i18n="1KP Transcriptomes|1KP转录组">1KP Transcriptomes</span></div>
-  </div>
 </header>
+
+<div class="statband"><div class="sbin">
+  <div class="chip"><b data-ps="reference_records">&mdash;</b><span data-i18n="Reference Records|参考序列">Reference Records</span></div>
+  <div class="chip"><b data-ps="species">&mdash;</b><span data-i18n="Virus Species|病毒物种">Virus Species</span></div>
+  <div class="chip"><b data-ps="full_sequences">&mdash;</b><span data-i18n="Full Sequences|全量序列">Full Sequences</span></div>
+  <div class="chip"><b data-ps="primer_designs">&mdash;</b><span data-i18n="Primer Designs|引物设计">Primer Designs</span></div>
+  <div class="chip"><b data-ps="papers_tracked">&mdash;</b><span data-i18n="Papers Tracked|追踪文献">Papers Tracked</span></div>
+  <div class="chip"><b data-ps="ai_curated_papers">&mdash;</b><span data-i18n="AI-curated Papers|AI 精读文献">AI-curated Papers</span></div>
+  <div class="chip"><b data-ps="symptom_photos">&mdash;</b><span data-i18n="Symptom Photos|症状照片">Symptom Photos</span></div>
+  <div class="chip"><b data-ps="vector_host_pairs">&mdash;</b><span data-i18n="Vector&ndash;Host Pairs|媒介-宿主对">Vector&ndash;Host Pairs</span></div>
+  <div class="chip"><b data-ps="eve_loci">&mdash;</b><span data-i18n="EVE Loci|EVE 位点">EVE Loci</span></div>
+  <div class="chip"><b data-ps="eve_host_families">&mdash;</b><span data-i18n="EVE Host Families|EVE 宿主科">EVE Host Families</span></div>
+  <div class="chip"><b data-ps="rvpsd_models">&mdash;</b><span data-i18n="RVPSD Models|RVPSD 模型">RVPSD Models</span></div>
+  <div class="chip"><b data-ps="immune_genes">&mdash;</b><span data-i18n="Immune Genes|免疫基因">Immune Genes</span></div>
+  <div class="chip"><b data-ps="compounds">&mdash;</b><span data-i18n="Antiviral Compounds|抗病毒化合物">Antiviral Compounds</span></div>
+  <div class="chip"><b data-ps="pv_mirna_predictions">&mdash;</b><span data-i18n="PV-miRNA Predictions|PV-miRNA 预测">PV-miRNA Predictions</span></div>
+  <div class="chip"><b data-ps="onekp_samples">&mdash;</b><span data-i18n="1KP Transcriptomes|1KP 转录组">1KP Transcriptomes</span></div>
+</div></div>
 
 <main class="main">
   <section class="blk">
@@ -247,10 +260,12 @@ footer{text-align:center;color:#9aa7b4;font-size:11px;padding:7px}
 })();
 </script>
 <script>
-fetch('/reference/data/site_stats.json').then(function(r){return r.json()}).then(function(d){
-  ['reference_records','symptom_photos','vector_host_pairs','papers_tracked','onekp_samples'].forEach(function(k){
-    var el=document.querySelector('[data-stat="'+k+'"]');
-    if(el&&d[k]!=null)el.textContent=Number(d[k]).toLocaleString();
+/* 统计带：15 项平台口径，随月更自动刷新（build_global_index.py 产出 platform_stats.json） */
+fetch('/data/platform_stats.json').then(function(r){return r.json()}).then(function(d){
+  var st=d.stats||d;
+  Object.keys(st).forEach(function(k){
+    var el=document.querySelector('[data-ps="'+k+'"]');
+    if(el&&typeof st[k]==='number')el.textContent=Number(st[k]).toLocaleString();
   });
 }).catch(function(){});
 </script>
