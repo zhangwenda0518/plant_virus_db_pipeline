@@ -50,7 +50,10 @@ def _distinct(path: str, col: str) -> int | None:
         df = pl.read_csv(path, separator="\t", infer_schema_length=0, truncate_ragged_lines=True)
     except Exception:
         return None
-    return df[col].n_unique() if col in df.columns else None
+    if col not in df.columns:
+        return None
+    # 2026-10-16: n_unique 会把 ragged 行产生的 null 也计成一个"值"（Species_ICTV 曾因此 5,147→5,148）
+    return df[col].drop_nulls().n_unique()
 
 
 def collect(root: str) -> tuple[dict, dict]:
