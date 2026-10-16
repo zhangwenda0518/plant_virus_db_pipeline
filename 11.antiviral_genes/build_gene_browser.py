@@ -153,11 +153,14 @@ H.append("""<!DOCTYPE html>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Plant Immune & sRNA Gene Atlas</title>
 <style>
+/* module subnav (2026-10 统一: 全站导航由共享脚本注入) */
+nav.pvdb-subnav{background:#fff;color:#2c3e50;display:flex;align-items:center;padding:0 24px;gap:2px;height:42px;border-bottom:1px solid #e3e8ee;position:sticky;top:46px;z-index:90;white-space:nowrap;overflow-x:auto;scrollbar-width:none}
+nav.pvdb-subnav::-webkit-scrollbar{display:none}
+nav.pvdb-subnav a{color:#4a5b6c;text-decoration:none;padding:4px 12px;font-size:12.5px;border-radius:4px;font-weight:600;flex-shrink:0}
+nav.pvdb-subnav a:hover{background:#eef4f0;color:#2c6e49}
+nav.pvdb-subnav a.on,nav.pvdb-subnav a.active{background:#2c6e49;color:#fff}
+
 *{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;margin:0;background:#f0f2f5;color:#333}
-nav{background:#1a3a5c;color:#fff;padding:0 20px;display:flex;align-items:center;height:48px;position:sticky;top:0;z-index:10}
-nav a{color:rgba(255,255,255,.75);text-decoration:none;padding:10px 14px;font-size:13px}
-nav a:hover,nav a.on{color:#fff;background:rgba(255,255,255,.12)}
-nav span{font-weight:700;font-size:14px;margin-right:12px}
 .wrap{max-width:1500px;margin:0 auto;padding:14px}
 .tabs{display:flex;gap:4px;margin-bottom:0}
 .tab{padding:8px 18px;border:none;border-radius:6px 6px 0 0;font-size:13px;cursor:pointer;background:#dde;color:#555}
@@ -203,8 +206,8 @@ a{color:#1a3a5c;text-decoration:none}a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
-<nav>
-  <a href="/" style="font-weight:700;font-size:14px;color:#fff;text-decoration:none;margin-right:12px">Plant Virus DB</a>
+<script src="/lib/site-nav.js?v=2"></script>
+<nav class="pvdb-subnav">
   <a href="/genes/">Dashboard</a>
   <a href="#nlr" onclick="showPanel('nlr')" id="navNLR">NLR</a>
   <a href="#srna" onclick="showPanel('srna')" id="navSRNA">sRNA</a>
