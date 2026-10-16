@@ -2,19 +2,32 @@
 <html lang="zh">
 <head>
 <meta charset="utf-8">
-<title>植物病毒蛋白结构模块 · 总览</title>
+<title>植物病毒蛋白结构模块 · 覆盖对账</title>
 <style>
+ html{scroll-behavior:smooth}
  body{font-family:"Microsoft YaHei",sans-serif;margin:0;background:#f6f7f9;color:#222}
- header{background:#1a3c6e;color:#fff;padding:14px 24px;display:flex;align-items:baseline;gap:18px}
- header h1{font-size:19px;margin:0} header a{color:#cfe0ff;text-decoration:none;font-size:14px}
- .wrap{max-width:1180px;margin:18px auto;padding:0 16px}
+ /* 浅色 header（2026-10-08 单页化）：原来是与外壳顶栏撞色的深蓝横条 + 总览/统计面板 两个页签。
+    现在两页合一，页签换成「页内锚点条」——它是定位，不是第二层导航。浅色底避免与外壳叠成两条深蓝。 */
+ header{background:#fff;border-bottom:1px solid #e3e6ea;padding:12px 24px 0;position:sticky;top:0;z-index:20}
+ .hrow{display:flex;align-items:baseline;gap:14px}
+ header h1{font-size:18px;margin:0;color:#1a3c6e}
+ .meta{margin-left:auto;font-size:12px;color:#8a93a0}
+ .anchors{display:flex;gap:2px;margin-top:10px;overflow-x:auto}
+ .anchors a{padding:7px 12px;font-size:13px;color:#4a5563;text-decoration:none;
+   border-bottom:2px solid transparent;white-space:nowrap}
+ .anchors a:hover{color:#1a73e8}
+ .anchors a.on{color:#1a3c6e;border-bottom-color:#1a73e8;font-weight:bold}
+ .wrap{max-width:1180px;margin:18px auto 40px;padding:0 16px}
  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
  .card{background:#fff;border:1px solid #e3e6ea;border-radius:10px;padding:12px 14px}
  .card b{font-size:24px;display:block}
  .card span{color:#67707d;font-size:12px}
  .card.g b{color:#188038}.card.o b{color:#b06000}
- h2{font-size:15px;margin:22px 0 8px;color:#1a3c6e}
+ h2{font-size:15px;margin:26px 0 8px;color:#1a3c6e}
+ h3{font-size:13.5px;margin:0 0 10px;color:#1a3c6e}
  .panel{background:#fff;border:1px solid #e3e6ea;border-radius:10px;padding:14px}
+ .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+ @media(max-width:900px){.grid2{grid-template-columns:1fr}}
  .bar{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:12px}
  .bar .lb{width:220px;text-align:right;color:#444;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
  .bar .tr{flex:1;background:#eef1f4;border-radius:4px;height:16px;position:relative}
@@ -25,55 +38,123 @@
  th,td{border:1px solid #e8ebee;padding:4px 8px;text-align:left;white-space:nowrap}
  th{background:#eef1f4;cursor:pointer;position:sticky;top:0}
  tr:hover td{background:#f2f7ff}
+ td.num{text-align:right;font-variant-numeric:tabular-nums}
  .src{display:inline-block;padding:0 6px;border-radius:8px;font-size:11px;margin-right:3px}
  .s-PDB{background:#d3e3fd}.s-AFDB{background:#d7f0db}.s-RVPSD{background:#fde8cf}
  .s-BFVD{background:#f1e0fd}.s-SELF{background:#fcd9d9}
- #detail{position:fixed;right:18px;top:80px;width:330px;background:#fff;border:1px solid #d5dae0;
-   border-radius:10px;padding:14px;box-shadow:0 4px 18px rgba(0,0,0,.12);display:none;font-size:13px}
+ #detail{position:fixed;right:18px;top:96px;width:330px;background:#fff;border:1px solid #d5dae0;
+   border-radius:10px;padding:14px;box-shadow:0 4px 18px rgba(0,0,0,.12);display:none;font-size:13px;
+   max-height:calc(100vh - 130px);overflow:auto;z-index:30}
  #detail a{color:#1967d2}
- .tabs{display:flex;gap:6px;margin-bottom:8px}
- .tabs button{padding:5px 14px;border:1px solid #ccd2d9;background:#fff;border-radius:6px;cursor:pointer;font-size:13px}
- .tabs button.on{background:#1a3c6e;color:#fff;border-color:#1a3c6e}
+ .donut{display:flex;gap:20px;align-items:center}
+ .legend{font-size:13px;line-height:1.9}
+ .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px}
+ .note{font-size:12px;color:#67707d;line-height:1.8}
+ .note b{color:#222}
+ details.panel{margin-top:8px}
+ details.panel>summary{cursor:pointer;font-size:13px;color:#1a3c6e;font-weight:bold;padding:2px 0}
+ details.panel[open]>summary{margin-bottom:10px}
 </style>
 </head>
 <body>
-<header><h1>植物病毒蛋白结构模块</h1>
- <a href="index.html">总览</a><a href="stats.html">统计面板</a><a href="#" id="nav-foldweb">预测平台 ↗</a><a href="../colabfold_input/" hidden></a>
- <span style="margin-left:auto;font-size:12px;color:#9db4d8" id="meta"></span></header>
+<script src="/lib/site-nav.js?v=2"></script>
+<header>
+ <div class="hrow">
+  <h1>植物病毒蛋白结构模块</h1>
+  <span class="meta" id="meta"></span>
+ </div>
+ <nav class="anchors" id="anchors">
+  <a href="#top">总览</a>
+  <a href="#coverage">来源组合</a>
+  <a href="#search">蛋白检索</a>
+  <a href="#viruses">病毒级覆盖</a>
+  <a href="#gap">缺口与完整率</a>
+  <a href="#ledger">管线台账</a>
+ </nav>
+</header>
+
 <div class="wrap">
+
+<section id="top">
  <div class="cards" id="cards"></div>
 
  <div class="panel" style="margin-top:14px">
-  <b style="font-size:14px;color:#1a3c6e">蛋白结构预测管线（缺口 3,698 条怎么补）</b>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin-top:8px;font-size:12.5px;line-height:1.7">
-   <div style="border:1px solid #e3e6ea;border-radius:8px;padding:10px">
-    <b>① 本地批量（主力）</b><br>ColabFold 平台：收集→预测→整理→入库全自动；
-    也收手动上传 FASTA / 结果 ZIP。<br>
-    <a id="foldweb-link" href="http://127.0.0.1:8800" style="color:#1967d2;font-weight:bold">打开预测平台 →</a>
-    <span style="color:#888">仅本机/GPU 服务器内网可用，公网不开放</span>
-   </div>
-   <div style="border:1px solid #e3e6ea;border-radius:8px;padding:10px">
-    <b>② Foldify 在线补漏</b><br>免费 AF3/AF2/OmegaFold/ESMFold 多模型；
-    ≤600aa、并发 5，人工逐条提交。<br>
-    <a href="https://foldify-open.cloud.e-infra.cz/" target="_blank" style="color:#1967d2;font-weight:bold">打开 Foldify →</a>
-    <span style="color:#888">≤600aa 清单用预测平台首页的「Foldify 导出 ZIP」</span>
-   </div>
-   <div style="border:1px solid #e3e6ea;border-radius:8px;padding:10px">
-    <b>③ 多聚蛋白 304 条</b><br>&gt;2,700aa 超模型 token 预算，需先结构域切分再进①/②。<br>
-    <span style="color:#888">清单：colabfold_input/batch_polyprotein/polyprotein_list.tsv</span>
-   </div>
+<b style="font-size:14px;color:#1a3c6e">结构库 2026-10-11 重大更新：基因组蛋白宇宙 92.2% 已有 3D 结构</b>
+  <div style="font-size:12.5px;line-height:1.8;margin-top:6px">
+   9,022 基因组 → 29,059 蛋白 → MMseqs2 50% 恒同聚类 11,017 代表。<b>10,031 条代表</b>由自有 4×4090 管线完成
+   <span class="src" style="background:#d3e3fd">AF3</span> 全原子推理；
+   <b>16,564 条</b>非代表成员以代表结构为模板完成
+   <span class="src" style="background:#d7f0db">Modeller</span> 同源建模（附 DOPE 评分）；
+   合计 <b>26,788 / 29,059（92.2%）</b>蛋白已有结构（AF3 10,031 + Modeller 16,564 + SELF 自折叠 193），剩余 2,271 条（860 代表簇）待下一轮 AF3 重跑。
+   <a href="../rvpsd.html" style="color:#1967d2;font-weight:bold">→ 打开 3D 结构库统一浏览器</a>（整合 RVPSD·AF2 / 本管线 AF3 / Modeller 同源建模，共 47,545 个结构，可按来源筛选）。
   </div>
- </div>
+  <details style="margin-top:8px"><summary style="cursor:pointer;font-size:12.5px;color:#1a3c6e">历史缺口补齐通道（UniProt 4,810 口径，点开）</summary>
+   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin-top:8px;font-size:12.5px;line-height:1.7">
+    <div style="border:1px solid #e3e6ea;border-radius:8px;padding:10px">
+     <b>① 本地批量（主力）</b><br>ColabFold 平台：收集→预测→整理→入库全自动。
+     <a id="foldweb-link" href="http://127.0.0.1:8800" style="color:#1967d2">打开预测平台 →</a>
+     <span style="color:#888">仅内网可用</span>
+    </div>
+    <div style="border:1px solid #e3e6ea;border-radius:8px;padding:10px">
+     <b>② Foldify 在线补漏</b><br>免费 AF3/AF2/OmegaFold/ESMFold；≤600aa、并发 5。
+     <a href="https://foldify-open.cloud.e-infra.cz/" target="_blank" style="color:#1967d2">打开 Foldify →</a>
+    </div>
+    <div style="border:1px solid #e3e6ea;border-radius:8px;padding:10px">
+     <b>③ 多聚蛋白 183 条</b><br>&gt;2,700aa 超模型 token 预算，需先结构域切分再进①/②。
+    </div>
+   </div>
+  </details>
+</section>
 
+<section id="coverage">
  <h2>结构来源组合（每蛋白计一次）</h2>
  <div class="panel" id="combos"></div>
+ <details class="panel">
+  <summary>来源组合明细表（含单源计）</summary>
+  <table id="combosTable"></table>
+ </details>
+</section>
 
+<section id="search">
  <h2>蛋白检索 <input type="text" id="q" placeholder="accession / 物种 / 蛋白名…">
    <span style="font-size:12px;color:#888">点击行查看详情与 3D 查看器</span></h2>
  <div class="panel" style="max-height:520px;overflow:auto" id="ptable"></div>
+</section>
 
+<section id="viruses">
  <h2>病毒级覆盖（<span id="vcn"></span> 个毒株，按蛋白总数排序）</h2>
  <div class="panel" style="max-height:480px;overflow:auto" id="vtable"></div>
+</section>
+
+<section id="gap">
+ <h2>缺口与完整率</h2>
+ <div class="grid2">
+  <div class="panel">
+   <h3>物种级自身结构完整率（<span id="donutTotal"></span> 毒株）</h3>
+   <div class="donut">
+    <svg width="150" height="150" viewBox="0 0 42 42" id="donut"></svg>
+    <div class="legend" id="donutLegend"></div>
+   </div>
+  </div>
+  <div class="panel">
+   <h3>待预测缺口分层（223 条真零 + BFVD-only 3,333 条可选）</h3>
+   <table id="pending"></table>
+   <p class="note">真零 223 条 = structures_index.tsv 无任何结构来源（pending_prediction.tsv 的 365 行中 142 条已由 SELF 覆盖）；BFVD-only 3,333 条（有同源模型，
+   自身折叠按需）= pending_prediction_bfvd_only.tsv。多聚蛋白需先结构域切分。</p>
+  </div>
+ </div>
+</section>
+
+<section id="ledger">
+ <h2>数据管线台账</h2>
+ <div class="panel">
+  <table id="notes"></table>
+  <p class="note" style="margin-top:8px">宇宙口径：<b>病毒(10239) ∩ 宿主含陆生植物(35493)</b>；
+  剔除的 1,993 条噬藻体/绿藻病毒见 <b>removed_green_alga_viruses.tsv</b>；
+  检索/对账详情见模块 README。</p>
+ </div>
+</section>
+
 </div>
 
 <div id="detail" role="dialog" aria-label="蛋白详情"></div>
@@ -85,27 +166,68 @@ const badge = s => `<span class="src s-${s}">${s}</span>`;
 async function init(){
   [STATS, PROT, COV] = await loadJSON(['data/stats.json','data/proteins.json','data/virus_coverage.json']);
   document.getElementById('meta').textContent = `UniProt ${STATS.uniprot_release} · 数据构建于 ${STATS.built}`;
-  const pct = (a,b)=> (100*a/b).toFixed(1)+'%';
+
+  /* 指标卡：原来 index.html 与 stats.html **各渲染一份**（8 张里 7 张相同）。
+     单页化后只保留这一份，取并集（9 张）。 */
   document.getElementById('cards').innerHTML = [
     ['蛋白总数', STATS.proteins, ''],
     ['物种(毒株)', STATS.species, ''],
     ['自身结构', STATS.own+' ('+STATS.own_pct+'%)', 'g'],
     ['缺自身结构', STATS.proteins-STATS.own, 'o'],
     ['含BFVD同源', STATS.any+' ('+STATS.any_pct+'%)', ''],
+    ['reviewed', STATS.reviewed, ''],
     ['物种有自身结构', STATS.species-STATS.species_zero_own, 'g'],
     ['物种100%完整', STATS.species_full_own, 'g'],
     ['物种零覆盖', STATS.species_zero_own, 'o'],
   ].map(([l,v,c])=>`<div class="card ${c}"><b>${v}</b><span>${l}</span></div>`).join('');
 
+  // 来源组合：条形图（主）+ 明细表（折叠，含单源计）
   const maxc = Math.max(...Object.values(STATS.combos));
   document.getElementById('combos').innerHTML = Object.entries(STATS.combos).map(([k,v])=>
     `<div class="bar"><div class="lb">${esc(k)}</div><div class="tr">
      <div class="fl" style="width:${(v/maxc*100).toFixed(1)}%"></div></div><div class="v">${v}</div></div>`).join('');
+  document.getElementById('combosTable').innerHTML =
+    '<tr><th>组合</th><th>蛋白数</th></tr>'+
+    Object.entries(STATS.combos).map(([k,v])=>`<tr><td>${esc(k)}</td><td class="num">${v}</td></tr>`).join('')+
+    '<tr><th>单源计（跨组合去重）</th><th></th></tr>'+
+    Object.entries(STATS.by_src).map(([k,v])=>`<tr><td>${esc(k)}</td><td class="num">${v}</td></tr>`).join('');
 
+  // 蛋白检索 + 病毒级覆盖
   document.getElementById('vcn').textContent = COV.length;
   renderViruses(COV);
   document.getElementById('q').addEventListener('input', e=>renderProteins(e.target.value.trim().toLowerCase()));
   renderProteins('');
+
+  // 物种级完整率甜甜圈
+  const tot = STATS.species;
+  document.getElementById('donutTotal').textContent = tot;
+  const segs = [['自身100%完整', STATS.species_full_own, '#188038'],
+                ['部分覆盖', STATS.species_partial_own, '#f9ab00'],
+                ['自身零覆盖', STATS.species_zero_own, '#c5221f']];
+  let off = 0, seg = '';
+  for(const [,v,c] of segs){
+    const frac = v/tot*41.87;
+    seg += `<circle r="15.9" cx="21" cy="21" fill="transparent" stroke="${c}" stroke-width="6"
+      stroke-dasharray="${frac} ${41.87-frac}" stroke-dashoffset="${-off}"/>`;
+    off += frac;
+  }
+  document.getElementById('donut').innerHTML = seg +
+    `<text x="21" y="20" text-anchor="middle" font-size="6" fill="#333">${tot}</text>
+     <text x="21" y="27" text-anchor="middle" font-size="3.4" fill="#888">毒株</text>`;
+  document.getElementById('donutLegend').innerHTML = segs.map(([l,v,c])=>
+    `<div><span class="sw" style="background:${c}"></span>${l}: <b>${v}</b> (${(v/tot*100).toFixed(1)}%)</div>`).join('');
+
+  // 待预测缺口分层
+  document.getElementById('pending').innerHTML =
+    '<tr><th>分层</th><th>条数</th></tr>'+
+    Object.entries(STATS.pending).map(([k,v])=>`<tr><td>${esc(k)}</td><td class="num">${v}</td></tr>`).join('')+
+    `<tr><th>合计真零</th><th class="num">${Object.values(STATS.pending).reduce((a,b)=>a+b,0)}</th></tr>`;
+
+  // 数据管线台账
+  document.getElementById('notes').innerHTML = Object.entries(STATS.pipeline_notes).map(([k,v])=>
+    `<tr><td style="width:180px">${esc(k)}</td><td>${esc(v)}</td></tr>`).join('');
+
+  markAnchor();
 }
 function renderViruses(data){
   const rows = [...data].sort((a,b)=>b.n_proteins-a.n_proteins).map(v=>
@@ -133,7 +255,7 @@ function renderProteins(q){
 function detail(acc){
   const r = PROT.find(x=>x.a===acc);
   if(!r) return;
-  const src = r.s.includes('PDB')?'pdb':(r.s.includes('SELF')?'self':(r.s.includes('AFDB')?'af':null));
+  const src = r.s.includes('PDB')?'pdb':(r.s.includes('SELF')?'self':(r.s.includes('AFDB')?'af':(r.s.includes('RVPSD')?'rv':null)));
   const links = [
     `<a href="https://www.uniprot.org/uniprotkb/${acc}" target="_blank">UniProt</a>`,
     r.p?`<a href="https://www.rcsb.org/structure/${r.p.split(';')[0]}" target="_blank">RCSB ${r.p.split(';')[0]}</a>`:'',
@@ -152,14 +274,33 @@ function detail(acc){
        style="color:#888;font-size:12px;background:none;border:none;cursor:pointer;padding:0">关闭（Esc）</button>`;
   document.getElementById('detail').style.display='block';
 }
+
+/* 锚点条高亮：滚动时把当前所在小节标出来。
+   ⚠ 在外壳 iframe 里滚动的是 iframe 自己的视口，所以这里用 window.scrollY 即可。 */
+const SECTIONS = ['top','coverage','search','viruses','gap','ledger'];
+function markAnchor(){
+  const links = [...document.querySelectorAll('#anchors a')];
+  const on = () => {
+    let cur = SECTIONS[0];
+    for(const id of SECTIONS){
+      const el = document.getElementById(id);
+      if(el && el.getBoundingClientRect().top <= 140) cur = id;
+    }
+    links.forEach(a=>a.classList.toggle('on', a.getAttribute('href') === '#'+cur));
+  };
+  window.addEventListener('scroll', on, {passive:true});
+  window.addEventListener('resize', on);
+  on();
+}
+
 // 预测平台链接按访问主机自适应：本机开 8801 时指 127.0.0.1:8800，内网访问指内网 IP:8800
 (function(){ const u='http://'+(location.hostname||'127.0.0.1')+':8800';
-  document.getElementById('foldweb-link').href=u;
-  document.getElementById('nav-foldweb').href=u; })();
+  document.getElementById('foldweb-link').href=u; })();
 init().catch(()=>{});
 document.addEventListener('keydown', e=>{
   if(e.key==='Escape'){ document.getElementById('detail').style.display='none'; }
 });
 </script>
+<script src="/lib/ai-assistant.js?v=2" data-context="structures" defer></script>
 </body>
 </html>

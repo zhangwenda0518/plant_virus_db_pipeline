@@ -53,7 +53,7 @@ MpV-SP1 243 等，与陆生组零重叠），已整体剔除并留档
 | `structures_supplementary_gcva/pull_manifest_gcva.tsv` | GCVA 批次 manifest（含 pLDDT 统计） |
 | `pending_prediction.tsv` | 四路皆无结构的 **365** 条蛋白（P1–P3 优先级分层，主体是多聚蛋白） |
 | `pending_prediction_bfvd_only.tsv` | 仅 BFVD（同源模型级）覆盖的 3,333 条，自身折叠按需 |
-| `webapp/` | **自包含静态站**：总览 dashboard + 统计面板 + 蛋白/病毒检索 + 3Dmol 查看器 |
+| `webapp/` | **自包含静态站**：单页 dashboard（指标卡 + 来源组合 + 蛋白检索 + 病毒级覆盖 + 完整率/缺口 + 管线台账，页内锚点条定位）+ 3Dmol 查看器 |
 | `webapp/data/` | 页面数据（build_data.py 从 structures_index / virus_coverage 生成，幂等） |
 
 结构本体约 0.74 GB、SIFTS 源表 `pdb_chain_uniprot.tsv.gz` 均已 gitignore；
@@ -74,11 +74,11 @@ MpV-SP1 243 等，与陆生组零重叠），已整体剔除并留档
 | PDB,BFVD | 31 |
 | PDB,RVPSD,BFVD | 30 |
 | 其余（PDB / AFDB / 多源组合） | 70 |
-| **四路皆无（`pending_prediction.tsv`）** | **365 (7.6%)** |
+| **四路皆无（`structures_index.tsv` 无任何结构来源）** | **223 (4.6%)** |
 
-- **任一来源有结构：4,445 / 4,810（92.4%）**。物种（毒株）级：完全无结构仅 **6** 个
+- **任一来源有结构：4,587 / 4,810（95.4%）**。物种（毒株）级：完全无结构仅 **6** 个
   （413 个中），部分覆盖 51，全覆盖 356。
-- 365 条真零的构成：**304 条是多聚蛋白（>2,700 aa，中位 3,059 aa）**，整链折叠不可行
+- 223 条真零的构成：**183 条是多聚蛋白（>2,700 aa）**，整链折叠不可行（2026-10-15 TSV 增 142 条 SELF 后口径）
   需先做结构域切分；reviewed 31 条；无 <50 aa 极小蛋白。
 - **BFVD 是最大增量**：Big Fantastic Virus Database（NAR 2025, doi:10.1093/nar/gkae1119），
   351,242 个病毒蛋白 UniRef30 簇代表的 ColabFold 结构，专补 AFDB 不含病毒。对全部
@@ -169,7 +169,7 @@ python bfvd_lookup.py
 - 与 `14.rvpsd_structures` 的分工：定量/展示优先用本模块的**实验结构**；无实验结构的蛋白
   用 AFDB 现役模型（本模块）或 RVPSD AF2 模型（14 模块，覆盖更广：17,918 蛋白）。
 
-## 七、webapp 页面（2026-10-03 新增；2026-10-04 修复 viewer 致命 bug + 公网路由）
+## 七、webapp 页面（2026-10-03 新增；2026-10-04 修复 viewer 致命 bug + 公网路由；2026-10-08 并入 `/structures3d/` 统一入口）
 
 ```bash
 # 必须从模块根目录起服务（查看器要直接读 structures_pdb/ 等）
@@ -178,21 +178,39 @@ python -m http.server 8801
 # 浏览器: http://127.0.0.1:8801/webapp/          （nginx 亦可整模块根挂载）
 ```
 
-公网部署（nginx，已写入 `deploy/nginx_full.conf`，线上加到
-`/etc/nginx/conf.d/plant-virus.conf` 即生效）：
+公网部署（nginx，已写入 `deploy/nginx_full.conf`）——**2026-10-08 起并到统一入口
+`/structures3d/`**：Atlas 直挂为 `/structures3d/atlas/`（= 统一入口的「结构总览」标签），
+本模块自有的 `/uniprot3d/*` 路由一律 301 到 `/structures3d/`：
 
 ```nginx
-location = /uniprot3d { return 301 /uniprot3d/; }
-location /uniprot3d/ {
-    alias /opt/plant_virus_db/plant_virus_db_pipeline/15.uniprot_plant_virus_structures/;
-    index webapp/index.html;      # 挂模块根：viewer 的 ../structures_* 相对路径才能通
+# 直挂模块 15 的 webapp（不复制文件：build_data.py 重跑后线上自动生效）
+location /structures3d/atlas/ {
+    alias /opt/plant_virus_db/plant_virus_db_pipeline/15.uniprot_plant_virus_structures/webapp/;
+    index index.html;
+    expires 10m;
 }
-location ^~ /uniprot3d/colabfold_input/ { return 404; }   # 运行期产物不暴露
-location ~* ^/uniprot3d/.*\.(db|log|tmp)$ { return 404; }
+location = /structures3d/atlas/build_data.py { return 404; }   # 构建脚本不进 web
+# viewer 用相对路径 ../structures_pdb|alphafold|selffold/ 读结构文件；
+# 它落在 /structures3d/atlas/ 下，故这三个目录必须挂在 /structures3d/ 一级。
+location /structures3d/structures_pdb/       { alias .../15.uniprot_plant_virus_structures/structures_pdb/;       expires 10m; }
+location /structures3d/structures_alphafold/ { alias .../15.uniprot_plant_virus_structures/structures_alphafold/; expires 10m; }
+location /structures3d/structures_selffold/  { alias .../15.uniprot_plant_virus_structures/structures_selffold/;  expires 10m; }
+location ^~ /structures3d/atlas/colabfold_input/ { return 404; }   # 运行期产物不暴露
+location ~* ^/structures3d/atlas/.*\.(db|log|tmp)$ { return 404; }
+
+# 旧入口 301
+location = /uniprot3d  { return 301 /structures3d/; }
+location = /uniprot3d/ { return 301 /structures3d/; }
+location   /uniprot3d/ { return 301 /structures3d/; }
 ```
 
-门户入口卡片（`docs/index.html` Data Resources 区 → `/uniprot3d/webapp/`）与
-帮助页（`docs/help/uniprot3d.html`）均已就位。
+⚠ `/structures3d/atlas/` 前缀比 `/structures3d/` 长 → nginx **最长前缀匹配**，atlas 子路径优先命中。
+2026-10-08 已补传 `webapp/proteins.json` 真正引用的 **78 个 PDB cif + 435 个 AFDB cif（398 MB）**，
+3D 查看器点开结构不再 404；`structures_selffold/` 被 0 条蛋白引用（`sf` 字段全空），暂不提供，
+fold_web 入库后自动生效。
+
+门户入口卡片（`docs/index.html` → `/structures3d/`）与帮助页（`docs/help/uniprot3d.html`）
+均已改指统一入口。
 
 2026-10-04 修复：`webapp/viewer.html` 引用了未定义的 `esc()`（只在 index.html 里定义过）
 导致 ReferenceError 中断脚本、**3D 查看器整页无法加载**——三页已统一改用共享
@@ -201,8 +219,8 @@ location ~* ^/uniprot3d/.*\.(db|log|tmp)$ { return 404; }
 
 | 页面 | 内容 |
 |:--|:--|
-| `webapp/index.html` | 总览 dashboard（指标卡 + 来源组合条形图）+ 蛋白检索（点行出详情/外部链接/3D 入口）+ 病毒级覆盖表 |
-| `webapp/stats.html` | **统计面板**：物种完整率环形图、来源组合与单源命中明细、待预测缺口分层、管线台账（SIFTS/AFDB/BFVD/剔除/GCVA） |
+| `webapp/index.html` | **单页 dashboard**（2026-10-08 单页化）：浅色 sticky header + 页内锚点条（总览 / 来源组合 / 蛋白检索 / 病毒级覆盖 / 缺口与完整率 / 管线台账）。含指标卡（9 张，原 index 与 stats 两页并集）、来源组合条形图 + 明细表（折叠）、蛋白检索（点行出详情/外部链接/3D 入口）、病毒级覆盖表、物种完整率环形图、待预测缺口分层、管线台账 |
+| ~~`webapp/stats.html`~~ | **已退役**（2026-10-08）：四节并入 `index.html`，本地归档 `archive/_pending_delete_20261008/stats.html`，线上 `_backup_20261008_structures3dhub/retired/stats.html`，URL 301 回 `atlas/` |
 | `webapp/viewer.html` | 3Dmol 查看器（?acc=&src=pdb/af/self），AF/自建模型按 pLDDT 四段着色 |
 | `webapp/common.js` | 三页公共工具：HTML 转义 / 数据加载失败横幅（2026-10-04 新增） |
 

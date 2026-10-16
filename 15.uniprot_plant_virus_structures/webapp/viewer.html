@@ -15,6 +15,7 @@
 </style>
 </head>
 <body>
+<script src="/lib/site-nav.js?v=2"></script>
 <div id="top">
  <a href="index.html">← 总览</a><b id="title"></b>
  <span id="srcs"></span>
@@ -38,9 +39,10 @@ loadJSON(['data/proteins.json']).then(([list])=>{
     pdb: r.p ? {label:'PDB '+r.p.split(';')[0], url:'../structures_pdb/'+r.p.split(';')[0]+'.cif'} : null,
     af:  r.af? {label:'AFDB 预测', url:'../structures_alphafold/'+r.af} : null,
     self:r.sf? {label:'自建折叠', url:'../structures_selffold/'+r.sf} : null,
+    rv:  r.rv? {label:'RVPSD', url:'../structures_fullatom/'+encodeURIComponent(r.rv.replace(/\.pdb$/,''))+'.pdb'} : null,
   };
   const preferred = qs.get('src') && availability[qs.get('src')] ? qs.get('src')
-                  : (availability.pdb?'pdb':(availability.self?'self':(availability.af?'af':null)));
+                  : (availability.pdb?'pdb':(availability.self?'self':(availability.af?'af':(availability.rv?'rv':null))));
   const bar = document.getElementById('srcs');
   bar.innerHTML = Object.entries(availability).map(([k,v])=>
     `<button data-k="${k}" class="${k===preferred?'on':''}" ${v?'':'disabled'}>${v?v.label:'—'}</button>`).join(' ');
@@ -62,7 +64,7 @@ function load(kind){
     const fmt = v.url.endsWith('.pdb') ? 'pdb' : 'cif';
     viewer.addModel(text, fmt);
     viewer.setStyle({}, {cartoon:{color:'spectrum'}});
-    if(kind==='af'||kind==='self'){ // 预测模型按 pLDDT(B因子) 四段着色
+    if(kind==='af'||kind==='self'||kind==='rv'){ // 预测模型按 pLDDT(B因子) 四段着色
       viewer.setStyle({}, {cartoon:{colorscheme:{prop:'b', gradient:'roygb', min:50, max:90}}});
     }
     viewer.zoomTo(); viewer.render(); viewer.zoom(1.2);
@@ -74,5 +76,6 @@ function bar_on(kind){
   document.querySelectorAll('#srcs button').forEach(b=>b.classList.toggle('on', b.dataset.k===kind));
 }
 </script>
+<script src="/lib/ai-assistant.js?v=2" data-context="structures" defer></script>
 </body>
 </html>

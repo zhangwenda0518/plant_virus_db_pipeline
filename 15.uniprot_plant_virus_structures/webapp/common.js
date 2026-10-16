@@ -1,6 +1,6 @@
-/* 15 webapp 三页公共小工具：HTML 转义 + 页面级错误横幅。
-   由 index.html / stats.html / viewer.html 共用（viewer 曾因本地未定义 esc 整页脚本中断，
-   统一从这里取，避免各页复制漂移）。 */
+/* 15 webapp 公共小工具：HTML 转义 + 页面级错误横幅。
+   由 index.html / viewer.html 共用（viewer 曾因本地未定义 esc 整页脚本中断，
+   统一从这里取，避免各页复制漂移）。stats.html 已于 2026-10-08 并入 index.html。 */
 'use strict';
 window.esc = function (s) {
   return String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
