@@ -26,6 +26,8 @@ All notable changes to the Plant Virus Database Platform.
 
 **属级情况**：最终名单 200 属，两库覆盖 **198/200**。名单内未覆盖 2 属：**Magoulivirus**（本质为真菌病毒属，~50 种几乎全为 Botrytis/Fusarium/Magnaporthe 等真菌宿主，仅 *M. malus* 1 个植物种撑名单，其记录 MN386963 未进植物通道）与 **Betagymnorhavirus**（单种 Torreya virus 1，BK061818，ICTV 宿主标 plants 的真植物 rhabdo，TPA 记录未命中 Viridiplantae 收录通道）。**Lumovirus 已修**：精选表 MH425569 行的 VMR_Species/Family/Genus 等 6 列原为空（vmr_accession 匹配遗漏），已按 VMR 补齐（Geplanaviridae/Lumovirus），属覆盖 197→198。第一轮过滤曾剔除 11 属（3 个移除科的 8 属 + 仅凭 `plants (S)`/invertebrates 来源记录的 Epsilonourmiavirus、Rimosavirus、Somasatellite）；第二轮随名单移出 Koshovirus/Metavirus/Pseudovirus/Sirevirus 4 属。
 
+**新增对照表**：`docs/data/plant_virus_taxonomy_crosswalk.tsv` —— 42 科范围全部 3,632 种（严格基线 2,637 + 同科关联 995）的 ICTV↔NCBI 逐种对照：Family/Genus/Species_ICTV、ICTV_ID、Genome、VMR_Host_source、In_strict_baseline、NCBI_Taxids/Names、Full/Ref/Complete 记录数；NCBI 侧有记录的 2,220 种。已注册 API 网关 `taxonomy.plant-crosswalk`；`taxonomy.plant-taxa` 描述计数同步为 2,837。
+
 **备份**：`docs/phylo/taxonomy_tree.json.bak.20261026_loose48`（原 48 科）、`*.bak.20261026_strict45`（中间 45 科）、`docs/data/dashboard_stats.json.bak.20261026*`、`docs/phylo/data/plant_taxa.tsv.bak.20261026*`。
 
 ## [2026-10-26] — 媒介库（8.plant-insect）：修 5 项数据/文档/路由缺陷 + 站点口径纠错
