@@ -230,8 +230,8 @@ canvas{max-height:320px}
   <div class="src-bar">
     <span class="src-label" data-i18n="Data Source|数据源">Data Source</span>
     <div class="src-seg" role="group" aria-label="Data Source">
-      <button class="src-btn active" data-src="full" onclick="switchSource('full')" data-i18n="Full DB|完整库">Full DB</button>
-      <button class="src-btn" data-src="ref" onclick="switchSource('ref')" data-i18n="Ref DB|参考库">Ref DB</button>
+      <button class="src-btn active" data-src="ref" onclick="switchSource('ref')" data-i18n="Ref DB|参考库">Ref DB</button>
+      <button class="src-btn" data-src="full" onclick="switchSource('full')" data-i18n="Full DB|完整库">Full DB</button>
     </div>
     <span id="src-info"></span>
   </div>
@@ -266,7 +266,7 @@ canvas{max-height:320px}
 <div class="footer">Plant Virus Reference Database · <a href="https://github.com/zhangwenda0518/plant_virus_db_pipeline">GitHub</a></div>
 
 <script>
-let STATS=null, currentSource='full', charts={};
+let STATS=null, currentSource='ref', charts={};
 const C=['#2e86c1','#e74c3c','#27ae60','#f39c12','#8e44ad','#1abc9c','#e67e22','#2980b9','#c0392b','#16a085'];
 function destroyCharts(){Object.values(charts).forEach(c=>{try{c.destroy()}catch(e){}});charts={};}
 function barH(el,labels,data,color){if(!labels.length){document.getElementById(el).parentElement.innerHTML='<p style="color:#999;font-size:12px">No data</p>';return;}charts[el]=new Chart(document.getElementById(el),{type:'bar',data:{labels:labels,datasets:[{data:data,backgroundColor:color}]},options:{indexAxis:'y',plugins:{legend:{display:false}}}});}
