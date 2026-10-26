@@ -151,24 +151,25 @@ def compute_stats(rows, has_vmr=False, has_category=False, family_col="Family",
         genera = {g for g in genera if g in plant_genera}
 
     # segmented / nonsegmented (ref only has Category)
-    # 卡片展示口径为**去重物种数**（用户要求不展示条数）；记录数保留在 JSON 供核对
+    # 卡片口径（2026-10-26 用户定版）：物种数 = 去重 NCBI TaxID（不锚 ICTV 命名合并）；
+    # 节段/非节段按 taxid 不重不漏二分——有任何节段记录的 taxid 记节段，其余记非节段，
+    # 两者相加 = 物种总数。记录条数仍保留在 JSON 供核对。
     seg = ns = None
     seg_species = ns_species = None
     if has_category:
-        seg_sp, ns_sp = set(), set()
+        seg_tax = set()
         seg = ns = 0
         for r in rows:
             cat = str(r.get("Category", ""))
-            sp = (r.get("Species_ICTV") or "").strip()
+            tid = (r.get("Taxid") or "").strip()
             if cat.startswith("Segmented"):
                 seg += 1
-                if sp:
-                    seg_sp.add(sp)
+                if tid:
+                    seg_tax.add(tid)
             elif cat.startswith("NonSegmented"):
                 ns += 1
-                if sp:
-                    ns_sp.add(sp)
-        seg_species, ns_species = len(seg_sp), len(ns_sp)
+        seg_species = len(seg_tax & taxids)
+        ns_species = len(taxids) - seg_species
 
     # Sequence Types (strip /ICTV)
     st = Counter()
