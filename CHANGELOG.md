@@ -28,7 +28,7 @@ All notable changes to the Plant Virus Database Platform.
 
 **VMR 种级回填（同日第二轮）**：Ref 表曾 44%（3,983 条）记录 VMR_Family 为空——U1 月度增量兜底把 NCBI 组织名直接写进 Species_ICTV、未做 VMR 匹配。本轮：① 建立查找表 `docs/phylo/data/vmr_species_lookup.tsv`（17,554 种 + 别名共 35,431 键）；② 存量回填 Ref 2,966 条（256 条整段 VMR 字段 + 物种名规范化，2,710 条 taxid 继承补科）、Full 补 280 条科标签；③ **剔除 104 条非植物科记录**（Ambiguiviridae/Botourmiaviridae/Fiersviridae/Mymonaviridae/Phycodnaviridae 等黑名单科的残留）；④ U1 `database_merge` 内置 VMR 回填（入库即标注，未命中基线的非植物科直接拦截）。**发布口径变更：Ref 9,022 → 8,918 条 / 5,147 → 4,975 种 / 6,448 TaxIDs**（DATA_VERSION、NUMBERS.md、门户与 help 文案、build_global_index 注释同步）；属覆盖 198→199/200。
 
-**KPI 口径调整（同日第三轮）**：/reference/ 卡片去掉"Sequences 条数"，改为 **Species 4,975 / Non-segmented species 3,681 / Segmented species 1,419**（按去重物种计，少数物种两类均有，故之和略大于总种数）；Data Source 切换默认 **Ref DB 在前**。`generate_dashboard_stats` 新增 segmented_species/nonsegmented_species 字段（记录数仍保留在 JSON 供核对）。
+**KPI 口径调整（同日第三轮，用户定版）**：/reference/ 卡片去掉"Sequences 条数"，改为 **Species 6,448（去重 NCBI TaxID，不锚 ICTV 命名合并）/ Segmented species 1,929 / Non-segmented species 4,519**——节段/非节段按 TaxID 不重不漏二分，相加等于物种总数；Data Source 切换默认 **Ref DB 在前**。`generate_dashboard_stats` 新增 segmented_species/nonsegmented_species 字段（taxid 二分；记录数仍保留在 JSON 供核对）。Full 模式 Species 卡 = 6,555 TaxIDs。
 
 **新增对照表**：`docs/data/plant_virus_taxonomy_crosswalk.tsv` —— 42 科范围全部 3,632 种（严格基线 2,637 + 同科关联 995）的 ICTV↔NCBI 逐种对照：Family/Genus/Species_ICTV、ICTV_ID、Genome、VMR_Host_source、In_strict_baseline、NCBI_Taxids/Names、Full/Ref/Complete 记录数；NCBI 侧有记录的 2,220 种。已注册 API 网关 `taxonomy.plant-crosswalk`；`taxonomy.plant-taxa` 描述计数同步为 2,837。
 
