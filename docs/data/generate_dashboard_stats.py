@@ -151,10 +151,24 @@ def compute_stats(rows, has_vmr=False, has_category=False, family_col="Family",
         genera = {g for g in genera if g in plant_genera}
 
     # segmented / nonsegmented (ref only has Category)
+    # 卡片展示口径为**去重物种数**（用户要求不展示条数）；记录数保留在 JSON 供核对
     seg = ns = None
+    seg_species = ns_species = None
     if has_category:
-        seg = sum(1 for r in rows if str(r.get("Category", "")).startswith("Segmented"))
-        ns = sum(1 for r in rows if str(r.get("Category", "")).startswith("NonSegmented"))
+        seg_sp, ns_sp = set(), set()
+        seg = ns = 0
+        for r in rows:
+            cat = str(r.get("Category", ""))
+            sp = (r.get("Species_ICTV") or "").strip()
+            if cat.startswith("Segmented"):
+                seg += 1
+                if sp:
+                    seg_sp.add(sp)
+            elif cat.startswith("NonSegmented"):
+                ns += 1
+                if sp:
+                    ns_sp.add(sp)
+        seg_species, ns_species = len(seg_sp), len(ns_sp)
 
     # Sequence Types (strip /ICTV)
     st = Counter()
@@ -181,6 +195,8 @@ def compute_stats(rows, has_vmr=False, has_category=False, family_col="Family",
             "genera": len(genera),
             "segmented": seg,
             "nonsegmented": ns,
+            "segmented_species": seg_species,
+            "nonsegmented_species": ns_species,
         },
         "taxonomy": {
             "families": totals.get("families"),
