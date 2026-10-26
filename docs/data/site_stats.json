@@ -1,9 +1,16 @@
 {
- "generated": "2026-10-16 14:20",
+ "generated": "2026-10-26 03:52",
  "reference_records": 9022,
  "species": 5147,
  "symptom_photos": 2975,
- "vector_host_pairs": 1803,
  "papers_tracked": 33325,
- "onekp_samples": 1341
+ "onekp_samples": 251,
+ "vector_virus_entries": 1803,
+ "vector_assoc_viruses": 447,
+ "vector_triplets": 1375,
+ "vector_routes_viruses": 1186,
+ "vector_lit_links": 9958,
+ "vector_lit_papers": 4687,
+ "onekp_screened": 1341,
+ "primer_designs": 103642
 }

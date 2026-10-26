@@ -11,7 +11,7 @@ Alphaflexiviridae	Allexivirus	Allexivirus filumallii	ICTV19991753	ssRNA(+)	plant
 Alphaflexiviridae	Allexivirus	Allexivirus latensvanillae	ICTV20175633	ssRNA(+)	plants	1	2016426	Vanilla latent virus	2	1	2
 Alphaflexiviridae	Allexivirus	Allexivirus pintoi	ICTV20175632	ssRNA(+)	plants	1	1921009	Arachis pintoi virus	3	1	0
 Alphaflexiviridae	Allexivirus	Allexivirus rehmanniae	ICTV202420069	ssRNA(+)	plants	1	3115597	Rehmannia allexivirus	9	1	9
-Alphaflexiviridae	Allexivirus	Allexivirus sauroandrogyni	ICTV202522113	ssRNA(+)	plants	1			0	0	0
+Alphaflexiviridae	Allexivirus	Allexivirus sauroandrogyni	ICTV202522113	ssRNA(+)	plants	1			0	1	0
 Alphaflexiviridae	Allexivirus	Allexivirus sennae	ICTV202009851	ssRNA(+)	plants	1	742819	Senna severe yellow mosaic virus	3	1	2
 Alphaflexiviridae	Allexivirus	Allexivirus sigmamedicagonis	ICTV20175631	ssRNA(+)	plants	1	1985968	Allexivirus sigmamedicagonis	4	1	4
 Alphaflexiviridae	Botrexvirus	Botrexvirus duosclerotiniae	ICTV202420071	ssRNA(+)	fungi	0			0	0	0
@@ -77,7 +77,7 @@ Alphasatellitidae	Ageyesisatellite	Ageyesisatellite gossypiarabiaense	ICTV201756
 Alphasatellitidae	Babusatellite	Babusatellite musae	ICTV20175712	ssDNA(+)	plants	1	2169721	Banana bunchy top alphasatellite 1	2	1	0
 Alphasatellitidae	Banaphisatellite	Banaphisatellite alphamusae	ICTV202522654	ssDNA	plants (S)	0			0	0	0
 Alphasatellitidae	Banaphisatellite	Banaphisatellite betamusae	ICTV202522655	ssDNA	plants	1			0	0	0
-Alphasatellitidae	Banaphisatellite	Banaphisatellite gammamusae	ICTV202522656	ssDNA	plants	1			0	0	0
+Alphasatellitidae	Banaphisatellite	Banaphisatellite gammamusae	ICTV202522656	ssDNA	plants	1			0	1	0
 Alphasatellitidae	Clecrusatellite	Clecrusatellite benincasae	ICTV201907290	ssDNA(+)	plants	1	1945850	Ash gourd yellow vein mosaic alphasatellite	2	1	2
 Alphasatellitidae	Clecrusatellite	Clecrusatellite capsici	ICTV201907289	ssDNA(+)	plants	1			0	0	0
 Alphasatellitidae	Clecrusatellite	Clecrusatellite chiapasense	ICTV202008800	ssDNA(+)	plants	1	1911908	Begomovirus-associated alphasatellite sp.	22	1	2
@@ -141,7 +141,7 @@ Alphasatellitidae	Gosmusatellite	Gosmusatellite asystasiae	ICTV202522659	ssDNA	p
 Alphasatellitidae	Gosmusatellite	Gosmusatellite ecliptae	ICTV201907293	ssDNA(+)	plants	1	2030126	Eclipta yellow vein alphasatellite	2	1	2
 Alphasatellitidae	Gosmusatellite	Gosmusatellite gossypicameroonense	ICTV202008796	ssDNA(+)	plants	1	2699487;2844027	Cotton leaf curl Cameroon alphasatellite;Cotton leaf curl Gezira alphasatellite 3	4	3	2
 Alphasatellitidae	Gosmusatellite	Gosmusatellite gossypiummustelini	ICTV20175701	ssDNA(+)	plants	1	2169907	Gossypium mustelinum symptomless alphasatellite	21	1	19
-Alphasatellitidae	Gosmusatellite	Gosmusatellite lactucae	ICTV202522660	ssDNA	plants	1			0	0	0
+Alphasatellitidae	Gosmusatellite	Gosmusatellite lactucae	ICTV202522660	ssDNA	plants	1			0	1	0
 Alphasatellitidae	Gosmusatellite	Gosmusatellite mestae	ICTV20175703	ssDNA(+)	plants	1	1705093	Mesta yellow vein mosaic alphasatellite	17	1	16
 Alphasatellitidae	Gosmusatellite	Gosmusatellite vernoniafujianense	ICTV20175706	ssDNA(+)	plants	1	2169908	Vernonia yellow vein Fujian alphasatellite	4	1	4
 Alphasatellitidae	Kobbarisatellite	Kobbarisatellite kokonas	ICTV202008769	ssDNA(+)	plants	1	2161876	Coconut foliar decay alphasatellite 3	4	1	4
@@ -190,27 +190,27 @@ Amalgaviridae	Unirnavirus	Unirnavirus trichodermae	ICTV202420238	dsRNA	fungi	0		
 Amalgaviridae	Zybavirus	Zybavirus bailii	ICTV201856731	dsRNA	fungi	0			0	0	0
 Amesuviridae	Temfrudevirus	Temfrudevirus temperatum	ICTV202215106	ssDNA(+/-)	plants	1	1628899	Temperate fruit decay-associated virus	46	1	46
 Amesuviridae	Yermavirus	Yermavirus ilicis	ICTV202215107	ssDNA(+/-)	plants	1	2219873	Yerba mate-associated circular DNA virus 1	8	1	8
-Aspiviridae	Miraophiovirus	Miraophiovirus caladeniae	ICTV202522063	ssRNA(-)	plants	1			0	0	0
-Aspiviridae	Miraophiovirus	Miraophiovirus capsici	ICTV202317926	ssRNA(-)	plants	1			0	0	0
-Aspiviridae	Miraophiovirus	Miraophiovirus carotae	ICTV202522064	ssRNA(-)	plants	1			0	0	0
-Aspiviridae	Miraophiovirus	Miraophiovirus cyrtomii	ICTV202522065	ssRNA(-)	plants	1			0	0	0
-Aspiviridae	Miraophiovirus	Miraophiovirus erythranthis	ICTV202522066	ssRNA(-)	plants	1			0	0	0
+Aspiviridae	Miraophiovirus	Miraophiovirus caladeniae	ICTV202522063	ssRNA(-)	plants	1	2983933		3	3	3
+Aspiviridae	Miraophiovirus	Miraophiovirus capsici	ICTV202317926	ssRNA(-)	plants	1			0	3	0
+Aspiviridae	Miraophiovirus	Miraophiovirus carotae	ICTV202522064	ssRNA(-)	plants	1			0	4	0
+Aspiviridae	Miraophiovirus	Miraophiovirus cyrtomii	ICTV202522065	ssRNA(-)	plants	1	2983938		3	3	3
+Aspiviridae	Miraophiovirus	Miraophiovirus erythranthis	ICTV202522066	ssRNA(-)	plants	1	2983942		3	3	3
 Aspiviridae	Miraophiovirus	Miraophiovirus freesiae	ICTV20094137	ssRNA(-)	plants	1			0	1	0
 Aspiviridae	Miraophiovirus	Miraophiovirus lactucae	ICTV20042224	ssRNA(-)	plants	1			0	4	0
-Aspiviridae	Miraophiovirus	Miraophiovirus lepidoziae	ICTV202522067	ssRNA(-)	plants	1			0	0	0
-Aspiviridae	Miraophiovirus	Miraophiovirus mirafioriense	ICTV20074835	ssRNA(-); ssRNA(+/-)	plants	1			0	0	0
+Aspiviridae	Miraophiovirus	Miraophiovirus lepidoziae	ICTV202522067	ssRNA(-)	plants	1	2983949		3	3	3
+Aspiviridae	Miraophiovirus	Miraophiovirus mirafioriense	ICTV20074835	ssRNA(-); ssRNA(+/-)	plants	1			0	1	0
 Aspiviridae	Miraophiovirus	Miraophiovirus ranunculi	ICTV19991819	ssRNA(-)	plants	1			0	8	0
-Aspiviridae	Miraophiovirus	Miraophiovirus tulipae	ICTV19991820	ssRNA(-)	plants	1			0	0	0
-Aspiviridae	Miraophiovirus	Miraophiovirus violae	ICTV202522068	ssRNA(-)	plants	1			0	0	0
-Aspiviridae	Miraophiovirus	Miraophiovirus xerochrysi	ICTV202522069	ssRNA(-)	plants	1			0	0	0
-Aspiviridae	Ophiovirus	Ophiovirus allii	ICTV202522056	ssRNA(-)	plants	1			0	0	0
-Aspiviridae	Ophiovirus	Ophiovirus arctotis	ICTV202522057	ssRNA(-)	plants	1			0	0	0
-Aspiviridae	Ophiovirus	Ophiovirus chrysanthemi	ICTV202522058	ssRNA(-)	plants	1			0	0	0
+Aspiviridae	Miraophiovirus	Miraophiovirus tulipae	ICTV19991820	ssRNA(-)	plants	1			0	1	0
+Aspiviridae	Miraophiovirus	Miraophiovirus violae	ICTV202522068	ssRNA(-)	plants	1	2983961		3	3	3
+Aspiviridae	Miraophiovirus	Miraophiovirus xerochrysi	ICTV202522069	ssRNA(-)	plants	1	2983962		3	3	3
+Aspiviridae	Ophiovirus	Ophiovirus allii	ICTV202522056	ssRNA(-)	plants	1	2983929		3	3	3
+Aspiviridae	Ophiovirus	Ophiovirus arctotis	ICTV202522057	ssRNA(-)	plants	1	2983930		3	3	3
+Aspiviridae	Ophiovirus	Ophiovirus chrysanthemi	ICTV202522058	ssRNA(-)	plants	1	2983934		3	3	3
 Aspiviridae	Ophiovirus	Ophiovirus citri	ICTV19982658	ssRNA(-)	plants	1	2170045;73561	Citrus psorosis virus;Ophiovirus citri	311	6	22
-Aspiviridae	Ophiovirus	Ophiovirus citrulli	ICTV202522059	ssRNA(-)	plants	1			0	0	0
-Aspiviridae	Ophiovirus	Ophiovirus daturae	ICTV202522060	ssRNA(-)	plants	1			0	0	0
-Aspiviridae	Ophiovirus	Ophiovirus gentianae	ICTV202522061	ssRNA(-)	plants	1			0	0	0
-Aspiviridae	Ophiovirus	Ophiovirus osteospermi	ICTV202522062	ssRNA(-)	plants	1			0	0	0
+Aspiviridae	Ophiovirus	Ophiovirus citrulli	ICTV202522059	ssRNA(-)	plants	1			0	3	0
+Aspiviridae	Ophiovirus	Ophiovirus daturae	ICTV202522060	ssRNA(-)	plants	1	2983939		3	3	3
+Aspiviridae	Ophiovirus	Ophiovirus gentianae	ICTV202522061	ssRNA(-)	plants	1	2983943		3	3	3
+Aspiviridae	Ophiovirus	Ophiovirus osteospermi	ICTV202522062	ssRNA(-)	plants	1	2983952		3	3	3
 Aspiviridae	Ophiovirus	Ophiovirus vaccinii	ICTV20153223	ssRNA(-)	plants	1	1520332;2170044	Blueberry mosaic associated virus;Ophiovirus vaccinii	266	6	9
 Avsunviroidae	Avsunviroid	Avsunviroid albamaculaperseae	ICTV19911890	ssRNA	plants	1	12896	Avocado sunblotch viroid	192	1	165
 Avsunviroidae	Elaviroid	Elaviroid latensmelongenae	ICTV20083401	ssRNA	plants	1	219174	Eggplant latent viroid	106	1	104
@@ -222,7 +222,7 @@ Benyviridae	Benyvirus	Benyvirus necrobetae	ICTV19972431	ssRNA(+)	plants	1	31721;
 Benyviridae	Benyvirus	Benyvirus oryzae	ICTV20125748	ssRNA(+)	plants	1	373373	Rice stripe necrosis virus	76	2	29
 Benyviridae	Benyvirus	Benyvirus solibetae	ICTV19972432	ssRNA(+)	plants	1	76343	Beet soil-borne mosaic virus	26	5	14
 Benyviridae	Benyvirus	Benyvirus tritici	ICTV202522257	ssRNA(+)	plants	1			0	2	0
-Betaflexiviridae	Banmivirus	Banmivirus miscanthi	ICTV202522420	ssRNA(+)	plants	1			0	0	0
+Betaflexiviridae	Banmivirus	Banmivirus miscanthi	ICTV202522420	ssRNA(+)	plants	1	3028226		1	1	1
 Betaflexiviridae	Banmivirus	Banmivirus musae	ICTV20073656	ssRNA(+)	plants	1	148879	Banana mild mosaic virus	286	1	54
 Betaflexiviridae	Banmivirus	Banmivirus musornatae	ICTV202215089	ssRNA(+)	plants	1	3071210	Musa ornata-associated banmivirus	2	1	2
 Betaflexiviridae	Capillovirus	Capillovirus alphaeriobotryae	ICTV202215078	ssRNA(+)	plants	1	2683823	Loquat virus A	2	1	2
@@ -231,7 +231,7 @@ Betaflexiviridae	Capillovirus	Capillovirus alphamume	ICTV201856322	ssRNA(+)	plan
 Betaflexiviridae	Capillovirus	Capillovirus alpharibis	ICTV201856329	ssRNA(+)	plants	1	1770618	Currant virus A	2	1	2
 Betaflexiviridae	Capillovirus	Capillovirus alphavii	ICTV19982607	ssRNA(+)	plants	1	3427714;42882	Capillovirus alphavii;Cherry virus A	493	2	131
 Betaflexiviridae	Capillovirus	Capillovirus mali	ICTV19991762	ssRNA(+)	plants	1	28347;33759	Capillovirus mali;Citrus tatter leaf virus	1225	5	167
-Betaflexiviridae	Capillovirus	Capillovirus paris	ICTV202522423	ssRNA(+)	plants	1			0	0	0
+Betaflexiviridae	Capillovirus	Capillovirus paris	ICTV202522423	ssRNA(+)	plants	1			0	1	0
 Betaflexiviridae	Capillovirus	Capillovirus uniheveae	ICTV202113852	ssRNA(+)	plants	1	3071279	rubber tree virus 1	42	2	42
 Betaflexiviridae	Capillovirus	Capillovirus unipolysciasii	ICTV202319026	ssRNA(+)	plants	1	2945985	polyscias capillovirus 1	1	1	1
 Betaflexiviridae	Carlavirus	Carlavirus alphacapsici	ICTV202113846	ssRNA(+)	plants	1	1803898	Pepper virus A	16	1	3
@@ -251,7 +251,7 @@ Betaflexiviridae	Carlavirus	Carlavirus chloroipomoeae	ICTV20083769	ssRNA(+)	plan
 Betaflexiviridae	Carlavirus	Carlavirus colei	ICTV20093241	ssRNA(+)	plants	1	404404	Coleus vein necrosis virus	5	1	2
 Betaflexiviridae	Carlavirus	Carlavirus cucumis	ICTV20125784	ssRNA(+)	plants	1	1092564	Cucumber vein-clearing virus	3	1	1
 Betaflexiviridae	Carlavirus	Carlavirus deltasambuci	ICTV20175640	ssRNA(+)	plants	1	1569055	Elderberry carlavirus D	2	1	2
-Betaflexiviridae	Carlavirus	Carlavirus duocacti	ICTV202215082	ssRNA(+)	plants	1			0	0	0
+Betaflexiviridae	Carlavirus	Carlavirus duocacti	ICTV202215082	ssRNA(+)	plants	1	2600161		1	1	0
 Betaflexiviridae	Carlavirus	Carlavirus duopseudostellariae	ICTV202319034	ssRNA(+)	plants	1	2982811	Pseudostellaria heterophylla carlavirus 2	2	1	2
 Betaflexiviridae	Carlavirus	Carlavirus epsilonsambuci	ICTV20175641	ssRNA(+)	plants	1	1569056	Elderberry carlavirus E	2	1	2
 Betaflexiviridae	Carlavirus	Carlavirus fragariae	ICTV19911548	ssRNA(+)	plants	1	2169805	Strawberry pseudo mild yellow edge virus	2	1	2
@@ -280,7 +280,7 @@ Betaflexiviridae	Carlavirus	Carlavirus latensverbenae	ICTV20041068	ssRNA(+)	plan
 Betaflexiviridae	Carlavirus	Carlavirus lilii	ICTV19760656	ssRNA(+)	plants	1	12173	Lily symptomless virus	106	1	12
 Betaflexiviridae	Carlavirus	Carlavirus maculapapayae	ICTV202113845	ssRNA(+)	plants	1	3071214	papaya mottle-associated virus	27	1	6
 Betaflexiviridae	Carlavirus	Carlavirus melonis	ICTV20083752	ssRNA(+)	plants	1	255255;3427779	Carlavirus melonis;Melon yellowing-associated virus	6	2	3
-Betaflexiviridae	Carlavirus	Carlavirus menthae	ICTV202522421	ssRNA(+)	plants	1			0	0	0
+Betaflexiviridae	Carlavirus	Carlavirus menthae	ICTV202522421	ssRNA(+)	plants	1			0	1	0
 Betaflexiviridae	Carlavirus	Carlavirus miphlocis	ICTV20125795	ssRNA(+)	plants	1	3427780;437470	Carlavirus miphlocis;Phlox virus M	15	2	3
 Betaflexiviridae	Carlavirus	Carlavirus mirabilis	ICTV20125787	ssRNA(+)	plants	1	1093773	Mirabilis jalapa mottle virus	2	1	2
 Betaflexiviridae	Carlavirus	Carlavirus misolani	ICTV19710150	ssRNA(+)	plants	1	12167	Potato virus M	387	1	34
@@ -307,13 +307,13 @@ Betaflexiviridae	Carlavirus	Carlavirus unipseudostellariae	ICTV202319033	ssRNA(+
 Betaflexiviridae	Carlavirus	Carlavirus unisteviae	ICTV202319036	ssRNA(+)	plants	1	2794421	Stevia carlavirus 1	3	1	2
 Betaflexiviridae	Carlavirus	Carlavirus vaccinii	ICTV19952326	ssRNA(+)	plants	1	31722	Blueberry scorch virus	311	1	3
 Betaflexiviridae	Carlavirus	Carlavirus vignae	ICTV19991771	ssRNA(+)	plants	1	3427805;67761	Carlavirus vignae;Cowpea mild mottle virus	878	2	56
-Betaflexiviridae	Chordovirus	Chordovirus angelicae	ICTV202522424	ssRNA(+)	plants	1			0	0	0
+Betaflexiviridae	Chordovirus	Chordovirus angelicae	ICTV202522424	ssRNA(+)	plants	1			0	1	0
 Betaflexiviridae	Chordovirus	Chordovirus duocarotae	ICTV20151658	ssRNA(+)	plants	1	1425362	Carrot Ch virus 2	2	1	0
 Betaflexiviridae	Chordovirus	Chordovirus tetraheraclei	ICTV202215087	ssRNA(+)	plants	1	2913660	Hogweed virus 4	2	1	2
 Betaflexiviridae	Chordovirus	Chordovirus unicarotae	ICTV20151657	ssRNA(+)	plants	1	1425363	Carrot Ch virus 1	2	1	0
 Betaflexiviridae	Chordovirus	Chordovirus unilactucae	ICTV202215088	ssRNA(+)	plants	1	2200955	Lettuce chordovirus 1	3	1	2
 Betaflexiviridae	Citrivirus	Citrivirus citri	ICTV20073657	ssRNA(+)	plants	1	129141;557419	Citrus leaf blotch virus;Dweet mottle virus	375	3	56
-Betaflexiviridae	Citrivirus	Citrivirus rudbeckiae	ICTV202522425	ssRNA(+)	plants	1			0	0	0
+Betaflexiviridae	Citrivirus	Citrivirus rudbeckiae	ICTV202522425	ssRNA(+)	plants	1			0	1	0
 Betaflexiviridae	Citrivirus	Citrivirus unipolysciasii	ICTV202319027	ssRNA(+)	plants	1	2945986	polyscias citrivirus 1	1	1	1
 Betaflexiviridae	Divavirus	Divavirus alphadiuris	ICTV20130932	ssRNA(+)	plants	1	1247115	Diuris virus A	2	1	2
 Betaflexiviridae	Divavirus	Divavirus alphahardenbergiae	ICTV20125781	ssRNA(+)	plants	1	1003891	Hardenbergia virus A	4	1	2
@@ -337,7 +337,7 @@ Betaflexiviridae	Prunevirus	Prunevirus caucasicum	ICTV20151654	ssRNA(+)	plants	1
 Betaflexiviridae	Prunevirus	Prunevirus unicamelliae	ICTV202113853	ssRNA(+)	plants	1	2606569	Camellia ringspot associated virus 1	2	1	2
 Betaflexiviridae	Ravavirus	Ravavirus alpharibis	ICTV201907396	ssRNA(+)	plants	1	1569057	Ribes americanum virus A	4	1	2
 Betaflexiviridae	Robigovirus	Robigovirus elaeis	ICTV20093286	ssRNA(+)	plants	1	185218	Robigovirus elaeis	2	1	2
-Betaflexiviridae	Robigovirus	Robigovirus menthae	ICTV202522422	ssRNA(+)	plants	1			0	0	0
+Betaflexiviridae	Robigovirus	Robigovirus menthae	ICTV202522422	ssRNA(+)	plants	1			0	1	0
 Betaflexiviridae	Robigovirus	Robigovirus necroavii	ICTV20083815	ssRNA(+)	plants	1	129143	Cherry necrotic rusty mottle virus	160	2	29
 Betaflexiviridae	Robigovirus	Robigovirus robigomaculae	ICTV20151663	ssRNA(+)	plants	1	1312929	Cherry rusty mottle associated virus	33	1	20
 Betaflexiviridae	Robigovirus	Robigovirus tortifoliae	ICTV20151664	ssRNA(+)	plants	1	1424279	Cherry twisted leaf associated virus	29	1	16
@@ -356,7 +356,7 @@ Betaflexiviridae	Trichovirus	Trichovirus mali	ICTV19931930	ssRNA(+)	plants	1	121
 Betaflexiviridae	Trichovirus	Trichovirus mipersicae	ICTV202113858	ssRNA(+)	plants	1	3070926	peach virus M	1	1	0
 Betaflexiviridae	Trichovirus	Trichovirus necroacini	ICTV19982720	ssRNA(+)	plants	1	81877	Grapevine berry inner necrosis virus	215	1	95
 Betaflexiviridae	Trichovirus	Trichovirus persicae	ICTV20021992	ssRNA(+)	plants	1	183585	Peach mosaic virus	19	1	10
-Betaflexiviridae	Trichovirus	Trichovirus phlomis	ICTV20125789	ssRNA(+)	plants	1			0	0	0
+Betaflexiviridae	Trichovirus	Trichovirus phlomis	ICTV20125789	ssRNA(+)	plants	1	487095		1	1	0
 Betaflexiviridae	Trichovirus	Trichovirus pinovitis	ICTV20125792	ssRNA(+)	plants	1	1051792	Grapevine Pinot gris virus	1559	1	153
 Betaflexiviridae	Vitivirus	Vitivirus alphactinidiae	ICTV20125790	ssRNA(+)	plants	1	1112769;3240217	Vitivirus alphactinidiae;actinidia virus A	93	2	5
 Betaflexiviridae	Vitivirus	Vitivirus alpharubi	ICTV201856439	ssRNA(+)	plants	1	2185086	Blackberry virus A	14	1	2
@@ -365,10 +365,10 @@ Betaflexiviridae	Vitivirus	Vitivirus ananasae	ICTV202319029	ssRNA(+)	plants	1	29
 Betaflexiviridae	Vitivirus	Vitivirus betactinidiae	ICTV20125791	ssRNA(+)	plants	1	3240218	actinidia virus B	64	1	6
 Betaflexiviridae	Vitivirus	Vitivirus betavitis	ICTV19972576	ssRNA(+)	plants	1	35289	Grapevine virus B	386	1	28
 Betaflexiviridae	Vitivirus	Vitivirus deltavitis	ICTV19972577	ssRNA(+)	plants	1	51617	Grapevine virus D	39	1	4
-Betaflexiviridae	Vitivirus	Vitivirus duomenthae	ICTV20093297	ssRNA(+)	plants	1			0	0	0
+Betaflexiviridae	Vitivirus	Vitivirus duomenthae	ICTV20093297	ssRNA(+)	plants	1	312998		1	1	1
 Betaflexiviridae	Vitivirus	Vitivirus epsilonvitis	ICTV20093295	ssRNA(+)	plants	1	516956	Grapevine virus E	164	1	12
 Betaflexiviridae	Vitivirus	Vitivirus etavitis	ICTV201856481	ssRNA(+)	plants	1	2045345	Grapevine virus H	194	1	5
-Betaflexiviridae	Vitivirus	Vitivirus gammactinidiae	ICTV202522428	ssRNA(+)	plants	1			0	0	0
+Betaflexiviridae	Vitivirus	Vitivirus gammactinidiae	ICTV202522428	ssRNA(+)	plants	1			0	1	0
 Betaflexiviridae	Vitivirus	Vitivirus gammavitis	ICTV201856476	ssRNA(+)	plants	1	2022475	Grapevine virus G	54	1	5
 Betaflexiviridae	Vitivirus	Vitivirus iotavitis	ICTV201856487	ssRNA(+)	plants	1	2052157	Grapevine virus I	61	1	4
 Betaflexiviridae	Vitivirus	Vitivirus jeivitis	ICTV201856493	ssRNA(+)	plants	1	2093496	Grapevine virus J	2	1	2
@@ -377,7 +377,7 @@ Betaflexiviridae	Vitivirus	Vitivirus latensheraclei	ICTV19991928	ssRNA(+)	plants
 Betaflexiviridae	Vitivirus	Vitivirus muviti	ICTV202522426	ssRNA(+)	plants	1			0	0	0
 Betaflexiviridae	Vitivirus	Vitivirus nuvitis	ICTV202319028	ssRNA(+)	plants	1	2917347	Grapevine virus N	5	1	5
 Betaflexiviridae	Vitivirus	Vitivirus phivitis	ICTV20130943	ssRNA(+)	plants	1	1221437	Grapevine virus F	155	1	21
-Betaflexiviridae	Vitivirus	Vitivirus rhoviti	ICTV202522427	ssRNA(+)	plants	1			0	0	0
+Betaflexiviridae	Vitivirus	Vitivirus rhoviti	ICTV202522427	ssRNA(+)	plants	1			0	1	0
 Betaflexiviridae	Vitivirus	Vitivirus vaccinii	ICTV202113860	ssRNA(+)	plants	1	2605718	Blueberry green mosaic associated virus	2	1	2
 Betaflexiviridae	Vitivirus	Vitivirus viarracaciae	ICTV20175644	ssRNA(+)	plants	1	1972716	Arracacha virus V	3	1	2
 Betaflexiviridae	Wamavirus	Wamavirus alphacitrulli	ICTV201856419	ssRNA(+)	plants	1	1978413	Watermelon virus A	7	1	3
@@ -619,7 +619,7 @@ Caulimoviridae	Badnavirus	Badnavirus gammavirgamusae	ICTV20073387	dsDNA-RT	plant
 Caulimoviridae	Badnavirus	Badnavirus iotavirgamusae	ICTV20115414	dsDNA-RT	plants	1	1411991	Banana streak VN virus	53	1	4
 Caulimoviridae	Badnavirus	Badnavirus maculacommelinae	ICTV19901298	dsDNA-RT	plants	1	10653	Commelina yellow mottle virus	7	1	1
 Caulimoviridae	Badnavirus	Badnavirus maculadracaenae	ICTV202008837	dsDNA-RT	plants	1	380669;446549	Dracaena mottle virus;Lucky bamboo bacilliform virus	3	2	3
-Caulimoviridae	Badnavirus	Badnavirus maculaepiphylli	ICTV202008838	dsDNA-RT	plants	1			0	0	0
+Caulimoviridae	Badnavirus	Badnavirus maculaepiphylli	ICTV202008838	dsDNA-RT	plants	1	2518008		1	1	1
 Caulimoviridae	Badnavirus	Badnavirus maculahederae	ICTV202008841	dsDNA-RT	plants	1	2731270	Ivy ringspot-associated virus	2	1	2
 Caulimoviridae	Badnavirus	Badnavirus maculakalanchoes	ICTV19952317	dsDNA-RT	plants	1	3051985	Badnavirus maculakalanchoes	3	1	3
 Caulimoviridae	Badnavirus	Badnavirus maculapiperis	ICTV19952318	dsDNA-RT	plants	1	262957;3048272	Badnavirus maculapiperis;Piper yellow mottle virus	138	2	9
@@ -644,7 +644,7 @@ Caulimoviridae	Badnavirus	Badnavirus tetadioscoreae	ICTV20175765	dsDNA-RT	plants
 Caulimoviridae	Badnavirus	Badnavirus tetainflatheobromae	ICTV202420220	dsDNA	plants	1	3426594	Badnavirus tetainflatheobromae	1	2	1
 Caulimoviridae	Badnavirus	Badnavirus theobromae	ICTV201856647	dsDNA-RT	plants	1	2056878	Cacao bacilliform Sri Lanka virus	2	1	2
 Caulimoviridae	Badnavirus	Badnavirus thetavirgamusae	ICTV20141866	dsDNA-RT	plants	1	1016857	Banana streak UM virus	43	1	2
-Caulimoviridae	Badnavirus	Badnavirus urticae	ICTV202522125	dsDNA	plants	1			0	0	0
+Caulimoviridae	Badnavirus	Badnavirus urticae	ICTV202522125	dsDNA	plants	1			0	1	0
 Caulimoviridae	Badnavirus	Badnavirus venabougainvilleae	ICTV20115417	dsDNA-RT	plants	1	263892	Bougainvillea chlorotic vein banding virus	32	1	6
 Caulimoviridae	Badnavirus	Badnavirus venacodonopsis	ICTV201907426	dsDNA-RT	plants	1	2510980	Codonopsis vein clearing virus	2	1	2
 Caulimoviridae	Badnavirus	Badnavirus venaribis	ICTV20083591	dsDNA-RT	plants	1	157270	Gooseberry vein banding associated virus	74	1	9
@@ -673,7 +673,7 @@ Caulimoviridae	Caulimovirus	Caulimovirus tessellomirabilis	ICTV19821173	dsDNA-RT
 Caulimoviridae	Caulimovirus	Caulimovirus tesselloscrophulariae	ICTV19821172	dsDNA-RT	plants	1	10649	Figwort mosaic virus	60	1	1
 Caulimoviridae	Caulimovirus	Caulimovirus venafragariae	ICTV19821174	dsDNA-RT	plants	1	47903	Strawberry vein banding virus	84	1	35
 Caulimoviridae	Cavemovirus	Cavemovirus collusipomeae	ICTV20115435	dsDNA-RT	plants	1	930168	Sweet potato collusive virus	15	1	3
-Caulimoviridae	Cavemovirus	Cavemovirus deltaepiphylli	ICTV202008839	dsDNA-RT	plants	1			0	0	0
+Caulimoviridae	Cavemovirus	Cavemovirus deltaepiphylli	ICTV202008839	dsDNA-RT	plants	1	2713640		1	1	1
 Caulimoviridae	Cavemovirus	Cavemovirus venamanihotis	ICTV19970897	dsDNA-RT	plants	1	38062	Cassava vein mosaic virus	36	1	6
 Caulimoviridae	Dioscovirus	Dioscovirus dioscoreae	ICTV201907423	dsDNA-RT	plants	1	2303485	Dioscorea nummularia-associated virus	2	1	2
 Caulimoviridae	Petuvirus	Petuvirus venapetuniae	ICTV19981237	dsDNA-RT	plants	1	59504	Petunia vein clearing virus	11	1	4
@@ -692,25 +692,25 @@ Caulimoviridae	Soymovirus	Soymovirus virgarachidis	ICTV19911564	dsDNA-RT	plants	
 Caulimoviridae	Tungrovirus	Tungrovirus agapanthi	ICTV202215102	dsDNA-RT	plants	1	2838078	Agapanthus tungrovirus	11	1	10
 Caulimoviridae	Tungrovirus	Tungrovirus oryzae	ICTV19952319	dsDNA-RT	plants	1	10654	Rice tungro bacilliform virus	160	1	13
 Caulimoviridae	Vaccinivirus	Vaccinivirus cadovaccinii	ICTV201907425	dsDNA-RT	plants	1	3052813	Vaccinivirus cadovaccinii	2	1	2
-Closteroviridae	Ampelovirus	Ampelovirus allamandae	ICTV202522749	ssRNA(+)	plants	1			0	0	0
-Closteroviridae	Ampelovirus	Ampelovirus alphaolivae	ICTV202522761	ssRNA(+)	plants	1			0	0	0
-Closteroviridae	Ampelovirus	Ampelovirus alpiniae	ICTV202522750	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Ampelovirus	Ampelovirus allamandae	ICTV202522749	ssRNA(+)	plants	1			0	1	0
+Closteroviridae	Ampelovirus	Ampelovirus alphaolivae	ICTV202522761	ssRNA(+)	plants	1			0	1	0
+Closteroviridae	Ampelovirus	Ampelovirus alpiniae	ICTV202522750	ssRNA(+)	plants	1			0	1	0
 Closteroviridae	Ampelovirus	Ampelovirus bulbiferae	ICTV201856656	ssRNA(+)	plants	1	2491018	Air potato virus 1	2	1	2
-Closteroviridae	Ampelovirus	Ampelovirus croton	ICTV202522760	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Ampelovirus	Ampelovirus croton	ICTV202522760	ssRNA(+)	plants	1	3072821		1	1	1
 Closteroviridae	Ampelovirus	Ampelovirus dioscoreae	ICTV202008911	ssRNA(+)	plants	1	2771210	Yam asymptomatic virus 1	58	1	2
 Closteroviridae	Ampelovirus	Ampelovirus duananas	ICTV20020797	ssRNA(+)	plants	1	136234	Pineapple mealybug wilt-associated virus 2	169	2	7
 Closteroviridae	Ampelovirus	Ampelovirus duesculentae	ICTV202522752	ssRNA(+)	plants	1			0	2	0
-Closteroviridae	Ampelovirus	Ampelovirus duocitri	ICTV202522754	ssRNA(+)	plants	1			0	0	0
-Closteroviridae	Ampelovirus	Ampelovirus hexananas	ICTV202522757	ssRNA(+)	plants	1			0	0	0
-Closteroviridae	Ampelovirus	Ampelovirus kaki	ICTV202522762	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Ampelovirus	Ampelovirus duocitri	ICTV202522754	ssRNA(+)	plants	1			0	1	0
+Closteroviridae	Ampelovirus	Ampelovirus hexananas	ICTV202522757	ssRNA(+)	plants	1			0	1	0
+Closteroviridae	Ampelovirus	Ampelovirus kaki	ICTV202522762	ssRNA(+)	plants	1			0	1	0
 Closteroviridae	Ampelovirus	Ampelovirus nanoavii	ICTV20020795	ssRNA(+)	plants	1	154339	Little cherry virus 2	61	1	17
-Closteroviridae	Ampelovirus	Ampelovirus odontonemae	ICTV202522755	ssRNA(+)	plants	1			0	0	0
-Closteroviridae	Ampelovirus	Ampelovirus pentananas	ICTV202522756	ssRNA(+)	plants	1			0	0	0
-Closteroviridae	Ampelovirus	Ampelovirus perseae	ICTV202522763	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Ampelovirus	Ampelovirus odontonemae	ICTV202522755	ssRNA(+)	plants	1	2793346		1	1	1
+Closteroviridae	Ampelovirus	Ampelovirus pentananas	ICTV202522756	ssRNA(+)	plants	1			0	1	0
+Closteroviridae	Ampelovirus	Ampelovirus perseae	ICTV202522763	ssRNA(+)	plants	1			0	1	0
 Closteroviridae	Ampelovirus	Ampelovirus pistaciae	ICTV201907265	ssRNA(+)	plants	1	2093224	Pistachio ampelovirus A	10	1	2
 Closteroviridae	Ampelovirus	Ampelovirus pruni	ICTV20093492	ssRNA(+)	plants	1	151336;675077	Apricot stem pitting associated virus;Plum bark necrosis stem pitting-associated virus	170	2	27
-Closteroviridae	Ampelovirus	Ampelovirus sacchari	ICTV202522759	ssRNA(+)	plants	1			0	0	0
-Closteroviridae	Ampelovirus	Ampelovirus septananas	ICTV202522758	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Ampelovirus	Ampelovirus sacchari	ICTV202522759	ssRNA(+)	plants	1			0	1	0
+Closteroviridae	Ampelovirus	Ampelovirus septananas	ICTV202522758	ssRNA(+)	plants	1			0	1	0
 Closteroviridae	Ampelovirus	Ampelovirus tetravitis	ICTV20125734	ssRNA(+)	plants	1	70177;71032	Grapevine leafroll-associated virus 4;Grapevine leafroll-associated virus 5	359	8	69
 Closteroviridae	Ampelovirus	Ampelovirus tredecimvitis	ICTV20175771	ssRNA(+)	plants	1	1815581	Grapevine leafroll-associated virus 13	29	1	10
 Closteroviridae	Ampelovirus	Ampelovirus triananas	ICTV20093491	ssRNA(+)	plants	1	373861	Pineapple mealybug wilt-associated virus 3	151	1	8
@@ -718,16 +718,16 @@ Closteroviridae	Ampelovirus	Ampelovirus trivitis	ICTV19990748	ssRNA(+)	plants	1	
 Closteroviridae	Ampelovirus	Ampelovirus unananas	ICTV20020796	ssRNA(+)	plants	1	180903	Pineapple mealybug wilt-associated virus 1	174	1	13
 Closteroviridae	Ampelovirus	Ampelovirus unesculentae	ICTV202522751	ssRNA(+)	plants	1			0	2	0
 Closteroviridae	Ampelovirus	Ampelovirus univitis	ICTV20020793	ssRNA(+)	plants	1	3426351;47985	Ampelovirus univitis;Grapevine leafroll-associated virus 1	818	2	38
-Closteroviridae	Ampelovirus	Ampelovirus unocitri	ICTV202522753	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Ampelovirus	Ampelovirus unocitri	ICTV202522753	ssRNA(+)	plants	1			0	1	0
 Closteroviridae	Ampelovirus	Ampelovirus venarubi	ICTV20152375	ssRNA(+)	plants	1	1381464	Blackberry vein banding-associated virus	90	1	2
 Closteroviridae	Bluvavirus	Bluvavirus vaccinii	ICTV20152407	ssRNA(+)	plants	1	1206566	Blueberry virus A	8	1	4
 Closteroviridae	Closterovirus	Closterovirus alphafici	ICTV202522764	ssRNA(+)	plants	1			0	1	0
 Closteroviridae	Closterovirus	Closterovirus arracaciae	ICTV201907262	ssRNA(+)	plants	1	2201042	Arracacha virus 1	2	1	2
 Closteroviridae	Closterovirus	Closterovirus betafici	ICTV202522765	ssRNA(+)	plants	1			0	1	0
 Closteroviridae	Closterovirus	Closterovirus carotae	ICTV202008910	ssRNA(+)	plants	1	2843916	Carrot closterovirus 1	1	3	0
-Closteroviridae	Closterovirus	Closterovirus cnidi	ICTV202522766	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Closterovirus	Closterovirus cnidi	ICTV202522766	ssRNA(+)	plants	1			0	1	0
 Closteroviridae	Closterovirus	Closterovirus dregeae	ICTV202522771	ssRNA(+)	plants	1			0	2	0
-Closteroviridae	Closterovirus	Closterovirus duocarotae	ICTV202522767	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Closterovirus	Closterovirus duocarotae	ICTV202522767	ssRNA(+)	plants	1			0	1	0
 Closteroviridae	Closterovirus	Closterovirus flavibetae	ICTV19750341	ssRNA(+)	plants	1	12161	Beet yellows virus	35	1	13
 Closteroviridae	Closterovirus	Closterovirus flavicarotae	ICTV19821178	ssRNA(+)	plants	1	656190	Carrot yellow leaf virus	13	1	2
 Closteroviridae	Closterovirus	Closterovirus flavitritici	ICTV19760670	ssRNA(+)	plants	1			0	0	0
@@ -738,29 +738,29 @@ Closteroviridae	Closterovirus	Closterovirus nanobetae	ICTV19760665	ssRNA(+)	plan
 Closteroviridae	Closterovirus	Closterovirus necrodianthi	ICTV19760667	ssRNA(+)	plants	1	551454	Carnation necrotic fleck virus	5	1	1
 Closteroviridae	Closterovirus	Closterovirus rehmanniae	ICTV201907263	ssRNA(+)	plants	1	2316740	Rehmannia virus 1	2	1	2
 Closteroviridae	Closterovirus	Closterovirus rosafolium	ICTV20165268	ssRNA(+)	plants	1	1543207	Rose leaf rosette-associated virus	3	1	2
-Closteroviridae	Closterovirus	Closterovirus stellariae	ICTV202522769	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Closterovirus	Closterovirus stellariae	ICTV202522769	ssRNA(+)	plants	1			0	1	0
 Closteroviridae	Closterovirus	Closterovirus tabaci	ICTV20165269	ssRNA(+)	plants	1	1692045	Tobacco virus 1	2	2	2
-Closteroviridae	Closterovirus	Closterovirus thesii	ICTV202522768	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Closterovirus	Closterovirus thesii	ICTV202522768	ssRNA(+)	plants	1			0	1	0
 Closteroviridae	Closterovirus	Closterovirus tristezae	ICTV19760668	ssRNA(+)	plants	1	12162;3428013	Citrus tristeza virus;Closterovirus tristezae	7702	2	132
-Closteroviridae	Closterovirus	Closterovirus tritici	ICTV202522770	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Closterovirus	Closterovirus tritici	ICTV202522770	ssRNA(+)	plants	1			0	1	0
 Closteroviridae	Closterovirus	Closterovirus uniribi	ICTV201907264	ssRNA(+)	plants	1	2338394;2734344	Blackcurrant closterovirus 1;Blackcurrant-associated closterovirus 1	2	2	2
 Closteroviridae	Closterovirus	Closterovirus vitis	ICTV19990747	ssRNA(+)	plants	1	167634;64003	Grapevine leafroll-associated virus 2;Grapevine rootstock stem lesion associated virus	740	2	99
-Closteroviridae	Crinivirus	Crinivirus abutilonis	ICTV19981253	ssRNA(+)	plants	1			0	0	0
-Closteroviridae	Crinivirus	Crinivirus arracaciae	ICTV202522776	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Crinivirus	Crinivirus abutilonis	ICTV19981253	ssRNA(+)	plants	1	169102		2	2	1
+Closteroviridae	Crinivirus	Crinivirus arracaciae	ICTV202522776	ssRNA(+)	plants	1			0	2	0
 Closteroviridae	Crinivirus	Crinivirus chelidonii	ICTV20165270	ssRNA(+)	plants	1	1712389	Tetterwort vein chlorosis virus	6	2	2
 Closteroviridae	Crinivirus	Crinivirus contagichlorosis	ICTV19981259	ssRNA(+)	plants	1	52135	Tomato infectious chlorosis virus	53	2	10
 Closteroviridae	Crinivirus	Crinivirus cucurbitae	ICTV19981254	ssRNA(+)	plants	1	3428110;51330	Crinivirus cucurbitae;Cucurbit yellow stunting disorder virus	370	3	18
 Closteroviridae	Crinivirus	Crinivirus diodiae	ICTV20125747	ssRNA(+)	plants	1	656520	Diodia vein chlorosis virus	4	2	2
-Closteroviridae	Crinivirus	Crinivirus dioscoreae	ICTV202522773	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Crinivirus	Crinivirus dioscoreae	ICTV202522773	ssRNA(+)	plants	1			0	2	0
 Closteroviridae	Crinivirus	Crinivirus flavibetae	ICTV20093503	ssRNA(+)	plants	1	267970	Bean yellow disorder virus	5	2	3
 Closteroviridae	Crinivirus	Crinivirus flavisolani	ICTV20083651	ssRNA(+)	plants	1	103881	Potato yellow vein virus	235	3	18
 Closteroviridae	Crinivirus	Crinivirus ipomeae	ICTV19981257	ssRNA(+)	plants	1	81931	Sweet potato chlorotic stunt virus	490	2	31
-Closteroviridae	Crinivirus	Crinivirus kurdistanfragariae	ICTV202522772	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Crinivirus	Crinivirus kurdistanfragariae	ICTV202522772	ssRNA(+)	plants	1			0	2	0
 Closteroviridae	Crinivirus	Crinivirus lactucachlorosi	ICTV19981255	ssRNA(+)	plants	1	642478	Lettuce chlorosis virus	63	2	14
 Closteroviridae	Crinivirus	Crinivirus lactucaflavi	ICTV19960876	ssRNA(+)	plants	1	31713	Lettuce infectious yellows virus	17	2	2
-Closteroviridae	Crinivirus	Crinivirus mori	ICTV202522774	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Crinivirus	Crinivirus mori	ICTV202522774	ssRNA(+)	plants	1			0	2	0
 Closteroviridae	Crinivirus	Crinivirus palidofragariae	ICTV20083652	ssRNA(+)	plants	1	227507	Strawberry pallidosis-associated virus	36	2	6
-Closteroviridae	Crinivirus	Crinivirus papyriferae	ICTV202522775	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Crinivirus	Crinivirus papyriferae	ICTV202522775	ssRNA(+)	plants	1			0	2	0
 Closteroviridae	Crinivirus	Crinivirus pseudobetae	ICTV20073446	ssRNA(+)	plants	1	72750	Beet pseudoyellows virus	54	2	4
 Closteroviridae	Crinivirus	Crinivirus rubi	ICTV20083647	ssRNA(+)	plants	1	404196	Blackberry yellow vein-associated virus	179	2	4
 Closteroviridae	Crinivirus	Crinivirus tomatichlorosis	ICTV19981258	ssRNA(+)	plants	1	67754	Tomato chlorosis virus	671	2	131
@@ -768,14 +768,14 @@ Closteroviridae	Menthavirus	Menthavirus menthae	ICTV20083656	ssRNA(+)	plants	1	2
 Closteroviridae	Olivavirus	Olivavirus actinidiae	ICTV201856657	ssRNA(+)	plants	1	2024724	Olivavirus actinidiae	88	1	26
 Closteroviridae	Olivavirus	Olivavirus betadiospyri	ICTV20165271	ssRNA(+)	plants	1	1493829	Persimmon virus B	9	1	3
 Closteroviridae	Olivavirus	Olivavirus flavioleae	ICTV20020818	ssRNA(+)	plants	1	82791	Olive leaf yellowing-associated virus	246	1	22
-Closteroviridae	Olivavirus	Olivavirus oleae	ICTV202522777	ssRNA(+)	plants	1			0	0	0
-Closteroviridae	Velarivirus	Velarivirus agapanthi	ICTV202522778	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Olivavirus	Olivavirus oleae	ICTV202522777	ssRNA(+)	plants	1			0	1	0
+Closteroviridae	Velarivirus	Velarivirus agapanthi	ICTV202522778	ssRNA(+)	plants	1			0	1	0
 Closteroviridae	Velarivirus	Velarivirus alphamali	ICTV202008912	ssRNA(+)	plants	1	2664236	Malus domestica virus A	3	1	3
 Closteroviridae	Velarivirus	Velarivirus arecae	ICTV20165272	ssRNA(+)	plants	1	1654603	Areca palm velarivirus 1	396	2	25
 Closteroviridae	Velarivirus	Velarivirus duocordylinae	ICTV20152412	ssRNA(+)	plants	1	1177751	Cordyline virus 2	2	1	0
 Closteroviridae	Velarivirus	Velarivirus gembloutense	ICTV202420766	ssRNA(+)	plants	1	3139198	Pyrus virus A	7	1	3
 Closteroviridae	Velarivirus	Velarivirus nanoavii	ICTV20020816	ssRNA(+)	plants	1	217686	Little cherry virus 1	244	1	37
-Closteroviridae	Velarivirus	Velarivirus oleae	ICTV202522779	ssRNA(+)	plants	1			0	0	0
+Closteroviridae	Velarivirus	Velarivirus oleae	ICTV202522779	ssRNA(+)	plants	1			0	1	0
 Closteroviridae	Velarivirus	Velarivirus septemvitis	ICTV20020815	ssRNA(+)	plants	1	217615	Grapevine leafroll-associated virus 7	166	1	5
 Closteroviridae	Velarivirus	Velarivirus tetracordylinae	ICTV20152414	ssRNA(+)	plants	1	1177753	Cordyline virus 4	2	1	0
 Closteroviridae	Velarivirus	Velarivirus tricordylinae	ICTV20152413	ssRNA(+)	plants	1	1177752	Cordyline virus 3	2	1	0
@@ -947,7 +947,7 @@ Geminiviridae	Begomovirus	Begomovirus chenopodii	ICTV20152815	ssDNA(+/-)	plants	
 Geminiviridae	Begomovirus	Begomovirus chillicapsici	ICTV20041123	ssDNA(+/-)	plants	1	1036260;1036261;1036262;1036263;1137751;1219876;1397673;1472014;1481460;1507457;172278;1912322;340896;346672;546025;749223;910428;913595;913596;913597;913598;913599	Chili leaf curl virus-Oman;Chilli leaf curl Multan virus;Chilli leaf curl Multan virus - Sri Lanka isolate;Chilli leaf curl Oman virus;Chilli leaf curl Virus - [Pakistan:2011];Chilli leaf curl virus;C	681	25	484
 Geminiviridae	Begomovirus	Begomovirus chlorocucumis	ICTV20041150	ssDNA(+/-)	plants	1	165826;223286	Melon chlorotic leaf curl virus;Melon chlorotic leaf curl virus-[Guatemala]	14	6	5
 Geminiviridae	Begomovirus	Begomovirus chuxiongense	ICTV202420466	ssDNA	plants	1	2828343	Tomato leaf curl Chuxiong virus	36	1	36
-Geminiviridae	Begomovirus	Begomovirus citharexyli	ICTV202522474	ssDNA	plants	1			0	0	0
+Geminiviridae	Begomovirus	Begomovirus citharexyli	ICTV202522474	ssDNA	plants	1			0	1	0
 Geminiviridae	Begomovirus	Begomovirus citrulli	ICTV19911662	ssDNA(+/-)	plants	1	223362;223363;35341	Watermelon chlorotic stunt virus;Watermelon chlorotic stunt virus-[IR];Watermelon chlorotic stunt virus-[SD]	287	6	209
 Geminiviridae	Begomovirus	Begomovirus cleomaurei	ICTV20131903	ssDNA(+/-)	plants	1	858517	Cleome golden mosaic virus	3	1	2
 Geminiviridae	Begomovirus	Begomovirus cleomecrispi	ICTV20131904	ssDNA(+/-)	plants	1	666144	Cleome leaf crumple virus	29	2	29
@@ -955,7 +955,7 @@ Geminiviridae	Begomovirus	Begomovirus clerodendronflavi	ICTV20152819	ssDNA(+/-)	
 Geminiviridae	Begomovirus	Begomovirus clerodendronis	ICTV20083843	ssDNA(+/-)	plants	1	390438	Clerodendron golden mosaic virus	21	2	21
 Geminiviridae	Begomovirus	Begomovirus clerodendrumchinaense	ICTV20152820	ssDNA(+/-)	plants	1	559878	Clerodendrum golden mosaic China virus	25	2	14
 Geminiviridae	Begomovirus	Begomovirus clerodendrumjiangsuense	ICTV20152821	ssDNA(+/-)	plants	1	649509	Clerodendrum golden mosaic Jiangsu virus	4	1	2
-Geminiviridae	Begomovirus	Begomovirus clitoriae	ICTV202522472	ssDNA	plants	1			0	0	0
+Geminiviridae	Begomovirus	Begomovirus clitoriae	ICTV202522472	ssDNA	plants	1			0	2	0
 Geminiviridae	Begomovirus	Begomovirus cnidoscoli	ICTV20175791	ssDNA(+/-)	plants	1	1747500	Cnidoscolus mosaic leaf deformation virus	46	2	46
 Geminiviridae	Begomovirus	Begomovirus cocciniae	ICTV20175792	ssDNA(+/-)	plants	1	1532882	Coccinia mosaic Tamil Nadu virus	6	2	5
 Geminiviridae	Begomovirus	Begomovirus coheni	ICTV20073780	ssDNA(+/-)	plants	1	1031438;10832;1086072;1166472;1472012;1481463;1484007;1760866;1918519;220938;220940;220943;220944;270151;270152;270153;270154;3426741;355237;376613;503396;503397;503398;503399;503400;503403;503404;503405;503406;503407;537881;537882;623233;623705;623706;623707;623708;629701;629702;629703;629704;629705;629706;66366;710224;710225;761706;761707;761708;761709;761710;761711;761712	Begomovirus coheni;Tomato yellow leaf curl Oman virus;Tomato yellow leaf curl Seychelles virus;Tomato yellow leaf curl virus;Tomato yellow leaf curl virus - Huasteca;Tomato yellow leaf curl virus - IL	3440	56	1529
@@ -1088,7 +1088,7 @@ Geminiviridae	Begomovirus	Begomovirus manihotismalawiense	ICTV20041136	ssDNA(+/-
 Geminiviridae	Begomovirus	Begomovirus manihotiszanzibarense	ICTV20041138	ssDNA(+/-)	plants	1	223275;268969	East African cassava mosaic Zanzibar virus;East African cassava mosaic Zanzibar virus - Kenya [Kilifi]	34	3	8
 Geminiviridae	Begomovirus	Begomovirus melochiae	ICTV20175812	ssDNA(+/-)	plants	1	1742594	Melochia mosaic virus	4	2	4
 Geminiviridae	Begomovirus	Begomovirus melochiaflavi	ICTV20175813	ssDNA(+/-)	plants	1	1742595	Melochia yellow mosaic virus	5	2	5
-Geminiviridae	Begomovirus	Begomovirus melochiasecundi	ICTV202522473	ssDNA	plants	1			0	0	0
+Geminiviridae	Begomovirus	Begomovirus melochiasecundi	ICTV202522473	ssDNA	plants	1			0	1	0
 Geminiviridae	Begomovirus	Begomovirus merremiae	ICTV20083997	ssDNA(+/-)	plants	1	77813	Merremia mosaic virus	34	2	9
 Geminiviridae	Begomovirus	Begomovirus merremiapuertoricoense	ICTV20131923	ssDNA(+/-)	plants	1	714309	Merremia mosaic Puerto Rico virus	4	2	4
 Geminiviridae	Begomovirus	Begomovirus mestae	ICTV20152834	ssDNA(+/-)	plants	1	508748;508749;562950;562951	Mesta yellow vein mosaic Bahraich virus;Mesta yellow vein mosaic Bahraich virus-[India:Bahraich:2007];Mesta yellow vein mosaic Bahraich virus-[India:Bhanga:2008];Mesta yellow vein mosaic Bahraich viru	4	4	4
@@ -1333,7 +1333,7 @@ Geminiviridae	Begomovirus	Begomovirus warburgi	ICTV19981419	ssDNA(+/-)	plants	1	
 Geminiviridae	Begomovirus	Begomovirus whitaniae	ICTV202420469	ssDNA	plants	1	745066	Withania leaf curl virus	1	1	1
 Geminiviridae	Begomovirus	Begomovirus wissadulae	ICTV20131988	ssDNA(+/-)	plants	1	373593;51673	Wissadula golden mosaic St Thomas Virus;Wissadula golden mosaic virus	9	4	5
 Geminiviridae	Begomovirus	Begomovirus wissadulaflavi	ICTV20175852	ssDNA(+/-)	plants	1	1904884	Wissadula yellow mosaic virus	3	1	3
-Geminiviridae	Capulavirus	Capulavirus betae	ICTV202522501	ssDNA	plants	1			0	0	0
+Geminiviridae	Capulavirus	Capulavirus betae	ICTV202522501	ssDNA	plants	1			0	1	0
 Geminiviridae	Capulavirus	Capulavirus euphorbiae	ICTV20165306	ssDNA(+/-)	plants	1	1853865	Euphorbia caput-medusae latent virus	41	1	18
 Geminiviridae	Capulavirus	Capulavirus medicagonis	ICTV20165305	ssDNA(+/-)	plants	1	1306546	Capulavirus medicagonis	181	1	134
 Geminiviridae	Capulavirus	Capulavirus phaseoli	ICTV20165307	ssDNA(+/-)	plants	1	1218727	French bean severe leaf curl virus	7	1	6
@@ -1345,7 +1345,7 @@ Geminiviridae	Citlodavirus	Citlodavirus camelliae	ICTV202009175	ssDNA(+/-)	plant
 Geminiviridae	Citlodavirus	Citlodavirus citri	ICTV20165310	ssDNA(+/-)	plants	1	1202142;3427967	Citlodavirus citri;Citrus chlorotic dwarf associated virus	124	2	54
 Geminiviridae	Citlodavirus	Citlodavirus myricae	ICTV202420360	ssDNA(+/-)	plants	1	3044216	Myrica rubra citlodavirus 1	1	1	1
 Geminiviridae	Citlodavirus	Citlodavirus passiflorae	ICTV202009176	ssDNA(+/-)	plants	1	2162638	Passion fruit chlorotic mottle virus	2	1	2
-Geminiviridae	Cobecusvirus	Cobecusvirus phaseoli	ICTV202522679	ssDNA	plants	1			0	0	0
+Geminiviridae	Cobecusvirus	Cobecusvirus phaseoli	ICTV202522679	ssDNA	plants	1			0	1	0
 Geminiviridae	Curtovirus	Curtovirus armoraciae	ICTV19990949	ssDNA(+/-)	plants	1	46448	Horseradish curly top virus	2	1	1
 Geminiviridae	Curtovirus	Curtovirus betae	ICTV19990948	ssDNA(+/-)	plants	1	10840;268956;268958;268959;268961	Beet curly top virus;Beet curly top virus - California [Logan/Arabidopsis];Beet mild curly top virus - [Worland];Beet severe curly top virus - Cfh;Beet severe curly top virus - Cfh [Beta]	342	5	141
 Geminiviridae	Curtovirus	Curtovirus spinaciae	ICTV20125759	ssDNA(+/-)	plants	1	873160	Spinach severe curly top virus	2	1	2
@@ -1364,26 +1364,26 @@ Geminiviridae	Mastrevirus	Mastrevirus bourbonense	ICTV20125774	ssDNA(+/-)	plants
 Geminiviridae	Mastrevirus	Mastrevirus brachypodiumprimi	ICTV202420446	ssDNA(+/-)	plants	1	3082114	Brachypodium phoenicoides associated virus 1	1	1	1
 Geminiviridae	Mastrevirus	Mastrevirus brachypodiumsecundi	ICTV202420448	ssDNA(+/-)	plants	1	3082116	Brachypodium phoenicoides associated virus 2	1	1	1
 Geminiviridae	Mastrevirus	Mastrevirus bromi	ICTV20125763	ssDNA(+/-)	plants	1	936005	Bromus catharticus striate mosaic virus	2	1	2
-Geminiviridae	Mastrevirus	Mastrevirus cenchri	ICTV202522556	ssDNA(+/-)	plants	1			0	0	0
+Geminiviridae	Mastrevirus	Mastrevirus cenchri	ICTV202522556	ssDNA(+/-)	plants	1			0	1	0
 Geminiviridae	Mastrevirus	Mastrevirus chloris	ICTV19790995	ssDNA(+/-)	plants	1	10820	Chloris striate mosaic virus	14	1	14
 Geminiviridae	Mastrevirus	Mastrevirus cicerosis	ICTV20125767	ssDNA(+/-)	plants	1	1162554;1162556;887825;887826;930965	Chickpea chlorosis virus;Chickpea chlorosis virus-A;Chickpea chlorosis virus-B;Chickpea chlorosis virus-C;Chickpea chlorosis virus-E	39	5	34
 Geminiviridae	Mastrevirus	Mastrevirus cicerparvi	ICTV20125773	ssDNA(+/-)	plants	1	1400200;463360;57119;886791	Bean yellow dwarf virus;Chickpea chlorotic dwarf Pakistan virus;Chickpea chlorotic dwarf virus;Chickpea chlorotic dwarf virus D	383	4	276
 Geminiviridae	Mastrevirus	Mastrevirus ciliaris	ICTV20125764	ssDNA(+/-)	plants	1	1196237	Digitaria ciliaris striate mosaic virus	5	1	5
-Geminiviridae	Mastrevirus	Mastrevirus croci	ICTV202522557	ssDNA(+/-)	plants	1			0	0	0
+Geminiviridae	Mastrevirus	Mastrevirus croci	ICTV202522557	ssDNA(+/-)	plants	1			0	1	0
 Geminiviridae	Mastrevirus	Mastrevirus didactylae	ICTV20125772	ssDNA(+/-)	plants	1	889510	Digitaria didactyla striate mosaic virus	2	1	2
 Geminiviridae	Mastrevirus	Mastrevirus digitariae	ICTV19871300	ssDNA(+/-)	plants	1	10837	Digitaria streak virus	182	1	182
 Geminiviridae	Mastrevirus	Mastrevirus dilatati	ICTV20125765	ssDNA(+/-)	plants	1	1196236	Paspalum dilatatum striate mosaic virus	7	1	7
 Geminiviridae	Mastrevirus	Mastrevirus eleusinae	ICTV202009105	ssDNA(+/-)	plants	1	2596881	Eleusine indica associated virus	8	1	3
 Geminiviridae	Mastrevirus	Mastrevirus eragrostis	ICTV20093829	ssDNA(+/-)	plants	1	496807	Eragrostis streak virus	2	1	2
 Geminiviridae	Mastrevirus	Mastrevirus eragrostisminoris	ICTV20125771	ssDNA(+/-)	plants	1	1030595	Eragrostis minor streak virus	4	1	4
-Geminiviridae	Mastrevirus	Mastrevirus erythrodiplaxis	ICTV20175854	ssDNA(+/-)	plants	1			0	0	0
+Geminiviridae	Mastrevirus	Mastrevirus erythrodiplaxis	ICTV20175854	ssDNA(+/-)	plants	1			0	1	0
 Geminiviridae	Mastrevirus	Mastrevirus flavaparvi	ICTV20175853	ssDNA(+/-)	plants	1	1568974	Chickpea yellow dwarf virus	4	1	4
 Geminiviridae	Mastrevirus	Mastrevirus flavi	ICTV20125770	ssDNA(+/-)	plants	1	1162557	Chickpea yellows virus	3	1	2
 Geminiviridae	Mastrevirus	Mastrevirus fulleri	ICTV201908695	ssDNA(+/-)	plants	1	2557970	Maize streak dwarfing virus	5	1	5
 Geminiviridae	Mastrevirus	Mastrevirus hordei	ICTV19871302	ssDNA(+/-)	plants	1	10834;268789;290587;3430713;399784;434026;452663;452664;452665;452666;452667;452668;452669;497862;520123;522359;558674	Barley dwarf virus;Mastrevirus hordei;Wheat dwarf virus;Wheat dwarf virus - [Enkoping1];Wheat dwarf virus - [Gansu Gangu];Wheat dwarf virus - [Hebei Shijiazhuang];Wheat dwarf virus - [Henan zhengzhou]	477	17	337
 Geminiviridae	Mastrevirus	Mastrevirus ipomoeae	ICTV20175857	ssDNA(+/-)	plants	1	603333	Sweet potato symptomless virus 1	56	1	28
 Geminiviridae	Mastrevirus	Mastrevirus melenis	ICTV202009106	ssDNA(+/-)	plants	1	2596882	Melinis repens associated virus	3	1	3
-Geminiviridae	Mastrevirus	Mastrevirus mexicoense	ICTV202522558	ssDNA(+/-)	plants	1			0	0	0
+Geminiviridae	Mastrevirus	Mastrevirus mexicoense	ICTV202522558	ssDNA(+/-)	plants	1	3703210		1	1	1
 Geminiviridae	Mastrevirus	Mastrevirus miscanthi	ICTV19911632	ssDNA(+/-)	plants	1	10825;268776	Miscanthus streak virus;Miscanthus streak virus - [91]	6	2	6
 Geminiviridae	Mastrevirus	Mastrevirus nomiae	ICTV202420445	ssDNA(+/-)	invertebrates	0			0	0	0
 Geminiviridae	Mastrevirus	Mastrevirus oryzaprimi	ICTV201856686	ssDNA(+/-)	plants	1	2012856	Rice latent virus 1	24	1	24
@@ -1406,16 +1406,16 @@ Geminiviridae	Mastrevirus	Mastrevirus sporobosecundi	ICTV20125779	ssDNA(+/-)	pla
 Geminiviridae	Mastrevirus	Mastrevirus storeyi	ICTV19780758	ssDNA(+/-)	plants	1	10821;268315;268316;268319;268326;268328;268330;268331;268332;559498	Maize streak virus;Maize streak virus - A[Ama];Maize streak virus - A[Bambui];Maize streak virus - A[Kenya];Maize streak virus - A[Nigeria1];Maize streak virus - A[South Africa];Maize streak virus - B	1102	14	985
 Geminiviridae	Mastrevirus	Mastrevirus striatis	ICTV201856685	ssDNA(+/-)	plants	1	2025388;3406630	Mastrevirus striatis;maize striate mosaic virus	21	2	19
 Geminiviridae	Mastrevirus	Mastrevirus tabaci	ICTV19911636	ssDNA(+/-)	plants	1	10830;1162558;887824	Tobacco yellow dwarf virus;Tobacco yellow dwarf virus-A;Tobacco yellow dwarf virus-B	23	3	10
-Geminiviridae	Mastrevirus	Mastrevirus tripterygii	ICTV202522560	ssDNA(+/-)	plants	1			0	0	0
+Geminiviridae	Mastrevirus	Mastrevirus tripterygii	ICTV202522560	ssDNA(+/-)	plants	1			0	1	0
 Geminiviridae	Mastrevirus	Mastrevirus tritici	ICTV20125777	ssDNA(+/-)	plants	1	1174526	Wheat dwarf India virus	40	1	40
 Geminiviridae	Mastrevirus	Mastrevirus urochloae	ICTV20093838	ssDNA(+/-)	plants	1	520848	Urochloa streak virus	25	1	15
 Geminiviridae	Mastrevirus	Mastrevirus urochloareunionense	ICTV202420444	ssDNA(+/-)	plants	1	3064186	Urochloa decumbens associated virus	7	1	4
 Geminiviridae	Mastrevirus	Mastrevirus virgati	ICTV20152905	ssDNA(+/-)	plants	1	1571533;2049938	Switchgrass mosaic-associated virus;Switchgrass mosaic-associated virus 1	4	3	0
 Geminiviridae	Mulcrilevirus	Mulcrilevirus broussonetiae	ICTV202009791	ssDNA(+/-)	plants	1	2738469	Paper mulberry leaf curling associated virus 1	3	1	3
 Geminiviridae	Mulcrilevirus	Mulcrilevirus mori	ICTV202009181	ssDNA(+/-)	plants	1	1671380;2845646;3430967	Mulberry crinkle leaf virus;Mulberry crinkle-associated virus;Mulcrilevirus mori	40	3	3
-Geminiviridae	Oleurovirus	Oleurovirus oleae	ICTV202522680	ssDNA	plants	1			0	0	0
+Geminiviridae	Oleurovirus	Oleurovirus oleae	ICTV202522680	ssDNA	plants	1			0	1	0
 Geminiviridae	Opunvirus	Opunvirus opuntiae	ICTV202009173	ssDNA(+/-)	plants	1	2706523	Opuntia virus 1	62	2	62
-Geminiviridae	Pylecuvirus	Pylecuvirus petroselini	ICTV202522681	ssDNA	plants	1			0	0	0
+Geminiviridae	Pylecuvirus	Pylecuvirus petroselini	ICTV202522681	ssDNA	plants	1			0	1	0
 Geminiviridae	Topilevirus	Topilevirus lycopersici	ICTV202009179	ssDNA(+/-)	plants	1	2027645	Tomato associated geminivirus 1	3	2	3
 Geminiviridae	Topilevirus	Topilevirus solani	ICTV202009178	ssDNA(+/-)	plants	1	2060142	Tomato apical leaf curl virus	7	1	7
 Geminiviridae	Topocuvirus	Topocuvirus solani	ICTV19911638	ssDNA(+/-)	plants	1	49267	Tomato pseudo-curly top virus	8	1	1
@@ -1455,22 +1455,22 @@ Geplanaviridae	Stupevirus	Stupevirus kummerois	ICTV202318466	ssDNA(+/-)	plants	1
 Geplanaviridae	Wingardivirus	Wingardivirus arilais	ICTV202318473	ssDNA(+/-)	freshwater (S)	0			0	0	0
 Geplanaviridae	Wingardivirus	Wingardivirus capibaris	ICTV202318474	ssDNA(+/-)	vertebrates	0			0	0	0
 Kitaviridae	Blunervirus	Blunervirus camelliae	ICTV201907186	ssRNA(+)	plants	1	2419939	Tea plant necrotic ring blotch virus	108	4	52
-Kitaviridae	Blunervirus	Blunervirus chrysanthemi	ICTV202522161	ssRNA(+)	plants	1			0	0	0
-Kitaviridae	Blunervirus	Blunervirus cinnamomi	ICTV202522159	ssRNA(+)	plants	1			0	0	0
-Kitaviridae	Blunervirus	Blunervirus cupressus	ICTV202522162	ssRNA(+)	plants	1			0	0	0
-Kitaviridae	Blunervirus	Blunervirus festucae	ICTV202522163	ssRNA(+)	plants	1			0	0	0
-Kitaviridae	Blunervirus	Blunervirus liquidambarum	ICTV202522166	ssRNA(+)	plants	1			0	0	0
-Kitaviridae	Blunervirus	Blunervirus mali	ICTV202522170	ssRNA(+)	plants	1			0	0	0
+Kitaviridae	Blunervirus	Blunervirus chrysanthemi	ICTV202522161	ssRNA(+)	plants	1			0	1	0
+Kitaviridae	Blunervirus	Blunervirus cinnamomi	ICTV202522159	ssRNA(+)	plants	1			0	1	0
+Kitaviridae	Blunervirus	Blunervirus cupressus	ICTV202522162	ssRNA(+)	plants	1			0	1	0
+Kitaviridae	Blunervirus	Blunervirus festucae	ICTV202522163	ssRNA(+)	plants	1			0	1	0
+Kitaviridae	Blunervirus	Blunervirus liquidambarum	ICTV202522166	ssRNA(+)	plants	1			0	1	0
+Kitaviridae	Blunervirus	Blunervirus mali	ICTV202522170	ssRNA(+)	plants	1			0	5	0
 Kitaviridae	Blunervirus	Blunervirus paulowniae	ICTV202522168	ssRNA(+)	plants	1			0	0	0
-Kitaviridae	Blunervirus	Blunervirus portulacae	ICTV202522165	ssRNA(+)	plants	1			0	0	0
-Kitaviridae	Blunervirus	Blunervirus quercus	ICTV202522164	ssRNA(+)	plants	1			0	0	0
+Kitaviridae	Blunervirus	Blunervirus portulacae	ICTV202522165	ssRNA(+)	plants	1			0	1	0
+Kitaviridae	Blunervirus	Blunervirus quercus	ICTV202522164	ssRNA(+)	plants	1			0	1	0
 Kitaviridae	Blunervirus	Blunervirus solani	ICTV202009259	ssRNA(+)	plants	1	2762435	Tomato fruit blotch virus	109	4	58
-Kitaviridae	Blunervirus	Blunervirus torreyae	ICTV202522160	ssRNA(+)	plants	1			0	0	0
-Kitaviridae	Blunervirus	Blunervirus tritici	ICTV202522167	ssRNA(+)	plants	1			0	0	0
-Kitaviridae	Blunervirus	Blunervirus ulmi	ICTV202522169	ssRNA(+)	plants	1			0	0	0
+Kitaviridae	Blunervirus	Blunervirus torreyae	ICTV202522160	ssRNA(+)	plants	1			0	1	0
+Kitaviridae	Blunervirus	Blunervirus tritici	ICTV202522167	ssRNA(+)	plants	1			0	1	0
+Kitaviridae	Blunervirus	Blunervirus ulmi	ICTV202522169	ssRNA(+)	plants	1			0	4	0
 Kitaviridae	Blunervirus	Blunervirus vaccinii	ICTV20165505	ssRNA(+)	plants	1	1094249;3047693	Blueberry necrotic ring blotch virus;Blunervirus vaccinii	22	8	8
 Kitaviridae	Cilevirus	Cilevirus australis	ICTV202215120	ssRNA(+)	plants	1	2921792	Ligustrum leprosis virus	4	2	3
-Kitaviridae	Cilevirus	Cilevirus chilense	ICTV202522158	ssRNA(+)	plants	1			0	0	0
+Kitaviridae	Cilevirus	Cilevirus chilense	ICTV202522158	ssRNA(+)	plants	1			0	2	0
 Kitaviridae	Cilevirus	Cilevirus colombiaense	ICTV20165506	ssRNA(+)	invertebrates, plants	1	1288500;2052685;2054415;3047756	Cilevirus colombiaense;Citrus leprosis virus C2;Citrus leprosis virus cytoplasmic type 2;Hibiscus-infecting cilevirus	60	8	34
 Kitaviridae	Cilevirus	Cilevirus leprosis	ICTV20095206	ssRNA(+)	invertebrates, plants	1	3047755;347219	Cilevirus leprosis;Citrus leprosis virus C	653	4	47
 Kitaviridae	Cilevirus	Cilevirus ligustri	ICTV202215119	ssRNA(+)	plants	1	2921791	Ligustrum chlorotic spot virus	6	2	6
@@ -1481,13 +1481,13 @@ Kitaviridae	Cilevirus	Cilevirus solani	ICTV202215118	ssRNA(+)	plants	1	3071295	S
 Kitaviridae	Higrevirus	Higrevirus amurense	ICTV202420243	ssRNA(+)	plants	1	3022218	Phellodendron-associated higre-like virus	3	3	0
 Kitaviridae	Higrevirus	Higrevirus pistaciae	ICTV202420244	ssRNA(+)	plants	1	2794236	Pistachio virus X	4	3	0
 Kitaviridae	Higrevirus	Higrevirus waimanalo	ICTV20133511	ssRNA(+)	plants	1	1513278;3047949	Hibiscus green spot virus 2;Higrevirus waimanalo	40	6	13
-Konkoviridae	Olpivirus	Olpivirus freesiae	ICTV202522293	ssRNA(-)	plants	1			0	0	0
-Konkoviridae	Olpivirus	Olpivirus lachenaliae	ICTV202522294	ssRNA(-)	plants	1			0	0	0
+Konkoviridae	Olpivirus	Olpivirus freesiae	ICTV202522293	ssRNA(-)	plants	1			0	4	0
+Konkoviridae	Olpivirus	Olpivirus lachenaliae	ICTV202522294	ssRNA(-)	plants	1			0	4	0
 Konkoviridae	Olpivirus	Olpivirus lactucae	ICTV202420185	ssRNA(-)	plants	1	3082270	Lactuca Big Vein associated Phlebovirus	4	4	0
 Konkoviridae	Olpivirus	Olpivirus soli	ICTV202522295	ssRNA(-)	soil (S)	0			0	0	0
-Konkoviridae	Olpivirus	Olpivirus tripterocalicis	ICTV202522296	ssRNA(-)	plants	1			0	0	0
+Konkoviridae	Olpivirus	Olpivirus tripterocalicis	ICTV202522296	ssRNA(-)	plants	1			0	3	0
 Konkoviridae	Olpivirus	Olpivirus tulipae	ICTV202317829	ssRNA(-)	plants	1	2761348	Tulip streak virus	4	4	2
-Konkoviridae	Olpivirus	Olpivirus waitziae	ICTV202522297	ssRNA(-)	plants	1			0	0	0
+Konkoviridae	Olpivirus	Olpivirus waitziae	ICTV202522297	ssRNA(-)	plants	1			0	4	0
 Mahapunaviridae	Acamarivirus	Acamarivirus apogeeis	ICTV202318947	ssDNA(+/-)	vertebrates	0			0	0	0
 Mahapunaviridae	Acamarivirus	Acamarivirus cometis	ICTV202318948	ssDNA(+/-)	vertebrates	0			0	0	0
 Mahapunaviridae	Acamarivirus	Acamarivirus faculaes	ICTV202318949	ssDNA(+/-)	vertebrates	0			0	0	0
@@ -1671,7 +1671,7 @@ Phenuiviridae	Coguvirus	Coguvirus citri	ICTV201856630	ssRNA(-); ssRNA(+/-)	plant
 Phenuiviridae	Coguvirus	Coguvirus citrulli	ICTV202214162	ssRNA(-); ssRNA(+/-)	plants	1	2034156;3059896	Coguvirus citrulli;Watermelon crinkle leaf-associated virus 1	92	4	9
 Phenuiviridae	Coguvirus	Coguvirus eburi	ICTV201907130	ssRNA(-); ssRNA(+/-)	plants	1	2484986;2734427	Citrus virus A;Coguvirus eburi	108	4	20
 Phenuiviridae	Coguvirus	Coguvirus henanense	ICTV202214163	ssRNA(-); ssRNA(+/-)	plants	1	2034157;3059897	Coguvirus henanense;Watermelon crinkle leaf-associated virus 2	64	4	9
-Phenuiviridae	Coguvirus	Coguvirus rubi	ICTV202522364	ssRNA(+/-)	plants	1			0	0	0
+Phenuiviridae	Coguvirus	Coguvirus rubi	ICTV202522364	ssRNA(+/-)	plants	1			0	2	0
 Phenuiviridae	Coguvirus	Coguvirus yunnanense	ICTV202214165	ssRNA(-); ssRNA(+/-)	plants	1	2836142	Yunnan Paris negative-stranded virus	4	2	4
 Phenuiviridae	Entovirus	Entovirus entoleucae	ICTV201907644	ssRNA(-); ssRNA(+/-)	fungi	0			0	0	0
 Phenuiviridae	Entovirus	Entovirus guangxiense	ICTV202522365	ssRNA(+/-)	soil (S)	0			0	0	0
@@ -1712,7 +1712,7 @@ Phenuiviridae	Laulavirus	Laulavirus betaviticulum	ICTV202009834	ssRNA(-)	protist
 Phenuiviridae	Laulavirus	Laulavirus cordycipitis	ICTV202522382	ssRNA(-)	fungi	0			0	0	0
 Phenuiviridae	Laulavirus	Laulavirus gammaviticulum	ICTV202009835	ssRNA(-); ssRNA(+/-)	protists	0	2755145	Grapevine associated cogu-like virus 4	6	3	6
 Phenuiviridae	Laulavirus	Laulavirus laurelense	ICTV201856609	ssRNA(-)	invertebrates	0			0	0	0
-Phenuiviridae	Laulavirus	Laulavirus panici	ICTV202522383	ssRNA(-)	plants	1			0	0	0
+Phenuiviridae	Laulavirus	Laulavirus panici	ICTV202522383	ssRNA(-)	plants	1			0	3	0
 Phenuiviridae	Laulavirus	Laulavirus valsae	ICTV202522384	ssRNA(-)	fungi	0			0	0	0
 Phenuiviridae	Lentinuvirus	Lentinuvirus adlentinulae	ICTV202522387	ssRNA(+/-)	fungi	0			0	0	0
 Phenuiviridae	Lentinuvirus	Lentinuvirus alphaarmillariae	ICTV202522385	ssRNA(+/-)	fungi	0			0	0	0
@@ -1909,7 +1909,7 @@ Pospiviroidae	Pospiviroid	Pospiviroid machoplantae	ICTV19911908	ssRNA	plants	1	1
 Pospiviroidae	Pospiviroid	Pospiviroid parvicapsici	ICTV20115412	ssRNA	plants	1	574040	Pepper chat fruit viroid	132	1	94
 Potyviridae	Arepavirus	Arepavirus arecae	ICTV201907457	ssRNA(+)	plants	1	2306727	Areca palm necrotic ringspot virus	36	1	5
 Potyviridae	Arepavirus	Arepavirus arecamaculatum	ICTV201907456	ssRNA(+)	plants	1	2306623	Areca palm necrotic spindle-spot virus	10	1	7
-Potyviridae	Arepavirus	Arepavirus karnatakense	ICTV202522450	ssRNA(+)	plants	1			0	0	0
+Potyviridae	Arepavirus	Arepavirus karnatakense	ICTV202522450	ssRNA(+)	plants	1			0	1	0
 Potyviridae	Bevemovirus	Bevemovirus campanulae	ICTV20175915	ssRNA(+)	plants	1	1982660	Bellflower veinal mottle virus	3	1	3
 Potyviridae	Brambyvirus	Brambyvirus rubi	ICTV20094507	ssRNA(+)	plants	1	323118	Blackberry virus Y	8	1	2
 Potyviridae	Bymovirus	Bymovirus avenae	ICTV19931501	ssRNA(+)	plants	1	157837	Oat mosaic virus	12	2	2
@@ -1927,8 +1927,8 @@ Potyviridae	Ipomovirus	Ipomovirus lenisbatatae	ICTV19982236	ssRNA(+)	plants	1	41
 Potyviridae	Ipomovirus	Ipomovirus lycopersici	ICTV20041837	ssRNA(+)	plants	1	178599;981403	Eggplant mild leaf mottle virus;Tomato mild mottle virus	16	2	1
 Potyviridae	Ipomovirus	Ipomovirus manihotis	ICTV20115387	ssRNA(+)	plants	1	946046;980521;980522;980523;980524;980525;980526;980527;980528;980529;980530;980531;980532;980533;980534;980535;980536;980537;980538;980539;980540	Ugandan cassava brown streak virus;Ugandan cassava brown streak virus-[MW:Mangochi 66:2009];Ugandan cassava brown streak virus-[Malawi:Karonga 10D:2009];Ugandan cassava brown streak virus-[Malawi:Karo	244	21	29
 Potyviridae	Macluravirus	Macluravirus alipiniatessallati	ICTV201907443	ssRNA(+)	plants	1	2212477	Macluravirus alipiniatessallati	2	1	2
-Potyviridae	Macluravirus	Macluravirus alpiniae	ICTV19991360	ssRNA(+)	plants	1			0	0	0
-Potyviridae	Macluravirus	Macluravirus amomi	ICTV202522451	ssRNA(+)	plants	1			0	0	0
+Potyviridae	Macluravirus	Macluravirus alpiniae	ICTV19991360	ssRNA(+)	plants	1	204073		1	1	0
+Potyviridae	Macluravirus	Macluravirus amomi	ICTV202522451	ssRNA(+)	plants	1			0	1	0
 Potyviridae	Macluravirus	Macluravirus amomulineae	ICTV202215108	ssRNA(+)	plants	1	3070159	Large cardamon chirke virus	1	1	0
 Potyviridae	Macluravirus	Macluravirus cardamomi	ICTV19911763	ssRNA(+)	plants	1	104637	Cardamom mosaic virus	27	1	3
 Potyviridae	Macluravirus	Macluravirus dioscoreachinense	ICTV20084479	ssRNA(+)	plants	1	128818	Chinese yam necrotic mosaic virus	29	1	7
@@ -1940,7 +1940,7 @@ Potyviridae	Macluravirus	Macluravirus rumicis	ICTV20165417	ssRNA(+)	plants	1	198
 Potyviridae	Macluravirus	Macluravirus scolymus	ICTV19911756	ssRNA(+)	plants	1	341113;46076	Artichoke latent virus;Ranunculus latent virus	17	2	5
 Potyviridae	Phragmivirus	Phragmivirus phragmii	ICTV202420509	ssRNA(+)	plants	1	2560391	Common reed chlorotic stripe virus	1	1	0
 Potyviridae	Phragmivirus	Phragmivirus spartinae	ICTV202420510	ssRNA(+)	plants	1	190503	Spartina mottle virus	8	1	5
-Potyviridae	Poacevirus	Poacevirus avenae	ICTV202522452	ssRNA(+)	plants	1			0	0	0
+Potyviridae	Poacevirus	Poacevirus avenae	ICTV202522452	ssRNA(+)	plants	1			0	1	0
 Potyviridae	Poacevirus	Poacevirus caladeniae	ICTV20153813	ssRNA(+)	plants	1	1198147	Caladenia virus A	2	1	2
 Potyviridae	Poacevirus	Poacevirus sacchari	ICTV20041836	ssRNA(+)	plants	1	3431714;53954	Poacevirus sacchari;Sugarcane streak mosaic virus	1045	2	35
 Potyviridae	Poacevirus	Poacevirus tritici	ICTV20115402	ssRNA(+)	plants	1	431317	Triticum mosaic virus	96	1	27
@@ -1959,7 +1959,7 @@ Potyviridae	Potyvirus	Potyvirus angelicae	ICTV20094529	ssRNA(+)	plants	1	436007	
 Potyviridae	Potyvirus	Potyvirus apii	ICTV20074321	ssRNA(+)	plants	1	168135	Potyvirus apii	31	1	5
 Potyviridae	Potyvirus	Potyvirus apiumtessellati	ICTV19760758	ssRNA(+)	plants	1	112436	Celery mosaic virus	40	1	7
 Potyviridae	Potyvirus	Potyvirus arachidis	ICTV19760775	ssRNA(+)	plants	1	103926;33763	Peanut mottle virus;Peanut mottle virus (strain M)	67	2	18
-Potyviridae	Potyvirus	Potyvirus araujiae	ICTV19911755	ssRNA(+)	plants	1			0	0	0
+Potyviridae	Potyvirus	Potyvirus araujiae	ICTV19911755	ssRNA(+)	plants	1	454757		1	1	0
 Potyviridae	Potyvirus	Potyvirus arracachae	ICTV20094532	ssRNA(+)	plants	1	405558	Arracacha mottle virus	2	1	2
 Potyviridae	Potyvirus	Potyvirus artichokis	ICTV20084504	ssRNA(+)	plants	1	218282	Chinese artichoke mosaic virus	12	1	0
 Potyviridae	Potyvirus	Potyvirus ascaloniae	ICTV19991430	ssRNA(+)	plants	1	62059;62060	Shallot yellow stripe virus;Welsh onion yellow stripe virus	61	2	5
@@ -2000,7 +2000,7 @@ Potyviridae	Potyvirus	Potyvirus chamaescillae	ICTV20143332	ssRNA(+)	plants	1	107
 Potyviridae	Potyvirus	Potyvirus chichorii	ICTV19991387	ssRNA(+)	plants	1	73423	Endive necrotic mosaic virus	7	1	4
 Potyviridae	Potyvirus	Potyvirus citrulli	ICTV19760785	ssRNA(+)	plants	1	146500;3240504	Potyvirus citrulli;Watermelon mosaic virus	1735	2	180
 Potyviridae	Potyvirus	Potyvirus citrullimoroccense	ICTV19991406	ssRNA(+)	plants	1	167129	Moroccan watermelon mosaic virus	92	1	37
-Potyviridae	Potyvirus	Potyvirus citrullufolimaculae	ICTV20074419	ssRNA(+)	plants	1			0	0	0
+Potyviridae	Potyvirus	Potyvirus citrullufolimaculae	ICTV20074419	ssRNA(+)	plants	1	70134		1	1	0
 Potyviridae	Potyvirus	Potyvirus clitoriae	ICTV20041743	ssRNA(+)	plants	1	114891	Clitoria virus Y	2	1	0
 Potyviridae	Potyvirus	Potyvirus cliviaflavilineae	ICTV202215110	ssRNA(+)	plants	1	2838134	Clivia yellow stripe virus	3	1	0
 Potyviridae	Potyvirus	Potyvirus colchici	ICTV20084542	ssRNA(+)	plants	1	256591	Meadow saffron breaking virus	3	1	0
@@ -2040,7 +2040,7 @@ Potyviridae	Potyvirus	Potyvirus hardenbergiae	ICTV20094574	ssRNA(+)	plants	1	409
 Potyviridae	Potyvirus	Potyvirus heliannulabis	ICTV20175923	ssRNA(+)	plants	1	1963260	Sunflower ring blotch virus	2	1	2
 Potyviridae	Potyvirus	Potyvirus helichloromaculae	ICTV20115436	ssRNA(+)	plants	1	129732	Sunflower chlorotic mottle virus	60	1	6
 Potyviridae	Potyvirus	Potyvirus helitenuitessellati	ICTV20153975	ssRNA(+)	plants	1	715480	Sunflower mild mosaic virus	3	1	2
-Potyviridae	Potyvirus	Potyvirus helitessellati	ICTV20041809	ssRNA(+)	plants	1			0	0	0
+Potyviridae	Potyvirus	Potyvirus helitessellati	ICTV20041809	ssRNA(+)	plants	1	185017		1	1	0
 Potyviridae	Potyvirus	Potyvirus henbanis	ICTV19710256	ssRNA(+)	plants	1	369762	Henbane mosaic virus	10	1	7
 Potyviridae	Potyvirus	Potyvirus heraclei	ICTV202522453	ssRNA(+)	plants	1			0	0	0
 Potyviridae	Potyvirus	Potyvirus hibbertiae	ICTV20074356	ssRNA(+)	plants	1	114892	Hibbertia virus Y	2	1	0
@@ -2058,7 +2058,7 @@ Potyviridae	Potyvirus	Potyvirus lactucae	ICTV19760767	ssRNA(+)	plants	1	12202	Le
 Potyviridae	Potyvirus	Potyvirus lactucaitalicense	ICTV20165420	ssRNA(+)	plants	1	1688637	Lettuce Italian necrotic virus	3	1	3
 Potyviridae	Potyvirus	Potyvirus lilimaculae	ICTV19991404	ssRNA(+)	plants	1	32624	Lily mottle virus	209	1	14
 Potyviridae	Potyvirus	Potyvirus lupinus	ICTV20143337	ssRNA(+)	plants	1	573615	Lupinus mosaic virus	2	1	2
-Potyviridae	Potyvirus	Potyvirus lycorsis	ICTV20041773	ssRNA(+)	plants	1			0	0	0
+Potyviridae	Potyvirus	Potyvirus lycorsis	ICTV20041773	ssRNA(+)	plants	1	186187		1	1	0
 Potyviridae	Potyvirus	Potyvirus malvae	ICTV20094592	ssRNA(+)	plants	1	3240558	Potyvirus malvae	33	1	3
 Potyviridae	Potyvirus	Potyvirus melongenae	ICTV201856671	ssRNA(+)	plants	1	3240745	African eggplant mosaic virus	7	1	5
 Potyviridae	Potyvirus	Potyvirus melozonati	ICTV201856677	ssRNA(+)	plants	1	2018313	Wild melon vein banding virus	4	1	2
@@ -2098,14 +2098,14 @@ Potyviridae	Potyvirus	Potyvirus pepo	ICTV19911825	ssRNA(+)	plants	1	390849	Zucch
 Potyviridae	Potyvirus	Potyvirus peporesticulae	ICTV20165421	ssRNA(+)	plants	1	1679239	Zucchini shoestring virus	6	1	3
 Potyviridae	Potyvirus	Potyvirus pepotigris	ICTV20143342	ssRNA(+)	plants	1	1340535;1406816	Squash chlorosis mottling virus;Zucchini tigre mosaic virus	96	2	18
 Potyviridae	Potyvirus	Potyvirus perulycopersici	ICTV19911818	ssRNA(+)	plants	1	187978	Peru tomato mosaic virus	29	1	5
-Potyviridae	Potyvirus	Potyvirus pfaffiae	ICTV20084566	ssRNA(+)	plants	1			0	0	0
+Potyviridae	Potyvirus	Potyvirus pfaffiae	ICTV20084566	ssRNA(+)	plants	1	258471		1	1	0
 Potyviridae	Potyvirus	Potyvirus phaseoli	ICTV19951863	ssRNA(+)	plants	1	3240593;43240	Bean common mosaic necrosis virus;Potyvirus phaseoli	129	2	26
 Potyviridae	Potyvirus	Potyvirus phaseoluteum	ICTV19710251	ssRNA(+)	plants	1	1143703;1143715;1143716;12197;521257;522268	Bean yellow mosaic virus;Bean yellow mosaic virus isolate B25;Bean yellow mosaic virus-[Canna];Bean yellow mosaic virus-[Capsicum annuum 'Purple flash'];Bean yellow mosaic virus-[Hibiscus rosa-sinensi	459	7	36
 Potyviridae	Potyvirus	Potyvirus phaseovulgaris	ICTV19991368	ssRNA(+)	plants	1	12196;28353;29276;3240595;39114;404428	Bean common mosaic virus;Bean common mosaic virus isolate Mysore;Bean common mosaic virus strain Blackeye;Dendrobium mosaic virus;Peanut stripe virus;Potyvirus phaseovulgaris	708	10	118
 Potyviridae	Potyvirus	Potyvirus phytolaccae	ICTV19760778	ssRNA(+)	plants	1	1220025	Pokeweed mosaic virus	7	1	5
 Potyviridae	Potyvirus	Potyvirus pisumsemenportati	ICTV19760774	ssRNA(+)	plants	1	12208;3240597	Pea seed-borne mosaic virus;Potyvirus pisumsemenportati	113	2	13
 Potyviridae	Potyvirus	Potyvirus platycodonis	ICTV201907437	ssRNA(+)	plants	1	2320870	Platycodon mild mottle virus	2	1	2
-Potyviridae	Potyvirus	Potyvirus pleioblasti	ICTV202113839	ssRNA(+)	plants	1			0	0	0
+Potyviridae	Potyvirus	Potyvirus pleioblasti	ICTV202113839	ssRNA(+)	plants	1	2760003		1	1	1
 Potyviridae	Potyvirus	Potyvirus pleionis	ICTV202009674	ssRNA(+)	plants	1	1403565	Pleione flower breaking virus	3	1	2
 Potyviridae	Potyvirus	Potyvirus plumpoxi	ICTV19791085	ssRNA(+)	plants	1	12211;12212;1286212;215844;31738;3240600;587197	Plum pox virus;Plum pox virus D;Plum pox virus isolate blackthorn;Plum pox virus strain Dideron;Plum pox virus strain El Amar;Plum pox virus strain Marcus;Potyvirus plumpoxi	2889	8	546
 Potyviridae	Potyvirus	Potyvirus polianthis	ICTV19991442	ssRNA(+)	plants	1	101281	Tuberose mild mosaic virus	32	1	3
@@ -2113,7 +2113,7 @@ Potyviridae	Potyvirus	Potyvirus polianthismaculae	ICTV20084598	ssRNA(+)	plants	1
 Potyviridae	Potyvirus	Potyvirus polygonati	ICTV202318063	ssRNA(+)	plants	1	3019935	Polygonatum mosaic-associated virus 1	2	1	2
 Potyviridae	Potyvirus	Potyvirus polygonatimaculae	ICTV202420506	ssRNA(+)	plants	1	2831606	Polygonatnum kingianum mottle virus	5	1	2
 Potyviridae	Potyvirus	Potyvirus puerariae	ICTV202420502	ssRNA(+)	plants	1	3052058	kudzu chlorotic ring blotch virus	1	1	1
-Potyviridae	Potyvirus	Potyvirus ranunculi	ICTV20084575	ssRNA(+)	plants	1			0	0	0
+Potyviridae	Potyvirus	Potyvirus ranunculi	ICTV20084575	ssRNA(+)	plants	1	341112		1	1	0
 Potyviridae	Potyvirus	Potyvirus ranunculideformationis	ICTV20084573	ssRNA(+)	plants	1	341110	Ranunculus leaf distortion virus	4	1	0
 Potyviridae	Potyvirus	Potyvirus ranunculitenuis	ICTV20084574	ssRNA(+)	plants	1	341111	Ranunculus mild mosaic virus	30	1	2
 Potyviridae	Potyvirus	Potyvirus rapae	ICTV19991444	ssRNA(+)	plants	1	12230;300942;3240607	Potyvirus rapae;Turnip mosaic virus;Turnip mosaic virus (isolate UK1)	2472	3	585
@@ -2183,88 +2183,88 @@ Rhabdoviridae	Alphacrustrhavirus	Alphacrustrhavirus vison	ICTV202522447	ssRNA(-)
 Rhabdoviridae	Alphacrustrhavirus	Alphacrustrhavirus wenling	ICTV202009636	ssRNA(-)	invertebrates	0			0	0	0
 Rhabdoviridae	Alphacrustrhavirus	Alphacrustrhavirus zhejiang	ICTV202009637	ssRNA(-)	invertebrates	0			0	0	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus actinidiae	ICTV202214166	ssRNA(-)	plants	1	3069721	Actinidia virus D	1	1	1
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus allii	ICTV202420631	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus allii	ICTV202420631	ssRNA(-)	plants	1	3078284		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus alphaartemisiae	ICTV202420633	ssRNA(-)	plants	1			0	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus alphachysanthemi	ICTV202113309	ssRNA(-)	plants	1	3070829	chrysanthemum yellow dwarf associated virus	1	1	1
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus alphafragariae	ICTV202008907	ssRNA(-)	plants	1	2594796;2664234;2676436	Cytorhabdovirus fragariae;Strawberry virus 1;strawberry-associated virus 1	14	3	7
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus alphamedicagonis	ICTV20151085	ssRNA(-)	plants	1	1972639;998864	Alfalfa dwarf virus;Cytorhabdovirus medicagonis	34	2	3
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus alphapogostemi	ICTV202317918	ssRNA(-)	plants	1	3426105	Alphacytorhabdovirus alphapogostemi	2	1	2
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus alphaprimulae	ICTV202420634	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus alphaprimulae	ICTV202420634	ssRNA(-)	plants	1	3078303		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus alpharubi	ICTV201907671	ssRNA(-)	invertebrates, plants	1	758677	Raspberry vein chlorosis virus	11	1	3
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus alphatrifolii	ICTV202008908	ssRNA(-)	plants	1	2448906	Trifolium pratense virus A	6	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus alphawuhaninsectum	ICTV201907675	ssRNA(-)	invertebrates	0			0	0	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus arctii	ICTV202420632	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus arctii	ICTV202420632	ssRNA(-)	plants	1	3078271		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus asclepiadis	ICTV202214168	ssRNA(-)	plants	1	2793722	Asclepias syriaca virus 1	2	1	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus baccharis	ICTV202420635	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus baccharis	ICTV202420635	ssRNA(-)	plants	1	3078275		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus bacopae	ICTV202113308	ssRNA(-)	plants	1	2813287	Bacopa monnieri virus 1	2	2	2
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus betaartemisiae	ICTV202420636	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus betachrysanthemi	ICTV202420637	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus betaartemisiae	ICTV202420636	ssRNA(-)	plants	1	3078273		1	1	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus betachrysanthemi	ICTV202420637	ssRNA(-)	plants	1	3078278		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus betafragariae	ICTV202317923	ssRNA(-)	plants	1	2911487	Strawberry virus 2	4	1	2
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus betamedicagonis	ICTV202420638	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus betapogostemi	ICTV202420639	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus betaprimulae	ICTV202420640	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus betarubi	ICTV202420641	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus betamedicagonis	ICTV202420638	ssRNA(-)	plants	1	3078288		1	1	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus betapogostemi	ICTV202420639	ssRNA(-)	plants	1	3426118		1	1	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus betaprimulae	ICTV202420640	ssRNA(-)	plants	1	3078304		1	1	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus betarubi	ICTV202420641	ssRNA(-)	plants	1	3078306		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus betatrifolii	ICTV202008909	ssRNA(-)	plants	1	2448907	Trifolium pratense virus B	5	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus betawuhaninsectum	ICTV201907676	ssRNA(-)	invertebrates	0			0	0	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus brassicicolae	ICTV201907666	ssRNA(-)	invertebrates, plants	1	2051550	Cabbage cytorhabdovirus 1	13	1	3
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus cardaminis	ICTV202420642	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus cardaminis	ICTV202420642	ssRNA(-)	plants	1	3078276		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus chelidonii	ICTV202420643	ssRNA(-)	plants	1	3090861	Chelidonium yellow mottle associated virus	1	1	1
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus cnidii	ICTV202420644	ssRNA(-)	plants	1	3057102	Cnidium virus 2	10	1	10
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus conopholis	ICTV202420645	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus conopholis	ICTV202420645	ssRNA(-)	plants	1	3078279		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus coriandri	ICTV202420646	ssRNA(-)	plants	1	3074901	Coriander cytorhabdovirus 1	1	1	1
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus cynarae	ICTV202420647	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus cynarae	ICTV202420647	ssRNA(-)	plants	1	3078280		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus daphnis	ICTV202317915	ssRNA(-)	plants	1	3002498	Daphne virus 1	2	1	2
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus deltapogostemi	ICTV202420648	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus euphorbiae	ICTV202420649	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus deltapogostemi	ICTV202420648	ssRNA(-)	plants	1	3426131		1	1	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus euphorbiae	ICTV202420649	ssRNA(-)	plants	1	3078281		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus fici	ICTV202420650	ssRNA(-)	plants	1			0	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus fragariarugosus	ICTV19910279	ssRNA(-)	invertebrates, plants	1	135656;1985706	Cytorhabdovirus fragariarugosus;Strawberry crinkle virus	49	2	3
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus gammaartemisiae	ICTV202420651	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus gammapogostemi	ICTV202420652	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus gammaartemisiae	ICTV202420651	ssRNA(-)	plants	1	3078274		1	1	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus gammapogostemi	ICTV202420652	ssRNA(-)	plants	1	3078300		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus gammawuhaninsectus	ICTV201907677	ssRNA(-)	invertebrates	0			0	0	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus gei	ICTV202420653	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus gei	ICTV202420653	ssRNA(-)	plants	1	3078285		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus glehniae	ICTV202214170	ssRNA(-)	plants	1	2793728	Glehnia littoralis virus 1	2	1	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus hederae	ICTV202420654	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus hederae	ICTV202420654	ssRNA(-)	plants	1	3078286		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus hyptisis	ICTV202317916	ssRNA(-)	plants	1	2963947	Hyptis latent virus	2	1	2
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus ilicis	ICTV202420655	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus ilicis	ICTV202420655	ssRNA(-)	plants	1	3078287		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus kenyatuberosum	ICTV202214172	ssRNA(-)	plants	1	2801326	Kenyan potato cytorhabdovirus	5	1	4
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus lactucanecante	ICTV19760552	ssRNA(-)	invertebrates, plants	1	1985702;32612	Cytorhabdovirus lactucanecante;Lettuce necrotic yellows virus	60	2	4
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus lactumaculante	ICTV20094915	ssRNA(-)	invertebrates, plants	1	471285	Lettuce yellow mottle virus	2	1	2
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus lonicerae	ICTV202522832	ssRNA(-)	plants	1			0	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus lycopersici	ICTV201907673	ssRNA(-)	invertebrates, plants	1	1967841	Tomato yellow mottle-associated virus	19	1	12
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus menthae	ICTV202420656	ssRNA(-)	plants	1			0	1	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus morindae	ICTV202420657	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus morindae	ICTV202420657	ssRNA(-)	plants	1	3426148		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus nymphaeae	ICTV202214173	ssRNA(-)	plants	1	2793733	Nymphaea alba virus 1	2	1	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus ocimi	ICTV202420659	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus ocimi	ICTV202420659	ssRNA(-)	plants	1	3078293		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus paludis	ICTV202420660	ssRNA(-)	freshwater (S)	0			0	0	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus pastinacae	ICTV202317917	ssRNA(-)	invertebrates	0			0	0	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus pelargonii	ICTV202420661	ssRNA(-)	plants	1			0	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus persimmon	ICTV201907670	ssRNA(-)	invertebrates, plants	1	1211480	Persimmon virus A	11	1	2
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus phyllostachysis	ICTV202420662	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus pinelliae	ICTV202420663	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus phyllostachysis	ICTV202420662	ssRNA(-)	plants	1	3078295		1	1	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus pinelliae	ICTV202420663	ssRNA(-)	plants	1	3078296		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus plumagonis	ICTV202420664	ssRNA(-)	plants	1	3075549	Plumbago necrotic spot associated virus	1	1	1
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus querci	ICTV202420658	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus querci	ICTV202420658	ssRNA(-)	plants	1	3078292		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus ribes	ICTV202317914	ssRNA(-)	plants	1	3426159	Alphacytorhabdovirus ribes	2	1	2
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus rosae	ICTV202420665	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus rosae	ICTV202420665	ssRNA(-)	plants	1	3078305		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus sambuci	ICTV202317921	ssRNA(-)	plants	1	3426161	Alphacytorhabdovirus sambuci	2	1	2
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus scutellariae	ICTV202420666	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus taraxaci	ICTV202317924	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus tolmieae	ICTV202420667	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus scutellariae	ICTV202420666	ssRNA(-)	plants	1	3078307		1	1	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus taraxaci	ICTV202317924	ssRNA(-)	plants	1	2950880		1	1	1
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus tolmieae	ICTV202420667	ssRNA(-)	plants	1	3426164		1	1	0
 Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus trichonsathei	ICTV202009363	ssRNA(-)	plants	1	2654367	Trichosanthes associated rhabdovirus 1	2	1	2
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus tritici	ICTV202420668	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus utriculariae	ICTV202420669	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus wurfbainiae	ICTV202420670	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus zeae	ICTV202420671	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus tritici	ICTV202420668	ssRNA(-)	plants	1	3078309		1	1	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus utriculariae	ICTV202420669	ssRNA(-)	plants	1	3078310		1	1	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus wurfbainiae	ICTV202420670	ssRNA(-)	plants	1	3078312		1	1	0
+Rhabdoviridae	Alphacytorhabdovirus	Alphacytorhabdovirus zeae	ICTV202420671	ssRNA(-)	plants	1	3078313		1	1	0
 Rhabdoviridae	Alphadrosrhavirus	Alphadrosrhavirus hubei	ICTV202009640	ssRNA(-)	invertebrates	0			0	0	0
 Rhabdoviridae	Alphadrosrhavirus	Alphadrosrhavirus shayang	ICTV202009639	ssRNA(-)	invertebrates	0			0	0	0
-Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus abietis	ICTV202317788	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus amentotaxi	ICTV202317789	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus cupressi	ICTV202317790	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus piceae	ICTV202317791	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus pinibanksiae	ICTV202317792	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus abietis	ICTV202317788	ssRNA(-)	plants	1	2977948		1	1	0
+Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus amentotaxi	ICTV202317789	ssRNA(-)	plants	1	2977950		1	1	0
+Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus cupressi	ICTV202317790	ssRNA(-)	plants	1	2977965		1	1	0
+Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus piceae	ICTV202317791	ssRNA(-)	plants	1	2977979		1	1	0
+Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus pinibanksiae	ICTV202317792	ssRNA(-)	plants	1	2977980		1	1	0
 Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus piniflexilis	ICTV202214271	ssRNA(-)	plants	1	2793737	Pinus flexilis virus 1	2	1	0
-Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus piniyunannensis	ICTV202317793	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus sciadopitysis	ICTV202317794	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus taxi	ICTV202317795	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus piniyunannensis	ICTV202317793	ssRNA(-)	plants	1	3426206		1	1	0
+Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus sciadopitysis	ICTV202317794	ssRNA(-)	plants	1	3426207		1	1	0
+Rhabdoviridae	Alphagymnorhavirus	Alphagymnorhavirus taxi	ICTV202317795	ssRNA(-)	plants	1	2977994		1	1	0
 Rhabdoviridae	Alphahymrhavirus	Alphahymrhavirus cinereus	ICTV202009643	ssRNA(-)	invertebrates	0			0	0	0
 Rhabdoviridae	Alphahymrhavirus	Alphahymrhavirus distinguendus	ICTV202318549	ssRNA(-)	invertebrates (S)	0			0	0	0
 Rhabdoviridae	Alphahymrhavirus	Alphahymrhavirus ectemnius	ICTV202420242	ssRNA(-)	invertebrates (S)	0			0	0	0
@@ -2347,98 +2347,98 @@ Rhabdoviridae	Arurhavirus	Arurhavirus santabarbara	ICTV201907244	ssRNA(-)	invert
 Rhabdoviridae	Arurhavirus	Arurhavirus xiburema	ICTV201907242	ssRNA(-)	invertebrates	0			0	0	0
 Rhabdoviridae	Barhavirus	Barhavirus bahia	ICTV201907393	ssRNA(-)	invertebrates	0			0	0	0
 Rhabdoviridae	Barhavirus	Barhavirus muir	ICTV201907394	ssRNA(-)	invertebrates	0			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus alphabetulae	ICTV202420672	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus alphabetulae	ICTV202420672	ssRNA(-)	plants	1	3078332		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus alphacucurbitae	ICTV202113310	ssRNA(-)	plants	1	2730538	Cucurbit cytorhabdovirus 1	12	1	2
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus alpharosae	ICTV202113312	ssRNA(-)	plants	1	2805917	Rose virus R	2	1	2
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus alphaturbaesoli	ICTV202420673	ssRNA(-)	soil (S)	0			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus alphazanthoxyli	ICTV202420674	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus alphazanthoxyli	ICTV202420674	ssRNA(-)	plants	1	3078367		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus anthurii	ICTV202214167	ssRNA(-)	plants	1	2793721	Anthurium amnicola virus 1	2	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus aristolochiae	ICTV202420675	ssRNA(-)	plants	1	3427167	Betacytorhabdovirus aristolochiae	1	1	1
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus artemisiae	ICTV202420676	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus begoniae	ICTV202420677	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus artemisiae	ICTV202420676	ssRNA(-)	plants	1	3078330		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus begoniae	ICTV202420677	ssRNA(-)	plants	1	3078331		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus bemisiae	ICTV202214169	ssRNA(-)	invertebrates	0			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus betabetulae	ICTV202420678	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus betacucurbitae	ICTV202420679	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus betabetulae	ICTV202420678	ssRNA(-)	plants	1	3078333		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus betacucurbitae	ICTV202420679	ssRNA(-)	plants	1	3427172		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus betarosae	ICTV202317919	ssRNA(-)	plants	1	3427173	Betacytorhabdovirus betarosae	1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus betaturbaesoli	ICTV202420680	ssRNA(-)	soil (S)	0			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus betazanthoxyli	ICTV202420681	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus bouteloae	ICTV202420682	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus betazanthoxyli	ICTV202420681	ssRNA(-)	plants	1	3078368		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus bouteloae	ICTV202420682	ssRNA(-)	plants	1	3078334		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus broussonetiae	ICTV202113311	ssRNA(-)	plants	1	3071215	paper mulberry mosaic associated virus	2	1	2
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus caricae	ICTV201907669	ssRNA(-)	invertebrates, plants	1	2364291;2754374;2848019	Citrus-associated rhabdovirus;Cytorhabdovirus caricae;papaya virus E	21	3	15
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus chrysanthemi	ICTV202420683	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus chrysanthemi	ICTV202420683	ssRNA(-)	plants	1	3078335		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus colocasiae	ICTV20165134	ssRNA(-)	plants	1	1775456	Colocasia bobone disease-associated virus	5	1	5
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus coryli	ICTV202420684	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus cypripedii	ICTV202420685	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus dioscoreae	ICTV202522833	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus dryobalanopis	ICTV202420686	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus durionis	ICTV202420687	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus coryli	ICTV202420684	ssRNA(-)	plants	1	3078336		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus cypripedii	ICTV202420685	ssRNA(-)	plants	1	3078338		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus dioscoreae	ICTV202522833	ssRNA(-)	plants	1			0	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus dryobalanopis	ICTV202420686	ssRNA(-)	plants	1	3078339		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus durionis	ICTV202420687	ssRNA(-)	plants	1	3078340		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus flaviyerbamate	ICTV201907674	ssRNA(-)	invertebrates, plants	1	2487100	Yerba mate chlorosis-associated virus	2	1	2
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus gammazanthoxyli	ICTV202420688	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus gleditsiae	ICTV202420689	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus gammazanthoxyli	ICTV202420688	ssRNA(-)	plants	1	3078369		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus gleditsiae	ICTV202420689	ssRNA(-)	plants	1	3078341		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus glycinis	ICTV202317922	ssRNA(-)	plants	1	576352	Soybean blotchy mosaic virus	63	1	4
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus glycyrrhizae	ICTV202420690	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus glycyrrhizae	ICTV202420690	ssRNA(-)	plants	1	3078342		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus graminae	ICTV19910277	ssRNA(-)	invertebrates, plants	1	1985704	Cytorhabdovirus gramineae	4	1	3
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus hepaticae	ICTV202420692	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus hepaticae	ICTV202420692	ssRNA(-)	plants	1	3078343		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus hordei	ICTV19910271	ssRNA(-)	invertebrates, plants	1	1985699;2545470	Cytorhabdovirus hordei;Maize sterile stunt virus	28	2	4
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus howeae	ICTV202420693	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus ipomoeae	ICTV202420694	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus howeae	ICTV202420693	ssRNA(-)	plants	1	3078344		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus ipomoeae	ICTV202420694	ssRNA(-)	plants	1	3078345		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus ixeris	ICTV202420695	ssRNA(-)	plants	1	3427195	Betacytorhabdovirus ixeris	1	1	1
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus justiciae	ICTV202420696	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus kobresiae	ICTV202420697	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus leucadendri	ICTV202420698	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus justiciae	ICTV202420696	ssRNA(-)	plants	1	3078346		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus kobresiae	ICTV202420697	ssRNA(-)	plants	1	3078347		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus leucadendri	ICTV202420698	ssRNA(-)	plants	1	3078348		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus lycii	ICTV202420691	ssRNA(-)	plants	1	3115410	Goji cytorhabdovirus A	1	1	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus mangonis	ICTV202420699	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus mangonis	ICTV202420699	ssRNA(-)	plants	1	3078350		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus maydis	ICTV201907667	ssRNA(-)	invertebrates, plants	1	3427201	Betacytorhabdovirus maydis	1	1	1
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus maysflavostriatis	ICTV201907668	ssRNA(-)	invertebrates, plants	1	1168550	Maize yellow striate virus	6	1	3
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus mori	ICTV202420700	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus nitrariae	ICTV202420701	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus mori	ICTV202420700	ssRNA(-)	plants	1	3078351		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus nitrariae	ICTV202420701	ssRNA(-)	plants	1	3078352		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus oryzae	ICTV201907672	ssRNA(-)	invertebrates, plants	1	1931356	Rice stripe mosaic virus	14	1	14
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus panici	ICTV202420702	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus passiflorae	ICTV202420703	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus pentaphragmae	ICTV202420704	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus panici	ICTV202420702	ssRNA(-)	plants	1	3078353		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus passiflorae	ICTV202420703	ssRNA(-)	plants	1	3078354		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus pentaphragmae	ICTV202420704	ssRNA(-)	plants	1	3078357		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus phellodendri	ICTV202420705	ssRNA(-)	plants	1	3078358	Phellodendron betacytorhabdovirus 1	2	1	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus populi	ICTV202420706	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus puerariae	ICTV202420707	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus pyri	ICTV202522834	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus populi	ICTV202420706	ssRNA(-)	plants	1	3078359		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus puerariae	ICTV202420707	ssRNA(-)	plants	1	3078360		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus pyri	ICTV202522834	ssRNA(-)	plants	1			0	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus rudbeckiae	ICTV202317920	ssRNA(-)	plants	1	2971904	rudbeckia virus 1	2	1	2
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus schiedeae	ICTV202420708	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus sesami	ICTV202420709	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus sophorae	ICTV202420710	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus schiedeae	ICTV202420708	ssRNA(-)	plants	1	3078361		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus sesami	ICTV202420709	ssRNA(-)	plants	1	3427214		1	1	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus sophorae	ICTV202420710	ssRNA(-)	plants	1	3078364		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus tagetis	ICTV202214174	ssRNA(-)	plants	1	2793742	Tagetes erecta virus 1	2	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus tiliae	ICTV202317925	ssRNA(-)	plants	1			0	0	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus trifolii	ICTV202420711	ssRNA(-)	plants	1			0	1	0
-Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus viciae	ICTV202420712	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus viciae	ICTV202420712	ssRNA(-)	plants	1	3078366		1	1	0
 Rhabdoviridae	Betacytorhabdovirus	Betacytorhabdovirus yerbamate	ICTV202009362	ssRNA(-)	invertebrates	0	2713499	Yerba mate virus A	2	1	2
-Rhabdoviridae	Betagymnorhavirus	Betagymnorhavirus torreyae	ICTV202317796	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betagymnorhavirus	Betagymnorhavirus torreyae	ICTV202317796	ssRNA(-)	plants	1	2977995		1	1	0
 Rhabdoviridae	Betahymrhavirus	Betahymrhavirus austriaca	ICTV202009647	ssRNA(-)	invertebrates	0			0	0	0
 Rhabdoviridae	Betahymrhavirus	Betahymrhavirus heterodontonyx	ICTV202009648	ssRNA(-)	invertebrates	0			0	0	0
 Rhabdoviridae	Betahymrhavirus	Betahymrhavirus xiangshan	ICTV202318551	ssRNA(-)	invertebrates (S)	0			0	0	0
 Rhabdoviridae	Betanemrhavirus	Betanemrhavirus hubei	ICTV202009651	ssRNA(-)	invertebrates	0			0	0	0
 Rhabdoviridae	Betanemrhavirus	Betanemrhavirus shayang	ICTV202009650	ssRNA(-)	invertebrates	0			0	0	0
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus alphalycopersici	ICTV202318288	ssRNA(-)	plants	1	2950850	Tomato betanucleorhabdovirus 1	4	1	2
-Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus alphasambuci	ICTV202522817	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus alpiniae	ICTV202522815	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus alphasambuci	ICTV202522817	ssRNA(-)	plants	1			0	1	0
+Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus alpiniae	ICTV202522815	ssRNA(-)	plants	1			0	1	0
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus asclepiadis	ICTV202214141	ssRNA(-)	plants	1	2793723	Asclepias syriaca virus 2	2	1	0
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus bacopae	ICTV202113307	ssRNA(-)	plants	1	2813288	Bacopa monnieri virus 2	2	1	2
-Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus betae	ICTV202522816	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus betae	ICTV202522816	ssRNA(-)	plants	1			0	1	0
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus betalycopersici	ICTV202318289	ssRNA(-)	plants	1	2950851	Tomato betanucleorhabdovirus 2	9	1	9
-Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus betasambuci	ICTV202522818	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus betasambuci	ICTV202522818	ssRNA(-)	plants	1			0	1	0
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus cardamomi	ICTV202009366	ssRNA(-)	plants	1	2849749	cardamom vein clearing virus	1	1	1
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus cnidii	ICTV202214142	ssRNA(-)	plants	1	2903266	Cnidium virus 1	11	1	3
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus daturae	ICTV19910273	ssRNA(-)	plants	1	195059	Datura yellow vein nucleorhabdovirus	4	1	3
-Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus deltasambuci	ICTV202522820	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus deltasambuci	ICTV202522820	ssRNA(-)	plants	1			0	1	0
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus epsilonsambuci	ICTV202522821	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus gammasambuci	ICTV202522819	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus gammasambuci	ICTV202522819	ssRNA(-)	plants	1			0	1	0
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus loti	ICTV201907687	ssRNA(-)	plants	1	3121202	birds-foot trefoil-associated virus	1	1	1
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus mali	ICTV202009367	ssRNA(-)	plants	1	2563012	Apple rootstock virus A	2	1	2
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus medicagonis	ICTV201907688	ssRNA(-)	plants	1	2518374	alfalfa-associated nucleorhabdovirus	3	1	3
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus paridis	ICTV202420626	ssRNA(-)	plants	1	3427243	Betanucleorhabdovirus paridis	1	1	1
-Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus picridis	ICTV202318286	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus picridis	ICTV202318286	ssRNA(-)	plants	1	3427244		1	1	1
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus plectranthi	ICTV202214143	ssRNA(-)	plants	1	2793738	Plectranthus aromaticus virus 1	2	1	0
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus retesonchi	ICTV19790844	ssRNA(-)	plants	1	11307	Sonchus yellow net nucleorhabdovirus	13	1	3
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus rhododendri	ICTV202214144	ssRNA(-)	plants	1	2793739	Rhododendron delavayi virus 1	2	1	0
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus ribes	ICTV201907686	ssRNA(-)	plants	1	2079521	Black currant nucleorhabdovirus 1	5	1	5
-Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus taraxi	ICTV202318287	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus taraxi	ICTV202318287	ssRNA(-)	plants	1	3427245		1	1	1
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus venasonchi	ICTV19790845	ssRNA(-)	plants	1	2358214	Sowthistle yellow vein virus	5	1	2
 Rhabdoviridae	Betanucleorhabdovirus	Betanucleorhabdovirus zanthoxyli	ICTV202009368	ssRNA(-)	plants	1	2496274	Zhuye pepper nucleorhabdovirus	1	1	0
 Rhabdoviridae	Betapaprhavirus	Betapaprhavirus frugiperda	ICTV202009653	ssRNA(-)	invertebrates	0			0	0	0
@@ -2483,13 +2483,13 @@ Rhabdoviridae	Curiovirus	Curiovirus rochambeau	ICTV20165133	ssRNA(-)	invertebrat
 Rhabdoviridae	Deltanucleorhabdovirus	Deltanucleorhabdovirus fragariae	ICTV202318292	ssRNA(-)	plants	1	2911488	Strawberry virus 3	13	1	2
 Rhabdoviridae	Deltanucleorhabdovirus	Deltanucleorhabdovirus medicagonis	ICTV202318291	ssRNA(-)	plants	1	2978984	Medicago sativa virus 1	3	1	3
 Rhabdoviridae	Dichorhavirus	Dichorhavirus australis	ICTV202317933	ssRNA(-)	invertebrates, plants	1	2986392	Citrus bright spot virus	12	2	6
-Rhabdoviridae	Dichorhavirus	Dichorhavirus chilense	ICTV202522860	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Dichorhavirus	Dichorhavirus chilense	ICTV202522860	ssRNA(-)	plants	1			0	2	0
 Rhabdoviridae	Dichorhavirus	Dichorhavirus citri	ICTV201856289	ssRNA(-)	invertebrates, plants	1	1980624	Citrus chlorotic spot virus	20	2	6
 Rhabdoviridae	Dichorhavirus	Dichorhavirus clerodendri	ICTV201856288	ssRNA(-)	invertebrates, plants	1	1064520	Clerodendrum chlorotic spot virus	9	4	8
 Rhabdoviridae	Dichorhavirus	Dichorhavirus coffeae	ICTV20151161	ssRNA(-)	invertebrates, plants	1	745716	Coffee ringspot virus	34	2	4
 Rhabdoviridae	Dichorhavirus	Dichorhavirus leprosis	ICTV201856287	ssRNA(-)	invertebrates, plants	1	1956177	Citrus leprosis virus N	22	3	8
 Rhabdoviridae	Dichorhavirus	Dichorhavirus orchidaceae	ICTV20151160	ssRNA(-)	invertebrates, plants	1	1344952;1354727;152177	Citrus leprosis virus nuclear type;Citrus necrotic spot virus;Dichorhavirus orchidaceae	123	6	18
-Rhabdoviridae	Dichorhavirus	Dichorhavirus piracicabense	ICTV202522861	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Dichorhavirus	Dichorhavirus piracicabense	ICTV202522861	ssRNA(-)	plants	1			0	2	0
 Rhabdoviridae	Ephemerovirus	Ephemerovirus adelaide	ICTV19910260	ssRNA(-)	invertebrates, vertebrates	0			0	0	0
 Rhabdoviridae	Ephemerovirus	Ephemerovirus berrimah	ICTV19910261	ssRNA(-)	invertebrates, vertebrates	0			0	0	0
 Rhabdoviridae	Ephemerovirus	Ephemerovirus febris	ICTV19910262	ssRNA(-)	invertebrates, vertebrates	0			0	0	0
@@ -2506,23 +2506,23 @@ Rhabdoviridae	Ephemerovirus	Ephemerovirus kotonkan	ICTV20125873	ssRNA(-)	inverte
 Rhabdoviridae	Ephemerovirus	Ephemerovirus obodhiang	ICTV20125932	ssRNA(-)	invertebrates	0			0	0	0
 Rhabdoviridae	Ephemerovirus	Ephemerovirus puchong	ICTV202009102	ssRNA(-)	invertebrates	0			0	0	0
 Rhabdoviridae	Ephemerovirus	Ephemerovirus yata	ICTV20165137	ssRNA(-)	invertebrates	0			0	0	0
-Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus alphacuscutae	ICTV202420717	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus alphafraxini	ICTV202420721	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus apii	ICTV202420715	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus argyranthemi	ICTV202420713	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus betacuscutae	ICTV202420718	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus alphacuscutae	ICTV202420717	ssRNA(-)	plants	1	3078318		1	1	0
+Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus alphafraxini	ICTV202420721	ssRNA(-)	plants	1	3078322		1	1	0
+Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus apii	ICTV202420715	ssRNA(-)	plants	1	3078316		1	1	0
+Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus argyranthemi	ICTV202420713	ssRNA(-)	plants	1	3078314		1	1	0
+Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus betacuscutae	ICTV202420718	ssRNA(-)	plants	1	3078319		1	1	0
 Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus betafraxini	ICTV202420722	ssRNA(-)	unknown (S)	0			0	0	0
-Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus coptis	ICTV202420716	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus cypripedii	ICTV202420719	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus dauci	ICTV202420714	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus epipactis	ICTV202420720	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus coptis	ICTV202420716	ssRNA(-)	plants	1	3078317		1	1	0
+Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus cypripedii	ICTV202420719	ssRNA(-)	plants	1	3078320		1	1	0
+Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus dauci	ICTV202420714	ssRNA(-)	plants	1	3078315		1	1	0
+Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus epipactis	ICTV202420720	ssRNA(-)	plants	1	3078321		1	1	0
 Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus gymnadeniae	ICTV202214171	ssRNA(-)	plants	1	3070916	Gymnadenia densiflora virus 1	2	1	0
-Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus heliospermae	ICTV202420723	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus hibisci	ICTV202420724	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus lonatis	ICTV202420725	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus lupinis	ICTV202420726	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus rhopalocnemis	ICTV202420727	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus silenis	ICTV202420728	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus heliospermae	ICTV202420723	ssRNA(-)	plants	1	3428918		1	1	0
+Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus hibisci	ICTV202420724	ssRNA(-)	plants	1	3078325		1	1	0
+Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus lonatis	ICTV202420725	ssRNA(-)	plants	1	3078326		1	1	0
+Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus lupinis	ICTV202420726	ssRNA(-)	plants	1	3078327		1	1	0
+Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus rhopalocnemis	ICTV202420727	ssRNA(-)	plants	1	3078328		1	1	0
+Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus silenis	ICTV202420728	ssRNA(-)	plants	1	3078329		1	1	0
 Rhabdoviridae	Gammacytorhabdovirus	Gammacytorhabdovirus trachyspermi	ICTV202214175	ssRNA(-)	plants	1	2793743	Trachyspermum ammi virus 1	2	1	0
 Rhabdoviridae	Gammahymrhavirus	Gammahymrhavirus cerana	ICTV202318538	ssRNA(-)	invertebrates (S)	0			0	0	0
 Rhabdoviridae	Gammahymrhavirus	Gammahymrhavirus longicaudata	ICTV202318539	ssRNA(-)	invertebrates (S)	0			0	0	0
@@ -2706,12 +2706,12 @@ Rhabdoviridae	Tibrovirus	Tibrovirus congo	ICTV20165169	ssRNA(-)	vertebrates	0			
 Rhabdoviridae	Tibrovirus	Tibrovirus mundri	ICTV202214152	ssRNA(-)	vertebrates	0			0	0	0
 Rhabdoviridae	Tibrovirus	Tibrovirus sweetwater	ICTV20165172	ssRNA(-)	invertebrates	0			0	0	0
 Rhabdoviridae	Tibrovirus	Tibrovirus tibrogargan	ICTV20125883	ssRNA(-)	invertebrates, vertebrates	0			0	0	0
-Rhabdoviridae	Trirhavirus	Trirhavirus alni	ICTV202420737	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Trirhavirus	Trirhavirus chrysanthemi	ICTV202420738	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Trirhavirus	Trirhavirus erysimi	ICTV202420739	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Trirhavirus	Trirhavirus medicagonis	ICTV202420740	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Trirhavirus	Trirhavirus picridis	ICTV202420741	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Trirhavirus	Trirhavirus rubi	ICTV202522813	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Trirhavirus	Trirhavirus alni	ICTV202420737	ssRNA(-)	plants	1	3078266		3	3	0
+Rhabdoviridae	Trirhavirus	Trirhavirus chrysanthemi	ICTV202420738	ssRNA(-)	plants	1	3078267		3	3	0
+Rhabdoviridae	Trirhavirus	Trirhavirus erysimi	ICTV202420739	ssRNA(-)	plants	1	3078268		3	3	0
+Rhabdoviridae	Trirhavirus	Trirhavirus medicagonis	ICTV202420740	ssRNA(-)	plants	1	3078269;3432995		3	3	0
+Rhabdoviridae	Trirhavirus	Trirhavirus picridis	ICTV202420741	ssRNA(-)	plants	1	3078270		3	3	0
+Rhabdoviridae	Trirhavirus	Trirhavirus rubi	ICTV202522813	ssRNA(-)	plants	1			0	3	0
 Rhabdoviridae	Tupavirus	Tupavirus delphini	ICTV202522471	ssRNA(-)	vertebrates	0			0	0	0
 Rhabdoviridae	Tupavirus	Tupavirus durham	ICTV20130526	ssRNA(-)	vertebrates	0			0	0	0
 Rhabdoviridae	Tupavirus	Tupavirus incomtus	ICTV202317780	ssRNA(-)	vertebrates	0			0	0	0
@@ -2723,51 +2723,51 @@ Rhabdoviridae	Tupavirus	Tupavirus stoliczkanus	ICTV202317782	ssRNA(-)	vertebrate
 Rhabdoviridae	Tupavirus	Tupavirus tupaia	ICTV20094950	ssRNA(-)	vertebrates	0			0	0	0
 Rhabdoviridae	Tupavirus	Tupavirus wufeng	ICTV202419958	ssRNA(-)	vertebrates	0			0	0	0
 Rhabdoviridae	Uniorhavirus	Uniorhavirus killamcar	ICTV202317750	ssRNA(-)	invertebrates	0			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus aconiti	ICTV202318590	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus agastachi	ICTV202522835	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Varicosavirus	Varicosavirus aconiti	ICTV202318590	ssRNA(-)	plants	1	2977949		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus agastachi	ICTV202522835	ssRNA(-)	plants	1			0	2	0
 Rhabdoviridae	Varicosavirus	Varicosavirus allii	ICTV202214266	ssRNA(-)	plants	1	2851934	Allium angulosum virus 1	4	1	0
 Rhabdoviridae	Varicosavirus	Varicosavirus alopecuri	ICTV202009370	ssRNA(-)	plants	1	1587515	Black grass varicosavirus-like virus	4	2	2
 Rhabdoviridae	Varicosavirus	Varicosavirus alphabrassicae	ICTV202214267	ssRNA(-)	plants	1	2793725	Brassica rapa virus 1	4	1	0
-Rhabdoviridae	Varicosavirus	Varicosavirus aperae	ICTV202318591	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus aponogeti	ICTV202318592	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus arceuthobii	ICTV202318593	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus artemisiae	ICTV202318594	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus asclepiadis	ICTV202318595	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus betabrassicae	ICTV202318596	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus caladeniae	ICTV202318597	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus centaurea	ICTV202318598	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus cucumis	ICTV202318599	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus didymochlaenae	ICTV202318600	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus erysimi	ICTV202318601	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus frullaniae	ICTV202318602	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus guizotiae	ICTV202318603	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus holci	ICTV202318604	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Varicosavirus	Varicosavirus aperae	ICTV202318591	ssRNA(-)	plants	1	2977951		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus aponogeti	ICTV202318592	ssRNA(-)	plants	1	2977952		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus arceuthobii	ICTV202318593	ssRNA(-)	plants	1	2977953		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus artemisiae	ICTV202318594	ssRNA(-)	plants	1	2977954		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus asclepiadis	ICTV202318595	ssRNA(-)	plants	1	2977955		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus betabrassicae	ICTV202318596	ssRNA(-)	plants	1	2977958;3433108		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus caladeniae	ICTV202318597	ssRNA(-)	plants	1	2977961		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus centaurea	ICTV202318598	ssRNA(-)	plants	1	2977962		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus cucumis	ICTV202318599	ssRNA(-)	plants	1	2977964		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus didymochlaenae	ICTV202318600	ssRNA(-)	plants	1	2977966		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus erysimi	ICTV202318601	ssRNA(-)	plants	1	2977967		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus frullaniae	ICTV202318602	ssRNA(-)	plants	1	2977968		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus guizotiae	ICTV202318603	ssRNA(-)	plants	1	2977969		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus holci	ICTV202318604	ssRNA(-)	plants	1	2984270		2	2	0
 Rhabdoviridae	Varicosavirus	Varicosavirus ipomoeae	ICTV202214270	ssRNA(-)	plants	1	2946038	morning glory varicosavirus	4	2	4
 Rhabdoviridae	Varicosavirus	Varicosavirus lactucae	ICTV19982751	ssRNA(-)	plants	1	1985698	Varicosavirus lactucae	150	2	2
-Rhabdoviridae	Varicosavirus	Varicosavirus leucanthemi	ICTV202318605	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Varicosavirus	Varicosavirus leucanthemi	ICTV202318605	ssRNA(-)	plants	1	2977970		2	2	0
 Rhabdoviridae	Varicosavirus	Varicosavirus lolii	ICTV202214268	ssRNA(-)	plants	1	2793730	Lolium perenne virus 1	4	1	0
-Rhabdoviridae	Varicosavirus	Varicosavirus luffae	ICTV202318606	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Varicosavirus	Varicosavirus luffae	ICTV202318606	ssRNA(-)	plants	1	2977973		2	2	0
 Rhabdoviridae	Varicosavirus	Varicosavirus melampyri	ICTV202214269	ssRNA(-)	plants	1	2793732	Melampyrum roseum virus 1	4	2	0
-Rhabdoviridae	Varicosavirus	Varicosavirus meliloti	ICTV202318607	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Varicosavirus	Varicosavirus meliloti	ICTV202318607	ssRNA(-)	plants	1	2977975;3433119		2	2	0
 Rhabdoviridae	Varicosavirus	Varicosavirus monocleae	ICTV202318608	ssRNA(-)	plants	1	2933180	Monoclea gottschei varicosa-like virus	2	1	0
-Rhabdoviridae	Varicosavirus	Varicosavirus orychophragmi	ICTV202522836	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus penniseti	ICTV202318609	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus primulae	ICTV202318610	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus ranunculi	ICTV202318611	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus raphani	ICTV202318612	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus ribes	ICTV202318613	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus rubi	ICTV202522837	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus silenis	ICTV202318614	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus streptoglossae	ICTV202318615	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus tanaceti	ICTV202318616	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Varicosavirus	Varicosavirus orychophragmi	ICTV202522836	ssRNA(-)	plants	1			0	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus penniseti	ICTV202318609	ssRNA(-)	plants	1	2977978		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus primulae	ICTV202318610	ssRNA(-)	plants	1	2977982		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus ranunculi	ICTV202318611	ssRNA(-)	plants	1	2977983		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus raphani	ICTV202318612	ssRNA(-)	plants	1	2977984		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus ribes	ICTV202318613	ssRNA(-)	plants	1	2977985		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus rubi	ICTV202522837	ssRNA(-)	plants	1			0	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus silenis	ICTV202318614	ssRNA(-)	plants	1	2977989		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus streptoglossae	ICTV202318615	ssRNA(-)	plants	1	2977992		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus tanaceti	ICTV202318616	ssRNA(-)	plants	1	2977993		2	2	0
 Rhabdoviridae	Varicosavirus	Varicosavirus thrysopteris	ICTV202318617	ssRNA(-)	plants	1	2933191	Tree fern varicosa-like virus	2	2	0
-Rhabdoviridae	Varicosavirus	Varicosavirus treubiae	ICTV202318618	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Varicosavirus	Varicosavirus treubiae	ICTV202318618	ssRNA(-)	plants	1	2977996		2	2	0
 Rhabdoviridae	Varicosavirus	Varicosavirus trifolii	ICTV202009369	ssRNA(-)	plants	1	2848052	red clover associated varicosavirus	2	2	2
-Rhabdoviridae	Varicosavirus	Varicosavirus tritici	ICTV202318619	ssRNA(-)	plants	1			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus vincetoxici	ICTV202318620	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Varicosavirus	Varicosavirus tritici	ICTV202318619	ssRNA(-)	plants	1	2977997		2	2	0
+Rhabdoviridae	Varicosavirus	Varicosavirus vincetoxici	ICTV202318620	ssRNA(-)	plants	1	2977998;3433132		2	2	0
 Rhabdoviridae	Varicosavirus	Varicosavirus vitis	ICTV202214272	ssRNA(-)	plants	1	2812030	Vitis varicosavirus	4	2	0
 Rhabdoviridae	Varicosavirus	Varicosavirus xinjiangense	ICTV202214273	ssRNA(-)	soil (S)	0			0	0	0
-Rhabdoviridae	Varicosavirus	Varicosavirus zea	ICTV202318621	ssRNA(-)	plants	1			0	0	0
+Rhabdoviridae	Varicosavirus	Varicosavirus zea	ICTV202318621	ssRNA(-)	plants	1	2977999		2	2	0
 Rhabdoviridae	Varicosavirus	Varicosavirus zosterae	ICTV202214274	ssRNA(-)	plants	1	3071325	Zostera-associated varicosavirus 1	4	2	0
 Rhabdoviridae	Vesiculovirus	Vesiculovirus alagoas	ICTV19760561	ssRNA(-)	invertebrates, vertebrates	0			0	0	0
 Rhabdoviridae	Vesiculovirus	Vesiculovirus bogdanovac	ICTV20165180	ssRNA(-)	invertebrates, vertebrates	0			0	0	0
@@ -2789,19 +2789,19 @@ Rhabdoviridae	Zarhavirus	Zarhavirus zahedan	ICTV201907389	ssRNA(-)	invertebrates
 Secoviridae	Cheravirus	Cheravirus alpinum	ICTV202318390	ssRNA(+)	plants	1	2995353	Alpine wild prunus virus	6	2	4
 Secoviridae	Cheravirus	Cheravirus arracaciae	ICTV20130760	ssRNA(+)	plants	1	257463	Arracacha virus B	20	2	14
 Secoviridae	Cheravirus	Cheravirus avii	ICTV20042202	ssRNA(+)	plants	1	202566	Cherry rasp leaf virus	17	2	9
-Secoviridae	Cheravirus	Cheravirus corymbii	ICTV202522686	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Cheravirus	Cheravirus lagerstroemiae	ICTV202522685	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Cheravirus	Cheravirus corymbii	ICTV202522686	ssRNA(+)	plants	1			0	2	0
+Secoviridae	Cheravirus	Cheravirus lagerstroemiae	ICTV202522685	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Cheravirus	Cheravirus mali	ICTV20042201	ssRNA(+)	plants	1	101688	Apple latent spherical virus	14	2	2
 Secoviridae	Cheravirus	Cheravirus orobanchis	ICTV202318392	ssRNA(+)	plants	1	2936689	Orobanche cernua secovirus	2	2	2
 Secoviridae	Cheravirus	Cheravirus pruni	ICTV20083326	ssRNA(+)	plants	1	340196	Stocky prune virus	6	2	2
-Secoviridae	Cheravirus	Cheravirus pternopetali	ICTV202522687	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Cheravirus	Cheravirus pternopetali	ICTV202522687	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Cheravirus	Cheravirus ribis	ICTV20165213	ssRNA(+)	plants	1	1476584	Currant latent virus	8	2	4
 Secoviridae	Cheravirus	Cheravirus trillii	ICTV202318391	ssRNA(+)	plants	1	2765861	Trillium govanianum cheravirus	2	2	0
 Secoviridae	Comovirus	Comovirus andesense	ICTV19790979	ssRNA(+)	plants	1	12259	Andean potato mottle virus	20	2	8
 Secoviridae	Comovirus	Comovirus arabidopsis	ICTV202113819	ssRNA(+)	plants	1	2570606	Arabidopsis latent virus 1	12	2	6
 Secoviridae	Comovirus	Comovirus capsici	ICTV202113821	ssRNA(+)	plants	1	2555551	Pepper mild mosaic virus	6	2	4
-Secoviridae	Comovirus	Comovirus cardaminis	ICTV202522684	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Comovirus	Comovirus caricae	ICTV202522683	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Comovirus	Comovirus cardaminis	ICTV202522684	ssRNA(+)	plants	1			0	2	0
+Secoviridae	Comovirus	Comovirus caricae	ICTV202522683	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Comovirus	Comovirus cucurbitae	ICTV19710164	ssRNA(+)	plants	1	12263	Squash mosaic virus	94	2	10
 Secoviridae	Comovirus	Comovirus fabae	ICTV19710165	ssRNA(+)	plants	1	649890	Broad bean true mosaic virus	13	2	2
 Secoviridae	Comovirus	Comovirus glycinis	ICTV19821193	ssRNA(+)	plants	1			0	0	0
@@ -2822,18 +2822,18 @@ Secoviridae	Fabavirus	Fabavirus alphaviciae	ICTV19871293	ssRNA(+)	plants	1	50817
 Secoviridae	Fabavirus	Fabavirus avii	ICTV202318389	ssRNA(+)	plants	1	2171759	Cherry virus F	26	2	8
 Secoviridae	Fabavirus	Fabavirus betaviciae	ICTV20073469	ssRNA(+)	plants	1	3047702;73149;76875	Broad bean wilt virus 2;Fabavirus betaviciae;Patchouli mild mosaic virus	525	6	126
 Secoviridae	Fabavirus	Fabavirus betavitis	ICTV202420577	ssRNA(+)	plants	1	3113822	Grapevine secovirus	6	2	2
-Secoviridae	Fabavirus	Fabavirus camphorae	ICTV202522689	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Fabavirus	Fabavirus camphorae	ICTV202522689	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Fabavirus	Fabavirus cirsii	ICTV202420578	ssRNA(+)	plants	1	3025943	Cirsium virus A	2	2	0
 Secoviridae	Fabavirus	Fabavirus cucurbitaceae	ICTV20125744	ssRNA(+)	plants	1	1131416	Cucurbit mild mosaic virus	7	2	0
 Secoviridae	Fabavirus	Fabavirus gentianae	ICTV20083243	ssRNA(+)	plants	1	182452;487492	Gentian mosaic virus;Mikania micrantha mosaic virus	14	3	4
 Secoviridae	Fabavirus	Fabavirus gynostemmae	ICTV202318387	ssRNA(+)	plants	1	2936688	Gynostemma pentaphyllum secovirus	4	2	4
 Secoviridae	Fabavirus	Fabavirus lamii	ICTV19871295	ssRNA(+)	plants	1	1432135	Lamium mild mosaic virus	8	2	5
-Secoviridae	Fabavirus	Fabavirus multiflorum	ICTV202522691	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Fabavirus	Fabavirus multiflorum	ICTV202522691	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Fabavirus	Fabavirus persicae	ICTV202113818	ssRNA(+)	plants	1	2038685;3118659	Peach leaf pitting-associated virus;peach leaf pitting-associated virus A	13	4	8
-Secoviridae	Fabavirus	Fabavirus phipiperis	ICTV202522688	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Fabavirus	Fabavirus phipiperis	ICTV202522688	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Fabavirus	Fabavirus pruni	ICTV20175627	ssRNA(+)	plants	1	1855510	Prunus virus F	134	2	18
-Secoviridae	Fabavirus	Fabavirus reaumuriae	ICTV202522690	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Fabavirus	Fabavirus squamellariae	ICTV202522692	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Fabavirus	Fabavirus reaumuriae	ICTV202522690	ssRNA(+)	plants	1			0	2	0
+Secoviridae	Fabavirus	Fabavirus squamellariae	ICTV202522692	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Fabavirus	Fabavirus vitis	ICTV20175626	ssRNA(+)	plants	1	1849838	Grapevine fabavirus	116	4	22
 Secoviridae	Fabavirus	Fabavirus yuccae	ICTV202318388	ssRNA(+)	plants	1	2936693	Yucca gloriosa secovirus	2	2	2
 Secoviridae	Mersevirus	Mersevirus boehmeriae	ICTV202420553	ssRNA(+)	plants	1	2936687	Boehmeria nivea secovirus	2	2	2
@@ -2842,7 +2842,7 @@ Secoviridae	Mersevirus	Mersevirus mercurialis	ICTV202420555	ssRNA(+)	plants	1	34
 Secoviridae	Mersevirus	Mersevirus paris	ICTV202420556	ssRNA(+)	plants	1	2936691	Paris polyphylla secovirus 2	4	2	4
 Secoviridae	Nepovirus	Nepovirus aegaeum	ICTV19981281	ssRNA(+)	plants	1			0	0	0
 Secoviridae	Nepovirus	Nepovirus aeonii	ICTV20151453	ssRNA(+)	plants	1	1962503	Aeonium ringspot virus	4	2	4
-Secoviridae	Nepovirus	Nepovirus alphacucumis	ICTV202522693	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus alphacucumis	ICTV202522693	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus alphaparis	ICTV202318382	ssRNA(+)	plants	1	3002895	Paris nepovirus 1	2	2	0
 Secoviridae	Nepovirus	Nepovirus alphavitis	ICTV202113817	ssRNA(+)	plants	1	2789373	Grapevine nepovirus A	4	2	4
 Secoviridae	Nepovirus	Nepovirus anatoliense	ICTV20083261	ssRNA(+)	plants	1	223769	Grapevine Anatolian ringspot virus	5	2	3
@@ -2850,22 +2850,22 @@ Secoviridae	Nepovirus	Nepovirus anemones	ICTV202215093	ssRNA(+)	plants	1	2593930
 Secoviridae	Nepovirus	Nepovirus arabis	ICTV19710217	ssRNA(+)	plants	1	12271	Arabis mosaic virus	274	2	19
 Secoviridae	Nepovirus	Nepovirus armeniacae	ICTV20073471	ssRNA(+)	plants	1	136418	Apricot latent ringspot virus	4	2	2
 Secoviridae	Nepovirus	Nepovirus arracaciae	ICTV19821246	ssRNA(+)	plants	1	1964552	Arracacha virus A	4	2	0
-Secoviridae	Nepovirus	Nepovirus astragali	ICTV202522710	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus astragali	ICTV202522710	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus avii	ICTV19760709	ssRNA(+)	plants	1	12615;3047741;3440526	Cherry leaf roll virus;Cherry leaf roll virus satellite;Nepovirus avii	502	4	25
-Secoviridae	Nepovirus	Nepovirus begoniae	ICTV202522708	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Nepovirus	Nepovirus beldersayense	ICTV202522716	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Nepovirus	Nepovirus berberidopsis	ICTV202522700	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus begoniae	ICTV202522708	ssRNA(+)	plants	1			0	2	0
+Secoviridae	Nepovirus	Nepovirus beldersayense	ICTV202522716	ssRNA(+)	plants	1	3128877		2	2	2
+Secoviridae	Nepovirus	Nepovirus berberidopsis	ICTV202522700	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus betae	ICTV19981284	ssRNA(+)	plants	1	191547	Beet ringspot virus	36	2	16
 Secoviridae	Nepovirus	Nepovirus betaparis	ICTV202420579	ssRNA(+)	plants	1	2936690	Paris polyphylla secovirus 1	2	2	2
 Secoviridae	Nepovirus	Nepovirus betasolani	ICTV20175628	ssRNA(+)	plants	1	2340870	Potato virus B	12	2	7
 Secoviridae	Nepovirus	Nepovirus bulgariense	ICTV19821254	ssRNA(+)	plants	1	748667	Grapevine Bulgarian latent virus	5	2	2
-Secoviridae	Nepovirus	Nepovirus caladeniae	ICTV202522709	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus caladeniae	ICTV202522709	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus cari	ICTV202112972	ssRNA(+)	plants	1	2530363	Caraway yellows virus	4	2	4
 Secoviridae	Nepovirus	Nepovirus carolinense	ICTV202318383	ssRNA(+)	plants	1	3431078	Nepovirus carolinense	1	1	1
-Secoviridae	Nepovirus	Nepovirus cenchri	ICTV202522705	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Nepovirus	Nepovirus cerasiferae	ICTV19791036	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus cenchri	ICTV202522705	ssRNA(+)	plants	1			0	2	0
+Secoviridae	Nepovirus	Nepovirus cerasiferae	ICTV19791036	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus chromusivum	ICTV19760712	ssRNA(+)	plants	1	12273	Grapevine chrome mosaic virus	8	2	2
-Secoviridae	Nepovirus	Nepovirus chrysanthemi	ICTV202522696	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus chrysanthemi	ICTV202522696	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus cichorii	ICTV19821251	ssRNA(+)	plants	1			0	0	0
 Secoviridae	Nepovirus	Nepovirus cucumis	ICTV20115433	ssRNA(+)	plants	1	669377	Melon mild mottle virus	4	2	0
 Secoviridae	Nepovirus	Nepovirus cycas	ICTV19911715	ssRNA(+)	plants	1	173976	Cycas necrotic stunt virus	95	2	9
@@ -2873,76 +2873,76 @@ Secoviridae	Nepovirus	Nepovirus cynarae	ICTV19821248	ssRNA(+)	plants	1	348894	Ar
 Secoviridae	Nepovirus	Nepovirus deformationis	ICTV20083264	ssRNA(+)	plants	1	233784	Grapevine deformation virus	19	2	3
 Secoviridae	Nepovirus	Nepovirus foliumflabelli	ICTV19710218	ssRNA(+)	plants	1	12274	Grapevine fanleaf virus	1119	3	237
 Secoviridae	Nepovirus	Nepovirus fontinalis	ICTV202318384	ssRNA(+)	plants	1	2933167	Common water moss secovirus	2	1	0
-Secoviridae	Nepovirus	Nepovirus galax	ICTV202522702	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Nepovirus	Nepovirus gentianae	ICTV202522711	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus galax	ICTV202522702	ssRNA(+)	plants	1			0	2	0
+Secoviridae	Nepovirus	Nepovirus gentianae	ICTV202522711	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus glycinis	ICTV20175629	ssRNA(+)	plants	1	1927714	Soybean latent spherical virus	4	2	2
-Secoviridae	Nepovirus	Nepovirus glycyrrhizae	ICTV202522698	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Nepovirus	Nepovirus hanseniae	ICTV202522715	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus glycyrrhizae	ICTV202522698	ssRNA(+)	plants	1			0	2	0
+Secoviridae	Nepovirus	Nepovirus hanseniae	ICTV202522715	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus hibisci	ICTV19821257	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Nepovirus	Nepovirus hypolepsis	ICTV202522706	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus hypolepsis	ICTV202522706	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus italiaense	ICTV19791030	ssRNA(+)	plants	1	46075	Artichoke Italian latent virus	11	2	2
-Secoviridae	Nepovirus	Nepovirus jasmini	ICTV202522717	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Nepovirus	Nepovirus leucadendri	ICTV202522712	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Nepovirus	Nepovirus lonchitis	ICTV202318385	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus jasmini	ICTV202522717	ssRNA(+)	plants	1			0	2	0
+Secoviridae	Nepovirus	Nepovirus leucadendri	ICTV202522712	ssRNA(+)	plants	1			0	2	0
+Secoviridae	Nepovirus	Nepovirus lonchitis	ICTV202318385	ssRNA(+)	plants	1			0	1	0
 Secoviridae	Nepovirus	Nepovirus lycopersici	ICTV19710223	ssRNA(+)	plants	1	12280	Tomato ringspot virus	212	2	4
 Secoviridae	Nepovirus	Nepovirus maculanulatum	ICTV19791035	ssRNA(+)	plants	1			0	0	0
 Secoviridae	Nepovirus	Nepovirus manihotis	ICTV19911710	ssRNA(+)	plants	1	2170033	Cassava green mottle virus	4	2	0
 Secoviridae	Nepovirus	Nepovirus mirae	ICTV202420580	ssRNA(+)	plants	1	3079799	Prunus mira virus A	2	2	2
 Secoviridae	Nepovirus	Nepovirus mori	ICTV20151454	ssRNA(+)	plants	1	1527441;3048213	Mulberry mosaic leaf roll associated virus;Nepovirus mori	14	4	6
-Secoviridae	Nepovirus	Nepovirus musae	ICTV202522704	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus musae	ICTV202522704	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus myrtilli	ICTV19821249	ssRNA(+)	plants	1	38172	Blueberry leaf mottle virus	17	2	4
 Secoviridae	Nepovirus	Nepovirus nicotianae	ICTV19710221	ssRNA(+)	plants	1	12282	Tobacco ringspot virus	493	2	126
 Secoviridae	Nepovirus	Nepovirus nigranuli	ICTV19710222	ssRNA(+)	plants	1	12275	Tomato black ring virus	192	2	14
 Secoviridae	Nepovirus	Nepovirus oleae	ICTV19911724	ssRNA(+)	plants	1	121429	Olive latent ringspot virus	5	1	0
-Secoviridae	Nepovirus	Nepovirus paeoniae	ICTV202522695	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus paeoniae	ICTV202522695	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus persicae	ICTV19791037	ssRNA(+)	plants	1	65068	Peach rosette mosaic virus	8	2	3
 Secoviridae	Nepovirus	Nepovirus petuniae	ICTV202112969	ssRNA(+)	plants	1	1935922	Petunia chlorotic mottle virus	4	2	4
-Secoviridae	Nepovirus	Nepovirus pholismae	ICTV202522699	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Nepovirus	Nepovirus pinnatifolium	ICTV202522697	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus pholismae	ICTV202522699	ssRNA(+)	plants	1			0	2	0
+Secoviridae	Nepovirus	Nepovirus pinnatifolium	ICTV202522697	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus poaceae	ICTV202112970	ssRNA(+)	plants	1	2822470	Poaceae Liege nepovirus A	11	2	0
-Secoviridae	Nepovirus	Nepovirus pogonati	ICTV202522707	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus pogonati	ICTV202522707	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus pratensis	ICTV202112971	ssRNA(+)	plants	1	2058094	Red clover nepovirus A	15	2	6
-Secoviridae	Nepovirus	Nepovirus rhododendri	ICTV202522714	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus rhododendri	ICTV202522714	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus ribis	ICTV19981285	ssRNA(+)	plants	1	65743	Blackcurrant reversion virus	121	2	6
 Secoviridae	Nepovirus	Nepovirus rubi	ICTV19710219	ssRNA(+)	plants	1	12809	Raspberry ringspot virus	59	2	16
-Secoviridae	Nepovirus	Nepovirus saururi	ICTV202522703	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus saururi	ICTV202522703	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus sichuanense	ICTV202113816	ssRNA(+)	plants	1	2802553	Green Sichuan pepper nepovirus	26	2	26
-Secoviridae	Nepovirus	Nepovirus silenis	ICTV202522701	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus silenis	ICTV202522701	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus solani	ICTV19791038	ssRNA(+)	plants	1	257464	Potato black ringspot virus	21	2	11
 Secoviridae	Nepovirus	Nepovirus stenotaphri	ICTV202215092	ssRNA(+)	plants	1	2875798	Stenotaphrum nepovirus	26	2	4
-Secoviridae	Nepovirus	Nepovirus theobromatis	ICTV19760711	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Nepovirus	Nepovirus thymi	ICTV202522694	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus theobromatis	ICTV19760711	ssRNA(+)	plants	1	540069		1	1	0
+Secoviridae	Nepovirus	Nepovirus thymi	ICTV202522694	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Nepovirus	Nepovirus trifolii	ICTV19821253	ssRNA(+)	plants	1			0	0	0
 Secoviridae	Nepovirus	Nepovirus tunisiaense	ICTV19911719	ssRNA(+)	plants	1	2052649	Grapevine Tunisian ringspot virus	2	1	2
 Secoviridae	Nepovirus	Nepovirus usolani	ICTV19911727	ssRNA(+)	plants	1	2170039	Potato virus U	4	2	4
 Secoviridae	Nepovirus	Nepovirus vaccinii	ICTV20125743	ssRNA(+)	plants	1	1071488	Blueberry latent spherical virus	28	2	2
-Secoviridae	Nepovirus	Nepovirus vittariae	ICTV202318386	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Nepovirus	Nepovirus yunnanense	ICTV202522713	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Nepovirus	Nepovirus vittariae	ICTV202318386	ssRNA(+)	plants	1			0	1	0
+Secoviridae	Nepovirus	Nepovirus yunnanense	ICTV202522713	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Sadwavirus	Sadwavirus aciphyllae	ICTV202215095	ssRNA(+)	plants	1	3071303	surrounding non-legume associated virus	4	2	4
 Secoviridae	Sadwavirus	Sadwavirus alphananas	ICTV202113822	ssRNA(+)	plants	1	2726258	Pineapple secovirus A	16	2	12
 Secoviridae	Sadwavirus	Sadwavirus betananas	ICTV202215094	ssRNA(+)	plants	1	2989723	pineapple secovirus B	39	2	36
-Secoviridae	Sadwavirus	Sadwavirus cattleyae	ICTV202420581	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Sadwavirus	Sadwavirus chysanthemi	ICTV202420583	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Sadwavirus	Sadwavirus cattleyae	ICTV202420581	ssRNA(+)	plants	1	3121280		2	2	2
+Secoviridae	Sadwavirus	Sadwavirus chysanthemi	ICTV202420583	ssRNA(+)	plants	1	3098095		2	2	2
 Secoviridae	Sadwavirus	Sadwavirus citri	ICTV20042238	ssRNA(+)	plants	1	47416;57325;85516	Citrus mosaic sadwavirus;Navel orange infectious mottling virus;Satsuma dwarf virus	73	13	27
 Secoviridae	Sadwavirus	Sadwavirus dioscoreae	ICTV20175630	ssRNA(+)	plants	1	2170181	Dioscorea mosaic associated virus	50	4	6
 Secoviridae	Sadwavirus	Sadwavirus fragariae	ICTV20042240	ssRNA(+)	plants	1	167161;3048343	Sadwavirus fragariae;Strawberry mottle virus	192	3	38
 Secoviridae	Sadwavirus	Sadwavirus fritillariae	ICTV20165215	ssRNA(+)	plants	1	1120751	Chocolate lily virus A	4	2	4
 Secoviridae	Sadwavirus	Sadwavirus gammananas	ICTV202318393	ssRNA(+)	plants	1	2936685	Ananas comosus secovirus	2	2	2
 Secoviridae	Sadwavirus	Sadwavirus gymnemae	ICTV202420582	ssRNA(+)	plants	1	2998508	Gymnema sylvestre virus 1	2	2	2
-Secoviridae	Sadwavirus	Sadwavirus kappananas	ICTV202522718	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Sadwavirus	Sadwavirus kappananas	ICTV202522718	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Sadwavirus	Sadwavirus lactucae	ICTV202113823	ssRNA(+)	plants	1	2035396	Lettuce secovirus 1	13	2	0
-Secoviridae	Sadwavirus	Sadwavirus morifolii	ICTV202522719	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Sadwavirus	Sadwavirus morifolii	ICTV202522719	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Sadwavirus	Sadwavirus rubi	ICTV20094975	ssRNA(+)	plants	1	3047685;367301	Black raspberry necrosis virus;Sadwavirus rubi	50	4	8
 Secoviridae	Sequivirus	Sequivirus carotae	ICTV20094970	ssRNA(+)	plants	1	680112	Carrot necrotic dieback virus	6	1	5
 Secoviridae	Sequivirus	Sequivirus pastinacae	ICTV19982504	ssRNA(+)	plants	1	12777	Parsnip yellow fleck virus	2	1	1
-Secoviridae	Sequivirus	Sequivirus primulae	ICTV202522726	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Sequivirus	Sequivirus primulae	ICTV202522726	ssRNA(+)	plants	1			0	1	0
 Secoviridae	Sequivirus	Sequivirus stellatum	ICTV202113824	ssRNA(+)	plants	1	2749300	Lettuce star mosaic virus	5	1	2
 Secoviridae	Sequivirus	Sequivirus taraxaci	ICTV19952116	ssRNA(+)	plants	1	393603	Dandelion yellow mosaic virus	5	1	0
-Secoviridae	Stralarivirus	Stralarivirus beldersayense	ICTV202522720	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Stralarivirus	Stralarivirus beldersayense	ICTV202522720	ssRNA(+)	plants	1	3128878		2	2	2
 Secoviridae	Stralarivirus	Stralarivirus elaterii	ICTV202318394	ssRNA(+)	plants	1	3432600	Stralarivirus elaterii	1	1	1
 Secoviridae	Stralarivirus	Stralarivirus fragariae	ICTV20042239	ssRNA(+)	plants	1	28351	Strawberry latent ringspot virus	103	2	9
 Secoviridae	Stralarivirus	Stralarivirus lychnis	ICTV202112968	ssRNA(+)	plants	1	1676256	Lychnis mottle virus	120	2	55
-Secoviridae	Stralarivirus	Stralarivirus scaevolae	ICTV202522721	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Stralarivirus	Stralarivirus scaevolae	ICTV202522721	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Torradovirus	Torradovirus arctii	ICTV202420584	ssRNA(+)	plants	1	3036445	Burdock mosaic virus	2	2	2
 Secoviridae	Torradovirus	Torradovirus cardiacae	ICTV20151472	ssRNA(+)	plants	1	1561160	Motherwort yellow mottle virus	4	2	4
 Secoviridae	Torradovirus	Torradovirus carotae	ICTV20151471	ssRNA(+)	plants	1	1425364	Carrot torradovirus 1	22	2	2
@@ -2950,41 +2950,41 @@ Secoviridae	Torradovirus	Torradovirus codonopsis	ICTV202215097	ssRNA(+)	plants	1
 Secoviridae	Torradovirus	Torradovirus cucurbitae	ICTV20165214	ssRNA(+)	plants	1	1810396	Squash chlorotic leaf spot virus	37	2	4
 Secoviridae	Torradovirus	Torradovirus erigeronis	ICTV202318395	ssRNA(+)	plants	1	3432935	Torradovirus erigeronis	1	1	1
 Secoviridae	Torradovirus	Torradovirus lactucae	ICTV20141118	ssRNA(+)	plants	1	1358807	Lettuce necrotic leaf curl virus	8	2	4
-Secoviridae	Torradovirus	Torradovirus lophophyti	ICTV202522724	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Torradovirus	Torradovirus lophophyti	ICTV202522724	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Torradovirus	Torradovirus lycopersici	ICTV20094974	ssRNA(+)	plants	1	370833	Tomato torrado virus	170	2	18
 Secoviridae	Torradovirus	Torradovirus manihotis	ICTV202215096	ssRNA(+)	plants	1	1427159	Cassava Torrado-like virus	53	4	6
 Secoviridae	Torradovirus	Torradovirus marchitezum	ICTV20094973	ssRNA(+)	plants	1	410603;470166	Tomato apex necrosis virus;Tomato marchitez virus	25	4	8
 Secoviridae	Torradovirus	Torradovirus nanorugosum	ICTV202420585	ssRNA(+)	plants	1	3064989	Potato rugose stunting virus	119	2	2
-Secoviridae	Torradovirus	Torradovirus ophistopappi	ICTV202522723	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Torradovirus	Torradovirus ophistopappi	ICTV202522723	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Torradovirus	Torradovirus physalis	ICTV202420586	ssRNA(+)	plants	1	2885927	Physalis torrado virus	16	2	2
-Secoviridae	Torradovirus	Torradovirus rorippae	ICTV202522722	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Torradovirus	Torradovirus rorippae	ICTV202522722	ssRNA(+)	plants	1			0	2	0
 Secoviridae	Torradovirus	Torradovirus sesami	ICTV202522725	ssRNA(+)	phytobiome (S)	0			0	0	0
 Secoviridae	Waikavirus	Waikavirus actinidiae	ICTV202113829	ssRNA(+)	plants	1	2715795	Actinidia yellowing virus 1	2	4	2
 Secoviridae	Waikavirus	Waikavirus ajugae	ICTV202420566	ssRNA(+)	plants	1	3027334	Ajuga reptans waikavirus	2	1	0
 Secoviridae	Waikavirus	Waikavirus anacycli	ICTV202420567	ssRNA(+)	plants	1	3027335	Anacyclus depressus waikavirus	1	1	0
-Secoviridae	Waikavirus	Waikavirus artemisiae	ICTV202522733	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Waikavirus	Waikavirus artemisiae	ICTV202522733	ssRNA(+)	plants	1			0	1	0
 Secoviridae	Waikavirus	Waikavirus betacamelliae	ICTV202420557	ssRNA(+)	plants	1	3027336	Camellia virus B	1	1	0
 Secoviridae	Waikavirus	Waikavirus brassicae	ICTV202113827	ssRNA(+)	plants	1	2419797;3052815	Brassica napus RNA virus 1;Waikavirus brassicae	5	2	3
 Secoviridae	Waikavirus	Waikavirus camelliae	ICTV202215098	ssRNA(+)	plants	1	2899887	Camellia virus A	2	1	2
 Secoviridae	Waikavirus	Waikavirus campanulae	ICTV20165216	ssRNA(+)	plants	1	1720595	Bellflower vein chlorosis virus	2	1	2
 Secoviridae	Waikavirus	Waikavirus carotae	ICTV202420558	ssRNA(+)	plants	1	3433716	Waikavirus carotae	1	1	1
-Secoviridae	Waikavirus	Waikavirus celtis	ICTV202420559	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Waikavirus	Waikavirus convallariae	ICTV202522727	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Waikavirus	Waikavirus celtis	ICTV202420559	ssRNA(+)	plants	1	3059230		1	1	1
+Secoviridae	Waikavirus	Waikavirus convallariae	ICTV202522727	ssRNA(+)	plants	1			0	1	0
 Secoviridae	Waikavirus	Waikavirus diospyri	ICTV202113825	ssRNA(+)	plants	1	2590572	Persimmon waikavirus	2	1	2
-Secoviridae	Waikavirus	Waikavirus duoplantae	ICTV202522734	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Waikavirus	Waikavirus duoplantae	ICTV202522734	ssRNA(+)	plants	1	2950865		1	1	1
 Secoviridae	Waikavirus	Waikavirus eleocharis	ICTV202420568	ssRNA(+)	plants	1	3027339	Eleocharis dulcis waikavirus	1	1	0
-Secoviridae	Waikavirus	Waikavirus euphorbiae	ICTV202522728	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Waikavirus	Waikavirus gentianae	ICTV202522730	ssRNA(+)	plants	1			0	0	0
-Secoviridae	Waikavirus	Waikavirus heveae	ICTV202522735	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Waikavirus	Waikavirus euphorbiae	ICTV202522728	ssRNA(+)	plants	1			0	1	0
+Secoviridae	Waikavirus	Waikavirus gentianae	ICTV202522730	ssRNA(+)	plants	1			0	1	0
+Secoviridae	Waikavirus	Waikavirus heveae	ICTV202522735	ssRNA(+)	plants	1			0	1	0
 Secoviridae	Waikavirus	Waikavirus hirtae	ICTV202420560	ssRNA(+)	plants	1	3027340	Ficus hirta waikavirus	1	1	0
 Secoviridae	Waikavirus	Waikavirus juglandis	ICTV202420561	ssRNA(+)	plants	1	3027342	Juglans nigra waikavirus	1	1	0
 Secoviridae	Waikavirus	Waikavirus lactucae	ICTV202318396	ssRNA(+)	plants	1	2749299	Lettuce waikavirus 1	2	1	2
 Secoviridae	Waikavirus	Waikavirus liegense	ICTV202113830	ssRNA(+)	plants	1	2822469	Poaceae Liege virus 1	5	1	0
 Secoviridae	Waikavirus	Waikavirus ligustici	ICTV202420569	ssRNA(+)	plants	1	3027343	Ligusticum chuanxiong waikavirus	1	1	0
-Secoviridae	Waikavirus	Waikavirus lycopi	ICTV202522731	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Waikavirus	Waikavirus lycopi	ICTV202522731	ssRNA(+)	plants	1			0	1	0
 Secoviridae	Waikavirus	Waikavirus mertensiae	ICTV202420570	ssRNA(+)	plants	1	3027344	Mertensia paniculata waikavirus	1	1	0
 Secoviridae	Waikavirus	Waikavirus oryzae	ICTV19931724	ssRNA(+)	plants	1	35287	Rice tungro spherical virus	125	1	5
-Secoviridae	Waikavirus	Waikavirus pagodae	ICTV202522732	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Waikavirus	Waikavirus pagodae	ICTV202522732	ssRNA(+)	plants	1			0	1	0
 Secoviridae	Waikavirus	Waikavirus pedicularis	ICTV202420571	ssRNA(+)	plants	1	3027345	Pedicularis rex waikavirus	1	1	0
 Secoviridae	Waikavirus	Waikavirus pittospori	ICTV202420562	ssRNA(+)	plants	1	3433720	Waikavirus pittospori	1	1	1
 Secoviridae	Waikavirus	Waikavirus populi	ICTV202420563	ssRNA(+)	plants	1	3027347	Populus alba waikavirus	1	1	0
@@ -2994,7 +2994,7 @@ Secoviridae	Waikavirus	Waikavirus ranunculi	ICTV202420573	ssRNA(+)	plants	1	3027
 Secoviridae	Waikavirus	Waikavirus rhododendri	ICTV202318397	ssRNA(+)	plants	1	2936692	Rhododendron delavayi secovirus	2	1	2
 Secoviridae	Waikavirus	Waikavirus ribesnigri	ICTV202113828	ssRNA(+)	plants	1	1569061	Blackcurrant waikavirus A	8	1	2
 Secoviridae	Waikavirus	Waikavirus rosae	ICTV202215090	ssRNA(+)	plants	1	2875869	Sweetbriar rose curly top-associated virus	42	1	2
-Secoviridae	Waikavirus	Waikavirus swalleniae	ICTV202522729	ssRNA(+)	plants	1			0	0	0
+Secoviridae	Waikavirus	Waikavirus swalleniae	ICTV202522729	ssRNA(+)	plants	1			0	1	0
 Secoviridae	Waikavirus	Waikavirus thapsiae	ICTV202420574	ssRNA(+)	plants	1	3027351	Thapsia villosa waikavirus	1	1	0
 Secoviridae	Waikavirus	Waikavirus thymi	ICTV202420575	ssRNA(+)	plants	1	3027352	Thymus vulgaris waikavirus	1	1	0
 Secoviridae	Waikavirus	Waikavirus trifoccidentale	ICTV202420565	ssRNA(+)	plants	1	3027353	Trifolium occidentale waikavirus	1	1	0
@@ -3052,32 +3052,32 @@ Solemoviridae	Enamovirus	Enamovirus ALVE	ICTV202318492	ssRNA(+)	plants	1	2057935
 Solemoviridae	Enamovirus	Enamovirus BEV	ICTV202318493	ssRNA(+)	plants	1	2919882	Bean enamovirus 1	6	1	2
 Solemoviridae	Enamovirus	Enamovirus BFTEV	ICTV201907408	ssRNA(+)	plants	1	2283314	Bird's-foot trefoil enamovirus 1	1	1	1
 Solemoviridae	Enamovirus	Enamovirus BPVE	ICTV202318494	ssRNA(+)	plants	1	2986619	Black pepper virus E	2	1	0
-Solemoviridae	Enamovirus	Enamovirus BUBEV	ICTV202522781	ssRNA(+)	plants	1			0	0	0
-Solemoviridae	Enamovirus	Enamovirus CAEV	ICTV202522782	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Enamovirus	Enamovirus BUBEV	ICTV202522781	ssRNA(+)	plants	1			0	1	0
+Solemoviridae	Enamovirus	Enamovirus CAEV	ICTV202522782	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Enamovirus	Enamovirus CLEV	ICTV202318495	ssRNA(+)	plants	1	2885090	Celmisia lyallii enamovirus	2	1	2
-Solemoviridae	Enamovirus	Enamovirus CSEV	ICTV202522784	ssRNA(+)	plants	1			0	0	0
-Solemoviridae	Enamovirus	Enamovirus CTEV	ICTV202522783	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Enamovirus	Enamovirus CSEV	ICTV202522784	ssRNA(+)	plants	1			0	1	0
+Solemoviridae	Enamovirus	Enamovirus CTEV	ICTV202522783	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Enamovirus	Enamovirus CVEV	ICTV201856590	ssRNA(+)	plants	1	1301220	Citrus vein enation virus	83	1	35
-Solemoviridae	Enamovirus	Enamovirus DEGEV	ICTV202522785	ssRNA(+)	plants	1			0	0	0
-Solemoviridae	Enamovirus	Enamovirus FTEV	ICTV202522786	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Enamovirus	Enamovirus DEGEV	ICTV202522785	ssRNA(+)	plants	1			0	1	0
+Solemoviridae	Enamovirus	Enamovirus FTEV	ICTV202522786	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Enamovirus	Enamovirus GEV	ICTV201856585	ssRNA(+)	plants	1	2560515	Grapevine enamovirus 1	14	2	2
 Solemoviridae	Enamovirus	Enamovirus GSPEV	ICTV202318496	ssRNA(+)	plants	1	2802551	Green Sichuan pepper enamovirus	16	1	16
 Solemoviridae	Enamovirus	Enamovirus KSEV	ICTV202318497	ssRNA(+)	plants	1	2738918	Kummerowia striatad enamovirus	2	1	2
-Solemoviridae	Enamovirus	Enamovirus ORAEV	ICTV202522787	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Enamovirus	Enamovirus ORAEV	ICTV202522787	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Enamovirus	Enamovirus PEEV	ICTV202318498	ssRNA(+)	plants	1	2073163	Pepper enamovirus	11	1	0
 Solemoviridae	Enamovirus	Enamovirus PEMV	ICTV19981700	ssRNA(+)	plants	1	193121	Pea enation mosaic virus 1	109	2	36
 Solemoviridae	Enamovirus	Enamovirus PLEV	ICTV202318499	ssRNA(+)	plants	1	2448896	Plantago enamovirus	2	1	0
-Solemoviridae	Enamovirus	Enamovirus RAEV	ICTV202522788	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Enamovirus	Enamovirus RAEV	ICTV202522788	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Enamovirus	Enamovirus RCEV	ICTV202318500	ssRNA(+)	plants	1	2301724	Red clover enamovirus 1	6	1	5
-Solemoviridae	Enamovirus	Enamovirus WSEV	ICTV202522789	ssRNA(+)	plants	1			0	0	0
-Solemoviridae	Enamovirus	Enamovirus YPEV	ICTV202522790	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Enamovirus	Enamovirus WSEV	ICTV202522789	ssRNA(+)	plants	1			0	1	0
+Solemoviridae	Enamovirus	Enamovirus YPEV	ICTV202522790	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Hubsclerovirus	Hubsclerovirus HUSRV	ICTV202319055	ssRNA(+)	fungi	0			0	0	0
 Solemoviridae	Polemovirus	Polemovirus PNLV	ICTV20085022	ssRNA(+)	plants	1	305785	Poinsettia latent virus	9	1	3
 Solemoviridae	Polerovirus	Polerovirus ACTPV	ICTV202522803	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Polerovirus	Polerovirus AEYV	ICTV202318622	ssRNA(+)	plants	1	1963256	African eggplant yellowing virus	9	1	4
-Solemoviridae	Polerovirus	Polerovirus AGV	ICTV202522793	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Polerovirus	Polerovirus AGV	ICTV202522793	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Polerovirus	Polerovirus APVA	ICTV202318623	ssRNA(+)	plants	1	2593979	Allium polerovirus A	3	1	3
-Solemoviridae	Polerovirus	Polerovirus ARMOV	ICTV202522794	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Polerovirus	Polerovirus ARMOV	ICTV202522794	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Polerovirus	Polerovirus ARTVB	ICTV202318624	ssRNA(+)	plants	1	2812730	Artemisia virus B	2	1	2
 Solemoviridae	Polerovirus	Polerovirus BCHV	ICTV20021150	ssRNA(+)	plants	1	131082	Beet chlorosis virus	53	1	11
 Solemoviridae	Polerovirus	Polerovirus BLYV	ICTV202318627	ssRNA(+)	plants	1	2480685	Beet leaf yellowing virus	9	1	9
@@ -3086,12 +3086,12 @@ Solemoviridae	Polerovirus	Polerovirus BPV	ICTV202318625	ssRNA(+)	plants	1	283807
 Solemoviridae	Polerovirus	Polerovirus BVG	ICTV202318626	ssRNA(+)	plants	1	1825924;3431731	Barley virus G;Polerovirus BVG	58	2	14
 Solemoviridae	Polerovirus	Polerovirus BWYV	ICTV19911691	ssRNA(+)	plants	1	12042	Beet western yellows virus	181	1	34
 Solemoviridae	Polerovirus	Polerovirus CABYV	ICTV19981711	ssRNA(+)	plants	1	91753	Cucurbit aphid-borne yellows virus	811	1	103
-Solemoviridae	Polerovirus	Polerovirus CALRV	ICTV202522795	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Polerovirus	Polerovirus CALRV	ICTV202522795	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Polerovirus	Polerovirus CAPV	ICTV202522796	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Polerovirus	Polerovirus CBTV1	ICTV202318632	ssRNA(+)	plants	1	2910194	Cotton bunchy top virus 1	2	2	2
 Solemoviridae	Polerovirus	Polerovirus CBTV2	ICTV202318633	ssRNA(+)	plants	1	2910195	Cotton bunchy top virus 2	2	1	2
 Solemoviridae	Polerovirus	Polerovirus CDPV	ICTV202318628	ssRNA(+)	plants	1	2754871	Cardamom polerovirus	2	1	2
-Solemoviridae	Polerovirus	Polerovirus CHDV	ICTV202522797	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Polerovirus	Polerovirus CHDV	ICTV202522797	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Polerovirus	Polerovirus CLDV	ICTV20132169	ssRNA(+)	plants	1	1514895;1564916;312295	Cotton atypical red leaf virus;Cotton leafroll bushy virus;Cotton leafroll dwarf virus	837	3	59
 Solemoviridae	Polerovirus	Polerovirus CNPV	ICTV202318631	ssRNA(+)	plants	1	3019006	Cnidium polerovirus 1	11	1	11
 Solemoviridae	Polerovirus	Polerovirus CPCSV	ICTV20094021	ssRNA(+)	plants	1	328430	Chickpea chlorotic stunt virus	50	1	3
@@ -3102,12 +3102,12 @@ Solemoviridae	Polerovirus	Polerovirus CSPV	ICTV202318629	ssRNA(+)	plants	1	34317
 Solemoviridae	Polerovirus	Polerovirus CTRLV	ICTV19821232	ssRNA(+)	plants	1	66200	Carrot red leaf virus	24	1	7
 Solemoviridae	Polerovirus	Polerovirus CYDVRPS	ICTV20021153	ssRNA(+)	plants	1	228582;3431745	Cereal yellow dwarf virus RPS;Polerovirus CYDVRPS	16	2	7
 Solemoviridae	Polerovirus	Polerovirus CYDVRPV	ICTV19981710	ssRNA(+)	plants	1	2170100;3073343;3431746	Cereal yellow dwarf virus RPV;Cereal yellow dwarf virus RPV-33WO;Polerovirus CYDVRPV	144	3	18
-Solemoviridae	Polerovirus	Polerovirus CYMAV	ICTV202522798	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Polerovirus	Polerovirus CYMAV	ICTV202522798	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Polerovirus	Polerovirus DVPV	ICTV202318636	ssRNA(+)	plants	1	2986775	Dregea volubilis polerovirus 1	2	1	2
 Solemoviridae	Polerovirus	Polerovirus FBPV	ICTV201907417	ssRNA(+)	plants	1	2283388	Faba bean polerovirus 1	4	1	3
-Solemoviridae	Polerovirus	Polerovirus FEQPV	ICTV202522804	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Polerovirus	Polerovirus FEQPV	ICTV202522804	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Polerovirus	Polerovirus FVPV	ICTV202318637	ssRNA(+)	plants	1	2885085	Foeniculum vulgare polerovirus	4	1	1
-Solemoviridae	Polerovirus	Polerovirus GLPV	ICTV202522805	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Polerovirus	Polerovirus GLPV	ICTV202522805	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Polerovirus	Polerovirus GPOV	ICTV202318638	ssRNA(+)	plants	1	2696999	Grapevine polerovirus 1	16	1	7
 Solemoviridae	Polerovirus	Polerovirus GRAV	ICTV19911693	ssRNA(+)	plants	1	33761	Groundnut rosette assistor virus	72	1	3
 Solemoviridae	Polerovirus	Polerovirus HEMVA	ICTV202318639	ssRNA(+)	plants	1	3025624	Hemisteptia virus A	2	1	2
@@ -3117,17 +3117,17 @@ Solemoviridae	Polerovirus	Polerovirus LABYV	ICTV202318641	ssRNA(+)	plants	1	1462
 Solemoviridae	Polerovirus	Polerovirus MABYV	ICTV20094023	ssRNA(+)	plants	1	471717	Melon aphid-borne yellows virus	44	1	12
 Solemoviridae	Polerovirus	Polerovirus MAYMV	ICTV20175862	ssRNA(+)	plants	1	1833824;1856642	Maize yellow dwarf virus-RMV2;Maize yellow mosaic virus	293	2	45
 Solemoviridae	Polerovirus	Polerovirus MJVA	ICTV202318642	ssRNA(+)	plants	1	2977935	Mallotus japonicus virus A	2	1	2
-Solemoviridae	Polerovirus	Polerovirus MUSPV	ICTV202522806	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Polerovirus	Polerovirus MUSPV	ICTV202522806	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Polerovirus	Polerovirus MYDVRMV	ICTV19952391	ssRNA(+)	plants	1	2170101	Maize yellow dwarf virus RMV	9	1	4
 Solemoviridae	Polerovirus	Polerovirus MYFV	ICTV202318643	ssRNA(+)	plants	1	2777538	Miscanthus yellow fleck virus	2	1	2
-Solemoviridae	Polerovirus	Polerovirus NBPV	ICTV202522807	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Polerovirus	Polerovirus NBPV	ICTV202522807	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Polerovirus	Polerovirus ORMV	ICTV202318644	ssRNA(+)	plants	1	2653665	Ornithogalum virus 5	2	3	2
 Solemoviridae	Polerovirus	Polerovirus PABYV	ICTV20175863	ssRNA(+)	plants	1	1462681	Pepo aphid-borne yellows virus	76	1	4
 Solemoviridae	Polerovirus	Polerovirus PBMYV	ICTV202318650	ssRNA(+)	plants	1	1756832	Phasey bean mild yellows virus	16	2	15
 Solemoviridae	Polerovirus	Polerovirus PDMV	ICTV202318645	ssRNA(+)	plants	1	2420235	Panicum distortion mosaic virus	3	1	2
 Solemoviridae	Polerovirus	Polerovirus PELRCV	ICTV202318647	ssRNA(+)	plants	1	2052172	Pepper leafroll chlorosis virus	13	1	0
 Solemoviridae	Polerovirus	Polerovirus PEVYV1	ICTV20132170	ssRNA(+)	plants	1	909827	Pepper vein yellows virus	294	2	22
-Solemoviridae	Polerovirus	Polerovirus PEVYV10	ICTV202522800	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Polerovirus	Polerovirus PEVYV10	ICTV202522800	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Polerovirus	Polerovirus PEVYV2	ICTV201856621	ssRNA(+)	plants	1	2560636	Pepper vein yellows virus 2	2	1	2
 Solemoviridae	Polerovirus	Polerovirus PEVYV3	ICTV201856622	ssRNA(+)	plants	1	3431766	Polerovirus PEVYV3	1	1	1
 Solemoviridae	Polerovirus	Polerovirus PEVYV4	ICTV201856623	ssRNA(+)	plants	1	3431767	Polerovirus PEVYV4	1	1	1
@@ -3147,10 +3147,10 @@ Solemoviridae	Polerovirus	Polerovirus SABYV	ICTV20132171	ssRNA(+)	plants	1	64601
 Solemoviridae	Polerovirus	Polerovirus SAYV	ICTV202318655	ssRNA(+)	plants	1	1577997	Sauropus yellowing virus	3	1	0
 Solemoviridae	Polerovirus	Polerovirus SBCLRV	ICTV202318657	ssRNA(+)	plants	1	2959664	Soybean chlorotic leafroll virus	2	1	2
 Solemoviridae	Polerovirus	Polerovirus SCYLV	ICTV20021166	ssRNA(+)	plants	1	94290	Sugarcane yellow leaf virus	791	1	38
-Solemoviridae	Polerovirus	Polerovirus SLBPV	ICTV202522809	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Polerovirus	Polerovirus SLBPV	ICTV202522809	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Polerovirus	Polerovirus SLPV	ICTV202318656	ssRNA(+)	plants	1	2562543	Siratro latent polerovirus	2	1	2
-Solemoviridae	Polerovirus	Polerovirus SPLSV	ICTV19981720	ssRNA(+)	plants	1			0	0	0
-Solemoviridae	Polerovirus	Polerovirus SPRPV	ICTV202522808	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Polerovirus	Polerovirus SPLSV	ICTV19981720	ssRNA(+)	plants	1	391912		1	1	1
+Solemoviridae	Polerovirus	Polerovirus SPRPV	ICTV202522808	ssRNA(+)	plants	1	3377357		1	1	0
 Solemoviridae	Polerovirus	Polerovirus SPV	ICTV202318658	ssRNA(+)	plants	1	1564903	Strawberry polerovirus 1	66	1	7
 Solemoviridae	Polerovirus	Polerovirus STAVB	ICTV202318659	ssRNA(+)	plants	1	3040039	Stellaria aquatica mottle polerovirus A	1	1	1
 Solemoviridae	Polerovirus	Polerovirus TAPV	ICTV202318663	ssRNA(+)	plants	1	2885089	Trachyspermum ammi polerovirus	2	1	2
@@ -3162,7 +3162,7 @@ Solemoviridae	Polerovirus	Polerovirus TRIYSV	ICTV202318664	ssRNA(+)	plants	1	303
 Solemoviridae	Polerovirus	Polerovirus TUYV	ICTV20026173	ssRNA(+)	plants	1	1046403;131083;3431793	Brassica yellows virus;Polerovirus TUYV;Turnip yellows virus	805	3	128
 Solemoviridae	Polerovirus	Polerovirus TVDV	ICTV20073960	ssRNA(+)	plants	1	192203	Tobacco vein distorting virus	27	1	5
 Solemoviridae	Polerovirus	Polerovirus UPOV	ICTV202318665	ssRNA(+)	plants	1	2491943	Ullucus polerovirus 1	6	1	2
-Solemoviridae	Polerovirus	Polerovirus VPPV	ICTV202522802	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Polerovirus	Polerovirus VPPV	ICTV202522802	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Polerovirus	Polerovirus WCMV	ICTV202318667	ssRNA(+)	plants	1	1913024	White clover mottle virus	16	1	2
 Solemoviridae	Polerovirus	Polerovirus WLYAV	ICTV202318666	ssRNA(+)	plants	1	2019445	Wheat leaf yellowing-associated virus	4	1	3
 Solemoviridae	Polerovirus	Polerovirus WYDVGPV	ICTV19991081	ssRNA(+)	plants	1	2169980;572239	Barley yellow dwarf virus GPV;Wheat yellow dwarf virus-GPV	63	2	2
@@ -3175,7 +3175,7 @@ Solemoviridae	Sobemovirus	Sobemovirus CYCMV	ICTV20154532	ssRNA(+)	plants	1	16021
 Solemoviridae	Sobemovirus	Sobemovirus IYMV	ICTV20115442	ssRNA(+)	plants	1	524023	Imperata yellow mottle virus	40	1	1
 Solemoviridae	Sobemovirus	Sobemovirus LTSV	ICTV19911830	ssRNA(+)	plants	1	12470	Lucerne transient streak virus	21	1	4
 Solemoviridae	Sobemovirus	Sobemovirus MIMMV	ICTV202318562	ssRNA(+)	plants	1	3018030	Mimosa mosaic virus	2	1	2
-Solemoviridae	Sobemovirus	Sobemovirus OLVS	ICTV202522792	ssRNA(+)	plants	1			0	0	0
+Solemoviridae	Sobemovirus	Sobemovirus OLVS	ICTV202522792	ssRNA(+)	plants	1			0	1	0
 Solemoviridae	Sobemovirus	Sobemovirus PHYRMV	ICTV202009704	ssRNA(+)	plants	1	2607629	Physalis rugose mosaic virus	4	1	3
 Solemoviridae	Sobemovirus	Sobemovirus PISSV	ICTV202318563	ssRNA(+)	plants	1	3432501	Sobemovirus PISSV	1	1	0
 Solemoviridae	Sobemovirus	Sobemovirus PLSV	ICTV202318564	ssRNA(+)	plants	1	3022817	Poaceae Liege sobemovirus	2	1	1
@@ -3367,13 +3367,13 @@ Tolecusatellitidae	Betasatellite	Betasatellite solanisecundi	ICTV202009231	ssDNA
 Tolecusatellitidae	Betasatellite	Betasatellite solanisrilankaense	ICTV20165481	ssDNA(-)	plants	1	1036190;1036191;1036192;1036193;1036194;1036195;1036196;1397671;1397672;1458061;220812;693901;935288	Papaya leaf curl associated betasatellite;Tomato leaf curl betasatellite;Tomato leaf curl betasatellite - [India:Halwadni:2007];Tomato leaf curl betasatellite-DU [India:New Delhi:Papaya:2009];Tomato l	309	14	268
 Tolecusatellitidae	Betasatellite	Betasatellite solanitogoense	ICTV202009244	ssDNA(-)	plants	1	929051	Tomato leaf curl Togo betasatellite-[Togo:2006]	4	1	4
 Tolecusatellitidae	Betasatellite	Betasatellite solaniyemenense	ICTV20165482	ssDNA(-)	plants	1	1176156;1757097	Tomato leaf curl Sudan betasatellite;Tomato leaf curl Yemen betasatellite	16	2	16
-Tolecusatellitidae	Betasatellite	Betasatellite trigonellae	ICTV202522667	ssDNA	plants	1			0	0	0
+Tolecusatellitidae	Betasatellite	Betasatellite trigonellae	ICTV202522667	ssDNA	plants	1			0	1	0
 Tolecusatellitidae	Betasatellite	Betasatellite vernoniae	ICTV202009246	ssDNA(-)	plants	1	1925152	Vernonia crinkle betasatellite	3	1	3
 Tolecusatellitidae	Betasatellite	Betasatellite verrnoniaflavi	ICTV20165489	ssDNA(-)	plants	1	666635	Vernonia yellow vein betasatellite	2	1	2
 Tolecusatellitidae	Betasatellite	Betasatellite verrnoniaflavusfujianense	ICTV20165490	ssDNA(-)	plants	1	2050589	Vernonia yellow vein Fujian betasatellite	2	1	2
 Tolecusatellitidae	Betasatellite	Betasatellite vignae	ICTV20165456	ssDNA(-)	plants	1	1238162	Mungbean yellow mosaic India virus associated betasatellite [India: Faizabad: Cow Pea:2012]	2	1	2
 Tolecusatellitidae	Betasatellite	Betasatellite zinniae	ICTV202009247	ssDNA(-)	plants	1	220813	Zinnia leaf curl virus-associated DNA beta	2	1	1
-Tolecusatellitidae	Deltasatellite	Deltasatellite brassicae	ICTV202522669	ssDNA(+/-)	plants	1			0	0	0
+Tolecusatellitidae	Deltasatellite	Deltasatellite brassicae	ICTV202522669	ssDNA(+/-)	plants	1			0	1	0
 Tolecusatellitidae	Deltasatellite	Deltasatellite codiaeumiflavi	ICTV20165491	ssDNA	plants	1	327839	Croton yellow vein betasatellite	2	1	2
 Tolecusatellitidae	Deltasatellite	Deltasatellite desmodii	ICTV202009156	ssDNA	plants	1	2315478	Desmodium leaf distortion deltasatellite	16	1	16
 Tolecusatellitidae	Deltasatellite	Deltasatellite ipomoeaprimi	ICTV20165496	ssDNA	plants	1	1993647	Sweet potato leaf curl deltasatellite 1	96	2	96
@@ -3463,7 +3463,7 @@ Tombusviridae	Tombusvirus	Tombusvirus cucumis	ICTV19911858	ssRNA(+)	plants	1	121
 Tombusviridae	Tombusvirus	Tombusvirus cymbidii	ICTV19821358	ssRNA(+)	plants	1	12144	Cymbidium ringspot virus	8	1	3
 Tombusviridae	Tombusvirus	Tombusvirus cynarae	ICTV19710328	ssRNA(+)	plants	1	12142	Artichoke mottled crinkle virus	7	1	2
 Tombusviridae	Tombusvirus	Tombusvirus dianthi	ICTV19710329	ssRNA(+)	plants	1	39443	Carnation Italian ringspot virus	18	1	4
-Tombusviridae	Tombusvirus	Tombusvirus havelfluminis	ICTV20084944	ssRNA(+)	plants	1			0	0	0
+Tombusviridae	Tombusvirus	Tombusvirus havelfluminis	ICTV20084944	ssRNA(+)	plants	1	254711		1	1	1
 Tombusviridae	Tombusvirus	Tombusvirus latofluminis	ICTV19911862	ssRNA(+)	plants	1			0	0	0
 Tombusviridae	Tombusvirus	Tombusvirus limonii	ICTV20084946	ssRNA(+)	plants	1	270257	Limonium flower distortion virus	3	1	1
 Tombusviridae	Tombusvirus	Tombusvirus lycopersici	ICTV19710331	ssRNA(+)	plants	1	12145	Tomato bushy stunt virus	94	1	16
@@ -3474,7 +3474,7 @@ Tombusviridae	Tombusvirus	Tombusvirus necropelargonii	ICTV20084950	ssRNA(+)	plan
 Tombusviridae	Tombusvirus	Tombusvirus pelargonii	ICTV19760848	ssRNA(+)	plants	1	35280	Pelargonium leaf curl virus	14	1	3
 Tombusviridae	Tombusvirus	Tombusvirus petuniae	ICTV19710330	ssRNA(+)	plants	1	270255	Petunia asteroid mosaic virus	4	1	1
 Tombusviridae	Tombusvirus	Tombusvirus siktefluminis	ICTV19952286	ssRNA(+)	plants	1	255521	Sikte waterborne virus	7	1	3
-Tombusviridae	Tralespevirus	Tralespevirus gompholobii	ICTV202113879	ssRNA(+)	plants	1			0	0	0
+Tombusviridae	Tralespevirus	Tralespevirus gompholobii	ICTV202113879	ssRNA(+)	plants	1	1884832		1	1	1
 Tombusviridae	Tralespevirus	Tralespevirus lespedezae	ICTV20143788	ssRNA(+)	plants	1	944580	Trailing lespedeza virus 1	7	1	2
 Tombusviridae	Umbravirus	Umbravirus arachidis	ICTV19952482	ssRNA(+)	plants	1	47740	Groundnut rosette virus	82	1	4
 Tombusviridae	Umbravirus	Umbravirus carotae	ICTV19982743	ssRNA(+)	plants	1	47736	Carrot mottle mimic virus	9	1	7
@@ -3499,10 +3499,10 @@ Tospoviridae	Orthotospovirus	Orthotospovirus arachianuli	ICTV19990698	ssRNA(+/-)
 Tospoviridae	Orthotospovirus	Orthotospovirus arachiflavamaculae	ICTV19990699	ssRNA(+/-)	invertebrates, plants	1	345030;438765;63443	Groundnut yellow spot virus;Groundnut yellow spot virus-[sweet pepper];Peanut yellow spot virus	11	4	1
 Tospoviridae	Orthotospovirus	Orthotospovirus arachiflavi	ICTV201907247	ssRNA(+/-)	invertebrates, plants	1	1629551	Groundnut chlorotic fan-spot virus	15	5	3
 Tospoviridae	Orthotospovirus	Orthotospovirus arachinecrosis	ICTV19990697	ssRNA(+/-)	invertebrates, plants	1	198612;3052566;40687	Groundnut bud necrosis virus;Orthotospovirus arachinecrosis;Peanut bud necrosis virus	782	9	116
-Tospoviridae	Orthotospovirus	Orthotospovirus barlerichlorosis	ICTV202522332	ssRNA(+/-)	invertebrates, plants	1			0	0	0
+Tospoviridae	Orthotospovirus	Orthotospovirus barlerichlorosis	ICTV202522332	ssRNA(+/-)	invertebrates, plants	1			0	3	0
 Tospoviridae	Orthotospovirus	Orthotospovirus callaflavi	ICTV201856662	ssRNA(+/-)	invertebrates, plants	1	309542	Calla lily chlorotic spot virus	23	3	11
 Tospoviridae	Orthotospovirus	Orthotospovirus capsiciflavi	ICTV201856663	ssRNA(+/-)	invertebrates, plants	1	163325;283490;3052568	Capsicum chlorosis virus;Orthotospovirus capsiciflavi;Tomato necrosis virus TD8	387	7	37
-Tospoviridae	Orthotospovirus	Orthotospovirus capsiciflavianuli	ICTV202522336	ssRNA(+/-)	invertebrates, plants	1			0	0	0
+Tospoviridae	Orthotospovirus	Orthotospovirus capsiciflavianuli	ICTV202522336	ssRNA(+/-)	invertebrates, plants	1			0	3	0
 Tospoviridae	Orthotospovirus	Orthotospovirus capsicimaculaflavi	ICTV201907250	ssRNA(+/-)	invertebrates, plants	1	1414655	Pepper chlorotic spot virus	15	3	5
 Tospoviridae	Orthotospovirus	Orthotospovirus chrysanthinecrocaulis	ICTV201856664	ssRNA(+/-)	invertebrates, plants	1	3052570;83871	Chrysanthemum stem necrosis virus;Orthotospovirus chrysanthinecrocaulis	49	6	14
 Tospoviridae	Orthotospovirus	Orthotospovirus citrullomaculosi	ICTV19990703	ssRNA(+/-)	invertebrates, plants	1	3052571	Orthotospovirus citrullomaculosi	86	3	21
@@ -3514,26 +3514,26 @@ Tospoviridae	Orthotospovirus	Orthotospovirus glycininecrovenae	ICTV201856667	ssR
 Tospoviridae	Orthotospovirus	Orthotospovirus hippeflavi	ICTV201907248	ssRNA(+/-)	invertebrates, plants	1	2736661;3052575	Hippeastrum chlorotic spot virus;Orthotospovirus hippeflavi	72	5	22
 Tospoviridae	Orthotospovirus	Orthotospovirus impatiensnecromaculae	ICTV19950812	ssRNA(+/-)	invertebrates, plants	1	11612;3052576	Impatiens necrotic spot virus;Orthotospovirus impatiensnecromaculae	605	7	59
 Tospoviridae	Orthotospovirus	Orthotospovirus iridimaculaflavi	ICTV20141814	ssRNA(+/-)	invertebrates, plants	1	3052577;60456	Iris yellow spot virus;Orthotospovirus iridimaculaflavi	435	6	13
-Tospoviridae	Orthotospovirus	Orthotospovirus limonii	ICTV202522331	ssRNA(+/-)	invertebrates, plants	1			0	0	0
-Tospoviridae	Orthotospovirus	Orthotospovirus macadamianuli	ICTV202522334	ssRNA(+/-)	invertebrates, plants	1			0	0	0
+Tospoviridae	Orthotospovirus	Orthotospovirus limonii	ICTV202522331	ssRNA(+/-)	invertebrates, plants	1			0	3	0
+Tospoviridae	Orthotospovirus	Orthotospovirus macadamianuli	ICTV202522334	ssRNA(+/-)	invertebrates, plants	1			0	3	0
 Tospoviridae	Orthotospovirus	Orthotospovirus meloflavi	ICTV201856666	ssRNA(+/-)	invertebrates, plants	1	89471	Melon yellow spot virus	86	3	18
 Tospoviridae	Orthotospovirus	Orthotospovirus melotessellati	ICTV201856665	ssRNA(+/-)	invertebrates, plants	1	3052579;485724	Orthotospovirus melotessellati;melon severe mosaic virus	18	6	7
-Tospoviridae	Orthotospovirus	Orthotospovirus mercurialis	ICTV202522335	ssRNA(+/-)	invertebrates, plants	1			0	0	0
+Tospoviridae	Orthotospovirus	Orthotospovirus mercurialis	ICTV202522335	ssRNA(+/-)	invertebrates, plants	1			0	3	0
 Tospoviridae	Orthotospovirus	Orthotospovirus morivenae	ICTV201907249	ssRNA(+/-)	invertebrates, plants	1	3071209	mulberry vein banding-associated virus	4	3	2
 Tospoviridae	Orthotospovirus	Orthotospovirus phaseolinecrotessellati	ICTV201856661	ssRNA(+/-)	invertebrates, plants	1	1033976	Bean necrotic mosaic virus	6	3	3
 Tospoviridae	Orthotospovirus	Orthotospovirus polygonianuli	ICTV20131443	ssRNA(+/-)	invertebrates, plants	1	3052582	Orthotospovirus polygonianuli	8	3	6
-Tospoviridae	Orthotospovirus	Orthotospovirus scadoxiflavianuli	ICTV202522333	ssRNA(+/-)	invertebrates, plants	1			0	0	0
+Tospoviridae	Orthotospovirus	Orthotospovirus scadoxiflavianuli	ICTV202522333	ssRNA(+/-)	invertebrates, plants	1			0	3	0
 Tospoviridae	Orthotospovirus	Orthotospovirus tomatanuli	ICTV201907251	ssRNA(+/-)	invertebrates, plants	1	304859;3052583	Orthotospovirus tomatanuli;Tomato yellow ring virus	54	6	16
 Tospoviridae	Orthotospovirus	Orthotospovirus tomatoflavi	ICTV19990701	ssRNA(+/-)	invertebrates, plants	1	12851;3052584	Orthotospovirus tomatoflavi;Tomato chlorotic spot virus	280	6	12
 Tospoviridae	Orthotospovirus	Orthotospovirus tomatomaculae	ICTV19710332	ssRNA(+/-)	invertebrates, plants	1	1972500;3052585	Orthotospovirus tomatomaculae;Tomato spotted wilt virus	2988	52	130
-Tospoviridae	Orthotospovirus	Orthotospovirus tomatonecroanuli	ICTV202522330	ssRNA(+/-)	invertebrates, plants	1			0	0	0
-Tospoviridae	Orthotospovirus	Orthotospovirus tomatonecromaculae	ICTV202522337	ssRNA(+/-)	invertebrates, plants	1			0	0	0
+Tospoviridae	Orthotospovirus	Orthotospovirus tomatonecroanuli	ICTV202522330	ssRNA(+/-)	invertebrates, plants	1			0	3	0
+Tospoviridae	Orthotospovirus	Orthotospovirus tomatonecromaculae	ICTV202522337	ssRNA(+/-)	invertebrates, plants	1			0	3	0
 Tospoviridae	Orthotospovirus	Orthotospovirus tomatozonae	ICTV201907252	ssRNA(+/-)	invertebrates, plants	1	3052586;460926	Orthotospovirus tomatozonae;Tomato zonate spot virus	218	6	21
 Tymoviridae	Maculavirus	Maculavirus vitis	ICTV20021833	ssRNA(+)	plants	1	103722;2893786;2893787;2893788;2893789;2893790;3047853	Grapevine fleck virus;Grapevine fleck virus 1;Grapevine fleck virus 2;Grapevine fleck virus 3;Grapevine fleck virus 4;Grapevine fleck virus 5;Maculavirus vitis	405	8	12
 Tymoviridae	Marafivirus	Marafivirus asteroides	ICTV20175650	ssRNA(+)	plants	1	2169998;3047846	Grapevine asteroid mosaic associated virus;Marafivirus asteroides	75	2	5
 Tymoviridae	Marafivirus	Marafivirus avenae	ICTV19911701	ssRNA(+)	plants	1	56879	Oat blue dwarf virus	3	1	3
 Tymoviridae	Marafivirus	Marafivirus citri	ICTV20084974	ssRNA(+)	plants	1	312008	Citrus sudden death-associated virus	123	1	7
-Tymoviridae	Marafivirus	Marafivirus cynodonis	ICTV19911699	ssRNA(+)	plants	1			0	0	0
+Tymoviridae	Marafivirus	Marafivirus cynodonis	ICTV19911699	ssRNA(+)	plants	1	167478		1	1	1
 Tymoviridae	Marafivirus	Marafivirus maydis	ICTV19841277	ssRNA(+)	plants	1	3048192;59749	Maize rayado fino virus;Marafivirus maydis	92	2	6
 Tymoviridae	Marafivirus	Marafivirus medicagonis	ICTV202009793	ssRNA(+)	plants	1	2170538	Alfalfa virus F	4	1	2
 Tymoviridae	Marafivirus	Marafivirus nucipersicae	ICTV20165217	ssRNA(+)	plants	1	1778580	Nectarine marafivirus M	15	1	5
@@ -3550,9 +3550,9 @@ Tymoviridae	Tymovirus	Tymovirus brassicae	ICTV19710339	ssRNA(+)	plants	1	12154	T
 Tymoviridae	Tymovirus	Tymovirus calopogonii	ICTV19982724	ssRNA(+)	plants	1			0	0	0
 Tymoviridae	Tymovirus	Tymovirus chayotis	ICTV20042179	ssRNA(+)	plants	1	71030	Chayote mosaic virus	2	1	2
 Tymoviridae	Tymovirus	Tymovirus chiltepini	ICTV20115428	ssRNA(+)	plants	1	688701	Chiltepin yellow mosaic virus	3	1	3
-Tymoviridae	Tymovirus	Tymovirus clitoriae	ICTV19760854	ssRNA(+)	plants	1			0	0	0
-Tymoviridae	Tymovirus	Tymovirus cucumis	ICTV19710340	ssRNA(+)	plants	1			0	0	0
-Tymoviridae	Tymovirus	Tymovirus desmodii	ICTV19760855	ssRNA(+)	plants	1			0	0	0
+Tymoviridae	Tymovirus	Tymovirus clitoriae	ICTV19760854	ssRNA(+)	plants	1	12157		1	1	1
+Tymoviridae	Tymovirus	Tymovirus cucumis	ICTV19710340	ssRNA(+)	plants	1	70824		1	1	1
+Tymoviridae	Tymovirus	Tymovirus desmodii	ICTV19760855	ssRNA(+)	plants	1	70821		1	1	1
 Tymoviridae	Tymovirus	Tymovirus dulcamarae	ICTV19710336	ssRNA(+)	plants	1	70823	Dulcamara mottle virus	3	1	2
 Tymoviridae	Tymovirus	Tymovirus erysimi	ICTV19760858	ssRNA(+)	plants	1	12152	Erysimum latent virus	3	1	2
 Tymoviridae	Tymovirus	Tymovirus kennedyae	ICTV19760859	ssRNA(+)	plants	1	12158	Kennedya yellow mosaic virus	7	1	2
@@ -3565,7 +3565,7 @@ Tymoviridae	Tymovirus	Tymovirus naranjillae	ICTV202215116	ssRNA(+)	plants	1	2073
 Tymoviridae	Tymovirus	Tymovirus nemesiae	ICTV20084990	ssRNA(+)	plants	1	312009	Nemesia ring necrosis virus	15	1	2
 Tymoviridae	Tymovirus	Tymovirus ononis	ICTV19991908	ssRNA(+)	plants	1	12153	Ononis yellow mosaic virus	4	1	2
 Tymoviridae	Tymovirus	Tymovirus passiflorae	ICTV19911880	ssRNA(+)	plants	1	185692	Passion fruit yellow mosaic virus	7	2	2
-Tymoviridae	Tymovirus	Tymovirus petuniae	ICTV20042191	ssRNA(+)	plants	1			0	0	0
+Tymoviridae	Tymovirus	Tymovirus petuniae	ICTV20042191	ssRNA(+)	plants	1	147306		1	1	1
 Tymoviridae	Tymovirus	Tymovirus physalis	ICTV19760862	ssRNA(+)	plants	1	72539	Physalis mottle virus	4	1	2
 Tymoviridae	Tymovirus	Tymovirus plantagonis	ICTV19760863	ssRNA(+)	plants	1	312274	Plantago mottle virus	2	1	1
 Tymoviridae	Tymovirus	Tymovirus quitoense	ICTV202215117	ssRNA(+)	plants	1	2304463	Naranjilla mild mosaic virus	4	1	2
@@ -3578,7 +3578,7 @@ Virgaviridae	Furovirus	Furovirus chinense	ICTV20042208	ssRNA(+)	plants	1	3428875
 Virgaviridae	Furovirus	Furovirus japonicum	ICTV20115443	ssRNA(+)	plants	1	2030954	Japanese soil-borne wheat mosaic virus	27	2	0
 Virgaviridae	Furovirus	Furovirus sorghi	ICTV20042212	ssRNA(+)	plants	1	107804	Sorghum chlorotic spot virus	4	2	2
 Virgaviridae	Furovirus	Furovirus tritici	ICTV19991804	ssRNA(+)	plants	1	28375	Soil-borne wheat mosaic virus	138	2	16
-Virgaviridae	Goravirus	Goravirus drakeae	ICTV20154612	ssRNA(+)	plants	1			0	0	0
+Virgaviridae	Goravirus	Goravirus drakeae	ICTV20154612	ssRNA(+)	plants	1	1647805		2	2	1
 Virgaviridae	Goravirus	Goravirus gentianae	ICTV20154611	ssRNA(+)	plants	1	1920772	Gentian ovary ringspot virus	4	2	2
 Virgaviridae	Hordeivirus	Hordeivirus anthoxanthi	ICTV19911665	ssRNA(+)	plants	1			0	0	0
 Virgaviridae	Hordeivirus	Hordeivirus hordei	ICTV19750354	ssRNA(+)	plants	1	12327	Barley stripe mosaic virus	117	6	23
@@ -3603,7 +3603,7 @@ Virgaviridae	Tobamovirus	Tobamovirus fortpiercense	ICTV20042262	ssRNA(+)	plants	
 Virgaviridae	Tobamovirus	Tobamovirus frangipani	ICTV19760836	ssRNA(+)	plants	1	99585	Frangipani mosaic virus	9	1	3
 Virgaviridae	Tobamovirus	Tobamovirus fructirugosum	ICTV20165510	ssRNA(+)	plants	1	1761477;1916236;2572045;3432872	Tobamovirus fructirugosum;Tomato brown rugose fruit virus;Tomato brown rugose fruit virus - Palestinian isolate;Tomato brown rugose fruit virus-israeli	865	4	400
 Virgaviridae	Tobamovirus	Tobamovirus kyuri	ICTV19911843	ssRNA(+)	plants	1	111970	Kyuri green mottle mosaic virus	46	1	2
-Virgaviridae	Tobamovirus	Tobamovirus latentabaci	ICTV20042271	ssRNA(+)	plants	1			0	0	0
+Virgaviridae	Tobamovirus	Tobamovirus latentabaci	ICTV20042271	ssRNA(+)	plants	1	2083209		1	1	1
 Virgaviridae	Tobamovirus	Tobamovirus maculacapsici	ICTV20125735	ssRNA(+)	plants	1	368735	Bell pepper mottle virus	10	1	4
 Virgaviridae	Tobamovirus	Tobamovirus maculafructi	ICTV20021969	ssRNA(+)	plants	1	146499	Cucumber fruit mottle mosaic virus	13	1	4
 Virgaviridae	Tobamovirus	Tobamovirus maculatessellati	ICTV20143958	ssRNA(+)	plants	1	1391702	Tomato mottle mosaic virus	97	1	24

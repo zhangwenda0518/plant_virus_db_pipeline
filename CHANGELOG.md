@@ -2,6 +2,20 @@
 
 All notable changes to the Plant Virus Database Platform.
 
+## [2026-10-26] — Explorer 接入 Protein Structure：第 8 个标签 + 3D 查看器深链
+
+**背景**：`/explorer/` 的 7 个面板（Profile / Data / Trends / Variation / Primers / Hosts / Vectors）此前与 `/structures3d/` 蛋白结构站完全独立——结构数据没有进入 Explorer，Explorer 也没有任何入口跳到某个物种/蛋白的 3D 模型。本次把两侧打通。
+
+**改动**：
+1. **`virus_explorer/app.py`**：
+   - 启动时读取 `14.rvpsd_structures/webapp/data/structures_index.json`（线上 4,252 种 / 53,240 个模型），构建 `STRUCTURE_SPECIES` + 别名索引；路径可用 `VP_STRUCTURE_INDEX` 覆盖。
+   - 物种名解析：Explorer 用 NCBI/ICTV 名（如 `Orthotospovirus tomatomaculae`），结构索引用常用名/毒株名（如 `Tomato spotted wilt virus (TSWV)`）→ 复用 `name_mapping.tsv` 的 NCBI↔ICTV↔常用名↔缩写映射 + 去括号规范化；同名多毒株条目按 `fas` 去重合并。
+   - 新增第 8 个标签 `Protein Structure`（🧊）：覆盖卡片（模型数 / pLDDT 高 / 中 / 低）、蛋白表（Accession / Product / pLDDT / Host / 3D）、每行深链 `rvpsd.html?species=…&fas=…`；无模型物种给出结构门户 / 3D 浏览器 / Atlas / Foldify 入口。
+   - 选择器只列确有模型的物种；默认优先左侧筛选锁定且被结构库覆盖的物种，筛选内无覆盖物种（默认筛选是 PSTVd 类病毒）时回落到 Explorer 记录数最多的覆盖物种；启动时预计算 `STRUCTURE_ORG_MODELS`，筛选联动不额外扫库。
+2. **`14.rvpsd_structures/webapp/rvpsd.html`**：支持 `?species=<name>&fas=<fas>` / `?species=<name>&acc=<acc>` 深链——自动选中物种、选中蛋白并加载 Molstar；VAD 批次的 `vad_<acc>` 索引项自动映射到 `structures_vad/<acc>.pdb`；未命中时保留搜索词并提示。
+
+**验证**：线上 `/explorer/_dash-layout` 显示 8 个标签；`structure-content` 回调返回 Citrus tristeza virus 模型表；`/structures3d/rvpsd.html?species=Cucumber mosaic virus&acc=AAA46396.1` 自动选中 CMV + 目标蛋白，Molstar 全原子加载成功；本地/线上均无回调报错。
+
 ## [2026-10-26] — 植物病毒口径收紧至"真正感染植物的病原"（48→42 科）+ VMR 引号解析 bug 修复
 
 **最终基线**：**42 科 / 200 属 / 2,637 种**（原宽松口径 48/214/2,684）。Full 库覆盖 **42/42**、Ref 库覆盖 **42/42**——数据覆盖与名单完全吻合，KPI 满额，不再有"缺科"解释负担。
@@ -31,6 +45,8 @@ All notable changes to the Plant Virus Database Platform.
 **KPI 口径调整（同日第三轮，用户定版）**：/reference/ 卡片去掉"Sequences 条数"，改为 **Species 6,448（去重 NCBI TaxID，不锚 ICTV 命名合并）/ Segmented species 1,929 / Non-segmented species 4,519**——节段/非节段按 TaxID 不重不漏二分，相加等于物种总数；Data Source 切换默认 **Ref DB 在前**。`generate_dashboard_stats` 新增 segmented_species/nonsegmented_species 字段（taxid 二分；记录数仍保留在 JSON 供核对）。Full 模式 Species 卡 = 6,555 TaxIDs。同轮新增双物种卡：**Species (NCBI) 6,448 / Species (ICTV) 2,240/2,637**（基线内精选库实际覆盖，全量模式 2,213/2,637）；DNA/RNA 物种卡暂不展示——1,192 个 TaxID（18%）缺 Molecule_Type2 标注（月度增量未走 E2/E3），补全后再上，避免新的"加不起来"；类病毒不单独设卡（45/45 全覆盖且均为 RNA，信息在对照表与分类树）。
 
 **Molecule_Type2 归一化 + DNA/RNA 物种卡（同日第四轮）**：Ref/Full 表的 Molecule_Type2 混有 LOCUS 风格值（ss-RNA 569/ss-DNA 458/cRNA 276/ds-RNA 68/mRNA 42 等）与空值 421 条——归一化 Ref 1,416+421、Full 19,982+1,751，taxid 继承 3 条，按分类学事实补 2 条（PMWaV-7=Badnavirus dsDNA、Begomovirus ageravenae=ssDNA），Ref Type2 达 100% 标注。**新增 DNA/RNA 物种卡（TaxID 不重不漏二分）**：Ref DNA 2,654 + RNA 3,794 = 6,448；Full DNA 2,925 + RNA 3,630 = 6,555。U1 merge 入库即归一化（MOL_TYPE2_MAP）。
+
+**VMR 定向补收（同日第五轮，用户定版执行）**：397 个"ICTV 有名、库里没有"的基线种核实——369 个（93%）是真植物病毒且 GenBank 有收录号（漏收根因：NCBI 宿主谱系标注缺口），28 个为文献命名无公共序列。执行：① 269 个已在库的 accession 物种名规范化（NCBI 老名 → VMR 正名）；② 50 个 Full 有行无序列的暂不入精选（等序列）；③ 247 条新序列（178 种，含 BK-TPA 202 条）从 NCBI 下载入 Ref+Full。**发布口径变更：Ref 8,918 → 9,165 条 / 4,975 → 5,154 种名 / 6,448 → 6,629 TaxIDs；ICTV 覆盖 2,240 → 2,587/2,637（98.1%）；属覆盖 199 → 200/200 满覆盖**。Full 211,132 → 211,378。全站文案同步。修复过程中 Ref/Full TSV 曾被追加脚本覆盖损坏，均已从服务器版本恢复并重放（最终 TSV↔FASTA 一致性校验通过）。
 
 **新增对照表**：`docs/data/plant_virus_taxonomy_crosswalk.tsv` —— 42 科范围全部 3,632 种（严格基线 2,637 + 同科关联 995）的 ICTV↔NCBI 逐种对照：Family/Genus/Species_ICTV、ICTV_ID、Genome、VMR_Host_source、In_strict_baseline、NCBI_Taxids/Names、Full/Ref/Complete 记录数；NCBI 侧有记录的 2,220 种。已注册 API 网关 `taxonomy.plant-crosswalk`；`taxonomy.plant-taxa` 描述计数同步为 2,837。
 

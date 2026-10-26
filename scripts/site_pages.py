@@ -46,10 +46,10 @@ PAGES = [
 
     dict(file="reference_index.html", url="/reference/", kind="dataset", priority="0.9", changefreq="monthly",
          title_en="Plant Virus Reference Database", title_zh="植物病毒参考数据库",
-         desc_en="Curated plant virus reference database: 8,918 representative sequences curated from 211,132 "
+         desc_en="Curated plant virus reference database: 9,165 representative sequences curated from 211,378 "
                  "GenBank records, cross-referenced with ICTV MSL41; dashboard, segmented and non-segmented "
                  "browsers, submission and download.",
-         desc_zh="植物病毒参考数据库：从 211,132 条 GenBank 记录精修出 8,918 条代表序列，对照 ICTV MSL41；"
+         desc_zh="植物病毒参考数据库：从 211,132 条 GenBank 记录精修出 9,165 条代表序列，对照 ICTV MSL41；"
                  "含仪表盘、分节段/非分节段浏览、提交与下载。"),
 
     dict(file="segmented.html", url="/reference/segmented.html", kind="page", priority="0.6", changefreq="monthly",
@@ -72,9 +72,9 @@ PAGES = [
 
     dict(file="download.html", url="/reference/download.html", kind="page", priority="0.7", changefreq="monthly",
          title_en="Download — Plant Virus DB", title_zh="下载 — 植物病毒库",
-         desc_en="Download plant virus reference datasets: clustered representative FASTA (8,918 records) and "
+         desc_en="Download plant virus reference datasets: clustered representative FASTA (9,165 records) and "
                  "full pre-deduplication set (211,132 records), each with complete metadata TSV.",
-         desc_zh="植物病毒参考数据下载：聚类代表序列 FASTA（8,918 条）与去重前全量集（211,132 条），均附完整元数据 TSV。"),
+         desc_zh="植物病毒参考数据下载：聚类代表序列 FASTA（9,165 条）与去重前全量集（211,378 条），均附完整元数据 TSV。"),
 
     dict(file="photos.html", url="/photos/", kind="dataset", priority="0.8", changefreq="monthly",
          title_en="Plant Virus Symptom Photos", title_zh="植物病毒症状照片库",

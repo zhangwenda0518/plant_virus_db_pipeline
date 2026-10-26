@@ -704,10 +704,10 @@ class IndexBuilder:
             rows = read_tsv_dicts(ROOT / "docs/data/Plant_Virus_Ref.Info.tsv")
             if rows:
                 out["reference_records"] = len(rows)
-                # species 用 Species_ICTV 去重（=4,975，与 Reference 页 "Virus Species (ICTV)"
-                # 及 "6,448 TaxIDs" 的自述一致）。注意 Species_Canonical 只有 4,944 ——
-                # 它是合并 canonical 后的**检索主轴**，比 ICTV 物种少 31，不能拿来当
-                # 物种数对外展示；数字随月更 VMR 回填变化，以实算为准（2026-10-26 更新）。
+                # species 用 Species_ICTV 去重（=5,154，与 Reference 页 "Virus Species (ICTV)"
+                # 及 "6,629 TaxIDs" 的自述一致）。注意 Species_Canonical 数以实算为准 ——
+                # 它是合并 canonical 后的**检索主轴**，比 ICTV 物种少，不能拿来当
+                # 物种数对外展示；数字随月更/回填/补收变化，以实算为准（2026-10-26 VMR 补收后更新）。
                 ictv = {(r.get("Species_ICTV") or "").strip() for r in rows}
                 out["species"] = len({v for v in ictv if v})
         except Exception:
