@@ -120,11 +120,26 @@ def parse_gb(text):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--vmr', default=os.path.join(REPO, 'docs', 'data', 'VMR_MSL41.txt'))
+    ap.add_argument('--ref-info', default=REF_INFO,
+                    help='精选库元数据 TSV（run_all 全量重建时传 G2 产物路径）')
+    ap.add_argument('--ref-fasta', default=REF_FASTA,
+                    help='精选库 FASTA（同上）')
+    ap.add_argument('--encoding', default='auto',
+                    help='VMR 文件编码：auto=先 utf-8 后 latin-1；也可显式 utf-8 / latin-1')
     ap.add_argument('--dry-run', action='store_true')
     args = ap.parse_args()
 
     if not os.path.exists(args.vmr):
         raise SystemExit(f'[FATAL] VMR 不存在: {args.vmr}')
+
+    def read_vmr():
+        raw = open(args.vmr, 'rb').read()
+        if args.encoding != 'auto':
+            return raw.decode(args.encoding, errors='replace')
+        try:
+            return raw.decode('utf-8')
+        except UnicodeDecodeError:
+            return raw.decode('latin-1')
 
     # 1. 基线种集合与 42 科基线
     baseline = set()
@@ -141,7 +156,7 @@ def main():
     # 2. Ref 现有 accession 与现有种
     ref_accs = set()
     ref_species = set()
-    with open(REF_INFO, encoding='utf-8', errors='replace') as f:
+    with open(args.ref_info, encoding='utf-8', errors='replace') as f:
         for r in csv.DictReader(f, delimiter='\t'):
             a = (r.get('Accession') or '').split('.')[0]
             if a:
@@ -153,8 +168,8 @@ def main():
     # 3. 缺失基线种 → VMR accession
     targets = {}
     seen_species = set()
-    with open(args.vmr, encoding='latin-1', errors='replace') as f:
-        for r in csv.DictReader(f, delimiter='\t'):
+    vmr_text = read_vmr().replace('\r\n', '\n')
+    for r in csv.DictReader(vmr_text.splitlines(), delimiter='\t'):
             sp = (r.get('Species') or '').strip()
             if sp not in baseline or sp in ref_species or sp in seen_species:
                 continue
@@ -197,11 +212,11 @@ def main():
         farecs[block[:nl].split('.')[0].strip()] = re.sub(r'\s+', '', block[nl + 1:])
 
     # 5. 构建并追加（列序对齐现有表头）
-    with open(REF_INFO, encoding='utf-8', errors='replace') as f:
+    with open(args.ref_info, encoding='utf-8', errors='replace') as f:
         hdr = [h.strip() for h in f.readline().rstrip('\n').split('\t')]
     added = 0
     failed = []
-    with open(REF_INFO, 'a', encoding='utf-8', newline='') as f:
+    with open(args.ref_info, 'a', encoding='utf-8', newline='') as f:
         for acc in accs:
             sp, gen, fam = targets[acc]
             g = grecs.get(acc)
@@ -236,10 +251,10 @@ def main():
 
     # 6. FASTA 追加
     have = set()
-    for line in open(REF_FASTA, encoding='utf-8', errors='replace'):
+    for line in open(args.ref_fasta, encoding='utf-8', errors='replace'):
         if line.startswith('>'):
             have.add(line[1:].strip().split()[0].split('.')[0])
-    with open(REF_FASTA, 'a', encoding='utf-8') as f:
+    with open(args.ref_fasta, 'a', encoding='utf-8') as f:
         for a, s in farecs.items():
             if a not in have:
                 f.write('>' + a + '\n' + s + '\n')

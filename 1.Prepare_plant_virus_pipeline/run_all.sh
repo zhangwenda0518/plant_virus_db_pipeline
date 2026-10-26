@@ -607,6 +607,16 @@ else
     log "✓ [G2-vclust聚类] 完成 → $G2_OUT"
 fi
 
+# G2b — VMR 定向补收 (2026-10-26): 基线内"ICTV 有名、NCBI 宿主谱系漏标"的种。
+# C2 按 Viridiplantae 收录接不到这批记录，全量重建会在此时丢失它们——
+# 在全新 Ref 上幂等补收（V1 内部无缺失时秒退）。
+if [ -s "$PLANT_DIR/G-cluster/Plant_Virus_Ref.Info.tsv" ]; then
+    log "▶ 开始 [G2b-VMR定向补收]"
+    G2B_LOG="$LOG_DIR/G2b-VMR定向补收.log"
+    python "$BIN_DIR/V1_vmr_directed_collect.py"         --vmr "$VHOST_DIR/B-ictv/VMR_MSL41.tsv"         --encoding utf-8         --ref-info "$PLANT_DIR/G-cluster/Plant_Virus_Ref.Info.tsv"         --ref-fasta "$PLANT_DIR/G-cluster/Plant_Virus_Ref.fasta"         >> >(tee -a "$G2B_LOG") 2>> >(tee -a "$G2B_LOG" >&2)         || log "⚠ [G2b-VMR定向补收] 失败（非致命，可手动重跑 V1_vmr_directed_collect.py）"
+    log "✓ [G2b-VMR定向补收] 完成"
+fi
+
 run "G3-去冗余评估" "$PLANT_DIR/G-cluster/Dereplication_Global_Summary.tsv" \
     python "$BIN_DIR/G3_derep_evaluate.py" \
         --info "$PLANT_DIR/F-dedup/split_results/All_Classified_Virus_Info.tsv" \
