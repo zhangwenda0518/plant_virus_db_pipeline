@@ -53,6 +53,12 @@ json.dump(s, open('$DATA/incremental_status.json', 'w'), ensure_ascii=False, ind
 print('Status updated, months:', len(s.get('months',[])))
 "
 
+# Phase 4.5: 重建 dashboard 统计（站点 /reference/ KPI 随月更刷新；失败不中断管线）
+echo "==== $(date) Regenerating dashboard stats ====" | tee -a "$LOG"
+(cd "$DATA" && python3.8 generate_dashboard_stats.py >> "$LOG" 2>&1) \
+    && echo "dashboard_stats.json regenerated" | tee -a "$LOG" \
+    || echo "WARNING: dashboard stats regeneration failed (non-fatal)" | tee -a "$LOG"
+
 # Phase 5: 重建下游 BLAST 库（保持 /metabuli/ DB BLAST 与 Ref 同步）
 if [ -n "${PVDB_MAKEBLASTDB:-}" ]; then
     MAKEBLASTDB="$PVDB_MAKEBLASTDB"

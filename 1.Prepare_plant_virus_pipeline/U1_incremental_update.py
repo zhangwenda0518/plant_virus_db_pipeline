@@ -1248,6 +1248,40 @@ def _build_taxid_lookup(info_path: str) -> dict[str, dict]:
         return {}
 
 
+# ═══════════════════════════════════════════════════════════
+#  科级黑名单 (2026-10-26): 非植物病原科, 入库前统一拦截
+#  与 C4_clean_all_tsvs.py 的 FUNGAL/INSECT/PHAGE/OOMYCETE/ENDOGENOUS/
+#  ENVIRONMENTAL 及 docs/phylo/build_taxonomy.py 的 BLACKLIST_FAMILIES 保持一致。
+#  增量查询按 viruses[filter]+日期 全量抓取, L1-L5 宿主判定无科级过滤——
+#  真菌/噬菌体/CRESS/内源元件病毒只要宿主谱系带 Viridiplantae 就会被误收;
+#  全量重建时 C4 会移除它们, 这里在入库前拦截, 避免月度数据漂移。
+# ═══════════════════════════════════════════════════════════
+NON_PLANT_FAMILY_BLACKLIST = {
+    # 真菌病毒科
+    "Chrysoviridae", "Oomyviridae", "Hypoviridae", "Mitoviridae",
+    "Mymonaviridae", "Gammaflexiviridae", "Deltaflexiviridae",
+    "Spiciviridae", "Botryosphaeriviridae", "Fusariviridae",
+    "Hadakaviridae", "Yadokariviridae", "Polymycoviridae",
+    "Megabirnaviridae", "Quadriviridae", "Barnaviridae", "Ambiguiviridae",
+    # 昆虫/无脊椎病毒科
+    "Dicistroviridae", "Iflaviridae", "Baculoviridae", "Polydnaviridae",
+    "Nimaviridae", "Tetraviridae", "Nodaviridae", "Mesoniviridae",
+    "Xinmoviridae", "Bidnaviridae", "Hytrosaviridae", "Parvoviridae",
+    "Artoviridae",
+    # 噬菌体科 (含 MSL41 新增的 Norzivirales RNA 噬菌体)
+    "Fiersviridae", "Microviridae", "Steitzviridae", "Duinviridae",
+    "Straboviridae", "Autographiviridae", "Herelleviridae",
+    "Peduoviridae", "Zierdtviridae", "Atkinsviridae", "Solspiviridae",
+    # 卵菌病毒科
+    "Discoviridae",
+    # 内源逆转录转座子科 (gypsy/copia)
+    "Metaviridae", "Pseudoviridae",
+    # 环境 CRESS-DNA 背景科 (Geminiviridae/Nanoviridae 为真植物病毒, 不在列)
+    "Circoviridae", "Genomoviridae", "Kanorauviridae",
+    "Ouroboviridae", "Draupnirviridae", "Smacoviridae",
+}
+
+
 def database_merge(plant_records: list[dict], api_key: str,
                    output_dir: str, taxsyn_result: dict,
                    skip_merged_check: bool = False) -> dict:
@@ -1371,6 +1405,11 @@ def database_merge(plant_records: list[dict], api_key: str,
         elif tid and tid not in known_taxids:
             # taxonkit 也没拿到 → 同样回退 NCBI 名, 段留空
             species_ictv = rec.get("organism", "") or ""
+
+        # ── 科级黑名单拦截: 见 NON_PLANT_FAMILY_BLACKLIST 注释 ──
+        if family and family in NON_PLANT_FAMILY_BLACKLIST:
+            result["family_blacklisted"] = result.get("family_blacklisted", 0) + 1
+            continue
 
         rows.append({
             "Accession": acc,
@@ -1744,6 +1783,7 @@ def main():
     print(f"   实际写入:       {merge_result['new_fasta']} FASTA + {merge_result['new_tsv']} TSV")
     print(f"   已知继承元数据:  {merge_result.get('known_inherited', 0)}")
     print(f"   taxonkit补全:   {merge_result.get('new_taxonkit', 0)}")
+    print(f"   科级黑名单拦截:  {merge_result.get('family_blacklisted', 0)}")
     print(f"   Taxid合并重映射: {merge_result['merged_updated']} (主表 Taxid 列)")
     print(f"   delnodes命中:   {merge_result['deleted_marked']} (已写 watchlist)")
     if merge_result.get("deferred_download"):

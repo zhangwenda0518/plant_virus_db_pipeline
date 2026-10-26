@@ -25,6 +25,7 @@ Step 2 — 构建「植物病毒分类学进化关系树」数据。
 """
 import argparse
 import collections
+import csv
 import json
 import os
 import sys
@@ -45,6 +46,9 @@ FUNGAL_FAMILIES = {
     "Spiciviridae", "Botryosphaeriviridae",
     "Fusariviridae", "Hadakaviridae", "Yadokariviridae",
     "Polymycoviridae", "Megabirnaviridae", "Quadriviridae", "Barnaviridae",
+    # Ambiguiviridae (Tolivirales): 宿主 fungi，MSL41 仅有植物际/土壤分离来源记录，
+    # 无植物感染种（与 1.Prepare_plant_virus_pipeline/C4_clean_all_tsvs.py 保持一致）。
+    "Ambiguiviridae",
 }
 INSECT_FAMILIES = {
     "Dicistroviridae", "Iflaviridae", "Baculoviridae", "Polydnaviridae",
@@ -56,6 +60,9 @@ PHAGE_FAMILIES = {
     "Fiersviridae", "Microviridae", "Steitzviridae", "Duinviridae",
     "Straboviridae", "Autographiviridae", "Herelleviridae",
     "Peduoviridae", "Zierdtviridae",
+    # Atkinsviridae / Solspiviridae (Norzivirales): MSL41 的 RNA 噬菌体科，
+    # 宿主 bacteria，仅有植物/土壤分离来源记录（与 C4 保持一致）。
+    "Atkinsviridae", "Solspiviridae",
 }
 OOMYCETE_FAMILIES = {"Oomyviridae", "Discoviridae"}
 # 环境 CRESS-DNA：泛在背景，非宿主特异 —— 但 Geminiviridae/Nanoviridae 是真植物病毒
@@ -70,6 +77,17 @@ BLACKLIST_FAMILIES = (
     | (ENVIRONMENTAL_FAMILIES - TRUE_PLANT_CRESS_FAMILIES)
 )
 
+# ------------------------------------- 内源逆转录转座子科 / 单条检出存疑科
+# - Metaviridae / Pseudoviridae：gypsy（Athila/Del1/Tat4）与 copia（Tnt1/Tto1/Tos17）
+#   型内源逆转录转座子。ICTV 出于系统发生学把它们纳入病毒分类，但这些"种"整合在
+#   植物基因组内，无细胞外颗粒、无水平传播，不是感染植物的病原。
+# - Pestiviridae：哺乳动物病毒科（猪瘟病毒/牛病毒性腹泻病毒所在科）。唯一 plants
+#   记录为苦苣菜中检出的 Sonchus virus 1（Koshovirus sonchi，BK062903.1，TPA），
+#   感染植物无证据。精选表中的该条记录保留（ICTV 官方分类单元），只是不计入
+#   植物病毒科基线。
+NON_PATHOGEN_PLANT_ELEMENT_FAMILIES = {"Metaviridae", "Pseudoviridae", "Pestiviridae"}
+BLACKLIST_FAMILIES = BLACKLIST_FAMILIES | NON_PATHOGEN_PLANT_ELEMENT_FAMILIES
+
 # ------------------------------------------------- 为什么不做属级黑名单
 # C4_clean_all_tsvs.py 里的 FUNGAL_GENERA / INSECT_EXCLUDED_GENERA 等属级名单，
 # 用途是「把序列从 Plant.tsv 移到 Fungi.tsv / Insecta.tsv」，是**文件归类**规则，
@@ -81,8 +99,12 @@ BLACKLIST_FAMILIES = (
 # 因此本脚本**只做科级黑名单**，属/种一律以 VMR 的 Host source 种级标注为准。
 # 边界情形见 README「判定口径与边界情形」一节。
 
-# VMR Host source 中代表植物宿主的取值
-PLANT_HOST_SOURCES = {'plants', 'plants (S)', 'invertebrates, plants', 'phytobiome (S)'}
+# VMR Host source 中代表植物宿主的取值。
+# 严格口径：只取「被感染宿主」值。带 (S) 后缀的是 ICTV 的「分离来源」
+# （从植物叶面/植物际/土壤里分离到，宿主实为噬菌体/真菌病毒），不算植物病毒；
+# 唯一仅靠 (S) 值进入名单的 Atkinsviridae / Solspiviridae / Ambiguiviridae
+# 已同时列入科级黑名单，因此收紧前后科/属/种集合完全一致。
+PLANT_HOST_SOURCES = {'plants', 'invertebrates, plants'}
 
 
 def load_plant_species(vmr_path):
@@ -94,9 +116,13 @@ def load_plant_species(vmr_path):
     genus_of_species = {}
     genome_of_species = {}
 
-    with open(vmr_path, encoding='utf-8', errors='replace') as f:
-        hdr = f.readline().rstrip('\n').split('\t')
-        ci = {h.strip(): i for i, h in enumerate(hdr)}
+    # 必须用 csv.reader：VMR 里含逗号的 Host source（如 "invertebrates, plants"）
+    # 带引号存储，手工 split('\t') 会把引号留在值里导致整类记录静默丢失
+    # （Sedoreoviridae / Spinareoviridae / Tospoviridae 曾因此全部漏判）。
+    with open(vmr_path, encoding='utf-8', errors='replace', newline='') as f:
+        rd = csv.reader(f, delimiter='\t', quotechar='"')
+        hdr = [h.strip() for h in next(rd)]
+        ci = {h: i for i, h in enumerate(hdr)}
         need = ['Host source', 'Family', 'Genus', 'Species', 'Genome']
         miss = [c for c in need if c not in ci]
         if miss:
@@ -105,8 +131,7 @@ def load_plant_species(vmr_path):
         hs_i, fa_i, ge_i, sp_i, gm_i = (ci[c] for c in need)
         width = max(hs_i, fa_i, ge_i, sp_i, gm_i)
 
-        for line in f:
-            c = line.rstrip('\n').split('\t')
+        for c in rd:
             if len(c) <= width:
                 continue
             sp = c[sp_i].strip()
@@ -303,6 +328,7 @@ def main():
         'vmr_plant_species': len(plant_species),
         'vmr_plant_species_matched': matched,
         'plant_family_list': sorted(plant_families),
+        'plant_genus_list': sorted(g for gens in plant_genera.values() for g in gens),
     }
 
     print('[4/4] 写出 ...')

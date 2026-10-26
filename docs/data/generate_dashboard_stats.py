@@ -30,6 +30,52 @@ from datetime import datetime
 from pathlib import Path
 
 YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
+ACCESSION_RE = re.compile(r"^[A-Z]{1,3}_?\d+(?:\.\d+)?$")
+
+
+def normalize_family(value):
+    """Clean raw GenBank family labels into ICTV-style family names.
+
+    Drops empty values and accessions mistakenly stored in the Family column,
+    and folds "unclassified Xviridae" into "Xviridae".
+    """
+    v = (value or "").strip()
+    if not v or ACCESSION_RE.match(v):
+        return ""
+    return re.sub(r"(?i)^unclassified\s+", "", v).strip()
+
+
+def load_plant_taxonomy(here):
+    """Read the ICTV MSL41 plant-virus baseline used by /phylo/.
+
+    Returns (plant_family_set, plant_genus_set, plant_genera_total, plant_species_total).
+    """
+    meta = {}
+    p = here.parent / "phylo" / "taxonomy_tree.json"
+    if p.exists():
+        try:
+            meta = json.loads(p.read_text(encoding="utf-8")).get("meta", {})
+        except (OSError, ValueError):
+            meta = {}
+    families = {str(x).strip() for x in meta.get("plant_family_list", []) if str(x).strip()}
+    genera = {str(x).strip() for x in meta.get("plant_genus_list", []) if str(x).strip()}
+    return (families, genera,
+            int(meta.get("plant_genera") or 0), int(meta.get("plant_species") or 0))
+
+
+def build_genus_map(ref_rows):
+    """Map species names in the reference table to their VMR genus."""
+    mapping = {}
+    for r in ref_rows:
+        genus = (r.get("VMR_Genus") or "").strip()
+        if not genus:
+            continue
+        for col in ("Species_ICTV", "Species_NCBI", "Species_Canonical"):
+            name = (r.get(col) or "").strip()
+            if name:
+                mapping.setdefault(name, genus)
+    return mapping
+
 
 
 def _top(counter, n=20):
@@ -58,20 +104,52 @@ def _length_bins(rows, col="Length", step=1000, max_len=20000):
     return [[f"{b}-{b + step - 1}", bins[b]] for b in sorted(bins.keys())]
 
 
-def compute_stats(rows, has_vmr=False, has_category=False, family_col="Family"):
-    """Compute all dashboard stats from a list of dict rows."""
+def compute_stats(rows, has_vmr=False, has_category=False, family_col="Family",
+                  plant_families=None, plant_genera=None, genus_map=None, taxonomy_totals=None):
+    """Compute all dashboard stats from a list of dict rows.
+
+    Family and genus KPIs follow the ICTV MSL41 plant-virus taxonomy:
+    the reference table uses its VMR assignment, the full table normalizes
+    raw GenBank labels and maps species names to VMR genera.
+    """
     n = len(rows)
     # taxids
     taxids = {r.get("Taxid", "") for r in rows if r.get("Taxid", "")}
-    # families / genera (ref only has VMR_*)
+    # distinct ICTV species names
+    species = {(r.get("Species_ICTV") or "").strip() for r in rows if (r.get("Species_ICTV") or "").strip()}
+
+    # families / genera
+    fam_counter = Counter()
+    genera = set()
     if has_vmr:
-        fams = {r.get("VMR_Family", "") for r in rows if r.get("VMR_Family", "")}
-        genera = {r.get("VMR_Genus", "") for r in rows if r.get("VMR_Genus", "")}
-        fam_col = "VMR_Family"
+        for r in rows:
+            fam = (r.get("VMR_Family") or "").strip()
+            if fam:
+                fam_counter[fam] += 1
+            genus = (r.get("VMR_Genus") or "").strip()
+            if genus:
+                genera.add(genus)
     else:
-        fams = {r.get(family_col, "") for r in rows if r.get(family_col, "")}
-        genera = set()
-        fam_col = family_col
+        for r in rows:
+            fam = normalize_family(r.get(family_col))
+            if fam:
+                fam_counter[fam] += 1
+        if genus_map:
+            for r in rows:
+                for col in ("Species_ICTV", "Species_NCBI"):
+                    name = (r.get(col) or "").strip()
+                    if name in genus_map:
+                        genera.add(genus_map[name])
+                        break
+
+    # Only count families recognized as plant viruses by ICTV MSL41.
+    if plant_families:
+        fam_counter = Counter({f: c for f, c in fam_counter.items() if f in plant_families})
+
+    # Genera follow the same MSL41 baseline (VMR Host source strict list).
+    if plant_genera:
+        genera = {g for g in genera if g in plant_genera}
+
     # segmented / nonsegmented (ref only has Category)
     seg = ns = None
     if has_category:
@@ -85,8 +163,6 @@ def compute_stats(rows, has_vmr=False, has_category=False, family_col="Family"):
         st[v] += 1
     # Top Hosts
     hosts = Counter(r.get("Host", "") for r in rows if r.get("Host", ""))
-    # Top Families
-    fam_counter = Counter(r.get(fam_col, "") for r in rows if r.get(fam_col, ""))
     # Molecule (strip parens)
     mol = Counter()
     for r in rows:
@@ -95,14 +171,21 @@ def compute_stats(rows, has_vmr=False, has_category=False, family_col="Family"):
     # Topology
     topo = Counter(r.get("Topology", "") or "Unknown" for r in rows)
 
+    totals = taxonomy_totals or {}
     return {
         "kpis": {
             "sequences": n,
             "taxids": len(taxids),
-            "families": len(fams) if fams else 0,
+            "species": len(species),
+            "families": len(fam_counter),
             "genera": len(genera),
             "segmented": seg,
             "nonsegmented": ns,
+        },
+        "taxonomy": {
+            "families": totals.get("families"),
+            "genera": totals.get("genera"),
+            "species": totals.get("species"),
         },
         "sequenceTypes": _top(st, 20),
         "topHosts": _top(hosts, 20),
@@ -138,11 +221,32 @@ def main():
     ref = read_tsv(args.ref)
     print(f"  -> {len(ref)} rows")
 
+    plant_families, plant_genera_set, plant_genera_total, plant_species_total = load_plant_taxonomy(here)
+    totals = {
+        "families": len(plant_families) or None,
+        "genera": plant_genera_total or None,
+        "species": plant_species_total or None,
+    }
+    print(f"ICTV MSL41 plant-virus baseline: {totals}")
+
+    genus_map = build_genus_map(ref)
+
     result = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
-        "full": compute_stats(full, has_vmr=False, has_category=False, family_col="Family"),
-        "ref": compute_stats(ref, has_vmr=True, has_category=True, family_col="VMR_Family"),
+        "full": compute_stats(
+            full, has_vmr=False, has_category=False, family_col="Family",
+            plant_families=plant_families, plant_genera=plant_genera_set,
+            genus_map=genus_map, taxonomy_totals=totals,
+        ),
+        "ref": compute_stats(
+            ref, has_vmr=True, has_category=True, family_col="VMR_Family",
+            plant_families=plant_families, plant_genera=plant_genera_set, taxonomy_totals=totals,
+        ),
     }
+    for src in ("full", "ref"):
+        k = result[src]["kpis"]
+        print(f"  {src}: sequences={k['sequences']:,} species={k['species']:,} "
+              f"families={k['families']}/{totals['families']} genera={k['genera']}/{totals['genera']}")
 
     out = Path(args.out)
     out.write_text(json.dumps(result, ensure_ascii=False), encoding="utf-8")

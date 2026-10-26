@@ -136,6 +136,9 @@ FUNGAL_FAMILIES = {
     "Spiciviridae", "Botryosphaeriviridae",
     "Fusariviridae", "Hadakaviridae", "Yadokariviridae",
     "Polymycoviridae", "Megabirnaviridae", "Quadriviridae", "Barnaviridae",
+    # Ambiguiviridae (Tolivirales): 宿主 fungi（Erysiphe/Magnaporthe 相关），
+    # MSL41 里只有植物叶面/植物际/土壤的分离来源记录，无植物感染种。
+    "Ambiguiviridae",
 }
 
 # 2. Absolute invertebrate/insect virus family blacklist
@@ -147,13 +150,24 @@ INSECT_FAMILIES = {
 }
 
 # 3. Phage families (missed by L3 name check "phage")
+#    Atkinsviridae / Solspiviridae (Norzivirales): MSL41 的 RNA 噬菌体科，
+#    宿主 bacteria，仅有植物/土壤分离来源记录，无植物感染种。
 PHAGE_FAMILIES = {
     "Fiersviridae", "Microviridae", "Steitzviridae", "Duinviridae",
     "Straboviridae", "Autographiviridae", "Herelleviridae",
     "Peduoviridae", "Zierdtviridae",
+    "Atkinsviridae", "Solspiviridae",
 }
 
 OOMYCETE_FAMILIES = {"Oomyviridae", "Discoviridae"}
+
+# 3b. 内源逆转录转座子科：gypsy（Metaviridae）/ copia（Pseudoviridae）型元件
+#     （Athila/Tnt1/Tos17 等），整合在植物基因组内，无细胞外颗粒、无水平传播，
+#     不是感染植物的病原。正常情况下 C2 按 Viridiplantae 收录时不会命中它们，
+#     这里是防御性过滤。
+#     注意：Pestiviridae 不在此列——其唯一 plants 记录（BK062903.1，Sonchus virus 1）
+#     有意为精选表保留（ICTV 官方分类单元），仅在 taxonomy 基线层面不计入植物病毒科。
+ENDOGENOUS_ELEMENT_FAMILIES = {"Metaviridae", "Pseudoviridae"}
 
 # 4. Genus-level blacklist for MIXED families (family has plant AND fungal genera)
 # 4. Genus-level blacklist for MIXED families (family has plant AND fungal genera)
@@ -343,7 +357,10 @@ def clean_one_file(input_path, output_path, category_name, miss_dir,
 
     # L4a: Family-level blacklist (all macro-hosts, not just Plant)
     if category_name in MACRO_HOSTS:
-        black_fams = FUNGAL_FAMILIES | OOMYCETE_FAMILIES | PHAGE_FAMILIES
+        black_fams = (
+            FUNGAL_FAMILIES | OOMYCETE_FAMILIES | PHAGE_FAMILIES
+            | ENDOGENOUS_ELEMENT_FAMILIES
+        )
         if category_name == "Plant":
             black_fams |= INSECT_FAMILIES
         l4a = df.filter(pl.col("_V_Family").is_in(list(black_fams)))

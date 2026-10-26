@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title data-i18n="Plant Virus Database Platform|植物病毒数据库平台">Plant Virus Database Platform</title>
-<meta name="description" content="Plant Virus Database Platform - curated plant virus reference sequences, symptom photos, vector-host associations, primers, metagenomic classification and AI knowledge services.">
 <!-- 预取 Explorer (Dash) 首屏大体积 JS（约 2.1MB，占首载 95%）：用户在首页浏览时后台下载，
      点进 /explorer/ 即近乎秒开。带版本号 m*xxx* 的文件在服务器升级 dash 后会失效，失效仅浪费
      一次 404 请求、无副作用；升级后可用 explorer 页面源码里的新文件名替换更新。 -->
@@ -20,15 +19,15 @@
 html,body{height:100%}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC','Microsoft YaHei',sans-serif;margin:0;background:#f4f6f8;color:#2c3e50;min-height:100vh;display:flex;flex-direction:column}
 /* ---- 顶栏：标题 + 全局检索 + 统计，单行放不下时自动换行 ---- */
-.topbar{background:linear-gradient(135deg,#134e6f 0%,#1a5276 45%,#2e86c1 100%);color:#fff;padding:16px 26px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.topbar{background:linear-gradient(135deg,#134e6f 0%,#1a5276 45%,#1f6fa9 100%);color:#fff;padding:16px 26px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .topbar h1{font-size:19px;margin:0;letter-spacing:.4px;white-space:nowrap}
 .gswrap{flex:1 1 420px;max-width:900px;min-width:260px;position:relative;text-align:left}
-.gsbox{display:flex;align-items:center;background:#fff;border-radius:12px;padding:3px 10px 3px 14px;box-shadow:0 4px 18px rgba(10,40,70,.28)}
-.gsbox .gic{color:#8a99a8;font-size:17px;flex:0 0 auto}
+.gsbox{display:flex;align-items:center;background:#fff;border-radius:12px;padding:3px 10px 3px 14px;box-shadow:0 4px 18px rgba(0,0,0,.28)}
+.gsbox .gic{color:#5d6b7a;font-size:17px;flex:0 0 auto}
 .gsbox input{flex:1;border:0;outline:0;font-size:15.5px;padding:12px;color:#2c3e50;background:transparent;font-family:inherit;min-width:0}
-.gsbox kbd{font-family:inherit;font-size:10px;color:#9aa7b4;border:1px solid #e3e9ee;border-radius:5px;padding:1px 6px;background:#f6f9fb;white-space:nowrap}
+.gsbox kbd{font-family:inherit;font-size:11px;color:#5d6b7a;border:1px solid #e3e9ee;border-radius:5px;padding:1px 6px;background:#f6f9fb;white-space:nowrap}
 @media(max-width:760px){.gsbox kbd{display:none}}
-.gsres{position:absolute;left:0;right:0;top:calc(100% + 7px);background:#fff;border-radius:12px;box-shadow:0 14px 40px rgba(10,40,70,.30);max-height:min(540px,72vh);overflow-y:auto;display:none;z-index:60;color:#2c3e50}
+.gsres{position:absolute;left:0;right:0;top:calc(100% + 7px);background:#fff;border-radius:12px;box-shadow:0 14px 40px rgba(0,0,0,.30);max-height:min(540px,72vh);overflow-y:auto;display:none;z-index:60;color:#2c3e50}
 .gsres.on{display:block}
 .gsitem{padding:9px 14px;border-bottom:1px solid #f1f5f8}
 .gsitem:hover,.gsitem.hl{background:#f2f7fb}
@@ -36,64 +35,173 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'PingFang SC
 a.gmain{display:block;text-decoration:none;color:inherit}
 .gmain .gl{display:flex;align-items:center;gap:8px}
 .gmain .gl b{font-size:13.5px;color:#1a3c5e;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.gmain .gl b em{font-style:normal;color:#2e86c1}
-.gt{font-size:10px;font-weight:700;padding:2px 7px;border-radius:9px;color:#fff;flex:0 0 auto;letter-spacing:.3px}
-.gmain .gs{font-size:11.5px;color:#7a8a99;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gmain .gl b em{font-style:normal;color:#1f6fa9}
+.gt{font-size:11px;font-weight:700;padding:2px 7px;border-radius:9px;color:#fff;flex:0 0 auto;letter-spacing:.3px}
+.gmain .gs{font-size:12px;color:#5d6b7a;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .gx{margin:5px 0 0 0;padding-left:2px;display:flex;gap:6px;flex-wrap:wrap}
-.gx a{font-size:10.5px;color:#2e86c1;background:#f2f7fb;border:1px solid #dceaf3;border-radius:8px;padding:2px 8px;text-decoration:none}
+.gx a{font-size:11px;color:#1f6fa9;background:#f2f7fb;border:1px solid #dceaf3;border-radius:8px;padding:2px 8px;text-decoration:none}
 .gx a:hover{background:#e3f0f9;border-color:#bcd8e8}
 img.gimg{width:46px;height:34px;object-fit:cover;border-radius:6px;flex:0 0 auto}
-.gsinfo{padding:14px;font-size:12.5px;color:#8a99a8;text-align:center}
-.gsinfo a{color:#2e86c1;text-decoration:none;background:#f2f7fb;border:1px solid #dceaf3;border-radius:8px;padding:2px 10px;margin:0 3px;display:inline-block}
+.gsinfo{padding:14px;font-size:12.5px;color:#5d6b7a;text-align:center}
+.gsinfo a{color:#1f6fa9;text-decoration:none;background:#f2f7fb;border:1px solid #dceaf3;border-radius:8px;padding:2px 10px;margin:0 3px;display:inline-block}
 .gsinfo a:hover{background:#e3f0f9}
-.gsfoot{padding:7px 14px;font-size:10.5px;color:#9aa7b4;display:flex;justify-content:space-between;border-top:1px solid #f1f5f8;position:sticky;bottom:0;background:#fff}
+.gsfoot{padding:7px 14px;font-size:11px;color:#5d6b7a;display:flex;justify-content:space-between;border-top:1px solid #f1f5f8;position:sticky;bottom:0;background:#fff}
 /* ---- 统计带：15 项平台口径，数据源 /data/platform_stats.json（月更自动刷新） ---- */
 .statband{background:#fff;border-bottom:1px solid #e8eef3;padding:9px 24px}
 .sbin{max-width:1500px;margin:0 auto;display:flex;gap:8px 30px;flex-wrap:wrap;justify-content:center}
 .sbin .chip{text-align:center;min-width:74px}
 .sbin .chip b{display:block;font-size:19px;color:#1a5276;font-weight:700}
-.sbin .chip span{font-size:10.5px;color:#8a99a8;white-space:nowrap}
+.sbin .chip span{font-size:11px;color:#5d6b7a;white-space:nowrap}
 /* ---- 模块卡片：单屏网格，描述两行截断 ---- */
 .main{flex:1 1 auto;display:flex;flex-direction:column;justify-content:space-evenly;width:100%;max-width:1500px;margin:0 auto;padding:10px 24px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
 /* 卡片：默认只显示 图标+标题+路径，描述与箭头装在悬停浮层 .ov 里 */
-.card{position:relative;background:#fff;border-radius:10px;padding:11px 14px;text-decoration:none;color:inherit;box-shadow:0 2px 8px rgba(20,60,90,.06);border:1px solid #eef2f5;transition:.15s;display:flex;flex-direction:column;min-height:64px}
-.card:hover{border-color:#bcd8e8;box-shadow:0 8px 20px rgba(20,60,90,.13)}
+.card{position:relative;background:#fff;border-radius:10px;padding:11px 14px;text-decoration:none;color:inherit;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid #eef2f5;transition:.15s;display:flex;flex-direction:column;min-height:64px}
+.card:hover{border-color:#bcd8e8;box-shadow:0 8px 20px rgba(0,0,0,.13)}
 .card .hd{display:flex;align-items:center;gap:8px}
 .card .ic{font-size:19px;flex:0 0 auto}
 .card h3{margin:0;font-size:14px;color:#1a5276;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.card .path{font-family:'SF Mono',Consolas,monospace;font-size:10.5px;color:#2e86c1;margin:5px 0 0}
-.card .go{margin-top:auto;padding-top:8px;font-size:11.5px;color:#2e86c1;font-weight:600}
+.card .path{font-family:'SF Mono',Consolas,monospace;font-size:11px;color:#1f6fa9;margin:5px 0 0}
+.card .go{margin-top:auto;padding-top:8px;font-size:12px;color:#1f6fa9;font-weight:600}
 /* 悬停浮层：锚定卡片顶部、向下自然延展（可超出卡片边界），展示完整描述 + 箭头 */
-.card .ov{position:absolute;left:0;top:0;width:100%;min-height:100%;background:#fff;border:1px solid #bcd8e8;border-radius:inherit;box-shadow:0 10px 26px rgba(20,60,90,.18);padding:12px 15px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .14s ease;z-index:5}
+.card .ov{position:absolute;left:0;top:0;width:100%;min-height:100%;background:#fff;border:1px solid #bcd8e8;border-radius:inherit;box-shadow:0 10px 26px rgba(0,0,0,.18);padding:12px 15px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .14s ease;z-index:5}
 .card:hover .ov{opacity:1;visibility:visible}
 .ov p{margin:0;font-size:12px;line-height:1.6;color:#5a6b7b}
-.ov .go{margin-top:auto;padding-top:8px;font-size:11.5px;color:#2e86c1;font-weight:600}
+.ov .go{margin-top:auto;padding-top:8px;font-size:12px;color:#1f6fa9;font-weight:600}
 /* 原三分区标题（单屏紧凑版）；blk 把标题和网格绑成一组参与均匀分布 */
 .blk{display:flex;flex-direction:column;gap:10px}
-.sec{margin:0;font-size:13px;color:#8a99a8;font-weight:600;letter-spacing:.5px;border-left:3px solid #2e86c1;padding-left:9px}
+.sec{margin:0;font-size:13px;color:#5d6b7a;font-weight:600;letter-spacing:.5px;border-left:3px solid #1f6fa9;padding-left:9px}
 /* ---- 访客地图：折叠条，默认收起不占首屏 ---- */
 .mapd{max-width:1500px;margin:7px auto 0;padding:0 18px}
-.mapd summary{cursor:pointer;list-style:none;background:#fff;border:1px solid #eef2f5;border-radius:10px;padding:9px 16px;font-size:12.5px;color:#1a5276;font-weight:600;box-shadow:0 2px 8px rgba(20,60,90,.06);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mapd summary{cursor:pointer;list-style:none;background:#fff;border:1px solid #eef2f5;border-radius:10px;padding:9px 16px;font-size:12.5px;color:#1a5276;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.06);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .mapd summary::-webkit-details-marker{display:none}
-.mapd summary .arr{color:#2e86c1;font-size:11px;transition:.2s}
+.mapd summary .arr{color:#1f6fa9;font-size:12px;transition:.2s}
 .mapd[open] summary .arr{transform:rotate(90deg)}
-.mapd summary .sm{color:#8a99a8;font-weight:400;font-size:11.5px}
+.mapd summary .sm{color:#5d6b7a;font-weight:400;font-size:12px}
 .mapbox{background:#fff;border:1px solid #eef2f5;border-top:0;border-radius:0 0 10px 10px;padding:16px;text-align:center;min-height:150px}
-.mapbox .ph{color:#8a99a8;font-size:12.5px;line-height:1.9}
+.mapbox .ph{color:#5d6b7a;font-size:12.5px;line-height:1.9}
 .mapbox .ph b{color:#1a5276}
 .mapbox img,.mapbox iframe,.mapbox canvas{max-width:100%;height:auto}
 .vmap{width:100%;height:360px}
 @media(max-width:700px){.vmap{height:250px}}
-.mapmeta{margin-top:10px;font-size:12px;color:#8a99a8}
+.mapmeta{margin-top:10px;font-size:12px;color:#5d6b7a}
 .mapmeta b{color:#1a5276;font-weight:700}
-footer{text-align:center;color:#9aa7b4;font-size:11px;padding:7px}
-</style></head><body>
+footer{text-align:center;color:#5d6b7a;font-size:12px;padding:7px}
+footer a{color:#1f6fa9;text-decoration:none}
+footer a:hover{text-decoration:underline}
+</style>
+<!--#[site-meta] generated by scripts/build_site_meta.py -- edits inside will be overwritten -->
+<link rel="canonical" href="http://39.106.101.94/">
+<meta name="description" content="Plant Virus Database Platform: curated plant virus reference sequences, symptom photos, vector-host associations, primers, endogenous viral elements, protein structures and AI knowledge services, cross-referenced with ICTV MSL41.">
+<meta property="og:site_name" content="Plant Virus Database Platform">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Plant Virus Database Platform">
+<meta property="og:description" content="Plant Virus Database Platform: curated plant virus reference sequences, symptom photos, vector-host associations, primers, endogenous viral elements, protein structures and AI knowledge services, cross-referenced with ICTV MSL41.">
+<meta property="og:url" content="http://39.106.101.94/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Plant Virus Database Platform">
+<meta name="twitter:description" content="Plant Virus Database Platform: curated plant virus reference sequences, symptom photos, vector-host associations, primers, endogenous viral elements, protein structures and AI knowledge services, cross-referenced with ICTV MSL41.">
+<meta name="theme-color" content="#1a5276">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "name": "Plant Virus Database Platform",
+   "alternateName": "植物病毒数据库平台",
+   "url": "http://39.106.101.94/",
+   "inLanguage": [
+    "en",
+    "zh-CN"
+   ],
+   "description": "Plant Virus Database Platform: curated plant virus reference sequences, symptom photos, vector-host associations, primers, endogenous viral elements, protein structures and AI knowledge services, cross-referenced with ICTV MSL41.",
+   "publisher": {
+    "@type": "Organization",
+    "name": "Plant Virus Database Platform",
+    "url": "https://github.com/zhangwenda0518/plant_virus_db_pipeline"
+   }
+  },
+  {
+   "@type": "DataCatalog",
+   "name": "Plant Virus Database Platform",
+   "url": "http://39.106.101.94/",
+   "description": "Plant Virus Database Platform: curated plant virus reference sequences, symptom photos, vector-host associations, primers, endogenous viral elements, protein structures and AI knowledge services, cross-referenced with ICTV MSL41.",
+   "identifier": "pvdb-2026-10-03",
+   "isAccessibleForFree": true,
+   "license": "https://github.com/zhangwenda0518/plant_virus_db_pipeline/blob/main/LICENSE",
+   "provider": {
+    "@type": "Organization",
+    "name": "Plant Virus Database Platform",
+    "url": "https://github.com/zhangwenda0518/plant_virus_db_pipeline"
+   },
+   "dataset": [
+    {
+     "@type": "Dataset",
+     "name": "Plant Virus Reference Database",
+     "url": "http://39.106.101.94/reference/",
+     "description": "Curated plant virus reference database: 9,022 representative sequences curated from 211,132 GenBank records, cross-referenced with ICTV MSL41; dashboard, segmented and non-segmented browsers, submission and download."
+    },
+    {
+     "@type": "Dataset",
+     "name": "Plant Virus Symptom Photos",
+     "url": "http://39.106.101.94/photos/",
+     "description": "Curated plant virus symptom photo gallery: 2,975 DOI-linked photos curated from EPPO, DPV, books and research literature, filterable by host, symptom and photo position."
+    },
+    {
+     "@type": "Dataset",
+     "name": "Virus-Vector-Host Relations",
+     "url": "http://39.106.101.94/relations/",
+     "description": "Virus-vector-host relations: literature-backed vector-host tables, Sankey and network views built from 15,197 virus-host pairs across 211,132 GenBank accessions."
+    },
+    {
+     "@type": "Dataset",
+     "name": "Host-Virus Associations",
+     "url": "http://39.106.101.94/association/",
+     "description": "Host-virus association Sankey: virus-by-host double-lineage exploration with drill-down, built from 208,477 mapped sequences."
+    },
+    {
+     "@type": "Dataset",
+     "name": "Interaction Networks",
+     "url": "http://39.106.101.94/network/",
+     "description": "Interaction networks of plant viruses: virus-host force-directed networks and vector-virus-host tripartite networks with ego-network drill-down."
+    },
+    {
+     "@type": "Dataset",
+     "name": "Plant EVE Landscape",
+     "url": "http://39.106.101.94/eve/",
+     "description": "Endogenous viral elements across 1,527 plant genomes and 284 host families: 150,136 loci explored through eight linked interactive views."
+    },
+    {
+     "@type": "Dataset",
+     "name": "Plant Immune Gene Atlas",
+     "url": "http://39.106.101.94/genes/",
+     "description": "Plant immune gene atlas: RefPlantNLR 415 NLRs, 11,780 sRNA genes, 3,996 ubiquitin-proteasome system genes and 83,166 miRNAs in one integrated resource."
+    },
+    {
+     "@type": "Dataset",
+     "name": "Virus Phylogeny",
+     "url": "http://39.106.101.94/phylo/",
+     "description": "Plant virus phylogeny: ICTV MSL41 taxonomy tree (42 families, 200 genera, 2,637 species) and official maximum-likelihood molecular trees with real branch lengths and support values."
+    },
+    {
+     "@type": "Dataset",
+     "name": "ICTV Molecular Trees — Families",
+     "url": "http://39.106.101.94/phylo/molecular/families/",
+     "description": "ICTV molecular trees by family: 25 family tree cards with coverage annotations and data-quality flags."
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!--#[/site-meta]-->
+</head><body>
 
 <header class="topbar">
   <h1 data-i18n="Plant Virus Database Platform|植物病毒数据库平台">Plant Virus Database Platform</h1>
   <div class="gswrap">
-    <div class="gsbox"><span class="gic">&#128269;</span><input id="gsq" type="search" autocomplete="off" spellcheck="false" placeholder="Search viruses, structures, genes, primers, papers&hellip;" data-i18n-ph="Search viruses, structures, genes, primers, papers&hellip;|检索病毒、结构、基因、引物、文献&hellip;"><kbd>Enter &#8629;</kbd></div>
+    <div class="gsbox"><span class="gic">&#128269;</span><input id="gsq" type="search" autocomplete="off" spellcheck="false" aria-label="Global search / 全局检索" placeholder="Search viruses, structures, genes, primers, papers&hellip;" data-i18n-ph="Search viruses, structures, genes, primers, papers&hellip;|检索病毒、结构、基因、引物、文献&hellip;"><kbd>Enter &#8629;</kbd></div>
     <div id="gsres" class="gsres"></div>
   </div>
 </header>
@@ -105,19 +213,19 @@ footer{text-align:center;color:#9aa7b4;font-size:11px;padding:7px}
   <div class="chip"><b data-ps="primer_designs">&mdash;</b><span data-i18n="Primer Designs|引物设计">Primer Designs</span></div>
   <div class="chip"><b data-ps="papers_tracked">&mdash;</b><span data-i18n="Papers Tracked|追踪文献">Papers Tracked</span></div>
   <div class="chip"><b data-ps="symptom_photos">&mdash;</b><span data-i18n="Symptom Photos|症状照片">Symptom Photos</span></div>
-  <div class="chip"><b data-ps="vector_host_pairs">&mdash;</b><span data-i18n="Vector&ndash;Host Pairs|媒介-宿主对">Vector&ndash;Host Pairs</span></div>
+  <div class="chip"><b data-ps="vector_triplets">&mdash;</b><span data-i18n="Validated Vector Triplets|验证媒介三元组">Validated Vector Triplets</span></div>
   <div class="chip"><b data-ps="eve_loci">&mdash;</b><span data-i18n="Endogenous Viral Loci|内源性病毒位点">Endogenous Viral Loci</span></div>
   <div class="chip"><b data-ps="rvpsd_models">&mdash;</b><span data-i18n="Protein Structure Models|蛋白结构模型">Protein Structure Models</span></div>
-  <div class="chip"><b data-ps="onekp_samples">&mdash;</b><span data-i18n="1KP Transcriptomes|1KP 转录组">1KP Transcriptomes</span></div>
+  <div class="chip"><b data-ps="onekp_screened">&mdash;</b><span data-i18n="1KP Transcriptomes|1KP 转录组">1KP Transcriptomes</span></div>
 </div></div>
 
 <main class="main">
   <section class="blk">
-  <div class="sec">&#128218; <span data-i18n="Data Resources|数据资源">Data Resources</span></div>
+  <h2 class="sec">&#128218; <span data-i18n="Data Resources|数据资源">Data Resources</span></h2>
   <div class="grid">
     <a class="card" href="/reference/"><div class="hd"><span class="ic">&#128218;</span><h3 data-i18n="Reference DB|参考数据库">Reference DB</h3></div><div class="path">/reference/</div><div class="ov"><p>Curated plant virus reference sequences from NCBI GenBank, cross-referenced with ICTV VMR MSL41. 9,022 curated reference sequences, 7-step QC pipeline.</p><div class="go">&#8594;</div></div></a>
     <a class="card" href="/photos/"><div class="hd"><span class="ic">&#127807;</span><h3 data-i18n="Symptom Photos|症状照片">Symptom Photos</h3></div><div class="path">/photos/</div><div class="ov"><p>2,975 curated symptom photos from EPPO, DPV, books and research papers (DOI-linked, AI-screened). Filter by host, bilingual symptom, and photo position.</p><div class="go">&#8594;</div></div></a>
-    <a class="card" href="/relations/"><div class="hd"><span class="ic">&#128279;</span><h3 data-i18n="Virus&ndash;Vector&ndash;Host Relations|病毒-媒介-宿主关系">Virus&ndash;Vector&ndash;Host Relations</h3></div><div class="path">/relations/</div><div class="ov"><p>Four relationship views in one place: Sankey, networks and literature-backed vector&ndash;host tables. 15,197 virus&ndash;host pairs from 211,132 GenBank accessions.</p><div class="go">&#8594;</div></div></a>
+    <a class="card" href="/relations/"><div class="hd"><span class="ic">&#128279;</span><h3 data-i18n="Virus&ndash;Vector&ndash;Host Relations|病毒-媒介-宿主关系">Virus&ndash;Vector&ndash;Host Relations</h3></div><div class="path">/relations/</div><div class="ov"><p>Four relationship views in one place: Sankey, networks and literature-backed vector&ndash;host tables. 15,197 virus&ndash;host pairs from 211,132 GenBank accessions; 1,375 validated vector triplets and 9,958 literature links.</p><div class="go">&#8594;</div></div></a>
     <a class="card" href="/eve/"><div class="hd"><span class="ic">&#127760;</span><h3 data-i18n="Plant EVE Landscape|植物 EVE 全景">Plant EVE Landscape</h3></div><div class="path">/eve/</div><div class="ov"><p>Endogenous viral elements across 1,527 plant genomes and 284 host families &mdash; 150,136 loci, eight linked views.</p><div class="go">&#8594;</div></div></a>
     <a class="card" href="/genes/index.html"><div class="hd"><span class="ic">&#129516;</span><h3 data-i18n="Resistance Genes &amp; sRNAs|抗性基因与sRNA">Resistance Genes &amp; sRNAs</h3></div><div class="path">/genes/</div><div class="ov"><p>RefPlantNLR 415 NLRs + 11,780 sRNA genes + 3,996 UPS + 83,166 miRNAs. Integrated plant immune gene atlas.</p><div class="go">&#8594;</div></div></a>
     <a class="card" href="/primers/"><div class="hd"><span class="ic">&#129514;</span><h3 data-i18n="Primer Database|引物数据库">Primer Database</h3></div><div class="path">/primers/</div><div class="ov"><p>83,830 unique PCR/qPCR primer pairs covering 4,789 plant virus species, 66,891 rated RECOMMENDED. REST API included.</p><div class="go">&#8594;</div></div></a>
@@ -127,17 +235,17 @@ footer{text-align:center;color:#9aa7b4;font-size:11px;padding:7px}
   </section>
 
   <section class="blk">
-  <div class="sec">&#128300; <span data-i18n="Analysis Tools|分析工具">Analysis Tools</span></div>
+  <h2 class="sec">&#128300; <span data-i18n="Analysis Tools|分析工具">Analysis Tools</span></h2>
   <div class="grid">
     <a class="card" href="/explorer/"><div class="hd"><span class="ic">&#128202;</span><h3 data-i18n="Virus Explorer|病毒浏览器">Virus Explorer</h3></div><div class="path">/explorer/</div><div class="ov"><p>Interactive 5D linked filtering, timeline, global map, genome viewer and full virus profiles (taxonomy, hosts, vectors, primers, photos).</p><div class="go">&#8594;</div></div></a>
-    <a class="card" href="/metabuli/"><div class="hd"><span class="ic">&#129515;</span><h3 data-i18n="Metabuli|宏基因组分类">Metabuli</h3></div><div class="path">/metabuli/</div><div class="ov"><p>Upload contigs for plant virus metagenomic classification. 8-rank taxonomy, BLASTN/BLASTX/CDD validation, Krona/Sankey viz.</p><div class="go">&#8594;</div></div></a>
+    <a class="card" href="/metabuli/"><div class="hd"><span class="ic">&#129515;</span><h3 data-i18n="Virus-Identify|病毒鉴定">Virus-Identify</h3></div><div class="path">/metabuli/</div><div class="ov"><p>Upload contigs for plant virus metagenomic classification. 8-rank taxonomy, BLASTN/BLASTX/CDD validation, Krona/Sankey viz.</p><div class="go">&#8594;</div></div></a>
     <a class="card" href="/pamirdb/"><div class="hd"><span class="ic">&#127919;</span><h3 data-i18n="PV-miRNA|PV-miRNA预测">PV-miRNA</h3></div><div class="path">/pamirdb/</div><div class="ov"><p>Plant virus miRNA target prediction, 11,006 pre-computed predictions across 799 plant species and 40 virus families.</p><div class="go">&#8594;</div></div></a>
     <a class="card" href="/phylo/"><div class="hd"><span class="ic">&#127794;</span><h3 data-i18n="Virus Phylogeny|病毒进化关系">Virus Phylogeny</h3></div><div class="path">/phylo/</div><div class="ov"><p>Taxonomy tree + official molecular trees on one page (tab switcher), maximum-likelihood with real branch lengths and support values.</p><div class="go">&#8594;</div></div></a>
   </div>
   </section>
 
   <section class="blk">
-  <div class="sec">&#128172; <span data-i18n="Knowledge &amp; Support|知识与支持">Knowledge &amp; Support</span></div>
+  <h2 class="sec">&#128172; <span data-i18n="Knowledge &amp; Support|知识与支持">Knowledge &amp; Support</span></h2>
   <div class="grid">
     <a class="card" href="/literature/"><div class="hd"><span class="ic">&#128240;</span><h3 data-i18n="Literature Tracker|文献追踪">Literature Tracker</h3></div><div class="path">/literature/</div><div class="ov"><p>PubMed plant virus literature auto-tracking with AI summaries. 33,325 papers indexed across 9 categories, weekly updates.</p><div class="go">&#8594;</div></div></a>
     <a class="card" href="/knowledge/"><div class="hd"><span class="ic">&#128172;</span><h3 data-i18n="Knowledge RAG|知识库问答">Knowledge RAG</h3></div><div class="path">/knowledge/</div><div class="ov"><p>Qdrant + LLM-backed AI Q&amp;A assistant on plant virology. 193,277 vectors citing DPV, ICTV, and ViroidDB.</p><div class="go">&#8594;</div></div></a>
@@ -169,15 +277,28 @@ footer{text-align:center;color:#9aa7b4;font-size:11px;padding:7px}
   </div>
 </details>
 
-<footer data-i18n="Plant Virus Database Platform|植物病毒数据库平台">Plant Virus Database Platform · 植物病毒数据库平台</footer>
-<script src="/i18n.js"></script>
-<script src="/lib/echarts.min.js"></script>
+<footer>
+  <span data-i18n="Plant Virus Database Platform|植物病毒数据库平台">Plant Virus Database Platform · 植物病毒数据库平台</span>
+  &middot; <span data-i18n="Data version|数据版本">Data version</span> <span id="hub-ver">&mdash;</span>
+  &middot; <a href="https://github.com/zhangwenda0518/plant_virus_db_pipeline/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>
+  &middot; <a href="https://github.com/zhangwenda0518/plant_virus_db_pipeline" target="_blank" rel="noopener">GitHub</a>
+</footer>
+<script src="/lib/site-version.js"></script>
 <script>
-/* 访客地图：details 折叠，首次展开才拉数据建图（省首屏体积与 echarts init 在 0 尺寸容器的问题） */
+/* 页脚数据版本号：build_site_meta.py 从 docs/data/DATA_VERSION 生成的 site-version.js 供给 */
+(function () {
+  var el = document.getElementById('hub-ver');
+  if (el && window.PVDB_SITE && PVDB_SITE.version) el.textContent = 'v' + PVDB_SITE.version;
+})();
+</script>
+<script src="/i18n.js"></script>
+<script>
+/* 访客地图：details 折叠，首次展开才拉数据建图（省首屏体积与 echarts init 在 0 尺寸容器的问题）；
+   echarts（约 1MB）同样改为懒加载：首次展开地图时才注入 <script>，首屏零阻塞 */
 (function () {
   var det = document.getElementById('mapd');
   var el = document.getElementById('visitor-map');
-  if (!det || !el || !window.echarts) return;
+  if (!det || !el) return;
   function zh() {
     try { return window.PVDB_i18n ? window.PVDB_i18n.lang() === 'zh' : false; } catch (e) { return false; }
   }
@@ -200,13 +321,13 @@ footer{text-align:center;color:#9aa7b4;font-size:11px;padding:7px}
         text: zh() ? ['\u591a', '\u5c11'] : ['High', 'Low'],
         calculable: true, itemWidth: 12, itemHeight: 90,
         textStyle: { color: '#8a99a8', fontSize: 11 },
-        inRange: { color: ['#eaf4fa', '#a9d0e9', '#4a9ed0', '#2e86c1', '#1a5276'] }
+        inRange: { color: ['#eaf4fa', '#a9d0e9', '#4a9ed0', '#1f6fa9', '#1a5276'] }
       },
       series: [{
         type: 'map', map: 'world', roam: false, zoom: 1.15,
         itemStyle: { areaColor: '#f2f7fb', borderColor: '#dbe8f0', borderWidth: 0.6 },
         emphasis: {
-          itemStyle: { areaColor: '#ffd9b3', borderColor: '#2e86c1' },
+          itemStyle: { areaColor: '#ffd9b3', borderColor: '#1f6fa9' },
           label: { show: true, color: '#1a5276', fontSize: 11 }
         },
         select: { disabled: true },
@@ -225,19 +346,30 @@ footer{text-align:center;color:#9aa7b4;font-size:11px;padding:7px}
     var ts = document.getElementById('vm-ts');
     if (ts) ts.textContent = stats.generated_at;
   }
+  function fail() {
+    el.innerHTML = '<div class="ph">' +
+      (zh() ? '\u8bbf\u5ba2\u5730\u56fe\u6570\u636e\u6682\u4e0d\u53ef\u7528' : 'Visitor map data unavailable') +
+      '</div>';
+  }
+  function loadEcharts(cb) {
+    if (window.echarts) { cb(); return; }
+    var s = document.createElement('script');
+    s.src = '/lib/echarts.min.js';
+    s.onload = cb;
+    s.onerror = fail;
+    document.head.appendChild(s);
+  }
   function ensure() {
     if (built) return;
     built = true;
-    Promise.all([
-      fetch('/data/world.json').then(function (r) { return r.json(); }),
-      fetch('/data/visitor_map.json').then(function (r) { return r.json(); })
-    ]).then(function (res) {
-      build(res[0], res[1]);
-      setMeta(res[1]);
-    }).catch(function () {
-      el.innerHTML = '<div class="ph">' +
-        (zh() ? '\u8bbf\u5ba2\u5730\u56fe\u6570\u636e\u6682\u4e0d\u53ef\u7528' : 'Visitor map data unavailable') +
-        '</div>';
+    loadEcharts(function () {
+      Promise.all([
+        fetch('/data/world.json').then(function (r) { return r.json(); }),
+        fetch('/data/visitor_map.json').then(function (r) { return r.json(); })
+      ]).then(function (res) {
+        build(res[0], res[1]);
+        setMeta(res[1]);
+      }).catch(fail);
     });
   }
   if (det.open) ensure();
@@ -273,7 +405,7 @@ fetch('/data/platform_stats.json').then(function(r){return r.json()}).then(funct
   if (!input || !box) return;
   var IDX = null, LOADING = false, ITEMS = [], HL = -1, TIMER = null, META = null;
   var T = {
-    virus:    ['Virus|病毒',        '#2e86c1'],
+    virus:    ['Virus|病毒',        '#1f6fa9'],
     family:   ['Family|科',         '#8e44ad'],
     structure:['3D Structure|结构',  '#16a085'],
     gene:     ['Gene|基因',         '#e67e22'],
@@ -325,7 +457,7 @@ fetch('/data/platform_stats.json').then(function(r){return r.json()}).then(funct
   function hint() {
     var ex = ['TuMV', 'TSWV', 'AGO2', 'Solanaceae', 'Potyviridae'], h = '';
     for (var i = 0; i < ex.length; i++) h += '<a href="#" data-q="' + ex[i] + '">' + ex[i] + '</a>';
-    showInfo((zh() ? '试试：' : 'Try: ') + h + '<div style="margin-top:6px;font-size:11px">' +
+    showInfo((zh() ? '试试：' : 'Try: ') + h + '<div style="margin-top:6px;font-size:12px">' +
       fmt(META.total || 0) + (zh() ? ' 条可检索条目' : ' searchable entries') + '</div>');
   }
 

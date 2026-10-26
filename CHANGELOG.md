@@ -2,6 +2,389 @@
 
 All notable changes to the Plant Virus Database Platform.
 
+## [2026-10-26] — 植物病毒口径收紧至"真正感染植物的病原"（48→42 科）+ VMR 引号解析 bug 修复
+
+**最终基线**：**42 科 / 200 属 / 2,637 种**（原宽松口径 48/214/2,684）。Full 库覆盖 **42/42**、Ref 库覆盖 **42/42**——数据覆盖与名单完全吻合，KPI 满额，不再有"缺科"解释负担。
+
+**第一轮（48→45）：分离来源不算感染**：ICTV VMR 的 `Host source` 字段中 `(S)` 后缀表示**分离来源**（从植物叶面/植物际/土壤分离到）而非被感染宿主。旧口径把 `plants (S)`、`phytobiome (S)` 也算植物，导致 3 个非植物病毒科混入：**Atkinsviridae、Solspiviridae**（Norzivirales 的 RNA 噬菌体，宿主 bacteria）、**Ambiguiviridae**（真菌相关，Erysiphe/Magnaporthe associated）。
+
+**第二轮（45→42）：移除非病原意义的科**：逐科复核 45 科名单后确认 3 科不属于植物病原——
+- **Metaviridae**（Athila/Del1/Tat4）、**Pseudoviridae**（Tnt1/Tto1/Tos17 等 22 种）：gypsy/copia 型**内源逆转录转座子**，整合在植物基因组内，无细胞外颗粒、无水平传播；ICTV 出于系统发生学纳入病毒分类，但不是感染植物的病原。
+- **Pestiviridae**（仅 Koshovirus sonchi 1 种）：哺乳动物病毒科（猪瘟病毒所在科）；唯一记录 BK062903.1（Sonchus virus 1）系苦苣菜材料中检出的一条 TPA 序列，感染植物无证据。该记录**保留**在精选表中（ICTV 官方分类单元），仅不计入植物病毒科基线。
+保留的灰色类群：卫星科（Tolecusatellitidae/Alphasatellitidae/Tomosaviridae/Tonesaviridae）、持久无衣壳病毒（Endornaviridae/Amalgaviridae）均属植物病原体系，ICTV 正式类群，维持收录。
+
+**改动**：
+1. `docs/phylo/build_taxonomy.py`：`PLANT_HOST_SOURCES` 收紧为 `{plants, invertebrates, plants}`；新增 `NON_PATHOGEN_PLANT_ELEMENT_FAMILIES = {Metaviridae, Pseudoviridae, Pestiviridae}` 并入科级黑名单。
+2. `1.Prepare_plant_virus_pipeline/C4_clean_all_tsvs.py`：`PHAGE_FAMILIES` +Atkinsviridae/Solspiviridae，`FUNGAL_FAMILIES` +Ambiguiviridae，新增 `ENDOGENOUS_ELEMENT_FAMILIES = {Metaviridae, Pseudoviridae}` 并入 L4a（防御性；这两科本来就不会被 Viridiplantae 收录命中）。注意 **Pestiviridae 不入 C4 黑名单**——其唯一 Ref 记录有意保留。
+3. **修复 build_taxonomy 隐性 bug**：`load_plant_species` 原用 `line.split('\t')` 手工切列，VMR 中含逗号的 Host source（如 `"invertebrates, plants"`）带引号存储、引号未剥除，导致该类记录**全部被静默丢弃**——Sedoreoviridae（水稻矮缩病毒所在科）、Spinareoviridae、Tospoviridae（番茄斑萎病毒所在科）曾因此漏判。改用 `csv.reader` 解析。
+4. `docs/data/generate_dashboard_stats.py`：新增属级过滤（`meta.plant_genus_list`），KPI 属数与科名单同口径。
+5. `U1_incremental_update.py`：新增 `NON_PLANT_FAMILY_BLACKLIST`（50 科，与 C4 联合黑名单逐科一致），`database_merge` 入库前拦截——此前增量查询按 `viruses[filter]+日期` 全量抓取、L1–L5 宿主判定无科级过滤，真菌/噬菌体/CRESS/内源元件病毒只要宿主谱系带 Viridiplantae 就会被月更误收，造成月度数据与全量重建漂移。
+6. `monthly_update.sh`：新增 Phase 4.5（merge 后重跑 `generate_dashboard_stats.py`），修复月更后站点 /reference/ KPI 不刷新的缺口。
+7. 站点数字统一：`docs/phylo/taxonomy_tree.json` 重跑（42 科/200 属/2,637 种），`dashboard_stats.json` 重生成（Full **42/42** 科、Ref **42/42** 科，属 198/200），`reference_index.html` kpi-note、`scripts/site_pages.py` phylo 描述、phylo 页 meta 同步为 42/200/2,637。
+
+**Ref 46 科的由来（现已收口）**：旧宽松名单下 Ref 实际覆盖 46 科 = 48 − 缺 Metaviridae/Pseudoviridae（内源逆转录转座子科，GenBank 无独立病毒记录）；比 Full 多的 1 科是 **Pestiviridae**——唯一记录 BK062903.1（Sonchus virus 1 = *Koshovirus sonchi*），GenBank 原始记录 Family 列为空，仅精选表人工补了 VMR 归属。两轮收紧后 Full/Ref 均为 42/42。
+
+**属级情况**：最终名单 200 属，两库覆盖 **198/200**。名单内未覆盖 2 属：**Magoulivirus**（本质为真菌病毒属，~50 种几乎全为 Botrytis/Fusarium/Magnaporthe 等真菌宿主，仅 *M. malus* 1 个植物种撑名单，其记录 MN386963 未进植物通道）与 **Betagymnorhavirus**（单种 Torreya virus 1，BK061818，ICTV 宿主标 plants 的真植物 rhabdo，TPA 记录未命中 Viridiplantae 收录通道）。**Lumovirus 已修**：精选表 MH425569 行的 VMR_Species/Family/Genus 等 6 列原为空（vmr_accession 匹配遗漏），已按 VMR 补齐（Geplanaviridae/Lumovirus），属覆盖 197→198。第一轮过滤曾剔除 11 属（3 个移除科的 8 属 + 仅凭 `plants (S)`/invertebrates 来源记录的 Epsilonourmiavirus、Rimosavirus、Somasatellite）；第二轮随名单移出 Koshovirus/Metavirus/Pseudovirus/Sirevirus 4 属。
+
+**备份**：`docs/phylo/taxonomy_tree.json.bak.20261026_loose48`（原 48 科）、`*.bak.20261026_strict45`（中间 45 科）、`docs/data/dashboard_stats.json.bak.20261026*`、`docs/phylo/data/plant_taxa.tsv.bak.20261026*`。
+
+## [2026-10-26] — 媒介库（8.plant-insect）：修 5 项数据/文档/路由缺陷 + 站点口径纠错
+
+`/relations/#vector` 背后的媒介-宿主库做了五处修复，并顺带纠正了站点长期错标的统计口径。
+
+**① transmission_routes 全空（数据断链）**：本地 `wur_virus_full.tsv` 还是旧 7 列格式
+（无 `modes`、无 `duplicated`），`build_vector_db.py` 的 `parse_routes()` 拿不到输入，
+导致 merged JSON 里**全部 1,803 个病毒的 `transmission_routes` 都是 `[]`**，前端
+"TransmissionMeans" 柱图与 facet 全空；同因 `refs` 退回旧 `' | '` 字符串解析，
+`authors/citation/means/doi` 四字段全空。重跑 `scrape_wur.py` → `build_vector_db.py` 后：
+**1,186** 个病毒有 routes、**2,927** 条 ref 带结构化 `means`。
+
+**② Literature 标签无数据源**：`vector_host_lit.json` 与生成脚本从未入库，`lit_edges`
+恒为 0，页面上 Literature 标签永远空。新增 `8.plant-insect/build_lit_edges.py`。
+关键决策：线上已存在一份 **10,187 边**的产物（生成脚本未回传），规模远超本地 33,325 篇
+摘要能抽出的量级——因此**以线上产物为基线、本脚本做归并增强**，而不是用弱实现覆盖强数据；
+`--from-scratch` 可强制忽略基线。结果 **9,958 边**（`transmitted_by` 1,551 +
+`infects_host` 8,407），覆盖 3,527 病毒 / 4,687 文献，`matched_to_curated` 从 3,658 提到
+**5,952（+63%）**。
+
+**③ README 失真**：`8.plant-insect/README.md` 声称把 "Vector or means of transmission"
+拆成"媒介拉丁名 + 传播方式"（代码无此字段）；宿主数写 380（380 是剔除 NA 后的口径，
+含 NA 应为 381）。已订正并补 Literature 章节。
+
+**④ 两个入口并存**：`docs/lib/site-nav.js` 已指向 `/relations/#vector`，但
+`vector_page.html` 一直缺顶层跳转脚本，`/vector/` 直接访问会落到独立旧页面。补上后
+遵守三要素：`window.top===window.self`（iframe 内不跳，否则外壳套娃）、`?full=1` 旁路、
+`location.replace` 不留历史记录。
+
+**⑤ `.gitignore` 与 tracked 文件矛盾**：7 个文件里 5 个是"声明忽略却已 tracked"
+（`.gitignore` 对已 tracked 文件完全无效）。**判断变更**：原打算 `git rm --cached`，
+但实测这些文件合计仅 ~1 MB、而仓库 pack 已 **1.04 GiB**，删除只新增删除提交、不减少
+任何体积——改为让 `.gitignore` 与实际状态一致并逐条注明保留理由。同时补了
+`*.bak_pre_*` / `*.orig_vmerg_*` / `*.bak_oldfmt_*` 规则。
+
+**下游断链修复**：`19.api_gateway/registry.py` 的 `vectors.wur` filter 未覆盖重建后新增的
+`modes`（受控词表，72% 非空）与 `duplicated` 列，已补上并校验所有 filter/search 列在
+TSV 表头真实存在。
+
+**站点口径纠错**：全站多处把 **1,803** 写成 "vector records / 媒介记录"，实际它是**合并后的
+病毒条目总数**；真正带媒介关系的只有 **447** 个病毒 / 1,375 三元组。
+`docs/help/vector.html` 还把数据源写成 "WUR + **EPPO Global Database**"（实为 WUR + VIP-DB）。
+涉及 `docs/index.html`、`docs/relations/index.html`、`docs/help/{index,relations,vector}.html`。
+统计键 `vector_host_pairs=1803` 改名拆为 `vector_virus_entries` / `vector_assoc_viruses` /
+`vector_triplets` / `vector_routes_viruses` / `vector_lit_links` / `vector_lit_papers`
+（`docs/data/site_stats.json`、`platform_stats.json`）；`scripts/build_global_index.py`
+新增 `vector_counts()` **从合并产物现算**，防止月更后数字再次脱节。
+
+**回归**：`/vector/?full=1` 15 项断言全绿（HTTP 200、四 tab 计数非零、无 Jinja 残留、
+VH 1375 / WUR 1654 / merged 1803、`data_missing=False`、跳转三要素齐备）。
+
+## [2026-10-24b] — knowledge_rag：参考 Agentic_RAG 升级检索链路
+
+对照 <https://github.com/Anorlx/Agentic_RAG> 的机制做了一轮知识库改造，详细差距表与
+路线图见 `6.knowledge_rag/AGENTIC_RAG_UPGRADE_20261024.md`。只取机制、不搬技术栈
+（继续用 Qdrant/BM25S/DeepSeek），两条系统都动。
+
+**修掉的真实缺陷**：`pv_records` 的 payload 只有 `record_id` 没有 `doc_id`，检索器统一
+按 `payload.get("doc_id", -1)` 分组 —— 后果是全部 2.9K 条结构化记录被当成同一篇文档，
+候选池最多只放行 3 个记录片段，引用富化时所有记录合并成 1 条且查不到标题。改为负数
+命名空间 `doc_id = -record_id`，引用分别查 `pv_documents` / `pv_records`。
+
+**路由真正生效**：改前 `classify()` 只写响应字段，META 问题照样检索+生成，PLANNING
+prompt 永不触发。现在 `/query` 与 `/query/stream` 都走 `PvRouter`：META 零检索零 LLM，
+PLANNING 使用自己的 prompt，响应回传 `route` / `rewritten_query`。
+
+**证据评分 + 有界纠错**（Agentic_RAG 核心）：新增 `evidence_grader.py`（结构化判定
+relevance/answerability/missing/next_action）与 `correction.py`（至多 1 次
+Step-back/HyDE 重写，重检后复评，仍不足则返回空片段 → 结构化拒答）。默认关闭，
+`PV_EVIDENCE_LOOP=1` 或评测 `--evidence-loop` 开启；grader 失败时退回旧行为，不会把
+服务变成拒答机器。
+
+**指标**：新增 `recall_at_k / mrr / ndcg_at_k / route_accuracy`，`EvalCase` 支持
+`relevant_doc_ids` / `expected_task_type` 标签；未标注时报告打印 “not measured”，
+不把 0.0 当成绩。
+
+**L1/L2 父子块 + auto-merging**：新增 `chunk_hierarchy()`（父块按 markdown 标题切
+2400/400，子块 1500/300）、`pv_chunk_parents` 表与 `pv_chunks.parent_id`（Alembic 0002）、
+父子写入与 `PvChunkParentRepository`、检索端 `_auto_merge`（同父命中 ≥2 条用父块替换，
+保留最佳片段 id/score 以便引用）。默认仍为平铺；启用需
+`alembic upgrade head` → `pv-ingest reset-status --yes` → `index --hierarchical` →
+`bm25-rebuild`（约 2.5h + ¥20-40）。未重建时 payload 无 `parent_id`，自动跳过。
+
+**结构化库工具路由**：新增 `structured_router.py`，在 META 与向量检索之间识别
+宿主/介体/科/属精确查询并查 `pv_records`（JSON/文本列 ILIKE），结果转成标准
+`RetrievedChunk` 交给同一 generator；查空自动回退 RAG。规则要求列表意图 + 明确字段
+线索，`Is TYLCV transmitted by whitefly?` 这类是非问句不会被列表劫持。顺带收窄
+`task_classifier` 的 META 规则——原先 `哪些病毒…` / `which viruses…` 会被误判为语料
+统计问题，既让 META 模板抢答，也挡住结构化路由。
+
+**线上系统（:5002）**：① `数据库有多少病毒`/`你是谁` 走 META 路由，用真实统计回答
+（生成模型数不了语料只会编）；② 段落按 markdown 标题强制分段并携带 `Section:`，
+LLM 能区分“Bemisia tabaci 传播”出自 Host Range 还是 Ecology；③ 新增证据覆盖率闸门
+（<34% 视为弱证据，注入明确拒答指令并回传 `evidence`）；④ 回答加 `[N]` 引用范围校验。
+实测真实语料 10,245 docs → 60,651 passages、加载 10.1s、峰值 373MB、检索 0.23s。
+
+顺带把 6 个长期失败的过期断言对齐到当前实现（默认 `top_k`、chunk 格式、oversample
+倍率、题集路径、rewriter 的 expand 跳）。测试：`pv_rag` 245 passed / 2 skipped，
+`6.knowledge_rag` 24 passed。
+
+## [2026-10-24] — Explorer：Apply 按钮改重置；审查修复 6 个隐藏缺陷
+
+筛选控件上一版已改为即时生效，`Apply Filters & Refresh Charts` 成为冗余按钮，改为
+`Reset Filters`（一次恢复全部 9 项筛选）。围绕这个改动做了一轮全面审查，查出并修掉
+几个一直存在但没人报的问题。
+
+- **国家筛选长期失效**。旧逻辑「选了病毒就跳过国家筛选」，而 Target Virus Species
+  默认预选 PSTVd —— 等于默认把国家筛选废掉，用户选国家毫无反应。改为条件可组合
+  （AND）。实测 PSTVd + China 从 367 条（忽略国家）变为 110 条（正确）。
+- **国家筛选默认值自相矛盾**。layout 写 Top-8，但 `parse_url_params` 首载时把它覆盖成
+  空，Top-8 从未生效。统一为「不筛选 = 全部国家」，删掉死变量。
+- **Primer 面板没有自己的选择器**，实际由 Genome-Wide Variation 的 MSA 选择器驱动 ——
+  用户在 Primer Tab 上看不到那个控件。新增 `primers-virus-select` 并接入筛选联动
+  （只列引物库里确实有记录的物种）。
+- **引物查询每次全表扫描** 19MB / 10 万行（服务器约 2s）。改为启动时建字节偏移索引，
+  按物种 seek 读取：**2s → 0.004s**。
+- **下载按钮的 gff3/gb 用 gray**，看起来像禁用（这正是用户以为点不动的部分）。
+  改为五种文件类型各一色（genome 蓝 / cds 青 / protein 绿 / gff3 紫 / gb 橙）；
+  同时去掉 `<a><button>` 非法嵌套，改用带样式的 `<a>`。
+- **地理图底图依赖海外 CDN**（`cdn.plot.ly/world_110m.json`，实测 3.4s，国内可能被拦）。
+  自托管到 `/lib/world_110m.json`（136KB）并用 `Plotly.setPlotConfig({topojsonURL:'/lib/'})`
+  指过去，线上实测无任何外部请求。
+
+顺带：Data Browser 表格加表头排序/列过滤（纯前端，不打服务器）；重置按钮用
+`variant="default"`（`light+gray` 浅到像 disabled）。
+
+部署踩坑记录：服务端 dmc 2.8 的 `Anchor` 不接受 `title`、`dcc.Link` 不接受 `rel`
+（本地 dmc 2.7 宽容，本地测不出来）。改完直接在服务器上跑了一遍全部面板构建函数，
+9/9 通过后才重启。
+
+## [2026-10-23c] — Explorer 模块导航：侧栏方案撤回，改回横排 + 缩短标签
+
+上一版把 7 个模块名搬到左侧竖排，实际使用后判定不如原横排，撤回。
+
+**为什么竖排更差**：横排 7 个全名合计约 1136px，而右侧主面板 1440 屏只有 1018px、
+1280 屏 898px，确实放不下 —— 这是当初改竖排的理由。但竖排吃掉 217px 内容宽度，
+DataTable 15 列只剩 790px，必须横向滚动才能看完一行；这个代价比标签换行更影响使用。
+
+**改法**：保留横排，标签改短名 —— `Profile / Data / Trends / Variation / Primers /
+Hosts / Vectors`，总宽降到约 700px，1280 屏也放得下。完整语义保留在各面板标题里
+（Spatiotemporal & Geographic Distribution、Alignment Matrix & Mutation Rate Curve、
+SeqIO Processed Dataset Archive 等），信息未丢失。窄于 1200px 时允许标签换行成两行。
+
+**顺带修掉三个真实缺陷**（竖排期间暴露出来的）：
+
+1. TabsPanel 默认 `min-width:auto` 被宽内容撑到 1664px（容器只有 1461px），
+   右侧被裁到视口外 —— 表现为 Export 按钮和表格列消失。加 `min-width:0` 后由面板
+   内部滚动。
+2. 竖排时 TabsList 被 `align-items:stretch` 拉到 2054px 高，标签列下方拖出一条贯穿
+   整页的空竖线（改用 `align-self:flex-start`，撤回竖排后该规则一并移除）。
+3. Plotly 图表的 SVG 按渲染时的容器宽度定尺寸，之后容器变窄（窗口缩放、Tab 从隐藏
+   切回、栅格重排）不会自动重算，撑出横向滚动条。`responsive=True` 只监听
+   `window.resize`，覆盖不到这些情况，且 `Plots.resize()` 对静态图无效 ——
+   必须用 `Plotly.relayout(p, {width: p.clientWidth})`。加了 ResizeObserver +
+   MutationObserver 兜底，Tab 切换时补一次。
+
+线上验证：1600/1440/1280/1150/1024/900 六档宽度均无横向溢出，7 个标签切换正常。
+
+## [2026-10-23b] — Reference 首页改版：删 About 区块、并入 hero、对齐全站设计系统
+
+`docs/reference_index.html` 重排。同时补上了这次改版缺失的部署文件。
+
+- **删除「About This Database」整块**。它的内容只有一句说明 + 7 个流水线步骤，
+  却独占一整张卡片、把首屏推到 900px 以下。说明并入 hero 正文，流水线改成 hero
+  底部的 `hero-flow` 行（带分隔线），信息不丢、版位省掉一块。
+- **首屏给出关键数字**：hero 下加 `hero-meta`（9,022 精选参考 / 211,132 条索引记录 /
+  ICTV MSL41 依据）。原页面要滚过 About 才看得到任何数字。
+- **数据源切换进「Database at a Glance」面板头**，与 KPI 同屏 —— 原来它孤立地漂在
+  图表区和加载提示之间，没有容器归属。
+- **KPI 用 `auto-fill` 而非 `auto-fit`**：Full DB 只有 3 个指标，`auto-fit` 会把它们
+  拉成三张等宽大卡横贯整行，显得空旷；`auto-fill` 保留空轨道。
+- **图表**：容器改固定高度（300px / Top-20 用 470px），修复 20 条横向条形图被裁到
+  只剩 7 条的问题；`#charts` 先显示再建图 —— Chart.js 在 `display:none` 父级里量到
+  0 尺寸，之后不会重绘（表现为卡片有标题、画布空白）；分子类型按规范名合并
+  （`ssRNA+` / `ssRNA (+)` / `ss-RNA` 归一），环图图例从 20 项重复降到 13 项。
+- **配色改用设计系统 token**：原图表的橙/蓝与全站深绿主色不协调，改为 accent 色族。
+
+### 一并补上的部署缺口
+
+改版把样式抽到 `/lib/pvdb-ui.css`、`pvdb-module.css`、`pvdb-chrome.css`（均未入库、
+服务器上不存在），且 `site-nav.js` 新版输出的 `nav#pvdb-nav` 才能命中这些样式。
+服务器上三份 CSS 全缺、`site-nav.js` 是旧版 → 新页面引用不到样式会变成裸 HTML，
+导航也会白字透明底。本次把 4 个文件一并上传，线上验证通过。
+
+## [2026-10-23] — Explorer 三项修复：加载提速 11×、模块联动、下载跳转；模块导航改侧边栏
+
+用户报告三个问题：页面加载慢、检索后各模块不关联更新、点下载按钮会跳转。逐项定位并修复。
+
+### 1. 加载慢 → 主回调 12.7s 降到 1.1s（线上实测）
+
+根因是内存，不是计算。`df_global` 把 21 万条序列当 Python 字符串常驻（`Sequence` 列
+占 **430MB**，整表 640MB），而服务器只有 3.5GB 内存、swap 已吃掉 2.5GB —— 每次筛选
+`df.copy()` 都要换页。本地实测同样的计算只需 0.2s，线上要 12.7s，差值全是页表开销。
+
+- **序列改为按需读取**：新增 `FastaIndex`（FASTA 字节偏移索引），只保存
+  `accession → (offset, length)`，需要序列时 seek 读取。索引 1.6s 建成，取 30 条 5ms。
+  缓存 470MB → 85MB，常驻内存 640MB → 84.5MB，服务器可用内存 913MB → 1763MB。
+- **先截断再转 dict**：`to_dict('records')` 原本对全部 14.8 万筛选行执行（2.6s），
+  之后才切到 `TABLE_MAX_ROWS=5000` 扔掉。改为先 `head()` 再转换。
+- **去掉整表 copy**：主回调与 `update_virus_options` 的 `df_global.copy()` 改为掩码链式过滤；
+  改 `Year` 列用 `assign()` 而非原地赋值。
+- **Profile 加缓存**：`build_profile` 每次重读 73MB `papers.json`（1.4s）+ 全扫 19MB
+  引物表（0.8s）+ `Ref.Info.tsv`，单物种 2.5–4.8s。改为启动时一次性建索引
+  （`_PAPERS_ALL` / `_PRIMER_COUNTS` / `_REF_SEG_BY_SPECIES`），结果按物种名缓存
+  （上限 64 条）。冷启 0.02s，热命中 0s。
+
+### 2. 检索后模块不联动
+
+- 五个展示选择器（Trends / Profile / Host / Vector）原本每次都重置成「记录数最多的物种」，
+  用户在上方筛了某个病毒、下面各 Tab 却显示另一个 —— 这就是"不关联"的观感。
+  改为读取左侧 `virus-filter`：选了具体物种则全模块统一显示这些物种；未选才回落到最丰富。
+- 筛选控件全部接入主回调作为 `Input`（原来必须手动点「Apply Filters」才生效）。
+  年份滑块加 `updatemode="mouseup"`，避免拖动过程中打出几十次全量重算。
+
+### 3. 下载按钮点击后跳转
+
+`Genome Annotation Downloads` 的链接指向 `/virus/files/<物种>/<文件>`，而 nginx 的
+`location /virus/` 把整段前缀无差别 `rewrite ... permanent` 到 `/explorer/?profile=`，
+于是每个下载都变成"跳回 Explorer 首页"。新增 `location ^~ /virus/files/` 直接转发到
+8050（`^~` 优先于正则 rewrite），并关掉 gzip、加 `no-store`。线上验证：200 +
+`application/octet-stream` + 真实 FASTA 内容，无重定向。
+
+### 4. 布局：模块导航从顶部横排改为左侧竖排
+
+`dmc.Tabs(orientation="vertical", placement="left", keepMounted=True)`。`keepMounted`
+让切 Tab 不再重建面板。`TabsList` 用 `flexShrink:0` 由内容撑宽 —— 写死 `minWidth`
+会让长标签溢出压到右侧内容区（首版即踩此坑，截图确认后修正）。
+
+## [2026-10-17d] — MCP server：AI 助手直连查询全站数据
+
+`19.api_gateway/mcp_server.py`（官方 `mcp` SDK，FastMCP）——把 /api/v1/ 包装成
+Model Context Protocol 服务器，Claude Desktop / ZCode / Cursor 等 AI 助手可直接查库：
+
+- **6 个工具**：`api_catalog`（目录入口，模型第一步）、`dataset_query`（过滤/搜索/
+  分页覆盖全部 47 数据集，filters 规范列名 + 列表值 OR 语义）、`get_record`、
+  `fetch_document`（stats/EVE/进化树/化合物详情等文档端点）、`global_search`、
+  `resolve_virus_name`（通用名 → ICTV 规范名，写在工具描述里引导模型先解析）。
+- **上下文保护**：不做 85 端点全暴露；单次返回 >60k 字符截断；MCP 侧 page_size
+  上限 100；工具 docstring 即模型说明书。
+- **传输**：stdio（桌面客户端接入，`PVDB_API_URL` 指向任意已部署环境，默认线上）；
+  `PVDB_MCP_TRANSPORT=streamable-http` 可选服务器侧托管（:5020）。
+- **验证**：`mcp_test.py` 端到端（stdio 握手 → tools/list → 8 个调用用例）8/8 通过，
+  含错误路径（非法数据集 id 返回可读提示）。
+- 人类文档同步：help/api.html「Machine-readable」区新增 MCP 接入块。
+
+## [2026-10-17c] — REST API v1 上线：全站数据资产统一只读 API（/api/v1/）
+
+新增 `19.api_gateway`（gunicorn :5010，`api-gateway.service`）——把平台全部数据资产以
+程序化接口开放：**47 个可查询数据集 + 30 个 JSON 文档端点 + 10 个手写端点**，覆盖
+19 个模块（reference / taxonomy / hosts / primers / gallery / compounds / stats / geo /
+eve / genes / associations / network / vectors / pamir / literature / phylo / structures /
+proteomes / search）。
+
+- **架构**：nginx `/api/v1/`（最长前缀，`pvdb_api` 限流 120 r/min/IP）→ Flask 网关；
+  数据集首次请求时从源文件懒构建 SQLite（`cache/ds_*.db`，mtime 失效自动重建，
+  os.replace 原子替换多 worker 安全），月更数据零手动维护。
+- **统一约定**：`{meta:{total,page,page_size,pages}, data:[...]}` 信封 + `X-Total-Count`；
+  列精确过滤（列名规范化匹配）/ `q` 模糊搜索 / 排序 / `fields`·`exclude` 裁剪 / 分页
+  ≤1000；CORS `*`；文档端点 ETag/304 + `?pretty`。
+- **手写端点**：`/api/v1`（自描述目录）、`openapi.json`（OpenAPI 3，可导入 Swagger/
+  Postman）、`search`（31,568 条全局索引）、`compounds`(+`/{name}`)、
+  `pamir/genomes/{acc}`、`structures/rvpsd|vad/species/{key}`、
+  `phylo/molecular/{family}`、`literature/years/{year}`、`health`。
+- **数据以全量口径为准**：PAmiR miRNA 用 80,783 全库（非 /pamirdb/ 的 134 条演示子集）、
+  文献用 33,325 全库；`docs/data` 里 `Plant_Virus_Full.Info.tsv`(211,132) 为主口径。
+- **人类文档**：`docs/help/api.html`（端点目录从 /api/v1 动态渲染，含 curl/Python/R
+  示例与命名规范说明），help 索引加 REST API 卡片，sitemap 收录。
+- **验证**：`19.api_gateway/smoke_test.py` 全端点冒烟 85/85 通过（含大表懒构建：
+  211k 序列 / 322k vsiRNA / 103k 引物 / 80k miRNA / 33k 文献）；ETag 304、CORS、
+  fields/exclude、详情路由逐项实测。
+- 注意：多数表物种名为 ICTV 规范种名，通用名先用 `reference/names?q=` 映射；
+  accession 均带版本号（`NC_001926.1`）。
+
+## [2026-10-17b] — 全站设计质量修复：impeccable 检测 1126 → 0（对比度/字号/层级/slop 清理）
+
+引入 [impeccable](https://github.com/pbakaus/impeccable)（项目级 v4.6.0，`.claude/` 未跟踪 + 用户级 skill 升级）
+作为设计质量门，与 `check_site_quality.py`（工程规范门）互补。全站 37 页扫描出 1126 条设计反模式，
+四轮脚本化修复后 **复扫 0 条**。修复脚本存档于 `oneoff_scripts/fix_design_quality_{,r2_,r3_,r4_}20261017.py`。
+
+**低对比度（WCAG AA，334 条 → 0）**
+- 文字灰阶统一加深：`#8a99a8/#9aa7b4/#7a8a99/#95a5b5/#888/#999/#777` 等 → `#5d6b7a`（浅底 ≥4.5:1）；
+- 主题蓝加深：链接/渐变端/按钮底 `#2e86c1`、`#4b97ca`、`#3e83b5` → `#1f6fa9`（白字/白底均 ≥4.5:1）；
+- gene_browser 色板 chips/badges/segments：按 WCAG 亮度算法自动选字色（浅底保原色配深字、
+  中深底配白字、不达标则逐级加深 0.93 至达标），Set3/Dark2 色板身份保留、可读性达标；
+- help 页 hero 副标题 `opacity:.85` 混合色 → 实体色（检测器按混合后颜色评估）；viewtabs 未选中页签
+  `opacity:.72` → 实体 `#e6eef5`；topbar 半透明白底 chip α .14→.07（混合底 ≥4.6:1）；
+- 语义色文字加深：#e67e22→#b35309、#e74c3c→#c0392b、#ef6c00→#b35309；
+- 彩色阴影中性化 rgba(20,60,90,*)/rgba(10,40,70,*) → rgba(0,0,0,*)（dark-glow）。
+
+**字号（726 条 → 0）**
+- 功能文字 <11px → 11px（统计带标签 10.5px、badge 9px、domain 段 8px 等）；
+- 正文 <12px → 12px（gene_browser 数据表/段落）；导航 badge、页脚引用行同步提升。
+
+**结构与其他（66 条 → 0/豁免）**
+- 标题跳级：首页/help 首页分区标签 `div.sec` → `h2.sec`（样式不变）；help 子页 h3→h2；
+  gene_browser h4→h3、h5→h4（35+16 处，行内样式保留外观）；
+- side-tab slop：border-left 竖条与圆角并存 → 去圆角（.tip/.note/.ps-card/.notice 等）；
+- cramped：`.dom-bar` 用同色 2px border 做内缩；relations `.stage` iframe 离边 8px；
+  两个全出血可视化组件（domain 架构条、iframe 舞台）按工具推荐机制 scope-out（`.impeccable/config.json`）；
+- broken-image：photos.html 灯箱 `<img src="">` → 1px 透明 GIF 占位；
+- bounce-easing：ai-assistant.js 打字点动画 pvaiBounce → pvaiPulse（实为脉冲非弹跳）；
+- em-dash-overuse：整规则忽略（中文破折号为正常标点，检测器按英文 AI 腔设计）。
+
+**配置与卫生**
+- `.impeccable/config.json`（可提交）：ignoreRules=[em-dash-overuse]、ignoreFiles=15 个 vendor 压缩库；
+  `.gitignore` 增加 `.impeccable/*` + `!.impeccable/config.json`；
+- 扫描范围不含 vendor 库（bootstrap/plotly/jquery 等压缩产物无法修复，永久排除）。
+
+**验收**：`npx impeccable detect docs` → **0 findings**；Playwright 冒烟（首页/gene_browser/help/
+download/relations）无 JS 错误、版式无破坏；自家 `check_site_quality.py` 37 页 PASS。
+
+## [2026-10-17] — 全站工程化改造：注册表驱动的 head 规范 / SEO+JSON-LD / 学术页脚 / 质量门 / 部署根清淤
+
+37 个静态页从「手改 HTML」升级为「单一事实源 + 生成器 + 质量门」的工程化管理（详见 `docs/README.md`
+「站点工程化」一节）。
+
+**新增工具链（scripts/）**
+- `site_pages.py`：37 页注册表（文件 ↔ canonical 路由映射、中英标题/描述、JSON-LD 类型）+ 站点常量；
+- `build_site_meta.py`：幂等注入 `<!--#[site-meta]-->` 规范 head 块（description/canonical/OG/Twitter/
+  theme-color/缺失补齐 viewport+favicon），并生成 `sitemap.xml` 与 `lib/site-version.js`；`--check` 可挂 CI；
+- `check_site_quality.py`：质量门 —— head 完备性、sitemap↔注册表一致、robots Sitemap 行、site-version↔
+  DATA_VERSION 一致、**全站 397 条内链解析**（含 nginx alias 路由映射）、部署根卫生、JSON 可解析、
+  单页体积预算。当前 37 页 PASS / 0 warning。
+
+**SEO / 学术元数据（此前 7/37 页有 description、0 页有 OG/canonical/JSON-LD → 现全覆盖）**
+- 全站 canonical + Open Graph + Twitter Card + theme-color；首页 schema.org **WebSite + DataCatalog**
+  （含 9 个数据集条目），9 个数据页 schema.org **Dataset**（许可、标识符 pvdb-2026-10-03、dateModified）；
+- `sitemap.xml` 落地 35 条 URL（nginx `location = /sitemap.xml` alias 之前一直 404）；
+- robots.txt 的 Sitemap 行与部署源对齐。
+
+**学术级署名与版本可见性**
+- `lib/site-nav.js` v3：页面无自有页脚时自动注入学术页脚（平台名 · 数据版本 · MIT · GitHub ·
+  推荐引用格式含访问日期）；修复 `data-active`/`data-badge` 在 DOMContentLoaded 分支因
+  `currentScript` 为 null 而静默失效的潜在 bug；nav 增加 `aria-label`；
+- 首页页脚升级为 数据版本 v{DATA_VERSION} · MIT License · GitHub（版本由 site-version.js 供给）；
+- `i18n.js` 中英浮钮补 `aria-label`。
+
+**性能**
+- 首页 echarts（约 1MB）从同步加载改为**展开访客地图时按需注入**，首屏零阻塞（Playwright 实测：
+  加载时序证明懒加载生效、地图渲染正常）；
+- 首页检索框补 aria-label。
+
+**缺陷修复**
+- `download.html` 残缺标记修复（游离 `</div>` + 孤儿下载按钮，某次手改遗留）；
+- `phylo/molecular/index.html` 重定向存根补 viewport/favicon/robots noindex（由生成器统一供给）。
+
+**部署根清淤（web root 不再暴露备份）**
+- docs/ 下 100+ 个 `.orig_*` / `.bak_*` / `_tmp_*` / `hosted_*` 文件全部移出：
+  页面/JS 备份 → `archive/website_backups_20261017/`（已 gitignore）；
+- docs/data/ 下 24 个数据 `.bak`（含 395MB fasta 备份）与 4 个历史批次快照目录
+  （canonical_20261003 / live_20261003 / online_20260901 / deploy_20260918，共约 2.9GB、全仓零引用）
+  → `data_backups/docs_data_20261017/`（已 gitignore）；docs/association/__pycache__ 删除；
+- `plant-virus.conf`：`location /` 增加 `error_page 404 /404.html`（仅静态根，API 不受影响）；
+  备份拦截正则补 `\.orig_`（原只拦 `.bak`/`_bak`，`.orig_*` 一直可被下载）。
+
+**验收**：`check_site_quality.py` 37 页 PASS；Playwright 本地冒烟（首页/访客地图懒加载/下载页/help/404/
+页脚注入）无 console 错误（本地 404 均为 nginx 专属路由的预期现象）。
+
 ## [2026-10-16] — 全站数字校对：卡片/统计与实际数据全面对齐（用户反馈"卡片显示和实际数量不符"）
 
 6 路并行只读审计 + 逐项实算修复。所有数字一律以当前数据产物为准（参考库 `Plant_Virus_Ref.Info.tsv`

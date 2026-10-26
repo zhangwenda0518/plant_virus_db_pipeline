@@ -183,26 +183,26 @@ ICTV 官方 VMR (MSL41, 2026-03-20) 经 Excel 格式转换后，对 'Host source
 > | Plant_Virus_Full.fasta (原始) | 218,048 | 100.0% | 7,187 | 100.0% |
 > | 元数据去重后 (F3) | 17,998 | 8.3% | 7,187 | 100.0% |
 > | plant.final.rmdup.fasta (F4) | 13,030 | 6.0% | 7,187 | 100.0% |
-> | Plant_Virus_Ref.fasta (G2) | 11,956 | 5.5% | 6,597 | 91.8% |
+> | Plant_Virus_Ref.fasta（发布库, `docs/data`） | 9,022 | 4.1% | 6,534 | 90.9% |
 
 ### 4.5 泛基因组 ANI 聚类与 LCA 诊断
 
 对去冗余后的 13,030 个 Accession 通过高性能并行映射引擎 (G1_seqid_to_taxid) 获取标准 TaxID，建立了 seqid2taxid.map 映射表 (共映射 13,030 条)，并追加序列长度信息 (seqid2taxid_len.map)。采用 **vclust** (algorithm=cd-hit, metric=ANI, --ani 0.98, --qcov 0.95) 进行泛基因组 ANI 聚类与 LCA (Lowest Common Ancestor) 诊断 (Roux et al., 2015; Zayed et al., 2022)。在聚类簇内执行 RefSeq 优先机制——带 '_' 前缀的 NCBI RefSeq 序列自动替换软件盲选的普通代表序列，同时检测 Category/Segment 命名冲突并触发节段挽救。
 
-最终获得 **8484** 条代表性参考基因组序列，覆盖 **6180** 个 TaxID（数字由 `lib/render_numbers.py` 从产物渲染）。相较原始 218,048 条植物病毒序列，序列数量总体消减 **94.5%**，TaxID 保留率为 91.8%（6,597 / 7,187）。
+发布口径（2026-10-03 批次，见 `docs/data/DATA_VERSION` 与 `docs/data/NUMBERS.md`）为 **9,022** 条代表性参考基因组序列，覆盖 **6,534** 个 TaxID（数字由 `lib/render_numbers.py` 从产物渲染）。相较原始 218,048 条植物病毒序列，序列数量总体消减 **95.9%**，TaxID 保留率为 **90.9%**（6,534 / 7,187）。G2 现行运行（2026-06-02）的聚类产物为 8,465 条 / 5,817 个 TaxID，与发布库的差额来自后续月度增量合并（`merge_to_ref.py`）。
 
-LCA 诊断发现跨 TaxID 混合聚类簇 **(无当前批次产物)** 个（现行 G-cluster 批次），占总聚类簇数的比例反映了序列水平相似性超过物种分类界限的程度。LCA 等级分布以 species (317)、genus (280)、family (88)、realm (20)、acellular root (28) 等级别为主（图 4-1），说明绝大多数跨 TaxID 聚类发生在属及以下分类层级。发生 RefSeq 优先替换事件 483 次，检测到 Segment 命名冲突 446 个（此二项取自 2026-05-10 test-db 批次）。
+LCA 诊断发现跨 TaxID 混合聚类簇 **569** 个（现行 G-cluster 批次，2026-06-02，见 `6.logs/G2-vclust聚类.log`），占总聚类簇数的比例反映了序列水平相似性超过物种分类界限的程度。LCA 等级分布以 species (271)、genus (196)、family (39) 等级别为主（图 4-1），说明绝大多数跨 TaxID 聚类发生在属及以下分类层级。同一批次的 RefSeq 优先替换与 Segment 命名冲突计数以该批次 G2 运行日志（`refseq_replacement_log.tsv` 等）为准；历史批次参考值：ncbi-virus3（2026-04-03）替换 483 次、test-db（2026-05-10）Segment 冲突 446 个。
 
-> **表 4-5　LCA 混合聚类等级分布**
+> **表 4-5　LCA 混合聚类等级分布（现行 G-cluster 批次，2026-06-02，共 569 簇）**
 >
 > | LCA 等级 | 混合簇数量 | LCA 等级 | 混合簇数量 |
 > |:---------|:---------:|:---------|:---------:|
-> | Species | 317 | Family | 88 |
-> | Genus | 280 | Realm | 20 |
-> | Acellular root | 28 | Subfamily | 23 |
-> | No rank | 10 | Order | 8 |
-> | Kingdom | 5 | Phylum | 4 |
-> | Class | 3 | Suborder | 1 |
+> | Species | 271 | Genus | 196 |
+> | Family | 39 | Subfamily | 19 |
+> | Realm | 17 | Acellular root | 14 |
+> | Order | 7 | Kingdom | 2 |
+> | Class | 2 | Suborder | 1 |
+> | Phylum | 1 | — | — |
 
 > **图 4-1 `clusters.LCA_Distribution.png` 的生成方式**
 >
@@ -210,35 +210,33 @@ LCA 诊断发现跨 TaxID 混合聚类簇 **(无当前批次产物)** 个（现�
 >
 > 左图：`Std_LCA_Rank` 的簇数直方图（`sns.countplot`，viridis 配色，柱顶标注数值）；右图：各等级下 `Unique_Taxids` 的箱线图（灰色，`showfliers=False`）叠加抖动散点（`sns.stripplot`，alpha=0.7、size=6、jitter=True）。等级排序取 `value_counts()` 频次降序，x 轴标签旋转 45°。画布 `figsize=(15, 6)`、`dpi=300`、`bbox_inches='tight'`，成图约 4427×1737 px。**若该次运行没有跨 TaxID 混合簇，则跳过绘图**（脚本打印"✅ 无跨物种聚类，跳过LCA绘图"）。
 >
-> 文件名沿革：2026-03 的脚本输出名为 `LCA_Distribution.png`；2026-03-22 起改为与输入表同前缀的 `clusters.LCA_Distribution.png`。旧名文件不会自动删除，因此同一目录可能同时存在两个名字的同一张图。
+> ⚠️ **图表同批次原则**：正文与表 4-5 统一采用现行 G-cluster 批次（2026-06-02，**569** 簇，出处 `6.logs/G2-vclust聚类.log`）；图 4-1 必须由同批次 `clusters_with_LCA.tsv` 重绘输出，历史批次的成图（ncbi-virus2 2026-03-21/22 = 2,248 簇；ncbi-virus3 2026-04-03 = 791 簇；hgenes 2026-06-01 = 774 簇；test-db 2026-05-10 = 787 簇）仅作留档对照，**不得用于正文配图**。
 >
-> ⚠️ **引用前必须核对图与表的批次**：现存三批产物数字互不相同——① 服务器 `database/virus-db/virus-host/ncbi-virus2/{LCA_Distribution,clusters.LCA_Distribution}.png`（2026-03-21/22）对应 **2,248** 个混合簇（genus 1181 / species 631 / family 146 / acellular root 103 / subfamily 61 / realm 55 / order 25 / kingdom 21 / phylum 10 / class 8 / no rank 7），其 `Plant_virus_db/` 子目录副本对应 **1,299** 个；② 现行 G2 运行（2026-06-02）为 **569** 个混合簇（species 271 / genus 196 / family 39 / subfamily 19 / realm 17 / acellular root 14 / order 7 / kingdom 2 / class 2 / suborder 1 / phylum 1），见 `6.logs/G2-vclust聚类.log`。上面正文与表 4-5 的 787 个混合簇（species 317 / genus 280 / family 88 / realm 20 / acellular root 28 / subfamily 23 / no rank 10 / order 8 / kingdom 5 / phylum 4 / class 3 / suborder 1）与 **2026-05-10 的 test-db G-cluster 批次**（`plantvirus-db/plant_virus_db/test-db/2.plant-virus.db/G-cluster`，787 簇）**逐级完全一致**，此即表 4-5 的直接出处；**图 4-1 应取该版**（已留档于 `figures/lca_distribution/2026-05-10_testdb_gcluster_clusters.LCA_Distribution_787clusters.png`）。相邻批次的 ncbi-virus3（2026-04-03，791 簇；其 `refseq_replacement_log.tsv` **483** 行与正文"RefSeq 优先替换事件 483 次"一致）、hgenes（2026-06-01，774 簇）、现行 G-cluster（2026-06-02，569 簇）可作对照，但均不等于表 4-5。
->
-> 同节 11,956 条代表序列 / 6,597 个 TaxID 同样是历史口径：2026-06-02 运行日志为 8,465 条 / 5,817 个 TaxID，2026-07-07 的 `G-cluster/final.cluster.ref.fasta` 为 8,464 条，当前 `3.final-ref-virus.db/final.cluster.ref.fasta` 为 8,484 条。**已统一（2026-10-03 批次）**：发布口径以 `docs/data/Plant_Virus_Ref.Info.tsv` 为准 = **9,022 条 / 6,534 TaxID**（见 `docs/data/DATA_VERSION` 与 `docs/data/NUMBERS.md`），上述 8,465/8,464/8,484 均为历史批次。
+> 发布口径说明：最终数据集以 `docs/data/Plant_Virus_Ref.Info.tsv` 为准 = **9,022 条 / 6,534 TaxID**（见 `docs/data/DATA_VERSION` 与 `docs/data/NUMBERS.md`，2026-10-03 批次统一）。G2 各历史批次产物 8,465 / 8,464 / 8,484 条均为聚类阶段中间值，与发布库的差额来自月度增量合并。
 
 ### 4.6 基因预测与覆盖度评估
 
-利用 **pyrodigal-rv** (Larralde, 2022) 对最终 8484 条参考基因组序列进行病毒基因预测。成功预测到 CDS 的序列 **11,847** 条 (91.1%，共 71,979 个 CDS)，未预测到基因的序列 1,183 条 (8.9%，可能为短序列片段、类病毒或非编码区域)。基因覆盖度分析表明：每基因组平均 CDS 数量为 5–6 个，平均基因覆盖度（单个基因平均长度 / 基因组长度）为 **53.3%**，平均总覆盖度（所有基因总长度 / 基因组长度）为 **84.6%**。该结果表明，未预测到基因的序列以类病毒（~300–400 bp）和短片段为主。
+利用 **pyrodigal-rv** (Larralde, 2022) 对去冗余后的 13,030 条序列（F4 输出）进行病毒基因预测。成功预测到 CDS 的序列 **11,847** 条 (90.9%，共 71,979 个 CDS)，未预测到基因的序列 1,183 条 (9.1%，可能为短序列片段、类病毒或非编码区域)。基因覆盖度分析表明：每基因组平均 CDS 数量为 5–6 个，平均基因覆盖度（单个基因平均长度 / 基因组长度）为 **53.3%**，平均总覆盖度（所有基因总长度 / 基因组长度）为 **84.6%**。该结果表明，未预测到基因的序列以类病毒（~300–400 bp）和短片段为主。
 
 > **表 4-6　基因预测与覆盖度统计**
 >
 > | 指标 | 数值 |
 > |:-----|:-----|
-> | 成功预测 CDS 的序列 | 11,847 (91.1%) |
-> | 未预测到 CDS 的序列 | 1,183 (8.9%) |
+> | 成功预测 CDS 的序列 | 11,847 (90.9%) |
+> | 未预测到 CDS 的序列 | 1,183 (9.1%) |
 > | 总 CDS 数量 | 71,979 |
 > | 平均基因覆盖度 | 53.3% |
 > | 平均总覆盖度 | 84.6% |
 
 ### 4.7 讨论
 
-本研究构建的去冗余植物病毒参考基因组数据库在以下方面具有显著优势：(i) 采用元数据级瀑布流 + 序列级双引擎聚类的多层级去冗余策略，在序列消减 94.5% 的同时将 TaxID 损失控制在 8.2% (7,187 → 6,597)；(ii) 节段病毒独立处理通道，通过 TaxID 同源兜底机制 (成功挽救 88,299 条节段病毒的关联序列) 和 Segment 级别补全策略防止节段信息丢失；(iii) 整合 NCBI + KEGG + ICTV 三大权威宿主信息源并进行系统性交叉验证；(iv) 附加 9 级完整病毒分类学谱系 (Realm–Species)，为系统发育下游分析提供了层次化分类基础；(v) 全流程采用模块化脚本设计，共计 21 个 Python 模块 + 1 个一体化 Shell 执行脚本 (run_all.sh)，支持断点续跑和环境变量参数化配置，仅需更新输入数据即可重建数据库。
+本研究构建的去冗余植物病毒参考基因组数据库在以下方面具有显著优势：(i) 采用元数据级瀑布流 + 序列级双引擎聚类的多层级去冗余策略，在序列消减 95.9% 的同时将 TaxID 损失控制在 9.1% (7,187 → 6,534)；(ii) 节段病毒独立处理通道，通过 TaxID 同源兜底机制 (成功挽救 88,299 条节段病毒的关联序列) 和 Segment 级别补全策略防止节段信息丢失；(iii) 整合 NCBI + KEGG + ICTV 三大权威宿主信息源并进行系统性交叉验证；(iv) 附加 9 级完整病毒分类学谱系 (Realm–Species)，为系统发育下游分析提供了层次化分类基础；(v) 全流程采用模块化脚本设计，共计 21 个 Python 模块 + 1 个一体化 Shell 执行脚本 (run_all.sh)，支持断点续跑和环境变量参数化配置，仅需更新输入数据即可重建数据库。
 
 本研究也存在若干局限性。植物病毒的定义依赖于 NCBI Host_lineage 中 Viridiplantae 谱系信息的完整性与准确性，部分跨宿主界的病毒物种可能被遗漏或误分类；去冗余阈值 (98% ANI) 为经验性参数，对于特定快速进化的 RNA 病毒（如部分正链 RNA 病毒）可能需要适当调整阈值以兼顾多样性与冗余度；基因预测依赖于 pyrodigal-rv 对病毒基因组的适应性，对未编码蛋白的类病毒 (Viroids) 仅依赖于序列聚类，其基因覆盖度指标不具生物学意义。
 
 ### 4.8 数据可用性
 
-本研究所构建的植物病毒参考基因组数据集及其完整元数据可通过 GitHub 开源获取：https://github.com/zhangwenda0518/plant_virus_db_pipeline。最终输出产物位于 `3.final-ref-virus.db/` 目录，包括：(1) `Plant_Virus_Ref.fasta`——非冗余参考基因组序列 (11,956 条)；(2) `Plant_Virus_Ref.Info.tsv`——完整元数据表，含宿主分类、节段信息、分类学谱系等核心字段；(3) `virus_genes_cov.tsv`——基因覆盖度统计；(4) `Dereplication_Global_Summary.tsv`——各阶段去冗余效果评估。全套 21 个 Python 处理脚本、一键执行脚本 (run_all.sh)、依赖安装指南及详细使用说明均已随仓库开源。中间产物与阶段级运行日志 (4.logs/) 一并保留，确保全过程可追溯。
+本研究所构建的植物病毒参考基因组数据集及其完整元数据可通过 GitHub 开源获取：https://github.com/zhangwenda0518/plant_virus_db_pipeline。发布口径以 `docs/data/` 为准（2026-10-03 批次，见 `docs/data/DATA_VERSION`），包括：(1) `Plant_Virus_Ref.fasta`——非冗余参考基因组序列 (9,022 条)；(2) `Plant_Virus_Ref.Info.tsv`——完整元数据表，含宿主分类、节段信息、分类学谱系等核心字段；(3) `virus_genes_cov.tsv`——基因覆盖度统计；(4) `Dereplication_Global_Summary.tsv`——各阶段去冗余效果评估。全套 21 个 Python 处理脚本、一键执行脚本 (run_all.sh)、依赖安装指南及详细使用说明均已随仓库开源。中间产物与阶段级运行日志 (4.logs/) 一并保留，确保全过程可追溯。
 
 ---
 

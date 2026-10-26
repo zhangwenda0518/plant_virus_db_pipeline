@@ -124,9 +124,6 @@ species	Rhabdoviridae		Alphagymnorhavirus piniflexilis
 species	Rhabdoviridae		Alphagymnorhavirus piniyunannensis
 species	Rhabdoviridae		Alphagymnorhavirus sciadopitysis
 species	Rhabdoviridae		Alphagymnorhavirus taxi
-species	Ambiguiviridae		Alphambiguivirus alphaviticolae
-species	Ambiguiviridae		Alphambiguivirus betaviticolae
-species	Ambiguiviridae		Alphambiguivirus guiyanense
 species	Tombusviridae		Alphanecrovirus nicotianae
 species	Tombusviridae		Alphanecrovirus oleae
 species	Tombusviridae		Alphanecrovirus solani
@@ -301,13 +298,11 @@ species	Caulimoviridae		Badnavirus zetadioscoreae
 species	Caulimoviridae		Badnavirus zetainflatheobromae
 species	Caulimoviridae		Badnavirus zetavirgamusae
 species	Caulimoviridae		Badnavirus ziziphi
-species	Alphasatellitidae		Banaphisatellite alphamusae
 species	Alphasatellitidae		Banaphisatellite betamusae
 species	Alphasatellitidae		Banaphisatellite gammamusae
 species	Betaflexiviridae		Banmivirus miscanthi
 species	Betaflexiviridae		Banmivirus musae
 species	Betaflexiviridae		Banmivirus musornatae
-species	Atkinsviridae		Barchevirus pontederiivicinum
 species	Geminiviridae		Becurtovirus betae
 species	Geminiviridae		Becurtovirus exomis
 species	Geminiviridae		Becurtovirus spinaciae
@@ -845,10 +840,6 @@ species	Rhabdoviridae		Betacytorhabdovirus tiliae
 species	Rhabdoviridae		Betacytorhabdovirus trifolii
 species	Rhabdoviridae		Betacytorhabdovirus viciae
 species	Rhabdoviridae		Betagymnorhavirus torreyae
-species	Ambiguiviridae		Betambiguivirus alphaviticolae
-species	Ambiguiviridae		Betambiguivirus betaviticolae
-species	Ambiguiviridae		Betambiguivirus glycineae
-species	Ambiguiviridae		Betambiguivirus oryzae
 species	Tombusviridae		Betanecrovirus betae
 species	Tombusviridae		Betanecrovirus nicotianae
 species	Tombusviridae		Betanecrovirus porri
@@ -1006,7 +997,6 @@ species	Tolecusatellitidae		Betasatellite verrnoniaflavusfujianense
 species	Tolecusatellitidae		Betasatellite vignae
 species	Tolecusatellitidae		Betasatellite zinniae
 species	Potyviridae		Bevemovirus campanulae
-species	Atkinsviridae		Birfovirus dinebrivivens
 species	Kitaviridae		Blunervirus camelliae
 species	Kitaviridae		Blunervirus chrysanthemi
 species	Kitaviridae		Blunervirus cinnamomi
@@ -1415,9 +1405,6 @@ species	Solemoviridae		Enamovirus RCEV
 species	Solemoviridae		Enamovirus WSEV
 species	Solemoviridae		Enamovirus YPEV
 species	Geplanaviridae		Episkevirus kirilis
-species	Ourmiaviridae		Epsilonourmiavirus croci
-species	Ourmiaviridae		Epsilonourmiavirus lespedezae
-species	Ourmiaviridae		Epsilonourmiavirus striata
 species	Geminiviridae		Eragrovirus curvulae
 species	Secoviridae		Fabavirus alphaviciae
 species	Secoviridae		Fabavirus avii
@@ -1562,7 +1549,6 @@ species	Potyviridae		Ipomovirus lycopersici
 species	Potyviridae		Ipomovirus manihotis
 species	Mahapunaviridae		Janusivirus portis
 species	Alphasatellitidae		Kobbarisatellite kokonas
-species	Pestiviridae		Koshovirus sonchi
 species	Phenuiviridae		Laulavirus panici
 species	Alphaflexiviridae		Lolavirus latenslolii
 species	Geplanaviridae		Lumovirus arcechis
@@ -1673,9 +1659,6 @@ species	Secoviridae		Mersevirus boehmeriae
 species	Secoviridae		Mersevirus jujubae
 species	Secoviridae		Mersevirus mercurialis
 species	Secoviridae		Mersevirus paris
-species	Metaviridae		Metavirus athilai
-species	Metaviridae		Metavirus lilii
-species	Metaviridae		Metavirus tatarabidopsis
 species	Alphasatellitidae		Milvetsatellite japastra
 species	Aspiviridae		Miraophiovirus caladeniae
 species	Aspiviridae		Miraophiovirus capsici
@@ -2266,31 +2249,11 @@ species	Betaflexiviridae		Prunevirus actinidiae
 species	Betaflexiviridae		Prunevirus armeniacae
 species	Betaflexiviridae		Prunevirus caucasicum
 species	Betaflexiviridae		Prunevirus unicamelliae
-species	Pseudoviridae		Pseudovirus arabidopsis
-species	Pseudoviridae		Pseudovirus artarabidopsis
-species	Pseudoviridae		Pseudovirus atrearabidopsis
-species	Pseudoviridae		Pseudovirus australiense
-species	Pseudoviridae		Pseudovirus brassicae
-species	Pseudoviridae		Pseudovirus cajani
-species	Pseudoviridae		Pseudovirus evelknieveli
-species	Pseudoviridae		Pseudovirus glycinis
-species	Pseudoviridae		Pseudovirus hordei
-species	Pseudoviridae		Pseudovirus maydis
-species	Pseudoviridae		Pseudovirus nicotianae
-species	Pseudoviridae		Pseudovirus oryzae
-species	Pseudoviridae		Pseudovirus physari
-species	Pseudoviridae		Pseudovirus solani
-species	Pseudoviridae		Pseudovirus tabaci
-species	Pseudoviridae		Pseudovirus tritici
-species	Pseudoviridae		Pseudovirus zeae
 species	Mayoviridae		Pteridovirus filicis
 species	Mayoviridae		Pteridovirus maydis
 species	Geminiviridae		Pylecuvirus petroselini
 species	Betaflexiviridae		Ravavirus alpharibis
 species	Geplanaviridae		Riddikuvirus forpesis
-species	Tombusviridae		Rimosavirus brassicae
-species	Tombusviridae		Rimosavirus zeae
-species	Tombusviridae		Rimosavirus zizaniae
 species	Betaflexiviridae		Robigovirus elaeis
 species	Betaflexiviridae		Robigovirus menthae
 species	Betaflexiviridae		Robigovirus necroavii
@@ -2329,11 +2292,6 @@ species	Secoviridae		Sequivirus pastinacae
 species	Secoviridae		Sequivirus primulae
 species	Secoviridae		Sequivirus stellatum
 species	Secoviridae		Sequivirus taraxaci
-species	Pseudoviridae		Sirevirus arabidopsis
-species	Pseudoviridae		Sirevirus glycinis
-species	Pseudoviridae		Sirevirus lycopersici
-species	Pseudoviridae		Sirevirus maydis
-species	Pseudoviridae		Sirevirus zeae
 species	Solemoviridae		Sobemovirus ARTVA
 species	Solemoviridae		Sobemovirus BSSV
 species	Solemoviridae		Sobemovirus CFMV
@@ -2475,7 +2433,6 @@ species	Secoviridae		Torradovirus nanorugosum
 species	Secoviridae		Torradovirus ophistopappi
 species	Secoviridae		Torradovirus physalis
 species	Secoviridae		Torradovirus rorippae
-species	Secoviridae		Torradovirus sesami
 species	Orthototiviridae		Totivirus jyukyu
 species	Orthototiviridae		Totivirus jyushi
 species	Orthototiviridae		Totivirus sanjyuni
@@ -2673,14 +2630,10 @@ species	Secoviridae		Waikavirus trifolii
 species	Secoviridae		Waikavirus violae
 species	Secoviridae		Waikavirus zeae
 species	Betaflexiviridae		Wamavirus alphacitrulli
-species	Solspiviridae		Wehlfuvirus dinebrihabitans
 species	Geminiviridae		Welwivirus mirabilis
 species	Geminiviridae		Welwivirus welwitschiae
-species	Solspiviridae		Weothlivirus dinebrivivens
-species	Solspiviridae		Whahdcavirus dinebricola
 species	Alphasatellitidae		Whedwasatellite triticiparvi
 species	Alphasatellitidae		Whiflysatellite guatemalaense
-species	Solspiviridae		Witirovirus dinebrihabitans
 species	Amesuviridae		Yermavirus ilicis
 species	Tombusviridae		Zeavirus zeae
 genus	Alphaflexiviridae	Allexivirus	
@@ -2706,14 +2659,10 @@ genus	Alphasatellitidae	Subclovsatellite
 genus	Alphasatellitidae	Whedwasatellite	
 genus	Alphasatellitidae	Whiflysatellite	
 genus	Amalgaviridae	Amalgavirus	
-genus	Ambiguiviridae	Alphambiguivirus	
-genus	Ambiguiviridae	Betambiguivirus	
 genus	Amesuviridae	Temfrudevirus	
 genus	Amesuviridae	Yermavirus	
 genus	Aspiviridae	Miraophiovirus	
 genus	Aspiviridae	Ophiovirus	
-genus	Atkinsviridae	Barchevirus	
-genus	Atkinsviridae	Birfovirus	
 genus	Avsunviroidae	Avsunviroid	
 genus	Avsunviroidae	Elaviroid	
 genus	Avsunviroidae	Pelamoviroid	
@@ -2792,18 +2741,15 @@ genus	Konkoviridae	Olpivirus
 genus	Mahapunaviridae	Janusivirus	
 genus	Mayoviridae	Idaeovirus	
 genus	Mayoviridae	Pteridovirus	
-genus	Metaviridae	Metavirus	
 genus	Metaxyviridae	Cofodevirus	
 genus	Nanoviridae	Babuvirus	
 genus	Nanoviridae	Nanovirus	
 genus	Orthototiviridae	Totivirus	
-genus	Ourmiaviridae	Epsilonourmiavirus	
 genus	Ourmiaviridae	Ourmiavirus	
 genus	Pamosaviridae	Papanivirus	
 genus	Partitiviridae	Alphapartitivirus	
 genus	Partitiviridae	Betapartitivirus	
 genus	Partitiviridae	Deltapartitivirus	
-genus	Pestiviridae	Koshovirus	
 genus	Phenuiviridae	Coguvirus	
 genus	Phenuiviridae	Laulavirus	
 genus	Phenuiviridae	Mechlorovirus	
@@ -2827,8 +2773,6 @@ genus	Potyviridae	Potyvirus
 genus	Potyviridae	Roymovirus	
 genus	Potyviridae	Rymovirus	
 genus	Potyviridae	Tritimovirus	
-genus	Pseudoviridae	Pseudovirus	
-genus	Pseudoviridae	Sirevirus	
 genus	Rhabdoviridae	Alphacytorhabdovirus	
 genus	Rhabdoviridae	Alphagymnorhavirus	
 genus	Rhabdoviridae	Alphanucleorhabdovirus	
@@ -2856,10 +2800,6 @@ genus	Solemoviridae	Enamovirus
 genus	Solemoviridae	Polemovirus	
 genus	Solemoviridae	Polerovirus	
 genus	Solemoviridae	Sobemovirus	
-genus	Solspiviridae	Wehlfuvirus	
-genus	Solspiviridae	Weothlivirus	
-genus	Solspiviridae	Whahdcavirus	
-genus	Solspiviridae	Witirovirus	
 genus	Spinareoviridae	Fijivirus	
 genus	Spinareoviridae	Oryzavirus	
 genus	Tolecusatellitidae	Betasatellite	
@@ -2878,7 +2818,6 @@ genus	Tombusviridae	Macanavirus
 genus	Tombusviridae	Machlomovirus	
 genus	Tombusviridae	Panicovirus	
 genus	Tombusviridae	Pelarspovirus	
-genus	Tombusviridae	Rimosavirus	
 genus	Tombusviridae	Tombusvirus	
 genus	Tombusviridae	Tralespevirus	
 genus	Tombusviridae	Umbravirus	

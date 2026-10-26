@@ -6,7 +6,7 @@
 
 | 视图 | 路径 | 内容 |
 |:---|:---|:---|
-| 分类学树（默认） | `/phylo/` | 基于 **ICTV Master Species List 2025 MSL41 v1** 的分类学层级树。**默认只画植物病毒**（48 科 / 214 属 / 2,684 种 / 2,997 节点）；勾选「非植物病毒」可叠加灰色骨架 —— 域/界/门/纲/目 五级 + **73 个「与植物病毒同目」的非植物科** + 232 个混合属里的非植物种，共 3,450 节点。 |
+| 分类学树（默认） | `/phylo/` | 基于 **ICTV Master Species List 2025 MSL41 v1** 的分类学层级树。**默认只画植物病毒**（42 科 / 200 属 / 2,637 种 / 2,926 节点）；勾选「非植物病毒」可叠加灰色骨架 —— 域/界/门/纲/目 五级 + **72 个「与植物病毒同目」的非植物科** + 169 个混合属里的非植物种，共 3,319 节点。 |
 | **分子系统发育树** | `/phylo/?view=molecular`（旧 `/phylo/molecular/` 跳转） | **ICTV 报告章节官方发布的**最大似然树。38 棵树 / 25 个科 / **3,341** 条序列，带真实枝长与支持度。 |
 | **按科索引（画廊）** | `/phylo/molecular/families/` | 25 个科的卡片索引：树数 / 叶数 / 严格二分叉 / 支持度覆盖 / 最大枝长 / MSL 物种数与属数，加拓扑缩略图与数据质量标记。点卡片落到 `/phylo/?view=molecular&family=…&tree=…`。 |
 
@@ -18,7 +18,7 @@
 > 页面在醒目位置（黄色警示条 + 页脚）标注了这一点。
 
 - 纯静态实现（ECharts 本地化于 `echarts.min.js`，无 CDN 依赖），nginx 直接托管。
-- 分类树数据：`taxonomy_tree.json`（~298 KB，3,450 节点），由 `build_taxonomy.py` 生成。
+- 分类树数据：`taxonomy_tree.json`（~289 KB，3,319 节点），由 `build_taxonomy.py` 生成。
 - 分子树数据：`molecular_trees.json`（~267 KB，38 棵树），由 `fetch_ictv_trees.py` + `build_molecular.py` 生成；
   视图脚本抽在 `molecular_viewer.js`（页面加载即取数，`echarts.init` 延迟到标签页首次激活）。
 - 按科索引数据：`molecular/families/family_index.json`（~106 KB），由 `build_family_index.py` 生成
@@ -50,12 +50,12 @@ python export_msl41.py --xlsx "ICTV_Master_Species_List_2025_MSL41.v1.xlsx" \
 
 判定规则（见 `build_taxonomy.py`）：
 
-1. 取 VMR 中 `Host source ∈ {plants, plants (S), invertebrates, plants, phytobiome (S)}` 的 **species**；
-2. 剔除科级黑名单中的科（噬菌体 / 真菌 / 昆虫 / 卵菌 / 环境 CRESS-DNA），
+1. 取 VMR 中 `Host source ∈ {plants, invertebrates, plants}` 的 **species**（严格感染宿主口径；`(S)` 后缀是 ICTV 的「分离来源」标注——从植物叶面/植物际/土壤分离到 ≠ 感染植物）；
+2. 剔除科级黑名单中的科（噬菌体 / 真菌 / 昆虫 / 卵菌 / 环境 CRESS-DNA / 内源逆转录转座子 / 单条检出存疑的 Pestiviridae，见 §3），
    黑名单与 `1.Prepare_plant_virus_pipeline/C4_clean_all_tsvs.py` 保持一致；
 3. 其余**一律以 VMR 的种级标注为准，不做属级黑名单过滤**（理由见下）。
 
-结果：**48 科 / 214 属 / 2,684 种**，且 2,684 个种 **100% 能在 MSL41 中命中**。
+结果：**42 科 / 200 属 / 2,637 种**，且 2,637 个种 **100% 能在 MSL41 中命中**。
 
 ### 为什么不做属级黑名单
 
@@ -70,13 +70,14 @@ python export_msl41.py --xlsx "ICTV_Master_Species_List_2025_MSL41.v1.xlsx" \
 | `Magoulivirus` / `Penoulivirus` | Botourmiaviridae | `Magoulivirus malus`、`Penoulivirus malus` |
 | `Ourmiavirus` | Botourmiaviridae | C4 注释亦明确其为真植物病毒属 |
 
-加属级黑名单会让植物病毒科从 48 个掉到 45 个，因此**弃用**。
+加属级黑名单会把 Fusagraviridae、Orthototiviridae、Botourmiaviridae 这些含真植物病毒种的科连坐剔除，因此**弃用**；科级以上的取舍统一放进科级黑名单。
 
 ## 3. 边界情形（逐条核查过）
 
 | 情形 | 处理 | 依据 |
 |:---|:---|:---|
-| `Pestiviridae`（Amarillovirales 目，整体为动物/蜱传病毒） | **保留** | 科内仅 `Koshovirus sonchi` 标 plants。已查证 `Koshovirus` 确为植物感染病毒属（文献：*Two novel flavi-like viruses shed light on the plant-infecting koshoviruses*，GKaV / carrot 相关） |
+| `Pestiviridae`（Amarillovirales 目，主体为哺乳动物/蜱传病毒） | **移出名单**（精选库记录保留） | 科内仅 `Koshovirus sonchi` 标 plants（Sonchus virus 1，BK062903.1）。虽有 *plant-infecting koshoviruses* 文献（GKaV / carrot），但科主体为哺乳动物病毒、GenBank 唯一记录 Family 列为空 → 2026-10-26 起不计入植物病毒科基线 |
+| `Metaviridae` / `Pseudoviridae`（Ortervirales） | **移出名单** | gypsy（Athila/Del1/Tat4）与 copia（Tnt1/Tto1/Tos17 等）型**内源逆转录转座子**：整合于植物基因组、无细胞外颗粒、无水平传播；ICTV 出于系统发生学收录，不是感染植物的病原 |
 | `Rhabdoviridae`（混合科） | 保留植物属 | 257/615 种标 plants，均为 `Alphacytorhabdovirus`、`Betanucleorhabdovirus` 等植物属 |
 | `Phenuiviridae` / `Partitiviridae` / `Endornaviridae` / `Spinareoviridae` / `Sedoreoviridae`（混合科） | 保留植物属 | 分别为 `Coguvirus`、`Alphapartitivirus`/`Betapartitivirus`、`Alphaendornavirus`、`Fijivirus`、`Phytoreovirus` |
 | 卫星病毒 / 类病毒（`Alphasatellitidae`、`Tolecusatellitidae`、`Avsunviroidae`、`Pospiviroidae`） | 按 ICTV 原样直接挂在根下 | MSL41 中这些科未定界（Realm/Kingdom/…/Order 为空），未人为造虚拟父节点 |
@@ -87,21 +88,21 @@ python export_msl41.py --xlsx "ICTV_Master_Species_List_2025_MSL41.v1.xlsx" \
 
 | 路径 | 数据源 | 科数 |
 |:---|:---|:---|
-| A（本页采用） | ICTV VMR `Host source` 种级判定 + 科级黑名单 | 48 |
-| B | `docs/data/Plant_Virus_Ref.Info.tsv` 的 `VMR_Family`（NCBI 植物病毒参考序列） | 48 |
+| A（本页采用） | ICTV VMR `Host source` 种级判定 + 科级黑名单 | 42 |
+| B | `docs/data/Plant_Virus_Ref.Info.tsv` 的 `VMR_Family`（NCBI 植物病毒参考序列） | 42（当前数据） |
 
-**交集 46 科。** 差异 4 科已逐条核查：
+**A 与 B 一致：42 = 42**。基线剔除的 `Metaviridae` / `Pseudoviridae` 本就没有参考序列；`Pestiviridae` 的唯一精选记录 BK062903.1 保留在表中但不再计入科数。当前 Ref 表亦不含 `Anicreviridae`、`Vilyaviridae`（旧版 B 的噪声科）。
+
+差异核查（后两行为旧版 B 的噪声科，现表已移除）：
 
 | 科 | 路径 | VMR 宿主标注（实测） | 结论 |
 |:---|:---|:---|:---|
-| `Metaviridae` | 仅 A | invertebrates 21 / **plants 3** / fungi 5 / protists 1 / vertebrates 1 | 确有植物宿主 → **A 正确** |
-| `Pseudoviridae` | 仅 A | **plants 22** / fungi 6 / invertebrates 3 / protists 2 | 主要宿主为植物 → **A 正确** |
-| `Anicreviridae` | 仅 B | vertebrates 3 / invertebrates 5，**无 plants** | 动物病毒 → **B 误纳** |
-| `Vilyaviridae` | 仅 B | vertebrates 9 / protists 18，**无 plants** | 动物/原生生物病毒 → **B 误纳** |
+| `Metaviridae` | 仅 A（B 无参考序列） | invertebrates 21 / **plants 3** / fungi 5 / protists 1 / vertebrates 1 | 2026-10-26 起**移出名单**（内源逆转录转座子，非感染病原） |
+| `Pseudoviridae` | 仅 A（B 无参考序列） | **plants 22** / fungi 6 / invertebrates 3 / protists 2 | 2026-10-26 起**移出名单**（同上，copia 型内源逆转录转座子） |
+| `Anicreviridae` | 旧 B | vertebrates 3 / invertebrates 5，**无 plants** | 动物病毒 → 旧 B 误纳，**现数据已移除** |
+| `Vilyaviridae` | 旧 B | vertebrates 9 / protists 18，**无 plants** | 动物/原生生物病毒 → 旧 B 误纳，**现数据已移除** |
 
-> **附带发现**：`docs/data/Plant_Virus_Ref.Info.tsv` 收录了 `Anicreviridae`、`Vilyaviridae`
-> 两个非植物病毒科（共 36 个种）。这是路径 B 的数据噪声，建议后续单独清理，
-> **本次未改动该文件**。
+> 2026-10-26 复核：两轮口径收紧后 A 与 B 收敛为 **42 = 42**；过程详见根目录 CHANGELOG 2026-10-26 条目。
 
 ## 5. 剪枝策略
 
@@ -112,38 +113,38 @@ python export_msl41.py --xlsx "ICTV_Master_Species_List_2025_MSL41.v1.xlsx" \
 对应需求「非植物病毒灰色显示但不建树」：
 
 - 非植物病毒分支（`pc == 0`）在**目级**停止展开 —— 仍以灰色节点显示位置，但不再往下铺属/种。
-  若一路铺到科级再往下，单是灰色科就有 379 个，整棵树会被撑到 7,000px 以上。
-- **科级**：保留「有植物病毒种」的科（48 个），**外加「与植物病毒同目」的非植物科（73 个）**。
+  若一路铺到科级再往下，单是灰色科就有 385 个，整棵树会被撑到 7,000px 以上。
+- **科级**：保留「有植物病毒种」的科（42 个），**外加「与植物病毒同目」的非植物科（72 个）**。
   后者以**灰色叶节点**出现 —— 能看到"这个目里还有哪些非植物病毒科"，但**展不开**（本库没有它们的属/种）。
   判定口径是「父节点是含植物病毒的**目**」，不是宽松的「父节点 `pc > 0`」—— 差别很大，见下方说明。
 - **属级**：只保留「有植物病毒种」的属；无植物种的属一律剪掉（所以非植物病毒的「属」一个都没有）。
 - 属以下保留全部种：混合属里既可能是植物种（彩色）也可能是非植物种（灰色）。
 
-最终 3,450 节点。正交布局按可见叶子数自适应画布高度，避免几百个科压成一条线。
+最终 3,319 节点。正交布局按可见叶子数自适应画布高度，避免几百个科压成一条线。
 
 > **为什么限定「父节点是目」而不是宽松的「父节点 `pc > 0`」**（实测差别很大）：
 > MSL41 里有 **5,263 条记录没有 Order**，`build_tree()` 会跳过缺失层级把科直接挂到最近的已知层 ——
 > 于是 `Caudoviricetes`（**纲**）下直接挂了 91 个噬菌体科、根 `Viruses` 下直接挂了 25 个古菌噬菌体科。
 > 若按宽松口径保留，那 25 个会作为灰色科出现在**域那一层**（根的其他子节点全是 realm），
-> 既不是「同目」，视觉上也会误导。实测：严格口径 **+73** 个科；宽松口径 **+195** 个。
+> 既不是「同目」，视觉上也会误导。实测（2026-10-26 当前构建）：严格口径 **+72** 个科；宽松口径同为 +72（两类口径在当前树中重合），仍保留严格「同目」定义，防未来解析变化时 order 缺失的科从纲/根层漏入。
 
 ### 5.2 页面级开关「非植物病毒」（**默认关闭**）
 
 `/phylo/` 的 DISPLAY 区有一个「非植物病毒 / Non-plant viruses」复选框，**默认不勾选**。
 
-- **关闭（默认）**：把**所有** `pc == 0` 的节点从树上摘掉，只留植物病毒 —— 2,997 节点。
-- **打开**：原样放回，回到构建期剪枝后的完整骨架 —— 3,450 节点。
+- **关闭（默认）**：把**所有** `pc == 0` 的节点从树上摘掉，只留植物病毒 —— 2,926 节点。
+- **打开**：原样放回，回到构建期剪枝后的完整骨架 —— 3,319 节点。
 
-`pc == 0` 的节点共 **453** 个（`3,450 − 453 = 2,997`，与默认态自洽），分布如下（实测，不是估计）：
+`pc == 0` 的节点共 **393** 个（`3,319 − 393 = 2,926`，与默认态自洽），分布如下（实测，不是估计）：
 
 | 层级 | 域 | 界 | 门 | 纲 | 目 | 科 | 属 | 种 |
 |:---|---:|---:|---:|---:|---:|---:|---:|---:|
-| `pc == 0` 个数 | 8 | 8 | 15 | 34 | 83 | **73** | 0 | 232 |
-| 该层总数 | 10 | 11 | 22 | 50 | 105 | **121** | 214 | 2,916 |
+| `pc == 0` 个数 | 8 | 8 | 15 | 36 | 85 | **72** | 0 | 169 |
+| 该层总数 | 10 | 11 | 22 | 50 | 105 | **114** | 200 | 2,806 |
 
 > **两个容易说错的口径**（2026-09-22 实测澄清）：
-> 1. **树里的非植物病毒「科」只有 73 个，且全在混合目下** —— 科级保留条件是
->    「有植物病毒种」**或**「父节点是含植物病毒的目」。后一类共 73 个（分布在 20 个混合目里，
+> 1. **树里的非植物病毒「科」只有 72 个，且全在混合目下** —— 科级保留条件是
+>    「有植物病毒种」**或**「父节点是含植物病毒的目」。后一类共 72 个（分布在 18 个混合目里，
 >    最多的是 `Ghabrivirales` 17 个），它们**全是灰色叶节点**：本库没有它们的属/种，
 >    所以**看得到、展不开**。**非植物病毒的「属」一个都没有** —— 属级一律要求 `pc > 0`。
 >    若想说「非植物病毒的科属」，那除了这 73 个科，其余指的是**构建期被剪掉、页面里根本不存在**的。
@@ -151,9 +152,9 @@ python export_msl41.py --xlsx "ICTV_Master_Species_List_2025_MSL41.v1.xlsx" \
 >    73 个非植物科同样没有 `children`。它们只是"与植物病毒同处更高层级 / 同目"的占位。
 >    开关打开后依然展不开，这是设计如此、不是 bug。
 
-深度=「科」时可见节点数：关闭 **99** 个 / 打开 **320** 个
-（`99 + 221 = 320`，差的 221 = 148 个灰色骨架 + 73 个非植物科；
-232 个非植物种在属/种层，深度=科时本就不可见）；顶栏 `taxa shown` 随之显示 2,997 / 3,450。
+深度=「科」时可见节点数：关闭 **89** 个 / 打开 **313** 个
+（`89 + 224 = 313`，差的 224 = 152 个灰色骨架 + 72 个非植物科；
+169 个非植物种在属/种层，深度=科时本就不可见）；顶栏 `taxa shown` 随之显示 2,926 / 3,319。
 
 **实现要点**：开关是**就地摘除 + `STASH` 记原位置**，不是每次渲染克隆一棵裁剪树。
 原因是 ECharts 的 tree 展开/折叠**直接改数据对象**上的 `collapsed` —— 若传给它克隆树，

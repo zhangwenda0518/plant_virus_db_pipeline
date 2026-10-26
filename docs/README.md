@@ -14,7 +14,7 @@
 | `/genes/` | `genes/index.html` | 基因图谱仪表盘 (hero + 5 张大卡)；浏览器在 `genes/gene_browser.html`（NLR/sRNA/UPS/miRNA/Antivirals/Downloads 六面板），统计在 `genes/data/` |
 | `/network/` | `network/index.html` | 互作网络图谱 (病毒-宿主力导向网络 + 媒介-病毒-宿主三元组网络, 自我网络下钻) |
 | `/association/` | `association/index.html` | 宿主-病毒关联桑基图 (病毒×宿主双谱系, 层层下钻) |
-| `/phylo/` | `phylo/index.html` | 植物病毒进化关系**单页双视图**（2026-10-11 合并）：标签页① 分类树 (ICTV MSL41, 48 科/214 属/2,684 种)，标签② 分子树 (`?view=molecular` 直达) |
+| `/phylo/` | `phylo/index.html` | 植物病毒进化关系**单页双视图**（2026-10-11 合并）：标签页① 分类树 (ICTV MSL41, 42 科/200 属/2,637 种)，标签② 分子树 (`?view=molecular` 直达) |
 | `/phylo/molecular/` | `phylo/molecular/index.html` | → 跳转 `/phylo/?view=molecular`（带原查询参数；分子树视图已并入 `/phylo/` 单页，脚本在 `phylo/molecular_viewer.js`） |
 | `/phylo/molecular/families/` | `phylo/molecular/families/index.html` | 分子树按科索引画廊 (25 张卡片, 含口径标注与数据质量标记) |
 | `/structures3d/` | `alias` → `14.rvpsd_structures/webapp/` | **蛋白结构统一入口**（2026-10-08 三页整合 → 同日「单页化」后为外壳 + **两标签**）：`index.html` 为外壳，`rvpsd.html` = 原 RVPSD Molstar 查看器（RVPSD+vpSAT+AFDB 全原子, 2,603 种/20,950 蛋白）（非 `docs/` 下文件） |
@@ -57,7 +57,7 @@ docs/
 ├── resources.html             # 补充资源页 (/resources.html, 100+ 外部库与工具)
 ├── table.js                   # 交互表格 JS (DataTables)
 ├── i18n.js                    # 国际化 JS (PVDB_i18n, 中英双语)
-├── sitemap.xml                # 站点地图 (20 条顶层路由)
+├── sitemap.xml                # 站点地图 (35 条 canonical URL, build_site_meta.py 生成, 勿手改)
 ├── robots.txt                 # 爬虫规则
 ├── favicon.svg                # 站点图标
 ├── favicon-aphid.svg          # 站点图标 (蚜虫版)
@@ -93,7 +93,7 @@ docs/
 │   # 注: 以上为部分列举。data/ 实际另有 VMR_MSL41.txt、chart_data.json、dashboard_stats.json、
 │   #     site_stats.json【服务端定时生成, 本地必然 404】、canonical_*.tsv、segment_*.tsv、
 │   #     species_canonical.tsv、antivirals.json、host_analysis/、primers/、taxonomy/ 等；
-│   #     本地另有 12 个 *.bak* 备份（未上传线上, 线上 data/ 下 0 个 bak）。
+│   #     2026-10-17 起 *.bak* 备份已全部移出 web root → 仓库根 data_backups/（不再随部署暴露）。
 │
 ├── taxonomy/                  # 宿主分类缓存 (无 index.html, 故 /taxonomy/ 为 403)
 │   └── host_lineage_cache.json # 宿主谱系缓存
@@ -116,7 +116,7 @@ docs/
 │
 ├── phylo/                      # 植物病毒进化关系 (/phylo/)
 │   ├── index.html              # 分类学树交互页 (矩形/圆形双布局)
-│   ├── taxonomy_tree.json      # 分类树数据 (3,450 节点, ~298 KB；默认只画植物病毒 2,997)
+│   ├── taxonomy_tree.json      # 分类树数据 (3,319 节点, ~289 KB；默认只画植物病毒 2,926)
 │   ├── build_taxonomy.py       # 建树脚本 (VMR 宿主判定 + 科级黑名单)
 │   ├── export_msl41.py         # ICTV MSL41 xlsx → TSV (标准库流式解析)
 │   ├── echarts.min.js          # 本地 ECharts
@@ -198,6 +198,37 @@ docs/
 - **Nginx**: 主配置 `plant-virus.conf`, 各路由见上表
 - **数据路径**: 由 `config.py` 统一管理, 可通过环境变量 `PVDB_*` 覆盖
 - **缓存策略**: `/reference/data/` → `expires 1h, Cache-Control: public, immutable`
+
+## 站点工程化（2026-10-17 起）
+
+全站静态页进入「注册表驱动」的工程化管理。三个脚本构成工具链：
+
+| 脚本 | 职责 |
+|:-----|:-----|
+| `scripts/site_pages.py` | **单一事实源**：37 页注册表（文件 ↔ canonical URL 路由映射、中英标题/描述、JSON-LD 类型）+ 站点常量（域名、许可、主题色）。新增页面/换域名只改这里 |
+| `scripts/build_site_meta.py` | 生成器：按注册表给每页 `</head>` 前注入/替换 `<!--#[site-meta]-->` 规范块（description / canonical / Open Graph / Twitter Card / theme-color / 缺失补齐的 viewport+favicon / JSON-LD）；产出 `sitemap.xml` 与 `lib/site-version.js`。幂等，`--check` 模式可挂 CI |
+| `scripts/check_site_quality.py` | 质量门（退出码即结果）：head 完备性、sitemap 与注册表一致、robots Sitemap 行、site-version 与 DATA_VERSION 一致、全站内链解析（含 nginx alias 路由映射表）、部署根卫生（禁 .orig*/.bak*/__pycache__）、JSON 可解析、单页 >300KB 告警 |
+
+**标准工作流**（改页面 / 加页面 / 月更数据后）：
+
+```bash
+python scripts/site_pages.py            # 改注册表（编辑）
+python scripts/build_site_meta.py       # 重新注入 + 出 sitemap/site-version
+python scripts/check_site_quality.py    # 质量门验收，必须 PASS
+```
+
+**已建立的站级约定**
+
+- head 规范块由生成器统一供给，**不要手写** description/canonical/og（会被下次生成覆盖/去重）；
+- 每页保留自己的 `<title>`（带 data-i18n 可翻译）；
+- `lib/site-version.js` 是数据版本的唯一前端出口（`window.PVDB_SITE.version`），
+  由 DATA_VERSION 生成；`lib/site-nav.js` v3 在页面**没有**自己的页脚时自动注入学术页脚
+  （平台名 · 数据版本 · MIT · GitHub · 推荐引用含访问日期），有页脚则跳过，`data-footer="off"` 可关；
+- `404.html` 为双语静态 404（nginx `location /` 内 `error_page 404 /404.html`）；
+- `phylo/molecular/index.html` 为 noindex 重定向存根，不进 sitemap；
+- 部署根卫生：历史备份/快照已归档至 `archive/website_backups_20261017/`（页面/JS 备份）
+  与 `data_backups/docs_data_20261017/`（数据 .bak 与 4 个批次快照目录，约 2.9GB，均已 gitignore），
+  **不要再把备份文件放进 docs/`**；nginx 另有 `\.orig_` 404 拦截兜底。
 
 ## 注意
 
