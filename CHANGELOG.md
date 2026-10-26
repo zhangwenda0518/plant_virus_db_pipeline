@@ -26,6 +26,8 @@ All notable changes to the Plant Virus Database Platform.
 
 **属级情况**：最终名单 200 属，两库覆盖 **198/200**。名单内未覆盖 2 属：**Magoulivirus**（本质为真菌病毒属，~50 种几乎全为 Botrytis/Fusarium/Magnaporthe 等真菌宿主，仅 *M. malus* 1 个植物种撑名单，其记录 MN386963 未进植物通道）与 **Betagymnorhavirus**（单种 Torreya virus 1，BK061818，ICTV 宿主标 plants 的真植物 rhabdo，TPA 记录未命中 Viridiplantae 收录通道）。**Lumovirus 已修**：精选表 MH425569 行的 VMR_Species/Family/Genus 等 6 列原为空（vmr_accession 匹配遗漏），已按 VMR 补齐（Geplanaviridae/Lumovirus），属覆盖 197→198。第一轮过滤曾剔除 11 属（3 个移除科的 8 属 + 仅凭 `plants (S)`/invertebrates 来源记录的 Epsilonourmiavirus、Rimosavirus、Somasatellite）；第二轮随名单移出 Koshovirus/Metavirus/Pseudovirus/Sirevirus 4 属。
 
+**VMR 种级回填（同日第二轮）**：Ref 表曾 44%（3,983 条）记录 VMR_Family 为空——U1 月度增量兜底把 NCBI 组织名直接写进 Species_ICTV、未做 VMR 匹配。本轮：① 建立查找表 `docs/phylo/data/vmr_species_lookup.tsv`（17,554 种 + 别名共 35,431 键）；② 存量回填 Ref 2,966 条（256 条整段 VMR 字段 + 物种名规范化，2,710 条 taxid 继承补科）、Full 补 280 条科标签；③ **剔除 104 条非植物科记录**（Ambiguiviridae/Botourmiaviridae/Fiersviridae/Mymonaviridae/Phycodnaviridae 等黑名单科的残留）；④ U1 `database_merge` 内置 VMR 回填（入库即标注，未命中基线的非植物科直接拦截）。**发布口径变更：Ref 9,022 → 8,918 条 / 5,147 → 4,975 种 / 6,448 TaxIDs**（DATA_VERSION、NUMBERS.md、门户与 help 文案、build_global_index 注释同步）；属覆盖 198→199/200。
+
 **新增对照表**：`docs/data/plant_virus_taxonomy_crosswalk.tsv` —— 42 科范围全部 3,632 种（严格基线 2,637 + 同科关联 995）的 ICTV↔NCBI 逐种对照：Family/Genus/Species_ICTV、ICTV_ID、Genome、VMR_Host_source、In_strict_baseline、NCBI_Taxids/Names、Full/Ref/Complete 记录数；NCBI 侧有记录的 2,220 种。已注册 API 网关 `taxonomy.plant-crosswalk`；`taxonomy.plant-taxa` 描述计数同步为 2,837。
 
 **备份**：`docs/phylo/taxonomy_tree.json.bak.20261026_loose48`（原 48 科）、`*.bak.20261026_strict45`（中间 45 科）、`docs/data/dashboard_stats.json.bak.20261026*`、`docs/phylo/data/plant_taxa.tsv.bak.20261026*`。

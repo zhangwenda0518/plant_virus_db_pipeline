@@ -1282,6 +1282,35 @@ NON_PLANT_FAMILY_BLACKLIST = {
 }
 
 
+# ═══════════════════════════════════════════════════════════
+#  VMR 种级查找表 (2026-10-26): 兜底名 → VMR 科/属/种
+#  由 docs/phylo/data/vmr_species_lookup.tsv 提供（build_taxonomy 同源口径），
+#  用于月度增量入库时的种级回填，消除 "Species_ICTV 列写 NCBI 组织名、
+#  VMR_Family 留空" 的标注漂移（曾占精选库 44%）。
+# ═══════════════════════════════════════════════════════════
+def _load_vmr_lookup():
+    import csv as _csv
+    repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    path = os.path.join(repo, 'docs', 'phylo', 'data', 'vmr_species_lookup.tsv')
+    if not os.path.exists(path):
+        print(f'   [WARN] VMR lookup 未找到，跳过种级回填: {path}')
+        return {}
+    lut = {}
+    with open(path, encoding='utf-8') as f:
+        for r in _csv.DictReader(f, delimiter='\t'):
+            info = {'family': r['family'].strip(), 'genus': r['genus'].strip(),
+                    'species': r['species'].strip(),
+                    'baseline': r['in_baseline'] == '1', 'in_fam': r['in_plant_family'] == '1'}
+            keys = {r['species'].strip().lower()}
+            for vn in (r['virus_names'] or '').split(';'):
+                vn = vn.strip().lower()
+                if vn:
+                    keys.add(vn)
+            for k in keys:
+                lut.setdefault(k, info)
+    return lut
+
+
 def database_merge(plant_records: list[dict], api_key: str,
                    output_dir: str, taxsyn_result: dict,
                    skip_merged_check: bool = False) -> dict:
@@ -1298,6 +1327,7 @@ def database_merge(plant_records: list[dict], api_key: str,
 
     result = {"new_fasta": 0, "new_tsv": 0, "merged_updated": 0, "deleted_marked": 0,
               "known_inherited": 0, "new_taxonkit": 0, "deferred_download": 0}
+    VMR_LOOKUP = _load_vmr_lookup()
 
     # ── 下载 FASTA + GenBank (一并获取, 用于 LOCUS 解析) ──
     accessions = [r.get("accession", r.get("version", "")) for r in plant_records]
@@ -1406,9 +1436,20 @@ def database_merge(plant_records: list[dict], api_key: str,
             # taxonkit 也没拿到 → 同样回退 NCBI 名, 段留空
             species_ictv = rec.get("organism", "") or ""
 
+        # ── VMR 种级回填: 兜底名 → VMR 科/属/种（仅 42 基线科内的种）──
+        if VMR_LOOKUP:
+            nm = re.sub(r'\s+', ' ', (species_ictv or rec.get("organism", "")).strip().lower())
+            vinfo = VMR_LOOKUP.get(nm)
+            if vinfo and vinfo['family'] and (vinfo['baseline'] or vinfo['in_fam']):
+                if not family:
+                    family = vinfo['family']
+                if vinfo['baseline'] and species_ictv != vinfo['species']:
+                    species_ictv = vinfo['species']
+                result['vmr_backfilled'] = result.get('vmr_backfilled', 0) + 1
+
         # ── 科级黑名单拦截: 见 NON_PLANT_FAMILY_BLACKLIST 注释 ──
         if family and family in NON_PLANT_FAMILY_BLACKLIST:
-            result["family_blacklisted"] = result.get("family_blacklisted", 0) + 1
+            result['family_blacklisted'] = result.get('family_blacklisted', 0) + 1
             continue
 
         rows.append({
@@ -1784,6 +1825,7 @@ def main():
     print(f"   已知继承元数据:  {merge_result.get('known_inherited', 0)}")
     print(f"   taxonkit补全:   {merge_result.get('new_taxonkit', 0)}")
     print(f"   科级黑名单拦截:  {merge_result.get('family_blacklisted', 0)}")
+    print(f"   VMR种级回填:    {merge_result.get('vmr_backfilled', 0)}")
     print(f"   Taxid合并重映射: {merge_result['merged_updated']} (主表 Taxid 列)")
     print(f"   delnodes命中:   {merge_result['deleted_marked']} (已写 watchlist)")
     if merge_result.get("deferred_download"):

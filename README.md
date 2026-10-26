@@ -75,8 +75,8 @@ plant_virus_db_pipeline/
 
 | 类别 | 数值 | 说明 |
 |:-----|:----:|:-----|
-| 参考基因组 (非冗余) | 9,022 | Plant_Virus_Ref.fasta, 98% ANI 聚类 (DATA_VERSION CLUSTER_COUNT) |
-| 病毒物种 | 5,147 | ICTV MSL41 覆盖 (DATA_VERSION SPECIES_COUNT; Species_ICTV 去重实算) |
+| 参考基因组 (非冗余) | 8,918 | Plant_Virus_Ref.fasta, 98% ANI 聚类 (DATA_VERSION CLUSTER_COUNT) |
+| 病毒物种 | 4,975 | ICTV MSL41 覆盖 (DATA_VERSION SPECIES_COUNT; Species_ICTV 去重实算) |
 | 全量序列 | 211,132 | Plant_Virus_Full.fasta (410 MB) (DATA_VERSION RECORDS_PLANT) |
 | 有媒介-宿主关系的病毒 | 1,803 | VH + WUR 整合（447 VH + 1,356 WUR-only） |
 | 病毒-媒介-宿主三元组 | 1,375 | 实验验证 + 文献追踪 |
@@ -127,6 +127,7 @@ plant_virus_db_pipeline/
 | 5004 | Metabuli 分类 | metabuli-api.service |
 | 5005 | 媒介-宿主 | vector-host.service |
 | 5006 | [已停用] 病毒档案 | virus-profile.service (inactive) |
+| 5010 | REST API v1（全站数据开放） | api-gateway.service |
 | 8000 | PAmiRDB | pamirdb.service |
 | 8050 | Virus Explorer | virus-explorer.service |
 

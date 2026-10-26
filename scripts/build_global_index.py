@@ -641,19 +641,160 @@ class IndexBuilder:
                 "u": "/pamirdb/",
             })
 
+    def vector_counts(self):
+        """从 8.plant-insect 的合并产物现算媒介统计，避免站点数字与数据脱节。
+
+        返回的键：
+          vector_virus_entries   合并后病毒条目总数（VIP-DB + WUR 归并）
+          vector_assoc_viruses   其中有媒介关系的病毒数
+          vector_triplets        VIP-DB 实验验证的病毒-媒介-宿主三元组
+          vector_routes_viruses  带受控词表传播途径的病毒数
+          vector_lit_links       文献证据边数
+          vector_lit_papers      文献证据覆盖的论文数
+        任何文件缺失都返回空 dict（emit_platform_stats 会跳过这些键，不会崩）。
+        """
+        if getattr(self, "_vec_counts", None) is not None:
+            return self._vec_counts
+        out = {}
+        base = ROOT / "8.plant-insect"
+        try:
+            m = json.loads((base / "virus_vector_merged.json").read_text(encoding="utf-8"))
+            vs = m.get("viruses") or []
+            out["vector_virus_entries"] = len(vs)
+            out["vector_assoc_viruses"] = sum(1 for v in vs if v.get("relationships"))
+            out["vector_routes_viruses"] = sum(1 for v in vs if v.get("transmission_routes"))
+            out["vector_triplets"] = (m.get("stats") or {}).get("vh_relationships")
+        except Exception:
+            # 合并产物缺失/损坏时静默跳过，站点统计退回 site_stats.json 的兜底值
+            pass
+        try:
+            lit = json.loads((base / "vector_host_lit.json").read_text(encoding="utf-8"))
+            ls = lit.get("stats") or {}
+            if isinstance(ls.get("total_edges"), int):
+                out["vector_lit_links"] = ls["total_edges"]
+            if isinstance(ls.get("papers"), int):
+                out["vector_lit_papers"] = ls["papers"]
+        except Exception:
+            pass
+        self._vec_counts = out
+        return out
+
+    def core_counts(self):
+        """全站核心统计：一律从源头现算，不再信任 site_stats.json 里的人工快照。
+
+        2026-10-26 起因实测发现快照会长期漂移——`symptom_photos` 记 2,975（实为
+        unified_gallery.json 行数，恰好正确），而 `onekp_samples` 记 1,341（那是
+        样本清单 onekp_all_samples.csv 的行数，真正**有病毒检出**的样本只有 251。
+          reference_records   docs/data/Plant_Virus_Ref.Info.tsv 行数
+          species             该表的 Species_Canonical 去重数
+          symptom_photos      docs/data/unified_gallery.json 条目数
+          papers_tracked      7.literature_tracker/web/data/stats.json 的 master_total
+                              （语料总量；`total` 6525 只是 AI 已摘要的子集）
+          onekp_samples       13.onekp_virus/all_viruses.best.summary.tsv 的去重 Sample
+                              （**有病毒检出**的样本数 251）；onekp_screened 才是样本
+                              清单 onekp_all_samples.csv 的 1,341（被筛查总数）。两者
+                              语义不同：站点文案 "detection across 1,341 transcriptomes"
+                              指的是筛查覆盖面，不是检出数。
+        任何文件缺失/损坏都只跳过该键，其余照常；全部失败时退化为空 dict。
+        """
+        if getattr(self, "_core_counts", None) is not None:
+            return self._core_counts
+        out = {}
+        try:
+            rows = read_tsv_dicts(ROOT / "docs/data/Plant_Virus_Ref.Info.tsv")
+            if rows:
+                out["reference_records"] = len(rows)
+                # species 用 Species_ICTV 去重（=4,975，与 Reference 页 "Virus Species (ICTV)"
+                # 及 "6,448 TaxIDs" 的自述一致）。注意 Species_Canonical 只有 4,944 ——
+                # 它是合并 canonical 后的**检索主轴**，比 ICTV 物种少 31，不能拿来当
+                # 物种数对外展示；数字随月更 VMR 回填变化，以实算为准（2026-10-26 更新）。
+                ictv = {(r.get("Species_ICTV") or "").strip() for r in rows}
+                out["species"] = len({v for v in ictv if v})
+        except Exception:
+            pass
+        try:
+            gal = json.loads((ROOT / "docs/data/unified_gallery.json").read_text(encoding="utf-8"))
+            if isinstance(gal, list):
+                out["symptom_photos"] = len(gal)
+        except Exception:
+            pass
+        try:
+            ss = json.loads((ROOT / "7.literature_tracker/web/data/stats.json").read_text(encoding="utf-8"))
+            # master_total 是语料总量；缺失时才退回已摘要条数
+            n = ss.get("master_total")
+            if not isinstance(n, int):
+                n = ss.get("total")
+            if isinstance(n, int):
+                out["papers_tracked"] = n
+        except Exception:
+            pass
+        try:
+            rows = read_tsv_dicts(ROOT / "13.onekp_virus/all_viruses.best.summary.tsv", encoding="utf-16")
+            samples = {(r.get("Sample") or "").strip() for r in rows}
+            out["onekp_samples"] = len({s for s in samples if s})
+        except Exception:
+            pass
+        try:
+            rows = read_tsv_dicts(ROOT / "13.onekp_virus/onekp_all_samples.csv", encoding="utf-16")
+            if rows:
+                out["onekp_screened"] = len(rows)
+        except Exception:
+            pass
+        try:
+            rows = read_tsv_dicts(ROOT / "docs/data/primers/primer_summary.tsv")
+            for r in rows:
+                if (r.get("Metric") or "").strip() == "Total_Primers":
+                    out["primer_designs"] = int((r.get("Value") or "0").replace(",", "").strip())
+                    break
+        except Exception:
+            pass
+        self._core_counts = out
+        return out
+
     def emit_platform_stats(self):
-        """docs/data/platform_stats.json —— 门户统计带数据源（轻量文件，随月更自动刷新）"""
+        """docs/data/platform_stats.json —— 门户统计带数据源（轻量文件，随月更自动刷新）
+
+        2026-10-26 起：vector_* 与核心五项统计全部**现算**，site_stats.json 只作为
+        文件缺失时的兜底、并会被现算结果回写，不再是需要人工维护的真相源。
+        """
         st = {}
+        # vector_* 系列：从 8.plant-insect 的合并产物现算。
+        # 旧键 vector_host_pairs 语义是错的（值 1803 实为合并后的**病毒条目数**，
+        # 不是媒介-宿主对数），已废弃，见 site_stats.json 里拆开的五个准确键。
+        st.update({k: v for k, v in self.vector_counts().items() if isinstance(v, int)})
+        # 核心五项：现算
+        live_ss = self.core_counts()
+        st.update(live_ss)
+        # 兜底：现算没拿到的键才回落到 site_stats.json 的人工快照
         try:
             ss = json.loads((ROOT / "docs/data/site_stats.json").read_text(encoding="utf-8"))
             for k in ("reference_records", "species", "symptom_photos",
-                      "vector_host_pairs", "papers_tracked", "onekp_samples"):
-                if isinstance(ss.get(k), int):
+                      "papers_tracked", "onekp_samples",
+                      "vector_virus_entries", "vector_assoc_viruses", "vector_triplets",
+                      "vector_routes_viruses", "vector_lit_links", "vector_lit_papers"):
+                if k not in st and isinstance(ss.get(k), int):
                     st[k] = ss[k]
         except Exception:
             pass
         st["reference_records"] = st.get("reference_records") or sum(i["ref"] for i in self.sp.values())
         st["species"] = st.get("species") or len(self.sp)
+        # 现算成功后回写 site_stats.json，让这份人工快照不再继续漂移
+        try:
+            prev = json.loads((ROOT / "docs/data/site_stats.json").read_text(encoding="utf-8"))
+        except Exception:
+            prev = {}
+        merged_ss = dict(prev)
+        changed = [k for k, v in live_ss.items() if merged_ss.get(k) != v]
+        if changed:
+            merged_ss.update(live_ss)
+            merged_ss["generated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")
+            ss_out = ROOT / "docs/data/site_stats.json"
+            tmp = ss_out.with_suffix(".json.tmp")
+            with open(tmp, "w", encoding="utf-8") as fh:
+                json.dump(merged_ss, fh, ensure_ascii=False, indent=1)
+                fh.write("\n")
+            os.replace(tmp, ss_out)
+            print(f"[OK] docs/data/site_stats.json  refreshed ({len(changed)} keys: {', '.join(changed)})")
         st["full_sequences"] = sum(i["full"] for i in self.sp.values())
         if getattr(self, "primer_designs", 0):
             st["primer_designs"] = self.primer_designs

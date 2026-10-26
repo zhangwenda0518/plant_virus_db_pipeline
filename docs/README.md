@@ -180,7 +180,7 @@ docs/
 | `full_fasta` | `Plant_Virus_Full.fasta` | 全量植物病毒序列 | 377 MB |
 | `full_tsv` | `Plant_Virus_Full.Info.tsv` | 全量元数据 (~199K 条) | — |
 | `cluster_fasta` | `Plant_Virus_Ref.fasta` | 非冗余参考序列 | 31 MB |
-| `cluster_info` | `Plant_Virus_Ref.Info.tsv` | 参考元数据 (9,022 条) | — |
+| `cluster_info` | `Plant_Virus_Ref.Info.tsv` | 参考元数据 (8,918 条) | — |
 | `complete_fasta` | `Plant_Virus.complete_ref.fasta` | 完整参考序列 | — |
 | `complete_info` | `Plant_Virus.complete_ref_info.tsv` | 完整参考元数据 | — |
 | `gene_cov` | `virus_genes_cov.tsv` | 基因覆盖度 | — |
