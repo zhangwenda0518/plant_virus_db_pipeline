@@ -53,7 +53,11 @@ json.dump(s, open('$DATA/incremental_status.json', 'w'), ensure_ascii=False, ind
 print('Status updated, months:', len(s.get('months',[])))
 "
 
-# Phase 4.5: 重建 dashboard 统计（站点 /reference/ KPI 随月更刷新；失败不中断管线）
+# Phase 4.5: VMR 定向补收（基线内"ICTV 有名、NCBI 宿主谱系漏标"的种，幂等秒退）
+echo "==== $(date) VMR directed collection (V1) ====" | tee -a "$LOG"
+(cd "$DIR" && python3.8 V1_vmr_directed_collect.py --vmr "$DATA/VMR_MSL41.txt" >> "$LOG" 2>&1)     && echo "V1 collection done" | tee -a "$LOG"     || echo "WARNING: V1 collection failed (non-fatal)" | tee -a "$LOG"
+
+# Phase 4.6: 重建 dashboard 统计（站点 /reference/ KPI 随月更刷新；失败不中断管线）
 echo "==== $(date) Regenerating dashboard stats ====" | tee -a "$LOG"
 (cd "$DATA" && python3.8 generate_dashboard_stats.py >> "$LOG" 2>&1) \
     && echo "dashboard_stats.json regenerated" | tee -a "$LOG" \

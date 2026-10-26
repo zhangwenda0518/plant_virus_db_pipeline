@@ -6,7 +6,7 @@
 |---|---|---|---|
 | `ref_records` | 9022 | `docs\data\Plant_Virus_Ref.Info.tsv` | 2026-10-03 01:34 |
 | `ref_taxids` | 6534 | `docs\data\Plant_Virus_Ref.Info.tsv` | 2026-10-03 01:34 |
-| `ref_species_ictv` | 5170 | `docs\data\Plant_Virus_Ref.Info.tsv` | 2026-10-03 01:34 |
+| `ref_species_ictv` | 5171 | `docs\data\Plant_Virus_Ref.Info.tsv` | 2026-10-03 01:34 |
 | `ref_canonical` | 4997 | `docs\data\Plant_Virus_Ref.Info.tsv` | 2026-10-03 01:34 |
 | `ref_fasta_seqs` | 9022 | `docs\data\Plant_Virus_Ref.fasta` | 2026-10-03 01:31 |
 | `full_records` | 211132 | `docs\data\Plant_Virus_Full.Info.tsv` | 2026-10-03 01:35 |
