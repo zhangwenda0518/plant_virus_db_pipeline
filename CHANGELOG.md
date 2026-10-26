@@ -30,6 +30,8 @@ All notable changes to the Plant Virus Database Platform.
 
 **KPI 口径调整（同日第三轮，用户定版）**：/reference/ 卡片去掉"Sequences 条数"，改为 **Species 6,448（去重 NCBI TaxID，不锚 ICTV 命名合并）/ Segmented species 1,929 / Non-segmented species 4,519**——节段/非节段按 TaxID 不重不漏二分，相加等于物种总数；Data Source 切换默认 **Ref DB 在前**。`generate_dashboard_stats` 新增 segmented_species/nonsegmented_species 字段（taxid 二分；记录数仍保留在 JSON 供核对）。Full 模式 Species 卡 = 6,555 TaxIDs。同轮新增双物种卡：**Species (NCBI) 6,448 / Species (ICTV) 2,240/2,637**（基线内精选库实际覆盖，全量模式 2,213/2,637）；DNA/RNA 物种卡暂不展示——1,192 个 TaxID（18%）缺 Molecule_Type2 标注（月度增量未走 E2/E3），补全后再上，避免新的"加不起来"；类病毒不单独设卡（45/45 全覆盖且均为 RNA，信息在对照表与分类树）。
 
+**Molecule_Type2 归一化 + DNA/RNA 物种卡（同日第四轮）**：Ref/Full 表的 Molecule_Type2 混有 LOCUS 风格值（ss-RNA 569/ss-DNA 458/cRNA 276/ds-RNA 68/mRNA 42 等）与空值 421 条——归一化 Ref 1,416+421、Full 19,982+1,751，taxid 继承 3 条，按分类学事实补 2 条（PMWaV-7=Badnavirus dsDNA、Begomovirus ageravenae=ssDNA），Ref Type2 达 100% 标注。**新增 DNA/RNA 物种卡（TaxID 不重不漏二分）**：Ref DNA 2,654 + RNA 3,794 = 6,448；Full DNA 2,925 + RNA 3,630 = 6,555。U1 merge 入库即归一化（MOL_TYPE2_MAP）。
+
 **新增对照表**：`docs/data/plant_virus_taxonomy_crosswalk.tsv` —— 42 科范围全部 3,632 种（严格基线 2,637 + 同科关联 995）的 ICTV↔NCBI 逐种对照：Family/Genus/Species_ICTV、ICTV_ID、Genome、VMR_Host_source、In_strict_baseline、NCBI_Taxids/Names、Full/Ref/Complete 记录数；NCBI 侧有记录的 2,220 种。已注册 API 网关 `taxonomy.plant-crosswalk`；`taxonomy.plant-taxa` 描述计数同步为 2,837。
 
 **备份**：`docs/phylo/taxonomy_tree.json.bak.20261026_loose48`（原 48 科）、`*.bak.20261026_strict45`（中间 45 科）、`docs/data/dashboard_stats.json.bak.20261026*`、`docs/phylo/data/plant_taxa.tsv.bak.20261026*`。

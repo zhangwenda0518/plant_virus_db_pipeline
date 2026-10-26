@@ -150,6 +150,16 @@ def compute_stats(rows, has_vmr=False, has_category=False, family_col="Family",
     if plant_genera:
         genera = {g for g in genera if g in plant_genera}
 
+    # DNA / RNA（taxid 不重不漏：任一 DNA 记录记 DNA，其余记 RNA）
+    dna_taxids = set()
+    for r in rows:
+        tid = (r.get("Taxid") or "").strip()
+        v = (r.get("Molecule_Type2") or "").strip()
+        if tid and v and 'DNA' in v:
+            dna_taxids.add(tid)
+    kpis_dna = len(dna_taxids & taxids)
+    kpis_rna = len(taxids) - kpis_dna
+
     # segmented / nonsegmented (ref only has Category)
     # 卡片口径（2026-10-26 用户定版）：物种数 = 去重 NCBI TaxID（不锚 ICTV 命名合并）；
     # 节段/非节段按 taxid 不重不漏二分——有任何节段记录的 taxid 记节段，其余记非节段，
@@ -198,6 +208,8 @@ def compute_stats(rows, has_vmr=False, has_category=False, family_col="Family",
             "nonsegmented": ns,
             "segmented_species": seg_species,
             "nonsegmented_species": ns_species,
+            "dna_species": kpis_dna,
+            "rna_species": kpis_rna,
         },
         "taxonomy": {
             "families": totals.get("families"),

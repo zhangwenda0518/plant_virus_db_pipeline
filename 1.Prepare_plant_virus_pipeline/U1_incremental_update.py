@@ -1283,6 +1283,30 @@ NON_PLANT_FAMILY_BLACKLIST = {
 
 
 # ═══════════════════════════════════════════════════════════
+#  Molecule_Type2 归一化 (2026-10-26): LOCUS 风格值 → DNA/RNA
+#  与 docs/data/generate_dashboard_stats.py 的 DNA/RNA 物种卡口径保持一致
+# ═══════════════════════════════════════════════════════════
+MOL_TYPE2_MAP = {
+    'ss-RNA': 'RNA', 'ss-rna': 'RNA', 'cRNA': 'RNA', 'crna': 'RNA',
+    'ds-RNA': 'RNA', 'ds-rna': 'RNA', 'ds-cRNA': 'RNA', 'mRNA': 'RNA',
+    'RNA': 'RNA', 'DNA': 'DNA', 'ss-DNA': 'DNA', 'ss-dna': 'DNA',
+}
+
+
+def _norm_mol_type2(v):
+    v = (v or '').strip()
+    if not v:
+        return ''
+    if v in MOL_TYPE2_MAP:
+        return MOL_TYPE2_MAP[v]
+    if 'DNA' in v:
+        return 'DNA'
+    if 'RNA' in v.lower():
+        return 'RNA'
+    return v
+
+
+# ═══════════════════════════════════════════════════════════
 #  VMR 种级查找表 (2026-10-26): 兜底名 → VMR 科/属/种
 #  由 docs/phylo/data/vmr_species_lookup.tsv 提供（build_taxonomy 同源口径），
 #  用于月度增量入库时的种级回填，消除 "Species_ICTV 列写 NCBI 组织名、
@@ -1399,7 +1423,7 @@ def database_merge(plant_records: list[dict], api_key: str,
         # LOCUS 直接解析的列
         length = locus.get("Length", "")
         mol_type = locus.get("Molecule_type", "")
-        mol_type2 = locus.get("Molecule_Type2", "")
+        mol_type2 = _norm_mol_type2(locus.get("Molecule_Type2", "")) or _norm_mol_type2(mol_type)
         topology = locus.get("Topology", "")
         seq_type = locus.get("Sequence_Type", "")
         release_date = locus.get("Release_Date", "")
