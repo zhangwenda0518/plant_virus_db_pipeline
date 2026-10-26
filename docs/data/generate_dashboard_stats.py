@@ -260,6 +260,24 @@ def main():
             plant_families=plant_families, plant_genera=plant_genera_set, taxonomy_totals=totals,
         ),
     }
+
+    # 双物种卡：ICTV 侧 = 基线种（plant_taxa.tsv rank=species）在数据集中有记录的个数
+    baseline_species = set()
+    pt_path = here.parent / "phylo" / "data" / "plant_taxa.tsv"
+    if pt_path.exists():
+        with open(pt_path, encoding="utf-8", errors="replace") as f:
+            for r in csv.DictReader(f, delimiter="\t"):
+                if (r.get("rank") or "").strip() == "species":
+                    v = (r.get("species") or "").strip()
+                    if v:
+                        baseline_species.add(v)
+
+    def ictv_covered(rows):
+        return len({(r.get("Species_ICTV") or "").strip() for r in rows
+                    if (r.get("Species_ICTV") or "").strip() in baseline_species})
+
+    result["full"]["kpis"]["species_ictv_covered"] = ictv_covered(full)
+    result["ref"]["kpis"]["species_ictv_covered"] = ictv_covered(ref)
     for src in ("full", "ref"):
         k = result[src]["kpis"]
         print(f"  {src}: sequences={k['sequences']:,} species={k['species']:,} "

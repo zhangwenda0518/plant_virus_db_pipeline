@@ -238,7 +238,7 @@ canvas{max-height:320px}
   <div class="loading" id="loading">Loading data...</div>
   <div id="content" style="display:none">
     <div class="kpis" id="kpis"></div>
-    <p class="kpi-note" data-i18n="Families and genera follow the ICTV MSL41 plant-virus taxonomy (42 families, 200 genera); only taxa present in the selected dataset are counted. Species counts are distinct NCBI TaxIDs (one ICTV species may span several TaxIDs). Segmented / non-segmented species form a disjoint partition of that total.|科、属按 ICTV MSL41 植物病毒分类统计（共 42 科、200 属），仅计入当前数据集中实际出现的分类单元。物种数 = 去重 NCBI TaxID（不锚 ICTV 命名合并，一个 ICTV 种可对应多个 TaxID）；节段/非节段物种按 TaxID 不重不漏二分，相加等于物种总数。">Families and genera follow the ICTV MSL41 plant-virus taxonomy (42 families, 200 genera); only taxa present in the selected dataset are counted. Species counts are distinct species names.</p>
+    <p class="kpi-note" data-i18n="Families and genera follow the ICTV MSL41 plant-virus taxonomy (42 families, 200 genera); only taxa present in the selected dataset are counted. Species counts are distinct NCBI TaxIDs (one ICTV species may span several TaxIDs). Segmented / non-segmented species form a disjoint partition of that total. Species (ICTV) = baseline species covered by this dataset (of 2,637).|科、属按 ICTV MSL41 植物病毒分类统计（共 42 科、200 属），仅计入当前数据集中实际出现的分类单元。物种数 = 去重 NCBI TaxID（不锚 ICTV 命名合并，一个 ICTV 种可对应多个 TaxID）；Species (ICTV) = 本数据集覆盖的 ICTV 基线物种（分母 2,637）；节段/非节段物种按 TaxID 不重不漏二分，相加等于物种总数。">Families and genera follow the ICTV MSL41 plant-virus taxonomy (42 families, 200 genera); only taxa present in the selected dataset are counted. Species counts are distinct species names.</p>
     <h3 class="section-title" data-i18n="Sequence Overview|序列总览">Sequence Overview</h3>
     <div class="grid">
       <div class="card"><h3 data-i18n="Sequence Types|序列类型">Sequence Types</h3><canvas id="chartSeq"></canvas></div>
@@ -280,6 +280,7 @@ function render(src){
   const kpiOf=(l,v,t)=>{const f=t?`<span class="tot">/${t.toLocaleString()}</span>`:'';return `<div class="kpi"><div class="val">${(v||0).toLocaleString()}${f}</div><div class="lbl">${l}</div></div>`;};
   document.getElementById('kpis').innerHTML=
     kpi('Species',k.taxids)+
+    (k.species_ictv_covered!=null?kpiOf('Species (ICTV)',k.species_ictv_covered,tax.species):'')+
     (k.segmented_species!=null?kpi('Segmented species',k.segmented_species):'')+
     (k.nonsegmented_species!=null?kpi('Non-segmented species',k.nonsegmented_species):'')+
     kpiOf('Families',k.families,tax.families)+kpiOf('Genera',k.genera,tax.genera);
