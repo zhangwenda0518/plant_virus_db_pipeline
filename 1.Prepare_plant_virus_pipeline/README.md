@@ -339,7 +339,7 @@ E 元数据完善
 F 分类与去冗余
   ├── F1 统计报告  →  F2 节段分类  →  F3 元数据去重  →  F4 双引擎聚类去冗余
 G 最终聚类与评估
-  └── G1 TaxID映射  →  G2 vclust聚类  →  G3 去重评估  →  G4 基因覆盖度
+  └── G1 TaxID映射  →  G2 vclust聚类  →  G2b VMR定向补收  →  G3 去重评估  →  G4 基因覆盖度
 ```
 
 ---
@@ -444,6 +444,7 @@ VHostMetadata.tsv                                ▼
 |:-----|:-----|:-----|:-----|:-----|
 | G1 | `G1_seqid_to_taxid.py` | `plant.final.rmdup.id` + 映射表 | `seqid2taxid.map` | 高性能 Accession → TaxID 并行映射 |
 | G2 | `G2_vclust_cluster.py` | FASTA + Info + Map | `Plant_Virus_Ref.fasta` | vclust ANI 聚类 + LCA 诊断 + RefSeq 优先 |
+| G2b | `V1_vmr_directed_collect.py` | VMR + 全新 Ref | 同左（幂等补收） | **VMR 定向补收**：基线内"ICTV 有名、NCBI 宿主谱系漏标"的种，防全量重建丢失（2026-10-26） |
 | G3 | `G3_derep_evaluate.py` | 各级 FASTA + Info | 多维度评估报告 | 去冗余前后序列/物种保留率比较 |
 | G4 | `G4_gene_coverage.py` | GFF3 + seqid2taxid | `virus_genes_cov.tsv` | 基因长度与覆盖度统计 |
 
