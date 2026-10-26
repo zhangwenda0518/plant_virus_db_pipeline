@@ -48,6 +48,8 @@ All notable changes to the Plant Virus Database Platform.
 
 **VMR 定向补收（同日第五轮，用户定版执行）**：397 个"ICTV 有名、库里没有"的基线种核实——369 个（93%）是真植物病毒且 GenBank 有收录号（漏收根因：NCBI 宿主谱系标注缺口），28 个为文献命名无公共序列。执行：① 269 个已在库的 accession 物种名规范化（NCBI 老名 → VMR 正名）；② 50 个 Full 有行无序列的暂不入精选（等序列）；③ 247 条新序列（178 种，含 BK-TPA 202 条）从 NCBI 下载入 Ref+Full。**发布口径变更：Ref 8,918 → 9,165 条 / 4,975 → 5,154 种名 / 6,448 → 6,629 TaxIDs；ICTV 覆盖 2,240 → 2,587/2,637（98.1%）；属覆盖 199 → 200/200 满覆盖**。Full 211,132 → 211,378。全站文案同步。修复过程中 Ref/Full TSV 曾被追加脚本覆盖损坏，均已从服务器版本恢复并重放（最终 TSV↔FASTA 一致性校验通过）。
 
+**第二轮补收（同日第六轮）**：第一轮后剩 49 种未覆盖——17 种的 accession 在 Full 表中被误标物种名（已修正 17 条并下载序列入 Ref），32 种经 NCBI esearch 核实**全世界无公开序列**（ICTV 从早年文献表型命名，如 Potyvirus daturae、Tymovirus melonis 等，属永久性分类学占位）。**发布口径变更：Ref 9,165 → 9,182 条 / 5,154 → 5,170 种名 / 6,629 → 6,631 TaxIDs；ICTV 覆盖 2,587 → 2,603/2,637（98.7%）**。剩余 34 个未覆盖 = 32 个全球无序列 + 2 个 WGS 噪声 accession，为永久性缺口。
+
 **新增对照表**：`docs/data/plant_virus_taxonomy_crosswalk.tsv` —— 42 科范围全部 3,632 种（严格基线 2,637 + 同科关联 995）的 ICTV↔NCBI 逐种对照：Family/Genus/Species_ICTV、ICTV_ID、Genome、VMR_Host_source、In_strict_baseline、NCBI_Taxids/Names、Full/Ref/Complete 记录数；NCBI 侧有记录的 2,220 种。已注册 API 网关 `taxonomy.plant-crosswalk`；`taxonomy.plant-taxa` 描述计数同步为 2,837。
 
 **备份**：`docs/phylo/taxonomy_tree.json.bak.20261026_loose48`（原 48 科）、`*.bak.20261026_strict45`（中间 45 科）、`docs/data/dashboard_stats.json.bak.20261026*`、`docs/phylo/data/plant_taxa.tsv.bak.20261026*`。
